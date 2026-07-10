@@ -35,7 +35,7 @@ The status codes record evidence, not aspirational quality scores:
 | 12 | Fifth Sunday after Easter | Not started | G0 | S0 | --- | Q0 |
 | 13 | Sunday after the Ascension | Not started | G0 | S0 | --- | Q0 |
 | 14 | Pentecost Sunday | Not started | G0 | S0 | --- | Q0 |
-| 15 | Trinity Sunday | Legacy draft ([source](15-trinity-sunday/main.tex); [PDF](build/15-trinity-sunday.pdf)) | G1 | S1 | T0 | Q1 |
+| 15 | Trinity Sunday | Historically situated, source-audited working draft ([source](15-trinity-sunday/main.tex); [propers](15-trinity-sunday/propers/verified.md); [scope](15-trinity-sunday/research/scope.md); [PDF](build/15-trinity-sunday.pdf)) | G3 | S2 | T0 | Q3 |
 | 16 | Second Sunday after Pentecost | Legacy draft ([source](16-second-after-pentecost/main.tex); [PDF](build/16-second-after-pentecost.pdf)) | G1 | S1 | T0 | Q1 |
 | 17 | Third Sunday after Pentecost | Legacy draft ([source](17-third-after-pentecost/main.tex); [PDF](build/17-third-after-pentecost.pdf)) | G1 | S1 | T0 | Q1 |
 | 18 | Fourth Sunday after Pentecost | Historically situated, source-audited working draft ([source](18-fourth-after-pentecost/main.tex); [propers](18-fourth-after-pentecost/propers/verified.md); [scope](18-fourth-after-pentecost/research/scope.md); [PDF](build/18-fourth-after-pentecost.pdf)) | G3 | S2 | T0 | Q3 |
@@ -343,7 +343,7 @@ These examples show how the internal teaching forms may respond to a Sunday's ma
 
 | Sunday | Governing learning problem | Principal teaching forms |
 | --- | --- | --- |
-| Trinity | How mercy, salvation-historical wonder, the one baptismal Name, self-offering, and universal mission belong together | Blessing-before-mastery route, Chrysostom's Romans dossier, Psalm-and-Daniel chant study, three-Father baptismal rule, Secret syntax, Augustinian charity guardrails |
+| Trinity | How mercy, salvation-historical wonder, the one baptismal Name, self-offering, and universal mission belong together | One-page canonical historical table, blessing-before-mastery route, Chrysostom's Romans dossier, Psalm-and-Daniel chant study, three-Father baptismal rule, Secret syntax, Augustinian charity guardrails |
 | Second | How a prepared gift tests desire, widens the house, forms charity, and transfers the guest toward heavenly conduct | Four-Father role comparison, Augustinian excuse and charity dossiers, `compelle intrare` guardrail, five-psalm voice study, Secret syntax |
 | Third | How Christ's search re-educates the gaze without cancelling repentance, vigilance, sanctification, or joy | Five-gaze matrix, Cyril--Gregory controversy dossier, Shepherd-and-coin reception comparison, Peter/Gradual bridge, Secret grammar, sacramental completion |
 | Fourth | How Christ's word orders creation, the apostolic Church, bodily hope, perception, and resistant willing | One-page canonical historical table, three-scale matrix, Chrysostom--Irenaeus Romans dossier, Cyril--Ambrose catch exegesis, Augustine's two catches, Psalm 12 eye study, and two-petition Secret grammar |
