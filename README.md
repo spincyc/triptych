@@ -138,7 +138,7 @@ Close with a Sunday-specific listening guide, set of retrieval questions, or exa
 | Fourth | How Christ's word orders creation, Church, and resistant will on different scales | Nested-scale matrix, vertical geography, Gospel speech-act sequence, Secret word study |
 | Fifth | How infused charity orders the faculties, responsibility, offering, and common ecclesial good | Moral body map, opposing flows, responsibility matrix, convergence diagram |
 | Sixth | How baptismal newness remains dependent pilgrimage sustained by word and sacrament | Mystagogical itinerary, grammatical key, layered loaves study, number-and-sign laboratory |
-| Seventh | How doctrinal truth, moral fruit, judgment, sacrifice, and healing must be distinguished and reunited | Discernment matrix, causal paths, sacrificial timeline, patristic guardrails |
+| Seventh | How voice and works, doctrine and life, freedom and service, individual offering and ecclesial sacrifice, judgment and healing are distinguished and reunited | Voice-and-hands concordance, four-witness Gospel comparison, dual-axis discernment protocol, Pauline lexical anatomy, sacrificial genealogy, Psalm 33 bridge |
 
 The cumulative movement is from divine gift to embodied discernment: the Trinity is adored, charity answers invitation, mercy finds the lost, Christ's word orders mission, reconciliation makes sacrifice truthful, baptismal life is fed, and sacramental medicine produces holy fruit.
 
