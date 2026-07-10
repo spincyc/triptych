@@ -17,17 +17,17 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,calc,positioning,shapes.geometric}
 
-\definecolor{rubricred}{HTML}{8A1F11}
-\definecolor{linkblue}{HTML}{1F4E79}
-\definecolor{softblue}{HTML}{EEF4F8}
-\definecolor{softgold}{HTML}{FBF5E7}
-\definecolor{softgray}{HTML}{F4F4F2}
+% Semantic color names are retained for compatibility with the weekly files,
+% but every value is pure black or white for monochrome printing.
+\definecolor{rubricred}{gray}{0}
+\definecolor{linkblue}{gray}{0}
+\definecolor{softblue}{gray}{1}
+\definecolor{softgold}{gray}{1}
+\definecolor{softgray}{gray}{1}
 
 \hypersetup{
-  colorlinks=true,
-  linkcolor=linkblue,
-  urlcolor=linkblue,
-  citecolor=linkblue
+  hidelinks,
+  pdfborder={0 0 0}
 }
 
 \setlength{\parindent}{0pt}
@@ -48,7 +48,7 @@
 \newcommand{\properrow}[4]{#1 & #2 & #3 & #4\\}
 \newcommand{\sourceurl}[2]{\href{#1}{#2}}
 \newcommand{\latin}[1]{\textit{#1}}
-\newcommand{\rubric}[1]{\textcolor{rubricred}{#1}}
+\newcommand{\rubric}[1]{\textbf{#1}}
 
 \newenvironment{properstable}
 {\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.13\linewidth}>{\raggedright\arraybackslash}p{0.25\linewidth}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.36\linewidth}}
@@ -96,8 +96,9 @@
 \newtcolorbox{studybox}[1]{
   enhanced,
   breakable,
-  colback=softblue,
-  colframe=linkblue,
+  colback=white,
+  colframe=black,
+  colbacktitle=black,
   boxrule=0.6pt,
   arc=2pt,
   left=6pt,
@@ -106,15 +107,16 @@
   bottom=5pt,
   title={#1},
   fonttitle=\bfseries,
-  coltitle=black
+  coltitle=white
 }
 
 \newtcolorbox{massbox}[1]{
   enhanced,
   breakable,
-  colback=softgold,
-  colframe=rubricred,
-  boxrule=0.6pt,
+  colback=white,
+  colframe=black,
+  colbacktitle=black,
+  boxrule=1.0pt,
   arc=2pt,
   left=6pt,
   right=6pt,
@@ -122,11 +124,11 @@
   bottom=5pt,
   title={#1},
   fonttitle=\bfseries,
-  coltitle=black
+  coltitle=white
 }
 
 \tikzset{
-  guide node/.style={draw=linkblue, rounded corners=2pt, fill=softblue, align=center, inner sep=5pt, font=\small},
-  guide emphasis/.style={draw=rubricred, rounded corners=2pt, fill=softgold, align=center, inner sep=5pt, font=\small},
-  guide arrow/.style={-{Stealth[length=2mm]}, thick, draw=linkblue}
+  guide node/.style={draw=black, rounded corners=2pt, fill=white, align=center, inner sep=5pt, font=\small},
+  guide emphasis/.style={draw=black, very thick, rounded corners=2pt, fill=white, align=center, inner sep=5pt, font=\small},
+  guide arrow/.style={-{Stealth[length=2mm]}, thick, draw=black}
 }

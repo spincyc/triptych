@@ -112,6 +112,10 @@ Use visual and analytical forms selectively:
 
 A representation earns its place only when it makes a relationship easier to grasp than another paragraph would. Do not create decorative diagrams or repeat the same claim in multiple forms.
 
+### Monochrome print standard
+
+The guides are designed for ordinary black-and-white printers. All text, rules, arrows, borders, and links use pure black; page and box interiors use pure white. Visual distinctions must rely on line weight, border style, labels, position, and whitespace rather than color or gray shading. A diagram that becomes ambiguous when hue is removed must be redesigned.
+
 ### 6. Integrate primary witnesses once
 
 Prefer authors who directly comment on an appointed passage or its immediate theological question. Identify author, work, and locus. Label direct quotation and paraphrase accurately.
@@ -165,6 +169,7 @@ Before a guide is complete, verify that:
 - page 2 begins with the four senses and contains exactly those four rows before the distinctive module begins;
 - the later structure is fitted to this Sunday rather than copied mechanically from another week;
 - every diagram has an explicit reading order and adds information;
+- every visual remains intelligible in pure black and white, with no color-dependent distinction or gray fill;
 - literal, patristic, canonical, and editorial claims remain distinguishable;
 - named patristic claims have exact works and loci or are labeled as study leads;
 - direct quotations appear once, beside the insight they control;
