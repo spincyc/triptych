@@ -22,7 +22,7 @@ The intended rhythm is **survey, authoritative synthesis, authoritative depth, p
 
 ## Required Weekly Document Order
 
-Every new or substantially revised guide follows one fixed macro-order. The content and internal teaching forms remain adaptive to the Sunday, but the section sequence does not. After page 1, use the exact major headings `Condensed Authoritative Exposition`, `Expansive Authoritative Exposition`, `Speculative Exposition`, `References`, and `Generation Metadata`.
+Every new or substantially revised guide follows one fixed macro-order. The content and internal teaching forms remain adaptive to the Sunday, but the section sequence does not. After page 1, use the exact major headings `Condensed Authoritative Exposition`, `Expansive Authoritative Exposition`, `Speculative Exposition`, `References`, and `Generation Metadata`; insert `Notable Quotables` immediately before `References` when verified examples exist.
 
 ### Page 1: Propers map and four senses
 
@@ -65,6 +65,20 @@ The expansive section begins on page 4. It supplies the detailed scriptural exeg
 ### Speculative Exposition
 
 After the authoritative exposition, place every original AI-generated analogy, cross-proper proposal, symbolic extension, or theological inference not established by the sources in a clearly titled `Speculative Exposition` section. Calibrated phrases such as “this guide proposes,” “may suggest,” and “invites comparison” are mandatory where appropriate. If no responsible speculation is warranted, retain the heading and state that none is offered; do not invent material to fill the section.
+
+### Notable Quotables
+
+When verified examples exist, place a section titled exactly `Notable Quotables` immediately before `References`. Survey whether wording from any appointed proper or its underlying biblical passage appears in literature, poetry, drama, film, television, music, advertising, comedy, memes, or other popular culture. Give particular prominence to quotations that are incorrect, humorously displaced, or used with an ironic force different from their scriptural or liturgical setting.
+
+For every entry, identify:
+
+- the proper and the quoted biblical or liturgical wording;
+- the cultural work, creator, date, and a sufficiently precise scene, chapter, page, episode, track, or other location;
+- whether the use is an exact quotation, adaptation, recognized allusion, or misquotation;
+- how the quotation functions in the work, explicitly labeling especially notable cases as `Misquoted`, `Humorous`, or `Ironic`;
+- any important contrast between the cultural use and the passage's original context.
+
+Verify the wording and context in the primary cultural work or a reliable edition, transcript, or recording; quotation websites and memory are only leads. Do not turn a coincidental phrase or uncertain AI-proposed allusion into a factual example: uncertain connections remain in `Speculative Exposition`. Keep excerpts brief, quote song lyrics especially sparingly, and never reproduce substantial copyrighted text. Cite every cultural work or verification source in `References`. If no verified example is found after a reasonable search, omit `Notable Quotables` rather than inventing an entry or retaining an empty section, and record the attempted cultural-reception search in `Search Scope and Limitations`.
 
 ### References
 
@@ -170,7 +184,7 @@ Read the entire guide linearly and make a claim-by-claim pass before the final b
 - confirm that every proper contributes and that the Secret and Postcommunion are treated substantially;
 - prefer profundity through precision, source depth, and integration rather than through length.
 
-Finally, compile twice and visually inspect every page. Confirm the exact section order and page boundaries, readable density, intact tables and callouts, `References` as the penultimate section, `Generation Metadata` as the terminal section, and the absence of overflow, split headings, sparse spill pages, and layout warnings.
+Finally, compile twice and visually inspect every page. Confirm the exact section order and page boundaries, readable density, intact tables and callouts, any `Notable Quotables` section immediately before `References`, `References` as the penultimate section, `Generation Metadata` as the terminal section, and the absence of overflow, split headings, sparse spill pages, and layout warnings.
 
 ## Analytical and Visual Forms
 
@@ -245,6 +259,9 @@ Before a guide is complete, verify that:
 - pages 2 and 3 contain exactly two full, readable pages of condensed authoritative exposition and no AI speculation;
 - the expansive authoritative exposition begins on page 4, gives the evidence and qualifications behind the condensation, and does not duplicate it paragraph for paragraph;
 - every original AI analogy, typological extension, compositional inference, or unsourced cross-proper connection appears only in `Speculative Exposition`;
+- `Notable Quotables`, when included, appears immediately before `References` and contains only verified cultural uses of wording from the appointed propers or their underlying passages;
+- every cultural entry identifies the work and precise location, distinguishes exact quotation, adaptation, recognized allusion, and misquotation, emphasizes humorous or ironic use where present, and is cited in `References`;
+- uncertain cultural parallels remain in `Speculative Exposition`, copyrighted excerpts remain brief, and an empty `Notable Quotables` section is not retained when no verified example exists; the omitted section's search is disclosed under `Search Scope and Limitations`;
 - `References` is the penultimate section, contains every source actually cited, contains no unused study leads, distinguishes bibliography from `Search Scope and Limitations`, and is followed only by `Generation Metadata`;
 - `Generation Metadata` is the terminal section and unambiguously gives the final generation date in `YYYY-MM-DD` form, the AI model, and the product/interface-level AI environment;
 - the metadata is refreshed for the final generation event and excludes hostnames, usernames, paths, network addresses, container or session IDs, hardware identifiers, credentials, and tokens;
