@@ -85,6 +85,19 @@ Each weekly `main.tex` should follow this order.
 
    List the Missale Romanum 1962 temporal proper and any major source files or study witnesses used. Keep source notes honest about OCR quality and verification limits.
 
+11. Full Patristic and Saintly Texts
+
+   This must be the final section of each weekly document. Include the actual quotation text for selected Fathers, Doctors, and saints used earlier in the sheet. These are the "full quotes" for the excerpts cited in the witness material, not merely paraphrases.
+
+   Requirements:
+
+   - Place this section after Primary References.
+   - Use `\section*{Full Patristic and Saintly Texts}`.
+   - Prefer two to four quotations per week.
+   - Keep each quotation short enough to remain readable in the PDF.
+   - Attribute each quote by saint, work, and, when known, book/chapter/homily.
+   - If exact wording has not been verified, do not present it as a direct quote.
+
 ## Future Codex/GPT Notes
 
 When extending this project, preserve the structure above unless the user explicitly asks to change it. New weeks should feel like part of the same series.
@@ -97,6 +110,7 @@ Content standards:
 - Use the four senses as a disciplined interpretive framework, not as decorative labels.
 - Prefer short quotations. If exact wording matters, verify it from a reliable public-domain or official source and cite the work.
 - Distinguish quotation from paraphrase. Do not invent direct patristic quotations.
+- Put the selected direct quotations in the final `Full Patristic and Saintly Texts` section, even if a shorter form already appears in the witness table.
 - Make connections across the whole Mass: Introit, Collect, Epistle, Gradual/Alleluia when used, Gospel, Offertory, Secret, Communion, Postcommunion.
 - Keep tables readable. Add content, but avoid turning one cell into a full essay.
 - Regenerate PDFs with `make`, then run `make clean` before committing.
