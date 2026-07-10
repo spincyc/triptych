@@ -50,6 +50,8 @@ Immediately below the Propers map, without a separate section heading, a compact
 
 Both tables must fit together on page 1. Page 2 begins the deliberately nonuniform preparation module: a Sunday's symbols determine the teaching architecture; the template does not determine the content.
 
+The post-page-1 module is scoped inside the `deepstudy` environment. Its ordinary prose, lists, and box bodies use the document's 10-point `small` size, while the opening survey page remains unchanged and tables retain their own explicit sizes. This keeps sustained patristic analysis readable without letting normal body type dominate the page.
+
 ## Methodology
 
 ### 1. Establish the complete textual field
@@ -181,6 +183,7 @@ Before a guide is complete, verify that:
 - prompts are addressed to a preparing participant, not to a preacher;
 - the PDF builds twice without fatal errors or layout warnings;
 - every page is visually checked for overflow, split headings, unreadable cells, and excessive density.
+- the post-page-1 analysis uses the scoped `deepstudy` size; page 1 is not globally reduced.
 
 ## Build
 

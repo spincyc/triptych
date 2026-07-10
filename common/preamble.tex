@@ -84,6 +84,12 @@
 \newcommand{\witnessrow}[3]{#1 & #2 & #3\\}
 \newcommand{\sectionguard}{\Needspace{7\baselineskip}}
 
+% Keep the opening survey page compact but unchanged; sustained analysis uses
+% a slightly smaller reading size so longer patristic dossiers remain usable.
+\newenvironment{deepstudy}
+  {\begingroup\small}
+  {\par\endgroup}
+
 \newenvironment{threestable}[3]
 {\small\begin{longtable}{>{\bfseries\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.40\linewidth}}
 \toprule
