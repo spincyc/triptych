@@ -10,11 +10,18 @@
 \usepackage{tabularx}
 \usepackage{enumitem}
 \usepackage{needspace}
+\usepackage{multicol}
 \usepackage{xcolor}
 \usepackage{hyperref}
+\usepackage[most]{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,shapes.geometric}
 
 \definecolor{rubricred}{HTML}{8A1F11}
 \definecolor{linkblue}{HTML}{1F4E79}
+\definecolor{softblue}{HTML}{EEF4F8}
+\definecolor{softgold}{HTML}{FBF5E7}
+\definecolor{softgray}{HTML}{F4F4F2}
 
 \hypersetup{
   colorlinks=true,
@@ -62,10 +69,64 @@
 \newenvironment{witnessstable}
 {\small\begin{longtable}{>{\raggedright\arraybackslash}p{0.2\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.38\linewidth}}
 \toprule
-\textbf{Witness} & \textbf{Text / source status} & \textbf{Homiletic use}\\
+\textbf{Witness} & \textbf{Text / source status} & \textbf{Interpretive contribution}\\
 \midrule
 \endhead}
 {\bottomrule\end{longtable}}
 
 \newcommand{\witnessrow}[3]{#1 & #2 & #3\\}
 \newcommand{\sectionguard}{\Needspace{7\baselineskip}}
+
+\newenvironment{threestable}[3]
+{\small\begin{longtable}{>{\bfseries\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.40\linewidth}}
+\toprule
+\textbf{#1} & \textbf{#2} & \textbf{#3}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
+
+\newenvironment{fourstable}[4]
+{\footnotesize\begin{longtable}{>{\bfseries\raggedright\arraybackslash}p{0.15\linewidth}>{\raggedright\arraybackslash}p{0.23\linewidth}>{\raggedright\arraybackslash}p{0.25\linewidth}>{\raggedright\arraybackslash}p{0.27\linewidth}}
+\toprule
+\textbf{#1} & \textbf{#2} & \textbf{#3} & \textbf{#4}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
+
+\newtcolorbox{studybox}[1]{
+  enhanced,
+  breakable,
+  colback=softblue,
+  colframe=linkblue,
+  boxrule=0.6pt,
+  arc=2pt,
+  left=6pt,
+  right=6pt,
+  top=5pt,
+  bottom=5pt,
+  title={#1},
+  fonttitle=\bfseries,
+  coltitle=black
+}
+
+\newtcolorbox{massbox}[1]{
+  enhanced,
+  breakable,
+  colback=softgold,
+  colframe=rubricred,
+  boxrule=0.6pt,
+  arc=2pt,
+  left=6pt,
+  right=6pt,
+  top=5pt,
+  bottom=5pt,
+  title={#1},
+  fonttitle=\bfseries,
+  coltitle=black
+}
+
+\tikzset{
+  guide node/.style={draw=linkblue, rounded corners=2pt, fill=softblue, align=center, inner sep=5pt, font=\small},
+  guide emphasis/.style={draw=rubricred, rounded corners=2pt, fill=softgold, align=center, inner sep=5pt, font=\small},
+  guide arrow/.style={-{Stealth[length=2mm]}, thick, draw=linkblue}
+}
