@@ -168,7 +168,7 @@ Before a guide is complete, verify that:
 
 - all ten principal proper elements contribute to the guide;
 - page 1 contains only the title, any necessary source note, the nine-row Propers map, and the four-row `Sense` / `Synthesis` table;
-- both opening tables fit entirely on page 1, and the distinctive preparation module begins on page 2;
+- both opening tables share the same horizontal extents and first-column width, fit entirely on page 1, and the distinctive preparation module begins on page 2;
 - the later structure is fitted to this Sunday rather than copied mechanically from another week;
 - every diagram has an explicit reading order and adds information;
 - no visual block asks the reader to decode more than four primary stages or two simultaneous paths without a strong reason;
