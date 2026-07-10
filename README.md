@@ -135,7 +135,7 @@ Close with a Sunday-specific listening guide, set of retrieval questions, or exa
 
 | Sunday | Governing learning problem | Principal teaching forms |
 | --- | --- | --- |
-| Trinity | How divine depth, the one Name, sacramental participation, and universal mission belong together | Ring of praise, coordinate map, grammatical study, doctrinal guardrails |
+| Trinity | How mercy, salvation-historical wonder, the one baptismal Name, self-offering, and universal mission belong together | Blessing-before-mastery route, Chrysostom's Romans dossier, Psalm-and-Daniel chant study, three-Father baptismal rule, Secret syntax, Augustinian charity guardrails |
 | Second | How rescue and invitation widen space while truthful charity replaces evasive speech | Spatial journey, speech concordance, excuse matrix, Latin verb bridge |
 | Third | How mercy changes the gaze without cancelling repentance or vigilance | Perspective map, sheep/coin diptych, braided agency route, discernment pairs |
 | Fourth | How Christ's word orders creation, Church, and resistant will on different scales | Nested-scale matrix, vertical geography, Gospel speech-act sequence, Secret word study |
