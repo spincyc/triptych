@@ -4,9 +4,9 @@ This project builds printable preparation guides for advanced lay readers of the
 
 These are not homiletic sketches. They are layered study instruments for use before Mass: each guide helps a reader see how the appointed chants, orations, Epistle, Gospel, altar texts, and sacramental conclusion form one symbolic and theological whole.
 
-The guides are aids for liturgical study, prayerful preparation, and attentive participation. They are not critical editions, official liturgical texts, or substitutes for checking a printed missal and the cited primary sources.
+The guides are aids for liturgical study, prayerful preparation, and attentive participation. They are not critical editions, official liturgical texts, or substitutes for checking the cited primary sources and an edition-identified 1962 missal facsimile.
 
-**Editorial status:** source-audited working drafts. The local missal OCR and linked patristic translations have been checked for the claims presently made, but the Latin has not received a line-by-line printed-missal collation or an external theological review.
+**Editorial status:** source-audited working drafts. The linked patristic translations have been checked for the claims presently made, but the existing Latin has not uniformly received the public, line-by-line facsimile collation now required below or an external theological review.
 
 ## Reader and Use
 
@@ -56,7 +56,11 @@ Both tables must fit together on page 1.
 
 ### Pages 2--3: Condensed Authoritative Exposition
 
-Pages 2 and 3 contain exactly two pages of tight, source-grounded exposition. This section identifies the Sunday's governing theological and symbolic movement, gives the decisive scriptural and patristic witnesses, accounts for every appointed proper without reproducing the opening table, and states the essential interpretive guardrails. It contains no AI speculation. Edit the prose to fit two genuinely full, readable pages; do not satisfy the page requirement with padding, oversized headings, or artificial whitespace.
+Pages 2 and 3 form exactly two pages of source-grounded, scan-first synthesis, not a miniature continuous essay. A reader scanning only the governing thesis, orienting form, relationship-titled units, and callout titles must be able to recover the Sunday's central claim, direction of movement, decisive witnesses, and interpretive limits. Begin with a one- or two-sentence thesis and one compact sequence, paired track, relationship map, or comparison containing no more than four primary stages.
+
+Organize the remaining material into three to five short synthesis units keyed to that same architecture. Name every appointed proper within the staged movement or units, grouping texts by theological or liturgical function rather than reproducing ten isolated summaries. Make the decisive scriptural and patristic witnesses and the essential guardrails visibly locatable through information-bearing headings, tables, matrices, short labeled lists, or restrained callouts.
+
+Each unit must make a complete claim in full sentences, join evidence to interpretation, and show how it advances the whole movement; scanability must not reduce the argument to disconnected fragments. No prose paragraph may exceed 120 words, and no unit may contain more than two consecutive prose paragraphs without an information-bearing structured form. The section contains no AI speculation and must fill two genuinely readable pages without decorative repetition, padding, oversized headings, or artificial whitespace.
 
 ### Page 4 onward: Expansive Authoritative Exposition
 
@@ -104,7 +108,9 @@ The post-page-1 sections are scoped inside the `deepstudy` environment. Their or
 
 ### 1. Extract and verify the complete formulary
 
-Before interpreting anything, locate the formulary in the local 1962 temporal corpus and extract every one of the ten propers listed under `Page 1` above, together with any seasonal substitution or addition. Record the full appointed Latin or exact reference, the source of every chant verse, the immediate biblical context, the text's liturgical function, and any unresolved textual issue. Read the complete Epistle and Gospel contexts rather than only the printed pericopes. Treat suspicious OCR, spelling, punctuation, and references as unresolved until checked against a reliable printed missal.
+Before interpreting anything, create or locate the Sunday's repository-owned source record under `Stored Propers and Repository Layout`, then locate the formulary with the public witnesses under `Public Missal Sources and Editorial Status`. Identify it by its printed liturgical heading, rank, and place in the 1962 temporal cycle rather than by a civil date or an unverified filename. OCR and searchable transcriptions are finding aids only: use them to locate and provisionally transcribe the texts, then visually collate every Latin form, rubric, reference, and formulary boundary against the facsimile page image.
+
+Extract every one of the ten propers listed under `Page 1` above, together with any seasonal substitution or addition. Store the unedited Sunday-specific retrieval in `propers/retrieved.txt` and the visually checked text and provenance in `propers/verified.md`; both files are required, tracked project sources rather than disposable build products. Record the full appointed Latin or exact reference, the source of every chant verse, the immediate biblical context, the text's liturgical function, the facsimile's printed page number, its stable public URL and access date, and any unresolved textual issue. Read the complete Epistle and Gospel contexts rather than only the printed pericopes. Check an unclear reading against the secondary public image witness and report any disagreement; do not silently blend witnesses.
 
 No proper may disappear from the later interpretation because it is brief, difficult, or not itself a biblical pericope. Do not merge separate formularies. A displaced Sunday or ferial Mass may be mentioned in a clearly marked source note, but its texts do not become part of the appointed feast's synthesis.
 
@@ -158,17 +164,19 @@ Develop the source-grounded analysis fully, then condense its governing results 
 
 The two-page treatment must:
 
-- identify the Sunday's central theological and symbolic movement;
+- open with a one- or two-sentence governing thesis and a compact orienting form of no more than four primary stages;
+- develop three to five relationship-titled units that follow the same vocabulary and order as the orienting form;
 - include the decisive scriptural, patristic, and saintly witnesses;
-- account for every appointed proper without becoming another catalogue;
-- preserve necessary disagreements and doctrinal guardrails;
-- use tight, source-governed prose with no speculative claim.
+- account for every appointed proper in functional groups without becoming another catalogue;
+- make necessary disagreements and doctrinal guardrails findable at a glance;
+- keep each prose paragraph within 120 words and break up every run of more than two paragraphs with an information-bearing structure;
+- use concise, source-governed, syntactically complete claims with no speculative material or telegraphic fragments.
 
 The expansive treatment supplies the detailed exegesis, source comparisons, lexical work, distinctions, and sacramental development behind that synthesis. The condensed section states the architecture and leading conclusions; the expansive section demonstrates, complicates, and qualifies them. A witness may be named compactly in the two-page synthesis and treated fully later, but quotation, extended paraphrase, evidence, and caveat receive one fullest home rather than being duplicated.
 
 ### 6. Assemble the guide in the required order
 
-Assemble the guide according to `Required Weekly Document Order`. Force the boundary after page 3, then edit to make both condensed pages genuinely full and readable. Internal headings, tables, source cards, and diagrams may vary with the Sunday, but the macro-order may not.
+Assemble the guide according to `Required Weekly Document Order`. Force the boundary after page 3, then edit to make both condensed pages genuinely full, readable, and scan-first. The condensed section requires one compact orienting form; its internal headings, tables, matrices, source cards, short lists, and diagrams may otherwise vary with the Sunday, but the macro-order may not.
 
 ### 7. Perform a final depth-and-clarity edit
 
@@ -179,6 +187,7 @@ Read the entire guide linearly and make a claim-by-claim pass before the final b
 - replace several weak analogies with the strongest defensible connection;
 - merge thin subsections and delete links stretched beyond their textual or sourced support;
 - give every paragraph one necessary task: evidence, interpretation, connection, or guardrail;
+- scan only the condensed thesis, visual labels, unit titles, and callout titles; together they must recover the central claim, direction of movement, decisive witnesses, and interpretive limits;
 - sharpen transitions, define difficult distinctions, and preserve genuine disagreement;
 - verify every attribution, locus, quotation, Latin form, biblical reference, and authority label;
 - confirm that every proper contributes and that the Secret and Postcommunion are treated substantially;
@@ -188,7 +197,7 @@ Finally, compile twice and visually inspect every page. Confirm the exact sectio
 
 ## Analytical and Visual Forms
 
-Use visual and analytical forms selectively:
+Use visual and analytical forms selectively. The condensed exposition is the exception in requiring one compact orienting form, but its type must be chosen for the actual Sunday rather than copied mechanically:
 
 | Representation | Best use |
 | --- | --- |
@@ -229,14 +238,47 @@ These examples show how the internal teaching forms may respond to a Sunday's ma
 
 The cumulative movement is from divine gift to embodied discernment: the Trinity is adored, charity answers invitation, mercy finds the lost, Christ's word orders mission, reconciliation makes sacrifice truthful, baptismal life is fed, and sacramental medicine produces holy fruit.
 
-## Source Corpus and Editorial Status
+## Stored Propers and Repository Layout
 
-The Mass proper references are keyed to the local corpus at:
+Every Sunday has its own numbered directory, and its guide and source record live together. Use the existing naming pattern and never place multiple Sundays' propers in one shared source file:
 
-- `../liturgy-history/versions/1962-missale-romanum-latin/sections/proper/011-proprium-de-tempore-after-ordinary.md`
-- `../liturgy-history/versions/1962-missale-romanum-latin/metadata.json`
+```text
+NN-sunday-name/
+  main.tex
+  propers/
+    retrieved.txt
+    verified.md
+```
 
-The Latin source is OCR. It is suitable for locating formularies, sequence, incipits, and references, but its spelling and punctuation are not publication text. Full Latin must be checked against a reliable printed 1962 missal before publication.
+`retrieved.txt` preserves the Sunday-specific text exactly as pulled from the public machine-readable finding aid, including OCR errors and enough heading or boundary text to identify the formulary. Do not silently clean this file. Do not commit an entire third-party missal, bulk OCR dump, or page-image cache in place of the focused Sunday extract.
+
+`verified.md` is the repository's reviewed proper record. It contains the ten propers in liturgical order, any seasonal substitution or addition, and a provenance block with at least:
+
+```text
+Missal edition:
+Printed formulary heading and rank:
+Retrieval URL and source identifier:
+Retrieval date:
+Printed pages and digital pages or leaves:
+Retrieved source-file checksum, when available:
+Facsimile verification URL:
+Verification status and date:
+Unresolved discrepancies:
+```
+
+Both files must be added to Git with the Sunday guide. Corrections, refreshed retrievals, source substitutions, and newly resolved discrepancies are normal reviewed changes: update the provenance fields, explain the reason in the commit, and preserve the earlier state in Git history. The `propers/` directory must never be ignored, regenerated only at build time, or treated as an optional personal cache.
+
+## Public Missal Sources and Editorial Status
+
+This repository has no required sibling corpus, private checkout, or fixed local source path. Use this public-first source hierarchy:
+
+1. **Facsimile baseline:** the Church Music Association of America's [complete resource list](https://churchmusicassociation.org/resources/resource-list-complete/) links a public [scan of the 1962 *Missale Romanum*](https://media.churchmusicassociation.org/pdf/missale62.pdf). Use the printed page images as the baseline for Latin text, rubrics, rank, references, and formulary boundaries. Cite the printed missal page number, not only the PDF page index.
+2. **Machine-readable finding aid:** the Internet Archive item [*Missale Romanum* (1962)](https://archive.org/details/MissaleRomanum1962RomanMissalColorLatin) provides [downloadable full-text OCR](https://archive.org/download/MissaleRomanum1962RomanMissalColorLatin/Missale-Romanum-1962-Roman-Missal-color-latin_djvu.txt). It is suitable for searching headings, sequence, incipits, and references, but not as publication text.
+3. **Secondary image witness:** the same Internet Archive item provides a color scan in its browser reader and download options. Consult those page images when the baseline scan is unclear. Its OCR and its page images are derivatives of the same item, so comparing those two alone is not an independent collation.
+
+A browser is sufficient; no private or machine-specific corpus is required. Fetch the public witnesses on demand and commit only the focused Sunday records described above; do not vendor the complete scans or bulk OCR in this repository, and observe the source sites' terms governing redistribution. Contributors may keep a larger offline cache wherever convenient, but it is not the project source record. If a link becomes unavailable, substitute another complete, edition-identified public facsimile of the 1962 missal, update the Sunday provenance, disclose the substitution in `References` and `Search Scope and Limitations`, and preserve unresolved differences instead of silently harmonizing them.
+
+Guides created before this workflow may retain historical source notes. Those notes record provenance, not a dependency future contributors must reproduce. When such a guide is substantially revised, re-collate its Latin against the public facsimile workflow and replace machine-specific source references.
 
 Psalm citations follow the Vulgate/Septuagint numbering printed in the missal. Bibles based on the Hebrew/Masoretic numbering normally number Psalms 10--148 one higher; the missal's Psalm 17, for example, is Psalm 18 in most modern English Bibles.
 
@@ -253,10 +295,15 @@ Public-domain translations linked in `References` are working study editions, no
 
 Before a guide is complete, verify that:
 
+- the Sunday has its own numbered directory containing Git-tracked `propers/retrieved.txt` and `propers/verified.md`, the former preserves the focused pull without silent cleanup, and the latter contains all required provenance and verification fields;
+- the missal witnesses are public and edition-identified, every published Latin form has been visually checked against a facsimile page, and `References` records printed pages, stable URLs, access dates, substitutions, and unresolved discrepancies without machine-specific paths;
 - all appointed principal propers (ten in the present set, with any seasonal substitutions or additions where applicable) have been extracted, verified, and made to contribute to the guide;
 - page 1 contains only the title, any necessary source note, the complete Propers map (ten rows in the present set), and the four-row `Sense` / `Synthesis` table;
 - both opening tables share the same horizontal extents and first-column width and fit entirely on page 1;
 - pages 2 and 3 contain exactly two full, readable pages of condensed authoritative exposition and no AI speculation;
+- the condensed section begins with a one- or two-sentence thesis and a compact orienting form of no more than four primary stages, then uses three to five relationship-titled units keyed to the same argumentative spine;
+- every proper appears in a functional grouping, decisive witnesses and guardrails are visibly labeled, no prose paragraph exceeds 120 words, and no unstructured prose run exceeds two paragraphs;
+- a signpost-only scan of the condensed section recovers its central claim, direction of movement, decisive witnesses, and interpretive limits, while the full text remains a continuous argument rather than disconnected fragments;
 - the expansive authoritative exposition begins on page 4, gives the evidence and qualifications behind the condensation, and does not duplicate it paragraph for paragraph;
 - every original AI analogy, typological extension, compositional inference, or unsourced cross-proper connection appears only in `Speculative Exposition`;
 - `Notable Quotables`, when included, appears immediately before `References` and contains only verified cultural uses of wording from the appointed propers or their underlying passages;
@@ -290,4 +337,4 @@ PDFs are written to `build/`. Use `make clean` to remove LaTeX intermediates and
 
 Treat the required document order, seven-step workflow, and quality gates above as acceptance criteria, not suggestions. Research and classify the evidence before drafting. If direct patristic commentary cannot be found, say so and use clearly labeled doctrinal illumination rather than pretending that a saint commented on the proper itself.
 
-Do not preserve weak material merely to maintain length, and do not pad the two-page condensation. Within the fixed macro-order, allow the Sunday's actual texts and witnesses to determine the internal architecture. Prefer fewer strong symbolic axes to many attractive but thin connections. Refresh `Generation Metadata` for the final generation event, build and inspect the PDF, run `make clean`, and commit each weekly creation or substantial revision as its own coherent change in the nested `liturgical-year` repository.
+Do not preserve weak material merely to maintain length, and do not pad the two-page condensation. Within the fixed macro-order, allow the Sunday's actual texts and witnesses to determine the internal architecture. Prefer fewer strong symbolic axes to many attractive but thin connections. Refresh `Generation Metadata` for the final generation event, build and inspect the PDF, run `make clean`, and commit each weekly creation or substantial revision together with its stored `propers/` source record as one coherent change in this repository.
