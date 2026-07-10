@@ -56,3 +56,13 @@
 \textbf{Thread} & \textbf{Synthesis}\\
 \midrule}
 {\end{longtable}}
+
+\newenvironment{witnessstable}
+{\small\begin{longtable}{>{\raggedright\arraybackslash}p{0.2\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.38\linewidth}}
+\toprule
+\textbf{Witness} & \textbf{Short text} & \textbf{Homiletic use}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
+
+\newcommand{\witnessrow}[3]{#1 & #2 & #3\\}

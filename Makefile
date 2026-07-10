@@ -23,6 +23,7 @@ build:
 
 build/%.pdf: %/main.tex $(COMMON) | build
 	$(PDFLATEX) -interaction=nonstopmode -halt-on-error -output-directory=build $<
+	$(PDFLATEX) -interaction=nonstopmode -halt-on-error -output-directory=build $<
 	mv build/main.pdf $@
 
 check-tools:
