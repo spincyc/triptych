@@ -72,15 +72,9 @@ After the authoritative exposition, place every original AI-generated analogy, c
 
 ### Notable Quotables
 
-When verified examples exist, place a section titled exactly `Notable Quotables` immediately before `References`. Survey whether wording from any appointed proper or its underlying biblical passage appears in literature, poetry, drama, film, television, music, advertising, comedy, memes, or other popular culture. Give particular prominence to quotations that are incorrect, humorously displaced, or used with an ironic force different from their scriptural or liturgical setting.
+When verified examples exist, place a section titled exactly `Notable Quotables` immediately before `References`. Treat it as a light cultural interlude, not another scholarly exposition. Survey whether wording from any appointed proper or its underlying biblical passage appears in literature, poetry, drama, film, television, music, advertising, comedy, memes, or other popular culture. Give particular prominence to quotations that are incorrect, humorously displaced, or used with an ironic force different from their scriptural or liturgical setting.
 
-For every entry, identify:
-
-- the proper and the quoted biblical or liturgical wording;
-- the cultural work, creator, date, and a sufficiently precise scene, chapter, page, episode, track, or other location;
-- whether the use is an exact quotation, adaptation, recognized allusion, or misquotation;
-- how the quotation functions in the work, explicitly labeling especially notable cases as `Misquoted`, `Humorous`, or `Ironic`;
-- any important contrast between the cultural use and the passage's original context.
+Aim for two to four examples, preferably drawn from different works or media. One strong example is acceptable only when no second candidate survives verification; never pad the section with a weak connection. Present each example as one compact list item of no more than two sentences and normally 25–60 words. Its information-bearing lead must identify the proper or wording, the classification (`Exact quotation`, `Adaptation`, `Recognized allusion`, `Sampled`, or `Misquotation`), the work, creator, date, and a sufficiently precise scene, chapter, page, episode, track, or other location. Follow with only the short payoff: the joke, irony, displacement, or memorable use. Do not supply a full theological justification or an extended comparison with the passage's original context; mention that context only when the humor or irony would otherwise be unclear.
 
 Verify the wording and context in the primary cultural work or a reliable edition, transcript, or recording; quotation websites and memory are only leads. Do not turn a coincidental phrase or uncertain AI-proposed allusion into a factual example: uncertain connections remain in `Speculative Exposition`. Keep excerpts brief, quote song lyrics especially sparingly, and never reproduce substantial copyrighted text. Cite every cultural work or verification source in `References`. If no verified example is found after a reasonable search, omit `Notable Quotables` rather than inventing an entry or retaining an empty section, and record the attempted cultural-reception search in `Search Scope and Limitations`.
 
@@ -313,8 +307,8 @@ Before a guide is complete, verify that:
 - a signpost-only scan of the condensed section recovers its central claim, direction of movement, decisive witnesses, and interpretive limits, while the full text remains a continuous argument rather than disconnected fragments;
 - the expansive authoritative exposition begins on page 4, gives the evidence and qualifications behind the condensation, and does not duplicate it paragraph for paragraph;
 - every original AI analogy, typological extension, compositional inference, or unsourced cross-proper connection appears only in `Speculative Exposition`;
-- `Notable Quotables`, when included, appears immediately before `References` and contains only verified cultural uses of wording from the appointed propers or their underlying passages;
-- every cultural entry identifies the work and precise location, distinguishes exact quotation, adaptation, recognized allusion, and misquotation, emphasizes humorous or ironic use where present, and is cited in `References`;
+- `Notable Quotables`, when included, appears immediately before `References`, normally contains two to four verified examples from varied works or media, and never adds a weak item merely to reach that range;
+- every cultural entry is one compact list item of no more than two sentences and normally 25–60 words; its lead identifies the proper or wording, classification, work, creator, date, and precise location, while its remainder gives only the brief joke, irony, displacement, or memorable use rather than a full justification;
 - uncertain cultural parallels remain in `Speculative Exposition`, copyrighted excerpts remain brief, and an empty `Notable Quotables` section is not retained when no verified example exists; the omitted section's search is disclosed under `Search Scope and Limitations`;
 - `References` is the penultimate section, contains every source actually cited, contains no unused study leads, distinguishes bibliography from `Search Scope and Limitations`, and is followed only by `Generation Metadata`;
 - `Generation Metadata` is the terminal section and unambiguously gives the final generation date in `YYYY-MM-DD` form, the full verbatim AI model label, every exposed model qualifier, the AI agent and its role, every exposed and accurately labeled agent/client/build version, and the product/interface-level AI environment;
