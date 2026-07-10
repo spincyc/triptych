@@ -2,7 +2,7 @@
 
 This project builds printable preparation guides for advanced lay readers of the traditional Roman Mass propers. The present set covers Trinity Sunday and the Second through Seventh Sundays after Pentecost in the 1962 temporal cycle.
 
-These are not homiletic sketches. They are layered study instruments for use before Mass: each guide helps a reader see how the appointed chants, orations, Epistle, Gospel, altar texts, and sacramental conclusion form one symbolic and theological whole.
+These are not homiletic sketches. They are layered study instruments for use before Mass: each guide places the appointed Scriptures in their human and salvation-historical settings, then helps a reader see how the chants, orations, Epistle, Gospel, altar texts, and sacramental conclusion form one symbolic and theological whole.
 
 The guides are aids for liturgical study, prayerful preparation, and attentive participation. They are not critical editions, official liturgical texts, or substitutes for checking the cited primary sources and an edition-identified 1962 missal facsimile.
 
@@ -14,10 +14,10 @@ The catalog uses the 52 Sunday identities of the 1962 Roman temporal cycle, rota
 
 The status codes record evidence, not aspirational quality scores:
 
-- **Generation:** `G0` not generated; `G1` legacy AI-assisted generation whose exact model, agent, and runtime were not recorded; `G2` `gpt-5.6-sol`, `reasoning=ultra`, OpenAI Codex agents, Codex CLI `0.144.1`, API workspace.
+- **Generation:** `G0` not generated; `G1` legacy AI-assisted generation whose exact model, agent, and runtime were not recorded; `G2` `gpt-5.6-sol`, `reasoning=ultra`, OpenAI Codex agents, Codex CLI `0.144.1`, API workspace; `G3` substantial revision by OpenAI Codex agents on a GPT-5-based runtime, with the exact model identifier and reasoning profile unexposed, Codex CLI `0.144.1`, API workspace.
 - **Text/source evaluation:** `S0` none; `S1` internal source check recorded in the guide, but repository propers and public-facsimile recollation remain pending; `S2` stored retrieval and verified propers, all ten elements facsimile-collated, with an internal source-and-claim audit.
 - **Theological evaluation:** `T0` no independent theological review recorded; `T1` independent theological review completed against the identified revision. No present guide has reached `T1`.
-- **Production evaluation:** `Q0` no artifact; `Q1` tracked PDF using the legacy architecture, without a durable current-specification QA attestation; `Q2` current macro-order, two-pass build, warning check, and visual page inspection. The `Q` prefix denotes production QA.
+- **Production evaluation:** `Q0` no artifact; `Q1` tracked PDF using the legacy architecture, without a durable specification-level QA attestation; `Q2` two-pass, warning-checked, visually inspected PDF under the source-audited macro-order that preceded `In Illo Tempore...`; `Q3` current macro-order including the one-page heterogeneous `In Illo Tempore...` table immediately after page 1, two-pass build, warning check, and visual page inspection. The `Q` prefix denotes production QA.
 
 | ID | Temporal Sunday identity | Guide state | Generation | Text/source eval. | Theology | Production |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -41,7 +41,7 @@ The status codes record evidence, not aspirational quality scores:
 | 18 | Fourth Sunday after Pentecost | Source-audited working draft ([source](18-fourth-after-pentecost/main.tex); [propers](18-fourth-after-pentecost/propers/verified.md); [scope](18-fourth-after-pentecost/research/scope.md); [PDF](build/18-fourth-after-pentecost.pdf)) | G2 | S2 | T0 | Q2 |
 | 19 | Fifth Sunday after Pentecost | Legacy draft ([source](19-fifth-after-pentecost/main.tex); [PDF](build/19-fifth-after-pentecost.pdf)) | G1 | S1 | T0 | Q1 |
 | 20 | Sixth Sunday after Pentecost | Legacy draft ([source](20-sixth-after-pentecost/main.tex); [PDF](build/20-sixth-after-pentecost.pdf)) | G1 | S1 | T0 | Q1 |
-| 21 | Seventh Sunday after Pentecost | Source-audited working draft ([source](21-seventh-after-pentecost/main.tex); [propers](21-seventh-after-pentecost/propers/verified.md); [scope](21-seventh-after-pentecost/research/scope.md); [PDF](build/21-seventh-after-pentecost.pdf)) | G2 | S2 | T0 | Q2 |
+| 21 | Seventh Sunday after Pentecost | Historically situated, source-audited working draft ([source](21-seventh-after-pentecost/main.tex); [propers](21-seventh-after-pentecost/propers/verified.md); [scope](21-seventh-after-pentecost/research/scope.md); [PDF](build/21-seventh-after-pentecost.pdf)) | G3 | S2 | T0 | Q3 |
 | 22 | Eighth Sunday after Pentecost | Not started | G0 | S0 | --- | Q0 |
 | 23 | Ninth Sunday after Pentecost | Not started | G0 | S0 | --- | Q0 |
 | 24 | Tenth Sunday after Pentecost | Not started | G0 | S0 | --- | Q0 |
@@ -92,18 +92,19 @@ Fixed-date and local feasts that may supersede a second-class Sunday are outside
 The assumed reader already knows the basic order of Mass and can follow biblical, doctrinal, sacramental, and patristic connections. The guides therefore emphasize relationships that are easy to miss when the propers are read separately:
 
 - repeated words, images, and grammatical forms;
+- authors, first audiences, composition places and moments, and the passages' place in Israel's and salvation history;
 - the movement from entrance through proclamation, offering, Communion, and continuing effect;
 - distinctions among literal context, patristic exegesis, canonical typology, and editorial synthesis;
 - doctrinal guardrails that prevent an attractive symbol from being pressed too far;
 - questions and visual cues that can be carried into Mass without turning preparation into a script.
 
-The guide is a companion to an open hand missal, not a replacement for it. Research and repository records retain the complete appointed texts, but the PDF normally uses an incipit, reference, or decisive clause rather than reproducing a complete oration. Translate or parse a quoted fragment when its wording carries the argument or when common hand-missal renderings may obscure the point.
+The guide is a companion to an open hand missal, not a replacement for it. Research and repository records retain the complete appointed texts, but the PDF normally uses an incipit, reference, or decisive clause rather than reproducing a complete proper. `In Illo Tempore...` identifies every distinct directly appointed biblical passage by citation only and does not reproduce its wording; composed orations remain selective throughout. Translate or parse a quoted fragment elsewhere when its wording carries the argument or when common hand-missal renderings may obscure the point.
 
-The intended rhythm is **survey, authoritative synthesis, authoritative depth, proposed synthesis, verification**: survey the Propers map and four senses, read the two-page authoritative condensation, enter the expansive sourced analysis, consider the separately labeled speculative exposition, and verify the witnesses in the final references.
+The intended rhythm is **survey, historical situation, authoritative synthesis, authoritative depth, proposed synthesis, verification**: survey the Propers map and four senses, place the directly quoted Scriptures in their authors' lives or recoverable compositional horizons, first audiences, geography, and salvation-historical moment, read the two-page authoritative condensation, enter the expansive sourced analysis, consider the separately labeled speculative exposition, and verify the witnesses in the final references.
 
 ## Required Weekly Document Order
 
-Every new or substantially revised guide follows one fixed macro-order. The content and internal teaching forms remain adaptive to the Sunday, but the section sequence does not. After page 1, use the exact major headings `Condensed Authoritative Exposition`, `Expansive Authoritative Exposition`, `Speculative Exposition`, `References`, and `Generation Metadata`; insert `Notable Quotables` immediately before `References` when verified examples exist.
+Every new or substantially revised guide follows one fixed macro-order. The content and internal teaching forms remain adaptive to the Sunday, but the section sequence does not. Immediately after page 1, use the exact major headings `In Illo Tempore...`, `Condensed Authoritative Exposition`, `Expansive Authoritative Exposition`, `Speculative Exposition`, `References`, and `Generation Metadata`; insert `Notable Quotables` immediately before `References` when verified examples exist.
 
 ### Page 1: Propers map and four senses
 
@@ -137,17 +138,33 @@ The four syntheses must remain grounded in the appointed texts or documented inh
 
 Both tables must fit together on page 1.
 
-### Pages 2--3: Condensed Authoritative Exposition
+### Page 2: In Illo Tempore...
 
-Pages 2 and 3 form exactly two pages of source-grounded, scan-first synthesis, not a miniature continuous essay. A reader scanning only the governing thesis, orienting form, relationship-titled units, and callout titles must be able to recover the Sunday's central claim, direction of movement, decisive witnesses, and interpretive limits. Begin with a one- or two-sentence thesis and one compact sequence, paired track, relationship map, or comparison containing no more than four primary stages.
+`In Illo Tempore...` occupies exactly one page immediately after page 1 and ends with a forced page break. It is an authoritative historical orientation to the biblical words appointed for the day, not a speculative reconstruction.
+
+Present every distinct directly appointed biblical passage in one heterogeneous table. Sort the dossiers by the books' canonical order in the Catholic Bible, then by ascending chapter and verse within a book; do not use liturgical order. Consolidate a repeated passage into one dossier while naming every proper in which it occurs. Do not treat loose biblical echoes in composed orations as direct quotations.
+
+Each dossier ordinarily consists of a composition-metadata row and a full-width explanatory row. A Gospel dossier inserts one additional narrated-event row between them.
+
+- Use exactly the four column headings `Proper`, `Citation`, `Location`, and `Date`. The composition row contains the full name of the proper or propers, the biblical citation, the traditional composition location, and the approximate traditional year or date range. Its citation cell contains no scriptural text; use `c.` or a range rather than false precision. Because the short headings are neutral, the one-sentence interpretive key must state that a proper row's `Location` and `Date` are traditional composition metadata. Place a horizontal rule immediately after every row containing a name and citation.
+- Immediately after the Gospel's composition row, add a four-field row whose first cell is `Narrated event`, whose second contains the locating narrative citations without scriptural text, and whose last two cells give the narrated location and approximate event date. Follow it with the same horizontal rule. This row distinguishes where and when Jesus speaks from where and when the Evangelist writes.
+- The explanatory row spans the full table width and begins directly with its prose; do not prefix it with `Description.` In compact prose, identify the traditional author, the addressee or first audience, the relevant point in the author's life or the communal compositional horizon, the narrated setting when it is not already supplied in the Gospel event row, and the passage's place in Israel's history and the larger story of salvation. Distinguish traditional placement from historical judgment and state material uncertainty or responsible alternatives.
+
+Where Psalm numbering differs, give the missal's Vulgate/Septuagint number first and the common modern number in parentheses. Give secure ancient places with present-day geographic equivalents in the description when useful. Use edition-identified biblical introductions, commentaries, historical studies, and geographic references, with exact citations sufficient to verify the claims. Record materially competing judgments and unresolved questions in `research/scope.md`, cite every source actually used in `References`, and avoid duplicating this background later unless the expansive argument requires a particular detail.
+
+The table must remain readable at ordinary print size while fitting with the section heading and any one-sentence interpretive key on page 2. Do not add a second table, biblical quotations, a concluding recap box, or prose outside the table that forces a spill page.
+
+### Next two pages: Condensed Authoritative Exposition
+
+The two pages immediately following `In Illo Tempore...` form exactly two pages of source-grounded, scan-first synthesis, not a miniature continuous essay. A reader scanning only the governing thesis, orienting form, relationship-titled units, and callout titles must be able to recover the Sunday's central claim, direction of movement, decisive witnesses, and interpretive limits. Begin with a one- or two-sentence thesis and one compact sequence, paired track, relationship map, or comparison containing no more than four primary stages.
 
 Organize the remaining material into three to five short synthesis units keyed to that same architecture. Name every appointed proper within the staged movement or units, grouping texts by theological or liturgical function rather than reproducing ten isolated summaries. End each unit heading with the parenthetical italic abbreviations of its governing propers. Make the decisive evidence and essential guardrails visibly locatable through information-bearing headings, tables, matrices, short labeled lists, or restrained callouts.
 
 Each unit must make a complete claim in full sentences, join evidence to interpretation, and show how it advances the whole movement; scanability must not reduce the argument to disconnected fragments. No prose paragraph may exceed 120 words, and no unit may contain more than two consecutive prose paragraphs without an information-bearing structured form. The section contains no AI speculation and must fill two genuinely readable pages without decorative repetition, padding, oversized headings, or artificial whitespace.
 
-### Page 4 onward: Expansive Authoritative Exposition
+### Thereafter: Expansive Authoritative Exposition
 
-The expansive section begins on page 4. It supplies the detailed scriptural exegesis, patristic and saintly comparisons, lexical work, doctrinal distinctions, sacramental development, genuine disagreements, and source qualifications behind the condensed account. It deepens and demonstrates the first treatment rather than repeating it paragraph for paragraph.
+The expansive section begins on a new page immediately after the two-page condensed section. It supplies the detailed scriptural exegesis, patristic and saintly comparisons, lexical work, doctrinal distinctions, sacramental development, genuine disagreements, and source qualifications behind the condensed account. It deepens and demonstrates the first treatment rather than repeating it paragraph for paragraph.
 
 ### Speculative Exposition
 
@@ -165,7 +182,7 @@ Verify the wording and context in the primary cultural work or a reliable editio
 
 ### References
 
-`References` is the final scholarly section and immediately precedes `Generation Metadata`. Its bibliographic entries contain only sources actually used, with sufficiently exact works, books, homilies, chapters, or sections to permit verification; distinguish primary sources from any secondary work actually relied upon. End with a compact, labeled `Search Scope and Limitations` panel giving only the text-verification status, the principal direct and illuminating source scope, material limitations that affect the argument, and pointers to `propers/verified.md` for the text audit and `research/scope.md` for the research survey. Retrieval mechanics, checksums, query logs, discarded leads, and repeated verification explanations belong in those repository records rather than the reader-facing PDF. A limitation that changes a particular claim remains beside that claim. No conclusion, listening guide, or other expository prose follows `References`.
+`References` is the final scholarly section and immediately precedes `Generation Metadata`. Its bibliographic entries contain only sources actually used, with sufficiently exact works, books, homilies, chapters, or sections to permit verification; distinguish primary sources from any secondary work actually relied upon. Every historical dossier cites the sources governing its authorship, date, place, audience, and chronology, distinguishing traditional attribution from historical judgment when both are reported. End with a compact, labeled `Search Scope and Limitations` panel giving only the text-verification status, the principal direct and illuminating source scope, material limitations that affect the argument, and pointers to `propers/verified.md` for the text audit and `research/scope.md` for the research survey. Retrieval mechanics, checksums, query logs, discarded leads, and repeated verification explanations belong in those repository records rather than the reader-facing PDF. A limitation that changes a particular claim remains beside that claim. No conclusion, listening guide, or other expository prose follows `References`.
 
 ### Generation Metadata
 
@@ -185,7 +202,7 @@ Describe the AI environment at the product/interface level, for example `OpenAI 
 
 Do not include machine-specific or identifying operational details such as hostname, username, absolute filesystem paths, IP or MAC addresses, container or session identifiers, hardware identifiers, credentials, or access tokens. Refresh this metadata whenever the guide is substantially revised or its final PDF is regenerated by a different model or environment.
 
-The post-page-1 sections are scoped inside the `deepstudy` environment. Their ordinary prose, lists, and box bodies use the document's 10-point `small` size, while the opening survey page remains unchanged and tables retain their own explicit sizes. This keeps sustained patristic analysis readable without letting normal body type dominate the page.
+All sections after page 1, beginning with `In Illo Tempore...`, are scoped inside the `deepstudy` environment. Their ordinary prose, lists, and box bodies use the document's 10-point `small` size, while the opening survey page remains unchanged and tables retain their own explicit sizes. This keeps sustained historical and patristic analysis readable without letting normal body type dominate the page.
 
 ## Required Weekly Research and Writing Workflow for AI
 
@@ -193,13 +210,19 @@ The post-page-1 sections are scoped inside the `deepstudy` environment. Their or
 
 Before interpreting anything, create or locate the Sunday's repository-owned source record under `Stored Propers and Repository Layout`, then locate the formulary with the public witnesses under `Public Missal Sources and Editorial Status`. Identify it by its printed liturgical heading, rank, and place in the 1962 temporal cycle rather than by a civil date or an unverified filename. OCR and searchable transcriptions are finding aids only: use them to locate and provisionally transcribe the texts, then visually collate every Latin form, rubric, reference, and formulary boundary against the facsimile page image.
 
-Extract every one of the ten propers listed under `Page 1` above, together with any seasonal substitution or addition. Store the unedited Sunday-specific retrieval in `propers/retrieved.txt` and the visually checked text and provenance in `propers/verified.md`; both files are required, tracked project sources rather than disposable build products. Record the full appointed Latin or exact reference, the source of every chant verse, the immediate biblical context, the text's liturgical function, the facsimile's printed page number, its stable public URL and access date, and any unresolved textual issue. Read the complete Epistle and Gospel contexts rather than only the printed pericopes. Check an unclear reading against the secondary public image witness and report any disagreement; do not silently blend witnesses.
+Extract every one of the ten propers listed under `Page 1` above, together with any seasonal substitution or addition. Store the unedited Sunday-specific retrieval in `propers/retrieved.txt` and the visually checked text and provenance in `propers/verified.md`; both files are required, tracked project sources rather than disposable build products. Record the full appointed Latin or exact reference, the source of every chant verse, the immediate biblical context, the text's liturgical function, the facsimile's printed page number, its stable public URL and access date, and any unresolved textual issue. Read the complete literary contexts of every directly appointed biblical passage, not only the printed Epistle and Gospel pericopes. Check an unclear reading against the secondary public image witness and report any disagreement; do not silently blend witnesses.
 
-Study every oration and chant in full during research. Publication in the guide remains selective because the reader is expected to have a hand missal open: use the incipit or the smallest clause needed for the analysis, while the complete verified wording remains in `propers/verified.md`.
+Study every oration and chant in full during research. Publication remains selective because the reader is expected to have a hand missal open: `In Illo Tempore...` gives citations without biblical wording, and the later analysis uses the incipit or smallest clause it needs, while the complete verified wording remains in `propers/verified.md`.
 
 No proper may disappear from the later interpretation because it is brief, difficult, or not itself a biblical pericope. Do not merge separate formularies. A displaced Sunday or ferial Mass may be mentioned in a clearly marked source note, but its texts do not become part of the appointed feast's synthesis.
 
-### 2. Conduct a deep patristic and saintly source study
+### 2. Establish the historical coordinates of every direct scriptural passage
+
+Inventory every distinct directly appointed biblical passage before drafting. Read its complete literary context and research its traditional authorship, date and composition place; its first audience and biographical or communal horizon; its narrated setting; the strongest historical judgments and alternatives; and its place in Israel's and salvation history. Distinguish the traditional metadata requested by the table from historical judgment, and distinguish the writer's location from the events narrated and the recipients' location.
+
+Use identified, edition-specific scholarship and preserve calibrated uncertainty. Anonymous or composite texts receive no invented authorial biography; disputed places and dates are reported as ranges or alternatives in the explanatory row even when the composition row supplies a traditional placement. Record the governing sources, materially competing judgments, geographic identifications, and unresolved questions in `research/scope.md`. Draft the dossiers in canonical order, add the Gospel narrated-event row, and fit the complete `In Illo Tempore...` table to one page before producing the condensed exposition.
+
+### 3. Conduct a deep patristic and saintly source study
 
 Research every appointed biblical passage and the theological substance of every oration. Search as broadly as the accessible corpus permits for:
 
@@ -215,7 +238,7 @@ Source selection is claim-driven, not quota-driven. No fixed number or category 
 
 The instruction to seek “all” patristic and saintly exegesis means the broadest feasible survey relevant to the claims, not a false assertion of universal exhaustiveness. Preserve corpora, language, search, and negative-result details in `research/scope.md`. In the PDF, identify a missing direct witness when that absence affects the argument or when doctrinal illumination first takes its place; do not repeat the same provenance caveat throughout the exposition. Summarize only material boundaries in the compact `Search Scope and Limitations` panel.
 
-### 3. Trace the symbolic unity of the entire formulary
+### 4. Trace the symbolic unity of the entire formulary
 
 After studying the texts individually, identify the week's governing relationship and the deepest connections among the propers and commentaries. Examine repeated words, grammatical forms, speakers, actions, images, biblical types, sacramental movements, moral transformations, eschatological ends, and convergences or tensions among the witnesses. Ask what an attentive, well-catechized reader most needs help seeing; the answer should be a relationship rather than a generic topic.
 
@@ -234,20 +257,21 @@ entrance condition
 
 The analysis need not repeat ten prose rows. It may encode the sequence in a diagram, paired track, timeline, matrix, or annotated map, provided no proper disappears from the interpretation. Make the Gradual, Alleluia, Secret, and Postcommunion do real interpretive work. A cross-passage connection may enter the authoritative exposition only when it is demonstrable from the texts or responsibly grounded in cited tradition.
 
-### 4. Maintain a strict boundary around AI speculation
+### 5. Maintain a strict boundary around AI speculation
 
-“Authoritative” in this project means traceable to Scripture, the verified missal text, or an identified and checked patristic, saintly, doctrinal, or liturgical witness. It does not make the guide a magisterial document or every cited saintly opinion equally binding. Classify every substantial claim before drafting:
+“Authoritative” in this project means traceable to Scripture, the verified missal text, identified and checked biblical-historical scholarship, or an identified and checked patristic, saintly, doctrinal, or liturgical witness. It does not make the guide a magisterial document or every cited judgment equally binding. Classify every substantial claim before drafting:
 
 - **Textual observation:** directly verifiable in the appointed texts and their contexts.
+- **Documented historical orientation:** an authorship, date, place, audience, biographical, geographic, or salvation-historical judgment supported by identified scholarship, with material uncertainty preserved.
 - **Documented reception:** explicitly taught by a cited Father, Doctor, saint, or liturgical source.
-- **Source-grounded synthesis:** a restrained conclusion demonstrably supported by the appointed texts and documented reception.
+- **Source-grounded synthesis:** a restrained conclusion demonstrably supported by the appointed texts, documented historical orientation, or documented reception.
 - **Speculative exposition:** a new analogy, symbolic proposal, typological extension, compositional inference, pastoral application, or theological conclusion not explicitly established by the evidence.
 
-The first three classes may appear in the authoritative sections. The fourth appears only in `Speculative Exposition`. A canonical or liturgical analogy supported by cited tradition may be authoritative; an AI-generated analogy without that support is speculative. An unverified study lead supports no final claim. Never place an AI-generated connection in a Father's mouth, imply consensus by proximity, or hide speculation in the four-senses table.
+The first four classes may appear in the authoritative sections. The fifth appears only in `Speculative Exposition`. A canonical or liturgical analogy supported by cited tradition may be authoritative; an AI-generated analogy without that support is speculative. An unverified study lead supports no final claim. Never place an AI-generated connection in a Father's mouth, imply consensus by proximity, or hide speculation in the four-senses table.
 
 This boundary is intended to license responsible invention rather than suppress it. After the authoritative case is secure, generate multiple possible syntheses, including serious alternatives, and retain those that are textually anchored, coherent, theologically plausible, and capable of changing attention to the Mass. Their value lies in disclosed exploration, not borrowed authority.
 
-### 5. Produce condensed and expansive authoritative treatments
+### 6. Produce condensed and expansive authoritative treatments
 
 Develop the source-grounded analysis fully, then condense its governing results into exactly two pages.
 
@@ -263,11 +287,11 @@ The two-page treatment must:
 
 The expansive treatment supplies the detailed exegesis, source comparisons, lexical work, distinctions, and sacramental development behind that synthesis. The condensed section states the architecture and leading conclusions; the expansive section demonstrates, complicates, and qualifies them. A witness may be named compactly in the two-page synthesis and treated fully later, but quotation, extended paraphrase, evidence, and caveat receive one fullest home rather than being duplicated.
 
-### 6. Assemble the guide in the required order
+### 7. Assemble the guide in the required order
 
-Assemble the guide according to `Required Weekly Document Order`. Force the boundary after page 3, then edit to make both condensed pages genuinely full, readable, and scan-first. The condensed section requires one compact orienting form; its internal headings, tables, matrices, source cards, short lists, and diagrams may otherwise vary with the Sunday, but the macro-order may not.
+Assemble the guide according to `Required Weekly Document Order`. Fit the complete `In Illo Tempore...` table to page 2 and force a boundary after it, then force another after the second condensed page so that the expansive exposition begins on a fresh page. Edit to make the historical table and both condensed pages genuinely full, readable, and scan-first. The condensed section requires one compact orienting form; its internal headings, tables, matrices, source cards, short lists, and diagrams may otherwise vary with the Sunday, but the macro-order may not.
 
-### 7. Perform a final depth-and-clarity edit
+### 8. Perform a final depth-and-clarity edit
 
 Read the entire guide linearly and make a claim-by-claim pass before the final build:
 
@@ -325,7 +349,7 @@ These examples show how the internal teaching forms may respond to a Sunday's ma
 | Fourth | How Christ's word orders creation, the apostolic Church, bodily hope, perception, and resistant willing | Three-scale matrix, Chrysostom--Irenaeus Romans dossier, Cyril--Ambrose catch exegesis, Augustine's two catches, Psalm 12 eye study, two-petition Secret grammar |
 | Fifth | How infused charity orders desire, peace, reconciliation, individual offering, and the common ecclesial good | Augustinian order-of-love dossier, Psalm 26 envelope, Bede's Petrine peace reading, Chrysostom--Augustine Gospel comparison, `singuli`--`cunctis` Secret study |
 | Sixth | How baptismal newness remains dependent pilgrimage sustained by opened Scripture, faithful prayer, and Eucharistic gift | Font--desert--road--altar itinerary, Chrysostom's Romans dossier, Cyril--Ambrose mystagogy, Bede--Augustine feeding comparison, Secret prayer guardrail, Psalm 26 completion |
-| Seventh | How voice and works, doctrine and life, freedom and service, individual offering and ecclesial sacrifice, judgment and healing are distinguished and reunited | Psalm 46 concordance, focused Gospel-reception comparison, Pauline fruit-and-gift anatomy, Secret grammar, and an integrated hearing-and-cure sequence |
+| Seventh | How voice and works, doctrine and life, freedom and service, individual offering and ecclesial sacrifice, judgment and healing are distinguished and reunited | One-page canonical historical table, Psalm 46 concordance, focused Gospel-reception comparison, Pauline fruit-and-gift anatomy, Secret grammar, and an integrated hearing-and-cure sequence |
 
 The cumulative movement is from divine gift to embodied discernment: the Trinity is adored, charity answers invitation, mercy finds the lost, Christ's word orders mission, reconciliation makes sacrifice truthful, baptismal life is fed, and sacramental medicine produces holy fruit.
 
@@ -359,7 +383,7 @@ Verification status and date:
 Unresolved discrepancies:
 ```
 
-`research/scope.md` preserves the operational scholarship audit displaced from the PDF: corpora and languages searched, materially relevant negative results, unverified leads that were rejected or left open, and any source-role or attribution issue too detailed for the compact reader-facing panel. It is not a diary or chain-of-thought record and need not reproduce obvious searches; it records enough scope and disposition to make research limits honest.
+`research/scope.md` preserves the operational scholarship audit displaced from the PDF: biblical authorship, dating, composition-place, audience, geographic, and chronology research; materially competing judgments and unresolved historical identifications; corpora and languages searched; materially relevant negative results; unverified leads that were rejected or left open; and any source-role or attribution issue too detailed for the compact reader-facing panel. It is not a diary or chain-of-thought record and need not reproduce obvious searches; it records enough scope and disposition to make research limits honest.
 
 All three files must be added to Git with a new or substantially revised Sunday guide. Corrections, refreshed retrievals, source substitutions, and newly resolved discrepancies are normal reviewed changes: update the appropriate record, explain the reason in the commit, and preserve the earlier state in Git history. The `propers/` and `research/` directories must never be ignored, regenerated only at build time, or treated as optional personal caches.
 
@@ -393,15 +417,22 @@ Before a guide is complete, verify that:
 - the Sunday has its own numbered directory containing Git-tracked `propers/retrieved.txt`, `propers/verified.md`, and `research/scope.md`; the first preserves the focused pull without silent cleanup, the second contains the text provenance and verification fields, and the third retains material research scope displaced from the PDF;
 - the missal witnesses are public and edition-identified, every published Latin form has been visually checked against a facsimile page, and `References` records printed pages, stable URLs, access dates, substitutions, and unresolved discrepancies without machine-specific paths;
 - all appointed principal propers (ten in the present set, with any seasonal substitutions or additions where applicable) have been extracted, verified, and made to contribute to the guide;
-- the generator studied every complete appointed text, while the hand-missal companion PDF reproduces only the incipits, references, and clauses needed for its analysis;
+- the generator studied every complete appointed text, while the hand-missal companion PDF gives citation-only historical metadata in `In Illo Tempore...` and otherwise only the incipits, references, and clauses needed for its analysis;
 - page 1 contains only the title, any necessary source note, the complete Propers map (ten rows in the present set), and the four-row `Sense` / `Synthesis` table;
 - proper-focused subsection headings and speculative-unit leads end with ordinary parentheses containing the standard italic abbreviations in liturgical order; the page-one table retains full proper names, and the guide uses no numeric badges, boxes, arrows, dots, or icons for this navigation;
 - both opening tables share the same horizontal extents and first-column width and fit entirely on page 1;
-- pages 2 and 3 contain exactly two full, readable pages of condensed authoritative exposition and no AI speculation;
+- `In Illo Tempore...` occupies exactly page 2, ends at a forced page boundary, and contains no unsupported reconstruction;
+- one heterogeneous table contains every distinct directly appointed biblical passage exactly once in canonical Bible order and then ascending chapter-and-verse order; repeated passages are consolidated, while loose scriptural echoes in composed orations are not mislabeled as direct quotations;
+- the table headings are exactly `Proper`, `Citation`, `Location`, and `Date`; each dossier begins with a four-field composition row naming the proper or propers and citation without scriptural text, followed immediately by a horizontal rule;
+- the Gospel composition row is followed by a four-field `Narrated event` row giving locating citations without scriptural text, the event location, and its approximate date, followed by another horizontal rule before the explanatory prose;
+- every explanatory row begins without a `Description.` label and, together with any Gospel event row, distinguishes narrated setting, traditional and historical authorship status, composition date and place, first audience, authorial life stage or compositional horizon, and the passage's location in Israel's and salvation history;
+- writer, event, and recipient locations remain distinct, secure ancient locations receive present-day equivalents, and disputed or unknown claims remain explicitly uncertain;
+- every historical claim is supported by an identified source, with competing judgments and unresolved matters retained in `research/scope.md`;
+- the two pages immediately following `In Illo Tempore...` contain exactly two full, readable pages of condensed authoritative exposition and no AI speculation;
 - the condensed section begins with a one- or two-sentence thesis and a compact orienting form of no more than four primary stages, then uses three to five relationship-titled units keyed to the same argumentative spine;
 - every proper appears in a functional grouping, decisive witnesses and guardrails are visibly labeled, no prose paragraph exceeds 120 words, and no unstructured prose run exceeds two paragraphs;
 - a signpost-only scan of the condensed section recovers its central claim, direction of movement, decisive witnesses, and interpretive limits, while the full text remains a continuous argument rather than disconnected fragments;
-- the expansive authoritative exposition begins on page 4, gives the evidence and qualifications behind the condensation, and does not duplicate it paragraph for paragraph;
+- the expansive authoritative exposition begins on the fresh page after the two-page condensed section, gives the evidence and qualifications behind the condensation, and does not duplicate either the historical orientation or the condensation paragraph for paragraph;
 - every original AI analogy, typological extension, compositional inference, or unsourced cross-proper connection appears only in `Speculative Exposition`;
 - `Speculative Exposition` begins with one global boundary notice, then gives exploratory proposals room to develop without repetitive hedging; substantial proposals expose their proper anchors, while material limits or serious alternatives appear where needed rather than as a repeated formula; the section remains free of invented facts, quotations, attributions, or doctrinal contradiction;
 - speculative material is selected for anchoring, novelty, coherence, theological plausibility, fruitfulness, and awareness of alternatives rather than by a prescribed number, length, or source precedent;
@@ -423,7 +454,7 @@ Before a guide is complete, verify that:
 - callouts use the lightest treatment that preserves hierarchy and are not stacked or paired merely for decoration;
 - the PDF builds twice without fatal errors or layout warnings;
 - every page is visually checked for overflow, split headings, unreadable cells, excessive density, artificial padding, and sparse spill pages;
-- the post-page-1 analysis uses the scoped `deepstudy` size; page 1 is not globally reduced.
+- all sections after page 1, beginning with `In Illo Tempore...`, use the scoped `deepstudy` size; page 1 is not globally reduced.
 
 ## Build
 
@@ -435,6 +466,6 @@ PDFs are written to `build/`. Use `make clean` to remove LaTeX intermediates and
 
 ## Future AI Operating Rule
 
-Treat the required document order, seven-step workflow, and quality gates above as acceptance criteria, not suggestions. Research and classify the evidence before drafting. If direct patristic commentary cannot be found, record the gap and use clearly labeled doctrinal illumination rather than pretending that a saint commented on the proper itself. Do not fill source categories or numerical targets that the material does not require.
+Treat the required document order, eight-step workflow, and quality gates above as acceptance criteria, not suggestions. Research and classify the evidence before drafting. If direct patristic commentary cannot be found, record the gap and use clearly labeled doctrinal illumination rather than pretending that a saint commented on the proper itself. Do not fill source categories or numerical targets that the material does not require.
 
 Do not preserve weak material merely to maintain length, and do not pad the two-page condensation. Within the fixed macro-order, allow the Sunday's actual texts and witnesses to determine the internal architecture. Prefer fewer strong authoritative axes, then give clearly bounded speculation freedom to test unfamiliar patterns, competing models, and questions. Refresh `Generation Metadata` for the final generation event, build and inspect the PDF, run `make clean`, and commit each weekly creation or substantial revision together with its stored `propers/` source record as one coherent change in this repository.
