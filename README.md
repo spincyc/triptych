@@ -38,7 +38,7 @@ The status codes record evidence, not aspirational quality scores:
 | 15 | Trinity Sunday | Legacy draft ([source](15-trinity-sunday/main.tex); [PDF](build/15-trinity-sunday.pdf)) | G1 | S1 | T0 | Q1 |
 | 16 | Second Sunday after Pentecost | Legacy draft ([source](16-second-after-pentecost/main.tex); [PDF](build/16-second-after-pentecost.pdf)) | G1 | S1 | T0 | Q1 |
 | 17 | Third Sunday after Pentecost | Legacy draft ([source](17-third-after-pentecost/main.tex); [PDF](build/17-third-after-pentecost.pdf)) | G1 | S1 | T0 | Q1 |
-| 18 | Fourth Sunday after Pentecost | Legacy draft ([source](18-fourth-after-pentecost/main.tex); [PDF](build/18-fourth-after-pentecost.pdf)) | G1 | S1 | T0 | Q1 |
+| 18 | Fourth Sunday after Pentecost | Source-audited working draft ([source](18-fourth-after-pentecost/main.tex); [propers](18-fourth-after-pentecost/propers/verified.md); [scope](18-fourth-after-pentecost/research/scope.md); [PDF](build/18-fourth-after-pentecost.pdf)) | G2 | S2 | T0 | Q2 |
 | 19 | Fifth Sunday after Pentecost | Legacy draft ([source](19-fifth-after-pentecost/main.tex); [PDF](build/19-fifth-after-pentecost.pdf)) | G1 | S1 | T0 | Q1 |
 | 20 | Sixth Sunday after Pentecost | Legacy draft ([source](20-sixth-after-pentecost/main.tex); [PDF](build/20-sixth-after-pentecost.pdf)) | G1 | S1 | T0 | Q1 |
 | 21 | Seventh Sunday after Pentecost | Source-audited working draft ([source](21-seventh-after-pentecost/main.tex); [propers](21-seventh-after-pentecost/propers/verified.md); [scope](21-seventh-after-pentecost/research/scope.md); [PDF](build/21-seventh-after-pentecost.pdf)) | G2 | S2 | T0 | Q2 |
