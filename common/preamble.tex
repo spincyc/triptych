@@ -9,6 +9,7 @@
 \usepackage{longtable}
 \usepackage{tabularx}
 \usepackage{enumitem}
+\usepackage{needspace}
 \usepackage{xcolor}
 \usepackage{hyperref}
 
@@ -37,32 +38,34 @@
   \vspace{0.5em}
 }
 
-\newcommand{\properrow}[5]{#1 & #2 & #3 & #4 & #5\\}
+\newcommand{\properrow}[4]{#1 & #2 & #3 & #4\\}
 \newcommand{\sourceurl}[2]{\href{#1}{#2}}
 \newcommand{\latin}[1]{\textit{#1}}
 \newcommand{\rubric}[1]{\textcolor{rubricred}{#1}}
 
 \newenvironment{properstable}
-{\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.15\linewidth}>{\raggedright\arraybackslash}p{0.20\linewidth}>{\raggedright\arraybackslash}p{0.15\linewidth}>{\raggedright\arraybackslash}p{0.24\linewidth}>{\raggedright\arraybackslash}p{0.17\linewidth}}
+{\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.13\linewidth}>{\raggedright\arraybackslash}p{0.25\linewidth}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.36\linewidth}}
 \toprule
-\textbf{Proper} & \textbf{TLM text / reference} & \textbf{Scriptural axis} & \textbf{Fathers and saints} & \textbf{Connection}\\
+\textbf{Proper} & \textbf{TLM text / reference} & \textbf{Scriptural axis} & \textbf{Connection}\\
 \midrule
 \endhead}
-{\end{longtable}}
+{\bottomrule\end{longtable}}
 
 \newenvironment{connectionstable}
 {\small\begin{longtable}{>{\bfseries\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.74\linewidth}}
 \toprule
 \textbf{Thread} & \textbf{Synthesis}\\
-\midrule}
-{\end{longtable}}
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
 
 \newenvironment{witnessstable}
 {\small\begin{longtable}{>{\raggedright\arraybackslash}p{0.2\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.38\linewidth}}
 \toprule
-\textbf{Witness} & \textbf{Short text} & \textbf{Homiletic use}\\
+\textbf{Witness} & \textbf{Text / source status} & \textbf{Homiletic use}\\
 \midrule
 \endhead}
 {\bottomrule\end{longtable}}
 
 \newcommand{\witnessrow}[3]{#1 & #2 & #3\\}
+\newcommand{\sectionguard}{\Needspace{7\baselineskip}}
