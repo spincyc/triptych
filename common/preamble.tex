@@ -60,11 +60,12 @@
 
 \newenvironment{sensestable}
 {\vspace{-0.35em}\begingroup\footnotesize\renewcommand{\arraystretch}{1.10}%
-\begin{tabular}{>{\bfseries\raggedright\arraybackslash}p{0.12\linewidth}>{\raggedright\arraybackslash}p{0.80\linewidth}}
+\noindent\hspace*{\dimexpr0.04\linewidth-4\tabcolsep\relax}%
+\begin{tabular}{>{\bfseries\raggedright\arraybackslash}p{0.13\linewidth}>{\raggedright\arraybackslash}p{\dimexpr0.79\linewidth+4\tabcolsep\relax}}
 \toprule
 \textbf{Sense} & \textbf{Synthesis}\\
 \midrule}
-{\bottomrule\end{tabular}\endgroup}
+{\bottomrule\end{tabular}\par\endgroup}
 
 \newenvironment{connectionstable}
 {\small\begin{longtable}{>{\bfseries\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.74\linewidth}}
