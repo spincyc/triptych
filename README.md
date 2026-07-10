@@ -26,7 +26,7 @@ Every guide shares one fixed opening page containing two tables.
 
 ### Page 1: Propers map and four senses
 
-The four-column table presents nine texts in liturgical order:
+The four-column table presents all ten principal texts in liturgical order:
 
 1. Introit
 2. Collect
@@ -35,10 +35,11 @@ The four-column table presents nine texts in liturgical order:
 5. Alleluia
 6. Gospel
 7. Offertory
-8. Communion
-9. Postcommunion
+8. Secret
+9. Communion
+10. Postcommunion
 
-Its columns identify the proper, text or reference, scriptural axis, and connection. Source status is reserved for later analysis. The Secret is omitted from this table for space, but it must appear in the later symbolic module because it normally discloses the relation between the offered gifts, the offerers, and sacramental reception.
+Its columns identify the proper, text or reference, scriptural axis, and connection. Source status is reserved for later analysis. The Secret receives its own row because it normally discloses the relation between the offered gifts, the offerers, and sacramental reception; the later symbolic module should then unfold rather than merely repeat that relation.
 
 Immediately below the Propers map, without a separate section heading, a compact table labeled `Sense` and `Synthesis` presents exactly four rows:
 
@@ -167,7 +168,7 @@ Public-domain translations linked in `Primary References` are working study edit
 Before a guide is complete, verify that:
 
 - all ten principal proper elements contribute to the guide;
-- page 1 contains only the title, any necessary source note, the nine-row Propers map, and the four-row `Sense` / `Synthesis` table;
+- page 1 contains only the title, any necessary source note, the ten-row Propers map, and the four-row `Sense` / `Synthesis` table;
 - both opening tables share the same horizontal extents and first-column width, fit entirely on page 1, and the distinctive preparation module begins on page 2;
 - the later structure is fitted to this Sunday rather than copied mechanically from another week;
 - every diagram has an explicit reading order and adds information;
