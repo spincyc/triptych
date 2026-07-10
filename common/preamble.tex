@@ -1,0 +1,58 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\definecolor{rubricred}{HTML}{8A1F11}
+\definecolor{linkblue}{HTML}{1F4E79}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=linkblue,
+  urlcolor=linkblue,
+  citecolor=linkblue
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\setlength{\tabcolsep}{3pt}
+\setlist[itemize]{leftmargin=1.25em, itemsep=0.2em}
+\renewcommand{\arraystretch}{1.22}
+
+\newcommand{\weektitle}[3]{
+  \begin{center}
+    {\Large\bfseries #1}\\[0.2em]
+    {\large #2}\\[0.2em]
+    {\small #3}
+  \end{center}
+  \vspace{0.5em}
+}
+
+\newcommand{\properrow}[5]{#1 & #2 & #3 & #4 & #5\\}
+\newcommand{\sourceurl}[2]{\href{#1}{#2}}
+\newcommand{\latin}[1]{\textit{#1}}
+\newcommand{\rubric}[1]{\textcolor{rubricred}{#1}}
+
+\newenvironment{properstable}
+{\small\begin{longtable}{>{\raggedright\arraybackslash}p{0.13\linewidth}>{\raggedright\arraybackslash}p{0.22\linewidth}>{\raggedright\arraybackslash}p{0.15\linewidth}>{\raggedright\arraybackslash}p{0.24\linewidth}>{\raggedright\arraybackslash}p{0.17\linewidth}}
+\toprule
+\textbf{Proper} & \textbf{TLM text / reference} & \textbf{Scriptural axis} & \textbf{Fathers and saints} & \textbf{Connection}\\
+\midrule
+\endhead}
+{\end{longtable}}
+
+\newenvironment{connectionstable}
+{\small\begin{longtable}{>{\bfseries\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.74\linewidth}}
+\toprule
+\textbf{Thread} & \textbf{Synthesis}\\
+\midrule}
+{\end{longtable}}
