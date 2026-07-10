@@ -116,6 +116,10 @@ A representation earns its place only when it makes a relationship easier to gra
 
 The guides are designed for ordinary black-and-white printers. All text, rules, arrows, borders, and links use pure black; page and box interiors use pure white. Visual distinctions must rely on line weight, border style, labels, position, and whitespace rather than color or gray shading. A diagram that becomes ambiguous when hue is removed must be redesigned.
 
+### Callout hierarchy
+
+Callouts use an editorial rather than a dashboard-like visual language. Conceptual notes receive a single left rule; preparation or listening panels receive a restrained square hairline frame; primary-source cards receive a lighter framed treatment with the attribution integrated into the title. Filled title bars, rounded cards, and decorative badges are avoided. Two short source cards may share a row when their texts are genuinely parallel and remain readable at print size; otherwise the callout stays full-width.
+
 ### 6. Integrate primary witnesses once
 
 Prefer authors who directly comment on an appointed passage or its immediate theological question. Identify author, work, and locus. Label direct quotation and paraphrase accurately.
@@ -171,6 +175,7 @@ Before a guide is complete, verify that:
 - every diagram has an explicit reading order and adds information;
 - no visual block asks the reader to decode more than four primary stages or two simultaneous paths without a strong reason;
 - every visual remains intelligible in pure black and white, with no color-dependent distinction or gray fill;
+- callouts use the lightest treatment that preserves hierarchy and are not stacked or paired merely for decoration;
 - literal, patristic, canonical, and editorial claims remain distinguishable;
 - named patristic claims have exact works and loci or are labeled as study leads;
 - direct quotations appear once, beside the insight they control;

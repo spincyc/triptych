@@ -97,17 +97,22 @@
   enhanced,
   breakable,
   colback=white,
-  colframe=black,
-  colbacktitle=black,
-  boxrule=0.6pt,
-  arc=2pt,
-  left=6pt,
-  right=6pt,
-  top=5pt,
-  bottom=5pt,
+  colbacktitle=white,
+  coltitle=black,
+  frame hidden,
+  boxrule=0pt,
+  sharp corners,
+  borderline west={1.2pt}{0pt}{black},
+  left=8pt,
+  right=2pt,
+  top=2pt,
+  bottom=2pt,
+  toptitle=0pt,
+  bottomtitle=2pt,
+  before skip=8pt,
+  after skip=8pt,
   title={#1},
-  fonttitle=\bfseries,
-  coltitle=white
+  fonttitle=\small\bfseries
 }
 
 \newtcolorbox{massbox}[1]{
@@ -115,20 +120,46 @@
   breakable,
   colback=white,
   colframe=black,
-  colbacktitle=black,
-  boxrule=1.0pt,
-  arc=2pt,
-  left=6pt,
-  right=6pt,
-  top=5pt,
-  bottom=5pt,
+  colbacktitle=white,
+  coltitle=black,
+  boxrule=0.55pt,
+  sharp corners,
+  left=7pt,
+  right=7pt,
+  top=4pt,
+  bottom=4pt,
+  toptitle=3pt,
+  bottomtitle=3pt,
+  titlerule=0.45pt,
+  before skip=8pt,
+  after skip=8pt,
   title={#1},
-  fonttitle=\bfseries,
-  coltitle=white
+  fonttitle=\small\bfseries
+}
+
+\newtcolorbox{sourcecard}[1]{
+  enhanced,
+  colback=white,
+  colframe=black,
+  colbacktitle=white,
+  coltitle=black,
+  boxrule=0.4pt,
+  sharp corners,
+  left=5pt,
+  right=5pt,
+  top=4pt,
+  bottom=4pt,
+  toptitle=3pt,
+  bottomtitle=3pt,
+  titlerule=0.4pt,
+  before skip=4pt,
+  after skip=4pt,
+  title={#1},
+  fonttitle=\small\bfseries
 }
 
 \tikzset{
-  guide node/.style={draw=black, rounded corners=2pt, fill=white, align=center, inner sep=5pt, font=\small},
-  guide emphasis/.style={draw=black, very thick, rounded corners=2pt, fill=white, align=center, inner sep=5pt, font=\small},
+  guide node/.style={draw=black, fill=white, align=center, inner sep=5pt, font=\small},
+  guide emphasis/.style={draw=black, very thick, fill=white, align=center, inner sep=5pt, font=\small},
   guide arrow/.style={-{Stealth[length=2mm]}, thick, draw=black}
 }
