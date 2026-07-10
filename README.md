@@ -17,73 +17,73 @@ The status codes record evidence, not aspirational quality scores:
 - **Generation:** `G0` not generated; `G1` legacy AI-assisted generation whose exact model, agent, and runtime were not recorded; `G2` `gpt-5.6-sol`, `reasoning=ultra`, OpenAI Codex agents, Codex CLI `0.144.1`, API workspace.
 - **Text/source evaluation:** `S0` none; `S1` internal source check recorded in the guide, but repository propers and public-facsimile recollation remain pending; `S2` stored retrieval and verified propers, all ten elements facsimile-collated, with an internal source-and-claim audit.
 - **Theological evaluation:** `T0` no independent theological review recorded; `T1` independent theological review completed against the identified revision. No present guide has reached `T1`.
-- **Production evaluation:** `P0` no artifact; `P1` tracked PDF using the legacy architecture, without a durable current-specification QA attestation; `P2` current macro-order, two-pass build, warning check, and visual page inspection.
+- **Production evaluation:** `Q0` no artifact; `Q1` tracked PDF using the legacy architecture, without a durable current-specification QA attestation; `Q2` current macro-order, two-pass build, warning check, and visual page inspection. The `Q` prefix denotes production QA.
 
 | ID | Temporal Sunday identity | Guide state | Generation | Text/source eval. | Theology | Production |
 | --- | --- | --- | --- | --- | --- | --- |
-| 01 | First Sunday of Lent | Not started | G0 | S0 | --- | P0 |
-| 02 | Second Sunday of Lent | Not started | G0 | S0 | --- | P0 |
-| 03 | Third Sunday of Lent | Not started | G0 | S0 | --- | P0 |
-| 04 | Fourth Sunday of Lent | Not started | G0 | S0 | --- | P0 |
-| 05 | Passion Sunday | Not started | G0 | S0 | --- | P0 |
-| 06 | Palm Sunday | Not started | G0 | S0 | --- | P0 |
-| 07 | Easter Sunday | Not started | G0 | S0 | --- | P0 |
-| 08 | Low Sunday | Not started | G0 | S0 | --- | P0 |
-| 09 | Second Sunday after Easter | Not started | G0 | S0 | --- | P0 |
-| 10 | Third Sunday after Easter | Not started | G0 | S0 | --- | P0 |
-| 11 | Fourth Sunday after Easter | Not started | G0 | S0 | --- | P0 |
-| 12 | Fifth Sunday after Easter | Not started | G0 | S0 | --- | P0 |
-| 13 | Sunday after the Ascension | Not started | G0 | S0 | --- | P0 |
-| 14 | Pentecost Sunday | Not started | G0 | S0 | --- | P0 |
-| 15 | Trinity Sunday | Legacy draft ([source](15-trinity-sunday/main.tex); [PDF](build/15-trinity-sunday.pdf)) | G1 | S1 | T0 | P1 |
-| 16 | Second Sunday after Pentecost | Legacy draft ([source](16-second-after-pentecost/main.tex); [PDF](build/16-second-after-pentecost.pdf)) | G1 | S1 | T0 | P1 |
-| 17 | Third Sunday after Pentecost | Legacy draft ([source](17-third-after-pentecost/main.tex); [PDF](build/17-third-after-pentecost.pdf)) | G1 | S1 | T0 | P1 |
-| 18 | Fourth Sunday after Pentecost | Legacy draft ([source](18-fourth-after-pentecost/main.tex); [PDF](build/18-fourth-after-pentecost.pdf)) | G1 | S1 | T0 | P1 |
-| 19 | Fifth Sunday after Pentecost | Legacy draft ([source](19-fifth-after-pentecost/main.tex); [PDF](build/19-fifth-after-pentecost.pdf)) | G1 | S1 | T0 | P1 |
-| 20 | Sixth Sunday after Pentecost | Legacy draft ([source](20-sixth-after-pentecost/main.tex); [PDF](build/20-sixth-after-pentecost.pdf)) | G1 | S1 | T0 | P1 |
-| 21 | Seventh Sunday after Pentecost | Source-audited working draft ([source](21-seventh-after-pentecost/main.tex); [propers](21-seventh-after-pentecost/propers/verified.md); [PDF](build/21-seventh-after-pentecost.pdf)) | G2 | S2 | T0 | P2 |
-| 22 | Eighth Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
-| 23 | Ninth Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
-| 24 | Tenth Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
-| 25 | Eleventh Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
-| 26 | Twelfth Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
-| 27 | Thirteenth Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
-| 28 | Fourteenth Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
-| 29 | Fifteenth Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
-| 30 | Sixteenth Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
-| 31 | Seventeenth Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
-| 32 | Eighteenth Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
-| 33 | Nineteenth Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
-| 34 | Twentieth Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
-| 35 | Twenty-first Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
-| 36 | Twenty-second Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
-| 37 | Twenty-third Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
-| 38 | Twenty-fourth and Last Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
-| 39 | First Sunday of Advent | Not started | G0 | S0 | --- | P0 |
-| 40 | Second Sunday of Advent | Not started | G0 | S0 | --- | P0 |
-| 41 | Third Sunday of Advent | Not started | G0 | S0 | --- | P0 |
-| 42 | Fourth Sunday of Advent | Not started | G0 | S0 | --- | P0 |
-| 43 | Sunday within the Octave of Christmas | Not started | G0 | S0 | --- | P0 |
-| 44 | Holy Family / First Sunday after Epiphany | Not started | G0 | S0 | --- | P0 |
-| 45 | Second Sunday after Epiphany | Not started | G0 | S0 | --- | P0 |
-| 46 | Third Sunday after Epiphany — ordinary form | Not started | G0 | S0 | --- | P0 |
-| 46R | Third Sunday after Epiphany — resumed after Pentecost (conditional) | Not started | G0 | S0 | --- | P0 |
-| 47 | Fourth Sunday after Epiphany — ordinary form | Not started | G0 | S0 | --- | P0 |
-| 47R | Fourth Sunday after Epiphany — resumed after Pentecost (conditional) | Not started | G0 | S0 | --- | P0 |
-| 48 | Fifth Sunday after Epiphany — ordinary form | Not started | G0 | S0 | --- | P0 |
-| 48R | Fifth Sunday after Epiphany — resumed after Pentecost (conditional) | Not started | G0 | S0 | --- | P0 |
-| 49 | Sixth Sunday after Epiphany — ordinary form | Not started | G0 | S0 | --- | P0 |
-| 49R | Sixth Sunday after Epiphany — resumed after Pentecost (conditional) | Not started | G0 | S0 | --- | P0 |
-| 50 | Septuagesima Sunday | Not started | G0 | S0 | --- | P0 |
-| 51 | Sexagesima Sunday | Not started | G0 | S0 | --- | P0 |
-| 52 | Quinquagesima Sunday | Not started | G0 | S0 | --- | P0 |
+| 01 | First Sunday of Lent | Not started | G0 | S0 | --- | Q0 |
+| 02 | Second Sunday of Lent | Not started | G0 | S0 | --- | Q0 |
+| 03 | Third Sunday of Lent | Not started | G0 | S0 | --- | Q0 |
+| 04 | Fourth Sunday of Lent | Not started | G0 | S0 | --- | Q0 |
+| 05 | Passion Sunday | Not started | G0 | S0 | --- | Q0 |
+| 06 | Palm Sunday | Not started | G0 | S0 | --- | Q0 |
+| 07 | Easter Sunday | Not started | G0 | S0 | --- | Q0 |
+| 08 | Low Sunday | Not started | G0 | S0 | --- | Q0 |
+| 09 | Second Sunday after Easter | Not started | G0 | S0 | --- | Q0 |
+| 10 | Third Sunday after Easter | Not started | G0 | S0 | --- | Q0 |
+| 11 | Fourth Sunday after Easter | Not started | G0 | S0 | --- | Q0 |
+| 12 | Fifth Sunday after Easter | Not started | G0 | S0 | --- | Q0 |
+| 13 | Sunday after the Ascension | Not started | G0 | S0 | --- | Q0 |
+| 14 | Pentecost Sunday | Not started | G0 | S0 | --- | Q0 |
+| 15 | Trinity Sunday | Legacy draft ([source](15-trinity-sunday/main.tex); [PDF](build/15-trinity-sunday.pdf)) | G1 | S1 | T0 | Q1 |
+| 16 | Second Sunday after Pentecost | Legacy draft ([source](16-second-after-pentecost/main.tex); [PDF](build/16-second-after-pentecost.pdf)) | G1 | S1 | T0 | Q1 |
+| 17 | Third Sunday after Pentecost | Legacy draft ([source](17-third-after-pentecost/main.tex); [PDF](build/17-third-after-pentecost.pdf)) | G1 | S1 | T0 | Q1 |
+| 18 | Fourth Sunday after Pentecost | Legacy draft ([source](18-fourth-after-pentecost/main.tex); [PDF](build/18-fourth-after-pentecost.pdf)) | G1 | S1 | T0 | Q1 |
+| 19 | Fifth Sunday after Pentecost | Legacy draft ([source](19-fifth-after-pentecost/main.tex); [PDF](build/19-fifth-after-pentecost.pdf)) | G1 | S1 | T0 | Q1 |
+| 20 | Sixth Sunday after Pentecost | Legacy draft ([source](20-sixth-after-pentecost/main.tex); [PDF](build/20-sixth-after-pentecost.pdf)) | G1 | S1 | T0 | Q1 |
+| 21 | Seventh Sunday after Pentecost | Source-audited working draft ([source](21-seventh-after-pentecost/main.tex); [propers](21-seventh-after-pentecost/propers/verified.md); [scope](21-seventh-after-pentecost/research/scope.md); [PDF](build/21-seventh-after-pentecost.pdf)) | G2 | S2 | T0 | Q2 |
+| 22 | Eighth Sunday after Pentecost | Not started | G0 | S0 | --- | Q0 |
+| 23 | Ninth Sunday after Pentecost | Not started | G0 | S0 | --- | Q0 |
+| 24 | Tenth Sunday after Pentecost | Not started | G0 | S0 | --- | Q0 |
+| 25 | Eleventh Sunday after Pentecost | Not started | G0 | S0 | --- | Q0 |
+| 26 | Twelfth Sunday after Pentecost | Not started | G0 | S0 | --- | Q0 |
+| 27 | Thirteenth Sunday after Pentecost | Not started | G0 | S0 | --- | Q0 |
+| 28 | Fourteenth Sunday after Pentecost | Not started | G0 | S0 | --- | Q0 |
+| 29 | Fifteenth Sunday after Pentecost | Not started | G0 | S0 | --- | Q0 |
+| 30 | Sixteenth Sunday after Pentecost | Not started | G0 | S0 | --- | Q0 |
+| 31 | Seventeenth Sunday after Pentecost | Not started | G0 | S0 | --- | Q0 |
+| 32 | Eighteenth Sunday after Pentecost | Not started | G0 | S0 | --- | Q0 |
+| 33 | Nineteenth Sunday after Pentecost | Not started | G0 | S0 | --- | Q0 |
+| 34 | Twentieth Sunday after Pentecost | Not started | G0 | S0 | --- | Q0 |
+| 35 | Twenty-first Sunday after Pentecost | Not started | G0 | S0 | --- | Q0 |
+| 36 | Twenty-second Sunday after Pentecost | Not started | G0 | S0 | --- | Q0 |
+| 37 | Twenty-third Sunday after Pentecost | Not started | G0 | S0 | --- | Q0 |
+| 38 | Twenty-fourth and Last Sunday after Pentecost | Not started | G0 | S0 | --- | Q0 |
+| 39 | First Sunday of Advent | Not started | G0 | S0 | --- | Q0 |
+| 40 | Second Sunday of Advent | Not started | G0 | S0 | --- | Q0 |
+| 41 | Third Sunday of Advent | Not started | G0 | S0 | --- | Q0 |
+| 42 | Fourth Sunday of Advent | Not started | G0 | S0 | --- | Q0 |
+| 43 | Sunday within the Octave of Christmas | Not started | G0 | S0 | --- | Q0 |
+| 44 | Holy Family / First Sunday after Epiphany | Not started | G0 | S0 | --- | Q0 |
+| 45 | Second Sunday after Epiphany | Not started | G0 | S0 | --- | Q0 |
+| 46 | Third Sunday after Epiphany — ordinary form | Not started | G0 | S0 | --- | Q0 |
+| 46R | Third Sunday after Epiphany — resumed after Pentecost (conditional) | Not started | G0 | S0 | --- | Q0 |
+| 47 | Fourth Sunday after Epiphany — ordinary form | Not started | G0 | S0 | --- | Q0 |
+| 47R | Fourth Sunday after Epiphany — resumed after Pentecost (conditional) | Not started | G0 | S0 | --- | Q0 |
+| 48 | Fifth Sunday after Epiphany — ordinary form | Not started | G0 | S0 | --- | Q0 |
+| 48R | Fifth Sunday after Epiphany — resumed after Pentecost (conditional) | Not started | G0 | S0 | --- | Q0 |
+| 49 | Sixth Sunday after Epiphany — ordinary form | Not started | G0 | S0 | --- | Q0 |
+| 49R | Sixth Sunday after Epiphany — resumed after Pentecost (conditional) | Not started | G0 | S0 | --- | Q0 |
+| 50 | Septuagesima Sunday | Not started | G0 | S0 | --- | Q0 |
+| 51 | Sexagesima Sunday | Not started | G0 | S0 | --- | Q0 |
+| 52 | Quinquagesima Sunday | Not started | G0 | S0 | --- | Q0 |
 
 The catalog therefore contains 52 numbered Sunday identities and 56 complete formulary variants when all four resumed forms are counted. The `46R`--`49R` entries are variant-status rows, not additional top-level directory numbers; ordinary and resumed editions belong under their shared numbered Sunday directory but must keep separate source, generation, and evaluation records. General-calendar feasts assigned to a Sunday but lacking a stable temporal ordinal are tracked separately:
 
 | ID | Sunday-assigned feast | Occurrence rule | Guide state | Generation | Text/source eval. | Theology | Production |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| F01 | Most Holy Name of Jesus | Sunday occurring January 2–5; otherwise January 2 | Not started | G0 | S0 | --- | P0 |
-| F02 | Christ the King | Last Sunday of October; its post-Pentecost ordinal varies | Not started | G0 | S0 | --- | P0 |
+| F01 | Most Holy Name of Jesus | Sunday occurring January 2–5; otherwise January 2 | Not started | G0 | S0 | --- | Q0 |
+| F02 | Christ the King | Last Sunday of October; its post-Pentecost ordinal varies | Not started | G0 | S0 | --- | Q0 |
 
 Fixed-date and local feasts that may supersede a second-class Sunday are outside this temporal catalog and require a calendar- and place-specific layer rather than fictitious permanent Sunday numbers.
 
@@ -96,6 +96,8 @@ The assumed reader already knows the basic order of Mass and can follow biblical
 - distinctions among literal context, patristic exegesis, canonical typology, and editorial synthesis;
 - doctrinal guardrails that prevent an attractive symbol from being pressed too far;
 - questions and visual cues that can be carried into Mass without turning preparation into a script.
+
+The guide is a companion to an open hand missal, not a replacement for it. Research and repository records retain the complete appointed texts, but the PDF normally uses an incipit, reference, or decisive clause rather than reproducing a complete oration. Translate or parse a quoted fragment when its wording carries the argument or when common hand-missal renderings may obscure the point.
 
 The intended rhythm is **survey, authoritative synthesis, authoritative depth, proposed synthesis, verification**: survey the Propers map and four senses, read the two-page authoritative condensation, enter the expansive sourced analysis, consider the separately labeled speculative exposition, and verify the witnesses in the final references.
 
@@ -120,7 +122,9 @@ The four-column table presents all ten principal texts in liturgical order:
 
 These ten elements are the fixed list for the present Trinity and post-Pentecost set. If the project is extended to a formulary with a Tract or Sequence, substitute the Tract for the Alleluia and add the Sequence where appointed; adjust the row count rather than omitting a proper to preserve the number ten.
 
-Its columns identify the proper, text or reference, scriptural axis, and connection. The `Connection` cell may state only a relation directly demonstrable from the appointed wording or context, or one explicitly supported by an identified inherited interpretation; every inferential AI bridge belongs later in `Speculative Exposition`. The Secret receives its own row because it normally discloses the relation between the offered gifts, the offerers, and sacramental reception; the later exposition should then unfold rather than merely repeat that relation.
+The page-one table names every proper in full and uses no numeric badges. Later proper-focused subsection headings and speculative-unit leads end with a parenthetical, comma-separated list of italic abbreviations keyed directly to those names—for example, `Acclaim and ask` (*Int., Coll.*). The standard vocabulary is *Int.*, *Coll.*, *Ep.*, *Grad.*, *All.*, *Gosp.*, *Off.*, *Sec.*, *Comm.*, and *Postcomm.* Use only the entries actually governing that unit and retain their liturgical order. A Tract uses *Tr.* in place of *All.*; an added Sequence uses *Seq.*
+
+These cues are quiet navigation, not a second numbering system: use ordinary parentheses and italic text, with no boxes, arrows, dots, icons, or explanatory sentence. Apply them to each substantive unit governed by a definite set of propers, but omit them from macro-order headings such as `References` and from generic sections with no useful hand-missal target. The table's columns identify the proper, incipit or reference, scriptural axis, and connection. The `Connection` cell may state only a relation directly demonstrable from the appointed wording or context, or one explicitly supported by an identified inherited interpretation; every inferential AI bridge belongs later in `Speculative Exposition`. The Secret receives its own row because it normally discloses the relation between the offered gifts, the offerers, and sacramental reception; the later exposition should then unfold rather than merely repeat that relation.
 
 Immediately below the Propers map, without a separate section heading, a compact table labeled `Sense` and `Synthesis` presents exactly four rows:
 
@@ -137,7 +141,7 @@ Both tables must fit together on page 1.
 
 Pages 2 and 3 form exactly two pages of source-grounded, scan-first synthesis, not a miniature continuous essay. A reader scanning only the governing thesis, orienting form, relationship-titled units, and callout titles must be able to recover the Sunday's central claim, direction of movement, decisive witnesses, and interpretive limits. Begin with a one- or two-sentence thesis and one compact sequence, paired track, relationship map, or comparison containing no more than four primary stages.
 
-Organize the remaining material into three to five short synthesis units keyed to that same architecture. Name every appointed proper within the staged movement or units, grouping texts by theological or liturgical function rather than reproducing ten isolated summaries. Make the decisive scriptural and patristic witnesses and the essential guardrails visibly locatable through information-bearing headings, tables, matrices, short labeled lists, or restrained callouts.
+Organize the remaining material into three to five short synthesis units keyed to that same architecture. Name every appointed proper within the staged movement or units, grouping texts by theological or liturgical function rather than reproducing ten isolated summaries. End each unit heading with the parenthetical italic abbreviations of its governing propers. Make the decisive evidence and essential guardrails visibly locatable through information-bearing headings, tables, matrices, short labeled lists, or restrained callouts.
 
 Each unit must make a complete claim in full sentences, join evidence to interpretation, and show how it advances the whole movement; scanability must not reduce the argument to disconnected fragments. No prose paragraph may exceed 120 words, and no unit may contain more than two consecutive prose paragraphs without an information-bearing structured form. The section contains no AI speculation and must fill two genuinely readable pages without decorative repetition, padding, oversized headings, or artificial whitespace.
 
@@ -147,7 +151,9 @@ The expansive section begins on page 4. It supplies the detailed scriptural exeg
 
 ### Speculative Exposition
 
-After the authoritative exposition, place every original AI-generated analogy, cross-proper proposal, symbolic extension, or theological inference not established by the sources in a clearly titled `Speculative Exposition` section. Calibrated phrases such as “this guide proposes,” “may suggest,” and “invites comparison” are mandatory where appropriate. If no responsible speculation is warranted, retain the heading and state that none is offered; do not invent material to fill the section.
+After the authoritative exposition, place every original AI-generated analogy, cross-proper proposal, symbolic extension, or theological inference not established by the sources in a clearly titled `Speculative Exposition` section. One compact opening notice establishes that the section contains exploratory AI-generated syntheses, attributes none of them to cited authorities, and makes no claim about historical compositional intent. Once that boundary is set, write in a natural exploratory voice rather than repeating formulaic hedges.
+
+The section has no fixed number of proposals or prescribed length. It may offer competing models, surprising symbolic trajectories, canonical or sacramental analogies, unresolved questions, or hypotheses for future research. Each substantial unit should make its textual launch points visible with the same parenthetical italic abbreviations, develop the proposal freely, and state a brief limit or serious alternative where needed. Evaluate speculation for textual anchoring, novelty, coherence, theological plausibility, interpretive or prayerful fruitfulness, and awareness of alternatives—not for whether an inherited source already said it. Speculation may not invent facts or quotations, attribute itself to a source, disguise a research lead as a discovery, or contradict established text or doctrine. If no responsible speculation is warranted, retain the heading and state that none is offered.
 
 ### Notable Quotables
 
@@ -155,11 +161,11 @@ When verified examples exist, place a section titled exactly `Notable Quotables`
 
 Aim for two to four examples, preferably drawn from different works or media. One strong example is acceptable only when no second candidate survives verification; never pad the section with a weak connection. Present each example as one compact list item of no more than two sentences and normally 25–60 words. Its information-bearing lead must identify the proper or wording, the classification (`Exact quotation`, `Adaptation`, `Recognized allusion`, `Sampled`, or `Misquotation`), the work, creator, date, and a sufficiently precise scene, chapter, page, episode, track, or other location. Follow with only the short payoff: the joke, irony, displacement, or memorable use. Do not supply a full theological justification or an extended comparison with the passage's original context; mention that context only when the humor or irony would otherwise be unclear.
 
-Verify the wording and context in the primary cultural work or a reliable edition, transcript, or recording; quotation websites and memory are only leads. Do not turn a coincidental phrase or uncertain AI-proposed allusion into a factual example: uncertain connections remain in `Speculative Exposition`. Keep excerpts brief, quote song lyrics especially sparingly, and never reproduce substantial copyrighted text. Cite every cultural work or verification source in `References`. If no verified example is found after a reasonable search, omit `Notable Quotables` rather than inventing an entry or retaining an empty section, and record the attempted cultural-reception search in `Search Scope and Limitations`.
+Verify the wording and context in the primary cultural work or a reliable edition, transcript, or recording; quotation websites and memory are only leads. Do not turn a coincidental phrase or uncertain AI-proposed allusion into a factual example: uncertain connections remain in `Speculative Exposition`. Keep excerpts brief, quote song lyrics especially sparingly, and never reproduce substantial copyrighted text. Cite every cultural work or verification source in `References`. If no verified example is found after a reasonable search, omit `Notable Quotables` rather than inventing an entry or retaining an empty section, and preserve the attempted cultural-reception search in `research/scope.md`; mention the negative result in the PDF only when it materially limits an argument.
 
 ### References
 
-`References` is the final scholarly section and immediately precedes `Generation Metadata`. Its bibliographic entries contain only sources actually used, with sufficiently exact works, books, homilies, chapters, or sections to permit verification; distinguish primary sources from any secondary work actually relied upon. End that section with a short `Search Scope and Limitations` note naming the principal corpora and languages searched, including searches that yielded no cited source. No conclusion, listening guide, or other expository prose follows it.
+`References` is the final scholarly section and immediately precedes `Generation Metadata`. Its bibliographic entries contain only sources actually used, with sufficiently exact works, books, homilies, chapters, or sections to permit verification; distinguish primary sources from any secondary work actually relied upon. End with a compact, labeled `Search Scope and Limitations` panel giving only the text-verification status, the principal direct and illuminating source scope, material limitations that affect the argument, and pointers to `propers/verified.md` for the text audit and `research/scope.md` for the research survey. Retrieval mechanics, checksums, query logs, discarded leads, and repeated verification explanations belong in those repository records rather than the reader-facing PDF. A limitation that changes a particular claim remains beside that claim. No conclusion, listening guide, or other expository prose follows `References`.
 
 ### Generation Metadata
 
@@ -189,6 +195,8 @@ Before interpreting anything, create or locate the Sunday's repository-owned sou
 
 Extract every one of the ten propers listed under `Page 1` above, together with any seasonal substitution or addition. Store the unedited Sunday-specific retrieval in `propers/retrieved.txt` and the visually checked text and provenance in `propers/verified.md`; both files are required, tracked project sources rather than disposable build products. Record the full appointed Latin or exact reference, the source of every chant verse, the immediate biblical context, the text's liturgical function, the facsimile's printed page number, its stable public URL and access date, and any unresolved textual issue. Read the complete Epistle and Gospel contexts rather than only the printed pericopes. Check an unclear reading against the secondary public image witness and report any disagreement; do not silently blend witnesses.
 
+Study every oration and chant in full during research. Publication in the guide remains selective because the reader is expected to have a hand missal open: use the incipit or the smallest clause needed for the analysis, while the complete verified wording remains in `propers/verified.md`.
+
 No proper may disappear from the later interpretation because it is brief, difficult, or not itself a biblical pericope. Do not merge separate formularies. A displaced Sunday or ferial Mass may be mentioned in a clearly marked source note, but its texts do not become part of the appointed feast's synthesis.
 
 ### 2. Conduct a deep patristic and saintly source study
@@ -203,7 +211,9 @@ Research every appointed biblical passage and the theological substance of every
 
 For every source retained, record author, work, exact locus, edition or stable link, whether it comments directly on the appointed text or supplies doctrinal illumination, and whether the guide quotes or paraphrases it. A catena, anthology, search result, or secondary citation is only a lead until the underlying source and attribution have been checked. Prefer direct exegesis to thematic resemblance; compare genuine disagreements and do not invent patristic consensus.
 
-The instruction to seek “all” patristic and saintly exegesis means the broadest feasible survey of all relevant accessible sources, not a false claim of universal exhaustiveness. Record the corpora and languages searched and disclose material limitations. Where no direct commentary is found, say so at the relevant point in the expansive exposition before introducing doctrinal illumination, and record the search boundary again in `Search Scope and Limitations`. Depth comes from verified loci, comparison, and exegetical logic rather than indiscriminate accumulation.
+Source selection is claim-driven, not quota-driven. No fixed number or category of ancient, modern, lexical, historical, liturgical, or musical sources is required. A source earns space by establishing text or context, directly explaining an appointed passage, supplying a necessary doctrinal boundary, preserving a genuine alternative, or materially changing how a proper is heard. Search broadly enough to test the governing claims, publish selectively, and stop accumulating when additional sources merely repeat rather than refine, qualify, or challenge the argument. If one author dominates, test whether the material warrants it or the search was narrow.
+
+The instruction to seek “all” patristic and saintly exegesis means the broadest feasible survey relevant to the claims, not a false assertion of universal exhaustiveness. Preserve corpora, language, search, and negative-result details in `research/scope.md`. In the PDF, identify a missing direct witness when that absence affects the argument or when doctrinal illumination first takes its place; do not repeat the same provenance caveat throughout the exposition. Summarize only material boundaries in the compact `Search Scope and Limitations` panel.
 
 ### 3. Trace the symbolic unity of the entire formulary
 
@@ -235,6 +245,8 @@ The analysis need not repeat ten prose rows. It may encode the sequence in a dia
 
 The first three classes may appear in the authoritative sections. The fourth appears only in `Speculative Exposition`. A canonical or liturgical analogy supported by cited tradition may be authoritative; an AI-generated analogy without that support is speculative. An unverified study lead supports no final claim. Never place an AI-generated connection in a Father's mouth, imply consensus by proximity, or hide speculation in the four-senses table.
 
+This boundary is intended to license responsible invention rather than suppress it. After the authoritative case is secure, generate multiple possible syntheses, including serious alternatives, and retain those that are textually anchored, coherent, theologically plausible, and capable of changing attention to the Mass. Their value lies in disclosed exploration, not borrowed authority.
+
 ### 5. Produce condensed and expansive authoritative treatments
 
 Develop the source-grounded analysis fully, then condense its governing results into exactly two pages.
@@ -243,7 +255,7 @@ The two-page treatment must:
 
 - open with a one- or two-sentence governing thesis and a compact orienting form of no more than four primary stages;
 - develop three to five relationship-titled units that follow the same vocabulary and order as the orienting form;
-- include the decisive scriptural, patristic, and saintly witnesses;
+- include the decisive evidence actually needed for the claims made;
 - account for every appointed proper in functional groups without becoming another catalogue;
 - make necessary disagreements and doctrinal guardrails findable at a glance;
 - keep each prose paragraph within 120 words and break up every run of more than two paragraphs with an information-bearing structure;
@@ -263,6 +275,7 @@ Read the entire guide linearly and make a claim-by-claim pass before the final b
 - ensure the condensed section summarizes while the expansive section proves and qualifies;
 - replace several weak analogies with the strongest defensible connection;
 - merge thin subsections and delete links stretched beyond their textual or sourced support;
+- replace repeated provenance narration with the compact source classification and final scope panel while retaining the full repository audit;
 - give every paragraph one necessary task: evidence, interpretation, connection, or guardrail;
 - scan only the condensed thesis, visual labels, unit titles, and callout titles; together they must recover the central claim, direction of movement, decisive witnesses, and interpretive limits;
 - sharpen transitions, define difficult distinctions, and preserve genuine disagreement;
@@ -286,6 +299,7 @@ Use visual and analytical forms selectively. The condensed exposition is the exc
 | Lexical study | Explaining a repeated word, grammatical subject, verbal contrast, or Latin bridge |
 | Layered reading | Distinguishing literal, patristic, canonical, liturgical, and eschatological senses of one sign |
 | Calibration panel | Stating what a symbol means and what it does not establish |
+| Proper cue | Sending the reader back to the relevant hand-missal rows with parenthetical italic abbreviations |
 | Source card | Placing one short quotation or paraphrase beside the claim it governs |
 | Listening or examination card | Converting sourced findings into attention; any new AI application belongs in `Speculative Exposition` |
 
@@ -311,7 +325,7 @@ These examples show how the internal teaching forms may respond to a Sunday's ma
 | Fourth | How Christ's word orders creation, the apostolic Church, bodily hope, perception, and resistant willing | Three-scale matrix, Chrysostom--Irenaeus Romans dossier, Cyril--Ambrose catch exegesis, Augustine's two catches, Psalm 12 eye study, two-petition Secret grammar |
 | Fifth | How infused charity orders desire, peace, reconciliation, individual offering, and the common ecclesial good | Augustinian order-of-love dossier, Psalm 26 envelope, Bede's Petrine peace reading, Chrysostom--Augustine Gospel comparison, `singuli`--`cunctis` Secret study |
 | Sixth | How baptismal newness remains dependent pilgrimage sustained by opened Scripture, faithful prayer, and Eucharistic gift | Font--desert--road--altar itinerary, Chrysostom's Romans dossier, Cyril--Ambrose mystagogy, Bede--Augustine feeding comparison, Secret prayer guardrail, Psalm 26 completion |
-| Seventh | How voice and works, doctrine and life, freedom and service, individual offering and ecclesial sacrifice, judgment and healing are distinguished and reunited | Psalm 46 concordance, focused three-witness Gospel comparison, Pauline fruit-and-gift anatomy, Secret grammar, and an integrated hearing-and-cure sequence |
+| Seventh | How voice and works, doctrine and life, freedom and service, individual offering and ecclesial sacrifice, judgment and healing are distinguished and reunited | Psalm 46 concordance, focused Gospel-reception comparison, Pauline fruit-and-gift anatomy, Secret grammar, and an integrated hearing-and-cure sequence |
 
 The cumulative movement is from divine gift to embodied discernment: the Trinity is adored, charity answers invitation, mercy finds the lost, Christ's word orders mission, reconciliation makes sacrifice truthful, baptismal life is fed, and sacramental medicine produces holy fruit.
 
@@ -325,6 +339,8 @@ NN-sunday-name/
   propers/
     retrieved.txt
     verified.md
+  research/
+    scope.md
 ```
 
 `retrieved.txt` preserves the Sunday-specific text exactly as pulled from the public machine-readable finding aid, including OCR errors and enough heading or boundary text to identify the formulary. Do not silently clean this file. Do not commit an entire third-party missal, bulk OCR dump, or page-image cache in place of the focused Sunday extract.
@@ -343,7 +359,9 @@ Verification status and date:
 Unresolved discrepancies:
 ```
 
-Both files must be added to Git with the Sunday guide. Corrections, refreshed retrievals, source substitutions, and newly resolved discrepancies are normal reviewed changes: update the provenance fields, explain the reason in the commit, and preserve the earlier state in Git history. The `propers/` directory must never be ignored, regenerated only at build time, or treated as an optional personal cache.
+`research/scope.md` preserves the operational scholarship audit displaced from the PDF: corpora and languages searched, materially relevant negative results, unverified leads that were rejected or left open, and any source-role or attribution issue too detailed for the compact reader-facing panel. It is not a diary or chain-of-thought record and need not reproduce obvious searches; it records enough scope and disposition to make research limits honest.
+
+All three files must be added to Git with a new or substantially revised Sunday guide. Corrections, refreshed retrievals, source substitutions, and newly resolved discrepancies are normal reviewed changes: update the appropriate record, explain the reason in the commit, and preserve the earlier state in Git history. The `propers/` and `research/` directories must never be ignored, regenerated only at build time, or treated as optional personal caches.
 
 ## Public Missal Sources and Editorial Status
 
@@ -353,7 +371,7 @@ This repository has no required sibling corpus, private checkout, or fixed local
 2. **Machine-readable finding aid:** the Internet Archive item [*Missale Romanum* (1962)](https://archive.org/details/MissaleRomanum1962RomanMissalColorLatin) provides [downloadable full-text OCR](https://archive.org/download/MissaleRomanum1962RomanMissalColorLatin/Missale-Romanum-1962-Roman-Missal-color-latin_djvu.txt). It is suitable for searching headings, sequence, incipits, and references, but not as publication text.
 3. **Secondary image witness:** the same Internet Archive item provides a color scan in its browser reader and download options. Consult those page images when the baseline scan is unclear. Its OCR and its page images are derivatives of the same item, so comparing those two alone is not an independent collation.
 
-A browser is sufficient; no private or machine-specific corpus is required. Fetch the public witnesses on demand and commit only the focused Sunday records described above; do not vendor the complete scans or bulk OCR in this repository, and observe the source sites' terms governing redistribution. Contributors may keep a larger offline cache wherever convenient, but it is not the project source record. If a link becomes unavailable, substitute another complete, edition-identified public facsimile of the 1962 missal, update the Sunday provenance, disclose the substitution in `References` and `Search Scope and Limitations`, and preserve unresolved differences instead of silently harmonizing them.
+A browser is sufficient; no private or machine-specific corpus is required. Fetch the public witnesses on demand and commit only the focused Sunday records described above; do not vendor the complete scans or bulk OCR in this repository, and observe the source sites' terms governing redistribution. Contributors may keep a larger offline cache wherever convenient, but it is not the project source record. If a link becomes unavailable, substitute another complete, edition-identified public facsimile of the 1962 missal, update the Sunday provenance, disclose the substitution in the PDF when it materially affects the published text or argument, and preserve unresolved differences instead of silently harmonizing them.
 
 Guides created before this workflow may retain historical source notes. Those notes record provenance, not a dependency future contributors must reproduce. When such a guide is substantially revised, re-collate its Latin against the public facsimile workflow and replace machine-specific source references.
 
@@ -372,10 +390,12 @@ Public-domain translations linked in `References` are working study editions, no
 
 Before a guide is complete, verify that:
 
-- the Sunday has its own numbered directory containing Git-tracked `propers/retrieved.txt` and `propers/verified.md`, the former preserves the focused pull without silent cleanup, and the latter contains all required provenance and verification fields;
+- the Sunday has its own numbered directory containing Git-tracked `propers/retrieved.txt`, `propers/verified.md`, and `research/scope.md`; the first preserves the focused pull without silent cleanup, the second contains the text provenance and verification fields, and the third retains material research scope displaced from the PDF;
 - the missal witnesses are public and edition-identified, every published Latin form has been visually checked against a facsimile page, and `References` records printed pages, stable URLs, access dates, substitutions, and unresolved discrepancies without machine-specific paths;
 - all appointed principal propers (ten in the present set, with any seasonal substitutions or additions where applicable) have been extracted, verified, and made to contribute to the guide;
+- the generator studied every complete appointed text, while the hand-missal companion PDF reproduces only the incipits, references, and clauses needed for its analysis;
 - page 1 contains only the title, any necessary source note, the complete Propers map (ten rows in the present set), and the four-row `Sense` / `Synthesis` table;
+- proper-focused subsection headings and speculative-unit leads end with ordinary parentheses containing the standard italic abbreviations in liturgical order; the page-one table retains full proper names, and the guide uses no numeric badges, boxes, arrows, dots, or icons for this navigation;
 - both opening tables share the same horizontal extents and first-column width and fit entirely on page 1;
 - pages 2 and 3 contain exactly two full, readable pages of condensed authoritative exposition and no AI speculation;
 - the condensed section begins with a one- or two-sentence thesis and a compact orienting form of no more than four primary stages, then uses three to five relationship-titled units keyed to the same argumentative spine;
@@ -383,15 +403,17 @@ Before a guide is complete, verify that:
 - a signpost-only scan of the condensed section recovers its central claim, direction of movement, decisive witnesses, and interpretive limits, while the full text remains a continuous argument rather than disconnected fragments;
 - the expansive authoritative exposition begins on page 4, gives the evidence and qualifications behind the condensation, and does not duplicate it paragraph for paragraph;
 - every original AI analogy, typological extension, compositional inference, or unsourced cross-proper connection appears only in `Speculative Exposition`;
+- `Speculative Exposition` begins with one global boundary notice, then gives exploratory proposals room to develop without repetitive hedging; substantial proposals expose their proper anchors, while material limits or serious alternatives appear where needed rather than as a repeated formula; the section remains free of invented facts, quotations, attributions, or doctrinal contradiction;
+- speculative material is selected for anchoring, novelty, coherence, theological plausibility, fruitfulness, and awareness of alternatives rather than by a prescribed number, length, or source precedent;
 - `Notable Quotables`, when included, appears immediately before `References`, normally contains two to four verified examples from varied works or media, and never adds a weak item merely to reach that range;
 - every cultural entry is one compact list item of no more than two sentences and normally 25–60 words; its lead identifies the proper or wording, classification, work, creator, date, and precise location, while its remainder gives only the brief joke, irony, displacement, or memorable use rather than a full justification;
-- uncertain cultural parallels remain in `Speculative Exposition`, copyrighted excerpts remain brief, and an empty `Notable Quotables` section is not retained when no verified example exists; the omitted section's search is disclosed under `Search Scope and Limitations`;
-- `References` is the penultimate section, contains every source actually cited, contains no unused study leads, distinguishes bibliography from `Search Scope and Limitations`, and is followed only by `Generation Metadata`;
+- uncertain cultural parallels remain in `Speculative Exposition`, copyrighted excerpts remain brief, and an empty `Notable Quotables` section is not retained when no verified example exists; unsuccessful leads remain in `research/scope.md` rather than padding the PDF;
+- `References` is the penultimate section, contains every source actually cited, contains no unused study leads, and ends with a compact labeled `Search Scope and Limitations` panel rather than operational provenance prose; `propers/verified.md` and `research/scope.md` retain the full text and research audits;
 - `Generation Metadata` is the terminal section, normally uses three compact labeled lines, and unambiguously gives the final generation date in `YYYY-MM-DD` form, the full verbatim AI model label, every exposed model qualifier, the AI agent and its role, every exposed and accurately labeled agent/client/build version, and the product/interface-level AI environment;
 - the metadata records shared model/runtime facts once, separates materially contributing agents only when their values differ, groups specifically named unavailable components after `unexposed:`, and never removes detail by collapsing a qualified model label to a generic family name;
 - the metadata is refreshed for the final generation event and excludes hostnames, usernames, paths, network addresses, container or session IDs, hardware identifiers, credentials, and tokens;
 - the internal teaching forms are fitted to this Sunday rather than copied mechanically from another week;
-- the broad patristic and saintly search scope and its limitations are recorded without a false claim of universal exhaustiveness;
+- the retained sources are sufficient for the actual claims rather than selected by numerical or categorical quota, and the compact PDF scope note does not claim universal exhaustiveness;
 - named scriptural, patristic, saintly, doctrinal, and liturgical claims have exact works and loci and are accurately labeled as direct exegesis or doctrinal illumination;
 - quotation, paraphrase, source-grounded synthesis, and speculation remain distinguishable;
 - each substantial claim has one fullest home, with repeated quotations, recap diagrams, duplicate conclusions, thin subsections, and stretched links removed;
@@ -413,6 +435,6 @@ PDFs are written to `build/`. Use `make clean` to remove LaTeX intermediates and
 
 ## Future AI Operating Rule
 
-Treat the required document order, seven-step workflow, and quality gates above as acceptance criteria, not suggestions. Research and classify the evidence before drafting. If direct patristic commentary cannot be found, say so and use clearly labeled doctrinal illumination rather than pretending that a saint commented on the proper itself.
+Treat the required document order, seven-step workflow, and quality gates above as acceptance criteria, not suggestions. Research and classify the evidence before drafting. If direct patristic commentary cannot be found, record the gap and use clearly labeled doctrinal illumination rather than pretending that a saint commented on the proper itself. Do not fill source categories or numerical targets that the material does not require.
 
-Do not preserve weak material merely to maintain length, and do not pad the two-page condensation. Within the fixed macro-order, allow the Sunday's actual texts and witnesses to determine the internal architecture. Prefer fewer strong symbolic axes to many attractive but thin connections. Refresh `Generation Metadata` for the final generation event, build and inspect the PDF, run `make clean`, and commit each weekly creation or substantial revision together with its stored `propers/` source record as one coherent change in this repository.
+Do not preserve weak material merely to maintain length, and do not pad the two-page condensation. Within the fixed macro-order, allow the Sunday's actual texts and witnesses to determine the internal architecture. Prefer fewer strong authoritative axes, then give clearly bounded speculation freedom to test unfamiliar patterns, competing models, and questions. Refresh `Generation Metadata` for the final generation event, build and inspect the PDF, run `make clean`, and commit each weekly creation or substantial revision together with its stored `propers/` source record as one coherent change in this repository.
