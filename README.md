@@ -56,16 +56,18 @@ Each weekly `main.tex` should follow this order.
    - Moral: how the text calls the hearer to conversion, virtue, discernment, or concrete action.
    - Anagogical: how the text points to final judgment, heaven, resurrection, eternal communion, or the consummation of creation.
 
-5. Symbolic Through-Line Extraction
+5. Patristic Exegesis of the Grouped Propers
 
-   This section attempts to extract the symbolic system of the Mass for the week and find the through lines across the propers. It should be synthetic and exploratory, not merely a restatement of the Gospel. Include:
+   This should be the longest interpretive section in each weekly sheet. Its purpose is to use patristic and saintly exegesis of the scriptural texts appointed in the propers to show what the Church is teaching the faithful by grouping these passages in one Mass. It should read like the exegetical engine of a homily rather than a general theme paragraph.
 
-   - Symbolic field: the recurring images, scriptural signs, contrasts, and liturgical motifs.
-   - Proper-to-proper movement: how the Introit, Collect, Epistle, Gospel, Offertory, Communion, and other propers develop or transform the symbols.
-   - Sacramental arc: how Baptism, Eucharist, penance, ecclesial communion, mission, or eschatological worship are implied by the symbols.
-   - Homiletic synthesis: the main through line a preacher could carry into a full sermon.
+   Include:
 
-   The goal is full symbolic connection extraction: name the symbols, trace their movement through the Mass, and show how they converge into a doctrinal, sacramental, and moral line.
+   - A substantial comparison table keyed to the propers. For each appointed scriptural text or incipit, identify the patristic reading, the spiritual diagnosis, and the liturgical function of that text in the Mass.
+   - A second table or clearly structured synthesis that compares the propers with one another: Introit to Collect, Epistle to Gospel, Offertory to Communion, and any Gradual/Alleluia or ferial note when present.
+   - A statement of the Church's grouped instruction: what the faithful are being taught by hearing these texts together, in this order, at the altar.
+   - Patristic exegesis should usually be paraphrased unless the wording has been verified. Direct quotations belong in the final `Full Patristic and Saintly Texts` section.
+
+   This section should do more than find symbols. It should explain how the Fathers' reading of the scriptural passages discloses the Mass's doctrinal, ascetical, sacramental, and eschatological logic.
 
 6. Exegetical Notes
 
@@ -110,7 +112,7 @@ Content standards:
 - Keep TLM propers central. Do not let patristic or devotional material replace the Mass texts.
 - Treat the local 1962 Missale source as OCR. Use incipits and references confidently, but check full Latin text against a reliable missal before publication.
 - Use the four senses as a disciplined interpretive framework, not as decorative labels.
-- Use `Symbolic Through-Line Extraction` to connect the whole Mass symbolically before moving into narrower exegetical notes.
+- Use `Patristic Exegesis of the Grouped Propers` to explain why the Church groups these scriptural texts in one Mass and what the faithful are being taught by that grouping.
 - Prefer short quotations. If exact wording matters, verify it from a reliable public-domain or official source and cite the work.
 - Distinguish quotation from paraphrase. Do not invent direct patristic quotations.
 - Put the selected direct quotations in the final `Full Patristic and Saintly Texts` section, even if a shorter form already appears in the witness table.
