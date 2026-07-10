@@ -110,7 +110,7 @@ Use visual and analytical forms selectively:
 | Source card | Placing one short quotation or paraphrase beside the claim it governs |
 | Listening or examination card | Converting study into focused attention before and during Mass |
 
-A representation earns its place only when it makes a relationship easier to grasp than another paragraph would. Do not create decorative diagrams or repeat the same claim in multiple forms.
+A representation earns its place only when it makes a relationship easier to grasp than another paragraph would. Do not create decorative diagrams or repeat the same claim in multiple forms. A single diagram should normally contain no more than four primary stages; when the material requires more, divide it into separate views or use a table with explicit headings.
 
 ### Monochrome print standard
 
@@ -169,6 +169,7 @@ Before a guide is complete, verify that:
 - page 2 begins with the four senses and contains exactly those four rows before the distinctive module begins;
 - the later structure is fitted to this Sunday rather than copied mechanically from another week;
 - every diagram has an explicit reading order and adds information;
+- no visual block asks the reader to decode more than four primary stages or two simultaneous paths without a strong reason;
 - every visual remains intelligible in pure black and white, with no color-dependent distinction or gray fill;
 - literal, patristic, canonical, and editorial claims remain distinguishable;
 - named patristic claims have exact works and loci or are labeled as study leads;
