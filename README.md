@@ -22,9 +22,9 @@ The intended rhythm is **survey, study, notice**: survey the Propers map, study 
 
 ## Fixed Opening, Adaptive Remainder
 
-Every guide shares exactly two opening components.
+Every guide shares one fixed opening page containing two tables.
 
-### Page 1: Propers map
+### Page 1: Propers map and four senses
 
 The four-column table presents nine texts in liturgical order:
 
@@ -38,18 +38,16 @@ The four-column table presents nine texts in liturgical order:
 8. Communion
 9. Postcommunion
 
-Its columns identify the proper, text or reference, scriptural axis, and connection. Source status is reserved for later analysis. The Secret is omitted from page 1 for space, but it must appear in the later symbolic module because it normally discloses the relation between the offered gifts, the offerers, and sacramental reception.
+Its columns identify the proper, text or reference, scriptural axis, and connection. Source status is reserved for later analysis. The Secret is omitted from this table for space, but it must appear in the later symbolic module because it normally discloses the relation between the offered gifts, the offerers, and sacramental reception.
 
-### Page 2: Four Senses of Scripture
-
-Each guide retains one compact table with exactly four rows:
+Immediately below the Propers map, without a separate section heading, a compact table labeled `Sense` and `Synthesis` presents exactly four rows:
 
 - **Literal:** the appointed passages in their narrative, grammatical, and canonical setting.
 - **Allegorical:** Christ, the Church, salvation history, and sacramental fulfillment.
 - **Moral:** the kind of conversion, virtue, or rightly ordered action disclosed by the texts.
 - **Anagogical:** judgment, resurrection, heavenly worship, or final communion.
 
-After these pages the structure is deliberately nonuniform. A Sunday's symbols determine the teaching architecture; the template does not determine the content.
+Both tables must fit together on page 1. Page 2 begins the deliberately nonuniform preparation module: a Sunday's symbols determine the teaching architecture; the template does not determine the content.
 
 ## Methodology
 
@@ -169,8 +167,8 @@ Public-domain translations linked in `Primary References` are working study edit
 Before a guide is complete, verify that:
 
 - all ten principal proper elements contribute to the guide;
-- page 1 contains only the title, any necessary source note, and the nine-row Propers map;
-- page 2 begins with the four senses and contains exactly those four rows before the distinctive module begins;
+- page 1 contains only the title, any necessary source note, the nine-row Propers map, and the four-row `Sense` / `Synthesis` table;
+- both opening tables fit entirely on page 1, and the distinctive preparation module begins on page 2;
 - the later structure is fitted to this Sunday rather than copied mechanically from another week;
 - every diagram has an explicit reading order and adds information;
 - no visual block asks the reader to decode more than four primary stages or two simultaneous paths without a strong reason;
@@ -195,7 +193,7 @@ PDFs are written to `build/`. Use `make clean` to remove LaTeX intermediates and
 
 When extending the project:
 
-- Preserve only the fixed opening pages and source discipline; do not impose a common later outline.
+- Preserve only the fixed opening page and source discipline; do not impose a common later outline.
 - Begin by naming the new Sunday's learning problem and symbolic center.
 - Make the Gradual, Alleluia, Secret, and Postcommunion do real interpretive work.
 - Prefer one strong visual relation over several recap tables.

@@ -58,6 +58,14 @@
 \endhead}
 {\bottomrule\end{longtable}}
 
+\newenvironment{sensestable}
+{\vspace{-0.35em}\begingroup\footnotesize\renewcommand{\arraystretch}{1.10}%
+\begin{tabular}{>{\bfseries\raggedright\arraybackslash}p{0.12\linewidth}>{\raggedright\arraybackslash}p{0.80\linewidth}}
+\toprule
+\textbf{Sense} & \textbf{Synthesis}\\
+\midrule}
+{\bottomrule\end{tabular}\endgroup}
+
 \newenvironment{connectionstable}
 {\small\begin{longtable}{>{\bfseries\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.74\linewidth}}
 \toprule
