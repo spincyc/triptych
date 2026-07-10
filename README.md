@@ -21,3 +21,83 @@ The Latin source is OCR and should be checked against a printed missal before pu
 
 Patristic and saintly links are given as study cross-references. They are intentionally concise and should be expanded with exact editions if this project becomes a publishable devotional or catechetical work.
 
+## Document Structure
+
+Each weekly `main.tex` should follow this order.
+
+1. `\weektitle`
+
+   Include the week title, liturgical title, and a short subtitle identifying the TLM context. For example: week number after Pentecost, Latin Sunday name, and whether the Sunday is displaced by a feast such as Trinity Sunday.
+
+2. Optional source/rubric note
+
+   Use this only when a week needs clarification, such as Trinity Sunday using the feast while the ferial First Sunday after Pentecost Mass remains relevant. Keep the note factual and liturgical.
+
+3. Propers summary table
+
+   Use `properstable` and `\properrow`. Include the major Mass propers and readings:
+
+   - Introit
+   - Collect
+   - Epistle
+   - Gospel
+   - Offertory
+   - Communion
+   - Any exceptional proper or ferial note needed for that week
+
+   Each row should include the proper, the TLM text/reference or incipit, the scriptural axis, fathers/saints for study, and the theological connection.
+
+4. Four Senses of Scripture
+
+   This section must come immediately after the propers summary. Use `connectionstable` with exactly these rows:
+
+   - Literal: what the Epistle/Gospel or proper text says historically and grammatically.
+   - Allegorical: how the text reveals Christ, the Church, the sacraments, or salvation history.
+   - Moral: how the text calls the hearer to conversion, virtue, discernment, or concrete action.
+   - Anagogical: how the text points to final judgment, heaven, resurrection, eternal communion, or the consummation of creation.
+
+5. Homily Sketch
+
+   This should read like a preacher's working outline, not an academic article. Include:
+
+   - Proposition: the controlling claim of the homily.
+   - Opening movement: how to enter the theme from the liturgy or Gospel image.
+   - Doctrinal center: the main theological truth.
+   - Moral turn: the conversion or pastoral application demanded by the text.
+
+6. Exegetical Notes
+
+   Use a short itemized list. Include close observations about the Sunday Epistle, Gospel, and major proper texts. Prefer interpretive notes that help preaching: repeated words, liturgical placement, contrasts, scriptural echoes, or sacramental cues.
+
+7. Patristic and saintly witness table
+
+   Use `witnessstable` and `\witnessrow`. Include short, carefully limited quotations or paraphrases from the Fathers, Doctors, and saints. Each row must explain how the witness helps the homily. Avoid long quotations unless the source has been verified and copyright permits it.
+
+8. Deep connection table
+
+   Use `connectionstable`. Show major theological links across the propers, readings, Fathers, and spiritual application. This table should make the document feel synthetic rather than a list of unrelated notes.
+
+9. Preaching Applications
+
+   Use a short itemized list. Give concrete pastoral applications, warnings, or practices. These should be specific enough for a homilist to use directly.
+
+10. Primary References
+
+   List the Missale Romanum 1962 temporal proper and any major source files or study witnesses used. Keep source notes honest about OCR quality and verification limits.
+
+## Future Codex/GPT Notes
+
+When extending this project, preserve the structure above unless the user explicitly asks to change it. New weeks should feel like part of the same series.
+
+Content standards:
+
+- Keep the documents homiletic: they should support preaching, meditation, and liturgical study.
+- Keep TLM propers central. Do not let patristic or devotional material replace the Mass texts.
+- Treat the local 1962 Missale source as OCR. Use incipits and references confidently, but check full Latin text against a reliable missal before publication.
+- Use the four senses as a disciplined interpretive framework, not as decorative labels.
+- Prefer short quotations. If exact wording matters, verify it from a reliable public-domain or official source and cite the work.
+- Distinguish quotation from paraphrase. Do not invent direct patristic quotations.
+- Make connections across the whole Mass: Introit, Collect, Epistle, Gradual/Alleluia when used, Gospel, Offertory, Secret, Communion, Postcommunion.
+- Keep tables readable. Add content, but avoid turning one cell into a full essay.
+- Regenerate PDFs with `make`, then run `make clean` before committing.
+- Commit meaningful changes in the nested `liturgical-year` repository.
