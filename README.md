@@ -43,13 +43,16 @@ Each weekly `main.tex` should follow this order.
    - Gospel
    - Offertory
    - Communion
+   - Postcommunion
    - Any exceptional proper or ferial note needed for that week
 
    Each row should include the proper, the TLM text/reference or incipit, the scriptural axis, fathers/saints for study, and the theological connection.
 
+   The first page of each weekly PDF should contain only the title, any source/rubric note, and this propers summary table. Insert a page break after the propers table so that `Four Senses of Scripture` begins on page 2.
+
 4. Four Senses of Scripture
 
-   This section must come immediately after the propers summary. Use `connectionstable` with exactly these rows:
+   This section must come immediately after the propers summary and must begin on page 2. Use `connectionstable` with exactly these rows:
 
    - Literal: what the Epistle/Gospel or proper text says historically and grammatically.
    - Allegorical: how the text reveals Christ, the Church, the sacraments, or salvation history.
@@ -117,6 +120,7 @@ Content standards:
 - Distinguish quotation from paraphrase. Do not invent direct patristic quotations.
 - Put the selected direct quotations in the final `Full Patristic and Saintly Texts` section, even if a shorter form already appears in the witness table.
 - Make connections across the whole Mass: Introit, Collect, Epistle, Gradual/Alleluia when used, Gospel, Offertory, Secret, Communion, Postcommunion.
+- Keep page 1 reserved for the propers summary; force `Four Senses of Scripture` to start on page 2.
 - Keep tables readable. Add content, but avoid turning one cell into a full essay.
 - Regenerate PDFs with `make`, then run `make clean` before committing.
 - Commit meaningful changes in the nested `liturgical-year` repository.
