@@ -6,7 +6,86 @@ These are not homiletic sketches. They are layered study instruments for use bef
 
 The guides are aids for liturgical study, prayerful preparation, and attentive participation. They are not critical editions, official liturgical texts, or substitutes for checking the cited primary sources and an edition-identified 1962 missal facsimile.
 
-**Editorial status:** source-audited working drafts. The linked patristic translations have been checked for the claims presently made, but the existing Latin has not uniformly received the public, line-by-line facsimile collation now required below or an external theological review.
+**Editorial status:** mixed-maturity working drafts. The linked patristic translations have been checked for the claims presently made, but the existing Latin has not uniformly received the public, line-by-line facsimile collation now required below or an external theological review. The guide-by-guide evidence state is recorded below.
+
+## Guide Status and Canonical Sunday Order
+
+The catalog uses the 52 Sunday identities of the 1962 Roman temporal cycle, rotated so that the First Sunday of Lent is `01`. This is a stable repository order, not the occurrence schedule of one civil year. Under the 1962 *Missale Romanum*, *Rubricae generales* 17–18, omitted Third through Sixth Sundays after Epiphany may be resumed after the Twenty-third Sunday after Pentecost, while the formulary printed as the Twenty-fourth and Last Sunday after Pentecost always remains last. Those resumed uses remain attached to their Epiphany identity below, but each requires a separately generated and evaluated variant because it uses the chants of the Twenty-third Sunday after Pentecost with its own Epiphany orations, Epistle, and Gospel. See the public [1962 missal facsimile](https://media.churchmusicassociation.org/pdf/missale62.pdf), especially the General Rubrics and printed pp. 418–424.
+
+The status codes record evidence, not aspirational quality scores:
+
+- **Generation:** `G0` not generated; `G1` legacy AI-assisted generation whose exact model, agent, and runtime were not recorded; `G2` `gpt-5.6-sol`, `reasoning=ultra`, OpenAI Codex agents, Codex CLI `0.144.1`, API workspace.
+- **Text/source evaluation:** `S0` none; `S1` internal source check recorded in the guide, but repository propers and public-facsimile recollation remain pending; `S2` stored retrieval and verified propers, all ten elements facsimile-collated, with an internal source-and-claim audit.
+- **Theological evaluation:** `T0` no independent theological review recorded; `T1` independent theological review completed against the identified revision. No present guide has reached `T1`.
+- **Production evaluation:** `P0` no artifact; `P1` tracked PDF using the legacy architecture, without a durable current-specification QA attestation; `P2` current macro-order, two-pass build, warning check, and visual page inspection.
+
+| ID | Temporal Sunday identity | Guide state | Generation | Text/source eval. | Theology | Production |
+| --- | --- | --- | --- | --- | --- | --- |
+| 01 | First Sunday of Lent | Not started | G0 | S0 | --- | P0 |
+| 02 | Second Sunday of Lent | Not started | G0 | S0 | --- | P0 |
+| 03 | Third Sunday of Lent | Not started | G0 | S0 | --- | P0 |
+| 04 | Fourth Sunday of Lent | Not started | G0 | S0 | --- | P0 |
+| 05 | Passion Sunday | Not started | G0 | S0 | --- | P0 |
+| 06 | Palm Sunday | Not started | G0 | S0 | --- | P0 |
+| 07 | Easter Sunday | Not started | G0 | S0 | --- | P0 |
+| 08 | Low Sunday | Not started | G0 | S0 | --- | P0 |
+| 09 | Second Sunday after Easter | Not started | G0 | S0 | --- | P0 |
+| 10 | Third Sunday after Easter | Not started | G0 | S0 | --- | P0 |
+| 11 | Fourth Sunday after Easter | Not started | G0 | S0 | --- | P0 |
+| 12 | Fifth Sunday after Easter | Not started | G0 | S0 | --- | P0 |
+| 13 | Sunday after the Ascension | Not started | G0 | S0 | --- | P0 |
+| 14 | Pentecost Sunday | Not started | G0 | S0 | --- | P0 |
+| 15 | Trinity Sunday | Legacy draft ([source](15-trinity-sunday/main.tex); [PDF](build/15-trinity-sunday.pdf)) | G1 | S1 | T0 | P1 |
+| 16 | Second Sunday after Pentecost | Legacy draft ([source](16-second-after-pentecost/main.tex); [PDF](build/16-second-after-pentecost.pdf)) | G1 | S1 | T0 | P1 |
+| 17 | Third Sunday after Pentecost | Legacy draft ([source](17-third-after-pentecost/main.tex); [PDF](build/17-third-after-pentecost.pdf)) | G1 | S1 | T0 | P1 |
+| 18 | Fourth Sunday after Pentecost | Legacy draft ([source](18-fourth-after-pentecost/main.tex); [PDF](build/18-fourth-after-pentecost.pdf)) | G1 | S1 | T0 | P1 |
+| 19 | Fifth Sunday after Pentecost | Legacy draft ([source](19-fifth-after-pentecost/main.tex); [PDF](build/19-fifth-after-pentecost.pdf)) | G1 | S1 | T0 | P1 |
+| 20 | Sixth Sunday after Pentecost | Legacy draft ([source](20-sixth-after-pentecost/main.tex); [PDF](build/20-sixth-after-pentecost.pdf)) | G1 | S1 | T0 | P1 |
+| 21 | Seventh Sunday after Pentecost | Source-audited working draft ([source](21-seventh-after-pentecost/main.tex); [propers](21-seventh-after-pentecost/propers/verified.md); [PDF](build/21-seventh-after-pentecost.pdf)) | G2 | S2 | T0 | P2 |
+| 22 | Eighth Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
+| 23 | Ninth Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
+| 24 | Tenth Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
+| 25 | Eleventh Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
+| 26 | Twelfth Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
+| 27 | Thirteenth Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
+| 28 | Fourteenth Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
+| 29 | Fifteenth Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
+| 30 | Sixteenth Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
+| 31 | Seventeenth Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
+| 32 | Eighteenth Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
+| 33 | Nineteenth Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
+| 34 | Twentieth Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
+| 35 | Twenty-first Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
+| 36 | Twenty-second Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
+| 37 | Twenty-third Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
+| 38 | Twenty-fourth and Last Sunday after Pentecost | Not started | G0 | S0 | --- | P0 |
+| 39 | First Sunday of Advent | Not started | G0 | S0 | --- | P0 |
+| 40 | Second Sunday of Advent | Not started | G0 | S0 | --- | P0 |
+| 41 | Third Sunday of Advent | Not started | G0 | S0 | --- | P0 |
+| 42 | Fourth Sunday of Advent | Not started | G0 | S0 | --- | P0 |
+| 43 | Sunday within the Octave of Christmas | Not started | G0 | S0 | --- | P0 |
+| 44 | Holy Family / First Sunday after Epiphany | Not started | G0 | S0 | --- | P0 |
+| 45 | Second Sunday after Epiphany | Not started | G0 | S0 | --- | P0 |
+| 46 | Third Sunday after Epiphany — ordinary form | Not started | G0 | S0 | --- | P0 |
+| 46R | Third Sunday after Epiphany — resumed after Pentecost (conditional) | Not started | G0 | S0 | --- | P0 |
+| 47 | Fourth Sunday after Epiphany — ordinary form | Not started | G0 | S0 | --- | P0 |
+| 47R | Fourth Sunday after Epiphany — resumed after Pentecost (conditional) | Not started | G0 | S0 | --- | P0 |
+| 48 | Fifth Sunday after Epiphany — ordinary form | Not started | G0 | S0 | --- | P0 |
+| 48R | Fifth Sunday after Epiphany — resumed after Pentecost (conditional) | Not started | G0 | S0 | --- | P0 |
+| 49 | Sixth Sunday after Epiphany — ordinary form | Not started | G0 | S0 | --- | P0 |
+| 49R | Sixth Sunday after Epiphany — resumed after Pentecost (conditional) | Not started | G0 | S0 | --- | P0 |
+| 50 | Septuagesima Sunday | Not started | G0 | S0 | --- | P0 |
+| 51 | Sexagesima Sunday | Not started | G0 | S0 | --- | P0 |
+| 52 | Quinquagesima Sunday | Not started | G0 | S0 | --- | P0 |
+
+The catalog therefore contains 52 numbered Sunday identities and 56 complete formulary variants when all four resumed forms are counted. The `46R`--`49R` entries are variant-status rows, not additional top-level directory numbers; ordinary and resumed editions belong under their shared numbered Sunday directory but must keep separate source, generation, and evaluation records. General-calendar feasts assigned to a Sunday but lacking a stable temporal ordinal are tracked separately:
+
+| ID | Sunday-assigned feast | Occurrence rule | Guide state | Generation | Text/source eval. | Theology | Production |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| F01 | Most Holy Name of Jesus | Sunday occurring January 2–5; otherwise January 2 | Not started | G0 | S0 | --- | P0 |
+| F02 | Christ the King | Last Sunday of October; its post-Pentecost ordinal varies | Not started | G0 | S0 | --- | P0 |
+
+Fixed-date and local feasts that may supersede a second-class Sunday are outside this temporal catalog and require a calendar- and place-specific layer rather than fictitious permanent Sunday numbers.
 
 ## Reader and Use
 

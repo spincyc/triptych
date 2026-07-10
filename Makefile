@@ -1,13 +1,13 @@
 PDFLATEX ?= pdflatex
 
 WEEKS := \
-	01-trinity-sunday \
-	02-second-after-pentecost \
-	03-third-after-pentecost \
-	04-fourth-after-pentecost \
-	05-fifth-after-pentecost \
-	06-sixth-after-pentecost \
-	07-seventh-after-pentecost
+	15-trinity-sunday \
+	16-second-after-pentecost \
+	17-third-after-pentecost \
+	18-fourth-after-pentecost \
+	19-fifth-after-pentecost \
+	20-sixth-after-pentecost \
+	21-seventh-after-pentecost
 
 PDFS := $(addprefix build/,$(addsuffix .pdf,$(WEEKS)))
 COMMON := common/preamble.tex
