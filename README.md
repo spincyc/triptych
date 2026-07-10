@@ -59,7 +59,21 @@ Each weekly `main.tex` should follow this order.
    - Moral: how the text calls the hearer to conversion, virtue, discernment, or concrete action.
    - Anagogical: how the text points to final judgment, heaven, resurrection, eternal communion, or the consummation of creation.
 
-5. Patristic Exegesis of the Grouped Propers
+5. Core Scriptural Symbols
+
+   This section comes after the four senses and before patristic grouped-propers exegesis. It should be a developed symbolic extraction of the Mass's major scriptural images. Use `connectionstable` and give each symbol enough room to breathe.
+
+   Include:
+
+   - Where the symbol appears in the propers or readings.
+   - Its broader scriptural field.
+   - Its usual patristic or saintly interpretation.
+   - The spiritual reality it reveals in the soul, the Church, or the sacraments.
+   - How it helps uncover the Church's instruction for the week.
+
+   This section is not a generic list of themes. It should trace the meaning of concrete biblical images such as name, banquet, sheep, coin, boat, net, altar, brother, burial, bread, tree, fruit, wolf, fire, medicine, and heavenly joy.
+
+6. Patristic Exegesis of the Grouped Propers
 
    This should be the longest interpretive section in each weekly sheet. Its purpose is to use patristic and saintly exegesis of the scriptural texts appointed in the propers to show what the Church is teaching the faithful by grouping these passages in one Mass. It should read like the exegetical engine of a homily rather than a general theme paragraph.
 
@@ -72,27 +86,27 @@ Each weekly `main.tex` should follow this order.
 
    This section should do more than find symbols. It should explain how the Fathers' reading of the scriptural passages discloses the Mass's doctrinal, ascetical, sacramental, and eschatological logic.
 
-6. Exegetical Notes
+7. Exegetical Notes
 
    Use a short itemized list. Include close observations about the Sunday Epistle, Gospel, and major proper texts. Prefer interpretive notes that help preaching: repeated words, liturgical placement, contrasts, scriptural echoes, or sacramental cues.
 
-7. Patristic and saintly witness table
+8. Patristic and saintly witness table
 
    Use `witnessstable` and `\witnessrow`. Include short, carefully limited quotations or paraphrases from the Fathers, Doctors, and saints. Each row must explain how the witness helps the homily. Avoid long quotations unless the source has been verified and copyright permits it.
 
-8. Deep connection table
+9. Deep connection table
 
    Use `connectionstable`. Show major theological links across the propers, readings, Fathers, and spiritual application. This table should make the document feel synthetic rather than a list of unrelated notes.
 
-9. Preaching Applications
+10. Preaching Applications
 
    Use a short itemized list. Give concrete pastoral applications, warnings, or practices. These should be specific enough for a homilist to use directly.
 
-10. Primary References
+11. Primary References
 
    List the Missale Romanum 1962 temporal proper and any major source files or study witnesses used. Keep source notes honest about OCR quality and verification limits.
 
-11. Full Patristic and Saintly Texts
+12. Full Patristic and Saintly Texts
 
    This must be the final section of each weekly document. Include the actual quotation text for selected Fathers, Doctors, and saints used earlier in the sheet. These are the "full quotes" for the excerpts cited in the witness material, not merely paraphrases.
 
@@ -115,6 +129,7 @@ Content standards:
 - Keep TLM propers central. Do not let patristic or devotional material replace the Mass texts.
 - Treat the local 1962 Missale source as OCR. Use incipits and references confidently, but check full Latin text against a reliable missal before publication.
 - Use the four senses as a disciplined interpretive framework, not as decorative labels.
+- Use `Core Scriptural Symbols` to slow down over the central biblical images before moving into patristic synthesis.
 - Use `Patristic Exegesis of the Grouped Propers` to explain why the Church groups these scriptural texts in one Mass and what the faithful are being taught by that grouping.
 - Prefer short quotations. If exact wording matters, verify it from a reliable public-domain or official source and cite the work.
 - Distinguish quotation from paraphrase. Do not invent direct patristic quotations.
