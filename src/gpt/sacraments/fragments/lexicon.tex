@@ -1,14 +1,21 @@
-\providecommand{\term}[2]{%
-  \par\noindent\textbf{#1.}\enspace #2\par
-}
+\providecommand{\sacramentLexiconPageHook}{}
+\providecommand{\term}[2]{\textbf{#1} & #2\\\addlinespace[0.12em]}
 
+\begin{landscape}
+\sacramentLexiconPageHook
 \thispagestyle{plain}
 \section*{Metaphysical and Sacramental Lexicon}
 \noindent\emph{These terms are analogical instruments of disciplined contemplation. They do not place divine action inside a creaturely mechanism; they distinguish what God causes, what the ecclesial sign signifies, and how a rational creature receives the gift.}
 
-\begin{multicols}{3}
-\footnotesize
-\setlength{\parskip}{0.15em}
+\vspace{0.25em}
+\begingroup
+\fontsize{7.2}{7.7}\selectfont
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.01}
+\begin{tabularx}{\linewidth}{>{\RaggedRight\arraybackslash}p{0.205\linewidth}>{\RaggedRight\arraybackslash}X}
+\toprule
+\textbf{Term} & \textbf{Meaning and sacramental use}\\
+\midrule
 \term{Act / potency}{Potency is capacity to receive perfection; act is possessed perfection. \emph{Obediential potency} names creation's capacity to be elevated by God beyond every naturally due perfection, without making grace a natural claim (Aristotle, \emph{Metaphysics} IX; ST I, q.~105, a.~6).}
 \term{Substance / accident}{Substance exists in itself; an accident exists in another. In transubstantiation the whole substance of bread is converted into Christ's Body and the whole substance of wine into his Blood; the sensible accidents remain (Trent XIII.4; ST III, q.~75).}
 \term{Matter / sacramental form}{Matter is the determinable sensible element or act; sacramental form is the word or prayer determining its sacred meaning. It is not a substance's intrinsic substantial form; the analogy varies by sacrament (ST III, q.~60, aa.~6--7).}
@@ -32,4 +39,7 @@
 \term{Primary / secondary / ultimate end}{A primary proper end gives an act or institution its governing objective order; secondary ends are real subordinate goods, not disposable extras. The ultimate objective end is God's glory; the recipient's is eternal life and the vision of God.}
 \term{Nature / grace}{Grace presupposes, heals, elevates, and perfects nature; it neither treats creation as evil nor makes supernatural beatitude naturally due (ST I, q.~1, a.~8 ad 2; I--II, q.~109).}
 \term{Mystery / sacrament}{Greek \emph{mysterion} stresses the divine saving counsel revealed and enacted; Latin \emph{sacramentum} stresses consecrating sign and bond. East and West accent the same Christological economy from complementary vocabularies.}
-\end{multicols}
+\bottomrule
+\end{tabularx}
+\endgroup
+\end{landscape}
