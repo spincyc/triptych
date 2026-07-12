@@ -2,7 +2,7 @@
 
 ## Purpose and authority classes
 
-This record supports `src/gpt/sacraments/main.tex`. The treatise distinguishes:
+This record supports `src/gpt/theology/sacraments/main.tex`. The treatise distinguishes:
 
 - Scripture and defined or authoritative Catholic doctrine;
 - universal and particular discipline, which can change without changing sacramental substance;
