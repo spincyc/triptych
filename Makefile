@@ -12,6 +12,7 @@ DOCUMENTS := \
 	19-fifth-after-pentecost \
 	20-sixth-after-pentecost \
 	21-seventh-after-pentecost \
+	m01-nuptial-mass \
 	sacraments-at-a-glance \
 	sacraments
 
@@ -50,6 +51,7 @@ $(BUILD_ROOT)/%.pdf: $(SOURCE_ROOT)/%/main.tex $(COMMON) | $(BUILD_ROOT)
 
 $(BUILD_ROOT)/sacraments.pdf: $(SACRAMENT_SOURCES)
 $(BUILD_ROOT)/sacraments-at-a-glance.pdf: $(AT_A_GLANCE_SOURCES)
+$(BUILD_ROOT)/m01-nuptial-mass.pdf: $(SOURCE_ROOT)/sacraments/summary-preamble.tex $(SOURCE_ROOT)/sacraments/summaries/matrimony.tex
 
 $(DOC_ROOT)/%.pdf: $(BUILD_ROOT)/%.pdf | $(DOC_ROOT)
 	install -m 0644 $< $@
