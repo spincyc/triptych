@@ -2,15 +2,18 @@
 % the reference treatise and by ritual-Mass appendices so that their summaries
 % cannot drift into competing formats.
 \newcommand{\sacramentSummaryKicker}{}
+\newcommand{\sacramentSummaryPageHook}[1]{}
+\newcommand{\sacramentSummaryTitlePrefix}{}
 
 \newcommand{\sacramentSummaryStart}[3]{%
   \newpage
+  \sacramentSummaryPageHook{#1}%
   \begingroup
   \footnotesize
   \setlength{\parskip}{0.32em}%
   \begin{center}
     \sacramentSummaryKicker
-    {\Large\bfseries #1 at a Glance}\\[0.15em]
+    {\Large\bfseries \sacramentSummaryTitlePrefix#1 at a Glance}\\[0.15em]
     {\small #2}\\[0.15em]
     {\footnotesize\itshape #3}
   \end{center}
