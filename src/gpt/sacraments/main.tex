@@ -4,18 +4,58 @@
 \input{sacraments/summary-preamble}
 \renewcommand{\sectionguard}{\Needspace*{7\baselineskip}}
 \hypersetup{pdftitle={The Seven Sacraments},pdfsubject={Patristic, Thomistic, scriptural, and canonical sacramental theology}}
+\setcounter{tocdepth}{2}
 
-\newcommand{\sacramenttitle}[3]{%
-  \begin{center}
-    {\LARGE\bfseries #1}\\[0.18em]
-    {\large\itshape #2}\\[0.18em]
-    {\small #3}
-  \end{center}
+\newcommand{\sacramentMatrixTitle}{Appendix \thesection: The Seven Sacraments}
+\newcommand{\sacramentMatrixPageHook}{%
+  \refstepcounter{section}%
+  \label{app:seven-sacrament-matrix}%
+  \addcontentsline{toc}{section}{\protect\numberline{\thesection}The Seven-Sacrament Comparative Matrix}%
+}
+
+\newcommand{\churchesInitiationTitle}{Appendix \thesection: The Twenty-Four Catholic Churches and the Order of Initiation}
+\newcommand{\churchesInitiationPageHook}{%
+  \refstepcounter{section}%
+  \label{app:initiation-table}%
+  \addcontentsline{toc}{section}{\protect\numberline{\thesection}The Twenty-Four Catholic Churches and the Order of Initiation}%
 }
 
 \begin{document}
 
-\input{sacraments/fragments/full-matrix}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.18\textheight}
+{\Huge\bfseries The Seven Sacraments\par}
+\vspace{0.6em}
+{\Large\itshape Visible words of the Word made flesh\par}
+\vspace{0.5em}
+{\large A patristic and Thomistic synthesis of sign, causality, grace, communion, and glory\par}
+\vfill
+\begin{minipage}{0.82\textwidth}
+\footnotesize
+\textbf{AI generation metadata}\par\smallskip
+\textbf{Generated:} 2026-07-11\\
+\textbf{Model:} GPT-5-based runtime; unexposed: exact model identifier and reasoning profile\\
+\textbf{Agent/runtime:} OpenAI Codex agents (primary, research, drafting, source, and layout review); Codex CLI \texttt{0.144.1}; API workspace; unexposed: server revision.
+\end{minipage}
+\vfill
+{\small Study instrument; not an official catechism, canonical opinion, or liturgical book.\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\phantomsection
+\addcontentsline{toc}{section}{Metaphysical and Sacramental Lexicon}
 \input{sacraments/fragments/lexicon}
 
 \newpage
@@ -23,34 +63,39 @@
 
 \input{sacraments/sections/10-initiation-introduction}
 \input{sacraments/sections/11-baptism}
-\input{sacraments/summaries/baptism}
 \input{sacraments/sections/12-confirmation}
-\input{sacraments/summaries/confirmation}
 \input{sacraments/sections/13-eucharist}
-\input{sacraments/summaries/eucharist}
-\input{sacraments/sections/14-churches-initiation}
 
 \input{sacraments/sections/20-healing-introduction}
 \input{sacraments/sections/21-penance}
-\input{sacraments/summaries/penance}
 \input{sacraments/sections/22-anointing}
-\input{sacraments/summaries/anointing}
 
 \input{sacraments/sections/30-communion-introduction}
 \input{sacraments/sections/31-orders}
-\input{sacraments/summaries/orders}
 \input{sacraments/sections/32-matrimony}
-\input{sacraments/summaries/matrimony}
 
 \input{sacraments/sections/40-synthesis}
 \input{sacraments/sections/90-references}
 
-\section*{Generation Metadata}
-{\footnotesize
-\textbf{Generated:} 2026-07-11\\
-\textbf{Model:} GPT-5-based runtime; unexposed: exact model identifier and reasoning profile\\
-\textbf{Agent/runtime:} OpenAI Codex agents (primary, research, drafting, source, and layout review); Codex CLI \texttt{0.144.1}; API workspace; unexposed: server revision.\par
+\clearpage
+\appendix
+
+\input{sacraments/fragments/full-matrix}
+\input{sacraments/sections/14-churches-initiation}
+
+\renewcommand{\sacramentSummaryPageHook}[1]{%
+  \refstepcounter{section}%
+  \addcontentsline{toc}{section}{\protect\numberline{\thesection}#1 at a Glance}%
 }
+\renewcommand{\sacramentSummaryTitlePrefix}{Appendix \thesection:\space}
+
+\input{sacraments/summaries/baptism}
+\input{sacraments/summaries/confirmation}
+\input{sacraments/summaries/eucharist}
+\input{sacraments/summaries/penance}
+\input{sacraments/summaries/anointing}
+\input{sacraments/summaries/orders}
+\input{sacraments/summaries/matrimony}
 
 \end{deepstudy}
 \end{document}
