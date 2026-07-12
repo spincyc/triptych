@@ -1,0 +1,81 @@
+# Sacramental Treatise — Research Scope and Qualification Record
+
+## Purpose and authority classes
+
+This record supports `src/gpt/sacraments/main.tex`. The treatise distinguishes:
+
+- Scripture and defined or authoritative Catholic doctrine;
+- universal and particular discipline, which can change without changing sacramental substance;
+- direct patristic exegesis of a cited passage;
+- patristic or scholastic doctrinal illumination not presented as direct commentary;
+- Thomistic synthesis, including explicit identification of the posthumous *Supplementum*;
+- editorial integrations across sacraments and salvation history.
+
+No editorial synthesis is attributed to a Father, Doctor, council, or rite. The work is a study instrument, not an official catechism, canonical opinion, liturgical book, or substitute for a competent pastor or tribunal.
+
+## General doctrinal baseline
+
+The controlling modern synthesis is *Catechism of the Catholic Church* 1076–1209 and 1210–1666. The sacramental validity grammar was checked against CIC 840–846, CCEO 667–674, Trent session VII, and the Dicastery for the Doctrine of the Faith's 2024 note *Gestis verbisque*. The requested opening definition is retained verbatim and then refined with CCC 1131 and ST III, questions 60–65.
+
+Augustine's sign-language was checked principally in *De doctrina christiana* II.1.1, Letter 98.9, and *Tractates on John* 80.3. Aristotle is used for act/potency, substance/accident, hylomorphism, habits, and the four causes; these are analogical analytical tools rather than claims that a sacrament is a natural substance. Hugh of Saint Victor and Peter Lombard form the historical scholastic bridge. Aquinas's completed Part III governs the general doctrine, Baptism, Confirmation, Eucharist, and Penance. Anointing, Orders, and Matrimony use the *Supplementum* with its posthumous editorial status disclosed.
+
+“Sacramental form” and “substantial form” are kept distinct. Sacramental form is the determining word or prayer joined to matter / quasi-matter. In Baptism, Confirmation, Penance, Anointing, Orders, and Matrimony the human subject remains substantially human while receiving grace, character, remission, strength, or a real bond / relation. In the Eucharist, the sacramental words within the integral anaphora effect conversion of the whole substances of bread and wine into Christ's Body and Blood; the substances and their substantial forms no longer remain, while the sensible accidents / species do. The treatise therefore uses Trent's grammar of “whole substance” rather than loosely saying that “the forms” are transubstantiated.
+
+## Matter, form, ministry, and validity qualifications
+
+- **Baptism:** natural water, a true washing, and the substantial Trinitarian formula are distinguished from the fuller approved rite. Any person can baptize validly with the Church's intention; necessity governs the lawfulness of nonordinary ministry, not sacramental capacity. Latin law names bishop, presbyter, and deacon ordinary ministers; Eastern law ordinarily names the presbyter and permits a deacon in necessity. Conditional Baptism is used only after investigation leaves prudent doubt; it is not repetition.
+- **Confirmation:** Latin 1962, current Latin, Byzantine, and other Eastern formulas and gestures are not collapsed. The bishop is ordinary Latin minister; a presbyter with faculty is a valid minister, and any priest has faculty for one in danger of death. No deacon or lay person can confirm.
+- **Eucharist:** valid wheaten bread and natural grape wine are the matter; both species belong to the integral sacrificial celebration, though consecration under only one species can still be valid. The Roman scholastic account of the words of institution is stated inside the integral Eucharistic Prayer. The Catholic recognition of the Anaphora of Addai and Mari prevents an assertion that every valid Eastern anaphora must contain one isolated, consecutive formula. Only bishop or presbyter consecrates. Latin deacons are ordinary distributors; under CCEO 709, Eastern distribution by a deacon or other faithful depends upon particular law. No distributor thereby consecrates.
+- **Penance:** contrition, confession, and satisfaction are *quasi-matter*, not physical matter and not sins treated as a positive element. A priest requires the power of Orders and ordinarily a faculty; any priest can absolve in danger of death under the law. General absolution is not a non-priestly extraordinary ministry.
+- **Anointing:** current Latin law permits appropriate vegetable oil; the 1962 Roman rite ordinarily prescribes blessed olive oil and multiple sense anointings. Only a bishop or presbyter validly anoints. Latin necessity permits the minister to bless the oil; Eastern law commonly permits the priest-minister himself to bless it under CCEO 741. The sacrament is for serious illness or old age and not solely the final minutes of life.
+- **Orders:** Pius XII's *Sacramentum Ordinis* controls the essential hands-and-prayer account over the historical Latin handing of instruments. A consecrated bishop alone ordains. The three sacramental degrees are episcopate, presbyterate, and diaconate; minor orders and the historic Latin subdiaconate are not additional degrees of Holy Orders.
+- **Matrimony:** the Magisterium has not imposed one exhaustive hylomorphic partition. The treatise follows the *Supplementum*'s sensible acts / consent-words analogy but does not call spouses' bodies inert matter. Latin spousal ministry and clerical assistance are distinguished from Eastern Crowning, in which the priest or bishop is minister and priestly blessing is constitutive of ordinary valid form (CCC 1623; CCEO 828). CCEO 832 governs necessity before witnesses and directs that another priest, even non-Catholic, be called if possible and blessing follow; CCEO 834 §2 and CIC 1127 §1 govern related Eastern mixed-marriage form. A valid marriage of two baptized persons is sacramental. Antecedent and perpetual impotence invalidates; sterility does not. Only a ratified and consummated sacramental marriage is dissoluble by death alone; CIC 1142 governs pontifical dissolution of a ratified but unconsummated marriage.
+
+## Final causality and the hierarchy of ends
+
+The treatise uses “primary,” “secondary,” and “ultimate” analogically and with explicit scope. A primary proper end gives a sacrament or institution its governing objective direction; a secondary end is a genuine subordinate good, not an optional add-on; the common ultimate objective end is God's glory, while the recipient's ultimate supernatural end is eternal life and the vision of God. Objective finality is distinguished from validity, fruitful reception, and empirical outcome.
+
+- **Baptism:** primary purification and regeneration into adoptive filiation through remission and sanctifying grace; subordinate incorporation, virtues / gifts, remission of punishment, and capacity for the other sacraments; ultimately risen communion. The baptismal character is the intermediate *res et sacramentum*, not a subordinate end.
+- **Confirmation:** primary Pentecostal strengthening of baptismal grace for public witness; subordinate deepening of filiation, ecclesial bond, gifts, worship, mission, and defense; ultimately steadfast charity. The confirmational character is the intermediate *res et sacramentum*, not part of the primary end.
+- **Eucharist:** in sacrifice, adoration and thanksgiving are the governing Godward ends, with propitiation and impetration as objective subordinate applications; Communion is ordered primarily to union with Christ and his Body. Nourishment, increase of charity, venial remission, preservation, and resurrection pledge follow as ordered fruits. The Eucharist is itself the sacramental end of the other six while tending to unveiled communion.
+- **Penance:** primary remission of post-baptismal sin, reconciliation with God, and restoration / increase of grace; subordinate reconciliation with the Church, peace of conscience, temporal-punishment remission, satisfaction, and medicinal strength; ultimately perseverance and merciful judgment.
+- **Anointing:** primary spiritual strengthening / healing, union with the Passion, forgiveness when needed, and readiness for passage; bodily recovery is contingent and secondary, only if conducive to salvation; ultimately resurrection.
+- **Orders:** primary public apostolic ministry for the Church's common good; within priestly degrees, chiefly Eucharistic consecration and pastoral sanctification; within the diaconate, proper non-priestly diakonia. Degree-specific acts of word, governance, sacramental service, altar ministry, administration, and charity are ordered within those primary ends; ultimately the Bride's mature worship.
+- **Matrimony:** in the traditional Latin hierarchy governing the 1962 horizon, the primary natural / institutional end is generation and education of children; intrinsic secondary ends are mutual aid / the spouses' good and the remedy / chaste ordering of concupiscence. The 1917 Code, canon 1013 §1, and *Casti connubii* 17–24 state the hierarchy; CIC 1055 and CCC 1601 use a coordinate formulation, while CCC 1652 calls children marriage's crowning glory without diminishing other ends. Actual fertility is not validity, and subordination never licenses instrumentalization.
+
+## Patristic survey boundaries
+
+The survey sought direct passage commentary and closely related doctrinal works in accessible Greek, Latin, and Syriac witnesses. Baptism and Eucharist have abundant early mystagogical evidence. Confirmation is often treated within unified post-baptismal initiation rather than as an isolated tract. Penance vocabulary and discipline develop across public and private forms. Early evidence for Anointing is materially smaller and often embedded in oil blessings, letters, sermons, and commentary on James. The *Apostolic Tradition* is cited with explicit textual-history caution. No numerical quota was used, and absence from the final references means a lead did not materially govern a published claim.
+
+## The twenty-four Catholic Churches *sui iuris*
+
+The catalog treats a Church *sui iuris* as distinct from a rite or liturgical family. The Latin Church plus twenty-three Eastern Catholic Churches are grouped as follows:
+
+- Latin: Latin Church.
+- Alexandrian: Coptic, Ethiopian, Eritrean.
+- Armenian: Armenian.
+- East Syriac: Chaldean, Syro-Malabar.
+- West Syriac / Antiochene: Maronite, Syriac, Syro-Malankara.
+- Byzantine: Albanian, Belarusian, Bulgarian, Greek Catholic Church of Croatia and Serbia, Greek, Hungarian, Italo-Albanian, Macedonian, Melkite Greek Catholic, Romanian, Russian, Ruthenian, Slovak, Ukrainian.
+
+The controlling initiation norms are CCEO 694–697 and 710, *Orientalium Ecclesiarum* 12–14, and the 1996 Eastern liturgical Instruction 50–51. The inherited Eastern norm is Baptism followed immediately by Chrismation and Eucharist, including infants; adult initiation likewise unites the three. Current local practice is not perfectly uniform. The Chaldean Catholic Diocese of St. Thomas the Apostle U.S.A. documents infant Baptism and Confirmation with Eucharist delayed to the age of reason in its “Sacraments” page and 2023 diocesan policies. Maronite eparchial sources document Baptism joined to Chrismation and the historical cessation of infant Communion; St. Anthony Maronite Church's eparchial Grade-2 curriculum documents one present parish First-Communion timetable without being universal Maronite law. The Syro-Malabar Synodal Commission's official *The Sacraments of the Syro-Malabar Church*, General Instructions 14–15, directs Communion “as early as possible” after Baptism and Chrismation; Paul Pallath's curial-hosted 2023 study supplies historical and implementation qualifications but is not legislation. The printed table therefore states common law, identifies these patterns as local or particular qualifications rather than universal counter-rules, and directs readers to the competent parish or eparchy for actual scheduling. A later solemn First Communion in an Eastern parish may be a catechetical public observance rather than the child's literal first reception.
+
+Exact public records used for those three named examples:
+
+- Chaldean Catholic Diocese of St. Thomas the Apostle U.S.A., “Sacraments,” <https://chaldeanchurch.org/sacraments/>, and “Diocesan Sacramental Policies,” <https://chaldeanchurch.org/policies/>.
+- Maronite Catholic Eparchy of Saint Maron of Montreal, “Maronite Liturgy,” <https://www.maronites.ca/maronites/maronite-liturgy/>; Eparchy of Saint Maron of Brooklyn, Beggiani, “The Anaphora,” § “Distribution of Communion,” <https://www.stmaron.org/anaphora>; St. Anthony Maronite Church, “Eparchy of St Maron Religious Education Curriculum,” Grade 2, <https://www.stanthonylawrence.org/curriculum/>.
+- Syro-Malabar Synodal Commission for Liturgy, *The Sacraments of the Syro-Malabar Church*, General Instructions 14–15, <https://www.syromalabarliturgy.org/assets/uploads/pdfs/Sacraments-English.pdf>; Paul Pallath, “The Liturgical Identity of the Syro-Malabar Church and Fidelity to the Patrimony of the Eastern Churches,” pp. 52–59, <https://console.syromalabarchurch.in/uploads/documents/2023_October-_Correct1.pdf>.
+
+Anglican Ordinariates use a distinctive liturgical use within the Latin Church and are not additional Churches *sui iuris*. “Roman Catholic” is not used as a synonym that excludes Eastern Catholics.
+
+## Current-discipline date and limits
+
+Canonical and ecclesial-identity material was checked for this generation on 2026-07-11. Discipline and particular practice can change. The treatise states universal law where available, marks current or local practice as such, and avoids converting a pastoral custom into sacramental essence. Questions of individual validity, faculties, impediments, initiation status, or matrimonial nullity require competent ecclesiastical judgment.
+
+## Material unresolved or deliberately bounded
+
+- Thomas's own assignments are stated: inward repentance for Penance (ST III, q. 84, a. 1 ad 3) and inward devotion or spiritual anointing for Anointing (Supplement, q. 30, a. 3 ad 3). No claim is made that every later school organizes these intermediate realities identically or treats them as indelible structures.
+- The exact historical development and textual strata of several ancient rites, particularly the document called *Apostolic Tradition*, remain disputed.
+- Scripture does not always record a single institution sentence or civil date for each sacrament; institution is presented through Christ's coherent saving acts and apostolic mandate without invented precision.
+- The initiation table cannot represent every eparchy, diaspora parish, restored-order Latin diocese, or pastoral exception on one page. It gives the competent Church's normative family and flags material variations.
+- Public-domain English patristic translations are working aids; exact doctrinal claims are anchored by work and locus rather than a claim that the linked translation is critical.
