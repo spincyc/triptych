@@ -35,13 +35,13 @@ The status codes record evidence, not aspirational quality scores:
 | 12 | Fifth Sunday after Easter | Not started | G0 | S0 | --- | Q0 |
 | 13 | Sunday after the Ascension | Not started | G0 | S0 | --- | Q0 |
 | 14 | Pentecost Sunday | Not started | G0 | S0 | --- | Q0 |
-| 15 | Trinity Sunday | Historically situated, source-audited working draft ([source](15-trinity-sunday/main.tex); [propers](15-trinity-sunday/propers/verified.md); [scope](15-trinity-sunday/research/scope.md); [PDF](build/15-trinity-sunday.pdf)) | G3 | S2 | T0 | Q3 |
-| 16 | Second Sunday after Pentecost | Historically situated, source-audited working draft ([source](16-second-after-pentecost/main.tex); [propers](16-second-after-pentecost/propers/verified.md); [scope](16-second-after-pentecost/research/scope.md); [PDF](build/16-second-after-pentecost.pdf)) | G3 | S2 | T0 | Q3 |
-| 17 | Third Sunday after Pentecost | Historically situated, source-audited working draft ([source](17-third-after-pentecost/main.tex); [propers](17-third-after-pentecost/propers/verified.md); [scope](17-third-after-pentecost/research/scope.md); [PDF](build/17-third-after-pentecost.pdf)) | G3 | S2 | T0 | Q3 |
-| 18 | Fourth Sunday after Pentecost | Historically situated, source-audited working draft ([source](18-fourth-after-pentecost/main.tex); [propers](18-fourth-after-pentecost/propers/verified.md); [scope](18-fourth-after-pentecost/research/scope.md); [PDF](build/18-fourth-after-pentecost.pdf)) | G3 | S2 | T0 | Q3 |
-| 19 | Fifth Sunday after Pentecost | Historically situated, source-audited working draft ([source](19-fifth-after-pentecost/main.tex); [propers](19-fifth-after-pentecost/propers/verified.md); [scope](19-fifth-after-pentecost/research/scope.md); [PDF](build/19-fifth-after-pentecost.pdf)) | G3 | S2 | T0 | Q3 |
-| 20 | Sixth Sunday after Pentecost | Historically situated, source-audited working draft ([source](20-sixth-after-pentecost/main.tex); [propers](20-sixth-after-pentecost/propers/verified.md); [scope](20-sixth-after-pentecost/research/scope.md); [PDF](build/20-sixth-after-pentecost.pdf)) | G3 | S2 | T0 | Q3 |
-| 21 | Seventh Sunday after Pentecost | Historically situated, source-audited working draft ([source](21-seventh-after-pentecost/main.tex); [propers](21-seventh-after-pentecost/propers/verified.md); [scope](21-seventh-after-pentecost/research/scope.md); [PDF](build/21-seventh-after-pentecost.pdf)) | G3 | S2 | T0 | Q3 |
+| 15 | Trinity Sunday | Historically situated, source-audited working draft ([source](src/gpt/15-trinity-sunday/main.tex); [propers](src/gpt/15-trinity-sunday/propers/verified.md); [scope](src/gpt/15-trinity-sunday/research/scope.md); [PDF](doc/gpt/15-trinity-sunday.pdf)) | G3 | S2 | T0 | Q3 |
+| 16 | Second Sunday after Pentecost | Historically situated, source-audited working draft ([source](src/gpt/16-second-after-pentecost/main.tex); [propers](src/gpt/16-second-after-pentecost/propers/verified.md); [scope](src/gpt/16-second-after-pentecost/research/scope.md); [PDF](doc/gpt/16-second-after-pentecost.pdf)) | G3 | S2 | T0 | Q3 |
+| 17 | Third Sunday after Pentecost | Historically situated, source-audited working draft ([source](src/gpt/17-third-after-pentecost/main.tex); [propers](src/gpt/17-third-after-pentecost/propers/verified.md); [scope](src/gpt/17-third-after-pentecost/research/scope.md); [PDF](doc/gpt/17-third-after-pentecost.pdf)) | G3 | S2 | T0 | Q3 |
+| 18 | Fourth Sunday after Pentecost | Historically situated, source-audited working draft ([source](src/gpt/18-fourth-after-pentecost/main.tex); [propers](src/gpt/18-fourth-after-pentecost/propers/verified.md); [scope](src/gpt/18-fourth-after-pentecost/research/scope.md); [PDF](doc/gpt/18-fourth-after-pentecost.pdf)) | G3 | S2 | T0 | Q3 |
+| 19 | Fifth Sunday after Pentecost | Historically situated, source-audited working draft ([source](src/gpt/19-fifth-after-pentecost/main.tex); [propers](src/gpt/19-fifth-after-pentecost/propers/verified.md); [scope](src/gpt/19-fifth-after-pentecost/research/scope.md); [PDF](doc/gpt/19-fifth-after-pentecost.pdf)) | G3 | S2 | T0 | Q3 |
+| 20 | Sixth Sunday after Pentecost | Historically situated, source-audited working draft ([source](src/gpt/20-sixth-after-pentecost/main.tex); [propers](src/gpt/20-sixth-after-pentecost/propers/verified.md); [scope](src/gpt/20-sixth-after-pentecost/research/scope.md); [PDF](doc/gpt/20-sixth-after-pentecost.pdf)) | G3 | S2 | T0 | Q3 |
+| 21 | Seventh Sunday after Pentecost | Historically situated, source-audited working draft ([source](src/gpt/21-seventh-after-pentecost/main.tex); [propers](src/gpt/21-seventh-after-pentecost/propers/verified.md); [scope](src/gpt/21-seventh-after-pentecost/research/scope.md); [PDF](doc/gpt/21-seventh-after-pentecost.pdf)) | G3 | S2 | T0 | Q3 |
 | 22 | Eighth Sunday after Pentecost | Not started | G0 | S0 | --- | Q0 |
 | 23 | Ninth Sunday after Pentecost | Not started | G0 | S0 | --- | Q0 |
 | 24 | Tenth Sunday after Pentecost | Not started | G0 | S0 | --- | Q0 |
@@ -358,14 +358,17 @@ The cumulative movement is from divine gift to embodied discernment: the Trinity
 Every Sunday has its own numbered directory, and its guide and source record live together. Use the existing naming pattern and never place multiple Sundays' propers in one shared source file:
 
 ```text
-NN-sunday-name/
-  main.tex
-  propers/
-    retrieved.txt
-    verified.md
-  research/
-    scope.md
+src/gpt/
+  NN-sunday-name/
+    main.tex
+    propers/
+      retrieved.txt
+      verified.md
+    research/
+      scope.md
 ```
+
+Installed PDFs follow the same provider branch under `doc/gpt/`.
 
 `retrieved.txt` preserves the Sunday-specific text exactly as pulled from the public machine-readable finding aid, including OCR errors and enough heading or boundary text to identify the formulary. Do not silently clean this file. Do not commit an entire third-party missal, bulk OCR dump, or page-image cache in place of the focused Sunday extract.
 
@@ -460,9 +463,10 @@ Before a guide is complete, verify that:
 
 ```sh
 make
+make install
 ```
 
-PDFs are written to `build/`. Use `make clean` to remove LaTeX intermediates and `make distclean` to remove generated PDFs too.
+`make` compiles PDFs and all LaTeX intermediates under the transient, ignored `build/gpt/` tree. `make install` publishes those PDFs under the tracked `doc/gpt/` tree, preserving each document basename. Unique job names make parallel builds safe. Both `make clean` and the backward-compatible `make distclean` remove only `build/`; installed documents remain in `doc/`.
 
 ## Future AI Operating Rule
 
