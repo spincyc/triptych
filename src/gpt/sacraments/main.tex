@@ -1,0 +1,56 @@
+\input{common/preamble}
+\usepackage{pdflscape}
+\usepackage{ragged2e}
+\input{sacraments/summary-preamble}
+\renewcommand{\sectionguard}{\Needspace*{7\baselineskip}}
+\hypersetup{pdftitle={The Seven Sacraments},pdfsubject={Patristic, Thomistic, scriptural, and canonical sacramental theology}}
+
+\newcommand{\sacramenttitle}[3]{%
+  \begin{center}
+    {\LARGE\bfseries #1}\\[0.18em]
+    {\large\itshape #2}\\[0.18em]
+    {\small #3}
+  \end{center}
+}
+
+\begin{document}
+
+\input{sacraments/fragments/full-matrix}
+\input{sacraments/fragments/lexicon}
+
+\newpage
+\begin{deepstudy}
+
+\input{sacraments/sections/10-initiation-introduction}
+\input{sacraments/sections/11-baptism}
+\input{sacraments/summaries/baptism}
+\input{sacraments/sections/12-confirmation}
+\input{sacraments/summaries/confirmation}
+\input{sacraments/sections/13-eucharist}
+\input{sacraments/summaries/eucharist}
+\input{sacraments/sections/14-churches-initiation}
+
+\input{sacraments/sections/20-healing-introduction}
+\input{sacraments/sections/21-penance}
+\input{sacraments/summaries/penance}
+\input{sacraments/sections/22-anointing}
+\input{sacraments/summaries/anointing}
+
+\input{sacraments/sections/30-communion-introduction}
+\input{sacraments/sections/31-orders}
+\input{sacraments/summaries/orders}
+\input{sacraments/sections/32-matrimony}
+\input{sacraments/summaries/matrimony}
+
+\input{sacraments/sections/40-synthesis}
+\input{sacraments/sections/90-references}
+
+\section*{Generation Metadata}
+{\footnotesize
+\textbf{Generated:} 2026-07-11\\
+\textbf{Model:} GPT-5-based runtime; unexposed: exact model identifier and reasoning profile\\
+\textbf{Agent/runtime:} OpenAI Codex agents (primary, research, drafting, source, and layout review); Codex CLI \texttt{0.144.1}; API workspace; unexposed: server revision.\par
+}
+
+\end{deepstudy}
+\end{document}

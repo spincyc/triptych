@@ -1,0 +1,55 @@
+% Shared one-page sacrament-summary architecture.  This fragment is loaded by
+% the reference treatise and by ritual-Mass appendices so that their summaries
+% cannot drift into competing formats.
+\newcommand{\sacramentSummaryKicker}{}
+
+\newcommand{\sacramentSummaryStart}[3]{%
+  \newpage
+  \begingroup
+  \footnotesize
+  \setlength{\parskip}{0.32em}%
+  \begin{center}
+    \sacramentSummaryKicker
+    {\Large\bfseries #1 at a Glance}\\[0.15em]
+    {\small #2}\\[0.15em]
+    {\footnotesize\itshape #3}
+  \end{center}
+  \vspace{-0.35em}
+}
+
+\newcommand{\sacramentSummaryEnd}{%
+  \par\endgroup
+  \newpage
+}
+
+\newenvironment{summaryidentity}
+{\begingroup\scriptsize\renewcommand{\arraystretch}{1.04}%
+\tabularx{\linewidth}{>{\bfseries\raggedright\arraybackslash}p{0.145\linewidth}>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Identity} & \textbf{Definition and fulfillment}\\
+\midrule}
+{\bottomrule\endtabularx\endgroup}
+
+\newenvironment{summaryconstitution}
+{\begingroup\scriptsize\renewcommand{\arraystretch}{1.04}%
+\tabularx{\linewidth}{>{\bfseries\raggedright\arraybackslash}p{0.13\linewidth}>{\raggedright\arraybackslash}p{0.265\linewidth}>{\raggedright\arraybackslash}p{0.265\linewidth}>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Condition} & \textbf{Metaphysical / ritual fulfillment} & \textbf{Ordinary order} & \textbf{Extraordinary case or limit}\\
+\midrule}
+{\bottomrule\endtabularx\endgroup}
+
+\newenvironment{summaryeconomy}
+{\begingroup\scriptsize\renewcommand{\arraystretch}{1.04}%
+\tabularx{\linewidth}{>{\bfseries\raggedright\arraybackslash}p{0.12\linewidth}>{\raggedright\arraybackslash}p{0.195\linewidth}>{\raggedright\arraybackslash}p{0.235\linewidth}>{\raggedright\arraybackslash}p{0.235\linewidth}>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Axis} & \textbf{Creation / covenant} & \textbf{Christ and Pasch} & \textbf{Church and other sacraments} & \textbf{Last end}\\
+\midrule}
+{\bottomrule\endtabularx\endgroup}
+
+\newenvironment{summarywitnesses}
+{\begingroup\scriptsize\renewcommand{\arraystretch}{1.04}%
+\tabularx{\linewidth}{>{\bfseries\raggedright\arraybackslash}p{0.13\linewidth}>{\raggedright\arraybackslash}p{0.20\linewidth}>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Witness class} & \textbf{Principal loci} & \textbf{Controlling claim}\\
+\midrule}
+{\bottomrule\endtabularx\endgroup}

@@ -1,6 +1,6 @@
 # Liturgical Year TLM Mass Preparation Guides
 
-This project builds printable preparation guides for advanced lay readers of the traditional Roman Mass propers. The present set covers Trinity Sunday and the Second through Seventh Sundays after Pentecost in the 1962 temporal cycle.
+This project builds printable preparation guides for advanced lay readers of the traditional Roman Mass propers together with source documents that supply their sacramental theology. The present set covers Trinity Sunday and the Second through Seventh Sundays after Pentecost in the 1962 temporal cycle and includes a full patristic and Thomistic reference work on the seven sacraments.
 
 These are not homiletic sketches. They are layered study instruments for use before Mass: each guide places the appointed Scriptures in their human and salvation-historical settings, then helps a reader see how the chants, orations, Epistle, Gospel, altar texts, and sacramental conclusion form one symbolic and theological whole.
 
@@ -86,6 +86,12 @@ The catalog therefore contains 52 numbered Sunday identities and 56 complete for
 | F02 | Christ the King | Last Sunday of October; its post-Pentecost ordinal varies | Not started | G0 | S0 | --- | Q0 |
 
 Fixed-date and local feasts that may supersede a second-class Sunday are outside this temporal catalog and require a calendar- and place-specific layer rather than fictitious permanent Sunday numbers.
+
+## Sacramental Reference Document
+
+The [full sacramental treatise](src/gpt/sacraments/main.tex) ([research scope](src/gpt/sacraments/research/scope.md); [PDF](doc/gpt/sacraments.pdf)) begins with the formal definition and a seven-sacrament matter–form–minister matrix, defines its metaphysical vocabulary, treats each sacrament through Scripture, patristic reception, and Thomistic synthesis, distinguishes sacramental from substantial form and states what each sign changes, separates outward operation, intermediate sacramental reality, proper grace, primary and secondary ends, and the common ultimate order to God's glory and beatitude, catalogs initiation practice across all twenty-four Catholic Churches *sui iuris*, and gives one reusable one-page summary for every sacrament. Its summary fragments live in `src/gpt/sacraments/summaries/`; ritual-Mass guides import those fragments rather than keeping independent condensed accounts.
+
+The compact [Sacraments at a Glance](src/gpt/sacraments-at-a-glance/main.tex) ([PDF](doc/gpt/sacraments-at-a-glance.pdf)) collects, in order, the same canonical master matrix, metaphysical lexicon, seven one-page sacrament summaries, and twenty-four-Church initiation table. It is a retrieval companion rather than an independent doctrinal authority or research ceiling: its contents are composed directly from the full treatise's shared fragments and must never be maintained as duplicate theological copies.
 
 ## Reader and Use
 
@@ -368,6 +374,8 @@ src/gpt/
       scope.md
 ```
 
+The doctrinal reference work uses `src/gpt/sacraments/fragments/` for shared front matter, `src/gpt/sacraments/sections/` for long treatments, `src/gpt/sacraments/summaries/` for the canonical reusable one-page appendices, and `src/gpt/sacraments/research/scope.md` for its authority and qualification audit. `src/gpt/sacraments-at-a-glance/main.tex` composes those canonical fragments and contains no independent doctrinal copy.
+
 Installed PDFs follow the same provider branch under `doc/gpt/`.
 
 `retrieved.txt` preserves the Sunday-specific text exactly as pulled from the public machine-readable finding aid, including OCR errors and enough heading or boundary text to identify the formulary. Do not silently clean this file. Do not commit an entire third-party missal, bulk OCR dump, or page-image cache in place of the focused Sunday extract.
@@ -417,6 +425,9 @@ Public-domain translations linked in `References` are working study editions, no
 
 Before a guide is complete, verify that:
 
+- the sacramental reference document keeps the requested formal definition and complete matter–form–subject–minister–effect matrix together on page 1, the metaphysical lexicon alone on page 2, the three initiation sacraments under the first overall section, all twenty-four Catholic Churches *sui iuris* on the single initiation-practice page, and exactly one consistently structured summary page after every sacrament; every full treatment and summary explicitly distinguishes primary proper, intrinsic secondary, contingent, and ultimate ends where those distinctions apply;
+- the at-a-glance companion contains exactly the shared master matrix, lexicon, seven canonical summaries in sacramental order, and the single twenty-four-Church initiation page; the summaries remain one page each, and no copied theological text can drift from the full treatise;
+- every sacrament defines its matter or quasi-matter and sacramental form, identifies the intermediate reality and proper grace, and states what formal, relational, or substantial change occurs; Eucharistic transubstantiation is never confused with the determining sacramental words or with a change of accidents;
 - the Sunday has its own numbered directory containing Git-tracked `propers/retrieved.txt`, `propers/verified.md`, and `research/scope.md`; the first preserves the focused pull without silent cleanup, the second contains the text provenance and verification fields, and the third retains material research scope displaced from the PDF;
 - the missal witnesses are public and edition-identified, every published Latin form has been visually checked against a facsimile page, and `References` records printed pages, stable URLs, access dates, substitutions, and unresolved discrepancies without machine-specific paths;
 - all appointed principal propers (ten in the present set, with any seasonal substitutions or additions where applicable) have been extracted, verified, and made to contribute to the guide;
