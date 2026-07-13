@@ -1,6 +1,6 @@
 # Source Audit — Trustful Surrender to Divine Providence
 
-Access dates below are 2026-07-12 unless otherwise noted. Public English translations are working study texts; doctrinal claims rest on the identified works and loci rather than on a claim that one translation is critical.
+Access dates below are 2026-07-12 unless otherwise noted; the Augustine/Crowley sources were rechecked 2026-07-13. Public English translations are working study texts; doctrinal claims rest on the identified works and loci rather than on a claim that one translation is critical.
 
 ## Governing doctrine
 
@@ -105,18 +105,19 @@ Exact governing sections used:
 
 Focused online witness used for verification: <https://www.saintsbooks.net/books/Fr.%20Jean%20Baptiste%20Saint-Jure%20and%20St.%20Claude%20de%20la%20Columbiere%20-%20Trustful%20Surrender%20to%20Divine%20Providence.pdf>. The publisher's record and preview confirm the modern edition and front matter: <https://tanbooks.com/products/books/trustful-surrender-to-divine-providence-the-secret-of-peace-and-happiness/>. WorldCat supplies a library catalog record: <https://search.worldcat.org/title/743355033>.
 
-## Crowley comparison
+## Crowley historiographical clarification
 
 - Aleister Crowley, *The Book of the Law: Liber AL vel Legis* (York Beach, ME: Red Wheel/Weiser, 2004), I.40, I.57, III.60; cross-checked in the O.T.O. online text and manuscript links, <https://lib.oto-usa.org/libri/liber0220.html>, and Crowley’s “Duty,” <https://lib.oto-usa.org/crowley/essays/duty.html>.
-- Crowley, “The Antecedents of Thelema” (1926), in *The Revival of Magick and Other Essays*, ed. Hymenaeus Beta and Richard Kaczynski (Tempe, AZ: New Falcon / O.T.O., 1998), checked against the unfinished online transcript at <https://hermetic.com/eidolons/the-antecedents-of-thelema>: direct evidence of his retrospective acknowledgment of Augustine and Rabelais and of his denial that Augustine’s meaning is identical with *Liber AL*.
+- Crowley, “The Antecedents of Thelema” (1926), in *The Revival of Magick and Other Essays*, ed. Hymenaeus Beta and Richard Kaczynski (Tempe, AZ: New Falcon / O.T.O., 1998), checked against the unfinished online transcript at <https://hermetic.com/eidolons/the-antecedents-of-thelema>: direct evidence of his retrospective acknowledgment of Augustine and Rabelais, his express denial that Augustine’s contextual meaning is the meaning of *Liber AL*, and his description of Rabelais as “far more important.”
 - Graham John Wheeler, “Do What Thou Wilt: The History of a Precept,” *Religio* 27, no. 1 (2019): 17–41, especially 17–22. Wheeler documents Crowley’s explicit 1926 acknowledgment of Augustine and Rabelais, distinguishes benign and transgressive interpretations, and locates Augustine’s sentence at Tractate VII.8. Stable record: <https://hdl.handle.net/11222.digilib/141542>.
 
-The historical claim is limited: Crowley acknowledged Augustine as an antecedent. The theological judgment is the article’s: where Augustine subjects willing to infused charity, Crowley’s formula subordinates love to an esoterically discerned “True Will” outside the Christian order of Creator, revelation, grace, objective good, and neighbor-love. The article calls this an inversion and, in Catholic spiritual terms, satanic; it does not claim that every Thelemite intends crude hedonism or that Thelema is historically identical with every movement called Satanism.
+The historical result is deliberately limited. Crowley acknowledged Augustine retrospectively, denied identity of meaning, and assigned greater importance to Rabelais; neither his 1904 text nor the checked scholarship demonstrates direct borrowing from Augustine. That is enough to warrant a compact clarification because the formulas are readily conflated, but not enough to call the relation a proven textual corruption. The theological contrast is the article’s: Augustine places willing under charity received from God, whereas Crowley places love “under will” in a system outside the Christian order of Creator, revelation, grace, objective good, and beatitude. The article does not turn that contrast into a historical derivation, a taxonomy equating Thelema with Satanism, or a judgment of adherents’ culpability.
 
 ## Consequential negative results and rejected leads
 
 - The wording “do what thou wilt under love, against such there is no law” was not found as one Augustinian quotation. It combines Augustine, Galatians 5:23, and modern paraphrase and is corrected in publication.
 - No source supports spelling Crowley’s name “Alistair”; the verified form is “Aleister.”
+- No checked source establishes that Crowley’s 1904 formulas directly derive from Augustine or constitute a deliberate rewriting of him. Crowley’s 1926 acknowledgment is retrospective, expressly distinguishes the meanings, and gives Rabelais greater importance. The article therefore rejects “satanic corruption” as a misleading historical description while preserving a bounded Catholic theological contrast.
 - The Saint-Jure / La Colombière anthology is distinct from the work commonly titled *Abandonment to Divine Providence* and historically attributed to Jean-Pierre de Caussade. The latter is not used.
 - The article does not claim that every evil event is a positive divine command, that victims must remain exposed to harm, that every suffering is a punishment for the sufferer’s sin, or that emotional peace proves sanctity.
 - The article does not use the word “instrument” to erase a wrongdoer’s agency. A rational secondary cause acts with its own intellect and will and can therefore be culpable even while the act’s existence remains dependent on the first Cause.
