@@ -39,6 +39,10 @@ src/gpt/
     mariology/
       <document>/
       shared/                    optional non-publishable fragments
+  devotions/
+    novenas/
+      shared/                    non-publishable common prayers and formatting
+      <numbered-document>/
   articles/
     faith/
     canon-law/
@@ -51,6 +55,8 @@ The hierarchy distinguishes content families; it does not prescribe a single int
 Mariological reference works use publishable leaves beneath `theology/mariology/`. Any `theology/mariology/shared/` directory is non-publishable, owns only genuinely shared source material, and has no PDF mirror; all consuming documents must be rebuilt after it changes.
 
 Edition-specific manuals for resolving the 1962 calendar and assembling admitted formularies use publishable leaves beneath `liturgy/roman-rite/1962/reference/`. They follow the 1962 assembly profile rather than inheriting the weekly proper-guide or Ordinary-exposition architecture.
+
+Novenas use numbered publishable leaves beneath `devotions/novenas/` and follow `guidance/devotions/novenas.md`. The `devotions/novenas/shared/` directory is non-publishable and owns only genuinely common prayer text or formatting; every novena consumer must be rebuilt after it changes.
 
 ## Mirrored publications and transient builds
 

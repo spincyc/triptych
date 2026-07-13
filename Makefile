@@ -18,6 +18,9 @@ SACRAMENT_SHARED := \
 	$(wildcard $(SACRAMENT_ROOT)/fragments/*.tex) \
 	$(wildcard $(SACRAMENT_ROOT)/summaries/*.tex)
 SACRAMENT_INITIATION_TABLE := $(SACRAMENT_ROOT)/sections/14-churches-initiation.tex
+NOVENA_ROOT := $(SOURCE_ROOT)/devotions/novenas
+NOVENA_SHARED := $(wildcard $(NOVENA_ROOT)/shared/*.tex)
+NOVENA_BUILD_PDFS := $(filter $(BUILD_ROOT)/devotions/novenas/%,$(BUILD_PDFS))
 
 .PHONY: all pdf install list help clean distclean check-tools check-metadata
 .DELETE_ON_ERROR:
@@ -66,6 +69,7 @@ $(BUILD_ROOT)/theology/sacraments-at-a-glance.pdf: $(SACRAMENT_SHARED) $(SACRAME
 $(BUILD_ROOT)/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass.pdf: \
 	$(SACRAMENT_ROOT)/summary-preamble.tex \
 	$(SACRAMENT_ROOT)/summaries/matrimony.tex
+$(NOVENA_BUILD_PDFS): $(NOVENA_SHARED)
 
 $(DOC_ROOT)/%.pdf: $(BUILD_ROOT)/%.pdf | check-metadata
 	@mkdir -p $(@D)

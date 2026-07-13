@@ -1,0 +1,43 @@
+\usepackage{ragged2e}
+\usepackage{titlesec}
+
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2em}
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\newcommand{\novenaidentity}[1]{%
+  \begin{studybox}{Identity and use}
+  #1
+  \end{studybox}}
+
+\newcommand{\dayaxis}[3]{%
+  \begin{studybox}{The day's axis}
+  \textbf{Scriptural center:} #1\par
+  \textbf{Grace sought:} #2\par
+  \textbf{Concrete act:} #3
+  \end{studybox}}
+
+\newcommand{\bilingualprayer}[4]{%
+  \Needspace{10\baselineskip}%
+  \begin{sourcecard}{#1}
+  {\footnotesize\itshape #2\par}\smallskip
+  \begin{minipage}[t]{0.48\linewidth}
+  \textbf{Latin}\par\smallskip
+  \itshape #3
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.48\linewidth}
+  \textbf{English}\par\smallskip
+  #4
+  \end{minipage}
+  \end{sourcecard}}
+
+\newcommand{\novenaexamination}[1]{%
+  \begin{studybox}{Examination and response}
+  #1
+  \end{studybox}}
+
+\newcommand{\prayerinstruction}[1]{\textbf{Prayer:} #1}

@@ -18,6 +18,7 @@ The collection is written for serious lay study, prayerful preparation, and veri
 | Ordinaries and Orders of Mass | Discursive exposition of the stable Mass texts and ritual order in the 1962 and postconciliar Roman books | Active; [profile](guidance/liturgy/ordinary-expositions.md) |
 | Sacramental theology | Long-form and retrieval-oriented studies of the seven sacraments | Active; see the published library below |
 | Mariology | Source-audited studies of Marian prayer, doctrine, history, and authority-qualified ecclesial judgments | Active; [profile](guidance/theology/mariology.md) |
+| Novenas | Historically and doctrinally sourced nine-day pious exercises with bilingual Latin- or Greek-source prayers, calendar guidance, and daily meditation | Active; [profile](guidance/devotions/novenas.md) |
 | Faith and theology articles | Discursive studies whose structure follows the question and evidence rather than a liturgical-guide template | Active; [article profile](guidance/articles.md) |
 | Canon-law articles | Time-bounded studies of universal or particular law with explicit code, jurisdiction, promulgation source, and as-of date | Prepared for expansion; [article profile](guidance/articles.md) |
 
@@ -36,6 +37,10 @@ The collection is written for serious lay study, prayerful preparation, and veri
 - [The Holy Rosary: The Gospel Contemplated with Mary](doc/gpt/theology/mariology/rosary.pdf) ([source](src/gpt/theology/mariology/rosary/main.tex), [research scope](src/gpt/theology/mariology/rosary/research/scope.md), [source audit](src/gpt/theology/mariology/rosary/research/source-audit.md)) — a biblical, doctrinal, patristic, historical, and spiritual exposition of the prayer's formation, complete twenty-mystery cycle, every group and mystery, and the boundaries among public Revelation, private revelation, devotional tradition, typology, and legend; source-audited working reference, with independent specialist review outstanding.
 - [Marian Apparitions in Catholic Ecclesial Judgment](doc/gpt/theology/mariology/apparitions.pdf) ([source](src/gpt/theology/mariology/apparitions/main.tex), [research scope](src/gpt/theology/mariology/apparitions/research/scope.md), [controlling status inventory](src/gpt/theology/mariology/apparitions/research/corpus-status.md), [moderate-renown index rule](src/gpt/theology/mariology/apparitions/research/moderate-renown-index.md), [source audit](src/gpt/theology/mariology/apparitions/research/source-audit.md)) — an authority-qualified historical and theological reference distinguishing fifteen selected legacy cases, every positive Marian determination located under the 2024 DDF norms through 13 July 2026, ancient and medieval received traditions from the Pillar through Walsingham and Mount Carmel, later major traditions, ambiguous reception, and negative or precautionary boundaries; its appendix gives a reproducibly bounded status table of moderately renowned claims and reserves boldface for located positive Catholic event judgments. It neither claims a nonexistent universal Church registry nor authenticates private revelation beyond the competent act. Independent human ecclesiastical and specialist review remains outstanding.
 - [Fátima: Event, Message, and Ecclesial Reception](doc/gpt/theology/mariology/fatima.pdf) ([source](src/gpt/theology/mariology/fatima/main.tex), [research scope](src/gpt/theology/mariology/fatima/research/scope.md), [controlling corpus and status record](src/gpt/theology/mariology/fatima/research/corpus-status.md), [source audit](src/gpt/theology/mariology/fatima/research/source-audit.md)) — a documentary, historical, and theological monograph on the 1917 sequence, the solar testimony, the complete content and official interpretation of the three-part secret, the later Pontevedra and Tuy cycle, First Saturdays, papal consecrations, political reception, and the message's unity in Christ; a final timeline distinguishes event, writing, judgment, and reception dates. It preserves the early October war-statement discrepancy, the 1941/1944 manuscript dates, and the exact scope of the 1930 worthy-of-belief judgment. Source-audited working monograph checked through 13 July 2026; independent ecclesiastical and specialist review remains outstanding.
+
+### Novenas
+
+- **N00 — [The First Novena: From Ascension to Pentecost](doc/gpt/devotions/novenas/00-ascension-to-pentecost.pdf)** ([source](src/gpt/devotions/novenas/00-ascension-to-pentecost/main.tex), [prayer inventory](src/gpt/devotions/novenas/00-ascension-to-pentecost/research/prayer-inventory.md), [research scope](src/gpt/devotions/novenas/00-ascension-to-pentecost/research/scope.md), [source audit](src/gpt/devotions/novenas/00-ascension-to-pentecost/research/source-audit.md)) — the scriptural and ecclesial archetype of nine-day prayer, with calendar guidance for Thursday and transferred-Sunday observance of the Ascension, a common bilingual Latin–English order, nine distinct biblical-patristic meditations and collects, the complete *Veni Creator Spiritus* and *Veni Sancte Spiritus*, and a history from Acts through Leo XIII and the current discipline of popular piety. “First” names the saving-event archetype, not a claim that Acts contains the later term or a prescribed devotional booklet. Source-audited working pious exercise; independent liturgical, theological, patristic, and Latin review remains outstanding.
 
 ### Roman Missal of 1962: Ordinary and Order of Mass
 
@@ -81,6 +86,7 @@ Read the shared rules first, then only the profile that governs the document bei
    - [Ordinary and Order-of-Mass expositions](guidance/liturgy/ordinary-expositions.md)
    - [Sacramental reference works](guidance/theology/sacramental-reference.md)
    - [Mariological reference works](guidance/theology/mariology.md)
+   - [Novenas](guidance/devotions/novenas.md)
    - [Faith, theology, and canon-law articles](guidance/articles.md)
 
 The detailed 1962 weekly-guide sequence is deliberately profile-local. Its fixed page architecture, ten-proper map, Lent-first catalog, facsimile workflow, and G/S/T/Q gates must not be imposed automatically on postconciliar guides, ordinaries, reference works, or articles.
@@ -106,6 +112,10 @@ src/gpt/
     <document>/
     mariology/<document>/
     mariology/shared/                           optional shared sources
+  devotions/
+    novenas/
+      shared/                                   non-publishable common prayers and formatting
+      <numbered-document>/
   articles/
     faith/<document>/                         planned
     canon-law/<document>/                     planned
