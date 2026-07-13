@@ -1,0 +1,78 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+
+\hypersetup{
+  pdftitle={Two Missals, One Sacrifice},
+  pdfsubject={The Roman Missal of 1962 and the postconciliar Roman Missal in history, theology, sacramental discipline, and law},
+  pdfkeywords={Traditional Latin Mass, TLM, Novus Ordo, Roman Missal of 1962, Mass of Paul VI, sacramental validity, Eucharistic discipline}
+}
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{3em}
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\newcommand{\governingjudgment}[1]{%
+  \begin{studybox}{Governing judgment}
+  #1
+  \end{studybox}}
+
+\newcommand{\canonwarning}[1]{%
+  \begin{studybox}{Canonical boundary}
+  #1
+  \end{studybox}}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.11\textheight}
+{\Huge\bfseries Two Missals, One Sacrifice\par}
+\vspace{0.8em}
+{\Large\itshape The Roman Mass of 1962 and the postconciliar Roman Missal\par}
+\vspace{0.15em}
+{\Large\itshape in history, theology, sacramental discipline, and law\par}
+\vspace{0.8em}
+{\large A comparative Catholic study as of 13 July 2026\par}
+\vfill
+\begin{minipage}{0.84\textwidth}
+\footnotesize
+\textbf{AI generation metadata}\par\smallskip
+\input{liturgy/roman-rite/comparative/two-missals-one-sacrifice/generation-metadata}
+\end{minipage}
+\vfill
+{\small A source-audited working paper for serious study. It is not an act of the Magisterium, a liturgical authorization, an official canonical census, or an opinion on the validity or culpability of an individual celebration, minister, or recipient.\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/00-question-method}
+\input{liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/10-one-sacrifice}
+\input{liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/20-trent-and-1570}
+\input{liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/30-1570-to-1962}
+\input{liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/40-postconciliar-reform}
+\input{liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/50-synoptic-comparison}
+\input{liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/60-sacramental-validity}
+\input{liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/70-eucharistic-discipline}
+\input{liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/80-current-law}
+\input{liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/90-community-census}
+\input{liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/100-pastoral-judgment}
+\input{liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/110-timeline}
+\input{liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/120-references}
+\end{deepstudy}
+
+\end{document}
