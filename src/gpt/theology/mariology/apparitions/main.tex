@@ -1,0 +1,84 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+
+\hypersetup{
+  pdftitle={Marian Apparitions in Catholic Ecclesial Judgment},
+  pdfsubject={Recognized events, pastorally authorized experiences, received traditions, and present ecclesial status as of 13 July 2026}
+}
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2em}
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\newcommand{\apparitionthesis}[1]{%
+  \begin{studybox}{Governing thesis}
+  #1
+  \end{studybox}}
+
+\newcommand{\statusbox}[2]{%
+  \begin{studybox}{Ecclesial status: #1}
+  #2
+  \end{studybox}}
+
+\newcommand{\dossieraxis}[3]{%
+  \begin{studybox}{Dossier boundary}
+  \textbf{Event and corpus:} #1\par
+  \textbf{Competent judgment:} #2\par
+  \textbf{Controlling qualification:} #3
+  \end{studybox}}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.13\textheight}
+{\Huge\bfseries Marian Apparitions\par}
+\vspace{0.12em}
+{\Huge\bfseries in Catholic Ecclesial Judgment\par}
+\vspace{0.75em}
+{\Large\itshape Recognized events, pastorally authorized experiences,\par}
+\vspace{0.1em}
+{\Large\itshape and received traditions\par}
+\vspace{0.65em}
+{\large A doctrinal, historical, and comparative study as of 13 July 2026\par}
+\vfill
+\begin{minipage}{0.86\textwidth}
+\footnotesize
+\textbf{AI generation metadata}\par\smallskip
+\input{theology/mariology/apparitions/generation-metadata}
+\end{minipage}
+\vfill
+{\small A source-audited Catholic study instrument. It is not an act of the Magisterium, a new ecclesiastical judgment, or a direction that any private revelation must be believed.\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{theology/mariology/apparitions/sections/00-question-method}
+\input{theology/mariology/apparitions/sections/10-doctrine-discernment}
+\input{theology/mariology/apparitions/sections/20-status-map}
+\input{theology/mariology/apparitions/sections/30-legacy-origins}
+\input{theology/mariology/apparitions/sections/40-legacy-expansion}
+\input{theology/mariology/apparitions/sections/50-legacy-modern}
+\input{theology/mariology/apparitions/sections/60-post-2024}
+\input{theology/mariology/apparitions/sections/70-received-traditions}
+\input{theology/mariology/apparitions/sections/80-comparative-synthesis}
+\input{theology/mariology/apparitions/sections/90-boundaries-practice}
+\input{theology/mariology/apparitions/sections/99-references}
+\end{deepstudy}
+
+\end{document}
