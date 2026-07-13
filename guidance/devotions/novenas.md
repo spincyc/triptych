@@ -67,6 +67,8 @@ A full nine-day guide normally contains:
 
 Daily meditations must develop rather than paraphrase one another. They should connect doctrine to repentance, virtue, vocation, works of mercy, ecclesial unity, or mission. They may invite prudent fasting, almsgiving, confession, spiritual reading, or service, but they may not impose obligations, discourage medical or psychological care, substitute private counsel for safeguarding or justice, or use suffering to keep a reader in danger.
 
+A repeated daily orientation panel whose internal fields already name the scriptural center, grace sought, and concrete act uses an untitled frame. Do not add a generic wrapper such as `The day's axis`; the day heading, typography, and field labels already establish the relationship. Titles for examinations, prayers, approval notices, or other materially different functions remain visible when they aid use or prevent confusion.
+
 ## Current discipline, approval, and indulgences
 
 Approval claims must name the competent authority, act, date, exact object, and jurisdiction. An imprimatur concerns freedom from doctrinal error in the submitted text; it is not proof of an origin legend or guarantee of spiritual efficacy. A repository-authored novena without ecclesiastical review must say so.

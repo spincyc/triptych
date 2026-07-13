@@ -139,6 +139,25 @@
   fonttitle=\small\bfseries
 }
 
+% Use the titleless form when a surrounding heading and explicit field labels
+% already state the block's function.  The left rule supplies hierarchy without
+% adding a second prose label that merely narrates the typography.
+\newtcolorbox{studyframe}{
+  enhanced,
+  breakable,
+  colback=white,
+  frame hidden,
+  boxrule=0pt,
+  sharp corners,
+  borderline west={1.2pt}{0pt}{black},
+  left=8pt,
+  right=2pt,
+  top=4pt,
+  bottom=4pt,
+  before skip=8pt,
+  after skip=8pt
+}
+
 \newtcolorbox{massbox}[1]{
   enhanced,
   breakable,
