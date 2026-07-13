@@ -4,7 +4,7 @@ This profile governs expositions of the stable texts and ritual sequence of Mass
 
 Under the present provider, edition-specific documents live beneath `src/gpt/liturgy/roman-rite/1962/ordinary/` or `src/gpt/liturgy/roman-rite/postconciliar/<edition-locale>/ordinary/`; cross-edition works live beneath `src/gpt/liturgy/roman-rite/comparative/`. Another provider preserves that taxonomy beneath its own provider directory.
 
-An edition-specific exposition that functions as the stable reading preface before that edition's variable propers may use catalog identifier `O00`. The `O` namespace is mandatory: bare `00` is only a sortable source-directory prefix, not the public identifier, and neither form makes the Ordinary a proper or a fictitious celebration in the temporal cycle.
+An edition-specific exposition that functions as the stable reading preface before that edition's variable propers may use `O00` as a catalog-ordering key. The key governs placement only: list the exposition in the `00` row before the temporal entries in the edition's ordered table rather than giving it a separate catalog section. It does not make the Ordinary a temporal proper, change the exposition's source hierarchy or governing profile, or become part of the work's title.
 
 ## Define the object of study
 
