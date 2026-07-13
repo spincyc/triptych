@@ -1,0 +1,65 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+
+\hypersetup{
+  pdftitle={The Ordinary and Order of the Mass},
+  pdfsubject={A structural, symbolic, patristic, and historical exposition of thirty-three movements in the 1962 Roman Order of Mass}
+}
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2em}
+\titleformat{\section}{\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.55em}{}
+
+\newcommand{\massunit}[4]{%
+  \sectionguard
+  \subsection{#1. #2}
+  \begin{tabularx}{\linewidth}{@{}>{\bfseries\raggedright\arraybackslash}p{0.15\linewidth}X@{}}
+  Liturgical status & #3\\
+  Missal locus & #4\\
+  \end{tabularx}\par\smallskip}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.13\textheight}
+{\Huge\bfseries The Ordinary and Order of the Mass\par}
+\vspace{0.6em}
+{\Large\itshape Thirty-three movements in the 1962 Roman Missal\par}
+\vspace{0.7em}
+{\large Structural, symbolic, patristic, and historical exposition\par}
+\vfill
+\begin{minipage}{0.86\textwidth}
+\footnotesize
+\textbf{AI generation metadata}\par\smallskip
+\input{liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/generation-metadata}
+\end{minipage}
+\vfill
+{\small Catalog preface O00: the stable framework studied before the variable propers. This is a study instrument, not an official liturgical book, ceremonial manual, or guide to current canonical permissions.\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/00-scope-thesis}
+\input{liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/05-structural-map}
+\input{liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/10-history}
+\input{liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/20-entrance}
+\input{liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/30-word}
+\input{liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/40-offertory}
+\input{liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/50-canon}
+\input{liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/60-communion-conclusion}
+\input{liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/70-whole}
+\input{liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/90-references}
+\end{deepstudy}
+\end{document}
