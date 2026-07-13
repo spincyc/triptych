@@ -13,6 +13,7 @@ The collection is written for serious lay study, prayerful preparation, and veri
 | Collection | Scope | Status and profile |
 | --- | --- | --- |
 | Roman Rite, 1962 propers | Temporal and ritual formularies, with historical, scriptural, patristic, and theological exposition | Active; [catalog and production profile](guidance/liturgy/roman-1962-propers.md) |
+| Roman Rite, 1962 assembly references | Edition-specific manuals for resolving calendars, precedence, Mass classes, commemorations, and the combination of Ordinary and propers | Active; [profile](guidance/liturgy/roman-1962-assembly.md) |
 | Postconciliar Roman Missal propers | Guides to variable Mass texts and readings, identified by Missal and Lectionary edition, language, territory, calendar, and cycle | Prepared for expansion; [profile](guidance/liturgy/postconciliar-propers.md) |
 | Ordinaries and Orders of Mass | Discursive exposition of the stable Mass texts and ritual order in the 1962 and postconciliar Roman books | Active; [profile](guidance/liturgy/ordinary-expositions.md) |
 | Sacramental theology | Long-form and retrieval-oriented studies of the seven sacraments | Active; see the published library below |
@@ -36,6 +37,10 @@ The collection is written for serious lay study, prayerful preparation, and veri
 ### Roman Missal of 1962: Ordinary and Order of Mass
 
 - **O00 — [The Ordinary and Order of the Mass](doc/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.pdf)** ([source](src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/main.tex), [edition manifest](src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/edition-manifest.md), [thirty-three-unit inventory](src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/sequence-inventory.md), [unit source matrix](src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/unit-source-matrix.md), [source audit](src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/source-audit.md)) — a passage-level exposition of all thirty-three movements in the 1962 Order of Mass, presenting each received textual boundary, biblical context, historical witness, patristic and Thomistic illumination, symbolic relation, and place in the whole; a final appendix documents the juridically post-Mass Leonine prayers without absorbing them into the Order. `O00` remains the stable catalog preface before the variable propers, not a proper or fictitious celebration. Independent specialist review remains outstanding.
+
+### Roman Missal of 1962: assembly reference
+
+- [Assembling the Mass](doc/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf) ([source](src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/main.tex), [edition manifest](src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/research/edition-manifest.md), [rubric index](src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/research/rubric-index.md), [worked-case record](src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/research/worked-cases.md), [source audit](src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/research/source-audit.md)) — an edition-specific practical guide to resolving the 1962 calendar and precedence table, distinguishing day and Mass classes, choosing an admitted formulary, and inserting its propers and commemorations into the Ordinary; it includes First Friday and First Saturday rules, votive, Requiem, and ritual distinctions, and fully reasoned corner cases. It is not a current authorization or a substitute for the competent local Ordo. Independent specialist review remains outstanding.
 
 ### Roman Missal of 1962: temporal propers
 
@@ -68,6 +73,7 @@ Read the shared rules first, then only the profile that governs the document bei
 2. [Repository and publication contract](guidance/repository.md)
 3. The relevant document profile:
    - [Roman 1962 proper guides](guidance/liturgy/roman-1962-propers.md)
+   - [Roman 1962 assembly references](guidance/liturgy/roman-1962-assembly.md)
    - [Postconciliar proper guides](guidance/liturgy/postconciliar-propers.md)
    - [Ordinary and Order-of-Mass expositions](guidance/liturgy/ordinary-expositions.md)
    - [Sacramental reference works](guidance/theology/sacramental-reference.md)
@@ -88,6 +94,7 @@ src/gpt/
       propers/temporal/<document>/
       propers/ritual/<document>/
       ordinary/<document>/
+      reference/<document>/
     postconciliar/<edition-locale>/
       propers/<calendar-family>/<document>/   planned
       ordinary/<document>/                    planned
