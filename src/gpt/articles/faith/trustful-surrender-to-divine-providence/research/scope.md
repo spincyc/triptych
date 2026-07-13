@@ -8,7 +8,7 @@ This record supports `src/gpt/articles/faith/trustful-surrender-to-divine-provid
 - **Genre and profile:** discursive systematic and spiritual-theological article; `guidance/articles.md` governs.
 - **Question:** How can a Catholic surrender every event to divine Providence without denying created causality, human freedom, moral culpability, prudent resistance to evil, or the priority of grace?
 - **Intended reader:** a serious lay reader seeking a doctrinally bounded foundation for prayer, moral action, and suffering.
-- **Thesis:** surrender is the graced perfection, not the cancellation, of creaturely agency. God gives and sustains created being and action, governs all things through real secondary causes, positively wills every actual created good precisely as good, and permits but never causes moral evil as evil. The human will becomes most free when charity conforms it to the divine good.
+- **Thesis:** surrender is the graced perfection, not the cancellation, of creaturely agency. God's one simple, eternal, omnipotently efficacious will gives and sustains created being and action and infallibly governs all things through real secondary causes. In moral evil God causes every positive actuality but never the defect; he knowingly wills to permit that defect within an undefeated order of wisdom, justice, and mercy. The human will becomes most free when charity conforms it to the divine good.
 - **As-of date for online verification:** 2026-07-12. No mutable discipline or jurisdiction-specific legal rule governs the article.
 
 ## Included and excluded scope
@@ -19,9 +19,9 @@ Excluded are a complete treatment of predestination controversies, physical prem
 
 ## Authority classes and editorial boundaries
 
-- **Scripture and authoritative doctrine:** providence, creation’s dependence, God’s innocence of moral evil, authentic freedom, imputability, and the necessity and priority of grace.
+- **Scripture and authoritative doctrine:** divine omnipotence, universal and concrete Providence, creation’s dependence, God’s innocence of moral evil, authentic freedom, imputability, and the necessity and priority of grace.
 - **Patristic and saintly witness:** evidence of reception and spiritual grammar, cited by exact work and locus; not every pastoral image is treated as a definition.
-- **Common Thomistic teaching:** primary and secondary causation, hierarchical causal dependence, voluntariness, divine motion according to created natures, and the defect in a sinful act.
+- **Thomistic synthesis adopted by the article:** hierarchical causal dependence, divine motion according to created modes, the act/defect analysis, and Aquinas's account of willed permission. The one simple divine will, universal Providence, real created freedom, and God's innocence of moral evil belong to the governing doctrinal boundary; their causal integration here is Thomistic.
 - **Devotional witness:** Jean-Baptiste Saint-Jure and St. Claude de la Colombière are used as spiritual teachers. Their compact anthology is not represented as a magisterial act or as technically precise at every rhetorical turn.
 - **Historical scholarship:** Graham John Wheeler is used to establish Crowley’s explicit acknowledgment of Augustine and Rabelais and to prevent an invented direct lineage.
 - **Project synthesis:** the paired diagrams of linear and hierarchical causal order, the “grammar of surrender,” and the formal comparison of Augustine and Crowley are editorial syntheses. They claim fidelity to the cited principles, not attribution to one source.
@@ -34,7 +34,15 @@ Excluded are a complete treatment of predestination controversies, physical prem
 4. The Saint-Jure/La Colombière English anthology sometimes uses compressed causal phrases such as God “causing” an illness or being “responsible” for an injury. The article receives its stated exception for sin and interprets the rhetoric through CCC 311 and Aquinas, ST I–II, q. 79: God causes the act’s being and power but not its moral defect.
 5. The anthology’s counsel to accept attacks as providential is not used to forbid escape, defense, reporting, justice, treatment, lament, or protection of dependents. Duties of state and charity can require decisive resistance. Acceptance concerns the event as permitted and already real; it does not ratify the offender’s intention.
 6. “Hierarchical regress” and “linear regress” are explanatory labels requested for this article. The classical distinction is between essentially ordered (*per se*) and accidentally ordered (*per accidens*) causal series. A hierarchy is ordered by present derivative causal power, not necessarily by spatial stacking or clock-time simultaneity; a temporal series can contain hierarchical dependence.
-7. The article does not settle disputed mechanics of grace. It affirms the Catholic boundaries: grace precedes and enables salutary action; the person is not inert; the will can resist grace; divine causation does not coerce the will; and no one merits the first grace.
+7. The article does not settle disputed mechanics of grace. It affirms the Catholic boundaries: grace precedes and enables salutary action; the person is not inert and may refuse divine inspiration; divine causation does not coerce the will; no one merits the first grace; and no decree God absolutely wills is frustrated.
+8. ``Permissive will'' is not treated as a second, weaker faculty in God. The governing formula is Aquinas's ``wills to permit'': the one simple divine will knowingly wills not to prevent a moral defect that God could prevent, while causing every positive actuality and infallibly governing the whole. The substance of permission is required by Trent, sess. VI, canon 6 (DS 1556); the precise Thomistic account of the decree remains identified as theological articulation.
+9. The Catechism's statement that God ``respects'' creaturely freedom does not mean that freedom limits divine power. God creates, sustains, and inwardly moves the will without coercion. The will may refuse divine inspiration, as Trent teaches; no purpose God absolutely wills is frustrated. Catholic schools dispute the precise account of the grace under which consent infallibly occurs.
+10. Moral fault, natural corruption, and just punishment are not collapsed. The common catechetical synthesis speaks of God permitting physical and moral evil. Aquinas more specifically says moral fault is only permitted, while natural corruption or punishment can be willed incidentally under the good of created order or justice (ST I, q. 19, a. 9). The article labels that precision Thomistic and does not infer that every sufferer is being punished.
+11. Stronger omnipotence does not authorize a claim to know the particular temporal good for which a tragedy was governed. CCC 314 and 324 join certainty that God causes good from every permitted evil with humility about the hidden form and timing of that good.
+
+## Revision rationale: omnipotence audit
+
+The baseline publication was preserved in commit `4f4d575`. A subsequent strict audit found no formal denial of omnipotence but judged the ``positive will / permission / providential order'' presentation structurally weak. It could suggest three divine responses or make permission sound like helpless tolerance. The revision therefore makes Trent VI, canon 6; Vatican I, *Dei Filius* ch. 1; CCC 268–278, 302–324, and 599–600; Augustine, *Enchiridion* 95–102; and Aquinas, ST I, qq. 19, 22, 25, 103, 105 and I–II, q. 79 govern the article's central vocabulary.
 
 ## Copyright and quotation review
 
@@ -42,6 +50,7 @@ Quotations are short, claim-driven, and identified by exact locus. The modern En
 
 ## Review state
 
-- Completed: source-locus audit of the material claims; authority classification; spelling and attribution check; article-profile review; internal doctrinal-consistency review; clean multi-pass build-log review; visual review of every page in the 24-page publication PDF.
+- Completed for the baseline: source-locus audit of the material claims; authority classification; spelling and attribution check; article-profile review; internal doctrinal-consistency review; clean multi-pass build-log review; visual review of every page in the 24-page baseline publication PDF.
+- Completed for the omnipotence revision: stricter source and authority re-audit; separate internal read-only dogmatic, Thomistic, and editorial/pastoral audits; clean multi-pass build-log review; visual review of every page in the 25-page revised PDF; installation and checksum comparison of the reviewed artifact.
 - Not completed: independent theological review, patristics-specialist review, or ecclesiastical approval.
 - Publication language must therefore remain “source-audited working article,” not “theologically reviewed” or “approved.”
