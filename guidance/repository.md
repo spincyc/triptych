@@ -35,6 +35,9 @@ src/gpt/
   theology/
     sacraments/
     sacraments-at-a-glance/
+    mariology/
+      <document>/
+      shared/                    optional non-publishable fragments
   articles/
     faith/
     canon-law/
@@ -43,6 +46,8 @@ src/gpt/
 `<edition-locale>` must identify the governing edition and language or territory precisely enough to prevent unlike liturgical texts from sharing a directory. Do not use `novus-ordo`, `current`, or a bare language name as the sole identifier. Record additional calendar, lectionary, translation, and jurisdiction details in the document's source record when the directory component cannot express them safely.
 
 The hierarchy distinguishes content families; it does not prescribe a single internal template. Each publishable source document has a directory containing `main.tex` and the supporting files required by its profile. Shared inputs belong at the narrowest common ancestor that genuinely owns them. Keep global typesetting primitives under `src/gpt/common/`; keep rite-, edition-, collection-, and work-specific fragments within their respective subtrees.
+
+Mariological reference works use publishable leaves beneath `theology/mariology/`. Any `theology/mariology/shared/` directory is non-publishable, owns only genuinely shared source material, and has no PDF mirror; all consuming documents must be rebuilt after it changes.
 
 ## Mirrored publications and transient builds
 

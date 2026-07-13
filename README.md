@@ -2,7 +2,7 @@
 
 *Catholic Studies in Faith, Worship, and Law*
 
-`Fides, Cultus, Ius` is a source-audited library of printable Catholic study documents. Its scope includes guides to the variable parts of the Roman liturgy, expositions of the Ordinary and Order of Mass in multiple editions, sacramental and doctrinal reference works, and discursive articles on faith, theology, and canon law. The canonical repository slug is `fides-cultus-ius`.
+`Fides, Cultus, Ius` is a source-audited library of printable Catholic study documents. Its scope includes guides to the variable parts of the Roman liturgy, expositions of the Ordinary and Order of Mass in multiple editions, sacramental and Mariological reference works, and discursive articles on faith, theology, and canon law. The canonical repository slug is `fides-cultus-ius`.
 
 The collection is written for serious lay study, prayerful preparation, and verifiable research. It is not an official liturgical text, catechism, canonical opinion, or substitute for competent pastoral, theological, or legal counsel. Each document identifies whichever editions, jurisdictions, effective dates, and authorities govern its claims.
 
@@ -16,6 +16,7 @@ The collection is written for serious lay study, prayerful preparation, and veri
 | Postconciliar Roman Missal propers | Guides to variable Mass texts and readings, identified by Missal and Lectionary edition, language, territory, calendar, and cycle | Prepared for expansion; [profile](guidance/liturgy/postconciliar-propers.md) |
 | Ordinaries and Orders of Mass | Discursive exposition of the stable Mass texts and ritual order in the 1962 and postconciliar Roman books | Active; [profile](guidance/liturgy/ordinary-expositions.md) |
 | Sacramental theology | Long-form and retrieval-oriented studies of the seven sacraments | Active; see the published library below |
+| Mariology | Source-audited studies of Marian prayer, doctrine, history, and authority-qualified ecclesial judgments | Active; [profile](guidance/theology/mariology.md) |
 | Faith and theology articles | Discursive studies whose structure follows the question and evidence rather than a liturgical-guide template | Prepared for expansion; [article profile](guidance/articles.md) |
 | Canon-law articles | Time-bounded studies of universal or particular law with explicit code, jurisdiction, promulgation source, and as-of date | Prepared for expansion; [article profile](guidance/articles.md) |
 
@@ -26,6 +27,10 @@ The collection is written for serious lay study, prayerful preparation, and veri
 ### Faith and theology articles
 
 - [Trustful Surrender to Divine Providence](doc/gpt/articles/faith/trustful-surrender-to-divine-providence.pdf) ([source](src/gpt/articles/faith/trustful-surrender-to-divine-providence/main.tex), [research scope](src/gpt/articles/faith/trustful-surrender-to-divine-providence/research/scope.md), [source audit](src/gpt/articles/faith/trustful-surrender-to-divine-providence/research/source-audit.md)) — a foundational patristic and Thomistic study of omnipotent Providence, willed permission, free will, agency and culpability, the two causal regresses, Augustine's *Dilige, et quod vis fac*, and its occult inversion; source-audited working article, with independent theological review outstanding.
+
+### Mariology
+
+- [The Holy Rosary: The Gospel Contemplated with Mary](doc/gpt/theology/mariology/rosary.pdf) ([source](src/gpt/theology/mariology/rosary/main.tex), [research scope](src/gpt/theology/mariology/rosary/research/scope.md), [source audit](src/gpt/theology/mariology/rosary/research/source-audit.md)) — a biblical, doctrinal, patristic, historical, and spiritual exposition of the prayer's formation, complete twenty-mystery cycle, every group and mystery, and the boundaries among public Revelation, private revelation, devotional tradition, typology, and legend; source-audited working reference, with independent specialist review outstanding.
 
 ### Roman Missal of 1962: Ordinary and Order of Mass
 
@@ -65,6 +70,7 @@ Read the shared rules first, then only the profile that governs the document bei
    - [Postconciliar proper guides](guidance/liturgy/postconciliar-propers.md)
    - [Ordinary and Order-of-Mass expositions](guidance/liturgy/ordinary-expositions.md)
    - [Sacramental reference works](guidance/theology/sacramental-reference.md)
+   - [Mariological reference works](guidance/theology/mariology.md)
    - [Faith, theology, and canon-law articles](guidance/articles.md)
 
 The detailed 1962 weekly-guide sequence is deliberately profile-local. Its fixed page architecture, ten-proper map, Lent-first catalog, facsimile workflow, and G/S/T/Q gates must not be imposed automatically on postconciliar guides, ordinaries, reference works, or articles.
@@ -85,7 +91,10 @@ src/gpt/
       propers/<calendar-family>/<document>/   planned
       ordinary/<document>/                    planned
     comparative/<document>/                   planned
-  theology/<document>/
+  theology/
+    <document>/
+    mariology/<document>/
+    mariology/shared/                           optional shared sources
   articles/
     faith/<document>/                         planned
     canon-law/<document>/                     planned
