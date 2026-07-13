@@ -38,9 +38,50 @@ This inventory is an editorial map of the 1962 `Ordo Missae`, not a numbered lis
 | 32 | Ablutions, Communion antiphon, and Postcommunion | Fixed plus proper slots | `Ordo Missae`, pp. 322--323; `Ritus servandus` XI | What is received is reverently gathered and prayed into an enduring ecclesial effect. |
 | 33 | Dismissal, *Placeat*, blessing, and Last Gospel | Fixed with seasonal/Requiem variants | `Ordo Missae`, pp. 323--328; `Ritus servandus` XII | Mission, Trinitarian blessing, and the Incarnation send worshippers back into the world. |
 
+## Received-boundary and source-dossier index
+
+The publication now prints a visible source dossier for every numbered unit. The phrases below identify the received Latin boundary without pretending that a variable proper has one universal text. The historical column gives the level at which the claim is safe; the detailed evidence and certainty language are controlled by *unit-source-matrix.md*.
+
+| No. | Received boundary or incipit | Text status | Safest historical control |
+| ---: | --- | --- | --- |
+| 1 | Procession, reverence, and station before the step | Ritual only | Justin and *Ordo Romanus I* for the early structure; developed route in 1474, p. 198 |
+| 2 | *In nomine Patris*; *Introibo*; Ps 42 | Fixed; psalm omitted in Requiems and in Masses of the season from Passion Sunday through Holy Thursday | Tertullian for habitual signing; medieval prayer strata; 1474 has the psalm during approach, not the whole received step complex |
+| 3 | *Confiteor*; *Misereatur*; *Indulgentiam* | Fixed role-specific exchange | Dialogic forms from the early eleventh century; saint list and roles layered; 1474 gives only a generic rubric |
+| 4 | *Aufer*; *Oramus*; kiss; conditional incense | Fixed/conditional | Ancient *Aufer* text repurposed medievally; eleventh-century *Oramus*; both in 1474 |
+| 5 | Appointed *Introitus* | Proper slot | *Ordo Romanus I*; early private priestly recitation; later solemn duplication; Celestine attribution retrospective |
+| 6 | Ninefold *Kyrie/Christe eleison* | Fixed | Gregory I's October 598 letter; exact three-three-three groups in eighth-century ordines |
+| 7 | *Gloria in excelsis* through Amen | Conditional fixed hymn | Fourth–fifth-century Greek witnesses; Bangor about 690; complete received Latin in ninth-century St Gall; gradual Roman reception |
+| 8 | *Dominus vobiscum*; *Oremus*; Collect | Fixed frame/proper prayer | Late-antique prayer strata transmitted by early-seventh-century Verona and about-750 Old Gelasian manuscripts |
+| 9 | Appointed lesson; *Deo gratias* | Proper slot | Justin; Würzburg Comes; one pre-Gospel lesson plus Gospel becomes usual Roman arrangement |
+| 10 | Gradual; Alleluia or Tract; occasional Sequence | Proper/conditional | Early Roman chant; textual Sequences from the mid-ninth century; later Sequence histories separately dated |
+| 11 | *Munda cor* and deacon's blessing | Fixed with variants | *Ordo Romanus I* long-recension blessing about 750; *Iube* and *Munda* from eleventh-century books; full triad in 1474 |
+| 12 | Gospel greeting, title, pericope, praise, kiss | Proper in fixed frame | Justin and *Ordo Romanus I*; exact *Per evangelica dicta* in late-fifteenth-century Noyon, not after the principal Gospel in 1474 |
+| 13 | *Credo in unum Deum* through Amen | Conditional fixed profession | Nicaea 325; received expanded text witnessed at Chalcedon 451; Toledo 589; Rome 1014 |
+| 14 | Offertory; *Suscipe, sancte Pater* | Proper plus fixed prayer | Early gifts; *Suscipe* family about 1030/eleventh century; exact prayer in 1474 |
+| 15 | *Deus, qui humanae substantiae*; *Offerimus* | Fixed | Early mixed cup; ancient Christmas oration repurposed about 1030; partial chalice formula before exact 1474 form |
+| 16 | *In spiritu humilitatis*; *Veni, sanctificator* | Fixed | Ninth-to-eleventh-century families; Stowe *Veni* has another placement; exact pair in 1474 |
+| 17 | *Incensum istud*; *Dirigatur*; *Accendat* | Conditional solemn action | Amalarius about 832; eleventh-century prayers; Gabriel-to-Michael history; substantial route in 1474 |
+| 18 | Ps 25:6–12 at *Lavabo* | Fixed with omission | Practical wash; shorter Psalm association enlarged medievally; developed selection in 1474 |
+| 19 | *Suscipe, sancta Trinitas*; *Orate, fratres* | Fixed | Ninth-to-thirteenth-century prayer and response families; received pair in 1474 |
+| 20 | Appointed Secret through Amen | Proper slot | Ancient prayer over gifts; early title; first secure quiet rubric in the mid-eighth-century Frankish *Capitulare* |
+| 21 | Preface dialogue and appointed Preface | Fixed dialogue/variable Preface | Cyprian mid-third century; sacramentary corpora |
+| 22 | *Sanctus* and *Benedictus* | Fixed | Fourth-century Eastern Eucharistic use; combined Western witness in early-sixth-century Caesarius; seventh-century Roman manuscripts |
+| 23 | *Te igitur*; living Memento; *Communicantes* | Fixed with inserts | Fifth/sixth-century clause chronology remains reconstructed; Saint Joseph decree secure in 1962 |
+| 24 | *Hanc igitur*; *Quam oblationem* | Fixed with inserts | *De sacramentis* IV.5; layered clauses |
+| 25 | *Qui pridie* through *Hoc est enim Corpus meum* | Fixed | Late-fourth-century parallel; Parisian statutes under Odo around 1200 are an early elevation catalyst, not an invention decree |
+| 26 | *Simili modo* through chalice memorial command | Fixed | Cyprian/*De sacramentis*; rare thirteenth-century chalice elevation, made parallel in 1570 |
+| 27 | *Unde*; *Supra*; *Supplices* | Fixed | Close *De sacramentis* IV.6 parallel |
+| 28 | Dead Memento through *Per ipsum* | Fixed | Early suffrage and layered clauses; joint elevation already in *Ordo Romanus I*, later timing standardized in 1570 |
+| 29 | *Pater noster*; *Libera nos* | Fixed | *Didache* use; Gregory's October 598 placement witness; ancient embolism precursor and layered saint list |
+| 30 | Fraction; commingling; Pax; Agnus | Fixed with variants | Ancient fraction; Sergius attribution retrospective; *dona nobis pacem* in tenth-century tropers |
+| 31 | Peace prayers; preparation; Communion/distribution | Fixed/conditional | Justin distribution; medieval priestly prayers; triple *Domine non sum* in 1570; faithful rite develops later |
+| 32 | *Quod ore*; *Corpus tuum*; proper prayers | Fixed plus proper slots | Early chant/orations and ancient prayer ancestry; assigned private roles and detailed ablutions develop medievally |
+| 33 | Dismissal; *Placeat*; blessing; John 1 | Fixed with variants | Ancient dismissal; layered private prayer/blessing; Last Gospel attested from 1256, absent from 1474, standardized in 1570 |
+
 ## Completeness notes
 
 - The nine proper positions are structural elements of the complete Order but their changing texts remain outside this work.
 - The sermon is analyzed beside units 12--13 because the rubrics place it there, but it is not counted as an invariant ordinary text.
 - Communion of the faithful belongs to unit 31 even though its occurrence and detailed administration are conditional; an exposition of the complete Order cannot reduce Communion to the celebrant alone.
 - Requiem, Passiontide, Holy Week, procession-following, and seasonal variants are identified locally rather than expanded into parallel orders.
+- The Leonine prayers are treated in a final unnumbered appendix because they were historically prescribed after Masses without chant and remained operative in 1962. They are absent from the typical Missal's *Ordo Missae*, outside the Mass, and are not a thirty-fourth unit.

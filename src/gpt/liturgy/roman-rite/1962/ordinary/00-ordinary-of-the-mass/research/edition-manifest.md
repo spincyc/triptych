@@ -7,6 +7,7 @@
 - **Primary components used:** `Ritus servandus in celebratione Missae`; `Ordo Missae`; `Canon Missae`; the General Rubrics where they govern omission or substitution; and the Missal's notated ordinary where needed to identify audible or sung forms.
 - **Public facsimile:** Church Music Association of America scan, <https://media.churchmusicassociation.org/pdf/missale62.pdf>, accessed 2026-07-12. The principal printed loci are `Ritus servandus`, pp. LII--LXIV, and `Ordo Missae` / `Canon Missae`, pp. 216--328.
 - **Language:** the received liturgical text is Latin. The publication quotes only short incipits and supplies original English study paraphrases; it does not claim to reproduce an approved vernacular liturgical edition.
+- **Adjacent post-Mass law:** the Leonine-prayer appendix is controlled by the 1884, 1887, and 1960 Sacred Congregation of Rites acts; the Sacred Congregation of Indulgences and Sacred Relics acts of 1904 under Pius X; Pius XI's 1930 direction; and *Inter Oecumenici* (1964, effective 1965). These acts explain historical practice without importing the prayers into the Missal's *Ordo Missae*.
 - **Territory:** the Latin typical edition rather than a territorial hand-missal translation.
 - **Celebration forms:** the inventory follows the full Missal order and marks differences among Low, sung, and Solemn Mass where they materially affect speaker, audibility, procession, incense, or ministry. It is not a ceremonial manual.
 
@@ -22,7 +23,7 @@ Catalog identifier `O00` (“Ordinary 00”) places this stable framework before
 
 ## Exclusions and adjacent material
 
-- The Asperges or other pre-Mass rites, the Leonine prayers after Low Mass, and local devotional prayers are outside the Mass and outside the thirty-three units.
+- The Asperges and other pre-Mass rites and local devotional prayers remain outside the exposition. The Leonine prayers receive a final unnumbered appendix because they were juridically prescribed after Masses without chant and remained operative during 1962; they remain outside the Mass, outside the typical Missal's *Ordo Missae*, and outside the thirty-three units. The appendix is not unit 34.
 - The sermon is discussed as a historically important and rubrically adjacent act after the Gospel, but it is not counted as a fixed text of the 1962 `Ordo Missae`.
 - The proper of the day is represented only by its structural positions: Introit, Collect, Epistle, interlection chants, Gospel, Offertory, Secret, Communion, and Postcommunion.
 - Current canonical permissions for using the 1962 Missal are mutable and distinct from this textual-historical exposition. The work is not a permissions guide.
@@ -31,5 +32,7 @@ Catalog identifier `O00` (“Ordinary 00”) places this stable framework before
 ## Source-control notes
 
 The facsimile is the textual baseline. Searchable OCR and hand-missal transcriptions may locate material but do not control a Latin quotation or rubric. Short patristic translations are checked at their named loci and paraphrased unless exact wording is necessary. Later historical scholarship is used to date strata and to preserve uncertainty; a medieval symbolic interpretation is never presented as the original compositional intention of an earlier text merely because it became influential.
+
+Every numbered unit now displays a source dossier identifying its received Latin boundary or variable proper status, a close original analytical rendering, Scripture in literary and canonical context, a calibrated historical witness, and its patristic, Thomistic, and structural relation. *research/unit-source-matrix.md* records the audit level behind those dossiers. “Secure,” “probable,” “traditional,” and “unresolved” describe different evidentiary states and are not silently collapsed into one narrative certainty.
 
 The McMahon source is used to document the modern thirty-three-step catechetical antecedent, not to establish rubrics or historical origins. A public scan and bibliographic description were checked at <https://www.ccwatershed.org/pdfs/pray-mass-booklet/download/> and <https://www.ccwatershed.org/2014/09/13/pray-mass-booklet-and-cards/>, accessed 2026-07-12.
