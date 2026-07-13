@@ -14,7 +14,7 @@ The collection is written for serious lay study, prayerful preparation, and veri
 | --- | --- | --- |
 | Roman Rite, 1962 propers | Temporal and ritual formularies, with historical, scriptural, patristic, and theological exposition | Active; [catalog and production profile](guidance/liturgy/roman-1962-propers.md) |
 | Postconciliar Roman Missal propers | Guides to variable Mass texts and readings, identified by Missal and Lectionary edition, language, territory, calendar, and cycle | Prepared for expansion; [profile](guidance/liturgy/postconciliar-propers.md) |
-| Ordinaries and Orders of Mass | Discursive exposition of the stable Mass texts and ritual order in the 1962 and postconciliar Roman books | Prepared for expansion; [profile](guidance/liturgy/ordinary-expositions.md) |
+| Ordinaries and Orders of Mass | Discursive exposition of the stable Mass texts and ritual order in the 1962 and postconciliar Roman books | Active; [profile](guidance/liturgy/ordinary-expositions.md) |
 | Sacramental theology | Long-form and retrieval-oriented studies of the seven sacraments | Active; see the published library below |
 | Faith and theology articles | Discursive studies whose structure follows the question and evidence rather than a liturgical-guide template | Prepared for expansion; [article profile](guidance/articles.md) |
 | Canon-law articles | Time-bounded studies of universal or particular law with explicit code, jurisdiction, promulgation source, and as-of date | Prepared for expansion; [article profile](guidance/articles.md) |
@@ -26,6 +26,10 @@ The collection is written for serious lay study, prayerful preparation, and veri
 ### Faith and theology articles
 
 - [Trustful Surrender to Divine Providence](doc/gpt/articles/faith/trustful-surrender-to-divine-providence.pdf) ([source](src/gpt/articles/faith/trustful-surrender-to-divine-providence/main.tex), [research scope](src/gpt/articles/faith/trustful-surrender-to-divine-providence/research/scope.md), [source audit](src/gpt/articles/faith/trustful-surrender-to-divine-providence/research/source-audit.md)) — a foundational patristic and Thomistic study of omnipotent Providence, willed permission, free will, agency and culpability, the two causal regresses, Augustine's *Dilige, et quod vis fac*, and its occult inversion; source-audited working article, with independent theological review outstanding.
+
+### Roman Missal of 1962: Ordinary and Order of Mass
+
+- **O00 — [The Ordinary and Order of the Mass](doc/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.pdf)** ([source](src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/main.tex), [edition manifest](src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/edition-manifest.md), [thirty-three-unit inventory](src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/sequence-inventory.md), [source audit](src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/source-audit.md)) — a complete structural, symbolic, patristic, and historical exposition of the 1962 Order of Mass. `O00` marks the stable catalog preface read before variable propers; it does not classify the Ordinary as a proper or add a celebration to the temporal cycle. Independent specialist review remains outstanding.
 
 ### Roman Missal of 1962: temporal propers
 
@@ -76,7 +80,7 @@ src/gpt/
     1962/
       propers/temporal/<document>/
       propers/ritual/<document>/
-      ordinary/<document>/                    planned
+      ordinary/<document>/
     postconciliar/<edition-locale>/
       propers/<calendar-family>/<document>/   planned
       ordinary/<document>/                    planned

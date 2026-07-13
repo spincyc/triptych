@@ -4,6 +4,8 @@ This profile governs expositions of the stable texts and ritual sequence of Mass
 
 Under the present provider, edition-specific documents live beneath `src/gpt/liturgy/roman-rite/1962/ordinary/` or `src/gpt/liturgy/roman-rite/postconciliar/<edition-locale>/ordinary/`; cross-edition works live beneath `src/gpt/liturgy/roman-rite/comparative/`. Another provider preserves that taxonomy beneath its own provider directory.
 
+An edition-specific exposition that functions as the stable reading preface before that edition's variable propers may use catalog identifier `O00`. The `O` namespace is mandatory: bare `00` is only a sortable source-directory prefix, not the public identifier, and neither form makes the Ordinary a proper or a fictitious celebration in the temporal cycle.
+
 ## Define the object of study
 
 Use `Ordinary` precisely. At the start of every project, state whether it treats:
@@ -37,7 +39,7 @@ When a proper supplies the context needed to explain a stable text, cite it as a
 
 ## Recommended working record
 
-Keep an edition manifest and a sequence inventory beside the source. For each unit record:
+Keep an edition manifest, a sequence inventory, a research scope, and a source audit beside the source. For each unit record:
 
 - its exact title or incipit and stable locator;
 - the speaker or minister, addressee, posture or action, and audible or musical mode when the edition specifies them;
@@ -45,6 +47,10 @@ Keep an edition manifest and a sequence inventory beside the source. For each un
 - its principal scriptural, historical, doctrinal, and ritual questions;
 - textual or rubrical differences relevant to the argument; and
 - the primary and secondary sources actually used.
+
+When a publication adopts a numbered analytical scheme not promulgated by its controlling liturgical book, identify the scheme as editorial, document any historical or catechetical antecedent actually used, and provide a reproducible mapping back to the edition. A devotional numerical correspondence may be analyzed as reception, but it must not be turned into an official taxonomy, an original compositional intention, or a claim on faith.
+
+Sequential expositions analyze each unit at four levels: its literal ritual function; its scriptural, doctrinal, and patristic illumination; its historically supportable stratum or development; and its relation backward and forward within the whole action. Do not assign equal theological weight merely because units are equally numbered. Finish with a synthesis that returns the inventory to the unity of Word, sacrifice, sacramental presence, Communion, ecclesial participation, and mission.
 
 The document leaf also keeps the universal structured `generation-metadata.tex` record and imports it once at the placement selected for the exposition; it does not copy a proper guide's terminal-section convention unless that placement suits the work.
 
@@ -55,6 +61,8 @@ Choose the published architecture to suit the scope: sequential commentary, them
 An ordinary exposition is ready to publish only when:
 
 - its meaning of `Ordinary` and its textual boundaries are explicit;
+- any editorial numbering has a documented provenance, a complete edition-mapped inventory, and a non-official status statement;
+- each numbered unit receives literal, theological, historical, and whole-order analysis proportionate to its significance;
 - every text and rubric is traceable to a named edition, language, and territory;
 - stable texts, propers, options, customs, and exceptional ritual material remain distinct;
 - cross-edition claims are based on direct comparison rather than memory or inherited labels;
