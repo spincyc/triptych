@@ -9,6 +9,7 @@ MAIN_SOURCES := $(shell find $(SOURCE_ROOT) -type f -name main.tex | sort)
 DOCUMENTS := $(patsubst $(SOURCE_ROOT)/%/main.tex,%,$(MAIN_SOURCES))
 BUILD_PDFS := $(addprefix $(BUILD_ROOT)/,$(addsuffix .pdf,$(DOCUMENTS)))
 DOC_PDFS := $(addprefix $(DOC_ROOT)/,$(addsuffix .pdf,$(DOCUMENTS)))
+METADATA_CHECKER := scripts/check-generation-metadata
 
 COMMON_SOURCES := $(shell find $(SOURCE_ROOT)/common -type f | sort)
 SACRAMENT_ROOT := $(SOURCE_ROOT)/theology/sacraments
@@ -18,14 +19,21 @@ SACRAMENT_SHARED := \
 	$(wildcard $(SACRAMENT_ROOT)/summaries/*.tex)
 SACRAMENT_INITIATION_TABLE := $(SACRAMENT_ROOT)/sections/14-churches-initiation.tex
 
-.PHONY: all pdf install list help clean distclean check-tools
+.PHONY: all pdf install list help clean distclean check-tools check-metadata
 .DELETE_ON_ERROR:
 
 all: pdf
 
-pdf: $(BUILD_PDFS)
+pdf: check-metadata $(BUILD_PDFS)
+	@for document in $(DOCUMENTS); do \
+		$(METADATA_CHECKER) --provider $(PROVIDER) --pdf "$$document" "$(BUILD_ROOT)/$$document.pdf"; \
+	done
 
-install: $(DOC_PDFS)
+install: check-metadata $(DOC_PDFS)
+	@for document in $(DOCUMENTS); do \
+		$(METADATA_CHECKER) --provider $(PROVIDER) --pdf "$$document" "$(DOC_ROOT)/$$document.pdf"; \
+		cmp -s "$(BUILD_ROOT)/$$document.pdf" "$(DOC_ROOT)/$$document.pdf" || { echo "Installed PDF differs from reviewed build: $$document"; exit 1; }; \
+	done
 
 list:
 	@printf '%s\n' $(DOCUMENTS)
@@ -35,7 +43,11 @@ help:
 		'make          Build every discovered src/$(PROVIDER)/**/main.tex document' \
 		'make install  Publish built PDFs into the mirrored tracked doc/ tree' \
 		'make list     List discovered document IDs' \
+		'make check-metadata  Validate structured and inherited AI provenance' \
 		'make clean    Remove transient build artifacts only'
+
+check-metadata: check-tools
+	@$(METADATA_CHECKER) --provider $(PROVIDER)
 
 # Register every file owned by a document leaf as a dependency without requiring
 # a flat manifest. Cross-document shared fragments are declared separately below.
@@ -44,23 +56,26 @@ $(BUILD_ROOT)/$(1).pdf: $(shell find $(SOURCE_ROOT)/$(1) -type f | sort)
 endef
 $(foreach document,$(DOCUMENTS),$(eval $(call REGISTER_DOCUMENT_SOURCES,$(document))))
 
-$(BUILD_ROOT)/%.pdf: $(SOURCE_ROOT)/%/main.tex $(COMMON_SOURCES)
+$(BUILD_ROOT)/%.pdf: $(SOURCE_ROOT)/%/main.tex $(COMMON_SOURCES) $(METADATA_CHECKER) | check-metadata
 	@mkdir -p $(@D)
-	@command -v $(PDFLATEX) >/dev/null || { echo "Missing $(PDFLATEX)"; exit 1; }
 	cd $(SOURCE_ROOT) && $(PDFLATEX) -interaction=nonstopmode -halt-on-error -jobname=$(notdir $*) -output-directory=$(abspath $(@D)) $*/main.tex
 	cd $(SOURCE_ROOT) && $(PDFLATEX) -interaction=nonstopmode -halt-on-error -jobname=$(notdir $*) -output-directory=$(abspath $(@D)) $*/main.tex
+	@$(METADATA_CHECKER) --provider $(PROVIDER) --pdf '$*' '$@'
 
 $(BUILD_ROOT)/theology/sacraments-at-a-glance.pdf: $(SACRAMENT_SHARED) $(SACRAMENT_INITIATION_TABLE)
 $(BUILD_ROOT)/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass.pdf: \
 	$(SACRAMENT_ROOT)/summary-preamble.tex \
 	$(SACRAMENT_ROOT)/summaries/matrimony.tex
 
-$(DOC_ROOT)/%.pdf: $(BUILD_ROOT)/%.pdf
+$(DOC_ROOT)/%.pdf: $(BUILD_ROOT)/%.pdf | check-metadata
 	@mkdir -p $(@D)
 	install -m 0644 $< $@
 
 check-tools:
 	@command -v $(PDFLATEX) >/dev/null || { echo "Missing $(PDFLATEX)"; exit 1; }
+	@command -v python3 >/dev/null || { echo "Missing python3"; exit 1; }
+	@command -v pdftotext >/dev/null || { echo "Missing pdftotext"; exit 1; }
+	@command -v pdfinfo >/dev/null || { echo "Missing pdfinfo"; exit 1; }
 
 clean:
 	rm -rf build

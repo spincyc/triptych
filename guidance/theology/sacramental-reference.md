@@ -4,15 +4,15 @@ This profile governs the canonical sacramental treatise at `src/gpt/theology/sac
 
 ## Source ownership
 
-The treatise owns the theological content. Its `fragments/`, `sections/`, `summaries/`, and `summary-preamble.tex` have one authoritative home. The at-a-glance companion and ritual-Mass appendices import those sources directly; they must not keep editable theological copies.
+The treatise owns the theological content. Its `fragments/`, `sections/`, `summaries/`, `summary-preamble.tex`, and `generation-metadata.tex` have one authoritative home. The at-a-glance companion and ritual-Mass appendices import those sources directly; they must not keep editable theological copies.
 
-The at-a-glance document is a retrieval compilation, not an independent research ceiling. Any substantive correction begins in the treatise’s canonical source and research record, then every consumer is rebuilt. Independent prose added to a companion ceases to be mechanically derived and requires its own source audit and generation metadata.
+The at-a-glance document is a retrieval compilation, not an independent research ceiling. Its local `generation-metadata.tex` contains only an `\AIInheritedGenerationMetadata{theology/sacraments}` declaration, which `main.tex` imports without printing a duplicate block; the catalog explicitly names that inherited provenance. Any substantive correction begins in the treatise’s canonical source and research record, then every consumer is rebuilt. Independent prose added to a companion ceases to be mechanically derived and requires its own source audit and generation metadata.
 
 ## Treatise contract
 
 The full sacramental reference document:
 
-- begins with a title page containing its nonduplicated AI-generation metadata and a table of contents;
+- begins with a title page rendering its structured, nonduplicated AI-generation metadata and a table of contents;
 - places the metaphysical and sacramental lexicon before the continuous main treatment;
 - retains every chapter-specific analytical table in its relevant chapter;
 - keeps `References` immediately before the terminal appendices;

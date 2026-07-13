@@ -72,6 +72,7 @@ The project is **Fides, Cultus, Ius: Catholic Studies in Faith, Worship, and Law
 
 Every document keeps its source and audit records with the document or in a clearly owned shared source directory. The applicable profile decides which records are required. Examples include:
 
+- a structured `generation-metadata.tex` record imported exactly once by the document, or an explicit inherited-provenance declaration where a profile permits it;
 - exact retrieved text retained without silent cleanup;
 - an edition-identified verified text and provenance record;
 - a research scope recording source roles and material limits;
@@ -94,6 +95,7 @@ make clean    # remove transient build artifacts only
 
 Build recipes must:
 
+- validate every document's structured generation record before compilation and verify its rendered values after compilation;
 - support nested source paths without flattening or basename collisions;
 - create the matching parent directory under `build/` or `doc/`;
 - compile with stable, slash-free job names while preserving the mirrored output path;
