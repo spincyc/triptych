@@ -56,6 +56,12 @@ The collection is written for serious lay study, prayerful preparation, and veri
 | --- | --- |
 | [Assembling the Mass](doc/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf) ([source](src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/main.tex), [edition manifest](src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/research/edition-manifest.md), [rubric index](src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/research/rubric-index.md), [worked-case record](src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/research/worked-cases.md), [source audit](src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/research/source-audit.md)) | An edition-specific practical guide to resolving the 1962 calendar and precedence table, distinguishing day and Mass classes, choosing an admitted formulary, and inserting its propers and commemorations into the Ordinary; it includes First Friday and First Saturday rules, votive, Requiem, and ritual distinctions, and fully reasoned corner cases. It is not a current authorization or a substitute for the competent local Ordo. Independent specialist review remains outstanding. |
 
+### Comparative Roman liturgy
+
+| Document | Scope and status |
+| --- | --- |
+| [Two Missals, One Sacrifice](doc/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice.pdf) ([source](src/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice/main.tex), [edition manifest](src/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice/research/edition-manifest.md), [sequence inventory](src/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice/research/sequence-inventory.md), [research scope](src/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice/research/scope.md), [community census](src/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice/research/community-census.md), [source audit](src/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice/research/source-audit.md)) | A historical, theological, liturgical, sacramental, canonical, and pastoral comparison of the 1962 Roman Missal (“TLM”) and the 2002/2008 postconciliar Latin Missal with current U.S. discipline. It documents Trent and Pius V’s actual settlement, protected and displaced Latin uses, development through 1962, Vatican II and Paul VI’s reform, every aligned part of the two Orders, validity criteria across all seven sacraments, Communion on tongue or hand, extraordinary lay distribution, present older-book law, and a reproducibly bounded census of Catholic, uncertain, suppressed, schismatic, sedevacantist, and independent communities through 13 July 2026. Source-audited working paper; independent liturgical, historical, sacramental, Latin, and canonical review remains outstanding. |
+
 ### Roman Missal of 1962: temporal propers
 
 | ID | Document | Evidence state |
@@ -118,7 +124,7 @@ src/gpt/
     postconciliar/<edition-locale>/
       propers/<calendar-family>/<document>/   planned
       ordinary/<document>/                    planned
-    comparative/<document>/                   planned
+    comparative/<document>/                   cross-edition studies
   theology/
     <document>/
     mariology/<document>/
