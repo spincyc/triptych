@@ -1,0 +1,75 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+
+\hypersetup{
+  pdftitle={The Holy Rosary: The Gospel Contemplated with Mary},
+  pdfsubject={A biblical, doctrinal, patristic, historical, and spiritual exposition of the Rosary and its twenty mysteries}
+}
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2em}
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\newcommand{\rosarythesis}[1]{%
+  \begin{studybox}{Governing thesis}
+  #1
+  \end{studybox}}
+
+\newcommand{\mysteryaxis}[3]{%
+  \begin{studybox}{Scriptural axis and doctrinal center}
+  \textbf{Principal loci:} #1\par
+  \textbf{Doctrinal center:} #2\par
+  \textbf{Contemplative fruit:} #3
+  \end{studybox}}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.15\textheight}
+{\Huge\bfseries The Holy Rosary\par}
+\vspace{0.35em}
+{\Large\itshape The Gospel contemplated with Mary\par}
+\vspace{0.65em}
+{\large A biblical, doctrinal, patristic, historical, and spiritual exposition\par}
+\vfill
+\begin{minipage}{0.94\textwidth}
+\footnotesize
+\textbf{AI generation metadata}\par\smallskip
+\input{theology/mariology/rosary/generation-metadata}
+\end{minipage}
+\vfill
+{\small A source-audited Catholic study instrument. It is not an act of the Magisterium, an ecclesiastical judgment on a private revelation, or a substitute for the sacred liturgy, catechesis, or spiritual direction.\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{theology/mariology/rosary/sections/00-identity-thesis}
+\input{theology/mariology/rosary/sections/10-prayer-form}
+\input{theology/mariology/rosary/sections/20-history}
+\input{theology/mariology/rosary/sections/30-whole-cycle}
+\input{theology/mariology/rosary/sections/40-joyful}
+\input{theology/mariology/rosary/sections/50-luminous}
+\input{theology/mariology/rosary/sections/60-sorrowful}
+\input{theology/mariology/rosary/sections/70-glorious}
+\input{theology/mariology/rosary/sections/80-revelation-tradition}
+\input{theology/mariology/rosary/sections/90-practice}
+\input{theology/mariology/rosary/sections/99-references}
+\end{deepstudy}
+
+\end{document}
