@@ -1,0 +1,64 @@
+# N10 Source and Claim Audit
+
+## Primary claim matrix
+
+| Consequential claim | Governing source and locus | Source class and qualification |
+| --- | --- | --- |
+| Mount Carmel is a biblical place of beauty, fertility, judgment, Elijah's contest, intercession, and silence. | 1 Kgs 18–19; Song 7:6; Isa 35:1–2; Jer 2:7; 46:18; Amos 1:2; Nah 1:4. | Public Revelation. Later spiritual imagery does not erase the literal and historical senses. |
+| Christian zeal may not copy Elijah's execution of Baal's prophets as a mandate for coercive religious violence. | 1 Kgs 18:40; Lk 9:51–56; Mt 5:43–48; the Paschal mystery. | Canonical and Christological synthesis. It does not deny the inspired Old Covenant judgment narrative. |
+| The small cloud has a received Marian typology but is not a literal prediction of Mary or proof of an Elijah-founded Christian order. | 1 Kgs 18:41–45; later Carmelite liturgical and homiletic reception. | Qualified spiritual interpretation; literal sense and historical proof explicitly withheld. |
+| The Rule orders life in allegiance to Jesus Christ through Scripture, Eucharist, prayer, work, silence, common goods, charity, obedience, and discretion. | Rule of Saint Albert, especially 2, 7, 10–12, 14–24. | Carmelite normative source; the surviving text does not claim an Elijah or Simon apparition foundation. |
+| Albert gave the hermits their *formula vitae* between 1206 and 1214; Honorius III confirmed it in 1226; Innocent IV adapted it in 1247. | Rule historical prologue; Honorius III, *Ut vivendi normam* (30 Jan. 1226); Innocent IV, *Quae honorem Conditoris* (1 Oct. 1247). | Papal and Carmelite primary witnesses. Original form, confirmation, and adaptation are kept distinct. |
+| The hermits' Marian oratory and title predate the surviving developed Scapular-vision narrative. | Rule 14; medieval Carmelite title and documentary history; Copsey, “Simon Stock and the Scapular Vision,” 652–683. | Institutional and historical inference from earlier secure evidence; not a denial that the later tradition may be reverently received. |
+| Migration and adaptation produced a mendicant form without cancelling the contemplative core. | *Quae honorem Conditoris*; Carmelite constitutional history; Joachim Smet, *The Carmelites*. | Historical synthesis; a full institutional history is out of scope. |
+| The Marian commemoration emerged in the later fourteenth century, spread, and was extended to the Latin Church by Benedict XIII on 24 Sept. 1726. | Carmelite historical accounts of the Solemn Commemoration; Benedict XIII extension; current Carmelite anniversary sources. | Historical and liturgical reception. Extension of the feast is not an apparition-fact decree. |
+| In the General Roman Calendar 16 July is an optional memorial, while Carmelite and some local proper calendars give it higher rank. | Current General Roman Calendar; competent Carmelite proper calendars; Directory 183–189. | Mutable calendar discipline checked 2026-07-13. Local books govern actual public celebration. |
+| Marian novenas should prepare for liturgy, Penance, Eucharist, conversion, and Christian commitment. | CDWDS, *Directory on Popular Piety and the Liturgy* 189; *Sacrosanctum Concilium* 13. | Authoritative pastoral-liturgical ordering. The booklet remains outside Mass and the Hours. |
+| Mary is truly Mother of God and exercises dependent maternal intercession without rivaling Christ's unique mediation. | Lk 1–2; Jn 2:1–12; 19:25–27; Acts 1:14; *Lumen gentium* 53, 56–62, 66–69; CCC 963–975; ST III, qq. 27–30. | Scripture, dogma, authoritative doctrine, and Thomistic theology. Carmelite titles add no new dogma. |
+| “Mother,” “Patroness,” “Sister,” Virgin, and contemplative disciple form a received Carmelite Marian architecture. | Carmelite constitutions and formation tradition; John Paul II, Message to the Carmelite Family (25 Mar. 2001); Lk 1–2; Jn 2; 19; Acts 1. | Ecclesial spirituality governed by Catholic Mariology; “Sister” does not diminish Mary's singular grace. |
+| The Brown Scapular is a reduced Carmelite habit, external sign of filial relation to Mary, trust in her intercession, primacy of spiritual life, and prayer. | Directory 205; approved *Rite of Blessing of and Enrollment in the Scapular* (5 Jan. 1996); Pius XII, *Neminem profecto latet*; John Paul II (2001). | Authoritatively received sacramental and spirituality. It is not a sacrament or magical object. |
+| Sacramentals dispose the faithful to receive and cooperate with grace; they do not confer sacramental grace by the same mode as the sacraments. | CCC 1667–1673; ST III, q. 60, aa. 1–5. | Authoritative doctrine and Thomistic analysis. The Scapular is subordinate to Baptism and Christ's Paschal mystery. |
+| Carmelite tradition associates a 1251 appearance to Simon Stock with the Scapular, but the developed evidence is late and disputed. | John Paul II (2001), “venerable tradition”; Copsey, *JEH* 50 (1999): 652–683; current Carmelite catechesis; repository apparition corpus. | Received private-revelation tradition and historical criticism. No positive competent event decree is claimed. |
+| The Scapular promise cannot guarantee salvation apart from conversion, grace, judgment, sacramental life, and perseverance. | Mt 7:21; 24:13; Gal 5:19–24; Rev 2:10; CCC 1021–1037, 2016; Directory 205; current Carmelite catechesis. | Public Revelation and doctrine govern every private promise. Cloth does not override free rejection of God. |
+| The “Sabbatine bull” attributed to John XXII is inauthentic; the 1613 Holy Office permission did not authenticate it or bind purgatory to a literal timetable. | Holy Office decree (20 Jan. 1613) as analyzed in Carmelite catechesis; Copsey and Carmelite historical literature; CCC 1030–1032. | Historical judgment plus doctrinal boundary. General Marian intercession and prayer for the dead remain sound. |
+| The present rite was approved on 5 Jan. 1996 and distinguishes blessing/imposition from confraternity enrollment and juridic affiliation. | Approved 1996 rite; Directory 205; current Carmelite provincial catechesis. | Current ritual and pastoral discipline. The guide neither performs nor simulates the rite. |
+| The feast collect identifies Christ as the mountain and asks Mary's intercession as subordinate help. | Received Roman and Carmelite Latin collect, `Adiuvet nos, quaesumus, Domine... ad montem, qui Christus est...`. | Received liturgical prayer printed devotionally with a project translation; competent books govern liturgical use. |
+| The *Flos Carmeli* is a medieval received Carmelite sequence; Simon Stock authorship and exact earliest form are uncertain, and `esto propitia` / `da privilegia` are received variants. | Carmelite hymnological witnesses and full-text editions; historical treatment in Carmelite sources. | Received prayer with qualified provenance. The project translation does not convert “privileges” into exemption from the Gospel. |
+| The guide's 7–15 July reckoning and options after a missed day are private pastoral choices, not liturgical or canonical rules. | Arithmetic relation to 16 July; novena profile; Directory 189. | Transparent editorial construction. No legal or superstitious consequence is attached. |
+| No indulgence is claimed for completing this repository-authored form. | Absence of an identified grant attaching an indulgence to this text; universal indulgence discipline remains external. | Deliberate negative boundary, current through 2026-07-13. |
+
+## Prayer-text checks
+
+- The Sign of the Cross, Lord's Prayer, and Lesser Doxology are imported from the collection's canonical shared prayer source; their Latin, English ownership, and consumers are recorded there and in `prayer-inventory.md`.
+- The Hail Mary was checked as a complete received Latin formula and paired with the traditional public-domain English form.
+- The feast collect `Adiuvet nos, quaesumus, Domine...` was checked against Roman and Carmelite witnesses. Its English is a complete project translation and is not represented as the approved English liturgical text.
+- The short *Flos Carmeli* reproduces the first two stanzas of the full received form. The full Latin is printed once; the project literary English covers all eight stanzas. Variants and attribution uncertainty are stated where the prayer appears.
+- All nine daily collects are original Latin canonical project texts dated 2026-07-13, paired with complete project English translations, and visibly labeled non-liturgical and unapproved.
+- No fixed English intention or meditation is silently assigned as vocal prayer. Every recited English prayer has adjacent complete Latin.
+
+## Rejected or bounded leads
+
+| Lead | Verdict |
+| --- | --- |
+| Elijah founded an uninterrupted Christian Carmelite order on the biblical mountain. | Not established and excluded. Scripture and the earliest Rule do not make the claim. |
+| The cloud in 1 Kings 18 literally predicts Mary and proves the Immaculate Conception. | Rejected as literal or probative exegesis. A qualified later spiritual typology is retained. |
+| Elijah's execution of Baal's prophets authorizes Christian religious violence. | Rejected under the canonical and Christological reading. |
+| Albert's Rule records the Simon Stock vision or makes the Scapular promise foundational. | False. The Rule predates and does not contain the narrative. |
+| Universal liturgical reception of the title proves every origin story historically or supernaturally authentic. | Rejected. Feast, title, sacramental, shrine, and event judgment are distinct objects. |
+| John Paul II's 2001 phrase “venerable tradition” is a positive supernatural-fact decree. | Rejected. The address receives Carmelite tradition and expounds the sign; it does not issue such a decree. |
+| Anyone who dies wearing brown cloth is saved regardless of faith, repentance, or conduct. | Theologically rejected. No private promise repeals the Gospel or manipulates final perseverance. |
+| The Sabbatine bull is authentic, and Mary must release every wearer on the first Saturday after death. | Historically and theologically rejected. The document retains only bounded Catholic confidence in intercession and prayer for the dead. |
+| Buying or privately placing on the Scapular enrolls a person in a confraternity or Carmelite order. | Rejected. Blessing, imposition, enrollment, and juridic forms follow competent rites and authority. |
+| An image printed on cloth is what constitutes the Scapular's sacramental meaning. | Rejected by current Carmelite catechesis; the reduced habit-sign and ecclesial blessing are controlling. |
+| Completion of these nine project days carries an indulgence or guarantees the requested temporal grace. | No such grant or promise is claimed. |
+| Simon Stock certainly composed the exact surviving *Flos Carmeli*. | Not established. Traditional attribution and historical uncertainty are both recorded. |
+
+## Copyright, attribution, and review
+
+- No modern Bible, Missal, Office, ritual, papal document, Carmelite proper, or scholarly article is reproduced in bulk.
+- Received Latin prayers are reproduced in focused form; traditional public-domain English and new project translations are explicitly distinguished.
+- Historical and doctrinal sources are paraphrased with loci; short quoted phrases are used only where materially necessary.
+- Internal source, theology, tradition-status, prayer-completeness, translation, calendar, copyright, and nine-day differentiation checks were completed before first build.
+- The final 27-page proof passed a clean-log scan, structured-metadata validation, PDF title and subject checks, letter-geometry inspection, complete font embedding and Unicode mapping checks, and extracted-text review. Every page was visually inspected; the final Day 9, complete *Flos Carmeli*, annual-use, and reference pages received additional full-size checks after the last reflow.
+- The installed PDF was copied from the verified build and checked for byte identity; the clean post-record rebuild retained raster identity with the visually reviewed proof.
+- Independent human Carmelite, historical, liturgical, Mariological, sacramental-theological, linguistic, hymnological, pastoral, and ecclesiastical review remains outstanding.
