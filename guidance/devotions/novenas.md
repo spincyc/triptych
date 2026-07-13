@@ -39,6 +39,8 @@ English prayer should be faithful, speakable, and literary: concrete images, bal
 
 Print a recurring common prayer once and direct the reader to it; do not multiply identical texts merely to fill nine daily sections. Typography may distinguish Latin witness, English translation, rubric, source note, and editorial meditation without repeating a prose “boundary” label on every page.
 
+A recurring bilingual prayer card uses the prayer's name as its content-bearing title and gives each internal field a stable visible identifier: `Text and status`, the actual source language (`Latin` or `Greek`), and `English`. The first field states textual provenance, approval or liturgical status, and translation ownership as applicable; do not leave it as an unlabeled italic line. If a card adds another genuinely distinct field, label that field too rather than relying on position or type style.
+
 ## Historical and calendar discipline
 
 A document explains why its observance is ninefold, when the particular devotion arose, how its text developed, what authority commended or approved it, and which origin claims remain late, legendary, disputed, or unverified. Biblical ninefold patterns may ground a theology of persevering prayer without proving that a later fixed booklet existed in apostolic times.
