@@ -67,6 +67,6 @@ Build each affected document for enough passes to settle references and contents
 
 ## Commits and history
 
-Keep structural refactors separate from substantive document revisions when the requested order permits it. Stage only the coherent files requested, verify the staged diff, and use a commit subject that states the result. Source records and the installed PDF belong in the same content-revision commit when the profile requires both.
+Keep structural refactors separate from substantive document revisions when the requested order permits it. Stage only the coherent files requested, verify the staged diff, and use a concise commit subject plus the `AI summary:` body required by `guidance/repository.md`. Source records and the installed PDF belong in the same content-revision commit when the profile requires both.
 
 Do not amend, rebase, filter, force-update a ref, or otherwise rewrite history unless the user explicitly requests history rewriting and its consequences have been assessed. A project rename normally belongs in a new commit; local checkout and hosted-repository names are external operations.
