@@ -1,0 +1,69 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+
+\hypersetup{
+  pdftitle={Assembling the Mass},
+  pdfsubject={A practical source-audited guide to combining the Ordinary, propers, calendar, and rubrics of the 1962 Roman Missal}
+}
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2em}
+\titleformat{\section}{\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.55em}{}
+
+\newenvironment{casefile}[2]{%
+  \sectionguard
+  \subsection{Case #1. #2}
+  \begin{description}[style=multiline,leftmargin=0.245\linewidth,labelwidth=0.22\linewidth,itemsep=0.3em,topsep=0.2em]
+}{\end{description}}
+
+\newcommand{\rulenote}[1]{\textit{Rubric locus:} #1}
+\newcommand{\checkbox}{\fbox{\rule{0pt}{0.75ex}\rule{0.75ex}{0pt}}}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.12\textheight}
+{\Huge\bfseries Assembling the Mass\par}
+\vspace{0.55em}
+{\Large\itshape The Ordinary, Propers, Calendar, and Rubrics\par}
+\vspace{0.55em}
+{\large A practical guide to the 1962 Roman Missal\par}
+\vfill
+\begin{minipage}{0.86\textwidth}
+\footnotesize
+\textbf{AI generation metadata}\par\smallskip
+\input{liturgy/roman-rite/1962/reference/assembling-the-mass/generation-metadata}
+\end{minipage}
+\vfill
+{\small This is a source-audited study instrument, not an official liturgical book, a substitute for the competent local Ordo, or a statement of present canonical authorization to celebrate with the 1962 Missal.\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{liturgy/roman-rite/1962/reference/assembling-the-mass/sections/00-scope}
+\input{liturgy/roman-rite/1962/reference/assembling-the-mass/sections/10-method}
+\input{liturgy/roman-rite/1962/reference/assembling-the-mass/sections/20-classes}
+\input{liturgy/roman-rite/1962/reference/assembling-the-mass/sections/30-precedence}
+\input{liturgy/roman-rite/1962/reference/assembling-the-mass/sections/40-occurrence}
+\input{liturgy/roman-rite/1962/reference/assembling-the-mass/sections/50-mass-kinds}
+\input{liturgy/roman-rite/1962/reference/assembling-the-mass/sections/60-assembly}
+\input{liturgy/roman-rite/1962/reference/assembling-the-mass/sections/70-devotional-votives}
+\input{liturgy/roman-rite/1962/reference/assembling-the-mass/sections/80-requiem-ritual}
+\input{liturgy/roman-rite/1962/reference/assembling-the-mass/sections/90-cases-calendar}
+\input{liturgy/roman-rite/1962/reference/assembling-the-mass/sections/91-cases-assembly}
+\input{liturgy/roman-rite/1962/reference/assembling-the-mass/sections/95-checklist}
+\input{liturgy/roman-rite/1962/reference/assembling-the-mass/sections/99-references}
+\end{deepstudy}
+\end{document}
