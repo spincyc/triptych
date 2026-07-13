@@ -23,6 +23,7 @@ Select profiles by the document's actual genre and sources, not by superficial s
 - expositions of the Ordinary or Order of Mass in either form: `guidance/liturgy/ordinary-expositions.md`
 - the sacramental treatise, at-a-glance companion, or their shared fragments: `guidance/theology/sacramental-reference.md`
 - the Rosary, Marian-apparition judgment studies, or other repeatable Mariological reference works: `guidance/theology/mariology.md`
+- novenas and other works in the numbered novena collection: `guidance/devotions/novenas.md`
 - discursive articles on faith, theology, or canon law: `guidance/articles.md`
 
 A document may require more than one profile only when it truly combines genres. For example, a canonical article about a liturgical question follows the articles profile for its argument and the relevant liturgical profile for edition-specific textual claims. State which profile governs each part rather than merging their templates.
