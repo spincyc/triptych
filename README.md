@@ -23,6 +23,10 @@ The collection is written for serious lay study, prayerful preparation, and veri
 
 ## Published Library
 
+### Faith and theology articles
+
+- [Trustful Surrender to Divine Providence](doc/gpt/articles/faith/trustful-surrender-to-divine-providence.pdf) ([source](src/gpt/articles/faith/trustful-surrender-to-divine-providence/main.tex), [research scope](src/gpt/articles/faith/trustful-surrender-to-divine-providence/research/scope.md), [source audit](src/gpt/articles/faith/trustful-surrender-to-divine-providence/research/source-audit.md)) — a foundational patristic and Thomistic study of Providence, free will, agency and culpability, the two causal regresses, Augustine's *Dilige, et quod vis fac*, and its occult inversion; source-audited working article, with independent theological review outstanding.
+
 ### Roman Missal of 1962: temporal propers
 
 | ID | Document | Evidence state |

@@ -1,0 +1,74 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+
+\hypersetup{
+  pdftitle={Trustful Surrender to Divine Providence},
+  pdfsubject={A patristic and Thomistic study of providence, freedom, agency, culpability, and charity}
+}
+% The article's argument is navigable at section level; a one-page contents
+% preserves that map without creating a mostly empty continuation page.
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2em}
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\newcommand{\articlethesis}[1]{%
+  \begin{studybox}{Governing thesis}
+  #1
+  \end{studybox}}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.16\textheight}
+{\Huge\bfseries Trustful Surrender\par}
+\vspace{0.12em}
+{\Huge\bfseries to Divine Providence\par}
+\vspace{0.8em}
+{\Large\itshape Freedom under charity in the order of created causes\par}
+\vspace{0.6em}
+{\large A patristic and Thomistic theological study\par}
+\vfill
+\begin{minipage}{0.84\textwidth}
+\footnotesize
+\textbf{AI generation metadata}\par\smallskip
+\textbf{Generated:} 2026-07-12\\
+\textbf{Model:} GPT-5-based runtime; unexposed: exact model identifier and reasoning profile\\
+\textbf{Agent/runtime:} OpenAI Codex agents (primary, patristic, Thomistic, magisterial, source-audit, and layout roles); Codex CLI \texttt{0.144.1}; API workspace; unexposed: server revision.
+\end{minipage}
+\vfill
+{\small A serious lay study instrument; not an act of the Magisterium, a spiritual-direction judgment, or a substitute for pastoral, medical, legal, or safeguarding help.\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{articles/faith/trustful-surrender-to-divine-providence/sections/00-question-thesis}
+\input{articles/faith/trustful-surrender-to-divine-providence/sections/10-providence}
+\input{articles/faith/trustful-surrender-to-divine-providence/sections/20-causal-order}
+\input{articles/faith/trustful-surrender-to-divine-providence/sections/30-freedom}
+\input{articles/faith/trustful-surrender-to-divine-providence/sections/40-agency-culpability}
+\input{articles/faith/trustful-surrender-to-divine-providence/sections/50-evil-suffering}
+\input{articles/faith/trustful-surrender-to-divine-providence/sections/60-patristic-witness}
+\input{articles/faith/trustful-surrender-to-divine-providence/sections/70-augustine-love}
+\input{articles/faith/trustful-surrender-to-divine-providence/sections/80-inversion}
+\input{articles/faith/trustful-surrender-to-divine-providence/sections/90-practice}
+\input{articles/faith/trustful-surrender-to-divine-providence/sections/99-references}
+\end{deepstudy}
+
+\end{document}
