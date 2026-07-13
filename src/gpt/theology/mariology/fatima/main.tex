@@ -1,0 +1,84 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+
+\hypersetup{
+  pdftitle={Fátima: Event, Message, and Ecclesial Reception},
+  pdfsubject={The 1917 apparitions, three-part secret, later Fátima cycle, theological interpretation, and response of the Church}
+}
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2.5em}
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\newcommand{\fatimathesis}[1]{%
+  \begin{studybox}{Governing thesis}
+  #1
+  \end{studybox}}
+
+\newcommand{\sourceboundary}[3]{%
+  \begin{studybox}{Source boundary}
+  \textbf{Witness:} #1\par
+  \textbf{What it establishes:} #2\par
+  \textbf{What it cannot establish alone:} #3
+  \end{studybox}}
+
+\newcommand{\interpretivekey}[2]{%
+  \begin{studybox}{Interpretive key: #1}
+  #2
+  \end{studybox}}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.12\textheight}
+{\Huge\bfseries Fátima\par}
+\vspace{0.35em}
+{\Large\itshape Event, Message, and Ecclesial Reception\par}
+\vspace{0.8em}
+{\large The 1917 apparitions, the three-part secret,\par}
+\vspace{0.1em}
+{\large the later Fátima cycle, and the response of the Church\par}
+\vfill
+\begin{minipage}{0.92\textwidth}
+\footnotesize
+\textbf{AI generation metadata}\par\smallskip
+\input{theology/mariology/fatima/generation-metadata}
+\end{minipage}
+\vfill
+{\small A source-audited Catholic study instrument, checked through 13 July 2026. It is not an act of the Magisterium, a new judgment on private revelation, or a claim that any Catholic is obliged to adopt the Fátima devotion.\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{theology/mariology/fatima/sections/00-method-status}
+\input{theology/mariology/fatima/sections/10-context-sources}
+\input{theology/mariology/fatima/sections/20-preparatory-cycle}
+\input{theology/mariology/fatima/sections/30-six-encounters}
+\input{theology/mariology/fatima/sections/40-sign-response}
+\input{theology/mariology/fatima/sections/50-three-part-secret}
+\input{theology/mariology/fatima/sections/60-interpretation}
+\input{theology/mariology/fatima/sections/70-later-cycle}
+\input{theology/mariology/fatima/sections/80-ecclesial-reception}
+\input{theology/mariology/fatima/sections/90-theological-synthesis}
+\input{theology/mariology/fatima/sections/99-references}
+\appendix
+\input{theology/mariology/fatima/sections/95-timeline}
+\end{deepstudy}
+
+\end{document}
