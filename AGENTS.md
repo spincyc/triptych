@@ -2,7 +2,7 @@
 
 ## Project
 
-This repository contains **Fides, Cultus, Ius: Catholic Studies in Faith, Worship, and Law** (`fides-cultus-ius`), a source-first collection of liturgical, theological, and canonical study documents.
+This repository contains **Creed, Rite, Rule: Catholic Studies in Faith, Worship, and Law** (`creed-rite-rule`), a source-first collection of liturgical, theological, and canonical study documents.
 
 Read these files before changing document content, structure, or build behavior:
 

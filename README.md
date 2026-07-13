@@ -1,8 +1,8 @@
-# Fides, Cultus, Ius
+# Creed, Rite, Rule
 
 *Catholic Studies in Faith, Worship, and Law*
 
-`Fides, Cultus, Ius` is a source-audited library of printable Catholic study documents. Its scope includes guides to the variable parts of the Roman liturgy, expositions of the Ordinary and Order of Mass in multiple editions, sacramental and Mariological reference works, and discursive articles on faith, theology, and canon law. The canonical repository slug is `fides-cultus-ius`.
+`Creed, Rite, Rule` is a source-audited library of printable Catholic study documents. Its scope includes guides to the variable parts of the Roman liturgy, expositions of the Ordinary and Order of Mass in multiple editions, sacramental and Mariological reference works, and discursive articles on faith, theology, and canon law. The canonical repository slug is `creed-rite-rule`.
 
 The collection is written for serious lay study, prayerful preparation, and verifiable research. It is not an official liturgical text, catechism, canonical opinion, or substitute for competent pastoral, theological, or legal counsel. Each document identifies whichever editions, jurisdictions, effective dates, and authorities govern its claims.
 
@@ -152,6 +152,6 @@ The Makefile discovers document leaves recursively from `src/gpt/**/main.tex`; a
 
 ## History and Repository Name
 
-This library began as a set of traditional liturgical-year proper guides. Its existing commits retain that accurate narrower history. The transition to **Fides, Cultus, Ius** is recorded as an additive repository migration rather than by rewriting their accurate narrower record.
+This library began as a set of traditional liturgical-year proper guides. Its existing commits retain that accurate narrower history. The transition to **Creed, Rite, Rule** is recorded as an additive repository migration rather than by rewriting their accurate narrower record.
 
-The checkout-directory and hosting-repository name are not part of committed history. Rename them to `fides-cultus-ius` outside this tree when desired, and update local remote URLs if applicable; no force-push or commit-hash rewrite is required.
+The checkout-directory and hosting-repository name are not part of committed history. Rename them to `creed-rite-rule` outside this tree when desired, and update local remote URLs if applicable; no force-push or commit-hash rewrite is required.

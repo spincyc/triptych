@@ -3,7 +3,7 @@
 ## Identity
 
 - **Provider:** OpenAI GPT, represented by the structured `generation-metadata.tex` record in the document leaf.
-- **Collection / genre:** *Fides, Cultus, Ius*; edition-specific Roman liturgical reference work.
+- **Collection / genre:** *Creed, Rite, Rule*; edition-specific Roman liturgical reference work.
 - **Rite and edition:** Roman Rite as printed in the 1962 typical edition of the *Missale Romanum*, applying the 1960 *Codex rubricarum* incorporated into that edition.
 - **Document language:** English exposition with Latin technical terms and titles retained where precision requires them.
 - **Calendar level:** universal calendar as the baseline. National, diocesan, religious, church-title, dedication, patronal, and indult cases are conditional and require the approved proper source named by the case.
