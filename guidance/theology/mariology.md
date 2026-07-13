@@ -90,6 +90,10 @@ For each included event or received tradition, record as applicable:
 
 Use “reported message” except when describing exactly what a competent act recognizes. A positive decision never automatically authenticates every sentence, translation, secret, miracle, later recipient, later appearance, interpretation, devotional promise, or internet compilation. Silent events must not be forced into a verbal-message template.
 
+An appendix of renowned or frequently confused claims must define a reproducible inclusion threshold and keep a repository-owned inclusion record. “Renowned,” “major,” and “moderately renowned” are editorial categories, not canonical statuses; do not promise a universal list from internet popularity or an unidentified aggregation. If typography marks “approved” cases, the legend must state exactly which competent acts trigger that mark. A strict event-level mark does not transfer from approval of a title, prayer, feast, sacramental, cult, shrine, pilgrimage, cure, witness credibility, or post-2024 `Nihil obstat`. Every indexed row still names the authority, date, object, formula, current qualification, and what the act does not establish.
+
+Ancient and medieval apparition traditions require the same category discipline. Preserve an official source's attribution to “tradition,” dream, foundation memory, or late narrative; distinguish devotional or liturgical reception from contemporary evidence and from a modern event decree. Historical uncertainty does not nullify an approved devotion, and approved devotion does not retroactively supply missing event evidence.
+
 ## Currentness and status control
 
 Apparition publications display “checked through YYYY-MM-DD” and, before every installation, recheck the DDF document index, current procedural norms, the competent diocese or eparchy, later Holy See interventions, reversals, and restrictions. Never infer unchanged status from silence. Preserve older acts under their original law and vocabulary while identifying any later controlling act separately.

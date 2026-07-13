@@ -4,7 +4,7 @@
 
 \hypersetup{
   pdftitle={Marian Apparitions in Catholic Ecclesial Judgment},
-  pdfsubject={Recognized events, pastorally authorized experiences, received traditions, and present ecclesial status as of 13 July 2026}
+  pdfsubject={Recognized events, received traditions, and a bounded ecclesial-status index as of 13 July 2026}
 }
 \setcounter{tocdepth}{1}
 \setlength{\emergencystretch}{2em}
@@ -24,12 +24,26 @@
   #2
   \end{studybox}}
 
+\newtcolorbox{dossierframe}{
+  enhanced,
+  breakable,
+  colback=black!1,
+  frame hidden,
+  borderline west={1.1pt}{0pt}{black!40},
+  left=0.9em,
+  right=0.55em,
+  top=0.55em,
+  bottom=0.55em,
+  before skip=0.8em,
+  after skip=0.9em
+}
+
 \newcommand{\dossieraxis}[3]{%
-  \begin{studybox}{Dossier boundary}
-  \textbf{Event and corpus:} #1\par
-  \textbf{Competent judgment:} #2\par
-  \textbf{Controlling qualification:} #3
-  \end{studybox}}
+  \begin{dossierframe}
+  #1\par\smallskip
+  #2\par\smallskip
+  \emph{#3}
+  \end{dossierframe}}
 
 \begin{document}
 
@@ -79,6 +93,8 @@
 \input{theology/mariology/apparitions/sections/80-comparative-synthesis}
 \input{theology/mariology/apparitions/sections/90-boundaries-practice}
 \input{theology/mariology/apparitions/sections/99-references}
+\appendix
+\input{theology/mariology/apparitions/sections/95-moderate-renown-index}
 \end{deepstudy}
 
 \end{document}
