@@ -1,0 +1,73 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+
+\hypersetup{
+  pdftitle={Freemasonry and the Catholic Church},
+  pdfsubject={History, principles, magisterial judgment, global effects, and current Latin canonical discipline}
+}
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{3em}
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\newcommand{\articlethesis}[1]{%
+  \begin{studybox}{Governing thesis}
+  #1
+  \end{studybox}}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.14\textheight}
+{\Huge\bfseries Freemasonry and the Catholic Church\par}
+\vspace{0.8em}
+{\Large\itshape History, principles, magisterial judgment,\par}
+\vspace{0.12em}
+{\Large\itshape global effects, and current discipline\par}
+\vspace{0.7em}
+{\large A historical, theological, and canonical study\par}
+\vfill
+\begin{minipage}{0.84\textwidth}
+\footnotesize
+\textbf{AI generation metadata}\par\smallskip
+\input{articles/faith/freemasonry-and-the-catholic-church/generation-metadata}
+\end{minipage}
+\vfill
+{\small A serious lay study instrument; not an act of the Magisterium, a canonical opinion, a judgment of any person's culpability, or a substitute for a pastor or qualified canonist with the complete facts.\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{articles/faith/freemasonry-and-the-catholic-church/sections/00-question-thesis}
+\input{articles/faith/freemasonry-and-the-catholic-church/sections/10-definitions}
+\input{articles/faith/freemasonry-and-the-catholic-church/sections/20-origins}
+\input{articles/faith/freemasonry-and-the-catholic-church/sections/30-expansion-divergence}
+\input{articles/faith/freemasonry-and-the-catholic-church/sections/40-catholic-response}
+\input{articles/faith/freemasonry-and-the-catholic-church/sections/50-humanum-genus}
+\input{articles/faith/freemasonry-and-the-catholic-church/sections/60-theological-analysis}
+\input{articles/faith/freemasonry-and-the-catholic-church/sections/70-law-and-discipline}
+\input{articles/faith/freemasonry-and-the-catholic-church/sections/80-global-effects}
+\input{articles/faith/freemasonry-and-the-catholic-church/sections/90-myths-and-evidence}
+\input{articles/faith/freemasonry-and-the-catholic-church/sections/100-pastoral-response}
+\input{articles/faith/freemasonry-and-the-catholic-church/sections/110-documentary-corpus}
+\input{articles/faith/freemasonry-and-the-catholic-church/sections/120-timeline-claim-audit}
+\input{articles/faith/freemasonry-and-the-catholic-church/sections/130-references}
+\end{deepstudy}
+
+\end{document}
