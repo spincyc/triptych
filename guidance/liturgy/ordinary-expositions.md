@@ -52,6 +52,10 @@ When a publication adopts a numbered analytical scheme not promulgated by its co
 
 Sequential expositions analyze each unit at four levels: its literal ritual function; its scriptural, doctrinal, and patristic illumination; its historically supportable stratum or development; and its relation backward and forward within the whole action. Do not assign equal theological weight merely because units are equally numbered. Finish with a synthesis that returns the inventory to the unity of Word, sacrifice, sacramental presence, Communion, ecclesial participation, and mission.
 
+A passage-level sequential exposition also gives every unit a reproducible source dossier. Identify the received Latin or vernacular boundary by text or incipit, supply a close analytical rendering when needed, read the principal biblical locus in its own literary and canonical context, and state whether the liturgical use is direct, typological, accommodative, or allusive. Historical treatment distinguishes the earliest secure witness, a probable range, a later terminus ante quem, and retrospective attribution. Name a composer, pope, council, or other agent only when a checked source supports that role; otherwise state that no individual author is securely known. Keep the unit-level evidence matrix in the research record so broad narrative history does not substitute for passage-specific support.
+
+Prayers or ceremonies historically attached before or after Mass may be treated when they materially illuminate the edition, but they remain outside the numbered Order unless the controlling liturgical book places them within it. Give the external prescription, scope, exceptions, effective dates, and suppression history from juridically competent sources. Devotional proximity does not make an attached prayer part of the Mass, and a popular origin legend does not become history through repetition.
+
 The document leaf also keeps the universal structured `generation-metadata.tex` record and imports it once at the placement selected for the exposition; it does not copy a proper guide's terminal-section convention unless that placement suits the work.
 
 Choose the published architecture to suit the scope: sequential commentary, thematic exposition, synoptic comparison, or a narrowly focused essay may each be appropriate. Comparisons should align genuinely corresponding moments and also identify additions, omissions, relocations, and changed functions; visual symmetry must not imply theological or historical equivalence.
@@ -63,8 +67,10 @@ An ordinary exposition is ready to publish only when:
 - its meaning of `Ordinary` and its textual boundaries are explicit;
 - any editorial numbering has a documented provenance, a complete edition-mapped inventory, and a non-official status statement;
 - each numbered unit receives literal, theological, historical, and whole-order analysis proportionate to its significance;
+- a passage-level study gives every unit its received textual boundary, Scripture in context, calibrated historical witness or terminus, and explicit relation to the whole action;
 - every text and rubric is traceable to a named edition, language, and territory;
 - stable texts, propers, options, customs, and exceptional ritual material remain distinct;
+- adjacent pre- or post-Mass prayers are neither absorbed into the Order nor narrated from unsupported origin legends;
 - cross-edition claims are based on direct comparison rather than memory or inherited labels;
 - theological authority and editorial synthesis are clearly classified; and
 - copyright, research-record, build, and generation-metadata requirements are satisfied.
