@@ -80,7 +80,7 @@ Non-publishable shared directories such as `common/`, fragment libraries, and re
 
 Use lowercase kebab-case for directory and document slugs. Keep rite and edition names explicit in their ancestor paths rather than repeating them inconsistently in every basename. Within a collection, catalog identifiers must be stable, namespaced, and defined by its profile; a temporal-cycle number from one edition must not become a global project identifier.
 
-The project is **Fides, Cultus, Ius: Catholic Studies in Faith, Worship, and Law**. Its repository slug is `fides-cultus-ius`. The local checkout name and a hosting service's repository name are external to tracked content; renaming them does not require or result from moving source files.
+The project is **Creed, Rite, Rule: Catholic Studies in Faith, Worship, and Law**. Its repository slug is `creed-rite-rule`. The local checkout name and a hosting service's repository name are external to tracked content; renaming them does not require or result from moving source files.
 
 ## Document records
 
