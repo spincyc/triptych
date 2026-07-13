@@ -1,0 +1,85 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+
+\hypersetup{
+  pdftitle={The Marian Dogmas: Mother of God, Ever-Virgin, Immaculate, Assumed},
+  pdfsubject={A biblical, patristic, Thomistic, historical, and magisterial exposition of the four Marian dogmas and related Marian titles}
+}
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2em}
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\newcommand{\dogmathesis}[1]{%
+  \begin{studybox}{Governing thesis}
+  #1
+  \end{studybox}}
+
+\newcommand{\definitionaxis}[3]{%
+  \begin{studybox}{Dogmatic object and boundary}
+  \textbf{Proposition:} #1\par
+  \textbf{Controlling authority:} #2\par
+  \textbf{Necessary boundary:} #3
+  \end{studybox}}
+
+\newcommand{\evidenceaxis}[3]{%
+  \begin{studybox}{Evidence map}
+  \textbf{Direct or governing witness:} #1\par
+  \textbf{Canonical and traditional synthesis:} #2\par
+  \textbf{What is not being claimed:} #3
+  \end{studybox}}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.12\textheight}
+{\Huge\bfseries The Marian Dogmas\par}
+\vspace{0.45em}
+{\Large\itshape Mother of God, Ever-Virgin, Immaculate, Assumed\par}
+\vspace{0.75em}
+{\large Scripture, Tradition, patristic witness, Thomistic theology,\par}
+\vspace{0.1em}
+{\large historical development, and magisterial definition\par}
+\vfill
+\begin{minipage}{0.92\textwidth}
+\footnotesize
+\textbf{AI generation metadata}\par\smallskip
+\input{theology/mariology/marian-dogmas/generation-metadata}
+\end{minipage}
+\vfill
+{\small A source-audited Catholic study instrument. It is not an act of the Magisterium, an ecclesiastical approval, or a substitute for Scripture, the Church's living teaching office, catechesis, or qualified theological judgment.\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{theology/mariology/marian-dogmas/sections/00-method-dogma}
+\input{theology/mariology/marian-dogmas/sections/10-economy-scripture}
+\input{theology/mariology/marian-dogmas/sections/20-divine-motherhood}
+\input{theology/mariology/marian-dogmas/sections/30-perpetual-virginity}
+\input{theology/mariology/marian-dogmas/sections/40-immaculate-conception}
+\input{theology/mariology/marian-dogmas/sections/50-assumption}
+\input{theology/mariology/marian-dogmas/sections/60-fourfold-synthesis}
+\input{theology/mariology/marian-dogmas/sections/70-doctrines-titles}
+\input{theology/mariology/marian-dogmas/sections/80-cooperation-titles}
+\input{theology/mariology/marian-dogmas/sections/90-reception-errors}
+\input{theology/mariology/marian-dogmas/sections/95-one-page-synopses}
+\input{theology/mariology/marian-dogmas/sections/99-references}
+\end{deepstudy}
+
+\end{document}

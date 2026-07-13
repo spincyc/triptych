@@ -39,6 +39,25 @@ The source and publication must preserve these boundaries:
 
 Apparitions, promises, exact wound counts, undocumented speeches, end-time schedules, or other private-revelation details may not be smuggled into mystery analysis as public Revelation or historical fact. Spiritual fruits are invitations to grace-enabled conversion, not automatic psychological effects or guarantees.
 
+## Marian-dogma references
+
+A comprehensive reference on Marian dogma treats the four truths commonly identified in Catholic theology as Marian dogmas: divine motherhood, perpetual virginity, the Immaculate Conception, and the bodily Assumption. It states the precise object and authority of each teaching before supplying biblical, patristic, liturgical, scholastic, conciliar, or papal evidence. It must not create additional dogmas by promoting every authoritative Marian doctrine, devotional title, theological conclusion, or proposed definition to the same rank.
+
+For each dogma, keep distinct:
+
+- the revealed reality and its Christological or ecclesial center;
+- the exact solemn definition or other controlling magisterial formulation, with authority, date, and locus;
+- Scripture read in its literary and canonical context, distinguishing direct assertion from typology;
+- early witnesses to the substance of the belief, later terminological precision, liturgical reception, controversy, and final definition;
+- genuinely checked patristic and Thomistic loci, including material difficulty or historical limitation rather than retrospective unanimity; and
+- the dogma's theological consequences and the questions its definition deliberately leaves open.
+
+Development is neither invention nor a license to project nineteenth- or twentieth-century formulas word for word into the Fathers. Apocryphal or legendary material may document reception, imagination, or feast development without becoming apostolic eyewitness evidence. A saint or Doctor's incomplete, disputed, or materially different formulation must be acknowledged. In particular, do not make Thomas Aquinas teach the 1854 definition in its final form, and do not invent a dedicated Thomistic proof of the 1950 definition where his surviving treatment supplies only broader theological principles.
+
+A comprehensive four-dogma reference ends with one genuinely page-bounded synopsis for each dogma. Each sheet keeps together the exact object, mode and authority of proposal, biblical center, principal patristic witnesses, Thomistic support or limitation, development hinge, doctrinal fruit, required assent, and exclusions or open questions. The synopsis condenses the audited argument; it may not erase a historical difficulty, promote typology into direct assertion, or turn a theological opinion into defined content.
+
+A section on Mary's cooperation in salvation must apply *Lumen gentium* 56 and 60--62 together with the current DDF doctrinal note *Mater Populi Fidelis*. “Co-redemptrix” is not a fifth Marian dogma and must not be recommended as a definition of Mary's cooperation; “Mediatrix” and “Advocate” require the conciliar and DDF safeguards of Christ's unique mediation and Mary's wholly received, maternal, subordinate intercession. Historical papal or devotional uses are reported with their date and authority, not treated as if repetition by itself created a solemn definition.
+
 ## Apparition judgments and authority-qualified corpora
 
 Avoid an unqualified title or assertion of “all approved apparitions.” The Church publishes no identified universal master registry, and “approved” can collapse unlike acts: a positive judgment on an event, witness credibility, permission of cult, approval of a devotion or text, papal or liturgical reception, and a current pastoral `Nihil obstat`. A comprehensive study must define its taxonomy, search boundary, as-of date, inclusion and exclusion rules, and meaning of every status term.
@@ -86,6 +105,7 @@ A Mariological reference work is ready to publish only when:
 - Christ's unique mediation, the completeness of public Revelation, and the subordinate character of every Marian privilege and devotion remain explicit;
 - dogma, doctrine, judgment, reception, history, typology, devotional tradition, and original synthesis are not blurred;
 - the Rosary's historical development, complete cycle, every included mystery, and private-revelation boundaries are documented where that is the work's scope;
+- a Marian-dogma reference identifies the exact four-dogma corpus, documents every definition and historical development without anachronism, states the authority and limits of other Marian titles, and provides a one-page evidence-and-boundary synopsis for each dogma;
 - an apparition corpus and its narrative agree exactly, every status claim has a competent-authority source and bounded object, and no claim of comprehensiveness implies a nonexistent official master list;
 - negative, ambiguous, unresolved, legacy, received-tradition, and post-2024 categories are not flattened;
 - message quotations and paraphrases are checked against the authority-bounded corpus and comply with copyright limits;
