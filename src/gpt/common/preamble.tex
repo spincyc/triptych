@@ -51,6 +51,16 @@
 \newcommand{\latin}[1]{\textit{#1}}
 \newcommand{\rubric}[1]{\textbf{#1}}
 
+% Generation provenance is stored in each document leaf and rendered through
+% these shared commands.  The separate contribution command permits a future
+% document to retain materially different model/runtime contributors without
+% duplicating or weakening known qualifiers.
+\newcommand{\AIGenerationDate}[1]{\textbf{Generated:} #1\\}
+\newcommand{\AIModelContribution}[3]{%
+  \textbf{Model:} \texttt{#1}; \texttt{#2}\\
+  \textbf{Agent/runtime:} #3\par}
+\newcommand{\AIInheritedGenerationMetadata}[1]{}
+
 \newenvironment{properstable}
 {\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.15\linewidth}>{\raggedright\arraybackslash}p{0.25\linewidth}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}}
 \textbf{Proper} & \textbf{TLM text / reference} & \textbf{Scriptural axis} & \textbf{Connection}\\

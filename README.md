@@ -48,7 +48,7 @@ The status codes above belong to the 1962-propers profile; they are not global m
 ### Sacramental theology
 
 - [The Seven Sacraments](doc/gpt/theology/sacraments.pdf) ([source](src/gpt/theology/sacraments/main.tex), [research scope](src/gpt/theology/sacraments/research/scope.md)) — a patristic and Thomistic reference work with title-page provenance, a metaphysical lexicon, continuous treatments, references, comparative appendices, and seven one-page summaries.
-- [The Seven Sacraments at a Glance](doc/gpt/theology/sacraments-at-a-glance.pdf) ([source](src/gpt/theology/sacraments-at-a-glance/main.tex)) — a compact companion composed from the treatise’s shared canonical fragments.
+- [The Seven Sacraments at a Glance](doc/gpt/theology/sacraments-at-a-glance.pdf) ([source](src/gpt/theology/sacraments-at-a-glance/main.tex)) — a compact companion composed mechanically from the canonical fragments of [The Seven Sacraments](src/gpt/theology/sacraments/main.tex), whose generation provenance it explicitly inherits without duplicating a visible metadata block.
 
 ## Guidance
 
@@ -98,6 +98,7 @@ See [the repository contract](guidance/repository.md) for naming, provenance, sh
 
 ```sh
 make list       # discovered document IDs
+make check-metadata # validate structured and inherited AI provenance
 make            # build every PDF under build/
 make install    # publish PDFs under tracked doc/
 make clean      # remove only transient build artifacts

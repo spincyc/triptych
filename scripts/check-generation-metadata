@@ -1,0 +1,307 @@
+#!/usr/bin/env python3
+"""Validate structured AI-generation provenance in source and rendered PDFs."""
+
+from __future__ import annotations
+
+import argparse
+import datetime as dt
+import os
+import re
+import subprocess
+import sys
+from dataclasses import dataclass
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+DATE_RE = re.compile(r"^\\AIGenerationDate\{([^{}]+)\}\s*$", re.MULTILINE)
+CONTRIBUTION_RE = re.compile(
+    r"^\\AIModelContribution\{([^{}]+)\}\{([^{}]+)\}\{([^{}]+)\}\s*$",
+    re.MULTILINE,
+)
+INHERITANCE_RE = re.compile(
+    r"^\\AIInheritedGenerationMetadata\{([^{}]+)\}\s*$", re.MULTILINE
+)
+LEGACY_LABEL_RE = re.compile(
+    r"\\textbf\{(?:Generated|Model|Agent/runtime):\}", re.IGNORECASE
+)
+GENERIC_MODEL_RE = re.compile(
+    r"(?:based runtime|model family|unexposed|unknown|unavailable)|^gpt[- ]?5$",
+    re.IGNORECASE,
+)
+QUALIFIER_RE = re.compile(r"^[A-Za-z][A-Za-z0-9_-]*=[^;\s]+$")
+REQUIRED_MODEL_QUALIFIERS = {
+    "gpt-5.6-sol": {"effort"},
+}
+REQUIRED_RUNTIME_PATTERNS = {
+    "gpt-5.6-sol": (
+        re.compile(r"\bOpenAI Codex\b"),
+        re.compile(r"\bCodex CLI [0-9]+\.[0-9]+\.[0-9]+\b"),
+        re.compile(r"\bAPI workspace\b"),
+        re.compile(r"\bunexposed: server revision\b"),
+    ),
+}
+
+
+@dataclass(frozen=True)
+class Contribution:
+    model: str
+    qualifiers: str
+    runtime: str
+
+
+@dataclass(frozen=True)
+class Record:
+    date: str | None
+    contributions: tuple[Contribution, ...]
+    inheritance: str | None
+
+
+def active_tex(text: str) -> str:
+    """Remove TeX comments so commented declarations cannot satisfy the gate."""
+    return "\n".join(re.sub(r"(?<!\\)%.*$", "", line) for line in text.splitlines())
+
+
+def parse_record(path: Path) -> Record:
+    text = active_tex(path.read_text(encoding="utf-8"))
+    dates = DATE_RE.findall(text)
+    contributions = tuple(Contribution(*parts) for parts in CONTRIBUTION_RE.findall(text))
+    inheritances = INHERITANCE_RE.findall(text)
+    residue = DATE_RE.sub("", text)
+    residue = CONTRIBUTION_RE.sub("", residue)
+    residue = INHERITANCE_RE.sub("", residue)
+
+    if len(dates) > 1:
+        raise ValueError("contains more than one generation date")
+    if len(inheritances) > 1:
+        raise ValueError("contains more than one inheritance declaration")
+    if inheritances and (dates or contributions):
+        raise ValueError("mixes inherited and local generation provenance")
+    if not inheritances and (len(dates) != 1 or not contributions):
+        raise ValueError("requires one date and at least one model contribution")
+    if residue.strip():
+        raise ValueError("contains text outside the structured provenance commands")
+
+    return Record(
+        date=dates[0] if dates else None,
+        contributions=contributions,
+        inheritance=inheritances[0] if inheritances else None,
+    )
+
+
+def validate_date(value: str) -> None:
+    try:
+        parsed = dt.date.fromisoformat(value)
+    except ValueError as exc:
+        raise ValueError(f"invalid ISO generation date {value!r}") from exc
+    if parsed.isoformat() != value:
+        raise ValueError(f"generation date is not canonical ISO form: {value!r}")
+
+
+def validate_contribution(contribution: Contribution) -> None:
+    model = contribution.model.strip()
+    qualifiers = contribution.qualifiers.strip()
+    runtime = contribution.runtime.strip()
+
+    if not model or GENERIC_MODEL_RE.search(model):
+        raise ValueError(f"model identifier is generic or unavailable: {model!r}")
+
+    if not qualifiers:
+        raise ValueError(f"model {model!r} has an empty qualifier field")
+    qualifier_keys: set[str] = set()
+    for item in (part.strip() for part in qualifiers.split(";")):
+        if item.lower().startswith("unexposed:"):
+            if not item.partition(":")[2].strip():
+                raise ValueError("unexposed qualifier must name the unavailable component")
+        elif not QUALIFIER_RE.fullmatch(item):
+            raise ValueError(
+                f"qualifier {item!r} must use key=value or 'unexposed: component'"
+            )
+        else:
+            key = item.partition("=")[0]
+            if key in qualifier_keys:
+                raise ValueError(f"duplicate model qualifier {key!r}")
+            qualifier_keys.add(key)
+
+    missing = REQUIRED_MODEL_QUALIFIERS.get(model, set()) - qualifier_keys
+    if missing:
+        raise ValueError(
+            f"model {model!r} is missing required exposed qualifier(s): "
+            + ", ".join(sorted(missing))
+        )
+
+    if not runtime:
+        raise ValueError(f"model {model!r} has an empty agent/runtime field")
+    if not re.search(r"\b(?:CLI|client|build|revision)\b", runtime, re.IGNORECASE):
+        raise ValueError(
+            "agent/runtime must identify an exposed version kind or unavailable revision"
+        )
+    for pattern in REQUIRED_RUNTIME_PATTERNS.get(model, ()):
+        if not pattern.search(runtime):
+            raise ValueError(
+                f"model {model!r} requires runtime component matching {pattern.pattern!r}"
+            )
+
+
+def normalize(text: str) -> str:
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def pdf_text(path: Path) -> str:
+    result = subprocess.run(
+        ["pdftotext", str(path), "-"],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode:
+        raise ValueError(f"pdftotext failed for {path}: {result.stderr.strip()}")
+    return normalize(result.stdout)
+
+
+def validate_pdf_info(path: Path) -> None:
+    result = subprocess.run(
+        ["pdfinfo", str(path)],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode:
+        raise ValueError(f"pdfinfo failed for {path}: {result.stderr.strip()}")
+    fields = {}
+    for line in result.stdout.splitlines():
+        if ":" in line:
+            key, value = line.split(":", 1)
+            fields[key.strip()] = value.strip()
+    for field in ("Title", "Subject"):
+        if not fields.get(field):
+            raise ValueError(f"rendered PDF has an empty {field} document-info field")
+
+
+def validate_rendered_record(path: Path, record: Record) -> None:
+    validate_pdf_info(path)
+    rendered = pdf_text(path)
+    if record.inheritance:
+        if "Agent/runtime:" in rendered or "AI generation metadata" in rendered:
+            raise ValueError("inherited provenance was duplicated visibly in the companion")
+        return
+
+    assert record.date is not None
+    expected = [f"Generated: {record.date}"]
+    for contribution in record.contributions:
+        expected.extend([
+            f"Model: {contribution.model}; {contribution.qualifiers}",
+            f"Agent/runtime: {contribution.runtime}",
+        ])
+    cursor = 0
+    for value in expected:
+        normalized_value = normalize(value)
+        position = rendered.find(normalized_value, cursor)
+        if position < 0:
+            raise ValueError(f"rendered PDF omits ordered metadata field {value!r}")
+        if rendered.count(normalized_value) != 1:
+            raise ValueError(f"rendered PDF duplicates metadata field {value!r}")
+        cursor = position + len(normalized_value)
+
+
+def audit_document(source_root: Path, relative: str, pdf: Path | None = None) -> Record:
+    leaf = source_root / relative
+    main = leaf / "main.tex"
+    metadata = leaf / "generation-metadata.tex"
+    if not main.is_file():
+        raise ValueError(f"missing source document {main}")
+    if not metadata.is_file():
+        raise ValueError(f"missing structured provenance record {metadata}")
+
+    main_text = active_tex(main.read_text(encoding="utf-8"))
+    expected_input = re.compile(
+        rf"\\input\{{{re.escape(relative)}/generation-metadata(?:\.tex)?\}}"
+    )
+    if len(expected_input.findall(main_text)) != 1:
+        raise ValueError("main.tex must input its structured provenance exactly once")
+    for tex_source in leaf.rglob("*.tex"):
+        if tex_source == metadata:
+            continue
+        source_text = active_tex(tex_source.read_text(encoding="utf-8"))
+        if LEGACY_LABEL_RE.search(source_text):
+            raise ValueError(
+                f"{tex_source.relative_to(leaf)} contains a handwritten generation-metadata field"
+            )
+
+    record = parse_record(metadata)
+    if record.inheritance:
+        target = Path(record.inheritance)
+        if target.is_absolute() or ".." in target.parts:
+            raise ValueError("inheritance target must be a safe provider-relative document path")
+        target_metadata = source_root / target / "generation-metadata.tex"
+        if not target_metadata.is_file():
+            raise ValueError(f"inheritance target has no provenance record: {target}")
+        target_record = parse_record(target_metadata)
+        if target_record.inheritance:
+            raise ValueError("generation provenance inheritance may not be chained")
+        assert target_record.date is not None
+        validate_date(target_record.date)
+        for contribution in target_record.contributions:
+            validate_contribution(contribution)
+    else:
+        assert record.date is not None
+        validate_date(record.date)
+        for contribution in record.contributions:
+            validate_contribution(contribution)
+
+    if pdf is not None:
+        if not pdf.is_file():
+            raise ValueError(f"rendered PDF not found: {pdf}")
+        validate_rendered_record(pdf, record)
+    return record
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--provider", default=os.environ.get("PROVIDER", "gpt"))
+    parser.add_argument(
+        "--pdf",
+        nargs=2,
+        metavar=("DOCUMENT", "PDF"),
+        help="also compare one rendered PDF with its structured source record",
+    )
+    args = parser.parse_args()
+    source_root = ROOT / "src" / args.provider
+
+    errors: list[str] = []
+    records: list[Record] = []
+    if args.pdf:
+        relative, pdf_name = args.pdf
+        documents = [(relative, Path(pdf_name))]
+    else:
+        documents = [
+            (str(path.parent.relative_to(source_root)), None)
+            for path in sorted(source_root.rglob("main.tex"))
+        ]
+
+    if not documents:
+        print(f"metadata error: no documents found beneath {source_root}", file=sys.stderr)
+        return 1
+
+    for relative, pdf in documents:
+        try:
+            records.append(audit_document(source_root, relative, pdf))
+        except (OSError, ValueError) as exc:
+            errors.append(f"{relative}: {exc}")
+
+    if errors:
+        for error in errors:
+            print(f"metadata error: {error}", file=sys.stderr)
+        return 1
+
+    inherited = sum(record.inheritance is not None for record in records)
+    canonical = len(records) - inherited
+    print(
+        f"Generation metadata valid: {canonical} canonical record(s), "
+        f"{inherited} inherited record(s)."
+    )
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

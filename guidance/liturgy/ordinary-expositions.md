@@ -46,6 +46,8 @@ Keep an edition manifest and a sequence inventory beside the source. For each un
 - textual or rubrical differences relevant to the argument; and
 - the primary and secondary sources actually used.
 
+The document leaf also keeps the universal structured `generation-metadata.tex` record and imports it once at the placement selected for the exposition; it does not copy a proper guide's terminal-section convention unless that placement suits the work.
+
 Choose the published architecture to suit the scope: sequential commentary, thematic exposition, synoptic comparison, or a narrowly focused essay may each be appropriate. Comparisons should align genuinely corresponding moments and also identify additions, omissions, relocations, and changed functions; visual symmetry must not imply theological or historical equivalence.
 
 ## Completion gate
