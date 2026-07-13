@@ -36,10 +36,14 @@ This table is the controlling editorial inventory. Prose may not upgrade a statu
 | Medjugorje, Bosnia and Herzegovina | DDF, *The Queen of Peace*, approved by Pope Francis 28 Aug and published 19 Sep 2024; Bishop Petar Palić of Mostar-Duvno, operative diocesan decree, 19 Sep 2024 | `Nihil obstat` | DDF approval and local promulgation remain distinct; public devotion authorized; alleged messages require doctrinal clarification; judgment does not concern authenticity; pilgrimages are not to be organized as meetings with alleged visionaries |
 | Litmanová / Mount Zvir, Slovakia | DDF approval, 4 Jul 2025; eparchial determination publicly proclaimed by Archbishop Jonáš Maxim, 3 Aug 2025 | `Nihil obstat` | Curated corpus required; statements denying forgiveness, broadly declaring damnation, or making all illness the effect of personal sin are excluded |
 
-## Major received traditions and ambiguous reception
+## Ancient, medieval, and major received traditions; ambiguous reception
 
 | Tradition | Ecclesial reception | Publication label |
 | --- | --- | --- |
+| Our Lady of the Pillar, Zaragoza (ca. AD 40 tradition) | John Paul II's 1982 pilgrimage and 1987 Angelus receive the account expressly as a “very ancient local tradition” and interpret the Pillar as apostolic steadfastness | Ancient local tradition with strong papal and shrine reception; no contemporary evidence or modern event decree claimed |
+| Our Lady of the Snows / Saint Mary Major, Rome (mid-fourth-century tradition) | Papal basilica officially commemorates the foundation memory; Roman liturgical observance celebrates the basilica's dedication; Francis interpreted the traditional snowfall Christologically in 2024 | Authoritatively maintained basilica-foundation tradition; not a supernatural-origin decree or a substitute for the fifth-century building record |
+| Our Lady of Walsingham, England (1061 tradition) | Catholic national shrine, papal restoration-era reception, and 2024 feast in England; official liturgical dossier states both the traditional date and the likelihood of construction about a century later | Strong national, shrine, and liturgical reception with explicit chronological qualification; no event decree claimed |
+| Our Lady of Mount Carmel / Simon Stock (1251 tradition) | Brown Scapular received through approved rite, Carmelite life, papal commendation, and the Holy See's *Directory on Popular Piety* | Authoritatively received sacramental and spirituality; disputed vision provenance and no event decree claimed; mechanical-salvation reading excluded |
 | Guadalupe, Mexico (1531 tradition) | Repeated papal reception, Juan Diego's canonization, and feast extended throughout the American continent | Exceptionally strong papal and continental liturgical reception; no located modern fact decree claimed |
 | Rue du Bac / Miraculous Medal, Paris (1830) | Archbishop authorized the medal in 1832; saint's canonization, liturgical commemoration, papal teaching, and universal devotional reception | Authoritatively received devotion arising from reported apparitions; no located diocesan supernatural decree claimed |
 | Vailankanni, India (sixteenth-century traditions) | DDF 1 Aug 2024 praised the “beautiful traditions,” fruits, and Marian manifestation; no formal result formula appears in the letter | Strong authoritative reception without a located `nihil obstat` or fact decree |
@@ -60,6 +64,28 @@ This table is the controlling editorial inventory. Prose may not upgrade a statu
 | Zeitoun, Egypt | Judgment belongs to Coptic Orthodox authority, not the competent Catholic-authority corpus defined here | Historically important Christian case, but out of scope |
 | Ancient shrine traditions generally | Many possess liturgical or pastoral reception without an event decree | Not exhaustively catalogued; reception must not be renamed a modern fact judgment |
 
+## Appendix-only moderately renowned cases
+
+These cases enter the bounded appendix because they meet its two-signal renown rule. They do not enter the affirmative narrative corpus merely by being indexed.
+
+| Case | Claimed dates and place | Controlling status used in the appendix | Editorial consequence |
+| --- | --- | --- | --- |
+| Our Lady of Šiluva | 1608, Šiluva, Lithuania | Paul VI called the reported appearance a “pious tradition”; later papal acts receive the shrine as a national center of faith and pilgrimage | Unbolded; strong papal reception of a tradition, not a located event-origin decree |
+| Our Lady of Coromoto | 8 Sep 1652, Guanare, Venezuela | National patronage, papal coronation and shrine, and repeated papal narration of the appearance | Unbolded; exceptional papal and national reception, with no separate event-origin decree located |
+| Our Lady of La Vang | 1798, La Vang, Vietnam | John Paul II expressly received the popular apparition tradition and joined the 1997–1998 bicentenary; national shrine reception | Unbolded; papal reception of popular tradition does not become an event-origin decree |
+| Our Lady of Licheń | 1850, Grąblin near Licheń, Poland | Official shrine history records the reported events and 1852 consistory transfer of the image; John Paul II blessed the shrine church in 1999 | Unbolded; shrine and papal reception without a located event-origin decree |
+| Marienfried | 1946, Pfaffenhofen an der Roth, Germany | Bishop of Augsburg, 20 Mar 2000, after CDF review: supernatural character not established and serious doubts remain; prayer site continues under express restrictions | Unbolded; prayer-site reception may not be represented as event approval |
+| Tre Fontane / Virgin of Revelation | 12 Apr 1947, Rome | Diocese of Rome erected a diocesan shrine in 2025 and officially narrates the reported event; no supernatural-origin judgment located | Unbolded; shrine status and narrated tradition only |
+| L'Île-Bouchard / Our Lady of Prayer | 8–14 Dec 1947, France | Archbishop of Tours, 8 Dec 2001: public cult and pilgrimages authorized after study, without a supernatural-origin formula | Unbolded; positive cult authorization, not event authentication |
+| Heroldsbach | 1949–1952, Germany | Competent Church authorities judged the alleged appearances non-supernatural; Archbishop of Bamberg permitted a prayer site in 1998 only with a public notice preserving that judgment | Negative event status; prayer site does not reverse it |
+| Necedah | 1949–1950 and later claims, Wisconsin | Current Diocese of La Crosse publication identifies Van Hoof as a false visionary and recalls the shrine community's opposition to diocesan non-approval; the audit did not inspect the historical 1955 act | Negative current diocesan description; no Catholic approval; no uninspected operative formula quoted |
+| Our Lady of America | 1956–2000, several US dioceses | Six pertinent ordinaries, 2020: not objective supernatural occurrences; previously approved prayers and images may continue as private but not public Church devotion | Unbolded, non-positive origin finding with limited private devotion |
+| Zeitoun | 1968–1971, Cairo | Positive 1968 judgment belongs to Coptic Orthodox Pope Cyril VI and his Patriarchate, not a competent Roman Catholic act | Out of Catholic-authority corpus; status attributed to the correct Church |
+| Bayside / Our Lady of the Roses | 1970–1995, Queens, New York | Bishop of Brooklyn's 1986 rejection, reaffirmed by his successor in 2014: claims lack credibility and contain serious theological error | Negative; promotion and connected activity prohibited |
+| Naju | From 1985, South Korea | Archdiocese of Gwangju, from 1998 and repeatedly thereafter: `non constat de supernaturalitate`, with restrictions and CDF consultation | Non-positive and restricted; no approval |
+| Holy Love Ministries | Late twentieth century onward, Ohio | Bishop of Cleveland, 11 Nov 2009, at Holy See request: alleged apparitions/locutions not supernatural and related assemblies restricted | Negative; no approval |
+| Emmitsburg / Gianna Talone-Sullivan | 1990s–2000s, Maryland | Archdiocese of Baltimore found no basis in 2000; CDF letter of 15 Feb 2003 advised `constat de non supernaturalitate` and archdiocesan restrictions govern | Negative; no approval |
+
 ## Editorial invariants
 
 - `Nihil obstat` means positive pastoral authorization without certainty about supernatural authenticity.
@@ -76,3 +102,4 @@ This table is the controlling editorial inventory. Prose may not upgrade a statu
 - French, Italian, Spanish, Croatian, Polish, Slovak, and Japanese sources were machine-assisted for navigation and independently compared at the decisive formula. No complete critical translation of every message corpus is claimed.
 - Betania's 1987 act is available here through an interested foundation's document copy rather than a current diocesan archive; San Nicolás through AICA's act reports; Cuapa through a digitized Spanish narrative. Their provenance and resulting limitations remain explicit in the source audit.
 - The legacy tier is selected and source-audited, not a universal diocesan registry. The DDF index search is complete for positive Marian determinations from the 2024 Norms through the as-of date; Maccio was reviewed and excluded as non-Marian, while Vailankanni was retained as authoritative reception without a formal result formula.
+- The appendix's “moderate renown” corpus is likewise bounded rather than universal. It includes the cases in the affirmative, received, and boundary tiers plus the appendix-only rows above because each satisfies at least two documented public-reception, competent-intervention, authoritative-source, or recurrent-confusion signals. Boldface is reserved for a located positive Catholic event-level judgment; it does not transfer to approved devotions, shrines, cult, pilgrimages, miracles, or `nihil obstat` determinations.
