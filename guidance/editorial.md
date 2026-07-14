@@ -2,7 +2,7 @@
 
 ## Purpose and scope
 
-*Creed, Rite, Rule: Catholic Studies in Faith, Worship, and Law* is a source-first library of study documents. Its collections may include liturgical preparation guides, expositions of liturgical ordinaries, theological reference works, and discursive articles on faith or canon law. This standard governs every collection. A genre or edition profile may add stricter requirements, but it may not weaken the common requirements below.
+*Triptych: Catholic Studies in Faith, Worship, and Law* is a source-first library of study documents. Its collections may include liturgical preparation guides, expositions of liturgical ordinaries, theological reference works, and discursive articles on faith or canon law. This standard governs every collection. A genre or edition profile may add stricter requirements, but it may not weaken the common requirements below.
 
 The documents are aids to study, prayerful understanding, and responsible research. They are not official liturgical books, critical editions, catechisms, magisterial acts, canonical opinions, or substitutes for competent pastoral or legal advice. State a more specific limitation when a document's subject or intended use makes one necessary.
 

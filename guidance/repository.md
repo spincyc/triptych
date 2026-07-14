@@ -82,7 +82,7 @@ Non-publishable shared directories such as `common/`, fragment libraries, and re
 
 Use lowercase kebab-case for directory and document slugs. Keep rite and edition names explicit in their ancestor paths rather than repeating them inconsistently in every basename. Within a collection, catalog identifiers must be stable, namespaced, and defined by its profile; a temporal-cycle number from one edition must not become a global project identifier.
 
-The project is **Creed, Rite, Rule: Catholic Studies in Faith, Worship, and Law**. Its repository slug is `creed-rite-rule`. The local checkout name and a hosting service's repository name are external to tracked content; renaming them does not require or result from moving source files.
+The project is **Triptych: Catholic Studies in Faith, Worship, and Law**. Its repository slug is `triptych`. The local checkout name and a hosting service's repository name are external to tracked content; renaming them does not require or result from moving source files.
 
 ## Document records
 
@@ -124,9 +124,9 @@ Build manifests may enumerate publishable documents explicitly or discover them 
 
 ## Repository authoring commands
 
-Repository-specific Codex workflows live in the tracked plugin at `plugins/creed-rite-rule-authoring/`. Its local marketplace entry is `.agents/plugins/marketplace.json`; the marketplace is a repository integration surface, not a document source or publication tree. Keep the plugin manifest, marketplace entry, root README catalog, and plugin README coherent whenever commands are added, renamed, or removed.
+Repository-specific Codex workflows live in the tracked plugin at `plugins/triptych-authoring/`. Its local marketplace entry is `.agents/plugins/marketplace.json`; the marketplace is a repository integration surface, not a document source or publication tree. Keep the plugin manifest, marketplace entry, root README catalog, and plugin README coherent whenever commands are added, renamed, or removed.
 
-Each user-facing command is a Markdown file under `plugins/creed-rite-rule-authoring/commands/` with YAML frontmatter containing a concise `description` and `argument-hint`, followed by these stable sections: `What to provide`, `Preflight`, `Plan`, `Commands`, `Verification`, `Summary`, and `Next Steps`. Its `What to provide` section must interpolate `$ARGUMENTS` so no invocation text is lost. A filename beginning with `_` is internal support material and must not be presented as a user command. `commands/_conventions.md` is the single owner of the shared invocation, evidence, authorization, build, commit, and handoff contract; genre commands add the controlling profile's requirements instead of copying or weakening universal guidance.
+Each user-facing command is a Markdown file under `plugins/triptych-authoring/commands/` with YAML frontmatter containing a concise `description` and `argument-hint`, followed by these stable sections: `What to provide`, `Preflight`, `Plan`, `Commands`, `Verification`, `Summary`, and `Next Steps`. Its `What to provide` section must interpolate `$ARGUMENTS` so no invocation text is lost. A filename beginning with `_` is internal support material and must not be presented as a user command. `commands/_conventions.md` is the single owner of the shared invocation, evidence, authorization, build, commit, and handoff contract; genre commands add the controlling profile's requirements instead of copying or weakening universal guidance.
 
 `What to provide` is a reproducibility aid, not a parser or mandatory form. A command must treat the user's entire invocation—structured fields, ordinary prose, links, pasted notes, context, guides, emphases, exclusions, limits, staging, and commit instructions—as controlling task context. It may infer facts safely from the repository and cited authorities, but asks when a missing choice would materially change the result. A creation command authorizes its normal in-repository source and required publication artifacts; it does not by itself authorize a Git commit, history rewrite, external publication, communication with another person, or unrelated restructuring.
 

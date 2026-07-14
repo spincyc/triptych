@@ -1,6 +1,6 @@
 # Roman Missal 1962 Proper-Guide Profile
 
-This profile governs the Roman Missal 1962 temporal and ritual proper guides within **Creed, Rite, Rule**. It preserves the collection’s established Lent-first catalog, document architecture, source workflow, and production gates. It does not govern postconciliar propers, expositions of the Ordinary or Order of Mass, standalone reference works, or discursive articles. A manual for resolving the 1962 calendar and combining the admitted propers with the Ordinary follows `guidance/liturgy/roman-1962-assembly.md` instead.
+This profile governs the Roman Missal 1962 temporal and ritual proper guides within **Triptych**. It preserves the collection’s established Lent-first catalog, document architecture, source workflow, and production gates. It does not govern postconciliar propers, expositions of the Ordinary or Order of Mass, standalone reference works, or discursive articles. A manual for resolving the 1962 calendar and combining the admitted propers with the Ordinary follows `guidance/liturgy/roman-1962-assembly.md` instead.
 
 The present set covers Trinity Sunday and the Second through Seventh Sundays after Pentecost in the 1962 temporal cycle and the 1962 Nuptial Mass. The shared sacramental reference works supply additional theology without becoming part of this profile’s catalog.
 

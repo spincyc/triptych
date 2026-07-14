@@ -1,4 +1,4 @@
-# Creed, Rite, Rule Authoring Commands
+# Triptych Authoring Commands
 
 This repository plugin turns the collection's editorial and genre profiles into focused slash-command workflows. Each command accepts labeled fields or ordinary prose. Everything supplied with the invocation remains available as added context, guidance, emphasis, or limitation.
 
@@ -36,7 +36,7 @@ The plugin is registered in `.agents/plugins/marketplace.json`. From the reposit
 
 ```sh
 codex plugin marketplace add .
-codex plugin add creed-rite-rule-authoring@personal
+codex plugin add triptych-authoring@personal
 ```
 
 Start a new Codex task after installation or after reinstalling an updated plugin so the command catalog is refreshed.
