@@ -21,6 +21,10 @@ SACRAMENT_INITIATION_TABLE := $(SACRAMENT_ROOT)/sections/14-churches-initiation.
 NOVENA_ROOT := $(SOURCE_ROOT)/devotions/novenas
 NOVENA_SHARED := $(wildcard $(NOVENA_ROOT)/shared/*.tex)
 NOVENA_BUILD_PDFS := $(filter $(BUILD_ROOT)/devotions/novenas/%,$(BUILD_PDFS))
+FIRST_NOVENA_ROOT := $(NOVENA_ROOT)/00-ascension-to-pentecost
+CARMEL_NOVENA_ROOT := $(NOVENA_ROOT)/10-our-lady-of-mount-carmel
+FIRST_NOVENA_PRAYERS := $(wildcard $(FIRST_NOVENA_ROOT)/prayers/*.tex)
+CARMEL_NOVENA_PRAYERS := $(wildcard $(CARMEL_NOVENA_ROOT)/prayers/*.tex)
 
 .PHONY: all pdf install list help clean distclean check-tools check-metadata
 .DELETE_ON_ERROR:
@@ -70,6 +74,12 @@ $(BUILD_ROOT)/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass.pdf: \
 	$(SACRAMENT_ROOT)/summary-preamble.tex \
 	$(SACRAMENT_ROOT)/summaries/matrimony.tex
 $(NOVENA_BUILD_PDFS): $(NOVENA_SHARED)
+$(BUILD_ROOT)/devotions/novenas/00-ascension-to-pentecost-daily-prayer.pdf: \
+	$(FIRST_NOVENA_PRAYERS) \
+	$(FIRST_NOVENA_ROOT)/generation-metadata.tex
+$(BUILD_ROOT)/devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer.pdf: \
+	$(CARMEL_NOVENA_PRAYERS) \
+	$(CARMEL_NOVENA_ROOT)/generation-metadata.tex
 
 $(DOC_ROOT)/%.pdf: $(BUILD_ROOT)/%.pdf | check-metadata
 	@mkdir -p $(@D)

@@ -4,6 +4,25 @@ This profile governs the numbered novena collection beneath `src/gpt/devotions/n
 
 Publishable leaves use `src/gpt/devotions/novenas/<numbered-document>/`; build and installed PDFs mirror them beneath `build/gpt/` and `doc/gpt/`. Internal ordering keys use `N00`, `N10`, `N20`, and so forth so later additions can be inserted without renumbering source leaves; `N00` is reserved for the Ascension-to-Pentecost archetype. These keys govern repository ordering, internal research references, and catalog row order only. They are not publication identities: do not print them on a title page, heading, appendix, running element, PDF metadata field, or other reader-facing prose, and list novenas in the public README without an identifier column. Internal scope, audit, and control records may retain the key needed to identify their source leaf. A shared source beneath `src/gpt/devotions/novenas/shared/` is non-publishable and must have one textual owner, explicit consumers, and build dependencies that rebuild every novena after a shared change.
 
+## Condensed recitation companions
+
+A full novena may have one parallel condensed companion at the sibling leaf `<numbered-document>-daily-prayer/`. The companion is a prayer-book view of the canonical full guide, not a second edition with its own prayer text or theological synthesis. Its reader has already read the full guide or uses both publications together.
+
+The full guide remains the sole textual owner. Put every common prayer, proper collect, hymn, sequence, or other recited text used by both publications in a canonical fragment beneath the full guide, and import that same fragment into both consumers. Do not copy a prayer into the companion, silently shorten it, modernize its translation, or let the two publications drift. Register the cross-document dependencies in the build so a canonical prayer change rebuilds the full guide and its companion.
+
+A condensed companion contains only:
+
+- a title and explicit companion relationship;
+- a concise recitation sequence and the minimum rubrics needed to execute it safely;
+- every common vocal prayer appointed by the full guide, printed once;
+- the nine proper prayers under clearly navigable day headings;
+- any prayer appointed only on a particular day, in full; and
+- a compact status notice that sends calendar, Scripture, meditation, examination, concrete act, history, doctrine, approval, and translation questions back to the canonical full guide.
+
+It does not reproduce the full guide's exposition, meditation, examination, pastoral applications, historical claims, source notes, calendar essay, or references. Omitting these materials for a reader who already knows them does not make the vocal order a substitute for the source guide's Scripture, silence, conversion, sacramental, liturgical, or charitable orientation.
+
+Because the companion is mechanically assembled from canonical prayer fragments and fixed navigation or status rubrics, it imports one `\AIInheritedGenerationMetadata` declaration naming the full guide and displays no second provenance block. It keeps `research/derivation.md`, mapping every rendered prayer and rubric to its canonical owner and recording comparison, build, and review results. It does not duplicate the full guide's scope, prayer inventory, or source audit; the public catalog must link the companion to those controlling records and state the inherited relationship explicitly.
+
 ## Doctrinal and liturgical boundaries
 
 Every novena must identify its addressee correctly. Prayer is offered to the triune God, to a divine Person, or through Christ; Mary, angels, and saints are invoked for subordinate intercession, never treated as independent divinities, sources of grace, or powers that override divine wisdom. A promise attached to a devotion cannot guarantee salvation, healing, a particular temporal outcome, or exemption from repentance and the ordinary means of grace.
@@ -26,6 +45,8 @@ Each novena leaf imports exactly one `generation-metadata.tex` record and keeps:
 - `research/scope.md`, identifying provider, collection, stable ID, reader, thesis, included and excluded material, doctrinal and liturgical boundaries, calendar or jurisdiction variables, currentness, consequential uncertainties, and review state;
 - `research/source-audit.md`, mapping material historical, doctrinal, liturgical, hagiographical, private-revelation, indulgence, and pastoral claims to exact sources and loci; and
 - `research/prayer-inventory.md`, listing every vocal prayer printed for recitation, its Latin or Greek witness, textual status and date where known, English translation ownership, approval or liturgical status, source locus, and any editorial adaptation.
+
+The mechanically derived condensed-companion exception uses the inherited metadata and derivation record defined above; its canonical full guide owns and supplies the three substantive research records.
 
 If a novena depends on a claimed apparition, promise, vision, or locution, add a controlling status record or link to the repository-owned Mariological dossier that defines the exact competent act and object judged. Approval of a saint, title, feast, shrine, scapular, confraternity, or prayer does not authenticate every origin narrative or promise.
 
@@ -67,6 +88,8 @@ A full nine-day guide normally contains:
 6. the principal received hymns, antiphons, litanies, or feast prayers used by the guide, in their complete bilingual form; and
 7. references and an appendix or one-page annual-use table when it materially improves practice.
 
+Its condensed companion instead gives one complete common vocal order, nine day headings with their canonical proper prayers, and any day-specific added or substituted prayer. Common texts remain printed once and are referenced by name from the daily sequence; “condensed” never authorizes an abridged prayer.
+
 Daily meditations must develop rather than paraphrase one another. They should connect doctrine to repentance, virtue, vocation, works of mercy, ecclesial unity, or mission. They may invite prudent fasting, almsgiving, confession, spiritual reading, or service, but they may not impose obligations, discourage medical or psychological care, substitute private counsel for safeguarding or justice, or use suffering to keep a reader in danger.
 
 A repeated daily orientation panel whose internal fields already name the scriptural center, grace sought, and concrete act uses an untitled frame. Do not add a generic wrapper such as `The day's axis`; the day heading, typography, and field labels already establish the relationship. Titles for examinations, prayers, approval notices, or other materially different functions remain visible when they aid use or prevent confusion.
@@ -91,3 +114,12 @@ A novena is ready to install only when:
 - source scope, prayer inventory, source audit, copyright review, and AI metadata are complete;
 - multi-pass build, log scan, every-page visual inspection, PDF metadata and font checks, and installed/build identity checks pass; and
 - the catalog states source and production maturity separately from independent theological, liturgical, linguistic, historical, or ecclesiastical review.
+
+For a condensed companion, also require:
+
+- a one-to-one derivation map from every rendered prayer to a canonical fragment owned by the full guide;
+- a check that the companion introduces no independent prayer, doctrinal, historical, calendar, approval, indulgence, or translation claim;
+- exact text comparison between each canonical prayer fragment as rendered in the full guide and companion, allowing only layout-driven line wrapping;
+- inherited-provenance validation with no duplicate visible metadata block;
+- explicit build dependencies from every canonical prayer fragment to both consumers; and
+- catalog placement immediately after the full guide with the controlling source, inventory, scope, audit, and derivation links.

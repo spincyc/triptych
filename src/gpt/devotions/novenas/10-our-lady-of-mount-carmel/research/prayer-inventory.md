@@ -23,6 +23,7 @@ Every vocal prayer printed for recitation in the publication is inventoried here
 
 ## Inventory controls
 
+- The full guide and its *Daily Prayer Book* import every source-specific prayer above from the same canonical fragment under `prayers/`; the Sign of the Cross, Lord's Prayer, and Lesser Doxology remain singly owned by the collection's shared prayer source. The companion owns no duplicate prayer wording or translation.
 - No prayer originating solely in a modern vernacular source is included.
 - No current proprietary English Missal, Liturgy of the Hours, Carmelite proper, ritual, or Bible prayer is reproduced.
 - Every printed English vocal prayer has its complete Latin source text immediately adjacent. There is no English-only fixed offering, intention, response, or concluding formula.

@@ -25,6 +25,7 @@
 
 ## Prayer-text checks
 
+- Every source-specific prayer card was factored without verbal revision into a canonical file under `prayers/`; the full guide and its *Daily Prayer Book* import those same files, and their common formulas remain imported from `shared/common-prayers.tex`. The companion therefore has no independent prayer-text layer to drift.
 - The full *Veni Creator Spiritus* and *Veni Sancte Spiritus* were checked against the Holy See's *Compendium of the Catechism* appendix.
 - Caswall's complete English *Veni Creator* was transcribed and visually checked against *Lyra Catholica* (1849), printed pp. 103–104; his complete English *Veni Sancte Spiritus* was transcribed and visually checked against printed pp. 234–236. The check used the edition scan identified above, not a later altered hymnal text.
 - The short invocation `Veni, Sancte Spiritus, reple...` was checked in the fourth *Enchiridion*, concession 26 §2.
@@ -54,5 +55,6 @@
 - Papal, conciliar, catechetical, patristic, and scholarly sources are paraphrased with exact loci.
 - Internal source, theology, prayer-completeness, calendar, hymn-transcription, and copyright-status checks were completed before the revised build.
 - The internal ordering key was removed from reader-facing source, public catalog display, PDF text, and PDF metadata while remaining available in internal audit and ordering records.
+- The recitation-companion derivation was checked at both layers: all 30 canonical Latin and English prayer bodies appear in both rendered PDFs, and the refactored full guide retained raster identity across all 25 pages. The companion owns no prayer wording, translation, or substantive source judgment.
 - The revised final 25-page build passed a clean-log scan, metadata and font inspection, extracted-text review, and visual inspection of every page, including full-size checks of the revised title and annual-use sheet; the installed PDF was checked for byte identity with the reviewed build and raster identity with the reviewed page images.
 - Independent human historical, liturgical, theological, patristic, linguistic, pastoral, and ecclesiastical review remains outstanding.

@@ -1,0 +1,29 @@
+% Fixed publication furniture for mechanically derived novena prayer books.
+
+\newcommand{\recitationcompaniontitle}[4]{%
+  \hypersetup{pageanchor=false}%
+  \begin{titlepage}
+  \thispagestyle{empty}
+  \centering
+  \vspace*{0.16\textheight}
+  {\Huge\bfseries #1\par}
+  \vspace{0.45em}
+  {\Large\itshape #2\par}
+  \vspace{0.8em}
+  {\large Daily Prayer Book\par}
+  \vfill
+  {\small Condensed recitation companion to \textit{#3}. The full guide governs the calendar, Scripture, meditation, doctrinal limits, translation status, and review state. #4\par}
+  \end{titlepage}
+  \hypersetup{pageanchor=true}%
+}
+
+\newcommand{\recitationcompanionnotice}[1]{%
+  \begin{studybox}{Use with the full guide}
+  This booklet contains only the vocal order and complete prayer texts. Read it after the day's Scripture, silence, meditation, examination, and concrete act in \textit{#1}, or use both publications together. No prayer is abridged; recurring prayers are printed once and named in the order below.
+  \end{studybox}
+}
+
+\newcommand{\recitationday}[2]{%
+  \Needspace{17\baselineskip}%
+  \section{Day #1: #2}%
+}
