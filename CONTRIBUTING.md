@@ -60,6 +60,6 @@ Submit only material you created or have authority to provide. Identify quotatio
 - [Repository instructions](AGENTS.md)
 - [Editorial and evidence standard](guidance/editorial.md)
 - [Repository and publication contract](guidance/repository.md)
-- [Current library and source records](LIBRARY.md)
+- [Current library and supporting records](LIBRARY.md)
 
 `AGENTS.md` routes each kind of document to its detailed profile.

@@ -6,7 +6,7 @@ This repository contains **Triptych: AI Driven Studies in Catholic Faith, Worshi
 
 Read these files before changing document content, structure, or build behavior:
 
-1. `README.md` for the public consumer overview and `LIBRARY.md` for the current catalog and source links.
+1. `README.md` for the public consumer overview and `LIBRARY.md` for the current catalog and supporting records.
 2. `CONTRIBUTING.md` for the public contribution paths and ordinary-language agent workflow.
 3. `LICENSE` and `THIRD_PARTY.md` for the applicable license boundary and excluded source material.
 4. `guidance/editorial.md` for the universal evidence, attribution, metadata, review, and publication standard.
