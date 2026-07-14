@@ -9,7 +9,7 @@ This record preserves the source roles, searches, and claim boundaries compresse
 - Appointed and immediate contexts studied: Psalms 9, 12, 17, 26, and 78 in full; Luke 4:31–5:16; and Romans 8:1–30.
 - Closely related historical and doctrinal texts actually used: 1 Samuel 16; 2 Samuel 2, 5, and 22; 1 Chronicles 6:31–48, 15:16–19, and 25:1–6; Romans 8:11; Philippians 2:12–13; Ezekiel 18:31–32 and 36:22–27 as treated by Augustine; and John 21:1–14.
 - The Collect, Secret, and Postcommunion were analyzed in their complete verified Latin forms. The PDF reproduces only the clauses needed for its argument because it is designed for use beside a hand missal.
-- The authoritative architecture follows four textual stages: light/order/travail; mercy/judgment/Christ’s command; illuminated eyes/resistant wills; refuge/purification/protection. This is an editorial map of the appointed formulary, not a historical-source claim.
+- The source-grounded synthesis follows four textual stages: light/order/travail; mercy/judgment/Christ’s command; illuminated eyes/resistant wills; refuge/purification/protection. This is an editorial map of the appointed formulary, not a historical-source claim.
 
 ## Historical Coordinates of the Direct Scriptural Propers
 
@@ -52,10 +52,10 @@ These sources provide close canonical, doctrinal, or sacramental illumination. T
 - The Latin *compelle* is rendered “compel,” not softened into “draw.” The adverbial/predicative *propitius* requires God’s action to be understood as favorable or merciful, but grammar alone does not supply a complete theology of grace.
 - *Rebelles voluntates* names the worshippers’ rebellious wills. It does not grammatically assert competing wills within each person; Augustine’s divided will is related illumination.
 - The received oblations and rebellious wills belong to coordinated petitions. The prayer does not identify the wills as the oblations.
-- Luke does not call Simon rebellious. Using his truthful objection, consent, action, confession, and following to imagine merciful compulsion belongs to the speculative section.
+- Luke does not call Simon rebellious. Using his truthful objection, consent, action, confession, and following to imagine merciful compulsion belongs in `Exploratory Proposals`.
 - Ambrose offers alternative interpretations of the two boats; none is presented as the single settled patristic identification.
 - Augustine’s contrast between Luke and John is documented canonical reception, not Luke’s literal sense or a claimed universal consensus.
-- The Alleluia does not place God’s throne above the lake or identify Christ’s boat-seat as the throne. That juxtaposition is kept speculative.
+- The Alleluia does not place God’s throne above the lake or identify Christ’s boat-seat as the throne. That juxtaposition remains an exploratory proposal.
 - Visible abundance is not treated as proof of sanctity, and present strain is not treated as proof that Christ’s word failed.
 
 ## Cultural Reception

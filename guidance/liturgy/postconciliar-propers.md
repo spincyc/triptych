@@ -32,7 +32,7 @@ Build the document around the appointed elements of the identified celebration, 
 
 Do not silently substitute a Gradual, another chant source, or a locally selected song for a Missal or Lectionary text. State the source and liturgical status of each item. Preserve mandatory, optional, seasonal, and omitted elements as distinct categories.
 
-The guide's order and teaching forms should follow the actual formulary and the reader's needs. A concise map, historical context, authoritative exposition, bounded editorial synthesis, and references may remain useful; structured generation metadata remains required under the universal standard, but the 1962 guide's exact placement, headings, page counts, tables, and macro-order apply only when this profile explicitly adopts them.
+The guide's order and teaching forms should follow the actual formulary and the reader's needs. A concise map, historical context, source-grounded exposition, bounded editorial synthesis, and references may remain useful; structured generation metadata remains required under the universal standard, but the 1962 guide's exact placement, headings, page counts, tables, and macro-order apply only when this profile explicitly adopts them.
 
 ## Copyright-aware source records
 
