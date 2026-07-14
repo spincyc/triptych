@@ -59,6 +59,7 @@
 - Received Latin prayers are reproduced in focused form; traditional public-domain English and new project translations are explicitly distinguished.
 - Historical and doctrinal sources are paraphrased with loci; short quoted phrases are used only where materially necessary.
 - Internal source, theology, tradition-status, prayer-completeness, translation, calendar, copyright, and nine-day differentiation checks were completed before first build.
-- The final 27-page proof passed a clean-log scan, structured-metadata validation, PDF title and subject checks, letter-geometry inspection, complete font embedding and Unicode mapping checks, and extracted-text review. Every page was visually inspected; the final Day 9, complete *Flos Carmeli*, annual-use, and reference pages received additional full-size checks after the last reflow.
+- The internal ordering key was removed from reader-facing source, public catalog display, PDF text, and PDF metadata while remaining available in internal audit and ordering records.
+- The final 27-page proof passed a clean-log scan, structured-metadata validation, PDF title and subject checks, letter-geometry inspection, complete font embedding and Unicode mapping checks, and extracted-text review. Every page was visually inspected; the title, final Day 9, complete *Flos Carmeli*, annual-use, and reference pages received additional full-size checks after the last reflow.
 - The installed PDF was copied from the verified build and checked for byte identity; the clean post-record rebuild retained raster identity with the visually reviewed proof.
 - Independent human Carmelite, historical, liturgical, Mariological, sacramental-theological, linguistic, hymnological, pastoral, and ecclesiastical review remains outstanding.
