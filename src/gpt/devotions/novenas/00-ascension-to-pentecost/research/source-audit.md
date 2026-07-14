@@ -53,5 +53,6 @@
 - Ancient Latin prayers are reproduced for recitation; English prayer texts are either public-domain received forms, Caswall's public-domain 1849 hymn translations, or original project translations.
 - Papal, conciliar, catechetical, patristic, and scholarly sources are paraphrased with exact loci.
 - Internal source, theology, prayer-completeness, calendar, hymn-transcription, and copyright-status checks were completed before the revised build.
-- The revised final 25-page build passed a clean-log scan, metadata and font inspection, extracted-text review, and visual inspection of every page; the installed PDF was checked for byte identity with the reviewed build and raster identity with the reviewed page images.
+- The internal ordering key was removed from reader-facing source, public catalog display, PDF text, and PDF metadata while remaining available in internal audit and ordering records.
+- The revised final 25-page build passed a clean-log scan, metadata and font inspection, extracted-text review, and visual inspection of every page, including full-size checks of the revised title and annual-use sheet; the installed PDF was checked for byte identity with the reviewed build and raster identity with the reviewed page images.
 - Independent human historical, liturgical, theological, patristic, linguistic, pastoral, and ecclesiastical review remains outstanding.

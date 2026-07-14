@@ -130,7 +130,7 @@ For a new document:
 4. Build, validate, and install it to the exact mirrored `doc/` path.
 5. Update the collection catalog and links in the same coherent change.
 
-In the README's `Published Library`, every subsection that lists documents uses a Markdown table, including subsections with only one current publication. Keep collection-local identifiers or ordering keys in their own column where they exist, keep publication and supporting-source links together in the document column, and place the concise scope, evidence state, and review status in the remaining column rather than mixing table rows with prose bullets.
+In the README's `Published Library`, every subsection that lists documents uses a Markdown table, including subsections with only one current publication. Keep reader-facing collection-local identifiers in their own column where the governing profile exposes them; do not surface an internal-only ordering key merely to fill that column. Keep publication and supporting-source links together in the document column, and place the concise scope, evidence state, and review status in the remaining column rather than mixing table rows with prose bullets.
 
 When migrating an existing document, use history-preserving moves and update its imports, build target, dependencies, internal cross-references, README or catalog links, attributes, and installed PDF path together. Validate all consumers of any moved shared fragment. Do not leave a second editable copy at the old location. If a compatibility alias is genuinely needed, make it generated or explicitly transitional and document its removal condition.
 
