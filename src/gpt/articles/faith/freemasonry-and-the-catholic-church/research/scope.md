@@ -80,7 +80,7 @@ This yields a reproducibly complete **controlling and materially direct corpus u
 5. **Natural virtue:** the article acknowledges charity, mutual aid, discipline, and civic goods accomplished by lodges and members. A good effect does not make an incompatible initiatic bond licit.
 6. **Leo XIII and persons:** *Humanum genus* 11 expressly distinguishes generic institutional judgment from individuals’ awareness and participation. The two-cities frame is not used to label every Mason a conscious Satanist.
 7. **Providence and demonic action:** Satan is a creature and no rival first cause. Spiritual interpretation preserves divine sovereignty, human agency and culpability, institutional causation, and natural causes.
-8. **Leonine formula:** the official 1890 exorcism names generic diabolical congregations and sects, not Masonry. Its chronological adjacency to Leo’s anti-Masonic acts is identified as context, not hidden wording.
+8. **Leonine formula:** the official 1890 exorcism contains the generic Latin phrase *omnis congregatio et secta diabolica*, not a Masonic proper name. Its chronological adjacency to Leo’s anti-Masonic acts is identified as context, not hidden wording.
 9. **Modern formula provenance:** the earliest verified degree-by-degree ancestor is Selwyn Stevens’s Protestant text with a 1994 copyright history. Ripperger’s 2021 account explicitly identifies and describes his Catholic adaptation.
 10. **Approval categories:** an approved private edition is not the Roman Ritual; approval does not automatically extend to translations, revisions, excerpts, or ministry webpages.
 11. **Prayer and proof:** a petition or renunciation does not independently prove its claims about ritual history, demon names, ancestry, bodily organs, diseases, or efficacy.
@@ -101,6 +101,6 @@ The article does not reproduce full modern Holy See, Masonic, prayer-book, or sc
 ## Review state
 
 - Completed before first build: article-profile review; current-law scope definition; primary Roman-source verification; representative Masonic-constitution verification; professional-history source selection; internal source and attribution audit; consequential negative-result record.
-- Completed before installation: structured generation-metadata validation; multi-pass build; clean fatal-error, reference, overflow, and layout-warning scan; extracted-text and PDF-structure checks; embedded-font check; and visual inspection of all 47 pages, including close review of the new prayer matrix, expanded claim tables, and reflowed references.
+- Completed before installation: structured generation-metadata validation; settled build; clean fatal-error, reference, overflow, and layout-warning scan; extracted-text, embedded-font, and PDF-structure checks; and visual inspection of all 48 pages. The installed PDF is byte-identical to the reviewed build, SHA-256 `03f44b6123294c55c3f3adea4607d8b0de7a7f6b237e0ad7d522f9796cf545f8`.
 - Outstanding after installation: independent specialist review in Masonic history; independent theological and canonical review; review by persons with first-hand knowledge of multiple Masonic jurisdictions; ecclesiastical approval.
 - Publication language must remain “source-audited working article,” not “canonically reviewed,” “theologically reviewed,” or “approved.”

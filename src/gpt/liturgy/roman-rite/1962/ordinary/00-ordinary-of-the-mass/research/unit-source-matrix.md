@@ -2,7 +2,7 @@
 
 ## Purpose and certainty language
 
-This claim-level matrix controls the source dossiers in the thirty-three-unit exposition. It supplements, but does not replace, direct checking of the 1962 typical-edition facsimile. It records a first secure witness or a bounded terminus rather than supplying an invented date or author where the evidence preserves only gradual reception.
+This claim-level matrix controls the source dossiers in the thirty-three-unit exposition. It supplements, but does not replace, direct checking of the 1962 typical-edition facsimile. It records a first secure witness or a bounded terminus rather than supplying an invented date or author where the evidence preserves only gradual reception. It does not authorize project-authored English prayer wording or translation: English prose may state ritual function in the third person, while any reproduced English prayer wording requires an exact, identified historical or approved human witness.
 
 - **Secure:** a dated primary witness, promulgated book, decree, or textually close witness supports the claim.
 - **Probable:** the bounded range represents responsible historical synthesis, but the first form or direction of dependence remains debated.

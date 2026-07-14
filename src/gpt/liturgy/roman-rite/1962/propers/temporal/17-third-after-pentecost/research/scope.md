@@ -7,6 +7,8 @@
 - Machine-readable locating aid: Internet Archive item `MissaleRomanum1962RomanMissalColorLatin`, focused OCR lines 57,654–57,814 preserved without silent correction in `../propers/retrieved.txt`.
 - Secondary image witness: the Internet Archive color item, printed pp. 374–376 (DjVu pp. 451–453).
 - All ten elements, their references, rubric, and formulary boundaries were visually collated on 2026-07-10. The baseline's readings control `../propers/verified.md`; witness differences and checksums are recorded there.
+- The Secret's historical English now follows Dom Gaspar Lefebvre, O.S.B., *Daily Missal with Vespers for Sundays and Feasts* (1925), printed p. 1062, visually checked on 2026-07-14 against the [edition scan](https://archive.ccwatershed.org/media/pdfs/21/02/16/05-35-23_0.pdf). The exact facing English and its abbreviated `Through our Lord.` conclusion are retained without modernization or expansion. The 1962 Latin baseline separately ends at its printed `in unitáte.` boundary; the witnesses are not harmonized.
+- The 1925 English is an identified historical human translation and is public domain in the United States by publication date. It remains received third-party wording outside the project's CC BY grant; no worldwide rights status or current liturgical approval is claimed.
 - No seasonal substitution or addition appears. The six distinct directly appointed biblical dossiers below exclude the composed Collect, Secret, and Postcommunion and consolidate Luke 15:10, which occurs within both the Gospel and Communion.
 
 ## Canonical inventory and historical coordinates
@@ -82,3 +84,4 @@
 - Luke itself supplies only the larger Jerusalem-journey frame and no town for the discourse; no narrower harmonized event location is asserted.
 - First Peter's authorship and date remain contested. The table reports Rome and AD 63–64 because the requested metadata is traditional, not because the later Petrine-circle alternative has been resolved.
 - No independent theological review is recorded. The working guide remains an aid to study rather than an official liturgical or critical edition.
+- Production review for the 2026-07-14 received-prayer correction is complete: the exact Lefebvre 1925 English Secret was incorporated into a settled 12-page build that passed clean-log, metadata, extraction, embedded-font, PDF-structure, and every-page visual checks. The installed PDF is byte-identical to the reviewed build, SHA-256 `d2eeacadde3e1f7be73780f762f332049911e260fe402cf35af957178c3baa4f`.

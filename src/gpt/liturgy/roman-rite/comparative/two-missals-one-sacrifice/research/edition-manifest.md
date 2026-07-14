@@ -36,7 +36,7 @@ Checked 2026-07-13. This record prevents a colloquial â€œTLM versus Novus Ordoâ€
 
 ## Translation and quotation policy
 
-The paper ordinarily names Latin incipits or provides original analytical paraphrase. It does not reproduce the Ordinary, approved English Missal, or Lectionary at length. Short official English phrases identify legal or doctrinal propositions. The Latin typical text remains controlling where a vernacular source could introduce a difference.
+The paper ordinarily names Latin incipits or gives analytical summaries in English. Reproduced liturgical wording comes from identified received witnesses; surrounding English is analytical summary, not recitation text. It does not reproduce the Ordinary, approved English Missal, or Lectionary at length. Short official English phrases identify legal or doctrinal propositions. The Latin typical text remains controlling where a vernacular source could introduce a difference.
 
 ## Direct-comparison gate
 
@@ -51,3 +51,5 @@ Every comparison was tested against these questions:
 ## Review state
 
 The edition boundaries and principal legal texts were checked. A line-by-line independent review against physical copies of the 2008 Latin reprint and current U.S. altar book remains outstanding; the publication therefore remains a source-audited working paper.
+
+The current translation-policy revision is included in the reviewed 44-page installed artifact, SHA-256 `edba4b079c035e9ec0501ac36db901c3729f8091294e93b67d78864402047036`; this production review does not claim the outstanding independent physical-book collation.

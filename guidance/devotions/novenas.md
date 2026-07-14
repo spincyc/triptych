@@ -33,7 +33,7 @@ The document must distinguish:
 - a public or private pious exercise ordered toward that celebration;
 - a prayer text approved for a specified use;
 - a historically received but non-liturgical prayer;
-- a project-composed prayer or meditation; and
+- a project-composed meditation or other non-vocal editorial material; and
 - any private-revelation tradition, whose exact judgment and nonbinding scope must be stated.
 
 Do not splice devotional material into Mass or the Liturgy of the Hours, call a booklet “the Church's official novena” without a controlling act, or imply that private recitation reproduces a liturgical office. Where the Directory on Popular Piety recommends Vespers, another office, Mass, Scripture, or sacramental participation, the guide must say so plainly and present its own order as a subordinate option.
@@ -44,7 +44,7 @@ Each novena leaf imports exactly one `generation-metadata.tex` record and keeps:
 
 - `research/scope.md`, identifying provider, collection, stable ID, reader, thesis, included and excluded material, doctrinal and liturgical boundaries, calendar or jurisdiction variables, currentness, consequential uncertainties, and review state;
 - `research/source-audit.md`, mapping material historical, doctrinal, liturgical, hagiographical, private-revelation, indulgence, and pastoral claims to exact sources and loci; and
-- `research/prayer-inventory.md`, listing every vocal prayer printed for recitation, its Latin or Greek witness, textual status and date where known, English translation ownership, approval or liturgical status, source locus, and any editorial adaptation.
+- `research/prayer-inventory.md`, listing every vocal prayer printed for recitation, its Latin or Greek witness, textual status and date where known, exact English witness and ownership, approval or liturgical status, source locus, rights basis, and any mechanical expansion of an explicit source abbreviation.
 
 The mechanically derived condensed-companion exception uses the inherited metadata and derivation record defined above; its canonical full guide owns and supplies the three substantive research records.
 
@@ -54,9 +54,9 @@ If a novena depends on a claimed apparition, promise, vision, or locution, add a
 
 Every vocal prayer printed for recitation in English must appear with its complete Latin or Greek source text adjacent to it. This includes common prayers, daily collects, hymns, litanic responses, acts of offering, and concluding prayers. Prose instructions, historical exposition, scriptural citations, examination questions, and non-vocal meditation are not prayers and need not be duplicated in Latin or Greek.
 
-Use an identified historic, liturgical, or otherwise received Latin or Greek witness wherever one is fit for the devotion. If the project composes or materially adapts a prayer, its Latin or Greek form is the canonical project text, the English is labeled a project translation, and neither may be represented as ancient, liturgical, indulgenced, or ecclesiastically approved. Obtain specialist review before calling an original Latin or Greek composition idiomatic or publication-final.
+Use only identified historical, approved, liturgical, or otherwise received prayer texts. Neither the project nor an AI contributor may compose, translate, paraphrase, modernize, conflate, or materially adapt a vocal prayer. Reproduce each source-language prayer and exact identified human translation without verbal alteration; if no suitable translation can be verified and lawfully reproduced, omit the English recited text until one can. Expand an explicit abbreviation only with the exact full formula printed by the same identified witness or by a governing liturgical edition that the source explicitly incorporates; record both loci and the basis of the connection.
 
-English prayer should be faithful, speakable, and literary: concrete images, balanced cadence, and dignified vocabulary are preferred to bureaucratic paraphrase. Poetry must not add a promise, title, causal claim, or doctrinal content absent from the source. Preserve biblical allusion, Trinitarian grammar, the conclusion of a collect, and distinctions among worship, intercession, petition, praise, thanksgiving, and reparation. Identify whether an English rendering is official, public domain, licensed, or a project translation; do not silently modernize a copyrighted translation.
+Select an exact received English witness whose status and rights permit the intended use. Record whether it is official, historically approved, public domain, licensed, or reproduced under another identified basis. Do not silently modernize even a public-domain translation, and do not alter poetry, biblical allusion, Trinitarian grammar, a collect's conclusion, or distinctions among worship, intercession, petition, praise, thanksgiving, and reparation.
 
 Print a recurring common prayer once and direct the reader to it; do not multiply identical texts merely to fill nine daily sections. Typography may distinguish Latin witness, English translation, rubric, source note, and editorial meditation without repeating a prose “boundary” label on every page.
 
@@ -84,8 +84,8 @@ A full nine-day guide normally contains:
 2. biblical and historical provenance;
 3. doctrinal exposition of the devotion's object;
 4. one common order naming exactly what is prayed every day;
-5. nine visibly distinct days, each with a scriptural center, source-grounded meditation, concrete examination or act, proper intention, and unique bilingual prayer;
-6. the principal received hymns, antiphons, litanies, or feast prayers used by the guide, in their complete bilingual form; and
+5. nine visibly distinct days, each with a scriptural center, source-grounded meditation, concrete examination or act, proper intention, and unique received prayer, with an exact identified human translation when it may lawfully be reproduced;
+6. the principal received hymns, antiphons, litanies, or feast prayers used by the guide, complete in the source language and accompanied by exact identified human translations where they may lawfully be reproduced; and
 7. references and an appendix or one-page annual-use table when it materially improves practice.
 
 Its condensed companion instead gives one complete common vocal order, nine day headings with their canonical proper prayers, and any day-specific added or substituted prayer. Common texts remain printed once and are referenced by name from the daily sequence; “condensed” never authorizes an abridged prayer.
@@ -105,8 +105,8 @@ Indulgence claims are mutable. Identify the edition of the `Enchiridion Indulgen
 A novena is ready to install only when:
 
 - its object, status, historical development, ninefold rationale, calendar rule, and principal annual placement are exact;
-- liturgy, pious exercise, approved prayer, received tradition, private revelation, and project composition remain distinct;
-- every recited English prayer has the complete adjacent Latin or Greek source and a recorded translation status;
+- liturgy, pious exercise, approved prayer, received tradition, and private revelation remain distinct, with no project- or AI-authored prayer;
+- every recited English prayer has the complete adjacent Latin or Greek source, an exact identified human translation witness, a recorded rights basis, and no editorial adaptation beyond a documented exact expansion of the source's explicit abbreviation from the same witness or an explicitly incorporated governing edition;
 - every day contains a genuinely distinct biblical center, meditation, intention, act, and proper prayer;
 - claims about approval, promises, scapulars, apparitions, healings, and indulgences are authority-bounded and current;
 - the common prayer order is complete, practical, and not needlessly duplicated;

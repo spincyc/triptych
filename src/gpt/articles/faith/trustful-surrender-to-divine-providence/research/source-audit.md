@@ -1,6 +1,6 @@
 # Source Audit — Trustful Surrender to Divine Providence
 
-Access dates below are 2026-07-12 unless otherwise noted; the Augustine/Crowley sources were rechecked 2026-07-13. Public English translations are working study texts; doctrinal claims rest on the identified works and loci rather than on a claim that one translation is critical.
+Access dates below are 2026-07-12 unless otherwise noted; the Augustine/Crowley sources were rechecked 2026-07-13, and the Mullan edition of the *Spiritual Exercises* was checked 2026-07-14. Public English translations are working study texts; doctrinal claims rest on the identified works and loci rather than on a claim that one translation is critical.
 
 ## Governing doctrine
 
@@ -104,6 +104,14 @@ Exact governing sections used:
 - Part II, I.3, “Recourse to prayer”: surrender intensifies rather than cancels petition.
 
 Focused online witness used for verification: <https://www.saintsbooks.net/books/Fr.%20Jean%20Baptiste%20Saint-Jure%20and%20St.%20Claude%20de%20la%20Columbiere%20-%20Trustful%20Surrender%20to%20Divine%20Providence.pdf>. The publisher's record and preview confirm the modern edition and front matter: <https://tanbooks.com/products/books/trustful-surrender-to-divine-providence-the-secret-of-peace-and-happiness/>. WorldCat supplies a library catalog record: <https://search.worldcat.org/title/743355033>.
+
+## Received prayer text
+
+The boxed *Suscipe* is not project- or AI-authored and is not a project or AI translation. It reproduces without verbal adaptation the English of St. Ignatius of Loyola's *Spiritual Exercises*, no. 234, the First Point of the “Contemplation to Gain Love,” translated from the Spanish autograph by Father Elder Mullan, S.J. (*The Spiritual Exercises of St. Ignatius of Loyola* [New York: P. J. Kenedy & Sons, 1914], printed p. 120; facsimile PDF p. 142). The transcription preserves Mullan's wording, pronouns, capitalization, punctuation, spaces on both sides of the em dash, and lack of a concluding “Amen”; TeX's spaced three-hyphen notation reproduces that printed spacing. The historical facsimile is at <https://archive.org/details/spiritualexercis0000fath>. A separately paginated CCEL re-typeset PDF was checked only as a searchable comparison: <https://ccel.org/ccel/i/ignatius/exercises/cache/exercises.pdf>.
+
+The 1914 title matter records the Society of Jesus's printing faculty under Superior General Francis Xavier Wernz, a *Nihil Obstat* by Remigius Lafort, S.T.D., and the *Imprimatur* of John Cardinal Farley, Archbishop of New York, dated 25 April 1914 (facsimile PDF p. 4). The edition also reproduces an abridged English text of Paul III's brief of 31 July 1548 approving, praising, and favoring the *Spiritual Exercises* (facsimile PDF pp. 7--9; regulations for diffusion and confirmatory clauses are expressly omitted). These facts must remain distinct: the papal brief concerns the *Exercises* received by the Church, while the 1914 ecclesiastical permissions concern Mullan's English edition; neither makes the prayer a liturgical formula or a modern official English translation.
+
+The underlying 1914 text is in the public domain in the United States by publication date and is received third-party material outside the project's CC BY 4.0 grant. CCEL asserts separate rights in its re-typeset PDF file and permits only specified uses of that wrapper. The repository therefore transcribes only the underlying 1914 prayer text and does not incorporate or redistribute either verification PDF's wrapper, images, layout, pagination, or typesetting.
 
 ## Crowley historiographical clarification
 
