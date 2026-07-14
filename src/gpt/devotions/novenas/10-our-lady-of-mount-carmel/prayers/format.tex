@@ -1,0 +1,16 @@
+% N10-specific card for a received Latin prayer whose approved modern English
+% is cited but not reproduced.
+\newcommand{\carmellatinprayer}[4]{%
+  \Needspace{10\baselineskip}%
+  \begin{sourcecard}{#1}
+  {\footnotesize\textbf{Text and status:} \textit{#2}\par}\smallskip
+  \begin{minipage}[t]{0.48\linewidth}
+  \textbf{Latin}\par\smallskip
+  \itshape #3
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.48\linewidth}
+  \raggedright
+  \textbf{English source}\par\smallskip
+  #4
+  \end{minipage}
+  \end{sourcecard}}

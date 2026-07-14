@@ -58,7 +58,7 @@ The search protocol combined the former Pontifical Commission *Ecclesia Dei* arc
 ## Excluded or bounded scope
 
 - This is not a word-for-word parallel Missal, a ceremonial manual, or an authorization to celebrate either edition.
-- It does not reproduce copyrighted vernacular liturgical books. Short incipits and original close paraphrases identify the compared units.
+- It does not reproduce copyrighted vernacular liturgical books. Reproduced liturgical wording comes from identified received witnesses; surrounding English is analytical summary, not recitation text.
 - It does not decide whether an individual minister has valid orders, faculties, supplied jurisdiction, or a valid marriage delegation; those are fact-specific canonical questions.
 - It does not infer a community's current permission from a former *Ecclesia Dei* relationship, a website's continued schedule, or its canonical erection alone.
 - It does not count every TLM location in the world. A Mass-location directory answers a different question from the corporate census requested here.
@@ -70,3 +70,5 @@ The search protocol combined the former Pontifical Commission *Ecclesia Dei* arc
 Controlling sources are typical liturgical books, ecumenical councils, papal constitutions, the current Latin Code, DDF and Dicastery for Divine Worship acts, AAS/Notitiae texts, and competent erection or suppression decrees. First-party institutional pages establish self-description and current activity but cannot enlarge their own legal powers. Professional historical studies control reconstruction where no official act can answer a historical question. Aggregators and Wikipedia were used only to discover candidate names and were never the final authority for a positive canonical judgment.
 
 Independent review remains outstanding in liturgical history, sacramental theology, canon law, and the corporate-status census. The publication must remain labeled a **source-audited working paper**.
+
+Production review completed on 2026-07-14: the current 44-page PDF passed a settled build, clean-log, metadata, extraction, embedded-font, PDF-structure, and every-page visual checks. The installed PDF is byte-identical to the reviewed build, SHA-256 `edba4b079c035e9ec0501ac36db901c3729f8091294e93b67d78864402047036`.

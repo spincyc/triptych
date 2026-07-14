@@ -18,7 +18,7 @@ The companion introduces no prayer text, theological synthesis, historical claim
 | --- | --- | --- |
 | Sign of the Cross | `devotions/novenas/shared/common-prayers.tex` | Opening every day |
 | Short *Flos Carmeli* | `devotions/novenas/10-our-lady-of-mount-carmel/prayers/short-flos-carmeli.tex` | Days 1–8 |
-| Received Collects for Days 1–9 | `devotions/novenas/10-our-lady-of-mount-carmel/prayers/day-01-collect.tex` through `day-09-collect.tex` | One received Latin collect, selected devotionally and paired with a project translation, each day |
+| Received Collects for Days 1–9 | `devotions/novenas/10-our-lady-of-mount-carmel/prayers/day-01-collect.tex` through `day-09-collect.tex` | One received Latin collect, selected devotionally, with a source pointer to approved 2012 English that is not reproduced |
 | Hail Mary | `devotions/novenas/10-our-lady-of-mount-carmel/prayers/hail-mary.tex` | Every day |
 | Lord's Prayer and Lesser Doxology | `devotions/novenas/shared/common-prayers.tex` | Every day |
 | Collect of the Feast | `devotions/novenas/10-our-lady-of-mount-carmel/prayers/feast-collect.tex` | Every day |
@@ -40,8 +40,6 @@ The companion deliberately excludes the canonical guide's calendar instructions,
 ## Review state
 
 - Canonical-fragment factoring and companion assembly completed on 2026-07-13.
-- On 2026-07-14 the canonical full guide replaced its nine project-composed collects with received liturgical collects from the 1987 *Collectio*. Because the companion imports those fragments, no companion-owned prayer wording was edited. All 32 canonical Latin and English prayer bodies were compared against extracted text from both rendered consumers, normalizing only line-wrap hyphenation, whitespace, Unicode composition, and equivalent TeX punctuation; every body matched its source and the other consumer.
-- The full guide and companion settled at 29 and 10 pages. Every page was visually inspected; all prayer cards are complete, contained, and legible, and the companion introduces no blank, orphaned, clipped, split, or overlapping unit.
-- Both PDFs passed clean-log scans, structured and inherited metadata validation, title and subject checks, letter geometry, `qpdf` structure checks, text extraction, Unicode mapping, and complete font embedding. Extracted companion text contains neither an internal ordering key nor a duplicate visible AI-generation block.
-- The installed full guide and companion are byte-identical to their reviewed builds: SHA-256 `c4f69f803ee4d561b242a7d3dd14d15e4a6170a0a23c40987e9a48c9433b142c` and `26526ecb1d47af133cfb991117bcb3d4b1cd773be478b169a94cac34597997a7`, respectively.
+- On 2026-07-14 the canonical full guide replaced its nine project-composed collects with received liturgical collects from the 1987 *Collectio* and completed their abbreviated endings only with the governing formulas in GIRM 54. A second revision removed every project-authored or project-translated vocal prayer: the daily collects became Latin-only with approved-English source pointers, the short *Flos Carmeli* received Best's 1902 English, the complete sequence became Latin-only, and the Hail Mary and feast prayer received Lefebvre's 1925 Latin and English. Because the companion imports those fragments, it owns none of the revised prayer wording.
+- The 30-page full guide and 10-page companion were rebuilt from the revised shared sources, compared for rendered-source equivalence, visually inspected page by page, and installed byte-identically to their reviewed builds, SHA-256 `dfedafbe32a4c1432b68438282904ea6afb32ba7e84a6ea5ded573b607822676` and `1bab25f390940431fea27ab63656c8b332a00ed3a30945a42aa7018fb2b834cc`.
 - Independent Carmelite, historical, liturgical, Mariological, sacramental-theological, biblical, pastoral, Latin, hymnological, translation, and ecclesiastical review remains outstanding exactly as recorded for the canonical full guide.

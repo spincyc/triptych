@@ -13,6 +13,8 @@
 - **Facsimile verification URL:** <https://media.churchmusicassociation.org/pdf/missale62.pdf>
 - **Verification facsimile SHA-256:** `648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a`.
 - **Secondary image witness:** Internet Archive [item reader](https://archive.org/details/MissaleRomanum1962RomanMissalColorLatin) and [downloadable DjVu](https://archive.org/download/MissaleRomanum1962RomanMissalColorLatin/Missale-Romanum-1962-Roman-Missal-color-latin.djvu), printed pages 374–376, DjVu pages 451–453. Downloaded DjVu SHA-256: `c66aaa37b848112b03e2cb9b171c3a81c7364f4896825e565118173d3925874b`.
+- **Historical English witness for the Secret:** Dom Gaspar Lefebvre, O.S.B., *Daily Missal with Vespers for Sundays and Feasts* (Lophem near Bruges: St. Andrew's Abbey; St. Paul, Minnesota: The E. M. Lohmann Co., 1925), printed p. 1062, [edition scan](https://archive.ccwatershed.org/media/pdfs/21/02/16/05-35-23_0.pdf), SHA-256 `28c9046c5acfa19297ab9aeaa14ac4f8d8fcffab1307b51215b94fa4ca6172a2`. The facing English was visually transcribed on 2026-07-14 without modernization or expansion; its printed abbreviated conclusion is `Through our Lord.`
+- **English-witness status and rights:** Lefebvre's 1925 wording is an identified historical human translation, not a project or AI rendering and not a claim about the current approved English liturgy. It is public domain in the United States by publication date and remains received third-party material outside the project's CC BY grant; no worldwide rights status is asserted.
 - **Verification status and date:** all ten appointed elements, their headings, rank, references, wording, punctuation, accents, rubrics, and formulary boundaries were visually collated with the baseline facsimile on 2026-07-10 and re-collated for Latin-text integrity on 2026-07-14; the latter pass found no correction necessary. The complete appointed psalms, Luke 14–17, and First Peter were read for literary and salvation-historical context. Both image witnesses were compared where the OCR was unclear or their printed forms differ.
 - **Seasonal substitutions or additions:** none. The formulary prints the Alleluia and all ten ordinary elements listed below.
 - **Unresolved discrepancies:** no baseline reading remains unresolved, but the witnesses are not silently harmonized. The baseline stops the Introit after `Glória Patri.`, while the secondary explicitly prints the repeat incipit `Respíce.`. The baseline gives the Secret's extended conclusion through `Qui tecum vivit et regnat in unitáte.`, while the secondary abbreviates it to `Per Dóminum.`. Their pagination differs by six printed pages. The raw OCR misreads the Introit reference as `Ps. 2-1`, the Epistle ending as `6-U`, and Gospel `quæ períerat` as `quse perferat`, besides numerous recognition and spacing errors preserved only in `retrieved.txt`.
@@ -91,11 +93,13 @@ Sperent in te omnes, qui novérunt nomen tuum, Dómine: quóniam non derelínqui
 
 Respíce, Dómine, múnera supplicántis Ecclésiæ: et salúti credéntium perpétua sanctificatióne suménda concéde. Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte.
 
+**Historical English witness:** Favourably regard, we beseech Thee, O Lord, the offerings of Thy suppliant church: and grant that, hallowed for evermore by Thee, to Thy faithful receiving them, they may avail unto salvation. Through our Lord.
+
 **Rubric:** Preface of the Most Holy Trinity.
 
 **Immediate context and liturgical function:** this non-biblical prayer asks God to look favorably on the supplicating Church's gifts and grant that they be received with enduring sanctification for believers' salvation. The Secret turns the Introit's personal request for God's gaze into an ecclesial petition over the offered gifts.
 
-**Verification status:** facsimile-collated; the baseline's extended conclusion is retained and the secondary's abbreviated conclusion is documented above.
+**Verification status:** the 1962 Latin is facsimile-collated and retains the baseline's endpoint at `in unitáte.`; the secondary 1962 image witness's `Per Dóminum.` abbreviation remains documented above. The historical English is visually collated to Lefebvre's facing text on printed p. 1062 and retains its independent `Through our Lord.` abbreviation. No witness has been expanded or harmonized with another.
 
 ## 9. Communion
 

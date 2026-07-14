@@ -77,7 +77,7 @@ Checked through 2026-07-13. `Verified` means the source was opened or compared i
 - A community’s first-party site establishes its public identity and activity, not its faculty or the legal effect of an erection claim.
 - Secondary hierarchical directories were used only as leads or with an explicit “primary decree not located” qualification.
 - The dynamic Wikipedia list revision of 12 July 2026 and Mass-site directories were discovery tools only.
-- No long vernacular liturgical text is reproduced. Latin incipits, brief public-law phrases, and original analytical paraphrase keep the use focused and transformative.
+- No long vernacular liturgical text is reproduced. Reproduced liturgical wording comes from identified received witnesses; surrounding English is analytical summary, not recitation text. Latin incipits and brief public-law phrases keep the use focused and transformative.
 - No private rescript, unpublished constitution, or nonpublic diocesan file is represented as inspected.
 
 ## Rejected or materially corrected claims
