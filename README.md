@@ -92,28 +92,6 @@ The status codes above belong to the 1962-propers profile; they are not global m
 | The Seven Sacraments | [PDF](doc/gpt/theology/sacraments.pdf) | [TeX](src/gpt/theology/sacraments/main.tex) | [Scope](src/gpt/theology/sacraments/research/scope.md) | — | A patristic and Thomistic reference work with title-page provenance, a metaphysical lexicon, continuous treatments, references, comparative appendices, and seven one-page summaries. |
 | The Seven Sacraments at a Glance | [PDF](doc/gpt/theology/sacraments-at-a-glance.pdf) | [TeX](src/gpt/theology/sacraments-at-a-glance/main.tex) | — | [The Seven Sacraments](src/gpt/theology/sacraments/main.tex) | A compact companion composed mechanically from the canonical fragments of the full treatise, whose generation provenance it explicitly inherits without duplicating a visible metadata block. |
 
-## Authoring Skills
-
-The repository includes a local [Triptych authoring plugin](plugins/triptych-authoring/README.md) that turns the collection profiles into focused bundled skills. The fields below are prompts for useful input, not a rigid syntax: everything supplied in the request and thread—including ordinary prose, links, pasted notes, added context, guides, exclusions, limits, staging, and commit instructions—remains controlling task context. Explicitly mention a skill with `$triptych-authoring:<name>`; enabled skills also appear in Codex's skill and slash-command pickers.
-
-| Skill | Workflow | What the user should provide |
-| --- | --- | --- |
-| [`$triptych-authoring:authoring-help`](plugins/triptych-authoring/skills/authoring-help/SKILL.md) | Select the narrowest workflow without changing files | A goal, document idea, or target path |
-| [`$triptych-authoring:article`](plugins/triptych-authoring/skills/article/SKILL.md) | Create or substantially revise a faith, theology, canon-law, or mixed article | Question or target; thesis or change to test; audience; authorities, jurisdiction, and as-of date |
-| [`$triptych-authoring:novena`](plugins/triptych-authoring/skills/novena/SKILL.md) | Create a full bilingual novena and its condensed daily prayer book | Devotion, mystery, saint, feast, or event; calendar placement; received prayers or traditions; desired emphases |
-| [`$triptych-authoring:mariology`](plugins/triptych-authoring/skills/mariology/SKILL.md) | Create or revise a Rosary, Marian-dogma, devotional, or other Mariological reference | Subject and question; corpus; desired depth; authorities and doctrinal boundaries |
-| [`$triptych-authoring:apparition`](plugins/triptych-authoring/skills/apparition/SKILL.md) | Create or revise an authority-qualified apparition monograph or corpus | Event or corpus; place and dates; recipients, messages, decrees, sources, and as-of date |
-| [`$triptych-authoring:proper-1962`](plugins/triptych-authoring/skills/proper-1962/SKILL.md) | Create a 1962 temporal, ritual, votive, or other proper guide | Exact formulary and catalog identity; occurrence context; Missal loci; sacramental or seasonal variables |
-| [`$triptych-authoring:proper-postconciliar`](plugins/triptych-authoring/skills/proper-postconciliar/SKILL.md) | Create a postconciliar proper guide | Latin and vernacular editions; territory; Lectionary; calendar; cycle; celebration; selected options |
-| [`$triptych-authoring:ordinary`](plugins/triptych-authoring/skills/ordinary/SKILL.md) | Create or revise an exposition of an Ordinary, Order of Mass, or bounded unit | Exact edition or comparison; language and territory; textual boundary; analytical purpose |
-| [`$triptych-authoring:assembly-1962`](plugins/triptych-authoring/skills/assembly-1962/SKILL.md) | Create or revise a 1962 Mass-assembly reference | Rubrical problem; calendar assumptions; Mass categories; worked cases and limits |
-| [`$triptych-authoring:sacrament`](plugins/triptych-authoring/skills/sacrament/SKILL.md) | Revise the canonical sacramental treatise and every derived consumer | Sacrament or shared topic; correction or expansion; governing sources; affected summaries or tables |
-| [`$triptych-authoring:revise`](plugins/triptych-authoring/skills/revise/SKILL.md) | Revise an existing collection document under its actual profile | Target; requested changes; sources, emphasis, exclusions, currentness, and staging |
-| [`$triptych-authoring:audit`](plugins/triptych-authoring/skills/audit/SKILL.md) | Report on, or explicitly remediate, an existing document | Target; audit dimensions; `report` or `fix`; as-of date and special standard |
-| [`$triptych-authoring:publish`](plugins/triptych-authoring/skills/publish/SKILL.md) | Build, inspect, install, catalog, and optionally commit completed work | Targets; desired stage boundary; install and commit authorization; release constraints |
-
-To enable the skills in Codex, follow the plugin's [repository installation instructions](plugins/triptych-authoring/README.md#repository-installation). The shared input, evidence, authorization, verification, and handoff contract is recorded in [`references/conventions.md`](plugins/triptych-authoring/references/conventions.md).
-
 ## Guidance
 
 Read the shared rules first, then only the profile that governs the document being changed:
