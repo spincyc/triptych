@@ -23,6 +23,7 @@ Every vocal prayer printed for recitation in the publication is inventoried here
 
 ## Inventory controls
 
+- The full guide and its *Daily Prayer Book* import every non-shared prayer above from the same canonical fragment under `prayers/`; the Sign of the Cross, Lord's Prayer, and Lesser Doxology remain singly owned by the collection's shared prayer source. The companion owns no duplicate prayer wording or translation.
 - No prayer originating solely in a modern vernacular source is included.
 - No proprietary current English Missal or Liturgy of the Hours prayer is reproduced.
 - The two ancient hymns are complete rather than selectively excerpted. Their English texts are Caswall's received metrical renderings, not project translations or literal cribs; the publication preserves his full 1849 wording, including poetic contractions, without silently importing a later revision.

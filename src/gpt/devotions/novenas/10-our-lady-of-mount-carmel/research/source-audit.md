@@ -29,6 +29,7 @@
 
 ## Prayer-text checks
 
+- Every source-specific prayer card was factored without verbal revision into a canonical file under `prayers/`; the full guide and its *Daily Prayer Book* import those same files, and their common formulas remain imported from `shared/common-prayers.tex`. The companion therefore has no independent prayer-text layer to drift.
 - The Sign of the Cross, Lord's Prayer, and Lesser Doxology are imported from the collection's canonical shared prayer source; their Latin, English ownership, and consumers are recorded there and in `prayer-inventory.md`.
 - The Hail Mary was checked as a complete received Latin formula and paired with the traditional public-domain English form.
 - The feast collect `Adiuvet nos, quaesumus, Domine...` was checked against Roman and Carmelite witnesses. Its English is a complete project translation and is not represented as the approved English liturgical text.
@@ -60,6 +61,7 @@
 - Historical and doctrinal sources are paraphrased with loci; short quoted phrases are used only where materially necessary.
 - Internal source, theology, tradition-status, prayer-completeness, translation, calendar, copyright, and nine-day differentiation checks were completed before first build.
 - The internal ordering key was removed from reader-facing source, public catalog display, PDF text, and PDF metadata while remaining available in internal audit and ordering records.
+- The recitation-companion derivation was checked at both layers: all 32 canonical Latin and English prayer bodies appear in both rendered PDFs, and the refactored full guide retained raster identity across all 27 pages. The companion owns no prayer wording, translation, tradition judgment, or substantive source claim.
 - The final 27-page proof passed a clean-log scan, structured-metadata validation, PDF title and subject checks, letter-geometry inspection, complete font embedding and Unicode mapping checks, and extracted-text review. Every page was visually inspected; the title, final Day 9, complete *Flos Carmeli*, annual-use, and reference pages received additional full-size checks after the last reflow.
 - The installed PDF was copied from the verified build and checked for byte identity; the clean post-record rebuild retained raster identity with the visually reviewed proof.
 - Independent human Carmelite, historical, liturgical, Mariological, sacramental-theological, linguistic, hymnological, pastoral, and ecclesiastical review remains outstanding.
