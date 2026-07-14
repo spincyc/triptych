@@ -20,15 +20,17 @@
 | Many tongues signify the catholic scope and unity of the Church. | Acts 2:5–11; Augustine, *Sermon* 267.4 and *Sermon* 269. | Scriptural-patristic interpretation. It does not claim each Christian speaks every language. |
 | *Veni Creator* belongs to the ninth-century Carolingian setting; Rabanus authorship is uncertain. | F. J. E. Raby, *History of Christian-Latin Poetry*, 2nd ed.; manuscript/hymnological summaries. | Professional historical synthesis; received attribution reported but not asserted. |
 | *Veni Sancte Spiritus* is an early-thirteenth-century sequence of disputed authorship. | John Julian, *Dictionary of Hymnology*; Cantus/DIAMM records; received Roman liturgical text. | Manuscript-informed historical synthesis; Innocent III / Stephen Langton attributions remain open. |
+| Complete historical English verse versions of both hymns are available for devotional republication. | Edward Caswall, *Lyra Catholica* (London: James Burns, 1849), 103–104 and 234–236; edition scan, Internet Archive identifier `LyraCatholica1849`. | Primary printed translation witness. Caswall's wording is public domain; its historical and metrical character does not make it a current approved liturgical translation. |
 | Current discipline grants a partial indulgence for devout participation in a publicly conducted novena and separately treats solemn public *Veni Creator* on Pentecost. | Fourth *Enchiridion Indulgentiarum*, concessions 22 and 26. | Current universal Latin indulgence text checked 2026-07-13. General norms and exact circumstances still govern. |
 
 ## Prayer-text checks
 
 - The full *Veni Creator Spiritus* and *Veni Sancte Spiritus* were checked against the Holy See's *Compendium of the Catechism* appendix.
+- Caswall's complete English *Veni Creator* was transcribed and visually checked against *Lyra Catholica* (1849), printed pp. 103–104; his complete English *Veni Sancte Spiritus* was transcribed and visually checked against printed pp. 234–236. The check used the edition scan identified above, not a later altered hymnal text.
 - The short invocation `Veni, Sancte Spiritus, reple...` was checked in the fourth *Enchiridion*, concession 26 §2.
 - `Emitte Spiritum tuum...` and `Deus, qui corda fidelium...` were checked in the official AAS 46 (1954), p. 105, Roman ritual witness.
 - Common received formulas and all original daily collects are separately classified in `prayer-inventory.md`.
-- The project English hymns were audited stanza by stanza for complete semantic coverage. They are literary working translations, not critical or approved liturgical translations.
+- The English hymns are historical poetic translations, not project renderings, critical editions, literal interlinears, or approved current liturgical translations. The governing Latin remains adjacent so Caswall's metrical compression and expansion remain visible.
 
 ## Rejected or bounded leads
 
@@ -48,8 +50,8 @@
 ## Copyright, attribution, and review
 
 - No modern Bible translation, Missal translation, Office, papal text, or scholarly chapter is reproduced in bulk.
-- Ancient Latin prayers are reproduced for recitation; modern English prayer texts are public-domain or original project translations.
+- Ancient Latin prayers are reproduced for recitation; English prayer texts are either public-domain received forms, Caswall's public-domain 1849 hymn translations, or original project translations.
 - Papal, conciliar, catechetical, patristic, and scholarly sources are paraphrased with exact loci.
-- Internal source, theology, prayer-completeness, and calendar checks were completed before build.
-- The final 25-page build passed a clean-log scan, metadata and font inspection, extracted-text review, and visual inspection of every page; the installed PDF was checked for byte identity with the reviewed build and raster identity with the reviewed page images.
+- Internal source, theology, prayer-completeness, calendar, hymn-transcription, and copyright-status checks were completed before the revised build.
+- The revised final 25-page build passed a clean-log scan, metadata and font inspection, extracted-text review, and visual inspection of every page; the installed PDF was checked for byte identity with the reviewed build and raster identity with the reviewed page images.
 - Independent human historical, liturgical, theological, patristic, linguistic, pastoral, and ecclesiastical review remains outstanding.
