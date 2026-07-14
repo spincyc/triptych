@@ -25,7 +25,7 @@ Geographic equivalents are broad: Davidic Israel and Judah belong to the souther
 ## Direct Reception Retained
 
 - St. Augustine, *Exposition on Psalm 26* §§4, 7–9, direct exegesis of the appointed Introit and Communion verses: [text](https://www.newadvent.org/fathers/1801027.htm).
-- The Venerable Bede, *Super epistolas Catholicas*, *In Primam Petri* III at 1 Peter 3:8–17, direct Latin commentary; the variant lemma is disclosed: [text](https://la.wikisource.org/wiki/Super_epistolas_Catholicas).
+- The Venerable Bede, *Super epistolas Catholicas*, *In Primam Epistolam Petri* III at 1 Peter 3:8–17, direct Latin commentary; the variant lemma is disclosed: [text](https://la.wikisource.org/wiki/Super_epistolas_Catholicas).
 - St. John Chrysostom, *Homily 16 on Matthew* §§6, 9–12, direct exposition of the greater righteousness, anger, contempt, altar, and reconciliation: [text](https://www.newadvent.org/fathers/200116.htm).
 - St. Augustine, *On the Sermon on the Mount* I.9.21–I.10.28, direct exposition of Matthew 5:20–24 and the present or absent brother: [text](https://www.newadvent.org/fathers/16011.htm).
 - St. Jerome, *Letter 125 to Rusticus* §14, reception of Psalm 33's command to seek and pursue peace, quoted by 1 Peter: [text](https://www.newadvent.org/fathers/3001125.htm).

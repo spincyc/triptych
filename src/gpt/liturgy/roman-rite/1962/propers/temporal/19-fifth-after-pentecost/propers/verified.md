@@ -13,9 +13,9 @@
 - **Facsimile verification URL:** <https://media.churchmusicassociation.org/pdf/missale62.pdf>
 - **Verification facsimile SHA-256:** `648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a`.
 - **Secondary image witness:** Internet Archive [item reader](https://archive.org/details/MissaleRomanum1962RomanMissalColorLatin).
-- **Verification status and date:** all ten appointed elements, headings, rank, references, wording, punctuation, accents, rubrics, and formulary boundaries were visually collated with the baseline facsimile on 2026-07-10. The complete appointed chapters and their immediate contexts were read for the guide.
+- **Verification status and date:** all ten appointed elements, headings, rank, references, wording, punctuation, accents, rubrics, and formulary boundaries were visually collated with the baseline facsimile on 2026-07-10 and re-collated for Latin-text integrity on 2026-07-14. The latter pass restored two commas in the publication's Gradual incipit and corrected the Collect conclusion in this record.
 - **Seasonal substitutions or additions:** none.
-- **Unresolved discrepancies:** no baseline reading remains unresolved. The raw OCR intentionally preserves recognition errors, including `Pa.` for `Ps.`, `clasais`, false initials, broken words, and corrupted accents. It adds the repeat incipit `Exaudi` after the Introit doxology where the baseline stops after `Glória Patri.`; it abbreviates the Collect and Postcommunion conclusions to `Per Dóminum`, while the baseline prints their full conclusions. The public witnesses use pagination differing by six printed pages.
+- **Unresolved discrepancies:** no baseline reading remains unresolved. The raw OCR intentionally preserves recognition errors, including `Pa.` for `Ps.`, `clasais`, false initials, broken words, and corrupted accents. It adds the repeat incipit `Exaudi` after the Introit doxology where the baseline stops after `Glória Patri.`; it drops `nostrum` from the Collect's printed short conclusion and abbreviates the Postcommunion's full conclusion to `Per Dóminum`. The public witnesses use pagination differing by six printed pages.
 
 ## 1. Introit
 
@@ -27,7 +27,7 @@ Exáudi, Dómine, vocem meam, qua clamávi ad te: adiútor meus esto, ne derelí
 
 ## 2. Collect
 
-Deus, qui diligéntibus te bona invisibília præparásti: infúnde córdibus nostris tui amóris afféctum; ut te in ómnibus et super ómnia diligéntes, promissiónes tuas, quæ omne desidérium súperant, consequámur. Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte.
+Deus, qui diligéntibus te bona invisibília præparásti: infúnde córdibus nostris tui amóris afféctum; ut te in ómnibus et super ómnia diligéntes, promissiónes tuas, quæ omne desidérium súperant, consequámur. Per Dóminum nostrum.
 
 **Context:** the Church asks God to infuse ordered love and bring his people to promises beyond desire.
 

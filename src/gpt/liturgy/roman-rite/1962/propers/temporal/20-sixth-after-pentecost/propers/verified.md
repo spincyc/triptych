@@ -13,7 +13,7 @@
 - **Facsimile verification URL:** <https://media.churchmusicassociation.org/pdf/missale62.pdf>
 - **Verification facsimile SHA-256:** `648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a`.
 - **Secondary image witness:** Internet Archive [item reader](https://archive.org/details/MissaleRomanum1962RomanMissalColorLatin).
-- **Verification status and date:** all ten appointed elements, headings, rank, references, wording, punctuation, accents, rubrics, and formulary boundaries were visually collated with the baseline facsimile on 2026-07-10. The complete appointed chapters and their immediate contexts were read for the guide.
+- **Verification status and date:** all ten appointed elements, headings, rank, references, wording, punctuation, accents, rubrics, and formulary boundaries were visually collated with the baseline facsimile on 2026-07-10 and re-collated for Latin-text integrity on 2026-07-14. The latter pass restored the source comma in the publication's Communion incipit. The complete appointed chapters and their immediate contexts were read for the guide.
 - **Seasonal substitutions or additions:** none.
 - **Unresolved discrepancies:** no baseline reading remains unresolved. The raw OCR intentionally preserves recognition errors, broken words, false initials, and corrupted accents; it even reads the Epistle's `Fratres` as `Patres` and the Gospel rubric `Credo` as `Oedo`. It adds the repeat incipit `Dominus` after the Introit doxology where the baseline stops after `Glória Patri.`, and abbreviates the Collect and Postcommunion conclusions to `Per Dóminum`, while the baseline prints their full conclusions. The public witnesses use pagination differing by six printed pages.
 
