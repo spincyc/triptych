@@ -18,7 +18,7 @@ The companion introduces no prayer text, theological synthesis, historical claim
 | --- | --- | --- |
 | Sign of the Cross | `devotions/novenas/shared/common-prayers.tex` | Opening every day |
 | Daily Invocation and Collect | `devotions/novenas/00-ascension-to-pentecost/prayers/daily-invocation.tex` | Opening every day |
-| Proper Collects for Days 1–9 | `devotions/novenas/00-ascension-to-pentecost/prayers/day-01-collect.tex` through `day-09-collect.tex` | One appointed collect each day |
+| Received Collects for Days 1–9 | `devotions/novenas/00-ascension-to-pentecost/prayers/day-01-collect.tex` through `day-09-collect.tex` | One received 1962 Missal collect appointed devotionally each day; source contexts and project translations are controlled by the full guide |
 | *Veni Creator Spiritus* | `devotions/novenas/00-ascension-to-pentecost/prayers/veni-creator.tex` | Every day; complete form preferred by the full guide |
 | *Veni Sancte Spiritus* | `devotions/novenas/00-ascension-to-pentecost/prayers/veni-sancte.tex` | Added on Day 9 |
 | Lord's Prayer and Lesser Doxology | `devotions/novenas/shared/common-prayers.tex` | Closing every day |
@@ -38,8 +38,8 @@ The companion deliberately excludes the canonical guide's calendar instructions,
 ## Review state
 
 - Canonical-fragment factoring and companion assembly completed on 2026-07-13.
-- All 30 canonical Latin and English prayer bodies were compared against extracted text from both rendered consumers, with only line-wrap hyphenation, whitespace, and equivalent TeX punctuation normalized; every body matched the source in the full guide and this companion.
-- The refactored 25-page full guide retained page-for-page raster identity with the pre-factoring installed proof. The 9-page companion settled after its day headings, complete hymn, Day 9 sequence, and closing prayers were kept with their intended units; every final page was visually inspected at full size.
-- Both PDFs passed clean-log scans, structured and inherited metadata validation, PDF title and subject checks, letter geometry, `qpdf` structure checks, text extraction, Unicode mapping, and complete font embedding. Extracted companion text contains neither the internal ordering keys nor a duplicate visible AI-generation block.
-- The installed full guide and companion were byte-identical to their reviewed builds, and the installed companion's page rasters matched the frozen reviewed proof.
+- On 2026-07-14 the nine canonical daily fragments were replaced with received 1962 Missal collects and project translations without changing their one-to-one import paths. All 30 canonical Latin and English prayer bodies were compared against extracted text from both rendered consumers, normalizing only line-wrap hyphenation, whitespace, Unicode composition, and equivalent TeX punctuation; every body matched its source and the other consumer.
+- The full guide and companion settled at 27 and 10 pages. Every page was visually inspected after the final reflow; all prayer cards are complete, contained, and legible, and the companion introduces no blank, orphaned, clipped, split, or overlapping unit.
+- Both PDFs passed clean-log scans, structured and inherited metadata validation, title and subject checks, letter geometry, `qpdf` structure checks, text extraction, Unicode mapping, and complete font embedding. Extracted companion text contains neither an internal ordering key nor a duplicate visible AI-generation block.
+- The installed full guide and companion are byte-identical to their reviewed builds: SHA-256 `01a41341f80c410b83fa1035a1ddffb48b74de954653ada0b303174214de7515` and `83d1480fa3c285720d22a9dead23e00a6f17ee0b20e593f51c477abf236dae19`, respectively.
 - Independent liturgical, theological, patristic, Latin, translation, hymnological, pastoral, and ecclesiastical review remains outstanding exactly as recorded for the canonical full guide.
