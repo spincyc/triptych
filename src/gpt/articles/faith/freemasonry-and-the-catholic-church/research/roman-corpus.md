@@ -37,6 +37,19 @@ Checked through 2026-07-13. This record applies the inclusion rule in `scope.md`
 | 1965-12-07 | Vatican II, *Dignitatis humanae* 1–3 | Later authoritative account of civil religious freedom; retains duty toward truth and does not establish indifferentism. |
 | 2021-05-23 / 2021-12-08 | Francis, *Pascite gregem Dei* / effect | Promulgates the edition of revised Book VI governing current can. 1374. |
 
+## Adjacent exorcism and prayer-discipline sources
+
+These texts govern the article’s classification of spiritual-warfare claims. They are not added to the direct Masonic corpus merely because a later reader applies them to Masonry.
+
+| Date | Authority and text | Exact role | Masonic-name finding |
+| --- | --- | --- | --- |
+| 1890-05-18 | Leo XIII, *Exorcismus in Satanam et angelos apostaticos*, ASS 23 (1890–91), 743–746 | Official Leonine formula; rescript concerns bishops and priests legitimately authorized by ordinaries. | Contains *omnis congregatio et secta diabolica* but no Masonic proper name. |
+| 1975-06-26 | CDF, *Christian Faith and Demonology* | Real Satan and spiritual combat; human responsibility, baptismal renunciation, liturgical reserve, and critical prudence. | Doctrinal method, not a Masonic act. |
+| 1985-09-29 | CDF letter to ordinaries on exorcism | Applies CIC can. 1172; bars lay use of the Leonine formula and unauthorized demon interrogation. | Controls later attempts to use Leo’s formula as a lay anti-Masonic rite. |
+| 1999-01-26 | Holy See presentation of *De Exorcismis et Supplicationibus Quibusdam* | Publicly identifies the revised major rite, particular supplications, and private prayers. | No Masonry-specific formula located in the official public inventory checked. |
+| 2000-09-14 | CDF instruction on prayers for healing | Keeps exorcism under the diocesan bishop and distinct from healing services and sacramental liturgy. | Governs proposed renunciation or healing services involving Masonry. |
+| 2024-11-01 | Spanish Episcopal Conference note on intergenerational healing | Particular episcopal application rejecting inherited guilt and automatic ancestral-disease theories while affirming natural consequences. | Directly tests the generational theory in modern Masonic deliverance prayers; not a universal Roman act. |
+
 ## Currentness result
 
 - The DDF document index was checked through 2026-07-13.
@@ -50,3 +63,5 @@ Checked through 2026-07-13. This record applies the inclusion rule in `scope.md`
 2. Earlier acts’ censures are not current merely because later teaching cites their judgment.
 3. The Carbonari remain a named distinct society. Their inclusion records papal genealogy, not generic institutional identity with every lodge.
 4. Full official texts are linked and expounded; they are not bulk-reproduced in the publication.
+5. Leo XIII’s 1890 exorcism is an official adjacent liturgical source, not a hidden anti-Masonic encyclical or a direct entry in the controlling Masonic corpus.
+6. The modern Stevens–Ripperger prayer family and current ministry derivatives are inventoried separately in prayer-provenance.md; they are not Roman acts.
