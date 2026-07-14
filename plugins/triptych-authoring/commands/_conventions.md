@@ -11,7 +11,7 @@ Every user-facing slash command in this plugin applies the following contract. F
 
 ## Preflight
 
-1. Confirm the working directory is the Creed, Rite, Rule repository and inspect `git status --short`. Preserve unrelated changes.
+1. Confirm the working directory is the Triptych repository and inspect `git status --short`. Preserve unrelated changes.
 2. Read `AGENTS.md`, `README.md`, `guidance/editorial.md`, `guidance/repository.md`, every applicable genre profile, and the target document's source and research records before editing.
 3. Identify provider, collection, genre, rite, edition, language or locale, jurisdiction, calendar, and as-of date wherever they matter.
 4. Determine whether the invocation creates a document, revises content, changes structure, installs PDFs, commits a stage, or only reports findings. A creation or publication command authorizes its normal repository artifacts; a commit or history rewrite still requires explicit authorization in the invocation or current thread.

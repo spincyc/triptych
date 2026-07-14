@@ -1,5 +1,5 @@
 ---
-description: Choose the correct Creed, Rite, Rule authoring workflow and identify the inputs it needs.
+description: Choose the correct Triptych authoring workflow and identify the inputs it needs.
 argument-hint: "[document idea, target path, or desired outcome] [free-form context and limits]"
 ---
 
@@ -21,7 +21,7 @@ Treat all of it as controlling input, whether it follows the suggestions below o
 
 ## Preflight
 
-1. Read `plugins/creed-rite-rule-authoring/commands/_conventions.md`.
+1. Read `plugins/triptych-authoring/commands/_conventions.md`.
 2. Inspect the README catalog and profile routing in `AGENTS.md`.
 3. If an existing target is named, locate it and identify its controlling profile without editing it.
 
