@@ -13,14 +13,14 @@
 - **Facsimile verification URL:** <https://media.churchmusicassociation.org/pdf/missale62.pdf>
 - **Verification facsimile SHA-256:** `648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a`.
 - **Secondary image witness:** <https://archive.org/details/MissaleRomanum1962RomanMissalColorLatin>
-- **Verification status and date:** all ten appointed elements, their headings, rank, references, wording, punctuation, and formulary boundaries were visually checked against the 1962 facsimile on 2026-07-10. Accent marks below follow the printed facsimile.
-- **Unresolved discrepancies:** none in the verified transcription. `retrieved.txt` intentionally preserves recognition errors, false characters, broken words, and a running header embedded within the Gospel; none of those OCR forms establishes publication text. The two public items use different internal pagination.
+- **Verification status and date:** all ten appointed elements, their headings, rank, references, wording, punctuation, and formulary boundaries were visually checked against the 1962 facsimile on 2026-07-10 and re-collated for Latin-text integrity on 2026-07-14. The latter pass removed a repeat incipit copied from malformed OCR after the Introit doxology. Accent marks below follow the printed facsimile.
+- **Unresolved discrepancies:** none in the verified transcription. `retrieved.txt` intentionally preserves recognition errors, false characters, broken words, a repeat-incipit fragment after the Introit doxology, and a running header embedded within the Gospel; none of those OCR forms establishes publication text. The two public items use different internal pagination.
 
 ## 1. Introit
 
 **Psalm 46:2–3**
 
-Omnes gentes, pláudite mánibus: iubiláte Deo in voce exsultatiónis. Ps. ibid., 3 Quóniam Dóminus excélsus, terríbilis: Rex magnus super omnem terram. ℣. Glória Patri. Omnes gentes.
+Omnes gentes, pláudite mánibus: iubiláte Deo in voce exsultatiónis. Ps. ibid., 3 Quóniam Dóminus excélsus, terríbilis: Rex magnus super omnem terram. ℣. Glória Patri.
 
 ## 2. Collect
 

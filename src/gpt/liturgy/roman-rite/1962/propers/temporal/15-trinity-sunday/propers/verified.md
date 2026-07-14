@@ -14,7 +14,7 @@
 - **Facsimile verification URL:** <https://media.churchmusicassociation.org/pdf/missale62.pdf>
 - **Verification facsimile SHA-256:** `648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a`.
 - **Secondary image witness:** Internet Archive [item reader](https://archive.org/details/MissaleRomanum1962RomanMissalColorLatin) and [downloadable DjVu](https://archive.org/download/MissaleRomanum1962RomanMissalColorLatin/Missale-Romanum-1962-Roman-Missal-color-latin.djvu), printed pages 366–367, DjVu pages 443–444. Downloaded DjVu SHA-256: `c66aaa37b848112b03e2cb9b171c3a81c7364f4896825e565118173d3925874b`.
-- **Verification status and date:** all ten appointed elements, their headings, rank, references, wording, punctuation, accents, rubrics, and formulary boundaries were visually collated with the baseline facsimile on 2026-07-10. The complete biblical passages and their immediate literary contexts were read for context. The secondary image witness was compared with the baseline.
+- **Verification status and date:** all ten appointed elements, their headings, rank, references, wording, punctuation, accents, rubrics, and formulary boundaries were visually collated with the baseline facsimile on 2026-07-10 and re-collated for Latin-text integrity on 2026-07-14. The latter pass restored the baseline comma after `ut` in the Collect and both conjunctions in the Epistle excerpt used by the publication; the raw OCR had omitted the Collect comma. The complete biblical passages and their immediate literary contexts were read for context. The secondary image witness was compared with the baseline.
 - **Seasonal substitutions or additions:** none. The formulary prints the Alleluia, Credo, proper Preface rubric, and all ten ordinary elements listed below.
 - **Unresolved discrepancies:** no reading remains unresolved because the identified baseline controls the transcription. The baseline spells out `SANCTISSIMÆ` in the heading, while the secondary abbreviates it as `SSMÆ`; the baseline stops the Introit after `Glória Patri.`, while the secondary explicitly adds the repeat incipit `Benedícta.`; and their pagination differs by six printed pages. Capitalization differs in a few places without changing wording. The raw OCR contains numerous recognition errors retained only in `retrieved.txt`.
 
@@ -30,7 +30,7 @@ Benedícta sit sancta Trínitas atque indivísa Unitas: confitébimur ei, quia f
 
 ## 2. Collect
 
-Omnípotens sempitérne Deus, qui dedísti fámulis tuis, in confessióne veræ fídei, ætérnæ Trinitátis glóriam agnóscere, et in poténtia maiestátis adoráre Unitátem: quǽsumus; ut eiúsdem fídei firmitáte, ab ómnibus semper muniámur advérsis. Per Dóminum.
+Omnípotens sempitérne Deus, qui dedísti fámulis tuis, in confessióne veræ fídei, ætérnæ Trinitátis glóriam agnóscere, et in poténtia maiestátis adoráre Unitátem: quǽsumus; ut, eiúsdem fídei firmitáte, ab ómnibus semper muniámur advérsis. Per Dóminum.
 
 **Immediate context and liturgical function:** this non-biblical oration asks the almighty eternal God that servants given true faith may acknowledge the glory of the eternal Trinity, adore unity in majestic power, and be defended by steadfastness in that faith. As the Collect, it gathers the assembly’s praise into confession, adoration, and perseverance before the readings.
 

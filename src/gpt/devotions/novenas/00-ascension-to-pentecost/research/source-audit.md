@@ -26,11 +26,12 @@
 ## Prayer-text checks
 
 - Every source-specific prayer card was factored without verbal revision into a canonical file under `prayers/`; the full guide and its *Daily Prayer Book* import those same files, and their common formulas remain imported from `shared/common-prayers.tex`. The companion therefore has no independent prayer-text layer to drift.
-- The full *Veni Creator Spiritus* and *Veni Sancte Spiritus* were checked against the Holy See's *Compendium of the Catechism* appendix.
+- The full *Veni Creator Spiritus* and *Veni Sancte Spiritus* were checked against the Holy See's *Compendium of the Catechism* appendix and re-collated on 2026-07-14. That pass restored the omitted conjunction in `teque utriusque Spiritum`, the source's `Per Te` capitalization, and three source punctuation readings across the two hymns.
 - Caswall's complete English *Veni Creator* was transcribed and visually checked against *Lyra Catholica* (1849), printed pp. 103–104; his complete English *Veni Sancte Spiritus* was transcribed and visually checked against printed pp. 234–236. The check used the edition scan identified above, not a later altered hymnal text.
-- The short invocation `Veni, Sancte Spiritus, reple...` was checked in the fourth *Enchiridion*, concession 26 §2.
+- The short invocation `Veni, Sancte Spiritus, reple...` was re-collated with the fourth *Enchiridion*, concession 26 §2, on 2026-07-14; the source has no comma before `et tui amoris`.
 - `Emitte Spiritum tuum...` and `Deus, qui corda fidelium...` were checked in the official AAS 46 (1954), p. 105, Roman ritual witness.
 - Common received formulas and all original daily collects are separately classified in `prayer-inventory.md`.
+- The 2026-07-14 integrity pass also normalized the divine-title capitalization `Filii tui` in the project-composed Day 6 collect; its original, unapproved status and outstanding independent Latin review remain unchanged.
 - The English hymns are historical poetic translations, not project renderings, critical editions, literal interlinears, or approved current liturgical translations. The governing Latin remains adjacent so Caswall's metrical compression and expansion remain visible.
 
 ## Rejected or bounded leads
@@ -55,6 +56,7 @@
 - Papal, conciliar, catechetical, patristic, and scholarly sources are paraphrased with exact loci.
 - Internal source, theology, prayer-completeness, calendar, hymn-transcription, and copyright-status checks were completed before the revised build.
 - The internal ordering key was removed from reader-facing source, public catalog display, PDF text, and PDF metadata while remaining available in internal audit and ordering records.
-- The recitation-companion derivation was checked at both layers: all 30 canonical Latin and English prayer bodies appear in both rendered PDFs, and the refactored full guide retained raster identity across all 25 pages. The companion owns no prayer wording, translation, or substantive source judgment.
-- The revised final 25-page build passed a clean-log scan, metadata and font inspection, extracted-text review, and visual inspection of every page, including full-size checks of the revised title and annual-use sheet; the installed PDF was checked for byte identity with the reviewed build and raster identity with the reviewed page images.
+- The recitation-companion derivation was checked at both layers: all 30 canonical Latin and English prayer bodies appear in both rendered PDFs. The companion owns no prayer wording, translation, or substantive source judgment.
+- On 2026-07-14 the corrected 26-page full guide and 10-page companion passed settled two-pass builds, clean-log scans, metadata, font, extraction, PDF-structure, and every-page visual checks. A local keep-with-next guard also repaired the full guide's split references heading without changing its page count.
+- The installed PDFs are byte-identical to the reviewed builds: full guide SHA-256 `c99cf5b07ac9c125f6bec2f30a72111696cb08bc14233fd17ca03d8ccf211c38`; companion SHA-256 `4034c85ef24d52454452a272ad76ce1eef433f04ea9230e3f12200e14219054c`.
 - Independent human historical, liturgical, theological, patristic, linguistic, pastoral, and ecclesiastical review remains outstanding.

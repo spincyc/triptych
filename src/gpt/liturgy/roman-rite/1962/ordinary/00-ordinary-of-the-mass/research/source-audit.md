@@ -1,12 +1,12 @@
 # Source audit: The Ordinary and Order of the Mass
 
-Access dates for public web sources: 2026-07-12 through 2026-07-13. “Used” means the source controls or materially supports a claim in the publication; it does not mean every page of a large work is relied upon.
+Access dates for public web sources: 2026-07-12 through 2026-07-14. “Used” means the source controls or materially supports a claim in the publication; it does not mean every page of a large work is relied upon.
 
 ## Controlling liturgical witness
 
 | Source | Locus checked | Claim families controlled | Status and limitations |
 | --- | --- | --- | --- |
-| *Missale Romanum*, editio typica 1962, CMMA facsimile | *Ritus servandus*, printed pp. LII--LXIV; *Ordo Missae* and *Canon Missae*, printed pp. 216--328 | Sequence, Latin incipits, ministers, gestures, audibility, omissions, proper slots, Low/sung/Solemn distinctions | Controlling received text. Public scan checked directly; OCR and hand-missal transcriptions do not override it. |
+| *Missale Romanum*, editio typica 1962, CMMA facsimile | *Ritus servandus*, printed pp. LII--LXIV; *Ordo Missae* and *Canon Missae*, printed pp. 216--328 | Sequence, Latin incipits, ministers, gestures, audibility, omissions, proper slots, Low/sung/Solemn distinctions | Controlling received text. Public scan checked directly; OCR and hand-missal transcriptions do not override it. A repository-wide Latin-integrity re-collation on 2026-07-14 restored omitted words and responses, including `sed et`, `Domine Deus`, `Et cum spiritu tuo`, and the Last-Gospel response; restored the facsimile's `neglegentiis`; and reconciled source punctuation and capitalization across quoted units 4, 6--7, 14--16, 20--23, 25--26, 29--31, and 33. |
 | John XXIII, *Rubricarum instructum* (1960) | nos. 1--5 and promulgated rubrical context | Promulgation and immediate history of the 1960 rubrical code incorporated into the 1962 Missal | Official Holy See text. Does not itself supply a complete history of every change. |
 | Predecessor printed Roman Missals | Lippe's edition of the 1474 Milan Missal, pp. 198--212; 1570, 1604, and 1634 typical editions at their Orders of Mass | Plenary-Missal inheritance, Tridentine standardization, subsequent authorized correction | The 1474 sequence was checked unit by unit. The later editions are used for identified standardization points, not represented as a complete diplomatic collation. |
 
@@ -85,9 +85,11 @@ The appendix paraphrases the 1962-era form and quotes only short Latin incipits.
 ## Known limits and review state
 
 - This is not a diplomatic edition or exhaustive manuscript stemma.
+- Selective Missal quotations preserve the collated words, capitalization, and punctuation, with omissions marked by ellipses. As an explicit house-style normalization, they expand printed ligatures to `ae`/`oe`, omit stress accents, and use `V.`/`R.` for the printed versicle and response signs.
 - English explanations of Latin texts are original study paraphrases, not an approved liturgical translation.
 - Exact historical dating of some Canon clauses, preparatory prayers, and cross-regional influence remains probabilistic.
 - The central Roman locus for the 1886 Leonine revision remains outstanding; the authoritative 1962-horizon exception corpus is controlled by the 1960 decree.
 - Medieval mystical readings are labeled as reception rather than silently converted into compositional history.
 - Present canonical authorization for celebrations using the 1962 Missal is outside scope.
+- On 2026-07-14 the corrected 51-page publication passed a settled two-pass build, clean-log, metadata, font, extraction, PDF-structure, and every-page visual checks. A local keep-with-next guard repaired the split section heading found during that review. The installed PDF is byte-identical to the reviewed build, SHA-256 `c924db267fca7723742283cea594a39a5fe8613d87067abfff7abf77826a1704`.
 - Independent review by a liturgical historian, patristics specialist, and sacramental theologian remains outstanding.

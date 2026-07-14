@@ -16,7 +16,7 @@
 - **Focused facsimile witness:** <https://www.ccwatershed.org/wp-content/uploads/2020/06/77723-Missa-Pro-Sponsis-1962-0CRd.pdf>
 - **Focused facsimile SHA-256:** `9e9b08c2b1a3e65971b6fa437b08829df69846fe3aab08d4cb43fb0572835dd5`.
 - **Secondary image witness:** <https://archive.org/details/MissaleRomanum1962RomanMissalColorLatin>
-- **Verification status and date:** the formulary boundary, ten core proper elements, seasonal chant alternatives, two post–Pater nuptial prayers, Communion rubric, final blessing, and final admonition were visually checked against the typical-edition facsimile on 2026-07-11. Accent marks below follow the printed facsimile.
+- **Verification status and date:** the formulary boundary, ten core proper elements, seasonal chant alternatives, two post–Pater nuptial prayers, Communion rubric, final blessing, and final admonition were visually checked against the typical-edition facsimile on 2026-07-11 and re-collated for Latin-text integrity on 2026-07-14; the latter pass found no correction necessary. Accent marks below follow the printed facsimile.
 - **Unresolved discrepancies:** none in the verified transcription. `retrieved.txt` deliberately preserves OCR substitutions, broken words, false symbols, and page-column artifacts; those forms do not establish publication text. The Internet Archive scan and CMAA facsimile use different internal pagination. The Tobit proper follows the short Vulgate recension and does not align verse-for-verse with modern editions based chiefly on the long Greek recension.
 
 ## Governing Rubrics

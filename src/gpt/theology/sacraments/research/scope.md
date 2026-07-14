@@ -72,6 +72,8 @@ Anglican Ordinariates use a distinctive liturgical use within the Latin Church a
 
 Canonical and ecclesial-identity material was checked for this generation on 2026-07-11. Discipline and particular practice can change. The treatise states universal law where available, marks current or local practice as such, and avoids converting a pastoral custom into sacramental essence. Questions of individual validity, faculties, impediments, initiation status, or matrimonial nullity require competent ecclesiastical judgment.
 
+A repository-wide Latin-integrity pass on 2026-07-14 rechecked the treatise's received sacramental formulas and ecclesial Latin without finding a verbal correction; it reclassified the Greek term `telos` in the source markup. The resulting 70-page treatise and 11-page at-a-glance companion passed settled builds, clean-log, font, extraction, PDF-structure, and every-page visual checks. Their installed PDFs are byte-identical to the reviewed builds, SHA-256 `001ea55849743be1a5d878125b3b908011913245472607c82c63318872709966` and `d4bf62d0d1c871ea126c6b8b114460c6e324b89f4bbcc2bb350df69bc009f724`, respectively.
+
 ## Material unresolved or deliberately bounded
 
 - Thomas's own assignments are stated: inward repentance for Penance (ST III, q. 84, a. 1 ad 3) and inward devotion or spiritual anointing for Anointing (Supplement, q. 30, a. 3 ad 3). No claim is made that every later school organizes these intermediate realities identically or treats them as indelible structures.
