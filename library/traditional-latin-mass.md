@@ -1,0 +1,27 @@
+# Traditional Latin Mass: 1962 Roman Rite
+
+[Return to the Library](../LIBRARY.md)
+
+These studies concern the liturgical books and calendar in force in 1962. They are distinct from the postconciliar Roman Rite commonly called the Novus Ordo.
+
+## The Mass and Its Assembly
+
+- **[The Ordinary and Order of the Mass](../doc/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.pdf)** — An exposition of the stable texts and ritual sequence in the 1962 books. Source-audited. [Edition manifest](../src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/edition-manifest.md) · [Sequence inventory](../src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/sequence-inventory.md) · [Unit-source matrix](../src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/unit-source-matrix.md) · [Research scope](../src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/scope.md) · [Source audit](../src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/source-audit.md)
+- **[Assembling the Mass](../doc/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf)** — A practical guide to the 1962 calendar, precedence, Mass classes, formularies, and commemorations. It is not a current authorization or a substitute for the competent local Ordo. Source-audited. [Edition manifest](../src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/research/edition-manifest.md) · [Rubric index](../src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/research/rubric-index.md) · [Worked cases](../src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/research/worked-cases.md) · [Research scope](../src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/research/scope.md) · [Source audit](../src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/research/source-audit.md)
+
+## Mass Propers
+
+These guides place the appointed prayers, readings, and chants of a Mass in their scriptural, historical, patristic, sacramental, and theological setting.
+
+They have recorded AI-generation histories, facsimile-checked source texts, internal source audits, and production checks, but no independent theological review. Their [profile](../guidance/liturgy/roman-1962-propers.md#guide-status-and-canonical-sunday-order) records this as G3 / S2 / T0 / Q3; the codes do not apply outside this series.
+
+| ID | Guide | Supporting records |
+| --- | --- | --- |
+| 15 | **[Trinity Sunday](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday.pdf)** | [Verified propers](../src/gpt/liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday/propers/verified.md) · [Research scope](../src/gpt/liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday/research/scope.md) |
+| 16 | **[Second Sunday after Pentecost](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost.pdf)** | [Verified propers](../src/gpt/liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost/propers/verified.md) · [Research scope](../src/gpt/liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost/research/scope.md) |
+| 17 | **[Third Sunday after Pentecost](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost.pdf)** | [Verified propers](../src/gpt/liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost/propers/verified.md) · [Research scope](../src/gpt/liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost/research/scope.md) |
+| 18 | **[Fourth Sunday after Pentecost](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost.pdf)** | [Verified propers](../src/gpt/liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost/propers/verified.md) · [Research scope](../src/gpt/liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost/research/scope.md) |
+| 19 | **[Fifth Sunday after Pentecost](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost.pdf)** | [Verified propers](../src/gpt/liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost/propers/verified.md) · [Research scope](../src/gpt/liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost/research/scope.md) |
+| 20 | **[Sixth Sunday after Pentecost](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost.pdf)** | [Verified propers](../src/gpt/liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost/propers/verified.md) · [Research scope](../src/gpt/liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost/research/scope.md) |
+| 21 | **[Seventh Sunday after Pentecost](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost.pdf)** | [Verified propers](../src/gpt/liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost/propers/verified.md) · [Research scope](../src/gpt/liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost/research/scope.md) |
+| M01 | **[The Nuptial Mass](../doc/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass.pdf)** | [Verified propers](../src/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass/propers/verified.md) · [Research scope](../src/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass/research/scope.md) |

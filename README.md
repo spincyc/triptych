@@ -16,10 +16,12 @@ No technical background is needed: choose a document, open the PDF, and read.
 
 | Section | Focus |
 | --- | --- |
-| **[Liturgy](LIBRARY.md#liturgy-and-prayer)** | Daily prayer and the regularly updated expositions of the Mass propers. |
-| **[Faith](LIBRARY.md#faith)** | Doctrine, sacraments, and theological studies. |
-| **[Mariology](LIBRARY.md#mariology)** | Marian doctrine, prayer, history, and ecclesial judgment. |
-| **[Law](LIBRARY.md#law-and-church-discipline)** | Canon law and Church discipline. |
+| **[Traditional Latin Mass (1962 Roman Rite)](library/traditional-latin-mass.md)** | The Ordinary, Mass assembly, and regularly updated proper expositions. |
+| **[Novus Ordo (Postconciliar Roman Rite)](library/novus-ordo-liturgy.md)** | Future studies identified by edition, language, territory, and date. |
+| **[Prayer](library/prayer.md)** | Novenas and condensed daily prayer books. |
+| **[Faith](library/faith.md)** | Doctrine, sacraments, and theological studies. |
+| **[Mariology](library/mariology.md)** | Marian doctrine, prayer, history, and ecclesial judgment. |
+| **[Law](library/law-and-church-discipline.md)** | Canon law and Church discipline. |
 
 ## Reuse
 
