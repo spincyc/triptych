@@ -16,7 +16,7 @@ No technical background is needed: choose a document, open the PDF, and read.
 
 | Section | Focus |
 | --- | --- |
-| **[Liturgy](LIBRARY.md#prayer-and-liturgy)** | Daily prayer and the regularly updated expositions of the Mass propers. |
+| **[Liturgy](LIBRARY.md#liturgy-and-prayer)** | Daily prayer and the regularly updated expositions of the Mass propers. |
 | **[Faith](LIBRARY.md#faith)** | Doctrine, sacraments, and theological studies. |
 | **[Mariology](LIBRARY.md#mariology)** | Marian doctrine, prayer, history, and ecclesial judgment. |
 | **[Law](LIBRARY.md#law-and-church-discipline)** | Canon law and Church discipline. |
