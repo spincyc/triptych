@@ -1,20 +1,20 @@
-# Command Conventions
+# Skill Conventions
 
-Every user-facing slash command in this plugin applies the following contract. Files whose names begin with `_` are internal conventions, not commands.
+Every user-facing skill in this plugin applies the following contract. This file is the single internal owner of the shared invocation, evidence, authorization, publication, and handoff rules.
 
 ## Invocation input
 
-- Treat everything the user supplies with the slash command as controlling task context. It may be labeled fields, ordinary prose, source links, pasted notes, or a mixture.
+- Treat the user's complete request and thread context as controlling task context. It may contain labeled fields, ordinary prose, source links, pasted notes, or a mixture.
 - Preserve added emphases, guides, limits, exclusions, style preferences, source suggestions, staging requests, and commit instructions. Do not discard material merely because it does not match a suggested field.
-- The command's `What to provide` section describes the information that makes the workflow reproducible; it is not a rigid parser. Inspect the repository and infer only what can be established safely. Ask a question only when a missing choice would materially change the result.
-- The user's current request and thread context take priority over command defaults. Never treat a command as permission to rewrite Git history, publish externally, contact another person, or restructure unrelated parts of the repository.
+- The skill's `What to provide` section describes the information that makes the workflow reproducible; it is not a rigid parser. Inspect the repository and infer only what can be established safely. Ask a question only when a missing choice would materially change the result.
+- The user's current request and thread context take priority over skill defaults. Never treat skill invocation as permission to rewrite Git history, publish externally, contact another person, or restructure unrelated parts of the repository.
 
 ## Preflight
 
 1. Confirm the working directory is the Triptych repository and inspect `git status --short`. Preserve unrelated changes.
 2. Read `AGENTS.md`, `README.md`, `guidance/editorial.md`, `guidance/repository.md`, every applicable genre profile, and the target document's source and research records before editing.
 3. Identify provider, collection, genre, rite, edition, language or locale, jurisdiction, calendar, and as-of date wherever they matter.
-4. Determine whether the invocation creates a document, revises content, changes structure, installs PDFs, commits a stage, or only reports findings. A creation or publication command authorizes its normal repository artifacts; a commit or history rewrite still requires explicit authorization in the invocation or current thread.
+4. Determine whether the request creates a document, revises content, changes structure, installs PDFs, commits a stage, or only reports findings. A creation or publication skill authorizes its normal repository artifacts; a commit or history rewrite still requires explicit authorization in the request or current thread.
 5. For mutable doctrine-adjacent discipline, law, judgments, editions, translations, demographics, software behavior, or current institutions, verify the present state from primary or official sources.
 
 ## Plan
@@ -24,7 +24,7 @@ Every user-facing slash command in this plugin applies the following contract. F
 - Treat source records, canonical fragments, publication artifacts, catalog entries, and guidance updates as part of the same coherent stage when the governing profile requires them.
 - Continue through safe in-scope research and implementation. Pause only for a genuinely blocking choice, unavailable controlling source, or authority the user has not granted.
 
-## Commands
+## Actions
 
 - Research from primary, official, edition-identified sources wherever available. Treat OCR, search snippets, aggregations, and secondary citations as leads until checked.
 - Keep received text, verified quotation or paraphrase, source-grounded synthesis, original editorial or AI proposal, and unresolved leads distinct.
@@ -46,4 +46,4 @@ Return the outcome first: created or revised documents, source records, installe
 
 ## Next Steps
 
-Name only the next action that remains genuinely useful, such as independent theological review, a missing primary-source collation, plugin refresh, or a separately scoped follow-on document.
+Name only the next action that remains genuinely useful, such as independent theological review, a missing primary-source collation, plugin reinstall and new-task pickup, or a separately scoped follow-on document.

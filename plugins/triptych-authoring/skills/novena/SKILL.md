@@ -1,19 +1,15 @@
 ---
-description: Create a full bilingual novena and its canonical condensed daily prayer companion.
-argument-hint: "<devotion, mystery, saint, feast, or event> [calendar, prayers, traditions, free-form guidance and limits]"
+name: novena
+description: Create a full bilingual, source-audited novena and its canonical condensed daily prayer companion. Use for a devotion, divine mystery, saint, title, feast, or saving event in Triptych's numbered novena collection.
 ---
 
-# /novena
+# Novenas
 
 Create a new source-audited novena in the numbered collection together with its recitation-only daily prayer book.
 
 ## What to provide
 
-The user's complete invocation context is:
-
-$ARGUMENTS
-
-Treat all of it as controlling input, whether it follows the suggestions below or is entirely free-form.
+Treat the user's complete request and thread context as controlling input, whether it follows the suggestions below or is entirely free-form.
 
 - The devotion, divine mystery, saint, title, feast, or saving event that orders the novena.
 - Its principal annual placement or desired date rule, including territory or calendar when relevant.
@@ -23,7 +19,7 @@ Treat all of it as controlling input, whether it follows the suggestions below o
 
 ## Preflight
 
-1. Apply `commands/_conventions.md` and read `guidance/devotions/novenas.md` completely.
+1. Read `../../references/conventions.md` completely, apply it, and read `guidance/devotions/novenas.md` completely.
 2. Inspect the existing novena order, choose the next stable internal `N10`-spaced key without exposing it in reader-facing text, and confirm that the proposed work is not already present.
 3. Identify every calendar, jurisdiction, private-revelation, approval, indulgence, translation, or copyright fact requiring current official verification.
 4. Inspect an existing full-guide/companion pair and the Makefile's cross-document dependency pattern.
@@ -32,7 +28,7 @@ Treat all of it as controlling input, whether it follows the suggestions below o
 
 Define the full guide, canonical prayer fragments, condensed companion, scope and source records, calendar rule, nine-day architecture, approval boundaries, build dependencies, adjacent catalog rows, and discrete commit stages requested by the user.
 
-## Commands
+## Actions
 
 1. Create the full leaf at `src/gpt/devotions/novenas/<numbered-document>/` and its sibling `<numbered-document>-daily-prayer/`.
 2. Establish historical provenance, the ninefold rationale, liturgical relationship, calendar rule with a dated example, doctrinal object, and exact status of every received tradition.

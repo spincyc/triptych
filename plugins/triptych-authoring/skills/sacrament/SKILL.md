@@ -1,19 +1,15 @@
 ---
-description: Revise the canonical sacramental treatise and rebuild every mechanically derived consumer.
-argument-hint: "<sacrament, shared topic, or target> [correction, sources, current law, affected consumers, free-form guidance and limits]"
+name: sacrament
+description: Revise the canonical sacramental treatise and rebuild every mechanically derived consumer. Use for a sacrament, metaphysical term, shared matrix field, current discipline, summary, or imported ritual-guide material.
 ---
 
-# /sacrament
+# Sacramental Reference
 
 Revise sacramental theology at its canonical source, keep the seven-sacrament reference system internally consistent, and propagate the change to every derived companion and ritual guide.
 
 ## What to provide
 
-The user's complete invocation context is:
-
-$ARGUMENTS
-
-Treat all of it as controlling input, whether it follows the suggestions below or is entirely free-form.
+Treat the user's complete request and thread context as controlling input, whether it follows the suggestions below or is entirely free-form.
 
 - The sacrament, metaphysical term, shared matrix field, Church *sui iuris* practice, summary, or existing passage to change.
 - The requested correction, expansion, comparison, or question and the evidence or authorities that prompted it.
@@ -22,7 +18,7 @@ Treat all of it as controlling input, whether it follows the suggestions below o
 
 ## Preflight
 
-1. Apply `commands/_conventions.md` and read `guidance/theology/sacramental-reference.md` completely.
+1. Read `../../references/conventions.md` completely, apply it, and read `guidance/theology/sacramental-reference.md` completely.
 2. Inspect the canonical treatise’s sections, fragments, summaries, research scope, source audit, generation metadata, and dependency graph before editing a consumer.
 3. Locate every import of the affected fragment or summary and identify all full and derived PDFs that must be rebuilt.
 4. Verify mutable canon law, liturgical discipline, initiation practice, and Church *sui iuris* facts from competent current sources.
@@ -31,7 +27,7 @@ Treat all of it as controlling input, whether it follows the suggestions below o
 
 Define the canonical source change, authority classes, theological and legal distinctions, every matrix and summary consequence, consumer rebuild set, source-record and metadata changes, publication artifacts, and authorized commit stage.
 
-## Commands
+## Actions
 
 1. Make substantive theological changes only in `src/gpt/theology/sacraments/`, which owns the shared fragments, sections, summaries, matrix, lexicon, and initiation-practice table.
 2. Preserve the treatise’s distinctions among matter or quasi-matter, form, subject, minister, validity, liceity, effect, character, proper grace, change effected, and primary, secondary, contingent, and ultimate ends where applicable.

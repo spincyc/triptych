@@ -1,19 +1,15 @@
 ---
-description: Create a source-audited 1962 Roman Rite temporal, ritual, votive, or other proper guide.
-argument-hint: "<exact formulary and catalog identity> [rank, use, Missal loci, variants, free-form guidance and limits]"
+name: proper-1962
+description: Create a source-audited 1962 Roman Rite temporal, ritual, votive, or other proper guide. Use for a defined formulary requiring checked Missal text, structural exposition, source records, compact material, and publication artifacts.
 ---
 
-# /proper-1962
+# 1962 Propers
 
 Create a complete guide to a defined formulary in the 1962 Roman Missal, with a checked liturgical text, structural exposition, compact companion material, and any required sacramental appendix.
 
 ## What to provide
 
-The user's complete invocation context is:
-
-$ARGUMENTS
-
-Treat all of it as controlling input, whether it follows the suggestions below or is entirely free-form.
+Treat the user's complete request and thread context as controlling input, whether it follows the suggestions below or is entirely free-form.
 
 - The exact formulary, feast, temporal day, ritual Mass, votive Mass, or other proper and its intended catalog placement.
 - Its rank, occurrence or use context, internal ordering key if known, and the Missal pages, headings, cross-references, or facsimile links already identified.
@@ -22,7 +18,7 @@ Treat all of it as controlling input, whether it follows the suggestions below o
 
 ## Preflight
 
-1. Apply `commands/_conventions.md` and read `guidance/liturgy/roman-1962-propers.md` completely.
+1. Read `../../references/conventions.md` completely, apply it, and read `guidance/liturgy/roman-1962-propers.md` completely.
 2. Identify the exact 1962 edition, formulary locus, heading, inherited common or cross-reference, calendar context, and every affected catalog status field.
 3. Use a public facsimile or equivalent edition witness as the transcription baseline; use OCR only as a finding aid and record every verified locus.
 4. Inspect the nearest completed proper, shared sacramental-summary consumers if applicable, and the Makefile target and publication mirror.
@@ -31,7 +27,7 @@ Treat all of it as controlling input, whether it follows the suggestions below o
 
 Define the proper’s source boundary, ordered liturgical units, guide architecture, compact and speculative layers, sacramental consumer relationship, research records, catalog identity, publication artifacts, and discrete commit stage.
 
-## Commands
+## Actions
 
 1. Create or revise the proper under the appropriate `src/gpt/liturgy/roman-1962/propers/` collection leaf without exposing internal ordering keys in reader-facing titles or prose.
 2. Preserve every appointed element, rubric, cross-reference, seasonal replacement, commemoration rule, and variant that belongs to the bounded formulary. Create or update `research/retrieved.txt`, `research/verified.md`, `research/scope.md`, and the source audit required by the profile.

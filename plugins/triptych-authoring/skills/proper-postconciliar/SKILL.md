@@ -1,19 +1,15 @@
 ---
-description: Create a source-audited postconciliar Roman Rite proper guide for identified editions and territory.
-argument-hint: "<celebration and form> [Latin edition, vernacular territory, Lectionary, cycle, options, free-form guidance and limits]"
+name: proper-postconciliar
+description: Create a source-audited postconciliar Roman Rite proper guide for identified editions and territory. Use when Latin and vernacular books, Lectionary, calendar, cycles, options, discipline, and copyright boundaries must remain explicit.
 ---
 
-# /proper-postconciliar
+# Postconciliar Propers
 
 Create a postconciliar Roman Rite proper guide whose texts, options, readings, calendar, and disciplinary claims belong to explicitly identified books and territory.
 
 ## What to provide
 
-The user's complete invocation context is:
-
-$ARGUMENTS
-
-Treat all of it as controlling input, whether it follows the suggestions below or is entirely free-form.
+Treat the user's complete request and thread context as controlling input, whether it follows the suggestions below or is entirely free-form.
 
 - The celebration, ritual context, or proper and whether the work concerns Mass, another liturgical book, or a defined comparison.
 - The Latin typical edition, vernacular edition and publisher, episcopal territory, Lectionary edition, calendar, celebration rank, and date or date rule.
@@ -22,7 +18,7 @@ Treat all of it as controlling input, whether it follows the suggestions below o
 
 ## Preflight
 
-1. Apply `commands/_conventions.md` and read `guidance/liturgy/postconciliar-propers.md` completely.
+1. Read `../../references/conventions.md` completely, apply it, and read `guidance/liturgy/postconciliar-propers.md` completely.
 2. Establish an edition manifest before transcription: each book, edition, territory, language, publisher, decree or approval, effective date, calendar, and Lectionary cycle.
 3. Identify which texts may be reproduced, which require concise quotation or reference, and which official online sources can establish mutable discipline or options.
 4. Inspect comparable postconciliar leaves, source records, build targets, and catalog placement.
@@ -31,7 +27,7 @@ Treat all of it as controlling input, whether it follows the suggestions below o
 
 Define the exact edition-and-territory object, celebration and options, source and copyright boundaries, textual and analytical architecture, comparison policy if any, research records, publication artifacts, and authorized commit stage.
 
-## Commands
+## Actions
 
 1. Create or revise the correct postconciliar source leaf without constructing a synthetic generic “Novus Ordo” from incompatible books, territories, dates, cycles, or options.
 2. Record the edition manifest, scope, source audit, transcription or excerpt status, and each selected option. Distinguish Latin typical text, approved vernacular rendering, Lectionary text, chant text, rubric, and editorial synthesis.

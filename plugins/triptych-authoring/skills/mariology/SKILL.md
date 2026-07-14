@@ -1,19 +1,15 @@
 ---
-description: Create or revise a Rosary, Marian-dogma, devotional, or general Mariological reference work.
-argument-hint: "<subject, question, or target> [corpus, authorities, desired depth, free-form guidance and limits]"
+name: mariology
+description: Create or revise a Rosary, Marian-dogma, devotional, or general Mariological reference work. Use for repeatable Mariological studies other than apparition-specific dossiers or judgment corpora.
 ---
 
-# /mariology
+# Mariology
 
 Create or revise a repeatable Mariological reference work other than an apparition-specific dossier or corpus.
 
 ## What to provide
 
-The user's complete invocation context is:
-
-$ARGUMENTS
-
-Treat all of it as controlling input, whether it follows the suggestions below or is entirely free-form.
+Treat the user's complete request and thread context as controlling input, whether it follows the suggestions below or is entirely free-form.
 
 - The subject, governing question, proposed title, or existing target path.
 - Whether the work concerns the Rosary, Marian dogma, a title or devotion, biblical and patristic theology, historical reception, or another defined corpus.
@@ -23,8 +19,8 @@ Treat all of it as controlling input, whether it follows the suggestions below o
 
 ## Preflight
 
-1. Apply `commands/_conventions.md` and read `guidance/theology/mariology.md` completely.
-2. If the controlling object is an alleged apparition, message corpus, or ecclesial judgment, route the work through `/apparition` instead.
+1. Read `../../references/conventions.md` completely, apply it, and read `guidance/theology/mariology.md` completely.
+2. If the controlling object is an alleged apparition, message corpus, or ecclesial judgment, route the work through `$triptych-authoring:apparition` instead.
 3. Inspect comparable Mariological source leaves, scope and audit records, shared fragments, and current DDF teaching relevant to the proposed terminology.
 4. Establish which claims concern public Revelation, dogma, authoritative teaching, liturgical reception, devotional tradition, history, typology, opinion, or project synthesis.
 
@@ -32,7 +28,7 @@ Treat all of it as controlling input, whether it follows the suggestions below o
 
 Define the corpus and exclusions, Christological center, doctrinal hierarchy, historical method, required records, shared-source ownership, synopsis or appendix requirements, currentness boundary, publication architecture, and authorized stage boundaries.
 
-## Commands
+## Actions
 
 1. Create or update the correct leaf beneath `src/gpt/theology/mariology/` with `research/scope.md`, `research/source-audit.md`, and structured generation metadata.
 2. Keep Christ's unique redemption and mediation, the completeness of public Revelation, and Mary's created, graced, maternal, subordinate cooperation explicit throughout.
