@@ -122,6 +122,16 @@ Build recipes must:
 
 Build manifests may enumerate publishable documents explicitly or discover them under controlled roots. Whichever method is used, adding a document must be deterministic, reviewable, and compatible with profile-specific shared dependencies.
 
+## Repository authoring commands
+
+Repository-specific Codex workflows live in the tracked plugin at `plugins/creed-rite-rule-authoring/`. Its local marketplace entry is `.agents/plugins/marketplace.json`; the marketplace is a repository integration surface, not a document source or publication tree. Keep the plugin manifest, marketplace entry, root README catalog, and plugin README coherent whenever commands are added, renamed, or removed.
+
+Each user-facing command is a Markdown file under `plugins/creed-rite-rule-authoring/commands/` with YAML frontmatter containing a concise `description` and `argument-hint`, followed by these stable sections: `What to provide`, `Preflight`, `Plan`, `Commands`, `Verification`, `Summary`, and `Next Steps`. Its `What to provide` section must interpolate `$ARGUMENTS` so no invocation text is lost. A filename beginning with `_` is internal support material and must not be presented as a user command. `commands/_conventions.md` is the single owner of the shared invocation, evidence, authorization, build, commit, and handoff contract; genre commands add the controlling profile's requirements instead of copying or weakening universal guidance.
+
+`What to provide` is a reproducibility aid, not a parser or mandatory form. A command must treat the user's entire invocation—structured fields, ordinary prose, links, pasted notes, context, guides, emphases, exclusions, limits, staging, and commit instructions—as controlling task context. It may infer facts safely from the repository and cited authorities, but asks when a missing choice would materially change the result. A creation command authorizes its normal in-repository source and required publication artifacts; it does not by itself authorize a Git commit, history rewrite, external publication, communication with another person, or unrelated restructuring.
+
+Route commands to documents by actual genre. They must begin with `AGENTS.md`, the universal editorial and repository guidance, every applicable profile, and the target's source and research records. A command may automate the work sequence, but it cannot lower evidence, metadata, shared-source, build, visual-review, installation, catalog, or commit-message gates. Keep command help and examples generic enough that edition-, calendar-, jurisdiction-, page-, or series-specific rules remain owned by the appropriate profile.
+
 ## Adding or migrating a document
 
 For a new document:

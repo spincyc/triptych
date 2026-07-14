@@ -92,6 +92,28 @@ The status codes above belong to the 1962-propers profile; they are not global m
 | The Seven Sacraments | [PDF](doc/gpt/theology/sacraments.pdf) | [TeX](src/gpt/theology/sacraments/main.tex) | [Scope](src/gpt/theology/sacraments/research/scope.md) | — | A patristic and Thomistic reference work with title-page provenance, a metaphysical lexicon, continuous treatments, references, comparative appendices, and seven one-page summaries. |
 | The Seven Sacraments at a Glance | [PDF](doc/gpt/theology/sacraments-at-a-glance.pdf) | [TeX](src/gpt/theology/sacraments-at-a-glance/main.tex) | — | [The Seven Sacraments](src/gpt/theology/sacraments/main.tex) | A compact companion composed mechanically from the canonical fragments of the full treatise, whose generation provenance it explicitly inherits without duplicating a visible metadata block. |
 
+## Authoring Commands
+
+The repository includes a local [Creed, Rite, Rule authoring plugin](plugins/creed-rite-rule-authoring/README.md) that turns the collection profiles into focused slash-command workflows. The fields below are prompts for useful input, not a rigid syntax: everything supplied after a command—including ordinary prose, links, pasted notes, added context, guides, exclusions, limits, staging, and commit instructions—remains controlling task context.
+
+| Command | Workflow | What the user should provide |
+| --- | --- | --- |
+| [`/authoring-help`](plugins/creed-rite-rule-authoring/commands/authoring-help.md) | Select the narrowest workflow without changing files | A goal, document idea, or target path |
+| [`/article`](plugins/creed-rite-rule-authoring/commands/article.md) | Create or substantially revise a faith, theology, canon-law, or mixed article | Question or target; thesis or change to test; audience; authorities, jurisdiction, and as-of date |
+| [`/novena`](plugins/creed-rite-rule-authoring/commands/novena.md) | Create a full bilingual novena and its condensed daily prayer book | Devotion, mystery, saint, feast, or event; calendar placement; received prayers or traditions; desired emphases |
+| [`/mariology`](plugins/creed-rite-rule-authoring/commands/mariology.md) | Create or revise a Rosary, Marian-dogma, devotional, or other Mariological reference | Subject and question; corpus; desired depth; authorities and doctrinal boundaries |
+| [`/apparition`](plugins/creed-rite-rule-authoring/commands/apparition.md) | Create or revise an authority-qualified apparition monograph or corpus | Event or corpus; place and dates; recipients, messages, decrees, sources, and as-of date |
+| [`/proper-1962`](plugins/creed-rite-rule-authoring/commands/proper-1962.md) | Create a 1962 temporal, ritual, votive, or other proper guide | Exact formulary and catalog identity; occurrence context; Missal loci; sacramental or seasonal variables |
+| [`/proper-postconciliar`](plugins/creed-rite-rule-authoring/commands/proper-postconciliar.md) | Create a postconciliar proper guide | Latin and vernacular editions; territory; Lectionary; calendar; cycle; celebration; selected options |
+| [`/ordinary`](plugins/creed-rite-rule-authoring/commands/ordinary.md) | Create or revise an exposition of an Ordinary, Order of Mass, or bounded unit | Exact edition or comparison; language and territory; textual boundary; analytical purpose |
+| [`/assembly-1962`](plugins/creed-rite-rule-authoring/commands/assembly-1962.md) | Create or revise a 1962 Mass-assembly reference | Rubrical problem; calendar assumptions; Mass categories; worked cases and limits |
+| [`/sacrament`](plugins/creed-rite-rule-authoring/commands/sacrament.md) | Revise the canonical sacramental treatise and every derived consumer | Sacrament or shared topic; correction or expansion; governing sources; affected summaries or tables |
+| [`/revise`](plugins/creed-rite-rule-authoring/commands/revise.md) | Revise an existing collection document under its actual profile | Target; requested changes; sources, emphasis, exclusions, currentness, and staging |
+| [`/audit`](plugins/creed-rite-rule-authoring/commands/audit.md) | Report on, or explicitly remediate, an existing document | Target; audit dimensions; `report` or `fix`; as-of date and special standard |
+| [`/publish`](plugins/creed-rite-rule-authoring/commands/publish.md) | Build, inspect, install, catalog, and optionally commit completed work | Targets; desired stage boundary; install and commit authorization; release constraints |
+
+To enable the commands in Codex, follow the plugin's [repository installation instructions](plugins/creed-rite-rule-authoring/README.md#repository-installation). The shared input, evidence, authorization, verification, and handoff contract is recorded in [`commands/_conventions.md`](plugins/creed-rite-rule-authoring/commands/_conventions.md).
+
 ## Guidance
 
 Read the shared rules first, then only the profile that governs the document being changed:
