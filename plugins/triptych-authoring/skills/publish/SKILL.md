@@ -1,19 +1,15 @@
 ---
-description: Build, inspect, install, catalog, and optionally commit completed collection documents.
-argument-hint: "<target documents> [stage boundary, install authorization, commit authorization, release constraints, free-form guidance]"
+name: publish
+description: Build, inspect, install, catalog, and optionally commit completed Triptych documents. Use when substantive source work is complete and one or more affected publications must pass their repository and profile gates.
 ---
 
-# /publish
+# Publish
 
 Take completed source work through the repository’s publication gates without treating publication as permission for unrelated substantive expansion or external release.
 
 ## What to provide
 
-The user's complete invocation context is:
-
-$ARGUMENTS
-
-Treat all of it as controlling input, whether it follows the suggestions below or is entirely free-form.
+Treat the user's complete request and thread context as controlling input, whether it follows the suggestions below or is entirely free-form.
 
 - The source leaf, document title, collection, build target, or set of mutually dependent documents to publish.
 - The desired stopping point: validate only, build, visually review, install, catalog, commit, or the complete in-repository sequence.
@@ -22,16 +18,16 @@ Treat all of it as controlling input, whether it follows the suggestions below o
 
 ## Preflight
 
-1. Apply `commands/_conventions.md`, read every controlling profile, and inspect the target source, research records, generation metadata, dependencies, current build and installed artifacts, README row, and worktree.
+1. Read `../../references/conventions.md` completely, apply it, read every controlling profile, and inspect the target source, research records, generation metadata, dependencies, current build and installed artifacts, README row, and worktree.
 2. Determine every consumer affected by shared source changes and expand the build set only to those necessary consumers.
 3. Check that substantive content and profile-required research records are complete. Fix only defects that block the authorized publication stage; report broader editorial opportunities separately.
-4. Treat in-repository installation and Git commits as separate permissions. This command never authorizes external hosting, release creation, pushing, or history rewriting.
+4. Treat in-repository installation and Git commits as separate permissions. This skill never authorizes external hosting, release creation, pushing, or history rewriting.
 
 ## Plan
 
 State the exact targets and consumers, validation gates, build pass count, log checks, visual-inspection method, installation and byte-identity checks, catalog changes, and authorized commit grouping.
 
-## Commands
+## Actions
 
 1. Validate structured generation metadata, source-record completeness, links, imports, canonical shared ownership, and profile-specific completion prerequisites.
 2. Build every target for enough passes to settle contents, references, indexes, and cross-document dependencies. Keep intermediates under `build/`.

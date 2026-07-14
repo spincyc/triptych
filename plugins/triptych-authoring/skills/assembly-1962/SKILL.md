@@ -1,19 +1,15 @@
 ---
-description: Create or revise a 1962 Roman Rite Mass-assembly and precedence reference.
-argument-hint: "<rubrical problem or target> [edition, calendar, Mass categories, cases, jurisdiction, free-form guidance and limits]"
+name: assembly-1962
+description: Create or revise a 1962 Roman Rite Mass-assembly and precedence reference. Use for calendar, precedence, Mass-class, commemoration, votive or ritual permission, and formulary-assembly problems under the 1962 books.
 ---
 
-# /assembly-1962
+# 1962 Mass Assembly
 
 Create or revise a reproducible guide for assembling a concrete 1962 Mass from the Ordinary, temporal and sanctoral propers, commons, votive or ritual material, and applicable commemorations.
 
 ## What to provide
 
-The user's complete invocation context is:
-
-$ARGUMENTS
-
-Treat all of it as controlling input, whether it follows the suggestions below or is entirely free-form.
+Treat the user's complete request and thread context as controlling input, whether it follows the suggestions below or is entirely free-form.
 
 - The rubrical problem, existing reference target, or assembly decision the document must explain.
 - The controlling 1962 books and calendar, place, institution or local assumptions, and any jurisdictional or as-of boundary.
@@ -22,7 +18,7 @@ Treat all of it as controlling input, whether it follows the suggestions below o
 
 ## Preflight
 
-1. Apply `commands/_conventions.md` and read `guidance/liturgy/roman-1962-assembly.md` completely.
+1. Read `../../references/conventions.md` completely, apply it, and read `guidance/liturgy/roman-1962-assembly.md` completely.
 2. Establish the edition manifest, calendar scope, rubric index, abbreviation system, and facts needed for every proposed worked case.
 3. Inspect the reference’s scope, source audit, case inventory, current structure, build target, and any links to the Ordinary or proper guides.
 4. Separate a day’s liturgical identity from the Mass actually chosen and identify all local facts the universal rubrics cannot supply.
@@ -31,7 +27,7 @@ Treat all of it as controlling input, whether it follows the suggestions below o
 
 Define the decision model, source loci, five distinct assembly decisions, slot map, occurrence and concurrence treatment, votive and ritual boundaries, worked cases, research records, publication artifacts, and authorized commit stage.
 
-## Commands
+## Actions
 
 1. Keep separate: what day occurs, what office or feast has precedence, what Mass may or must be celebrated, what is commemorated, and which texts fill each Mass slot.
 2. Explain rank or class, occurrence, concurrence, impediment, transfer, commemoration, privileged day, votive permission, ritual permission, and local calendar applicability from exact rubrical loci.

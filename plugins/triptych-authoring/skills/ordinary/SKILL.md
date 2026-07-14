@@ -1,19 +1,15 @@
 ---
-description: Create or revise a source-audited exposition of an Ordinary, Order of Mass, or defined unit.
-argument-hint: "<edition, form, comparison, or target> [languages, territory, textual boundary, purpose, free-form guidance and limits]"
+name: ordinary
+description: Create or revise a source-audited exposition of an Ordinary, Order of Mass, or defined unit. Use for stable Mass texts, ritual sequence, bounded units, adjacent prayers, or explicit cross-edition comparison.
 ---
 
-# /ordinary
+# Ordinary Expositions
 
 Create or revise a whole-order exposition of the Ordinary or Order of Mass, or a bounded exposition of one of its units, from an explicit edition manifest and sequence inventory.
 
 ## What to provide
 
-The user's complete invocation context is:
-
-$ARGUMENTS
-
-Treat all of it as controlling input, whether it follows the suggestions below or is entirely free-form.
+Treat the user's complete request and thread context as controlling input, whether it follows the suggestions below or is entirely free-form.
 
 - The rite, form, exact liturgical books and editions, language or languages, territory, and comparison object if any.
 - Whether the target is the complete Order, the stable Ordinary, a defined unit, adjacent prayers, or an existing document path.
@@ -22,7 +18,7 @@ Treat all of it as controlling input, whether it follows the suggestions below o
 
 ## Preflight
 
-1. Apply `commands/_conventions.md` and read `guidance/liturgy/ordinary-expositions.md` completely.
+1. Read `../../references/conventions.md` completely, apply it, and read `guidance/liturgy/ordinary-expositions.md` completely.
 2. Establish the edition manifest, sequence inventory, stable-versus-variable boundary, included adjacent prayers, language and territory, and comparison rules before drafting.
 3. Inspect the target’s research scope and source audit, existing unit architecture, catalog placement, and any shared text consumers.
 4. Treat editorial unit numbers as navigational aids, not received liturgical divisions; never expose an internal catalog ordering key such as `O00` in the title or prose.
@@ -31,7 +27,7 @@ Treat all of it as controlling input, whether it follows the suggestions below o
 
 Define the liturgical object, complete ordered sequence, text and translation policy, three analytical layers, unit template, whole-order thesis, source records, publication artifacts, and authorized commit stage.
 
-## Commands
+## Actions
 
 1. Create or revise the correct Ordinary-exposition leaf and its `research/edition-manifest.md`, `research/sequence-inventory.md`, `research/scope.md`, and `research/source-audit.md` records.
 2. Give the bounded received text or precise locus for every unit, with translation status and edition identity. Do not silently fold propers, ceremonial accretions, adjacent devotions, or another edition into the Ordinary.
