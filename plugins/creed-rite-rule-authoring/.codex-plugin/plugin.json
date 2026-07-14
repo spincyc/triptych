@@ -1,0 +1,25 @@
+{
+  "name": "creed-rite-rule-authoring",
+  "version": "0.1.0+codex.20260714123554",
+  "description": "Source-first authoring, revision, audit, and publication workflows for Creed, Rite, Rule.",
+  "author": {
+    "name": "Creed, Rite, Rule contributors"
+  },
+  "interface": {
+    "displayName": "Creed, Rite, Rule Authoring",
+    "shortDescription": "Create and maintain source-audited Catholic study documents",
+    "longDescription": "Repository-specific slash commands for creating, revising, auditing, building, installing, cataloging, and committing Creed, Rite, Rule publications under their controlling editorial and genre profiles.",
+    "developerName": "Creed, Rite, Rule contributors",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Create a source-audited novena and daily prayer book.",
+      "Draft a Catholic study article from primary sources.",
+      "Audit and publish an existing study document."
+    ]
+  }
+}
