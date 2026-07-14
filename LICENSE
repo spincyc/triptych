@@ -1,0 +1,57 @@
+# Licensing
+
+Triptych uses separate licenses for project-created content and the software
+and typesetting infrastructure listed below. These grants cover only
+copyright and similar rights that contributors hold and can license.
+
+## Project-Created Content: CC BY 4.0
+
+Except where a file or the [third-party material notice](THIRD_PARTY.md) says
+otherwise, project-created prose, annotations, research records, editorial
+organization, document design, and translations or prayers identified as
+project-created in the adjacent text or source record are licensed under the
+[Creative Commons Attribution 4.0 International License](LICENSES/CC-BY-4.0.txt).
+This includes project-created content in the public Markdown files, in the
+document sources beneath `src/gpt/`, and in the published PDFs beneath
+`doc/gpt/`.
+
+A reasonable attribution, unless a work supplies a more specific credit, is:
+
+> Adapted from *Triptych: AI Driven Studies in Catholic Faith, Worship, and Law* by
+> Triptych contributors, licensed under CC BY 4.0.
+
+Preserve any more specific creator credit supplied with a work. When
+reasonably practicable, link to the original work and the license and identify
+any changes. Attribution does not imply that Triptych, its contributors, or
+any ecclesiastical authority approves or endorses an adaptation.
+
+## Listed Software and Typesetting Infrastructure: MIT
+
+The following files are licensed under the [MIT License](LICENSES/MIT.txt):
+
+- `Makefile`;
+- `scripts/`;
+- `.gitignore` and `.gitattributes`;
+- `src/gpt/common/preamble.tex`;
+- `src/gpt/devotions/novenas/shared/novena-format.tex`;
+- `src/gpt/devotions/novenas/shared/recitation-companion-format.tex`; and
+- `src/gpt/theology/sacraments/summary-preamble.tex`.
+
+Document-local TeX commands and files that mix typesetting with authored
+content remain under the project-content terms unless they say otherwise.
+
+## Excluded and Public-Domain Material
+
+The licenses above do not relicense third-party material, even when it appears
+inside a CC-licensed source file or PDF. Public-domain material remains public
+domain; Triptych claims no exclusive right in its underlying wording. See
+[Third-Party Material](THIRD_PARTY.md) for the operative exclusions and known
+categories.
+
+## Project Identity
+
+No trademark or project-identity rights are granted. The Triptych name and
+subtitle may be used as reasonably necessary for attribution or to describe a
+work's origin, but not in a way that implies an adaptation is an official
+Triptych publication or has been sponsored, approved, or endorsed by Triptych,
+its contributors, or an ecclesiastical authority.
