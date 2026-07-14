@@ -82,7 +82,19 @@ Non-publishable shared directories such as `common/`, fragment libraries, and re
 
 Use lowercase kebab-case for directory and document slugs. Keep rite and edition names explicit in their ancestor paths rather than repeating them inconsistently in every basename. Within a collection, catalog identifiers must be stable, namespaced, and defined by its profile; a temporal-cycle number from one edition must not become a global project identifier.
 
-The project is **Triptych: Catholic Studies in Faith, Worship, and Law**. Its repository slug is `triptych`. The local checkout name and a hosting service's repository name are external to tracked content; renaming them does not require or result from moving source files.
+The project is **Triptych: AI Driven Studies in Catholic Faith, Worship, and Law**. Its repository slug is `triptych`. The local checkout name and a hosting service's repository name are external to tracked content; renaming them does not require or result from moving source files.
+
+## Licensing and project identity
+
+`LICENSE` is the authoritative map from repository material to its outbound terms. Project-created content uses CC BY 4.0; software and the specifically listed reusable typesetting infrastructure use MIT. Apply those grants only to copyright and similar rights held by contributors and available for them to license. A mixed source file remains project content unless `LICENSE` identifies its separable infrastructure as MIT-licensed.
+
+`THIRD_PARTY.md` records the repository-wide exclusions. Keep a more specific rights statement beside the source when a work contains Scripture, liturgical or official text, a received prayer or hymn, a third-party translation or quotation, OCR, a font, or other external material whose status could be mistaken. Record its known author, source, attribution, license, permission, public-domain basis, or applicable legal exception. Do not infer ownership or permission from age, official status, citation, retrieval, or public availability.
+
+A source or PDF containing excluded material is a composite work. Describe the CC BY grant as applying to project-created exposition, translations, annotations, selection, arrangement, and design, as applicable; never describe every passage or embedded component as project-owned. Public-domain wording remains public domain and is not made exclusively licensed by its inclusion here.
+
+Every rendered publication carries the standard compact rights notice supplied by `src/gpt/common/preamble.tex`. A profile or document may add a more specific local notice when its incorporated material requires one, but it must not remove or weaken the common license boundary.
+
+The licenses grant no trademark or project-identity rights. A derivative may identify Triptych accurately for attribution, but it must not use the name, subtitle, or visual identity to imply that it is an official or endorsed Triptych publication or that it has ecclesiastical approval.
 
 ## Document records
 
@@ -130,13 +142,21 @@ For a new document:
 2. Create its directory at the corresponding `src/` path with `main.tex` and required source records.
 3. Confirm that recursive discovery finds the document; register only exceptional cross-document shared dependencies.
 4. Build, validate, and install it to the exact mirrored `doc/` path.
-5. Update the collection catalog and links in the same coherent change.
-
-In the README's `Published Library`, every subsection that lists documents uses a Markdown table, including subsections with only one current publication. Give the plain document title, installed publication PDF, authoring source, and each distinct supporting or audit record separate named columns; do not bundle several links into the title or a catch-all records cell. A subsection may omit a record column that none of its rows uses. Mark an inapplicable cell with an em dash. Keep reader-facing collection-local identifiers in their own column where the governing profile exposes them; do not surface an internal-only ordering key merely to fill that column. Keep the concise scope, evidence state, and review status in a final prose column rather than mixing table rows with prose bullets.
+5. Update the relevant `LIBRARY.md` section and any deliberate cross-category links in the same coherent change.
 
 When migrating an existing document, use history-preserving moves and update its imports, build target, dependencies, internal cross-references, README or catalog links, attributes, and installed PDF path together. Validate all consumers of any moved shared fragment. Do not leave a second editable copy at the old location. If a compatibility alias is genuinely needed, make it generated or explicitly transitional and document its removal condition.
 
 Repository restructuring and content revision should remain distinguishable in review and history. Prefer a structure-only commit before substantive revisions when both are required, while ensuring each committed state has internally consistent paths and guidance.
+
+## Public navigation and catalog
+
+`README.md` is a deliberately terse landing page for clergy, religious, and lay readers. Its subtitle identifies the studies as AI driven, while its first heading remains the standalone `Don't Panic!`. The opening moves from AI and authority limits to skeptical reading, ordinary-language feedback, and reassurance that no technical background is needed. It then presents Liturgy, Faith, Mariology, and Law in one compact library table; keeps Liturgy first and notes the regularly updated Mass-proper expositions without directing readers where to begin; states the reuse boundary; and ends by explaining the name. Do not put publication catalogs, raw status matrices, repository history, build commands, or maintainer-oriented layout detail back onto the landing page.
+
+`LIBRARY.md` is the current public catalog. Organize it under `Prayer and Liturgy`, `Faith`, `Mariology`, and `Law and Church Discipline`, with the proper expositions first. Lead each primary entry with its plain title linked directly to the installed PDF. Follow with a short scope and status statement, then separately named links to the authoring source and every distinct reader-facing supporting or audit record required by the governing profile. A shared scope or status that truly applies to every item in a compact series may appear once before its list; do not repeat it on every entry. Focused raw retrieval extracts and structured generation records remain reachable through those sources and need not be linked from the catalog unless a profile expressly requires them. Prefer readable lists to wide tables. A cross-disciplinary work has one primary entry and may have brief cross-links elsewhere; those links do not create a second source owner. State plainly when a section has no dedicated publication rather than manufacturing a maturity claim.
+
+Keep generation provenance, source evaluation, independent review, and production status distinct in catalog language. Preserve mutable as-of dates and profile-local evidence codes where they materially qualify a publication, but explain them in ordinary language or link their definitions. Keep reader-facing collection identifiers where they aid navigation; do not expose an internal ordering key merely to fill a catalog field.
+
+`CONTRIBUTING.md` is the public contribution guide. It must keep a no-Git path for short, ordinary-language feedback, a clone-and-run path for contributors using an AI agent, and an experimental-branch path for testing materially different base guidance. It must make clear that feedback initiates verification rather than becoming authority, that alternative branches remain distinct from the reviewed library, and that an intentional submission is offered under the applicable outbound license without transferring ownership. Require contributors to identify third-party material and the authority under which it may be distributed.
 
 ## Version-control hygiene
 

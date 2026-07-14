@@ -2,7 +2,7 @@
 
 ## Purpose and scope
 
-*Triptych: Catholic Studies in Faith, Worship, and Law* is a source-first library of study documents. Its collections may include liturgical preparation guides, expositions of liturgical ordinaries, theological reference works, and discursive articles on faith or canon law. This standard governs every collection. A genre or edition profile may add stricter requirements, but it may not weaken the common requirements below.
+*Triptych: AI Driven Studies in Catholic Faith, Worship, and Law* is a source-first library of study documents. Its collections may include liturgical preparation guides, expositions of liturgical ordinaries, theological reference works, and discursive articles on faith or canon law. This standard governs every collection. A genre or edition profile may add stricter requirements, but it may not weaken the common requirements below.
 
 The documents are aids to study, prayerful understanding, and responsible research. They are not official liturgical books, critical editions, catechisms, magisterial acts, canonical opinions, or substitutes for competent pastoral or legal advice. State a more specific limitation when a document's subject or intended use makes one necessary.
 
@@ -43,6 +43,8 @@ Source selection is claim-driven rather than quota-driven. Search broadly enough
 For liturgical material, identify the rite, form or use, typical edition, calendar, language, translation, territory, and other variables needed to know which text is appointed. For canon law, identify the applicable code or body of law, jurisdiction, promulgating authority, effective or as-of date, amendments, and any material particular law. Do not describe mutable law or current liturgical discipline as timeless.
 
 Keep quotations no longer than the argument requires. Observe copyright and source-site terms; the ability to retrieve a text does not establish permission to republish it. Do not vendor complete third-party scans, corpora, or bulk OCR when a focused source record and stable citation are sufficient.
+
+Distinguish project-created expression from quoted, transcribed, received, public-domain, and otherwise third-party material. Record the known author, source, attribution, license, permission, public-domain basis, or applicable legal exception at the nearest useful source record. The repository license does not relicense Scripture, liturgical or official texts, received prayers or hymns, third-party translations, quotations, images, fonts, or other external material. Put a local notice where a reader could reasonably mistake excluded wording for project-owned content, and do not infer permission from age, official status, citation, or online availability alone.
 
 ## Research record
 
@@ -102,6 +104,7 @@ Before installing a publishable artifact:
 - compile for the number of passes required to resolve references and contents;
 - inspect the build log for fatal errors, undefined references, overflow, and layout warnings;
 - visually inspect every page for clipping, unreadable density, split headings, artificial whitespace, and sparse spill pages;
+- confirm that rights, attribution, public-domain, and license-exclusion notices are accurate in the source and rendered publication;
 - confirm that generation metadata and any edition, jurisdiction, or as-of statement describe the installed artifact;
 - install the reviewed PDF under the mirrored `doc/` path and keep all intermediates under `build/`.
 

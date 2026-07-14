@@ -2,14 +2,16 @@
 
 ## Project
 
-This repository contains **Triptych: Catholic Studies in Faith, Worship, and Law** (`triptych`), a source-first collection of liturgical, theological, and canonical study documents.
+This repository contains **Triptych: AI Driven Studies in Catholic Faith, Worship, and Law** (`triptych`), a source-first collection of liturgical, theological, and canonical study documents.
 
 Read these files before changing document content, structure, or build behavior:
 
-1. `README.md` for the public collection overview and current catalog.
-2. `guidance/editorial.md` for the universal evidence, attribution, metadata, review, and publication standard.
-3. `guidance/repository.md` for source ownership, target paths, mirrored publications, and build rules.
-4. The one or more profiles that govern the requested document.
+1. `README.md` for the public consumer overview and `LIBRARY.md` for the current catalog and source links.
+2. `CONTRIBUTING.md` for the public contribution paths and ordinary-language agent workflow.
+3. `LICENSE` and `THIRD_PARTY.md` for the applicable license boundary and excluded source material.
+4. `guidance/editorial.md` for the universal evidence, attribution, metadata, review, and publication standard.
+5. `guidance/repository.md` for source ownership, target paths, mirrored publications, and build rules.
+6. The one or more profiles that govern the requested document.
 
 The user's request takes priority when it deliberately changes a project convention. Record the new convention in the correct universal or profile guidance rather than leaving the implementation and guidance inconsistent.
 
@@ -49,7 +51,7 @@ During research and drafting:
 - preserve material disagreement, uncertainty, jurisdiction, and currentness rather than silently harmonizing sources;
 - update the repository-owned source and research records required by the profile;
 - cite only sources actually used and do not invent a search, verification event, quotation, attribution, doctrine, law, or historical fact;
-- keep third-party quotations focused and comply with copyright and redistribution limits;
+- keep third-party quotations focused, record their known rights status, and comply with copyright and redistribution limits;
 - never put credentials, tokens, hostnames, usernames, machine-specific paths, network addresses, hardware identifiers, or session identifiers into tracked sources or metadata.
 
 When legal rules, current discipline, translations, software, or other mutable facts matter, verify their present state. Canon-law work must name the governing body of law, jurisdiction, promulgating authority, effective or as-of date, and material amendments or authentic interpretations. It remains a study aid, not legal advice.
