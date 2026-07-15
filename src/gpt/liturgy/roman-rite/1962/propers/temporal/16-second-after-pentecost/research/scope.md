@@ -1,6 +1,6 @@
 # Second Sunday after Pentecost — Research Scope
 
-**Last updated:** 2026-07-10
+**Last updated:** 2026-07-14
 
 This record preserves the source roles, historical alternatives, and research limits compressed in the reader-facing guide. Complete appointed texts, checksums, facsimile locations, witness differences, and line-by-line collation results are retained in [the verified propers](../propers/verified.md).
 
@@ -10,7 +10,7 @@ This record preserves the source roles, historical alternatives, and research li
 - The Introit includes both Psalm 17:19–20 and its appointed psalm verses, 17:2–3. They are consolidated as one historical dossier because they belong to the same directly appointed psalm.
 - The Collect, Secret, and Postcommunion were studied in their complete, facsimile-verified Latin forms. They are composed prayers, not direct biblical quotations, and therefore do not receive dossiers in `In Illo Tempore...`.
 - The seven historical dossiers are ordered canonically rather than liturgically: Psalm 6:5 (Offertory); Psalm 7:2 (Alleluia); Psalm 12:6 (Communion); Psalm 17:2–3, 19–20 (Introit); Psalm 119:1–2 (Gradual); Luke 14:16–24 (Gospel); and 1 John 3:13–18 (Epistle).
-- The inherited guide's central movement—prepared gift, tested response, widened house, and transformed guest—is an editorial synthesis of the appointed formulary. It is not presented as the historical compositional intention of any biblical author or as a patristic account of the Roman formulary.
+- The guide's central movement—prepared gift, tested response, widened house, and transformed guest—is a textual and source-grounded synthesis of the appointed formulary. It is not presented as the historical compositional intention of any biblical author or as a patristic account of the Roman formulary.
 
 ## Historical Coordinates of the Direct Scriptural Propers
 
@@ -52,16 +52,22 @@ This record preserves the source roles, historical alternatives, and research li
 
 ## Patristic and Doctrinal Reception Retained in the Guide
 
-- Direct Gospel reception: Tertullian, *Against Marcion* IV.31; Augustine, *Sermon 62* (Benedictine 92), 1–8; Cyril of Alexandria, *Commentary on Luke*, Sermon 104; and Gregory the Great, *Homiliae in Evangelia* II.36. Their different mappings of host, servant, guests, Israel, and Gentiles are retained as distinct emphases rather than flattened into a consensus.
-- Direct Epistle reception: Augustine, *Homily 5 on the First Epistle of John*, 6 and 10–12, on baptismal identity, charity, material mercy, and Christ-shaped self-gift.
-- Direct psalm reception: Augustine's *Expositions on the Psalms* at Psalm 17, 20–21; Psalm 119, 2–8; Psalm 7, 2; Psalm 6, 5; and Psalm 12, 6. These comment on the appointed verses, not on their later placement together in this Mass.
-- Doctrinal illumination rather than direct commentary on the proper: Augustine, *City of God* X.5–6 and 20, for sacrifice, mercy, ecclesial self-offering, and Christ the High Priest.
-- The sources were checked in accessible English public-domain editions hosted by New Advent and Tertullian.org. Latin and Greek patristic critical editions, subscription databases, and untranslated witnesses were not exhaustively searched for this historical-table revision.
+Every item below records the exact retained locus, source used, role, and quotation status. The guide's patristic prose is checked paraphrase rather than presented as verbatim quotation.
+
+- Tertullian, *Against Marcion* IV.31, [ANF English text](https://www.tertullian.org/fathers2/ANF-03/anf03-31.htm): direct Gospel reception, checked paraphrase. The anti-Marcionite argument establishes the Creator as host, eternal life as the supper, and continuity between ancestral and prophetic invitation.
+- St. Augustine, *Sermon 62* (Benedictine 92) §§1–8, [R. G. MacMullen English translation](https://www.newadvent.org/fathers/160362.htm): direct Gospel reception, checked paraphrase. The guide retains his Christological and Eucharistic feast, apostolic summons, three-excuse allegory, and treatment of the poor, roads, and hedges.
+- St. Cyril of Alexandria, *Commentary on Luke*, Sermon 104, [R. Payne Smith English translation](https://www.tertullian.org/fathers/cyril_on_luke_10_sermons_99_109.htm): direct Gospel reception, checked paraphrase. The Father, Son, synagogue leaders, ordinary Jewish hearers, and Gentile mission are kept in Cyril's distinct mapping.
+- St. Gregory the Great, *Homiliae in Evangelia* II.36 §§1–5, [Migne-derived Latin text](https://la.wikisource.org/wiki/Homiliarum_in_Evangelia/XXXVI): direct Gospel reception, translated checked paraphrase. The underlying homily—not the catena alone—controls the claims about spiritual and bodily delight, the eternal supper, profession contradicted by conduct, and the three excuses. The *Catena Aurea* [English extract](https://www.ecatholic2000.com/catena/untitled-75.shtml) was treated only as a lead and comparison aid.
+- St. Augustine, *Homily 5 on the First Epistle of John* §§6, 10–12, [English text](https://www.newadvent.org/fathers/170205.htm): direct Epistle reception, checked paraphrase on baptismal identity, charity, material mercy, and Christ-shaped self-gift.
+- St. Augustine, *Expositions on the Psalms*: Psalm 17 §§20–21 ([modern Psalm 18](https://www.newadvent.org/fathers/1801018.htm)); Psalm 119 §§2–8 ([modern Psalm 120](https://www.newadvent.org/fathers/1801120.htm)); Psalm 7 §2 ([text](https://www.newadvent.org/fathers/1801007.htm)); Psalm 6 §5 ([text](https://www.newadvent.org/fathers/1801006.htm)); and Psalm 12 §6 ([modern Psalm 13](https://www.newadvent.org/fathers/1801013.htm)): direct reception of the appointed verses, checked paraphrases. Augustine does not comment on their later arrangement in this Mass.
+- St. Augustine, *City of God* X.5–6, 20, [English text](https://www.newadvent.org/fathers/120110.htm): doctrinal illumination rather than direct commentary on the Secret, checked paraphrase on sacrifice, mercy, ecclesial self-offering, and Christ the High Priest.
+- These sources were rechecked 2026-07-14 in the accessible English editions named above and, for Gregory, the underlying Latin. The distribution remains Augustine-heavy because his direct expositions cover the Epistle and every appointed psalm; weaker quota additions were not promoted. Latin and Greek critical editions, subscription databases, untranslated witnesses, and the full patristic corpus were not exhaustively searched.
 
 ## Cultural-Reception Search
 
 - Exact-phrase searches on 2026-07-10 tested `compel them to come in`, `love in deed and in truth`, `passed from death unto life`, and the great-supper excuses across literature, film, television, and music. Results were predominantly sermons, commentaries, devotional pages, or unattributed repetitions rather than independently verifiable cultural uses.
 - One example survived verification: Abigail Miller's song “Compel Them,” on *Closer to Jesus* (2003), repeats “compel them to come in” in its refrain and closing interlude. [Apple Music](https://music.apple.com/us/song/1871156771) verifies the recording, artist, album, and release date; [Shazam](https://www.shazam.com/song/1871156771/compel-them) supplies the credited lyric record and exact location. It is retained as the sole `Notable Quotables` item rather than padded with a weaker second example.
+- The Apple Music metadata and Shazam credit, refrain, and closing-interlude record were rechecked on 2026-07-14; no change to the retained classification or location was required.
 - Charles Spurgeon's 1858 sermon titled “Compel Them to Come In,” later hymns, and recent devotional songs using the phrase were reviewed as reception leads but not retained: they are direct preaching or devotional reuse, duplicate the same wording without a distinct cultural payoff, or lacked sufficiently precise primary verification for this guide.
 
 ## Text Verification and Material Limits
@@ -71,3 +77,11 @@ This record preserves the source roles, historical alternatives, and research li
 - The historical table's traditional dates are deliberately approximate. Psalms 6, 7, 12, and 17 use a broad Davidic date because the traditional attribution does not provide modern chronological precision. Psalm 119 receives no fabricated date. Luke's Achaian place and early date come from distinct traditional arguments. Ephesus and c. AD 90–100 for 1 John are traditional probabilities, not certainties.
 - No exact identification of Cush the Benjaminite, no town for Luke 14, and no individual author or composition site for Psalm 119 was adopted. These remain unresolved rather than being filled by conjecture.
 - The public source survey is sufficient for the historical claims actually made but is not exhaustive of modern monographs, journal literature, manuscript studies, non-English scholarship, or the full patristic corpus.
+
+## 2026-07-14 Full Re-evaluation
+
+- The guide was read linearly against the current profile, verified proper record, and source ledger. Its page-one map, one-page historical dossier, two-page synthesis, substantive detailed commentary, interpretive section, cultural example, references, metadata, and terminal rights page were all present.
+- The detailed commentary already covered every appointed element, but the Collect was materially thinner than the others. A new close reading now treats its paired fear and love, divine causality, continuing governance, and establishment in God's love without assigning unsupported lexical or patristic claims.
+- Page-one chant cells were narrowed to their appointed texts, the synthesis was classified by its demonstrable evidence rather than as a free editorial proposal, the four-witness Gospel table was renamed and its claimed agreement narrowed, and a repetitive comparison box was removed.
+- Gregory the Great's *Homiliae in Evangelia* II.36 §§1–5 was checked in the underlying Latin. The catena is now recorded only as an aid, and the exact source role and paraphrase status of every retained patristic witness are explicit.
+- The missal text required no correction. Independent theological review remains outstanding, so the guide remains `T0` rather than an ecclesiastically approved or independently reviewed publication.
