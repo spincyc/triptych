@@ -8,13 +8,17 @@ On 15 July 2026, the project maintainer reported conditional approval from the m
 
 This is a user-attested release-control record. The grantor's identity, private communication, and delegation instruments are deliberately not stored in the repository, and the project has not independently verified them. The tracked record states the scope represented by the maintainer without publishing personal or confidential material.
 
+## Supplemental clearance: Eighth Sunday after Pentecost
+
+On 15 July 2026, after completion of the source audit and reviewed installed PDF, the maintainer explicitly confirmed that the previously recorded domestic-superior authorization covers perpetual worldwide public GitHub and GitHub Pages distribution of the exact Eighth Sunday after Pentecost source and PDF listed below, including its incorporated Latin liturgical text, under the existing no-project-initiated-promotion condition. This user-attested confirmation clears that publication's recorded liturgical-text gate and extends the exact snapshot and reader-facing-source inventories in this record. It does not imply clearance for any other future or changed publication.
+
 ## Duration and condition
 
 - Effective: 15 July 2026 at 00:00 CDT (`2026-07-15T00:00:00-05:00`).
 - Duration: perpetual, with no expiration date.
 - Territory: unrestricted worldwide public access.
 - Condition: unadvertised public hosting means no project-initiated announcement, advertising, promotion, syndication, or public software-release attachment. It does not require secrecy or exclusion from ordinary discovery. Public repository listings, GitHub navigation and activity, link previews, search indexing, and other platform behavior inherent in a public GitHub repository and Pages site are permitted.
-- Scope: public visibility of the complete tracked repository and reachable rewritten Git history present at the initial visibility change, including authoring and research records, guidance, licensing files, scripts, build rules, installed PDFs, and the exact reader-facing site sources listed below. It also permits public GitHub Pages hosting and downloading of the exact PDF snapshots below, including all text, translations, prayer and liturgical material, citations, and embedded, printed, or navigational links they contain.
+- Scope: public visibility of the complete tracked repository and reachable rewritten Git history present at the initial visibility change, together with later tracked changes and exact PDF snapshots only when their supplemental clearance is recorded here. This includes the authorized authoring and research records, guidance, licensing files, scripts, build rules, installed PDFs, and exact reader-facing site sources listed below. It also permits public GitHub Pages hosting and downloading of the exact PDF snapshots below, including all text, translations, prayer and liturgical material, citations, and embedded, printed, or navigational links they contain.
 
 Ignored or untracked build artifacts, credentials, private communications, and private account data remain outside the publication scope. Changed or rebuilt PDFs and future publications still require their ordinary recorded review before release; pushing to a public branch is itself publication. The authorization does not represent an imprimatur, nihil obstat, endorsement, or independent specialist review.
 
@@ -38,6 +42,7 @@ Ignored or untracked build artifacts, credentials, private communications, and p
 | `liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost` | `1454b133e115195e756b0bfb188a2d1de4186cc87ab7e84f17fbb55e8068050f` |
 | `liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost` | `e3eca18858735239e3e2a41b05f1ecfc047b4bbc1c9378ab5a6f15b4847481c2` |
 | `liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost` | `97bf153d5f7b5935033425bec29ef6ef4f3912735183ffa28368949b13715e76` |
+| `liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost` | `7dd86e3feee537c691433db08b1b2ddb6ae580b95e969ed21e397baa6af5b222` |
 | `liturgy/roman-rite/1962/reference/assembling-the-mass` | `ad4022c72fab358ead959c87a2aee9717b34db1b97abd782745c4b9caa4a8575` |
 | `liturgy/roman-rite/comparative/two-missals-one-sacrifice` | `edba4b079c035e9ec0501ac36db901c3729f8091294e93b67d78864402047036` |
 | `theology/mariology/apparitions` | `ed71d22ff909c959bbd808c4a3b07c0a77a21a62120ea2181d1d36cbc9960a5b` |
@@ -61,7 +66,7 @@ Ignored or untracked build artifacts, credentials, private communications, and p
 | `library/mariology.md` | `99e361745bd373c378918537c841f6819c783300beff91073bdafa46fdfa3afb` |
 | `library/novus-ordo-liturgy.md` | `2f693e090f2fa034a65c1f66e7046bf7e063bb8e91572e96cbba34f4a6b1e2f6` |
 | `library/prayer.md` | `2a8678a9c355a789cd2a7f6bb78290d5892dd1dc33bb0f8991028df2ed023766` |
-| `library/traditional-latin-mass.md` | `ff084e8ebda84f2edfc97e46c058dee78d5581f3d24561871a2056051448736d` |
+| `library/traditional-latin-mass.md` | `038860200ebf08bf8e59a42058b7e279f2b2d3f6ba1e6bfefc873a1b7ab9a4ba` |
 | `release/public-alpha/404.md` | `551491f5521a5624911d63b398156d2236cbed2f0aa832eeb9c97070dcea568e` |
 | `release/public-alpha/assets/site.css` | `358d86f3587fc03f62a17cd4b5fd0126fb2dc3d952afa48eb33fc3a88fce54e9` |
 | `release/public-alpha/layout.html` | `1add2c3f7e6faed6cde4f71b471b5d275089aa719a779f250ef761b3754bea63` |

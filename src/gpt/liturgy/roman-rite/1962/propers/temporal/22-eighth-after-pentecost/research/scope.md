@@ -91,3 +91,5 @@ No source above is attributed as a direct commentator on the Collect, Secret, or
 ## Rights and Attribution
 
 The complete Latin proper record is a focused edition-identified research transcription checked against the public facsimile. The PDF uses brief incipits and clauses rather than reproducing a modern hand-missal translation. Public-domain patristic translations and Latin texts were paraphrased except where a very brief phrase was analytically necessary; every use is attributed by work and locus. Modern biblical notes and doctrinal sources are summarized, not reproduced. No uncertain quotation or cultural attribution was promoted into the publication.
+
+Public distribution of this exact source and installed PDF, including the incorporated Latin liturgical text, is covered by the user-attested supplemental clearance recorded on 2026-07-15 in `release/rights/public-alpha-2026-07-15.md`. The exhaustive release manifest binds that clearance to the reviewed PDF SHA-256 and does not extend it to a changed build or another future publication.
