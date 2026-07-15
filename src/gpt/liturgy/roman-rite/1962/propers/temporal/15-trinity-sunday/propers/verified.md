@@ -52,7 +52,7 @@ O altitúdo divitiárum sapiéntiæ et sciéntiæ Dei: quam incomprehensibília 
 
 Benedíctus es, Dómine, qui intuéris abýssos, et sedes super Chérubim. ℣. Benedíctus es, Dómine, in firmaménto cæli, et laudábilis in sǽcula.
 
-**Immediate context and liturgical function:** these lines belong to the Greek addition containing the Prayer of Azariah and Song of the Three Young Men. Within the furnace, faithful Judeans under a pagan empire call all creation to bless the God who sees the depths, reigns above the cherubim, and is praised forever. The Gradual answers Paul’s unsearchable depth with revealed blessing rather than attempted mastery.
+**Immediate context and liturgical function:** these lines belong to the Greek addition containing the Prayer of Azariah and Song of the Three Young Men. Within the furnace, faithful Judeans under a pagan empire call all creation to bless the God who sees the depths, reigns above the cherubim, and is praised forever. In the guide’s explicitly editorial synthesis of the assembled formulary, the Gradual answers Paul’s unsearchable depth with revealed blessing rather than attempted mastery.
 
 **Verification status:** facsimile-collated; no unresolved wording issue.
 
@@ -62,7 +62,7 @@ Benedíctus es, Dómine, qui intuéris abýssos, et sedes super Chérubim. ℣. 
 
 Allelúia, allelúia. ℣. Benedíctus es, Dómine, Deus patrum nostrórum, et laudábilis in sǽcula. Allelúia.
 
-**Immediate context and liturgical function:** the opening of the three young men’s hymn blesses the Lord as the God of Israel’s fathers before the song widens through sanctuary, throne, heavens, and the whole created order. The Alleluia carries inherited Israelite praise into the proclamation of the risen Christ’s universal command.
+**Immediate context and liturgical function:** the opening of the three young men’s hymn blesses the Lord as the God of Israel’s fathers before the song widens through sanctuary, throne, heavens, and the whole created order. In the guide’s explicitly editorial synthesis of the assembled formulary, the Alleluia carries inherited Israelite praise into the proclamation of the risen Christ’s universal command.
 
 **Verification status:** facsimile-collated; no unresolved wording issue.
 
