@@ -10,7 +10,11 @@ This is a user-attested release-control record. The grantor's identity, private 
 
 ## Supplemental clearance: Eighth Sunday after Pentecost
 
-On 15 July 2026, after completion of the source audit and reviewed installed PDF, the maintainer explicitly confirmed that the previously recorded domestic-superior authorization covers perpetual worldwide public GitHub and GitHub Pages distribution of the exact Eighth Sunday after Pentecost source and PDF listed below, including its incorporated Latin liturgical text, under the existing no-project-initiated-promotion condition. This user-attested confirmation clears that publication's recorded liturgical-text gate and extends the exact snapshot and reader-facing-source inventories in this record. It does not imply clearance for any other future or changed publication.
+On 15 July 2026, after completion of the source audit and reviewed installed PDF, the maintainer explicitly confirmed that the previously recorded domestic-superior authorization covers perpetual worldwide public GitHub and GitHub Pages distribution of the then-current Eighth Sunday after Pentecost source and PDF with SHA-256 `7dd86e3feee537c691433db08b1b2ddb6ae580b95e969ed21e397baa6af5b222`, including its incorporated Latin liturgical text, under the existing no-project-initiated-promotion condition. This user-attested confirmation cleared that publication's recorded liturgical-text gate and extended the exact snapshot and reader-facing-source inventories in this record. It did not imply clearance for any other future or changed publication.
+
+## Renewed supplemental clearance: Eighth Sunday after Pentecost patristic revision
+
+On 15 July 2026, after the patristic revision, reordered ten-page guide, source and research changes, and reviewed build were reported, the maintainer explicitly approved the resulting revision for installation, commit, public-repository publication, and GitHub Pages deployment. This user-attested renewed clearance binds the exact revised source, research, guidance, and installed PDF state recorded by the resulting commit and the current Eighth Sunday after Pentecost SHA-256 listed below to the existing perpetual worldwide authorization and its no-project-initiated-promotion condition. For the current release inventory, it supersedes the earlier Eighth Sunday snapshot without erasing that snapshot's audit history. It does not constitute an imprimatur, nihil obstat, endorsement, or independent specialist review, and it clears no later changed source or PDF.
 
 ## Supplemental clearance: Ordinary and Order of the Mass
 
@@ -46,7 +50,7 @@ Ignored or untracked build artifacts, credentials, private communications, and p
 | `liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost` | `1454b133e115195e756b0bfb188a2d1de4186cc87ab7e84f17fbb55e8068050f` |
 | `liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost` | `e3eca18858735239e3e2a41b05f1ecfc047b4bbc1c9378ab5a6f15b4847481c2` |
 | `liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost` | `97bf153d5f7b5935033425bec29ef6ef4f3912735183ffa28368949b13715e76` |
-| `liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost` | `7dd86e3feee537c691433db08b1b2ddb6ae580b95e969ed21e397baa6af5b222` |
+| `liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost` | `cbaf3467852504e2f951232db4e813b3df1e623ce7755c3eec89e8ada4ffdf46` |
 | `liturgy/roman-rite/1962/reference/assembling-the-mass` | `ad4022c72fab358ead959c87a2aee9717b34db1b97abd782745c4b9caa4a8575` |
 | `liturgy/roman-rite/comparative/two-missals-one-sacrifice` | `edba4b079c035e9ec0501ac36db901c3729f8091294e93b67d78864402047036` |
 | `theology/mariology/apparitions` | `ed71d22ff909c959bbd808c4a3b07c0a77a21a62120ea2181d1d36cbc9960a5b` |
