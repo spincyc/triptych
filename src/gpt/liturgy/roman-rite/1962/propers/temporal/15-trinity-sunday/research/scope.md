@@ -1,6 +1,6 @@
 # Trinity Sunday — Research Scope
 
-**Last updated:** 2026-07-10
+**Last updated:** 2026-07-14
 
 This record preserves the source roles, historical alternatives, and claim boundaries compressed in the reader-facing guide. Complete appointed texts, checksums, image locations, witness differences, and line-by-line collation results remain in [the verified propers](../propers/verified.md).
 
@@ -27,18 +27,18 @@ Geographic equivalents remain deliberately broad. Ancient Nineveh lies by presen
 
 - St. John Chrysostom, *Homily 19 on Romans*, directly comments on Romans 11:33–36: Paul recognizes the depth without measuring it, follows the reversals involving Israel and the nations, and confesses God as first benefactor rather than debtor: [text](https://www.newadvent.org/fathers/210219.htm).
 - St. Hilary of Poitiers, *De Trinitate* II.1–2, directly treats Matthew 28:19 as a saving baptismal rule joining Creator, Only-begotten, and Gift while acknowledging the limits of theological speech: [text](https://www.newadvent.org/fathers/330202.htm).
-- St. Basil the Great, *On the Holy Spirit* 10.24; 12.26, 28; 27.68, directly uses Matthew 28:19 to defend the Spirit’s inseparable coordination with Father and Son in baptism and doxology: [text](https://www.newadvent.org/fathers/3203.htm).
+- St. Basil the Great, *On the Holy Spirit* 10.24, 26; 12.28; 27.68, directly uses Matthew 28:19 to defend the Spirit’s inseparable coordination with Father and Son in baptism and doxology: [text](https://www.newadvent.org/fathers/3203.htm).
 - St. Gregory Nazianzen, *Oration 40* §§41, 45, directly joins the one Godhead and power of the three with Christ’s command to disciple and baptize, and refuses to oppose dogma to conduct: [text](https://www.newadvent.org/fathers/310240.htm).
 - St. Augustine, *Exposition on Psalm 8* §§4–8, directly reads the admirable name throughout the earth christologically and places praise in the mouths of the little ones before mature comprehension: [text](https://www.newadvent.org/fathers/1801008.htm).
 
-No direct patristic exposition of the appointed Tobit 12:6 or Daniel 3 verses was needed for the claims retained in the compact revision; those chants are handled through their canonical contexts and clearly labeled editorial relations. This is a limit of the retained guide, not a claim that no ancient commentary exists.
+No direct patristic exposition of the appointed Tobit 12:6 or Daniel 3 verses is retained. The expanded detailed commentary handles those chants through their complete canonical contexts and clearly labeled textual or editorial relations. This is a limit of the retained guide, not a claim that no ancient commentary exists.
 
 ## Related Doctrinal and Sacramental Illumination Retained
 
 - St. Gregory Nazianzen, *Oration 40* §25, on offering oneself and clothing oneself with Christ after baptism, illuminates the Secret but does not comment on it directly: [text](https://www.newadvent.org/fathers/310240.htm).
 - St. Augustine, *City of God* X.5–6, 20, on visible sacrifice, interior self-offering, the redeemed city, and Christ as priest and sacrifice, supplies doctrinal illumination for the Secret: [text](https://www.newadvent.org/fathers/120110.htm).
 - St. Augustine, *De Trinitate* VIII.7.10–VIII.10.14, on brotherly charity, God as love, and lover–beloved–love, is retained as a disciplined analogical beginning, not a proof or exhaustive model of the Trinity: [text](https://www.newadvent.org/fathers/130108.htm).
-- The feast’s appointed Preface confesses distinction of Persons, unity of essence, and equality of majesty. It is liturgical context, not an eleventh proper and not evidence that the cited Fathers authored the formulary.
+- The feast’s appointed Preface confesses distinction of Persons, unity of essence, and equality of majesty. Its quoted clauses were visually checked on 2026-07-14 against the 1962 typical-edition facsimile, printed p. 293 (PDF p. 374). It is liturgical context, not an eleventh proper and not evidence that the cited Fathers authored the formulary.
 
 ## Biblical-Historical Sources and Controlling Distinctions
 
@@ -47,12 +47,25 @@ No direct patristic exposition of the appointed Tobit 12:6 or Daniel 3 verses wa
 - Tobit 12:6 is the scriptural source of three chant adaptations, but its Vulgate wording does not itself name the three divine Persons. The explicit Trinitarian language belongs to the liturgical adaptations and is not projected back into the human author’s compositional intent.
 - Daniel’s narrated furnace, the traditional writer’s Babylonian location, and a later addition’s unknown composition site are distinct questions even though the compact table can show only the traditional composition metadata and then qualify it in prose.
 - Romans 11:36 is a doxology about God in its immediate grammar. The guide does not mechanically distribute its prepositions among Father, Son, and Holy Ghost; Matthew’s baptismal name and the Church’s rule of faith govern the explicit Trinitarian confession.
-- Matthew’s singular “name” names three Persons, but grammar alone is not a complete treatise on consubstantiality. The guide relies on the cited baptismal reception and the feast’s liturgical confession for its doctrinal development.
+- Matthew's singular “name” names three Persons, but grammar alone is not a complete treatise on consubstantiality. The guide relies on the cited baptismal reception and the feast's liturgical confession for its doctrinal development.
+
+## Cultural Reception Search
+
+- A targeted search tested the Introit, Romans doxology, Daniel chants, baptismal commission, and their principal English and Latin incipits across score catalogs, composer work records, artist discographies, literature, film, television, advertising, and general web results.
+- Two musical uses survived verification and are published in `Notable Quotables`: Tomás Luis de Victoria's six-voice *Benedicta sit sancta Trinitas*, first published as no. 28 in the 1572 *Motecta*, and Psallos's “O the Depth!” on *Slave Songs* (2012), which the artist identifies as a complete setting of Romans 11:33–36. The IMSLP work record and public-domain score listings control the Victoria metadata; the artist's Bandcamp page controls the Psallos title, date, text, and credits.
+- No comparably strong, precisely locatable literary, dramatic, film, television, advertising, comedic, or ironic use was verified. Search-result proximity, generic Trinity language, and performances of the Gregorian proper itself were not promoted into additional examples.
+
+## 2026-07-14 Full Re-evaluation
+
+- The guide was read linearly against the current profile, verified proper record, and research scope. The page-one map, one-page historical table, two-page themes-and-movement section, interpretive boundary, references, and terminal metadata remained structurally complete.
+- The former two-page detailed commentary did not demonstrate its synthesis for every appointed element. It was expanded with distinct treatments of the three Tobit chants, the Collect's syntax, Romans 11 in its complete mercy argument, Psalm 8 and Daniel 3 in canonical context, and the Communion/Postcommunion relation. All ten propers now receive substantive treatment beyond the opening synthesis without assigning the assembled formulary to a biblical or patristic author.
+- The retained patristic loci and canonical chapters used by the expansion were rechecked on 2026-07-14. The missal text itself was already re-collated on that date in `propers/verified.md`; no textual correction or unresolved discrepancy resulted from this content pass.
+- The cultural-reception search added two verified musical afterlives and no weaker filler. Independent theological review remains outstanding, so the guide remains `T0` and a source-audited working study rather than an ecclesiastically approved or independently reviewed publication.
 
 ## Survey and Material Limits
 
-- Surveyed the public 1962 missal facsimile and OCR, the secondary color image witness, the complete appointed biblical contexts in the *NABRE*, relevant New Advent Catholic Encyclopedia articles, and the patristic works already retained in the guide.
+- Surveyed the public 1962 missal facsimile and OCR, the secondary color image witness, the complete appointed biblical contexts in the *NABRE*, relevant New Advent Catholic Encyclopedia articles, the patristic works retained in the guide, and the targeted cultural sources recorded above.
 - The historical table’s dates are deliberately approximate traditional orientations. Tobit’s inherited reconstruction, the specific origin of Daniel’s Greek addition, Psalm 8’s historical setting, Matthew’s traditional range, the exact Galilean mountain, and the canonical Gospel’s modern composition city remain materially uncertain.
 - The public survey does not exhaust manuscripts, untranslated works, subscription databases, or current specialist monographs. Older public-domain translations are working texts.
 - Sources were retained because they establish or materially qualify claims made in the guide; no numerical or source-category quota was applied.
-- All links were accessed 2026-07-10.
+- Historical-orientation links were accessed 2026-07-10. The canonical and patristic loci used for the expanded commentary and the retained cultural sources were rechecked or accessed 2026-07-14.
