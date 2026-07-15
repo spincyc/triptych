@@ -12,6 +12,7 @@ BUILD_PDFS := $(addprefix $(BUILD_ROOT)/,$(addsuffix .pdf,$(DOCUMENTS)))
 DOC_PDFS := $(addprefix $(DOC_ROOT)/,$(addsuffix .pdf,$(DOCUMENTS)))
 METADATA_CHECKER := scripts/check-generation-metadata
 PUBLIC_ALPHA_TOOL := scripts/public-alpha
+CODEX_LAUNCHER := scripts/triptych-codex
 
 COMMON_SOURCES := $(shell find $(SOURCE_ROOT)/common -type f | sort)
 SACRAMENT_ROOT := $(SOURCE_ROOT)/theology/sacraments
@@ -29,7 +30,8 @@ FIRST_NOVENA_PRAYERS := $(wildcard $(FIRST_NOVENA_ROOT)/prayers/*.tex)
 CARMEL_NOVENA_PRAYERS := $(wildcard $(CARMEL_NOVENA_ROOT)/prayers/*.tex)
 
 .PHONY: all pdf install list help clean distclean check-tools check-metadata \
-	check-public-alpha public-site public-preview verify-public-site verify-public-preview
+	check-public-alpha check-agent-isolation codex public-site public-preview \
+	verify-public-site verify-public-preview
 .DELETE_ON_ERROR:
 
 all: pdf
@@ -48,11 +50,19 @@ install: check-metadata $(DOC_PDFS)
 list:
 	@printf '%s\n' $(DOCUMENTS)
 
+codex:
+	@$(CODEX_LAUNCHER)
+
+check-agent-isolation:
+	@$(PYTHON) -m unittest discover -s scripts/tests -p 'test_triptych_codex.py' -v
+
 help:
 	@printf '%s\n' \
 		'make          Build every discovered src/$(PROVIDER)/**/main.tex document' \
 		'make install  Publish built PDFs into the mirrored tracked doc/ tree' \
 		'make list     List discovered document IDs' \
+		'make codex    Start Codex in an automatically isolated task checkout' \
+		'make check-agent-isolation  Test the transparent Codex launcher' \
 		'make check-metadata  Validate structured and inherited AI provenance' \
 		'make check-public-alpha  Validate the exhaustive public-release policy' \
 		'make public-preview  Build a private no-index preview with review candidates' \
