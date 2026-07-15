@@ -53,7 +53,7 @@ Caríssimi: Nolíte mirári, si odit vos mundus. Nos scimus, quóniam transláti
 
 Ad Dóminum cum tribulárer clamávi, et exaudívit me. ℣. Dómine, líbera ánimam meam a lábiis iníquis, et a lingua dolósa.
 
-**Immediate context and liturgical function:** Psalm 119 opens the Songs of Ascents. The speaker remembers an answered cry yet still asks rescue from lying speech, then laments dwelling among peoples hostile to peace. The Gradual places truthful prayer and deliverance from deceit between the Epistle's demand for love in deed and truth and the Gospel's courteous but false excuses.
+**Immediate context and liturgical function:** Psalm 119 opens the Songs of Ascents. The speaker remembers an answered cry yet still asks rescue from lying speech, then laments dwelling among peoples hostile to peace. In the guide's explicitly source-grounded synthesis of the assembled formulary, the Gradual places truthful prayer and deliverance from deceit between the Epistle's demand for love in deed and truth and the Gospel guests' words of refusal; Luke does not independently label each excuse a lie.
 
 **Verification status:** facsimile-collated; no unresolved wording issue.
 
