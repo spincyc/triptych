@@ -195,6 +195,8 @@ The two pages immediately following `In Illo Tempore...` form exactly two pages 
 
 Organize the remaining material into three to five short synthesis units keyed to that same architecture. Name every appointed proper within the staged movement or units, grouping texts by theological or liturgical function rather than reproducing ten isolated summaries. End each unit heading with the parenthetical italic abbreviations of its governing propers. Make the decisive evidence and essential guardrails visibly locatable through information-bearing headings, tables, matrices, short labeled lists, or restrained callouts.
 
+Keep every section and subsection heading in the guide unnumbered. A compact orienting form may number genuinely sequential stages when that makes its reading order clearer, but those numerals remain local to the form and are not repeated as manual prefixes in the synthesis-unit headings. Key the units instead by their information-bearing titles and proper cues; a unit may develop more than one stage, and a stage may require more than one unit.
+
 Each unit must make a complete claim in full sentences, join evidence to interpretation, and show how it advances the whole movement; scanability must not reduce the argument to disconnected fragments. No prose paragraph may exceed 120 words, and no unit may contain more than two consecutive prose paragraphs without an information-bearing structured form. The section contains no exploratory AI proposals and must fill two genuinely readable pages without decorative repetition, padding, oversized headings, or artificial whitespace.
 
 ### Thereafter: The Propers: Detailed Commentary
@@ -481,6 +483,7 @@ Before a guide is complete, verify that:
 - every historical claim is supported by an identified source, with competing judgments and unresolved matters retained in `research/scope.md`;
 - the two pages immediately following `In Illo Tempore...` contain exactly two full, readable pages of `The Propers: Themes and Movement` and no exploratory AI proposals;
 - `The Propers: Themes and Movement` begins with a one- or two-sentence thesis and a compact orienting form of no more than four primary stages, then uses three to five relationship-titled units keyed to the same argumentative spine;
+- every section and subsection heading is unnumbered and has no manual numeric prefix; any sequence numerals remain inside the compact orienting form and are not repeated in synthesis-unit headings;
 - every proper appears in a functional grouping, decisive witnesses and guardrails are visibly labeled, no prose paragraph exceeds 120 words, and no unstructured prose run exceeds two paragraphs;
 - a signpost-only scan of `The Propers: Themes and Movement` recovers its central claim, direction of movement, decisive witnesses, and interpretive limits, while the full text remains a continuous argument rather than disconnected fragments;
 - `The Propers: Detailed Commentary` begins on the fresh page after the two-page synthesis, gives the evidence and qualifications behind it, and does not duplicate either the historical orientation or the synthesis paragraph for paragraph;
