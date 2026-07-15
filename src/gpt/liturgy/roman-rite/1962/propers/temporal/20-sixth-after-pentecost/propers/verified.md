@@ -23,13 +23,13 @@
 
 Dóminus fortitúdo plebis suæ, et protéctor salutárium Christi sui est: salvum fac pópulum tuum, Dómine, et bénedic hereditáti tuæ, et rege eos usque in sǽculum. Ps. ibid., 1 Ad te, Dómine, clamábo, Deus meus, ne síleas a me: ne quando táceas a me, et assimilábor descendéntibus in lacum. ℣. Glória Patri.
 
-**Context:** the psalm asks the Lord to hear, save, bless, and shepherd his people; the entrance voice begins from received strength.
+**Immediate context and liturgical function:** the complete psalm moves from a threatened cry to thanksgiving and intercession, asking the Lord to hear, save, bless, and shepherd his people. The Introit makes received strength and renewed supplication the assembly's entrance voice.
 
 ## 2. Collect
 
 Deus virtútum, cuius est totum quod est óptimum: ínsere pectóribus nostris amórem tui nóminis, et præsta in nobis religiónis augméntum; ut, quæ sunt bona, nútrias, ac pietátis stúdio, quæ sunt nutríta, custódias. Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte.
 
-**Context:** God implants love, increases religion, nourishes the good, and guards what grace has begun.
+**Immediate context and liturgical function:** this non-biblical oration asks God to implant love of his name, increase religion, nourish the good, and guard what grace has begun. As the Collect, it gathers the assembly's prayer before the readings around growth that remains wholly dependent upon God.
 
 ## 3. Epistle
 
@@ -37,7 +37,7 @@ Deus virtútum, cuius est totum quod est óptimum: ínsere pectóribus nostris a
 
 Fratres: Quicúmque baptizáti sumus in Christo Iesu, in morte ipsíus baptizáti sumus. Consepúlti enim sumus cum illo per baptísmum in mortem: ut quómodo Christus surréxit a mórtuis per glóriam Patris, ita et nos in novitáte vitæ ambulémus. Si enim complantáti facti sumus similitúdini mortis eius: simul et resurrectiónis érimus. Hoc sciéntes, quia vetus homo noster simul crucifíxus est: ut destruátur corpus peccáti, et ultra non serviámus peccáto. Qui enim mórtuus est, iustificátus est a peccáto. Si autem mórtui sumus cum Christo: crédimus quia simul étiam vivémus cum Christo: sciéntes quod Christus resúrgens ex mórtuis, iam non móritur, mors illi ultra non dominábitur. Quod enim mórtuus est peccáto, mórtuus est semel: quod autem vivit, vivit Deo. Ita et vos existimáte, vos mórtuos quidem esse peccáto, vivéntes autem Deo, in Christo Iesu Dómino nostro.
 
-**Context:** Paul grounds the new walk in baptismal participation in Christ's once-for-all death and risen life.
+**Immediate context and liturgical function:** Romans 6 answers the objection raised at 6:1 by grounding freedom from sin in baptismal participation in Christ's once-for-all death and risen life; the following verses command conduct consonant with that gift. As the Epistle, the pericope supplies the Sunday's baptismal indicative and moral summons.
 
 ## 4. Gradual
 
@@ -45,7 +45,7 @@ Fratres: Quicúmque baptizáti sumus in Christo Iesu, in morte ipsíus baptizát
 
 Convértere, Dómine, aliquántulum, et deprecáre super servos tuos. ℣. Dómine, refúgium factus es nobis, a generatióne et progénie.
 
-**Context:** Moses' titled prayer sets mortal generations beneath God's eternity and asks him to return compassionately to his servants.
+**Immediate context and liturgical function:** Moses' titled prayer sets mortal generations beneath God's eternity, judgment, and compassion, then asks him to return and show favor to his servants. The Gradual turns that communal lament into the assembly's intervening plea for refuge and divine return.
 
 ## 5. Alleluia
 
@@ -53,7 +53,7 @@ Convértere, Dómine, aliquántulum, et deprecáre super servos tuos. ℣. Dómi
 
 Allelúia, allelúia. ℣. In te, Dómine, sperávi, non confúndar in ætérnum: in iustítia tua líbera me, et éripe me: inclína ad me aurem tuam, accélera, ut erípias me. Allelúia.
 
-**Context:** threatened trust asks God to incline his ear and deliver without delay.
+**Immediate context and liturgical function:** Psalm 30 moves from threatened trust through pleas for refuge and deliverance toward the entrusting of the spirit. Before the Gospel, the Alleluia asks God to incline his ear and rescue without delay.
 
 ## 6. Gospel
 
@@ -63,7 +63,7 @@ In illo témpore: Cum turba multa esset cum Iesu, nec habérent quod manducáren
 
 **Rubric:** Credo.
 
-**Context:** after Jesus' ministry in the Decapolis, compassion feeds a crowd that has remained with him three days and cannot sustain itself on the journey.
+**Immediate context and liturgical function:** after Jesus' ministry in the Decapolis, compassion feeds a crowd that has remained with him three days and cannot sustain itself on the journey; the dispute over bread and understanding follows in Mark 8:14–21. The Gospel proclaims the literal feeding as the Sunday's central narrative of bodily need, divine compassion, and mediated distribution.
 
 ## 7. Offertory
 
@@ -71,7 +71,7 @@ In illo témpore: Cum turba multa esset cum Iesu, nec habérent quod manducáren
 
 Pérfice gressus meos in sémitis tuis, ut non moveántur vestígia mea: inclína aurem tuam, et exáudi verba mea: mirífica misericórdias tuas, qui salvos facis sperántes in te, Dómine.
 
-**Context:** a prayer for vindication asks God to steady the worshipper's steps and display saving mercy.
+**Immediate context and liturgical function:** the complete psalm is a prayer for vindication by a threatened speaker who asks God to test the heart, steady the steps, hear, and display saving mercy. At the Offertory, the selected verses make steadfast conduct and divine hearing the offerer's petition.
 
 ## 8. Secret
 
@@ -79,7 +79,7 @@ Propitiáre, Dómine, supplicatiónibus nostris, et has pópuli tui oblatiónes 
 
 **Rubric:** Preface of the Most Holy Trinity.
 
-**Context:** divine reception of the people's oblations governs the prayer that faithful vows and petitions attain their God-given effect.
+**Immediate context and liturgical function:** this non-biblical prayer asks propitiation and God's kindly reception of the people's oblations before asking that faithful vows and petitions attain their God-given effect. As the Secret, it orders the offered gifts and the offerers' asking to divine reception and efficacy.
 
 ## 9. Communion
 
@@ -87,10 +87,10 @@ Propitiáre, Dómine, supplicatiónibus nostris, et has pópuli tui oblatiónes 
 
 Circúibo, et immolábo in tabernáculo eius hóstiam iubilatiónis: cantábo, et psalmum dicam Dómino.
 
-**Context:** confidence reaches God's dwelling as a sacrifice of jubilation and praise.
+**Immediate context and liturgical function:** Psalm 26 moves from threatened confidence toward the desire for God's dwelling, presence, and jubilant sacrifice. At Communion, the appointed verse gives sacramental reception the voice of a sacrifice of praise without making the psalm itself an explicit Eucharistic text.
 
 ## 10. Postcommunion
 
 Repléti sumus, Dómine, munéribus tuis: tríbue, quǽsumus; ut eórum et mundémur efféctu, et muniámur auxílio. Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte.
 
-**Context:** those filled with God's gifts ask to be cleansed by their effect and fortified by their aid.
+**Immediate context and liturgical function:** after reception, those already filled with God's gifts ask to be cleansed by their effect and fortified by their aid. The Postcommunion confesses real fullness while petitioning for the gifts' continuing operation.
