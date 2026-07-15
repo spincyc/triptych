@@ -1,10 +1,10 @@
-# Conditional Public-Hosting Authorization
+# Perpetual Public-Repository and Hosting Authorization
 
-Record ID: `perpetual-unadvertised-2026`
+Record ID: `perpetual-public-repository-2026`
 
 ## Basis and authority
 
-On 15 July 2026, the project maintainer reported conditional approval from the maintainer's domestic superior. The maintainer confirmed that the grantor holds full authority for this release: delegated local-ordinary publication authority and authority for the relevant third-party text, translations, prayer and liturgical material, citations, and links. The maintainer then clarified, before any public deployment, that the authorization is granted in perpetuity; this supersedes the initially reported end-of-August limit.
+On 15 July 2026, the project maintainer reported conditional approval from the maintainer's domestic superior. The maintainer confirmed that the grantor holds full authority for this release: delegated local-ordinary publication authority and authority for the relevant third-party text, translations, prayer and liturgical material, citations, and links. The maintainer then clarified, before any public deployment, that the authorization is granted in perpetuity and permits the complete Triptych Git repository and its reachable rewritten history to be public, together with a GitHub Pages site. These clarifications supersede the initially reported end-of-August limit and the narrower generated-artifact-only scope.
 
 This is a user-attested release-control record. The grantor's identity, private communication, and delegation instruments are deliberately not stored in the repository, and the project has not independently verified them. The tracked record states the scope represented by the maintainer without publishing personal or confidential material.
 
@@ -13,10 +13,10 @@ This is a user-attested release-control record. The grantor's identity, private 
 - Effective: 15 July 2026 at 00:00 CDT (`2026-07-15T00:00:00-05:00`).
 - Duration: perpetual, with no expiration date.
 - Territory: unrestricted worldwide public access.
-- Condition: unadvertised public hosting. The project is not to announce, promote, index, syndicate, or attach the release to a public software release.
-- Scope: public web hosting and downloading of the exact PDF snapshots below and publication of the exact reader-facing site sources listed below, including all text, translations, prayer and liturgical material, citations, and embedded, printed, or navigational links they contain.
+- Condition: unadvertised public hosting means no project-initiated announcement, advertising, promotion, syndication, or public software-release attachment. It does not require secrecy or exclusion from ordinary discovery. Public repository listings, GitHub navigation and activity, link previews, search indexing, and other platform behavior inherent in a public GitHub repository and Pages site are permitted.
+- Scope: public visibility of the complete tracked repository and reachable rewritten Git history present at the initial visibility change, including authoring and research records, guidance, licensing files, scripts, build rules, installed PDFs, and the exact reader-facing site sources listed below. It also permits public GitHub Pages hosting and downloading of the exact PDF snapshots below, including all text, translations, prayer and liturgical material, citations, and embedded, printed, or navigational links they contain.
 
-The authorization does not extend to changed or rebuilt PDFs, future publications, the authoring and research source tree, repository history, or build intermediates. It does not represent an imprimatur, nihil obstat, endorsement, or independent specialist review.
+Ignored or untracked build artifacts, credentials, private communications, and private account data remain outside the publication scope. Changed or rebuilt PDFs and future publications still require their ordinary recorded review before release; pushing to a public branch is itself publication. The authorization does not represent an imprimatur, nihil obstat, endorsement, or independent specialist review.
 
 ## Exact approved snapshots
 
@@ -53,7 +53,7 @@ The authorization does not extend to changed or rebuilt PDFs, future publication
 | --- | --- |
 | `CONTRIBUTING.md` | `65d6151c3fbb4b42d8340129abba0a8df38f073a08379281b596ed8012a0adb8` |
 | `LIBRARY.md` | `bd5d6d9344d997ae7d5bce19e96099b8d6aa4baf814630471e96823b59110f53` |
-| `LICENSE` | `d59cdb82fe4bf60d205a0dd92e17c888778cb2b59844d43a6b4341cf09b3c57d` |
+| `LICENSE` | `5757e0ce4754536033af21c98f0f69909f75c756f640578bd73bd8e579d70c6d` |
 | `README.md` | `37e6312b8abc1a27283feae8da97ef6a3f52e4440ffbe5b30fb69f26c43dcb57` |
 | `THIRD_PARTY.md` | `4fbe063955aaa479f7376abb52b2db6c2fa9d50d4029ad2662d0af3a415abcf4` |
 | `library/faith.md` | `a68732c6c98d7b0d26464655749809132b59dfeeb95429ea716ed4fbfdef21fd` |
@@ -68,4 +68,4 @@ The authorization does not extend to changed or rebuilt PDFs, future publication
 
 ## Operational controls
 
-The release validator must reject a public build before the effective instant or after any approved PDF or reader-facing site source changes. The public artifact must carry no-index directives and no advertising or syndication files. The chosen host must apply the generated `X-Robots-Tag` policy to every HTML and PDF response; the unadvertised condition remains in force even though the authorization does not expire.
+The release validator must reject a public site build before the effective instant or after any approved PDF or reader-facing site source changes. GitHub Pages may deploy only the verified generated site artifact, never the repository root or private-preview artifact. The public repository and site may be indexed through ordinary platform behavior, but the project is not to create a separate announcement, advertising campaign, syndication feed, or public software-release attachment. Before future protected content is pushed, its publication authority and applicable rights review must be recorded.
