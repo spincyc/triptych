@@ -1,6 +1,6 @@
 # Sixth Sunday after Pentecost — Research Scope
 
-**Last updated:** 2026-07-10
+**Last updated:** 2026-07-14
 
 This record preserves source roles, historical judgments, and claim boundaries compressed in the reader-facing guide. Complete appointed texts, checksums, facsimile locations, and witness differences remain in [the verified propers](../propers/verified.md).
 
@@ -9,6 +9,7 @@ This record preserves source roles, historical judgments, and claim boundaries c
 - Appointed and immediate contexts studied: Psalms 16, 26, 27, 30, and 89 in full; Mark 7:24–8:21; and Romans 6 in full, with Romans 15–16 for Paul's itinerary and scribe.
 - Related texts actually used: Numbers 14; Luke 23:46; Acts 7:59; and the baptismal, prayer, and Eucharistic sources listed below.
 - The Collect, Secret, and Postcommunion were analyzed in their complete facsimile-collated Latin forms. The PDF retains only the clauses needed for argument because it accompanies a hand missal.
+- Lewis and Short's *A Latin Dictionary*, s.v. `votum`, was checked for the Secret's semantic range: a solemn vow and, by extension, a wish, desire, longing, or prayer. The guide therefore does not force `nullius sit irritum votum` into the narrower category of a later juridically regulated vow.
 - The font–desert–road–altar itinerary is an editorial synthesis of the appointed formulary, not a historical claim about its compilers or any patristic author.
 
 ## Historical Coordinates of the Direct Scriptural Propers
@@ -25,15 +26,19 @@ Geographic equivalents are broad: Davidic Israel and Judah lie in the southern L
 
 ## Direct Reception Retained
 
+- St. Augustine, *Exposition on Psalm 16* §§5–7, direct exegesis of the Offertory's perfected steps, inclined ear, and marvellous mercies in the voice of Christ with the Church: [text](https://www.newadvent.org/fathers/1801017.htm). New Advent's page heading uses the common number Psalm 17.
+- St. Augustine, *Exposition on Psalm 26* §6, direct exegesis of the Communion's sacrifice of jubilation: [text](https://www.newadvent.org/fathers/1801027.htm). New Advent's page heading uses Psalm 27.
+- St. Augustine, *Exposition on Psalm 27* §§2, 8–9, direct exegesis of the Introit's cry against silence, received strength, saving protector, inheritance, and divine rule: [text](https://www.newadvent.org/fathers/1801028.htm). New Advent's page heading uses Psalm 28.
+- St. Augustine, *Exposition on Psalm 30* §§2–6, direct exegesis of the Alleluia's trust, deliverance, inclined ear, refuge, and the later entrusting of the spirit: [text](https://www.newadvent.org/fathers/1801031.htm). New Advent's page heading uses Psalm 31.
+- St. Augustine, *Exposition on Psalm 89* §§2, 14, direct exegesis of the Gradual's generational refuge and plea for God to return; Augustine explicitly rejects bodily motion and impatient accusation as the meaning of that return: [text](https://www.newadvent.org/fathers/1801090.htm). New Advent's page heading uses Psalm 90.
 - St. John Chrysostom, *Homilies 10–11 on Romans*, direct exposition of Romans 6:2–14 and the relation of gift, mortification, present fruit, and resurrection: [10](https://www.newadvent.org/fathers/210210.htm), [11](https://www.newadvent.org/fathers/210211.htm).
-- The Venerable Bede, *In Marci Evangelium Expositio* II.32, direct Latin commentary on Mark 8, with selected English excerpts preserved in the *Catena Aurea*: [Latin](https://la.wikisource.org/wiki/In_Evangelium_S._Marci_(Beda)), [excerpts](https://www.ccel.org/ccel/aquinas/catena2.iii.viii.html).
+- The Venerable Bede, *In Marci Evangelium Expositio* II.32, PL 92:205B–208C, direct Latin commentary on Mark 8. The Latin was checked for the claims about sevenfold grace, opened mysteries, apostolic distribution, higher counsels, and Gospel food; the *Catena Aurea* preserves selected English excerpts but is not the source for every Bede attribution retained: [Latin](https://la.wikisource.org/wiki/In_Evangelium_S._Marci_(Beda)), [excerpts](https://www.ccel.org/ccel/aquinas/catena2.iii.viii.html).
 - St. Augustine, *Sermon 45* §§1–3, direct preaching on Mark 8:5 and scriptural bread: [text](https://www.newadvent.org/fathers/160345.htm).
-- St. Augustine, *Exposition on Psalm 26* §6, direct exegesis of the Communion's sacrifice of jubilation: [text](https://www.newadvent.org/fathers/1801027.htm).
 
 ## Related Illumination Retained
 
 - St. Cyril of Jerusalem, *Mystagogical Catechesis II* §§4–8, on baptism as likeness, grave, mother, and real fellowship with Christ's sufferings: [text](https://www.newadvent.org/fathers/310120.htm).
-- St. Ambrose, *On the Mysteries* §§19–21, 28, 41–55, 58–59, on the font, seal, altar, Christ's Body and Blood, and sacramental effect: [text](https://www.newadvent.org/fathers/3405.htm).
+- St. Ambrose, *On the Mysteries* §§19–21, 28, 41–55, 58–59, on the font, seal, altar, Christ's Body and Blood, the communicant's “Amen,” and spiritual food that strengthens the heart. Sections 54 and 58–59 illuminate the Postcommunion's fullness and aid but do not comment directly on that Roman oration: [text](https://www.newadvent.org/fathers/3405.htm).
 - St. Gregory the Great, *Moralia* I.19, and St. Ambrose, *Exposition of Luke* VI.73, excerpts preserved in the *Catena Aurea* at Mark 8:3; these illuminate nourishment on the road but are not full direct commentaries on the Sunday.
 - St. Augustine, *Letter 130 to Proba* §§15–18, 21–29, on prayer, enlarged desire, the Lord's Prayer, and God's sometimes merciful refusal of a temporal request: [text](https://www.newadvent.org/fathers/1102130.htm).
 
@@ -47,13 +52,22 @@ Geographic equivalents are broad: Davidic Israel and Judah lie in the southern L
 
 - Romans' indicative, imperative, and the formulary's petitions remain distinct and coordinated. Baptismal gift does not erase continuing cooperation or dependence.
 - The `old man` is not identified with the material body; Chrysostom explicitly rejects that collapse.
+- Augustine's five psalm expositions are direct Christian reception of the appointed clauses, not evidence for the psalms' recoverable original authorship, historical setting, or conscious prediction by their first speakers.
 - The four thousand, loaves, fish, bodily hunger, and compassion remain literal before patristic allegory. Bede and Augustine chiefly discuss scriptural and ecclesial nourishment, not direct Eucharistic exegesis of every detail.
 - The Secret's *fideliter* does not guarantee the petitioner's preferred temporal outcome. Augustine's doctrine of prayer is illumination, not direct commentary on the Roman oration.
+- The common core `inclina aurem tuam` in the Alleluia and Offertory is a verified textual echo. It supports comparison of urgent deliverance and steadfast steps but does not establish why the formulary's compilers selected either chant.
 - The Communion's liturgical Eucharistic placement, Ambrose's explicit mystagogy, and Mark's feeding can be read in one horizon, but their linkage is editorial synthesis rather than a single patristic claim.
+
+## 2026-07-14 Full Re-evaluation
+
+- The guide now carries the complete series structure: the opening inventory and historical orientation; the fixed two-page Themes and Movement synthesis; Detailed Commentary covering all ten appointed propers; four bounded Interpretive Possibilities; culturally verified Notable Quotables; references, scope disclosure, generation metadata, and rights notice.
+- Every verified proper now records both its immediate scriptural or liturgical context and its function in this Mass. The detailed treatment restores a distinct Postcommunion analysis and gives direct psalm exegesis to all five chants while keeping related baptismal, Eucharistic, and prayer sources explicitly subordinate to the texts they illuminate.
+- The settled twelve-page PDF passed two build passes, a clean warning/error scan, metadata validation, text extraction, embedded-font inspection, and `qpdf --check`. Every page was visually inspected, and the installed publication was confirmed byte-identical to the reviewed build artifact.
+- No substantive correction remains open from this review. The textual, source, citation, and layout review therefore remains **T0** under the profile's triage scale.
 
 ## Survey and Material Limits
 
-- Surveyed the public 1962 missal facsimile and focused OCR, USCCB/NABRE introductions and notes, New Advent biblical titles and *Catholic Encyclopedia* articles, accessible patristic collections in English and Latin, and the sources already supporting the legacy guide.
+- Surveyed the public 1962 missal facsimile and focused OCR, USCCB/NABRE introductions and notes, New Advent biblical titles and *Catholic Encyclopedia* articles, accessible patristic collections in English and Latin, Lewis and Short for the Secret's `votum`, and the sources already supporting the legacy guide.
 - No secure direct patristic commentary was located for the Collect, Secret, or Postcommunion; they are treated through verified grammar and explicitly labeled doctrinal illumination.
-- Psalm origins, the Exodus chronology, Mark's composition date and city, the feeding's exact site and year, and the completeness of Bede's excerpted English remain uncertain.
-- The survey does not exhaust manuscripts, untranslated works, subscription databases, or modern critical scholarship. No source-category quota was applied. All links were accessed 2026-07-10.
+- Psalm origins, the Exodus chronology, Mark's composition date and city, and the feeding's exact site and year remain uncertain. The *Catena Aurea* is incomplete as an English witness to Bede, so claims not preserved under his name there depend on the checked Latin text.
+- The survey does not exhaust manuscripts, untranslated works, subscription databases, or modern critical scholarship. No source-category quota was applied. Historical and cultural links were accessed 2026-07-10; the retained Latin lexicon, psalm expositions, Bede, Mark reception, mystagogical sources, and prayer source were checked or rechecked 2026-07-14.
