@@ -34,6 +34,16 @@ The sacramental treatise and its at-a-glance companion are established theologic
 
 If no profile fits a requested repeatable series, add or revise a profile before multiplying documents. Keep universal guidance genre-neutral. Put rite-, edition-, locale-, calendar-, jurisdiction-, page-, and section-specific rules in the appropriate profile, not in this file or the universal editorial standard.
 
+## Isolated agent sessions
+
+Mutating Codex CLI sessions must run in the isolated linked worktree assigned by `scripts/triptych-codex`. The primary checkout is a control and integration checkout, not an autonomous worker workspace. A session already running in a linked worktree remains there and must not invoke the launcher again or create, remove, lock, unlock, prune, or enter another worktree.
+
+If a mutating Codex session starts in the primary checkout without isolation, fail closed: do not edit, build, commit, or try to emulate relocation with a shell `cd`. Read-only inspection may continue. Start a replacement session with `make codex` or `scripts/triptych-codex`; the launcher allocates the worktree before Codex starts. A linked worktree created by another trusted manager is already isolated and must not be nested.
+
+Isolation does not grant authority. Authorization to edit content, change structure, install PDFs, create commits, integrate results, update local `main`, push any ref, or trigger deployment remains separate; do not infer a later action from an earlier one. Workers never push, switch branches, merge, rebase, amend, use the shared stash, change Git configuration or remotes, administer worktrees, or leave background processes running after the session. Unless the task expressly authorizes a commit, leave the result uncommitted for review.
+
+Never record worktree paths, run identifiers, prompts, logs, process data, or other machine-local launcher state in tracked files or publication metadata.
+
 ## Work sequence
 
 Before editing:
@@ -41,7 +51,7 @@ Before editing:
 1. Inspect the worktree and preserve unrelated user changes.
 2. Identify the document's provider, collection, genre, rite, edition, language or locale, jurisdiction, and as-of date where applicable.
 3. Read the applicable profile completely and inspect the document's source and research records.
-4. Confirm whether the request authorizes content changes, structural moves, installed PDF changes, commits, or history rewriting; do not infer broader authority from a narrower request.
+4. Confirm whether the request authorizes content changes, structural moves, installed PDF changes, commits, integration, updating local `main`, pushing a named ref, deployment, or history rewriting; do not infer broader authority from a narrower request.
 
 During research and drafting:
 

@@ -22,15 +22,17 @@ Name the document and page or section if you can, but a high-level concern is en
 Git keeps the project’s files and history. An AI coding agent can edit, check, and rebuild them.
 
 1. Clone the repository using the address shown by its hosting site. If you already have a copy, run `git pull` to update it.
-2. Open the repository’s top-level folder in your AI agent.
+2. From the repository’s top-level folder, start Codex with `make codex` (or use `scripts/triptych-codex` when passing supported agent options). You may start several sessions; each receives an isolated task checkout automatically. Do not create, move, delete, or reuse those task directories yourself.
 3. Give the agent an ordinary request, including any sources, concerns, emphases, or limits that matter.
-4. Ask it to show the changes and verification results before committing them.
+4. Ask it to show the changes and verification results before authorizing a commit or integration. A local commit or merge does not authorize a push.
 5. Read the revised PDF as well as the line-by-line view of what changed. Submit the change for review through the hosting site when ready.
+
+Agent results remain local until deliberately integrated and pushed. Pushing any branch to the public repository exposes its tracked files and reachable history. Pushing `main` also starts the reader-site publication workflow. Do not ask an agent to push unless the remote and ref, public-exposure review, and publication consequences have been expressly approved.
 
 A useful starting prompt is:
 
 ```text
-Read AGENTS.md and the applicable guidance completely. Revise [document] to [describe the concern or desired result]. Check the governing sources, preserve material uncertainty, update the research records, and rebuild and inspect every affected PDF. Do not commit until I have reviewed the result.
+Read AGENTS.md and the applicable guidance completely. Revise [document] to [describe the concern or desired result]. Check the governing sources, preserve material uncertainty, update the research records, and rebuild and inspect every affected PDF. Do not commit, integrate, or push until I have reviewed the result and expressly authorized that separate action.
 ```
 
 The agent should do the technical work. The contributor remains responsible for judging whether the result is faithful, clear, and worth proposing.
