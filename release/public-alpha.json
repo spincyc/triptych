@@ -4,9 +4,9 @@
   "provider": "gpt",
   "expected_counts": {
     "publications": 25,
-    "release": 24,
+    "release": 25,
     "review": 0,
-    "hold": 1
+    "hold": 0
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
@@ -27,7 +27,7 @@
         "worldwide"
       ],
       "rights_record": "release/rights/public-alpha-2026-07-15.md",
-      "rights_record_sha256": "0d09ecc1d2d77e57b846cfbca1212fd9bc22ff10ef70bb4120349e365e3779a9",
+      "rights_record_sha256": "fdfedf72d7eada3391327eaa69483bd1879841382cbcd7594d989d96c018c08c",
       "site_sources": {
         "CONTRIBUTING.md": "65d6151c3fbb4b42d8340129abba0a8df38f073a08379281b596ed8012a0adb8",
         "LIBRARY.md": "bd5d6d9344d997ae7d5bce19e96099b8d6aa4baf814630471e96823b59110f53",
@@ -39,7 +39,7 @@
         "library/mariology.md": "99e361745bd373c378918537c841f6819c783300beff91073bdafa46fdfa3afb",
         "library/novus-ordo-liturgy.md": "2f693e090f2fa034a65c1f66e7046bf7e063bb8e91572e96cbba34f4a6b1e2f6",
         "library/prayer.md": "2a8678a9c355a789cd2a7f6bb78290d5892dd1dc33bb0f8991028df2ed023766",
-        "library/traditional-latin-mass.md": "ff084e8ebda84f2edfc97e46c058dee78d5581f3d24561871a2056051448736d",
+        "library/traditional-latin-mass.md": "038860200ebf08bf8e59a42058b7e279f2b2d3f6ba1e6bfefc873a1b7ab9a4ba",
         "release/public-alpha/404.md": "551491f5521a5624911d63b398156d2236cbed2f0aa832eeb9c97070dcea568e",
         "release/public-alpha/assets/site.css": "358d86f3587fc03f62a17cd4b5fd0126fb2dc3d952afa48eb33fc3a88fce54e9",
         "release/public-alpha/layout.html": "1add2c3f7e6faed6cde4f71b471b5d275089aa719a779f250ef761b3754bea63"
@@ -218,11 +218,12 @@
     {
       "id": "liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost",
       "catalog": "library/traditional-latin-mass.md",
-      "status": "hold",
-      "gates": [
-        "liturgical-text-permission"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "7dd86e3feee537c691433db08b1b2ddb6ae580b95e969ed21e397baa6af5b222"
+      }
     },
     {
       "id": "liturgy/roman-rite/1962/reference/assembling-the-mass",
