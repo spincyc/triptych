@@ -1,13 +1,13 @@
 # Seventh Sunday after Pentecost — Research Scope
 
-**Last updated:** 2026-07-10
+**Last updated:** 2026-07-14
 
 This record preserves research scope and evidence roles that are intentionally compressed in the reader-facing guide. Textual retrieval, checksums, facsimile locations, and the complete verified propers remain in `../propers/verified.md`.
 
 ## Scriptural and Liturgical Scope
 
 - Appointed and immediate contexts studied: Psalms 30, 33, and 46; Daniel 3:24–45; Matthew 7:13–27; and Romans 6.
-- Closely related historical and doctrinal contexts actually used: Numbers 26:9–11; 1 Samuel 16:1–13 and 21:11–22:2; 1 Chronicles 6:16–23; 2 Chronicles 20:18–19; Genesis 4:1–10; Matthew 3:13–5:2; Luke 23:46; Acts 7:59; Romans 12:1–2, 15:22–29, and 16:21–23; and Hebrews 9:23–10:18.
+- Closely related historical and doctrinal contexts actually used: Numbers 26:9–11; 1 Samuel 21:11–22:2; 1 Chronicles 6:16–23; Genesis 4:1–10; Matthew 4:12–5:2 and 7:28–29; Luke 23:46; Acts 7:59; Romans 12:1–2, 15:22–29, and 16:21–23; and Hebrews 9:23–10:18.
 - The Collect, Secret, and Postcommunion were analyzed in their complete verified Latin forms; the guide publishes only the clauses needed for its argument because it is designed for use beside a hand missal.
 
 ## Historical Coordinates of the Direct Scriptural Propers
@@ -21,25 +21,34 @@ The one-page historical orientation inventories six distinct directly appointed 
 
 Geographic equivalents are deliberately broad where ancient identification or modern borders make greater precision misleading: Corinth is in present-day Greece; Rome in Italy; Antioch is modern Antakya in Türkiye; Galilee is in northern present-day Israel; Philistine Gath belongs to the southern Levant; and the Babylonian narrative is set in present-day Iraq. These equivalents locate the texts for the reader without claiming that a narrated place is necessarily the writer's place.
 
-## Direct Reception Retained
+## Evidence Ledger: Direct Reception Retained
 
-- St. Augustine, *Expositions on the Psalms* 46, 33, and 30.
-- St. John Chrysostom, *Homilies 23–24 on Matthew* and *Homily 12 on Romans*.
-- St. Augustine, *Sermon on the Mount* II.24–25.
-- St. Jerome, *Commentary on Matthew* I at Matthew 7:15–22.
+- **Checked paraphrase — St. Augustine, *Expositions on the Psalms* 46.2–3, 33.9, 15, 17, and 30.1–4:** directly expounds the psalm verses appointed at the Introit and Alleluia, Gradual, and Communion. The guide uses his readings of hands and voice, approach and illumination, and the Mediator's petitioning voice.
+- **Checked paraphrase — St. John Chrysostom, *Homilies 23–24 on Matthew* and *Homily 12 on Romans*:** directly expounds Matthew 7:15–27 and Romans 6:19–23. The guide preserves his focus on corrupt life masked as virtue, his insistence that moral state can change, and his distinction between present holiness and the promised end.
+- **Checked paraphrase — St. Augustine, *Sermon on the Mount* II.24.78–II.25.87:** directly expounds Matthew 7:15–23, distinguishing public fruit from the hidden heart and allowing a true teaching to be received through a corrupt teacher.
+- **Checked paraphrase — St. Jerome, *Commentary on Matthew* I at Matthew 7:15–22 (Latin text, pp. 80–83):** directly expounds deceptive doctrine and corrupt life without treating the tree as an immutable human nature.
 
 These sources directly expound appointed biblical passages, not the later assembled Roman formulary.
 
-## Related Illumination Retained
+## Evidence Ledger: Related Illumination Retained
 
-- *Didache* 11 and St. Irenaeus, *Against Heresies* III.3, on testing teaching and apostolic transmission.
-- St. Thomas Aquinas, *Summa theologiae* I, q. 22, a. 4, on providence and free causes.
-- St. John Chrysostom, *Homily 20 on Romans*, on embodied sacrifice and the furnace prayer.
-- St. Irenaeus, *Against Heresies* IV.18, and St. Augustine, *City of God* X, on Abel, sacrifice, and ecclesial offering.
-- St. Augustine, *Grace and Free Will* 18–21, on grace-enabled works and reward.
-- St. Ignatius, *Ephesians* 20; St. Thomas Aquinas, *Summa theologiae* III, q. 79, a. 6; and the Ambrosian *De sacramentis* IV.6.27–28, on Eucharistic medicine, Abel, and repeated need for remission.
+- **Checked paraphrase — *Didache* 11 and St. Irenaeus, *Against Heresies* III.3.1–4:** supply distinct controls for testing conduct and teaching and for locating the doctrinal norm in public apostolic transmission.
+- **Checked paraphrase — St. Thomas Aquinas, *Summa theologiae* I, q. 22, a. 4:** clarifies that unfailing providence includes contingent causes acting contingently and free causes acting freely.
+- **Checked paraphrase — St. John Chrysostom, *Homily 20 on Romans* at Romans 12:1–2:** cites the furnace prayer while interpreting bodily members as an offering to God; this is related illumination, not direct exposition of Romans 6 or the Offertory antiphon.
+- **Checked paraphrase — St. Irenaeus, *Against Heresies* IV.18.1–6, and St. Augustine, *City of God* X.5–6, 20:** illuminate Abel's accepted gift, Christ as priest and victim, and the Church's participation in his offering.
+- **Official primary doctrinal control — St. John Paul II, [*Ecclesia de Eucharistia* 12–13](https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_20030417_eccl-de-euch.html), citing the Council of Trent, Session XXII, chapter 2:** governs the guide's account of the Secret's “one sacrifice.” The Mass sacramentally makes Christ's definitive sacrifice present without adding to or multiplying it, and Christ joins the Church's spiritual offering to his own. The faithful's self-offering is therefore neither an additional redemptive sacrifice nor a coordinate victim.
+- **Checked paraphrase — St. Augustine, *Grace and Free Will* 18–21:** distinguishes sin's wage from eternal life as grace and explains reward as the crowning of works grace enables.
+- **Checked quotation and paraphrase — St. Ignatius, *Ephesians* 20; St. Thomas Aquinas, *Summa theologiae* III, q. 79, a. 6; and the disputed-author *De sacramentis* IV.6.27–28:** Ignatius supplies the retained phrase “medicine of immortality”; the three witnesses illuminate Eucharistic medicine, continuing moral mutability, Abel's gifts, and repeated need for remission.
 
-These witnesses supply doctrine or close liturgical analogy; they are not presented as direct commentary on the Collect, Offertory, Secret, or Postcommunion.
+These witnesses supply doctrine or close liturgical analogy; except for the appointed scriptural contexts themselves, they are not presented as direct commentary on the Collect, Offertory, Secret, or Postcommunion. The source-led synthesis summarizes these controls, the detailed commentary gives their argument and qualifications, and original cross-proper analogies are confined to `The Propers: Interpretive Possibilities`.
+
+## 2026-07-14 Full Re-evaluation
+
+- The complete guide was audited against the profile's required sequence: one-page Propers map and four senses, one-page historical orientation, exactly two pages of Themes and Movement, fresh-page Detailed Commentary with substantive treatment of all ten propers, separately bounded Interpretive Possibilities, verified Notable Quotables, references, scope disclosure, generation metadata, and rights notice.
+- Every verified proper now records immediate context and liturgical function. Repetitive synthesis was removed; the Secret's decisive canonical and official doctrinal controls are named explicitly; the four proposals are genuinely exploratory; and only the two passage-specific cultural examples that passed primary-work verification remain.
+- Independent source-and-structure review corrected an ambiguous Chrysostom locus, made the `Ecclesia de Eucharistia` and Hebrews controls visible in the synthesis, and aligned the Ignatius quotation status with the reader text. Production review then removed a forced break that had stranded one table row on an otherwise blank page and restored the intended two-page synthesis.
+- The settled eleven-page PDF passed two LaTeX passes, a clean fatal/error/reference/box-warning scan, generation-metadata validation, text extraction, embedded-font inspection, and `qpdf --check`. Every rendered page was visually inspected; the installed publication was confirmed byte-identical to the reviewed build artifact.
+- No independent theological review was performed; the source, content, and layout reevaluation therefore remains **T0** under the profile's triage scale.
 
 ## Survey and Material Limits
 
@@ -50,4 +59,6 @@ These witnesses supply doctrine or close liturgical analogy; they are not presen
 
 ## Cultural Reception
 
-Exact and variant wording from Matthew 7, Romans 6, and the appointed psalms was tested across digitized literature, film, recorded music, and web indexes. Four examples survived verification: *The Night of the Hunter*, William James's *The Varieties of Religious Experience*, Terry Pratchett's *Witches Abroad*, and the Beatles' “Revolution 9.” Coincidental phrases and unsupported quotation-aggregate leads were discarded.
+Exact and variant wording from Matthew 7, Romans 6, and the appointed psalms was tested across digitized literature, film, recorded music, and web indexes. Two examples survived the primary-work gate. *The Night of the Hunter* was checked in the opening sequence at 2:27–3:16 and against James Agee's shooting script, pp. 1–2. William James's adaptation was checked in *The Varieties of Religious Experience*, Lecture I, printed p. 20, using the 1902 Longmans scan and a searchable transcription of the 1917 edition.
+
+Two initially plausible items were removed rather than padded into the guide. The wording and HarperTorch p. 282 locus attributed to Terry Pratchett's *Witches Abroad* were reported by Wikiquote, and the edition was identified in [Colin Smythe's official bibliography](https://colinsmythe.co.uk/terry-pratchett/discworld/discworld-novels/witches-abroad/), but the named primary edition was not directly checked. The Beatles' official track page and Francesco Brusco's [analysis of the 2009 stereo remaster](https://lnx.gatm.it/analiticaojs/index.php/analitica/article/download/157/brusco2020revolution/598), Table 1, pp. 14–15, establish sampled Vaughan Williams choral excerpts; the [CRCCM repertoire record](https://repertoire.crccm.org/display?id=61abb204fce289380f20f507) establishes that *O Clap Your Hands* sets Psalm 47, but the search did not establish that the appointed Psalm 46:2 words are themselves audible at a precise insertion. A previously cited [OpenEdition chapter](https://books.openedition.org/pur/182639) was also misattributed: it is Laurent Denave's, not Émilie Crapoulet's. Because neither discarded lead supports a published claim, neither remains in `References`.
