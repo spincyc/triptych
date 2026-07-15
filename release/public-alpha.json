@@ -1,0 +1,187 @@
+{
+  "schema_version": 1,
+  "release_id": "public-alpha",
+  "provider": "gpt",
+  "expected_counts": {
+    "publications": 24,
+    "release": 0,
+    "review": 10,
+    "hold": 14
+  },
+  "gates": {
+    "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
+    "liturgical-text-permission": "Obtain and record the permission or other distribution basis required for incorporated liturgical text.",
+    "prayer-text-permission": "Obtain and record the permission or other distribution basis required for incorporated prayer text and translations.",
+    "rubrical-adaptation-clearance": "Resolve and record the distribution basis for the close adaptation of the rubrical corpus."
+  },
+  "publications": [
+    {
+      "id": "articles/faith/council-missal-and-crisis",
+      "catalog": "library/faith.md",
+      "status": "review",
+      "gates": ["work-specific-rights-review"],
+      "approval": null
+    },
+    {
+      "id": "articles/faith/freemasonry-and-the-catholic-church",
+      "catalog": "library/faith.md",
+      "status": "review",
+      "gates": ["work-specific-rights-review"],
+      "approval": null
+    },
+    {
+      "id": "articles/faith/trustful-surrender-to-divine-providence",
+      "catalog": "library/faith.md",
+      "status": "review",
+      "gates": ["work-specific-rights-review"],
+      "approval": null
+    },
+    {
+      "id": "devotions/novenas/00-ascension-to-pentecost",
+      "catalog": "library/prayer.md",
+      "status": "hold",
+      "gates": ["liturgical-text-permission", "prayer-text-permission"],
+      "approval": null
+    },
+    {
+      "id": "devotions/novenas/00-ascension-to-pentecost-daily-prayer",
+      "catalog": "library/prayer.md",
+      "status": "hold",
+      "gates": ["liturgical-text-permission", "prayer-text-permission"],
+      "approval": null
+    },
+    {
+      "id": "devotions/novenas/10-our-lady-of-mount-carmel",
+      "catalog": "library/prayer.md",
+      "status": "hold",
+      "gates": ["liturgical-text-permission", "prayer-text-permission"],
+      "approval": null
+    },
+    {
+      "id": "devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer",
+      "catalog": "library/prayer.md",
+      "status": "hold",
+      "gates": ["liturgical-text-permission", "prayer-text-permission"],
+      "approval": null
+    },
+    {
+      "id": "liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass",
+      "catalog": "library/traditional-latin-mass.md",
+      "status": "hold",
+      "gates": ["liturgical-text-permission"],
+      "approval": null
+    },
+    {
+      "id": "liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass",
+      "catalog": "library/traditional-latin-mass.md",
+      "status": "hold",
+      "gates": ["liturgical-text-permission"],
+      "approval": null
+    },
+    {
+      "id": "liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday",
+      "catalog": "library/traditional-latin-mass.md",
+      "status": "hold",
+      "gates": ["liturgical-text-permission"],
+      "approval": null
+    },
+    {
+      "id": "liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost",
+      "catalog": "library/traditional-latin-mass.md",
+      "status": "hold",
+      "gates": ["liturgical-text-permission"],
+      "approval": null
+    },
+    {
+      "id": "liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost",
+      "catalog": "library/traditional-latin-mass.md",
+      "status": "hold",
+      "gates": ["liturgical-text-permission"],
+      "approval": null
+    },
+    {
+      "id": "liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost",
+      "catalog": "library/traditional-latin-mass.md",
+      "status": "hold",
+      "gates": ["liturgical-text-permission"],
+      "approval": null
+    },
+    {
+      "id": "liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost",
+      "catalog": "library/traditional-latin-mass.md",
+      "status": "hold",
+      "gates": ["liturgical-text-permission"],
+      "approval": null
+    },
+    {
+      "id": "liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost",
+      "catalog": "library/traditional-latin-mass.md",
+      "status": "hold",
+      "gates": ["liturgical-text-permission"],
+      "approval": null
+    },
+    {
+      "id": "liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost",
+      "catalog": "library/traditional-latin-mass.md",
+      "status": "hold",
+      "gates": ["liturgical-text-permission"],
+      "approval": null
+    },
+    {
+      "id": "liturgy/roman-rite/1962/reference/assembling-the-mass",
+      "catalog": "library/traditional-latin-mass.md",
+      "status": "hold",
+      "gates": ["rubrical-adaptation-clearance"],
+      "approval": null
+    },
+    {
+      "id": "liturgy/roman-rite/comparative/two-missals-one-sacrifice",
+      "catalog": "library/faith.md",
+      "status": "review",
+      "gates": ["work-specific-rights-review"],
+      "approval": null
+    },
+    {
+      "id": "theology/mariology/apparitions",
+      "catalog": "library/mariology.md",
+      "status": "review",
+      "gates": ["work-specific-rights-review"],
+      "approval": null
+    },
+    {
+      "id": "theology/mariology/fatima",
+      "catalog": "library/mariology.md",
+      "status": "review",
+      "gates": ["work-specific-rights-review"],
+      "approval": null
+    },
+    {
+      "id": "theology/mariology/marian-dogmas",
+      "catalog": "library/mariology.md",
+      "status": "review",
+      "gates": ["work-specific-rights-review"],
+      "approval": null
+    },
+    {
+      "id": "theology/mariology/rosary",
+      "catalog": "library/mariology.md",
+      "status": "review",
+      "gates": ["work-specific-rights-review"],
+      "approval": null
+    },
+    {
+      "id": "theology/sacraments",
+      "catalog": "library/faith.md",
+      "status": "review",
+      "gates": ["work-specific-rights-review"],
+      "approval": null
+    },
+    {
+      "id": "theology/sacraments-at-a-glance",
+      "catalog": "library/faith.md",
+      "status": "review",
+      "gates": ["work-specific-rights-review"],
+      "approval": null
+    }
+  ]
+}

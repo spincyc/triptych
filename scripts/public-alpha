@@ -1,0 +1,704 @@
+#!/usr/bin/env python3
+"""Validate and build Triptych's fail-closed public-alpha site artifact."""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import html
+from html.parser import HTMLParser
+import json
+import posixpath
+import re
+import shutil
+import sys
+from collections import Counter, defaultdict
+from datetime import date
+from pathlib import Path, PurePosixPath
+from urllib.parse import unquote, urlsplit
+
+
+ROOT = Path(__file__).resolve().parents[1]
+MANIFEST_PATH = ROOT / "release/public-alpha.json"
+TEMPLATE_ROOT = ROOT / "release/public-alpha"
+OUTPUT_ROOT = ROOT / "build/public-alpha"
+
+PAGE_MAP = {
+    "README.md": "index.html",
+    "LIBRARY.md": "library.html",
+    "CONTRIBUTING.md": "contributing.html",
+    "LICENSE": "license.html",
+    "THIRD_PARTY.md": "third-party.html",
+    "library/faith.md": "library/faith.html",
+    "library/law-and-church-discipline.md": "library/law-and-church-discipline.html",
+    "library/mariology.md": "library/mariology.html",
+    "library/novus-ordo-liturgy.md": "library/novus-ordo-liturgy.html",
+    "library/prayer.md": "library/prayer.html",
+    "library/traditional-latin-mass.md": "library/traditional-latin-mass.html",
+    "release/public-alpha/404.md": "404.html",
+}
+
+PDF_LINK_RE = re.compile(r"(?:\.\./)?doc/gpt/([^)#\s]+)\.pdf(?:#[^)]*)?")
+MARKDOWN_LINK_RE = re.compile(r"(?<!!)\[([^\]]+)\]\(([^)\n]+)\)")
+EXTERNAL_RE = re.compile(r"^[A-Za-z][A-Za-z0-9+.-]*:")
+SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
+SAFE_ID_RE = re.compile(r"^[a-z0-9][a-z0-9./-]*[a-z0-9]$")
+TEXT_SUFFIXES = {".html", ".css", ".txt", ".json"}
+
+
+class ReleaseError(RuntimeError):
+    pass
+
+
+def sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def load_manifest() -> dict:
+    try:
+        manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise ReleaseError(f"Cannot read {MANIFEST_PATH.relative_to(ROOT)}: {exc}") from exc
+    if manifest.get("schema_version") != 1:
+        raise ReleaseError("release/public-alpha.json must use schema_version 1")
+    return manifest
+
+
+def safe_relative_path(value: str, label: str) -> Path:
+    candidate = PurePosixPath(value)
+    if candidate.is_absolute() or not candidate.parts or ".." in candidate.parts:
+        raise ReleaseError(f"{label} is not a safe repository-relative path: {value!r}")
+    return ROOT.joinpath(*candidate.parts)
+
+
+def publication_map(manifest: dict) -> dict[str, dict]:
+    publications = manifest.get("publications")
+    if not isinstance(publications, list):
+        raise ReleaseError("manifest publications must be a list")
+    result: dict[str, dict] = {}
+    for number, publication in enumerate(publications, start=1):
+        if not isinstance(publication, dict):
+            raise ReleaseError(f"publication {number} must be an object")
+        publication_id = publication.get("id")
+        if not isinstance(publication_id, str) or not SAFE_ID_RE.fullmatch(publication_id):
+            raise ReleaseError(f"publication {number} has an invalid id: {publication_id!r}")
+        publication_path = PurePosixPath(publication_id)
+        if ".." in publication_path.parts or publication_path.as_posix() != publication_id:
+            raise ReleaseError(f"publication {number} has an unsafe id: {publication_id!r}")
+        if publication_id in result:
+            raise ReleaseError(f"duplicate publication id: {publication_id}")
+        result[publication_id] = publication
+    return result
+
+
+def discover_source_ids(provider: str) -> set[str]:
+    root = ROOT / "src" / provider
+    return {
+        path.parent.relative_to(root).as_posix()
+        for path in root.rglob("main.tex")
+        if path.is_file()
+    }
+
+
+def discover_pdf_ids(provider: str) -> set[str]:
+    root = ROOT / "doc" / provider
+    return {
+        path.relative_to(root).with_suffix("").as_posix()
+        for path in root.rglob("*.pdf")
+        if path.is_file()
+    }
+
+
+def catalog_occurrences() -> tuple[dict[str, list[str]], list[tuple[str, list[str]]]]:
+    occurrences: dict[str, list[str]] = defaultdict(list)
+    multi_pdf_lines: list[tuple[str, list[str]]] = []
+    for path in sorted((ROOT / "library").glob("*.md")):
+        relative = path.relative_to(ROOT).as_posix()
+        for line in path.read_text(encoding="utf-8").splitlines():
+            ids = PDF_LINK_RE.findall(line)
+            for publication_id in ids:
+                occurrences[publication_id].append(relative)
+            if len(ids) > 1:
+                multi_pdf_lines.append((relative, ids))
+    return occurrences, multi_pdf_lines
+
+
+def validate_manifest(manifest: dict) -> dict[str, dict]:
+    errors: list[str] = []
+    provider = manifest.get("provider")
+    if not isinstance(provider, str) or not re.fullmatch(r"[a-z0-9-]+", provider):
+        errors.append(f"invalid provider: {provider!r}")
+        provider = "gpt"
+    if manifest.get("release_id") != "public-alpha":
+        errors.append("manifest release_id must be 'public-alpha'")
+
+    try:
+        publications = publication_map(manifest)
+    except ReleaseError as exc:
+        raise exc
+
+    source_ids = discover_source_ids(provider)
+    pdf_ids = discover_pdf_ids(provider)
+    manifest_ids = set(publications)
+    if source_ids != manifest_ids:
+        errors.append(
+            "manifest/source mismatch: "
+            f"missing={sorted(source_ids - manifest_ids)!r}, extra={sorted(manifest_ids - source_ids)!r}"
+        )
+    if pdf_ids != manifest_ids:
+        errors.append(
+            "manifest/PDF mismatch: "
+            f"missing={sorted(pdf_ids - manifest_ids)!r}, extra={sorted(manifest_ids - pdf_ids)!r}"
+        )
+
+    gate_definitions = manifest.get("gates")
+    if not isinstance(gate_definitions, dict) or not gate_definitions:
+        errors.append("manifest gates must be a nonempty object")
+        gate_definitions = {}
+
+    counts: Counter[str] = Counter()
+    for publication_id, publication in publications.items():
+        status = publication.get("status")
+        if status not in {"hold", "review", "release"}:
+            errors.append(f"{publication_id}: invalid status {status!r}")
+            continue
+        counts[status] += 1
+
+        catalog = publication.get("catalog")
+        if not isinstance(catalog, str) or not catalog.startswith("library/") or not catalog.endswith(".md"):
+            errors.append(f"{publication_id}: invalid catalog {catalog!r}")
+        elif not (ROOT / catalog).is_file():
+            errors.append(f"{publication_id}: missing catalog {catalog}")
+
+        gates = publication.get("gates")
+        if not isinstance(gates, list) or any(not isinstance(gate, str) for gate in gates):
+            errors.append(f"{publication_id}: gates must be a list of gate ids")
+            gates = []
+        unknown_gates = sorted(set(gates) - set(gate_definitions))
+        if unknown_gates:
+            errors.append(f"{publication_id}: unknown gates {unknown_gates!r}")
+
+        approval = publication.get("approval")
+        if status in {"hold", "review"}:
+            if not gates:
+                errors.append(f"{publication_id}: {status} entries must retain at least one unresolved gate")
+            if approval is not None:
+                errors.append(f"{publication_id}: {status} entries must have null approval")
+            continue
+
+        if gates:
+            errors.append(f"{publication_id}: release entries must have no unresolved gates")
+        if not isinstance(approval, dict):
+            errors.append(f"{publication_id}: release entries require an approval object")
+            continue
+        record = approval.get("rights_record")
+        approved_on = approval.get("approved_on")
+        approved_hash = approval.get("pdf_sha256")
+        if not isinstance(record, str):
+            errors.append(f"{publication_id}: approval rights_record is required")
+        else:
+            try:
+                record_path = safe_relative_path(record, f"{publication_id} rights_record")
+                if record_path.is_symlink() or not record_path.is_file():
+                    errors.append(f"{publication_id}: rights record does not exist: {record}")
+                if record_path.is_relative_to(ROOT / "build") or record_path.is_relative_to(ROOT / "doc"):
+                    errors.append(f"{publication_id}: rights record must be a tracked input, not {record}")
+            except ReleaseError as exc:
+                errors.append(str(exc))
+        try:
+            if not isinstance(approved_on, str):
+                raise ValueError
+            parsed_date = date.fromisoformat(approved_on)
+            if parsed_date > date.today():
+                errors.append(f"{publication_id}: approved_on cannot be in the future")
+        except ValueError:
+            errors.append(f"{publication_id}: approved_on must be an ISO date")
+        if not isinstance(approved_hash, str) or not SHA256_RE.fullmatch(approved_hash):
+            errors.append(f"{publication_id}: pdf_sha256 must be a lowercase SHA-256")
+        else:
+            pdf_path = ROOT / "doc" / provider / f"{publication_id}.pdf"
+            if pdf_path.is_file() and sha256(pdf_path) != approved_hash:
+                errors.append(f"{publication_id}: installed PDF does not match its approved SHA-256")
+
+    expected = manifest.get("expected_counts")
+    if not isinstance(expected, dict):
+        errors.append("expected_counts must be an object")
+    else:
+        actual_counts = {
+            "publications": len(publications),
+            "release": counts["release"],
+            "review": counts["review"],
+            "hold": counts["hold"],
+        }
+        for key, actual in actual_counts.items():
+            if expected.get(key) != actual:
+                errors.append(f"expected_counts.{key} is {expected.get(key)!r}, discovered {actual}")
+
+    occurrences, multi_pdf_lines = catalog_occurrences()
+    for publication_id, publication in publications.items():
+        homes = occurrences.get(publication_id, [])
+        if len(homes) != 1:
+            errors.append(f"{publication_id}: expected one catalog link, found {len(homes)}")
+        elif homes[0] != publication.get("catalog"):
+            errors.append(
+                f"{publication_id}: manifest catalog {publication.get('catalog')!r} "
+                f"does not match {homes[0]!r}"
+            )
+    unowned = sorted(set(occurrences) - manifest_ids)
+    if unowned:
+        errors.append(f"catalog links PDFs absent from manifest: {unowned!r}")
+    for catalog, ids in multi_pdf_lines:
+        statuses = {publications[item]["status"] for item in ids if item in publications}
+        if len(statuses) > 1:
+            errors.append(f"{catalog}: PDFs sharing one catalog row must share a status: {ids!r}")
+
+    if errors:
+        raise ReleaseError("Public-alpha policy check failed:\n- " + "\n- ".join(errors))
+    return publications
+
+
+def included_publications(publications: dict[str, dict], preview: bool) -> dict[str, dict]:
+    statuses = {"release", "review"} if preview else {"release"}
+    return {
+        publication_id: publication
+        for publication_id, publication in publications.items()
+        if publication["status"] in statuses
+    }
+
+
+def filter_catalog(source: str, markdown_text: str, included_ids: set[str]) -> str:
+    original_ids = PDF_LINK_RE.findall(markdown_text)
+    if not original_ids:
+        return markdown_text
+
+    retained: list[str] = []
+    retained_ids: list[str] = []
+    for line in markdown_text.splitlines():
+        line_ids = PDF_LINK_RE.findall(line)
+        if line_ids and not set(line_ids).issubset(included_ids):
+            continue
+        retained.append(line)
+        retained_ids.extend(line_ids)
+    if retained_ids:
+        return "\n".join(retained) + "\n"
+
+    title = next((line for line in markdown_text.splitlines() if line.startswith("# ")), "# Library")
+    back = next(
+        (line for line in markdown_text.splitlines() if line.startswith("[Return to the Library]")),
+        "[Return to the Library](../LIBRARY.md)",
+    )
+    return (
+        f"{title}\n\n{back}\n\n"
+        '<p class="empty-shelf">No publications from this section are included in this build. '
+        "The private development library may contain works that are still awaiting release review.</p>\n"
+    )
+
+
+def source_to_output(source_relative: str, target: str, included_ids: set[str]) -> str | None:
+    target_parts = urlsplit(target)
+    if target_parts.scheme or target_parts.netloc or target.startswith("//"):
+        return target
+    if not target_parts.path:
+        return target
+
+    source_parent = PurePosixPath(source_relative).parent
+    decoded = unquote(target_parts.path)
+    resolved = PurePosixPath(posixpath.normpath((source_parent / decoded).as_posix()))
+    if resolved.is_absolute() or ".." in resolved.parts:
+        return None
+    resolved_text = resolved.as_posix()
+
+    destination = PAGE_MAP.get(resolved_text)
+    if destination is None and resolved_text.startswith("LICENSES/"):
+        license_path = ROOT.joinpath(*resolved.parts)
+        if license_path.is_file():
+            destination = resolved_text
+    if destination is None and resolved_text.startswith("doc/gpt/") and resolved_text.endswith(".pdf"):
+        publication_id = resolved_text[len("doc/gpt/") : -len(".pdf")]
+        if publication_id in included_ids:
+            destination = resolved_text
+    if destination is None:
+        return None
+
+    current_output = PurePosixPath(PAGE_MAP[source_relative])
+    start = current_output.parent.as_posix()
+    relative = posixpath.relpath(destination, start if start != "." else ".")
+    if target_parts.query:
+        relative += "?" + target_parts.query
+    if target_parts.fragment:
+        relative += "#" + target_parts.fragment
+    return relative
+
+
+def rewrite_links(source_relative: str, markdown_text: str, included_ids: set[str]) -> str:
+    output_lines: list[str] = []
+    for line in markdown_text.splitlines():
+        catalog_entry = bool(PDF_LINK_RE.search(line))
+
+        def replace(match: re.Match[str]) -> str:
+            label = match.group(1)
+            raw_target = match.group(2).strip()
+            target = raw_target.split(maxsplit=1)[0]
+            if target.startswith("#") or EXTERNAL_RE.match(target) or target.startswith("//"):
+                return match.group(0)
+            rewritten = source_to_output(source_relative, target, included_ids)
+            if rewritten is None:
+                restricted_record = re.match(r"^(?:\.\./)*(?:src|guidance)/", target) is not None
+                return "" if catalog_entry and restricted_record else label
+            return f"[{label}]({rewritten})"
+
+        rewritten_line = MARKDOWN_LINK_RE.sub(replace, line)
+        rewritten_line = re.sub(r"(?:\s*·\s*)+$", "", rewritten_line).rstrip()
+        output_lines.append(rewritten_line)
+    trailing_newline = "\n" if markdown_text.endswith("\n") else ""
+    return "\n".join(output_lines) + trailing_newline
+
+
+def page_title(markdown_text: str) -> str:
+    match = re.search(r"^#\s+(.+?)\s*$", markdown_text, flags=re.MULTILINE)
+    if not match:
+        return "Triptych"
+    title = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", match.group(1))
+    return re.sub(r"[*_`]", "", title)
+
+
+def relative_link(output_relative: str, destination: str) -> str:
+    parent = PurePosixPath(output_relative).parent.as_posix()
+    return posixpath.relpath(destination, parent if parent != "." else ".")
+
+
+def render_page(
+    source_relative: str,
+    markdown_text: str,
+    output_relative: str,
+    preview: bool,
+) -> str:
+    try:
+        import markdown  # type: ignore
+    except ImportError as exc:
+        raise ReleaseError(
+            "Python Markdown is required; install requirements-public-alpha.txt in an isolated environment"
+        ) from exc
+
+    content = markdown.markdown(
+        markdown_text,
+        extensions=["tables", "sane_lists", "toc"],
+        output_format="html5",
+    )
+    template = (TEMPLATE_ROOT / "layout.html").read_text(encoding="utf-8")
+    if preview:
+        robots = '<meta name="robots" content="noindex, nofollow, noarchive">'
+        banner = (
+            '<aside class="release-banner preview"><strong>Private review preview.</strong>'
+            " Contains works that are not cleared for public distribution. Do not share or deploy.</aside>"
+        )
+    else:
+        robots = '<meta name="robots" content="index, follow">'
+        banner = (
+            '<div class="release-banner"><strong>Public alpha.</strong>'
+            " Working studies; follow citations and verify important claims.</div>"
+        )
+    replacements = {
+        "{{TITLE}}": html.escape(page_title(markdown_text)),
+        "{{ROBOTS}}": robots,
+        "{{ASSET_PATH}}": relative_link(output_relative, "assets/site.css"),
+        "{{HOME_PATH}}": relative_link(output_relative, "index.html"),
+        "{{LIBRARY_PATH}}": relative_link(output_relative, "library.html"),
+        "{{CONTRIBUTING_PATH}}": relative_link(output_relative, "contributing.html"),
+        "{{LICENSE_PATH}}": relative_link(output_relative, "license.html"),
+        "{{THIRD_PARTY_PATH}}": relative_link(output_relative, "third-party.html"),
+        "{{MODE_BANNER}}": banner,
+        "{{CONTENT}}": content,
+    }
+    for marker, replacement in replacements.items():
+        template = template.replace(marker, replacement)
+    unresolved = re.findall(r"\{\{[A-Z_]+\}\}", template)
+    if unresolved:
+        raise ReleaseError(f"unresolved layout markers: {sorted(set(unresolved))!r}")
+    return template
+
+
+class LinkParser(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.links: list[str] = []
+        self.ids: set[str] = set()
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        values = dict(attrs)
+        if values.get("id"):
+            self.ids.add(values["id"] or "")
+        for attribute in ("href", "src"):
+            if values.get(attribute):
+                self.links.append(values[attribute] or "")
+
+
+def parsed_html(path: Path) -> LinkParser:
+    parser = LinkParser()
+    parser.feed(path.read_text(encoding="utf-8"))
+    return parser
+
+
+def verify_links(output: Path) -> list[str]:
+    errors: list[str] = []
+    parsers = {path.resolve(): parsed_html(path) for path in output.rglob("*.html")}
+    output_resolved = output.resolve()
+    for path_resolved, parser in parsers.items():
+        path = Path(path_resolved)
+        for href in parser.links:
+            parts = urlsplit(href)
+            if parts.scheme or parts.netloc or href.startswith("//"):
+                continue
+            if parts.path.startswith("/"):
+                errors.append(f"{path.relative_to(output)}: root-relative link is not portable: {href}")
+                continue
+            target = path if not parts.path else (path.parent / unquote(parts.path)).resolve()
+            try:
+                target.relative_to(output_resolved)
+            except ValueError:
+                errors.append(f"{path.relative_to(output)}: link leaves artifact: {href}")
+                continue
+            if target.is_dir():
+                target = target / "index.html"
+            if not target.is_file():
+                errors.append(f"{path.relative_to(output)}: broken local link: {href}")
+                continue
+            if parts.fragment and target.suffix == ".html":
+                target_parser = parsers.get(target.resolve())
+                if target_parser is None or unquote(parts.fragment) not in target_parser.ids:
+                    errors.append(f"{path.relative_to(output)}: missing fragment target: {href}")
+    return errors
+
+
+def write_checksums(output: Path) -> None:
+    checksum_path = output / "SHA256SUMS"
+    lines = []
+    for path in sorted(item for item in output.rglob("*") if item.is_file() and item != checksum_path):
+        lines.append(f"{sha256(path)}  {path.relative_to(output).as_posix()}")
+    checksum_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def expected_checksum_text(output: Path) -> str:
+    checksum_path = output / "SHA256SUMS"
+    lines = []
+    for path in sorted(item for item in output.rglob("*") if item.is_file() and item != checksum_path):
+        lines.append(f"{sha256(path)}  {path.relative_to(output).as_posix()}")
+    return "\n".join(lines) + "\n"
+
+
+def verify_output(
+    manifest: dict,
+    publications: dict[str, dict],
+    output: Path,
+    preview: bool,
+) -> None:
+    errors: list[str] = []
+    included = included_publications(publications, preview)
+    expected_pdf_paths = {
+        f"doc/{manifest['provider']}/{publication_id}.pdf" for publication_id in included
+    }
+    if not output.is_dir():
+        raise ReleaseError(f"artifact does not exist: {output.relative_to(ROOT)}")
+
+    actual_pdf_paths: set[str] = set()
+    for path in output.rglob("*"):
+        relative = path.relative_to(output).as_posix()
+        if path.is_symlink():
+            errors.append(f"artifact contains a symlink: {relative}")
+        elif path.is_file():
+            if path.suffix == ".pdf":
+                actual_pdf_paths.add(relative)
+            elif path.name not in {".nojekyll", "SHA256SUMS", "robots.txt"} and path.suffix not in TEXT_SUFFIXES:
+                errors.append(f"artifact contains an unexpected file type: {relative}")
+        elif not path.is_dir():
+            errors.append(f"artifact contains a special file: {relative}")
+        if any(part in {".git", "src", "guidance", "build", "__pycache__"} for part in path.relative_to(output).parts):
+            errors.append(f"artifact contains a forbidden path: {relative}")
+        if path.suffix in {".md", ".tex", ".log", ".aux"} or path.name == "retrieved.txt":
+            errors.append(f"artifact contains a forbidden source/build file: {relative}")
+
+    if actual_pdf_paths != expected_pdf_paths:
+        errors.append(
+            "artifact PDF mismatch: "
+            f"missing={sorted(expected_pdf_paths - actual_pdf_paths)!r}, "
+            f"extra={sorted(actual_pdf_paths - expected_pdf_paths)!r}"
+        )
+
+    artifact_manifest_path = output / "PUBLICATION-MANIFEST.json"
+    try:
+        artifact_manifest = json.loads(artifact_manifest_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        errors.append(f"invalid PUBLICATION-MANIFEST.json: {exc}")
+        artifact_manifest = {}
+    expected_mode = "private-preview" if preview else "public-release"
+    if artifact_manifest.get("mode") != expected_mode:
+        errors.append(f"artifact manifest mode must be {expected_mode!r}")
+    listed = artifact_manifest.get("publications", [])
+    listed_ids = {item.get("id") for item in listed if isinstance(item, dict)}
+    if listed_ids != set(included):
+        errors.append("artifact manifest publication ids do not match included PDFs")
+    for item in listed:
+        if not isinstance(item, dict) or item.get("id") not in included:
+            continue
+        publication_id = item["id"]
+        pdf_path = output / "doc" / manifest["provider"] / f"{publication_id}.pdf"
+        if pdf_path.is_file() and item.get("pdf_sha256") != sha256(pdf_path):
+            errors.append(f"{publication_id}: artifact manifest SHA-256 mismatch")
+
+    disallowed_ids = set(publications) - set(included)
+    privacy_patterns = {
+        "/home/": "home-directory path",
+        "file://": "local file URL",
+        "github_pat_": "GitHub token pattern",
+        "ghp_": "GitHub token pattern",
+        "BEGIN PRIVATE KEY": "private key marker",
+    }
+    for path in output.rglob("*"):
+        if not path.is_file() or path.suffix not in TEXT_SUFFIXES and path.name not in {"robots.txt", "SHA256SUMS"}:
+            continue
+        text = path.read_text(encoding="utf-8", errors="replace")
+        relative = path.relative_to(output).as_posix()
+        for pattern, label in privacy_patterns.items():
+            if pattern in text:
+                errors.append(f"{relative}: contains {label}")
+        if path.suffix == ".html":
+            for href in parsed_html(path).links:
+                for publication_id in disallowed_ids:
+                    if publication_id in unquote(href):
+                        errors.append(f"{relative}: links to excluded publication {publication_id}")
+
+    robots = (output / "robots.txt").read_text(encoding="utf-8", errors="replace") if (output / "robots.txt").is_file() else ""
+    if preview and "Disallow: /" not in robots:
+        errors.append("private preview robots.txt must disallow all crawling")
+    if not preview and "Disallow: /" in robots:
+        errors.append("public release robots.txt unexpectedly disallows crawling")
+
+    errors.extend(verify_links(output))
+    checksum_path = output / "SHA256SUMS"
+    if not checksum_path.is_file():
+        errors.append("artifact is missing SHA256SUMS")
+    elif checksum_path.read_text(encoding="utf-8") != expected_checksum_text(output):
+        errors.append("SHA256SUMS does not match artifact contents")
+
+    if errors:
+        raise ReleaseError("Public-alpha artifact verification failed:\n- " + "\n- ".join(errors))
+
+
+def build_site(manifest: dict, publications: dict[str, dict], preview: bool) -> Path:
+    included = included_publications(publications, preview)
+    output = OUTPUT_ROOT / ("preview" if preview else "site")
+    output_root_resolved = OUTPUT_ROOT.resolve()
+    try:
+        output.resolve().relative_to(output_root_resolved)
+    except ValueError as exc:
+        raise ReleaseError(f"refusing unsafe output path: {output}") from exc
+    if output.exists():
+        shutil.rmtree(output)
+    output.mkdir(parents=True)
+
+    css_destination = output / "assets/site.css"
+    css_destination.parent.mkdir(parents=True)
+    shutil.copyfile(TEMPLATE_ROOT / "assets/site.css", css_destination)
+
+    for license_path in sorted((ROOT / "LICENSES").glob("*.txt")):
+        destination = output / "LICENSES" / license_path.name
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(license_path, destination)
+
+    for publication_id in sorted(included):
+        source = ROOT / "doc" / manifest["provider"] / f"{publication_id}.pdf"
+        destination = output / "doc" / manifest["provider"] / f"{publication_id}.pdf"
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(source, destination)
+
+    included_ids = set(included)
+    for source_relative, output_relative in PAGE_MAP.items():
+        source = ROOT / source_relative
+        markdown_text = source.read_text(encoding="utf-8")
+        if source_relative.startswith("library/"):
+            markdown_text = filter_catalog(source_relative, markdown_text, included_ids)
+        markdown_text = rewrite_links(source_relative, markdown_text, included_ids)
+        destination = output / output_relative
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.write_text(
+            render_page(source_relative, markdown_text, output_relative, preview),
+            encoding="utf-8",
+        )
+
+    artifact_publications = []
+    for publication_id, publication in sorted(included.items()):
+        pdf_path = output / "doc" / manifest["provider"] / f"{publication_id}.pdf"
+        artifact_publications.append(
+            {
+                "id": publication_id,
+                "status": publication["status"],
+                "pdf": f"doc/{manifest['provider']}/{publication_id}.pdf",
+                "pdf_sha256": sha256(pdf_path),
+            }
+        )
+    artifact_manifest = {
+        "schema_version": 1,
+        "release_id": manifest["release_id"],
+        "mode": "private-preview" if preview else "public-release",
+        "history_included": False,
+        "source_included": False,
+        "publications": artifact_publications,
+    }
+    (output / "PUBLICATION-MANIFEST.json").write_text(
+        json.dumps(artifact_manifest, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+    (output / ".nojekyll").write_text("", encoding="utf-8")
+    robots = "User-agent: *\nDisallow: /\n" if preview else "User-agent: *\nAllow: /\n"
+    (output / "robots.txt").write_text(robots, encoding="utf-8")
+    write_checksums(output)
+    verify_output(manifest, publications, output, preview)
+    return output
+
+
+def print_policy_summary(publications: dict[str, dict]) -> None:
+    counts = Counter(publication["status"] for publication in publications.values())
+    print(
+        "public-alpha policy valid: "
+        f"{len(publications)} publications "
+        f"({counts['release']} release, {counts['review']} review, {counts['hold']} hold)"
+    )
+    if counts["release"] == 0:
+        print("public build is fail-closed: no PDFs are currently cleared for distribution")
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("command", choices=("check", "build", "verify"))
+    parser.add_argument(
+        "--preview",
+        action="store_true",
+        help="use the private, no-index review preview (includes status=review)",
+    )
+    args = parser.parse_args()
+    try:
+        manifest = load_manifest()
+        publications = validate_manifest(manifest)
+        if args.command == "check":
+            if args.preview:
+                raise ReleaseError("--preview is not meaningful with check")
+            print_policy_summary(publications)
+        elif args.command == "build":
+            output = build_site(manifest, publications, args.preview)
+            print(f"built and verified {output.relative_to(ROOT)}")
+        else:
+            output = OUTPUT_ROOT / ("preview" if args.preview else "site")
+            verify_output(manifest, publications, output, args.preview)
+            print(f"verified {output.relative_to(ROOT)}")
+    except ReleaseError as exc:
+        print(str(exc), file=sys.stderr)
+        return 1
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
