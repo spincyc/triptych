@@ -1,0 +1,93 @@
+# Eighth Sunday after Pentecost — Research Scope
+
+**Last updated:** 2026-07-15
+
+This record preserves research scope, disagreements, source roles, and negative results that are intentionally compressed in the reader-facing guide. Text retrieval, checksums, facsimile locations, and the complete verified propers remain in *../propers/verified.md*.
+
+## Scriptural and Liturgical Scope
+
+- Appointed and immediate contexts studied: Psalms 17, 30, 33, 47, and 70; Luke 15:1–16:31; and Romans 8:1–24.
+- Closely related contexts actually used: 1 Samuel 21:11–22:2; Luke 9:51 and 19:1–10; Romans 9:4; John 6; and 1 Corinthians 11:27–29.
+- The Collect, Secret, and Postcommunion were analyzed in their complete verified Latin forms. The guide publishes only the clauses needed for analysis because it is intended for use beside a hand missal.
+- Seven distinct directly appointed biblical passages are inventoried in Catholic canonical order: Psalm 17:28, 32 (Offertory); Psalm 30:3 (Gradual); Psalm 33:9 (Communion); Psalm 47:2, 10–11 (Introit and Alleluia); Psalm 70:1 (Gradual); Luke 16:1–9 (Gospel); and Romans 8:12–17 (Epistle). Composed orations and their biblical resonances were not mislabeled as direct quotations.
+
+## Historical Coordinates of the Direct Scriptural Propers
+
+Psalm numbering follows the Vulgate and missal; the corresponding modern Hebrew-based numbers are 18, 31, 34, 48, and 71.
+
+- **Psalms 17 and 30:** the traditional metadata follows their Davidic superscriptions and places them broadly in the united-monarchy horizon, about 1000 BC. Psalm 17 associates its thanksgiving with deliverance from Saul and other enemies; Psalm 30 names no event or writing site. Modern historical study cannot securely identify either composition's author, exact date, or place.
+- **Psalm 33:** the traditional title associates David's composition with his feigned madness before Achish at Gath and flight toward Adullam, before his kingship, about 1010 BC. The wording “Abimelech” in the psalm title and “Achish” in 1 Samuel is an inherited identification problem, not a basis for a more exact writing site. Modern authorship, date, and place remain uncertain.
+- **Psalm 47:** the superscription assigns the Zion hymn to the sons of Korah, traditionally associated with sanctuary service. Jerusalem is a traditional cultic association rather than a recovered writing desk. The modern NABRE classifies it as a Zion hymn but does not supply a secure author, composition place, or date, so the table leaves the date unknown.
+- **Psalm 70:** the Greek/Vulgate title joins David, the sons of Jonadab, and the first captives and therefore does not yield one uncomplicated biography. The Hebrew Psalm 71 has no superscription; its old-age speaker, author, date, and place cannot be securely identified, so the table leaves the date unknown and retains the inherited title's composite character. Exile remains a thematic or reception horizon rather than a proven composition site.
+- **Luke:** ancient tradition identifies St. Luke, the Antiochene physician and companion of Paul, and places the Gospel's composition in Achaia around AD 60. Modern Catholic orientation commonly dates the final Gospel about AD 80–90, regards its exact city as unknown, and infers a predominantly Gentile Christian audience outside Palestine. The narrated-event row is separate: Luke's travel narrative begins at 9:51, but Luke 16 names no town; Jesus speaks to disciples during the final journey toward Jerusalem, traditionally placed about AD 29. The Pharisees' love of money at 16:14–15 and the rich man and Lazarus at 16:19–31 are unappointed canonical context used to test the guide's account of mammon, poverty, and final judgment.
+- **Romans:** tradition and modern scholarship identify St. Paul as author, writing from Corinth about AD 56–58 to mixed Jewish and Gentile house churches at Rome. He was completing his eastern mission, preparing to take the collection to Jerusalem, and planning travel through Rome toward Spain; later arrest would carry him west as a prisoner. The missal cites Romans 8:12–17 but stops after *coheredes autem Christi*, within verse 17 under modern division. The second half of verse 17, *si tamen compatimur, ut et conglorificemur*, is adjacent canonical context; verse 18 begins *Existimo enim*. The Holy See's *Nova Vulgata* was used only to control that biblical division, while the 1962 facsimile remains the liturgical-text witness.
+
+The reader-facing table reports traditional metadata under its neutral Location and Date fields, then distinguishes modern judgment in the explanatory row. Writer location, first audience, and narrated event were not collapsed.
+
+## Direct Patristic and Medieval Reception Checked
+
+### Romans 8:12–17
+
+- **St. John Chrysostom, Homily 14 on Romans — checked paraphrase.** The homily directly treats Romans 8:12–17 in its complete biblical form. Its treatment of the real present and eschatological force of “you shall die,” evil deeds rather than bodily substance, continuing Spirit-led life, adoption, witness, and inheritance illuminates the appointed text. Its treatment of suffering with Christ belongs to unappointed verse 17b. Supersessionist comparisons were not imported; Romans 9:4 prevents the guide from treating Christian adoption as a denial of Israel's.
+- **St. Augustine, Sermon 156 §§6–15 — checked paraphrase from Latin.** The sermon is explicitly on Romans 8:12–17 and ends at the missal's exact boundary after *coheredes autem Christi*. It affirms bodily creation's goodness, locates evil in life according to the flesh, presents grace as enabling real human action rather than passivity, and at §14 lets punitive fear serve until charity matures beyond servile domination. No public English version was used.
+- **St. Thomas Aquinas, Commentary on Romans VIII, lect. 3, nos. 634–651 — checked paraphrase.** Nos. 634–649 directly treat the appointed material: nos. 638–643 distinguish worldly, servile, initial, and filial or chaste fear; nos. 646–649 identify God as the heirs' inheritance. Nos. 650–651 treat unappointed verse 17b and join suffering with Christ to glorification. This is medieval doctrinal exegesis, not patristic testimony.
+
+### Luke 16:1–9
+
+- **St. Cyril of Alexandria, Commentary on Luke, Sermon 108 — checked paraphrase.** Cyril frames the “children of light” as those illumined by Christ for upright works, generosity, mercy, and charity; he then cautions against forcing every story detail into allegory, treats temporal possessions as God's entrusted goods for the poor, and emphasizes death, accounting, and mercy. Adjacent Sermon 109 on verses 10–13 supplies the fidelity and one-master guardrail.
+- **St. Augustine, Sermon 113 §§1–4 — checked paraphrase.** New Advent numbers this as Sermon 63 on the New Testament. Augustine connects eternal dwellings with service to Christ in the needy, explicitly rejects theft or usury followed by almsgiving, requires amendment and Zacchaeus-like restitution for ill-gotten wealth, and refuses any attempt to bribe the Judge. He also preserves a broader reading in which even honestly acquired worldly wealth is called mammon of iniquity when iniquity mistakes it for true riches; his Punic/Hebrew etymology was not used as modern philology.
+- **St. Augustine, Exposition on Psalm 49 §12 — checked paraphrase.** Augustine invokes the steward's foresight in relation to almsgiving and eternal provision. This use is controlled by Sermon 113 and does not license fraud.
+- **St. Jerome, Letter 127.10 — checked paraphrase.** Jerome succinctly distinguishes the steward's prudent foresight, which is commended, from his fraud, which is not.
+
+The responsible common conclusion is limited: Christ commends urgency, foresight, and an eternal use of entrusted goods under judgment, not squandering, fraud, theft, usury, bribery of God, or attempted purchase of salvation. “Mammon of iniquity” was not reduced to neutral or merely transient wealth: the USCCB note records the word's relation to trust, wealth's tendency toward dishonesty, and mammon's personification as a rival master. Its modern alternative in which the steward relinquishes his own usurious commission remains a disputed reconstruction rather than fact.
+
+### Appointed Psalms
+
+All appointed psalm verses received direct Augustinian exegesis. Exact Latin loci were checked because the abridged NPNF/New Advent display sometimes renumbers or omits sections:
+
+- Psalm 17:28, 32: *Expositions on the Psalms* 17 §§28, 32 — humility as confessed dependence, pride as self-established righteousness, and God himself as the sons' inheritance.
+- Psalm 30:3: *Expositions* 30 I §3 and II, sermon 1 §§7–8 — the humbled Mediator's voice, divine condescension, and God as the only secure refuge and healer.
+- Psalm 33:9: *Expositions* 33, sermon 2 §§12–13 — direct Eucharistic reading of “taste and see” and trust in the Lord rather than self.
+- Psalm 47:2, 10–11: *Expositions* 47 §§2, 8, 10 — Christ and the Church as city and mountain, mercy received unto worthy living, and praise reaching the earth's ends through good life.
+- Psalm 70:1: *Expositions* 70, sermon 1 §3 — hope transferred from self to Christ so that shame need not be eternal.
+
+Material textual cautions are retained. Augustine reads “in the midst of your people” at Psalm 47:10 rather than the missal's “in the midst of your temple,” so his treatment supports a mercy-and-worthy-life point but not an exposition of the Temple noun. At Psalm 30:3 he reads “house of refuge” rather than the Gradual's “place of refuge.” New Advent headings use modern psalm numbers while inline labels often follow the older numbering. Its displayed sections for Psalm 33:9 and Psalm 47:11 do not match the fuller Latin divisions. Anti-Jewish or supersessionist rhetoric in some expositions was excluded from the guide's positive use.
+
+## Doctrinal Illumination Checked
+
+- **St. Thomas Aquinas, Summa theologiae I–II, q. 109, aa. 1–2, 9 — checked paraphrase.** Every creature depends upon divine motion; fallen humanity also needs healing and elevating grace for the supernatural good and perseverance. This illuminates the Collect but is not presented as direct commentary upon it, and it does not deny real natural goods or agency.
+- **St. Irenaeus, Against Heresies IV.18.5–6 — checked paraphrase.** The Church offers to God what is already his gift; God is not needy, correct outward sacrifice cannot conceal injustice within, and the offering expresses thanksgiving. The passage illuminates the Secret's “from your bounty” and its demand for sanctified conduct.
+- **St. Irenaeus, Against Heresies V.2.2–3 — checked paraphrase.** Christ's Eucharistic cup and bread nourish the flesh; bodies so nourished, though buried and dissolved, are raised by the Word to immortality and incorruption. This supplies a resurrection horizon for restoration of mind and body without claiming direct commentary on the Postcommunion or an immediate cure.
+- **St. Thomas Aquinas, Summa theologiae III, q. 79, aa. 1–3, 8 — checked paraphrase.** The Eucharist sustains, restores, increases, and delights spiritual life and orders the recipient to glory. Article 3 treats mortal sin and unworthy reception as a distinct obstacle. Article 8 asks specifically about venial sin: past venial sins do not hinder a devout reception, while venial sin in act that distracts the mind can partially impede actual spiritual refreshment without taking away increase of habitual grace or charity. This is doctrinal illumination of *sentiamus effectum*, not an assertion that involuntary distraction blocks fruit or that felt consolation measures efficacy.
+- **Catechism of the Catholic Church 1127–1129, 1385, 1391–1395, 1402–1405 — official doctrinal control.** Christ acts in the sacraments; fruitful reception concerns disposition; grave sin requires sacramental reconciliation before Communion; Communion unites with Christ, nourishes charity, preserves from sin, and pledges future glory.
+
+No source above is attributed as a direct commentator on the Collect, Secret, or Postcommunion unless it actually comments on their biblical wording.
+
+## Lexical and Cross-Proper Audit
+
+- **Lewis and Short, *A Latin Dictionary*, s.vv. *accipio*, *recipio*, and *suscipio* — checked lexical support.** *Suscepimus* and *Suscipe* are forms of the same verb *suscipio*. *Accepistis*/*Accipe*, *recipiant*, and *suscipio* are distinct prefixed compounds within the *capio* family. The earlier claim that *Suscepimus* and *recipiant* had different Latin roots was rejected.
+- **Textual observation, not etymological theology.** The guide traces changing receivers and objects across *Suscepimus*, *accepistis*, *Accipe*, *recipiant*, and *Suscipe* while keeping mercy, adoption, altered records, shelter, and offering morally and grammatically distinct. *Gustate* and *sentiamus* continue the ritual movement of reception but are not members of the *capio* family.
+- **The *reddere* bridge.** Romans' *testimonium reddit* and Luke's *redde rationem* use the same verb with different subjects and objects: the Spirit renders witness to filial truth, while the steward must render an account. This exact observation supports a restrained truth-and-accountability synthesis; any “altered ledger versus embodied writing” development remains explicitly exploratory.
+
+## Corpora, Languages, and Cultural Search
+
+- Biblical and historical orientation used the 1962 missal witnesses, the Vulgate-numbered psalms, the Holy See's *Nova Vulgata* for the Romans verse division, the NABRE texts, notes, and introductions, and traditional Catholic Encyclopedia entries. Latin, English, and one historical English hand-missal witness were checked.
+- Patristic research searched English translations and Latin texts by exact passage and incipit across New Advent, Augustinus.it, Tertullian.org, Aquinas.cc, and identified editions or standard loci. Greek and Syriac originals and subscription databases were not surveyed comprehensively.
+- Cultural searches tested distinctive English and Latin wording from “taste and see,” “mammon of iniquity,” “unjust steward,” “render an account of thy stewardship,” “debtors, not to the flesh,” and “eternal tabernacles” across literature, film, music, quotation indexes, and general web results. Results were overwhelmingly biblical quotation, sermons, liturgical music, or undifferentiated devotional use. No varied, precisely located cultural reception strong enough for a compact Notable Quotables entry was verified, so the section is omitted.
+
+## Rejected or Bounded Leads
+
+- The Internet Archive OCR is a finding aid only. Its repeat Introit incipit, page-header interruption, and recognition errors were not silently imported.
+- Dom Gaspar Lefebvre's 1925 hand missal was checked at printed pages 1081–1084 (facsimile PDF pages 1115–1118; downloaded-file SHA-256 `28c9046c5acfa19297ab9aeaa14ac4f8d8fcffab1307b51215b94fa4ca6172a2`) but is not an edition-control witness. Its pre-1962 rank, commemorations, spellings, and erroneous Communion citation “Ps. xxxiii–xxxix.” were excluded.
+- The theory that the steward merely surrendered his own commission remains a modern alternative, not a demonstrated historical circumstance or patristic consensus.
+- “Friends” in Luke 16 were not treated as autonomous saviors; God remains Judge and giver, and mercy is neither a commercial purchase of heaven nor a substitute for repentance.
+- The “children of light” rebuke was not softened: it confronts disciples with worldly resolve while the surrounding fidelity sayings prohibit adopting the steward's injustice.
+- “Mammon of iniquity” was neither equated automatically with stolen property nor neutralized as harmless matter. Augustine's two readings, the modern lexical note, Luke 16:13's rival-master image, and the rich man and Lazarus were retained as distinct controls.
+- Romans 8:17b was used only as adjacent canonical context. No suffering-with-Christ clause was inserted into the missal's appointed text, and suffering was not treated as earning adoption or as a good in itself.
+- Thomas's article 8 was not generalized from actual venial sin to ordinary involuntary distraction, and its habitual-fruit distinction was not extended to unworthy reception in grave sin.
+- Similar vocabulary across propers does not prove common human authorship or historical compositional design. Original cross-proper models are confined to the guide's globally labeled Interpretive Possibilities.
+- No universal search of manuscripts, untranslated patristic corpora, homiletic collections, subscription scholarship, music, film, or literature is claimed.
+
+## Rights and Attribution
+
+The complete Latin proper record is a focused edition-identified research transcription checked against the public facsimile. The PDF uses brief incipits and clauses rather than reproducing a modern hand-missal translation. Public-domain patristic translations and Latin texts were paraphrased except where a very brief phrase was analytically necessary; every use is attributed by work and locus. Modern biblical notes and doctrinal sources are summarized, not reproduced. No uncertain quotation or cultural attribution was promoted into the publication.

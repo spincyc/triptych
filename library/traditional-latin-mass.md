@@ -13,7 +13,7 @@ These studies concern the liturgical books and calendar in force in 1962. They a
 
 These guides place the appointed prayers, readings, and chants of a Mass in their scriptural, historical, patristic, sacramental, and theological setting.
 
-They have recorded AI-generation histories, facsimile-checked source texts, internal source audits, and production checks, but no independent theological review. Their [profile](../guidance/liturgy/roman-1962-propers.md#guide-status-and-canonical-sunday-order) records this as G3 / S2 / T0 / Q3; the codes do not apply outside this series.
+They have recorded AI-generation histories, facsimile-checked source texts, internal source audits, and production checks, but no independent theological review. Their [profile](../guidance/liturgy/roman-1962-propers.md#guide-status-and-canonical-sunday-order) records the current set as G3 / S2 / T0 / Q3; the codes do not apply outside this series.
 
 | ID | Guide | Supporting records |
 | --- | --- | --- |
@@ -24,4 +24,5 @@ They have recorded AI-generation histories, facsimile-checked source texts, inte
 | 19 | **[Fifth Sunday after Pentecost](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost.pdf)** | [Verified propers](../src/gpt/liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost/propers/verified.md) · [Research scope](../src/gpt/liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost/research/scope.md) |
 | 20 | **[Sixth Sunday after Pentecost](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost.pdf)** | [Verified propers](../src/gpt/liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost/propers/verified.md) · [Research scope](../src/gpt/liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost/research/scope.md) |
 | 21 | **[Seventh Sunday after Pentecost](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost.pdf)** | [Verified propers](../src/gpt/liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost/propers/verified.md) · [Research scope](../src/gpt/liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost/research/scope.md) |
+| 22 | **[Eighth Sunday after Pentecost](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.pdf)** | [Verified propers](../src/gpt/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/propers/verified.md) · [Research scope](../src/gpt/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/research/scope.md) · Public-release hold pending liturgical-text permission |
 | M01 | **[The Nuptial Mass](../doc/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass.pdf)** | [Verified propers](../src/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass/propers/verified.md) · [Research scope](../src/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass/research/scope.md) |
