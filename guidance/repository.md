@@ -160,6 +160,20 @@ Keep generation provenance, source evaluation, independent review, and productio
 
 `CONTRIBUTING.md` is the public contribution guide. It must keep a no-Git path for short, ordinary-language feedback, a clone-and-run path for contributors using an AI agent, and an experimental-branch path for testing materially different base guidance. It must make clear that feedback initiates verification rather than becoming authority, that alternative branches remain distinct from the reviewed library, and that an intentional submission is offered under the applicable outbound license without transferring ownership. Require contributors to identify third-party material and the authority under which it may be distributed.
 
+## Public release artifacts
+
+The full development repository, its history, and installed PDFs may remain private even when a selected reader-facing edition is released publicly. Do not make the development repository public merely to host that edition. Build a public edition as a generated, history-free artifact under ignored `build/`, copying only the material authorized by an exhaustive release manifest.
+
+`release/public-alpha.json` governs the first public edition and must account for every discovered `src/gpt/**/main.tex` document and mirrored `doc/gpt/**/*.pdf`. Its statuses are fail-closed:
+
+- `hold` excludes a work from both public builds and private review previews;
+- `review` permits a work only in the clearly marked, no-index private preview; and
+- `release` requires a work-specific rights record, an approval date, no unresolved release gate, and the exact SHA-256 of the approved installed PDF.
+
+The public site generator renders the canonical reader-facing Markdown rather than maintaining a second editable catalog, but filters publication entries by the manifest. It may copy rendered HTML, site styling, license notices, and approved PDFs. It must not copy authoring Markdown, TeX, research or retrieval records, build intermediates, repository metadata, or prior Git history unless a later release policy explicitly reviews and authorizes a category. A private preview may additionally contain `review` PDFs, but it must be marked `noindex, nofollow`, remain local or access-controlled, and never be deployed as the public site.
+
+Before publishing, verify the generated artifact independently against the manifest: its PDF set must be exact, local links and fragments must resolve, excluded publication identifiers and machine-private paths must be absent, and recorded checksums must match. Publish only the verified public artifact to a fresh repository or Pages artifact. Never deploy from the development repository root, a development branch, or the private-preview output.
+
 ## Version-control hygiene
 
 Track `src/` and `doc/`; ignore `build/`. Preserve unrelated worktree changes and never treat an untracked source record as disposable merely because it can be regenerated. Stage only the files belonging to the coherent change being committed.

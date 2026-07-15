@@ -1,4 +1,5 @@
 PDFLATEX ?= pdflatex
+PYTHON ?= python3
 PROVIDER ?= gpt
 
 SOURCE_ROOT := src/$(PROVIDER)
@@ -10,6 +11,7 @@ DOCUMENTS := $(patsubst $(SOURCE_ROOT)/%/main.tex,%,$(MAIN_SOURCES))
 BUILD_PDFS := $(addprefix $(BUILD_ROOT)/,$(addsuffix .pdf,$(DOCUMENTS)))
 DOC_PDFS := $(addprefix $(DOC_ROOT)/,$(addsuffix .pdf,$(DOCUMENTS)))
 METADATA_CHECKER := scripts/check-generation-metadata
+PUBLIC_ALPHA_TOOL := scripts/public-alpha
 
 COMMON_SOURCES := $(shell find $(SOURCE_ROOT)/common -type f | sort)
 SACRAMENT_ROOT := $(SOURCE_ROOT)/theology/sacraments
@@ -26,7 +28,8 @@ CARMEL_NOVENA_ROOT := $(NOVENA_ROOT)/10-our-lady-of-mount-carmel
 FIRST_NOVENA_PRAYERS := $(wildcard $(FIRST_NOVENA_ROOT)/prayers/*.tex)
 CARMEL_NOVENA_PRAYERS := $(wildcard $(CARMEL_NOVENA_ROOT)/prayers/*.tex)
 
-.PHONY: all pdf install list help clean distclean check-tools check-metadata
+.PHONY: all pdf install list help clean distclean check-tools check-metadata \
+	check-public-alpha public-site public-preview verify-public-site verify-public-preview
 .DELETE_ON_ERROR:
 
 all: pdf
@@ -51,10 +54,30 @@ help:
 		'make install  Publish built PDFs into the mirrored tracked doc/ tree' \
 		'make list     List discovered document IDs' \
 		'make check-metadata  Validate structured and inherited AI provenance' \
+		'make check-public-alpha  Validate the exhaustive public-release policy' \
+		'make public-preview  Build a private no-index preview with review candidates' \
+		'make public-site  Build the fail-closed, history-free public artifact' \
+		'make verify-public-preview  Recheck the existing private preview artifact' \
+		'make verify-public-site  Recheck the existing public artifact' \
 		'make clean    Remove transient build artifacts only'
 
 check-metadata: check-tools
 	@$(METADATA_CHECKER) --provider $(PROVIDER)
+
+check-public-alpha:
+	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) check
+
+public-preview:
+	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) build --preview
+
+public-site:
+	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) build
+
+verify-public-preview:
+	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) verify --preview
+
+verify-public-site:
+	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) verify
 
 # Register every file owned by a document leaf as a dependency without requiring
 # a flat manifest. Cross-document shared fragments are declared separately below.
