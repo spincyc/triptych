@@ -13,9 +13,10 @@ import re
 import shutil
 import sys
 from collections import Counter, defaultdict
-from datetime import date
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path, PurePosixPath
 from urllib.parse import unquote, urlsplit
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -37,13 +38,25 @@ PAGE_MAP = {
     "library/traditional-latin-mass.md": "library/traditional-latin-mass.html",
     "release/public-alpha/404.md": "404.html",
 }
+SITE_SOURCE_PATHS = set(PAGE_MAP) | {
+    "release/public-alpha/layout.html",
+    "release/public-alpha/assets/site.css",
+}
 
 PDF_LINK_RE = re.compile(r"(?:\.\./)?doc/gpt/([^)#\s]+)\.pdf(?:#[^)]*)?")
 MARKDOWN_LINK_RE = re.compile(r"(?<!!)\[([^\]]+)\]\(([^)\n]+)\)")
 EXTERNAL_RE = re.compile(r"^[A-Za-z][A-Za-z0-9+.-]*:")
 SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
 SAFE_ID_RE = re.compile(r"^[a-z0-9][a-z0-9./-]*[a-z0-9]$")
-TEXT_SUFFIXES = {".html", ".css", ".txt", ".json"}
+TEXT_SUFFIXES = {".html", ".css", ".txt", ".json", ".js"}
+SUPPORTED_CONDITIONS = {"unadvertised-public-hosting"}
+REQUIRED_AUTHORITY_SCOPE = {
+    "delegated-local-ordinary-publication-permission",
+    "third-party-text-and-link-permission",
+    "public-web-hosting-and-download",
+    "worldwide",
+}
+ROBOTS_DIRECTIVES = "noindex, nofollow, noarchive, nosnippet, noimageindex"
 
 
 class ReleaseError(RuntimeError):
@@ -63,8 +76,8 @@ def load_manifest() -> dict:
         manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as exc:
         raise ReleaseError(f"Cannot read {MANIFEST_PATH.relative_to(ROOT)}: {exc}") from exc
-    if manifest.get("schema_version") != 1:
-        raise ReleaseError("release/public-alpha.json must use schema_version 1")
+    if manifest.get("schema_version") != 2:
+        raise ReleaseError("release/public-alpha.json must use schema_version 2")
     return manifest
 
 
@@ -73,6 +86,208 @@ def safe_relative_path(value: str, label: str) -> Path:
     if candidate.is_absolute() or not candidate.parts or ".." in candidate.parts:
         raise ReleaseError(f"{label} is not a safe repository-relative path: {value!r}")
     return ROOT.joinpath(*candidate.parts)
+
+
+def parse_canonical_date(value: object, label: str) -> date:
+    if not isinstance(value, str):
+        raise ReleaseError(f"{label} must be an ISO date")
+    try:
+        parsed = date.fromisoformat(value)
+    except ValueError as exc:
+        raise ReleaseError(f"{label} must be an ISO date") from exc
+    if parsed.isoformat() != value:
+        raise ReleaseError(f"{label} must use canonical YYYY-MM-DD form")
+    return parsed
+
+
+def parse_aware_timestamp(value: object, label: str) -> datetime:
+    if not isinstance(value, str) or not re.fullmatch(
+        r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[+-]\d{2}:\d{2}", value
+    ):
+        raise ReleaseError(f"{label} must be an offset-aware ISO timestamp with seconds")
+    try:
+        parsed = datetime.fromisoformat(value)
+    except ValueError as exc:
+        raise ReleaseError(f"{label} must be an offset-aware ISO timestamp with seconds") from exc
+    if parsed.tzinfo is None or parsed.utcoffset() is None:
+        raise ReleaseError(f"{label} must include a UTC offset")
+    return parsed
+
+
+def validate_authorizations(
+    manifest: dict,
+    errors: list[str],
+    require_active_release: bool,
+    current_time: datetime | None,
+) -> dict[str, tuple[datetime, datetime | None, ZoneInfo]]:
+    raw_authorizations = manifest.get("authorizations")
+    if not isinstance(raw_authorizations, dict) or not raw_authorizations:
+        errors.append("manifest authorizations must be a nonempty object")
+        return {}
+
+    if current_time is None:
+        current_time = datetime.now(timezone.utc)
+    elif current_time.tzinfo is None or current_time.utcoffset() is None:
+        raise ReleaseError("internal current_time must be timezone-aware")
+
+    required_keys = {
+        "basis",
+        "authority_role",
+        "authority_scope",
+        "rights_record",
+        "rights_record_sha256",
+        "site_sources",
+        "approved_on",
+        "duration",
+        "effective_at",
+        "expires_at",
+        "timezone",
+        "conditions",
+    }
+    parsed_authorizations: dict[str, tuple[datetime, datetime | None, ZoneInfo]] = {}
+    for authorization_id, authorization in raw_authorizations.items():
+        label = f"authorization {authorization_id!r}"
+        if not isinstance(authorization_id, str) or not re.fullmatch(r"[a-z0-9][a-z0-9-]*", authorization_id):
+            errors.append(f"invalid authorization id: {authorization_id!r}")
+            continue
+        if not isinstance(authorization, dict):
+            errors.append(f"{label} must be an object")
+            continue
+        missing = sorted(required_keys - set(authorization))
+        extra = sorted(set(authorization) - required_keys)
+        if missing:
+            errors.append(f"{label} is missing fields {missing!r}")
+        if extra:
+            errors.append(f"{label} has unsupported fields {extra!r}")
+
+        if authorization.get("basis") != "user-attested":
+            errors.append(f"{label} basis must be 'user-attested'")
+        duration = authorization.get("duration")
+        if duration not in {"temporary", "perpetual"}:
+            errors.append(f"{label} duration must be 'temporary' or 'perpetual'")
+        role = authorization.get("authority_role")
+        if not isinstance(role, str) or not role.strip():
+            errors.append(f"{label} authority_role must be a nonempty string")
+        scope = authorization.get("authority_scope")
+        if not isinstance(scope, list) or any(not isinstance(item, str) for item in scope):
+            errors.append(f"{label} authority_scope must be a list of scope ids")
+        elif len(scope) != len(set(scope)) or set(scope) != REQUIRED_AUTHORITY_SCOPE:
+            errors.append(f"{label} authority_scope does not match the required release scope")
+        conditions = authorization.get("conditions")
+        if not isinstance(conditions, list) or any(not isinstance(item, str) for item in conditions):
+            errors.append(f"{label} conditions must be a list of condition ids")
+            conditions = []
+        elif len(conditions) != len(set(conditions)):
+            errors.append(f"{label} conditions must not contain duplicates")
+        unknown_conditions = sorted(set(conditions) - SUPPORTED_CONDITIONS)
+        if unknown_conditions:
+            errors.append(f"{label} has unsupported conditions {unknown_conditions!r}")
+        if "unadvertised-public-hosting" not in conditions:
+            errors.append(f"{label} must retain the unadvertised-public-hosting condition")
+
+        record = authorization.get("rights_record")
+        record_hash = authorization.get("rights_record_sha256")
+        if not isinstance(record, str):
+            errors.append(f"{label} rights_record is required")
+        else:
+            try:
+                record_path = safe_relative_path(record, f"{label} rights_record")
+                if not record.startswith("release/rights/"):
+                    errors.append(f"{label} rights_record must be under release/rights/")
+                if record_path.is_symlink() or not record_path.is_file():
+                    errors.append(f"{label} rights record does not exist: {record}")
+                elif not isinstance(record_hash, str) or not SHA256_RE.fullmatch(record_hash):
+                    errors.append(f"{label} rights_record_sha256 must be a lowercase SHA-256")
+                elif sha256(record_path) != record_hash:
+                    errors.append(f"{label} rights record does not match its approved SHA-256")
+            except ReleaseError as exc:
+                errors.append(str(exc))
+
+        site_sources = authorization.get("site_sources")
+        if not isinstance(site_sources, dict):
+            errors.append(f"{label} site_sources must be an object of path-to-SHA-256 entries")
+        else:
+            actual_source_paths = set(site_sources)
+            if actual_source_paths != SITE_SOURCE_PATHS:
+                errors.append(
+                    f"{label} site_sources mismatch: "
+                    f"missing={sorted(SITE_SOURCE_PATHS - actual_source_paths)!r}, "
+                    f"extra={sorted(actual_source_paths - SITE_SOURCE_PATHS)!r}"
+                )
+            for source_path_value, approved_hash in site_sources.items():
+                if not isinstance(source_path_value, str):
+                    errors.append(f"{label} site_sources contains a non-string path")
+                    continue
+                try:
+                    source_path = safe_relative_path(
+                        source_path_value, f"{label} site source"
+                    )
+                    if source_path.is_symlink() or not source_path.is_file():
+                        errors.append(
+                            f"{label} site source does not exist: {source_path_value}"
+                        )
+                    elif not isinstance(approved_hash, str) or not SHA256_RE.fullmatch(
+                        approved_hash
+                    ):
+                        errors.append(
+                            f"{label} site source {source_path_value} must have a lowercase SHA-256"
+                        )
+                    elif sha256(source_path) != approved_hash:
+                        errors.append(
+                            f"{label} site source {source_path_value} does not match its approved SHA-256"
+                        )
+                except ReleaseError as exc:
+                    errors.append(str(exc))
+
+        try:
+            approved_on = parse_canonical_date(authorization.get("approved_on"), f"{label} approved_on")
+            effective_at = parse_aware_timestamp(
+                authorization.get("effective_at"), f"{label} effective_at"
+            )
+            expires_value = authorization.get("expires_at")
+            if duration == "temporary":
+                expires_at = parse_aware_timestamp(expires_value, f"{label} expires_at")
+            elif expires_value is None:
+                expires_at = None
+            else:
+                raise ReleaseError(f"{label} perpetual authorization must have null expires_at")
+            timezone_name = authorization.get("timezone")
+            if not isinstance(timezone_name, str):
+                raise ReleaseError(f"{label} timezone must be an IANA timezone name")
+            try:
+                release_zone = ZoneInfo(timezone_name)
+            except ZoneInfoNotFoundError as exc:
+                raise ReleaseError(f"{label} timezone is not available: {timezone_name}") from exc
+            timestamps = [("effective_at", effective_at)]
+            if expires_at is not None:
+                timestamps.append(("expires_at", expires_at))
+            for timestamp_name, timestamp in timestamps:
+                localized = timestamp.astimezone(release_zone)
+                if (
+                    timestamp.utcoffset() != localized.utcoffset()
+                    or timestamp.replace(tzinfo=None) != localized.replace(tzinfo=None)
+                ):
+                    raise ReleaseError(
+                        f"{label} {timestamp_name} offset does not match {timezone_name}"
+                    )
+            if expires_at is not None and effective_at >= expires_at:
+                raise ReleaseError(f"{label} expires_at must be later than effective_at")
+            local_now = current_time.astimezone(release_zone)
+            if approved_on > local_now.date():
+                raise ReleaseError(f"{label} approved_on cannot be in the future")
+            if require_active_release and current_time < effective_at.astimezone(timezone.utc):
+                raise ReleaseError(f"{label} is not yet effective")
+            if (
+                require_active_release
+                and expires_at is not None
+                and current_time >= expires_at.astimezone(timezone.utc)
+            ):
+                raise ReleaseError(f"{label} has expired; public build and verification are disabled")
+            parsed_authorizations[authorization_id] = (effective_at, expires_at, release_zone)
+        except ReleaseError as exc:
+            errors.append(str(exc))
+
+    return parsed_authorizations
 
 
 def publication_map(manifest: dict) -> dict[str, dict]:
@@ -127,7 +342,11 @@ def catalog_occurrences() -> tuple[dict[str, list[str]], list[tuple[str, list[st
     return occurrences, multi_pdf_lines
 
 
-def validate_manifest(manifest: dict) -> dict[str, dict]:
+def validate_manifest(
+    manifest: dict,
+    require_active_release: bool = True,
+    current_time: datetime | None = None,
+) -> dict[str, dict]:
     errors: list[str] = []
     provider = manifest.get("provider")
     if not isinstance(provider, str) or not re.fullmatch(r"[a-z0-9-]+", provider):
@@ -135,6 +354,12 @@ def validate_manifest(manifest: dict) -> dict[str, dict]:
         provider = "gpt"
     if manifest.get("release_id") != "public-alpha":
         errors.append("manifest release_id must be 'public-alpha'")
+
+    validate_authorizations(manifest, errors, require_active_release, current_time)
+    raw_authorizations = manifest.get("authorizations")
+    authorization_ids = set(raw_authorizations) if isinstance(raw_authorizations, dict) else set()
+    referenced_authorizations: set[str] = set()
+    approved_snapshots: dict[str, list[tuple[str, str]]] = defaultdict(list)
 
     try:
         publications = publication_map(manifest)
@@ -195,34 +420,71 @@ def validate_manifest(manifest: dict) -> dict[str, dict]:
         if not isinstance(approval, dict):
             errors.append(f"{publication_id}: release entries require an approval object")
             continue
-        record = approval.get("rights_record")
-        approved_on = approval.get("approved_on")
-        approved_hash = approval.get("pdf_sha256")
-        if not isinstance(record, str):
-            errors.append(f"{publication_id}: approval rights_record is required")
+        if set(approval) != {"authorization", "pdf_sha256"}:
+            errors.append(
+                f"{publication_id}: release approval must contain only authorization and pdf_sha256"
+            )
+        authorization_id = approval.get("authorization")
+        if not isinstance(authorization_id, str) or authorization_id not in authorization_ids:
+            errors.append(f"{publication_id}: approval references unknown authorization {authorization_id!r}")
         else:
-            try:
-                record_path = safe_relative_path(record, f"{publication_id} rights_record")
-                if record_path.is_symlink() or not record_path.is_file():
-                    errors.append(f"{publication_id}: rights record does not exist: {record}")
-                if record_path.is_relative_to(ROOT / "build") or record_path.is_relative_to(ROOT / "doc"):
-                    errors.append(f"{publication_id}: rights record must be a tracked input, not {record}")
-            except ReleaseError as exc:
-                errors.append(str(exc))
-        try:
-            if not isinstance(approved_on, str):
-                raise ValueError
-            parsed_date = date.fromisoformat(approved_on)
-            if parsed_date > date.today():
-                errors.append(f"{publication_id}: approved_on cannot be in the future")
-        except ValueError:
-            errors.append(f"{publication_id}: approved_on must be an ISO date")
+            referenced_authorizations.add(authorization_id)
+        approved_hash = approval.get("pdf_sha256")
         if not isinstance(approved_hash, str) or not SHA256_RE.fullmatch(approved_hash):
             errors.append(f"{publication_id}: pdf_sha256 must be a lowercase SHA-256")
         else:
+            if isinstance(authorization_id, str) and authorization_id in authorization_ids:
+                approved_snapshots[authorization_id].append((publication_id, approved_hash))
             pdf_path = ROOT / "doc" / provider / f"{publication_id}.pdf"
             if pdf_path.is_file() and sha256(pdf_path) != approved_hash:
                 errors.append(f"{publication_id}: installed PDF does not match its approved SHA-256")
+
+    orphan_authorizations = sorted(authorization_ids - referenced_authorizations)
+    if orphan_authorizations:
+        errors.append(f"manifest has unreferenced authorizations: {orphan_authorizations!r}")
+    for authorization_id, snapshots in approved_snapshots.items():
+        authorization = raw_authorizations.get(authorization_id, {})
+        record = authorization.get("rights_record") if isinstance(authorization, dict) else None
+        if not isinstance(record, str):
+            continue
+        try:
+            record_path = safe_relative_path(record, f"authorization {authorization_id} rights_record")
+            if not record_path.is_file():
+                continue
+            record_text = record_path.read_text(encoding="utf-8")
+            snapshot_section = re.search(
+                r"^## Exact approved snapshots\s*$([\s\S]*?)(?=^## |\Z)",
+                record_text,
+                flags=re.MULTILINE,
+            )
+            recorded_rows = re.findall(
+                r"^\|\s*`([^`]+)`\s*\|\s*`([0-9a-f]{64})`\s*\|\s*$",
+                snapshot_section.group(1) if snapshot_section else "",
+                flags=re.MULTILINE,
+            )
+            if sorted(recorded_rows) != sorted(snapshots):
+                errors.append(
+                    f"authorization {authorization_id!r} rights record inventory "
+                    "does not exactly match its approved publications"
+                )
+            site_source_section = re.search(
+                r"^## Exact approved reader-facing site sources\s*$([\s\S]*?)(?=^## |\Z)",
+                record_text,
+                flags=re.MULTILINE,
+            )
+            recorded_site_sources = re.findall(
+                r"^\|\s*`([^`]+)`\s*\|\s*`([0-9a-f]{64})`\s*\|\s*$",
+                site_source_section.group(1) if site_source_section else "",
+                flags=re.MULTILINE,
+            )
+            expected_site_sources = sorted(authorization.get("site_sources", {}).items())
+            if sorted(recorded_site_sources) != expected_site_sources:
+                errors.append(
+                    f"authorization {authorization_id!r} rights record site-source inventory "
+                    "does not exactly match its approved site sources"
+                )
+        except (OSError, ReleaseError) as exc:
+            errors.append(f"cannot verify authorization {authorization_id!r} inventory: {exc}")
 
     expected = manifest.get("expected_counts")
     if not isinstance(expected, dict):
@@ -268,6 +530,198 @@ def included_publications(publications: dict[str, dict], preview: bool) -> dict[
         for publication_id, publication in publications.items()
         if publication["status"] in statuses
     }
+
+
+def artifact_authorization(manifest: dict, included: dict[str, dict]) -> dict:
+    authorization_ids = sorted(
+        {
+            publication["approval"]["authorization"]
+            for publication in included.values()
+            if publication["status"] == "release"
+        }
+    )
+    entries = []
+    effective_candidates: list[tuple[datetime, str]] = []
+    expiry_candidates: list[tuple[datetime, str, str]] = []
+    conditions: set[str] = set()
+    for authorization_id in authorization_ids:
+        authorization = manifest["authorizations"][authorization_id]
+        effective_at = parse_aware_timestamp(
+            authorization["effective_at"], f"authorization {authorization_id} effective_at"
+        )
+        effective_candidates.append((effective_at.astimezone(timezone.utc), authorization["effective_at"]))
+        if authorization["expires_at"] is not None:
+            expires_at = parse_aware_timestamp(
+                authorization["expires_at"], f"authorization {authorization_id} expires_at"
+            )
+            expiry_candidates.append(
+                (expires_at.astimezone(timezone.utc), authorization["expires_at"], authorization["timezone"])
+            )
+        conditions.update(authorization["conditions"])
+        entries.append(
+            {
+                "id": authorization_id,
+                "basis": authorization["basis"],
+                "duration": authorization["duration"],
+                "effective_at": authorization["effective_at"],
+                "expires_at": authorization["expires_at"],
+                "timezone": authorization["timezone"],
+                "conditions": sorted(authorization["conditions"]),
+                "site_sources": dict(sorted(authorization["site_sources"].items())),
+            }
+        )
+    latest_effective = max(effective_candidates)[1] if effective_candidates else None
+    earliest_expiry = min(expiry_candidates) if expiry_candidates else None
+    return {
+        "authorizations": entries,
+        "duration": "temporary" if earliest_expiry else "perpetual",
+        "effective_at": latest_effective,
+        "expires_at": earliest_expiry[1] if earliest_expiry else None,
+        "timezone": earliest_expiry[2] if earliest_expiry else (
+            entries[0]["timezone"] if entries else None
+        ),
+        "conditions": sorted(conditions),
+    }
+
+
+def artifact_manifest_data(
+    manifest: dict,
+    included: dict[str, dict],
+    preview: bool,
+) -> dict:
+    return {
+        "schema_version": 2,
+        "release_id": manifest["release_id"],
+        "mode": "private-preview" if preview else "public-release",
+        "history_included": False,
+        "source_included": False,
+        "authorization": artifact_authorization(manifest, included),
+        "publications": [
+            {
+                "id": publication_id,
+                "status": publication["status"],
+                "pdf": f"doc/{manifest['provider']}/{publication_id}.pdf",
+                "authorization": publication["approval"]["authorization"],
+                "pdf_sha256": publication["approval"]["pdf_sha256"],
+            }
+            for publication_id, publication in sorted(included.items())
+        ],
+    }
+
+
+def expected_artifact_files(
+    manifest: dict,
+    included: dict[str, dict],
+    preview: bool,
+    authorization: dict,
+) -> set[str]:
+    expected = set(PAGE_MAP.values())
+    expected.update(
+        f"doc/{manifest['provider']}/{publication_id}.pdf" for publication_id in included
+    )
+    expected.update(
+        f"LICENSES/{license_path.name}"
+        for license_path in (ROOT / "LICENSES").glob("*.txt")
+        if license_path.is_file()
+    )
+    expected.update(
+        {
+            ".nojekyll",
+            "assets/site.css",
+            "PUBLICATION-MANIFEST.json",
+            "robots.txt",
+            "SHA256SUMS",
+        }
+    )
+    unadvertised = "unadvertised-public-hosting" in authorization.get("conditions", [])
+    if preview or unadvertised:
+        expected.add("_headers")
+    if not preview and unadvertised:
+        expected.add("HOSTING-CONDITIONS.txt")
+        if authorization.get("expires_at"):
+            expected.add("_worker.js")
+    return expected
+
+
+def authorization_through_label(authorization: dict) -> str | None:
+    expires_at = authorization.get("expires_at")
+    timezone_name = authorization.get("timezone")
+    if not isinstance(expires_at, str) or not isinstance(timezone_name, str):
+        return None
+    cutoff = parse_aware_timestamp(expires_at, "artifact authorization expires_at")
+    last_authorized_date = (cutoff.astimezone(ZoneInfo(timezone_name)) - timedelta(seconds=1)).date()
+    return f"{last_authorized_date.strftime('%B')} {last_authorized_date.day}, {last_authorized_date.year}"
+
+
+def headers_policy_text(authorization: dict, preview: bool) -> str:
+    lines = ["/*", f"  X-Robots-Tag: {ROBOTS_DIRECTIVES}"]
+    if not preview and authorization.get("expires_at"):
+        cutoff = parse_aware_timestamp(
+            authorization["expires_at"], "artifact authorization expires_at"
+        ).astimezone(timezone.utc)
+        lines.append(
+            f"  X-Robots-Tag: unavailable_after: {cutoff.strftime('%d %b %Y %H:%M:%S GMT')}"
+        )
+    return "\n".join(lines) + "\n"
+
+
+def hosting_conditions_text(authorization: dict) -> str:
+    expires_at = authorization.get("expires_at")
+    if expires_at:
+        return (
+            "UNADVERTISED TEMPORARY PUBLIC HOSTING ONLY\n"
+            f"Authorization expires at: {expires_at} ({authorization['timezone']})\n"
+            "The host must run _worker.js before every asset request; _headers is a static-host fallback.\n"
+            "At the cutoff, remove or return 410 Gone for every artifact path and purge controlled caches.\n"
+            "The worker enforces 410 responses, but monitored project withdrawal remains required.\n"
+        )
+    return (
+        "UNADVERTISED PUBLIC HOSTING ONLY\n"
+        f"Authorization duration: perpetual, effective {authorization['effective_at']} "
+        f"({authorization['timezone']})\n"
+        "The host must honor _headers for every HTML and PDF response.\n"
+        "Do not create a sitemap, feed, announcement, public release attachment, or promotional metadata.\n"
+    )
+
+
+def worker_policy_text(authorization: dict) -> str:
+    cutoff = parse_aware_timestamp(
+        authorization["expires_at"], "artifact authorization expires_at"
+    ).astimezone(timezone.utc)
+    unavailable_after = cutoff.strftime("%d %b %Y %H:%M:%S GMT")
+    robots_header = f"{ROBOTS_DIRECTIVES}, unavailable_after: {unavailable_after}"
+    return f'''const EXPIRES_AT = {json.dumps(authorization["expires_at"])};
+const ROBOTS_HEADER = {json.dumps(robots_header)};
+
+export default {{
+  async fetch(request, env) {{
+    if (Date.now() >= Date.parse(EXPIRES_AT)) {{
+      return new Response("This temporary Triptych release is no longer available.\\n", {{
+        status: 410,
+        headers: {{
+          "Content-Type": "text/plain; charset=utf-8",
+          "Cache-Control": "no-store, max-age=0",
+          "X-Robots-Tag": ROBOTS_HEADER,
+          "Referrer-Policy": "no-referrer",
+          "X-Content-Type-Options": "nosniff"
+        }}
+      }});
+    }}
+
+    const response = await env.ASSETS.fetch(request);
+    const headers = new Headers(response.headers);
+    headers.set("Cache-Control", "no-store, max-age=0");
+    headers.set("X-Robots-Tag", ROBOTS_HEADER);
+    headers.set("Referrer-Policy", "no-referrer");
+    headers.set("X-Content-Type-Options", "nosniff");
+    return new Response(response.body, {{
+      status: response.status,
+      statusText: response.statusText,
+      headers
+    }});
+  }}
+}};
+'''
 
 
 def filter_catalog(source: str, markdown_text: str, included_ids: set[str]) -> str:
@@ -358,6 +812,48 @@ def rewrite_links(source_relative: str, markdown_text: str, included_ids: set[st
     return "\n".join(output_lines) + trailing_newline
 
 
+def remove_private_catalog_columns(markdown_text: str) -> str:
+    lines = markdown_text.splitlines()
+    output: list[str] = []
+    index = 0
+
+    def cells(line: str) -> list[str] | None:
+        stripped = line.strip()
+        if not stripped.startswith("|") or not stripped.endswith("|"):
+            return None
+        return [cell.strip() for cell in stripped[1:-1].split("|")]
+
+    while index < len(lines):
+        header = cells(lines[index])
+        separator = cells(lines[index + 1]) if index + 1 < len(lines) else None
+        is_separator = separator is not None and all(
+            re.fullmatch(r":?-{3,}:?", cell) for cell in separator
+        )
+        if header is None or not is_separator or len(header) != len(separator or []):
+            output.append(lines[index])
+            index += 1
+            continue
+        removed = {
+            number
+            for number, heading in enumerate(header)
+            if heading.casefold() == "supporting records"
+        }
+        if not removed:
+            output.append(lines[index])
+            index += 1
+            continue
+        width = len(header)
+        while index < len(lines):
+            row = cells(lines[index])
+            if row is None or len(row) != width:
+                break
+            retained = [cell for number, cell in enumerate(row) if number not in removed]
+            output.append("| " + " | ".join(retained) + " |")
+            index += 1
+    trailing_newline = "\n" if markdown_text.endswith("\n") else ""
+    return "\n".join(output) + trailing_newline
+
+
 def page_title(markdown_text: str) -> str:
     match = re.search(r"^#\s+(.+?)\s*$", markdown_text, flags=re.MULTILINE)
     if not match:
@@ -376,6 +872,7 @@ def render_page(
     markdown_text: str,
     output_relative: str,
     preview: bool,
+    authorization: dict,
 ) -> str:
     try:
         import markdown  # type: ignore
@@ -391,11 +888,29 @@ def render_page(
     )
     template = (TEMPLATE_ROOT / "layout.html").read_text(encoding="utf-8")
     if preview:
-        robots = '<meta name="robots" content="noindex, nofollow, noarchive">'
+        robots = f'<meta name="robots" content="{ROBOTS_DIRECTIVES}">'
         banner = (
-            '<aside class="release-banner preview"><strong>Private review preview.</strong>'
-            " Contains works that are not cleared for public distribution. Do not share or deploy.</aside>"
+            '<aside class="release-banner preview"><strong>Private build preview.</strong>'
+            " Do not share or deploy this preview artifact.</aside>"
         )
+    elif "unadvertised-public-hosting" in authorization.get("conditions", []):
+        robots = f'<meta name="robots" content="{ROBOTS_DIRECTIVES}">'
+        if authorization.get("expires_at"):
+            expires_at = html.escape(str(authorization["expires_at"]))
+            through = html.escape(authorization_through_label(authorization) or "the recorded cutoff")
+            robots += (
+                "\n"
+                f'  <meta name="triptych-authorization-expires" content="{expires_at}">'
+            )
+            banner = (
+                '<div class="release-banner conditional"><strong>Temporary public alpha.</strong>'
+                f" Unadvertised hosting is authorized through {through}.</div>"
+            )
+        else:
+            banner = (
+                '<div class="release-banner conditional"><strong>Unadvertised public alpha.</strong>'
+                " Working studies; follow citations and verify important claims.</div>"
+            )
     else:
         robots = '<meta name="robots" content="index, follow">'
         banner = (
@@ -420,6 +935,28 @@ def render_page(
     if unresolved:
         raise ReleaseError(f"unresolved layout markers: {sorted(set(unresolved))!r}")
     return template
+
+
+def render_source_page(
+    source_relative: str,
+    output_relative: str,
+    included_ids: set[str],
+    preview: bool,
+    authorization: dict,
+) -> str:
+    markdown_text = (ROOT / source_relative).read_text(encoding="utf-8")
+    if source_relative.startswith("library/"):
+        markdown_text = filter_catalog(source_relative, markdown_text, included_ids)
+    markdown_text = rewrite_links(source_relative, markdown_text, included_ids)
+    if source_relative.startswith("library/"):
+        markdown_text = remove_private_catalog_columns(markdown_text)
+    return render_page(
+        source_relative,
+        markdown_text,
+        output_relative,
+        preview,
+        authorization,
+    )
 
 
 class LinkParser(HTMLParser):
@@ -498,21 +1035,25 @@ def verify_output(
 ) -> None:
     errors: list[str] = []
     included = included_publications(publications, preview)
+    expected_authorization = artifact_authorization(manifest, included)
     expected_pdf_paths = {
         f"doc/{manifest['provider']}/{publication_id}.pdf" for publication_id in included
     }
     if not output.is_dir():
         raise ReleaseError(f"artifact does not exist: {output.relative_to(ROOT)}")
 
+    actual_file_paths: set[str] = set()
     actual_pdf_paths: set[str] = set()
     for path in output.rglob("*"):
         relative = path.relative_to(output).as_posix()
         if path.is_symlink():
             errors.append(f"artifact contains a symlink: {relative}")
+            actual_file_paths.add(relative)
         elif path.is_file():
+            actual_file_paths.add(relative)
             if path.suffix == ".pdf":
                 actual_pdf_paths.add(relative)
-            elif path.name not in {".nojekyll", "SHA256SUMS", "robots.txt"} and path.suffix not in TEXT_SUFFIXES:
+            elif path.name not in {".nojekyll", "SHA256SUMS", "robots.txt", "_headers"} and path.suffix not in TEXT_SUFFIXES:
                 errors.append(f"artifact contains an unexpected file type: {relative}")
         elif not path.is_dir():
             errors.append(f"artifact contains a special file: {relative}")
@@ -520,6 +1061,16 @@ def verify_output(
             errors.append(f"artifact contains a forbidden path: {relative}")
         if path.suffix in {".md", ".tex", ".log", ".aux"} or path.name == "retrieved.txt":
             errors.append(f"artifact contains a forbidden source/build file: {relative}")
+
+    expected_file_paths = expected_artifact_files(
+        manifest, included, preview, expected_authorization
+    )
+    if actual_file_paths != expected_file_paths:
+        errors.append(
+            "artifact file-set mismatch: "
+            f"missing={sorted(expected_file_paths - actual_file_paths)!r}, "
+            f"extra={sorted(actual_file_paths - expected_file_paths)!r}"
+        )
 
     if actual_pdf_paths != expected_pdf_paths:
         errors.append(
@@ -534,20 +1085,47 @@ def verify_output(
     except (OSError, json.JSONDecodeError) as exc:
         errors.append(f"invalid PUBLICATION-MANIFEST.json: {exc}")
         artifact_manifest = {}
-    expected_mode = "private-preview" if preview else "public-release"
-    if artifact_manifest.get("mode") != expected_mode:
-        errors.append(f"artifact manifest mode must be {expected_mode!r}")
-    listed = artifact_manifest.get("publications", [])
-    listed_ids = {item.get("id") for item in listed if isinstance(item, dict)}
-    if listed_ids != set(included):
-        errors.append("artifact manifest publication ids do not match included PDFs")
-    for item in listed:
-        if not isinstance(item, dict) or item.get("id") not in included:
-            continue
-        publication_id = item["id"]
+    if artifact_manifest != artifact_manifest_data(manifest, included, preview):
+        errors.append("artifact manifest does not exactly match the release policy")
+    for publication_id, publication in included.items():
         pdf_path = output / "doc" / manifest["provider"] / f"{publication_id}.pdf"
-        if pdf_path.is_file() and item.get("pdf_sha256") != sha256(pdf_path):
-            errors.append(f"{publication_id}: artifact manifest SHA-256 mismatch")
+        if pdf_path.is_file():
+            actual_hash = sha256(pdf_path)
+            approved_hash = publication["approval"]["pdf_sha256"]
+            if actual_hash != approved_hash:
+                errors.append(f"{publication_id}: artifact PDF does not match its approved SHA-256")
+
+    included_ids = set(included)
+    for source_relative, output_relative in PAGE_MAP.items():
+        html_path = output / output_relative
+        if html_path.is_file() and html_path.read_text(
+            encoding="utf-8", errors="replace"
+        ) != render_source_page(
+            source_relative,
+            output_relative,
+            included_ids,
+            preview,
+            expected_authorization,
+        ):
+            errors.append(f"{output_relative}: rendered page does not match its approved source")
+
+    static_sources = [
+        (TEMPLATE_ROOT / "assets/site.css", output / "assets/site.css"),
+        *[
+            (license_path, output / "LICENSES" / license_path.name)
+            for license_path in sorted((ROOT / "LICENSES").glob("*.txt"))
+            if license_path.is_file()
+        ],
+    ]
+    for source_path, artifact_path in static_sources:
+        if artifact_path.is_file() and sha256(artifact_path) != sha256(source_path):
+            errors.append(
+                f"{artifact_path.relative_to(output)}: static file does not match its repository source"
+            )
+
+    nojekyll_path = output / ".nojekyll"
+    if nojekyll_path.is_file() and nojekyll_path.read_bytes() != b"":
+        errors.append(".nojekyll must be empty")
 
     disallowed_ids = set(publications) - set(included)
     privacy_patterns = {
@@ -558,7 +1136,7 @@ def verify_output(
         "BEGIN PRIVATE KEY": "private key marker",
     }
     for path in output.rglob("*"):
-        if not path.is_file() or path.suffix not in TEXT_SUFFIXES and path.name not in {"robots.txt", "SHA256SUMS"}:
+        if not path.is_file() or path.suffix not in TEXT_SUFFIXES and path.name not in {"robots.txt", "SHA256SUMS", "_headers"}:
             continue
         text = path.read_text(encoding="utf-8", errors="replace")
         relative = path.relative_to(output).as_posix()
@@ -572,10 +1150,51 @@ def verify_output(
                         errors.append(f"{relative}: links to excluded publication {publication_id}")
 
     robots = (output / "robots.txt").read_text(encoding="utf-8", errors="replace") if (output / "robots.txt").is_file() else ""
-    if preview and "Disallow: /" not in robots:
-        errors.append("private preview robots.txt must disallow all crawling")
-    if not preview and "Disallow: /" in robots:
-        errors.append("public release robots.txt unexpectedly disallows crawling")
+    unadvertised = "unadvertised-public-hosting" in expected_authorization.get("conditions", [])
+    expected_robots = "User-agent: *\nDisallow: /\n" if preview else "User-agent: *\nAllow: /\n"
+    if robots != expected_robots:
+        errors.append("robots.txt does not exactly match the release mode")
+
+    headers_path = output / "_headers"
+    if preview or unadvertised:
+        if not headers_path.is_file():
+            errors.append("no-index artifact is missing _headers")
+        elif headers_path.read_text(encoding="utf-8", errors="replace") != headers_policy_text(
+            expected_authorization, preview
+        ):
+            errors.append("_headers does not exactly match the release policy")
+
+    if not preview and unadvertised:
+        worker_path = output / "_worker.js"
+        expected_expiry = expected_authorization.get("expires_at")
+        if expected_expiry:
+            if not worker_path.is_file():
+                errors.append("temporary public artifact is missing _worker.js")
+            elif worker_path.read_text(
+                encoding="utf-8", errors="replace"
+            ) != worker_policy_text(expected_authorization):
+                errors.append("_worker.js does not exactly match the release policy")
+        elif worker_path.exists():
+            errors.append("perpetual public artifact must not contain a cutoff _worker.js")
+        hosting_conditions_path = output / "HOSTING-CONDITIONS.txt"
+        if not hosting_conditions_path.is_file():
+            errors.append("unadvertised public artifact is missing HOSTING-CONDITIONS.txt")
+        elif hosting_conditions_path.read_text(
+            encoding="utf-8", errors="replace"
+        ) != hosting_conditions_text(expected_authorization):
+            errors.append("HOSTING-CONDITIONS.txt does not exactly match the release policy")
+        for html_path in output.rglob("*.html"):
+            page = html_path.read_text(encoding="utf-8", errors="replace")
+            if f'<meta name="robots" content="{ROBOTS_DIRECTIVES}">' not in page:
+                errors.append(f"{html_path.relative_to(output)}: missing unadvertised no-index metadata")
+            expiry_marker = '<meta name="triptych-authorization-expires"'
+            if expected_expiry:
+                if f'{expiry_marker} content="{expected_expiry}">' not in page:
+                    errors.append(f"{html_path.relative_to(output)}: missing authorization expiry metadata")
+            elif expiry_marker in page:
+                errors.append(f"{html_path.relative_to(output)}: has expiry metadata for perpetual authorization")
+            if '<meta name="robots" content="index, follow">' in page:
+                errors.append(f"{html_path.relative_to(output)}: public indexing is enabled")
 
     errors.extend(verify_links(output))
     checksum_path = output / "SHA256SUMS"
@@ -590,6 +1209,7 @@ def verify_output(
 
 def build_site(manifest: dict, publications: dict[str, dict], preview: bool) -> Path:
     included = included_publications(publications, preview)
+    authorization = artifact_authorization(manifest, included)
     output = OUTPUT_ROOT / ("preview" if preview else "site")
     output_root_resolved = OUTPUT_ROOT.resolve()
     try:
@@ -617,50 +1237,45 @@ def build_site(manifest: dict, publications: dict[str, dict], preview: bool) -> 
 
     included_ids = set(included)
     for source_relative, output_relative in PAGE_MAP.items():
-        source = ROOT / source_relative
-        markdown_text = source.read_text(encoding="utf-8")
-        if source_relative.startswith("library/"):
-            markdown_text = filter_catalog(source_relative, markdown_text, included_ids)
-        markdown_text = rewrite_links(source_relative, markdown_text, included_ids)
         destination = output / output_relative
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_text(
-            render_page(source_relative, markdown_text, output_relative, preview),
+            render_source_page(
+                source_relative,
+                output_relative,
+                included_ids,
+                preview,
+                authorization,
+            ),
             encoding="utf-8",
         )
 
-    artifact_publications = []
-    for publication_id, publication in sorted(included.items()):
-        pdf_path = output / "doc" / manifest["provider"] / f"{publication_id}.pdf"
-        artifact_publications.append(
-            {
-                "id": publication_id,
-                "status": publication["status"],
-                "pdf": f"doc/{manifest['provider']}/{publication_id}.pdf",
-                "pdf_sha256": sha256(pdf_path),
-            }
-        )
-    artifact_manifest = {
-        "schema_version": 1,
-        "release_id": manifest["release_id"],
-        "mode": "private-preview" if preview else "public-release",
-        "history_included": False,
-        "source_included": False,
-        "publications": artifact_publications,
-    }
+    artifact_manifest = artifact_manifest_data(manifest, included, preview)
     (output / "PUBLICATION-MANIFEST.json").write_text(
         json.dumps(artifact_manifest, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
     (output / ".nojekyll").write_text("", encoding="utf-8")
+    unadvertised = "unadvertised-public-hosting" in authorization.get("conditions", [])
     robots = "User-agent: *\nDisallow: /\n" if preview else "User-agent: *\nAllow: /\n"
     (output / "robots.txt").write_text(robots, encoding="utf-8")
+    if preview or unadvertised:
+        (output / "_headers").write_text(
+            headers_policy_text(authorization, preview), encoding="utf-8"
+        )
+    if not preview and unadvertised:
+        if authorization.get("expires_at"):
+            (output / "_worker.js").write_text(worker_policy_text(authorization), encoding="utf-8")
+        (output / "HOSTING-CONDITIONS.txt").write_text(
+            hosting_conditions_text(authorization),
+            encoding="utf-8",
+        )
     write_checksums(output)
     verify_output(manifest, publications, output, preview)
     return output
 
 
-def print_policy_summary(publications: dict[str, dict]) -> None:
+def print_policy_summary(manifest: dict, publications: dict[str, dict]) -> None:
     counts = Counter(publication["status"] for publication in publications.values())
     print(
         "public-alpha policy valid: "
@@ -669,6 +1284,20 @@ def print_policy_summary(publications: dict[str, dict]) -> None:
     )
     if counts["release"] == 0:
         print("public build is fail-closed: no PDFs are currently cleared for distribution")
+    else:
+        authorization = artifact_authorization(manifest, included_publications(publications, False))
+        if authorization.get("expires_at"):
+            print(
+                "temporary authorization active: "
+                f"unadvertised hosting expires at {authorization['expires_at']} "
+                f"({authorization['timezone']})"
+            )
+        else:
+            print(
+                "perpetual authorization active: "
+                f"unadvertised hosting effective from {authorization['effective_at']} "
+                f"({authorization['timezone']})"
+            )
 
 
 def main() -> int:
@@ -682,11 +1311,11 @@ def main() -> int:
     args = parser.parse_args()
     try:
         manifest = load_manifest()
-        publications = validate_manifest(manifest)
+        publications = validate_manifest(manifest, require_active_release=not args.preview)
         if args.command == "check":
             if args.preview:
                 raise ReleaseError("--preview is not meaningful with check")
-            print_policy_summary(publications)
+            print_policy_summary(manifest, publications)
         elif args.command == "build":
             output = build_site(manifest, publications, args.preview)
             print(f"built and verified {output.relative_to(ROOT)}")
