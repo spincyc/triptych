@@ -57,24 +57,29 @@
 - Traditional Davidic dates are deliberately approximate. The psalm rows use `c.` dates and retain `exact site unrecorded`; none presents poetic setting or later liturgical use as a recovered writing address.
 - The Gospel event date follows the traditional chronology used consistently in this project: public ministry beginning c. AD 27 and this Jerusalem-journey discourse late in that ministry, c. AD 28–29. The chronology itself is disputed, so the event row names a ministry phase as well as an approximate range.
 
-## Sources used for the historical table
+## Source ledger and evidentiary roles
 
-- *New American Bible, Revised Edition* (USCCB online): introductions to Psalms, Luke, and 1 Peter; texts and notes for Psalms 7, 9, 25, and 55; Luke 15; and 1 Peter 5. Accessed 2026-07-10.
-- *Catholic Encyclopedia*: `Psalms`, `King David`, `Gospel of Saint Luke`, `Epistles of Saint Peter`, and `Chronology of the Life of Jesus Christ`. These sources witness the traditional metadata and, where noted, older critical judgments; they are not substituted for the NABRE's modern qualifications.
-- Septuagint/Vulgate superscriptions and complete chapter context were checked through New Advent's parallel Bible pages for Psalms 7, 9/10, 25, and 55, Luke 15, and 1 Peter 5.
+### Liturgical and biblical controls
 
-## Existing reception study retained in the guide
+- *Missale Romanum*, editio typica (Vatican City: Typis Polyglottis Vaticanis, 1962), printed pp. 380–382, in the [CMAA facsimile](https://media.churchmusicassociation.org/pdf/missale62.pdf), is the governing Latin witness for the heading, rank, all ten appointed elements, references, rubrics, and formulary boundaries. It was visually collated on 2026-07-10 and re-collated on 2026-07-14. It is not used as an English-translation source.
+- Internet Archive item [`MissaleRomanum1962RomanMissalColorLatin`](https://archive.org/details/MissaleRomanum1962RomanMissalColorLatin), printed pp. 374–376, is a secondary image witness; its [OCR](https://archive.org/download/MissaleRomanum1962RomanMissalColorLatin/Missale-Romanum-1962-Roman-Missal-color-latin_djvu.txt) is only a locating aid. The raw OCR excerpt remains in `../propers/retrieved.txt`; it never governs a disputed reading. Retrieved and checked 2026-07-10; witness roles re-audited 2026-07-14.
+- Dom Gaspar Lefebvre, O.S.B., *Daily Missal with Vespers for Sundays and Feasts* (1925), printed p. 1062, in the [edition scan](https://archive.ccwatershed.org/media/pdfs/21/02/16/05-35-23_0.pdf), governs only the received historical English of the Secret. It was visually checked on 2026-07-14. Its English is neither silently corrected from the Latin nor presented as a current approved translation.
+- The *New American Bible, Revised Edition* on the USCCB site supplies modern introductions, chapter context, and critical qualifications for Psalms 7, 9, 25, and 55, Luke 15, and 1 Peter 5. It is an official Catholic Bible edition used for historical orientation and prose paraphrase, not as the source of the Missal's appointed Latin. Accessed 2026-07-10.
+- New Advent's parallel Bible pages supplied Vulgate/Septuagint superscriptions and complete contextual reading for the four psalms, Luke 15, and 1 Peter 5. These public transcriptions are contextual aids rather than critical editions. The *Catholic Encyclopedia* entries on the Psalms, David, Luke, First Peter, and the chronology of Christ's life witness older traditional metadata; they are not substituted for the NABRE's modern qualifications. Consulted 2026-07-10; roles re-audited 2026-07-14.
 
-- Direct Gospel reception: St. Cyril of Alexandria, *Commentary on Luke*, Homily 106; St. Gregory the Great, *Forty Gospel Homilies*, Homily 34; St. Ambrose, *Exposition of Luke* VII.207–212.
-- Direct or explicit reuse of appointed material: Tertullian, *On Patience* 12; St. Gregory of Nyssa, *On Virginity* 12; St. Augustine, *Confessions* VIII.3–4 and *Exposition on Psalm 54* 23.
-- Related doctrinal illumination rather than direct commentary on the Roman Secret: St. Irenaeus, *Against Heresies* IV.18.1–5; St. Cyril of Jerusalem, *Mystagogical Catechesis* 5, especially 7 and 19–21.
-- This historical-table pass did not claim an exhaustive patristic, manuscript, or subscription-database survey.
+### Reception witnesses
+
+- Direct Gospel exegesis: St. Cyril of Alexandria, *Commentary on Luke*, Homily 106, in the R. Payne Smith English translation; St. Gregory the Great, *Forty Gospel Homilies*, Homily 34, checked in David Hurst, O.S.B., trans. and ed. (Gorgias Press, 2009), pp. 280–300; and St. Ambrose, *Exposition of the Gospel of Luke* VII.207–212, checked in Latin. The guide paraphrases their arguments and does not pass a working English translation off as original-language wording.
+- Direct or explicit reuse of appointed material: Tertullian, *On Patience* 12; St. Gregory of Nyssa, *On Virginity* 12; and St. Augustine, *Confessions* VIII.3–4 and *Exposition on Psalm 54* 23. Augustine's psalm exposition directly treats the Gradual verse; the other works receive Gospel imagery or Luke's joy but do not comment on this Roman formulary.
+- Related doctrinal illumination only: St. Irenaeus, *Against Heresies* IV.18.1–5, and St. Cyril of Jerusalem, *Mystagogical Catechesis* 5, especially 7 and 19–21. Neither is evidence for the Roman Secret's authorship, local history, or exact syntax.
+- The online reception texts listed in the guide were consulted on 2026-07-10; their loci, direct-versus-related classifications, and paraphrase boundaries were re-audited on 2026-07-14. No patristic wording is presented as a verified direct quotation in the exposition.
 
 ## Cultural-reception search
 
 - Exact and allusion searches on 2026-07-10 tested the Gradual's “cast thy burden” language, 1 Peter's “casting all your care,” Luke's joy over a repentant sinner, and the lost sheep across literature, film, television, hymns, classical music, and popular song.
 - Two examples survived source verification. Felix Mendelssohn's *Elijah*, Op. 70 (1846), No. 15, sets “Cast thy burden upon the Lord” as a quartet; the [IMSLP work record](https://imslp.org/wiki/Elijah%2C_Op.70_%28Mendelssohn%2C_Felix%29) identifies the movement and the [CPDL score](https://www.cpdl.org/wiki/images/5/5d/Cast_thy_burden_upon_the_Lord_Mendelssohn.pdf) verifies the text. Morley Callaghan's *More Joy in Heaven* (Random House, 1937) places Luke 15:7 in its title and centers on an ex-convict's contested rehabilitation; the [first-edition record](https://openlibrary.org/works/OL3851049W/More_Joy_in_Heaven) and a [contemporary Kirkus review](https://www.kirkusreviews.com/book-reviews/a/morley-callaghan-2/more-joy-in-heaven/) verify the bibliographic and plot claims.
 - Elizabeth Clephane's “The Ninety and Nine” and several direct devotional settings of 1 Peter 5:7 were reviewed but omitted to keep the interlude varied and because the retained Mendelssohn setting and Callaghan novel supply stronger, differently mediated examples.
+- The two retained classifications, bibliographic locations, and supporting links were rechecked against the section standard on 2026-07-14; no additional example met a higher evidentiary threshold.
 
 ## Material limitations and unresolved questions
 
@@ -84,4 +89,4 @@
 - Luke itself supplies only the larger Jerusalem-journey frame and no town for the discourse; no narrower harmonized event location is asserted.
 - First Peter's authorship and date remain contested. The table reports Rome and AD 63–64 because the requested metadata is traditional, not because the later Petrine-circle alternative has been resolved.
 - No independent theological review is recorded. The working guide remains an aid to study rather than an official liturgical or critical edition.
-- Production review for the 2026-07-14 received-prayer correction is complete: the exact Lefebvre 1925 English Secret was incorporated into a settled 12-page build that passed clean-log, metadata, extraction, embedded-font, PDF-structure, and every-page visual checks. The installed PDF is byte-identical to the reviewed build, SHA-256 `d2eeacadde3e1f7be73780f762f332049911e260fe402cf35af957178c3baa4f`.
+- The 2026-07-14 full-document reevaluation corrected interpretive wording in the page-one map, gave the Collect its own clause-by-clause treatment, consolidated repeated patristic summaries, removed a duplicate full-text Secret display, completed the proper-reference cues, replaced a repeated exploratory proposal, and reclassified every source by evidentiary role. The settled 13-page PDF passed two-pass compilation, clean-log, metadata, extraction, embedded-font, and PDF-structure checks; every page was visually inspected at full resolution, and the installed PDF is byte-identical to that reviewed build.
