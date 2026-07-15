@@ -4,7 +4,7 @@
 
 - **Missal edition:** *Missale Romanum*, editio typica (Vatican City: Typis Polyglottis Vaticanis, 1962).
 - **Printed formulary heading:** `11. Pro sponsis`; running heading `Missa votiva pro sponsis`.
-- **Liturgical class and color:** votive Mass of II class; white (General Rubrics 121, 341–343, 378–382).
+- **Liturgical class and color:** votive Mass of II class; white (General Rubrics 121, 341–343, 378–381).
 - **Retrieval URL:** <https://archive.org/download/MissaleRomanum1962RomanMissalColorLatin/Missale-Romanum-1962-Roman-Missal-color-latin_djvu.txt>
 - **Retrieval source identifier:** Internet Archive item `MissaleRomanum1962RomanMissalColorLatin`, ARK `ark:/13960/t9n32mg8j`.
 - **Retrieval date:** 2026-07-11.
@@ -16,16 +16,33 @@
 - **Focused facsimile witness:** <https://www.ccwatershed.org/wp-content/uploads/2020/06/77723-Missa-Pro-Sponsis-1962-0CRd.pdf>
 - **Focused facsimile SHA-256:** `9e9b08c2b1a3e65971b6fa437b08829df69846fe3aab08d4cb43fb0572835dd5`.
 - **Secondary image witness:** <https://archive.org/details/MissaleRomanum1962RomanMissalColorLatin>
-- **Verification status and date:** the formulary boundary, ten core proper elements, seasonal chant alternatives, two post–Pater nuptial prayers, Communion rubric, final blessing, and final admonition were visually checked against the typical-edition facsimile on 2026-07-11 and re-collated for Latin-text integrity on 2026-07-14; the latter pass found no correction necessary. Accent marks below follow the printed facsimile.
+- **Verification status and date:** the formulary boundary, ten core proper elements, seasonal chant alternatives, two post–Pater nuptial prayers, Communion rubric, final blessing, and final admonition were visually checked against the typical-edition facsimile on 2026-07-11 and re-collated for Latin-text integrity on 2026-07-14; the latter pass found no correction necessary. General Rubrics 378–381, 482, 484–490, 493–494, 498, and 507–509 and the complete end sequence were rechecked on 2026-07-14. Accent marks below follow the printed facsimile.
 - **Unresolved discrepancies:** none in the verified transcription. `retrieved.txt` deliberately preserves OCR substitutions, broken words, false symbols, and page-column artifacts; those forms do not establish publication text. The Internet Archive scan and CMAA facsimile use different internal pagination. The Tobit proper follows the short Vulgate recension and does not align verse-for-verse with modern editions based chiefly on the long Greek recension.
 
 ## Governing Rubrics
 
-The formulary directs that the Gloria be said. General Rubrics 343 prescribes the Gloria for votive Masses of II class unless violet is used, and no Creed unless it is required by an occurring Sunday or octave. This formulary itself is prohibited on every Sunday.
+General Rubrics 121 and 341–343 establish the color and II-class votive status. The formulary expressly directs that the Gloria be said; n. 343 gives II-class votives no Creed unless an occurring Sunday or octave requires it. The following map preserves each distinct control in nn. 378–381 rather than compressing them into a Sunday-only rule:
 
-If the solemn nuptial blessing is to be given on a Sunday or day of I class, the Mass of the occurring Office is celebrated; its Collect includes the Collect of the impeded Nuptial Mass under one conclusion, and the nuptial blessing is given in the customary way. On other permitted days the following votive Mass is celebrated.
+- **n. 378 — baseline admission:** the *Pro sponsis* Mass, or at least its Collect in the impeded Mass of the day, is permitted whenever nuptials are celebrated outside closed time, and also within closed time if the Ordinary for a just cause permits the solemn nuptial blessing.
+- **n. 379 — additional prohibitions:** beyond days on which II-class votive Masses are already excluded, the *Pro sponsis* formulary is prohibited on every Sunday and whenever the blessing cannot be given under n. 381c.
+- **n. 380 — occurring Mass or transfer:** if the formulary is prohibited but the blessing allowed, the Mass of the Office is celebrated, the Nuptial Collect is added under one conclusion even where n. 343c would otherwise prevent it, and the blessing is given. If both the Mass and blessing are prohibited, Mass with blessing may be transferred after the marriage to a suitable unimpeded day.
+- **n. 381a — blessing bound to Mass:** the solemn nuptial blessing is inseparable from Mass. It may be given outside Mass only by Apostolic indult, using the *Rituale Romanum*, Tit. VIII, cap. III.
+- **n. 381b — celebrant:** the priest celebrating Mass gives the blessing even if another priest assisted at the marriage.
+- **n. 381c — presence and prior reception:** the blessing is omitted if either spouse is absent or if either or both previously received it, preserving the stated local custom where only the husband had previously received it.
+- **n. 381d — absolute exclusions:** on the Commemoration of All the Faithful Departed and throughout the Sacred Triduum, the votive Mass, its commemoration, and the nuptial blessing are all prohibited.
 
-On the Commemoration of All the Faithful Departed and during the Sacred Triduum, the votive Mass, its commemoration in the Mass of the day, and the nuptial blessing within Mass are all prohibited. When both the Mass and blessing are prohibited, the Mass with blessing may be transferred to a suitable unimpeded day after the marriage has been celebrated.
+### Governing Ritual Boundary
+
+- The pre-Mass rite is governed by *Rituale Romanum Pauli V Pontificis Maximi iussu editum aliorumque Pontificum cura recognitum atque ad normam Codicis Iuris Canonici accommodatum, SS.mi D.N. Pii Papae XII auctoritate ordinatum et auctum*, editio typica (Typis Polyglottis Vaticanis, 1952), approved by the Sacred Congregation of Rites on 25 January 1952.
+- Titulus VIII contains the marriage material: cap. I, preliminaries; cap. II, *Ritus celebrandi Matrimonii sacramentum*; cap. III, the nuptial blessing outside Mass under Apostolic indult; and cap. IV, prayers outside Mass when the blessing is not permitted. Missal n. 381a expressly refers the exceptional outside-Mass blessing to cap. III.
+- Edition identity was checked in Armando Cuva, “I nuovi libri liturgici,” *Notitiae* 21 (1985), p. 400, <https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1980/notitiae-21-%281985%29/Notitiae-228-229-1985.pdf>; the chapter structure was checked in *Notitiae* 5 (1969), p. 204, <https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/1960/notitiae-05-%281969%29/Notitiae-046-1969.pdf>; both accessed 2026-07-14.
+- This record uses the Ritual to identify the governing book and the exact handoff into Mass. It does not claim a complete facsimile collation of the 1952 Ritual or adjudicate banns, impediments, delegation, mixed marriage, local language and custom, or current authorization to use earlier books.
+
+### Preface and Complete Conclusion
+
+- The *Pro sponsis* formulary supplies no proper Preface and does not refer to another nuptial Common. General Rubrics 482, 484–490, and 493–494 require the applicable seasonal Preface; otherwise n. 498 supplies the Common Preface. A later optional Nuptial Preface is outside this edition.
+- After the celebrant receives the Precious Blood, the printed formulary directs him to communicate the spouses and continue Mass.
+- The verified end sequence is: `Ite, missa est`; the final nuptial blessing `Deus Abraham`; the serious admonition; sprinkling the spouses with holy water; `Placeat tibi`; the general blessing; and the beginning of St. John as the usual Last Gospel. General Rubrics 507–509 supply the ordinary framework around the formulary's insertions.
 
 ## 1. Introit
 
@@ -127,4 +144,5 @@ The priest is to admonish them in a serious discourse that, remaining in the fea
 - The Offertory publication text is `in manibus tuis tempora mea`. Augustine's received Latin exposition uses `sortes meæ`; the guide therefore treats him as direct reception of the Psalm's context but not as an exact lexical witness to `tempora`.
 - The two prayers after the Pater and the blessing after `Ite, missa est` are appointed parts of the 1962 Nuptial Mass and are treated as primary ritual texts, not as optional devotional additions.
 - The spouses receive Communion after the celebrant receives the Precious Blood. The rubric does not turn the Eucharist into Matrimony's matter or form.
-- The formulary supplies no proper Preface. The Common Preface is used unless the calendar requires a seasonal Preface. A later optional Nuptial Preface is outside this edition-controlled guide.
+- The formulary supplies no proper Preface. General Rubrics 484–490 and 493–494 control the seasonal Preface when applicable; otherwise nn. 482 and 498 supply the Common Preface. A later optional Nuptial Preface is outside this edition-controlled guide.
+- A proposed control citation to *Graduale Romanum* pp. 378–381 was rejected after page-level checking: in the public 1961 edition those printed pages contain the Twentieth and Twenty-first Sundays after Pentecost, not `Pro sponsis`. The relevant numbered control is *Missale Romanum*, General Rubrics 378–381. The checked Gradual witness is recorded in `research/scope.md` and is not used to establish any Nuptial Mass text.

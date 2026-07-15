@@ -1,24 +1,41 @@
 # Nuptial Mass — Research Scope
 
-**Last updated:** 2026-07-11
+**Last updated:** 2026-07-14
 
 This record preserves source roles, historical judgments, rubrical controls, and theological boundaries compressed in the reader-facing guide. Complete appointed texts, checksums, facsimile locations, and OCR differences remain in [the verified propers](../propers/verified.md).
 
 ## Scriptural and Liturgical Scope
 
-- The edition-controlled base is the 1962 *Missale Romanum*, *Missae votivae* no. 11, `Pro sponsis`, printed pages [75]–[77], together with General Rubrics 121, 341–343, and 378–382.
+- The edition-controlled Mass base is the 1962 *Missale Romanum*, *Missae votivae* no. 11, `Pro sponsis`, printed pages [75]–[77], together with General Rubrics 121, 341–343, 378–381, 482, 484–490, 493–494, 498, and 507–509.
+- The governing pre-Mass marriage book is the 1952 typical edition of the *Rituale Romanum*, Titulus VIII: cap. I contains the preliminaries, cap. II the *Ritus celebrandi Matrimonii sacramentum*, cap. III the nuptial blessing outside Mass under Apostolic indult, and cap. IV prayers outside Mass when that blessing is not permitted. Missal n. 381a expressly refers the exceptional outside-Mass blessing to cap. III.
+- The guide's exact boundary is the handoff from Ritual to Missal. It does not reproduce or adjudicate banns, impediments, delegation, mixed marriage, locale-specific consent language or customs, or present authorization to use older liturgical books. These are mutable legal and pastoral questions, not silently settled by a historical formulary guide.
 - Every appointed element was treated: Introit, Collect, Epistle, Gradual, ordinary Alleluia, post-Septuagesima Tract, Paschal double Alleluia, Gospel, Offertory, Secret, the two nuptial prayers after the Pater, Communion and its reception rubric, Postcommunion, final Abrahamic blessing, and final admonition.
 - Appointed and immediate scriptural contexts studied: Genesis 1–3, 6–9, and 12–24; Tobit 3 and 6–8 in the Vulgate and long-Greek recensions; Psalms 19, 30, 127, and 133; Matthew 19:1–12 and 22:23–33; John 2:1–11 and 19:31–37; Ephesians 5 in its immediate letter context; Revelation 19 and 21.
 - The four-stage path—Creator joins; the Bridegroom gives himself; the household opens through Sion; peace is perfected in the kingdom—is an editorial synthesis of the verified order. It is not assigned to the missal's compilers or to any single Father.
-- The formulary has no proper Preface. This guide follows the 1962 Common Preface / seasonal-preface order and excludes the optional modern Nuptial Preface.
+- The formulary has no proper Preface and no referral to another nuptial Common. General Rubrics 484–490 and 493–494 supply the seasonal Preface when applicable; otherwise nn. 482 and 498 supply the Common Preface. The optional modern Nuptial Preface is excluded.
+
+## Source Roles and Access Control
+
+| Source | Role in the guide | Exact locus | Access / verification |
+| --- | --- | --- | --- |
+| 1962 *Missale Romanum* | Direct liturgical control | *Pro sponsis* pp. [75]–[77]; General Rubrics 121, 341–343, 378–381, 482, 484–490, 493–494, 498, 507–509 | Facsimile accessed 2026-07-11; rechecked 2026-07-14 |
+| 1952 *Rituale Romanum* | Governing pre-Mass book and Missal handoff | Tit. VIII, caps. I–III; cap. III specifically in Missal n. 381a | Edition identity and chapter structure checked through official documentary notices on 2026-07-14; complete facsimile not collated |
+| Augustine, *Exposition on Psalm 134* | Direct patristic reception of appointed Psalm 133:3 | §§1–3 | <https://www.newadvent.org/fathers/1801134.htm>, accessed 2026-07-14 |
+| Gabrieli, *Jubilate Deo omnis terra*, Ch. 136 | Verified cultural quotation / recombination | Central text after `quia sic benedicetur`; first published 1613 | Hyperion work record and sung-text booklet accessed 2026-07-14 |
+| Hume, *Whom God Hath Joined* | Verified ironic literary reuse | Title; Chapter XIX epigraph | Project Gutenberg 1894 third-edition transcription accessed 2026-07-14 |
+| Current CIC, CCEO, and CCC | Current doctrinal / canonical qualifications, never the historical liturgical text | CIC 1055 §1, 1057 §§1–2, 1061 §1, 1084 §3, 1108 §§1–2, 1134–1136, 1141–1142, 1151–1155; CCEO 828 §§1–2; CCC 1601, 1623, 1638–1642, 1652 | Holy See texts accessed 2026-07-14 |
 
 ## 1962 Rubrical Controls
 
 - The Nuptial Mass is a white votive Mass of II class. Its formulary expressly directs `Et dicitur Gloria in excelsis`; General Rubrics 343 normally excludes the Creed.
-- The formulary is prohibited on Sundays. When the blessing is permitted on a Sunday or day of I class, the occurring Mass is used, the Nuptial Collect is commemorated under one conclusion, and the nuptial blessing is retained. Older handbooks stating that the common itself lacks the Gloria describe superseded discipline and were not used to govern the guide.
-- On All Souls and during the Sacred Triduum, the common, its commemoration, and the nuptial blessing are prohibited; transfer is possible as the printed rubric directs.
+- **n. 378:** the *Pro sponsis* Mass, or at least its Collect in the impeded Mass of the day, is admitted whenever nuptials are celebrated outside closed time, and also within closed time if the Ordinary for a just cause permits the solemn blessing.
+- **n. 379:** beyond the days already prohibiting II-class votives, the formulary is excluded on every Sunday and whenever the blessing cannot be given under n. 381c.
+- **n. 380:** when the formulary is barred but the blessing allowed, the occurring Mass is used, the Nuptial Collect is joined under one conclusion even where n. 343c would prevent it, and the blessing is retained. When both are barred, Mass with blessing may be transferred after the marriage to a suitable unimpeded day.
+- **n. 381a–d:** the blessing is inseparable from Mass absent Apostolic indult; the Mass celebrant gives it even when another priest assisted at the marriage; it is omitted for an absent spouse or prior reception subject to the stated local custom; All Souls and the Sacred Triduum exclude Mass, commemoration, and blessing.
+- Older handbooks stating that the common itself lacks the Gloria describe superseded discipline and were not used to govern the guide.
 - The two prayers after the Pater and final blessing are appointed ritual texts, not secondary devotions. Their placement is the strongest edition-controlled evidence for the guide's altar and Eucharistic connections.
 - The 1962 rubric directs the celebrant to communicate the spouses after he has received the Precious Blood. This establishes liturgical order, not Matrimony's matter or form.
+- The full end sequence is `Ite, missa est`; `Deus Abraham`; serious admonition; holy-water sprinkling; `Placeat tibi`; general blessing; beginning of St. John as the usual Last Gospel. The guide does not abbreviate that chain to “final blessing.”
 
 ## Historical Coordinates of the Direct Scriptural Propers
 
@@ -35,6 +52,7 @@ Geographic equivalents are intentionally broad: Assyrian Nineveh is near modern 
 ## Direct Patristic Reception Retained
 
 - St. Augustine, *Exposition on Psalm 127/128*, especially on the many becoming one in Christ, Church as wife and mother, literal children as genuine but not mechanically beatifying gifts, baptismal fruitfulness, Sion, Jerusalem, and final peace: <https://www.newadvent.org/fathers/1801128.htm>.
+- St. Augustine, *Exposition on Psalm 133/134* §§1–3, on the courts as charity's breadth rather than hatred's confinement, lifting hands and blessing in adversity, deeds that can contradict verbal praise, and the singular recipient made one from many: <https://www.newadvent.org/fathers/1801134.htm>, accessed 2026-07-14. Augustine comments on the psalm itself, not the later Nuptial Mass; the guide's spousal application is therefore clearly marked as reception.
 - St. Augustine, *Exposition on Psalm 19/20*, on help from the holy place and Sion, the sanctified Body of Christ, sacrifice, Cross, Resurrection, and intercession: <https://www.newadvent.org/fathers/1801020.htm>.
 - St. Augustine, *Exposition on Psalm 30/31*, on Christ and the whole Church in trust, Passion, deliverance, and election, with the `sortes` / `tempora` textual qualification: <https://www.newadvent.org/fathers/1801031.htm>.
 - St. John Chrysostom, *Homily 62 on Matthew*, direct treatment of Matthew 19, one flesh, divine joining, divorce, and the ensuing word on celibacy: <https://www.newadvent.org/fathers/200162.htm>.
@@ -62,11 +80,16 @@ These witnesses illuminate appointed texts, sacramental doctrine, or early Chris
 - *De anima* II.4, 415a–b describes generation as mortal life participating as far as possible in continuity and the divine.
 - These texts supply philosophical vocabulary for nature, household, friendship, generation, and finality. Christian revelation receives and elevates those goods while rejecting Aristotle's culturally contingent household hierarchy and slavery. Natural continuity is not equated with supernatural beatitude.
 
+## Verified Cultural Reception
+
+- **Giovanni Gabrieli, *Jubilate Deo omnis terra*, Ch. 136, eight voices, first published 1613 — direct musical quotation and recombination.** Its central sequence sets `quia sic benedicetur homo qui timet Dominum`, `Deus Israel coniugat vos`, `mittat vobis auxilium de sancto ... de Sion`, and `Benedicat vobis Dominus ex Sion, qui fecit caelum et terram`. It therefore gathers the Nuptial Mass's Psalm 127 blessing, Introit, ordinary Alleluia, and Paschal Alleluia within a Psalm 99 frame. Sources: <https://www.hyperion-records.co.uk/dw.asp?dc=W711_GBAJY9585009> and sung text at <https://www.hyperion-records.co.uk/notes/66850-B.pdf>, p. 7, accessed 2026-07-14. The guide does not adopt the recording note's speculative Venetian ceremonial association as a control on the motet or Mass.
+- **Fergus Hume, *Whom God Hath Joined: A Question of Marriage*, third edition (1894) — titular and ironic literary reuse.** The title adapts the Gospel clause; the Chapter XIX epigraph redirects “put asunder” from an interfering third party toward spouses' own neglect and hard words. Source: <https://www.gutenberg.org/ebooks/55571.txt.utf-8>, title page and Chapter XIX, accessed 2026-07-14. This is a fictional moralizing reuse, not theology, canon law, or evidence for the formulary's compilation.
+
 ## Conciliar and Magisterial Controls
 
 - Council of Trent, Session XXIV, DS 1797–1812: Christ merited grace to perfect natural love, confirm indissoluble unity, and sanctify spouses.
 - The 1917 *Code of Canon Law*, canon 1013 §1, and Pius XI, *Casti connubii* 17–24, explicitly name generation and education of children as the primary end, with mutual aid and the remedy of concupiscence as secondary ends: <https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html>.
-- Current CIC 1055 and CCC 1601 name the good of the spouses and procreation / education together; CCC 1652 calls children marriage's “crowning glory” without diminishing other ends. The guide distinguishes this coordinate formulation from the traditional formal hierarchy rather than using one to erase the other.
+- Current CIC 1055 §1 and CCC 1601 name the good of the spouses and procreation / education together; CCC 1652 calls children marriage's “crowning glory” without diminishing other ends. CIC 1084 §3 controls the sterility qualification; 1057 §§1–2 and 1108 §§1–2 distinguish consent and Latin canonical form; 1061 §1, 1134–1136, 1141–1142, and 1151–1155 control the guide's bond, education, dissolution, and protection qualifications. CCC 1623 and CCEO 828 §§1–2 control the Latin / Eastern blessing distinction. Holy See texts were accessed 2026-07-14. The guide distinguishes current coordinate language from the traditional formal hierarchy rather than using one to erase the other.
 
 Historical canonical sources were used only when clearly labeled as historical discipline. The guide is a theological exposition of a 1962 formulary, not current legal or pastoral advice.
 
@@ -83,9 +106,18 @@ Historical canonical sources were used only when clearly labeled as historical d
 - **Eschatology:** a valid ratified and consummated bond is dissolved only by death; a ratified but unconsummated bond is governed separately by law. Matrimony confers no indelible character and signifies a communion fulfilled where there is no marrying. Marriage and consecrated continence are distinct goods and eschatological signs.
 - **Direct and typological senses:** the household table remains literal before Eucharistic resonance; Tobit remains an exile-family narrative before ecclesial use; the long blessing's biblical allusions are distinguished from directly appointed quotations.
 
+## 2026-07-14 Full Re-evaluation
+
+- The complete guide was audited against the profile's required sequence: one-page Propers map and four senses, one-page historical orientation, exactly two pages of Themes and Movement, fresh-page Detailed Commentary, separately bounded Interpretive Possibilities, verified Notable Quotables, the shared Matrimony appendix, references, scope disclosure, generation metadata, and rights notice.
+- Every appointed core proper, seasonal chant, post-Pater nuptial prayer, Communion rubric, Postcommunion, and element of the final blessing and admonition now receives substantive treatment. The 1962 admission rules, 1952 Ritual handoff, Preface control, and distinction between the nuptial blessing and Matrimony's Latin sacramental form are explicit.
+- Independent source-and-structure review confirmed the Missal's General Rubrics 378--381, the documented 1952 Ritual edition and chapter boundary, current-law qualifications, and both cultural examples. It also confirmed that the proposed *Graduale Romanum* pp. 378--381 lead was inapplicable and should remain rejected rather than cited as control.
+- The settled sixteen-page PDF passed two LaTeX passes, a clean fatal/error/reference/box-warning scan, generation-metadata validation, text extraction, embedded-font inspection, and `qpdf --check`. Every rendered page was visually inspected; the shared Matrimony appendix remained unchanged, and the installed publication was confirmed byte-identical to the reviewed build artifact.
+- No independent theological review was performed; the source, content, and layout reevaluation therefore remains **T0** under the profile's triage scale.
+
 ## Survey and Material Limits
 
-- Surveyed the public 1962 typical-edition facsimile, Internet Archive OCR, focused facsimile extraction, USCCB/*NABRE* introductions and notes, accessible ANF/NPNF collections, New Advent, Corpus Thomisticum, Aquinas English repositories, Vatican texts, Perseus, and the sources cited above.
-- No claim is made to exhaust manuscripts, untranslated patristic material, subscription databases, modern marriage scholarship, or historical local variants of the Roman Ritual.
-- No independent cultural-reception section was retained. The available source budget was directed toward complete treatment of the enlarged ritual formulary, direct patristic reception, Thomistic causality, pastoral guardrails, and sacramental interconnection.
+- Surveyed the public 1962 typical-edition facsimile, Internet Archive OCR, focused facsimile extraction, official *Notitiae* documentary notices for the 1952 Ritual, USCCB/*NABRE* introductions and notes, accessible ANF/NPNF collections, New Advent, Corpus Thomisticum, Aquinas English repositories, Holy See legal and catechetical texts, Perseus, and the two cultural witnesses cited above.
+- No claim is made to exhaust manuscripts, untranslated patristic material, subscription databases, modern marriage scholarship, or historical local variants of the Roman Ritual. No complete facsimile of the 1952 typical Ritual was collated; its edition identity, Titulus VIII structure, and Missal handoff are stated only as far as the official documentary sources and Missal n. 381a establish them.
+- A suggested “*Graduale Romanum* pp. 378–381” control was tested and rejected. In the public 1961 *Graduale Romanum* witness, <https://archive.org/details/graduale-romanum-1961>, printed pp. 378–381 contain the Twentieth and Twenty-first Sundays after Pentecost, not `Pro sponsis`; accessed and checked 2026-07-14. The intended numbered control is the 1962 *Missale Romanum*, General Rubrics 378–381. The Gradual therefore establishes no text or rubric in the guide.
+- The Gabrieli and Hume examples passed exact-work, date, location, and quotation checks. They document cultural reception only and are not allowed to govern liturgical meaning.
 - `The Propers: Interpretive Possibilities` is visibly bounded, attributes no synthesis to an authority, and states the decisive limit for each proposal.
