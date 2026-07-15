@@ -52,7 +52,7 @@ These sources provide close canonical, doctrinal, or sacramental illumination. T
 - The Latin *compelle* is rendered “compel,” not softened into “draw.” The adverbial/predicative *propitius* requires God’s action to be understood as favorable or merciful, but grammar alone does not supply a complete theology of grace.
 - *Rebelles voluntates* names the worshippers’ rebellious wills. It does not grammatically assert competing wills within each person; Augustine’s divided will is related illumination.
 - The received oblations and rebellious wills belong to coordinated petitions. The prayer does not identify the wills as the oblations.
-- Luke does not call Simon rebellious. Using his truthful objection, consent, action, confession, and following to imagine merciful compulsion belongs in `Exploratory Proposals`.
+- Luke does not call Simon rebellious. Using his truthful objection, consent, action, confession, and following to imagine merciful compulsion belongs in `The Propers: Interpretive Possibilities`.
 - Ambrose offers alternative interpretations of the two boats; none is presented as the single settled patristic identification.
 - Augustine’s contrast between Luke and John is documented canonical reception, not Luke’s literal sense or a claimed universal consensus.
 - The Alleluia does not place God’s throne above the lake or identify Christ’s boat-seat as the throne. That juxtaposition remains an exploratory proposal.

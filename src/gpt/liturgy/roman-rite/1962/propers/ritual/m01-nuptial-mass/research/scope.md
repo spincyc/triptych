@@ -88,4 +88,4 @@ Historical canonical sources were used only when clearly labeled as historical d
 - Surveyed the public 1962 typical-edition facsimile, Internet Archive OCR, focused facsimile extraction, USCCB/*NABRE* introductions and notes, accessible ANF/NPNF collections, New Advent, Corpus Thomisticum, Aquinas English repositories, Vatican texts, Perseus, and the sources cited above.
 - No claim is made to exhaust manuscripts, untranslated patristic material, subscription databases, modern marriage scholarship, or historical local variants of the Roman Ritual.
 - No independent cultural-reception section was retained. The available source budget was directed toward complete treatment of the enlarged ritual formulary, direct patristic reception, Thomistic causality, pastoral guardrails, and sacramental interconnection.
-- `Exploratory Proposals` is visibly bounded, attributes no synthesis to an authority, and states the decisive limit for each proposal.
+- `The Propers: Interpretive Possibilities` is visibly bounded, attributes no synthesis to an authority, and states the decisive limit for each proposal.
