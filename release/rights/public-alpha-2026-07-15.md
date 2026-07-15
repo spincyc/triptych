@@ -12,6 +12,10 @@ This is a user-attested release-control record. The grantor's identity, private 
 
 On 15 July 2026, after completion of the source audit and reviewed installed PDF, the maintainer explicitly confirmed that the previously recorded domestic-superior authorization covers perpetual worldwide public GitHub and GitHub Pages distribution of the exact Eighth Sunday after Pentecost source and PDF listed below, including its incorporated Latin liturgical text, under the existing no-project-initiated-promotion condition. This user-attested confirmation clears that publication's recorded liturgical-text gate and extends the exact snapshot and reader-facing-source inventories in this record. It does not imply clearance for any other future or changed publication.
 
+## Supplemental clearance: Ordinary and Order of the Mass
+
+On 15 July 2026, the maintainer stated that approval was granted for the requested revision that restores the received names of the parts of Mass as primary headings and subordinates the interpretive titles. Following completion and verification, this user-attested supplemental clearance is bound to the resulting source state and exact installed PDF listed below, under the existing perpetual authorization and its no-project-initiated-promotion condition. It does not constitute an imprimatur, nihil obstat, endorsement, or independent specialist review, and it does not clear any future changed PDF.
+
 ## Duration and condition
 
 - Effective: 15 July 2026 at 00:00 CDT (`2026-07-15T00:00:00-05:00`).
@@ -33,7 +37,7 @@ Ignored or untracked build artifacts, credentials, private communications, and p
 | `devotions/novenas/00-ascension-to-pentecost-daily-prayer` | `aa8c424b6d802555a069d42cf75b1481e02d997733b58c52c636953d05c5c98d` |
 | `devotions/novenas/10-our-lady-of-mount-carmel` | `dfedafbe32a4c1432b68438282904ea6afb32ba7e84a6ea5ded573b607822676` |
 | `devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer` | `1bab25f390940431fea27ab63656c8b332a00ed3a30945a42aa7018fb2b834cc` |
-| `liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass` | `c60b3510b9dda0fc84bd6184867ffeb1746cc5e9e0e211345640088b33aad280` |
+| `liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass` | `75d08f8ba309b308b866afe135325fc69b2243c1d8e2fb33816fc302b1bdbfdf` |
 | `liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass` | `24b5c7ba2161348e3c90426634b05a7d92f62a5c339e93bf267467c00e6525f5` |
 | `liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday` | `33d6368891372a4e069782cc93f897214b04adb71201e862160993dc4ea2e1cf` |
 | `liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost` | `38eadc09c9f269ed7911ab697c31487077b1fa502be0b740b0ca009cfcae8216` |
