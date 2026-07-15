@@ -13,7 +13,8 @@
 - **Facsimile verification URL:** <https://media.churchmusicassociation.org/pdf/missale62.pdf>
 - **Verification facsimile SHA-256:** `648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a`.
 - **Secondary image witness:** Internet Archive [item reader](https://archive.org/details/MissaleRomanum1962RomanMissalColorLatin).
-- **Verification status and date:** all ten appointed elements, headings, rank, references, wording, punctuation, accents, rubrics, and formulary boundaries were visually collated with the baseline facsimile on 2026-07-10 and re-collated for Latin-text integrity on 2026-07-14. The latter pass restored two commas in the publication's Gradual incipit and corrected the Collect conclusion in this record.
+- **Verification status and date:** all ten appointed elements, headings, rank, references, wording, punctuation, accents, rubrics, and formulary boundaries were visually collated with the baseline facsimile on 2026-07-10 and re-collated on PDF pages 464--465 (printed pages 383--384) on 2026-07-14. The latter pass restored two commas in the publication's Gradual incipit, corrected the Collect conclusion in this record, and confirmed that the Gradual's plural servant language is the missal's wording rather than a transcription error.
+- **Underlying-source verification:** the Gradual's printed references and wording were compared clause by clause on 2026-07-14 with [Vulgate Psalm 83:9--10](https://www.newadvent.org/bible/psa083.htm). The source order is verse 9 then verse 10; the missal prints material drawn from verse 10 first and verse 9 second. Complete context and modern numbering were checked against [NABRE Psalm 84](https://bible.usccb.org/bible/psalms/84).
 - **Seasonal substitutions or additions:** none.
 - **Unresolved discrepancies:** no baseline reading remains unresolved. The raw OCR intentionally preserves recognition errors, including `Pa.` for `Ps.`, `clasais`, false initials, broken words, and corrupted accents. It adds the repeat incipit `Exaudi` after the Introit doxology where the baseline stops after `Glória Patri.`; it drops `nostrum` from the Collect's printed short conclusion and abbreviates the Postcommunion's full conclusion to `Per Dóminum`. The public witnesses use pagination differing by six printed pages.
 
@@ -23,13 +24,17 @@
 
 Exáudi, Dómine, vocem meam, qua clamávi ad te: adiútor meus esto, ne derelínquas me, neque despícias me, Deus salutáris meus. Ps. ibid., 1 Dóminus illuminátio mea, et salus mea, quem timébo? ℣. Glória Patri.
 
-**Context:** the psalmist seeks God's face, refuses abandonment, and waits courageously for the Lord. The entrance chant gives threatened prayer priority over self-justification.
+**Immediate context:** Psalm 26 moves from confidence in the Lord as light and salvation (verse 1), through the one desire for God's house (verse 4), to the plea to hear, seek his face, and not abandon the petitioner (verses 7--9), before ending in courageous waiting. The Introit joins verses 7 and 9 and appoints verse 1 as its psalm verse.
+
+**Liturgical function:** as the entrance chant, it begins the formulary with an afflicted worshipper's appeal to the saving God and supplies the face-seeking vocabulary later resumed by the Communion's verse from the same psalm.
 
 ## 2. Collect
 
 Deus, qui diligéntibus te bona invisibília præparásti: infúnde córdibus nostris tui amóris afféctum; ut te in ómnibus et super ómnia diligéntes, promissiónes tuas, quæ omne desidérium súperant, consequámur. Per Dóminum nostrum.
 
-**Context:** the Church asks God to infuse ordered love and bring his people to promises beyond desire.
+**Immediate context:** the complete prayer moves from God's preparation of unseen goods, through the requested infusion of love, to loving him in all things and above all things and attaining promises beyond every desire.
+
+**Liturgical function:** the opening presidential prayer gathers the assembly's petition into the order of love that governs the Epistle's communal conduct and the Gospel's demand for repaired fraternity.
 
 ## 3. Epistle
 
@@ -37,15 +42,21 @@ Deus, qui diligéntibus te bona invisibília præparásti: infúnde córdibus no
 
 Caríssimi: Omnes unánimes in oratióne estóte, compatiéntes, fraternitátis amatóres, misericórdes, modésti, húmiles: non reddéntes malum pro malo, nec maledíctum pro maledícto, sed e contrário benedicéntes: quia in hoc vocáti estis, ut benedictiónem hereditáte possideátis. Qui enim vult vitam dilígere, et dies vidére bonos, coérceat linguam suam a malo, et lábia eius ne loquántur dolum. Declínet a malo, et fáciat bonum: inquírat pacem, et sequátur eam. Quia óculi Dómini super iustos, et aures eius in preces eórum: vultus autem Dómini super faciéntes mala. Et quis est qui vobis nóceat, si boni æmulatóres fuéritis? Sed et si quid patímini propter iustítiam, beáti. Timórem autem eórum ne timuéritis: et non conturbémini. Dóminum autem Christum sanctificáte in córdibus vestris.
 
-**Context:** Peter forms communities under social pressure for concord, blessing instead of retaliation, disciplined speech, pursued peace, and fearless allegiance to Christ.
+**Immediate context:** after the letter's household exhortations (1 Peter 2:11--3:7), verses 8--15 address the whole community. They join concord, compassion, humility, and nonretaliation to a quotation of Psalm 33:13--17, then move through suffering for righteousness to fearless sanctification of Christ in the heart; verses 16--17 continue with a good conscience and suffering for doing good.
+
+**Liturgical function:** as the Epistle, the passage gives concrete ecclesial form to the Collect's ordered love before the intervening chants and the Gospel expose anger, contempt, and unreconciled offering.
 
 ## 4. Gradual
 
-**Reference:** Psalm 83:10, 9 (Vulgate/Septuagint numbering; Psalm 84 in most modern Bibles).
+**Reference:** adapted from Psalm 83:10, 9 (Vulgate/Septuagint numbering; Psalm 84 in most modern Bibles).
 
 Protéctor noster, áspice, Deus, et réspice super servos tuos. ℣. Dómine Deus virtútum, exáudi preces servórum tuórum.
 
-**Context:** the pilgrimage psalm longs for God's dwelling and asks the Lord of hosts to hear and look upon his anointed.
+**Source comparison:** the response retains the opening of verse 10, `Protector noster, aspice, Deus, et respice`, but replaces `in faciem christi tui` with `super servos tuos`. The versicle retains the address and `exaudi` from verse 9, `Domine Deus virtutum, exaudi orationem meam; auribus percipe, Deus Jacob`, but replaces its singular prayer and Jacob clause with `preces servorum tuorum`. The missal therefore reverses the biblical order and makes both halves a plural petition for God's servants. The Vulgate wording belongs to the cited Psalm source; only the accented text printed above is the appointed Gradual.
+
+**Immediate context:** Psalm 83 is a Korahite pilgrimage song. It moves from longing for the Lord's courts and the blessedness of dwelling there, through the ascent toward Sion, to the prayer that God hear (verse 9), look upon the shield or anointed (verse 10), and grant the good of his dwelling and protection (verses 11--13). The Psalm's anointed and Jacob language illuminates its source context but is not printed in the Gradual.
+
+**Liturgical function:** sung between the Epistle and Alleluia, the adapted chant turns the source verses into the assembled servants' common request to be seen and heard. This describes the text's function in the received formulary, not the historical compiler's intention.
 
 ## 5. Alleluia
 
@@ -53,7 +64,9 @@ Protéctor noster, áspice, Deus, et réspice super servos tuos. ℣. Dómine De
 
 Allelúia, allelúia. ℣. Dómine, in virtúte tua lætábitur rex: et super salutáre tuum exsultábit veheménter. Allelúia.
 
-**Context:** the royal thanksgiving locates the king's joy in God's strength and salvation.
+**Immediate context:** Psalm 20 is a royal thanksgiving. Its opening locates the king's joy in God's strength and salvation; the remaining verses speak of granted desire, crown, life, trust, victory, judgment, and a concluding exaltation of the Lord's power.
+
+**Liturgical function:** as the chant immediately before the Gospel, the Alleluia acclaims royal joy as received from God before Christ speaks with authority about greater righteousness, anger, and reconciliation.
 
 ## 6. Gospel
 
@@ -63,7 +76,9 @@ In illo témpore: Dixit Iesus discípulis suis: Nisi abundáverit iustítia vest
 
 **Rubric:** Credo.
 
-**Context:** within the Sermon on the Mount, Jesus brings the prohibition of murder to anger and contempt, then makes remembered injury and reconciliation urgent at the altar.
+**Immediate context:** within the Sermon on the Mount and immediately after Jesus' teaching on the Law (Matthew 5:17--19), the passage begins the antitheses with righteousness exceeding that of scribes and Pharisees. Jesus extends the prohibition of murder to anger and contempt, then directs the offerer who remembers a brother's grievance to leave the gift, go first toward reconciliation, and return to offer; verses 25--26 continue the urgency of settlement.
+
+**Liturgical function:** as the Gospel, the passage gives the formulary's most explicit command: worship does not erase remembered injury but sends the offerer toward reconciliation before the offering continues.
 
 ## 7. Offertory
 
@@ -71,7 +86,9 @@ In illo témpore: Dixit Iesus discípulis suis: Nisi abundáverit iustítia vest
 
 Benedícam Dóminum, qui tríbuit mihi intelléctum: providébam Dóminum in conspéctu meo semper: quóniam a dextris est mihi, ne commóvear.
 
-**Context:** the psalmist blesses the Lord for counsel and remains steady by keeping God continually before him.
+**Immediate context:** Psalm 15 is a prayer of refuge and chosen inheritance. Verses 7--8 bless the Lord for counsel and keep him continually before the psalmist and at his right hand; verses 9--11 proceed to confident life, the path of life, and joy in God's presence. Acts 2:25--32 later quotes verses 8--11 in its proclamation of Christ's resurrection.
+
+**Liturgical function:** as the Offertory chant, it places the offerer's attention and steadiness under divine counsel after the Gospel has commanded initiative toward reconciliation.
 
 ## 8. Secret
 
@@ -79,7 +96,9 @@ Propitiáre, Dómine, supplicatiónibus nostris: et has oblatiónes famulórum f
 
 **Rubric:** Preface of the Most Holy Trinity.
 
-**Context:** God is asked to receive the oblations of his servants so that each person's offering may profit all unto salvation.
+**Immediate context:** the complete prayer asks God to be propitious to the Church's supplications, benignly receive the oblations of his male and female servants, and make what individuals have offered in honor of his name profit all unto salvation.
+
+**Liturgical function:** prayed over the offerings, the Secret preserves personal agency in `singuli` while directing the fruit of distinct offerings toward the common good in `cunctis`.
 
 ## 9. Communion
 
@@ -87,10 +106,14 @@ Propitiáre, Dómine, supplicatiónibus nostris: et has oblatiónes famulórum f
 
 Unam pétii a Dómino, hanc requíram: ut inhábitem in domo Dómini ómnibus diébus vitæ meæ.
 
-**Context:** the psalm's single desire gathers contemplation, perseverance, and dwelling in God's house.
+**Immediate context:** Psalm 26:4 states the psalmist's one request: lifelong dwelling in the Lord's house. In the complete verse, not all of which is printed in the chant, that dwelling includes delight in the Lord and attention to his temple; the surrounding psalm moves between danger, face-seeking, confidence, and waiting.
+
+**Liturgical function:** as the Communion chant, the appointed excerpt concentrates the rite's desire on lifelong dwelling in the Lord's house without importing the unprinted continuation into the chant itself.
 
 ## 10. Postcommunion
 
 Quos cælésti, Dómine, dono satiásti: præsta, quǽsumus; ut a nostris mundémur occúltis, et ab hóstium liberémur insídiis. Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte.
 
-**Context:** those already filled with the heavenly gift ask cleansing from hidden faults and deliverance from hostile snares.
+**Immediate context:** the complete prayer addresses those already satiated by the heavenly gift and asks both inward cleansing from hidden faults and outward deliverance from the snares of enemies.
+
+**Liturgical function:** as the concluding prayer after Communion, it prevents sacramental reception from being treated as proof of complete self-knowledge or finished conversion: the recipients still ask to be cleansed and defended.
