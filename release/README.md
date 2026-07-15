@@ -1,6 +1,6 @@
 # Public Release Boundary
 
-The full Triptych development repository remains private. Public distribution is made from a generated, history-free site artifact, never by changing this repository's visibility or publishing its root.
+The complete Triptych repository and its reachable rewritten history are authorized for public GitHub visibility. The reader-facing website is still made from a generated, history-free artifact so GitHub Pages exposes the polished landing page and approved library rather than treating the repository root as the website.
 
 `public-alpha.json` is the exhaustive publication policy for every discovered source document and installed PDF:
 
@@ -10,16 +10,15 @@ The full Triptych development repository remains private. Public distribution is
 
 The public build copies rendered HTML, site CSS, license texts, PDFs marked `release`, and narrowly scoped generated policy, manifest, and checksum files. It does not copy Markdown, TeX, research records, build intermediates, `.git`, or repository history. The private preview additionally copies `review` PDFs and is marked `noindex, nofollow`; it is for local or access-controlled review only.
 
-The current 24-PDF snapshot has a user-attested perpetual authorization recorded at `rights/public-alpha-2026-07-15.md`. It is effective from 15 July 2026, has no expiration date, and permits worldwide public access only under an unadvertised-hosting condition. The generator therefore:
+The current repository and 24-PDF snapshot have a user-attested perpetual authorization recorded at `rights/public-alpha-2026-07-15.md`. It is effective from 15 July 2026, has no expiration date, and permits worldwide public repository visibility and GitHub Pages hosting. Its unadvertised condition prohibits a separate project-initiated announcement or promotion but permits ordinary GitHub and search discovery. The generator therefore:
 
 - refuses public checks, builds, or verification before the effective instant or after any approved PDF or reader-facing site source changes;
 - binds every copied PDF and the authorization record to an exact SHA-256;
 - binds every reader-facing Markdown, layout, and style input to an exact SHA-256 so later edits require renewed authorization;
-- emits `noindex`, `nofollow`, `noarchive`, `nosnippet`, and `noimageindex` directives;
-- emits `_headers` so a compatible static host applies the directives to direct PDF responses as well as HTML; and
-- creates no sitemap, feed, release attachment, announcement, or promotional metadata.
+- produces ordinary indexable public pages while retaining no-index controls for the private preview; and
+- creates no sitemap, feed, public release attachment, announcement, or promotional metadata.
 
-Search directives are advisory, not access control. Deploy the artifact to Cloudflare Pages or an equivalent static host that honors the generated `_headers` rules for every HTML and PDF response, and verify the live headers before sharing the direct URL. A host that does not apply response headers to PDFs is not sufficient for the unadvertised condition. The generator retains cutoff-worker support for a future time-limited authorization, but the current perpetual release does not emit or require a worker. GitHub Pages is therefore not the publication target for this release.
+The GitHub Pages workflow builds and verifies `build/public-alpha/site`, uploads only that artifact, and deploys it through the `github-pages` environment. The repository may be public, but Pages must never publish the repository root or `build/public-alpha/preview`. The current perpetual public build needs no cutoff worker or custom response headers. The generator retains stricter no-index and cutoff controls for a future authorization that requires them.
 
 Use:
 
@@ -31,4 +30,4 @@ make public-site
 make verify-public-site
 ```
 
-Generated files live beneath ignored `build/public-alpha/`. A later public repository or Pages deployment must be created only from the verified `site/` artifact. Never publish the `preview/` artifact.
+Generated files live beneath ignored `build/public-alpha/`. GitHub Pages publishes only the verified `site/` artifact. Never publish the `preview/` artifact. Because the repository itself is public, review publication authority and private-data boundaries before every push; changed PDFs and future publications require their ordinary recorded clearance.

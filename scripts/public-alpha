@@ -49,9 +49,14 @@ EXTERNAL_RE = re.compile(r"^[A-Za-z][A-Za-z0-9+.-]*:")
 SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
 SAFE_ID_RE = re.compile(r"^[a-z0-9][a-z0-9./-]*[a-z0-9]$")
 TEXT_SUFFIXES = {".html", ".css", ".txt", ".json", ".js"}
-SUPPORTED_CONDITIONS = {"unadvertised-public-hosting"}
+SUPPORTED_CONDITIONS = {
+    "no-project-initiated-promotion",
+    "unadvertised-public-hosting",
+}
 REQUIRED_AUTHORITY_SCOPE = {
     "delegated-local-ordinary-publication-permission",
+    "ordinary-public-indexing-and-discovery",
+    "public-git-repository-and-reachable-history",
     "third-party-text-and-link-permission",
     "public-web-hosting-and-download",
     "worldwide",
@@ -61,6 +66,10 @@ ROBOTS_DIRECTIVES = "noindex, nofollow, noarchive, nosnippet, noimageindex"
 
 class ReleaseError(RuntimeError):
     pass
+
+
+def requires_unadvertised_controls(authorization: dict) -> bool:
+    return "unadvertised-public-hosting" in set(authorization.get("conditions", []))
 
 
 def sha256(path: Path) -> str:
@@ -182,8 +191,6 @@ def validate_authorizations(
         unknown_conditions = sorted(set(conditions) - SUPPORTED_CONDITIONS)
         if unknown_conditions:
             errors.append(f"{label} has unsupported conditions {unknown_conditions!r}")
-        if "unadvertised-public-hosting" not in conditions:
-            errors.append(f"{label} must retain the unadvertised-public-hosting condition")
 
         record = authorization.get("rights_record")
         record_hash = authorization.get("rights_record_sha256")
@@ -633,10 +640,10 @@ def expected_artifact_files(
             "SHA256SUMS",
         }
     )
-    unadvertised = "unadvertised-public-hosting" in authorization.get("conditions", [])
-    if preview or unadvertised:
+    controlled_hosting = requires_unadvertised_controls(authorization)
+    if preview or controlled_hosting:
         expected.add("_headers")
-    if not preview and unadvertised:
+    if not preview and controlled_hosting:
         expected.add("HOSTING-CONDITIONS.txt")
         if authorization.get("expires_at"):
             expected.add("_worker.js")
@@ -893,7 +900,7 @@ def render_page(
             '<aside class="release-banner preview"><strong>Private build preview.</strong>'
             " Do not share or deploy this preview artifact.</aside>"
         )
-    elif "unadvertised-public-hosting" in authorization.get("conditions", []):
+    elif requires_unadvertised_controls(authorization):
         robots = f'<meta name="robots" content="{ROBOTS_DIRECTIVES}">'
         if authorization.get("expires_at"):
             expires_at = html.escape(str(authorization["expires_at"]))
@@ -1150,13 +1157,13 @@ def verify_output(
                         errors.append(f"{relative}: links to excluded publication {publication_id}")
 
     robots = (output / "robots.txt").read_text(encoding="utf-8", errors="replace") if (output / "robots.txt").is_file() else ""
-    unadvertised = "unadvertised-public-hosting" in expected_authorization.get("conditions", [])
+    controlled_hosting = requires_unadvertised_controls(expected_authorization)
     expected_robots = "User-agent: *\nDisallow: /\n" if preview else "User-agent: *\nAllow: /\n"
     if robots != expected_robots:
         errors.append("robots.txt does not exactly match the release mode")
 
     headers_path = output / "_headers"
-    if preview or unadvertised:
+    if preview or controlled_hosting:
         if not headers_path.is_file():
             errors.append("no-index artifact is missing _headers")
         elif headers_path.read_text(encoding="utf-8", errors="replace") != headers_policy_text(
@@ -1164,7 +1171,7 @@ def verify_output(
         ):
             errors.append("_headers does not exactly match the release policy")
 
-    if not preview and unadvertised:
+    if not preview and controlled_hosting:
         worker_path = output / "_worker.js"
         expected_expiry = expected_authorization.get("expires_at")
         if expected_expiry:
@@ -1256,14 +1263,14 @@ def build_site(manifest: dict, publications: dict[str, dict], preview: bool) -> 
         encoding="utf-8",
     )
     (output / ".nojekyll").write_text("", encoding="utf-8")
-    unadvertised = "unadvertised-public-hosting" in authorization.get("conditions", [])
+    controlled_hosting = requires_unadvertised_controls(authorization)
     robots = "User-agent: *\nDisallow: /\n" if preview else "User-agent: *\nAllow: /\n"
     (output / "robots.txt").write_text(robots, encoding="utf-8")
-    if preview or unadvertised:
+    if preview or controlled_hosting:
         (output / "_headers").write_text(
             headers_policy_text(authorization, preview), encoding="utf-8"
         )
-    if not preview and unadvertised:
+    if not preview and controlled_hosting:
         if authorization.get("expires_at"):
             (output / "_worker.js").write_text(worker_policy_text(authorization), encoding="utf-8")
         (output / "HOSTING-CONDITIONS.txt").write_text(
@@ -1286,16 +1293,17 @@ def print_policy_summary(manifest: dict, publications: dict[str, dict]) -> None:
         print("public build is fail-closed: no PDFs are currently cleared for distribution")
     else:
         authorization = artifact_authorization(manifest, included_publications(publications, False))
+        condition_summary = ", ".join(authorization.get("conditions", []))
         if authorization.get("expires_at"):
             print(
                 "temporary authorization active: "
-                f"unadvertised hosting expires at {authorization['expires_at']} "
+                f"{condition_summary}; expires at {authorization['expires_at']} "
                 f"({authorization['timezone']})"
             )
         else:
             print(
                 "perpetual authorization active: "
-                f"unadvertised hosting effective from {authorization['effective_at']} "
+                f"{condition_summary}; effective from {authorization['effective_at']} "
                 f"({authorization['timezone']})"
             )
 
