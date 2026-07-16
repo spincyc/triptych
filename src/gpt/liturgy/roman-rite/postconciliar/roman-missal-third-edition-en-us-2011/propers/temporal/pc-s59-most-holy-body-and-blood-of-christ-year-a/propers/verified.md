@@ -3,7 +3,7 @@
 **Full slug:** `pc-s59-most-holy-body-and-blood-of-christ-year-a`
 **Parent:** `PC-S59`
 **Canonical Missal owner:** [`PC-S59` formulary audit](../../shared/formularies/pc-s59-most-holy-body-and-blood-of-christ/propers/verified.md)
-**Last collated:** 2026-07-15
+**Last collated:** 2026-07-16
 
 ## Target and source layers
 
@@ -29,7 +29,7 @@
 | 5b | Responsorial Psalm — Alleluia response | U.S. Lectionary no. 167; appointed alternative | Same Psalm 147 verses; response “Alleluia” | Second permitted response path expressly printed on the official occurrence page; choice unresolved. |
 | 6 | Second Reading | U.S. Lectionary no. 167; required | 1 Corinthians 10:16–17 | Exact boundary checked; context in 10:14–22 governs the guide's treatment of participation and idolatry. |
 | 7a | Sequence — full | U.S. Lectionary; permitted | Full *Lauda Sion* | Full printed branch verified; wording not reproduced. |
-| 7b | Sequence — shorter | U.S. Lectionary; permitted | Shorter printed form beginning at the designated later stanza | Shorter branch verified; wording not reproduced. |
+| 7b | Sequence — shorter | U.S. Lectionary; permitted | Shorter printed form beginning “Lo! the angel's food is given…” | Opening cue and shorter-form boundary checked on the official occurrence page; further wording not reproduced. |
 | 7c | Sequence — omitted | GIRM 64; omitted | No sequence | GIRM makes sequences optional except Easter and Pentecost; omission is a lawful branch, not a textual loss in the audit. |
 | 8 | Gospel acclamation | U.S. Lectionary no. 167; required | John 6:51 | Exact source verse checked. It is consolidated with the Gospel dossier in the exposition. |
 | 9 | Gospel | U.S. Lectionary no. 167; required | John 6:51–58 | Exact boundary checked. |
