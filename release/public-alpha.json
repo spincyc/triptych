@@ -3,10 +3,10 @@
   "release_id": "public-alpha",
   "provider": "gpt",
   "expected_counts": {
-    "publications": 25,
+    "publications": 26,
     "release": 25,
     "review": 0,
-    "hold": 0
+    "hold": 1
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
@@ -244,6 +244,16 @@
         "authorization": "perpetual-public-repository-2026",
         "pdf_sha256": "edba4b079c035e9ec0501ac36db901c3729f8091294e93b67d78864402047036"
       }
+    },
+    {
+      "id": "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass",
+      "catalog": "library/novus-ordo-liturgy.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission"
+      ],
+      "approval": null
     },
     {
       "id": "theology/mariology/apparitions",
