@@ -84,23 +84,132 @@ Let `<proper-root>` mean `src/gpt/liturgy/roman-rite/postconciliar/<edition-loca
 | A `PC-S` cycle, form, or occurrence guide | `<proper-root>/temporal/<full-publication-slug>/` | Publishable leaf with `main.tex` |
 | Canonical `PC-S` Missal formulary owner, except Ordinary Time II–XXXIII | `<proper-root>/temporal/shared/formularies/<required-slug-stem>/` | Non-publishable shared source |
 | Canonical Ordinary Time formulary owner | `<proper-root>/temporal/shared/ordinary-time/weeks/01/` through `weeks/34/` | Non-publishable shared source |
+| Canonical conditional Scrutiny Ritual Mass owner | `<proper-root>/ritual/shared/formularies/celebration-of-the-scrutinies/` | Non-publishable shared source owning the three Ritual Mass formularies |
 | A `PC-R` cycle, form, or occurrence guide | `<proper-root>/general-calendar/<full-publication-slug>/` | Publishable leaf with `main.tex` |
 | Canonical `PC-R` Missal formulary owner | `<proper-root>/general-calendar/shared/formularies/<required-slug-stem>/` | Non-publishable shared source |
 
-The shared owner keeps the edition-specific verified Missal record, provenance, rights status, and any reusable source fragment. The publishable leaf owns its resolved liturgical-instance manifest, cycle-specific Lectionary audit, analysis, generation metadata, and PDF; it references or imports the shared owner and must not become a second owner of the formulary. For `PC-S26`–`PC-S57`, the corresponding `weeks/02`–`weeks/33` directory is the shared owner. Every import outside a publishable leaf requires an explicit cross-document build dependency, and a shared-source change requires rebuilding every consumer.
+The shared owner keeps the edition-specific verified Missal record, provenance, rights status, and any reusable source fragment. The publishable leaf owns its resolved liturgical-instance manifest, cycle-specific Lectionary audit, analysis, generation metadata, and PDF; it references or imports the shared owner and must not become a second owner of the formulary. For `PC-S26`–`PC-S57`, the corresponding `weeks/02`–`weeks/33` directory is the shared owner. A conditional Scrutiny leaf remains in the temporal Sunday queue but imports the Ritual Mass owner fixed above. Every import outside a publishable leaf requires an explicit cross-document build dependency, and a shared-source change requires rebuilding every consumer.
 
-### Cycles, forms, and completion
+### Formula targets, keys, and fixed order
 
-An identity is a stable parent, not by itself a complete liturgical instance. For each identity:
+The 60 identities are stable celebration parents, not 60 finished guides. A **Sunday production formula target** joins one separately appointed Mass form to one cycle coverage and its complete Lectionary-path inventory for one edition-locale. This includes separately indexed simple and extended Vigil forms. It is a composition and reference record, not another owner or copy of the Missal formulary. Shorter readings, permitted substitutions, ritual entrance modes within one Mass, optional sequences, and similar choices remain named branches inside that target unless an approved book actually substitutes a different Missal or Ritual Mass formulary. A civil-year occurrence is not another target unless it changes the reading structure or treated scope.
 
-- link each identity to exactly one canonical Missal formulary owner at the applicable edition-locale path fixed above;
-- create distinct `year-a`, `year-b`, and `year-c` Lectionary paths wherever the approved Lectionary differs, and use an `abc` path only when direct collation establishes that the appointed set is invariant;
-- never use the Sunday letter to infer a weekday cycle, or the civil year's parity to infer a Sunday cycle;
-- append a form suffix such as `vigil`, `night`, `dawn`, or `day` when the edition appoints materially different Mass forms; an ordinary anticipated Mass on Saturday evening remains the following Sunday's Mass and does not acquire a fictitious Vigil form;
-- preserve every authorized reading substitution or option as a named branch, including the permitted Year A readings on the Third through Fifth Sundays of Lent in Years B and C; and
-- count the parent complete only when all cycles, appointed forms, and materially different authorized paths in the selected editions have been sourced and evaluated, even if publication proceeds one cycle or form at a time.
+Every target has a permanent formula key:
 
-A full publication slug consists of the table's stem plus suffixes in the fixed order **cycle, appointed Mass form, occurrence**. Use `-year-a`, `-year-b`, or `-year-c` for a cycle-specific guide and `-abc` only when direct collation establishes that the complete treated path is invariant across all three cycles. A publication treating all three materially different cycles together is exceptional, uses `-years-a-b-c`, and must keep the three complete paths visibly separate rather than produce a synthetic formulary. Normalize an edition-appointed form title as a literal suffix such as `-vigil`, `-extended-vigil`, `-night`, `-dawn`, or `-day`. Add an occurrence suffix only when the occurrence changes the treated path or scope, and name it exactly—for example `-december-30`, `-monday`, `-thursday`, or `-sunday`; never use a generic `-weekday`. Thus valid combinations include `-year-a-vigil` and `-year-b-monday`. Do not omit the cycle suffix from a Sunday-series publication, and do not use `-abc` without a recorded collation.
+`PC-Snn-<coverage>[-<APPOINTED-FORM>][-O-<OCCURRENCE>]`
+
+General Calendar replacement targets substitute `PC-Rnn` for `PC-Snn` and otherwise use the same grammar.
+
+Order and interpret the components as follows:
+
+1. keep the parent order `PC-S01` through `PC-S60`;
+2. within a parent, order cycle coverage `A`, `B`, `C`, using `ABC` only where direct collation proves that one complete target covers all three cycle slots without a material difference; when distinct forms under one parent require both coverage shapes, place the `ABC` forms before the A/B/C forms;
+3. within a cycle, keep the appointed forms in the order printed by the Missal;
+4. keep every approved reading, ritual, and other option as a semantic branch inside the listed target; a branch may not become another formula key or publication target unless a later profile revision adds that exact key to a registry and adjusts the canonical count; and
+5. add an occurrence component only where this profile expressly lists an occurrence whose structure changes, as with Holy Family on December 30 or Baptism on Monday.
+
+The explicit registry order controls if these rules could otherwise admit more than one reading, especially for `PC-S25`, whose common Vigil forms precede the A/B/C Day forms.
+
+`ABC` is a verified coverage marker, not a fourth Lectionary cycle. The manifest for a dated use still records the actual cycle `A`, `B`, or `C`, or `not applicable` when that celebration's readings are not cycle-governed. Formula keys are permanent, may not be reassigned, and are ordered by their semantic components rather than lexical sorting.
+
+Resolve the actual Sunday cycle from the liturgical year, which turns at the First Sunday of Advent, not from January 1 alone; one civil year normally contains the end of one Sunday cycle and the beginning of the next. Never infer the independent weekday cycle `I` or `II` from the Sunday letter, and never infer the Sunday letter from civil-year parity.
+
+The full publication slug is the parent's required stem followed by lowercase suffixes in the same order: `-year-a`, `-year-b`, or `-year-c` for `A`, `B`, or `C`; `-abc` for verified common coverage; then a literal form such as `-vigil`, `-extended-vigil`, `-night`, `-dawn`, or `-day`; then an exact listed occurrence such as `-december-30`, `-monday`, or `-sunday`. Never add a branch suffix, use anonymous `option-1`, use a generic `weekday`, or invent a Vigil suffix for an ordinary anticipated Sunday Mass. A multi-cycle compilation is a derivative publication, not a canonical formula target; it may not replace the separate keys below or use the former `-years-a-b-c` exception.
+
+### Complete Proper-of-Time formula registry
+
+The following is the canonical creation queue. The formula keys are written out in their required order; braces or unlisted implied combinations are not part of the registry. The Lectionary numbers are structural locators in the current *Ordo Lectionum Missae* sequence and its approved English Volume I contents, not permission to mix editions or translations.
+
+| Parent | Required formula keys, in order | Lectionary number(s) | Count |
+| --- | --- | --- | ---: |
+| PC-S01 | `PC-S01-A`, `PC-S01-B`, `PC-S01-C` | 1, 2, 3 | 3 |
+| PC-S02 | `PC-S02-A`, `PC-S02-B`, `PC-S02-C` | 4, 5, 6 | 3 |
+| PC-S03 | `PC-S03-A`, `PC-S03-B`, `PC-S03-C` | 7, 8, 9 | 3 |
+| PC-S04 | `PC-S04-A`, `PC-S04-B`, `PC-S04-C` | 10, 11, 12 | 3 |
+| PC-S05 | `PC-S05-ABC-VIGIL`, `PC-S05-ABC-NIGHT`, `PC-S05-ABC-DAWN`, `PC-S05-ABC-DAY` | 13, 14, 15, 16 | 4 |
+| PC-S06 | `PC-S06-A`, `PC-S06-B`, `PC-S06-C` | 17 | 3 |
+| PC-S07 | `PC-S07-ABC` | 18 | 1 |
+| PC-S08 | `PC-S08-ABC` | 19 | 1 |
+| PC-S09 | `PC-S09-ABC-VIGIL`, `PC-S09-ABC-DAY` | 20 | 2 |
+| PC-S10 | `PC-S10-A`, `PC-S10-B`, `PC-S10-C` | 21 | 3 |
+| PC-S11 | `PC-S11-A`, `PC-S11-B`, `PC-S11-C` | 22, 23, 24 | 3 |
+| PC-S12 | `PC-S12-A`, `PC-S12-B`, `PC-S12-C` | 25, 26, 27 | 3 |
+| PC-S13 | `PC-S13-A`, `PC-S13-B`, `PC-S13-C` | 28, 29, 30 | 3 |
+| PC-S14 | `PC-S14-A`, `PC-S14-B`, `PC-S14-C` | 31, 32, 33 | 3 |
+| PC-S15 | `PC-S15-A`, `PC-S15-B`, `PC-S15-C` | 34, 35, 36 | 3 |
+| PC-S16 | `PC-S16-A`, `PC-S16-B`, `PC-S16-C` | 37-A/38-A, 37-B/38-B, 37-C/38-C | 3 |
+| PC-S17 | `PC-S17-A-VIGIL`, `PC-S17-A-DAY`, `PC-S17-B-VIGIL`, `PC-S17-B-DAY`, `PC-S17-C-VIGIL`, `PC-S17-C-DAY` | 41, 42 | 6 |
+| PC-S18 | `PC-S18-A`, `PC-S18-B`, `PC-S18-C` | 43, 44, 45 | 3 |
+| PC-S19 | `PC-S19-A`, `PC-S19-B`, `PC-S19-C` | 46, 47, 48 | 3 |
+| PC-S20 | `PC-S20-A`, `PC-S20-B`, `PC-S20-C` | 49, 50, 51 | 3 |
+| PC-S21 | `PC-S21-A`, `PC-S21-B`, `PC-S21-C` | 52, 53, 54 | 3 |
+| PC-S22 | `PC-S22-A`, `PC-S22-B`, `PC-S22-C` | 55, 56, 57 | 3 |
+| PC-S23 | `PC-S23-A-VIGIL`, `PC-S23-A-DAY`, `PC-S23-B-VIGIL`, `PC-S23-B-DAY`, `PC-S23-C-VIGIL`, `PC-S23-C-DAY` | 58 | 6 |
+| PC-S24 | `PC-S24-A`, `PC-S24-B`, `PC-S24-C` | 59, 60, 61 | 3 |
+| PC-S25 | `PC-S25-ABC-VIGIL`, `PC-S25-ABC-EXTENDED-VIGIL`, `PC-S25-A-DAY`, `PC-S25-B-DAY`, `PC-S25-C-DAY` | 62, 62a, 63 | 5 |
+| PC-S26 | `PC-S26-A`, `PC-S26-B`, `PC-S26-C` | 64, 65, 66 | 3 |
+| PC-S27 | `PC-S27-A`, `PC-S27-B`, `PC-S27-C` | 67, 68, 69 | 3 |
+| PC-S28 | `PC-S28-A`, `PC-S28-B`, `PC-S28-C` | 70, 71, 72 | 3 |
+| PC-S29 | `PC-S29-A`, `PC-S29-B`, `PC-S29-C` | 73, 74, 75 | 3 |
+| PC-S30 | `PC-S30-A`, `PC-S30-B`, `PC-S30-C` | 76, 77, 78 | 3 |
+| PC-S31 | `PC-S31-A`, `PC-S31-B`, `PC-S31-C` | 79, 80, 81 | 3 |
+| PC-S32 | `PC-S32-A`, `PC-S32-B`, `PC-S32-C` | 82, 83, 84 | 3 |
+| PC-S33 | `PC-S33-A`, `PC-S33-B`, `PC-S33-C` | 85, 86, 87 | 3 |
+| PC-S34 | `PC-S34-A`, `PC-S34-B`, `PC-S34-C` | 88, 89, 90 | 3 |
+| PC-S35 | `PC-S35-A`, `PC-S35-B`, `PC-S35-C` | 91, 92, 93 | 3 |
+| PC-S36 | `PC-S36-A`, `PC-S36-B`, `PC-S36-C` | 94, 95, 96 | 3 |
+| PC-S37 | `PC-S37-A`, `PC-S37-B`, `PC-S37-C` | 97, 98, 99 | 3 |
+| PC-S38 | `PC-S38-A`, `PC-S38-B`, `PC-S38-C` | 100, 101, 102 | 3 |
+| PC-S39 | `PC-S39-A`, `PC-S39-B`, `PC-S39-C` | 103, 104, 105 | 3 |
+| PC-S40 | `PC-S40-A`, `PC-S40-B`, `PC-S40-C` | 106, 107, 108 | 3 |
+| PC-S41 | `PC-S41-A`, `PC-S41-B`, `PC-S41-C` | 109, 110, 111 | 3 |
+| PC-S42 | `PC-S42-A`, `PC-S42-B`, `PC-S42-C` | 112, 113, 114 | 3 |
+| PC-S43 | `PC-S43-A`, `PC-S43-B`, `PC-S43-C` | 115, 116, 117 | 3 |
+| PC-S44 | `PC-S44-A`, `PC-S44-B`, `PC-S44-C` | 118, 119, 120 | 3 |
+| PC-S45 | `PC-S45-A`, `PC-S45-B`, `PC-S45-C` | 121, 122, 123 | 3 |
+| PC-S46 | `PC-S46-A`, `PC-S46-B`, `PC-S46-C` | 124, 125, 126 | 3 |
+| PC-S47 | `PC-S47-A`, `PC-S47-B`, `PC-S47-C` | 127, 128, 129 | 3 |
+| PC-S48 | `PC-S48-A`, `PC-S48-B`, `PC-S48-C` | 130, 131, 132 | 3 |
+| PC-S49 | `PC-S49-A`, `PC-S49-B`, `PC-S49-C` | 133, 134, 135 | 3 |
+| PC-S50 | `PC-S50-A`, `PC-S50-B`, `PC-S50-C` | 136, 137, 138 | 3 |
+| PC-S51 | `PC-S51-A`, `PC-S51-B`, `PC-S51-C` | 139, 140, 141 | 3 |
+| PC-S52 | `PC-S52-A`, `PC-S52-B`, `PC-S52-C` | 142, 143, 144 | 3 |
+| PC-S53 | `PC-S53-A`, `PC-S53-B`, `PC-S53-C` | 145, 146, 147 | 3 |
+| PC-S54 | `PC-S54-A`, `PC-S54-B`, `PC-S54-C` | 148, 149, 150 | 3 |
+| PC-S55 | `PC-S55-A`, `PC-S55-B`, `PC-S55-C` | 151, 152, 153 | 3 |
+| PC-S56 | `PC-S56-A`, `PC-S56-B`, `PC-S56-C` | 154, 155, 156 | 3 |
+| PC-S57 | `PC-S57-A`, `PC-S57-B`, `PC-S57-C` | 157, 158, 159 | 3 |
+| PC-S58 | `PC-S58-A`, `PC-S58-B`, `PC-S58-C` | 164, 165, 166 | 3 |
+| PC-S59 | `PC-S59-A`, `PC-S59-B`, `PC-S59-C` | 167, 168, 169 | 3 |
+| PC-S60 | `PC-S60-A`, `PC-S60-B`, `PC-S60-C` | 160, 161, 162 | 3 |
+
+The registry contains **184 baseline Proper-of-Time targets**: 79 for `PC-S01`–`PC-S25` and 105 for `PC-S26`–`PC-S60`. Each appointed form must cover the three A/B/C occurrence slots exactly once: three cycle-specific keys or one directly collated `ABC` key, never both. For `PC-S26`–`PC-S57`, the Lectionary number is independently checkable as `64 + 3 × (parent number − 26) + cycle offset`, where the offsets for A, B, and C are 0, 1, and 2. The count excludes the separate weekday occurrence targets, General Calendar replacements, and conditional Ritual Masses below.
+
+The registry fixes the production kernel established by the Latin typical books. Before creating a leaf, collate the selected approved Lectionary and Missal edition. An edition-specific additional option remains a named branch. If an approved adaptation makes a listed `PC-Snn-ABC[-FORM]` target materially cycle-dependent, fail closed: do not publish that `ABC` leaf and do not invent A/B/C overlay keys under the general grammar. Record the conflict, then revise this profile or an edition-locale registry expressly established by it to list the exact replacement keys, canonical position, and adjusted count before creating any leaf. No optional branch or unregistered edition difference may promote itself into another target.
+
+### Required branches and conditional Ritual Masses
+
+Branches do not multiply the 184 baseline targets, but omitting them leaves a target incomplete. Every target audit must name every approved longer, shorter, alternative, or selectable path in the selected edition. The structurally important branches include:
+
+- the common and cycle-specific reading sets for Holy Family and Baptism in Years B and C;
+- the Rite of Election when celebrated within the Mass of the First Sunday of Lent, using that Sunday's Mass while recording the rite as an internal branch; the separate Election Ritual Mass is for an admitted celebration apart from that Sunday and is not another `PC-S11` target;
+- the Year A initiation readings permitted in Years B and C on the Third, Fourth, and Fifth Sundays of Lent and required when the corresponding Scrutiny is celebrated, together with the prayers and prefaces bound to that reading path;
+- Palm Sunday's procession, solemn-entrance, and simple-entrance modes; its cycle-specific entrance Gospel choices; the long and short Passion; and every authorized reduction of the pre-Gospel readings;
+- the Easter Vigil's full and pastorally reduced Old Testament reading paths, their shorter readings and psalm alternatives, the required Exodus reading, the cycle-specific Gospel, and every applicable initiation or reception path;
+- Easter Day's two second-reading choices, John 20, the current cycle's Vigil Gospel, the evening Emmaus option, and any approved baptismal-renewal path;
+- the Ascension's alternative and shorter second readings in Years B and C;
+- Pentecost's simple-Vigil reading selection, complete extended Vigil, Day alternatives in Years B and C, and the Sequence; and
+- every edition-appointed pericope length, alternative refrain, acclamation, sequence form, preface, and prayer option in Ordinary Time and the solemnities.
+
+The Ritual Masses for the three Scrutinies substitute distinct formularies and therefore are conditional formula targets rather than branches of the temporal Missal owner:
+
+| Sunday parent | Conditional formula key | Required slug suffix | Canonical owner |
+| --- | --- | --- | --- |
+| PC-S13 | `PC-S13-ABC-FIRST-SCRUTINY` | `-abc-first-scrutiny` | First-Scrutiny Ritual Mass in the selected approved edition |
+| PC-S14 | `PC-S14-ABC-SECOND-SCRUTINY` | `-abc-second-scrutiny` | Second-Scrutiny Ritual Mass in the selected approved edition |
+| PC-S15 | `PC-S15-ABC-THIRD-SCRUTINY` | `-abc-third-scrutiny` | Third-Scrutiny Ritual Mass in the selected approved edition |
+
+These three keys use the Year A initiation readings in every actual cycle, apply only when the corresponding Scrutiny is celebrated and the governing books admit the Ritual Mass, and do not become duplicate temporal-formulary owners. They raise the fixed Proper-of-Time-linked Sunday queue from 184 to **187** when conditional Sunday Ritual Masses are included. General Ritual Masses, Masses for Various Needs and Occasions, and Votive Masses admitted on particular Sundays remain resolver overlays with their own owners; they do not enter or renumber this Proper-of-Time registry.
 
 ### Occurrence resolver and Sunday replacements
 
@@ -120,7 +229,30 @@ As of 15 July 2026, the following registry is exhaustive for universal fixed-dat
 | PC-R08 | `pc-r08-commemoration-of-all-the-faithful-departed` | November 2 | Commemoration of All the Faithful Departed | Assigned the precedence of General Calendar solemnities |
 | PC-R09 | `pc-r09-dedication-of-the-lateran-basilica` | November 9 | Dedication of the Lateran Basilica | Feast of the Lord in the General Calendar |
 
-`PC-R` publications use the same full-slug cycle, appointed-form, and occurrence grammar fixed for `PC-S`; their source owner and publishable leaf use the `general-calendar` paths fixed above.
+`PC-R` publications use the same formula-key and full-slug grammar fixed for `PC-S`; their source owner and publishable leaf use the `general-calendar` paths fixed above. The complete replacement-parent matrix, with its one edition-dependent expansion, is:
+
+| Parent | Required Sunday-replacement formula keys, in order | Count | Required distinctions |
+| --- | --- | ---: | --- |
+| PC-R01 | `PC-R01-ABC-O-SUNDAY` | 1 | Presentation on Sunday has both pre-Gospel readings; keep procession and solemn entrance as named ritual branches of the one Mass formulary. |
+| PC-R02 | `PC-R02-ABC-VIGIL`, `PC-R02-ABC-DAY` | 2 | The Nativity of Saint John the Baptist has distinct Vigil and Day formularies. |
+| PC-R03 | `PC-R03-ABC-VIGIL`, `PC-R03-ABC-DAY` | 2 | Saints Peter and Paul has distinct Vigil and Day formularies. |
+| PC-R04 | `PC-R04-A-O-SUNDAY`, `PC-R04-B-O-SUNDAY`, `PC-R04-C-O-SUNDAY` | 3 | Transfiguration has cycle-specific Sunday Gospels and both pre-Gospel readings. |
+| PC-R05 | `PC-R05-ABC-VIGIL`, `PC-R05-ABC-DAY` | 2 | Assumption has distinct Vigil and Day formularies. |
+| PC-R06 | `PC-R06-ABC-O-SUNDAY` | 1 | Exaltation of the Holy Cross on Sunday has both pre-Gospel readings. |
+| PC-R07 | `PC-R07-ABC` | 1 | All Saints has no appointed Vigil formulary; an anticipated Mass uses the same formulary. |
+| PC-R08 | edition-resolved expansion below | 3 or 9 | All Souls has three distinct Missal formularies; the Lectionary cycle shape differs among approved editions. |
+| PC-R09 | `PC-R09-ABC-O-SUNDAY` | 1 | Lateran Dedication on Sunday has both pre-Gospel readings. |
+
+For `PC-R08`, select exactly one of these expansions after collating the approved Lectionary:
+
+- if the complete reading inventory is invariant across the Sunday cycles: `PC-R08-ABC-FORMULARY-1`, `PC-R08-ABC-FORMULARY-2`, `PC-R08-ABC-FORMULARY-3`;
+- if the edition appoints A/B/C sets: `PC-R08-A-FORMULARY-1`, `PC-R08-A-FORMULARY-2`, `PC-R08-A-FORMULARY-3`, `PC-R08-B-FORMULARY-1`, `PC-R08-B-FORMULARY-2`, `PC-R08-B-FORMULARY-3`, `PC-R08-C-FORMULARY-1`, `PC-R08-C-FORMULARY-2`, `PC-R08-C-FORMULARY-3`.
+
+Do not collapse the three All Souls Missal formularies into anonymous prayer options, and do not explode the edition's selectable Masses-for-the-Dead readings into a Cartesian set of publication leaves. `FORMULARY-1`, `FORMULARY-2`, and `FORMULARY-3` identify the three printed formularies only; they do not prescribe the chronological order of Masses celebrated, an intention, or a pairing with a reading branch. Preserve each approved reading tuple as a semantic internal branch. The replacement queue therefore contains **16 targets** in an edition with invariant All Souls readings and **22 targets** in an edition whose All Souls readings are cycle-distinguished. For example, the current approved [Lectionary Volume I contents for England and Wales](https://www.liturgyoffice.org.uk/Resources/Lectionary/Lectionary-1-contents.pdf) uses the 22-target shape, while the current [United States All Souls directions](https://bible.usccb.org/bible/readings/110225.cfm) require a separately collated broad reading pool rather than importing that national A/B/C arrangement.
+
+The Sunday suffix on `PC-R01`, `PC-R04`, `PC-R06`, and `PC-R09` is mandatory because these Feasts use both pre-Gospel readings when they replace a Sunday but only one, chosen as the Lectionary directs, when celebrated on a weekday. Keep that weekday rule in the shared owner; do not create `PC-R` weekday publication keys before a weekday collection is defined.
+
+The complete **fixed registry queue** for a selected edition-locale is therefore **203 targets** in an edition with the 16-target replacement shape, or **209 targets** in an edition with the 22-target replacement shape: 184 Proper-of-Time targets, three conditional Scrutiny Ritual Masses, and the applicable replacement matrix. The six weekday fallbacks are tracked separately, bringing the total working inventory to 209 or 215 respectively; they do not change the Sunday count. Other admitted Ritual Masses and territorial, diocesan, religious, parish, and church-proper overlays are resolver-generated additions, so no finite universal total can include them in advance.
 
 A celebration admitted to an Ordinary Time Sunday under Universal Norms 58 retains its underlying celebration identity and source owner; Sunday occurrence alone does not create a new `PC-S` or `PC-R` identity. This rule governs, for example, a lawful Sunday observance of the Most Sacred Heart of Jesus.
 
@@ -149,6 +281,19 @@ The weekday-capable parents and conditional omissions in this spine are fixed as
 | PC-S25 Pentecost | Sunday celebration; where Monday or Tuesday after Pentecost is a day on which the faithful are obliged or accustomed to attend Mass, the Missal permits the Pentecost Mass to be repeated or a Mass of the Holy Spirit to be used. This is conditional reuse, not transfer or a new identity. |
 | PC-S59 Body and Blood of Christ | Thursday after Trinity Sunday or the following Sunday, according to the competent calendar. |
 
+Only two Proper-of-Time parents require separate, prebuilt weekday fallback targets because the fallback changes the Liturgy of the Word. Their six keys follow the Sunday registry but do not count as Sunday formulas:
+
+| Order | Formula key | Required slug suffix | Weekday structure |
+| ---: | --- | --- | --- |
+| 1 | `PC-S06-A-O-DECEMBER-30` | `-year-a-december-30` | One reading before the Gospel; preserve the Year A path. |
+| 2 | `PC-S06-B-O-DECEMBER-30` | `-year-b-december-30` | One reading before the Gospel; preserve the common-versus-Year-B option. |
+| 3 | `PC-S06-C-O-DECEMBER-30` | `-year-c-december-30` | One reading before the Gospel; preserve the common-versus-Year-C option. |
+| 4 | `PC-S10-A-O-MONDAY` | `-year-a-monday` | One reading before the Gospel, chosen as the approved Lectionary directs. |
+| 5 | `PC-S10-B-O-MONDAY` | `-year-b-monday` | One reading before the Gospel; preserve the common-versus-Year-B option. |
+| 6 | `PC-S10-C-O-MONDAY` | `-year-c-monday` | One reading before the Gospel; preserve the common-versus-Year-C option. |
+
+The temporal production queue is therefore **190 targets** when the 184 Sunday formulas and these six deterministic weekday fallbacks are counted together, or **193** when the three conditional Scrutiny formularies are also included. Nativity on a weekday, Mary on January 1, Epiphany on January 6, Ascension on Thursday, and Corpus Christi on Thursday reuse their existing formula targets because the day of occurrence does not itself change the treated texts. Pentecost on Monday or Tuesday is a conditional reuse edge, not a prebuilt fallback target.
+
 The fixed `temporal/shared/ordinary-time/weeks/01` through `weeks/34` layer owns the Ordinary Time Missal formularies and, when warranted, supplies separately manifested weekday companions:
 
 - Week I has no numbered Sunday consumer; its separate formulary is available for ferial use and cross-references `PC-S10`. Never invent a First Sunday in Ordinary Time.
@@ -164,18 +309,19 @@ Rogation and Ember days are weekday overlays under Universal Norms 45–47: the 
 
 The Ordinary Time week layer owns each Missal formulary once and lets Sunday and weekday consumers import or reference it; do not duplicate its protected wording in three Sunday-cycle records or again in weekday consumers. Reserve `PC-W` for a future full weekday collection that keeps seasonal, fixed-date, and Ordinary Time material outside the immutable `PC-S` numbering; do not assign a `PC-W` ID or create a `PC-W` slug until this profile adds its complete inventory, slug grammar, and layout. Where Monday or Tuesday after Pentecost is a day on which the faithful are obliged or accustomed to attend Mass, the exceptional permission to repeat the Pentecost Mass or use a Mass of the Holy Spirit remains valid under the Holy See's [2018 notification concerning the Memorial of the Blessed Virgin Mary, Mother of the Church](https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2018/03/27/180327b.html); record it as a conditional reuse edge on `PC-S25`, not as a new Sunday or weekday identity. The Monday memorial remains obligatory and is preferred all else being equal; when it is celebrated, its proper readings replace the Ordinary Time weekday readings. Any exceptional selection must follow the circumstances stated in the Missal, GIRM 376, and the competent calendar.
 
-This order and policy were checked on 15 July 2026 against Paul VI's [*Mysterii Paschalis*](https://www.vatican.va/content/paul-vi/la/motu_proprio/documents/hf_p-vi_motu-proprio_19690214_mysterii-paschalis.html), the bishops' approved English [Universal Norms on the Liturgical Year and the Calendar](https://www.liturgyoffice.org.uk/Resources/GIRM/Documents/GNLY.pdf), the official [Roman Missal, Third Edition contents](https://www.liturgyoffice.org.uk/Missal/Information/RM3-contents.pdf) and [Ordinary Time directions](https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf), the [General Introduction to the Lectionary](https://www.liturgyoffice.org/Resources/GIRM/Documents/Lectionary.pdf), the *Missale Romanum*, editio typica tertia, reimpressio emendata 2008, *Tempus per annum*, introductory rubrics 1–6 and formularies for Weeks I–XXXIV, especially pp. 450–484, the Dicastery's live [calendar-variations index](https://www.cultodivino.va/en/formazione/pubblicazioni/libri-liturgici/aliae/calendarium-romanum.html), and the Holy See's [General Instruction of the Roman Missal](https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html), especially nos. 353–363 and 376. The exact typical and vernacular editions, later decrees, and competent annual calendar still govern each publication.
+This order and policy were checked on 15 July 2026 against Paul VI's [*Mysterii Paschalis*](https://www.vatican.va/content/paul-vi/la/motu_proprio/documents/hf_p-vi_motu-proprio_19690214_mysterii-paschalis.html), the bishops' approved English [Universal Norms on the Liturgical Year and the Calendar](https://www.liturgyoffice.org.uk/Resources/GIRM/Documents/GNLY.pdf), the official [Roman Missal, Third Edition contents](https://www.liturgyoffice.org.uk/Missal/Information/RM3-contents.pdf) and [Ordinary Time directions](https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf), the approved [Lectionary Volume I contents](https://www.liturgyoffice.org.uk/Resources/Lectionary/Lectionary-1-contents.pdf), the [General Introduction to the Lectionary](https://www.liturgyoffice.org/Resources/GIRM/Documents/Lectionary.pdf), and the bishops' official structural matrices for [Christmas](https://www.liturgyoffice.org.uk/Calendar/Sunday/ChristmasSunday.shtml), [Lent and Palm Sunday](https://www.liturgyoffice.org.uk/Calendar/Sunday/LentSunday.shtml), the [Paschal Triduum](https://www.liturgyoffice.org.uk/Calendar/Sunday/Triduum.shtml), [Easter Time](https://www.liturgyoffice.org.uk/Calendar/Sunday/EasterSunday.shtml), and [General Calendar Feasts of the Lord](https://www.liturgyoffice.org.uk/Calendar/Sunday/Feasts.shtml). It was also checked against the *Missale Romanum*, editio typica tertia, reimpressio emendata 2008, *Tempus per annum*, introductory rubrics 1–6 and formularies for Weeks I–XXXIV, especially pp. 450–484, the Dicastery's live [calendar-variations index](https://www.cultodivino.va/en/formazione/pubblicazioni/libri-liturgici/aliae/calendarium-romanum.html), and the Holy See's [General Instruction of the Roman Missal](https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html), especially nos. 353–363 and 376. The exact typical and vernacular editions, later decrees, and competent annual calendar still govern each publication.
 
 ## Establish the liturgical instance first
 
 Before research or drafting, create a manifest that identifies the texts actually being studied. Record at least:
 
+- the permanent parent ID and formula key, its `A`, `B`, `C`, or verified `ABC` production coverage, its canonical Missal or Ritual Mass owner, and every selected named branch;
 - the Latin typical edition of the Roman Missal and, when applicable, its printing or reprint;
 - the vernacular Missal edition, language, episcopal conference or territory, publisher, and approval or implementation date;
 - the Lectionary edition and volume, language, territory, and edition-specific reading references;
 - the governing calendar: General Roman Calendar and every national, diocesan, religious, parish, or other proper calendar that affects the celebration;
 - the celebration, rank, ritual or pastoral context, and civil date when a date is needed to resolve precedence;
-- the Sunday cycle (`A`, `B`, or `C`), or `not applicable` when the instance has no Sunday-cycle path; the weekday cycle (`I` or `II`), or `not applicable` when the instance has no weekday readings; and any special cycle or vigil form;
+- the actual Sunday cycle (`A`, `B`, or `C`) for a dated occurrence, or `not applicable` when the instance has no Sunday-cycle path; the weekday cycle (`I` or `II`), or `not applicable` when the instance has no weekday readings; and any special cycle, appointed form, branch, or occurrence discriminator;
 - every permitted option selected, including alternative readings, prayers, prefaces, ritual forms, or formulary sources; and
 - unresolved choices that would produce materially different documents.
 
@@ -217,9 +363,13 @@ When describing development from an earlier Missal, compare identified editions 
 
 ## Completion gate
 
+Do not describe an edition-locale's Proper-of-Time Sunday collection as complete until all 184 baseline keys are either published or carry a sourced `not-present-in-edition` disposition authorized by this profile, no cycle-split conflict remains unresolved, all three conditional Scrutiny keys have been evaluated, the six weekday fallback keys have been evaluated, and the applicable replacement and local-overlay matrix has been resolved. A celebration's absence in one civil year is an occurrence result, not a reason to omit its permanent production target.
+
 A postconciliar proper guide is ready to publish only when:
 
-- when the guide belongs to `PC-S` or `PC-R`, its identity, slug, source ownership, and path conform to the defined series above, and an occurrence audit resolves whether that celebration governs the selected date; a ritual, local, or other proper outside those series follows its own defined inventory and may not use the reserved `PC-W` namespace;
+- when the guide belongs to `PC-S` or `PC-R`, its permanent formula key, derived slug, source ownership, and path conform to the registries above, and an occurrence audit resolves whether that celebration governs the selected date; a ritual, local, or other proper outside those series follows its own defined inventory and may not use the reserved `PC-W` namespace;
+- the registry has no duplicate key or slug, every target references exactly one canonical Missal or Ritual Mass owner, and the selected edition covers A/B/C exactly once for every appointed form without an `ABC` overlap;
+- the target's branch audit accounts for every authorized longer, shorter, substitute, ritual, sequence, preface, and prayer path in the selected edition, even though those internal branches do not multiply the baseline target count;
 - the liturgical-instance manifest resolves edition, language, territory, calendar, cycle, and options;
 - every treated element has a source and liturgical-status classification;
 - quotations and tracked records comply with the applicable copyright or license;
