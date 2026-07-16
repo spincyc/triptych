@@ -1,12 +1,12 @@
 # Postconciliar Proper Guides
 
-This profile governs guides to the variable parts of postconciliar Roman-rite liturgies. It supplements the repository-wide editorial and source rules. It adopts the reusable architecture and evidence discipline of the 1962 proper expositions---an opening map, four-senses synthesis, historical orientation, source-grounded overview, detailed commentary, separately disclosed interpretation, references, and structured generation metadata---but replaces every edition-specific assumption with the structure of the identified postconciliar books. The 1962 ten-item inventory, Lent-first numbering, fixed one-page and two-page limits, Latin-incipit conventions, and ordinary weekly model's fixed formulary without A/B/C Lectionary branching do not govern this collection.
+This profile governs study guides to the textual variable parts of identified postconciliar Roman-rite celebrations. It supplements the repository-wide editorial and source rules. The identified Missal, Lectionary, ritual books, calendar, and approved chant sources supply the inventory, order, terminology, and section design. Each guide first documents the texts appointed or lawfully selected for the identified celebration or formula target, then develops a source-grounded study guide from those texts, their ritual placement, scriptural context, and documented relationships.
 
 Under the present provider, each document lives at `src/gpt/liturgy/roman-rite/postconciliar/<edition-locale>/propers/<calendar-family>/<document>/`; another provider uses the same content taxonomy beneath its own provider directory. The edition-locale component is an identity guardrail, not a substitute for the fuller manifest below. The Sunday series fixes `<calendar-family>` as `temporal`; the General Calendar replacement series fixes it as `general-calendar`.
 
 ## Canonical Sunday-proper production order
 
-The postconciliar Sunday collection uses the following **60 stable Proper-of-Time identities**. This is the firm repository order for planning, identifiers, paths, status tracking, and creation. It follows the section order of the postconciliar Roman Missal—Advent, Christmas Time, Lent and Holy Week, Easter Time, Ordinary Time, and the Sunday-capable Solemnities of the Lord in Ordinary Time—rather than the Lent-first 1962 rotation or the occurrence pattern of one civil year.
+The postconciliar Sunday collection uses the following **60 stable Proper-of-Time identities**. This is the firm repository order for planning, identifiers, paths, status tracking, and creation. It follows the section order of the postconciliar Roman Missal—Advent, Christmas Time, Lent and Holy Week, Easter Time, Ordinary Time, and the Sunday-capable Solemnities of the Lord in Ordinary Time—independently of the occurrence pattern of any one civil year.
 
 `PC-S` means the postconciliar Sunday-production series. It does not assert that every identity always occurs on Sunday: the series deliberately retains fixed or transferable Proper-of-Time celebrations that can occupy a Sunday, including the explicitly conditional Second Sunday after the Nativity and Seventh Sunday of Easter. IDs are permanent, may not be reassigned or renumbered, and do not establish liturgical rank or precedence. A document slug begins with the lowercase form shown below; cycle and form suffixes follow the variant rules after the table.
 
@@ -353,7 +353,7 @@ The canonical Missal or Ritual Mass owner---a shared owner for `PC-S` and `PC-R`
 
 `instance/manifest.md` is the authoritative formula-identity and resolution record. `research/scope.md` preserves the operational scholarship audit displaced from the PDF: biblical and liturgical context, historical judgments, direct and illuminating reception, governing jurisdiction and as-of date, languages and corpora searched, material disagreement, negative results, rejected or unresolved leads, branch-specific limitations, source roles, rights boundaries, review performed, and review outstanding. It is not a diary or chain-of-thought record.
 
-The 1962-only `propers/retrieved.txt` OCR artifact is not part of this schema. A focused source extract may be retained only when its redistribution is lawful, its audit purpose cannot be met by edition and locator data, and the rights basis is recorded. Never make a complete modern vernacular Missal, Lectionary, ritual book, chant book, or bulk transcription a repository dependency.
+Source work uses the manifest and verified records defined above. A focused source extract may be retained only when its redistribution is lawful, its audit purpose cannot be met by edition and locator data, and the rights basis is recorded. Never make a complete modern vernacular Missal, Lectionary, ritual book, chant book, or bulk transcription a repository dependency.
 
 ### Required fields in the verified records
 
@@ -370,119 +370,127 @@ The leaf `propers/verified.md` records at least:
 - the permanent formula key, full slug, and parent when assigned, or the identity fixed by the governing ritual or local inventory; the canonical owner, edition-locale, Lectionary number or other locator, and every book supplying part of the target;
 - the complete ordered element inventory and branch matrix defined below;
 - the exact citations and pericope boundaries for every reading, psalm, acclamation, and scriptural ritual text, including longer and shorter forms, alternatives, and omitted verses;
-- the source and status of Entrance, Offertory, and Communion music, distinguishing a Missal antiphon from the *Graduale Romanum*, *Graduale Simplex*, another approved collection, and a local selection;
+- the source and status of each chant or other musical text path, identified by its liturgical placement and distinguishing a Missal antiphon from the *Graduale Romanum*, *Graduale Simplex*, another approved collection, and a local selection;
 - the resolved choice, if the leaf represents a dated or otherwise resolved occurrence, without erasing the target's unselected authorized branches; and
 - verification status, source locators, rights disposition, unresolved choices, discrepancies, and the final collation date.
 
 ## Required reader-facing exposition order
 
-Every postconciliar proper exposition uses this macro-order. This is the 1962 series' reader-facing rhythm, expressly adapted here to a source-layered and branching formula:
+Every postconciliar proper exposition uses this native macro-order:
 
-1. title and any necessary edition, source, or rubrical note;
-2. a compact `Liturgical Instance` panel, the complete `Appointed Elements` map, the branch synopsis when branches exist, and the four-senses table;
-3. `In Illo Tempore...`;
-4. `The Propers: Themes and Movement`;
-5. `The Propers: Detailed Commentary`;
-6. `The Propers: Interpretive Possibilities`;
-7. optional `Notable Quotables`;
-8. any required `Sacramental Appendix`;
-9. `References`, ending with `Search Scope and Limitations`; and
-10. terminal `Generation Metadata`, imported from `generation-metadata.tex`.
+1. title and a compact identity, use, rights, and review-status note;
+2. `Textual Variable Parts`, a documentary two-column inventory in actual liturgical order;
+3. `Study Guide: Scripture and Liturgical Context`;
+4. `Study Guide: Liturgical Movement and Textual Relationships`;
+5. `Study Guide: Theological and Spiritual Synthesis`;
+6. `Study Guide: Commentary on the Texts`;
+7. optional `Study Guide: Further Interpretive Possibilities`, with the required editorial or AI disclosure;
+8. optional `Reception and Cultural Echoes`;
+9. any required `Sacramental Appendix`;
+10. a fresh-page `Appendix: Liturgical Resolution`, containing `Liturgical Instance`, `Branch Resolution` for reader-relevant textual or ritual branches, and only the occurrence or transfer material needed to identify the instance or interpret those branches;
+11. `References`, ending with `Search Scope and Limitations`; and
+12. terminal `Generation Metadata`, imported from `generation-metadata.tex`.
 
-The opening survey begins on page 1. For an ordinary one-form target, fit the instance panel, map, branches, and four senses into one readable opening page when they fit naturally. `In Illo Tempore...` then begins on a fresh page, `Themes and Movement` begins on the next fresh page, and `Detailed Commentary` begins on a fresh page after the synthesis. These are section boundaries, not permission to shrink type, omit alternatives, or compress a complex formula into legacy page counts. Palm Sunday, the Easter Vigil, the extended Pentecost Vigil, Ritual Masses, and other element-heavy targets use as many opening, historical, and synthesis pages as readability and complete branch treatment require. After the opening survey, prose uses the shared `deepstudy` size or an exact readable equivalent. Visual distinctions remain intelligible in pure black and white, with no color-dependent distinction or gray fill.
+The title, compact note, and `Textual Variable Parts` begin on page 1 and use as much space as complete, readable documentation requires. Taken together, the title and note identify the exact edition-locale, formula or governing identity, occurrence when resolved, use boundary, rights boundary, and material review limits. The Study Guide and `Appendix: Liturgical Resolution` each begin on a fresh page; additional internal page breaks follow readability and the actual scale of the celebration. Palm Sunday, the Easter Vigil, the extended Pentecost Vigil, Ritual Masses, and other textually extensive targets expand rather than compress or omit material. Study Guide prose uses the shared `deepstudy` size or an exact readable equivalent. Visual distinctions remain intelligible in pure black and white, with no color-dependent distinction or gray fill.
 
-`Notable Quotables` is included only for verified cultural reception of an appointed text or distinctive wording and never to meet a quota. When Mass incorporates or directly targets a non-Eucharistic sacrament, import the repository's canonical one-page sacramental summary before `References`; research must use the full sacramental reference and its sources rather than treating that appendix as sufficient evidence.
+`Reception and Cultural Echoes` is included only for verified reception of an appointed text or distinctive wording and never to meet a quota. When Mass incorporates or directly targets a non-Eucharistic sacrament, import the repository's canonical one-page sacramental summary before the liturgical-resolution appendix; research must use the full sacramental reference and its sources rather than treating that appendix as sufficient evidence.
 
 `References` is the final scholarly section and contains only sources actually used. Its terminal `Search Scope and Limitations` subsection gives a compact reader-facing account of text verification, principal direct and illuminating sources, and branch or rights limits that affect the argument. It points to the leaf's `instance/manifest.md`, the leaf's composition audit at `propers/verified.md`, the canonical formulary owner's `propers/verified.md`, and the leaf's `research/scope.md`. `Generation Metadata` follows it and no expository prose follows the metadata.
 
-## Inventory the variable formula
+### Structural rationale
 
-Build the guide around the ordered units actually appointed or lawfully selected for the identified celebration, not around a legacy item count. The normal Sunday inventory is sourced from several books and must keep those layers distinct.
+The reader-facing order has three deliberate layers: a documentary record of the textual variable parts, a study guide grounded in those texts, and a technical resolution appendix. The opening inventory answers which texts the celebration appoints or concretely selects. The Study Guide explains scriptural context, liturgical relationships, theology, spirituality, and the individual texts. The appendix identifies the celebration and records the authority and resolution of branches that a reader needs to understand the text inventory or study. Complete source, status, and unresolved-choice data remain in the tracked audits.
 
-### Liturgical Instance panel
+Within `Textual Variable Parts`, one row represents one text-bearing liturgical unit. Closed alternatives belonging to that unit remain together in its `Text / citation` cell, while exact semantic branch IDs, authority, controlled status, and resolution remain in `Branch Resolution` and the tracked audits. Visible phase dividers follow the actual rite and omit empty phases. An ordinary Sunday may use `Introductory Rites`, `Liturgy of the Word`, `Liturgy of the Eucharist`, and `Concluding Rites` when a distinctive textual variable is inventoried there; Palm Sunday, Vigils, Ritual Masses, and other special forms use their own modules. This structure was re-evaluated across every existing postconciliar proper guide on 16 July 2026.
 
-The opening panel gives, in compact reader-facing form:
+## Document the textual variable parts
+
+Build the textual record from the ordered text-bearing units appointed or lawfully selected for the identified celebration. Collate every governing book and preserve each source layer in the audit.
+
+### Liturgical Instance appendix panel
+
+The first subsection of `Appendix: Liturgical Resolution` gives:
 
 - the celebration, rank, season, liturgical color, parent ID and permanent formula key when assigned, or the governing ritual or local identity, and the full form or occurrence name;
 - the selected edition-locale, governing calendar and territory, Missal or Ritual Mass owner, Lectionary edition and number, and any additional ritual or chant book actually used;
 - the production coverage (`A`, `B`, `C`, or verified `ABC`), the actual Sunday cycle for a resolved occurrence, and the independent weekday cycle when applicable;
-- the status of the Gloria, Creed, Penitential Act or its ritual replacement, sequence, Prayer of the Faithful, and any other ordinary unit whose presence, omission, or replacement is material; and
-- the selected branch IDs for a resolved occurrence, or a statement that the guide treats the registered target and all named branches without claiming that they occurred together.
+- the canonical formulary owner and the relationship between its reusable text record and the leaf's dated or cycle-specific composition; and
+- the textual branches treated by the guide and, for a resolved occurrence, the selections that can be established from the evidence.
 
-The Gloria, Creed, Penitential Act, Prayer of the Faithful, ordinary Eucharistic Prayer, and similar stable parts are structural status fields, not proper-text rows, unless the celebration or another governing book appoints distinctive wording or substitutes a distinctive rite. Their general theology belongs in an Ordinary exposition, not repeated in every proper guide.
+The tracked manifest and verified audit record ordinary-unit status, ritual substitutions, open selections, and every applicable branch. The reader-facing `Liturgical Instance` includes such information only when it is needed to identify the form or interpret a textual variable treated in the guide.
 
-The manifest and verified audit always record the applicable Preface rule and any Eucharistic Prayer choice that activates a proper insert. The reader-facing map gives a separate Preface or Eucharistic Prayer-insert row when the text is proper, narrowly appointed, selected in a resolved instance, or materially analyzed; it need not reproduce a common unrestricted text merely to complete a row count.
+The manifest and verified audit always record the applicable Preface rule and any Eucharistic Prayer choice that activates a proper insert. `Textual Variable Parts` includes a Preface or Eucharistic Prayer insert only when the text is proper, narrowly appointed, or concretely selected in a resolved instance. The reader appendix states a Preface or Eucharistic Prayer dependency only when it changes an inventoried text or materially limits the Study Guide.
 
-Model prayer-specific dependencies as coupled branches, not independent choices. On an Ordinary Time Sunday, the Missal directs a Sunday-in-Ordinary-Time Preface unless the selected Eucharistic Prayer carries its own Preface (*Tempus per annum*, rubric 5); record the unresolved authorized pairing as a `compatible-preface-and-eucharistic-prayer` path rather than implying that every Prayer takes a separately selected Sunday Preface. In particular, Eucharistic Prayer IV may be used only with its own inseparable Preface and may not be used when the Mass has a proper Preface (GIRM 365(d)); an Ordinary Time target with no proper Preface therefore also records an explicit `eucharistic-prayer-iv-with-preface` path, while a target with a proper Preface records Eucharistic Prayer IV as excluded. Apply the corresponding rubric to any other Eucharistic Prayer whose Preface or insert constrains the selection.
+Model prayer-specific dependencies as coupled branches in the audits. On an Ordinary Time Sunday, the Missal directs a Sunday-in-Ordinary-Time Preface unless the selected Eucharistic Prayer carries its own Preface (*Tempus per annum*, rubric 5). Eucharistic Prayer IV is selected together with its own inseparable Preface under GIRM 365(d); a celebration whose formulary appoints a proper Preface follows the corresponding restriction. Apply the governing rubric to every Eucharistic Prayer whose Preface or insert constrains the selection.
 
-### Appointed Elements map
+### Textual Variable Parts
 
-The map has a variable number of rows and these four conceptual columns:
+The inventory has a variable number of rows and exactly two conceptual columns:
 
 | Column | Required content |
 | --- | --- |
-| `Element / branch` | Liturgical unit in the actual order of celebration, with a semantic branch ID when the row is not common to the target. |
-| `Book / status` | Exact source layer and one of the controlled statuses below. |
-| `Text / citation` | Incipit or minimum necessary clause for a prayer or antiphon; exact biblical citation and pericope boundary for a Lectionary element. |
-| `Function / evidenced relation` | Liturgical function and only a textual, officially stated, or documented inherited relationship; original cross-element proposals wait for `Interpretive Possibilities`. |
+| `Textual unit` | One text-bearing variable unit in its actual liturgical position. |
+| `Text / citation` | Incipit or minimum necessary clause for a prayer or antiphon; exact biblical citation and pericope boundary for a Lectionary element; all closed alternatives for the same unit, labeled in ordinary language within the one cell. |
 
-Assign every treated element an unambiguous short cue for later navigation. Proper-focused subsection headings and substantial proposal leads end with quiet italic parenthetical cues in actual liturgical order, adding the semantic branch ID where needed. Cues must distinguish, for example, the Missal Entrance Antiphon from the selected Entrance chant, the Offertory chant from the Prayer over the Offerings, and a common row from its alternative. Do not use numeric badges, decorative icons, or a cue whose meaning changes between guides.
+Use one row per actual unit, not one row per branch. Put long and short forms of one Gospel in the same Gospel row and the same `Text / citation` column. Apply the same rule to alternative psalm responses, sequence forms, Prefaces, Communion antiphons, and alternative forms of one appointed concluding text. Use ordinary-language labels such as `Long`, `Short`, `A`, and `B`; keep the exact semantic branch IDs in the appendix and tracked audits. Genuinely repeated units in a special form---for example, the Easter Vigil's several reading--psalm--collect modules---remain separate modules, and a complex cell may continue for legibility rather than become an unreadable list.
 
-The shared 1962 `properstable` environment hard-codes a TLM column heading and may not be reused unchanged. Before the first postconciliar guide is built, provide a dedicated shared table environment implementing the four columns above, variable rows, ordinary-language status labels, and readable multipage behavior for complex formulas.
+Include every text appointed by the governing books and every concretely documented local selection. Consolidate closed alternatives in their textual-unit row. Record every unresolved selection class, omission, and applicability result in the tracked audits; include one in the resolution appendix only when it is needed to identify the instance or interpret the textual record or Study Guide. A documented local selection becomes a row when its actual source and selected content are known.
 
-Use these controlled statuses in the source audit and translate them into ordinary prose in the PDF: `required`, `appointed alternative`, `conditional`, `permitted`, `ritual substitution`, `locally selected`, `omitted`, and `not applicable`. Do not collapse omission into inapplicability, call an option required, call a permitted substitution appointed, or describe an unselected alternative as proclaimed, sung, or prayed.
+Group the rows with visible, untabulated phase labels following the actual liturgical form. Omit an empty phase. These dividers aid scanning but do not replace the unit labels, change the rite's hierarchy, or imply that every form has the ordinary Sunday's phases.
 
-For a normal Sunday or solemnity, inspect and order at least these possible units, omitting none that the selected books actually appoint:
+Assign every inventoried textual unit an unambiguous short cue for later navigation. Text-focused subsection headings and substantial proposal leads end with quiet italic parenthetical cues in actual liturgical order, adding an ordinary-language alternative label where needed. Cues distinguish a Missal antiphon from a concretely selected chant and a chant at the Preparation of the Gifts from the Prayer over the Offerings. Do not use raw branch IDs, numeric badges, decorative icons, or a cue whose meaning changes between guides.
 
-1. a form-specific entrance rite, blessing, procession, or other pre-Mass unit;
-2. the Missal Entrance Antiphon and the actual or authorized Entrance-chant source path;
-3. the Collect;
+Use the shared postconciliar textual-variable-parts environment, with the two columns above, actual-form phase dividers, one textual unit per row, consolidated closed alternatives, and readable multipage behavior for complex formulas.
+
+Use these controlled statuses throughout the tracked source audit and for every branch included in `Branch Resolution`, translating them into ordinary prose where the appendix requires explanation: `required`, `appointed alternative`, `conditional`, `permitted`, `ritual substitution`, `locally selected`, `omitted`, and `not applicable`. The textual inventory carries only the two fields above. Do not collapse omission into inapplicability, call an option required, call a permitted substitution appointed, or describe an unselected alternative as proclaimed, sung, or prayed.
+
+For a normal Sunday or solemnity, inspect these possible text-bearing units in actual liturgical order. The selected books and the identified form determine which ones appear:
+
+1. texts appointed for a distinct entrance form, blessing, or procession;
+2. the applicable Missal Entrance Antiphon and any concretely appointed or selected approved entrance chant;
+3. Collect;
 4. First Reading;
 5. Responsorial Psalm, including its response and appointed verses or authorized alternative;
-6. Second Reading, when appointed;
-7. Gospel acclamation or Lenten verse;
-8. Sequence, when appointed, in its actual position before the Alleluia;
+6. Second Reading;
+7. Sequence;
+8. Gospel acclamation or Lenten verse;
 9. Gospel;
-10. an Offertory chant only when an identified approved chant source or documented local selection supplies one;
+10. any concretely appointed or selected approved chant at the Preparation of the Gifts;
 11. Prayer over the Offerings;
-12. proper, seasonal, or selected Preface when it is appointed or materially affects the exposition;
-13. any proper Eucharistic Prayer insert;
-14. the Missal Communion Antiphon and the actual or authorized Communion-chant source path;
+12. proper, narrowly appointed, or concretely selected Preface;
+13. proper Eucharistic Prayer insert;
+14. the applicable Missal Communion Antiphon and any concretely appointed or selected approved Communion chant;
 15. Prayer after Communion; and
-16. any appointed Prayer over the People, solemn blessing, special dismissal, or concluding ritual unit.
+16. appointed Prayer over the People, solemn blessing, special dismissal, or other concluding text.
 
-This is an inspection order, not a promise that every target has sixteen rows. On Sundays and solemnities, the usual Liturgy of the Word has three biblical readings in the order assigned, with the Responsorial Psalm and Gospel acclamation in their liturgical places; in Easter Time, Acts takes the place ordinarily held by the Old Testament reading. Feasts or weekday occurrences may instead have one reading before the Gospel; special vigils and rituals have their own repeated or substituted units. The selected Lectionary and ritual books always control.
+Alternatives belonging to one unit normally share one row. On Sundays and solemnities, the usual Liturgy of the Word orders the readings, Responsorial Psalm, Sequence where appointed, Gospel acclamation, and Gospel according to the selected Lectionary; special vigils and rituals follow their own repeated or substituted textual units.
 
-The Roman Missal does not ordinarily supply a proper Offertory antiphon. Do not carry the 1962 Offertory row into a postconciliar Missal inventory. The preparation formulas from the Order of Mass are likewise not a Sunday proper. Add an Offertory chant only as a separately sourced chant or local-selection layer. At the Entrance and Communion, record both the Missal antiphon and its actual rubrical status and any other approved chant source selected or admitted by the governing territorial norms; never imply that the printed antiphon was sung when another authorized chant was used.
+At the Preparation of the Gifts, record the Prayer over the Offerings. When an identified approved chant source appoints a chant, or a resolved instance identifies the chant actually selected, record that text in its liturgical position and identify its source. At the Entrance and Communion, record the applicable Missal antiphon or closed alternatives and any concretely appointed or selected approved chant. Keep unresolved selection classes in the tracked audits and include them in the reader appendix only when they materially identify or limit the guide's treatment.
 
-Do not silently substitute a Gradual, another chant source, or a locally selected song for a Missal or Lectionary text. State the book, edition, liturgical function, and status of each. Hymns, songs, commentary, and pastoral additions that the liturgical books do not appoint remain clearly labeled local material rather than propers.
+Identify every chant path by book, edition, liturgical placement, and status. Classify hymns, songs, commentary, and pastoral additions as local material unless a governing liturgical source appoints them.
 
-### Branch synopsis and resolved instances
+### Branch Resolution and resolved instances
 
-Every target with any authorized option has a branch synopsis immediately after the map or integrated into it when only one or two simple rows vary. A larger branch matrix uses:
+Every target with a closed textual alternative, or a ritual branch needed to understand an inventoried text, has a reader-facing `Branch Resolution` subsection after `Liturgical Instance`. It uses:
 
-| Branch ID | Authority and trigger | Status | Units added, replaced, or omitted | Resolution |
+| Branch ID | Authority and trigger | Status | Units affected | Resolution |
 | --- | --- | --- | --- | --- |
 
 Branch IDs are stable semantic names such as `short-passion`, `procession`, `year-a-scrutiny-readings`, or `evening-emmaus-gospel`, never anonymous `option-1`. A branch names the choice authorized by the book; it does not create another formula key unless the registry expressly says so.
 
-Use each branch ID unchanged wherever that branch appears: the `Appointed Elements` map, reader-facing branch synopsis, `instance/manifest.md`, and leaf `propers/verified.md`. Do not introduce display aliases or abbreviated IDs; carry the readable element name and explanation in the neighboring fields instead.
+Use each branch ID unchanged in `Branch Resolution`, `instance/manifest.md`, and leaf `propers/verified.md`. The textual inventory uses ordinary-language labels within its one-unit row rather than exposing raw branch IDs. Do not introduce aliases or abbreviated IDs in the records; carry the readable element name and explanation in the neighboring fields instead.
 
-A territorial norm that permits selection from an open or extensive approved musical repertory is one source-class branch, not one branch per possible song. Name and analyze a particular hymn, antiphon, or chant only when an approved book appoints it or a resolved instance actually selects it; otherwise record the lawful selection class and its scope.
+A territorial norm that permits selection from an open or extensive approved musical repertory is one source-class branch in the tracked audits, not one branch per possible song. Name and analyze a particular hymn, antiphon, or chant only when an approved book appoints it or a resolved instance actually selects it.
 
-The canonical guide documents one registered formula target and every legitimate named branch. A dated or otherwise resolved instance records which branches were actually selected. Unselected alternatives remain documented as alternatives and may receive branch-specific commentary, but they may not be narrated as concurrent parts of one synthetic Mass. If choices remain unresolved, the guide either treats them separately or stops short of claims that depend on the choice.
+The tracked manifest and verified audit document one registered formula target and every legitimate named branch. The reader appendix presents the subset needed to interpret its textual record and Study Guide. A dated or otherwise resolved instance records which branches were actually selected. Unselected closed alternatives remain documented in the one-unit row, appendix, and audits and may receive branch-specific commentary. Mutually exclusive alternatives may not be narrated as concurrent parts of one celebration; unresolved choices are treated separately or limit claims that depend on them.
 
-### Four senses
+## Study Guide: Scripture and Liturgical Context
 
-Retain the four-row `Literal`, `Allegorical`, `Moral`, and `Anagogical` synthesis from the 1962 exposition schema. Ground every row in the target's appointed texts, rites, and checked inherited interpretation. Identify a branch when its readings materially change a row, and never merge mutually exclusive alternatives into one unmarked synthesis. If the evidence does not support a proposed sense across the complete formula, state the narrower anchor or limit instead of inventing a connection.
-
-## Historical and scriptural orientation
-
-`In Illo Tempore...` inventories every distinct directly appointed biblical passage and book-identified scriptural adaptation used by the target: Lectionary readings and Responsorial Psalms; biblical or book-identified scriptural Gospel acclamations and verses; and scriptural Missal antiphons or ritual texts. Include an explicitly cited adaptation marked `Cf.` or an equivalent source marker, but label it as adaptation or allusion rather than verbatim quotation. A nonbiblical acclamation or composed liturgical text still belongs in the map and commentary but not in this historical Scripture inventory. Do not promote loose echoes in composed orations to direct biblical appointments.
+This section inventories every distinct directly appointed biblical passage and book-identified scriptural adaptation used by the target: Lectionary readings and Responsorial Psalms; biblical or book-identified scriptural Gospel acclamations and verses; and scriptural Missal antiphons or ritual texts. Include an explicitly cited adaptation marked `Cf.` or an equivalent source marker, but label it as adaptation or allusion rather than verbatim quotation. A nonbiblical acclamation or composed liturgical text still belongs in the textual record and commentary but not in this historical Scripture inventory. Do not promote loose echoes in composed orations to direct biblical appointments.
 
 Order dossiers by the Catholic canonical order of the biblical books and then by chapter and verse, not by Mass order. Consolidate a repeated passage into one dossier while listing every element and branch in which it appears. Use these exact conceptual columns:
 
-| `Element / branch` | `Citation` | `Location` | `Date` |
+| `Textual unit / alternative` | `Citation` | `Location` | `Date` |
 | --- | --- | --- | --- |
 
 Each dossier begins with a composition row, followed by a full-width explanatory row that distinguishes inherited attribution from historical judgment and states, as the evidence permits, authorship, composition date and place, first audience, compositional horizon, and place in salvation history. For a Gospel or any other narrative whose narrated event is materially distinct from the text's composition, insert a separate `Narrated event` row with its locating citations, event location, and date before the explanation. Keep writer, audience, and event locations distinct; give present-day equivalents for secure ancient places; preserve disputes and unknowns.
@@ -501,33 +509,37 @@ Do not presume that every postconciliar element was composed or selected as one 
 - `textual observation`: exact shared wording, image, citation, or rhetorical structure visible in the appointed texts;
 - `documented reception`: an identified patristic, saintly, magisterial, liturgical, or scholarly witness makes the relationship;
 - `source-grounded synthesis`: the project joins checked elements without claiming historical design or inherited authority; or
-- `editorial or AI proposal`: a plausible original extension reserved for `Interpretive Possibilities`.
+- `editorial or AI proposal`: a plausible original extension reserved for `Study Guide: Further Interpretive Possibilities`.
 
 The General Introduction to the Lectionary controls the baseline. In Ordinary Time the Old Testament reading is normally selected in relation to the Gospel, while the apostolic and Gospel readings proceed in semi-continuous series; it expressly rejects imposing an organic thematic harmony on Sunday readings merely to aid homiletic instruction. The Second Reading must still be studied fully, but it may remain an independent apostolic strand. Orations and antiphons shared across A/B/C likewise may not be described as historically designed for one cycle's readings without direct evidence. In Advent, Lent, Easter, ritual celebrations, and other specially arranged forms, report only the degree and kind of harmony the governing books actually establish.
 
-### The Propers: Themes and Movement
+### Study Guide: Liturgical Movement and Textual Relationships
 
-This section is the source-grounded architectural synthesis. Begin with a one- or two-sentence governing account and one scan-first orienting form of no more than four primary stages. For an ordinary formula, use three to five relationship-titled units keyed to that account; a complex vigil or ritual may use the minimum additional units required by its actual repeated structure. Follow the celebration's real movement---for example, gathering or a special entrance rite, proclamation and response, offering and thanksgiving, Communion and sending---rather than the 1962 sequence of Introit, Epistle, Gradual, Secret, and Postcommunion.
+This section is the source-grounded architectural synthesis. Begin with a one- or two-sentence governing account and one scan-first orienting form of no more than four primary stages. For an ordinary formula, use three to five relationship-titled units keyed to that account; a complex vigil or ritual may use the minimum additional units required by its actual repeated structure. Follow the celebration's real movement---for example, gathering or a special entrance rite, proclamation and response, preparation and thanksgiving, Communion, and sending---and its actual text-bearing structure.
 
-Every appointed element contributes to a functional grouping or is explicitly identified as an independent, semi-continuous, optional, or purely structural strand. A thesis may be plural rather than force false unity. Decisive witnesses and guardrails are visibly labeled, no prose paragraph exceeds 120 words, and no unstructured prose run exceeds two paragraphs. Original AI proposals do not appear here. For an ordinary one-form target, two readable pages remain the normal design aim; complete and legible treatment, not an exact page count, controls complex formulas.
+Every inventoried text contributes to a functional grouping or is explicitly identified as an independent, semi-continuous, or optional strand. A thesis may be plural rather than force false unity. Decisive witnesses and guardrails are visibly labeled, no prose paragraph exceeds 120 words, and no unstructured prose run exceeds two paragraphs. Original AI proposals do not appear here. Completeness and readable proportion control the section's length.
 
-### The Propers: Detailed Commentary
+### Study Guide: Theological and Spiritual Synthesis
 
-This section supplies the evidence and qualifications behind the synthesis. Study every appointed prayer, antiphon, reading, psalm, acclamation, sequence, proper preface or insert, and material ritual unit in full. Give biblical exegesis, literary and liturgical context, direct patristic or saintly reception where verified, lexical work when it clarifies rather than ornaments, doctrinal illumination, genuine disagreement, branch-specific consequences, and explicit limits. Distinguish direct commentary from later doctrinal illumination, an official relationship from editorial synthesis, and a selected path from an unselected alternative.
+Draw only dimensions supported by the appointed texts and verified reception. Select categories responsive to the celebration---such as Christological, ecclesial, sacramental, moral, pastoral, or eschatological dimensions---without requiring a fixed number or type. Preserve branch-specific limits and material alternatives. If the evidence supports a connection only within one text or branch, state that narrower anchor rather than converting it into a whole-formulary thesis.
 
-Organize by the formula's strongest evidenced relationships and ritual movement rather than mechanically repeating map rows. Each substantial claim has one fullest home. Do not duplicate the historical dossier or the overview paragraph for paragraph, and do not force an independent semi-continuous reading into another unit merely to create a whole-formulary thesis.
+### Study Guide: Commentary on the Texts
 
-### The Propers: Interpretive Possibilities
+This section supplies the evidence and qualifications behind the synthesis. Study every inventoried prayer, antiphon, reading, psalm, acclamation, sequence, proper Preface, insert, blessing, dismissal, or other variable text in full. Give biblical exegesis, literary and liturgical context, direct patristic or saintly reception where verified, lexical work when it clarifies rather than ornaments, doctrinal illumination, genuine disagreement, branch-specific consequences, and explicit limits. Distinguish direct commentary from later doctrinal illumination, an official relationship from editorial synthesis, and a selected path from an unselected alternative.
+
+Organize by the formula's strongest evidenced relationships and ritual movement rather than mechanically repeating inventory rows. Each substantial claim has one fullest home. Do not duplicate the historical dossier or the overview paragraph for paragraph, and do not force an independent semi-continuous reading into another unit merely to create a whole-formulary thesis.
+
+### Study Guide: Further Interpretive Possibilities
 
 Open with one global notice that the section contains original editorial or AI-generated possibilities attributed to none of the cited authorities and claims no historical compositional intent. Place every original analogy, typological extension, compositional inference, or unsourced cross-element connection here. Each substantial proposal identifies its appointed anchors, explains its theological or pastoral fruit, and states material limits or serious alternatives. Select proposals for anchoring, novelty, coherence, plausibility, and usefulness rather than a prescribed number or length.
 
 ## Required structural modules
 
-The macro-order above is stable; the interior map and commentary expand to match the actual form. At minimum, apply these modules to the registered targets already fixed in this profile:
+The macro-order above is stable; the textual inventory, visible phase groups, Study Guide, and liturgical-resolution appendix expand to match the actual form. At minimum, apply these modules to the registered targets already fixed in this profile:
 
 | Target or form | Required interior structure |
 | --- | --- |
-| Ordinary Sunday or solemnity | Introductory-status block; Lectionary block with readings, psalm, acclamation, sequence if any, and Gospel; Eucharistic block with orations, preface or insert where material, Communion layer, and concluding proper. |
+| Ordinary Sunday or solemnity | Textual groups for the Introductory Rites, Liturgy of the Word with readings, psalm, Sequence where appointed, acclamation, and Gospel, Liturgy of the Eucharist with orations, proper or selected Preface or insert where inventoried, and the Communion texts, plus Concluding Rites when a distinctive text is appointed; reader-relevant appendix branch blocks. |
 | Palm Sunday | Separate `Commemoration of the Lord's Entrance` and `Mass` blocks; procession, solemn-entrance, and simple-entrance branches; cycle-specific entrance Gospel; the status of the ordinary Introductory Rites; and long or short Passion and any admitted pre-Gospel reduction without ever treating the Passion as optional. |
 | Easter Vigil | Four blocks for the Service of Light, Liturgy of the Word, Baptismal Liturgy, and Liturgy of the Eucharist; each Old Testament reading--psalm--collect module; the lawful reduction rule and required Exodus module; Romans, cycle Gospel, initiation or reception paths, and proper Eucharistic or dismissal material. |
 | Easter Day | Alternative second readings, required Sequence, Day Gospel and admitted Vigil-Gospel or evening-Emmaus paths, plus the Missal-authorized baptismal-renewal branch and any territorial adaptation. |
@@ -549,14 +561,14 @@ Use this sequence for every new or substantially revised proper exposition:
 4. **Study reception and liturgical function.** Seek direct patristic or saintly exegesis first, then accurately labeled doctrinal or liturgical illumination. Study each oration, antiphon, chant, preface, insert, and ritual action in full. Record material negative results rather than inventing a witness.
 5. **Classify relationships.** Apply the evidence labels above, the Lectionary's harmony and semi-continuity principles, and the branch matrix. Do not infer historical compositional unity from same-day co-occurrence.
 6. **Classify claims.** Keep verified text, documented history, documented reception, source-grounded synthesis, and editorial or AI proposal visibly distinct. Resolve contradictions and branch scope before drafting reader-facing prose.
-7. **Draft from depth to compression.** Write the detailed commentary first; then condense it into `Themes and Movement`, the four senses, the map's final column, and the compact scope panel. Do not pad to a page target or use the synthesis to introduce evidence absent from the detailed section.
-8. **Assemble and verify.** Apply the required macro-order and fresh-page boundaries, refresh structured metadata, build for enough passes to settle references and contents, inspect the log, and visually inspect every page and every branch table before installing a PDF.
+7. **Draft from depth to compression.** Write `Study Guide: Commentary on the Texts` first; then derive the liturgical-relational and theological syntheses and the compact scope panel. Populate `Textual Variable Parts` only from the verified text audit; it contains no synthesized claim. Consolidate each unit's closed alternatives without erasing their distinctions, and place source, status, and resolution mechanics in the appendix and tracked records. Do not pad to a page target or use the synthesis to introduce evidence absent from the commentary.
+8. **Assemble and verify.** Apply the required macro-order, textual phase groups, appendix placement, and fresh-page boundaries; refresh structured metadata; build for enough passes to settle references and contents; inspect the log; and visually inspect every page, textual inventory, and branch table before installing a PDF.
 
-When describing development from an earlier Missal, compare identified editions directly. Do not treat the postconciliar form as a paraphrase of 1962, project later categories backward, or present historical influence as identity without evidence. Rubrical permission is not evidence of pastoral preference, and a permitted option is not necessarily appointed in every celebration.
+Study each text's documented origin and reception only where verified. The governing postconciliar books determine the guide's inventory and organization; historical-development claims do not supply its architecture. Rubrical permission is not evidence of pastoral preference, and a permitted option is not necessarily appointed in every celebration.
 
 ## Structural verification basis
 
-This schema was checked on 15 July 2026 against the Holy See's [General Instruction of the Roman Missal](https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html), especially nos. 46--90 and 352--367; the approved [General Introduction to the Lectionary](https://www.liturgyoffice.org.uk/Resources/GIRM/Documents/Lectionary.pdf), especially nos. 65--69, 78--91, and 93--110; the official [Roman Missal, Third Edition contents](https://www.liturgyoffice.org.uk/Missal/Information/RM3-contents.pdf); and the bishops' official [Missal Antiphonary](https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf). Those sources establish the Liturgy of the Word and Liturgy of the Eucharist as the two principal parts forming one act of worship, together with the Introductory and Concluding Rites; the positions and functions of the variable units; the distinction between Missal antiphons and authorized chant choices; the absence of an ordinary Missal Offertory antiphon; Sunday and weekday reading structures; longer and shorter or alternative readings; the independent A/B/C and I/II courses; and the Lectionary's distinct principles of harmony and semi-continuous reading.
+This schema was checked on 15 July 2026 against the Holy See's [General Instruction of the Roman Missal](https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html), especially nos. 46--90 and 352--367; the approved [General Introduction to the Lectionary](https://www.liturgyoffice.org.uk/Resources/GIRM/Documents/Lectionary.pdf), especially nos. 65--69, 78--91, and 93--110; the official [Roman Missal, Third Edition contents](https://www.liturgyoffice.org.uk/Missal/Information/RM3-contents.pdf); and the bishops' official [Missal Antiphonary](https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf). Those sources establish the Liturgy of the Word and Liturgy of the Eucharist as the two principal parts forming one act of worship, together with the Introductory and Concluding Rites; the positions and functions of the variable texts; the source and selection rules for music at Entrance, the Preparation of the Gifts, and Communion; Sunday and weekday reading structures; longer, shorter, and alternative readings; the independent A/B/C and I/II courses; and the Lectionary's distinct principles of harmony and semi-continuous reading.
 
 The special-form modules were also checked against the bishops' official matrices for [Christmas](https://www.liturgyoffice.org.uk/Calendar/Sunday/ChristmasSunday.shtml), [Lent and Palm Sunday](https://www.liturgyoffice.org.uk/Calendar/Sunday/LentSunday.shtml), the [Paschal Triduum](https://www.liturgyoffice.org.uk/Calendar/Sunday/Triduum.shtml), [Easter Time and Pentecost](https://www.liturgyoffice.org.uk/Calendar/Sunday/EasterSunday.shtml), and [Feasts of the Lord](https://www.liturgyoffice.org.uk/Calendar/Sunday/Feasts.shtml), and against the approved [Rite of Christian Initiation of Adults](https://www.liturgyoffice.org.uk/Resources/Rites/RCIA.pdf) for the Scrutinies. These universal norms and official territorial witnesses verify the schema's structural distinctions; the exact Latin typical edition, selected approved vernacular books, territorial adaptations, ritual edition, later decrees, and competent calendar still control every leaf.
 
@@ -584,18 +596,18 @@ A postconciliar proper guide is ready to publish only when:
 - the target's branch audit accounts for every authorized longer, shorter, substitute, ritual, sequence, preface, and prayer path in the selected edition, even though those internal branches do not multiply the baseline target count;
 - the leaf contains tracked `main.tex`, `generation-metadata.tex`, `instance/manifest.md`, `propers/verified.md`, and `research/scope.md`, while its canonical formulary owner contains the verified reusable Missal or Ritual Mass record;
 - the liturgical-instance manifest resolves edition, language, territory, calendar, cycle, form, occurrence, ritual context, source owners, and options;
-- the opening survey uses the complete variable-row `Appointed Elements` map, controlled status vocabulary, branch synopsis, and grounded four-senses table rather than the 1962 ten-row inventory;
-- every treated element has a source-layer and liturgical-status classification; ordinary structural units are not mislabeled as propers, the Missal is not assigned an Offertory antiphon it does not provide, and chant substitutions are explicit;
-- `In Illo Tempore...` covers every distinct directly appointed scriptural passage and marked adaptation in canonical order, distinguishes composition from narrated event, and expands rather than omits material when the target is complex;
+- the opening survey uses the complete two-column, one-textual-unit-row `Textual Variable Parts` inventory with actual-form phase groups and no interpretive or source-status column;
+- every treated element has a source-layer and liturgical-status classification in the tracked audit; every reader-relevant textual or ritual branch has its authority, status, effect, and resolution in the liturgical-resolution appendix; and every concrete chant selection states its source and liturgical placement;
+- `Study Guide: Scripture and Liturgical Context` covers every distinct directly appointed scriptural passage and marked adaptation in canonical order, distinguishes composition from narrated event, and expands rather than omits material when the target is complex;
 - every cross-element relationship is classified, Ordinary Time's correlated and semi-continuous strands remain distinct, and no whole-formulary historical design is claimed without evidence;
-- `Themes and Movement`, `Detailed Commentary`, and `Interpretive Possibilities` perform their distinct source-grounded, evidentiary, and exploratory functions in the required order;
-- every appointed element and material branch contributes substantively to the map and exposition or is explicitly classified as independent, optional, omitted, or unresolved;
-- `In Illo Tempore...`, `Themes and Movement`, and `Detailed Commentary` begin at their required fresh-page boundaries without compressed type or omitted material;
-- optional `Notable Quotables` and any required `Sacramental Appendix` occur in their prescribed position before `References`;
+- `Study Guide: Liturgical Movement and Textual Relationships`, `Study Guide: Theological and Spiritual Synthesis`, `Study Guide: Commentary on the Texts`, and any `Study Guide: Further Interpretive Possibilities` perform their distinct source-grounded, synthetic, evidentiary, and exploratory functions in the required order;
+- the textual record contains every appointed or concretely selected text; the tracked audits account for all alternatives, unresolved selections, omissions, and applicability results; and the reader appendix presents the subset needed to identify the instance or interpret the textual record or Study Guide;
+- the Study Guide and `Appendix: Liturgical Resolution` begin at their required fresh-page boundaries without compressed type or omitted material;
+- optional `Reception and Cultural Echoes` and any required `Sacramental Appendix` occur in their prescribed position before `Appendix: Liturgical Resolution`, which in turn precedes `References`;
 - quotations and tracked records comply with the applicable copyright or license;
 - variant paths and local choices are not presented as universal requirements;
 - authoritative claims, source-grounded synthesis, and editorial proposals are visibly distinct;
-- `References` ends the scholarship with a compact `Search Scope and Limitations` panel pointing to the leaf manifest, leaf composition audit, canonical formulary-owner audit, and research scope, and imported structured `Generation Metadata` is terminal;
+- `Appendix: Liturgical Resolution` preserves the reader-facing instance and the authority, status, and resolution of branches needed to interpret the text record or Study Guide; `References` then ends the scholarship with a compact `Search Scope and Limitations` panel pointing to the leaf manifest, leaf composition audit, canonical formulary-owner audit, and research scope, and imported structured `Generation Metadata` is terminal;
 - every imported owner or shared fragment has an explicit cross-document build dependency, and every consumer has been rebuilt and inspected after a shared-source change;
 - the PDF builds for enough passes to settle references without fatal errors, undefined references, overflow, or material layout warnings; and
 - every page and every branch table is visually checked before the reviewed PDF is installed, and the mirrored source records pass the repository-wide editorial and build checks.
