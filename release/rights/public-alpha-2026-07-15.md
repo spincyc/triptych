@@ -20,6 +20,18 @@ On 15 July 2026, after the patristic revision, reordered ten-page guide, source 
 
 On 15 July 2026, the maintainer stated that approval was granted for the requested revision that restores the received names of the parts of Mass as primary headings and subordinates the interpretive titles. Following completion and verification, this user-attested supplemental clearance is bound to the resulting source state and exact installed PDF listed below, under the existing perpetual authorization and its no-project-initiated-promotion condition. It does not constitute an imprimatur, nihil obstat, endorsement, or independent specialist review, and it does not clear any future changed PDF.
 
+## Supplemental clearance: current 27-publication main batch
+
+On 15 July 2026, the maintainer expressly authorized public GitHub repository and GitHub Pages publication and distribution of the clean current `main` publication batch after identifying it as reviewed for this release-control purpose. The maintainer attested that the existing domestic-superior authorization covers that distribution in perpetuity and worldwide, under the existing no-project-initiated-promotion condition, for the exact tracked snapshots inventoried below: the six standardized 1962 proper guides for the Nuptial Mass and the Second, Third, Fourth, Seventh, and Eighth Sundays after Pentecost; both revised Mount Carmel novena PDFs; the new clerical-celibacy canon-law study; the new postconciliar Order of Mass exposition; and the six changed reader-facing sources `CONTRIBUTING.md`, `LIBRARY.md`, `README.md`, `library/law-and-church-discipline.md`, `library/novus-ordo-liturgy.md`, and `library/prayer.md`. For the two new works, the attested distribution clearance expressly includes their incorporated texts, citations, and links. This is exact-snapshot clearance and does not clear a later changed source or PDF.
+
+For release-control purposes, this supplemental attestation clears the clerical-celibacy study's `work-specific-rights-review` gate and the postconciliar Order of Mass exposition's `work-specific-rights-review` and `liturgical-text-permission` gates. It renews the exact PDF and reader-facing-source approvals changed since the preceding inventory. The two new works' linked research records, and the postconciliar Order of Mass PDF itself, preserve accurate pre-clearance statements that distribution authorization or gates remained outstanding and that the manifest had to retain a hold. This later supplemental attestation supersedes those statements only as to public-distribution and manifest status for these exact snapshots; it does not supersede their source, collation, copyright-classification, currentness, or independent-review limitations.
+
+Clearing those distribution gates changes publication status, not editorial maturity: no current publication records independent specialist review or ecclesiastical approval of the Triptych publication as such, and this clearance is not an imprimatur, nihil obstat, endorsement, canonical opinion, or legal advice. The six standardized proper guides retain their recorded G3 / S2 / T0 / Q3 status and absence of independent theological review.
+
+The postconciliar Order of Mass remains a source-audited exposition whose exact formula-level, hands-on collation against licensed 2008 Latin and 2011 United States altar books is outstanding. Its short Latin incipits and third-person analysis do not constitute a diplomatic collation or a replacement English Order, and its recorded independent liturgical-historical, patristic, Latin, sacramental-theological, canonical, musical, and United States-practice reviews remain outstanding.
+
+The Mount Carmel snapshots retain their recorded witness limits. The complete *Flos Carmeli* reproduction witness is a 6 July 2024 Carmelite-source transcription attributed to the 1993 joint O.Carm.--OCD *Proper of the Liturgy of the Hours*: the printed 1993 book, exact page, front matter, and translator credit were not directly inspected; the translator is not separately named; Sullivan independently corroborates only the first six units; and the located complete transcription alone supplies the last two. The bounded translation search did not establish a complete English witness with a public reuse basis. The requester-attested approval supports use in these exact snapshots, not an open license or wider republication right, and it neither approves the novena nor makes private recitation liturgical. The Simon Stock tradition remains late and disputed, with no positive competent event decree claimed. Independent Carmelite, historical, liturgical, Mariological, sacramental-theological, biblical, pastoral, linguistic, hymnological, translation, and ecclesiastical review remains outstanding for the guide and its mechanically derived companion.
+
 ## Duration and condition
 
 - Effective: 15 July 2026 at 00:00 CDT (`2026-07-15T00:00:00-05:00`).
@@ -34,25 +46,27 @@ Ignored or untracked build artifacts, credentials, private communications, and p
 
 | Publication ID | SHA-256 |
 | --- | --- |
+| `articles/canon-law/clerical-celibacy-chastity-and-continence` | `5fdc37cc0e1ca1d78bf30d030412453ff963eef116b3bbfd6ae4b42b166f9d8d` |
 | `articles/faith/council-missal-and-crisis` | `07201d9067ffc75d784a5258fdf405370a31fe809f3cb80ab86da762164807bf` |
 | `articles/faith/freemasonry-and-the-catholic-church` | `03f44b6123294c55c3f3adea4607d8b0de7a7f6b237e0ad7d522f9796cf545f8` |
 | `articles/faith/trustful-surrender-to-divine-providence` | `99e10c24d2548cb7cc0a70431b237a9a0f704cec4bb3530ba75bffdf524fca0c` |
 | `devotions/novenas/00-ascension-to-pentecost` | `bd509b65321012e60a1f6e09aa411cb67e72d6a3c37f3d8e04c53f8e4115f255` |
 | `devotions/novenas/00-ascension-to-pentecost-daily-prayer` | `aa8c424b6d802555a069d42cf75b1481e02d997733b58c52c636953d05c5c98d` |
-| `devotions/novenas/10-our-lady-of-mount-carmel` | `dfedafbe32a4c1432b68438282904ea6afb32ba7e84a6ea5ded573b607822676` |
-| `devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer` | `1bab25f390940431fea27ab63656c8b332a00ed3a30945a42aa7018fb2b834cc` |
+| `devotions/novenas/10-our-lady-of-mount-carmel` | `5074ea2caf6bcf05ff44e0c7cf066c54372d55f518ef92ad8fd66b5fd964737c` |
+| `devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer` | `b938ede4030c255ce2e61aa18a2aa840ec8457eaa2842420173f84c99435ba29` |
 | `liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass` | `75d08f8ba309b308b866afe135325fc69b2243c1d8e2fb33816fc302b1bdbfdf` |
-| `liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass` | `24b5c7ba2161348e3c90426634b05a7d92f62a5c339e93bf267467c00e6525f5` |
+| `liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass` | `9095b8cc66420d3b309bedb557fd13f77a1935eef0efcaf1cd43c87c39a6584d` |
 | `liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday` | `33d6368891372a4e069782cc93f897214b04adb71201e862160993dc4ea2e1cf` |
-| `liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost` | `38eadc09c9f269ed7911ab697c31487077b1fa502be0b740b0ca009cfcae8216` |
-| `liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost` | `dd6a976b25dfed7879d33f343d650b26bf3ffa4be2f8314528bea1ea67fe66a0` |
-| `liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost` | `17f8409b49b42ad316ee9c3af00e665a395bdc5d28566699856dbd3c42894696` |
+| `liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost` | `151854a844dfac2d3c27a20f226ef4e6cbc4b0d8d1c785aa597da9aa53b51f3c` |
+| `liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost` | `ba27ec8ffcedf4dd5ea9e1d0667ef267529be3995c2c3117c386ae3722e58c10` |
+| `liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost` | `00af0189d63cc10cdf46e8bc79cb9ce61d5869b7045cabc7654fe66b58e9fb48` |
 | `liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost` | `1454b133e115195e756b0bfb188a2d1de4186cc87ab7e84f17fbb55e8068050f` |
 | `liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost` | `e3eca18858735239e3e2a41b05f1ecfc047b4bbc1c9378ab5a6f15b4847481c2` |
-| `liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost` | `97bf153d5f7b5935033425bec29ef6ef4f3912735183ffa28368949b13715e76` |
-| `liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost` | `cbaf3467852504e2f951232db4e813b3df1e623ce7755c3eec89e8ada4ffdf46` |
+| `liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost` | `d9977f138f1e914bde253182e2ffcf926c40efbffb986e9271493355133e698c` |
+| `liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost` | `752d238e70ed5a4828c0358f6ecfc076f243075fd449995bd720d535edc3c988` |
 | `liturgy/roman-rite/1962/reference/assembling-the-mass` | `ad4022c72fab358ead959c87a2aee9717b34db1b97abd782745c4b9caa4a8575` |
 | `liturgy/roman-rite/comparative/two-missals-one-sacrifice` | `edba4b079c035e9ec0501ac36db901c3729f8091294e93b67d78864402047036` |
+| `liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass` | `af0a14cccf193d3139713efd6ff5d05c36e1a19f90ad8ae2d176b2ad5608ed99` |
 | `theology/mariology/apparitions` | `ed71d22ff909c959bbd808c4a3b07c0a77a21a62120ea2181d1d36cbc9960a5b` |
 | `theology/mariology/fatima` | `85689569a9af741adb0fe97133ead3e80a8a93bc5c03507a29222af26abdc27b` |
 | `theology/mariology/marian-dogmas` | `dd0b6698d3a636f0261d98eaf7662e0dc94e1c95b1a8d64ad09878eeb955c615` |
@@ -64,16 +78,16 @@ Ignored or untracked build artifacts, credentials, private communications, and p
 
 | Repository path | SHA-256 |
 | --- | --- |
-| `CONTRIBUTING.md` | `65d6151c3fbb4b42d8340129abba0a8df38f073a08379281b596ed8012a0adb8` |
-| `LIBRARY.md` | `bd5d6d9344d997ae7d5bce19e96099b8d6aa4baf814630471e96823b59110f53` |
+| `CONTRIBUTING.md` | `57337b95f04f1cd77ccbd187971557f66e5bcdcc1173488ec00fdba8d90475af` |
+| `LIBRARY.md` | `385465f7e2d671a6f7ebfed68358a038687dbb026252f73dfa0155811c45fefa` |
 | `LICENSE` | `5757e0ce4754536033af21c98f0f69909f75c756f640578bd73bd8e579d70c6d` |
-| `README.md` | `37e6312b8abc1a27283feae8da97ef6a3f52e4440ffbe5b30fb69f26c43dcb57` |
+| `README.md` | `5374728413131760fd759870c156a8c96e5d846d2d404b68cb08abb1d845107d` |
 | `THIRD_PARTY.md` | `4fbe063955aaa479f7376abb52b2db6c2fa9d50d4029ad2662d0af3a415abcf4` |
 | `library/faith.md` | `a68732c6c98d7b0d26464655749809132b59dfeeb95429ea716ed4fbfdef21fd` |
-| `library/law-and-church-discipline.md` | `089179823cc40098151a1a1c071f2348f33e2eb8cac38e683fe11a5febd2a994` |
+| `library/law-and-church-discipline.md` | `2e13b0580428bd8dd96c0e5fe8d4b12e4a079606ab79a4b0cca1958e5b0c3424` |
 | `library/mariology.md` | `99e361745bd373c378918537c841f6819c783300beff91073bdafa46fdfa3afb` |
-| `library/novus-ordo-liturgy.md` | `2f693e090f2fa034a65c1f66e7046bf7e063bb8e91572e96cbba34f4a6b1e2f6` |
-| `library/prayer.md` | `2a8678a9c355a789cd2a7f6bb78290d5892dd1dc33bb0f8991028df2ed023766` |
+| `library/novus-ordo-liturgy.md` | `1d3db6379ebb65a6049f77b518552f56c69e8f6e0293dc56940681e25285d76a` |
+| `library/prayer.md` | `f777041c0c31627bff8147bc2fdd32a27890e0767106ea2186ae153ecbf3d01d` |
 | `library/traditional-latin-mass.md` | `038860200ebf08bf8e59a42058b7e279f2b2d3f6ba1e6bfefc873a1b7ab9a4ba` |
 | `release/public-alpha/404.md` | `551491f5521a5624911d63b398156d2236cbed2f0aa832eeb9c97070dcea568e` |
 | `release/public-alpha/assets/site.css` | `358d86f3587fc03f62a17cd4b5fd0126fb2dc3d952afa48eb33fc3a88fce54e9` |

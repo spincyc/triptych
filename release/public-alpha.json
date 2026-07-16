@@ -3,10 +3,10 @@
   "release_id": "public-alpha",
   "provider": "gpt",
   "expected_counts": {
-    "publications": 26,
-    "release": 25,
+    "publications": 27,
+    "release": 27,
     "review": 0,
-    "hold": 1
+    "hold": 0
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
@@ -27,18 +27,18 @@
         "worldwide"
       ],
       "rights_record": "release/rights/public-alpha-2026-07-15.md",
-      "rights_record_sha256": "e3c941681a193fd42cd17a92f7c3e16b34da4161c1e9c15baff5d15f6315c49b",
+      "rights_record_sha256": "4ff38ecef3737fbd43bae8fd6f0620dc3db47bb0ccef5714cf25bb2fa91acb22",
       "site_sources": {
-        "CONTRIBUTING.md": "65d6151c3fbb4b42d8340129abba0a8df38f073a08379281b596ed8012a0adb8",
-        "LIBRARY.md": "bd5d6d9344d997ae7d5bce19e96099b8d6aa4baf814630471e96823b59110f53",
+        "CONTRIBUTING.md": "57337b95f04f1cd77ccbd187971557f66e5bcdcc1173488ec00fdba8d90475af",
+        "LIBRARY.md": "385465f7e2d671a6f7ebfed68358a038687dbb026252f73dfa0155811c45fefa",
         "LICENSE": "5757e0ce4754536033af21c98f0f69909f75c756f640578bd73bd8e579d70c6d",
-        "README.md": "37e6312b8abc1a27283feae8da97ef6a3f52e4440ffbe5b30fb69f26c43dcb57",
+        "README.md": "5374728413131760fd759870c156a8c96e5d846d2d404b68cb08abb1d845107d",
         "THIRD_PARTY.md": "4fbe063955aaa479f7376abb52b2db6c2fa9d50d4029ad2662d0af3a415abcf4",
         "library/faith.md": "a68732c6c98d7b0d26464655749809132b59dfeeb95429ea716ed4fbfdef21fd",
-        "library/law-and-church-discipline.md": "089179823cc40098151a1a1c071f2348f33e2eb8cac38e683fe11a5febd2a994",
+        "library/law-and-church-discipline.md": "2e13b0580428bd8dd96c0e5fe8d4b12e4a079606ab79a4b0cca1958e5b0c3424",
         "library/mariology.md": "99e361745bd373c378918537c841f6819c783300beff91073bdafa46fdfa3afb",
-        "library/novus-ordo-liturgy.md": "2f693e090f2fa034a65c1f66e7046bf7e063bb8e91572e96cbba34f4a6b1e2f6",
-        "library/prayer.md": "2a8678a9c355a789cd2a7f6bb78290d5892dd1dc33bb0f8991028df2ed023766",
+        "library/novus-ordo-liturgy.md": "1d3db6379ebb65a6049f77b518552f56c69e8f6e0293dc56940681e25285d76a",
+        "library/prayer.md": "f777041c0c31627bff8147bc2fdd32a27890e0767106ea2186ae153ecbf3d01d",
         "library/traditional-latin-mass.md": "038860200ebf08bf8e59a42058b7e279f2b2d3f6ba1e6bfefc873a1b7ab9a4ba",
         "release/public-alpha/404.md": "551491f5521a5624911d63b398156d2236cbed2f0aa832eeb9c97070dcea568e",
         "release/public-alpha/assets/site.css": "358d86f3587fc03f62a17cd4b5fd0126fb2dc3d952afa48eb33fc3a88fce54e9",
@@ -88,11 +88,12 @@
     {
       "id": "articles/canon-law/clerical-celibacy-chastity-and-continence",
       "catalog": "library/law-and-church-discipline.md",
-      "status": "hold",
-      "gates": [
-        "work-specific-rights-review"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "5fdc37cc0e1ca1d78bf30d030412453ff963eef116b3bbfd6ae4b42b166f9d8d"
+      }
     },
     {
       "id": "devotions/novenas/00-ascension-to-pentecost",
@@ -121,7 +122,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "dfedafbe32a4c1432b68438282904ea6afb32ba7e84a6ea5ded573b607822676"
+        "pdf_sha256": "5074ea2caf6bcf05ff44e0c7cf066c54372d55f518ef92ad8fd66b5fd964737c"
       }
     },
     {
@@ -131,7 +132,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "1bab25f390940431fea27ab63656c8b332a00ed3a30945a42aa7018fb2b834cc"
+        "pdf_sha256": "b938ede4030c255ce2e61aa18a2aa840ec8457eaa2842420173f84c99435ba29"
       }
     },
     {
@@ -151,7 +152,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "24b5c7ba2161348e3c90426634b05a7d92f62a5c339e93bf267467c00e6525f5"
+        "pdf_sha256": "9095b8cc66420d3b309bedb557fd13f77a1935eef0efcaf1cd43c87c39a6584d"
       }
     },
     {
@@ -171,7 +172,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "38eadc09c9f269ed7911ab697c31487077b1fa502be0b740b0ca009cfcae8216"
+        "pdf_sha256": "151854a844dfac2d3c27a20f226ef4e6cbc4b0d8d1c785aa597da9aa53b51f3c"
       }
     },
     {
@@ -181,7 +182,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "dd6a976b25dfed7879d33f343d650b26bf3ffa4be2f8314528bea1ea67fe66a0"
+        "pdf_sha256": "ba27ec8ffcedf4dd5ea9e1d0667ef267529be3995c2c3117c386ae3722e58c10"
       }
     },
     {
@@ -191,7 +192,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "17f8409b49b42ad316ee9c3af00e665a395bdc5d28566699856dbd3c42894696"
+        "pdf_sha256": "00af0189d63cc10cdf46e8bc79cb9ce61d5869b7045cabc7654fe66b58e9fb48"
       }
     },
     {
@@ -221,7 +222,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "97bf153d5f7b5935033425bec29ef6ef4f3912735183ffa28368949b13715e76"
+        "pdf_sha256": "d9977f138f1e914bde253182e2ffcf926c40efbffb986e9271493355133e698c"
       }
     },
     {
@@ -231,7 +232,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "cbaf3467852504e2f951232db4e813b3df1e623ce7755c3eec89e8ada4ffdf46"
+        "pdf_sha256": "752d238e70ed5a4828c0358f6ecfc076f243075fd449995bd720d535edc3c988"
       }
     },
     {
@@ -257,12 +258,12 @@
     {
       "id": "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass",
       "catalog": "library/novus-ordo-liturgy.md",
-      "status": "hold",
-      "gates": [
-        "work-specific-rights-review",
-        "liturgical-text-permission"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "af0a14cccf193d3139713efd6ff5d05c36e1a19f90ad8ae2d176b2ad5608ed99"
+      }
     },
     {
       "id": "theology/mariology/apparitions",
