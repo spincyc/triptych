@@ -1,0 +1,91 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+
+\hypersetup{
+  pdftitle={Guadalupe: Tradition, Image, and Ecclesial Reception},
+  pdfsubject={The Tepeyac tradition, Nican Mopohua, Guadalupe image, historical evidence, and ecclesial reception}
+}
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2.5em}
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\newcommand{\guadalupethesis}[1]{%
+  \begin{studybox}{Governing thesis}
+  #1
+  \end{studybox}}
+
+\newcommand{\dossieraxis}[3]{%
+  \begin{studyframe}
+  \textbf{Event or tradition:} #1\par
+  \textbf{Ecclesial reception or judgment:} #2\par
+  \textbf{Limit of that reception:} #3
+  \end{studyframe}}
+
+\newcommand{\sourceboundary}[3]{%
+  \begin{studyframe}
+  \textbf{Witness:} #1\par
+  \textbf{What it establishes:} #2\par
+  \textbf{What it cannot establish alone:} #3
+  \end{studyframe}}
+
+\newcommand{\interpretivekey}[2]{%
+  \begin{studybox}{Interpretive key: #1}
+  #2
+  \end{studybox}}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.12\textheight}
+{\Huge\bfseries Guadalupe\par}
+\vspace{0.35em}
+{\Large\itshape Tradition, Image, and Ecclesial Reception\par}
+\vspace{0.8em}
+{\large Tepeyac, the \emph{Nican Mopohua}, the sacred image,\par}
+\vspace{0.1em}
+{\large historical evidence, and the Church's reception\par}
+\vfill
+\begin{minipage}{0.92\textwidth}
+\footnotesize
+\textbf{AI generation metadata}\par\smallskip
+\input{theology/mariology/guadalupe/generation-metadata}
+\end{minipage}
+\vfill
+{\small A source-audited Catholic study instrument, checked through 16 July 2026. It is not an act of the Magisterium, a new judgment on supernatural origin, or a claim that every historical, artistic, scientific, or devotional proposition associated with Guadalupe has been ecclesially approved.\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{theology/mariology/guadalupe/sections/00-method-status}
+\input{theology/mariology/guadalupe/sections/10-conquest-tepeyac}
+\input{theology/mariology/guadalupe/sections/20-source-strata}
+\input{theology/mariology/guadalupe/sections/30-received-narrative}
+\input{theology/mariology/guadalupe/sections/40-language-inculturation}
+\input{theology/mariology/guadalupe/sections/50-image-theology}
+\input{theology/mariology/guadalupe/sections/60-history-controversy}
+\input{theology/mariology/guadalupe/sections/70-ecclesial-reception}
+\input{theology/mariology/guadalupe/sections/80-image-claim-audit}
+\input{theology/mariology/guadalupe/sections/90-theological-synthesis}
+\input{theology/mariology/guadalupe/sections/99-references}
+\appendix
+\input{theology/mariology/guadalupe/sections/95-timeline}
+\end{deepstudy}
+
+\end{document}
