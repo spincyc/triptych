@@ -22,6 +22,7 @@ No technical background is needed: choose a document, open the PDF, and read.
 | **[Faith](library/faith.md)** | Doctrine, sacraments, and theological studies. |
 | **[Biographies](library/biographies.md)** | Historical and hagiographic lives, with evidence and later tradition kept distinct. |
 | **[Heresies](library/heresies.md)** | Historical studies of condemned propositions, ecclesial responses, and their aftermaths. |
+| **[Historical Accounts](library/historical-accounts.md)** | Source-disciplined histories of texts, institutions, events, and reception. |
 | **[Mariology](library/mariology.md)** | Marian doctrine, prayer, history, and ecclesial judgment. |
 | **[Law](library/law-and-church-discipline.md)** | Canon law and Church discipline. |
 
