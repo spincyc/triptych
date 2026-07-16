@@ -25,6 +25,7 @@ Select profiles by the document's actual genre and sources, not by superficial s
 - expositions of the Ordinary or Order of Mass in either form: `guidance/liturgy/ordinary-expositions.md`
 - the sacramental treatise, at-a-glance companion, or their shared fragments: `guidance/theology/sacramental-reference.md`
 - the Rosary, Marian-apparition judgment studies, or other repeatable Mariological reference works: `guidance/theology/mariology.md`
+- historical and hagiographic lives in the biographies collection: `guidance/biographies.md`
 - novenas and other works in the numbered novena collection: `guidance/devotions/novenas.md`
 - discursive articles on faith, theology, or canon law: `guidance/articles.md`
 

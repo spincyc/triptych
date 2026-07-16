@@ -20,6 +20,7 @@ No technical background is needed: choose a document, open the PDF, and read.
 | **[Novus Ordo (Postconciliar Roman Rite)](library/novus-ordo-liturgy.md)** | The Order of Mass and proper studies identified by edition, language, territory, cycle, and date. |
 | **[Prayer](library/prayer.md)** | Novenas and condensed daily prayer books. |
 | **[Faith](library/faith.md)** | Doctrine, sacraments, and theological studies. |
+| **[Biographies](library/biographies.md)** | Historical and hagiographic lives, with evidence and later tradition kept distinct. |
 | **[Mariology](library/mariology.md)** | Marian doctrine, prayer, history, and ecclesial judgment. |
 | **[Law](library/law-and-church-discipline.md)** | Canon law and Church discipline. |
 
