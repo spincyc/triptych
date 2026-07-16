@@ -117,11 +117,19 @@ class TriptychCodexTests(unittest.TestCase):
             timeout=timeout,
         )
 
-    def run_make(self, arguments: list[str]) -> subprocess.CompletedProcess:
+    def run_make(
+        self,
+        arguments: list[str],
+        *,
+        environment: dict[str, str] | None = None,
+    ) -> subprocess.CompletedProcess:
+        merged = self.base_environment()
+        if environment:
+            merged.update(environment)
         return subprocess.run(
             ["make", "--no-print-directory", *arguments],
             cwd=self.control,
-            env=self.base_environment(),
+            env=merged,
             capture_output=True,
             check=False,
             timeout=20,
@@ -1302,7 +1310,7 @@ class TriptychCodexTests(unittest.TestCase):
         self.assertEqual(self.worktree_paths(), [self.control.resolve()])
         self.assertEqual(self.manifests()[0]["integrated_head"], landed_head)
 
-    def test_integrate_aborts_conflicting_rebase_and_restores_audited_worker(self) -> None:
+    def test_integrate_retains_conflict_until_abort_restores_audited_worker(self) -> None:
         log = self.root / "integrate-rebase-conflict.jsonl"
         result = self.run_launcher(
             environment={"FAKE_CODEX_LOG": str(log), "FAKE_CODEX_ACTION": "commit"}
@@ -1320,45 +1328,125 @@ class TriptychCodexTests(unittest.TestCase):
         self.git(self.control, "commit", "-m", "Add conflicting primary result")
         target_head = self.git(self.control, "rev-parse", "HEAD").stdout.strip()
 
-        for _ in range(2):
-            integrate = self.run_launcher(["--triptych-integrate", manifest["run_id"]])
-            self.assertEqual(integrate.returncode, 2)
-            self.assertIn(b"rebase integration failed", integrate.stderr)
-            self.assertIn(b"retained result was restored", integrate.stderr)
-            self.assertEqual(
-                self.git(self.control, "rev-parse", "HEAD").stdout.strip(),
-                target_head,
-            )
-            self.assertEqual(
-                (self.control / "agent-result.txt").read_text(encoding="utf-8"),
-                "conflicting primary result\n",
-            )
-            self.assertEqual(self.git(worker, "rev-parse", "HEAD").stdout.strip(), audited_head)
-            self.assertEqual(self.git(worker, "status", "--porcelain=v1").stdout, "")
-            self.assertEqual(
-                self.git(worker, "symbolic-ref", "--short", "HEAD").stdout.strip(),
-                manifest["branch"],
-            )
-            self.assertNotEqual(
-                self.git(worker, "rev-parse", "--verify", "REBASE_HEAD", check=False).returncode,
-                0,
-            )
-            self.assertNotEqual(
-                self.git(
-                    self.control,
-                    "rev-parse",
-                    "--verify",
-                    "MERGE_HEAD",
-                    check=False,
-                ).returncode,
-                0,
-            )
-            retained = self.manifests()[0]
-            self.assertEqual(retained["state"], "preserved")
-            self.assertEqual(retained["final_head"], audited_head)
-            self.assertNotIn("integration_source_head", retained)
-            self.assertNotIn("integration_candidate_head", retained)
-            self.assertNotIn("integrated_head", retained)
+        integrate = self.run_launcher(["--triptych-integrate", manifest["run_id"]])
+        self.assertEqual(integrate.returncode, 2)
+        self.assertIn(b"stopped at a conflict and remains active", integrate.stderr)
+        self.assertEqual(self.git(self.control, "rev-parse", "HEAD").stdout.strip(), target_head)
+        self.assertIn("AA agent-result.txt", self.git(worker, "status", "--short").stdout)
+        self.assertEqual(
+            self.git(worker, "rev-parse", "--verify", "REBASE_HEAD").returncode,
+            0,
+        )
+        retained = self.manifests()[0]
+        self.assertEqual(retained["state"], "integration-rebase-pending")
+        self.assertEqual(retained["integration_source_head"], audited_head)
+        self.assertEqual(retained["integration_target_head"], target_head)
+
+        abort = self.run_make(["abort", manifest["run_id"]])
+        self.assertEqual(abort.returncode, 0, abort.stderr.decode())
+        self.assertEqual(self.git(worker, "rev-parse", "HEAD").stdout.strip(), audited_head)
+        self.assertEqual(self.git(worker, "status", "--porcelain=v1").stdout, "")
+        self.assertEqual(
+            self.git(worker, "symbolic-ref", "--short", "HEAD").stdout.strip(),
+            manifest["branch"],
+        )
+        self.assertNotEqual(
+            self.git(worker, "rev-parse", "--verify", "REBASE_HEAD", check=False).returncode,
+            0,
+        )
+        restored = self.manifests()[0]
+        self.assertEqual(restored["state"], "preserved")
+        self.assertEqual(restored["final_head"], audited_head)
+        self.assertNotIn("integration_source_head", restored)
+        self.assertNotIn("integration_candidate_head", restored)
+        self.assertNotIn("integrated_head", restored)
+
+    def test_fixed_resolver_and_continue_complete_existing_integration_path(self) -> None:
+        log = self.root / "resolver-source.jsonl"
+        result = self.run_launcher(
+            environment={"FAKE_CODEX_LOG": str(log), "FAKE_CODEX_ACTION": "commit"}
+        )
+        self.assertEqual(result.returncode, 0, result.stderr.decode())
+        manifest = self.manifests()[0]
+        worker = Path(manifest["worktree"])
+
+        (self.control / "agent-result.txt").write_text("primary result\n", encoding="utf-8")
+        self.git(self.control, "add", "agent-result.txt")
+        self.git(self.control, "commit", "-m", "Add conflicting primary result")
+        integrate = self.run_launcher(["--triptych-integrate", manifest["run_id"]])
+        self.assertEqual(integrate.returncode, 2)
+
+        resolver_log = self.root / "fixed-resolver.jsonl"
+        resolve = self.run_make(
+            ["resolve", manifest["run_id"]],
+            environment={"FAKE_CODEX_LOG": str(resolver_log)},
+        )
+        self.assertEqual(resolve.returncode, 0, resolve.stderr.decode())
+        resolver_argv = self.records(resolver_log)[0]["argv"]
+        self.assertEqual(resolver_argv[-2], "--")
+        self.assertIn("stage the complete resolution with git add", resolver_argv[-1])
+        self.assertIn("Do not run git rebase --continue", resolver_argv[-1])
+        self.assertEqual(self.manifests()[0]["state"], "integration-rebase-pending")
+
+        (worker / "agent-result.txt").write_text("reconciled result\n", encoding="utf-8")
+        self.git(worker, "add", "agent-result.txt")
+        self.git(worker, "config", "core.editor", "false")
+        continued = self.run_make(["continue", manifest["run_id"]])
+        self.assertEqual(continued.returncode, 0, continued.stderr.decode())
+        self.assertEqual(
+            (self.control / "agent-result.txt").read_text(encoding="utf-8"),
+            "reconciled result\n",
+        )
+        self.assertEqual(self.worktree_paths(), [self.control.resolve()])
+        completed = self.manifests()[0]
+        self.assertEqual(completed["state"], "cleaned")
+        self.assertEqual(completed["integration_source_head"], manifest["final_head"])
+        self.assertEqual(completed["integrated_head"], completed["integration_candidate_head"])
+
+    def test_continue_retains_the_next_rebase_conflict(self) -> None:
+        log = self.root / "multi-conflict-source.jsonl"
+        result = self.run_launcher(
+            environment={"FAKE_CODEX_LOG": str(log), "FAKE_CODEX_ACTION": "commit"}
+        )
+        self.assertEqual(result.returncode, 0, result.stderr.decode())
+        manifest = self.manifests()[0]
+        worker = Path(manifest["worktree"])
+        (worker / "second-result.txt").write_text("worker second result\n", encoding="utf-8")
+        self.git(worker, "add", "second-result.txt")
+        self.git(worker, "commit", "-m", "Add second worker result")
+        refresh_log = self.root / "multi-conflict-refresh.jsonl"
+        refresh = self.run_launcher(
+            ["--triptych-reopen", manifest["run_id"]],
+            environment={"FAKE_CODEX_LOG": str(refresh_log)},
+        )
+        self.assertEqual(refresh.returncode, 0, refresh.stderr.decode())
+        audited_head = self.manifests()[0]["final_head"]
+
+        (self.control / "agent-result.txt").write_text("primary first result\n", encoding="utf-8")
+        (self.control / "second-result.txt").write_text(
+            "primary second result\n",
+            encoding="utf-8",
+        )
+        self.git(self.control, "add", "agent-result.txt", "second-result.txt")
+        self.git(self.control, "commit", "-m", "Add conflicting primary results")
+        target_head = self.git(self.control, "rev-parse", "HEAD").stdout.strip()
+        integrate = self.run_launcher(["--triptych-integrate", manifest["run_id"]])
+        self.assertEqual(integrate.returncode, 2)
+
+        (worker / "agent-result.txt").write_text("resolved first result\n", encoding="utf-8")
+        self.git(worker, "add", "agent-result.txt")
+        continued = self.run_launcher(["--triptych-continue", manifest["run_id"]])
+        self.assertEqual(continued.returncode, 2)
+        self.assertIn(b"current or next conflict", continued.stderr)
+        self.assertIn("AA second-result.txt", self.git(worker, "status", "--short").stdout)
+        self.assertEqual(
+            self.git(worker, "rev-parse", "--verify", "REBASE_HEAD").returncode,
+            0,
+        )
+        retained = self.manifests()[0]
+        self.assertEqual(retained["state"], "integration-rebase-pending")
+        self.assertEqual(retained["integration_source_head"], audited_head)
+        self.assertEqual(retained["integration_target_head"], target_head)
 
     def test_integrate_refuses_worker_merge_that_could_hide_merge_only_content(
         self,
@@ -1780,7 +1868,12 @@ class TriptychCodexTests(unittest.TestCase):
 
         integrate = self.run_launcher(["--triptych-integrate", manifest["run_id"]])
         self.assertEqual(integrate.returncode, 2)
-        self.assertIn(b"retained without abort or reset", integrate.stderr)
+        self.assertIn(b"integration rebase conflict remains active", integrate.stderr)
+        for action in ("resolve", "continue", "abort"):
+            self.assertIn(
+                f"--triptych-{action} {manifest['run_id']}".encode(),
+                integrate.stderr,
+            )
         self.assertTrue(rebase_marker.exists())
         self.assertEqual(self.git(worker, "status", "--porcelain=v1").stdout, status_before)
         self.assertEqual(
@@ -1788,8 +1881,8 @@ class TriptychCodexTests(unittest.TestCase):
             "manual resolution\n",
         )
         recovered = self.manifests()[0]
-        self.assertEqual(recovered["state"], "integration-rebase-recovery-failed")
-        self.assertIn("remains in progress", recovered["integration_recovery_error"])
+        self.assertEqual(recovered["state"], "integration-rebase-pending")
+        self.assertNotIn("integration_recovery_error", recovered)
 
     def test_interrupted_rebase_marker_is_retained_at_clean_source_head(self) -> None:
         log = self.root / "integrate-interrupted-source-marker.jsonl"
@@ -1824,12 +1917,18 @@ class TriptychCodexTests(unittest.TestCase):
 
         integrate = self.run_launcher(["--triptych-integrate", manifest["run_id"]])
         self.assertEqual(integrate.returncode, 2)
-        self.assertIn(b"retained without abort or reset", integrate.stderr)
+        self.assertIn(b"integration rebase conflict remains active", integrate.stderr)
+        for action in ("resolve", "continue", "abort"):
+            self.assertIn(
+                f"--triptych-{action} {manifest['run_id']}".encode(),
+                integrate.stderr,
+            )
         self.assertTrue(marker.exists())
         self.assertEqual(self.git(worker, "rev-parse", "HEAD").stdout.strip(), source_head)
+        self.assertEqual(self.git(worker, "status", "--porcelain=v1").stdout, "")
         recovered = self.manifests()[0]
-        self.assertEqual(recovered["state"], "integration-rebase-recovery-failed")
-        self.assertIn("remains in progress", recovered["integration_recovery_error"])
+        self.assertEqual(recovered["state"], "integration-rebase-pending")
+        self.assertNotIn("integration_recovery_error", recovered)
 
     def test_integrate_reports_post_rebase_cleanup_failure_and_allows_retry(self) -> None:
         log = self.root / "integrate-post-merge.jsonl"

@@ -15,9 +15,9 @@ PUBLIC_ALPHA_TOOL := scripts/public-alpha
 CODEX_LAUNCHER := scripts/triptych-codex
 INTEGRATE_RUN_ID := $(word 2,$(MAKECMDGOALS))
 
-# `make integrate <run-id>` presents the run ID as a second Make goal. Limit
-# the fallback rule to that invocation so ordinary unknown targets still fail.
-ifeq ($(firstword $(MAKECMDGOALS)),integrate)
+# These lifecycle commands present the run ID as a second Make goal. Limit the
+# fallback rule to those invocations so ordinary unknown targets still fail.
+ifneq ($(filter $(firstword $(MAKECMDGOALS)),integrate resolve continue abort),)
 .DEFAULT:
 	@:
 endif
@@ -42,7 +42,7 @@ CARMEL_NOVENA_PRAYERS := $(wildcard $(CARMEL_NOVENA_ROOT)/prayers/*.tex)
 
 .PHONY: all pdf install list help clean distclean check-tools check-metadata \
 	check-public-alpha check-agent-isolation codex public-site public-preview \
-	verify-public-site verify-public-preview integrate
+	verify-public-site verify-public-preview integrate resolve continue abort
 .DELETE_ON_ERROR:
 
 all: pdf
@@ -73,6 +73,33 @@ integrate:
 	fi
 	@$(CODEX_LAUNCHER) --triptych-integrate "$$TRIPTYCH_MAKE_INTEGRATE_RUN_ID"
 
+resolve: export TRIPTYCH_MAKE_FIRST_GOAL := $(firstword $(MAKECMDGOALS))
+resolve: export TRIPTYCH_MAKE_RESOLVE_RUN_ID := $(INTEGRATE_RUN_ID)
+resolve:
+	@if [ "$$TRIPTYCH_MAKE_FIRST_GOAL" != resolve ] || [ "$(words $(MAKECMDGOALS))" -ne 2 ]; then \
+		printf '%s\n' 'Usage: make resolve <run-id>' >&2; \
+		exit 2; \
+	fi
+	@$(CODEX_LAUNCHER) --triptych-resolve "$$TRIPTYCH_MAKE_RESOLVE_RUN_ID"
+
+continue: export TRIPTYCH_MAKE_FIRST_GOAL := $(firstword $(MAKECMDGOALS))
+continue: export TRIPTYCH_MAKE_CONTINUE_RUN_ID := $(INTEGRATE_RUN_ID)
+continue:
+	@if [ "$$TRIPTYCH_MAKE_FIRST_GOAL" != continue ] || [ "$(words $(MAKECMDGOALS))" -ne 2 ]; then \
+		printf '%s\n' 'Usage: make continue <run-id>' >&2; \
+		exit 2; \
+	fi
+	@$(CODEX_LAUNCHER) --triptych-continue "$$TRIPTYCH_MAKE_CONTINUE_RUN_ID"
+
+abort: export TRIPTYCH_MAKE_FIRST_GOAL := $(firstword $(MAKECMDGOALS))
+abort: export TRIPTYCH_MAKE_ABORT_RUN_ID := $(INTEGRATE_RUN_ID)
+abort:
+	@if [ "$$TRIPTYCH_MAKE_FIRST_GOAL" != abort ] || [ "$(words $(MAKECMDGOALS))" -ne 2 ]; then \
+		printf '%s\n' 'Usage: make abort <run-id>' >&2; \
+		exit 2; \
+	fi
+	@$(CODEX_LAUNCHER) --triptych-abort "$$TRIPTYCH_MAKE_ABORT_RUN_ID"
+
 check-agent-isolation:
 	@$(PYTHON) -m unittest discover -s scripts/tests -p 'test_triptych_codex.py' -v
 
@@ -83,6 +110,9 @@ help:
 		'make list     List discovered document IDs' \
 		'make codex    Start Codex in an automatically isolated task checkout' \
 		'make integrate <run-id>  Rebase if needed, fast-forward, and clean an approved run' \
+		'make resolve <run-id>  Open the fixed stage-only resolver for a retained conflict' \
+		'make continue <run-id>  Continue a retained integration rebase' \
+		'make abort <run-id>  Abort a retained integration rebase' \
 		'make check-agent-isolation  Test the transparent Codex launcher' \
 		'make check-metadata  Validate structured and inherited AI provenance' \
 		'make check-public-alpha  Validate the exhaustive public-release policy' \

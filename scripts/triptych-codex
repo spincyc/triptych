@@ -42,6 +42,7 @@ INTEGRATION_TRANSACTION_FIELDS = (
     "integration_rebased_at",
     "integration_previous_state",
 )
+INTEGRATION_RESOLUTION_PROMPT = """Resolve only the currently active integration rebase conflict in this retained worker. Inspect the conflict, edit only the files needed to reconcile it, and stage the complete resolution with git add. Do not run git rebase --continue, git rebase --abort, git commit, git reset, git checkout, git switch, git merge, or start another rebase. Stop after the current conflict is resolved and staged."""
 GIT_REDIRECTION_ENV = {
     "GIT_ALTERNATE_OBJECT_DIRECTORIES",
     "GIT_COMMON_DIR",
@@ -176,11 +177,15 @@ def command(
     cwd: Path,
     check: bool = True,
     text: bool = True,
+    environment: dict[str, str] | None = None,
 ) -> subprocess.CompletedProcess:
+    command_environment = sanitized_git_environment()
+    if environment:
+        command_environment.update(environment)
     result = subprocess.run(
         list(argv),
         cwd=cwd,
-        env=sanitized_git_environment(),
+        env=command_environment,
         check=False,
         capture_output=True,
         text=text,
@@ -197,8 +202,15 @@ def git(
     *args: str,
     check: bool = True,
     text: bool = True,
+    environment: dict[str, str] | None = None,
 ) -> subprocess.CompletedProcess:
-    return command(("git", *args), cwd=cwd, check=check, text=text)
+    return command(
+        ("git", *args),
+        cwd=cwd,
+        check=check,
+        text=text,
+        environment=environment,
+    )
 
 
 def absolute_git_path(cwd: Path, selector: str) -> Path:
@@ -1009,6 +1021,59 @@ def abort_failed_integration_rebase(
     )
 
 
+def active_integration_rebase(
+    repository: Repository,
+    manifest: dict,
+) -> tuple[Path, str, str, Audit]:
+    if manifest.get("state") != "integration-rebase-pending":
+        raise LauncherError("the retained run has no active integration rebase conflict")
+    source_head = recorded_commit(repository, manifest, "integration_source_head")
+    target_head = recorded_commit(repository, manifest, "integration_target_head")
+    worktree = Path(manifest["worktree"])
+    audit = audit_run(repository, manifest)
+    if not audit.registered or not audit.locked:
+        raise LauncherError("the retained worktree is missing or unlocked")
+    if not rebase_in_progress(worktree):
+        raise LauncherError("the retained run has no active integration rebase conflict")
+    return worktree, source_head, target_head, audit
+
+
+def record_completed_integration_rebase(
+    repository: Repository,
+    manifest: dict,
+    target_head: str,
+) -> str:
+    rebased_audit = audit_run(repository, manifest)
+    if (
+        rebased_audit.branch != manifest["branch"]
+        or rebased_audit.head is None
+        or not commit_is_ancestor(repository, target_head, rebased_audit.head)
+    ):
+        record_integration_recovery_failure(
+            repository,
+            manifest,
+            state="integration-rebase-recovery-failed",
+            audit=rebased_audit,
+            error="Git reported a successful rebase with an unexpected worker state",
+        )
+        raise LauncherError(
+            "Git reported a successful integration rebase, but the retained "
+            "worker did not have the expected rebased history"
+        )
+
+    candidate_head = rebased_audit.head
+    manifest["state"] = "integration-merge-pending"
+    manifest["integration_candidate_head"] = candidate_head
+    manifest["integration_rebased_at"] = utc_now()
+    write_manifest(repository, manifest)
+    if not rebased_audit.clean:
+        raise LauncherError(
+            "the integration rebase completed with unexpected uncommitted "
+            "worker changes; it was retained without merging or cleanup"
+        )
+    return candidate_head
+
+
 def rollback_completed_integration_rebase(
     repository: Repository,
     manifest: dict,
@@ -1427,6 +1492,131 @@ def reopen_run(repository: Repository, run_id: str, arguments: Sequence[str]) ->
     return launch_child(repository, manifest, run_lock_stream, real_codex, arguments)
 
 
+def resolve_integration_rebase(repository: Repository, run_id: str) -> int:
+    if repository.linked_worktree:
+        raise LauncherError("resolve managed integration conflicts from the primary checkout")
+    initialize_state(repository)
+    real_codex = resolve_real_codex()
+    with file_lock(repo_lock_path(repository)):
+        manifest = load_manifest(repository, run_id)
+        worktree, _source_head, _target_head, before = active_integration_rebase(
+            repository,
+            manifest,
+        )
+        run_lock_stream = acquire_existing_run_lock(repository, run_id)
+
+    child_cwd = worktree / Path(manifest["relative_cwd"])
+    argv = codex_argv(real_codex, child_cwd, ("exec", INTEGRATION_RESOLUTION_PROMPT))
+    try:
+        try:
+            process = subprocess.Popen(
+                argv,
+                cwd=child_cwd,
+                env=child_environment(manifest, real_codex),
+                pass_fds=(run_lock_stream.fileno(),),
+            )
+        except OSError as exc:
+            raise LauncherError(f"cannot start the conflict resolver: {exc}") from exc
+        exit_code = normalized_exit_status(wait_for_child(process))
+    finally:
+        run_lock_stream.close()
+
+    with file_lock(repo_lock_path(repository)):
+        manifest = load_manifest(repository, run_id)
+        run_lock_stream = acquire_existing_run_lock(repository, run_id)
+        try:
+            worktree, _source_head, _target_head, after = active_integration_rebase(
+                repository,
+                manifest,
+            )
+            if after.head != before.head:
+                raise LauncherError(
+                    "the resolver changed the rebase commit instead of stopping after staging"
+                )
+        finally:
+            run_lock_stream.close()
+
+    if exit_code == 0:
+        diagnostic(
+            f"run {run_id} retains its active rebase; inspect the staged resolution, "
+            f"then run scripts/triptych-codex --triptych-continue {run_id}"
+        )
+    return exit_code
+
+
+def continue_integration_rebase(repository: Repository, run_id: str) -> int:
+    if repository.linked_worktree:
+        raise LauncherError("continue managed integration rebases from the primary checkout")
+    initialize_state(repository)
+    with file_lock(repo_lock_path(repository)):
+        manifest = load_manifest(repository, run_id)
+        run_lock_stream = acquire_existing_run_lock(repository, run_id)
+        try:
+            worktree, source_head, target_head, _audit = active_integration_rebase(
+                repository,
+                manifest,
+            )
+            continued = git(
+                worktree,
+                "-c",
+                "core.hooksPath=/dev/null",
+                "rebase",
+                "--continue",
+                check=False,
+                environment={"GIT_EDITOR": ":"},
+            )
+            if continued.returncode:
+                continue_error = continued.stderr.strip() or "Git reported no diagnostic"
+                if rebase_in_progress(worktree):
+                    raise LauncherError(
+                        "the integration rebase remains active at the current or next "
+                        f"conflict; resolve and stage it before continuing: {continue_error}"
+                    )
+                abort_failed_integration_rebase(
+                    repository,
+                    manifest,
+                    source_head,
+                    f"rebase continue failed: {continue_error}",
+                )
+                raise LauncherError(
+                    "rebase continue failed; the original audited worker was restored: "
+                    f"{continue_error}"
+                )
+            if rebase_in_progress(worktree):
+                raise LauncherError(
+                    "the integration rebase remains active at the next conflict; "
+                    "resolve and stage it before continuing"
+                )
+            record_completed_integration_rebase(repository, manifest, target_head)
+        finally:
+            run_lock_stream.close()
+    return integrate_run(repository, run_id)
+
+
+def abort_integration_rebase(repository: Repository, run_id: str) -> int:
+    if repository.linked_worktree:
+        raise LauncherError("abort managed integration rebases from the primary checkout")
+    initialize_state(repository)
+    with file_lock(repo_lock_path(repository)):
+        manifest = load_manifest(repository, run_id)
+        run_lock_stream = acquire_existing_run_lock(repository, run_id)
+        try:
+            _worktree, source_head, _target_head, _audit = active_integration_rebase(
+                repository,
+                manifest,
+            )
+            abort_failed_integration_rebase(
+                repository,
+                manifest,
+                source_head,
+                "the integration rebase was aborted by the operator",
+            )
+        finally:
+            run_lock_stream.close()
+    diagnostic(f"run {run_id} was restored to its original audited source commit")
+    return 0
+
+
 def confirm_cleaned_integration(repository: Repository, manifest: dict) -> int:
     integrated_head = manifest.get("integrated_head")
     if not isinstance(integrated_head, str):
@@ -1497,6 +1687,12 @@ def integrate_run(repository: Repository, run_id: str) -> int:
                     "integration_source_head",
                 )
                 if rebase_in_progress(Path(manifest["worktree"])):
+                    if transaction_state == "integration-rebase-pending":
+                        raise LauncherError(
+                            "the integration rebase conflict remains active; use "
+                            f"scripts/triptych-codex --triptych-resolve {run_id}, "
+                            f"--triptych-continue {run_id}, or --triptych-abort {run_id}"
+                        )
                     record_integration_recovery_failure(
                         repository,
                         manifest,
@@ -1640,6 +1836,13 @@ def integrate_run(repository: Repository, run_id: str) -> int:
                     )
                     if rebase.returncode:
                         rebase_error = rebase.stderr.strip() or "Git reported no diagnostic"
+                        if rebase_in_progress(Path(manifest["worktree"])):
+                            raise LauncherError(
+                                "rebase integration stopped at a conflict and remains active; "
+                                f"run scripts/triptych-codex --triptych-resolve {run_id}, "
+                                f"--triptych-continue {run_id}, or --triptych-abort {run_id}: "
+                                f"{rebase_error}"
+                            )
                         abort_failed_integration_rebase(
                             repository,
                             manifest,
@@ -1666,38 +1869,11 @@ def integrate_run(repository: Repository, run_id: str) -> int:
                             f"the retained result was restored: {rebase_error}"
                         )
 
-                    rebased_audit = audit_run(repository, manifest)
-                    if (
-                        rebased_audit.branch != manifest["branch"]
-                        or rebased_audit.head is None
-                        or not commit_is_ancestor(
-                            repository,
-                            target_head,
-                            rebased_audit.head,
-                        )
-                    ):
-                        record_integration_recovery_failure(
-                            repository,
-                            manifest,
-                            state="integration-rebase-recovery-failed",
-                            audit=rebased_audit,
-                            error="Git reported a successful rebase with an unexpected worker state",
-                        )
-                        raise LauncherError(
-                            "Git reported a successful integration rebase, but the retained "
-                            "worker did not have the expected rebased history"
-                        )
-
-                    candidate_head = rebased_audit.head
-                    manifest["state"] = "integration-merge-pending"
-                    manifest["integration_candidate_head"] = candidate_head
-                    manifest["integration_rebased_at"] = utc_now()
-                    write_manifest(repository, manifest)
-                    if not rebased_audit.clean:
-                        raise LauncherError(
-                            "the integration rebase completed with unexpected uncommitted "
-                            "worker changes; it was retained without merging or cleanup"
-                        )
+                    candidate_head = record_completed_integration_rebase(
+                        repository,
+                        manifest,
+                        target_head,
+                    )
 
                     try:
                         current_target, current_ref = require_stable_clean_base(
@@ -2010,6 +2186,9 @@ def launcher_help() -> str:
   scripts/triptych-codex --triptych-status [RUN_ID]
   scripts/triptych-codex --triptych-reopen RUN_ID [-- CODEX_ARGUMENTS...]
   scripts/triptych-codex --triptych-integrate RUN_ID
+  scripts/triptych-codex --triptych-resolve RUN_ID
+  scripts/triptych-codex --triptych-continue RUN_ID
+  scripts/triptych-codex --triptych-abort RUN_ID
   scripts/triptych-codex --triptych-clean RUN_ID
   scripts/triptych-codex --triptych-help
 
@@ -2021,8 +2200,9 @@ resume a saved Codex conversation. Only interactive, exec, and review agent
 surfaces and their allowlisted options are accepted. After separate review and
 authorization, integration confirms or fast-forwards an already-linear result;
 when the target and worker diverged, it rebases the worker onto the current target
-and then fast-forwards. It never creates a merge commit. Conflicts restore and
-retain the original worker. A verified landing is safely cleaned when possible.
+and then fast-forwards. It never creates a merge commit. Conflicts remain active
+for fixed-prompt resolution, explicit continuation, or verified abort. A verified
+landing is safely cleaned when possible.
 """
 
 
@@ -2047,6 +2227,18 @@ def main(arguments: Sequence[str] | None = None) -> int:
             if len(argv) != 2:
                 raise LauncherError("--triptych-integrate requires exactly one run ID")
             return integrate_run(repository, argv[1])
+        if argv and argv[0] == "--triptych-resolve":
+            if len(argv) != 2:
+                raise LauncherError("--triptych-resolve requires exactly one run ID")
+            return resolve_integration_rebase(repository, argv[1])
+        if argv and argv[0] == "--triptych-continue":
+            if len(argv) != 2:
+                raise LauncherError("--triptych-continue requires exactly one run ID")
+            return continue_integration_rebase(repository, argv[1])
+        if argv and argv[0] == "--triptych-abort":
+            if len(argv) != 2:
+                raise LauncherError("--triptych-abort requires exactly one run ID")
+            return abort_integration_rebase(repository, argv[1])
         if argv and argv[0] == "--triptych-clean":
             if len(argv) != 2:
                 raise LauncherError("--triptych-clean requires exactly one run ID")

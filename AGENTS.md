@@ -42,6 +42,8 @@ If a mutating Codex session starts in the primary checkout without isolation, fa
 
 Isolation does not grant authority. Authorization to edit content, change structure, install PDFs, create commits, integrate results, update local `main`, push any ref, or trigger deployment remains separate; do not infer a later action from an earlier one. Workers never push, switch branches, merge, rebase, amend, use the shared stash, change Git configuration or remotes, administer worktrees, or leave background processes running after the session. After explicit integration authorization, the primary-checkout launcher may perform only the documented rebase of an inactive, audited, and unlanded worker through `make integrate` or its direct launcher equivalent; this does not permit a worker session to rebase or authorize rewriting the target or published history. Unless the task expressly authorizes a commit, leave the result uncommitted for review.
 
+An integration conflict remains an active launcher-owned rebase. From the primary checkout, `make resolve <run-id>` opens the retained worker with a fixed prompt that permits only conflict edits and staging; `make continue <run-id>` advances the rebase and either retains the next conflict or completes the existing fast-forward and cleanup path; `make abort <run-id>` aborts the rebase and verifies or restores the original audited source state. Do not run the underlying rebase operations manually.
+
 Never record worktree paths, run identifiers, prompts, logs, process data, or other machine-local launcher state in tracked files or publication metadata.
 
 ## Work sequence
