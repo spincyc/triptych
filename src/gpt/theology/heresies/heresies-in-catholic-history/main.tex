@@ -1,0 +1,99 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+\usepackage{pdflscape}
+
+\hypersetup{
+  pdftitle={Heresies in Catholic History: A Comprehensive Documentary Survey},
+  pdfsubject={Condemned propositions, ecclesial responses, historical aftermaths, and an audited chronology from the apostolic age through the present}
+}
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{3em}
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\newenvironment{heresydossier}[2]{%
+  \sectionguard
+  \subsection{#1}\label{#2}
+  \begin{studyframe}
+}{%
+  \end{studyframe}
+}
+
+\newcommand{\objectfield}{\textbf{Object and setting:} }
+\newcommand{\propositionfield}{\par\textbf{Propositions at issue:} }
+\newcommand{\responsefield}{\par\textbf{Ecclesial response:} }
+\newcommand{\aftermathfield}{\par\textbf{Aftermath and qualification:} }
+
+\newenvironment{historytimeline}{%
+  \begingroup\scriptsize\renewcommand{\arraystretch}{1.13}
+  \begin{longtable}{>{\raggedright\arraybackslash}p{0.075\linewidth}>{\raggedright\arraybackslash}p{0.13\linewidth}>{\raggedright\arraybackslash}p{0.22\linewidth}>{\raggedright\arraybackslash}p{0.27\linewidth}>{\raggedright\arraybackslash}p{0.22\linewidth}}
+  \toprule
+  \textbf{Date} & \textbf{Place / authority} & \textbf{Object} & \textbf{Response and positive doctrine} & \textbf{Aftermath / evidence}\\
+  \midrule
+  \endfirsthead
+  \toprule
+  \textbf{Date} & \textbf{Place / authority} & \textbf{Object} & \textbf{Response and positive doctrine} & \textbf{Aftermath / evidence}\\
+  \midrule
+  \endhead
+}{%
+  \bottomrule
+  \end{longtable}\endgroup
+}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.10\textheight}
+{\Huge\bfseries Heresies in Catholic History\par}
+\vspace{0.5em}
+{\Large\itshape A Comprehensive Documentary Survey\par}
+\vspace{0.8em}
+{\large Condemned propositions, ecclesial responses,\par}
+\vspace{0.1em}
+{\large historical aftermaths, and an audited chronology\par}
+\vfill
+\begin{minipage}{0.92\textwidth}
+\footnotesize
+\textbf{AI generation metadata}\par\smallskip
+\input{theology/heresies/heresies-in-catholic-history/generation-metadata}
+\end{minipage}
+\vfill
+{\small A source-audited Catholic working reference, checked through 16 July 2026 for current canon law and modern ecumenical qualifications. It is not an act of the Magisterium, an ecclesiastical judgment on any living person or community, or a substitute for the primary acts and specialized historical, theological, canonical, or ecumenical scholarship.\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{theology/heresies/heresies-in-catholic-history/sections/00-method-and-boundaries}
+\input{theology/heresies/heresies-in-catholic-history/sections/05-apostolic-boundary}
+\input{theology/heresies/heresies-in-catholic-history/sections/10-second-and-third-centuries}
+\input{theology/heresies/heresies-in-catholic-history/sections/20-fourth-to-sixth-centuries}
+\input{theology/heresies/heresies-in-catholic-history/sections/30-seventh-to-tenth-centuries}
+\input{theology/heresies/heresies-in-catholic-history/sections/40-eleventh-to-thirteenth-centuries}
+\input{theology/heresies/heresies-in-catholic-history/sections/50-fourteenth-and-fifteenth-centuries}
+\input{theology/heresies/heresies-in-catholic-history/sections/60-reformations}
+\input{theology/heresies/heresies-in-catholic-history/sections/70-post-reformation-controversies}
+\input{theology/heresies/heresies-in-catholic-history/sections/80-modern-and-contemporary}
+\input{theology/heresies/heresies-in-catholic-history/sections/90-historical-synthesis}
+\appendix
+\input{theology/heresies/heresies-in-catholic-history/sections/95-timeline}
+\input{theology/heresies/heresies-in-catholic-history/sections/96-census-accounting}
+\input{theology/heresies/heresies-in-catholic-history/sections/99-references}
+\end{deepstudy}
+
+\end{document}

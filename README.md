@@ -21,6 +21,7 @@ No technical background is needed: choose a document, open the PDF, and read.
 | **[Prayer](library/prayer.md)** | Novenas and condensed daily prayer books. |
 | **[Faith](library/faith.md)** | Doctrine, sacraments, and theological studies. |
 | **[Biographies](library/biographies.md)** | Historical and hagiographic lives, with evidence and later tradition kept distinct. |
+| **[Heresies](library/heresies.md)** | Historical studies of condemned propositions, ecclesial responses, and their aftermaths. |
 | **[Mariology](library/mariology.md)** | Marian doctrine, prayer, history, and ecclesial judgment. |
 | **[Law](library/law-and-church-discipline.md)** | Canon law and Church discipline. |
 

@@ -13,5 +13,6 @@ Project licenses cover only project-created material. Quotations, public-domain 
 | **[Prayer](library/prayer.md)** | Novenas and condensed daily prayer books. |
 | **[Faith](library/faith.md)** | Doctrine, sacraments, and theological studies. |
 | **[Biographies](library/biographies.md)** | Historical and hagiographic lives, with evidence and later tradition kept distinct. |
+| **[Heresies](library/heresies.md)** | Documentary histories of doctrinal error, condemnation, clarification, and reception. |
 | **[Mariology](library/mariology.md)** | Marian doctrine, prayer, history, and ecclesial judgment. |
 | **[Law and Church Discipline](library/law-and-church-discipline.md)** | Canon law and Church discipline. |
