@@ -413,6 +413,8 @@ The Gloria, Creed, Penitential Act, Prayer of the Faithful, ordinary Eucharistic
 
 The manifest and verified audit always record the applicable Preface rule and any Eucharistic Prayer choice that activates a proper insert. The reader-facing map gives a separate Preface or Eucharistic Prayer-insert row when the text is proper, narrowly appointed, selected in a resolved instance, or materially analyzed; it need not reproduce a common unrestricted text merely to complete a row count.
 
+Model prayer-specific dependencies as coupled branches, not independent choices. On an Ordinary Time Sunday, the Missal directs a Sunday-in-Ordinary-Time Preface unless the selected Eucharistic Prayer carries its own Preface (*Tempus per annum*, rubric 5); record the unresolved authorized pairing as a `compatible-preface-and-eucharistic-prayer` path rather than implying that every Prayer takes a separately selected Sunday Preface. In particular, Eucharistic Prayer IV may be used only with its own inseparable Preface and may not be used when the Mass has a proper Preface (GIRM 365(d)); an Ordinary Time target with no proper Preface therefore also records an explicit `eucharistic-prayer-iv-with-preface` path, while a target with a proper Preface records Eucharistic Prayer IV as excluded. Apply the corresponding rubric to any other Eucharistic Prayer whose Preface or insert constrains the selection.
+
 ### Appointed Elements map
 
 The map has a variable number of rows and these four conceptual columns:
@@ -463,6 +465,8 @@ Every target with any authorized option has a branch synopsis immediately after 
 | --- | --- | --- | --- | --- |
 
 Branch IDs are stable semantic names such as `short-passion`, `procession`, `year-a-scrutiny-readings`, or `evening-emmaus-gospel`, never anonymous `option-1`. A branch names the choice authorized by the book; it does not create another formula key unless the registry expressly says so.
+
+Use each branch ID unchanged wherever that branch appears: the `Appointed Elements` map, reader-facing branch synopsis, `instance/manifest.md`, and leaf `propers/verified.md`. Do not introduce display aliases or abbreviated IDs; carry the readable element name and explanation in the neighboring fields instead.
 
 A territorial norm that permits selection from an open or extensive approved musical repertory is one source-class branch, not one branch per possible song. Name and analyze a particular hymn, antiphon, or chant only when an approved book appoints it or a resolved instance actually selects it; otherwise record the lawful selection class and its scope.
 

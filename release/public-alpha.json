@@ -3,14 +3,16 @@
   "release_id": "public-alpha",
   "provider": "gpt",
   "expected_counts": {
-    "publications": 27,
+    "publications": 35,
     "release": 27,
     "review": 0,
-    "hold": 0
+    "hold": 8
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
     "liturgical-text-permission": "Obtain and record the permission or other distribution basis required for incorporated liturgical text.",
+    "named-us-altar-book-collation": "Collate the U.S.-English orations against an identified current altar-book publisher and printing, and record the exact locators.",
+    "independent-proper-guide-review": "Complete and record independent liturgical, biblical, theological, and historical review of the proper guide.",
     "prayer-text-permission": "Obtain and record the permission or other distribution basis required for incorporated prayer text and translations.",
     "rubrical-adaptation-clearance": "Resolve and record the distribution basis for the close adaptation of the rubrical corpus."
   },
@@ -264,6 +266,102 @@
         "authorization": "perpetual-public-repository-2026",
         "pdf_sha256": "af0a14cccf193d3139713efd6ff5d05c36e1a19f90ad8ae2d176b2ad5608ed99"
       }
+    },
+    {
+      "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s35-eleventh-sunday-in-ordinary-time-year-a",
+      "catalog": "library/novus-ordo-liturgy.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "named-us-altar-book-collation",
+        "independent-proper-guide-review"
+      ],
+      "approval": null
+    },
+    {
+      "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s36-twelfth-sunday-in-ordinary-time-year-a",
+      "catalog": "library/novus-ordo-liturgy.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "named-us-altar-book-collation",
+        "independent-proper-guide-review"
+      ],
+      "approval": null
+    },
+    {
+      "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-thirteenth-sunday-in-ordinary-time-year-a",
+      "catalog": "library/novus-ordo-liturgy.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "named-us-altar-book-collation",
+        "independent-proper-guide-review"
+      ],
+      "approval": null
+    },
+    {
+      "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-fourteenth-sunday-in-ordinary-time-year-a",
+      "catalog": "library/novus-ordo-liturgy.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "named-us-altar-book-collation",
+        "independent-proper-guide-review"
+      ],
+      "approval": null
+    },
+    {
+      "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-fifteenth-sunday-in-ordinary-time-year-a",
+      "catalog": "library/novus-ordo-liturgy.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "named-us-altar-book-collation",
+        "independent-proper-guide-review"
+      ],
+      "approval": null
+    },
+    {
+      "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a",
+      "catalog": "library/novus-ordo-liturgy.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "named-us-altar-book-collation",
+        "independent-proper-guide-review"
+      ],
+      "approval": null
+    },
+    {
+      "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a",
+      "catalog": "library/novus-ordo-liturgy.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "named-us-altar-book-collation",
+        "independent-proper-guide-review"
+      ],
+      "approval": null
+    },
+    {
+      "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s59-most-holy-body-and-blood-of-christ-year-a",
+      "catalog": "library/novus-ordo-liturgy.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "named-us-altar-book-collation",
+        "independent-proper-guide-review"
+      ],
+      "approval": null
     },
     {
       "id": "theology/mariology/apparitions",

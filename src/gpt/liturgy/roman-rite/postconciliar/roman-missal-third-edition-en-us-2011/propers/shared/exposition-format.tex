@@ -1,0 +1,63 @@
+% Shared presentation primitives for U.S.-English postconciliar proper expositions.
+% The source-layer and status columns intentionally differ from the 1962
+% properstable environment, whose headings are edition-specific.
+
+\newcommand{\branchid}[1]{{\ttfamily\hyphenchar\font=45\relax #1}}
+
+\newcommand{\pcweektitle}[3]{%
+  \begin{center}
+    {\Large\bfseries #1}\par
+    \vspace{0.18em}
+    {\large #2}\par
+    \vspace{0.18em}
+    {\small #3}
+  \end{center}
+  \vspace{0.35em}
+}
+
+\newenvironment{instancestable}
+{\begingroup\footnotesize\renewcommand{\arraystretch}{1.08}%
+\begin{longtable}{>{\bfseries\raggedright\arraybackslash}p{0.22\linewidth}>{\raggedright\arraybackslash}p{0.70\linewidth}}
+\toprule
+\textbf{Field} & \textbf{Resolved liturgical instance}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}\endgroup}
+
+\newenvironment{appointedstable}
+{\begingroup\scriptsize\renewcommand{\arraystretch}{1.00}%
+\begin{longtable}{>{\bfseries\raggedright\arraybackslash}p{0.16\linewidth}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.23\linewidth}>{\raggedright\arraybackslash}p{0.35\linewidth}}
+\toprule
+\textbf{Element / branch} & \textbf{Book / status} & \textbf{Text / citation} & \textbf{Function / evidenced relation}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}\endgroup}
+
+\newcommand{\appointedrow}[4]{#1 & #2 & #3 & #4\\}
+
+\newenvironment{branchstable}
+{\begingroup\scriptsize\renewcommand{\arraystretch}{1.00}%
+\begin{longtable}{>{\bfseries\raggedright\arraybackslash}p{0.13\linewidth}>{\raggedright\arraybackslash}p{0.22\linewidth}>{\raggedright\arraybackslash}p{0.12\linewidth}>{\raggedright\arraybackslash}p{0.25\linewidth}>{\raggedright\arraybackslash}p{0.20\linewidth}}
+\toprule
+\textbf{Branch ID} & \textbf{Authority and trigger} & \textbf{Status} & \textbf{Units affected} & \textbf{Resolution}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}\endgroup}
+
+\newcommand{\branchrow}[5]{#1 & #2 & #3 & #4 & #5\\}
+
+\newenvironment{scripturestable}
+{\begingroup\scriptsize\renewcommand{\arraystretch}{1.06}%
+\begin{longtable}{>{\bfseries\raggedright\arraybackslash}p{0.17\linewidth}>{\raggedright\arraybackslash}p{0.19\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.20\linewidth}}
+\toprule
+\textbf{Element / branch} & \textbf{Citation} & \textbf{Location} & \textbf{Date}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}\endgroup}
+
+\newcommand{\scripturerow}[4]{#1 & #2 & #3 & #4\\}
+\newcommand{\scripturenote}[1]{%
+  \multicolumn{4}{>{\raggedright\arraybackslash}p{0.92\linewidth}}{#1}\\[0.15em]
+  \midrule}
+
+\newcommand{\elementref}[1]{\properrefs{#1}}
