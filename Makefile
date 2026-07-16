@@ -13,6 +13,14 @@ DOC_PDFS := $(addprefix $(DOC_ROOT)/,$(addsuffix .pdf,$(DOCUMENTS)))
 METADATA_CHECKER := scripts/check-generation-metadata
 PUBLIC_ALPHA_TOOL := scripts/public-alpha
 CODEX_LAUNCHER := scripts/triptych-codex
+INTEGRATE_RUN_ID := $(word 2,$(MAKECMDGOALS))
+
+# `make integrate <run-id>` presents the run ID as a second Make goal. Limit
+# the fallback rule to that invocation so ordinary unknown targets still fail.
+ifeq ($(firstword $(MAKECMDGOALS)),integrate)
+.DEFAULT:
+	@:
+endif
 
 COMMON_SOURCES := $(shell find $(SOURCE_ROOT)/common -type f | sort)
 SACRAMENT_ROOT := $(SOURCE_ROOT)/theology/sacraments
@@ -31,7 +39,7 @@ CARMEL_NOVENA_PRAYERS := $(wildcard $(CARMEL_NOVENA_ROOT)/prayers/*.tex)
 
 .PHONY: all pdf install list help clean distclean check-tools check-metadata \
 	check-public-alpha check-agent-isolation codex public-site public-preview \
-	verify-public-site verify-public-preview
+	verify-public-site verify-public-preview integrate
 .DELETE_ON_ERROR:
 
 all: pdf
@@ -53,6 +61,15 @@ list:
 codex:
 	@$(CODEX_LAUNCHER)
 
+integrate: export TRIPTYCH_MAKE_FIRST_GOAL := $(firstword $(MAKECMDGOALS))
+integrate: export TRIPTYCH_MAKE_INTEGRATE_RUN_ID := $(INTEGRATE_RUN_ID)
+integrate:
+	@if [ "$$TRIPTYCH_MAKE_FIRST_GOAL" != integrate ] || [ "$(words $(MAKECMDGOALS))" -ne 2 ]; then \
+		printf '%s\n' 'Usage: make integrate <run-id>' >&2; \
+		exit 2; \
+	fi
+	@$(CODEX_LAUNCHER) --triptych-integrate "$$TRIPTYCH_MAKE_INTEGRATE_RUN_ID"
+
 check-agent-isolation:
 	@$(PYTHON) -m unittest discover -s scripts/tests -p 'test_triptych_codex.py' -v
 
@@ -62,6 +79,7 @@ help:
 		'make install  Publish built PDFs into the mirrored tracked doc/ tree' \
 		'make list     List discovered document IDs' \
 		'make codex    Start Codex in an automatically isolated task checkout' \
+		'make integrate <run-id>  Fast-forward and clean an approved retained Codex run' \
 		'make check-agent-isolation  Test the transparent Codex launcher' \
 		'make check-metadata  Validate structured and inherited AI provenance' \
 		'make check-public-alpha  Validate the exhaustive public-release policy' \

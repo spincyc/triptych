@@ -15,6 +15,7 @@ from pathlib import Path
 
 
 SCRIPTS_ROOT = Path(__file__).resolve().parents[1]
+SOURCE_MAKEFILE = SCRIPTS_ROOT.parent / "Makefile"
 SOURCE_LAUNCHER = SCRIPTS_ROOT / "triptych-codex"
 SOURCE_FAKE = Path(__file__).resolve().with_name("fake-codex")
 
@@ -43,7 +44,9 @@ class TriptychCodexTests(unittest.TestCase):
         (self.control / "baseline.txt").write_text("baseline\n", encoding="utf-8")
         (self.control / "subdir").mkdir()
         (self.control / "subdir/placeholder.txt").write_text("context\n", encoding="utf-8")
+        (self.control / "src/gpt/common").mkdir(parents=True)
         (self.control / "scripts").mkdir()
+        shutil.copy2(SOURCE_MAKEFILE, self.control / "Makefile")
         self.launcher = self.control / "scripts/triptych-codex"
         shutil.copy2(SOURCE_LAUNCHER, self.launcher)
         self.launcher.chmod(0o755)
@@ -112,6 +115,16 @@ class TriptychCodexTests(unittest.TestCase):
             capture_output=True,
             check=False,
             timeout=timeout,
+        )
+
+    def run_make(self, arguments: list[str]) -> subprocess.CompletedProcess:
+        return subprocess.run(
+            ["make", "--no-print-directory", *arguments],
+            cwd=self.control,
+            env=self.base_environment(),
+            capture_output=True,
+            check=False,
+            timeout=20,
         )
 
     def repo_state(self) -> Path:
@@ -495,6 +508,12 @@ class TriptychCodexTests(unittest.TestCase):
         self.assertEqual(result.returncode, 2)
         self.assertFalse(log.exists())
         self.assertEqual(self.worktree_paths(), [self.control.resolve()])
+        status = self.run_launcher(
+            ["--triptych-status"],
+            environment={"TRIPTYCH_CODEX_ROLE": "worker"},
+        )
+        self.assertEqual(status.returncode, 2)
+        self.assertIn(b"worker marker is invalid", status.stderr)
 
     def test_real_binary_cannot_be_the_launcher(self) -> None:
         result = self.run_launcher(
@@ -540,6 +559,71 @@ class TriptychCodexTests(unittest.TestCase):
         )
         self.assertEqual(len(self.manifests()), 1)
         self.assertEqual(len(self.worktree_paths()), 2)
+
+    def test_reopen_quarantines_history_rewritten_before_automatic_cleanup(self) -> None:
+        first_log = self.root / "reopen-reset-first.jsonl"
+        first = self.run_launcher(
+            environment={
+                "FAKE_CODEX_LOG": str(first_log),
+                "FAKE_CODEX_ACTION": "commit",
+            }
+        )
+        self.assertEqual(first.returncode, 0, first.stderr.decode())
+        manifest = self.manifests()[0]
+        reviewed_head = manifest["final_head"]
+
+        second_log = self.root / "reopen-reset-second.jsonl"
+        second = self.run_launcher(
+            ["--triptych-reopen", manifest["run_id"]],
+            environment={
+                "FAKE_CODEX_LOG": str(second_log),
+                "FAKE_CODEX_ACTION": "reset-parent",
+            },
+        )
+        self.assertEqual(second.returncode, 0, second.stderr.decode())
+        self.assertIn(b"was quarantined", second.stderr)
+        quarantined = self.manifests()[0]
+        self.assertEqual(quarantined["state"], "quarantined")
+        self.assertEqual(quarantined["final_head"], reviewed_head)
+        self.assertEqual(quarantined["observed_head"], self.base_head)
+        self.assertTrue(Path(quarantined["worktree"]).exists())
+        self.assertEqual(self.worker_branches(), [quarantined["branch"]])
+
+        clean = self.run_launcher(["--triptych-clean", manifest["run_id"]])
+        self.assertEqual(clean.returncode, 2)
+        self.assertIn(b"changed since its last launcher audit", clean.stderr)
+
+    def test_reopen_records_a_clean_result_before_explicit_cleanup(self) -> None:
+        first_log = self.root / "reopen-clean-first.jsonl"
+        first = self.run_launcher(
+            environment={
+                "FAKE_CODEX_LOG": str(first_log),
+                "FAKE_CODEX_ACTION": "dirty",
+            }
+        )
+        self.assertEqual(first.returncode, 0, first.stderr.decode())
+        manifest = self.manifests()[0]
+        self.assertTrue(manifest["dirty"])
+
+        second_log = self.root / "reopen-clean-second.jsonl"
+        second = self.run_launcher(
+            ["--triptych-reopen", manifest["run_id"]],
+            environment={
+                "FAKE_CODEX_LOG": str(second_log),
+                "FAKE_CODEX_ACTION": "remove-dirty-result",
+            },
+        )
+        self.assertEqual(second.returncode, 0, second.stderr.decode())
+        refreshed = self.manifests()[0]
+        self.assertEqual(refreshed["state"], "preserved")
+        self.assertFalse(refreshed["dirty"])
+        self.assertEqual(refreshed["final_head"], self.base_head)
+        self.assertTrue(Path(refreshed["worktree"]).exists())
+
+        clean = self.run_launcher(["--triptych-clean", manifest["run_id"]])
+        self.assertEqual(clean.returncode, 0, clean.stderr.decode())
+        self.assertEqual(self.worktree_paths(), [self.control.resolve()])
+        self.assertEqual(self.worker_branches(), [])
 
     def test_worker_keeps_run_lock_if_launcher_is_killed(self) -> None:
         log = self.root / "orphan.jsonl"
@@ -631,6 +715,9 @@ class TriptychCodexTests(unittest.TestCase):
         reopen = self.run_launcher(["--triptych-reopen", manifest["run_id"]])
         self.assertEqual(reopen.returncode, 2)
         self.assertIn(b"already active", reopen.stderr)
+        integrate = self.run_launcher(["--triptych-integrate", manifest["run_id"]])
+        self.assertEqual(integrate.returncode, 2)
+        self.assertIn(b"already active", integrate.stderr)
 
         release.touch()
         deadline = time.monotonic() + 5
@@ -662,6 +749,420 @@ class TriptychCodexTests(unittest.TestCase):
         self.assertEqual(
             (self.control / "agent-result.txt").read_text(encoding="utf-8"),
             "committed result\n",
+        )
+
+    def test_integrate_fast_forwards_target_and_cleans_worker(self) -> None:
+        log = self.root / "integrate.jsonl"
+        result = self.run_launcher(
+            environment={"FAKE_CODEX_LOG": str(log), "FAKE_CODEX_ACTION": "commit"}
+        )
+        self.assertEqual(result.returncode, 0, result.stderr.decode())
+        manifest = self.manifests()[0]
+        worker_head = manifest["final_head"]
+        temporary = Path(manifest["tmpdir"])
+
+        integrate = self.run_launcher(["--triptych-integrate", manifest["run_id"]])
+        self.assertEqual(integrate.returncode, 0, integrate.stderr.decode())
+        self.assertIn(b"integrated and cleaned", integrate.stderr)
+        self.assertEqual(
+            self.git(self.control, "rev-parse", "HEAD").stdout.strip(),
+            worker_head,
+        )
+        self.assertEqual(
+            self.git(self.control, "rev-list", "--count", f"{self.base_head}..HEAD").stdout.strip(),
+            "1",
+        )
+        self.assertEqual(
+            (self.control / "agent-result.txt").read_text(encoding="utf-8"),
+            "committed result\n",
+        )
+        self.assertEqual(self.worktree_paths(), [self.control.resolve()])
+        self.assertEqual(self.worker_branches(), [])
+        self.assertFalse(temporary.exists())
+        integrated_manifest = self.manifests()[0]
+        self.assertEqual(integrated_manifest["state"], "cleaned")
+        self.assertEqual(integrated_manifest["integrated_head"], worker_head)
+        self.assertIn("integrated_at", integrated_manifest)
+        self.assertIn("cleaned_at", integrated_manifest)
+        self.assertEqual(
+            self.git(
+                self.control,
+                "status",
+                "--porcelain=v1",
+                "--untracked-files=all",
+            ).stdout,
+            "",
+        )
+        repeated = self.run_launcher(["--triptych-integrate", manifest["run_id"]])
+        self.assertEqual(repeated.returncode, 0, repeated.stderr.decode())
+        self.assertIn(b"already integrated and cleaned", repeated.stderr)
+
+    def test_make_integrate_forwards_one_run_id_without_masking_unknown_targets(self) -> None:
+        log = self.root / "make-integrate.jsonl"
+        result = self.run_launcher(
+            environment={"FAKE_CODEX_LOG": str(log), "FAKE_CODEX_ACTION": "commit"}
+        )
+        self.assertEqual(result.returncode, 0, result.stderr.decode())
+        manifest = self.manifests()[0]
+
+        missing = self.run_make(["integrate"])
+        self.assertEqual(missing.returncode, 2)
+        self.assertIn(b"Usage: make integrate <run-id>", missing.stderr)
+        self.assert_control_unchanged()
+        self.assertTrue(Path(manifest["worktree"]).exists())
+
+        unknown = self.run_make(["definitely-unknown"])
+        self.assertEqual(unknown.returncode, 2)
+        self.assertIn(b"No rule to make target", unknown.stderr)
+
+        integrate = self.run_make(["integrate", manifest["run_id"]])
+        self.assertEqual(integrate.returncode, 0, integrate.stderr.decode())
+        self.assertEqual(
+            self.git(self.control, "rev-parse", "HEAD").stdout.strip(),
+            manifest["final_head"],
+        )
+        self.assertEqual(self.worktree_paths(), [self.control.resolve()])
+        self.assertEqual(self.worker_branches(), [])
+
+    def test_integrate_does_not_claim_an_auto_cleaned_run_was_integrated(self) -> None:
+        log = self.root / "auto-cleaned-integrate.jsonl"
+        result = self.run_launcher(environment={"FAKE_CODEX_LOG": str(log)})
+        self.assertEqual(result.returncode, 0, result.stderr.decode())
+        manifest = self.manifests()[0]
+        self.assertEqual(manifest["state"], "cleaned")
+
+        integrate = self.run_launcher(["--triptych-integrate", manifest["run_id"]])
+        self.assertEqual(integrate.returncode, 2)
+        self.assertIn(b"no retained result to integrate", integrate.stderr)
+
+    def test_integrate_rechecks_a_cleaned_result_reachability(self) -> None:
+        log = self.root / "cleaned-reachability.jsonl"
+        result = self.run_launcher(
+            environment={"FAKE_CODEX_LOG": str(log), "FAKE_CODEX_ACTION": "commit"}
+        )
+        self.assertEqual(result.returncode, 0, result.stderr.decode())
+        manifest = self.manifests()[0]
+        integrate = self.run_launcher(["--triptych-integrate", manifest["run_id"]])
+        self.assertEqual(integrate.returncode, 0, integrate.stderr.decode())
+        self.git(self.control, "reset", "--hard", self.base_head)
+
+        repeated = self.run_launcher(["--triptych-integrate", manifest["run_id"]])
+        self.assertEqual(repeated.returncode, 2)
+        self.assertIn(b"no longer contains the integrated commit", repeated.stderr)
+
+    def test_integrate_recognizes_an_already_reachable_result_and_cleans(self) -> None:
+        log = self.root / "already-integrated.jsonl"
+        result = self.run_launcher(
+            environment={"FAKE_CODEX_LOG": str(log), "FAKE_CODEX_ACTION": "commit"}
+        )
+        self.assertEqual(result.returncode, 0, result.stderr.decode())
+        manifest = self.manifests()[0]
+        self.git(self.control, "merge", "--ff-only", manifest["branch"])
+
+        integrate = self.run_launcher(["--triptych-integrate", manifest["run_id"]])
+        self.assertEqual(integrate.returncode, 0, integrate.stderr.decode())
+        self.assertEqual(self.worktree_paths(), [self.control.resolve()])
+        self.assertEqual(self.worker_branches(), [])
+        integrated_manifest = self.manifests()[0]
+        self.assertEqual(integrated_manifest["state"], "cleaned")
+        self.assertIn("integration_confirmed_at", integrated_manifest)
+
+    def test_integrate_refuses_uncommitted_worker_changes(self) -> None:
+        log = self.root / "integrate-dirty-worker.jsonl"
+        result = self.run_launcher(
+            environment={"FAKE_CODEX_LOG": str(log), "FAKE_CODEX_ACTION": "dirty"}
+        )
+        self.assertEqual(result.returncode, 0, result.stderr.decode())
+        manifest = self.manifests()[0]
+
+        integrate = self.run_launcher(["--triptych-integrate", manifest["run_id"]])
+        self.assertEqual(integrate.returncode, 2)
+        self.assertIn(b"uncommitted changes", integrate.stderr)
+        self.assert_control_unchanged()
+        self.assertTrue(Path(manifest["worktree"]).exists())
+        self.assertEqual(self.worker_branches(), [manifest["branch"]])
+
+    def test_integrate_refuses_a_commit_after_the_terminal_audit(self) -> None:
+        log = self.root / "integrate-late-commit.jsonl"
+        result = self.run_launcher(
+            environment={"FAKE_CODEX_LOG": str(log), "FAKE_CODEX_ACTION": "commit"}
+        )
+        self.assertEqual(result.returncode, 0, result.stderr.decode())
+        manifest = self.manifests()[0]
+        worker = Path(manifest["worktree"])
+        (worker / "late-result.txt").write_text("not audited\n", encoding="utf-8")
+        self.git(worker, "add", "late-result.txt")
+        self.git(worker, "commit", "-m", "Add unaudited result")
+        late_head = self.git(worker, "rev-parse", "HEAD").stdout.strip()
+
+        integrate = self.run_launcher(["--triptych-integrate", manifest["run_id"]])
+        self.assertEqual(integrate.returncode, 2)
+        self.assertIn(b"changed since its last launcher audit", integrate.stderr)
+        self.assert_control_unchanged()
+        self.assertEqual(self.git(worker, "rev-parse", "HEAD").stdout.strip(), late_head)
+        self.assertTrue(worker.exists())
+
+    def test_integrate_refuses_a_reset_after_the_terminal_audit(self) -> None:
+        log = self.root / "integrate-reset-worker.jsonl"
+        result = self.run_launcher(
+            environment={"FAKE_CODEX_LOG": str(log), "FAKE_CODEX_ACTION": "commit"}
+        )
+        self.assertEqual(result.returncode, 0, result.stderr.decode())
+        manifest = self.manifests()[0]
+        worker = Path(manifest["worktree"])
+        self.git(worker, "reset", "--hard", self.base_head)
+
+        integrate = self.run_launcher(["--triptych-integrate", manifest["run_id"]])
+        self.assertEqual(integrate.returncode, 2)
+        self.assertIn(b"changed since its last launcher audit", integrate.stderr)
+        self.assert_control_unchanged()
+        self.assertEqual(
+            self.git(worker, "rev-parse", "HEAD").stdout.strip(),
+            self.base_head,
+        )
+        self.assertTrue(worker.exists())
+        clean = self.run_launcher(["--triptych-clean", manifest["run_id"]])
+        self.assertEqual(clean.returncode, 2)
+        self.assertIn(b"changed since its last launcher audit", clean.stderr)
+        self.assertTrue(worker.exists())
+
+    def test_integrate_preserves_ignored_primary_file_on_collision(self) -> None:
+        log = self.root / "integrate-ignored-collision.jsonl"
+        result = self.run_launcher(
+            environment={
+                "FAKE_CODEX_LOG": str(log),
+                "FAKE_CODEX_ACTION": "commit-ignored",
+            }
+        )
+        self.assertEqual(result.returncode, 0, result.stderr.decode())
+        manifest = self.manifests()[0]
+        (self.control / "build").mkdir(exist_ok=True)
+        collision = self.control / "build/collision.txt"
+        collision.write_text("local ignored output\n", encoding="utf-8")
+
+        integrate = self.run_launcher(["--triptych-integrate", manifest["run_id"]])
+        self.assertEqual(integrate.returncode, 2)
+        self.assertIn(b"fast-forward integration failed", integrate.stderr)
+        self.assertEqual(collision.read_text(encoding="utf-8"), "local ignored output\n")
+        self.assertEqual(
+            self.git(self.control, "rev-parse", "HEAD").stdout.strip(),
+            self.base_head,
+        )
+        self.assertTrue(Path(manifest["worktree"]).exists())
+
+    def test_integrate_refuses_a_dirty_primary_checkout(self) -> None:
+        log = self.root / "integrate-dirty-primary.jsonl"
+        result = self.run_launcher(
+            environment={"FAKE_CODEX_LOG": str(log), "FAKE_CODEX_ACTION": "commit"}
+        )
+        self.assertEqual(result.returncode, 0, result.stderr.decode())
+        manifest = self.manifests()[0]
+        (self.control / "local-review.txt").write_text("keep me\n", encoding="utf-8")
+
+        integrate = self.run_launcher(["--triptych-integrate", manifest["run_id"]])
+        self.assertEqual(integrate.returncode, 2)
+        self.assertIn(b"control checkout is not clean", integrate.stderr)
+        self.assertEqual(
+            self.git(self.control, "rev-parse", "HEAD").stdout.strip(),
+            self.base_head,
+        )
+        self.assertTrue(Path(manifest["worktree"]).exists())
+        self.assertEqual(self.worker_branches(), [manifest["branch"]])
+
+    def test_integrate_requires_the_recorded_target_branch(self) -> None:
+        log = self.root / "integrate-wrong-target.jsonl"
+        result = self.run_launcher(
+            environment={"FAKE_CODEX_LOG": str(log), "FAKE_CODEX_ACTION": "commit"}
+        )
+        self.assertEqual(result.returncode, 0, result.stderr.decode())
+        manifest = self.manifests()[0]
+        self.git(self.control, "switch", "-c", "alternate")
+
+        integrate = self.run_launcher(["--triptych-integrate", manifest["run_id"]])
+        self.assertEqual(integrate.returncode, 2)
+        self.assertIn(b"recorded target branch 'main'", integrate.stderr)
+        self.assertEqual(
+            self.git(self.control, "rev-parse", "HEAD").stdout.strip(),
+            self.base_head,
+        )
+        self.assertTrue(Path(manifest["worktree"]).exists())
+        self.assertEqual(self.worker_branches(), [manifest["branch"]])
+
+    def test_integrate_refuses_diverged_target_without_starting_a_merge(self) -> None:
+        log = self.root / "integrate-diverged.jsonl"
+        result = self.run_launcher(
+            environment={"FAKE_CODEX_LOG": str(log), "FAKE_CODEX_ACTION": "commit"}
+        )
+        self.assertEqual(result.returncode, 0, result.stderr.decode())
+        manifest = self.manifests()[0]
+        (self.control / "primary-result.txt").write_text("primary result\n", encoding="utf-8")
+        self.git(self.control, "add", "primary-result.txt")
+        self.git(self.control, "commit", "-m", "Advance primary independently")
+        advanced_head = self.git(self.control, "rev-parse", "HEAD").stdout.strip()
+
+        integrate = self.run_launcher(["--triptych-integrate", manifest["run_id"]])
+        self.assertEqual(integrate.returncode, 2)
+        self.assertIn(b"have diverged", integrate.stderr)
+        self.assertEqual(
+            self.git(self.control, "rev-parse", "HEAD").stdout.strip(),
+            advanced_head,
+        )
+        merge_head = self.git(self.control, "rev-parse", "--verify", "MERGE_HEAD", check=False)
+        self.assertNotEqual(merge_head.returncode, 0)
+        self.assertEqual(
+            self.git(
+                self.control,
+                "status",
+                "--porcelain=v1",
+                "--untracked-files=all",
+            ).stdout,
+            "",
+        )
+        self.assertFalse((self.control / "agent-result.txt").exists())
+        self.assertTrue(Path(manifest["worktree"]).exists())
+        self.assertEqual(self.worker_branches(), [manifest["branch"]])
+
+    def test_serial_integration_retains_a_second_run_from_the_same_base(self) -> None:
+        first_log = self.root / "serial-first.jsonl"
+        first = self.run_launcher(
+            environment={"FAKE_CODEX_LOG": str(first_log), "FAKE_CODEX_ACTION": "commit"}
+        )
+        self.assertEqual(first.returncode, 0, first.stderr.decode())
+        first_manifest = self.manifests()[0]
+
+        second_log = self.root / "serial-second.jsonl"
+        second = self.run_launcher(
+            environment={
+                "FAKE_CODEX_LOG": str(second_log),
+                "FAKE_CODEX_ACTION": "commit-ignored",
+            }
+        )
+        self.assertEqual(second.returncode, 0, second.stderr.decode())
+        second_manifest = next(
+            manifest
+            for manifest in self.manifests()
+            if manifest["run_id"] != first_manifest["run_id"]
+        )
+
+        integrate_first = self.run_launcher(
+            ["--triptych-integrate", first_manifest["run_id"]]
+        )
+        self.assertEqual(integrate_first.returncode, 0, integrate_first.stderr.decode())
+        integrate_second = self.run_launcher(
+            ["--triptych-integrate", second_manifest["run_id"]]
+        )
+        self.assertEqual(integrate_second.returncode, 2)
+        self.assertIn(b"have diverged", integrate_second.stderr)
+        self.assertTrue(Path(second_manifest["worktree"]).exists())
+        self.assertEqual(self.worker_branches(), [second_manifest["branch"]])
+        self.assertEqual(
+            self.git(self.control, "rev-parse", "HEAD").stdout.strip(),
+            first_manifest["final_head"],
+        )
+
+    def test_integrate_reports_post_merge_cleanup_failure_and_allows_retry(self) -> None:
+        log = self.root / "integrate-post-merge.jsonl"
+        result = self.run_launcher(
+            environment={"FAKE_CODEX_LOG": str(log), "FAKE_CODEX_ACTION": "commit"}
+        )
+        self.assertEqual(result.returncode, 0, result.stderr.decode())
+        manifest = self.manifests()[0]
+        worker = Path(manifest["worktree"])
+        late_file = worker / "post-merge-result.txt"
+        hook = self.control / ".git/hooks/post-merge"
+        hook.write_text(
+            f'#!/bin/sh\nprintf "%s\\n" "hook result" > "{late_file}"\n',
+            encoding="utf-8",
+        )
+        hook.chmod(0o755)
+
+        integrate = self.run_launcher(["--triptych-integrate", manifest["run_id"]])
+        self.assertEqual(integrate.returncode, 2)
+        self.assertIn(b"integrated, but cleanup failed", integrate.stderr)
+        self.assertEqual(
+            self.git(self.control, "rev-parse", "HEAD").stdout.strip(),
+            manifest["final_head"],
+        )
+        self.assertEqual(self.manifests()[0]["state"], "integration-cleanup-failed")
+        self.assertTrue(worker.exists())
+        self.assertTrue(late_file.exists())
+
+        late_file.unlink()
+        clean = self.run_launcher(["--triptych-clean", manifest["run_id"]])
+        self.assertEqual(clean.returncode, 0, clean.stderr.decode())
+        self.assertEqual(self.worktree_paths(), [self.control.resolve()])
+        self.assertEqual(self.worker_branches(), [])
+
+    def test_clean_retries_a_retained_worker_branch_deletion(self) -> None:
+        log = self.root / "integrate-branch-retry.jsonl"
+        result = self.run_launcher(
+            environment={"FAKE_CODEX_LOG": str(log), "FAKE_CODEX_ACTION": "commit"}
+        )
+        self.assertEqual(result.returncode, 0, result.stderr.decode())
+        manifest = self.manifests()[0]
+        competing = self.root / "competing-worker"
+        self.git(
+            self.control,
+            "worktree",
+            "add",
+            "--force",
+            str(competing),
+            manifest["branch"],
+        )
+
+        integrate = self.run_launcher(["--triptych-integrate", manifest["run_id"]])
+        self.assertEqual(integrate.returncode, 1, integrate.stderr.decode())
+        self.assertIn(b"worker branch remains", integrate.stderr)
+        self.assertEqual(self.manifests()[0]["state"], "cleaned-branch-retained")
+        self.assertEqual(
+            self.git(self.control, "rev-parse", "HEAD").stdout.strip(),
+            manifest["final_head"],
+        )
+        self.assertFalse(Path(manifest["worktree"]).exists())
+        self.assertIn(manifest["branch"], self.worker_branches())
+
+        self.git(self.control, "worktree", "remove", str(competing))
+        clean = self.run_launcher(["--triptych-clean", manifest["run_id"]])
+        self.assertEqual(clean.returncode, 0, clean.stderr.decode())
+        self.assertEqual(self.worktree_paths(), [self.control.resolve()])
+        self.assertEqual(self.worker_branches(), [])
+        cleaned_manifest = self.manifests()[0]
+        self.assertEqual(cleaned_manifest["state"], "cleaned")
+        self.assertIn("branch_cleaned_at", cleaned_manifest)
+
+    def test_clean_refuses_a_symbolic_retained_worker_branch(self) -> None:
+        log = self.root / "integrate-symbolic-branch.jsonl"
+        result = self.run_launcher(
+            environment={"FAKE_CODEX_LOG": str(log), "FAKE_CODEX_ACTION": "commit"}
+        )
+        self.assertEqual(result.returncode, 0, result.stderr.decode())
+        manifest = self.manifests()[0]
+        competing = self.root / "symbolic-worker"
+        self.git(
+            self.control,
+            "worktree",
+            "add",
+            "--force",
+            str(competing),
+            manifest["branch"],
+        )
+        integrate = self.run_launcher(["--triptych-integrate", manifest["run_id"]])
+        self.assertEqual(integrate.returncode, 1, integrate.stderr.decode())
+        self.git(self.control, "worktree", "remove", str(competing))
+
+        branch_ref = f"refs/heads/{manifest['branch']}"
+        self.git(self.control, "symbolic-ref", branch_ref, "refs/heads/main")
+        target_head = self.git(self.control, "rev-parse", "refs/heads/main").stdout.strip()
+        clean = self.run_launcher(["--triptych-clean", manifest["run_id"]])
+        self.assertEqual(clean.returncode, 2)
+        self.assertIn(b"replaced by a symbolic ref", clean.stderr)
+        self.assertEqual(
+            self.git(self.control, "rev-parse", "refs/heads/main").stdout.strip(),
+            target_head,
+        )
+        self.assertEqual(
+            self.git(self.control, "symbolic-ref", branch_ref).stdout.strip(),
+            "refs/heads/main",
         )
 
     def test_concurrent_allocations_are_unique_locked_and_isolated(self) -> None:

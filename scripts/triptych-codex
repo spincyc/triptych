@@ -29,6 +29,7 @@ from typing import Iterator, Sequence, TextIO
 
 SCHEMA_VERSION = 1
 RUN_ID_RE = re.compile(r"^[0-9]{8}t[0-9]{6}z-[0-9a-f]{12}$")
+OBJECT_ID_RE = re.compile(r"^(?:[0-9a-f]{40}|[0-9a-f]{64})$")
 WORKER_BRANCH_PREFIX = "codex/isolated/"
 ROLE_ENV = "TRIPTYCH_CODEX_ROLE"
 REAL_CODEX_ENV = "TRIPTYCH_CODEX_REAL"
@@ -361,6 +362,25 @@ def validate_manifest_paths(repository: Repository, manifest: dict) -> None:
         raise LauncherError("run manifest paths do not match its run ID")
     if manifest.get("branch") != f"{WORKER_BRANCH_PREFIX}{run_id}":
         raise LauncherError("run manifest has an unexpected worker branch")
+    control_root = Path(str(manifest.get("control_root", "")))
+    if not control_root.is_absolute() or control_root.resolve() != repository.root:
+        raise LauncherError("run manifest has an unexpected primary checkout")
+    base_sha = manifest.get("base_sha")
+    if not isinstance(base_sha, str) or not OBJECT_ID_RE.fullmatch(base_sha):
+        raise LauncherError("run manifest has an invalid base commit")
+    for field in ("final_head", "integrated_head"):
+        value = manifest.get(field)
+        if value is not None and (
+            not isinstance(value, str) or not OBJECT_ID_RE.fullmatch(value)
+        ):
+            raise LauncherError(f"run manifest has an invalid {field.replace('_', ' ')}")
+    target_ref = manifest.get("target_ref")
+    if (
+        not isinstance(target_ref, str)
+        or not target_ref.startswith("refs/heads/")
+        or git(repository.root, "check-ref-format", target_ref, check=False).returncode
+    ):
+        raise LauncherError("run manifest has an invalid target branch")
 
 
 def resolve_real_codex() -> Path:
@@ -530,7 +550,11 @@ def codex_argv(real_codex: Path, workdir: Path, arguments: Sequence[str]) -> lis
     return [*enforced, *normalized]
 
 
-def require_stable_clean_base(repository: Repository) -> tuple[str, str]:
+def require_stable_clean_base(
+    repository: Repository,
+    *,
+    purpose: str = "starting an isolated session",
+) -> tuple[str, str]:
     if repository.linked_worktree:
         raise LauncherError("internal error: attempted to allocate from a linked worktree")
     status = git(
@@ -541,7 +565,7 @@ def require_stable_clean_base(repository: Repository) -> tuple[str, str]:
     ).stdout
     if status:
         raise LauncherError(
-            "the control checkout is not clean; review or preserve its changes before starting an isolated session"
+            f"the control checkout is not clean; review or preserve its changes before {purpose}"
         )
 
     for marker in (
@@ -556,7 +580,7 @@ def require_stable_clean_base(repository: Repository) -> tuple[str, str]:
         if not marker_path.is_absolute():
             marker_path = repository.root / marker_path
         if marker_path.exists():
-            raise LauncherError(f"Git operation in progress ({marker}); finish it before dispatch")
+            raise LauncherError(f"Git operation in progress ({marker}); finish it before {purpose}")
 
     base_sha = git(repository.root, "rev-parse", "--verify", "HEAD^{commit}").stdout.strip()
     branch_ref = git(repository.root, "symbolic-ref", "--quiet", "HEAD", check=False)
@@ -779,7 +803,130 @@ def branch_is_integrated(repository: Repository, manifest: dict, head: str) -> b
     return result.returncode == 0
 
 
-def safe_cleanup(repository: Repository, manifest: dict, *, allow_integrated: bool) -> bool:
+def commit_is_ancestor(repository: Repository, ancestor: str, descendant: str) -> bool:
+    result = git(
+        repository.root,
+        "merge-base",
+        "--is-ancestor",
+        ancestor,
+        descendant,
+        check=False,
+    )
+    if result.returncode not in {0, 1}:
+        raise LauncherError(
+            f"cannot compare retained-run history: {result.stderr.strip() or 'no diagnostic'}"
+        )
+    return result.returncode == 0
+
+
+def recorded_commit(repository: Repository, manifest: dict, field: str) -> str:
+    value = manifest.get(field)
+    if not isinstance(value, str) or not OBJECT_ID_RE.fullmatch(value):
+        raise LauncherError(f"the retained run has no valid recorded {field.replace('_', ' ')}")
+    resolved = git(
+        repository.root,
+        "rev-parse",
+        "--verify",
+        f"{value}^{{commit}}",
+        check=False,
+    )
+    if resolved.returncode or resolved.stdout.strip() != value:
+        raise LauncherError(
+            f"the retained run's recorded {field.replace('_', ' ')} is unavailable"
+        )
+    return value
+
+
+def recorded_clean_final_head(repository: Repository, manifest: dict) -> str:
+    dirty = manifest.get("dirty")
+    if dirty is True:
+        raise LauncherError(
+            "the retained run's last terminal audit recorded uncommitted changes; "
+            "reopen it before cleanup or integration"
+        )
+    if dirty is not False:
+        raise LauncherError(
+            "the retained run's last terminal audit did not record a clean result; "
+            "reopen it before cleanup or integration"
+        )
+    return recorded_commit(repository, manifest, "final_head")
+
+
+def retry_retained_branch_cleanup(repository: Repository, manifest: dict) -> bool:
+    worktree = Path(manifest["worktree"])
+    if registered_record(repository, worktree) is not None or worktree.exists():
+        raise LauncherError("cannot retry branch cleanup while the retained worktree exists")
+
+    branch_ref = f"refs/heads/{manifest['branch']}"
+    symbolic = git(
+        repository.root,
+        "symbolic-ref",
+        "--quiet",
+        branch_ref,
+        check=False,
+    )
+    if symbolic.returncode == 0:
+        raise LauncherError("the retained worker branch was replaced by a symbolic ref")
+    if symbolic.returncode != 1:
+        raise LauncherError("cannot inspect the retained worker branch for cleanup")
+    branch = git(
+        repository.root,
+        "rev-parse",
+        "--verify",
+        f"{branch_ref}^{{commit}}",
+        check=False,
+    )
+    if branch.returncode:
+        presence = git(
+            repository.root,
+            "show-ref",
+            "--verify",
+            "--quiet",
+            branch_ref,
+            check=False,
+        )
+        if presence.returncode == 1:
+            manifest["state"] = "cleaned"
+            manifest["branch_cleaned_at"] = utc_now()
+            manifest.pop("cleanup_warning", None)
+            write_manifest(repository, manifest)
+            return True
+        raise LauncherError("cannot verify the retained worker branch for cleanup")
+
+    branch_head = branch.stdout.strip()
+    if not branch_is_integrated(repository, manifest, branch_head):
+        raise LauncherError("the retained worker branch is not integrated into its target")
+    if any(record.get("branch") == branch_ref for record in worktree_records(repository)):
+        raise LauncherError("the retained worker branch is checked out in another worktree")
+
+    deletion = git(
+        repository.root,
+        "update-ref",
+        "--no-deref",
+        "-d",
+        branch_ref,
+        branch_head,
+        check=False,
+    )
+    if deletion.returncode:
+        manifest["cleanup_warning"] = deletion.stderr.strip() or "worker branch was retained"
+        write_manifest(repository, manifest)
+        return False
+
+    manifest["state"] = "cleaned"
+    manifest["branch_cleaned_at"] = utc_now()
+    manifest.pop("cleanup_warning", None)
+    write_manifest(repository, manifest)
+    return True
+
+
+def safe_cleanup(
+    repository: Repository,
+    manifest: dict,
+    *,
+    allow_integrated: bool,
+    expected_head: str | None = None,
+) -> bool:
     audit = audit_run(repository, manifest)
     if not audit.registered or not audit.locked:
         raise LauncherError("the retained worktree is missing or unlocked")
@@ -787,6 +934,8 @@ def safe_cleanup(repository: Repository, manifest: dict, *, allow_integrated: bo
         raise LauncherError("the retained worktree changed branches")
     if not audit.clean or audit.head is None:
         raise LauncherError("the retained worktree has uncommitted changes")
+    if expected_head is not None and audit.head != expected_head:
+        raise LauncherError("the retained worktree changed since its last launcher audit")
     if audit.head != manifest["base_sha"]:
         if not allow_integrated or not branch_is_integrated(repository, manifest, audit.head):
             raise LauncherError("the retained worktree contains work not integrated into its target")
@@ -839,6 +988,41 @@ def preserve_run(repository: Repository, manifest: dict, exit_code: int, audit: 
     write_manifest(repository, manifest)
 
 
+def quarantine_rewritten_run(
+    repository: Repository,
+    manifest: dict,
+    exit_code: int,
+    audit: Audit,
+    reason: str,
+) -> None:
+    manifest["state"] = "quarantined"
+    manifest["child_exit_code"] = exit_code
+    manifest["observed_head"] = audit.head
+    manifest["observed_dirty"] = None if audit.status is None else bool(audit.status)
+    manifest["audit_registered"] = audit.registered
+    manifest["audit_locked"] = audit.locked
+    manifest["quarantine_reason"] = reason
+    write_manifest(repository, manifest)
+
+
+def terminal_history_discontinuity(
+    repository: Repository,
+    manifest: dict,
+    audit: Audit,
+) -> str | None:
+    prior_final_head = manifest.get("final_head")
+    if not isinstance(prior_final_head, str):
+        return None
+    if audit.head is None:
+        return "the retained worker no longer has an auditable commit"
+    try:
+        if commit_is_ancestor(repository, prior_final_head, audit.head):
+            return None
+    except LauncherError as exc:
+        return str(exc)
+    return "the retained worker history no longer descends from its last terminal audit"
+
+
 def launch_child(
     repository: Repository,
     manifest: dict,
@@ -874,18 +1058,64 @@ def launch_child(
                 held_lock = acquire_existing_run_lock(repository, manifest["run_id"])
             except LauncherError as exc:
                 audit = audit_run(repository, manifest)
-                preserve_run(repository, manifest, exit_code, audit)
+                quarantine_reason = terminal_history_discontinuity(
+                    repository,
+                    manifest,
+                    audit,
+                )
+                if quarantine_reason is None:
+                    preserve_run(repository, manifest, exit_code, audit)
+                else:
+                    quarantine_rewritten_run(
+                        repository,
+                        manifest,
+                        exit_code,
+                        audit,
+                        quarantine_reason,
+                    )
                 manifest["background_process_active"] = True
                 write_manifest(repository, manifest)
-                diagnostic(
-                    f"run {manifest['run_id']} was preserved because a worker process still holds its lifecycle lock: {exc}"
-                )
+                if quarantine_reason is None:
+                    diagnostic(
+                        f"run {manifest['run_id']} was preserved because a worker process "
+                        f"still holds its lifecycle lock: {exc}"
+                    )
+                else:
+                    diagnostic(
+                        f"run {manifest['run_id']} was quarantined while a worker process "
+                        f"still holds its lifecycle lock: {quarantine_reason}"
+                    )
                 return exit_code
 
             audit = audit_run(repository, manifest)
-            if exit_code == 0 and exact_unchanged_audit(manifest, audit):
+            has_prior_terminal_audit = "final_head" in manifest or "dirty" in manifest
+            quarantine_reason = terminal_history_discontinuity(
+                repository,
+                manifest,
+                audit,
+            )
+            if quarantine_reason is not None:
+                quarantine_rewritten_run(
+                    repository,
+                    manifest,
+                    exit_code,
+                    audit,
+                    quarantine_reason,
+                )
+                diagnostic(f"run {manifest['run_id']} was quarantined: {quarantine_reason}")
+                return exit_code
+
+            if (
+                exit_code == 0
+                and exact_unchanged_audit(manifest, audit)
+                and not has_prior_terminal_audit
+            ):
                 try:
-                    branch_removed = safe_cleanup(repository, manifest, allow_integrated=False)
+                    branch_removed = safe_cleanup(
+                        repository,
+                        manifest,
+                        allow_integrated=False,
+                    )
                     if not branch_removed:
                         diagnostic(
                             f"run {manifest['run_id']} worktree was removed, but its worker branch remains"
@@ -971,20 +1201,218 @@ def reopen_run(repository: Repository, run_id: str, arguments: Sequence[str]) ->
     return launch_child(repository, manifest, run_lock_stream, real_codex, arguments)
 
 
+def confirm_cleaned_integration(repository: Repository, manifest: dict) -> int:
+    integrated_head = manifest.get("integrated_head")
+    if not isinstance(integrated_head, str):
+        raise LauncherError("the run was already cleaned and has no retained result to integrate")
+    recorded_commit(repository, manifest, "integrated_head")
+    target_head, current_ref = require_stable_clean_base(
+        repository,
+        purpose="confirming retained-run integration",
+    )
+    target_ref = manifest["target_ref"]
+    if current_ref != target_ref:
+        target_name = target_ref.removeprefix("refs/heads/")
+        raise LauncherError(
+            f"the primary checkout must be on the recorded target branch {target_name!r}"
+        )
+    if not commit_is_ancestor(repository, integrated_head, target_head):
+        raise LauncherError(
+            "the run was cleaned after integration, but its recorded target no longer "
+            "contains the integrated commit"
+        )
+    diagnostic(f"run {manifest['run_id']} was already integrated and cleaned")
+    return 0
+
+
+def integrate_run(repository: Repository, run_id: str) -> int:
+    if repository.linked_worktree:
+        raise LauncherError("integrate managed runs from the primary checkout")
+    initialize_state(repository)
+    with file_lock(repo_lock_path(repository)):
+        manifest = load_manifest(repository, run_id)
+        reconcile_stale_run(repository, manifest)
+        if manifest.get("state") == "cleaned":
+            return confirm_cleaned_integration(repository, manifest)
+        if manifest.get("state") == "cleaned-branch-retained":
+            diagnostic(
+                f"run {run_id} worktree was removed, but its worker branch remains; "
+                f"retry scripts/triptych-codex --triptych-clean {run_id}"
+            )
+            return 1
+
+        target_head, current_ref = require_stable_clean_base(
+            repository,
+            purpose="integrating a retained run",
+        )
+        target_ref = manifest["target_ref"]
+        if current_ref != target_ref:
+            target_name = target_ref.removeprefix("refs/heads/")
+            raise LauncherError(
+                f"the primary checkout must be on the recorded target branch {target_name!r}"
+            )
+
+        run_lock_stream = acquire_existing_run_lock(repository, run_id)
+        try:
+            audit = audit_run(repository, manifest)
+            if not audit.registered or not audit.locked:
+                raise LauncherError("the retained worktree is missing or unlocked")
+            if audit.branch != manifest["branch"]:
+                raise LauncherError("the retained worktree changed branches")
+            if not audit.clean or audit.head is None:
+                raise LauncherError("the retained worktree has uncommitted changes")
+            final_head = recorded_clean_final_head(repository, manifest)
+            if audit.head != final_head:
+                raise LauncherError(
+                    "the retained result changed since its last launcher audit; "
+                    "reopen it to review and record its current state"
+                )
+
+            base_sha = recorded_commit(repository, manifest, "base_sha")
+            if not commit_is_ancestor(repository, base_sha, audit.head):
+                raise LauncherError("the retained result no longer descends from its recorded base")
+            if not commit_is_ancestor(repository, base_sha, target_head):
+                raise LauncherError("the recorded target branch no longer descends from the run's base")
+
+            already_integrated = commit_is_ancestor(repository, audit.head, target_head)
+            integrated_now = False
+            if not already_integrated:
+                if not commit_is_ancestor(repository, target_head, audit.head):
+                    raise LauncherError(
+                        "the recorded target and retained result have diverged; "
+                        "review and reconcile them before integration"
+                    )
+                merge = git(
+                    repository.root,
+                    "merge",
+                    "--ff-only",
+                    "--no-overwrite-ignore",
+                    audit.head,
+                    check=False,
+                )
+                if merge.returncode:
+                    after_head = git(
+                        repository.root,
+                        "rev-parse",
+                        "--verify",
+                        "HEAD^{commit}",
+                        check=False,
+                    ).stdout.strip()
+                    after_ref = git(
+                        repository.root,
+                        "symbolic-ref",
+                        "--quiet",
+                        "HEAD",
+                        check=False,
+                    ).stdout.strip()
+                    if after_head == audit.head and after_ref == target_ref:
+                        manifest["state"] = "integration-verification-failed"
+                        manifest["integrated_at"] = utc_now()
+                        manifest["integrated_head"] = audit.head
+                        manifest["integration_verification_error"] = (
+                            merge.stderr.strip() or "Git reported no diagnostic"
+                        )
+                        write_manifest(repository, manifest)
+                        raise LauncherError(
+                            "the target advanced to the retained result, but Git reported "
+                            "an integration failure; it was not rolled back and the run was "
+                            "not cleaned"
+                        )
+                    raise LauncherError(
+                        "fast-forward integration failed; the retained run was not cleaned: "
+                        f"{merge.stderr.strip() or 'no diagnostic'}"
+                    )
+                integrated_now = True
+                manifest["state"] = "integration-verification-pending"
+                manifest["integrated_at"] = utc_now()
+                manifest["integrated_head"] = audit.head
+                write_manifest(repository, manifest)
+
+            try:
+                final_target_head, final_ref = require_stable_clean_base(
+                    repository,
+                    purpose="finishing retained-run integration",
+                )
+                if final_ref != target_ref:
+                    raise LauncherError("the primary checkout changed branches during integration")
+                if integrated_now and final_target_head != audit.head:
+                    raise LauncherError(
+                        "the primary checkout changed unexpectedly during integration"
+                    )
+                if not commit_is_ancestor(repository, audit.head, final_target_head):
+                    raise LauncherError(
+                        "the retained result is not reachable from its recorded target"
+                    )
+            except LauncherError as exc:
+                if not integrated_now:
+                    raise
+                manifest["state"] = "integration-verification-failed"
+                manifest["integration_verification_error"] = str(exc)
+                write_manifest(repository, manifest)
+                raise LauncherError(
+                    f"the target advanced to the retained result, but post-integration "
+                    f"verification failed: {exc}; it was not rolled back and the run was "
+                    "not cleaned"
+                ) from exc
+
+            manifest["state"] = "integrated-pending-cleanup"
+            manifest["integrated_head"] = audit.head
+            if not integrated_now:
+                manifest["integration_confirmed_at"] = utc_now()
+            manifest.pop("integration_verification_error", None)
+            manifest.pop("integration_cleanup_error", None)
+            write_manifest(repository, manifest)
+            try:
+                branch_removed = safe_cleanup(
+                    repository,
+                    manifest,
+                    allow_integrated=True,
+                    expected_head=audit.head,
+                )
+            except LauncherError as exc:
+                manifest["state"] = "integration-cleanup-failed"
+                manifest["integration_cleanup_error"] = str(exc)
+                write_manifest(repository, manifest)
+                raise LauncherError(
+                    f"the retained result is integrated, but cleanup failed: {exc}; "
+                    f"retry scripts/triptych-codex --triptych-clean {run_id}"
+                ) from exc
+        finally:
+            run_lock_stream.close()
+
+    if not branch_removed:
+        diagnostic(
+            f"run {run_id} was integrated and its worktree removed, but its worker branch "
+            f"remains; retry scripts/triptych-codex --triptych-clean {run_id}"
+        )
+        return 1
+    diagnostic(f"run {run_id} was integrated and cleaned")
+    return 0
+
+
 def clean_run(repository: Repository, run_id: str) -> int:
     if repository.linked_worktree:
         raise LauncherError("clean managed runs from the primary checkout")
     initialize_state(repository)
     with file_lock(repo_lock_path(repository)):
         manifest = load_manifest(repository, run_id)
+        reconcile_stale_run(repository, manifest)
         if manifest.get("state") == "cleaned":
             return 0
-        if manifest.get("state") == "cleaned-branch-retained":
-            diagnostic(f"run {run_id} worktree was removed, but its worker branch remains")
-            return 1
         run_lock_stream = acquire_existing_run_lock(repository, run_id)
         try:
-            branch_removed = safe_cleanup(repository, manifest, allow_integrated=True)
+            if manifest.get("state") == "cleaned-branch-retained":
+                branch_removed = retry_retained_branch_cleanup(repository, manifest)
+            else:
+                expected_head = None
+                if "final_head" in manifest or "dirty" in manifest:
+                    expected_head = recorded_clean_final_head(repository, manifest)
+                branch_removed = safe_cleanup(
+                    repository,
+                    manifest,
+                    allow_integrated=True,
+                    expected_head=expected_head,
+                )
         finally:
             run_lock_stream.close()
     if not branch_removed:
@@ -1062,15 +1490,19 @@ def launcher_help() -> str:
   scripts/triptych-codex [--] [CODEX_ARGUMENTS...]
   scripts/triptych-codex --triptych-status [RUN_ID]
   scripts/triptych-codex --triptych-reopen RUN_ID [-- CODEX_ARGUMENTS...]
+  scripts/triptych-codex --triptych-integrate RUN_ID
   scripts/triptych-codex --triptych-clean RUN_ID
   scripts/triptych-codex --triptych-help
 
 The default command starts Codex in a unique locked worktree. A successful
-unchanged run is cleaned automatically. Changed, committed, failed, or
+first unchanged run is cleaned automatically. Changed, committed, failed, or
 inconsistent runs are preserved and identified by an opaque run ID.
 Reopening starts a new Codex process in the retained worktree; it does not
 resume a saved Codex conversation. Only interactive, exec, and review agent
-surfaces and their allowlisted options are accepted.
+surfaces and their allowlisted options are accepted. After separate review and
+authorization, integration confirms or fast-forwards the recorded target branch
+to the exact audited retained result, then safely attempts to remove its worktree
+and worker branch.
 """
 
 
@@ -1078,6 +1510,10 @@ def main(arguments: Sequence[str] | None = None) -> int:
     argv = list(sys.argv[1:] if arguments is None else arguments)
     try:
         repository = discover_repository()
+        if not repository.linked_worktree and (
+            os.environ.get(ROLE_ENV) or os.environ.get("TRIPTYCH_CODEX_RUN_ID")
+        ):
+            raise LauncherError("worker marker is invalid in the primary checkout")
         if argv and argv[0] == "--triptych-help":
             if len(argv) != 1:
                 raise LauncherError("--triptych-help takes no arguments")
@@ -1087,6 +1523,10 @@ def main(arguments: Sequence[str] | None = None) -> int:
             if len(argv) > 2:
                 raise LauncherError("--triptych-status accepts at most one run ID")
             return show_status(repository, argv[1] if len(argv) == 2 else None)
+        if argv and argv[0] == "--triptych-integrate":
+            if len(argv) != 2:
+                raise LauncherError("--triptych-integrate requires exactly one run ID")
+            return integrate_run(repository, argv[1])
         if argv and argv[0] == "--triptych-clean":
             if len(argv) != 2:
                 raise LauncherError("--triptych-clean requires exactly one run ID")
@@ -1104,8 +1544,6 @@ def main(arguments: Sequence[str] | None = None) -> int:
 
         if repository.linked_worktree:
             return pass_through_linked_worktree(repository, real_codex, argv)
-        if os.environ.get(ROLE_ENV) or os.environ.get("TRIPTYCH_CODEX_RUN_ID"):
-            raise LauncherError("worker marker is invalid in the primary checkout")
 
         manifest, run_lock_stream = allocate_run(repository)
         return launch_child(repository, manifest, run_lock_stream, real_codex, argv)

@@ -81,6 +81,15 @@ def main() -> int:
         (root / "agent-result.txt").write_text("committed result\n", encoding="utf-8")
         git(root, "add", "agent-result.txt")
         git(root, "commit", "-m", "Test isolated result")
+    elif action == "commit-ignored":
+        (root / "build").mkdir(exist_ok=True)
+        (root / "build/collision.txt").write_text("tracked worker result\n", encoding="utf-8")
+        git(root, "add", "--force", "build/collision.txt")
+        git(root, "commit", "-m", "Test ignored-path result")
+    elif action == "reset-parent":
+        git(root, "reset", "--hard", "HEAD^")
+    elif action == "remove-dirty-result":
+        (root / "agent-result.txt").unlink(missing_ok=True)
     elif action == "recursive":
         nested_environment = os.environ.copy()
         nested_environment["FAKE_CODEX_ACTION"] = "none"
