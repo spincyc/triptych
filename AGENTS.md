@@ -26,6 +26,7 @@ Select profiles by the document's actual genre and sources, not by superficial s
 - the sacramental treatise, at-a-glance companion, or their shared fragments: `guidance/theology/sacramental-reference.md`
 - the Rosary, Marian-apparition judgment studies, or other repeatable Mariological reference works: `guidance/theology/mariology.md`
 - historical and hagiographic lives in the biographies collection: `guidance/biographies.md`
+- comprehensive historical reference works on heresies, censured propositions, and ecclesial responses: `guidance/theology/heresies.md`
 - novenas and other works in the numbered novena collection: `guidance/devotions/novenas.md`
 - discursive articles on faith, theology, or canon law: `guidance/articles.md`
 

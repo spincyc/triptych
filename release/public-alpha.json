@@ -3,10 +3,10 @@
   "release_id": "public-alpha",
   "provider": "gpt",
   "expected_counts": {
-    "publications": 43,
+    "publications": 44,
     "release": 27,
     "review": 0,
-    "hold": 16
+    "hold": 17
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
@@ -494,6 +494,15 @@
         "authorization": "perpetual-public-repository-2026",
         "pdf_sha256": "4c04664746b34866c31f1daed44ce7ffda5fcd0252d5b3ec46378e90b8f2761e"
       }
+    },
+    {
+      "id": "theology/heresies/heresies-in-catholic-history",
+      "catalog": "library/heresies.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review"
+      ],
+      "approval": null
     }
   ]
 }
