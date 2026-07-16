@@ -1,0 +1,77 @@
+\input{common/preamble}
+\usepackage{pdflscape}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+
+\hypersetup{
+  pdftitle={Clerical Celibacy, Chastity, and Continence},
+  pdfsubject={Historical, patristic, theological, and canonical treatment in the Catholic Churches, including the permanent diaconate}
+}
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{3em}
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\newcommand{\articlethesis}[1]{%
+  \begin{studybox}{Governing thesis}
+  #1
+  \end{studybox}}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.12\textheight}
+{\Huge\bfseries Clerical Celibacy, Chastity,\par}
+\vspace{0.15em}
+{\Huge\bfseries and Continence\par}
+\vspace{0.8em}
+{\Large\itshape History, patristic witness, current law,\par}
+\vspace{0.12em}
+{\Large\itshape the permanent diaconate, and the Catholic Churches\par}
+\vspace{0.7em}
+{\large A historical, theological, and canonical study\par}
+\vfill
+\begin{minipage}{0.84\textwidth}
+\footnotesize
+\textbf{AI generation metadata}\par\smallskip
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/generation-metadata}
+\end{minipage}
+\vfill
+{\small A source-audited study instrument; not an act of the Magisterium, legal advice, a canonical opinion in an individual case, or a substitute for the competent ordinary and a qualified canonist with the complete facts.\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/sections/00-question-thesis}
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/sections/10-terms-and-distinctions}
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/sections/20-scriptural-apostolic-foundations}
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/sections/30-patristic-witness}
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/sections/40-historical-development}
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/sections/50-theological-juridic-synthesis}
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/sections/60-current-latin-law}
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/sections/70-current-eastern-law}
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/sections/80-permanent-diaconate}
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/sections/90-exceptions-transitions-widowhood}
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/sections/100-pastoral-canonical-questions}
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/sections/110-conclusion}
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/sections/120-appendix-churches-sui-iuris}
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/sections/130-timeline}
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/sections/140-references}
+\end{deepstudy}
+
+\end{document}
