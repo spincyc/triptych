@@ -1,0 +1,93 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+
+\hypersetup{
+  pdftitle={Champion: Apparitions, Catechetical Mission, and Ecclesial Judgment},
+  pdfsubject={The 1859 apparitions to Adele Brise, documentary strata, catechetical mission, 1871 fire tradition, 2010 decree, and later ecclesial reception}
+}
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2.5em}
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\newcommand{\championthesis}[1]{%
+  \begin{studybox}{Governing thesis}
+  #1
+  \end{studybox}}
+
+\newcommand{\sourceboundary}[3]{%
+  \begin{studyframe}
+  \textbf{Witness:} #1\par
+  \textbf{What it establishes:} #2\par
+  \textbf{What it cannot establish alone:} #3
+  \end{studyframe}}
+
+\newcommand{\corpusboundary}[3]{%
+  \begin{studyframe}
+  \textbf{Event or tradition:} #1\par
+  \textbf{Ecclesial reception or judgment:} #2\par
+  \textbf{Limit of that reception:} #3
+  \end{studyframe}}
+
+\newcommand{\interpretivekey}[2]{%
+  \begin{studybox}{Interpretive key: #1}
+  #2
+  \end{studybox}}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.105\textheight}
+{\Huge\bfseries Champion\par}
+\vspace{0.35em}
+{\Large\itshape Apparitions, Catechetical Mission,\par}
+\vspace{0.1em}
+{\Large\itshape and Ecclesial Judgment\par}
+\vspace{0.8em}
+{\large Adele Brise, the documentary strata,\par}
+\vspace{0.1em}
+{\large the 1871 preservation, and the Church's reception\par}
+\vfill
+\begin{minipage}{0.92\textwidth}
+\footnotesize
+\textbf{AI generation metadata}\par\smallskip
+\input{theology/mariology/champion/generation-metadata}
+\end{minipage}
+\vfill
+{\small A source-audited Catholic study instrument, checked through 16 July 2026. It is not an act of the Magisterium, a new judgment on private revelation, a declaration that the 1871 preservation or any healing is a miracle, or a claim that any Catholic must adopt this devotion.\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{theology/mariology/champion/sections/00-method-status}
+\input{theology/mariology/champion/sections/10-frontier-adele}
+\input{theology/mariology/champion/sections/20-source-strata}
+\input{theology/mariology/champion/sections/30-three-encounters-message}
+\input{theology/mariology/champion/sections/40-catechetical-mission}
+\input{theology/mariology/champion/sections/50-fire-preservation}
+\input{theology/mariology/champion/sections/60-inquiry-decree}
+\input{theology/mariology/champion/sections/70-shrine-liturgy-name-cause}
+\input{theology/mariology/champion/sections/80-theological-synthesis}
+\input{theology/mariology/champion/sections/90-pastoral-reception}
+\input{theology/mariology/champion/sections/99-references}
+\appendix
+\input{theology/mariology/champion/sections/95-timeline}
+\end{deepstudy}
+
+\end{document}

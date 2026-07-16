@@ -1,0 +1,88 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+
+\hypersetup{
+  pdftitle={Lourdes: Apparitions, Immaculate Conception, and the Ministry of Healing},
+  pdfsubject={The eighteen apparitions to Bernadette Soubirous, the 1862 judgment, the message of Lourdes, and medical and ecclesial discernment of cures}
+}
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2.5em}
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\newcommand{\lourdesthesis}[1]{%
+  \begin{studybox}{Governing thesis}
+  #1
+  \end{studybox}}
+
+\newcommand{\sourceboundary}[3]{%
+  \begin{studyframe}
+  \textbf{Witness:} #1\par
+  \textbf{What it establishes:} #2\par
+  \textbf{What it cannot establish alone:} #3
+  \end{studyframe}}
+
+\newcommand{\claimboundary}[3]{%
+  \begin{studyframe}
+  \textbf{Claim:} #1\par
+  \textbf{Evidence status:} #2\par
+  \textbf{Necessary limit:} #3
+  \end{studyframe}}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.105\textheight}
+{\Huge\bfseries Lourdes\par}
+\vspace{0.35em}
+{\Large\itshape Apparitions, Immaculate Conception,\par}
+\vspace{0.1em}
+{\Large\itshape and the Ministry of Healing\par}
+\vspace{0.8em}
+{\large The eighteen encounters at Massabielle, the 1862 judgment,\par}
+\vspace{0.1em}
+{\large Saint Bernadette, and the discernment of cures\par}
+\vfill
+\begin{minipage}{0.92\textwidth}
+\footnotesize
+\textbf{AI generation metadata}\par\smallskip
+\input{theology/mariology/lourdes/generation-metadata}
+\end{minipage}
+\vfill
+{\small A source-audited Catholic study instrument, checked through 16 July 2026. It is not an act of the Magisterium, a medical opinion, a new judgment on a private revelation or cure, or a promise of bodily healing.\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{theology/mariology/lourdes/sections/00-method-status}
+\input{theology/mariology/lourdes/sections/10-place-witness-sources}
+\input{theology/mariology/lourdes/sections/20-bernadette}
+\input{theology/mariology/lourdes/sections/30-eighteen-apparitions}
+\input{theology/mariology/lourdes/sections/40-message-signs}
+\input{theology/mariology/lourdes/sections/50-immaculate-conception}
+\input{theology/mariology/lourdes/sections/60-water-healing}
+\input{theology/mariology/lourdes/sections/70-medical-canonical-process}
+\input{theology/mariology/lourdes/sections/80-reception}
+\input{theology/mariology/lourdes/sections/90-theological-synthesis}
+\input{theology/mariology/lourdes/sections/99-references}
+\appendix
+\input{theology/mariology/lourdes/sections/95-timeline}
+\end{deepstudy}
+
+\end{document}
