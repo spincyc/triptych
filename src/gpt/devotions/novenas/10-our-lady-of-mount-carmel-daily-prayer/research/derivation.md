@@ -33,6 +33,7 @@ The companion deliberately excludes the canonical guide's calendar instructions,
 ## Controlling audit records
 
 - Prayer inventory: `devotions/novenas/10-our-lady-of-mount-carmel/research/prayer-inventory.md`
+- Complete-*Flos Carmeli* translation search: `devotions/novenas/10-our-lady-of-mount-carmel/research/flos-carmeli-translation-search.md`
 - Research scope: `devotions/novenas/10-our-lady-of-mount-carmel/research/scope.md`
 - Tradition and promise status: `devotions/novenas/10-our-lady-of-mount-carmel/research/tradition-status.md`
 - Source audit: `devotions/novenas/10-our-lady-of-mount-carmel/research/source-audit.md`
@@ -41,5 +42,6 @@ The companion deliberately excludes the canonical guide's calendar instructions,
 
 - Canonical-fragment factoring and companion assembly completed on 2026-07-13.
 - On 2026-07-14 the canonical full guide replaced its nine project-composed collects with received liturgical collects from the 1987 *Collectio* and completed their abbreviated endings only with the governing formulas in GIRM 54. A second revision removed every project-authored or project-translated vocal prayer: the daily collects became Latin-only with approved-English source pointers, the short *Flos Carmeli* received Best's 1902 English, the complete sequence became Latin-only, and the Hail Mary and feast prayer received Lefebvre's 1925 Latin and English. Because the companion imports those fragments, it owns none of the revised prayer wording.
-- The 30-page full guide and 10-page companion were rebuilt from the revised shared sources, compared for rendered-source equivalence, visually inspected page by page, and installed byte-identically to their reviewed builds, SHA-256 `dfedafbe32a4c1432b68438282904ea6afb32ba7e84a6ea5ded573b607822676` and `1bab25f390940431fea27ab63656c8b332a00ed3a30945a42aa7018fb2b834cc`.
+- On 2026-07-15 the canonical guide's expanded translation search identified three complete modern English *Flos Carmeli* witnesses. After the requester confirmed approval to use all three, the guide selected the version attributed to the 1993 joint O.Carm.–OCD *Proper of the Liturgy of the Hours* for its strongest institutional provenance and coherent paired `nos ad esse / tecum in saeculum` Latin. The canonical fragment now reproduces the exact Carmelite-source transcription in two bilingual cards without adding `Amen`; the companion inherits that same fragment and introduces no separate translation or approval claim.
+- The 30-page full guide and 11-page companion were rebuilt from the revised shared sources, compared for rendered-source equivalence, visually inspected page by page, and installed byte-identically to their reviewed builds, SHA-256 `5074ea2caf6bcf05ff44e0c7cf066c54372d55f518ef92ad8fd66b5fd964737c` and `b938ede4030c255ce2e61aa18a2aa840ec8457eaa2842420173f84c99435ba29`.
 - Independent Carmelite, historical, liturgical, Mariological, sacramental-theological, biblical, pastoral, Latin, hymnological, translation, and ecclesiastical review remains outstanding exactly as recorded for the canonical full guide.
