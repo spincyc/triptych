@@ -3,10 +3,10 @@
   "release_id": "public-alpha",
   "provider": "gpt",
   "expected_counts": {
-    "publications": 44,
+    "publications": 46,
     "release": 27,
     "review": 0,
-    "hold": 17
+    "hold": 19
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
@@ -172,6 +172,24 @@
         "authorization": "perpetual-public-repository-2026",
         "pdf_sha256": "b938ede4030c255ce2e61aa18a2aa840ec8457eaa2842420173f84c99435ba29"
       }
+    },
+    {
+      "id": "history/biblical-translations/01-septuagint",
+      "catalog": "library/historical-accounts.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review"
+      ],
+      "approval": null
+    },
+    {
+      "id": "history/biblical-translations/02-vulgate",
+      "catalog": "library/historical-accounts.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass",
