@@ -34,6 +34,14 @@ WORKER_BRANCH_PREFIX = "codex/isolated/"
 ROLE_ENV = "TRIPTYCH_CODEX_ROLE"
 REAL_CODEX_ENV = "TRIPTYCH_CODEX_REAL"
 STATE_DIR_ENV = "TRIPTYCH_CODEX_STATE_DIR"
+INTEGRATION_TRANSACTION_FIELDS = (
+    "integration_source_head",
+    "integration_target_head",
+    "integration_candidate_head",
+    "integration_started_at",
+    "integration_rebased_at",
+    "integration_previous_state",
+)
 GIT_REDIRECTION_ENV = {
     "GIT_ALTERNATE_OBJECT_DIRECTORIES",
     "GIT_COMMON_DIR",
@@ -368,7 +376,13 @@ def validate_manifest_paths(repository: Repository, manifest: dict) -> None:
     base_sha = manifest.get("base_sha")
     if not isinstance(base_sha, str) or not OBJECT_ID_RE.fullmatch(base_sha):
         raise LauncherError("run manifest has an invalid base commit")
-    for field in ("final_head", "integrated_head"):
+    for field in (
+        "final_head",
+        "integrated_head",
+        "integration_source_head",
+        "integration_target_head",
+        "integration_candidate_head",
+    ):
         value = manifest.get(field)
         if value is not None and (
             not isinstance(value, str) or not OBJECT_ID_RE.fullmatch(value)
@@ -852,6 +866,208 @@ def recorded_clean_final_head(repository: Repository, manifest: dict) -> str:
     return recorded_commit(repository, manifest, "final_head")
 
 
+def audit_matches_clean_head(manifest: dict, audit: Audit, expected_head: str) -> bool:
+    return (
+        audit.registered
+        and audit.locked
+        and audit.branch == manifest["branch"]
+        and audit.head == expected_head
+        and audit.clean
+    )
+
+
+def rebase_in_progress(worktree: Path) -> bool:
+    for marker in ("rebase-apply", "rebase-merge"):
+        marker_path = Path(git(worktree, "rev-parse", "--git-path", marker).stdout.strip())
+        if not marker_path.is_absolute():
+            marker_path = worktree / marker_path
+        if marker_path.exists():
+            return True
+    return False
+
+
+def recorded_integration_candidate(
+    repository: Repository,
+    manifest: dict,
+    final_head: str,
+) -> str:
+    candidate = manifest.get("integration_candidate_head")
+    integrated = manifest.get("integrated_head")
+    if candidate is not None and integrated is not None and candidate != integrated:
+        raise LauncherError("the retained run has inconsistent integration commit records")
+    if integrated is not None:
+        return recorded_commit(repository, manifest, "integrated_head")
+    if candidate is not None:
+        return recorded_commit(repository, manifest, "integration_candidate_head")
+    return final_head
+
+
+def worker_history_has_merge(
+    repository: Repository,
+    worker_head: str,
+    target_head: str,
+) -> bool:
+    result = git(
+        repository.root,
+        "rev-list",
+        "--merges",
+        "--max-count=1",
+        worker_head,
+        "--not",
+        target_head,
+        check=False,
+    )
+    if result.returncode:
+        raise LauncherError(
+            "cannot inspect retained worker history: "
+            f"{result.stderr.strip() or 'no diagnostic'}"
+        )
+    return bool(result.stdout.strip())
+
+
+def target_head_containing_commit(
+    repository: Repository,
+    target_ref: str,
+    commit: str,
+) -> str | None:
+    target = git(
+        repository.root,
+        "rev-parse",
+        "--verify",
+        f"{target_ref}^{{commit}}",
+        check=False,
+    )
+    if target.returncode:
+        return None
+    head = target.stdout.strip()
+    return head if commit_is_ancestor(repository, commit, head) else None
+
+
+def clear_integration_transaction(manifest: dict) -> None:
+    previous_state = manifest.get("integration_previous_state")
+    for field in INTEGRATION_TRANSACTION_FIELDS:
+        manifest.pop(field, None)
+    manifest["state"] = previous_state if isinstance(previous_state, str) else "preserved"
+
+
+def record_integration_recovery_failure(
+    repository: Repository,
+    manifest: dict,
+    *,
+    state: str,
+    audit: Audit,
+    error: str,
+) -> None:
+    manifest["state"] = state
+    manifest["integration_recovery_error"] = error
+    manifest["integration_observed_head"] = audit.head
+    manifest["integration_observed_dirty"] = (
+        None if audit.status is None else bool(audit.status)
+    )
+    manifest["audit_registered"] = audit.registered
+    manifest["audit_locked"] = audit.locked
+    write_manifest(repository, manifest)
+
+
+def abort_failed_integration_rebase(
+    repository: Repository,
+    manifest: dict,
+    source_head: str,
+    rebase_error: str,
+) -> None:
+    worktree = Path(manifest["worktree"])
+    abort_error = ""
+    if rebase_in_progress(worktree):
+        abort = git(worktree, "rebase", "--abort", check=False)
+        if abort.returncode:
+            abort_error = abort.stderr.strip() or "Git reported no abort diagnostic"
+
+    audit = audit_run(repository, manifest)
+    if not abort_error and audit_matches_clean_head(manifest, audit, source_head):
+        clear_integration_transaction(manifest)
+        manifest["last_integration_rebase_error"] = rebase_error
+        manifest["last_integration_rebase_failed_at"] = utc_now()
+        manifest.pop("integration_recovery_error", None)
+        write_manifest(repository, manifest)
+        return
+
+    details = rebase_error
+    if abort_error:
+        details = f"{details}; rebase abort failed: {abort_error}"
+    elif not audit_matches_clean_head(manifest, audit, source_head):
+        details = f"{details}; the worker did not return to its audited commit"
+    record_integration_recovery_failure(
+        repository,
+        manifest,
+        state="integration-rebase-recovery-failed",
+        audit=audit,
+        error=details,
+    )
+    raise LauncherError(
+        "rebase integration failed and the retained worker could not be confirmed at "
+        f"its original audited commit: {details}"
+    )
+
+
+def rollback_completed_integration_rebase(
+    repository: Repository,
+    manifest: dict,
+    source_head: str,
+    error: str,
+) -> None:
+    worktree = Path(manifest["worktree"])
+    before = audit_run(repository, manifest)
+    candidate = manifest.get("integration_candidate_head")
+    recognized_candidate = isinstance(candidate, str) and before.head == candidate
+    if not recognized_candidate or not (
+        before.registered
+        and before.locked
+        and before.branch == manifest["branch"]
+        and before.head is not None
+        and before.clean
+    ):
+        details = f"{error}; the rebased worker was not clean at its recorded candidate"
+        record_integration_recovery_failure(
+            repository,
+            manifest,
+            state="integration-rebase-rollback-failed",
+            audit=before,
+            error=details,
+        )
+        raise LauncherError(
+            "integration did not advance the target, but the rebased worker had "
+            "uncommitted or unexpected changes and was retained without reset"
+        )
+
+    manifest["state"] = "integration-rebase-rollback-pending"
+    manifest["integration_rollback_started_at"] = utc_now()
+    write_manifest(repository, manifest)
+    reset = git(worktree, "reset", "--hard", source_head, check=False)
+    audit = audit_run(repository, manifest)
+    if reset.returncode == 0 and audit_matches_clean_head(manifest, audit, source_head):
+        clear_integration_transaction(manifest)
+        manifest.pop("integration_rollback_started_at", None)
+        manifest["last_integration_rebase_error"] = error
+        manifest["last_integration_rebase_failed_at"] = utc_now()
+        manifest.pop("integration_recovery_error", None)
+        write_manifest(repository, manifest)
+        return
+
+    reset_error = reset.stderr.strip() or "the worker did not return to its audited commit"
+    details = f"{error}; rebase rollback failed: {reset_error}"
+    record_integration_recovery_failure(
+        repository,
+        manifest,
+        state="integration-rebase-rollback-failed",
+        audit=audit,
+        error=details,
+    )
+    raise LauncherError(
+        "integration did not advance the target, but the rebased worker could not be "
+        f"restored to its original audited commit: {details}"
+    )
+
+
 def retry_retained_branch_cleanup(repository: Repository, manifest: dict) -> bool:
     worktree = Path(manifest["worktree"])
     if registered_record(repository, worktree) is not None or worktree.exists():
@@ -1192,11 +1408,21 @@ def reopen_run(repository: Repository, run_id: str, arguments: Sequence[str]) ->
         manifest = load_manifest(repository, run_id)
         if manifest.get("state") in {"cleaned", "cleaned-branch-retained"}:
             raise LauncherError(f"run {run_id} has already been cleaned")
+        if manifest.get("integrated_head") is not None:
+            raise LauncherError(
+                f"run {run_id} has already advanced its target; retry "
+                f"scripts/triptych-codex --triptych-clean {run_id} instead of reopening it"
+            )
         audit = audit_run(repository, manifest)
         if not audit.registered or not audit.locked:
             raise LauncherError(f"run {run_id} is not an intact locked worktree")
         if audit.branch != manifest["branch"]:
             raise LauncherError(f"run {run_id} changed branches and is quarantined")
+        if manifest.get("integration_source_head") is not None:
+            raise LauncherError(
+                f"run {run_id} has a pending integration transaction; retry "
+                f"scripts/triptych-codex --triptych-integrate {run_id}"
+            )
         run_lock_stream = acquire_existing_run_lock(repository, run_id)
     return launch_child(repository, manifest, run_lock_stream, real_codex, arguments)
 
@@ -1257,37 +1483,292 @@ def integrate_run(repository: Repository, run_id: str) -> int:
             audit = audit_run(repository, manifest)
             if not audit.registered or not audit.locked:
                 raise LauncherError("the retained worktree is missing or unlocked")
+
+            transaction_state = manifest.get("state")
+            if transaction_state in {
+                "integration-rebase-pending",
+                "integration-rebase-rollback-pending",
+                "integration-rebase-recovery-failed",
+                "integration-rebase-rollback-failed",
+            }:
+                source_head = recorded_commit(
+                    repository,
+                    manifest,
+                    "integration_source_head",
+                )
+                if rebase_in_progress(Path(manifest["worktree"])):
+                    record_integration_recovery_failure(
+                        repository,
+                        manifest,
+                        state="integration-rebase-recovery-failed",
+                        audit=audit,
+                        error="an interrupted integration rebase remains in progress",
+                    )
+                    raise LauncherError(
+                        "an earlier integration rebase was interrupted; its unverified "
+                        "worker state was retained without abort or reset"
+                    )
+                if transaction_state == "integration-rebase-pending":
+                    if audit_matches_clean_head(manifest, audit, source_head):
+                        clear_integration_transaction(manifest)
+                        write_manifest(repository, manifest)
+                    else:
+                        record_integration_recovery_failure(
+                            repository,
+                            manifest,
+                            state="integration-rebase-recovery-failed",
+                            audit=audit,
+                            error="an interrupted integration rebase did not leave the "
+                            "exact audited worker state",
+                        )
+                        raise LauncherError(
+                            "an earlier integration rebase was interrupted; its unverified "
+                            "worker state was retained without abort or reset"
+                        )
+                elif audit_matches_clean_head(manifest, audit, source_head):
+                    clear_integration_transaction(manifest)
+                    manifest.pop("integration_rollback_started_at", None)
+                    manifest.pop("integration_recovery_error", None)
+                    write_manifest(repository, manifest)
+                elif transaction_state == "integration-rebase-rollback-pending":
+                    rollback_completed_integration_rebase(
+                        repository,
+                        manifest,
+                        source_head,
+                        "an earlier integration rebase rollback was interrupted",
+                    )
+                else:
+                    raise LauncherError(
+                        "an earlier integration rebase could not be restored; inspect the "
+                        "retained worker before retrying"
+                    )
+                audit = audit_run(repository, manifest)
+
             if audit.branch != manifest["branch"]:
                 raise LauncherError("the retained worktree changed branches")
             if not audit.clean or audit.head is None:
                 raise LauncherError("the retained worktree has uncommitted changes")
             final_head = recorded_clean_final_head(repository, manifest)
-            if audit.head != final_head:
+            candidate_head = recorded_integration_candidate(
+                repository,
+                manifest,
+                final_head,
+            )
+            if audit.head != candidate_head:
                 raise LauncherError(
                     "the retained result changed since its last launcher audit; "
                     "reopen it to review and record its current state"
                 )
 
             base_sha = recorded_commit(repository, manifest, "base_sha")
-            if not commit_is_ancestor(repository, base_sha, audit.head):
+            if not commit_is_ancestor(repository, base_sha, candidate_head):
                 raise LauncherError("the retained result no longer descends from its recorded base")
             if not commit_is_ancestor(repository, base_sha, target_head):
                 raise LauncherError("the recorded target branch no longer descends from the run's base")
 
-            already_integrated = commit_is_ancestor(repository, audit.head, target_head)
+            already_integrated = commit_is_ancestor(
+                repository,
+                candidate_head,
+                target_head,
+            )
+            if not already_integrated and manifest.get("integrated_head") is not None:
+                raise LauncherError(
+                    "the recorded target no longer contains this run's previously integrated "
+                    "commit; restore or reconcile the target history before retrying cleanup"
+                )
             integrated_now = False
             if not already_integrated:
-                if not commit_is_ancestor(repository, target_head, audit.head):
+                if worker_history_has_merge(repository, candidate_head, target_head):
                     raise LauncherError(
-                        "the recorded target and retained result have diverged; "
-                        "review and reconcile them before integration"
+                        "the retained result contains a worker-side merge commit; "
+                        "make integrate requires a linear audited worker history so "
+                        "flattening cannot discard merge-only content"
                     )
+                if not commit_is_ancestor(repository, target_head, candidate_head):
+                    if manifest.get("integration_candidate_head") is not None:
+                        source_head = recorded_commit(
+                            repository,
+                            manifest,
+                            "integration_source_head",
+                        )
+                        rollback_completed_integration_rebase(
+                            repository,
+                            manifest,
+                            source_head,
+                            "the target advanced again before the rebased result was integrated",
+                        )
+                        audit = audit_run(repository, manifest)
+                        final_head = recorded_clean_final_head(repository, manifest)
+                        candidate_head = final_head
+                        if not audit_matches_clean_head(manifest, audit, candidate_head):
+                            raise LauncherError(
+                                "the retained result changed while restarting integration"
+                            )
+
+                    source_head = candidate_head
+                    previous_state = manifest.get("state")
+                    manifest["state"] = "integration-rebase-pending"
+                    manifest["integration_previous_state"] = (
+                        previous_state if isinstance(previous_state, str) else "preserved"
+                    )
+                    manifest["integration_source_head"] = source_head
+                    manifest["integration_target_head"] = target_head
+                    manifest["integration_started_at"] = utc_now()
+                    manifest.pop("integration_candidate_head", None)
+                    manifest.pop("integration_recovery_error", None)
+                    write_manifest(repository, manifest)
+
+                    rebase = git(
+                        Path(manifest["worktree"]),
+                        "-c",
+                        "rebase.autoStash=false",
+                        "-c",
+                        "rebase.updateRefs=false",
+                        "-c",
+                        "core.hooksPath=/dev/null",
+                        "rebase",
+                        "--no-autostash",
+                        "--no-update-refs",
+                        "--no-rebase-merges",
+                        "--no-fork-point",
+                        "--reapply-cherry-picks",
+                        "--empty=drop",
+                        "--onto",
+                        target_head,
+                        base_sha,
+                        check=False,
+                    )
+                    if rebase.returncode:
+                        rebase_error = rebase.stderr.strip() or "Git reported no diagnostic"
+                        abort_failed_integration_rebase(
+                            repository,
+                            manifest,
+                            source_head,
+                            rebase_error,
+                        )
+                        try:
+                            restored_target, restored_ref = require_stable_clean_base(
+                                repository,
+                                purpose="finishing a failed retained-run rebase",
+                            )
+                        except LauncherError as exc:
+                            raise LauncherError(
+                                "rebase integration failed and the worker was restored, but "
+                                f"the primary checkout also changed: {exc}"
+                            ) from exc
+                        if restored_target != target_head or restored_ref != target_ref:
+                            raise LauncherError(
+                                "rebase integration failed and the worker was restored, but "
+                                "the recorded target changed during the attempt"
+                            )
+                        raise LauncherError(
+                            "rebase integration failed; the attempted rebase was aborted and "
+                            f"the retained result was restored: {rebase_error}"
+                        )
+
+                    rebased_audit = audit_run(repository, manifest)
+                    if (
+                        rebased_audit.branch != manifest["branch"]
+                        or rebased_audit.head is None
+                        or not commit_is_ancestor(
+                            repository,
+                            target_head,
+                            rebased_audit.head,
+                        )
+                    ):
+                        record_integration_recovery_failure(
+                            repository,
+                            manifest,
+                            state="integration-rebase-recovery-failed",
+                            audit=rebased_audit,
+                            error="Git reported a successful rebase with an unexpected worker state",
+                        )
+                        raise LauncherError(
+                            "Git reported a successful integration rebase, but the retained "
+                            "worker did not have the expected rebased history"
+                        )
+
+                    candidate_head = rebased_audit.head
+                    manifest["state"] = "integration-merge-pending"
+                    manifest["integration_candidate_head"] = candidate_head
+                    manifest["integration_rebased_at"] = utc_now()
+                    write_manifest(repository, manifest)
+                    if not rebased_audit.clean:
+                        raise LauncherError(
+                            "the integration rebase completed with unexpected uncommitted "
+                            "worker changes; it was retained without merging or cleanup"
+                        )
+
+                    try:
+                        current_target, current_ref = require_stable_clean_base(
+                            repository,
+                            purpose="merging a rebased retained run",
+                        )
+                    except LauncherError as exc:
+                        landed_target = target_head_containing_commit(
+                            repository,
+                            target_ref,
+                            candidate_head,
+                        )
+                        if landed_target is not None:
+                            manifest["state"] = "integration-verification-failed"
+                            manifest["integrated_at"] = utc_now()
+                            manifest["integrated_head"] = candidate_head
+                            manifest["integration_verification_error"] = str(exc)
+                            write_manifest(repository, manifest)
+                            raise LauncherError(
+                                "the target advanced to the rebased result while the primary "
+                                "checkout also became unavailable for verification; it was not "
+                                "rolled back and the run was not cleaned"
+                            ) from exc
+                        rollback_completed_integration_rebase(
+                            repository,
+                            manifest,
+                            source_head,
+                            f"the primary checkout changed during the integration rebase: {exc}",
+                        )
+                        raise LauncherError(
+                            "the primary checkout changed during the integration rebase; "
+                            "the retained worker was restored and was not merged"
+                        ) from exc
+                    if current_target != target_head or current_ref != target_ref:
+                        landed_target = target_head_containing_commit(
+                            repository,
+                            target_ref,
+                            candidate_head,
+                        )
+                        if landed_target is None:
+                            rollback_completed_integration_rebase(
+                                repository,
+                                manifest,
+                                source_head,
+                                "the recorded target changed during the integration rebase",
+                            )
+                            raise LauncherError(
+                                "the recorded target changed during the integration rebase; "
+                                "the retained worker was restored and was not merged"
+                            )
+                        if current_ref != target_ref:
+                            manifest["state"] = "integration-verification-failed"
+                            manifest["integrated_at"] = utc_now()
+                            manifest["integrated_head"] = candidate_head
+                            manifest["integration_verification_error"] = (
+                                "the primary checkout changed branches during the "
+                                "integration rebase"
+                            )
+                            write_manifest(repository, manifest)
+                            raise LauncherError(
+                                "the recorded target advanced to the rebased result, but the "
+                                "primary checkout changed branches; it was not rolled back and "
+                                "the run was not cleaned"
+                            )
+
                 merge = git(
                     repository.root,
                     "merge",
                     "--ff-only",
                     "--no-overwrite-ignore",
-                    audit.head,
+                    candidate_head,
                     check=False,
                 )
                 if merge.returncode:
@@ -1305,10 +1786,15 @@ def integrate_run(repository: Repository, run_id: str) -> int:
                         "HEAD",
                         check=False,
                     ).stdout.strip()
-                    if after_head == audit.head and after_ref == target_ref:
+                    landed_target = target_head_containing_commit(
+                        repository,
+                        target_ref,
+                        candidate_head,
+                    )
+                    if landed_target is not None:
                         manifest["state"] = "integration-verification-failed"
                         manifest["integrated_at"] = utc_now()
-                        manifest["integrated_head"] = audit.head
+                        manifest["integrated_head"] = candidate_head
                         manifest["integration_verification_error"] = (
                             merge.stderr.strip() or "Git reported no diagnostic"
                         )
@@ -1318,6 +1804,33 @@ def integrate_run(repository: Repository, run_id: str) -> int:
                             "an integration failure; it was not rolled back and the run was "
                             "not cleaned"
                         )
+                    if (
+                        manifest.get("integration_candidate_head") is not None
+                        and after_head == target_head
+                        and after_ref == target_ref
+                    ):
+                        merge_error = merge.stderr.strip() or "Git reported no diagnostic"
+                        source_head = recorded_commit(
+                            repository,
+                            manifest,
+                            "integration_source_head",
+                        )
+                        rollback_completed_integration_rebase(
+                            repository,
+                            manifest,
+                            source_head,
+                            f"fast-forward integration failed: {merge_error}",
+                        )
+                        raise LauncherError(
+                            "fast-forward integration failed after rebase; the retained "
+                            f"worker was restored and not cleaned: {merge_error}"
+                        )
+                    if manifest.get("integration_candidate_head") is not None:
+                        manifest["state"] = "integration-merge-failed"
+                        manifest["integration_verification_error"] = (
+                            merge.stderr.strip() or "Git reported no diagnostic"
+                        )
+                        write_manifest(repository, manifest)
                     raise LauncherError(
                         "fast-forward integration failed; the retained run was not cleaned: "
                         f"{merge.stderr.strip() or 'no diagnostic'}"
@@ -1325,7 +1838,7 @@ def integrate_run(repository: Repository, run_id: str) -> int:
                 integrated_now = True
                 manifest["state"] = "integration-verification-pending"
                 manifest["integrated_at"] = utc_now()
-                manifest["integrated_head"] = audit.head
+                manifest["integrated_head"] = candidate_head
                 write_manifest(repository, manifest)
 
             try:
@@ -1335,11 +1848,7 @@ def integrate_run(repository: Repository, run_id: str) -> int:
                 )
                 if final_ref != target_ref:
                     raise LauncherError("the primary checkout changed branches during integration")
-                if integrated_now and final_target_head != audit.head:
-                    raise LauncherError(
-                        "the primary checkout changed unexpectedly during integration"
-                    )
-                if not commit_is_ancestor(repository, audit.head, final_target_head):
+                if not commit_is_ancestor(repository, candidate_head, final_target_head):
                     raise LauncherError(
                         "the retained result is not reachable from its recorded target"
                     )
@@ -1356,9 +1865,10 @@ def integrate_run(repository: Repository, run_id: str) -> int:
                 ) from exc
 
             manifest["state"] = "integrated-pending-cleanup"
-            manifest["integrated_head"] = audit.head
+            manifest["integrated_head"] = candidate_head
             if not integrated_now:
                 manifest["integration_confirmed_at"] = utc_now()
+            manifest.pop("integration_previous_state", None)
             manifest.pop("integration_verification_error", None)
             manifest.pop("integration_cleanup_error", None)
             write_manifest(repository, manifest)
@@ -1367,7 +1877,7 @@ def integrate_run(repository: Repository, run_id: str) -> int:
                     repository,
                     manifest,
                     allow_integrated=True,
-                    expected_head=audit.head,
+                    expected_head=candidate_head,
                 )
             except LauncherError as exc:
                 manifest["state"] = "integration-cleanup-failed"
@@ -1405,7 +1915,16 @@ def clean_run(repository: Repository, run_id: str) -> int:
                 branch_removed = retry_retained_branch_cleanup(repository, manifest)
             else:
                 expected_head = None
-                if "final_head" in manifest or "dirty" in manifest:
+                if manifest.get("integration_candidate_head") is not None and manifest.get(
+                    "integrated_head"
+                ) is None:
+                    raise LauncherError(
+                        "the retained run has a pending rebased integration; retry "
+                        f"scripts/triptych-codex --triptych-integrate {run_id}"
+                    )
+                if manifest.get("integrated_head") is not None:
+                    expected_head = recorded_commit(repository, manifest, "integrated_head")
+                elif "final_head" in manifest or "dirty" in manifest:
                     expected_head = recorded_clean_final_head(repository, manifest)
                 branch_removed = safe_cleanup(
                     repository,
@@ -1500,9 +2019,10 @@ inconsistent runs are preserved and identified by an opaque run ID.
 Reopening starts a new Codex process in the retained worktree; it does not
 resume a saved Codex conversation. Only interactive, exec, and review agent
 surfaces and their allowlisted options are accepted. After separate review and
-authorization, integration confirms or fast-forwards the recorded target branch
-to the exact audited retained result, then safely attempts to remove its worktree
-and worker branch.
+authorization, integration confirms or fast-forwards an already-linear result;
+when the target and worker diverged, it rebases the worker onto the current target
+and then fast-forwards. It never creates a merge commit. Conflicts restore and
+retain the original worker. A verified landing is safely cleaned when possible.
 """
 
 
