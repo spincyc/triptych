@@ -79,7 +79,7 @@ help:
 		'make install  Publish built PDFs into the mirrored tracked doc/ tree' \
 		'make list     List discovered document IDs' \
 		'make codex    Start Codex in an automatically isolated task checkout' \
-		'make integrate <run-id>  Fast-forward and clean an approved retained Codex run' \
+		'make integrate <run-id>  Rebase if needed, fast-forward, and clean an approved run' \
 		'make check-agent-isolation  Test the transparent Codex launcher' \
 		'make check-metadata  Validate structured and inherited AI provenance' \
 		'make check-public-alpha  Validate the exhaustive public-release policy' \
