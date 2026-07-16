@@ -43,6 +43,9 @@ src/gpt/
     novenas/
       shared/                    non-publishable common prayers and formatting
       <numbered-document>/
+  biographies/
+    shared/                    optional non-publishable common fragments
+    <subject>/
   articles/
     faith/
     canon-law/
@@ -59,6 +62,11 @@ Edition-specific manuals for resolving the 1962 calendar and assembling admitted
 Novenas use numbered publishable leaves beneath `devotions/novenas/` and follow `guidance/devotions/novenas.md`. The `devotions/novenas/shared/` directory is non-publishable and owns only genuinely common prayer text or formatting; every novena consumer must be rebuilt after it changes.
 
 A mechanically derived novena prayer book uses the sibling leaf `<numbered-document>-daily-prayer/`. It imports prayer fragments from the canonical full-guide leaf, declares inherited provenance, and requires explicit cross-document build dependencies; it must not become a second textual owner.
+
+Historical and hagiographic biographies use unnumbered publishable leaves beneath
+`biographies/` and follow `guidance/biographies.md`.  Each person owns an
+independent leaf, source audit, chronology, and tradition audit; a shared feast
+or mission does not make two persons one document.
 
 ## Mirrored publications and transient builds
 
@@ -172,9 +180,9 @@ Repository restructuring and content revision should remain distinguishable in r
 
 ## Public navigation and catalog
 
-`README.md` is a deliberately terse landing page for clergy, religious, and lay readers. Its subtitle identifies the studies as AI driven, while its first heading remains the standalone `Don't Panic!`. The opening moves from AI and authority limits to skeptical reading, ordinary-language feedback, and reassurance that no technical background is needed. It then links Traditional Latin Mass (1962 Roman Rite), Novus Ordo (Postconciliar Roman Rite), Prayer, Faith, Mariology, and Law in one compact library table; keeps the two clearly distinguished liturgy pages first and Prayer next without directing readers where to begin; states the reuse boundary; and ends by explaining the name. Do not put publication catalogs, raw status matrices, repository history, build commands, or maintainer-oriented layout detail back onto the landing page.
+`README.md` is a deliberately terse landing page for clergy, religious, and lay readers. Its subtitle identifies the studies as AI driven, while its first heading remains the standalone `Don't Panic!`. The opening moves from AI and authority limits to skeptical reading, ordinary-language feedback, and reassurance that no technical background is needed. It then links Traditional Latin Mass (1962 Roman Rite), Novus Ordo (Postconciliar Roman Rite), Prayer, Faith, Biographies, Mariology, and Law in one compact library table; keeps the two clearly distinguished liturgy pages first and Prayer next without directing readers where to begin; states the reuse boundary; and ends by explaining the name. Do not put publication catalogs, raw status matrices, repository history, build commands, or maintainer-oriented layout detail back onto the landing page.
 
-`LIBRARY.md` is the public catalog index. Publication listings live on the mutually exclusive section pages `library/traditional-latin-mass.md`, `library/novus-ordo-liturgy.md`, `library/prayer.md`, `library/faith.md`, `library/mariology.md`, and `library/law-and-church-discipline.md`. Every installed publication has exactly one catalog entry across those pages; do not repeat a title or PDF as a cross-listing. A mechanically derived companion belongs in the same entry or row as its canonical work and counts as part of that one catalog home. A page with no dedicated publication says so plainly instead of borrowing cross-disciplinary works from another section.
+`LIBRARY.md` is the public catalog index. Publication listings live on the mutually exclusive section pages `library/traditional-latin-mass.md`, `library/novus-ordo-liturgy.md`, `library/prayer.md`, `library/faith.md`, `library/biographies.md`, `library/mariology.md`, and `library/law-and-church-discipline.md`. Every installed publication has exactly one catalog entry across those pages; do not repeat a title or PDF as a cross-listing. A mechanically derived companion belongs in the same entry or row as its canonical work and counts as part of that one catalog home. A page with no dedicated publication says so plainly instead of borrowing cross-disciplinary works from another section.
 
 Restrict `Traditional Latin Mass: 1962 Roman Rite` to the 1962 Ordinary, assembly references, and proper guides: list the Ordinary first, `Assembling the Mass` second, and the proper guides in a compact table. Keep devotional prayer on the separate `Prayer` page; list the novenas there in a compact table with each short form in the same row as its full guide. The reader-facing `Novus Ordo: Postconciliar Roman Rite` title honors common usage while distinguishing the collection from the 1962 books, but every publication placed there must identify the exact postconciliar books, edition, language, territory, and date it studies. Place comparative or other discursive works under their substantive study category rather than duplicating or misclassifying them merely because they discuss liturgy. Lead each primary entry with its plain title linked directly to the installed PDF. Follow with a short scope and status statement, then separately named links to every distinct reader-facing supporting or audit record required by the governing profile. Do not link TeX authoring files from Markdown; they remain discoverable through the repository structure when needed for technical work. A shared scope or status that truly applies to every item in a compact series may appear once before its table or list; do not repeat it on every entry. Focused raw retrieval extracts and structured generation records remain reachable through the supporting records and need not be linked from the catalog unless a profile expressly requires them. Prefer readable lists for heterogeneous works and compact tables for the two series named above.
 

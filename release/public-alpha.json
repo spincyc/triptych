@@ -3,10 +3,10 @@
   "release_id": "public-alpha",
   "provider": "gpt",
   "expected_counts": {
-    "publications": 35,
+    "publications": 39,
     "release": 27,
     "review": 0,
-    "hold": 8
+    "hold": 12
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
@@ -96,6 +96,42 @@
         "authorization": "perpetual-public-repository-2026",
         "pdf_sha256": "5fdc37cc0e1ca1d78bf30d030412453ff963eef116b3bbfd6ae4b42b166f9d8d"
       }
+    },
+    {
+      "id": "biographies/saint-augustine-of-hippo",
+      "catalog": "library/biographies.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review"
+      ],
+      "approval": null
+    },
+    {
+      "id": "biographies/saint-jerome",
+      "catalog": "library/biographies.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review"
+      ],
+      "approval": null
+    },
+    {
+      "id": "biographies/saint-paul",
+      "catalog": "library/biographies.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review"
+      ],
+      "approval": null
+    },
+    {
+      "id": "biographies/saint-peter",
+      "catalog": "library/biographies.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review"
+      ],
+      "approval": null
     },
     {
       "id": "devotions/novenas/00-ascension-to-pentecost",

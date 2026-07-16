@@ -1,0 +1,46 @@
+% Shared, non-publishable typesetting primitives for the biography collection.
+% Content and evidentiary judgments remain in each subject's independent leaf.
+
+\usepackage{ragged2e}
+\usepackage{titlesec}
+
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2em}
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\newcommand{\evidenceaxis}[3]{%
+  \begin{studyframe}
+  \textbf{Claim:} #1\par
+  \textbf{Witness:} #2\par
+  \textbf{Limit:} #3
+  \end{studyframe}}
+
+\newenvironment{biotimeline}
+{\footnotesize
+ \begin{longtable}{>{\bfseries\raggedright\arraybackslash}p{0.13\linewidth}
+                   >{\raggedright\arraybackslash}p{0.20\linewidth}
+                   >{\raggedright\arraybackslash}p{0.40\linewidth}
+                   >{\raggedright\arraybackslash}p{0.19\linewidth}}
+\toprule
+\textbf{Date} & \textbf{Place} & \textbf{Event and evidence} & \textbf{Status}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
+
+\newcommand{\biotimelinerow}[4]{#1 & #2 & #3 & #4\\}
+
+\newenvironment{evidencelegend}
+{\small
+ \begin{longtable}{>{\bfseries\raggedright\arraybackslash}p{0.10\linewidth}
+                   >{\raggedright\arraybackslash}p{0.82\linewidth}}
+\toprule
+\textbf{Code} & \textbf{Meaning}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
+
+\newcommand{\evidencelegendrow}[2]{#1 & #2\\}
