@@ -9,7 +9,7 @@ Project licenses cover only project-created material. Quotations, public-domain 
 | Section | Contents |
 | --- | --- |
 | **[Traditional Latin Mass (1962 Roman Rite)](library/traditional-latin-mass.md)** | The Ordinary, Mass assembly, and regularly updated proper expositions. |
-| **[Novus Ordo (Postconciliar Roman Rite)](library/novus-ordo-liturgy.md)** | The Order of Mass and future studies identified by edition, language, territory, and date. |
+| **[Novus Ordo (Postconciliar Roman Rite)](library/novus-ordo-liturgy.md)** | The Order of Mass and proper studies identified by edition, language, territory, cycle, and date. |
 | **[Prayer](library/prayer.md)** | Novenas and condensed daily prayer books. |
 | **[Faith](library/faith.md)** | Doctrine, sacraments, and theological studies. |
 | **[Mariology](library/mariology.md)** | Marian doctrine, prayer, history, and ecclesial judgment. |
