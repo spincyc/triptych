@@ -3,10 +3,10 @@
   "release_id": "public-alpha",
   "provider": "gpt",
   "expected_counts": {
-    "publications": 50,
+    "publications": 51,
     "release": 48,
     "review": 0,
-    "hold": 2
+    "hold": 3
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
@@ -209,6 +209,15 @@
         "authorization": "perpetual-public-repository-2026",
         "pdf_sha256": "e16a9c6e42ca876740c3128bb3813d9b2e44f5710ac9de9913520f4b9455b9d2"
       }
+    },
+    {
+      "id": "history/traditional-priestly-institutes/01-sspx",
+      "catalog": "library/historical-accounts.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass",
