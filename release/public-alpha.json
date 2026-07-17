@@ -3,10 +3,10 @@
   "release_id": "public-alpha",
   "provider": "gpt",
   "expected_counts": {
-    "publications": 49,
+    "publications": 50,
     "release": 48,
     "review": 0,
-    "hold": 1
+    "hold": 2
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
@@ -428,6 +428,15 @@
         "authorization": "perpetual-public-repository-2026",
         "pdf_sha256": "3aee48c3bef7552fd93c4297a78d1a3a192104fe3746dc551c0cb2966a674cd9"
       }
+    },
+    {
+      "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar",
+      "catalog": "library/novus-ordo-liturgy.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review"
+      ],
+      "approval": null
     },
     {
       "id": "theology/mariology/apparitions",

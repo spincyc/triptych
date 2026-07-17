@@ -1,0 +1,61 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+
+\hypersetup{
+  pdftitle={The Postconciliar Roman Liturgical Calendar},
+  pdfsubject={History, normative temporal cycle, General Roman Calendar, and United States proper through 17 July 2026}
+}
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{3em}
+\titleformat{\section}{\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.55em}{}
+
+\newcommand{\calrank}[1]{\textsc{#1}}
+\newcommand{\calnote}[1]{\textit{#1}}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.10\textheight}
+{\Huge\bfseries The Postconciliar Roman Liturgical Calendar\par}
+\vspace{0.6em}
+{\Large\itshape Its Construction, Reform, and Complete Recurring Inventory\par}
+\vspace{0.7em}
+{\large 2002 third typical edition, later universal amendments, and the United States proper\par}
+\vspace{0.35em}
+{\normalsize Normative cutoff: 17 July 2026\par}
+\vfill
+\begin{minipage}{0.86\textwidth}
+\footnotesize
+\textbf{AI generation metadata}\par\smallskip
+\input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/generation-metadata}
+\end{minipage}
+\vfill
+{\small A source-audited study instrument, not an official calendar, liturgical book, computed civil-year Ordo, or substitute for the competent diocesan Ordo. Local patronal, titular, dedication, diocesan, and religious calendars can alter an actual day.\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/00-scope}
+\input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/10-history}
+\input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/20-timeline}
+\input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/30-system}
+\input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/40-temporale}
+\input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/50-general-calendar}
+\input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/60-us-calendar}
+\input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/70-use}
+\input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/90-references}
+\end{deepstudy}
+\end{document}
