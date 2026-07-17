@@ -45,7 +45,7 @@ The official *Catechism of the Catholic Church* 1803--1845 supplies the present 
 - **Aristotelian philosophical account:** a natural teleology of rational flourishing, habituated choice, passions, action, and contemplation. It is received critically rather than baptized without qualification.
 - **Augustinian theological synthesis:** virtue as ordered love under the supreme good, with the cardinal virtues gathered into love of God and Christian life governed by faith, hope, and charity.
 - **Thomistic synthesis:** a systematic account of habit, powers, acquired and infused orders, theological and cardinal architecture, annexed virtues, gifts, and opposed vices.
-- **Editorial synthesis:** English dossier definitions, cross-source ordering, relation codes, and any marked descriptors for an unnamed extreme. These are not attributed to the sources as quotations or as their own fixed nomenclature.
+- **Editorial synthesis:** English dossier definitions, cross-source ordering, relation classifications, and any marked descriptors for an unnamed extreme or undedicated comparison. These are not attributed to the sources as quotations or as their own fixed nomenclature.
 
 ## Sorting algorithm
 
@@ -62,16 +62,21 @@ This is an order of exposition. It is not a single descending rank. Logical orde
 
 ## Defect and excess method
 
-The appendix states relations in words and distinguishes six conditions that must not be collapsed:
+The appendix uses the shortest source-faithful headword that still carries the
+idea; qualifiers remain only when removing them would change the formal
+object, and a semicolon remains when distinct source disorders cannot be
+collapsed. Relational precision belongs in the outer prose column. That prose
+distinguishes seven conditions that must not be collapsed:
 
 - **mean flank:** a deficient or excessive response in a moral domain;
 - **named contrary:** a real opposed vice that need not be one half of a quantitative pair;
 - **objective outcome:** loss, gain, shortfall, or surplus in justice's equality, not a vice in the party receiving the outcome;
 - **counterfeit or corruption:** a state resembling the virtue while changing its object, end, or rule;
-- **unnamed or undedicated:** a source-recognized but unnamed flank, or a broad field with no single dedicated vice; and
-- **not applicable:** no intrinsic defect--excess comparison governs that side.
+- **Unnamed:** the source recognizes a departure on that side but supplies no proper noun;
+- **Unpaired:** no dedicated opposite is proper to that side of the row, although an inherited failure, descriptive warning, or counterfeit may still be relevant; and
+- **Inapplicable:** the proposed axis itself does not govern that side.
 
-Named historical terms control even when their English forms are privative. Thus *imprudence*, *disobedience*, *ingratitude*, and *irreligion* are not suppressed to achieve artificial lexical independence. The prohibition remains against “too little” or “too much” plus a virtue name. Source accuracy also overrides global word uniqueness: the same term can stand in different formal relations, and source alternatives can appear together when one English selection would create a false taxonomy. The table uses no unexplained dash. Aristotle's unnamed mean concerning ordinary honor remains visibly unnamed, with the source-language extreme terms retained and their ambiguity explained.
+Named historical terms control even when their English forms are privative. Thus *imprudence*, *disobedience*, *ingratitude*, and *irreligion* are not suppressed to achieve artificial lexical independence. The prohibition remains against “too little” or “too much” plus a virtue name. Source accuracy also overrides global word uniqueness: the same term can stand in different formal relations, and source alternatives can appear together when one English selection would create a false taxonomy. The table uses no unexplained dash. Its **Unnamed**, **Unpaired**, and **Inapplicable** cells are positive classifications, not missing data. Aristotle's unnamed mean concerning ordinary honor remains visibly unnamed, with the source-language extreme terms retained and their ambiguity explained.
 
 ## Included distinctions and excluded expansions
 
