@@ -1,6 +1,6 @@
 # PC-S59-A — Research Scope
 
-**Last updated:** 2026-07-15
+**Last updated:** 2026-07-16
 **Jurisdiction and as-of date:** dioceses of the United States of America; calendar, rubrics, and editions checked through 2026-07-15
 
 This audit records the scholarship behind the Year A guide to the Most Holy Body and Blood of Christ on its U.S.-transferred Sunday, 2026-06-07. Formula identity and occurrence resolution remain in the [instance manifest](../instance/manifest.md); the ordered target composition remains in the [leaf audit](../propers/verified.md); reusable Missal evidence remains in the [canonical formulary-owner audit](../../shared/formularies/pc-s59-most-holy-body-and-blood-of-christ/propers/verified.md). Verified appointment, historical judgment, documented reception, source-grounded synthesis, and original proposal remain distinct.
@@ -100,6 +100,8 @@ The controls exclude both “mere symbol” reduction and crude materialism. Euc
 - **Allegorical:** manna, rock, and wheat are received as types; Christ is the living bread; the sacramental signs contain what they signify by Christ's institution.
 - **Moral:** remember dependence, flee idolatry, discern and receive worthily, forgive and live peace, become one body, serve the poor.
 - **Anagogical:** eternal life, resurrection on the last day, heavenly banquet, and the present sacrament as pledge of glory.
+
+The reconstructed reader-facing architecture places this four-sense synthesis directly beneath the page-one textual inventory. The canonical-order historical table follows as `In Illo Tempore\ldots`; the next two pages divide one source-grounded `The Propers: Themes and Movement` treatment between the liturgical movement and a continued theological-spiritual synthesis with a four-dimension evidence matrix that preserves the unresolved response, sequence, Preface, and concluding branches. `The Propers: Detailed Commentary` then begins on a fresh page and remains unbounded. On 2026-07-16 the reconstructed guide was built for two passes, its log and prescribed page boundaries were checked, and every rendered page was visually inspected.
 
 ## Bounded interpretive possibilities
 

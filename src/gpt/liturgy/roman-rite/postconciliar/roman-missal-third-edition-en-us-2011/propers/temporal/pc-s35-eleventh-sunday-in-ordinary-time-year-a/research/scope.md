@@ -2,7 +2,7 @@
 
 **Formula:** `PC-S35-A`
 **Occurrence:** 2026-06-14
-**Last updated:** 2026-07-15
+**Last updated:** 2026-07-16
 
 This record preserves the evidence roles and limits compressed in the guide. Formula identity is controlled by [the instance manifest](../instance/manifest.md), element boundaries by [the leaf audit](../propers/verified.md), and reusable Missal evidence by [the Week XI owner](../../shared/ordinary-time/weeks/11/propers/verified.md).
 
@@ -48,6 +48,12 @@ No direct patristic exposition of the complete Week XI formulary was found or cl
 | Romans proclaims reconciliation of enemies | Semi-continuous and direct reception | It remains an independent Pauline strand and is not forced into the Twelve’s commission. |
 | Mission begins in Christ’s compassion and gift | Direct Gospel exegesis | Ministers remain accountable; “without cost” rejects ownership of grace, not lawful support for ministry. |
 | Communion’s unity can be heard as missionary integrity | Source-grounded synthesis | John 17 is an unselected Communion branch and the orations are shared across A/B/C. |
+
+## Four-sense and two-page synthesis architecture
+
+The page-one four-sense table and the two-page `The Propers: Themes and Movement` section are source-grounded editorial compressions of the texts, relationship classes, reception, and detailed commentary audited above. Literal, allegorical, moral, and anagogical summaries introduce no independent evidence: they preserve Israel’s historical covenant setting, locate ecclesial and sacramental fulfillment in Christ, state the conversion asked by the texts, and name the guide’s final horizon of salvation and communion.
+
+The first synthesis page retains the established liturgical movement; the second retains the theological and spiritual synthesis and adds a four-dimension matrix keyed to appointed anchors. Neither form claims one historical compositional plan. Romans remains semi-continuous, the Week XI orations remain common across A/B/C, and John 17 remains an unselected Communion branch. On 2026-07-16 the reconstructed guide was built for two passes, its log and prescribed page boundaries were checked, and every rendered page was visually inspected.
 
 ## Branch, pastoral, and weekday limits
 

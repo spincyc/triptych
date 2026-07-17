@@ -59,6 +59,12 @@ No repository-audited direct patristic exposition of Zechariah 9:9–10 or Matth
 - The following Week XIV ferias use weekday Cycle II in 2026. Any use of Week XIV orations is permitted selection, not automatic spillover of the Sunday formula.
 - The guide does not confuse meekness with passivity in the face of abuse, injustice, illness, or duties of care. Christ’s yoke orders agency under charity; it does not forbid protection or proportionate action.
 
+## Four-sense and two-page synthesis architecture
+
+The page-one four-sense table is source-grounded editorial compression of the passages, relationship classifications, claim controls, and detailed commentary already audited above. Its literal row preserves Zechariah, Matthew, and Romans in their distinct literary settings; its allegorical row follows the official humble-king correlation and the guide's established Christological and sacramental reading; its moral and anagogical rows condense the documented calls to receptive obedience, Spirit-enabled mortification, resurrection, universal peace, and final praise. The table does not assign one compositional plan to the Week XIV orations, turn the semi-continuous Romans reading into an officially correlated strand, or treat an unresolved Communion alternative as enacted.
+
+`The Propers: Themes and Movement` now occupies two source-grounded synthesis stages: the first retains the four-stage liturgical movement and relationship-titled units, while the continued section retains the theological and spiritual prose and adds a four-dimension matrix derived from the same audited commentary. The matrix introduces no new authority or quotation; detailed exegesis and qualifications remain in `The Propers: Detailed Commentary`. On 2026-07-16 the reconstructed guide was built for two passes, its log and prescribed page boundaries were checked, and every rendered page was visually inspected.
+
 ## Rights and review
 
 The reader document gives citations, boundaries, short incipits, and original paraphrase rather than full U.S. Lectionary or ICEL texts. Scripture, Missal, Lectionary, and official translations retain their separate rights status and are excluded from the project’s CC BY grant. No scan, bulk transcription, or private altar-book extract is tracked.
