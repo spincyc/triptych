@@ -1,3 +1,49 @@
+override CODEX_LIFECYCLE_GOALS := integrate resolve continue abort final-diff
+
+# These targets are convenience wrappers for exact run IDs emitted by the
+# launcher. GNU Make processes options and command-line variable assignments
+# before reading this file, so never forward arbitrary data here; use
+# scripts/triptych-codex directly when the value is external or untrusted. Once
+# Make has parsed a value as the second goal, validate it without a parse-time
+# shell command. Ordinary command-line variable assignments cannot replace
+# these override functions.
+override codex_make_strip_decimal = $(subst 9,,$(subst 8,,$(subst 7,,$(subst 6,,$(subst 5,,$(subst 4,,$(subst 3,,$(subst 2,,$(subst 1,,$(subst 0,,$(1)))))))))))
+override codex_make_strip_hex = $(subst f,,$(subst e,,$(subst d,,$(subst c,,$(subst b,,$(subst a,,$(call codex_make_strip_decimal,$(1))))))))
+override codex_make_hex_to_words = $(subst f,x ,$(subst e,x ,$(subst d,x ,$(subst c,x ,$(subst b,x ,$(subst a,x ,$(subst 9,x ,$(subst 8,x ,$(subst 7,x ,$(subst 6,x ,$(subst 5,x ,$(subst 4,x ,$(subst 3,x ,$(subst 2,x ,$(subst 1,x ,$(subst 0,x ,$(1)))))))))))))))))
+override codex_make_character_count = $(words $(call codex_make_hex_to_words,$(1)))
+
+# Opaque lifecycle commands present the run ID as a second Make goal. Limit the
+# fallback rule to those invocations so ordinary unknown targets still fail.
+ifneq ($(origin MAKECMDGOALS),default)
+$(error MAKECMDGOALS may not be overridden)
+endif
+ifneq ($(filter $(CODEX_LIFECYCLE_GOALS),$(MAKECMDGOALS)),)
+ifneq ($(firstword $(MAKECMDGOALS)),$(firstword $(filter $(CODEX_LIFECYCLE_GOALS),$(MAKECMDGOALS))))
+$(error Usage: make $(firstword $(filter $(CODEX_LIFECYCLE_GOALS),$(MAKECMDGOALS))) <run-id>)
+endif
+ifneq ($(words $(MAKECMDGOALS)),2)
+$(error Usage: make $(firstword $(MAKECMDGOALS)) <run-id>)
+endif
+override CODEX_MAKE_RUN_ID := $(word 2,$(MAKECMDGOALS))
+override CODEX_MAKE_RUN_ID_DATE := $(word 1,$(subst t, ,$(CODEX_MAKE_RUN_ID)))
+override CODEX_MAKE_RUN_ID_AFTER_T := $(word 2,$(subst t, ,$(CODEX_MAKE_RUN_ID)))
+override CODEX_MAKE_RUN_ID_TIME := $(word 1,$(subst z, ,$(CODEX_MAKE_RUN_ID_AFTER_T)))
+override CODEX_MAKE_RUN_ID_AFTER_Z := $(word 2,$(subst z, ,$(CODEX_MAKE_RUN_ID_AFTER_T)))
+override CODEX_MAKE_RUN_ID_HEX := $(patsubst -%,%,$(CODEX_MAKE_RUN_ID_AFTER_Z))
+override CODEX_MAKE_RUN_ID_RECONSTRUCTED := $(CODEX_MAKE_RUN_ID_DATE)t$(CODEX_MAKE_RUN_ID_TIME)z-$(CODEX_MAKE_RUN_ID_HEX)
+override CODEX_MAKE_RUN_ID_INVALID := $(strip \
+	$(call codex_make_strip_decimal,$(CODEX_MAKE_RUN_ID_DATE)) \
+	$(if $(filter 8,$(call codex_make_character_count,$(CODEX_MAKE_RUN_ID_DATE))),,date-length) \
+	$(call codex_make_strip_decimal,$(CODEX_MAKE_RUN_ID_TIME)) \
+	$(if $(filter 6,$(call codex_make_character_count,$(CODEX_MAKE_RUN_ID_TIME))),,time-length) \
+	$(call codex_make_strip_hex,$(CODEX_MAKE_RUN_ID_HEX)) \
+	$(if $(filter 12,$(call codex_make_character_count,$(CODEX_MAKE_RUN_ID_HEX))),,hex-length) \
+	$(subst $(CODEX_MAKE_RUN_ID_RECONSTRUCTED),,$(CODEX_MAKE_RUN_ID)))
+$(if $(CODEX_MAKE_RUN_ID_INVALID),$(error invalid Triptych Codex run ID))
+.DEFAULT:
+	@:
+endif
+
 PDFLATEX ?= pdflatex
 PYTHON ?= python3
 PROVIDER ?= gpt
@@ -13,14 +59,6 @@ DOC_PDFS := $(addprefix $(DOC_ROOT)/,$(addsuffix .pdf,$(DOCUMENTS)))
 METADATA_CHECKER := scripts/check-generation-metadata
 PUBLIC_ALPHA_TOOL := scripts/public-alpha
 CODEX_LAUNCHER := scripts/triptych-codex
-INTEGRATE_RUN_ID := $(word 2,$(MAKECMDGOALS))
-
-# These lifecycle commands present the run ID as a second Make goal. Limit the
-# fallback rule to those invocations so ordinary unknown targets still fail.
-ifneq ($(filter $(firstword $(MAKECMDGOALS)),integrate resolve continue abort),)
-.DEFAULT:
-	@:
-endif
 
 COMMON_SOURCES := $(shell find $(SOURCE_ROOT)/common -type f | sort)
 SACRAMENT_ROOT := $(SOURCE_ROOT)/theology/sacraments
@@ -48,7 +86,7 @@ CARMEL_NOVENA_PRAYERS := $(wildcard $(CARMEL_NOVENA_ROOT)/prayers/*.tex)
 
 .PHONY: all pdf install list help clean distclean check-tools check-metadata \
 	check-public-alpha check-agent-isolation codex public-site public-preview \
-	verify-public-site verify-public-preview integrate resolve continue abort
+	verify-public-site verify-public-preview integrate resolve continue abort final-diff
 .DELETE_ON_ERROR:
 
 all: pdf
@@ -70,41 +108,43 @@ list:
 codex:
 	@$(CODEX_LAUNCHER)
 
-integrate: export TRIPTYCH_MAKE_FIRST_GOAL := $(firstword $(MAKECMDGOALS))
-integrate: export TRIPTYCH_MAKE_INTEGRATE_RUN_ID := $(INTEGRATE_RUN_ID)
+integrate resolve continue abort final-diff: private override export TRIPTYCH_MAKE_FIRST_GOAL := $(firstword $(MAKECMDGOALS))
+integrate resolve continue abort final-diff: private override export TRIPTYCH_MAKE_RUN_ID := $(word 2,$(MAKECMDGOALS))
+integrate resolve continue abort final-diff: private override CODEX_LAUNCHER := scripts/triptych-codex
 integrate:
-	@if [ "$$TRIPTYCH_MAKE_FIRST_GOAL" != integrate ] || [ "$(words $(MAKECMDGOALS))" -ne 2 ]; then \
+	@if [ "$$TRIPTYCH_MAKE_FIRST_GOAL" != integrate ]; then \
 		printf '%s\n' 'Usage: make integrate <run-id>' >&2; \
 		exit 2; \
 	fi
-	@$(CODEX_LAUNCHER) --triptych-integrate "$$TRIPTYCH_MAKE_INTEGRATE_RUN_ID"
+	@$(CODEX_LAUNCHER) --triptych-integrate "$$TRIPTYCH_MAKE_RUN_ID"
 
-resolve: export TRIPTYCH_MAKE_FIRST_GOAL := $(firstword $(MAKECMDGOALS))
-resolve: export TRIPTYCH_MAKE_RESOLVE_RUN_ID := $(INTEGRATE_RUN_ID)
 resolve:
-	@if [ "$$TRIPTYCH_MAKE_FIRST_GOAL" != resolve ] || [ "$(words $(MAKECMDGOALS))" -ne 2 ]; then \
+	@if [ "$$TRIPTYCH_MAKE_FIRST_GOAL" != resolve ]; then \
 		printf '%s\n' 'Usage: make resolve <run-id>' >&2; \
 		exit 2; \
 	fi
-	@$(CODEX_LAUNCHER) --triptych-resolve "$$TRIPTYCH_MAKE_RESOLVE_RUN_ID"
+	@$(CODEX_LAUNCHER) --triptych-resolve "$$TRIPTYCH_MAKE_RUN_ID"
 
-continue: export TRIPTYCH_MAKE_FIRST_GOAL := $(firstword $(MAKECMDGOALS))
-continue: export TRIPTYCH_MAKE_CONTINUE_RUN_ID := $(INTEGRATE_RUN_ID)
 continue:
-	@if [ "$$TRIPTYCH_MAKE_FIRST_GOAL" != continue ] || [ "$(words $(MAKECMDGOALS))" -ne 2 ]; then \
+	@if [ "$$TRIPTYCH_MAKE_FIRST_GOAL" != continue ]; then \
 		printf '%s\n' 'Usage: make continue <run-id>' >&2; \
 		exit 2; \
 	fi
-	@$(CODEX_LAUNCHER) --triptych-continue "$$TRIPTYCH_MAKE_CONTINUE_RUN_ID"
+	@$(CODEX_LAUNCHER) --triptych-continue "$$TRIPTYCH_MAKE_RUN_ID"
 
-abort: export TRIPTYCH_MAKE_FIRST_GOAL := $(firstword $(MAKECMDGOALS))
-abort: export TRIPTYCH_MAKE_ABORT_RUN_ID := $(INTEGRATE_RUN_ID)
 abort:
-	@if [ "$$TRIPTYCH_MAKE_FIRST_GOAL" != abort ] || [ "$(words $(MAKECMDGOALS))" -ne 2 ]; then \
+	@if [ "$$TRIPTYCH_MAKE_FIRST_GOAL" != abort ]; then \
 		printf '%s\n' 'Usage: make abort <run-id>' >&2; \
 		exit 2; \
 	fi
-	@$(CODEX_LAUNCHER) --triptych-abort "$$TRIPTYCH_MAKE_ABORT_RUN_ID"
+	@$(CODEX_LAUNCHER) --triptych-abort "$$TRIPTYCH_MAKE_RUN_ID"
+
+final-diff:
+	@if [ "$$TRIPTYCH_MAKE_FIRST_GOAL" != final-diff ]; then \
+		printf '%s\n' 'Usage: make final-diff <run-id>' >&2; \
+		exit 2; \
+	fi
+	@$(CODEX_LAUNCHER) --triptych-final-diff "$$TRIPTYCH_MAKE_RUN_ID"
 
 check-agent-isolation:
 	@$(PYTHON) -m unittest discover -s scripts/tests -p 'test_triptych_codex.py' -v
@@ -115,10 +155,12 @@ help:
 		'make install  Publish built PDFs into the mirrored tracked doc/ tree' \
 		'make list     List discovered document IDs' \
 		'make codex    Start Codex in an automatically isolated task checkout' \
-		'make integrate <run-id>  Rebase if needed, fast-forward, and clean an approved run' \
-		'make resolve <run-id>  Open the fixed stage-only resolver for a retained conflict' \
-		'make continue <run-id>  Continue a retained integration rebase' \
-		'make abort <run-id>  Abort a retained integration rebase' \
+		'make integrate <run-id>  Integrate a clean run or land an unchanged review-pending candidate' \
+		'make resolve <run-id>  Open Codex to resolve and stage a managed rebase conflict' \
+		'make continue <run-id>  Continue staged resolutions to a review-pending candidate' \
+		'make abort <run-id>  Abort a managed rebase and restore its exact audited source' \
+		'make final-diff <run-id>  Show the complete review-pending diff without a worktree path' \
+		'Lifecycle Make wrappers require a launcher-produced ID; use scripts/triptych-codex directly for external input' \
 		'make check-agent-isolation  Test the transparent Codex launcher' \
 		'make check-metadata  Validate structured and inherited AI provenance' \
 		'make check-public-alpha  Validate the exhaustive public-release policy' \
