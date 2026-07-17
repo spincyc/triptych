@@ -3,10 +3,10 @@
   "release_id": "public-alpha",
   "provider": "gpt",
   "expected_counts": {
-    "publications": 46,
+    "publications": 47,
     "release": 46,
     "review": 0,
-    "hold": 0
+    "hold": 1
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
@@ -99,6 +99,15 @@
         "authorization": "perpetual-public-repository-2026",
         "pdf_sha256": "28a261c3950dc7f5af6c73e5fe98dc2f08d74e463e6d425c5bbfde0159c253d5"
       }
+    },
+    {
+      "id": "articles/canon-law/natural-positive-divine-human-law",
+      "catalog": "library/law-and-church-discipline.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review"
+      ],
+      "approval": null
     },
     {
       "id": "biographies/saint-augustine-of-hippo",
