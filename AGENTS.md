@@ -21,6 +21,7 @@ Select profiles by the document's actual genre and sources, not by superficial s
 
 - 1962 Roman Rite temporal, ritual, votive, or other proper guides: `guidance/liturgy/roman-1962-propers.md`
 - edition-specific references for assembling the Ordinary and propers under the 1962 calendar and rubrics: `guidance/liturgy/roman-1962-assembly.md`
+- edition-specific histories and complete normative inventories of Roman calendars: `guidance/liturgy/roman-calendar-references.md`, plus the profile for the identified edition where its rules are used
 - postconciliar Roman Rite proper guides: `guidance/liturgy/postconciliar-propers.md`
 - expositions of the Ordinary or Order of Mass in either form: `guidance/liturgy/ordinary-expositions.md`
 - the sacramental treatise, at-a-glance companion, or their shared fragments: `guidance/theology/sacramental-reference.md`

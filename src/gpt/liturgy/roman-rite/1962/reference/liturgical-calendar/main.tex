@@ -1,0 +1,82 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+
+\hypersetup{
+  pdftitle={The Liturgical Calendar of the 1962 Roman Missal},
+  pdfsubject={Construction, historical revisions, universal calendar, and a source-qualified United States overlay}
+}
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{3em}
+\titleformat{\section}{\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.55em}{}
+
+\newenvironment{calendarlist}{%
+  \begingroup
+  \small
+  \setlength{\LTpre}{0.35em}
+  \setlength{\LTpost}{0.8em}
+  \setlength{\tabcolsep}{0.35em}
+  \begin{longtable}{@{}>{\RaggedRight\arraybackslash}p{0.13\linewidth}>{\RaggedRight\arraybackslash}p{0.70\linewidth}>{\RaggedRight\arraybackslash}p{0.10\linewidth}@{}}
+  \toprule
+  \textbf{Date} & \textbf{Celebration or observance} & \textbf{Class}\\
+  \midrule
+  \endfirsthead
+  \toprule
+  \textbf{Date} & \textbf{Celebration or observance} & \textbf{Class}\\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+}{%
+  \end{longtable}
+  \endgroup
+}
+\newcommand{\calmonth}[1]{\addlinespace[0.7em]\multicolumn{3}{@{}l}{\textbf{#1}}\\*}
+\newcommand{\calentry}[3]{#1 & #2 & #3\\}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.12\textheight}
+{\Huge\bfseries The Liturgical Calendar\par}
+\vspace{0.5em}
+{\Large\itshape The 1962 Roman Missal\par}
+\vspace{0.5em}
+{\large Its construction, revision, universal cycle, and United States layer\par}
+\vfill
+\begin{minipage}{0.86\textwidth}
+\footnotesize
+\textbf{AI generation metadata}\par\smallskip
+\input{liturgy/roman-rite/1962/reference/liturgical-calendar/generation-metadata}
+\end{minipage}
+\vfill
+{\small A source-audited historical and calendrical reference. It is not an official liturgical book, a substitute for a competent local Ordo, or a statement of present canonical authorization to celebrate with the 1962 Missal.\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{liturgy/roman-rite/1962/reference/liturgical-calendar/sections/00-scope-method}
+\input{liturgy/roman-rite/1962/reference/liturgical-calendar/sections/10-construction-history}
+\input{liturgy/roman-rite/1962/reference/liturgical-calendar/sections/20-substantive-timeline}
+\input{liturgy/roman-rite/1962/reference/liturgical-calendar/sections/30-how-calendar-works}
+\input{liturgy/roman-rite/1962/reference/liturgical-calendar/sections/40-temporale}
+\input{liturgy/roman-rite/1962/reference/liturgical-calendar/sections/50-sanctorale-jan-jun}
+\input{liturgy/roman-rite/1962/reference/liturgical-calendar/sections/60-sanctorale-jul-dec}
+\input{liturgy/roman-rite/1962/reference/liturgical-calendar/sections/70-united-states}
+\input{liturgy/roman-rite/1962/reference/liturgical-calendar/sections/80-cum-sanctissima}
+\input{liturgy/roman-rite/1962/reference/liturgical-calendar/sections/90-use-boundaries}
+\input{liturgy/roman-rite/1962/reference/liturgical-calendar/sections/99-references}
+\end{deepstudy}
+\end{document}
