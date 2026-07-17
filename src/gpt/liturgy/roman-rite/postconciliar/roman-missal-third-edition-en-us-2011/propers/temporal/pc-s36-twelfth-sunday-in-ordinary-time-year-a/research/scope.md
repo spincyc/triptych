@@ -2,7 +2,7 @@
 
 **Formula:** `PC-S36-A`
 **Occurrence:** 2026-06-21
-**Last updated:** 2026-07-15
+**Last updated:** 2026-07-16
 
 Formula identity is controlled by [the instance manifest](../instance/manifest.md), element boundaries by [the leaf audit](../propers/verified.md), and reusable Missal evidence by [the Week XII owner](../../shared/ordinary-time/weeks/12/propers/verified.md).
 
@@ -48,6 +48,12 @@ No direct patristic commentary on the complete Week XII formulary is claimed. No
 | God’s knowledge of sparrows grounds courage | Gospel exegesis and direct reception | Providence does not mean God positively causes abuse, persecution, or every creaturely fall. |
 | Christ’s gift exceeds Adam’s trespass | Semi-continuous exegesis and direct reception | Romans remains an independent strand; grace is not measured as a mere reversal of equal quantities. |
 | Shepherd imagery can frame God’s care | Textual observation / synthesis | John 10 is an unselected Communion branch, not an enacted text in every Mass. |
+
+## Four-sense and two-page synthesis architecture
+
+The page-one four-sense table and the two-page `The Propers: Themes and Movement` section compress only the audited texts, relationship classes, reception, and detailed commentary. The four senses retain the passages’ historical claims, receive Christological and ecclesial fulfillment through documented canonical and doctrinal controls, state the demanded moral fidelity, and name disclosure and redemption as the final horizon; they introduce no new witness or historical-design claim.
+
+The first synthesis page preserves the established liturgical movement, while the second preserves the theological and spiritual synthesis and adds a four-dimension matrix keyed to appointed anchors. Jeremiah and Matthew remain officially correlated, Romans remains semi-continuous, and John 10 remains an unselected Communion branch; the shared Week XII orations do not establish one Year A compositional plan. On 2026-07-16 the reconstructed guide was built for two passes, its log and prescribed page boundaries were checked, and every rendered page was visually inspected.
 
 ## Branch, pastoral, and weekday limits
 

@@ -61,6 +61,12 @@ No repository-audited direct patristic commentary on Isaiah 55:10–11 or Matthe
 - Week XV ferias use independent weekday Cycle II in 2026. Ferial selection of Week XV orations is possible but not automatic Sunday spillover.
 - The soil imagery must not be used to assign fixed spiritual castes, blame trauma or disability for weak response, or declare living persons irredeemably barren. Matthew describes real obstacles and fruit while the Gospel call itself seeks conversion.
 
+## Four-sense and two-page synthesis architecture
+
+The page-one four-sense table is source-grounded editorial compression of the audited scriptural contexts, branch facts, relationship classifications, claim controls, and detailed commentary. Its literal row preserves Isaiah's effective-word image, Psalm 65's watered earth, Romans' groaning creation, and the materially different long and short Gospel paths; its allegorical row uses the appointed acclamation's identification of Christ as sower and the established sacramental horizon; its moral and anagogical rows condense the documented calls to rooted hearing, creation's liberation, bodily redemption, and final communion. It does not invent a citation for the composed acclamation, make Romans part of the officially correlated strand, or imply that an unresolved Communion branch was enacted.
+
+`The Propers: Themes and Movement` now uses two source-grounded synthesis stages: the first retains the four-stage movement and relationship-titled units, while the continued section retains the theological and spiritual prose and adds a four-dimension matrix distilled from the same audited commentary. The matrix adds no new source or quotation, and all branch-specific evidence and qualifications retain their fullest treatment in `The Propers: Detailed Commentary`. On 2026-07-16 the reconstructed guide was built for two passes, its log and prescribed page boundaries were checked, and every rendered page was visually inspected.
+
 ## Rights and review
 
 The reader document gives citations, boundaries, a short acclamation incipit, and original paraphrase rather than full protected U.S. Lectionary or ICEL texts. Scripture, Missal, Lectionary, Psalm response, and official translations retain separate rights and are excluded from the project’s CC BY grant. No scan, bulk transcription, or private altar-book extract is tracked.

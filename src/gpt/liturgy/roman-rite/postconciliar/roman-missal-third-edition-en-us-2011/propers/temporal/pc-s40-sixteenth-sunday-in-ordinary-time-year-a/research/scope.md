@@ -57,6 +57,12 @@ No repository-audited patristic source was found that directly expounds the exac
 - The weeds parable does not forbid safeguarding, reporting abuse, removing dangerous persons from access, proportionate ecclesial discipline, medical treatment, or resisting injustice. It forbids servants from assuming the Master’s final, infallible judgment and destroying wheat through premature zeal; the competent application of discipline requires other governing texts and law.
 - “Children of the evil one” is a role within Jesus’ explanation, not authorization to declare named living persons ontologically evil, beyond repentance, or fit for mistreatment.
 
+## Four-sense and two-page synthesis architecture
+
+The page-one four-sense table is source-grounded editorial compression of the audited scriptural contexts, branch facts, relationship classifications, Providence controls, and detailed commentary. Its literal row keeps Wisdom, Romans, and the long and short Gospel paths distinct; its allegorical row follows Matthew's long-form explanation, the established pneumatological claim, and the one-sacrifice language of the offering prayer; its moral and anagogical rows condense patient discernment, repentance, harvest, and judgment. It does not make the semi-continuous Romans reading an explanation of the weeds, import the long form's named imagery into the short proclamation, or claim an unresolved Communion alternative as enacted.
+
+`The Propers: Themes and Movement` now uses two source-grounded synthesis stages: the first retains the four-stage movement and relationship-titled units, while the continued section retains the theological and spiritual prose and adds a four-dimension matrix derived from the same audited commentary. The matrix supplies no new direct patristic witness or quotation; the recorded absence of a direct Father for the exact appointed boundaries remains a material limitation, and detailed qualifications remain in `The Propers: Detailed Commentary`. On 2026-07-16 the reconstructed guide was built for two passes, its log and prescribed page boundaries were checked, and every rendered page was visually inspected.
+
 ## Rights and review
 
 The reader document gives citations, boundaries, short incipits, and original paraphrase rather than full protected U.S. Lectionary or ICEL texts. Scripture, Missal, Lectionary, Psalm response, and official translations retain separate rights and are excluded from the project’s CC BY grant. No scan, bulk transcription, or private altar-book extract is tracked.

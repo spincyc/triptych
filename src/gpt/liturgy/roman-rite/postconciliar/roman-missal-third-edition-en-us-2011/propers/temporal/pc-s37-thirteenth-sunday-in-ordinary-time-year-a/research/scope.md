@@ -2,7 +2,7 @@
 
 **Formula:** `PC-S37-A`
 **Occurrence:** 2026-06-28
-**Last updated:** 2026-07-15
+**Last updated:** 2026-07-16
 
 Formula identity is controlled by [the instance manifest](../instance/manifest.md), element boundaries by [the leaf audit](../propers/verified.md), and reusable Missal evidence by [the Week XIII owner](../../shared/ordinary-time/weeks/13/propers/verified.md).
 
@@ -49,6 +49,12 @@ No direct patristic exposition of 2 Kings 4:8–16a was retained. The Elisha–M
 | Taking the cross can illuminate baptismal dying | Source-grounded synthesis | The Lectionary does not state that Romans 6 was selected to interpret Matthew 10. |
 | Small hospitality receives Christ’s messenger | Gospel exegesis and direct reception | It does not sanctify manipulation, enable abuse, or suspend safeguarding and prudence. |
 | Communion’s life and charity can complete a baptismal reading | Source-grounded synthesis | The oration is shared across A/B/C and the exact English remains awaiting altar-book collation. |
+
+## Four-sense and two-page synthesis architecture
+
+The page-one four-sense table and the two-page `The Propers: Themes and Movement` section are editorial compressions derived from the audited texts, relationship classes, reception, and detailed commentary. Their literal, allegorical, moral, and anagogical statements preserve the Shunammite narrative and Gospel demands, receive their Christological and sacramental dimensions through the canonical rule of faith, state the bounded practices of allegiance and hospitality, and name life with Christ as the final horizon. They supply no independent evidence.
+
+The first synthesis page retains the established liturgical movement; the second retains the theological and spiritual synthesis and adds a four-dimension matrix keyed to appointed anchors. The Elisha–Matthew relation remains official correlation, Romans remains semi-continuous, Communion B remains an unselected branch, and shared Week XIII orations do not prove a Year A compositional design. On 2026-07-16 the reconstructed guide was built for two passes, its log and prescribed page boundaries were checked, and every rendered page was visually inspected.
 
 ## Branch, pastoral, and weekday limits
 

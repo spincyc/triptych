@@ -1,6 +1,7 @@
 % Shared presentation primitives for U.S.-English postconciliar proper expositions.
-% The opening inventory presents textual variable parts only. Source layers,
-% statuses, and exact branch resolution remain in the appendix and tracked audits.
+% The opening inventory presents textual variable parts followed by the compact
+% four-senses synthesis. Source layers, statuses, and exact branch resolution
+% remain in the appendix and tracked audits.
 
 \newcommand{\branchid}[1]{{\ttfamily\hyphenchar\font=45\relax #1}}
 
@@ -38,6 +39,13 @@
   \multicolumn{2}{@{}l}{\textbf{#1}}\\*[-0.08em]}
 
 \newcommand{\variabletextrow}[2]{#1 & #2\\}
+
+\newcommand{\pcsensestitle}{%
+  \vspace{-0.45em}%
+  \begin{center}
+    \small\bfseries The Four Senses of Scripture
+  \end{center}%
+  \vspace{-0.45em}}
 
 \newenvironment{branchstable}
 {\begingroup\footnotesize\renewcommand{\arraystretch}{1.04}%
