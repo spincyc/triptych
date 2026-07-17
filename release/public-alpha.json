@@ -3,10 +3,10 @@
   "release_id": "public-alpha",
   "provider": "gpt",
   "expected_counts": {
-    "publications": 52,
+    "publications": 53,
     "release": 48,
     "review": 0,
-    "hold": 4
+    "hold": 5
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
@@ -221,6 +221,15 @@
     },
     {
       "id": "history/traditional-priestly-institutes/02-fssp",
+      "catalog": "library/historical-accounts.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review"
+      ],
+      "approval": null
+    },
+    {
+      "id": "history/traditional-priestly-institutes/03-icksp",
       "catalog": "library/historical-accounts.md",
       "status": "hold",
       "gates": [
