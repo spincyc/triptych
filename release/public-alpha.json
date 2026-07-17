@@ -4,9 +4,9 @@
   "provider": "gpt",
   "expected_counts": {
     "publications": 48,
-    "release": 46,
+    "release": 48,
     "review": 0,
-    "hold": 2
+    "hold": 0
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
@@ -29,18 +29,18 @@
         "worldwide"
       ],
       "rights_record": "release/rights/public-alpha-2026-07-15.md",
-      "rights_record_sha256": "4e2840541747b71dfc1d2f3b94f69ec4cd9567a05e942eb3979d712fe9f9f7bf",
+      "rights_record_sha256": "bd1fff32148c7a2dbf32de40097428bab1bbfb0d7dab4cedf55ff5008f148059",
       "site_sources": {
         "CONTRIBUTING.md": "57337b95f04f1cd77ccbd187971557f66e5bcdcc1173488ec00fdba8d90475af",
-        "LIBRARY.md": "3e87ec4ab55d002adc4ef1f02df942262ae05ae306d5ac5fbca662b3343b4a00",
+        "LIBRARY.md": "4e8023ad5b7618d2ef41558f9347c5a514710fbef0b8ea3ebca4aefdd928976f",
         "LICENSE": "6830030f2e4ff888ee116bc68e45adcd83f3929d2d82eb4eed3c6a663f665f91",
         "README.md": "2b2cf56dd03c92b4d51634c48a871a47ee537995d86d1089ca12bd834fdd9dbc",
         "THIRD_PARTY.md": "4fbe063955aaa479f7376abb52b2db6c2fa9d50d4029ad2662d0af3a415abcf4",
         "library/biographies.md": "8455eb61d52bf44e2529941dcc989d134a13ad5bead8845f64174c68548ef87c",
-        "library/faith.md": "7823ba5e9be6a9f4e521f75143d4a4532241aff956ec7d1330ad1e4254ac2fd9",
+        "library/faith.md": "a61bf6da41b77a91dabb3f9b86b0e6864d47d164e5d773d5752e52bb8240466f",
         "library/heresies.md": "b3dc89596fb3f20e86ac5eb64742ff088811c7f73988b950f55586f9759b728a",
         "library/historical-accounts.md": "c30a48aef3cb669a3eec27b165970f07d38f5b275312e200c3bb0d3d8c1a57e4",
-        "library/law-and-church-discipline.md": "2e13b0580428bd8dd96c0e5fe8d4b12e4a079606ab79a4b0cca1958e5b0c3424",
+        "library/law-and-church-discipline.md": "84f1f63f6efa146b945cae617662bf648adabf3afde473daa3cbe1248382e3f8",
         "library/mariology.md": "77af72919244075d50dc61cda714da1ad11c21cd4652651680e584ef79dfed5c",
         "library/novus-ordo-liturgy.md": "617270a5b8ca35b89adffc74b77b07ca167ec595a272959ced74cf65d429a571",
         "library/prayer.md": "f777041c0c31627bff8147bc2fdd32a27890e0767106ea2186ae153ecbf3d01d",
@@ -103,11 +103,12 @@
     {
       "id": "articles/canon-law/natural-positive-divine-human-law",
       "catalog": "library/law-and-church-discipline.md",
-      "status": "hold",
-      "gates": [
-        "work-specific-rights-review"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "3d419db798fab0bd40012c39a1164271ddcb41cd380297662cb6315b3b1f15ac"
+      }
     },
     {
       "id": "biographies/saint-augustine-of-hippo",
@@ -346,7 +347,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "f1f2d3415212533d201f9971037ceaaabd0e2233aeb46ba8d581fafcfa017bd2"
+        "pdf_sha256": "fbc69270308a989e2dc4f8ae0e8ccc3bcbad7d31e8f946e9e610bb8abb6f99ea"
       }
     },
     {
@@ -356,7 +357,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "d4e1fb65ed49177ad949c95fd2448b9804290289881c16c5e554410fe8d60313"
+        "pdf_sha256": "0bd2f59e8188a3e6a747f067ecaf655b6a4ae598e313d906c2d89150ba88a01a"
       }
     },
     {
@@ -366,7 +367,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "0711d44aca2dbc9f3588ca49f94e9dec50126a88bfe8d3fdb82c84fdaa17bb27"
+        "pdf_sha256": "73431136eac3ee34ac9dde827e2d55cd92fbba96c009513ae6cd97d3a34a8b14"
       }
     },
     {
@@ -376,7 +377,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "eaa18f27f93358b41ec56937ed43cae4c3c4034304ba088d6de7b1a8a6f5a0c7"
+        "pdf_sha256": "e1d41e7824898fb524b4b99bc62b983297f064a2aedcf0e9e4f2e31bc0a9e7b9"
       }
     },
     {
@@ -386,7 +387,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "8dc12f5f2408a6c8c63841bd118651e1ccda9eba97f9c061e4606246a1ca5c5f"
+        "pdf_sha256": "0330791fb7720584a67263d981280e6e01720c22ba3b0bf21f3d12b94029aa99"
       }
     },
     {
@@ -396,7 +397,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "e249961ef1145b067906c68c13bccd19ecce90bdd11dd03067c9baacaab78f88"
+        "pdf_sha256": "0df532ed04b66f148bf57cff7c6d5e0b499e9a28b23b6a024d59c67449558f79"
       }
     },
     {
@@ -406,7 +407,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "5003b8afc2150e813aa2f6644c43a57ff812f4c8b96ea3cc748ffa62dcad403c"
+        "pdf_sha256": "eca2381e6827afb3121ae26bb999a555a66e7d4b793dbb5077fd853ff4e68e5e"
       }
     },
     {
@@ -416,7 +417,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "6bf8f4e39ad3724ec764d8392313f6c6440c682b27da6dc034414371938330f0"
+        "pdf_sha256": "3aee48c3bef7552fd93c4297a78d1a3a192104fe3746dc551c0cb2966a674cd9"
       }
     },
     {
@@ -522,11 +523,12 @@
     {
       "id": "theology/virtues",
       "catalog": "library/faith.md",
-      "status": "hold",
-      "gates": [
-        "work-specific-rights-review"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "da2f2d250683701a0e4563e9b5a00414af2493fb674edba1481d50c252b46aa1"
+      }
     },
     {
       "id": "theology/heresies/heresies-in-catholic-history",

@@ -4,7 +4,7 @@ Choose a section, then choose a title to open its PDF. Each publication has one 
 
 Every PDF is a working study, not an approved Church publication. No current publication records independent specialist review. “Source-audited” means the project has checked and recorded its sources; it does not mean independent theological, canonical, historical, or pastoral review.
 
-The release manifest records 46 exact PDF snapshots for distribution.
+The release manifest records 48 exact PDF snapshots for distribution.
 Exact-snapshot status applies only to the recorded hashes; it does not complete
 an editorial profile, supply independent review, or imply an imprimatur or
 other ecclesiastical approval. The La Salette snapshot directly analyzes and
