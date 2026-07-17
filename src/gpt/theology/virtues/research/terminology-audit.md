@@ -2,9 +2,9 @@
 
 ## Purpose and status
 
-This record controls the terms printed on either side of every entry in the
-virtues reference work. It audits all fifty-two strict entries and the seven
-qualified or cognate states in the terminal appendix. Its order follows the
+This record controls the compact terms printed on either side of every entry
+in the virtues reference work. It audits all fifty-two strict entries and the
+seven qualified or cognate states in the terminal appendix. Its order follows the
 published taxonomy: theological virtues; prudence, justice, fortitude, and
 temperance with their parts; other strict moral virtues not belonging to those
 parts lists; the remaining intellectual virtues; and qualified states outside
@@ -14,7 +14,9 @@ This is a lexical and relational audit, not a claim that every virtue is a
 quantitative Aristotelian mean. The inventory controls what is counted. This
 record controls the source term or deliberately marked editorial rendering,
 the formal relation represented, and the cases in which a side must remain
-unnamed or non-applicable.
+unnamed, unpaired, or inapplicable. The vice cells prefer a single
+source-faithful headword; qualifications needed to prevent a false taxonomy
+remain in the relation prose rather than swelling the headword.
 
 The present audit is a source-grounded editorial synthesis. Source-language
 terms and loci have been checked at the level stated below, but the work has
@@ -25,7 +27,7 @@ reverse a lexical decision without reconstructing the research.
 
 ## Relational vocabulary and editorial rules
 
-The appendix uses six statuses in prose rather than compressing unlike
+The appendix uses seven statuses in prose rather than compressing unlike
 relations into one code:
 
 - **Mean flank**: the source analyzes the virtue, or its act, between opposed
@@ -38,12 +40,13 @@ relations into one code:
 - **Counterfeit or corruption**: a state resembles the virtue while changing
   its object, end, authority, or rational rule. It is not silently converted
   into a quantitative flank.
-- **Unnamed or undedicated**: a failure is recognized, or a nearby term can
-  describe it, but the source supplies no proper vice species uniquely paired
-  with that entry.
-- **Non-applicable**: the proposed defect--excess comparison does not
-  intrinsically govern the virtue. This is stronger than saying that a name
-  has not yet been found.
+- **Unnamed**: the source recognizes a departure on that side but leaves it
+  without a proper noun.
+- **Unpaired**: no dedicated opposite is proper to that side of the row,
+  although an inherited failure, descriptive warning, or counterfeit may be
+  relevant.
+- **Inapplicable**: the proposed axis does not intrinsically govern that side.
+  This is stronger than either an unnamed departure or an unpaired virtue.
 
 A row can combine statuses. For example, justice has named injustice as an
 agent-side contrary while loss and gain are objective outcomes; prudence has
@@ -56,7 +59,10 @@ Likewise, **cruelty** may recur where the sources use it under different formal
 relations. Lexical neatness may disambiguate a term, but it may not replace a
 source term with an invented independent noun.
 
-The table markers have the following force:
+The audit markers have the following force. In the publication, `E` marks a
+selected editorial headword or qualifier and `T` marks a translation or
+transliteration control. The relation column and this audit still state when
+an ordinary-language term functions only as a counterfeit gloss:
 
 - **[editorial qualifier]** disambiguates an attested term without claiming
   that the qualifier belongs to the source.
@@ -73,6 +79,8 @@ The physical defect and excess columns do not force every row into arithmetic
 symmetry. No construction such as “too little faith,” “excessive humility,” or
 “lack of prudence” is invented merely to fill a cell. Conversely, a historically
 exact privative noun is not suppressed merely because it resembles the virtue.
+Where the appendix prints **Unnamed**, **Unpaired**, or **Inapplicable**, that
+word is a positive classification, not a blank.
 
 ## Strict census: controlled terminology
 
@@ -80,43 +88,43 @@ exact privative noun is not suppressed merely because it resembles the virtue.
 
 | ID | Defect-side term | Virtue | Excess-side term | Relation, source, and lexical decision |
 | --- | --- | --- | --- | --- |
-| T01 | unbelief | faith | non-applicable: no intrinsic excess in First Truth | **Named contrary; non-applicable excess.** Latin *fides* and *infidelitas*, STh II--II, qq. 1--16, especially q. 10. “Unbelief” avoids the now-dominant marital sense of *infidelity*. Heresy and apostasy are not extra flanks. |
+| T01 | unbelief | faith | credulity **[editorial warning]** | **Named contrary; counterfeit; inapplicable intrinsic excess.** Latin *fides* and *infidelitas*, STh II--II, qq. 1--16, especially q. 10. “Unbelief” avoids the now-dominant marital sense of *infidelity*. “Credulity” is a project warning for assent without faith's divine rule, not a source-named excess of faith; First Truth admits no intrinsic excess. Heresy and apostasy are not extra flanks. |
 | T02 | despair | hope | salvific presumption **[editorial qualifier]** | **Named opposed vices.** Latin *spes*, *desperatio*, and *praesumptio*, STh II--II, qq. 17--22, especially qq. 20--21. Hope is a mean only accidentally and relative to us, not because the divine good admits excess. “Salvific” distinguishes this vice from presumption concerning capacity. |
-| T03 | hatred of God | charity | non-applicable: no intrinsic excess in divine love | **Named contrary; non-applicable excess.** Latin *caritas* and *odium Dei*, STh II--II, qq. 23--46, especially q. 34. Sloth and envy oppose effects of charity in other respects and do not create a second quantitative flank. |
+| T03 | hatred of God | charity | inapplicable | **Named contrary; inapplicable excess.** Latin *caritas* and *odium Dei*, STh II--II, qq. 23--46, especially q. 34. Sloth and envy oppose effects of charity in other respects and do not create a second quantitative flank. |
 
 ### Cardinal virtue of prudence and its parts
 
 | ID | Defect-side term | Virtue | Excess-side term | Relation, source, and lexical decision |
 | --- | --- | --- | --- | --- |
-| P01 | imprudence | prudence, including personal prudence | no quantitative excess; craftiness is counterfeit | **Named contrary; counterfeit.** Greek *phronesis*; Latin *prudentia* and *imprudentia*; Aristotle, NE VI.5, 8, 12--13; STh II--II, qq. 47--56, especially q. 53. Craftiness, cunning, fraud, worldly prudence, and disordered solicitude change the end or mode and are not an excess flank. |
-| P02 | corresponding imprudence; no special noun | regnative prudence | tyranny **[counterfeit gloss]** | **Inherited named contrary; counterfeit.** Latin *prudentia regnativa*, STh II--II, q. 50, a. 1, with NE VI.8. Tyranny redirects governance to private advantage; it is not excessive regnative prudence. |
-| P03 | corresponding imprudence; no special noun | political prudence | factionalism **[counterfeit gloss]** | **Inherited named contrary; counterfeit.** Latin *prudentia politica*, STh II--II, q. 50, a. 2, with NE VI.8. “Factionalism” marks redirection from the political common good and is not a source-coined mean flank. |
-| P04 | corresponding imprudence; no special noun | domestic or economic prudence | domination **[counterfeit gloss]** | **Inherited named contrary; counterfeit.** Latin *prudentia oeconomica*, STh II--II, q. 50, a. 3. “Economic” retains its household sense. Domination marks corruption of that common order, not quantitative excess. |
-| P05 | corresponding imprudence; no special noun | military prudence | aggression **[counterfeit gloss]** | **Inherited named contrary; counterfeit.** Latin *prudentia militaris*, STh II--II, q. 50, a. 4. Aggression changes defense of the common good into a disordered end; military art and fortitude remain formally distinct. |
-| P06 | precipitation or temerity | euboulia | no dedicated excess-side vice | **Named act-level contrary; unnamed excess.** Greek *euboulia*, Aristotle, NE VI.9; STh II--II, q. 51, aa. 1--2, read with q. 53. The transliteration avoids confusing the habit with advice, an act of counsel, or the gift of counsel. |
-| P07 | thoughtlessness or inconsiderateness | synesis | no dedicated excess-side vice | **Named act-level contrary; unnamed excess.** Greek *synesis*, Aristotle, NE VI.10; STh II--II, q. 51, a. 3, read with q. 53. “Understanding” is only a gloss because it collides with *nous/intellectus*. |
-| P08 | thoughtlessness, shared judgment failure | gnome | arbitrariness **[counterfeit gloss]** | **Unnamed unique contrary; counterfeit.** Greek *gnome*, Aristotle, NE VI.11; STh II--II, q. 51, a. 4. No failure unique to gnome is named. “Arbitrariness” warns against abandoning the higher rule rather than judging by it. |
+| P01 | imprudence | prudence, including personal prudence | craftiness | **Named contrary; counterfeit, not excess.** Greek *phronesis*; Latin *prudentia*, *imprudentia*, and *astutia*; Aristotle, NE VI.5, 8, 12--13; STh II--II, qq. 47--56, especially qq. 53 and 55. Craftiness counterfeits prudential ingenuity by directing means under a disordered rule; cunning, guile, fraud, worldly prudence, and disordered solicitude are related failures, not an excess flank. |
+| P02 | imprudence | regnative prudence | tyranny **[counterfeit gloss]** | **Inherited named contrary; counterfeit.** Latin *prudentia regnativa*, STh II--II, q. 50, a. 1, with NE VI.8. No special defect noun is supplied for this species; inherited “imprudence” remains more precise than a coined mate. Tyranny redirects governance to private advantage; it is not excessive regnative prudence. |
+| P03 | imprudence | political prudence | factionalism **[counterfeit gloss]** | **Inherited named contrary; counterfeit.** Latin *prudentia politica*, STh II--II, q. 50, a. 2, with NE VI.8. No special defect noun is supplied. “Factionalism” marks redirection from the political common good and is not a source-coined mean flank. |
+| P04 | imprudence | domestic or economic prudence | domination **[counterfeit gloss]** | **Inherited named contrary; counterfeit.** Latin *prudentia oeconomica*, STh II--II, q. 50, a. 3. No special defect noun is supplied. “Economic” retains its household sense. Domination marks corruption of that common order, not quantitative excess. |
+| P05 | imprudence | military prudence | aggression **[counterfeit gloss]** | **Inherited named contrary; counterfeit.** Latin *prudentia militaris*, STh II--II, q. 50, a. 4. No special defect noun is supplied. Aggression changes defense of the common good into a disordered end; military art and fortitude remain formally distinct. |
+| P06 | precipitation | euboulia | unpaired | **Named act-level contrary; unpaired excess side.** Greek *euboulia*, Aristotle, NE VI.9; STh II--II, q. 51, aa. 1--2, read with q. 53. Latin *praecipitatio* is rendered “precipitation”; “temerity” remains an alternative, not a second flank. The source supplies no dedicated excess-side opposite. |
+| P07 | thoughtlessness | synesis | unpaired | **Named act-level contrary; unpaired excess side.** Greek *synesis*, Aristotle, NE VI.10; STh II--II, q. 51, a. 3, read with q. 53. “Inconsiderateness” remains a translation alternative. “Understanding” is only a gloss because it collides with *nous/intellectus*; no dedicated excess-side opposite is supplied. |
+| P08 | thoughtlessness | gnome | arbitrariness **[counterfeit gloss]** | **Shared act-level contrary; counterfeit.** Greek *gnome*, Aristotle, NE VI.11; STh II--II, q. 51, a. 4. No failure unique to gnome is named; the table reuses the judgment failure rather than inventing one. “Arbitrariness” warns against abandoning the higher rule rather than judging by it. |
 
 ### Cardinal virtue of justice and its parts
 
 | ID | Defect-side term | Virtue | Excess-side term | Relation, source, and lexical decision |
 | --- | --- | --- | --- | --- |
-| J01 | unjust loss, an outcome; injustice, the agent's contrary | justice | unjust gain, an outcome | **Objective justice outcomes; named contrary.** Greek *dikaiosyne*; Latin *iustitia*; Aristotle, NE V.1--5; STh II--II, q. 58. Loss and gain are not coordinate vice habits in the recipients. |
-| J02 | lawlessness or injustice | legal or general justice | tyranny **[counterfeit gloss]** | **Named contrary; counterfeit.** Aristotle, NE V.1--2; Latin *iustitia legalis*, STh II--II, q. 58, aa. 5--6. Tyranny redirects ordering of acts from the common good to private advantage. |
-| J03 | rigid literalism **[editorial warning]**; no dedicated vice | equity | arbitrariness **[counterfeit gloss]** | **Unnamed or undedicated; counterfeit.** Greek *epieikeia*; Latin *epieikeia* or *aequitas*; Aristotle, NE V.10; STh II--II, q. 120. “Rigid literalism” and “arbitrariness” are warnings, not ancient vice names or mean flanks. |
-| J04 | undue remission; no dedicated vice of severity | severity | cruelty, as corruption | **Unnamed or undedicated; corruption.** Latin *severitas*, STh II--II, q. 157, a. 2 ad 1. Severity and clemency are compatible under right reason. Neither is the vice-flank of the other. |
-| J05 | disproportionate shortfall, an outcome | distributive justice | disproportionate surplus, an outcome | **Objective justice outcomes.** Greek distributive justice, *to dianemetikon*; Latin *iustitia distributiva*; Aristotle, NE V.3; STh II--II, q. 61, aa. 1--2. Partiality may describe an unjust act but is not substituted for the two proportional outcomes. |
-| J06 | loss, an outcome | commutative justice | gain, an outcome | **Objective justice outcomes.** Greek corrective justice, *to diorthotikon*; Latin *iustitia commutativa*; Aristotle, NE V.4--5; STh II--II, q. 61. “Corrective” remains the Aristotelian translation alternative. |
-| J07 | impenitence | penance as virtue | non-applicable: no intrinsic excess | **Named contrary; non-applicable excess.** Latin *poenitentia* and *impoenitentia*; STh III, q. 85, with STh II--II, q. 14. Penance is comprised under commutative justice in a qualified relation to God. Maximal fitting return toward an unequal superior is not vice. |
+| J01 | injustice; loss | justice | gain | **Named contrary; objective justice outcomes.** Greek *dikaiosyne*; Latin *iustitia*; Aristotle, NE V.1--5; STh II--II, q. 58. “Injustice” is the agent's contrary; “loss” and “gain” are objective outcomes and not coordinate vice habits in the parties. The semicolon preserves those two irreducible relations without repeating the explanation in the cell. |
+| J02 | lawlessness | legal or general justice | tyranny **[counterfeit gloss]** | **Named contrary; counterfeit.** Aristotle, NE V.1--2; Latin *iustitia legalis*, STh II--II, q. 58, aa. 5--6. Lawlessness names the opposition to justice as law-directed common good; injustice remains the broader alternative. Tyranny redirects ordering of acts from the common good to private advantage. |
+| J03 | rigid literalism **[editorial warning]** | equity | arbitrariness **[counterfeit gloss]** | **Descriptive warning; counterfeit; unpaired as a dedicated vice pair.** Greek *epieikeia*; Latin *epieikeia* or *aequitas*; Aristotle, NE V.10; STh II--II, q. 120. “Rigid literalism” and “arbitrariness” are warnings, not ancient vice names or mean flanks. |
+| J04 | undue remission | severity | cruelty | **Undedicated deficiency; corruption.** Latin *severitas*, STh II--II, q. 157, a. 2 ad 1. “Undue remission” describes failure to impose a due penalty, not a dedicated vice name. Severity and clemency are compatible under right reason; neither is the vice-flank of the other. |
+| J05 | shortfall | distributive justice | surplus | **Objective justice outcomes.** Greek distributive justice, *to dianemetikon*; Latin *iustitia distributiva*; Aristotle, NE V.3; STh II--II, q. 61, aa. 1--2. The relation supplies the omitted qualifier “disproportionate.” Partiality may describe an unjust act but is not substituted for the two proportional outcomes. |
+| J06 | loss | commutative justice | gain | **Objective justice outcomes.** Greek corrective justice, *to diorthotikon*; Latin *iustitia commutativa*; Aristotle, NE V.4--5; STh II--II, q. 61. Neither cell names a vice in the party receiving the outcome. “Corrective” remains the Aristotelian translation alternative. |
+| J07 | impenitence | penance as virtue | inapplicable | **Named contrary; inapplicable excess.** Latin *poenitentia* and *impoenitentia*; STh III, q. 85, with STh II--II, q. 14. Penance is comprised under commutative justice in a qualified relation to God. Maximal fitting return toward an unequal superior is not vice. |
 | J08 | irreligion | religion | superstition | **Mean flanks in circumstances of worship.** Latin *religio*, *irreligiositas*, and *superstitio*; STh II--II, qq. 81--100, especially qq. 92 and 97. The exact received “irreligion” controls; the former project coinage “profaneness” is rejected. Superstition concerns worship offered to whom or as it ought not be, not simply many devotions. |
-| J09 | no dedicated vice; dereliction is descriptive | piety | favoritism **[counterfeit gloss]** | **Unnamed or undedicated; counterfeit.** Latin *pietas*, STh II--II, q. 101. This is the justice-annex debt to parents and country, not religion, mercy, or the gift of piety. |
-| J10 | contempt, nearby but not a dedicated flank | observance | adulation **[counterfeit gloss]** | **Unnamed or undedicated; counterfeit.** Latin *observantia*, STh II--II, q. 102. The source does not establish a dedicated two-flank pair for honor owed to persons in dignity. |
-| J11 | disdain, nearby but not a dedicated flank | dulia | creature-worship, as corruption | **Unnamed or undedicated; corruption.** Latin *dulia*, from Greek *douleia*; STh II--II, q. 103, especially aa. 3--4. Strict dulia is honor owed by a servant to a human lord; broad uses and hyperdulia do not create a second strict species or a quantitative excess. |
-| J12 | disobedience | obedience | unnamed: obeying whom or what one ought not | **Named contrary; unnamed circumstantial excess.** Latin *obedientia* and *inobedientia*, STh II--II, qq. 104--105. Legitimate authority, the commanded matter, and higher duty set the measure. “Servility” is too indeterminate to replace the source's unnamed circumstantial disorder. |
-| J13 | ingratitude | gratitude | unnamed: misplaced or premature return | **Named contrary; unnamed circumstantial excess.** Latin *gratia* or *gratitudo* and *ingratitudo*, STh II--II, qq. 106--107. The fitting person, manner, proportion, and time govern return. Flattery and bribery have other formal objects. |
-| J14 | remissness | vindication | cruelty or brutality | **Mean flanks in punishment.** Latin *vindicatio* and *crudelitas vel saevitia*; STh II--II, q. 108, a. 2 ad 3. The received “cruelty or brutality” is preserved. The artificial phrase “punitive brutality” must not replace it merely to avoid repeating cruelty. |
-| J15 | *eironeia* **[transliteration]**, false self-deprecation **[translation]** | truthfulness | boastfulness | **Mean flanks in self-manifestation.** Greek *aletheia*, *eironeia*, and *alazoneia*, Aristotle, NE II.7 and IV.7; Latin *veritas*, *ironia*, and *iactantia*, STh II--II, qq. 109 and 112--113. “False” distinguishes the vice from honest restraint or humility. |
-| J16 | quarrelsomeness | affability | obsequiousness; flattery when gain is sought | **Mean flanks in social pleasure and pain.** Aristotle's unnamed social mean, NE II.7 and IV.6; Latin *amicitia quae dicitur affabilitas*, *adulatio*, and *rixa*, STh II--II, qq. 114--116. Obsequiousness is the general excess; flattery is its gain-seeking form, not a synonym for the entire flank. |
+| J09 | dereliction **[editorial warning]** | piety | favoritism **[counterfeit gloss]** | **Descriptive warning; counterfeit; unpaired as a dedicated vice pair.** Latin *pietas*, STh II--II, q. 101. “Dereliction” names failure to honor the debt but is not a source-coined proper vice. This is the justice-annex debt to parents and country, not religion, mercy, or the gift of piety. |
+| J10 | contempt | observance | adulation **[counterfeit gloss]** | **Nearby failure; counterfeit; unpaired as a dedicated vice pair.** Latin *observantia*, STh II--II, q. 102. Contempt is relevant but not uniquely paired with observance. The source does not establish a dedicated two-flank pair for honor owed to persons in dignity. |
+| J11 | disdain **[editorial warning]** | dulia | creature-worship **[counterfeit gloss]** | **Descriptive warning; corruption; no quantitative pair.** Latin *dulia*, from Greek *douleia*; STh II--II, q. 103, especially aa. 3--4. “Disdain” and “creature-worship” are project controls, not source-coined vice species. Strict dulia is honor owed by a servant to a human lord; broad uses and hyperdulia do not create a second strict species. |
+| J12 | disobedience | obedience | indiscreet obedience | **Named contrary; exact circumstantial description.** Latin *obedientia* and *inobedientia*, STh II--II, qq. 104--105. Q. 104, a. 5 ad 3 calls obedience in unlawful matters “indiscreet.” Legitimate authority, the commanded matter, and higher duty set the measure; the compact phrase is source exact but not a one-word technical vice or “too much” of the virtue. |
+| J13 | ingratitude | gratitude | unnamed | **Named contrary; source-recognized excess unnamed.** Latin *gratia* or *gratitudo* and *ingratitudo*, STh II--II, qq. 106--107, especially q. 107, a. 2. The source recognizes misplaced or premature return but supplies no proper excess noun. Returning more than the favor, as possible, is not vice; flattery and bribery have other formal objects. |
+| J14 | remissness | vindication | brutality | **Mean flanks in punishment.** Latin *vindicatio* and *crudelitas vel saevitia*; STh II--II, q. 108, a. 2 ad 3. The identified English witness gives “cruelty or brutality.” The appendix selects the equally source-warranted **brutality** as its terse headword and records **cruelty** in the relation rather than pretending that the alternatives name two excesses. |
+| J15 | *eironeia* **[transliteration]** | truthfulness | boastfulness | **Mean flanks in self-manifestation.** Greek *aletheia*, *eironeia*, and *alazoneia*, Aristotle, NE II.7 and IV.7; Latin *veritas*, *ironia*, and *iactantia*, STh II--II, qq. 109 and 112--113. The relation, not the cell, carries the gloss “false self-deprecation,” which distinguishes the vice from honest restraint or humility. |
+| J16 | quarrelsomeness | affability | obsequiousness; flattery | **Mean flanks in social pleasure and pain.** Aristotle's unnamed social mean, NE II.7 and IV.6; Latin *amicitia quae dicitur affabilitas*, *adulatio*, and *rixa*, STh II--II, qq. 114--116. Obsequiousness is the general excess; flattery is its gain-seeking form, not a synonym for the entire flank. Both remain because one word would suppress the source's formal distinction. |
 | J17 | avarice | liberality | prodigality | **Mean flanks in use of wealth.** Greek *eleutheriotes*, *aneleutheria*, and *asotia*, Aristotle, NE II.7 and IV.1; Latin *liberalitas*, *avaritia*, and *prodigalitas*, STh II--II, qq. 117--120. “Meanness,” “illiberality,” and “stinginess” remain identified alternatives, not preferred controls. |
 
 ### Cardinal virtue of fortitude and its parts
@@ -125,25 +133,25 @@ exact privative noun is not suppressed merely because it resembles the virtue.
 | --- | --- | --- | --- | --- |
 | F01 | cowardice | fortitude | rashness | **Mean flanks in fear and daring.** Greek *andreia*, *deilia*, and *thrasytēs*; Aristotle, NE II.7 and III.6--9; Latin *fortitudo*, *timiditas*, and disordered *audacia*, STh II--II, qq. 123 and 125--126. “Rashness” avoids confusing the vice with the passion of daring simply considered. |
 | F02 | pusillanimity | magnanimity | presumption concerning capacity **[editorial qualifier]**; ambition; vainglory | **Multiple named excesses by formal respect.** Greek *megalopsychia*, *mikropsychia*, and *chaunotes*, Aristotle, NE II.7 and IV.3; Latin *magnanimitas*, *pusillanimitas*, *praesumptio*, *ambitio*, and *inanis gloria*, STh II--II, qq. 129--133. Presumption exceeds capacity, ambition disorders honor, and vainglory disorders glory; the qualifier distinguishes salvific presumption. |
-| F03 | parvificence **[transliteration]**; paltriness **[translation]** | magnificence | wasteful consumption; Aristotelian vulgar or tasteless display **[translations]** | **Cross-author mean vocabulary concerning great works.** Greek *mikroprepeia*, *banausia*, and *apeirokalia*, Aristotle, NE II.7 and IV.2; Latin *parvificentia* and *consumptio*, STh II--II, qq. 134--135. The exact Latin-derived term controls the defect; “meanness” is only a historical alternative. The excess glosses remain visibly tied to their respective witnesses. |
-| F04 | impatience | patience | non-applicable: no intrinsic excess | **Named contrary; non-applicable excess.** Latin *patientia* and *impatientia*, STh II--II, q. 136; compare Augustine, *De patientia*. Insensibility to sorrow is not invented as a defect flank. |
-| F05 | impatience at delay; no unique vice species | longanimity | non-applicable: no intrinsic excess | **Inherited or undedicated contrary; non-applicable excess.** Latin *longanimitas*, STh II--II, q. 136, a. 5. By its distant hoped-for good it is more allied to magnanimity; it falls under patience insofar as delay causes sorrow. |
+| F03 | paltriness **[translation]** | magnificence | waste **[translation]** | **Cross-author mean vocabulary concerning great works.** Greek *mikroprepeia*, *banausia*, and *apeirokalia*, Aristotle, NE II.7 and IV.2; Latin *parvificentia* and *consumptio*, STh II--II, qq. 134--135. **Paltriness** immediately carries the defect idea in English while *parvificentia* remains the exact Latin-derived term. **Waste** concisely renders *consumptio*; the Greek excess terms name vulgar or tasteless display. Those source distinctions remain here and in the relation rather than producing a crowded cell. |
+| F04 | impatience | patience | inapplicable | **Named contrary; inapplicable excess.** Latin *patientia* and *impatientia*, STh II--II, q. 136; compare Augustine, *De patientia*. Insensibility to sorrow is not invented as a defect flank. |
+| F05 | impatience at delay | longanimity | inapplicable | **Inherited, undedicated contrary; inapplicable excess.** Latin *longanimitas*, STh II--II, q. 136, a. 5. By its distant hoped-for good it is more allied to magnanimity; it falls under patience insofar as delay causes sorrow. “Impatience at delay” is necessarily qualified because bare impatience would erase the formal object; no unique vice species is claimed. |
 | F06 | softness | perseverance | pertinacity | **Mean flanks in persistence.** Latin *perseverantia*, *mollities*, and *pertinacia*; Aristotle, NE VII.7 and 9; STh II--II, qq. 137--138. “Softness” is the literal moral rendering of *mollities*; the inherited “effeminacy” is not preferred. |
-| F07 | no dedicated vice; failure under external pressure | constancy | obstinacy **[counterfeit gloss]** | **Unnamed or undedicated; counterfeit.** Latin *constantia*, STh II--II, q. 137, a. 3. Constancy pertains to perseverance by resisting external impediments; it is not a coordinate annex with a separate two-flank vocabulary. |
+| F07 | unpaired | constancy | obstinacy **[counterfeit gloss]** | **Unpaired defect side; counterfeit excess.** Latin *constantia*, STh II--II, q. 137, a. 3. Constancy pertains to perseverance by resisting external impediments; the source supplies no dedicated defect proper to this subordinate specification. Obstinacy resembles firmness while resisting reason and is not an excess of constancy. Inconstancy belongs to failure in prudential command and is not imported here. |
 
 ### Cardinal virtue of temperance and its parts
 
 | ID | Defect-side term | Virtue | Excess-side term | Relation, source, and lexical decision |
 | --- | --- | --- | --- | --- |
 | A01 | insensibility | temperance | self-indulgence | **Mean flanks in pleasures of touch.** Greek *sophrosyne*, *anaisthesia*, and *akolasia*, Aristotle, NE II.7 and III.10--12; Latin *temperantia*, *insensibilitas*, and *intemperantia*, STh II--II, qq. 141--142. “Self-indulgence” is preferred to the merely privative English *intemperance*, while the Latin remains visible. |
-| A02 | unnamed unreasonable refusal of nourishment | abstinence | gluttony | **Unnamed defect; named contrary.** Latin *abstinentia* and *gula*, STh II--II, qq. 146--148. Rational fasting is not a vice, and no invented noun fills the defect cell. |
-| A03 | unnamed harmful abstention from wine | sobriety | drunkenness | **Unnamed defect; named contrary.** Latin *sobrietas* and *ebrietas*, STh II--II, qq. 149--150, especially q. 150, a. 1 ad 1. Sobriety is a coordinate subjective species of temperance concerning drink, not a part nested under abstinence. |
-| A04 | no dedicated deficient-desire vice | chastity | lust | **Unnamed or undedicated defect; named contrary.** Latin *castitas* and *luxuria*, STh II--II, qq. 151 and 153--154. Medical or demographic descriptions such as frigidity and asexuality are not vice nouns. |
-| A05 | unnamed failure to keep an undertaken purpose when or as due; marriage is no defect | virginity | superstition or vainglory in undertaking it for an undue end | **Circumstantial failures without a dedicated vice proper to virginity.** Latin *virginitas*, STh I--II, q. 64, a. 1 ad 3 and II--II, q. 152; Augustine, *De sancta virginitate*. The virtue lies in a fixed purpose ordered to a spiritual good, not in a quantitative maximum of abstention. |
-| A06 | undue remission **[translation]** | clemency | cruelty | **Mean flanks in mitigation of punishment.** Latin *clementia*, *remissio* or *dissolutio*, and *crudelitas*, STh II--II, q. 157 and q. 159. “Laxity” is retained as an identified historical translation alternative, not the canonical printed term. Severity and clemency are compatible virtues measured by right reason. |
+| A02 | unnamed | abstinence | gluttony | **Source-recognized defect unnamed; named contrary.** Latin *abstinentia* and *gula*, STh II--II, qq. 146--148. The departure is an unreasonable refusal of nourishment. Rational fasting is not a vice, and no invented noun fills the defect cell. |
+| A03 | unnamed | sobriety | drunkenness | **Expressly unnamed defect; named contrary.** Latin *sobrietas* and *ebrietas*, STh II--II, qq. 149--150, especially q. 150, a. 1 ad 1. The departure is harmful abstention from wine, not abstention as such. Sobriety is a coordinate subjective species of temperance concerning drink, not a part nested under abstinence. |
+| A04 | unpaired | chastity | lust | **Unpaired defect side; named contrary.** Latin *castitas* and *luxuria*, STh II--II, qq. 151 and 153--154. The sources supply no dedicated deficient-desire vice proper to chastity. Medical or demographic descriptions such as frigidity and asexuality are not vice nouns. |
+| A05 | unnamed | virginity | superstition; vainglory | **Source-recognized circumstantial defect unnamed; circumstantial corruptions.** Latin *virginitas*, STh I--II, q. 64, a. 1 ad 3 and II--II, q. 152; Augustine, *De sancta virginitate*. The unnamed defect is failure to keep an undertaken purpose when or as due. Superstition and vainglory name distinct undue ends and cannot be reduced to one word. Marriage is not a defect; the virtue lies in a fixed purpose ordered to a spiritual good, not in a quantitative maximum of abstention. |
+| A06 | laxity **[translation]** | clemency | cruelty | **Attested descriptive deficiency; direct contrary.** Latin *clementia*, *remissio* or *dissolutio*, and *crudelitas*, STh II--II, q. 157 and q. 159, especially q. 159, a. 2 obj. 3 and ad 3. The identified English witness uses “laxity” for deficient remission, but Aquinas does not establish it as a separately analyzed proper vice species. The table admits it only as a compact, marked descriptive control. Severity and clemency remain compatible virtues measured by right reason. |
 | A07 | spiritlessness **[translation]** | meekness | irascibility | **Mean flanks in anger.** Greek *praotes*, *aorgēsia*, and *orgilotes*, Aristotle, NE II.7 and IV.5; Latin *mansuetudo*, STh II--II, qq. 157--158. The defect means culpable failure to be angry when reason requires, not a placid temperament. |
-| A08 | no single dedicated vice | modesty | no single dedicated vice | **Unnamed or undedicated on both sides.** Latin *modestia*, STh II--II, q. 160. Its heterogeneous lesser matters prevent one source-fixed pair; humility, studiousness, bodily bearing, play, and dress remain specified beneath it. |
-| A09 | no distinct defect-side vice | humility | pride | **Unnamed defect; named contrary.** Latin *humilitas* and *superbia*, STh II--II, qq. 161--162; Augustine, *De civitate Dei* XIV.13 and *De sancta virginitate* 31--32 as cited through Aquinas. Pusillanimity is not “too much humility,” and false humility is a counterfeit expression rather than another flank. |
+| A08 | unpaired | modesty | unpaired | **Unpaired on both sides.** Latin *modestia*, STh II--II, q. 160. Its heterogeneous lesser matters prevent one source-fixed pair; humility, studiousness, bodily bearing, play, and dress remain specified beneath it. |
+| A09 | unpaired | humility | pride | **Unpaired defect side; named contrary.** Latin *humilitas* and *superbia*, STh II--II, qq. 161--162; Augustine, *De civitate Dei* XIV.13 and *De sancta virginitate* 31--32 as cited through Aquinas. The source supplies no distinct defect-side vice. Pusillanimity is not “too much humility,” and false humility is a counterfeit expression rather than another flank. |
 | A10 | neglect | studiousness | curiosity | **Mean flanks in applying desire to knowledge.** Latin *studiositas* and *curiositas*, STh II--II, qq. 166--167, especially q. 166. Neglect is the deficient application to knowledge one ought to seek; it must not be suppressed merely because other forms of negligence occur elsewhere. |
 | A11 | boorishness | eutrapelia | buffoonery | **Mean flanks in play.** Greek *eutrapelia*, *agroikia*, and *bomolochia*, Aristotle, NE II.7 and IV.8; STh II--II, q. 168, aa. 2--4. “Wittiness” and “pleasantness in play” remain explanatory alternatives. |
 
@@ -151,8 +159,8 @@ exact privative noun is not suppressed merely because it resembles the virtue.
 
 | ID | Defect-side term | Virtue | Excess-side term | Relation, source, and lexical decision |
 | --- | --- | --- | --- | --- |
-| O01 | mercilessness, a broad descriptive contrary; no dedicated virtue-specific vice | mercy | unregulated pity **[corruption]**; indulgence may counterfeit mercy | **Unnamed or undedicated defect; affective corruption and counterfeit, not an intrinsic quantitative pair.** Latin *misericordia*, STh II--II, q. 30, especially a. 3, with q. 159, a. 1 ad 2 on broad “cruelty” as lack of mercy. “Mercilessness” is an English description of that broad opposition, while unregulated pity names a passion departing from reason and justice rather than a dedicated vice proper to mercy. Mercy is treated among charity's effects but is not a fourth theological virtue. |
-| O02 | *aphilotimia*, deficient **[transliteration]** | unnamed mean concerning ordinary honor | *philotimia*, excessive **[transliteration]** | **Mean flanks with an unnamed Aristotelian mean.** Aristotle, NE II.7 and IV.4, leaves the mean unnamed and uses *aphilotimia* and *philotimia* for the schematic sides while acknowledging praise and blame can attach to either word by context. Aquinas, STh II--II, q. 129, a. 2, calls rightly ordered love of honor *philotimia* a virtue. The appendix therefore preserves Aristotle's unnamed mean and flanks while expressly documenting Aquinas's different naming use. It does not invent “right aspiration for ordinary honor” or relocate the row under fortitude. |
+| O01 | mercilessness **[translation]** | mercy | unregulated pity; indulgence | **Broad contrary; affective corruption; counterfeit, not an intrinsic quantitative pair.** Latin *misericordia* and *immisericordia*, STh II--II, q. 30, especially a. 3, with q. 159, a. 1. “Mercilessness” is the marked concise rendering of the broad lack of mercy, not a claim that Aquinas supplies a dedicated vice article proper to this row. Unregulated pity names a passion departing from reason and justice; indulgence counterfeits mercy by defeating a due good. Both remain because they are formally different. Mercy is treated among charity's effects but is not a fourth theological virtue. |
+| O02 | *aphilotimia* **[transliteration]** | unnamed mean concerning ordinary honor | *philotimia* **[transliteration]** | **Mean flanks with an unnamed Aristotelian mean.** Aristotle, NE II.7 and IV.4, leaves the mean unnamed and uses *aphilotimia* and *philotimia* for the deficient and excessive schematic sides while acknowledging praise and blame can attach to either word by context. Aquinas, STh II--II, q. 129, a. 2, calls rightly ordered love of honor *philotimia* a virtue. The appendix therefore preserves Aristotle's unnamed mean and flanks while expressly documenting Aquinas's different naming use. It does not invent “right aspiration for ordinary honor” or relocate the row under fortitude. |
 
 ### Remaining intellectual virtues
 
@@ -161,7 +169,7 @@ exact privative noun is not suppressed merely because it resembles the virtue.
 | I01 | false denial **[act description]** | understanding of principles | false affirmation **[act description]** | **Mean at the level of truth-directed acts; no vice-habit pair.** Greek *nous*; Latin *intellectus*; Aristotle, NE VI.3 and 6; STh I--II, q. 57, a. 2 and q. 64, a. 3. The flank descriptions are not names of habits coordinate with understanding. |
 | I02 | false denial **[act description]** | science | false affirmation **[act description]** | **Mean at the level of truth-directed acts; no vice-habit pair.** Greek *episteme*; Latin *scientia*; Aristotle, NE VI.3; STh I--II, q. 57, a. 2 and q. 64, a. 3. “Science” here means demonstrative knowledge, not only modern empirical science. |
 | I03 | false denial **[act description]** | wisdom | false affirmation **[act description]** | **Mean at the level of truth-directed acts; no vice-habit pair.** Greek *sophia*; Latin *sapientia*; Aristotle, NE VI.7; STh I--II, q. 57, a. 2 and q. 64, a. 3. Folly belongs to another analysis and is not inserted as a quantitative flank. |
-| I04 | deficient false practical judgment **[act description]** | art | excessive false practical judgment **[act description]** | **Mean at the level of a measured practical judgment; no passion-mean or vice-habit pair.** Greek *techne*; Latin *ars*; Aristotle, NE VI.4; STh I--II, q. 57, aa. 3 and 5 ad 1, read with q. 64, a. 3. A bad artifact, ineptitude, or immoral use of skill is not automatically a formal contrary habit of art. |
+| I04 | *atechnia* **[transliteration]** | art | unpaired | **Named contrary; unpaired excess side.** Greek *technē* and *atechnia*; Latin *ars*; Aristotle, NE VI.4; STh I--II, q. 57, aa. 3 and 5 ad 1, read with q. 64, a. 3. Ross renders the Greek contrary “lack of art.” The transliteration preserves the compact proper noun without importing the current connotations of “artlessness.” Q. 64's false affirmation and denial remain an act-level analysis of intellectual truth and do not manufacture an excess-side mate for art. A bad artifact, ineptitude, or immoral use of skill is not automatically this formal contrary habit. |
 
 ## Qualified and cognate states outside the strict census
 
@@ -170,13 +178,13 @@ seven coordinate habits to the strict count.
 
 | ID | Defect-side comparison | Qualified state | Excess-side comparison | Relation and category decision |
 | --- | --- | --- | --- | --- |
-| Q01 | non-applicable | natural or inchoate virtue | non-applicable | **Non-applicable on both sides.** Greek natural virtue, Aristotle, NE VI.13; Latin virtue by *aptitudo* and *inchoatio*, STh I--II, q. 63, a. 1. Aptitude, appetite for rational good, and beginnings of formation are not perfected acquired or infused habits. |
-| Q02 | incontinence | continence | non-applicable | **Named contrary; non-applicable excess.** Greek *enkrateia* and *akrasia*, Aristotle, NE VII.1--10; Latin *continentia* and *incontinentia*, STh II--II, qq. 155--156. Continence remains imperfect because reason wins while disordered appetite persists. |
+| Q01 | inapplicable | natural or inchoate virtue | inapplicable | **Inapplicable on both sides.** Greek natural virtue, Aristotle, NE VI.13; Latin virtue by *aptitudo* and *inchoatio*, STh I--II, q. 63, a. 1. Aptitude, appetite for rational good, and beginnings of formation are not perfected acquired or infused habits. |
+| Q02 | incontinence | continence | inapplicable | **Named contrary; inapplicable excess.** Greek *enkrateia* and *akrasia*, Aristotle, NE VII.1--10; Latin *continentia* and *incontinentia*, STh II--II, qq. 155--156. Continence remains imperfect because reason wins while disordered appetite persists. |
 | Q03 | shamelessness | shame | bashfulness | **Mean-like passion flanks, not strict virtue habits.** Greek *aidos* or *aischyne*, Aristotle, NE II.7 and IV.9; Latin *verecundia*, STh II--II, q. 144. The pair must not be reassigned to Aquinas's broader *modestia*. |
-| Q04 | non-applicable | complete character friendship | non-applicable | **Non-applicable on both sides.** Greek *philia*, Aristotle, NE VIII--IX. Complete friendship is a reciprocal excellent relation and shared activity, not another coordinate habit; enmity and isolation are not manufactured flanks. |
+| Q04 | inapplicable | complete friendship | inapplicable | **Inapplicable on both sides.** Greek *philia*, Aristotle, NE VIII--IX. “Complete friendship” means complete character friendship: a reciprocal excellent relation and shared activity, not another coordinate habit. Enmity and isolation are not manufactured flanks. |
 | Q05 | spite **[translation]** | righteous indignation | envy **[translation]** | **Qualified mean-like passion flanks.** Greek *nemesis* between *epichairekakia* and *phthonos*, Aristotle, NE II.7, with Rhetoric II.9. The NE's later treatment makes the status difficult; the row remains qualified rather than becoming a Thomistic annex. |
-| Q06 | bestiality, a qualitative contrary | heroic or divine virtue | non-applicable | **Named qualitative contrary; non-applicable excess.** Greek divine or heroic virtue and *theriotes*, Aristotle, NE VII.1; compare STh II--II, q. 159, a. 2 ad 1. Heroic excellence is an exceptional mode or degree, not a fifth cardinal virtue. |
-| Q07 | non-applicable | nobility-and-goodness, *kalokagathia* **[translation and transliteration]** | non-applicable | **Non-applicable on both sides.** Greek *kalokagathia*, Aristotle, EE VIII.3. It is an integrative whole rather than another constituent habit. “Gentlemanliness” is retained only as an identified historical alternative. |
+| Q06 | bestiality | heroic or divine virtue | inapplicable | **Named qualitative contrary; inapplicable excess.** Greek divine or heroic virtue and *theriotes*, Aristotle, NE VII.1; compare STh II--II, q. 159, a. 2 ad 1. Heroic excellence is an exceptional mode or degree, not a fifth cardinal virtue. |
+| Q07 | inapplicable | nobility-and-goodness, *kalokagathia* **[translation and transliteration]** | inapplicable | **Inapplicable on both sides.** Greek *kalokagathia*, Aristotle, EE VIII.3. It is an integrative whole rather than another constituent habit. “Gentlemanliness” is retained only as an identified historical alternative. |
 
 ## Nested matters and alias controls
 
@@ -206,12 +214,14 @@ two rows can be confused.
 
 STh II--II, q. 108, a. 2 ad 3 gives *crudelitas vel saevitia*, represented in
 the identified English witness as “cruelty or brutality,” for vindication's
-excess. Q. 157 treats undue remission and cruelty around clemency, and q. 159
-distinguishes cruelty from savagery more finely by motive. Severity can be
-corrupted into cruelty while remaining compatible with rational clemency.
-These are formal differences within overlapping vocabulary. The same English
-term may therefore recur with its relation stated. The fabricated phrase
-“punitive brutality” is not used to force lexical uniqueness.
+excess. The appendix selects **brutality** and records **cruelty** as the source
+alternative, preserving a single headword without erasing the witness. Q. 157
+treats undue remission and cruelty around clemency; q. 159, a. 2 obj. 3 uses
+“laxity” in the English witness for deficient remission, but the question does
+not establish a separately analyzed proper vice species under that name.
+Severity can be corrupted into cruelty while remaining compatible with
+rational clemency. These are formal differences within overlapping vocabulary,
+not permission to fabricate a phrase such as “punitive brutality.”
 
 ### Ordinary honor and *philotimia*
 
@@ -244,21 +254,28 @@ sense of shame, or current speech about dress and sexual reserve. Only the
 first is the strict parent virtue here. Shame remains qualified; chastity
 governs sexual appetite; bodily bearing and dress are nested matters.
 
-### Avarice, meanness, and parvificence
+### Avarice, paltriness, and parvificence
 
 “Meanness” has rendered both *aneleutheria* opposite liberality and
 *parvificentia* opposite magnificence, while ordinary English also uses it for
-unkindness. The controlled terms are **avarice** and **parvificence**, with
-**paltriness** as the latter's marked English gloss. Historical alternatives
-remain visible without governing the appendix.
+unkindness. The controlled table terms are **avarice** and **paltriness**.
+The latter renders the defect compactly while *parvificentia* and Greek
+*mikroprepeia* remain in the audit; historical alternatives do not govern the
+appendix. On the other side, **waste** tersely renders Latin *consumptio*, while
+Greek *banausia* and *apeirokalia* preserve the distinct vulgar or tasteless
+display vocabulary.
 
-### Understanding, synesis, and intellectual truth acts
+### Understanding, synesis, art, and intellectual truth acts
 
 English “understanding” can translate *synesis*, ordinary prudential judgment,
 or *nous/intellectus*, grasp of first principles. The controlled labels are
 **synesis** and **understanding of principles**. False denial and false
-affirmation in the intellectual rows describe truth-failing acts; they are not
-two newly coined vice habits.
+affirmation in the speculative rows describe truth-failing acts; they are not
+two newly coined vice habits. Aristotle, NE VI.4, supplies *atechnia* (“lack of
+art” in Ross) as art's named contrary, but no dedicated excess-side mate. That
+term does not convert q. 64's general act-level analysis into a quantitative
+pair, and folly from ST II--II, q. 46 is not inserted opposite the acquired
+speculative virtue of wisdom.
 
 ### Continence, abstinence, sobriety, and chastity
 
@@ -277,15 +294,16 @@ subpart of abstinence.
 | *profaneness* for *irreligiositas* | It was an editorial attempt at lexical independence. Prefer the exact received **irreligion** and define its worship-specific object. |
 | *right aspiration for ordinary honor* | It invents a name where Aristotle leaves the mean unnamed. Use **unnamed mean concerning ordinary honor**. |
 | *indifference to noble honor* for *aphilotimia* | It is an editorial paraphrase that obscures the source term. Use the marked transliteration and explain the deficient sense. |
-| *punitive brutality* | It artificially alters the received “cruelty or brutality” to avoid repetition. Preserve the source alternatives and state the formal relation. |
+| *punitive brutality* | It artificially alters the received “cruelty or brutality.” Use **brutality** as the compact table selection and preserve **cruelty** as the source alternative in the relation. |
 | *flattery* as the entire excess opposed to affability | Flattery is the gain-seeking form. **Obsequiousness** controls the general excess. |
 | bare *presumption* | It collides between hope and magnanimity. Use an explicit editorial qualifier. |
-| *laxity* as clemency's controlling defect | It remains an identified historical rendering of *dissolutio*. Prefer **undue remission**, with its dependence on the order of justice explained. |
+| *laxity* as a dedicated proper vice species | The identified English witness attests it descriptively for deficient remission, so the marked table control **laxity** is permissible. Aquinas does not give it a separately analyzed vice article; never present it as more than an attested compact description. |
 | *effeminacy* for *mollities* | The historical translation obscures Aquinas's moral definition and imports a sex-based connotation. Prefer **softness**; this does not endorse the source's historical generalization. |
 | *frigidity* or *asexuality* as a defect of chastity | These can describe medical, psychological, or demographic conditions and do not name a moral vice as such. |
-| *servility* as excessive obedience or dulia | It does not distinguish unlawful command, disordered fear, false worship, or social subordination. Preserve the unnamed circumstantial excess of obedience. |
+| *servility* as excessive obedience or dulia | It does not distinguish unlawful command, disordered fear, false worship, or social subordination. For obedience, preserve Aquinas's exact circumstantial description **indiscreet obedience**; dulia retains its own corruption control. |
 | *legalism* as equity's defect | It is a modern broad polemical term, not a dedicated Aristotelian or Thomistic vice. “Rigid literalism” may appear only as an editorial warning. |
 | *meanness* as a canonical flank | It collides across liberality, magnificence, and ordinary unkindness. Preserve it only in identified translation notes. |
+| *artlessness* or *ineptitude* for *atechnia* | “Artlessness” now commonly suggests unaffected simplicity, while ineptitude may be a lack of skill rather than Aristotle's named contrary habit. Preserve the marked transliteration **atechnia** and gloss it as “lack of art.” |
 | *gentlemanliness* for *kalokagathia* | It imports sex and social-class connotations unnecessary to identify the comprehensive state. |
 | *insensibility* used medically | The term is retained only in the precise moral sense of unreasonable rejection of natural pleasures; it must never be inferred from disability, illness, or temperament. |
 
@@ -323,8 +341,8 @@ locus, and rights status in the source audit.
    check, not a claim that all entries are coordinate habits.
 2. The correction audit preserves named contraries and source terms even when
    they defeat global lexical uniqueness; distinguishes objective justice
-   outcomes and prudential counterfeits; and leaves genuinely unnamed or
-   non-applicable sides explicit.
+   outcomes and prudential counterfeits; and marks **Unnamed**, **Unpaired**,
+   and **Inapplicable** as three different conclusions.
 3. The Greek entries use simplified Latin-script transliterations. Their
    underlying vocabulary and loci were checked against the identified Bywater
    Greek witness and historical English witnesses. The ordinary-honor mean
@@ -332,10 +350,12 @@ locus, and rights status in the source audit.
    qualified.
 4. The Latin and 1920 English witnesses were collated for the terms whose
    earlier editorial labels were most vulnerable: *irreligiositas*;
-   *inobedientia*; *ingratitudo*; *impatientia*; the punishment vocabulary in
-   STh II--II, qq. 108, 157, and 159; and the study vocabulary in q. 166. This
-   closes the internal consistency control without claiming external
-   philological review.
+   *inobedientia* and “indiscreet” obedience; *ingratitudo*; *impatientia*;
+   *parvificentia* and *consumptio*; the punishment vocabulary in STh II--II,
+   qq. 108, 157, and 159; and the study vocabulary in q. 166. Aristotle's Greek
+   *atechnia* was checked against the identified NE VI.4 witnesses. This closes
+   the internal consistency control without claiming external philological
+   review.
 5. Completeness of the philosophical census remains the responsibility of the
    controlling inventory. No independent philosophical or theological review
    is claimed here.
