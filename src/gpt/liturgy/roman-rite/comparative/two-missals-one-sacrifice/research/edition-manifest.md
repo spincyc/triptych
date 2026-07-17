@@ -1,6 +1,6 @@
 # Two Missals, One Sacrifice — Edition Manifest
 
-Checked 2026-07-13. This record prevents a colloquial “TLM versus Novus Ordo” comparison from silently combining different books, translations, territories, and customs.
+Historical witnesses updated and checked 2026-07-17; mutable law and the community census remain checked through the 2026-07-13 cutoff. This record prevents a colloquial “TLM versus Novus Ordo” comparison from silently combining different books, translations, territories, and customs.
 
 ## Controlling comparison witnesses
 
@@ -19,7 +19,13 @@ Checked 2026-07-13. This record prevents a colloquial “TLM versus Novus Ordo�
 | 1474 | Milan printed *Missale Romanum*, Lippe / Henry Bradshaw Society edition | Concrete pre-Tridentine printed Roman witness | The first Roman Mass or a complete census of local practice |
 | 1570 | Pius V *Missale Romanum* and *Quo primum* | Promulgation, two-hundred-year exception, and post-Tridentine standard | A book textually identical with 1962 or a name-by-name abolition schedule |
 | 1604 / 1634 | Clement VIII / Urban VIII typical editions | Continuing papal revision and correction | Repeal of the Roman tradition |
-| 1911–1960 | Pius X, Pius XII, and John XXIII reforms | Psalter/calendar, Holy Week, rubrics, fasting, and proximate ancestry of 1962 | That twentieth-century reform began only after Vatican II |
+| 1662–1714 | Sacred Congregation of Rites decrees and 15/29 September 1714 Missal printing acts | Accumulated rulings on Requiem and votive Masses, privileged altars, relic feasts, and octaves inserted after the General Rubrics | A complete typical edition or a revision of the Ordinary and Canon |
+| 1860–1871 | Pius IX-era printing decisions, *Quod iampridem*, and *Inclytum Patriarcham* | Correction of forthcoming printings through fifteen textual and rubrical responses, three older ceremonial rulings, the universal Immaculate Conception proper, and direct Saint Joseph text/rubric changes | A general recension of the whole Missal |
+| 1884 | Leo XIII typical edition | First complete new typical recension since 1634; calendar/Mass consolidation and rubrical correction | A reconstructed Order of Mass or a revision of the Roman Canon |
+| 1897 | *Additiones et variationes* in the Breviary and Missal rubrics | Reconciled rubrics with later decrees and entered all new editions by papal command | A new typical edition |
+| 1900 | Leonine *altera typica* named in the 1920 decree | Additional typical reference witness and base of the next recension | Without further evidence, another papal revision on the scale of 1884 |
+| 1911–1920 | Pius X reforms and Benedict XV typical edition | Psalter/calendar reform, corresponding Missal rubrics, and their integration into the 1920 book | That every date in the sequence names a new Order of Mass |
+| 1951–1960 | Pius XII and John XXIII reforms | Holy Week, rubrics, fasting, and proximate ancestry of 1962 | That twentieth-century reform began only after Vatican II |
 | 1964–1967 | *Inter Oecumenici*, 1965 books, *Tres abhinc annos*, synodal demonstration | Transitional implementation | A stable “1965 Missal” identical with the complete 1970 book |
 | 1969 | Paul VI, *Missale Romanum*; *Ordo Missae*; calendar; lectionary | Promulgation and initial architecture | Physical publication of the complete 1970 typical edition on the constitution’s date |
 | 1970 | First Latin typical edition | Complete first postconciliar Missal and clarified GIRM | Final state of the 2002/2008 book |
@@ -52,4 +58,4 @@ Every comparison was tested against these questions:
 
 The edition boundaries and principal legal texts were checked. A line-by-line independent review against physical copies of the 2008 Latin reprint and current U.S. altar book remains outstanding; the publication therefore remains a source-audited working paper.
 
-The current translation-policy revision is included in the reviewed 44-page installed artifact, SHA-256 `d16e9af6960547b21dff94f87789a75f7236b0194dba01049336ba4a70751d9b`; this production review does not claim the outstanding independent physical-book collation.
+The 2026-07-17 historical revision is included in the reviewed 46-page installed artifact, SHA-256 `399695e486328316585f4f3f7d5dc15ea4c3c5cfe502b1174bd4ec477ee48c95`; this production review does not claim the outstanding independent physical-book collation.
