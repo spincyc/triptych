@@ -1,91 +1,112 @@
 # Source Audit — Natural and Positive, Divine and Human Law
 
-Access and currentness checks were completed 2026-07-16 unless noted. Each source establishes claims only within its author, genre, jurisdiction, date, transmission, and authority.
+Access and currentness checks were completed 2026-07-16 unless noted. Each source establishes claims only within its author, genre, jurisdiction, date, transmission, and authority. The person–obligation framework is project synthesis grounded in the cited sources; it is not a proposition attributed to one authority.
 
-## Taxonomy claims
-
-| Claim | Principal sources | Audit result and boundary |
-| --- | --- | --- |
-| The pairs do not yield four equal species. | Aquinas ST I–II qq. 90–97; CCC 1950–1974; CIC divine-law boundary canons | Verified synthesis. Natural law is divine in origin/naturally knowable; divine positive law is revealed; human law is positive. |
-| “Human natural law” is not an independent classical source. | Same; Gratian/Rufinus history | Verified as a methodological conclusion. Human discovery or recognition remains real. |
-| Positive law is not identical with modern legal positivism. | Ancient/medieval vocabulary; modern theory boundary | Verified terminological distinction. No comprehensive account of positivist schools is attempted. |
-| A canon can declare divine law and enact human procedure. | CIC cc. 1075, 1141 and marriage/process structure | Verified. Classification must be proposition-specific. |
-| Moral non-obligation and juridical invalidity differ. | Aquinas q. 96 a. 4; *Evangelium vitae* 72–74; current legal structures | Verified. Concrete resistance remains fact- and forum-specific. |
-
-## Ancient and historical claims
+## Taxonomy and field claims
 
 | Claim | Principal sources | Audit result and boundary |
 | --- | --- | --- |
-| *Antigone* dramatizes higher norm versus civic decree. | Sophocles 450–460 | Verified; not treated as a natural-law system. |
-| Plato shows both the ambiguity and rational reconstruction of nature. | *Gorgias* 482e–484c; *Laws* I, X | Verified with speaker/argument cautions. |
-| Aristotle distinguishes natural and legal justice and supplies equity. | NE V.7; Rhetoric I.13; Politics III.16 | Verified; natural/legal distinction remains although political justice is changeable in human affairs. |
-| Stoicism joins common law, right reason, nature, and divine governance. | Diogenes VII.87–89; Cleanthes; Chrysippus at D.1.3.2 | Verified through reported/fragmentary witnesses; no identity with Christian theology asserted. |
-| Cicero gives a rational standard for judging enactment. | *De legibus* I–II; *De re publica* III.33 | Verified; no Roman judicial review mechanism inferred. Fragment transmission disclosed. |
-| Roman jurists use heterogeneous natural/gentium/civil schemes and formal sources. | Gaius 1.1–7; Digest 1.1, 1.3; Justinian Institutes 1.1–1.3 | Verified. *Ius gentium* is not equated with modern international law. |
-| Slavery exposes the gap between “contrary to nature” and operative positive law. | Institutes 1.2.2, 1.3.2; Digest 1.5.4.1, 44.7.14, 50.17.32 | Verified; natural language did not automatically invalidate the institution. |
-| Scripture supports natural moral knowledge and bounded civil authority. | Rom 2; Matt 22; Rom 13; Acts 5 | Verified theological reception; no modern constitutional theory attributed to the texts. |
-| Augustine links temporal justice to eternal law but later defends coercive correction. | *De libero arbitrio* I.5–6; *City* XIX.17; Letters 93, 185 | Verified tension retained. Two cities are not equated with Church/state. |
-| Gelasius distinguishes pontifical and royal offices. | Gratian D.96 cc. 6, 10 | Verified; Christian-commonwealth context retained. |
-| Gratian begins with natural/custom and divine/human distinctions while importing Roman categories. | D.1, D.4 | Verified; not retrofitted into Aquinas’s finished system. |
-| Aquinas supplies the principal architecture. | ST I–II qq. 90–108 | Verified as theological synthesis, not present legislation. |
-| Trent distinguishes ecclesiastical competence from concrete discipline. | Session VII, Baptism c. 8; Session XXIV, Matrimony c. 4 and *Tametsi* | Verified. Conciliar doctrine and enacted matrimonial form are not conflated. |
+| The natural/positive and divine/human pairs do not yield four equal species. | Aquinas ST I–II qq. 90–97; CCC 1950–1974; current divine-law boundary canons | Verified synthesis. Natural law is rational participation in eternal law through practical reason; divine positive law is revealed; human civil and ecclesiastical law is positively enacted or received. |
+| “Human natural law” is not an independent classical source. | Aquinas; CCC; Gratian and Rufinus history | Verified methodological conclusion. Human knowledge, formulation, judgment, and positive recognition remain real. |
+| Positive law is not identical to legal positivism. | Ancient and medieval uses; Austin, Kelsen, Hart | Verified. Austin's command theory, Kelsen's norm-validity, and Hart's social rule account are not interchangeable and are not treated as approval of injustice. |
+| Moral priority, rank within a legal order, and allocation among orders are three different hierarchies. | Aquinas; CIC/CCEO source and competence rules; DH and GS; civil/canonical interaction | Verified project synthesis. No source supplies one human appellate hierarchy joining Church and state. |
+| The field survey assigns different questions to philosophy, moral theology, theology, history, canon and civil law, public international law, conflicts, procedure, and social inquiry. | Disciplinary source methods and article profile | Verified methodological architecture, not a claim that the article exhausts every field. |
+| A canon can declare or protect divine law while adding human definition, presumption, process, or remedy. | CIC cc. 1075, 1141 and surrounding marriage/process law | Verified proposition-specific method. |
 
-## Church–political development claims
+## Person, obligation, and forum claims
 
-| Claim | Principal sources | Calibration |
+| Claim | Principal sources | Audit result and boundary |
 | --- | --- | --- |
-| “Separation” has multiple non-equivalent meanings. | Gelasius; *Immortale Dei*; DH; GS | Verified analytical distinction. |
-| Pius IX and Leo XIII reject state moral autonomy and indifferentism in a confessional horizon. | *Quanta cura*/*Syllabus*; *Immortale Dei*; *Libertas* | Verified. The *Syllabus* is not read without source context. |
-| Pius XII permits non-repression for higher common good. | *Ci riesce* | Verified as toleration bridge, not identical to Vatican II right. |
-| Vatican II grounds civil religious immunity in dignity and nature. | DH 2–7, 10–13 | Verified. Duty to truth and objective limits preserved. |
-| Vatican II does not require disestablishment. | DH 6 | Verified. Special recognition is compatible with effective freedom/equality. |
-| Church and political community are autonomous/independent yet cooperative. | GS 36, 74–76 | Verified. Institutional autonomy is not moral severance. |
-| Development from nineteenth-century default to DH is genuine but not total rupture. | Primary sequence above | Calibrated synthesis: continuity and changed juridical center/default are both stated. |
+| One person can occupy concurrent moral, canonical, civil, family, office, professional, contractual, and fiduciary relations. | CIC cc. 96–112, 129–144, 208–223; CCEO cc. 7–38, 909–995; applicable civil instruments | Verified structural synthesis. Applicability still depends on the complete facts and local civil law. |
+| Civil and ecclesiastical orders can govern different aspects of one event without forming one appellate hierarchy. | GS 76; CIC cc. 3, 22, 1059, 1290, 1296; CCEO parallels; Lateran Treaty | Verified. Treaty, reception, and recognition rules can connect specified effects but do not merge the orders. |
+| Conscience judges a concrete moral act but does not legislate, dispense, adjudicate, or create external immunity. | CCC 1776–1802; CIC c. 130; CCEO c. 980 | Verified. Canonical sacramental and nonsacramental internal fora are juridically defined and are not synonyms for conscience. |
+| Promulgation governs general laws; singular acts use notification, execution, and other manifestation rules. | CIC cc. 7–8, 35–93; CCEO cc. 1488–1539 | Verified. Promulgation is not used as a universal trigger. |
+| Doubt, ignorance, invalidity, penal attribution, and moral culpability require separate rules. | CIC cc. 10, 14–15, 1321–1325; CCEO cc. 1495–1497, 1414–1416; CCC conscience | Verified. No equivalence among moral fault, canonical imputability, and civil guilt is asserted. |
+| Hierarchical recourse has short deadlines and filing is not generally suspensive. | CIC cc. 1734, 1736–1737; CCEO cc. 999–1001 | Verified general rule. Special law can change time or effect; *Expedit ut iura* illustrates that necessity. |
+| Correct refusal does not erase duties toward affected third parties. | CCC 2238–2243, 2284–2287; *Evangelium vitae* 73–74; natural justice | Verified moral synthesis. The encyclical's specific life-law analysis is not generalized without new facts and reasoning. |
+
+## Ancient, scriptural, and Roman claims
+
+| Claim | Principal sources | Audit result and boundary |
+| --- | --- | --- |
+| *Antigone* dramatizes conflict between civic decree and an unwritten divine norm. | Sophocles 450–460 | Verified; not a natural-law system. |
+| Plato exposes equivocal appeals to nature and develops rational legal order. | *Gorgias* 482e–484c; *Laws* I, X | Verified with speaker and argument cautions. |
+| Aristotle distinguishes natural and legal justice and supplies equity. | *Nicomachean Ethics* V.7; *Rhetoric* I.13; *Politics* III.16 | Verified; later determination language is analytical reception, not a quotation. |
+| Stoic and Ciceronian witnesses join reason, nature, divinity, and common human order. | Diogenes VII.87–89; Cleanthes; Digest 1.3.2; Cicero | Verified through fragmentary and transmitted witnesses; no identity with Christian creation theology. |
+| Roman jurists use heterogeneous civil, gentium, natural, written, unwritten, and praetorian categories tied to status and remedy. | Gaius 1.1–7; Digest 1.1, 1.3, 1.5, 1.8, 44.7, 50.17 | Verified. *Ius gentium* is not modern international law. |
+| Roman language of nature and natural equality did not automatically invalidate operative positive institutions such as slavery. | Institutes 1.2.2, 1.3.2; Digest 1.5.4.1, 44.7.14, 50.17.32 | Verified stress test. No judicial invalidity mechanism is inferred. |
+| Scripture presents natural moral knowledge, civil authority, God's prior claim, and ecclesial authority. | Rom 2, Rom 13, Matt 22, Acts 5 | Verified theological reception; no modern constitutional settlement attributed. |
+| Acts 15 is an early dossier in disputed obligation, competence, decision, communication, and reception. | Acts 15; PBC *Bible and Morality* 151–153 | Verified as scriptural/ecclesial process; not made a template identical to every later council. |
+
+## Canonistic and historical-development claims
+
+| Claim | Principal sources | Audit result and boundary |
+| --- | --- | --- |
+| Early ecclesial discipline existed before imperial recognition. | *Didache*, *Diognetus*, Tertullian, early councils and practice | Verified at survey level; no uniform early code claimed. |
+| Christian empire produced overlapping civil and ecclesiastical effects. | Justinian compilation and Novel 6; conciliar and patristic history | Verified. Novel 6 is imperial law, not a canon code. |
+| Eastern canonical development has its own conciliar, patristic, imperial, customary, and synodal trajectory. | Trullo and nomocanonical history; *Sacri canones*; Wagschal | Verified. *Sacri canones* is an official reception account, not the sole neutral historical authority. |
+| Pre-Gratian collections, reform disputes, Roman-law recovery, schools, papal adjudication, and litigation created demand for systematic canon law. | Winroth and collection history | Verified causal synthesis with chronology cautions. |
+| Gratian reconciles discordant scriptural, patristic, conciliar, papal, customary, and Roman-derived texts. | *Decretum* D.1, D.4; recension scholarship | Verified. Friedberg witnesses are not described as a modern complete critical edition. |
+| The *Liber Extra*, decretalists, courts, and procedure made source, jurisdiction, proof, and remedy operational in the *ius commune*. | *Liber Extra* source guide; Helmholz, Pennington, Winroth | Verified survey-level synthesis. |
+| Medieval people could be subject to overlapping civil, ecclesiastical, feudal, municipal, corporate, and customary norms. | Legal-pluralism scholarship; court and procedure history | Verified with caution against projecting fully separate modern systems backward. |
+| The emergence and retrospective description of two fora are historically disputed. | Goering; Müller | Material disagreement preserved. Current internal/external forum language is not read backward unchanged. |
+| Salamanca and Valladolid applied natural law and *ius gentium* to Indigenous status, property, authority, conquest, mission, and war. | Vitoria, *De Indis*, q. 1, especially pp. 239–251 and conclusion at 250 in Pagden–Lawrance; Valladolid sources and historiography | Verified with contested titles, anthropology, and imperial assumptions retained. |
+| Trent distinguishes ecclesiastical competence from mutable disciplinary specification; Suárez supplies a distinct early-modern synthesis. | Trent Sessions VII and XXIV; Suárez, *De legibus* | Verified. Paraphrases are checked against the identified Latin; no unverified quotation used. |
+
+## Modern institutional and jurisprudential claims
+
+| Claim | Principal sources | Audit result and boundary |
+| --- | --- | --- |
+| Reformation and confessionalization reorganized jurisdiction through territorial settlements, privilege, migration, and uneven toleration. | Religious Peace of Augsburg (1555); *Instrumentum Pacis Osnabrugensis* art. V (1648); Schilling; legal-pluralism controls | Verified survey. Augsburg did not create general individual religious freedom; Westphalia did not invent modern separation. |
+| State consolidation, codification, and positivism are distinct developments. | Stein, *Roman Law in European History*, chs. 6–7; Austin, Kelsen, Hart | Verified. Codification can be natural-law inspired. |
+| Positivism did not simply cause totalitarianism. | Hart 1958; modern historiography | Verified negative boundary. Source-validity and moral obligation remain separate questions. |
+| Radbruch and Fuller challenge extreme injustice and defective legality from different premises. | Radbruch 1946; Fuller, *Morality of Law* | Verified survey-level comparison, not a claim that their theories are Catholic doctrine. |
+| Pius IX and Leo XIII oppose indifferentism, state moral autonomy, and Church subordination in a confessional horizon. | *Quanta cura*/*Syllabus*; *Immortale Dei*; *Libertas* | Verified. *Syllabus* propositions remain tied to source contexts. |
+| The 1917 code systematized Latin discipline while preserving unincorporated natural and divine-positive law. | 1917 CIC c. 6, 6°; *Providentissima Mater* | Verified historical claim; the code is superseded. |
+| Totalitarian legislation prompted explicit restatement of natural-law, personal, family, religious, and international limits. | *Mit brennender Sorge* 29–31; *Summi Pontificatus* | Verified within papal teaching's genre and historical setting. |
+| Postwar rights discourse places natural dignity, reciprocal duties, positive recognition, and public remedy together. | UDHR; *Pacem in terris* 9–38, 46–79 | Verified. UDHR is a declaration, not a treaty; civil remedy remains jurisdiction-specific. |
+| Vatican II grounds civil religious immunity in dignity and nature while preserving truth duties and objective public-order limits. | *Dignitatis humanae* 1–7, 10–13 | Verified. The Council does not require disestablishment; special recognition remains possible with effective equal freedom. |
+| Church and political community are autonomous and independent in their own fields and cooperate for the same persons. | *Gaudium et spes* 36, 74–76 | Verified. Institutional autonomy does not make either order morally self-sufficient. |
 
 ## Current controlling-law claims
 
 | Claim | Controlling source | Audit result and boundary |
 | --- | --- | --- |
-| CIC governs the Latin Church; CCEO governs Eastern Catholic Churches. | CIC c. 1; CCEO c. 1; promulgating constitutions | Verified; official Latin controls. |
-| Contrary custom cannot defeat divine law. | CIC c. 24 §1; CCEO c. 1506 §2 | Verified. |
-| Dispensation concerns merely ecclesiastical law. | CIC c. 85; CCEO c. 1536 | Verified; competence and non-dispensable essentials remain separate. |
-| Civil law receives canonical effects conditionally. | CIC cc. 22, 1290; CCEO cc. 1034, 1504 | Verified; divine/canon-law provisos retained. |
-| Divine natural/positive rights do not prescribe. | CIC c. 199 no. 1; CCEO c. 1542 | Verified. |
-| Supreme, diocesan, synodal, council, and conference competencies differ. | CIC cc. 331, 336, 381, 391, 445–446, 455; CCEO cc. 43, 49, 110, 152 | Verified; Eastern synods not assimilated to Latin conferences. |
-| Curial institutions are not autonomous universal legislators. | *Praedicate Evangelium* art. 30; 2026 General Regulations | Verified; specific papal grant/approval and document form matter. |
-| DLT authentic interpretation differs from case interpretation or explanation. | CIC c. 16; CCEO c. 1498; PE 175–182; official register | Verified. |
-| Rota/Signatura judgments do not automatically become universal law. | CIC cc. 16 §3, 19; PE 189–204 | Verified; jurisprudential role preserved. |
-| Vatican City is a distinct civil order and canon law is its first normative source/interpretive criterion. | 2023 Fundamental Law; Law N. LXXI | Verified; no collapse into universal canon law. |
+| CIC governs the Latin Church and CCEO all and only the Eastern Catholic Churches under their respective c. 1 rules. | Promulgating constitutions; CIC c. 1; CCEO c. 1 | Verified; the promulgated official Latin texts control. |
+| Canonical personality, ascription, domicile, presence, status, and rights/duties affect applicability. | CIC cc. 7–22, 96–112, 208–223; CCEO cc. 7–38, 909–930, 1490–1492 | Verified. Eastern territorial and diaspora rules retained. |
+| Contrary custom cannot defeat divine law; civil reception is conditional; dispensation concerns merely ecclesiastical law; divine rights do not prescribe. | CIC cc. 22, 24 §1, 85–86, 199 no. 1; CCEO cc. 1504, 1506 §2, 1536–1537, 1542 | Verified. Latin and Eastern dispensation schemes are not stated as identical. |
+| Source, moral gravity, invalidity, sanction, and dispensability of merely ecclesiastical law are distinct. | CIC cc. 10, 85–93; CCEO cc. 1495, 1536–1539 | Verified. No gravity or invalidity is inferred from the label alone. |
+| Supreme, diocesan/eparchial, council, conference, and Eastern synodal competencies differ. | CIC cc. 331–341, 381, 391, 445–446, 455, 753; CCEO cc. 43, 49, 110, 150, 152, 178, 191 | Verified, including territorial qualification for Eastern synodal discipline. |
+| Curial institutions do not legislate or derogate from universal law except under PE art. 30's individual/particular and *in forma specifica* rule. | *Praedicate Evangelium* art. 30; 2025 General Regulations effective 2026 | Verified. Document form and actual approval matter. |
+| DLT authentic interpretation differs from explanation; doctrinal authority differs from legislative and penal effect. | CIC c. 16; CCEO c. 1498; PE arts. 69–78, 175–182; register | Verified. Promulgation is not made a universal condition of doctrinal authority. |
+| Hierarchical recourse can proceed for any just reason; Signatura administrative review is a narrower assigned legality review. | CIC cc. 1737, 1739; PE art. 197; Signatura proper law | Verified. Local acts do not ordinarily proceed directly to Signatura. |
+| Holy See, Curia, canonical juridic persons, civil entities, and Vatican City State are distinct. | CIC cc. 113 §1, 361; CCEO c. 48; Lateran Treaty; Vatican law | Verified. No one-to-one civil/canonical entity mapping presumed. |
+| Civil contract law and alienation effects are received only as the exact canons provide. | CIC cc. 1290, 1296; CCEO c. 1034 | Verified. CIC c. 1296 is confined to ecclesiastical goods alienated without required canonical formalities but validly under civil law. |
+| Marriage can have distinct canonical/sacramental and civil effects even when one party alone is Catholic. | CIC cc. 1055, 1059; CCEO cc. 776, 780 | Verified. Sacramentality requires a valid marriage between baptized persons. |
+| Vatican executive power and source/publication rules are state-specific. | 2023 Fundamental Law arts. 7–16; Law N. LXXI; 16 January 2024 publication decree | Verified. The President exercises executive function using the Governorate; Italian-law reception limits in Law N. LXXI art. 3 are not generalized to every source. |
 
 ## Currentness overlay and negative result
 
-- Checked: Holy See code and amendment archive; official CIC index; official CCEO Latin pages; DLT interpretation register; *Pascite gregem Dei*; *Recognitum Librum VI*; *Competentias quasdam decernere*; *Vocare peccatores*; *Expedit ut iura*; *Praedicate Evangelium*; 2008 Signatura *Lex propria* and *Munus Tribunalis*; 2026 Curial General Regulations; 2023 Vatican Fundamental Law; 2025 Vatican amendment; 2026 CIC c. 699 §2 rescript.
-- No post-2022 amendment was located to the central boundary canons listed in `current-law-matrix.md`.
-- The DLT site’s update warning and the controlling force of prescribed promulgation are retained.
-- No unpublished particular/proper law or private canonical opinion is represented as absent.
+- Checked: official CIC and CCEO pages; code/amendment archive; authentic-interpretation register; *Pascite gregem Dei*; *Recognitum Librum VI*; *Competentias quasdam decernere*; *Vocare peccatores*; *Expedit ut iura*; *Praedicate Evangelium*; Signatura proper law and *Munus Tribunalis*; Leo XIV's 2025 General Regulations effective 2026; Vatican Fundamental Law, source law, publication decree, and 2025 amendment; May 2026 c. 699 §2 rescript; *Confirma fratres tuos* of 24 June 2026, published 30 June.
+- The identified 2024–2026 acts include code amendments, tribunal proper law, curial regulation, Vatican state law, special faculty, and particular Roman law; they are not described collectively as code amendments.
+- No identified post-2022 act amended the central source and divine-law boundary canons used in the article.
+- The result does not establish that every online index is exhaustive or that unpublished particular, proper, or private sources are absent.
 
-## Authority and translation cautions
+## Authority, translation, and rights cautions
 
-- Official Latin controls for CIC/CCEO and Latin promulgating acts.
-- Holy See English CIC pages and CLSA CCEO English are study aids.
-- Vatican City legislation is ordinarily controlled by official Italian.
-- Perseus, New Advent, Latin Library, and older Roman-law translations are convenient witnesses, not uniformly critical editions.
-- Cicero *De re publica* III.33 survives through Lactantius and has variant numbering.
-- The Digest compiles jurists from different periods and contexts; editorial juxtaposition is not conceptual unanimity.
-- Gratian’s compilation and Aquinas’s theology are not current statutory law.
-- The International Theological Commission’s 2009 document is expert theology, not an act of the Magisterium.
-
-## Copyright and publication status
-
-No full modern translation, official code, article, or monograph is reproduced. Links enable inspection; prose and tables are project-created synthesis. The installed PDF may be released only after work-specific rights review and required authorization. Independent specialist and ecclesiastical review remain outstanding.
+- The promulgated official Latin texts control for CIC/CCEO and Latin promulgating acts; legally prescribed publication controls for other acts.
+- Holy See English CIC pages and published CCEO translations are aids.
+- Vatican City law is ordinarily controlled by official Italian unless an authoritative version provides otherwise.
+- Perseus, New Advent, Latin Library, Friedberg web witnesses, and older Roman translations are convenient sources of access, not uniformly critical editions.
+- Scripture, official texts, historical works, translations, and scholarship retain their independent status. No full modern translation, official code, article, or monograph is reproduced.
+- The installed PDF remains on hold for work-specific rights review and required release authorization.
 
 ## Build and review record
 
-- Multi-pass `pdflatex` build completed 2026-07-16: 38 PDF pages, US Letter, PDF 1.7.
-- Final log audit found no fatal error, undefined or multiply defined reference, overfull or underfull box, or LaTeX/package warning.
-- `qpdf --check` found no syntax or stream-encoding error. Every font reported by `pdffonts` is embedded, subset, and Unicode-mapped.
-- Layout-preserving extraction produced 2,060 lines, 18,522 words, and 141,986 bytes; no replacement character, unresolved marker, or drafting placeholder was found.
-- Every page was rendered at 120 dpi and visually inspected. Title and contents pages, tables and their continuations, source links, the institutional-path diagram, page furniture, and the reuse notice showed no clipping, overlap, collision, or illegible element.
-- Reviewed build SHA-256: `7e9087a562a0f2ecdbfeca3cc4ba76a239f425ff6d64a692d8352f8b1a84eabc`. The installed PDF was verified byte-identical to this build.
-- Catalog and release-manifest records place the work on hold for work-specific rights review; no release authorization is asserted.
-- `make check-public-alpha` remained fail-closed because the existing `perpetual-public-repository-2026` authorization has a stale site-source list and stale hashes for several repository pages. The new held publication produced no additional policy error, and authorization records were not rewritten.
+- Built the dedicated target through the required LaTeX passes on 2026-07-16. The reviewed artifact is 48 letter-size pages and 516,727 bytes.
+- The settled log contains no LaTeX or package warnings, fatal errors, undefined references, overfull boxes, or underfull boxes. `qpdf --check` reports no syntax or stream-encoding errors.
+- All 14 PDF fonts are embedded and subset. PDF metadata identifies the title as *Natural and Positive, Divine and Human Law* and the subject as *A historical and juridical study of responsible action across overlapping orders of law*.
+- `pdftotext -layout` produced 2,638 lines, 24,614 words, and 191,433 bytes. The extraction contains no replacement character, placeholder marker, or unresolved editorial token.
+- Every page was rendered at 120 dpi and visually inspected at both contact-sheet and enlarged review scale. No clipping, unreadable table density, split heading, artificial blank region, or accidental sparse spill page was found; the final half-page reuse-and-rights notice is intentional.
+- `make check-metadata` passed. `make check-public-alpha` remains blocked by the repository's stale public-site authorization record, including missing approved library pages and changed hashes for several global site sources; publication release authorization therefore remains outstanding.
+- The reviewed build and installed mirror are byte-identical. SHA-256: `9037e9385876734ead8322d27bcb620d1e5c83c0e007c19f88475382ca1970c1`.

@@ -5,76 +5,72 @@
 - Provider and collection: GPT; canon-law articles.
 - Source: `src/gpt/articles/canon-law/natural-positive-divine-human-law/main.tex`.
 - Installed mirror: `doc/gpt/articles/canon-law/natural-positive-divine-human-law.pdf`.
-- Primary genre and profile: discursive canon-law article; `guidance/articles.md` governs. Philosophical, historical, scriptural, theological, Roman-law, and public-law modules retain their own source methods.
-- Governing question: How do natural and positive law relate to divine and human law; which Greek, Roman, scriptural, patristic, canonistic, and scholastic sources produced the vocabulary; how did the Church differentiate ecclesiastical and civil authority; and how do the distinctions operate in the current Catholic, Holy See, and Vatican City juridical structures?
-- Audience: canonists and civil lawyers entering the neighboring field, clergy and formators, students of Catholic social thought, and serious lay readers.
+- Primary genre and profile: discursive canon-law article; `guidance/articles.md` governs. Philosophical, historical, scriptural, theological, moral, Roman-law, civil-law, and public-law modules retain their own source methods.
+- Governing question: How do the natural/positive and divine/human classifications relate; how did their vocabulary, institutions, and forums develop; and how should one responsible person identify, reconcile, challenge, or refuse concurrent obligations arising from natural and revealed moral law, civil and ecclesiastical positive law, status, office, contract, family, and other roles?
+- Audience: canonists and civil lawyers entering a neighboring field, clergy and formators, students of Catholic social thought, and serious readers.
 - Legal and online-verification cutoff: 2026-07-16.
 
-## Governing thesis
+## Governing theses
 
-The familiar pairs do not create four equal species. Natural law is divine in origin and authority while naturally knowable through human reason. Divine positive law is freely revealed and historically given by God. Human positive law is enacted or received by competent civil or ecclesiastical authority. “Human natural law” is not an independent fourth source; it can name human recognition, formulation, or application of natural law. Eternal law orders the account. Human positive law is necessary, mutable within competence, and subordinate to divine and higher law.
+The familiar pairs do not create four equal species. Natural law is rooted in the created rational order and naturally knowable through human reason. Divine positive law is freely revealed and historically given by God. Human positive law is enacted or received by competent civil or ecclesiastical authority. “Human natural law” can name human recognition, formulation, or application of natural law, but is not an independently authored fourth source. Eternal law orders the account.
+
+Concurrent human orders are neither one appellate hierarchy nor morally autonomous silos. Each produces juridical effects within its competence. Natural and revealed norms measure the morality of action. Conscience judges the concrete act but does not legislate, dispense, or adjudicate. The responsible person must establish facts and statuses, identify each norm and effect separately, seek relief in the competent forum, refuse morally impermissible action, and preserve duties toward affected third parties.
 
 ## Legal scope block
 
-- Governing bodies of law: 1983 *Codex Iuris Canonici* for the Latin Church; 1990 *Codex Canonum Ecclesiarum Orientalium* for the Eastern Catholic Churches; identified universal, common, particular, proper, liturgical, curial, treaty, and Vatican City law.
-- Controlling language: official Latin for CIC, CCEO, and Latin promulgating acts. Holy See English pages and the CLSA CCEO edition assist. Vatican City legislation is cited in official Italian where no authenticated English version controls.
-- Persons and jurisdiction: the universal Church, Latin Church, Eastern Catholic Churches *sui iuris*, their competent authorities and subjects, and civil polities insofar as civil law is received by or interacts with canon law.
-- Currentness: official code/archive and institutional sources checked through 16 July 2026. The review accounts for the 2021 Latin penal revision, 2022–2023 Latin and Eastern penal amendments, *Praedicate Evangelium* (2022), the Vatican Fundamental Law (2023), *Munus Tribunalis* (2024), Leo XIV’s 2025 curial regulations and Vatican amendment, and the identified 2026 rescript concerning CIC c. 699 §2.
-- Material-amendment finding: no post-2022 amendment was located to the central boundary canons CIC cc. 11, 16, 22, 24, 85, 129, 135, 199, 331, 336, 381, 391, 445–446, 455, 1075, 1141, 1254, 1259, 1290 or CCEO cc. 1490, 1498, 1504, 1506, 1536, 1542.
-- Current institutions: Roman Pontiff and college of bishops; diocesan and eparchial bishops; Eastern synods; particular councils; Latin episcopal conferences; Dicastery for Legislative Texts; Dicastery for the Doctrine of the Faith; Apostolic Signatura; Roman Rota; local tribunals; administrative recourse; Holy See treaty competence; Vatican City civil organs.
-- Assumed facts: examples are abstract classifications, not determinations of a named person’s conscience, rights, criminal exposure, marriage, sacramental status, office, or duty to obey.
+- Governing bodies of law: 1983 *Codex Iuris Canonici* for the Latin Church; 1990 *Codex Canonum Ecclesiarum Orientalium* for the Eastern Catholic Churches; identified universal, common, particular, special, proper, liturgical, curial, treaty, and Vatican City law.
+- Controlling language: official Latin for CIC, CCEO, and Latin promulgating acts. Holy See English pages and the CLSA CCEO edition assist. Vatican City legislation is cited in official Italian or an official English version where available.
+- Canonical persons and applicability: baptism or reception, canonical personality, Latin or Eastern ascription, age and use of reason, domicile and presence, office, institute or association membership, delegation, vow, rights and duties, and any singular administrative act. Principal loci include CIC cc. 7–22, 35–112, 129–144, 208–223, 1321–1325, and 1732–1752; CCEO cc. 7–38, 909–930, 979–1006, 1414–1416, and 1488–1539.
+- Civil and assumed relations: citizenship, residence or presence, legal capacity, family and employment status, professional license, fiduciary or contractual relation, governing instrument, notice, procedure, and deadline. No state-specific conclusion is drawn without the applicable civil source.
+- Manifestation: general-law promulgation is distinguished from notification, execution, and other rules governing singular acts.
+- Forums and effects: conscience, sacramental and nonsacramental internal fora, external canonical governance, canonical tribunals, civil agencies and courts, and treaty or recognition mechanisms are separately classified. Moral obligation, validity, liceity, enforceability, culpability, penalty, proof, remedy, suspension, and restitution are separately recorded.
+- Current institutions: Roman Pontiff and college of bishops; diocesan and eparchial bishops; Eastern synods; particular councils; Latin episcopal conferences; Roman Curia; Dicastery for Legislative Texts; Dicastery for the Doctrine of the Faith; Apostolic Penitentiary; Apostolic Signatura; Roman Rota; local tribunals; Holy See treaty competence; Vatican City organs.
+- Currentness: sources checked through 16 July 2026 include the 2021 Latin penal revision; 2022–2023 code amendments; *Praedicate Evangelium* (2022); the Vatican Fundamental Law (2023); the 2024 Signatura amendment and Vatican publication decree; Leo XIV’s 2025 Curial Regulations, effective 2026, and Vatican constitutional amendment; the May 2026 rescript concerning CIC c. 699 §2; and *Confirma fratres tuos* of 24 June 2026, particular legislation for Rome published 30 June.
+- Assumed facts: examples are abstract classifications, not determinations of a named person’s conscience, rights, criminal exposure, marriage, sacramental status, office, civil liability, or duty to obey.
 
 ## Included scope
 
-1. Exact distinctions among eternal, natural, divine positive, human positive, civil, ecclesiastical, written, unwritten, customary, and received law.
-2. The asymmetric analytical grid and the reason “human natural law” is not a coequal source.
-3. Difference between *ius* and *lex*, Greek *physis* and *nomos*, Roman *ius gentium*, and modern legal positivism.
-4. Deep motivation through common good, authority, promulgation, freedom, conscience, equity, unjust law, and positive determination.
-5. Greek witnesses: Sophocles, Plato, Aristotle, and Stoicism.
-6. Roman witnesses: Cicero, Gaius, the Digest, Justinian, and slavery as a stress test.
-7. Scriptural and patristic foundations: natural moral knowledge, covenant and Gospel, public authority and its limit, ecclesial norm, Augustine’s eternal/temporal law and coercion tension.
-8. Gratian, Rufinus, Aquinas, *ius commune*, and an early-modern Suárez bridge.
-9. Development of ecclesiastical/civil differentiation: Gelasius, medieval plurality, confessional states, Pius IX, Leo XIII, Pius XII, Vatican II, religious freedom, autonomy, and cooperation.
-10. Contemporary synthesis in the Catechism, *Veritatis splendor*, *Evangelium vitae*, and the International Theological Commission.
-11. Current canonical sources, lawgivers, interpreters, tribunals, civil-law reception, concordats, Holy See identity, and Vatican City law.
-12. Applied dossiers: killing and penal legality, marriage, Sunday worship, property/contracts, religious liberty, unjust enactments, mutable discipline, and claims of divine law.
-13. Timeline, source-first reading protocol, hard questions, and references.
+1. The asymmetric taxonomy of eternal, natural, revealed divine, and human positive law, with related categories such as *ius*, *lex*, custom, equity, dispensation, and received civil law.
+2. An interdisciplinary survey of philosophy of law, moral theology, biblical and dogmatic theology, history, Roman and canon law, civil and public law, international and concordat law, conflict of laws and legal pluralism, procedure, comparative law, and legal sociology.
+3. Three distinct senses of hierarchy: moral priority, normative rank within a legal order, and allocation among concurrent civil and ecclesiastical orders.
+4. Greek and Roman antecedents; Scripture and early ecclesial discipline; Christian empire; Eastern and Latin canonical trajectories; canonistic, procedural, scholastic, and early-modern development.
+5. Reformation and confessionalization, territorial jurisdiction, codification, differentiated positivist theories, totalitarian legislation, postwar rights, Catholic social teaching, and Vatican II.
+6. The person/status, norm, effect, and forum ledgers; conscience and the internal/external forum distinction; penal attribution; remedies and deadlines; duties toward third parties.
+7. Current Latin and Eastern sources, subjects, lawgivers, interpreters, administrative and judicial remedies, civil-law reception, concordats, Holy See identity, and Vatican City law.
+8. Applied obligation accounts involving professional commands, reporting and confidentiality, marriage, property and civil entities, penal responsibility, Sunday worship and work, and religious exercise.
 
 ## Excluded or bounded scope
 
-- No legal opinion about a named enactment, party, marriage, delict, office, administrative act, civil suit, or conscientious-objection claim.
-- No comprehensive history of philosophy of law, Roman law, the *ius commune*, church–state relations, religious liberty, legal positivism, or international law.
-- No claim that Greek or Roman authors already possessed the later Catholic taxonomy.
-- No equation of Roman *ius gentium* with modern international law or Thomistic natural law.
-- No complete account of Old-Law ceremonial and judicial precepts, biblical exegesis, sacramental theology, or theories of doctrinal development.
-- No claim that Vatican II prescribed one establishment clause or that institutional autonomy makes civil law morally independent.
-- No claim that every canon is merely ecclesiastical, every doctrinal document legislates, or every judicial decision creates universal law.
-- No attempt to identify unpublished particular, proper, institute, treaty-implementation, or state law.
+- No legal opinion about a named enactment, person, marriage, delict, office, administrative act, civil suit, or conscientious-objection claim.
+- No comprehensive treatise on every field surveyed and no attempt to identify unpublished particular, proper, institute, treaty-implementation, or state law.
+- No universal choice-of-law rule joining every civil and ecclesiastical order.
+- No claim that conscience is the canonical internal forum or that a natural- or divine-law assertion automatically changes external status.
+- No conclusion that permission, acquittal, invalidity, or liability in one order settles morality or every effect in another.
+- No claim that Greek or Roman authors possessed the later Catholic taxonomy, that Roman *ius gentium* is modern international law, or that Roman natural-law language automatically invalidated contrary institutions.
+- No claim that Vatican II prescribes one establishment clause or that institutional autonomy makes positive law morally self-sufficient.
+- No claim that every canon is merely ecclesiastical, every doctrinal act legislates, every judgment creates universal law, or every merely ecclesiastical rule is grave, validating, or penal.
 - No full reproduction of code translations, ancient translations, official texts, or modern scholarship.
 
 ## Method and source hierarchy
 
-1. Promulgated official Latin and *Acta Apostolicae Sedis* texts establish current universal/common canon law.
-2. Ecumenical councils, papal acts, and competent dicasterial acts establish authoritative teaching and discipline according to genre.
-3. Official state legislation and treaty texts establish only their civil or international order.
-4. Scripture is read as Scripture with later doctrinal reception distinguished from original exegesis.
-5. Ancient philosophical and juristic sources are read by date, genre, vocabulary, transmission, and later reception.
-6. Gratian, canonists, and theologians establish historical and conceptual development; they are not cited as current statutes.
-7. Professional scholarship supplies textual criticism and methodological controls; schools of interpretation remain identified.
-8. Editorial synthesis distinguishes verified source claims, historical development, legal effect, theological judgment, and disputed inference.
+1. Promulgated official Latin and *Acta Apostolicae Sedis* texts establish current universal or common canon law; legally prescribed particular publication and notification rules are applied to other acts.
+2. Ecumenical councils, papal acts, and competent dicasterial acts establish teaching or discipline only according to proposition, competence, genre, form, subjects, and intended effect.
+3. Official state legislation and treaties establish effects only within their civil or international order unless a reception or recognition rule is shown.
+4. Scripture is read as Scripture, with original setting and later doctrinal reception distinguished.
+5. Ancient, patristic, philosophical, and juristic sources are read by date, genre, vocabulary, transmission, institution, and later reception.
+6. Canonists and theologians establish historical and conceptual development; they are not cited as current statutes.
+7. Professional scholarship supplies textual, historical, and methodological controls; material disputes are preserved.
+8. Project synthesis distinguishes verified source claims, historical reconstruction, legal effect, theological or moral judgment, and uncertain inference.
 
 ## Search and negative-result record
 
-- The Holy See CIC index, CCEO official Latin pages, code/amendment archive, Dicastery for Legislative Texts authentic-interpretation register, *Praedicate Evangelium*, current curial regulation, and relevant papal legislation were checked through the cutoff.
-- No post-2022 amendment to the central source/boundary canons was located. The Dicastery site warns that some sections may lag; promulgated law remains controlling.
-- No current official English CCEO text was treated as controlling.
-- No evidence was located for treating a Roman juristic “natural” proposition as an automatic mechanism invalidating a contrary statute; the slavery sources require the opposite caution.
-- No source supported presenting “human natural law” as a fourth coequal classical Catholic category.
-- No source supported saying *Dignitatis humanae* requires disestablishment; §6 permits special recognition subject to effective religious freedom and equality.
-- No source supported identifying the Holy See, Roman Curia, Vatican City State, and Catholic Church as one juridic entity.
+- The Holy See CIC index, official CCEO pages, code/amendment archive, authentic-interpretation register, relevant papal acts, Curial and Vatican sources were checked through the cutoff.
+- No identified post-2022 act changed the central source and divine-law boundary canons used in the article. This result does not establish the absence of unpublished particular or proper law.
+- No source supports a single human appellate hierarchy across Church and state, automatic suspension merely from filing administrative recourse, or equivalence among moral culpability, canonical imputability, and civil liability.
+- No source supports “human natural law” as a fourth coequal classical Catholic source, *Dignitatis humanae* as a command of disestablishment, or identity among the Catholic Church, Holy See, Roman Curia, canonical juridic persons, civil entities, and Vatican City State.
 
 ## Rights and review
 
-Scripture, official texts, ancient works, translations, scholarship, and linked documents retain their independent status under `LICENSE` and `THIRD_PARTY.md`. The article uses project-created synthesis and only brief inherited phrases. No complete third-party work is installed.
+Scripture, official texts, ancient works, translations, scholarship, and linked documents retain their independent status under `LICENSE` and `THIRD_PARTY.md`. The article uses project-created synthesis and brief, claim-focused inherited phrases. No complete third-party work is installed.
 
-Status: source-audited working article. Independent philosophical, classical, Roman-law, scriptural, patristic, medieval-canonical, theological, Latin-canonical, Eastern-canonical, public-law, civil-liberties, and ecclesiastical review remain outstanding. Publication release authorization has not been granted; the release manifest must hold the work.
+Status: source-audited working article. Independent philosophical, classical, Roman-law, scriptural, patristic, historical, medieval-canonical, moral-theological, Latin-canonical, Eastern-canonical, public-law, civil-liberties, and ecclesiastical review remain outstanding. Publication release authorization has not been granted; the release manifest must hold the work.

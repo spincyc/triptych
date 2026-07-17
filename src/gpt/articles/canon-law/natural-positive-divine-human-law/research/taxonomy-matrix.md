@@ -35,18 +35,28 @@ The two pairs ask different questions and do not yield four equal species.
 | Canonized civil law | Civil norm given canonical effects by canonical reference | Canonization of saints; automatic merger of orders | CIC cc. 22, 1290; CCEO cc. 1034, 1504 |
 | Legal positivism | Modern family of theories about social sources and law/morality | The existence or use of positive law | Hart, Kelsen, Austin, and successors require theory-specific treatment |
 | Equity | Law’s reason applied where general wording fails a case | Private suspension or favoritism | Aristotle, Aquinas, CIC c. 19/CCEO c. 1501 contexts |
-| Dispensation | Relaxation of merely ecclesiastical law in a particular case by competent authority | Repeal, interpretation, or dispensation from divine law | CIC cc. 85–93; CCEO cc. 1536–1540 |
+| Dispensation | Relaxation of merely ecclesiastical law in a particular case by competent authority | Repeal, interpretation, or dispensation from divine law | CIC cc. 85–93; CCEO cc. 1536–1539 |
 | Moral non-obligation | Lack of binding force in conscience | Automatic juridical nullity or immunity from consequence | Aquinas q. 96 a. 4; *Evangelium vitae* 72–74 |
 
 ## Classification test
 
-1. Isolate the exact proposition or act.
-2. Identify source, author, genre, jurisdiction, and date.
-3. State whether access is rational, revealed, promulgated, customary, adjudicated, or received.
-4. Identify subjects and forum.
-5. Identify interpreter, legislator, dispenser, adjudicator, and remedy.
-6. Separate moral obligation, juridical validity, liceity, enforceability, penalty, and evidentiary effect.
-7. Check higher law, amendments, authentic interpretations, and parallel legal orders.
+1. State the person's proposed act, material facts, roles, and affected third parties.
+2. Isolate each exact proposition or juridical act on its own row.
+3. Identify source, author, genre, jurisdiction, authoritative text, and date.
+4. State whether access or manifestation is rational, revealed, promulgated, notified, customary, adjudicated, contractual, or received.
+5. Verify subjects, factual trigger, rank, exception, and the competent interpreter, legislator, dispenser, adjudicator, and remedy.
+6. Separate moral obligation, validity and status, liceity, enforceability, culpability, penalty, evidence, remedy, and restitution.
+7. Check higher, special, later, particular, and proper law within the relevant order, then identify any treaty, reception, or recognition rule joining an effect to another order.
+
+## Three nonidentical hierarchies
+
+| Relation | Meaning | Practical control |
+| --- | --- | --- |
+| Moral priority | Natural and revealed moral norms measure the justice of every human act and enactment | A morally impermissible choice cannot become good through official permission |
+| Normative rank within an order | A constitution, code, universal or common law, particular law, administrative act, judgment, and contract occupy positions assigned by that legal order | Apply that order's competence and conflict rules; moral criticism alone does not supply external invalidity |
+| Allocation among orders | Civil and ecclesiastical authorities can govern different aspects of the same person or event | Neither is a universal appellate forum for the other; each gives effects within competence unless treaty, reception, or recognition law connects them |
+
+The associated person-centered method is maintained in `obligation-and-forum-matrix.md`.
 
 ## Confidence statement
 
