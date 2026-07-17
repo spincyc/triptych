@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 import datetime as dt
 import os
 import re
@@ -224,14 +225,22 @@ def validate_rendered_record(path: Path, record: Record) -> None:
             f"Model: {contribution.model}; {contribution.qualifiers}",
             f"Agent/runtime: {contribution.runtime}",
         ])
+    normalized_expected = [normalize(value) for value in expected]
+    for value, count in Counter(normalized_expected).items():
+        if rendered.count(value) != count:
+            action = "omits" if rendered.count(value) < count else "duplicates"
+            raise ValueError(
+                f"rendered PDF {action} metadata field {value!r}: "
+                f"expected {count}, found {rendered.count(value)}"
+            )
+
     cursor = 0
-    for value in expected:
-        normalized_value = normalize(value)
+    for normalized_value in normalized_expected:
         position = rendered.find(normalized_value, cursor)
         if position < 0:
-            raise ValueError(f"rendered PDF omits ordered metadata field {value!r}")
-        if rendered.count(normalized_value) != 1:
-            raise ValueError(f"rendered PDF duplicates metadata field {value!r}")
+            raise ValueError(
+                f"rendered PDF omits ordered metadata field {normalized_value!r}"
+            )
         cursor = position + len(normalized_value)
 
 

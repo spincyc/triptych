@@ -10,6 +10,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest import mock
 from pathlib import Path
 
 
@@ -113,6 +114,27 @@ class GenerationMetadataParserTests(unittest.TestCase):
 
     def test_handwritten_revision_label_is_rejected_as_legacy(self) -> None:
         self.assertRegex(r"\textbf{Last revised (UTC):}", CHECKER.LEGACY_LABEL_RE)
+
+    def test_rendered_record_accepts_repeated_model_for_distinct_runtimes(self) -> None:
+        first = CHECKER.Contribution(
+            "same-model", "effort=high", "OpenAI Codex CLI 1.2.3; first role"
+        )
+        second = CHECKER.Contribution(
+            "same-model", "effort=high", "OpenAI Codex CLI 1.2.4; second role"
+        )
+        record = CHECKER.Record(TIMESTAMP, (first, second), None)
+        rendered = CHECKER.normalize(
+            f"Last revised (UTC): {TIMESTAMP}\n"
+            "Model: same-model; effort=high\n"
+            f"Agent/runtime: {first.runtime}\n"
+            "Model: same-model; effort=high\n"
+            f"Agent/runtime: {second.runtime}\n"
+        )
+        with (
+            mock.patch.object(CHECKER, "validate_pdf_info"),
+            mock.patch.object(CHECKER, "pdf_text", return_value=rendered),
+        ):
+            CHECKER.validate_rendered_record(Path("unused.pdf"), record)
 
 
 @unittest.skipUnless(

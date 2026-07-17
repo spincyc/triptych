@@ -17,11 +17,11 @@ A condensed companion contains only:
 - every common vocal prayer appointed by the full guide, printed once;
 - the nine proper prayers under clearly navigable day headings;
 - any prayer appointed only on a particular day, in full; and
-- a compact status notice that sends calendar, Scripture, meditation, examination, concrete act, history, doctrine, approval, and translation questions back to the canonical full guide.
+- a terminal compact `Scope and Status` appendix that sends calendar, Scripture, meditation, examination, concrete act, history, doctrine, approval, and translation questions back to the canonical full guide.
 
 It does not reproduce the full guide's exposition, meditation, examination, pastoral applications, historical claims, source notes, calendar essay, or references. Omitting these materials for a reader who already knows them does not make the vocal order a substitute for the source guide's Scripture, silence, conversion, sacramental, liturgical, or charitable orientation.
 
-Because the companion is mechanically assembled from canonical prayer fragments and fixed navigation or status rubrics, its metadata record begins with its own `\AIDocumentRevisionTimestamp` and then imports one `\AIInheritedGenerationMetadata` declaration naming the full guide. The common rights page displays the companion timestamp once, while no second model-provenance block is printed. It keeps `research/derivation.md`, mapping every rendered prayer and rubric to its canonical owner and recording comparison, build, and review results. It does not duplicate the full guide's scope, prayer inventory, or source audit; the public catalog must link the companion to those controlling records and state the inherited relationship explicitly.
+Because the companion is mechanically assembled from canonical prayer fragments and fixed navigation or status rubrics, its metadata record begins with its own `\AIDocumentRevisionTimestamp` and then imports one `\AIInheritedGenerationMetadata` declaration naming the full guide. The common rights page may display the companion timestamp once under the universal inherited-provenance exception, while no second model-provenance block is printed. It keeps `research/derivation.md`, mapping every rendered prayer and rubric to its canonical owner and recording comparison, build, and review results. It does not duplicate the full guide's scope, prayer inventory, or source audit; the public catalog must link the companion to those controlling records and state the inherited relationship explicitly.
 
 ## Doctrinal and liturgical boundaries
 
@@ -40,7 +40,7 @@ Do not splice devotional material into Mass or the Liturgy of the Hours, call a 
 
 ## Required records
 
-Each novena leaf imports exactly one `generation-metadata.tex` record and keeps:
+Each novena leaf imports exactly one `generation-metadata.tex` record in its terminal metadata section and keeps:
 
 - `research/scope.md`, identifying provider, collection, stable ID, reader, thesis, included and excluded material, doctrinal and liturgical boundaries, calendar or jurisdiction variables, currentness, consequential uncertainties, and review state;
 - `research/source-audit.md`, mapping material historical, doctrinal, liturgical, hagiographical, private-revelation, indulgence, and pastoral claims to exact sources and loci; and
@@ -78,17 +78,18 @@ When a novena may be prayed at any time, say so without erasing its principal an
 
 ## Daily architecture
 
-A full nine-day guide normally contains:
+A full nine-day guide begins with the material required to pray it, not with its status, history, calendar essay, source method, or review limitations. It normally contains, in this reader-facing order:
 
-1. a compact identity, status, and calendar guide;
-2. biblical and historical provenance;
-3. doctrinal exposition of the devotion's object;
-4. one common order naming exactly what is prayed every day;
-5. nine visibly distinct days, each with a scriptural center, source-grounded meditation, concrete examination or act, proper intention, and unique received prayer, with an exact identified human translation when it may lawfully be reproduced;
-6. the principal received hymns, antiphons, litanies, or feast prayers used by the guide, complete in the source language and accompanied by exact identified human translations where they may lawfully be reproduced; and
-7. references and an appendix or one-page annual-use table when it materially improves practice.
+1. one common order naming exactly what is prayed every day;
+2. nine visibly distinct days, each with a scriptural center, source-grounded meditation, concrete examination or act, proper intention, and unique received prayer, with an exact identified human translation when it may lawfully be reproduced;
+3. the principal received hymns, antiphons, litanies, or feast prayers used by the guide, complete in the source language and accompanied by exact identified human translations where they may lawfully be reproduced;
+4. biblical, doctrinal, and historical exposition that materially deepens the devotion without interrupting its recitation sequence;
+5. a terminal `Scope, Calendar, and Qualifications` appendix containing identity and status details, historical and textual bounds, the ninefold rationale, calendar rule and dated example, jurisdictional variations, approval and private-revelation boundaries, indulgence and currentness cutoff, source and translation method, rights and review limits, and any one-page annual-use table; then
+6. references followed by terminal structured generation metadata.
 
-Its condensed companion instead gives one complete common vocal order, nine day headings with their canonical proper prayers, and any day-specific added or substituted prayer. Common texts remain printed once and are referenced by name from the daily sequence; “condensed” never authorizes an abridged prayer.
+The title may identify the addressee, feast, or devotion, and a compact notice may distinguish pious exercise from liturgy or warn against a mechanical promise when deferral would be unsafe. It points to the appendix and does not become a preliminary status essay. A qualification affecting one prayer, promise, translation, apparition claim, or day's practice remains beside that item.
+
+Its condensed companion instead gives one complete common vocal order, nine day headings with their canonical proper prayers, any day-specific added or substituted prayer, and the terminal compact status appendix. Common texts remain printed once and are referenced by name from the daily sequence; “condensed” never authorizes an abridged prayer.
 
 Daily meditations must develop rather than paraphrase one another. They should connect doctrine to repentance, virtue, vocation, works of mercy, ecclesial unity, or mission. They may invite prudent fasting, almsgiving, confession, spiritual reading, or service, but they may not impose obligations, discourage medical or psychological care, substitute private counsel for safeguarding or justice, or use suffering to keep a reader in danger.
 
@@ -96,7 +97,7 @@ A repeated daily orientation panel whose internal fields already name the script
 
 ## Current discipline, approval, and indulgences
 
-Approval claims must name the competent authority, act, date, exact object, and jurisdiction. An imprimatur concerns freedom from doctrinal error in the submitted text; it is not proof of an origin legend or guarantee of spiritual efficacy. A repository-authored novena without ecclesiastical review must say so.
+Place the work-wide approval, discipline, and indulgence account in the terminal scope appendix. Approval claims must name the competent authority, act, date, exact object, and jurisdiction. An imprimatur concerns freedom from doctrinal error in the submitted text; it is not proof of an origin legend or guarantee of spiritual efficacy. A repository-authored novena without ecclesiastical review must say so there. A limit that changes the status of a particular prayer or promise remains beside that item.
 
 Indulgence claims are mutable. Identify the edition of the `Enchiridion Indulgentiarum`, concession and general norms, public or private condition, required approved text where applicable, and as-of date. Do not perpetuate superseded day-and-quarantine measures, apply an indulgence attached to another text or circumstance, or imply that completing the repository's booklet automatically fulfills every condition.
 
@@ -108,10 +109,11 @@ A novena is ready to install only when:
 - liturgy, pious exercise, approved prayer, received tradition, and private revelation remain distinct, with no project- or AI-authored prayer;
 - every recited English prayer has the complete adjacent Latin or Greek source, an exact identified human translation witness, a recorded rights basis, and no editorial adaptation beyond a documented exact expansion of the source's explicit abbreviation from the same witness or an explicitly incorporated governing edition;
 - every day contains a genuinely distinct biblical center, meditation, intention, act, and proper prayer;
+- the common order and nine days begin immediately after the title and contents, while history, calendar mechanics, status, approval, currentness, translation method, rights, and review qualifications occur only in the terminal appendix unless a compact immediate safety notice is necessary;
 - claims about approval, promises, scapulars, apparitions, healings, and indulgences are authority-bounded and current;
 - the common prayer order is complete, practical, and not needlessly duplicated;
 - all shared-source consumers have been rebuilt and reviewed after a shared change;
-- source scope, prayer inventory, source audit, copyright review, and AI metadata are complete;
+- source scope, prayer inventory, source audit, copyright review, and terminal AI metadata are complete;
 - multi-pass build, log scan, every-page visual inspection, PDF metadata and font checks, and installed/build identity checks pass; and
 - the catalog states source and production maturity separately from independent theological, liturgical, linguistic, historical, or ecclesiastical review.
 

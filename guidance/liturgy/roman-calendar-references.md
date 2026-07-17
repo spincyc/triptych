@@ -44,19 +44,20 @@ The records are an audit, not a search diary. Do not retain complete scans or bu
 
 ## Publication architecture
 
-The rendered reference includes:
+The title or one compact identity line names the exact edition and territory. Because an inventory of mutable law can become unsafe when detached from its date, that line may also give the amendment cutoff and point to the terminal appendix; it does not reproduce the source hierarchy, omitted layers, review status, or other qualifications. After the title and table of contents, the rendered reference begins with its substantive construction history or its guide to the calendar's layers, not a scope or method chapter. It includes:
 
-- object, edition, territory, cutoff, thesis, terminology, method, and limits;
 - a periodized construction history that distinguishes origins, codification, inherited layers, and deliberate reform;
-- a dated timeline of substantive modifications, with selection criteria stated so that routine reprints are not mislabeled as reforms;
 - a guide to the calendar's layers, ranks, and interaction rules;
 - the complete normative movable cycle;
 - the complete fixed universal inventory, month by month;
 - a separate complete territorial overlay, with its actual ranks and displacement or transfer effects;
-- an explicit account of omitted local layers and any later optional mechanism; and
-- references grouped by controlling books, official amendments, territorial sources, and historical scholarship.
+- an account of any later optional mechanism where it materially changes how the inventory is used;
+- a terminal dated timeline appendix of substantive modifications, with selection criteria stated so that routine reprints are not mislabeled as reforms;
+- a terminal `Scope, Edition, and Qualifications` appendix containing the object and thesis boundary, full edition and language witness, territory and jurisdiction, historical period, amendment cutoff, terminology, method, source hierarchy, inclusion and exclusion rules, omitted local layers, global uncertainties, rights and review limits;
+- references grouped by controlling books, official amendments, territorial sources, and historical scholarship; and
+- terminal structured generation metadata.
 
-Dense tables must remain readable at ordinary print size and repeat their headings across pages. Narrative interprets rather than merely restates the timeline and tables. The reference may use concise editorial English labels, but it must identify their witness and must not imply that an inventory is a substitute for a competent Ordo.
+The timeline and scope sections may be adjacent parts of one appendix block, but neither appears before the substantive history or calendar system. Dense tables must remain readable at ordinary print size and repeat their headings across pages. Narrative interprets rather than merely restates the timeline and tables. The reference may use concise editorial English labels, but it must identify their witness and must not imply that an inventory is a substitute for a competent Ordo. A disputed date, uncertain origin, rank exception, transfer condition, or territorial difference remains beside the row or claim it qualifies.
 
 ## Completeness and review gate
 
@@ -65,9 +66,10 @@ Before installation:
 - reconcile the inventory count and every row against the calendar inventory record;
 - confirm that every month, movable celebration, vigil, octave, Ember or Rogation provision, and territorial entry required by the selected edition is accounted for;
 - test all substantive timeline claims against the evidence map and preserve disputed or unrecoverable origins;
+- confirm that substantive history or calendar use begins immediately after the title and contents and that the full scope, method, date range, cutoff, omitted-layer account, global qualifications, and timeline occur only in the terminal appendix block;
 - verify rank changes, transfers, territorial status, promulgation and effective dates, and every amendment through the cutoff;
 - keep universal, national, diocesan, religious, titular, patronal, and optional layers distinct;
 - confirm that the work does not present a recurring inventory as a computed Ordo or imply present authorization beyond scope;
 - complete link, quotation, translation, and rights review;
-- run universal metadata and publication checks, multi-pass build, clean-log inspection, every-page visual review, PDF structure checks, installed/build comparison, and catalog and release-manifest updates; and
+- run universal metadata and publication checks, including terminal provenance, multi-pass build, clean-log inspection, every-page visual review, PDF structure checks, installed/build comparison, and catalog and release-manifest updates; and
 - record independent historical and liturgical review as outstanding until named review events occur.

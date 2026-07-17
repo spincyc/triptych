@@ -22,7 +22,7 @@
 
 \newcommand{\sacramentLexiconPageHook}{%
   \phantomsection
-  \addcontentsline{toc}{section}{Metaphysical and Sacramental Lexicon}%
+  \addcontentsline{toc}{subsection}{Metaphysical and Sacramental Lexicon}%
 }
 
 \begin{document}
@@ -38,13 +38,7 @@
 \vspace{0.5em}
 {\large A patristic and Thomistic synthesis of sign, causality, grace, communion, and glory\par}
 \vfill
-\begin{minipage}{0.82\textwidth}
-\footnotesize
-\textbf{AI generation metadata}\par\smallskip
-\input{theology/sacraments/generation-metadata}
-\end{minipage}
-\vfill
-{\small Study instrument; not an official catechism, canonical opinion, or liturgical book.\par}
+{\small Study instrument; not an official catechism, canonical opinion, or liturgical book. Scope, terms, and qualifications appear in the terminal appendices.\par}
 \end{titlepage}
 
 \pagenumbering{roman}
@@ -57,9 +51,6 @@
 \clearpage
 
 \pagenumbering{arabic}
-\input{theology/sacraments/fragments/lexicon}
-
-\newpage
 \begin{deepstudy}
 
 \input{theology/sacraments/sections/10-initiation-introduction}
@@ -81,6 +72,7 @@
 \clearpage
 \appendix
 
+\input{theology/sacraments/sections/91-scope-terms-qualifications}
 \input{theology/sacraments/fragments/full-matrix}
 \input{theology/sacraments/sections/14-churches-initiation}
 
@@ -97,6 +89,9 @@
 \input{theology/sacraments/summaries/anointing}
 \input{theology/sacraments/summaries/orders}
 \input{theology/sacraments/summaries/matrimony}
+
+\section{Generation Metadata}
+\input{theology/sacraments/generation-metadata}
 
 \end{deepstudy}
 \end{document}

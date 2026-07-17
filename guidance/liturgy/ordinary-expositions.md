@@ -8,7 +8,7 @@ An edition-specific exposition that functions as the stable reading preface befo
 
 ## Define the object of study
 
-Use `Ordinary` precisely. At the start of every project, state whether it treats:
+Use `Ordinary` precisely. Before research, record whether the work treats:
 
 - the sung Ordinary: Kyrie, Gloria, Credo, Sanctus, and Agnus Dei;
 - the broader stable spoken and sung texts of Mass;
@@ -16,6 +16,8 @@ Use `Ordinary` precisely. At the start of every project, state whether it treats
 - a particular unit such as the Offertory, Eucharistic Prayer or Canon, Communion rite, or dismissal.
 
 Stable does not mean invariant. Seasonal omissions, multiple forms, ritual-Mass adjustments, celebrant and assembly parts, music, and rubrical conditions may change what is used. Distinguish the stable framework from the proper of the day, options within the Order, and exceptional ritual additions.
+
+In the publication, a compact title or identity line may name the exact Order, Missal, language, and territory because those facts identify the received object. The full textual boundary, option range, and terminology explanation belong in the terminal scope appendix rather than an opening object-and-method chapter.
 
 ## Identify editions without conflation
 
@@ -58,15 +60,29 @@ A passage-level sequential exposition also gives every movement a reproducible r
 
 Prayers or ceremonies historically attached before or after Mass may be treated when they materially illuminate the edition, but they remain outside the received Order unless the controlling liturgical book places them within it. Give the external prescription, scope, exceptions, effective dates, and suppression history from juridically competent sources. Devotional proximity does not make an attached prayer part of the Mass, and a popular origin legend does not become history through repetition.
 
-The document leaf also keeps the universal structured `generation-metadata.tex` record and imports it once at the placement selected for the exposition; it does not copy a proper guide's terminal-section convention unless that placement suits the work.
+The document leaf also keeps the universal structured `generation-metadata.tex` record and imports it once in a terminal `Generation Metadata` section. No expository prose follows it.
 
 Choose the published architecture to suit the scope: sequential commentary, thematic exposition, synoptic comparison, or a narrowly focused essay may each be appropriate. Comparisons should align genuinely corresponding moments and also identify additions, omissions, relocations, and changed functions; visual symmetry must not imply theological or historical equivalence.
+
+## Reader-facing order
+
+After the title and table of contents, begin the received movement, governing theological question, or synoptic comparison immediately. A compact sequence map may come first when it is itself a usable guide to the rite and fits without becoming another method chapter. Do not make the reader pass through a definition of `Ordinary`, source taxonomy, edition manifest, evidence key, numbering history, global ritual history, current-law survey, or review disclaimer before the exposition.
+
+Integrate historical evidence where it changes how a movement is understood. Put a global development survey, orientation timeline, edition concordance, editorial-numbering provenance, and the law and history of adjacent pre- or post-Mass prayers in appendices unless one of them is the work's governing substantive question. The terminal apparatus contains:
+
+1. `Scope, Edition, and Qualifications`: received boundary, edition, language, territory, options, included and excluded material, terminology, method and source classes, currentness, rights, limitations, and review state;
+2. any sequence concordance, global historical timeline, numbering audit, or adjacent-prayer legal history needed by the work;
+3. references; and
+4. terminal `Generation Metadata`.
+
+An exact rubric, option dependency, disputed historical attribution, cross-edition difference, or authority qualification remains beside the movement it governs. A compact immediate non-authority or present-authorization warning may remain where delaying it would create reliance risk, but it points to the appendix and is not repeated.
 
 ## Completion gate
 
 An ordinary exposition is ready to publish only when:
 
 - its meaning of `Ordinary` and its textual boundaries are explicit;
+- its exposition begins immediately after the title and contents, while the full object definition, edition manifest, method, evidence key, global history, date range, numbering provenance, currentness, and review qualifications occur only in the terminal appendix block;
 - any editorial numbering has a documented provenance, a complete edition-mapped inventory, and a non-official status statement;
 - each movement receives literal, theological, historical, and whole-order analysis proportionate to its significance, with a source class used only when it actually illuminates that movement;
 - reader-facing headings identify the received parts by their liturgical names, standard ritual designations, or incipits, while editorial interpretation remains visibly subordinate;
@@ -78,4 +94,4 @@ An ordinary exposition is ready to publish only when:
 - adjacent pre- or post-Mass prayers are neither absorbed into the Order nor narrated from unsupported origin legends;
 - cross-edition claims are based on direct comparison rather than memory or inherited labels;
 - theological authority and editorial synthesis are clearly classified; and
-- copyright, research-record, build, and generation-metadata requirements are satisfied.
+- copyright, research-record, build, and terminal generation-metadata requirements are satisfied.

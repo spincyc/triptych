@@ -4,6 +4,14 @@ This profile governs edition-specific reference works that explain how the Ordin
 
 The object is the textual and rubrical system promulgated for the 1962 Missal: the 1960 *Codex rubricarum* as incorporated into the Missal, the *Rubricae generales Missalis Romani*, the *Ritus servandus*, and the edition's formularies. A reference identifies the Latin typical edition and any hand Missal, calendar, particular supplement, ceremonial, or translation it actually uses. Present canonical authorization to celebrate with this book is a distinct, mutable question and is outside scope unless the work deliberately researches and dates it.
 
+## Reader-facing order
+
+The title may identify the 1962 Missal because the edition is the work's intrinsic object, and a compact non-authorization warning may remain there because deferral could invite unsafe reliance. After the title and table of contents, begin with the five-decision workflow below, not a scope or method chapter. Then explain the class and precedence system, consequences of occurrence, Mass-category admission, complete assembly map, special requested Masses, worked cases, and a practical checklist in the order a reader uses them.
+
+After the practical body, add a terminal `Scope, Editions, and Qualifications` appendix containing the full textual boundary, edition and calendar assumptions, language and jurisdiction, included and excluded Mass categories, terminology, source hierarchy, method, date or currentness boundary, unresolved global questions, rights limits, and review state. Any detailed rubrical concordance or orientation table used chiefly to document the method belongs with that appendix. References follow, then terminal structured `Generation Metadata`; no expository prose follows it.
+
+A condition that changes a precedence result, commemoration, permitted Mass category, formulary slot, or worked-case answer remains beside that rule or answer. The appendix cannot make an unqualified body rule safe.
+
 ## Keep the governing questions separate
 
 An assembly reference must distinguish at least five decisions:
@@ -18,7 +26,7 @@ Occurrence concerns two offices or days falling on the same civil date. Concurre
 
 ## Required research records
 
-Every document leaf keeps and imports one structured `generation-metadata.tex` record and keeps:
+Every document leaf keeps one structured `generation-metadata.tex` record, imports it once in the terminal metadata section, and keeps:
 
 - `research/scope.md`, identifying edition, language, calendar assumptions, jurisdiction, included Mass categories, excluded canonical questions, source hierarchy, material uncertainties, and review state;
 - `research/edition-manifest.md`, identifying the controlling Missal, rubrical code, general rubrics, Order of Mass, particular calendars or supplements, and any non-controlling working aid;
@@ -95,4 +103,5 @@ A 1962 assembly reference is ready to publish only when:
 - First Friday, First Saturday, external solemnity, votive, Requiem, and ritual permissions are stated with their actual conditions;
 - each worked case has been independently recalculated from the rules and agrees with its research record;
 - the work does not imply present canonical authorization beyond its stated textual scope; and
+- the five-decision workflow begins immediately after the title and contents, while full edition assumptions, method, terminology, jurisdiction, currentness, limitations, and review state occur only in the terminal appendix;
 - universal metadata validation, multi-pass build, clean-log inspection, every-page visual review, PDF structure checks, installed/build comparison, source records, and catalog update are complete.

@@ -86,7 +86,9 @@ do not carry published arguments.
 ## Bibliographic and source leads not used as claim support
 
 - Prosper's chronicle entry for the older birth chronology;
-- Rufinus's *Apology against Jerome* in full;
+- Rufinus's *Apology against Jerome* in full; a public-domain NPNF translation
+  was identified through the [New Advent Fathers
+  index](https://www.newadvent.org/fathers/) but not inspected for this edition;
 - a complete legal and ecclesiastical dossier for the 416 attack;
 - exact texts, translations, and relevant loci for the attributed lives of Paul,
   Hilarion, and Malchus;
@@ -94,9 +96,15 @@ do not carry published arguments.
   language about Jews;
 - earliest lion/Gerasimus, *Golden Legend*, cave, red-dress, skull, stone,
   burial, relic, patronage, and expanded-name witnesses;
-- J. N. D. Kelly, *Jerome*; Stefan Rebenich, *Jerome*; Megan Hale Williams,
-  *The Monk and the Book*; Andrew Cain, *The Letters of Jerome*; and Andrew
-  Cain and Josef Lössl, eds., *Jerome of Stridon*.
+- J. N. D. Kelly, *Jerome: His Life, Writings and Controversies* (London:
+  Duckworth, 1975);
+- Stefan Rebenich, *Jerome* (London: Routledge, 2002);
+- Megan Hale Williams, *The Monk and the Book* (Chicago: University of Chicago
+  Press, 2006);
+- Andrew Cain, *The Letters of Jerome* (Oxford: Oxford University Press, 2009);
+  and
+- Andrew Cain and Josef Lössl, eds., *Jerome of Stridon: His Life, Writings
+  and Legacy* (Farnham: Ashgate, 2009).
 
 Only bibliographic or publisher records were controlled for the modern books.
 Their unseen arguments do not carry a historical claim in this edition.

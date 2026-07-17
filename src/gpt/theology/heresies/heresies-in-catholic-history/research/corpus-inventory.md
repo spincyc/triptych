@@ -361,7 +361,7 @@ This table is controlling for prose destination. Every `HC.D` key above appears 
 
 ## Source-limited notice ledger
 
-These labels are enumerated so that obscurity does not become silent omission. A notice is not an endorsement of the catalogue’s genealogy, moral allegations, or claim that an organized group existed exactly as described. All fifty-five completed records are printed at Appendix B, `app:census-notices`; that table supplies the attributed object, attestation or response, aftermath or inability to trace one, and evidence limit. The controlling rows below fix the label and route.
+These labels are enumerated so that obscurity does not become silent omission. A notice is not an endorsement of the catalogue’s genealogy, moral allegations, or claim that an organized group existed exactly as described. All fifty-five completed records are printed in the “Census Notices for Obscure or Source-Limited Labels” appendix, `app:census-notices`; that table supplies the attributed object, attestation or response, aftermath or inability to trace one, and evidence limit. The controlling rows below fix the label and route.
 
 | Key | Label or attributed object | Disposition and routing | Principal limit |
 |---|---|---|---|

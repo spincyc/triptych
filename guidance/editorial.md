@@ -4,7 +4,7 @@
 
 *Triptych: AI Driven Studies in Catholic Faith, Worship, and Law* is a source-first library of study documents. Its collections may include liturgical preparation guides, expositions of liturgical ordinaries, theological reference works, and discursive articles on faith or canon law. This standard governs every collection. A genre or edition profile may add stricter requirements, but it may not weaken the common requirements below.
 
-The documents are aids to study, prayerful understanding, and responsible research. They are not official liturgical books, critical editions, catechisms, magisterial acts, canonical opinions, or substitutes for competent pastoral or legal advice. State a more specific limitation when a document's subject or intended use makes one necessary.
+The documents are aids to study, prayerful understanding, and responsible research. They are not official liturgical books, critical editions, catechisms, magisterial acts, canonical opinions, or substitutes for competent pastoral or legal advice. State a more specific limitation when a document's subject or intended use makes one necessary, following the reader-first placement rule below.
 
 ## Profile before template
 
@@ -19,6 +19,18 @@ Do not apply one genre's structure by analogy to another. In particular:
 - a canon-law article must identify its legal system, jurisdiction, sources, and effective date and must account for later amendments and authentic interpretations.
 
 When no suitable profile exists, define and review one before creating a repeatable document series. A one-off work may record its local structure in its research scope, provided it still satisfies this common standard.
+
+## Reader-first structure and terminal apparatus
+
+Begin the publication with its subject, argument, narrative, or usable liturgical or devotional content. After a title page and table of contents, if used, the reader should not have to pass through a scope statement, evidence key, chronological orientation, terminology boundary, legal assumptions block, or review disclaimer before reaching that content.
+
+Collect the work-wide editorial controls in a terminal appendix. This appendix owns the document's coverage bounds; period and date ranges; geographic, linguistic, ritual, legal, and jurisdictional limits; amendment or as-of cutoff; corpus and completeness rule; global terminology qualifications; evidence classes and method; source hierarchy; legal assumptions; unresolved global questions; and review, rights, or use limitations. A detailed orientation timeline also belongs in the appendices when its principal function is to bound or navigate the account rather than advance the argument. Keep the appendix concise, internally ordered, and linked from the table of contents. Do not duplicate it in the opening pages.
+
+References contain bibliographic entries and source-local role or rights notes only. Put global currentness, hierarchy or method, translation or rights policy, limitations, and review in the named scope apparatus.
+
+A governing question or thesis is substantive content and may open the body, but strip from it any surrounding apparatus that delays the argument. Operational facts needed to use a guide safely---for example the actual liturgical formula, selected branch, calendar rule, or recitation order---remain where the reader acts on them. A terse title-page genre or non-authority notice may remain only when immediate reliance risk makes deferral unsafe; point to the appendix instead of restating its qualifications.
+
+The terminal appendix does not absorb qualifications that change the meaning of a particular claim. Keep material uncertainty, disputed attribution, branch dependence, jurisdictional difference, source status, and other claim-local limits beside the affected claim. The appendix supplies the global frame; it is never a license to make the body sound more certain, universal, current, or authoritative than the evidence allows.
 
 ## Authority and claim discipline
 
@@ -64,7 +76,7 @@ Machine-specific paths, hostnames, network addresses, credentials, tokens, sessi
 
 ## AI generation metadata
 
-Every document records its latest publishable revision timestamp in tracked source. Every AI-generated or substantially AI-revised document also records the materially contributing model and runtime provenance once. Placement belongs to the document profile. A profile may designate a mechanically derived companion as inheriting the named canonical source’s AI provenance only when the companion contains no independent generated prose and the catalog makes that relationship explicit. Use the compact form unless a profile requires additional fields:
+Every document records its latest publishable revision timestamp in tracked source. Every AI-generated or substantially AI-revised document also records the materially contributing model and runtime provenance once. The complete visible provenance block is terminal by default: it follows the substantive body, the terminal apparatus, and references, and no expository prose follows it. A profile may put a compact local revision timestamp on a common rights page or permit inherited display for a mechanically derived companion, but it must not front-load the model and runtime block without a reader-centered reason. A profile may designate a mechanically derived companion as inheriting the named canonical source’s AI provenance only when the companion contains no independent generated prose and the catalog makes that relationship explicit. Use the compact form unless a profile requires additional fields:
 
 ```text
 Last revised (UTC): YYYY-MM-DDTHH:MM:SSZ
@@ -76,7 +88,7 @@ The revision value is the explicit UTC time at which the publishable source revi
 
 Preserve the complete model label and every exposed qualifier verbatim. Label client versions as client versions, not model or server versions. Group contributors that share the same model and runtime; distinguish contributors only when material metadata differs. Never guess an unavailable identifier or include identifying machine information. Refresh the contribution metadata when a document is substantially AI-revised or finalized in a materially different AI environment; do not overwrite accurate historical contribution values merely because a later non-content build uses another machine.
 
-Store the timestamp and provenance in `generation-metadata.tex` beside each canonical `main.tex`. Its first active declaration is exactly one `\AIDocumentRevisionTimestamp{YYYY-MM-DDTHH:MM:SSZ}`, followed by one or more `\AIModelContribution` commands, and `main.tex` imports that record exactly once at the profile-appointed display location. A mechanically derived companion instead keeps its own first timestamp declaration followed by one `\AIInheritedGenerationMetadata` declaration naming its canonical source; it displays its local timestamp once on the common rights page without duplicating the inherited model block. Do not handwrite display fields in `main.tex`, substitute build-time values for the tracked revision, or let a later generic family label overwrite an exact identifier or qualifier already known. When materially contributing agents differ in model, qualifier set, or runtime, retain separate contribution records within the one displayed provenance block.
+Store the timestamp and provenance in `generation-metadata.tex` beside each canonical `main.tex`. Its first active declaration is exactly one `\AIDocumentRevisionTimestamp{YYYY-MM-DDTHH:MM:SSZ}`, followed by one or more `\AIModelContribution` commands, and `main.tex` imports that record exactly once at the terminal profile-appointed display location. A mechanically derived companion instead keeps its own first timestamp declaration followed by one `\AIInheritedGenerationMetadata` declaration naming its canonical source; it displays its local timestamp once on the common rights page without duplicating the inherited model block. Do not handwrite display fields in `main.tex`, substitute build-time values for the tracked revision, or let a later generic family label overwrite an exact identifier or qualifier already known. When materially contributing agents differ in model, qualifier set, or runtime, retain separate contribution records within the one displayed provenance block.
 
 The metadata gate is a publication requirement. It must reject a missing, duplicate, noninitial, or noncanonical UTC revision timestamp; a generic family-only model label; an empty or malformed qualifier field; omission of a qualifier known to be exposed by a recorded model; an invalid inheritance target; legacy handwritten fields; absent PDF title or subject metadata; a PDF modification date that differs from the tracked value; an automatic creation date or trailer ID; and a rendered PDF that omits, duplicates, or reorders a structured visible field. A validator cannot discover a fact the runtime did not expose; record a specifically named unavailable component rather than inventing it, but never mark an exposed value unavailable.
 
@@ -100,6 +112,7 @@ During the final visual edit, scan headings, callouts, table headers, legends, a
 
 Before installing a publishable artifact:
 
+- confirm that substantive content begins immediately after the title page and table of contents, if used, and that work-wide scope, date, method, evidence, and qualification apparatus appears only in the terminal appendix;
 - verify every material quotation, attribution, factual assertion, and cited locus;
 - distinguish inherited teaching, historical judgment, editorial synthesis, and original proposal;
 - remove duplication, padding, unsupported links, and unused references;
