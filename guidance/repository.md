@@ -139,10 +139,12 @@ Focused third-party extracts may be tracked when they are necessary evidence and
 The normal lifecycle is:
 
 ```sh
-make          # compile into build/
-make review-pdfs  # prepare bounded every-page inspection artifacts
-make install  # copy reviewed PDFs into doc/
-make clean    # remove transient build artifacts only
+make                  # compile into build/ with bounded parallelism
+make pdf              # incremental build within the caller's current Make jobserver
+make review-pdfs      # prepare inspection artifacts for changed PDFs
+make review-all-pdfs  # prepare inspection artifacts for every built PDF
+make install          # copy reviewed PDFs into doc/
+make clean            # remove transient build artifacts only
 ```
 
 `scripts/pdf-review` owns raster and contact-sheet generation for publication
@@ -155,8 +157,9 @@ detected cgroup limit cannot be resolved safely, or known headroom cannot fund
 the reserve and one worker, the helper exits without rendering. It renders bounded thumbnails,
 splits contact sheets into bounded page batches, and applies explicit ImageMagick
 memory, map, disk, area, and thread limits. Use
-`make review-pdfs` for all built publications or pass the affected PDFs directly
-to the script. Do not bypass those controls with parallel raw `montage`, `magick`,
+`make review-all-pdfs` for all built publications, `make review-pdfs` for
+changed publications, or pass the affected PDFs directly to the script. Do not
+bypass those controls with parallel raw `montage`, `magick`,
 or equivalent whole-document contact-sheet commands. Generated inspection files
 are transient artifacts under `build/`, not evidence that a human or agent
 actually completed the required every-page review.
@@ -164,6 +167,7 @@ actually completed the required every-page review.
 Build recipes must:
 
 - validate every document's structured generation record before compilation and verify its rendered values after compilation;
+- take the PDF modification date only from the tracked document revision declaration, omit build-clock creation dates and automatic trailer IDs, and produce byte-identical PDFs from unchanged sources under the same toolchain;
 - support nested source paths without flattening or basename collisions;
 - create the matching parent directory under `build/` or `doc/`;
 - compile with stable, slash-free job names while preserving the mirrored output path;
@@ -172,6 +176,18 @@ Build recipes must:
 - keep publication-inspection subprocesses within the resource bounds above;
 - stop on fatal compilation errors and avoid installing a failed or partial output;
 - never use `doc/` as a scratch or intermediate directory.
+
+The normal build may use a small, configurable parallel-job cap, but each document's output and validation stamp remain isolated. Incremental dependencies include files capable of changing rendered output and every explicitly declared shared consumer edge; research and retrieval records that are not TeX inputs do not force an identical PDF to be recompiled. Rendered metadata validation is cached beside transient builds and reruns only when its PDF or validator changes. None of these build steps obtains a revision timestamp from Git, file metadata, the clock, or the environment.
+
+After building, `make review-pdfs` compares each transient PDF byte-for-byte
+with its installed mirror and prepares review artifacts only for changed
+documents. Each selected PDF is rasterized at full review size once;
+thumbnails and bounded contact-sheet batches are derived from those pages.
+Content-addressed cache entries bind the exact PDF hash to renderer binaries,
+versions, settings, and limits, and validate every cached artifact by hash
+before atomic reuse. `make review-all-pdfs` deliberately selects every build.
+These commands prepare page images for human review; neither a cache hit nor a
+generated contact sheet constitutes the required inspection of every page.
 
 Build manifests may enumerate publishable documents explicitly or discover them under controlled roots. Whichever method is used, adding a document must be deterministic, reviewable, and compatible with profile-specific shared dependencies.
 
@@ -248,13 +264,22 @@ source check, specialist review, imprimatur, or other ecclesiastical approval
 occurred.  A rebuilt or otherwise changed PDF is a new snapshot and requires a
 new exact approval before it can retain `release` status.
 
-The public site generator renders the canonical reader-facing Markdown rather than maintaining a second editable catalog, but filters publication entries by the manifest. It may copy rendered HTML, site styling, license notices, approved PDFs, and narrowly scoped generated host-control files required to enforce release conditions. It must not copy authoring Markdown, TeX, research or retrieval records, build intermediates, repository metadata, or prior Git history unless a later release policy explicitly reviews and authorizes a category. A private preview may additionally contain `review` PDFs, but it must be marked `noindex, nofollow`, remain local or access-controlled, and never be deployed as the public site.
+The public site generator renders the canonical reader-facing Markdown rather than maintaining a second editable catalog, but filters publication entries by the manifest. It may copy rendered HTML, site styling, license notices, approved PDFs, and narrowly scoped generated host-control files required to enforce release conditions. Every artifact-affecting repository input belongs to the exact authorization inventory: reader-facing Markdown and templates, styling, copied license texts, the generator itself, and its dependency lock. The renderer must prove that its installed dependency matches that exact lock before producing HTML. Adding, removing, or changing any such input requires a new exact binding before check, build, or verification may pass. It must not copy authoring Markdown, TeX, research or retrieval records, build intermediates, repository metadata, or prior Git history unless a later release policy explicitly reviews and authorizes a category. A private preview may additionally contain `review` PDFs without mislabeling their current hashes as approved snapshots, but it must be marked `noindex, nofollow`, remain local or access-controlled, and never be deployed as the public site.
 
-Before publishing, verify the generated artifact independently against the manifest: its complete file set must be exact; every artifact PDF must match its repository-approved hash rather than merely a generated artifact manifest; every reader-facing source, rendered page, and copied static file must match the approved repository input; the artifact manifest must have no missing or extra fields; local links and fragments must resolve; excluded publication identifiers and machine-private paths must be absent; and recorded checksums must match. Publish only the verified public artifact through the configured host or deployment workflow. A public repository may expose its tracked development material when separately authorized, but GitHub Pages must never deploy the repository root, a development branch's raw tree, or the private-preview output.
+Before publishing, verify the generated artifact independently against the manifest: its complete file set must be exact; every release PDF must match its repository-approved hash rather than merely a generated artifact manifest; every private-preview review PDF must match the exact installed candidate it identifies without acquiring an approval label; every reader-facing source, rendered page, copied static file, generator input, and dependency lock must match the approved repository input; the artifact manifest must have no missing or extra fields; local links and fragments must resolve; excluded publication identifiers and machine-private paths must be absent; and recorded checksums must match. Publish only the verified public artifact through the configured host or deployment workflow. A public repository may expose its tracked development material when separately authorized, but GitHub Pages must never deploy the repository root, a development branch's raw tree, or the private-preview output.
+
+A read-only release-preparation command may validate the exhaustive current
+scope and print deterministic candidate PDF and reader-facing source hashes
+even when prior approval bindings are stale. Its output must state that it
+confers no approval or authority and must never mutate a manifest, rights
+record, installed PDF, or generated site. Building and verifying remain
+separate operations: a build is not publication-ready until a later explicit
+verification checks the completed artifact against currently authorized
+bindings.
 
 A conditional release must encode its duration, effective instant, timezone, scope, machine-recognized conditions, and either a null cutoff for perpetual authorization or an exclusive cutoff for temporary authorization. Public checks, builds, and verification fail before the effective instant, and temporary releases also fail at and after the cutoff of their half-open authorization interval. A release that requires discovery controls emits no-index HTML metadata and host response-header instructions for every page and PDF. A public-repository authorization may instead permit ordinary platform and search indexing while retaining a narrower no-active-promotion condition. Record that distinction explicitly; public visibility and search directives must not be inferred from the word “unadvertised” alone.
 
-A generated static artifact cannot revoke or delete itself. Any temporary public release therefore requires a host control that runs before every asset request, including direct PDF requests, and returns `410 Gone` at the cutoff. It also requires cache control, prevention of rollback to an unguarded deployment, independent monitoring, and a manual project-withdrawal and cache-purge fallback. Verify these controls against the live host before sharing its URL. Do not deploy a temporary release to a host that ignores the generated control runtime merely because the local generator will reject a later rebuild.
+A generated static artifact cannot revoke or delete itself. Any temporary public release therefore requires the machine-recognized `unadvertised-public-hosting` condition and a host control that runs before every asset request, including direct PDF requests, and returns `410 Gone` at the cutoff. It also requires cache control, prevention of rollback to an unguarded deployment, independent monitoring, and a manual project-withdrawal and cache-purge fallback. Verify these controls against the live host before sharing its URL. Deployment verification must name the intended host profile and fail when that host cannot enforce the authorization conditions. GitHub Pages is accepted only for a perpetual authorization that requires neither request-time discovery headers nor an expiration runtime; do not deploy a conditional artifact there merely because `_headers` or `_worker.js` exists in the static upload.
 
 ## Version-control hygiene
 

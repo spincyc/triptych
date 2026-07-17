@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate structured AI-generation provenance in source and rendered PDFs."""
+"""Validate tracked revision timestamps and AI provenance in source and PDFs."""
 
 from __future__ import annotations
 
@@ -14,7 +14,9 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DATE_RE = re.compile(r"^\\AIGenerationDate\{([^{}]+)\}\s*$", re.MULTILINE)
+REVISION_RE = re.compile(
+    r"^\\AIDocumentRevisionTimestamp\{([^{}]+)\}\s*$", re.MULTILINE
+)
 CONTRIBUTION_RE = re.compile(
     r"^\\AIModelContribution\{([^{}]+)\}\{([^{}]+)\}\{([^{}]+)\}\s*$",
     re.MULTILINE,
@@ -23,7 +25,8 @@ INHERITANCE_RE = re.compile(
     r"^\\AIInheritedGenerationMetadata\{([^{}]+)\}\s*$", re.MULTILINE
 )
 LEGACY_LABEL_RE = re.compile(
-    r"\\textbf\{(?:Generated|Model|Agent/runtime):\}", re.IGNORECASE
+    r"\\textbf\{(?:Generated|Last revised(?: \(UTC\))?|Model|Agent/runtime):\}",
+    re.IGNORECASE,
 )
 GENERIC_MODEL_RE = re.compile(
     r"(?:based runtime|model family|unexposed|unknown|unavailable)|^gpt[- ]?5$",
@@ -52,7 +55,7 @@ class Contribution:
 
 @dataclass(frozen=True)
 class Record:
-    date: str | None
+    revision_timestamp: str
     contributions: tuple[Contribution, ...]
     inheritance: str | None
 
@@ -64,38 +67,49 @@ def active_tex(text: str) -> str:
 
 def parse_record(path: Path) -> Record:
     text = active_tex(path.read_text(encoding="utf-8"))
-    dates = DATE_RE.findall(text)
+    revisions = REVISION_RE.findall(text)
     contributions = tuple(Contribution(*parts) for parts in CONTRIBUTION_RE.findall(text))
     inheritances = INHERITANCE_RE.findall(text)
-    residue = DATE_RE.sub("", text)
+    residue = REVISION_RE.sub("", text)
     residue = CONTRIBUTION_RE.sub("", residue)
     residue = INHERITANCE_RE.sub("", residue)
 
-    if len(dates) > 1:
-        raise ValueError("contains more than one generation date")
+    if len(revisions) != 1:
+        raise ValueError("requires exactly one document revision timestamp")
+    first_declaration = text.lstrip()
+    if REVISION_RE.match(first_declaration) is None:
+        raise ValueError("document revision timestamp must be the first declaration")
     if len(inheritances) > 1:
         raise ValueError("contains more than one inheritance declaration")
-    if inheritances and (dates or contributions):
+    if inheritances and contributions:
         raise ValueError("mixes inherited and local generation provenance")
-    if not inheritances and (len(dates) != 1 or not contributions):
-        raise ValueError("requires one date and at least one model contribution")
+    if not inheritances and not contributions:
+        raise ValueError("requires at least one model contribution")
     if residue.strip():
         raise ValueError("contains text outside the structured provenance commands")
 
     return Record(
-        date=dates[0] if dates else None,
+        revision_timestamp=revisions[0],
         contributions=contributions,
         inheritance=inheritances[0] if inheritances else None,
     )
 
 
-def validate_date(value: str) -> None:
+def validate_revision_timestamp(value: str) -> dt.datetime:
+    if not re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z", value):
+        raise ValueError(
+            f"document revision timestamp must use UTC whole-second form "
+            f"YYYY-MM-DDTHH:MM:SSZ: {value!r}"
+        )
     try:
-        parsed = dt.date.fromisoformat(value)
+        parsed = dt.datetime.strptime(value, "%Y-%m-%dT%H:%M:%SZ").replace(
+            tzinfo=dt.timezone.utc
+        )
     except ValueError as exc:
-        raise ValueError(f"invalid ISO generation date {value!r}") from exc
-    if parsed.isoformat() != value:
-        raise ValueError(f"generation date is not canonical ISO form: {value!r}")
+        raise ValueError(f"invalid document revision timestamp {value!r}") from exc
+    if parsed.strftime("%Y-%m-%dT%H:%M:%SZ") != value:
+        raise ValueError(f"document revision timestamp is not canonical: {value!r}")
+    return parsed
 
 
 def validate_contribution(contribution: Contribution) -> None:
@@ -159,9 +173,9 @@ def pdf_text(path: Path) -> str:
     return normalize(result.stdout)
 
 
-def validate_pdf_info(path: Path) -> None:
+def validate_pdf_info(path: Path, revision_timestamp: str) -> None:
     result = subprocess.run(
-        ["pdfinfo", str(path)],
+        ["pdfinfo", "-rawdates", str(path)],
         check=False,
         capture_output=True,
         text=True,
@@ -176,18 +190,35 @@ def validate_pdf_info(path: Path) -> None:
     for field in ("Title", "Subject"):
         if not fields.get(field):
             raise ValueError(f"rendered PDF has an empty {field} document-info field")
+    parsed_revision = validate_revision_timestamp(revision_timestamp)
+    expected_pdf_date = parsed_revision.strftime("D:%Y%m%d%H%M%SZ")
+    if fields.get("ModDate") != expected_pdf_date:
+        raise ValueError(
+            "rendered PDF ModDate does not match its tracked revision timestamp: "
+            f"expected {expected_pdf_date!r}, found {fields.get('ModDate')!r}"
+        )
+    if fields.get("CreationDate"):
+        raise ValueError("rendered PDF contains a build-derived CreationDate")
+    if re.search(rb"/ID\s*\[", path.read_bytes()):
+        raise ValueError("rendered PDF contains an automatic trailer ID")
 
 
 def validate_rendered_record(path: Path, record: Record) -> None:
-    validate_pdf_info(path)
+    validate_pdf_info(path, record.revision_timestamp)
     rendered = pdf_text(path)
+    revision_field = f"Last revised (UTC): {record.revision_timestamp}"
+    normalized_revision = normalize(revision_field)
+    if rendered.count(normalized_revision) != 1:
+        raise ValueError(
+            f"rendered PDF must contain exactly one tracked revision field "
+            f"{revision_field!r}"
+        )
     if record.inheritance:
         if "Agent/runtime:" in rendered or "AI generation metadata" in rendered:
             raise ValueError("inherited provenance was duplicated visibly in the companion")
         return
 
-    assert record.date is not None
-    expected = [f"Generated: {record.date}"]
+    expected = [revision_field]
     for contribution in record.contributions:
         expected.extend([
             f"Model: {contribution.model}; {contribution.qualifiers}",
@@ -239,15 +270,14 @@ def audit_document(source_root: Path, relative: str, pdf: Path | None = None) ->
         target_record = parse_record(target_metadata)
         if target_record.inheritance:
             raise ValueError("generation provenance inheritance may not be chained")
-        assert target_record.date is not None
-        validate_date(target_record.date)
+        validate_revision_timestamp(target_record.revision_timestamp)
         for contribution in target_record.contributions:
             validate_contribution(contribution)
     else:
-        assert record.date is not None
-        validate_date(record.date)
         for contribution in record.contributions:
             validate_contribution(contribution)
+
+    validate_revision_timestamp(record.revision_timestamp)
 
     if pdf is not None:
         if not pdf.is_file():

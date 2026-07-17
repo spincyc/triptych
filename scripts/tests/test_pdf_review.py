@@ -1,12 +1,14 @@
 from __future__ import annotations
 
 import fcntl
+import hashlib
 import importlib.machinery
 import importlib.util
 import json
 import os
 from pathlib import Path
 import signal
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -36,6 +38,7 @@ review = load_review_module()
 FAKE_TOOL = r"""
 #!/usr/bin/env python3
 import fcntl
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -81,25 +84,30 @@ try:
     signal.pthread_sigmask(signal.SIG_SETMASK, previous_mask)
     mode = Path(sys.argv[0]).name
     args = sys.argv[1:]
-    log_record(
-        {
-            "mode": mode,
-            "args": args,
-            "address_space": resource.getrlimit(resource.RLIMIT_AS),
-            "limits": {
-                name: os.environ.get(name)
-                for name in (
-                    "MAGICK_MEMORY_LIMIT",
-                    "MAGICK_MAP_LIMIT",
-                    "MAGICK_DISK_LIMIT",
-                    "MAGICK_AREA_LIMIT",
-                    "MAGICK_THREAD_LIMIT",
-                    "OMP_NUM_THREADS",
-                )
-            },
-        }
-    )
-    if mode == "fake-pdftoppm":
+    record = {
+        "mode": mode,
+        "args": args,
+        "address_space": resource.getrlimit(resource.RLIMIT_AS),
+        "limits": {
+            name: os.environ.get(name)
+            for name in (
+                "MAGICK_MEMORY_LIMIT",
+                "MAGICK_MAP_LIMIT",
+                "MAGICK_DISK_LIMIT",
+                "MAGICK_AREA_LIMIT",
+                "MAGICK_THREAD_LIMIT",
+                "OMP_NUM_THREADS",
+            )
+        },
+    }
+    if mode == "fake-pdftoppm" and args != ["-v"]:
+        record["source_sha256"] = hashlib.sha256(Path(args[-2]).read_bytes()).hexdigest()
+    log_record(record)
+    if (mode == "fake-pdftoppm" and args == ["-v"]) or (
+        mode == "fake-magick" and args == ["-version"]
+    ):
+        print(f"{mode} {os.environ.get('PDF_REVIEW_TEST_TOOL_VERSION', '1.0')}")
+    elif mode == "fake-pdftoppm":
         source = Path(args[-2])
         prefix = Path(args[-1])
         peer_marker = Path(os.environ["PDF_REVIEW_TEST_PEER_MARKER"])
@@ -115,7 +123,15 @@ try:
         prefix.parent.mkdir(parents=True, exist_ok=True)
         for page in range(1, int(os.environ.get("PDF_REVIEW_TEST_PAGES", "3")) + 1):
             prefix.with_name(f"{prefix.name}-{page}.png").write_bytes(b"png")
-    elif mode == "fake-magick":
+    elif mode == "fake-magick" and args[0] == "mogrify":
+        time.sleep(float(os.environ.get("PDF_REVIEW_TEST_DELAY", "0.02")))
+        output = Path(args[args.index("-path") + 1])
+        output.mkdir(parents=True, exist_ok=True)
+        input_start = args.index("-thumbnail") + 2
+        for source in args[input_start:]:
+            source_path = Path(source)
+            (output / source_path.name).write_bytes(b"thumbnail")
+    elif mode == "fake-magick" and args[0] == "montage":
         time.sleep(float(os.environ.get("PDF_REVIEW_TEST_DELAY", "0.02")))
         output = Path(args[-1])
         output.parent.mkdir(parents=True, exist_ok=True)
@@ -133,6 +149,7 @@ PLAN_HARNESS = r"""
 #!/usr/bin/env python3
 import importlib.machinery
 import importlib.util
+import os
 from pathlib import Path
 import sys
 
@@ -147,6 +164,7 @@ loader.exec_module(module)
 module.current_plan = lambda override=None: module.make_plan(
     8 * module.GIB, None, 4, override
 )
+module.review_lock_path = lambda: Path(os.environ["PDF_REVIEW_TEST_LOCK"])
 raise SystemExit(module.main())
 """
 
@@ -303,13 +321,16 @@ os.execv(
 
 class PdfReviewCommandTests(unittest.TestCase):
     def setUp(self) -> None:
+        temporary_root = ROOT / "build/test-tmp"
+        temporary_root.mkdir(parents=True, exist_ok=True)
         self.temporary = tempfile.TemporaryDirectory(
-            prefix="triptych-pdf-review-test-", dir="/tmp"
+            prefix="triptych-pdf-review-test-", dir=temporary_root
         )
         self.root = Path(self.temporary.name)
         self.counter = self.root / "counter.json"
         self.log = self.root / "commands.jsonl"
         self.output = self.root / "output"
+        self.cache = self.root / "cache"
         self.fake_pdftoppm = self.root / "fake-pdftoppm"
         self.fake_magick = self.root / "fake-magick"
         self.plan_harness = self.root / "plan-harness"
@@ -330,6 +351,7 @@ class PdfReviewCommandTests(unittest.TestCase):
         pages: int = 3,
         delay: float = 0.02,
         term_delay: float = 0,
+        tool_version: str = "1.0",
     ) -> dict[str, str]:
         environment = os.environ.copy()
         environment.update(
@@ -341,7 +363,9 @@ class PdfReviewCommandTests(unittest.TestCase):
                 "PDF_REVIEW_TEST_PAGES": str(pages),
                 "PDF_REVIEW_TEST_DELAY": str(delay),
                 "PDF_REVIEW_TEST_TERM_DELAY": str(term_delay),
+                "PDF_REVIEW_TEST_TOOL_VERSION": tool_version,
                 "PDF_REVIEW_TEST_PEER_MARKER": str(self.root / "peer-started"),
+                "PDF_REVIEW_TEST_LOCK": str(self.root / "review.lock"),
             }
         )
         return environment
@@ -350,7 +374,7 @@ class PdfReviewCommandTests(unittest.TestCase):
         result = []
         for name in names:
             path = self.root / name
-            path.write_bytes(b"pdf")
+            path.write_bytes(f"pdf:{name}".encode())
             result.append(path)
         return result
 
@@ -361,7 +385,13 @@ class PdfReviewCommandTests(unittest.TestCase):
         jobs: int = 2,
         pages: int = 3,
         delay: float = 0.02,
+        output: Path | None = None,
+        cache: Path | None = None,
+        extra: list[str] | None = None,
+        tool_version: str = "1.0",
     ) -> subprocess.CompletedProcess[str]:
+        selected_output = self.output if output is None else output
+        selected_cache = self.cache if cache is None else cache
         return subprocess.run(
             [
                 sys.executable,
@@ -370,11 +400,14 @@ class PdfReviewCommandTests(unittest.TestCase):
                 "--jobs",
                 str(jobs),
                 "--output",
-                str(self.output),
+                str(selected_output),
+                "--cache",
+                str(selected_cache),
+                *(extra or []),
                 *(str(path) for path in pdfs),
             ],
             cwd=ROOT,
-            env=self.environment(pages=pages, delay=delay),
+            env=self.environment(pages=pages, delay=delay, tool_version=tool_version),
             text=True,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
@@ -408,6 +441,12 @@ class PdfReviewCommandTests(unittest.TestCase):
         self.assertEqual(state["current"], 0)
         self.assertEqual(state["maximum"], 2)
         self.assertEqual(len(list(self.output.rglob("pages/page-1.png"))), 5)
+        pdftoppm_records = [
+            record
+            for record in self.records()
+            if record["mode"] == "fake-pdftoppm" and record["args"] != ["-v"]
+        ]
+        self.assertEqual(len(pdftoppm_records), 5)
         for record in self.records():
             self.assertEqual(
                 record["address_space"],
@@ -417,7 +456,11 @@ class PdfReviewCommandTests(unittest.TestCase):
     def test_contact_sheets_are_batched_and_magick_is_hard_limited(self) -> None:
         result = self.invoke(self.pdfs(["large.pdf"]), jobs=1, pages=45)
         self.assertEqual(result.returncode, 0, result.stderr)
-        magick_records = [record for record in self.records() if record["mode"] == "fake-magick"]
+        magick_records = [
+            record
+            for record in self.records()
+            if record["mode"] == "fake-magick" and record["args"][:1] == ["montage"]
+        ]
         self.assertEqual(len(magick_records), 3)
         for record in magick_records:
             args = record["args"]
@@ -441,6 +484,391 @@ class PdfReviewCommandTests(unittest.TestCase):
             self.assertEqual(record["limits"]["OMP_NUM_THREADS"], "1")
         self.assertEqual(len(list(self.output.rglob("contact-sheets/sheet-*.png"))), 3)
 
+    def test_full_pages_are_rasterized_once_and_thumbnails_are_derived(self) -> None:
+        result = self.invoke(self.pdfs(["single-pass.pdf"]), jobs=1, pages=7)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        records = self.records()
+        raster_commands = [
+            record
+            for record in records
+            if record["mode"] == "fake-pdftoppm" and record["args"] != ["-v"]
+        ]
+        self.assertEqual(len(raster_commands), 1)
+        self.assertEqual(
+            raster_commands[0]["args"][raster_commands[0]["args"].index("-scale-to") + 1],
+            str(review.FULL_PAGE_MAX_DIMENSION),
+        )
+        mogrify_commands = [
+            record
+            for record in records
+            if record["mode"] == "fake-magick" and record["args"][:1] == ["mogrify"]
+        ]
+        self.assertEqual(len(mogrify_commands), 1)
+        self.assertIn("-thumbnail", mogrify_commands[0]["args"])
+        self.assertEqual(len(list(self.output.rglob("thumbnails/page-*.png"))), 7)
+
+    def test_content_addressed_cache_avoids_rerendering_for_a_new_output(self) -> None:
+        pdf = self.pdfs(["cached.pdf"])[0]
+        first_output = self.root / "first-output"
+        second_output = self.root / "second-output"
+        first = self.invoke([pdf], jobs=1, output=first_output)
+        self.assertEqual(first.returncode, 0, first.stderr)
+        second = self.invoke([pdf], jobs=1, output=second_output)
+        self.assertEqual(second.returncode, 0, second.stderr)
+        raster_commands = [
+            record
+            for record in self.records()
+            if record["mode"] == "fake-pdftoppm" and record["args"] != ["-v"]
+        ]
+        self.assertEqual(len(raster_commands), 1)
+        self.assertTrue(any(second_output.rglob("pages/page-1.png")))
+        entries = [
+            path
+            for path in (self.cache / "objects").glob("*/*")
+            if path.is_dir()
+        ]
+        self.assertEqual(len(entries), 1)
+        metadata = json.loads((entries[0] / review.METADATA_NAME).read_text())
+        self.assertEqual(metadata["pdf_sha256"], review.sha256_file(pdf))
+        self.assertIn("pdftoppm", metadata["renderer"]["tools"])
+        self.assertEqual(
+            metadata["renderer"]["raster"]["full_page_max_dimension"],
+            review.FULL_PAGE_MAX_DIMENSION,
+        )
+        self.assertEqual(
+            metadata["renderer"]["contact_sheets"]["geometry"],
+            review.CONTACT_GEOMETRY,
+        )
+        shutil.rmtree(first_output)
+        shutil.rmtree(second_output)
+        shutil.rmtree(self.cache)
+        self.assertFalse(first_output.exists())
+        self.assertFalse(second_output.exists())
+        self.assertFalse(self.cache.exists())
+
+    def test_renderer_version_change_invalidates_the_cache(self) -> None:
+        pdf = self.pdfs(["versioned.pdf"])[0]
+        first = self.invoke([pdf], jobs=1, output=self.root / "version-one")
+        self.assertEqual(first.returncode, 0, first.stderr)
+        second = self.invoke(
+            [pdf],
+            jobs=1,
+            output=self.root / "version-two",
+            tool_version="2.0",
+        )
+        self.assertEqual(second.returncode, 0, second.stderr)
+        raster_commands = [
+            record
+            for record in self.records()
+            if record["mode"] == "fake-pdftoppm" and record["args"] != ["-v"]
+        ]
+        self.assertEqual(len(raster_commands), 2)
+        entries = [
+            path
+            for path in (self.cache / "objects").glob("*/*")
+            if path.is_dir()
+        ]
+        self.assertEqual(len(entries), 2)
+
+    def test_same_size_cache_corruption_is_detected_and_rerendered(self) -> None:
+        pdf = self.pdfs(["corruption.pdf"])[0]
+        first = self.invoke([pdf], jobs=1, output=self.root / "before-corruption")
+        self.assertEqual(first.returncode, 0, first.stderr)
+        entries = [
+            path
+            for path in (self.cache / "objects").glob("*/*")
+            if path.is_dir()
+        ]
+        self.assertEqual(len(entries), 1)
+        cached_page = entries[0] / "pages/page-1.png"
+        self.assertEqual(cached_page.read_bytes(), b"png")
+        cached_page.chmod(0o644)
+        cached_page.write_bytes(b"bad")
+        cached_page.chmod(0o444)
+        second = self.invoke([pdf], jobs=1, output=self.root / "after-corruption")
+        self.assertEqual(second.returncode, 0, second.stderr)
+        self.assertEqual(cached_page.read_bytes(), b"png")
+        raster_commands = [
+            record
+            for record in self.records()
+            if record["mode"] == "fake-pdftoppm" and record["args"] != ["-v"]
+        ]
+        self.assertEqual(len(raster_commands), 2)
+
+    def test_invalid_cache_cleanup_never_chmods_descendant_symlink_targets(self) -> None:
+        pdf = self.pdfs(["symlink-cache.pdf"])[0]
+        first = self.invoke([pdf], jobs=1, output=self.root / "before-symlinks")
+        self.assertEqual(first.returncode, 0, first.stderr)
+        entries = [
+            path
+            for path in (self.cache / "objects").glob("*/*")
+            if path.is_dir()
+        ]
+        self.assertEqual(len(entries), 1)
+        target_file = self.root / "symlink-target.txt"
+        target_directory = self.root / "symlink-target-directory"
+        target_file.write_bytes(b"outside-cache")
+        target_directory.mkdir()
+        target_file.chmod(0o600)
+        target_directory.chmod(0o700)
+        (entries[0] / "outside-file").symlink_to(target_file)
+        (entries[0] / "outside-directory").symlink_to(
+            target_directory, target_is_directory=True
+        )
+
+        second = self.invoke([pdf], jobs=1, output=self.root / "after-symlinks")
+
+        self.assertEqual(second.returncode, 0, second.stderr)
+        self.assertEqual(target_file.stat().st_mode & 0o777, 0o600)
+        self.assertEqual(target_directory.stat().st_mode & 0o777, 0o700)
+        self.assertEqual(target_file.read_bytes(), b"outside-cache")
+
+    def test_changed_against_skips_identical_pdf_with_a_cold_cache(self) -> None:
+        build_root = self.root / "build/gpt"
+        installed_root = self.root / "doc/gpt"
+        build_root.mkdir(parents=True)
+        installed_root.mkdir(parents=True)
+        same = build_root / "same.pdf"
+        changed = build_root / "changed.pdf"
+        same.write_bytes(b"same-pdf")
+        changed.write_bytes(b"new-pdf")
+        (installed_root / "same.pdf").write_bytes(b"same-pdf")
+        (installed_root / "changed.pdf").write_bytes(b"old-pdf")
+        result = self.invoke(
+            [same, changed],
+            jobs=1,
+            extra=["--changed-against", str(installed_root)],
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("skipped 1 byte-identical PDF", result.stderr)
+        self.assertNotIn(str(same) + " ->", result.stdout)
+        self.assertIn(str(changed) + " ->", result.stdout)
+        raster_commands = [
+            record
+            for record in self.records()
+            if record["mode"] == "fake-pdftoppm" and record["args"] != ["-v"]
+        ]
+        self.assertEqual(len(raster_commands), 1)
+
+    def test_no_change_run_atomically_replaces_stale_output_with_empty_manifest(self) -> None:
+        build_root = self.root / "build/gpt"
+        installed_root = self.root / "doc/gpt"
+        build_root.mkdir(parents=True)
+        installed_root.mkdir(parents=True)
+        source = build_root / "document.pdf"
+        installed = installed_root / source.name
+        source.write_bytes(b"new-pdf")
+        installed.write_bytes(b"old-pdf")
+        arguments = ["--changed-against", str(installed_root)]
+
+        first = self.invoke([source], jobs=1, extra=arguments)
+        self.assertEqual(first.returncode, 0, first.stderr)
+        self.assertTrue(any(self.output.rglob("pages/page-1.png")))
+        first_manifest = json.loads(
+            (self.output / review.RUN_MANIFEST_NAME).read_text(encoding="utf-8")
+        )
+        self.assertEqual(len(first_manifest["pdfs"]), 1)
+
+        installed.write_bytes(source.read_bytes())
+        second = self.invoke([source], jobs=1, extra=arguments)
+
+        self.assertEqual(second.returncode, 0, second.stderr)
+        self.assertIn("no changed PDFs selected", second.stderr)
+        self.assertEqual(
+            [path.name for path in self.output.iterdir()],
+            [review.RUN_MANIFEST_NAME],
+        )
+        second_manifest = json.loads(
+            (self.output / review.RUN_MANIFEST_NAME).read_text(encoding="utf-8")
+        )
+        self.assertEqual(second_manifest["schema"], review.RUN_MANIFEST_SCHEMA)
+        self.assertEqual(second_manifest["pdfs"], [])
+        self.assertIsNone(second_manifest["renderer_fingerprint"])
+        self.assertFalse(
+            any(self.output.parent.glob(f".{self.output.name}.tmp-*"))
+        )
+
+    def test_changed_run_removes_outputs_for_pdfs_no_longer_selected(self) -> None:
+        build_root = self.root / "changed-build/gpt"
+        installed_root = self.root / "changed-doc/gpt"
+        build_root.mkdir(parents=True)
+        installed_root.mkdir(parents=True)
+        first_source = build_root / "first.pdf"
+        second_source = build_root / "second.pdf"
+        first_source.write_bytes(b"new-first")
+        second_source.write_bytes(b"new-second")
+        (installed_root / first_source.name).write_bytes(b"old-first")
+        (installed_root / second_source.name).write_bytes(b"old-second")
+        arguments = ["--changed-against", str(installed_root)]
+
+        first = self.invoke([first_source, second_source], jobs=2, extra=arguments)
+        self.assertEqual(first.returncode, 0, first.stderr)
+        first_manifest = json.loads(
+            (self.output / review.RUN_MANIFEST_NAME).read_text(encoding="utf-8")
+        )
+        first_outputs = {
+            record["source"]: self.output / record["output"]
+            for record in first_manifest["pdfs"]
+        }
+        self.assertEqual(len(first_outputs), 2)
+        first_label = review.manifest_source(first_source)
+        second_label = review.manifest_source(second_source)
+
+        (installed_root / first_source.name).write_bytes(first_source.read_bytes())
+        second = self.invoke([first_source, second_source], jobs=2, extra=arguments)
+
+        self.assertEqual(second.returncode, 0, second.stderr)
+        second_manifest = json.loads(
+            (self.output / review.RUN_MANIFEST_NAME).read_text(encoding="utf-8")
+        )
+        self.assertEqual(
+            [record["source"] for record in second_manifest["pdfs"]],
+            [second_label],
+        )
+        self.assertFalse(first_outputs[first_label].exists())
+        self.assertTrue(first_outputs[second_label].exists())
+
+    def test_changed_selection_is_bound_to_an_immutable_source_snapshot(self) -> None:
+        build_root = self.root / "selection-build/gpt"
+        installed_root = self.root / "selection-doc/gpt"
+        build_root.mkdir(parents=True)
+        installed_root.mkdir(parents=True)
+        source = build_root / "document.pdf"
+        installed = installed_root / source.name
+        source.write_bytes(b"same-at-snapshot")
+        installed.write_bytes(b"same-at-snapshot")
+        task = review.task_for_pdf(str(source))
+
+        with mock.patch.object(
+            review, "review_lock_path", return_value=self.root / "selection.lock"
+        ):
+            with review.exclusive_review_lock():
+                with review.snapshotted_pdf_tasks(
+                    [task], self.root, "selection-output"
+                ) as snapshots:
+                    source.write_bytes(b"changed-after-snapshot")
+                    selected, unchanged = review.select_changed_against(
+                        snapshots, installed_root
+                    )
+                    self.assertEqual(selected, [])
+                    self.assertEqual(len(unchanged), 1)
+                    self.assertEqual(
+                        snapshots[0].pdf_sha256,
+                        hashlib.sha256(b"same-at-snapshot").hexdigest(),
+                    )
+
+    def test_rendering_uses_the_exact_pdf_snapshot_bound_to_the_cache_hash(self) -> None:
+        pdf = self.pdfs(["replace-during-render.pdf"])[0]
+        original = b"original-pdf-bytes"
+        replacement = b"replacement-pdf-bytes"
+        original_digest = hashlib.sha256(original).hexdigest()
+        pdf.write_bytes(original)
+        process = subprocess.Popen(
+            [
+                sys.executable,
+                str(self.plan_harness),
+                str(SCRIPT),
+                "--jobs",
+                "1",
+                "--output",
+                str(self.output),
+                "--cache",
+                str(self.cache),
+                str(pdf),
+            ],
+            cwd=ROOT,
+            env=self.environment(pages=1, delay=1.0),
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+        )
+        deadline = time.monotonic() + 5
+        raster_record: dict | None = None
+        while time.monotonic() < deadline:
+            try:
+                records = self.records()
+            except FileNotFoundError:
+                records = []
+            raster_record = next(
+                (
+                    record
+                    for record in records
+                    if record["mode"] == "fake-pdftoppm"
+                    and record["args"] != ["-v"]
+                ),
+                None,
+            )
+            if raster_record is not None:
+                break
+            time.sleep(0.02)
+        else:
+            process.kill()
+            process.communicate(timeout=10)
+            self.fail("PDF raster command did not start")
+
+        pdf.write_bytes(replacement)
+        _stdout, stderr = process.communicate(timeout=20)
+
+        self.assertEqual(process.returncode, 0, stderr)
+        assert raster_record is not None
+        self.assertEqual(raster_record["source_sha256"], original_digest)
+        self.assertNotEqual(Path(raster_record["args"][-2]), pdf)
+        manifest = json.loads(
+            (self.output / review.RUN_MANIFEST_NAME).read_text(encoding="utf-8")
+        )
+        self.assertEqual(manifest["pdfs"][0]["pdf_sha256"], original_digest)
+        entries = [
+            path
+            for path in (self.cache / "objects").glob("*/*")
+            if path.is_dir()
+        ]
+        self.assertEqual(len(entries), 1)
+        metadata = json.loads(
+            (entries[0] / review.METADATA_NAME).read_text(encoding="utf-8")
+        )
+        self.assertEqual(metadata["pdf_sha256"], original_digest)
+        self.assertFalse(
+            any(self.output.parent.glob(f".{self.output.name}.snapshots-*"))
+        )
+
+    def test_failed_review_keeps_the_preceding_output_transaction_intact(self) -> None:
+        good = self.pdfs(["good.pdf"])[0]
+        first = self.invoke([good], jobs=1, pages=1)
+        self.assertEqual(first.returncode, 0, first.stderr)
+        before = {
+            path.relative_to(self.output): path.read_bytes()
+            for path in self.output.rglob("*")
+            if path.is_file()
+        }
+
+        failed = self.invoke(self.pdfs(["fail.pdf"]), jobs=1, pages=1)
+
+        self.assertNotEqual(failed.returncode, 0)
+        after = {
+            path.relative_to(self.output): path.read_bytes()
+            for path in self.output.rglob("*")
+            if path.is_file()
+        }
+        self.assertEqual(after, before)
+        self.assertFalse(
+            any(self.output.parent.glob(f".{self.output.name}.tmp-*"))
+        )
+        self.assertFalse(
+            any(self.output.parent.glob(f".{self.output.name}.snapshots-*"))
+        )
+
+    def test_git_selection_maps_build_pdf_to_its_doc_mirror(self) -> None:
+        task = review.PdfTask(
+            source=ROOT / "build/gpt/example/document.pdf",
+            relative_output=Path("build/gpt/example/document"),
+        )
+        with mock.patch.object(
+            review,
+            "git_changed_pdf_paths",
+            return_value={Path("doc/gpt/example/document.pdf")},
+        ):
+            self.assertEqual(review.select_git_changed([task], "HEAD", None), [task])
+
     def test_competing_invocations_are_serialized_by_the_shared_lock(self) -> None:
         first, second = self.pdfs(["first.pdf", "second.pdf"])
         environment = self.environment(pages=1, delay=0.15)
@@ -453,6 +881,8 @@ class PdfReviewCommandTests(unittest.TestCase):
                 "1",
                 "--output",
                 str(self.root / output_name),
+                "--cache",
+                str(self.cache),
                 str(pdf),
             ]
             for output_name, pdf in (("first-output", first), ("second-output", second))
@@ -487,6 +917,7 @@ class PdfReviewCommandTests(unittest.TestCase):
         self.assertLess(len(result.stderr.encode()), review.DIAGNOSTIC_TAIL_BYTES + 2048)
         self.assertEqual(self.counter_state()["current"], 0)
         self.assertFalse(any(self.output.rglob(".tmp-*")))
+        self.assertFalse(any(self.cache.rglob(".tmp-*")))
 
     def test_signals_cannot_interrupt_failure_cleanup(self) -> None:
         pdfs = self.pdfs(["slow-one.pdf", "fail.pdf", "slow-two.pdf"])
@@ -499,6 +930,8 @@ class PdfReviewCommandTests(unittest.TestCase):
                 "3",
                 "--output",
                 str(self.output),
+                "--cache",
+                str(self.cache),
                 *(str(pdf) for pdf in pdfs),
             ],
             cwd=ROOT,
@@ -531,6 +964,7 @@ class PdfReviewCommandTests(unittest.TestCase):
         self.assertIn("command failed", stderr)
         self.assertEqual(self.counter_state()["current"], 0)
         self.assertFalse(any(self.output.rglob(".tmp-*")))
+        self.assertFalse(any(self.cache.rglob(".tmp-*")))
 
     def test_repeated_signals_do_not_interrupt_child_cleanup(self) -> None:
         pdf = self.pdfs(["slow.pdf"])[0]
@@ -543,6 +977,8 @@ class PdfReviewCommandTests(unittest.TestCase):
                 "1",
                 "--output",
                 str(self.output),
+                "--cache",
+                str(self.cache),
                 str(pdf),
             ],
             cwd=ROOT,
@@ -575,6 +1011,7 @@ class PdfReviewCommandTests(unittest.TestCase):
         self.assertIn("terminated by SIGTERM", stderr)
         self.assertEqual(self.counter_state()["current"], 0)
         self.assertFalse(any(self.output.rglob(".tmp-*")))
+        self.assertFalse(any(self.cache.rglob(".tmp-*")))
 
     def test_invalid_job_override_is_rejected(self) -> None:
         result = subprocess.run(

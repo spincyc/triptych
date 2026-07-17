@@ -30,6 +30,13 @@
   pdfborder={0 0 0}
 }
 
+% PDF timestamps are document source, never build-clock state.  Every
+% publishable leaf supplies a strict UTC timestamp through its tracked
+% generation-metadata.tex.  Suppressing the automatic creation date and
+% trailer ID keeps unchanged source byte-reproducible across rebuilds.
+\pdfinfoomitdate=1
+\pdftrailerid{}
+
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.55em}
 \setlength{\tabcolsep}{3pt}
@@ -51,12 +58,32 @@
 \newcommand{\latin}[1]{\textit{#1}}
 \newcommand{\rubric}[1]{\textbf{#1}}
 
-% Generation provenance is stored in each document leaf and rendered through
-% these shared commands.  The separate contribution command permits a future
-% document to retain materially different model/runtime contributors without
-% duplicating or weakening known qualifiers.
-\newcommand{\AIGenerationDate}[1]{\textbf{Generated:} #1\\}
+% Generation provenance and the document revision timestamp are stored in each
+% document leaf and rendered through these shared commands.  The first model
+% contribution renders the timestamp in a canonical provenance block.  A
+% mechanically derived companion has no local contribution, so its timestamp
+% is rendered once by the universal rights page instead.
+\newif\ifAIDocumentRevisionRendered
+\def\AIDocumentRevisionTimestampValue{}
+\makeatletter
+\def\AI@revisiontopdf#1-#2-#3T#4:#5:#6Z\@nil{D:#1#2#3#4#5#6Z}
+\newcommand{\AIDocumentRevisionTimestamp}[1]{%
+  \gdef\AIDocumentRevisionTimestampValue{#1}%
+  \edef\AI@pdfrevisiontimestamp{%
+    \expandafter\AI@revisiontopdf#1\@nil}%
+  % Metadata files are imported after the first page in some documents, when
+  % hyperref has frozen its setup keys.  The pdfTeX primitive remains valid at
+  % that point and records the tracked value without consulting the build clock.
+  \pdfinfo{/ModDate (\AI@pdfrevisiontimestamp)}%
+}
+\makeatother
+\newcommand{\AIDisplayDocumentRevisionTimestamp}{%
+  \ifAIDocumentRevisionRendered\else
+    \textbf{Last revised (UTC):} \AIDocumentRevisionTimestampValue\\
+    \global\AIDocumentRevisionRenderedtrue
+  \fi}
 \newcommand{\AIModelContribution}[3]{%
+  \AIDisplayDocumentRevisionTimestamp
   \textbf{Model:} \texttt{#1}; \texttt{#2}\\
   \textbf{Agent/runtime:} #3\par}
 \newcommand{\AIInheritedGenerationMetadata}[1]{}
@@ -73,6 +100,8 @@
   \begin{minipage}{0.82\linewidth}
   \small
   {\large\bfseries Reuse and Rights\par}
+  \medskip
+  \AIDisplayDocumentRevisionTimestamp
   \medskip
   To the extent the project holds the relevant rights, project-created
   editorial content, annotations, translations, and design are licensed under

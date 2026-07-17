@@ -36,8 +36,11 @@ jobs:
       - name: Install site dependency
         run: python -m pip install --disable-pip-version-check -r requirements-public-alpha.txt
 
-      - name: Build and verify public artifact
-        run: make public-site verify-public-site
+      - name: Build public artifact
+        run: make public-site
+
+      - name: Verify artifact and GitHub Pages compatibility
+        run: python scripts/public-alpha verify --deployment-target github-pages
 
       - name: Configure Pages
         uses: actions/configure-pages@v6

@@ -4,12 +4,13 @@
 from __future__ import annotations
 
 import argparse
-from collections.abc import Callable
+from collections.abc import Callable, Iterator
 import concurrent.futures
 import contextlib
 import dataclasses
 import fcntl
 import hashlib
+import json
 import math
 import os
 from pathlib import Path
@@ -20,6 +21,7 @@ import signal
 import stat
 import subprocess
 import sys
+import tempfile
 import threading
 import time
 import uuid
@@ -36,11 +38,18 @@ FULL_PAGE_MAX_DIMENSION = 1600
 THUMBNAIL_MAX_DIMENSION = 420
 CONTACT_BATCH_SIZE = 20
 CONTACT_COLUMNS = 4
+THUMBNAIL_BATCH_SIZE = 20
+CONTACT_GEOMETRY = "+8+8"
 MAGICK_MEMORY = "256MiB"
 MAGICK_MAP = "512MiB"
 MAGICK_DISK = "2GiB"
 MAGICK_AREA = "64MP"
 DIAGNOSTIC_TAIL_BYTES = 64 * 1024
+CACHE_SCHEMA = 1
+RENDERER_SCHEMA = "triptych-pdf-review-v2-single-raster"
+METADATA_NAME = "review-cache.json"
+RUN_MANIFEST_NAME = "review-run.json"
+RUN_MANIFEST_SCHEMA = 1
 
 
 class ReviewError(RuntimeError):
@@ -102,6 +111,15 @@ class ResourcePlan:
 class PdfTask:
     source: Path
     relative_output: Path
+    pdf_sha256: str | None = None
+    render_source: Path | None = None
+
+
+@dataclasses.dataclass(frozen=True)
+class ReviewResult:
+    task: PdfTask
+    pdf_sha256: str
+    page_count: int
 
 
 def read_text(path: Path) -> str | None:
@@ -384,7 +402,7 @@ def is_relative_to(path: Path, parent: Path) -> bool:
     return True
 
 
-def validate_output_root(value: Path) -> Path:
+def validate_artifact_root(value: Path, option: str) -> Path:
     output = (ROOT / value).resolve() if not value.is_absolute() else value.resolve()
     build_root = (ROOT / "build").resolve()
     temporary_root = Path("/tmp").resolve()
@@ -393,9 +411,17 @@ def validate_output_root(value: Path) -> Path:
     )
     if not allowed:
         raise ReviewError(
-            "--output must remain under this checkout's build/ tree or a /tmp subdirectory"
+            f"{option} must remain under this checkout's build/ tree or a /tmp subdirectory"
         )
     return output
+
+
+def validate_output_root(value: Path) -> Path:
+    return validate_artifact_root(value, "--output")
+
+
+def validate_cache_root(value: Path) -> Path:
+    return validate_artifact_root(value, "--cache")
 
 
 def safe_component(value: str) -> str:
@@ -417,7 +443,7 @@ def task_for_pdf(value: str) -> PdfTask:
     return PdfTask(source=source, relative_output=output)
 
 
-def review_lock_path() -> Path:
+def repository_identity_digest() -> str:
     result = subprocess.run(
         ["git", "rev-parse", "--git-common-dir"],
         cwd=ROOT,
@@ -430,8 +456,17 @@ def review_lock_path() -> Path:
     common = Path(identity)
     if not common.is_absolute():
         common = ROOT / common
-    digest = hashlib.sha256(os.fsencode(common.resolve())).hexdigest()[:16]
-    return Path("/tmp") / f"triptych-pdf-review-{os.getuid()}-{digest}.lock"
+    return hashlib.sha256(os.fsencode(common.resolve())).hexdigest()[:16]
+
+
+def default_cache_root() -> Path:
+    return ROOT / "build/pdf-review-cache"
+
+
+def review_lock_path() -> Path:
+    return Path("/tmp") / (
+        f"triptych-pdf-review-{os.getuid()}-{repository_identity_digest()}.lock"
+    )
 
 
 @contextlib.contextmanager
@@ -461,7 +496,13 @@ class CommandRunner:
         self._processes: set[subprocess.Popen[bytes]] = set()
         self._cancelled = False
 
-    def run(self, command: list[str], *, environment: dict[str, str] | None = None) -> None:
+    def run(
+        self,
+        command: list[str],
+        *,
+        environment: dict[str, str] | None = None,
+        capture: bool = False,
+    ) -> bytes:
         limited_command = [
             sys.executable,
             str(Path(__file__).resolve()),
@@ -477,19 +518,20 @@ class CommandRunner:
                 limited_command,
                 cwd=ROOT,
                 env=environment,
-                stdout=subprocess.DEVNULL,
-                stderr=subprocess.PIPE,
+                stdout=subprocess.PIPE if capture else subprocess.DEVNULL,
+                stderr=subprocess.STDOUT if capture else subprocess.PIPE,
                 start_new_session=True,
             )
             self._processes.add(process)
-        stderr_tail = bytearray()
+        diagnostic_tail = bytearray()
         try:
-            if process.stderr is None:
+            diagnostic_stream = process.stdout if capture else process.stderr
+            if diagnostic_stream is None:
                 raise ReviewError("bounded child has no diagnostic stream")
-            while chunk := process.stderr.read(8192):
-                stderr_tail.extend(chunk)
-                if len(stderr_tail) > DIAGNOSTIC_TAIL_BYTES:
-                    del stderr_tail[:-DIAGNOSTIC_TAIL_BYTES]
+            while chunk := diagnostic_stream.read(8192):
+                diagnostic_tail.extend(chunk)
+                if len(diagnostic_tail) > DIAGNOSTIC_TAIL_BYTES:
+                    del diagnostic_tail[:-DIAGNOSTIC_TAIL_BYTES]
             process.wait()
         except BaseException:
             if process.poll() is None:
@@ -503,9 +545,17 @@ class CommandRunner:
                 if process.poll() is not None:
                     self._processes.discard(process)
         if process.returncode:
-            detail = stderr_tail.decode("utf-8", errors="replace").strip()
+            detail = diagnostic_tail.decode("utf-8", errors="replace").strip()
             suffix = f": {detail}" if detail else ""
             raise ReviewError(f"command failed ({process.returncode}): {command[0]}{suffix}")
+        return bytes(diagnostic_tail)
+
+    def capture(
+        self, command: list[str], *, environment: dict[str, str] | None = None
+    ) -> str:
+        return self.run(command, environment=environment, capture=True).decode(
+            "utf-8", errors="replace"
+        ).strip()
 
     def terminate_all(self) -> None:
         with self._lock:
@@ -531,7 +581,117 @@ def executable_from_environment(name: str, default: str) -> str:
     resolved = shutil.which(value)
     if resolved is None:
         raise ReviewError(f"missing required executable: {value}")
-    return resolved
+    return str(Path(resolved).resolve())
+
+
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    try:
+        with path.open("rb") as stream:
+            while chunk := stream.read(MIB):
+                digest.update(chunk)
+    except OSError as exc:
+        raise ReviewError(f"cannot hash {path}: {exc}") from exc
+    return digest.hexdigest()
+
+
+def snapshot_pdf(task: PdfTask, snapshot_root: Path) -> PdfTask:
+    """Copy one open PDF stream and bind the immutable copy to its digest."""
+
+    snapshot_root.mkdir(parents=True, exist_ok=True)
+    descriptor, raw_path = tempfile.mkstemp(
+        prefix=f".{safe_component(task.source.stem)}.snapshot-",
+        suffix=".pdf",
+        dir=snapshot_root,
+    )
+    snapshot = Path(raw_path)
+    digest = hashlib.sha256()
+    try:
+        with task.source.open("rb") as source, os.fdopen(descriptor, "wb") as target:
+            descriptor = -1
+            while chunk := source.read(MIB):
+                digest.update(chunk)
+                target.write(chunk)
+        return dataclasses.replace(
+            task,
+            pdf_sha256=digest.hexdigest(),
+            render_source=snapshot,
+        )
+    except BaseException:
+        if descriptor >= 0:
+            os.close(descriptor)
+        snapshot.unlink(missing_ok=True)
+        raise
+
+
+def canonical_json(value: object) -> bytes:
+    return json.dumps(
+        value, sort_keys=True, separators=(",", ":"), ensure_ascii=True
+    ).encode("ascii")
+
+
+def tool_record(
+    executable: str, version_arguments: list[str], runner: CommandRunner
+) -> dict[str, str]:
+    path = Path(executable)
+    if not path.is_file():
+        raise ReviewError(f"renderer is not a regular file: {path}")
+    version = runner.capture([executable, *version_arguments])
+    if not version:
+        raise ReviewError(f"renderer reported no version: {path}")
+    return {
+        "path": str(path),
+        "sha256": sha256_file(path),
+        "version": version,
+    }
+
+
+def renderer_record(
+    pdftoppm: str, magick: str, runner: CommandRunner
+) -> tuple[str, dict[str, object]]:
+    record: dict[str, object] = {
+        "schema": RENDERER_SCHEMA,
+        "tools": {
+            "pdftoppm": tool_record(pdftoppm, ["-v"], runner),
+            "magick": tool_record(magick, ["-version"], runner),
+        },
+        "raster": {
+            "format": "png",
+            "full_page_max_dimension": FULL_PAGE_MAX_DIMENSION,
+            "thumbnail_max_dimension": THUMBNAIL_MAX_DIMENSION,
+            "thumbnail_batch_size": THUMBNAIL_BATCH_SIZE,
+        },
+        "contact_sheets": {
+            "batch_size": CONTACT_BATCH_SIZE,
+            "columns": CONTACT_COLUMNS,
+            "geometry": CONTACT_GEOMETRY,
+            "background": "white",
+            "fill": "black",
+            "label": "Page {number}",
+        },
+        "limits": {
+            "address_space_bytes": CHILD_ADDRESS_SPACE_BYTES,
+            "magick_memory": MAGICK_MEMORY,
+            "magick_map": MAGICK_MAP,
+            "magick_disk": MAGICK_DISK,
+            "magick_area": MAGICK_AREA,
+            "magick_threads": 1,
+            "omp_threads": 1,
+        },
+    }
+    return hashlib.sha256(canonical_json(record)).hexdigest(), record
+
+
+def cache_key(pdf_sha256: str, renderer_fingerprint: str) -> str:
+    return hashlib.sha256(
+        canonical_json(
+            {
+                "schema": CACHE_SCHEMA,
+                "pdf_sha256": pdf_sha256,
+                "renderer_fingerprint": renderer_fingerprint,
+            }
+        )
+    ).hexdigest()
 
 
 def numeric_pngs(directory: Path) -> list[tuple[int, Path]]:
@@ -559,105 +719,453 @@ def magick_environment(temporary: Path) -> dict[str, str]:
     return environment
 
 
-def process_pdf(
-    task: PdfTask,
+def magick_limits() -> list[str]:
+    return [
+        "-limit",
+        "memory",
+        MAGICK_MEMORY,
+        "-limit",
+        "map",
+        MAGICK_MAP,
+        "-limit",
+        "disk",
+        MAGICK_DISK,
+        "-limit",
+        "area",
+        MAGICK_AREA,
+        "-limit",
+        "thread",
+        "1",
+    ]
+
+
+def artifact_file_records(directory: Path) -> list[dict[str, object]] | None:
+    records: list[dict[str, object]] = []
+    for parent, directory_names, file_names in os.walk(directory, followlinks=False):
+        parent_path = Path(parent)
+        for name in directory_names:
+            candidate = parent_path / name
+            try:
+                details = candidate.lstat()
+            except OSError:
+                return None
+            if not stat.S_ISDIR(details.st_mode):
+                return None
+        for name in file_names:
+            candidate = parent_path / name
+            relative = candidate.relative_to(directory)
+            if relative == Path(METADATA_NAME):
+                continue
+            try:
+                details = candidate.lstat()
+            except OSError:
+                return None
+            if not stat.S_ISREG(details.st_mode):
+                return None
+            try:
+                digest = sha256_file(candidate)
+            except ReviewError:
+                return None
+            records.append(
+                {
+                    "path": relative.as_posix(),
+                    "size": details.st_size,
+                    "sha256": digest,
+                }
+            )
+    return sorted(records, key=lambda item: str(item["path"]))
+
+
+def complete_page_numbers(directory: Path) -> list[int] | None:
+    numbered = numeric_pngs(directory)
+    numbers = [number for number, _path in numbered]
+    if not numbers or numbers != list(range(1, len(numbers) + 1)):
+        return None
+    return numbers
+
+
+def complete_sheet_numbers(directory: Path, page_count: int) -> bool:
+    expected = list(range(1, math.ceil(page_count / CONTACT_BATCH_SIZE) + 1))
+    actual: list[int] = []
+    for path in directory.glob("sheet-*.png"):
+        match = re.fullmatch(r"sheet-(\d+)\.png", path.name)
+        if match:
+            actual.append(int(match.group(1)))
+    return sorted(actual) == expected
+
+
+def cache_metadata(
+    directory: Path,
+    *,
+    key: str,
+    pdf_sha256: str,
+    renderer_fingerprint: str,
+    renderer: dict[str, object],
+) -> dict[str, object] | None:
+    metadata_path = directory / METADATA_NAME
+    try:
+        details = metadata_path.lstat()
+        if not stat.S_ISREG(details.st_mode):
+            return None
+        value = json.loads(metadata_path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeError, json.JSONDecodeError):
+        return None
+    if not isinstance(value, dict):
+        return None
+    expected_values = {
+        "schema": CACHE_SCHEMA,
+        "cache_key": key,
+        "pdf_sha256": pdf_sha256,
+        "renderer_fingerprint": renderer_fingerprint,
+        "renderer": renderer,
+    }
+    if any(value.get(name) != expected for name, expected in expected_values.items()):
+        return None
+    pages = complete_page_numbers(directory / "pages")
+    thumbnails = complete_page_numbers(directory / "thumbnails")
+    if pages is None or pages != thumbnails:
+        return None
+    if value.get("page_count") != len(pages):
+        return None
+    if not complete_sheet_numbers(directory / "contact-sheets", len(pages)):
+        return None
+    records = artifact_file_records(directory)
+    if records is None or value.get("files") != records:
+        return None
+    return value
+
+
+def chmod_nofollow(path: Path, mode: int, expected_type: int) -> None:
+    """Change a known real entry without ever following a replaced symlink."""
+
+    details = path.lstat()
+    if stat.S_IFMT(details.st_mode) != expected_type:
+        if stat.S_ISLNK(details.st_mode):
+            return
+        raise ReviewError(f"unexpected review-artifact entry type: {path}")
+    os.chmod(path, mode, follow_symlinks=False)
+
+
+def make_tree_readonly(directory: Path) -> None:
+    for parent, directory_names, file_names in os.walk(directory, topdown=False):
+        parent_path = Path(parent)
+        for name in file_names:
+            chmod_nofollow(parent_path / name, 0o444, stat.S_IFREG)
+        for name in directory_names:
+            chmod_nofollow(parent_path / name, 0o755, stat.S_IFDIR)
+        # Files reject accidental in-place edits. Directories remain removable
+        # so the repository's ordinary `make clean` can discard all of build/.
+        # Every cache hit still verifies the recorded SHA-256 of every file.
+        chmod_nofollow(parent_path, 0o755, stat.S_IFDIR)
+
+
+def make_tree_writable(directory: Path) -> None:
+    for parent, directory_names, file_names in os.walk(directory, topdown=False):
+        parent_path = Path(parent)
+        for name in file_names:
+            chmod_nofollow(parent_path / name, 0o644, stat.S_IFREG)
+        for name in directory_names:
+            chmod_nofollow(parent_path / name, 0o755, stat.S_IFDIR)
+        chmod_nofollow(parent_path, 0o755, stat.S_IFDIR)
+
+
+def tree_is_readonly(directory: Path) -> bool:
+    try:
+        for parent, directory_names, file_names in os.walk(directory, followlinks=False):
+            parent_path = Path(parent)
+            for name in directory_names:
+                details = (parent_path / name).lstat()
+                if not stat.S_ISDIR(details.st_mode):
+                    return False
+            for name in file_names:
+                details = (parent_path / name).lstat()
+                if not stat.S_ISREG(details.st_mode):
+                    return False
+                if details.st_mode & 0o222:
+                    return False
+        return stat.S_ISDIR(directory.lstat().st_mode)
+    except OSError:
+        return False
+
+
+def remove_artifact_tree(path: Path, parent_root: Path) -> None:
+    try:
+        details = path.lstat()
+    except FileNotFoundError:
+        return
+    except OSError as exc:
+        raise ReviewError(f"cannot inspect stale review artifact {path}: {exc}") from exc
+    try:
+        path.parent.resolve().relative_to(parent_root.resolve())
+    except ValueError as exc:
+        raise ReviewError(f"unsafe review artifact path: {path}") from exc
+    if not stat.S_ISDIR(details.st_mode):
+        raise ReviewError(f"refusing to replace non-directory review artifact: {path}")
+    try:
+        make_tree_writable(path)
+        shutil.rmtree(path)
+    except OSError as exc:
+        raise ReviewError(f"cannot remove stale review artifact {path}: {exc}") from exc
+
+
+def install_artifact_directory(staged: Path, destination: Path, output_root: Path) -> None:
+    backup = destination.parent / (
+        f".{destination.name}.old-{os.getpid()}-{uuid.uuid4().hex}"
+    )
+    had_destination = False
+    try:
+        destination.lstat()
+        had_destination = True
+    except FileNotFoundError:
+        pass
+    if had_destination:
+        try:
+            details = destination.lstat()
+        except OSError as exc:
+            raise ReviewError(f"cannot inspect review destination {destination}: {exc}") from exc
+        if not stat.S_ISDIR(details.st_mode):
+            raise ReviewError(
+                f"refusing to replace non-directory review destination: {destination}"
+            )
+        os.replace(destination, backup)
+    try:
+        os.replace(staged, destination)
+    except BaseException:
+        if had_destination and backup.exists() and not destination.exists():
+            os.replace(backup, destination)
+        raise
+    if had_destination:
+        remove_artifact_tree(backup, output_root)
+
+
+def materialize_cache_entry(
+    entry: Path,
+    destination: Path,
     output_root: Path,
+    *,
+    key: str,
+    pdf_sha256: str,
+    renderer_fingerprint: str,
+    renderer: dict[str, object],
+) -> Path:
+    if destination.exists():
+        destination_metadata = cache_metadata(
+            destination,
+            key=key,
+            pdf_sha256=pdf_sha256,
+            renderer_fingerprint=renderer_fingerprint,
+            renderer=renderer,
+        )
+        if destination_metadata is not None and tree_is_readonly(destination):
+            return destination
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    staged = destination.parent / (
+        f".{destination.name}.tmp-{os.getpid()}-{uuid.uuid4().hex}"
+    )
+    try:
+        shutil.copytree(entry, staged, symlinks=False)
+        if cache_metadata(
+            staged,
+            key=key,
+            pdf_sha256=pdf_sha256,
+            renderer_fingerprint=renderer_fingerprint,
+            renderer=renderer,
+        ) is None:
+            raise ReviewError(f"cached review artifact changed while copying: {entry}")
+        install_artifact_directory(staged, destination, output_root)
+    except BaseException:
+        if staged.exists():
+            shutil.rmtree(staged, ignore_errors=True)
+        raise
+    return destination
+
+
+def write_cache_metadata(
+    directory: Path,
+    *,
+    key: str,
+    pdf_sha256: str,
+    renderer_fingerprint: str,
+    renderer: dict[str, object],
+    page_count: int,
+) -> None:
+    records = artifact_file_records(directory)
+    if records is None:
+        raise ReviewError(f"cannot inventory review artifact: {directory}")
+    value = {
+        "schema": CACHE_SCHEMA,
+        "cache_key": key,
+        "pdf_sha256": pdf_sha256,
+        "renderer_fingerprint": renderer_fingerprint,
+        "renderer": renderer,
+        "page_count": page_count,
+        "files": records,
+    }
+    (directory / METADATA_NAME).write_bytes(canonical_json(value) + b"\n")
+
+
+def render_pdf_artifact(
+    task: PdfTask,
+    temporary: Path,
     pdftoppm: str,
     magick: str,
     runner: CommandRunner,
+) -> int:
+    if task.render_source is None:
+        raise ReviewError(f"PDF has no immutable review snapshot: {task.source}")
+    pages = temporary / "pages"
+    thumbnails = temporary / "thumbnails"
+    sheets = temporary / "contact-sheets"
+    magick_tmp = temporary / "magick-tmp"
+    for directory in (pages, thumbnails, sheets, magick_tmp):
+        directory.mkdir(parents=True, exist_ok=True)
+    runner.run(
+        [
+            pdftoppm,
+            "-png",
+            "-scale-to",
+            str(FULL_PAGE_MAX_DIMENSION),
+            str(task.render_source),
+            str(pages / "page"),
+        ]
+    )
+    page_files = numeric_pngs(pages)
+    page_numbers = [number for number, _path in page_files]
+    if not page_files or page_numbers != list(range(1, len(page_files) + 1)):
+        raise ReviewError(f"incomplete page raster for {task.source}")
+    environment = magick_environment(magick_tmp)
+    for offset in range(0, len(page_files), THUMBNAIL_BATCH_SIZE):
+        batch = page_files[offset : offset + THUMBNAIL_BATCH_SIZE]
+        runner.run(
+            [
+                magick,
+                "mogrify",
+                *magick_limits(),
+                "-path",
+                str(thumbnails),
+                "-thumbnail",
+                f"{THUMBNAIL_MAX_DIMENSION}x{THUMBNAIL_MAX_DIMENSION}",
+                *(str(page) for _number, page in batch),
+            ],
+            environment=environment,
+        )
+    thumbnail_files = numeric_pngs(thumbnails)
+    if page_numbers != [number for number, _path in thumbnail_files]:
+        raise ReviewError(f"thumbnail raster mismatch for {task.source}")
+    for offset in range(0, len(thumbnail_files), CONTACT_BATCH_SIZE):
+        batch = thumbnail_files[offset : offset + CONTACT_BATCH_SIZE]
+        sheet = sheets / f"sheet-{offset // CONTACT_BATCH_SIZE + 1:03d}.png"
+        command = [
+            magick,
+            "montage",
+            *magick_limits(),
+            "-background",
+            "white",
+            "-fill",
+            "black",
+        ]
+        for page_number, thumbnail in batch:
+            command.extend(["-label", f"Page {page_number}", str(thumbnail)])
+        command.extend(
+            [
+                "-tile",
+                f"{CONTACT_COLUMNS}x",
+                "-geometry",
+                CONTACT_GEOMETRY,
+                str(sheet),
+            ]
+        )
+        runner.run(command, environment=environment)
+    shutil.rmtree(magick_tmp)
+    return len(page_files)
+
+
+def process_pdf(
+    task: PdfTask,
+    output_root: Path,
+    cache_root: Path,
+    pdftoppm: str,
+    magick: str,
+    renderer_fingerprint: str,
+    renderer: dict[str, object],
+    key_lock: threading.Lock,
+    runner: CommandRunner,
     termination: TerminationController,
-) -> Path:
+) -> ReviewResult:
     temporary: Path | None = None
     try:
+        if task.pdf_sha256 is None or task.render_source is None:
+            raise ReviewError(f"PDF was not snapshotted before review: {task.source}")
+        key = cache_key(task.pdf_sha256, renderer_fingerprint)
         destination = output_root / task.relative_output
         try:
             destination.resolve().relative_to(output_root.resolve())
         except ValueError as exc:
             raise ReviewError(f"unsafe review destination: {destination}") from exc
-        destination.parent.mkdir(parents=True, exist_ok=True)
-        temporary = (
-            destination.parent
-            / f".{destination.name}.tmp-{os.getpid()}-{uuid.uuid4().hex}"
-        )
-        pages = temporary / "pages"
-        thumbnails = temporary / "thumbnails"
-        sheets = temporary / "contact-sheets"
-        magick_tmp = temporary / "magick-tmp"
-        for directory in (pages, thumbnails, sheets, magick_tmp):
-            directory.mkdir(parents=True, exist_ok=True)
-        runner.run(
-            [
-                pdftoppm,
-                "-png",
-                "-scale-to",
-                str(FULL_PAGE_MAX_DIMENSION),
-                str(task.source),
-                str(pages / "page"),
-            ]
-        )
-        runner.run(
-            [
-                pdftoppm,
-                "-png",
-                "-scale-to",
-                str(THUMBNAIL_MAX_DIMENSION),
-                str(task.source),
-                str(thumbnails / "page"),
-            ]
-        )
-        page_files = numeric_pngs(pages)
-        thumbnail_files = numeric_pngs(thumbnails)
-        if not page_files or [number for number, _ in page_files] != [
-            number for number, _ in thumbnail_files
-        ]:
-            raise ReviewError(f"page raster mismatch for {task.source}")
-        environment = magick_environment(magick_tmp)
-        for offset in range(0, len(thumbnail_files), CONTACT_BATCH_SIZE):
-            batch = thumbnail_files[offset : offset + CONTACT_BATCH_SIZE]
-            sheet = sheets / f"sheet-{offset // CONTACT_BATCH_SIZE + 1:03d}.png"
-            command = [
-                magick,
-                "montage",
-                "-limit",
-                "memory",
-                MAGICK_MEMORY,
-                "-limit",
-                "map",
-                MAGICK_MAP,
-                "-limit",
-                "disk",
-                MAGICK_DISK,
-                "-limit",
-                "area",
-                MAGICK_AREA,
-                "-limit",
-                "thread",
-                "1",
-                "-background",
-                "white",
-                "-fill",
-                "black",
-            ]
-            for page_number, thumbnail in batch:
-                command.extend(["-label", f"Page {page_number}", str(thumbnail)])
-            command.extend(
-                [
-                    "-tile",
-                    f"{CONTACT_COLUMNS}x",
-                    "-geometry",
-                    "+8+8",
-                    str(sheet),
-                ]
+        entry = cache_root / "objects" / key[:2] / key
+        with key_lock:
+            entry_metadata = cache_metadata(
+                entry,
+                key=key,
+                pdf_sha256=task.pdf_sha256,
+                renderer_fingerprint=renderer_fingerprint,
+                renderer=renderer,
             )
-            runner.run(command, environment=environment)
-        shutil.rmtree(magick_tmp)
-        if destination.exists():
-            shutil.rmtree(destination)
-        os.replace(temporary, destination)
-        return destination
+            if entry_metadata is not None and not tree_is_readonly(entry):
+                entry_metadata = None
+            if entry_metadata is None:
+                if entry.exists():
+                    remove_artifact_tree(entry, cache_root)
+                entry.parent.mkdir(parents=True, exist_ok=True)
+                temporary = entry.parent / (
+                    f".{entry.name}.tmp-{os.getpid()}-{uuid.uuid4().hex}"
+                )
+                temporary.mkdir()
+                page_count = render_pdf_artifact(
+                    task, temporary, pdftoppm, magick, runner
+                )
+                write_cache_metadata(
+                    temporary,
+                    key=key,
+                    pdf_sha256=task.pdf_sha256,
+                    renderer_fingerprint=renderer_fingerprint,
+                    renderer=renderer,
+                    page_count=page_count,
+                )
+                entry_metadata = cache_metadata(
+                    temporary,
+                    key=key,
+                    pdf_sha256=task.pdf_sha256,
+                    renderer_fingerprint=renderer_fingerprint,
+                    renderer=renderer,
+                )
+                if entry_metadata is None:
+                    raise ReviewError(f"new review cache entry failed validation: {task.source}")
+                make_tree_readonly(temporary)
+                os.replace(temporary, entry)
+                temporary = None
+        materialize_cache_entry(
+            entry,
+            destination,
+            output_root,
+            key=key,
+            pdf_sha256=task.pdf_sha256,
+            renderer_fingerprint=renderer_fingerprint,
+            renderer=renderer,
+        )
+        page_count = entry_metadata.get("page_count")
+        if not isinstance(page_count, int) or page_count < 1:
+            raise ReviewError(f"review cache has an invalid page count: {entry}")
+        return ReviewResult(
+            task=task,
+            pdf_sha256=task.pdf_sha256,
+            page_count=page_count,
+        )
     except BaseException:
         termination.arm_cleanup()
         if temporary is not None:
+            with contextlib.suppress(OSError):
+                make_tree_writable(temporary)
             shutil.rmtree(temporary, ignore_errors=True)
         raise
 
@@ -674,19 +1182,207 @@ def prepare_tasks(values: list[str]) -> list[PdfTask]:
     return tasks
 
 
+def hash_tasks(tasks: list[PdfTask]) -> list[PdfTask]:
+    return [
+        task
+        if task.pdf_sha256 is not None
+        else dataclasses.replace(task, pdf_sha256=sha256_file(task.source))
+        for task in tasks
+    ]
+
+
+def changed_mirror_path(source: Path, against: Path) -> Path:
+    build_root = (ROOT / "build").resolve()
+    doc_root = (ROOT / "doc").resolve()
+    try:
+        source_relative = source.relative_to(build_root)
+        against_relative = against.relative_to(doc_root)
+    except ValueError:
+        source_relative = None
+        against_relative = None
+    if source_relative is not None and against_relative is not None:
+        prefix = against_relative.parts
+        if source_relative.parts[: len(prefix)] != prefix:
+            raise ReviewError(
+                f"cannot map {source} into comparison root {against}; "
+                "the build/doc mirror prefixes differ"
+            )
+        return against.joinpath(*source_relative.parts[len(prefix) :])
+    if against.name:
+        for ancestor in (source.parent, *source.parents):
+            if ancestor.name == against.name:
+                return against / source.relative_to(ancestor)
+    return against / source.name
+
+
+def select_changed_against(
+    tasks: list[PdfTask], against: Path
+) -> tuple[list[PdfTask], list[tuple[PdfTask, Path]]]:
+    if not against.is_dir():
+        raise ReviewError(f"--changed-against is not a readable directory: {against}")
+    selected: list[PdfTask] = []
+    unchanged: list[tuple[PdfTask, Path]] = []
+    for task in hash_tasks(tasks):
+        mirror = changed_mirror_path(task.source, against)
+        if (
+            mirror.is_file()
+            and mirror.suffix.lower() == ".pdf"
+            and task.pdf_sha256 == sha256_file(mirror)
+        ):
+            unchanged.append((task, mirror))
+        else:
+            selected.append(task)
+    return selected, unchanged
+
+
+def resolved_git_commit(value: str) -> str:
+    result = subprocess.run(
+        ["git", "rev-parse", "--verify", "--end-of-options", f"{value}^{{commit}}"],
+        cwd=ROOT,
+        check=False,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
+    resolved = result.stdout.strip()
+    if result.returncode or not re.fullmatch(r"[0-9a-fA-F]{40,64}", resolved):
+        detail = result.stderr.strip()
+        suffix = f": {detail}" if detail else ""
+        raise ReviewError(f"cannot resolve Git revision {value!r}{suffix}")
+    return resolved
+
+
+def nul_paths(output: bytes) -> list[Path]:
+    result: list[Path] = []
+    for value in output.split(b"\0"):
+        if not value:
+            continue
+        path = Path(os.fsdecode(value))
+        if path.is_absolute() or ".." in path.parts:
+            raise ReviewError("Git returned an unsafe changed path")
+        result.append(path)
+    return result
+
+
+def git_changed_pdf_paths(base: str, target: str | None) -> set[Path]:
+    base_commit = resolved_git_commit(base)
+    command = ["git", "diff", "--name-only", "-z", "--diff-filter=ACMRT", base_commit]
+    if target is not None:
+        command.append(resolved_git_commit(target))
+    command.extend(["--", "doc"])
+    result = subprocess.run(
+        command,
+        cwd=ROOT,
+        check=False,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
+    if result.returncode:
+        detail = result.stderr.decode("utf-8", errors="replace").strip()
+        suffix = f": {detail}" if detail else ""
+        raise ReviewError(f"cannot inspect changed PDFs{suffix}")
+    changed = set(nul_paths(result.stdout))
+    if target is None:
+        untracked = subprocess.run(
+            ["git", "ls-files", "--others", "--exclude-standard", "-z", "--", "doc"],
+            cwd=ROOT,
+            check=False,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+        )
+        if untracked.returncode:
+            detail = untracked.stderr.decode("utf-8", errors="replace").strip()
+            suffix = f": {detail}" if detail else ""
+            raise ReviewError(f"cannot inspect untracked PDFs{suffix}")
+        changed.update(nul_paths(untracked.stdout))
+    return {path for path in changed if path.suffix.lower() == ".pdf"}
+
+
+def task_git_candidates(task: PdfTask) -> set[Path]:
+    try:
+        relative = task.source.relative_to(ROOT)
+    except ValueError:
+        return set()
+    candidates = {relative}
+    if relative.parts[:1] == ("build",):
+        candidates.add(Path("doc", *relative.parts[1:]))
+    return candidates
+
+
+def select_git_changed(
+    tasks: list[PdfTask], base: str, target: str | None
+) -> list[PdfTask]:
+    changed = git_changed_pdf_paths(base, target)
+    if not tasks:
+        return prepare_tasks(
+            [str(ROOT / path) for path in sorted(changed) if (ROOT / path).is_file()]
+        )
+    return [task for task in tasks if task_git_candidates(task) & changed]
+
+
+def manifest_source(path: Path) -> str:
+    try:
+        return path.relative_to(ROOT).as_posix()
+    except ValueError:
+        return str(path)
+
+
+def write_run_manifest(
+    directory: Path,
+    results: list[ReviewResult],
+    renderer_fingerprint: str | None,
+    renderer: dict[str, object] | None,
+) -> None:
+    value = {
+        "schema": RUN_MANIFEST_SCHEMA,
+        "renderer_fingerprint": renderer_fingerprint,
+        "renderer": renderer,
+        "pdfs": [
+            {
+                "source": manifest_source(result.task.source),
+                "output": result.task.relative_output.as_posix(),
+                "pdf_sha256": result.pdf_sha256,
+                "page_count": result.page_count,
+            }
+            for result in results
+        ],
+    }
+    (directory / RUN_MANIFEST_NAME).write_bytes(canonical_json(value) + b"\n")
+
+
+@contextlib.contextmanager
+def snapshotted_pdf_tasks(
+    tasks: list[PdfTask], parent: Path, output_name: str
+) -> Iterator[list[PdfTask]]:
+    parent.mkdir(parents=True, exist_ok=True)
+    snapshot_root = parent / (
+        f".{safe_component(output_name)}.snapshots-{os.getpid()}-{uuid.uuid4().hex}"
+    )
+    try:
+        yield [snapshot_pdf(task, snapshot_root) for task in tasks]
+    finally:
+        remove_artifact_tree(snapshot_root, parent)
+
+
 def run_review(
     tasks: list[PdfTask],
     output: Path,
-    plan: ResourcePlan,
+    cache: Path,
+    plan: ResourcePlan | None,
     termination: TerminationController,
 ) -> list[Path]:
-    pdftoppm = executable_from_environment("TRIPTYCH_PDF_REVIEW_PDFTOPPM", "pdftoppm")
-    magick = executable_from_environment("TRIPTYCH_PDF_REVIEW_MAGICK", "magick")
-    output.mkdir(parents=True, exist_ok=True)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    staged_output = output.parent / (
+        f".{output.name}.tmp-{os.getpid()}-{uuid.uuid4().hex}"
+    )
+    staged_output.mkdir()
+    snapshot_root = output.parent / (
+        f".{output.name}.snapshots-{os.getpid()}-{uuid.uuid4().hex}"
+    )
     runner = CommandRunner()
-    results: dict[Path, Path] = {}
+    results: dict[Path, ReviewResult] = {}
     executor: concurrent.futures.ThreadPoolExecutor | None = None
-    futures: dict[concurrent.futures.Future[Path], PdfTask] = {}
+    futures: dict[concurrent.futures.Future[ReviewResult], PdfTask] = {}
 
     def abort_review() -> None:
         termination.arm_cleanup()
@@ -695,33 +1391,77 @@ def run_review(
         runner.terminate_all()
         if executor is not None:
             executor.shutdown(wait=True, cancel_futures=True)
+        remove_artifact_tree(snapshot_root, output.parent)
+        remove_artifact_tree(staged_output, output.parent)
         termination.clear_cleanup(abort_review)
 
     termination.register_cleanup(abort_review)
     try:
-        executor = concurrent.futures.ThreadPoolExecutor(max_workers=min(plan.jobs, len(tasks)))
-        for task in tasks:
-            future = executor.submit(
-                process_pdf,
-                task,
-                output,
-                pdftoppm,
-                magick,
-                runner,
-                termination,
+        renderer_fingerprint: str | None = None
+        renderer: dict[str, object] | None = None
+        if tasks:
+            if plan is None:
+                raise ReviewError("review resource plan is missing")
+            pdftoppm = executable_from_environment(
+                "TRIPTYCH_PDF_REVIEW_PDFTOPPM", "pdftoppm"
             )
-            futures[future] = task
-        for future in concurrent.futures.as_completed(futures):
-            task = futures[future]
-            results[task.source] = future.result()
+            magick = executable_from_environment(
+                "TRIPTYCH_PDF_REVIEW_MAGICK", "magick"
+            )
+            cache.mkdir(parents=True, exist_ok=True)
+            tasks = [
+                task
+                if task.pdf_sha256 is not None and task.render_source is not None
+                else snapshot_pdf(task, snapshot_root)
+                for task in tasks
+            ]
+            renderer_fingerprint, renderer = renderer_record(pdftoppm, magick, runner)
+            key_locks: dict[str, threading.Lock] = {}
+            for task in tasks:
+                assert task.pdf_sha256 is not None
+                key_locks.setdefault(
+                    cache_key(task.pdf_sha256, renderer_fingerprint), threading.Lock()
+                )
+            executor = concurrent.futures.ThreadPoolExecutor(
+                max_workers=min(plan.jobs, len(tasks))
+            )
+            for task in tasks:
+                assert task.pdf_sha256 is not None
+                key = cache_key(task.pdf_sha256, renderer_fingerprint)
+                future = executor.submit(
+                    process_pdf,
+                    task,
+                    staged_output,
+                    cache,
+                    pdftoppm,
+                    magick,
+                    renderer_fingerprint,
+                    renderer,
+                    key_locks[key],
+                    runner,
+                    termination,
+                )
+                futures[future] = task
+            for future in concurrent.futures.as_completed(futures):
+                task = futures[future]
+                results[task.source] = future.result()
+            executor.shutdown(wait=True)
+            executor = None
+            remove_artifact_tree(snapshot_root, output.parent)
+        ordered_results = [results[task.source] for task in tasks]
+        write_run_manifest(
+            staged_output,
+            ordered_results,
+            renderer_fingerprint,
+            renderer,
+        )
+        install_artifact_directory(staged_output, output, output.parent)
     except BaseException:
         abort_review()
         raise
     else:
-        if executor is not None:
-            executor.shutdown(wait=True)
         termination.clear_cleanup(abort_review)
-    return [results[task.source] for task in tasks]
+    return [output / task.relative_output for task in tasks]
 
 
 def parse_arguments(argv: list[str]) -> argparse.Namespace:
@@ -736,6 +1476,12 @@ def parse_arguments(argv: list[str]) -> argparse.Namespace:
         help="inspection artifact root",
     )
     parser.add_argument(
+        "--cache",
+        type=Path,
+        default=default_cache_root(),
+        help="persistent content-addressed raster cache",
+    )
+    parser.add_argument(
         "--jobs",
         type=positive_integer,
         help="cap the automatic memory- and CPU-bounded worker count",
@@ -745,10 +1491,31 @@ def parse_arguments(argv: list[str]) -> argparse.Namespace:
         action="store_true",
         help="print the current resource plan without rendering PDFs",
     )
+    parser.add_argument(
+        "--changed-from",
+        metavar="REVISION",
+        help="select tracked PDFs changed since this Git revision",
+    )
+    parser.add_argument(
+        "--changed-to",
+        metavar="REVISION",
+        help="compare --changed-from with this revision instead of the worktree",
+    )
+    parser.add_argument(
+        "--changed-against",
+        type=Path,
+        metavar="DIRECTORY",
+        help=(
+            "select only input PDFs whose exact bytes differ from their mirrored "
+            "files below DIRECTORY (for example, build/gpt PDFs against doc/gpt)"
+        ),
+    )
     parser.add_argument("pdf", nargs="*", help="PDFs to rasterize")
     arguments = parser.parse_args(argv)
-    if not arguments.explain and not arguments.pdf:
-        parser.error("at least one PDF is required")
+    if arguments.changed_to and not arguments.changed_from:
+        parser.error("--changed-to requires --changed-from")
+    if not arguments.explain and not arguments.pdf and not arguments.changed_from:
+        parser.error("at least one PDF or --changed-from is required")
     return arguments
 
 
@@ -787,12 +1554,46 @@ def main(argv: list[str] | None = None) -> int:
             print(describe_plan(current_plan(arguments.jobs)))
             return 0
         tasks = prepare_tasks(arguments.pdf)
+        if arguments.changed_from:
+            tasks = select_git_changed(tasks, arguments.changed_from, arguments.changed_to)
+        against: Path | None = None
+        if arguments.changed_against:
+            against = (
+                (ROOT / arguments.changed_against).resolve()
+                if not arguments.changed_against.is_absolute()
+                else arguments.changed_against.resolve()
+            )
         output = validate_output_root(arguments.output)
+        cache = validate_cache_root(arguments.cache)
+        if is_relative_to(output, cache) or is_relative_to(cache, output):
+            raise ReviewError("--output and --cache must not contain one another")
         with exclusive_review_lock():
-            plan = current_plan(arguments.jobs)
-            plan = dataclasses.replace(plan, jobs=min(plan.jobs, len(tasks)))
-            print(describe_plan(plan), file=sys.stderr)
-            results = run_review(tasks, output, plan, termination)
+            task_context = (
+                snapshotted_pdf_tasks(tasks, output.parent, output.name)
+                if against is not None
+                else contextlib.nullcontext(tasks)
+            )
+            with task_context as candidates:
+                if against is not None:
+                    tasks, unchanged = select_changed_against(candidates, against)
+                    if unchanged:
+                        print(
+                            "pdf-review: skipped "
+                            f"{len(unchanged)} byte-identical PDF(s) already "
+                            f"mirrored under {against}",
+                            file=sys.stderr,
+                        )
+                else:
+                    tasks = candidates
+                plan: ResourcePlan | None = None
+                if tasks:
+                    plan = current_plan(arguments.jobs)
+                    plan = dataclasses.replace(plan, jobs=min(plan.jobs, len(tasks)))
+                    print(describe_plan(plan), file=sys.stderr)
+                results = run_review(tasks, output, cache, plan, termination)
+        if not tasks:
+            print("pdf-review: no changed PDFs selected", file=sys.stderr)
+            return 0
         for task, destination in zip(tasks, results, strict=True):
             print(f"{task.source} -> {destination}")
         return 0

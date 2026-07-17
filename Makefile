@@ -14,9 +14,13 @@ override codex_make_character_count = $(words $(call codex_make_hex_to_words,$(1
 
 # Opaque lifecycle commands present the run ID as a second Make goal. Limit the
 # fallback rule to those invocations so ordinary unknown targets still fail.
-ifneq ($(origin MAKECMDGOALS),default)
+ifeq ($(filter undefined default,$(origin MAKECMDGOALS)),)
 $(error MAKECMDGOALS may not be overridden)
 endif
+# MAKECMDGOALS is meaningful only to the current Make process. In particular,
+# do not leak an empty automatic value into the bounded recursive default build,
+# where it would look like an environment override and trip the guard above.
+unexport MAKECMDGOALS
 ifneq ($(filter $(CODEX_LIFECYCLE_GOALS),$(MAKECMDGOALS)),)
 ifneq ($(firstword $(MAKECMDGOALS)),$(firstword $(filter $(CODEX_LIFECYCLE_GOALS),$(MAKECMDGOALS))))
 $(error Usage: make $(firstword $(filter $(CODEX_LIFECYCLE_GOALS),$(MAKECMDGOALS))) <run-id>)
@@ -47,6 +51,9 @@ endif
 PDFLATEX ?= pdflatex
 PYTHON ?= python3
 PROVIDER ?= gpt
+PDF_JOBS ?= 4
+SHA256 ?= sha256sum
+INSTALL ?= install
 
 SOURCE_ROOT := src/$(PROVIDER)
 BUILD_ROOT := build/$(PROVIDER)
@@ -55,10 +62,12 @@ DOC_ROOT := doc/$(PROVIDER)
 MAIN_SOURCES := $(shell find $(SOURCE_ROOT) -type f -name main.tex | sort)
 DOCUMENTS := $(patsubst $(SOURCE_ROOT)/%/main.tex,%,$(MAIN_SOURCES))
 BUILD_PDFS := $(addprefix $(BUILD_ROOT)/,$(addsuffix .pdf,$(DOCUMENTS)))
+BUILD_METADATA_STAMPS := $(addprefix $(BUILD_ROOT)/.metadata/,$(addsuffix .ok,$(DOCUMENTS)))
+BUILD_METADATA_VERIFICATIONS := $(addprefix $(BUILD_ROOT)/.metadata/,$(addsuffix .verify,$(DOCUMENTS)))
 DOC_PDFS := $(addprefix $(DOC_ROOT)/,$(addsuffix .pdf,$(DOCUMENTS)))
 METADATA_CHECKER := scripts/check-generation-metadata
-PUBLIC_ALPHA_TOOL := scripts/public-alpha
 PDF_REVIEW_TOOL := scripts/pdf-review
+PUBLIC_ALPHA_TOOL := scripts/public-alpha
 CODEX_LAUNCHER := scripts/triptych-codex
 
 COMMON_SOURCES := $(shell find $(SOURCE_ROOT)/common -type f | sort)
@@ -88,23 +97,65 @@ CARMEL_NOVENA_ROOT := $(NOVENA_ROOT)/10-our-lady-of-mount-carmel
 FIRST_NOVENA_PRAYERS := $(wildcard $(FIRST_NOVENA_ROOT)/prayers/*.tex)
 CARMEL_NOVENA_PRAYERS := $(wildcard $(CARMEL_NOVENA_ROOT)/prayers/*.tex)
 
-.PHONY: all pdf install list help clean distclean check-tools check-metadata \
-	check-public-alpha check-pdf-review check-agent-isolation codex review-pdfs \
-	public-site public-preview \
-	verify-public-site verify-public-preview integrate resolve continue abort final-diff
-.DELETE_ON_ERROR:
+.DEFAULT_GOAL := all
 
+# A top-level invocation without -j has no jobserver for document builds to
+# share. Bootstrap aggregate builds with a bounded recursive Make in that case.
+# If a caller already supplied -j (including an inherited jobserver), keep the
+# complete graph in this Make process so combined goals cannot race one another.
+MAKE_PARALLEL_FLAGS := $(filter -j% j% --jobs% --jobserver-auth=% --jobserver-fds=%,$(MAKEFLAGS))
+PDF_JOBS_INVALID = $(strip \
+	$(call codex_make_strip_decimal,$(PDF_JOBS)) \
+	$(if $(strip $(PDF_JOBS)),,empty) \
+	$(if $(subst 0,,$(strip $(PDF_JOBS))),,zero))
+BOUNDED_PDF_JOB_OPTION = $(if $(strip $(MAKE_PARALLEL_FLAGS)),,\
+	$(if $(PDF_JOBS_INVALID),$(error PDF_JOBS requires a positive integer),--jobs=$(PDF_JOBS)))
+
+.PHONY: all pdf review-pdfs review-all-pdfs install list help clean \
+	distclean check-tools check-metadata check-public-alpha prepare-public-alpha \
+	check-pdf-review check-agent-isolation codex public-site public-preview \
+	verify-public-site verify-public-preview integrate resolve continue abort final-diff \
+	FORCE_METADATA_VERIFICATION
+.DELETE_ON_ERROR:
+.SECONDARY: $(BUILD_METADATA_STAMPS)
+
+ifeq ($(strip $(MAKE_PARALLEL_FLAGS)),)
+all:
+	+@$(MAKE) --no-print-directory $(BOUNDED_PDF_JOB_OPTION) pdf
+
+review-pdfs:
+	+@$(MAKE) --no-print-directory $(BOUNDED_PDF_JOB_OPTION) pdf
+	@$(PYTHON) $(PDF_REVIEW_TOOL) --changed-against $(DOC_ROOT) $(BUILD_PDFS)
+
+review-all-pdfs:
+	+@$(MAKE) --no-print-directory $(BOUNDED_PDF_JOB_OPTION) pdf
+	@$(PYTHON) $(PDF_REVIEW_TOOL) $(BUILD_PDFS)
+else
 all: pdf
 
-pdf: check-metadata $(BUILD_PDFS)
-	@for document in $(DOCUMENTS); do \
-		$(METADATA_CHECKER) --provider $(PROVIDER) --pdf "$$document" "$(BUILD_ROOT)/$$document.pdf"; \
-	done
+review-pdfs: pdf
+	@$(PYTHON) $(PDF_REVIEW_TOOL) --changed-against $(DOC_ROOT) $(BUILD_PDFS)
+
+review-all-pdfs: pdf
+	@$(PYTHON) $(PDF_REVIEW_TOOL) $(BUILD_PDFS)
+endif
+
+pdf: check-metadata $(BUILD_METADATA_VERIFICATIONS)
 
 install: check-metadata $(DOC_PDFS)
-	@for document in $(DOCUMENTS); do \
-		$(METADATA_CHECKER) --provider $(PROVIDER) --pdf "$$document" "$(DOC_ROOT)/$$document.pdf"; \
-		cmp -s "$(BUILD_ROOT)/$$document.pdf" "$(DOC_ROOT)/$$document.pdf" || { echo "Installed PDF differs from reviewed build: $$document"; exit 1; }; \
+	@set -eu; \
+	for document in $(DOCUMENTS); do \
+		pdf='$(BUILD_ROOT)/'$$document.pdf; \
+		stamp='$(BUILD_ROOT)/.metadata/'$$document.ok; \
+		pdf_line=$$($(SHA256) -- "$$pdf"); \
+		pdf_hash=$${pdf_line%% *}; \
+		validator_line=$$($(SHA256) -- '$(METADATA_CHECKER)'); \
+		validator_hash=$${validator_line%% *}; \
+		expected=$$(printf 'schema=1\nprovider=%s\ndocument=%s\npdf_sha256=%s\nvalidator_sha256=%s' \
+			'$(PROVIDER)' "$$document" "$$pdf_hash" "$$validator_hash"); \
+		actual=$$(cat "$$stamp"); \
+		[ "$$actual" = "$$expected" ] || { echo "Validation stamp does not match current PDF/checker: $$document" >&2; exit 1; }; \
+		cmp -s "$$pdf" "$(DOC_ROOT)/$$document.pdf" || { echo "Installed PDF differs from reviewed build: $$document"; exit 1; }; \
 	done
 
 list:
@@ -159,7 +210,10 @@ check-pdf-review:
 
 help:
 	@printf '%s\n' \
-		'make          Build every discovered src/$(PROVIDER)/**/main.tex document' \
+		'make          Build every document with at most $(PDF_JOBS) parallel jobs' \
+		'make pdf      Build incrementally in the current Make jobserver' \
+		'make review-pdfs  Build with at most $(PDF_JOBS) jobs, then raster changed PDFs' \
+		'make review-all-pdfs  Build with at most $(PDF_JOBS) jobs, then raster every PDF' \
 		'make install  Publish built PDFs into the mirrored tracked doc/ tree' \
 		'make list     List discovered document IDs' \
 		'make codex    Start Codex in an automatically isolated task checkout' \
@@ -173,7 +227,7 @@ help:
 		'make check-pdf-review  Test memory-bounded PDF inspection tooling' \
 		'make check-metadata  Validate structured and inherited AI provenance' \
 		'make check-public-alpha  Validate the exhaustive public-release policy' \
-		'make review-pdfs  Prepare bounded page rasters and contact sheets for built PDFs' \
+		'make prepare-public-alpha  Print current candidate hashes; grants no approval' \
 		'make public-preview  Build a private no-index preview with review candidates' \
 		'make public-site  Build the fail-closed, history-free public artifact' \
 		'make verify-public-preview  Recheck the existing private preview artifact' \
@@ -186,8 +240,8 @@ check-metadata: check-tools
 check-public-alpha:
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) check
 
-review-pdfs:
-	@$(PYTHON) $(PDF_REVIEW_TOOL) $(BUILD_PDFS)
+prepare-public-alpha:
+	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) prepare
 
 public-preview:
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) build --preview
@@ -201,18 +255,114 @@ verify-public-preview:
 verify-public-site:
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) verify
 
-# Register every file owned by a document leaf as a dependency without requiring
-# a flat manifest. Cross-document shared fragments are declared separately below.
+# Register only render-capable files owned by a document leaf. Research and
+# retrieval records remain authoritative tracked sources, but changing one does
+# not recompile an unchanged TeX publication. Cross-document sources are
+# declared separately below.
 define REGISTER_DOCUMENT_SOURCES
-$(BUILD_ROOT)/$(1).pdf: $(shell find $(SOURCE_ROOT)/$(1) -type f | sort)
+$(BUILD_ROOT)/$(1).pdf: $(shell find $(SOURCE_ROOT)/$(1) -type f \( \
+	-name '*.tex' -o -name '*.sty' -o -name '*.cls' -o -name '*.bib' -o \
+	-name '*.bst' -o -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' -o \
+	-name '*.pdf' -o -name '*.eps' \) | sort)
 endef
 $(foreach document,$(DOCUMENTS),$(eval $(call REGISTER_DOCUMENT_SOURCES,$(document))))
 
-$(BUILD_ROOT)/%.pdf: $(SOURCE_ROOT)/%/main.tex $(COMMON_SOURCES) $(METADATA_CHECKER) | check-metadata
+$(BUILD_ROOT)/%.pdf: $(SOURCE_ROOT)/%/main.tex $(COMMON_SOURCES) | check-metadata
 	@mkdir -p $(@D)
+	@mkdir -p '$(BUILD_ROOT)/.metadata/$(dir $*)'
+	@rm -f -- '$(BUILD_ROOT)/.metadata/$*.ok'
 	cd $(SOURCE_ROOT) && $(PDFLATEX) -interaction=nonstopmode -halt-on-error -jobname=$(notdir $*) -output-directory=$(abspath $(@D)) $*/main.tex
 	cd $(SOURCE_ROOT) && $(PDFLATEX) -interaction=nonstopmode -halt-on-error -jobname=$(notdir $*) -output-directory=$(abspath $(@D)) $*/main.tex
-	@$(METADATA_CHECKER) --provider $(PROVIDER) --pdf '$*' '$@'
+	@set -eu; \
+		pdf='$@'; \
+		stamp='$(BUILD_ROOT)/.metadata/$*.ok'; \
+		pdf_line=$$($(SHA256) -- "$$pdf"); \
+		pdf_hash=$${pdf_line%% *}; \
+		validator_line=$$($(SHA256) -- '$(METADATA_CHECKER)'); \
+		validator_hash=$${validator_line%% *}; \
+		$(METADATA_CHECKER) --provider '$(PROVIDER)' --pdf '$*' "$$pdf"; \
+		pdf_after_line=$$($(SHA256) -- "$$pdf"); \
+		pdf_after_hash=$${pdf_after_line%% *}; \
+		validator_after_line=$$($(SHA256) -- '$(METADATA_CHECKER)'); \
+		validator_after_hash=$${validator_after_line%% *}; \
+		if [ "$$pdf_hash" != "$$pdf_after_hash" ] || [ "$$validator_hash" != "$$validator_after_hash" ]; then \
+			echo 'PDF or metadata checker changed during validation: $*' >&2; \
+			exit 1; \
+		fi; \
+		temporary="$$stamp.tmp.$$$$"; \
+		trap 'rm -f -- "$$temporary"' 0 1 2 15; \
+		printf 'schema=1\nprovider=%s\ndocument=%s\npdf_sha256=%s\nvalidator_sha256=%s\n' \
+			'$(PROVIDER)' '$*' "$$pdf_hash" "$$validator_hash" > "$$temporary"; \
+		mv -f -- "$$temporary" "$$stamp"; \
+		trap - 0 1 2 15
+
+$(BUILD_ROOT)/.metadata/%.ok: $(BUILD_ROOT)/%.pdf $(METADATA_CHECKER)
+	@set -eu; \
+		pdf='$<'; \
+		stamp='$@'; \
+		pdf_line=$$($(SHA256) -- "$$pdf"); \
+		pdf_hash=$${pdf_line%% *}; \
+		validator_line=$$($(SHA256) -- '$(METADATA_CHECKER)'); \
+		validator_hash=$${validator_line%% *}; \
+		expected=$$(printf 'schema=1\nprovider=%s\ndocument=%s\npdf_sha256=%s\nvalidator_sha256=%s' \
+			'$(PROVIDER)' '$*' "$$pdf_hash" "$$validator_hash"); \
+		if [ -f "$$stamp" ] && [ "$$(cat "$$stamp")" = "$$expected" ]; then \
+			exit 0; \
+		fi; \
+		$(METADATA_CHECKER) --provider '$(PROVIDER)' --pdf '$*' "$$pdf"; \
+		pdf_after_line=$$($(SHA256) -- "$$pdf"); \
+		pdf_after_hash=$${pdf_after_line%% *}; \
+		validator_after_line=$$($(SHA256) -- '$(METADATA_CHECKER)'); \
+		validator_after_hash=$${validator_after_line%% *}; \
+		if [ "$$pdf_hash" != "$$pdf_after_hash" ] || [ "$$validator_hash" != "$$validator_after_hash" ]; then \
+			echo 'PDF or metadata checker changed during validation: $*' >&2; \
+			exit 1; \
+		fi; \
+		mkdir -p '$(@D)'; \
+		temporary="$$stamp.tmp.$$$$"; \
+		trap 'rm -f -- "$$temporary"' 0 1 2 15; \
+		printf 'schema=1\nprovider=%s\ndocument=%s\npdf_sha256=%s\nvalidator_sha256=%s\n' \
+			'$(PROVIDER)' '$*' "$$pdf_hash" "$$validator_hash" > "$$temporary"; \
+		mv -f -- "$$temporary" "$$stamp"; \
+		trap - 0 1 2 15
+
+FORCE_METADATA_VERIFICATION:
+
+$(BUILD_ROOT)/.metadata/%.verify: $(BUILD_ROOT)/.metadata/%.ok FORCE_METADATA_VERIFICATION
+	@set -eu; \
+		pdf='$(BUILD_ROOT)/$*.pdf'; \
+		stamp='$<'; \
+		pdf_line=$$($(SHA256) -- "$$pdf"); \
+		pdf_hash=$${pdf_line%% *}; \
+		validator_line=$$($(SHA256) -- '$(METADATA_CHECKER)'); \
+		validator_hash=$${validator_line%% *}; \
+		expected=$$(printf 'schema=1\nprovider=%s\ndocument=%s\npdf_sha256=%s\nvalidator_sha256=%s' \
+			'$(PROVIDER)' '$*' "$$pdf_hash" "$$validator_hash"); \
+		actual=$$(cat "$$stamp"); \
+		if [ "$$actual" = "$$expected" ]; then \
+			exit 0; \
+		fi; \
+		stamp_schema=; \
+		IFS= read -r stamp_schema < "$$stamp" || :; \
+		if [ "$$stamp_schema" = 'schema=1' ]; then \
+			echo 'Validation stamp does not match current PDF/checker: $*' >&2; \
+			exit 1; \
+		fi; \
+		$(METADATA_CHECKER) --provider '$(PROVIDER)' --pdf '$*' "$$pdf"; \
+		pdf_after_line=$$($(SHA256) -- "$$pdf"); \
+		pdf_after_hash=$${pdf_after_line%% *}; \
+		validator_after_line=$$($(SHA256) -- '$(METADATA_CHECKER)'); \
+		validator_after_hash=$${validator_after_line%% *}; \
+		if [ "$$pdf_hash" != "$$pdf_after_hash" ] || [ "$$validator_hash" != "$$validator_after_hash" ]; then \
+			echo 'PDF or metadata checker changed during validation: $*' >&2; \
+			exit 1; \
+		fi; \
+		temporary="$$stamp.tmp.$$$$"; \
+		trap 'rm -f -- "$$temporary"' 0 1 2 15; \
+		printf 'schema=1\nprovider=%s\ndocument=%s\npdf_sha256=%s\nvalidator_sha256=%s\n' \
+			'$(PROVIDER)' '$*' "$$pdf_hash" "$$validator_hash" > "$$temporary"; \
+		mv -f -- "$$temporary" "$$stamp"; \
+		trap - 0 1 2 15
 
 $(BUILD_ROOT)/theology/sacraments-at-a-glance.pdf: $(SACRAMENT_SHARED) $(SACRAMENT_INITIATION_TABLE)
 $(BUILD_ROOT)/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass.pdf: \
@@ -246,15 +396,43 @@ $(BUILD_ROOT)/devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer.pdf: \
 	$(CARMEL_NOVENA_PRAYERS) \
 	$(CARMEL_NOVENA_ROOT)/generation-metadata.tex
 
-$(DOC_ROOT)/%.pdf: $(BUILD_ROOT)/%.pdf | check-metadata
-	@mkdir -p $(@D)
-	install -m 0644 $< $@
+$(DOC_ROOT)/%.pdf: $(BUILD_ROOT)/%.pdf | check-metadata $(BUILD_ROOT)/.metadata/%.verify
+	@set -eu; \
+		pdf='$(BUILD_ROOT)/$*.pdf'; \
+		stamp='$(BUILD_ROOT)/.metadata/$*.ok'; \
+		destination='$@'; \
+		mkdir -p '$(@D)'; \
+		pdf_line=$$($(SHA256) -- "$$pdf"); \
+		pdf_hash=$${pdf_line%% *}; \
+		validator_line=$$($(SHA256) -- '$(METADATA_CHECKER)'); \
+		validator_hash=$${validator_line%% *}; \
+		expected=$$(printf 'schema=1\nprovider=%s\ndocument=%s\npdf_sha256=%s\nvalidator_sha256=%s' \
+			'$(PROVIDER)' '$*' "$$pdf_hash" "$$validator_hash"); \
+		actual=$$(cat "$$stamp"); \
+		[ "$$actual" = "$$expected" ] || { echo 'Validation stamp does not match current PDF/checker: $*' >&2; exit 1; }; \
+		temporary="$$destination.tmp.$$$$"; \
+		trap 'rm -f -- "$$temporary"' 0 1 2 15; \
+		$(INSTALL) -m 0644 "$$pdf" "$$temporary"; \
+		temporary_line=$$($(SHA256) -- "$$temporary"); \
+		temporary_hash=$${temporary_line%% *}; \
+		pdf_after_line=$$($(SHA256) -- "$$pdf"); \
+		pdf_after_hash=$${pdf_after_line%% *}; \
+		validator_after_line=$$($(SHA256) -- '$(METADATA_CHECKER)'); \
+		validator_after_hash=$${validator_after_line%% *}; \
+		if [ "$$temporary_hash" != "$$pdf_hash" ] || [ "$$pdf_after_hash" != "$$pdf_hash" ] || [ "$$validator_after_hash" != "$$validator_hash" ]; then \
+			echo 'PDF or metadata checker changed during install: $*' >&2; \
+			exit 1; \
+		fi; \
+		mv -f -- "$$temporary" "$$destination"; \
+		trap - 0 1 2 15
 
 check-tools:
 	@command -v $(PDFLATEX) >/dev/null || { echo "Missing $(PDFLATEX)"; exit 1; }
 	@command -v python3 >/dev/null || { echo "Missing python3"; exit 1; }
 	@command -v pdftotext >/dev/null || { echo "Missing pdftotext"; exit 1; }
 	@command -v pdfinfo >/dev/null || { echo "Missing pdfinfo"; exit 1; }
+	@command -v $(SHA256) >/dev/null || { echo "Missing $(SHA256)"; exit 1; }
+	@command -v $(INSTALL) >/dev/null || { echo "Missing $(INSTALL)"; exit 1; }
 
 clean:
 	rm -rf build
