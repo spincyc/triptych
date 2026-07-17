@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate and build Triptych's fail-closed public-alpha site artifact."""
+"""Inventory, validate, build, and verify Triptych's public-alpha artifact."""
 
 from __future__ import annotations
 
@@ -7,6 +7,7 @@ import argparse
 import hashlib
 import html
 from html.parser import HTMLParser
+from importlib.metadata import PackageNotFoundError, version as distribution_version
 import json
 import posixpath
 import re
@@ -41,10 +42,18 @@ PAGE_MAP = {
     "library/traditional-latin-mass.md": "library/traditional-latin-mass.html",
     "release/public-alpha/404.md": "404.html",
 }
-SITE_SOURCE_PATHS = set(PAGE_MAP) | {
+FIXED_ARTIFACT_INPUT_PATHS = {
     "release/public-alpha/layout.html",
     "release/public-alpha/assets/site.css",
+    "requirements-public-alpha.txt",
+    "scripts/public-alpha",
 }
+LICENSE_SOURCE_PATHS = {
+    path.relative_to(ROOT).as_posix()
+    for path in (ROOT / "LICENSES").glob("*.txt")
+    if path.is_file()
+}
+SITE_SOURCE_PATHS = set(PAGE_MAP) | FIXED_ARTIFACT_INPUT_PATHS | LICENSE_SOURCE_PATHS
 
 PDF_LINK_RE = re.compile(r"(?:\.\./)?doc/gpt/([^)#\s]+)\.pdf(?:#[^)]*)?")
 MARKDOWN_LINK_RE = re.compile(r"(?<!!)\[([^\]]+)\]\(([^)\n]+)\)")
@@ -65,6 +74,13 @@ REQUIRED_AUTHORITY_SCOPE = {
     "worldwide",
 }
 ROBOTS_DIRECTIVES = "noindex, nofollow, noarchive, nosnippet, noimageindex"
+CANDIDATE_INVENTORY_NOTICE = (
+    "PREPARATION ONLY — NOT AN APPROVAL OR AUTHORIZATION. These hashes report "
+    "current files and do not attest rights, approve snapshots or artifact inputs, "
+    "clear release gates, confer publication authority, or modify the manifest or "
+    "rights records. Explicit review and separately recorded authorization are "
+    "required before release."
+)
 
 
 class ReleaseError(RuntimeError):
@@ -75,12 +91,52 @@ def requires_unadvertised_controls(authorization: dict) -> bool:
     return "unadvertised-public-hosting" in set(authorization.get("conditions", []))
 
 
+def artifact_license_source_paths() -> list[str]:
+    """Return the exact license inputs captured in the authorized source set."""
+    return sorted(
+        source_path
+        for source_path in SITE_SOURCE_PATHS
+        if source_path.startswith("LICENSES/") and source_path.endswith(".txt")
+    )
+
+
 def sha256(path: Path) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as stream:
         for chunk in iter(lambda: stream.read(1024 * 1024), b""):
             digest.update(chunk)
     return digest.hexdigest()
+
+
+def require_locked_markdown_dependency() -> None:
+    """Prove that rendering uses the exact dependency selected by the bound lock."""
+    lock_path = ROOT / "requirements-public-alpha.txt"
+    requirements = [
+        line.strip()
+        for line in lock_path.read_text(encoding="utf-8").splitlines()
+        if line.strip() and not line.lstrip().startswith("#")
+    ]
+    markdown_pins = [
+        match.group(1)
+        for requirement in requirements
+        if (match := re.fullmatch(r"Markdown==([^\s;]+)", requirement))
+    ]
+    if len(markdown_pins) != 1:
+        raise ReleaseError(
+            "requirements-public-alpha.txt must contain exactly one exact Markdown pin"
+        )
+    try:
+        installed = distribution_version("Markdown")
+    except PackageNotFoundError as exc:
+        raise ReleaseError(
+            "Python Markdown is required; install requirements-public-alpha.txt "
+            "in an isolated environment"
+        ) from exc
+    if installed != markdown_pins[0]:
+        raise ReleaseError(
+            "installed Python Markdown does not match the bound dependency lock: "
+            f"expected {markdown_pins[0]}, found {installed}"
+        )
 
 
 def load_manifest() -> dict:
@@ -131,6 +187,7 @@ def validate_authorizations(
     errors: list[str],
     require_active_release: bool,
     current_time: datetime | None,
+    verify_approval_bindings: bool = True,
 ) -> dict[str, tuple[datetime, datetime | None, ZoneInfo]]:
     raw_authorizations = manifest.get("authorizations")
     if not isinstance(raw_authorizations, dict) or not raw_authorizations:
@@ -194,6 +251,11 @@ def validate_authorizations(
         unknown_conditions = sorted(set(conditions) - SUPPORTED_CONDITIONS)
         if unknown_conditions:
             errors.append(f"{label} has unsupported conditions {unknown_conditions!r}")
+        if duration == "temporary" and "unadvertised-public-hosting" not in conditions:
+            errors.append(
+                f"{label} temporary releases require 'unadvertised-public-hosting' "
+                "so every request can be withdrawn at the cutoff"
+            )
 
         record = authorization.get("rights_record")
         record_hash = authorization.get("rights_record_sha256")
@@ -208,7 +270,7 @@ def validate_authorizations(
                     errors.append(f"{label} rights record does not exist: {record}")
                 elif not isinstance(record_hash, str) or not SHA256_RE.fullmatch(record_hash):
                     errors.append(f"{label} rights_record_sha256 must be a lowercase SHA-256")
-                elif sha256(record_path) != record_hash:
+                elif verify_approval_bindings and sha256(record_path) != record_hash:
                     errors.append(f"{label} rights record does not match its approved SHA-256")
             except ReleaseError as exc:
                 errors.append(str(exc))
@@ -218,7 +280,7 @@ def validate_authorizations(
             errors.append(f"{label} site_sources must be an object of path-to-SHA-256 entries")
         else:
             actual_source_paths = set(site_sources)
-            if actual_source_paths != SITE_SOURCE_PATHS:
+            if verify_approval_bindings and actual_source_paths != SITE_SOURCE_PATHS:
                 errors.append(
                     f"{label} site_sources mismatch: "
                     f"missing={sorted(SITE_SOURCE_PATHS - actual_source_paths)!r}, "
@@ -232,15 +294,20 @@ def validate_authorizations(
                     source_path = safe_relative_path(
                         source_path_value, f"{label} site source"
                     )
-                    if source_path.is_symlink() or not source_path.is_file():
-                        errors.append(
-                            f"{label} site source does not exist: {source_path_value}"
-                        )
-                    elif not isinstance(approved_hash, str) or not SHA256_RE.fullmatch(
+                    if not isinstance(approved_hash, str) or not SHA256_RE.fullmatch(
                         approved_hash
                     ):
                         errors.append(
                             f"{label} site source {source_path_value} must have a lowercase SHA-256"
+                        )
+                    elif not verify_approval_bindings:
+                        # Preparation inventories the current fixed input set below. Old
+                        # declarations may be incomplete or refer to inputs that were
+                        # deliberately removed, so they are only shape-checked here.
+                        continue
+                    elif source_path.is_symlink() or not source_path.is_file():
+                        errors.append(
+                            f"{label} site source does not exist: {source_path_value}"
                         )
                     elif sha256(source_path) != approved_hash:
                         errors.append(
@@ -356,6 +423,7 @@ def validate_manifest(
     manifest: dict,
     require_active_release: bool = True,
     current_time: datetime | None = None,
+    verify_approval_bindings: bool = True,
 ) -> dict[str, dict]:
     errors: list[str] = []
     provider = manifest.get("provider")
@@ -365,7 +433,13 @@ def validate_manifest(
     if manifest.get("release_id") != "public-alpha":
         errors.append("manifest release_id must be 'public-alpha'")
 
-    validate_authorizations(manifest, errors, require_active_release, current_time)
+    validate_authorizations(
+        manifest,
+        errors,
+        require_active_release,
+        current_time,
+        verify_approval_bindings,
+    )
     raw_authorizations = manifest.get("authorizations")
     authorization_ids = set(raw_authorizations) if isinstance(raw_authorizations, dict) else set()
     referenced_authorizations: set[str] = set()
@@ -446,55 +520,64 @@ def validate_manifest(
             if isinstance(authorization_id, str) and authorization_id in authorization_ids:
                 approved_snapshots[authorization_id].append((publication_id, approved_hash))
             pdf_path = ROOT / "doc" / provider / f"{publication_id}.pdf"
-            if pdf_path.is_file() and sha256(pdf_path) != approved_hash:
+            if (
+                verify_approval_bindings
+                and pdf_path.is_file()
+                and sha256(pdf_path) != approved_hash
+            ):
                 errors.append(f"{publication_id}: installed PDF does not match its approved SHA-256")
 
     orphan_authorizations = sorted(authorization_ids - referenced_authorizations)
     if orphan_authorizations:
         errors.append(f"manifest has unreferenced authorizations: {orphan_authorizations!r}")
-    for authorization_id, snapshots in approved_snapshots.items():
-        authorization = raw_authorizations.get(authorization_id, {})
-        record = authorization.get("rights_record") if isinstance(authorization, dict) else None
-        if not isinstance(record, str):
-            continue
-        try:
-            record_path = safe_relative_path(record, f"authorization {authorization_id} rights_record")
-            if not record_path.is_file():
+    if verify_approval_bindings:
+        for authorization_id, snapshots in approved_snapshots.items():
+            authorization = raw_authorizations.get(authorization_id, {})
+            record = authorization.get("rights_record") if isinstance(authorization, dict) else None
+            if not isinstance(record, str):
                 continue
-            record_text = record_path.read_text(encoding="utf-8")
-            snapshot_section = re.search(
-                r"^## Exact approved snapshots\s*$([\s\S]*?)(?=^## |\Z)",
-                record_text,
-                flags=re.MULTILINE,
-            )
-            recorded_rows = re.findall(
-                r"^\|\s*`([^`]+)`\s*\|\s*`([0-9a-f]{64})`\s*\|\s*$",
-                snapshot_section.group(1) if snapshot_section else "",
-                flags=re.MULTILINE,
-            )
-            if sorted(recorded_rows) != sorted(snapshots):
-                errors.append(
-                    f"authorization {authorization_id!r} rights record inventory "
-                    "does not exactly match its approved publications"
+            try:
+                record_path = safe_relative_path(
+                    record, f"authorization {authorization_id} rights_record"
                 )
-            site_source_section = re.search(
-                r"^## Exact approved reader-facing site sources\s*$([\s\S]*?)(?=^## |\Z)",
-                record_text,
-                flags=re.MULTILINE,
-            )
-            recorded_site_sources = re.findall(
-                r"^\|\s*`([^`]+)`\s*\|\s*`([0-9a-f]{64})`\s*\|\s*$",
-                site_source_section.group(1) if site_source_section else "",
-                flags=re.MULTILINE,
-            )
-            expected_site_sources = sorted(authorization.get("site_sources", {}).items())
-            if sorted(recorded_site_sources) != expected_site_sources:
-                errors.append(
-                    f"authorization {authorization_id!r} rights record site-source inventory "
-                    "does not exactly match its approved site sources"
+                if not record_path.is_file():
+                    continue
+                record_text = record_path.read_text(encoding="utf-8")
+                snapshot_section = re.search(
+                    r"^## Exact approved snapshots\s*$([\s\S]*?)(?=^## |\Z)",
+                    record_text,
+                    flags=re.MULTILINE,
                 )
-        except (OSError, ReleaseError) as exc:
-            errors.append(f"cannot verify authorization {authorization_id!r} inventory: {exc}")
+                recorded_rows = re.findall(
+                    r"^\|\s*`([^`]+)`\s*\|\s*`([0-9a-f]{64})`\s*\|\s*$",
+                    snapshot_section.group(1) if snapshot_section else "",
+                    flags=re.MULTILINE,
+                )
+                if sorted(recorded_rows) != sorted(snapshots):
+                    errors.append(
+                        f"authorization {authorization_id!r} rights record inventory "
+                        "does not exactly match its approved publications"
+                    )
+                site_source_section = re.search(
+                    r"^## Exact approved reader-facing site sources\s*$([\s\S]*?)(?=^## |\Z)",
+                    record_text,
+                    flags=re.MULTILINE,
+                )
+                recorded_site_sources = re.findall(
+                    r"^\|\s*`([^`]+)`\s*\|\s*`([0-9a-f]{64})`\s*\|\s*$",
+                    site_source_section.group(1) if site_source_section else "",
+                    flags=re.MULTILINE,
+                )
+                expected_site_sources = sorted(authorization.get("site_sources", {}).items())
+                if sorted(recorded_site_sources) != expected_site_sources:
+                    errors.append(
+                        f"authorization {authorization_id!r} rights record site-source inventory "
+                        "does not exactly match its approved site sources"
+                    )
+            except (OSError, ReleaseError) as exc:
+                errors.append(
+                    f"cannot verify authorization {authorization_id!r} inventory: {exc}"
+                )
 
     expected = manifest.get("expected_counts")
     if not isinstance(expected, dict):
@@ -540,6 +623,71 @@ def included_publications(publications: dict[str, dict], preview: bool) -> dict[
         for publication_id, publication in publications.items()
         if publication["status"] in statuses
     }
+
+
+def candidate_inventory_data(manifest: dict, publications: dict[str, dict]) -> dict:
+    """Return current hashes without granting or recording release authority."""
+    provider = manifest["provider"]
+    errors: list[str] = []
+    pdfs = []
+    for publication_id in sorted(publications):
+        source_path = ROOT / "src" / provider / publication_id / "main.tex"
+        pdf_path = ROOT / "doc" / provider / f"{publication_id}.pdf"
+        if source_path.is_symlink() or not source_path.is_file():
+            errors.append(f"unsafe or missing publication source: {source_path.relative_to(ROOT)}")
+        if pdf_path.is_symlink() or not pdf_path.is_file():
+            errors.append(f"unsafe or missing installed PDF: {pdf_path.relative_to(ROOT)}")
+            continue
+        pdfs.append(
+            {
+                "id": publication_id,
+                "path": pdf_path.relative_to(ROOT).as_posix(),
+                "sha256": sha256(pdf_path),
+            }
+        )
+
+    site_sources = []
+    for source_relative in sorted(SITE_SOURCE_PATHS):
+        try:
+            source_path = safe_relative_path(source_relative, "candidate site source")
+        except ReleaseError as exc:
+            errors.append(str(exc))
+            continue
+        if source_path.is_symlink() or not source_path.is_file():
+            errors.append(f"unsafe or missing candidate site source: {source_relative}")
+            continue
+        site_sources.append(
+            {
+                "path": source_relative,
+                "sha256": sha256(source_path),
+            }
+        )
+
+    if errors:
+        raise ReleaseError(
+            "Candidate inventory preparation failed without producing an approval:\n- "
+            + "\n- ".join(errors)
+        )
+    return {
+        "schema_version": 1,
+        "release_id": manifest["release_id"],
+        "purpose": "candidate-current-hash-inventory",
+        "approval_conferred": False,
+        "notice": CANDIDATE_INVENTORY_NOTICE,
+        "provider": provider,
+        "pdfs": pdfs,
+        "site_sources": site_sources,
+    }
+
+
+def prepare_candidate_inventory(manifest: dict) -> dict:
+    """Validate current scope, ignoring stale approval bindings, then inventory it."""
+    publications = validate_manifest(
+        manifest,
+        require_active_release=False,
+        verify_approval_bindings=False,
+    )
+    return candidate_inventory_data(manifest, publications)
 
 
 def artifact_authorization(manifest: dict, included: dict[str, dict]) -> dict:
@@ -594,11 +742,43 @@ def artifact_authorization(manifest: dict, included: dict[str, dict]) -> dict:
     }
 
 
+def validate_deployment_target(authorization: dict, deployment_target: str) -> None:
+    """Reject release conditions that the named deployment target cannot enforce."""
+    if deployment_target != "github-pages":
+        raise ReleaseError(f"unsupported deployment target: {deployment_target}")
+    if authorization.get("expires_at") or requires_unadvertised_controls(authorization):
+        raise ReleaseError(
+            "github-pages is static hosting and cannot enforce this artifact's "
+            "request-time headers or expiration worker; use a host that runs the "
+            "generated controls before every HTML and PDF request"
+        )
+
+
 def artifact_manifest_data(
     manifest: dict,
     included: dict[str, dict],
     preview: bool,
 ) -> dict:
+    publication_entries = []
+    for publication_id, publication in sorted(included.items()):
+        approval = publication.get("approval")
+        if publication["status"] == "release":
+            authorization_id = approval["authorization"]
+            pdf_hash = approval["pdf_sha256"]
+        else:
+            authorization_id = None
+            pdf_hash = sha256(
+                ROOT / "doc" / manifest["provider"] / f"{publication_id}.pdf"
+            )
+        publication_entries.append(
+            {
+                "id": publication_id,
+                "status": publication["status"],
+                "pdf": f"doc/{manifest['provider']}/{publication_id}.pdf",
+                "authorization": authorization_id,
+                "pdf_sha256": pdf_hash,
+            }
+        )
     return {
         "schema_version": 2,
         "release_id": manifest["release_id"],
@@ -606,16 +786,7 @@ def artifact_manifest_data(
         "history_included": False,
         "source_included": False,
         "authorization": artifact_authorization(manifest, included),
-        "publications": [
-            {
-                "id": publication_id,
-                "status": publication["status"],
-                "pdf": f"doc/{manifest['provider']}/{publication_id}.pdf",
-                "authorization": publication["approval"]["authorization"],
-                "pdf_sha256": publication["approval"]["pdf_sha256"],
-            }
-            for publication_id, publication in sorted(included.items())
-        ],
+        "publications": publication_entries,
     }
 
 
@@ -630,9 +801,7 @@ def expected_artifact_files(
         f"doc/{manifest['provider']}/{publication_id}.pdf" for publication_id in included
     )
     expected.update(
-        f"LICENSES/{license_path.name}"
-        for license_path in (ROOT / "LICENSES").glob("*.txt")
-        if license_path.is_file()
+        artifact_license_source_paths()
     )
     expected.update(
         {
@@ -777,7 +946,7 @@ def source_to_output(source_relative: str, target: str, included_ids: set[str]) 
     resolved_text = resolved.as_posix()
 
     destination = PAGE_MAP.get(resolved_text)
-    if destination is None and resolved_text.startswith("LICENSES/"):
+    if destination is None and resolved_text in artifact_license_source_paths():
         license_path = ROOT.joinpath(*resolved.parts)
         if license_path.is_file():
             destination = resolved_text
@@ -890,6 +1059,7 @@ def render_page(
         raise ReleaseError(
             "Python Markdown is required; install requirements-public-alpha.txt in an isolated environment"
         ) from exc
+    require_locked_markdown_dependency()
 
     content = markdown.markdown(
         markdown_text,
@@ -1101,9 +1271,16 @@ def verify_output(
         pdf_path = output / "doc" / manifest["provider"] / f"{publication_id}.pdf"
         if pdf_path.is_file():
             actual_hash = sha256(pdf_path)
-            approved_hash = publication["approval"]["pdf_sha256"]
-            if actual_hash != approved_hash:
-                errors.append(f"{publication_id}: artifact PDF does not match its approved SHA-256")
+            if publication["status"] == "release":
+                expected_hash = publication["approval"]["pdf_sha256"]
+                mismatch = "does not match its approved SHA-256"
+            else:
+                expected_hash = sha256(
+                    ROOT / "doc" / manifest["provider"] / f"{publication_id}.pdf"
+                )
+                mismatch = "does not match its private-preview source snapshot"
+            if actual_hash != expected_hash:
+                errors.append(f"{publication_id}: artifact PDF {mismatch}")
 
     included_ids = set(included)
     for source_relative, output_relative in PAGE_MAP.items():
@@ -1122,9 +1299,8 @@ def verify_output(
     static_sources = [
         (TEMPLATE_ROOT / "assets/site.css", output / "assets/site.css"),
         *[
-            (license_path, output / "LICENSES" / license_path.name)
-            for license_path in sorted((ROOT / "LICENSES").glob("*.txt"))
-            if license_path.is_file()
+            (ROOT / source_relative, output / source_relative)
+            for source_relative in artifact_license_source_paths()
         ],
     ]
     for source_path, artifact_path in static_sources:
@@ -1234,8 +1410,9 @@ def build_site(manifest: dict, publications: dict[str, dict], preview: bool) -> 
     css_destination.parent.mkdir(parents=True)
     shutil.copyfile(TEMPLATE_ROOT / "assets/site.css", css_destination)
 
-    for license_path in sorted((ROOT / "LICENSES").glob("*.txt")):
-        destination = output / "LICENSES" / license_path.name
+    for source_relative in artifact_license_source_paths():
+        license_path = ROOT / source_relative
+        destination = output / source_relative
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(license_path, destination)
 
@@ -1281,7 +1458,6 @@ def build_site(manifest: dict, publications: dict[str, dict], preview: bool) -> 
             encoding="utf-8",
         )
     write_checksums(output)
-    verify_output(manifest, publications, output, preview)
     return output
 
 
@@ -1313,15 +1489,37 @@ def print_policy_summary(manifest: dict, publications: dict[str, dict]) -> None:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("check", "build", "verify"))
+    parser.add_argument(
+        "command",
+        choices=("check", "prepare", "build", "verify"),
+        help=(
+            "prepare prints a candidate hash inventory only; it never records "
+            "approval or changes release files"
+        ),
+    )
     parser.add_argument(
         "--preview",
         action="store_true",
         help="use the private, no-index review preview (includes status=review)",
     )
+    parser.add_argument(
+        "--deployment-target",
+        choices=("github-pages",),
+        help="with verify, reject conditions the named deployment target cannot enforce",
+    )
     args = parser.parse_args()
     try:
         manifest = load_manifest()
+        if args.deployment_target and (args.command != "verify" or args.preview):
+            raise ReleaseError(
+                "--deployment-target is valid only for public artifact verification"
+            )
+        if args.command == "prepare":
+            if args.preview:
+                raise ReleaseError("--preview is not meaningful with prepare")
+            inventory = prepare_candidate_inventory(manifest)
+            print(json.dumps(inventory, indent=2, sort_keys=True, ensure_ascii=False))
+            return 0
         publications = validate_manifest(manifest, require_active_release=not args.preview)
         if args.command == "check":
             if args.preview:
@@ -1329,10 +1527,21 @@ def main() -> int:
             print_policy_summary(manifest, publications)
         elif args.command == "build":
             output = build_site(manifest, publications, args.preview)
-            print(f"built and verified {output.relative_to(ROOT)}")
+            verify_command = "verify --preview" if args.preview else "verify"
+            print(
+                f"built {output.relative_to(ROOT)}; not verified — run "
+                f"scripts/public-alpha {verify_command} before publication"
+            )
         else:
             output = OUTPUT_ROOT / ("preview" if args.preview else "site")
             verify_output(manifest, publications, output, args.preview)
+            if args.deployment_target:
+                validate_deployment_target(
+                    artifact_authorization(
+                        manifest, included_publications(publications, False)
+                    ),
+                    args.deployment_target,
+                )
             print(f"verified {output.relative_to(ROOT)}")
     except ReleaseError as exc:
         print(str(exc), file=sys.stderr)

@@ -4,9 +4,14 @@ The current release manifest contains 48 publications: all 48 exact PDF
 snapshots are marked `release`, with none in `review` or on `hold`. The later
 16 July 2026 supplemental authorization in
 `rights/public-alpha-2026-07-15.md` binds all 48 release PDFs and all 17
-reader-facing site sources to their exact post-build hashes. The earlier
-perpetual, worldwide, and no-project-initiated-promotion conditions remain in
-force for the scope that record actually identifies.
+then-recorded reader-facing site sources to their exact post-build hashes. The
+release gate now also treats the generator, its dependency lock, and both
+copied license texts as artifact-affecting inputs. Those four exact bindings
+are not added to the historical authorization by this infrastructure change;
+public check, build, verification, and deployment therefore fail closed until
+a separately reviewed authorization records the complete current inventory.
+The earlier perpetual, worldwide, and no-project-initiated-promotion conditions
+remain in force for the scope that record actually identifies.
 
 `public-alpha.json` is the exhaustive publication policy for every discovered source document and installed PDF:
 
@@ -35,11 +40,12 @@ ecclesiastical review. Apparition and cult approvals remain object-limited and
 do not approve this publication. Both public-alpha artifacts include this PDF
 with the other 47 releases.
 
-For every authorized snapshot the generator will:
+For every fully authorized snapshot the generator will:
 
-- refuse public checks, builds, or verification before the effective instant or after any approved PDF or reader-facing site source changes;
+- refuse public checks, builds, or verification before the effective instant or after any approved PDF or artifact-affecting repository input changes;
 - bind every copied PDF and the authorization record to an exact SHA-256;
-- bind every reader-facing Markdown, layout, and style input to an exact SHA-256 so later edits require renewed authorization;
+- bind every reader-facing Markdown, layout, style, copied license text, generator, and dependency-lock input to an exact SHA-256 so later edits require renewed authorization;
+- require the installed Markdown renderer version to match the exact version in the bound dependency lock before rendering;
 - produce ordinary indexable public pages while retaining no-index controls for the private preview; and
 - create no sitemap, feed, public release attachment, announcement, or promotional metadata.
 
@@ -80,13 +86,31 @@ Use:
 
 ```sh
 make check-public-alpha
+make prepare-public-alpha > /tmp/public-alpha-candidate.json
 make public-preview
 make verify-public-preview
 make public-site
 make verify-public-site
+python scripts/public-alpha verify --deployment-target github-pages
 ```
+
+`prepare-public-alpha` is read-only and deliberately works when old snapshot
+hashes are stale or the old source-binding list lacks newly recognized inputs.
+It validates the exhaustive publication and current artifact-input scope, then
+reports the current 48 PDF hashes and all current Markdown, layout, style,
+license, generator, and dependency-lock hashes as a deterministic candidate
+inventory. The inventory explicitly confers no approval, changes no manifest
+or rights record, and cannot replace the separate review and recorded
+authorization required for new snapshots.
+
+The build and verify commands remain distinct gates. A build reports that its
+artifact is unverified; run the matching verify command as a later independent
+step before any publication operation. Deployment verification must also name
+the intended host profile. GitHub Pages verification rejects temporary or
+unadvertised artifacts because static Pages hosting cannot execute the required
+request-time expiration worker or apply the required headers to every PDF.
 
 Generated files live beneath ignored `build/public-alpha/`. GitHub Pages may
 publish only the verified `site/` artifact, never the `preview/` artifact.
-Changed PDFs, changed reader-facing sources, and future publications require
-renewed exact-snapshot authorization.
+Changed PDFs, changed artifact-affecting inputs, and future publications
+require renewed exact-snapshot authorization.
