@@ -58,6 +58,7 @@ BUILD_PDFS := $(addprefix $(BUILD_ROOT)/,$(addsuffix .pdf,$(DOCUMENTS)))
 DOC_PDFS := $(addprefix $(DOC_ROOT)/,$(addsuffix .pdf,$(DOCUMENTS)))
 METADATA_CHECKER := scripts/check-generation-metadata
 PUBLIC_ALPHA_TOOL := scripts/public-alpha
+PDF_REVIEW_TOOL := scripts/pdf-review
 CODEX_LAUNCHER := scripts/triptych-codex
 
 COMMON_SOURCES := $(shell find $(SOURCE_ROOT)/common -type f | sort)
@@ -85,7 +86,8 @@ FIRST_NOVENA_PRAYERS := $(wildcard $(FIRST_NOVENA_ROOT)/prayers/*.tex)
 CARMEL_NOVENA_PRAYERS := $(wildcard $(CARMEL_NOVENA_ROOT)/prayers/*.tex)
 
 .PHONY: all pdf install list help clean distclean check-tools check-metadata \
-	check-public-alpha check-agent-isolation codex public-site public-preview \
+	check-public-alpha check-pdf-review check-agent-isolation codex review-pdfs \
+	public-site public-preview \
 	verify-public-site verify-public-preview integrate resolve continue abort final-diff
 .DELETE_ON_ERROR:
 
@@ -149,6 +151,9 @@ final-diff:
 check-agent-isolation:
 	@$(PYTHON) -m unittest discover -s scripts/tests -p 'test_triptych_codex.py' -v
 
+check-pdf-review:
+	@$(PYTHON) -m unittest discover -s scripts/tests -p 'test_pdf_review.py' -v
+
 help:
 	@printf '%s\n' \
 		'make          Build every discovered src/$(PROVIDER)/**/main.tex document' \
@@ -162,8 +167,10 @@ help:
 		'make final-diff <run-id>  Show the complete review-pending diff without a worktree path' \
 		'Lifecycle Make wrappers require a launcher-produced ID; use scripts/triptych-codex directly for external input' \
 		'make check-agent-isolation  Test the transparent Codex launcher' \
+		'make check-pdf-review  Test memory-bounded PDF inspection tooling' \
 		'make check-metadata  Validate structured and inherited AI provenance' \
 		'make check-public-alpha  Validate the exhaustive public-release policy' \
+		'make review-pdfs  Prepare bounded page rasters and contact sheets for built PDFs' \
 		'make public-preview  Build a private no-index preview with review candidates' \
 		'make public-site  Build the fail-closed, history-free public artifact' \
 		'make verify-public-preview  Recheck the existing private preview artifact' \
@@ -175,6 +182,9 @@ check-metadata: check-tools
 
 check-public-alpha:
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) check
+
+review-pdfs:
+	@$(PYTHON) $(PDF_REVIEW_TOOL) $(BUILD_PDFS)
 
 public-preview:
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) build --preview

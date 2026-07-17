@@ -140,9 +140,26 @@ The normal lifecycle is:
 
 ```sh
 make          # compile into build/
+make review-pdfs  # prepare bounded every-page inspection artifacts
 make install  # copy reviewed PDFs into doc/
 make clean    # remove transient build artifacts only
 ```
+
+`scripts/pdf-review` owns raster and contact-sheet generation for publication
+inspection. It chooses concurrent PDF workers from current host and cgroup memory
+headroom, caps them by available CPUs, treats `--jobs` as a ceiling rather than a
+way around that plan, and serializes competing invocations. Each rendering child
+also receives a 1 GiB address-space ceiling, and the planner retains a separate
+1 GiB memory reserve. `scripts/pdf-review --explain` reports the live plan. If a
+detected cgroup limit cannot be resolved safely, or known headroom cannot fund
+the reserve and one worker, the helper exits without rendering. It renders bounded thumbnails,
+splits contact sheets into bounded page batches, and applies explicit ImageMagick
+memory, map, disk, area, and thread limits. Use
+`make review-pdfs` for all built publications or pass the affected PDFs directly
+to the script. Do not bypass those controls with parallel raw `montage`, `magick`,
+or equivalent whole-document contact-sheet commands. Generated inspection files
+are transient artifacts under `build/`, not evidence that a human or agent
+actually completed the required every-page review.
 
 Build recipes must:
 
@@ -152,6 +169,7 @@ Build recipes must:
 - compile with stable, slash-free job names while preserving the mirrored output path;
 - expose shared-fragment dependencies so a relevant edit rebuilds every consumer;
 - keep parallel targets isolated;
+- keep publication-inspection subprocesses within the resource bounds above;
 - stop on fatal compilation errors and avoid installing a failed or partial output;
 - never use `doc/` as a scratch or intermediate directory.
 
