@@ -86,6 +86,9 @@ to erase his whole pastoral and theological life.
   *In epistulam Ioannis ad Parthos* 7.8; relevant anti-Manichaean,
   anti-Donatist, and anti-Pelagian works.
 - Possidius, *Life of Augustine*, especially 4–8, 9–19, 22–31.
+- Prosper, *Chronicle*, MGH AA 9, p. 473; *Gesta collationis
+  Carthaginiensis*, BnF lat. 1546 and CSEL 104; *Codex Theodosianus* 16.5.38;
+  Augustine, Letter 211; and Paul the Deacon, *History of the Lombards* 6.48.
 - Benedict XVI's audience of 9 January 2008 as official reception, not neutral
   critical biography.
 
@@ -95,12 +98,12 @@ their edition-level limits remain explicit in the source audit.
 
 ## Located leads not used as evidentiary support
 
-- Prosper's chronicle entry commonly invoked for 28 August 430;
-- the 411 *Gesta collationis Carthaginiensis* and imperial legal dossier;
-- Bede, Paul the Deacon, and current institutional sources for the proposed
-  Sardinia–Pavia relic itinerary;
-- the textual dossier of the Rule and the earliest witnesses for the
-  child-and-shell and *Te Deum* traditions;
+- the uncollated portions of the 411 proceedings and wider imperial legal
+  sequence beyond *Codex Theodosianus* 16.5.38;
+- Bede, the first Africa-to-Sardinia relic witness, and current institutional
+  or scientific sources beyond Paul the Deacon's Sardinia–Pavia report;
+- textual priority and adaptation within the Rule families, and the earliest
+  witnesses for the child-and-shell and *Te Deum* traditions;
 - Sermons 355–356, the Divjak letters, and the Dolbeau sermons at edition
   level; and
 - books by Peter Brown, Erika Hermanowicz, James O'Donnell, Serge Lancel,
@@ -144,13 +147,14 @@ No copyrighted corpus, scan, or substantial modern quotation is vendored.
   relics, Rule, legends, and quotations made explicit;
 - internal source, chronology, and tradition records drafted;
 - translation and rights boundaries recorded for each source family; and
-- repository production verification completed on 16 July 2026: two settled
-  `pdflatex` passes produced a 19-page PDF; the final log has no fatal,
+- repository production verification completed on 17 July 2026 after the
+  source-gap revision: two settled `pdflatex` passes produced a 20-page PDF;
+  the final log has no fatal,
   undefined-reference, overflow, underfull, or other layout warning; PDF title,
   subject, extracted text, structure, and fonts were checked; all fonts are
   embedded and subset; every page was visually inspected at ordinary print
   size; and the installed PDF was verified byte-identical to the reviewed
-  build.
+  build, SHA-256 `052808b5b42350db4b28a0e413da09c752c8f5deafec609f7872519c701d1d6d`.
 
 ## Outstanding review
 
@@ -158,9 +162,9 @@ No copyrighted corpus, scan, or substantial modern quotation is vendored.
 - theological review, especially grace, sacrament, and ecclesial unity;
 - specialist review of Donatist voices, Roman African identity, Punic/Greek,
   law, and slavery;
-- edition-level collation of Prosper, the 411 proceedings and legal dossier,
-  several sermons and letters, the Rule dossier, the Divjak and Dolbeau
-  collections, and the publisher-only modern bibliography;
+- complete collation of the 411 proceedings and legal dossier, several sermons
+  and letters, Rule-family priority, the Divjak and Dolbeau collections, and
+  the publisher-only modern bibliography;
 - current official confirmation of the Pavia shrine claim if retained as a
   present-tense statement;
 - independent rights review; and

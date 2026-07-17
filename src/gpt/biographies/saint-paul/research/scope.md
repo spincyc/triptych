@@ -152,10 +152,10 @@ introductions, and notes remain outside the project's license.
 - Official Vatican presentation of the tomb beneath the papal altar. Its
   inherited execution and burial narrative is official shrine reception, not
   independent first-century proof.
-- USCCB 2026 calendar entry for 29 June, used only for the current U.S.
-  solemnity.
-  The ancient calendar origin and Appian Way commemoration were not collated
-  and are not asserted as historical findings in this publication.
+- USCCB 2026 calendar entry for the current U.S. solemnity, and the
+  *Depositio martyrum*, MGH *Chronica minora* 1, pp. 71–72, for the
+  fourth-century 29 June pairing and distinct Catacombs/Ostian locations.
+  Neither establishes a joint death date or bodily translation.
 - The 25 January and 18 November observances, Pauline Year program, pallium and
   ecumenical practices, patronage catalogues, and art-historical conventions
   remain uncollated leads rather than publication claims.
@@ -259,8 +259,8 @@ Commission's 2001 document govern Catholic reception in this publication.
 - No use of the disputed Pastorals as certain proof of release or a second
   imprisonment.
 - No promoted Muratorian Spain claim; no critical edition was inspected.
-- No claim that the ancient 29 June calendar origin or Appian translation was
-  verified.
+- The ancient 29 June entry is verified; its origin, intervening transmission,
+  and any Appian bodily translation remain unresolved.
 - No historical claim from uncollated art, patronage, Tre Fontane, Mamertine,
   local relic, exact-last-words, or detailed martyr-act leads.
 - No forensic authentication of sarcophagus contents.
@@ -284,7 +284,7 @@ Commission's 2001 document govern Catholic reception in this publication.
 - Release, Spain, later eastern work, number of Roman imprisonments, exact date
   and manner of death.
 - Critical text of First Clement's western phrase and ancient martyr acts.
-- Ostian stratigraphy, Gaius's `tropaion`, ancient calendar origin, Appian Way
+- Ostian stratigraphy, Gaius's `tropaion`, calendar origin, Appian Way
   commemoration, sarcophagus custody, test laboratory, calibration, and full
   scientific publication.
 
@@ -314,13 +314,14 @@ Completed in this drafting stage:
 - static TeX source sanity checks: `chktex` completed with style diagnostics
   only, while `lacheck` reported the expected macro-definition false positives
   in shared table environments; and
-- repository production verification on 16 July 2026: two settled `pdflatex`
-  passes produced a 28-page PDF; the final log has no fatal,
+- repository production verification on 17 July 2026 after the source-gap
+  revision: two settled `pdflatex` passes produced a 29-page PDF; the final
+  log has no fatal,
   undefined-reference, overflow, underfull, or other layout warning; PDF title,
   subject, extracted text, structure, and fonts were checked; all fonts are
   embedded and subset; every page was visually inspected at ordinary print
   size; and the installed PDF was verified byte-identical to the reviewed
-  build.
+  build, SHA-256 `432de52e1314ce7b33595024cc3b68ae1798fc6816f313d0411019f5537a2f5a`.
 
 Not completed or claimed:
 

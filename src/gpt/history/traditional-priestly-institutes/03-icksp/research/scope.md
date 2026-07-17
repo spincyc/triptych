@@ -11,7 +11,7 @@
 - Principal jurisdictions: universal law of the Latin Church; ICKSP proper law; public acts of PCED and the competent curial dicasteries; diocesan acts and agreements in places served
 - Principal geographies: Rome and Genoa; the bounded French passage; Mouila and other works in Gabon; Gricigliano and Florence; representative European and North American apostolates
 - Principal languages of evidence: English, French, Italian, Latin, Polish
-- Historical terminal date and mutable-status cutoff: 2026-07-16
+- Historical terminal date and mutable-status cutoff: 2026-07-17
 
 The reader-facing series label “Traditional Priestly Institutes” is bibliographic, not a canonical class. At the cutoff the ICKSP is a society of apostolic life of pontifical right. Its “canonial form” and use of “canon” as the title of a priest are not treated as proof that each house is a cathedral or collegiate chapter or that the Institute is an order of canons regular.
 
@@ -35,12 +35,12 @@ The governing thesis is that the ICKSP is an independent institutional line, not
 - PCED N. 181/2008, *Saeculorum Rex*, as the controlling pontifical-right erection act: society of apostolic life of pontifical right, five-year experimental constitutions, common life on the model of canons, and Wach’s renewable six-year appointment.
 - PCED N. 182/2008 as the controlling companion act for the Sister Adorers: separate public association of faithful, erected experimentally for three years with constitutions approved for the same term.
 - The 2014 ordinary apostolic visitation as announced by the Institute, its named visitors, and the absence of the original mandate and public report.
-- The Institute’s report of definitive constitutional approval on 29 January 2016, with no invented provisions or inferred visitation verdict.
+- The Institute’s report of definitive constitutional approval on 29 January 2016, paired with former visitor François Bacqué's signed contemporary confirmation of the approval and competent Roman office, with no invented provisions or inferred visitation verdict.
 - The 2020 election notice and public government at the 2026 cutoff, with Patrick Incorvaja styled Monsignor rather than reproducing the page's apparent episcopal mistranslation.
 - The 2026 calendar’s rounded self-reported scale: more than 130 priests, about 100 seminarians, about 20 oblates, and more than 70 Sister Adorers separately.
 - *Summorum Pontificum*, the 2019 end of PCED, *Traditionis custodes*, the 2021 *Responsa*, and the 2023 rescript as the changing universal environment.
 - The cutoff-bound negative finding that no published universal ICKSP-specific post-2021 faculty or exemption was identified.
-- Chicago’s public-Mass suspension since 1 August 2022 and later local reception at representative Warren, Oswego, and Tampa works, demonstrating bishop-specific variation rather than a universal exemption or prohibition.
+- Chicago’s 2016 property transfer, general 2022 archdiocesan liturgical policy, public-Mass suspension since 1 August 2022, and later local reception at representative Warren, Oswego, and Tampa works, demonstrating bishop-specific variation rather than a universal exemption or prohibition.
 - The Holy See’s record of the 24 June 2024 papal audience, paired with the ICKSP participant account; no legal effect is inferred.
 - One bounded public-scrutiny section: the 2023 *Le Parisien* claims and Wach’s response; the 2026 former-Sister claims and the Sister superior’s response; the distinction between the women’s association and the male society; and the absence of a checked public Holy See outcome.
 - A claim audit, dated timeline, and references grouped by function.
@@ -60,7 +60,7 @@ The governing thesis is that the ICKSP is an independent institutional line, not
 - An interpretation of every ICKSP constitutional or liturgical provision after *Traditionis custodes* or advice to a bishop, member, candidate, or faithful person.
 - A transfer of the FSSP’s February 2022 decree to the ICKSP by analogy.
 - A claim that the 2024 audience was a decree, faculty, exemption, official transcript, or adjudication.
-- A legal or factual judgment on Chicago beyond the checked notice that public Masses have been suspended since 1 August 2022 and contemporaneous reporting of conflicting explanations.
+- A legal or factual judgment on Chicago beyond the official property and general-policy context, the checked notice that public Masses have been suspended since 1 August 2022, and contemporaneous reporting of conflicting explanations.
 - A finding that the 2014 visitation exonerated or condemned the Institute, or that definitive constitutions in 2016 disclose its result.
 - A finding that allegations reported in 2023 or 2026 are substantiated, false, criminal, or canonically adjudicated.
 - Named criminal-case material, rumor, anonymous social-media claims, and unverified allegations outside the two bounded public-reporting modules.
@@ -124,7 +124,7 @@ This canonical and liturgical module is a study aid, not legal or pastoral advic
 - No juridical “transfer” instrument from Mouila to Florence was located; the publication does not invent one.
 - The complete experimental constitutions approved in 2008 were not located.
 - The original 2014 visitation mandate, report, recommendations, and disposition were not located.
-- The full definitive constitutions and 29 January 2016 approval act were not located.
+- Bacqué's signed 2 February 2016 sermon confirms definitive approval and identifies CDF incorporating PCED as the competent office; the full constitutions and 29 January approval act were not located.
 - The public record does not establish a causal or evaluative formula connecting the 2014 visitation to 2016 approval.
 - The checked institutional pages date the Sister Adorers’ beginning or canonical foundation to January 2001 and 2004; no original act resolved the difference.
 - No later public act changing the Sister Adorers from the N. 182/2008 public-association status was located.
@@ -132,7 +132,7 @@ This canonical and liturgical module is a study aid, not legal or pastoral advic
 - The 2026 calendar values are rounded self-reports; no independent census was located.
 - A stale Italian page remains online with much smaller values framed as “in twenty-three years”; it is not used as current scale.
 - No universal ICKSP-named faculty or exemption after *Traditionis custodes* was located in the checked official Vatican and institutional set.
-- No public Chicago decree or complete correspondence was located; only the current suspension notice and attributed contemporary explanations are used.
+- The 2016 archdiocesan property release and general policy effective 25 January 2022 were located. No individual Chicago suspension decree or complete correspondence was found; the later cause and scope remain bounded to the current notice and attributed contemporary explanations.
 - Local acts at Warren, Oswego, and Tampa establish those locations, not an international legal rule.
 - The official 2024 audience bulletin gives no transcript or juridic act; companions and content come from the ICKSP account.
 - No public Holy See outcome to the concerns reported in 2023 was located.
@@ -154,7 +154,7 @@ This canonical and liturgical module is a study aid, not legal or pastoral advic
 
 ## Review and production state
 
-- Source audit: completed for the claims used in the draft through 2026-07-16.
+- Source audit: completed for the claims used in the draft through 2026-07-17.
 - Independent historical review: outstanding.
 - Independent theological review: outstanding.
 - Independent liturgical review: outstanding.

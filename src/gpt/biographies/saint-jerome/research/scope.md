@@ -85,11 +85,13 @@ the history of the work.
 - no legal verdict concerning Jerome's departure from Rome or command
   responsibility for the 416 violence;
 - no harmonization of Rufinus, Jerome, Palladius, or other partisan archives;
-- no substantive use of the attributed lives of Paul, Hilarion, or Malchus
-  before an exact text, translation basis, and relevant loci are controlled;
+- no use of individual episodes in the lives of Paul, Hilarion, or Malchus as
+  external biography without corroboration; their inspected prologues support
+  only claims about Jerome's literary program;
 - no archaeological or scientific authentication of cave, tomb, or remains;
-- no narrative, date, symbolism, location, or current-status claim from an
-  uncollated visual, patronage, burial/relic, lion, or related tradition;
+- no current-status or authentication claim from an uncollated visual,
+  patronage, burial/relic, or related tradition; the early Bethlehem tomb and
+  medieval lion transmission are retained only with source-local limits;
 - no modern nationality inferred from an unresolved late Roman border town;
 - no assumption that ecclesial titles or iconographic attributes are
   contemporary offices or objects;
@@ -118,10 +120,12 @@ the history of the work.
 ## Principal corpus used at the cited loci
 
 - Jerome, Letters 3, 5, 7, 14–16, 19–22, 35–39, 45, 49, 51–52, 57, 84,
-  108, 125, 127, 130, 135, and 139; *De viris illustribus* 135; the Gospel and
-  Old Testament prefaces; *Against Rufinus* 3.22; *Against John of Jerusalem*;
+  108, 125, 127, 130, and 138–139; *De viris illustribus* 135; the Gospel and
+  Old Testament prefaces; *Against Rufinus* 3.22; Rufinus, *Apology against
+  Jerome* 2.5–6, 32–44; *Against John of Jerusalem*;
   *Against Jovinian*; *Against Helvidius*; *Against Vigilantius*; and the
-  *Dialogue against the Pelagians*. These were consulted principally through the public-domain
+  *Dialogue against the Pelagians*; *Life of Paul* 1, *Life of Hilarion* 1,
+  and *Life of Malchus* 1–2. These were consulted principally through the public-domain
   NPNF translation hosted by New Advent. The publication names exact loci and
   does not treat the English research text as a critical Latin edition.
 - Augustine and Jerome, the dual-numbered exchange comprising Augustine
@@ -131,7 +135,7 @@ the history of the work.
 - Sulpicius Severus, *Dialogue* 1.8–9, and Palladius, *Lausiac History*
   36.6–7 and 41.2, as interested external witnesses.
 - Augustine, *On the Proceedings of Pelagius* 66, together with Innocent's
-  Letter 135 and Jerome's Letter 139, for the reported 416 attack, with the
+  Letters 136–137 and Jerome's Letters 138–139, for the reported 416 attack, with the
   attribution and legal limits recorded in the audit.
 - Benedict XVI, General Audiences of 7 and 14 November 2007, and Francis,
   *Scripturae Sacrae affectus* (30 September 2020), as official Catholic
@@ -153,15 +157,15 @@ ancient testimony.
 ## Located leads not used as evidentiary support
 
 - Prosper's exact chronicle entry used in older birth chronologies;
-- Rufinus's *Apology against Jerome* in full and the complete reciprocal
-  Origenist dossiers;
+- Rufinus's remaining *Apology against Jerome* dossier outside the inspected
+  book-2 loci and the complete reciprocal Origenist sequence;
 - the primary dossier and legal history of the 416 Bethlehem violence;
-- exact texts, translations, and publication loci for the attributed lives of
+- external controls for individual episodes in the now-inspected lives of
   Paul, Hilarion, and Malchus;
 - manuscripts and critical editions needed to refine individual biblical,
   Psalter, commentary, and letter attributions;
-- the earliest text connecting the lion to Gerasimus, the earliest Jerome
-  recension, and the exact *Golden Legend* wording;
+- the precise transfer mechanism between the controlled Gerasimus,
+  *Plerosque nimirum*, and *Golden Legend* stages;
 - primary burial, relic-translation, shrine, cave, iconographic, patronage,
   and expanded-name witnesses;
 - books by J. N. D. Kelly, Stefan Rebenich, Megan Hale Williams, Andrew Cain,
@@ -216,18 +220,19 @@ vendored.
   partisan counter-witnesses, polemical harms, and hard chronology disputes
   made explicit;
 - historical life, official reception, and hagiography about Jerome kept
-  distinct; the three attributed ascetic lives are deferred to an exact-text
-  dossier;
+  distinct; the three attributed ascetic lives were checked as literary works
+  and are not treated as transparent event records;
 - internal source, chronology, and tradition records drafted;
 - translation and rights bases recorded for every direct ancient quotation;
   and
-- repository production verification completed on 16 July 2026: two settled
-  `pdflatex` passes produced a 21-page PDF; the final log has no fatal,
+- repository production verification completed on 17 July 2026 after the
+  source-gap revision: two settled `pdflatex` passes produced a 22-page PDF;
+  the final log has no fatal,
   undefined-reference, overflow, underfull, or other layout warning; PDF title,
   subject, extracted text, structure, and fonts were checked; all fonts are
   embedded and subset; every page was visually inspected at ordinary print
   size; and the installed PDF was verified byte-identical to the reviewed
-  build, SHA-256 `153cde13735c70abda1f2ca542be07d87f2566be106f5330d898af8c5cb94b77`.
+  build, SHA-256 `c192e632e8eb575fb176d3989cacfa2c603447423608ef84d9604ff88d4848e4`.
 
 ## Outstanding review
 
@@ -237,9 +242,9 @@ vendored.
   canon-history, and manuscript review;
 - complete critical-edition collation of principal letters, prefaces,
   polemics, commentaries, chronicle entries, and external witnesses;
-- direct collation of Prosper, Rufinus's reply, the 416 dossier, and the
+- complete reciprocal collation of the Rufinus and 416 legal dossiers, and the
   publisher-only modern bibliography before any carries a stronger claim;
-- exact-text and translation collation of the three attributed ascetic lives;
+- external corroboration for individual episodes in the three ascetic lives;
 - exact commentary and polemical loci before any ethical characterization of
   Jerome's language about Jews is published;
 - archaeological, art-historical, cult, shrine, relic, and patronage review;

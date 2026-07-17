@@ -122,11 +122,11 @@ The dossier headings, corpus keys, timeline events, and reader-facing census are
 
 Independent specialist review remains outstanding in all disciplines and languages listed in the research scope.
 
-## Production verification — 2026-07-16
+## Production verification — 2026-07-17
 
-- The repository-wide generation-metadata gate passed for 25 canonical records and 3 inherited records; the document-level gate also passed.
+- The repository-wide generation-metadata gate passed for 50 canonical records and 3 inherited records; the document-level gate also passed.
 - A dependency-complete, two-pass pdfLaTeX build produced an 82-page letter-size PDF. The settled log contains no fatal error, undefined control sequence, unresolved reference, overfull box, or font-substitution warning. The remaining underfull lines are confined to compact census ledgers; the `tcolorbox` split diagnostics are visually harmless.
 - `qpdf --check` reported no syntax or stream-encoding error. The PDF is unencrypted, has no JavaScript or embedded files, and all reported fonts are embedded, subsetted, and Unicode-mapped.
 - Layout-preserving text extraction found no placeholder, unfinished-state language, literal TeX markup, or undefined-reference text.
 - Every one of the 82 physical pages was rasterized and visually inspected, with the dense timeline and census pages checked both in contact sheets and at individual-page scale. No clipped text, collision, accidental blank page, broken table continuation, or illegible key was found; the final reuse-and-rights page is intentionally sparse.
-- The reviewed PDF was installed with the repository target at `doc/gpt/theology/heresies/heresies-in-catholic-history.pdf`, and the installed and build artifacts compared byte-for-byte identical, SHA-256 `e2e2325210bf3c139cc64f0e5158f6f29be47c8089a93e068acefb8663531736`.
+- The reviewed PDF was installed with the repository target at `doc/gpt/theology/heresies/heresies-in-catholic-history.pdf`, and the installed and build artifacts compared byte-for-byte identical, SHA-256 `8b457878414082f6c377a345abd71bc9c604141d46d0e2418ee38703679f2996`.

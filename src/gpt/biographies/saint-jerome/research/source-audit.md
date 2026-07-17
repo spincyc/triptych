@@ -42,24 +42,24 @@ do not carry published arguments.
 | Augustine worried that Hebrew-based novelty could disturb congregations formed by Septuagintal wording. | N/A | Reciprocal late-antique correspondence | Augustine 71 / Jerome 75 and Augustine 82 / Jerome 116; [Letter 82/116](https://www.newadvent.org/fathers/1102082.htm) | Dual numbering preserved. Neither man met; each letter is controlled by its author and transmission was uneven. |
 | The later Vulgate is composite and acquired authority through transmission and use. | K/M | Textual history and Catholic reception | Houghton, pp. 31–35; Francis 2020 | Jerome is called the decisive individual contributor, not sole author of a one-stage Bible. |
 | Trent received the old Latin Vulgate for ecclesial public use without prohibiting original-language study; the *Nova Vulgata* is a later revised edition. | M | Council as summarized in directly inspected papal apostolic letter | *Scripturae Sacrae affectus*, nn. 6–7 | Used only as Catholic reception. The publication does not treat Trent as a manuscript-attribution judgment. |
-| The Origenist rupture involved Rufinus, John of Jerusalem, Epiphanius, Paulinian's ordination, translation, and jurisdiction. | A | Jerome's partisan letters and polemics | Letter 84; *Against John of Jerusalem*; *Against Rufinus* 1–3 | Jerome's dossier establishes conflict and his claims. Rufinus's full *Apology* was identified but not inspected, so his exact countercase does not carry claims here. |
+| The Origenist rupture involved Rufinus, John of Jerusalem, Epiphanius, Paulinian's ordination, translation, and jurisdiction. | A/N | Reciprocal partisan polemics | Jerome, Letter 84, *Against John of Jerusalem*, *Against Rufinus* 1–3; Rufinus, *Apology against Jerome* 2.5–6, 32–44 | Rufinus's inspected book directly contests Jerome's ascetic satire, Ciceronian consistency, Hebrew project, and treatment of earlier writers. Neither archive supplies neutral motive; the remaining books and institutional dossier still need full reciprocal collation. |
 | Augustine and Jerome disputed Galatians and Jonah and later cooperated against Pelagian positions. | A/N | Reciprocal correspondence, c. 394–419 | Augustine/Jerome Letters 28/56, 40/67, 71/75, 73/76, 82/116, 166/165, 167/202 | Relationship is entirely epistolary. The publication distinguishes exegetical disagreement, honor conflict, and later alliance. |
 | Jerome ranked virginity above marriage; Roman allies objected to the injury done to marriage. | A | Jerome's ascetic polemic and defense | *Against Jovinian*; Letter 49; [Letter 49](https://www.newadvent.org/fathers/3001049.htm) | Voluntary ascetic opportunity and rhetorical harm are both retained; opponents' views are not reconstructed solely from Jerome. |
 | Jerome defended Mary's perpetual virginity while using personal abuse against Helvidius. | A | Jerome, c. 383, polemical treatise | *Against Helvidius*; [NPNF text](https://www.newadvent.org/fathers/3007.htm) | Doctrinal conclusion and invective distinguished. The treatise is not a neutral record of Helvidius. |
 | *Against Vigilantius* witnesses developing relic, vigil, alms, and ascetic practices and Jerome's abusive polemic. | A | Jerome, 406, polemical treatise | [*Against Vigilantius*](https://www.newadvent.org/fathers/3010.htm) | Exact work inspected for the stated themes; opponent's pastoral case remains filtered through Jerome. |
 | Later advice to Demetrias moderates extreme fasting and joins Scripture with practical work. | A | Jerome, c. 414, ascetic letter | Letter 130.10–15; [NPNF text](https://www.newadvent.org/fathers/3001130.htm) | Development is retained without pretending earlier rhetoric disappeared. |
 | Jerome wrote a dialogue against Pelagian positions and emphasized grace and post-baptismal sin. | A | Jerome, c. 415–417, literary theological dialogue | [*Dialogue against the Pelagians*](https://www.newadvent.org/fathers/3011.htm) | The dialogue is not a transcript of Pelagius; editorial dating varies and edition-level collation remains outstanding. |
-| The Bethlehem complex was reportedly attacked and burned in 416. | N/A | Augustine, papal correspondence, and Jerome's interested notice, 416–417 | Augustine, *On the Proceedings of Pelagius* 66; [Innocent Letter 135](https://www.newadvent.org/fathers/3001135.htm); [Jerome Letter 139](https://www.newadvent.org/fathers/3001139.htm) | Converging reports support violence and destruction. Casualty claims, party attribution, proceedings, command responsibility, and aftermath require the complete dossier and are not published as settled facts. |
+| The Bethlehem complex was reportedly attacked and burned in 416. | N/A | Augustine, papal correspondence, and Jerome's interested notices, 416–417 | Augustine, *On the Proceedings of Pelagius* 66; [Innocent Letters 136](https://www.newadvent.org/fathers/3001136.htm) and [137](https://www.newadvent.org/fathers/3001137.htm); [Jerome Letters 138](https://www.newadvent.org/fathers/3001138.htm) and [139](https://www.newadvent.org/fathers/3001139.htm) | Destruction and serious violence converge. Augustine's killing report, Innocent's explicit lack of named charges and rumor/case distinction, Jerome's party attribution, command responsibility, proceedings, and aftermath cannot be harmonized into a settled legal narrative. |
 | Jerome's books, letters, and bodily study made scholarship appear as ascetic labor. | A/N/S | Jerome's ascetic letters and Sulpicius's visitor | Letters 52.7, 125.11–12, 130.10–15; Sulpicius, *Dialogue* 1.9.5 | Explicit project synthesis; not borrowed from an unseen modern monograph or made into a claim of sole institutional descent. |
 | *De viris illustribus* ends with Jerome and advertises his corpus. | A | Jerome, c. 392/393, literary catalogue | *De viris illustribus* 135 | Self-archive and self-promotion coexist; broad self-attribution is tested book by book. |
-| The attributed lives of Paul, Hilarion, and Malchus require an exact-text dossier. | Uncollated lead | Bibliographic identification only; no controlled text, translation basis, or publication loci | *Life of Paul*, *Life of Hilarion*, and *Life of Malchus*; exact texts pending | No episode, date, genre comparison, influence claim, or historical conclusion in the publication depends on these works. |
+| Jerome wrote three ascetic lives with distinguishable literary programs. | A | Jerome, hagiographic lives, c. 374–391; public-domain NPNF research text | *Life of Paul* 1; *Life of Hilarion* 1; *Life of Malchus* 1–2 | The prologues control Jerome's priority claim, praise program, and report-frame. Individual narrated episodes require external control before they support the subjects' biographies. |
 | Paula died 26 January 404 and Letter 108 constructs her epitaphic life. | A | Jerome, c. 404, memorial letter | Letter 108.27–33 and epitaph | Strong subject-network date and memorial; still selected by Jerome for ascetic edification. |
 | Marcella suffered in the 410 sack of Rome and Jerome learned through reports. | A | Jerome, c. 412, memorial letter | Letter 127, especially 12–14; [NPNF text](https://www.newadvent.org/fathers/3001127.htm) | Close relational testimony, not a casualty register or eyewitness account by Jerome. |
 | Eustochium's death falls in late 418 or early 419. | K | Aline Canellis, 2016, accessible teaching chronology | [Handout](https://neolatinlyon.sciencesconf.org/conference/neolatinlyon/pages/A._Canellis_Neolatin_2016_Exemplier.pdf) | Qualified reconstruction only; exact primary locus is not secured here. |
 | Jerome died at Bethlehem in 419 or 420; 30 September 420 is official Catholic reception. | M/K | Papal catechesis and apostolic commemoration, with competing critical chronology | Benedict XVI, 7 November 2007 (“419/420”); Francis 2020 (received 1600th anniversary); Canellis handout | Death and place secure in reception; exact year remains open. Feast/commemoration is not silently converted into an independently proved civil date. |
-| Burial and relic-translation history was not controlled. | Uncollated lead | No near-contemporary burial narrative or item-level later witness in the inspected corpus | No direct burial, translation, current shrine, custody, or scientific-identification source controlled | The publication assigns no narrative, date, route, location, continuity, custody, or authentication status. |
+| A Jerome tomb was shown at Bethlehem by the late seventh century. | E | Adomnán, *De locis sanctis*, late-seventh-century pilgrimage report based on Arculf | 2.5, “I saw the sepulchre of the holy Jerome” in Denis Meehan's public-domain translation and CELT text | Early localized pilgrim reception, not eyewitness burial evidence. It supplies no transfer to Rome, current custody, or identification of remains. |
 | Red cardinal dress is anachronistic. | M/S | Francis 2020 | *Scripturae Sacrae affectus*, n. 3 | This official negative is retained; no uncollated visual date, development, or symbolic meaning is added. |
-| Lion, Gerasimus, and *Golden Legend* transmission claims were not controlled. | Uncollated lead | No exact early lion witness, Gerasimus text, Jerome recension, *Golden Legend* passage, or route inspected | Item-level witnesses pending | No narrative, date, origin, transfer mechanism, symbolism, or biographical claim is published. |
+| The lion cycle belonged to Gerasimus before its medieval attachment to Jerome. | E/L/K | John Moschus, *Spiritual Meadow* 107; ninth-century *Plerosque nimirum* Jerome life; Jacobus de Voragine, *Golden Legend*; controlled modern transmission study | Witnesses mapped in Filomena Giannotti, “Saint Jerome's Posthumous Life: Aspects of His Reception in the Twentieth Century” (2021), pp. 115–127; Caxton text of the *Golden Legend* | The chain establishes reception order: the *Golden Legend* transmits rather than invents the Jerome form. Name-similarity as transfer mechanism is plausible K, not documented fact; no lion enters the historical life. |
 | Jerome reports penitential practice, but item-level visual and place claims were not controlled. | A / uncollated lead | Jerome's subject report plus an uninspected later reception dossier | Letter 22.7 controls only Jerome's remembered practice; visual, object, cave, portrait, and shrine witnesses pending | The subject report does not authenticate or interpret any particular later object, image, tableau, or place. |
 | The dialogue in which Christ asks Jerome to give his sins is apocryphal in official reception. | M/L | Francis 2020, citing André Louf (1990) | *Scripturae Sacrae affectus*, n. 1 | Francis's classification is used. Louf and an ancient witness were not independently inspected; the dialogue is not presented as Jerome's quotation. |
 | “Ignorance of Scripture is ignorance of Christ” has an exact Jerome locus. | A/M | Jerome, Isaiah commentary prologue, as identified in official reception | *Commentary on Isaiah*, prologue, CCL 73, 1; Francis 2020, n. 1 | The CCL locus was recorded from Francis; Latin was not independently collated and no unidentified English translation is quoted. |
@@ -86,16 +86,16 @@ do not carry published arguments.
 ## Bibliographic and source leads not used as claim support
 
 - Prosper's chronicle entry for the older birth chronology;
-- Rufinus's *Apology against Jerome* in full; a public-domain NPNF translation
-  was identified through the [New Advent Fathers
-  index](https://www.newadvent.org/fathers/) but not inspected for this edition;
+- Rufinus's *Apology against Jerome* books 1 and the remaining book-3 passages
+  beyond the inspected book-2 dossier;
 - a complete legal and ecclesiastical dossier for the 416 attack;
-- exact texts, translations, and relevant loci for the attributed lives of Paul,
-  Hilarion, and Malchus;
+- external controls for individual episodes in the lives of Paul, Hilarion,
+  and Malchus beyond the now-inspected literary prologues;
 - exact commentary and polemical loci for the ethical history of Jerome's
   language about Jews;
-- earliest lion/Gerasimus, *Golden Legend*, cave, red-dress, skull, stone,
-  burial, relic, patronage, and expanded-name witnesses;
+- the precise transfer mechanism from the Gerasimus lion to
+  *Plerosque nimirum*, plus cave, red-dress, skull, stone, Roman translation,
+  relic, patronage, and expanded-name witnesses;
 - J. N. D. Kelly, *Jerome: His Life, Writings and Controversies* (London:
   Duckworth, 1975);
 - Stefan Rebenich, *Jerome* (London: Routledge, 2002);
@@ -115,8 +115,8 @@ The source architecture supports a working biography at the qualified claim
 level above. Publication-level review should still collate critical Latin (and
 relevant Greek/Hebrew) editions of every principal locus; control complete
 reciprocal Origenist, Pelagian, canonical, and manuscript dossiers; inspect
-Prosper and Rufinus directly; and trace the earliest witnesses for burial,
-relics, lion, Gerasimus, iconography, cave, names, patronages, and detached
-sayings before making those claims. The three attributed ascetic lives and the
-ethical assessment of language about Jews likewise require their pending exact-
-text dossiers.
+Prosper and the complete Rufinus corpus; and trace primary burial, Roman
+translation, relic, iconographic, cave, naming, patronage, and detached-saying
+witnesses before making stronger claims. Individual episodes in the three
+ascetic lives and the ethical assessment of language about Jews still require
+external-control and exact-locus dossiers.

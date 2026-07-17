@@ -11,7 +11,7 @@
 - **Principal source and subject languages:** Hebrew, Aramaic, and Koine Greek; Latin and later daughter versions occur only where they illuminate reception or textual transmission
 - **Geographic center:** Ptolemaic and Roman Egypt, especially Alexandria, with necessary evidence from Judaea/the Judean Desert and the wider Greek-speaking Jewish and Christian Mediterranean
 - **Chronological center:** third century BCE through the fifth-century great codices
-- **Extended endpoint:** modern critical editions and NETS, checked through 2026-07-15
+- **Extended endpoint:** modern critical editions and NETS, checked through 2026-07-17
 - **Intended reader:** a serious nonspecialist who encounters “the Septuagint” in biblical, Catholic, Orthodox, Jewish, or text-critical discussion
 
 The governing profile is `guidance/history/historical-accounts.md`. No doctrinal, liturgical, or canonical-law profile governs the publication. Catholic canon reception is acknowledged as reception history but is not adjudicated.
@@ -88,15 +88,15 @@ An ancient author's agreement with an earlier narrative is not counted as indepe
 - The narrative paraphrases the NETS Sirach prologue; NETS is copyright © 2007 International Organization for Septuagint and Cognate Studies, Inc., published by Oxford University Press.
 - Herbert T. Andrews's 1913 translation of Aristeas and C. D. Yonge's nineteenth-century Philo translation are treated as public-domain English witnesses and are cited, but no extended passage is reproduced.
 - Online patristic and rabbinic translations are used to check loci and are paraphrased. Their site- or edition-specific wording is not republished.
-- Modern Oxford Handbook chapters, Timothy Lee's article, publisher abstracts, catalog descriptions, and IOSCS project descriptions are summarized, not reproduced.
+- Modern Oxford Handbook chapters, full studies by Timothy Lee, Anneli Aejmelaeus, and Emanuel Tov, NETS introductions, catalog descriptions, and IOSCS project descriptions are summarized, not reproduced.
 - The publication contains only original prose, conventional titles and sigla, short source labels, bibliographic facts, and source-grounded paraphrase.
 - The detached-publication rights notice in the common preamble remains controlling.
 
 ## Review state
 
-- Internal identity, chronology, source-class, link, citation, and rights audit: completed through 2026-07-15; bibliographic metadata for selected Oxford chapters rechecked 2026-07-16.
+- Internal identity, chronology, source-class, link, citation, and rights audit: completed through 2026-07-17; full-text book-level and revisional controls added 2026-07-17.
 - Claim-to-source alignment: recorded in `evidence-map.md`.
 - Source access and exact loci: recorded in `source-audit.md`.
 - Independent Septuagint specialist, papyrological, Jewish-history, patristic, and text-critical review: outstanding.
 - Ecclesiastical review or approval: not sought; the publication makes no claim to it.
-- Production review completed 2026-07-16: the settled two-pass build produced a 23-page, US-letter PDF whose final log contains no fatal error, undefined reference, overfull or underfull box, LaTeX/package warning, or rerun request. Title, subject, generation metadata, embedded and Unicode-mapped fonts, extracted text, and `qpdf` structure passed their checks. All 23 physical pages were visually inspected after the final content and page-break corrections. The post-record rebuild was raster-compared page by page with the reviewed candidate, and the installed PDF is byte-identical to the current build.
+- Production review completed 2026-07-17 for the revised source: settled two-pass build, clean log and structure checks, embedded and Unicode-mapped fonts, all twenty-three pages visually inspected, and installed/build identity verified. Exact details and the installed checksum are recorded in `source-audit.md`.

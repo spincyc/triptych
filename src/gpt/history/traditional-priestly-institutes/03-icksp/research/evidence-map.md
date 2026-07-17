@@ -1,7 +1,7 @@
 # Evidence map: The Institute of Christ the King Sovereign Priest
 
 **Publication:** TPI-03
-**Terminal date:** 2026-07-16
+**Terminal date:** 2026-07-17
 
 | Claim or module | Evidence class | Principal source alignment | Confidence and required qualification |
 | --- | --- | --- | --- |
@@ -35,8 +35,8 @@
 | N. 181/2008 consolidated an existing body rather than founding activity from nothing | Controlling act’s historical recital | N. 181/2008, pp. 1–3 | High; pre-2008 legal details remain incomplete |
 | PCED ordered an ordinary apostolic visitation in 2014 led by Bacqué with Somme | Participant contemporary notice | ICKSP “Visite canonique” notice | High for announcement and named visitors; original mandate and report not located |
 | The 2014 visitation has no checked public verdict | Consequential negative finding | No public mandate/report/disposition in checked set | Moderate to high and cutoff-bound; neither condemnation nor exoneration inferred |
-| The Holy See definitively approved the constitutions on 29 Jan 2016 | Participant institutional notice | ICKSP definitive-constitutions page | High for institutional report; full act and text unavailable |
-| The public record does not establish that 2016 approval was the visitation’s exonerating result | Negative finding and source separation | 2014 and 2016 institutional notices | High as a methodological boundary; causal sequence not invented |
+| The Holy See definitively approved the constitutions in late January 2016; former visitor Bacqué directly confirmed the approval on 2 Feb and identified CDF incorporating PCED as the competent office | Participant institutional notice; signed contemporary visitor witness | ICKSP definitive-constitutions page; Bacqué sermon | High for approval and office; 29 Jan date comes from the notice, while the full act and text remain unavailable |
+| The public record does not establish that 2016 approval was the visitation’s exonerating result | Negative finding and source separation | 2014 notice, 2016 approval notice, and Bacqué sermon | High as a methodological boundary; Bacqué confirms approval but states no visitation verdict or causal chain |
 | A 2020 chapter elected Wach for six years | Participant administrative notice | ICKSP Great Britain election page | High for public administrative report; full chapter acts not checked |
 | The 2026 calendar lists Wach as prior general and Mora as seminary superior | Current institutional directory | *Calendrier 2026*, printed p. 28 | High as dated self-report |
 | The 2026 calendar reports more than 130 priests, about 100 seminarians, about 20 oblates, and more than 70 Sisters | Current institutional self-report | *Calendrier 2026*, printed pp. 58–59 | High as rounded self-report; four categories remain distinct and are not independently audited |
@@ -47,8 +47,10 @@
 | The 2021 *Responsa* and 2023 rescript further specified the general regime | Official curial and papal records | Divine Worship *Responsa*; rescript of 20 Feb 2023 | High for general law; neither names ICKSP |
 | No published universal ICKSP-specific post-2021 faculty or exemption was located | Consequential negative result | Checked official Vatican and ICKSP records through cutoff | Moderate to high and cutoff-bound; no claim about a private or unpublished act |
 | The FSSP’s 2022 decree cannot be transferred to the ICKSP by analogy | Separate special act; rejected inference | FSSP decree treated in TPI-02; no ICKSP-named equivalent | High; shared former-PCED history does not merge proper law |
+| The Archdiocese deeded the Chicago shrine building and land to ICKSP on 28 Feb 2016 for stabilization and restoration | Official diocesan record | Archdiocese of Chicago property release | High for the announced transfer and purpose; underlying deed and later agreements not public |
+| Chicago's general policy effective 25 Jan 2022 required archiepiscopal permission for private or public 1962-Missal celebrations and specified written affirmations | Official local policy | Chicago Catholic publication of the archdiocesan policy | High for general local requirements; the policy does not name the shrine or explain the later suspension |
 | Public Masses at the Chicago shrine have been suspended since 1 Aug 2022 | Current participant notice | ICKSP Chicago page | High for the exact statement; no cause, expulsion, or complete scope added |
-| Contemporary Chicago explanations were disputed and the complete act/file is unavailable | Journalism; negative finding | Catholic News Agency report; no public decree/correspondence located | Moderate; no adjudicated breach inferred |
+| Contemporary Chicago explanations were disputed and the individual act/file is unavailable | Official general context; journalism; negative finding | 2016 property release; 2022 general policy; Catholic News Agency report; no individual decree/correspondence located | Moderate; property ownership and general policy do not establish the suspension's definitive motive or an adjudicated breach |
 | Later local records show ICKSP reception at Warren, Oswego, and Tampa | Official diocesan acts and notices | Worcester 14 Sep 2023 decree listing with *Catholic Free Press* entrustment report; Syracuse 2025/2026 notices; St. Petersburg 2025 appointment/current directory | High for those places and dates; does not create universal exemption |
 | Francis received Wach and entourage on 24 Jun 2024 | Official audience record | Holy See Press Office bulletin | High; no transcript or legal act printed |
 | Names of companions and private encouragement come from ICKSP | Participant communiqué | ICKSP audience page | High as participant report; not legislation or official transcript |

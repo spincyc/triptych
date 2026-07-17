@@ -43,7 +43,7 @@ The governing thesis is that SSPX history cannot be reduced either to preservati
 - Pastoral advice about attending SSPX liturgy or receiving sacraments.
 - A full doctrinal treatment of religious liberty, ecumenism, collegiality, magisterial assent, or liturgical theology.
 - Independent census or financial audit of the Society.
-- Claims about private negotiations, the unpublished Gagnon report, or motivations not established in public sources.
+- Claims about private negotiations, the unpublished Gagnon report, or motivations not established in public sources. The visitor's appointment and stated information-gathering purpose are public; the report's contents and any claimed verdict are not.
 - Repetition of the distinct FSSP and ICKSP histories; those receive their own volumes and cross-references.
 
 ## Evidence hierarchy and viewpoint rules

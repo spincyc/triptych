@@ -38,7 +38,7 @@ sequence is controlled, the table declines to manufacture an exact age.
 | 393 | Writes *Against Jovinian*; allies including Pammachius object to its treatment of marriage. | *Against Jovinian*; Letter 49 | Dated controversy A; opponent and reception filtered substantially through Jerome's archive. |
 | 393–397 | Conflict with John of Jerusalem and Epiphanius over Origen, communion, Paulinian's ordination, and jurisdiction. | Letter 51; Letter 84; *Against John of Jerusalem* | Documented A dossier, highly partisan; exact stages and reciprocal case require collation. |
 | c. 394–405 | Early Augustine-Jerome exchange over Galatians and biblical translation; letters circulate with delay and unintended publicity. | Augustine/Jerome Letters 28/56, 40/67, 71/75, 73/76, 82/116 | Reciprocal A/N dossier. Dual numbering and letter-specific dates must be retained. The men never meet. |
-| 398–402 | Public rupture with Rufinus over Origen's works, translation practice, orthodoxy, and reputation. | Letter 84; Jerome's *Apology*/*Against Rufinus* 1–3; Rufinus reply pending | Event secure; Jerome's exact claims inspected selectively. Rufinus's full counterarchive is not yet controlled. |
+| 398–402 | Public rupture with Rufinus over Origen's works, translation practice, orthodoxy, and reputation. | Letter 84; Jerome's *Apology*/*Against Rufinus* 1–3; Rufinus, *Apology against Jerome* 2.5–6, 32–44 | Event secure and reciprocal at the inspected loci; both archives are polemical, and the complete sequence remains to be collated. |
 | c. 399–400 | Theophilus of Alexandria turns against Origenist monks; Jerome celebrates the new alignment. | Jerome's anti-Rufinus correspondence and polemic | Broad context secure in partisan A; motives and exact institutional sequence require external collation. |
 | 26 January 404 | Paula dies at Bethlehem. | Letter 108.27–33 and its epitaph | Strong A date; Letter 108 is both biographical source and crafted memorial. |
 | 404 | Jerome composes Letter 108 to Eustochium; Eustochium succeeds Paula in leadership of the women's community. | Letter 108 and later correspondence | Sequence A; institutional details remain mediated chiefly through Jerome. |
@@ -47,14 +47,15 @@ sequence is controlled, the table declines to manufacture an exact age.
 | 410–412 | Refugees reach the East; Marcella dies after violence in the sack; Jerome composes Letter 127. | Letter 127, especially 12–14 | Close A network testimony and memorial; not an urban casualty register. |
 | c. 414 | Letter 130 to Demetrias gives comparatively moderated counsel on fasting, Scripture, and work. | Letter 130.10–15 | Dated A; development does not erase earlier ascetic rhetoric. |
 | c. 415–417 | Writes the *Dialogue against the Pelagians* and draws closer to Augustine in the grace controversy. | dialogue; later correspondence | Editorial chronologies vary within this range; literary interlocutors are not neutral transcripts of Pelagius. |
-| 416 | Augustine, Innocent, and Jerome report an attack and burned monastic buildings at Bethlehem. | Augustine, *On the Proceedings of Pelagius* 66; Innocent Letter 135; Jerome Letter 139 | Converging A/N reports support violence and destruction. Casualty claims, party attribution, local adjudication, command responsibility, and aftermath require the complete dossier. |
-| 417 | Innocent corresponds about the attack; Jerome writes that his house's material wealth was destroyed. | Innocent Letter 135; Jerome Letter 139 | Directly inspected A/N follow-up. The surviving letters are still interested ecclesial reports, not a complete court record. |
+| 416 | Augustine, Innocent, and Jerome report an attack and burned monastic buildings at Bethlehem. | Augustine, *On the Proceedings of Pelagius* 66; Innocent Letters 136–137; Jerome Letters 138–139 | Converging A/N reports support serious violence and destruction. The same dossier leaves casualty, perpetrator, command, adjudication, and aftermath unresolved. |
+| 417 | Innocent and Jerome correspond after the attack. | Innocent Letters 136–137; Jerome Letters 138–139 | Innocent explicitly lacks named charges and distinguishes rumor from a pleaded case; Jerome reports material destruction as a party. |
 | late 418 or early 419 | Eustochium dies; the younger Paula and community continue. | Canellis 2016 chronology; late correspondence | K; exact primary death notice was not secured for this edition. |
 | 419 or 420; received day 30 September | Jerome dies at Bethlehem. | Benedict XVI 2007 gives 419/420; Francis 2020 receives 420; Canellis includes the alternative | Death/place strongly received M; year disputed M/K. The received day is not treated as an independently verified death certificate. |
 | 1546 | Council of Trent receives the old Latin Vulgate as authentic for public ecclesial use. | Francis 2020 summarizing Catholic reception; council text requires final direct collation | M. It is not a ruling that Jerome authored every book or that original-language study is forbidden. |
 | 1979 | John Paul II promulgates the *Nova Vulgata*. | Francis 2020 | M reception. A revised typical Latin edition, not an autograph Jerome Bible. |
 | 7 and 14 November 2007 | Benedict XVI gives two general audiences on Jerome. | official Vatican texts | M reception; useful for what the Church emphasizes, not neutral fourth-century chronology. |
 | 30 September 2020 | Francis issues *Scripturae Sacrae affectus* for the received 1600th anniversary. | official Vatican text | M reception, directly inspected. It also identifies cardinal dress as anachronistic and emphasizes collaboration. |
+| late seventh century | Arculf reports seeing Jerome's tomb at Bethlehem. | Adomnán, *De locis sanctis* 2.5 | E pilgrim reception; not eyewitness burial testimony or proof of later Roman translation. |
 
 ## Chronological questions deliberately left open
 
@@ -72,5 +73,5 @@ sequence is controlled, the table declines to manufacture an exact age.
 8. Exact responsibility, reported casualty details, proceedings, and aftermath
    of the 416 attack.
 9. Eustochium's precise death date and Jerome's death year.
-10. Exact witnesses for any burial, relic, lion, Gerasimus, visual, place, or
-    patronage history before any event or date is added to this chronology.
+10. Primary burial and Roman-translation witnesses, precise lion-transfer
+    mechanism, and item-level visual, place, relic, or patronage history.

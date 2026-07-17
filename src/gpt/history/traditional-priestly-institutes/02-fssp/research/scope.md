@@ -27,7 +27,7 @@ The governing thesis is that the FSSP is neither “the SSPX approved by Rome”
 - The founders’ declaration of 2 July; Act of Foundation of 18 July; PCED declaration of 22 July; liturgical decree of 10 September; and erection decree of 18 October 1988.
 - The differing documentary counts and categories of the founding cohort without silently harmonizing them.
 - Canonical anatomy under canons 731–746: society of apostolic life, pontifical right, common life, formation, incardination, houses, internal government, and local episcopal competence.
-- Wigratzbad and Denton seminaries; representative European, North American, and missionary growth; personal parishes and other apostolic forms.
+- Wigratzbad and Denton seminaries, including later official Augsburg and Lincoln corroboration of diocesan reception and material development; representative European, North American, and missionary growth; personal parishes and other apostolic forms.
 - The public constitutional excerpt, the 1998 papal address, the 1999 *Responsa*, the 2000 governance and liturgical dispute, and definitive constitutional approval in 2003.
 - *Summorum Pontificum*, the 2019 decommissioning of PCED, *Traditionis custodes*, and the FSSP response.
 - The FSSP-published papal decree of 11 February 2022, its exact faculty and conditions, and later reported application difficulties.
@@ -88,8 +88,8 @@ This module is a study aid, not canonical or pastoral advice. Independent canon-
 - The original authenticated German, French, and Latin founding instruments were not independently collated against the FSSP-hosted English renderings.
 - The 2 July declaration does not state the status of eight untitled signatories; they are not labeled seminarians from that document alone.
 - The 10 September English rendering calls the body already of pontifical right, but the earliest located express erection instrument is dated 18 October; no earlier declaration was located and the Latin was not collated.
-- FSSP retrospectives respectively date thirty-one seminarians beginning studies at Wigratzbad to November 1988 and the first seminary's opening to autumn 1989; no original act or register was located to reconcile the wording.
-- Original diocesan instruments receiving Wigratzbad, approving the early Denton seminary, and erecting Saint Clement parish were not located in the checked public set.
+- FSSP retrospectives respectively date thirty-one seminarians beginning studies at Wigratzbad to November 1988 and the first seminary's opening to autumn 1989. A later Augsburg diocesan history confirms operations first used borrowed premises, but no original act or register resolves whether the terms denote distinct stages.
+- Original diocesan instruments receiving Wigratzbad, approving the early Denton seminary, and erecting Saint Clement parish were not located. Later official Augsburg and Lincoln records corroborate episcopal reception and development but do not replace those instruments.
 - The complete constitutions, directories, and intervening extensions between the 1988 experimental approval and 2003 definitive approval are not public in the checked set.
 - No Holy See archival original of the 29 June 2000 intervention, the administrative recourse file, or a final disposition was located. The documentary reproduction and participant-canonist analysis are used with provenance stated.
 - The exact relation between personal, regional, liturgical, and governance disagreements in 2000 cannot be fully reconstructed from public documents.
