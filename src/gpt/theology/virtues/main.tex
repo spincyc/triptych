@@ -1,0 +1,104 @@
+\input{common/preamble}
+\usepackage{pdflscape}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+
+\hypersetup{
+  pdftitle={The Virtues: Habit, Mean, Grace, and Human Flourishing},
+  pdfsubject={An Aristotelian, Augustinian, and Thomistic reference to the theological, cardinal, intellectual, and annexed virtues}
+}
+\setcounter{tocdepth}{3}
+\setlength{\emergencystretch}{3em}
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+\titleformat{\subsubsection}
+  {\normalsize\bfseries}{\thesubsubsection}{0.55em}{}
+
+\newcommand{\virtuedossierbody}[6]{%
+  \begin{studyframe}
+  \textbf{Class and provenance:} #1\par
+  \textbf{Formal object:} #2\par
+  \textbf{Characteristic act:} #3\par
+  \textbf{Defect-side opposition:} #4\par
+  \textbf{Excess-side opposition:} #5\par
+  \textbf{Boundary:} #6
+  \end{studyframe}}
+
+\newcommand{\virtuedossier}[7]{%
+  \sectionguard
+  \subsection{#1}
+  \virtuedossierbody{#2}{#3}{#4}{#5}{#6}{#7}}
+
+\newcommand{\cardinaldossier}[7]{%
+  \sectionguard
+  \subsubsection{#1}
+  \virtuedossierbody{#2}{#3}{#4}{#5}{#6}{#7}}
+
+\newcommand{\cardinalgroup}[1]{%
+  \Needspace{12\baselineskip}%
+  \subsection{#1}}
+
+\newcommand{\virtuegrouplabel}[1]{%
+  \Needspace{5\baselineskip}%
+  \par\medskip\noindent{\normalsize\bfseries #1}\par\smallskip}
+
+\let\standardvirtuedossier\virtuedossier
+
+\newcommand{\oppositioncode}[1]{\textsf{#1}}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.115\textheight}
+{\Huge\bfseries The Virtues\par}
+\vspace{0.5em}
+{\Large\itshape Habit, mean, grace, and human flourishing\par}
+\vspace{0.65em}
+{\large An Aristotelian, Augustinian, and Thomistic reference\par}
+\vfill
+\begin{minipage}{0.90\textwidth}
+\footnotesize
+\textbf{AI generation metadata}\par\smallskip
+\input{theology/virtues/generation-metadata}
+\end{minipage}
+\vfill
+{\small A source-audited study instrument; not an official catechism, a complete moral theology, spiritual direction, or a method for judging another person's character.\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{theology/virtues/sections/00-scope-method}
+\input{theology/virtues/sections/10-philosophical-grammar}
+\input{theology/virtues/sections/20-theological-virtues}
+\input{theology/virtues/sections/25-cardinal-virtues}
+\let\virtuedossier\cardinaldossier
+\input{theology/virtues/sections/30-prudence-family}
+\input{theology/virtues/sections/40-justice-family}
+\input{theology/virtues/sections/50-fortitude-family}
+\input{theology/virtues/sections/60-temperance-family}
+\let\virtuedossier\standardvirtuedossier
+\input{theology/virtues/sections/65-other-moral-virtues}
+\input{theology/virtues/sections/70-intellectual-virtues}
+\input{theology/virtues/sections/80-integration-formation}
+\input{theology/virtues/sections/90-references}
+
+\appendix
+\input{theology/virtues/sections/95-synoptic-table}
+\end{deepstudy}
+
+\end{document}
