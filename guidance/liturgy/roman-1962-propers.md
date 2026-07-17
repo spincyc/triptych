@@ -514,6 +514,7 @@ Before a guide is complete, verify that:
 
 ```sh
 make
+make review-pdfs
 make install
 ```
 

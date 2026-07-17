@@ -105,7 +105,8 @@ Before installing a publishable artifact:
 - keep visual distinctions intelligible in monochrome unless a profile explicitly requires color;
 - compile for the number of passes required to resolve references and contents;
 - inspect the build log for fatal errors, undefined references, overflow, and layout warnings;
-- visually inspect every page for clipping, unreadable density, split headings, artificial whitespace, and sparse spill pages;
+- prepare review rasters and contact sheets with `make review-pdfs` for the complete built library or `scripts/pdf-review <PDF>...` for an affected subset; this resource-bounded step does not itself constitute visual review;
+- visually inspect every rendered page for clipping, unreadable density, split headings, artificial whitespace, and sparse spill pages, using individual page rasters as well as contact sheets where scale matters;
 - confirm that rights, attribution, public-domain, and license-exclusion notices are accurate in the source and rendered publication;
 - confirm that generation metadata and any edition, jurisdiction, or as-of statement describe the installed artifact;
 - install the reviewed PDF under the mirrored `doc/` path and keep all intermediates under `build/`.

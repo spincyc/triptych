@@ -1,0 +1,820 @@
+#!/usr/bin/env python3
+"""Prepare memory-bounded page rasters for Triptych PDF review."""
+
+from __future__ import annotations
+
+import argparse
+from collections.abc import Callable
+import concurrent.futures
+import contextlib
+import dataclasses
+import fcntl
+import hashlib
+import math
+import os
+from pathlib import Path
+import re
+import resource
+import shutil
+import signal
+import stat
+import subprocess
+import sys
+import threading
+import time
+import uuid
+
+
+ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_OUTPUT = ROOT / "build/pdf-review"
+MIB = 1024 * 1024
+GIB = 1024 * MIB
+RESERVE_BYTES = GIB
+CHILD_ADDRESS_SPACE_BYTES = GIB
+WORKER_BYTES = CHILD_ADDRESS_SPACE_BYTES
+FULL_PAGE_MAX_DIMENSION = 1600
+THUMBNAIL_MAX_DIMENSION = 420
+CONTACT_BATCH_SIZE = 20
+CONTACT_COLUMNS = 4
+MAGICK_MEMORY = "256MiB"
+MAGICK_MAP = "512MiB"
+MAGICK_DISK = "2GiB"
+MAGICK_AREA = "64MP"
+DIAGNOSTIC_TAIL_BYTES = 64 * 1024
+
+
+class ReviewError(RuntimeError):
+    """A safe, operator-facing PDF review failure."""
+
+
+class ReviewSignal(BaseException):
+    """A termination signal converted into controlled subprocess cleanup."""
+
+    def __init__(self, signum: int) -> None:
+        super().__init__(signum)
+        self.signum = signum
+
+
+class TerminationController:
+    """Raise once so repeated termination cannot interrupt child cleanup."""
+
+    def __init__(self) -> None:
+        self.signum: int | None = None
+        self.cleanup_armed = False
+        self._cleanup: Callable[[], None] | None = None
+
+    def arm_cleanup(self) -> None:
+        self.cleanup_armed = True
+
+    def register_cleanup(self, callback: Callable[[], None]) -> None:
+        self._cleanup = callback
+
+    def clear_cleanup(self, callback: Callable[[], None]) -> None:
+        if self._cleanup is callback:
+            self._cleanup = None
+
+    def ensure_cleanup(self) -> None:
+        callback = self._cleanup
+        if callback is not None:
+            self.arm_cleanup()
+            callback()
+
+    def __call__(self, signum: int, _frame: object) -> None:
+        if self.signum is not None or self.cleanup_armed:
+            return
+        self.signum = signum
+        raise ReviewSignal(signum)
+
+
+@dataclasses.dataclass(frozen=True)
+class ResourcePlan:
+    host_available: int | None
+    cgroup_available: int | None
+    effective_available: int | None
+    reserve: int
+    per_worker: int
+    cpu_limit: int
+    jobs: int
+    override: int | None
+
+
+@dataclasses.dataclass(frozen=True)
+class PdfTask:
+    source: Path
+    relative_output: Path
+
+
+def read_text(path: Path) -> str | None:
+    try:
+        return path.read_text(encoding="utf-8").strip()
+    except (OSError, UnicodeError):
+        return None
+
+
+def parse_memavailable(path: Path = Path("/proc/meminfo")) -> int | None:
+    text = read_text(path)
+    if text is None:
+        return None
+    match = re.search(r"^MemAvailable:\s+(\d+)\s+kB$", text, re.MULTILINE)
+    if not match:
+        return None
+    return int(match.group(1)) * 1024
+
+
+def cgroup_limit(path: Path) -> tuple[int | None, bool]:
+    value = read_text(path)
+    if value == "max":
+        return None, True
+    if value is None or not value.isdecimal():
+        return None, False
+    return int(value), True
+
+
+def cgroup2_location(
+    cgroup_file: Path = Path("/proc/self/cgroup"),
+    mountinfo_file: Path = Path("/proc/self/mountinfo"),
+) -> tuple[Path, Path] | None:
+    cgroup_text = read_text(cgroup_file)
+    mountinfo_text = read_text(mountinfo_file)
+    if cgroup_text is None or mountinfo_text is None:
+        return None
+    relative: str | None = None
+    for line in cgroup_text.splitlines():
+        fields = line.split(":", 2)
+        if len(fields) == 3 and fields[0] == "0" and fields[1] == "":
+            relative = fields[2]
+            break
+    if relative is None:
+        return None
+    for line in mountinfo_text.splitlines():
+        before, separator, after = line.partition(" - ")
+        if not separator or not after.startswith("cgroup2 "):
+            continue
+        fields = before.split()
+        if len(fields) < 5:
+            continue
+        mount = Path(fields[4])
+        mount_root = Path(fields[3])
+        cgroup_path = Path(relative)
+        try:
+            inside_mount = cgroup_path.relative_to(mount_root)
+        except ValueError:
+            inside_mount = Path(relative.lstrip("/"))
+        return mount, mount / inside_mount
+    return None
+
+
+def unified_cgroup_member(
+    cgroup_file: Path = Path("/proc/self/cgroup"),
+) -> bool:
+    text = read_text(cgroup_file)
+    if text is None:
+        return False
+    for line in text.splitlines():
+        fields = line.split(":", 2)
+        if len(fields) == 3 and fields[0] == "0" and fields[1] == "":
+            return True
+    return False
+
+
+def legacy_cgroup_controllers(
+    cgroup_file: Path = Path("/proc/self/cgroup"),
+) -> set[str]:
+    """Return controllers delegated through cgroup v1 or a hybrid hierarchy."""
+
+    text = read_text(cgroup_file)
+    if text is None:
+        return set()
+    controllers: set[str] = set()
+    for line in text.splitlines():
+        fields = line.split(":", 2)
+        if len(fields) != 3 or fields[0] == "0":
+            continue
+        controllers.update(value for value in fields[1].split(",") if value)
+    return controllers
+
+
+def cgroup_ancestors(mount: Path, leaf: Path) -> list[Path]:
+    try:
+        relative = leaf.resolve().relative_to(mount.resolve())
+    except (OSError, ValueError):
+        return []
+    result = [mount.resolve() / relative]
+    while result[-1] != mount.resolve():
+        result.append(result[-1].parent)
+    return result
+
+
+def cgroup_memory_probe(mount: Path, leaf: Path) -> tuple[int | None, bool]:
+    directories = cgroup_ancestors(mount, leaf)
+    if not directories:
+        return None, False
+    headrooms: list[int] = []
+    observed = False
+    for directory in directories:
+        current_text = read_text(directory / "memory.current")
+        if current_text is None or not current_text.isdecimal():
+            # The cgroup2 root cannot itself be resource-limited and may omit
+            # controller interfaces; a missing non-root ancestor is unsafe.
+            if observed and directory == mount.resolve():
+                break
+            return None, False
+        current = int(current_text)
+        for name in ("memory.max", "memory.high"):
+            limit, resolved = cgroup_limit(directory / name)
+            if not resolved:
+                return None, False
+            if limit is not None:
+                headrooms.append(max(0, limit - current))
+        observed = True
+    return (min(headrooms) if headrooms else None), True
+
+
+def cgroup_memory_headroom(mount: Path, leaf: Path) -> int | None:
+    return cgroup_memory_probe(mount, leaf)[0]
+
+
+def cgroup_cpu_probe(mount: Path, leaf: Path) -> tuple[int | None, bool]:
+    directories = cgroup_ancestors(mount, leaf)
+    if not directories:
+        return None, False
+    quotas: list[int] = []
+    observed = False
+    for directory in directories:
+        value = read_text(directory / "cpu.max")
+        if value is None:
+            # As above, only the cgroup2 mount root may omit this interface.
+            if observed and directory == mount.resolve():
+                break
+            return None, False
+        fields = value.split()
+        if len(fields) != 2:
+            return None, False
+        try:
+            period = int(fields[1])
+        except ValueError:
+            return None, False
+        if period <= 0:
+            return None, False
+        if fields[0] == "max":
+            observed = True
+            continue
+        try:
+            quota = int(fields[0])
+        except ValueError:
+            return None, False
+        if quota <= 0:
+            return None, False
+        quotas.append(max(1, math.ceil(quota / period)))
+        observed = True
+    return (min(quotas) if quotas else None), True
+
+
+def cgroup_cpu_quota(mount: Path, leaf: Path) -> int | None:
+    return cgroup_cpu_probe(mount, leaf)[0]
+
+
+def available_cpus() -> int:
+    try:
+        affinity = len(os.sched_getaffinity(0))
+    except (AttributeError, OSError):
+        affinity = os.cpu_count() or 1
+    location = cgroup2_location()
+    quota, resolved = cgroup_cpu_probe(*location) if location else (None, False)
+    unresolved_unified = location is None and unified_cgroup_member()
+    if quota is None and (
+        (location is not None and not resolved)
+        or unresolved_unified
+        or {"cpu", "cpuacct"} & legacy_cgroup_controllers()
+    ):
+        # Stay conservative when a unified mount cannot be resolved or a v1
+        # controller may impose a quota we cannot safely traverse.
+        quota = 1
+    return max(1, min(affinity, quota) if quota is not None else affinity)
+
+
+def make_plan(
+    host_available: int | None,
+    cgroup_available: int | None,
+    cpu_limit: int,
+    override: int | None = None,
+) -> ResourcePlan:
+    candidates = [value for value in (host_available, cgroup_available) if value is not None]
+    effective = min(candidates) if candidates else None
+    cpu_limit = max(1, cpu_limit)
+    if override is not None and override < 1:
+        raise ReviewError("--jobs must be a positive integer")
+    if effective is None:
+        automatic_jobs = 1
+    else:
+        usable = max(0, effective - RESERVE_BYTES)
+        if usable < WORKER_BYTES:
+            raise ReviewError(
+                "insufficient memory for PDF review: "
+                f"{format_bytes(effective)} available; "
+                f"need {format_bytes(RESERVE_BYTES + WORKER_BYTES)} "
+                "for the reserve and one bounded worker"
+            )
+        automatic_jobs = usable // WORKER_BYTES
+        automatic_jobs = min(automatic_jobs, cpu_limit)
+    jobs = min(automatic_jobs, override) if override is not None else automatic_jobs
+    return ResourcePlan(
+        host_available=host_available,
+        cgroup_available=cgroup_available,
+        effective_available=effective,
+        reserve=RESERVE_BYTES,
+        per_worker=WORKER_BYTES,
+        cpu_limit=cpu_limit,
+        jobs=int(jobs),
+        override=override,
+    )
+
+
+def current_plan(override: int | None = None) -> ResourcePlan:
+    location = cgroup2_location()
+    cgroup_available, resolved = (
+        cgroup_memory_probe(*location) if location else (None, False)
+    )
+    unresolved_unified = location is None and unified_cgroup_member()
+    if cgroup_available is None and (
+        (location is not None and not resolved)
+        or unresolved_unified
+        or "memory" in legacy_cgroup_controllers()
+    ):
+        # A unified hierarchy is unresolved/unreadable or a v1 controller is
+        # present; either way, do not guess at an effective ancestor limit.
+        cgroup_available = 0
+    return make_plan(parse_memavailable(), cgroup_available, available_cpus(), override)
+
+
+def format_bytes(value: int | None) -> str:
+    if value is None:
+        return "unknown"
+    return f"{value / GIB:.2f} GiB"
+
+
+def describe_plan(plan: ResourcePlan) -> str:
+    override = f", requested-cap={plan.override}" if plan.override is not None else ""
+    return (
+        "pdf-review: "
+        f"host-available={format_bytes(plan.host_available)}, "
+        f"cgroup-headroom={format_bytes(plan.cgroup_available)}, "
+        f"effective={format_bytes(plan.effective_available)}, "
+        f"reserve={format_bytes(plan.reserve)}, "
+        f"per-worker={format_bytes(plan.per_worker)}, "
+        f"cpu-cap={plan.cpu_limit}, jobs={plan.jobs}{override}"
+    )
+
+
+def positive_integer(value: str) -> int:
+    try:
+        parsed = int(value, 10)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError("must be a positive integer") from exc
+    if parsed < 1:
+        raise argparse.ArgumentTypeError("must be a positive integer")
+    return parsed
+
+
+def is_relative_to(path: Path, parent: Path) -> bool:
+    try:
+        path.relative_to(parent)
+    except ValueError:
+        return False
+    return True
+
+
+def validate_output_root(value: Path) -> Path:
+    output = (ROOT / value).resolve() if not value.is_absolute() else value.resolve()
+    build_root = (ROOT / "build").resolve()
+    temporary_root = Path("/tmp").resolve()
+    allowed = is_relative_to(output, build_root) or (
+        output != temporary_root and is_relative_to(output, temporary_root)
+    )
+    if not allowed:
+        raise ReviewError(
+            "--output must remain under this checkout's build/ tree or a /tmp subdirectory"
+        )
+    return output
+
+
+def safe_component(value: str) -> str:
+    cleaned = re.sub(r"[^A-Za-z0-9._-]+", "-", value).strip("-.")
+    return cleaned or "pdf"
+
+
+def task_for_pdf(value: str) -> PdfTask:
+    path = Path(value)
+    source = (Path.cwd() / path).resolve() if not path.is_absolute() else path.resolve()
+    if not source.is_file() or source.suffix.lower() != ".pdf":
+        raise ReviewError(f"not a readable PDF: {value}")
+    try:
+        relative = source.relative_to(ROOT)
+        output = relative.with_suffix("")
+    except ValueError:
+        digest = hashlib.sha256(os.fsencode(source)).hexdigest()[:12]
+        output = Path("external") / f"{safe_component(source.stem)}-{digest}"
+    return PdfTask(source=source, relative_output=output)
+
+
+def review_lock_path() -> Path:
+    result = subprocess.run(
+        ["git", "rev-parse", "--git-common-dir"],
+        cwd=ROOT,
+        check=False,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.DEVNULL,
+    )
+    identity = (result.stdout.strip() if result.returncode == 0 else str(ROOT.resolve()))
+    common = Path(identity)
+    if not common.is_absolute():
+        common = ROOT / common
+    digest = hashlib.sha256(os.fsencode(common.resolve())).hexdigest()[:16]
+    return Path("/tmp") / f"triptych-pdf-review-{os.getuid()}-{digest}.lock"
+
+
+@contextlib.contextmanager
+def exclusive_review_lock():
+    path = review_lock_path()
+    flags = os.O_RDWR | os.O_CREAT | getattr(os, "O_CLOEXEC", 0) | getattr(os, "O_NOFOLLOW", 0)
+    try:
+        descriptor = os.open(path, flags, 0o600)
+    except OSError as exc:
+        raise ReviewError(f"cannot open review lock {path}: {exc}") from exc
+    stream = os.fdopen(descriptor, "a+", encoding="utf-8")
+    try:
+        details = os.fstat(stream.fileno())
+        if not stat.S_ISREG(details.st_mode) or details.st_uid != os.getuid():
+            raise ReviewError(f"unsafe review lock: {path}")
+        fcntl.flock(stream.fileno(), fcntl.LOCK_EX)
+        yield
+    finally:
+        with contextlib.suppress(OSError):
+            fcntl.flock(stream.fileno(), fcntl.LOCK_UN)
+        stream.close()
+
+
+class CommandRunner:
+    def __init__(self) -> None:
+        self._lock = threading.Lock()
+        self._processes: set[subprocess.Popen[bytes]] = set()
+        self._cancelled = False
+
+    def run(self, command: list[str], *, environment: dict[str, str] | None = None) -> None:
+        limited_command = [
+            sys.executable,
+            str(Path(__file__).resolve()),
+            "--_limit-child",
+            str(CHILD_ADDRESS_SPACE_BYTES),
+            "--",
+            *command,
+        ]
+        with self._lock:
+            if self._cancelled:
+                raise ReviewError("review cancelled")
+            process = subprocess.Popen(
+                limited_command,
+                cwd=ROOT,
+                env=environment,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.PIPE,
+                start_new_session=True,
+            )
+            self._processes.add(process)
+        stderr_tail = bytearray()
+        try:
+            if process.stderr is None:
+                raise ReviewError("bounded child has no diagnostic stream")
+            while chunk := process.stderr.read(8192):
+                stderr_tail.extend(chunk)
+                if len(stderr_tail) > DIAGNOSTIC_TAIL_BYTES:
+                    del stderr_tail[:-DIAGNOSTIC_TAIL_BYTES]
+            process.wait()
+        except BaseException:
+            if process.poll() is None:
+                with contextlib.suppress(ProcessLookupError):
+                    os.killpg(process.pid, signal.SIGKILL)
+                with contextlib.suppress(subprocess.TimeoutExpired):
+                    process.wait(timeout=3)
+            raise
+        finally:
+            with self._lock:
+                if process.poll() is not None:
+                    self._processes.discard(process)
+        if process.returncode:
+            detail = stderr_tail.decode("utf-8", errors="replace").strip()
+            suffix = f": {detail}" if detail else ""
+            raise ReviewError(f"command failed ({process.returncode}): {command[0]}{suffix}")
+
+    def terminate_all(self) -> None:
+        with self._lock:
+            self._cancelled = True
+            processes = list(self._processes)
+        for process in processes:
+            if process.poll() is None:
+                with contextlib.suppress(ProcessLookupError):
+                    os.killpg(process.pid, signal.SIGTERM)
+        deadline = time.monotonic() + 3
+        while time.monotonic() < deadline and any(
+            process.poll() is None for process in processes
+        ):
+            time.sleep(0.05)
+        for process in processes:
+            if process.poll() is None:
+                with contextlib.suppress(ProcessLookupError):
+                    os.killpg(process.pid, signal.SIGKILL)
+
+
+def executable_from_environment(name: str, default: str) -> str:
+    value = os.environ.get(name, default)
+    resolved = shutil.which(value)
+    if resolved is None:
+        raise ReviewError(f"missing required executable: {value}")
+    return resolved
+
+
+def numeric_pngs(directory: Path) -> list[tuple[int, Path]]:
+    result: list[tuple[int, Path]] = []
+    for path in directory.glob("page-*.png"):
+        match = re.fullmatch(r"page-(\d+)\.png", path.name)
+        if match:
+            result.append((int(match.group(1)), path))
+    return sorted(result)
+
+
+def magick_environment(temporary: Path) -> dict[str, str]:
+    environment = os.environ.copy()
+    environment.update(
+        {
+            "MAGICK_MEMORY_LIMIT": MAGICK_MEMORY,
+            "MAGICK_MAP_LIMIT": MAGICK_MAP,
+            "MAGICK_DISK_LIMIT": MAGICK_DISK,
+            "MAGICK_AREA_LIMIT": MAGICK_AREA,
+            "MAGICK_THREAD_LIMIT": "1",
+            "MAGICK_TEMPORARY_PATH": str(temporary),
+            "OMP_NUM_THREADS": "1",
+        }
+    )
+    return environment
+
+
+def process_pdf(
+    task: PdfTask,
+    output_root: Path,
+    pdftoppm: str,
+    magick: str,
+    runner: CommandRunner,
+    termination: TerminationController,
+) -> Path:
+    temporary: Path | None = None
+    try:
+        destination = output_root / task.relative_output
+        try:
+            destination.resolve().relative_to(output_root.resolve())
+        except ValueError as exc:
+            raise ReviewError(f"unsafe review destination: {destination}") from exc
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        temporary = (
+            destination.parent
+            / f".{destination.name}.tmp-{os.getpid()}-{uuid.uuid4().hex}"
+        )
+        pages = temporary / "pages"
+        thumbnails = temporary / "thumbnails"
+        sheets = temporary / "contact-sheets"
+        magick_tmp = temporary / "magick-tmp"
+        for directory in (pages, thumbnails, sheets, magick_tmp):
+            directory.mkdir(parents=True, exist_ok=True)
+        runner.run(
+            [
+                pdftoppm,
+                "-png",
+                "-scale-to",
+                str(FULL_PAGE_MAX_DIMENSION),
+                str(task.source),
+                str(pages / "page"),
+            ]
+        )
+        runner.run(
+            [
+                pdftoppm,
+                "-png",
+                "-scale-to",
+                str(THUMBNAIL_MAX_DIMENSION),
+                str(task.source),
+                str(thumbnails / "page"),
+            ]
+        )
+        page_files = numeric_pngs(pages)
+        thumbnail_files = numeric_pngs(thumbnails)
+        if not page_files or [number for number, _ in page_files] != [
+            number for number, _ in thumbnail_files
+        ]:
+            raise ReviewError(f"page raster mismatch for {task.source}")
+        environment = magick_environment(magick_tmp)
+        for offset in range(0, len(thumbnail_files), CONTACT_BATCH_SIZE):
+            batch = thumbnail_files[offset : offset + CONTACT_BATCH_SIZE]
+            sheet = sheets / f"sheet-{offset // CONTACT_BATCH_SIZE + 1:03d}.png"
+            command = [
+                magick,
+                "montage",
+                "-limit",
+                "memory",
+                MAGICK_MEMORY,
+                "-limit",
+                "map",
+                MAGICK_MAP,
+                "-limit",
+                "disk",
+                MAGICK_DISK,
+                "-limit",
+                "area",
+                MAGICK_AREA,
+                "-limit",
+                "thread",
+                "1",
+                "-background",
+                "white",
+                "-fill",
+                "black",
+            ]
+            for page_number, thumbnail in batch:
+                command.extend(["-label", f"Page {page_number}", str(thumbnail)])
+            command.extend(
+                [
+                    "-tile",
+                    f"{CONTACT_COLUMNS}x",
+                    "-geometry",
+                    "+8+8",
+                    str(sheet),
+                ]
+            )
+            runner.run(command, environment=environment)
+        shutil.rmtree(magick_tmp)
+        if destination.exists():
+            shutil.rmtree(destination)
+        os.replace(temporary, destination)
+        return destination
+    except BaseException:
+        termination.arm_cleanup()
+        if temporary is not None:
+            shutil.rmtree(temporary, ignore_errors=True)
+        raise
+
+
+def prepare_tasks(values: list[str]) -> list[PdfTask]:
+    tasks: list[PdfTask] = []
+    outputs: set[Path] = set()
+    for value in values:
+        task = task_for_pdf(value)
+        if task.relative_output in outputs:
+            raise ReviewError(f"duplicate review output for {value}")
+        outputs.add(task.relative_output)
+        tasks.append(task)
+    return tasks
+
+
+def run_review(
+    tasks: list[PdfTask],
+    output: Path,
+    plan: ResourcePlan,
+    termination: TerminationController,
+) -> list[Path]:
+    pdftoppm = executable_from_environment("TRIPTYCH_PDF_REVIEW_PDFTOPPM", "pdftoppm")
+    magick = executable_from_environment("TRIPTYCH_PDF_REVIEW_MAGICK", "magick")
+    output.mkdir(parents=True, exist_ok=True)
+    runner = CommandRunner()
+    results: dict[Path, Path] = {}
+    executor: concurrent.futures.ThreadPoolExecutor | None = None
+    futures: dict[concurrent.futures.Future[Path], PdfTask] = {}
+
+    def abort_review() -> None:
+        termination.arm_cleanup()
+        for future in futures:
+            future.cancel()
+        runner.terminate_all()
+        if executor is not None:
+            executor.shutdown(wait=True, cancel_futures=True)
+        termination.clear_cleanup(abort_review)
+
+    termination.register_cleanup(abort_review)
+    try:
+        executor = concurrent.futures.ThreadPoolExecutor(max_workers=min(plan.jobs, len(tasks)))
+        for task in tasks:
+            future = executor.submit(
+                process_pdf,
+                task,
+                output,
+                pdftoppm,
+                magick,
+                runner,
+                termination,
+            )
+            futures[future] = task
+        for future in concurrent.futures.as_completed(futures):
+            task = futures[future]
+            results[task.source] = future.result()
+    except BaseException:
+        abort_review()
+        raise
+    else:
+        if executor is not None:
+            executor.shutdown(wait=True)
+        termination.clear_cleanup(abort_review)
+    return [results[task.source] for task in tasks]
+
+
+def parse_arguments(argv: list[str]) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Prepare bounded page rasters and contact sheets for visual PDF review.",
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+    )
+    parser.add_argument(
+        "--output",
+        type=Path,
+        default=DEFAULT_OUTPUT,
+        help="inspection artifact root",
+    )
+    parser.add_argument(
+        "--jobs",
+        type=positive_integer,
+        help="cap the automatic memory- and CPU-bounded worker count",
+    )
+    parser.add_argument(
+        "--explain",
+        action="store_true",
+        help="print the current resource plan without rendering PDFs",
+    )
+    parser.add_argument("pdf", nargs="*", help="PDFs to rasterize")
+    arguments = parser.parse_args(argv)
+    if not arguments.explain and not arguments.pdf:
+        parser.error("at least one PDF is required")
+    return arguments
+
+
+def limited_child(argv: list[str]) -> int:
+    if len(argv) < 3 or argv[1] != "--":
+        print("pdf-review: invalid internal child invocation", file=sys.stderr)
+        return 2
+    try:
+        requested_limit = int(argv[0], 10)
+        if requested_limit < 1:
+            raise ValueError
+        inherited_soft, inherited_hard = resource.getrlimit(resource.RLIMIT_AS)
+        finite_limits = [requested_limit]
+        finite_limits.extend(
+            limit
+            for limit in (inherited_soft, inherited_hard)
+            if limit != resource.RLIM_INFINITY
+        )
+        address_limit = min(finite_limits)
+        resource.setrlimit(resource.RLIMIT_AS, (address_limit, address_limit))
+        os.execvpe(argv[2], argv[2:], os.environ)
+    except (OSError, ValueError) as exc:
+        print(f"pdf-review: cannot start bounded child: {exc}", file=sys.stderr)
+        return 126
+    return 0
+
+
+def main(argv: list[str] | None = None) -> int:
+    previous_handlers: dict[signal.Signals, object] = {}
+    termination = TerminationController()
+    for handled_signal in (signal.SIGHUP, signal.SIGINT, signal.SIGTERM):
+        previous_handlers[handled_signal] = signal.signal(handled_signal, termination)
+    try:
+        arguments = parse_arguments(sys.argv[1:] if argv is None else argv)
+        if arguments.explain:
+            print(describe_plan(current_plan(arguments.jobs)))
+            return 0
+        tasks = prepare_tasks(arguments.pdf)
+        output = validate_output_root(arguments.output)
+        with exclusive_review_lock():
+            plan = current_plan(arguments.jobs)
+            plan = dataclasses.replace(plan, jobs=min(plan.jobs, len(tasks)))
+            print(describe_plan(plan), file=sys.stderr)
+            results = run_review(tasks, output, plan, termination)
+        for task, destination in zip(tasks, results, strict=True):
+            print(f"{task.source} -> {destination}")
+        return 0
+    except ReviewSignal as exc:
+        name = signal.Signals(exc.signum).name
+        print(f"pdf-review: terminated by {name}", file=sys.stderr)
+        return 128 + exc.signum
+    except KeyboardInterrupt:
+        print("pdf-review: interrupted", file=sys.stderr)
+        return 130
+    except (ReviewError, OSError) as exc:
+        print(f"pdf-review: {exc}", file=sys.stderr)
+        return 1
+    finally:
+        try:
+            termination.ensure_cleanup()
+        finally:
+            for handled_signal, previous_handler in previous_handlers.items():
+                signal.signal(handled_signal, previous_handler)
+
+
+if __name__ == "__main__":
+    if sys.argv[1:2] == ["--_limit-child"]:
+        raise SystemExit(limited_child(sys.argv[2:]))
+    raise SystemExit(main())
