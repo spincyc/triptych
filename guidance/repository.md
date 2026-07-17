@@ -70,6 +70,8 @@ Historical heresy references use publishable leaves beneath `theology/heresies/`
 
 Edition-specific manuals for resolving the 1962 calendar and assembling admitted formularies use publishable leaves beneath `liturgy/roman-rite/1962/reference/`. They follow the 1962 assembly profile rather than inheriting the weekly proper-guide or Ordinary-exposition architecture.
 
+Edition-specific histories and complete normative inventories of Roman calendars use publishable leaves beneath `liturgy/roman-rite/1962/reference/` or `liturgy/roman-rite/postconciliar/<edition-locale>/reference/`, as applicable. They follow `guidance/liturgy/roman-calendar-references.md` together with the identified edition's profile; they are recurring references rather than civil-year Ordos or proper-text guides.
+
 Novenas use numbered publishable leaves beneath `devotions/novenas/` and follow `guidance/devotions/novenas.md`. The `devotions/novenas/shared/` directory is non-publishable and owns only genuinely common prayer text or formatting; every novena consumer must be rebuilt after it changes.
 
 A mechanically derived novena prayer book uses the sibling leaf `<numbered-document>-daily-prayer/`. It imports prayer fragments from the canonical full-guide leaf, declares inherited provenance, and requires explicit cross-document build dependencies; it must not become a second textual owner.

@@ -1,0 +1,43 @@
+# Research scope
+
+## Work identity
+
+- Provider: `gpt`
+- Collection: liturgy / Roman Rite / 1962 / reference
+- Genre: source-first historical account and edition-specific calendar reference
+- Rite and edition: Roman Rite; `Missale Romanum`, 1962 typical edition, operating under the 1960 `Codex rubricarum`
+- Baseline date: 23 June 1962 typical edition; rubrical code effective 1 January 1961
+- Languages: English exposition; Latin documentary calendar titles; official English titles only where the Holy See's English `Cum sanctissima` text is identified
+- Territory: universal Roman calendar, followed by a separate United States nationwide layer
+- Later overlay: `Cum sanctissima`, issued 22 February 2020 and effective 19 March 2020
+
+## Questions answered
+
+1. How did the calendar embodied in the 1962 Missal acquire its broad Temporale–Sanctorale and particular-calendar structure?
+2. Which reforms made substantive structural changes from the post-Tridentine standardization through 1962, and where is the postconciliar boundary?
+3. What are all recurring movable observances in the 1962 Temporale?
+4. What are all dated feasts and commemorations printed in the universal 1962 calendar, with their actual class?
+5. Which entries can an edition-specific witness prove were celebrated in every United States diocese?
+6. What exactly did `Cum sanctissima` permit, and which seventy class-III feasts did it protect?
+
+## Included
+
+- Complete generating rules for Sundays, seasons, privileged ferias, vigils, octaves, Ember Days, and Rogation days.
+- Every nonblank fixed entry in printed calendar pages XLV–LIII, including subordinate commemorations.
+- The leap-year displacement printed after February.
+- Six United States entries whose 1961 Desclée headings expressly say “in all dioceses of the United States.”
+- Negative jurisdiction findings needed to avoid nationalizing diocesan material.
+- The complete eight-rule structure and seventy-entry annex of `Cum sanctissima`.
+
+## Excluded
+
+- Mass and Office prayer texts.
+- A civil-year Ordo or computed occurrence table for a named year.
+- Diocesan, church, or religious-institute entries that lack nationwide scope.
+- Any claim that the historical books are presently authorized in a particular place.
+- A reconstruction of every local feast ever granted in the United States.
+- Postconciliar memorial ranks projected backward into the 1962 system.
+
+## Completion standard
+
+The publication is complete when all 1962 fixed rows have been collated against the facsimile, the Temporale is generated from the Code rather than guessed from a modern calendar, each U.S. row has an explicit nationwide jurisdiction label, the `Cum sanctissima` annex counts to seventy, source roles and rights boundaries are recorded, and the PDF builds without fatal, undefined-reference, or material layout errors.

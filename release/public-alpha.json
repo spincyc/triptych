@@ -3,10 +3,10 @@
   "release_id": "public-alpha",
   "provider": "gpt",
   "expected_counts": {
-    "publications": 48,
+    "publications": 49,
     "release": 48,
     "review": 0,
-    "hold": 0
+    "hold": 1
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
@@ -319,6 +319,15 @@
         "authorization": "perpetual-public-repository-2026",
         "pdf_sha256": "155c10daea85893c22adc7d543e589e2da968131675737d50ebbcda43efa3112"
       }
+    },
+    {
+      "id": "liturgy/roman-rite/1962/reference/liturgical-calendar",
+      "catalog": "library/traditional-latin-mass.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/comparative/two-missals-one-sacrifice",
