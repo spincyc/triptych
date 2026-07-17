@@ -24,6 +24,7 @@ Select profiles by the document's actual genre and sources, not by superficial s
 - postconciliar Roman Rite proper guides: `guidance/liturgy/postconciliar-propers.md`
 - expositions of the Ordinary or Order of Mass in either form: `guidance/liturgy/ordinary-expositions.md`
 - the sacramental treatise, at-a-glance companion, or their shared fragments: `guidance/theology/sacramental-reference.md`
+- the comprehensive reference on theological, cardinal, intellectual, and annexed virtues: `guidance/theology/virtues.md`
 - the Rosary, Marian-apparition judgment studies, or other repeatable Mariological reference works: `guidance/theology/mariology.md`
 - historical and hagiographic lives in the biographies collection: `guidance/biographies.md`
 - comprehensive historical reference works on heresies, censured propositions, and ecclesial responses: `guidance/theology/heresies.md`
