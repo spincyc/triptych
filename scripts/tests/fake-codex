@@ -68,6 +68,31 @@ def main() -> int:
         ).stdout,
         "role": os.environ.get("TRIPTYCH_CODEX_ROLE"),
         "run_id": os.environ.get("TRIPTYCH_CODEX_RUN_ID"),
+        "git_environment": {
+            name: os.environ[name]
+            for name in (
+                "CDPATH",
+                "EDITOR",
+                "GIT_ATTR_GLOBAL",
+                "GIT_ATTR_NOSYSTEM",
+                "GIT_CONFIG_COUNT",
+                "GIT_CONFIG_GLOBAL",
+                "GIT_CONFIG_KEY_0",
+                "GIT_CONFIG_NOSYSTEM",
+                "GIT_CONFIG_VALUE_0",
+                "GIT_DIR",
+                "GIT_EDITOR",
+                "GIT_EXEC_PATH",
+                "GIT_EXTERNAL_DIFF",
+                "GIT_NO_REPLACE_OBJECTS",
+                "GIT_OPTIONAL_LOCKS",
+                "GIT_TRACE",
+                "GIT_WORK_TREE",
+                "SSH_ASKPASS",
+                "VISUAL",
+            )
+            if name in os.environ
+        },
     }
     append_record(Path(os.environ["FAKE_CODEX_LOG"]), record)
 
@@ -81,11 +106,107 @@ def main() -> int:
         (root / "agent-result.txt").write_text("committed result\n", encoding="utf-8")
         git(root, "add", "agent-result.txt")
         git(root, "commit", "-m", "Test isolated result")
+    elif action == "commit-conflict-with-companion":
+        (root / "agent-result.txt").write_text("committed result\n", encoding="utf-8")
+        (root / "companion-result.txt").write_text(
+            "protected companion result\n",
+            encoding="utf-8",
+        )
+        git(root, "add", "agent-result.txt", "companion-result.txt")
+        git(root, "commit", "-m", "Test conflict with protected companion")
+    elif action == "commit-two-conflicts":
+        for index in (1, 2):
+            path = root / f"conflict-{index}.txt"
+            path.write_text(f"worker conflict {index}\n", encoding="utf-8")
+            git(root, "add", path.name)
+            git(root, "commit", "-m", f"Add worker conflict {index}")
     elif action == "commit-ignored":
         (root / "build").mkdir(exist_ok=True)
         (root / "build/collision.txt").write_text("tracked worker result\n", encoding="utf-8")
         git(root, "add", "--force", "build/collision.txt")
         git(root, "commit", "-m", "Test ignored-path result")
+    elif action == "commit-edit-path":
+        modified = root / os.environ.get(
+            "FAKE_CODEX_MODIFIED_PATH",
+            "rename-source.txt",
+        )
+        lines = modified.read_text(encoding="utf-8").splitlines(keepends=True)
+        lines[0] = os.environ.get("FAKE_CODEX_CONTENT", "worker changed line 1\n")
+        modified.write_text(
+            "".join(lines),
+            encoding="utf-8",
+        )
+        git(root, "add", str(modified.relative_to(root)))
+        git(root, "commit", "-m", "Edit worker path")
+    elif action == "stage-conflict":
+        conflict_path = root / os.environ.get(
+            "FAKE_CODEX_CONFLICT_PATH",
+            "agent-result.txt",
+        )
+        conflict_path.write_text(
+            os.environ.get("FAKE_CODEX_CONTENT", "manually resolved result\n"),
+            encoding="utf-8",
+        )
+        git(root, "add", str(conflict_path.relative_to(root)))
+        extra_staged = os.environ.get("FAKE_CODEX_EXTRA_STAGED")
+        if extra_staged:
+            extra_path = root / extra_staged
+            extra_path.write_text("unexpected staged resolver work\n", encoding="utf-8")
+            git(root, "add", str(extra_path.relative_to(root)))
+    elif action == "correct-overstage":
+        extra_staged = os.environ["FAKE_CODEX_EXTRA_STAGED"]
+        extra_path = root / extra_staged
+        tracked = git(root, "cat-file", "-e", f"HEAD:{extra_staged}", check=False)
+        if tracked.returncode == 0:
+            git(
+                root,
+                "restore",
+                "--source=HEAD",
+                "--staged",
+                "--worktree",
+                "--",
+                extra_staged,
+            )
+        else:
+            git(root, "rm", "--cached", "--ignore-unmatch", "--", extra_staged)
+            extra_path.unlink(missing_ok=True)
+        conflict_path = root / os.environ.get(
+            "FAKE_CODEX_CONFLICT_PATH",
+            "agent-result.txt",
+        )
+        conflict_path.write_text(
+            os.environ.get("FAKE_CODEX_CONTENT", "manually resolved result\n"),
+            encoding="utf-8",
+        )
+        git(root, "add", str(conflict_path.relative_to(root)))
+    elif action == "correct-protected-overstage":
+        protected_path = os.environ["FAKE_CODEX_EXTRA_STAGED"]
+        git(
+            root,
+            "restore",
+            "--source=REBASE_HEAD",
+            "--staged",
+            "--worktree",
+            "--",
+            protected_path,
+        )
+        conflict_path = root / os.environ.get(
+            "FAKE_CODEX_CONFLICT_PATH",
+            "agent-result.txt",
+        )
+        conflict_path.write_text(
+            os.environ.get("FAKE_CODEX_CONTENT", "manually resolved result\n"),
+            encoding="utf-8",
+        )
+        git(root, "add", str(conflict_path.relative_to(root)))
+    elif action == "tamper-rebase-todo":
+        rebase_directory = Path(
+            git(root, "rev-parse", "--git-path", "rebase-merge").stdout.strip()
+        )
+        if not rebase_directory.is_absolute():
+            rebase_directory = root / rebase_directory
+        with (rebase_directory / "git-rebase-todo").open("a", encoding="utf-8") as stream:
+            stream.write("exec false\n")
     elif action == "reset-parent":
         git(root, "reset", "--hard", "HEAD^")
     elif action == "remove-dirty-result":
@@ -117,6 +238,10 @@ def main() -> int:
         )
         if result.returncode != 2:
             return result.returncode
+    elif action == "retarget-git":
+        git_link = Path(os.environ["FAKE_CODEX_GIT_LINK"])
+        git_link.unlink()
+        git_link.symlink_to(Path(os.environ["FAKE_CODEX_GIT_REPLACEMENT"]))
     elif action == "ignored":
         (root / "build").mkdir(exist_ok=True)
         (root / "build/generated.tmp").write_text("transient output\n", encoding="utf-8")
