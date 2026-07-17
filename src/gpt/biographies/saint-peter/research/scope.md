@@ -211,8 +211,8 @@ Church and Israel's Scriptures.
   Nero's reign; exact method and burial process.
 - Interpretation of `tropaion`, the monument's stratigraphy, the excavation and
   custody history of Vatican human remains, and claimed relic pathways.
-- Direct edition-level control of the ancient Roman calendar, the origins of
-  29 June, and the proposed Appian Way commemoration.
+- Origins and intervening transmission of the now-controlled ancient 29 June
+  entry, and whether its Catacombs notice implies bodily translation.
 
 These questions are disclosed rather than silently decided. The publication
 does not claim independent archaeological, linguistic, theological, or
@@ -229,12 +229,14 @@ ancient work does not make every modern translation public domain.
 
 ## Production verification
 
-The repository production pass completed on 16 July 2026. The source settled
-after two `pdflatex` passes as a 22-page PDF; the final log contains no fatal,
+The repository production pass completed on 17 July 2026 after the source-gap
+revision. The source settled after two `pdflatex` passes as a 23-page PDF; the
+final log contains no fatal,
 undefined-reference, overflow, underfull, or other layout warning. PDF title,
 subject, extracted text, structure, and fonts were checked; all fonts are
 embedded and subset. Every page was visually inspected at ordinary print size,
-and the installed PDF was verified byte-identical to the reviewed build.
+and the installed PDF was verified byte-identical to the reviewed build,
+SHA-256 `fa6c8beccde55b480597f360a77d1ce29dceb499a2e1e5194ac7e5a6d66556c9`.
 
 This is internal source and production verification, not independent historical,
 theological, archaeological, linguistic, rights, or ecclesiastical review. The

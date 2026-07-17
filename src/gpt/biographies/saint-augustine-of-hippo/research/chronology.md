@@ -39,7 +39,7 @@ reconstruction. Feast dates are not silently used as death dates.
 | Across many episcopal years; exact span unresolved | Composition of *De Trinitate* | *Retractationes* 2.15 | Relative A chronology; detailed book and letter dates were not collated. |
 | By Letter 93, conventionally 407/408 | Augustine defends corrective legal pressure against Donatists | Letter 93.5.17–19 | A; the letter's exact modern date and the surrounding imperial legal dossier require collation. |
 | 407/408 | Letter 93 defends coercion to Vincentius | Letter 93 | Conventional date; exact year should be checked in critical edition. |
-| 411 | Conference of Carthage | Possidius, *Life* 13 | Event secure in Catholic near-contemporary memory; month, proceedings, attendance, and judgment require direct collation of the *Gesta*. |
+| June 411 | Conference of Carthage | Possidius, *Life* 13; *Gesta collationis Carthaginiensis*, BnF lat. 1546, fols. 1v–143v; CSEL 104 | The unique surviving manuscript names Augustine among seven Catholic representatives and preserves the three-session dossier incompletely. The record is an imperially framed adversarial proceeding, not neutral minutes or an equal archive of later reception. |
 | 410 | Sack of Rome; refugees reach Africa | External Roman chronology; sermons and letters | Secure external context. |
 | After 410; exact external phases unresolved | Augustine's anti-Pelagian corpus develops | *Confessions* 10.29.40 and the anti-Pelagian works listed in the source audit | A for Augustine's side; opponent fragments, council records, and imperial decisions were not collated. |
 | After the sack of Rome and before Augustine's late self-review | Composition of *City of God* | *Retractationes* 2.43 | Relative A chronology; the conventional 413–426/427 span lacks a checked K locus here. |
@@ -49,7 +49,7 @@ reconstruction. Feast dates are not silently used as death dates.
 | Late episcopate; exact start year not controlled here | *Retractationes* begun | Work prologue; *Retractationes* 2.6, 2.15, and 2.43 | A; its relation to Augustine's reviewed corpus is secure, but this audit supplies no independent exact-year locus. |
 | 429 | Vandals cross into Africa | External chronicles; Possidius, *Life* 28 | Secure year. |
 | 430, third month of siege | Augustine falls ill at Hippo | Possidius, *Life* 29–31 | Near-contemporary N; siege-start conversion remains a chronological question. |
-| 430; received day 28 August | Death | Possidius, *Life* 31, for death; exact-day chronicle locus pending | Death secure; exact day retained only as received E and not attributed to Prosper as directly verified. |
+| 28 August 430 | Death | Possidius, *Life* 31; Prosper of Aquitaine, *Chronicle*, MGH AA 9, p. 473 | Possidius controls the illness, death, and burial setting; Prosper's near-contemporary entry supplies *V kalendas Septembris* and says Augustine died answering Julian during the Vandal assault. |
 | 430 | Burial in the setting of besieged Hippo | Possidius, *Life* 31 | Earliest and strongest burial witness; no later custody chain inferred. |
 
 ## Chronological questions deliberately left open
@@ -61,6 +61,6 @@ reconstruction. Feast dates are not silently used as death dates.
    395 and 396.
 5. Fine dating of particular sermons, letters, and books of long works.
 6. Start-day conversion for Possidius's “third month” of the siege.
-7. Direct text and edition for the received 28 August death date.
-8. Date, witnesses, route, and current custody claims for the proposed relic
-   translations through Sardinia to Pavia.
+7. The source and date behind the first Hippo-to-Sardinia translation.
+8. The evidentiary interval between Paul the Deacon's late-eighth-century
+   report of Liutprand's transfer to Pavia and any current custody claim.

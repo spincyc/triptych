@@ -65,7 +65,8 @@ is limited to identification, study, criticism, and exposition.
 | PA-M05 **M** | Benedict XVI, audience, 3 Sept. 2008, [text](https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080903.html) | Distinguishes Paul's own revelation language from Acts' three narratives; official theological reception of conversion/call. | Not independent proof of every Acts detail. Official translation rights retained. |
 | PA-M06 **M report of scientific work** | Benedict XVI, homily, 28 June 2009, [text](https://www.vatican.va/content/benedict-xvi/en/homilies/2009/documents/hf_ben-xvi_hom_20090628_chiusura-anno-paolino.html) | Reports small probe, textile/incense traces, minute bone fragments, blinded-provenance carbon-14 test, and first-to-second-century result. | Papal public report, not lab publication. No laboratory name/report, calibration data, sample chain, individual profile, DNA comparator, or independent replication located. Consistency only. |
 | PA-M07 **M / material reception** | Papal Basilica of Saint Paul Outside the Walls, “The Tomb of the Apostle,” [official page](https://www.vatican.va/various/basiliche/san_paolo/en/basilica/tomba.htm) | Official sarcophagus/tomb identification, altar location, basilica reception. | Traditional Lucina, exact dates, and burial story on the page are not independent contemporary proof; old institutional web presentation, mutable status checked only through access date. |
-| PA-M08 **M current liturgy** | USCCB, *2026 Liturgical Calendar*, 29 June entry, [PDF](https://www.usccb.org/resources/2026cal.pdf) | Current U.S. Roman Catholic solemnity of Saints Peter and Paul. | Does not establish ancient origin, death day, Appian translation, or same-year execution. Ancient calendar evidence not collated. |
+| PA-M08 **M current liturgy** | USCCB, *2026 Liturgical Calendar*, 29 June entry, [PDF](https://www.usccb.org/resources/2026cal.pdf) | Current U.S. Roman Catholic solemnity of Saints Peter and Paul. | Does not by itself establish ancient origin, death day, Appian translation, or same-year execution; the ancient calendar is controlled separately in PA-E09. |
+| PA-E09 **E cult calendar** | *Depositio martyrum*, transmitted with the Chronography of 354; Roman martyr calendar | 29 June entry, MGH *Chronica minora* 1, pp. 71–72, [Latin text](https://www.tertullian.org/fathers/chronography_of_354_12_depositions_martyrs.htm) | Fourth-century calendar pairing: Peter in the Catacombs and Paul on the Ostian Way, with consuls Tuscus and Bassus (258). | Direct evidence for cult date and locations, not same-day execution, original feast cause, or bodily translation. Public-domain Mommsen text. |
 
 ## Publisher-only modern leads — not claim support
 
@@ -112,7 +113,7 @@ Their presence here records leads, not full consultation.
 | Beheading is early received and plausible | Tertullian, *Prescription* 36 and *Scorpiace* 15 | Origen/Eusebius checked locus supplies Rome/Nero, not beheading wording; no sentence or site. |
 | An Ostian memorial appears in Gaius's received report | Gaius in Eusebius *HE* 2.25.5–7 | Precise witness date not independently audited; memorial term does not prove intact grave or bones. |
 | Sarcophagus contents are date-consistent, not identified | Benedict homily 28 June 2009 | Public papal summary only; no full scientific audit. |
-| 29 June is a current U.S. solemnity | USCCB 2026 calendar | Current universal calendar, ancient origin, and same-day death expressly unverified. |
+| 29 June joins Peter and Paul in ancient Roman and current U.S. calendars | *Depositio martyrum*; USCCB 2026 calendar | Ancient cult pairing and current U.S. observance controlled; same-day death and bodily translation expressly unproved. |
 
 ## Consequential negative results and unresolved leads
 
@@ -125,7 +126,8 @@ Their presence here records leads, not full consultation.
   survives.
 - The Muratorian Fragment was not collated and does not support the publication.
 - The Paul–Seneca letters and modern critical edition were not collated.
-- The ancient 29 June calendar and Appian Way evidence were not collated.
+- The *Depositio martyrum* is collated; its cause, intervening calendar
+  transmission, and any Appian bodily-transfer history remain unresolved.
 - The 25 January and 18 November observances, Pauline Year program, pallium and
   ecumenical practices, patronage catalogues, and art-historical conventions
   were not collated as publication claims.

@@ -1,6 +1,6 @@
 # Saint Augustine of Hippo — source audit
 
-Access date for online sources below: **2026-07-15**. Codes follow
+Access dates for online sources below: **2026-07-15 through 2026-07-17**. Codes follow
 guidance/biographies.md. “Used” means the publication relies on the source;
 publisher records and uncollated source leads are identified separately and do
 not carry published claims.
@@ -25,8 +25,8 @@ not carry published claims.
 | Fortunatus debate and anti-Manichaean ministry | N/A | Possidius plus surviving debate record | *Life* 6; *Acta contra Fortunatum* | Converging evidence; polemical context acknowledged. |
 | Episcopal arbitration consumed long hours | N | Possidius, saint's life | *Life* 19 | Strong institutional witness, not a quantified time study. |
 | Household discipline, table, clothing, hospitality | N | Possidius | *Life* 22–27 | Hagiographic portrait with concrete institutional detail. Sermons 355–356 remain a separate collation lead. |
-| Augustine defended corrective coercion against Donatists | A/N | Augustine's letters and Possidius's received account | Letters 93.5.17–19 and 185.6.21–7.30; Possidius, *Life* 9–14 | Medicinal intent and anti-execution interventions qualify but do not erase compulsion. The *Gesta* and imperial laws are not used without direct collation. |
-| A Catholic–Donatist conference occurred at Carthage in 411 and was treated as decisive by Augustine's circle | N | Possidius, episcopal saint's life | *Life* 13 | Establishes the event's place in Catholic memory; attendance totals, procedure, exact judgment, and the Donatist case require direct use of the uncollated *Gesta*. |
+| Augustine defended corrective coercion against Donatists within an active imperial penal regime | A/N | Augustine's letters; Possidius's received account; imperial constitution of 405 | Letters 93.5.17–19 and 185.6.21–7.30; Possidius, *Life* 9–14; *Codex Theodosianus* 16.5.38 (12 February 405) | The law explicitly couples Donatists and Manichaeans under Catholic-unity enforcement. Augustine's medicinal aim and anti-execution interventions qualify but do not erase state compulsion. The wider legal sequence remains only partly collated. |
+| Augustine served among the seven Catholic representatives at the June 411 Conference of Carthage | N/A | Official adversarial proceedings, surviving uniquely in a ninth-century Lorsch manuscript; Augustine's later summary; Possidius | *Gesta collationis Carthaginiensis*, BnF lat. 1546, fol. 1v and three-session dossier, DOI 10.11588/diglit.13514; CSEL 104; Possidius, *Life* 13 | The manuscript's opening list directly names Augustine and seven Donatist representatives. Its incomplete record preserves both parties' interventions but remains an imperially convened trial dossier; no neutral-dialogue or comprehensive Donatist-afterlife claim follows. |
 | Augustine's grace controversy named Pelagius, Caelestius, and Julian and developed across several treatises | A | Augustine's controversial corpus | *De peccatorum meritis*, *De spiritu et littera*, *De natura et gratia*, *Contra Iulianum* | Establishes Augustine's side and named interlocutors. Opponent fragments, councils, Roman decisions, and the external chronology were not collated and are not reconstructed here. |
 | Augustine asks God to grant what God commands | A | Augustine | *Confessions* 10.29.40 | Paraphrased from the checked Latin locus. No claim about Pelagius's reaction is retained. |
 | Augustine affirmed marriage while linking concupiscence and inherited sin | A | Augustine, anti-Pelagian treatises | *De nuptiis et concupiscentia* 1–2; *Contra Iulianum* | Development and polemical setting stated; not equated with all later Western doctrine. |
@@ -36,9 +36,9 @@ not carry published claims.
 | *Confessions* is reviewed as praise and self-account | A | Augustine's later self-review | *Retractationes* 2.6 | Authorial retrospective controls corpus but does not remove modern genre questions. |
 | Final illness, penitential psalms, burial, library | N | Possidius, near-contemporary saint's life | *Life* 28–31; [text](https://www.tertullian.org/fathers/possidius_life_of_augustine_02_text.htm) | Chief near-contemporary witness; edifying death scene remains genre-shaped. |
 | Possidius reports healings associated with Augustine | N | Possidius | *Life* 29 | Reported as testimony; no independent supernatural or medical adjudication. |
-| Augustine's death and burial occurred during the siege; 28 August is the received day | N/E | Possidius for death and burial; uncollated received date tradition | *Life* 31; exact-day chronicle locus pending | Possidius does not state the civil day. The publication does not attribute 28 August to Prosper as a verified quotation. |
-| Burial in the Hippo siege setting is the end of the verified relic chronology | N | Possidius | *Life* 31 | The proposed Sardinia–Pavia route, current custody, and scientific claims remain research leads and are not asserted. |
-| Augustine formed communities; later Rule and institutional descent remain uncollated | N/L | Possidius for the historical communities; later dossier pending | *Life* 3–5 and 11 | Supports common life, not one reconstructed autograph or a later order's juridical genealogy. |
+| Augustine died on 28 August 430 during the siege and was buried at Hippo | N/E | Possidius, near-contemporary life; Prosper of Aquitaine, near-contemporary chronicle | Possidius, *Life* 31; Prosper, *Chronicle*, MGH AA 9, p. 473: *moritur V kalendas Septembris* | Possidius supplies illness, death, and burial but no civil day; Prosper supplies the day and the Julian/Vandal setting. A chronicle notice remains compressed, but the exact date is no longer an uncollated lead. |
+| By the late eighth century a Sardinia-to-Pavia translation under Liutprand was received | E | Paul the Deacon, *History of the Lombards*, late-eighth-century history narrating a c. 722 royal act | 6.48, ed. Waitz, MGH *Scriptores rerum Langobardicarum*, p. 234 | Paul reports that remains earlier moved from Africa to Sardinia were purchased and translated to Ticinum/Pavia. He is late for both transfers, supplies no first-translation date or custody chain, and cannot authenticate present remains. |
+| Augustine addressed a concrete women's community with a written common-life rule | A/N textual reception | Augustine, Letter 211; later Rule text families and manuscripts | Letter 211.5–16; *Augustine, Regulae* catalogue (Ep. 211/Obiurgatio, Ordo monasterii, Praeceptum) | The letter supports common property, differentiated provision, prayer, correction, and freedom under grace. The catalogued text families prevent reduction to one unchanged autograph; their priority and later institutional descent remain separate questions. |
 | Child-and-shell and baptismal *Te Deum* scenes are unverified later traditions | L | Earliest witnesses not located in this audit | No occurrence located in the checked Augustine or Possidius loci | Included only under “Tradition under review”; no date, transmission route, or historical scene is asserted. |
 | *Dilige et quod vis fac* requires charity/correction context | A | Augustine, homily | *In epistulam Ioannis ad Parthos* 7.8 | Brief attributed Latin, not an unmarked English translation or libertarian maxim. |
 | Papal catechesis receives Augustine's lifelong conversion | M | Benedict XVI, 2008, general audience | [9 January 2008 audience](https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080109.html) | Official reception; not a critical source for exact fourth-century dates. |
@@ -90,10 +90,11 @@ claim in this edition:
 
 ## Known audit limits
 
-The source architecture is sufficient for a working biography at the reduced
+The source architecture is sufficient for a working biography at the qualified
 claim level recorded above. A publication-level specialist should still
-collate Prosper's exact entry, the 411 *Gesta* and legal dossier, the Rule,
-Divjak, and Dolbeau corpora, disputed sermon dates, Pavia translation witnesses,
-the earliest securely dated child-and-shell and *Te Deum* recensions, and the
-publisher-only modern bibliography before any of those sources carries a
-stronger claim.
+collate the complete 411 proceedings and imperial legal sequence; establish the
+priority and adaptation history of the Rule text families; inspect the Divjak
+and Dolbeau corpora and disputed sermon dates; locate the source for the first
+African-to-Sardinian translation and any current Pavia custody or examination
+record; and trace the earliest securely dated child-and-shell and *Te Deum*
+recensions. The publisher-only modern bibliography remains a review queue.

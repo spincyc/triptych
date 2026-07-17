@@ -12,7 +12,7 @@
 - **Geographic center:** North Africa and the western Mediterranean; Rome and Bethlehem; the medieval Latin West; early-modern printing centers; modern Roman and academic editorial institutions
 - **Chronological center:** the second through fifth centuries CE, with sustained medieval and early-modern transmission history
 - **Terminal historical act:** second typical edition of the *Nova Vulgata*, 1986
-- **Scholarship and link cutoff:** historical claims and mutable official resources checked through 2026-07-15; bibliographic and link audit rechecked 2026-07-16
+- **Scholarship and link cutoff:** historical claims, full-text scholarship, mutable official resources, and links checked through 2026-07-17
 - **Intended reader:** a serious nonspecialist who encounters “the Vulgate” in biblical, Catholic, liturgical, patristic, medieval, or text-critical discussion
 
 The governing profile is `guidance/history/historical-accounts.md`. No doctrinal, liturgical, or canonical-law profile governs the whole publication. Official Catholic acts are primary evidence for the status and editorial purpose they establish at their own dates; the publication does not turn historical use into a present doctrinal or liturgical ruling.
@@ -109,11 +109,11 @@ A participant's preface establishes what the participant claimed and the purpose
 
 ## Review state and completion gate
 
-- Internal scope, source audit, and evidence map: completed and cross-aligned 2026-07-16.
+- Internal scope, source audit, and evidence map: completed and cross-aligned 2026-07-17.
 - Ancient-letter chronology correction: Augustine Letter 71 → Jerome Letter 112/Augustine Letter 75 → Augustine Letter 82 explicitly verified and recorded.
 - Tobit/Judith procedural distinction: explicitly verified and recorded.
 - Independent patristic, Latin-biblical, medieval-manuscript, Reformation-history, and text-critical review: outstanding.
 - Additional theological, canonical, or liturgical review: not required for the historical thesis; any future claim about current authority or discipline would require the appropriate review.
-- Production review completed 2026-07-16: the settled two-pass build produced a 25-page, US-letter PDF whose final log contains no fatal error, undefined reference, overfull or underfull box, LaTeX/package warning, or rerun request. Title, subject, generation metadata, embedded and Unicode-mapped fonts, extracted text, and `qpdf` structure passed their checks. All 25 physical pages were visually inspected after the final source corrections. The post-record rebuild was raster-compared page by page with the reviewed candidate, and the installed PDF is byte-identical to the current build.
+- Production review completed 2026-07-17 for the revised source: settled two-pass build, clean log and structure checks, embedded and Unicode-mapped fonts, all twenty-five pages visually inspected, and installed/build identity verified. Exact details and the installed checksum are recorded in `source-audit.md`.
 
 “Source-audited” in the publication means the repository records and exact loci used have been checked internally. It does not mean independent specialist review has occurred.
