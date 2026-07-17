@@ -30,7 +30,7 @@ An anathema, deposition, excommunication, prohibition, or civil penalty does not
 
 ## Required records
 
-Every document leaf keeps and imports one `generation-metadata.tex` record and keeps:
+Every document leaf keeps one `generation-metadata.tex` record, imports it once in the terminal metadata section, and keeps:
 
 - `research/scope.md`, stating question, reader, thesis, corpus rule, period and geography, authority classes, included and excluded objects, currentness needs, uncertainties, quotation and rights limits, and review state;
 - `research/source-audit.md`, mapping consequential claims to exact acts, texts, editions, loci, source classes, translation status, and unresolved discrepancies;
@@ -58,6 +58,8 @@ Assign the controlling evidence one of these grades:
 
 The grade measures documentary access, not theological gravity. Heresiologists and inquisitorial records are interested witnesses. State when the proposition is a refuter's formulation, a judicial extract, a recantation formula, or the target's own words. Do not quote a modern translation as though it were the original act or a critical edition. Keep quotations only as long as necessary to identify the doctrinal object, and record the rights status of official texts, translations, and editions.
 
+An item controlled only by grade C or D evidence triggers a targeted gap search before publication: look for the extant act, target text or fragment, critical edition, manuscript or archival description, near-contemporary witness, and current professional reconstruction reasonably accessible online or through cited catalogs. Record the search boundary and consequential negative result in the source audit. A late witness remains late after an unsuccessful search, but the gap must not survive merely because an inherited handbook was convenient.
+
 ## Dossier contract
 
 Each full dossier is brief enough for comparison but specific enough to be checked. It uses a substantive heading and these visible fields in a stable order:
@@ -81,19 +83,21 @@ Religious communities outside Christianity, ordinary sins, abuses, political pro
 
 A comprehensive all-history volume:
 
-- begins with a title page, structured generation metadata, table of contents, reader warning, definitions, census method, and explanation of authority and evidence grades;
-- proceeds chronologically while keeping related doctrinal complexes together;
+- begins with a title page and table of contents, then proceeds directly to the apostolic or earliest historical boundary and chronologically through the dossiers while keeping related doctrinal complexes together;
 - states the positive Catholic doctrine clarified by each major response rather than becoming only a catalogue of error;
 - includes a conclusion identifying recurrent doctrinal fault lines without claiming genealogical descent where none is documented;
 - includes a chronological appendix of response events with date, place, object, authority and act, immediate aftermath, longer reception, and evidence grade;
 - includes an alias, contextual-controversy, and exclusion accounting appendix or an equally accessible summary of the controlling inventory; and
-- ends with references keyed to exact acts and source families.
+- includes a terminal `Scope, Terms, and Qualifications` appendix containing the reader warning, period and geographic bounds, census and completeness rule, definitions, current-law boundary, authority and evidence grades, source hierarchy, method, checked-through date, global uncertainties, rights limits, and review state;
+- ends with references keyed to exact acts and source families, followed by terminal structured generation metadata.
+
+Order the appendix block after the historical synthesis; the timeline and census accounting may precede or follow `Scope, Terms, and Qualifications` according to use, but none belongs before the first dossier. Use plain language in the body so a reader need not memorize the evidence key. Do not rely on the appendix to cure an overbroad title: remove or qualify `all`, `complete`, or `comprehensive` in the title itself when the named corpus cannot sustain it. Censure grade, disputed attribution, hostile-witness status, personal-status limit, and present ecumenical qualification remain in the dossier they govern.
 
 The timeline uses one row per datable response, not one row per vague movement. It preserves circa dates, rival sessions, later confirmations, mixed censures, and uncertain provenance. It must not compress ecclesial judgment and civil enforcement into one unlabeled event.
 
 ## Currentness and review
 
-Stable historical acts do not need artificial legal currentness. The work nevertheless displays `checked through YYYY-MM-DD` for current canon law, current doctrinal documents, and modern ecumenical or ecclesial-status claims. Before installation, recheck the current Code, recent Dicastery for the Doctrine of the Faith acts material to the scope, and official common declarations cited as present qualifications.
+Stable historical acts do not need artificial legal currentness. The terminal scope appendix nevertheless displays `checked through YYYY-MM-DD` for current canon law, current doctrinal documents, and modern ecumenical or ecclesial-status claims. Before installation, recheck the current Code, recent Dicastery for the Doctrine of the Faith acts material to the scope, and official common declarations cited as present qualifications.
 
 Source audit is not independent historical, theological, canonical, ecumenical, or ecclesiastical review. Catalog and title-page maturity language must preserve that limitation. A broad survey must expressly warn that brevity can identify propositions and responses but cannot replace specialized histories or establish personal culpability.
 
@@ -106,7 +110,9 @@ A historical heresy reference is ready to publish only when:
 - mixed censure grades, disputed attributions, hostile witnesses, aliases, and modern ecumenical agreements are not flattened;
 - ecclesial definitions, disciplinary measures, and civil coercion remain distinct;
 - the timeline agrees with the dossiers and every row is audited;
+- the first dossier follows the title and contents without an intervening warning, method, terminology, census, evidence-grade, currentness, or limitation chapter, and those global controls appear once in the terminal appendix block;
+- every grade C or D baseline item has received and recorded a targeted source-gap search;
 - quotation, translation, official-text, and third-party rights boundaries are recorded;
 - current law and present ecclesial claims are rechecked and date-qualified;
 - independent specialist review is claimed only when actually recorded; and
-- universal metadata validation, settled multi-pass build, log inspection, every-page visual review, PDF structure checks, installed/build comparison, supporting records, catalog integration, and release-policy accounting are complete.
+- universal metadata validation, terminal provenance, settled multi-pass build, log inspection, every-page visual review, PDF structure checks, installed/build comparison, supporting records, catalog integration, and release-policy accounting are complete.

@@ -69,13 +69,31 @@ is limited to identification, study, criticism, and exposition.
 
 ## Publisher-only modern leads — not claim support
 
-The bibliography records work by Barclay, Campbell, Fredriksen, Gaventa,
-Meeks, Murphy-O'Connor, Sanders, Eastman, and Lampe. This generation had only
-publisher metadata, tables of contents, or limited previews rather than the
-page-level passages required to verify their arguments. They map future review
-and support no quotation, distinctive chronology, archaeological conclusion,
-or factual assertion in the publication. Their presence must not be described
-as full consultation.
+This generation had only publisher metadata, tables of contents, or limited
+previews rather than the page-level passages required to verify the following
+works. They map future review and support no quotation, distinctive chronology,
+archaeological conclusion, or factual assertion in the publication:
+
+- John M. G. Barclay, *Paul and the Gift* (Grand Rapids: Eerdmans, 2015).
+- Douglas A. Campbell, *Framing Paul: An Epistolary Biography* (Grand Rapids:
+  Eerdmans, 2014).
+- Paula Fredriksen, *Paul: The Pagans' Apostle* (New Haven: Yale University
+  Press, 2017).
+- Beverly Roberts Gaventa, *Our Mother Saint Paul* (Louisville: Westminster
+  John Knox, 2007).
+- Wayne A. Meeks, *The First Urban Christians: The Social World of the Apostle
+  Paul*, 2nd ed. (New Haven: Yale University Press, 2003).
+- Jerome Murphy-O'Connor, *Paul: A Critical Life* (Oxford: Clarendon Press,
+  1996).
+- E. P. Sanders, *Paul and Palestinian Judaism: A Comparison of Patterns of
+  Religion* (Philadelphia: Fortress, 1977).
+- David L. Eastman, *The Ancient Martyrdom Accounts of Peter and Paul*,
+  Writings from the Greco-Roman World 39 (Atlanta: SBL Press, 2015), and *The
+  Many Deaths of Peter and Paul* (Oxford: Oxford University Press, 2019).
+- Peter Lampe, *From Paul to Valentinus: Christians at Rome in the First Two
+  Centuries*, trans. Michael Steinhauser (Minneapolis: Fortress, 2003).
+
+Their presence here records leads, not full consultation.
 
 ## Consequential claim map
 

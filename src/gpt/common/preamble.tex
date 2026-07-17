@@ -83,9 +83,15 @@
     \global\AIDocumentRevisionRenderedtrue
   \fi}
 \newcommand{\AIModelContribution}[3]{%
+  \par\noindent
+  \begin{minipage}{\linewidth}
+  \begingroup
+  \exhyphenpenalty=10000
   \AIDisplayDocumentRevisionTimestamp
   \textbf{Model:} \texttt{#1}; \texttt{#2}\\
-  \textbf{Agent/runtime:} #3\par}
+  \textbf{Agent/runtime:} #3\par
+  \endgroup
+  \end{minipage}\par}
 \newcommand{\AIInheritedGenerationMetadata}[1]{}
 
 % Every detached publication carries the repository's content-license boundary.

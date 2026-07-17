@@ -42,7 +42,7 @@ hagiography exceeds recoverable history.  It may be spiritually attentive, but
 its prose must not turn devotional usefulness into proof or historical
 uncertainty into disbelief.
 
-The opening scope states:
+The terminal `Scope, Chronology, and Evidence` appendix states:
 
 - the subject, ordinary forms of the name, dates or responsible date range,
   places, Church or ecclesial setting, and principal offices or states of life;
@@ -56,10 +56,18 @@ The opening scope states:
 - any mutable recognition, relic, shrine, institutional, or liturgical claim
   checked through a stated date.
 
+The title and opening narrative may retain only the identity needed to know
+whose life is being read.  An exact or approximate date that is itself a
+biographical fact remains in the narrative at the event it qualifies; a
+document-wide life range, chronology convention, disputed dating scheme, or
+currentness cutoff belongs in the appendix.  A compact warning may remain near
+a relic, miracle, safeguarding, or current-status claim when postponing it
+would invite unsafe reliance.
+
 ## Required source records
 
-Every leaf keeps and imports one `generation-metadata.tex` record and keeps the
-following reader-facing audit records:
+Every leaf keeps one `generation-metadata.tex` record, imports it once in the
+terminal metadata section, and keeps the following reader-facing audit records:
 
 - `research/scope.md`: document identity, question, reader, thesis, included
   and excluded material, source corpus, evidence classes, material
@@ -227,11 +235,10 @@ artist's historical claim.
 
 Every full biography contains, in an order suited to the life:
 
-- a title page with structured AI provenance and an explicit study limitation;
+- a title page with no full provenance, method, chronology, or limitation block;
 - a table of contents;
-- a short method and evidence key;
-- a one- or two-page chronological orientation;
-- the subject's world, names, identity, and source problem;
+- a brief governing biographical question or thesis followed immediately by
+  the subject's world, identity, and sustained chronological life;
 - a sustained chronological life rather than a list of virtues;
 - the person's writings, teaching, mission, office, relationships, and major
   controversies where applicable;
@@ -241,14 +248,19 @@ Every full biography contains, in an order suited to the life:
   or late episodes without either credulity or ridicule;
 - a final synthesis of sanctity, historical significance, and unresolved
   questions; and
-- a detailed chronology and references.
+- a terminal `Scope, Chronology, and Evidence` appendix containing the method
+  and evidence key, work-wide bounds and qualifications, the compact
+  orientation, and detailed chronology;
+- references; and
+- terminal structured generation metadata.
 
-The orientation may use tables, but the life itself should read as a coherent
-biography.  Repeated evidence panels use stable visible fields such as `Claim`,
-`Witness`, and `Limit`; do not force every paragraph into a box.  The references
-identify editions and translations actually used, stable links and access dates
-for material online evidence, and modern scholarship by full bibliographic
-description.
+The appendix chronology may use tables, but the life itself should read as a
+coherent biography.  Do not repeat the appendix's chronology or evidence key
+as front matter. Repeated evidence panels use stable visible fields such as
+`Claim`, `Witness`, and `Limit`; do not force every paragraph into a box.  The
+references identify editions and translations actually used, stable links and
+access dates for material online evidence, and modern scholarship by full
+bibliographic description.
 
 ## Rights, metadata, catalog, and maturity
 
@@ -259,7 +271,8 @@ Record the translation and public-domain, licensed, permission, or quotation
 basis in the source audit; do not assume that an ancient author makes a modern
 translation public domain.  A biography does not need an image to be deep.
 
-Display structured generation metadata once on the title page.  Catalog each
+Display structured generation metadata once in the terminal metadata section.
+Catalog each
 PDF only on `library/biographies.md`, followed by links to all four required
 research records.  Catalog maturity distinguishes source audit, historical or
 patristic specialist review, theological review, rights review, production
@@ -275,6 +288,9 @@ A biography is ready to install only when:
 - the historical core, early reception, later tradition, modern reconstruction,
   and project synthesis remain distinguishable;
 - material chronology and geography are sourced and uncertainty is visible;
+- the sustained life begins immediately after the title and contents, while
+  method, evidence key, work-wide date and geographic bounds, currentness,
+  review limits, and detailed chronology appear only in the terminal appendix;
 - every consequential vivid episode has an earliest located witness or is
   marked unresolved;
 - subject-authored and disputed writings are classified responsibly;

@@ -18,7 +18,7 @@ The inventory records a stable key and sort key, Greek or Latin term where mater
 
 ## Taxonomic and sorting contract
 
-The publication order is reproducible and must be stated near the beginning:
+The publication order is reproducible and must be recorded in the terminal scope and taxonomy appendix:
 
 1. theological virtues, in the order of generation---faith, hope, charity---while identifying charity as first in perfection;
 2. a dedicated cardinal overview that explicitly names prudence, justice, fortitude, and temperance, explains why they are four, defines integral, subjective, and potential parts, and distinguishes determinate habits from general conditions, overflow, and modes;
@@ -28,7 +28,7 @@ The publication order is reproducible and must be stated near the beginning:
 6. the remaining intellectual virtues, ordered from first principles through demonstrated knowledge to wisdom, then productive art, with prudence cross-referenced rather than duplicated; and
 7. qualified Aristotelian or Christian states and the explicit exclusion ledger.
 
-This is an order of exposition, not a claim that every later item is less excellent. Keep distinct the order of generation, order of perfection, logical dependence, and authorial exposition. A synonymous English rendering does not create another virtue, and a virtue appearing under two taxonomic aspects receives one controlling dossier and one appendix row. A species named only under a term used widely or analogically does not add a row unless the source establishes a distinct univocal habit; the inventory must record the reduction rather than silently omit the name. A publication-row count must be identified as a count of treated taxonomic entries, not a claim that principal roots, genera, subjective species, potential parts, and nested specifications are coordinate habits.
+This is an order of exposition, not a claim that every later item is less excellent. Keep distinct the order of generation, order of perfection, logical dependence, and authorial exposition. A synonymous English rendering does not create another virtue, and a virtue appearing under two taxonomic aspects receives one controlling dossier and one appendix row. A species named only under a term used widely or analogically does not add a row unless the source establishes a distinct univocal habit; the inventory must record the reduction rather than silently omit the name. A publication-row count must be identified in the appendix as a count of treated taxonomic entries, not a claim that principal roots, genera, subjective species, potential parts, and nested specifications are coordinate habits.
 
 ## Definition and dossier contract
 
@@ -59,7 +59,7 @@ Where a source supplies named extremes or contraries, preserve the source-ground
 
 ## Required records and source hierarchy
 
-The leaf keeps and imports one `generation-metadata.tex` record and keeps:
+The leaf keeps one `generation-metadata.tex` record, imports it once in the terminal metadata section, and keeps:
 
 - `research/scope.md`, defining question, reader, thesis, corpus, comprehensive rule, authority classes, sorting method, rights boundary, limitations, and review state;
 - `research/source-audit.md`, mapping governing definitions, classifications, and opposition claims to exact primary loci and recording translation status;
@@ -72,22 +72,25 @@ Prefer the original Greek or Latin text and stable critical witnesses where prac
 
 The work:
 
-- begins with a title page, structured generation metadata, limitation, and table of contents;
-- states the scope, corpus, definition of completeness, relation types, taxonomic levels, and complete sorting algorithm before the virtue dossiers;
-- supplies the philosophical grammar of habit, mean, prudence, acquired and infused virtue, and ordered love;
+- begins with a title page and table of contents, then immediately supplies the substantive philosophical grammar of habit, mean, prudence, acquired and infused virtue, and ordered love;
 - presents the theological virtues, then a dedicated section named **The Four Cardinal Virtues**, then each cardinal family;
-- defines integral, subjective, and potential parts before using those classifications, and visibly states the parent and level of every strict appendix entry;
+- gives the concise definitions of integral, subjective, and potential parts immediately before they are first needed, while leaving the full relation taxonomy and sorting rules to the appendix, and visibly states the parent and level of every strict appendix entry;
 - places securely attested moral virtues outside the named parts-lists in a separately governed residual section rather than inventing a theological or cardinal-family parent;
 - presents the remaining intellectual virtues and then qualified states after the strict moral order;
 - explains gifts, fruits, beatitudes, passions, friendship, continence, shame, martyrdom, and heroic virtue sufficiently to prevent category errors;
 - includes formation and self-examination principles without diagnosing persons or reducing virtue to a score; and
-- ends with exact references and a landscape appendix containing every counted virtue in the same canonical order as the controlling inventory, with the defect and excess columns on either side of the virtue and reader-facing status, parent, and relation fields.
+- ends its substantive body with formation and synthesis, then gives a terminal `Scope, Corpus, and Taxonomy` appendix containing the question, reader, corpus and completeness boundary, relation types, taxonomic levels, full sorting algorithm, entry-count qualification, terminology rules, global limitations, rights boundary, and review state;
+- gives a landscape census appendix containing every counted virtue in the same canonical order as the controlling inventory, with the defect and excess columns on either side of the virtue and reader-facing status, parent, and relation fields; and
+- ends with exact references followed by terminal structured generation metadata.
+
+Do not repeat the corpus, evidence method, sorting algorithm, limitation, or review disclaimer before the philosophical grammar. A qualification that changes one virtue's classification, opposition, provenance, or parent remains in that dossier and census row rather than being deferred globally.
 
 ## Completion gate
 
 The virtues reference is ready to install only when:
 
 - every comprehensive claim agrees with the controlling inventory and every candidate is counted, nested, qualified, or excluded with a stated reason;
+- the philosophical treatment begins immediately after the title and contents, while corpus, completeness, sorting, relation taxonomy, global terminology, limitations, and review state occur only in the terminal appendix block;
 - definitions identify formal objects and characteristic acts rather than offering circular synonyms;
 - Aristotle's mean is not extended to theological or intellectual virtue, justice, or qualified states without express warrant;
 - every named defect or excess is traceable as a source term, checked translation, or visibly editorial descriptor;
@@ -97,4 +100,4 @@ The virtues reference is ready to install only when:
 - order of exposition, generation, logical dependence, and excellence are not conflated;
 - source, translation, quotation, and rights boundaries are recorded;
 - independent philosophical or theological review is claimed only when actually recorded; and
-- universal metadata validation, settled multi-pass build, clean-log inspection, every-page visual review, PDF structure checks, installed/build comparison, catalog integration, supporting records, and release-policy accounting are complete.
+- universal metadata validation, terminal provenance, settled multi-pass build, clean-log inspection, every-page visual review, PDF structure checks, installed/build comparison, catalog integration, supporting records, and release-policy accounting are complete.

@@ -19,7 +19,7 @@ Before research, record the subject, period, geography, communities, languages, 
 - the manuscripts, artifacts, editions, or institutional acts that define the account's principal stages; and
 - later uses of the title that must not be projected backward.
 
-The opening of the publication states a governing thesis and the limits of what the surviving evidence can prove. It must tell the reader when a conventional one-event story has to be replaced by a history of several acts, books, recensions, or communities.
+The opening of the publication states a governing thesis and begins the historical account. It must tell the reader when a conventional one-event story has to be replaced by a history of several acts, books, recensions, or communities, but the work-wide limits of what the surviving evidence can prove belong in the terminal apparatus. A qualification that changes a particular historical claim remains beside that claim.
 
 ## Evidence and historiography
 
@@ -48,20 +48,24 @@ Every publication leaf contains:
 
 These are editorial records, not a search diary. A catalog entry links the three reader-facing research records separately. Focused extracts may be retained only when necessary and lawful; complete third-party books, scans, or OCR corpora are not document assets.
 
+Treat an evidentiary gap as a research task, not a decorative disclaimer. For every principal claim supported only by a late, secondary, hostile, or uncertain witness, search the reasonably accessible primary, official, manuscript-catalog, critical-edition, and professional-scholarly record that could materially improve it. Record the source families checked, consequential negative result, and remaining gap in `source-audit.md` or `evidence-map.md`; do not add repetitive search narration to the publication.
+
 ## Publication architecture
 
-Each account includes a title page, structured AI-generation metadata, a specific study limitation, and a table of contents. The argument ordinarily includes:
+Each account includes a title page, a table of contents, and then the governing thesis and substantive history. It does not front-load structured provenance, study limitations, an evidence key, or a method chapter. The reader-facing order ordinarily includes:
 
-- object, question, thesis, terminology, and method;
-- the political, linguistic, material, and religious setting;
+- a concise governing question or thesis followed immediately by the political, linguistic, material, and religious setting;
 - the origin evidence and its historiographical limits;
 - a periodized account of production, revision, transmission, and reception;
 - representative textual or material case studies that test the larger account;
-- a misconception or claim audit where later shorthand is likely to mislead;
-- a dated timeline that distinguishes event, witness, edition, and later judgment; and
-- references grouped by source function.
+- corrections to misleading shorthand integrated where the relevant evidence is discussed rather than collected in an opening claim audit;
+- a conclusion that answers the governing question;
+- a terminal `Scope, Method, and Historical Coordinates` appendix containing the subject and corpus boundary, included and excluded periods, geographic and linguistic bounds, terminology, evidence classes, source hierarchy, method, terminal or as-of date, global uncertainties, rights and review limits;
+- a dated timeline appendix that distinguishes event, witness, edition, and later judgment;
+- references grouped by source function; and
+- terminal structured generation metadata.
 
-This list is a coverage rule, not a fixed set of section titles. Tables and timelines must remain readable at ordinary print size, and the narrative must explain rather than merely duplicate them.
+This list is a coverage rule, not a fixed set of section titles. The apparatus and timeline may be separate appendices or adjacent parts of one appendix block, but neither is repeated before the narrative. Tables and timelines must remain readable at ordinary print size, and the narrative must explain rather than merely duplicate them. Dates and qualifications that are facts of the narrative remain where they are needed; the appendix owns the work-wide range and framing rules.
 
 ## Translation, quotation, and rights
 
@@ -80,8 +84,10 @@ Before installation:
 - distinguish contemporaneous evidence, retrospective narrative, reception, and modern reconstruction at the claim affected;
 - verify dates, names, manuscript or edition identifiers, quotations, and cited loci;
 - preserve material disputes, negative results, and book-specific variation;
+- confirm that the substantive history begins immediately after the title and contents and that work-wide bounds, method, evidence key, timeline, currentness, and limitations occur only in the terminal appendix block;
+- pursue and record material source gaps rather than leaving reasonably searchable primary or official evidence unchecked;
 - complete quotation and link-rights review;
-- run the universal metadata and publication checks;
+- run the universal metadata and publication checks, including terminal provenance;
 - inspect the build log and every rendered page; and
 - install the reviewed PDF at its exact mirrored `doc/gpt/history/` path.
 

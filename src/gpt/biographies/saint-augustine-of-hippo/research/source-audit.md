@@ -43,6 +43,35 @@ not carry published claims.
 | *Dilige et quod vis fac* requires charity/correction context | A | Augustine, homily | *In epistulam Ioannis ad Parthos* 7.8 | Brief attributed Latin, not an unmarked English translation or libertarian maxim. |
 | Papal catechesis receives Augustine's lifelong conversion | M | Benedict XVI, 2008, general audience | [9 January 2008 audience](https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080109.html) | Official reception; not a critical source for exact fourth-century dates. |
 
+## Publisher-only bibliographic leads — not claim support
+
+The following records identify the next specialist-review queue. Their complete
+arguments and claim-level pages were not inspected, so none carries a published
+claim in this edition:
+
+- Peter Brown, *Augustine of Hippo: A Biography*, 45th anniversary ed.
+  (Berkeley: University of California Press, 2013), [publisher
+  record](https://www.ucpress.edu/book/9780520280410/augustine-of-hippo).
+- Erika T. Hermanowicz, *Possidius of Calama: A Study of the North African
+  Episcopate at the Time of Augustine* (Oxford: Oxford University Press, 2008),
+  [publisher record](https://academic.oup.com/book/27411).
+- James J. O'Donnell, *Augustine: A New Biography* (New York: Ecco, 2005), and
+  his [Introduction to the
+  *Confessions*](https://faculty.georgetown.edu/jod/augustine/introconf.html).
+- Serge Lancel, *Saint Augustine*, trans. Antonia Nevill (London: SCM Press,
+  2002), [bibliographic
+  record](https://books.google.com/books/about/Saint_Augustine.html?id=m8gMywEACAAJ).
+- Catherine Conybeare, *Augustine the African* (London: Profile, 2025),
+  [publisher record](https://profilebooks.com/work/augustine-the-african/).
+- R. A. Markus, *Saeculum: History and Society in the Theology of St
+  Augustine*, rev. ed. (Cambridge: Cambridge University Press, 1988).
+- Brent D. Shaw, *Sacred Violence: African Christians and Sectarian Hatred in
+  the Age of Augustine* (Cambridge: Cambridge University Press, 2011).
+- Paula Fredriksen, *Augustine and the Jews: A Christian Defense of Jews and
+  Judaism* (New Haven: Yale University Press, 2010).
+- Jennifer Ebbeler, *Disciplining Christians: Correction and Community in
+  Augustine's Letters* (Oxford: Oxford University Press, 2012).
+
 ## Edition, translation, and rights notes
 
 - [CSEL catalog](https://csel.at/en/publikationen/csel/) was used to orient the
