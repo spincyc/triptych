@@ -103,10 +103,10 @@ Access and currentness checks were completed 2026-07-16 unless noted. Each sourc
 
 ## Build and review record
 
-- Built the dedicated target through the required LaTeX passes on 2026-07-16. The reviewed artifact is 48 letter-size pages and 516,727 bytes.
+- Built the dedicated target through the required LaTeX passes on 2026-07-16 after the structural and register revision. The reviewed artifact is 40 letter-size pages and 480,929 bytes.
 - The settled log contains no LaTeX or package warnings, fatal errors, undefined references, overfull boxes, or underfull boxes. `qpdf --check` reports no syntax or stream-encoding errors.
-- All 14 PDF fonts are embedded and subset. PDF metadata identifies the title as *Natural and Positive, Divine and Human Law* and the subject as *A historical and juridical study of responsible action across overlapping orders of law*.
-- `pdftotext -layout` produced 2,638 lines, 24,614 words, and 191,433 bytes. The extraction contains no replacement character, placeholder marker, or unresolved editorial token.
-- Every page was rendered at 120 dpi and visually inspected at both contact-sheet and enlarged review scale. No clipping, unreadable table density, split heading, artificial blank region, or accidental sparse spill page was found; the final half-page reuse-and-rights notice is intentional.
+- All 13 PDF fonts are embedded and subset. PDF metadata identifies the title as *Natural and Positive, Divine and Human Law* and the subject as *A historical and juridical study of responsible action across overlapping orders of law*.
+- `pdftotext -layout` produced 2,150 lines, 21,121 words, and 161,136 bytes. The extraction contains no replacement character, placeholder marker, or unresolved editorial token.
+- Every page was rendered at 120 dpi and visually inspected at contact-sheet scale; the disciplinary survey, historical timeline, concurrent-obligations synthesis, applications, conclusion, and final rights page were also inspected at enlarged scale. No clipping, unreadable table density, split heading, artificial blank region, or accidental sparse spill page was found; the final reuse-and-rights page is intentional.
 - `make check-metadata` passed. `make check-public-alpha` remains blocked by the repository's stale public-site authorization record, including missing approved library pages and changed hashes for several global site sources; publication release authorization therefore remains outstanding.
-- The reviewed build and installed mirror are byte-identical. SHA-256: `9037e9385876734ead8322d27bcb620d1e5c83c0e007c19f88475382ca1970c1`.
+- The reviewed build and installed mirror are byte-identical. SHA-256: `3d419db798fab0bd40012c39a1164271ddcb41cd380297662cb6315b3b1f15ac`.

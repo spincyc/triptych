@@ -35,9 +35,9 @@ Concurrent human orders are neither one appellate hierarchy nor morally autonomo
 3. Three distinct senses of hierarchy: moral priority, normative rank within a legal order, and allocation among concurrent civil and ecclesiastical orders.
 4. Greek and Roman antecedents; Scripture and early ecclesial discipline; Christian empire; Eastern and Latin canonical trajectories; canonistic, procedural, scholastic, and early-modern development.
 5. Reformation and confessionalization, territorial jurisdiction, codification, differentiated positivist theories, totalitarian legislation, postwar rights, Catholic social teaching, and Vatican II.
-6. The person/status, norm, effect, and forum ledgers; conscience and the internal/external forum distinction; penal attribution; remedies and deadlines; duties toward third parties.
+6. The titles by which obligations attach; correlative rights and duties; differentiated moral, validative, disciplinary, penal, evidentiary, and remedial effects; apparent, intra-order, cross-order, and genuinely practical conflicts; conscience and the internal/external forum distinction; duties toward third parties.
 7. Current Latin and Eastern sources, subjects, lawgivers, interpreters, administrative and judicial remedies, civil-law reception, concordats, Holy See identity, and Vatican City law.
-8. Applied obligation accounts involving professional commands, reporting and confidentiality, marriage, property and civil entities, penal responsibility, Sunday worship and work, and religious exercise.
+8. Applications involving reporting and confidentiality, marriage across sacramental, canonical, and civil forums, ecclesiastical property held through civil entities, and differentiated forms of penal and moral responsibility.
 
 ## Excluded or bounded scope
 
