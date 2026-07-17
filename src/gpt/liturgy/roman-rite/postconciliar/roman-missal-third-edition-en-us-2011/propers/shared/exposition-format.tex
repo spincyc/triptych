@@ -1,5 +1,5 @@
 % Shared presentation primitives for U.S.-English postconciliar proper expositions.
-% The opening inventory presents textual variable parts followed by the compact
+% The unheaded opening inventory is followed directly by the unheaded compact
 % four-senses synthesis. Source layers, statuses, and exact branch resolution
 % remain in the appendix and tracked audits.
 
@@ -40,13 +40,6 @@
 
 \newcommand{\variabletextrow}[2]{#1 & #2\\}
 
-\newcommand{\pcsensestitle}{%
-  \vspace{-0.45em}%
-  \begin{center}
-    \small\bfseries The Four Senses of Scripture
-  \end{center}%
-  \vspace{-0.45em}}
-
 \newenvironment{branchstable}
 {\begingroup\footnotesize\renewcommand{\arraystretch}{1.04}%
 \begin{longtable}{>{\bfseries\raggedright\arraybackslash}p{0.13\linewidth}>{\raggedright\arraybackslash}p{0.22\linewidth}>{\raggedright\arraybackslash}p{0.12\linewidth}>{\raggedright\arraybackslash}p{0.25\linewidth}>{\raggedright\arraybackslash}p{0.20\linewidth}}
@@ -69,7 +62,8 @@
 \textbf{Textual unit / alternative} & \textbf{Citation} & \textbf{Location} & \textbf{Date}\\
 \midrule
 \endhead}
-{\bottomrule\end{longtable}\endgroup}
+% The final dossier note supplies the table's single closing rule.
+{\end{longtable}\endgroup}
 
 \newcommand{\scripturerow}[4]{#1 & #2 & #3 & #4\\}
 \newcommand{\scripturenote}[1]{%

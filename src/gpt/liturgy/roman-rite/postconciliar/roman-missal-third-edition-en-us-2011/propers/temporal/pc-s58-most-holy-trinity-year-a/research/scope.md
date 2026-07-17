@@ -107,7 +107,7 @@ These loci govern the guide against tritheism, modalism, subordinationism, gende
 - **Moral:** worship, repair relationships, live in peace, believe, come to the light, and live as adopted children whose worship becomes self-offering.
 - **Anagogical:** eternal life, communion and indwelling, confession of the eternal Trinity, and everlasting doxology.
 
-The reconstructed reader-facing architecture places this four-sense synthesis directly beneath the page-one textual inventory. The canonical-order historical table follows as `In Illo Tempore\ldots`; the next two pages divide one source-grounded `The Propers: Themes and Movement` treatment between the liturgical movement and a continued theological-spiritual synthesis with a four-dimension evidence matrix. `The Propers: Detailed Commentary` then begins on a fresh page and remains unbounded. On 2026-07-16 the reconstructed guide was built for two passes, its log and prescribed page boundaries were checked, and every rendered page was visually inspected.
+The reconstructed reader-facing architecture places this four-sense synthesis directly beneath the page-one textual inventory. The canonical-order historical table follows as `In Illo Tempore\ldots`; the next two pages divide one source-grounded `The Propers: Themes and Movement` treatment between the liturgical movement and a second-page theological-spiritual synthesis with a four-dimension evidence matrix. `The Propers: Detailed Commentary` then begins on a fresh page and remains unbounded. On 2026-07-17 the guide was rebuilt for two passes after the reader-facing simplification; its log, prescribed page boundaries, single historical-table closing rule, and every rendered page were checked.
 
 ## Bounded interpretive possibilities
 

@@ -53,7 +53,7 @@ No direct patristic exposition of the complete Week XI formulary was found or cl
 
 The page-one four-sense table and the two-page `The Propers: Themes and Movement` section are source-grounded editorial compressions of the texts, relationship classes, reception, and detailed commentary audited above. Literal, allegorical, moral, and anagogical summaries introduce no independent evidence: they preserve Israel’s historical covenant setting, locate ecclesial and sacramental fulfillment in Christ, state the conversion asked by the texts, and name the guide’s final horizon of salvation and communion.
 
-The first synthesis page retains the established liturgical movement; the second retains the theological and spiritual synthesis and adds a four-dimension matrix keyed to appointed anchors. Neither form claims one historical compositional plan. Romans remains semi-continuous, the Week XI orations remain common across A/B/C, and John 17 remains an unselected Communion branch. On 2026-07-16 the reconstructed guide was built for two passes, its log and prescribed page boundaries were checked, and every rendered page was visually inspected.
+The first synthesis page retains the established liturgical movement; the second retains the theological and spiritual synthesis and adds a four-dimension matrix keyed to appointed anchors. Neither form claims one historical compositional plan. Romans remains semi-continuous, the Week XI orations remain common across A/B/C, and John 17 remains an unselected Communion branch. On 2026-07-17 the guide was rebuilt for two passes after the reader-facing simplification; its log, prescribed page boundaries, single historical-table closing rule, and every rendered page were checked.
 
 ## Branch, pastoral, and weekday limits
 
