@@ -99,7 +99,7 @@ Access and currentness checks were completed 2026-07-16 unless noted. Each sourc
 - Vatican City law is ordinarily controlled by official Italian unless an authoritative version provides otherwise.
 - Perseus, New Advent, Latin Library, Friedberg web witnesses, and older Roman translations are convenient sources of access, not uniformly critical editions.
 - Scripture, official texts, historical works, translations, and scholarship retain their independent status. No full modern translation, official code, article, or monograph is reproduced.
-- The installed PDF remains on hold for work-specific rights review and required release authorization.
+- The exact installed PDF snapshot has release-specific distribution authorization under the user-attested perpetual public-repository record. That exact-snapshot decision clears the distribution gate without constituting an independent rights analysis, source review, canonical opinion, specialist review, or ecclesiastical approval.
 
 ## Build and review record
 
@@ -108,5 +108,5 @@ Access and currentness checks were completed 2026-07-16 unless noted. Each sourc
 - All 13 PDF fonts are embedded and subset. PDF metadata identifies the title as *Natural and Positive, Divine and Human Law* and the subject as *A historical and juridical study of responsible action across overlapping orders of law*.
 - `pdftotext -layout` produced 2,150 lines, 21,121 words, and 161,136 bytes. The extraction contains no replacement character, placeholder marker, or unresolved editorial token.
 - Every page was rendered at 120 dpi and visually inspected at contact-sheet scale; the disciplinary survey, historical timeline, concurrent-obligations synthesis, applications, conclusion, and final rights page were also inspected at enlarged scale. No clipping, unreadable table density, split heading, artificial blank region, or accidental sparse spill page was found; the final reuse-and-rights page is intentional.
-- `make check-metadata` passed. `make check-public-alpha` remains blocked by the repository's stale public-site authorization record, including missing approved library pages and changed hashes for several global site sources; publication release authorization therefore remains outstanding.
+- `make check-metadata` passed. The later 16 July 2026 exact-snapshot authorization binds the installed PDF hash recorded below and permits the release manifest to distribute those exact bytes; it does not change the article's source-audit or independent-review limitations.
 - The reviewed build and installed mirror are byte-identical. SHA-256: `3d419db798fab0bd40012c39a1164271ddcb41cd380297662cb6315b3b1f15ac`.

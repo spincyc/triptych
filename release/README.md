@@ -1,9 +1,9 @@
 # Public Release Boundary
 
-The current release manifest contains 46 publications: all 46 exact PDF
-snapshots are marked `release`, with none in `review` or on `hold`. The 16 July
-2026 supplemental authorization in `rights/public-alpha-2026-07-15.md` binds
-all 46 release PDFs and all 17
+The current release manifest contains 48 publications: all 48 exact PDF
+snapshots are marked `release`, with none in `review` or on `hold`. The later
+16 July 2026 supplemental authorization in
+`rights/public-alpha-2026-07-15.md` binds all 48 release PDFs and all 17
 reader-facing site sources to their exact post-build hashes. The earlier
 perpetual, worldwide, and no-project-initiated-promotion conditions remain in
 force for the scope that record actually identifies.
@@ -33,7 +33,7 @@ imprimatur, nihil obstat, or approval of the secret or this publication. It
 does not supply independent rights, canonical, specialist, liturgical, or
 ecclesiastical review. Apparition and cult approvals remain object-limited and
 do not approve this publication. Both public-alpha artifacts include this PDF
-with the other 45 releases.
+with the other 47 releases.
 
 For every authorized snapshot the generator will:
 
@@ -47,16 +47,25 @@ For every authorized snapshot the generator will:
 release gates; it does not raise a work's editorial or ecclesiastical maturity.
 No current publication records independent specialist review, an imprimatur,
 a nihil obstat, or ecclesiastical approval of the Triptych publication as such.
-The canon-law study remains a source-audited educational work rather than a
-canonical opinion or legal advice. The eight postconciliar proper guides are
-working exact-snapshot releases under the express exception recorded in the
-rights supplement: complete English-oration collation against an identified
-U.S. altar-book printing and independent liturgical, biblical, theological,
-and historical review remain outstanding. The postconciliar Order of Mass
-likewise still lacks exact hands-on formula-level collation against licensed
-2008 Latin and 2011 United States altar books. None of those records may imply
-the missing collation or review. The Mount Carmel guide and companion retain
-their recorded *Flos Carmeli* witness, attribution, permission, and
+The snapshot decision clears distribution gates without supplying missing
+source collation, independent rights analysis, specialist review, or
+ecclesiastical approval. Both canon-law studies remain source-audited
+educational works, not canonical opinions or legal advice: the
+clerical-discipline study still awaits independent canonical and ecclesiastical
+review, and the natural-law study still awaits its disclosed cross-disciplinary
+specialist and ecclesiastical review. The virtues reference is internally
+source-audited but is not a critical edition; manuscript collation and
+comprehensive source-language lexical review have not occurred, and independent
+Aristotelian, patristic, Thomistic, moral-theological, pastoral, and clinical
+review remain outstanding. The eight postconciliar
+proper guides are working exact-snapshot releases under the express exception
+recorded in the rights supplement: complete English-oration collation against
+an identified U.S. altar-book printing and independent liturgical, biblical,
+theological, and historical review remain outstanding. The postconciliar Order
+of Mass likewise still lacks exact hands-on formula-level collation against
+licensed 2008 Latin and 2011 United States altar books. None of those records
+may imply the missing collation or review. The Mount Carmel guide and companion
+retain their recorded *Flos Carmeli* witness, attribution, permission, and
 non-approval limitations. See the rights record and each publication's linked
 research records for the complete boundaries.
 

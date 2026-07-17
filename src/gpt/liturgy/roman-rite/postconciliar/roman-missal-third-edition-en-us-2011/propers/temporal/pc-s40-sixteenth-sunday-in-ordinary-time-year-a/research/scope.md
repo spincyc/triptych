@@ -2,7 +2,7 @@
 
 **Formula:** `PC-S40-A`
 **Occurrence:** 2026-07-19
-**Last updated:** 2026-07-15
+**Last updated:** 2026-07-16
 
 This record preserves evidence roles and limits compressed in the reader-facing guide. Formula identity and unresolved selections are controlled by [the instance manifest](../instance/manifest.md); element boundaries and branches by [the leaf audit](../propers/verified.md); reusable Missal evidence by [the Week XVI owner](../../shared/ordinary-time/weeks/16/propers/verified.md).
 
