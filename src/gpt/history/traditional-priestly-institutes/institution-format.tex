@@ -1,0 +1,34 @@
+\usepackage{ragged2e}
+\usepackage{titlesec}
+
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{3em}
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\newcommand{\historythesis}[1]{%
+  \begin{studybox}{Governing thesis}
+  #1
+  \end{studybox}}
+
+\newcommand{\evidenceframe}[3]{%
+  \begin{studyframe}
+  \textbf{Witness:} #1\par
+  \textbf{What it establishes:} #2\par
+  \textbf{Limit:} #3
+  \end{studyframe}}
+
+\newcommand{\claimcheck}[2]{%
+  \begin{studybox}{Claim check: #1}
+  #2
+  \end{studybox}}
+
+\newcommand{\statusframe}[3]{%
+  \begin{studyframe}
+  \textbf{Act or record:} #1\par
+  \textbf{Historical result:} #2\par
+  \textbf{Boundary:} #3
+  \end{studyframe}}
