@@ -210,6 +210,17 @@ Repository visibility and reader-site publication are separate release decisions
 - `review` permits a work only in the clearly marked, no-index private preview; and
 - `release` requires a work-specific rights record, or an exhaustive shared record that identifies the work, an effective authorization and its duration, no unresolved release gate, and the exact SHA-256 of the approved installed PDF.
 
+`release` is an exact-snapshot distribution decision, not an editorial-maturity,
+source-audit, specialist-review, or ecclesiastical-approval label.  An express
+snapshot authorization may clear the project's rights and distribution gates
+for the exact recorded PDF even when disclosed profile-final or source-audit
+work remains outstanding.  The authorization must bind the final PDF hash,
+identify the accepted limitations, and leave each publication's source and
+review disclosures intact; it must never imply that an unperformed collation,
+source check, specialist review, imprimatur, or other ecclesiastical approval
+occurred.  A rebuilt or otherwise changed PDF is a new snapshot and requires a
+new exact approval before it can retain `release` status.
+
 The public site generator renders the canonical reader-facing Markdown rather than maintaining a second editable catalog, but filters publication entries by the manifest. It may copy rendered HTML, site styling, license notices, approved PDFs, and narrowly scoped generated host-control files required to enforce release conditions. It must not copy authoring Markdown, TeX, research or retrieval records, build intermediates, repository metadata, or prior Git history unless a later release policy explicitly reviews and authorizes a category. A private preview may additionally contain `review` PDFs, but it must be marked `noindex, nofollow`, remain local or access-controlled, and never be deployed as the public site.
 
 Before publishing, verify the generated artifact independently against the manifest: its complete file set must be exact; every artifact PDF must match its repository-approved hash rather than merely a generated artifact manifest; every reader-facing source, rendered page, and copied static file must match the approved repository input; the artifact manifest must have no missing or extra fields; local links and fragments must resolve; excluded publication identifiers and machine-private paths must be absent; and recorded checksums must match. Publish only the verified public artifact through the configured host or deployment workflow. A public repository may expose its tracked development material when separately authorized, but GitHub Pages must never deploy the repository root, a development branch's raw tree, or the private-preview output.

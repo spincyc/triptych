@@ -27,5 +27,5 @@ Reviewed 15 July 2026 against `guidance/editorial.md` and `guidance/liturgy/ordi
 
 - Exact formula-level collation against licensed 2008 Latin and 2011 U.S. altar books remains outstanding. The work therefore uses only short identifying Latin incipits and third-person analysis.
 - Independent review remains outstanding in Roman liturgical history, patristics, Latin, sacramental theology, canon law, music, and current U.S. practice.
-- Work-specific rights review and any needed liturgical-text permission remain unresolved. The public-release manifest must therefore retain this publication on `hold`; no existing authorization hash may be extended to it by inference.
+- Work-specific rights review and any needed liturgical-text permission remain outstanding. The release manifest and dated rights record separately authorize distribution of the exact installed PDF snapshot; that decision does not perform or imply either missing act, independent specialist review, altar-book collation, or ecclesiastical approval.
 - Production verification and the final artifact hash are recorded in the source audit only after the reviewed PDF is built, inspected page by page, and installed.

@@ -52,4 +52,4 @@ Every comparison was tested against these questions:
 
 The edition boundaries and principal legal texts were checked. A line-by-line independent review against physical copies of the 2008 Latin reprint and current U.S. altar book remains outstanding; the publication therefore remains a source-audited working paper.
 
-The current translation-policy revision is included in the reviewed 44-page installed artifact, SHA-256 `edba4b079c035e9ec0501ac36db901c3729f8091294e93b67d78864402047036`; this production review does not claim the outstanding independent physical-book collation.
+The current translation-policy revision is included in the reviewed 44-page installed artifact, SHA-256 `d16e9af6960547b21dff94f87789a75f7236b0194dba01049336ba4a70751d9b`; this production review does not claim the outstanding independent physical-book collation.

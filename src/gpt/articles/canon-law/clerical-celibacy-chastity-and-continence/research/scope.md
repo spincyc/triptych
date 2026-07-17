@@ -69,4 +69,4 @@ Catholic discipline is coherent but not uniform. Chastity binds all according to
 
 Official texts, Scripture, patristic translations, scholarship, and linked Church documents retain their independent status under LICENSE and THIRD_PARTY.md. The article uses claim-focused paraphrase and only very short inherited phrases. No complete third-party work is installed.
 
-Status: source-audited working article. Independent patristic, historical, theological, Latin-canonical, Eastern-canonical, spousal/family, safeguarding, and ecclesiastical review remain outstanding. Publication release authorization has not been granted; the release manifest must hold the work.
+Status: source-audited working article. Independent patristic, historical, theological, Latin-canonical, Eastern-canonical, spousal/family, safeguarding, rights, and ecclesiastical review remain outstanding. The installed PDF's exact snapshot has distribution authorization in the release manifest and dated rights record. That snapshot-specific operational decision is not independent rights or specialist review, ecclesiastical approval, a canonical opinion, or legal advice.

@@ -65,13 +65,13 @@ Access and currentness checks were completed 2026-07-15 unless noted. The source
 
 ## Copyright and publication status
 
-No full modern translation, commentary, code, or Church document is reproduced. Links are supplied for inspection; prose is project-created synthesis. The installed PDF may be released only after the repository's work-specific rights/review gate and required authorization are satisfied. Independent specialist and ecclesiastical review remain outstanding.
+No full modern translation, commentary, code, or Church document is reproduced. Links are supplied for inspection; prose is project-created synthesis. The release manifest and dated rights record separately authorize distribution of the exact installed PDF snapshot. That decision does not supply independent rights, canonical, specialist, or ecclesiastical review and does not make the study a canonical opinion or legal advice.
 
 ## Build and review record
 
-- Final installed artifact: `doc/gpt/articles/canon-law/clerical-celibacy-chastity-and-continence.pdf`; 31 pages; SHA-256 `5fdc37cc0e1ca1d78bf30d030412453ff963eef116b3bbfd6ae4b42b166f9d8d`.
+- Final installed artifact: `doc/gpt/articles/canon-law/clerical-celibacy-chastity-and-continence.pdf`; 31 pages; SHA-256 `28a261c3950dc7f5af6c73e5fe98dc2f08d74e463e6d425c5bbfde0159c253d5`.
 - The installed PDF is byte-identical to the reviewed build artifact.
 - Multi-pass LaTeX build completed without fatal errors, undefined references, overfull or underfull boxes, or LaTeX/package warnings. Structured generation metadata passed the repository checker.
 - `qpdf --check` found no syntax or stream-encoding errors. All listed fonts are embedded and carry Unicode mappings. Layout-preserving text extraction contained no replacement characters or unresolved-reference markers.
 - Every page was visually inspected, including both landscape appendix pages, continued-table headings, title metadata, page breaks, and the final rights page. A second independent visual pass checked the front and back halves and the final pagination repairs.
-- `make check-public-alpha` remained fail-closed. The changed law catalog is outside the approved site-source snapshot, and `CONTRIBUTING.md` has an independent existing snapshot mismatch. Neither approved hash was changed; the new work remains on `hold` with the unresolved `work-specific-rights-review` gate.
+- On 16 July 2026, `make check-public-alpha` validated this exact installed hash as a `release` snapshot. That snapshot authorization does not alter the article's recorded maturity and review limitations.

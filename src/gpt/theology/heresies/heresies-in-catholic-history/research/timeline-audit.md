@@ -3,7 +3,7 @@
 This record controls the event-based appendix in `sections/95-timeline.tex`. It is divided into two dossier-level ledgers so that every rendered row retains a reproducible source, event type, and qualification:
 
 - [`timeline-audit-ancient-medieval.md`](timeline-audit-ancient-medieval.md): apostolic period through Lateran V (1513);
-- [`timeline-audit-modern.md`](timeline-audit-modern.md): *Exsurge Domine* (1520) through the DDF's 13 May 2026 prospective SSPX warning, with currentness checked through 16 July 2026.
+- [`timeline-audit-modern.md`](timeline-audit-modern.md): *Exsurge Domine* (1520) through the SSPX consecrations of 1 July 2026 and the DDF decree and explanatory note of 2 July, with currentness checked through 16 July 2026.
 
 ## Audit rule
 
@@ -31,6 +31,7 @@ An asterisk in the rendered appendix marks an event whose controlling character 
 - Trent's sessions are identified by session and doctrinal object rather than compressed into a denominational condemnation.
 - Every post-Tridentine proposition list preserves an individual or collective censure as the act actually supplies it.
 - The 1973, 1984, 1994, 1999, and 2001 rows are later qualifications or agreements, not retroactive cancellations of historical acts.
+- The modern ledger and rendered appendix contain 65 rows and keep the 13 May 2026 DDF warning, 29 June papal letter, and 2 July decree/note responding to the completed 1 July act as three distinct responses.
 - Currentness is stated in the publication method and source audit rather than inserted as a fictitious response event in the chronology.
 
 The final page and source audits compare every rendered date and proper name against these ledgers. A timeline row without a ledger entry is a publication blocker.

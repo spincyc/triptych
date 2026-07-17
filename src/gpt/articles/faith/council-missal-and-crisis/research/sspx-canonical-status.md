@@ -1,6 +1,6 @@
 # SSPX Canonical Status and Traditional-Book Discipline
 
-Currentness checked 2026-07-13. This is a documentary research record, not advice about a person’s censure, sacramental status, or place of worship.
+Currentness checked 2026-07-16. This is a documentary research record, not advice about a person’s censure, sacramental status, or place of worship.
 
 ## Governing law
 
@@ -33,14 +33,14 @@ Currentness checked 2026-07-13. This is a documentary research record, not advic
 | 13 May 2026 | DDF warning | States announced episcopal ordinations lack mandate and would be a schismatic act. | Mere private opinion; it is a competent official warning. |
 | 29 Jun 2026 | Leo XIV letter to Davide Pagliarani | Direct papal plea and warning to desist; warns of illicit and sometimes invalid sacramental consequences. | Permission or ambiguity about papal will. |
 | 1 Jul 2026 | Galarreta and Fellay consecrate Schreiber, Goldade, Poinsinet de Sivry, and Hanappier | Act occurs without mandate and against express papal will. | Canonical normalization. |
-| 2 Jul 2026 | DDF decree and explanatory note | Declares six reserved excommunications; states “from now on” SSPX sacred ministers are in schism and subject to can. 1364 §1; adopts 1996 formal-adherence rule for laity; states SSPX Penance and assisted marriages invalid and all sacraments illicit; urges abstention and provides for return procedures. | Automatic claim that every lay visitor is excommunicated irrespective of formal adherence. |
+| 2 Jul 2026 | DDF decree and explanatory note | Under can. 1387, declares Alfonso de Galarreta and the four recipients subject to *latae sententiae* excommunication reserved to the Apostolic See and also applies can. 1364 §1 to de Galarreta; separately declares Bernard Fellay subject to *latae sententiae* excommunication under can. 1364 §1 for direct participation as co-consecrator and public adherence, without describing his penalty as reserved. The note states “from now on” that SSPX sacred ministers are in schism, are considered schismatics, and are subject to can. 1364 §1; it adopts the 1996 formal-adherence rule for laity, states SSPX Penance and assisted marriages invalid and all sacraments illicit, urges abstention, and provides for return procedures. | A declaration that Fellay’s penalty is reserved; an individual declaration that every SSPX minister is excommunicated; or an automatic claim that every lay visitor is excommunicated irrespective of formal adherence. |
 
 ## Current propositions used in publication
 
 | Proposition | Source | Qualification |
 | --- | --- | --- |
 | There was no completed SSPX “renormalization.” | Benedict 2009; absence of canonical erection; 2026 DDF note. | “Rapprochement” and limited sacramental normalization remain accurate descriptions of the prior period. |
-| SSPX ministers are now expressly considered schismatic and subject to excommunication under can. 1364 §1. | DDF explanatory note, 2 Jul 2026, no. 1. | Publication reports the competent act; it does not independently adjudicate a named cleric’s procedural defenses. |
+| SSPX ministers are now expressly in schism, considered schismatics, and subject to can. 1364 §1. | DDF explanatory note, 2 Jul 2026, no. 1. | “Subject to” is not rewritten as an individual declaration that every minister has been excommunicated; the decree separately declares the six named episcopal cases with the five-plus-one distinction recorded above. |
 | Penance administered and marriages assisted by SSPX ministers are now invalid according to the competent dicastery. | DDF explanatory note, no. 3. | This supersedes the article’s former possible endpoint under 2016–2017 faculties; return procedures may create case-specific changes later. |
 | Lay faithful are considered schismatic and excommunicated if they formally adhere under the 1996 conditions. | DDF note, no. 2, adopting 1996 note, no. 7. | Attendance, attraction, ignorance, family ties, or an isolated occasion is not automatically equated with formal adherence. |
 | The faithful are urged to abstain from SSPX celebrations and activities. | DDF note, final paragraph. | The article does not dilute this warning while explaining the formal-adherence distinction. |

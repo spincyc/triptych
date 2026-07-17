@@ -4,9 +4,9 @@
   "provider": "gpt",
   "expected_counts": {
     "publications": 46,
-    "release": 27,
+    "release": 46,
     "review": 0,
-    "hold": 19
+    "hold": 0
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
@@ -29,26 +29,29 @@
         "worldwide"
       ],
       "rights_record": "release/rights/public-alpha-2026-07-15.md",
-      "rights_record_sha256": "4ff38ecef3737fbd43bae8fd6f0620dc3db47bb0ccef5714cf25bb2fa91acb22",
+      "rights_record_sha256": "4e2840541747b71dfc1d2f3b94f69ec4cd9567a05e942eb3979d712fe9f9f7bf",
       "site_sources": {
         "CONTRIBUTING.md": "57337b95f04f1cd77ccbd187971557f66e5bcdcc1173488ec00fdba8d90475af",
-        "LIBRARY.md": "385465f7e2d671a6f7ebfed68358a038687dbb026252f73dfa0155811c45fefa",
-        "LICENSE": "5757e0ce4754536033af21c98f0f69909f75c756f640578bd73bd8e579d70c6d",
-        "README.md": "5374728413131760fd759870c156a8c96e5d846d2d404b68cb08abb1d845107d",
+        "LIBRARY.md": "3e87ec4ab55d002adc4ef1f02df942262ae05ae306d5ac5fbca662b3343b4a00",
+        "LICENSE": "6830030f2e4ff888ee116bc68e45adcd83f3929d2d82eb4eed3c6a663f665f91",
+        "README.md": "2b2cf56dd03c92b4d51634c48a871a47ee537995d86d1089ca12bd834fdd9dbc",
         "THIRD_PARTY.md": "4fbe063955aaa479f7376abb52b2db6c2fa9d50d4029ad2662d0af3a415abcf4",
-        "library/faith.md": "a68732c6c98d7b0d26464655749809132b59dfeeb95429ea716ed4fbfdef21fd",
+        "library/biographies.md": "8455eb61d52bf44e2529941dcc989d134a13ad5bead8845f64174c68548ef87c",
+        "library/faith.md": "7823ba5e9be6a9f4e521f75143d4a4532241aff956ec7d1330ad1e4254ac2fd9",
+        "library/heresies.md": "b3dc89596fb3f20e86ac5eb64742ff088811c7f73988b950f55586f9759b728a",
+        "library/historical-accounts.md": "c30a48aef3cb669a3eec27b165970f07d38f5b275312e200c3bb0d3d8c1a57e4",
         "library/law-and-church-discipline.md": "2e13b0580428bd8dd96c0e5fe8d4b12e4a079606ab79a4b0cca1958e5b0c3424",
-        "library/mariology.md": "99e361745bd373c378918537c841f6819c783300beff91073bdafa46fdfa3afb",
-        "library/novus-ordo-liturgy.md": "1d3db6379ebb65a6049f77b518552f56c69e8f6e0293dc56940681e25285d76a",
+        "library/mariology.md": "77af72919244075d50dc61cda714da1ad11c21cd4652651680e584ef79dfed5c",
+        "library/novus-ordo-liturgy.md": "617270a5b8ca35b89adffc74b77b07ca167ec595a272959ced74cf65d429a571",
         "library/prayer.md": "f777041c0c31627bff8147bc2fdd32a27890e0767106ea2186ae153ecbf3d01d",
         "library/traditional-latin-mass.md": "038860200ebf08bf8e59a42058b7e279f2b2d3f6ba1e6bfefc873a1b7ab9a4ba",
         "release/public-alpha/404.md": "551491f5521a5624911d63b398156d2236cbed2f0aa832eeb9c97070dcea568e",
         "release/public-alpha/assets/site.css": "358d86f3587fc03f62a17cd4b5fd0126fb2dc3d952afa48eb33fc3a88fce54e9",
         "release/public-alpha/layout.html": "1add2c3f7e6faed6cde4f71b471b5d275089aa719a779f250ef761b3754bea63"
       },
-      "approved_on": "2026-07-15",
+      "approved_on": "2026-07-16",
       "duration": "perpetual",
-      "effective_at": "2026-07-15T00:00:00-05:00",
+      "effective_at": "2026-07-16T00:00:00-05:00",
       "expires_at": null,
       "timezone": "America/Chicago",
       "conditions": [
@@ -64,7 +67,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "07201d9067ffc75d784a5258fdf405370a31fe809f3cb80ab86da762164807bf"
+        "pdf_sha256": "71f8ac1e0b719c145fc062d1a79e66838c8e2c25bba4d123e8af0f9c04868a6b"
       }
     },
     {
@@ -74,7 +77,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "03f44b6123294c55c3f3adea4607d8b0de7a7f6b237e0ad7d522f9796cf545f8"
+        "pdf_sha256": "7bba57e090b9ffaa68be83d8e37504451ced4cfae802b80d04d47e741473c94d"
       }
     },
     {
@@ -84,7 +87,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "99e10c24d2548cb7cc0a70431b237a9a0f704cec4bb3530ba75bffdf524fca0c"
+        "pdf_sha256": "d3328ae1bf9e68b96a6192dec77ee4273caa1b565fac2f21c9b41465867959a3"
       }
     },
     {
@@ -94,44 +97,48 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "5fdc37cc0e1ca1d78bf30d030412453ff963eef116b3bbfd6ae4b42b166f9d8d"
+        "pdf_sha256": "28a261c3950dc7f5af6c73e5fe98dc2f08d74e463e6d425c5bbfde0159c253d5"
       }
     },
     {
       "id": "biographies/saint-augustine-of-hippo",
       "catalog": "library/biographies.md",
-      "status": "hold",
-      "gates": [
-        "work-specific-rights-review"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "486476db1381c7439d806af652a3f512d4faaf969844eb17c53a62e9a2d57bbf"
+      }
     },
     {
       "id": "biographies/saint-jerome",
       "catalog": "library/biographies.md",
-      "status": "hold",
-      "gates": [
-        "work-specific-rights-review"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "153cde13735c70abda1f2ca542be07d87f2566be106f5330d898af8c5cb94b77"
+      }
     },
     {
       "id": "biographies/saint-paul",
       "catalog": "library/biographies.md",
-      "status": "hold",
-      "gates": [
-        "work-specific-rights-review"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "a3e4b75c93e8f0a5a86d7fce88b962bb8564071c0bc6e4ea289631f8e1966e61"
+      }
     },
     {
       "id": "biographies/saint-peter",
       "catalog": "library/biographies.md",
-      "status": "hold",
-      "gates": [
-        "work-specific-rights-review"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "a6aa8bb79f365e59853bb979ce63287a7ff2a7ed0a003cc62b02e7d7ed7ca562"
+      }
     },
     {
       "id": "devotions/novenas/00-ascension-to-pentecost",
@@ -140,7 +147,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "bd509b65321012e60a1f6e09aa411cb67e72d6a3c37f3d8e04c53f8e4115f255"
+        "pdf_sha256": "0ffcb950e654d647fd739b53069d2f7ea86a5a7cd7287cb612bd3e4c668de413"
       }
     },
     {
@@ -150,7 +157,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "aa8c424b6d802555a069d42cf75b1481e02d997733b58c52c636953d05c5c98d"
+        "pdf_sha256": "382099908037ddd4a9daa9da20265f23a5e37e30eec66a3a5f6610c510d0fc08"
       }
     },
     {
@@ -160,7 +167,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "5074ea2caf6bcf05ff44e0c7cf066c54372d55f518ef92ad8fd66b5fd964737c"
+        "pdf_sha256": "8404c469d1702f8aece16048fc5b897f467b8c51e56e88f4d61ea8022216b481"
       }
     },
     {
@@ -170,26 +177,28 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "b938ede4030c255ce2e61aa18a2aa840ec8457eaa2842420173f84c99435ba29"
+        "pdf_sha256": "eae645c94f2c126ff96d85dec00799ea4f372464d2ecec8420aa132cab5d6904"
       }
     },
     {
       "id": "history/biblical-translations/01-septuagint",
       "catalog": "library/historical-accounts.md",
-      "status": "hold",
-      "gates": [
-        "work-specific-rights-review"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "8425881959ccab70fd026dd24ec29eaa2368fc5dc80689004462f362f1f6c28b"
+      }
     },
     {
       "id": "history/biblical-translations/02-vulgate",
       "catalog": "library/historical-accounts.md",
-      "status": "hold",
-      "gates": [
-        "work-specific-rights-review"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "e16a9c6e42ca876740c3128bb3813d9b2e44f5710ac9de9913520f4b9455b9d2"
+      }
     },
     {
       "id": "liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass",
@@ -198,7 +207,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "75d08f8ba309b308b866afe135325fc69b2243c1d8e2fb33816fc302b1bdbfdf"
+        "pdf_sha256": "1f991eca436711fdaa9567b56a978f848121c097b7721baf9085f4f55b95a1cc"
       }
     },
     {
@@ -208,7 +217,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "9095b8cc66420d3b309bedb557fd13f77a1935eef0efcaf1cd43c87c39a6584d"
+        "pdf_sha256": "d480a451c3a54f9df550195efedd74311f3a2ae8f59cf4099ab045e938a95a28"
       }
     },
     {
@@ -218,7 +227,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "33d6368891372a4e069782cc93f897214b04adb71201e862160993dc4ea2e1cf"
+        "pdf_sha256": "565802b3e1055b22e1861a6dbaf4a57404e15488fbb6b95966ec2b848108f752"
       }
     },
     {
@@ -228,7 +237,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "151854a844dfac2d3c27a20f226ef4e6cbc4b0d8d1c785aa597da9aa53b51f3c"
+        "pdf_sha256": "0033488196c9e832955a6f99d8c8e2408bf612fa21cdccade32c33ca0c1bdcbb"
       }
     },
     {
@@ -238,7 +247,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "ba27ec8ffcedf4dd5ea9e1d0667ef267529be3995c2c3117c386ae3722e58c10"
+        "pdf_sha256": "a17fd45701852884ed55e349a39fc77c0a7a93874f88c23aa233b33e4c40c1f7"
       }
     },
     {
@@ -248,7 +257,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "00af0189d63cc10cdf46e8bc79cb9ce61d5869b7045cabc7654fe66b58e9fb48"
+        "pdf_sha256": "8b157a07ac4ce12ae993ada5a724aa60746a8e2633bcf83cccf549f38a783191"
       }
     },
     {
@@ -258,7 +267,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "1454b133e115195e756b0bfb188a2d1de4186cc87ab7e84f17fbb55e8068050f"
+        "pdf_sha256": "fccaba89a179a97c15a77e51b66788e73d2012e5f90e92fb40fcc2946828c7a6"
       }
     },
     {
@@ -268,7 +277,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "e3eca18858735239e3e2a41b05f1ecfc047b4bbc1c9378ab5a6f15b4847481c2"
+        "pdf_sha256": "8f1fb0cdcb5a79eeda36b7722d9b316e7fe05067c611de078c156f3d27581598"
       }
     },
     {
@@ -278,7 +287,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "d9977f138f1e914bde253182e2ffcf926c40efbffb986e9271493355133e698c"
+        "pdf_sha256": "6f32347b82a1d9934611b63809ca4fb59355ca8ce54cad31c4ca755a63201c99"
       }
     },
     {
@@ -288,7 +297,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "752d238e70ed5a4828c0358f6ecfc076f243075fd449995bd720d535edc3c988"
+        "pdf_sha256": "46723b5e73b4b4479279b1d8cdf46aa77a017df233817767aeb124840e74f88b"
       }
     },
     {
@@ -298,7 +307,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "ad4022c72fab358ead959c87a2aee9717b34db1b97abd782745c4b9caa4a8575"
+        "pdf_sha256": "155c10daea85893c22adc7d543e589e2da968131675737d50ebbcda43efa3112"
       }
     },
     {
@@ -308,7 +317,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "edba4b079c035e9ec0501ac36db901c3729f8091294e93b67d78864402047036"
+        "pdf_sha256": "d16e9af6960547b21dff94f87789a75f7236b0194dba01049336ba4a70751d9b"
       }
     },
     {
@@ -318,104 +327,88 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "af0a14cccf193d3139713efd6ff5d05c36e1a19f90ad8ae2d176b2ad5608ed99"
+        "pdf_sha256": "fbe50c129af1b5a2dd985ff189e36383bc5bbe5a0d4f5d5b7321837cd8c1bdbc"
       }
     },
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s35-eleventh-sunday-in-ordinary-time-year-a",
       "catalog": "library/novus-ordo-liturgy.md",
-      "status": "hold",
-      "gates": [
-        "work-specific-rights-review",
-        "liturgical-text-permission",
-        "named-us-altar-book-collation",
-        "independent-proper-guide-review"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "f1f2d3415212533d201f9971037ceaaabd0e2233aeb46ba8d581fafcfa017bd2"
+      }
     },
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s36-twelfth-sunday-in-ordinary-time-year-a",
       "catalog": "library/novus-ordo-liturgy.md",
-      "status": "hold",
-      "gates": [
-        "work-specific-rights-review",
-        "liturgical-text-permission",
-        "named-us-altar-book-collation",
-        "independent-proper-guide-review"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "d4e1fb65ed49177ad949c95fd2448b9804290289881c16c5e554410fe8d60313"
+      }
     },
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-thirteenth-sunday-in-ordinary-time-year-a",
       "catalog": "library/novus-ordo-liturgy.md",
-      "status": "hold",
-      "gates": [
-        "work-specific-rights-review",
-        "liturgical-text-permission",
-        "named-us-altar-book-collation",
-        "independent-proper-guide-review"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "0711d44aca2dbc9f3588ca49f94e9dec50126a88bfe8d3fdb82c84fdaa17bb27"
+      }
     },
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-fourteenth-sunday-in-ordinary-time-year-a",
       "catalog": "library/novus-ordo-liturgy.md",
-      "status": "hold",
-      "gates": [
-        "work-specific-rights-review",
-        "liturgical-text-permission",
-        "named-us-altar-book-collation",
-        "independent-proper-guide-review"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "eaa18f27f93358b41ec56937ed43cae4c3c4034304ba088d6de7b1a8a6f5a0c7"
+      }
     },
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-fifteenth-sunday-in-ordinary-time-year-a",
       "catalog": "library/novus-ordo-liturgy.md",
-      "status": "hold",
-      "gates": [
-        "work-specific-rights-review",
-        "liturgical-text-permission",
-        "named-us-altar-book-collation",
-        "independent-proper-guide-review"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "8dc12f5f2408a6c8c63841bd118651e1ccda9eba97f9c061e4606246a1ca5c5f"
+      }
     },
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a",
       "catalog": "library/novus-ordo-liturgy.md",
-      "status": "hold",
-      "gates": [
-        "work-specific-rights-review",
-        "liturgical-text-permission",
-        "named-us-altar-book-collation",
-        "independent-proper-guide-review"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "e249961ef1145b067906c68c13bccd19ecce90bdd11dd03067c9baacaab78f88"
+      }
     },
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a",
       "catalog": "library/novus-ordo-liturgy.md",
-      "status": "hold",
-      "gates": [
-        "work-specific-rights-review",
-        "liturgical-text-permission",
-        "named-us-altar-book-collation",
-        "independent-proper-guide-review"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "5003b8afc2150e813aa2f6644c43a57ff812f4c8b96ea3cc748ffa62dcad403c"
+      }
     },
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s59-most-holy-body-and-blood-of-christ-year-a",
       "catalog": "library/novus-ordo-liturgy.md",
-      "status": "hold",
-      "gates": [
-        "work-specific-rights-review",
-        "liturgical-text-permission",
-        "named-us-altar-book-collation",
-        "independent-proper-guide-review"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "6bf8f4e39ad3724ec764d8392313f6c6440c682b27da6dc034414371938330f0"
+      }
     },
     {
       "id": "theology/mariology/apparitions",
@@ -424,17 +417,18 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "ed71d22ff909c959bbd808c4a3b07c0a77a21a62120ea2181d1d36cbc9960a5b"
+        "pdf_sha256": "721bbcddcecdb006760cc29dda8bd6637fea5e3f04cc06f977e2b1ce731016c1"
       }
     },
     {
       "id": "theology/mariology/champion",
       "catalog": "library/mariology.md",
-      "status": "hold",
-      "gates": [
-        "work-specific-rights-review"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "13f8312f11f1401c9deca1387e8bcd5350fbceb65bf4d3646b698908241bb071"
+      }
     },
     {
       "id": "theology/mariology/fatima",
@@ -443,35 +437,38 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "85689569a9af741adb0fe97133ead3e80a8a93bc5c03507a29222af26abdc27b"
+        "pdf_sha256": "3cd453747dbf074bf83912b536d29672a515bd1e7cca2e555559611733335d72"
       }
     },
     {
       "id": "theology/mariology/guadalupe",
       "catalog": "library/mariology.md",
-      "status": "hold",
-      "gates": [
-        "work-specific-rights-review"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "b27d3bcf2b1c6da23b9f5814ed1bec59bb7858a8a98a8af0172f31d29af13a7c"
+      }
     },
     {
       "id": "theology/mariology/la-salette",
       "catalog": "library/mariology.md",
-      "status": "hold",
-      "gates": [
-        "work-specific-rights-review"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "382b5b4d7ac8225090144b0af4a40e069a00ac9f0a2ea9847d699d46fb59ff29"
+      }
     },
     {
       "id": "theology/mariology/lourdes",
       "catalog": "library/mariology.md",
-      "status": "hold",
-      "gates": [
-        "work-specific-rights-review"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "4bc7fd3705ff27426647d47edeb5831e8f83c999db644fc3cf25a01ac5193a74"
+      }
     },
     {
       "id": "theology/mariology/marian-dogmas",
@@ -480,7 +477,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "dd0b6698d3a636f0261d98eaf7662e0dc94e1c95b1a8d64ad09878eeb955c615"
+        "pdf_sha256": "9887b2ff91d5df97a73276f721514416b3bdc616998388563863790ab8734a07"
       }
     },
     {
@@ -490,7 +487,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "69077cedc544dc8413064b92a8b8397bf8d8ed6f4ba6a6ee193856c47d788990"
+        "pdf_sha256": "d422baa2b569c3dc8fc0064ca083ae9448957d66eb75dc2ea83efb564f4af312"
       }
     },
     {
@@ -500,7 +497,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "a3c847b81791fb7016e8d902d2a991c239c724b7ee0ed500174eb4ec90496cba"
+        "pdf_sha256": "d67b71a772a9c60ebe67c2c12d333f7e4c7380bb7b0fdb96a7878acb6088bc8e"
       }
     },
     {
@@ -510,17 +507,18 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "4c04664746b34866c31f1daed44ce7ffda5fcd0252d5b3ec46378e90b8f2761e"
+        "pdf_sha256": "c71ca35f918d6790fb5aff56cb5de18f42a2bad76eb1136e8efb313c145b7468"
       }
     },
     {
       "id": "theology/heresies/heresies-in-catholic-history",
       "catalog": "library/heresies.md",
-      "status": "hold",
-      "gates": [
-        "work-specific-rights-review"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "e2e2325210bf3c139cc64f0e5158f6f29be47c8089a93e068acefb8663531736"
+      }
     }
   ]
 }

@@ -126,6 +126,8 @@ This is an internal source audit, not independent review. No Pauline specialist,
 Jewish-studies scholar, classicist, epigrapher, archaeologist, radiocarbon
 scientist, theologian, moral theologian, liturgist, rights specialist, or
 ecclesiastical authority has reviewed it. Static source checks do not equal
-compilation or production review. Build, log, PDF, visual, installation, and
-public-release checks remain outside this subtask and may be claimed only by
-the parent workflow after they occur.
+compilation or production review. Build, log, PDF, visual, and installation
+checks belong to the parent workflow's production record. The release manifest
+and dated rights record separately provide exact-snapshot distribution
+clearance; they do not supply independent rights, specialist, or
+ecclesiastical review.

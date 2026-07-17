@@ -10,7 +10,7 @@ This record supports `src/gpt/articles/faith/council-missal-and-crisis/main.tex`
 - **Canonical module:** the SSPX and traditional-community section follows the mixed-article canon-law rules in `guidance/articles.md`, applying the 1983 Latin Code as revised and official Roman acts through the as-of date.
 - **Question:** How are Vatican I, Vatican II, the postconciliar liturgical reform culminating in Paul VI's Roman Missal, the severe contraction of religious and sacramental life in much of the West, the doctrinal attitudes of Catholic laity, and the traditionalist rupture historically and causally related—and where does the evidence require them to remain distinct?
 - **Intended reader:** a serious Catholic lay reader, cleric, catechist, student, or researcher seeking a doctrinally faithful account that neither denies the crisis nor turns chronology into a single-cause indictment.
-- **As-of date:** 2026-07-13. The date is material because the canonical position of the Priestly Fraternity of Saint Pius X changed after episcopal consecrations without papal mandate on 1 July 2026 and the DDF acts of 2 July 2026.
+- **As-of date:** 2026-07-16. The date is material because the canonical position of the Priestly Fraternity of Saint Pius X changed after episcopal consecrations without papal mandate on 1 July 2026 and the DDF acts of 2 July 2026.
 
 ## Governing thesis
 
@@ -85,6 +85,6 @@ The publication links full official texts and gives close paraphrase, short oper
 ## Review state
 
 - Completed before first build: profile and mixed-module routing; source hierarchy; conciliar authority matrix; liturgical-edition boundary; canonical as-of check; demographic and survey inventory; causal-claim discipline; source and quotation audit.
-- Completed before installation on 13 July 2026: structured metadata validation; two-pass build; fatal-error, reference, overflow, underflow, and layout-warning scan; PDF metadata and structure checks; embedded-font and Unicode-mapping check; extracted-text review; `qpdf` syntax and stream validation; and visual inspection of every page of the settled 51-page PDF.
+- Completed for the current installation on 16 July 2026: the signed DDF decree and explanatory note were re-audited; the canon-law allocation and currentness records were corrected; structured metadata validation and a settled build passed; fatal-error, reference, overflow, underflow, and layout-warning scans were clean; PDF metadata, structure, embedded fonts, Unicode mappings, extracted text, and `qpdf` syntax passed; and every page of the settled 52-page PDF was visually inspected. The installed PDF is byte-identical to the reviewed build, SHA-256 `71f8ac1e0b719c145fc062d1a79e66838c8e2c25bba4d123e8af0f9c04868a6b`.
 - Outstanding after installation: independent specialist review in Vatican I and Vatican II history, dogmatic theology, liturgical history, sociology of religion, statistics, and canon law; ecclesiastical approval.
 - Publication language must remain **source-audited working article**, not “approved,” “peer reviewed,” or “canonically reviewed.”
