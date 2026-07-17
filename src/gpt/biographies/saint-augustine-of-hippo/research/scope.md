@@ -164,7 +164,12 @@ No copyrighted corpus, scan, or substantial modern quotation is vendored.
 - current official confirmation of the Pavia shrine claim if retained as a
   present-tense statement;
 - independent rights review; and
-- public-release authorization and ecclesiastical approval.
+- ecclesiastical approval.
+
+The installed PDF's exact snapshot has distribution clearance in the release
+manifest and its dated rights record. That snapshot-specific operational
+decision does not complete any independent rights or specialist review and is
+not ecclesiastical approval.
 
 The completed production checks are internal and do not imply independent
 historical, theological, rights, or ecclesiastical review.

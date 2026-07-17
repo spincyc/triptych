@@ -66,7 +66,7 @@ Pseudo-Tertullian's *Adversus omnes haereses* and Theodoret's *Haereticarum fabu
 | `HC.SRC.CANON` | Identified medieval canonical collections and inquisitorial records | Reception, procedure, and local classifications | Selective records used by the dossiers are mapped; no exhaustive trial census is claimed. |
 | `HC.SRC.DH45` | Denzinger–Hünermann, 45th ed. | Finding index and standard paragraph cross-reference | Used only as a locator, never as the promulgating authority or an exhaustive register. |
 | `HC.SRC.ASS-AAS` | *Acta Sanctae Sedis* and *Acta Apostolicae Sedis* | Official publication record from 1865 onward | The named acts used by the modern dossiers are mapped; no complete OCR sweep is claimed. |
-| `HC.SRC.DDF` | Selected Holy Office/CDF/DDF documents through 2026-07-16 | Modern act genre and censure boundary | The documents represented in §80 are mapped; the disclosed exclusions deny an exhaustive notification census. |
+| `HC.SRC.DDF` | Selected Holy Office/CDF/DDF documents through 2026-07-16 | Modern act genre and censure boundary | The documents represented in §80 are mapped, including the distinct SSPX response sequence of the 13 May warning, 29 June papal letter, and 2 July signed decree and note responding to the completed 1 July act; the disclosed exclusions deny an exhaustive notification census. |
 | `HC.SRC.DIALOGUE` | Official common declarations and agreed ecumenical texts used in the prose | Later qualification of inherited labels | The Christological and Reformation aftermath texts used by the survey are mapped. |
 
 ## Normalized dossier-head ledger
@@ -516,7 +516,7 @@ The alias key accounts for the words but does not assert that every source used 
 | `HC.X.SCHOOL.PROBABILISM` | Probabilism as such | `EXCLUDE` | Permitted/disputed Catholic moral schools may not be converted into heresies. |
 | `HC.X.SCHOOL.NOUVELLE-THEOLOGIE` | *Nouvelle théologie* as a blanket label | `EXCLUDE` | No single stable condemned proposition or universal named-heresy act. |
 | `HC.X.POLEMIC.NEO-MODERNISM` | “Neo-Modernism” used generically | `EXCLUDE` | Unbounded polemical label; only exact propositions and acts qualify. |
-| `HC.X.CURRENT.SSPX` | SSPX canonical rupture as a named heresy | `EXCLUDE` | Present canonical/ecclesial dispute is not reduced to one historical heresy dossier. |
+| `HC.X.CURRENT.SSPX` | SSPX canonical rupture as a named heresy | `EXCLUDE` | The completed 1 July 2026 act and the 2 July five-plus-one penalty allocation, minister-status, lay-adherence, and sacramental determinations remain canonical responses and are not reduced to one proposition-level named heresy. |
 | `HC.X.CURRENT.SEDEVACANTISM` | Sedevacantism as one universally adjudicated named heresy | `EXCLUDE` | Heterogeneous claims; exact propositions may be compared only with competent acts. |
 | `HC.X.CURRENT.LIVING-PERSONS` | Unadjudicated living persons | `EXCLUDE` | The work does not infer obstinacy, crime, internal culpability, or salvation. |
 | `HC.X.LOGIC.UNATTESTED-NEGATIONS` | Every logically possible denial of every dogma | `EXCLUDE` | Census concerns historically attested public proposition complexes and responses, not an infinite logical complement. |
@@ -540,7 +540,7 @@ These prose dossiers explain boundaries but do not add normalized heresy counts.
 | §70, `dossier:de-auxiliis` | `HC.C.POST.DE-AUXILIIS` — `CONTEXT` | The disputed Catholic schools remained permitted. |
 | §80, `dossier:atheistic-communism-boundary` | `HC.X.IDEOLOGY.COMMUNISM` — `EXCLUDE` | A condemned political ideology is not thereby a Christian heresy school. |
 | §80, `dossier:kung-judgment`; `dossier:modern-notifications` | `HC.C.MOD.DDF-NOTIFICATIONS` — `CONTEXT` | A teaching authorization or notification must retain its own genre and findings. |
-| §80, `dossier:sspx-sedevacant-boundary` | `HC.X.CURRENT.SSPX` and `HC.X.CURRENT.SEDEVACANTISM` — `EXCLUDE` | Canonical rupture and heterogeneous current claims are not converted into one adjudicated named heresy. |
+| §80, `dossier:sspx-sedevacant-boundary` | `HC.X.CURRENT.SSPX` and `HC.X.CURRENT.SEDEVACANTISM` — `EXCLUDE` | Current competent status acts and heterogeneous claims are not converted into one adjudicated named heresy. |
 | §80, `dossier:neo-gnostic-pelagian-analogy` | `HC.C.MOD.NEO-GNOSTIC-PELAGIAN` — `CONTEXT` | Contemporary analogy is not historical identity or descent. |
 
 The remaining modern live dossiers `dossier:situation-ethics`, `dossier:womens-ordination`, and `dossier:religious-pluralism` are proposition-level normalized heads and therefore appear in the `HC.D.MOD` completion crosswalk rather than in this contextual table.

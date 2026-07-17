@@ -40,6 +40,7 @@ No private compilation is treated as the promulgating authority. Denzinger–Hü
 | Post-Tridentine lists | Baius, Jansenist texts, Molinos, Fénelon, Quesnel, Pistoia, and related acts require proposition-specific or explicitly collective grades. | *Ex omnibus afflictionibus*; *In eminenti*; *Cum occasione*; *Ad sanctam*; *Caelestis Pastor*; *Cum alias*; *Unigenitus*; *Auctorem fidei*. | Formal Roman acts. | No mixed list is normalized into “all heretical”; submissions and fact/right disputes are recorded. |
 | Modern systems | Natural reason and supernatural revelation, stable dogmatic meaning, and Christ's unique mediation are defended without condemning science, historical study, liberty from coercion, or legitimate development as such. | *Mirari vos*; corrective subscriptions; *Quanta cura*/*Syllabus*; Vatican I; *Testem benevolentiae*; *Lamentabili*/*Pascendi*; *Humani generis*; Vatican II; CDF/DDF documents. | Official papal, conciliar, and Roman texts. | Original genre and later positive teaching control; “Modernism” and “Americanism” are not loose epithets. |
 | Present descendants | Original-separation guilt is not imputed to descendants, and modern agreements qualify inherited Christological and Reformation labels. | *Unitatis redintegratio* 3–4, 11; Catholic–Coptic 1973; Catholic–Syriac 1984; Catholic–Assyrian 1994; JDDJ 1999 and annex. | Official conciliar and bilateral texts; checked 2026-07-16. | Agreements neither repeal councils nor pretend all remaining differences are resolved. |
+| Current SSPX boundary | The 1 July 2026 episcopal consecrations and 2 July DDF acts changed the controlling canonical endpoint without creating one named heresy. | DDF warning, 13 May 2026; Leo XIV, letter, 29 June 2026; signed DDF decree and explanatory note, 2 July 2026; Vatican News report of the 1 July event; CIC cann. 751, 1364 §1, 1387; 1996 legislative explanatory note. | Official current papal, DDF, and canonical sources; checked 2026-07-16. | The decree's five reserved canon 1387 cases and Fellay's separate canon 1364 §1 case, together with the note's minister, formal-adherence, and sacramental boundaries, are stated on the acts' terms; no six-reserved formulation or automatic judgment of every minister, lay visitor, or disputed thesis is inferred. |
 | Synthesis | Seven recurring doctrinal fault lines describe analogies, not undocumented genealogy. | Cross-dossier comparison controlled by the acts above. | Project-created source-grounded synthesis. | Explicitly labeled recurrence/analogy; no secret lineage claim. |
 
 ## High-risk censure and attribution checks
@@ -98,12 +99,13 @@ The following traps received explicit controls in the narrative, inventory, and 
 
 Checked on 2026-07-16:
 
-- official Holy See current 1983 Code pages for canons 749–755 and the full Code index;
+- official Holy See current 1983 Code pages for canons 751, 1364 §1, and 1387, together with canons 749–755 and the full Code index;
 - official DDF document index through that date for any materially superseding doctrinal act;
 - official Vatican II texts, especially *Unitatis redintegratio*, *Dignitatis humanae*, and *Dei Verbum*;
 - official Catholic–Coptic, Catholic–Syriac, and Catholic–Assyrian common declarations;
 - official 1999 justification documents and their continuing qualification of historic condemnations; and
-- the 2001 CDF Rosmini note, representative CDF/DDF notifications used to explain modern text-level censure, and the prospective DDF statement of 13 May 2026 concerning announced SSPX episcopal ordinations.
+- the 2001 CDF Rosmini note and representative CDF/DDF notifications used to explain modern text-level censure; and
+- the 13 May 2026 DDF warning, Leo XIV's 29 June letter, the completed 1 July SSPX consecrations, and the signed 2 July DDF decree and explanatory note, using the direct official decree and note for penalty allocation and legal consequences and Vatican News only for the publicly reported event.
 
 No silence in the index is treated as proof that a historical judgment is “still active” as a penal sentence. The exact historical act and any identified later qualification are reported separately.
 
@@ -116,7 +118,7 @@ The dossier headings, corpus keys, timeline events, and reader-facing census are
 - no main text calls all items in a mixed list heretical;
 - no current communion is labeled by a disavowed historic formula;
 - the source and reference records identify the same acts and dates; and
-- the catalog's maturity and release-hold statements agree with the installed artifact and manifest.
+- the catalog's maturity and exact-snapshot distribution statement agree with the installed artifact and manifest.
 
 Independent specialist review remains outstanding in all disciplines and languages listed in the research scope.
 
@@ -127,4 +129,4 @@ Independent specialist review remains outstanding in all disciplines and languag
 - `qpdf --check` reported no syntax or stream-encoding error. The PDF is unencrypted, has no JavaScript or embedded files, and all reported fonts are embedded, subsetted, and Unicode-mapped.
 - Layout-preserving text extraction found no placeholder, unfinished-state language, literal TeX markup, or undefined-reference text.
 - Every one of the 82 physical pages was rasterized and visually inspected, with the dense timeline and census pages checked both in contact sheets and at individual-page scale. No clipped text, collision, accidental blank page, broken table continuation, or illegible key was found; the final reuse-and-rights page is intentionally sparse.
-- The reviewed PDF was installed with the repository target at `doc/gpt/theology/heresies/heresies-in-catholic-history.pdf`, and the installed and build artifacts compared byte-for-byte identical.
+- The reviewed PDF was installed with the repository target at `doc/gpt/theology/heresies/heresies-in-catholic-history.pdf`, and the installed and build artifacts compared byte-for-byte identical, SHA-256 `e2e2325210bf3c139cc64f0e5158f6f29be47c8089a93e068acefb8663531736`.

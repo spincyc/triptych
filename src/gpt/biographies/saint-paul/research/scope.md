@@ -330,9 +330,14 @@ Not completed or claimed:
 - full collation of modern critical monographs, critical Greek editions,
   manuscripts, the Gallio inscription, Roman calendar witnesses, martyr acts,
   or sarcophagus laboratory records;
-- public-release authorization and approval.
+- independent rights review or ecclesiastical approval.
+
+The installed PDF's exact snapshot has distribution clearance in the release
+manifest and its dated rights record. That snapshot-specific operational
+decision does not complete any independent rights or specialist review and is
+not ecclesiastical approval.
 
 The completed checks are internal source and production verification. The work
 must not be described as peer reviewed, independently source reviewed,
-archaeologically authenticated, scientifically authenticated, rights cleared
-for public release, or approved by ecclesiastical authority.
+archaeologically authenticated, scientifically authenticated, independently
+rights reviewed, or approved by ecclesiastical authority.

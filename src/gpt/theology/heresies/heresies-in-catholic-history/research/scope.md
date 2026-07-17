@@ -11,7 +11,7 @@ This record supports `src/gpt/theology/heresies/heresies-in-catholic-history/mai
 - **Thesis:** the history of heresy is best understood as the Church's repeated clarification of one received faith in the Trinity, the Incarnation, creation, grace, sacrament, Church, and last things. Condemned propositions must be stated specifically, but propositions, persons, movements, penalties, and descendants must never be collapsed into one verdict.
 - **Historical range:** the apostolic period through 16 July 2026. Apostolic texts supply doctrinal boundaries rather than anachronistic trials under later canon law.
 - **Geography and jurisdiction:** the undivided early Church; Greek, Latin, Syriac, Coptic, Armenian, and related Christian settings where the evidence bears on later Catholic reception; medieval Latin Christendom; and the Roman Catholic Church's post-medieval doctrinal acts. The survey is global in ecclesial scope but does not claim equal documentary survival from every region.
-- **Currentness:** official current canon law, current DDF documents material to the conclusion, and cited modern ecumenical qualifications were checked through 2026-07-16. Stable historical acts are identified by their own date rather than assigned artificial current legal force.
+- **Currentness:** official current canon law, current DDF documents material to the conclusion, and cited modern ecumenical qualifications were checked through 2026-07-16. The current SSPX endpoint keeps three response acts distinct: the 13 May DDF prospective warning, Leo XIV's 29 June prospective letter, and the 2 July signed DDF decree and explanatory note responding to the completed 1 July act. The decree's five reserved canon 1387 cases and Fellay's separate canon 1364 §1 case are not collapsed, and the note's statement that SSPX ministers are subject to canon 1364 §1 is not rewritten as an individual declaration against every minister. Stable historical acts are identified by their own date rather than assigned artificial current legal force.
 
 ## Meaning of comprehensive
 
@@ -57,7 +57,7 @@ The census accounts for but does not flatten into heresy:
 - the 1277 Paris syllabus, Constance proposition lists, *Exsurge Domine*, *Unigenitus*, or *Auctorem fidei* as though every listed sentence received the single censure “heretical”;
 - disputed Catholic schools left open by the Magisterium, including Thomist–Molinist disputes after the *de auxiliis* congregations;
 - Freemasonry, Communism, Nazism, secular ideologies, and political movements as Christian heresies, even where Catholic authorities condemned their principles;
-- the SSPX rupture, sedevacantist claims, or another present canonical controversy absent the proposition-level and authority threshold required by this census;
+- the SSPX canonical rupture and current status acts, sedevacantist claims, or another present canonical controversy as though any were one adjudicated named heresy absent the proposition-level and authority threshold required by this census;
 - every twentieth-century theological investigation or notification as a new named heresy; representative cases explain the relevant distinction; and
 - a judgment of internal culpability, present canonical crime, or salvation concerning any named person.
 

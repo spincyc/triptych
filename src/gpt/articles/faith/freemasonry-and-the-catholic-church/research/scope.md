@@ -101,6 +101,6 @@ The article does not reproduce full modern Holy See, Masonic, prayer-book, or sc
 ## Review state
 
 - Completed before first build: article-profile review; current-law scope definition; primary Roman-source verification; representative Masonic-constitution verification; professional-history source selection; internal source and attribution audit; consequential negative-result record.
-- Completed before installation: structured generation-metadata validation; settled build; clean fatal-error, reference, overflow, and layout-warning scan; extracted-text, embedded-font, and PDF-structure checks; and visual inspection of all 48 pages. The installed PDF is byte-identical to the reviewed build, SHA-256 `03f44b6123294c55c3f3adea4607d8b0de7a7f6b237e0ad7d522f9796cf545f8`.
+- Completed before installation: structured generation-metadata validation; settled build; clean fatal-error, reference, overflow, and layout-warning scan; extracted-text, embedded-font, and PDF-structure checks; and visual inspection of all 48 pages. The installed PDF is byte-identical to the reviewed build, SHA-256 `7bba57e090b9ffaa68be83d8e37504451ced4cfae802b80d04d47e741473c94d`.
 - Outstanding after installation: independent specialist review in Masonic history; independent theological and canonical review; review by persons with first-hand knowledge of multiple Masonic jurisdictions; ecclesiastical approval.
 - Publication language must remain “source-audited working article,” not “canonically reviewed,” “theologically reviewed,” or “approved.”

@@ -585,11 +585,27 @@ Keep a guide-local source audit beside each guide and link it to any canonical s
 
 A private copy used lawfully for collation is not automatically a distributable repository source. When the full wording cannot be tracked, record the edition and locator plus a verification note; never reconstruct a protected translation from memory or mix it with another edition. Biblical copyright and liturgical-text copyright must be evaluated separately.
 
+## Exact-snapshot release and profile-final status
+
+The release manifest and this profile's completion gate answer different
+questions.  `release` authorizes distribution of one exact installed PDF hash;
+it does not certify that the guide is profile-final or that every source-audit
+layer is complete.  An express exact-snapshot approval may clear the project's
+rights and liturgical-distribution gates while accepting the named
+U.S.-altar-book collation and independent specialist review as disclosed
+limitations.  In that case the guide remains a working exposition,
+source-audited only at the layers its records identify, and not
+publication-final under this profile.  Keep the missing collation and review
+visible in the guide, catalog, and research records, and do not claim an
+imprimatur, ecclesiastical approval, specialist review, or collation that did
+not occur.  Any changed or rebuilt PDF requires a renewed exact-snapshot
+approval even when its editorial maturity is otherwise unchanged.
+
 ## Completion gate
 
 Do not describe an edition-locale's Proper-of-Time Sunday collection as complete until all 184 baseline keys are either published or carry a sourced `not-present-in-edition` disposition authorized by this profile, no cycle-split conflict remains unresolved, all three conditional Scrutiny keys have been evaluated, the six weekday fallback keys have been evaluated, and the applicable replacement and local-overlay matrix has been resolved. A celebration's absence in one civil year is an occurrence result, not a reason to omit its permanent production target.
 
-A postconciliar proper guide is ready to publish only when:
+A postconciliar proper guide reaches profile-final status only when:
 
 - when the guide belongs to `PC-S` or `PC-R`, its permanent formula key, derived slug, source ownership, and path conform to the registries above, and an occurrence audit resolves whether that celebration governs the selected date; a ritual, local, or other proper outside those series follows its own defined inventory and may not use the reserved `PC-W` namespace;
 - the registry has no duplicate key or slug, every target references exactly one canonical Missal or Ritual Mass owner, and the selected edition covers A/B/C exactly once for every appointed form without an `ABC` overlap;

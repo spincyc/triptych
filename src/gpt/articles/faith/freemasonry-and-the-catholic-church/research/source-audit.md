@@ -103,5 +103,5 @@ The full witness-by-witness record is in prayer-provenance.md.
 - Papal and dicasterial texts are paraphrased by exact act and locus; full official witnesses are linked.
 - Masonic sources are always named by body; UGLE claims are not silently generalized to GODF or vice versa.
 - Historical effects are attributed to the named scholar or archive and bounded by the mechanism supported.
-- Internal source and doctrinal/canonical consistency review was completed before build; the revised 48-page publication then passed metadata, log, extracted-text, embedded-font, PDF-structure, and page-by-page visual review. Its installed PDF is byte-identical to the reviewed build, SHA-256 `03f44b6123294c55c3f3adea4607d8b0de7a7f6b237e0ad7d522f9796cf545f8`.
+- Internal source and doctrinal/canonical consistency review was completed before build; the revised 48-page publication then passed metadata, log, extracted-text, embedded-font, PDF-structure, and page-by-page visual review. Its installed PDF is byte-identical to the reviewed build, SHA-256 `7bba57e090b9ffaa68be83d8e37504451ced4cfae802b80d04d47e741473c94d`.
 - Independent historical, theological, canonical, and ecclesiastical review remains outstanding.

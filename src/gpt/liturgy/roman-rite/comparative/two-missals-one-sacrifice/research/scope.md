@@ -71,4 +71,4 @@ Controlling sources are typical liturgical books, ecumenical councils, papal con
 
 Independent review remains outstanding in liturgical history, sacramental theology, canon law, and the corporate-status census. The publication must remain labeled a **source-audited working paper**.
 
-Production review completed on 2026-07-14: the current 44-page PDF passed a settled build, clean-log, metadata, extraction, embedded-font, PDF-structure, and every-page visual checks. The installed PDF is byte-identical to the reviewed build, SHA-256 `edba4b079c035e9ec0501ac36db901c3729f8091294e93b67d78864402047036`.
+Production review completed on 2026-07-14: the current 44-page PDF passed a settled build, clean-log, metadata, extraction, embedded-font, PDF-structure, and every-page visual checks. The installed PDF is byte-identical to the reviewed build, SHA-256 `d16e9af6960547b21dff94f87789a75f7236b0194dba01049336ba4a70751d9b`.

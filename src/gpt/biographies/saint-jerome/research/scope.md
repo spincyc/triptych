@@ -222,12 +222,12 @@ vendored.
 - translation and rights bases recorded for every direct ancient quotation;
   and
 - repository production verification completed on 16 July 2026: two settled
-  `pdflatex` passes produced a 22-page PDF; the final log has no fatal,
+  `pdflatex` passes produced a 21-page PDF; the final log has no fatal,
   undefined-reference, overflow, underfull, or other layout warning; PDF title,
   subject, extracted text, structure, and fonts were checked; all fonts are
   embedded and subset; every page was visually inspected at ordinary print
   size; and the installed PDF was verified byte-identical to the reviewed
-  build.
+  build, SHA-256 `153cde13735c70abda1f2ca542be07d87f2566be106f5330d898af8c5cb94b77`.
 
 ## Outstanding review
 
@@ -244,7 +244,12 @@ vendored.
   Jerome's language about Jews is published;
 - archaeological, art-historical, cult, shrine, relic, and patronage review;
 - independent rights review; and
-- public-release authorization and ecclesiastical approval.
+- ecclesiastical approval.
+
+The installed PDF's exact snapshot has distribution clearance in the release
+manifest and its dated rights record. That snapshot-specific operational
+decision does not complete any independent rights or specialist review and is
+not ecclesiastical approval.
 
 The completed production checks are internal and do not imply independent
 historical, theological, philological, rights, or ecclesiastical review.
