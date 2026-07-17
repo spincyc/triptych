@@ -761,6 +761,37 @@ class TriptychCodexTests(unittest.TestCase):
         review = self.manifests()[0]
         return manifest, worker, review["integration_candidate_head"], target_head
 
+    def create_pre_landing_manual_verification_failure(
+        self,
+    ) -> tuple[dict, Path, str, str, str]:
+        manifest, worker, candidate, _ = self.create_review_pending_candidate()
+        review = self.manifests()[0]
+        source_head = review["integration_source_head"]
+        (self.control / "target-before-manual-landing.txt").write_text(
+            "target advanced before manual landing\n",
+            encoding="utf-8",
+        )
+        self.git(self.control, "add", "target-before-manual-landing.txt")
+        self.git(self.control, "commit", "-m", "Advance target before manual landing")
+        advanced_target = self.git(self.control, "rev-parse", "HEAD").stdout.strip()
+
+        landing = self.run_launcher(["--triptych-integrate", manifest["run_id"]])
+
+        self.assertEqual(landing.returncode, 2)
+        failed = self.manifests()[0]
+        self.assertEqual(failed["state"], "integration-verification-failed")
+        self.assertTrue(failed["integration_manual_resolution"])
+        self.assertEqual(failed["integration_candidate_head"], candidate)
+        self.assertNotIn("integrated_head", failed)
+        for field in (
+            "integration_manual_landing_started_at",
+            "integration_landing_expected_head",
+            "integration_landing_candidate_head",
+            "integration_landing_started_at",
+        ):
+            self.assertNotIn(field, failed)
+        return failed, worker, source_head, candidate, advanced_target
+
     def test_forwards_arguments_stdin_streams_and_exit_status(self) -> None:
         log = self.root / "forward.jsonl"
         payload = b"plain\x00stdin\nwith bytes\xff"
@@ -3078,6 +3109,256 @@ class TriptychCodexTests(unittest.TestCase):
         self.assertEqual(restored["last_integration_candidate_head"], candidate)
         self.assertEqual(restored["last_integration_source_head"], source_head)
         self.assertEqual(restored["last_integration_target_head"], target_head)
+
+    def test_abort_restores_pre_landing_verification_failed_candidate(self) -> None:
+        failed, worker, source_head, candidate, advanced_target = (
+            self.create_pre_landing_manual_verification_failure()
+        )
+        anchor = self.source_anchor_ref(failed["run_id"])
+        self.assertEqual(self.git(self.control, "rev-parse", anchor).stdout.strip(), source_head)
+        primary_ref = self.git(self.control, "symbolic-ref", "HEAD").stdout.strip()
+        primary_head = self.git(self.control, "rev-parse", "HEAD").stdout.strip()
+        primary_tree = self.git(self.control, "write-tree").stdout.strip()
+        primary_status = self.git(
+            self.control,
+            "status",
+            "--porcelain=v1",
+            "--untracked-files=all",
+        ).stdout
+
+        abort = self.run_launcher(["--triptych-abort", failed["run_id"]])
+
+        self.assertEqual(abort.returncode, 0, abort.stderr.decode())
+        self.assertEqual(
+            self.git(self.control, "rev-parse", "refs/heads/main").stdout.strip(),
+            advanced_target,
+        )
+        self.assertEqual(self.git(self.control, "symbolic-ref", "HEAD").stdout.strip(), primary_ref)
+        self.assertEqual(self.git(self.control, "rev-parse", "HEAD").stdout.strip(), primary_head)
+        self.assertEqual(self.git(self.control, "write-tree").stdout.strip(), primary_tree)
+        self.assertEqual(
+            self.git(
+                self.control,
+                "status",
+                "--porcelain=v1",
+                "--untracked-files=all",
+            ).stdout,
+            primary_status,
+        )
+        self.assertEqual(self.git(worker, "rev-parse", "HEAD").stdout.strip(), source_head)
+        self.assertEqual(self.git(worker, "status", "--porcelain=v1").stdout, "")
+        self.assertFalse(self.active_rebase_paths(worker))
+        self.assertEqual(
+            self.git(
+                self.control,
+                "show-ref",
+                "--verify",
+                "--quiet",
+                anchor,
+                check=False,
+            ).returncode,
+            1,
+        )
+        restored = self.manifests()[0]
+        self.assertEqual(restored["state"], "preserved")
+        self.assertEqual(restored["last_integration_source_head"], source_head)
+        self.assertEqual(
+            restored["last_integration_target_head"],
+            failed["integration_target_head"],
+        )
+        self.assertEqual(restored["last_integration_candidate_head"], candidate)
+
+    def test_abort_refuses_changed_pre_landing_verification_failed_candidate(self) -> None:
+        failed, worker, source_head, candidate, advanced_target = (
+            self.create_pre_landing_manual_verification_failure()
+        )
+        anchor = self.source_anchor_ref(failed["run_id"])
+        conflict = worker / "agent-result.txt"
+        conflict.write_text("changed after verification failure\n", encoding="utf-8")
+
+        abort = self.run_launcher(["--triptych-abort", failed["run_id"]])
+
+        self.assertEqual(abort.returncode, 2)
+        self.assertIn(b"candidate changed", abort.stderr.lower())
+        self.assertEqual(
+            self.git(self.control, "rev-parse", "refs/heads/main").stdout.strip(),
+            advanced_target,
+        )
+        self.assertEqual(self.git(worker, "rev-parse", "HEAD").stdout.strip(), candidate)
+        self.assertEqual(
+            conflict.read_text(encoding="utf-8"),
+            "changed after verification failure\n",
+        )
+        self.assertNotEqual(self.git(worker, "status", "--porcelain=v1").stdout, "")
+        self.assertEqual(self.git(self.control, "rev-parse", anchor).stdout.strip(), source_head)
+        self.assertEqual(self.manifests()[0]["state"], "integration-verification-failed")
+
+        self.git(worker, "reset", "--hard", candidate)
+        self.git(
+            worker,
+            "commit",
+            "--allow-empty",
+            "-m",
+            "Change candidate after verification failure",
+        )
+        changed_head = self.git(worker, "rev-parse", "HEAD").stdout.strip()
+        self.assertNotEqual(changed_head, candidate)
+        self.assertEqual(self.git(worker, "status", "--porcelain=v1").stdout, "")
+
+        retry = self.run_launcher(["--triptych-abort", failed["run_id"]])
+
+        self.assertEqual(retry.returncode, 2)
+        self.assertIn(b"candidate changed", retry.stderr.lower())
+        self.assertEqual(
+            self.git(self.control, "rev-parse", "refs/heads/main").stdout.strip(),
+            advanced_target,
+        )
+        self.assertEqual(self.git(worker, "rev-parse", "HEAD").stdout.strip(), changed_head)
+        self.assertEqual(self.git(worker, "status", "--porcelain=v1").stdout, "")
+        self.assertEqual(self.git(self.control, "rev-parse", anchor).stdout.strip(), source_head)
+        self.assertEqual(self.manifests()[0]["state"], "integration-verification-failed")
+
+    def test_abort_refuses_changed_pre_landing_source_anchor(self) -> None:
+        failed, worker, source_head, candidate, advanced_target = (
+            self.create_pre_landing_manual_verification_failure()
+        )
+        anchor = self.source_anchor_ref(failed["run_id"])
+        self.git(self.control, "update-ref", anchor, candidate, source_head)
+
+        abort = self.run_launcher(["--triptych-abort", failed["run_id"]])
+
+        self.assertEqual(abort.returncode, 2)
+        self.assertIn(b"source anchor changed", abort.stderr.lower())
+        self.assertEqual(
+            self.git(self.control, "rev-parse", "refs/heads/main").stdout.strip(),
+            advanced_target,
+        )
+        self.assertEqual(self.git(worker, "rev-parse", "HEAD").stdout.strip(), candidate)
+        self.assertEqual(self.git(worker, "status", "--porcelain=v1").stdout, "")
+        self.assertEqual(self.git(self.control, "rev-parse", anchor).stdout.strip(), candidate)
+        retained = self.manifests()[0]
+        self.assertEqual(retained["state"], "integration-rebase-recovery-failed")
+        self.assertIn("anchor", retained["integration_recovery_error"])
+
+    def test_abort_refuses_verification_failure_with_integrated_head(self) -> None:
+        manifest, worker, candidate, advanced_target = (
+            self.create_interrupted_manual_verification(advance_target=True)
+        )
+        retry = self.run_launcher(["--triptych-integrate", manifest["run_id"]])
+        self.assertEqual(retry.returncode, 2)
+        failed = self.manifests()[0]
+        self.assertEqual(failed["state"], "integration-verification-failed")
+        self.assertEqual(failed["integrated_head"], candidate)
+        anchor = self.source_anchor_ref(failed["run_id"])
+        source_head = failed["integration_source_head"]
+
+        abort = self.run_launcher(["--triptych-abort", failed["run_id"]])
+
+        self.assertEqual(abort.returncode, 2)
+        self.assertIn(b"landing result or checkpoint", abort.stderr.lower())
+        self.assertEqual(
+            self.git(self.control, "rev-parse", "refs/heads/main").stdout.strip(),
+            advanced_target,
+        )
+        self.assertEqual(self.git(worker, "rev-parse", "HEAD").stdout.strip(), candidate)
+        self.assertEqual(self.git(worker, "status", "--porcelain=v1").stdout, "")
+        self.assertEqual(self.git(self.control, "rev-parse", anchor).stdout.strip(), source_head)
+        self.assertEqual(self.manifests()[0]["state"], "integration-verification-failed")
+
+    def test_abort_refuses_verification_failure_with_landing_checkpoint(self) -> None:
+        manifest, worker, candidate, _ = self.create_review_pending_candidate()
+        marker = self.root / "manual-abort-landing-ref-race"
+        landing = self.run_launcher(
+            ["--triptych-integrate", manifest["run_id"]],
+            environment=self.landing_race_environment(marker=marker, action="ref"),
+        )
+        self.assertEqual(landing.returncode, 2)
+        self.assertTrue(marker.exists())
+        failed = self.manifests()[0]
+        self.assertEqual(failed["state"], "integration-verification-failed")
+        self.assertNotIn("integrated_head", failed)
+        for field in (
+            "integration_manual_landing_started_at",
+            "integration_landing_expected_head",
+            "integration_landing_candidate_head",
+            "integration_landing_started_at",
+        ):
+            self.assertIn(field, failed)
+        raced_target = self.git(
+            self.control,
+            "rev-parse",
+            "refs/heads/main",
+        ).stdout.strip()
+        anchor = self.source_anchor_ref(failed["run_id"])
+        source_head = failed["integration_source_head"]
+
+        abort = self.run_launcher(["--triptych-abort", failed["run_id"]])
+
+        self.assertEqual(abort.returncode, 2)
+        self.assertIn(b"landing result or checkpoint", abort.stderr.lower())
+        self.assertEqual(
+            self.git(self.control, "rev-parse", "refs/heads/main").stdout.strip(),
+            raced_target,
+        )
+        self.assertEqual(self.git(worker, "rev-parse", "HEAD").stdout.strip(), candidate)
+        self.assertEqual(self.git(worker, "status", "--porcelain=v1").stdout, "")
+        self.assertEqual(self.git(self.control, "rev-parse", anchor).stdout.strip(), source_head)
+        self.assertEqual(self.manifests()[0]["state"], "integration-verification-failed")
+
+    def test_abort_refuses_verification_failure_with_only_manual_landing_checkpoint(
+        self,
+    ) -> None:
+        manifest, worker, candidate, _ = self.create_review_pending_candidate()
+        pending = self.manifests()[0]
+        checkpoint = "2000-01-01T00:00:00+00:00"
+        pending["state"] = "integration-manual-landing-pending"
+        pending["integration_manual_landing_started_at"] = checkpoint
+        manifest_file = self.repo_state() / "runs" / f"{manifest['run_id']}.json"
+        manifest_file.write_text(
+            json.dumps(pending, indent=2, sort_keys=True) + "\n",
+            encoding="utf-8",
+        )
+        (self.control / "target-after-manual-landing-checkpoint.txt").write_text(
+            "target advanced after manual landing checkpoint\n",
+            encoding="utf-8",
+        )
+        self.git(self.control, "add", "target-after-manual-landing-checkpoint.txt")
+        self.git(
+            self.control,
+            "commit",
+            "-m",
+            "Advance target after manual landing checkpoint",
+        )
+        advanced_target = self.git(self.control, "rev-parse", "HEAD").stdout.strip()
+
+        retry = self.run_launcher(["--triptych-integrate", manifest["run_id"]])
+
+        self.assertEqual(retry.returncode, 2)
+        failed = self.manifests()[0]
+        self.assertEqual(failed["state"], "integration-verification-failed")
+        self.assertEqual(failed["integration_manual_landing_started_at"], checkpoint)
+        self.assertNotIn("integrated_head", failed)
+        for field in (
+            "integration_landing_expected_head",
+            "integration_landing_candidate_head",
+            "integration_landing_started_at",
+        ):
+            self.assertNotIn(field, failed)
+        anchor = self.source_anchor_ref(failed["run_id"])
+        source_head = failed["integration_source_head"]
+
+        abort = self.run_launcher(["--triptych-abort", failed["run_id"]])
+
+        self.assertEqual(abort.returncode, 2)
+        self.assertIn(b"landing result or checkpoint", abort.stderr.lower())
+        self.assertEqual(
+            self.git(self.control, "rev-parse", "refs/heads/main").stdout.strip(),
+            advanced_target,
+        )
+        self.assertEqual(self.git(worker, "rev-parse", "HEAD").stdout.strip(), candidate)
+        self.assertEqual(self.git(worker, "status", "--porcelain=v1").stdout, "")
+        self.assertEqual(self.git(self.control, "rev-parse", anchor).stdout.strip(), source_head)
+        self.assertEqual(self.manifests()[0]["state"], "integration-verification-failed")
 
     def test_external_rebase_abort_cannot_masquerade_as_launcher_abort(self) -> None:
         manifest, worker, source_head, _, integrate = self.create_integration_conflict()

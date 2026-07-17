@@ -36,6 +36,12 @@ SOURCE_ANCHOR_PREFIX = "refs/triptych-codex/runs/"
 ROLE_ENV = "TRIPTYCH_CODEX_ROLE"
 REAL_CODEX_ENV = "TRIPTYCH_CODEX_REAL"
 STATE_DIR_ENV = "TRIPTYCH_CODEX_STATE_DIR"
+MANUAL_LANDING_CHECKPOINT_FIELDS = (
+    "integration_manual_landing_started_at",
+    "integration_landing_expected_head",
+    "integration_landing_candidate_head",
+    "integration_landing_started_at",
+)
 INTEGRATION_TRANSACTION_FIELDS = (
     "integration_source_head",
     "integration_target_head",
@@ -54,10 +60,7 @@ INTEGRATION_TRANSACTION_FIELDS = (
     "integration_resolver_scope_error",
     "integration_continue_started_at",
     "integration_manual_resolution",
-    "integration_manual_landing_started_at",
-    "integration_landing_expected_head",
-    "integration_landing_candidate_head",
-    "integration_landing_started_at",
+    *MANUAL_LANDING_CHECKPOINT_FIELDS,
     "integration_abort_mode",
     "integration_abort_started_at",
     "integration_rollback_started_at",
@@ -3902,6 +3905,20 @@ def abort_conflict_run(repository: Repository, run_id: str) -> int:
         manifest = load_manifest(repository, run_id)
         reconcile_stale_run(repository, manifest)
         state = manifest.get("state")
+        pre_landing_manual_candidate = False
+        if state == "integration-verification-failed":
+            if manifest.get("integration_manual_resolution") is not True:
+                raise LauncherError(
+                    f"run {run_id} has no manually resolved integration to abort"
+                )
+            if "integrated_head" in manifest or any(
+                field in manifest for field in MANUAL_LANDING_CHECKPOINT_FIELDS
+            ):
+                raise LauncherError(
+                    f"run {run_id} has a recorded landing result or checkpoint; abort was "
+                    "refused because its live target may already have changed"
+                )
+            pre_landing_manual_candidate = True
         if state not in {
             "integration-conflict",
             "integration-continue-pending",
@@ -3909,7 +3926,7 @@ def abort_conflict_run(repository: Repository, run_id: str) -> int:
             "integration-merge-pending",
             "integration-abort-pending",
             "integration-rebase-pending",
-        }:
+        } and not pre_landing_manual_candidate:
             raise LauncherError(f"run {run_id} has no managed integration to abort")
         run_lock_stream = acquire_existing_run_lock(repository, run_id)
         try:
@@ -3985,7 +4002,7 @@ def abort_conflict_run(repository: Repository, run_id: str) -> int:
             if state in {
                 "integration-review-pending",
                 "integration-merge-pending",
-            } or mode == "candidate":
+            } or pre_landing_manual_candidate or mode == "candidate":
                 candidate_head = recorded_commit(
                     repository,
                     manifest,
