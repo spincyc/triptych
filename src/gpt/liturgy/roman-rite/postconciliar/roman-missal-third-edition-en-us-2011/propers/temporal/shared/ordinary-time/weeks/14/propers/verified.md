@@ -1,6 +1,7 @@
 # Ordinary Time Week XIV — Canonical Formulary Audit
 
 **Owner:** Ordinary Time Week 14, consumed on Sunday by `PC-S38`
+**Registry control:** `guidance/liturgy/postconciliar-propers-registry.md`; [edition formula dispositions](../../../../../../registry/formula-dispositions.md)
 **Last collated:** 2026-07-15
 
 ## Witnesses and limits

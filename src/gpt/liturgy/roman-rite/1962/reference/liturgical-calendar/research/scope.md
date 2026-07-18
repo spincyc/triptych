@@ -41,3 +41,7 @@
 ## Completion standard
 
 The publication is complete when all 1962 fixed rows have been collated against the facsimile, the Temporale is generated from the Code rather than guessed from a modern calendar, each U.S. row has an explicit nationwide jurisdiction label, the `Cum sanctissima` annex counts to seventy, source roles and rights boundaries are recorded, and the PDF builds without fatal, undefined-reference, or material layout errors.
+
+## Review state
+
+The source and inventory reconciliation, production build, and every-page review recorded in the source audit were complete before the 17 July 2026 structure pass. That pass moved the later-option module and use checklist into the appendices, followed them with the dated modification timeline, and placed the terminal scope appendix immediately before references. The settled two-pass revision has a warning-free final log and passed generation-metadata, PDF-structure, font, Unicode, and extraction checks; all 21 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `5309b0b26e21e82444be34633bbb96cc182370ca158fea4c295bbe939809e820`. Independent historical and liturgical review remain outstanding.

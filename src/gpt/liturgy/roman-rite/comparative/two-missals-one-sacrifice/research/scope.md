@@ -19,6 +19,10 @@ This record supports `src/gpt/liturgy/roman-rite/comparative/two-missals-one-sac
 4. **Other rites:** Ambrosian, Mozarabic, Bragan, Lyonese, Dominican, Carmelite, Carthusian, Premonstratensian, and other older Latin uses are not aliases for the 1962 Roman Missal. Eastern Catholic liturgies lie outside the comparison.
 5. **“Novus Ordo”:** reported as a widespread postconciliar label. In analytical prose the paper uses “postconciliar Roman Missal,” “Missal of Paul VI,” or an exact edition because *novus ordo* can ambiguously name the 1969 Order, the 1970 book, a later typical edition, a vernacular translation, or local practice.
 
+## Publication order
+
+After title and contents, the paper begins with the comparison problem and governing judgment, then develops its historical, theological, sacramental, legal, and pastoral argument. The terminal **Scope, Edition, and Qualifications** appendix owns the exact witnesses, language and territory, terminology, period and as-of dates, comparison categories, corpus, source hierarchy, method, legal scope, rights and use limits, and review state. The bounded community census and orientation timeline then follow as appendices, followed by references and generation metadata. A qualification that changes a particular historical, sacramental, or legal conclusion remains with that conclusion.
+
 ## Community-census inclusion rule
 
 No public, current, universal Holy See registry of “TLM congregations” was located. The published appendix is therefore an authority-qualified census, not a claim of metaphysical completeness.
@@ -73,4 +77,4 @@ The 2026-07-17 historical revision distinguishes five objects that an undifferen
 
 Independent review remains outstanding in liturgical history, sacramental theology, canon law, and the corporate-status census. The publication must remain labeled a **source-audited working paper**.
 
-Production review completed on 2026-07-17: the current 46-page PDF passed a settled build, clean-log, metadata, extraction, embedded-font, PDF-structure, and every-page visual checks, with the affected pages rechecked after the final historical edits. The installed PDF is byte-identical to the reviewed build, SHA-256 `399695e486328316585f4f3f7d5dc15ea4c3c5cfe502b1174bd4ec477ee48c95`.
+The historical revision first produced a reviewed 46-page snapshot, SHA-256 `399695e486328316585f4f3f7d5dc15ea4c3c5cfe502b1174bd4ec477ee48c95`. The subsequent reader-order revision consolidated whole-work scope, edition, method, and current-law controls in the terminal appendix. Its settled two-pass build has a warning-free final log and passed generation-metadata, PDF-structure, embedded-font, Unicode, and extraction checks. All 47 pages were visually inspected, and the installed PDF is byte-identical to the reviewed build, SHA-256 `29b27a8f04d7369cd4d5286b8a233fc2e336d5536a34209dde711dbdaef1d763`. These production checks do not claim the outstanding independent reviews above.

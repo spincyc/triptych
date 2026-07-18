@@ -2,7 +2,8 @@
 
 **Formula:** `PC-S37-A`
 **Occurrence:** 2026-06-28
-**Last updated:** 2026-07-16
+**Last updated:** 2026-07-17
+**Registry controls:** `guidance/liturgy/postconciliar-propers-registry.md`; [edition formula dispositions](../../../registry/formula-dispositions.md); [2026 occurrence record](../../../registry/occurrences-2026.md)
 
 Formula identity is controlled by [the instance manifest](../instance/manifest.md), element boundaries by [the leaf audit](../propers/verified.md), and reusable Missal evidence by [the Week XIII owner](../../shared/ordinary-time/weeks/13/propers/verified.md).
 
@@ -69,3 +70,7 @@ The first synthesis page retains the established liturgical movement; the second
 The guide gives citations, boundaries, Latin incipits, and original paraphrase rather than full protected U.S. Lectionary or ICEL texts. No scan or bulk transcription is tracked.
 
 The formula, official occurrence, complete online Lectionary path, Latin oration identities, and antiphon assignments are source-audited. Complete U.S. publisher-specific altar-book English-oration collation and independent theological review remain outstanding. The study claims neither ecclesiastical approval nor an exhaustive patristic, manuscript, critical, musical, or local-calendar survey.
+
+## Structural conformance review
+
+Civil date, governing editions, territory, and Lectionary identity remain in the terminal Liturgical Resolution appendix and tracked manifest. The compact-title revision received a settled two-pass build with a warning-free final log; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction passed; all 9 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `be6976f92077f75cf821e6f2eee19a45f62ac85d42005dddb8f3f725f8686341`.

@@ -1,6 +1,7 @@
 # The Most Holy Trinity — Canonical Formulary Audit
 
 **Owner:** `PC-S58`
+**Registry control:** `guidance/liturgy/postconciliar-propers-registry.md`; [edition formula dispositions](../../../../../registry/formula-dispositions.md)
 **Last collated:** 2026-07-15
 **Territorial use studied:** Dioceses of the United States of America
 

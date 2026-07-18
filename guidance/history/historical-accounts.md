@@ -1,94 +1,95 @@
 # Historical Accounts
 
-## Scope and collection
+This profile governs source-first histories of texts, institutions, practices,
+events, and movements beneath `src/gpt/history/<series>/<numbered-document>/`.
+Use another profile when doctrine, a liturgical formulary, current law, devotion,
+biography, or an apparition judgment is the governing task. A bounded module in
+one of those fields names and follows its additional profile; historical
+practice alone never establishes present doctrine or law.
 
-This profile governs repeatable, source-first historical monographs whose principal task is to reconstruct the development, transmission, and reception of a text, institution, practice, event, or movement. Historical accounts belong beneath `src/gpt/history/<series>/<numbered-document>/`; another provider uses the same taxonomy beneath its own provider directory. They have one catalog home on `library/historical-accounts.md` and do not become faith, liturgy, or law publications merely because those fields occur in the history.
+Use a stable descriptive series slug, two-digit leaf ordinal, and matching
+catalog key such as `BT-01`. The ordinal records series order, not chronology or
+importance.
 
-Use another profile when the governing task is doctrinal exposition, a liturgical formulary or Order of Mass, current canon law, a devotional guide, or ecclesial judgment of a claimed apparition. A historical account may contain bounded theological, liturgical, or canonical modules, but it must name the additional profile or source rules that govern those modules and must not let a historical practice establish present doctrine or law by itself.
+## Governing priorities
 
-Series directories and reader-facing identifiers are stable. Use a descriptive lowercase series slug and a two-digit ordinal in each publication leaf, such as `history/biblical-translations/01-septuagint`. The matching catalog identifier combines a short series prefix and that ordinal, such as `BT-01`. An ordinal records series order, not a claim about importance or chronology.
+1. Replace inherited one-event stories with the actual history of witnesses,
+   acts, revisions, communities, and receptions.
+2. Build from the earliest controlled evidence, keeping source date, genre, and
+   claim separate from later reception and modern reconstruction.
+3. Pursue expected primary, official, catalog, critical-edition, and professional
+   sources when an important record is missing; preserve the negative result.
+4. Begin with the governing historical question and narrative, not method or
+   limitations.
+5. Put work-wide corpus, period, place, language, terminology, method, timeline,
+   and currentness in terminal appendices while qualifying individual claims in
+   place.
 
-## Historical identity and question
+## Evidence discipline
 
-Before research, record the subject, period, geography, communities, languages, institutions, intended reader, governing question, and terminal date. When the subject is a translation or edition, also identify:
+Keep four layers distinct: contemporary or near-contemporary documents and
+objects; ancient or medieval narrative witnesses; later institutional memory
+and reception; and modern critical reconstruction. For every important origin
+story identify the exact claim, earliest extant form, later amplification,
+corroborated core, and what remains literary, legendary, disputed, or
+unrecoverable. Literary shaping is neither disproof nor corroboration.
 
-- the source language and recoverable source-text families;
-- the target language and historically relevant registers;
-- whether the familiar title names one act, several translations, a revision, a corpus, or a later edition;
-- named and anonymous translators, revisers, patrons, and transmitting communities, with their status qualified;
-- the manuscripts, artifacts, editions, or institutional acts that define the account's principal stages; and
-- later uses of the title that must not be projected backward.
+Textual history is book- and witness-specific. A variant may reflect source text,
+translation technique, exegesis, revision, harmonization, transmission, or
+modern editing; do not select an explanation without evidence or call an
+earliest recoverable form simply “the original.” Official acts establish their
+own act, status, and reception, not undocumented earlier history; modern
+scholarship reconstructs history but does not confer theological or juridical
+authority.
 
-The opening of the publication states a governing thesis and begins the historical account. It must tell the reader when a conventional one-event story has to be replaced by a history of several acts, books, recensions, or communities, but the work-wide limits of what the surviving evidence can prove belong in the terminal apparatus. A qualification that changes a particular historical claim remains beside that claim.
+When the subject is a translation or edition, track source and target languages,
+text families and registers, whether the familiar title denotes one work or a
+corpus, translators/revisers/patrons/communities with qualified attribution,
+defining witnesses and editions, and later uses of the title that must not be
+projected backward.
 
-## Evidence and historiography
+Do not create a display translation of ancient, biblical, liturgical, or
+official text. Use an identified human translation with recorded edition and
+rights, or paraphrase the claim from an exact locus.
 
-Build the account from distinguishable layers of evidence:
+## Required records
 
-1. **Contemporary or near-contemporary evidence:** manuscripts, papyri, inscriptions, colophons, correspondence, prefaces, official acts, and securely dated material objects.
-2. **Ancient or medieval narrative witness:** what a named author says, at the author's date and for the author's purpose. A witness to reception is not automatically an eyewitness to origins.
-3. **Later institutional memory and reception:** liturgical, conciliar, papal, scholarly, confessional, or popular claims that establish how the past was received, even when they cannot independently establish the originating event.
-4. **Modern historical reconstruction:** critical editions and professional scholarship used to date, compare, and interpret the earlier evidence. Record live disagreements and avoid manufacturing a consensus.
+Each leaf keeps:
 
-For each important origin story, separate the narrative's exact claim, its earliest extant form, later amplifications, corroborated historical core, and elements that remain literary, legendary, disputed, or unrecoverable. Do not dismiss a tradition merely because it contains literary shaping; do not call literary coherence corroboration.
+- `research/scope.md`: identity, question, reader, thesis, inclusions and
+  exclusions, terminology, source boundary, material uncertainties, rights, and
+  review state;
+- `research/source-audit.md`: exact bibliography and loci, stable links and
+  access dates where material, source roles, unused or unverified leads, source
+  families searched, and consequential negative results; and
+- `research/evidence-map.md`: each principal chronological or interpretive claim,
+  evidence layer, exact witness, confidence, and necessary qualification.
 
-Textual history is book- and witness-specific. A difference between versions may arise from a different source text, translation technique, exegesis, revision, harmonization, scribal change, or editorial reconstruction. Do not choose among those explanations without evidence. Avoid phrases such as “the original text” when the claim actually concerns an earliest recoverable form, a translator's source text, a critical edition, or one manuscript family.
+These are audit records, not a search diary. Focused lawful extracts may support
+them; complete scans, bulk OCR, and copyrighted editions do not belong in the
+leaf.
 
-Official ecclesiastical sources establish the act, status, or reception they actually express. They do not replace historical or text-critical evidence for earlier centuries. Conversely, modern historical scholarship does not determine a source's theological or juridical authority.
+## Reader order and terminal apparatus
 
-## Required source records
+After title and contents, state the governing thesis and move into setting,
+origin evidence, and a periodized account of production, revision, transmission,
+and reception. Use representative cases to test the synthesis, integrate
+corrections where their evidence arises, and end with an answer to the governing
+question.
 
-Every publication leaf contains:
+Then give a terminal `Scope, Method, and Historical Coordinates` appendix,
+followed by any dated orientation timeline, references grouped by source
+function, and generation metadata. The appendix owns the corpus and title
+boundary, included and excluded periods, geography, language, terminology,
+evidence classes, source hierarchy, method, as-of date, global uncertainties,
+rights, and review state. A timeline distinguishes event, surviving witness,
+edition, and later judgment. Dates that are narrative facts and uncertainty that
+changes a claim remain in the narrative.
 
-- `main.tex` and `generation-metadata.tex`;
-- a `sections/` directory organized by the account's actual argument;
-- `research/scope.md`, recording identity, included and excluded periods, terminology, source boundary, material uncertainties, rights review, and review state;
-- `research/source-audit.md`, giving exact bibliographic metadata, stable links and access dates for online evidence, source roles, loci actually checked, and unused or unverified leads; and
-- `research/evidence-map.md`, aligning the principal chronological or interpretive claims with their evidence class, exact witness, degree of confidence, and material qualification.
+## Profile gate
 
-These are editorial records, not a search diary. A catalog entry links the three reader-facing research records separately. Focused extracts may be retained only when necessary and lawful; complete third-party books, scans, or OCR corpora are not document assets.
-
-Treat an evidentiary gap as a research task, not a decorative disclaimer. For every principal claim supported only by a late, secondary, hostile, or uncertain witness, search the reasonably accessible primary, official, manuscript-catalog, critical-edition, and professional-scholarly record that could materially improve it. Record the source families checked, consequential negative result, and remaining gap in `source-audit.md` or `evidence-map.md`; do not add repetitive search narration to the publication.
-
-## Publication architecture
-
-Each account includes a title page, a table of contents, and then the governing thesis and substantive history. It does not front-load structured provenance, study limitations, an evidence key, or a method chapter. The reader-facing order ordinarily includes:
-
-- a concise governing question or thesis followed immediately by the political, linguistic, material, and religious setting;
-- the origin evidence and its historiographical limits;
-- a periodized account of production, revision, transmission, and reception;
-- representative textual or material case studies that test the larger account;
-- corrections to misleading shorthand integrated where the relevant evidence is discussed rather than collected in an opening claim audit;
-- a conclusion that answers the governing question;
-- a terminal `Scope, Method, and Historical Coordinates` appendix containing the subject and corpus boundary, included and excluded periods, geographic and linguistic bounds, terminology, evidence classes, source hierarchy, method, terminal or as-of date, global uncertainties, rights and review limits;
-- a dated timeline appendix that distinguishes event, witness, edition, and later judgment;
-- references grouped by source function; and
-- terminal structured generation metadata.
-
-This list is a coverage rule, not a fixed set of section titles. The apparatus and timeline may be separate appendices or adjacent parts of one appendix block, but neither is repeated before the narrative. Tables and timelines must remain readable at ordinary print size, and the narrative must explain rather than merely duplicate them. Dates and qualifications that are facts of the narrative remain where they are needed; the appendix owns the work-wide range and framing rules.
-
-## Translation, quotation, and rights
-
-Do not create a project translation of ancient, biblical, liturgical, or official text for display. Quote only an identified human translation whose edition and rights basis are recorded, or paraphrase the claim with an exact locus. A public-domain translation may be used sparingly, with its translator and edition named; public-domain status is not inferred from age alone. Modern translations and scholarship are summarized rather than reproduced except for short, necessary quotations.
-
-The local scope and source audit identify all third-party quotations, manuscript images, facsimiles, and edition-specific wording. A work without incorporated images should say so. The standard detached-publication rights notice remains mandatory.
-
-## Status and completion gate
-
-Catalog language keeps four dimensions separate: internal source audit, independent historical or text-critical review, any additional theological or canonical review, and production inspection. “Source-audited” requires the completed records above and exact checking of the claims used in publication; it does not imply independent specialist review.
-
-Before installation:
-
-- confirm that the familiar title and series identifier are used consistently;
-- test every major chronological claim against the evidence map;
-- distinguish contemporaneous evidence, retrospective narrative, reception, and modern reconstruction at the claim affected;
-- verify dates, names, manuscript or edition identifiers, quotations, and cited loci;
-- preserve material disputes, negative results, and book-specific variation;
-- confirm that the substantive history begins immediately after the title and contents and that work-wide bounds, method, evidence key, timeline, currentness, and limitations occur only in the terminal appendix block;
-- pursue and record material source gaps rather than leaving reasonably searchable primary or official evidence unchecked;
-- complete quotation and link-rights review;
-- run the universal metadata and publication checks, including terminal provenance;
-- inspect the build log and every rendered page; and
-- install the reviewed PDF at its exact mirrored `doc/gpt/history/` path.
-
-Independent specialist review remains explicitly outstanding until a named review event is recorded.
+Every major date, name, witness, edition, quotation, and interpretive hinge must
+agree with the evidence map. Material disputes, negative results, and
+book-specific variation remain visible. A familiar title or claim of completeness
+must match the recorded corpus; source-audited status never implies independent
+historical, textual, theological, or canonical review.

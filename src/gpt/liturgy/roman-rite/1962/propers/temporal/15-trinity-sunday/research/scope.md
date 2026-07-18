@@ -1,6 +1,6 @@
 # Trinity Sunday — Research Scope
 
-**Last updated:** 2026-07-14
+**Last updated:** 2026-07-17
 
 This record preserves the source roles, historical alternatives, and claim boundaries compressed in the reader-facing guide. Complete appointed texts, checksums, image locations, witness differences, and line-by-line collation results remain in [the verified propers](../propers/verified.md).
 
@@ -49,23 +49,18 @@ No direct patristic exposition of the appointed Tobit 12:6 or Daniel 3 verses is
 - Romans 11:36 is a doxology about God in its immediate grammar. The guide does not mechanically distribute its prepositions among Father, Son, and Holy Ghost; Matthew’s baptismal name and the Church’s rule of faith govern the explicit Trinitarian confession.
 - Matthew's singular “name” names three Persons, but grammar alone is not a complete treatise on consubstantiality. The guide relies on the cited baptismal reception and the feast's liturgical confession for its doctrinal development.
 
-## Cultural Reception Search
+## 2026-07-17 Structural Re-evaluation
 
-- A targeted search tested the Introit, Romans doxology, Daniel chants, baptismal commission, and their principal English and Latin incipits across score catalogs, composer work records, artist discographies, literature, film, television, advertising, and general web results.
-- Two musical uses survived verification and are published in `Notable Quotables`: Tomás Luis de Victoria's six-voice *Benedicta sit sancta Trinitas*, first published as no. 28 in the 1572 *Motecta*, and Psallos's “O the Depth!” on *Slave Songs* (2012), which the artist identifies as a complete setting of Romans 11:33–36. The IMSLP work record and public-domain score listings control the Victoria metadata; the artist's Bandcamp page controls the Psallos title, date, text, and credits.
-- No comparably strong, precisely locatable literary, dramatic, film, television, advertising, comedic, or ironic use was verified. Search-result proximity, generic Trinity language, and performances of the Gregorian proper itself were not promoted into additional examples.
-
-## 2026-07-14 Full Re-evaluation
-
-- The guide was read linearly against the current profile, verified proper record, and research scope. The page-one map, one-page historical table, two-page themes-and-movement section, interpretive boundary, references, and terminal metadata remained structurally complete.
+- The guide was read linearly against the current profile, verified proper record, and research scope. It now proceeds from the page-one map and four senses through the two-page themes-and-movement synthesis, detailed commentary, and interpretive possibilities before the terminal historical and scope appendices, references, and generation metadata.
 - The former two-page detailed commentary did not demonstrate its synthesis for every appointed element. It was expanded with distinct treatments of the three Tobit chants, the Collect's syntax, Romans 11 in its complete mercy argument, Psalm 8 and Daniel 3 in canonical context, and the Communion/Postcommunion relation. All ten propers now receive substantive treatment beyond the opening synthesis without assigning the assembled formulary to a biblical or patristic author.
 - The retained patristic loci and canonical chapters used by the expansion were rechecked on 2026-07-14. The missal text itself was already re-collated on that date in `propers/verified.md`; no textual correction or unresolved discrepancy resulted from this content pass.
-- The cultural-reception search added two verified musical afterlives and no weaker filler. Independent theological review remains outstanding, so the guide remains `T0` and a source-audited working study rather than an ecclesiastically approved or independently reviewed publication.
+- The tangential cultural interlude and the two references used only by it were removed. Independent theological review remains outstanding; this remains a source-audited working study rather than an ecclesiastically approved or independently reviewed publication.
+- The 2026-07-17 structural revision received a settled two-pass build with a warning-free final log; generation metadata, PDF structure, fonts, Unicode text, and extraction passed; all 12 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `661bdf1239bea0be9ea0b321c26903cae54dea07175114972fab34587c670d04`.
 
 ## Survey and Material Limits
 
-- Surveyed the public 1962 missal facsimile and OCR, the secondary color image witness, the complete appointed biblical contexts in the *NABRE*, relevant New Advent Catholic Encyclopedia articles, the patristic works retained in the guide, and the targeted cultural sources recorded above.
+- Surveyed the public 1962 missal facsimile and OCR, the secondary color image witness, the complete appointed biblical contexts in the *NABRE*, relevant New Advent Catholic Encyclopedia articles, and the patristic works retained in the guide.
 - The historical table’s dates are deliberately approximate traditional orientations. Tobit’s inherited reconstruction, the specific origin of Daniel’s Greek addition, Psalm 8’s historical setting, Matthew’s traditional range, the exact Galilean mountain, and the canonical Gospel’s modern composition city remain materially uncertain.
 - The public survey does not exhaust manuscripts, untranslated works, subscription databases, or current specialist monographs. Older public-domain translations are working texts.
 - Sources were retained because they establish or materially qualify claims made in the guide; no numerical or source-category quota was applied.
-- Historical-orientation links were accessed 2026-07-10. The canonical and patristic loci used for the expanded commentary and the retained cultural sources were rechecked or accessed 2026-07-14.
+- Historical-orientation links were accessed 2026-07-10. The canonical and patristic loci used for the expanded commentary were rechecked or accessed 2026-07-14.

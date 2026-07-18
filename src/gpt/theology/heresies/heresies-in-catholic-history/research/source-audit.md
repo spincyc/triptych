@@ -25,7 +25,7 @@ No private compilation is treated as the promulgating authority. Denzinger–Hü
 
 | Publication unit | Consequential claim | Controlling sources and loci | Source class / status | Qualification retained |
 | --- | --- | --- | --- | --- |
-| Method, current definition | Heresy is distinct from apostasy, schism, lower-grade doctrinal error, and disciplinary violation. | 1983 CIC cann. 749–754, especially 751; CCC 2088–2089; CDF, *Professio fidei* commentary 5–11. | Official current law and doctrine; checked 2026-07-16. | Current categories guide present terminology but are not retroactive penal law. |
+| Terminal scope, current definition | Heresy is distinct from apostasy, schism, lower-grade doctrinal error, and disciplinary violation. | 1983 CIC cann. 749–754, especially 751; CCC 2088–2089; CDF, *Professio fidei* commentary 5–11. | Official current law and doctrine; checked 2026-07-16. | Current categories guide present terminology but are not retroactive penal law; the global definition is rendered after the dossiers and census. |
 | Census claim | No identified official universal historical register exists; enumerators overlap and include non-Christian entries. | Irenaeus AH I; Hippolytus; Pseudo-Tertullian; Epiphanius, *Panarion*; Philastrius; Augustine, *De haeresibus*; Theodoret; John Damascene; their critical introductions. | Ancient interested witnesses and modern critical editions. | “Comprehensive” means complete against the disclosed crosswalk, not all accusations ever made. |
 | Apostolic boundary | Gentile circumcision as a salvation condition, denial of bodily resurrection, and denial of Christ come in flesh are apostolically rejected. | Acts 15; Gal 2–5; 1 Cor 15; 2 Tim 2:17–18; 1–2 John. | Verified primary inspired texts; no bulk modern translation reproduced. | Later group names are not projected into the apostolic texts. |
 | Pre-Nicene dossiers | Public rule of faith, one Creator, real Incarnation, bodily salvation, and ecclesial reconciliation answer diverse early systems. | Ignatius, *Smyrnaeans*/*Trallians*; Justin; Irenaeus AH; Tertullian; Hippolytus; Eusebius HE; Cyprian; direct/recovered target texts where attributed. | Direct texts plus interested refuters; grades A–D assigned locally. | No lost synod is reconstructed as a proposition transcript. |
@@ -117,12 +117,22 @@ The dossier headings, corpus keys, timeline events, and reader-facing census are
 - every timeline row has a matching audit row;
 - no main text calls all items in a mixed list heretical;
 - no current communion is labeled by a disavowed historic formula;
+- the apostolic boundary is the first rendered body section, and the terminal order is timeline, census accounting, `Scope, Terms, and Qualifications`, references, and metadata;
 - the source and reference records identify the same acts and dates; and
 - the catalog's maturity and exact-snapshot distribution statement agree with the installed artifact and manifest.
 
 Independent specialist review remains outstanding in all disciplines and languages listed in the research scope.
 
-## Production verification — 2026-07-17
+## Current production verification — 2026-07-17
+
+- A dependency-complete, settled two-pass build produced the current 83-page letter-size PDF, SHA-256 `e848533021cf212274c26d26f7c1e2098854c91b049ad9865f75568f92f10e05`.
+- The final log was warning-free; repository and document generation-metadata checks, PDF structure and metadata, embedded/subsetted/Unicode-mapped fonts, and layout-preserving extracted text passed.
+- All 83 physical pages were visually reviewed. The dense timeline, census, and catalogue crosswalk pages were also checked at individual-page scale; no clipping, collision, malformed continuation, accidental blank page, broken glyph, or illegible key was found.
+- The reviewed PDF was installed, and the installed and build artifacts are byte-identical.
+
+## Previous production verification — 2026-07-17 (superseded)
+
+The checks below describe the prior installed PDF at the recorded hash. The later 2026-07-17 source revision moved the global apparatus behind the chronological dossiers and reordered the appendices without changing the historical claims or sources; the completed verification for that current source is recorded above.
 
 - The repository-wide generation-metadata gate passed for 50 canonical records and 3 inherited records; the document-level gate also passed.
 - A dependency-complete, two-pass pdfLaTeX build produced an 82-page letter-size PDF. The settled log contains no fatal error, undefined control sequence, unresolved reference, overfull box, or font-substitution warning. The remaining underfull lines are confined to compact census ledgers; the `tcolorbox` split diagnostics are visually harmless.

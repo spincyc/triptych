@@ -225,7 +225,7 @@ vendored.
 - internal source, chronology, and tradition records drafted;
 - translation and rights bases recorded for every direct ancient quotation;
   and
-- repository production verification completed on 17 July 2026 after the
+- earlier source-gap production verification completed on 17 July 2026 after the
   source-gap revision: two settled `pdflatex` passes produced a 22-page PDF;
   the final log has no fatal,
   undefined-reference, overflow, underfull, or other layout warning; PDF title,
@@ -258,3 +258,5 @@ not ecclesiastical approval.
 
 The completed production checks are internal and do not imply independent
 historical, theological, philological, rights, or ecclesiastical review.
+
+Reader-order revision and production review (2026-07-17): scope, chronology conventions, evidence key, orientation, and detailed chronology now form one terminal `Scope, Chronology, and Evidence` appendix before references. Two settled `pdflatex` passes produced a 22-page PDF; the final log is warning-free, and metadata, PDF structure, embedded and subset fonts, and extracted text passed inspection. Every rendered page was visually reviewed, and the installed PDF is byte-identical to the reviewed build, SHA-256 `afd69caf9e6a7f4cb5c0a2b459e848e0b800950448d49e1d9d26675ca2ccb41e`.

@@ -2,7 +2,8 @@
 
 **Formula:** `PC-S39-A`
 **Occurrence:** 2026-07-12
-**Last updated:** 2026-07-16
+**Last updated:** 2026-07-17
+**Registry controls:** `guidance/liturgy/postconciliar-propers-registry.md`; [edition formula dispositions](../../../registry/formula-dispositions.md); [2026 occurrence record](../../../registry/occurrences-2026.md)
 
 This record preserves evidence roles and limits compressed in the reader-facing guide. Formula identity and unresolved selections are controlled by [the instance manifest](../instance/manifest.md); element boundaries and branches by [the leaf audit](../propers/verified.md); reusable Missal evidence by [the Week XV owner](../../shared/ordinary-time/weeks/15/propers/verified.md).
 
@@ -72,3 +73,7 @@ The page-one four-sense table is source-grounded editorial compression of the au
 The reader document gives citations, boundaries, a short acclamation incipit, and original paraphrase rather than full protected U.S. Lectionary or ICEL texts. Scripture, Missal, Lectionary, Psalm response, and official translations retain separate rights and are excluded from the project’s CC BY grant. No scan, bulk transcription, or private altar-book extract is tracked.
 
 The formula, occurrence, branches, reading boundaries, Latin oration identities, and antiphon assignments are source-audited at the stated layers. Full U.S. publisher-specific altar-book English-oration collation and independent theological review remain outstanding, so the leaf is working rather than publication-final. No exhaustive patristic, manuscript, modern-critical, ecological, musical, or local-calendar survey is claimed.
+
+## Structural conformance review
+
+Civil date, governing editions, territory, and Lectionary identity remain in the terminal Liturgical Resolution appendix and tracked manifest. The compact-title revision received a settled two-pass build with a warning-free final log; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction passed; all 9 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `cdd2f5cd8dd01f381809cff104c0710efff8ce3393eb0f3fe559aeb7611c698e`.

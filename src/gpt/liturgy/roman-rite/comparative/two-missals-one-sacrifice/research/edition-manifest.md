@@ -54,8 +54,10 @@ Every comparison was tested against these questions:
 4. Does “validity” refer to a capable approved rite or to a concrete enacted attempt?
 5. Is a historical source being used for ancestry rather than made immediately normative?
 
+The published argument begins with the comparison problem and substantive judgment. This manifest's edition, language, territory, terminology, history range, method, and current-law controls appear together only in the terminal **Scope, Edition, and Qualifications** appendix; claim-specific edition and legal differences remain local.
+
 ## Review state
 
 The edition boundaries and principal legal texts were checked. A line-by-line independent review against physical copies of the 2008 Latin reprint and current U.S. altar book remains outstanding; the publication therefore remains a source-audited working paper.
 
-The 2026-07-17 historical revision is included in the reviewed 46-page installed artifact, SHA-256 `399695e486328316585f4f3f7d5dc15ea4c3c5cfe502b1174bd4ec477ee48c95`; this production review does not claim the outstanding independent physical-book collation.
+The 2026-07-17 historical revision first appeared in a reviewed 46-page snapshot, SHA-256 `399695e486328316585f4f3f7d5dc15ea4c3c5cfe502b1174bd4ec477ee48c95`. The later reader-order revision produced the current reviewed and installed 47-page artifact, SHA-256 `29b27a8f04d7369cd4d5286b8a233fc2e336d5536a34209dde711dbdaef1d763`; this production review does not claim the outstanding independent physical-book collation.

@@ -10,6 +10,7 @@
 | --- | --- |
 | Permanent parent | `PC-S58` — The Most Holy Trinity |
 | Formula key | `PC-S58-A` |
+| Registry controls | `guidance/liturgy/postconciliar-propers-registry.md`; [edition formula dispositions](../../../registry/formula-dispositions.md); [2026 occurrence record](../../../registry/occurrences-2026.md) |
 | Full publication slug | `pc-s58-most-holy-trinity-year-a` |
 | Canonical formulary owner | [`PC-S58` shared Missal audit](../../shared/formularies/pc-s58-most-holy-trinity/propers/verified.md) |
 | Celebration and rank | The Most Holy Trinity; solemnity of the Lord |
