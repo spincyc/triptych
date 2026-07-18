@@ -1,6 +1,6 @@
 # Nuptial Mass — Research Scope
 
-**Last updated:** 2026-07-17
+**Last updated:** 2026-07-18
 
 This record preserves source roles, historical judgments, rubrical controls, and theological boundaries compressed in the reader-facing guide. Complete appointed texts, checksums, facsimile locations, and OCR differences remain in [the verified propers](../propers/verified.md).
 
@@ -106,6 +106,7 @@ Historical canonical sources were used only when clearly labeled as historical d
 - Independent source-and-structure review confirmed the Missal's General Rubrics 378--381, the documented 1952 Ritual edition and chapter boundary, and current-law qualifications. It also confirmed that the proposed *Graduale Romanum* pp. 378--381 lead was inapplicable and should remain rejected rather than cited as control.
 - The tangential cultural interlude and the two references used only by it were removed. The revised source received a settled two-pass build with a warning-free final log; generation metadata, PDF structure, fonts, Unicode text, and extraction passed; all 16 pages were visually inspected; and the installed PDF was byte-identical to the reviewed build, SHA-256 `27ae6695b9284b4d12bb0ddab6e489605eaafca7c737a4079b34aa8a87694e5b`. That 2026-07-17 snapshot is superseded; the shared Matrimony appendix remains unchanged.
 - Final clean-build review completed 2026-07-18: the settled 14-page PDF, SHA-256 `30392761ce6f9e230f74283598564921d75b9060d3ba3a5d8b8ed2cd68fbdd87`, passed two build passes, a warning-free log, generation metadata, PDF structure, fonts, Unicode text, extraction, and every-page visual checks; the installed PDF is byte-identical to the reviewed build.
+- The later 2026-07-18 page-two coordinate revision supersedes that snapshot. Its settled two-pass build produced a warning-free log; generation metadata, PDF structure, fonts, Unicode text, and extraction passed; all 14 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `aabb6d363027c7764a46629ee15566e7d28f89987d0178181321715bf70caaf4`. This current snapshot remains in private review pending renewed exact-snapshot authorization.
 - No independent theological review has been performed.
 
 ## Survey and Material Limits

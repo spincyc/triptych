@@ -1,6 +1,6 @@
 # Fifth Sunday after Pentecost — Research Scope
 
-**Last updated:** 2026-07-17
+**Last updated:** 2026-07-18
 
 This record preserves source roles, historical judgments, and claim boundaries compressed in the reader-facing guide. Complete appointed texts, checksums, facsimile locations, and witness differences remain in [the verified propers](../propers/verified.md).
 
@@ -70,3 +70,7 @@ These sources illuminate the Collect and Secret but are not direct commentaries 
 - No secure direct patristic commentary was located for the Collect, Secret, or Postcommunion; they are treated through verified grammar and explicitly labeled doctrinal illumination.
 - Psalm authorship and dates, Matthew's composition city, the Sermon's mountain and civil year, and the precise mechanics of Silvanus' role remain uncertain.
 - The survey does not exhaust manuscripts, untranslated works, subscription databases, or modern critical scholarship. No source-category quota was applied. Original legacy searches occurred on 2026-07-10; all sources retained after reevaluation were accessed or re-accessed on 2026-07-14.
+
+## 2026-07-18 Page-Two Production Record
+
+This statement supersedes the earlier production snapshots: the page-two coordinate revision received a settled two-pass build with warning-free logs; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction checks passed; all 13 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `606ad7d5e279dbe8ea77407b8e295df0ee5407ef21308a38a97c7533c4420c14`. The current snapshot remains in private review pending renewed exact-snapshot authorization.

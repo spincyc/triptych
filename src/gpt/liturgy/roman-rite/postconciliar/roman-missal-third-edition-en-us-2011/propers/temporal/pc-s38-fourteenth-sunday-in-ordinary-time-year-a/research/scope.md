@@ -75,3 +75,5 @@ The formula, official occurrence, reading boundaries, Latin oration identities, 
 ## Structural conformance review
 
 Civil date, governing editions, territory, and Lectionary identity remain in the terminal Liturgical Resolution appendix and tracked manifest. The compact-title revision received a settled two-pass build with a warning-free final log; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction passed; all 9 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `db465e5ea90cbb8946d2d119aa2bfa438a9e1c441c2906032d919de783708e49`.
+
+On 2026-07-18, the page-two coordinate revision superseded that production snapshot. It received a settled two-pass build with warning-free logs; metadata, PDF structure, embedded fonts, Unicode, and text extraction passed; all 9 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `ab3a3359b512ebbcb768e70a8bd4260c290ecca98d29f51c37c35487646a0282`. This current snapshot remains in private review pending renewed exact-snapshot authorization.

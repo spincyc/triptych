@@ -1,6 +1,6 @@
 # Fourth Sunday after Pentecost — Research Scope
 
-**Last updated:** 2026-07-17
+**Last updated:** 2026-07-18
 
 This record preserves the source roles, searches, and claim boundaries compressed in the reader-facing guide. Complete appointed texts, checksums, image locations, witness differences, and line-by-line collation results remain in [the verified propers](../propers/verified.md).
 
@@ -81,3 +81,7 @@ All seven underlying texts and the exact loci above were rechecked on 2026-07-14
 - The survey does not exhaust manuscripts, untranslated works, subscription databases, or modern critical scholarship. Older public-domain translations are working texts.
 - Sources were retained because they establish or materially qualify claims made in the guide; no numerical or source-category quota was applied.
 - Historical-orientation introductions and traditional-attribution links were accessed 2026-07-10. The complete direct biblical contexts and retained exegetical and doctrinal sources used in the reevaluation were rechecked or accessed 2026-07-14.
+
+## 2026-07-18 Page-Two Production Record
+
+This statement supersedes the earlier production snapshots: the page-two coordinate revision received a settled two-pass build with warning-free logs; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction checks passed; all 11 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `f2a2dc97f6bef12ca9908612f7c9456b384709b949006eb894aaa45f5c24f3ba`. The current snapshot remains in private review pending renewed exact-snapshot authorization.

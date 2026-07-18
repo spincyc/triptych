@@ -73,3 +73,5 @@ The formula, official occurrence, complete online Lectionary path, Latin oration
 ## Structural conformance review
 
 Civil date, governing editions, territory, and Lectionary identity remain in the terminal Liturgical Resolution appendix and tracked manifest. The compact-title revision received a settled two-pass build with a warning-free final log; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction passed; all 9 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `8941f04075a8cae26fba8f430907d024d35b5c4ab862f677cbeb52df99feb501`.
+
+On 2026-07-18, the page-two coordinate revision superseded that production snapshot. It received a settled two-pass build with warning-free logs; metadata, PDF structure, embedded fonts, Unicode, and text extraction passed; all 9 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `cad8d1f97d002a278c76aabff378d2e4da57412c59241738fa458f313caeb8eb`. This current snapshot remains in private review pending renewed exact-snapshot authorization.
