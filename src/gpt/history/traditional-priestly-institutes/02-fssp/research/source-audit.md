@@ -98,9 +98,11 @@
 - Signed decrees, document images, photographs, logos, coats of arms, charts, and facsimiles incorporated: none.
 - Copyrighted scholarly prose: none reproduced. Pietras is summarized under the article’s CC BY-ND 4.0 terms.
 - Names, titles, dates, protocol numbers, canon numbers, legal categories, statistics, and institutional offices are used as facts or identifiers.
-- Work-specific link and source-site rights review remains required before public release.
+- Work-specific link and source-site rights review remains outstanding as a maturity limitation.
 - Independent historical, theological, liturgical, and canon-law review remains outstanding.
 
 ## Production record
 
 The revised source received two settled LaTeX passes on 2026-07-17. Generation-metadata validation passed. The final log scan found no fatal error, undefined reference, overfull or underfull box, or LaTeX/package warning. The resulting PDF is 26 letter-size pages and 315,720 bytes; title and subject metadata are present, all fonts are embedded, subsetted, and Unicode-mapped, and `qpdf --check` reports no syntax or stream-encoding error. Layout-preserving extraction produced 1,338 lines, 12,382 words, and 92,343 bytes with no unresolved drafting marker. Every page was visually inspected for clipping, overflow, broken tables, malformed headings, and anomalous spill pages. The reviewed build was installed at the canonical `doc/gpt/history/traditional-priestly-institutes/02-fssp.pdf` path and is byte-identical to the checked build. Installed SHA-256: `e812a427de0c34e63c78a9b811fb730740a4e3424e694ef72b6a90613633453b`.
+
+The 17 July 2026 `perpetual-public-repository-2026` supplement clears public distribution only for the exact installed PDF bytes recorded above. It does not authorize changed bytes and is not an independent work-specific rights analysis, including the link and source-site review named above, or historical, theological, liturgical, canon-law, specialist, or ecclesial review. The rights and specialist reviews remain outstanding as maturity limitations, not distribution holds for those exact bytes.

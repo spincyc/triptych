@@ -322,6 +322,7 @@ Completed in this drafting stage:
   embedded and subset; every page was visually inspected at ordinary print
   size; and the installed PDF was verified byte-identical to the reviewed
   build, SHA-256 `432de52e1314ce7b33595024cc3b68ae1798fc6816f313d0411019f5537a2f5a`.
+  That source-gap production snapshot is superseded.
 
 Not completed or claimed:
 
@@ -343,4 +344,6 @@ must not be described as peer reviewed, independently source reviewed,
 archaeologically authenticated, scientifically authenticated, independently
 rights reviewed, or approved by ecclesiastical authority.
 
-Reader-order revision and production review (2026-07-17): scope, chronology conventions, evidence key, orientation, and detailed timeline now form one terminal `Scope, Chronology, and Evidence` appendix before references. Two settled `pdflatex` passes produced a 29-page PDF; the final log is warning-free, and metadata, PDF structure, embedded and subset fonts, and extracted text passed inspection. Every rendered page was visually reviewed, and the installed PDF is byte-identical to the reviewed build, SHA-256 `76ca81b9a843dd14568aa4d82cba1b6b3f7b3975cd296f2465ac971c5e68b105`.
+Superseded reader-order revision and production review (2026-07-17): scope, chronology conventions, evidence key, orientation, and detailed timeline now form one terminal `Scope, Chronology, and Evidence` appendix before references. Two settled `pdflatex` passes produced a 29-page PDF; the final log was warning-free, and metadata, PDF structure, embedded and subset fonts, and extracted text passed inspection. Every rendered page was visually reviewed, and the installed PDF was byte-identical to the reviewed build, SHA-256 `76ca81b9a843dd14568aa4d82cba1b6b3f7b3975cd296f2465ac971c5e68b105`.
+
+Final clean-build review (2026-07-18): two settled `pdflatex` passes produced the current 28-page PDF, SHA-256 `675b279abaa052f87e795eb9bde1aa02aa0e30ffeb16d27dbe0a400676612559`. The warning-free final log, metadata, PDF structure, embedded and subset fonts, extracted text, every-page visual review, and installed/build byte comparison passed.

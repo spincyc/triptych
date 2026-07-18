@@ -101,3 +101,7 @@ No source above is attributed as a direct commentator on the Collect, Secret, or
 ## Rights and Attribution
 
 The complete Latin proper record is a focused edition-identified research transcription checked against the public facsimile. The PDF uses brief incipits and clauses rather than reproducing a modern hand-missal translation. Patristic Latin texts and translations, including modern translations used for checking, were paraphrased except where a brief ancient Latin phrase was analytically necessary; no modern translation was reproduced, and every use is attributed by work and locus. Modern biblical notes and doctrinal sources are summarized, not reproduced. No uncertain quotation or attribution was promoted into the publication. Exact-snapshot distribution status belongs to the release manifest and rights record, not this research scope.
+
+## Production Record
+
+Final clean-build review completed 2026-07-18: the settled 10-page PDF, SHA-256 `8a5505fb036b7531762f1cf4dd02a6c8e646e53e621758a7fd59b29a04027daa`, passed two LaTeX passes, a warning-free log, generation-metadata, extraction, embedded-font, PDF-structure, and every-page visual checks; the installed publication is byte-identical to the reviewed build. No independent theological review was performed.

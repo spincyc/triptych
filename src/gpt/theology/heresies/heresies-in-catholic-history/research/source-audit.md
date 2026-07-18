@@ -123,16 +123,23 @@ The dossier headings, corpus keys, timeline events, and reader-facing census are
 
 Independent specialist review remains outstanding in all disciplines and languages listed in the research scope.
 
-## Current production verification — 2026-07-17
+## Current production verification — 2026-07-18
 
-- A dependency-complete, settled two-pass build produced the current 83-page letter-size PDF, SHA-256 `e848533021cf212274c26d26f7c1e2098854c91b049ad9865f75568f92f10e05`.
+- A dependency-complete, settled two-pass build produced the current 82-page letter-size PDF, SHA-256 `1f0644fd03183096424607d17679026400caf4d94a1bc8c3e53ef95d4a102854`.
 - The final log was warning-free; repository and document generation-metadata checks, PDF structure and metadata, embedded/subsetted/Unicode-mapped fonts, and layout-preserving extracted text passed.
-- All 83 physical pages were visually reviewed. The dense timeline, census, and catalogue crosswalk pages were also checked at individual-page scale; no clipping, collision, malformed continuation, accidental blank page, broken glyph, or illegible key was found.
+- All 82 physical pages were visually reviewed. The dense timeline, census, and catalogue crosswalk pages were also checked at individual-page scale; no clipping, collision, malformed continuation, accidental blank page, broken glyph, or illegible key was found.
 - The reviewed PDF was installed, and the installed and build artifacts are byte-identical.
 
 ## Previous production verification — 2026-07-17 (superseded)
 
-The checks below describe the prior installed PDF at the recorded hash. The later 2026-07-17 source revision moved the global apparatus behind the chronological dossiers and reordered the appendices without changing the historical claims or sources; the completed verification for that current source is recorded above.
+- A dependency-complete, settled two-pass build produced an 83-page letter-size PDF, SHA-256 `e848533021cf212274c26d26f7c1e2098854c91b049ad9865f75568f92f10e05`.
+- The final log was warning-free; repository and document generation-metadata checks, PDF structure and metadata, embedded/subsetted/Unicode-mapped fonts, and layout-preserving extracted text passed.
+- All 83 physical pages were visually reviewed. The dense timeline, census, and catalogue crosswalk pages were also checked at individual-page scale; no clipping, collision, malformed continuation, accidental blank page, broken glyph, or illegible key was found.
+- The reviewed PDF was installed, and the installed and build artifacts are byte-identical.
+
+## Earlier production verification — 2026-07-17 (superseded)
+
+The checks below describe the earlier installed PDF at the recorded hash. The later 2026-07-17 source revision moved the global apparatus behind the chronological dossiers and reordered the appendices without changing the historical claims or sources; the completed verification for that later snapshot is recorded immediately above.
 
 - The repository-wide generation-metadata gate passed for 50 canonical records and 3 inherited records; the document-level gate also passed.
 - A dependency-complete, two-pass pdfLaTeX build produced an 82-page letter-size PDF. The settled log contains no fatal error, undefined control sequence, unresolved reference, overfull box, or font-substitution warning. The remaining underfull lines are confined to compact census ledgers; the `tcolorbox` split diagnostics are visually harmless.

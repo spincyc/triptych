@@ -90,9 +90,16 @@
 \input{theology/heresies/heresies-in-catholic-history/sections/95-timeline}
 \input{theology/heresies/heresies-in-catholic-history/sections/96-census-accounting}
 \heresyapparatusappendix
+\begingroup
+\linespread{0.98}\selectfont
 \input{theology/heresies/heresies-in-catholic-history/sections/99-references}
+\titleformat{\section}
+  {\large\bfseries}{\thesection}{0.55em}{}
+\titlespacing*{\section}{0pt}{0.5em}{0.25em}
 \section{Generation Metadata}
-{\footnotesize\input{theology/heresies/heresies-in-catholic-history/generation-metadata}}
+{\scriptsize\setlength{\parskip}{0.15em}%
+\input{theology/heresies/heresies-in-catholic-history/generation-metadata}}
+\endgroup
 \end{deepstudy}
 
 \end{document}

@@ -113,5 +113,6 @@ This module is a study aid, not canonical or pastoral advice. Independent canon-
 - Source audit: completed against the public sources listed in source-audit.md.
 - Claim-to-source alignment: recorded in evidence-map.md.
 - Independent historical, theological, liturgical, and canon-law review: outstanding.
+- Work-specific rights analysis: outstanding as a maturity limitation.
 - Production build, log review, metadata/font/structure/text checks, every-page visual inspection, and PDF installation: completed 2026-07-17; details and checksum are recorded in source-audit.md.
-- Release posture: hold for work-specific rights and specialist review.
+- Exact-snapshot distribution: the 17 July 2026 `perpetual-public-repository-2026` supplement clears public distribution only for the exact installed PDF bytes recorded for this work. It does not authorize changed bytes and is not an independent work-specific rights analysis or historical, theological, liturgical, canon-law, specialist, or ecclesial review. The rights analysis and specialist reviews remain outstanding as maturity limitations, not distribution holds for those exact bytes.

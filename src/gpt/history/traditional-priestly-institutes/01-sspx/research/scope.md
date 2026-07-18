@@ -99,5 +99,6 @@ This module is a study aid, not legal advice. Independent canon-law review remai
 - Source audit: completed against sources listed in source-audit.md.
 - Claim-to-source alignment: recorded in evidence-map.md.
 - Historical, theological, and canon-law specialist review: outstanding.
+- Work-specific rights analysis: outstanding as a maturity limitation.
 - Production build and visual inspection: completed on 17 July 2026; the settled twenty-three-page PDF passed the recorded production checks, and every physical page was inspected.
-- Release posture: hold for work-specific rights and specialist review.
+- Exact-snapshot distribution: the 17 July 2026 `perpetual-public-repository-2026` supplement clears public distribution only for the exact installed PDF bytes recorded for this work. It does not authorize changed bytes and is not an independent work-specific rights analysis or historical, theological, canon-law, specialist, or ecclesial review. The rights analysis and specialist reviews remain outstanding as maturity limitations, not distribution holds for those exact bytes.

@@ -1,17 +1,16 @@
 # Public Release Boundary
 
-The current release manifest contains 48 publications: all 48 exact PDF
-snapshots are marked `release`, with none in `review` or on `hold`. The later
-16 July 2026 supplemental authorization in
-`rights/public-alpha-2026-07-15.md` binds all 48 release PDFs and all 17
-then-recorded reader-facing site sources to their exact post-build hashes. The
-release gate now also treats the generator, its dependency lock, and both
-copied license texts as artifact-affecting inputs. Those four exact bindings
-are not added to the historical authorization by this infrastructure change;
-public check, build, verification, and deployment therefore fail closed until
-a separately reviewed authorization records the complete current inventory.
-The earlier perpetual, worldwide, and no-project-initiated-promotion conditions
-remain in force for the scope that record actually identifies.
+The current release manifest contains 53 publications: all 53 exact PDF
+snapshots are marked `release`, with none in `review` or on `hold`. The 17 July
+2026 supplemental authorization in `rights/public-alpha-2026-07-15.md` binds
+all 53 release PDFs and all 21 artifact-affecting site inputs to their exact
+clean-build hashes. Those inputs include the reader-facing sources, generator,
+dependency lock, and copied license texts needed to reproduce the authorized
+site. The supplement is perpetual and effective at
+`2026-07-17T00:00:00-05:00` for unrestricted worldwide access, subject only to
+the no-project-initiated-promotion condition. Public check, build,
+verification, and deployment continue to fail closed after any bound byte
+changes or when the verified inventory is incomplete.
 
 `public-alpha.json` is the exhaustive publication policy for every discovered source document and installed PDF:
 
@@ -38,7 +37,7 @@ imprimatur, nihil obstat, or approval of the secret or this publication. It
 does not supply independent rights, canonical, specialist, liturgical, or
 ecclesiastical review. Apparition and cult approvals remain object-limited and
 do not approve this publication. Both public-alpha artifacts include this PDF
-with the other 47 releases.
+with the other 52 releases.
 
 For every fully authorized snapshot the generator will:
 
@@ -72,8 +71,33 @@ of Mass likewise still lacks exact hands-on formula-level collation against
 licensed 2008 Latin and 2011 United States altar books. None of those records
 may imply the missing collation or review. The Mount Carmel guide and companion
 retain their recorded *Flos Carmeli* witness, attribution, permission, and
-non-approval limitations. See the rights record and each publication's linked
-research records for the complete boundaries.
+non-approval limitations.
+
+The five works newly moved from `hold` to `release` retain their own limits.
+The SSPX account still awaits independent historical, theological, and
+canon-law review and retains its public-record gaps concerning the 1974 and
+1987 visitations, the contested 1975 suppression, institutional and partisan
+witnesses, self-reported figures, and the unresolved July 2026 recourse. The
+FSSP account still awaits historical, theological, liturgical, and canon-law
+review; original-language founding texts, diocesan instruments, the complete
+approval and proper-law chain, the 2000 Holy See file, the French Province act,
+and a public 2024 visitation outcome remain incomplete or unavailable. The
+ICKSP account still awaits historical, theological, liturgical, canon-law,
+reputation-sensitive, and safeguarding review; foundational and proper-law
+acts, visitation and approval files, Chicago records, Holy See outcomes,
+independent safeguarding records, and independent verification of reported
+figures remain incomplete. The 1962 calendar still awaits historical and
+liturgical review, limits its United States inventory to explicit nationwide
+headings in its identified 1961 witness, leaves the Cabrini transfer and other
+possible nationwide grants unresolved, and does not decide present
+authorization to use the books. The postconciliar calendar still awaits
+historical, liturgical, territorial-law, and English-edition review, including
+direct collation against licensed 2008 Latin and 2011 United States English
+altar books; its recurring-page, annual-calendar, and holy-day-law boundaries
+remain operative. The 17 July clearance supplies no independent rights
+analysis, specialist or ecclesiastical review, or ecclesiastical approval for
+any of them. See the rights record and each publication's linked research
+records for the complete boundaries.
 
 The GitHub Pages workflow can build and verify `build/public-alpha/site` and
 would upload only that artifact through the `github-pages` environment. Pages
@@ -97,10 +121,10 @@ python scripts/public-alpha verify --deployment-target github-pages
 `prepare-public-alpha` is read-only and deliberately works when old snapshot
 hashes are stale or the old source-binding list lacks newly recognized inputs.
 It validates the exhaustive publication and current artifact-input scope, then
-reports the current 48 PDF hashes and all current Markdown, layout, style,
-license, generator, and dependency-lock hashes as a deterministic candidate
-inventory. The inventory explicitly confers no approval, changes no manifest
-or rights record, and cannot replace the separate review and recorded
+reports the current 53 PDF hashes and the hashes of all 21 current Markdown,
+layout, style, license, generator, and dependency-lock inputs as a deterministic
+candidate inventory. The inventory explicitly confers no approval, changes no
+manifest or rights record, and cannot replace the separate review and recorded
 authorization required for new snapshots.
 
 The build and verify commands remain distinct gates. A build reports that its

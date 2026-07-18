@@ -150,7 +150,7 @@ This canonical and liturgical module is a study aid, not legal or pastoral advic
 - The Jacquemin article is linked through Persée and summarized; no page image or extended wording is reproduced.
 - *Le Parisien* and *The Pillar* reporting is summarized narrowly for reputation-sensitive historical completeness, paired with response and unresolved-status language.
 - Public web access does not itself establish redistribution permission. Links direct readers to third-party sources under their own terms.
-- Work-specific rights review remains required before public release.
+- Work-specific rights review remains outstanding as a maturity limitation.
 
 ## Review and production state
 
@@ -160,7 +160,7 @@ This canonical and liturgical module is a study aid, not legal or pastoral advic
 - Independent liturgical review: outstanding.
 - Independent canon-law review: outstanding.
 - Independent reputation-sensitive and safeguarding review: outstanding.
-- Work-specific rights review: outstanding; release manifest status is hold.
+- Work-specific rights review: outstanding as a maturity limitation.
 - Primary editorial review and two independent line audits: completed 2026-07-17.
 - Production build, log review, metadata/font/structure/text checks, every-page visual inspection, and PDF installation: completed 2026-07-17; details and checksum are recorded in `source-audit.md`.
-- Release posture: hold for work-specific rights and specialist review.
+- Exact-snapshot distribution: the 17 July 2026 `perpetual-public-repository-2026` supplement clears public distribution only for the exact installed PDF bytes recorded for this work. It does not authorize changed bytes and is not an independent work-specific rights analysis or historical, theological, liturgical, canon-law, reputation-sensitive, safeguarding, specialist, or ecclesial review. The rights and specialist reviews remain outstanding as maturity limitations, not distribution holds for those exact bytes.
