@@ -1,6 +1,6 @@
 # Sixth Sunday after Pentecost — Research Scope
 
-**Last updated:** 2026-07-14
+**Last updated:** 2026-07-17
 
 This record preserves source roles, historical judgments, and claim boundaries compressed in the reader-facing guide. Complete appointed texts, checksums, facsimile locations, and witness differences remain in [the verified propers](../propers/verified.md).
 
@@ -42,12 +42,6 @@ Geographic equivalents are broad: Davidic Israel and Judah lie in the southern L
 - St. Gregory the Great, *Moralia* I.19, and St. Ambrose, *Exposition of Luke* VI.73, excerpts preserved in the *Catena Aurea* at Mark 8:3; these illuminate nourishment on the road but are not full direct commentaries on the Sunday.
 - St. Augustine, *Letter 130 to Proba* §§15–18, 21–29, on prayer, enlarged desire, the Lord's Prayer, and God's sometimes merciful refusal of a temporal request: [text](https://www.newadvent.org/fathers/1102130.htm).
 
-## Cultural Reception Survey
-
-- Cultural-reception searches tested exact KJV, Coverdale/BCP, Douay, and Latin phrases from Psalm 90:1, 13 and Romans 6:3–11, plus Mark 8's compassion, three days, seven loaves, four thousand, and seven baskets, across general web search, Internet Archive, hymn and choral catalogs, museum records, film/television transcript terms, and music databases.
-- Two strong, passage-specific examples were retained: Dylan Thomas's Romans 6:9 adaptation in “And death shall have no dominion,” and Ralph Vaughan Williams's setting of both appointed Psalm 90 clauses in *Lord, Thou Hast Been Our Refuge*. The Dylan Thomas Centre confirms the poem's 1933 publication, later collection, and Romans source; the British Music Collection and Westminster Abbey program verify the motet's 1921 date, biblical text, forces, and 2020 memorial use.
-- Strong reserves included Isaac Watts's Psalm 90 paraphrase, Charles Ives's *Psalm 90*, H. N. Brailsford's Psalm quotation in *The Broom of the War-God*, and Bach's Mark-8 lectionary cantata BWV 187. Film/television, advertising, comedy/meme, and visual-art searches produced no securely passage-specific example; Mark art frequently conflated the feedings of the four thousand and five thousand, while many Psalm 90 hits used unappointed verses 10 or 12. Sermons, routine liturgy, generic quotation pages, and direct settings without a distinctive cultural payoff were excluded.
-
 ## Controlling Distinctions
 
 - Romans' indicative, imperative, and the formulary's petitions remain distinct and coordinated. Baptismal gift does not erase continuing cooperation or dependence.
@@ -58,16 +52,16 @@ Geographic equivalents are broad: Davidic Israel and Judah lie in the southern L
 - The common core `inclina aurem tuam` in the Alleluia and Offertory is a verified textual echo. It supports comparison of urgent deliverance and steadfast steps but does not establish why the formulary's compilers selected either chant.
 - The Communion's liturgical Eucharistic placement, Ambrose's explicit mystagogy, and Mark's feeding can be read in one horizon, but their linkage is editorial synthesis rather than a single patristic claim.
 
-## 2026-07-14 Full Re-evaluation
+## Review Record
 
-- The guide now carries the complete series structure: the opening inventory and historical orientation; the fixed two-page Themes and Movement synthesis; Detailed Commentary covering all ten appointed propers; four bounded Interpretive Possibilities; culturally verified Notable Quotables; references, scope disclosure, generation metadata, and rights notice.
+- The 14 July 2026 source and structure review confirmed the complete propers map, two-page source-grounded synthesis, treatment of all ten appointed propers, exploratory proposals, terminal historical and scope appendices, references, metadata, and rights notice.
 - Every verified proper now records both its immediate scriptural or liturgical context and its function in this Mass. The detailed treatment restores a distinct Postcommunion analysis and gives direct psalm exegesis to all five chants while keeping related baptismal, Eucharistic, and prayer sources explicitly subordinate to the texts they illuminate.
 - The settled twelve-page PDF passed two build passes, a clean warning/error scan, metadata validation, text extraction, embedded-font inspection, and `qpdf --check`. Every page was visually inspected, and the installed publication was confirmed byte-identical to the reviewed build artifact.
-- No substantive correction remains open from this review. The textual, source, citation, and layout review therefore remains **T0** under the profile's triage scale.
+- No independent theological review was performed.
 
 ## Survey and Material Limits
 
 - Surveyed the public 1962 missal facsimile and focused OCR, USCCB/NABRE introductions and notes, New Advent biblical titles and *Catholic Encyclopedia* articles, accessible patristic collections in English and Latin, Lewis and Short for the Secret's `votum`, and the sources already supporting the legacy guide.
 - No secure direct patristic commentary was located for the Collect, Secret, or Postcommunion; they are treated through verified grammar and explicitly labeled doctrinal illumination.
 - Psalm origins, the Exodus chronology, Mark's composition date and city, and the feeding's exact site and year remain uncertain. The *Catena Aurea* is incomplete as an English witness to Bede, so claims not preserved under his name there depend on the checked Latin text.
-- The survey does not exhaust manuscripts, untranslated works, subscription databases, or modern critical scholarship. No source-category quota was applied. Historical and cultural links were accessed 2026-07-10; the retained Latin lexicon, psalm expositions, Bede, Mark reception, mystagogical sources, and prayer source were checked or rechecked 2026-07-14.
+- The survey does not exhaust manuscripts, untranslated works, subscription databases, or modern critical scholarship. No source-category quota was applied. The retained Latin lexicon, psalm expositions, Bede, Mark reception, mystagogical sources, and prayer source were checked or rechecked 2026-07-14.

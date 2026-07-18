@@ -10,6 +10,7 @@
 | --- | --- |
 | Permanent parent | `PC-S59` — The Most Holy Body and Blood of Christ |
 | Formula key | `PC-S59-A` |
+| Registry controls | `guidance/liturgy/postconciliar-propers-registry.md`; [edition formula dispositions](../../../registry/formula-dispositions.md); [2026 occurrence record](../../../registry/occurrences-2026.md) |
 | Full publication slug | `pc-s59-most-holy-body-and-blood-of-christ-year-a` |
 | Canonical formulary owner | [`PC-S59` shared Missal audit](../../shared/formularies/pc-s59-most-holy-body-and-blood-of-christ/propers/verified.md) |
 | Celebration and rank | The Most Holy Body and Blood of Christ; solemnity of the Lord |

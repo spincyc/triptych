@@ -69,9 +69,10 @@ No full modern translation, commentary, code, or Church document is reproduced. 
 
 ## Build and review record
 
-- Final installed artifact: `doc/gpt/articles/canon-law/clerical-celibacy-chastity-and-continence.pdf`; 31 pages; SHA-256 `28a261c3950dc7f5af6c73e5fe98dc2f08d74e463e6d425c5bbfde0159c253d5`.
-- The installed PDF is byte-identical to the reviewed build artifact.
+- Prior installed artifact reviewed through 16 July 2026: `doc/gpt/articles/canon-law/clerical-celibacy-chastity-and-continence.pdf`; 31 pages; SHA-256 `28a261c3950dc7f5af6c73e5fe98dc2f08d74e463e6d425c5bbfde0159c253d5`.
+- That prior installed PDF was byte-identical to its reviewed build artifact.
 - Multi-pass LaTeX build completed without fatal errors, undefined references, overfull or underfull boxes, or LaTeX/package warnings. Structured generation metadata passed the repository checker.
 - `qpdf --check` found no syntax or stream-encoding errors. All listed fonts are embedded and carry Unicode mappings. Layout-preserving text extraction contained no replacement characters or unresolved-reference markers.
 - Every page was visually inspected, including both landscape appendix pages, continued-table headings, title metadata, page breaks, and the final rights page. A second independent visual pass checked the front and back halves and the final pagination repairs.
 - On 16 July 2026, `make check-public-alpha` validated this exact installed hash as a `release` snapshot. That snapshot authorization does not alter the article's recorded maturity and review limitations.
+- Reader-order production review completed on 17 July 2026: two settled `pdflatex` passes produced a 32-page PDF; the final log is free of fatal errors, undefined references, overflow, underfull boxes, and other layout warnings; structured metadata, PDF structure, embedded and subset fonts, and extracted text passed inspection; every rendered page, including the landscape tables, was visually reviewed; and the installed PDF is byte-identical to the reviewed build, SHA-256 `ef79ee34824a75dc017e93e2de0ebc54497c17d801157c9cb6edd86aa4b74cec`.

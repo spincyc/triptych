@@ -1,6 +1,6 @@
 # Fifth Sunday after Pentecost — Research Scope
 
-**Last updated:** 2026-07-14
+**Last updated:** 2026-07-17
 
 This record preserves source roles, historical judgments, and claim boundaries compressed in the reader-facing guide. Complete appointed texts, checksums, facsimile locations, and witness differences remain in [the verified propers](../propers/verified.md).
 
@@ -53,23 +53,16 @@ These sources illuminate the Collect and Secret but are not direct commentaries 
 - The Gradual's `servos tuos` and `preces servorum tuorum` are proper to the missal's adaptation. The source's anointed, Jacob, and singular-prayer clauses may establish Psalm context and reception history but may not be quoted as though sung in this formulary.
 - Applying Psalm 26's one house to Eucharistic communion and joining the chants into one face–heart–peace–offering route remain editorial liturgical syntheses.
 
-## Cultural-Reception Search
+## 2026-07-17 Structural Re-evaluation
 
-- Exact-phrase and same-psalm searches on 2026-07-10 tested Psalm 26's light, sought face, and one-house language; Psalm 83's sanctuary longing; Matthew's altar and reconciliation command; and 1 Peter's blessing and pursuit of peace across institutional mottos, literature, film, television, hymns, and classical and popular music. The surviving candidate was rechecked on 2026-07-14.
-- The University of Oxford's arms bear *Dominus illuminatio mea*, the opening of Vulgate Psalm 26 and the Introit's appointed psalm verse. The official [Bodleian University Archives guide](https://www.bodleian.ox.ac.uk/universityarchives/guides/university-arms) identifies the scriptural source and documents use by the later sixteenth century. This exact quotation remains the sole reader-facing example.
-- Johannes Brahms's *Ein deutsches Requiem*, Op. 45 (1868), movement IV, was rejected and removed during reevaluation. It sets Psalm 83:1–2, 4, not the Gradual's source verses 9–10 and not the missal's adapted servant wording. Sharing a Psalm and its sanctuary theme does not satisfy the guide's requirement for a direct quotation, adaptation, or evidenced transformation of the appointed text.
-- Modern devotional songs using “one thing have I desired” and generic uses of “seek peace” were reviewed but omitted for lack of comparably strong identification or distinct reception. No verifiable ironic or humorous use of Matthew 5:23–24 survived the search.
-
-## Full-Guide Reevaluation
-
-- The complete source was re-read on 2026-07-14 against the profile's required sequence: the one-page Propers map and four senses, one-page historical orientation, two-page Themes and Movement synthesis, fresh-page Detailed Commentary, separately bounded Interpretive Possibilities, Notable Quotables, references, scope disclosure, and generation metadata. The complete macro-architecture remains intact.
+- The complete source was re-read against the current profile. It now proceeds from the page-one Propers map and four senses through the two-page Themes and Movement synthesis, Detailed Commentary, and separately bounded Interpretive Possibilities before the terminal historical and scope appendices, references, and generation metadata.
 - The synthesis's duplicative four-stage recap was removed. A substantive Gradual-and-Alleluia unit now occupies that argumentative role, so the synthesis retains progression without padding or repeating its own conclusions.
 - The Detailed Commentary now gives both intervening chants their own sourced treatment. The Gradual section demonstrates the Psalm-to-missal adaptation and separates Augustine's source exegesis from the liturgical wording; the Alleluia section treats the complete royal psalm context, Augustine's Christological reception, and the limits of liturgical adjacency.
 - Independent source-and-structure review identified and corrected two remaining deficiencies: the Offertory now receives a full Psalm 15 and Acts 2 contextual treatment, and the Postcommunion now receives a clause-by-clause grammatical analysis that correctly keeps God, rather than the heavenly gift, as the agent from whom cleansing and deliverance are requested. Every appointed proper consequently has substantive Detailed Commentary.
 - Page-one statements were narrowed to what the printed texts support. The revised Gospel connection does not presume that the offerer injured the brother; the Communion does not quote or paraphrase its unprinted continuation; and the Gradual is explicitly marked as adapted.
-- The historical inventory, reference list, search-scope panel, verified record, and cultural-reception record were made consistent with five directly excerpted biblical passages plus one adapted Psalm source. The weak Brahms item and its reader reference were removed.
+- The historical inventory, reference list, scope panel, and verified record remain consistent with five directly excerpted biblical passages plus one adapted Psalm source.
 - No appointed Latin transcription was changed in this reevaluation. The Secret's page-one incipit was shortened for a cleaner source boundary, while its complete verified text remains unchanged.
-- The settled thirteen-page PDF passed two LaTeX passes, a clean fatal/error/reference/box-warning scan, generation-metadata validation, text extraction, embedded-font inspection, and `qpdf --check`. Every rendered page was visually inspected; the installed publication was confirmed byte-identical to the reviewed build artifact. No independent theological review was performed, so status remains `T0`.
+- The tangential cultural interlude and its sole reference were removed. The revised source received a settled two-pass build with a warning-free final log; generation metadata, PDF structure, fonts, Unicode text, and extraction passed; all 13 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `d66cb126b59f317798768e00abcfbc262d18740add12ab44a5c3d7440c98e564`. No independent theological review has been performed.
 
 ## Survey and Material Limits
 

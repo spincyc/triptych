@@ -1,7 +1,8 @@
 # PC-S58-A — Research Scope
 
-**Last updated:** 2026-07-16
+**Last updated:** 2026-07-17
 **Jurisdiction and as-of date:** dioceses of the United States of America; calendar, rubrics, and editions checked through 2026-07-15
+**Registry controls:** `guidance/liturgy/postconciliar-propers-registry.md`; [edition formula dispositions](../../../registry/formula-dispositions.md); [2026 occurrence record](../../../registry/occurrences-2026.md)
 
 This audit records the scholarship behind the Year A guide to the Most Holy Trinity on 2026-05-31. Formula identity and occurrence resolution remain in the [instance manifest](../instance/manifest.md); the exact ordered composition remains in the [leaf audit](../propers/verified.md); reusable Missal evidence remains in the [canonical formulary-owner audit](../../shared/formularies/pc-s58-most-holy-trinity/propers/verified.md). This record distinguishes verified appointments, historical judgment, documented reception, source-grounded synthesis, and original proposals.
 
@@ -133,4 +134,8 @@ The guide tests three original proposals, each labeled as editorial/AI-generated
 
 The calendar occurrence, formula key, Lectionary boundaries, single Daniel response, Missal element inventory, proper Preface, official English antiphon witness, music-source distinctions, ritual-substitution branch, and the June 1 Saint Justin memorial boundary were internally checked on 2026-07-15. Every direct passage was read in its official biblical introduction or immediate context; the retained patristic and magisterial loci were checked at the links cited above. Rights-safe quotation limits were applied.
 
-Outstanding work is consequential and remains visible: complete U.S.-English oration collation against a named altar-book printing; independent theological, liturgical, biblical, and historical review; actual parish branch and music evidence; diocesan and church-proper occurrence review; and final production inspection after the leaf is integrated into the collection build.
+Outstanding work is consequential and remains visible: complete U.S.-English oration collation against a named altar-book printing; independent theological, liturgical, biblical, and historical review; actual parish branch and music evidence; and diocesan and church-proper occurrence review.
+
+## Structural conformance review
+
+Civil date, governing editions, territory, and Lectionary identity remain in the terminal Liturgical Resolution appendix and tracked manifest. The compact-title revision received a settled two-pass build with a warning-free final log; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction passed; all 11 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `31dab0b2e199e5ec6c540346cc072bcb4f794d91d4170fb96cfb0e358767e6aa`.

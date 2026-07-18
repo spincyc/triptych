@@ -1,6 +1,6 @@
 # Fourth Sunday after Pentecost — Research Scope
 
-**Last updated:** 2026-07-14
+**Last updated:** 2026-07-17
 
 This record preserves the source roles, searches, and claim boundaries compressed in the reader-facing guide. Complete appointed texts, checksums, image locations, witness differences, and line-by-line collation results remain in [the verified propers](../propers/verified.md).
 
@@ -64,30 +64,20 @@ All seven underlying texts and the exact loci above were rechecked on 2026-07-14
 - The world’s *cursus*, creation’s unwilling subjection to corruption, and the worshippers’ *rebelles voluntates* name different subjects and relations. Cosmic subjection is not silently redescribed as moral rebellion, and the boat or net is not used as a translation of any oration.
 - The Gradual’s liturgical order places *Propitius esto* and the nations’ question before returning in the versicle to *Adiuva nos* and *libera nos*. The guide records that arrangement without presenting it as the psalm’s original sequence.
 
-## Cultural Reception
+## 2026-07-17 Structural Re-evaluation
 
-Wording from Romans 8 and Luke 5 was tested across public-domain literature, poetry, biblical cantatas, hymn indexes, digitized books, quotation searches, and ecclesial reception. Three compact examples were retained:
-
-- William Lyon Phelps, *Reading the Bible* (1919), pp. 8–9: a humorous childhood illustration of “the whole creation groaneth” as universal indigestion. The [primary-edition scan](https://upload.wikimedia.org/wikipedia/commons/3/30/Reading_the_Bible_%28IA_cu31924029280489%29.pdf) was downloaded and its printed pages 8–9 were checked on 2026-07-14; the PDF guide quotes only the biblical phrase and paraphrases Phelps’s joke and his mother’s response.
-- J. S. Bach, *Siehe, ich will viel Fischer aussenden*, BWV 88, first performed 21 July 1726, movement 4: Luke 5:10 is assigned to tenor narration and bass *vox Christi*. The [Bachipedia work record and German libretto](https://bachipedia.org/en/werke/bwv-88-siehe-ich-will-viel-fischer-aussenden-3/) establish the date, movement, vocal division, and wording; the [Emmanuel Music libretto and translation](https://www.emmanuelmusic.org/bach-translations/bwv-88) independently confirm the same division and English sense. Both were checked 2026-07-14; the PDF gives a brief translated quotation.
-- Mary Baker Eddy, *Science and Health with Key to the Scriptures*, 1906 edition, chapter IX: Romans 8:22–23 is the epigraph for “Creation,” followed shortly by “Mind, not matter, is the creator.” The [edition transcription](https://en.wikisource.org/wiki/Science_and_Health_with_Key_to_the_Scriptures_(1906)/09_Creation) was checked 2026-07-14; the PDF identifies the exact epigraph and briefly quotes the contrasting claim.
-
-Leads that were devotional restatements, weak phrase coincidences, uncertain attributions, or insufficiently located were discarded. Notable unused but verified leads from the 2026-07-10 survey included S. Weir Mitchell’s poem “The Whole Creation Groaneth,” John Paul II’s programmatic reuse of *Duc in altum*, and older hymns and sermons based on Luke 5; they were not needed for the reevaluated guide and were not represented as newly rechecked sources.
-
-## 2026-07-14 Full Re-evaluation
-
-- The guide was read linearly against the current profile, verified proper record, and research scope. Page 1 maps all ten propers and the four senses; page 2 inventories all seven distinct direct passages; the next two pages retain the four-stage, four-unit scan-first synthesis; Detailed Commentary treats every appointed element; Interpretive Possibilities, three verified cultural examples, References, and terminal metadata remain present in the required order.
+- The guide was read linearly against the current profile, verified proper record, and research scope. It now proceeds from the page-one map and four senses through the two-page synthesis, detailed commentary, and interpretive possibilities before the terminal historical and scope appendices, references, and generation metadata.
 - Every proper already had substantive detailed treatment, so no padding or new source quota was imposed. The revision instead replaced the synthesis’s second agency recap with a grammatical boundary distinguishing governance, conversion, and sacramental effect.
 - The former opening commentary table repeated the synthesis’s claims and source labels. It was rebuilt around four distinct textual forms, full psalm contexts, the Collect’s coordinated clauses, the Gradual’s liturgical rearrangement, and the difference between direct psalm exposition and related illumination of the Collect.
 - “Success still needs purification” largely restated the guide’s established Gospel and Postcommunion movement. It was replaced with the genuinely exploratory comparison among the enemy’s *Praevalui*, Peter’s confession, and Christ’s *Noli timere*, with the nonparallel narratives stated explicitly.
-- The retained patristic, canonical, and cultural loci used by these revisions were rechecked on 2026-07-14 as recorded above. The missal text had already been re-collated on that date in `propers/verified.md`; this content pass found no reason to alter the verified Latin or its witness record.
-- The settled 11-page PDF passed two-pass compilation, clean-log, metadata, extraction, embedded-font, and PDF-structure checks. Every page was visually inspected at full resolution; the installed PDF is byte-identical to the reviewed build, and the required page-one, page-two, two-page Themes, Detailed Commentary, Interpretive Possibilities, cultural, reference, and terminal metadata sequence remains intact.
-- Independent theological review remains outstanding. The guide therefore remains `T0`: a source-audited working study, not an ecclesiastically approved or independently reviewed publication.
+- The retained patristic and canonical loci used by these revisions were rechecked on 2026-07-14 as recorded above. The missal text had already been re-collated on that date in `propers/verified.md`; this content pass found no reason to alter the verified Latin or its witness record.
+- The tangential cultural interlude and the three references used only by it were removed. The revised source received a settled two-pass build with a warning-free final log; generation metadata, PDF structure, fonts, Unicode text, and extraction passed; all 11 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `7f12e144d470987d2c1262b62107b9534fc4df6e235c29bd94f150e61de99f77`.
+- Independent theological review remains outstanding. The guide remains a source-audited working study, not an ecclesiastically approved or independently reviewed publication.
 
 ## Survey and Material Limits
 
-- Surveyed accessible NPNF/ANF and New Advent collections, the Ambrose Latin text, Cyril’s Payne Smith translation, public facsimiles and OCR, digitized books, cantata/libretto indexes, hymn indexes, and targeted Latin and English web searches.
+- Surveyed accessible NPNF/ANF and New Advent collections, the Ambrose Latin text, Cyril’s Payne Smith translation, public facsimiles and OCR, and targeted Latin and English source searches.
 - No secure direct patristic commentary was located for the Collect, Secret, or Postcommunion. The orations are therefore handled through verified grammar, close doctrinal illumination, and explicit source-role labels.
 - The survey does not exhaust manuscripts, untranslated works, subscription databases, or modern critical scholarship. Older public-domain translations are working texts.
 - Sources were retained because they establish or materially qualify claims made in the guide; no numerical or source-category quota was applied.
-- Historical-orientation introductions and traditional-attribution links were accessed 2026-07-10. The complete direct biblical contexts and the retained exegetical, doctrinal, and cultural sources used in the reevaluation were rechecked or accessed 2026-07-14; the unretained cultural leads noted above preserve the date of their earlier survey.
+- Historical-orientation introductions and traditional-attribution links were accessed 2026-07-10. The complete direct biblical contexts and retained exegetical and doctrinal sources used in the reevaluation were rechecked or accessed 2026-07-14.

@@ -314,7 +314,7 @@ Completed in this drafting stage:
 - static TeX source sanity checks: `chktex` completed with style diagnostics
   only, while `lacheck` reported the expected macro-definition false positives
   in shared table environments; and
-- repository production verification on 17 July 2026 after the source-gap
+- earlier source-gap production verification on 17 July 2026 after the source-gap
   revision: two settled `pdflatex` passes produced a 29-page PDF; the final
   log has no fatal,
   undefined-reference, overflow, underfull, or other layout warning; PDF title,
@@ -342,3 +342,5 @@ The completed checks are internal source and production verification. The work
 must not be described as peer reviewed, independently source reviewed,
 archaeologically authenticated, scientifically authenticated, independently
 rights reviewed, or approved by ecclesiastical authority.
+
+Reader-order revision and production review (2026-07-17): scope, chronology conventions, evidence key, orientation, and detailed timeline now form one terminal `Scope, Chronology, and Evidence` appendix before references. Two settled `pdflatex` passes produced a 29-page PDF; the final log is warning-free, and metadata, PDF structure, embedded and subset fonts, and extracted text passed inspection. Every rendered page was visually reviewed, and the installed PDF is byte-identical to the reviewed build, SHA-256 `76ca81b9a843dd14568aa4d82cba1b6b3f7b3975cd296f2465ac971c5e68b105`.

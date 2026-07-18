@@ -1,6 +1,6 @@
 # Eighth Sunday after Pentecost — Research Scope
 
-**Last updated:** 2026-07-15
+**Last updated:** 2026-07-17
 
 This record preserves research scope, disagreements, source roles, and negative results that are intentionally compressed in the reader-facing guide. Text retrieval, checksums, facsimile locations, and the complete verified propers remain in *../propers/verified.md*.
 
@@ -76,12 +76,10 @@ No source above is attributed as a direct commentator on the Collect, Secret, or
 - **Received mercy and returned gift.** *Suscepimus* in the Introit and *Suscipe* in the Secret are forms of *suscipio* with reversed human and divine subjects. The Church first receives mercy and later asks God to receive gifts that the Secret itself locates in his bounty. The earlier extended *capio*-compound network was removed from the reader-facing guide because it diffused the stronger debt and Cross architecture.
 - **Written bonds.** Luke's *cautio* and patristic *chirographum* were kept related but not made interchangeable technical instruments. Chrysologus uses the Gospel's documentary action for repentance, mercy, and grace after Christ's prior payment; Origen and Irenaeus apply handwritten-bond language to sin's destruction at the Cross. The synthesis does not construe salvation as a falsified divine account.
 
-## Corpora, Languages, and Cultural Search
+## Corpora, Languages, and Source Search
 
 - Biblical and historical orientation used the 1962 missal witnesses, the Vulgate-numbered psalms, the Holy See's *Nova Vulgata* for the Romans verse division, the NABRE texts, notes, and introductions, and traditional Catholic Encyclopedia entries. Latin, English, and one historical English hand-missal witness were checked.
 - Patristic research searched English translations and Latin texts by exact passage and incipit across New Advent, Augustinus.it, Tertullian.org, official Antonian texts, Wikisource transcriptions used as locating aids, and identified editions or standard loci. Chrysologus 125–126 was checked against Olivar's CCSL 24B critical Latin and Palardy's FOTC 110 translation; Origen 13.4 was controlled by Baehrens's GCS 29 and Heine's FOTC 71; critical loci were recorded for Augustine, Gaudentius, and Anthony. Greek and Syriac originals and subscription databases were not surveyed comprehensively.
-- Cultural searches tested distinctive English and Latin wording from “taste and see,” “mammon of iniquity,” “unjust steward,” “render an account of thy stewardship,” “debtors, not to the flesh,” and “eternal tabernacles” across literature, film, music, quotation indexes, and general web results. Results were overwhelmingly biblical quotation, sermons, liturgical music, or undifferentiated devotional use. No varied, precisely located cultural reception strong enough for a compact Notable Quotables entry was verified, so the section is omitted.
-
 ## Rejected or Bounded Leads
 
 - The Internet Archive OCR is a finding aid only. Its repeat Introit incipit, page-header interruption, and recognition errors were not silently imported.
@@ -98,10 +96,8 @@ No source above is attributed as a direct commentator on the Collect, Secret, or
 - Romans 8:17b was used only as adjacent canonical context. No suffering-with-Christ clause was inserted into the missal's appointed text, and suffering was not treated as earning adoption or as a good in itself.
 - Thomas's article 8 was not generalized from actual venial sin to ordinary involuntary distraction, and its habitual-fruit distinction was not extended to unworthy reception in grave sin.
 - Similar vocabulary across propers does not prove common human authorship or historical compositional design. Original cross-proper models are confined to the guide's globally labeled Interpretive Possibilities.
-- No universal search of manuscripts, untranslated patristic corpora, homiletic collections, subscription scholarship, music, film, or literature is claimed.
+- No universal search of manuscripts, untranslated patristic corpora, homiletic collections, or subscription scholarship is claimed.
 
 ## Rights and Attribution
 
-The complete Latin proper record is a focused edition-identified research transcription checked against the public facsimile. The PDF uses brief incipits and clauses rather than reproducing a modern hand-missal translation. Patristic Latin texts and translations, including modern translations used for checking, were paraphrased except where a brief ancient Latin phrase was analytically necessary; no modern translation was reproduced, and every use is attributed by work and locus. Modern biblical notes and doctrinal sources are summarized, not reproduced. No uncertain quotation or cultural attribution was promoted into the publication.
-
-The user's renewed approval on 2026-07-15 is recorded in `release/rights/public-alpha-2026-07-15.md` and binds this revised source, research, guidance, and exact installed PDF state to the existing perpetual authorization and its no-project-initiated-promotion condition. It permits installation, commit, public-repository publication, and GitHub Pages deployment of this revision. It does not extend to any later changed source or PDF.
+The complete Latin proper record is a focused edition-identified research transcription checked against the public facsimile. The PDF uses brief incipits and clauses rather than reproducing a modern hand-missal translation. Patristic Latin texts and translations, including modern translations used for checking, were paraphrased except where a brief ancient Latin phrase was analytically necessary; no modern translation was reproduced, and every use is attributed by work and locus. Modern biblical notes and doctrinal sources are summarized, not reproduced. No uncertain quotation or attribution was promoted into the publication. Exact-snapshot distribution status belongs to the release manifest and rights record, not this research scope.

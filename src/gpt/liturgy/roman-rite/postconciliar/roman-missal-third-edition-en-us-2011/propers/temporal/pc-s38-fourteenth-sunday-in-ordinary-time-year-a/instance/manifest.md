@@ -9,6 +9,7 @@
 | Field | Resolution |
 | --- | --- |
 | Parent / permanent formula key | `PC-S38` / `PC-S38-A` |
+| Registry controls | `guidance/liturgy/postconciliar-propers-registry.md`; [edition formula dispositions](../../../registry/formula-dispositions.md); [2026 occurrence record](../../../registry/occurrences-2026.md) |
 | Celebration | Fourteenth Sunday in Ordinary Time |
 | Rank, season, color | Sunday in Ordinary Time; green |
 | Production coverage / actual Sunday cycle | Year A / Year A |

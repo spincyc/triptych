@@ -1,310 +1,156 @@
 # Historical and Hagiographic Biographies
 
-This profile governs the repeatable biography collection beneath
-`src/gpt/biographies/`.  It applies to source-first studies of saints and other
-figures in the history of the Church whose lives must be read both historically
-and through their ecclesial reception.  These works are neither devotional
-legendaries, critical editions, canonization dossiers, nor general discursive
-articles.  They follow this profile together with `guidance/editorial.md` and
-`guidance/repository.md`.
+This profile governs source-first lives beneath `src/gpt/biographies/`. They are
+historical studies of persons and their ecclesial reception, not devotional
+legendaries, critical editions, canonization dossiers, or general articles.
 
-Publishable leaves live at `src/gpt/biographies/<subject>/`; transient and
-installed PDFs mirror them at `build/gpt/biographies/<subject>.pdf` and
-`doc/gpt/biographies/<subject>.pdf`.  The provider-relative path
-`biographies/<subject>` is the stable, namespaced publication identifier.  Use
-an unnumbered lowercase kebab-case subject slug: the collection is not a rank of
-sanctity or a closed chronological sequence.  A `biographies/shared/` directory
-may own non-publishable typesetting primitives or genuinely common source
-fragments; it has no PDF mirror, must be imported rather than copied, and every
-consumer must be rebuilt after it changes.
+## Governing priorities
 
-## One life per publication
+1. Reconstruct the life from the earliest controlled evidence before tracing
+   cult, hagiography, and later reception.
+2. Let a serious general reader follow one coherent life through time while
+   seeing exactly what each source can establish.
+3. Treat sanctity and Christian memory respectfully without turning devotional
+   value, ecclesial reception, or skepticism into historical proof.
+4. Search expected primary, official, critical, archaeological, and professional
+   records when a consequential episode rests on a late or weak witness; record
+   the remaining gap rather than filling it by inference.
+5. Begin with the person and sustained life; put global chronology, geography,
+   method, evidence key, currentness, and qualifications in terminal apparatus.
 
-Give each person an independent publication, source record, chronology, and
-tradition audit.  A shared feast, mission, controversy, friendship, or martyrdom
-tradition does not merge two lives when their evidence and reception differ.
-Cross-link the related biographies and explain the shared history from each
-person's own evidentiary horizon.  A collective biography is appropriate only
-when the group, rather than its individual members, is the actual historical
-subject and the research scope proves that one record can represent it without
-flattening distinct evidence.
+## Publication identity and records
 
-Saint Peter and Saint Paul therefore receive separate biographies.  Their
-common Roman memory and joint solemnity belong in both works, with the overlap
-stated rather than copied as one drifting shared narrative.
+Use one unnumbered lowercase subject slug and one publication, chronology, and
+tradition audit per person. A shared feast, mission, controversy, friendship, or
+martyrdom does not merge lives with distinct evidence. A collective biography is
+permitted only when the group itself is the historical subject and one record
+can represent it without flattening its members. Cross-link related lives and
+state their shared history from each person's evidentiary horizon.
 
-## Governing aim and reader
+Each leaf keeps:
 
-A biography should let a serious general reader follow a life through time,
-understand its historical world, locate the strongest evidence, encounter the
-person's sanctity and ecclesial reception, and see exactly where later
-hagiography exceeds recoverable history.  It may be spiritually attentive, but
-its prose must not turn devotional usefulness into proof or historical
-uncertainty into disbelief.
+- `research/scope.md`: identity, question, reader, thesis, inclusions and
+  exclusions, corpus, evidence classes, material uncertainties, rights, and
+  completed and outstanding review;
+- `research/source-audit.md`: consequential claims, exact sources and loci,
+  witness date and genre, edition/translation status, source function and limit,
+  source families searched, and consequential negative results;
+- `research/chronology.md`: dated and approximate events, relative sequence,
+  competing chronologies, confidence, and dates supplied only by later
+  tradition; and
+- `research/tradition-audit.md`: death, burial, relic, miracle, appearance,
+  patronage, iconography, saying, foundation, and other memorable traditions,
+  with earliest located witness, later reception, historical status, and
+  responsible significance.
 
-The terminal `Scope, Chronology, and Evidence` appendix states:
-
-- the subject, ordinary forms of the name, dates or responsible date range,
-  places, Church or ecclesial setting, and principal offices or states of life;
-- the intended reader and depth;
-- the historical and hagiographic question, governing thesis, and source
-  boundary;
-- whether the work treats an apostle, martyr, Father, Doctor, founder, ruler,
-  visionary, missionary, or another kind of subject;
-- the geographic, linguistic, ritual, and jurisdictional limits that materially
-  affect the evidence; and
-- any mutable recognition, relic, shrine, institutional, or liturgical claim
-  checked through a stated date.
-
-The title and opening narrative may retain only the identity needed to know
-whose life is being read.  An exact or approximate date that is itself a
-biographical fact remains in the narrative at the event it qualifies; a
-document-wide life range, chronology convention, disputed dating scheme, or
-currentness cutoff belongs in the appendix.  A compact warning may remain near
-a relic, miracle, safeguarding, or current-status claim when postponing it
-would invite unsafe reliance.
-
-## Required source records
-
-Every leaf keeps one `generation-metadata.tex` record, imports it once in the
-terminal metadata section, and keeps the following reader-facing audit records:
-
-- `research/scope.md`: document identity, question, reader, thesis, included
-  and excluded material, source corpus, evidence classes, material
-  uncertainties, rights boundary, and completed and outstanding review;
-- `research/source-audit.md`: consequential claims mapped to exact sources and
-  loci, witness date and genre, edition or translation status, evidentiary use,
-  and necessary limit;
-- `research/chronology.md`: a claim-by-claim chronology that distinguishes
-  dated events, approximate reconstructions, relative sequence, competing
-  chronologies, and dates supplied only by later tradition; and
-- `research/tradition-audit.md`: traditions about death, burial, relics,
-  miracles, appearance, patronage, iconography, sayings, foundations, and other
-  memorable episodes, recording the earliest located witness, later reception,
-  historical status, and what the tradition may responsibly signify.
-
-The records may cite the same source for different functions, but they must not
-be four copies of one bibliography.  Focused retrieval extracts are optional
-and remain non-publishable evidence; complete scans, bulk OCR, and copyrighted
-editions are not vendored.
+These records serve different functions and must not become four copies of one
+bibliography.
 
 ## Evidence architecture
 
-Classify evidence by both date and genre.  Sustained publication prose uses
-plain language; research records and compact evidence keys or tables may use
-these codes when each one is visibly explained:
+Classify evidence by date and genre. Plain prose is preferred; records and
+compact keys may use these explained classes:
 
-- **A — autobiographical or subject-authored:** a work, letter, sermon, preface,
-  inscription, or other source by the subject, read according to its genre and
+- **A** — subject-authored or autobiographical evidence, qualified by genre and
   transmission;
-- **N — near-contemporary external witness:** evidence from a contemporary or
-  near contemporary who is not simply repeating the subject;
-- **E — early received tradition:** an ancient witness removed from the event
-  but early enough to establish reception, memory, cult, or an otherwise lost
-  report;
-- **L — later hagiographic or devotional tradition:** a later life, legend,
-  sermon, liturgical text, iconographic convention, or local memory whose value
-  may be theological, devotional, cultural, or reception-historical without
-  supplying contemporary fact;
-- **M — magisterial or official ecclesial reception:** a conciliar, papal,
-  dicasterial, episcopal, liturgical, canonization, shrine, or institutional act,
-  limited to what that act actually establishes;
-- **K — modern critical reconstruction:** a conclusion of identified modern
-  scholarship, including its premises, alternatives, and degree of confidence;
+- **N** — contemporary or near-contemporary external witness;
+- **E** — early received tradition that establishes memory, reception, cult, or
+  an otherwise lost report without becoming an eyewitness;
+- **L** — later hagiographic, devotional, liturgical, iconographic, or local
+  tradition;
+- **M** — official ecclesial reception, limited to the act's actual object;
+- **K** — named modern critical reconstruction, with premises and alternatives;
   and
-- **S — source-grounded project synthesis:** an editorial connection supported
-  by named evidence and not attributed verbatim to any source.
+- **S** — source-grounded project synthesis, never attributed to a source.
 
-“Primary” does not mean “contemporary,” “eyewitness,” “neutral,” or
-“historically certain.”  A late ancient saint's life can be a primary source for
-the age that produced it while remaining late evidence for the life it narrates.
-An autobiography gives privileged access to remembered experience and
-self-presentation, not an unmediated transcript.  A hostile source may preserve
-facts while distorting motive; a panegyric may preserve memory while arranging
-it for praise.  State those genre effects where they matter.
+“Primary” does not mean contemporary, eyewitness, neutral, or certain. An
+autobiography includes self-presentation; a hostile witness may distort motive;
+a panegyric arranges memory for praise; a late life may be primary evidence for
+its own age but late evidence for its subject. State a genre limit where it
+changes the claim.
 
 ## Historical and hagiographic discipline
 
-Build the historical account from the earliest and best-controlled evidence,
-then trace reception forward.  Do not write a seamless omniscient narrative by
-silently combining sources composed in different decades or centuries.  When
-accounts differ, name the witnesses, distinguish contradiction from different
-selection or viewpoint, and explain whether a synthesis is secure, plausible,
-or unresolved.
+Do not silently combine witnesses separated by decades or centuries. When they
+differ, name them, distinguish contradiction from selection or viewpoint, and
+mark synthesis as secure, plausible, or unresolved. Hagiography is evidence of
+memory, sanctity, imitation, cult, and theology, but it does not backdate itself.
 
-Hagiography is evidence of Christian memory, sanctity, imitation, cult, and
-theological interpretation.  It is not a synonym for falsehood, and historical
-criticism is not permission for contempt.  At the same time:
+In particular:
 
-- do not backdate the first located witness;
-- do not turn a motif shared with other saints into independent corroboration;
-- do not use canonization, a feast, a basilica, patronage, or an approved cult to
-  authenticate every narrated episode;
-- do not make an archaeological possibility prove the personal identity of a
-  tomb, relic, house, prison, or artifact;
-- do not convert silence into disproof when the record is merely incomplete;
-  and
-- do not keep a vivid story in the historical narrative after its source has
-  been found to be late, transferred, anachronistic, or unsupported.  Place it
-  in the tradition history with its actual status.
+- do not treat a shared motif as independent corroboration or a feast,
+  canonization, basilica, patronage, or approved cult as proof of every episode;
+- do not let archaeological compatibility authenticate a person's tomb, relic,
+  house, prison, or artifact, or let an incomplete record become disproof;
+- move a late, transferred, anachronistic, or unsupported vivid story from the
+  historical narrative to tradition history with its actual status; and
+- narrate miracles according to the source class without inventing a natural
+  explanation or certifying supernatural causation on project authority.
 
-Miracle reports are narrated according to their sources.  Scripture's inspired
-testimony, a contemporary report, a canonization inquiry, a later saint's life,
-and a popular legend do not carry the same historical or theological function.
-The project neither invents a natural explanation nor certifies a supernatural
-event on its own authority.  It may state what the Church receives or a
-competent act judges, but only within that act's object and scope.
+For every expected but missing record, search the reasonably accessible
+subject-authored corpus, contemporary witnesses, official acts, critical
+editions, manuscript and archaeological catalogs, early reception, and current
+professional scholarship appropriate to the claim. Preserve the search boundary
+and negative result in the audit.
 
-## Scripture and apostolic subjects
+## Subject-specific controls
 
-For a biblical person, inventory every material passage before drafting.  Read
-each book as a distinct literary and theological witness; identify authorship,
-date, audience, and historicity questions only to the degree needed for the
-biography.  Parallel Gospel scenes, Acts, letters, and later ecclesial testimony
-must not be collapsed into one quotation-free harmony that hides their sources.
+For biblical persons, inventory every material passage and read each book as a
+distinct literary and theological witness. Do not collapse parallel Gospels,
+Acts, letters, and later testimony into a hidden harmony. Distinguish narrated
+event from the surviving account's date and purpose; reported speech from a
+modern transcript; secure from disputed authorship; inspired portrait from a
+complete modern biography; and apostolic reception from undocumented details of
+martyrdom. Historical reconstruction may analyze sequence and setting without
+denying the canonical text's ecclesial status or claiming false precision.
 
-Distinguish:
+For authors, Fathers, and Doctors, treat writings by chronology, genre, audience,
+revision, transmission, and exact locus. Do not construct a personality from
+maxims or accept every transmitted attribution. Present controversies in
+sequence, opponents fairly, changes of view explicitly, and later ecclesial
+reception separately. Sanctity or the title Doctor does not make every opinion,
+polemical tactic, discipline, or historical judgment irreformable; address
+consequential failures and contested legacies proportionately.
 
-- the narrated event from the date and purpose of the surviving narrative;
-- the subject's words as reported by a source from a modern verbatim transcript;
-- undisputed subject-authored letters from disputed or pseudonymous writings,
-  without pretending that a disputed attribution has been settled by assertion;
-- an inspired theological portrait from a complete modern biography; and
-- apostolic or Roman reception from the exact circumstances of a martyrdom that
-  no contemporary narrative describes in full.
+Dates are claims. Use ranges, relative order, or competing chronologies instead
+of false precision, and state calendar/conversion assumptions when material; a
+feast does not establish a death date. Identify historical places and cautious
+modern equivalents. Treat language, family, class, patronage, slavery, gender,
+office, monastic form, travel, and political or institutional structures only
+where biographically consequential.
 
-The canonical text governs its theological claims.  Modern historical
-reconstruction may analyze sequence, social world, travel, language, conflict,
-and probable date; it may not demote the text's ecclesial status by rhetorical
-sleight of hand or claim more historical precision than the evidence permits.
+Separate posthumous evidence into death or martyrdom; burial and earliest cult;
+translation, identification, opening, or examination of remains; liturgical and
+institutional reception; later relic claims; and iconography, patronage, legend,
+and modern commemoration. Scientific or archaeological claims name authority,
+date, method, and result; current relic or shrine claims require current official
+verification when material. Iconography records reception, not portraiture, and
+anachronistic attributes are explained as such.
 
-## Authors, Fathers, Doctors, and disputed works
+## Reader order and terminal apparatus
 
-For a prolific subject, treat writings as biographical evidence and as works
-with their own chronology, genre, audience, revision history, and transmission.
-Use exact book, section, letter, sermon, preface, or retraction loci.  Do not
-construct a personality from isolated maxims or assign every work transmitted
-under a famous name to that author.
+After title and contents, give a concise governing question and enter the
+subject's world and sustained chronological life. Treat writings, teaching,
+mission, office, relationships, controversy, death, burial, earliest memory,
+later hagiography and cult, contested traditions, and legacy as applicable; do
+not force empty headings. A dedicated treatment must preserve memorable doubtful
+episodes without credulity or ridicule. Conclude with sanctity, historical
+significance, and unresolved questions.
 
-Explain major controversies in their historical sequence and quote opponents
-through surviving sources fairly.  Distinguish what the subject held at a
-particular date, later correction or development, the Church's subsequent
-reception, and modern debate.  Sainthood or the title Doctor of the Church does
-not make every historical judgment, exegetical opinion, polemical tactic, or
-disciplinary proposal irreformable.  Candidly address consequential failures,
-hard texts, and contested legacies without reducing a life to them.
+Then give a terminal `Scope, Chronology, and Evidence` appendix, references, and
+generation metadata. The appendix owns ordinary name forms, whole-life range,
+chronology conventions and detailed table, places, ecclesial setting and states
+of life, reader, question and thesis boundary, corpus, evidence key, geographic,
+linguistic, ritual and jurisdictional limits, mutable status cutoff, method,
+rights, and review state. Event dates remain at their events; disputed
+attribution, relic status, miracle limit, and other local qualifications remain
+beside the claims they govern.
 
-## Chronology, geography, and social world
+## Profile gate
 
-Dates are claims, not decorative labels.  State the calendar and conversion
-assumptions when they matter.  Use ranges, `before`, `after`, `by`, relative
-sequence, or competing columns instead of false precision.  A later feast day
-does not by itself establish a death date.
-
-Identify ancient place names and responsible modern equivalents without
-claiming uncertain borders.  Explain travel conditions, political authority,
-language, family, education, class, patronage, slavery, gender, clerical office,
-monastic form, and institutional structures only where sources make them
-biographically consequential.  Maps are optional; if used, they require a
-source and uncertainty statement and must remain legible in monochrome.
-
-## Death, burial, relics, cult, and visual memory
-
-Treat death and posthumous reception in separate evidentiary stages:
-
-1. earliest evidence for death or martyrdom;
-2. earliest located burial or cult witness;
-3. translation, identification, opening, or scientific examination of remains;
-4. liturgical and institutional reception;
-5. later relic claims and competing local traditions; and
-6. iconographic attributes, patronage, legends, and modern commemoration.
-
-Name the authority, date, method, and published result for an archaeological or
-scientific claim.  “Consistent with,” “traditionally identified,” and
-“authenticated as the person” are not interchangeable.  Do not report a relic
-or shrine's present status from an old source when a current official claim is
-material; record the verification date.
-
-Iconography is a history of reception, not a portrait photograph.  Explain
-attributes such as keys, sword, book, lion, mitre, cardinal's dress, or a
-particular physiognomy by their earliest controlled use and theological meaning
-where possible.  Flag anachronistic dress or office without treating it as an
-artist's historical claim.
-
-## Publication architecture
-
-Every full biography contains, in an order suited to the life:
-
-- a title page with no full provenance, method, chronology, or limitation block;
-- a table of contents;
-- a brief governing biographical question or thesis followed immediately by
-  the subject's world, identity, and sustained chronological life;
-- a sustained chronological life rather than a list of virtues;
-- the person's writings, teaching, mission, office, relationships, and major
-  controversies where applicable;
-- death, burial, and the earliest cult or memory;
-- later hagiography, liturgy, iconography, patronage, and institutional legacy;
-- a dedicated `Tradition under review` section that reports memorable doubtful
-  or late episodes without either credulity or ridicule;
-- a final synthesis of sanctity, historical significance, and unresolved
-  questions; and
-- a terminal `Scope, Chronology, and Evidence` appendix containing the method
-  and evidence key, work-wide bounds and qualifications, the compact
-  orientation, and detailed chronology;
-- references; and
-- terminal structured generation metadata.
-
-The appendix chronology may use tables, but the life itself should read as a
-coherent biography.  Do not repeat the appendix's chronology or evidence key
-as front matter. Repeated evidence panels use stable visible fields such as
-`Claim`, `Witness`, and `Limit`; do not force every paragraph into a box.  The
-references identify editions and translations actually used, stable links and
-access dates for material online evidence, and modern scholarship by full
-bibliographic description.
-
-## Rights, metadata, catalog, and maturity
-
-Prefer paraphrase and short, necessary quotations.  Scripture, patristic and
-official translations, liturgical texts, historical lives, modern scholarship,
-images, and archival or archaeological reports retain their own rights status.
-Record the translation and public-domain, licensed, permission, or quotation
-basis in the source audit; do not assume that an ancient author makes a modern
-translation public domain.  A biography does not need an image to be deep.
-
-Display structured generation metadata once in the terminal metadata section.
-Catalog each
-PDF only on `library/biographies.md`, followed by links to all four required
-research records.  Catalog maturity distinguishes source audit, historical or
-patristic specialist review, theological review, rights review, production
-review, and ecclesiastical approval.  Use `source-audited working biography`
-only after the source audit and publication checks are complete.  Never let
-`saint`, `Doctor`, `apostle`, or `martyr` imply that the project has obtained an
-imprimatur or independent review.
-
-## Completion gate
-
-A biography is ready to install only when:
-
-- the historical core, early reception, later tradition, modern reconstruction,
-  and project synthesis remain distinguishable;
-- material chronology and geography are sourced and uncertainty is visible;
-- the sustained life begins immediately after the title and contents, while
-  method, evidence key, work-wide date and geographic bounds, currentness,
-  review limits, and detailed chronology appear only in the terminal appendix;
-- every consequential vivid episode has an earliest located witness or is
-  marked unresolved;
-- subject-authored and disputed writings are classified responsibly;
-- miracles, sanctity, canonization, cult, relics, archaeology, liturgy,
-  patronage, and iconography are not made to prove more than their sources;
-- difficult actions, disagreements, and contested legacies receive proportionate
-  treatment rather than apologetic omission or presentist caricature;
-- `scope.md`, `source-audit.md`, `chronology.md`, and `tradition-audit.md` agree
-  with the publication and record rights and review limits;
-- exact references, structured metadata, PDF title and subject, and the catalog
-  entry are complete;
-- compilation is settled, logs are clean of fatal, undefined-reference, and
-  overflow errors, every page is visually inspected, PDF structure and fonts
-  are checked, and the installed PDF is byte-identical to the reviewed build;
-  and
-- independent historical, theological, linguistic, archaeological, or
-  ecclesiastical review is claimed only when actually recorded.
+Every consequential episode must have an earliest located witness or an
+unresolved status. The publication and all four records must agree on chronology,
+tradition, rights, and maturity; historical core, reception, later tradition,
+critical reconstruction, and project synthesis must remain distinguishable.
+Claim only the historical, theological, linguistic, archaeological, or
+ecclesiastical review that a named event records.

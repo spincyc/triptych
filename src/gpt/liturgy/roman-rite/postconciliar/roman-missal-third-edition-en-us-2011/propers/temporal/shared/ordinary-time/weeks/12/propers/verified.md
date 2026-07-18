@@ -1,6 +1,7 @@
 # Ordinary Time Week XII — Canonical Formulary Audit
 
 **Owner:** Ordinary Time Week 12, consumed on Sunday by `PC-S36`
+**Registry control:** `guidance/liturgy/postconciliar-propers-registry.md`; [edition formula dispositions](../../../../../../registry/formula-dispositions.md)
 **Last collated:** 2026-07-15
 
 ## Witnesses and limits

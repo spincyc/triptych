@@ -1,6 +1,6 @@
 # Seventh Sunday after Pentecost — Research Scope
 
-**Last updated:** 2026-07-14
+**Last updated:** 2026-07-17
 
 This record preserves research scope and evidence roles that are intentionally compressed in the reader-facing guide. Textual retrieval, checksums, facsimile locations, and the complete verified propers remain in `../propers/verified.md`.
 
@@ -42,13 +42,13 @@ These sources directly expound appointed biblical passages, not the later assemb
 
 These witnesses supply doctrine or close liturgical analogy; except for the appointed scriptural contexts themselves, they are not presented as direct commentary on the Collect, Offertory, Secret, or Postcommunion. The source-led synthesis summarizes these controls, the detailed commentary gives their argument and qualifications, and original cross-proper analogies are confined to `The Propers: Interpretive Possibilities`.
 
-## 2026-07-14 Full Re-evaluation
+## Review Record
 
-- The complete guide was audited against the profile's required sequence: one-page Propers map and four senses, one-page historical orientation, exactly two pages of Themes and Movement, fresh-page Detailed Commentary with substantive treatment of all ten propers, separately bounded Interpretive Possibilities, verified Notable Quotables, references, scope disclosure, generation metadata, and rights notice.
-- Every verified proper now records immediate context and liturgical function. Repetitive synthesis was removed; the Secret's decisive canonical and official doctrinal controls are named explicitly; the four proposals are genuinely exploratory; and only the two passage-specific cultural examples that passed primary-work verification remain.
+- The 14 July 2026 source and structure review confirmed the propers map and four senses, two-page source-grounded synthesis, substantive treatment of all ten propers, exploratory proposals, terminal historical and scope appendices, references, metadata, and rights notice.
+- Every verified proper records immediate context and liturgical function. Repetitive synthesis was removed; the Secret's decisive canonical and official doctrinal controls are explicit; and the four proposals remain exploratory.
 - Independent source-and-structure review corrected an ambiguous Chrysostom locus, made the `Ecclesia de Eucharistia` and Hebrews controls visible in the synthesis, and aligned the Ignatius quotation status with the reader text. Production review then removed a forced break that had stranded one table row on an otherwise blank page and restored the intended two-page synthesis.
 - The settled eleven-page PDF passed two LaTeX passes, a clean fatal/error/reference/box-warning scan, generation-metadata validation, text extraction, embedded-font inspection, and `qpdf --check`. Every rendered page was visually inspected; the installed publication was confirmed byte-identical to the reviewed build artifact.
-- No independent theological review was performed; the source, content, and layout reevaluation therefore remains **T0** under the profile's triage scale.
+- No independent theological review was performed.
 
 ## Survey and Material Limits
 
@@ -56,11 +56,3 @@ These witnesses supply doctrine or close liturgical analogy; except for the appo
 - No secure direct patristic commentary was located for the Collect, the exact Offertory verse Daniel 3:40, the Secret, or the Postcommunion.
 - The survey does not exhaust manuscripts, untranslated works, subscription databases, or modern critical scholarship. Older public-domain translations are working texts.
 - Sources were retained because they establish or materially qualify claims made in the guide; no numerical or source-category quota was applied.
-
-## Cultural Reception
-
-Exact and variant wording from Matthew 7, Romans 6, and the appointed psalms was tested across digitized literature, film, recorded music, and web indexes. Two examples survived the primary-work gate. *The Night of the Hunter* was checked in the opening sequence at 2:27–3:16 and against James Agee's shooting script, pp. 1–2. William James's adaptation was checked in *The Varieties of Religious Experience*, Lecture I, printed p. 20, using the 1902 Longmans scan and a searchable transcription of the 1917 edition.
-
-The 17 July 2026 reader-first restructuring removed the optional “Notable Quotables” section and its bibliography from the publication as tangential to the proper-by-proper study. The verified leads remain here for audit continuity; no publication claim depends on them.
-
-Two initially plausible items were removed rather than padded into the guide. The wording and HarperTorch p. 282 locus attributed to Terry Pratchett's *Witches Abroad* were reported by Wikiquote, and the edition was identified in [Colin Smythe's official bibliography](https://colinsmythe.co.uk/terry-pratchett/discworld/discworld-novels/witches-abroad/), but the named primary edition was not directly checked. The Beatles' official track page and Francesco Brusco's [analysis of the 2009 stereo remaster](https://lnx.gatm.it/analiticaojs/index.php/analitica/article/download/157/brusco2020revolution/598), Table 1, pp. 14–15, establish sampled Vaughan Williams choral excerpts; the [CRCCM repertoire record](https://repertoire.crccm.org/display?id=61abb204fce289380f20f507) establishes that *O Clap Your Hands* sets Psalm 47, but the search did not establish that the appointed Psalm 46:2 words are themselves audible at a precise insertion. A previously cited [OpenEdition chapter](https://books.openedition.org/pur/182639) was also misattributed: it is Laurent Denave's, not Émilie Crapoulet's. Because neither discarded lead supports a published claim, neither remains in `References`.

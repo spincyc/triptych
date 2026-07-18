@@ -1,80 +1,136 @@
 # Mariological Reference Works
 
-This profile governs repeatable theological reference works beneath `src/gpt/theology/mariology/`, including the Rosary exposition and studies of ecclesial judgments concerning alleged Marian apparitions. These works may be discursive, historical, devotional, doctrinal, or juridically status-conscious, but they do not inherit the Mass-propers template, the Ordinary-exposition sequence, the sacramental-reference architecture, or the general article path.
+This profile governs repeatable Rosary, Marian-dogma, and apparition-judgment
+references beneath `src/gpt/theology/mariology/`. It supplies a shared doctrinal
+core and separate genre addenda; do not merge their templates.
 
-Publishable documents live at `src/gpt/theology/mariology/<document>/`; transient and installed PDFs mirror them at `build/gpt/theology/mariology/<document>.pdf` and `doc/gpt/theology/mariology/<document>.pdf`. Reusable Mariological source fragments, if genuinely shared, live at `src/gpt/theology/mariology/shared/`, have no independent PDF, and must be imported rather than copied. Rebuild and inspect every consumer after a shared change.
+## Governing priorities
 
-## Governing doctrinal hierarchy
+1. Preserve Christ's unique mediation and the completeness of public Revelation.
+2. Distinguish dogma, authoritative teaching, liturgical reception,
+   administrative judgment, theology, devotion, history, typology, and project
+   synthesis.
+3. Use the exact competent source and object for every status or authority claim;
+   search expected official and primary records when one is missing.
+4. Begin with prayer, doctrine, history, or the event actually studied.
+5. Put whole-work corpus, geography, chronology, taxonomy, method, currentness,
+   and qualifications in terminal apparatus while retaining claim-local limits.
 
-Public Revelation is complete in Jesus Christ. A private revelation cannot improve, complete, correct, or replace the apostolic deposit, and the faithful are never required to give a private revelation divine and Catholic faith (DV 2--4; CCC 65--67). Scripture, Tradition, dogma, authoritative non-definitive teaching, liturgical reception, administrative judgment, theological opinion, devotional tradition, historical reconstruction, typology, and project synthesis must remain visibly distinct.
+## Shared doctrinal and source controls
 
-Christ alone is Redeemer and the one mediator between God and humanity. Mary's cooperation is created, graced, maternal, subordinate, participated, and wholly dependent upon Christ; it neither adds to his merits nor compensates for deficient divine mercy (LG 56, 60--62; CCC 970). Apply the current doctrinal safeguards in the Dicastery for the Doctrine of the Faith's *Mater Populi Fidelis* when Marian titles or mediation formulas matter. Do not depict Mary as an independent source of grace, a rival advocate against Christ, or a restraint upon an otherwise merciless Father.
+Public Revelation is complete in Christ; private revelation cannot complete,
+correct, or replace the apostolic deposit and never requires divine and Catholic
+faith. Christ alone is Redeemer and mediator. Mary's cooperation is created,
+graced, maternal, subordinate, participated, and wholly dependent on him. Apply
+*Lumen gentium* 56 and 60–62, CCC 65–67 and 970, and the DDF's current safeguards
+in *Mater Populi Fidelis* when mediation titles matter. Never make Mary an
+independent source of grace, rival advocate, or restraint on a merciless Father.
 
-Authentic Marian devotion leads to the Trinity through Christ and into Scripture, liturgy, sacraments, conversion, charity, mission, and communion with the Church. It does not define doctrine through alleged messages, authenticate political programs, supply an inevitable future chronology, promise mechanical salvation, or displace ordinary pastoral, medical, legal, or safeguarding action.
+Authentic devotion leads through Christ into Scripture, liturgy, sacraments,
+conversion, charity, mission, and ecclesial communion. It cannot define doctrine
+from alleged messages, authenticate a political program, guarantee a future
+chronology or salvation, or displace pastoral, medical, legal, or safeguarding
+action.
 
-## Required records and source classes
+Every leaf keeps `research/scope.md` and `research/source-audit.md`. An
+apparition study also keeps `research/corpus-status.md` as its controlling
+inventory and updates that record before narrative status changes. Add focused
+claim audits where an image, cure, secret, chronology, or received tradition
+cannot be governed safely by the common records alone.
 
-Every document leaf keeps one structured `generation-metadata.tex` record, imports it once in a terminal `Generation Metadata` section, and keeps:
+Prefer Scripture; conciliar, papal, and DDF teaching; competent diocesan or
+eparchial acts; official shrine or episcopal records; and critical primary
+editions. Feasts, canonizations, coronations, visits, indulgences, imprimaturs,
+shrines, and popular reception establish only their own form of reception. If an
+expected primary or competent-authority record is absent, search the reasonably
+accessible official indices, diocesan/eparchial publications and archives, Holy
+See records, critical editions, contemporary documentary witnesses, and
+professional scholarship; record the source families and negative result.
 
-- `research/scope.md`, stating question, reader, thesis, included and excluded corpus, authority classes, currentness needs, material uncertainties, and review state; and
-- `research/source-audit.md`, mapping consequential claims to exact sources and loci, source class, translation or OCR status, quotation limits, rejected leads, and unresolved disagreements.
+## Reader order and terminal apparatus
 
-An apparition-judgment study also keeps `research/corpus-status.md` as its controlling inventory. Narrative prose may explain but never silently broaden or upgrade that inventory. Update the inventory first when a competent authority changes a status.
+After title and contents, begin with the Rosary's form, the doctrinal economy or
+first dogma, the history/judgment under study, or the first event dossier. End the
+substantive synthesis with terminal `Scope, Status, and Qualifications`, any
+corpus/status index or orientation timeline, references, and generation metadata.
+The appendix owns question and thesis boundary, included/excluded corpus,
+geography, chronological range, checked-through date, global taxonomy,
+terminology, source hierarchy, method, doctrine/jurisdiction limits, unresolved
+questions, rights, and review state.
 
-Prefer Scripture, conciliar and papal teaching, DDF acts, competent diocesan or eparchial decrees, official shrine or episcopal records, and critical primary editions. Papal addresses, liturgical feasts, shrine status, canonizations, coronations, visits, indulgences, imprimaturs, and popular reception can prove ecclesial reception within their proper scope; none by itself proves that an alleged event is supernatural. Secondary scholarship may reconstruct history but must not be assigned magisterial or juridic force.
+A compact immediate notice may state the completeness of Revelation,
+non-obligatory character of private revelation, or current controlling judgment
+when reliance risk requires it. The exact object and limit of a judgment,
+disputed witness, authority distinction, or message-specific qualification
+remains beside that claim.
 
-When a historical or status claim lacks its expected primary or competent-authority record, search the reasonably accessible official indices, diocesan or eparchial archives and publications, DDF and Holy See records, critical editions, contemporary press or documentary witnesses, and professional scholarship before treating the gap as final. Record the source families checked and consequential negative result in the source audit; do not turn an untested absence into a historical or juridic conclusion.
+## Rosary addendum
 
-## Reader-facing order
+A comprehensive Rosary exposition begins with prayer and contemplation. It
+identifies each prayer component's provenance and function; distinguishes the
+historic fifteen-decade cycle, twenty-mystery expansion, and ordinary five-
+decade recitation; and treats the complete cycle and each included mystery from
+the biblical, Christological, Trinitarian, Marian, ecclesial, patristic,
+spiritual, and moral dimensions that materially illuminate it. These are
+available lenses, not a quota or repeated paragraph template.
 
-After the title and table of contents, begin the work's usable or substantive object: the Rosary's prayer and contemplative form, the scriptural and doctrinal economy of the Marian dogmas, the history or judgment actually under study, or the first event dossier. Do not put a question-and-method chapter, corpus boundary, evidence key, status taxonomy, date-range survey, currentness block, terminology guide, or review disclaimer between the reader and that content.
+Preserve these boundaries:
 
-After the substantive synthesis, place a terminal `Scope, Status, and Qualifications` appendix containing the question and thesis boundary, included and excluded corpus, geographic and chronological range, as-of or checked-through date, status taxonomy, source hierarchy and method, terminology, global doctrinal and juridic limits, unresolved questions, rights boundary, and review state. A corpus index, global status map, orientation timeline, or inclusion-threshold account used chiefly to bound the work belongs in this appendix block. References follow, then terminal `Generation Metadata`.
+- the Rosary is a contemplative pious exercise, not liturgy or sacramental
+  anamnesis;
+- the Luminous Mysteries are Saint John Paul II's freely proposed enrichment,
+  not a test of obedience or a correction of a defective traditional cycle;
+- the Saint Dominic attribution is received devotional and papal tradition, not
+  proof that the complete modern form arrived in one documented event;
+- Pius V stabilized a developing inherited form; Fatima commended rather than
+  originated the Rosary;
+- typology differs from literal exegesis and disciplined imagination from
+  recovered history; and
+- mutable indulgence discipline and official judgments require current sources
+  and dates.
 
-The title may identify the devotion, dogma set, event, place, or competent act. Where reliance risk is immediate, a compact notice may state the completeness of public Revelation, the nonbinding character of private revelation, or the exact current controlling judgment and point to the appendix. The precise object and limit of an apparition judgment, a disputed historical witness, a doctrinal authority distinction, or a qualification affecting one message or event remains beside that claim; the appendix never licenses a globally cautious but locally overbroad narrative.
+Do not import apparition messages, promises, wound counts, speeches, or end-time
+schedules into mysteries as Revelation or historical fact. Spiritual fruits are
+invitations to grace-enabled conversion, not automatic effects or guarantees.
 
-## Rosary expositions
+## Marian-dogma addendum
 
-A comprehensive Rosary exposition begins with the prayer and contemplative form rather than an identity-and-method essay. It records the provenance and function of each prayer component; distinguishes the historic fifteen-decade Rosary, the expanded twenty-mystery cycle, and an ordinary five-decade recitation; and analyzes both the complete cycle and every included mystery at biblical, Christological, Trinitarian, Marian, ecclesial, patristic, spiritual, and moral levels. Put the work-wide cycle boundary, historical range, method, and currentness in the terminal appendix while retaining a date or source qualification beside the historical claim it changes.
+A comprehensive reference treats exactly divine motherhood, perpetual
+virginity, the Immaculate Conception, and bodily Assumption as the four commonly
+identified Marian dogmas. For each, establish the exact defined object and
+authority before tracing Scripture in context, early substance and later
+terminology, patristic and liturgical reception, controversy, scholastic
+development, definition, consequences, and deliberately open questions.
 
-The source and publication must preserve these boundaries:
+Do not project final formulas word-for-word into earlier witnesses, manufacture
+patristic unanimity, or make every title or authoritative doctrine a dogma.
+Apocrypha and legend can show reception without supplying eyewitness history.
+State a saint or Doctor's material difficulty: Thomas Aquinas did not teach the
+1854 formula in its final form, and his broader principles are not a dedicated
+proof of the 1950 definition.
 
-- the Rosary is a contemplative pious exercise distinct from the sacred liturgy and from sacramental anamnesis;
-- the Luminous Mysteries are Saint John Paul II's freely proposed enrichment, not a test of obedience or a claim that the traditional cycle was defective;
-- the St. Dominic attribution is a venerable devotional and papal tradition, while delivery of the complete modern form in one historically documented event is not asserted without contemporary evidence;
-- Pius V stabilized an inherited developing form rather than inventing every component;
-- Fatima commended an existing devotion and did not originate the Rosary or supplement the Gospel;
-- typology is distinguished from literal exegesis, and disciplined imaginative meditation from recovered historical detail; and
-- mutable indulgence discipline and current devotional norms are checked against official sources and date-qualified.
+End the substantive dogma synthesis with one page-bounded synopsis per dogma,
+keeping together object, mode and authority, biblical center, principal early
+witnesses, Thomistic support or limit, development hinge, doctrinal fruit,
+required assent, and exclusions/open questions. The sheet may condense but not
+erase historical difficulty or promote typology or opinion.
 
-Apparitions, promises, exact wound counts, undocumented speeches, end-time schedules, or other private-revelation details may not be smuggled into mystery analysis as public Revelation or historical fact. Spiritual fruits are invitations to grace-enabled conversion, not automatic psychological effects or guarantees.
+Mary's cooperation is not a fifth dogma. Do not recommend “Co-redemptrix” as a
+definition; qualify “Mediatrix” and “Advocate” by Christ's unique mediation and
+Mary's wholly received maternal intercession. Historical uses retain their own
+date and authority.
 
-## Marian-dogma references
+## Apparition-judgment addendum
 
-A comprehensive reference on Marian dogma treats the four truths commonly identified in Catholic theology as Marian dogmas: divine motherhood, perpetual virginity, the Immaculate Conception, and the bodily Assumption. It states the precise object and authority of each teaching before supplying biblical, patristic, liturgical, scholastic, conciliar, or papal evidence. It must not create additional dogmas by promoting every authoritative Marian doctrine, devotional title, theological conclusion, or proposed definition to the same rank.
+Never promise “all approved apparitions” without a reproducible corpus. No
+identified universal master registry makes positive event judgment, witness
+credibility, permission of cult, text/devotion approval, papal or liturgical
+reception, and pastoral `Nihil obstat` interchangeable. The corpus record defines
+search boundary, as-of date, inclusion/exclusion, taxonomy, and every status term.
 
-For each dogma, keep distinct:
-
-- the revealed reality and its Christological or ecclesial center;
-- the exact solemn definition or other controlling magisterial formulation, with authority, date, and locus;
-- Scripture read in its literary and canonical context, distinguishing direct assertion from typology;
-- early witnesses to the substance of the belief, later terminological precision, liturgical reception, controversy, and final definition;
-- genuinely checked patristic and Thomistic loci, including material difficulty or historical limitation rather than retrospective unanimity; and
-- the dogma's theological consequences and the questions its definition deliberately leaves open.
-
-When a repeated dogma or mystery panel is already set apart typographically and its internal fields name the proposition or scriptural loci, controlling authority or doctrinal center, and necessary limit or contemplative fruit, do not add a second generic wrapper title. Retain visible titles only when they supply substantive status, authority, or interpretive information not carried by those fields.
-
-Development is neither invention nor a license to project nineteenth- or twentieth-century formulas word for word into the Fathers. Apocryphal or legendary material may document reception, imagination, or feast development without becoming apostolic eyewitness evidence. A saint or Doctor's incomplete, disputed, or materially different formulation must be acknowledged. In particular, do not make Thomas Aquinas teach the 1854 definition in its final form, and do not invent a dedicated Thomistic proof of the 1950 definition where his surviving treatment supplies only broader theological principles.
-
-A comprehensive four-dogma reference enters the scriptural and doctrinal economy or the first dogma immediately after the contents rather than beginning with method and boundary apparatus. It ends its substantive synthesis with one genuinely page-bounded appendix synopsis for each dogma. Each sheet keeps together the exact object, mode and authority of proposal, biblical center, principal patristic witnesses, Thomistic support or limitation, development hinge, doctrinal fruit, required assent, and exclusions or open questions. The synopsis condenses the audited argument; it may not erase a historical difficulty, promote typology into direct assertion, or turn a theological opinion into defined content.
-
-A section on Mary's cooperation in salvation must apply *Lumen gentium* 56 and 60--62 together with the current DDF doctrinal note *Mater Populi Fidelis*. “Co-redemptrix” is not a fifth Marian dogma and must not be recommended as a definition of Mary's cooperation; “Mediatrix” and “Advocate” require the conciliar and DDF safeguards of Christ's unique mediation and Mary's wholly received, maternal, subordinate intercession. Historical papal or devotional uses are reported with their date and authority, not treated as if repetition by itself created a solemn definition.
-
-## Apparition judgments and authority-qualified corpora
-
-Avoid an unqualified title or assertion of “all approved apparitions.” The Church publishes no identified universal master registry, and “approved” can collapse unlike acts: a positive judgment on an event, witness credibility, permission of cult, approval of a devotion or text, papal or liturgical reception, and a current pastoral `Nihil obstat`. A comprehensive study must define its taxonomy, search boundary, as-of date, inclusion and exclusion rules, and meaning of every status term.
-
-The DDF's *Norms for Proceeding in the Discernment of Alleged Supernatural Phenomena* took effect on 19 May 2024. Under the current ordinary process the diocesan bishop investigates and proposes a determination in dialogue with the DDF, and the DDF gives final approval. The six possible prudential conclusions are:
+The DDF norms effective 19 May 2024 ordinarily give the diocesan bishop an
+investigation and proposal in dialogue with the DDF, whose approval is final.
+Keep the six possible conclusions exact:
 
 1. `Nihil obstat`;
 2. `Prae oculis habeatur`;
@@ -83,52 +139,41 @@ The DDF's *Norms for Proceeding in the Discernment of Alleged Supernatural Pheno
 5. `Prohibetur et obstruatur`; and
 6. `Declaratio de non supernaturalitate`.
 
-A `Nihil obstat` permits positive pastoral reception and may recognize signs of the Spirit's action amid an experience; it does not certify the event's supernatural origin or oblige belief. As a rule, current authorities do not declare supernatural origin, although the Pope may exceptionally authorize such a procedure. Legacy decisions retain their exact historical formulas and scopes---including `constat de supernaturalitate`, `constat de non supernaturalitate`, “worthy of belief,” permission of cult, or a commission's credibility finding---unless a competent later act supersedes or reclassifies them. Do not retroactively force them into a 2024 category.
+`Nihil obstat` permits positive pastoral reception and may recognize spiritual
+fruits; it does not certify supernatural origin or oblige belief. Authorities do
+not ordinarily declare supernatural origin under the current process, though the
+Pope may exceptionally authorize it. Preserve legacy decisions in their exact
+historical formulas and scope unless a competent later act supersedes them; do
+not retroactively relabel them under the 2024 taxonomy.
 
-### Controlling dossier fields
+Each included dossier records: stable event identity and jurisdiction; claimed
+type, dates, recipients and witness corpus; authority, office, act, date,
+language, locus and source; procedural regime and operative formula; exact object
+judged; included/excluded events, messages, persons, translations and accretions;
+later acts or restrictions; current controlling status and what it does not
+establish; checked reported-message themes and cautions; and source/translation,
+rights, disagreement, gap, and review status. Say “reported message” unless a
+competent act establishes more. A positive act does not authenticate every
+sentence, secret, cure, later appearance, translation, promise, or compilation;
+a silent event needs no verbal-message template.
 
-For each included event or received tradition, record as applicable:
+Any “renowned” or frequently confused appendix uses a recorded reproducible
+threshold. Renown is editorial, not canonical. An approval mark must define the
+exact competent acts that trigger it and cannot migrate from title, prayer,
+feast, shrine, cult, pilgrimage, cure, witness, or `Nihil obstat` to the event.
+Ancient and medieval traditions retain their actual category—tradition, dream,
+foundation memory, or late narrative—without letting devotional reception fill
+an evidentiary gap.
 
-- stable title or invocation; place, country, diocese or eparchy, Church `sui iuris`, and jurisdiction;
-- claimed event type and dates; named recipients, seers, or witness corpus;
-- competent authority and office; act title, protocol when public, date, effective or publication date, official language, exact locus, and stable source;
-- procedural regime and exact operative formula or tightly checked paraphrase;
-- precise object judged: event, testimony, message corpus, cult, devotion, shrine, miracle, pastoral fruit, or another object;
-- included and excluded dates, persons, messages, secrets, translations, later accretions, and geographic reach;
-- later acts, reversals, restrictions, clarifications, supersession, and Holy See involvement;
-- current controlling status and an express statement of what that status does **not** establish;
-- verified reported-message themes, doctrinal cautions, symbolic qualifications, historical context, and ecclesial reception; and
-- source class, translation or OCR status, copyright boundary, disagreements, unresolved leads, and review maturity.
+## Currentness and profile gate
 
-Use “reported message” except when describing exactly what a competent act recognizes. A positive decision never automatically authenticates every sentence, translation, secret, miracle, later recipient, later appearance, interpretation, devotional promise, or internet compilation. Silent events must not be forced into a verbal-message template.
+Before installing an apparition work, recheck DDF indices and norms, the
+competent diocese/eparchy, later Holy See interventions, reversals, and
+restrictions; never infer unchanged status from silence. Date mutable Rosary
+discipline and current judgments, not stable doctrine artificially.
 
-The recurring reader-facing dossier summary uses an untitled frame and three stable visible field identifiers: `Event or tradition`, `Ecclesial reception or judgment`, and `Limit of that reception`. Do not make the reader infer these materially different fields from their order, spacing, or type style, and do not add a generic title for the frame as a whole.
-
-An appendix of renowned or frequently confused claims must define a reproducible inclusion threshold in the terminal apparatus and keep a repository-owned inclusion record. “Renowned,” “major,” and “moderately renowned” are editorial categories, not canonical statuses; do not promise a universal list from internet popularity or an unidentified aggregation. If typography marks “approved” cases, the legend must state exactly which competent acts trigger that mark. A strict event-level mark does not transfer from approval of a title, prayer, feast, sacramental, cult, shrine, pilgrimage, cure, witness credibility, or post-2024 `Nihil obstat`. Every indexed row still names the authority, date, object, formula, current qualification, and what the act does not establish.
-
-Ancient and medieval apparition traditions require the same category discipline. Preserve an official source's attribution to “tradition,” dream, foundation memory, or late narrative; distinguish devotional or liturgical reception from contemporary evidence and from a modern event decree. Historical uncertainty does not nullify an approved devotion, and approved devotion does not retroactively supply missing event evidence.
-
-## Currentness and status control
-
-Apparition publications display “checked through YYYY-MM-DD” in the terminal scope and status appendix and, before every installation, recheck the DDF document index, current procedural norms, the competent diocese or eparchy, later Holy See interventions, reversals, and restrictions. Never infer unchanged status from silence. Preserve older acts under their original law and vocabulary while identifying any later controlling act separately. A current controlling act and its limit remain visible in the dossier it governs.
-
-Rosary publications require an as-of date only where mutable discipline or current official judgments matter. Stable doctrine and historical claims still require exact verification, but should not be given artificial legal currentness language.
-
-Negative, precautionary, unresolved, ambiguous, pastorally received without a fact judgment, and positively judged cases must remain distinct. Cross-case similarities in conversion, prayer, penance, peace, sacraments, or charity may be synthesized as editorial analysis; they neither prove supernatural origin nor create a new composite revelation.
-
-## Completion gate
-
-A Mariological reference work is ready to publish only when:
-
-- Christ's unique mediation, the completeness of public Revelation, and the subordinate character of every Marian privilege and devotion remain explicit;
-- dogma, doctrine, judgment, reception, history, typology, devotional tradition, and original synthesis are not blurred;
-- substantive prayer, doctrine, history, or event treatment begins immediately after the title and contents, while corpus and search boundaries, global status taxonomy, date range, currentness, method, terminology, rights, and review qualifications occur only in the terminal appendix block;
-- the Rosary's historical development, complete cycle, every included mystery, and private-revelation boundaries are documented where that is the work's scope;
-- a Marian-dogma reference identifies the exact four-dogma corpus, documents every definition and historical development without anachronism, states the authority and limits of other Marian titles, and provides a one-page evidence-and-boundary synopsis for each dogma;
-- an apparition corpus and its narrative agree exactly, every status claim has a competent-authority source and bounded object, and no claim of comprehensiveness implies a nonexistent official master list;
-- negative, ambiguous, unresolved, legacy, received-tradition, and post-2024 categories are not flattened;
-- message quotations and paraphrases are checked against the authority-bounded corpus and comply with copyright limits;
-- mutable discipline and current judgments are rechecked and date-qualified;
-- independent mariological, historical, canonical, linguistic, medical, or ecclesiastical review is claimed only when actually recorded; and
-- expected primary or competent-authority source gaps have received and recorded targeted searches;
-- universal metadata validation, terminal provenance, multi-pass build, log inspection, every-page visual review, PDF structure checks, installed/build comparison, source records, and catalog update are complete.
+Publication and controlling records must agree exactly. Negative,
+precautionary, unresolved, ambiguous, received-without-fact-judgment, positive,
+legacy, and post-2024 categories remain distinct. Claim only recorded
+Mariological, historical, canonical, linguistic, medical, or ecclesiastical
+review.

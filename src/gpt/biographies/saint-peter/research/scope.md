@@ -229,7 +229,7 @@ ancient work does not make every modern translation public domain.
 
 ## Production verification
 
-The repository production pass completed on 17 July 2026 after the source-gap
+The earlier source-gap production pass completed on 17 July 2026 after the source-gap
 revision. The source settled after two `pdflatex` passes as a 23-page PDF; the
 final log contains no fatal,
 undefined-reference, overflow, underfull, or other layout warning. PDF title,
@@ -241,3 +241,5 @@ SHA-256 `fa6c8beccde55b480597f360a77d1ce29dceb499a2e1e5194ac7e5a6d66556c9`.
 This is internal source and production verification, not independent historical,
 theological, archaeological, linguistic, rights, or ecclesiastical review. The
 publication must not be described as peer reviewed or ecclesiastically approved.
+
+Reader-order revision and production review (2026-07-17): scope, chronology conventions, evidence key, orientation, and detailed timeline now form one terminal `Scope, Chronology, and Evidence` appendix before references. Two settled `pdflatex` passes produced a 23-page PDF; the final log is warning-free, and metadata, PDF structure, embedded and subset fonts, and extracted text passed inspection. Every rendered page was visually reviewed, and the installed PDF is byte-identical to the reviewed build, SHA-256 `8b03726d738bd8819521f6c3a092f4e0af22a88eddbdc88b7d641e3eb01a274d`.

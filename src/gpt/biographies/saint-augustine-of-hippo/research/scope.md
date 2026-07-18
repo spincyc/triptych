@@ -147,7 +147,7 @@ No copyrighted corpus, scan, or substantial modern quotation is vendored.
   relics, Rule, legends, and quotations made explicit;
 - internal source, chronology, and tradition records drafted;
 - translation and rights boundaries recorded for each source family; and
-- repository production verification completed on 17 July 2026 after the
+- earlier source-gap production verification completed on 17 July 2026 after the
   source-gap revision: two settled `pdflatex` passes produced a 20-page PDF;
   the final log has no fatal,
   undefined-reference, overflow, underfull, or other layout warning; PDF title,
@@ -177,3 +177,5 @@ not ecclesiastical approval.
 
 The completed production checks are internal and do not imply independent
 historical, theological, rights, or ecclesiastical review.
+
+Reader-order revision and production review (2026-07-17): scope, chronology conventions, evidence key, orientation, and detailed chronology now form one terminal `Scope, Chronology, and Evidence` appendix before references. Two settled `pdflatex` passes produced a 20-page PDF; the final log is warning-free, and metadata, PDF structure, embedded and subset fonts, and extracted text passed inspection. Every rendered page was visually reviewed, and the installed PDF is byte-identical to the reviewed build, SHA-256 `1671f5f1cba74a59285c6a3c140225acc5148b1f1a34f4e86406dc1206b73686`.

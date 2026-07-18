@@ -1,103 +1,129 @@
 # Virtues Reference Work
 
-This profile governs the comprehensive philosophical and theological reference at `src/gpt/theology/virtues/`. The work studies virtue as habit, the theological and cardinal orders, the intellectual virtues, the virtues annexed to the cardinal virtues, and the principal related states distinguished by Aristotle, Augustine, and Thomas Aquinas. It is a theological reference work, not a discursive article, a catechism, a catalogue of personality traits, or an instrument for diagnosing another person's character. Its publication mirrors to `build/gpt/theology/virtues.pdf` and `doc/gpt/theology/virtues.pdf`.
+This profile governs the comprehensive reference at
+`src/gpt/theology/virtues/`. It is not a trait catalog, catechism, discursive
+article, or instrument for diagnosing another person.
 
-## Comprehensive claim and controlling inventory
+## Governing priorities
 
-“All virtues” is meaningful only relative to a declared corpus and classification rule. The controlling corpus is Aristotle's securely attributed ethical works, principally the *Nicomachean Ethics*; Augustine's systematic treatments of faith, hope, charity, ordered love, and named Christian virtues; and Aquinas's *Summa theologiae* I--II, questions 49--70, II--II, questions 1--170, and III, question 85 on penance as a virtue, with III, question 90 controlling its virtue--sacrament boundary and context-conditioned divisions. Other authentic works may clarify a disputed classification, but a late handbook, modern list, or name resemblance cannot add an item by itself.
+1. Make every comprehensive claim agree with the controlling source corpus and
+   inventory.
+2. Preserve each habit's formal object, act, provenance, taxonomic level, parent,
+   and warranted opposition structure.
+3. Distinguish Aristotle's, Augustine's, and Aquinas's frameworks rather than
+   manufacturing one symmetrical taxonomy.
+4. Begin with the philosophical and theological grammar needed to read virtue.
+5. Put global corpus, completeness, sorting, terminology, and qualifications in
+   terminal apparatus while retaining entry-specific limits in each dossier.
 
-The document keeps `research/virtue-inventory.md` as its controlling census. Every candidate is recorded as one of:
+## Corpus and controlling inventory
 
-- a principal theological, cardinal, moral, or intellectual virtue;
-- a subjective species or potential part that the controlling source expressly treats as a virtue;
-- a qualified or cognate state that a source distinguishes from virtue in the strict sense;
-- an integral condition, act, gift, fruit, beatitude, counsel, passion, relation, or state of life that must not be counted as a coordinate virtue; or
-- a rejected duplicate, translation variant, doubtful attribution, or unsupported modern addition.
+The controlling corpus is Aristotle's securely attributed ethical works,
+principally *Nicomachean Ethics*; Augustine's systematic treatments of faith,
+hope, charity, ordered love, and named Christian virtues; and Aquinas's *Summa
+theologiae* I–II 49–70, II–II 1–170, III 85, with III 90 controlling the
+virtue–sacrament boundary. Other authentic works may clarify a disputed
+classification; handbooks, modern lists, and name resemblance cannot add items.
 
-The inventory records a stable key and sort key, Greek or Latin term where material, preferred English name, classification, formal object and act, exact primary loci, provenance status, opposition structure, appendix treatment, and unresolved qualification. Narrative prose may explain but may not silently enlarge the census.
+`research/virtue-inventory.md` classifies every candidate as a principal
+theological/cardinal/moral/intellectual virtue; source-defined species or
+potential part; qualified/cognate state; integral condition, act, gift, fruit,
+beatitude, counsel, passion, relation, or state of life; or rejected duplicate,
+translation variant, doubtful attribution, or unsupported addition. Record key
+and sort key, source term, English name, classification, object and act, primary
+loci, provenance, opposition, appendix treatment, and unresolved limit.
 
-## Taxonomic and sorting contract
+## Taxonomy and order
 
-The publication order is reproducible and must be recorded in the terminal scope and taxonomy appendix:
+Use this reproducible exposition order:
 
-1. theological virtues, in the order of generation---faith, hope, charity---while identifying charity as first in perfection;
-2. a dedicated cardinal overview that explicitly names prudence, justice, fortitude, and temperance, explains why they are four, defines integral, subjective, and potential parts, and distinguishes determinate habits from general conditions, overflow, and modes;
-3. the four cardinal families in the received order prudence, justice, fortitude, temperance;
-4. within each family, the principal virtue, nested integral conditions, subjective species, and potential or annexed virtues, with source-defined classification controlling before mere question order;
-5. strict moral virtues that have secure provenance but no non-editorial position in the governing Thomistic parts-lists, ordered by a stated residual rule;
-6. the remaining intellectual virtues, ordered from first principles through demonstrated knowledge to wisdom, then productive art, with prudence cross-referenced rather than duplicated; and
-7. qualified Aristotelian or Christian states and the explicit exclusion ledger.
+1. theological virtues—faith, hope, charity in generation order, while charity
+   is first in perfection;
+2. a cardinal overview naming prudence, justice, fortitude, and temperance,
+   explaining why four and defining integral, subjective, and potential parts;
+3. the four cardinal families in that order, each with principal virtue, then
+   source-defined integral conditions, subjective species, and potential parts;
+4. secure moral virtues with no non-editorial position in those parts-lists,
+   under a stated residual rule;
+5. remaining intellectual virtues from first principles through science and
+   wisdom to art, cross-referencing rather than duplicating prudence; and
+6. qualified states and the exclusion ledger.
 
-This is an order of exposition, not a claim that every later item is less excellent. Keep distinct the order of generation, order of perfection, logical dependence, and authorial exposition. A synonymous English rendering does not create another virtue, and a virtue appearing under two taxonomic aspects receives one controlling dossier and one appendix row. A species named only under a term used widely or analogically does not add a row unless the source establishes a distinct univocal habit; the inventory must record the reduction rather than silently omit the name. A publication-row count must be identified in the appendix as a count of treated taxonomic entries, not a claim that principal roots, genera, subjective species, potential parts, and nested specifications are coordinate habits.
+This is exposition, not an excellence ranking. Distinguish generation,
+perfection, logical dependence, and authorial order. One habit receives one
+controlling dossier even when it has synonyms or several aspects. A widely or
+analogically used term adds no row without a distinct source-defined habit.
+Treat row counts as taxonomic entries, not coordinate habits.
 
-## Definition and dossier contract
+## Dossier and opposition contract
 
-The general account distinguishes power, act, disposition, habit, virtue, passion, gift, and grace. It explains acquired and infused virtues, the role of prudence and charity in connection among virtues, and the sense in which virtue makes both its possessor and characteristic act good. The Aristotelian mean is a rational measure relative to the agent and circumstances, not arithmetic mediocrity, moral compromise, or permission to perform an intrinsically wrongful kind of act.
+The general account distinguishes power, act, disposition, habit, virtue,
+passion, gift, and grace; acquired from infused virtue; prudence's and charity's
+roles in connection; and how virtue perfects possessor and act. The Aristotelian
+mean is rational measure relative to agent and circumstances, not arithmetic
+mediocrity, compromise, or permission for intrinsic wrong.
 
-Every counted virtue receives, directly or through a clearly identified parent dossier, these visible fields:
+Each counted virtue, directly or through a named parent, exposes:
+`Class and provenance`, `Formal object`, `Characteristic act`, warranted
+`Defect-side opposition`, warranted `Excess-side opposition`, and `Boundary` from
+nearby acts, passions, gifts, counterfeits, or homonyms. Definitions are
+source-grounded synthesis, not invented quotation.
 
-- `Class and provenance`---principal, species, annexed, intellectual, or qualified status and exact source loci;
-- `Formal object`---the good, truth, relation, passion, or action that specifies the habit;
-- `Characteristic act`---what the perfected power reliably does;
-- `Defect-side opposition` and `Excess-side opposition`---only in the sense warranted by the source; and
-- `Boundary`---a nearby act, passion, gift, counterfeit, or similarly named state that must not be confused with the virtue.
+Do not impose two quantitative flanks universally. Theological virtues have no
+intrinsic excess in God; intellectual virtue is measured chiefly by truth;
+justice has an objective mean of equality; and virginity, continence,
+friendship, shame, heroic virtue, gifts, fruits, and similar states retain their
+source classification.
 
-Definitions are source-grounded syntheses, not invented quotations. Material differences between Aristotle's natural teleology, Augustine's ordering by the love of God, and Aquinas's acquired and infused orders remain visible.
+The terminal census orders `Defect-side opposition`, `Virtue`, and `Excess-side
+opposition` left to right and distinguishes genuine mean flank, nonquantitative
+contrary, justice outcome, counterfeit, source-recognized unnamed flank, no
+dedicated vice, and non-applicability. It exposes taxonomic status, parent, and
+relation. Preserve source nouns such as `imprudence`, `disobedience`,
+`ingratitude`, and `irreligion`; reject only invented analytic fillers. A vice
+may recur in distinct formal relations. Preserve source terms, translations,
+unnamed extremes, and editorial descriptors in the terminology audit; do not
+invent technical nouns, symmetry, or moral defects from medical/demographic
+traits.
 
-## Defect, excess, and terminology discipline
+## Required records
 
-The two-flank schema applies strictly to moral matters whose action or passion admits too little and too much under the rule of reason. It does not apply univocally to every virtue:
+The leaf keeps:
 
-- theological virtues have no intrinsic excess in their divine object;
-- intellectual virtues are measured principally by truth, not by a quantitative mean of passion;
-- justice has an objective mean of equality, so loss and gain in the parties are not two vices in the agent; and
-- virginity, continence, friendship, shame, heroic virtue, gifts, fruits, and similar cases retain the classification supplied by their sources.
+- `research/scope.md`: question, reader, thesis, corpus/completeness rule,
+  authority, sorting, rights, limits, and review;
+- `research/source-audit.md`: governing definitions, classifications, oppositions,
+  exact loci, and translation status;
+- `research/virtue-inventory.md`: census and exclusion ledger; and
+- `research/terminology-audit.md`: preferred labels, source terms, translations,
+  unnamed extremes, collisions, and editorial descriptors.
 
-The terminal table keeps `Defect-side opposition`, `Virtue`, and `Excess-side opposition` in that left-to-right order. It must distinguish at least: a genuine mean flank; a named contrary that is not quantitative; an objective justice outcome; a counterfeit or corruption; a source-recognized but unnamed flank; the absence of one dedicated vice for a broad matter; and a genuinely non-applicable comparison. Do not use one dash or one residual code for all of those conclusions. The table also exposes each entry's taxonomic status and parent so that principal virtues, species, potential parts, and nested specifications do not appear coordinate.
+Original Greek or Latin and stable critical witnesses control where practicable,
+followed by identified lawful human translations. The *Summa*'s organization is
+classification evidence; search results and modern charts are not.
 
-Where a source supplies named extremes or contraries, preserve the source-grounded noun even when its English form is privative: `imprudence`, `disobedience`, `ingratitude`, and `irreligion` may not be suppressed merely to make labels lexically unrelated to their virtues. The ban applies to analytic fillers such as “too little courage” and “too much courage,” not to historical nomenclature. Source accuracy also overrides global word uniqueness: the same vice may stand in distinct formal relations, and a source's alternate terms may be retained together when choosing only one would distort the account. Preserve source-language terms, translation choices, and editorial qualifiers in `research/terminology-audit.md`. When Aristotle leaves a state unnamed, say so; do not invent a technical noun, manufacture symmetry, turn a medical condition or demographic trait into a moral vice, or attribute project-created language to an ancient or medieval authority.
+## Reader order and terminal apparatus
 
-## Required records and source hierarchy
+After title and contents, begin with habit, mean, prudence, acquired/infused
+virtue, and ordered love; then theological virtues, **The Four Cardinal
+Virtues**, each cardinal family, residual moral virtues, remaining intellectual
+virtues, qualified states, and formation/synthesis. Define relation types briefly
+before first use, identify every entry's parent and level, prevent category errors
+around gifts/fruits/beatitudes/passions/friendship/continence/shame/martyrdom/
+heroic virtue, and do not diagnose persons or reduce virtue to a score.
 
-The leaf keeps one `generation-metadata.tex` record, imports it once in the terminal metadata section, and keeps:
+Then give terminal `Scope, Corpus, and Taxonomy`; landscape census; references;
+and generation metadata. The first appendix owns question, reader, corpus and
+completeness, relation types and levels, sorting algorithm, entry-count limit,
+terminology, global limitations, rights, and review. The census contains every
+counted entry in inventory order. Classification, opposition, provenance, and
+parent qualifications remain in their dossiers and rows.
 
-- `research/scope.md`, defining question, reader, thesis, corpus, comprehensive rule, authority classes, sorting method, rights boundary, limitations, and review state;
-- `research/source-audit.md`, mapping governing definitions, classifications, and opposition claims to exact primary loci and recording translation status;
-- `research/virtue-inventory.md`, the controlling census and exclusion ledger; and
-- `research/terminology-audit.md`, recording every preferred vice label, source term, translation choice, unnamed extreme, collision avoided, and editorial descriptor.
+## Profile gate
 
-Prefer the original Greek or Latin text and stable critical witnesses where practicable, then identified public-domain or otherwise lawfully cited human translations. The *Summa*'s own organization is evidence for Aquinas's classifications; a search result or modern virtue chart is not. Keep quotations short, identify the translation actually used, and record the independent rights status of external texts and online editions.
-
-## Publication architecture
-
-The work:
-
-- begins with a title page and table of contents, then immediately supplies the substantive philosophical grammar of habit, mean, prudence, acquired and infused virtue, and ordered love;
-- presents the theological virtues, then a dedicated section named **The Four Cardinal Virtues**, then each cardinal family;
-- gives the concise definitions of integral, subjective, and potential parts immediately before they are first needed, while leaving the full relation taxonomy and sorting rules to the appendix, and visibly states the parent and level of every strict appendix entry;
-- places securely attested moral virtues outside the named parts-lists in a separately governed residual section rather than inventing a theological or cardinal-family parent;
-- presents the remaining intellectual virtues and then qualified states after the strict moral order;
-- explains gifts, fruits, beatitudes, passions, friendship, continence, shame, martyrdom, and heroic virtue sufficiently to prevent category errors;
-- includes formation and self-examination principles without diagnosing persons or reducing virtue to a score; and
-- ends its substantive body with formation and synthesis, then gives a terminal `Scope, Corpus, and Taxonomy` appendix containing the question, reader, corpus and completeness boundary, relation types, taxonomic levels, full sorting algorithm, entry-count qualification, terminology rules, global limitations, rights boundary, and review state;
-- gives a landscape census appendix containing every counted virtue in the same canonical order as the controlling inventory, with the defect and excess columns on either side of the virtue and reader-facing status, parent, and relation fields; and
-- ends with exact references followed by terminal structured generation metadata.
-
-Do not repeat the corpus, evidence method, sorting algorithm, limitation, or review disclaimer before the philosophical grammar. A qualification that changes one virtue's classification, opposition, provenance, or parent remains in that dossier and census row rather than being deferred globally.
-
-## Completion gate
-
-The virtues reference is ready to install only when:
-
-- every comprehensive claim agrees with the controlling inventory and every candidate is counted, nested, qualified, or excluded with a stated reason;
-- the philosophical treatment begins immediately after the title and contents, while corpus, completeness, sorting, relation taxonomy, global terminology, limitations, and review state occur only in the terminal appendix block;
-- definitions identify formal objects and characteristic acts rather than offering circular synonyms;
-- Aristotle's mean is not extended to theological or intellectual virtue, justice, or qualified states without express warrant;
-- every named defect or excess is traceable as a source term, checked translation, or visibly editorial descriptor;
-- every named contrary supplied by the controlling source is represented even when its English form is privative, and every missing flank is identified as unnamed, undedicated, counterfeit, outcome, or non-applicable rather than collapsed into an unexplained dash;
-- theological, cardinal, intellectual, acquired, infused, annexed, and qualified classifications remain distinct;
-- the cardinal overview, each appendix parent, and each taxonomic status agree with the inventory's hierarchy;
-- order of exposition, generation, logical dependence, and excellence are not conflated;
-- source, translation, quotation, and rights boundaries are recorded;
-- independent philosophical or theological review is claimed only when actually recorded; and
-- universal metadata validation, terminal provenance, settled multi-pass build, clean-log inspection, every-page visual review, PDF structure checks, installed/build comparison, catalog integration, supporting records, and release-policy accounting are complete.
+Publication, inventory, terminology audit, and census must agree. Every candidate
+is counted, nested, qualified, or excluded; every definition has object and act;
+every opposite is a sourced term, checked translation, or marked editorial
+descriptor; every missing flank is classified rather than shown as an ambiguous
+dash; and independent philosophical or theological review is claimed only when
+recorded.

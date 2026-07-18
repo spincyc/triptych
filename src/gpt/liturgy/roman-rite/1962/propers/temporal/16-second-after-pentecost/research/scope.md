@@ -1,6 +1,6 @@
 # Second Sunday after Pentecost — Research Scope
 
-**Last updated:** 2026-07-14
+**Last updated:** 2026-07-17
 
 This record preserves the source roles, historical alternatives, and research limits compressed in the reader-facing guide. Complete appointed texts, checksums, facsimile locations, witness differences, and line-by-line collation results are retained in [the verified propers](../propers/verified.md).
 
@@ -63,13 +63,6 @@ Every item below records the exact retained locus, source used, role, and quotat
 - St. Augustine, *City of God* X.5–6, 20, [English text](https://www.newadvent.org/fathers/120110.htm): doctrinal illumination rather than direct commentary on the Secret, checked paraphrase on sacrifice, mercy, ecclesial self-offering, and Christ the High Priest.
 - These sources were rechecked 2026-07-14 in the accessible English editions named above and, for Gregory, the underlying Latin. The distribution remains Augustine-heavy because his direct expositions cover the Epistle and every appointed psalm; weaker quota additions were not promoted. Latin and Greek critical editions, subscription databases, untranslated witnesses, and the full patristic corpus were not exhaustively searched.
 
-## Cultural-Reception Search
-
-- Exact-phrase searches on 2026-07-10 tested `compel them to come in`, `love in deed and in truth`, `passed from death unto life`, and the great-supper excuses across literature, film, television, and music. Results were predominantly sermons, commentaries, devotional pages, or unattributed repetitions rather than independently verifiable cultural uses.
-- One example survived verification: Abigail Miller's song “Compel Them,” on *Closer to Jesus* (2003), repeats “compel them to come in” in its refrain and closing interlude. [Apple Music](https://music.apple.com/us/song/1871156771) verifies the recording, artist, album, and release date; [Shazam](https://www.shazam.com/song/1871156771/compel-them) supplies the credited lyric record and exact location. It is retained as the sole `Notable Quotables` item rather than padded with a weaker second example.
-- The Apple Music metadata and Shazam credit, refrain, and closing-interlude record were rechecked on 2026-07-14; no change to the retained classification or location was required.
-- Charles Spurgeon's 1858 sermon titled “Compel Them to Come In,” later hymns, and recent devotional songs using the phrase were reviewed as reception leads but not retained: they are direct preaching or devotional reuse, duplicate the same wording without a distinct cultural payoff, or lacked sufficiently precise primary verification for this guide.
-
 ## Text Verification and Material Limits
 
 - The Internet Archive OCR was used only to locate and preserve the focused formulary extract. The 1962 typical-edition facsimile on printed pages 377–378 controls every published Latin form. A color image witness on printed pages 371–372 was compared and its material differences are recorded in `propers/verified.md`.
@@ -78,10 +71,11 @@ Every item below records the exact retained locus, source used, role, and quotat
 - No exact identification of Cush the Benjaminite, no town for Luke 14, and no individual author or composition site for Psalm 119 was adopted. These remain unresolved rather than being filled by conjecture.
 - The public source survey is sufficient for the historical claims actually made but is not exhaustive of modern monographs, journal literature, manuscript studies, non-English scholarship, or the full patristic corpus.
 
-## 2026-07-14 Full Re-evaluation
+## 2026-07-17 Structural Re-evaluation
 
-- The guide was read linearly against the current profile, verified proper record, and source ledger. Its page-one map, one-page historical dossier, two-page synthesis, substantive detailed commentary, interpretive section, cultural example, references, metadata, and terminal rights page were all present.
+- The guide was read linearly against the current profile, verified proper record, and source ledger. It now proceeds from the page-one map and four senses through the two-page synthesis, substantive detailed commentary, and interpretive possibilities before the terminal historical and scope appendices, references, and generation metadata.
 - The detailed commentary already covered every appointed element, but the Collect was materially thinner than the others. A new close reading now treats its paired fear and love, divine causality, continuing governance, and establishment in God's love without assigning unsupported lexical or patristic claims.
 - Page-one chant cells were narrowed to their appointed texts, the synthesis was classified by its demonstrable evidence rather than as a free editorial proposal, the four-witness Gospel table was renamed and its claimed agreement narrowed, and a repetitive comparison box was removed.
 - Gregory the Great's *Homiliae in Evangelia* II.36 §§1–5 was checked in the underlying Latin. The catena is now recorded only as an aid, and the exact source role and paraphrase status of every retained patristic witness are explicit.
-- The missal text required no correction. Independent theological review remains outstanding, so the guide remains `T0` rather than an ecclesiastically approved or independently reviewed publication.
+- The tangential cultural interlude and its sole reference were removed. The missal text required no correction. Independent theological review remains outstanding, so the guide is not an ecclesiastically approved or independently reviewed publication.
+- The 2026-07-17 structural revision received a settled two-pass build with a warning-free final log; generation metadata, PDF structure, fonts, Unicode text, and extraction passed; all 12 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `eaaa54d7f0429028ef76b08837231fa882e84002bfaa344f541c131ddd7e7bbf`.

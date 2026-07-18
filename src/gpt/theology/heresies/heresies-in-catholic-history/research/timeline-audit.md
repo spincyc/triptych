@@ -32,6 +32,6 @@ An asterisk in the rendered appendix marks an event whose controlling character 
 - Every post-Tridentine proposition list preserves an individual or collective censure as the act actually supplies it.
 - The 1973, 1984, 1994, 1999, and 2001 rows are later qualifications or agreements, not retroactive cancellations of historical acts.
 - The modern ledger and rendered appendix contain 65 rows and keep the 13 May 2026 DDF warning, 29 June papal letter, and 2 July decree/note responding to the completed 1 July act as three distinct responses.
-- Currentness is stated in the publication method and source audit rather than inserted as a fictitious response event in the chronology.
+- Currentness is stated in the terminal `Scope, Terms, and Qualifications` appendix and source audit rather than inserted as a fictitious response event in the chronology.
 
 The final page and source audits compare every rendered date and proper name against these ledgers. A timeline row without a ledger entry is a publication blocker.

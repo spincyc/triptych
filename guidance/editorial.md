@@ -1,129 +1,85 @@
 # Editorial Standard
 
-## Purpose and scope
+## Governing priorities
 
-*Triptych: AI Driven Studies in Catholic Faith, Worship, and Law* is a source-first library of study documents. Its collections may include liturgical preparation guides, expositions of liturgical ordinaries, theological reference works, and discursive articles on faith or canon law. This standard governs every collection. A genre or edition profile may add stricter requirements, but it may not weaken the common requirements below.
+Triptych is a source-first library of Catholic study documents. Apply these priorities in order:
 
-The documents are aids to study, prayerful understanding, and responsible research. They are not official liturgical books, critical editions, catechisms, magisterial acts, canonical opinions, or substitutes for competent pastoral or legal advice. State a more specific limitation when a document's subject or intended use makes one necessary, following the reader-first placement rule below.
+1. identify the work, reader, governing authority, edition, locale, jurisdiction, and applicable profile;
+2. verify the evidence needed for each consequential claim and preserve disagreement or uncertainty;
+3. write the subject, argument, narrative, prayer, or usable guide before editorial apparatus;
+4. move work-wide bounds, methods, and qualifications to terminal appendices while keeping claim-local caveats beside their claims;
+5. audit rights, provenance, metadata, structure, and every rendered page before installation or release.
 
-## Profile before template
+A genre profile may add stricter requirements but may not weaken this standard. Profiles are delta specifications: do not import another genre's template, repeat universal rules, or substitute layout conventions for source judgment. Define or revise a profile before multiplying a repeatable series for which none fits.
 
-Identify a document's collection, genre, governing editions, jurisdiction, and intended reader before researching or drafting it. Then use the relevant profile linked from `AGENTS.md`. The profile governs matters such as required sections, source records, catalog identifiers, page architecture, liturgical elements, and review gates.
+These publications aid study, prayerful understanding, and responsible research. They are not official liturgical books, critical editions, catechisms, magisterial acts, canonical opinions, or substitutes for competent pastoral or legal advice.
 
-Do not apply one genre's structure by analogy to another. In particular:
+## Reader-first structure
 
-- a proper guide may require a complete formulary map and facsimile collation;
-- an ordinary exposition requires an edition-identified order of worship and must distinguish invariant text from rubrical or selectable material;
-- a theological reference work may need a title page, table of contents, lexicon, or reusable appendices;
-- a discursive article should use an argument appropriate to its question rather than a liturgical page template;
-- a canon-law article must identify its legal system, jurisdiction, sources, and effective date and must account for later amendments and authentic interpretations.
+After a title page and table of contents, if used, begin with substantive content. Do not make readers cross an evidence key, scope statement, chronology, terminology boundary, legal-assumptions block, or review disclaimer to reach the work.
 
-When no suitable profile exists, define and review one before creating a repeatable document series. A one-off work may record its local structure in its research scope, provided it still satisfies this common standard.
+Put work-wide controls in a terminal `Scope and Qualifications` appendix or the profile's equivalent. It owns:
 
-## Reader-first structure and terminal apparatus
+- coverage, corpus, completeness, period, date, geography, language, rite, edition, jurisdiction, and as-of bounds;
+- global terminology, evidence classes, method, source hierarchy, legal assumptions, and unresolved questions;
+- global translation, rights, currentness, review, and use qualifications; and
+- an orientation timeline when its chief purpose is to bound or navigate rather than advance the account.
 
-Begin the publication with its subject, argument, narrative, or usable liturgical or devotional content. After a title page and table of contents, if used, the reader should not have to pass through a scope statement, evidence key, chronological orientation, terminology boundary, legal assumptions block, or review disclaimer before reaching that content.
+Keep that appendix concise and linked from the contents. References contain bibliography and source-local role or rights notes, not a second statement of the global method. Generation metadata is terminal, after references, and no exposition follows it.
 
-Collect the work-wide editorial controls in a terminal appendix. This appendix owns the document's coverage bounds; period and date ranges; geographic, linguistic, ritual, legal, and jurisdictional limits; amendment or as-of cutoff; corpus and completeness rule; global terminology qualifications; evidence classes and method; source hierarchy; legal assumptions; unresolved global questions; and review, rights, or use limitations. A detailed orientation timeline also belongs in the appendices when its principal function is to bound or navigate the account rather than advance the argument. Keep the appendix concise, internally ordered, and linked from the table of contents. Do not duplicate it in the opening pages.
+A thesis or governing question is substantive and may open the body. Operational facts needed at the point of use—such as the selected liturgical branch, recitation order, or applicable rule—stay there. A one-line title-page non-authority warning is permitted only for immediate reliance risk and must point to the terminal appendix rather than repeat it.
 
-References contain bibliographic entries and source-local role or rights notes only. Put global currentness, hierarchy or method, translation or rights policy, limitations, and review in the named scope apparatus.
+The appendix never absorbs a qualification that changes a particular claim. Keep disputed attribution, material uncertainty, branch dependence, jurisdictional difference, source status, and other local limits beside the affected claim.
 
-A governing question or thesis is substantive content and may open the body, but strip from it any surrounding apparatus that delays the argument. Operational facts needed to use a guide safely---for example the actual liturgical formula, selected branch, calendar rule, or recitation order---remain where the reader acts on them. A terse title-page genre or non-authority notice may remain only when immediate reliance risk makes deferral unsafe; point to the appendix instead of restating its qualifications.
+## Evidence and claims
 
-The terminal appendix does not absorb qualifications that change the meaning of a particular claim. Keep material uncertainty, disputed attribution, branch dependence, jurisdictional difference, source status, and other claim-local limits beside the affected claim. The appendix supplies the global frame; it is never a license to make the body sound more certain, universal, current, or authoritative than the evidence allows.
+Keep these states distinct in research and publication:
 
-## Authority and claim discipline
+- **verified source text** — wording checked in an identified primary edition or official witness;
+- **checked quotation or paraphrase** — the published claim checked at an exact locus;
+- **source-grounded synthesis** — an editorial conclusion demonstrably supported by checked evidence;
+- **editorial or AI proposal** — an original application, analogy, extension, or hypothesis, labeled locally; and
+- **unverified lead** — research-only material that cannot support a published claim.
 
-Keep these classes visibly distinguishable in research and publication:
+Do not invent a fact, quotation, citation, source search, verification event, consensus, doctrine, or law. Do not turn resemblance into exegesis, discipline into doctrine, opinion into settled teaching, or plausible legal analysis into binding law. A global disclaimer never cures false attribution or overstatement.
 
-- **Verified source text:** wording checked in the identified primary edition or official witness.
-- **Checked quotation or paraphrase:** a claim verified at an exact locus in an identified source.
-- **Source-grounded synthesis:** an editorial conclusion demonstrably supported by the verified evidence.
-- **Editorial or AI proposal:** an original analogy, extension, hypothesis, or application not established by the cited authorities.
-- **Unverified lead:** a proposed source or connection that remains research-only and cannot support a published claim or appear as though it were used.
+Prefer primary, official, edition-identified, stable sources. OCR, searchable transcriptions, aggregations, quotation sites, and secondary citations are finding aids until the underlying witness is checked. Cite enough edition/version and locus information to reproduce the claim; record stable links and access dates where online evidence matters.
 
-Do not turn thematic resemblance into direct exegesis, disciplinary practice into doctrine, a theological opinion into settled teaching, or a plausible legal reading into binding law. Attribute disagreement and uncertainty at the claim they affect. Never invent a quotation, citation, historical fact, legal rule, consensus, source search, or verification event.
+Research is claim-driven, not quota-driven. Search broadly enough to test the governing claims, serious alternatives, and gaps; stop collecting sources that merely repeat a point. Preserve consequential negative results and disclose unresolved records rather than filling them by inference.
 
-Original proposals may be useful, but their editorial boundary must be unmistakable. A profile may prescribe a dedicated speculative section; otherwise label the proposal locally. A global notice does not excuse false attribution or contradiction of established text, doctrine, or law.
+Liturgical claims identify the rite, use or form, typical edition, calendar, language, translation, territory, and other variables needed to know what is appointed. Canon-law claims identify the body of law, jurisdiction, promulgating authority, effective or as-of date, amendments, authentic interpretations, and material particular law. Mutable discipline is never presented as timeless.
 
-## Sources and verification
+## Rights, quotation, and received prayer
 
-Prefer primary, official, edition-identified, and stable sources. Use searchable texts, OCR, aggregations, quotation sites, and secondary citations as finding aids until the underlying source is checked. Cite the exact work, edition or version, and locus needed to reproduce the claim. Record stable links and access dates when online evidence is material.
+Quote only what the argument requires. Record the known author, source, attribution, license, permission, public-domain basis, or legal exception at the nearest useful source record. Online availability, age, official status, and citation do not establish permission. Do not vendor complete scans, bulk OCR, or third-party corpora when a focused record and stable citation suffice.
 
-Source selection is claim-driven rather than quota-driven. Search broadly enough to test the governing claims, preserve serious alternatives, and disclose material limits; stop accumulating sources that merely repeat the same point. A profile may require dedicated retrieval, verification, or research records. Those records are tracked editorial sources, not disposable build artifacts.
+The repository license does not relicense Scripture, official or liturgical text, received prayers or hymns, third-party translations, quotations, images, fonts, or other external material. Put a local notice wherever excluded wording could reasonably be mistaken for project-owned expression.
 
-For liturgical material, identify the rite, form or use, typical edition, calendar, language, translation, territory, and other variables needed to know which text is appointed. For canon law, identify the applicable code or body of law, jurisdiction, promulgating authority, effective or as-of date, amendments, and any material particular law. Do not describe mutable law or current liturgical discipline as timeless.
+Every text offered for vocal prayer or ritual recitation must reproduce an identified historical, approved, liturgical, or otherwise received witness. Neither the project nor an AI contributor may compose, translate, paraphrase, modernize, conflate, or materially adapt such a text. Use an exact identified human translation with recorded status and rights; otherwise omit it. Expand an explicit abbreviation only from the same witness or a governing edition it incorporates, and record both loci. Commentary may explain a prayer but must remain visibly distinct and must not function as a substitute translation.
 
-Keep quotations no longer than the argument requires. Observe copyright and source-site terms; the ability to retrieve a text does not establish permission to republish it. Do not vendor complete third-party scans, corpora, or bulk OCR when a focused source record and stable citation are sufficient.
+## Audit records and generation metadata
 
-Distinguish project-created expression from quoted, transcribed, received, public-domain, and otherwise third-party material. Record the known author, source, attribution, license, permission, public-domain basis, or applicable legal exception at the nearest useful source record. The repository license does not relicense Scripture, liturgical or official texts, received prayers or hymns, third-party translations, quotations, images, fonts, or other external material. Put a local notice where a reader could reasonably mistake excluded wording for project-owned content, and do not infer permission from age, official status, citation, or online availability alone.
+Keep enough tracked evidence to reproduce editorial judgments without publishing private reasoning or a search diary. The applicable profile defines filenames; collectively the records identify the question and exclusions, governing editions, source roles and loci, substitutions, disagreements, negative results, unresolved leads, jurisdiction/currentness, rights, completed review, and outstanding review. Never record credentials, private reasoning, host or user identity, machine paths, network data, or session identifiers.
 
-Every text offered for vocal prayer or ritual recitation must reproduce an identified historical, approved, liturgical, or otherwise received witness. The project and its AI contributors must not compose a prayer or produce a translation, paraphrase, modernization, conflation, or material adaptation of one, whether for recitation, comparison, or exposition. Use an exact identified human translation with a recorded source, status, and rights basis; when none suitable for lawful reproduction can be verified, omit the translated prayer rather than generate one. A source's explicit abbreviation may be expanded only with the exact full formula from the same identified witness or from a governing liturgical edition that the source explicitly incorporates; record both loci and the basis of the connection. Editorial directions, third-person summaries, meditations, and commentary may explain a received prayer but must remain visibly distinct from its words and must not function as a substitute translation.
+Every canonical publication keeps `generation-metadata.tex` beside `main.tex` and imports it exactly once at the terminal display point. Its first active declaration is one `\AIDocumentRevisionTimestamp{YYYY-MM-DDTHH:MM:SSZ}`, followed by one or more `\AIModelContribution` declarations. A profile may permit a prose-free mechanical companion to declare `\AIInheritedGenerationMetadata` from one named canonical source while displaying its own timestamp once.
 
-## Research record
+The timestamp is the whole-second UTC time when the publishable render source was finalized. Update every affected consumer when render-relevant source or an imported fragment changes. Never derive it from Git, file metadata, build time, environment, or a content hash. Preserve every exposed model qualifier and client/runtime fact verbatim; name unavailable components specifically and never guess them. Separate contributions when model, qualifiers, or material runtime differ.
 
-Preserve enough of the evidence state to make the work auditable without publishing private reasoning or a diary of searches. A research scope should record, as relevant:
+The metadata gate rejects missing, duplicate, noninitial, malformed, or non-UTC timestamps; generic family-only model labels; missing exposed qualifiers; invalid inheritance; handwritten display substitutes; missing PDF title/subject; PDF dates inconsistent with the tracked revision; automatic creation dates or trailer IDs; and omitted, duplicated, or reordered visible fields.
 
-- the question, included and excluded material, and governing editions;
-- primary and secondary corpora consulted;
-- source roles and exact loci;
-- material disagreements, uncertainties, substitutions, and unresolved issues;
-- consequential negative results and rejected or unverified leads;
-- the document's jurisdiction and as-of date when the subject can change;
-- review performed and review still outstanding.
+## Review and publication gate
 
-Machine-specific paths, hostnames, network addresses, credentials, tokens, session identifiers, and private chain-of-thought do not belong in source records or published metadata.
+Generation provenance, source audit, specialist review, theological or canonical review, production review, and exact-snapshot distribution approval are separate states. Use labels such as `source-audited` or `theologically reviewed` only when the corresponding event is recorded. Internal checking is not independent review; production quality is not ecclesiastical approval.
 
-## AI generation metadata
+Typography serves navigation and meaning. Remove wrapper labels already supplied by the surrounding heading, but retain labels that convey authority, attribution, safety, contrast, accessibility, or stable semantic fields. Give repeated multi-field forms consistent visible field names. Do not use typography to imply doctrinal or juridical force.
 
-Every document records its latest publishable revision timestamp in tracked source. Every AI-generated or substantially AI-revised document also records the materially contributing model and runtime provenance once. The complete visible provenance block is terminal by default: it follows the substantive body, the terminal apparatus, and references, and no expository prose follows it. A profile may put a compact local revision timestamp on a common rights page or permit inherited display for a mechanically derived companion, but it must not front-load the model and runtime block without a reader-centered reason. A profile may designate a mechanically derived companion as inheriting the named canonical source’s AI provenance only when the companion contains no independent generated prose and the catalog makes that relationship explicit. Use the compact form unless a profile requires additional fields:
+Before installing a publication:
 
-```text
-Last revised (UTC): YYYY-MM-DDTHH:MM:SSZ
-Model: exact exposed model identifier; qualifier=value; unexposed: specifically unavailable model details
-Agent/runtime: product and material role(s); exposed client/build version; interface; unexposed: specifically unavailable runtime details
-```
+- verify the reader-first order, terminal apparatus, every material claim and citation, source/proposal boundaries, and absence of unused references or padding;
+- confirm rights, attribution, edition, jurisdiction, as-of, review, and generation records describe the artifact;
+- compile enough passes to settle contents and references; reject fatal errors, undefined references, overflow, and unresolved layout warnings;
+- generate bounded review rasters with `make review-pdfs` or `scripts/pdf-review` and visually inspect every page, using full-size pages where contact-sheet scale is insufficient;
+- check clipping, density, heading splits, tables, callouts, artificial whitespace, sparse spill pages, monochrome legibility, PDF structure, embedded fonts, metadata, and extracted text; and
+- install only the reviewed PDF at its mirrored `doc/` path, leaving intermediates under ignored `build/`.
 
-The revision value is the explicit UTC time at which the publishable source revision was finalized, in whole seconds with a literal `Z`. Update it whenever the document's render-relevant source changes, including an imported shared fragment; a shared-source revision therefore requires updating every affected consumer. A Git tree or directory hash cannot supply this value: trees contain content identities but no timestamp, the same tree may occur in several commits, and embedding a commit identity into the content that determines it is circular. Git history may be a one-time migration lead, but builds and ordinary validation never derive the value from Git, filesystem modification times, the process clock, or an environment variable.
-
-Preserve the complete model label and every exposed qualifier verbatim. Label client versions as client versions, not model or server versions. Group contributors that share the same model and runtime; distinguish contributors only when material metadata differs. Never guess an unavailable identifier or include identifying machine information. Refresh the contribution metadata when a document is substantially AI-revised or finalized in a materially different AI environment; do not overwrite accurate historical contribution values merely because a later non-content build uses another machine.
-
-Store the timestamp and provenance in `generation-metadata.tex` beside each canonical `main.tex`. Its first active declaration is exactly one `\AIDocumentRevisionTimestamp{YYYY-MM-DDTHH:MM:SSZ}`, followed by one or more `\AIModelContribution` commands, and `main.tex` imports that record exactly once at the terminal profile-appointed display location. A mechanically derived companion instead keeps its own first timestamp declaration followed by one `\AIInheritedGenerationMetadata` declaration naming its canonical source; it displays its local timestamp once on the common rights page without duplicating the inherited model block. Do not handwrite display fields in `main.tex`, substitute build-time values for the tracked revision, or let a later generic family label overwrite an exact identifier or qualifier already known. When materially contributing agents differ in model, qualifier set, or runtime, retain separate contribution records within the one displayed provenance block.
-
-The metadata gate is a publication requirement. It must reject a missing, duplicate, noninitial, or noncanonical UTC revision timestamp; a generic family-only model label; an empty or malformed qualifier field; omission of a qualifier known to be exposed by a recorded model; an invalid inheritance target; legacy handwritten fields; absent PDF title or subject metadata; a PDF modification date that differs from the tracked value; an automatic creation date or trailer ID; and a rendered PDF that omits, duplicates, or reorders a structured visible field. A validator cannot discover a fact the runtime did not expose; record a specifically named unavailable component rather than inventing it, but never mark an exposed value unavailable.
-
-## Editorial maturity and review
-
-Do not collapse generation provenance, source evaluation, theological review, legal review, and production quality into one maturity claim. A document may be well typeset and still await source or expert review. Catalog status must report these dimensions separately using the definitions in the applicable profile.
-
-Use calibrated language such as `working draft`, `source-audited`, `theologically reviewed`, or `canonically reviewed` only when the corresponding event is recorded. Internal source checking is not independent theological or canonical review. The absence of review must remain visible where readers could otherwise infer it.
-
-## Publication quality
-
-### Typographic hierarchy and visible labels
-
-Let typography carry hierarchy without narrating its own devices. When a surrounding heading and the fields inside a callout already identify its function, use an untitled frame rather than adding a generic wrapper such as `Dogmatic object and boundary`, `Dossier boundary`, `The day's axis`, or `Compact source panel`. A repeated meta-label is not made useful merely because its wording is accurate.
-
-When a repeated callout divides its content into two or more stable semantic fields, give every field a concise visible identifier and use the same identifiers in every instance. A container title, fixed field order, paragraph break, change of type style, column position, or border does not substitute for those field identifiers; the container itself may remain untitled when its function is already clear. This rule applies to macro arguments and other source-level sections, not merely to visibly separated paragraphs. Do not manufacture field labels for continuous prose or treat every bullet or paragraph as a separate field.
-
-Retain a visible title when it contributes information that line weight, position, and field labels cannot convey: an exact authority or ecclesial status, a content-bearing thesis, a safety warning, a contrast such as `Do not confuse`, a source attribution, or a copyright and approval notice. Table headers and local labels that distinguish materially different claims remain necessary. Typography may mark importance or relationship, but it must never be treated as establishing doctrinal authority, source status, or juridical force by itself.
-
-During the final visual edit, scan headings, callouts, table headers, legends, and repeated dossier forms independently of the body prose. Remove labels duplicated by the immediately surrounding structure, while preserving every label needed for navigation, accessibility, authority classification, or safe interpretation.
-
-Before installing a publishable artifact:
-
-- confirm that substantive content begins immediately after the title page and table of contents, if used, and that work-wide scope, date, method, evidence, and qualification apparatus appears only in the terminal appendix;
-- verify every material quotation, attribution, factual assertion, and cited locus;
-- distinguish inherited teaching, historical judgment, editorial synthesis, and original proposal;
-- remove duplication, padding, unsupported links, and unused references;
-- confirm that headings, tables, diagrams, and callouts clarify the argument at ordinary print size;
-- keep visual distinctions intelligible in monochrome unless a profile explicitly requires color;
-- compile for the number of passes required to resolve references and contents;
-- inspect the build log for fatal errors, undefined references, overflow, and layout warnings;
-- prepare review rasters and contact sheets with `make review-pdfs` for the complete built library or `scripts/pdf-review <PDF>...` for an affected subset; this resource-bounded step does not itself constitute visual review;
-- visually inspect every rendered page for clipping, unreadable density, split headings, artificial whitespace, and sparse spill pages, using individual page rasters as well as contact sheets where scale matters;
-- confirm that rights, attribution, public-domain, and license-exclusion notices are accurate in the source and rendered publication;
-- confirm that generation metadata and any edition, jurisdiction, or as-of statement describe the installed artifact;
-- install the reviewed PDF under the mirrored `doc/` path and keep all intermediates under `build/`.
-
-Profile-specific acceptance criteria remain mandatory in addition to this list.
+Profile-specific gates remain mandatory.

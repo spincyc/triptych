@@ -1,294 +1,188 @@
-# Repository and Build Layout
+# Repository and Publication Contract
 
-## Ownership model
+## Governing priorities
 
-The repository has three top-level content trees with distinct roles:
+Apply these rules in order:
 
-- `src/` contains tracked authoring sources, focused source records, research audits, and reusable fragments.
-- `doc/` contains tracked publishable documents installed from reviewed builds.
-- `build/` contains only transient, reproducible artifacts and is ignored by Git.
+1. keep authoritative inputs and audit records under `src/`, reviewed publications under `doc/`, and reproducible intermediates under ignored `build/`;
+2. preserve provider, collection, rite, edition, locale, jurisdiction, and document identity in the path and records;
+3. give shared text one owner and declare every consumer dependency;
+4. build deterministically, inspect every affected page, and install only the reviewed PDF; and
+5. treat editing, committing, integrating, pushing, and deployment as separate authorized operations.
 
-An input required to understand, verify, or reproduce a document belongs under `src/`, never under `build/`. A PDF becomes a tracked publication only after installation under `doc/`. Cleaning the project removes `build/` without deleting `src/` or `doc/`.
+`guidance/editorial.md` governs universal content quality. The applicable genre profiles govern document-specific sources, records, structure, and gates. This file governs ownership, paths, builds, catalogs, release artifacts, and version control.
 
-Generated documents retain a provider branch. The present provider is `gpt`, so source and publication paths begin with `src/gpt/` and `doc/gpt/`. A future provider may use a parallel branch; do not flatten provider identity out of existing paths.
+## Ownership and paths
 
-## Target collection hierarchy
+- `src/` contains tracked authoring sources, focused evidence and research records, and reusable fragments.
+- `doc/` contains tracked PDFs installed from reviewed builds.
+- `build/` contains only ignored, reproducible intermediates, logs, caches, review rasters, and generated release artifacts.
 
-Use this hierarchy for the expanding library:
+Anything required to understand, verify, or reproduce a publication belongs under `src/`, never `build/`. `doc/` is not a build directory. Cleaning may remove `build/` but never `src/` or `doc/`.
+
+Generated documents retain a provider branch. The present provider is `gpt`; do not flatten it from existing paths. Use this collection hierarchy:
 
 ```text
 src/gpt/
   common/
-  liturgy/
-    roman-rite/
-      1962/
-        propers/
-          temporal/
-          ritual/
-        ordinary/
-        reference/
-      postconciliar/
-        <edition-locale>/
-          propers/
-            <calendar-family>/
-          ordinary/
-      comparative/
+  liturgy/roman-rite/
+    1962/
+      propers/{temporal,ritual}/
+      ordinary/
+      reference/
+    postconciliar/<edition-locale>/
+      propers/
+        registry/                 edition-owned registry records
+        <calendar-family>/
+      ordinary/
+      reference/
+    comparative/
   theology/
     virtues/
     sacraments/
     sacraments-at-a-glance/
-    mariology/
-      <document>/
-      shared/                    optional non-publishable fragments
-    heresies/
-      <document>/
-      shared/                    optional non-publishable research fragments
-  devotions/
-    novenas/
-      shared/                    non-publishable common prayers and formatting
-      <numbered-document>/
-  biographies/
-    shared/                    optional non-publishable common fragments
-    <subject>/
-  history/
-    <series>/
-      <numbered-document>/
-  articles/
-    faith/
-    canon-law/
+    mariology/{<document>,shared}/
+    heresies/{<document>,shared}/
+  devotions/novenas/{shared,<numbered-document>}/
+  biographies/{shared,<subject>}/
+  history/<series>/<numbered-document>/
+  articles/{faith,canon-law}/
 ```
 
-`<edition-locale>` must identify the governing edition and language or territory precisely enough to prevent unlike liturgical texts from sharing a directory. Do not use `novus-ordo`, `current`, or a bare language name as the sole identifier. Record additional calendar, lectionary, translation, and jurisdiction details in the document's source record when the directory component cannot express them safely.
+`<edition-locale>` must distinguish the governing books and territory; never use `current`, `novus-ordo`, or a bare language as its sole identity. Postconciliar proper guides also use the stable universal registry in `guidance/liturgy/postconciliar-propers-registry.md`; edition-specific collation, unresolved branches, and instantiated leaves belong under the edition's `propers/registry/` directory rather than in the reusable profile.
 
-The hierarchy distinguishes content families; it does not prescribe a single internal template. Each publishable source document has a directory containing `main.tex` and the supporting files required by its profile. Shared inputs belong at the narrowest common ancestor that genuinely owns them. Keep global typesetting primitives under `src/gpt/common/`; keep rite-, edition-, collection-, and work-specific fragments within their respective subtrees.
+Each publishable leaf contains `main.tex`, `generation-metadata.tex` or a profile-authorized inherited declaration, and the profile-required records. Shared directories are non-publishable and have no PDF mirror. Put shared material at the narrowest ancestor that genuinely owns it; keep global typesetting primitives under `src/gpt/common/` and rite-, edition-, collection-, or work-specific material within its subtree.
 
-The comprehensive virtues reference uses the publishable leaf `theology/virtues/` and follows `guidance/theology/virtues.md`. Its controlling census and defect--excess terminology audit remain with that leaf; a modern list or a second summary must not become a competing taxonomy.
-
-Mariological reference works use publishable leaves beneath `theology/mariology/`. Any `theology/mariology/shared/` directory is non-publishable, owns only genuinely shared source material, and has no PDF mirror; all consuming documents must be rebuilt after it changes.
-
-Historical heresy references use publishable leaves beneath `theology/heresies/` and follow `guidance/theology/heresies.md`. Any `theology/heresies/shared/` directory is non-publishable, has no PDF mirror, and may own only material genuinely shared across that collection. A comprehensive survey must keep its controlling census with the document rather than treating a title or inherited polemical list as a self-proving universal register.
-
-Edition-specific manuals for resolving the 1962 calendar and assembling admitted formularies use publishable leaves beneath `liturgy/roman-rite/1962/reference/`. They follow the 1962 assembly profile rather than inheriting the weekly proper-guide or Ordinary-exposition architecture.
-
-Edition-specific histories and complete normative inventories of Roman calendars use publishable leaves beneath `liturgy/roman-rite/1962/reference/` or `liturgy/roman-rite/postconciliar/<edition-locale>/reference/`, as applicable. They follow `guidance/liturgy/roman-calendar-references.md` together with the identified edition's profile; they are recurring references rather than civil-year Ordos or proper-text guides.
-
-Novenas use numbered publishable leaves beneath `devotions/novenas/` and follow `guidance/devotions/novenas.md`. The `devotions/novenas/shared/` directory is non-publishable and owns only genuinely common prayer text or formatting; every novena consumer must be rebuilt after it changes.
-
-A mechanically derived novena prayer book uses the sibling leaf `<numbered-document>-daily-prayer/`. It imports prayer fragments from the canonical full-guide leaf, declares inherited provenance, and requires explicit cross-document build dependencies; it must not become a second textual owner.
-
-Historical and hagiographic biographies use unnumbered publishable leaves beneath
-`biographies/` and follow `guidance/biographies.md`.  Each person owns an
-independent leaf, source audit, chronology, and tradition audit; a shared feast
-or mission does not make two persons one document.
-
-Repeatable historical monographs use numbered publishable leaves beneath `history/<series>/` and follow `guidance/history/historical-accounts.md`. The series owns its short catalog prefix and stable two-digit ordering; the number is not a claim about importance or historical sequence.
-
-## Mirrored publications and transient builds
-
-`doc/gpt/` mirrors the path of each publishable source document beneath `src/gpt/`, replacing the document directory's `main.tex` with a PDF named for that directory. `build/gpt/` uses the same relative publication path for transient output.
-
-For example:
+`build/gpt/` and `doc/gpt/` mirror a publishable leaf's path below `src/gpt/`; the PDF is named for the leaf. For example:
 
 ```text
-src/gpt/liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday/main.tex
-build/gpt/liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday.pdf
-doc/gpt/liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday.pdf
-
-src/gpt/articles/canon-law/validity-and-liceity/main.tex
-build/gpt/articles/canon-law/validity-and-liceity.pdf
-doc/gpt/articles/canon-law/validity-and-liceity.pdf
+src/gpt/articles/canon-law/example/main.tex
+build/gpt/articles/canon-law/example.pdf
+doc/gpt/articles/canon-law/example.pdf
 ```
 
-Non-publishable shared directories such as `common/`, fragment libraries, and research-only directories have no required PDF mirror. Do not place LaTeX auxiliary files, logs, downloaded corpora, caches, or scratch material under `doc/`.
+Use lowercase kebab-case slugs. Stable identifiers are namespaced by their profiles and are not interchangeable across collections or editions. Numbered series use their profile's ordering rules; a number is not a claim of importance.
 
-## Naming and identity
+## Shared sources and records
 
-Use lowercase kebab-case for directory and document slugs. Keep rite and edition names explicit in their ancestor paths rather than repeating them inconsistently in every basename. Within a collection, catalog identifiers must be stable, namespaced, and defined by its profile; a temporal-cycle number from one edition must not become a global project identifier.
+One text has one authoritative owner. Import it into every consumer and declare build dependencies that rebuild all consumers after it changes. Do not create editable copies for convenience. Derived companions must identify their canonical owner and may inherit provenance only when their profile permits it.
 
-The project is **Triptych: AI Driven Studies in Catholic Faith, Worship, and Law**. Its repository slug is `triptych`. The local checkout name and a hosting service's repository name are external to tracked content; renaming them does not require or result from moving source files.
+Keep records with the owning leaf or a clearly owned shared source. They must identify the exact editions, witnesses, translations, jurisdictions, dates, source roles, checked loci, unresolved discrepancies, rights basis, and completed review required by the profile. Focused third-party extracts may be tracked when necessary and distributable; complete scans, bulk OCR, private caches, and machine-specific corpora do not belong in publication leaves.
 
-## Licensing and project identity
+Do not combine unlike formularies, editions, translations, jurisdictions, or unrelated works in one record merely because they share a theme. Never record credentials, private communications, host or user identity, machine paths, network data, launcher state, or session identifiers.
 
-`LICENSE` is the authoritative map from repository material to its outbound terms. Project-created content uses CC BY 4.0; software and the specifically listed reusable typesetting infrastructure use MIT. Apply those grants only to copyright and similar rights held by contributors and available for them to license. A mixed source file remains project content unless `LICENSE` identifies its separable infrastructure as MIT-licensed.
+## Rights and project identity
 
-`THIRD_PARTY.md` records the repository-wide exclusions. Keep a more specific rights statement beside the source when a work contains Scripture, liturgical or official text, a received prayer or hymn, a third-party translation or quotation, OCR, a font, or other external material whose status could be mistaken. Record its known author, source, attribution, license, permission, public-domain basis, or applicable legal exception. Do not infer ownership or permission from age, official status, citation, retrieval, or public availability.
+`LICENSE` defines the outbound terms and `THIRD_PARTY.md` the repository-wide exclusions. Project-created content is CC BY 4.0; the software and reusable infrastructure identified there are MIT-licensed. Those grants do not relicense third-party or public-domain content.
 
-A source or PDF containing excluded material is a composite work. Describe the CC BY grant as applying to project-created exposition, translations, annotations, selection, arrangement, and design, as applicable; never describe every passage or embedded component as project-owned. Public-domain wording remains public domain and is not made exclusively licensed by its inclusion here.
+Record a local rights statement wherever Scripture, official or liturgical text, a received prayer or hymn, a third-party translation or quotation, OCR, a font, or other external material could be mistaken for project-owned expression. Identify the known author, source, attribution, license, permission, public-domain basis, or legal exception. Age, official status, citation, retrieval, and public availability do not establish permission.
 
-Every rendered publication carries the standard compact rights notice supplied by `src/gpt/common/preamble.tex`. A profile or document may add a more specific local notice when its incorporated material requires one, but it must not remove or weaken the common license boundary.
+Every publication retains the common compact rights notice. A local notice may add precision but may not weaken the boundary. The Triptych name and visual identity do not convey endorsement, official status, or ecclesiastical approval to a derivative.
 
-The licenses grant no trademark or project-identity rights. A derivative may identify Triptych accurately for attribution, but it must not use the name, subtitle, or visual identity to imply that it is an official or endorsed Triptych publication or that it has ecclesiastical approval.
-
-## Document records
-
-Every document keeps its source and audit records with the document or in a clearly owned shared source directory. The applicable profile decides which records are required. Examples include:
-
-- a structured `generation-metadata.tex` record imported exactly once by the document, or an explicit inherited-provenance declaration where a profile permits it;
-- exact retrieved text retained without silent cleanup;
-- an edition-identified verified text and provenance record;
-- a research scope recording source roles and material limits;
-- shared canonical fragments imported by several documents;
-- a record of edition, locale, jurisdiction, effective date, and amendments.
-
-Do not combine different formularies, editions, translations, jurisdictions, or unrelated articles in one source record merely because they share a theme. Do not duplicate a canonical shared fragment into several documents; import it so corrections have one authoritative home.
-
-Focused third-party extracts may be tracked when they are necessary evidence and redistribution is permitted. Complete scans, bulk OCR, private caches, and machine-specific corpora are not repository source records.
-
-## Build contract
+## Build and review contract
 
 The normal lifecycle is:
 
 ```sh
-make                  # compile into build/ with bounded parallelism
-make pdf              # incremental build within the caller's current Make jobserver
-make review-pdfs      # prepare inspection artifacts for changed PDFs
-make review-all-pdfs  # prepare inspection artifacts for every built PDF
+make                  # bounded parallel build into build/
+make pdf              # incremental PDF build
+make review-pdfs      # artifacts for changed PDFs
+make review-all-pdfs  # artifacts for every built PDF
 make install          # copy reviewed PDFs into doc/
-make clean            # remove transient build artifacts only
+make clean            # remove reproducible intermediates only
 ```
-
-`scripts/pdf-review` owns raster and contact-sheet generation for publication
-inspection. It chooses concurrent PDF workers from current host and cgroup memory
-headroom, caps them by available CPUs, treats `--jobs` as a ceiling rather than a
-way around that plan, and serializes competing invocations. Each rendering child
-also receives a 1 GiB address-space ceiling, and the planner retains a separate
-1 GiB memory reserve. `scripts/pdf-review --explain` reports the live plan. If a
-detected cgroup limit cannot be resolved safely, or known headroom cannot fund
-the reserve and one worker, the helper exits without rendering. It renders bounded thumbnails,
-splits contact sheets into bounded page batches, and applies explicit ImageMagick
-memory, map, disk, area, and thread limits. Use
-`make review-all-pdfs` for all built publications, `make review-pdfs` for
-changed publications, or pass the affected PDFs directly to the script. Do not
-bypass those controls with parallel raw `montage`, `magick`,
-or equivalent whole-document contact-sheet commands. Generated inspection files
-are transient artifacts under `build/`, not evidence that a human or agent
-actually completed the required every-page review.
 
 Build recipes must:
 
-- validate every document's structured generation record before compilation and verify its rendered values after compilation;
-- take the PDF modification date only from the tracked document revision declaration, omit build-clock creation dates and automatic trailer IDs, and produce byte-identical PDFs from unchanged sources under the same toolchain;
-- support nested source paths without flattening or basename collisions;
-- create the matching parent directory under `build/` or `doc/`;
-- compile with stable, slash-free job names while preserving the mirrored output path;
-- expose shared-fragment dependencies so a relevant edit rebuilds every consumer;
-- keep parallel targets isolated;
-- keep publication-inspection subprocesses within the resource bounds above;
-- stop on fatal compilation errors and avoid installing a failed or partial output;
-- never use `doc/` as a scratch or intermediate directory.
+- validate structured generation records before compilation and rendered metadata afterward;
+- derive PDF modification time only from the tracked revision, omit build-clock creation dates and automatic trailer IDs, and reproduce identical bytes from unchanged inputs under the same toolchain;
+- preserve mirrored paths without basename collisions and isolate concurrent targets;
+- declare every render-affecting input and shared-consumer edge;
+- stop on fatal failure and never install a partial result; and
+- keep all intermediates out of `doc/`.
 
-The normal build may use a small, configurable parallel-job cap, but each document's output and validation stamp remain isolated. Incremental dependencies include files capable of changing rendered output and every explicitly declared shared consumer edge; research and retrieval records that are not TeX inputs do not force an identical PDF to be recompiled. Rendered metadata validation is cached beside transient builds and reruns only when its PDF or validator changes. None of these build steps obtains a revision timestamp from Git, file metadata, the clock, or the environment.
+Compile each affected publication for enough passes to settle references and contents. Reject fatal errors, undefined references, overflow, and unresolved layout warnings.
 
-After building, `make review-pdfs` compares each transient PDF byte-for-byte
-with its installed mirror and prepares review artifacts only for changed
-documents. Each selected PDF is rasterized at full review size once;
-thumbnails and bounded contact-sheet batches are derived from those pages.
-Content-addressed cache entries bind the exact PDF hash to renderer binaries,
-versions, settings, and limits, and validate every cached artifact by hash
-before atomic reuse. `make review-all-pdfs` deliberately selects every build.
-These commands prepare page images for human review; neither a cache hit nor a
-generated contact sheet constitutes the required inspection of every page.
+Use only `make review-pdfs`, `make review-all-pdfs`, or `scripts/pdf-review` to prepare page rasters and bounded contact sheets. The helper owns concurrency and memory controls; do not replace it with raw parallel ImageMagick or equivalent whole-document commands. A cache hit or contact sheet is not review. Inspect every rendered page, opening full-size rasters where scale matters, then verify PDF structure, fonts, metadata, extracted text, and byte identity between reviewed build and installed mirror.
 
-Build manifests may enumerate publishable documents explicitly or discover them under controlled roots. Whichever method is used, adding a document must be deterministic, reviewable, and compatible with profile-specific shared dependencies.
+Research records that cannot affect rendered bytes need not force recompilation. Adding a publication may use deterministic controlled discovery; exceptional shared dependencies must be explicit.
 
-## Isolated Codex sessions
+## Isolated Codex workers
 
-`scripts/triptych-codex` is the ordinary CLI entry point for a Codex session that may modify the repository. It allocates the linked worktree before Codex starts and then launches the real CLI with that worktree as both its process directory and Codex workspace. `make codex` provides the interactive no-argument form; the launcher also accepts the agent-oriented `exec` and `review` surfaces with an explicit allowlist of options. Unsupported options and Codex administration, server, remote-control, update, arbitrary-sandbox, and saved-session subcommands fail before allocation. This is launcher infrastructure, not an editorial agent and not a source of content, commit, integration, push, or publication authority.
+Mutating Codex sessions follow the isolation and authority contract in `AGENTS.md`. Start them through `make codex` or `scripts/triptych-codex`; a session already in its assigned linked worktree must not invoke the launcher again or administer worktrees.
 
-The primary checkout must be clean, on a named branch, and free of an unfinished merge, rebase, cherry-pick, revert, or bisect before a new worker is allocated. The launcher never stashes, resets, commits, copies, or silently omits a dirty primary state. Each run records one exact base commit, receives a unique `codex/isolated/<run-id>` branch and locked linked worktree, and preserves the caller's repository-relative starting directory. A session already in a linked worktree is not nested inside another one.
+Workers may edit, build, inspect, and commit only when authorized. They never switch branches, merge, rebase, amend, push, use the shared stash, change shared Git configuration or remotes, administer worktrees, or leave background processes running. Runtime paths, run IDs, locks, manifests, prompts, logs, and private launcher state are never tracked.
 
-Runtime worktrees, locks, manifests, temporary files, opaque run identifiers, and private per-run integration-source refs live outside the tracked publication record. They must not be copied into `src/`, `doc/`, `build/`, Git notes, commit messages, research records, or publication metadata. The launcher records no prompt, transcript, credential, complete argument vector, or environment snapshot. Its private manifest may record attempted source and target object IDs, repository-relative conflict paths, and the audits needed to prove a lifecycle transition; `--triptych-status` exposes only opaque run ID, lifecycle state, and active status and never prints a private worktree path. A private absolute `TRIPTYCH_CODEX_STATE_DIR` override exists for testing and controlled installations; it is runtime configuration and must not be tracked.
+Integration is launcher-owned and separately authorized. The opaque lifecycle is:
 
-Every launcher-created worker is confined to its worktree: the launcher supplies no additional writable directory, rejects caller-selected working roots, host-side output paths, rules bypasses, and danger-full-access modes, clears Git redirection and configuration-injection variables, prevents nested multi-agent writers, and uses a private per-run temporary directory. At process start it pins one absolute Git executable. Before launcher-owned Git runs, it rejects effective command-bearing fsmonitor, filter, merge, diff, or text-conversion configuration; disables replacement objects, hooks, signing, and editors; and authenticates a retained worker's regular `.git` file, unique common-directory worktree administration directory, regular `commondir` and `gitdir` backlinks, and exact backpointer. Workers must not switch branches, merge, rebase, amend, push, use the repository-wide stash, change shared Git configuration or remotes, or run worktree or maintenance administration. A Codex resolver opened for a launcher-recorded conflict may inspect, edit, and stage reconciled files only; it must not commit, amend, reset, switch, merge, run `git rebase --continue`, `--abort`, `--skip`, or any other rebase administration, or administer worktrees. The launcher exclusively owns continuation and abort. Git worktrees isolate files and indexes but share objects, refs, configuration, remotes, and stash state, so these prohibitions remain necessary.
+```sh
+make final-diff <run-id>
+make integrate <run-id>
+make resolve <run-id>    # only after a recorded conflict
+make continue <run-id>
+make abort <run-id>
+```
 
-Allocation and launcher-owned Git administration are serialized by one repository lock; a per-run lock prevents concurrent reopen, integration, or cleanup of the same worker. The launcher passes every currently held repository and run flock descriptor to each launcher-owned Git subprocess as well as to its Codex child, so a killed supervisor cannot release serialization while that child is still running. The descriptor registry verifies the live open file identity and cannot reuse a stale descriptor number. The repository lock is released while Codex works, so separately allocated workers may run concurrently. A launcher-managed worker rejects recursive launcher use so a second Codex process cannot enter the same worktree through the supported path. Workers must not leave preview servers, watchers, or other background processes running when their Codex session ends. Worktrees remain Git-locked against pruning throughout their active and retained lifetimes. Manual `git worktree prune`, forced removal, branch deletion, or state-directory deletion is prohibited while any run is active or retained.
+Use direct launcher forms for untrusted or externally supplied input because GNU Make interprets options and assignments before target validation. A resolver may edit and stage only the recorded conflict; it may not commit or administer the rebase. Only the launcher continues, aborts, lands, and cleans the retained run. Review the complete object-to-object final diff and every affected consumer before authorizing landing. Reconcile PDF conflicts from authoritative sources and rebuild; never choose one binary side. The launcher never pushes or deploys.
 
-The launcher cleans a newly allocated run automatically on its first exit only when Codex exits successfully, the expected task branch and lock remain intact, `HEAD` still equals the recorded base, and the worktree has no staged, unstaged, or non-ignored untracked change. A reopened run is re-audited and preserved even if it has become unchanged; cleanup then remains explicit. Ignored reproducible artifacts may be discarded with an otherwise unchanged worker. The launcher preserves every tracked or non-ignored change, every committed result, nonzero or interrupted run, changed branch, audit inconsistency, and cleanup failure. Preservation is success: it prevents a worker or crash from destroying another result. Use `scripts/triptych-codex --triptych-status`, `--triptych-reopen <run-id>`, `--triptych-integrate <run-id>`, and `--triptych-clean <run-id>` for the ordinary opaque lifecycle. Managed conflicts additionally use `--triptych-resolve <run-id>`, `--triptych-continue <run-id>`, `--triptych-abort <run-id>`, and the read-only `--triptych-final-diff <run-id>`; `make resolve`, `make continue`, `make abort`, and `make final-diff` with an exact launcher-produced run ID provide convenience wrappers. GNU Make processes options and command-line variable assignments before this Makefile can validate goals, so callers must not forward arbitrary or external data as a Make run-ID argument. Use the corresponding direct launcher command for such input; its lifecycle parser requires one syntactically valid run ID without GNU Make's option or assignment reinterpretation. Reopening starts a fresh Codex process in an ordinary retained worktree rather than resuming its saved conversation; it cannot enter an active managed conflict. Safe cleanup refuses uncommitted work, a worker whose `HEAD` changed after its last terminal audit, and any commit not already reachable from the recorded target branch; there is no force-discard operation.
+## Adding or moving a publication
 
-The launcher never commits a preserved result and never integrates one merely because Codex exits. After review and separate authorization, `make integrate <run-id>` provides the one-step landing path from the primary checkout; `scripts/triptych-codex --triptych-integrate <run-id>` is its direct equivalent. Using either form requires authority both to integrate the result and to update its recorded local target, including local `main` when `main` was the dispatch branch. A fresh integration requires that clean named target, an inactive and intact locked worker on its expected branch, a clean worker index and worktree whose `HEAD` exactly matches the last terminal launcher audit, and histories that still descend from the recorded base. Recovery from a durable landing checkpoint may instead tolerate a different clean primary branch or detached `HEAD`; it updates only the recorded target ref and leaves an unrelated checked-out ref unchanged.
+For a new work:
 
-Integration prefers the flattest history. A result already reachable from the target is confirmed and cleaned. A result that already descends from the target is fast-forwarded without rewriting it. When the target and worker have both advanced from the recorded base, the launcher requires the worker-only range to be linear, rebases its audited commits onto the captured current target, and permits Git to omit commits whose changes are already present at that tip or become empty. Landing durably records the expected old target and candidate, updates only the recorded target ref with an expected-old transaction, and then synchronizes a still-relevant primary index and worktree with a ref-neutral tree transition that refuses overwrites. During durable ordinary landing recovery, either the exact candidate or a live target descendant that contains it proves that result landed; a manually resolved candidate remains exact-only as described below. The launcher never resets whichever unrelated ref may win a checkout or symbolic-HEAD race. An unexpected worker-side merge is refused because flattening it could discard content introduced by the merge commit. The launcher never rebases existing target history and never falls back to a merge commit. The original audited worker head and the actual rebased landing head remain distinct in the private lifecycle record. Authorization to execute this integration includes only that launcher-owned rewrite of the inactive, reviewed, and still-unlanded worker branch; it does not authorize a worker session to rewrite history or authorize amendment, rebase, or force-update of the target or any published history.
+1. select provider, collection, profile, edition, locale, jurisdiction, and stable identity;
+2. create the publishable leaf and all required records;
+3. register exceptional shared dependencies;
+4. build, validate, review, and install the exact mirrored PDF; and
+5. add it to its one owning `library/` page.
 
-Before the rebase starts, the launcher durably records and verifies the exact audited source under `refs/triptych-codex/runs/<run-id>/integration-source`. When the just-started launcher rebase stops with an active rebase, nonempty unmerged paths from the current stopped commit, the expected detached conflict head, the original worker branch and private anchor still at that source, the recorded target as the rebase `onto`, and intact managed metadata, the launcher records `integration-conflict` and retains that active rebase. It does not replay Git's generic continuation hints. The launcher accepts an active rebase root only as one exact real direct child of the authenticated worktree administration directory and rejects symlinks or unsafe entries while fingerprinting its metadata. Before either initial recording or interrupted-state adoption, it independently reproduces the stopped three-way replay from the current detached head and stopped commit, using that commit's parent as the merge base. The live conflict paths and their stage entries must exactly match that reproduction, all staged paths must remain within its reproduced result, and the nonconflicting stage-0 entries produced by the replay must be exact. It then protects those nonconflicting index entries; resolver exit and continuation require them to remain exact. `--triptych-resolve` opens Codex at the managed worktree root under a fixed staging-only safety prompt and accepts no forwarded prompt or option replacement. It may stage only paths changed by the stopped rebase commit, including the recorded conflict paths. Unexpected staging or an altered nonconflicting entry remains a correctable resolver-scope error while the source anchor, `HEAD`, and rebase administration stay provable; changed rebase administration or source identity fails closed. Resolver and continuation read target movement directly from the recorded ref and may operate while the unrelated primary checkout is dirty or on another branch; they never change that checkout. After every intended resolution is staged, `--triptych-continue` verifies that no unmerged, unstaged, or non-ignored untracked work remains and invokes launcher-owned rebase continuation with hooks, signing, and all editors disabled. A later commit may conflict again and repeat this cycle. `--triptych-abort` first proves the managed rebase and source identity, then may discard correctable resolver staging while aborting an active managed rebase and verifying restoration to the exact anchored source; it may also explicitly restore an exact clean candidate to that source. A manually resolved `integration-verification-failed` candidate is eligible for this candidate-mode abort only when no rebase is active, the worker is clean at the exact recorded candidate, the private source anchor still names the exact recorded source, and the manifest contains neither `integrated_head` nor any durable landing checkpoint. This worker-only abort neither depends on nor touches the live target ref, so target deletion, rewind, or unrelated rewriting cannot block an otherwise exact anchored abort. The manifest privately preserves the attempted source and target and the accumulated conflict paths, archiving them when an explicit abort closes the transaction.
-
-A successfully continued manual resolution stops at a clean `integration-review-pending` candidate; continuation never lands, cleans, or changes the target. This state carries no landing authority. `make final-diff <run-id>` renders a read-only object-to-object diff from the captured target to that exact candidate without exposing or requiring a private worktree path, even when the primary checkout has unrelated dirt. After that diff is reviewed, a later, fresh `make integrate <run-id>` authorization first records a durable manual-landing-pending checkpoint and may update only the captured target from its exact old commit to that exact candidate. All landing hooks are disabled. A retry classifies the live target from the manual-resolution marker: the captured target permits the expected-old transaction, the exact candidate permits idempotent worktree synchronization, verification, and cleanup, and a descendant or unrelated target fails closed. A later exact reconciliation may recover a verification-failed run. If the recorded target advances during resolution or before landing, continuation may finish the pinned rebase so the manual work becomes a clean candidate, but landing retains that candidate and its source anchor without reset, silent rebase, merge, cleanup, or discard.
-
-A rebase failure that is not a provable managed conflict retains the previous conservative recovery rules: it is aborted and restored only when the launcher can verify the exact audited source and its private anchor. If the launcher is interrupted after the initial rebase has reached a provable conflict, a retry adopts that conflict; if the initial rebase completed cleanly before candidate checkpointing, exact terminal worker and branch reflog transitions may prove and adopt that candidate while rejecting any later commit. If continuation has reached a later provable conflict or completed at a clean valid candidate, a retry adopts that state. Otherwise a later invocation clears or rolls back a transaction only when the exact recorded invariants prove the transition; any unknown active rebase, commit, dirty state, changed conflict administration, resolver-administered rebase, source-anchor loss outside a durable deletion checkpoint, or failed exact restoration is retained without abort or reset for inspection. A durable expected-old landing checkpoint makes interruption before, during, or after target mutation retryable; once the target advances to a landed result, later verification or cleanup failure never rolls it back. If later history rewriting removes that recorded landing from the target, integration refuses to reapply it silently; the target must first be restored or reconciled. Before cleanup it rechecks required target reachability, the worker’s branch, head, and cleanliness, and any live source anchor, then writes a durable cleanup-pending checkpoint before unlocking the worktree. A retry may relock and resume an exact checkpointed worker or adopt the provable post-removal ref-cleanup phase. Worker-branch and source-anchor deletion use one atomic ref transaction that also verifies the live target; a manual cleanup transaction requires that target to remain the exact reviewed candidate. The source anchor is deleted only after verified exact abort restoration or successful landing cleanup; interruption or deletion refusal remains an opaque retryable state. The launcher itself never invokes `git push` or deployment. Hooks are disabled for every launcher-owned Git operation; rebase commits are unsigned, and continuation editors are disabled.
-
-Before landing a result, review the complete final diff, confirm that its paths match the task's authorized scope, inspect every affected document and consumer, and run the applicable gates. Integrate results serially; each later run is rebased onto the results already landed when the changes combine cleanly. Text conflicts require source-aware reconciliation; shared-fragment changes require every consumer to be rebuilt; PDF conflicts are never resolved by choosing one binary side but by reconciling the authoritative sources and rebuilding. Preserve both inputs when reconciliation is incomplete.
-
-## Adding or migrating a document
-
-For a new document:
-
-1. Select the provider, collection, genre profile, edition, locale, and jurisdiction.
-2. Create its directory at the corresponding `src/` path with `main.tex` and required source records.
-3. Confirm that recursive discovery finds the document; register only exceptional cross-document shared dependencies.
-4. Build, validate, and install it to the exact mirrored `doc/` path.
-5. Update the publication's one owning section page under `library/`; update `LIBRARY.md` only when the section index itself changes.
-
-When migrating an existing document, use history-preserving moves and update its imports, build target, dependencies, internal cross-references, README or catalog links, attributes, and installed PDF path together. Validate all consumers of any moved shared fragment. Do not leave a second editable copy at the old location. If a compatibility alias is genuinely needed, make it generated or explicitly transitional and document its removal condition.
-
-Repository restructuring and content revision should remain distinguishable in review and history. Prefer a structure-only commit before substantive revisions when both are required, while ensuring each committed state has internally consistent paths and guidance.
+For a move, preserve history and update imports, dependencies, internal links, catalog entries, attributes, build paths, and installed mirrors together. Validate every consumer of moved shared material. Leave no second editable copy. Prefer a separate structural commit before substantive revision when the requested order permits it.
 
 ## Public navigation and catalog
 
-`README.md` is a deliberately terse landing page for clergy, religious, and lay readers. Its subtitle identifies the studies as AI driven, while its first heading remains the standalone `Don't Panic!`. The opening moves from AI and authority limits to skeptical reading, ordinary-language feedback, and reassurance that no technical background is needed. It then links Traditional Latin Mass (1962 Roman Rite), Novus Ordo (Postconciliar Roman Rite), Prayer, Faith, Biographies, Heresies, Historical Accounts, Mariology, and Law in one compact library table; keeps the two clearly distinguished liturgy pages first and Prayer next without directing readers where to begin; states the reuse boundary; and ends by explaining the name. Do not put publication catalogs, raw status matrices, repository history, build commands, or maintainer-oriented layout detail back onto the landing page.
+`README.md` is a terse reader landing page, not a catalog or maintainer guide. It begins with `Don't Panic!`, explains AI and authority limits in ordinary language, links the library sections with the 1962 and postconciliar liturgy pages first and Prayer next, states the reuse boundary, and explains the name.
 
-`LIBRARY.md` is the public catalog index. Publication listings live on the mutually exclusive section pages `library/traditional-latin-mass.md`, `library/novus-ordo-liturgy.md`, `library/prayer.md`, `library/faith.md`, `library/biographies.md`, `library/heresies.md`, `library/historical-accounts.md`, `library/mariology.md`, and `library/law-and-church-discipline.md`. Every installed publication has exactly one catalog entry across those pages; do not repeat a title or PDF as a cross-listing. A mechanically derived companion belongs in the same entry or row as its canonical work and counts as part of that one catalog home. A page with no dedicated publication says so plainly instead of borrowing cross-disciplinary works from another section.
+`LIBRARY.md` is the section index. Each installed publication has exactly one owning entry among:
 
-Restrict `Traditional Latin Mass: 1962 Roman Rite` to the 1962 Ordinary, assembly references, and proper guides: list the Ordinary first, `Assembling the Mass` second, and the proper guides in a compact table. Keep devotional prayer on the separate `Prayer` page; list the novenas there in a compact table with each short form in the same row as its full guide. The reader-facing `Novus Ordo: Postconciliar Roman Rite` title honors common usage while distinguishing the collection from the 1962 books, but every publication placed there must identify the exact postconciliar books, edition, language, territory, and date it studies. Place comparative or other discursive works under their substantive study category rather than duplicating or misclassifying them merely because they discuss liturgy. Lead each primary entry with its plain title linked directly to the installed PDF. Follow with a short scope and status statement, then separately named links to every distinct reader-facing supporting or audit record required by the governing profile. Do not link TeX authoring files from Markdown; they remain discoverable through the repository structure when needed for technical work. A shared scope or status that truly applies to every item in a compact series may appear once before its table or list; do not repeat it on every entry. Focused raw retrieval extracts and structured generation records remain reachable through the supporting records and need not be linked from the catalog unless a profile expressly requires them. Prefer readable lists for heterogeneous works and compact tables for the profile-defined numbered series.
+- `library/traditional-latin-mass.md`
+- `library/novus-ordo-liturgy.md`
+- `library/prayer.md`
+- `library/faith.md`
+- `library/biographies.md`
+- `library/heresies.md`
+- `library/historical-accounts.md`
+- `library/mariology.md`
+- `library/law-and-church-discipline.md`
 
-Keep generation provenance, source evaluation, independent review, and production status distinct in catalog language. Preserve mutable as-of dates and profile-local evidence codes where they materially qualify a publication, but explain them in ordinary language or link their definitions. Keep reader-facing collection identifiers where they aid navigation; do not expose an internal ordering key merely to fill a catalog field.
+Do not cross-list. Keep derived companions in their canonical work's entry. Link the title directly to the installed PDF, then give a short scope/status statement and separately named reader-facing records required by the profile. Do not link TeX authoring files. Distinguish generation provenance, source audit, independent review, production state, and release status; retain profile identifiers only when they aid readers.
 
-`CONTRIBUTING.md` is the public contribution guide. It must keep a no-Git path for short, ordinary-language feedback, a clone-and-run path for contributors using an AI agent, and an experimental-branch path for testing materially different base guidance. It must make clear that feedback initiates verification rather than becoming authority, that alternative branches remain distinct from the reviewed library, and that an intentional submission is offered under the applicable outbound license without transferring ownership. Require contributors to identify third-party material and the authority under which it may be distributed.
+On the 1962 page list the Ordinary first, assembly references second, and proper guides in their compact series table. Keep novenas and their short forms together on the Prayer page. Every postconciliar entry names its exact books, edition, language, territory, and date; comparative or discursive works remain with their substantive study category.
 
-## Public release artifacts
+`CONTRIBUTING.md` keeps an ordinary-language no-Git path, an isolated agent workflow, and an experimental-branch path. Feedback triggers verification rather than becoming authority. Submissions retain ownership, accept the applicable outbound license, and identify third-party material and its distribution basis.
 
-Repository visibility and reader-site publication are separate release decisions. Keep the development repository private unless a recorded authorization expressly covers its tracked sources, research records, installed PDFs, licensing and infrastructure files, and reachable history. The current Triptych authorization permits public GitHub visibility for that full recorded scope. Whether the repository is private or public, build the reader-facing edition as a generated, history-free artifact under ignored `build/`, copying only the material authorized by an exhaustive release manifest.
+## Exact-snapshot release
 
-`release/public-alpha.json` governs the first public edition and must account for every discovered `src/gpt/**/main.tex` document and mirrored `doc/gpt/**/*.pdf`. Its statuses are fail-closed:
+Repository visibility and reader-site deployment are separate decisions. A public repository exposes tracked content and reachable history; a reader site is a generated, history-free artifact under ignored `build/`. Neither follows automatically from a successful build or commit.
 
-- `hold` excludes a work from both public builds and private review previews;
-- `review` permits a work only in the clearly marked, no-index private preview; and
-- `release` requires a work-specific rights record, or an exhaustive shared record that identifies the work, an effective authorization and its duration, no unresolved release gate, and the exact SHA-256 of the approved installed PDF.
+`release/public-alpha.json` must exhaustively account for every discovered source and installed PDF:
 
-`release` is an exact-snapshot distribution decision, not an editorial-maturity,
-source-audit, specialist-review, or ecclesiastical-approval label.  An express
-snapshot authorization may clear the project's rights and distribution gates
-for the exact recorded PDF even when disclosed profile-final or source-audit
-work remains outstanding.  The authorization must bind the final PDF hash,
-identify the accepted limitations, and leave each publication's source and
-review disclosures intact; it must never imply that an unperformed collation,
-source check, specialist review, imprimatur, or other ecclesiastical approval
-occurred.  A rebuilt or otherwise changed PDF is a new snapshot and requires a
-new exact approval before it can retain `release` status.
+- `hold` excludes the work from public and private-preview artifacts;
+- `review` permits it only in a clearly marked, no-index private preview; and
+- `release` requires a current rights record, effective authorization, cleared distribution gates, and the exact approved PDF SHA-256.
 
-The public site generator renders the canonical reader-facing Markdown rather than maintaining a second editable catalog, but filters publication entries by the manifest. It may copy rendered HTML, site styling, license notices, approved PDFs, and narrowly scoped generated host-control files required to enforce release conditions. Every artifact-affecting repository input belongs to the exact authorization inventory: reader-facing Markdown and templates, styling, copied license texts, the generator itself, and its dependency lock. The renderer must prove that its installed dependency matches that exact lock before producing HTML. Adding, removing, or changing any such input requires a new exact binding before check, build, or verification may pass. It must not copy authoring Markdown, TeX, research or retrieval records, build intermediates, repository metadata, or prior Git history unless a later release policy explicitly reviews and authorizes a category. A private preview may additionally contain `review` PDFs without mislabeling their current hashes as approved snapshots, but it must be marked `noindex, nofollow`, remain local or access-controlled, and never be deployed as the public site.
+`release` means exact-snapshot distribution approval only. It never implies editorial maturity, complete collation, specialist review, an imprimatur, a nihil obstat, or ecclesiastical approval. A changed PDF is a new snapshot and loses its old approval until a new exact binding is recorded.
 
-Before publishing, verify the generated artifact independently against the manifest: its complete file set must be exact; every release PDF must match its repository-approved hash rather than merely a generated artifact manifest; every private-preview review PDF must match the exact installed candidate it identifies without acquiring an approval label; every reader-facing source, rendered page, copied static file, generator input, and dependency lock must match the approved repository input; the artifact manifest must have no missing or extra fields; local links and fragments must resolve; excluded publication identifiers and machine-private paths must be absent; and recorded checksums must match. Publish only the verified public artifact through the configured host or deployment workflow. A public repository may expose its tracked development material when separately authorized, but GitHub Pages must never deploy the repository root, a development branch's raw tree, or the private-preview output.
+The authorization inventory also binds every reader-facing Markdown file, template, stylesheet, copied license text, generator, and dependency lock capable of changing the artifact. The public generator may copy only authorized HTML, styles, licenses, PDFs, and narrowly scoped host-control or verification files. It must not copy authoring sources, research records, intermediates, repository metadata, history, or private-preview output.
 
-A read-only release-preparation command may validate the exhaustive current
-scope and print deterministic candidate PDF and reader-facing source hashes
-even when prior approval bindings are stale. Its output must state that it
-confers no approval or authority and must never mutate a manifest, rights
-record, installed PDF, or generated site. Building and verifying remain
-separate operations: a build is not publication-ready until a later explicit
-verification checks the completed artifact against currently authorized
-bindings.
+Preparation, build, verification, push, and deployment are distinct. A preparation command may print current candidate hashes but grants no approval and changes nothing. Verification must independently prove the complete artifact file set, approved repository hashes, dependency lock, local links and fragments, checksums, excluded identifiers, and absence of machine-private paths.
 
-A conditional release must encode its duration, effective instant, timezone, scope, machine-recognized conditions, and either a null cutoff for perpetual authorization or an exclusive cutoff for temporary authorization. Public checks, builds, and verification fail before the effective instant, and temporary releases also fail at and after the cutoff of their half-open authorization interval. A release that requires discovery controls emits no-index HTML metadata and host response-header instructions for every page and PDF. A public-repository authorization may instead permit ordinary platform and search indexing while retaining a narrower no-active-promotion condition. Record that distinction explicitly; public visibility and search directives must not be inferred from the word “unadvertised” alone.
+Conditional authorization records its effective instant, timezone, duration, exclusive cutoff when temporary, scope, and machine-recognized conditions. A temporary or request-time-restricted release requires enforceable controls for every page and direct PDF request, cache and rollback protection, monitoring, withdrawal, and purge; a static artifact cannot revoke itself. GitHub Pages is acceptable only for a perpetual authorization that needs no request-time expiration or discovery headers. Publish only a verified artifact through the authorized host workflow, never the repository root or private preview.
 
-A generated static artifact cannot revoke or delete itself. Any temporary public release therefore requires the machine-recognized `unadvertised-public-hosting` condition and a host control that runs before every asset request, including direct PDF requests, and returns `410 Gone` at the cutoff. It also requires cache control, prevention of rollback to an unguarded deployment, independent monitoring, and a manual project-withdrawal and cache-purge fallback. Verify these controls against the live host before sharing its URL. Deployment verification must name the intended host profile and fail when that host cannot enforce the authorization conditions. GitHub Pages is accepted only for a perpetual authorization that requires neither request-time discovery headers nor an expiration runtime; do not deploy a conditional artifact there merely because `_headers` or `_worker.js` exists in the static upload.
+## Version control and authority
 
-## Version-control hygiene
+Preserve unrelated changes and stage only a coherent requested result. Editing, building, installing, committing, integrating, updating a local target, pushing a named ref, and deploying are distinct authorities. A worker's permission for one does not imply another.
 
-Track `src/` and `doc/`; ignore `build/`. Preserve unrelated worktree changes and never treat an untracked source record as disposable merely because it can be regenerated. Stage only the files belonging to the coherent change being committed.
+Before any push to a public ref, review the exact outgoing range and confirm that every newly reachable source, record, PDF, and historical object is authorized. A push to `main` may trigger Pages after the source is already public; a failed workflow does not retract it. Keep uncleared experiments and private-review material off public refs.
 
-Editing, building, installing reviewed PDFs, committing, integrating, updating local `main`, pushing a non-main ref, pushing `main`, and deploying are distinct operations requiring distinct authority. A request for an earlier operation does not authorize a later one. Naming a task “complete,” “finished,” or “ready” does not broaden that authority.
+Every AI-assisted commit has a concise result-oriented subject and a body headed `AI summary:` recording the material content, records, guidance, build/publication changes, verification performed, and consequential limitations. Do not claim unperformed checks or include private reasoning or machine-local state.
 
-On a public repository, every pushed ref immediately exposes its tracked tree and reachable history, including a task or integration branch that GitHub Pages does not deploy. A push to `main` additionally triggers `.github/workflows/pages.yml`; release checks run only after the ref has already become public, and a failed workflow does not retract the pushed source or history. Before pushing, review the complete outgoing commit range and verify that new protected content, changed PDFs, and future publications have the authority and rights review required for the named remote and ref. Keep uncleared experiments and private-review material off public refs. A manual `workflow_dispatch` is deployment authority, not a routine verification step.
-
-Every AI-assisted commit must have both a concise subject that states the result and a substantive commit body headed `AI summary:`. The body must record the principal content, source-record, guidance, build, and publication changes included in the commit, as applicable; the material verification performed and its outcome; and any consequential limitation or review still outstanding. Keep it concise enough to scan but complete enough to explain the committed state without relying on the chat transcript. Do not claim checks that were not run, include private reasoning or session details, or leave an AI-assisted commit with only a terse one-line subject.
-
-Corrections, source substitutions, renewed verification, and newly resolved discrepancies are normal reviewed history. Update the relevant record and explain the reason in the commit rather than erasing the previous state. Avoid rewriting published history for ordinary renames or expanding project scope; a new commit records that evolution honestly unless a history rewrite is explicitly required and coordinated.
+Use new commits for ordinary corrections, source substitutions, renewed verification, and reorganizations. Do not amend, filter, force-update, or otherwise rewrite published history unless the user expressly requests and coordinates that consequence.
