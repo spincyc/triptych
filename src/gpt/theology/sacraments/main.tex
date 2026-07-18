@@ -88,10 +88,19 @@
 \input{theology/sacraments/summaries/penance}
 \input{theology/sacraments/summaries/anointing}
 \input{theology/sacraments/summaries/orders}
+\renewcommand{\sacramentSummaryEnd}{\par\endgroup}
 \input{theology/sacraments/summaries/matrimony}
 
-\section{Generation Metadata}
+\enlargethispage{2\baselineskip}
+\refstepcounter{section}
+\phantomsection
+\addcontentsline{toc}{section}{\protect\numberline{\thesection}Generation Metadata}
+\begin{minipage}{\linewidth}
+{\large\bfseries \thesection\quad Generation Metadata\par}
+\smallskip
+\scriptsize
 \input{theology/sacraments/generation-metadata}
+\end{minipage}
 
 \end{deepstudy}
 \end{document}

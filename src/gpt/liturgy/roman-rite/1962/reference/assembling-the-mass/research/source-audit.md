@@ -115,8 +115,14 @@ OCR text extraction was used as a finding aid to locate rubric numbers and compa
 
 ## Build and publication record
 
-Initial drafting record created 2026-07-13. After the independent case calculation and final source change, the document was built for two settling passes with `pdflatex` in the repository build tree. The result is a 42-page, US-letter PDF. The final log has no undefined references, overfull or underfull boxes, LaTeX/package warnings, fatal errors, or rerun request.
+### Final clean-build verification — 2026-07-18
+
+A dependency-complete, settled two-pass build produced the current 41-page US-letter PDF, SHA-256 `b19844ca29a8d74897891f34e02d01d68c454d3c84374aaab2371d7d6280c0ba`. The final log is warning-free; generation metadata, PDF structure and metadata, embedded/subsetted/Unicode-mapped fonts, and extracted text passed. All 41 physical pages were visually reviewed, and the installed PDF is byte-identical to the reviewed build.
+
+### Initial production verification — 2026-07-13 (superseded)
+
+After the independent case calculation and final source change then current, the document was built for two settling passes with `pdflatex` in the repository build tree. The result was a 42-page, US-letter PDF. The final log had no undefined references, overfull or underfull boxes, LaTeX/package warnings, fatal errors, or rerun request.
 
 `pdfinfo` reports the intended title and substantive subject. `qpdf --check` reports no syntax or stream-encoding errors. Every listed font is embedded, subset, and Unicode-mapped. The repository metadata validator accepts the source/PDF pair as one canonical record and finds the model, qualifier, runtime, date, title, and subject present in the required form.
 
-All forty-two physical pages were rasterized and visually reviewed after the final source change, both individually and in three contact sheets. No clipped text, collision, unintended blank page, malformed table, broken checkbox, illegible worksheet, or page-order defect was found. The reviewed PDF was installed in its mirrored catalog path and compared byte-for-byte with the build artifact. Catalog integration and repository guidance were reviewed with the same publication stage; commit integration is recorded by version control rather than asserted in this pre-commit source record.
+All forty-two physical pages of that superseded snapshot were rasterized and visually reviewed after its final source change, both individually and in three contact sheets. No clipped text, collision, unintended blank page, malformed table, broken checkbox, illegible worksheet, or page-order defect was found. The reviewed PDF was installed in its mirrored catalog path and compared byte-for-byte with the build artifact. Catalog integration and repository guidance were reviewed with the same publication stage; commit integration is recorded by version control rather than asserted in this pre-commit source record.

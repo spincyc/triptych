@@ -56,7 +56,8 @@ Geographic equivalents are broad: Davidic Israel and Judah lie in the southern L
 
 - The 14 July 2026 source and structure review confirmed the complete propers map, two-page source-grounded synthesis, treatment of all ten appointed propers, exploratory proposals, terminal historical and scope appendices, references, metadata, and rights notice.
 - Every verified proper now records both its immediate scriptural or liturgical context and its function in this Mass. The detailed treatment restores a distinct Postcommunion analysis and gives direct psalm exegesis to all five chants while keeping related baptismal, Eucharistic, and prayer sources explicitly subordinate to the texts they illuminate.
-- The settled twelve-page PDF passed two build passes, a clean warning/error scan, metadata validation, text extraction, embedded-font inspection, and `qpdf --check`. Every page was visually inspected, and the installed publication was confirmed byte-identical to the reviewed build artifact.
+- The resulting twelve-page 2026-07-14 production snapshot passed two build passes, a clean warning/error scan, metadata validation, text extraction, embedded-font inspection, `qpdf --check`, every-page visual inspection, and installed/build identity comparison; that snapshot is superseded by the final production record below.
+- Final clean-build review completed 2026-07-18: the settled 12-page PDF, SHA-256 `e5170d2893dd7b1d3296264c6e6e42f73389717b4a3a4a4fcb93422695f76547`, passed two build passes, a warning-free log, metadata, extraction, embedded-font, PDF-structure, and every-page visual checks; the installed publication is byte-identical to the reviewed build.
 - No independent theological review was performed.
 
 ## Survey and Material Limits
