@@ -2,7 +2,7 @@
 
 **Formula:** `PC-S37-A`
 **Occurrence:** 2026-06-28
-**Last updated:** 2026-07-17
+**Last updated:** 2026-07-18
 **Registry controls:** `guidance/liturgy/postconciliar-propers-registry.md`; [edition formula dispositions](../../../registry/formula-dispositions.md); [2026 occurrence record](../../../registry/occurrences-2026.md)
 
 Formula identity is controlled by [the instance manifest](../instance/manifest.md), element boundaries by [the leaf audit](../propers/verified.md), and reusable Missal evidence by [the Week XIII owner](../../shared/ordinary-time/weeks/13/propers/verified.md).
@@ -32,13 +32,32 @@ Formula identity is controlled by [the instance manifest](../instance/manifest.m
 - St. John Chrysostom, *Homily 35 on Matthew*, directly treats Matthew 10:37–42: Christ’s priority over every creaturely bond, taking up the cross, receiving prophet and righteous person, the cup of cold water, and the dignity of receiving poor messengers: <https://www.newadvent.org/fathers/200135.htm>.
 - St. John Chrysostom, *Homilies 10–11 on Romans*, directly treats Romans 6:3–11. Baptism joins believers to Christ’s death by death to sin and to his risen life; the once-for-all act grounds continuing fidelity rather than presumption: <https://www.newadvent.org/fathers/210210.htm> and <https://www.newadvent.org/fathers/210211.htm>.
 - St. Augustine, *Exposition on Psalm 89*, directly receives the psalm’s covenant, worship, and mercy language ecclesially: <https://www.newadvent.org/fathers/1801089.htm>. It is not presented as commentary on Lectionary 97’s design.
+- Clement of Alexandria’s fragments on 1 Peter directly comment on 1 Peter 2:9: <https://www.newadvent.org/fathers/0211.htm>. Augustine, *Tractates 109–110 on John*, directly treats John 17:20–23: <https://www.newadvent.org/fathers/1701109.htm> and <https://www.newadvent.org/fathers/1701110.htm>.
+- St. Thomas Aquinas, *Commentary on Romans* VI, lect. 1, directly treats Romans 6:1–5 and baptism into Christ’s death: <https://aquinas.cc/en/la/~Rom.C6.L1>.
 
 ### Doctrinal and liturgical illumination
 
 - *Catechism of the Catholic Church* 1213, 1227, and 1265–1270 illuminates Baptism as new birth, participation in Christ’s death and resurrection, incorporation, and vocation; it does not replace Paul’s argument.
 - GIRM 46–90 and 352–367 and the *General Introduction to the Lectionary* 65–69, 78–91, and 93–110 govern the structure, chant layers, and relationship labels. *Tempus per annum* rubric 5 supplies a Sunday Preface unless the selected authorized Eucharistic Prayer carries its own; GIRM 365(b) preserves that flexibility for Eucharistic Prayer II, while 365(d) makes Eucharistic Prayer IV and its invariable Preface one coupled selection.
 
-No direct patristic exposition of 2 Kings 4:8–16a was retained. The Elisha–Matthew relation therefore rests on official Lectionary correlation and close exegesis, not an invented Father.
+No sustained verse-by-verse patristic exposition of the complete 2 Kings 4:8–11, 14–16a unit was retained. Direct early reuses of its lodging and support details were found in Jerome, Origen, and a disputed-attribution pseudo-Clementine work; the Elisha–Matthew relation itself still rests on official Lectionary correlation rather than an invented ancient pairing.
+
+## Passage-by-passage reception matrix
+
+| Appointed scriptural unit | Direct checked reception | Illuminating reuse | Result and control |
+| --- | --- | --- | --- |
+| Entrance, Psalm 47:2 | Augustine, *Exposition on Psalm 47* | — | Direct psalm reception; the universal ecclesial reading does not erase Zion or establish the modern antiphon’s history. |
+| 2 Kings 4:8–11, 14–16a | Jerome, *Against Jovinianus* I.26, directly reuses the welcome and furnishings; Origen, *Philocalia* XXVI, invokes the small chamber, bed, and lamp; pseudo-Clementine *Two Epistles on Virginity* II.15, disputed attribution, uses her material support and separate lodging | Augustine, *On the Soul and Its Origin* III.7, on the later revival scene at 4:34 | Direct early Greek and Latin reuse of selected details closes a total reception gap, but no retained witness continuously expounds the complete appointed unit. Augustine’s later-context use is a doctrinal boundary, not attributed to the selected verses. |
+| Responsorial Psalm 89 | Augustine, *Exposition on Psalm 89* | — | Direct psalm reception attentive to covenant promise amid apparent collapse; no claim that Augustine knew the Elisha pairing. |
+| Romans 6:3–4, 8–11 | Chrysostom, *Homilies 10–11 on Romans*; Aquinas, *Commentary on Romans* VI, lect. 1 | — | Direct Greek and medieval Latin reception. The omission of vv. 5–7 remains visible and Romans remains semi-continuous. |
+| Acclamation, 1 Peter 2:9 | Clement of Alexandria, fragments on 1 Peter | *Apostolic Constitutions* III.2; Augustine, *City of God* XVII; Gregory the Great, *Pastoral Rule* II | Clement directly comments on election, royal belonging, priesthood, and proclamation; the others show baptismal, ecclesial, and pastoral reuse without warranting domination. |
+| Matthew 10:37–42 | Chrysostom, *Homily 35 on Matthew* | Chrysostom, *Homily 31 on Hebrews*; Cyprian, *Testimonies* III.42; Augustine, *Exposition on Psalm 122* §10; Cassian, *Conference 1* ch. 10 | Direct continuous exposition plus Greek and Latin reuse of the cup saying. The reuses stress accessibility and charity, not a commercial reward mechanism. |
+| Communion A, cf. Psalm 103:1 | Augustine, *Exposition on Psalm 103* | — | Direct psalm reception; this is an unselected antiphon branch. |
+| Communion B, John 17:20–21 | Augustine, *Tractates 109–110 on John* | — | Direct treatment of future believers and ecclesial unity by participation/likeness; the branch remains unselected and does not mandate uniformity. |
+
+### Search record and negative-result boundary
+
+The 2026-07-18 pass searched the public ANF/NPNF collections at New Advent and CCEL, Augustine’s indexed English and Latin corpus, Aquinas’s Latin/English commentaries, Latin public-text leads, and targeted searches for Origen, Hilary, Jerome, Ambrose, Cyril, Gregory, Bede/Rabanus, and later Doctors. Greek Fathers were principally checked through identified English translations; Latin authors through English and Latin where stable texts were public. Searches for the Shunammite’s hospitality also tested the larger 2 Kings 4 context so that later uses of the child’s revival would not be misclassified as exegesis of 4:8–16a. Jerome’s *Against Jovinianus* I.26, Origen’s material preserved in *Philocalia* XXVI, and pseudo-Clementine *Two Epistles on Virginity* II.15 supplied direct early reuse of the selected lodging and support details; the pseudo-Clementine attribution is explicitly disputed. No sustained continuous patristic or medieval exposition of the complete appointed unit was retained. This remaining negative result is bounded to accessible indexed corpora and does not claim nonexistence in untranslated homiliaries, catenae, manuscripts, or subscription literature.
 
 ## Claim matrix and controls
 
@@ -76,3 +95,5 @@ The formula, official occurrence, complete online Lectionary path, Latin oration
 Civil date, governing editions, territory, and Lectionary identity remain in the terminal Liturgical Resolution appendix and tracked manifest. The compact-title revision received a settled two-pass build with a warning-free final log; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction passed; all 9 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `be6976f92077f75cf821e6f2eee19a45f62ac85d42005dddb8f3f725f8686341`.
 
 On 2026-07-18, the page-two coordinate revision superseded that production snapshot. It received a settled two-pass build with warning-free logs; metadata, PDF structure, embedded fonts, Unicode, and text extraction passed; all 9 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `0650f674a4b5c4395463bf3b4f7c04341a060856dbf2b465c4d699a5394cdce9`. This current snapshot remains in private review pending renewed exact-snapshot authorization.
+
+On 2026-07-18, the final passage-by-passage production snapshot received a settled two-pass build with warning-free logs; metadata, PDF structure, embedded fonts, Unicode, and extraction passed; all 11 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `8db2d1ddb15d4681bb14bf5c4cde761245e4cafd37e36d8ea2769b8d0b70af98`. It remains in private review pending renewed exact-snapshot authorization.

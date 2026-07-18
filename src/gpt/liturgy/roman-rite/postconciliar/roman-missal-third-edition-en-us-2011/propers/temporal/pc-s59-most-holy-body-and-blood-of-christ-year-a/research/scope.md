@@ -1,6 +1,6 @@
 # PC-S59-A — Research Scope
 
-**Last updated:** 2026-07-17
+**Last updated:** 2026-07-18
 **Jurisdiction and as-of date:** dioceses of the United States of America; calendar, rubrics, and editions checked through 2026-07-15
 **Registry controls:** `guidance/liturgy/postconciliar-propers-registry.md`; [edition formula dispositions](../../../registry/formula-dispositions.md); [2026 occurrence record](../../../registry/occurrences-2026.md)
 
@@ -56,14 +56,33 @@ Benedict XVI's [2010 audience on St. Juliana of Cornillon](https://www.vatican.v
 
 John Paul II's [2002 Corpus Christi homily](https://www.vatican.va/content/john-paul-ii/en/homilies/2002/documents/hf_jp-ii_hom_20020530_corpus-domini.html) explicitly connects Deuteronomy's remembering with Eucharistic memorial and describes Mass and procession as two moments in that Roman celebration. The homily illuminates but does not convert one local enactment into a universal obligation.
 
-## Direct reception retained
+## Passage-by-passage reception matrix
 
-- **St. Cyril of Jerusalem, *Mystagogical Catechesis IV* (Catechetical Lecture 22), §§1–6:** [text](https://www.newadvent.org/fathers/310122.htm). Cyril directly cites John 6:53, teaches reception of Christ's Body and Blood under the appearances of bread and wine, and joins faith with participation in Christ. He is direct sacramental reception, not commentary on this later feast.
-- **St. Augustine, *Tractate 26 on John* §§11–15, especially §§12–14:** [text](https://www.newadvent.org/fathers/1701026.htm). Augustine directly treats John 6:51 and 1 Corinthians 10:17, distinguishes manna's sign from Christ's gift, calls the Eucharist a sign of unity and bond of charity, and warns that the good sacrament can be received badly. This is the strongest retained witness across multiple appointed strands.
-- **St. John Chrysostom, *Homily 47 on John* §§1–2:** [text](https://www.newadvent.org/fathers/240147.htm). Chrysostom directly expounds John 6:53–58 as true food, abiding, eternal life, and resurrection, while refusing to make “spiritual” a denial of Christ's flesh.
-- **St. Ambrose, *De Mysteriis* VIII.43–49 and IX:** [text](https://www.newadvent.org/fathers/3405.htm). Ambrose places manna and water as figures and the sacramental Body and Blood as the gift to which they point. This is inherited typological illumination, not a historical claim about Deuteronomy's author.
-- **St. Ignatius of Antioch, *To the Smyrnaeans* 7:** [text](https://www.newadvent.org/fathers/0109.htm). Ignatius's early anti-docetic witness identifies refusal to confess Eucharist as Christ's flesh with denial of the flesh that suffered and rose. It is doctrinal illumination rather than direct exegesis of the appointed verses.
-- **St. Thomas Aquinas, *Summa theologiae* III, q. 75, a. 1 and q. 79, a. 1:** [true presence](https://www.newadvent.org/summa/4075.htm), [effects](https://www.newadvent.org/summa/4079.htm). Aquinas distinguishes the sacrament's true containment of Christ from bare signification and treats nourishment, union, and charity among its effects. This is saintly doctrinal synthesis; it does not establish the rights or exact authorship of a modern translation.
+### Search method and corpus limits
+
+The 2026-07-18 pass searched stable public translations of the Apostolic Fathers, Alexandrian, Greek, Syriac, and Latin patristic corpora, direct Pauline and Johannine homilies, Psalm expositions, North-African sacramental writings, and medieval Doctors. Origen, Irenaeus, Clement, Cyprian, Novatian, Hilary, Ambrose, Jerome, Augustine, both Cyrils, Chrysostom, John Damascene, Bede/Rabanus leads, and Aquinas were tested where the appointed verses or close canonical contexts plausibly occurred. Indexes and catenas were used only to find primary works; unattributed or unchecked fragments were rejected. The working texts are translations and do not amount to a new Greek/Latin/Syriac critical edition.
+
+Every appointed scriptural unit appears below. John 6:51, 51–58, and 57 are one passage with three liturgical functions, so the matrix records their exact sub-boundaries rather than pretending they have separate composition histories. The composed *Lauda Sion* remains outside the Scripture matrix.
+
+| Appointed unit | Direct or close reception retained | Illuminating reuse retained | Material negative / control |
+| --- | --- | --- | --- |
+| Cf. Psalm 81:17, Entrance (Vulgate/LXX Psalm 80) | Augustine, *Exposition on Psalm* 80.21, directly reaches wheat and honey | He joins sacramental delight to truthful life and obedience | The Missal adaptation and numbering remain explicit; Eucharistic reception does not erase the psalm’s covenantal rebuke |
+| Deuteronomy 8:2–3, 14b–16a | Irenaeus, *Against Heresies* V.21; Clement, *Paedagogus* III; Novatian, *On Jewish Meats*, directly quote or closely reuse 8:3 | Irenaeus reads Christ’s obedient temptation; Clement the Logos as nourishment; Novatian virtue beyond food regulation; Ambrose later relates manna/water to sacramental fulfillment | No checked Father was found continuously expounding every discontiguous Lectionary verse; the witnesses cluster around v. 3 and the manna/water complex, and none attributes transubstantiation terminology to Moses |
+| Psalm 147:12–15, 19–20, both response paths | Augustine, *Exposition on Psalm* 147.17–18 and following, directly treats Jerusalem, peace, wheat, word, and one Body | Ecclesial restoration and Eucharistic unity | The two refrains are alternatives and do not create two patristic dossiers; Augustine’s ecclesial reading does not replace the postexilic sense |
+| 1 Corinthians 10:16–17 | Chrysostom, *Homily 24 on 1 Corinthians*, direct continuous exposition; Augustine, *Tractate 26 on John* 11–15, direct cross-reference | Cyprian, *Epistle 62*, and John Damascene, *On the Orthodox Faith* IV.13, use the one loaf/many members for ecclesial union | The unit remains inside Paul’s flight-from-idolatry argument; unity is not detached from exclusive sacrificial allegiance |
+| John 6:51, acclamation and Gospel opening | Chrysostom, *Homily 46 on John*; Augustine, *Tractate 26*, direct treatment | Ambrose’s manna typology and Aquinas, *Commentary on John* 6, lect. 7 | The acclamation repeats rather than modifies the Gospel verse; “living bread” is not reduced to generic teaching |
+| John 6:51–58, Gospel | Chrysostom, *Homilies 46–47*; Augustine, *Tractate 26*; Cyril of Jerusalem, *Mystagogical Catechesis IV*, direct verse use and sacramental reception | Ambrose, *De Mysteriis* VIII–IX; Ignatius, *Smyrnaeans* 7; John Damascene IV.13; Aquinas’s Johannine commentary and *Summa* | These sources differ in genre and emphasis and are not collapsed into one purported patristic consensus sentence; direct Gospel exposition remains distinct from liturgical catechesis and anti-docetic doctrine |
+| John 6:57, Communion | Chrysostom, Augustine, and Aquinas directly treat mutual abiding and life through Christ | John Paul II, *Ecclesia de Eucharistia* 16, receives the verse as participation in Trinitarian life | Physical reception is not equated mechanically with full spiritual fruit; worthy reception, faith, charity, and ecclesial communion remain material controls |
+
+### Wider sacramental reception retained
+
+- **St. Cyril of Jerusalem, *Mystagogical Catechesis IV* §§1–6:** [text](https://www.newadvent.org/fathers/310122.htm). Directly cites John 6:53 and teaches reception of Christ’s Body and Blood under the appearances of bread and wine.
+- **St. Augustine, *Tractate 26 on John* §§11–15:** [text](https://www.newadvent.org/fathers/1701026.htm). Directly joins John 6:51 and 1 Corinthians 10:17, sign, reality, unity, charity, and the possibility of bad reception.
+- **St. Ambrose, *De Mysteriis* VIII.43–49 and IX:** [text](https://www.newadvent.org/fathers/3405.htm). Receives manna and water as figures and the sacramental Body and Blood as fulfillment.
+- **St. Ignatius of Antioch, *To the Smyrnaeans* 7:** [text](https://www.newadvent.org/fathers/0109.htm). Early anti-docetic Eucharistic witness; doctrinal illumination rather than exegesis of the appointed boundary.
+- **St. Thomas Aquinas, *Commentary on John* 6, lect. 7 and *Summa theologiae* III, q. 75, a. 1; q. 79, a. 1:** [John](https://aquinas.cc/la/en/~Ioan.C6.L7), [presence](https://www.newadvent.org/summa/4075.htm), [effects](https://www.newadvent.org/summa/4079.htm). Direct Johannine commentary and later doctrinal synthesis are kept distinct.
+
+No cited Father is presented as commenting on the complete medieval feast or modern Year A formula. Direct exegesis, typology, sacramental catechesis, doctrinal controversy, and feast history retain separate evidence roles.
 
 ## Magisterial and doctrinal controls
 
@@ -137,3 +156,5 @@ Outstanding work remains material: complete U.S.-English oration collation again
 Civil date, governing editions, territory, and Lectionary identity remain in the terminal Liturgical Resolution appendix and tracked manifest. The compact-title revision received a settled two-pass build with a warning-free final log; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction passed; all 11 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `69399aadf6562809635428b6934f04483424bff443f728a8aaa900b9d909eda0`.
 
 On 2026-07-18, the page-two coordinate revision superseded that production snapshot. It received a settled two-pass build with warning-free logs; metadata, PDF structure, embedded fonts, Unicode, and text extraction passed; all 11 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `453e849bb44761bac6b608e0a27ca847739635a8174b7d9b42ca8c8249b92e61`. This current snapshot remains in private review pending renewed exact-snapshot authorization.
+
+On 2026-07-18, the final passage-by-passage production snapshot received a settled two-pass build with warning-free logs; metadata, PDF structure, embedded fonts, Unicode, and extraction passed; all 14 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `db1c0986781be30df4f5fc820187d2fda0b8cb24790d266a90bc1da8f5f7ca3c`. It remains in private review pending renewed exact-snapshot authorization.

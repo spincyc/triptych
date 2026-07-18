@@ -24,6 +24,20 @@ The one-page orientation inventories seven distinct directly appointed passages 
 
 Geographic equivalents are broad: Davidic Israel and Judah lie in the southern Levant; Israel's wilderness routes remain disputed; the Decapolis lay chiefly east and southeast of the Sea of Galilee; Rome is in present-day Italy; and Corinth/Achaia is in present-day Greece.
 
+## Passage-by-Passage Reception Matrix
+
+| Appointed passage | Direct exegesis checked | Illuminating reuse checked | Material result / boundary |
+| --- | --- | --- | --- |
+| Psalm 16:5–7 (Offertory) | Augustine, *Exposition on Psalm 16/17* §§5–7. | Steady steps and marvellous mercy at the offering. | The voice of Christ with the Church is reception, not a denial of the psalm’s literal prayer. |
+| Psalm 26:6 (Communion) | Augustine, *Exposition on Psalm 26/27* §6. | Sacrifice of jubilation in Eucharistic placement. | “Sacrifice” remains analogical to praise here; it is not another Eucharistic consecration. |
+| Psalm 27:1, 8–9 (Introit) | Augustine, *Exposition on Psalm 27/28* §§2, 8–9. | Cry, received strength, inheritance, and governance. | Divine strength does not eliminate continuing petition. |
+| Psalm 30:2–3 (Alleluia) | Augustine, *Exposition on Psalm 30/31* §§2–6. | Christ’s entrusted spirit and the Church’s refuge. | The exact proper clauses remain controlling. |
+| Psalm 89:1, 13 (Gradual) | Augustine, *Exposition on Psalm 89/90* §§2, 14. | Israel’s generational refuge and divine return. | “Return” is not bodily motion or proof that God abandoned creation. |
+| Mark 8:1–9 (Gospel) | Bede, *In Mark* II.32; Augustine, *Sermon 45* §§1–3. | Gregory and Ambrose excerpts in Aquinas’s *Catena Aurea*; Anthony of Padua, *Seventh Sunday after Pentecost* §§2–13, directly treats compassion, seven loaves, distribution, baskets, and the paired Pauline lesson. | Allegorical numbers supplement rather than displace Christ’s literal compassion and the crowd’s bodily hunger. |
+| Romans 6:3–11 (Epistle) | Chrysostom, *Homilies 10–11 on Romans*. | Cyril of Jerusalem, *Mystagogical Catechesis* II; Anthony, *Sixth Sunday after Pentecost* §§2, 6 and following, directly pairs baptism into Christ’s death with renewed justice. | Baptismal fact and continuing moral task remain distinct; the “old man” is not bodily substance. |
+
+Corpora searched included public Greek and Latin Fathers, Bede’s Latin, the *Catena Aurea* with underlying sources checked where used, and official Latin/Italian Antonian sermons. English, Latin, Italian, and translated Greek were consulted. The result is broad but not literally exhaustive of manuscripts, Syriac/Greek texts without translation, the full medieval homiliary tradition, or subscription databases.
+
 ## Direct Reception Retained
 
 - St. Augustine, *Exposition on Psalm 16* §§5–7, direct exegesis of the Offertory's perfected steps, inclined ear, and marvellous mercies in the voice of Christ with the Church: [text](https://www.newadvent.org/fathers/1801017.htm). New Advent's page heading uses the common number Psalm 17.
@@ -67,6 +81,6 @@ Geographic equivalents are broad: Davidic Israel and Judah lie in the southern L
 - Psalm origins, the Exodus chronology, Mark's composition date and city, and the feeding's exact site and year remain uncertain. The *Catena Aurea* is incomplete as an English witness to Bede, so claims not preserved under his name there depend on the checked Latin text.
 - The survey does not exhaust manuscripts, untranslated works, subscription databases, or modern critical scholarship. No source-category quota was applied. The retained Latin lexicon, psalm expositions, Bede, Mark reception, mystagogical sources, and prayer source were checked or rechecked 2026-07-14.
 
-## 2026-07-18 Page-Two Production Record
+## 2026-07-18 Final Production Record
 
-This statement supersedes the earlier production snapshots: the page-two coordinate revision received a settled two-pass build with warning-free logs; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction checks passed; all 12 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `a7097b7534c47228d669f431fb73a58aceb2616629d64b506c8c1528d8049092`. The current snapshot remains in private review pending renewed exact-snapshot authorization.
+The settled two-pass build produced warning-free logs; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction checks passed; all 12 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `9d8e8c22e7edd7af202d66e402f619665fff343341053837baa42221fbf2f3a9`. This exact snapshot remains in private review pending renewed exact-snapshot authorization.

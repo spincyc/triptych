@@ -21,12 +21,27 @@ The one-page historical orientation inventories six distinct directly appointed 
 
 Geographic equivalents are deliberately broad where ancient identification or modern borders make greater precision misleading: Corinth is in present-day Greece; Rome in Italy; Antioch is modern Antakya in Türkiye; Galilee is in northern present-day Israel; Philistine Gath belongs to the southern Levant; and the Babylonian narrative is set in present-day Iraq. These equivalents locate the texts for the reader without claiming that a narrated place is necessarily the writer's place.
 
+## Passage-by-Passage Reception Matrix
+
+| Appointed passage | Direct exegesis checked | Illuminating reuse checked | Material result / boundary |
+| --- | --- | --- | --- |
+| Psalm 30:3 (Communion) | Augustine, *Exposition on Psalm 30/31* §§1–4. | The Mediator’s petitioning voice at Communion. | Sacramental placement does not make the verse a promise of automatic amendment. |
+| Psalm 33:6, 12 (Gradual) | Augustine, *Exposition on Psalm 33/34*, sermon 1 §9 and sermon 2 §§15, 17. | Approach, illumination, and filial fear. | Fear of the Lord is not collapsed into panic or merely servile fear. |
+| Psalm 46:2–3 (Introit, Alleluia) | Augustine, *Exposition on Psalm 46/47* §§2–3. | Hands and voice as coordinated works and confession. | Augustine’s anti-Jewish rhetoric is not carried into the guide’s positive use. |
+| Daniel 3:40 (Offertory) | Augustine, *Letter* 111 §§3, 8–9, quotes and pastorally expounds Azariah’s prayer, including the no-sacrifice setting and exact contrite-heart sacrifice, for Christians suffering captivity. | Chrysostom, *Homily 20 on Romans*, receives the furnace’s sacrifice-without-sacrifice while treating bodily members as an offering; Cyprian, *Letter* 80 §§2–3, coordinates contrite-heart sacrifice, furnace trial, and the three youths for imprisoned confessors. | Augustine supplies sustained direct reception of the appointed unit; Chrysostom and Cyprian are related reuse rather than line-by-line commentary. |
+| Matthew 7:15–21 (Gospel) | Chrysostom, *Homilies 23–24 on Matthew*; Jerome, *Commentary on Matthew* I; Augustine, *Sermon on the Mount* II.24.78–II.25.87. | *Didache* 11; Anthony of Padua, *Eighth Sunday after Pentecost* §§2 and following, directly treats wolves, fruit, and saying versus doing. | Doctrine and conduct are both tested; the text does not declare a sinner’s nature immutable. |
+| Romans 6:19–23 (Epistle) | Chrysostom, *Homily 12 on Romans*. | Augustine, *Grace and Free Will* 18–21; Anthony, *Seventh Sunday after Pentecost* §13, directly coordinates liberation, service, sanctification, wage, gift, and eternal life. | Grace-enabled fruit is not wages that place God in debt. |
+
+The search crossed public Greek/Latin Fathers, direct Latin for Jerome, Augustine’s psalm corpus and letters, Cyprian’s letters, early church orders, Aquinas/medieval compilations, and official Latin/Italian Antonian sermons. English, Latin, Italian, and translated Greek were checked. No literal exhaustiveness is claimed for manuscripts, untranslated corpora, or subscription collections.
+
 ## Evidence Ledger: Direct Reception Retained
 
 - **Checked paraphrase — St. Augustine, *Expositions on the Psalms* 46.2–3, 33.9, 15, 17, and 30.1–4:** directly expounds the psalm verses appointed at the Introit and Alleluia, Gradual, and Communion. The guide uses his readings of hands and voice, approach and illumination, and the Mediator's petitioning voice.
 - **Checked paraphrase — St. John Chrysostom, *Homilies 23–24 on Matthew* and *Homily 12 on Romans*:** directly expounds Matthew 7:15–27 and Romans 6:19–23. The guide preserves his focus on corrupt life masked as virtue, his insistence that moral state can change, and his distinction between present holiness and the promised end.
 - **Checked paraphrase — St. Augustine, *Sermon on the Mount* II.24.78–II.25.87:** directly expounds Matthew 7:15–23, distinguishing public fruit from the hidden heart and allowing a true teaching to be received through a corrupt teacher.
 - **Checked paraphrase — St. Jerome, *Commentary on Matthew* I at Matthew 7:15–22 (Latin text, pp. 80–83):** directly expounds deceptive doctrine and corrupt life without treating the tree as an immutable human nature.
+- **Checked paraphrase — St. Augustine, *Letter* 111 §§3, 8–9:** quotes Azariah’s whole penitential and sacrificial movement, including the appointed contrite-heart offering, and applies the prayer’s no-altar, no-priest setting to Christians in captivity. This is direct ancient reception of Daniel 3:40, not merely a thematic analogy.
+- **Related reuse — St. Cyprian, *Letter* 80 §§2–3:** places the contrite heart as sacrifice, Wisdom’s furnace and burnt-offering imagery, and the example of the three youths before imprisoned confessors. It illuminates the appointed prayer but does not quote Daniel 3:40 continuously.
 
 These sources directly expound appointed biblical passages, not the later assembled Roman formulary.
 
@@ -58,6 +73,6 @@ These witnesses supply doctrine or close liturgical analogy; except for the appo
 - The survey does not exhaust manuscripts, untranslated works, subscription databases, or modern critical scholarship. Older public-domain translations are working texts.
 - Sources were retained because they establish or materially qualify claims made in the guide; no numerical or source-category quota was applied.
 
-## 2026-07-18 Page-Two Production Record
+## 2026-07-18 Final Production Record
 
-This statement supersedes the earlier production snapshots: the page-two coordinate revision received a settled two-pass build with warning-free logs; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction checks passed; all 11 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `e5720ec32d2e90f65ff9ed1aaaa696b7b9b2d09059769c2b470b2ca7fd4b2ac5`. The current snapshot remains in private review pending renewed exact-snapshot authorization.
+The settled two-pass build produced warning-free logs; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction checks passed; all 12 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `40c390fe5e22c0181b1cad6683b7c638ecb0e7d12c44f29d23b5d99d61b9563d`. This exact snapshot remains in private review pending renewed exact-snapshot authorization.

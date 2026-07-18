@@ -24,6 +24,19 @@ The one-page orientation inventories five distinct directly excerpted passages i
 
 Geographic equivalents are broad: Davidic Israel and Judah belong to the southern Levant; the Korahite row's Jerusalem is a sanctuary association; Palestine and Galilee are distinct composition and event horizons; Rome is in present-day Italy; and the letter's first audience lived in Roman Asia Minor, chiefly present-day Turkey.
 
+## Passage-by-Passage Reception Matrix
+
+| Appointed passage | Direct exegesis checked | Illuminating reuse checked | Material result / boundary |
+| --- | --- | --- | --- |
+| Psalm 15:7–8 (Offertory) | Augustine, *Exposition on Psalm 15/16* §§7–8, on received understanding and steadfast sight of God. | The altar context’s counsel and stability. | Augustine speaks in the assumed humanity of Christ; the Offertory application belongs to the liturgical reception. |
+| Psalm 20:1 (Alleluia) | Augustine, *Exposition on Psalm 20/21* §§1–2. | Royal joy received rather than self-produced. | Christological reception does not erase the royal psalm’s historical horizon. |
+| Psalm 26:1, 4, 7, 9 (Introit, Communion) | Augustine, *Exposition on Psalm 26/27* §§4, 7–9. | Desire for God’s house and Eucharistic fullness. | Communion placement adds a sacramental horizon without turning the psalm into a direct Eucharistic institution text. |
+| Psalm 83:9–10, materially adapted (Gradual) | Augustine, *Exposition on Psalm 83/84* §§12–13, on the unadapted source. | The Roman Gradual’s servant substitutions and reordered clauses. | No Father is claimed to expound wording that the Roman chant later altered; source and adaptation stay distinct. |
+| Matthew 5:20–24 (Gospel) | Chrysostom, *Homily 16 on Matthew* §§6, 9–12; Augustine, *Sermon on the Mount* I.9.21–I.10.28. | Anthony of Padua, *Sixth Sunday after Pentecost* §§2–14, directly treats greater righteousness, anger, and reconciliation at the altar. | Interior anger, outward contempt, and reconciliation are related without pretending every conflict has one guilty party. |
+| 1 Peter 3:8–15 (Epistle) | Bede, *On the Catholic Epistles*, at 1 Peter 3:8–17 (Latin). | Jerome, *Letter* 125.14 on the quoted Psalm 33; Anthony, *Fifth Sunday after Pentecost* §§19–21, directly treats suffering for justice and sanctifying Christ in the heart. | Textual variants and the difference between commentary and later sermon reception are disclosed. |
+
+The survey searched public Greek/Latin Father collections, Bede’s Latin, Augustine’s psalm corpus, and official Latin/Italian Antonian sermons by appointed incipit. Languages checked were Latin, English, Italian, and translated Greek. No exhaustive claim reaches untranslated Greek/Syriac, manuscript variants beyond those recorded, the full medieval sermon tradition, or subscription literature.
+
 ## Direct Reception Retained
 
 - St. Augustine, *Exposition on Psalm 26* §§4, 7–9, direct exegesis of the appointed Introit and Communion verses: [text](https://www.newadvent.org/fathers/1801027.htm).
@@ -71,6 +84,6 @@ These sources illuminate the Collect and Secret but are not direct commentaries 
 - Psalm authorship and dates, Matthew's composition city, the Sermon's mountain and civil year, and the precise mechanics of Silvanus' role remain uncertain.
 - The survey does not exhaust manuscripts, untranslated works, subscription databases, or modern critical scholarship. No source-category quota was applied. Original legacy searches occurred on 2026-07-10; all sources retained after reevaluation were accessed or re-accessed on 2026-07-14.
 
-## 2026-07-18 Page-Two Production Record
+## 2026-07-18 Final Production Record
 
-This statement supersedes the earlier production snapshots: the page-two coordinate revision received a settled two-pass build with warning-free logs; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction checks passed; all 13 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `606ad7d5e279dbe8ea77407b8e295df0ee5407ef21308a38a97c7533c4420c14`. The current snapshot remains in private review pending renewed exact-snapshot authorization.
+The settled two-pass build produced warning-free logs; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction checks passed; all 13 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `be109a74ae06290f41fbf01732c591e9467ec28e58f47d9fe097fe1472ff48df`. This exact snapshot remains in private review pending renewed exact-snapshot authorization.

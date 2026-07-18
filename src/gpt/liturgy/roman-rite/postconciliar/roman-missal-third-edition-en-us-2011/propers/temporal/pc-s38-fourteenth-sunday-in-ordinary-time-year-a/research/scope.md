@@ -2,7 +2,7 @@
 
 **Formula:** `PC-S38-A`
 **Occurrence:** 2026-07-05
-**Last updated:** 2026-07-17
+**Last updated:** 2026-07-18
 **Registry controls:** `guidance/liturgy/postconciliar-propers-registry.md`; [edition formula dispositions](../../../registry/formula-dispositions.md); [2026 occurrence record](../../../registry/occurrences-2026.md)
 
 This record preserves the evidence roles and limits compressed in the reader-facing guide. Formula identity and unresolved selections are controlled by [the instance manifest](../instance/manifest.md); element boundaries and branches by [the leaf audit](../propers/verified.md); reusable Missal evidence by [the Week XIV owner](../../shared/ordinary-time/weeks/14/propers/verified.md).
@@ -29,6 +29,9 @@ This record preserves the evidence roles and limits compressed in the reader-fac
 - St. John Chrysostom, *Homily 14 on Romans*, directly treats Romans 8:12–17, including the obligation not to live according to disordered flesh, the real warning attached to such life, and mortification of evil deeds rather than bodily substance: <https://www.newadvent.org/fathers/210214.htm>.
 - St. Augustine, *Sermon 156* §§6–15, directly treats Romans 8:12–17, grace-enabled action, filial life, and the boundary between servile and filial fear: <https://www.augustinus.it/latino/discorsi/discorso_201_testo.htm>.
 - St. Thomas Aquinas, *Commentary on Romans* VIII, lect. 3, nos. 634–651, directly treats the relevant Pauline movement of mortification, Spirit-led life, adoption, and inheritance: <https://aquinas.cc/en/la/~Rom.C8.L3>.
+- St. Justin Martyr, *Dialogue with Trypho* 53; Origen, *Commentary on John* X.17; St. Cyril of Jerusalem, *Catechetical Lecture 12* §10; and St. John Chrysostom, *Homily 66 on Matthew* directly receive Zechariah 9:9–10 in relation to Christ’s entry and peaceful kingship: <https://www.newadvent.org/fathers/01284.htm>, <https://www.newadvent.org/fathers/101510.htm>, <https://www.newadvent.org/fathers/310112.htm>, and <https://www.newadvent.org/fathers/200166.htm>.
+- St. John Chrysostom, *Homily 38 on Matthew*, and St. Augustine, *Sermon 19 on the New Testament*, directly treat Matthew 11:25–30: <https://www.newadvent.org/fathers/200138.htm> and <https://www.newadvent.org/fathers/160319.htm>. Aquinas’s *Catena Aurea* on Matthew 11, lect. 10, is retained only as evidence of medieval compilation practice; its embedded fragments remain leads because their underlying editions and loci were not independently reverified: <https://aquinas.cc/la/en/~CaMatt.C11.L10>.
+- St. Augustine’s expositions directly receive Psalms 48, 145, and 34: <https://www.newadvent.org/fathers/1801048.htm>, <https://www.newadvent.org/fathers/1801145.htm>, and <https://www.newadvent.org/fathers/1801034.htm>.
 
 These witnesses were already source-audited in the repository’s Eighth Sunday after Pentecost record. Their Romans loci support the appointed Pauline strand; none is presented as commentary on the postconciliar Week XIV formulary as a whole.
 
@@ -37,7 +40,24 @@ These witnesses were already source-audited in the repository’s Eighth Sunday 
 - *Catechism of the Catholic Church* 541–550, already used in the repository’s Luminous Mysteries study, governs the Kingdom as God’s saving action present in Christ and manifested in teaching, signs, parables, conversion, and communion. It illuminates the royal and Gospel language without replacing direct exegesis.
 - GIRM 46–90 and 352–367 and the *General Introduction to the Lectionary* 65–69, 78–91, and 93–110 govern the liturgical functions, chant layers, Ordinary Time correlation, and semi-continuous apostolic series.
 
-No repository-audited direct patristic exposition of Zechariah 9:9–10 or Matthew 11:25–30 was imported. Their detailed treatment therefore rests on close canonical exegesis, official Lectionary structure, and clearly labeled doctrinal illumination rather than an invented reception claim.
+The 2026-07-18 pass added direct reception of Zechariah 9:9–10, Matthew 11:25–30, and all three appointed psalms. Ambrose, Leo, and Augustine’s *Confessions* are retained as illuminating reuse rather than continuous exposition. No witness is presented as commentary on the complete modern Week XIV formulary.
+
+## Passage-by-passage reception matrix
+
+| Appointed scriptural unit | Direct checked reception | Illuminating reuse | Result and control |
+| --- | --- | --- | --- |
+| Entrance, cf. Psalm 48:10–11 | Augustine, *Exposition on Psalm 48* | — | Direct psalm reception; Augustine’s ecclesial Zion reading does not erase Israel’s city or establish the modern antiphon adaptation. |
+| Zechariah 9:9–10 | Justin, *Dialogue with Trypho* 53; Origen, *Commentary on John* X.17; Cyril of Jerusalem, *Catechetical Lecture 12* §10; Chrysostom, *Homily 66 on Matthew*; Clement of Alexandria, *Paedagogus* I | — | Direct or closely identified Greek reception in apology, commentary, catechesis, homily, and moral formation. Christological convergence does not warrant anti-Judaism or the erasure of the oracle’s Zion/nations horizon. |
+| Responsorial Psalm 145, textual and *Alleluia* response branches | Augustine, *Exposition on Psalm 145* | — | Direct psalm reception; the two responses remain unresolved alternatives over the same strophes. |
+| Romans 8:9, 11–13 | Chrysostom, *Homilies 13–14 on Romans*; Augustine, *Sermon 156* §§6–15; Aquinas, *Commentary on Romans* VIII, lect. 3 | — | Direct Greek, Latin patristic, and medieval Latin reception. The omission of v. 10 remains visible; “flesh” is not treated as bodily substance. |
+| Acclamation, cf. Matthew 11:25 | Chrysostom, *Homily 38 on Matthew*; Augustine, *Sermon 19 on the New Testament* | Augustine, *Confessions* VII.21 | Direct exposition plus autobiographical reuse; “little ones” marks receptive humility rather than hostility to learning. |
+| Matthew 11:25–30 | Chrysostom, *Homily 38 on Matthew*; Augustine, *Sermon 19 on the New Testament* | Augustine, *Confessions* VII.21; Ambrose, *Exposition of the Christian Faith* V.167; Leo the Great, *Letter 14*; Aquinas, *Catena Aurea* on Matthew 11, lect. 10, for medieval compilation practice only | Direct Greek and Latin reception with spiritual and pastoral reuse distinguished. The *Catena*’s untraced embedded fragments remain leads and supply no patristic breadth claim. |
+| Communion A, Psalm 34:9 | Augustine, *Exposition on Psalm 34* | — | Direct psalm reception; the branch remains unselected and tasting is not reduced to subjective sensation. |
+| Communion B, Matthew 11:28 | Chrysostom, *Homily 38 on Matthew*; Augustine, *Sermon 19 on the New Testament* | Leo’s pastoral burden control | Direct Gospel reception; the branch remains unselected even though it repeats the proclaimed Gospel. |
+
+### Search record and negative-result boundary
+
+The 2026-07-18 reception pass searched public ANF/NPNF collections at New Advent and CCEL, Augustine’s public Latin and English corpora, Aquinas’s Latin/English biblical commentary, and targeted public-text searches for Justin, Origen, Clement, Hilary, Jerome, Ambrose, Cyril, Chrysostom, Gregory, Bede/Rabanus, Leo, and later Doctors. Greek works were principally checked in identified English translations; Augustine was also checked in Latin for Romans 8; medieval Latin was checked through Aquinas’s bilingual text. Aquinas’s *Catena* was inspected only as a medieval compilation artifact; its embedded attributions were not used unless the underlying work and locus were independently checked. The pass retained direct reception for every appointed scriptural unit. This does not make the survey exhaustive: it did not collate manuscripts, untranslated catenae, subscription databases, or every sermon transmitted under disputed attribution.
 
 ## Claim matrix and controls
 
@@ -77,3 +97,5 @@ The formula, official occurrence, reading boundaries, Latin oration identities, 
 Civil date, governing editions, territory, and Lectionary identity remain in the terminal Liturgical Resolution appendix and tracked manifest. The compact-title revision received a settled two-pass build with a warning-free final log; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction passed; all 9 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `db465e5ea90cbb8946d2d119aa2bfa438a9e1c441c2906032d919de783708e49`.
 
 On 2026-07-18, the page-two coordinate revision superseded that production snapshot. It received a settled two-pass build with warning-free logs; metadata, PDF structure, embedded fonts, Unicode, and text extraction passed; all 9 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `ab3a3359b512ebbcb768e70a8bd4260c290ecca98d29f51c37c35487646a0282`. This current snapshot remains in private review pending renewed exact-snapshot authorization.
+
+On 2026-07-18, the final passage-by-passage production snapshot received a settled two-pass build with warning-free logs; metadata, PDF structure, embedded fonts, Unicode, and extraction passed; all 12 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `a046ae9baa722219d513c5207445b1c9d17fe786a55697eaa1ac8ec50a72a1e5`. It remains in private review pending renewed exact-snapshot authorization.

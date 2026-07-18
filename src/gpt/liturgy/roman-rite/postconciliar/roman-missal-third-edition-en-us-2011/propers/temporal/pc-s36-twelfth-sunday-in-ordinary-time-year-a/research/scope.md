@@ -2,7 +2,7 @@
 
 **Formula:** `PC-S36-A`
 **Occurrence:** 2026-06-21
-**Last updated:** 2026-07-17
+**Last updated:** 2026-07-18
 **Registry controls:** `guidance/liturgy/postconciliar-propers-registry.md`; [edition formula dispositions](../../../registry/formula-dispositions.md); [2026 occurrence record](../../../registry/occurrences-2026.md)
 
 Formula identity is controlled by [the instance manifest](../instance/manifest.md), element boundaries by [the leaf audit](../propers/verified.md), and reusable Missal evidence by [the Week XII owner](../../shared/ordinary-time/weeks/12/propers/verified.md).
@@ -31,6 +31,9 @@ Formula identity is controlled by [the instance manifest](../instance/manifest.m
 - St. John Chrysostom, *Homily 34 on Matthew*, directly treats Matthew 10:26–33. He reads the sparrows and numbered hairs as assurance that nothing is hidden from divine knowledge or outside providential care, while expressly refusing to infer that God positively causes every fall: <https://www.newadvent.org/fathers/200134.htm>.
 - St. John Chrysostom, *Homily 10 on Romans*, directly treats Romans 5:12–15. Adam and Christ are not equal measures: the abundance of grace and gift exceeds the trespass and its consequences: <https://www.newadvent.org/fathers/210210.htm>.
 - St. Augustine, *Exposition on Psalm 69*, directly receives the afflicted psalm in relation to Christ and his body: <https://www.newadvent.org/fathers/1801069.htm>. This is reception of the psalm, not proof that Augustine knew Lectionary 94.
+- St. Jerome, *Commentary on Jeremiah*, book IV, directly treats Jeremiah 20:9–13 in Latin, including the burning word, betrayal by intimates, the Lord as strong warrior, the prophet’s impatience, and praise assigned to grace: <https://la.wikisource.org/wiki/Commentaria_in_Ieremiam_%28Hieronymus%29>.
+- St. Augustine, *Tractate 92 on John*, directly treats John 15:26–27: <https://www.newadvent.org/fathers/1701092.htm>; *Tractates 46–47 on John* directly span John 10:11–15: <https://www.newadvent.org/fathers/1701046.htm> and <https://www.newadvent.org/fathers/1701047.htm>.
+- St. Thomas Aquinas, *Commentary on Romans* V, lect. 3, directly treats the opening Adam–Christ comparison: <https://aquinas.cc/en/la/~Rom.C5.L3>.
 
 ### Doctrinal and liturgical illumination
 
@@ -39,6 +42,23 @@ Formula identity is controlled by [the instance manifest](../instance/manifest.m
 - GIRM 46–90 and 352–367 and the *General Introduction to the Lectionary* 65–69, 78–91, and 93–110 govern liturgical function and relationship labels. *Tempus per annum* rubric 5 supplies a Sunday Preface unless the selected authorized Eucharistic Prayer carries its own; GIRM 365(b) preserves that flexibility for Eucharistic Prayer II, while 365(d) makes Eucharistic Prayer IV and its invariable Preface one coupled selection.
 
 No direct patristic commentary on the complete Week XII formulary is claimed. No direct early witness to the exact Jeremiah–Matthew pairing was retained; that relationship rests on official Lectionary structure.
+
+## Passage-by-passage reception matrix
+
+| Appointed scriptural unit | Direct checked reception | Illuminating reuse | Result and control |
+| --- | --- | --- | --- |
+| Entrance, cf. Psalm 28:8–9 | Augustine, *Exposition on Psalm 28* | — | Direct psalm reception; the modern antiphon adapts only the ending and does not appoint Augustine’s allegorical particulars. |
+| Jeremiah 20:10–13 | Jerome, *Commentary on Jeremiah*, book IV, on 20:9–13 | — | Direct Latin continuous treatment. No comparable early Greek continuous exposition of the exact unit was retained. |
+| Responsorial Psalm 69 | Augustine, *Exposition on Psalm 69* | — | Direct psalm reception; its Christ-and-body reading does not erase the psalm’s Israelite lament or prove the Lectionary pairing. |
+| Romans 5:12–15 | Chrysostom, *Homily 10 on Romans*; Aquinas, *Commentary on Romans* V, lect. 3; Augustine, *Against Two Letters of the Pelagians* IV.8 for 5:10–12 | — | Direct Greek, medieval Latin, and Latin-patristic reception; each work’s polemical setting remains visible and the appointed boundary at v. 15 is preserved. |
+| Acclamation, John 15:26b, 27a | Augustine, *Tractate 92 on John* | — | Direct treatment of both source verses: the Spirit witnesses and enables apostolic witness. The acclamation remains a liturgical excerpt rather than a second reading. |
+| Matthew 10:26–33 | Chrysostom, *Homily 34 on Matthew* | Cyprian, *Testimonies* III.4, martyrial reuse of fear and confession sayings | Direct exposition plus a bounded early Latin use; neither converts prudence into cowardice or danger-seeking into fidelity. |
+| Communion A, Psalm 145:15 | Augustine, *Exposition on Psalm 145* | — | Direct psalm reception; the food verse remains an unselected antiphon branch. |
+| Communion B, John 10:11, 15 | Augustine, *Tractates 46–47 on John*, spanning 10:11–15 | Cyril of Jerusalem, *Catechetical Lecture 10* §5; Gregory Nazianzen, *Oration 18* | Augustine directly treats both appointed verses, the Good Shepherd/hireling contrast, knowledge, and self-gift; Cyril and Gregory furnish Christological and pastoral reuse. The branch remains unselected. |
+
+### Search record and negative-result boundary
+
+The 2026-07-18 pass searched public ANF/NPNF English collections at New Advent and CCEL; Latin texts and indexes for Jerome and Augustine; Aquinas’s Latin/English commentary; and targeted public-corpus leads for Origen, Hilary, Ambrose, Gregory, Cyril, Bede/Rabanus, and later Doctors. Greek works were principally checked in identified English translations and Latin works in Latin and English where public texts permitted. Jerome supplied a strong direct Latin witness for Jeremiah 20:9–13. No continuous early Greek treatment of exactly Jeremiah 20:10–13 was retained, and no early witness was found for the later Jeremiah–Matthew pairing as such. These are bounded results from accessible indexed corpora, not assertions about all manuscripts, untranslated catenae, or subscription databases.
 
 ## Claim matrix and controls
 
@@ -75,3 +95,5 @@ The formula, official occurrence, complete online Lectionary path, Latin oration
 Civil date, governing editions, territory, and Lectionary identity remain in the terminal Liturgical Resolution appendix and tracked manifest. The compact-title revision received a settled two-pass build with a warning-free final log; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction passed; all 9 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `8941f04075a8cae26fba8f430907d024d35b5c4ab862f677cbeb52df99feb501`.
 
 On 2026-07-18, the page-two coordinate revision superseded that production snapshot. It received a settled two-pass build with warning-free logs; metadata, PDF structure, embedded fonts, Unicode, and text extraction passed; all 9 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `cad8d1f97d002a278c76aabff378d2e4da57412c59241738fa458f313caeb8eb`. This current snapshot remains in private review pending renewed exact-snapshot authorization.
+
+On 2026-07-18, the final passage-by-passage production snapshot received a settled two-pass build with warning-free logs; metadata, PDF structure, embedded fonts, Unicode, and extraction passed; all 11 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `070942815781348e23b5c33126de5b8f1e19fdf228cb9c8b544cd45f52981385`. It remains in private review pending renewed exact-snapshot authorization.
