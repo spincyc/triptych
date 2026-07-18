@@ -1,6 +1,6 @@
 # Second Sunday after Pentecost — Research Scope
 
-**Last updated:** 2026-07-17
+**Last updated:** 2026-07-18
 
 This record preserves the source roles, historical alternatives, and research limits compressed in the reader-facing guide. Complete appointed texts, checksums, facsimile locations, witness differences, and line-by-line collation results are retained in [the verified propers](../propers/verified.md).
 
@@ -79,3 +79,7 @@ Every item below records the exact retained locus, source used, role, and quotat
 - Gregory the Great's *Homiliae in Evangelia* II.36 §§1–5 was checked in the underlying Latin. The catena is now recorded only as an aid, and the exact source role and paraphrase status of every retained patristic witness are explicit.
 - The tangential cultural interlude and its sole reference were removed. The missal text required no correction. Independent theological review remains outstanding, so the guide is not an ecclesiastically approved or independently reviewed publication.
 - The 2026-07-17 structural revision received a settled two-pass build with a warning-free final log; generation metadata, PDF structure, fonts, Unicode text, and extraction passed; all 12 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `eaaa54d7f0429028ef76b08837231fa882e84002bfaa344f541c131ddd7e7bbf`.
+
+## 2026-07-18 Page-Two Production Record
+
+This statement supersedes the earlier production snapshots: the page-two coordinate revision received a settled two-pass build with warning-free logs; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction checks passed; all 12 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `019f23378af5a3cf3b0f8f17986ebd9929da7847dfc1a9c666c26c4810fc2892`. The current snapshot remains in private review pending renewed exact-snapshot authorization.

@@ -4,8 +4,8 @@
   "provider": "gpt",
   "expected_counts": {
     "publications": 53,
-    "release": 53,
-    "review": 0,
+    "release": 36,
+    "review": 17,
     "hold": 0
   },
   "gates": {
@@ -14,7 +14,8 @@
     "named-us-altar-book-collation": "Collate the U.S.-English orations against an identified current altar-book publisher and printing, and record the exact locators.",
     "independent-proper-guide-review": "Complete and record independent liturgical, biblical, theological, and historical review of the proper guide.",
     "prayer-text-permission": "Obtain and record the permission or other distribution basis required for incorporated prayer text and translations.",
-    "rubrical-adaptation-clearance": "Resolve and record the distribution basis for the close adaptation of the rubrical corpus."
+    "rubrical-adaptation-clearance": "Resolve and record the distribution basis for the close adaptation of the rubrical corpus.",
+    "renewed-exact-snapshot-authorization": "Review and authorize the exact current PDF snapshot before public distribution."
   },
   "authorizations": {
     "perpetual-public-repository-2026": {
@@ -257,92 +258,83 @@
     {
       "id": "liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass",
       "catalog": "library/traditional-latin-mass.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "30392761ce6f9e230f74283598564921d75b9060d3ba3a5d8b8ed2cd68fbdd87"
-      }
+      "status": "review",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday",
       "catalog": "library/traditional-latin-mass.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "661bdf1239bea0be9ea0b321c26903cae54dea07175114972fab34587c670d04"
-      }
+      "status": "review",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost",
       "catalog": "library/traditional-latin-mass.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "eaaa54d7f0429028ef76b08837231fa882e84002bfaa344f541c131ddd7e7bbf"
-      }
+      "status": "review",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost",
       "catalog": "library/traditional-latin-mass.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "e2c15ab4f8dbc13c5bd7a93e2dc6632f8e485757fe3224e0a03df8847decaa08"
-      }
+      "status": "review",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost",
       "catalog": "library/traditional-latin-mass.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "7f12e144d470987d2c1262b62107b9534fc4df6e235c29bd94f150e61de99f77"
-      }
+      "status": "review",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost",
       "catalog": "library/traditional-latin-mass.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "d66cb126b59f317798768e00abcfbc262d18740add12ab44a5c3d7440c98e564"
-      }
+      "status": "review",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost",
       "catalog": "library/traditional-latin-mass.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "e5170d2893dd7b1d3296264c6e6e42f73389717b4a3a4a4fcb93422695f76547"
-      }
+      "status": "review",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost",
       "catalog": "library/traditional-latin-mass.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "7eb8c981c1e99fbb4c7fe7b14ef2d3e78bcac67b6292881635b2a439e11b1997"
-      }
+      "status": "review",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost",
       "catalog": "library/traditional-latin-mass.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "8a5505fb036b7531762f1cf4dd02a6c8e646e53e621758a7fd59b29a04027daa"
-      }
+      "status": "review",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/1962/reference/assembling-the-mass",
@@ -387,82 +379,74 @@
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s35-eleventh-sunday-in-ordinary-time-year-a",
       "catalog": "library/novus-ordo-liturgy.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "c4c39e1cba6e01a557960086e66fed140abc03e848fe88ff7fb614c46ab4350c"
-      }
+      "status": "review",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s36-twelfth-sunday-in-ordinary-time-year-a",
       "catalog": "library/novus-ordo-liturgy.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "8941f04075a8cae26fba8f430907d024d35b5c4ab862f677cbeb52df99feb501"
-      }
+      "status": "review",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-thirteenth-sunday-in-ordinary-time-year-a",
       "catalog": "library/novus-ordo-liturgy.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "be6976f92077f75cf821e6f2eee19a45f62ac85d42005dddb8f3f725f8686341"
-      }
+      "status": "review",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-fourteenth-sunday-in-ordinary-time-year-a",
       "catalog": "library/novus-ordo-liturgy.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "db465e5ea90cbb8946d2d119aa2bfa438a9e1c441c2906032d919de783708e49"
-      }
+      "status": "review",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-fifteenth-sunday-in-ordinary-time-year-a",
       "catalog": "library/novus-ordo-liturgy.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "cdd2f5cd8dd01f381809cff104c0710efff8ce3393eb0f3fe559aeb7611c698e"
-      }
+      "status": "review",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a",
       "catalog": "library/novus-ordo-liturgy.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "d36a1a67a874f7d34b055082ada5193e3e5e973ba89be9c4b71f837280c6d424"
-      }
+      "status": "review",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a",
       "catalog": "library/novus-ordo-liturgy.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "31dab0b2e199e5ec6c540346cc072bcb4f794d91d4170fb96cfb0e358767e6aa"
-      }
+      "status": "review",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s59-most-holy-body-and-blood-of-christ-year-a",
       "catalog": "library/novus-ordo-liturgy.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "69399aadf6562809635428b6934f04483424bff443f728a8aaa900b9d909eda0"
-      }
+      "status": "review",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar",

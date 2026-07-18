@@ -1,6 +1,6 @@
 # Trinity Sunday — Research Scope
 
-**Last updated:** 2026-07-17
+**Last updated:** 2026-07-18
 
 This record preserves the source roles, historical alternatives, and claim boundaries compressed in the reader-facing guide. Complete appointed texts, checksums, image locations, witness differences, and line-by-line collation results remain in [the verified propers](../propers/verified.md).
 
@@ -64,3 +64,7 @@ No direct patristic exposition of the appointed Tobit 12:6 or Daniel 3 verses is
 - The public survey does not exhaust manuscripts, untranslated works, subscription databases, or current specialist monographs. Older public-domain translations are working texts.
 - Sources were retained because they establish or materially qualify claims made in the guide; no numerical or source-category quota was applied.
 - Historical-orientation links were accessed 2026-07-10. The canonical and patristic loci used for the expanded commentary were rechecked or accessed 2026-07-14.
+
+## 2026-07-18 Page-Two Production Record
+
+This statement supersedes the earlier production snapshots: the page-two coordinate revision received a settled two-pass build with warning-free logs; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction checks passed; all 12 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `57dc245247aa072731aa6afbf2bc46209abe12b13de3ebb06a215ce001075f3e`. The current snapshot remains in private review pending renewed exact-snapshot authorization.

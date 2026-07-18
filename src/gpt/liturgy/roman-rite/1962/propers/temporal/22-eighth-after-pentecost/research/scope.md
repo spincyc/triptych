@@ -1,6 +1,6 @@
 # Eighth Sunday after Pentecost — Research Scope
 
-**Last updated:** 2026-07-17
+**Last updated:** 2026-07-18
 
 This record preserves research scope, disagreements, source roles, and negative results that are intentionally compressed in the reader-facing guide. Text retrieval, checksums, facsimile locations, and the complete verified propers remain in *../propers/verified.md*.
 
@@ -105,3 +105,7 @@ The complete Latin proper record is a focused edition-identified research transc
 ## Production Record
 
 Final clean-build review completed 2026-07-18: the settled 10-page PDF, SHA-256 `8a5505fb036b7531762f1cf4dd02a6c8e646e53e621758a7fd59b29a04027daa`, passed two LaTeX passes, a warning-free log, generation-metadata, extraction, embedded-font, PDF-structure, and every-page visual checks; the installed publication is byte-identical to the reviewed build. No independent theological review was performed.
+
+## 2026-07-18 Page-Two Production Record
+
+This statement supersedes the earlier production snapshots: the page-two coordinate revision received a settled two-pass build with warning-free logs; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction checks passed; all 10 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `0515dcd6be14c4f033e83b02a8bbfab98853598fb38ebfd931a589825bac227c`. The current snapshot remains in private review pending renewed exact-snapshot authorization.

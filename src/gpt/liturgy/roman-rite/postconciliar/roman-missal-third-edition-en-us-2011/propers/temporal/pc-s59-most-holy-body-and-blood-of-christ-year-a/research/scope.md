@@ -135,3 +135,5 @@ Outstanding work remains material: complete U.S.-English oration collation again
 ## Structural conformance review
 
 Civil date, governing editions, territory, and Lectionary identity remain in the terminal Liturgical Resolution appendix and tracked manifest. The compact-title revision received a settled two-pass build with a warning-free final log; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction passed; all 11 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `69399aadf6562809635428b6934f04483424bff443f728a8aaa900b9d909eda0`.
+
+On 2026-07-18, the page-two coordinate revision superseded that production snapshot. It received a settled two-pass build with warning-free logs; metadata, PDF structure, embedded fonts, Unicode, and text extraction passed; all 11 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `453e849bb44761bac6b608e0a27ca847739635a8174b7d9b42ca8c8249b92e61`. This current snapshot remains in private review pending renewed exact-snapshot authorization.

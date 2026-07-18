@@ -1,6 +1,6 @@
 # Seventh Sunday after Pentecost — Research Scope
 
-**Last updated:** 2026-07-17
+**Last updated:** 2026-07-18
 
 This record preserves research scope and evidence roles that are intentionally compressed in the reader-facing guide. Textual retrieval, checksums, facsimile locations, and the complete verified propers remain in `../propers/verified.md`.
 
@@ -57,3 +57,7 @@ These witnesses supply doctrine or close liturgical analogy; except for the appo
 - No secure direct patristic commentary was located for the Collect, the exact Offertory verse Daniel 3:40, the Secret, or the Postcommunion.
 - The survey does not exhaust manuscripts, untranslated works, subscription databases, or modern critical scholarship. Older public-domain translations are working texts.
 - Sources were retained because they establish or materially qualify claims made in the guide; no numerical or source-category quota was applied.
+
+## 2026-07-18 Page-Two Production Record
+
+This statement supersedes the earlier production snapshots: the page-two coordinate revision received a settled two-pass build with warning-free logs; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction checks passed; all 11 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `e5720ec32d2e90f65ff9ed1aaaa696b7b9b2d09059769c2b470b2ca7fd4b2ac5`. The current snapshot remains in private review pending renewed exact-snapshot authorization.

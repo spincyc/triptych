@@ -1,16 +1,15 @@
 # Public Release Boundary
 
-The current release manifest contains 53 publications: all 53 exact PDF
-snapshots are marked `release`, with none in `review` or on `hold`. The 17 July
-2026 supplemental authorization in `rights/public-alpha-2026-07-15.md` binds
-all 53 release PDFs and all 21 artifact-affecting site inputs to their exact
-clean-build hashes. Those inputs include the reader-facing sources, generator,
-dependency lock, and copied license texts needed to reproduce the authorized
-site. The supplement is perpetual and effective at
-`2026-07-17T00:00:00-05:00` for unrestricted worldwide access, subject only to
-the no-project-initiated-promotion condition. Public check, build,
-verification, and deployment continue to fail closed after any bound byte
-changes or when the verified inventory is incomplete.
+The current release manifest contains 53 publications: 36 exact PDF snapshots
+are marked `release`, 17 revised proper guides are in `review`, and none is on
+`hold`. The 17 July 2026 supplemental authorization in
+`rights/public-alpha-2026-07-15.md` remains the historical exact-byte record for
+the then-current 53 PDFs and 21 artifact-affecting site inputs. It does not
+authorize the 17 later PDF revisions or the catalog bytes changed to describe
+their review status. Public check, build, verification, and deployment
+therefore fail closed until renewed authorization binds the intended current
+PDF and site-input snapshots. The historical authorization record remains
+unchanged.
 
 `public-alpha.json` is the exhaustive publication policy for every discovered source document and installed PDF:
 
@@ -36,8 +35,9 @@ and is not an ecclesiastical interpretation, dispensation, canonical opinion,
 imprimatur, nihil obstat, or approval of the secret or this publication. It
 does not supply independent rights, canonical, specialist, liturgical, or
 ecclesiastical review. Apparition and cult approvals remain object-limited and
-do not approve this publication. Both public-alpha artifacts include this PDF
-with the other 52 releases.
+do not approve this publication. The manifest retains this PDF among the 36
+`release` items; the stale site-source binding nevertheless prevents a current
+public artifact from passing its release gate.
 
 For every fully authorized snapshot the generator will:
 
@@ -62,16 +62,18 @@ specialist and ecclesiastical review. The virtues reference is internally
 source-audited but is not a critical edition; manuscript collation and
 comprehensive source-language lexical review have not occurred, and independent
 Aristotelian, patristic, Thomistic, moral-theological, pastoral, and clinical
-review remain outstanding. The eight postconciliar
-proper guides are working exact-snapshot releases under the express exception
-recorded in the rights supplement: complete English-oration collation against
-an identified U.S. altar-book printing and independent liturgical, biblical,
-theological, and historical review remain outstanding. The postconciliar Order
-of Mass likewise still lacks exact hands-on formula-level collation against
-licensed 2008 Latin and 2011 United States altar books. None of those records
-may imply the missing collation or review. The Mount Carmel guide and companion
-retain their recorded *Flos Carmeli* witness, attribution, permission, and
-non-approval limitations.
+review remain outstanding. The nine revised 1962 proper guides and eight
+revised postconciliar proper guides are in private review pending renewed
+exact-current-snapshot authorization. The postconciliar guides' former exact
+snapshots were released under the express exception recorded in the historical
+rights supplement; the current revisions remain subject to the same outstanding
+complete English-oration collation against an identified U.S. altar-book
+printing and independent liturgical, biblical, theological, and historical
+review. The postconciliar Order of Mass likewise still lacks exact hands-on
+formula-level collation against licensed 2008 Latin and 2011 United States altar
+books. None of those records may imply the missing collation or review. The
+Mount Carmel guide and companion retain their recorded *Flos Carmeli* witness,
+attribution, permission, and non-approval limitations.
 
 The five works newly moved from `hold` to `release` retain their own limits.
 The SSPX account still awaits independent historical, theological, and
@@ -99,12 +101,15 @@ analysis, specialist or ecclesiastical review, or ecclesiastical approval for
 any of them. See the rights record and each publication's linked research
 records for the complete boundaries.
 
-The GitHub Pages workflow can build and verify `build/public-alpha/site` and
-would upload only that artifact through the `github-pages` environment. Pages
-must never publish the repository root or `build/public-alpha/preview`. This
-record documents ordinary repository and Pages publication subject to the
-no-project-initiated-promotion condition; it does not itself authorize a worker
-to perform a push or deployment, which remain separate operations.
+After all current bindings pass, the GitHub Pages workflow can build and verify
+`build/public-alpha/site` and would upload only that artifact through the
+`github-pages` environment. The present catalog changes deliberately invalidate
+the old site-source hashes, so public and preview build gates remain closed
+until renewed authorization is recorded. Pages must never publish the
+repository root or `build/public-alpha/preview`. This record documents ordinary
+repository and Pages publication subject to the no-project-initiated-promotion
+condition; it does not itself authorize a worker to perform a push or
+deployment, which remain separate operations.
 
 Use:
 

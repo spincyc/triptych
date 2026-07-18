@@ -55,16 +55,16 @@ The first four classes may appear in source-grounded sections. The fifth appears
 Use this fixed macro-order:
 
 1. Page 1: Propers map and four senses
-2. `The Propers: Themes and Movement`
-3. `The Propers: Detailed Commentary`
-4. `The Propers: Interpretive Possibilities`
-5. `Sacramental Appendix` when required
-6. `Appendix: Scriptural and Historical Coordinates`
+2. Page 2: `Scriptural Date and Location`
+3. `The Propers: Themes and Movement`
+4. `The Propers: Detailed Commentary`
+5. `The Propers: Interpretive Possibilities`
+6. `Sacramental Appendix` when required
 7. `Appendix: Scope and Qualifications`
 8. `References`
 9. `Generation Metadata`
 
-Do not front-load a chronology, historical dossier, status panel, research boundary, date range, source survey, or general qualification. Put work-wide bounds and qualifications in the terminal appendices so the reader reaches the proper's argument immediately. Keep a qualification beside a claim only when it materially changes that claim.
+The page-2 sheet is the sole exception to terminal historical apparatus. Do not front-load any other chronology, status panel, research boundary, date range, source survey, or general qualification. Put work-wide bounds and qualifications in the terminal appendices. Keep a qualification beside a claim only when it materially changes that claim.
 
 ### Page 1: Propers map and four senses
 
@@ -74,9 +74,15 @@ Immediately follow it with exactly four rows: **Literal**, **Allegorical**, **Mo
 
 Later proper-focused headings may use quiet parenthetical cues in liturgical order: *Int.*, *Coll.*, *Ep.*, *Grad.*, *All.* or *Tr.*, *Seq.*, *Gosp.*, *Off.*, *Sec.*, *Comm.*, and *Postcomm.* Define additional ritual cues locally.
 
+### Page 2: Scriptural date and location
+
+Begin and end physical page 2 with forced page boundaries. It contains only `Scriptural Date and Location` and always occupies exactly one page. Inventory every distinct directly appointed biblical passage once, in Catholic canonical order and then verse order; consolidate repetitions and do not mislabel loose echoes in composed orations as direct quotations. Use the columns `Proper`, `Citation`, `Location`, and `Date`. The citation cell does not reproduce Scripture.
+
+For each passage, distinguish traditional attribution from historical judgment and give the author or compositional horizon, first audience, composition place and date or range, relevant life stage, and place in Israel's and salvation history. A Gospel dossier separately identifies the narrated event's locating citations, place, and approximate date so composition and event are not conflated. Distinguish writer, event, and recipient geography; give present-day equivalents where useful; state uncertainty and responsible alternatives. Keep source-role disputes and operational research detail in `research/scope.md`, and keep global edition, jurisdiction, rights, search, currentness, and review qualifications in the terminal scope appendix. If the complete inventory does not fit legibly, redesign its dossiers or table rather than spill, omit evidence, or move unrelated apparatus onto page 2.
+
 ### Themes, commentary, and exploration
 
-`The Propers: Themes and Movement` immediately follows page 1 and occupies two readable pages. Open with a one- or two-sentence thesis and, when useful, one orienting form of no more than four primary stages. Use three to five functional units that account for every appointed element and let a signpost-only scan recover the thesis, movement, decisive evidence, and principal limits. This section contains only source-grounded claims.
+`The Propers: Themes and Movement` begins on page 3, immediately after the page-2 sheet, and occupies exactly two readable pages. `The Propers: Detailed Commentary` therefore begins on page 5. Open the thematic section with a one- or two-sentence thesis and, when useful, one orienting form of no more than four primary stages. Use three to five functional units that account for every appointed element and let a signpost-only scan recover the thesis, movement, decisive evidence, and principal limits. This section contains only source-grounded claims.
 
 `The Propers: Detailed Commentary` supplies the exegesis, textual comparison, reception, doctrinal distinctions, disagreement, and claim-local qualifications that prove and refine the synthesis. Give each substantial claim one fullest home; remove repeated quotations, recaps, thin subsections, and stretched links.
 
@@ -87,12 +93,6 @@ Later proper-focused headings may use quiet parenthetical cues in liturgical ord
 When a ritual Mass is celebrated with or specifically for a non-Eucharistic sacrament, import the relevant canonical one-page summary from `src/gpt/theology/sacraments/summaries/` after `The Propers: Interpretive Possibilities`. Use the full sacramental treatise and its sources for research; the summary is a retrieval aid, not the research ceiling. Do not infer historical formulary intent from general sacramental theology without a source.
 
 ## Terminal Apparatus
-
-### Appendix: Scriptural and Historical Coordinates
-
-Inventory every distinct directly appointed biblical passage once, in Catholic canonical order and then verse order; consolidate repetitions and do not mislabel loose echoes in composed orations as direct quotations. Use the columns `Proper`, `Citation`, `Location`, and `Date`. The citation cell does not reproduce Scripture.
-
-For each passage, distinguish traditional attribution from historical judgment and give the author or compositional horizon, first audience, composition place and date or range, relevant life stage, and place in Israel's and salvation history. A Gospel dossier separately identifies the narrated event's locating citations, place, and approximate date so composition and event are not conflated. Distinguish writer, event, and recipient geography; give present-day equivalents where useful; state uncertainty and responsible alternatives. Put these chronological, geographic, and historical bounds here rather than before the guide's argument.
 
 ### Appendix: Scope and Qualifications
 
@@ -111,8 +111,8 @@ Before publication, verify that:
 - the catalog ID, printed identity, rank, occurrence or use rule, seasonal and ritual variants, and formulary boundaries are sourced rather than inferred;
 - `retrieved.txt`, `verified.md`, and `research/scope.md` are complete, coherent, tracked, and free of machine-local data;
 - every published Latin form has been visually collated against the identified facsimile and every appointed element contributes to the map, synthesis, and substantive commentary;
-- every direct biblical passage has complete-context research and one historically qualified terminal dossier, with composition, narrated event, audience, geography, chronology, tradition, and modern judgment kept distinct;
+- every direct biblical passage has complete-context research and one historically qualified page-2 dossier, with composition, narrated event, audience, geography, chronology, tradition, and modern judgment kept distinct;
 - every attribution and historical, doctrinal, or reception claim has an exact source and locus, while source-grounded synthesis and exploratory proposal remain visibly distinct;
-- the guide follows the fixed reader order, reaches its argument on page 1, and places work-wide bounds, date ranges, source limits, rights, review status, and qualifications only in the terminal apparatus;
+- the guide follows the fixed reader order, keeps the complete date/location sheet alone on physical page 2, begins its two-page thematic movement on page 3 and detailed commentary on page 5, and places all other work-wide bounds, source limits, rights, review status, and qualifications only in the terminal apparatus;
 - a required sacramental summary is imported from the canonical fragment, `References` contains only used sources, and generation metadata is accurate and terminal; and
 - the universal editorial, rights, build, warning, visual-review, installation, and publication gates pass for every affected consumer.

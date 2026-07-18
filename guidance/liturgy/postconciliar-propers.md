@@ -77,20 +77,20 @@ Use this macro-order:
 1. compact title block naming only the celebration and the formula, cycle, or form needed to identify the object;
 2. unheaded two-column textual-variable-parts inventory in actual liturgical order;
 3. unheaded four-senses table;
-4. exactly two pages of `The Propers: Themes and Movement`;
-5. unbounded `The Propers: Detailed Commentary`;
-6. optional `The Propers: Interpretive Possibilities`, with one global editorial or AI disclosure;
-7. optional `Reception and Cultural Echoes`;
-8. any required `Sacramental Appendix`;
-9. fresh-page `Appendix: Scriptural and Historical Coordinates`;
+4. physical page 2 alone: `Scriptural Date and Location`;
+5. exactly two pages of `The Propers: Themes and Movement`;
+6. unbounded `The Propers: Detailed Commentary`;
+7. optional `The Propers: Interpretive Possibilities`, with one global editorial or AI disclosure;
+8. optional `Reception and Cultural Echoes`;
+9. any required `Sacramental Appendix`;
 10. fresh-page `Appendix: Liturgical Resolution`;
 11. `Appendix: Scope and Qualifications`;
 12. `References`; and
 13. terminal imported `Generation Metadata`.
 
-For an ordinary Sunday or solemnity, the title, complete inventory, and four-senses table occupy page 1. `Themes and Movement` begins on page 2 and fills exactly two substantive, readable pages without a repeated heading or continuation label. `Detailed Commentary` begins on the next fresh page and has no upper limit. Do not use compressed type, padding, artificial whitespace, omitted material, or hidden qualifications to meet a page boundary.
+For an ordinary Sunday or solemnity, the title, complete inventory, and four-senses table occupy page 1. The date/location sheet begins and ends at forced page boundaries and is the only content on physical page 2. `Themes and Movement` begins on page 3 and fills exactly two substantive, readable pages without a repeated heading or continuation label. `Detailed Commentary` begins on page 5 and has no upper limit. Do not use padding, artificial whitespace, omitted material, or hidden qualifications to meet a page boundary; use compact but readable tabular design only where the complete page-2 inventory requires it.
 
-The historical appendix begins on a fresh page and occupies one complete page for an ordinary Sunday or solemnity; extensive forms expand rather than omit or compress evidence. The historical, liturgical-resolution, and scope appendices form the terminal apparatus before `References`. No edition-verification, rights, source-status, date-range, jurisdiction, limitation, or review panel interrupts the opening pages. Keep only a claim-local qualification beside the claim it changes.
+The page-2 sheet is the sole exception to terminal historical apparatus. It carries passage-specific composition and narrated-event orientation, not edition verification, jurisdiction, rights, source status, search method, currentness, review state, or other global qualification. Liturgical resolution and scope remain terminal before `References`. Keep only a claim-local qualification beside the claim it changes.
 
 ## Page-one inventory and four senses
 
@@ -107,6 +107,15 @@ Inspect, as applicable, entrance rites and chants; Collect; readings; Responsori
 
 The following unheaded table has columns `Sense` and `Synthesis` and exactly four rows: `Literal`, `Allegorical`, `Moral`, and `Anagogical`. Ground every row in the appointed texts or documented reception, preserve branch limits and relationship classifications, and exclude original proposals.
 
+## Page-two scriptural date and location
+
+`Scriptural Date and Location` inventories every distinct directly appointed biblical passage and book-identified scriptural adaptation: readings, psalms, scriptural acclamations, and scriptural Missal or ritual texts. Label `Cf.` and equivalent wording as adaptation or allusion; exclude loose echoes in composed orations. Order dossiers by Catholic canonical book order and then chapter and verse. Consolidate repeated passages while naming every unit and branch. Use these conceptual columns:
+
+| `Textual unit / alternative` | `Citation` | `Location` | `Date` |
+| --- | --- | --- | --- |
+
+For each dossier, distinguish inherited attribution from historical judgment and state, as evidence permits, authorship, composition date and place, first audience, horizon, and salvation-historical setting. Add a separate `Narrated event` row when event and composition differ. Keep writer, audience, and event locations distinct. The sheet contains orientation, not copyrighted biblical text. Keep source-role disputes and operational research detail in `research/scope.md`, and keep global edition, branch, jurisdiction, rights, search, currentness, and review qualifications in the terminal scope appendix. The complete sheet always occupies exactly one physical page; if it does not fit legibly, redesign its dossiers or table rather than spill, omit evidence, or introduce unrelated apparatus.
+
 ## Synthesis, commentary, and proposals
 
 `The Propers: Themes and Movement` gives the source-grounded architecture of the complete target. Begin with a concise governing account and a scan-first form of no more than four primary stages. Use three to five relationship-titled units for an ordinary formula and only the extra units demanded by a complex vigil or ritual. Every inventoried unit belongs to a functional grouping or is identified as an independent, semi-continuous, or optional strand. No prose paragraph exceeds 120 words and no unstructured prose run exceeds two paragraphs.
@@ -116,17 +125,6 @@ The following unheaded table has columns `Sense` and `Synthesis` and exactly fou
 Place every original analogy, typological extension, compositional inference, or unsourced cross-element connection in `The Propers: Interpretive Possibilities`. Identify its appointed anchors, fruit, and limits; attribute it to none of the cited authorities and claim no historical compositional intent.
 
 ## Terminal appendices
-
-### Appendix: Scriptural and Historical Coordinates
-
-Inventory every distinct directly appointed biblical passage and book-identified scriptural adaptation: readings, psalms, scriptural acclamations, and scriptural Missal or ritual texts. Label `Cf.` and equivalent wording as adaptation or allusion; exclude loose echoes in composed orations.
-
-Order dossiers by Catholic canonical book order and then chapter and verse. Consolidate repeated passages while naming every unit and branch. Use these conceptual columns:
-
-| `Textual unit / alternative` | `Citation` | `Location` | `Date` |
-| --- | --- | --- | --- |
-
-For each dossier, distinguish inherited attribution from historical judgment and state, as evidence permits, authorship, composition date and place, first audience, horizon, and salvation-historical setting. Add a separate `Narrated event` row when event and composition differ. Keep writer, audience, and event locations distinct. The table contains orientation, not copyrighted biblical text; full disputes and source-role details remain in `research/scope.md`.
 
 ### Appendix: Liturgical Resolution
 
@@ -175,10 +173,10 @@ For each new or substantially revised guide:
 3. study Scripture, reception, liturgical function, and material negative results;
 4. classify relationships and claims;
 5. draft detailed commentary before compressing the synthesis and four senses;
-6. assemble the terminal apparatus and refresh structured metadata; and
+6. assemble the page-2 date/location sheet and terminal apparatus and refresh structured metadata; and
 7. build, inspect every page and branch table, and install only the reviewed PDF.
 
-A guide is profile-final only when its registry identity, slug, path, owner, edition disposition, and occurrence are resolved; its owner and leaf audits are complete; all authorized branches and textual units are accounted for; its claims and relationships are classified; its reader order and page boundaries conform; work-wide qualifications appear only in the terminal scope appendix; rights and source records conform; every shared dependency is explicit and rebuilt; and build, metadata, log, and visual checks pass.
+A guide is profile-final only when its registry identity, slug, path, owner, edition disposition, and occurrence are resolved; its owner and leaf audits are complete; all authorized branches and textual units are accounted for; its claims and relationships are classified; page 2 contains only the complete one-page date/location sheet, pages 3--4 contain the thematic movement, detailed commentary begins on page 5, and every later boundary conforms; work-wide qualifications appear only in the terminal scope appendix; rights and source records conform; every shared dependency is explicit and rebuilt; and build, metadata, log, and visual checks pass.
 
 Do not call an edition-locale collection complete until every stable-registry target has a sourced disposition, all edition splits and conditional targets are evaluated, all weekday fallbacks are evaluated, and the replacement and local-overlay matrix is resolved. Absence in one civil year is an occurrence result, not a target disposition.
 

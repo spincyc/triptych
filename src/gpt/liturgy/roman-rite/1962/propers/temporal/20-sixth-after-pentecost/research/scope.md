@@ -1,6 +1,6 @@
 # Sixth Sunday after Pentecost — Research Scope
 
-**Last updated:** 2026-07-17
+**Last updated:** 2026-07-18
 
 This record preserves source roles, historical judgments, and claim boundaries compressed in the reader-facing guide. Complete appointed texts, checksums, facsimile locations, and witness differences remain in [the verified propers](../propers/verified.md).
 
@@ -66,3 +66,7 @@ Geographic equivalents are broad: Davidic Israel and Judah lie in the southern L
 - No secure direct patristic commentary was located for the Collect, Secret, or Postcommunion; they are treated through verified grammar and explicitly labeled doctrinal illumination.
 - Psalm origins, the Exodus chronology, Mark's composition date and city, and the feeding's exact site and year remain uncertain. The *Catena Aurea* is incomplete as an English witness to Bede, so claims not preserved under his name there depend on the checked Latin text.
 - The survey does not exhaust manuscripts, untranslated works, subscription databases, or modern critical scholarship. No source-category quota was applied. The retained Latin lexicon, psalm expositions, Bede, Mark reception, mystagogical sources, and prayer source were checked or rechecked 2026-07-14.
+
+## 2026-07-18 Page-Two Production Record
+
+This statement supersedes the earlier production snapshots: the page-two coordinate revision received a settled two-pass build with warning-free logs; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction checks passed; all 12 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `a7097b7534c47228d669f431fb73a58aceb2616629d64b506c8c1528d8049092`. The current snapshot remains in private review pending renewed exact-snapshot authorization.
