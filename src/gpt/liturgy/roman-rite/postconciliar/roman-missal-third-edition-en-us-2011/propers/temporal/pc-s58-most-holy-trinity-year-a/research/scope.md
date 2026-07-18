@@ -1,6 +1,6 @@
 # PC-S58-A — Research Scope
 
-**Last updated:** 2026-07-17
+**Last updated:** 2026-07-18
 **Jurisdiction and as-of date:** dioceses of the United States of America; calendar, rubrics, and editions checked through 2026-07-15
 **Registry controls:** `guidance/liturgy/postconciliar-propers-registry.md`; [edition formula dispositions](../../../registry/formula-dispositions.md); [2026 occurrence record](../../../registry/occurrences-2026.md)
 
@@ -61,14 +61,30 @@ The shared owner verifies the proper Entrance Antiphon, Collect, Prayer over the
 
 Leo XIII, [*Divinum illud munus* 3](https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_09051897_divinum-illud-munus.html), records that the feast entered the universal calendar through John XXII and insists that divine operations are inseparable even when works are appropriately spoken of in relation to one Person. No exact universalization year is supplied in the guide because this primary witness does not give one.
 
-## Direct reception retained
+## Passage-by-passage reception matrix
+
+### Search method and corpus limits
+
+The 2026-07-18 pass searched the public ANF/NPNF Greek and Latin corpus, translated Syriac/Greek-scriptural witnesses, Cappadocian and Jerusalem catechetical texts, early Latin Apocalypse commentary, and medieval Latin theology. Scripture indexes and catenas were leads only; the retained works were read at the stated loci. The search explicitly tested Origen, Hilary, Jerome, Ambrose, Augustine, the Cappadocians, both Cyrils, Chrysostom, Victorinus, Bede/Rabanus leads, John Damascene, and Aquinas where the appointed passages plausibly occurred. The English working texts do not constitute a fresh original-language critical collation.
+
+The composed Entrance, Collect, orations, and Preface have no biblical source claim and therefore are not forced into this Scripture-reception table. “No continuous exposition located” means within the checked public corpus, not across all surviving manuscripts and languages.
+
+| Appointed unit | Direct or close reception retained | Illuminating reuse retained | Material negative / control |
+| --- | --- | --- | --- |
+| Exodus 34:4b–6, 8–9 | Cyril of Jerusalem, *Catechetical Lecture X* 7–8, directly quotes and expounds 34:5–6, 8–9 | Gregory of Nyssa, *Against Eunomius* XI, quotes the adjoining Moses discourse through 34:9 and argues Christologically about the divine guide | Both write within later Father/Son controversy and do not turn the Sinai proclamation into a three-Person code; no earlier continuous exact-boundary homily by Origen/Ambrose/Jerome was located |
+| Daniel 3:52–56 | Cyril of Jerusalem, *Catechetical Lecture IX* 3, directly cites 3:55 on the God who sees depths and sits above the Cherubim | Chrysostom, *Homily 2 on Philemon*, uses the same Greek furnace prayer outside vv. 52–56; the complete unit has exceptionally broad ancient/medieval Western liturgical reception as the *Benedictus es* canticle, indexed in [Usuarium](https://usuarium.elte.hu/texts/4423/view) and [Cantus](https://cantusdatabase.org/chant/638724) | Cyril covers one appointed verse, not the whole response; chant reception does not substitute for an exegete; no secure continuous patristic exposition of all five verses was located |
+| 2 Corinthians 13:11–13 | Chrysostom, *Homily 30 on 2 Corinthians* 3, direct continuous treatment through the final blessing | Augustine, *De Trinitate* I.4.7, and Gregory Nazianzen, *Oration 40* 41–43, supply doctrinal grammar of unity, distinction, equality, and inseparable operation | Older verse 14 equals U.S. verse 13; later technical vocabulary is not projected into Paul’s human compositional intent |
+| Cf. Revelation 1:8, acclamation adaptation | Victorinus, *Commentary on the Apocalypse*, receives the opening temporal divine title in its first-chapter discussion | The Lectionary itself gives the title an explicitly triune acclamatory form | Victorinus does not comment on the later liturgical adaptation; the added Father/Son/Spirit language is not put on Revelation’s author’s lips |
+| John 3:16–18 | Augustine, *Tractate 12 on John* 11–13; Chrysostom, *Homilies 27–28 on John*, direct treatment | Cyril of Jerusalem, *Catechetical Lecture XI* 6, uses vv. 16, 18 to confess natural only-begotten Sonship | Augustine’s remedy, Chrysostom’s immeasurable gift, and Cyril’s doctrinal use are complementary, not silently harmonized; the appointed verses name God and Son, not all three Persons |
+| Galatians 4:6, Communion | Chrysostom, *Homily 4 on Galatians*, direct treatment of 4:1–7 | Basil, *On the Holy Spirit*, and Augustine, *Sermon 21 on the New Testament* 29, use 4:6 to explain Spirit-enabled filial prayer | Adoption and the filial cry remain in Paul’s anti-slavery/sonship argument; reception does not make the antiphon a self-contained account of automatic sacramental effect |
+
+### Broader doctrinal reception retained
 
 - **St. Augustine, *De Trinitate* I.4.7:** [text](https://www.newadvent.org/fathers/130101.htm). Augustine confesses Father, Son, and Spirit as one substance in indivisible equality, distinguishes the Persons, identifies only the Son as incarnate, and preserves inseparable divine operation. This is direct doctrinal exposition, not commentary on the later formulary.
-- **St. Gregory Nazianzen, *Oration 40* §§41–43, especially §41:** [text](https://www.newadvent.org/fathers/310240.htm). In a baptismal setting Gregory holds one Godhead and power with three distinct Persons and returns contemplation from unity to three and from three to unity. The guide paraphrases rather than reproduces the celebrated passage.
-- **St. John Chrysostom, *Homily 30 on 2 Corinthians* §3:** [text](https://www.newadvent.org/fathers/220230.htm). Chrysostom directly comments on the final blessing, enumerates Father, Son, and Spirit, and refuses to partition their gifts into competing operations. His verse number is 13:14; the U.S. Lectionary's is 13:13.
-- **St. Augustine, *Tractate 12 on John* §§11–13:** [text](https://www.newadvent.org/fathers/1701012.htm). Augustine directly treats John 3:14–21 through the bronze-serpent and healing images: Christ comes to save, while refusal of the light discloses judgment. The reading prevents the Gospel from becoming either sentimental reassurance or a claim that Christ's mission sought condemnation.
+- **St. Gregory Nazianzen, *Oration 40* §§41–43, especially §41:** [text](https://www.newadvent.org/fathers/310240.htm). In a baptismal setting Gregory holds one Godhead and power with three distinct Persons and returns contemplation from unity to three and from three to unity.
+- **St. Augustine, *City of God* X.5–6, 20:** sacrificial doctrine used to control the Prayer over the Offerings, not presented as commentary on the proper prayer.
 
-No direct patristic exposition of the exact Exodus 34 or Greek Daniel response is claimed. Those passages are handled through their complete canonical contexts and later doctrinal controls rather than furnished with a weak or unverified attribution.
+The reader-facing commentary labels direct verse exposition, adjacent-context use, later doctrinal reuse, and liturgical adaptation separately. No ancient source is presented as commenting on the complete Trinity Sunday formula.
 
 ## Magisterial and doctrinal controls
 
@@ -141,3 +157,5 @@ Outstanding work is consequential and remains visible: complete U.S.-English ora
 Civil date, governing editions, territory, and Lectionary identity remain in the terminal Liturgical Resolution appendix and tracked manifest. The compact-title revision received a settled two-pass build with a warning-free final log; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction passed; all 11 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `31dab0b2e199e5ec6c540346cc072bcb4f794d91d4170fb96cfb0e358767e6aa`.
 
 On 2026-07-18, the page-two coordinate revision superseded that production snapshot. It received a settled two-pass build with warning-free logs; metadata, PDF structure, embedded fonts, Unicode, and text extraction passed; all 11 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `2b00e8115056fa45f0fbe2c803e0202ae76454a97a30661df0c28569bbda59aa`. This current snapshot remains in private review pending renewed exact-snapshot authorization.
+
+On 2026-07-18, the final passage-by-passage production snapshot received a settled two-pass build with warning-free logs; metadata, PDF structure, embedded fonts, Unicode, and extraction passed; all 14 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `03699e03e2ec8c9db8e2a405868370f8827ec3b6c536af36e02c086006610a94`. It remains in private review pending renewed exact-snapshot authorization.

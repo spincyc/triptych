@@ -51,6 +51,19 @@
 - The recipients are Christian communities across Pontus, Galatia, Cappadocia, Asia, and Bithynia in Asia Minor (principally present-day Turkey), probably largely Gentile. The appointed close joins humility, God's care, resistance to the devil, worldwide Christian solidarity in suffering, and God's call to eternal glory.
 - The NABRE records substantial modern disagreement: some scholars retain Petrine authorship; others propose a later author, and a mediating judgment places a Petrine disciple or circle at Rome about AD 70–90. Cultivated Greek, Septuagint use, Pauline contacts, and the social horizon drive the dispute. The traditional Roman metadata remains in the proper row, while these alternatives are disclosed in its prose.
 
+## Passage-by-passage reception matrix
+
+| Appointed passage | Direct exegesis checked | Illuminating reuse checked | Material result / boundary |
+| --- | --- | --- | --- |
+| Psalm 7:12 (Alleluia) | Augustine, *Exposition on Psalm 7* §§8–11, on judgment, received righteousness, and preserving help. | The Epistle’s adversary and vigilant resistance. | Augustine’s broader Christological reading is reception, not the psalm’s sole historical sense. |
+| Psalm 9:11–13 (Offertory) | Augustine, *Exposition on Psalm 9* §§9–12, on seeking God, Sion, proclamation, blood, and the poor. | Irenaeus on just offering and ecclesial thanksgiving. | Offering does not buy mercy; the verse first commands praise and remembrance of the afflicted. |
+| Psalm 24:1–2, 16, 18 (Introit) | Augustine, *Exposition on Psalm 24/25* §§1–2, 16, 18. | The solitary sinner gathered into Luke’s shared joy. | Spiritual ascent does not erase literal affliction, loneliness, or petition. |
+| Psalm 54:17, 19, 23 (Gradual) | Augustine, *Exposition on Psalm 54/55* §23 and the surrounding prayer sequence. | 1 Peter 5:7’s command to cast care on God. | Same-psalm resonance is documented without pretending Augustine comments on the Roman Gradual. |
+| Luke 15:1–10 (Gospel, Communion) | Cyril of Alexandria, Homily 106; Gregory the Great, *Gospel Homily* 34; Ambrose, *Exposition of Luke* VII.207–212. | Tertullian, *On Patience* 12; Gregory of Nyssa, *On Virginity* 12; Augustine, *Confessions* VIII.3–4; Anthony of Padua, *Third Sunday after Pentecost* §§2–15. | Divine pursuit, repentance, image, ecclesial search, inward search, and common joy are retained as distinct layers. |
+| 1 Peter 5:6–11 (Epistle) | Anthony, *Third Sunday after Pentecost* §§2, 15, directly coordinates the passage with Luke 15; the full apostolic sequence was checked canonically. | Augustine’s Psalm 54 exposition and Gregory’s humility/mercy preaching. | No complete Greek- or Latin-Father line-by-line commentary on all six appointed verses was located in the checked public corpus; that gap is stated rather than supplied from a loose allusion. |
+
+The widened survey searched New Advent’s Greek/Latin Fathers in public translation, direct Latin at Wikisource/Augustinus repositories, the official Basilica of St. Anthony sermon in Italian/Latin, and exact passage/work-title queries. English, Latin, Italian, and translated Greek were checked. No literal exhaustiveness is claimed for untranslated Greek/Syriac, manuscripts, the full PL/PG, or subscription databases.
+
 ## Geography and chronology controls
 
 - Composition locations, recipient locations, and narrated-event locations are kept distinct. `Achaia` is the Roman province in present-day Greece; `Rome` is in present-day Italy; and the five recipient provinces of 1 Peter lie in Asia Minor, principally present-day Turkey. Luke's travel narrative supplies direction toward Jerusalem but not a recoverable town or region for Luke 15.
@@ -92,6 +105,6 @@
 - The 2026-07-14 full-document reevaluation corrected interpretive wording in the page-one map, gave the Collect its own clause-by-clause treatment, consolidated repeated patristic summaries, removed a duplicate full-text Secret display, completed the proper-reference cues, replaced a repeated exploratory proposal, and reclassified every source by evidentiary role. The resulting 13-page production snapshot passed two-pass compilation, clean-log, metadata, extraction, embedded-font, PDF-structure, every-page visual, and installed/build identity checks; that snapshot is superseded by the final production record below.
 - Final clean-build review completed 2026-07-18: the settled 12-page PDF, SHA-256 `e2c15ab4f8dbc13c5bd7a93e2dc6632f8e485757fe3224e0a03df8847decaa08`, passed two-pass compilation, warning-free log, metadata, extraction, embedded-font, PDF-structure, and every-page visual checks; the installed PDF is byte-identical to the reviewed build.
 
-## 2026-07-18 Page-Two Production Record
+## 2026-07-18 Final Production Record
 
-This statement supersedes the earlier production snapshots: the page-two coordinate revision received a settled two-pass build with warning-free logs; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction checks passed; all 12 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `2c693ad5c04967294afc9bb059c5087539029bae7cbff15b0f2edfa2d1dec04d`. The current snapshot remains in private review pending renewed exact-snapshot authorization.
+The settled two-pass build produced warning-free logs; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction checks passed; all 13 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `e72603e279c02cd339b095fd028f9408a2dbc281633213c3ce0d8899996b6ad1`. This exact snapshot remains in private review pending renewed exact-snapshot authorization.

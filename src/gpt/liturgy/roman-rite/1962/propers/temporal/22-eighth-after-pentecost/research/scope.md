@@ -24,6 +24,20 @@ Psalm numbering follows the Vulgate and missal; the corresponding modern Hebrew-
 
 The reader-facing table reports traditional metadata under its neutral Location and Date fields, then distinguishes modern judgment in the explanatory row. Writer location, first audience, and narrated event were not collapsed.
 
+## Passage-by-Passage Reception Matrix
+
+| Appointed passage | Direct exegesis checked | Illuminating reuse checked | Material result / boundary |
+| --- | --- | --- | --- |
+| Psalm 17:28, 32 (Offertory) | Augustine, *Exposition on Psalm 17/18* §§28, 32. | Humility, divine uniqueness, and truthful return of received gifts. | Pride is diagnosed without making poverty or low status automatically virtuous. |
+| Psalm 30:3 (Gradual) | Augustine, *Exposition on Psalm 30/31* I §3; II, sermon 1 §§7–8. | The humbled Mediator and God as refuge. | Augustine’s wording differs slightly from the Gradual and is not substituted for it. |
+| Psalm 33:9 (Communion) | Augustine, *Exposition on Psalm 33/34*, sermon 2 §§12–13. | Irenaeus on Eucharist and bodily resurrection. | Eucharistic reception is direct in Augustine; sensory language is not reduced to sensation. |
+| Psalm 47:2, 10–11 (Introit, Alleluia) | Augustine, *Exposition on Psalm 47/48* §§2, 8, 10. | Mercy received unto worthy living and worldwide praise. | Augustine reads “people” where the proper reads “temple”; that noun difference remains explicit. |
+| Psalm 70:1 (Gradual) | Augustine, *Exposition on Psalm 70/71*, sermon 1 §3. | Hope transferred from self to Christ. | The composite inherited title does not yield a recoverable author biography. |
+| Luke 16:1–9 (Gospel) | Peter Chrysologus, Sermons 125–126; Cyril of Alexandria, Sermons 108–109; Augustine, *Questions on the Gospels* II.34 and Sermon 113; Gaudentius, Tractate 18. | Origen, *Homilies on Genesis* 13.4; Anthony of Padua, *Ninth Sunday after Pentecost* I.3. | Conflicting role maps remain visible; no checked Father or saint identifies Christ as the unjust steward. |
+| Romans 8:12–17 (Epistle) | Chrysostom, *Homily 14 on Romans*; Augustine, Sermon 156 §§6–15; Aquinas, *Commentary on Romans* VIII, lect. 3, nos. 634–649. | Irenaeus on mediation and restored flesh. | The missal stops at verse 17a; suffering with Christ in 17b is adjacent context, not silently inserted. |
+
+This explicit inventory consolidates the deeper source ledger below. Corpora included New Advent, Augustinus.it, Tertullian.org, official Antonian texts, public Latin transcriptions checked against identified critical loci, and Aquinas in Latin/English. Languages included Latin, English, Italian, and translated Greek; Rufinus’s Latin mediation of Origen is disclosed. No universal search of Greek/Syriac originals, manuscripts, untranslated homiliaries, or subscription scholarship is claimed.
+
 ## Direct Patristic and Medieval Reception Checked
 
 ### Romans 8:12–17
@@ -106,6 +120,6 @@ The complete Latin proper record is a focused edition-identified research transc
 
 Final clean-build review completed 2026-07-18: the settled 10-page PDF, SHA-256 `8a5505fb036b7531762f1cf4dd02a6c8e646e53e621758a7fd59b29a04027daa`, passed two LaTeX passes, a warning-free log, generation-metadata, extraction, embedded-font, PDF-structure, and every-page visual checks; the installed publication is byte-identical to the reviewed build. No independent theological review was performed.
 
-## 2026-07-18 Page-Two Production Record
+## 2026-07-18 Final Production Record
 
-This statement supersedes the earlier production snapshots: the page-two coordinate revision received a settled two-pass build with warning-free logs; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction checks passed; all 10 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `0515dcd6be14c4f033e83b02a8bbfab98853598fb38ebfd931a589825bac227c`. The current snapshot remains in private review pending renewed exact-snapshot authorization.
+The settled two-pass build produced warning-free logs; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction checks passed; all 11 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `274af8213af4882ef658677a82ef9c169f4a78888b5251c1ae2ad5de54a9c946`. This exact snapshot remains in private review pending renewed exact-snapshot authorization.

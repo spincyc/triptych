@@ -43,6 +43,20 @@ This record preserves the source roles, historical alternatives, and research li
 - Modern scholarship generally treats the Gospel of John and 1 John as products of the same Johannine school; many date the letter near the end of the first century and after or during debate over the Gospel's interpretation. It does not unanimously identify the apostle as the immediate penman or Ephesus as the certain site.
 - In salvation history, the passage joins Israel's story of Cain and Abel to Christ's laying down his life, then makes material mercy toward a needy brother a test of the new life. It belongs to the early Church's work of preserving apostolic confession and embodied charity amid internal division.
 
+## Passage-by-Passage Reception Matrix
+
+| Appointed passage | Direct exegesis checked | Illuminating reuse checked | Material result / boundary |
+| --- | --- | --- | --- |
+| Psalm 6:2–3 (Communion) | Augustine, *Exposition on Psalm 6* §5. | Penitential and medicinal use in the Communion setting. | Augustine’s spiritual diagnosis does not turn sacramental reception into a promise of bodily cure. |
+| Psalm 7:2 (Gradual) | Augustine, *Exposition on Psalm 7* §2. | The Sunday’s liturgical plea for rescue before the Gospel invitation. | The psalm’s enemies are not reduced to one historical or spiritual referent. |
+| Psalm 12:6 (Offertory) | Augustine, *Exposition on Psalm 12/13* §6. | Offering as trust in mercy already received. | Liturgical placement supplies the offertory application. |
+| Psalm 17:19–20 (Introit) | Augustine, *Exposition on Psalm 17/18* §§20–21. | Christ’s Passion and the widened place of charity. | Direct psalm reception, not a claim about the Sunday formulary’s compiler. |
+| Psalm 119:1 (Alleluia) | Augustine, *Exposition on Psalm 119/120* §§2–8. | Pilgrimage from lying speech toward peace. | The Song of Ascents remains a literal prayer before moral application. |
+| Luke 14:16–24 (Gospel) | Tertullian, *Against Marcion* IV.31; Augustine, *Sermon 62*; Cyril of Alexandria, *Commentary on Luke*, Sermon 104; Gregory the Great, *Gospel Homily* 36. | St. Anthony of Padua, *Sermon for the Second Sunday after Pentecost* §§2–13, directly coordinates the same Gospel, Epistle, and Introit in medieval preaching. | The witnesses disagree over some role mappings; none licenses coerced faith or contempt for disabled persons. |
+| 1 John 3:13–18 (Epistle) | Augustine, *Homily 5 on First John* §§6, 10–12. | Anthony, *Second Sunday after Pentecost* §§2, 5, 13, joins passage from death to life and concrete brotherly love to the banquet. | Sacramental identity and charity in deed remain coordinated, not collapsed. |
+
+The search covered ANF/NPNF and related public patristic collections, direct Latin for Gregory, the official Basilica of St. Anthony Latin/Italian sermon, and exact-passage searches in Greek/Latin Father and medieval sermon corpora. Languages checked were English, Latin, and translated Greek. The negative result is qualitative: beyond the named direct witnesses, no additional source was promoted merely to meet a quota, and untranslated/manuscript/subscription corpora remain unsurveyed rather than declared empty.
+
 ## Biblical-Historical Sources and Their Roles
 
 - *New American Bible, Revised Edition* (USCCB online edition): introductions to [Psalms](https://bible.usccb.org/bible/psalms/0), [Luke](https://bible.usccb.org/bible/luke/0), and [1 John](https://bible.usccb.org/bible/1john/0); complete texts and notes for [Psalms 6](https://bible.usccb.org/bible/psalms/6), [7](https://bible.usccb.org/bible/psalms/7), [13](https://bible.usccb.org/bible/psalms/13), [18](https://bible.usccb.org/bible/psalms/18), and [120](https://bible.usccb.org/bible/psalms/120), [Luke 13](https://bible.usccb.org/bible/luke/13), [14](https://bible.usccb.org/bible/luke/14), and [15](https://bible.usccb.org/bible/luke/15), and [1 John 2](https://bible.usccb.org/bible/1john/2) and [3](https://bible.usccb.org/bible/1john/3). These govern modern literary context, audience, and historical caveats.
@@ -80,6 +94,6 @@ Every item below records the exact retained locus, source used, role, and quotat
 - The tangential cultural interlude and its sole reference were removed. The missal text required no correction. Independent theological review remains outstanding, so the guide is not an ecclesiastically approved or independently reviewed publication.
 - The 2026-07-17 structural revision received a settled two-pass build with a warning-free final log; generation metadata, PDF structure, fonts, Unicode text, and extraction passed; all 12 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `eaaa54d7f0429028ef76b08837231fa882e84002bfaa344f541c131ddd7e7bbf`.
 
-## 2026-07-18 Page-Two Production Record
+## 2026-07-18 Final Production Record
 
-This statement supersedes the earlier production snapshots: the page-two coordinate revision received a settled two-pass build with warning-free logs; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction checks passed; all 12 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `019f23378af5a3cf3b0f8f17986ebd9929da7847dfc1a9c666c26c4810fc2892`. The current snapshot remains in private review pending renewed exact-snapshot authorization.
+The settled two-pass build produced warning-free logs; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction checks passed; all 13 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `3e136d0e6addf9190b3001169e23c4e9c8ffa33e0e8e61ddbeba292e10b786d6`. This exact snapshot remains in private review pending renewed exact-snapshot authorization.

@@ -22,6 +22,20 @@ The one-page historical orientation inventories seven distinct directly appointe
 
 Geographic equivalents remain deliberately broad: Judah and the kingdom of Israel lie in the southern Levant; Jerusalem is in the same region; Achaia is in present-day Greece; Rome is in present-day Italy; and Lake Gennesaret is the Sea of Galilee in present-day northern Israel. These equivalents orient the reader without converting a narrated, sanctuary, or audience location into a proved writing site.
 
+## Passage-by-Passage Reception Matrix
+
+| Appointed passage | Direct exegesis checked | Illuminating reuse checked | Material result / boundary |
+| --- | --- | --- | --- |
+| Psalm 9:5, 10 (Alleluia) | Augustine, *Exposition on Psalm 9* §§6, 9–10. | The Sunday’s movement from judgment to refuge. | Knowledge of hearts and judgment are held with refuge for the poor. |
+| Psalm 12:4–5 (Offertory) | Augustine, *Exposition on Psalm 12/13* §§3–6. | Augustine’s conversion analysis in *Confessions* VIII. | “Lighten the eyes” is moral and spiritual illumination, not a medical guarantee. |
+| Psalm 17:3 (Communion) | Augustine, *Exposition on Psalm 17/18* §§2–4. | Eucharistic reception as received refuge. | *Totus Christus* reception does not replace the psalm’s Davidic horizon. |
+| Psalm 26:1–3 (Introit) | Augustine, *Exposition on Psalm 26/27* §§1–3. | Divine light and salvation preceding the fishing narrative. | Confidence does not deny enemies or fear; it locates their limit. |
+| Psalm 78:9–10 (Gradual) | Augustine, *Exposition on Psalm 78/79* §§12–13. | The Collect’s plea for ordered peace. | Divine help and human action remain coordinated. |
+| Luke 5:1–11 (Gospel) | Cyril of Alexandria at Luke 5:2–8; Ambrose, *Exposition of Luke* IV.68–79. | Augustine, *Tractate on John* 122.7; Anthony of Padua, *Fifth Sunday after Pentecost* §§1–21, directly treats the same catch and Peter’s response. | Luke’s mixed, burdened catch and John’s final unbroken catch remain distinct; Anthony’s preaching is later reception, not Luke’s literal sense. |
+| Romans 8:18–23 (Epistle) | Chrysostom, *Homily 14 on Romans*. | Irenaeus, *Against Heresies* V.7.1–2; Anthony’s adjacent Sunday preaching was checked but not promoted as direct because its assigned epistle differs. | Creation’s travail tends toward bodily liberation; suffering is not made good in itself. |
+
+The survey crossed Greek and Latin Fathers, Augustine’s complete public psalm sequence, medieval Latin/Italian sermon material at the official Basilica of St. Anthony site, and exact-passage searches. English, Latin, Italian, and translated Greek were checked. No additional quotation was added simply for chronological quotas; no exhaustive search of untranslated, manuscript, or subscription corpora is claimed.
+
 ## Direct Reception Retained
 
 - St. Augustine, *Exposition on Psalm 26* §§1–3, on divine light, salvation, protection, and courage amid enemies. The English page is headed [Psalm 27](https://www.newadvent.org/fathers/1801027.htm).
@@ -82,6 +96,6 @@ All seven underlying texts and the exact loci above were rechecked on 2026-07-14
 - Sources were retained because they establish or materially qualify claims made in the guide; no numerical or source-category quota was applied.
 - Historical-orientation introductions and traditional-attribution links were accessed 2026-07-10. The complete direct biblical contexts and retained exegetical and doctrinal sources used in the reevaluation were rechecked or accessed 2026-07-14.
 
-## 2026-07-18 Page-Two Production Record
+## 2026-07-18 Final Production Record
 
-This statement supersedes the earlier production snapshots: the page-two coordinate revision received a settled two-pass build with warning-free logs; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction checks passed; all 11 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `f2a2dc97f6bef12ca9908612f7c9456b384709b949006eb894aaa45f5c24f3ba`. The current snapshot remains in private review pending renewed exact-snapshot authorization.
+The settled two-pass build produced warning-free logs; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction checks passed; all 11 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `b179fdbeaa5ebc20ec1542e8e17ea2f797bc1d42dee6ef0c26c4749dbadf9b85`. This exact snapshot remains in private review pending renewed exact-snapshot authorization.

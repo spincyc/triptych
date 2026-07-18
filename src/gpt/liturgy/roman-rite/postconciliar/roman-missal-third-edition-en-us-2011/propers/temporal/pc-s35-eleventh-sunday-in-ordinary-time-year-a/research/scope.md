@@ -2,7 +2,7 @@
 
 **Formula:** `PC-S35-A`
 **Occurrence:** 2026-06-14
-**Last updated:** 2026-07-17
+**Last updated:** 2026-07-18
 **Registry controls:** `guidance/liturgy/postconciliar-propers-registry.md`; [edition formula dispositions](../../../registry/formula-dispositions.md); [2026 occurrence record](../../../registry/occurrences-2026.md)
 
 This record preserves the evidence roles and limits compressed in the guide. Formula identity is controlled by [the instance manifest](../instance/manifest.md), element boundaries by [the leaf audit](../propers/verified.md), and reusable Missal evidence by [the Week XI owner](../../shared/ordinary-time/weeks/11/propers/verified.md).
@@ -32,13 +32,34 @@ This record preserves the evidence roles and limits compressed in the guide. For
 - St. John Chrysostom, *Homily 32 on Matthew*, directly treats Matthew 9:36–10:8: Christ’s compassion, the harvest already prepared by prophetic sowing, the Lordship of Christ over the harvest, and “freely received, freely give” as a check on pride and covetousness: <https://www.newadvent.org/fathers/200132.htm>.
 - St. John Chrysostom, *Homily 9 on Romans*, directly treats Romans 5:6–11: Christ dies for the weak, ungodly, sinners, and enemies; reconciliation and justification ground confidence in salvation through his risen life: <https://www.newadvent.org/fathers/210209.htm>.
 - St. Augustine, *Exposition on Psalm 100*, directly reads the psalm as the grateful service and confession of God’s people: <https://www.newadvent.org/fathers/1801100.htm>. It illuminates the Psalm’s ecclesial reception, not the historical design of Lectionary 91.
+- St. Augustine, *Exposition on Psalm 27*, directly receives the Entrance and first Communion psalm: <https://www.newadvent.org/fathers/1801027.htm>. Chrysostom, *Homily 81 on John*, directly treats John 17:11: <https://www.newadvent.org/fathers/240181.htm>.
+- St. Thomas Aquinas, *Commentary on Romans* V, lect. 2, directly treats Romans 5:6–11: <https://aquinas.cc/en/la/~Rom.C5.L2>. Tatian, *Diatessaron* §5, is early harmonized reception of Mark 1:15: <https://www.newadvent.org/fathers/100205.htm>.
 
 ### Doctrinal and liturgical illumination
 
 - *Lumen gentium* 9 and *Catechism of the Catholic Church* 781–786 illuminate Exodus 19’s covenant language in the Church’s doctrine of the People of God while preserving Israel’s prior election and the new covenant’s Christological basis.
+- Augustine, *Letter 55* §30, uses the Exodus-to-Sinai interval in a Paschal–Pentecostal chronology: <https://www.newadvent.org/fathers/1102055.htm>. *Apostolic Constitutions* II.25 reuses Exodus 19’s priestly-people language in describing the ordered Christian assembly: <https://www.newadvent.org/fathers/07152.htm>. Both are illuminating reception, not sustained exposition of Exodus 19:2–6a.
+- Aquinas, *Commentary on John* IV, lect. 4, treats the sowing-and-reaping saying of John 4 as prophets’ prior labor and apostolic harvest: <https://aquinas.cc/la/en/~Ioan.C4.L4.v4.37>. It is a controlled parallel for Matthew’s harvest, not direct commentary on Matthew 9.
 - GIRM 46–90 and 352–367 and the *General Introduction to the Lectionary* 65–69, 78–91, and 93–110 govern the elements, music layers, First Reading–Gospel correlation, and semi-continuous apostolic series. *Tempus per annum* rubric 5 supplies a Sunday Preface unless the selected authorized Eucharistic Prayer carries its own; GIRM 365(b) preserves that flexibility for Eucharistic Prayer II, while 365(d) makes Eucharistic Prayer IV and its invariable Preface one coupled selection.
 
 No direct patristic exposition of the complete Week XI formulary was found or claimed. The orations are studied from their checked Latin identities and liturgical functions, with later doctrinal illumination clearly distinguished.
+
+## Passage-by-passage reception matrix
+
+| Appointed scriptural unit | Direct checked reception | Illuminating reuse or parallel | Result and control |
+| --- | --- | --- | --- |
+| Entrance, cf. Psalm 27:7, 9 | Augustine, *Exposition on Psalm 27* | — | Direct psalm reception; Augustine did not know the modern antiphon assignment or its adaptation. |
+| Exodus 19:2–6a | No sustained direct exposition retained | Augustine, *Letter 55* §30, on Sinai–Pentecost chronology; *Apostolic Constitutions* II.25 on priestly-people language | Material negative result for the exact unit in the accessible corpora. Both retained witnesses are labeled reuse, and neither displaces Israel’s narrated election. |
+| Responsorial Psalm 100 | Augustine, *Exposition on Psalm 100* | — | Direct psalm reception; no claim about why the modern Lectionary pairs it with Exodus. |
+| Romans 5:6–11 | Chrysostom, *Homily 9 on Romans*; Aquinas, *Commentary on Romans* V, lect. 2; Augustine, *Against Two Letters of the Pelagians* IV.8, for vv. 10–12 | — | Direct Greek, medieval Latin, and Latin-patristic reception; Augustine’s anti-Pelagian use is narrower than Paul’s full argument. |
+| Acclamation, Mark 1:15 | Tatian, *Diatessaron* §5 | — | Early direct harmonized reception; not a continuous commentary preserving Mark’s whole literary sequence. |
+| Matthew 9:36–10:8 | Chrysostom, *Homily 32 on Matthew* | Aquinas on John 4:37–38 as a prior-sowing/harvest parallel | Chrysostom directly treats compassion, harvest, naming, sending, and gratuitous gift. Aquinas is not attributed to Matthew. |
+| Communion A, Psalm 27:4 | Augustine, *Exposition on Psalm 27* | — | Direct psalm reception; this is an unselected antiphon branch and must not be merged into the Entrance as enacted fact. |
+| Communion B, John 17:11 | Chrysostom, *Homily 81 on John* | Augustine, *Tractate 110 on John*, directly on the later unity petition in 17:21–23 | Chrysostom covers the appointed verse; Augustine supplies a close-context control against equating ecclesial unity with divine consubstantiality. The branch remains unselected. |
+
+### Search record and negative-result boundary
+
+The 2026-07-18 reception pass searched the accessible ANF/NPNF English collections at New Advent and CCEL, Augustine’s English and Latin indexes, Aquinas’s Latin/English biblical commentaries, Latin lead searches in public patristic and medieval portals, and exact-locus web searches for Greek and Latin authors available in stable public transcription. Authors and corpora tested included Origen, Hilary, Jerome, Ambrose, Augustine, Chrysostom, Cyril, Gregory, Bede/Rabanus leads, Aquinas, and later patristic compilations. Greek works were checked principally through identified public English translations; Latin works through both Latin and English where available. No sustained direct early exposition of exactly Exodus 19:2–6a was retained. This is a bounded public-corpus result, not a claim that no such treatment exists in untranslated, unindexed, manuscript, or subscription literature.
 
 ## Claim matrix and controls
 
@@ -75,3 +96,5 @@ The formula, occurrence, reading boundaries, Latin oration identities, and antip
 Civil date, governing editions, territory, and Lectionary identity remain in the terminal Liturgical Resolution appendix and tracked manifest. The compact-title revision received a settled two-pass build with a warning-free final log; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction passed; all 9 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `c4c39e1cba6e01a557960086e66fed140abc03e848fe88ff7fb614c46ab4350c`.
 
 On 2026-07-18, the page-two coordinate revision superseded that production snapshot. It received a settled two-pass build with warning-free logs; metadata, PDF structure, embedded fonts, Unicode, and text extraction passed; all 9 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `d5f72a59a2b888acb9799272de92a36b14c7bf90b1e59da9a829b5ae49c643ed`. This current snapshot remains in private review pending renewed exact-snapshot authorization.
+
+On 2026-07-18, the final passage-by-passage production snapshot received a settled two-pass build with warning-free logs; metadata, PDF structure, embedded fonts, Unicode, and extraction passed; all 11 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `965b06c6eb0612ab75fbf7ec55b1806c683dc98b7ad5d9314a1c153c38c61846`. It remains in private review pending renewed exact-snapshot authorization.

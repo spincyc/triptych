@@ -2,7 +2,7 @@
 
 **Formula:** `PC-S39-A`
 **Occurrence:** 2026-07-12
-**Last updated:** 2026-07-17
+**Last updated:** 2026-07-18
 **Registry controls:** `guidance/liturgy/postconciliar-propers-registry.md`; [edition formula dispositions](../../../registry/formula-dispositions.md); [2026 occurrence record](../../../registry/occurrences-2026.md)
 
 This record preserves evidence roles and limits compressed in the reader-facing guide. Formula identity and unresolved selections are controlled by [the instance manifest](../instance/manifest.md); element boundaries and branches by [the leaf audit](../propers/verified.md); reusable Missal evidence by [the Week XV owner](../../shared/ordinary-time/weeks/15/propers/verified.md).
@@ -24,22 +24,33 @@ This record preserves evidence roles and limits compressed in the reader-facing 
 - **John:** ancient tradition identifies the Apostle and the Ephesian church horizon; modern judgments about authorship and compositional stages vary, with a late first-century final form commonly proposed. John 6 locates the bread discourse in the Capernaum synagogue after the feeding and crossing of the sea.
 - **Romans:** Paul writes from Corinth about AD 56–58 to mixed Jewish and Gentile churches at Rome. The appointed verses personify creation’s expectation and labor while believers await bodily redemption.
 
-## Reception used
+## Passage-by-passage reception matrix
 
-### Direct reception
+### Search method and corpus limits
 
-- St. John Chrysostom, *Homily 14 on Romans*, directly treats Romans 8:18–23: present suffering and future glory, creation’s personification, subjection in hope, labor toward incorruption, firstfruits, and bodily liberation: <https://www.newadvent.org/fathers/210214.htm>.
-- St. Augustine, *Tractates on John* 26.11–18, directly receives John 6’s eating, abiding, ecclesial unity, and life language. It illuminates Communion Antiphon B only if that branch supplies the printed antiphon: <https://www.newadvent.org/fathers/1701026.htm>.
+The 2026-07-18 reception pass searched stable public transcriptions of the Greek and Latin Fathers in the ANF/NPNF collections, the Syriac Aphrahat and Cyril-of-Alexandria translations at New Advent and Tertullian.org, and medieval Latin reception represented by Aquinas. Scripture indexes and the *Catena aurea* were used as locators, not as permission to reproduce unattributed catena fragments. Candidate references were retained only after the cited work and local context were read. English translations were the working access layer; Greek, Latin, and Syriac source traditions are identified, but this was not a fresh critical-edition collation.
 
-Both were previously source-audited in repository records. Chrysostom expounds the appointed second reading; Augustine expounds the source of an optional Communion antiphon. Neither is presented as commentary on the complete Week XV/Year A formulary.
+The search deliberately checked Origen, Hilary, Jerome, Ambrose, Augustine, Chrysostom, Cyril of Alexandria, Aphrahat, Gregory, Bede/Rabanus leads, and Aquinas where their extant or publicly accessible works plausibly met the appointed boundaries. Absence below means no secure, passage-specific treatment was located in that corpus during this pass, not that none exists in manuscripts, untranslated works, or scholarship.
 
-### Doctrinal and liturgical illumination
+| Appointed unit | Direct or close reception retained | Illuminating reuse retained | Material negative / control |
+| --- | --- | --- | --- |
+| Cf. Psalm 17:15, Entrance | Augustine, *Exposition on Psalm* 16.14 (Vulgate/LXX numbering), on satisfaction when glory is manifested | His Christ-and-Body frame supplies an eschatological ecclesial reading | No separate early Greek continuous exposition of the exact adapted clause was located; the Missal’s adaptation remains distinct |
+| Isaiah 55:10–11 | Aphrahat, *Demonstration VIII* 6 and 15, expressly quotes the rain-and-word oracle | Aphrahat places the effective word within Christological and resurrection argument | No accessible continuous homily by Origen, Jerome, Cyril, Ambrose, or Gregory on precisely 55:10–11 was verified; Aphrahat is reuse, not a commentary on the exilic unit |
+| Psalm 65:10–14 and response from Luke 8:8 | Augustine, *Exposition on Psalm* 64.14–16, on watered furrows, gift, and fruit; Cyril of Alexandria, *Commentary on Luke*, Sermon XLI, directly treats Luke 8:4–15 | Augustine’s ecclesial rain/harvest reading and Cyril’s comparison of Lukan hundredfold with Matthew’s differentiated yields | Cyril comments on the response’s Lukan source, not the appointed Matthean Gospel; no independent early exposition of the Lectionary’s adapted refrain as such is claimed |
+| Romans 8:18–23 | Chrysostom, *Homily 14 on Romans*, direct continuous exposition | Gregory of Nyssa, *Against Eunomius* IV, reuses the unit in a Christological account of angelic/cosmic expectation | Chrysostom and Gregory do not delimit “creation” identically; the appointed unit stops before 8:24–27, and comments beyond it are context |
+| Composed Gospel acclamation | No biblical citation is assigned and no patristic “source” is claimed | Its identification of Christ as sower agrees with Chrysostom and Cyril’s Gospel reception | Explicit exclusion: a composed liturgical unit is not retrofitted with a verse or historical author |
+| Matthew 13:1–9, short Gospel | Chrysostom, *Homily 44 on Matthew*, direct treatment of sower, seed, and public parable | Cyril’s Luke sermon supplies parallel-Synoptic comparison only | Origen’s surviving Greek *Commentary on Matthew* begins its sustained Matthew 13 treatment at 13:36, so it is not cited as direct exposition of the short form |
+| Matthew 13:1–23, long Gospel | Chrysostom, *Homilies 44–45 on Matthew*, direct treatment through the soils’ explanation and differing yields | Cyril’s Lukan account helps distinguish perseverance and the hundredfold response; Origen, *On First Principles* III.1.17, reuses rocky soil for patient divine pedagogy | Origen is doctrinal reuse, not continuous Matthew commentary; Hilary/Jerome/Bede/Rabanus catena leads were not promoted without a checked underlying locus |
+| Psalm 84:4–5, Communion A | Augustine, *Exposition on Psalm* 83.7–8, directly treats sparrow, nest, altars, dwelling, and praise | Heart/flesh and embodied works of mercy form an ecclesial-anagogical reading | His bird allegory is reception, not the Korahite psalm’s historical sense; branch remains unresolved |
+| John 6:57, Communion B | Augustine, *Tractate on John* 26.11–18, and Aquinas, *Commentary on John* 6, lect. 7, direct Johannine reception | Eating, abiding, Christ’s Body, worthy reception, and ecclesial unity | The later Doctor’s conceptual synthesis remains distinct from Augustine’s preaching; branch remains unresolved |
 
-- *Catechism of the Catholic Church* 541–550, already used in the repository’s Luminous Mysteries study, illuminates Christ’s Kingdom disclosed through parables, conversion, signs, and communion.
+### Doctrinal and liturgical controls
+
+- *Catechism of the Catholic Church* 541–550 illuminates Christ’s Kingdom disclosed through parables, conversion, signs, and communion.
 - The repository’s Eucharist treatise and its audited sources govern the limited treatment of John 6 and sacramental abiding; the Communion alternative is not expanded into a substitute Eucharistic treatise.
 - GIRM 46–90 and 352–367 and the *General Introduction to the Lectionary* 65–69, 78–91, and 93–110 govern liturgical function, chant choices, official correlation, and the semi-continuous apostolic course.
 
-No repository-audited direct patristic commentary on Isaiah 55:10–11 or Matthew 13:1–23 was imported. The guide treats them through close canonical exegesis and the official Lectionary relationship rather than an invented reception claim.
+The reader guide distinguishes direct continuous exposition (Chrysostom on Matthew and Romans; Augustine on the Psalms and John), parallel-Gospel reception (Cyril on Luke), and theologically illuminating reuse (Aphrahat on Isaiah). No Father is presented as commenting on the complete Week XV/Year A formula.
 
 ## Claim matrix and controls
 
@@ -79,3 +90,5 @@ The formula, occurrence, branches, reading boundaries, Latin oration identities,
 Civil date, governing editions, territory, and Lectionary identity remain in the terminal Liturgical Resolution appendix and tracked manifest. The compact-title revision received a settled two-pass build with a warning-free final log; generation metadata, PDF structure, embedded fonts, Unicode text, and extraction passed; all 9 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `cdd2f5cd8dd01f381809cff104c0710efff8ce3393eb0f3fe559aeb7611c698e`.
 
 On 2026-07-18, the page-two coordinate revision superseded that production snapshot. It received a settled two-pass build with warning-free logs; metadata, PDF structure, embedded fonts, Unicode, and text extraction passed; all 9 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `2a95e784b46ddf068ecd8a3dac34b4f2cb8730cc36b49ac4505ecd6bfe54a987`. This current snapshot remains in private review pending renewed exact-snapshot authorization.
+
+On 2026-07-18, the final passage-by-passage production snapshot received a settled two-pass build with warning-free logs; metadata, PDF structure, embedded fonts, Unicode, and extraction passed; all 12 pages were visually inspected; and the installed PDF is byte-identical to the reviewed build, SHA-256 `b14b6d9b05ce50c6fade613cbfd779516be31cd50f40d8761e3364727f2deb64`. It remains in private review pending renewed exact-snapshot authorization.
