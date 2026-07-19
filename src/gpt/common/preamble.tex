@@ -62,7 +62,7 @@
 % document leaf and rendered through these shared commands.  The first model
 % contribution renders the timestamp in a canonical provenance block.  A
 % mechanically derived companion has no local contribution, so its timestamp
-% is rendered once by the universal rights page instead.
+% is rendered once by the universal final-page colophon instead.
 \newif\ifAIDocumentRevisionRendered
 \def\AIDocumentRevisionTimestampValue{}
 \makeatletter
@@ -94,39 +94,40 @@
   \end{minipage}\par}
 \newcommand{\AIInheritedGenerationMetadata}[1]{}
 
-% Every detached publication carries the repository's content-license boundary.
-% The license covers only project-created contributions, not incorporated source
-% material whose rights or public-domain status remain independent.
+% Every detached publication carries the repository's content-license boundary
+% as a compact final-page colophon.  It must remain subordinate to the work's
+% terminal content and must not create a rights-only page.  The license covers
+% only project-created contributions, not incorporated source material whose
+% rights or public-domain status remain independent.
+\newif\ifTriptychRightsNoticeRendered
 \newcommand{\TriptychRightsNotice}{%
-  \clearpage
+  \ifTriptychRightsNoticeRendered\else
+  \global\TriptychRightsNoticeRenderedtrue
+  \par
+  % Recover the otherwise unused footer area for this terminal colophon.  The
+  % final page number is suppressed, as it was on the former detached notice,
+  % so the compact block cannot collide with running matter.
+  \enlargethispage{0.58in}%
   \thispagestyle{empty}
-  \null\vfill
+  \vspace{0.35em}%
   \begingroup
-  \centering
-  \begin{minipage}{0.82\linewidth}
-  \small
-  {\large\bfseries Reuse and Rights\par}
-  \medskip
+  \setlength{\parskip}{0pt}%
+  \begin{minipage}{\linewidth}
+  \hrule height 0.35pt
+  \vspace{0.35em}%
+  \fontsize{7}{7.8}\selectfont
   \AIDisplayDocumentRevisionTimestamp
-  \medskip
-  To the extent the project holds the relevant rights, project-created
-  editorial content, annotations, translations, and design are licensed under
-  the
-  \href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons
-  Attribution 4.0 International License}.
-
-  This license does not cover Scripture; liturgical or official texts;
-  received prayers or hymns; quotations; fonts; or other third-party material,
-  which retain their own status. It creates no exclusive rights in
-  public-domain material.
-
-  Changes must be identified. Attribution may identify Triptych as the source,
-  but it does not imply Triptych or ecclesiastical approval. The complete
-  license map and detailed exclusions are recorded in the \texttt{LICENSE} and
-  \texttt{THIRD\_PARTY.md} files distributed with the source.
+  \textbf{Reuse and rights.} To the extent Triptych holds the rights,
+  project-created content and design are licensed under
+  \href{https://creativecommons.org/licenses/by/4.0/}{CC BY 4.0}. Scripture,
+  liturgical or official texts, received prayers or hymns, quotations, fonts,
+  and other third-party material retain their own status; public-domain material
+  remains public domain. Identify changes. Attribution implies neither Triptych
+  nor ecclesiastical approval. See \texttt{LICENSE} and
+  \texttt{THIRD\_PARTY.md} in the source.
   \end{minipage}
   \endgroup
-  \vfill\null
+  \fi
 }
 \AtEndDocument{\TriptychRightsNotice}
 

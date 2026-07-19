@@ -27,6 +27,10 @@
 \input{theology/sacraments/summaries/orders}
 \input{theology/sacraments/summaries/matrimony}
 
+% The final landscape closes with a clear page.  Place the universal colophon
+% inside that page before it ships; its rendered guard suppresses the ordinary
+% end-of-document invocation.
+\newcommand{\churchesInitiationEndHook}{\TriptychRightsNotice}
 \input{theology/sacraments/sections/14-churches-initiation}
 
 \end{document}

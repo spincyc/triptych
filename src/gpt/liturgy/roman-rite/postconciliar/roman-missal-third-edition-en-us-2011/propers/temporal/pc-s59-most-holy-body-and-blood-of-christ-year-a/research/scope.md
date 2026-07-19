@@ -184,3 +184,7 @@ The interpretive-discovery revision received a settled build with a warning-free
 ## 2026-07-18 Notable-and-Quotable Production Record
 
 The final 15-page build is settled and deterministic across two forced root rebuilds. Its warning-free log, generation metadata, qpdf structure, embedded Unicode fonts, text extraction, physical-page-2 boundary, and every-page full-size visual review passed. The installed PDF is byte-identical to the reviewed build, SHA-256 `b349ac3f41d34b5d8d57e66a0cf2c15535863eab796992154262e90447ebe3c7`. This exact snapshot remains in private review pending renewed exact-current-snapshot authorization.
+
+## Compact-rights-colophon production review — 2026-07-19
+
+The settled 14-page PDF, SHA-256 `5cd44532571ed32e34bc5a4581939b3fcbb2515069a20bcbb48f1703597aaf91`, is the exact repository-reviewed build snapshot. The final log was warning-free; generation metadata, `qpdf` structure, PDF title/page metadata, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed their gates. Repository production review inspected every physical page; the compact final-page reuse-and-rights colophon is readable, unclipped, non-overlapping, remains with terminal content, and creates no rights-only spill page. The installed PDF is byte-identical to this reviewed build. This reviewed build supersedes every earlier production snapshot. Because its bytes changed, exact-snapshot distribution approval remains pending.

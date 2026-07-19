@@ -77,7 +77,7 @@ Do not combine unlike formularies, editions, translations, jurisdictions, or unr
 
 Record a local rights statement wherever Scripture, official or liturgical text, a received prayer or hymn, a third-party translation or quotation, OCR, a font, or other external material could be mistaken for project-owned expression. Identify the known author, source, attribution, license, permission, public-domain basis, or legal exception. Age, official status, citation, retrieval, and public availability do not establish permission.
 
-Every publication retains the common compact rights notice. A local notice may add precision but may not weaken the boundary. The Triptych name and visual identity do not convey endorsement, official status, or ecclesiastical approval to a derivative.
+Every publication retains the common rights notice as a compact final-page colophon; it must not force a dedicated page. The colophon contains only the universal license boundary and pointers to `LICENSE` and `THIRD_PARTY.md`. A local notice may add necessary precision but may not weaken or duplicate that boundary. The Triptych name and visual identity do not convey endorsement, official status, or ecclesiastical approval to a derivative.
 
 ## Build and review contract
 
