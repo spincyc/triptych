@@ -1,12 +1,16 @@
 # Public Release Boundary
 
-The current release manifest contains 53 publications: 36 exact PDF snapshots
-are marked `release`, 17 revised proper guides are in `review`, and none is on
-`hold`. The 17 July 2026 supplemental authorization in
+The current release manifest contains 54 publications: 36 exact PDF snapshots
+are marked `release`, 17 revised proper guides and the new Saint Stanislaus
+parish history are in `review`, and none is on `hold`. The parish history's
+internal work-specific distribution review is complete; like the revised
+proper guides, it still requires renewed exact-snapshot authorization. The 17
+July 2026 supplemental authorization in
 `rights/public-alpha-2026-07-15.md` remains the historical exact-byte record for
 the then-current 53 PDFs and 21 artifact-affecting site inputs. It does not
 authorize the 17 later PDF revisions or the catalog bytes changed to describe
-their review status. Public check, build, verification, and deployment
+their review status, nor does it authorize the new parish-history snapshot.
+Public check, build, verification, and deployment
 therefore fail closed until renewed authorization binds the intended current
 PDF and site-input snapshots. The historical authorization record remains
 unchanged.
@@ -126,7 +130,7 @@ python scripts/public-alpha verify --deployment-target github-pages
 `prepare-public-alpha` is read-only and deliberately works when old snapshot
 hashes are stale or the old source-binding list lacks newly recognized inputs.
 It validates the exhaustive publication and current artifact-input scope, then
-reports the current 53 PDF hashes and the hashes of all 21 current Markdown,
+reports the current 54 PDF hashes and the hashes of all 21 current Markdown,
 layout, style, license, generator, and dependency-lock inputs as a deterministic
 candidate inventory. The inventory explicitly confers no approval, changes no
 manifest or rights record, and cannot replace the separate review and recorded

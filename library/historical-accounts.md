@@ -13,6 +13,14 @@ Every installed PDF listed here has passed repository production inspection. His
 | BT-01 | **[The Septuagint: The Making and Afterlife of the Greek Jewish Scriptures](../doc/gpt/history/biblical-translations/01-septuagint.pdf)** | From the translation of the Torah in Ptolemaic Alexandria through the many later Greek books, Jewish revisions, Christian codices, and modern critical editions. Source-audited through 15 July 2026. | [Research scope](../src/gpt/history/biblical-translations/01-septuagint/research/scope.md) · [Source audit](../src/gpt/history/biblical-translations/01-septuagint/research/source-audit.md) · [Evidence map](../src/gpt/history/biblical-translations/01-septuagint/research/evidence-map.md) |
 | BT-02 | **[The Vulgate: Jerome's Work and the Making of the Latin Bible](../doc/gpt/history/biblical-translations/02-vulgate.pdf)** | From Old Latin plurality and Jerome's several projects through mixed medieval transmission, print, Trent, the Roman editions, modern critical texts, and the Nova Vulgata. Source-audited through 15 July 2026. | [Research scope](../src/gpt/history/biblical-translations/02-vulgate/research/scope.md) · [Source audit](../src/gpt/history/biblical-translations/02-vulgate/research/source-audit.md) · [Evidence map](../src/gpt/history/biblical-translations/02-vulgate/research/evidence-map.md) |
 
+## Catholic Parish Histories
+
+These local histories join immigrant, institutional, architectural, liturgical, and neighborhood evidence without treating a building, a juridic parish, and a worshipping community as interchangeable.
+
+| ID | Historical account | Scope and status | Supporting records |
+| --- | --- | --- | --- |
+| CPH-01 | **[Saint Stanislaus in Milwaukee: A Polish Immigrant Parish Built, Imperiled, and Restored](../doc/gpt/history/catholic-parish-histories/01-st-stanislaus-milwaukee.pdf)** | From Polish organizing reported by 1863 and formal establishment in 1866 through successive church and school campaigns, daughter parishes, urban and demographic decline, the distinct post-2007 parish–oratory arrangement, restoration, and active regional use at 19 July 2026. Source-audited; independent historical, architectural, theological, liturgical, canon-law, and rights review outstanding. | [Research scope](../src/gpt/history/catholic-parish-histories/01-st-stanislaus-milwaukee/research/scope.md) · [Source audit](../src/gpt/history/catholic-parish-histories/01-st-stanislaus-milwaukee/research/source-audit.md) · [Evidence map](../src/gpt/history/catholic-parish-histories/01-st-stanislaus-milwaukee/research/evidence-map.md) |
+
 ## Traditional Priestly Institutes
 
 “Traditional Priestly Institutes” is a bibliographic series label for connected institutional histories, not a uniform canonical classification. Each volume identifies its subject's actual juridical condition at the stated date and separates institutional history from legal or theological adjudication.
