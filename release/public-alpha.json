@@ -3,9 +3,9 @@
   "release_id": "public-alpha",
   "provider": "gpt",
   "expected_counts": {
-    "publications": 53,
+    "publications": 54,
     "release": 36,
-    "review": 17,
+    "review": 18,
     "hold": 0
   },
   "gates": {
@@ -214,6 +214,15 @@
         "authorization": "perpetual-public-repository-2026",
         "pdf_sha256": "ab2258c8a3da94a404dde404c399aa48d14cf2b508281cca390e4d3618c5b01c"
       }
+    },
+    {
+      "id": "history/catholic-parish-histories/01-st-stanislaus-milwaukee",
+      "catalog": "library/historical-accounts.md",
+      "status": "review",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "history/traditional-priestly-institutes/01-sspx",
