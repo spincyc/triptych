@@ -1,0 +1,57 @@
+\input{common/preamble}
+\input{biographies/shared/biography-format}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\hypersetup{
+  pdftitle={Origen: Scripture, School, and the Long Trial of a Teacher},
+  pdfsubject={A source-first historical biography of Origen of Alexandria}
+}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+  \thispagestyle{empty}
+  \centering
+  \vspace*{0.11\textheight}
+  {\Huge\bfseries Origen\par}
+  \vspace{0.8em}
+  {\Large Scripture, School, and the Long Trial of a Teacher\par}
+  \vspace{1.8em}
+  {\large A source-first historical biography\par}
+  \vfill
+  {\small Triptych: AI Driven Studies in Catholic Faith, Worship, and Law\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+\pagenumbering{arabic}
+\hypersetup{pageanchor=true}
+
+\begin{deepstudy}
+\input{biographies/origen/sections/00-opening}
+\input{biographies/origen/sections/10-alexandria-and-martyr-household}
+\input{biographies/origen/sections/20-teaching-asceticism-and-school}
+\input{biographies/origen/sections/30-travel-ordination-and-rupture}
+\input{biographies/origen/sections/40-caesarea-workshop-and-churches}
+\input{biographies/origen/sections/50-confession-death-and-absence}
+\input{biographies/origen/sections/60-books-and-their-survival}
+\input{biographies/origen/sections/70-scripture-theology-and-open-questions}
+\input{biographies/origen/sections/80-relationships-debate-and-cost}
+\input{biographies/origen/sections/90-origen-after-origen}
+\input{biographies/origen/sections/100-tradition-under-review}
+\input{biographies/origen/sections/110-synthesis}
+\appendix
+\input{biographies/origen/sections/120-scope-chronology-evidence}
+\input{biographies/origen/sections/130-references}
+\section{Generation Metadata}
+\input{biographies/origen/generation-metadata}
+\end{deepstudy}
+
+\end{document}

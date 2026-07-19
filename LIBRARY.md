@@ -18,11 +18,13 @@ Choose a section, then choose a title to open its PDF. Each publication has one 
 
 Every PDF is a working study, not an approved Church publication. No current publication records independent specialist review. “Source-audited” means the project has checked and recorded its sources; it does not mean independent theological, canonical, historical, or pastoral review.
 
-The release manifest currently marks 36 exact PDF snapshots for distribution
-and places 17 revised proper guides in private review pending renewed
-exact-snapshot authorization. Exact-snapshot status applies only to the
-recorded hashes; it does not complete an editorial profile, supply independent
-review, or imply an imprimatur or other ecclesiastical approval. The La Salette
+The release manifest currently marks 36 exact PDF snapshots for distribution,
+places 18 snapshots—the 17 revised proper guides and the Saint Stanislaus parish
+history—in private review, and holds the new Origen biography from both public
+distribution and private preview pending a work-specific rights review.
+Exact-snapshot status applies only to the recorded hashes; it does not complete
+an editorial profile, supply independent review, or imply an imprimatur or other
+ecclesiastical approval. The La Salette
 snapshot directly analyzes and paraphrases the secret addressed by the Holy
 Office decree published at *AAS*
 7 (1915) 594. The present force of that decree's standalone non-penal command

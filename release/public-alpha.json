@@ -3,10 +3,10 @@
   "release_id": "public-alpha",
   "provider": "gpt",
   "expected_counts": {
-    "publications": 54,
+    "publications": 55,
     "release": 36,
     "review": 18,
-    "hold": 0
+    "hold": 1
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
@@ -114,6 +114,15 @@
         "authorization": "perpetual-public-repository-2026",
         "pdf_sha256": "121204bfc9f321967602fc8c32aea91e638e178f157fc4832a64764ff117191f"
       }
+    },
+    {
+      "id": "biographies/origen",
+      "catalog": "library/biographies.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review"
+      ],
+      "approval": null
     },
     {
       "id": "biographies/saint-augustine-of-hippo",
