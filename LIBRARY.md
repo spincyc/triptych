@@ -20,8 +20,9 @@ Every PDF is a working study, not an approved Church publication. No current pub
 
 The release manifest currently marks 36 exact PDF snapshots for distribution,
 places 18 snapshots—the 17 revised proper guides and the Saint Stanislaus parish
-history—in private review, and holds the new Origen biography from both public
-distribution and private preview pending a work-specific rights review.
+history—in private review, and holds the new Origen and Tertullian biographies
+from both public distribution and private preview pending work-specific rights
+reviews.
 Exact-snapshot status applies only to the recorded hashes; it does not complete
 an editorial profile, supply independent review, or imply an imprimatur or other
 ecclesiastical approval. The La Salette
