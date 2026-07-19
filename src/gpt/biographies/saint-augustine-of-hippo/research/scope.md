@@ -170,12 +170,16 @@ No copyrighted corpus, scan, or substantial modern quotation is vendored.
 - independent rights review; and
 - ecclesiastical approval.
 
-The installed PDF's exact snapshot has distribution clearance in the release
-manifest and its dated rights record. That snapshot-specific operational
-decision does not complete any independent rights or specialist review and is
-not ecclesiastical approval.
+The PDF snapshot installed before the 2026-07-19 final-typography revision had
+distribution clearance in the release manifest and its dated rights record.
+That historical snapshot-specific operational decision did not complete any
+independent rights or specialist review and was not ecclesiastical approval.
+Fresh exact-snapshot distribution authorization for the current installed bytes
+remains pending.
 
 The completed production checks are internal and do not imply independent
 historical, theological, rights, or ecclesiastical review.
 
-Reader-order revision and production review (2026-07-17): scope, chronology conventions, evidence key, orientation, and detailed chronology now form one terminal `Scope, Chronology, and Evidence` appendix before references. Two settled `pdflatex` passes produced a 20-page PDF; the final log is warning-free, and metadata, PDF structure, embedded and subset fonts, and extracted text passed inspection. Every rendered page was visually reviewed, and the installed PDF is byte-identical to the reviewed build, SHA-256 `1671f5f1cba74a59285c6a3c140225acc5148b1f1a34f4e86406dc1206b73686`.
+Reader-order revision and production review (2026-07-17): scope, chronology conventions, evidence key, orientation, and detailed chronology now form one terminal `Scope, Chronology, and Evidence` appendix before references. Two settled `pdflatex` passes produced a 20-page PDF; the final log is warning-free, and metadata, PDF structure, embedded and subset fonts, and extracted text passed inspection. Every rendered page was visually reviewed, and the installed PDF was byte-identical to the reviewed build, SHA-256 `1671f5f1cba74a59285c6a3c140225acc5148b1f1a34f4e86406dc1206b73686`. That snapshot is superseded.
+
+Final-typography production review completed on 2026-07-19: a settled two-pass build produced the current 20-page PDF, SHA-256 `080b96814ecf9569ca8b91ac119f4d09f49446a300256dbcd6519793987b0ddb`. The warning-free final log, `qpdf`, PDF title and page metadata, embedded/subsetted/Unicode-mapped fonts, and nonempty text extraction passed. Every rendered page was visually reviewed, and the installed PDF is byte-identical to the reviewed build. These internal production checks do not imply independent historical, theological, rights, or ecclesiastical review.

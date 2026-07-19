@@ -9,6 +9,9 @@
 }
 \setcounter{tocdepth}{3}
 \setlength{\emergencystretch}{3em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
 
 \titleformat{\section}
   {\Large\bfseries}{\thesection}{0.55em}{}
@@ -28,12 +31,12 @@
   \end{studyframe}}
 
 \newcommand{\virtuedossier}[7]{%
-  \sectionguard
+  \Needspace{20\baselineskip}%
   \subsection{#1}
   \virtuedossierbody{#2}{#3}{#4}{#5}{#6}{#7}}
 
 \newcommand{\cardinaldossier}[7]{%
-  \sectionguard
+  \Needspace{20\baselineskip}%
   \subsubsection{#1}
   \virtuedossierbody{#2}{#3}{#4}{#5}{#6}{#7}}
 
