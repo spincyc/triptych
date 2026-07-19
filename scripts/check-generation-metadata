@@ -86,6 +86,16 @@ def parse_record(path: Path) -> Record:
         raise ValueError("mixes inherited and local generation provenance")
     if not inheritances and not contributions:
         raise ValueError("requires at least one model contribution")
+    if len(set(contributions)) != len(contributions):
+        raise ValueError("contains an exact duplicate model contribution")
+    seen_identities: set[tuple[str, str]] = set()
+    previous_identity: tuple[str, str] | None = None
+    for contribution in contributions:
+        identity = (contribution.model, contribution.qualifiers)
+        if identity != previous_identity and identity in seen_identities:
+            raise ValueError("repeats a noncontiguous model and qualifier group")
+        seen_identities.add(identity)
+        previous_identity = identity
     if residue.strip():
         raise ValueError("contains text outside the structured provenance commands")
 
@@ -220,11 +230,13 @@ def validate_rendered_record(path: Path, record: Record) -> None:
         return
 
     expected = [revision_field]
+    previous_identity: tuple[str, str] | None = None
     for contribution in record.contributions:
-        expected.extend([
-            f"Model: {contribution.model}; {contribution.qualifiers}",
-            f"Agent/runtime: {contribution.runtime}",
-        ])
+        identity = (contribution.model, contribution.qualifiers)
+        if identity != previous_identity:
+            expected.append(f"Model: {contribution.model}; {contribution.qualifiers}")
+            previous_identity = identity
+        expected.append(f"Agent/runtime: {contribution.runtime}")
     normalized_expected = [normalize(value) for value in expected]
     for value, count in Counter(normalized_expected).items():
         if rendered.count(value) != count:

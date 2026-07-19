@@ -82,16 +82,33 @@
     \textbf{Last revised (UTC):} \AIDocumentRevisionTimestampValue\\
     \global\AIDocumentRevisionRenderedtrue
   \fi}
+\makeatletter
+\let\AI@lastmodel\relax
+\let\AI@lastqualifiers\relax
+\newif\ifAI@rendermodel
 \newcommand{\AIModelContribution}[3]{%
+  \begingroup
+  \edef\AI@currentmodel{\detokenize{#1}}%
+  \edef\AI@currentqualifiers{\detokenize{#2}}%
+  \AI@rendermodeltrue
+  \ifx\AI@currentmodel\AI@lastmodel
+    \ifx\AI@currentqualifiers\AI@lastqualifiers
+      \AI@rendermodelfalse
+    \fi
+  \fi
+  \global\let\AI@lastmodel\AI@currentmodel
+  \global\let\AI@lastqualifiers\AI@currentqualifiers
   \par\noindent
   \begin{minipage}{\linewidth}
-  \begingroup
   \exhyphenpenalty=10000
   \AIDisplayDocumentRevisionTimestamp
-  \textbf{Model:} \texttt{#1}; \texttt{#2}\\
+  \ifAI@rendermodel
+    \textbf{Model:} \texttt{#1}; \texttt{#2}\\
+  \fi
   \textbf{Agent/runtime:} #3\par
-  \endgroup
-  \end{minipage}\par}
+  \end{minipage}\par
+  \endgroup}
+\makeatother
 \newcommand{\AIInheritedGenerationMetadata}[1]{}
 
 % Every detached publication carries the repository's content-license boundary
