@@ -104,7 +104,7 @@ The checked guide corpus was searched again on 2026-07-18, with targeted New Adv
 
 - Surveyed accessible NPNF/ANF and New Advent collections, the Ambrose Latin text, Cyril’s Payne Smith translation, public facsimiles and OCR, and targeted Latin and English source searches.
 - No secure direct patristic commentary was located for the Collect, Secret, or Postcommunion. The orations are therefore handled through verified grammar, close doctrinal illumination, and explicit source-role labels.
-- The survey does not exhaust manuscripts, untranslated works, subscription databases, or modern critical scholarship. Older public-domain translations are working texts.
+- The survey does not exhaust manuscripts, untranslated works, subscription databases, or modern critical scholarship. Older translations from source editions in the public domain in the United States are working texts; no worldwide status is asserted.
 - Sources were retained because they establish or materially qualify claims made in the guide; no numerical or source-category quota was applied.
 - Historical-orientation introductions and traditional-attribution links were accessed 2026-07-10. The complete direct biblical contexts and retained exegetical and doctrinal sources used in the reevaluation were rechecked or accessed 2026-07-14.
 
@@ -115,3 +115,18 @@ The settled two-pass build produced warning-free logs; generation metadata, PDF 
 ## 2026-07-18 Interpretive-Discovery Production Record
 
 The settled two-pass build produced a warning-free log and passed generation-metadata validation, `qpdf` structural validation, embedded-font inspection, UTF-8 text extraction, page-count verification, SHA-256 verification, and build/install byte-identity verification. All 11 pages of this exact snapshot were visually inspected. The reviewed and installed PDF is 11 pages, SHA-256 `3028bb4558ada1937629c4d2251b17677cce8dcca34ce5a81245ab79a87c70a8`, and the installed PDF is byte-identical to the reviewed build. Private-review status remains pending renewed exact-snapshot authorization.
+
+## Notable-and-quotable audit
+
+Four entries were retained: one appointed Latin line and three direct patristic receptions. Every excerpt is exact and 25 words or fewer.
+
+| Item | Source and locus | Exact-wording / word-count check | Translation and rights | Payoff and context limit | Public verification |
+| --- | --- | --- | --- | --- | --- |
+| Appointed Gospel — Christ | Luke 5:4; *Missale Romanum* (1962), pp. 382–383 | `Duc in altum, et laxáte rétia vestra in captúram.` — 9 words; collated to the page image and `propers/verified.md` | Edition-identified ancient liturgical Latin; brief excerpt; no public-domain or broader redistribution status claimed | Obedience redirects failed labor, but the catch is Christ's gift rather than a success guarantee | [Missal facsimile](https://media.churchmusicassociation.org/pdf/missale62.pdf), rechecked 2026-07-18 |
+| St. Cyril of Alexandria | *Commentary on Luke*, Sermon 12, Luke 5:2–8; Payne Smith, p. 74 | `For still is the net drawn, while Christ fills it, and summons unto conversion those in the depths of the sea.` — 21 words; exact against the displayed text | R. Payne Smith translation (1859), public domain in the United States; no worldwide status asserted | Christ's continuing action grounds mission; typology supplies no numerical forecast | [Public translation](https://www.tertullian.org/fathers/cyril_on_luke_02_sermons_12_25.htm), accessed 2026-07-18 |
+| St. John Chrysostom | *Homily 14 on Romans*, Romans 8:19–20 | `The creation itself is in the midst of its pangs, waiting for and expecting these good things` — 17 words; exact continuous excerpt | Walker, Sheppard, and Browne translation, revised G. B. Stevens, NPNF1 11 (1889), public domain in the United States; no worldwide status asserted | Cosmic expectation is made audible without making pain good or creation literally psychological | [NPNF text](https://www.newadvent.org/fathers/210214.htm), accessed 2026-07-18 |
+| St. Augustine | *Exposition on Psalm 27* §1, on Vulgate Psalm 26 | `The Lord will give me both knowledge of Himself, and salvation: who shall take me from Him?` — 17 words; exact against the displayed text | Uncredited English translation, NPNF1 8 (1888), public domain in the United States; no worldwide status asserted | Light and salvation are received gifts; the sentence remains within Augustine's Christ's-young-soldier reading | [NPNF text](https://www.newadvent.org/fathers/1801027.htm), accessed 2026-07-18 |
+
+## 2026-07-18 Notable-and-Quotable Production Record
+
+The final 12-page build is settled and deterministic across two forced root rebuilds. Its warning-free log, generation metadata, qpdf structure, embedded Unicode fonts, text extraction, physical-page-2 boundary, and every-page full-size visual review passed. The installed PDF is byte-identical to the reviewed build, SHA-256 `cc55659477ea422a91fd40b812309157787c28acb220edfd568e666ea7abdae5`. This exact snapshot remains in private review pending renewed exact-current-snapshot authorization.

@@ -82,7 +82,7 @@ The checked guide corpus was searched again on 2026-07-18, with targeted New Adv
 
 - Surveyed accessible ANF/NPNF and CCEL collections, New Advent texts, Jerome and the Ambrosian *De sacramentis* in Latin, the *Catena Aurea* as a lead index, and targeted Latin and English web searches.
 - No secure direct patristic commentary was located for the Collect, the exact Offertory verse Daniel 3:40, the Secret, or the Postcommunion.
-- The survey does not exhaust manuscripts, untranslated works, subscription databases, or modern critical scholarship. Older public-domain translations are working texts.
+- The survey does not exhaust manuscripts, untranslated works, subscription databases, or modern critical scholarship. Older translations from source editions in the public domain in the United States are working texts; no worldwide status is asserted.
 - Sources were retained because they establish or materially qualify claims made in the guide; no numerical or source-category quota was applied.
 
 ## 2026-07-18 Final Production Record
@@ -92,3 +92,18 @@ The settled two-pass build produced warning-free logs; generation metadata, PDF 
 ## 2026-07-18 Interpretive-Discovery Production Record
 
 The settled two-pass build produced a warning-free log and passed generation-metadata validation, `qpdf` structural validation, embedded-font inspection, UTF-8 text extraction, page-count verification, SHA-256 verification, and build/install byte-identity verification. All 12 pages of this exact snapshot were visually inspected. The reviewed and installed PDF is 12 pages, SHA-256 `6635f6007245f674dca9d905019625021f8bbaf5681be092423a75fba0f78925`, and the installed PDF is byte-identical to the reviewed build. Private-review status remains pending renewed exact-snapshot authorization.
+
+## Notable-and-quotable audit
+
+Four entries were retained: one appointed Latin line and three direct patristic receptions. Every excerpt is exact and 25 words or fewer.
+
+| Item | Source and locus | Exact-wording / word-count check | Translation and rights | Payoff and context limit | Public verification |
+| --- | --- | --- | --- | --- | --- |
+| Appointed Introit and Alleluia — the psalmist | Vulgate Psalm 46:2; *Missale Romanum* (1962), pp. 386–387 | `Omnes gentes, pláudite mánibus: iubiláte Deo in voce exsultatiónis.` — 9 words; collated to both appointments and `propers/verified.md` | Edition-identified ancient liturgical Latin; brief excerpt; no public-domain or broader redistribution status claimed | Hands and voice answer one summons; gesture alone proves no holiness | [Missal facsimile](https://media.churchmusicassociation.org/pdf/missale62.pdf), rechecked 2026-07-18 |
+| St. John Chrysostom | *Homily 23 on Matthew* §8, Matthew 7:15–20 | `For he may indeed change to virtue, being evil; but while continuing in wickedness, he will not bear good fruit.` — 20 words; exact against the displayed text | George Prevost translation, revised M. B. Riddle, NPNF1 10 (1888), public domain in the United States; no worldwide status asserted | Fruit tests present persistence in evil without declaring conversion impossible | [NPNF text](https://www.newadvent.org/fathers/200123.htm), accessed 2026-07-18 |
+| St. Augustine | *On the Sermon on the Mount* II.24.79 | `If an evil man, therefore, wishes to perform good works, let him first become good.` — 15 words; exact against the displayed text | William Findlay translation, NPNF1 6 (1888), public domain in the United States; no worldwide status asserted | Discernment reaches conversion rather than outputs; hidden hearts remain beyond private certainty | [NPNF text](https://www.newadvent.org/fathers/16012.htm), accessed 2026-07-18 |
+| St. Augustine | *Exposition on Psalm 47* §2, on Vulgate Psalm 46 | `Agree together must the hands and tongue. Let this confess, these work.` — 12 words; exact against the displayed text | J. E. Tweed translation, NPNF1 8 (1888), public domain in the United States; no worldwide status asserted | Confession and action belong together; the figure does not make gestures unambiguous | [NPNF text](https://www.newadvent.org/fathers/1801047.htm), accessed 2026-07-18 |
+
+## 2026-07-18 Notable-and-Quotable Production Record
+
+The final 13-page build is settled and deterministic across two forced root rebuilds. Its warning-free log, generation metadata, qpdf structure, embedded Unicode fonts, text extraction, physical-page-2 boundary, and every-page full-size visual review passed. The installed PDF is byte-identical to the reviewed build, SHA-256 `45b56a83050efc847211b9b61f38970e326cc8a062588001df7f64e47070f3f3`. This exact snapshot remains in private review pending renewed exact-current-snapshot authorization.

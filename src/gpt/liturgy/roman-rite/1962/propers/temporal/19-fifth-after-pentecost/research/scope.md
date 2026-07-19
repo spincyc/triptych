@@ -103,3 +103,18 @@ The settled two-pass build produced warning-free logs; generation metadata, PDF 
 ## 2026-07-18 Interpretive-Discovery Production Record
 
 The settled two-pass build produced a warning-free log and passed generation-metadata validation, `qpdf` structural validation, embedded-font inspection, UTF-8 text extraction, page-count verification, SHA-256 verification, and build/install byte-identity verification. All 13 pages of this exact snapshot were visually inspected. The reviewed and installed PDF is 13 pages, SHA-256 `5c3cca309224465865bbfee0603e82fbe1a6fe90c90d6f2e720dbc03586b4c0b`, and the installed PDF is byte-identical to the reviewed build. Private-review status remains pending renewed exact-snapshot authorization.
+
+## Notable-and-quotable audit
+
+Four entries were retained: one appointed Latin line and three direct patristic receptions. Every excerpt is exact and 25 words or fewer.
+
+| Item | Source and locus | Exact-wording / word-count check | Translation and rights | Payoff and context limit | Public verification |
+| --- | --- | --- | --- | --- | --- |
+| Appointed Gospel — Christ | Matthew 5:24; *Missale Romanum* (1962), pp. 383–384 | `relínque ibi munus tuum ante altáre, et vade prius reconciliári fratri tuo:` — 12 words; collated to the page image and `propers/verified.md` | Edition-identified ancient liturgical Latin; brief excerpt; no public-domain or broader redistribution status claimed | Reconciliation can interrupt offering; the command does not equalize guilt or override safety | [Missal facsimile](https://media.churchmusicassociation.org/pdf/missale62.pdf), rechecked 2026-07-18 |
+| St. John Chrysostom | *Homily 16 on Matthew* §12 | `Let my service be interrupted, that your love may continue; since this also is a sacrifice, your being reconciled to your brother.` — 22 words; exact against the displayed text | George Prevost translation, revised M. B. Riddle, NPNF1 10 (1888), public domain in the United States; no worldwide status asserted | Altar service and charity cannot be opposed; urgency does not make grievances symmetrical | [NPNF text](https://www.newadvent.org/fathers/200116.htm), accessed 2026-07-18 |
+| St. Augustine | *On the Sermon on the Mount* I.10.26 | `much less is it lawful so to retain anything in one's mind, as that indignation may be turned into hatred.` — 20 words; exact against the displayed text | William Findlay translation, NPNF1 6 (1888), public domain in the United States; no worldwide status asserted | Retained indignation can mature into hatred; inward diagnosis does not replace external justice or repair | [NPNF text](https://www.newadvent.org/fathers/16011.htm), accessed 2026-07-18 |
+| St. Augustine | *Exposition on Psalm 27* §7, on Vulgate Psalm 26 | `Hear, Lord, my interior voice, which with a strong intention I have addressed to Your ears.` — 16 words; exact against the displayed text | Uncredited English translation, NPNF1 8 (1888), public domain in the United States; no worldwide status asserted | The Introit's cry becomes concentrated interior prayer without ceasing to be ecclesial | [NPNF text](https://www.newadvent.org/fathers/1801027.htm), accessed 2026-07-18 |
+
+## 2026-07-18 Notable-and-Quotable Production Record
+
+The final 14-page build is settled and deterministic across two forced root rebuilds. Its warning-free log, generation metadata, qpdf structure, embedded Unicode fonts, text extraction, physical-page-2 boundary, and every-page full-size visual review passed. The installed PDF is byte-identical to the reviewed build, SHA-256 `d43b642a2a241ed8c0afa388203fdbe9a9b5cf9643163789894d094a949d0730`. This exact snapshot remains in private review pending renewed exact-current-snapshot authorization.

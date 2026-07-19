@@ -140,6 +140,17 @@ The reader-facing section marks all five proposals as exploratory AI-assisted sy
 
 The targeted audit was performed on 2026-07-18 through Vatican, New Advent, and Aquinas corpora, using combinations of the exact appointed passages, liturgical elements, and each proposed connecting term. Negative results are bounded to those checked corpora and queries: they mean only that the exact mechanism was not located there, not that no historical theologian, saint, preacher, or scholar has ever proposed it.
 
+## Notable-and-quotable audit
+
+All wording was checked on 2026-07-18. The excerpts are short, source-identified, and remain below the profile's 25-word ceiling. The New Advent pages are current editorial wrappers; the cited nineteenth-century translations beneath them are public-domain source editions in the United States, no worldwide status is asserted, and the audit does not treat the wrapper as public domain.
+
+| Item | Source and locus | Wording / edition / rights check | Interpretive payoff | Context limit |
+| --- | --- | --- | --- | --- |
+| The Lord — First Reading | Holy See, [*Nova Vulgata*, Exodus 34:6](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_vt_exodus_lt.html) | Exact twelve-word Latin excerpt checked against the Holy See text; no translation; brief quotation from the official edition, with no public-domain or broader redistribution status claimed | The cadence keeps patience, abundant mercy, and truth within one self-proclamation | The excerpt does not reproduce verse 7 or settle every translation of the Hebrew attributes |
+| Cyril on Exodus | St. Cyril of Jerusalem, [*Catechetical Lecture* X.8](https://www.newadvent.org/fathers/310110.htm) | Exact sixteen-word excerpt; E. H. Gifford translation, NPNF2 7 (1894), in New Advent's current revised wrapper | A direct fourth-century reception line demonstrates how Exodus 34 entered Trinitarian catechesis | Cyril's Christological reading is reception, not a claim about Exodus's compositional intent or an exhaustive account of the Trinity |
+| Chrysostom on Paul's blessing | St. John Chrysostom, [*Homily 30 on 2 Corinthians* §3](https://www.newadvent.org/fathers/220230.htm) | Exact eight-word excerpt; T. W. Chambers translation, NPNF1 12 (1889), in New Advent's current revised wrapper | The sentence memorably refuses to divide the divine gifts among three independent agents | Chrysostom immediately adds that he does not confound the Persons; the excerpt must retain that control |
+| Augustine on John 3:17 | St. Augustine, [*Tractate 12 on John* §12](https://www.newadvent.org/fathers/1701012.htm) | Exact sixteen-word excerpt; John Gibb translation, NPNF1 7 (1888), in New Advent's current revised wrapper | The physician image compresses the saving purpose of the Son's mission | Augustine's following sentences retain refusal, self-judgment, and the reality of judgment |
+
 ## Rights, negative results, and unresolved work
 
 - The USCCB Lectionary page and the current English Missal and antiphons are protected CCD/ICEL liturgical material. The PDF cites boundaries and uses only short cues; it does not reproduce readings, prayers, or complete antiphons.
@@ -169,3 +180,7 @@ On 2026-07-18, the final passage-by-passage production snapshot received a settl
 ## 2026-07-18 Interpretive-Discovery Production Record
 
 The interpretive-discovery revision received a settled build with a warning-free final log. Metadata and Unicode checks, qpdf structure, embedded fonts, and text extraction passed; all 14 full-size pages were visually inspected. The explicitly installed mirror is byte-identical to the reviewed build, SHA-256 `3e6d7fdb3837be7f37519614983b0e70c24820a5d5a27dea1102f9420288ca22`. This exact snapshot remains in private review pending renewed exact-snapshot authorization.
+
+## 2026-07-18 Notable-and-Quotable Production Record
+
+The final 15-page build is settled and deterministic across two forced root rebuilds. Its warning-free log, generation metadata, qpdf structure, embedded Unicode fonts, text extraction, physical-page-2 boundary, and every-page full-size visual review passed. The installed PDF is byte-identical to the reviewed build, SHA-256 `c8951bc9df3a08ae01f73d2db23fb0d014b39e7f8a3f0ddf207a2a6223912f86`. This exact snapshot remains in private review pending renewed exact-current-snapshot authorization.

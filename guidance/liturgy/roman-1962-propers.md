@@ -62,11 +62,12 @@ Use this fixed macro-order:
 2. Page 2: `Scriptural Date and Location`
 3. `The Propers: Themes and Movement`
 4. `The Propers: Detailed Commentary`
-5. `The Propers: Interpretive Possibilities`
-6. `Sacramental Appendix` when required
-7. `Appendix: Scope and Qualifications`
-8. `References`
-9. `Generation Metadata`
+5. `The Propers: Notable and Quotable`
+6. `The Propers: Interpretive Possibilities`
+7. `Sacramental Appendix` when required
+8. `Appendix: Scope and Qualifications`
+9. `References`
+10. `Generation Metadata`
 
 The page-2 sheet is the sole exception to terminal historical apparatus. Do not front-load any other chronology, status panel, research boundary, date range, source survey, or general qualification. Put work-wide bounds and qualifications in the terminal appendices. Keep a qualification beside a claim only when it materially changes that claim.
 
@@ -89,6 +90,10 @@ For each passage, distinguish traditional attribution from historical judgment a
 `The Propers: Themes and Movement` begins on page 3, immediately after the page-2 sheet, and occupies exactly two readable pages. `The Propers: Detailed Commentary` therefore begins on page 5. Open the thematic section with a one- or two-sentence thesis and, when useful, one orienting form of no more than four primary stages. Use three to five functional units that account for every appointed element and let a signpost-only scan recover the thesis, movement, decisive evidence, and principal limits. This section contains only source-grounded claims.
 
 `The Propers: Detailed Commentary` supplies the exegesis, textual comparison, reception, doctrinal distinctions, disagreement, and claim-local qualifications that prove and refine the synthesis. Treat every appointed scriptural passage and every composed proper substantively. For Scripture, move from complete canonical context through direct patristic exegesis to later saintly reception, explaining each witness's actual interpretive move and comparing real differences or developments. For composed texts, distinguish verbal echo, doctrinal illumination, and documented liturgical reception. Give each substantial claim one fullest home; remove repeated quotations, recaps, thin subsections, name lists, and stretched links.
+
+`The Propers: Notable and Quotable` is a required compact gallery after the detailed commentary and before exploratory proposals. Give three to five entries, each built around a verified exact excerpt of no more than 25 words and followed by one concise explanation of why the wording is memorable, precise, surprising, or spiritually useful here. Include at least one phrase from an appointed text in its verified Latin or an identified public-domain translation and at least two lines from direct patristic or saintly reception of appointed passages. Name the appointed unit, speaker or author, work, exact locus, and translation or edition. Preserve enough context to prevent aphoristic distortion; do not repeat the detailed commentary.
+
+A documented literary, institutional, visual, or musical afterlife may replace one reception entry only when it materially interprets, redirects, or contests the appointed wording. Merely naming a motet, song, motto, or setting does not qualify. Verify wording and context in the primary work or a reliable edition, keep protected excerpts brief, and record a `Notable-and-quotable audit` in `research/scope.md` with the source, locus, wording check, translation and rights status, interpretive payoff, and context limit. Quote aggregators and unverified attribution sites are leads only.
 
 `The Propers: Interpretive Possibilities` is a required discovery section, not a recap. Begin with one compact notice identifying its contents as exploratory editorial or AI proposals, not sourced historical intent or attributed teaching. Give four to six substantial proposals. Each must join at least two precisely named appointed elements; state the connecting mechanism and the theological, intellectual, spiritual, or pastoral fruit; identify what the ordinary element-by-element reading misses; and end with the strongest material limit, alternative, or disconfirming condition. Prefer non-obvious multi-step relations across different ritual moments, literary units, images, verbs, temporal movements, or sacramental actions. Reject generic applications, decorative symbolism, numerology without textual control, and restatements of the detailed commentary.
 
@@ -119,6 +124,7 @@ Before publication, verify that:
 - every published Latin form has been visually collated against the identified facsimile and every appointed element contributes to the map, synthesis, and substantive commentary;
 - every direct biblical passage has complete-context research and one historically qualified page-2 dossier, with composition, narrated event, audience, geography, chronology, tradition, and modern judgment kept distinct;
 - the research scope has a complete passage-by-passage reception matrix, the major relevant Greek and Latin patristic and later saintly corpora have been searched within stated bounds, every located witness is checked at its work and locus, direct exegesis is distinguished from illuminating reuse, and material negative results are recorded;
+- the notable-and-quotable section has three to five context-faithful, source- and locus-identified excerpts, including an appointed line and at least two direct reception lines; its scope audit records wording, translation, rights, payoff, and limits, and no bare cultural or musical setting pads the section;
 - the interpretive section contains four to six non-recapitulatory, multi-element proposals and the research scope records each proposal's anchors, mechanism, targeted precedent result, fruit, and strongest limit without claiming universal novelty;
 - every attribution and historical, doctrinal, or reception claim has an exact source and locus, while source-grounded synthesis and exploratory proposal remain visibly distinct;
 - the guide follows the fixed reader order, keeps the complete date/location sheet alone on physical page 2, begins its two-page thematic movement on page 3 and detailed commentary on page 5, and places all other work-wide bounds, source limits, rights, review status, and qualifications only in the terminal apparatus;

@@ -113,3 +113,18 @@ On 2026-07-18, the final passage-by-passage production snapshot received a settl
 ## 2026-07-18 Interpretive-Discovery Production Record
 
 The interpretive-discovery revision received a settled build with a warning-free final log. Metadata and Unicode checks, qpdf structure, embedded fonts, and text extraction passed; all 11 full-size pages were visually inspected. The explicitly installed mirror is byte-identical to the reviewed build, SHA-256 `20e664915cc3e11664d6d0fd6a67a74d2891d2bab2024c1aa023ed1c4c4fa95f`. This exact snapshot remains in private review pending renewed exact-snapshot authorization.
+
+## Notable-and-quotable audit
+
+Wording and online witnesses were rechecked 2026-07-18. Excerpts are 25 words or fewer; rights statements describe only the wording used, not whole-site licensing.
+
+| Item | Source and locus | Wording check | Translation / rights | Payoff | Context control | Online witness |
+|---|---|---|---|---|---|---|
+| Appointed line; Jeremiah | *Nova Vulgata*, Jer 20:11, editio typica altera (1986) | “Dominus autem mecum est quasi bellator fortis;” 7 words; exact official Latin | Official Latin; short excerpt only; no public-domain claim | Courage located in God's presence | Military image promises neither immunity nor retaliation | [Holy See, Jeremiah](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_vt_ieremiae_lt.html), accessed 2026-07-18 |
+| Jerome on Jeremiah's praise | *Commentary on Jeremiah* IV, on Jer 20:13, Migne, PL 24 (1845) | “Hoc autem totum fit, non nostro merito, sed ejus gratia qui pauperem liberavit.” 13 words; exact Latin transcription | Ancient Latin in a public-domain Migne edition; checked against the Wikisource and Corpus Corporum transcription | Rescue is grace, not merit | Later spiritual reception does not exhaust Jeremiah's historical setting | [Wikisource](https://la.wikisource.org/wiki/Commentaria_in_Ieremiam_%28Hieronymus%29), accessed 2026-07-18 |
+| Chrysostom on danger | *Homily 34 on Matthew* 2, trans. George Prevost, rev. M. B. Riddle, NPNF1 10 (1888) | “He does not promise them deliverance from death, but permits them to die.” 13 words; exact transcription | Underlying U.S.-public-domain edition; checked against New Advent; site presentation not relicensed | Courage is not bodily invulnerability | Same homily permits flight; never commends reckless exposure or abuse | [New Advent](https://www.newadvent.org/fathers/200134.htm), accessed 2026-07-18 |
+| Augustine on Spirit-given witness | *Tractate 92 on John* 2, trans. John Gibb, NPNF1 7 (1888) | “For He, in bearing witness Himself, and inspiring such witnesses with invincible courage, divested Christ's friends of their fear.” 19 words; exact transcription | Underlying U.S.-public-domain edition; checked against New Advent; site presentation not relicensed | Witness receives courage from Christ | Derivative witness does not certify every inward impulse | [New Advent](https://www.newadvent.org/fathers/1701092.htm), accessed 2026-07-18 |
+
+## 2026-07-18 Notable-and-Quotable Production Record
+
+The final 12-page build is settled and deterministic across two forced root rebuilds. Its warning-free log, generation metadata, qpdf structure, embedded Unicode fonts, text extraction, physical-page-2 boundary, and every-page full-size visual review passed. The installed PDF is byte-identical to the reviewed build, SHA-256 `1222a97fc6e5441b8c59c824522163a65ab9848da3615e43d2f46bd8b79ec041`. This exact snapshot remains in private review pending renewed exact-current-snapshot authorization.
