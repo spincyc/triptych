@@ -137,6 +137,18 @@ The reader-facing section marks all five proposals as exploratory AI-assisted sy
 
 The targeted audit was performed on 2026-07-18 through Vatican, New Advent, and Aquinas corpora using combinations of the appointed passages, sequence, prayers, procession, and the proposed mechanisms. Negative results are bounded to those checked corpora and queries: an unlocated exact chain is not evidence that no saint, theologian, homilist, or scholar has ever advanced it.
 
+## Notable-and-quotable audit
+
+All wording was checked on 2026-07-18. The excerpts are short, source-identified, and remain below the profile's 25-word ceiling. The New Advent pages are current editorial wrappers; the cited nineteenth-century translations beneath them are public-domain source editions in the United States, no worldwide status is asserted, and the audit does not treat the wrapper as public domain.
+
+| Item | Source and locus | Wording / edition / rights check | Interpretive payoff | Context limit |
+| --- | --- | --- | --- | --- |
+| Moses — First Reading | Holy See, [*Nova Vulgata*, Deuteronomy 8:3](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_vt_deuteronomii_lt.html) | Exact fifteen-word Latin excerpt checked against the Holy See text; no translation; brief quotation from the official edition, with no public-domain or broader redistribution status claimed | Its balance refuses competition between bodily dependence and obedient hearing | The excerpt is one clause within Moses' wilderness warning, not a denial of bodily need or a direct technical definition of Eucharistic doctrine |
+| Irenaeus on Deuteronomy | St. Irenaeus, [*Against Heresies* V.21.2](https://www.newadvent.org/fathers/0103521.htm) | Exact eighteen-word excerpt; Alexander Roberts and William Rambaut translation, ANF 1 (1885), in New Advent's current revised wrapper | The line makes the Father's word Christ's weapon in obedient recapitulation | Its immediate subject is Christ's temptation and victory over the adversary, not the modern formulary or Deuteronomy's original historical setting |
+| Chrysostom on one bread | St. John Chrysostom, [*Homily 24 on 1 Corinthians* §4](https://www.newadvent.org/fathers/220124.htm) | Exact twenty-two-word excerpt; T. W. Chambers translation, NPNF1 12 (1889), in New Advent's current revised wrapper | The repeated answer binds the received Body to communicants becoming one Body | Chrysostom's next words specify “not many bodies, but one body” and his larger argument joins unity to flight from idolatry and active love |
+| Augustine on unity | St. Augustine, [*Tractate 26 on John* §13](https://www.newadvent.org/fathers/1701026.htm) | Exact twelve-word excerpt; John Gibb translation, NPNF1 7 (1888), in New Advent's current revised wrapper | The triple exclamation gives one bread an ecclesial and moral force memorable enough for examination of life | The surrounding tractate distinguishes visible reception from sacramental fruit and warns that a good gift may be received badly |
+| Cyril on faith and taste | St. Cyril of Jerusalem, [*Mystagogical Catechesis* IV.6](https://www.newadvent.org/fathers/310122.htm) | Exact fifteen-word excerpt; E. H. Gifford translation, NPNF2 7 (1894), in New Advent's current revised wrapper | The antithesis makes Christ's declaration govern sensory appearance without pretending the appearance vanishes | Cyril is giving sacramental catechesis and directly cites John 6:53; the excerpt is not a general permission to reject evidence or reason |
+
 ## Rights, negative results, and unresolved work
 
 - The USCCB page contains protected Lectionary and current English *Lauda Sion* wording. The PDF gives references, branch names, and minimal cues only. The medieval Latin's age does not free a current English translation for wholesale reuse.
@@ -168,3 +180,7 @@ On 2026-07-18, the final passage-by-passage production snapshot received a settl
 ## 2026-07-18 Interpretive-Discovery Production Record
 
 The interpretive-discovery revision received a settled build with a warning-free final log. Metadata and Unicode checks, qpdf structure, embedded fonts, and text extraction passed; all 14 full-size pages were visually inspected. The explicitly installed mirror is byte-identical to the reviewed build, SHA-256 `1603bac4ca12bb44f72a9bcd48f355b49e6a089e542f5d21446c4603c7441f16`. This exact snapshot remains in private review pending renewed exact-snapshot authorization.
+
+## 2026-07-18 Notable-and-Quotable Production Record
+
+The final 15-page build is settled and deterministic across two forced root rebuilds. Its warning-free log, generation metadata, qpdf structure, embedded Unicode fonts, text extraction, physical-page-2 boundary, and every-page full-size visual review passed. The installed PDF is byte-identical to the reviewed build, SHA-256 `b349ac3f41d34b5d8d57e66a0cf2c15535863eab796992154262e90447ebe3c7`. This exact snapshot remains in private review pending renewed exact-current-snapshot authorization.

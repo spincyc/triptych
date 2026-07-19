@@ -115,3 +115,18 @@ On 2026-07-18, the final passage-by-passage production snapshot received a settl
 ## 2026-07-18 Interpretive-Discovery Production Record
 
 The interpretive-discovery revision received a settled build with a warning-free final log. Metadata and Unicode checks, qpdf structure, embedded fonts, and text extraction passed; all 12 full-size pages were visually inspected. The explicitly installed mirror is byte-identical to the reviewed build, SHA-256 `e5124dfe0f3b942e6b5143510d0591893cd9611c36976ccb6c49762f0df4c55c`. This exact snapshot remains in private review pending renewed exact-snapshot authorization.
+
+## Notable-and-quotable audit
+
+Wording and online witnesses were rechecked 2026-07-18. Excerpts are 25 words or fewer; rights statements describe only the wording used, not whole-site licensing.
+
+| Item | Source and locus | Wording check | Translation / rights | Payoff | Context control | Online witness |
+|---|---|---|---|---|---|---|
+| Appointed line; Jesus | *Nova Vulgata*, Matt 11:29, editio typica altera (1986) | “discite a me, quia mitis sum et humilis corde” 9 words; exact official Latin | Official Latin; short excerpt only; no public-domain claim | Meekness and humility are learned from Jesus | Neither passivity nor an excuse for incompetence, coercion, or abuse | [Holy See, Matthew](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_nt_evang-matthaeum_lt.html), accessed 2026-07-18 |
+| Justin on Zechariah's king | *Dialogue with Trypho* 53, trans. Marcus Dods and George Reith, ANF 1 (1885) | “the fulfilment was recognised, it became a clear proof that He was the Christ” 14 words; exact transcription | Underlying U.S.-public-domain edition; checked against New Advent; site presentation not relicensed | Early Christological reception of the riding king | Does not exhaust Zechariah's historical horizon or reproduce Justin's adversarial polemic | [New Advent](https://www.newadvent.org/fathers/01284.htm), accessed 2026-07-18 |
+| Chrysostom on indwelling | *Homily 13 on Romans*, on Rom 8:9–11, trans. J. Walker, J. Sheppard, and H. Browne, rev. George B. Stevens, NPNF1 11 (1889) | “For wheresoever one Person of the Trinity is, there the whole Trinity is present.” 14 words; exact transcription | Underlying U.S.-public-domain edition; checked against New Advent; site presentation not relicensed | Indwelling opens a Trinitarian horizon | Does not collapse the persons or make the formula Paul's explicit wording | [New Advent](https://www.newadvent.org/fathers/210213.htm), accessed 2026-07-18 |
+| Augustine on humility | *Sermon 19 on the New Testament* 2, Benedictine Sermon 69, trans. R. G. MacMullen, NPNF1 6 (1888) | “You wish to be great, begin from the least.” 9 words; exact transcription | Underlying U.S.-public-domain edition; checked against New Advent; site presentation not relicensed | Humility is greatness's foundation | Cannot excuse passivity, incompetence, or submission to abuse | [New Advent](https://www.newadvent.org/fathers/160319.htm), accessed 2026-07-18 |
+
+## 2026-07-18 Notable-and-Quotable Production Record
+
+The final 13-page build is settled and deterministic across two forced root rebuilds. Its warning-free log, generation metadata, qpdf structure, embedded Unicode fonts, text extraction, physical-page-2 boundary, and every-page full-size visual review passed. The installed PDF is byte-identical to the reviewed build, SHA-256 `0d8e708a5c31757ff9cd6ea41e12ad2834b9c4b99fe342837715c797254f541c`. This exact snapshot remains in private review pending renewed exact-current-snapshot authorization.

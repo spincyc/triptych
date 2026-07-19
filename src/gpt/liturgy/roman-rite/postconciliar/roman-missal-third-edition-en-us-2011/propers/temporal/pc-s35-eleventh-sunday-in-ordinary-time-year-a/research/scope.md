@@ -114,3 +114,18 @@ On 2026-07-18, the final passage-by-passage production snapshot received a settl
 ## 2026-07-18 Interpretive-Discovery Production Record
 
 The interpretive-discovery revision received a settled build with a warning-free final log. Metadata and Unicode checks, qpdf structure, embedded fonts, and text extraction passed; all 11 full-size pages were visually inspected. The explicitly installed mirror is byte-identical to the reviewed build, SHA-256 `64876d84433fc0fc65ea55c3f2b82d1bd9ba1aa50d6313d490e8d807ba0927d3`. This exact snapshot remains in private review pending renewed exact-snapshot authorization.
+
+## Notable-and-quotable audit
+
+Wording and online witnesses were rechecked 2026-07-18. Excerpts are 25 words or fewer; rights statements describe only the wording used, not whole-site licensing.
+
+| Item | Source and locus | Wording check | Translation / rights | Payoff | Context control | Online witness |
+|---|---|---|---|---|---|---|
+| Appointed line; the Lord speaking to Israel through Moses | *Nova Vulgata*, Exod 19:6, editio typica altera (1986) | “Et vos eritis mihi regnum sacerdotum et gens sancta.” 9 words; exact official Latin | Official Latin; short excerpt only; no public-domain claim | Election ordered to priestly service | Does not erase Israel or equate common and ministerial priesthood | [Holy See, Exodus](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_vt_exodus_lt.html), accessed 2026-07-18 |
+| Augustine on the psalm response | *Exposition on Psalm 100* 11, trans. J. E. Tweed, NPNF1 8 (1888) | “We are His people, and the sheep of His pasture. Sheep and one sheep.” 14 words; exact transcription | Underlying U.S.-public-domain edition; checked against New Advent; site presentation not relicensed | Plural people gathered as one flock | Later ecclesial reception does not replace the psalm's Israelite voice | [New Advent](https://www.newadvent.org/fathers/1801100.htm), accessed 2026-07-18 |
+| Chrysostom on the harvest | *Homily 32 on Matthew* 4, trans. George Prevost, rev. M. B. Riddle, NPNF1 10 (1888) | “Himself is the husbandman, Himself the Lord of the harvest, Himself the master and owner of the prophets.” 18 words; exact transcription | Underlying U.S.-public-domain edition; checked against New Advent; site presentation not relicensed | Christ owns field, harvest, and workers | Does not erase differentiated offices, formation, or accountability | [New Advent](https://www.newadvent.org/fathers/200132.htm), accessed 2026-07-18 |
+| Chrysostom on reconciliation | *Homily 9 on Romans*, on Rom 5:6–11, trans. J. Walker, J. Sheppard, and H. Browne, rev. George B. Stevens, NPNF1 11 (1889) | “There is no one else that will save us, except He Who so loved us when we were sinners.” 19 words; exact transcription | Underlying U.S.-public-domain edition; checked against New Advent; site presentation not relicensed | Hope rests on prior reconciling love | Not automatic immunity or a substitute for faithful response | [New Advent](https://www.newadvent.org/fathers/210209.htm), accessed 2026-07-18 |
+
+## 2026-07-18 Notable-and-Quotable Production Record
+
+The final 12-page build is settled and deterministic across two forced root rebuilds. Its warning-free log, generation metadata, qpdf structure, embedded Unicode fonts, text extraction, physical-page-2 boundary, and every-page full-size visual review passed. The installed PDF is byte-identical to the reviewed build, SHA-256 `6b80e3759c73c494ef88df1068e56e4329e3edcbe2a039ccbbe5397838a89a50`. This exact snapshot remains in private review pending renewed exact-current-snapshot authorization.

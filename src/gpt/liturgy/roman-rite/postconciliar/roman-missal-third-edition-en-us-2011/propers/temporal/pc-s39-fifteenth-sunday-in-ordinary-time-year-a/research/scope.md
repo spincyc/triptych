@@ -108,3 +108,18 @@ On 2026-07-18, the final passage-by-passage production snapshot received a settl
 ## 2026-07-18 Interpretive-Discovery Production Record
 
 The interpretive-discovery revision received a settled build with a warning-free final log. Metadata and Unicode checks, qpdf structure, embedded fonts, and text extraction passed; all 12 full-size pages were visually inspected. The explicitly installed mirror is byte-identical to the reviewed build, SHA-256 `d5bff0ab2c58530c114ddd16553e15bf97f12281884cab9cb7fdf0650c591fb8`. This exact snapshot remains in private review pending renewed exact-snapshot authorization.
+
+## Notable-and-quotable audit
+
+Wording and online witnesses were rechecked 2026-07-18. Excerpts are 25 words or fewer; rights statements describe only the wording used, not whole-site licensing.
+
+| Item | Source and locus | Wording check | Translation / rights | Payoff | Context control | Online witness |
+|---|---|---|---|---|---|---|
+| Appointed line; the Lord in Isaiah's oracle | *Nova Vulgata*, Isa 55:11, editio typica altera (1986) | “non revertetur ad me vacuum, sed faciet, quaecumque volui” 9 words; exact official Latin | Official Latin; short excerpt only; no public-domain claim | Confidence in God's effective word | No guarantee about a preacher's technique or timetable | [Holy See, Isaiah](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_vt_isaiae_lt.html), accessed 2026-07-18 |
+| Chrysostom on mutable soil | *Homily 44 on Matthew* 5, trans. George Prevost, rev. M. B. Riddle, NPNF1 10 (1888) | “There is such a thing as the rock changing, and becoming rich land.” 13 words; exact transcription | Underlying U.S.-public-domain edition; checked against New Advent; site presentation not relicensed | Soil is not a fixed spiritual caste | Neither denies consequences nor blames trauma, disability, poverty, or limited education | [New Advent](https://www.newadvent.org/fathers/200144.htm), accessed 2026-07-18 |
+| Chrysostom on firstfruits | *Homily 14 on Romans*, on Rom 8:23, trans. J. Walker, J. Sheppard, and H. Browne, rev. George B. Stevens, NPNF1 11 (1889) | “That is, having had a taste of the things to come.” 11 words; exact transcription | Underlying U.S.-public-domain edition; checked against New Advent; site presentation not relicensed | Longing becomes experiential | Same source explicitly refuses contempt for present creation | [New Advent](https://www.newadvent.org/fathers/210214.htm), accessed 2026-07-18 |
+| Augustine on rain and preaching | *Exposition on Psalm 65* 13, Vulgate/LXX Psalm 64, trans. J. E. Tweed, NPNF1 8 (1888) | “You have sent Your clouds, they have rained down the preaching of the truth.” 14 words; exact transcription | Underlying U.S.-public-domain edition; checked against New Advent; site presentation not relicensed | Rain and proclamation meet in ecclesial allegory | Does not replace the psalm's original sense or prove lectionary design | [New Advent](https://www.newadvent.org/fathers/1801065.htm), accessed 2026-07-18 |
+
+## 2026-07-18 Notable-and-Quotable Production Record
+
+The final 13-page build is settled and deterministic across two forced root rebuilds. Its warning-free log, generation metadata, qpdf structure, embedded Unicode fonts, text extraction, physical-page-2 boundary, and every-page full-size visual review passed. The installed PDF is byte-identical to the reviewed build, SHA-256 `cb872e106a95d5164c320eef4c39d1f3d3e7734f1e2722e6f9710ef8ca9176e9`. This exact snapshot remains in private review pending renewed exact-current-snapshot authorization.

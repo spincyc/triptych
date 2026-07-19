@@ -113,3 +113,18 @@ On 2026-07-18, the final passage-by-passage production snapshot received a settl
 ## 2026-07-18 Interpretive-Discovery Production Record
 
 The interpretive-discovery revision received a settled build with a warning-free final log. Metadata and Unicode checks, qpdf structure, embedded fonts, and text extraction passed; all 11 full-size pages were visually inspected. The explicitly installed mirror is byte-identical to the reviewed build, SHA-256 `8e2a2671edcc79f168d566619c5b9b6b64b34a943a9de7482797c48b929719dd`. This exact snapshot remains in private review pending renewed exact-snapshot authorization.
+
+## Notable-and-quotable audit
+
+Wording and online witnesses were rechecked 2026-07-18. Excerpts are 25 words or fewer; rights statements describe only the wording used, not whole-site licensing.
+
+| Item | Source and locus | Wording check | Translation / rights | Payoff | Context control | Online witness |
+|---|---|---|---|---|---|---|
+| Appointed line; Jesus | *Nova Vulgata*, Matt 10:42, editio typica altera (1986) | “Et, quicumque potum dederit uni ex minimis istis calicem aquae frigidae tantum in nomine discipuli, amen dico vobis: Non perdet mercedem suam.” 22 words; exact official Latin | Official Latin; short excerpt only; no public-domain claim | Jesus dignifies a small act | Reward is not commerce; prudence and boundaries remain | [Holy See, Matthew](https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_nt_evang-matthaeum_lt.html), accessed 2026-07-18 |
+| Origen on the Shunammite's room | *Philocalia* XXVI.4, trans. George Lewis (1911) | “Eliseus, who at the house of the Shunammite had a very little chamber, and a bed, and a cheap candlestick.” 20 words; exact transcription | George Lewis's 1911 English; witness page expressly marks its material public domain | Modest hospitality resists prosperity assumptions | Citation appears in an argument against material prosperity, not continuous 2 Kings exegesis | [Tertullian.org](https://www.tertullian.org/fathers/origen_philocalia_02_text.htm), accessed 2026-07-18 |
+| Chrysostom on baptismal newness | *Homily 10 on Romans*, on Rom 6:3–4, trans. J. Walker, J. Sheppard, and H. Browne, rev. George B. Stevens, NPNF1 11 (1889) | “But when you hear of a new life, look for a great alteration, a wide change.” 16 words; exact transcription | Underlying U.S.-public-domain edition; checked against New Advent; site presentation not relicensed | Baptism claims continuing conversion | Neither instant perfection nor salvation by moral effort | [New Advent](https://www.newadvent.org/fathers/210210.htm), accessed 2026-07-18 |
+| Augustine on the cup of water | *Exposition on Psalm 122* 10, trans. J. E. Tweed, NPNF1 8 (1888) | “For though his resources are unequal, his charity is not unequal.” 11 words; exact transcription | Underlying U.S.-public-domain edition; checked against New Advent; site presentation not relicensed | Gift scale does not measure charity | Reward is not commerce; prudent limits remain | [New Advent](https://www.newadvent.org/fathers/1801122.htm), accessed 2026-07-18 |
+
+## 2026-07-18 Notable-and-Quotable Production Record
+
+The final 13-page build is settled and deterministic across two forced root rebuilds. Its warning-free log, generation metadata, qpdf structure, embedded Unicode fonts, text extraction, physical-page-2 boundary, and every-page full-size visual review passed. The installed PDF is byte-identical to the reviewed build, SHA-256 `8890891a5ef08f917de58caad3dba439ded837ae48ac3c1783a1196e47081b93`. This exact snapshot remains in private review pending renewed exact-current-snapshot authorization.
