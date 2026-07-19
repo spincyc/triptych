@@ -31,6 +31,10 @@ CONTRIBUTION = (
     r"\AIModelContribution{test-model}{effort=high}"
     r"{OpenAI Codex CLI 1.2.3; API workspace}"
 )
+SECOND_CONTRIBUTION = (
+    r"\AIModelContribution{test-model}{effort=high}"
+    r"{OpenAI Codex CLI 1.2.4; API workspace; review role}"
+)
 
 
 class GenerationMetadataParserTests(unittest.TestCase):
@@ -94,6 +98,34 @@ class GenerationMetadataParserTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 self.parse(text)
 
+    def test_rejects_exact_duplicate_contribution(self) -> None:
+        text = (
+            rf"\AIDocumentRevisionTimestamp{{{TIMESTAMP}}}" + "\n"
+            + CONTRIBUTION
+            + "\n"
+            + CONTRIBUTION
+            + "\n"
+        )
+        with self.assertRaisesRegex(ValueError, "exact duplicate model contribution"):
+            self.parse(text)
+
+    def test_rejects_noncontiguous_model_group(self) -> None:
+        other = (
+            r"\AIModelContribution{other-model}{effort=medium}"
+            r"{OpenAI Codex CLI 1.2.3; API workspace; other role}"
+        )
+        text = (
+            rf"\AIDocumentRevisionTimestamp{{{TIMESTAMP}}}" + "\n"
+            + CONTRIBUTION
+            + "\n"
+            + other
+            + "\n"
+            + SECOND_CONTRIBUTION
+            + "\n"
+        )
+        with self.assertRaisesRegex(ValueError, "noncontiguous model and qualifier"):
+            self.parse(text)
+
     def test_revision_timestamp_requires_strict_possible_utc_whole_seconds(self) -> None:
         invalid = (
             "2026-07-17",
@@ -115,7 +147,7 @@ class GenerationMetadataParserTests(unittest.TestCase):
     def test_handwritten_revision_label_is_rejected_as_legacy(self) -> None:
         self.assertRegex(r"\textbf{Last revised (UTC):}", CHECKER.LEGACY_LABEL_RE)
 
-    def test_rendered_record_accepts_repeated_model_for_distinct_runtimes(self) -> None:
+    def test_rendered_record_deduplicates_model_for_distinct_runtimes(self) -> None:
         first = CHECKER.Contribution(
             "same-model", "effort=high", "OpenAI Codex CLI 1.2.3; first role"
         )
@@ -127,12 +159,25 @@ class GenerationMetadataParserTests(unittest.TestCase):
             f"Last revised (UTC): {TIMESTAMP}\n"
             "Model: same-model; effort=high\n"
             f"Agent/runtime: {first.runtime}\n"
-            "Model: same-model; effort=high\n"
             f"Agent/runtime: {second.runtime}\n"
         )
         with (
             mock.patch.object(CHECKER, "validate_pdf_info"),
             mock.patch.object(CHECKER, "pdf_text", return_value=rendered),
+        ):
+            CHECKER.validate_rendered_record(Path("unused.pdf"), record)
+
+        duplicated = CHECKER.normalize(
+            f"Last revised (UTC): {TIMESTAMP}\n"
+            "Model: same-model; effort=high\n"
+            f"Agent/runtime: {first.runtime}\n"
+            "Model: same-model; effort=high\n"
+            f"Agent/runtime: {second.runtime}\n"
+        )
+        with (
+            mock.patch.object(CHECKER, "validate_pdf_info"),
+            mock.patch.object(CHECKER, "pdf_text", return_value=duplicated),
+            self.assertRaisesRegex(ValueError, "duplicates metadata field"),
         ):
             CHECKER.validate_rendered_record(Path("unused.pdf"), record)
 
@@ -180,6 +225,8 @@ class ReproduciblePdfMetadataTests(unittest.TestCase):
                 + "\n"
                 + CONTRIBUTION
                 + "\n"
+                + SECOND_CONTRIBUTION
+                + "\n"
                 + r"\end{document}"
                 + "\n",
                 encoding="utf-8",
@@ -208,6 +255,12 @@ class ReproduciblePdfMetadataTests(unittest.TestCase):
             CHECKER.validate_pdf_info(first, TIMESTAMP)
             rendered = CHECKER.pdf_text(first)
             self.assertEqual(rendered.count(f"Last revised (UTC): {TIMESTAMP}"), 1)
+            self.assertEqual(rendered.count("Model: test-model; effort=high"), 1)
+            self.assertEqual(rendered.count("Agent/runtime:"), 2)
+            self.assertIn("OpenAI Codex CLI 1.2.3; API workspace", rendered)
+            self.assertIn(
+                "OpenAI Codex CLI 1.2.4; API workspace; review role", rendered
+            )
             self.assertIsNone(re.search(rb"/ID\s*\[", first_bytes))
 
 
