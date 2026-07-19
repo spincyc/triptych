@@ -3,6 +3,9 @@
 
 \setcounter{tocdepth}{1}
 \setlength{\emergencystretch}{2em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
 
 \titleformat{\section}
   {\Large\bfseries}{\thesection}{0.55em}{}
@@ -14,6 +17,30 @@
   #1
   \end{studybox}}
 
+% Prayer cards need rules stout enough to survive ordinary screen rastering as
+% well as print.  The universal source card's hairline can alias away at common
+% review resolutions even though the vector rule remains present in the PDF.
+\newtcolorbox{novenasourcecard}[1]{
+  enhanced,
+  colback=white,
+  colframe=black,
+  colbacktitle=white,
+  coltitle=black,
+  boxrule=0.55pt,
+  sharp corners,
+  left=5pt,
+  right=5pt,
+  top=4pt,
+  bottom=4pt,
+  toptitle=3pt,
+  bottomtitle=3pt,
+  titlerule=0.55pt,
+  before skip=4pt,
+  after skip=4pt,
+  title={#1},
+  fonttitle=\small\bfseries
+}
+
 \newcommand{\dayaxis}[3]{%
   \begin{studyframe}
   \textbf{Scriptural center:} #1\par
@@ -23,7 +50,7 @@
 
 \newcommand{\bilingualprayer}[4]{%
   \Needspace{10\baselineskip}%
-  \begin{sourcecard}{#1}
+  \begin{novenasourcecard}{#1}
   {\footnotesize\textbf{Text and status:} \textit{#2}\par}\smallskip
   \begin{minipage}[t]{0.48\linewidth}
   \textbf{Latin}\par\smallskip
@@ -33,7 +60,7 @@
   \textbf{English}\par\smallskip
   #4
   \end{minipage}
-  \end{sourcecard}}
+  \end{novenasourcecard}}
 
 \newcommand{\novenaexamination}[1]{%
   \begin{studybox}{Examination and response}
