@@ -100,3 +100,7 @@ An ancient author's agreement with an earlier narrative is not counted as indepe
 - Independent Septuagint specialist, papyrological, Jewish-history, patristic, and text-critical review: outstanding.
 - Ecclesiastical review or approval: not sought; the publication makes no claim to it.
 - Production review completed 2026-07-17 for the revised source: settled two-pass build, clean log and structure checks, embedded and Unicode-mapped fonts, all twenty-three pages visually inspected, and installed/build identity verified. Exact details and the installed checksum are recorded in `source-audit.md`.
+
+## Compact-rights-colophon production review — 2026-07-19
+
+The settled 22-page PDF, SHA-256 `0fb0ff3415fcd85773dc69c0e266857476070cec85fc6f16f9783317d8f95299`, is the exact repository-reviewed build snapshot. The final log was warning-free; generation metadata, `qpdf` structure, PDF title/page metadata, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed their gates. Repository production review inspected every physical page; the compact final-page reuse-and-rights colophon is readable, unclipped, non-overlapping, remains with terminal content, and creates no rights-only spill page. The installed PDF is byte-identical to this reviewed build. This reviewed build supersedes every earlier production snapshot. Because its bytes changed, exact-snapshot distribution approval remains pending.

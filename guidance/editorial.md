@@ -25,7 +25,7 @@ Put work-wide controls in a terminal `Scope and Qualifications` appendix or the 
 - global translation, rights, currentness, review, and use qualifications; and
 - an orientation timeline when its chief purpose is to bound or navigate rather than advance the account.
 
-Keep that appendix concise and linked from the contents. References contain bibliography and source-local role or rights notes, not a second statement of the global method. Generation metadata is terminal, after references, and no exposition follows it.
+Keep that appendix concise and linked from the contents. References contain bibliography and source-local role or rights notes, not a second statement of the global method. Generation metadata is the final content block, after references, and no exposition follows it. The common legal notice is a subordinate final-page colophon, not exposition, an appendix, or a separate section.
 
 A thesis or governing question is substantive and may open the body. Operational facts needed at the point of use—such as the selected liturgical branch, recitation order, or applicable rule—stay there. A one-line title-page non-authority warning is permitted only for immediate reliance risk and must point to the terminal appendix rather than repeat it.
 
@@ -55,6 +55,8 @@ Quote only what the argument requires. Record the known author, source, attribut
 
 The repository license does not relicense Scripture, official or liturgical text, received prayers or hymns, third-party translations, quotations, images, fonts, or other external material. Put a local notice wherever excluded wording could reasonably be mistaken for project-owned expression.
 
+Render the common reuse-and-rights notice once as a compact, legible colophon on the same physical final page as the terminal content. It must never force a rights-only page. Keep work-specific rights detail in the scope appendix, source record, or beside the affected material rather than enlarging or duplicating the common notice.
+
 Every text offered for vocal prayer or ritual recitation must reproduce an identified historical, approved, liturgical, or otherwise received witness. Neither the project nor an AI contributor may compose, translate, paraphrase, modernize, conflate, or materially adapt such a text. Use an exact identified human translation with recorded status and rights; otherwise omit it. Expand an explicit abbreviation only from the same witness or a governing edition it incorporates, and record both loci. Commentary may explain a prayer but must remain visibly distinct and must not function as a substitute translation.
 
 ## Audit records and generation metadata
@@ -79,7 +81,7 @@ Before installing a publication:
 - confirm rights, attribution, edition, jurisdiction, as-of, review, and generation records describe the artifact;
 - compile enough passes to settle contents and references; reject fatal errors, undefined references, overflow, and unresolved layout warnings;
 - generate bounded review rasters with `make review-pdfs` or `scripts/pdf-review` and visually inspect every page, using full-size pages where contact-sheet scale is insufficient;
-- check clipping, density, heading splits, tables, callouts, artificial whitespace, sparse spill pages, monochrome legibility, PDF structure, embedded fonts, metadata, and extracted text; and
+- check clipping, density, heading splits, tables, callouts, artificial whitespace, sparse spill pages, monochrome legibility, PDF structure, embedded fonts, metadata, and extracted text; confirm the final-page rights colophon is readable, unclipped, non-overlapping, and has not created a spill page; and
 - install only the reviewed PDF at its mirrored `doc/` path, leaving intermediates under ignored `build/`.
 
 Profile-specific gates remain mandatory.

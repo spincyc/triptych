@@ -114,3 +114,7 @@ Four entries were retained: one appointed Latin line and three direct patristic 
 ## 2026-07-18 Notable-and-Quotable Production Record
 
 The final 13-page build is settled and deterministic across two forced root rebuilds. Its warning-free log, generation metadata, qpdf structure, embedded Unicode fonts, text extraction, physical-page-2 boundary, and every-page full-size visual review passed. The installed PDF is byte-identical to the reviewed build, SHA-256 `e0d12ca9e317fcd759d75b7706f722d8e03417e0a3190cfad4860b9861fa7407`. This exact snapshot remains in private review pending renewed exact-current-snapshot authorization.
+
+## Compact-rights-colophon production review — 2026-07-19
+
+The settled 12-page PDF, SHA-256 `68eafb45f5e215e2b4c6c4516504dc118779f5c5549b8dd93086560f19316214`, is the exact repository-reviewed build snapshot. The final log was warning-free; generation metadata, `qpdf` structure, PDF title/page metadata, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed their gates. Repository production review inspected every physical page; the compact final-page reuse-and-rights colophon is readable, unclipped, non-overlapping, remains with terminal content, and creates no rights-only spill page. The installed PDF is byte-identical to this reviewed build. This reviewed build supersedes every earlier production snapshot. Because its bytes changed, exact-snapshot distribution approval remains pending.

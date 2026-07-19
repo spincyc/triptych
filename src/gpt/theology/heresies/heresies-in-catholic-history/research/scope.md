@@ -134,3 +134,7 @@ The publication is chiefly project-created paraphrase and synthesis. It uses onl
 - **Required maturity language:** “source-audited Catholic working reference” or “comprehensive documentary survey within its named census,” never “official list,” “ecclesiastically approved,” “critical edition,” or “independently specialist-reviewed.”
 
 The current production verification and three superseded prior snapshots are retained in `source-audit.md`. Commit, integration, push, and deployment are not pre-claimed in this record.
+
+## Compact-rights-colophon production review — 2026-07-19
+
+The settled 81-page PDF, SHA-256 `decf4821fd292951f5b7eb1502f57b0a5c9aba5f7c370756ddd87d28d6fc91b7`, is the exact repository-reviewed build snapshot. The final log was warning-free; generation metadata, `qpdf` structure, PDF title/page metadata, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed their gates. Repository production review inspected every physical page; the compact final-page reuse-and-rights colophon is readable, unclipped, non-overlapping, remains with terminal content, and creates no rights-only spill page. The installed PDF is byte-identical to this reviewed build. This reviewed build supersedes every earlier production snapshot. Because its bytes changed, exact-snapshot distribution approval remains pending.
