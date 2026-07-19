@@ -1,18 +1,19 @@
 # Public Release Boundary
 
-The current release manifest contains 55 publications: 36 exact PDF snapshots
+The current release manifest contains 56 publications: 36 exact PDF snapshots
 are marked `release`, 17 revised proper guides and the Saint Stanislaus parish
-history are in `review`, and the new Origen biography is on `hold`. The parish
+history are in `review`, and the new Origen and Tertullian biographies are on
+`hold`. The parish
 history's internal work-specific distribution review is complete; like the
 revised proper guides, it still requires renewed exact-snapshot authorization.
-The Origen biography is excluded from both public distribution and private
-preview pending a work-specific rights review. The 17 July 2026 supplemental
+The two biographies are excluded from both public distribution and private
+preview pending work-specific rights reviews. The 17 July 2026 supplemental
 authorization in
 `rights/public-alpha-2026-07-15.md` remains the historical exact-byte record for
 the then-current 53 PDFs and 21 artifact-affecting site inputs. It does not
 authorize the 17 later PDF revisions or the catalog bytes changed to describe
-their review status, nor does it authorize the parish-history or Origen
-snapshots. Public check, build, verification, and deployment
+their review status, nor does it authorize the parish-history, Origen, or
+Tertullian snapshots. Public check, build, verification, and deployment
 therefore fail closed until renewed authorization binds the intended current
 PDF and site-input snapshots. The historical authorization record remains
 unchanged.
@@ -132,7 +133,7 @@ python scripts/public-alpha verify --deployment-target github-pages
 `prepare-public-alpha` is read-only and deliberately works when old snapshot
 hashes are stale or the old source-binding list lacks newly recognized inputs.
 It validates the exhaustive publication and current artifact-input scope, then
-reports the current 55 PDF hashes and the hashes of all 21 current Markdown,
+reports the current 56 PDF hashes and the hashes of all 21 current Markdown,
 layout, style, license, generator, and dependency-lock inputs as a deterministic
 candidate inventory. The inventory explicitly confers no approval, changes no
 manifest or rights record, and cannot replace the separate review and recorded

@@ -3,10 +3,10 @@
   "release_id": "public-alpha",
   "provider": "gpt",
   "expected_counts": {
-    "publications": 55,
+    "publications": 56,
     "release": 36,
     "review": 18,
-    "hold": 1
+    "hold": 2
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
@@ -163,6 +163,15 @@
         "authorization": "perpetual-public-repository-2026",
         "pdf_sha256": "8b03726d738bd8819521f6c3a092f4e0af22a88eddbdc88b7d641e3eb01a274d"
       }
+    },
+    {
+      "id": "biographies/tertullian",
+      "catalog": "library/biographies.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review"
+      ],
+      "approval": null
     },
     {
       "id": "devotions/novenas/00-ascension-to-pentecost",
