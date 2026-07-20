@@ -383,7 +383,7 @@ exec "$@"
         sudo.chmod(0o755)
         shadow_bin = self.root / "shadow-bin"
         shadow_bin.mkdir()
-        for name in ("codex", "rg"):
+        for name in ("codex", "gh", "rg"):
             executable = shadow_bin / name
             executable.write_text("#!/bin/sh\n", encoding="utf-8")
             executable.chmod(0o755)
@@ -436,6 +436,7 @@ exec /usr/bin/id "$@"
             "poppler",
             "imagemagick",
             "git",
+            "github-cli",
             "openai-codex",
             "ripgrep",
         ]
@@ -448,7 +449,6 @@ exec /usr/bin/id "$@"
             "texlive-meta",
             "nodejs",
             "npm",
-            "github-cli",
             "ghostscript",
             "qpdf",
         ):
@@ -456,6 +456,7 @@ exec /usr/bin/id "$@"
         self.assertNotIn("--noconfirm", arguments)
         self.assertNotIn(".local", " ".join(arguments))
         self.assertIn("shadows canonical /usr/bin/codex", result.stderr)
+        self.assertIn("shadows canonical /usr/bin/gh", result.stderr)
         self.assertIn("shadows canonical /usr/bin/rg", result.stderr)
 
     def test_arch_dependency_install_rejects_other_operating_systems(self) -> None:
