@@ -17,7 +17,7 @@ These studies concern the liturgical books and calendar in force in 1962. They a
 
 These guides place the appointed prayers, readings, and chants of a Mass in their scriptural, historical, patristic, sacramental, and theological setting.
 
-They have recorded AI-generation histories, facsimile-checked source texts, internal source audits, and production checks, but no independent theological review. Their [profile](../guidance/liturgy/roman-1962-propers.md#guide-status-and-canonical-sunday-order) records the current set as G3 / S2 / T0 / Q3; the codes do not apply outside this series.
+They have recorded AI-generation histories, facsimile-checked source texts, internal source audits, and production checks, but no independent theological review. Their exact current snapshots have release-specific distribution clearance under the 20 July 2026 dated rights supplement; that operational decision supplies no missing source, liturgical, theological, rights, or ecclesiastical review. Their [profile](../guidance/liturgy/roman-1962-propers.md#guide-status-and-canonical-sunday-order) records the current set as G3 / S2 / T0 / Q3; the codes do not apply outside this series.
 
 | ID | Guide | Supporting records |
 | --- | --- | --- |

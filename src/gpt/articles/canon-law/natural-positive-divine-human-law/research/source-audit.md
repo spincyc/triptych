@@ -99,7 +99,7 @@ Access and currentness checks were completed 2026-07-16 unless noted. Each sourc
 - Vatican City law is ordinarily controlled by official Italian unless an authoritative version provides otherwise.
 - Perseus, New Advent, Latin Library, Friedberg web witnesses, and older Roman translations are convenient sources of access, not uniformly critical editions.
 - Scripture, official texts, historical works, translations, and scholarship retain their independent status. No full modern translation, official code, article, or monograph is reproduced.
-- The release-specific authorization under the user-attested perpetual public-repository record applied to the PDF snapshot installed before the 2026-07-19 final-typography revision. That historical exact-snapshot decision did not constitute an independent rights analysis, source review, canonical opinion, specialist review, or ecclesiastical approval. Fresh exact-snapshot distribution authorization for the current installed bytes remains pending.
+- The release-specific authorization under the user-attested perpetual public-repository record applied to the PDF snapshot installed before the 2026-07-19 final-typography revision. That historical exact-snapshot decision did not constitute an independent rights analysis, source review, canonical opinion, specialist review, or ecclesiastical approval. The current installed bytes have release-specific distribution clearance under the 20 July 2026 dated rights supplement; that operational decision supplies none of the outstanding review or approval.
 
 ## Build and review record
 

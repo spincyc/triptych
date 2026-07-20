@@ -152,6 +152,9 @@ tradition.
   apparatus remain protected.
 - ANF and NPNF English are public-domain research aids. Their wording and
   chaptering do not replace the Latin or a modern critical translation.
+- “Give me the master” is the project's rendering of Jerome's public-domain
+  Latin *Da magistrum* in *On Illustrious Men* 53; it was not copied from a
+  protected modern translation.
 - Evans, Waszink, CCSL, Sources Chrétiennes, Cambridge, and other modern
   translations, editions, and scholarship retain their rights; analysis and
   protected English are paraphrased.
@@ -162,11 +165,31 @@ tradition.
   substantial protected quotation is reproduced in the publication or these
   records.
 
+The internal work-specific rights review completed 2026-07-20 checked the
+exact installed snapshot's quotations, translations, embedded links,
+source-site terms and restrictions, and fonts. No other substantial quotation,
+image, embed, or source-term blocker was found. The maintainer represents that
+the previously attested third-party-text-and-link authorization includes
+written DPC permission specifically for the following exact URLs and for their
+presence in the public Git repository and reachable history:
+
+- <https://www.vatican.va/archive/ENG0015/_INDEX.HTM>
+- <https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20070530.html>
+
+The private permission instrument remains intentionally unstored and has not
+been independently verified by the project. The representation is not an
+independent rights opinion or review, an open or broader license for Vatican
+text or other URLs, or ecclesiastical approval. Independent rights and every
+recorded historical, patristic, theological, textual, and ecclesiastical review
+remain outstanding.
+
 ## Review state
 
 Internally completed: claim-to-source mapping at publication scale, exact-locus
 checks for the principal claims, evidence-class separation, chronology and
 tradition cross-check, bounded negative search, transmission qualification,
-and rights classification. Outstanding: independent specialist, theological,
-ethical, textual-critical, Vetus Latina, rights, archaeological, and local-cult
-review; exhaustive manuscript and opponent collation; and production review.
+rights classification, work-specific rights review, and production review for
+the exact installed snapshot. Outstanding: independent specialist,
+theological, ethical, textual-critical, Vetus Latina, rights, archaeological,
+and local-cult review; exhaustive manuscript and opponent collation; and
+ecclesiastical approval.

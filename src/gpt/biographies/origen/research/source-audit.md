@@ -146,3 +146,32 @@ translations, books, articles, databases, Vatican English, and BSB images retain
 their own rights. This record links or cites them; it does not vendor or
 relicense their text, apparatus, or images. Publication prose is project-created
 paraphrase except for brief attributed ancient wording at an exact locus.
+
+William Alexander Curtis's English translation of *On Prayer* is public domain
+in the United States by publication history but may remain protected in
+life-plus-seventy jurisdictions through 2031. The publication paraphrases that
+translation and reproduces no Curtis wording. The rendered phrase
+“public-domain online text” identifies the United States-hosted CCEL research
+witness only; it is not a worldwide public-domain claim or a claim to CCEL's
+presentation.
+
+The internal work-specific rights review completed 2026-07-20 checked the
+exact installed snapshot's quotations, translations, embedded links,
+source-site terms and restrictions, and fonts. No other substantial quotation,
+image, embed, or source-term blocker was found. The maintainer represents that
+the previously attested third-party-text-and-link authorization includes
+written DPC permission specifically for the following exact URLs and for their
+presence in the public Git repository and reachable history:
+
+- <https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_one/article_1/paragraph_6_man.html>
+- <https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_three/article_11.html>
+- <https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_three/article_12/iv_hell.html>
+- <https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20070425.html>
+- <https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20070502.html>
+
+The private permission instrument remains intentionally unstored and has not
+been independently verified by the project. The representation is not an
+independent rights opinion or review, an open or broader license for Vatican
+text or other URLs, or ecclesiastical approval. Independent rights and every
+recorded historical, patristic, theological, textual, and ecclesiastical review
+remain outstanding.

@@ -123,4 +123,9 @@ The thesis is that Saint Stanislaus survived by changing the scale on which it s
 - Independent canon-law review: outstanding for the parish/oratory module.
 - Work-specific distribution review: completed internally on 2026-07-19; independent legal or rights review remains outstanding as a maturity limitation.
 - Production build, log review, metadata/font/structure/text checks, every-page visual inspection, deterministic clean rebuild, and PDF installation: completed for the exact PDF recorded in `source-audit.md`.
-- Exact-snapshot distribution: not granted by source audit, build, installation, or commit. It requires the repository's separate snapshot authorization and publication workflow.
+- Exact-snapshot distribution: not granted by source audit, build,
+  installation, or commit. The separate 20 July 2026 dated rights supplement
+  grants release-specific distribution clearance to the recorded current PDF
+  hash; that operational decision supplies no independent rights, historical,
+  architectural, theological, liturgical, canon-law, or ecclesiastical review
+  or approval.

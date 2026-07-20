@@ -218,6 +218,27 @@ rights. Protected analysis and translation are paraphrased; only brief ancient
 wording is used at exact loci. No third-party image is reproduced, and online
 access is not treated as a reuse license.
 
+“Give me the master” is the project's rendering of Jerome's public-domain
+Latin *Da magistrum* in *On Illustrious Men* 53; it was not copied from a
+protected modern translation.
+
+An internal work-specific rights review completed 2026-07-20 checked
+quotations, translations, embedded links, source-site terms and restrictions,
+and fonts for the exact installed PDF. No other substantial quotation, image,
+embed, or source-term blocker was found. The maintainer represents that the
+previously attested third-party-text-and-link authorization includes written
+DPC permission specifically for these exact Vatican URLs and for their
+presence in the public Git repository and reachable history:
+
+- <https://www.vatican.va/archive/ENG0015/_INDEX.HTM>
+- <https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20070530.html>
+
+The private permission instrument remains intentionally unstored and the
+project has not independently verified it. This records the maintainer's
+representation only; it is not an independent rights opinion or review, an
+open or broader license for Vatican text or other URLs, or ecclesiastical
+approval of the publication.
+
 ## Internal review completed
 
 - universal editorial and repository guidance and the biography profile read;
@@ -230,7 +251,8 @@ access is not treated as a reuse license.
   at exact loci and restricted to their genre and transmission layer;
 - hard chronological anchors, relative dependencies, competing ranges,
   consequential negative results, rights, and mutable-source cutoff recorded;
-  and
+- an internal work-specific rights review completed for the exact installed
+  snapshot, with its representation and translation limits recorded; and
 - the four profile records checked for distinct functions and agreement with
   the publication's qualified claims.
 
@@ -272,7 +294,7 @@ access is not treated as a reuse license.
 - The installed `doc/gpt/biographies/tertullian.pdf` is byte-identical to the
   reviewed build and has the hash above.
 
-This internal production review supplies no distribution approval,
-work-specific rights clearance, independent specialist review, or
-ecclesiastical approval. The exact PDF remains on release hold pending its
-recorded work-specific rights review.
+This internal production review supplies no independent rights, specialist,
+historical, patristic, theological, textual, or ecclesiastical review or
+approval. The work-specific internal rights review above and exact-snapshot
+distribution clearance do not alter those limits.

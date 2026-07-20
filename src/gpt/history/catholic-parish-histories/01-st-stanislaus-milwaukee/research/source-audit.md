@@ -90,4 +90,8 @@ Access dates are 2026-07-19 unless a source is a fixed downloaded record. Page r
 - Every-page raster review: both contact sheets covering all 29 pages were inspected, with the terminal page additionally inspected at full size. No clipping, overflow, collision, orphaned heading, accidental blank page, or illegible table was found. The compact reuse-and-rights colophon remains legible on the final references/metadata page and creates no rights-only page.
 - Deterministic clean rebuild: the reviewed build and the rebuild after `make clean` were byte-identical at SHA-256 `9cfcd8f32b5f19c831e274ced1a151993ac507a25d289e8f91e0f2260fe3e964`.
 - Installed PDF checksum: `doc/gpt/history/catholic-parish-histories/01-st-stanislaus-milwaukee.pdf` is byte-identical to the reviewed clean build at SHA-256 `9cfcd8f32b5f19c831e274ced1a151993ac507a25d289e8f91e0f2260fe3e964`.
+- The 20 July 2026 dated rights supplement grants release-specific
+  distribution clearance to this exact current PDF hash. That operational
+  decision is not independent rights, historical, architectural, theological,
+  liturgical, canon-law, or ecclesiastical review or approval.
 - Source-audited status does not imply independent historical, architectural, theological, liturgical, canon-law, or rights review.
