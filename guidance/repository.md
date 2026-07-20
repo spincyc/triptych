@@ -155,6 +155,8 @@ For a move, preserve history and update imports, dependencies, internal links, c
 
 Do not cross-list. Keep derived companions in their canonical work's entry. Link the title directly to the installed PDF, then give a short scope/status statement and separately named reader-facing records required by the profile. Do not link TeX authoring files. Distinguish generation provenance, source audit, independent review, production state, and release status; retain profile identifiers only when they aid readers.
 
+Keep section landing pages terse and prefer compact tables. Expose only the columns a reader needs to choose a work: normally its linked title and a short scope/status statement, with a date, stable ID, or companion column only when it materially aids navigation. Put repository-facing audit links in a final `Supporting records` column. Sort by a profile's stable series order or by occurrence or governing event date where one applies; otherwise use a predictable alphabetical subject or title order, keeping a canonical work and its derived companions together.
+
 On the 1962 page list the Ordinary first, assembly references second, and proper guides in their compact series table. Keep novenas and their short forms together on the Prayer page. Every postconciliar entry names its exact books, edition, language, territory, and date; comparative or discursive works remain with their substantive study category.
 
 `CONTRIBUTING.md` keeps an ordinary-language no-Git path, an isolated agent workflow, and an experimental-branch path. Feedback triggers verification rather than becoming authority. Submissions retain ownership, accept the applicable outbound license, and identify third-party material and its distribution basis.
