@@ -1,22 +1,15 @@
 # Public Release Boundary
 
-The current release manifest contains 56 publications: 36 exact PDF snapshots
-are marked `release`, 17 revised proper guides and the Saint Stanislaus parish
-history are in `review`, and the new Origen and Tertullian biographies are on
-`hold`. The parish
-history's internal work-specific distribution review is complete; like the
-revised proper guides, it still requires renewed exact-snapshot authorization.
-The two biographies are excluded from both public distribution and private
-preview pending work-specific rights reviews. The 17 July 2026 supplemental
-authorization in
-`rights/public-alpha-2026-07-15.md` remains the historical exact-byte record for
-the then-current 53 PDFs and 21 artifact-affecting site inputs. It does not
-authorize the 17 later PDF revisions or the catalog bytes changed to describe
-their review status, nor does it authorize the parish-history, Origen, or
-Tertullian snapshots. Public check, build, verification, and deployment
-therefore fail closed until renewed authorization binds the intended current
-PDF and site-input snapshots. The historical authorization record remains
-unchanged.
+The current release manifest contains 56 publications, all marked `release`.
+The 20 July 2026 supplement in
+`rights/public-alpha-2026-07-15.md` binds all 56 exact current installed PDF
+snapshots and all 21 exact current artifact-affecting site inputs under the
+existing perpetual worldwide public-repository and GitHub Pages authority,
+subject to no project-initiated promotion. It promotes the 18 former review
+items and the Origen and Tertullian holds without changing their bytes or
+raising their editorial or ecclesiastical maturity. The original user
+instruction “approve” is recorded as exact-current-snapshot distribution
+approval only. Changed PDF or site-input bytes require renewed authorization.
 
 `public-alpha.json` is the exhaustive publication policy for every discovered source document and installed PDF:
 
@@ -42,9 +35,8 @@ and is not an ecclesiastical interpretation, dispensation, canonical opinion,
 imprimatur, nihil obstat, or approval of the secret or this publication. It
 does not supply independent rights, canonical, specialist, liturgical, or
 ecclesiastical review. Apparition and cult approvals remain object-limited and
-do not approve this publication. The manifest retains this PDF among the 36
-`release` items; the stale site-source binding nevertheless prevents a current
-public artifact from passing its release gate.
+do not approve this publication. The manifest retains this PDF among all 56
+`release` items and binds its exact current hash.
 
 For every fully authorized snapshot the generator will:
 
@@ -70,10 +62,8 @@ source-audited but is not a critical edition; manuscript collation and
 comprehensive source-language lexical review have not occurred, and independent
 Aristotelian, patristic, Thomistic, moral-theological, pastoral, and clinical
 review remain outstanding. The nine revised 1962 proper guides and eight
-revised postconciliar proper guides are in private review pending renewed
-exact-current-snapshot authorization. The postconciliar guides' former exact
-snapshots were released under the express exception recorded in the historical
-rights supplement; the current revisions remain subject to the same outstanding
+revised postconciliar proper guides now have exact-current-snapshot distribution
+clearance. The postconciliar revisions remain subject to the same outstanding
 complete English-oration collation against an identified U.S. altar-book
 printing and independent liturgical, biblical, theological, and historical
 review. The postconciliar Order of Mass likewise still lacks exact hands-on
@@ -82,7 +72,21 @@ books. None of those records may imply the missing collation or review. The
 Mount Carmel guide and companion retain their recorded *Flos Carmeli* witness,
 attribution, permission, and non-approval limitations.
 
-The five works newly moved from `hold` to `release` retain their own limits.
+The Origen and Tertullian internal work-specific rights reviews are complete
+for their unchanged installed PDF hashes. The maintainer represents that the
+existing third-party-text-and-link authorization includes written DPC
+permission for the exact seven Vatican URLs enumerated in the dated rights
+supplement and biography research records, including their presence in the
+public Git repository and reachable history. The private permission instrument
+is intentionally unstored and has not been independently verified. This is not
+an independent rights opinion or review, a broader license for Vatican material,
+or ecclesiastical approval. Origen's Curtis-translation jurisdiction boundary
+and Tertullian's project rendering of *Da magistrum* remain recorded in their
+source audits; all disclosed independent historical, patristic, theological,
+textual, rights, and ecclesiastical review remains outstanding.
+
+The five works moved from `hold` to `release` in the 17 July supplement retain
+their own limits.
 The SSPX account still awaits independent historical, theological, and
 canon-law review and retains its public-record gaps concerning the 1974 and
 1987 visitations, the contested 1975 suppression, institutional and partisan
@@ -103,20 +107,18 @@ authorization to use the books. The postconciliar calendar still awaits
 historical, liturgical, territorial-law, and English-edition review, including
 direct collation against licensed 2008 Latin and 2011 United States English
 altar books; its recurring-page, annual-calendar, and holy-day-law boundaries
-remain operative. The 17 July clearance supplies no independent rights
+remain operative. Exact-snapshot clearance supplies no independent rights
 analysis, specialist or ecclesiastical review, or ecclesiastical approval for
 any of them. See the rights record and each publication's linked research
 records for the complete boundaries.
 
-After all current bindings pass, the GitHub Pages workflow can build and verify
-`build/public-alpha/site` and would upload only that artifact through the
-`github-pages` environment. The present catalog changes deliberately invalidate
-the old site-source hashes, so public and preview build gates remain closed
-until renewed authorization is recorded. Pages must never publish the
-repository root or `build/public-alpha/preview`. This record documents ordinary
-repository and Pages publication subject to the no-project-initiated-promotion
-condition; it does not itself authorize a worker to perform a push or
-deployment, which remain separate operations.
+With all current bindings verified, the GitHub Pages workflow can build and
+verify `build/public-alpha/site` and would upload only that artifact through the
+`github-pages` environment. Pages must never publish the repository root or
+`build/public-alpha/preview`. This record documents ordinary repository and
+Pages publication subject to the no-project-initiated-promotion condition; it
+does not itself authorize a worker to perform a push or deployment, which
+remain separate operations.
 
 Use:
 

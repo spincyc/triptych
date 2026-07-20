@@ -119,7 +119,7 @@ The dossier headings, corpus keys, timeline events, and reader-facing census are
 - no current communion is labeled by a disavowed historic formula;
 - the apostolic boundary is the first rendered body section, and the terminal order is timeline, census accounting, `Scope, Terms, and Qualifications`, references, and metadata;
 - the source and reference records identify the same acts and dates; and
-- the catalog's maturity statement agrees with the installed artifact; the manifest's distribution authorization applies only to the superseded snapshot, and fresh exact-snapshot authorization for the current installed bytes remains pending.
+- the catalog's maturity statement agrees with the installed artifact; the manifest's distribution authorization applies only to the superseded snapshot, and the current installed bytes have release-specific distribution clearance under the 20 July 2026 dated rights supplement, without supplying independent review or ecclesiastical approval.
 
 Independent specialist review remains outstanding in all disciplines and languages listed in the research scope.
 

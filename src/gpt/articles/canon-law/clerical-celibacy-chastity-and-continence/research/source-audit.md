@@ -65,7 +65,7 @@ Access and currentness checks were completed 2026-07-15 unless noted. The source
 
 ## Copyright and publication status
 
-No full modern translation, commentary, code, or Church document is reproduced. Links are supplied for inspection; prose is project-created synthesis. The release manifest and dated rights record authorized the PDF snapshot installed before the 2026-07-19 final-typography revision. That historical decision did not supply independent rights, canonical, specialist, or ecclesiastical review and did not make the study a canonical opinion or legal advice. Fresh exact-snapshot distribution authorization for the current installed bytes remains pending.
+No full modern translation, commentary, code, or Church document is reproduced. Links are supplied for inspection; prose is project-created synthesis. The release manifest and dated rights record authorized the PDF snapshot installed before the 2026-07-19 final-typography revision. That historical decision did not supply independent rights, canonical, specialist, or ecclesiastical review and did not make the study a canonical opinion or legal advice. The current installed bytes have release-specific distribution clearance under the 20 July 2026 dated rights supplement; that operational decision supplies none of the outstanding review or approval.
 
 ## Build and review record
 

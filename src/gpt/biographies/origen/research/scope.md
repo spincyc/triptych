@@ -209,6 +209,36 @@ The BSB manuscript images and catalogue metadata retain the institution's
 terms. No third-party image, scan, manuscript transcription, modern critical
 text, or substantial modern quotation is reproduced.
 
+William Alexander Curtis's English translation of Origen's *On Prayer* is
+public domain in the United States by publication history but may remain
+protected in life-plus-seventy jurisdictions through 2031. The publication
+paraphrases the translation and reproduces no Curtis wording. In the unchanged
+rendered snapshot, “public-domain online text” identifies the United
+States-hosted CCEL research witness; it is not a worldwide public-domain claim
+or a claim to CCEL's presentation. Modern critical editions and translations,
+Vatican English, scholarship, institutional metadata, and manuscript images
+retain their own rights.
+
+An internal work-specific rights review completed 2026-07-20 checked
+quotations, translations, embedded links, source-site terms and restrictions,
+and fonts for the exact installed PDF. No other substantial quotation, image,
+embed, or source-term blocker was found. The maintainer represents that the
+previously attested third-party-text-and-link authorization includes written
+DPC permission specifically for these exact Vatican URLs and for their
+presence in the public Git repository and reachable history:
+
+- <https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_one/article_1/paragraph_6_man.html>
+- <https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_three/article_11.html>
+- <https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_three/article_12/iv_hell.html>
+- <https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20070425.html>
+- <https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20070502.html>
+
+The private permission instrument remains intentionally unstored and the
+project has not independently verified it. This records the maintainer's
+representation only; it is not an independent rights opinion or review, an
+open or broader license for Vatican text or other URLs, or ecclesiastical
+approval of the publication.
+
 ## Internal review completed
 
 - universal editorial and repository guidance and the biography profile read;
@@ -219,7 +249,9 @@ text, or substantial modern quotation is reproduced.
 - representative theological and ethical claims checked at exact loci and
   restricted to their surviving language and transmission layer;
 - chronology dependencies, disagreements, consequential negative results,
-  rights, and mutable-source cutoff recorded; and
+  rights, and mutable-source cutoff recorded;
+- an internal work-specific rights review completed for the exact installed
+  snapshot, with its representation and jurisdictional limits recorded; and
 - the four profile records checked for distinct function and agreement with the
   publication's qualified claims.
 
@@ -255,4 +287,7 @@ Metadata appears once in the body (apart from its contents entry), and the
 compact reuse-and-rights colophon remains readable on that same final page
 without creating another page. The installed PDF is byte-identical to the
 reviewed build and carries the same hash. These are internal production checks,
-not specialist, rights, distribution, or ecclesiastical approval.
+not independent specialist, rights, historical, patristic, theological,
+textual, or ecclesiastical review or approval. The work-specific internal
+rights review above and exact-snapshot distribution clearance do not alter
+those limits.
