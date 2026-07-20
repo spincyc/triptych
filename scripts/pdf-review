@@ -46,7 +46,8 @@ MAGICK_DISK = "2GiB"
 MAGICK_AREA = "64MP"
 DIAGNOSTIC_TAIL_BYTES = 64 * 1024
 CACHE_SCHEMA = 1
-RENDERER_SCHEMA = "triptych-pdf-review-v2-single-raster"
+RENDERER_SCHEMA = "triptych-pdf-review-v3-explicit-font"
+CONTACT_FONT_FILENAME = "lmsans10-regular.otf"
 METADATA_NAME = "review-cache.json"
 RUN_MANIFEST_NAME = "review-run.json"
 RUN_MANIFEST_SCHEMA = 1
@@ -595,6 +596,32 @@ def sha256_file(path: Path) -> str:
     return digest.hexdigest()
 
 
+def required_regular_file(path: Path, description: str) -> Path:
+    try:
+        resolved = path.resolve(strict=True)
+    except OSError as exc:
+        raise ReviewError(f"cannot resolve {description} {path}: {exc}") from exc
+    if not resolved.is_file() or not os.access(resolved, os.R_OK):
+        raise ReviewError(f"{description} is not a readable regular file: {resolved}")
+    return resolved
+
+
+def contact_font(runner: CommandRunner) -> Path:
+    override = os.environ.get("TRIPTYCH_PDF_REVIEW_FONT")
+    if override:
+        return required_regular_file(Path(override), "review contact-sheet font")
+    kpsewhich = executable_from_environment(
+        "TRIPTYCH_PDF_REVIEW_KPSEWHICH", "kpsewhich"
+    )
+    result = runner.capture([kpsewhich, CONTACT_FONT_FILENAME])
+    lines = result.splitlines()
+    if len(lines) != 1 or not lines[0]:
+        raise ReviewError(
+            f"kpsewhich did not resolve exactly one {CONTACT_FONT_FILENAME} path"
+        )
+    return required_regular_file(Path(lines[0]), "review contact-sheet font")
+
+
 def snapshot_pdf(task: PdfTask, snapshot_root: Path) -> PdfTask:
     """Copy one open PDF stream and bind the immutable copy to its digest."""
 
@@ -647,7 +674,11 @@ def tool_record(
 
 
 def renderer_record(
-    pdftoppm: str, magick: str, runner: CommandRunner
+    pdftoppm: str,
+    magick: str,
+    font: Path,
+    font_sha256: str,
+    runner: CommandRunner,
 ) -> tuple[str, dict[str, object]]:
     record: dict[str, object] = {
         "schema": RENDERER_SCHEMA,
@@ -667,6 +698,10 @@ def renderer_record(
             "geometry": CONTACT_GEOMETRY,
             "background": "white",
             "fill": "black",
+            "font": {
+                "path": str(font),
+                "sha256": font_sha256,
+            },
             "label": "Page {number}",
         },
         "limits": {
@@ -1009,6 +1044,7 @@ def render_pdf_artifact(
     temporary: Path,
     pdftoppm: str,
     magick: str,
+    font: Path,
     runner: CommandRunner,
 ) -> int:
     if task.render_source is None:
@@ -1059,6 +1095,8 @@ def render_pdf_artifact(
             magick,
             "montage",
             *magick_limits(),
+            "-font",
+            str(font),
             "-background",
             "white",
             "-fill",
@@ -1086,6 +1124,8 @@ def process_pdf(
     cache_root: Path,
     pdftoppm: str,
     magick: str,
+    font: Path,
+    font_sha256: str,
     renderer_fingerprint: str,
     renderer: dict[str, object],
     key_lock: threading.Lock,
@@ -1122,8 +1162,12 @@ def process_pdf(
                 )
                 temporary.mkdir()
                 page_count = render_pdf_artifact(
-                    task, temporary, pdftoppm, magick, runner
+                    task, temporary, pdftoppm, magick, font, runner
                 )
+                if sha256_file(font) != font_sha256:
+                    raise ReviewError(
+                        f"review contact-sheet font changed during rendering: {font}"
+                    )
                 write_cache_metadata(
                     temporary,
                     key=key,
@@ -1408,6 +1452,8 @@ def run_review(
             magick = executable_from_environment(
                 "TRIPTYCH_PDF_REVIEW_MAGICK", "magick"
             )
+            font = contact_font(runner)
+            font_sha256 = sha256_file(font)
             cache.mkdir(parents=True, exist_ok=True)
             tasks = [
                 task
@@ -1415,7 +1461,9 @@ def run_review(
                 else snapshot_pdf(task, snapshot_root)
                 for task in tasks
             ]
-            renderer_fingerprint, renderer = renderer_record(pdftoppm, magick, runner)
+            renderer_fingerprint, renderer = renderer_record(
+                pdftoppm, magick, font, font_sha256, runner
+            )
             key_locks: dict[str, threading.Lock] = {}
             for task in tasks:
                 assert task.pdf_sha256 is not None
@@ -1435,6 +1483,8 @@ def run_review(
                     cache,
                     pdftoppm,
                     magick,
+                    font,
+                    font_sha256,
                     renderer_fingerprint,
                     renderer,
                     key_locks[key],

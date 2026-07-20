@@ -54,6 +54,65 @@ PROVIDER ?= gpt
 PDF_JOBS ?= 4
 SHA256 ?= sha256sum
 INSTALL ?= install
+CODEX ?= /usr/bin/codex
+
+# Arch Linux dependency manifest (the only supported local host for now).
+# Keep direct owner packages explicit even when pacman currently installs one
+# through another package. This makes the project/tool boundary reviewable and
+# prevents a future dependency-graph change from silently removing a tool.
+#
+#   make, /bin/sh, /usr/bin/env, find, sort, cmp, id and core utilities
+#   (cat, install, mkdir, mv, rm and sha256sum):
+#     make bash findutils coreutils diffutils
+#   Python >= 3.10, stdlib (including fcntl/zoneinfo), IANA timezone data, and
+#   the public renderer's version-locked third-party module:
+#     python tzdata python-markdown (exact version in requirements-public-alpha.txt)
+#   pdflatex, kpsewhich/kpathsea and every directly loaded class/package/font:
+#     texlive-bin texlive-basic texlive-latex texlive-latexrecommended
+#     texlive-latexextra texlive-pictures texlive-fontsrecommended
+#     article, geometry, fontenc, inputenc, lmodern, microtype, array,
+#     booktabs, longtable, tabularx, enumitem, needspace, multicol, xcolor,
+#     hyperref, tcolorbox, tikz/PGF, pdflscape, ragged2e and titlesec
+#   PDF metadata/text/raster and bounded PNG/contact-sheet processing:
+#     poppler (pdfinfo, pdftotext, pdftoppm) and imagemagick (magick 7)
+#   repository/review/isolated-agent workflow:
+#     git openai-codex ripgrep
+#
+# pacman supplies the native shared-library closure and TeX package
+# transitives. poppler-data is optional for non-Latin CMaps and is not needed
+# by the current embedded-font corpus. pacman and either root access or sudo
+# are bootstrap requirements for the installer target, not project runtime
+# dependencies. GitHub Actions and its hosted Python/pip environment are
+# CI-only. Node/npm, GitHub CLI, Ghostscript and qpdf are not used here.
+# pdfLaTeX remains necessary for the shared preamble's pdfTeX primitives;
+# XeLaTeX, LuaLaTeX and Tectonic are not drop-in replacements. latexmk from
+# texlive-binextra is a free, more robust pass controller, but is not currently
+# used. Poppler plus ImageMagick 7 remains the smallest purpose-fit PDF review
+# stack; MuPDF or GraphicsMagick would not eliminate an existing dependency.
+ARCH_CORE_PACKAGES := make bash findutils coreutils diffutils
+ARCH_PYTHON_PACKAGES := python tzdata python-markdown
+ARCH_TEX_PACKAGES := texlive-bin texlive-basic texlive-latex \
+	texlive-latexrecommended texlive-latexextra texlive-pictures \
+	texlive-fontsrecommended
+ARCH_PDF_PACKAGES := poppler imagemagick
+ARCH_WORKFLOW_PACKAGES := git openai-codex ripgrep
+ARCH_DEPENDENCY_PACKAGES := $(ARCH_CORE_PACKAGES) $(ARCH_PYTHON_PACKAGES) \
+	$(ARCH_TEX_PACKAGES) $(ARCH_PDF_PACKAGES) $(ARCH_WORKFLOW_PACKAGES)
+ARCH_CANONICAL_COMMANDS := make:/usr/bin/make sh:/usr/bin/sh \
+	env:/usr/bin/env id:/usr/bin/id find:/usr/bin/find sort:/usr/bin/sort \
+	cmp:/usr/bin/cmp \
+	cat:/usr/bin/cat chmod:/usr/bin/chmod cp:/usr/bin/cp install:/usr/bin/install \
+	mkdir:/usr/bin/mkdir mv:/usr/bin/mv rm:/usr/bin/rm \
+	sha256sum:/usr/bin/sha256sum python3:/usr/bin/python3 \
+	pdflatex:/usr/bin/pdflatex kpsewhich:/usr/bin/kpsewhich \
+	pdfinfo:/usr/bin/pdfinfo pdftotext:/usr/bin/pdftotext \
+	pdftoppm:/usr/bin/pdftoppm magick:/usr/bin/magick git:/usr/bin/git \
+	codex:/usr/bin/codex rg:/usr/bin/rg
+ARCH_PACMAN ?= /usr/bin/pacman
+ARCH_SUDO ?= /usr/bin/sudo
+ARCH_ID ?= /usr/bin/id
+ARCH_PYTHON ?= /usr/bin/python3
+ARCH_OS_RELEASE ?= /etc/os-release
 
 SOURCE_ROOT := src/$(PROVIDER)
 BUILD_ROOT := build/$(PROVIDER)
@@ -118,6 +177,7 @@ BOUNDED_PDF_JOB_OPTION = $(if $(strip $(MAKE_PARALLEL_FLAGS)),,\
 .PHONY: all pdf review-pdfs review-all-pdfs install list help clean \
 	distclean check-tools check-metadata check-public-alpha prepare-public-alpha \
 	check-pdf-review check-agent-isolation codex public-site public-preview \
+	dependencies-arch install-dependencies-arch \
 	verify-public-site verify-public-preview integrate resolve continue abort final-diff \
 	FORCE_METADATA_VERIFICATION
 .DELETE_ON_ERROR:
@@ -165,8 +225,58 @@ install: check-metadata $(DOC_PDFS)
 list:
 	@printf '%s\n' $(DOCUMENTS)
 
+codex resolve: private export TRIPTYCH_CODEX_REAL := $(CODEX)
+
 codex:
 	@$(CODEX_LAUNCHER)
+
+dependencies-arch:
+	@printf '%s\n' $(ARCH_DEPENDENCY_PACKAGES)
+
+# Arch does not support partial upgrades: synchronize and upgrade the system in
+# the same transaction that installs the canonical repository packages. This
+# target never downloads standalone GitHub release binaries or writes ~/.local.
+install-dependencies-arch:
+	@set -eu; \
+	if [ ! -r '$(ARCH_OS_RELEASE)' ]; then \
+		printf '%s\n' 'Cannot verify Arch Linux: unreadable $(ARCH_OS_RELEASE)' >&2; \
+		exit 2; \
+	fi; \
+	. '$(ARCH_OS_RELEASE)'; \
+	if [ "$${ID:-}" != arch ]; then \
+		printf '%s\n' "Unsupported host OS: $${ID:-unknown} (Arch Linux required)" >&2; \
+		exit 2; \
+	fi; \
+	if [ ! -x '$(ARCH_PACMAN)' ]; then \
+		printf '%s\n' 'Missing canonical pacman executable: $(ARCH_PACMAN)' >&2; \
+		exit 2; \
+	fi; \
+	if [ ! -x '$(ARCH_ID)' ]; then \
+		printf '%s\n' 'Missing canonical id executable: $(ARCH_ID)' >&2; \
+		exit 2; \
+	fi; \
+	if [ "$$('$(ARCH_ID)' -u)" -eq 0 ]; then \
+		'$(ARCH_PACMAN)' -Syu --needed $(ARCH_DEPENDENCY_PACKAGES); \
+	else \
+		if [ ! -x '$(ARCH_SUDO)' ]; then \
+			printf '%s\n' 'Run as root or install/configure sudo at $(ARCH_SUDO)' >&2; \
+			exit 2; \
+		fi; \
+		'$(ARCH_SUDO)' -- '$(ARCH_PACMAN)' -Syu --needed $(ARCH_DEPENDENCY_PACKAGES); \
+	fi; \
+	if [ ! -x '$(ARCH_PYTHON)' ]; then \
+		printf '%s\n' 'Missing canonical Python executable after installation: $(ARCH_PYTHON)' >&2; \
+		exit 2; \
+	fi; \
+	'$(ARCH_PYTHON)' -c 'import importlib.metadata as metadata, pathlib; lines = pathlib.Path("requirements-public-alpha.txt").read_text(encoding="utf-8").splitlines(); matches = [line.removeprefix("Markdown==") for line in lines if line.startswith("Markdown==")]; actual = metadata.version("Markdown"); expected = matches[0] if len(matches) == 1 else "invalid lock"; raise SystemExit(0 if actual == expected else f"Installed Markdown {actual} does not match requirements-public-alpha.txt ({expected})")'; \
+	for specification in $(ARCH_CANONICAL_COMMANDS); do \
+		name=$${specification%%:*}; \
+		canonical=$${specification#*:}; \
+		effective=$$(command -v "$$name" 2>/dev/null || :); \
+		if [ -n "$$effective" ] && [ "$$effective" != "$$canonical" ]; then \
+			printf '%s\n' "Warning: $$effective shadows canonical $$canonical" >&2; \
+		fi; \
+	done
 
 integrate resolve continue abort final-diff: private override export TRIPTYCH_MAKE_FIRST_GOAL := $(firstword $(MAKECMDGOALS))
 integrate resolve continue abort final-diff: private override export TRIPTYCH_MAKE_RUN_ID := $(word 2,$(MAKECMDGOALS))
@@ -220,6 +330,8 @@ help:
 		'make review-all-pdfs  Build with at most $(PDF_JOBS) jobs, then raster every PDF' \
 		'make install  Publish built PDFs into the mirrored tracked doc/ tree' \
 		'make list     List discovered document IDs' \
+		'make dependencies-arch  List canonical Arch package dependencies' \
+		'make install-dependencies-arch  Run a full Arch upgrade and install canonical packages' \
 		'make codex    Start Codex in an automatically isolated task checkout' \
 		'make integrate <run-id>  Integrate a clean run or land an unchanged review-pending candidate' \
 		'make resolve <run-id>  Open Codex to resolve and stage a managed rebase conflict' \
@@ -433,7 +545,7 @@ $(DOC_ROOT)/%.pdf: $(BUILD_ROOT)/%.pdf | check-metadata $(BUILD_ROOT)/.metadata/
 
 check-tools:
 	@command -v $(PDFLATEX) >/dev/null || { echo "Missing $(PDFLATEX)"; exit 1; }
-	@command -v python3 >/dev/null || { echo "Missing python3"; exit 1; }
+	@command -v $(PYTHON) >/dev/null || { echo "Missing $(PYTHON)"; exit 1; }
 	@command -v pdftotext >/dev/null || { echo "Missing pdftotext"; exit 1; }
 	@command -v pdfinfo >/dev/null || { echo "Missing pdfinfo"; exit 1; }
 	@command -v $(SHA256) >/dev/null || { echo "Missing $(SHA256)"; exit 1; }
