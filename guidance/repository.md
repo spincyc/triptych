@@ -113,6 +113,17 @@ Mutating Codex sessions follow the isolation and authority contract in `AGENTS.m
 
 Workers may edit, build, inspect, and commit only when authorized. They never switch branches, merge, rebase, amend, push, use the shared stash, change shared Git configuration or remotes, administer worktrees, or leave background processes running. Runtime paths, run IDs, locks, manifests, prompts, logs, and private launcher state are never tracked.
 
+From the primary checkout, inspect and manage ordinary retained runs with:
+
+```sh
+make status                 # list runs that still need attention
+make status <run-id>        # inspect one exact record, including a cleaned run
+make reopen <run-id>        # start a fresh Codex process in a retained worker
+make clean-run <run-id>     # request launcher-verified safe cleanup
+```
+
+The cleanup command never force-discards a result, and `make clean` remains the build-artifact cleanup target. The Make reopen wrapper accepts only the exact run ID; use the direct `--triptych-reopen` launcher form when supported Codex arguments are needed. Status may reconcile a stale lifecycle record while reporting it.
+
 Integration is launcher-owned and separately authorized. The opaque lifecycle is:
 
 ```sh
@@ -123,7 +134,7 @@ make continue <run-id>
 make abort <run-id>
 ```
 
-Use direct launcher forms for untrusted or externally supplied input because GNU Make interprets options and assignments before target validation. A resolver may edit and stage only the recorded conflict; it may not commit or administer the rebase. Only the launcher continues, aborts, lands, and cleans the retained run. Review the complete object-to-object final diff and every affected consumer before authorizing landing. Reconcile PDF conflicts from authoritative sources and rebuild; never choose one binary side. The launcher never pushes or deploys.
+Except for the no-argument status overview, Make lifecycle commands are convenience wrappers for exact launcher-produced run IDs. Use direct launcher forms for untrusted or externally supplied input because GNU Make interprets options and assignments before target validation. A resolver may edit and stage only the recorded conflict; it may not commit or administer the rebase. Only the launcher continues, aborts, lands, and cleans the retained run. Review the complete object-to-object final diff and every affected consumer before authorizing landing. Reconcile PDF conflicts from authoritative sources and rebuild; never choose one binary side. The launcher never pushes or deploys.
 
 ## Adding or moving a publication
 

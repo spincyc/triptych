@@ -1,19 +1,22 @@
-override CODEX_LIFECYCLE_GOALS := integrate resolve continue abort final-diff
+override CODEX_REQUIRED_RUN_ID_GOALS := reopen clean-run integrate resolve continue abort final-diff
+override CODEX_OPTIONAL_RUN_ID_GOALS := status
+override CODEX_LIFECYCLE_GOALS := $(CODEX_OPTIONAL_RUN_ID_GOALS) $(CODEX_REQUIRED_RUN_ID_GOALS)
 
-# These targets are convenience wrappers for exact run IDs emitted by the
-# launcher. GNU Make processes options and command-line variable assignments
-# before reading this file, so never forward arbitrary data here; use
-# scripts/triptych-codex directly when the value is external or untrusted. Once
-# Make has parsed a value as the second goal, validate it without a parse-time
-# shell command. Ordinary command-line variable assignments cannot replace
-# these override functions.
+# Except for the no-argument status overview, these targets are convenience
+# wrappers for exact run IDs emitted by the launcher. GNU Make processes options
+# and command-line variable assignments before reading this file, so never
+# forward arbitrary data here; use scripts/triptych-codex directly when the
+# value is external or untrusted. Once Make has parsed a value as the second
+# goal, validate it without a parse-time shell command. Ordinary command-line
+# variable assignments cannot replace these override functions.
 override codex_make_strip_decimal = $(subst 9,,$(subst 8,,$(subst 7,,$(subst 6,,$(subst 5,,$(subst 4,,$(subst 3,,$(subst 2,,$(subst 1,,$(subst 0,,$(1)))))))))))
 override codex_make_strip_hex = $(subst f,,$(subst e,,$(subst d,,$(subst c,,$(subst b,,$(subst a,,$(call codex_make_strip_decimal,$(1))))))))
 override codex_make_hex_to_words = $(subst f,x ,$(subst e,x ,$(subst d,x ,$(subst c,x ,$(subst b,x ,$(subst a,x ,$(subst 9,x ,$(subst 8,x ,$(subst 7,x ,$(subst 6,x ,$(subst 5,x ,$(subst 4,x ,$(subst 3,x ,$(subst 2,x ,$(subst 1,x ,$(subst 0,x ,$(1)))))))))))))))))
 override codex_make_character_count = $(words $(call codex_make_hex_to_words,$(1)))
 
-# Opaque lifecycle commands present the run ID as a second Make goal. Limit the
-# fallback rule to those invocations so ordinary unknown targets still fail.
+# Opaque lifecycle commands that take a run ID present it as a second Make
+# goal. Limit the fallback rule to lifecycle invocations so ordinary unknown
+# targets still fail.
 ifeq ($(filter undefined default,$(origin MAKECMDGOALS)),)
 $(error MAKECMDGOALS may not be overridden)
 endif
@@ -22,13 +25,21 @@ endif
 # where it would look like an environment override and trip the guard above.
 unexport MAKECMDGOALS
 ifneq ($(filter $(CODEX_LIFECYCLE_GOALS),$(MAKECMDGOALS)),)
-ifneq ($(firstword $(MAKECMDGOALS)),$(firstword $(filter $(CODEX_LIFECYCLE_GOALS),$(MAKECMDGOALS))))
-$(error Usage: make $(firstword $(filter $(CODEX_LIFECYCLE_GOALS),$(MAKECMDGOALS))) <run-id>)
+override CODEX_MAKE_LIFECYCLE_GOAL := $(firstword $(filter $(CODEX_LIFECYCLE_GOALS),$(MAKECMDGOALS)))
+ifneq ($(firstword $(MAKECMDGOALS)),$(CODEX_MAKE_LIFECYCLE_GOAL))
+$(error Usage: make $(CODEX_MAKE_LIFECYCLE_GOAL) $(if $(filter status,$(CODEX_MAKE_LIFECYCLE_GOAL)),[<run-id>],<run-id>))
 endif
+ifneq ($(filter status,$(CODEX_MAKE_LIFECYCLE_GOAL)),)
+ifneq ($(filter 1 2,$(words $(MAKECMDGOALS))),$(words $(MAKECMDGOALS)))
+$(error Usage: make status [<run-id>])
+endif
+else
 ifneq ($(words $(MAKECMDGOALS)),2)
-$(error Usage: make $(firstword $(MAKECMDGOALS)) <run-id>)
+$(error Usage: make $(CODEX_MAKE_LIFECYCLE_GOAL) <run-id>)
+endif
 endif
 override CODEX_MAKE_RUN_ID := $(word 2,$(MAKECMDGOALS))
+ifneq ($(strip $(CODEX_MAKE_RUN_ID)),)
 override CODEX_MAKE_RUN_ID_DATE := $(word 1,$(subst t, ,$(CODEX_MAKE_RUN_ID)))
 override CODEX_MAKE_RUN_ID_AFTER_T := $(word 2,$(subst t, ,$(CODEX_MAKE_RUN_ID)))
 override CODEX_MAKE_RUN_ID_TIME := $(word 1,$(subst z, ,$(CODEX_MAKE_RUN_ID_AFTER_T)))
@@ -44,6 +55,7 @@ override CODEX_MAKE_RUN_ID_INVALID := $(strip \
 	$(if $(filter 12,$(call codex_make_character_count,$(CODEX_MAKE_RUN_ID_HEX))),,hex-length) \
 	$(subst $(CODEX_MAKE_RUN_ID_RECONSTRUCTED),,$(CODEX_MAKE_RUN_ID)))
 $(if $(CODEX_MAKE_RUN_ID_INVALID),$(error invalid Triptych Codex run ID))
+endif
 .DEFAULT:
 	@:
 endif
@@ -178,7 +190,8 @@ BOUNDED_PDF_JOB_OPTION = $(if $(strip $(MAKE_PARALLEL_FLAGS)),,\
 	distclean check-tools check-metadata check-public-alpha prepare-public-alpha \
 	check-pdf-review check-agent-isolation codex public-site public-preview \
 	dependencies-arch install-dependencies-arch \
-	verify-public-site verify-public-preview integrate resolve continue abort final-diff \
+	verify-public-site verify-public-preview status reopen clean-run \
+	integrate resolve continue abort final-diff \
 	FORCE_METADATA_VERIFICATION
 .DELETE_ON_ERROR:
 .SECONDARY: $(BUILD_METADATA_STAMPS)
@@ -225,7 +238,7 @@ install: check-metadata $(DOC_PDFS)
 list:
 	@printf '%s\n' $(DOCUMENTS)
 
-codex resolve: private export TRIPTYCH_CODEX_REAL := $(CODEX)
+codex reopen resolve: private export TRIPTYCH_CODEX_REAL := $(CODEX)
 
 codex:
 	@$(CODEX_LAUNCHER)
@@ -278,9 +291,34 @@ install-dependencies-arch:
 		fi; \
 	done
 
-integrate resolve continue abort final-diff: private override export TRIPTYCH_MAKE_FIRST_GOAL := $(firstword $(MAKECMDGOALS))
-integrate resolve continue abort final-diff: private override export TRIPTYCH_MAKE_RUN_ID := $(word 2,$(MAKECMDGOALS))
-integrate resolve continue abort final-diff: private override CODEX_LAUNCHER := scripts/triptych-codex
+$(CODEX_LIFECYCLE_GOALS): private override export TRIPTYCH_MAKE_FIRST_GOAL := $(firstword $(MAKECMDGOALS))
+$(CODEX_LIFECYCLE_GOALS): private override export TRIPTYCH_MAKE_RUN_ID := $(word 2,$(MAKECMDGOALS))
+$(CODEX_LIFECYCLE_GOALS): private override CODEX_LAUNCHER := scripts/triptych-codex
+status:
+	@if [ "$$TRIPTYCH_MAKE_FIRST_GOAL" != status ]; then \
+		printf '%s\n' 'Usage: make status [<run-id>]' >&2; \
+		exit 2; \
+	fi
+	@if [ -n "$$TRIPTYCH_MAKE_RUN_ID" ]; then \
+		$(CODEX_LAUNCHER) --triptych-status "$$TRIPTYCH_MAKE_RUN_ID"; \
+	else \
+		$(CODEX_LAUNCHER) --triptych-status; \
+	fi
+
+reopen:
+	@if [ "$$TRIPTYCH_MAKE_FIRST_GOAL" != reopen ]; then \
+		printf '%s\n' 'Usage: make reopen <run-id>' >&2; \
+		exit 2; \
+	fi
+	@$(CODEX_LAUNCHER) --triptych-reopen "$$TRIPTYCH_MAKE_RUN_ID"
+
+clean-run:
+	@if [ "$$TRIPTYCH_MAKE_FIRST_GOAL" != clean-run ]; then \
+		printf '%s\n' 'Usage: make clean-run <run-id>' >&2; \
+		exit 2; \
+	fi
+	@$(CODEX_LAUNCHER) --triptych-clean "$$TRIPTYCH_MAKE_RUN_ID"
+
 integrate:
 	@if [ "$$TRIPTYCH_MAKE_FIRST_GOAL" != integrate ]; then \
 		printf '%s\n' 'Usage: make integrate <run-id>' >&2; \
@@ -333,12 +371,15 @@ help:
 		'make dependencies-arch  List canonical Arch package dependencies' \
 		'make install-dependencies-arch  Run a full Arch upgrade and install canonical packages' \
 		'make codex    Start Codex in an automatically isolated task checkout' \
+		'make status [<run-id>]  List runs needing attention or inspect one exact record' \
+		'make reopen <run-id>  Start a new Codex process in a retained task checkout' \
+		'make clean-run <run-id>  Safely clean an eligible retained run' \
 		'make integrate <run-id>  Integrate a clean run or land an unchanged review-pending candidate' \
 		'make resolve <run-id>  Open Codex to resolve and stage a managed rebase conflict' \
 		'make continue <run-id>  Continue staged resolutions to a review-pending candidate' \
 		'make abort <run-id>  Abort a managed rebase and restore its exact audited source' \
 		'make final-diff <run-id>  Show the complete review-pending diff without a worktree path' \
-		'Lifecycle Make wrappers require a launcher-produced ID; use scripts/triptych-codex directly for external input' \
+		'Run-ID Make wrappers require a launcher-produced ID; use scripts/triptych-codex directly for external input' \
 		'make check-agent-isolation  Test the transparent Codex launcher' \
 		'make check-pdf-review  Test memory-bounded PDF inspection tooling' \
 		'make check-metadata  Validate structured and inherited AI provenance' \
