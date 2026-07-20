@@ -76,14 +76,14 @@ CODEX ?= /usr/bin/codex
 #   PDF metadata/text/raster and bounded PNG/contact-sheet processing:
 #     poppler (pdfinfo, pdftotext, pdftoppm) and imagemagick (magick 7)
 #   repository/review/isolated-agent workflow:
-#     git openai-codex ripgrep
+#     git github-cli openai-codex ripgrep
 #
 # pacman supplies the native shared-library closure and TeX package
 # transitives. poppler-data is optional for non-Latin CMaps and is not needed
 # by the current embedded-font corpus. pacman and either root access or sudo
 # are bootstrap requirements for the installer target, not project runtime
 # dependencies. GitHub Actions and its hosted Python/pip environment are
-# CI-only. Node/npm, GitHub CLI, Ghostscript and qpdf are not used here.
+# CI-only. Node/npm, Ghostscript and qpdf are not used here.
 # pdfLaTeX remains necessary for the shared preamble's pdfTeX primitives;
 # XeLaTeX, LuaLaTeX and Tectonic are not drop-in replacements. latexmk from
 # texlive-binextra is a free, more robust pass controller, but is not currently
@@ -95,7 +95,7 @@ ARCH_TEX_PACKAGES := texlive-bin texlive-basic texlive-latex \
 	texlive-latexrecommended texlive-latexextra texlive-pictures \
 	texlive-fontsrecommended
 ARCH_PDF_PACKAGES := poppler imagemagick
-ARCH_WORKFLOW_PACKAGES := git openai-codex ripgrep
+ARCH_WORKFLOW_PACKAGES := git github-cli openai-codex ripgrep
 ARCH_DEPENDENCY_PACKAGES := $(ARCH_CORE_PACKAGES) $(ARCH_PYTHON_PACKAGES) \
 	$(ARCH_TEX_PACKAGES) $(ARCH_PDF_PACKAGES) $(ARCH_WORKFLOW_PACKAGES)
 ARCH_CANONICAL_COMMANDS := make:/usr/bin/make sh:/usr/bin/sh \
@@ -107,7 +107,7 @@ ARCH_CANONICAL_COMMANDS := make:/usr/bin/make sh:/usr/bin/sh \
 	pdflatex:/usr/bin/pdflatex kpsewhich:/usr/bin/kpsewhich \
 	pdfinfo:/usr/bin/pdfinfo pdftotext:/usr/bin/pdftotext \
 	pdftoppm:/usr/bin/pdftoppm magick:/usr/bin/magick git:/usr/bin/git \
-	codex:/usr/bin/codex rg:/usr/bin/rg
+	gh:/usr/bin/gh codex:/usr/bin/codex rg:/usr/bin/rg
 ARCH_PACMAN ?= /usr/bin/pacman
 ARCH_SUDO ?= /usr/bin/sudo
 ARCH_ID ?= /usr/bin/id
