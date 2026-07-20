@@ -483,11 +483,11 @@ exit 99
         self.assertIn("Unsupported host OS: ubuntu", result.stderr)
         self.assertFalse(self.pacman_log.exists())
 
-    def test_codex_target_pins_the_configured_system_binary(self) -> None:
+    def test_codex_launch_targets_pin_the_configured_system_binary(self) -> None:
         launcher = self.root / "scripts/triptych-codex"
         launcher.write_text(
             """#!/bin/sh
-printf '%s\\n' "$TRIPTYCH_CODEX_REAL" > "$MAKE_TEST_CODEX_LOG"
+printf '%s\\n' "$TRIPTYCH_CODEX_REAL" >> "$MAKE_TEST_CODEX_LOG"
 """,
             encoding="utf-8",
         )
@@ -496,8 +496,12 @@ printf '%s\\n' "$TRIPTYCH_CODEX_REAL" > "$MAKE_TEST_CODEX_LOG"
         self.environment["TRIPTYCH_CODEX_REAL"] = "/home/test/.local/bin/codex"
 
         self.run_make("codex")
+        self.run_make("reopen", "20260720t141000z-112955d84c04")
 
-        self.assertEqual(self.lines(self.codex_log), ["/usr/bin/codex"])
+        self.assertEqual(
+            self.lines(self.codex_log),
+            ["/usr/bin/codex", "/usr/bin/codex"],
+        )
 
 
 if __name__ == "__main__":
