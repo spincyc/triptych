@@ -4,7 +4,7 @@
 
 Each life has its own chronology, source audit, and tradition audit; Peter and Paul remain separate works.
 
-All seven are source-audited, internally production-checked working biographies without independent specialist or ecclesiastical review. The six earlier PDF snapshots are distribution-cleared; the new Aquinas biography is on release hold pending a work-specific rights review. Origen and Tertullian also have work-specific internal rights reviews, not independent rights opinions.
+All eight are source-audited, internally production-checked working biographies without independent specialist or ecclesiastical review. The six earlier PDF snapshots are distribution-cleared; the new Aquinas and Bellarmine biographies are on release hold pending work-specific rights review. Origen and Tertullian also have work-specific internal rights reviews, not independent rights opinions.
 
 Lives are grouped as Apostles, Church Fathers, Doctors of the Church, and other biographies, in that order. A life appears in the first group that applies; each group follows birth chronology where recoverable, then the earliest securely dateable activity.
 
@@ -27,6 +27,7 @@ Lives are grouped as Apostles, Church Fathers, Doctors of the Church, and other 
 | Biography | Focus | Supporting records |
 | --- | --- | --- |
 | **[Saint Thomas Aquinas: Friar, Teacher, and the Work of Wisdom](../doc/gpt/biographies/saint-thomas-aquinas.pdf)** | Dominican vocation, schools, writings, disputed legacy, canonization, relics, and Thomistic reception. | [Research scope](../src/gpt/biographies/saint-thomas-aquinas/research/scope.md) · [Source audit](../src/gpt/biographies/saint-thomas-aquinas/research/source-audit.md) · [Chronology](../src/gpt/biographies/saint-thomas-aquinas/research/chronology.md) · [Tradition audit](../src/gpt/biographies/saint-thomas-aquinas/research/tradition-audit.md) |
+| **[Saint Robert Bellarmine: Controversy, Office, Pastoral Rule, and Reception](../doc/gpt/biographies/saint-robert-bellarmine.pdf)** | Jesuit formation, controversies, catechesis, curial and episcopal office, coercion, Galileo, spiritual writing, and reception. | [Research scope](../src/gpt/biographies/saint-robert-bellarmine/research/scope.md) · [Source audit](../src/gpt/biographies/saint-robert-bellarmine/research/source-audit.md) · [Chronology](../src/gpt/biographies/saint-robert-bellarmine/research/chronology.md) · [Tradition audit](../src/gpt/biographies/saint-robert-bellarmine/research/tradition-audit.md) |
 
 ## Other Biographies
 

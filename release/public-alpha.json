@@ -3,10 +3,10 @@
   "release_id": "public-alpha",
   "provider": "gpt",
   "expected_counts": {
-    "publications": 59,
+    "publications": 60,
     "release": 58,
     "review": 0,
-    "hold": 1
+    "hold": 2
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
@@ -167,6 +167,15 @@
     },
     {
       "id": "biographies/saint-thomas-aquinas",
+      "catalog": "library/biographies.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review"
+      ],
+      "approval": null
+    },
+    {
+      "id": "biographies/saint-robert-bellarmine",
       "catalog": "library/biographies.md",
       "status": "hold",
       "gates": [
