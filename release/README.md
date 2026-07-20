@@ -1,22 +1,24 @@
 # Public Release Boundary
 
-The current release manifest contains 59 publications: 58 are marked
-`release`, no item is marked `review`, and the new Saint Thomas Aquinas
-biography is marked `hold`. The later 20 July 2026 supplement in
-`rights/public-alpha-2026-07-15.md` records the maintainer's instruction
-“approve all” as exact-current-snapshot distribution authorization, effective
-at `2026-07-20T11:30:03-05:00` in `America/Chicago`, under the existing
-represented perpetual worldwide public-repository and GitHub Pages authority.
-It binds the 58 exact installed PDF snapshots and 21 artifact-affecting site
-inputs as they stood at that authorization, subject to no project-initiated
-promotion. Changed PDF or site-input bytes require renewed authorization.
+The current release manifest contains 60 publications: 58 are marked
+`release`, no item is marked `review`, and the new Saint Thomas Aquinas and
+Saint Robert Bellarmine biographies are marked `hold`. The later 20 July 2026
+supplement in `rights/public-alpha-2026-07-15.md` records the maintainer's
+instruction “approve all” as exact-current-snapshot distribution authorization,
+effective at `2026-07-20T11:30:03-05:00` in `America/Chicago`, under the
+existing represented perpetual worldwide public-repository and GitHub Pages
+authority. It binds the 58 exact installed PDF snapshots and 21
+artifact-affecting site inputs as they stood at that authorization, subject to
+no project-initiated promotion. Changed PDF or site-input bytes require renewed
+authorization.
 
-The Aquinas biography has no approval, remains excluded from both public and
-preview artifacts, and awaits a work-specific rights review. Its catalog
-changes make the recorded `LIBRARY.md` and `library/biographies.md` site-source
-hashes stale. Together with the already changed `CONTRIBUTING.md` site input
-and Ninth Sunday after Pentecost PDF, these changes cause the public check to
-fail closed until renewed exact-snapshot authorization.
+The Aquinas and Bellarmine biographies have no approval, remain excluded from
+both public and preview artifacts, and each awaits a work-specific rights
+review. Their catalog changes make the recorded `LIBRARY.md` and
+`library/biographies.md` site-source hashes stale. Together with the already
+changed `CONTRIBUTING.md` site input and Ninth Sunday after Pentecost PDF, these
+changes cause the public check to fail closed until renewed exact-snapshot
+authorization.
 
 This is operational exact-byte release clearance, not a judgment that a work
 is editorially or profile-final. It is not ecclesiastical approval, an
@@ -159,7 +161,7 @@ python scripts/public-alpha verify --deployment-target github-pages
 `prepare-public-alpha` is read-only and deliberately works when old snapshot
 hashes are stale or the old source-binding list lacks newly recognized inputs.
 It validates the exhaustive publication and current artifact-input scope, then
-reports the current 59 publication PDF hashes and the hashes of all 21 current
+reports the current 60 publication PDF hashes and the hashes of all 21 current
 Markdown, layout, style, license, generator, and dependency-lock inputs as a
 deterministic candidate inventory. The inventory explicitly confers no
 approval, changes no
