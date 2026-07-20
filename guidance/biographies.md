@@ -146,6 +146,18 @@ rights, and review state. Event dates remain at their events; disputed
 attribution, relic status, miracle limit, and other local qualifications remain
 beside the claims they govern.
 
+## Catalog order
+
+The biographies library groups lives in this order: Apostles, Church Fathers,
+Doctors of the Church, and Other Biographies. Place a subject in the first
+applicable group so that an Apostle who is also received as a Father, or a
+Father who is also a Doctor, appears only once. Within each group, order lives
+chronologically by birth or plausible birth range when known; when birth is
+not recoverable, use the earliest securely dateable biographical activity.
+State the convention on the library page, preserve uncertainty rather than
+inventing a sorting date, and omit or mark an empty group without disturbing
+the sequence.
+
 ## Profile gate
 
 Every consequential episode must have an earliest located witness or an
