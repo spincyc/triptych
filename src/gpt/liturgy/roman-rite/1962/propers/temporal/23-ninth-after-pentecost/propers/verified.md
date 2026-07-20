@@ -14,7 +14,7 @@
 - **Verification facsimile SHA-256:** `648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a`.
 - **Secondary image witness:** <https://archive.org/details/MissaleRomanum1962RomanMissalColorLatin>.
 - **Verification status and date:** all ten appointed elements, their headings, references, wording, punctuation, accents, rank, Credo, Trinity Preface, and formulary boundaries were visually checked against the checksum-matched 1962 facsimile on 2026-07-20. OCR was only a locating aid.
-- **Occurrence control:** the 1962 calendar was checked at the universal sanctoral entry for 26 July and the General Rubrics were checked at nos. 16, 91 (precedence positions 15–16), 95, 108, 111b, 113–114, 431–432, and 475–505. The repository’s edition-specific assembly worked case 6 independently records the same result.
+- **Formulary boundary:** this record verifies the reusable temporal formulary itself. Civil-date occurrences, commemorations, and particular-calendar additions belong to the edition-specific assembly workflow and are not installed as part of this Sunday proper.
 - **Unresolved discrepancies:** none in the verified Sunday transcription. The deliberately raw OCR preserves recognition errors such as “II claasis,” “raciet,” “Cnc6de,” and “Prrcfatio de Sama Trinitate”; none controls the collated text below.
 
 ## 1. Introit
@@ -114,23 +114,3 @@ Tui nobis, quǽsumus, Dómine, commúnio sacraménti, et purificatiónem cónfer
 **Immediate context and liturgical function:** The final prayer asks that communion in the Lord’s sacrament confer purification and bestow unity. It prevents private or merely affective construals of reception: the requested fruit is both cleansing and ecclesial communion.
 
 **Verification status:** facsimile-collated; *purificatiónem* and *unitátem* are confirmed.
-
-## Dated occurrence and Saint Anne branch
-
-Sunday, 26 July 2026 is the Ninth Sunday after Pentecost and also the universal II-class feast of Saint Anne, Mother of the Blessed Virgin Mary. Under the 1962 precedence table, the II-class Sunday at position 15 prevails over the universal II-class saint at position 16. The feast is not transferred.
-
-At Low Mass and at conventual Mass, Saint Anne is commemorated by the following prayer triad only. The abbreviated conclusions are retained exactly as printed.
-
-### Commemorated Collect
-
-Deus, qui beátæ Annæ grátiam conférre dignátus es, ut Genetrícis unigéniti Fílii tui mater éffici mererétur: concéde propítius; ut, cuius solémnia celebrámus, eius apud te patrocíniis adiuvémur. Per eúndem Dóminum nostrum.
-
-### Commemorated Secret
-
-Sacrifíciis præséntibus, quǽsumus, Dómine, placátus inténde: ut per intercessiónem beátæ Annæ, quæ Genetrícis Fílii tui Dómini nostri Iesu Christi mater éxstitit, et devotióni nostræ profíciant, et salúti. Per eúndem Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte.
-
-### Commemorated Postcommunion
-
-Cæléstibus sacraméntis vegetáti, quǽsumus, Dómine Deus noster: ut, intercessióne beátæ Annæ, quam Genetrícis Fílii tui matrem esse voluísti, ad ætérnam salútem perveníre mereámur. Per eúndem Dóminum.
-
-At a nonconventual sung Mass, that commemoration is omitted. In no form does Saint Anne’s Gospel, Matthew 13:44–52, or any of her chants, color, or other proper material enter the Sunday Mass. The facsimile collation of her triad used printed pages 602–603 / PDF pages 683–684 of the same checksum-matched witness.
