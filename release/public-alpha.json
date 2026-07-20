@@ -3,10 +3,10 @@
   "release_id": "public-alpha",
   "provider": "gpt",
   "expected_counts": {
-    "publications": 112,
+    "publications": 113,
     "release": 110,
     "review": 0,
-    "hold": 2
+    "hold": 3
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
@@ -66,6 +66,15 @@
     }
   },
   "publications": [
+    {
+      "id": "articles/faith/at-the-end-of-every-why",
+      "catalog": "library/faith.md",
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
+    },
     {
       "id": "articles/faith/council-missal-and-crisis",
       "catalog": "library/faith.md",
