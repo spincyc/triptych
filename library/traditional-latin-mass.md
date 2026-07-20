@@ -14,7 +14,7 @@ These studies concern the books and calendar in force in 1962. They do not estab
 
 ## Mass Propers
 
-These guides place the appointed texts in context. All have facsimile-checked texts, internal source audits, and production checks, but no independent theological review. IDs 15–22 and M01 retain exact-snapshot distribution clearance; ID 23 is on `hold` without approval pending liturgical-text permission. These dispositions supply no missing source, liturgical, theological, rights, or ecclesiastical review.
+These guides place the appointed texts in context. All have facsimile-checked texts, internal source audits, and production checks, but no independent theological review. All ten exact current PDF snapshots—IDs 15–23 and M01—have exact-snapshot distribution clearance under the later 20 July 2026 “approve all” supplement. ID 23 retains its recorded liturgical-text-permission and independent-review issues as maturity and rights-analysis limits. Clearance applies only to the recorded bytes and supplies no missing source, liturgical, theological, rights, or ecclesiastical review, imprimatur, nihil obstat, general license, broader reuse permission, or ecclesiastical approval.
 
 | ID | Guide | Supporting records |
 | --- | --- | --- |

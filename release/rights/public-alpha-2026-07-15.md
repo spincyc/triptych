@@ -33,8 +33,9 @@ The Mount Carmel guide and companion retain their recorded *Flos Carmeli* witnes
 ## Supplemental exact-current-snapshot clearance — 20 July 2026
 
 The maintainer's original instruction “approve” is recorded as approval of the
-exact current snapshot inventoried below: all 56 existing installed PDFs and
-all 21 final artifact-affecting site inputs. Effective at
+then-current snapshot: all 56 existing installed PDFs and all 21 then-final
+artifact-affecting site inputs. That 56-object hash inventory remains
+recoverable in Git history. Effective at
 `2026-07-20T00:16:04-05:00`, that approval places all 56 publications in
 `release` under the existing perpetual worldwide public-repository and GitHub
 Pages authority. It promotes the 18 former `review` items and the Origen and
@@ -64,8 +65,8 @@ license. Every source, review, collation, rights, currentness, and
 ecclesiastical limitation disclosed in this record, the release README, the
 catalogs, and each publication's research records remains operative.
 
-The current 17 proper-guide snapshots have release-specific distribution
-clearance only. The nine 1962 guides retain their recorded G3 / S2 / T0 / Q3
+The 17 proper-guide snapshots included in that clearance have release-specific
+distribution clearance only. The nine 1962 guides retain their recorded G3 / S2 / T0 / Q3
 status and lack independent theological review. The eight postconciliar guides
 retain the express snapshot exception and still lack complete English-oration
 collation against an identified current United States altar-book printing and
@@ -116,6 +117,46 @@ presentation. In Tertullian, “Give me the master” is the project's rendering
 Jerome's public-domain Latin *Da magistrum* in *On Illustrious Men* 53 and was
 not copied from a protected modern translation.
 
+## Supplemental “approve all” exact-current-snapshot clearance — 20 July 2026
+
+At `2026-07-20T11:30:03-05:00` in `America/Chicago`, the maintainer expressly
+instructed “approve all.” This is recorded as a later exact-current-snapshot
+distribution authorization under the existing represented authority in record
+`perpetual-public-repository-2026`, approved on 20 July 2026, perpetual and
+worldwide, with no expiration. The sole condition remains
+`no-project-initiated-promotion`.
+
+The later authorization supersedes the two then-current operational
+distribution holds and approves all 58 exact installed PDF snapshots and all
+21 exact final artifact-affecting public-site sources inventoried below. It
+includes the unchanged 10-page Ninth Sunday after Pentecost PDF, SHA-256
+`db5611175355ebf892057d79e8834b1cf0f8982fd5839f064346d0d5a4343b39`,
+and the unchanged 12-page PC-S41-A PDF, SHA-256
+`e23673ede4454f8390d0e733ed4fab70e7f3b8d1afc33ac437452cfff6d374a7`.
+The manifest records 58 `release`, zero `review`, and zero `hold` items, with
+empty release gates and exact approval bindings for every publication.
+
+This is operational clearance to distribute the recorded bytes, not a
+judgment that every work is editorially or profile-final. It is not
+ecclesiastical approval, an imprimatur, a nihil obstat, completion of
+independent work-specific rights review, completion of named U.S. altar-book
+collation, completion of independent proper-guide review, a general license,
+or broader reuse permission. In particular, the Ninth Sunday after Pentecost
+guide retains its recorded liturgical-text-permission and independent-review
+issues as maturity and rights-analysis limits. PC-S41-A retains its recorded
+work-specific rights review, liturgical-text permission, named U.S. altar-book
+collation, independent proper-guide review, direct-2008-image, and other
+profile-final limits. Empty manifest gates record the exact-byte snapshot
+exception; they do not represent completion of those acts or approve the
+non-publishable Week XVII owner, a changed build, or any future Year B or C
+leaf.
+
+Every limitation retained in the prior supplements, release README, catalogs,
+and work-specific records remains operative. Changed PDF or site-source bytes
+require renewed exact-snapshot authorization. The represented grantor,
+authority, delegation, and private permission instruments remain
+user-attested and independently unverified as stated above.
+
 ## La Salette exact-snapshot boundary
 
 The exact current La Salette PDF, SHA-256 `1fdb552c80dc105013227dc31bcf5f1bdf31e4f5da54dd42b5bfa6bd16a7a17a`, directly analyzes and paraphrases the secret addressed by the Holy Office decree published at *Acta Apostolicae Sedis* 7 (1915) 594. Its repository record leaves unresolved whether the decree's standalone non-penal publication command remains binding in its original breadth or has lapsed. The user's explicit direction on 16 July 2026 established the recorded interpretive boundary, and the 20 July exact-current-snapshot instruction clears distribution of these exact current bytes under the existing user-attested release authority, including the represented authority, grantor, and delegation that the project has not independently verified.
@@ -125,7 +166,8 @@ This exact-snapshot distribution decision preserves the unresolved juridic quest
 ## Duration, territory, and condition
 
 - Base authorization effective: 15 July 2026 at 00:00 CDT (`2026-07-15T00:00:00-05:00`).
-- Current exact-snapshot supplement effective: 20 July 2026 at 00:16:04 CDT (`2026-07-20T00:16:04-05:00`).
+- Prior exact-current-snapshot supplement effective: 20 July 2026 at 00:16:04 CDT (`2026-07-20T00:16:04-05:00`).
+- Current “approve all” exact-current-snapshot supplement effective: 20 July 2026 at 11:30:03 CDT (`2026-07-20T11:30:03-05:00`).
 - Duration: perpetual, with no expiration date.
 - Territory: unrestricted worldwide public access, but only within the authorized scope.
 - Condition: no project-initiated announcement, advertising, promotion, syndication, or public software-release attachment. Ordinary repository listings, GitHub navigation and activity, link previews, search indexing, and other platform behavior inherent in an otherwise authorized public repository or Pages site do not by themselves violate this condition.
@@ -166,6 +208,7 @@ This exact-snapshot distribution decision preserves the unresolved juridic quest
 | `liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost` | `0239c1823745a7160acb3cd810ad3e57877e746821d0a096f28f1da34450a37b` |
 | `liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost` | `95c07efdbc902ccaef8275d4ae503a1d52151f3a732472237de0e2ffb799e014` |
 | `liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost` | `e77e621842d8d467f7c94f01385d5cc9db0f38ed4928297ed4a2b676b77399cf` |
+| `liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost` | `db5611175355ebf892057d79e8834b1cf0f8982fd5839f064346d0d5a4343b39` |
 | `liturgy/roman-rite/1962/reference/assembling-the-mass` | `792f76897a31cf9f4eb6d23eacee370c2078f3f9235c79831c7b03bf1dfd8727` |
 | `liturgy/roman-rite/1962/reference/liturgical-calendar` | `001efbe713c7fdaf696cf6f0e85fd5b100ab0bc97ca893b55b003caff6add0e1` |
 | `liturgy/roman-rite/comparative/two-missals-one-sacrifice` | `18ee674353dbfed84e48551b860d05e371457f0fe182c8e7ef6488514ca6270d` |
@@ -176,6 +219,7 @@ This exact-snapshot distribution decision preserves the unresolved juridic quest
 | `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-fourteenth-sunday-in-ordinary-time-year-a` | `f7da1adc3394233694f05448f8421ac6eceeff9fb70c068dc5d124ea93183bb7` |
 | `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-fifteenth-sunday-in-ordinary-time-year-a` | `0789a3af547d56acab2a0ebf1e320006cdaa09f6aaeed068fedf79217011b277` |
 | `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a` | `671d6cd6da870ec3cb874ae55bf7609d7518b089b5f78fac26868e4c2c383e27` |
+| `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a` | `e23673ede4454f8390d0e733ed4fab70e7f3b8d1afc33ac437452cfff6d374a7` |
 | `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a` | `047a8a278f3977442aef968be79774b8342bb39a67c53b6dd118fd040a4ea424` |
 | `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s59-most-holy-body-and-blood-of-christ-year-a` | `4d6e14c38e731fc3ce7432cc9dd81900a0c9c4da0c4c75ba55ca2e9fc1d4062b` |
 | `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar` | `8a0918732c672ea76d2c95e0176e7985fa639057a4a8f4e12df511b8efb19bcd` |
@@ -197,21 +241,21 @@ This exact-snapshot distribution decision preserves the unresolved juridic quest
 | Repository path | SHA-256 |
 | --- | --- |
 | `CONTRIBUTING.md` | `730f7dcd00dd36e835a5fcb983d20e2964226a6aed02faab0d2fafee15376a23` |
-| `LIBRARY.md` | `09b8c4ac30cedf67ab956dcd583e376d5f8913e14c1aefa1d7519672745bb3ac` |
+| `LIBRARY.md` | `2e1af1b7eabd8188f9a3fb9faa3fd79b0609796c181b243e75e9fef67ccdbb2f` |
 | `LICENSE` | `6830030f2e4ff888ee116bc68e45adcd83f3929d2d82eb4eed3c6a663f665f91` |
 | `LICENSES/CC-BY-4.0.txt` | `d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744` |
 | `LICENSES/MIT.txt` | `afd9c125b68a36b60c78cf63656f4cea2613fadce57e95ebabacebff8817ef60` |
 | `README.md` | `2b2cf56dd03c92b4d51634c48a871a47ee537995d86d1089ca12bd834fdd9dbc` |
 | `THIRD_PARTY.md` | `4fbe063955aaa479f7376abb52b2db6c2fa9d50d4029ad2662d0af3a415abcf4` |
-| `library/biographies.md` | `e8875d37a1de53388fe84f972d2501876236c6dfe2b8631c3bb0fd98f7de31ef` |
-| `library/faith.md` | `9ac63f2a3a4cb3715a43166e829cbde5e526c5eb89394e20642b2c15240168fd` |
-| `library/heresies.md` | `b3dc89596fb3f20e86ac5eb64742ff088811c7f73988b950f55586f9759b728a` |
-| `library/historical-accounts.md` | `1f102d9ee6efd1f2a23c5f3b8b25c05708aac29c91926c43927005313f38b288` |
-| `library/law-and-church-discipline.md` | `84f1f63f6efa146b945cae617662bf648adabf3afde473daa3cbe1248382e3f8` |
-| `library/mariology.md` | `77af72919244075d50dc61cda714da1ad11c21cd4652651680e584ef79dfed5c` |
-| `library/novus-ordo-liturgy.md` | `78328fee5b16b83d857b384de6e2fc470a90ab23dd51739d2929af384878c8a0` |
-| `library/prayer.md` | `f777041c0c31627bff8147bc2fdd32a27890e0767106ea2186ae153ecbf3d01d` |
-| `library/traditional-latin-mass.md` | `97537f554c7d2dbdc99c39307788f0bb75b0a45987dcb035b5d47ad50f9fab75` |
+| `library/biographies.md` | `58109f5df52cb8a90d8126432678a40c8b5a7d46fab1b88213dbea1e3216ef32` |
+| `library/faith.md` | `19ba133fffe75518c2dd5993647b8e1f49d0227da0227f497e89115be6aa5e3b` |
+| `library/heresies.md` | `83de59b8f551589bc0a81a4d2e3d88aa0796d8f717c5daee8e926561f5c85b73` |
+| `library/historical-accounts.md` | `8243de7aebd969da353df9b5f7b32bf7a856262f30194e244b260f6a07f9f3ee` |
+| `library/law-and-church-discipline.md` | `f768255de091da8174b2e822024f6b10739b9f6dac3740a6cc602e34399e7ce2` |
+| `library/mariology.md` | `e248cea5415d1cb68ed6fce04f810cceb9f535e02dbc2be49dffadbea1be3878` |
+| `library/novus-ordo-liturgy.md` | `d8bd3b859db12922da37cfd8bf14f780b8faaa14495dd22cec1648a2cc41062b` |
+| `library/prayer.md` | `be21efc07c0c3585b2ac8a4ba0a8969331783a9f6378273f4a5e254b9a93e560` |
+| `library/traditional-latin-mass.md` | `d9e5d9473824293d201a1eaf9e20e2b0c8ac962dfe9b45614f9523f414547472` |
 | `release/public-alpha/404.md` | `551491f5521a5624911d63b398156d2236cbed2f0aa832eeb9c97070dcea568e` |
 | `release/public-alpha/assets/site.css` | `358d86f3587fc03f62a17cd4b5fd0126fb2dc3d952afa48eb33fc3a88fce54e9` |
 | `release/public-alpha/layout.html` | `1add2c3f7e6faed6cde4f71b471b5d275089aa719a779f250ef761b3754bea63` |
@@ -220,6 +264,6 @@ This exact-snapshot distribution decision preserves the unresolved juridic quest
 
 ## Operational controls
 
-The release validator must reject a build before the current supplement's effective instant or after any approved PDF, rights record, or artifact-affecting site input changes. The generated public site may include only `release` PDFs and narrowly scoped generated policy, manifest, checksum, HTML, CSS, and license files. A private preview may include `release` and `review` items but never `hold` items. The current manifest contains 56 `release` items and no `review` or `hold` items, so both artifacts include all 56 PDFs.
+The release validator must reject a build before the current supplement's effective instant or after any approved PDF, rights record, or artifact-affecting site input changes. The generated public site may include only `release` PDFs and narrowly scoped generated policy, manifest, checksum, HTML, CSS, and license files. A private preview may include `release` and `review` items but never `hold` items. The current manifest contains 58 `release` items and no `review` or `hold` items, so both artifacts include all 58 PDFs.
 
 GitHub Pages may publish only the verified generated site artifact, never the repository root or a private-preview artifact. The no-project-initiated-promotion condition remains in force. This rights record documents the authorized distribution scope; permission for a worker to push or deploy remains a separate operational authorization.

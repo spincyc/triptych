@@ -4,9 +4,9 @@
   "provider": "gpt",
   "expected_counts": {
     "publications": 58,
-    "release": 56,
+    "release": 58,
     "review": 0,
-    "hold": 2
+    "hold": 0
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
@@ -30,24 +30,24 @@
         "worldwide"
       ],
       "rights_record": "release/rights/public-alpha-2026-07-15.md",
-      "rights_record_sha256": "84e78a723588cfbe789706f78bb5a56e2c50ad4cb130be0d8d25a16195d26aee",
+      "rights_record_sha256": "cdf64f765e06ccf2484b14e9eb70e6f55a89a0b22f4ac417e36198b05cd7264e",
       "site_sources": {
         "CONTRIBUTING.md": "730f7dcd00dd36e835a5fcb983d20e2964226a6aed02faab0d2fafee15376a23",
-        "LIBRARY.md": "09b8c4ac30cedf67ab956dcd583e376d5f8913e14c1aefa1d7519672745bb3ac",
+        "LIBRARY.md": "2e1af1b7eabd8188f9a3fb9faa3fd79b0609796c181b243e75e9fef67ccdbb2f",
         "LICENSE": "6830030f2e4ff888ee116bc68e45adcd83f3929d2d82eb4eed3c6a663f665f91",
         "LICENSES/CC-BY-4.0.txt": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744",
         "LICENSES/MIT.txt": "afd9c125b68a36b60c78cf63656f4cea2613fadce57e95ebabacebff8817ef60",
         "README.md": "2b2cf56dd03c92b4d51634c48a871a47ee537995d86d1089ca12bd834fdd9dbc",
         "THIRD_PARTY.md": "4fbe063955aaa479f7376abb52b2db6c2fa9d50d4029ad2662d0af3a415abcf4",
-        "library/biographies.md": "e8875d37a1de53388fe84f972d2501876236c6dfe2b8631c3bb0fd98f7de31ef",
-        "library/faith.md": "9ac63f2a3a4cb3715a43166e829cbde5e526c5eb89394e20642b2c15240168fd",
-        "library/heresies.md": "b3dc89596fb3f20e86ac5eb64742ff088811c7f73988b950f55586f9759b728a",
-        "library/historical-accounts.md": "1f102d9ee6efd1f2a23c5f3b8b25c05708aac29c91926c43927005313f38b288",
-        "library/law-and-church-discipline.md": "84f1f63f6efa146b945cae617662bf648adabf3afde473daa3cbe1248382e3f8",
-        "library/mariology.md": "77af72919244075d50dc61cda714da1ad11c21cd4652651680e584ef79dfed5c",
-        "library/novus-ordo-liturgy.md": "78328fee5b16b83d857b384de6e2fc470a90ab23dd51739d2929af384878c8a0",
-        "library/prayer.md": "f777041c0c31627bff8147bc2fdd32a27890e0767106ea2186ae153ecbf3d01d",
-        "library/traditional-latin-mass.md": "97537f554c7d2dbdc99c39307788f0bb75b0a45987dcb035b5d47ad50f9fab75",
+        "library/biographies.md": "58109f5df52cb8a90d8126432678a40c8b5a7d46fab1b88213dbea1e3216ef32",
+        "library/faith.md": "19ba133fffe75518c2dd5993647b8e1f49d0227da0227f497e89115be6aa5e3b",
+        "library/heresies.md": "83de59b8f551589bc0a81a4d2e3d88aa0796d8f717c5daee8e926561f5c85b73",
+        "library/historical-accounts.md": "8243de7aebd969da353df9b5f7b32bf7a856262f30194e244b260f6a07f9f3ee",
+        "library/law-and-church-discipline.md": "f768255de091da8174b2e822024f6b10739b9f6dac3740a6cc602e34399e7ce2",
+        "library/mariology.md": "e248cea5415d1cb68ed6fce04f810cceb9f535e02dbc2be49dffadbea1be3878",
+        "library/novus-ordo-liturgy.md": "d8bd3b859db12922da37cfd8bf14f780b8faaa14495dd22cec1648a2cc41062b",
+        "library/prayer.md": "be21efc07c0c3585b2ac8a4ba0a8969331783a9f6378273f4a5e254b9a93e560",
+        "library/traditional-latin-mass.md": "d9e5d9473824293d201a1eaf9e20e2b0c8ac962dfe9b45614f9523f414547472",
         "release/public-alpha/404.md": "551491f5521a5624911d63b398156d2236cbed2f0aa832eeb9c97070dcea568e",
         "release/public-alpha/assets/site.css": "358d86f3587fc03f62a17cd4b5fd0126fb2dc3d952afa48eb33fc3a88fce54e9",
         "release/public-alpha/layout.html": "1add2c3f7e6faed6cde4f71b471b5d275089aa719a779f250ef761b3754bea63",
@@ -56,7 +56,7 @@
       },
       "approved_on": "2026-07-20",
       "duration": "perpetual",
-      "effective_at": "2026-07-20T00:16:04-05:00",
+      "effective_at": "2026-07-20T11:30:03-05:00",
       "expires_at": null,
       "timezone": "America/Chicago",
       "conditions": [
@@ -378,11 +378,12 @@
     {
       "id": "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost",
       "catalog": "library/traditional-latin-mass.md",
-      "status": "hold",
-      "gates": [
-        "liturgical-text-permission"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "db5611175355ebf892057d79e8834b1cf0f8982fd5839f064346d0d5a4343b39"
+      }
     },
     {
       "id": "liturgy/roman-rite/1962/reference/assembling-the-mass",
@@ -487,14 +488,12 @@
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a",
       "catalog": "library/novus-ordo-liturgy.md",
-      "status": "hold",
-      "gates": [
-        "work-specific-rights-review",
-        "liturgical-text-permission",
-        "named-us-altar-book-collation",
-        "independent-proper-guide-review"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "e23673ede4454f8390d0e733ed4fab70e7f3b8d1afc33ac437452cfff6d374a7"
+      }
     },
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a",
