@@ -1,15 +1,22 @@
 # Public Release Boundary
 
-The current release manifest contains 56 publications, all marked `release`.
+The current release manifest contains 58 publications: 56 marked `release`, no
+items marked `review`, and two new proper guides marked `hold`.
 The 20 July 2026 supplement in
-`rights/public-alpha-2026-07-15.md` binds all 56 exact current installed PDF
-snapshots and all 21 exact current artifact-affecting site inputs under the
+`rights/public-alpha-2026-07-15.md` binds the 56 previously authorized exact
+installed PDF snapshots and the 21 artifact-affecting site inputs recorded
+there under the
 existing perpetual worldwide public-repository and GitHub Pages authority,
 subject to no project-initiated promotion. It promotes the 18 former review
 items and the Origen and Tertullian holds without changing their bytes or
 raising their editorial or ecclesiastical maturity. The original user
 instruction “approve” is recorded as exact-current-snapshot distribution
 approval only. Changed PDF or site-input bytes require renewed authorization.
+The two new proper-guide records have no approval and remain excluded from both
+public and preview artifacts. The catalog changes that list them also make
+the recorded `LIBRARY.md`, `library/traditional-latin-mass.md`, and
+`library/novus-ordo-liturgy.md` site-source hashes stale; the public check is
+therefore expected to fail closed until a separate future authorization.
 
 `public-alpha.json` is the exhaustive publication policy for every discovered source document and installed PDF:
 
@@ -61,9 +68,11 @@ specialist and ecclesiastical review. The virtues reference is internally
 source-audited but is not a critical edition; manuscript collation and
 comprehensive source-language lexical review have not occurred, and independent
 Aristotelian, patristic, Thomistic, moral-theological, pastoral, and clinical
-review remain outstanding. The nine revised 1962 proper guides and eight
-revised postconciliar proper guides now have exact-current-snapshot distribution
-clearance. The postconciliar revisions remain subject to the same outstanding
+review remain outstanding. The nine released 1962 proper guides and eight
+released postconciliar proper guides have exact-current-snapshot distribution
+clearance. The new Ninth Sunday after Pentecost guide is the held tenth 1962
+proper guide, and PC-S41-A is the held ninth postconciliar guide; neither has
+been approved or released. The postconciliar revisions remain subject to the same outstanding
 complete English-oration collation against an identified U.S. altar-book
 printing and independent liturgical, biblical, theological, and historical
 review. The postconciliar Order of Mass likewise still lacks exact hands-on
@@ -112,13 +121,13 @@ analysis, specialist or ecclesiastical review, or ecclesiastical approval for
 any of them. See the rights record and each publication's linked research
 records for the complete boundaries.
 
-With all current bindings verified, the GitHub Pages workflow can build and
-verify `build/public-alpha/site` and would upload only that artifact through the
-`github-pages` environment. Pages must never publish the repository root or
-`build/public-alpha/preview`. This record documents ordinary repository and
-Pages publication subject to the no-project-initiated-promotion condition; it
-does not itself authorize a worker to perform a push or deployment, which
-remain separate operations.
+Only when all snapshot and site-source bindings verify may the GitHub Pages
+workflow build and verify `build/public-alpha/site`; at this revision the stale
+catalog bindings deliberately prevent that result. A future verified workflow
+would upload only that artifact through the `github-pages` environment. Pages
+must never publish the repository root or `build/public-alpha/preview`. This
+record documents the boundary only; it does not authorize a worker to perform a
+push or deployment, which remain separate operations.
 
 Use:
 
@@ -135,7 +144,8 @@ python scripts/public-alpha verify --deployment-target github-pages
 `prepare-public-alpha` is read-only and deliberately works when old snapshot
 hashes are stale or the old source-binding list lacks newly recognized inputs.
 It validates the exhaustive publication and current artifact-input scope, then
-reports the current 56 PDF hashes and the hashes of all 21 current Markdown,
+reports the current publication PDF hashes (58 once both held candidates are
+installed) and the hashes of all 21 current Markdown,
 layout, style, license, generator, and dependency-lock inputs as a deterministic
 candidate inventory. The inventory explicitly confers no approval, changes no
 manifest or rights record, and cannot replace the separate review and recorded
