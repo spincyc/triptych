@@ -3,10 +3,10 @@
   "release_id": "public-alpha",
   "provider": "gpt",
   "expected_counts": {
-    "publications": 56,
+    "publications": 58,
     "release": 56,
     "review": 0,
-    "hold": 0
+    "hold": 2
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
@@ -376,6 +376,15 @@
       }
     },
     {
+      "id": "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost",
+      "catalog": "library/traditional-latin-mass.md",
+      "status": "hold",
+      "gates": [
+        "liturgical-text-permission"
+      ],
+      "approval": null
+    },
+    {
       "id": "liturgy/roman-rite/1962/reference/assembling-the-mass",
       "catalog": "library/traditional-latin-mass.md",
       "status": "release",
@@ -474,6 +483,18 @@
         "authorization": "perpetual-public-repository-2026",
         "pdf_sha256": "671d6cd6da870ec3cb874ae55bf7609d7518b089b5f78fac26868e4c2c383e27"
       }
+    },
+    {
+      "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a",
+      "catalog": "library/novus-ordo-liturgy.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "named-us-altar-book-collation",
+        "independent-proper-guide-review"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a",

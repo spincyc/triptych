@@ -14,7 +14,7 @@ These studies concern the books and calendar in force in 1962. They do not estab
 
 ## Mass Propers
 
-These guides place the appointed texts in context. All have facsimile-checked texts, internal source audits, and production checks, but no independent theological review; exact-snapshot distribution clearance supplies no missing source, liturgical, theological, rights, or ecclesiastical review.
+These guides place the appointed texts in context. All have facsimile-checked texts, internal source audits, and production checks, but no independent theological review. IDs 15–22 and M01 retain exact-snapshot distribution clearance; ID 23 is on `hold` without approval pending liturgical-text permission. These dispositions supply no missing source, liturgical, theological, rights, or ecclesiastical review.
 
 | ID | Guide | Supporting records |
 | --- | --- | --- |
@@ -26,4 +26,5 @@ These guides place the appointed texts in context. All have facsimile-checked te
 | 20 | **[Sixth Sunday after Pentecost](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost.pdf)** | [Verified propers](../src/gpt/liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost/propers/verified.md) · [Research scope](../src/gpt/liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost/research/scope.md) |
 | 21 | **[Seventh Sunday after Pentecost](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost.pdf)** | [Verified propers](../src/gpt/liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost/propers/verified.md) · [Research scope](../src/gpt/liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost/research/scope.md) |
 | 22 | **[Eighth Sunday after Pentecost](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.pdf)** | [Verified propers](../src/gpt/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/propers/verified.md) · [Research scope](../src/gpt/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/research/scope.md) |
+| 23 | **[Ninth Sunday after Pentecost](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.pdf)** | [Verified propers](../src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/propers/verified.md) · [Research scope](../src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/research/scope.md) |
 | M01 | **[The Nuptial Mass](../doc/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass.pdf)** | [Verified propers](../src/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass/propers/verified.md) · [Research scope](../src/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass/research/scope.md) |

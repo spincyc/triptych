@@ -18,6 +18,6 @@ Choose a section, then a title to open its PDF. Each publication has one catalog
 
 Every PDF is a working study, not an approved Church publication. “Source-audited” means an internal evidence check, not independent specialist or ecclesiastical review; no current publication records such review.
 
-All 56 current PDF snapshots have exact-snapshot distribution clearance under the 20 July 2026 rights supplement. That status applies only to the recorded bytes and supplies no missing rights, editorial, specialist, or ecclesiastical review. The La Salette study retains an unresolved question about the present force of the 1915 Holy Office decree discussed in its source audit.
+The release manifest accounts for 58 publications. The 56 previously authorized PDF snapshots retain exact-snapshot distribution clearance under the 20 July 2026 rights supplement; new guides ID 23 and PC-S41-A are on `hold` without approval and are excluded from public and private-preview artifacts. All ten catalog-input authorization hashes remain stale, so release checks fail closed. Exact-snapshot status applies only to the recorded bytes and supplies no missing rights, editorial, specialist, or ecclesiastical review. The La Salette study retains an unresolved question about the present force of the 1915 Holy Office decree discussed in its source audit.
 
 Project licenses cover only project-created material. Quotations, public-domain works, and separately licensed material keep their own status. See [Licensing](LICENSE) and [Third-Party Material](THIRD_PARTY.md).

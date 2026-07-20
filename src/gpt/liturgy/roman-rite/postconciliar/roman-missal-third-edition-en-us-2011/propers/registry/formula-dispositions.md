@@ -1,6 +1,6 @@
 # Formula Dispositions — Roman Missal Third Edition, English (United States, 2011)
 
-**Last evaluated:** 2026-07-15
+**Last evaluated:** 2026-07-20
 **Stable authority:** [Postconciliar Proper Registry](../../../../../../../../guidance/liturgy/postconciliar-propers-registry.md)
 
 This record adopts the stable parent IDs, formula keys, slug grammar, ordering, ownership rules, and counts without modification. A disposition applies only when stated below. Every unlisted baseline key remains `not evaluated`, not `not-present-in-edition`.
@@ -9,16 +9,17 @@ This record adopts the stable parent IDs, formula keys, slug grammar, ordering, 
 
 | Parent | Formula key | Full publication slug | Lectionary | Canonical owner | Disposition |
 | --- | --- | --- | ---: | --- | --- |
-| `PC-S58` | `PC-S58-A` | `pc-s58-most-holy-trinity-year-a` | 164 | [Most Holy Trinity owner](../temporal/shared/formularies/pc-s58-most-holy-trinity/propers/verified.md) | Published working guide; source-audited at the recorded layers; not profile-final. |
-| `PC-S59` | `PC-S59-A` | `pc-s59-most-holy-body-and-blood-of-christ-year-a` | 167 | [Body and Blood of Christ owner](../temporal/shared/formularies/pc-s59-most-holy-body-and-blood-of-christ/propers/verified.md) | Published working guide; source-audited at the recorded layers; not profile-final. |
 | `PC-S35` | `PC-S35-A` | `pc-s35-eleventh-sunday-in-ordinary-time-year-a` | 91 | [Ordinary Time Week XI owner](../temporal/shared/ordinary-time/weeks/11/propers/verified.md) | Published working guide; source-audited at the recorded layers; not profile-final. |
 | `PC-S36` | `PC-S36-A` | `pc-s36-twelfth-sunday-in-ordinary-time-year-a` | 94 | [Ordinary Time Week XII owner](../temporal/shared/ordinary-time/weeks/12/propers/verified.md) | Published working guide; source-audited at the recorded layers; not profile-final. |
 | `PC-S37` | `PC-S37-A` | `pc-s37-thirteenth-sunday-in-ordinary-time-year-a` | 97 | [Ordinary Time Week XIII owner](../temporal/shared/ordinary-time/weeks/13/propers/verified.md) | Published working guide; source-audited at the recorded layers; not profile-final. |
 | `PC-S38` | `PC-S38-A` | `pc-s38-fourteenth-sunday-in-ordinary-time-year-a` | 100 | [Ordinary Time Week XIV owner](../temporal/shared/ordinary-time/weeks/14/propers/verified.md) | Published working guide; source-audited at the recorded layers; not profile-final. |
 | `PC-S39` | `PC-S39-A` | `pc-s39-fifteenth-sunday-in-ordinary-time-year-a` | 103 | [Ordinary Time Week XV owner](../temporal/shared/ordinary-time/weeks/15/propers/verified.md) | Published working guide; source-audited at the recorded layers; not profile-final. |
 | `PC-S40` | `PC-S40-A` | `pc-s40-sixteenth-sunday-in-ordinary-time-year-a` | 106 | [Ordinary Time Week XVI owner](../temporal/shared/ordinary-time/weeks/16/propers/verified.md) | Published working guide; source-audited at the recorded layers; not profile-final. |
+| `PC-S41` | `PC-S41-A` | `pc-s41-seventeenth-sunday-in-ordinary-time-year-a` | 109 | [Ordinary Time Week XVII owner](../temporal/shared/ordinary-time/weeks/17/propers/verified.md) | Working guide source-audited at the recorded layers; held from distribution; not profile-final. |
+| `PC-S58` | `PC-S58-A` | `pc-s58-most-holy-trinity-year-a` | 164 | [Most Holy Trinity owner](../temporal/shared/formularies/pc-s58-most-holy-trinity/propers/verified.md) | Published working guide; source-audited at the recorded layers; not profile-final. |
+| `PC-S59` | `PC-S59-A` | `pc-s59-most-holy-body-and-blood-of-christ-year-a` | 167 | [Body and Blood of Christ owner](../temporal/shared/formularies/pc-s59-most-holy-body-and-blood-of-christ/propers/verified.md) | Published working guide; source-audited at the recorded layers; not profile-final. |
 
-The stable registry contains 184 baseline Proper-of-Time targets. This edition record evaluates eight of them and makes no disposition for the other 176. It has not evaluated the three conditional Scrutiny targets, the six weekday fallback targets, or a complete General Calendar replacement matrix. Therefore neither the stable totals nor a collection-completeness claim may be assigned to this edition-locale.
+The stable registry contains 184 baseline Proper-of-Time targets. This edition record evaluates nine of them and makes no disposition for the other 175. It has not evaluated the three conditional Scrutiny targets, the six weekday fallback targets, or a complete General Calendar replacement matrix. Therefore neither the stable totals nor a collection-completeness claim may be assigned to this edition-locale.
 
 ## `PC-R08` — unresolved and fail-closed
 
