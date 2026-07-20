@@ -1,0 +1,72 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+
+\hypersetup{
+  pdftitle={Ontological Vertigo},
+  pdfsubject={A patristic, Thomistic, and mystical study of asymmetric dependence}
+}
+
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2em}
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\newcommand{\articlethesis}[1]{%
+  \begin{studybox}{Governing thesis}
+  #1
+  \end{studybox}}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.18\textheight}
+{\Huge\bfseries Ontological Vertigo\par}
+\vspace{0.9em}
+{\Large\itshape The Apprehension of Asymmetric Dependence\par}
+\vspace{0.7em}
+{\large A patristic, Thomistic, and mystical study\par}
+\vfill
+{\small How received existence has been reasoned, confessed,\par}
+{\small and contemplatively apprehended across the centuries\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{articles/faith/ontological-vertigo/sections/00-the-weight-of-is}
+\input{articles/faith/ontological-vertigo/sections/10-ancient-grammar}
+\input{articles/faith/ontological-vertigo/sections/20-patristic-dependence}
+\input{articles/faith/ontological-vertigo/sections/30-the-thomistic-center}
+\input{articles/faith/ontological-vertigo/sections/40-dependence-without-rivalry}
+\input{articles/faith/ontological-vertigo/sections/50-mystical-apprehension}
+\input{articles/faith/ontological-vertigo/sections/60-after-the-scholastics}
+\input{articles/faith/ontological-vertigo/sections/70-what-the-vertigo-sees}
+\clearpage
+\appendix
+\input{articles/faith/ontological-vertigo/sections/90-scope-method-qualifications}
+\input{articles/faith/ontological-vertigo/sections/99-references}
+\begingroup
+\setlength{\parskip}{0pt}
+\vspace{-0.6\baselineskip}
+\section{Generation Metadata}
+\vspace{-0.35\baselineskip}
+{\scriptsize\input{articles/faith/ontological-vertigo/generation-metadata}}
+\endgroup
+\end{deepstudy}
+
+\end{document}
