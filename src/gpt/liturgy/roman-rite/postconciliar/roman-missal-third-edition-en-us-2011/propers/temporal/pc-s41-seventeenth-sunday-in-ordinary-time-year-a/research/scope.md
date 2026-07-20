@@ -124,6 +124,8 @@ The official USCCB occurrence page and annual calendar were used for identifiers
 
 The formula, occurrence, branches, reading boundaries, Latin oration identities, antiphon assignments, reception loci, and afterlife triggers are source-audited at the stated layers. Direct 2008 Missal page images, full publisher- and printing-specific comparison with a named U.S. altar book, work-specific rights review, liturgical-text permission, and independent proper-guide review remain outstanding. No exhaustive patristic, rabbinic, manuscript, modern-critical, ecumenical, musical, local-calendar, pastoral, or legal survey is claimed.
 
+The maintainer's later instruction “approve all,” effective `2026-07-20T11:30:03-05:00` in `America/Chicago`, supersedes the operational distribution hold only for the exact 12-page snapshot bound below. Authorization `perpetual-public-repository-2026` places those immutable bytes in `release` with empty manifest gates, subject to `no-project-initiated-promotion`. This snapshot exception does not complete any outstanding rights review, liturgical-text permission, named U.S. altar-book collation, or independent proper-guide review; those remain profile-maturity limits. It does not make the guide profile-final or ecclesiastically approved and is not an imprimatur, nihil obstat, general license, or broader reuse permission.
+
 Medieval Christian reception is not substituted for Jewish interpretation of the Hebrew Bible. Catena attributions that were not independently checked remain leads and are not promoted as direct quotations or authoritative source-text verification.
 
 ## Used-only reference inventory
@@ -138,4 +140,4 @@ Medieval Christian reception is not substituted for Jewish interpretation of the
 
 ## Structural and production state
 
-This canonical research record is complete for the checked corpus and records all required negative, branch, rights, and corrective controls. It does not establish a successful TeX build, settled pagination, PDF metadata, deterministic output, visual inspection, installed-PDF identity, or publication approval. Those production claims require the later build and review evidence and must not be inferred from this research audit.
+This canonical research record is complete for the checked corpus and records all required negative, branch, rights, and corrective controls. Final production and full-page review established an immutable installed PDF of 12 pages with SHA-256 `e23673ede4454f8390d0e733ed4fab70e7f3b8d1afc33ac437452cfff6d374a7`. Neither this non-rendered audit update nor the later exact-snapshot authorization changes those bytes. Production identity and distribution clearance remain distinct from the outstanding profile-final, rights, collation, independent-review, and ecclesiastical-approval limits above.
