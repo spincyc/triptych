@@ -127,6 +127,7 @@ class TriptychCodexTests(unittest.TestCase):
         environment: dict[str, str] | None = None,
     ) -> subprocess.CompletedProcess:
         merged = self.base_environment()
+        merged["CODEX"] = str(self.fake)
         if environment:
             merged.update(environment)
         return subprocess.run(

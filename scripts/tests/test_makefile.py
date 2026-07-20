@@ -21,6 +21,10 @@ class MakefileBuildGraphTests(unittest.TestCase):
         self.temporary_directory = tempfile.TemporaryDirectory()
         self.root = Path(self.temporary_directory.name)
         shutil.copy2(REPOSITORY_ROOT / "Makefile", self.root / "Makefile")
+        shutil.copy2(
+            REPOSITORY_ROOT / "requirements-public-alpha.txt",
+            self.root / "requirements-public-alpha.txt",
+        )
 
         (self.root / "src/gpt/common").mkdir(parents=True)
         (self.root / "src/gpt/common/preamble.tex").write_text(
@@ -91,6 +95,8 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         self.latex_log = self.root / "latex.log"
         self.flags_log = self.root / "flags.log"
         self.review_log = self.root / "review.log"
+        self.pacman_log = self.root / "pacman.log"
+        self.codex_log = self.root / "codex.log"
         self.environment = os.environ.copy()
         self.environment.update(
             {
@@ -98,6 +104,8 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
                 "MAKE_TEST_LATEX_LOG": str(self.latex_log),
                 "MAKE_TEST_FLAGS_LOG": str(self.flags_log),
                 "MAKE_TEST_REVIEW_LOG": str(self.review_log),
+                "MAKE_TEST_PACMAN_LOG": str(self.pacman_log),
+                "MAKE_TEST_CODEX_LOG": str(self.codex_log),
                 "PDFLATEX": str(self.pdflatex),
             }
         )
@@ -350,6 +358,145 @@ chmod 0644 "$4"
         result = self.run_make("PDF_JOBS=", check=False)
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("requires a positive integer", result.stderr)
+
+    def test_arch_dependency_target_uses_one_canonical_pacman_transaction(self) -> None:
+        os_release = self.root / "arch-os-release"
+        os_release.write_text('ID=arch\nNAME="Arch Linux"\n', encoding="utf-8")
+        pacman = self.root / "fake-pacman"
+        pacman.write_text(
+            """#!/bin/sh
+printf '%s\\n' "$@" > "$MAKE_TEST_PACMAN_LOG"
+""",
+            encoding="utf-8",
+        )
+        pacman.chmod(0o755)
+        sudo = self.root / "fake-sudo"
+        sudo.write_text(
+            """#!/bin/sh
+if [ "$1" = -- ]; then
+    shift
+fi
+exec "$@"
+""",
+            encoding="utf-8",
+        )
+        sudo.chmod(0o755)
+        shadow_bin = self.root / "shadow-bin"
+        shadow_bin.mkdir()
+        for name in ("codex", "rg"):
+            executable = shadow_bin / name
+            executable.write_text("#!/bin/sh\n", encoding="utf-8")
+            executable.chmod(0o755)
+        fake_id = shadow_bin / "id"
+        fake_id.write_text(
+            """#!/bin/sh
+if [ "$1" = -u ]; then
+    printf '1000\\n'
+    exit 0
+fi
+exec /usr/bin/id "$@"
+""",
+            encoding="utf-8",
+        )
+        fake_id.chmod(0o755)
+        self.environment["PATH"] = f"{shadow_bin}:{self.environment['PATH']}"
+
+        listed = self.run_make("dependencies-arch").stdout.splitlines()
+        install_arguments = (
+            "install-dependencies-arch",
+            f"ARCH_OS_RELEASE={os_release}",
+            f"ARCH_PACMAN={pacman}",
+            f"ARCH_SUDO={sudo}",
+            f"ARCH_ID={fake_id}",
+        )
+        dry_run = self.run_make("-n", *install_arguments)
+        self.assertIn(str(pacman), dry_run.stdout)
+        self.assertIn(str(sudo), dry_run.stdout)
+        self.assertIn(str(fake_id), dry_run.stdout)
+        self.assertNotIn("/usr/bin/pacman", dry_run.stdout)
+        self.assertNotIn("/usr/bin/sudo", dry_run.stdout)
+        result = self.run_make(*install_arguments)
+        arguments = self.lines(self.pacman_log)
+        expected_packages = [
+            "make",
+            "bash",
+            "findutils",
+            "coreutils",
+            "diffutils",
+            "python",
+            "tzdata",
+            "python-markdown",
+            "texlive-bin",
+            "texlive-basic",
+            "texlive-latex",
+            "texlive-latexrecommended",
+            "texlive-latexextra",
+            "texlive-pictures",
+            "texlive-fontsrecommended",
+            "poppler",
+            "imagemagick",
+            "git",
+            "openai-codex",
+            "ripgrep",
+        ]
+
+        self.assertEqual(arguments[:2], ["-Syu", "--needed"])
+        self.assertEqual(arguments[2:], listed)
+        self.assertEqual(listed, expected_packages)
+        for excluded in (
+            "base-devel",
+            "texlive-meta",
+            "nodejs",
+            "npm",
+            "github-cli",
+            "ghostscript",
+            "qpdf",
+        ):
+            self.assertNotIn(excluded, listed)
+        self.assertNotIn("--noconfirm", arguments)
+        self.assertNotIn(".local", " ".join(arguments))
+        self.assertIn("shadows canonical /usr/bin/codex", result.stderr)
+        self.assertIn("shadows canonical /usr/bin/rg", result.stderr)
+
+    def test_arch_dependency_install_rejects_other_operating_systems(self) -> None:
+        os_release = self.root / "other-os-release"
+        os_release.write_text("ID=ubuntu\n", encoding="utf-8")
+        pacman = self.root / "must-not-run-pacman"
+        pacman.write_text(
+            """#!/bin/sh
+printf 'unexpected invocation\\n' > "$MAKE_TEST_PACMAN_LOG"
+exit 99
+""",
+            encoding="utf-8",
+        )
+        pacman.chmod(0o755)
+
+        result = self.run_make(
+            "install-dependencies-arch",
+            f"ARCH_OS_RELEASE={os_release}",
+            f"ARCH_PACMAN={pacman}",
+            check=False,
+        )
+
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("Unsupported host OS: ubuntu", result.stderr)
+        self.assertFalse(self.pacman_log.exists())
+
+    def test_codex_target_pins_the_configured_system_binary(self) -> None:
+        launcher = self.root / "scripts/triptych-codex"
+        launcher.write_text(
+            """#!/bin/sh
+printf '%s\\n' "$TRIPTYCH_CODEX_REAL" > "$MAKE_TEST_CODEX_LOG"
+""",
+            encoding="utf-8",
+        )
+        launcher.chmod(0o755)
+        self.environment.pop("CODEX", None)
+        self.environment["TRIPTYCH_CODEX_REAL"] = "/home/test/.local/bin/codex"
+
+        self.run_make("codex")
+
+        self.assertEqual(self.lines(self.codex_log), ["/usr/bin/codex"])
 
 
 if __name__ == "__main__":

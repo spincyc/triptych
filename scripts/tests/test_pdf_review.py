@@ -133,6 +133,8 @@ try:
             (output / source_path.name).write_bytes(b"thumbnail")
     elif mode == "fake-magick" and args[0] == "montage":
         time.sleep(float(os.environ.get("PDF_REVIEW_TEST_DELAY", "0.02")))
+        if os.environ.get("PDF_REVIEW_TEST_MUTATE_FONT") == "1":
+            Path(os.environ["PDF_REVIEW_TEST_FONT"]).write_bytes(b"raced font update")
         output = Path(args[-1])
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_bytes(b"png")
@@ -333,11 +335,24 @@ class PdfReviewCommandTests(unittest.TestCase):
         self.cache = self.root / "cache"
         self.fake_pdftoppm = self.root / "fake-pdftoppm"
         self.fake_magick = self.root / "fake-magick"
+        self.fake_kpsewhich = self.root / "fake-kpsewhich"
+        self.contact_font = self.root / review.CONTACT_FONT_FILENAME
         self.plan_harness = self.root / "plan-harness"
         source = textwrap.dedent(FAKE_TOOL).lstrip()
         for executable in (self.fake_pdftoppm, self.fake_magick):
             executable.write_text(source, encoding="utf-8")
             executable.chmod(0o755)
+        self.contact_font.write_bytes(b"test Latin Modern Sans font")
+        self.fake_kpsewhich.write_text(
+            """#!/bin/sh
+if [ "$1" != lmsans10-regular.otf ]; then
+    exit 2
+fi
+printf '%s\\n' "$PDF_REVIEW_TEST_FONT"
+""",
+            encoding="utf-8",
+        )
+        self.fake_kpsewhich.chmod(0o755)
         self.plan_harness.write_text(
             textwrap.dedent(PLAN_HARNESS).lstrip(), encoding="utf-8"
         )
@@ -352,12 +367,16 @@ class PdfReviewCommandTests(unittest.TestCase):
         delay: float = 0.02,
         term_delay: float = 0,
         tool_version: str = "1.0",
+        mutate_font: bool = False,
+        use_default_font: bool = False,
     ) -> dict[str, str]:
         environment = os.environ.copy()
+        environment.pop("TRIPTYCH_PDF_REVIEW_FONT", None)
         environment.update(
             {
                 "TRIPTYCH_PDF_REVIEW_PDFTOPPM": str(self.fake_pdftoppm),
                 "TRIPTYCH_PDF_REVIEW_MAGICK": str(self.fake_magick),
+                "TRIPTYCH_PDF_REVIEW_KPSEWHICH": str(self.fake_kpsewhich),
                 "PDF_REVIEW_TEST_COUNTER": str(self.counter),
                 "PDF_REVIEW_TEST_LOG": str(self.log),
                 "PDF_REVIEW_TEST_PAGES": str(pages),
@@ -366,8 +385,12 @@ class PdfReviewCommandTests(unittest.TestCase):
                 "PDF_REVIEW_TEST_TOOL_VERSION": tool_version,
                 "PDF_REVIEW_TEST_PEER_MARKER": str(self.root / "peer-started"),
                 "PDF_REVIEW_TEST_LOCK": str(self.root / "review.lock"),
+                "PDF_REVIEW_TEST_FONT": str(self.contact_font),
+                "PDF_REVIEW_TEST_MUTATE_FONT": "1" if mutate_font else "0",
             }
         )
+        if not use_default_font:
+            environment["TRIPTYCH_PDF_REVIEW_FONT"] = str(self.contact_font)
         return environment
 
     def pdfs(self, names: list[str]) -> list[Path]:
@@ -389,6 +412,8 @@ class PdfReviewCommandTests(unittest.TestCase):
         cache: Path | None = None,
         extra: list[str] | None = None,
         tool_version: str = "1.0",
+        mutate_font: bool = False,
+        use_default_font: bool = False,
     ) -> subprocess.CompletedProcess[str]:
         selected_output = self.output if output is None else output
         selected_cache = self.cache if cache is None else cache
@@ -407,7 +432,13 @@ class PdfReviewCommandTests(unittest.TestCase):
                 *(str(path) for path in pdfs),
             ],
             cwd=ROOT,
-            env=self.environment(pages=pages, delay=delay, tool_version=tool_version),
+            env=self.environment(
+                pages=pages,
+                delay=delay,
+                tool_version=tool_version,
+                mutate_font=mutate_font,
+                use_default_font=use_default_font,
+            ),
             text=True,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
@@ -465,6 +496,9 @@ class PdfReviewCommandTests(unittest.TestCase):
         for record in magick_records:
             args = record["args"]
             self.assertIn("montage", args)
+            self.assertEqual(
+                args[args.index("-font") + 1], str(self.contact_font.resolve())
+            )
             self.assertLessEqual(args.count("-label"), review.CONTACT_BATCH_SIZE)
             for resource, value in (
                 ("memory", review.MAGICK_MEMORY),
@@ -483,6 +517,21 @@ class PdfReviewCommandTests(unittest.TestCase):
             self.assertEqual(record["limits"]["MAGICK_THREAD_LIMIT"], "1")
             self.assertEqual(record["limits"]["OMP_NUM_THREADS"], "1")
         self.assertEqual(len(list(self.output.rglob("contact-sheets/sheet-*.png"))), 3)
+
+    def test_default_contact_font_is_resolved_with_kpsewhich(self) -> None:
+        result = self.invoke(
+            self.pdfs(["default-font.pdf"]), jobs=1, use_default_font=True
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        montage = next(
+            record
+            for record in self.records()
+            if record["mode"] == "fake-magick" and record["args"][:1] == ["montage"]
+        )
+        self.assertEqual(
+            montage["args"][montage["args"].index("-font") + 1],
+            str(self.contact_font.resolve()),
+        )
 
     def test_full_pages_are_rasterized_once_and_thumbnails_are_derived(self) -> None:
         result = self.invoke(self.pdfs(["single-pass.pdf"]), jobs=1, pages=7)
@@ -539,6 +588,13 @@ class PdfReviewCommandTests(unittest.TestCase):
             metadata["renderer"]["contact_sheets"]["geometry"],
             review.CONTACT_GEOMETRY,
         )
+        self.assertEqual(
+            metadata["renderer"]["contact_sheets"]["font"],
+            {
+                "path": str(self.contact_font.resolve()),
+                "sha256": review.sha256_file(self.contact_font),
+            },
+        )
         shutil.rmtree(first_output)
         shutil.rmtree(second_output)
         shutil.rmtree(self.cache)
@@ -569,6 +625,41 @@ class PdfReviewCommandTests(unittest.TestCase):
             if path.is_dir()
         ]
         self.assertEqual(len(entries), 2)
+
+    def test_contact_font_change_invalidates_the_cache(self) -> None:
+        pdf = self.pdfs(["font-versioned.pdf"])[0]
+        first = self.invoke([pdf], jobs=1, output=self.root / "font-one")
+        self.assertEqual(first.returncode, 0, first.stderr)
+        self.contact_font.write_bytes(b"revised Latin Modern Sans font")
+        second = self.invoke([pdf], jobs=1, output=self.root / "font-two")
+        self.assertEqual(second.returncode, 0, second.stderr)
+        raster_commands = [
+            record
+            for record in self.records()
+            if record["mode"] == "fake-pdftoppm" and record["args"] != ["-v"]
+        ]
+        self.assertEqual(len(raster_commands), 2)
+        entries = [
+            path
+            for path in (self.cache / "objects").glob("*/*")
+            if path.is_dir()
+        ]
+        self.assertEqual(len(entries), 2)
+
+    def test_missing_contact_font_fails_before_rendering(self) -> None:
+        pdf = self.pdfs(["missing-font.pdf"])[0]
+        self.contact_font.unlink()
+        result = self.invoke([pdf], jobs=1)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("cannot resolve review contact-sheet font", result.stderr)
+        self.assertFalse(self.log.exists())
+
+    def test_contact_font_race_fails_without_caching_the_render(self) -> None:
+        pdf = self.pdfs(["raced-font.pdf"])[0]
+        result = self.invoke([pdf], jobs=1, mutate_font=True)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("font changed during rendering", result.stderr)
+        self.assertFalse(any((self.cache / "objects").glob("*/*")))
 
     def test_same_size_cache_corruption_is_detected_and_rerendered(self) -> None:
         pdf = self.pdfs(["corruption.pdf"])[0]
