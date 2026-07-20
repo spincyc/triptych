@@ -1,10 +1,11 @@
 # Public Release Boundary
 
-The current release manifest nominally contains 113 publications: 110 are marked
-`release`, no item is marked `review`, and three are marked `hold`: the Saint
-Thomas Aquinas and Saint Robert Bellarmine biographies and *At the End of Every
-Why*. The latest 20 July 2026 supplement in `rights/public-alpha-2026-07-15.md`
-records the maintainer's instruction to authorize, install, and commit the
+The current release manifest nominally contains 114 publications: 110 are marked
+`release`, no item is marked `review`, and four are marked `hold`: the Saint
+Thomas Aquinas and Saint Robert Bellarmine biographies, *At the End of Every
+Why*, and *Ontological Vertigo*. The latest 20 July 2026 supplement in
+`rights/public-alpha-2026-07-15.md` records the maintainer's instruction to
+authorize, install, and commit the
 Ecclesiastical Latin curriculum as exact-current-snapshot distribution
 authorization, effective at `2026-07-20T20:23:41-05:00` in `America/Chicago`,
 under the existing represented perpetual worldwide public-repository and GitHub
@@ -18,11 +19,12 @@ approved hash and remains fail-closed.
 
 The Aquinas and Bellarmine biographies have no approval, remain excluded from
 both public and preview artifacts, and each awaits a work-specific rights
-review. *At the End of Every Why* also has no approval, remains excluded from
-both public and preview artifacts, and has completed its work-specific rights
-review; its installed PDF awaits renewed exact-snapshot authorization. The
-held-work catalog changes leave the recorded `LIBRARY.md`,
-`library/biographies.md`, and `library/faith.md` site-source hashes stale.
+review. *At the End of Every Why* and *Ontological Vertigo* also have no
+approval, remain excluded from both public and preview artifacts, and each has
+completed its work-specific rights review; their installed PDFs await renewed
+exact-snapshot authorization. The held-work catalog changes leave the recorded
+`LIBRARY.md`, `library/biographies.md`, and `library/faith.md` site-source hashes
+stale.
 Together with the changed `CONTRIBUTING.md`, `THIRD_PARTY.md`, and
 `library/curriculums.md` site inputs, the 52 curriculum PDFs, and the Ninth Sunday
 after Pentecost PDF, these changed bytes cause the public check to fail closed
@@ -163,12 +165,12 @@ snapshots, but the 52 corrected curriculum PDFs, the stale `CONTRIBUTING.md`,
 `LIBRARY.md`, `THIRD_PARTY.md`, `library/biographies.md`,
 `library/curriculums.md`, and `library/faith.md` bindings, and the unrelated
 Ninth Sunday snapshot mismatch deliberately prevent verification. *At the End
-of Every Why* remains held outside both artifacts pending renewed exact-snapshot
-authorization. A future verified workflow may upload only that artifact through
-the `github-pages` environment. Pages must never publish the repository root or
-`build/public-alpha/preview`. This
-record documents the boundary only; it does not authorize a worker to perform a
-push or deployment, which remain separate operations.
+of Every Why* and *Ontological Vertigo* remain held outside both artifacts
+pending renewed exact-snapshot authorization. A future verified workflow may
+upload only that artifact through the `github-pages` environment. Pages must
+never publish the repository root or `build/public-alpha/preview`. This record
+documents the boundary only; it does not authorize a worker to perform a push or
+deployment, which remain separate operations.
 
 Use:
 
@@ -185,7 +187,7 @@ python scripts/public-alpha verify --deployment-target github-pages
 `prepare-public-alpha` is read-only and deliberately works when old snapshot
 hashes are stale or the old source-binding list lacks newly recognized inputs.
 It validates the exhaustive publication and current artifact-input scope, then
-reports the hashes of the 113 currently installed publication PDFs and all 22
+reports the hashes of the 114 currently installed publication PDFs and all 22
 current Markdown, layout, style, license, generator, and dependency-lock inputs
 as a deterministic candidate inventory. The inventory explicitly confers no
 approval, changes no

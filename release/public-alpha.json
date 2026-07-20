@@ -3,10 +3,10 @@
   "release_id": "public-alpha",
   "provider": "gpt",
   "expected_counts": {
-    "publications": 113,
+    "publications": 114,
     "release": 110,
     "review": 0,
-    "hold": 3
+    "hold": 4
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
@@ -94,6 +94,15 @@
         "authorization": "perpetual-public-repository-2026",
         "pdf_sha256": "309e06818d78fc75a5d1e7fa010de95637b27f52ead5803ef8599df60ec9fbd4"
       }
+    },
+    {
+      "id": "articles/faith/ontological-vertigo",
+      "catalog": "library/faith.md",
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "articles/faith/trustful-surrender-to-divine-providence",
