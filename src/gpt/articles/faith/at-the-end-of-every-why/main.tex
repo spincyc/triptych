@@ -1,0 +1,73 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+
+\hypersetup{
+  pdftitle={At the End of Every Why},
+  pdfsubject={A patristic, Thomistic, and mystical ascent from received being to the God who is love}
+}
+
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2em}
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\newcommand{\articlethesis}[1]{%
+  \begin{studybox}{Governing thesis}
+  #1
+  \end{studybox}}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.17\textheight}
+{\Huge\bfseries At the End of Every Why\par}
+\vspace{0.9em}
+{\Large\itshape A metaphysical ascent to the God who is love\par}
+\vspace{0.7em}
+{\large A patristic, Thomistic, and mystical study\par}
+\vfill
+{\small From received existence, through the uncreated source of being,\par}
+{\small to the mystery disclosed in the Word and the Spirit\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{articles/faith/at-the-end-of-every-why/sections/00-the-question-of-being}
+\input{articles/faith/at-the-end-of-every-why/sections/10-not-the-first-domino}
+\input{articles/faith/at-the-end-of-every-why/sections/20-the-one-who-does-not-receive}
+\input{articles/faith/at-the-end-of-every-why/sections/30-nearer-than-nearness}
+\input{articles/faith/at-the-end-of-every-why/sections/40-darkness-of-excess}
+\input{articles/faith/at-the-end-of-every-why/sections/50-reason-at-the-threshold}
+\input{articles/faith/at-the-end-of-every-why/sections/60-the-word-and-love}
+\input{articles/faith/at-the-end-of-every-why/sections/70-love-gives-being}
+\input{articles/faith/at-the-end-of-every-why/sections/80-the-last-word}
+\clearpage
+\appendix
+\input{articles/faith/at-the-end-of-every-why/sections/90-scope-method-qualifications}
+\input{articles/faith/at-the-end-of-every-why/sections/99-references}
+\begingroup
+\setlength{\parskip}{0pt}
+\vspace{-0.6\baselineskip}
+\section{Generation Metadata}
+\vspace{-0.35\baselineskip}
+{\scriptsize\input{articles/faith/at-the-end-of-every-why/generation-metadata}}
+\endgroup
+\end{deepstudy}
+
+\end{document}
