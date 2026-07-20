@@ -1,14 +1,22 @@
 # Public Release Boundary
 
-The current release manifest contains 58 publications: all 58 are marked
-`release`, with no item in `review` or on `hold`. The later 20 July 2026
-supplement in `rights/public-alpha-2026-07-15.md` records the maintainer's
-instruction “approve all” as exact-current-snapshot distribution authorization,
-effective at `2026-07-20T11:30:03-05:00` in `America/Chicago`, under the
-existing represented perpetual worldwide public-repository and GitHub Pages
-authority. It binds all 58 exact installed PDF snapshots and all 21 final
-artifact-affecting site inputs, subject to no project-initiated promotion.
-Changed PDF or site-input bytes require renewed authorization.
+The current release manifest contains 59 publications: 58 are marked
+`release`, no item is marked `review`, and the new Saint Thomas Aquinas
+biography is marked `hold`. The later 20 July 2026 supplement in
+`rights/public-alpha-2026-07-15.md` records the maintainer's instruction
+“approve all” as exact-current-snapshot distribution authorization, effective
+at `2026-07-20T11:30:03-05:00` in `America/Chicago`, under the existing
+represented perpetual worldwide public-repository and GitHub Pages authority.
+It binds the 58 exact installed PDF snapshots and 21 artifact-affecting site
+inputs as they stood at that authorization, subject to no project-initiated
+promotion. Changed PDF or site-input bytes require renewed authorization.
+
+The Aquinas biography has no approval, remains excluded from both public and
+preview artifacts, and awaits a work-specific rights review. Its catalog
+changes make the recorded `LIBRARY.md` and `library/biographies.md` site-source
+hashes stale. Together with the already changed `CONTRIBUTING.md` site input
+and Ninth Sunday after Pentecost PDF, these changes cause the public check to
+fail closed until renewed exact-snapshot authorization.
 
 This is operational exact-byte release clearance, not a judgment that a work
 is editorially or profile-final. It is not ecclesiastical approval, an
@@ -16,8 +24,9 @@ imprimatur, a nihil obstat, completion of independent work-specific rights
 review, completion of named U.S. altar-book collation, completion of
 independent proper-guide review, a general license, or broader reuse
 permission. The Ninth Sunday after Pentecost and PC-S41-A retain every such
-substantive limitation in their source audits even though their exact current
-snapshots now have empty release gates.
+substantive limitation in their source audits. Their manifest entries have
+empty release gates, but only the recorded hashes received exact-snapshot
+clearance.
 
 `public-alpha.json` is the exhaustive publication policy for every discovered source document and installed PDF:
 
@@ -70,10 +79,13 @@ source-audited but is not a critical edition; manuscript collation and
 comprehensive source-language lexical review have not occurred, and independent
 Aristotelian, patristic, Thomistic, moral-theological, pastoral, and clinical
 review remain outstanding. The ten 1962 proper guides and nine postconciliar
-proper guides have exact-current-snapshot distribution clearance. The newly
-cleared Ninth Sunday after Pentecost and PC-S41-A snapshots retain their
-recorded rights, collation, and independent-review limitations and are not
-thereby profile-final or ecclesiastically approved. The postconciliar revisions remain subject to the same outstanding
+proper guides remain marked `release`, but exact-current-snapshot authorization
+applies only to the bytes recorded in the manifest. The installed Ninth Sunday
+after Pentecost PDF changed after authorization and requires renewed
+exact-snapshot authorization. The recorded Ninth Sunday after Pentecost and
+unchanged PC-S41-A clearance decisions retain their rights, collation, and
+independent-review limitations and do not make either work profile-final or
+ecclesiastically approved. The postconciliar revisions remain subject to the same outstanding
 complete English-oration collation against an identified U.S. altar-book
 printing and independent liturgical, biblical, theological, and historical
 review. The postconciliar Order of Mass likewise still lacks exact hands-on
@@ -123,10 +135,11 @@ any of them. See the rights record and each publication's linked research
 records for the complete boundaries.
 
 Only when all snapshot and site-source bindings verify may the GitHub Pages
-workflow build and verify `build/public-alpha/site`; the current 58-PDF and
-21-site-source bindings are intended to satisfy that fail-closed gate. A
-verified workflow may upload only that artifact through the `github-pages`
-environment. Pages must never publish the repository root or
+workflow build and verify `build/public-alpha/site`; at this revision the
+changed Ninth Sunday after Pentecost PDF and the stale `CONTRIBUTING.md`,
+`LIBRARY.md`, and `library/biographies.md` site-source bindings deliberately
+prevent that result. A future verified workflow may upload only that artifact
+through the `github-pages` environment. Pages must never publish the repository root or
 `build/public-alpha/preview`. This
 record documents the boundary only; it does not authorize a worker to perform a
 push or deployment, which remain separate operations.
@@ -146,9 +159,10 @@ python scripts/public-alpha verify --deployment-target github-pages
 `prepare-public-alpha` is read-only and deliberately works when old snapshot
 hashes are stale or the old source-binding list lacks newly recognized inputs.
 It validates the exhaustive publication and current artifact-input scope, then
-reports the current 58 publication PDF hashes and the hashes of all 21 current
+reports the current 59 publication PDF hashes and the hashes of all 21 current
 Markdown, layout, style, license, generator, and dependency-lock inputs as a
-deterministic candidate inventory. The inventory explicitly confers no approval, changes no
+deterministic candidate inventory. The inventory explicitly confers no
+approval, changes no
 manifest or rights record, and cannot replace the separate review and recorded
 authorization required for new snapshots.
 

@@ -3,10 +3,10 @@
   "release_id": "public-alpha",
   "provider": "gpt",
   "expected_counts": {
-    "publications": 58,
+    "publications": 59,
     "release": 58,
     "review": 0,
-    "hold": 0
+    "hold": 1
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
@@ -164,6 +164,15 @@
         "authorization": "perpetual-public-repository-2026",
         "pdf_sha256": "33a2bcf5aef62c37d41eb3917c3a9ec52f670859677113e8257e8005b76a9ea0"
       }
+    },
+    {
+      "id": "biographies/saint-thomas-aquinas",
+      "catalog": "library/biographies.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review"
+      ],
+      "approval": null
     },
     {
       "id": "biographies/tertullian",

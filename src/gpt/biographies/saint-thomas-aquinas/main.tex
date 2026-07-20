@@ -1,0 +1,60 @@
+\input{common/preamble}
+\input{biographies/shared/biography-format}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\hypersetup{
+  pdftitle={Saint Thomas Aquinas: Friar, Teacher, and the Work of Wisdom},
+  pdfsubject={A source-first historical and hagiographic biography of Saint Thomas Aquinas}
+}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+  \thispagestyle{empty}
+  \centering
+  \vspace*{0.11\textheight}
+  {\Huge\bfseries Saint Thomas Aquinas\par}
+  \vspace{0.8em}
+  {\Large Friar, Teacher, and the Work of Wisdom\par}
+  \vspace{1.8em}
+  {\large A source-first historical and hagiographic biography\par}
+  \vfill
+  {\small Triptych: AI Driven Studies in Catholic Faith, Worship, and Law\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+\pagenumbering{arabic}
+\hypersetup{pageanchor=true}
+
+\begin{deepstudy}
+\input{biographies/saint-thomas-aquinas/sections/00-opening}
+\input{biographies/saint-thomas-aquinas/sections/10-household-abbey-and-city}
+\input{biographies/saint-thomas-aquinas/sections/20-preachers-and-family-resistance}
+\input{biographies/saint-thomas-aquinas/sections/30-albert-and-parisian-formation}
+\input{biographies/saint-thomas-aquinas/sections/40-master-and-mendicant-controversy}
+\input{biographies/saint-thomas-aquinas/sections/50-italian-years-office-and-summa}
+\input{biographies/saint-thomas-aquinas/sections/60-second-paris-disputes}
+\input{biographies/saint-thomas-aquinas/sections/70-naples-silence-and-death}
+\input{biographies/saint-thomas-aquinas/sections/80-books-workshop-and-method}
+\input{biographies/saint-thomas-aquinas/sections/90-teaching-and-historical-limits}
+\input{biographies/saint-thomas-aquinas/sections/100-censure-canonization-and-thomisms}
+\input{biographies/saint-thomas-aquinas/sections/110-tradition-relics-and-images}
+\input{biographies/saint-thomas-aquinas/sections/120-synthesis}
+\appendix
+\input{biographies/saint-thomas-aquinas/sections/130-scope-chronology-evidence}
+\input{biographies/saint-thomas-aquinas/sections/140-references}
+\clearpage
+\section{Generation Metadata}
+\input{biographies/saint-thomas-aquinas/generation-metadata}
+\TriptychRightsNotice
+\end{deepstudy}
+
+\end{document}
