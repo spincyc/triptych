@@ -19,8 +19,6 @@ Lives are grouped as Apostles, Church Fathers, Doctors of the Church, and other 
 
 | Biography | Focus | Supporting records |
 | --- | --- | --- |
-| **[Tertullian: The Rhetorician of Carthage and the Cost of Rigor](../doc/gpt/biographies/tertullian.pdf)** | Carthage, apologetics, Christian practice, New Prophecy, transmission, and Catholic reception. | [Research scope](../src/gpt/biographies/tertullian/research/scope.md) · [Source audit](../src/gpt/biographies/tertullian/research/source-audit.md) · [Chronology](../src/gpt/biographies/tertullian/research/chronology.md) · [Tradition audit](../src/gpt/biographies/tertullian/research/tradition-audit.md) |
-| **[Origen: Scripture, School, and the Long Trial of a Teacher](../doc/gpt/biographies/origen.pdf)** | Alexandrian formation, teaching, textual scholarship, conflict, survival, and later controversies. | [Research scope](../src/gpt/biographies/origen/research/scope.md) · [Source audit](../src/gpt/biographies/origen/research/source-audit.md) · [Chronology](../src/gpt/biographies/origen/research/chronology.md) · [Tradition audit](../src/gpt/biographies/origen/research/tradition-audit.md) |
 | **[Saint Jerome](../doc/gpt/biographies/saint-jerome.pdf)** | Ascetic life, scholarship, translations, controversies, Bethlehem, cult, and iconography. | [Research scope](../src/gpt/biographies/saint-jerome/research/scope.md) · [Source audit](../src/gpt/biographies/saint-jerome/research/source-audit.md) · [Chronology](../src/gpt/biographies/saint-jerome/research/chronology.md) · [Tradition audit](../src/gpt/biographies/saint-jerome/research/tradition-audit.md) |
 | **[Saint Augustine of Hippo](../doc/gpt/biographies/saint-augustine-of-hippo.pdf)** | Self-witness, episcopate, controversies, intellectual development, cult, and contested legacy. | [Research scope](../src/gpt/biographies/saint-augustine-of-hippo/research/scope.md) · [Source audit](../src/gpt/biographies/saint-augustine-of-hippo/research/source-audit.md) · [Chronology](../src/gpt/biographies/saint-augustine-of-hippo/research/chronology.md) · [Tradition audit](../src/gpt/biographies/saint-augustine-of-hippo/research/tradition-audit.md) |
 
@@ -30,4 +28,7 @@ No additional biographies are cataloged in this group yet.
 
 ## Other Biographies
 
-No biographies are cataloged in this group yet.
+| Biography | Focus | Supporting records |
+| --- | --- | --- |
+| **[Tertullian: The Rhetorician of Carthage and the Cost of Rigor](../doc/gpt/biographies/tertullian.pdf)** | Carthage, apologetics, Christian practice, New Prophecy, transmission, and Catholic reception. | [Research scope](../src/gpt/biographies/tertullian/research/scope.md) · [Source audit](../src/gpt/biographies/tertullian/research/source-audit.md) · [Chronology](../src/gpt/biographies/tertullian/research/chronology.md) · [Tradition audit](../src/gpt/biographies/tertullian/research/tradition-audit.md) |
+| **[Origen: Scripture, School, and the Long Trial of a Teacher](../doc/gpt/biographies/origen.pdf)** | Alexandrian formation, teaching, textual scholarship, conflict, survival, and later controversies. | [Research scope](../src/gpt/biographies/origen/research/scope.md) · [Source audit](../src/gpt/biographies/origen/research/source-audit.md) · [Chronology](../src/gpt/biographies/origen/research/chronology.md) · [Tradition audit](../src/gpt/biographies/origen/research/tradition-audit.md) |
