@@ -5526,6 +5526,12 @@ def show_status(repository: Repository, selected: str | None) -> int:
                     manifests.append(load_manifest(repository, run_id))
         for manifest in manifests:
             reconcile_stale_run(repository, manifest)
+        if selected is None:
+            manifests = [
+                manifest
+                for manifest in manifests
+                if manifest.get("state") != "cleaned"
+            ]
     if not manifests:
         print("No Triptych Codex runs.")
         return 0
@@ -5552,6 +5558,8 @@ def launcher_help() -> str:
 The default command starts Codex in a unique locked worktree. A successful
 first unchanged run is cleaned automatically. Changed, committed, failed, or
 inconsistent runs are preserved and identified by an opaque run ID.
+Status without a run ID lists only runs that still require attention; pass an
+explicit run ID to inspect a cleaned record.
 Reopening starts a new Codex process in the retained worktree; it does not
 resume a saved Codex conversation. Only interactive, exec, and review agent
 surfaces and their allowlisted options are accepted. After separate review and

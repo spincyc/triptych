@@ -5166,6 +5166,10 @@ class TriptychCodexTests(unittest.TestCase):
         )
         self.assertFalse(Path(manifest["worktree"]).exists())
         self.assertIn(manifest["branch"], self.worker_branches())
+        pending_status = self.run_launcher(["--triptych-status"])
+        self.assertEqual(pending_status.returncode, 0, pending_status.stderr.decode())
+        self.assertIn(os.fsencode(manifest["run_id"]), pending_status.stdout)
+        self.assertIn(b"cleaned-branch-retained", pending_status.stdout)
 
         self.git(self.control, "worktree", "remove", str(competing))
         clean = self.run_launcher(["--triptych-clean", manifest["run_id"]])
@@ -5175,6 +5179,9 @@ class TriptychCodexTests(unittest.TestCase):
         cleaned_manifest = self.manifests()[0]
         self.assertEqual(cleaned_manifest["state"], "cleaned")
         self.assertIn("branch_cleaned_at", cleaned_manifest)
+        cleaned_status = self.run_launcher(["--triptych-status"])
+        self.assertEqual(cleaned_status.returncode, 0, cleaned_status.stderr.decode())
+        self.assertEqual(cleaned_status.stdout, b"No Triptych Codex runs.\n")
 
     def test_clean_refuses_a_symbolic_retained_worker_branch(self) -> None:
         log = self.root / "integrate-symbolic-branch.jsonl"
@@ -5271,6 +5278,68 @@ class TriptychCodexTests(unittest.TestCase):
         self.assertIn(manifest["run_id"], rendered)
         self.assertIn("preserved", rendered)
         self.assertNotIn(manifest["worktree"], rendered)
+
+    def test_status_overview_omits_cleaned_runs_but_exact_lookup_keeps_them(self) -> None:
+        cleaned_result = self.run_launcher(
+            environment={"FAKE_CODEX_LOG": str(self.root / "status-cleaned.jsonl")}
+        )
+        self.assertEqual(cleaned_result.returncode, 0, cleaned_result.stderr.decode())
+        cleaned = self.manifests()[0]
+        self.assertEqual(cleaned["state"], "cleaned")
+        self.assertFalse(Path(cleaned["worktree"]).exists())
+
+        empty_overview = self.run_launcher(["--triptych-status"])
+        self.assertEqual(empty_overview.returncode, 0, empty_overview.stderr.decode())
+        self.assertEqual(empty_overview.stdout, b"No Triptych Codex runs.\n")
+
+        exact = self.run_launcher(["--triptych-status", cleaned["run_id"]])
+        self.assertEqual(exact.returncode, 0, exact.stderr.decode())
+        self.assertIn(os.fsencode(cleaned["run_id"]), exact.stdout)
+        self.assertIn(b"cleaned", exact.stdout)
+
+        preserved_result = self.run_launcher(
+            environment={
+                "FAKE_CODEX_LOG": str(self.root / "status-preserved.jsonl"),
+                "FAKE_CODEX_ACTION": "dirty",
+            }
+        )
+        self.assertEqual(
+            preserved_result.returncode,
+            0,
+            preserved_result.stderr.decode(),
+        )
+        preserved_runs = [
+            manifest
+            for manifest in self.manifests()
+            if manifest["state"] == "preserved"
+        ]
+        self.assertEqual(len(preserved_runs), 1)
+        preserved = preserved_runs[0]
+
+        overview = self.run_launcher(["--triptych-status"])
+        self.assertEqual(overview.returncode, 0, overview.stderr.decode())
+        self.assertNotIn(os.fsencode(cleaned["run_id"]), overview.stdout)
+        self.assertIn(os.fsencode(preserved["run_id"]), overview.stdout)
+        self.assertIn(b"preserved", overview.stdout)
+
+    def test_status_overview_validates_cleaned_records_before_omitting_them(self) -> None:
+        result = self.run_launcher(
+            environment={"FAKE_CODEX_LOG": str(self.root / "status-cleaned-tamper.jsonl")}
+        )
+        self.assertEqual(result.returncode, 0, result.stderr.decode())
+        manifest = self.manifests()[0]
+        self.assertEqual(manifest["state"], "cleaned")
+        manifest["worktree"] = str(self.control)
+        manifest_file = self.repo_state() / "runs" / f"{manifest['run_id']}.json"
+        manifest_file.write_text(
+            json.dumps(manifest, indent=2, sort_keys=True) + "\n",
+            encoding="utf-8",
+        )
+
+        status = self.run_launcher(["--triptych-status"])
+
+        self.assertEqual(status.returncode, 2)
+        self.assertIn(b"unsafe worktree path", status.stderr)
 
     def test_status_rejects_a_tampered_state_without_printing_private_paths(self) -> None:
         log = self.root / "status-tampered-state.jsonl"
