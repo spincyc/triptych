@@ -6,14 +6,14 @@ This record supports `src/gpt/articles/faith/ontological-vertigo/main.tex`.
 
 - **Provider and collection:** GPT; faith and theology articles.
 - **Genre and profile:** discursive metaphysical and spiritual-theological article; `guidance/articles.md` governs.
-- **Series position:** Part I of *The Creature Before God*. It establishes received being and the analogical judgment that God loves; Part II treats the creature's due return, and Part III the revealed mystery and freedom of charity.
-- **Language, rite, jurisdiction, and currentness:** English; no liturgical rite, civil jurisdiction, canonical jurisdiction, or mutable discipline governs the argument. Online source witnesses were checked through 2026-07-20.
+- **Series position:** Part I of *The Creature Before God*. It establishes received being, the fork of recoil or adoration, and the analogical judgment that God loves. Parts II and III trace the ongoing resolution as arrest is brought into embodied worship, hope, friendship, and charity.
+- **Language, rite, jurisdiction, and currentness:** English; no liturgical rite, civil jurisdiction, canonical jurisdiction, or mutable discipline governs the argument. The core online witnesses were checked through 2026-07-20; the added Augustinian and Gregorian loci were checked on 2026-07-21.
 - **Intended reader:** a serious general reader capable of following basic metaphysical distinctions but not presumed to know scholastic terminology.
-- **Governing question:** What occurs when asymmetric dependence is apprehended as the present truth of the knower, why need that arrest not end in recoil or self-contempt, and how far can metaphysics proceed from received being toward the analogical judgment that God loves?
+- **Governing question:** What occurs when asymmetric dependence is apprehended as the present truth of the knower, why need that arrest not end in recoil or self-contempt, and how can consent begin a resolution that preserves the asymmetry while refusing to construe dependence as a threat?
 - **Thesis:** ontological vertigo is the reflexive apprehension of asymmetric dependence: the intellectual arrest in which a creature recognizes that it is wholly real and genuinely active, yet neither originates nor sustains the act by which it exists, while the uncreated source depends upon it in no corresponding ontological way.
 - **Intended literary effect:** a sober reexamination of the tacit prior that existence is an independently held possession. The final section moves from discursive knowledge through compressed, first-person language to the judgment that God loves; no literary or affective effect is treated as proof.
 
-The governing sentence, the term *ontological arrest*, the response taxonomy, and the final formulations are project synthesis. They are not represented as received technical definitions or attributed to a historical witness.
+The governing sentence, the term *ontological arrest*, the response taxonomy, the language of ongoing resolution, and the final formulations are project synthesis. They are not represented as received technical definitions or attributed to a historical witness.
 
 ## Terms fixed for this study
 
@@ -23,8 +23,8 @@ The governing sentence, the term *ontological arrest*, the response taxonomy, an
 - **Apprehension** means the intellect's judgment that asymmetric dependence is true.
 - **Arrest** means the interruption when that judgment turns reflexively upon the knower: *this is true of me*.
 - **Recoil** means withdrawal grounded in an interpretation of dependence as a threat to creaturely reality. Initial trembling or surprise is not by itself culpable recoil.
-- **Abasement** means relinquishing false elevation and taking one's creaturely place without denying one's given worth.
 - **Consent** means willing agreement with the truth of creaturehood. It does not constitute the dependence, supernatural faith, or passive acceptance of evil.
+- **Adoration** means consent taking determinate form as reverence before and service of the first principle. Parts II and III develop its embodied and graced form.
 - **Humility** means the truth of creaturehood has become a stable disposition; **magnanimity** accepts received goods as real powers to be exercised. Their compatibility prevents both pride and false abasement.
 - **Self-forgetfulness** means that attention ceases to make the self its own measure.
 - **Vertigo** names the reflexive apprehension and possible affective resonance of arrest. No unusual sensation is required.
@@ -56,7 +56,7 @@ The paper does not infer a temporal first instant from ontological dependence, r
 - **Thomistic theology:** supplies the principal metaphysical, moral, and theological articulation. The First Way, participated being, the one-sided real relation, humility–magnanimity pairing, and divine love are kept at their exact argumentative levels.
 - **Mystical witness:** shows true knowledge received in trembling and purified by apophatic restraint. Images illustrate apprehension; they do not demonstrate the thesis or guarantee an experience.
 - **Later Christian witness:** Descartes is used only for present conservation; Lewis only for self-forgetful humility. Neither governs the paper's authority structure.
-- **Project synthesis:** defines ontological vertigo and the response taxonomy, and orders the literary movement from received being through poetic compression to analogical divine love.
+- **Project synthesis:** defines ontological vertigo and the response taxonomy, and orders the literary movement from received being through poetic compression to analogical divine love. Its language of resolution names the progressive removal of recoil and alienation, not a reduction of dependence.
 
 ## Material qualifications
 
@@ -74,9 +74,10 @@ The paper does not infer a temporal first instant from ontological dependence, r
 12. Humility's “nothing from oneself” concerns non-aseity, not worthlessness or denial of received goods. Magnanimity and humility are complementary because both follow right reason.
 13. Recoil is not equated with every affective shudder. It names withdrawal grounded in an interpretation of dependence as a threat to creaturely reality.
 14. Consent changes the person's willing relation to creaturely truth, not the truth itself. It is neither supernatural faith by definition nor permission for quietism or passivity before evil.
-15. Creation is neither compelled by a lack in God nor antecedently owed by justice to a recipient not yet existing. This does not make divine action arbitrary or deny the dues established within creation: God acts according to divine wisdom and will and gives each created nature what belongs to its condition (ST I, q. 21, a. 1, especially ad 2–3; a. 4, ad 4).
-16. “God loves all things” is a true analogical philosophical judgment in the adopted Thomistic account: God freely wills and causes created good. It does not disclose the divine inner life or demonstrate Trinity.
-17. Pseudo-Dionysius is identified as an anonymous late-fifth- or early-sixth-century Christian author, not the convert of Acts 17.
+15. “Resolution” does not remove ontological asymmetry, make an initial shudder culpable, promise an affective sequence, or identify vertigo with a technical form of fear. It names consent and adoration progressively displacing the demand for an independent ground outside creaturehood.
+16. Creation is neither compelled by a lack in God nor antecedently owed by justice to a recipient not yet existing. This does not make divine action arbitrary or deny the dues established within creation: God acts according to divine wisdom and will and gives each created nature what belongs to its condition (ST I, q. 21, a. 1, especially ad 2–3; a. 4, ad 4).
+17. “God loves all things” is a true analogical philosophical judgment in the adopted Thomistic account: God freely wills and causes created good. It does not disclose the divine inner life or demonstrate Trinity.
+18. Pseudo-Dionysius is identified as an anonymous late-fifth- or early-sixth-century Christian author, not the convert of Acts 17.
 
 ## Rights and quotation boundary
 
@@ -87,6 +88,6 @@ The Lewis claim is a focused paraphrase of *Mere Christianity*, III.8; no Lewis 
 ## Review state
 
 - Completed for the Part I argument: genre/profile routing; claim-driven source review; exact-locus checks for the First Way, humility and magnanimity, divine will, divine justice, divine love, the natural-reason boundary, Augustine's arrest, Pseudo-Dionysian apophatic restraint, and the Lewis attribution; internal philosophical, theological, patristic, and literary consultation.
-- Completed production review: settled two-pass build; clean log, metadata, PDF-structure, embedded/subset/Unicode-font, and extracted-text checks; bounded raster review and visual inspection of all 12 pages; and a forced deterministic rebuild with an identical SHA-256. The reviewed artifact was installed byte-for-byte at `doc/gpt/articles/faith/ontological-vertigo.pdf` with SHA-256 `275cb6947b8e62780c32841e050af78b5057cf49b66a55626a0b1ea162ccbcfa`.
+- Completed production review: settled two-pass build; clean log, metadata, PDF-structure, embedded/subset/Unicode-font, and extracted-text checks; bounded raster review and visual inspection of all 13 pages; and a forced deterministic rebuild with an identical SHA-256. The reviewed artifact was installed byte-for-byte at `doc/gpt/articles/faith/ontological-vertigo.pdf` with SHA-256 `a186253b35ed388ab25c46f753961922ed982ada56c6626deca558a414ba5130`.
 - The catalog and release manifest register Part I as `hold` pending `renewed-exact-snapshot-authorization`.
 - Outstanding external review: independent philosophical, patristic, Thomistic, mystical-theological, dogmatic, literary, and ecclesiastical review. No imprimatur, nihil obstat, or ecclesiastical approval is claimed.

@@ -14,17 +14,17 @@
 
 ## Series function
 
-Part I, *Ontological Vertigo*, argues that a creature is genuinely real and active yet receives and is conserved in being while the uncreated source depends upon it in no corresponding ontological way. Part II asks what is due from a rational creature once that asymmetry is apprehended. Part III asks how grace brings the will from a just, hopeful response into charity and filial freedom.
+Part I, *Ontological Vertigo*, argues that a creature is genuinely real and active yet receives and is conserved in being while the uncreated source depends upon it in no corresponding ontological way. Part II asks how the fork of recoil or adoration becomes embodied as living sacrifice, common worship, mercy, and hope. Part III asks how grace brings the will from a just response into charity and filial freedom. Proper response deepens awareness of dependence while progressively removing the demand to stand outside it.
 
 The sequence is not three sealed virtue compartments. Faith, hope, charity, justice, and religion can be simultaneously active. The series movement is conceptual:
 
 1. **Being received** — dependence apprehended.
-2. **Justice rendered** — the due recognized and voluntarily answered.
-3. **Love returned** — charity perfecting, not canceling, the due.
+2. **Justice rendered** — the due recognized and voluntarily answered in oblation, common worship, and mercy.
+3. **Love returned** — charity perfecting, not canceling, the due and transforming fear into filial awe.
 
 ## Governing thesis
 
-The unowed gift of creaturehood establishes a real but unequal due. The rational creature ought freely to acknowledge God as first principle and last end, through worship and through justice toward the neighbor. Natural and revealed law articulate that order; ecclesiastical law specifies parts of its common practice for defined subjects; grace enables the answer without erasing its obligation. Charity does not abolish what is due. It gives the due its filial form.
+The unowed gift of creaturehood establishes a real but unequal due. The rational creature ought freely to acknowledge God as first principle and last end, through worship and through justice toward the neighbor. In Christian life this return takes the form of a living sacrifice incorporated into Christ's prior oblation. Natural and revealed law articulate the order; ecclesiastical law gives parts of its common practice determinate form; grace gives the power to answer, and hope relies upon that help. The asymmetry remains while action begins to agree with it.
 
 The argument turns on two compatible propositions:
 
@@ -38,13 +38,13 @@ Neither proposition makes creation a contract. The due is not equivalent repayme
 1. How can a response be owed when the original gift was not owed and cannot be repaid?
 2. In what sense is religion a part of justice if no creature can render God an equal return?
 3. How does moral necessity differ from constraint?
-4. What distinct realities are hidden by the phrase “I have to”?
+4. What distinct realities are hidden by the phrase “I have to,” and what is gained by a four-term grammar of dependence, duty, precept, and culpability?
 5. How do natural moral law, revealed divine law, and human ecclesiastical law relate without becoming one flat inventory?
 6. How does the Decalogue join gift, worship, and justice toward the neighbor?
-7. What does current universal Latin law actually require on Sunday, of whom, and under what stated qualifications?
-8. How do objective obligation, excuse, dispensation, commutation, grave matter, and personal culpability differ?
+7. Why does common Eucharistic worship require received temporal and juridical form, and what does current universal Latin law actually require on Sunday?
+8. Why must the Godward return pass through justice and mercy toward the neighbor?
 9. How do grace and hope enable the answer while preserving its status as a free human act?
-10. Where must Part II stop so that charity remains the proper subject of Part III?
+10. How can response assuage vertigo without reducing dependence, promising calm, or trespassing upon charity's work in Part III?
 
 ## Terse taxonomy
 
@@ -56,10 +56,8 @@ The following ordered grammar is project synthesis, grounded in the identified m
 | Duty | What a person can refuse but ought to choose; the moral due binds without physically forcing. |
 | Precept | A duty, or a determinate mode of fulfilling one, commanded by competent authority for identified subjects and circumstances. |
 | Culpability | Personal responsibility for a concrete failure, with matter, knowledge, freedom, intention, and circumstances distinguished. |
-| Counsel | A genuine good proposed beyond universal precept; never a license to neglect justice. |
-| Excuse | Facts under the applicable norm, such as impossibility or sufficiently serious reason, that prevent the ordinary obligation from binding in the concrete case. |
-| Dispensation | A competent authority's relaxation of a merely ecclesiastical law in a particular case. |
-| Commutation | Competent substitution of another work where law permits. |
+
+Excuse, dispensation, and commutation remain subsidiary legal distinctions in the current-law matrix. They do not belong to the article's central four-term metaphysical and moral taxonomy.
 
 The article's three summary formulas are:
 
@@ -89,13 +87,14 @@ The article's three summary formulas are:
 3. Psalm 116 on the impossible return answered by receiving the cup, thanksgiving, vows, and public worship.
 4. The two tablets as order toward God and justice among persons; Christ's summary in love of God and neighbor.
 5. Irenaeus, *Against Heresies* IV.14, 17–18, on divine non-need, service for creaturely good, sacrifice, and justice.
-6. Justin, *First Apology* 67, as early witness to common Sunday Scripture, prayer, Eucharist, and mercy.
+6. Justin, *First Apology* 67, as early witness to common Sunday Scripture, prayer, Eucharist, Communion, and mercy.
 7. Augustine, *City of God* X.1, 3, 5–6, 19–20, on *latria*, true sacrifice, and the Church's self-offering through Christ.
-8. Aquinas, ST I q. 21; I–II qq. 90–91, 94, 100, 106, 108–109; II–II qq. 17, 23, 58, 80–82, 85, 122.
-9. *Catechism of the Catholic Church* 1730–1748, 1854–1864, 1950–1974, 2030–2043, 2060–2100, and 2168–2195.
-10. Vatican II, *Sacrosanctum Concilium* 106, and John Paul II, *Dies Domini* 46–53, as authoritative liturgical and pastoral teaching distinct from the Code.
-11. The current universal Latin Sunday obligation, satisfaction, impossibility, rest, dispensation, commutation, and culpability boundaries.
-12. Grace, hope, devotion, and the living sacrifice as the threshold of Part III.
+8. Gregory Nazianzen, *Oration* 14.23–25 and 39.8–10, on received goods answered in mercy and on grace, commandment, purification, illumination, and desire; Chrysostom, *Homilies on Matthew* 50.3–4, on Eucharistic honor and the poor.
+9. Aquinas, ST I q. 21; I–II qq. 10, 90–91, 94, 100, 106, 108–109; II–II qq. 17, 23, 29, 58, 80–82, 85, 122.
+10. *Catechism of the Catholic Church* 1730–1748, 1854–1864, 1950–1974, 2030–2043, 2060–2100, and 2168–2195.
+11. Vatican II, *Sacrosanctum Concilium* 47–48 and 106 and *Lumen Gentium* 10–11 and 34, together with John Paul II, *Dies Domini* 46–53, as authoritative liturgical, ecclesial, and pastoral teaching distinct from the Code.
+12. The current universal Latin Sunday obligation, satisfaction, impossibility, rest, dispensation, commutation, and culpability boundaries as a bounded example rather than the article's governing subject.
+13. Grace, hope, devotion, and the living sacrifice as the threshold of Part III.
 
 ## Excluded or bounded scope
 
@@ -110,7 +109,7 @@ The article's three summary formulas are:
 9. A list of all facts constituting serious reason, grave cause, just cause, impossibility, or sufficient excuse.
 10. Judgment of a named person's mortal culpability, conscience, or canonical situation.
 11. Civil Sunday-closing law, labor law, accommodation, public holidays, or religious-liberty litigation.
-12. A complete account of evangelical counsels or states of life; counsel is included only to prevent its confusion with precept.
+12. A complete account of evangelical counsels or states of life.
 
 ## Method and source hierarchy
 
@@ -139,6 +138,10 @@ The article's three summary formulas are:
 12. Canonical obligation, moral sin, and canonical penalty are distinct effects.
 13. Hope does not erase the due. Grace does not replace created agency.
 14. Charity perfects justice by ordering its act to God as beloved; it does not abolish commandments.
+15. The Church's self-offering depends wholly upon Christ's perfect prior oblation; it is neither autonomous nor deducible from natural theology. The revealed oblation of Christ governs Christian sacrifice.
+16. Mercy is a fruit and test of Eucharistic incorporation, not a substitute for Mass or a completion of deficiency in Christ's offering.
+17. Sunday is the primary legal illustration because it unites common worship, received time, rest, and mercy. The article does not present attendance as psychological regulation or use convert discomfort as evidence of bad faith.
+18. “Resolution” is project synthesis. Justice, religion, and hope bring action into agreement with dependence and remove obstacles to peace; they do not make asymmetry smaller, guarantee sensible calm, or perform charity's direct unification of desire.
 
 ## Rights and quotation boundary
 
@@ -148,5 +151,5 @@ The article uses only brief, claim-driven source phrases. Scripture, official te
 
 - Completed: profile routing; exact-locus Scripture, patristic, Thomistic, catechetical, conciliar, and universal Latin current-law audit; jurisdiction, authority, culpability, and negative-claim boundary drafting; rights review.
 - The catalog and release manifest register Part II as `hold` pending `renewed-exact-snapshot-authorization`.
-- Completed production review: settled two-pass build; clean log, metadata, PDF-structure, embedded/subset/Unicode-font, and extracted-text checks; bounded raster review and visual inspection of all 15 pages; and a forced deterministic rebuild with an identical SHA-256. The reviewed artifact was installed byte-for-byte at `doc/gpt/articles/faith/the-due-return.pdf` with SHA-256 `9a14d913aa7d28752aba9f1341ba9767858d883a07c580e7eedeaec9c1a88d33`.
+- Completed production review: settled two-pass build; clean log, metadata, PDF-structure, embedded/subset/Unicode-font, and extracted-text checks; bounded raster review and visual inspection of all 15 pages; and a forced deterministic rebuild with an identical SHA-256. The reviewed artifact was installed byte-for-byte at `doc/gpt/articles/faith/the-due-return.pdf` with SHA-256 `c20486284643fe93acd60961fa4271e9d3eb23535b0c20a51abd4119f789e480`.
 - Outstanding: independent scriptural, patristic, Thomistic, moral-theological, liturgical, Latin-canonical, literary, and ecclesiastical review. No imprimatur, nihil obstat, legal opinion, or ecclesiastical approval is claimed.
