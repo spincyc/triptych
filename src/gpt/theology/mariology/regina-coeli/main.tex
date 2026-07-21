@@ -1,0 +1,62 @@
+\input{common/preamble}
+\input{theology/mariology/shared/prayer-reference-format}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+
+\hypersetup{
+  pdftitle={The Regina Coeli: Easter Joy with the Mother of the Risen Lord},
+  pdfsubject={A bilingual prayer text and source-first study of the Regina Coeli, its scriptural structure, liturgical and devotional uses, history, Easter rhythm, and current discipline}
+}
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.18\textheight}
+{\Huge\bfseries The Regina Coeli\par}
+\vspace{0.35em}
+{\Large\itshape Easter joy with the Mother of the risen Lord\par}
+\vspace{0.7em}
+{\large A bilingual prayer text and source-first study\par}
+\vfill
+{\small The received prayer comes first; source, rights, and use qualifications appear in the appendices.\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{theology/mariology/regina-coeli/sections/00-prayer}
+\input{theology/mariology/regina-coeli/sections/10-scripture-doctrine}
+\input{theology/mariology/regina-coeli/sections/20-history-reception}
+\input{theology/mariology/regina-coeli/sections/30-practice-discipline}
+\appendix
+\input{theology/mariology/regina-coeli/sections/90-scope-status-qualifications}
+\input{theology/mariology/regina-coeli/sections/99-references}
+\section{Generation Metadata}
+\begingroup
+\footnotesize
+\input{theology/mariology/regina-coeli/generation-metadata}
+\endgroup
+\end{deepstudy}
+
+\end{document}

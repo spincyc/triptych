@@ -3,10 +3,10 @@
   "release_id": "public-alpha",
   "provider": "gpt",
   "expected_counts": {
-    "publications": 115,
+    "publications": 117,
     "release": 115,
     "review": 0,
-    "hold": 0
+    "hold": 2
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
@@ -1097,6 +1097,16 @@
       }
     },
     {
+      "id": "theology/mariology/angelus",
+      "catalog": "library/mariology.md",
+      "status": "hold",
+      "gates": [
+        "prayer-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
+    },
+    {
       "id": "theology/mariology/apparitions",
       "catalog": "library/mariology.md",
       "status": "release",
@@ -1165,6 +1175,16 @@
         "authorization": "perpetual-public-repository-2026",
         "pdf_sha256": "60a12dadd9d688186cd2139032262c859c36f1637e54476f15934ffeb6e624a2"
       }
+    },
+    {
+      "id": "theology/mariology/regina-coeli",
+      "catalog": "library/mariology.md",
+      "status": "hold",
+      "gates": [
+        "prayer-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "theology/mariology/rosary",

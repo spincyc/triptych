@@ -1,8 +1,9 @@
 # Mariological Reference Works
 
-This profile governs repeatable Rosary, Marian-dogma, and apparition-judgment
-references beneath `src/gpt/theology/mariology/`. It supplies a shared doctrinal
-core and separate genre addenda; do not merge their templates.
+This profile governs repeatable Marian-prayer, Rosary, Marian-dogma, and
+apparition-judgment references beneath `src/gpt/theology/mariology/`. It
+supplies a shared doctrinal core and separate genre addenda; do not merge their
+templates.
 
 ## Governing priorities
 
@@ -32,11 +33,12 @@ from alleged messages, authenticate a political program, guarantee a future
 chronology or salvation, or displace pastoral, medical, legal, or safeguarding
 action.
 
-Every leaf keeps `research/scope.md` and `research/source-audit.md`. An
-apparition study also keeps `research/corpus-status.md` as its controlling
-inventory and updates that record before narrative status changes. Add focused
-claim audits where an image, cure, secret, chronology, or received tradition
-cannot be governed safely by the common records alone.
+Every leaf keeps `research/scope.md` and `research/source-audit.md`. A
+Marian-prayer reference also keeps `research/prayer-text-audit.md`; an
+apparition study keeps `research/corpus-status.md` as its controlling inventory
+and updates that record before narrative status changes. Add focused claim
+audits where a prayer variant, image, cure, secret, chronology, or received
+tradition cannot be governed safely by the common records alone.
 
 Prefer Scripture; conciliar, papal, and DDF teaching; competent diocesan or
 eparchial acts; official shrine or episcopal records; and critical primary
@@ -63,6 +65,54 @@ non-obligatory character of private revelation, or current controlling judgment
 when reliance risk requires it. The exact object and limit of a judgment,
 disputed witness, authority distinction, or message-specific qualification
 remains beside that claim.
+
+## Marian-prayer addendum
+
+A Marian-prayer reference begins with a complete usable prayer form before its
+exposition. Every vocal unit reproduces one identified received witness. The
+prayer-text audit records the exact edition and locus, language, translation
+status, abbreviation expansion, orthography, punctuation, variants, rights,
+and collation performed. Expand an abbreviation only from the same witness or
+a governing edition it expressly incorporates; never fill a gap by editorial
+memory, silent modernization, conflation, or AI translation.
+
+After the prayer, explain its scriptural and doctrinal architecture, historical
+formation and reception, liturgical or devotional status, and responsible
+practice. Preserve Christ's primacy and unique mediation. A Marian title,
+petition, or invitation to joy is interpreted within Mary's created, graced,
+maternal, and subordinate participation; the prayer is not allowed to imply an
+independent source of grace or power.
+
+Keep these categories explicit and separate:
+
+- a liturgical antiphon or collect and a popular exercise that incorporates it;
+- universal discipline, territorial approval, local custom, and historical
+  practice;
+- a recommended daily or seasonal rhythm and a binding obligation;
+- bells, posture, clock time, communal solemnization, and other customs from
+  the conditions of any current indulgence; and
+- the current indulgence grant and its general norms from every superseded
+  grant, measurement, and condition.
+
+When an indulgence claim uses a vernacular prayer, verify and record the
+competent ecclesiastical authority's approval of that translation; ordinary
+devotional usability alone does not establish eligibility under the indulgence
+discipline.
+
+Date every mutable claim and identify the competent Roman or territorial
+authority. When a seasonal substitute is paired with another prayer, give each
+work its own leaf and exact witness while explaining the handoff in both; do not
+make either document a fragment that is unusable on its own. Historical
+development distinguishes documented textual stages from traditional
+attributions and does not manufacture a single author or origin event.
+
+Before installation, collate every reproduced line against page images or an
+official edition, verify season, time, posture, liturgical status, and
+indulgence claims in current sources, test every cited historical milestone,
+and record the exact rights and review state. The complete prayer, terminal
+scope appendix, references, generation metadata, and final-page rights
+colophon must remain readable and must not create a prayer-only or rights-only
+spill page.
 
 ## Rosary addendum
 

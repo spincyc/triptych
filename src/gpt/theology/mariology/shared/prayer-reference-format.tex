@@ -1,0 +1,28 @@
+% Shared presentation primitives for Mariological prayer references.
+% Authored document content remains in each publication leaf.
+
+\newcommand{\bilingualprayer}[4]{%
+  \Needspace{12\baselineskip}%
+  \begin{massbox}{#1}
+  {\footnotesize\textbf{Text and status:} #2\par}\smallskip
+  \begin{minipage}[t]{0.48\linewidth}
+  \raggedright
+  \textbf{Latin}\par\smallskip
+  \itshape #3
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.48\linewidth}
+  \raggedright
+  \textbf{English}\par\smallskip
+  #4
+  \end{minipage}
+  \end{massbox}}
+
+\newcommand{\VR}[2]{\textbf{V.} #1\par\textbf{R.} #2\par}
+\newcommand{\PrayerRepeat}[1]{\textit{#1}\par}
+
+\newcommand{\prayeraxis}[3]{%
+  \begin{studyframe}
+  \textbf{Textual movement:} #1\par
+  \textbf{Principal loci:} #2\par
+  \textbf{Doctrinal center:} #3
+  \end{studyframe}}
