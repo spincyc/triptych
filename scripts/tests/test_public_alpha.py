@@ -43,6 +43,8 @@ class PublicAlphaTest(unittest.TestCase):
         self.tool.OUTPUT_ROOT = self.root / "build/public-alpha"
         self.tool.PAGE_MAP = {
             "README.md": "index.html",
+            "library/curriculums.md": "library/curriculums.html",
+            "library/ecclesiastical-latin.md": "library/ecclesiastical-latin.html",
             "library/test.md": "library/test.html",
         }
         self.tool.SITE_SOURCE_PATHS = set(self.tool.PAGE_MAP) | {
@@ -56,6 +58,14 @@ class PublicAlphaTest(unittest.TestCase):
         self.write(
             "library/test.md",
             b"# Test shelf\n\n[Work](../doc/gpt/work.pdf)\n",
+        )
+        self.write(
+            "library/curriculums.md",
+            b"# Curriculums\n\n[Ecclesiastical Latin](ecclesiastical-latin.md)\n",
+        )
+        self.write(
+            "library/ecclesiastical-latin.md",
+            b"# Ecclesiastical Latin\n\n[Return to Curriculums](curriculums.md)\n",
         )
         self.write("release/public-alpha/layout.html", b"{{CONTENT}}\n")
         self.write("release/public-alpha/assets/site.css", b"body {}\n")
@@ -433,6 +443,38 @@ class PublicAlphaTest(unittest.TestCase):
         self.assertIn("Work", rendered)
         self.assertNotIn("Supporting records", rendered)
         self.assertNotIn("Source map", rendered)
+
+    def test_curriculum_landing_and_child_catalog_links_are_rewritten(self) -> None:
+        with mock.patch.object(
+            self.tool,
+            "render_page",
+            side_effect=lambda source, markdown, output, preview, authorization: markdown,
+        ):
+            landing = self.tool.render_source_page(
+                "library/curriculums.md",
+                "library/curriculums.html",
+                {"work"},
+                False,
+                {},
+            )
+            child = self.tool.render_source_page(
+                "library/ecclesiastical-latin.md",
+                "library/ecclesiastical-latin.html",
+                {"work"},
+                False,
+                {},
+            )
+
+        self.assertIn("[Ecclesiastical Latin](ecclesiastical-latin.html)", landing)
+        self.assertIn("[Return to Curriculums](curriculums.html)", child)
+
+    def test_repository_page_map_includes_curriculum_child_catalog(self) -> None:
+        repository_tool = load_tool()
+
+        self.assertEqual(
+            repository_tool.PAGE_MAP.get("library/ecclesiastical-latin.md"),
+            "library/ecclesiastical-latin.html",
+        )
 
     def test_unmanifested_installed_pdf_is_rejected(self) -> None:
         self.authorize_current_inputs()
