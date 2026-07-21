@@ -1,7 +1,7 @@
 # Public Release Boundary
 
-The current release manifest contains 117 publications: 115 are marked
-`release`, no item is marked `review`, and two are marked `hold`. The latest
+The current release manifest contains 118 publications: 115 are marked
+`release`, no item is marked `review`, and three are marked `hold`. The latest
 21 July 2026 supplement in `rights/public-alpha-2026-07-15.md` records the
 maintainer's instruction “approve all docs” as exact-current-snapshot
 distribution authorization, effective at `2026-07-21T11:50:35-05:00` in
@@ -9,22 +9,24 @@ distribution authorization, effective at `2026-07-21T11:50:35-05:00` in
 public-repository and GitHub Pages authority. It binds the 115 exact installed
 PDF snapshots and all 22 exact reader-site input snapshots inventoried in that
 record, together with the updated rights record, subject to no
-project-initiated promotion. The later Angelus and Regina Coeli references were
-not part of that exact inventory. They await initial exact-snapshot
-authorization and retain prayer-text-permission gates for their unresolved
-non-US historical-English translation status. Their addition changes
-`LIBRARY.md` and `library/mariology.md` from their recorded exact site-source
-bytes. Every one of the 115 release publications has empty manifest gates only
-as an exact-snapshot exception. The two held works are excluded from both
-public and private-preview artifacts. Changed PDF, rights-record, or site-input
-bytes require renewed authorization.
+project-initiated promotion. The later Angelus and Regina Coeli references and
+Saint Anthony in Willits parish history were not part of that exact inventory.
+All three await exact-snapshot authorization. The two Marian references also
+retain prayer-text-permission gates for their unresolved non-US
+historical-English translation status. The Marian additions change `LIBRARY.md`
+and `library/mariology.md`, while the parish history changes
+`library/historical-accounts.md`, from their recorded exact site-source bytes.
+Every one of the 115 release publications has empty manifest gates only as an
+exact-snapshot exception. The three held works are excluded from both public
+and private-preview artifacts. Changed PDF, rights-record, or site-input bytes
+require renewed authorization.
 
 The 115-publication snapshot described in the 21 July record is
 publication-ready only when the focused release tests, policy check,
 deterministic pre/post inventory comparison, public-site build, independent
 site verification, and named GitHub Pages target verification all pass. At its
-committed revision those checks passed. The later 117-publication snapshot is
-not publication-ready: its two added PDFs are held and its changed catalog
+committed revision those checks passed. The later 118-publication snapshot is
+not publication-ready: its three added PDFs are held and its changed catalog
 inputs no longer match the recorded site-source hashes. Release controls must
 remain fail-closed until the required bindings and gates are cleared.
 
@@ -161,12 +163,12 @@ Only when all snapshot, rights-record, and site-source bindings verify may the
 GitHub Pages workflow build and verify `build/public-alpha/site`. The current
 authorization binds the 115 exact PDFs and all 22 reader-site input snapshots
 recorded by the 21 July supplement. It does not bind the two new Marian-prayer
-PDFs or the current changed catalog bytes, so release and site verification
-must remain fail-closed and no current site artifact is publication-ready. Both
-held works remain outside public and private-preview artifacts. A future fully
-verified workflow may upload only its independently verified artifact through
-the `github-pages` environment. Pages must never publish the repository root or
-`build/public-alpha/preview`.
+PDFs, the new parish-history PDF, or the current changed catalog bytes, so
+release and site verification must remain fail-closed and no current site
+artifact is publication-ready. All three held works remain outside public and
+private-preview artifacts. A future fully verified workflow may upload only its
+independently verified artifact through the `github-pages` environment. Pages
+must never publish the repository root or `build/public-alpha/preview`.
 
 The user's earlier “commit; publish” instruction is separate operational
 authority for only the exact structurally bound 115-publication history
@@ -189,7 +191,7 @@ python scripts/public-alpha verify --deployment-target github-pages
 `prepare-public-alpha` is read-only and deliberately works when old snapshot
 hashes are stale or the old source-binding list lacks newly recognized inputs.
 It validates the exhaustive publication and current artifact-input scope, then
-reports the hashes of the 117 currently installed publication PDFs and all 22
+reports the hashes of the 118 currently installed publication PDFs and all 22
 current Markdown, layout, style, license, generator, and dependency-lock inputs
 as a deterministic candidate inventory. The inventory explicitly confers no
 approval, changes no
