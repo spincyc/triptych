@@ -274,8 +274,8 @@ rights review.
   exact retained loci, including the 1259 Valenciennes ordinances, the 1270
   Paris act, the 1272 Naples allowance, and the 1319 testimony concerning the
   Paris dispute; and
-- the settled publication built, inspected, and installed under the release
-  hold described below.
+- the settled publication built, inspected, and installed while the 20 July
+  2026 release hold was in force.
 
 ## Outstanding review
 
@@ -292,9 +292,9 @@ rights review.
 - item-level liturgical, relic, tomb, local-cult, calendar, patronage,
   iconographic, miracle, and quotation-authentication work;
 - independent rights review, including exact URLs, quotations, translations,
-  scans, fonts, and any later images;
-- independent editorial proof and ecclesiastical review or approval; and
-- final distribution authorization after the work-specific rights review.
+  scans, fonts, and any later images, which remains incomplete despite the
+  later exact-byte release clearance; and
+- independent editorial proof and ecclesiastical review or approval.
 
 ## Production review
 
@@ -308,13 +308,13 @@ including the chronology tables, references, and final-page generation
 colophon. The reviewed build and installed PDF are byte-identical with SHA-256
 `20738bba28ace609079d8375141b7206b83b3e9701952feab65cdbdd42c69257`.
 
-These production checks do not grant distribution approval. The installed PDF
-remains held from the public alpha pending independent work-specific rights
-review and any later editorial or ecclesiastical review the repository elects
-to require.
+These production checks did not grant distribution approval. At that 20 July
+2026 review point, the installed PDF was held from the public alpha pending
+independent work-specific rights review and any later editorial or
+ecclesiastical review the repository might require.
 
 ## Corpus-cleanup production review — 2026-07-21
 
 The source and audit records were revised in the corpus-wide omission audit. A settled two-pass build produced this 22-page PDF with SHA-256 `280f76a18b37c34684b8da84f8e6a46f46cbfbede8b06b9d0f335a572dd09cc8`. The final log contained no fatal error, undefined reference, overfull or underfull box, or unresolved rerun or layout warning. Generation metadata, `qpdf` structure, Letter page size, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed. Review rasters were generated through `scripts/pdf-review`; every rendered page was visually inspected for clipping, overlap, accidental blanks, bad breaks, footer and metadata placement, and legibility. The reviewed build was installed at its mirrored `doc/` path and verified byte-identical.
 
-This is internal production review only; it grants no independent editorial, specialist, rights, theological, or ecclesiastical approval. The current PDF remains held from the public alpha on `work-specific-rights-review`, and no distribution approval is inferred.
+This is internal production review only; it grants no independent editorial, specialist, rights, theological, or ecclesiastical approval. The exact current installed PDF is release-cleared by the 21 July 2026 exact-current-snapshot exception; independent work-specific rights review remains incomplete, and the exception supplies no missing review or approval.

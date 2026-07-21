@@ -8,15 +8,15 @@
   modules, and four stage-assessment companions.
 - **Installed total:** 920 pages and 24,936,030 bytes.
 - **Publication state:** corrected working snapshots installed at the user's
-  direction; changed-byte distribution remains on hold pending renewed exact-
-  snapshot authorization.
+  direction and release-cleared by the 21 July 2026 exact-current-snapshot
+  exception.
 
 The hashes below identify byte-identical files under the mirrored curriculum
 build and installed paths. They replace the immediately preceding corrected
 installed set of 52 PDFs, 920 pages, and 24,966,965 bytes. The release record
-intentionally retains the superseded hashes authorized on 20 July 2026, so
-its exact-snapshot check fails closed for every changed curriculum PDF until
-renewed authorization is recorded.
+preserves the 20 July 2026 bindings for the superseded hashes as historical;
+the 21 July 2026 exact-current-snapshot exception release-clears the exact
+installed hashes recorded here.
 
 ## Verification state
 
@@ -52,7 +52,7 @@ pages. The complete exact set showed no clipping, overflow,
 blank-or-rule-only pages, or remaining contents-hierarchy defect.
 
 This manifest records a technically and visually verified installed working
-set, not a completed universal production review or a changed-byte release
+set, not a completed universal production review. It is not itself release
 authorization. The source and answer audits record the content-level checking
 and remaining evidence limits.
 
@@ -125,11 +125,12 @@ unresolved. Successful compilation, internal review, and exact hashing do not
 alter those facts.
 
 The release record preserves the maintainer's 20 July 2026 exact-snapshot
-exception for the earlier installed bytes. It does not establish donor
-ownership, an open license, broader permission for liturgical wording,
-profile-final status, independent review, or distribution authority for the
-corrected snapshots recorded here.
+exception for the earlier installed bytes and records the 21 July 2026
+exact-current-snapshot exception for the exact installed bytes recorded here.
+Neither exception establishes donor ownership, an open license, broader
+permission for liturgical wording, profile-final status, independent review,
+or general distribution authority beyond the exact snapshots it binds.
 
 This manifest records the user-directed installation and commit preparation.
-It does not authorize changed-byte distribution, integration, push, or
-deployment.
+It does not itself authorize distribution, integration, push, or deployment;
+changed bytes require a new exact binding.

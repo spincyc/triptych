@@ -249,8 +249,8 @@ The PDF snapshot installed before the 2026-07-19 final-typography revision had
 distribution clearance in the release manifest and its dated rights record.
 That historical snapshot-specific operational decision did not complete any
 independent rights or specialist review and was not ecclesiastical approval.
-Fresh exact-snapshot distribution authorization for the current installed bytes
-remains pending.
+At that review point, fresh exact-snapshot distribution authorization for
+those installed bytes remained pending.
 
 The completed production checks are internal and do not imply independent
 historical, theological, philological, rights, or ecclesiastical review.
@@ -267,4 +267,4 @@ The settled 21-page PDF, SHA-256 `70dadb81abfaf4127e0f8be6e218ac76ff7308481db3a2
 
 The source and audit records were revised in the corpus-wide omission audit. A settled two-pass build produced this 21-page PDF with SHA-256 `8500ff6fa2ac9bf12d4b724a24e4a028e87d3b72f87bc5354418d766f1377a5e`. The final log contained no fatal error, undefined reference, overfull or underfull box, or unresolved rerun or layout warning. Generation metadata, `qpdf` structure, Letter page size, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed. Review rasters were generated through `scripts/pdf-review`; every rendered page was visually inspected for clipping, overlap, accidental blanks, bad breaks, footer and metadata placement, and legibility. The reviewed build was installed at its mirrored `doc/` path and verified byte-identical.
 
-This is internal production review only; it grants no independent editorial, specialist, rights, theological, or ecclesiastical approval. The predecessor's exact-snapshot approval does not attach to the revised bytes, so the manifest holds this PDF on `renewed-exact-snapshot-authorization` pending a new exact-byte authorization and binding.
+This is internal production review only; it grants no independent editorial, specialist, rights, theological, or ecclesiastical approval. The exact current installed PDF is release-cleared by the 21 July 2026 exact-current-snapshot exception; the exception supplies none of the missing review or approval just named and authorizes no changed bytes.

@@ -143,6 +143,7 @@ recorded separately. The 52 rebuilt PDFs are installed as corrected working
 snapshots at the user's direction. The prior installed snapshots and their
 exact-byte authorization are now historical; that authorization does not
 record completion of any missing review, establish an open license, authorize
-extracted material, or authorize the replacement bytes. The corrected set
-remains on changed-byte release hold pending renewed exact-snapshot
-authorization.
+extracted material, or authorize the replacement bytes. The exact current
+installed set is release-cleared by the 21 July 2026 exact-current-snapshot
+exception; that exact-byte exception completes no missing review, establishes
+no open license, and authorizes no extracted material or broader reuse.
