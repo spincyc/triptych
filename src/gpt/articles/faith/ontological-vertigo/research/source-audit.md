@@ -55,7 +55,7 @@ Pseudo-Dionysius is identified according to modern convention. Apophatic negatio
 
 ### Thomistic corpus
 
-The governing Latin metaphysical and humility loci were checked in the Leonine-text corpus exposed through Corpus Thomisticum: <https://www.corpusthomisticum.org/iopera.html>. The New Advent *Summa* index (<https://www.newadvent.org/summa/>) served as a public English working aid. Work, question, article, chapter, and reply govern over either site's wording.
+The governing Latin metaphysical and humility loci were checked in the Leonine-text corpus exposed through Corpus Thomisticum: <https://www.corpusthomisticum.org/iopera.html>. The New Advent *Summa* index (<https://www.newadvent.org/summa/>) served as a public English working aid. Work, question, article, chapter, and reply take precedence over either site's wording.
 
 Particularly controlling distinctions:
 

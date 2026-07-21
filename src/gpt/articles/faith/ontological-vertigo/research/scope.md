@@ -6,7 +6,7 @@ This record supports `src/gpt/articles/faith/ontological-vertigo/main.tex`.
 
 - **Provider and collection:** GPT; faith and theology articles.
 - **Genre and profile:** discursive metaphysical and spiritual-theological article; `guidance/articles.md` governs.
-- **Series position:** Part I of *The Creature Before God*. It establishes received being, the fork of recoil or adoration, and the analogical judgment that God loves. Parts II and III trace the ongoing resolution as arrest is brought into embodied worship, hope, friendship, and charity.
+- **Series position:** Part I of *The Creature Before God*. It establishes received being, the fork of recoil or adoration, and the analogical judgment that God loves. Parts II and III trace the ongoing resolution: the creature answers that arrest through embodied worship and hope, and grace perfects the response in friendship and charity.
 - **Language, rite, jurisdiction, and currentness:** English; no liturgical rite, civil jurisdiction, canonical jurisdiction, or mutable discipline governs the argument. The core online witnesses were checked through 2026-07-20; the added Augustinian and Gregorian loci were checked on 2026-07-21.
 - **Intended reader:** a serious general reader capable of following basic metaphysical distinctions but not presumed to know scholastic terminology.
 - **Governing question:** What occurs when asymmetric dependence is apprehended as the present truth of the knower, why need that arrest not end in recoil or self-contempt, and how can consent begin a resolution that preserves the asymmetry while refusing to construe dependence as a threat?
@@ -18,13 +18,13 @@ The governing sentence, the term *ontological arrest*, the response taxonomy, th
 ## Terms fixed for this study
 
 - **Ontological** concerns the creature's act of being, not merely biological, social, emotional, or functional need.
-- **Dependence** means that the creature receives and is presently conserved in being by a cause that it is not.
+- **Dependence** means that the creature's being is received from, and presently conserved by, a cause that it is not.
 - **Asymmetric** means that the creature depends upon the Creator in the order of being while the Creator receives no corresponding actuality, perfection, or constitution from the creature.
 - **Apprehension** means the intellect's judgment that asymmetric dependence is true.
 - **Arrest** means the interruption when that judgment turns reflexively upon the knower: *this is true of me*.
 - **Recoil** means withdrawal grounded in an interpretation of dependence as a threat to creaturely reality. Initial trembling or surprise is not by itself culpable recoil.
 - **Consent** means willing agreement with the truth of creaturehood. It does not constitute the dependence, supernatural faith, or passive acceptance of evil.
-- **Adoration** means consent taking determinate form as reverence before and service of the first principle. Parts II and III develop its embodied and graced form.
+- **Adoration** means consent taking determinate form as reverence before the first principle and service rendered to him. Parts II and III develop its embodied and graced form.
 - **Humility** means the truth of creaturehood has become a stable disposition; **magnanimity** accepts received goods as real powers to be exercised. Their compatibility prevents both pride and false abasement.
 - **Self-forgetfulness** means that attention ceases to make the self its own measure.
 - **Vertigo** names the reflexive apprehension and possible affective resonance of arrest. No unusual sensation is required.
@@ -88,6 +88,6 @@ The Lewis claim is a focused paraphrase of *Mere Christianity*, III.8; no Lewis 
 ## Review state
 
 - Completed for the Part I argument: genre/profile routing; claim-driven source review; exact-locus checks for the First Way, humility and magnanimity, divine will, divine justice, divine love, the natural-reason boundary, Augustine's arrest, Pseudo-Dionysian apophatic restraint, and the Lewis attribution; internal philosophical, theological, patristic, and literary consultation.
-- Completed production review: settled two-pass build; clean log, metadata, PDF-structure, embedded/subset/Unicode-font, and extracted-text checks; bounded raster review and visual inspection of all 13 pages; and a forced deterministic rebuild with an identical SHA-256. The reviewed artifact was installed byte-for-byte at `doc/gpt/articles/faith/ontological-vertigo.pdf` with SHA-256 `a186253b35ed388ab25c46f753961922ed982ada56c6626deca558a414ba5130`.
+- Completed production review: settled two-pass build; clean log, metadata, PDF-structure, embedded/subset/Unicode-font, and extracted-text checks; bounded raster review and visual inspection of all 13 pages; and a forced deterministic rebuild with an identical SHA-256. The reviewed artifact was installed byte-for-byte at `doc/gpt/articles/faith/ontological-vertigo.pdf` with SHA-256 `c712e5abe3f944fc78633dfb3861817abdff6eb333c9000079fd7cfbaebd7df2`.
 - The catalog and release manifest register Part I as `hold` pending `renewed-exact-snapshot-authorization`.
 - Outstanding external review: independent philosophical, patristic, Thomistic, mystical-theological, dogmatic, literary, and ecclesiastical review. No imprimatur, nihil obstat, or ecclesiastical approval is claimed.

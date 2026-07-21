@@ -14,7 +14,7 @@
 
 ## Series function
 
-Part I, *Ontological Vertigo*, argues that a creature is genuinely real and active yet receives and is conserved in being while the uncreated source depends upon it in no corresponding ontological way. Part II asks how the fork of recoil or adoration becomes embodied as living sacrifice, common worship, mercy, and hope. Part III asks how grace brings the will from a just response into charity and filial freedom. Proper response deepens awareness of dependence while progressively removing the demand to stand outside it.
+Part I, *Ontological Vertigo*, argues that a creature is genuinely real and active yet receives being and is conserved in it while the uncreated source depends upon it in no corresponding ontological way. Part II asks how the response to the fork of recoil or adoration takes embodied form in living sacrifice, common worship, mercy, and hope. Part III asks how grace brings the will from a just response into charity and filial freedom. Proper response deepens awareness of dependence while progressively removing the demand to stand outside it.
 
 The sequence is not three sealed virtue compartments. Faith, hope, charity, justice, and religion can be simultaneously active. The series movement is conceptual:
 
@@ -24,7 +24,7 @@ The sequence is not three sealed virtue compartments. Faith, hope, charity, just
 
 ## Governing thesis
 
-The unowed gift of creaturehood establishes a real but unequal due. The rational creature ought freely to acknowledge God as first principle and last end, through worship and through justice toward the neighbor. In Christian life this return takes the form of a living sacrifice incorporated into Christ's prior oblation. Natural and revealed law articulate the order; ecclesiastical law gives parts of its common practice determinate form; grace gives the power to answer, and hope relies upon that help. The asymmetry remains while action begins to agree with it.
+The unowed gift of creaturehood establishes a real but unequal due. The rational creature ought freely to acknowledge God as first principle and last end through worship and through justice toward the neighbor. In Christian life this return takes the form of a living sacrifice incorporated into Christ's prior oblation. Natural and revealed law articulate this order; ecclesiastical law gives determinate common form to some practices by which it is lived; grace gives the power to answer, and hope relies upon that help. The asymmetry remains while action begins to agree with it.
 
 The argument turns on two compatible propositions:
 
@@ -44,7 +44,7 @@ Neither proposition makes creation a contract. The due is not equivalent repayme
 7. Why does common Eucharistic worship require received temporal and juridical form, and what does current universal Latin law actually require on Sunday?
 8. Why must the Godward return pass through justice and mercy toward the neighbor?
 9. How do grace and hope enable the answer while preserving its status as a free human act?
-10. How can response assuage vertigo without reducing dependence, promising calm, or trespassing upon charity's work in Part III?
+10. How can the response begin to resolve the arrest without reducing dependence, promising calm, or trespassing upon charity's work in Part III?
 
 ## Terse taxonomy
 
@@ -117,7 +117,7 @@ The article's three summary formulas are:
 2. Official Catholic teaching governs doctrine at its stated authority and locus; the *Catechism* is not treated as legislation.
 3. Official promulgated Latin canon law controls juridical conclusions; English pages and commentary are aids only.
 4. Patristic witnesses are used at exact work and locus; their conceptual role is not retrofitted with later technical vocabulary.
-5. Aquinas supplies the principal theological architecture. Work, part, question, article, and reply control over online translation wording.
+5. Aquinas supplies the principal theological architecture. Work, part, question, article, and reply take precedence over online translation wording.
 6. The current-law audit checks jurisdiction, persons, source, amendments, authentic interpretations, particular-law boundary, facts, and effects separately.
 7. Project synthesis is labeled as such and never attributed wholesale to an authority.
 8. Claim-local limits remain adjacent to the claim they change; consolidated limits appear in terminal scope apparatus.
@@ -139,7 +139,7 @@ The article's three summary formulas are:
 13. Hope does not erase the due. Grace does not replace created agency.
 14. Charity perfects justice by ordering its act to God as beloved; it does not abolish commandments.
 15. The Church's self-offering depends wholly upon Christ's perfect prior oblation; it is neither autonomous nor deducible from natural theology. The revealed oblation of Christ governs Christian sacrifice.
-16. Mercy is a fruit and test of Eucharistic incorporation, not a substitute for Mass or a completion of deficiency in Christ's offering.
+16. Mercy is a fruit and test of Eucharistic incorporation, not a substitute for Mass or an addition to a supposedly deficient offering of Christ.
 17. Sunday is the primary legal illustration because it unites common worship, received time, rest, and mercy. The article does not present attendance as psychological regulation or use convert discomfort as evidence of bad faith.
 18. “Resolution” is project synthesis. Justice, religion, and hope bring action into agreement with dependence and remove obstacles to peace; they do not make asymmetry smaller, guarantee sensible calm, or perform charity's direct unification of desire.
 
@@ -151,5 +151,5 @@ The article uses only brief, claim-driven source phrases. Scripture, official te
 
 - Completed: profile routing; exact-locus Scripture, patristic, Thomistic, catechetical, conciliar, and universal Latin current-law audit; jurisdiction, authority, culpability, and negative-claim boundary drafting; rights review.
 - The catalog and release manifest register Part II as `hold` pending `renewed-exact-snapshot-authorization`.
-- Completed production review: settled two-pass build; clean log, metadata, PDF-structure, embedded/subset/Unicode-font, and extracted-text checks; bounded raster review and visual inspection of all 15 pages; and a forced deterministic rebuild with an identical SHA-256. The reviewed artifact was installed byte-for-byte at `doc/gpt/articles/faith/the-due-return.pdf` with SHA-256 `c20486284643fe93acd60961fa4271e9d3eb23535b0c20a51abd4119f789e480`.
+- Completed production review: settled two-pass build; clean log, metadata, PDF-structure, embedded/subset/Unicode-font, and extracted-text checks; bounded raster review and visual inspection of all 15 pages; and a forced deterministic rebuild with an identical SHA-256. The reviewed artifact was installed byte-for-byte at `doc/gpt/articles/faith/the-due-return.pdf` with SHA-256 `6738115a803abc424c219c0f9545b8458f3bbffbbce962727f7076975bf27bdb`.
 - Outstanding: independent scriptural, patristic, Thomistic, moral-theological, liturgical, Latin-canonical, literary, and ecclesiastical review. No imprimatur, nihil obstat, legal opinion, or ecclesiastical approval is claimed.
