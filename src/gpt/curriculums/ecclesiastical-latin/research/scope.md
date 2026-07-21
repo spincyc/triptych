@@ -139,8 +139,10 @@ The work has no imprimatur, nihil obstat, ecclesiastical approval, or
 independent Latin, liturgical, pedagogical, theological, textual, canonical,
 or rights review. Its donor provenance, incorporated liturgical wording, and
 page-image collation remain incomplete; current production verification is
-recorded separately. The 52 rebuilt PDFs remain uninstalled review candidates.
-The prior installed snapshots and their exact-byte authorization are unchanged;
-that authorization does not record completion of any missing review, establish
-an open license, authorize extracted material, or authorize later replacement
-bytes. Installation and changed-byte release authorization remain separate.
+recorded separately. The 52 rebuilt PDFs are installed as corrected working
+snapshots at the user's direction. The prior installed snapshots and their
+exact-byte authorization are now historical; that authorization does not
+record completion of any missing review, establish an open license, authorize
+extracted material, or authorize the replacement bytes. The corrected set
+remains on changed-byte release hold pending renewed exact-snapshot
+authorization.

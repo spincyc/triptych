@@ -86,6 +86,7 @@ envelope is an editorial design target, not evidence that every learner should
 advance after two days. Received-text attribution and collation are controlled
 separately by `passage-inventory.md`; an answer can be grammatically coherent
 while still quoting or identifying a source incorrectly. The rebuilt packets
-therefore remain uninstalled review candidates even after internal build and
-production checks; installation and any changed-byte release authorization are
-separate decisions.
+are installed as corrected working snapshots after internal build and
+production checks. That user-directed installation does not supply independent
+review or changed-byte release authorization; the corrected set remains fail-
+closed pending a renewed exact binding.

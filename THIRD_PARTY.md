@@ -57,11 +57,13 @@ The shared teaching, exercise, reference, and assessment sources under
 `src/gpt/curriculums/ecclesiastical-latin/` derive from a separately supplied
 Telos project. That donor tree contained no local license. Authorization to
 integrate and edit the manuscript is not recorded as independent evidence of
-authorship, ownership, or a general public-distribution license. The 52
+authorship, ownership, or a general public-distribution license. The prior 52
 installed working snapshots received an explicit exact-snapshot distribution
 exception on 20 July 2026 under the repository's existing user-attested
-authority; that exception does not establish donor ownership or authorize
-extracted donor wording outside those exact files.
+authority. The corrected replacement snapshots do not match those bindings and
+await renewed exact-snapshot authorization; the earlier exception does not
+establish donor ownership or authorize extracted donor wording outside the
+exact files it bound.
 Their course-wide provenance and rights boundary are recorded in the adjacent
 `research/edition-manifest.md`, `research/scope.md`, and
 `research/source-audit.md`. No donor manuscript wording is offered under CC BY

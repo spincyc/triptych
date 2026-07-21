@@ -2,20 +2,21 @@
 
 ## Record boundary
 
-- **Audit date:** 2026-07-20.
-- **Object:** the complete exact build candidate set of 52 independent
+- **Audit date:** 2026-07-21.
+- **Object:** the complete exact installed set of 52 independent
   Ecclesiastical Latin leaves: two course companions, 46 two-session learning
   modules, and four stage-assessment companions.
-- **Candidate total:** 920 pages and 24,966,965 bytes.
-- **Publication state:** uninstalled review candidates. Installation and any
-  changed-byte distribution decision remain separate maintainer actions.
+- **Installed total:** 920 pages and 24,966,965 bytes.
+- **Publication state:** corrected working snapshots installed at the user's
+  direction; changed-byte distribution remains on hold pending renewed exact-
+  snapshot authorization.
 
-The hashes below identify files only under the mirrored curriculum build path.
-None is byte-identical to its installed mirror. The installed set remains
-unchanged at 52 PDFs, 947 pages, and 26,841,251 bytes, and every curriculum
-binding in the release record still matches those installed bytes. The
-maintainer's exact-snapshot authorization of 20 July 2026 applies only to that
-prior installed set; it does not authorize these rebuilt candidates.
+The hashes below identify byte-identical files under the mirrored curriculum
+build and installed paths. They replace the prior installed set of 52 PDFs,
+947 pages, and 26,841,251 bytes. The release record intentionally retains the
+superseded hashes authorized on 20 July 2026, so its exact-snapshot check fails
+closed for every corrected curriculum PDF until renewed authorization is
+recorded.
 
 ## Verification state
 
@@ -32,29 +33,26 @@ A complete page-by-page raster review of the immediately preceding 919-page
 candidate found three answer-key unit chapters separated from their first
 solutions. The shared opening guard, the long keyed-form split, and the
 rendered regression gate were corrected in response. Forty-nine PDFs retain
-the exact bytes already reviewed. The three rebuilt packets listed below have
-passed the final rendered checks, but their post-correction exact-byte raster
-confirmation remains pending because the bounded review tool failed closed
-when the host could not preserve its required memory reserve:
+the exact bytes already reviewed. The bounded review tool then completed a
+full-packet exact-byte raster refresh of the three rebuilt packets:
+`01-foundations/04-third-declension.pdf`,
+`04-advanced/40-vulgate-texture.pdf`, and
+`04-advanced/45-guided-composition.pdf`. Every page of the exact 920-page
+installed set has therefore received visual review; the repaired unit chapters
+stay with their first solutions, the guided-composition split and terminal
+apparatus remain unclipped and substantive, and the collection-wide contents
+hierarchy is legible.
 
-- `01-foundations/04-third-declension.pdf`;
-- `04-advanced/40-vulgate-texture.pdf`; and
-- `04-advanced/45-guided-composition.pdf`.
+This manifest records a technically and visually verified installed working
+set, not a completed universal production review or a changed-byte release
+authorization. The source and answer audits record the content-level checking
+and remaining evidence limits.
 
-Targeted exact-build page diagnostics confirm that each repaired unit chapter
-now stays with its first solution and that the guided-composition split and
-terminal apparatus remain unclipped and substantive. Those diagnostics do not
-replace the required bounded full-packet raster refresh.
+## Exact installed snapshots
 
-This manifest therefore records a technically verified build candidate, not a
-completed universal production review or an installation authorization. The
-source and answer audits record the content-level checking and remaining
-evidence limits.
-
-## Exact build candidates
-
-Paths are relative to
-`build/gpt/curriculums/ecclesiastical-latin/`.
+Paths are relative to both `build/gpt/curriculums/ecclesiastical-latin/` and
+the byte-identical installed mirror at
+`doc/gpt/curriculums/ecclesiastical-latin/`.
 
 | Snapshot | Pages | Bytes | SHA-256 |
 | --- | ---: | ---: | --- |
@@ -121,8 +119,9 @@ alter those facts.
 The release record preserves the maintainer's 20 July 2026 exact-snapshot
 exception for the earlier installed bytes. It does not establish donor
 ownership, an open license, broader permission for liturgical wording,
-profile-final status, independent review, or authority to replace those files
-with the candidates recorded here.
+profile-final status, independent review, or distribution authority for the
+corrected snapshots recorded here.
 
-This manifest does not authorize installation, changed-byte distribution,
-integration, push, or deployment.
+This manifest records the user-directed installation and commit preparation.
+It does not authorize changed-byte distribution, integration, push, or
+deployment.
