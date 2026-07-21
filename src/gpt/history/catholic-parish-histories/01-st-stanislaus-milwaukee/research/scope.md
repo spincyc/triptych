@@ -49,7 +49,6 @@ The thesis is that Saint Stanislaus survived by changing the scale on which it s
 - A decision among the conflicting 1866, 1867, 1872, and 1873 school-origin dates where the sources may be describing instruction, organization, a staffed school, or a building.
 - A claim that the present church was completed in one campaign. The 1872–1873 opening is separated from work in 1884–1894 and remodeling through 1913.
 - An unqualified architectural label. Official inventories variously emphasize Romanesque Revival, Central European or Baroque massing, and Gothic or Romanizing additions.
-- Unverified folklore that Schmidtner absconded with parish funds.
 - An assumption that a parish gathering point for the 1886 eight-hour-day march constituted formal clerical endorsement of every action in the Bay View conflict.
 - A precise causal percentage for freeway clearance, suburbanization, changing Catholic practice, school economics, or deferred maintenance in the parish's decline.
 - A complete annual membership, sacramental, school-enrollment, attendance, donation, or expenditure series. Isolated official and reported snapshots are labeled as such.

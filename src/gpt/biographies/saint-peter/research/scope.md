@@ -102,9 +102,8 @@ outside the project's license.
 
 ### Ecclesial and modern controls
 
-- *Lumen gentium* 18–23; *Catechism of the Catholic Church* 552–553 and
-  880–882; *Nostra aetate* 4; the Pontifical Biblical Commission on the Jewish
-  Scriptures.
+- *Lumen gentium* 18–23 and *Catechism of the Catholic Church* 552–553 and
+  880–882.
 - Official Vatican basilica presentations of the tomb and necropolis.
 - G. W. Bowersock's checked essay excerpt and the checked Oxford Cult of Saints
   record are the modern interpretive sources actually used. Publisher and
@@ -126,8 +125,8 @@ The publication covers:
 5. Jerusalem leadership, preaching, signs, discipline, imprisonment, Samaria,
    and the Cornelius episode;
 6. relationships with Andrew, the Twelve, James, John, Mark, and Paul;
-7. the Antioch conflict and Gentile inclusion without contempt for Torah or
-   supersession of Israel;
+7. the Antioch conflict and the terms of Gentile inclusion within Peter's
+   continuing Jewish identity;
 8. Catholic doctrine of Petrine service without importing a modern curial job
    description into the first century;
 9. teaching and authorship tiers for First and Second Peter, plus the Mark
@@ -168,19 +167,6 @@ The publication covers:
   memorial at the Vatican site and long architectural continuity. This study
   did not inspect the primary archaeological or osteological reports and does
   not authenticate a particular human bone as Peter's.
-
-## Anti-supersessionist control
-
-Peter remains Jewish throughout the evidence. Temple prayer, Israel's
-Scriptures, dietary observance, mission to the circumcised, Cornelius, Acts 15,
-and the Antioch dispute are not stages in a story in which Judaism becomes
-contemptible or Israel is discarded. Gentile admission without adopting the
-full disputed yoke does not make Jewish Torah observance hypocrisy. Paul's
-charge concerns a withdrawal that denied shared life to Gentiles. Passion and
-Acts polemic may not be used to assign collective or perpetual guilt to Jews.
-The publication is controlled explicitly by *Nostra aetate* 4 and the
-Pontifical Biblical Commission's account of the enduring relation between the
-Church and Israel's Scriptures.
 
 ## Exclusions and restraint
 
@@ -248,4 +234,10 @@ Final-typography production review completed on 2026-07-19: a settled two-pass b
 
 ## Compact-rights-colophon production review — 2026-07-19
 
-The settled 22-page PDF, SHA-256 `33a2bcf5aef62c37d41eb3917c3a9ec52f670859677113e8257e8005b76a9ea0`, is the exact repository-reviewed build snapshot. The final log was warning-free; generation metadata, `qpdf` structure, PDF title/page metadata, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed their gates. Repository production review inspected every physical page; the compact final-page reuse-and-rights colophon is readable, unclipped, non-overlapping, remains with terminal content, and creates no rights-only spill page. The installed PDF is byte-identical to this reviewed build. This reviewed build supersedes every earlier production snapshot. This exact current snapshot has release-specific distribution clearance under the 20 July 2026 dated rights supplement. That operational decision supplies no independent review or ecclesiastical approval.
+The settled 22-page PDF, SHA-256 `33a2bcf5aef62c37d41eb3917c3a9ec52f670859677113e8257e8005b76a9ea0`, is the exact repository-reviewed build snapshot. The final log was warning-free; generation metadata, `qpdf` structure, PDF title/page metadata, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed their gates. Repository production review inspected every physical page; the compact final-page reuse-and-rights colophon is readable, unclipped, non-overlapping, remains with terminal content, and creates no rights-only spill page. The installed PDF was byte-identical to this reviewed build. This reviewed build superseded every earlier production snapshot and received release-specific distribution clearance under the 20 July 2026 dated rights supplement. That operational decision supplied no independent review or ecclesiastical approval, and its exact-byte clearance does not attach to the revision below.
+
+## Corpus-cleanup production review — 2026-07-21
+
+The source and audit records were revised in the corpus-wide omission audit. A settled two-pass build produced this 22-page PDF with SHA-256 `ea3cd3f7057b7518465cffead078e185b039ffc6800ec51abd35905491cc1c71`. The final log contained no fatal error, undefined reference, overfull or underfull box, or unresolved rerun or layout warning. Generation metadata, `qpdf` structure, Letter page size, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed. Review rasters were generated through `scripts/pdf-review`; every rendered page was visually inspected for clipping, overlap, accidental blanks, bad breaks, footer and metadata placement, and legibility. The reviewed build was installed at its mirrored `doc/` path and verified byte-identical.
+
+This is internal production review only; it grants no independent editorial, specialist, rights, theological, or ecclesiastical approval. The predecessor's exact-snapshot approval does not attach to the revised bytes, so the manifest holds this PDF on `renewed-exact-snapshot-authorization` pending a new exact-byte authorization and binding.

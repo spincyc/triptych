@@ -59,11 +59,11 @@ remain differently graded; Tre Fontane was not collated as a publication
 claim.
 
 Paul's Jewish identity is continuous through the evidence. The call radically
-reorders his life and his account of Torah, righteousness, and the nations; it
-does not turn Judaism into a rejected religion of merit or Israel into a
-discarded people. His mission is networked rather than solitary and requires
-women and men co-workers, patrons, household hosts, enslaved and free
-believers, delegates, messengers, and communities to remain visible.
+reorders his life and his account of Torah, righteousness, and the nations,
+while Israel's covenant, Scriptures, and hope remain intrinsic to his gospel.
+His mission is networked rather than solitary and requires women and men
+co-workers, patrons, household hosts, enslaved and free believers, delegates,
+messengers, and communities to remain visible.
 
 ## Evidence architecture
 
@@ -139,9 +139,8 @@ introductions, and notes remain outside the project's license.
 
 ### Official and institutional controls
 
-- *Nostra aetate* 4, *Lumen gentium* 19–20, *Catechism of the Catholic Church*
-  442, 787–795, 1987–2029, and the Pontifical Biblical Commission's 2001
-  document on the Jewish Scriptures.
+- *Lumen gentium* 19–20 and *Catechism of the Catholic Church* 442, 787–795,
+  and 1987–2029.
 - Benedict XVI's audiences of 27 August and 3 September 2008. The former is
   the inspected modern official locus reporting the Gallio/Delphi range as
   AD 51–53; this research did not inspect the primary inscription.
@@ -215,8 +214,8 @@ The publication covers:
   autobiographical letter.
 - Paul's mission depended on communities and co-workers. Women are historically
   indispensable; enslaved persons and slaveholding structures must be named.
-- Paul remained Jewish. His argument against requiring Gentile circumcision
-  does not establish contempt for Torah or replacement of Israel.
+- Paul remained Jewish. His argument concerns the terms of Gentile
+  incorporation while Israel's Scriptures, covenant, and hope remain central.
 - The evidence contains both women praying, prophesying, hosting, funding,
   laboring, and bearing offices and restrictive texts with complex authorship
   and transmission. Neither side is suppressed.
@@ -235,16 +234,6 @@ The publication covers:
 - The 2009 papal announcement reports first-to-second-century carbon-14
   consistency. No full laboratory report, calibration dataset, complete
   custody audit, genetic comparator, or unique personal identifier was located.
-
-## Anti-supersessionist control
-
-Paul never becomes a non-Jew in the evidence. His Scriptures, Messiah,
-prophetic call language, kinship grief, olive-tree warning, and hope for Israel
-remain Jewish. ``Works of law'' is not expanded into a universal definition of
-Judaism as self-salvation. Gentiles are warned against boasting over Jewish
-branches. Acts' synagogue conflicts and Paul's polemic may not be generalized
-into collective Jewish guilt. *Nostra aetate* 4 and the Pontifical Biblical
-Commission's 2001 document govern Catholic reception in this publication.
 
 ## Exclusions and restraint
 
@@ -350,4 +339,10 @@ Final clean-build review (2026-07-18): two settled `pdflatex` passes produced th
 
 ## Compact-rights-colophon production review — 2026-07-19
 
-The settled 27-page PDF, SHA-256 `d1ff828cc95f2a4dca5e28cc9b075015701333d20589b70e23528d8205c1bf75`, is the exact repository-reviewed build snapshot. The final log was warning-free; generation metadata, `qpdf` structure, PDF title/page metadata, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed their gates. Repository production review inspected every physical page; the compact final-page reuse-and-rights colophon is readable, unclipped, non-overlapping, remains with terminal content, and creates no rights-only spill page. The installed PDF is byte-identical to this reviewed build. This reviewed build supersedes every earlier production snapshot. This exact current snapshot has release-specific distribution clearance under the 20 July 2026 dated rights supplement. That operational decision supplies no independent review or ecclesiastical approval.
+The settled 27-page PDF, SHA-256 `d1ff828cc95f2a4dca5e28cc9b075015701333d20589b70e23528d8205c1bf75`, is the exact repository-reviewed build snapshot. The final log was warning-free; generation metadata, `qpdf` structure, PDF title/page metadata, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed their gates. Repository production review inspected every physical page; the compact final-page reuse-and-rights colophon is readable, unclipped, non-overlapping, remains with terminal content, and creates no rights-only spill page. The installed PDF was byte-identical to this reviewed build. This reviewed build superseded every earlier production snapshot and received release-specific distribution clearance under the 20 July 2026 dated rights supplement. That operational decision supplied no independent review or ecclesiastical approval, and its exact-byte clearance does not attach to the revision below.
+
+## Corpus-cleanup production review — 2026-07-21
+
+The source and audit records were revised in the corpus-wide omission audit. A settled two-pass build produced this 27-page PDF with SHA-256 `96100e5742da5d40fd8a6b59a2eeb55c8b4042faf4ec7d421b32790a635ccfff`. The final log contained no fatal error, undefined reference, overfull or underfull box, or unresolved rerun or layout warning. Generation metadata, `qpdf` structure, Letter page size, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed. Review rasters were generated through `scripts/pdf-review`; every rendered page was visually inspected for clipping, overlap, accidental blanks, bad breaks, footer and metadata placement, and legibility. The reviewed build was installed at its mirrored `doc/` path and verified byte-identical.
+
+This is internal production review only; it grants no independent editorial, specialist, rights, theological, or ecclesiastical approval. The predecessor's exact-snapshot approval does not attach to the revised bytes, so the manifest holds this PDF on `renewed-exact-snapshot-authorization` pending a new exact-byte authorization and binding.

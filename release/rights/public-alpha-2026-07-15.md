@@ -295,20 +295,33 @@ This exact-snapshot distribution decision preserves the unresolved juridic quest
 - Condition: no project-initiated announcement, advertising, promotion, syndication, or public software-release attachment. Ordinary repository listings, GitHub navigation and activity, link previews, search indexing, and other platform behavior inherent in an otherwise authorized public repository or Pages site do not by themselves violate this condition.
 - Scope boundary: ignored build artifacts, credentials, private communications, private account data, later changed PDFs or site sources, and any history containing material not independently authorized for repository exposure remain outside the current publication scope.
 
+## Corpus-cleanup snapshot boundary — 21 July 2026
+
+The corpus-wide editorial cleanup completed on 21 July 2026 changes 32
+publication sources and their installed PDFs. Thirty of those publications had
+exact-snapshot approvals for their predecessor bytes. Those approvals remain
+historical authorization records, but they do not authorize the revised
+snapshots. The 30 publications are therefore removed from the active inventory
+below and placed on `renewed-exact-snapshot-authorization` hold. The revised
+Aquinas and Bellarmine biographies remain on their pre-existing
+`work-specific-rights-review` holds. No renewed distribution approval is
+inferred from authorization to edit, rebuild, install, or commit any of them.
+
+The current manifest consequently records 80 `release` publications, zero in
+`review`, and 35 on `hold`: the 30 revised publications, three other changed
+snapshots awaiting renewed exact-snapshot authorization, and two publications
+awaiting work-specific rights review. Reader-facing catalog changes are also
+outside their predecessor byte binding, so public-site validation remains
+fail-closed until the relevant exact snapshots receive new authorization.
+
 ## Exact approved snapshots
 
 | Publication ID | SHA-256 |
 | --- | --- |
 | `articles/canon-law/clerical-celibacy-chastity-and-continence` | `178ef4c9a60a472bd2fdb6428182652ac35d4f655bdf6c099e48f553112224d7` |
 | `articles/canon-law/natural-positive-divine-human-law` | `553e1b1da65c44b2b6703045d91a509d101914ea8bd98d5766717ce21465031f` |
-| `articles/faith/council-missal-and-crisis` | `b00ac18a5d721ea58d416367f9870c9bd9acfb487935d4dff1ddb2855c686c79` |
-| `articles/faith/freemasonry-and-the-catholic-church` | `309e06818d78fc75a5d1e7fa010de95637b27f52ead5803ef8599df60ec9fbd4` |
-| `articles/faith/trustful-surrender-to-divine-providence` | `9090de74e63a42c97ef626d996cfcd58235098ff366b981a83e1113be4b73981` |
 | `biographies/origen` | `505d059a4238cd83bb04717a561ef1e8bad929e6c098ec50fa42154b5e1c54ad` |
 | `biographies/saint-augustine-of-hippo` | `8d6f4a35bc4d23480008d518d4f91784fb554e5b41c1dc2aed70645f6059830f` |
-| `biographies/saint-jerome` | `70dadb81abfaf4127e0f8be6e218ac76ff7308481db3a26caebf45a99b63a8ad` |
-| `biographies/saint-paul` | `d1ff828cc95f2a4dca5e28cc9b075015701333d20589b70e23528d8205c1bf75` |
-| `biographies/saint-peter` | `33a2bcf5aef62c37d41eb3917c3a9ec52f670859677113e8257e8005b76a9ea0` |
 | `biographies/tertullian` | `5482e549142e226e8a91b51b3fda11751957b2ba0a77d6737a2c79c57132dae6` |
 | `devotions/novenas/00-ascension-to-pentecost` | `e77627738332391562d544fea0f52bbbddc8879fc5514cb26be6b75fb0d97818` |
 | `devotions/novenas/00-ascension-to-pentecost-daily-prayer` | `675ae37d807d9ff0fadf4c1d5951480018f0ed6b56773b56493fd9b9c363c1ce` |
@@ -320,41 +333,17 @@ This exact-snapshot distribution decision preserves the unresolved juridic quest
 | `history/traditional-priestly-institutes/01-sspx` | `e8fde596cfcd3bd79e8392e81eaafebf59723a11a15b8c96773fabfe6f67713c` |
 | `history/traditional-priestly-institutes/02-fssp` | `005a9bcea06955abba6d300ca9b0f7f628bda2e86c3f48e48695a74c09b89c1c` |
 | `history/traditional-priestly-institutes/03-icksp` | `13452bf4f13cccda67a9723201a49a0ff3a43cde9aa7d90ce253e38f82be5635` |
-| `liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass` | `009bc7a73a3372ab431e78719efd74d25af56ec98c5455bdf3fb6daa8873d608` |
 | `liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass` | `a9b80995207372fbb08b0abbdd9116f3381638add2b6c53c22a269d5e429dc30` |
-| `liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday` | `7d4c3573dc1356821e35266d7fff94422aef7171a223765fba2e1360a11bd66c` |
 | `liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost` | `c3684d622e1051de7d898dc455a5fe83816bccb4f14e8adfe3974b50fbc479bd` |
 | `liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost` | `14ef73ae5ea533999f0d00801a281db2614a2b3ea20493f79271f32992de4831` |
 | `liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost` | `2035b73783ab534c804aac609025a811550b45100bd31eac6cb7a8e0e01f16df` |
 | `liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost` | `00afac054ee97628042d28152f72253ed3dea6223ab2c3facd5d3f0f08dc0b7a` |
 | `liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost` | `0239c1823745a7160acb3cd810ad3e57877e746821d0a096f28f1da34450a37b` |
 | `liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost` | `95c07efdbc902ccaef8275d4ae503a1d52151f3a732472237de0e2ffb799e014` |
-| `liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost` | `e77e621842d8d467f7c94f01385d5cc9db0f38ed4928297ed4a2b676b77399cf` |
-| `liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost` | `db5611175355ebf892057d79e8834b1cf0f8982fd5839f064346d0d5a4343b39` |
 | `liturgy/roman-rite/1962/reference/assembling-the-mass` | `792f76897a31cf9f4eb6d23eacee370c2078f3f9235c79831c7b03bf1dfd8727` |
 | `liturgy/roman-rite/1962/reference/liturgical-calendar` | `001efbe713c7fdaf696cf6f0e85fd5b100ab0bc97ca893b55b003caff6add0e1` |
-| `liturgy/roman-rite/comparative/two-missals-one-sacrifice` | `18ee674353dbfed84e48551b860d05e371457f0fe182c8e7ef6488514ca6270d` |
-| `liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass` | `428dfffcdb362e1b6bb7a5c0006017eef507686e3b5c522fe2fdf8535f5bf3c9` |
-| `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s35-eleventh-sunday-in-ordinary-time-year-a` | `e9458944c808234ce4f3d829d9a1c0fa72d8d7165f53fd369bc37a4ec4e372cc` |
-| `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s36-twelfth-sunday-in-ordinary-time-year-a` | `db9fb8b7f163ddbf42dbedeca7024fbefcd1f966b40a924f108c6e168e449e24` |
-| `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-thirteenth-sunday-in-ordinary-time-year-a` | `8b7e5fa8aac2a66eb1357985fdf670ce3ebe1f5de9b65cbade8bcaf06c5a4f58` |
-| `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-fourteenth-sunday-in-ordinary-time-year-a` | `f7da1adc3394233694f05448f8421ac6eceeff9fb70c068dc5d124ea93183bb7` |
-| `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-fifteenth-sunday-in-ordinary-time-year-a` | `0789a3af547d56acab2a0ebf1e320006cdaa09f6aaeed068fedf79217011b277` |
-| `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a` | `671d6cd6da870ec3cb874ae55bf7609d7518b089b5f78fac26868e4c2c383e27` |
-| `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a` | `e23673ede4454f8390d0e733ed4fab70e7f3b8d1afc33ac437452cfff6d374a7` |
-| `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a` | `047a8a278f3977442aef968be79774b8342bb39a67c53b6dd118fd040a4ea424` |
-| `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s59-most-holy-body-and-blood-of-christ-year-a` | `4d6e14c38e731fc3ce7432cc9dd81900a0c9c4da0c4c75ba55ca2e9fc1d4062b` |
 | `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar` | `8a0918732c672ea76d2c95e0176e7985fa639057a4a8f4e12df511b8efb19bcd` |
-| `theology/heresies/heresies-in-catholic-history` | `77d1571e853c8899221ec81b98e236183f75f59e3686fc8f811aba87759c6033` |
-| `theology/mariology/apparitions` | `0d1d81dfab295cc665386ac6b4df7b5324f3bf35358d9c5d985c4e0721e9d8bb` |
-| `theology/mariology/champion` | `7e223d1d6cdd1377a41fffca726598bdae6f7f4e46cb806e4c66eee1997ee72b` |
-| `theology/mariology/fatima` | `65912e9f3e51a0d6e40434d83670bf534509e1c9f21d80e091d4d26ed383b16b` |
-| `theology/mariology/guadalupe` | `00a34ea7c7b4e6de79bfa584526595d9cd788d19eb13c82e7e34dbe98c768b6f` |
 | `theology/mariology/la-salette` | `1fdb552c80dc105013227dc31bcf5f1bdf31e4f5da54dd42b5bfa6bd16a7a17a` |
-| `theology/mariology/lourdes` | `1471fa3aa049dc7fcb52ed0db523deea247b3703548aec87443263b69c8ed034` |
-| `theology/mariology/marian-dogmas` | `63a190700f6627d0a4c2a14e985a53b7da16da94edd94a9594a5ef7166811509` |
-| `theology/mariology/rosary` | `91eb22bcf2b02b640af571a319030bbf4ad2e511e3803af5cb673ed7bdf3ba1d` |
-| `theology/sacraments` | `ab03cd28d936b35752abc31dfb6b8f66dc512ae22890b3a6cd107b20ba87fb55` |
 | `theology/sacraments-at-a-glance` | `f1d73a9cc797c1dedec42851276062a1cebfca6ce632a30b8685be318005abb9` |
 | `theology/virtues` | `48a40f508d6aa3e9ad72029f32e50fc5a0fe228f67435613a8db6228230b2cfe` |
 | `curriculums/ecclesiastical-latin/00-course-guide` | `3589584ff718f996c28605c82f05f9f0a593d84aa28b184b226887a286b48456` |
@@ -438,6 +427,6 @@ This exact-snapshot distribution decision preserves the unresolved juridic quest
 
 ## Operational controls
 
-The release validator must reject a build before the current supplement's effective instant or after any approved PDF, rights record, or artifact-affecting site input changes. The generated public site may include only `release` PDFs and narrowly scoped generated policy, manifest, checksum, HTML, CSS, and license files. A private preview may include `release` and `review` items but never `hold` items. The current manifest contains 110 `release` items and no `review` or `hold` items, so both artifacts include all 110 PDFs.
+The release validator must reject a build before the current supplement's effective instant or after any approved PDF, rights record, or artifact-affecting site input changes. The generated public site may include only `release` PDFs and narrowly scoped generated policy, manifest, checksum, HTML, CSS, and license files. A private preview may include `release` and `review` items but never `hold` items. The current manifest contains 80 `release` items, no `review` items, and 35 `hold` items, so generated public and private-preview artifacts exclude all 35 held PDFs.
 
 GitHub Pages may publish only the verified generated site artifact, never the repository root or a private-preview artifact. The no-project-initiated-promotion condition remains in force. This rights record documents the authorized distribution scope; permission for a worker to push or deploy remains a separate operational authorization.

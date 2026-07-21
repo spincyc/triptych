@@ -34,8 +34,8 @@ Access and canonical-currentness checks were completed through 2026-07-16 unless
 | Roman centralization expanded through codification, appointments, communications, missions, devotions, and papal teaching. | 1917 Code; papal acts; histories of modern Catholicism. | Real goods and risks are both described; centralization is not equated with the dogma itself. |
 | Anti-Modernist measures addressed real dissolutions of Revelation but could constrain legitimate historical theology. | *Lamentabili*; *Pascendi*; anti-Modernist oath; *Divino afflante Spiritu*; *Humani generis*; theologians’ records. | The article neither rehabilitates condemned Modernism nor treats every investigated theologian as an enemy of faith. |
 | Biblical, patristic, liturgical, ecumenical, and lay movements materially preceded Vatican II. | Named papal acts and movement histories; council actors’ works. | “Preceded” does not make each later proposal inevitable or approved in advance. |
-| Pius XI publicly condemned atheistic Communism; Leo XIII analyzed Masonic naturalism; the Holy Office imposed 1949 Communist discipline. | *Divini Redemptoris*; *Humanum genus*; Holy Office decree, AAS 41 (1949), 334. | Public concern is established; secret-capture theories are not. |
-| No reliable official evidence establishes a secret Masonic program directing Vatican II or the Consilium. | Official council and liturgical records; separate repository Freemasonry corpus and myth audit. | Negative result. The article can criticize public decisions without conspiracy. |
+| Pius XI publicly condemned atheistic Communism; Leo XIII analyzed Masonic naturalism; the Holy Office imposed 1949 Communist discipline. | *Divini Redemptoris*; *Humanum genus*; Holy Office decree, AAS 41 (1949), 334. | These public acts establish the concerns that formed part of the council's historical background. |
+| Public conciliar, papal, and Consilium acts identify the authorities, personnel, structures, and decisions that directed Vatican II and the liturgical reform. | Official council and liturgical records. | These records control the article's causal account and its criticism of public decisions. |
 
 ## Vatican II: event, texts, and authority
 
@@ -43,7 +43,7 @@ Access and canonical-currentness checks were completed through 2026-07-16 unless
 | --- | --- | --- |
 | John XXIII announced the council on 25 January 1959 and opened it on 11 October 1962 with a distinction between the deposit and its presentation. | Official announcement; *Gaudet Mater Ecclesia*. | The opening address does not supply a finished reform platform. |
 | Bishops delayed commission elections, rejected or redirected preparatory texts, and reworked Revelation and ecclesiology. | Council acts; O’Malley; Congar and Ratzinger participant records. | Participant records are checked against sessions and promulgated outcomes. |
-| Paul VI reconvened, directed, intervened in, and promulgated the council. | Official session chronology, papal speeches, and each document’s promulgation clause. | The council is neither treated as a parliamentary sovereign nor as a papal puppet. |
+| Paul VI reconvened, directed, intervened in, and promulgated the council. | Official session chronology, papal speeches, and each document’s promulgation clause. | The episcopal college acted with and under its head through visible debate. |
 | All sixteen documents were solemnly promulgated; titles and dates in the publication are exact. | Official Vatican II index and document headers. | Ceremonial/juridical solemnity is distinguished from a new extraordinary definition. |
 | The council binds definitively only where it openly declares that intention; remaining teaching is received according to subject and manner. | Theological Commission notification of 6 March 1964 appended to *Lumen gentium*. | Contemporaneous interpretive rule, not later apologetic invention. |
 | Vatican II deliberately made no new extraordinary solemn dogmatic definition but taught with authority of the supreme ordinary magisterium. | Paul VI, general audience, 12 January 1966. | “No new definition” does not mean no doctrine or no obligation. |
@@ -57,7 +57,7 @@ Access and canonical-currentness checks were completed through 2026-07-16 unless
 
 | Claim | Source | Evidence use / qualification |
 | --- | --- | --- |
-| Wide authorized revision created a real season of change beyond the literal propositions of the council. | Conciliar mandates; implementing acts; institutional histories. | “Council-event” is traced through actors and mechanisms, not personified as one conspirator. |
+| Wide authorized revision created a real season of change beyond the literal propositions of the council. | Conciliar mandates; implementing acts; institutional histories. | “Council-event” is traced through the documented actors and mechanisms that transmitted change. |
 | *Humanae vitae* reaffirmed the moral norm amid expectation of revision and organized dissent. | *Humanae vitae*; commission/reception histories; public theological responses. | The article distinguishes the teaching’s status from the prudence and social reception of process and argument. |
 | Paul VI also defended Eucharistic and dogmatic doctrine after the council. | *Mysterium fidei*; Credo of the People of God; *Mysterium Ecclesiae*. | Prevents treating postconciliar turbulence as Paul VI’s doctrinal abandonment. |
 | U.S. abuse incidence rose through the 1960s and peaked in the 1970s under the John Jay reconstruction; no single cause was found. | John Jay *Causes and Context* report. | The report’s methods and limitations are retained; abuse is not attributed to a conciliar sentence or used as the initiating cause of every decline. |
@@ -145,7 +145,6 @@ Access and canonical-currentness checks were completed through 2026-07-16 unless
 - Vatican II made no new extraordinary dogmatic definition; it was not therefore a non-teaching or optional council.
 - No official source supports “Vatican II approved Communism or Freemasonry,” “Vatican II abolished Latin or chant,” “Vatican II commanded Mass facing the people,” or “Vatican II mandated Communion in the hand.”
 - The council did not draft or vote on the 1970 Missal.
-- No reliable evidence used here establishes a Masonic authorship of the council or liturgical reform.
 - Lawfulness and validity do not prove every reform choice prudent; postconciliar decline does not prove a promulgated rite invalid.
 - U.S. collapse is not universalized to global Catholic population, parishes, schools, deacons, or every region.
 - The 31%, 44%, 57%, and 64% Eucharistic figures are not interchangeable and do not form a trend.

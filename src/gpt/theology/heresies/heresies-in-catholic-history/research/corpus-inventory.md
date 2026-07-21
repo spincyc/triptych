@@ -51,7 +51,7 @@ Pseudo-Tertullian's *Adversus omnes haereses* and Theodoret's *Haereticarum fabu
 
 | Source key | Fixed corpus or source family | Census role | Present verification state |
 |---|---|---|---|
-| `HC.SRC.NT` | New Testament doctrinal boundaries | Apostolic boundary, not retrospective canonical trials | Exact loci used in §05 are mapped; this is not a new critical exegesis. |
+| `HC.SRC.NT` | New Testament doctrinal boundaries | Apostolic doctrinal objects and responses | Exact loci used in §05 are mapped. |
 | `HC.SRC.IREN` | Irenaeus, *Adversus haereses* I | Early named schools, genealogies, attributed propositions | Book/chapter routing below; critical SC collation outstanding. |
 | `HC.SRC.HIPP` | Hippolytus or the author of the *Refutatio omnium haeresium* | Early schools and target fragments | Book-level routing below; authorship, chapter numbering, and critical text outstanding. |
 | `HC.SRC.PSEUDOTERT` | Pseudo-Tertullian, *Adversus omnes haereses* | Comparison-only dependent Latin witness; outside the closed occurrence baseline | No checked individual extraction was completed; no completeness claim is made against this work. |

@@ -10,7 +10,7 @@ Confidence describes support for the exact bounded claim, not general confidence
 | The parish's patron expressed Polish Catholic identity | Source-grounded synthesis | Parish title and immigrant context in official histories | High as interpretation; no claim is made about a surviving naming vote |
 | The present church cornerstone was laid in July 1872 and the building entered use or was dedicated in 1873 | Federal survey; state inventory; institutional history | HABS WIS-159 historical data; AHI HI27246; ICKSP history; Gregory | High; “completed in 1873” is rejected because later principal work was substantial |
 | Parish memory reports a thirty-dollar family assessment as an early construction base | Federal survey and institutional memory | HABS WIS-159; ICKSP historical account where repeated | Moderate to high as retrospective financial memory; no complete subscription ledger or wage series located |
-| Leonard A. Schmidtner is the principal architect named for the present church | Federal survey; state inventory | HABS WIS-159; AHI HI27246 | High for attribution; unverified legend about his conduct is omitted |
+| Leonard A. Schmidtner is the principal architect named for the present church | Federal survey; state inventory | HABS WIS-159; AHI HI27246 | High for attribution |
 | The initial building was austere and reportedly unheated | Federal survey | HABS WIS-159 descriptive/historical data | High as HABS synthesis; exact first-year furnishing inventory not located |
 | Major work in 1884–1894 included sanctuary, roof, organ, decorative, and marble campaigns | Federal survey; state inventory; institutional history | HABS WIS-159; AHI HI27246; ICKSP history | High in sequence; individual endpoints vary by source |
 | Henry C. Messmer is associated with an 1885 campaign reported at $17,000 | State inventory | AHI HI27246 | High as inventory record; original contract not located |
@@ -66,7 +66,6 @@ Confidence describes support for the exact bounded claim, not general confidence
 | “The current church was finished in 1873.” | It entered use then, but principal building and furnishing campaigns continued through 1894 and major remodeling through 1913. |
 | “The school began in one uncontested year.” | Sources may count instruction, organization, sisters' staffing, a schoolhouse, and the present building separately. |
 | “The church is purely Romanesque, Baroque, or Gothic.” | Preservation sources describe a Romanesque Revival base, Central-European/Baroque massing, and later Gothic/Romanizing additions. |
-| “The architect stole parish funds.” | The HABS record presents the tale as tradition; no corroborating contemporary record was found. |
 | “Daughter parishes prove Saint Stanislaus failed.” | Institutional multiplication was a major measure of immigrant-parish success before later demographic decline. |
 | “The 1886 gathering proves the pastor endorsed every labor action.” | The source establishes a gathering point, not a complete institutional position. |
 | “One event caused decline.” | Out-migration, highway clearance, school economics, changing urban settlement, and deferred maintenance converged; the record does not allocate percentages. |

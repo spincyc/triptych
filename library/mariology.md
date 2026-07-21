@@ -2,7 +2,7 @@
 
 [Return to the Library](../LIBRARY.md)
 
-All are source-audited working studies without independent specialist or ecclesiastical review. Approval of a title, apparition, cult, shrine, or devotion does not approve these publications.
+All are source-audited working studies without independent specialist or ecclesiastical review. Revised snapshots of the Marian Dogmas, Rosary, general Apparitions reference, Guadalupe, Lourdes, Champion, and Fátima await renewed exact-snapshot authorization; La Salette is the sole unchanged distribution-cleared snapshot. Approval of a title, apparition, cult, shrine, or devotion does not approve these publications.
 
 ## Doctrine and Prayer
 

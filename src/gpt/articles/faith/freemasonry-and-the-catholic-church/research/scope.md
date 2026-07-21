@@ -34,7 +34,7 @@ This record supports `src/gpt/articles/faith/freemasonry-and-the-catholic-church
 8. Provenance of Leo XIII’s 1890 exorcism and the modern Stevens–Ripperger Masonry-specific prayer family, including edition and approval limits.
 9. Development from named automatic excommunication under the 1917 Code to current doctrine, sacramental discipline, canon 1374, and canon 1172.
 10. Representative global cases: Britain and empire, France, Italy and P2, the United States and Prince Hall, Latin American independence, the Philippines, Ottoman lands, and Nazi suppression.
-11. Myth control concerning Satanism, the Taxil hoax and false Pike quotation, the claim that Leo’s exorcism names Masonry, automatic ancestral curses, Illuminati and Templar identity claims, one-world-command claims, and the alleged requirement that Masonic buildings be near Catholic tabernacles.
+11. Myth control concerning Satanism, the Taxil hoax and false Pike quotation, the claim that Leo’s exorcism names Masonry, automatic ancestral curses, Illuminati and Templar identity claims, and one-world-command claims.
 12. A pastoral path for discernment, withdrawal, confession, family relations, ordinary care, diocesan referral, catechesis, and legitimate civic cooperation.
 
 ## Excluded or bounded scope
@@ -90,9 +90,8 @@ This yields a reproducibly complete **controlling and materially direct corpus u
 15. **Grave sin and culpability:** the 1985 CDF reflection explains membership as objectively grave. Full subjective mortal guilt still requires knowledge and deliberate consent; the 2023 note’s formally and knowingly enrolled formulation is retained.
 16. **No current membership-only automatic excommunication:** current canon 1374 does not expressly attach a *latae sententiae* excommunication. A body that actually plots against the Church can fall under the canon; other delicts or precepts may arise on additional facts.
 17. **Canons 915 and 916:** the personal obligation not to receive is not identical to a minister’s external-forum determination of obstinate perseverance in manifest grave sin. The article does not decide a concrete Communion case.
-18. **Tabernacle proximity:** no governing Masonic requirement or reliable historical evidence was located for a rule that Masonic temples must be near a Catholic tabernacle. The universal claim is retained only as a rejected lead. An idiosyncratic local motive cannot be universally disproved.
-19. **Taxil:** the Palladian/Luciferian narrative and the circulating Pike “Lucifer” quotation are not used as evidence. The hoax is included as a warning about source discipline.
-20. **Civil dignity:** doctrinal opposition never licenses arson, confiscation, racial conspiracy, torture, collective punishment, or false accusation. Nazi anti-Masonic persecution is included as a moral and historical boundary.
+18. **Taxil:** the Palladian/Luciferian narrative and the circulating Pike “Lucifer” quotation are not used as evidence. The hoax is included as a warning about source discipline.
+19. **Civil dignity:** Nazi anti-Masonic persecution is treated as a historical case of confiscation, racial-conspiracy propaganda, and collective punishment under Catholic principles of human dignity and protection of reputation.
 
 ## Copyright and quotation review
 
@@ -109,4 +108,10 @@ The article does not reproduce full modern Holy See, Masonic, prayer-book, or sc
 
 ## Compact-rights-colophon production review — 2026-07-19
 
-The settled 47-page PDF, SHA-256 `309e06818d78fc75a5d1e7fa010de95637b27f52ead5803ef8599df60ec9fbd4`, is the exact repository-reviewed build snapshot. The final log was warning-free; generation metadata, `qpdf` structure, PDF title/page metadata, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed their gates. Repository production review inspected every physical page; the compact final-page reuse-and-rights colophon is readable, unclipped, non-overlapping, remains with terminal content, and creates no rights-only spill page. The installed PDF is byte-identical to this reviewed build. This reviewed build supersedes every earlier production snapshot. This exact current snapshot has release-specific distribution clearance under the 20 July 2026 dated rights supplement. That operational decision supplies no independent review or ecclesiastical approval.
+The settled 47-page PDF, SHA-256 `309e06818d78fc75a5d1e7fa010de95637b27f52ead5803ef8599df60ec9fbd4`, is the exact repository-reviewed build snapshot. The final log was warning-free; generation metadata, `qpdf` structure, PDF title/page metadata, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed their gates. Repository production review inspected every physical page; the compact final-page reuse-and-rights colophon is readable, unclipped, non-overlapping, remains with terminal content, and creates no rights-only spill page. The installed PDF was byte-identical to this reviewed build. This reviewed build superseded every earlier production snapshot and received release-specific distribution clearance under the 20 July 2026 dated rights supplement. That operational decision supplied no independent review or ecclesiastical approval, and its exact-byte clearance does not attach to the revision below.
+
+## Corpus-cleanup production review — 2026-07-21
+
+The source and audit records were revised in the corpus-wide omission audit. A settled two-pass build produced this 46-page PDF with SHA-256 `e55573d946155fd2904ddbab663bc46add1bef032259f698de51c1b9170d85fc`. The final log contained no fatal error, undefined reference, overfull or underfull box, or unresolved rerun or layout warning. Generation metadata, `qpdf` structure, Letter page size, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed. Review rasters were generated through `scripts/pdf-review`; every rendered page was visually inspected for clipping, overlap, accidental blanks, bad breaks, footer and metadata placement, and legibility. The reviewed build was installed at its mirrored `doc/` path and verified byte-identical.
+
+This is internal production review only; it grants no independent editorial, specialist, rights, theological, or ecclesiastical approval. The predecessor's exact-snapshot approval does not attach to the revised bytes, so the manifest holds this PDF on `renewed-exact-snapshot-authorization` pending a new exact-byte authorization and binding.

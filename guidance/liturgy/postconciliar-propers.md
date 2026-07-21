@@ -48,7 +48,7 @@ Every publishable leaf contains:
 
 The owner's `propers/verified.md` verifies the reusable formulary, rubrics, elements, editions, locators, provenance, rights, variants, discrepancies, and collation date. The leaf's `propers/verified.md` verifies the target composition: registry identity, owner, complete ordered textual-unit inventory, Lectionary boundaries, chant layers, semantic branches, source locators, rights dispositions, resolutions, discrepancies, and collation date.
 
-`research/scope.md` preserves the operational scholarship audit displaced from the publication: biblical and liturgical contexts, historical judgments, direct and illuminating reception, languages and corpora searched, material disagreement, negative results, rejected and unresolved leads, claim and branch limits, source roles, rights boundaries, and review performed or outstanding. It is not a diary or chain-of-thought record.
+`research/scope.md` preserves the operational scholarship audit displaced from the publication: biblical and liturgical contexts, historical judgments, direct and illuminating reception, languages and corpora searched, material disagreement, negative results, material rejected and unresolved leads, claim and branch limits, source roles, rights boundaries, and review performed or outstanding. It is not a diary or chain-of-thought record.
 
 ## Research and claim discipline
 
