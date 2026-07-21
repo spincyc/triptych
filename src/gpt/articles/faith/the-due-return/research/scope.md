@@ -150,6 +150,6 @@ The article uses only brief, claim-driven source phrases. Scripture, official te
 ## Review state
 
 - Completed: profile routing; exact-locus Scripture, patristic, Thomistic, catechetical, conciliar, and universal Latin current-law audit; jurisdiction, authority, culpability, and negative-claim boundary drafting; rights review.
-- The catalog and release manifest register Part II as `hold` pending `renewed-exact-snapshot-authorization`.
+- The exact current installed Part II snapshot is release-cleared by the 21 July 2026 exact-current-snapshot exception.
 - Completed production review: settled two-pass build; clean log, metadata, PDF-structure, embedded/subset/Unicode-font, and extracted-text checks; bounded raster review and visual inspection of all 15 pages; and a forced deterministic rebuild with an identical SHA-256. The reviewed artifact was installed byte-for-byte at `doc/gpt/articles/faith/the-due-return.pdf` with SHA-256 `6738115a803abc424c219c0f9545b8458f3bbffbbce962727f7076975bf27bdb`.
 - Outstanding: independent scriptural, patristic, Thomistic, moral-theological, liturgical, Latin-canonical, literary, and ecclesiastical review. No imprimatur, nihil obstat, legal opinion, or ecclesiastical approval is claimed.

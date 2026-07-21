@@ -203,4 +203,7 @@ calendar, image, reliquary, local church, or oral tradition has been exhausted.
 - No independent specialist, theological, ecclesiastical, or work-specific
   rights review has been completed. Deeper original-text and translation
   collation, URL and reuse review, and the unresolved dossier items recorded
-  above remain outstanding; the public-alpha entry therefore remains held.
+  above remain outstanding. At that 20 July 2026 review point, the public-alpha
+  entry was held. The exact current installed PDF is release-cleared by the 21
+  July 2026 exact-current-snapshot exception; the exception completes none of
+  those reviews.

@@ -88,5 +88,6 @@ separately by `passage-inventory.md`; an answer can be grammatically coherent
 while still quoting or identifying a source incorrectly. The rebuilt packets
 are installed as corrected working snapshots after internal build and
 production checks. That user-directed installation does not supply independent
-review or changed-byte release authorization; the corrected set remains fail-
-closed pending a renewed exact binding.
+review or itself grant changed-byte release authorization. The exact current
+installed set is release-cleared by the 21 July 2026 exact-current-snapshot
+exception; the exception completes no missing review.

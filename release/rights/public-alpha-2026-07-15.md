@@ -346,14 +346,85 @@ qualification in the prior supplements, release README, catalogs, and
 publication research records remains unchanged. The La Salette clearance
 preserves the unresolved juridic boundary stated above.
 
-The instruction's “commit” term separately authorizes this worker's coherent
-release-control commit. Its “publish” term is separate operational authority
-for the primary session, after its own audit and integration, to publish the
-exact verified result through the authorized public repository and GitHub Pages
-workflow. That operational authority does not authorize this worker to
-integrate, push, or deploy; broaden substantive clearance; waive outgoing-range
-or artifact verification; permit future bytes; or relax the
-no-project-initiated-promotion condition.
+### Completed exact outgoing-history technical-exposure audit
+
+The exact public base
+`5766bd22a61358bb849452bf90803d6121ba11f1` and exact preapproval tip
+`4b14ee0894bc99f14bb74c0ed96eee6513a1c5e6` delimit the base-exclusive,
+tip-inclusive audited prefix of the authorized update. That range is linear
+and contains 20 commits. Relative to the exact base, it makes 1,581 Git
+objects newly reachable, totaling 110,565,024 bytes: 20 commit objects
+totaling 19,201 bytes, 670 tree objects totaling 143,492 bytes, and 891 blob
+objects totaling 110,402,331 bytes.
+
+The 891 blobs comprise 685 non-PDF blobs totaling 8,815,016 bytes and 206 PDF
+blobs totaling 101,587,315 bytes across 87 repository paths. The PDF
+population comprises 87 current installed snapshots and 119 superseded or
+intermediate versions. The other 28 of the 115 current installed PDFs were
+already reachable from the exact public base.
+
+Every commit, path, mode, and non-PDF blob in that exact range passed
+credential, private-data, machine-state, launcher-state, and suspicious-path
+review. The audit found no symlink, gitlink, special mode, actual credential,
+private datum, or machine-local record.
+
+All 206 PDF blobs passed qpdf syntax and stream checks, pdfinfo inspection,
+attachment inspection, extracted-text scanning, recursive action and object
+analysis, and decoded-stream scanning. The audit found no encryption, embedded
+file, form, JavaScript, unsafe action, credential-bearing link, private datum,
+or machine-local datum. The only actions found were 13,255 internal `GoTo`
+actions, 3,742 HTTP(S) `URI` actions, and 206 `OpenAction` entries, each
+resolving to an internal `GoTo` action.
+
+This is a technical public-exposure audit of the exact repository-object
+range. It is not a rights, content, editorial, specialist, canonical,
+liturgical, theological, or ecclesiastical review and supplies none of the
+missing permissions, collation, review, approval, or reuse rights stated
+above.
+
+### Strict publication boundary
+
+The 21 July 2026 publish instruction authorizes exactly one ordinary,
+non-force fast-forward of the public repository's `refs/heads/main`, and only
+if that ref still resolves to exact base
+`5766bd22a61358bb849452bf90803d6121ba11f1` immediately before the update.
+The authorized history after that base consists exactly of the 20 audited
+linear commits ending at preapproval tip
+`4b14ee0894bc99f14bb74c0ed96eee6513a1c5e6`, followed immediately by prior
+approval commit `fd8956f1639ab4354e81fce930d4444f7333d1c9`, followed by
+exactly one status-consistency commit whose sole parent is
+`fd8956f1639ab4354e81fce930d4444f7333d1c9`. The last commit is bound by
+that parentage and position because it cannot name its own object ID here. No
+intervening or later commit is authorized.
+
+Before that ref update, a final incremental audit from the preapproval tip
+through the structurally bound final commit must prove the exact two-commit
+linear suffix; that the suffix changes only the reviewed approval and status
+records; that it changes no installed PDF, publication TeX, style, shared
+render source, or other rendering input; that all 115 manifest PDF hashes
+remain unchanged; that the final 22 site-input bindings and rights-record
+binding are exact; and that every required release,
+deterministic-comparison, site-build, independent-verification, and GitHub
+Pages deployment-target gate passes. If the target ref has moved or any
+ancestry, scope, hash, count, test, build, verification, or deployment-target
+condition fails, publication must stop.
+
+Only that one public `refs/heads/main` update and the independently verified
+GitHub Pages artifact built from its exact final tip are authorized. The
+site's input boundary is exactly the 115 PDF snapshots named by the manifest
+hashes and the 22 final site inputs bound below; the artifact may contain
+exactly those 115 PDFs plus only the narrowly generated non-PDF outputs allowed
+under Operational controls. The 119 noncurrent PDF blobs are authorized solely
+for exposure as reachable repository history in this exact update, not as
+current site releases, endorsements, revived approvals, or broader reuse
+permission.
+
+No later commit, other branch or ref, tag, force update, history rewrite,
+public release attachment, other hosting artifact, announcement, promotion,
+advertising, or syndication is authorized. The instruction remains separate
+operational authority for the later publishing session; it does not authorize
+this worker to integrate, push, deploy, or broaden the substantive
+exact-snapshot clearance.
 
 ## Exact approved snapshots
 
@@ -480,22 +551,22 @@ no-project-initiated-promotion condition.
 | Repository path | SHA-256 |
 | --- | --- |
 | `CONTRIBUTING.md` | `47fc90b8b6ad73ae45af02a6b1ccf51f7e6af1a558a816984fdad694bee7a928` |
-| `LIBRARY.md` | `f4c3c4f2ee5d46577f83675bf0fd1400226e12a50509330034325d5e5f1eba97` |
+| `LIBRARY.md` | `c2f82791bbb73a7edd069d41d330812b45666633d0753f4ac8de3f0c6169cedb` |
 | `LICENSE` | `6830030f2e4ff888ee116bc68e45adcd83f3929d2d82eb4eed3c6a663f665f91` |
 | `LICENSES/CC-BY-4.0.txt` | `d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744` |
 | `LICENSES/MIT.txt` | `afd9c125b68a36b60c78cf63656f4cea2613fadce57e95ebabacebff8817ef60` |
 | `README.md` | `c52f2563a59a150f68d35949764045398d4b2cf7b3f928729392f7c2e9f0d056` |
-| `THIRD_PARTY.md` | `3edb066134d7ff70d8ed23410b825540216c06fc50a40fc9e06be282f42d3000` |
-| `library/biographies.md` | `0c9cb5c492348740b2df1a4fd934f1b79e2345e4d38c3d458ef35a2ada222d28` |
-| `library/curriculums.md` | `b410295bf2d3c686ab899a04000aafa62a15772ba5b00ad22d70396b64e4f051` |
-| `library/faith.md` | `6da9fd7ecc143eb5f24876dd48383f971bba492c35ac856890f261480515d48d` |
-| `library/heresies.md` | `536214f9d30c4bec744775d90e1e23d34998e613ff3ed79302a5a08c35d04f22` |
+| `THIRD_PARTY.md` | `e121e2679a396b3a24afea1554a8ce872197e2e02a53090b7ff3e08eda9245f8` |
+| `library/biographies.md` | `71fc0c89f6e58f7cab478dc5c1be707b59f4fde55d43273cbf7917e8add3f623` |
+| `library/curriculums.md` | `2c4230f493691e2ad42a9b482d7986de3afba48cc78d0e6e134b6519ef4d5aa6` |
+| `library/faith.md` | `9da84d831ec3574f387b8e28fbbc107908e70d94f8898ed86b8f306418e76698` |
+| `library/heresies.md` | `f7b6cf154fb2875cd4a8a23a1ca6188d9dcae16770fa7d6fad7817b595797c8f` |
 | `library/historical-accounts.md` | `8243de7aebd969da353df9b5f7b32bf7a856262f30194e244b260f6a07f9f3ee` |
 | `library/law-and-church-discipline.md` | `f768255de091da8174b2e822024f6b10739b9f6dac3740a6cc602e34399e7ce2` |
-| `library/mariology.md` | `2d799f54992dff0998ba28727782861792576ecb4d3951f3c1c620c6201f9c9c` |
-| `library/novus-ordo-liturgy.md` | `973d0b67ae9b845e546339aafd98b89e243e5fb7b8295f5add75e930fdfe5f31` |
+| `library/mariology.md` | `938678339f2303e761e4182cc4b7c6164ee1744e8413c3c468fd74c1120011c0` |
+| `library/novus-ordo-liturgy.md` | `cb873c1f7c898f825e266433efc17ed2b1efbe302bd74362bd42106f0d935b5e` |
 | `library/prayer.md` | `be21efc07c0c3585b2ac8a4ba0a8969331783a9f6378273f4a5e254b9a93e560` |
-| `library/traditional-latin-mass.md` | `48e017e5bdf5026b7098ce6b96da5c350f6e9db03e877697e6a780d5ac6d7add` |
+| `library/traditional-latin-mass.md` | `ceb685b1c4cd5f075594ce7c4e5124907814a9568196c128be5a4cdc83911e02` |
 | `release/public-alpha/404.md` | `551491f5521a5624911d63b398156d2236cbed2f0aa832eeb9c97070dcea568e` |
 | `release/public-alpha/assets/site.css` | `358d86f3587fc03f62a17cd4b5fd0126fb2dc3d952afa48eb33fc3a88fce54e9` |
 | `release/public-alpha/layout.html` | `1add2c3f7e6faed6cde4f71b471b5d275089aa719a779f250ef761b3754bea63` |
@@ -541,9 +612,12 @@ built and independently verified public or private-preview artifact includes
 all 115 exact approved PDFs.
 
 GitHub Pages may publish only the independently verified generated site
-artifact, never the repository root or a private-preview artifact. The
-no-project-initiated-promotion condition remains in force. This rights record
-documents the exact authorized distribution scope. The 21 July instruction
-separately authorizes the primary session to audit, integrate, and publish the
-exact verified result; it does not convert the snapshot clearance into
-substantive review or authorize this worker to push or deploy.
+artifact from the exact structurally bound final commit described above, never
+the repository root or a private-preview artifact. The
+no-project-initiated-promotion condition remains in force. Publication is
+limited to the one exact expected-old fast-forward of `refs/heads/main` and
+the verified Pages artifact; target movement or failure of any final
+incremental-audit, binding, release, artifact, or deployment-target gate
+requires publication to stop. This rights record does not convert
+exact-snapshot clearance into substantive review or authorize this worker to
+integrate, push, or deploy.

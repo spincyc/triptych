@@ -89,5 +89,5 @@ The Lewis claim is a focused paraphrase of *Mere Christianity*, III.8; no Lewis 
 
 - Completed for the Part I argument: genre/profile routing; claim-driven source review; exact-locus checks for the First Way, humility and magnanimity, divine will, divine justice, divine love, the natural-reason boundary, Augustine's arrest, Pseudo-Dionysian apophatic restraint, and the Lewis attribution; internal philosophical, theological, patristic, and literary consultation.
 - Completed production review: settled two-pass build; clean log, metadata, PDF-structure, embedded/subset/Unicode-font, and extracted-text checks; bounded raster review and visual inspection of all 13 pages; and a forced deterministic rebuild with an identical SHA-256. The reviewed artifact was installed byte-for-byte at `doc/gpt/articles/faith/ontological-vertigo.pdf` with SHA-256 `c712e5abe3f944fc78633dfb3861817abdff6eb333c9000079fd7cfbaebd7df2`.
-- The catalog and release manifest register Part I as `hold` pending `renewed-exact-snapshot-authorization`.
+- The exact current installed Part I snapshot is release-cleared by the 21 July 2026 exact-current-snapshot exception.
 - Outstanding external review: independent philosophical, patristic, Thomistic, mystical-theological, dogmatic, literary, and ecclesiastical review. No imprimatur, nihil obstat, or ecclesiastical approval is claimed.

@@ -4,7 +4,7 @@
 
 Each life has its own chronology, source audit, and tradition audit; Peter and Paul remain separate works.
 
-All eight are source-audited, internally production-checked working biographies without independent specialist or ecclesiastical review. The unchanged Augustine, Origen, and Tertullian snapshots remain distribution-cleared; the revised Peter, Paul, and Jerome snapshots await renewed exact-snapshot authorization. The revised Aquinas and Bellarmine biographies remain on release hold pending work-specific rights review. Origen and Tertullian also have work-specific internal rights reviews, not independent rights opinions.
+All eight are source-audited, internally production-checked working biographies without independent specialist or ecclesiastical review. The exact current installed snapshots of all eight are release-cleared by the 21 July 2026 exact-current-snapshot exception. Independent work-specific rights review for the Aquinas and Bellarmine biographies remains incomplete despite that exact-byte release. Origen and Tertullian also have work-specific internal rights reviews, not independent rights opinions.
 
 Lives are grouped as Apostles, Church Fathers, Doctors of the Church, and other biographies, in that order. A life appears in the first group that applies; each group follows birth chronology where recoverable, then the earliest securely dateable activity.
 
