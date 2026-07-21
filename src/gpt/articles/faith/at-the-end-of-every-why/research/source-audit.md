@@ -55,7 +55,7 @@ Official English witnesses: <https://www.vatican.va/content/catechism/en/part_th
 
 ## Thomistic source corpus
 
-The governing Latin is the Leonine-text corpus exposed through Corpus Thomisticum: <https://www.corpusthomisticum.org/iopera.html>. The New Advent *Summa* index (<https://www.newadvent.org/summa/>) served as a working public English aid. Citations by work, question, article, and reply govern over web wording.
+The governing Latin is the Leonine-text corpus exposed through Corpus Thomisticum: <https://www.corpusthomisticum.org/iopera.html>. The New Advent *Summa* index (<https://www.newadvent.org/summa/>) served as a working public English aid. Citations by work, question, article, and reply take precedence over web wording.
 
 Particularly controlling distinctions:
 
