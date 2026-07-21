@@ -1,0 +1,75 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+
+\hypersetup{
+  pdftitle={The Due Return},
+  pdfsubject={Part II of The Creature Before God: religion, commandment, and the justice of creaturehood}
+}
+
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2em}
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\newcommand{\articlethesis}[1]{%
+  \begin{studybox}{Governing thesis}
+  #1
+  \end{studybox}}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.14\textheight}
+{\large\scshape The Creature Before God\par}
+\vspace{0.35em}
+{\small Part II\par}
+\vspace{1.5em}
+{\Huge\bfseries The Due Return\par}
+\vspace{0.85em}
+{\Large\itshape Religion and the Justice of Creaturehood\par}
+\vfill
+{\small From unowed gift and commanded good\par}
+{\small to hope and the freedom of a living sacrifice\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{articles/faith/the-due-return/sections/00-the-question-after-vertigo}
+\input{articles/faith/the-due-return/sections/10-the-gift-that-cannot-be-repaid}
+\input{articles/faith/the-due-return/sections/20-justice-without-equivalence}
+\input{articles/faith/the-due-return/sections/30-a-grammar-of-have-to}
+\input{articles/faith/the-due-return/sections/40-gift-before-command}
+\input{articles/faith/the-due-return/sections/50-the-layers-of-law}
+\input{articles/faith/the-due-return/sections/60-the-due-made-common}
+\input{articles/faith/the-due-return/sections/70-failure-and-fault}
+\input{articles/faith/the-due-return/sections/80-the-grace-of-the-answer}
+\clearpage
+\appendix
+\input{articles/faith/the-due-return/sections/90-scope-method-qualifications}
+\input{articles/faith/the-due-return/sections/99-references}
+\begingroup
+\setlength{\parskip}{0pt}
+\vspace{-0.6\baselineskip}
+\section{Generation Metadata}
+\vspace{-0.35\baselineskip}
+{\scriptsize\input{articles/faith/the-due-return/generation-metadata}}
+\endgroup
+\end{deepstudy}
+
+\end{document}

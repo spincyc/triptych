@@ -6,11 +6,12 @@ This record supports `src/gpt/articles/faith/ontological-vertigo/main.tex`.
 
 - **Provider and collection:** GPT; faith and theology articles.
 - **Genre and profile:** discursive metaphysical and spiritual-theological article; `guidance/articles.md` governs.
+- **Series position:** Part I of *The Creature Before God*. It establishes received being and the analogical judgment that God loves; Part II treats the creature's due return, and Part III the revealed mystery and freedom of charity.
 - **Language, rite, jurisdiction, and currentness:** English; no liturgical rite, civil jurisdiction, canonical jurisdiction, or mutable discipline governs the argument. Online source witnesses were checked through 2026-07-20.
 - **Intended reader:** a serious general reader capable of following basic metaphysical distinctions but not presumed to know scholastic terminology.
-- **Governing question:** What occurs when asymmetric dependence is apprehended as the present truth of the knower, why need that arrest not end in recoil or self-contempt, and how can a metaphysical argument pass faithfully into humility, adoration, and the revealed confession that God is love?
+- **Governing question:** What occurs when asymmetric dependence is apprehended as the present truth of the knower, why need that arrest not end in recoil or self-contempt, and how far can metaphysics proceed from received being toward the analogical judgment that God loves?
 - **Thesis:** ontological vertigo is the reflexive apprehension of asymmetric dependence: the intellectual arrest in which a creature recognizes that it is wholly real and genuinely active, yet neither originates nor sustains the act by which it exists, while the uncreated source depends upon it in no corresponding ontological way.
-- **Intended literary effect:** a sober reexamination of the tacit prior that existence is an independently held possession. The final section moves from discursive knowledge through compressed, first-person language to love; no literary or affective effect is treated as proof.
+- **Intended literary effect:** a sober reexamination of the tacit prior that existence is an independently held possession. The final section moves from discursive knowledge through compressed, first-person language to the judgment that God loves; no literary or affective effect is treated as proof.
 
 The governing sentence, the term *ontological arrest*, the response taxonomy, and the final formulations are project synthesis. They are not represented as received technical definitions or attributed to a historical witness.
 
@@ -26,7 +27,6 @@ The governing sentence, the term *ontological arrest*, the response taxonomy, an
 - **Consent** means willing agreement with the truth of creaturehood. It does not constitute the dependence, supernatural faith, or passive acceptance of evil.
 - **Humility** means the truth of creaturehood has become a stable disposition; **magnanimity** accepts received goods as real powers to be exercised. Their compatibility prevents both pride and false abasement.
 - **Self-forgetfulness** means that attention ceases to make the self its own measure.
-- **Adoration** means the inward and embodied act of religion that renders God reverence as first principle and turns consenting attention toward him.
 - **Vertigo** names the reflexive apprehension and possible affective resonance of arrest. No unusual sensation is required.
 - **Noncompetitive causality** means that primary divine causality grounds rather than replaces the proper powers and acts of secondary causes.
 
@@ -35,13 +35,12 @@ The governing sentence, the term *ontological arrest*, the response taxonomy, an
 The article includes:
 
 1. selected antecedents in Plato's language of participation and ontological priority and Aristotle's account of potency, act, and unmoved actuality;
-2. Aquinas's First Way, together with an explicit limit against treating its first terminus as though it alone established free creation, Trinity, or the Johannine confession;
+2. Aquinas's First Way, together with an explicit limit against treating its first terminus as though it alone established free creation or Trinity;
 3. patristic accounts of created origin, continuance, preservation through the Word, divine intimacy, intellectual arrest, and apophatic restraint in Irenaeus, Athanasius, Augustine, Gregory Nazianzen, and Pseudo-Dionysius;
-4. Aquinas on essence and existence, participation, relation, conservation, noncompetitive causality, freedom, humility, magnanimity, adoration, divine will, divine justice, and divine love;
-5. mystical reception in Julian of Norwich, John of the Cross, Pseudo-Dionysius, and Bernard of Clairvaux;
-6. Descartes's later restatement of present conservation and C. S. Lewis's narrow account of self-forgetful humility;
-7. doctrinal boundaries supplied by Vatican I and the *Catechism of the Catholic Church*; and
-8. the reason–revelation boundary culminating in 1 John 4:8 and 4:16.
+4. Aquinas on essence and existence, participation, relation, conservation, noncompetitive causality, freedom, humility, magnanimity, divine will, divine justice, and divine love;
+5. Descartes's later restatement of present conservation and C. S. Lewis's narrow account of self-forgetful humility;
+6. doctrinal boundaries supplied by Vatican I and the *Catechism of the Catholic Church*; and
+7. the reason–revelation boundary at which natural knowledge of divine love stops short of the divine inner life.
 
 ## Excluded scope
 
@@ -52,13 +51,12 @@ The paper does not infer a temporal first instant from ontological dependence, r
 ## Authority classes and boundaries
 
 - **Ancient philosophy:** supplies conceptual antecedents. Plato and Aristotle are neither made implicit Christians nor credited with creation from nothing, universal free creation, or Thomistic conservation.
-- **Sacred Scripture:** supplies revealed creation through the Word and the confession that God is love. The latter remains within 1 John 4's Christological and ethical context and is not treated as the final step of a philosophical proof.
-- **Conciliar and catechetical teaching:** governs one free Creator really distinct from the world, total creaturely dependence, divine transcendence and intimacy, genuine secondary causality, adoration, and Trinitarian love. It does not canonize each adopted Thomistic explanation.
+- **Conciliar and catechetical teaching:** governs one free Creator really distinct from the world, total creaturely dependence, divine transcendence and intimacy, and genuine secondary causality. It does not canonize each adopted Thomistic explanation.
 - **Patristic witness:** establishes the Christian field of uncreated Creator, creatures from nothing, continued existence by gift, the Word as Creator, reflexive inwardness, and apophatic restraint. Later technical terms are not silently placed in earlier texts.
-- **Thomistic theology:** supplies the principal metaphysical, moral, and theological articulation. The First Way, participated being, the one-sided real relation, humility–magnanimity pairing, adoration, and divine love are kept at their exact argumentative levels.
-- **Mystical witness:** shows metaphysical dependence received in trembling, littleness, love, self-forgetfulness, and union without absorption. Images illustrate apprehension and response; they do not demonstrate the thesis or guarantee an experience.
+- **Thomistic theology:** supplies the principal metaphysical, moral, and theological articulation. The First Way, participated being, the one-sided real relation, humility–magnanimity pairing, and divine love are kept at their exact argumentative levels.
+- **Mystical witness:** shows true knowledge received in trembling and purified by apophatic restraint. Images illustrate apprehension; they do not demonstrate the thesis or guarantee an experience.
 - **Later Christian witness:** Descartes is used only for present conservation; Lewis only for self-forgetful humility. Neither governs the paper's authority structure.
-- **Project synthesis:** defines ontological vertigo and the response taxonomy, and orders the literary movement from knowledge through poetic compression to love.
+- **Project synthesis:** defines ontological vertigo and the response taxonomy, and orders the literary movement from received being through poetic compression to analogical divine love.
 
 ## Material qualifications
 
@@ -74,22 +72,21 @@ The paper does not infer a temporal first instant from ontological dependence, r
 10. Divine concurrence does not make God the author of the defect constituting sin: God causes the act's actuality, not its defective mode (ST I–II, q. 79, a. 2).
 11. Dependence in being is not identical with corruptibility or modal contingency. Even an incorruptible creature, or one necessary through another, possesses being from another (ST I, q. 44, a. 1, ad 2).
 12. Humility's “nothing from oneself” concerns non-aseity, not worthlessness or denial of received goods. Magnanimity and humility are complementary because both follow right reason.
-13. Recoil is not equated with every affective shudder. Charity removes servility; fear of punishment may remain but diminishes, while filial reverence increases (ST II–II, q. 19, a. 10).
+13. Recoil is not equated with every affective shudder. It names withdrawal grounded in an interpretation of dependence as a threat to creaturely reality.
 14. Consent changes the person's willing relation to creaturely truth, not the truth itself. It is neither supernatural faith by definition nor permission for quietism or passivity before evil.
 15. Creation is neither compelled by a lack in God nor antecedently owed by justice to a recipient not yet existing. This does not make divine action arbitrary or deny the dues established within creation: God acts according to divine wisdom and will and gives each created nature what belongs to its condition (ST I, q. 21, a. 1, especially ad 2–3; a. 4, ad 4).
-16. “God loves all things” is a true analogical philosophical judgment in the adopted Thomistic account. “God is love” is received as Johannine and Trinitarian revelation, not converted into “love is God” or used to validate every human conception of love.
-17. Mystical union by grace differs from the sustaining divine presence common to every creature; neither is identity of essence. Dionysian ecstasy means redirection toward the beloved, not annihilation of created personhood.
-18. Pseudo-Dionysius is identified as an anonymous late-fifth- or early-sixth-century Christian author, not the convert of Acts 17.
+16. “God loves all things” is a true analogical philosophical judgment in the adopted Thomistic account: God freely wills and causes created good. It does not disclose the divine inner life or demonstrate Trinity.
+17. Pseudo-Dionysius is identified as an anonymous late-fifth- or early-sixth-century Christian author, not the convert of Acts 17.
 
 ## Rights and quotation boundary
 
-Quotations are brief and claim-driven. The article uses public-domain working translations by Jowett, Ross, Roberts and Rambaut, NPNF editors, Parker, Warrack, Eales, Lewis and Zimmerman, and Haldane. Corpus Thomisticum supplies a checked Latin corpus whose site edition retains its stated rights; the repository links to it and incorporates no bulk text.
+Quotations are brief and claim-driven. The article uses public-domain working translations by Jowett, Ross, Roberts and Rambaut, NPNF editors, Parker, and Haldane. Corpus Thomisticum supplies a checked Latin corpus whose site edition retains its stated rights; the repository links to it and incorporates no bulk text.
 
-The Lewis claim is a focused paraphrase of *Mere Christianity*, III.8; no Lewis wording is reproduced. The familiar aphorism “humility is not thinking less of yourself, but thinking of yourself less” is not attributed to Lewis because the C. S. Lewis Foundation identifies it as a common misattribution. Scripture, official texts, patristic and mystical wording, and all third-party translations remain outside the project's license.
+The Lewis claim is a focused paraphrase of *Mere Christianity*, III.8; no Lewis wording is reproduced. The familiar aphorism “humility is not thinking less of yourself, but thinking of yourself less” is not attributed to Lewis because the C. S. Lewis Foundation identifies it as a common misattribution. Official texts, patristic wording, and all third-party translations remain outside the project's license.
 
 ## Review state
 
-- Completed for the revised argument: genre/profile routing; claim-driven source expansion; exact-locus checks for the First Way, humility and magnanimity, adoration, divine will, divine justice, divine love, the natural-reason boundary, Augustine's arrest, Julian's loved littleness, Dionysian ecstasy, Bernard's voluntary unequal response, Johannine divine initiative, and the Lewis attribution; internal philosophical, theological, patristic, and literary consultation.
-- Completed production checks on 2026-07-20: two settled `pdflatex` passes; a 13-page output; clean checks for fatal errors, undefined references, rerun requests, overfull or underfull boxes, and LaTeX or package warnings; successful `qpdf --check`; verified title, subject, revision date, and absence of a creation date; all fonts embedded, subset, and Unicode-mapped; extracted-text review; and a forced rebuild producing identical bytes.
-- Completed final production review on 2026-07-20: bounded raster and contact-sheet generation with `scripts/pdf-review --jobs 1`; visual inspection of the contact sheet and all 13 full-size page renders; and approval for installation of the reviewed 405,870-byte PDF with SHA-256 `b5c66e6231b08af4b646ba2fe62937d87971657d5ef477caefe7f6b5d91881c9`.
+- Completed for the Part I argument: genre/profile routing; claim-driven source review; exact-locus checks for the First Way, humility and magnanimity, divine will, divine justice, divine love, the natural-reason boundary, Augustine's arrest, Pseudo-Dionysian apophatic restraint, and the Lewis attribution; internal philosophical, theological, patristic, and literary consultation.
+- Completed production review: settled two-pass build; clean log, metadata, PDF-structure, embedded/subset/Unicode-font, and extracted-text checks; bounded raster review and visual inspection of all 12 pages; and a forced deterministic rebuild with an identical SHA-256. The reviewed artifact was installed byte-for-byte at `doc/gpt/articles/faith/ontological-vertigo.pdf` with SHA-256 `275cb6947b8e62780c32841e050af78b5057cf49b66a55626a0b1ea162ccbcfa`.
+- The catalog and release manifest register Part I as `hold` pending `renewed-exact-snapshot-authorization`.
 - Outstanding external review: independent philosophical, patristic, Thomistic, mystical-theological, dogmatic, literary, and ecclesiastical review. No imprimatur, nihil obstat, or ecclesiastical approval is claimed.
