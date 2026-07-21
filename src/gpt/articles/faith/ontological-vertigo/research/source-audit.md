@@ -1,6 +1,6 @@
 # Source Audit — Ontological Vertigo
 
-Online witnesses were checked on 2026-07-20. Public English translations are working study witnesses unless otherwise stated. Consequential claims are governed by the identified work and exact locus, not by a claim that an online translation or re-typeset edition is critical.
+The core online witnesses were checked on 2026-07-20; the added Augustine, *Confessions* VII.20.26--21.27 and Gregory Nazianzen, *Oration* 28.2 loci were checked on 2026-07-21. Public English translations are working study witnesses unless otherwise stated. Consequential claims are governed by the identified work and exact locus, not by a claim that an online translation or re-typeset edition is critical.
 
 ## Core claim-to-source matrix
 
@@ -13,9 +13,10 @@ Online witnesses were checked on 2026-07-20. Public English translations are wor
 | God alone is without beginning; created souls receive life and continue for as long as God wills. | Irenaeus, *Against Heresies* II.34.2–4. | Patristic witness to asymmetric created duration and participated life. |
 | God creates from nothing through the Word, and the Word orders and preserves the created whole. | Athanasius, *On the Incarnation* 3–5; *Against the Heathen* 40–42. | Patristic Creator–creature and preservation claims with the soteriological context retained. |
 | Augustine reverses the spatial assumption—he exists in God rather than enclosing God—and joins divine inwardness to transcendence; his changeable mind judges mutable things by unchangeable truth. | Augustine, *Confessions* I.2.2; III.6.11; VII.1.1–2, 10.16–11.17, and 17.23. | Patristic introspective reception without pantheism; VII.17.23 governs the explicit mutability judgment. |
+| Intellectual sight can disclose the country while leaving the knower without the way; in Augustine's conversion narrative, the humility of Christ and healing grace enable not only sight but entry and stable possession. | Augustine, *Confessions* VII.20.26–21.27. | Christian seam from apprehension to response. This revealed and soteriological resolution is not treated as a premise in the metaphysical proof. |
 | The mind may receive a first flash of Truth, fail to sustain the gaze, and fall back into familiar images. | Augustine, *De Trinitate* VIII.2.3. | Best historical analogue for “ontological arrest”; explicitly not used as proof of conservation. |
 | Before eternal Wisdom Augustine both shudders and burns; trembling need not be refusal. | Augustine, *Confessions* XI.9.11: *inhorresco et inardesco*; cf. VII.10.16. | Affective witness used to distinguish initial disproportion from chosen recoil. |
-| From created order the mind may know that God is while remaining unable to comprehend the divine nature. | Gregory Nazianzen, *Oration* 28.3–6. | Patristic apophatic boundary: true causal knowledge without comprehension. |
+| Longing and fear can accompany approach to the theological cloud; from created order the mind may know that God is while remaining unable to comprehend the divine nature. | Gregory Nazianzen, *Oration* 28.2–6. | Patristic apophatic boundary. Fear concerns creaturely weakness before mystery and is not identified with culpable recoil. |
 | Beings receive existence from the superessential cause, and ascent passes through affirmation and negation without licensing arbitrary claims. | Pseudo-Dionysius, *Divine Names* V.1–8; *Mystical Theology* I.1–3. | Late-patristic causal and apophatic witness. |
 | In creatures, essence does not include unreceived existence; all beings other than God participate in being and are caused by the first being. | Aquinas, *De ente et essentia* 4; ST I, q. 3, a. 4; q. 4, a. 2; q. 44, a. 1. | Adopted Thomistic synthesis, distinguished from the First Way and from dogmatic definition. |
 | Creation considered passively is a real relation in the creature to the Creator as principle of being. | Aquinas, ST I, q. 45, a. 3, especially ad 1. | Principal locus for the creature's real ontological dependence. |
@@ -45,9 +46,9 @@ These texts establish antecedents, not a direct line of doctrinal identity.
 
 - Irenaeus, *Against Heresies* II.34.2–4, Alexander Roberts and William Rambaut's ANF working English: <https://www.newadvent.org/fathers/0103234.htm>.
 - Athanasius, *On the Incarnation* 3–5 and *Against the Heathen* 40–42, public-domain NPNF working English: <https://www.newadvent.org/fathers/2802.htm> and <https://www.newadvent.org/fathers/2801.htm>.
-- Augustine, *Confessions* I.2.2, III.6.11, VII.1.1–2, 10.16–11.17, and 17.23, and XI.9.11, public-domain NPNF working English: <https://www.newadvent.org/fathers/110101.htm>, <https://www.newadvent.org/fathers/110103.htm>, <https://www.newadvent.org/fathers/110107.htm>, and <https://www.newadvent.org/fathers/110111.htm>. The explicit changeable-mind judgment is checked at VII.17.23; the Latin phrase *inhorresco et inardesco* is checked at XI.9.11.
+- Augustine, *Confessions* I.2.2, III.6.11, VII.1.1–2, 10.16–11.17, 17.23, and 20.26–21.27, and XI.9.11, public-domain NPNF working English: <https://www.newadvent.org/fathers/110101.htm>, <https://www.newadvent.org/fathers/110103.htm>, <https://www.newadvent.org/fathers/110107.htm>, and <https://www.newadvent.org/fathers/110111.htm>. The explicit changeable-mind judgment is checked at VII.17.23; the seeing/way distinction at VII.20.26–21.27; and the Latin phrase *inhorresco et inardesco* at XI.9.11.
 - Augustine, *De Trinitate* VIII.2.3, public-domain NPNF working English: <https://www.newadvent.org/fathers/130108.htm>. The first flash and relapse into familiar images are used analogically for arrest, not attributed to Augustine as a theory of ontological vertigo.
-- Gregory Nazianzen, *Oration* 28.3–6, public-domain NPNF working English: <https://www.newadvent.org/fathers/310228.htm>.
+- Gregory Nazianzen, *Oration* 28.2–6, public-domain NPNF working English: <https://www.newadvent.org/fathers/310228.htm>.
 - Pseudo-Dionysius, *Divine Names* V.1–8 and *Mystical Theology* I.1–3, John Parker, trans., *The Works of Dionysius the Areopagite*, vol. 1 (1897), public domain: <https://ccel.org/ccel/dionysius/works/works.toc.html>.
 
 Pseudo-Dionysius is identified according to modern convention. Apophatic negation is bounded by prior causal affirmation and does not license arbitrary claims.
@@ -88,6 +89,7 @@ Particularly controlling distinctions:
 - Irenaeus, Athanasius, Augustine, and the mystics are not retroactively credited with Aquinas's technical essence–existence analysis or the project's response taxonomy.
 - Conservation is not labeled repeated creation, and divine causality is not placed in a gap left by empirical explanation.
 - Recoil is not equated with surprise or trembling. No affective stage is promised or treated as proof.
+- Resolution is not equated with loss of asymmetry, a guaranteed feeling, or a judgment that continuing disturbance proves refusal. It names the progressive ordering of the creature's response in Parts II and III.
 - “Nothing from oneself” is not rendered as “the creature is worthless.” Humility is paired with magnanimity to preserve received goodness and agency.
 - Consent to creaturehood is not equated with supernatural faith, quietism, submission to abuse, or passive acceptance of evil.
 - The familiar sentence “humility is not thinking less of yourself, but thinking of yourself less” is not quoted or attributed to C. S. Lewis. The concept in Book III, chapter 8 is paraphrased instead.
