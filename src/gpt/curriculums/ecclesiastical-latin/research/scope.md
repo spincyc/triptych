@@ -16,9 +16,9 @@
 - **Jurisdictional scope:** the universal 1962 typical-edition corpus. Local
   propers may be used by a learner only after identifying the governing
   edition; none controls the course.
-- **As-of date:** 2026-07-20 for online witnesses, integration, and internal
-  audit. The date does not answer present authorization to celebrate with the
-  1962 books.
+- **As-of date:** 2026-07-20 for online witnesses and donor integration;
+  2026-07-21 for the instructional and production audit. Neither date answers
+  present authorization to celebrate with the 1962 books.
 
 ## Provenance and integration object
 
@@ -64,8 +64,9 @@ liturgical, theological, textual, or canonical judgments.
   ledger, and reference-grammar companion;
 - twelve foundation, fourteen core-grammar, twelve genre-centered
   Missal-reading, and eight advanced reading/composition modules, each with
-  its own prerequisite, two-session core, local reference card, enriched
-  submodules, selected practice, mastery decision, and terminal solutions;
+  a compact prerequisite/outcome cover followed by lesson, transfer practice,
+  selected worksheets, post-worksheet mastery assessment, and terminal
+  solutions; course-wide orientation appears only in the starter guide;
 - 184 authoritative worksheet variants at the owner root, of which each
   learning module prints two deliberately contrasting variants and their
   matching keys while identifying the other two as remediation or delayed
@@ -73,8 +74,8 @@ liturgical, theological, textual, or canonical judgments.
 - reusable handwritten forms, designated-formulary diagnostics, an
   unfamiliar-formulary transfer gate, and advanced portfolio defenses in four
   assessment-sequence companions;
-- terminal solutions rendered from the same authoritative exercise and
-  enrichment sources as their prompts;
+- terminal solutions rendered from the same authoritative worksheet and
+  transfer-practice sources as their prompts;
 - received excerpts from the 1962 Missal and Clementine Vulgate, together with
   visibly instructional examples, transformations, translations, and models;
   and
@@ -139,11 +140,13 @@ The work has no imprimatur, nihil obstat, ecclesiastical approval, or
 independent Latin, liturgical, pedagogical, theological, textual, canonical,
 or rights review. Its donor provenance, incorporated liturgical wording, and
 page-image collation remain incomplete; current production verification is
-recorded separately. The 52 rebuilt PDFs are installed as corrected working
+recorded separately. The 52 rebuilt PDFs are installed as revised working
 snapshots at the user's direction. The prior installed snapshots and their
 exact-byte authorization are now historical; that authorization does not
 record completion of any missing review, establish an open license, authorize
-extracted material, or authorize the replacement bytes. The exact current
-installed set is release-cleared by the 21 July 2026 exact-current-snapshot
-exception; that exact-byte exception completes no missing review, establishes
-no open license, and authorizes no extracted material or broader reuse.
+extracted material, or authorize the replacement bytes. The revised set
+remains on changed-byte release hold pending renewed exact-snapshot
+authorization. The 21 July 2026 exact-current-snapshot exception
+release-cleared only the now-superseded installed hashes; it completed no
+missing review, established no open license, and authorized no extracted
+material or broader reuse.

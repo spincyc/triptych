@@ -3,7 +3,7 @@
 ## Object and rendering identity
 
 The authoritative exercise inputs are the four worksheet-bank sources,
-`assessments/all.tex`, and each module's local enrichment source. A learning
+`assessments/all.tex`, and each module's local transfer-practice source. A learning
 packet selects two of its unit's four worksheet variants and renders only those
 sources twice: once with `solutionsfalse` in the student sequence and once with
 `solutionstrue` in the terminal answer part. An assessment companion applies
@@ -73,7 +73,7 @@ Across all 46 learning packets, the selectors account for 92 of the 184
 worksheet variants and 539 of the 1,078 exercise calls. Every selected prompt
 and its answer come from the same captured source environment; the other 92
 variants remain optional owner sources rather than omitted required answers.
-Each module also keeps its enrichment prompt and checkable model or rubric in
+Each module also keeps its transfer-practice prompt and checkable model or rubric in
 one `SubmoduleExtension` call. The four assessment companions account for all
 nine forms and 133 items in both student and solution passes.
 
@@ -86,8 +86,11 @@ envelope is an editorial design target, not evidence that every learner should
 advance after two days. Received-text attribution and collation are controlled
 separately by `passage-inventory.md`; an answer can be grammatically coherent
 while still quoting or identifying a source incorrectly. The rebuilt packets
-are installed as corrected working snapshots after internal build and
+are installed as revised working snapshots after internal build and
 production checks. That user-directed installation does not supply independent
-review or itself grant changed-byte release authorization. The exact current
-installed set is release-cleared by the 21 July 2026 exact-current-snapshot
-exception; the exception completes no missing review.
+review or itself grant changed-byte release authorization. The immediately
+preceding exact installed set was release-cleared by the 21 July 2026
+exact-current-snapshot exception; that binding is now historical. The revised set
+changes every installed PDF and remains fail-closed pending a renewed exact
+binding. Neither that exception nor the present installation completes any
+missing review.

@@ -33,7 +33,8 @@ The donor project was complete as a multi-booklet course but lacked:
 
 Triptych therefore preserves the complete instructional corpus but narrows the
 claimed outcome, adds the required records and terminal qualifications,
-selectively publishes normal practice, enriches every teaching submodule, and
+selectively publishes normal worksheets, adds transfer practice to every
+teaching submodule, and
 keeps changed packets in review rather than converting missing evidence into a
 claim.
 
@@ -52,7 +53,17 @@ the answer audit records their propagation into terminal keys.
 | gerund analysis | *praeveniendo* called indeclinable | identify it as the ablative singular of a declining verbal noun |
 | assessment validity | two “unfamiliar” gates reused extensively taught First Advent and Pentecost formularies; percentages lacked a stated denominator | disclose M-A/M-B as designated diagnostics, add blind-selection M-C, and define atomic and four-category scoring denominators |
 | source/allusion tasks | prompts could reward invented allusions or imply that comparison itself creates a hybrid | require evidence-scaled investigation and permit negative results; identify only silent import into a base witness as hybridization |
-| document structure | the article-based chapter layer lacked a chapter contents renderer and unique Part-qualified anchors; later repair flattened the printed Part/chapter margins and imposed a continuous chapter sequence despite Part ownership; PDF bookmarks were originally flat, practice chapters were duplicated or omitted, worksheet IDs were hidden from navigation, and unselected assessment Gate headings leaked | restart visible chapter numbers inside each Part while keeping Part-qualified anchors; enforce progressively indented Part--chapter--section contents that agree with the nested PDF outline; align unnumbered section titles with numbered peers; give each selected practice rendering one source-owned unit chapter with stable-ID worksheet sections; emit only the selected assessment Gate and forms; validate all 52 rendered structures during every curriculum build |
+| document structure | the article-based chapter layer lacked a chapter contents renderer and unique Part-qualified anchors; later repair flattened the printed Part/chapter margins and imposed a continuous chapter sequence despite Part ownership; PDF bookmarks were originally flat, practice chapters were duplicated or omitted, worksheet IDs were hidden from navigation, and unselected assessment Gate headings leaked | restart visible chapter numbers inside each Part while keeping Part-qualified anchors; enforce progressively indented Part--chapter--section contents that agree with the nested PDF outline; align unnumbered section titles with numbered peers; give each module's Worksheets and Answer Key renderings one source-owned unit chapter with stable-ID worksheet or solution sections; emit only the selected assessment Gate and forms; validate all 52 rendered structures during every curriculum build |
+| instructional sequence | the shared shell repeated a plan and local reference preamble in every module; several later lessons also restated course mechanics or prior terminology; mastery directions were separated from the worksheets they evaluated | make EL-GUIDE the required owner of course-wide orientation; begin modules with genuinely new definitions and the governing idea; require Lesson--Practice--Worksheets--Assessment--Answer Key--Scope and Sources flow; assume prerequisite terminology; retain local mastery evidence after the worksheets and stage gates as separate publications |
+
+The instructional refactor kept the stable course-unit, worksheet,
+worked-passage, and assessment identifiers needed by the revised course,
+together with its source-owned lessons, received quotations, selected
+worksheets and keys, local module criteria, and separately published stage
+gates. It removed or relocated course orientation, obsolete local
+plan/reference data, redundant definitions, former volume-level cumulative
+protocols, and other material that interrupted the new reader order. These
+editorial changes do not count as new source verification.
 
 ## Grammar and lexicon evidence boundary
 
@@ -74,7 +85,7 @@ material. Module selection changes which occurrences print in one packet but
 does not change their identifiers or source decisions. The register records
 exact or unresolved liturgical and biblical loci, witness, normalization, use,
 and visual-collation state. A repeated passage may share one source decision,
-but every occurrence remains discoverable. Short uncited drills, enrichment
+but every occurrence remains discoverable. Short uncited drills, transfer-practice
 examples, and model compositions are project-created by declared convention.
 
 No source is called visually collated from an OCR match alone. Any unresolved
@@ -110,12 +121,14 @@ and review event do not establish the integrity of any new packet. The
 of 52 independent leaves, each leaf's exact page count and SHA-256, and the
 technical and visual verification performed on those exact bytes.
 
-All 52 rebuilt PDFs are installed as corrected working snapshots at the user's
+All 52 rebuilt PDFs are installed as revised working snapshots at the user's
 direction. The prior installed snapshots and their exact release bindings are
-historical. The 21 July 2026 exact-current-snapshot exception release-clears
-the exact current installed hashes. Internal verification and exact-byte
-release do not resolve the outstanding page-image collation or donor and
-received-text rights analysis or permit broader reuse; internal verification
-is not itself distribution authorization.
+historical. The 21 July 2026 exact-current-snapshot exception release-cleared
+only the now-superseded installed hashes; because the release record retains
+those bindings, it fails closed for the revised bytes. Internal verification
+and the historical exact-byte release do not resolve the outstanding page-image
+collation or donor and received-text rights analysis, authorize changed-byte
+distribution, or permit broader reuse; internal verification is not itself
+distribution authorization.
 
 No integration, push, or deployment is implied by this research record.

@@ -31,9 +31,10 @@ liturgical, textual, theological, or canonical judgments.
    rhetorical, textual, or compositional extension.
 5. Keep student work usable in print while isolating solutions and terminal
    editorial apparatus from the learning sequence.
-6. Make each learning module a self-contained packet designed for two focused
-   study sessions, without confusing elapsed time or page completion with
-   mastery.
+6. Put course-wide orientation in one required starter guide, then make each
+   learning module an independently printable local sequence designed for two
+   focused study sessions, without confusing elapsed time or page completion
+   with mastery.
 
 ## Identity, corpus, and bounds
 
@@ -103,33 +104,40 @@ version may erase a material ambiguity.
 
 ## Curriculum and answer contract
 
-Each learning module identifies prerequisite knowledge, terms defined before
-use, observable objectives, instruction, worked examples, a locally sufficient
-reference card, selected practice, a mastery gate, and the next dependency.
-Its internal submodules each receive a purposeful extension: a new connection,
-transfer task, worked process model, contrast, or retrieval prompt with a
-checkable model or rubric. Definitions state a deciding feature, not only a
-synonym, and deliberately recur only when retrieval or a more precise later use
-warrants it. Contrast neighboring terms that commonly produce a different
-parse or construction.
+The course guide is the required starter publication. It owns entry
+assumptions, packet order, the study and lookup methods, pacing, worksheet and
+answer protocols, error records, delayed recall, and advancement decisions.
+Module packets point to that guide rather than restating those conventions.
 
-A learning module is designed for two focused study sessions. State what is
-core in each session, what is detachable delayed work, and what remains an
-optional remediation variant. This is a workload envelope, not an advancement
-promise: the learner repeats or delays the gate whenever the stated evidence is
-not met. Longer stage assessments are labeled assessment sequences rather than
-two-session learning modules.
+Each learning module identifies its prerequisite, observable outcome, practice
+sequence, mastery gate, and next dependency. It then moves from its lesson's
+new definitions and governing idea through worked examples and purposeful
+transfer practice, selected worksheets, and a local mastery assessment. Its
+internal submodules each receive a new connection, transfer task, worked
+process model, contrast, or retrieval prompt with a checkable model or rubric.
+A genuinely new definition states a deciding feature, not only a synonym.
+Later modules assume terminology established by their prerequisites and define
+it again only when materially refining its meaning or adding a new contrast.
+Contrast neighboring terms that commonly produce a different parse or
+construction.
+
+A learning module is designed for two focused study sessions. The starter
+guide states that workload envelope once; the module map records its local
+allocation, detachable delayed work, and optional remediation variants. This
+is not an advancement promise: the learner repeats or delays the gate whenever
+the stated evidence is not met. Longer stage assessments are labeled
+assessment sequences rather than two-session learning modules.
 
 Practice may be abundant without requiring page completion. A normal learning
 module prints two deliberately contrasting variants and their matching keys;
 the other authoritative variants remain optional remediation or delayed-recall
-sources. The module states how the learner checks work, records error families,
-uses delayed recall, and decides whether to advance. An “unseen” gate cannot
-reuse a memorized teaching passage without disclosure. The entry and exit
-standards must be demonstrable by the supplied assessments rather than
-aspirational advertising.
+sources. The guide states how the learner checks work and records error
+families; the post-worksheet assessment names the local evidence, any delayed
+work, and the next decision. An “unseen” gate cannot reuse a memorized teaching
+passage without disclosure. The entry and exit standards must be demonstrable
+by the supplied assessments rather than aspirational advertising.
 
-Every closed exercise, enrichment task, and assessment item has a checkable
+Every closed exercise, transfer-practice task, and assessment item has a checkable
 answer or model.
 Record acceptable alternatives where Latin form, syntax, or translation permits
 them. Every open composition or research task has a rubric that evaluates the
@@ -172,8 +180,8 @@ The non-publishable course owner keeps:
 
 Each learning-module leaf keeps `research/module-map.md`, naming its stable ID,
 source unit, internal submodules, prerequisites, two-session core, printed and
-omitted practice variants, enrichment, mastery evidence, next edge, and any
-delayed work. Each guide, reference, or assessment companion keeps
+omitted practice variants, transfer practice, mastery evidence, next edge, and
+any delayed work. Each guide, reference, or assessment companion keeps
 `research/companion-map.md`, naming its role, source inputs, reader order, and
 relationship to the learning sequence. These local records point to, but do not
 copy, course-wide source and answer decisions.
@@ -186,12 +194,14 @@ unless its required record identifies the completed check.
 
 ## Reader order and terminal apparatus
 
-After a module title and compact contents, begin with its destination,
-prerequisite check, materials, two-session plan, and first learning decision.
-Give the local reference card before the lesson, present the unit's internal
-submodules in prerequisite order, and follow them with their enrichment and
-selected student practice. Put the work record and mastery decision before all
-answer material. Place all keys after all student-facing material.
+After a compact cover naming the module ID, outcome, prerequisite, and next
+edge, and after compact contents, begin immediately with the lesson. Use these
+Parts in order: `Lesson`, `Practice`, `Worksheets`, `Assessment`, `Answer Key`,
+and `Scope and Sources`. The lesson introduces genuinely new definitions and
+the governing idea before worked examples and local application. Practice then
+adds transfer and retrieval work. Put both selected worksheets before the
+module's mastery criterion, delayed-work direction, and work record. Place all
+keys after all student-facing and assessment material.
 
 Within each publication, restart Arabic chapter numbering inside every Part
 and number sections from their owning chapter. Qualify PDF destinations by
@@ -200,7 +210,7 @@ PDF bookmarks preserve the Part--chapter--section hierarchy: chapter entries
 are visibly indented beneath Parts, section entries are indented another step,
 and an unnumbered section title aligns with numbered peer titles after the same
 reserved number gutter. Every chapter listed in the contents is numbered. Each
-selected practice source owns exactly one numbered unit chapter in both its
+selected worksheet source owns exactly one numbered unit chapter in both its
 learner and solution renderings; the shell does not add a second generic
 solution chapter. List every rendered worksheet or solution beneath that
 chapter as an unnumbered section whose navigation title contains its stable
@@ -224,12 +234,13 @@ Then give, in order:
    rights notes; and
 3. `Generation Metadata` as the final content block.
 
-The compact local scope appendix owns corpus, edition, completeness, module
-boundary, omitted practice, orthography, normalization, translation, rights,
-review, and use bounds. Keep a source or
-answer qualification beside the affected passage or item when it changes how
-that material should be read. The common rights colophon remains the final-page
-colophon supplied by the repository preamble.
+The starter guide and course records own course-wide corpus, edition,
+completeness, orthography, normalization, translation, rights, review, and use
+bounds. A module's compact local scope appendix names only its packet boundary,
+omitted practice, consequential local limits, and pointers to those controlling
+records. Keep a source or answer qualification beside the affected passage or
+item when it changes how that material should be read. The common rights
+colophon remains the final-page colophon supplied by the repository preamble.
 
 ## Profile gate
 
@@ -237,10 +248,11 @@ Before installation, verify that the curriculum map accounts for every module,
 submodule, practice family, gate, assessment, and prerequisite edge; every
 local module or companion record agrees with that map; the passage inventory
 accounts for every received reading and assessment passage; and the answer
-audit accounts for every closed item and open-task rubric. Check each packet,
-its reference card, enrichment, selected practice, and keys against one another
-after every correction. Across the complete module set, verify that explicit
-stable IDs remain unique and reconcile with the course-wide inventories.
+audit accounts for every closed item and open-task rubric. Check each packet's
+lesson, transfer practice, selected worksheets, post-worksheet assessment, and
+keys against one another after every correction. Across the complete module
+set, verify that explicit stable IDs remain unique and reconcile with the
+course-wide inventories.
 
 Visually collate received Missal text against the identified page-image witness
 and biblical text against the identified edition. Check every project-composed
