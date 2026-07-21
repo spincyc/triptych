@@ -37,7 +37,7 @@ The article includes:
 1. selected antecedents in Plato's language of participation and ontological priority and Aristotle's account of potency, act, and unmoved actuality;
 2. Aquinas's First Way, together with an explicit limit against treating its first terminus as though it alone established free creation, Trinity, or the Johannine confession;
 3. patristic accounts of created origin, continuance, preservation through the Word, divine intimacy, intellectual arrest, and apophatic restraint in Irenaeus, Athanasius, Augustine, Gregory Nazianzen, and Pseudo-Dionysius;
-4. Aquinas on essence and existence, participation, relation, conservation, noncompetitive causality, freedom, humility, magnanimity, adoration, divine will, and divine love;
+4. Aquinas on essence and existence, participation, relation, conservation, noncompetitive causality, freedom, humility, magnanimity, adoration, divine will, divine justice, and divine love;
 5. mystical reception in Julian of Norwich, John of the Cross, Pseudo-Dionysius, and Bernard of Clairvaux;
 6. Descartes's later restatement of present conservation and C. S. Lewis's narrow account of self-forgetful humility;
 7. doctrinal boundaries supplied by Vatican I and the *Catechism of the Catholic Church*; and
@@ -76,9 +76,10 @@ The paper does not infer a temporal first instant from ontological dependence, r
 12. Humility's “nothing from oneself” concerns non-aseity, not worthlessness or denial of received goods. Magnanimity and humility are complementary because both follow right reason.
 13. Recoil is not equated with every affective shudder. Charity removes servility; fear of punishment may remain but diminishes, while filial reverence increases (ST II–II, q. 19, a. 10).
 14. Consent changes the person's willing relation to creaturely truth, not the truth itself. It is neither supernatural faith by definition nor permission for quietism or passivity before evil.
-15. “God loves all things” is a true analogical philosophical judgment in the adopted Thomistic account. “God is love” is received as Johannine and Trinitarian revelation, not converted into “love is God” or used to validate every human conception of love.
-16. Mystical union by grace differs from the sustaining divine presence common to every creature; neither is identity of essence. Dionysian ecstasy means redirection toward the beloved, not annihilation of created personhood.
-17. Pseudo-Dionysius is identified as an anonymous late-fifth- or early-sixth-century Christian author, not the convert of Acts 17.
+15. Creation is neither compelled by a lack in God nor antecedently owed by justice to a recipient not yet existing. This does not make divine action arbitrary or deny the dues established within creation: God acts according to divine wisdom and will and gives each created nature what belongs to its condition (ST I, q. 21, a. 1, especially ad 2–3; a. 4, ad 4).
+16. “God loves all things” is a true analogical philosophical judgment in the adopted Thomistic account. “God is love” is received as Johannine and Trinitarian revelation, not converted into “love is God” or used to validate every human conception of love.
+17. Mystical union by grace differs from the sustaining divine presence common to every creature; neither is identity of essence. Dionysian ecstasy means redirection toward the beloved, not annihilation of created personhood.
+18. Pseudo-Dionysius is identified as an anonymous late-fifth- or early-sixth-century Christian author, not the convert of Acts 17.
 
 ## Rights and quotation boundary
 
@@ -88,7 +89,7 @@ The Lewis claim is a focused paraphrase of *Mere Christianity*, III.8; no Lewis 
 
 ## Review state
 
-- Completed for the revised argument: genre/profile routing; claim-driven source expansion; exact-locus checks for the First Way, humility and magnanimity, adoration, divine love, the natural-reason boundary, Augustine's arrest, Julian's loved littleness, Dionysian ecstasy, Bernard's voluntary unequal response, and the Lewis attribution; internal philosophical, theological, patristic, and literary consultation.
-- Completed production review on 2026-07-20: two settled `pdflatex` passes; a 13-page output; clean checks for fatal errors, undefined references, rerun requests, overfull or underfull boxes, and LaTeX or package warnings; successful `qpdf --check`; verified title, subject, revision date, and absence of a creation date; all fonts embedded, subset, and Unicode-mapped; extracted-text review; bounded raster and contact-sheet generation with `scripts/pdf-review`; visual inspection of every rendered page; and a forced rebuild producing identical bytes.
-- Installed artifact: `doc/gpt/articles/faith/ontological-vertigo.pdf` is byte-identical to the reviewed build and has SHA-256 `bca19ce96520ed5734ee0d20ef91a2194e6216ce5315896193495bcb237c5b43`.
+- Completed for the revised argument: genre/profile routing; claim-driven source expansion; exact-locus checks for the First Way, humility and magnanimity, adoration, divine will, divine justice, divine love, the natural-reason boundary, Augustine's arrest, Julian's loved littleness, Dionysian ecstasy, Bernard's voluntary unequal response, Johannine divine initiative, and the Lewis attribution; internal philosophical, theological, patristic, and literary consultation.
+- Completed production checks on 2026-07-20: two settled `pdflatex` passes; a 13-page output; clean checks for fatal errors, undefined references, rerun requests, overfull or underfull boxes, and LaTeX or package warnings; successful `qpdf --check`; verified title, subject, revision date, and absence of a creation date; all fonts embedded, subset, and Unicode-mapped; extracted-text review; and a forced rebuild producing identical bytes.
+- Completed final production review on 2026-07-20: bounded raster and contact-sheet generation with `scripts/pdf-review --jobs 1`; visual inspection of the contact sheet and all 13 full-size page renders; and approval for installation of the reviewed 405,870-byte PDF with SHA-256 `b5c66e6231b08af4b646ba2fe62937d87971657d5ef477caefe7f6b5d91881c9`.
 - Outstanding external review: independent philosophical, patristic, Thomistic, mystical-theological, dogmatic, literary, and ecclesiastical review. No imprimatur, nihil obstat, or ecclesiastical approval is claimed.
