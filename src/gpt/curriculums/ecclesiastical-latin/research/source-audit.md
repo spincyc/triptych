@@ -2,7 +2,7 @@
 
 ## Audit object and method
 
-- **Audit date:** 2026-07-20.
+- **Audit date:** 2026-07-21.
 - **Object:** the Telos Ecclesiastical Latin curriculum integrated under one
   Triptych course owner and partitioned into 46 learning modules, two course
   companions, and four assessment sequences.
@@ -52,7 +52,7 @@ the answer audit records their propagation into terminal keys.
 | gerund analysis | *praeveniendo* called indeclinable | identify it as the ablative singular of a declining verbal noun |
 | assessment validity | two “unfamiliar” gates reused extensively taught First Advent and Pentecost formularies; percentages lacked a stated denominator | disclose M-A/M-B as designated diagnostics, add blind-selection M-C, and define atomic and four-category scoring denominators |
 | source/allusion tasks | prompts could reward invented allusions or imply that comparison itself creates a hybrid | require evidence-scaled investigation and permit negative results; identify only silent import into a base witness as hybridization |
-| document structure | the article-based chapter layer lacked a chapter contents renderer, restarted unqualified chapter numbers at each Part, flattened PDF bookmarks, duplicated or omitted practice chapters, hid worksheet IDs from navigation, and leaked unselected assessment Gate headings | use one continuous chapter sequence and an explicit Part--chapter--section hierarchy; give each selected practice rendering one source-owned unit chapter with stable-ID worksheet sections; emit only the selected assessment Gate and forms; validate all 52 rendered structures during every curriculum build |
+| document structure | the article-based chapter layer lacked a chapter contents renderer and unique Part-qualified anchors; later repair flattened the printed Part/chapter margins and imposed a continuous chapter sequence despite Part ownership; PDF bookmarks were originally flat, practice chapters were duplicated or omitted, worksheet IDs were hidden from navigation, and unselected assessment Gate headings leaked | restart visible chapter numbers inside each Part while keeping Part-qualified anchors; enforce progressively indented Part--chapter--section contents that agree with the nested PDF outline; align unnumbered section titles with numbered peers; give each selected practice rendering one source-owned unit chapter with stable-ID worksheet sections; emit only the selected assessment Gate and forms; validate all 52 rendered structures during every curriculum build |
 
 ## Grammar and lexicon evidence boundary
 

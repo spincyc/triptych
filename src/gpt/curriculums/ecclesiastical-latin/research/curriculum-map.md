@@ -28,12 +28,15 @@ remain owner-controlled remediation or delayed-recall sources and are not
 required page completion. Advancement depends on the mastery evidence, not the
 second session's end.
 
-Every rendered publication uses one continuous chapter sequence with chapters
-nested beneath Parts and sections beneath chapters in both the contents and PDF
-outline. Each module's Selected Practice and Answer Key contains exactly one
-source-owned practice chapter and the same two selected stable worksheet IDs as
-learner and solution sections. Each assessment half contains only its selected
-Gate and stable form IDs; common protocol and scoring material appears once.
+Every rendered publication restarts its visible chapter sequence within each
+Part, while Part-qualified PDF destinations keep repeated local numbers unique.
+The contents visibly nest chapters beneath Parts and sections beneath chapters,
+and the PDF outline preserves the same hierarchy. Numbered and unnumbered
+section titles share one title column after the section-number gutter. Each
+module's Selected Practice and Answer Key contains exactly one source-owned
+practice chapter and the same two selected stable worksheet IDs as learner and
+solution sections. Each assessment half contains only its selected Gate and
+stable form IDs; common protocol and scoring material appears once.
 
 The full owner bank contains 184 worksheet variants and 1,078 exercise calls.
 The learning packets select 92 variants and 539 calls for normal printing, with

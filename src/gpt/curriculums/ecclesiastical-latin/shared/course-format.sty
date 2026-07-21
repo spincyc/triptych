@@ -32,7 +32,7 @@
 % The shared Triptych preamble uses the article class.  Add a book-like chapter
 % level without duplicating the shared metadata and final-page rights machinery.
 \titleclass{\chapter}{straight}[\part]
-\newcounter{chapter}
+\newcounter{chapter}[part]
 \renewcommand{\thechapter}{\arabic{chapter}}
 \makeatletter
 \providecommand{\@chapapp}{Chapter}
@@ -44,8 +44,13 @@
 \def\toclevel@section{2}
 \def\toclevel@subsection{3}
 \providecommand*\l@chapter{}
-\renewcommand*\l@chapter{\@dottedtocline{0}{0em}{2.7em}}
-\renewcommand*\l@section{\@dottedtocline{1}{1.5em}{3.2em}}
+% The printed contents must expose the same hierarchy as the PDF outline.
+% Parts occupy the left margin, chapters move one step inward, and sections
+% move another step inward.  Keep a number gutter even for unnumbered section
+% leaves so worksheet, solution, and assessment titles align with numbered
+% section titles rather than with their number column.
+\renewcommand*\l@chapter{\@dottedtocline{0}{2em}{2.7em}}
+\renewcommand*\l@section{\@dottedtocline{1}{3em}{3.2em}}
 % The universal preamble loads hyperref before this document-local titlesec
 % layer.  Install hyperref's own titlesec bridge explicitly so numbered
 % destinations are deferred until titlesec places the printed heading; without
@@ -83,9 +88,15 @@
 \makeatother
 \renewcommand{\thesection}{\thechapter.\arabic{section}}
 \providecommand{\chaptername}{Chapter}
-\def\theHchapter{\arabic{chapter}}
+% Visible chapter numbers restart within each Part.  Hypertext identifiers do
+% not: qualify them by Part so repeated local numbers retain unique anchors.
+\def\theHchapter{\arabic{part}.\arabic{chapter}}
 \def\theHsection{\theHchapter.\arabic{section}}
 \def\theHsubsection{\theHsection.\arabic{subsection}}
+
+\newcommand{\CourseUnnumberedSectionContents}[1]{%
+  \addcontentsline{toc}{section}{\protect\numberline{}#1}%
+}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -311,12 +322,12 @@
     \ifsolutions
       \section*{Solution #1 — #4}%
       \phantomsection
-      \addcontentsline{toc}{section}{Solution #1 — #4}%
+      \CourseUnnumberedSectionContents{Solution #1 — #4}%
       \markboth{Solution #1 — #4}{Solution #1 — #4}%
     \else
       \section*{Worksheet #1 — #4}%
       \phantomsection
-      \addcontentsline{toc}{section}{Worksheet #1 — #4}%
+      \CourseUnnumberedSectionContents{Worksheet #1 — #4}%
       \markboth{Worksheet #1 — #4}{Worksheet #1 — #4}%
     \fi
     \textbf{Worksheet ID:} #1\par
@@ -404,7 +415,7 @@
     \fi
     \section*{#2}%
     \phantomsection
-    \addcontentsline{toc}{section}{#2}%
+    \CourseUnnumberedSectionContents{#2}%
     \markboth{#2}{#2}%
     \textbf{Assessment ID:} #1\par
     \textbf{Level:} #3\par

@@ -10,6 +10,7 @@ import sys
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from pathlib import Path
+from statistics import median
 from typing import Sequence
 
 
@@ -66,6 +67,10 @@ ADVANCE_WHEN_MARKER = re.compile(r"\bAdvance\s+when\s*:", re.IGNORECASE)
 BODY_MARGIN_POINTS = 70.0
 MINIMUM_ADVANCE_PAGE_WORDS = 90
 MINIMUM_FORM_CONTINUATION_WORDS = 80
+TOC_ROW_Y_TOLERANCE_POINTS = 1.5
+TOC_TITLE_X_TOLERANCE_POINTS = 2.0
+TOC_MINIMUM_LEVEL_INDENT_POINTS = 8.0
+TOC_MARKER_MAX_Y_POINTS = 90.0
 
 
 class StructureError(ValueError):
@@ -86,6 +91,28 @@ class Bookmark:
     level: int
     destination: str
     parent: str
+
+
+@dataclass(frozen=True)
+class BboxWord:
+    text: str
+    x_min: float
+    y_min: float
+
+
+@dataclass(frozen=True)
+class BboxLine:
+    words: tuple[BboxWord, ...]
+    y_min: float
+
+
+@dataclass(frozen=True)
+class PositionedTocEntry:
+    entry: TocEntry
+    part_ordinal: int
+    gutter_x: float
+    title_x: float
+    continuation_title_x: tuple[float, ...]
 
 
 @dataclass(frozen=True)
@@ -152,7 +179,8 @@ def _split_numberline(body: str) -> tuple[str | None, str]:
     number, index = _read_group(
         stripped, len(command), "{", "}", "table-of-contents numberline"
     )
-    return number.strip(), stripped[index:].strip()
+    normalized_number = number.strip()
+    return normalized_number or None, stripped[index:].strip()
 
 
 def _strip_tex_comments(text: str) -> str:
@@ -189,6 +217,50 @@ def _definition_body(
     if len(matches) != 1:
         raise StructureError(
             f"{path}: expected one {declaration}{{{declared_name}}} definition; "
+            f"found {len(matches)}"
+        )
+    return matches[0]
+
+
+def _control_sequence_definition_body(
+    text: str, control_sequence: str, path: Path
+) -> str:
+    """Return one parameter-free TeX control-sequence definition body."""
+    matches: list[str] = []
+    for declaration in (r"\def", r"\gdef", r"\edef", r"\xdef"):
+        for ordinal, position in enumerate(_command_positions(text, declaration), 1):
+            index = _skip_space(text, position + len(declaration))
+            after = index + len(control_sequence)
+            if not text.startswith(control_sequence, index) or (
+                after < len(text) and text[after].isalpha()
+            ):
+                continue
+            context = f"{path}: {declaration} declaration {ordinal}"
+            body, _ = _read_group(text, after, "{", "}", context)
+            matches.append(body)
+
+    for declaration in (r"\newcommand", r"\renewcommand", r"\providecommand"):
+        for ordinal, position in enumerate(_command_positions(text, declaration), 1):
+            index = _skip_space(text, position + len(declaration))
+            if index < len(text) and text[index] == "*":
+                index = _skip_space(text, index + 1)
+            context = f"{path}: {declaration} declaration {ordinal}"
+            try:
+                name, index = _read_group(text, index, "{", "}", context)
+            except StructureError:
+                continue
+            if name.strip() != control_sequence:
+                continue
+            index = _skip_space(text, index)
+            while index < len(text) and text[index] == "[":
+                _, index = _read_group(text, index, "[", "]", context)
+                index = _skip_space(text, index)
+            body, _ = _read_group(text, index, "{", "}", context)
+            matches.append(body)
+
+    if len(matches) != 1:
+        raise StructureError(
+            f"{path}: expected one definition of {control_sequence}; "
             f"found {len(matches)}"
         )
     return matches[0]
@@ -232,6 +304,31 @@ def _conditional_branches(
 def validate_course_format_layout(source_text: str, path: Path) -> None:
     """Enforce grouped worksheet and assessment pagination contracts."""
     text = _strip_tex_comments(source_text)
+    chapter_destination = _control_sequence_definition_body(
+        text, r"\theHchapter", path
+    )
+    if not any(
+        token in chapter_destination
+        for token in (r"\arabic{part}", r"\thepart", r"\theHpart")
+    ) or not any(
+        token in chapter_destination
+        for token in (r"\arabic{chapter}", r"\thechapter")
+    ):
+        raise StructureError(
+            f"{path}: theHchapter must combine a Part-qualified component "
+            "with the local chapter number"
+        )
+    section_destination = _control_sequence_definition_body(
+        text, r"\theHsection", path
+    )
+    if r"\theHchapter" not in section_destination or not any(
+        token in section_destination
+        for token in (r"\arabic{section}", r"\thesection")
+    ):
+        raise StructureError(
+            f"{path}: theHsection must derive from the Part-qualified "
+            "theHchapter and the local section number"
+        )
     begin_bank = _definition_body(
         text, r"\newcommand", r"\BeginExerciseBank", path
     )
@@ -900,6 +997,275 @@ def validate_toc_rendering(
         raise StructureError("\n".join(errors))
 
 
+def _toc_bbox_rows(bbox_text: str) -> list[list[BboxWord]]:
+    """Return visual rows from every rendered Contents page."""
+    try:
+        root = ET.fromstring(bbox_text)
+    except ET.ParseError as error:
+        raise StructureError(f"cannot parse PDF bounding-box output: {error}") from error
+
+    contents_pages: list[list[BboxLine]] = []
+    errors: list[str] = []
+    pages = [element for element in root.iter() if element.tag.endswith("page")]
+    for physical_page, page in enumerate(pages, 1):
+        words: list[BboxWord] = []
+        word_positions: dict[int, BboxWord] = {}
+        for word in (
+            element for element in page.iter() if element.tag.endswith("word")
+        ):
+            value = (word.text or "").strip()
+            if not value:
+                continue
+            try:
+                x_min = float(word.attrib["xMin"])
+                y_min = float(word.attrib["yMin"])
+            except (KeyError, ValueError):
+                errors.append(
+                    f"PDF bounding-box word on physical page {physical_page} "
+                    "lacks valid xMin/yMin coordinates"
+                )
+                continue
+            positioned_word = BboxWord(value, x_min, y_min)
+            words.append(positioned_word)
+            word_positions[id(word)] = positioned_word
+        if any(
+            word.text.casefold() == "contents"
+            and word.y_min <= TOC_MARKER_MAX_Y_POINTS
+            for word in words
+        ):
+            lines: list[BboxLine] = []
+            for line in (
+                element for element in page.iter() if element.tag.endswith("line")
+            ):
+                line_words = tuple(
+                    word_positions[id(word)]
+                    for word in line.iter()
+                    if word.tag.endswith("word") and id(word) in word_positions
+                )
+                if not line_words:
+                    continue
+                raw_y_min = line.attrib.get("yMin")
+                if raw_y_min is None:
+                    line_y_min = min(word.y_min for word in line_words)
+                else:
+                    try:
+                        line_y_min = float(raw_y_min)
+                    except ValueError:
+                        errors.append(
+                            f"PDF bounding-box line on physical page "
+                            f"{physical_page} lacks a valid yMin coordinate"
+                        )
+                        continue
+                lines.append(BboxLine(line_words, line_y_min))
+            if not lines:
+                errors.append(
+                    f"PDF bounding-box Contents page {physical_page} has no "
+                    "line geometry"
+                )
+            contents_pages.append(lines)
+
+    if errors:
+        raise StructureError("\n".join(errors))
+    if not contents_pages:
+        raise StructureError(
+            "PDF bounding-box output has no identifiable Contents page"
+        )
+
+    rows: list[list[BboxWord]] = []
+    for lines in contents_pages:
+        current: list[BboxWord] = []
+        current_line_y: list[float] = []
+        current_y = 0.0
+        for line in sorted(
+            lines,
+            key=lambda item: (
+                item.y_min,
+                min(word.x_min for word in item.words),
+            ),
+        ):
+            if (
+                current
+                and abs(line.y_min - current_y) > TOC_ROW_Y_TOLERANCE_POINTS
+            ):
+                rows.append(sorted(current, key=lambda item: item.x_min))
+                current = []
+                current_line_y = []
+            current.extend(line.words)
+            current_line_y.append(line.y_min)
+            current_y = median(current_line_y)
+        if current:
+            rows.append(sorted(current, key=lambda item: item.x_min))
+    return rows
+
+
+def _toc_entry_title(entry: TocEntry, part_ordinal: int) -> str:
+    if entry.kind != "part":
+        return _plain_title(entry.title)
+    match = re.fullmatch(
+        r"([IVXLCDM]+)\s*\\hspace\s*\{\s*1em\s*\}\s*(.*)", entry.title
+    )
+    return _plain_title(match.group(2) if match is not None else entry.title)
+
+
+def _position_toc_entry(
+    rows: Sequence[Sequence[BboxWord]],
+    start: int,
+    entry: TocEntry,
+    part_ordinal: int,
+) -> tuple[int, PositionedTocEntry] | None:
+    """Match one ToC entry, consuming any visual title-continuation rows."""
+    row = rows[start]
+    if entry.kind == "part":
+        marker = _roman(part_ordinal)
+    else:
+        marker = entry.number
+    title_offset = 1 if marker is not None else 0
+    first_title_offset = title_offset
+    if len(row) <= title_offset:
+        return None
+    if marker is not None and row[0].text.casefold() != marker.casefold():
+        return None
+
+    expected_words = _toc_entry_title(entry, part_ordinal).casefold().split()
+    if not expected_words:
+        return None
+    expected_index = 0
+    row_index = start
+    continuation_title_x: list[float] = []
+    while row_index < len(rows):
+        title_words = rows[row_index][title_offset:] if row_index == start else rows[row_index]
+        if not title_words:
+            return None
+        remaining = len(expected_words) - expected_index
+        comparable = min(len(title_words), remaining)
+        rendered_words = [word.text.casefold() for word in title_words[:comparable]]
+        if rendered_words != expected_words[expected_index : expected_index + comparable]:
+            return None
+        if row_index != start:
+            continuation_title_x.append(title_words[0].x_min)
+        expected_index += comparable
+        if expected_index == len(expected_words):
+            return (
+                row_index + 1,
+                PositionedTocEntry(
+                    entry,
+                    part_ordinal,
+                    row[0].x_min,
+                    row[first_title_offset].x_min,
+                    tuple(continuation_title_x),
+                ),
+            )
+        row_index += 1
+        title_offset = 0
+    return None
+
+
+def validate_toc_geometry(
+    bbox_text: str, entries: Sequence[TocEntry]
+) -> None:
+    """Require the rendered Contents to expose its structural hierarchy."""
+    rows = _toc_bbox_rows(bbox_text)
+    positioned: list[PositionedTocEntry] = []
+    errors: list[str] = []
+    cursor = 0
+    part_ordinal = 0
+
+    for entry in entries:
+        if entry.kind == "part":
+            part_ordinal += 1
+        match = next(
+            (
+                positioned_match
+                for index in range(cursor, len(rows))
+                if (
+                    positioned_match := _position_toc_entry(
+                        rows, index, entry, part_ordinal
+                    )
+                )
+                is not None
+            ),
+            None,
+        )
+        label = _rendered_entry_label(entry, part_ordinal)
+        if match is None:
+            errors.append(
+                f"rendered Contents geometry lacks an ordered row for {label}"
+            )
+            continue
+        cursor, positioned_entry = match
+        positioned.append(positioned_entry)
+
+    if errors:
+        raise StructureError("\n".join(errors))
+
+    current: dict[str, PositionedTocEntry | None] = {
+        kind: None for kind in STRUCTURAL_KINDS
+    }
+    for item in positioned:
+        entry = item.entry
+        label = _rendered_entry_label(entry, item.part_ordinal)
+        for continuation_x in item.continuation_title_x:
+            if abs(continuation_x - item.title_x) > TOC_TITLE_X_TOLERANCE_POINTS:
+                errors.append(
+                    f"rendered Contents {label} wrapped continuation is not "
+                    f"aligned with its title column: {continuation_x:.2f}pt "
+                    f"versus {item.title_x:.2f}pt; tolerance "
+                    f"{TOC_TITLE_X_TOLERANCE_POINTS:.2f}pt"
+                )
+        if entry.kind == "part":
+            current.update({kind: None for kind in STRUCTURAL_KINDS})
+            current["part"] = item
+            continue
+        parent_kind = PARENT_KIND[entry.kind]
+        parent = current[parent_kind]
+        if parent is not None:
+            parent_label = _rendered_entry_label(
+                parent.entry, parent.part_ordinal
+            )
+            gutter_delta = item.gutter_x - parent.gutter_x
+            title_delta = item.title_x - parent.title_x
+            if gutter_delta < TOC_MINIMUM_LEVEL_INDENT_POINTS:
+                errors.append(
+                    f"rendered Contents {label} gutter is not visibly indented "
+                    f"beneath {parent_label}: {gutter_delta:.2f}pt; expected at "
+                    f"least {TOC_MINIMUM_LEVEL_INDENT_POINTS:.2f}pt"
+                )
+            if title_delta < TOC_MINIMUM_LEVEL_INDENT_POINTS:
+                errors.append(
+                    f"rendered Contents {label} title is not visibly indented "
+                    f"beneath {parent_label}: {title_delta:.2f}pt; expected at "
+                    f"least {TOC_MINIMUM_LEVEL_INDENT_POINTS:.2f}pt"
+                )
+        current[entry.kind] = item
+        if entry.kind == "chapter":
+            current.update(
+                {"section": None, "subsection": None, "subsubsection": None}
+            )
+        elif entry.kind == "section":
+            current.update({"subsection": None, "subsubsection": None})
+        elif entry.kind == "subsection":
+            current["subsubsection"] = None
+
+    for kind in STRUCTURAL_KINDS[1:]:
+        peers = [item for item in positioned if item.entry.kind == kind]
+        if len(peers) < 2:
+            continue
+        expected_title_x = median(item.title_x for item in peers)
+        for item in peers:
+            if abs(item.title_x - expected_title_x) <= TOC_TITLE_X_TOLERANCE_POINTS:
+                continue
+            label = _rendered_entry_label(item.entry, item.part_ordinal)
+            errors.append(
+                f"rendered Contents {label} title column is not aligned with "
+                f"other {kind} entries: {item.title_x:.2f}pt versus "
+                f"{expected_title_x:.2f}pt; tolerance "
+                f"{TOC_TITLE_X_TOLERANCE_POINTS:.2f}pt"
+            )
+
+    if errors:
+        raise StructureError("\n".join(errors))
+
+
 def _run_text(command: Sequence[str], purpose: str) -> str:
     try:
         result = subprocess.run(
@@ -1135,6 +1501,7 @@ def validate_pdf(
     )
     validate_body_word_pages(bbox_text)
     validate_chapter_positions(bbox_text, entries)
+    validate_toc_geometry(bbox_text, entries)
 
     destinations_text = _run_text(
         ("pdfinfo", "-dests", str(pdf_path)), "PDF destination inspection"
@@ -1206,6 +1573,8 @@ def _validate_part_population(
 
 def _validate_numbers(entries: Sequence[TocEntry], errors: list[str]) -> None:
     expected_chapter = 1
+    numbered_chapters = 0
+    part_ordinal = 0
     current_numbers: dict[str, str | None] = {
         "chapter": None,
         "section": None,
@@ -1216,6 +1585,14 @@ def _validate_numbers(entries: Sequence[TocEntry], errors: list[str]) -> None:
 
     for entry in entries:
         if entry.kind == "part":
+            part_ordinal += 1
+            expected_chapter = 1
+            current_numbers.update(
+                {"chapter": None, "section": None, "subsection": None, "subsubsection": None}
+            )
+            expected_child.update(
+                {"section": 1, "subsection": 1, "subsubsection": 1}
+            )
             continue
         if entry.kind == "chapter":
             current_numbers.update(
@@ -1223,6 +1600,10 @@ def _validate_numbers(entries: Sequence[TocEntry], errors: list[str]) -> None:
             )
             expected_child.update({"section": 1, "subsection": 1, "subsubsection": 1})
             if entry.number is None:
+                errors.append(
+                    f"Unnumbered chapter is not permitted in Part "
+                    f"{_roman(part_ordinal)}: {entry.title}"
+                )
                 continue
             if not entry.number.isdecimal():
                 errors.append(f"Chapter number is not an integer: {entry.number!r}")
@@ -1230,11 +1611,13 @@ def _validate_numbers(entries: Sequence[TocEntry], errors: list[str]) -> None:
             actual = int(entry.number)
             if actual != expected_chapter:
                 errors.append(
-                    "Chapter sequence is not continuous across Parts: "
-                    f"expected {expected_chapter}, found {actual} ({entry.title})"
+                    f"Chapter sequence within Part {_roman(part_ordinal)} is "
+                    f"invalid: expected {expected_chapter}, found {actual} "
+                    f"({entry.title})"
                 )
             current_numbers["chapter"] = entry.number
             expected_chapter += 1
+            numbered_chapters += 1
             continue
 
         parent_kind = PARENT_KIND[entry.kind]
@@ -1273,7 +1656,7 @@ def _validate_numbers(entries: Sequence[TocEntry], errors: list[str]) -> None:
             current_numbers["subsubsection"] = None
             expected_child["subsubsection"] = 1
 
-    if expected_chapter == 1:
+    if numbered_chapters == 0:
         errors.append("document has no numbered chapters")
 
 

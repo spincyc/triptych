@@ -10,6 +10,7 @@ import tempfile
 import unittest
 from dataclasses import replace
 from pathlib import Path
+from xml.sax.saxutils import escape
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -68,21 +69,93 @@ def bookmarks(entries):
     return result
 
 
+def contents_bbox(
+    positioned_entries,
+    *,
+    new_page_destinations=(),
+    wrapped_destinations=(),
+    wrapped_first_line_words=None,
+    wrapped_continuation_x=None,
+):
+    """Build small Poppler-like bbox XHTML for rendered Contents rows."""
+    page_rows = [[]]
+    part_ordinal = 0
+    new_pages = set(new_page_destinations)
+    wrapped = set(wrapped_destinations)
+    first_line_words = dict(wrapped_first_line_words or {})
+    continuation_x = dict(wrapped_continuation_x or {})
+    for entry, gutter_x, title_x in positioned_entries:
+        if entry.destination in new_pages and page_rows[-1]:
+            page_rows.append([])
+        if entry.kind == "part":
+            part_ordinal += 1
+            number = CHECKER._roman(part_ordinal)
+            title = CHECKER._part_title(entry, part_ordinal, [])
+        else:
+            number = entry.number
+            title = CHECKER._plain_title(entry.title)
+        page_rows[-1].append(
+            (entry.destination, number, title, gutter_x, title_x)
+        )
+
+    pages = []
+    for rows in page_rows:
+        lines = [
+            '<line><word xMin="520" yMin="20">Contents</word></line>'
+        ]
+        y_min = 100.0
+        for destination, number, title, gutter_x, title_x in rows:
+            words = title.split()
+            wrap_after = first_line_words.get(destination, 4)
+            first_line = words[:wrap_after] if destination in wrapped else words
+            later_line = words[wrap_after:] if destination in wrapped else []
+            rendered = []
+            if number is not None:
+                rendered.append((number, gutter_x))
+            next_x = title_x
+            for word in first_line:
+                rendered.append((word, next_x))
+                next_x += max(8.0, len(word) * 5.0 + 3.0)
+            lines.append(
+                "<line>"
+                + "".join(
+                    f'<word xMin="{x_min:.3f}" yMin="{y_min:.3f}">'
+                    f"{escape(word)}</word>"
+                    for word, x_min in rendered
+                )
+                + "</line>"
+            )
+            if later_line:
+                next_x = continuation_x.get(destination, title_x)
+                lines.append(
+                    "<line>"
+                    + "".join(
+                        f'<word xMin="{next_x + offset * 30.0:.3f}" '
+                        f'yMin="{y_min + 9.0:.3f}">{escape(word)}</word>'
+                        for offset, word in enumerate(later_line)
+                    )
+                    + "</line>"
+                )
+                y_min += 9.0
+            y_min += 12.0
+        pages.append("<page><flow><block>" + "".join(lines) + "</block></flow></page>")
+    return "<html><body><doc>" + "".join(pages) + "</doc></body></html>"
+
+
 def generic_entries():
     return [
         part(1, "First Part", "1"),
-        chapter(1, "First chapter", "chapter.1", "1"),
-        section("1.1", "First section", "section.1.1", "1"),
-        chapter(2, "Second chapter", "chapter.2", "2"),
+        chapter(1, "First chapter", "chapter.1.1", "1"),
+        section("1.1", "First section", "section.1.1.1", "1"),
+        chapter(2, "Second chapter", "chapter.1.2", "2"),
         part(2, "Second Part", "3"),
-        chapter(3, "Third chapter", "chapter.3", "3"),
-        section("3.1", "Another section", "section.3.1", "3"),
+        chapter(1, "Third chapter", "chapter.2.1", "3"),
+        section("1.1", "Another section", "section.2.1.1", "3"),
     ]
 
 
 def module_entries():
     entries = []
-    next_chapter = 1
     practice_title = r"Unit 7: \Latin {Sum} and \Latin {Possum}"
     chapters_by_part = (
         ("Plan",),
@@ -97,8 +170,7 @@ def module_entries():
         zip(CHECKER.MODULE_PARTS, chapters_by_part), 1
     ):
         entries.append(part(ordinal, part_title))
-        for title in chapter_titles:
-            chapter_number = next_chapter
+        for chapter_number, title in enumerate(chapter_titles, 1):
             chapter_page = "1"
             if part_title == "Selected Practice":
                 chapter_page = "6"
@@ -108,17 +180,16 @@ def module_entries():
                 chapter(
                     chapter_number,
                     title,
-                    f"chapter.{chapter_number}",
+                    f"chapter.{ordinal}.{chapter_number}",
                     chapter_page,
                 )
             )
-            next_chapter += 1
             if part_title == "Core Lesson":
                 entries.append(
                     section(
                         f"{chapter_number}.1",
                         "Learner guidance",
-                        f"section.{chapter_number}.1",
+                        f"section.{ordinal}.{chapter_number}.1",
                     )
                 )
             elif part_title == "Selected Practice":
@@ -161,19 +232,19 @@ def module_entries():
 def assessment_entries():
     entries = [
         part(1, "Assessment Protocol"),
-        chapter(1, "Use, timing, and decision", "chapter.1"),
-        chapter(2, "Common assessment protocol", "chapter.2"),
-        chapter(3, "Scoring and remediation map", "chapter.3"),
+        chapter(1, "Use, timing, and decision", "chapter.1.1"),
+        chapter(2, "Common assessment protocol", "chapter.1.2"),
+        chapter(3, "Scoring and remediation map", "chapter.1.3"),
         part(2, "Learner Forms"),
-        chapter(4, "Gate I: Foundations", "chapter.4"),
+        chapter(1, "Gate I: Foundations", "chapter.2.1"),
         section(None, "F-A. Foundations mastery, Form A", "section*.fa.learner"),
         section(None, "F-B. Foundations mastery, Form B", "section*.fb.learner"),
         part(3, "Solutions and Rubrics"),
-        chapter(5, "Gate I: Foundations", "chapter.5"),
+        chapter(1, "Gate I: Foundations", "chapter.3.1"),
         section(None, "F-A. Foundations mastery, Form A", "section*.fa.key"),
         section(None, "F-B. Foundations mastery, Form B", "section*.fb.key"),
         part(4, "Scope and Sources"),
-        chapter(6, "Scope", "chapter.6"),
+        chapter(1, "Scope", "chapter.4.1"),
     ]
     return entries
 
@@ -187,6 +258,7 @@ class CurriculumStructureTests(unittest.TestCase):
         toc = r"""
 \contentsline {part}{I\hspace {1em}First Part}{1}{part.1}%
 \contentsline {chapter}{\numberline {1}A \Latin {nested {title}}}{1}{chapter.1}%
+\contentsline {section}{\numberline {}Worksheet I.1}{2}{section*.worksheet}%
 """
         out = r"""
 \BOOKMARK [0][-]{part.1}{First Part}{}%
@@ -197,9 +269,11 @@ class CurriculumStructureTests(unittest.TestCase):
         self.assertEqual(entries[1].number, "1")
         self.assertEqual(entries[1].page, "1")
         self.assertEqual(entries[1].title, r"A \Latin {nested {title}}")
+        self.assertIsNone(entries[2].number)
+        self.assertEqual(entries[2].title, "Worksheet I.1")
         self.assertEqual(parsed_bookmarks[1].parent, "part.1")
 
-    def test_accepts_continuous_chapters_across_parts_and_nested_bookmarks(self) -> None:
+    def test_accepts_chapters_restarting_with_each_part_and_nested_bookmarks(self) -> None:
         entries = generic_entries()
         CHECKER.validate_document(
             self.generic_document, entries, bookmarks(entries)
@@ -208,7 +282,7 @@ class CurriculumStructureTests(unittest.TestCase):
     def test_rendered_contents_requires_distinct_dotted_chapter_lines(self) -> None:
         entries = generic_entries() + [
             section(None, "Worksheet sample", "section*.1", "3"),
-            chapter(4, r"What ``complete'' means", "chapter.4", "4"),
+            chapter(2, r"What ``complete'' means", "chapter.2.2", "4"),
         ]
         good = """TRIPTYCH / ECCLESIASTICAL LATIN                 Contents
 
@@ -218,10 +292,10 @@ I First Part                                                   1
   1.1 First section . . . . . . . . . . . . . . . . . . .    1
 2 Second chapter . . . . . . . . . . . . . . . . . . . . .   2
 II Second Part                                                 3
-3 Third chapter . . . . . . . . . . . . . . . . . . . . .    3
-  3.1 Another section . . . . . . . . . . . . . . . . . .    3
+1 Third chapter . . . . . . . . . . . . . . . . . . . . .    3
+  1.1 Another section . . . . . . . . . . . . . . . . . .    3
   Worksheet sample . . . . . . . . . . . . . . . . . . .    3
-4 What “complete” means . . . . . . . . . . . . . . . . .    4
+2 What “complete” means . . . . . . . . . . . . . . . . .    4
 
 Disce legendo et scribendo                                    i
 \fBODY
@@ -237,12 +311,12 @@ Disce legendo et scribendo                                    i
             CHECKER.validate_toc_rendering(broken, entries)
 
         broken_section = "\n".join(
-            "  3.1 Another section 3"
-            if line.lstrip().startswith("3.1 Another section")
+            "  1.1 Another section 3"
+            if line.lstrip().startswith("1.1 Another section")
             else line
             for line in good.splitlines()
         )
-        with self.assertRaisesRegex(CHECKER.StructureError, "Section 3.1 lacks"):
+        with self.assertRaisesRegex(CHECKER.StructureError, "Section 1.1 lacks"):
             CHECKER.validate_toc_rendering(broken_section, entries)
 
         broken_unnumbered = "\n".join(
@@ -275,6 +349,190 @@ I First Part                                                   1
             CHECKER.validate_toc_rendering(
                 spilled, entries, require_single_page=True
             )
+
+    def test_toc_geometry_accepts_nested_wrapped_and_continued_rows(self) -> None:
+        entries = generic_entries()
+        entries[1] = replace(
+            entries[1], title="First chapter with deliberately wrapped words"
+        )
+        entries.append(
+            section(None, "Worksheet sample", "section*.worksheet", "3")
+        )
+        chapter_count = 0
+        section_count = 0
+        positioned = []
+        for entry in entries:
+            if entry.kind == "part":
+                positioned.append((entry, 54.0, 72.0))
+            elif entry.kind == "chapter":
+                chapter_count += 1
+                positioned.append(
+                    (entry, 68.0 + chapter_count * 0.2, 93.0 + chapter_count * 0.2)
+                )
+            elif entry.number is None:
+                positioned.append((entry, 111.4, 111.4))
+            else:
+                section_count += 1
+                positioned.append(
+                    (entry, 82.0 + section_count * 0.2, 111.0 + section_count * 0.2)
+                )
+        bbox = contents_bbox(
+            positioned,
+            new_page_destinations={"part.2"},
+            wrapped_destinations={"chapter.1.1"},
+        )
+        CHECKER.validate_toc_geometry(bbox, entries)
+
+    def test_toc_rows_keep_mixed_style_words_with_their_poppler_line(self) -> None:
+        bbox = """<doc><page>
+<line yMin="20"><word xMin="520" yMin="20">Contents</word></line>
+<line yMin="100"><word xMin="82" yMin="100">4.2</word></line>
+<line yMin="100">
+  <word xMin="111" yMin="100">First</word>
+  <word xMin="140" yMin="100">declension:</word>
+  <word xMin="191" yMin="102.6">gratia,</word>
+</line>
+<line yMin="103">
+  <word xMin="82" yMin="103">4.3</word>
+  <word xMin="111" yMin="103">Second</word>
+</line>
+</page></doc>"""
+        rows = CHECKER._toc_bbox_rows(bbox)
+        self.assertEqual(
+            [[word.text for word in row] for row in rows],
+            [
+                ["Contents"],
+                ["4.2", "First", "declension:", "gratia,"],
+                ["4.3", "Second"],
+            ],
+        )
+
+    def test_toc_geometry_accepts_title_wrapped_before_four_word_prefix(self) -> None:
+        entries = generic_entries()
+        entries[1] = replace(
+            entries[1], title="First chapter with deliberately wrapped words"
+        )
+        positioned = [
+            (
+                entry,
+                54.0
+                if entry.kind == "part"
+                else 68.0
+                if entry.kind == "chapter"
+                else 82.0,
+                72.0
+                if entry.kind == "part"
+                else 93.0
+                if entry.kind == "chapter"
+                else 111.0,
+            )
+            for entry in entries
+        ]
+        CHECKER.validate_toc_geometry(
+            contents_bbox(
+                positioned,
+                wrapped_destinations={"chapter.1.1"},
+                wrapped_first_line_words={"chapter.1.1": 2},
+            ),
+            entries,
+        )
+
+    def test_toc_geometry_rejects_flush_left_wrapped_continuation(self) -> None:
+        entries = generic_entries()
+        entries[1] = replace(
+            entries[1], title="First chapter with deliberately wrapped words"
+        )
+        positioned = [
+            (
+                entry,
+                54.0
+                if entry.kind == "part"
+                else 68.0
+                if entry.kind == "chapter"
+                else 82.0,
+                72.0
+                if entry.kind == "part"
+                else 93.0
+                if entry.kind == "chapter"
+                else 111.0,
+            )
+            for entry in entries
+        ]
+        with self.assertRaisesRegex(
+            CHECKER.StructureError,
+            "Chapter 1 wrapped continuation is not aligned with its title column",
+        ):
+            CHECKER.validate_toc_geometry(
+                contents_bbox(
+                    positioned,
+                    wrapped_destinations={"chapter.1.1"},
+                    wrapped_first_line_words={"chapter.1.1": 2},
+                    wrapped_continuation_x={"chapter.1.1": 54.0},
+                ),
+                entries,
+            )
+
+    def test_toc_geometry_rejects_flat_chapters(self) -> None:
+        entries = generic_entries()
+        positioned = [
+            (
+                entry,
+                54.0 if entry.kind in {"part", "chapter"} else 68.0,
+                72.0
+                if entry.kind == "part"
+                else 79.0
+                if entry.kind == "chapter"
+                else 97.0,
+            )
+            for entry in entries
+        ]
+        with self.assertRaisesRegex(
+            CHECKER.StructureError,
+            "Chapter 1 gutter is not visibly indented beneath Part I",
+        ):
+            CHECKER.validate_toc_geometry(contents_bbox(positioned), entries)
+
+    def test_toc_geometry_rejects_flat_sections(self) -> None:
+        entries = generic_entries()
+        positioned = [
+            (
+                entry,
+                54.0
+                if entry.kind == "part"
+                else 68.0,
+                72.0
+                if entry.kind == "part"
+                else 93.0
+                if entry.kind == "chapter"
+                else 100.0,
+            )
+            for entry in entries
+        ]
+        with self.assertRaisesRegex(
+            CHECKER.StructureError,
+            "Section 1.1 gutter is not visibly indented beneath Chapter 1",
+        ):
+            CHECKER.validate_toc_geometry(contents_bbox(positioned), entries)
+
+    def test_toc_geometry_aligns_numbered_and_unnumbered_section_titles(self) -> None:
+        entries = generic_entries() + [
+            section(None, "Worksheet sample", "section*.worksheet", "3")
+        ]
+        positioned = []
+        for entry in entries:
+            if entry.kind == "part":
+                positioned.append((entry, 54.0, 72.0))
+            elif entry.kind == "chapter":
+                positioned.append((entry, 68.0, 93.0))
+            elif entry.number is None:
+                positioned.append((entry, 82.0, 82.0))
+            else:
+                positioned.append((entry, 82.0, 111.0))
+        with self.assertRaisesRegex(
+            CHECKER.StructureError,
+            "unnumbered section 'Worksheet sample' title column is not aligned",
+        ):
+            CHECKER.validate_toc_geometry(contents_bbox(positioned), entries)
 
     def test_chapter_labels_cannot_be_orphaned_at_the_page_foot(self) -> None:
         entries = [part(1, "First Part"), chapter(1, "First", "chapter.1")]
@@ -464,6 +722,44 @@ I First Part                                                   1
         ):
             CHECKER.validate_course_format_layout(without_initialization, path)
 
+    def test_course_format_requires_part_qualified_hypertext_destinations(self) -> None:
+        path = (
+            ROOT
+            / "src/gpt/curriculums/ecclesiastical-latin/shared/course-format.sty"
+        )
+        source = path.read_text(encoding="utf-8")
+        CHECKER.validate_course_format_layout(source, path)
+
+        symbolic_part = source.replace(
+            r"\def\theHchapter{\arabic{part}.\arabic{chapter}}",
+            r"\def\theHchapter{curriculum.\theHpart.\thechapter}",
+            1,
+        )
+        self.assertNotEqual(symbolic_part, source)
+        CHECKER.validate_course_format_layout(symbolic_part, path)
+
+        without_part = source.replace(
+            r"\def\theHchapter{\arabic{part}.\arabic{chapter}}",
+            r"\def\theHchapter{\arabic{chapter}}",
+            1,
+        )
+        with self.assertRaisesRegex(
+            CHECKER.StructureError,
+            "theHchapter must combine a Part-qualified component",
+        ):
+            CHECKER.validate_course_format_layout(without_part, path)
+
+        without_chapter_scope = source.replace(
+            r"\def\theHsection{\theHchapter.\arabic{section}}",
+            r"\def\theHsection{\arabic{part}.\arabic{section}}",
+            1,
+        )
+        with self.assertRaisesRegex(
+            CHECKER.StructureError,
+            "theHsection must derive from the Part-qualified theHchapter",
+        ):
+            CHECKER.validate_course_format_layout(without_chapter_scope, path)
+
     def test_course_format_assessment_contract_rejects_each_missing_guard(self) -> None:
         path = (
             ROOT
@@ -649,11 +945,33 @@ Page  Destination                 Name
         with self.assertRaisesRegex(CHECKER.StructureError, "repeats worksheet ID I.1"):
             CHECKER._worksheet_definitions(block, Path("exercise.tex"), "I.1")
 
-    def test_rejects_chapter_number_restart_at_a_new_part(self) -> None:
+    def test_rejects_chapter_number_that_does_not_restart_at_a_new_part(self) -> None:
         entries = generic_entries()
-        entries[5] = replace(entries[5], number="1")
+        entries[5] = replace(entries[5], number="3")
         with self.assertRaisesRegex(
-            CHECKER.StructureError, "continuous across Parts: expected 3, found 1"
+            CHECKER.StructureError,
+            "within Part II is invalid: expected 1, found 3",
+        ):
+            CHECKER.validate_document(
+                self.generic_document, entries, bookmarks(entries)
+            )
+
+    def test_rejects_duplicate_destinations_after_chapter_number_restart(self) -> None:
+        entries = generic_entries()
+        entries[5] = replace(entries[5], destination="chapter.1.1")
+        with self.assertRaisesRegex(
+            CHECKER.StructureError, "table of contents contains duplicate destinations"
+        ):
+            CHECKER.validate_document(
+                self.generic_document, entries, bookmarks(entries)
+            )
+
+    def test_rejects_unnumbered_toc_chapters(self) -> None:
+        entries = generic_entries()
+        entries[1] = replace(entries[1], number=None)
+        with self.assertRaisesRegex(
+            CHECKER.StructureError,
+            "Unnumbered chapter is not permitted in Part I: First chapter",
         ):
             CHECKER.validate_document(
                 self.generic_document, entries, bookmarks(entries)
@@ -664,7 +982,7 @@ Page  Destination                 Name
         entries[6] = replace(entries[6], number="2.2")
         with self.assertRaisesRegex(
             CHECKER.StructureError,
-            "Section sequence is invalid: expected 3.1, found 2.2",
+            "Section sequence is invalid: expected 1.1, found 2.2",
         ):
             CHECKER.validate_document(
                 self.generic_document, entries, bookmarks(entries)
@@ -703,7 +1021,7 @@ Page  Destination                 Name
 
         broken = [
             replace(entry, title="Different worksheet")
-            if entry.destination == "chapter.8"
+            if entry.destination == "chapter.6.3"
             else entry
             for entry in entries
         ]
@@ -714,7 +1032,7 @@ Page  Destination                 Name
 
         wrapped = [
             replace(entry, title="Selected worksheet solutions")
-            if entry.destination == "chapter.7"
+            if entry.destination == "chapter.6.2"
             else entry
             for entry in entries
         ]
@@ -762,8 +1080,8 @@ Page  Destination                 Name
         entries = module_entries()
         CHECKER.validate_document(document, entries, bookmarks(entries))
         for destination, wrapper_destination, expected in (
-            ("chapter.4", "chapter*.worksheet-wrapper", "worksheet .*expected source-owned unit"),
-            ("chapter.8", "chapter*.solution-wrapper", "solution .*expected source-owned unit"),
+            ("chapter.4.1", "chapter*.worksheet-wrapper", "worksheet .*expected source-owned unit"),
+            ("chapter.6.3", "chapter*.solution-wrapper", "solution .*expected source-owned unit"),
         ):
             with self.subTest(destination=destination):
                 index = next(
@@ -840,7 +1158,7 @@ Page  Destination                 Name
 
         broken = [
             replace(entry, page="9")
-            if entry.destination == "chapter.8"
+            if entry.destination == "chapter.6.3"
             else entry
             for entry in entries
         ]
@@ -865,7 +1183,7 @@ Page  Destination                 Name
 
         broken = [
             replace(entry, title="Gate II: Complete Core Grammar")
-            if entry.destination == "chapter.4"
+            if entry.destination == "chapter.2.1"
             else replace(entry, title="C-A. Foreign form")
             if entry.destination == "section*.fa.learner"
             else entry
@@ -899,7 +1217,7 @@ Page  Destination                 Name
         gate_index = next(
             index
             for index, entry in enumerate(entries)
-            if entry.destination == "chapter.4"
+            if entry.destination == "chapter.2.1"
         )
         broken = list(entries)
         broken.insert(
@@ -921,7 +1239,7 @@ Page  Destination                 Name
 
         repeated = [
             replace(entry, title="Common assessment protocol")
-            if entry.destination == "chapter.6"
+            if entry.destination == "chapter.4.1"
             else entry
             for entry in entries
         ]

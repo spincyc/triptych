@@ -193,24 +193,29 @@ submodules in prerequisite order, and follow them with their enrichment and
 selected student practice. Put the work record and mastery decision before all
 answer material. Place all keys after all student-facing material.
 
-Within each publication, number chapters continuously across Parts and number
-sections from their owning chapter. Contents and PDF bookmarks preserve the
-Part--chapter--section hierarchy. Each selected practice source owns exactly one
-numbered unit chapter in both its learner and solution renderings; the shell
-does not add a second generic solution chapter. List every rendered worksheet
-or solution beneath that chapter as an unnumbered section whose navigation
-title contains its stable worksheet ID. Begin the first selected worksheet on
-the unit chapter's page when space permits and force a new page between later
-learner worksheets and between later keyed solutions, so neither form ends as
-a fragmentary spill page. Keep each exercise or assessment item's identifier,
-prompt, response space, and keyed answer together as one reviewable unit. For a
-long form, declare and review a deliberate midpoint rather than leaving a lone
-item, answer fragment, or answer rule on a tail page. No physical page contains
-only running furniture or unwritten rules, and an `Advance when` box is not the
-only substantive content on a module page. A selectively rendered assessment
-emits only its selected Gate heading, lists the selected forms as sections
-beneath it, and prints common protocol and scoring apparatus once rather than
-once per learner/key rendering.
+Within each publication, restart Arabic chapter numbering inside every Part
+and number sections from their owning chapter. Qualify PDF destinations by
+Part so repeated local chapter and section numbers remain unique. Contents and
+PDF bookmarks preserve the Part--chapter--section hierarchy: chapter entries
+are visibly indented beneath Parts, section entries are indented another step,
+and an unnumbered section title aligns with numbered peer titles after the same
+reserved number gutter. Every chapter listed in the contents is numbered. Each
+selected practice source owns exactly one numbered unit chapter in both its
+learner and solution renderings; the shell does not add a second generic
+solution chapter. List every rendered worksheet or solution beneath that
+chapter as an unnumbered section whose navigation title contains its stable
+worksheet ID. Begin the first selected worksheet on the unit chapter's page
+when space permits and force a new page between later learner worksheets and
+between later keyed solutions, so neither form ends as a fragmentary spill
+page. Keep each exercise or assessment item's identifier, prompt, response
+space, and keyed answer together as one reviewable unit. For a long form,
+declare and review a deliberate midpoint rather than leaving a lone item,
+answer fragment, or answer rule on a tail page. No physical page contains only
+running furniture or unwritten rules, and an `Advance when` box is not the only
+substantive content on a module page. A selectively rendered assessment emits
+only its selected Gate heading, lists the selected forms as sections beneath
+it, and prints common protocol and scoring apparatus once rather than once per
+learner/key rendering.
 
 Then give, in order:
 
