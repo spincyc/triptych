@@ -29,7 +29,8 @@ The thesis is that Saint Anthony's history is best measured by changing pastoral
 - The conflict among the current 1903 and 1923 diocesan establishment labels.
 - The cataloged 4 April 1921 church photograph, circa-1924 rectory photograph, Raphael Quinn building attribution, and unresolved relationship among those records and the present fabric.
 - The June 1923 request for a priest, Ambrose Brunton's appointment, and the distinction between the archive's “Brunton” authority record and the 1925 directory's printed “Brenton.”
-- Irish Capuchin service, representative clergy, and directory snapshots through 1968, without claiming a complete pastor list.
+- Irish Capuchin service and an evidence-bounded historical succession of pastors, administrators, and other publicly documented leaders, preserving office distinctions, source conflicts, and gaps.
+- Checked directory personnel snapshots through 1998, labeled search-text alignment leads through 2000, the unresolved 2001–17 March 2016 interval, and the official 2016 appointment and current role of Arogyaiah (Aaron) Bandanadam, M.F.
 - Directory-named missions and stations, especially the 1923 and 1941 reservation listings, with explicit limits on what administrative labels reveal about Indigenous experience.
 - Transfer from the Archdiocese of San Francisco to the Diocese of Santa Rosa in 1962.
 - The 1968–1969 personnel and Covelo-listing transition as a directory-supported sequence, not an unlocated juridical handoff act.
@@ -42,7 +43,7 @@ The thesis is that Saint Anthony's history is best measured by changing pastoral
 - A claim that 1923 was the first church. A cataloged photograph is dated 4 April 1921.
 - A claim that the present building is wholly the 1921 photographed building, that Raphael Quinn built it from the ground up, or that a particular dedication occurred. No deed, permit, architectural survey, construction contract, cornerstone record, or dedication act was located.
 - A claim that Sebastian Brennan founded the Willits parish in 1903. His archive record places him elsewhere in Mendocino County before later service in Willits.
-- A complete clerical, sacramental, financial, membership, school, property, or building-maintenance series.
+- A complete appointment-decree series, biography of every cleric, sacramental, financial, membership, school, property, or building-maintenance series. The historical list records the most complete public succession recovered, not exact canonical tenure where no decree was checked.
 - A claim that directory stations document Indigenous assent, conversion, attendance, sacramental experience, or present identity. They document the publishing institution's administrative classification.
 - A complete history of the Sherwood Valley Band of Pomo Indians, Round Valley Indian Tribes, Mendocino County settlement, logging, rail, or highway development.
 - An exact legal date or instrument for the 1968–1969 Capuchin-to-diocesan transition. The checked evidence supplies adjacent annual snapshots and regional corroboration, not the act itself.
@@ -54,12 +55,13 @@ The thesis is that Saint Anthony's history is best measured by changing pastoral
 
 1. Contemporary directory pages, correspondence, photographs, and official diocesan records control the event, wording, or status they actually record.
 2. Original scanned directory pages control over OCR. OCR and search-inside results were used to locate entries, then the named scans were checked visually where the audit says so.
-3. Archival catalog descriptions establish the archive's identity, date, creator, scope, and authority record; they do not disclose unseen document contents or settle a building question by themselves.
-4. Current parish and diocesan pages establish cutoff-bound institutional self-description. Conflicting official dates remain visible rather than silently harmonized.
-5. Tribal institutional history controls the community's own homeland and political-history description over settler shorthand. Catholic directories remain evidence of Catholic administration, not tribal voice.
-6. Civic planning records and local historical compilations supply town context; temporal proximity does not establish that rail or timber growth caused the mission.
-7. Journalism supplies attributed estimates, recollections, and dated community activity, not audited membership or finance.
-8. Negative findings are cutoff-bound: “not located” never means that no parish, diocesan, Capuchin, tribal, county, or family archive contains the record.
+3. Annual directory years establish publication snapshots, not exact appointment or departure dates. Printed office labels control; a first-listed priest is not silently assigned an unprinted canonical office.
+4. Archival catalog descriptions establish the archive's identity, date, creator, scope, and authority record; they do not disclose unseen document contents or settle a building question by themselves.
+5. Current parish and diocesan pages establish cutoff-bound institutional self-description. Conflicting official dates remain visible rather than silently harmonized.
+6. Tribal institutional history controls the community's own homeland and political-history description over settler shorthand. Catholic directories remain evidence of Catholic administration, not tribal voice.
+7. Civic planning records and local historical compilations supply town context; temporal proximity does not establish that rail or timber growth caused the mission.
+8. Journalism supplies attributed estimates, recollections, and dated community activity, not audited membership or finance.
+9. Negative findings are cutoff-bound: “not located” never means that no parish, diocesan, Capuchin, tribal, county, or family archive contains the record.
 
 ## Terminology
 
@@ -78,9 +80,11 @@ The thesis is that Saint Anthony's history is best measured by changing pastoral
 - The 1921 church photograph, Quinn building attribution, and circa-1924 rectory photograph prove a building sequence but do not identify every campaign or the continuity of all present fabric.
 - The 1925 directory prints “Ambrose Brenton”; the archive's priest authority record identifies Ambrose Brunton. Both witnesses are reported rather than silently correcting the directory.
 - The 1923 and 1941 directories reveal a wide station geography but no corresponding Indigenous-authored account of the encounters was located.
+- Checked directory snapshots, archival appointments, and official records provide a source-qualified resident succession skeleton, not a complete appointment ledger. Unchecked search-text alignments remain labeled finding aids; the 1950 and 1959 editions were unavailable, the 1997 entry was unusable, and checked public sources leave 2001 through 17 March 2016 unresolved.
+- Isidore Kennedy appears in directory entries before his archive authority record's exact 17 June 1954 pastor appointment. Both witnesses are retained rather than silently harmonized.
 - The 1968 and 1969 directories support a personnel transition; the regional Elk history says countywide Irish Capuchin service ended in 1968. No Willits-specific decree, contract, farewell notice, or appointment act was located.
 - No complete evidence fixes when Queen of Peace was built, formally established, retitled, or first served from Willits. The 1969 directory is the first checked Saint Anthony entry naming it.
-- No continuous account from 1969 to the present was located. Current and journalistic snapshots are not used to fill that gap with invented continuity.
+- Checked directory snapshots establish named change points from 1969 through 1998, while annual search text supplies only labeled alignment leads through 2000; a documented evidence gap follows through 17 March 2016. Current and journalistic snapshots are not used to manufacture continuity across either interval.
 
 ## Rights and quotation plan
 

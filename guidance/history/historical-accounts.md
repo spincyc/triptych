@@ -86,6 +86,27 @@ rights, and review state. A timeline distinguishes event, surviving witness,
 edition, and later judgment. Dates that are narrative facts and uncertainty that
 changes a claim remain in the narrative.
 
+### Catholic parish histories
+
+Every Catholic parish-history leaf includes a terminal `Historical List of
+Pastors` after `Scope, Method, and Historical Coordinates` and before any dated
+orientation timeline and references. The list aims at the full succession
+through the work's as-of date. For each verified officeholder it gives the name;
+the office or title stated by the source; religious institute or diocesan
+affiliation when material; documented service dates or bounded witness years;
+and an exact source locus.
+
+Distinguish pastors from rectors, administrators, mission superiors, assisting
+clergy, and leaders of a canonically distinct community. Do not turn annual
+directory snapshots into continuous tenure or silently fill a gap. Mark
+approximate dates, conflicting successions, vacancies, and unresolved intervals
+explicitly. If a gapless succession cannot be recovered, publish the most
+complete source-audited list available, label its limits, and record the source
+families searched and consequential gaps in the source audit. Pastor identities
+and date ranges must agree with the evidence map, and consequential leadership
+changes remain integrated into the narrative rather than appearing only in the
+appendix.
+
 ## Profile gate
 
 Every major date, name, witness, edition, quotation, and interpretive hinge must
@@ -93,3 +114,7 @@ agree with the evidence map. Material disputes, negative results, and
 book-specific variation remain visible. A familiar title or claim of completeness
 must match the recorded corpus; source-audited status never implies independent
 historical, textual, theological, or canonical review.
+
+For a Catholic parish history, absence of the required list, an unmarked
+succession gap, or an office or date unsupported by the evidence map fails the
+profile gate.

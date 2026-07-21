@@ -39,7 +39,8 @@ The thesis is that Saint Stanislaus survived by changing the scale on which it s
 - The September 2016 sesquicentennial observances and consecration of the rebuilt high altar.
 - The 2024 campus-expansion announcement; the October 2024 purchase of 501–505 West Historic Mitchell Street by the named property LLC; official 2025 preservation and special-use approvals; and the absence of completion or occupancy evidence at the cutoff.
 - Dated sacramental, attendance, retreat, procession, and association snapshots as evidence of active use, without turning them into a resident-neighborhood census or an audited financial history.
-- A building ledger, orientation timeline, grouped references, and claim-level evidence map.
+- A source-qualified historical succession of pastors, administrators, and other publicly documented parish leaders, with office distinctions and gaps preserved.
+- A building ledger, historical list of pastors, orientation timeline, grouped references, and claim-level evidence map.
 
 ## Excluded or bounded
 
@@ -72,7 +73,8 @@ The thesis is that Saint Stanislaus survived by changing the scale on which it s
 7. Professional conservation and roofing accounts establish contractor methods and project scope, not parish theology or total historical significance.
 8. Current calendars, news items, and group pages establish dated institutional activity, not independent demographic or financial audits.
 9. Oral recollection and later retrospective claims are labeled and are not promoted over contemporary records without corroboration.
-10. Negative results are cutoff-bound: “not located” does not mean that no unpublished archive, decree, ledger, drawing, or permit outcome exists.
+10. Annual ecclesiastical directories establish a named office or first-listed priest only for the edition inspected. They do not silently establish exact appointment or departure dates.
+11. Negative results are cutoff-bound: “not located” does not mean that no unpublished archive, decree, ledger, drawing, or permit outcome exists.
 
 ## Terminology
 
@@ -98,6 +100,7 @@ The thesis is that Saint Stanislaus survived by changing the scale on which it s
 - The reported 1988 school closure and the 2003 contemplated sale derive from later local reporting and remain attributed.
 - The original oratory decree was not located. Institutional history says the oratory was erected in 2008; a later Catholic Herald sentence says 2016. The 2016 anniversary and altar-consecration records do not themselves establish a new oratory.
 - No complete parish–oratory agreement, property ledger, or diocesan governance file was located.
+- No complete parish clergy ledger or appointment-decree series was located. Early pastor dates remain retrospective; later directory ranges are bounded publication witnesses, and 1997 and 2001–2003 remain unresolved. A local retrospective's claim that Joseph Chylewski was pastor conflicts with the checked 1913–1914 directory sequence and is not treated as settled; 1915 search text remains an unverified alignment lead.
 - Sources conflict over the exact year that surviving stained-glass fragments were discovered. The account uses “early-to-mid-2010s.”
 - No comprehensive audited restoration-cost total was located.
 - The 2024 assessor record supports the property purchase, and official 2025 city records support preservation and special-use approvals. Those approvals remained subject to permits or occupancy requirements; no completion or occupancy proof was located by 2026-07-19.
@@ -111,20 +114,21 @@ The thesis is that Saint Stanislaus survived by changing the scale on which it s
 - HABS, National Register, municipal, state, archival-catalog, parish, diocesan, journalistic, and contractor pages remain linked under their own terms; public access is not treated as permission to reproduce their media.
 - Names, dates, addresses, building descriptions, offices, conventional architectural terms, source titles, and bounded statistics are used as facts or identifiers.
 - Project-created prose is covered by the repository license; third-party sources and linked media are not relicensed.
-- Internal work-specific distribution review completed 2026-07-19 for quotations, translation, embedded links, source-site restrictions, and fonts; independent legal or rights review remains outstanding as a maturity limitation.
+- Internal work-specific distribution review completed 2026-07-19 and renewed 2026-07-21 for the pastor-list revision; independent legal or rights review remains outstanding as a maturity limitation.
 
 ## Review and production state
 
-- Source audit: completed for the claims used through 2026-07-19.
+- Source audit: completed for the claims used through the 2026-07-19 mutable-status cutoff, with historical pastoral-succession sources added and rechecked 2026-07-21.
 - Independent historical review: outstanding.
 - Independent architectural and preservation review: outstanding.
 - Independent theological and liturgical review: outstanding for the bounded worship module.
 - Independent canon-law review: outstanding for the parish/oratory module.
-- Work-specific distribution review: completed internally on 2026-07-19; independent legal or rights review remains outstanding as a maturity limitation.
+- Work-specific distribution review: completed internally on 2026-07-19 and renewed for this revision on 2026-07-21; independent legal or rights review remains outstanding as a maturity limitation.
 - Production build, log review, metadata/font/structure/text checks, every-page visual inspection, deterministic clean rebuild, and PDF installation: completed for the exact PDF recorded in `source-audit.md`.
 - Exact-snapshot distribution: not granted by source audit, build,
   installation, or commit. The separate 20 July 2026 dated rights supplement
-  grants release-specific distribution clearance to the recorded current PDF
-  hash; that operational decision supplies no independent rights, historical,
-  architectural, theological, liturgical, canon-law, or ecclesiastical review
-  or approval.
+  granted release-specific distribution clearance only to the predecessor PDF
+  hash recorded there. The revised current snapshot is held pending renewed
+  exact-snapshot authorization. Neither that operational predecessor decision
+  nor the present hold supplies independent rights, historical, architectural,
+  theological, liturgical, canon-law, or ecclesiastical review or approval.

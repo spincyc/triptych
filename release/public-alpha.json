@@ -4,9 +4,9 @@
   "provider": "gpt",
   "expected_counts": {
     "publications": 118,
-    "release": 115,
+    "release": 114,
     "review": 0,
-    "hold": 3
+    "hold": 4
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
@@ -809,12 +809,11 @@
     {
       "id": "history/catholic-parish-histories/01-st-stanislaus-milwaukee",
       "catalog": "library/historical-accounts.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "9cfcd8f32b5f19c831e274ced1a151993ac507a25d289e8f91e0f2260fe3e964"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "history/catholic-parish-histories/02-st-anthony-willits",
