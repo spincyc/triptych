@@ -30,11 +30,10 @@ PARENT_KIND = {
     "subsubsection": "subsection",
 }
 MODULE_PARTS = (
-    "Module Plan and Reference",
-    "Core Lesson",
-    "Enrichment by Submodule",
-    "Selected Practice",
-    "Mastery Decision",
+    "Lesson",
+    "Practice",
+    "Worksheets",
+    "Assessment",
     "Answer Key",
     "Scope and Sources",
 )
@@ -1752,25 +1751,25 @@ def _validate_module(
         )
         return
     parts = _entries_by_part(entries, part_indexes)
-    practice = [
+    worksheet_chapters = [
         entry
-        for entry in parts[3]
+        for entry in parts[2]
         if entry.kind == "chapter" and entry.number is not None
     ]
-    if len(practice) != 1:
+    if len(worksheet_chapters) != 1:
         errors.append(
-            "Selected Practice must contain exactly one numbered, source-owned "
-            f"unit chapter; found {len(practice)}"
+            "Worksheets must contain exactly one numbered, source-owned "
+            f"unit chapter; found {len(worksheet_chapters)}"
         )
         return
     answer_chapters = [
         entry
-        for entry in parts[5]
+        for entry in parts[4]
         if entry.kind == "chapter" and entry.number is not None
     ]
     answer_titles = [
         _normalized_title(entry.title)
-        for entry in parts[5]
+        for entry in parts[4]
         if entry.kind == "chapter"
     ]
     if any(
@@ -1779,35 +1778,35 @@ def _validate_module(
         errors.append(
             "Answer Key contains the forbidden generic Selected worksheet solutions chapter"
         )
-    practice_title = _normalized_title(practice[0].title)
+    worksheet_title = _normalized_title(worksheet_chapters[0].title)
     matching_answers = [
         entry
         for entry in answer_chapters
-        if _normalized_title(entry.title) == practice_title
+        if _normalized_title(entry.title) == worksheet_title
     ]
     if len(matching_answers) != 1:
         errors.append(
             "Answer Key must contain exactly one matching source-owned unit chapter "
-            f"for Selected Practice {practice_title!r}; found {len(matching_answers)}"
+            f"for Worksheets {worksheet_title!r}; found {len(matching_answers)}"
         )
 
     worksheet_prefix = "worksheet "
     solution_prefix = "solution "
     worksheet_entries = [
         entry
-        for entry in parts[3]
+        for entry in parts[2]
         if entry.kind == "section"
         and _normalized_title(entry.title).casefold().startswith(worksheet_prefix)
     ]
     solution_entries = [
         entry
-        for entry in parts[5]
+        for entry in parts[4]
         if entry.kind == "section"
         and _normalized_title(entry.title).casefold().startswith(solution_prefix)
     ]
     if len(worksheet_entries) != 2:
         errors.append(
-            "Selected Practice must expose exactly two worksheet sections; "
+            "Worksheets must expose exactly two worksheet sections; "
             f"found {len(worksheet_entries)}"
         )
     if len(solution_entries) != 2:
@@ -1861,13 +1860,13 @@ def _validate_module(
     bookmark_by_destination = {
         bookmark.destination: bookmark for bookmark in bookmarks
     }
-    practice_parent = practice[0].destination
+    worksheet_parent = worksheet_chapters[0].destination
     for entry in worksheet_entries:
         bookmark = bookmark_by_destination.get(entry.destination)
-        if bookmark is not None and bookmark.parent != practice_parent:
+        if bookmark is not None and bookmark.parent != worksheet_parent:
             errors.append(
                 f"worksheet {entry.destination} has bookmark parent "
-                f"{bookmark.parent!r}; expected source-owned unit {practice_parent!r}"
+                f"{bookmark.parent!r}; expected source-owned unit {worksheet_parent!r}"
             )
     if len(matching_answers) == 1:
         solution_parent = matching_answers[0].destination

@@ -156,15 +156,14 @@ def generic_entries():
 
 def module_entries():
     entries = []
-    practice_title = r"Unit 7: \Latin {Sum} and \Latin {Possum}"
+    worksheet_title = r"Unit 7: \Latin {Sum} and \Latin {Possum}"
     chapters_by_part = (
-        ("Plan",),
-        ("Lesson",),
-        ("Connections",),
-        (practice_title,),
-        ("Mastery",),
-        ("How to Use the Keys", "Enrichment models and rubrics", practice_title),
-        ("Scope",),
+        (worksheet_title,),
+        ("Transfer, retrieval, and application",),
+        (worksheet_title,),
+        ("Mastery assessment and record",),
+        ("Practice models and rubrics", worksheet_title),
+        ("Scope and Qualifications", "References", "Generation Metadata"),
     )
     for ordinal, (part_title, chapter_titles) in enumerate(
         zip(CHECKER.MODULE_PARTS, chapters_by_part), 1
@@ -172,9 +171,9 @@ def module_entries():
         entries.append(part(ordinal, part_title))
         for chapter_number, title in enumerate(chapter_titles, 1):
             chapter_page = "1"
-            if part_title == "Selected Practice":
+            if part_title == "Worksheets":
                 chapter_page = "6"
-            elif part_title == "Answer Key" and title == practice_title:
+            elif part_title == "Answer Key" and title == worksheet_title:
                 chapter_page = "10"
             entries.append(
                 chapter(
@@ -184,15 +183,15 @@ def module_entries():
                     chapter_page,
                 )
             )
-            if part_title == "Core Lesson":
+            if part_title == "Lesson":
                 entries.append(
                     section(
                         f"{chapter_number}.1",
-                        "Learner guidance",
+                        r"The indicative of \Latin {Sum}",
                         f"section.{ordinal}.{chapter_number}.1",
                     )
                 )
-            elif part_title == "Selected Practice":
+            elif part_title == "Worksheets":
                 entries.extend(
                     (
                         section(
@@ -209,7 +208,7 @@ def module_entries():
                         ),
                     )
                 )
-            elif part_title == "Answer Key" and title == practice_title:
+            elif part_title == "Answer Key" and title == worksheet_title:
                 entries.extend(
                     (
                         section(
@@ -1011,7 +1010,7 @@ Page  Destination                 Name
                 self.generic_document, entries, rendered_bookmarks
             )
 
-    def test_module_requires_practice_chapter_in_the_answer_key(self) -> None:
+    def test_module_requires_worksheet_chapter_in_the_answer_key(self) -> None:
         document = (
             "curriculums/ecclesiastical-latin/01-foundations/"
             "01-grammar-bridge"
@@ -1021,7 +1020,7 @@ Page  Destination                 Name
 
         broken = [
             replace(entry, title="Different worksheet")
-            if entry.destination == "chapter.6.3"
+            if entry.destination == "chapter.5.2"
             else entry
             for entry in entries
         ]
@@ -1032,7 +1031,7 @@ Page  Destination                 Name
 
         wrapped = [
             replace(entry, title="Selected worksheet solutions")
-            if entry.destination == "chapter.6.2"
+            if entry.destination == "chapter.5.1"
             else entry
             for entry in entries
         ]
@@ -1072,6 +1071,39 @@ Page  Destination                 Name
                 document, missing_solution, bookmarks(missing_solution)
             )
 
+    def test_module_requires_assessment_immediately_after_worksheets(self) -> None:
+        document = (
+            "curriculums/ecclesiastical-latin/01-foundations/"
+            "01-grammar-bridge"
+        )
+        self.assertEqual(
+            CHECKER.MODULE_PARTS,
+            (
+                "Lesson",
+                "Practice",
+                "Worksheets",
+                "Assessment",
+                "Answer Key",
+                "Scope and Sources",
+            ),
+        )
+        entries = module_entries()
+        CHECKER.validate_document(document, entries, bookmarks(entries))
+
+        broken = [
+            replace(entry, title=part(3, "Assessment").title)
+            if entry.destination == "part.3"
+            else replace(entry, title=part(4, "Worksheets").title)
+            if entry.destination == "part.4"
+            else entry
+            for entry in entries
+        ]
+        with self.assertRaisesRegex(
+            CHECKER.StructureError,
+            "learning module Parts differ from the required sequence",
+        ):
+            CHECKER.validate_document(document, broken, bookmarks(broken))
+
     def test_module_navigation_stays_beneath_source_owned_units(self) -> None:
         document = (
             "curriculums/ecclesiastical-latin/01-foundations/"
@@ -1080,8 +1112,16 @@ Page  Destination                 Name
         entries = module_entries()
         CHECKER.validate_document(document, entries, bookmarks(entries))
         for destination, wrapper_destination, expected in (
-            ("chapter.4.1", "chapter*.worksheet-wrapper", "worksheet .*expected source-owned unit"),
-            ("chapter.6.3", "chapter*.solution-wrapper", "solution .*expected source-owned unit"),
+            (
+                "chapter.3.1",
+                "chapter*.worksheet-wrapper",
+                "worksheet .*expected source-owned unit",
+            ),
+            (
+                "chapter.5.2",
+                "chapter*.solution-wrapper",
+                "solution .*expected source-owned unit",
+            ),
         ):
             with self.subTest(destination=destination):
                 index = next(
@@ -1099,7 +1139,7 @@ Page  Destination                 Name
                         document, broken, bookmarks(broken)
                     )
 
-    def test_module_later_practice_and_solution_forms_start_new_pages(self) -> None:
+    def test_module_later_worksheet_and_solution_forms_start_new_pages(self) -> None:
         document = (
             "curriculums/ecclesiastical-latin/01-foundations/"
             "01-grammar-bridge"
@@ -1158,7 +1198,7 @@ Page  Destination                 Name
 
         broken = [
             replace(entry, page="9")
-            if entry.destination == "chapter.6.3"
+            if entry.destination == "chapter.5.2"
             else entry
             for entry in entries
         ]

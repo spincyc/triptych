@@ -1,18 +1,11 @@
 \hypersetup{
   pdftitle={Ecclesiastical Latin — \ModuleID: \ModuleTitle},
-  pdfsubject={A self-contained two-session learning module for reading the 1962 Roman Missal}
+  pdfsubject={Lesson, practice, worksheets, assessment, and answers for reading the 1962 Roman Missal}
 }
 
 \begin{document}
 
-\CourseTitlePage
-  {\ModuleID: \ModuleTitle}
-  {\ModuleOutcome}
-  {A self-contained learning packet with a local reference card, enriched
-   submodules, selected handwritten practice, a mastery record, and matching
-   answers. This working study is not an official liturgical book or approved
-   curriculum.}
-  {Learning module; learner and terminal-key edition}
+\ModuleTitlePage
 
 \pagenumbering{roman}
 \begingroup
@@ -25,24 +18,24 @@
 \clearpage
 \pagenumbering{arabic}
 
-\part{Module Plan and Reference}
-\ModulePlan
-\ModuleReferenceCard
-
-\clearpage
-\part{Core Lesson}
+\part{Lesson}
 \SelectCourseUnits{\ModuleUnit}
 \BeginWorkedPassageBank{\ModuleWorkedBank}
+% Unit-owned gates remain in the authoritative lesson source, but a packet
+% prints its locally audited mastery criterion once, after the worksheets.
+\begingroup
+\renewcommand{\MasteryGate}[1]{}
 \input{\ModuleLessonSource}
+\endgroup
 
 \clearpage
-\part{Enrichment by Submodule}
-\chapter{Connections, transfer, and retrieval}
+\part{Practice}
+\chapter{Transfer, retrieval, and application}
 \solutionsfalse
-\ModuleEnrichment
+\ModulePractice
 
 \clearpage
-\part{Selected Practice}
+\part{Worksheets}
 \solutionsfalse
 \SelectCourseUnits{\ModuleUnit}
 \SelectWorksheetVariants{\ModuleWorksheetVariants}
@@ -50,15 +43,15 @@
 \input{\ModuleExerciseSource}
 
 \clearpage
-\part{Mastery Decision}
+\part{Assessment}
 \ModuleWorkRecord
 
 \clearpage
 \part{Answer Key}
 \input{\CourseRoot/shared/content/80-answer-key-notice}
 \solutionstrue
-\chapter{Enrichment models and rubrics}
-\ModuleEnrichment
+\chapter{Practice models and rubrics}
+\ModulePractice
 \SelectCourseUnits{\ModuleUnit}
 \SelectWorksheetVariants{\ModuleWorksheetVariants}
 \BeginExerciseBank{\ModuleExerciseBank}

@@ -8,7 +8,8 @@ of complete unfamiliar formularies plus controlled, guided, and short original
 composition. Pronunciation, ceremonial knowledge, and authority to make
 liturgical judgments are not assessed.
 
-The reader begins with the course guide and keeps the reference grammar nearby,
+The reader begins with the required `EL-GUIDE: Start Here` publication and
+keeps the reference grammar nearby,
 then follows modules EL-I.1 through EL-I.12, EL-II.1 through EL-II.14, EL-III.1
 through EL-III.12, and EL-A1 through EL-A8. The corresponding assessment
 sequence follows each stage; it is deliberately outside the two-session module
@@ -20,22 +21,25 @@ never renumbers them.
 ## Packet and selection contract
 
 Each of the 46 learning-module leaves imports exactly one authoritative course
-unit from the shared teaching source. It supplies a compact prerequisite check,
-two focused-session plan, local reference card, an extension for every internal
-teaching submodule, two selected worksheet variants, matching terminal keys,
-a work record, and an observable mastery decision. The two omitted variants
-remain owner-controlled remediation or delayed-recall sources and are not
-required page completion. Advancement depends on the mastery evidence, not the
-second session's end.
+unit from the shared teaching source. Its compact cover names the outcome,
+prerequisite, and next edge; its body then renders `Lesson`, `Practice`,
+`Worksheets`, `Assessment`, `Answer Key`, and `Scope and Sources` in that order.
+The guide, not the module, owns repeated study and answer instructions. Each
+module adds transfer practice for every internal teaching submodule, two
+selected worksheet variants, a post-worksheet mastery criterion and work
+record, and matching terminal keys. The two omitted variants remain
+owner-controlled remediation or delayed-recall sources and are not required
+page completion. Advancement depends on the mastery evidence, not the second
+session's end.
 
 Every rendered publication restarts its visible chapter sequence within each
 Part, while Part-qualified PDF destinations keep repeated local numbers unique.
 The contents visibly nest chapters beneath Parts and sections beneath chapters,
 and the PDF outline preserves the same hierarchy. Numbered and unnumbered
 section titles share one title column after the section-number gutter. Each
-module's Selected Practice and Answer Key contains exactly one source-owned
-practice chapter and the same two selected stable worksheet IDs as learner and
-solution sections. Each assessment half contains only its selected Gate and
+module's Worksheets and Answer Key Parts contain exactly one source-owned
+worksheet chapter and the same two selected stable worksheet IDs as learner
+and solution sections. Each stage-assessment half contains only its selected Gate and
 stable form IDs; common protocol and scoring material appears once.
 
 The full owner bank contains 184 worksheet variants and 1,078 exercise calls.
@@ -49,7 +53,7 @@ answer correctness or completion by a learner.
 
 | Companion | Reader role | Relationship to modules |
 |---|---|---|
-| Course guide | entry assumptions, study loop, error ledger, forms, and advancement protocol | read before EL-I.1 and revisit at each gate |
+| Start Here course guide | required orientation, packet order, study/lookup/answer protocols, error ledger, forms, and advancement method | read before EL-I.1; modules assume it thereafter; revisit forms and rules as needed |
 | Reference grammar | definitions, paradigms, syntax, genre map, lexicon, and parsing checklist | consult after an unaided hypothesis; not a replacement for module instruction |
 | EL-GATE-I · Foundations assessment | F-A and delayed F-B | follows EL-I.12 |
 | EL-GATE-II · Core-grammar assessment | C-A and delayed C-B | follows EL-II.14 |
@@ -58,9 +62,9 @@ answer correctness or completion by a learner.
 
 ## Learning-module registry
 
-Every row is one independently printable learning packet. The enrichment count records local extension/model pairs in addition to the complete selected owner lesson; the local module map gives their exact titles, prerequisite, two-session allocation, mastery evidence, and next edge.
+Every row is one independently printable learning packet. The practice count records local transfer/model pairs in addition to the complete selected owner lesson; the local module map gives their exact titles, prerequisite, two-session allocation, mastery evidence, and next edge.
 
-| Module and focus | Owner unit | Selected worksheets | Enrichment blocks | Canonical leaf |
+| Module and focus | Owner unit | Selected worksheets | Practice blocks | Canonical leaf |
 | --- | --- | --- | ---: | --- |
 | EL-I.1 · The Grammar Bridge | I.1 | I.1; I.4 | 4 | `01-foundations/01-grammar-bridge` |
 | EL-I.2 · Case, Number, Gender, and Agreement | I.2 | I.5; I.8 | 3 | `01-foundations/02-case-number-gender-agreement` |
@@ -73,7 +77,7 @@ Every row is one independently printable learning packet. The enrichment count r
 | EL-I.9 · The Perfect Active System | I.9 | I.33; I.36 | 2 | `01-foundations/09-perfect-active-system` |
 | EL-I.10 · Passive Voice and Deponent Verbs | I.10 | I.37; I.40 | 4 | `01-foundations/10-passive-deponents` |
 | EL-I.11 · Pronouns and Prepositions | I.11 | I.41; I.44 | 5 | `01-foundations/11-pronouns-prepositions` |
-| EL-I.12 · A Repeatable Method for Reading the Missal | I.12 | I.45; I.48 | 4 | `01-foundations/12-repeatable-missal-reading` |
+| EL-I.12 · A Repeatable Method for Reading the Missal | I.12 | I.45; I.48 | 3 | `01-foundations/12-repeatable-missal-reading` |
 | EL-II.1 · Relative, Interrogative, and Indefinite Pronouns | II.1 | II.1; II.4 | 4 | `02-core-grammar/13-relative-interrogative-indefinite-pronouns` |
 | EL-II.2 · Comparison, Adverbs, and Numerals | II.2 | II.5; II.8 | 3 | `02-core-grammar/14-comparison-adverbs-numerals` |
 | EL-II.3 · Infinitives and Indirect Statement | II.3 | II.9; II.12 | 3 | `02-core-grammar/15-infinitives-indirect-statement` |
@@ -113,7 +117,7 @@ Every row is one independently printable learning packet. The enrichment count r
 
 | Stage | Units | Prerequisite edge | Observable outcome | Practice family | Gate / assessment coverage |
 |---|---:|---|---|---|---|
-| Handbook | 6 decisions / methods | entry assumptions | use the study loop, choose variants, keep an error ledger, and apply advancement evidence | reusable choice, retrieval, and error forms | protocol governs every later gate |
+| Handbook | starter handbook | entry assumptions | use the study loop, choose variants, keep an error ledger, and apply advancement evidence | reusable choice, retrieval, and error forms | protocol governs every later gate |
 | Reference | 13 chapters | consulted from all stages | retrieve definitions, paradigms, syntax, genre map, lexicon, and parsing checklist | reference lookup after an unaided hypothesis | sampled by every definition, form, and parse item |
 | I. Foundations | I.1–I.12 | English grammar; no Latin | identify and produce ordinary nominal and verbal morphology; read simple connected Missal clauses | 48 variants: forms, parsing, transformations, short readings, controlled composition | F-A and delayed F-B; 90% morphology, 85% reading, no repeated structural composition error |
 | II. Core grammar | II.1–II.14 | Volume I gate | control pronouns, comparison, non-finite forms, subjunctive morphology, subordinate clauses, verbal nouns, special case syntax, and compressed order | 56 variants: paired syntax discrimination, reconstruction, reading, composition | C-A and delayed C-B; 85% clause analysis/comprehension plus defensible multi-clause composition |
@@ -166,13 +170,15 @@ Every row is one independently printable learning packet. The enrichment count r
 
 ## Definition and contrast coverage
 
-The shared teaching and reference sources contain 78 boxed definitions and 14
-explicit “do not confuse” contrasts. Definitions recur only at a stage
-boundary, after a long retrieval gap, or with a more precise use. The reference
-grammar is the retrieval home; local teaching definitions control the
-immediate exercise. Module-local enrichment extends rather than silently
-redefines those terms. The internal audit checks repeated terms for
-contradiction, and substantive corrections are listed in `source-audit.md`.
+The starter and reference sources contain 78 boxed definitions, and the shared
+sources contain 14 explicit “do not confuse” contrasts. A module lesson defines
+a term when it is genuinely new or materially refined, then later modules
+assume the prerequisite terminology rather than repeating it as preamble. The
+reference grammar is the retrieval home after an unaided attempt; the first
+teaching definition controls the immediate exercise. Module-local transfer
+practice applies rather than silently redefines those terms. The internal audit
+checks repeated terms for contradiction, and substantive corrections are
+listed in `source-audit.md`.
 
 ## Assessment denominator and exit coverage
 

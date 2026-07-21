@@ -1,57 +1,43 @@
-% Shared packet furniture. Module-specific claims and tasks live in each
-% publishable leaf's module-data.tex.
+% Shared packet furniture. Course-wide orientation belongs to EL-GUIDE;
+% module-specific claims and tasks live in each publishable leaf's
+% module-data.tex.
 
-\newcommand{\ModulePlan}{%
-  \chapter{Plan, prerequisites, and advancement decision}
-  \begin{tabularx}{\linewidth}{@{}P{1.25in}X@{}}
-    \toprule
-    \textbf{Module ID} & \ModuleID \\
-    \textbf{Course stage} & \ModuleStage \\
-    \textbf{Prerequisites} & \ModulePrerequisites \\
-    \textbf{Observable outcome} & \ModuleOutcome \\
-    \textbf{Printed practice} & \ModulePrintedPractice \\
-    \textbf{Extension bank} & \ModuleExtensionPractice \\
-    \textbf{Next dependency} & \ModuleNext \\
-    \bottomrule
-  \end{tabularx}
+\providecommand{\ModuleAssessmentDetails}{}
 
-  \section{Two focused sessions}
-  \textbf{Session 1 --- guided acquisition.} \ModuleSessionOne
-
-  \textbf{Session 2 --- transfer and gate.} \ModuleSessionTwo
-
-  The two-session plan is a workload envelope, not permission to advance by
-  elapsed time. Stop, correct in a different color, and use an omitted variant
-  when the mastery evidence below is absent.
-
-  \MasteryGate{\ModuleMastery}
-  \ModuleDelayNote
-}
-
-\newcommand{\ModuleReferenceCard}{%
-  \chapter{Module reference card}
-  \section{Terms, forms, and decisions to retrieve}
-  \ModuleReferenceFocus
-
-  \section{High-risk contrast}
-  \ModuleContrast
-
-  \section{Working protocol}
-  Before looking anything up, mark the finite verb or verbal center, propose
-  dictionary forms, and record at least two formally possible readings where
-  an ending is syncretic. Use the identified 1962 Missal and the course source
-  record for received wording. A familiar English rendering does not replace a
-  parse.
+\newcommand{\ModuleTitlePage}{%
+  \hypersetup{pageanchor=false}%
+  \begin{titlepage}
+    \thispagestyle{empty}
+    \vspace*{0.65in}
+    {\sffamily\bfseries\fontsize{30}{34}\selectfont Ecclesiastical Latin\par}
+    \vspace{0.18in}
+    {\sffamily\bfseries\Large \ModuleID: \ModuleTitle\par}
+    \vspace{0.12in}
+    {\sffamily\large \ModuleOutcome\par}
+    \vspace{0.48in}
+    \rule{\linewidth}{1pt}
+    \vspace{0.28in}
+    \begin{tabularx}{\linewidth}{@{}P{1.15in}X@{}}
+      \textbf{Stage} & \ModuleStage \\
+      \textbf{Prerequisite} & \ModulePrerequisites \\
+      \textbf{Next} & \ModuleNext \\
+    \end{tabularx}
+    \vfill
+    {\small Read \emph{EL-GUIDE: Start Here} before using this packet. Course
+    method, pacing, source conventions, and answer protocol are stated there;
+    this module begins with its lesson and assumes previously taught terms.\par}
+    \vspace{0.3in}
+    {\sffamily\small Triptych: AI Driven Studies in Catholic Faith, Worship, and Law\par}
+  \end{titlepage}
+  \hypersetup{pageanchor=true}%
 }
 
 \newcommand{\SubmoduleExtension}[5]{%
   \ifsolutions
     \Needspace{7\baselineskip}\section*{#1 --- model and rubric}
-    \textbf{Connection.} #2
-
     \textbf{Model / acceptable evidence.} #5
   \else
-    \par\Needspace{8\baselineskip}\section{#1 --- enrichment and transfer}
+    \par\Needspace{8\baselineskip}\section{#1 --- transfer practice}
     \textbf{Connection.} #2
 
     \textbf{Transfer task.} #3
@@ -63,28 +49,35 @@
 }
 
 \newcommand{\ModuleWorkRecord}{%
-  \chapter{Mastery and error record}
-  Complete this page before opening the answer part.
+  \chapter{Mastery assessment and record}
+  \ModuleAssessmentDetails
+  \MasteryGate{\ModuleMastery}
+  \ModuleDelayNote
+
+  Complete the assessment before opening the answer part. Record evidence,
+  not confidence or elapsed time.
 
   \begin{xltabular}{\linewidth}{@{}P{1.05in}Y Y@{}}
     \toprule
-    \textbf{Evidence} & \textbf{Session 1} & \textbf{Session 2 / delayed check} \\
+    \textbf{Evidence} & \textbf{First attempt} & \textbf{Delayed check} \\
     \midrule
-    Date and elapsed focused time & & \\
+    Date and conditions & & \\
     Worksheet ID and score & & \\
-    One rule retrieved without notes & & \\
+    Mastery task and result & & \\
     One recurring error family & & \\
     Correction stated as a rule & & \\
-    Unseen or delayed item used & & \\
+    Unseen or remediation item used & & \\
     \bottomrule
   \end{xltabular}
 
-  \vfill
+  \textbf{If the criterion is met:} continue to \ModuleNext.
+
+  \textbf{If it is not met:} \ModuleExtensionPractice.
+
+  \par\medskip
   \textbf{Advance / remediate decision:} \LongBlank\quad
   \textbf{Next review date:} \LongBlank
 
-  \vspace{0.25in}
-  \textbf{Reason in one complete sentence:}
-
-  \vspace{0.65in}\hrulefill
+  \par\medskip
+  \textbf{Reason in one complete sentence:}\quad\hrulefill
 }
