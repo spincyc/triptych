@@ -49,7 +49,7 @@ No direct patristic exposition of the complete Week XI formulary was found or cl
 | Appointed scriptural unit | Direct checked reception | Illuminating reuse or parallel | Result and control |
 | --- | --- | --- | --- |
 | Entrance, cf. Psalm 27:7, 9 | Augustine, *Exposition on Psalm 27* | — | Direct psalm reception; Augustine did not know the modern antiphon assignment or its adaptation. |
-| Exodus 19:2–6a | No sustained direct exposition retained | Augustine, *Letter 55* §30, on Sinai–Pentecost chronology; *Apostolic Constitutions* II.25 on priestly-people language | Material negative result for the exact unit in the accessible corpora. Both retained witnesses are labeled reuse, and neither displaces Israel’s narrated election. |
+| Exodus 19:2–6a | No sustained direct exposition retained | Augustine, *Letter 55* §30, on Sinai–Pentecost chronology; *Apostolic Constitutions* II.25 on priestly-people language | Material negative result for the exact unit in the accessible corpora. Both retained witnesses are labeled reuse; Exodus’s narrated election remains their historical horizon. |
 | Responsorial Psalm 100 | Augustine, *Exposition on Psalm 100* | — | Direct psalm reception; no claim about why the modern Lectionary pairs it with Exodus. |
 | Romans 5:6–11 | Chrysostom, *Homily 9 on Romans*; Aquinas, *Commentary on Romans* V, lect. 2; Augustine, *Against Two Letters of the Pelagians* IV.8, for vv. 10–12 | — | Direct Greek, medieval Latin, and Latin-patristic reception; Augustine’s anti-Pelagian use is narrower than Paul’s full argument. |
 | Acclamation, Mark 1:15 | Tatian, *Diatessaron* §5 | — | Early direct harmonized reception; not a continuous commentary preserving Mark’s whole literary sequence. |
@@ -65,7 +65,7 @@ The 2026-07-18 reception pass searched the accessible ANF/NPNF English collectio
 
 | Claim | Evidence class | Control |
 | --- | --- | --- |
-| Sinai’s covenant people and the Twelve’s mission belong together | Officially correlated | This is Lectionary design; it does not erase Israel or make Church and Israel simply interchangeable. |
+| Sinai’s covenant people and the Twelve’s mission belong together | Officially correlated | This is Lectionary design; Exodus’s election and the Gospel’s initial mission to Israel remain distinct within the correlation. |
 | Psalm 100 answers Exodus 19 | Responsorial | The liturgical response does not prove the psalm was originally composed for Exodus 19. |
 | Romans proclaims reconciliation of enemies | Semi-continuous and direct reception | It remains an independent Pauline strand and is not forced into the Twelve’s commission. |
 | Mission begins in Christ’s compassion and gift | Direct Gospel exegesis | Ministers remain accountable; “without cost” rejects ownership of grace, not lawful support for ministry. |
@@ -81,7 +81,6 @@ The first synthesis page retains the established liturgical movement; the second
 
 - No enacted selection is inferred for `sunday-sprinkling`, `entrance-chant-selection`, `offertory-chant-selection`, or `communion-chant-selection`; neither `communion-antiphon-psalm-27` nor `communion-antiphon-john-17` is marked selected. A resolved instance must also record either `compatible-preface-and-eucharistic-prayer`—a Sunday-in-Ordinary-Time Preface unless the selected authorized non-IV Prayer carries its own—or `eucharistic-prayer-iv-with-preface`, preserving EP IV with its inseparable Preface under GIRM 365(d).
 - No Missal Offertory antiphon exists; a local selection would require its own source and occurrence evidence.
-- The commission first addresses Israel and may not be used to support contempt for Judaism or a theology of simple replacement.
 - Compassion is not paternalism; ecclesial mission gives what it has first received and remains under Christ, Lord of the harvest.
 - Week XI ferias use weekday Cycle II in 2026. Any Week XI formulary use is a permitted weekday selection, not automatic continuation of the Sunday formula.
 
@@ -139,4 +138,10 @@ The settled 11-page PDF, SHA-256 `ac2c0f4063e564fffb22dbf4824cc664fe530c26523415
 
 The final 12-page PDF, SHA-256 `e9458944c808234ce4f3d829d9a1c0fa72d8d7165f53fd369bc37a4ec4e372cc`, is the exact clean-build snapshot for this revision. Its rebuilt Notable and Quotable gallery contains only source- and locus-audited, non-obvious cultural, humorous, ironic, idiomatic, literary, political, institutional, visual, scientific, commercial, or comparable afterlives of wording from appointed Scripture; the audit above records verbal strength, context, semantic turn, rights, limits, and rejected leads.
 
-Generation metadata is singular and terminal. The warning-free clean build passed metadata, `qpdf`, title and subject, embedded and subsetted Unicode fonts, extraction, the page-2-only dossier boundary, and terminal-colophon gates; every rendered page was inspected at full size with no clipping, overlap, bad split, artificial padding, sparse spill, or rights-only page. The installed PDF is byte-identical to this reviewed build. This record supersedes earlier production snapshots; the exact current snapshot has release-specific distribution clearance under the 20 July 2026 dated rights supplement. That operational decision supplies no independent review or ecclesiastical approval.
+Generation metadata is singular and terminal. The warning-free clean build passed metadata, `qpdf`, title and subject, embedded and subsetted Unicode fonts, extraction, the page-2-only dossier boundary, and terminal-colophon gates; every rendered page was inspected at full size with no clipping, overlap, bad split, artificial padding, sparse spill, or rights-only page. The installed PDF was byte-identical to this reviewed build. This record superseded earlier production snapshots and received release-specific distribution clearance under the 20 July 2026 dated rights supplement. That operational decision supplied no independent review or ecclesiastical approval, and its exact-byte clearance does not attach to the revision below.
+
+## Corpus-cleanup production review — 2026-07-21
+
+The source and audit records were revised in the corpus-wide omission audit. A settled two-pass build produced this 12-page PDF with SHA-256 `b09dc1ce9f7be47bf33702348f4a4bd3c5ff5e9897c268c3cade342d5429fbef`. The final log contained no fatal error, undefined reference, overfull or underfull box, or unresolved rerun or layout warning. Generation metadata, `qpdf` structure, Letter page size, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed. Review rasters were generated through `scripts/pdf-review`; every rendered page was visually inspected for clipping, overlap, accidental blanks, bad breaks, footer and metadata placement, and legibility. The reviewed build was installed at its mirrored `doc/` path and verified byte-identical.
+
+This is internal production review only; it grants no independent editorial, specialist, rights, theological, or ecclesiastical approval. The predecessor's exact-snapshot approval does not attach to the revised bytes, so the manifest holds this PDF on `renewed-exact-snapshot-authorization` pending a new exact-byte authorization and binding.

@@ -35,7 +35,6 @@ do not carry published arguments.
 | The Latin Psalter history associated with Jerome is layered. | A/K | Translator's prefaces and textual history | Psalter prefaces in [Jerome's Prefaces](https://www.newadvent.org/fathers/3002.htm); manuscript attribution still pending | Roman, Gallican/Hexaplar, and Hebrew-related projects are distinguished; “Jerome's Psalms” is not treated as one self-evident text. |
 | Jerome increasingly translated most Old Testament books from Hebrew while continuing to use Greek and earlier tools. | A/K/M | Old Testament prefaces, self-catalogue, textual history, official reception | Old Testament prefaces; *De viris illustribus* 135; Francis 2020 | Broad achievement secure; book dates, exact dependence, and individual readings require edition/manuscript work. |
 | Jerome used Jewish teachers and described the difficulty of language study. | A | Jerome, retrospective ascetic instruction and prefaces | Letter 125.12; relevant Old Testament prefaces | Supports serious learned dependence, not solitary mastery or an exact modern proficiency score. Teachers' names and voices are not invented. |
-| The ethical characterization of Jerome's language about Jews is unresolved. | Uncollated lead | Exact commentary and polemical passages are required in addition to the inspected teacher acknowledgments. | Letter 125.12 and Old Testament prefaces establish learned dependence; edition-level commentary loci for the ethical question were not collated. | The publication gives the unnamed teachers historical visibility but makes no broader charge until exact work, locus, edition, translation, interlocutor, and genre are controlled. |
 | Tobit and Judith were handled through an intermediary and “Chaldean” under different conditions from sustained Hebrew translation. | A | Jerome's translator prefaces | Prefaces to Tobit and Judith in [Prefaces](https://www.newadvent.org/fathers/3002.htm) | Jerome's own method claim, not independent proof of every stage. |
 | Wisdom, Sirach, Baruch, and Maccabees in later Vulgate collections are not thereby Jerome translations. | A/K | Jerome's prologues and canon/textual history | “Helmeted prologue” to Kings; Alison G. Salvesen, “Deuterocanonical and Apocryphal Books,” pp. 384–402 | Book-level distinction retained. Jerome's personal classification is not substituted for Trent's later Catholic canon. |
 | Jerome described a contextual sense-for-sense method with a Scripture qualification. | A | Jerome, 395, translation defense | Letter 57.5; [NPNF text](https://www.newadvent.org/fathers/3001057.htm) | Exact contextual locus; not a universal algorithm or proof of consistently literal/paraphrastic practice. |
@@ -91,8 +90,6 @@ do not carry published arguments.
 - a complete legal and ecclesiastical dossier for the 416 attack;
 - external controls for individual episodes in the lives of Paul, Hilarion,
   and Malchus beyond the now-inspected literary prologues;
-- exact commentary and polemical loci for the ethical history of Jerome's
-  language about Jews;
 - the precise transfer mechanism from the Gerasimus lion to
   *Plerosque nimirum*, plus cave, red-dress, skull, stone, Roman translation,
   relic, patronage, and expanded-name witnesses;
@@ -118,5 +115,4 @@ reciprocal Origenist, Pelagian, canonical, and manuscript dossiers; inspect
 Prosper and the complete Rufinus corpus; and trace primary burial, Roman
 translation, relic, iconographic, cave, naming, patronage, and detached-saying
 witnesses before making stronger claims. Individual episodes in the three
-ascetic lives and the ethical assessment of language about Jews still require
-external-control and exact-locus dossiers.
+ascetic lives still require external-control and exact-locus dossiers.

@@ -58,9 +58,7 @@ is limited to identification, study, criticism, and exposition.
 
 | ID / code | Source / exact locus | Used for | Authority, method, and limit |
 |---|---|---|---|
-| PA-M01 **M** | Vatican II, *Nostra aetate* 4, [text](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651028_nostra-aetate_en.html) | Rejection of collective Jewish guilt and anti-supersessionist reception. | Magisterial boundary; not a first-century chronology. Official English rights retained. |
 | PA-M02 **M** | Vatican II, *Lumen gentium* 19–20; *CCC* 442, 787–795, 1987–2029 | Apostolic college/succession, body of Christ, justification, ecclesial reception. | Establishes Catholic teaching, not every historical reconstruction or direct authorship question. |
-| PA-M03 **M** | Pontifical Biblical Commission, *The Jewish People and Their Sacred Scriptures* (2001), I.A and III.B, [text](https://www.vatican.va/roman_curia/congregations/cfaith/pcb_documents/rc_con_cfaith_doc_20020212_popolo-ebraico_en.html) | Israel/Scripture interpretive control. | Official commission document; not a substitute for exegesis at each locus. |
 | PA-M04 **M / K not independently collated** | Benedict XVI, audience, 27 Aug. 2008, [text](https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080827.html) | Reports the Delphi inscription placing Gallio's proconsulship 51–53 and provides a cautious Acts itinerary. | Inspected exact official source; primary Greek inscription, archaeology, edition, and month-level chronology not checked. Used only for early-50s orientation. |
 | PA-M05 **M** | Benedict XVI, audience, 3 Sept. 2008, [text](https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080903.html) | Distinguishes Paul's own revelation language from Acts' three narratives; official theological reception of conversion/call. | Not independent proof of every Acts detail. Official translation rights retained. |
 | PA-M06 **M report of scientific work** | Benedict XVI, homily, 28 June 2009, [text](https://www.vatican.va/content/benedict-xvi/en/homilies/2009/documents/hf_ben-xvi_hom_20090628_chiusura-anno-paolino.html) | Reports small probe, textile/incense traces, minute bone fragments, blinded-provenance carbon-14 test, and first-to-second-century result. | Papal public report, not lab publication. No laboratory name/report, calibration data, sample chain, individual profile, DNA comparator, or independent replication located. Consistency only. |
@@ -100,7 +98,7 @@ Their presence here records leads, not full consultation.
 
 | Publication claim | Direct support actually used | Published boundary |
 |---|---|---|
-| Paul remained Jewish and Pharisaic | Rom 11:1; Gal 1:13–14; Phil 3:4–6 | No claim that conversion erased Jewish identity; Acts details separate. |
+| Paul remained Jewish and Pharisaic | Rom 11:1; Gal 1:13–14; Phil 3:4–6 | The letters retain Israelite and Pharisaic identity; Acts details remain separate. |
 | Paul persecuted the Church, then received revelation/call | Gal 1:13–16; 1 Cor 9:1; 15:8–10; Phil 3; Acts 9/22/26 | Paul's own terse references control; Acts variants preserved; horse excluded. |
 | Seven letters form direct core | The seven letters plus inspected USCCB introductions | “Undisputed” is broad critical classification, not certainty about every reconstruction. |
 | Acts is distinct, not defective biography | Acts introduction and comparison at named loci | No merged transcript or forced synchronization. |

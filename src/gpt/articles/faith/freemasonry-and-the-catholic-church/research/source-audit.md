@@ -85,7 +85,6 @@ The full witness-by-witness record is in prayer-provenance.md.
 
 | Lead or claim | Search / evidence checked | Verdict |
 | --- | --- | --- |
-| Masonic temples must be near a Catholic tabernacle. | UGLE *Book of Constitutions* June 2026 searched for tabernacle, church, temple and siting rules; UGLE public building/governance descriptions; Masons of California and Pennsylvania Grand Lodge building terminology; general historical and web leads. | **Not established.** No governing rule or reliable historical source located. Old civic-center proximity is not evidence of obligation. The result cannot disprove an idiosyncratic local motive but excludes the universal claim. |
 | Every Mason or lodge is Satanist. | Current regular and liberal institutional sources; *Humanum genus* 11; CDF rationale. | Unsupported and false as a universal institutional description. Catholic incompatibility is stated without it. |
 | Leo XIII’s official exorcism explicitly names Masonry. | ASS 23 (1890–91), 743–746 searched and read in full; compared with *Humanum genus* and *Dall’alto*. | **False as a textual claim.** The prayer is contextually adjacent but contains no Masonic proper name. |
 | The long Masonry-specific prayer is ancient Roman liturgy or was composed by Leo XIII. | Stevens publication history; Ripperger 2021 provenance admission; official Roman sources. | **False.** Earliest verified ancestor is Protestant and modern; no Roman promulgation located. |

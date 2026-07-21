@@ -24,7 +24,7 @@ research/scope.md
 
 - `retrieved.txt` preserves a focused machine-readable pull, including OCR errors and enough boundary text to identify the formulary. It is an unedited finding aid, not publication text.
 - `verified.md` preserves the facsimile-collated appointed text in liturgical order, including seasonal and ritual variants. Its provenance identifies the missal edition; printed heading and rank; retrieval URL, source identifier, and date; printed pages and digital leaves; checksum when available; facsimile URL; verification status and date; and unresolved discrepancies.
-- `research/scope.md` records the sources, languages and corpora searched; claim roles; material negative results; rejected or unresolved leads; competing historical judgments; and operational qualifications displaced from the PDF. It is an audit record, not a diary.
+- `research/scope.md` records the sources, languages and corpora searched; claim roles; material negative results; material rejected or unresolved leads; competing historical judgments; and operational qualifications displaced from the PDF. It is an audit record, not a diary.
 
 Use the following public witnesses unless a better edition-identified witness is documented:
 

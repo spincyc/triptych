@@ -1,51 +1,38 @@
 # Public Release Boundary
 
-The current release manifest nominally contains 115 publications: 109 are marked
-`release`, PC-S41-A is marked `review`, and five are marked `hold`: the Saint
-Thomas Aquinas and Saint Robert Bellarmine biographies and the three parts of
-*The Creature Before God*—*Ontological Vertigo*, *The Due Return*, and *At the
-End of Every Why*. The latest 20 July 2026 supplement in
+The current release manifest nominally contains 115 publications: 80 are marked
+`release`, no item is marked `review`, and 35 are marked `hold`. Thirty-three
+holds await renewed exact-snapshot authorization: 30 publications rebuilt by
+the corpus-wide corrective-callout cleanup and the three parts of *The Creature
+Before God*—*Ontological Vertigo*, *The Due Return*, and *At the End of Every
+Why*. The Saint Thomas Aquinas and Saint Robert Bellarmine biographies remain
+on work-specific-rights-review hold. The latest 20 July 2026 supplement in
 `rights/public-alpha-2026-07-15.md` records the maintainer's instruction to
-authorize, install, and commit the Ecclesiastical Latin curriculum as
-exact-current-snapshot distribution authorization, effective at
-`2026-07-20T20:23:41-05:00` in `America/Chicago`, under the existing represented
-perpetual worldwide public-repository and GitHub Pages authority. It binds the
-52 superseded curriculum snapshots and the 22 site-input snapshots recorded
-there, subject to no project-initiated promotion. The 52 corrected installed
-curriculum PDFs no longer match those bindings and remain fail-closed pending
-renewed exact-snapshot authorization. Fifty-six other installed PDFs still
-match their earlier approvals. The installed Ninth Sunday after Pentecost PDF
-retains its pre-existing mismatch with the earlier approved hash and remains
-fail-closed; the revised PC-S41-A PDF is a new snapshot in review pending
-renewed exact-snapshot authorization.
-
-The Aquinas and Bellarmine biographies have no approval, remain excluded from
-both public and preview artifacts, and each awaits a work-specific rights
-review. The three parts of *The Creature Before God* also have no approval,
-remain excluded from both public and preview artifacts, and each has completed
-its work-specific rights review; their installed PDFs await renewed
-exact-snapshot authorization. The held-work catalog changes leave the recorded
-`LIBRARY.md`, `library/biographies.md`, and `library/faith.md` site-source hashes
-stale; this revision also changes the bound `library/novus-ordo-liturgy.md`
-source. Together with the changed `CONTRIBUTING.md`, `THIRD_PARTY.md`, and
-`library/curriculums.md` site inputs, the 52 curriculum PDFs, and the Ninth
-Sunday after Pentecost PDF, these changed bytes cause the public check to fail
-closed until renewed exact-snapshot authorization. Moving PC-S41-A to `review`
-also means the dated authorization record's historical publication inventory
-no longer exactly matches the manifest's current approved-publication set.
-Changed PDF or site-input bytes
-require renewed authorization.
+authorize, install, and commit the
+Ecclesiastical Latin curriculum as exact-current-snapshot distribution
+authorization, effective at `2026-07-20T20:23:41-05:00` in `America/Chicago`,
+under the existing represented perpetual worldwide public-repository and GitHub
+Pages authority. It binds the 52 superseded curriculum snapshots and the 22
+site-input snapshots recorded there, subject to no project-initiated promotion.
+The 52 corrected installed curriculum PDFs no longer match those bindings and
+remain fail-closed pending renewed exact-snapshot authorization. Twenty-eight
+unchanged release PDFs still match their approvals. All 35 held works are
+excluded from both public and preview artifacts. The current `CONTRIBUTING.md`,
+`LIBRARY.md`, `THIRD_PARTY.md`, and affected section-catalog bytes also differ
+from their bound site-source hashes. Together with the 52 curriculum PDFs,
+these changed bytes cause the public check to fail closed until renewed
+exact-snapshot authorization. Changed PDF or site-input bytes require renewed
+authorization.
 
 This is operational exact-byte release clearance, not a judgment that a work
 is editorially or profile-final. It is not ecclesiastical approval, an
 imprimatur, a nihil obstat, completion of independent work-specific rights
 review, completion of named U.S. altar-book collation, completion of
 independent proper-guide review, a general license, or broader reuse
-permission. The Ninth Sunday after Pentecost and PC-S41-A retain every such
-substantive limitation in their source audits. The Ninth Sunday manifest entry
-retains its historical release binding; PC-S41-A now records the substantive
-and renewed-snapshot gates in `review`. Only the formerly recorded hashes
-received exact-snapshot clearance.
+permission. The revised proper guides retain every such substantive limitation
+in their source audits. Their predecessor hashes remain part of the historical
+authorization record, but their revised manifest entries are held pending new
+exact-snapshot bindings.
 
 The Ecclesiastical Latin curriculum's prior two course companions, 46 learning
 modules, and four assessment sequences were installed under an explicit exact-
@@ -82,7 +69,7 @@ and is not an ecclesiastical interpretation, dispensation, canonical opinion,
 imprimatur, nihil obstat, or approval of the secret or this publication. It
 does not supply independent rights, canonical, specialist, liturgical, or
 ecclesiastical review. Apparition and cult approvals remain object-limited and
-do not approve this publication. The manifest retains this PDF among the 109
+do not approve this publication. The manifest retains this PDF among the 80
 `release` items and binds its exact current hash.
 
 For every fully authorized snapshot the generator will:
@@ -108,14 +95,12 @@ specialist and ecclesiastical review. The virtues reference is internally
 source-audited but is not a critical edition; manuscript collation and
 comprehensive source-language lexical review have not occurred, and independent
 Aristotelian, patristic, Thomistic, moral-theological, pastoral, and clinical
-review remain outstanding. The ten 1962 proper guides and eight of the nine
-postconciliar proper guides remain marked `release`; the revised PC-S41-A guide
-is marked `review`. Exact-current-snapshot authorization applies only to the
-bytes recorded in the manifest. The installed Ninth Sunday after Pentecost PDF
-changed after authorization and requires renewed exact-snapshot authorization.
-Its recorded clearance and PC-S41-A's historical 12-page clearance retain their
-rights, collation, and independent-review limitations and do not make either
-work profile-final or ecclesiastically approved. The postconciliar revisions remain subject to the same outstanding
+review remain outstanding. Seven of the ten 1962 proper guides and none of the
+nine postconciliar proper guides remain marked `release`; revised 1962 IDs 15,
+22, and 23 and revised postconciliar PC-S58-A, PC-S59-A, and PC-S35-A through PC-S41-A are
+held pending renewed exact-snapshot authorization. The revised guides retain
+their rights, collation, and independent-review limitations and are not
+profile-final or ecclesiastically approved. The postconciliar guides remain subject to the same outstanding
 complete English-oration collation against an identified U.S. altar-book
 printing and independent liturgical, biblical, theological, and historical
 review. The postconciliar Order of Mass likewise still lacks exact hands-on
@@ -167,13 +152,9 @@ records for the complete boundaries.
 Only when all snapshot and site-source bindings verify may the GitHub Pages
 workflow build and verify `build/public-alpha/site`. The current authorization
 binds the 52 superseded curriculum PDFs and records 22 recognized site-source
-snapshots, but the 52 corrected curriculum PDFs, the stale `CONTRIBUTING.md`,
-`LIBRARY.md`, `THIRD_PARTY.md`, `library/biographies.md`,
-`library/curriculums.md`, `library/faith.md`, and
-`library/novus-ordo-liturgy.md` bindings, and the unrelated Ninth Sunday
-snapshot mismatch deliberately prevent verification.
-*Ontological Vertigo*, *The Due Return*, and *At the End of Every Why* remain
-held outside both artifacts pending renewed exact-snapshot authorization. A
+snapshots, but the 52 corrected curriculum PDFs and stale reader-facing
+Markdown bindings deliberately prevent verification. The 33 renewed-snapshot
+holds and two rights-review holds remain outside both artifacts. A
 future verified workflow may upload only that artifact through the
 `github-pages` environment. Pages must never publish the repository root or
 `build/public-alpha/preview`. This record documents the boundary only; it does

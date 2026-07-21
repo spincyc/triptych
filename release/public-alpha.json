@@ -4,9 +4,9 @@
   "provider": "gpt",
   "expected_counts": {
     "publications": 115,
-    "release": 109,
-    "review": 1,
-    "hold": 5
+    "release": 80,
+    "review": 0,
+    "hold": 35
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
@@ -30,7 +30,7 @@
         "worldwide"
       ],
       "rights_record": "release/rights/public-alpha-2026-07-15.md",
-      "rights_record_sha256": "d2599fa75c84bb4ced10f20bd69077dade49eef51de12994de6949220bce7bbb",
+      "rights_record_sha256": "d17b85f6c6df48d16940a916b0ca93e06bf85091ed916d17a0180be3ce4777ce",
       "site_sources": {
         "CONTRIBUTING.md": "730f7dcd00dd36e835a5fcb983d20e2964226a6aed02faab0d2fafee15376a23",
         "LIBRARY.md": "eac5e7ad438bd161743385ce8b5d980817e8a6d2dd8f8ccb1c4955de68d96d50",
@@ -78,22 +78,20 @@
     {
       "id": "articles/faith/council-missal-and-crisis",
       "catalog": "library/faith.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "b00ac18a5d721ea58d416367f9870c9bd9acfb487935d4dff1ddb2855c686c79"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "articles/faith/freemasonry-and-the-catholic-church",
       "catalog": "library/faith.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "309e06818d78fc75a5d1e7fa010de95637b27f52ead5803ef8599df60ec9fbd4"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "articles/faith/ontological-vertigo",
@@ -116,12 +114,11 @@
     {
       "id": "articles/faith/trustful-surrender-to-divine-providence",
       "catalog": "library/faith.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "9090de74e63a42c97ef626d996cfcd58235098ff366b981a83e1113be4b73981"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "articles/canon-law/clerical-celibacy-chastity-and-continence",
@@ -166,32 +163,29 @@
     {
       "id": "biographies/saint-jerome",
       "catalog": "library/biographies.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "70dadb81abfaf4127e0f8be6e218ac76ff7308481db3a26caebf45a99b63a8ad"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "biographies/saint-paul",
       "catalog": "library/biographies.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "d1ff828cc95f2a4dca5e28cc9b075015701333d20589b70e23528d8205c1bf75"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "biographies/saint-peter",
       "catalog": "library/biographies.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "33a2bcf5aef62c37d41eb3917c3a9ec52f670859677113e8257e8005b76a9ea0"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "biographies/saint-thomas-aquinas",
@@ -844,12 +838,11 @@
     {
       "id": "liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass",
       "catalog": "library/traditional-latin-mass.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "009bc7a73a3372ab431e78719efd74d25af56ec98c5455bdf3fb6daa8873d608"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass",
@@ -864,12 +857,11 @@
     {
       "id": "liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday",
       "catalog": "library/traditional-latin-mass.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "7d4c3573dc1356821e35266d7fff94422aef7171a223765fba2e1360a11bd66c"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost",
@@ -934,22 +926,20 @@
     {
       "id": "liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost",
       "catalog": "library/traditional-latin-mass.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "e77e621842d8d467f7c94f01385d5cc9db0f38ed4928297ed4a2b676b77399cf"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost",
       "catalog": "library/traditional-latin-mass.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "db5611175355ebf892057d79e8834b1cf0f8982fd5839f064346d0d5a4343b39"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/1962/reference/assembling-the-mass",
@@ -974,87 +964,79 @@
     {
       "id": "liturgy/roman-rite/comparative/two-missals-one-sacrifice",
       "catalog": "library/faith.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "18ee674353dbfed84e48551b860d05e371457f0fe182c8e7ef6488514ca6270d"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass",
       "catalog": "library/novus-ordo-liturgy.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "428dfffcdb362e1b6bb7a5c0006017eef507686e3b5c522fe2fdf8535f5bf3c9"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s35-eleventh-sunday-in-ordinary-time-year-a",
       "catalog": "library/novus-ordo-liturgy.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "e9458944c808234ce4f3d829d9a1c0fa72d8d7165f53fd369bc37a4ec4e372cc"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s36-twelfth-sunday-in-ordinary-time-year-a",
       "catalog": "library/novus-ordo-liturgy.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "db9fb8b7f163ddbf42dbedeca7024fbefcd1f966b40a924f108c6e168e449e24"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-thirteenth-sunday-in-ordinary-time-year-a",
       "catalog": "library/novus-ordo-liturgy.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "8b7e5fa8aac2a66eb1357985fdf670ce3ebe1f5de9b65cbade8bcaf06c5a4f58"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-fourteenth-sunday-in-ordinary-time-year-a",
       "catalog": "library/novus-ordo-liturgy.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "f7da1adc3394233694f05448f8421ac6eceeff9fb70c068dc5d124ea93183bb7"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-fifteenth-sunday-in-ordinary-time-year-a",
       "catalog": "library/novus-ordo-liturgy.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "0789a3af547d56acab2a0ebf1e320006cdaa09f6aaeed068fedf79217011b277"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a",
       "catalog": "library/novus-ordo-liturgy.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "671d6cd6da870ec3cb874ae55bf7609d7518b089b5f78fac26868e4c2c383e27"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a",
       "catalog": "library/novus-ordo-liturgy.md",
-      "status": "review",
+      "status": "hold",
       "gates": [
         "work-specific-rights-review",
         "liturgical-text-permission",
@@ -1067,22 +1049,20 @@
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a",
       "catalog": "library/novus-ordo-liturgy.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "047a8a278f3977442aef968be79774b8342bb39a67c53b6dd118fd040a4ea424"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s59-most-holy-body-and-blood-of-christ-year-a",
       "catalog": "library/novus-ordo-liturgy.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "4d6e14c38e731fc3ce7432cc9dd81900a0c9c4da0c4c75ba55ca2e9fc1d4062b"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar",
@@ -1097,42 +1077,38 @@
     {
       "id": "theology/mariology/apparitions",
       "catalog": "library/mariology.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "0d1d81dfab295cc665386ac6b4df7b5324f3bf35358d9c5d985c4e0721e9d8bb"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "theology/mariology/champion",
       "catalog": "library/mariology.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "7e223d1d6cdd1377a41fffca726598bdae6f7f4e46cb806e4c66eee1997ee72b"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "theology/mariology/fatima",
       "catalog": "library/mariology.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "65912e9f3e51a0d6e40434d83670bf534509e1c9f21d80e091d4d26ed383b16b"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "theology/mariology/guadalupe",
       "catalog": "library/mariology.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "00a34ea7c7b4e6de79bfa584526595d9cd788d19eb13c82e7e34dbe98c768b6f"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "theology/mariology/la-salette",
@@ -1147,42 +1123,38 @@
     {
       "id": "theology/mariology/lourdes",
       "catalog": "library/mariology.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "1471fa3aa049dc7fcb52ed0db523deea247b3703548aec87443263b69c8ed034"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "theology/mariology/marian-dogmas",
       "catalog": "library/mariology.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "63a190700f6627d0a4c2a14e985a53b7da16da94edd94a9594a5ef7166811509"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "theology/mariology/rosary",
       "catalog": "library/mariology.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "91eb22bcf2b02b640af571a319030bbf4ad2e511e3803af5cb673ed7bdf3ba1d"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "theology/sacraments",
       "catalog": "library/faith.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "ab03cd28d936b35752abc31dfb6b8f66dc512ae22890b3a6cd107b20ba87fb55"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "theology/sacraments-at-a-glance",
@@ -1207,12 +1179,11 @@
     {
       "id": "theology/heresies/heresies-in-catholic-history",
       "catalog": "library/heresies.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "77d1571e853c8899221ec81b98e236183f75f59e3686fc8f811aba87759c6033"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     }
   ]
 }

@@ -65,7 +65,7 @@ All online sources were last rechecked on 2026-07-13 unless otherwise noted. Sta
 | *Documentação Crítica de Fátima (1917–1930): Seleção de Documentos* (Sanctuary of Fátima, 2013). | Primary-source selection and editorial introduction; 138 documents. | The official project is custodial scholarship. OCR was used for discovery and checked against printed pages for consequential wording. |
 | Shrine narrative and chronology. | Received narrative, documentary dates, places, seers, causes, and later cycle. | Public English translation contains occasional awkwardness and combines source strata; it is not treated as a critical English edition. |
 
-Rejected as proof: anonymous internet secret texts; polemical “consecration failed” apostolates; sensational newspaper summaries; claims of an impostor Lúcia; alleged private statements used against the Holy See's 2016 communiqué; astronomical or meteorological certainty unsupported by a cited protocol; crowd numbers presented without ranges; and any claim that canonization, a papal visit, a feast, a shrine, or a devotional promise by itself certifies every apparition or phrase.
+Rejected as proof: anonymous internet secret texts; polemical “consecration failed” apostolates; sensational newspaper summaries; alleged private statements used against the Holy See's 2016 communiqué; astronomical or meteorological certainty unsupported by a cited protocol; crowd numbers presented without ranges; and any claim that canonization, a papal visit, a feast, a shrine, or a devotional promise by itself certifies every apparition or phrase.
 
 ## Review remaining
 

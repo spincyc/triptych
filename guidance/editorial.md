@@ -47,6 +47,8 @@ Prefer primary, official, edition-identified, stable sources. OCR, searchable tr
 
 Research is claim-driven, not quota-driven. Search broadly enough to test the governing claims, serious alternatives, and gaps; stop collecting sources that merely repeat a point. Preserve consequential negative results and disclose unresolved records rather than filling them by inference.
 
+Do not introduce a weak, prejudicial, sensational, conspiratorial, or otherwise extraneous claim merely to reject it. If an argument is not needed to understand the work's subject, a retained source, or a material reception history, omit it from reader-facing prose and audit records instead of creating a corrective callout, disclaimer, or rejected-lead inventory. When an error or harmful reception is materially within scope, explain its evidentiary role and analyze it directly and proportionately.
+
 Liturgical claims identify the rite, use or form, typical edition, calendar, language, translation, territory, and other variables needed to know what is appointed. Canon-law claims identify the body of law, jurisdiction, promulgating authority, effective or as-of date, amendments, authentic interpretations, and material particular law. Mutable discipline is never presented as timeless.
 
 ## Rights, quotation, and received prayer
@@ -61,7 +63,7 @@ Every text offered for vocal prayer or ritual recitation must reproduce an ident
 
 ## Audit records and generation metadata
 
-Keep enough tracked evidence to reproduce editorial judgments without publishing private reasoning or a search diary. The applicable profile defines filenames; collectively the records identify the question and exclusions, governing editions, source roles and loci, substitutions, disagreements, negative results, unresolved leads, jurisdiction/currentness, rights, completed review, and outstanding review. Never record credentials, private reasoning, host or user identity, machine paths, network data, or session identifiers.
+Keep enough tracked evidence to reproduce editorial judgments without publishing private reasoning or a search diary. The applicable profile defines filenames; collectively the records identify the question and material exclusions, governing editions, source roles and loci, substitutions, disagreements, consequential negative results, material unresolved leads, jurisdiction/currentness, rights, completed review, and outstanding review. Never record credentials, private reasoning, host or user identity, machine paths, network data, or session identifiers.
 
 Every canonical publication keeps `generation-metadata.tex` beside `main.tex` and imports it exactly once at the terminal display point. Its first active declaration is one `\AIDocumentRevisionTimestamp{YYYY-MM-DDTHH:MM:SSZ}`, followed by one or more `\AIModelContribution` declarations. A profile may permit a prose-free mechanical companion to declare `\AIInheritedGenerationMetadata` from one named canonical source while displaying its own timestamp once.
 

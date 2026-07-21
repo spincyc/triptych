@@ -50,7 +50,6 @@
 | Jesus explicitly commanded a nine-day “novena” in Acts. | Rejected. He commanded waiting for the promise; Acts gives the event and interval, not the later genre name or text. |
 | The apostles recited the same surviving prayer for nine days. | Unverified and excluded. No apostolic prayer manual is claimed. |
 | The Pentecost novena is historically the first documented use of every kind of nine-day Christian observance. | Not established. “First” is retained only as ecclesial archetype. |
-| Pentecost must be repeated or the Spirit is absent until invoked. | Theologically false. The once-for-all saving event and continuing missions/graces are distinguished. |
 | A local transfer of Ascension moves Pentecost or creates a six-day novena by law. | False. The document gives a private devotional reckoning and defers to the local liturgical calendar. |
 | The Ascension Day collect `Concede, quaesumus... hodierna die...` is suitable as the fixed Day 1 prayer. | Rejected because its time-indexed “this day” is false on the guide's ordinary Friday-after-Ascension Day 1 and on Days 1–2 before a transferred Ascension. The non-deictic Sunday-after-Ascension collect was selected instead. |
 | A collect approved in the 1962 Missal thereby approves this assembled novena or authorizes its present liturgical use. | Rejected. Historical source status remains attached to the original formulary and governing law; devotional reproduction does not transfer approval. |

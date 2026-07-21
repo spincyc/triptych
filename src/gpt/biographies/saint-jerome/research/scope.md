@@ -31,8 +31,6 @@ Jerome's pursuit of Christ through Scripture became a material and
 collaborative life of languages, manuscripts, travel, patronage, ascetic
 community, teaching, and controversy—and how a Catholic hagiography can honor
 that labor without making his invective or historical uncertainties exemplary.
-The ethical characterization of his language about Jews remains a future
-exact-locus audit question rather than a conclusion of this edition.
 
 ## Governing thesis
 
@@ -64,8 +62,7 @@ the history of the work.
 - relationships and disputes involving Rufinus, John of Jerusalem, Augustine,
   Jovinian, Helvidius, Vigilantius, and Pelagian controversy;
 - the consequences of ascetic hierarchy and abusive polemic at inspected loci;
-- commentaries, letters, chronicle, and *De viris illustribus*, with the ethical
-  assessment of language about Jews deferred pending exact commentary loci;
+- commentaries, letters, chronicle, and *De viris illustribus*;
 - final losses, the sack of Rome as received at Bethlehem, the 416 attack,
   death, early textual memory, and bounded Catholic reception;
 - dedicated review of controlled cardinal-office and frustrated-papacy claims,
@@ -192,7 +189,6 @@ contested claims in the publication and are not represented as read.
 - exact responsibility, reported casualty details, proceedings, and aftermath
   of the 416 attack;
 - Eustochium's death date and Jerome's death year;
-- the exact-locus ethical assessment of Jerome's language about Jews;
 - burial, relic, lion, cave, visual-attribute, and patronage transmission
   histories.
 
@@ -245,8 +241,6 @@ vendored.
 - complete reciprocal collation of the Rufinus and 416 legal dossiers, and the
   publisher-only modern bibliography before any carries a stronger claim;
 - external corroboration for individual episodes in the three ascetic lives;
-- exact commentary and polemical loci before any ethical characterization of
-  Jerome's language about Jews is published;
 - archaeological, art-historical, cult, shrine, relic, and patronage review;
 - independent rights review; and
 - ecclesiastical approval.
@@ -267,4 +261,10 @@ Final-typography production review completed on 2026-07-19: a settled two-pass b
 
 ## Compact-rights-colophon production review — 2026-07-19
 
-The settled 21-page PDF, SHA-256 `70dadb81abfaf4127e0f8be6e218ac76ff7308481db3a26caebf45a99b63a8ad`, is the exact repository-reviewed build snapshot. The final log was warning-free; generation metadata, `qpdf` structure, PDF title/page metadata, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed their gates. Repository production review inspected every physical page; the compact final-page reuse-and-rights colophon is readable, unclipped, non-overlapping, remains with terminal content, and creates no rights-only spill page. The installed PDF is byte-identical to this reviewed build. This reviewed build supersedes every earlier production snapshot. This exact current snapshot has release-specific distribution clearance under the 20 July 2026 dated rights supplement. That operational decision supplies no independent review or ecclesiastical approval.
+The settled 21-page PDF, SHA-256 `70dadb81abfaf4127e0f8be6e218ac76ff7308481db3a26caebf45a99b63a8ad`, is the exact repository-reviewed build snapshot. The final log was warning-free; generation metadata, `qpdf` structure, PDF title/page metadata, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed their gates. Repository production review inspected every physical page; the compact final-page reuse-and-rights colophon is readable, unclipped, non-overlapping, remains with terminal content, and creates no rights-only spill page. The installed PDF was byte-identical to this reviewed build. This reviewed build superseded every earlier production snapshot and received release-specific distribution clearance under the 20 July 2026 dated rights supplement. That operational decision supplied no independent review or ecclesiastical approval, and its exact-byte clearance does not attach to the revision below.
+
+## Corpus-cleanup production review — 2026-07-21
+
+The source and audit records were revised in the corpus-wide omission audit. A settled two-pass build produced this 21-page PDF with SHA-256 `8500ff6fa2ac9bf12d4b724a24e4a028e87d3b72f87bc5354418d766f1377a5e`. The final log contained no fatal error, undefined reference, overfull or underfull box, or unresolved rerun or layout warning. Generation metadata, `qpdf` structure, Letter page size, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed. Review rasters were generated through `scripts/pdf-review`; every rendered page was visually inspected for clipping, overlap, accidental blanks, bad breaks, footer and metadata placement, and legibility. The reviewed build was installed at its mirrored `doc/` path and verified byte-identical.
+
+This is internal production review only; it grants no independent editorial, specialist, rights, theological, or ecclesiastical approval. The predecessor's exact-snapshot approval does not attach to the revised bytes, so the manifest holds this PDF on `renewed-exact-snapshot-authorization` pending a new exact-byte authorization and binding.

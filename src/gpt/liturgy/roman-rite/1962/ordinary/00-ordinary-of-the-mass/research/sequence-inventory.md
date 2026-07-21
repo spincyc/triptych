@@ -117,7 +117,7 @@ The phrases below identify received Latin boundaries without pretending that a v
 | 19 | *Suscipe, sancta Trinitas*; *Orate, fratres* | Fixed | Ninth-to-thirteenth-century prayer and response families; received pair in 1474 |
 | 20 | Appointed Secret through Amen | Proper slot | Ancient prayer over gifts; early title; first secure quiet rubric in the mid-eighth-century Frankish *Capitulare* |
 | 21 | Preface dialogue and appointed Preface | Fixed dialogue/variable Preface | Cyprian mid-third century; sacramentary corpora |
-| 22 | *Sanctus* and *Benedictus* | Fixed | Fourth-century Eastern Eucharistic use; seventh-century Roman manuscripts; commonly cited Caesarius locus retained only as an unverified lead |
+| 22 | *Sanctus* and *Benedictus* | Fixed | Fourth-century Eastern Eucharistic use; seventh-century Roman manuscripts |
 | 23 | *Te igitur*; living Memento; *Communicantes* | Fixed with inserts | Fifth/sixth-century clause chronology remains reconstructed; Saint Joseph decree secure in 1962 |
 | 24 | *Hanc igitur*; *Quam oblationem* | Fixed with inserts | *De sacramentis* IV.5; layered clauses |
 | 25 | *Qui pridie* through *Hoc est enim Corpus meum* | Fixed | Late-fourth-century parallel; Parisian statutes under Odo around 1200 are an early elevation catalyst, not an invention decree |

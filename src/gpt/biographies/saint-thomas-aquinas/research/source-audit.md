@@ -125,7 +125,6 @@ separately inspected page or argument is expressly named.
 | William of Tocco is the oldest substantial biographer and a promoter who revised his *Ystoria* during the cause. | E/K | Tocco, 1318–1323 hagiographic biography; critical textual study | [PIMS critical-edition record](https://pims.ca/publication/isbn-978-0-88844-127-0/); *Fontes vitae* | Indispensable collector, not neutral contemporary. Redactions and dependence matter. |
 | The Naples inquiry ran 23 July–18 September 1319 and the Fossanova inquiry 10–26 November 1321. | M/E | Papally authorized canonization acts | *Liber de inquisitione* and *Inquisitio de miraculis* in *Fontes vitae*, fascs. 4–5 | Official process; witness proximity and institutional interest vary. Miracles are canonical testimony, not automatically modern medical findings. |
 | John XXII canonized Thomas on 18 July 1323. | M | *Redemptionem misit*, papal canonization bull | *Fontes vitae*, fasc. 5, pp. 519–530 (opening page and date checked against the scan image) | Exact date is 18 July. Canonization establishes Catholic sanctity and cult, not textual authenticity or universal truth of every opinion. |
-| The saying that Thomas performed as many miracles as he wrote articles is not controlled as John XXII's exact contemporaneous formula. | L/editorial layer | Later addition in a printed Percin-related transmission, not the controlled base act | Transmission note in *Fontes vitae* research | Do not use as papal quotation or substitute for the actual process unless a controlled earlier witness is located. |
 | Pius V declared Thomas a Doctor of the Church on 11 April 1567. | M | *Mirabilis Deus*, papal act | Exact date/status controlled through the act and Paul VI's retrospective record in *Lumen Ecclesiae* | Doctor status recognizes eminent teaching; it does not make every statement revelation or one later school mandatory. Original dispositive text remains a final-collation item. |
 | Leo XIII made Thomas central to a renewal of Christian philosophy in 1879. | M | Papal encyclical | [*Aeterni Patris*](https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_04081879_aeterni-patris.html) | Official recommendation and program, not a historical claim that Thomism was previously uniform. |
 | Leo XIII named Thomas patron of Catholic schools, colleges, and universities in 1880. | M | Papal brief | [*Cum hoc sit*](https://www.vatican.va/content/leo-xiii/it/briefs/documents/hf_l-xiii_brief_18800804_cum-hoc-sit.html) | Exact historic object; do not extend to every popular patronage list or ignore later co-patron wording. |
@@ -162,7 +161,7 @@ Within the controlled search, no source established:
   verbatim childhood vocation dialogue;
 - one uncontested detention duration or a contemporary witness for the
   prostitute/firebrand, angelic girdle, “dumb ox,” Albert prophecy, infant
-  Marian paper, crucifix dialogue, or Bonaventure office contest;
+  Marian paper or crucifix dialogue;
 - a single commission or audience for the *Summa contra gentiles*, or blanket
   authorship of every Corpus Christi hymn, office, Mass, sequence, and prayer;
 - Reginald of Piperno's own surviving deposition for the December 1273 “straw”
@@ -171,8 +170,6 @@ Within the controlled search, no source established:
   verbatim final speech;
 - a Paris decree naming Thomas or condemning all his works in 1277, or a 1325
   act certifying every disputed proposition as true;
-- John XXII's controlled contemporary authorship of the “as many miracles as
-  articles” saying;
 - a continuous, untouched, entire-body chain; forensic authentication of every
   Toulouse or competing skull/relic claim; or a securely contemporary portrait;
 - one official act supporting every popular patronage claim, detached saying,

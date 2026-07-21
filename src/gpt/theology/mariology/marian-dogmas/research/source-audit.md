@@ -137,7 +137,7 @@ Official pages:
 | Nestorian division destroys divine motherhood. | *Compendium theologiae* I, cc.222–223. | P in Corpus Thomisticum. |
 | Virginity before, in, and after, plus Thomas's vow theory. | ST III, q.28, aa.1–4; *Compendium* I, cc.221, 225. | P. Fittingness and some medieval premises are not presented as definitions. |
 | Mary's marriage to Joseph is true while continence is mutually intended. | ST III, q.29, a.2. | P. Used to exclude contempt for marriage. |
-| Thomas places Marian sanctification after animation and explicitly thinks prior non-contraction would derogate from Christ as universal Savior. | ST III, q.27, a.2 and ad 2; *Compendium* I, c.224; *Quodlibet* VI, q.5, a.1. | P in Corpus Thomisticum; consequential negative result. No late reversal invented. |
+| Thomas places Marian sanctification after animation and explicitly thinks prior non-contraction would derogate from Christ as universal Savior. | ST III, q.27, a.2 and ad 2; *Compendium* I, c.224; *Quodlibet* VI, q.5, a.1. | P in Corpus Thomisticum; consequential historical contrast. |
 | Thomas teaches preservation from actual sin and fullness of grace. | ST III, q.27, aa.4–5. | P. Not substituted for the first-instant doctrine. |
 | Thomas gives only occasional affirmative Assumption references, not a dedicated treatment. | *Munificentissimus Deus* §31 and note 31, citing *Expositio Salutationis Angelicae*, creed exposition art. 5, and *In IV Sent.* passages. | O / M. Pius XII's own caution controls; opusculum authenticity remains a critical consideration. |
 | Christ alone is perfect mediator; others participate *secundum quid*. | ST III, q.26, aa.1–2. | P; used to structure the title chapter. |
@@ -217,7 +217,6 @@ The following negative findings are part of the evidence state and are intention
 - The Vulgate *ipsa* of Genesis 3:15 was rejected as the sole or necessary textual foundation for the Immaculate Conception.
 - Ezekiel's closed gate was rejected as literal obstetrical proof and retained only as patristic typology.
 - Assertions that every early Father explicitly taught the Immaculate Conception were rejected.
-- Claims that Aquinas changed his mind late in life were rejected absent a decisive authenticated source.
 - The *potuit–decuit–fecit* maxim was rejected as a verbatim Scotus citation.
 - Claims of an empty, universally known Marian tomb as historical proof were not used.
 - Apocryphal narratives were rejected as eyewitness evidence.

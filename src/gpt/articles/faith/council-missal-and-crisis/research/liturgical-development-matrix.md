@@ -74,6 +74,6 @@ Checked 2026-07-13. This record separates council mandate, implementation act, t
 
 - No primary source supports “Vatican II abolished Latin,” “Vatican II ordered Mass facing the people,” “Vatican II mandated Communion in the hand,” or “Vatican II abolished chant.”
 - No primary source supports treating the 1965 transitional order, 1969 *Ordo Missae*, 1970 first typical Missal, 1973 English translation, and 2002 third typical edition as one artifact.
-- No official record supports the claim that Bugnini alone legislated the rite or that an alleged Masonic affiliation is needed to explain the reform.
+- Official acts locate legislative authority in Paul VI and organized implementation in the Consilium, with Bugnini serving as its secretary under Cardinal Lercaro's presidency.
 - Lawfulness and sacramental validity do not answer organic-development, translation, symbolic-density, distribution, or pastoral-fruit questions.
 - Demographic correlation does not make the Missal a sufficient cause; juridical promulgation does not make causal influence impossible.

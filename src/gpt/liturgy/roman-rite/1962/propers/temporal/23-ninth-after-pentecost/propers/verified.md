@@ -73,7 +73,7 @@ In illo témpore: Cum appropinquáret Iesus Ierúsalem, videns civitátem, flevi
 
 **Rubric:** Credo.
 
-**Immediate context and liturgical function:** After the procession from the Mount of Olives, Jesus sees Jerusalem, weeps, laments the unrecognized things of peace, and foretells siege. He then enters the Temple, invokes Isaiah’s house of prayer and Jeremiah’s robbers’ den, expels commerce, and teaches daily. Jesus and his first followers are Jews; the lament cannot support collective or transgenerational Jewish guilt. Its warning reaches the Christian assembly that hears it.
+**Immediate context and liturgical function:** After the procession from the Mount of Olives, Jesus sees Jerusalem, weeps, laments the unrecognized things of peace, and foretells siege. He then enters the Temple, invokes Isaiah’s house of prayer and Jeremiah’s robbers’ den, expels commerce, and teaches daily. The lament is voiced within Israel and reaches the Christian assembly that hears it.
 
 **Verification status:** facsimile-collated; the verse boundary through daily Temple teaching and the following Credo are confirmed.
 
