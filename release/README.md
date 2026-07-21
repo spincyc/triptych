@@ -1,6 +1,6 @@
 # Public Release Boundary
 
-The current release manifest contains 112 publications: 110 are marked
+The current release manifest nominally contains 112 publications: 110 are marked
 `release`, no item is marked `review`, and the Saint Thomas Aquinas and
 Saint Robert Bellarmine biographies are marked `hold`. The latest 20 July 2026
 supplement in `rights/public-alpha-2026-07-15.md` records the maintainer's
@@ -8,18 +8,21 @@ instruction to authorize, install, and commit the Ecclesiastical Latin
 curriculum as exact-current-snapshot distribution authorization, effective at
 `2026-07-20T20:23:41-05:00` in `America/Chicago`, under the existing represented
 perpetual worldwide public-repository and GitHub Pages authority. It binds the
-52 curriculum snapshots and the 22 site-input snapshots recorded there, subject
-to no project-initiated promotion. Fifty-seven other installed PDFs still match
-their earlier approvals. The installed Ninth Sunday after Pentecost PDF retains
-its pre-existing mismatch with the earlier approved hash and remains
+52 superseded curriculum snapshots and the 22 site-input snapshots recorded
+there, subject to no project-initiated promotion. The 52 corrected installed
+curriculum PDFs no longer match those bindings and remain fail-closed pending
+renewed exact-snapshot authorization. Fifty-seven other installed PDFs still
+match their earlier approvals. The installed Ninth Sunday after Pentecost PDF
+retains its pre-existing mismatch with the earlier approved hash and remains
 fail-closed.
 
 The Aquinas and Bellarmine biographies have no approval, remain excluded from
 both public and preview artifacts, and each awaits a work-specific rights
 review. Their catalog changes leave the recorded `LIBRARY.md` and
-`library/biographies.md` site-source hashes stale. Together with the already
-changed `CONTRIBUTING.md` site input and Ninth Sunday after Pentecost PDF, these
-changes cause the public check to fail closed until renewed exact-snapshot
+`library/biographies.md` site-source hashes stale. Together with the changed
+`CONTRIBUTING.md`, `THIRD_PARTY.md`, and `library/curriculums.md` site inputs,
+the 52 curriculum PDFs, and the Ninth Sunday after Pentecost PDF, these changes
+cause the public check to fail closed until renewed exact-snapshot
 authorization. Changed PDF or site-input bytes require renewed authorization.
 
 This is operational exact-byte release clearance, not a judgment that a work
@@ -32,15 +35,16 @@ substantive limitation in their source audits. Their manifest entries have
 empty release gates, but only the recorded hashes received exact-snapshot
 clearance.
 
-The Ecclesiastical Latin curriculum's two course companions, 46 learning
-modules, and four assessment sequences are installed under an explicit
-exact-snapshot exception. Their donor tree still has no local license;
-work-specific rights analysis, liturgical-text distribution analysis,
-page-image collation, and the final exact-snapshot raster refresh remain
-incomplete. The authorization clears distribution of the bound bytes only. It
-does not complete those acts, establish ownership or an open license, make the
-curriculum profile-final or production-reviewed, or authorize later snapshots
-or extracted donor or liturgical wording.
+The Ecclesiastical Latin curriculum's prior two course companions, 46 learning
+modules, and four assessment sequences were installed under an explicit exact-
+snapshot exception. The corrected replacement set has completed its exact-byte
+build and page-by-page raster review, but its donor tree still has no local
+license; work-specific rights analysis, liturgical-text distribution analysis,
+and page-image collation remain incomplete. The earlier authorization clears
+distribution of the bound superseded bytes only. It does not complete those
+acts, establish ownership or an open license, make the curriculum profile-final,
+authorize the corrected snapshots, or authorize extracted donor or liturgical
+wording.
 
 `public-alpha.json` is the exhaustive publication policy for every discovered source document and installed PDF:
 
@@ -150,10 +154,12 @@ records for the complete boundaries.
 
 Only when all snapshot and site-source bindings verify may the GitHub Pages
 workflow build and verify `build/public-alpha/site`. The current authorization
-binds the 52 curriculum PDFs and records 22 recognized site-source snapshots,
-but the stale `CONTRIBUTING.md`, `LIBRARY.md`, and `library/biographies.md`
-bindings and the unrelated Ninth Sunday snapshot mismatch deliberately prevent
-verification. A future verified workflow may upload only that artifact through
+binds the 52 superseded curriculum PDFs and records 22 recognized site-source
+snapshots, but the 52 corrected curriculum PDFs, the stale `CONTRIBUTING.md`,
+`LIBRARY.md`, `THIRD_PARTY.md`, `library/biographies.md`, and
+`library/curriculums.md` bindings, and the unrelated Ninth Sunday snapshot
+mismatch deliberately prevent verification. A future verified workflow may
+upload only that artifact through
 the `github-pages` environment. Pages must never publish the repository root or
 `build/public-alpha/preview`. This
 record documents the boundary only; it does not authorize a worker to perform a

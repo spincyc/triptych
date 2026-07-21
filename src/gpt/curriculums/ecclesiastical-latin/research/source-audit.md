@@ -110,10 +110,11 @@ and review event do not establish the integrity of any new packet. The
 of 52 independent leaves, each leaf's exact page count and SHA-256, and the
 technical and visual verification performed on those exact bytes.
 
-All 52 rebuilt PDFs remain uninstalled review candidates. The prior installed
-snapshots and their release records are unchanged. Internal verification does
-not resolve the outstanding page-image collation or donor and received-text
-rights analysis, authorize installation or changed-byte distribution, or
-permit broader reuse.
+All 52 rebuilt PDFs are installed as corrected working snapshots at the user's
+direction. The prior installed snapshots and their exact release bindings are
+historical; the release record retains those superseded hashes and therefore
+fails closed for the corrected bytes. Internal verification does not resolve
+the outstanding page-image collation or donor and received-text rights
+analysis, authorize changed-byte distribution, or permit broader reuse.
 
 No integration, push, or deployment is implied by this research record.
