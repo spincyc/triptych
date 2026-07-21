@@ -30,6 +30,13 @@ class MakefileBuildGraphTests(unittest.TestCase):
         (self.root / "src/gpt/common/preamble.tex").write_text(
             "% shared render dependency\n", encoding="utf-8"
         )
+        curriculum_shared = (
+            self.root / "src/gpt/curriculums/ecclesiastical-latin/shared"
+        )
+        curriculum_shared.mkdir(parents=True)
+        (curriculum_shared / "course-format.sty").write_text(
+            "% curriculum-wide render dependency\n", encoding="utf-8"
+        )
         for document in ("demo-a", "demo-b"):
             leaf = self.root / "src/gpt" / document
             (leaf / "research").mkdir(parents=True)
@@ -249,6 +256,37 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         self.run_make("pdf")
         self.assertEqual(len(self.lines(self.latex_log)), 2)
         self.assertEqual(len(self.lines(self.check_log)), 2)
+
+    def test_curriculum_shared_source_rebuilds_each_dependent_packet(self) -> None:
+        for module in ("01-first", "02-second"):
+            leaf = (
+                self.root
+                / "src/gpt/curriculums/ecclesiastical-latin/01-foundations"
+                / module
+            )
+            leaf.mkdir(parents=True)
+            (leaf / "main.tex").write_text("\\input{module-data}\n", encoding="utf-8")
+            (leaf / "module-data.tex").write_text(f"{module}\n", encoding="utf-8")
+            (leaf / "generation-metadata.tex").write_text("metadata\n", encoding="utf-8")
+
+        self.run_make("pdf")
+        self.clear_logs()
+        time.sleep(0.02)
+        shared = (
+            self.root
+            / "src/gpt/curriculums/ecclesiastical-latin/shared/course-format.sty"
+        )
+        shared.write_text("% changed curriculum source\n", encoding="utf-8")
+
+        self.run_make("pdf")
+
+        curriculum_jobs = [
+            line
+            for line in self.lines(self.latex_log)
+            if "curriculums/ecclesiastical-latin" in line
+        ]
+        self.assertEqual(len(curriculum_jobs), 4)
+        self.assertFalse(any("demo-a" in line or "demo-b" in line for line in self.lines(self.latex_log)))
 
     def test_install_uses_only_validated_builds_and_refreshes_changed_pdf(self) -> None:
         self.run_make("-j4", "install")

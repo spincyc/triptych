@@ -1,0 +1,292 @@
+\NeedsTeXFormat{LaTeX2e}
+% Document-local course format. Imported after the shared Triptych preamble.
+
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{environ}
+\RequirePackage{etoolbox}
+\RequirePackage{fancyhdr}
+\RequirePackage{parskip}
+\RequirePackage{titlesec}
+\RequirePackage{xstring}
+\RequirePackage{xltabular}
+
+% Print-first and intentionally monochrome.
+\definecolor{LatinGray}{gray}{0.90}
+\definecolor{LatinDarkGray}{gray}{0.25}
+\hypersetup{
+  hidelinks,
+  pdfborder={0 0 0},
+  pdfcreator={Triptych}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\setlist{nosep,leftmargin=*}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
+\emergencystretch=2em
+\hbadness=5000
+\raggedbottom
+
+% The shared Triptych preamble uses the article class.  Add a book-like chapter
+% level without duplicating the shared metadata and final-page rights machinery.
+\titleclass{\chapter}{straight}[\part]
+\newcounter{chapter}[part]
+\renewcommand{\thechapter}{\arabic{chapter}}
+\makeatletter
+\providecommand{\@chapapp}{Chapter}
+\@addtoreset{section}{chapter}
+\makeatother
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+\providecommand{\chaptername}{Chapter}
+\makeatletter
+\renewcommand*\l@section{\@dottedtocline{1}{1.5em}{3.2em}}
+\makeatother
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\sffamily\small TRIPTYCH / ECCLESIASTICAL LATIN}
+\fancyhead[R]{\sffamily\small\nouppercase{\leftmark}}
+\fancyfoot[L]{\sffamily\small Disce legendo et scribendo}
+\fancyfoot[R]{\sffamily\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\titleformat{\chapter}[display]
+  {\sffamily\bfseries\Large}
+  {\filleft\MakeUppercase{\chaptername}\ \thechapter}
+  {0.5ex}{\titlerule\vspace{0.8ex}}
+\titlespacing*{\chapter}{0pt}{3.5ex plus 1ex minus 0.2ex}{2.3ex}
+\titleformat{\section}{\sffamily\bfseries\large}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\sffamily\bfseries}{\thesubsection}{0.55em}{}
+
+\newcommand{\Latin}[1]{\textit{#1}}
+\newcommand{\English}[1]{``#1''}
+\newcommand{\Term}[1]{\textbf{#1}}
+\newcommand{\Blank}{\rule{1.3in}{0.4pt}}
+\newcommand{\LongBlank}{\rule{2.6in}{0.4pt}}
+\newcommand{\Missal}{\textit{Missale Romanum} (1962)}
+\newcommand{\CoursePacing}{Advance by demonstrated mastery; module packets use two focused sessions as a planning envelope}
+
+% Course units remain authoritative in the stage source files while individual
+% packet publications select one unit.  The default keeps shared companion
+% renderings able to include every unit deliberately.
+\newcommand{\SelectedCourseUnits}{all}
+\newcommand{\SelectCourseUnits}[1]{\renewcommand{\SelectedCourseUnits}{#1}}
+\NewEnviron{courseunit}[1]{%
+  \IfStrEq{\SelectedCourseUnits}{all}{\BODY}{%
+    \IfSubStr{,\SelectedCourseUnits,}{,#1,}{\BODY}{}%
+  }%
+}
+
+% A consistent retrieval cue for terms that the learner must be able to use.
+% Definitions may intentionally recur after a long gap or before a new use.
+\newcommand{\Definition}[2]{%
+  \par\Needspace{5\baselineskip}\medskip
+  \noindent\fcolorbox{black}{LatinGray}{%
+    \begin{minipage}{0.94\linewidth}
+      \textbf{Definition --- #1.} #2
+    \end{minipage}}
+  \par\medskip
+}
+
+\newcommand{\Contrast}[3]{%
+  \par\Needspace{6\baselineskip}\smallskip
+  \noindent\begin{minipage}{\linewidth}
+    \textbf{Do not confuse #1 with #2.} #3
+  \end{minipage}
+  \par\smallskip
+}
+
+\newcommand{\CourseTitlePage}[4]{%
+  \hypersetup{pageanchor=false}%
+  \begin{titlepage}
+    \thispagestyle{empty}
+    \vspace*{0.65in}
+    {\sffamily\bfseries\fontsize{30}{34}\selectfont Ecclesiastical Latin\par}
+    \vspace{0.18in}
+    {\sffamily\bfseries\Large #1\par}
+    \vspace{0.12in}
+    {\sffamily\large #2\par}
+    \vspace{0.55in}
+    \rule{\linewidth}{1pt}
+    \vspace{0.28in}
+    {\large #3\par}
+    \vfill
+    \begin{tabularx}{\linewidth}{@{}lX@{}}
+      \textbf{Corpus} & 1962 \textit{Missale Romanum}; Vulgate and ecclesiastical prose as supporting readers \\
+      \textbf{Method} & Print, annotate, parse, copy, transform, translate, and compose by hand \\
+      \textbf{Pacing} & \CoursePacing \\
+      \textbf{Document} & #4 \\
+    \end{tabularx}
+    \vspace{0.35in}
+    {\sffamily\small Triptych: AI Driven Studies in Catholic Faith, Worship, and Law\par}
+  \end{titlepage}
+  \hypersetup{pageanchor=true}%
+}
+
+\newenvironment{learningobjectives}
+  {\begin{quote}\textbf{On completing this unit, you can:}\begin{itemize}}
+  {\end{itemize}\end{quote}}
+
+\newcommand{\MasteryGate}[1]{%
+  \par\medskip
+  \noindent\fcolorbox{black}{LatinGray}{%
+    \begin{minipage}{0.94\linewidth}
+      \textbf{Advance when:} #1
+    \end{minipage}}
+  \par\medskip
+}
+
+\newcommand{\StudyLoop}{%
+  \begin{enumerate}
+    \item Read the lesson once without taking notes.
+    \item Copy every paradigm and worked Latin example by hand.
+    \item Close the lesson and retrieve the new definitions and forms from
+          memory; for each definition, state the decisive feature and add an
+          example or contrast before checking it.
+    \item Complete two contrasting worksheet variants in ink.
+    \item Check in a different color, explain each correction in writing, and
+          choose more practice only where the error pattern persists.
+    \item Attempt the unit gate on an unseen text before advancing.
+  \end{enumerate}}
+
+\newenvironment{grammarbox}[1]
+  {\par\medskip\noindent\begin{minipage}{\linewidth}\hrule\smallskip
+   \textbf{#1}\par\smallskip}
+  {\par\smallskip\hrule\end{minipage}\par\medskip}
+
+\newcounter{workedpassage}
+\newcommand{\CourseWorkedBankID}{UNSET}
+\newcommand{\CourseWorkedPassageID}{UNSET}
+\def\theHworkedpassage{\CourseWorkedPassageID}
+\newcommand{\BeginWorkedPassageBank}[1]{%
+  \setcounter{workedpassage}{0}%
+  \renewcommand{\CourseWorkedBankID}{#1}%
+}
+
+\newenvironment{workedexample}[2]
+  {\renewcommand{\CourseWorkedPassageID}{#2}%
+   \refstepcounter{workedpassage}%
+   \Needspace{9\baselineskip}\subsection*{Worked example: #1}%
+   {\scriptsize\textit{Worked passage ID: #2;
+   exact source and collation state are recorded in the passage inventory.}}%
+   \par\begin{quote}}
+  {\end{quote}}
+
+\newcommand{\Parse}[6]{%
+  \begin{tabularx}{\linewidth}{@{}P{0.95in}P{1.05in}P{1.0in}P{0.85in}X@{}}
+    \toprule
+    \textbf{Form} & \textbf{Dictionary form} & \textbf{Morphology} & \textbf{Function} & \textbf{Sense here} \\
+    \midrule
+    #1 & #2 & #3 & #4 & #5 \\
+    \bottomrule
+  \end{tabularx}
+  #6
+}
+
+\newcommand{\Lexeme}[4]{\Latin{#1} --- #2; #3. #4}
+
+% The same exercise source renders a spacious student worksheet or a compact key.
+\newif\ifsolutions
+\solutionsfalse
+\newcounter{exercisebank}
+\newcounter{worksheet}
+\newcounter{exercise}[worksheet]
+\newcounter{passage}[worksheet]
+\newcommand{\CourseBankID}{UNSET}
+\newcommand{\CourseWorksheetID}{UNSET}
+\newcommand{\CourseItemNamespace}{UNSET}
+\def\theHworksheet{\arabic{exercisebank}.\CourseWorksheetID}
+\def\theHexercise{\arabic{exercisebank}.\CourseItemNamespace.\arabic{exercise}}
+\def\theHpassage{\arabic{exercisebank}.\CourseWorksheetID.\arabic{passage}}
+\newcommand{\BeginExerciseBank}[1]{%
+  \stepcounter{exercisebank}%
+  \setcounter{worksheet}{0}%
+  \setcounter{exercise}{0}%
+  \setcounter{passage}{0}%
+  \renewcommand{\CourseBankID}{#1}%
+}
+
+\newcommand{\SelectedWorksheetVariants}{all}
+\newcommand{\SelectWorksheetVariants}[1]{%
+  \renewcommand{\SelectedWorksheetVariants}{#1}}
+\newif\ifrendercourseworksheet
+\NewEnviron{worksheet}[6]{%
+  \rendercourseworksheetfalse
+  \IfStrEq{\SelectedWorksheetVariants}{all}{\rendercourseworksheettrue}{%
+    \IfSubStr{,\SelectedWorksheetVariants,}{,#2,}{\rendercourseworksheettrue}{}%
+  }%
+  \ifrendercourseworksheet
+    \renewcommand{\CourseWorksheetID}{#1}%
+    \renewcommand{\CourseItemNamespace}{#1}%
+    \ifsolutions\Needspace{16\baselineskip}\else\clearpage\fi
+    \refstepcounter{worksheet}%
+    \setcounter{passage}{0}%
+    \section*{#3 — #4}%
+    \textbf{Worksheet ID:} #1\par
+    \textbf{Focus:} #5\par
+    \textbf{Use:} #6\par
+    \ifsolutions\small\fi
+    \begin{enumerate}[label=\textbf{\arabic*.},leftmargin=2em]
+      \BODY
+    \end{enumerate}
+    \ifsolutions\normalsize\else
+      \vfill
+      {\scriptsize\textbf{Definition/error check:} First define uncertain Focus
+      terms from memory; after the work, record each correction's rule.}\par
+      \vspace{0.18in}\hrule
+    \fi
+  \fi
+}
+
+\newcommand{\Exercise}[3][0.38in]{%
+  \refstepcounter{exercise}\item #2
+  \ifsolutions
+    \par\textbf{Answer / model:} #3\par\smallskip
+  \else
+    \par\vspace{#1}\hrulefill\par\smallskip
+  \fi
+}
+
+\newcommand{\ShortExercise}[2]{\Exercise[0.22in]{#1}{#2}}
+\newcommand{\LongExercise}[2]{\Exercise[0.9in]{#1}{#2}}
+\newcommand{\PassageExercise}[3]{%
+  \refstepcounter{passage}\item \textbf{Text:} \Latin{#1}\par
+  {\scriptsize\textit{Passage ID: \CourseWorksheetID.\arabic{passage};
+  exact source and collation state are recorded in the passage inventory.}}\par
+  #2
+  \ifsolutions\par\textbf{Answer / notes:} #3\par\smallskip
+  \else\par\vspace{1.15in}\hrulefill\par\smallskip\fi
+}
+
+\newcommand{\SelectedAssessments}{all}
+\newcommand{\SelectAssessments}[1]{\renewcommand{\SelectedAssessments}{#1}}
+\newcommand{\CourseAssessmentID}{UNSET}
+\newif\ifrendercourseassessment
+\NewEnviron{assessment}[4]{%
+  \rendercourseassessmentfalse
+  \IfStrEq{\SelectedAssessments}{all}{\rendercourseassessmenttrue}{%
+    \IfSubStr{,\SelectedAssessments,}{,#1,}{\rendercourseassessmenttrue}{}%
+  }%
+  \ifrendercourseassessment
+    \renewcommand{\CourseAssessmentID}{#1}%
+    \renewcommand{\CourseItemNamespace}{#1}%
+    \setcounter{exercise}{0}%
+    \clearpage\chapter*{#2}\addcontentsline{toc}{chapter}{#2}%
+    \textbf{Assessment ID:} #1\par
+    \textbf{Level:} #3\par
+    \textbf{Conditions:} #4\par\medskip
+    \begin{enumerate}[label=\textbf{\arabic*.},leftmargin=2em]
+      \BODY
+    \end{enumerate}
+  \fi
+}
+
+\newcommand{\AssessmentItem}[3][0.65in]{%
+  \Exercise[#1]{{\scriptsize\textit{Item ID: \CourseAssessmentID.\arabic{exercise}}}\par #2}{#3}}
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}

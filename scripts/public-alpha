@@ -32,6 +32,7 @@ PAGE_MAP = {
     "LICENSE": "license.html",
     "THIRD_PARTY.md": "third-party.html",
     "library/biographies.md": "library/biographies.html",
+    "library/curriculums.md": "library/curriculums.html",
     "library/faith.md": "library/faith.html",
     "library/heresies.md": "library/heresies.html",
     "library/historical-accounts.md": "library/historical-accounts.html",
@@ -56,6 +57,10 @@ LICENSE_SOURCE_PATHS = {
 SITE_SOURCE_PATHS = set(PAGE_MAP) | FIXED_ARTIFACT_INPUT_PATHS | LICENSE_SOURCE_PATHS
 
 PDF_LINK_RE = re.compile(r"(?:\.\./)?doc/gpt/([^)#\s]+)\.pdf(?:#[^)]*)?")
+CATALOG_PUBLICATION_ID_RE = re.compile(
+    r"<!--\s*triptych-publication-id:\s*"
+    r"([a-z0-9][a-z0-9./-]*[a-z0-9])\s*-->"
+)
 MARKDOWN_LINK_RE = re.compile(r"(?<!!)\[([^\]]+)\]\(([^)\n]+)\)")
 EXTERNAL_RE = re.compile(r"^[A-Za-z][A-Za-z0-9+.-]*:")
 SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
@@ -405,18 +410,35 @@ def discover_pdf_ids(provider: str) -> set[str]:
     }
 
 
-def catalog_occurrences() -> tuple[dict[str, list[str]], list[tuple[str, list[str]]]]:
+def catalog_occurrences() -> tuple[
+    dict[str, list[str]],
+    list[tuple[str, list[str]]],
+    dict[str, list[str]],
+    list[tuple[str, list[str], list[str]]],
+]:
     occurrences: dict[str, list[str]] = defaultdict(list)
     multi_pdf_lines: list[tuple[str, list[str]]] = []
+    marked_occurrences: dict[str, list[str]] = defaultdict(list)
+    mismatched_identity_lines: list[tuple[str, list[str], list[str]]] = []
     for path in sorted((ROOT / "library").glob("*.md")):
         relative = path.relative_to(ROOT).as_posix()
         for line in path.read_text(encoding="utf-8").splitlines():
             ids = PDF_LINK_RE.findall(line)
+            marked_ids = CATALOG_PUBLICATION_ID_RE.findall(line)
             for publication_id in ids:
                 occurrences[publication_id].append(relative)
+            for publication_id in marked_ids:
+                marked_occurrences[publication_id].append(relative)
             if len(ids) > 1:
                 multi_pdf_lines.append((relative, ids))
-    return occurrences, multi_pdf_lines
+            if ids and marked_ids and set(ids) != set(marked_ids):
+                mismatched_identity_lines.append((relative, ids, marked_ids))
+    return (
+        occurrences,
+        multi_pdf_lines,
+        marked_occurrences,
+        mismatched_identity_lines,
+    )
 
 
 def validate_manifest(
@@ -458,10 +480,11 @@ def validate_manifest(
             "manifest/source mismatch: "
             f"missing={sorted(source_ids - manifest_ids)!r}, extra={sorted(manifest_ids - source_ids)!r}"
         )
-    if pdf_ids != manifest_ids:
+    unmanifested_pdf_ids = sorted(pdf_ids - manifest_ids)
+    if unmanifested_pdf_ids:
         errors.append(
             "manifest/PDF mismatch: "
-            f"missing={sorted(pdf_ids - manifest_ids)!r}, extra={sorted(manifest_ids - pdf_ids)!r}"
+            f"unmanifested={unmanifested_pdf_ids!r}"
         )
 
     gate_definitions = manifest.get("gates")
@@ -476,6 +499,9 @@ def validate_manifest(
             errors.append(f"{publication_id}: invalid status {status!r}")
             continue
         counts[status] += 1
+        has_pdf = publication_id in pdf_ids
+        if status in {"release", "review"} and not has_pdf:
+            errors.append(f"{publication_id}: {status} entries require an installed PDF")
 
         catalog = publication.get("catalog")
         if not isinstance(catalog, str) or not catalog.startswith("library/") or not catalog.endswith(".md"):
@@ -593,23 +619,63 @@ def validate_manifest(
             if expected.get(key) != actual:
                 errors.append(f"expected_counts.{key} is {expected.get(key)!r}, discovered {actual}")
 
-    occurrences, multi_pdf_lines = catalog_occurrences()
+    (
+        occurrences,
+        multi_pdf_lines,
+        marked_occurrences,
+        mismatched_identity_lines,
+    ) = catalog_occurrences()
     for publication_id, publication in publications.items():
         homes = occurrences.get(publication_id, [])
-        if len(homes) != 1:
-            errors.append(f"{publication_id}: expected one catalog link, found {len(homes)}")
-        elif homes[0] != publication.get("catalog"):
+        marked_homes = marked_occurrences.get(publication_id, [])
+        if publication_id in pdf_ids:
+            if len(homes) != 1:
+                errors.append(f"{publication_id}: expected one catalog link, found {len(homes)}")
+            elif homes[0] != publication.get("catalog"):
+                errors.append(
+                    f"{publication_id}: manifest catalog {publication.get('catalog')!r} "
+                    f"does not match {homes[0]!r}"
+                )
+        elif publication.get("status") == "hold" and homes:
             errors.append(
-                f"{publication_id}: manifest catalog {publication.get('catalog')!r} "
-                f"does not match {homes[0]!r}"
+                f"{publication_id}: source-only hold entries "
+                f"require zero catalog PDF links, found {len(homes)}"
             )
+        if marked_homes:
+            if len(marked_homes) != 1:
+                errors.append(
+                    f"{publication_id}: expected at most one marked catalog identity, "
+                    f"found {len(marked_homes)}"
+                )
+            elif marked_homes[0] != publication.get("catalog"):
+                errors.append(
+                    f"{publication_id}: manifest catalog {publication.get('catalog')!r} "
+                    f"does not match marked identity {marked_homes[0]!r}"
+                )
+        if publication_id not in pdf_ids and publication.get("status") == "hold":
+            if len(marked_homes) != 1:
+                errors.append(
+                    f"{publication_id}: source-only hold entries require exactly one "
+                    f"marked catalog identity, found {len(marked_homes)}"
+                )
     unowned = sorted(set(occurrences) - manifest_ids)
     if unowned:
         errors.append(f"catalog links PDFs absent from manifest: {unowned!r}")
+    unowned_markers = sorted(set(marked_occurrences) - manifest_ids)
+    if unowned_markers:
+        errors.append(
+            "marked catalog identities absent from manifest: "
+            f"{unowned_markers!r}"
+        )
     for catalog, ids in multi_pdf_lines:
         statuses = {publications[item]["status"] for item in ids if item in publications}
         if len(statuses) > 1:
             errors.append(f"{catalog}: PDFs sharing one catalog row must share a status: {ids!r}")
+    for catalog, pdf_ids_on_line, source_ids_on_line in mismatched_identity_lines:
+        errors.append(
+            f"{catalog}: catalog row PDF identities {pdf_ids_on_line!r} do not match "
+            f"marked identities {source_ids_on_line!r}"
+        )
 
     if errors:
         raise ReleaseError("Public-alpha policy check failed:\n- " + "\n- ".join(errors))
@@ -635,7 +701,12 @@ def candidate_inventory_data(manifest: dict, publications: dict[str, dict]) -> d
         pdf_path = ROOT / "doc" / provider / f"{publication_id}.pdf"
         if source_path.is_symlink() or not source_path.is_file():
             errors.append(f"unsafe or missing publication source: {source_path.relative_to(ROOT)}")
-        if pdf_path.is_symlink() or not pdf_path.is_file():
+        if pdf_path.is_symlink():
+            errors.append(f"unsafe or missing installed PDF: {pdf_path.relative_to(ROOT)}")
+            continue
+        if not pdf_path.is_file():
+            if publications[publication_id]["status"] == "hold":
+                continue
             errors.append(f"unsafe or missing installed PDF: {pdf_path.relative_to(ROOT)}")
             continue
         pdfs.append(
@@ -905,6 +976,7 @@ export default {{
 
 def filter_catalog(source: str, markdown_text: str, included_ids: set[str]) -> str:
     original_ids = PDF_LINK_RE.findall(markdown_text)
+    original_ids.extend(CATALOG_PUBLICATION_ID_RE.findall(markdown_text))
     if not original_ids:
         return markdown_text
 
@@ -912,9 +984,10 @@ def filter_catalog(source: str, markdown_text: str, included_ids: set[str]) -> s
     retained_ids: list[str] = []
     for line in markdown_text.splitlines():
         line_ids = PDF_LINK_RE.findall(line)
+        line_ids.extend(CATALOG_PUBLICATION_ID_RE.findall(line))
         if line_ids and not set(line_ids).issubset(included_ids):
             continue
-        retained.append(line)
+        retained.append(CATALOG_PUBLICATION_ID_RE.sub("", line))
         retained_ids.extend(line_ids)
     if retained_ids:
         return "\n".join(retained) + "\n"
@@ -970,7 +1043,9 @@ def source_to_output(source_relative: str, target: str, included_ids: set[str]) 
 def rewrite_links(source_relative: str, markdown_text: str, included_ids: set[str]) -> str:
     output_lines: list[str] = []
     for line in markdown_text.splitlines():
-        catalog_entry = bool(PDF_LINK_RE.search(line))
+        catalog_entry = bool(
+            PDF_LINK_RE.search(line) or CATALOG_PUBLICATION_ID_RE.search(line)
+        )
 
         def replace(match: re.Match[str]) -> str:
             label = match.group(1)

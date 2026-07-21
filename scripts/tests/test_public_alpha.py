@@ -124,6 +124,59 @@ class PublicAlphaTest(unittest.TestCase):
             (json.dumps(self.manifest, indent=2) + "\n").encode(),
         )
 
+    def add_unapproved_publication(
+        self,
+        publication_id: str,
+        status: str,
+        *,
+        catalog: str = "library/test.md",
+        install_pdf: bool = False,
+        link_catalog: str | None = None,
+    ) -> None:
+        if status not in {"hold", "review"}:
+            raise ValueError(f"unsupported unapproved status: {status}")
+        self.write(f"src/gpt/{publication_id}/main.tex", b"source\n")
+        if install_pdf:
+            self.write(f"doc/gpt/{publication_id}.pdf", b"publication pdf bytes\n")
+        if link_catalog is not None:
+            catalog_path = self.root / link_catalog
+            existing = catalog_path.read_bytes() if catalog_path.is_file() else b""
+            self.write(
+                link_catalog,
+                existing
+                + f"\n[{publication_id}](../doc/gpt/{publication_id}.pdf)\n".encode(),
+            )
+        if not install_pdf:
+            catalog_path = self.root / catalog
+            if catalog_path.is_file():
+                existing = catalog_path.read_bytes()
+                self.write(
+                    catalog,
+                    existing
+                    + (
+                        f"\n{publication_id} private row "
+                        f"<!-- triptych-publication-id: {publication_id} -->\n"
+                    ).encode(),
+                )
+        self.manifest["publications"].append(
+            {
+                "id": publication_id,
+                "status": status,
+                "catalog": catalog,
+                "gates": ["rights"],
+                "approval": None,
+            }
+        )
+        statuses = [
+            publication["status"] for publication in self.manifest["publications"]
+        ]
+        self.manifest["expected_counts"] = {
+            "publications": len(statuses),
+            "release": statuses.count("release"),
+            "review": statuses.count("review"),
+            "hold": statuses.count("hold"),
+        }
+
     def authorize_current_inputs(self) -> None:
         """Make the synthetic authorization exactly match the fixture files."""
         authorization = self.manifest["authorizations"]["test-authorization"]
@@ -220,6 +273,281 @@ class PublicAlphaTest(unittest.TestCase):
         self.assertEqual(stdout, "")
         self.assertIn("manifest/source mismatch", stderr)
         self.assertIn("unregistered", stderr)
+
+    def test_source_only_hold_is_valid_and_omitted_from_candidate_pdfs(self) -> None:
+        self.add_unapproved_publication("held-work", "hold")
+        self.authorize_current_inputs()
+
+        publications = self.tool.validate_manifest(self.manifest)
+        inventory = self.tool.prepare_candidate_inventory(self.manifest)
+
+        self.assertEqual(publications["held-work"]["status"], "hold")
+        self.assertEqual([entry["id"] for entry in inventory["pdfs"]], ["work"])
+
+    def test_source_only_hold_catalog_entry_is_filtered_from_every_build(self) -> None:
+        self.add_unapproved_publication("held-work", "hold")
+        catalog = (self.root / "library/test.md").read_text(encoding="utf-8")
+
+        public_catalog = self.tool.filter_catalog(
+            "library/test.md", catalog, {"work"}
+        )
+        empty_catalog = self.tool.filter_catalog("library/test.md", catalog, set())
+
+        self.assertIn("../doc/gpt/work.pdf", public_catalog)
+        self.assertNotIn("held-work", public_catalog)
+        self.assertNotIn("held-work", empty_catalog)
+        self.assertIn("No publications from this section are included", empty_catalog)
+
+        with mock.patch.object(
+            self.tool,
+            "render_page",
+            side_effect=lambda source, markdown, output, preview, authorization: markdown,
+        ):
+            public_page = self.tool.render_source_page(
+                "library/test.md",
+                "library/test.html",
+                {"work"},
+                False,
+                {},
+            )
+            preview_page = self.tool.render_source_page(
+                "library/test.md",
+                "library/test.html",
+                {"work"},
+                True,
+                {},
+            )
+        for page in (public_page, preview_page):
+            self.assertIn("Work", page)
+            self.assertNotIn("held-work", page)
+            self.assertNotIn("triptych-publication-id", page)
+
+    def test_source_only_hold_requires_catalog_identity(self) -> None:
+        self.add_unapproved_publication("held-work", "hold")
+        catalog_path = self.root / "library/test.md"
+        catalog_path.write_text(
+            catalog_path.read_text(encoding="utf-8").replace(
+                "\nheld-work private row "
+                "<!-- triptych-publication-id: held-work -->\n",
+                "\n",
+            ),
+            encoding="utf-8",
+        )
+        self.authorize_current_inputs()
+
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.validate_manifest(self.manifest)
+
+        self.assertIn(
+            "held-work: source-only hold entries require exactly one "
+            "marked catalog identity, found 0",
+            str(failure.exception),
+        )
+
+    def test_source_only_hold_rejects_duplicate_catalog_identity(self) -> None:
+        self.add_unapproved_publication("held-work", "hold")
+        catalog_path = self.root / "library/test.md"
+        with catalog_path.open("a", encoding="utf-8") as stream:
+            stream.write(
+                "held-work duplicate private row "
+                "<!-- triptych-publication-id: held-work -->\n"
+            )
+        self.authorize_current_inputs()
+
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.validate_manifest(self.manifest)
+
+        self.assertIn(
+            "held-work: expected at most one marked catalog identity, found 2",
+            str(failure.exception),
+        )
+
+    def test_source_only_hold_rejects_wrong_catalog_identity(self) -> None:
+        self.write("library/other.md", b"# Other shelf\n")
+        self.add_unapproved_publication(
+            "held-work", "hold", catalog="library/other.md"
+        )
+        other = self.root / "library/other.md"
+        marker = (
+            "held-work private row "
+            "<!-- triptych-publication-id: held-work -->\n"
+        )
+        other.write_text(
+            other.read_text(encoding="utf-8").replace("\n" + marker, "\n"),
+            encoding="utf-8",
+        )
+        with (self.root / "library/test.md").open("a", encoding="utf-8") as stream:
+            stream.write("\n" + marker)
+        self.authorize_current_inputs()
+
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.validate_manifest(self.manifest)
+
+        self.assertIn(
+            "held-work: manifest catalog 'library/other.md' does not match "
+            "marked identity 'library/test.md'",
+            str(failure.exception),
+        )
+
+    def test_catalog_rejects_unmanifested_marked_identity(self) -> None:
+        with (self.root / "library/test.md").open("a", encoding="utf-8") as stream:
+            stream.write(
+                "\nghost private row "
+                "<!-- triptych-publication-id: ghost-work -->\n"
+            )
+        self.authorize_current_inputs()
+
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.validate_manifest(self.manifest)
+
+        self.assertIn(
+            "marked catalog identities absent from manifest: ['ghost-work']",
+            str(failure.exception),
+        )
+
+    def test_render_removes_private_supporting_records_column(self) -> None:
+        self.write(
+            "library/test.md",
+            (
+                "# Test shelf\n\n"
+                "| Publication | Supporting records |\n"
+                "| --- | --- |\n"
+                "| [Work](../doc/gpt/work.pdf) | "
+                "[Source map](../src/gpt/work/research/module-map.md) |\n"
+            ).encode(),
+        )
+        with mock.patch.object(
+            self.tool,
+            "render_page",
+            side_effect=lambda source, markdown, output, preview, authorization: markdown,
+        ):
+            rendered = self.tool.render_source_page(
+                "library/test.md",
+                "library/test.html",
+                {"work"},
+                False,
+                {},
+            )
+
+        self.assertIn("Publication", rendered)
+        self.assertIn("Work", rendered)
+        self.assertNotIn("Supporting records", rendered)
+        self.assertNotIn("Source map", rendered)
+
+    def test_unmanifested_installed_pdf_is_rejected(self) -> None:
+        self.authorize_current_inputs()
+        self.write("doc/gpt/unmanifested.pdf", b"unmanifested pdf bytes\n")
+
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.validate_manifest(self.manifest)
+
+        self.assertIn(
+            "manifest/PDF mismatch: unmanifested=['unmanifested']",
+            str(failure.exception),
+        )
+
+    def test_release_entry_requires_installed_pdf(self) -> None:
+        self.authorize_current_inputs()
+        (self.root / "doc/gpt/work.pdf").unlink()
+
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.validate_manifest(self.manifest)
+
+        self.assertIn(
+            "work: release entries require an installed PDF",
+            str(failure.exception),
+        )
+
+    def test_review_entry_requires_installed_pdf(self) -> None:
+        self.add_unapproved_publication("review-work", "review")
+        self.authorize_current_inputs()
+
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.validate_manifest(self.manifest)
+
+        self.assertIn(
+            "review-work: review entries require an installed PDF",
+            str(failure.exception),
+        )
+
+    def test_source_only_hold_rejects_catalog_pdf_link(self) -> None:
+        self.add_unapproved_publication(
+            "held-work",
+            "hold",
+            link_catalog="library/test.md",
+        )
+        self.authorize_current_inputs()
+
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.validate_manifest(self.manifest)
+
+        self.assertIn(
+            "held-work: source-only hold entries require zero catalog PDF links, found 1",
+            str(failure.exception),
+        )
+
+    def test_source_only_hold_requires_existing_catalog(self) -> None:
+        self.add_unapproved_publication(
+            "held-work",
+            "hold",
+            catalog="library/missing.md",
+        )
+        self.authorize_current_inputs()
+
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.validate_manifest(self.manifest)
+
+        self.assertIn(
+            "held-work: missing catalog library/missing.md",
+            str(failure.exception),
+        )
+
+    def test_installed_pdf_requires_catalog_link(self) -> None:
+        self.add_unapproved_publication("held-work", "hold", install_pdf=True)
+        self.authorize_current_inputs()
+
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.validate_manifest(self.manifest)
+
+        self.assertIn(
+            "held-work: expected one catalog link, found 0",
+            str(failure.exception),
+        )
+
+    def test_installed_pdf_link_must_match_manifest_catalog(self) -> None:
+        self.write("library/other.md", b"# Other shelf\n")
+        self.add_unapproved_publication(
+            "held-work",
+            "hold",
+            catalog="library/other.md",
+            install_pdf=True,
+            link_catalog="library/test.md",
+        )
+        self.authorize_current_inputs()
+
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.validate_manifest(self.manifest)
+
+        self.assertIn(
+            "held-work: manifest catalog 'library/other.md' does not match "
+            "'library/test.md'",
+            str(failure.exception),
+        )
+
+    def test_installed_pdf_rejects_multiple_catalog_links(self) -> None:
+        catalog = self.root / "library/test.md"
+        catalog.write_bytes(
+            catalog.read_bytes() + b"\n[Work again](../doc/gpt/work.pdf)\n"
+        )
+        self.authorize_current_inputs()
+
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.validate_manifest(self.manifest)
+
+        self.assertIn(
+            "work: expected one catalog link, found 2",
+            str(failure.exception),
+        )
 
     def test_check_binds_every_artifact_input_while_prepare_reports_missing_bindings(
         self,

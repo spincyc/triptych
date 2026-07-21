@@ -1,0 +1,90 @@
+% Shared packet furniture. Module-specific claims and tasks live in each
+% publishable leaf's module-data.tex.
+
+\newcommand{\ModulePlan}{%
+  \chapter{Plan, prerequisites, and advancement decision}
+  \begin{tabularx}{\linewidth}{@{}P{1.25in}X@{}}
+    \toprule
+    \textbf{Module ID} & \ModuleID \\
+    \textbf{Course stage} & \ModuleStage \\
+    \textbf{Prerequisites} & \ModulePrerequisites \\
+    \textbf{Observable outcome} & \ModuleOutcome \\
+    \textbf{Printed practice} & \ModulePrintedPractice \\
+    \textbf{Extension bank} & \ModuleExtensionPractice \\
+    \textbf{Next dependency} & \ModuleNext \\
+    \bottomrule
+  \end{tabularx}
+
+  \section{Two focused sessions}
+  \textbf{Session 1 --- guided acquisition.} \ModuleSessionOne
+
+  \textbf{Session 2 --- transfer and gate.} \ModuleSessionTwo
+
+  The two-session plan is a workload envelope, not permission to advance by
+  elapsed time. Stop, correct in a different color, and use an omitted variant
+  when the mastery evidence below is absent.
+
+  \MasteryGate{\ModuleMastery}
+  \ModuleDelayNote
+}
+
+\newcommand{\ModuleReferenceCard}{%
+  \chapter{Module reference card}
+  \section{Terms, forms, and decisions to retrieve}
+  \ModuleReferenceFocus
+
+  \section{High-risk contrast}
+  \ModuleContrast
+
+  \section{Working protocol}
+  Before looking anything up, mark the finite verb or verbal center, propose
+  dictionary forms, and record at least two formally possible readings where
+  an ending is syncretic. Use the identified 1962 Missal and the course source
+  record for received wording. A familiar English rendering does not replace a
+  parse.
+}
+
+\newcommand{\SubmoduleExtension}[5]{%
+  \ifsolutions
+    \Needspace{7\baselineskip}\section*{#1 --- model and rubric}
+    \textbf{Connection.} #2
+
+    \textbf{Model / acceptable evidence.} #5
+  \else
+    \Needspace{12\baselineskip}\section{#1 --- enrichment and transfer}
+    \textbf{Connection.} #2
+
+    \textbf{Transfer task.} #3
+
+    \textbf{Retrieval check.} #4
+
+    \par\medskip
+  \fi
+}
+
+\newcommand{\ModuleWorkRecord}{%
+  \chapter{Mastery and error record}
+  Complete this page before opening the answer part.
+
+  \begin{xltabular}{\linewidth}{@{}P{1.05in}Y Y@{}}
+    \toprule
+    \textbf{Evidence} & \textbf{Session 1} & \textbf{Session 2 / delayed check} \\
+    \midrule
+    Date and elapsed focused time & & \\
+    Worksheet ID and score & & \\
+    One rule retrieved without notes & & \\
+    One recurring error family & & \\
+    Correction stated as a rule & & \\
+    Unseen or delayed item used & & \\
+    \bottomrule
+  \end{xltabular}
+
+  \vfill
+  \textbf{Advance / remediate decision:} \LongBlank\quad
+  \textbf{Next review date:} \LongBlank
+
+  \vspace{0.25in}
+  \textbf{Reason in one complete sentence:}
+
+  \vspace{0.65in}\hrulefill
+}

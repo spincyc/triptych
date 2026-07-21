@@ -1,0 +1,76 @@
+\hypersetup{
+  pdftitle={Ecclesiastical Latin — \ModuleID: \ModuleTitle},
+  pdfsubject={A self-contained two-session learning module for reading the 1962 Roman Missal}
+}
+
+\begin{document}
+
+\CourseTitlePage
+  {\ModuleID: \ModuleTitle}
+  {\ModuleOutcome}
+  {A self-contained learning packet with a local reference card, enriched
+   submodules, selected handwritten practice, a mastery record, and matching
+   answers. This working study is not an official liturgical book or approved
+   curriculum.}
+  {Learning module; learner and terminal-key edition}
+
+\pagenumbering{roman}
+\begingroup
+\small
+\sloppy
+\hbadness=10000
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+\pagenumbering{arabic}
+
+\part{Module Plan and Reference}
+\ModulePlan
+\ModuleReferenceCard
+
+\clearpage
+\part{Core Lesson}
+\SelectCourseUnits{\ModuleUnit}
+\BeginWorkedPassageBank{\ModuleWorkedBank}
+\input{\ModuleLessonSource}
+
+\clearpage
+\part{Enrichment by Submodule}
+\chapter{Connections, transfer, and retrieval}
+\solutionsfalse
+\ModuleEnrichment
+
+\clearpage
+\part{Selected Practice}
+\solutionsfalse
+\SelectCourseUnits{\ModuleUnit}
+\SelectWorksheetVariants{\ModuleWorksheetVariants}
+\BeginExerciseBank{\ModuleExerciseBank}
+\input{\ModuleExerciseSource}
+
+\clearpage
+\part{Mastery Decision}
+\ModuleWorkRecord
+
+\clearpage
+\part{Answer Key}
+\input{\CourseRoot/shared/content/80-answer-key-notice}
+\solutionstrue
+\chapter{Enrichment models and rubrics}
+\ModuleEnrichment
+\chapter{Selected worksheet solutions}
+\SelectCourseUnits{\ModuleUnit}
+\SelectWorksheetVariants{\ModuleWorksheetVariants}
+\BeginExerciseBank{\ModuleExerciseBank}
+\input{\ModuleExerciseSource}
+\solutionsfalse
+
+\clearpage
+\part{Scope and Sources}
+\input{\CourseRoot/shared/module-scope}
+\input{\CourseRoot/shared/content/shared/sources}
+\chapter{Generation Metadata}
+{\footnotesize\ModuleGenerationMetadata}
+
+\end{document}

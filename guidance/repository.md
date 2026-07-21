@@ -25,6 +25,11 @@ Generated documents retain a provider branch. The present provider is `gpt`; do 
 ```text
 src/gpt/
   common/
+  curriculums/
+    <curriculum>/
+      shared/
+      research/
+      <stage>/<numbered-module>/
   liturgy/roman-rite/
     1962/
       propers/{temporal,ritual}/
@@ -49,7 +54,7 @@ src/gpt/
   articles/{faith,canon-law}/
 ```
 
-`<edition-locale>` must distinguish the governing books and territory; never use `current`, `novus-ordo`, or a bare language as its sole identity. Postconciliar proper guides also use the stable universal registry in `guidance/liturgy/postconciliar-propers-registry.md`; edition-specific collation, unresolved branches, and instantiated leaves belong under the edition's `propers/registry/` directory rather than in the reusable profile.
+`<edition-locale>` must distinguish the governing books and territory; never use `current`, `novus-ordo`, or a bare language as its sole identity. Postconciliar proper guides also use the stable universal registry in `guidance/liturgy/postconciliar-propers-registry.md`; edition-specific collation, unresolved branches, and instantiated leaves belong under the edition's `propers/registry/` directory rather than in the reusable profile. A curriculum keeps course-wide teaching, practice, reference, and audit sources at its non-publishable owner root and gives each independently printable module or companion its own publishable leaf. Do not duplicate shared lessons or answer sources into module leaves.
 
 Each publishable leaf contains `main.tex`, `generation-metadata.tex` or a profile-authorized inherited declaration, and the profile-required records. Shared directories are non-publishable and have no PDF mirror. Put shared material at the narrowest ancestor that genuinely owns it; keep global typesetting primitives under `src/gpt/common/` and rite-, edition-, collection-, or work-specific material within its subtree.
 
@@ -171,6 +176,7 @@ For a move, preserve history and update imports, dependencies, internal links, c
 - `library/traditional-latin-mass.md`
 - `library/novus-ordo-liturgy.md`
 - `library/prayer.md`
+- `library/curriculums.md`
 - `library/faith.md`
 - `library/biographies.md`
 - `library/heresies.md`
@@ -182,7 +188,7 @@ Do not cross-list. Keep derived companions in their canonical work's entry. Link
 
 Keep section landing pages terse and prefer compact tables. Expose only the columns a reader needs to choose a work: normally its linked title and a short scope/status statement, with a date, stable ID, or companion column only when it materially aids navigation. Put repository-facing audit links in a final `Supporting records` column. Sort by a profile's stable series order or by occurrence or governing event date where one applies; otherwise use a predictable alphabetical subject or title order, keeping a canonical work and its derived companions together.
 
-On the 1962 page list the Ordinary first, assembly references second, and proper guides in their compact series table. Keep novenas and their short forms together on the Prayer page. Every postconciliar entry names its exact books, edition, language, territory, and date; comparative or discursive works remain with their substantive study category.
+On the 1962 page list the Ordinary first, assembly and calendar references second, and proper guides in their compact series table. Keep curriculum modules and their assessment or reference companions together on the Curriculums page, grouped in prerequisite order. Keep novenas and their short forms together on the Prayer page. Every postconciliar entry names its exact books, edition, language, territory, and date; comparative or discursive works remain with their substantive study category.
 
 `CONTRIBUTING.md` keeps an ordinary-language no-Git path, an isolated agent workflow, and an experimental-branch path. Feedback triggers verification rather than becoming authority. Submissions retain ownership, accept the applicable outbound license, and identify third-party material and its distribution basis.
 

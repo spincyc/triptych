@@ -142,6 +142,13 @@ PUBLIC_ALPHA_TOOL := scripts/public-alpha
 CODEX_LAUNCHER := scripts/triptych-codex
 
 COMMON_SOURCES := $(shell find $(SOURCE_ROOT)/common -type f | sort)
+ECCLESIASTICAL_LATIN_ROOT := $(SOURCE_ROOT)/curriculums/ecclesiastical-latin
+ECCLESIASTICAL_LATIN_SHARED := $(shell find $(ECCLESIASTICAL_LATIN_ROOT)/shared -type f \( \
+	-name '*.tex' -o -name '*.sty' -o -name '*.cls' -o -name '*.bib' -o \
+	-name '*.bst' -o -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' -o \
+	-name '*.pdf' -o -name '*.eps' \) 2>/dev/null | sort)
+ECCLESIASTICAL_LATIN_BUILD_PDFS := $(filter \
+	$(BUILD_ROOT)/curriculums/ecclesiastical-latin/%,$(BUILD_PDFS))
 SACRAMENT_ROOT := $(SOURCE_ROOT)/theology/sacraments
 SACRAMENT_SHARED := \
 	$(SACRAMENT_ROOT)/summary-preamble.tex \
@@ -521,6 +528,7 @@ $(BUILD_ROOT)/.metadata/%.verify: $(BUILD_ROOT)/.metadata/%.ok FORCE_METADATA_VE
 		mv -f -- "$$temporary" "$$stamp"; \
 		trap - 0 1 2 15
 
+$(ECCLESIASTICAL_LATIN_BUILD_PDFS): $(ECCLESIASTICAL_LATIN_SHARED)
 $(BUILD_ROOT)/theology/sacraments-at-a-glance.pdf: $(SACRAMENT_SHARED) $(SACRAMENT_INITIATION_TABLE)
 $(BUILD_ROOT)/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass.pdf: \
 	$(SACRAMENT_ROOT)/summary-preamble.tex \
