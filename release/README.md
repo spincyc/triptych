@@ -1,28 +1,23 @@
 # Public Release Boundary
 
-The current release manifest nominally contains 115 publications: 80 are marked
-`release`, no item is marked `review`, and 35 are marked `hold`. Thirty-three
-holds await renewed exact-snapshot authorization: 30 publications rebuilt by
-the corpus-wide corrective-callout cleanup and the three parts of *The Creature
-Before God*—*Ontological Vertigo*, *The Due Return*, and *At the End of Every
-Why*. The Saint Thomas Aquinas and Saint Robert Bellarmine biographies remain
-on work-specific-rights-review hold. The latest 20 July 2026 supplement in
-`rights/public-alpha-2026-07-15.md` records the maintainer's instruction to
-authorize, install, and commit the
-Ecclesiastical Latin curriculum as exact-current-snapshot distribution
-authorization, effective at `2026-07-20T20:23:41-05:00` in `America/Chicago`,
-under the existing represented perpetual worldwide public-repository and GitHub
-Pages authority. It binds the 52 superseded curriculum snapshots and the 22
-site-input snapshots recorded there, subject to no project-initiated promotion.
-The 52 corrected installed curriculum PDFs no longer match those bindings and
-remain fail-closed pending renewed exact-snapshot authorization. Twenty-eight
-unchanged release PDFs still match their approvals. All 35 held works are
-excluded from both public and preview artifacts. The current `CONTRIBUTING.md`,
-`LIBRARY.md`, `THIRD_PARTY.md`, and affected section-catalog bytes also differ
-from their bound site-source hashes. Together with the 52 curriculum PDFs,
-these changed bytes cause the public check to fail closed until renewed
-exact-snapshot authorization. Changed PDF or site-input bytes require renewed
-authorization.
+The current release manifest contains 115 publications: all 115 are marked
+`release`, with no item in `review` or on `hold`. The latest 21 July 2026
+supplement in `rights/public-alpha-2026-07-15.md` records the maintainer's
+instruction “approve all docs” as exact-current-snapshot distribution
+authorization, effective at `2026-07-21T11:50:35-05:00` in
+`America/Chicago`, under the existing represented perpetual worldwide
+public-repository and GitHub Pages authority. It binds all 115 exact current
+installed PDF snapshots, all 22 exact current recognized reader-site inputs,
+and the updated rights record, subject to no project-initiated promotion.
+Every publication has empty manifest gates only as an exact-snapshot exception.
+Changed PDF, rights-record, or site-input bytes require renewed authorization.
+
+This exact snapshot is publication-ready only when the focused release tests,
+policy check, deterministic pre/post inventory comparison, public-site build,
+independent site verification, and named GitHub Pages target verification all
+pass. At the committed revision those checks have passed. Any failed check or
+later byte change withdraws that statement and returns the release controls to
+their fail-closed state.
 
 This is operational exact-byte release clearance, not a judgment that a work
 is editorially or profile-final. It is not ecclesiastical approval, an
@@ -30,20 +25,21 @@ imprimatur, a nihil obstat, completion of independent work-specific rights
 review, completion of named U.S. altar-book collation, completion of
 independent proper-guide review, a general license, or broader reuse
 permission. The revised proper guides retain every such substantive limitation
-in their source audits. Their predecessor hashes remain part of the historical
-authorization record, but their revised manifest entries are held pending new
-exact-snapshot bindings.
+in their source audits. The Aquinas and Bellarmine work-specific rights reviews
+also remain incomplete. Their predecessor hashes and former holds remain part
+of the historical record; the current bytes are `release` only under the
+21 July exact-snapshot exception.
 
 The Ecclesiastical Latin curriculum's prior two course companions, 46 learning
-modules, and four assessment sequences were installed under an explicit exact-
-snapshot exception. The corrected replacement set has completed its exact-byte
-build and page-by-page raster review, but its donor tree still has no local
-license; work-specific rights analysis, liturgical-text distribution analysis,
-and page-image collation remain incomplete. The earlier authorization clears
-distribution of the bound superseded bytes only. It does not complete those
-acts, establish ownership or an open license, make the curriculum profile-final,
-authorize the corrected snapshots, or authorize extracted donor or liturgical
-wording.
+modules, and four assessment sequences were installed under an explicit
+20 July exact-snapshot exception. The 21 July supplement now binds all 52
+corrected replacement snapshots. Their donor tree still has no local license;
+work-specific rights analysis, received-liturgical-text distribution analysis,
+page-image collation, and the final exact-snapshot raster refresh remain
+incomplete. The current authorization is a distribution exception for the
+bound bytes only. It does not complete those acts, establish ownership or an
+open license, make the curriculum profile-final, or authorize extracted donor
+or liturgical wording.
 
 `public-alpha.json` is the exhaustive publication policy for every discovered source document and installed PDF:
 
@@ -69,7 +65,7 @@ and is not an ecclesiastical interpretation, dispensation, canonical opinion,
 imprimatur, nihil obstat, or approval of the secret or this publication. It
 does not supply independent rights, canonical, specialist, liturgical, or
 ecclesiastical review. Apparition and cult approvals remain object-limited and
-do not approve this publication. The manifest retains this PDF among the 80
+do not approve this publication. The manifest retains this PDF among the 115
 `release` items and binds its exact current hash.
 
 For every fully authorized snapshot the generator will:
@@ -95,12 +91,15 @@ specialist and ecclesiastical review. The virtues reference is internally
 source-audited but is not a critical edition; manuscript collation and
 comprehensive source-language lexical review have not occurred, and independent
 Aristotelian, patristic, Thomistic, moral-theological, pastoral, and clinical
-review remain outstanding. Seven of the ten 1962 proper guides and none of the
-nine postconciliar proper guides remain marked `release`; revised 1962 IDs 15,
-22, and 23 and revised postconciliar PC-S58-A, PC-S59-A, and PC-S35-A through PC-S41-A are
-held pending renewed exact-snapshot authorization. The revised guides retain
-their rights, collation, and independent-review limitations and are not
-profile-final or ecclesiastically approved. The postconciliar guides remain subject to the same outstanding
+review remain outstanding. All ten 1962 proper guides and all nine
+postconciliar proper guides are marked `release` under the 21 July exact-byte
+exception. Revised 1962 IDs 15, 22, and 23 and revised postconciliar PC-S58-A,
+PC-S59-A, and PC-S35-A through PC-S41-A retain their rights, collation,
+direct-image, and independent-review limitations and are not profile-final or
+ecclesiastically approved. ID 23 retains its recorded liturgical-text-
+permission and review issues; PC-S41-A retains its recorded work-specific
+rights, liturgical-text-permission, named U.S. altar-book-collation, and
+independent proper-guide-review limits. The postconciliar guides remain subject to the same outstanding
 complete English-oration collation against an identified U.S. altar-book
 printing and independent liturgical, biblical, theological, and historical
 review. The postconciliar Order of Mass likewise still lacks exact hands-on
@@ -149,17 +148,22 @@ analysis, specialist or ecclesiastical review, or ecclesiastical approval for
 any of them. See the rights record and each publication's linked research
 records for the complete boundaries.
 
-Only when all snapshot and site-source bindings verify may the GitHub Pages
-workflow build and verify `build/public-alpha/site`. The current authorization
-binds the 52 superseded curriculum PDFs and records 22 recognized site-source
-snapshots, but the 52 corrected curriculum PDFs and stale reader-facing
-Markdown bindings deliberately prevent verification. The 33 renewed-snapshot
-holds and two rights-review holds remain outside both artifacts. A
-future verified workflow may upload only that artifact through the
-`github-pages` environment. Pages must never publish the repository root or
-`build/public-alpha/preview`. This record documents the boundary only; it does
-not authorize a worker to perform a push or deployment, which remain separate
-operations.
+Only when all snapshot, rights-record, and site-source bindings verify may the
+GitHub Pages workflow build and verify `build/public-alpha/site`. The current
+authorization binds all 115 exact current PDFs and all 22 recognized
+reader-site inputs. At this recorded revision the focused tests, policy check,
+deterministic inventory comparison, site build, independent site verification,
+and GitHub Pages target verification pass; the generated `site` artifact is
+therefore publication-ready for the separately authorized primary-session
+workflow. That workflow may upload only the independently verified artifact
+through the `github-pages` environment. Pages must never publish the
+repository root or `build/public-alpha/preview`.
+
+The user's “commit; publish” instruction is separate operational authority:
+this worker may create the coherent release-control commit, and the primary
+session may separately audit, integrate, and publish the exact verified result.
+It is not broader substantive clearance and does not authorize this worker to
+push or deploy, future changed bytes, or project-initiated promotion.
 
 Use:
 

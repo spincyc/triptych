@@ -10,7 +10,7 @@ This remains a user-attested release-control record. The grantor's identity, pri
 
 ## Prior supplemental authority retained
 
-The 15 July Eighth Sunday after Pentecost clearances, the received-heading clearances for the 1962 Ordinary and postconciliar Order of Mass, and the then-current 27-publication batch remain part of the audit history. Earlier on 16 July, after the then-current clean production rebuild and review, the exact 46-PDF inventory and 17 reader-facing sources also received exact-snapshot authorization. Each clearance applied only to its recorded bytes and did not clear later changed sources or PDFs. The 17 July inventory in this record then superseded those earlier hash inventories. Its former hashes remain recoverable in Git history; the 20 July current inventory below now supersedes them without erasing their provenance or enlarging their stated authority.
+The 15 July Eighth Sunday after Pentecost clearances, the received-heading clearances for the 1962 Ordinary and postconciliar Order of Mass, and the then-current 27-publication batch remain part of the audit history. Earlier on 16 July, after the then-current clean production rebuild and review, the exact 46-PDF inventory and 17 reader-facing sources also received exact-snapshot authorization. Each clearance applied only to its recorded bytes and did not clear later changed sources or PDFs. The 17 July inventory in this record then superseded those earlier hash inventories. Its former hashes remain recoverable in Git history. The later 20 July inventories likewise remain historical records; the 21 July current inventory below now supersedes them without erasing their provenance or enlarging their stated authority.
 
 The earlier records' substantive boundaries also remain. Distribution clearance is not an open license for extracted third-party material and does not establish ownership, textual authenticity, liturgical approval, or a right to reuse the material outside the exact approved snapshots. It does not complete missing collation, source criticism, currentness work, rights analysis, or independent review.
 
@@ -251,36 +251,9 @@ push, deployment, promotion, or later changed bytes.
 | `curriculums/ecclesiastical-latin/05-stage-assessments/03-missal-reading` | `fb4a5a0905d90aa57b0bc521993b32d3aafe3540acf66dee887b55c2f62a6b9e` |
 | `curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced` | `2bb4a56725996fea0b21fe5730f9be5b67211b9266cb831d0a4702b5a1406ea4` |
 
-## Exact approved reader-facing site sources
-
-| Repository path | SHA-256 |
-| --- | --- |
-| `CONTRIBUTING.md` | `730f7dcd00dd36e835a5fcb983d20e2964226a6aed02faab0d2fafee15376a23` |
-| `LIBRARY.md` | `eac5e7ad438bd161743385ce8b5d980817e8a6d2dd8f8ccb1c4955de68d96d50` |
-| `LICENSE` | `6830030f2e4ff888ee116bc68e45adcd83f3929d2d82eb4eed3c6a663f665f91` |
-| `LICENSES/CC-BY-4.0.txt` | `d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744` |
-| `LICENSES/MIT.txt` | `afd9c125b68a36b60c78cf63656f4cea2613fadce57e95ebabacebff8817ef60` |
-| `README.md` | `c52f2563a59a150f68d35949764045398d4b2cf7b3f928729392f7c2e9f0d056` |
-| `THIRD_PARTY.md` | `e51e6d29e78e8c50b85b23b1e82947e6926cd9067f7aca1e8b3aa0a80d05cbf5` |
-| `library/biographies.md` | `58109f5df52cb8a90d8126432678a40c8b5a7d46fab1b88213dbea1e3216ef32` |
-| `library/curriculums.md` | `b38d9105f2d77138f7cc885c37eacfa931b346dbbbec372657de9aef7f405bad` |
-| `library/faith.md` | `19ba133fffe75518c2dd5993647b8e1f49d0227da0227f497e89115be6aa5e3b` |
-| `library/heresies.md` | `83de59b8f551589bc0a81a4d2e3d88aa0796d8f717c5daee8e926561f5c85b73` |
-| `library/historical-accounts.md` | `8243de7aebd969da353df9b5f7b32bf7a856262f30194e244b260f6a07f9f3ee` |
-| `library/law-and-church-discipline.md` | `f768255de091da8174b2e822024f6b10739b9f6dac3740a6cc602e34399e7ce2` |
-| `library/mariology.md` | `e248cea5415d1cb68ed6fce04f810cceb9f535e02dbc2be49dffadbea1be3878` |
-| `library/novus-ordo-liturgy.md` | `d8bd3b859db12922da37cfd8bf14f780b8faaa14495dd22cec1648a2cc41062b` |
-| `library/prayer.md` | `be21efc07c0c3585b2ac8a4ba0a8969331783a9f6378273f4a5e254b9a93e560` |
-| `library/traditional-latin-mass.md` | `d9e5d9473824293d201a1eaf9e20e2b0c8ac962dfe9b45614f9523f414547472` |
-| `release/public-alpha/404.md` | `551491f5521a5624911d63b398156d2236cbed2f0aa832eeb9c97070dcea568e` |
-| `release/public-alpha/assets/site.css` | `358d86f3587fc03f62a17cd4b5fd0126fb2dc3d952afa48eb33fc3a88fce54e9` |
-| `release/public-alpha/layout.html` | `1add2c3f7e6faed6cde4f71b471b5d275089aa719a779f250ef761b3754bea63` |
-| `requirements-public-alpha.txt` | `c30202fbc2f2eb1da451b8bae46b6867c07915844cec203a243991d14b8d4efc` |
-| `scripts/public-alpha` | `506b0b3a0cfb8d996daa83c9a0646e566ac7ec89d1afb6659e1f5db1047ae83a` |
-
 ## La Salette exact-snapshot boundary
 
-The exact current La Salette PDF, SHA-256 `1fdb552c80dc105013227dc31bcf5f1bdf31e4f5da54dd42b5bfa6bd16a7a17a`, directly analyzes and paraphrases the secret addressed by the Holy Office decree published at *Acta Apostolicae Sedis* 7 (1915) 594. Its repository record leaves unresolved whether the decree's standalone non-penal publication command remains binding in its original breadth or has lapsed. The user's explicit direction on 16 July 2026 established the recorded interpretive boundary, and the 20 July exact-current-snapshot instruction clears distribution of these exact current bytes under the existing user-attested release authority, including the represented authority, grantor, and delegation that the project has not independently verified.
+The exact current La Salette PDF, SHA-256 `1fdb552c80dc105013227dc31bcf5f1bdf31e4f5da54dd42b5bfa6bd16a7a17a`, directly analyzes and paraphrases the secret addressed by the Holy Office decree published at *Acta Apostolicae Sedis* 7 (1915) 594. Its repository record leaves unresolved whether the decree's standalone non-penal publication command remains binding in its original breadth or has lapsed. The user's explicit direction on 16 July 2026 established the recorded interpretive boundary, and the 21 July “approve all docs” exact-current-snapshot instruction clears distribution of these exact current bytes under the existing user-attested release authority, including the represented authority, grantor, and delegation that the project has not independently verified.
 
 This exact-snapshot distribution decision preserves the unresolved juridic question. It is not an ecclesiastical interpretation, dispensation, canonical opinion, imprimatur, nihil obstat, or approval of the secret or this publication. No independent rights, canonical, specialist, liturgical, or ecclesiastical review is claimed. Apparition, cult, shrine, and devotional approvals remain object-limited and are not treated as approval of this publication.
 
@@ -289,30 +262,98 @@ This exact-snapshot distribution decision preserves the unresolved juridic quest
 - Base authorization effective: 15 July 2026 at 00:00 CDT (`2026-07-15T00:00:00-05:00`).
 - Prior exact-current-snapshot supplement effective: 20 July 2026 at 00:16:04 CDT (`2026-07-20T00:16:04-05:00`).
 - “Approve all” exact-current-snapshot supplement effective: 20 July 2026 at 11:30:03 CDT (`2026-07-20T11:30:03-05:00`).
-- Current Ecclesiastical Latin exact-current-snapshot supplement effective: 20 July 2026 at 20:23:41 CDT (`2026-07-20T20:23:41-05:00`).
+- Prior Ecclesiastical Latin exact-current-snapshot supplement effective: 20 July 2026 at 20:23:41 CDT (`2026-07-20T20:23:41-05:00`).
+- Current “approve all docs” exact-current-snapshot supplement effective: 21 July 2026 at 11:50:35 CDT (`2026-07-21T11:50:35-05:00`).
 - Duration: perpetual, with no expiration date.
 - Territory: unrestricted worldwide public access, but only within the authorized scope.
 - Condition: no project-initiated announcement, advertising, promotion, syndication, or public software-release attachment. Ordinary repository listings, GitHub navigation and activity, link previews, search indexing, and other platform behavior inherent in an otherwise authorized public repository or Pages site do not by themselves violate this condition.
 - Scope boundary: ignored build artifacts, credentials, private communications, private account data, later changed PDFs or site sources, and any history containing material not independently authorized for repository exposure remain outside the current publication scope.
 
-## Corpus-cleanup snapshot boundary — 21 July 2026
+## Historical corpus-cleanup snapshot boundary — 21 July 2026
 
-The corpus-wide editorial cleanup completed on 21 July 2026 changes 32
+The corpus-wide editorial cleanup completed on 21 July 2026 changed 32
 publication sources and their installed PDFs. Thirty of those publications had
 exact-snapshot approvals for their predecessor bytes. Those approvals remain
-historical authorization records, but they do not authorize the revised
-snapshots. The 30 publications are therefore removed from the active inventory
-below and placed on `renewed-exact-snapshot-authorization` hold. The revised
-Aquinas and Bellarmine biographies remain on their pre-existing
-`work-specific-rights-review` holds. No renewed distribution approval is
+historical authorization records, but they did not authorize the revised
+snapshots. The 30 publications were therefore removed from the active inventory
+at that point and placed on `renewed-exact-snapshot-authorization` hold. The
+revised Aquinas and Bellarmine biographies remained on their pre-existing
+`work-specific-rights-review` holds. No renewed distribution approval was
 inferred from authorization to edit, rebuild, install, or commit any of them.
 
-The current manifest consequently records 80 `release` publications, zero in
-`review`, and 35 on `hold`: the 30 revised publications, three other changed
-snapshots awaiting renewed exact-snapshot authorization, and two publications
-awaiting work-specific rights review. Reader-facing catalog changes are also
-outside their predecessor byte binding, so public-site validation remains
-fail-closed until the relevant exact snapshots receive new authorization.
+Immediately before the later supplement below, the manifest consequently
+recorded 80 `release` publications, zero in `review`, and 35 on `hold`: the
+30 revised publications, three other changed snapshots awaiting renewed
+exact-snapshot authorization, and two publications awaiting work-specific
+rights review. Reader-facing catalog changes were also outside their
+predecessor byte binding, so public-site validation remained fail-closed. This
+paragraph records that superseded state as history; it is not the current
+release status.
+
+## Supplemental “approve all docs” exact-current-snapshot clearance — 21 July 2026
+
+At `2026-07-21T11:50:35-05:00` in `America/Chicago`, the maintainer expressly
+instructed “read AGENTS.md ; approve all docs ; commit ; publish ;”. Consistent
+with the 20 July “approve all” precedent, “approve all docs” is recorded as
+current exact-snapshot distribution authorization under the existing represented
+authority in record `perpetual-public-repository-2026`. It authorizes perpetual
+worldwide ordinary public Git repository and GitHub Pages distribution of all
+115 exact current installed PDF snapshots and all 22 exact current recognized
+reader-site inputs in the canonical inventories below. It has no expiration.
+The sole condition remains `no-project-initiated-promotion`: it permits
+ordinary repository and Pages publication, but not project-initiated
+announcement, advertising, promotion, syndication, or a public software-release
+attachment. Changed PDF or reader-site input bytes require renewed
+exact-snapshot authorization.
+
+This later authorization supersedes the active effect of the immediately prior
+80-release, 35-hold state. It clears every current release-manifest gate for all
+35 then-held publications only as an exact-snapshot distribution exception,
+including the 33 renewed-snapshot gates and the Aquinas and Bellarmine
+work-specific-rights-review gates. It also renews the exact bindings for all 52
+corrected Ecclesiastical Latin snapshots. The current manifest therefore
+records 115 `release`, zero `review`, and zero `hold` items, with empty
+publication gates and exact approval bindings under this record. Empty gates
+record the snapshot exception; they do not assert that the underlying work,
+rights, collation, or review has been completed.
+
+This authorization does not claim or complete independent work-specific rights
+analysis, source collation or criticism, currentness work, page-image or
+licensed-book collation, specialist, theological, canonical, liturgical, or
+ecclesiastical review, or editorial or profile finality. It is not an
+imprimatur, nihil obstat, endorsement, ecclesiastical approval, canonical
+opinion, legal advice, textual authentication, ownership finding, open license
+for third-party material, general license, or broader reuse permission. The
+represented grantor, authority, delegation, and private permission instruments
+remain user-attested and independently unverified. No future changed bytes are
+authorized.
+
+Every disclosed work-specific limitation remains operative. In particular, the
+Aquinas and Bellarmine work-specific rights reviews remain incomplete despite
+their exact snapshots' distribution clearance. The Ecclesiastical Latin donor
+tree still has no local license; received liturgical wording lacks completed
+independent distribution-basis analysis; page-image collation and the final
+exact-snapshot raster refresh remain incomplete; and the exception establishes
+neither donor ownership nor an open license or permission to extract donor or
+liturgical wording. The 1962 and postconciliar proper guides retain their
+liturgical-text-permission, direct-image, named U.S. altar-book collation, and
+independent-review limits where recorded; the postconciliar Order of Mass still
+lacks exact hands-on formula-level collation against licensed 2008 Latin and
+2011 United States altar books. The canon-law studies remain time-bounded study
+aids rather than legal opinions, and every historical, theological, textual,
+translation, quotation, currentness, rights, source-gap, and independent-review
+qualification in the prior supplements, release README, catalogs, and
+publication research records remains unchanged. The La Salette clearance
+preserves the unresolved juridic boundary stated above.
+
+The instruction's “commit” term separately authorizes this worker's coherent
+release-control commit. Its “publish” term is separate operational authority
+for the primary session, after its own audit and integration, to publish the
+exact verified result through the authorized public repository and GitHub Pages
+workflow. That operational authority does not authorize this worker to
+integrate, push, or deploy; broaden substantive clearance; waive outgoing-range
+or artifact verification; permit future bytes; or relax the
+no-project-initiated-promotion condition.
 
 ## Exact approved snapshots
 
@@ -320,9 +361,72 @@ fail-closed until the relevant exact snapshots receive new authorization.
 | --- | --- |
 | `articles/canon-law/clerical-celibacy-chastity-and-continence` | `178ef4c9a60a472bd2fdb6428182652ac35d4f655bdf6c099e48f553112224d7` |
 | `articles/canon-law/natural-positive-divine-human-law` | `553e1b1da65c44b2b6703045d91a509d101914ea8bd98d5766717ce21465031f` |
+| `articles/faith/at-the-end-of-every-why` | `ec7df2ba5a3458b4721a11166e9ebc2b0b529c13a5786da74f843b9e255ff952` |
+| `articles/faith/council-missal-and-crisis` | `4da0700f412ef6f74bf007754ef56cbfb573b32024108faa605a15c6f11dd18d` |
+| `articles/faith/freemasonry-and-the-catholic-church` | `e55573d946155fd2904ddbab663bc46add1bef032259f698de51c1b9170d85fc` |
+| `articles/faith/ontological-vertigo` | `c712e5abe3f944fc78633dfb3861817abdff6eb333c9000079fd7cfbaebd7df2` |
+| `articles/faith/the-due-return` | `6738115a803abc424c219c0f9545b8458f3bbffbbce962727f7076975bf27bdb` |
+| `articles/faith/trustful-surrender-to-divine-providence` | `4b334136752b0db6a8e73cced7157d7bfee30fee73392dd7fac295637e1186a7` |
 | `biographies/origen` | `505d059a4238cd83bb04717a561ef1e8bad929e6c098ec50fa42154b5e1c54ad` |
 | `biographies/saint-augustine-of-hippo` | `8d6f4a35bc4d23480008d518d4f91784fb554e5b41c1dc2aed70645f6059830f` |
+| `biographies/saint-jerome` | `8500ff6fa2ac9bf12d4b724a24e4a028e87d3b72f87bc5354418d766f1377a5e` |
+| `biographies/saint-paul` | `96100e5742da5d40fd8a6b59a2eeb55c8b4042faf4ec7d421b32790a635ccfff` |
+| `biographies/saint-peter` | `ea3cd3f7057b7518465cffead078e185b039ffc6800ec51abd35905491cc1c71` |
+| `biographies/saint-robert-bellarmine` | `cbbb80788cec5e53712183d45e29486e4d45ff5ed6506b93c4a441783958d85a` |
+| `biographies/saint-thomas-aquinas` | `280f76a18b37c34684b8da84f8e6a46f46cbfbede8b06b9d0f335a572dd09cc8` |
 | `biographies/tertullian` | `5482e549142e226e8a91b51b3fda11751957b2ba0a77d6737a2c79c57132dae6` |
+| `curriculums/ecclesiastical-latin/00-course-guide` | `f39c5e2e7ca27e13589117ae6811123218be5f6589ca5a63a1ce6acb1b53ae7b` |
+| `curriculums/ecclesiastical-latin/00-reference-grammar` | `64141fffcf7ec17a948bf2f99da498e0701a0b89a0464b83e954dfd15b0d8f7e` |
+| `curriculums/ecclesiastical-latin/01-foundations/01-grammar-bridge` | `57cc23f41d69f8076d9ff1a881c1c9ee387db0922e03480208669b6fc9fca2a7` |
+| `curriculums/ecclesiastical-latin/01-foundations/02-case-number-gender-agreement` | `695867bdea591267f84d81b794e242cb76108f686c9520e83c51cd583020ab77` |
+| `curriculums/ecclesiastical-latin/01-foundations/03-first-second-declensions` | `38f073bc83035e7e902ce2feccb8335e5c9eb70a90ae56d16dc5981ddbe5b739` |
+| `curriculums/ecclesiastical-latin/01-foundations/04-third-declension` | `71b63f386c5408f1a55163b63454766b3861eee2d68d99ea04d09da3a037e230` |
+| `curriculums/ecclesiastical-latin/01-foundations/05-fourth-fifth-declensions` | `794264d6e1e15b697ef3e72edaf54677a917aa94eb5b7c99617a46bb0b9ead0c` |
+| `curriculums/ecclesiastical-latin/01-foundations/06-adjectives-agreement` | `7fefcba7f1c9aeef2274a2422c1eb111e85d3e1bae545059f1030bbda32e9ab7` |
+| `curriculums/ecclesiastical-latin/01-foundations/07-sum-possum` | `66ee409ee53ebc45329575eef368bced1bb044620358d1dd6295cd31bb74723d` |
+| `curriculums/ecclesiastical-latin/01-foundations/08-present-active-system` | `c7a4b4822a3013f9a527f2e19d90ae3d6273ce57edf23cadc287c9a3df05232b` |
+| `curriculums/ecclesiastical-latin/01-foundations/09-perfect-active-system` | `06186955e75f24e44c578c4c4e83a882a4e9bb54dee68d8b6d43f36997020ae0` |
+| `curriculums/ecclesiastical-latin/01-foundations/10-passive-deponents` | `c2e8658ea29d0a475c53b983076078047dc2cfe8a7be0c09d58aa81f252e58bf` |
+| `curriculums/ecclesiastical-latin/01-foundations/11-pronouns-prepositions` | `336b46967748659102831f040e1c555c498cd5e91dc71826bcb7e2c0f5bd9093` |
+| `curriculums/ecclesiastical-latin/01-foundations/12-repeatable-missal-reading` | `3ca64fe51ca467759447aff45d92ed5226ba25d6a36d8648ecdd10f322d7de36` |
+| `curriculums/ecclesiastical-latin/02-core-grammar/13-relative-interrogative-indefinite-pronouns` | `fa5d9669c8fc277b15d7713d903836ed25bc9a61017590f593b6fc4a92ca8cbe` |
+| `curriculums/ecclesiastical-latin/02-core-grammar/14-comparison-adverbs-numerals` | `8b18ce3f9b3a423763b24a15f055a4b4a57d77ab5a818d032250a2b0335f0e7f` |
+| `curriculums/ecclesiastical-latin/02-core-grammar/15-infinitives-indirect-statement` | `57f50495c7a79abc967a75e6b2702a4e6fcac1c59d9d4d99570f8278bee981f6` |
+| `curriculums/ecclesiastical-latin/02-core-grammar/16-participles-ablative-absolute` | `fc22a09603680218465da4a895ec41adf6d83e186e91b60a5777431247cc5cab` |
+| `curriculums/ecclesiastical-latin/02-core-grammar/17-subjunctive-morphology-sequence` | `d39d5449f4f93c3bcfbd0182d95d0f32c7bea77bca14c463adda6233ace26aa8` |
+| `curriculums/ecclesiastical-latin/02-core-grammar/18-purpose-result-indirect-command` | `0c022618ab40d5062f0c17cafdbd40f5504fad1ddc3aea521611c27ab4365016` |
+| `curriculums/ecclesiastical-latin/02-core-grammar/19-substantive-clauses` | `4629533ec0bf99c9051f6c47179f571303863b553ee54b0f3611e6073249b140` |
+| `curriculums/ecclesiastical-latin/02-core-grammar/20-temporal-causal-concessive` | `f0d3a4bfb9fdd15159d98997c21a0c52fc3d0e63460a7290e2488326f8e434ba` |
+| `curriculums/ecclesiastical-latin/02-core-grammar/21-conditions` | `7507d3169b3afdd8c656c715a160016ef7fca1f7ed497de7bb7f81cae07ae501` |
+| `curriculums/ecclesiastical-latin/02-core-grammar/22-relative-characteristic` | `e0e46b4e6d9fe385b322624776df5697813647ed4f395607137f0199dab0b36f` |
+| `curriculums/ecclesiastical-latin/02-core-grammar/23-commands-wishes-fearing` | `9ba23e1f68980cd9b64e4f1dd2247544dd4acc47c32151e47d532ed6700ead0e` |
+| `curriculums/ecclesiastical-latin/02-core-grammar/24-verbal-nouns-periphrastics` | `0f0304c2be54de3b2a277b93d63dbd208299943e8f123dbf54cb54fb036ab988` |
+| `curriculums/ecclesiastical-latin/02-core-grammar/25-adverbial-cases` | `5ffbd7c2e24b55d8e31ea4fdac599e577c6b78d7e9d674eec6aa604621be2a82` |
+| `curriculums/ecclesiastical-latin/02-core-grammar/26-liturgical-compression` | `4a6db315c9bca2006199e5e62b12c558a540f311d81f0f4565e8250ea1b4f36d` |
+| `curriculums/ecclesiastical-latin/03-missal-reading/27-independent-reader-workflow` | `1e91d81510dc431a17a46bbe019434c5cabac6c1475cb876cadece87af716a05` |
+| `curriculums/ecclesiastical-latin/03-missal-reading/28-ordinary-fixed-order` | `3d929f1ac67b55d3c43751d65ef0b4ede731b6c65f762e00a93e5a94509c3ac6` |
+| `curriculums/ecclesiastical-latin/03-missal-reading/29-collects` | `d5edc3b7a797419b9f0c905a9726e53e39b6b394c621e8f709ef6be9606e37c3` |
+| `curriculums/ecclesiastical-latin/03-missal-reading/30-secrets-postcommunions` | `9a449e5312fb469adcfe4e68c0e7e3820867ff40929bfad79d23ae079cd2a250` |
+| `curriculums/ecclesiastical-latin/03-missal-reading/31-lessons-epistles` | `83ee86df3a28972e2245e0a9eeae999809b97800a5d6a124714dd80a3bea86f9` |
+| `curriculums/ecclesiastical-latin/03-missal-reading/32-gospels` | `6b953d70f0b0262e62b1bec20b8eb9b7abfbe487c7b6da64129248b9c583c2a0` |
+| `curriculums/ecclesiastical-latin/03-missal-reading/33-chants-sequences` | `4a1224955686d68310467b7a161607eb06b8d793107765d75c7f702a9c2f6857` |
+| `curriculums/ecclesiastical-latin/03-missal-reading/34-prefaces-roman-canon` | `0e7d3bd623d9628dc4b8ed96636e692b38fc201fdf6049ba13b46ba98560391b` |
+| `curriculums/ecclesiastical-latin/03-missal-reading/35-temporal-cycle` | `be5accbbfbedd64a823af854cb7a2cb126991b52110426e75515ac6e811756a2` |
+| `curriculums/ecclesiastical-latin/03-missal-reading/36-sanctoral-commons` | `aed4959adf3c28f56b54c26a7dad92626fb1bc0da052909500c2f00cb4dade25` |
+| `curriculums/ecclesiastical-latin/03-missal-reading/37-requiem-holy-week` | `f83ccefd69147646ff4551ee2d686ce6ba0162cfe66326ef5cbd3163bb4f9dc3` |
+| `curriculums/ecclesiastical-latin/03-missal-reading/38-full-mass-capstone` | `5fd2442d71d15ab37de2cf2e6a3fd58f858db72955bb2a19fba33bf347c95313` |
+| `curriculums/ecclesiastical-latin/04-advanced/39-register-across-time` | `ede7e08c6d4c387ab794423131261e05cae7997f2fddb2ed03c9c78328422b94` |
+| `curriculums/ecclesiastical-latin/04-advanced/40-vulgate-texture` | `5d6e5c5f76f9dc480b69f76157e7957ffe7cc65db6dde1cf5bd0cfc4fbc568cf` |
+| `curriculums/ecclesiastical-latin/04-advanced/41-allusion-context-typology` | `5cba5b3c19b95ee5c8ecfd46c5462b10f7aeae7111ca63afc1731b32784b8d72` |
+| `curriculums/ecclesiastical-latin/04-advanced/42-rhetoric-periodic-prose` | `b7daaa1789d0c54e9e8d4a4e23a31a663ffe2bbc21785a71f2a95efeefb7fba8` |
+| `curriculums/ecclesiastical-latin/04-advanced/43-textual-comparison-commentary` | `c40e8bb5861a7c7b96d9776278b1474f60c321c7e4a040a0b9a92fa505bc3041` |
+| `curriculums/ecclesiastical-latin/04-advanced/44-controlled-imitation` | `e7d2c41335cb7d6ed017d5517168f585dddf25248b6e011bef7efe4309d7c945` |
+| `curriculums/ecclesiastical-latin/04-advanced/45-guided-composition` | `02140a667727b4dc81a98abefa9393dba77d7beb3a8c82ac38ae877967f17fd5` |
+| `curriculums/ecclesiastical-latin/04-advanced/46-free-composition-research` | `9b552be00310ffc9271051bf2b9418384f61b4260f66a30837c74c7834ab9b97` |
+| `curriculums/ecclesiastical-latin/05-stage-assessments/01-foundations` | `f2ba55f816d8a919fbd2251b8457bee89d38620bf40725d28191b75d9342fc67` |
+| `curriculums/ecclesiastical-latin/05-stage-assessments/02-core-grammar` | `621e698d73e757f79306e459f6f361b2d08b2b7c64237511ccc6556eac3b06ec` |
+| `curriculums/ecclesiastical-latin/05-stage-assessments/03-missal-reading` | `2fafc83f577ab63a30b5cb2e0cdd4b5c4fee54dbec99529eb4a846e01b70f1dc` |
+| `curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced` | `3ad1a473f4f8dfc5a2f071083672969b46567301461f93583cfaa5ec1700652b` |
 | `devotions/novenas/00-ascension-to-pentecost` | `e77627738332391562d544fea0f52bbbddc8879fc5514cb26be6b75fb0d97818` |
 | `devotions/novenas/00-ascension-to-pentecost-daily-prayer` | `675ae37d807d9ff0fadf4c1d5951480018f0ed6b56773b56493fd9b9c363c1ce` |
 | `devotions/novenas/10-our-lady-of-mount-carmel` | `639d93c67a5ba7f94729730d8c021543e0d3d2f6e596ddf735aceeda97157eb9` |
@@ -333,71 +437,70 @@ fail-closed until the relevant exact snapshots receive new authorization.
 | `history/traditional-priestly-institutes/01-sspx` | `e8fde596cfcd3bd79e8392e81eaafebf59723a11a15b8c96773fabfe6f67713c` |
 | `history/traditional-priestly-institutes/02-fssp` | `005a9bcea06955abba6d300ca9b0f7f628bda2e86c3f48e48695a74c09b89c1c` |
 | `history/traditional-priestly-institutes/03-icksp` | `13452bf4f13cccda67a9723201a49a0ff3a43cde9aa7d90ce253e38f82be5635` |
+| `liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass` | `8f90c628720002de38604aa8c7cd83703ad6ccd0d023601a0a6d670d5e882c3d` |
 | `liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass` | `a9b80995207372fbb08b0abbdd9116f3381638add2b6c53c22a269d5e429dc30` |
+| `liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday` | `f1946c1a2cc7e5dd1695032b30be60060e896d537223ba7371cb8c21296dadaf` |
 | `liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost` | `c3684d622e1051de7d898dc455a5fe83816bccb4f14e8adfe3974b50fbc479bd` |
 | `liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost` | `14ef73ae5ea533999f0d00801a281db2614a2b3ea20493f79271f32992de4831` |
 | `liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost` | `2035b73783ab534c804aac609025a811550b45100bd31eac6cb7a8e0e01f16df` |
 | `liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost` | `00afac054ee97628042d28152f72253ed3dea6223ab2c3facd5d3f0f08dc0b7a` |
 | `liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost` | `0239c1823745a7160acb3cd810ad3e57877e746821d0a096f28f1da34450a37b` |
 | `liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost` | `95c07efdbc902ccaef8275d4ae503a1d52151f3a732472237de0e2ffb799e014` |
+| `liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost` | `57946a3046ec1b0f624d7499395a36d3f3a31ad5a11b83a6902dce1f5ebb58a9` |
+| `liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost` | `6a7cf2a08a865ef30cc766ee8497f980d499c55cc9fa5ec3ea4ce5bb6d3481b0` |
 | `liturgy/roman-rite/1962/reference/assembling-the-mass` | `792f76897a31cf9f4eb6d23eacee370c2078f3f9235c79831c7b03bf1dfd8727` |
 | `liturgy/roman-rite/1962/reference/liturgical-calendar` | `001efbe713c7fdaf696cf6f0e85fd5b100ab0bc97ca893b55b003caff6add0e1` |
+| `liturgy/roman-rite/comparative/two-missals-one-sacrifice` | `e52cfb69dac2bb6df6d99321f96af704b954ffdaa1580b1aea3640742b751743` |
+| `liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass` | `1c56d895d595323fa8c28adc5c2f9fccc28d7a868f1f6b42799651f54db3afe7` |
+| `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s35-eleventh-sunday-in-ordinary-time-year-a` | `b09dc1ce9f7be47bf33702348f4a4bd3c5ff5e9897c268c3cade342d5429fbef` |
+| `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s36-twelfth-sunday-in-ordinary-time-year-a` | `cab27a59ba770fb0c71d6d35c8dc1c2846ccdece313ecc0a76bb5fb1141f5f89` |
+| `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-thirteenth-sunday-in-ordinary-time-year-a` | `1f54200436f144769db5401091800a5bd16908d9ce5626f1e24202014187f055` |
+| `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-fourteenth-sunday-in-ordinary-time-year-a` | `ad04675908c5c4b0d6f3b78952599b20c0503ca4609134ac4b0d694a246f7b9b` |
+| `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-fifteenth-sunday-in-ordinary-time-year-a` | `92186671dc5e3ea6bd4bdba7426458e845caf79ddde2e9927099d0a927251202` |
+| `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a` | `cfb0b8f3ffc1dfd4daf89c9f9d78eb3983a0e1a84283d9c75a02eb392a5474cb` |
+| `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a` | `251086891e686802750ce5804b4272d1d69a9546c7e7cc89f3b0134338d99af2` |
+| `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a` | `5405b50dacc9ea92a2e4264afc722fa8ef3b172ddd3ff09782fcf2ee8a2d71b0` |
+| `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s59-most-holy-body-and-blood-of-christ-year-a` | `57fc1b3a7ab8e1e990c9dbce9df28e576fec3004603555e99447298099cff649` |
 | `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar` | `8a0918732c672ea76d2c95e0176e7985fa639057a4a8f4e12df511b8efb19bcd` |
+| `theology/heresies/heresies-in-catholic-history` | `b88beadd66e79b5c1500059ab03da0e55384c43c6cf913d0acd2605f6d24175d` |
+| `theology/mariology/apparitions` | `ead14d229e114bb263dea8f64c2c797228754d18de0a9931bb4bb9f34f6274b0` |
+| `theology/mariology/champion` | `e3c6c89fd3c5ba8f244a0313600e27f4f2a91f752ac0053160cc6957408a83be` |
+| `theology/mariology/fatima` | `e2c09b31356f82e85703038c991b4cbdce9b01783e50a209ddef325498c26ad3` |
+| `theology/mariology/guadalupe` | `4db68a27d4ce66c17d48329f6e8aef004c88e53cfcf0f9c97c32bc71a61b29f4` |
 | `theology/mariology/la-salette` | `1fdb552c80dc105013227dc31bcf5f1bdf31e4f5da54dd42b5bfa6bd16a7a17a` |
+| `theology/mariology/lourdes` | `cd483a3a1ae1af1ce7cf161f0e33c9a456b7cf85d1aefd7318df8617c6831b96` |
+| `theology/mariology/marian-dogmas` | `60a12dadd9d688186cd2139032262c859c36f1637e54476f15934ffeb6e624a2` |
+| `theology/mariology/rosary` | `56151b607388f9d85bfbcc73b7b236bb51dede1579c0c9b4b8429e7b496a3d88` |
+| `theology/sacraments` | `10cbdb6a9c9661e4c451f8033dbb642af799890d53e4a8d0e994816aa34e711c` |
 | `theology/sacraments-at-a-glance` | `f1d73a9cc797c1dedec42851276062a1cebfca6ce632a30b8685be318005abb9` |
 | `theology/virtues` | `48a40f508d6aa3e9ad72029f32e50fc5a0fe228f67435613a8db6228230b2cfe` |
-| `curriculums/ecclesiastical-latin/00-course-guide` | `3589584ff718f996c28605c82f05f9f0a593d84aa28b184b226887a286b48456` |
-| `curriculums/ecclesiastical-latin/00-reference-grammar` | `38597c819b03727d58eac5543d9cd5d9846c7b6a2be8c6784afeaa8034351ea5` |
-| `curriculums/ecclesiastical-latin/01-foundations/01-grammar-bridge` | `b7196769cbd1d7600a99cf0da959f390205316b7f40ef0fb319994a99beea49f` |
-| `curriculums/ecclesiastical-latin/01-foundations/02-case-number-gender-agreement` | `e2efd44cee0b1241653f3c1fbd345f07f7029369e4aba06fd511a180f90d025a` |
-| `curriculums/ecclesiastical-latin/01-foundations/03-first-second-declensions` | `ab98c275245fea72539e51b7f224ae3c2facae05f1e90bcf7fd5e2e73a4c1ae9` |
-| `curriculums/ecclesiastical-latin/01-foundations/04-third-declension` | `a2a9e8429f275925b9e0d235cd426cc1006ba0c48bcd6efc73d78530607c859e` |
-| `curriculums/ecclesiastical-latin/01-foundations/05-fourth-fifth-declensions` | `f46f1f7a42f39c05d3d2909d5caa10beccff038946fb582506e07e23b9f5b9e8` |
-| `curriculums/ecclesiastical-latin/01-foundations/06-adjectives-agreement` | `f82f5203c5c6651626a1d4c2efb0b410e5e88631f5b367b6cf4e8447472a859b` |
-| `curriculums/ecclesiastical-latin/01-foundations/07-sum-possum` | `4f9863aa9d98acb32b956342d2b35ed7b572801d6ff6bed0e8ff3e5d7bff6725` |
-| `curriculums/ecclesiastical-latin/01-foundations/08-present-active-system` | `cfde67422706c018ba7641df8d315c17c81b936248841f5d65e912ffcc5619aa` |
-| `curriculums/ecclesiastical-latin/01-foundations/09-perfect-active-system` | `05b4e1438e38e0b121a9797bc81e00bbd86c76ce89d89a9fbee7df0bafbee04e` |
-| `curriculums/ecclesiastical-latin/01-foundations/10-passive-deponents` | `7eb8cb549dfd16cd22b8e85ba1f4c487a6fd5281f7c5f7915e50b4cc9a54d5b5` |
-| `curriculums/ecclesiastical-latin/01-foundations/11-pronouns-prepositions` | `c9d326055859467a8fed18f723c36e64052678fe1675fe80f98f5427627c8aad` |
-| `curriculums/ecclesiastical-latin/01-foundations/12-repeatable-missal-reading` | `920259828ee6c7e252f35f33a0a662ff18013348c18e224f8c6d5c618a0116da` |
-| `curriculums/ecclesiastical-latin/02-core-grammar/13-relative-interrogative-indefinite-pronouns` | `ef10bee4e6ac7d542cce853388043643e22458cecd2865160a9d076cf5823939` |
-| `curriculums/ecclesiastical-latin/02-core-grammar/14-comparison-adverbs-numerals` | `82b0397e7c9134d3946c606e12c95904bc7e89d8ac8f25b5f800e55d3765191a` |
-| `curriculums/ecclesiastical-latin/02-core-grammar/15-infinitives-indirect-statement` | `aba1b1434d48f98662536850bc580c8cc290c639193ebdc3a82cb254521873cd` |
-| `curriculums/ecclesiastical-latin/02-core-grammar/16-participles-ablative-absolute` | `297844458d6c73bb538a7c842c95c77c8ed5abc8cd75862aad0b0588449167eb` |
-| `curriculums/ecclesiastical-latin/02-core-grammar/17-subjunctive-morphology-sequence` | `6e022bf12bc3465a17fb00690f5aa844309e43018f8014a6f576c3e4143ddb24` |
-| `curriculums/ecclesiastical-latin/02-core-grammar/18-purpose-result-indirect-command` | `6b774bea4965d7ef7f3699aa8d6476e6807c79d6f7baf5bbfe9fd8248e082c01` |
-| `curriculums/ecclesiastical-latin/02-core-grammar/19-substantive-clauses` | `4400c0fcd09819315d8bf1fe750c8a47a372190a5ec5b258e3f9ab65a4a8a5f9` |
-| `curriculums/ecclesiastical-latin/02-core-grammar/20-temporal-causal-concessive` | `19c15140eda4eecb5fa06b435ce735d9de60baa89ab938cf0129e06056d66b2c` |
-| `curriculums/ecclesiastical-latin/02-core-grammar/21-conditions` | `2c72052feb1ce82b5bce1a76c7961d787695e68590c96bbba6208a52e94ff5c2` |
-| `curriculums/ecclesiastical-latin/02-core-grammar/22-relative-characteristic` | `63ba5dd152b7ccd8ed4986a43f330d071164238591c0467ece1610d92b40608f` |
-| `curriculums/ecclesiastical-latin/02-core-grammar/23-commands-wishes-fearing` | `91dfcfd27ffbe77ae1d69285407aadd8da51fc70f268f1c2d1f44f98a0428063` |
-| `curriculums/ecclesiastical-latin/02-core-grammar/24-verbal-nouns-periphrastics` | `2e842445effc6f103b94175ac65a8187643bcf6c3107cd3c811985c70406e655` |
-| `curriculums/ecclesiastical-latin/02-core-grammar/25-adverbial-cases` | `ec5835710ee7266d5201e15b8d4a3d82bece44c885bf059fa2773e22eab71fd0` |
-| `curriculums/ecclesiastical-latin/02-core-grammar/26-liturgical-compression` | `b9c2c270d500174849b272ca9637e24dd51fb99be67151e388df31d2c645c2da` |
-| `curriculums/ecclesiastical-latin/03-missal-reading/27-independent-reader-workflow` | `73c80fbfd0d01111eb0d3ff9dfcb1caea514158546dc58ae6704c2b3087e3a24` |
-| `curriculums/ecclesiastical-latin/03-missal-reading/28-ordinary-fixed-order` | `da4620b0d53612ae69bc644bc95df87bcf93a8e49321985a76449b2f60c8d0a0` |
-| `curriculums/ecclesiastical-latin/03-missal-reading/29-collects` | `33089655c6aa971e32ca1f3e9241796c4d5bf48b4cd7994feeb152367faed668` |
-| `curriculums/ecclesiastical-latin/03-missal-reading/30-secrets-postcommunions` | `542f680a57e2a8adea5fd5970f9d6fe69d0f8ecec3332cea8cfe1f14a15fe8a6` |
-| `curriculums/ecclesiastical-latin/03-missal-reading/31-lessons-epistles` | `b6946a840ff5ad61b987324fbd37e7e3c80adb09bc108d36ad5ee0aa303c869c` |
-| `curriculums/ecclesiastical-latin/03-missal-reading/32-gospels` | `d2ced8bdde732701e896a75eebf257c1acca8ad85e804e1ccb2e0823625b9be2` |
-| `curriculums/ecclesiastical-latin/03-missal-reading/33-chants-sequences` | `b0992519537c84884ce8b90491520c1e6b383bb05c0f2a8232e7d929ba678caf` |
-| `curriculums/ecclesiastical-latin/03-missal-reading/34-prefaces-roman-canon` | `3fef6de4931c3fe8e4464074f8ba969b085077448388b8175029a1837c17ff7f` |
-| `curriculums/ecclesiastical-latin/03-missal-reading/35-temporal-cycle` | `f3da13cce6e0e24a1c326adda118338d992dff692fad288d79728d7b0499af76` |
-| `curriculums/ecclesiastical-latin/03-missal-reading/36-sanctoral-commons` | `3f21263e3c410008da6b2fa6cd2df333df14d86ef0edb876cab9fb59d91a6c4c` |
-| `curriculums/ecclesiastical-latin/03-missal-reading/37-requiem-holy-week` | `733d9f5b9c5aa5c3fc4bb70c954500441b216f772c54a6fb325ff6e7223b5736` |
-| `curriculums/ecclesiastical-latin/03-missal-reading/38-full-mass-capstone` | `e4253b7adde1ca0a19756d2a7e2dbe74a71b3525dd22bce4cb2c8227f017c457` |
-| `curriculums/ecclesiastical-latin/04-advanced/39-register-across-time` | `17e7cc1587ed43a71ff4642f9c410fcc015d0aeeba5784161781e9d05d0034da` |
-| `curriculums/ecclesiastical-latin/04-advanced/40-vulgate-texture` | `f6129e825bddfa75590ab09da453605f95a372addaad89525bf30d581387815d` |
-| `curriculums/ecclesiastical-latin/04-advanced/41-allusion-context-typology` | `167f00eddbe05ae21d3ff9aec67e85476ad5fe4ece70d9d235ada6a794e675c2` |
-| `curriculums/ecclesiastical-latin/04-advanced/42-rhetoric-periodic-prose` | `a165a2efb46b969754adaa8972bbe5834b9068dac1800edd14fd6e211e3358c5` |
-| `curriculums/ecclesiastical-latin/04-advanced/43-textual-comparison-commentary` | `27e6d4c2686aee5d12da237ee495399d47281451dcc2a53d4aa66f1adda6d88e` |
-| `curriculums/ecclesiastical-latin/04-advanced/44-controlled-imitation` | `af00dde559cb039f7a2a6ff5f5985866f6c20bdfc619a82bcc341c5b3176fd9b` |
-| `curriculums/ecclesiastical-latin/04-advanced/45-guided-composition` | `a1373971e957735ae75d70f33b8e9c5a4bc277d088df2133b15aaabddd9cc533` |
-| `curriculums/ecclesiastical-latin/04-advanced/46-free-composition-research` | `1119c5ee38f176865f0e15268952fd9f39d7a82c9df0093c1b36a5e2f067e7bc` |
-| `curriculums/ecclesiastical-latin/05-stage-assessments/01-foundations` | `2684d8489b1cc30b17a5459154945231d54119821975f69249389576eafea14c` |
-| `curriculums/ecclesiastical-latin/05-stage-assessments/02-core-grammar` | `ece241d1ef82ea8acd77ad3f330a69bb8183af1af794a020cf3344e93498b644` |
-| `curriculums/ecclesiastical-latin/05-stage-assessments/03-missal-reading` | `fb4a5a0905d90aa57b0bc521993b32d3aafe3540acf66dee887b55c2f62a6b9e` |
-| `curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced` | `2bb4a56725996fea0b21fe5730f9be5b67211b9266cb831d0a4702b5a1406ea4` |
+
+## Exact approved reader-facing site sources
+
+| Repository path | SHA-256 |
+| --- | --- |
+| `CONTRIBUTING.md` | `47fc90b8b6ad73ae45af02a6b1ccf51f7e6af1a558a816984fdad694bee7a928` |
+| `LIBRARY.md` | `f4c3c4f2ee5d46577f83675bf0fd1400226e12a50509330034325d5e5f1eba97` |
+| `LICENSE` | `6830030f2e4ff888ee116bc68e45adcd83f3929d2d82eb4eed3c6a663f665f91` |
+| `LICENSES/CC-BY-4.0.txt` | `d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744` |
+| `LICENSES/MIT.txt` | `afd9c125b68a36b60c78cf63656f4cea2613fadce57e95ebabacebff8817ef60` |
+| `README.md` | `c52f2563a59a150f68d35949764045398d4b2cf7b3f928729392f7c2e9f0d056` |
+| `THIRD_PARTY.md` | `3edb066134d7ff70d8ed23410b825540216c06fc50a40fc9e06be282f42d3000` |
+| `library/biographies.md` | `0c9cb5c492348740b2df1a4fd934f1b79e2345e4d38c3d458ef35a2ada222d28` |
+| `library/curriculums.md` | `b410295bf2d3c686ab899a04000aafa62a15772ba5b00ad22d70396b64e4f051` |
+| `library/faith.md` | `6da9fd7ecc143eb5f24876dd48383f971bba492c35ac856890f261480515d48d` |
+| `library/heresies.md` | `536214f9d30c4bec744775d90e1e23d34998e613ff3ed79302a5a08c35d04f22` |
+| `library/historical-accounts.md` | `8243de7aebd969da353df9b5f7b32bf7a856262f30194e244b260f6a07f9f3ee` |
+| `library/law-and-church-discipline.md` | `f768255de091da8174b2e822024f6b10739b9f6dac3740a6cc602e34399e7ce2` |
+| `library/mariology.md` | `2d799f54992dff0998ba28727782861792576ecb4d3951f3c1c620c6201f9c9c` |
+| `library/novus-ordo-liturgy.md` | `973d0b67ae9b845e546339aafd98b89e243e5fb7b8295f5add75e930fdfe5f31` |
+| `library/prayer.md` | `be21efc07c0c3585b2ac8a4ba0a8969331783a9f6378273f4a5e254b9a93e560` |
+| `library/traditional-latin-mass.md` | `48e017e5bdf5026b7098ce6b96da5c350f6e9db03e877697e6a780d5ac6d7add` |
+| `release/public-alpha/404.md` | `551491f5521a5624911d63b398156d2236cbed2f0aa832eeb9c97070dcea568e` |
+| `release/public-alpha/assets/site.css` | `358d86f3587fc03f62a17cd4b5fd0126fb2dc3d952afa48eb33fc3a88fce54e9` |
+| `release/public-alpha/layout.html` | `1add2c3f7e6faed6cde4f71b471b5d275089aa719a779f250ef761b3754bea63` |
+| `requirements-public-alpha.txt` | `c30202fbc2f2eb1da451b8bae46b6867c07915844cec203a243991d14b8d4efc` |
+| `scripts/public-alpha` | `506b0b3a0cfb8d996daa83c9a0646e566ac7ec89d1afb6659e1f5db1047ae83a` |
 
 ## Superseded reader-facing site-source binding
 
@@ -427,6 +530,20 @@ fail-closed until the relevant exact snapshots receive new authorization.
 
 ## Operational controls
 
-The release validator must reject a build before the current supplement's effective instant or after any approved PDF, rights record, or artifact-affecting site input changes. The generated public site may include only `release` PDFs and narrowly scoped generated policy, manifest, checksum, HTML, CSS, and license files. A private preview may include `release` and `review` items but never `hold` items. The current manifest contains 80 `release` items, no `review` items, and 35 `hold` items, so generated public and private-preview artifacts exclude all 35 held PDFs.
+The release validator must reject a build before the current supplement's
+effective instant or after any approved PDF, rights record, or
+artifact-affecting site input changes. The generated public site may include
+only `release` PDFs and narrowly scoped generated policy, manifest, checksum,
+HTML, CSS, and license files. A private preview may include `release` and
+`review` items but never `hold` items. The current manifest contains 115
+`release` items, no `review` items, and no `hold` items, so a successfully
+built and independently verified public or private-preview artifact includes
+all 115 exact approved PDFs.
 
-GitHub Pages may publish only the verified generated site artifact, never the repository root or a private-preview artifact. The no-project-initiated-promotion condition remains in force. This rights record documents the authorized distribution scope; permission for a worker to push or deploy remains a separate operational authorization.
+GitHub Pages may publish only the independently verified generated site
+artifact, never the repository root or a private-preview artifact. The
+no-project-initiated-promotion condition remains in force. This rights record
+documents the exact authorized distribution scope. The 21 July instruction
+separately authorizes the primary session to audit, integrate, and publish the
+exact verified result; it does not convert the snapshot clearance into
+substantive review or authorize this worker to push or deploy.
