@@ -3,10 +3,10 @@
   "release_id": "public-alpha",
   "provider": "gpt",
   "expected_counts": {
-    "publications": 114,
+    "publications": 115,
     "release": 110,
     "review": 0,
-    "hold": 4
+    "hold": 5
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
@@ -97,6 +97,15 @@
     },
     {
       "id": "articles/faith/ontological-vertigo",
+      "catalog": "library/faith.md",
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
+    },
+    {
+      "id": "articles/faith/the-due-return",
       "catalog": "library/faith.md",
       "status": "hold",
       "gates": [
