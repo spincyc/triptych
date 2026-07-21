@@ -34,7 +34,8 @@ The donor project was complete as a multi-booklet course but lacked:
 Triptych therefore preserves the complete instructional corpus but narrows the
 claimed outcome, adds the required records and terminal qualifications,
 selectively publishes normal practice, enriches every teaching submodule, and
-holds every packet rather than converting missing evidence into a claim.
+keeps changed packets in review rather than converting missing evidence into a
+claim.
 
 ## High-confidence internal corrections
 
@@ -51,6 +52,7 @@ the answer audit records their propagation into terminal keys.
 | gerund analysis | *praeveniendo* called indeclinable | identify it as the ablative singular of a declining verbal noun |
 | assessment validity | two “unfamiliar” gates reused extensively taught First Advent and Pentecost formularies; percentages lacked a stated denominator | disclose M-A/M-B as designated diagnostics, add blind-selection M-C, and define atomic and four-category scoring denominators |
 | source/allusion tasks | prompts could reward invented allusions or imply that comparison itself creates a hybrid | require evidence-scaled investigation and permit negative results; identify only silent import into a base witness as hybridization |
+| document structure | the article-based chapter layer lacked a chapter contents renderer, restarted unqualified chapter numbers at each Part, flattened PDF bookmarks, duplicated or omitted practice chapters, hid worksheet IDs from navigation, and leaked unselected assessment Gate headings | use one continuous chapter sequence and an explicit Part--chapter--section hierarchy; give each selected practice rendering one source-owned unit chapter with stable-ID worksheet sections; emit only the selected assessment Gate and forms; validate all 52 rendered structures during every curriculum build |
 
 ## Grammar and lexicon evidence boundary
 
@@ -77,8 +79,8 @@ examples, and model compositions are project-created by declared convention.
 
 No source is called visually collated from an OCR match alone. Any unresolved
 locus or variant remains explicit and prevents a profile-final source-audit
-claim. The course's working-draft status and release hold are not substitutes
-for completing those rows.
+claim. The rebuilt candidate's review status and the installed set's historical
+exact-snapshot exception are not substitutes for completing those rows.
 
 ## Rights audit
 
@@ -92,27 +94,26 @@ the project license unless a separate basis applies.
 The donor tree contains no local license, and the integration request is not
 independent evidence of ownership or a general public-distribution license.
 After those limitations were disclosed, the maintainer gave a separate
-instruction on 20 July 2026 to authorize and install the 52 exact current PDF
-snapshots under the repository's existing user-attested distribution
-authority. The release record treats that instruction as an exact-snapshot
-exception, not as completed donor-provenance, quotation-and-link,
-liturgical-text, or independent rights review.
+instruction on 20 July 2026 to authorize and install the then-current 52 exact
+PDF snapshots under the repository's existing user-attested distribution
+authority. The release record preserves that authorization as historical: it
+does not cover rebuilt bytes and did not complete donor provenance,
+quotation-and-link review, liturgical-text review, or independent rights
+review.
 
 ## Production record
 
 The earlier 494-page omnibus working build was superseded by the modular
 architecture and is not a publication candidate. Its former page count, hash,
-and review event do not establish the integrity of any new packet. The current
-build object is the complete set of 52 independent leaves: 947 pages totaling
-26,841,251 bytes. The [production manifest](production-manifest.md) records
-each leaf's exact page count and SHA-256, the completed automated checks, and
-the remaining exact-snapshot visual-review limitation. Because that final
-raster refresh remains outstanding, the set is not described as
-production-reviewed.
+and review event do not establish the integrity of any new packet. The
+[production manifest](production-manifest.md) records the current complete set
+of 52 independent leaves, each leaf's exact page count and SHA-256, and the
+technical and visual verification performed on those exact bytes.
 
-All 52 PDFs are installed by the maintainer's explicit exception despite the
-outstanding page-image collation and donor and received-text rights analysis.
-Installation and exact-byte clearance do not change those factual states or
-authorize broader reuse.
+All 52 rebuilt PDFs remain uninstalled review candidates. The prior installed
+snapshots and their release records are unchanged. Internal verification does
+not resolve the outstanding page-image collation or donor and received-text
+rights analysis, authorize installation or changed-byte distribution, or
+permit broader reuse.
 
 No integration, push, or deployment is implied by this research record.

@@ -38,11 +38,11 @@ authoritative inputs, and no single omnibus publication remains.
 The donor tree contained no project-specific license or passage audit. The
 integration request is not independent proof of ownership, a general
 public-distribution license, or liturgical-text permission. On 20 July 2026,
-after those limits and the incomplete final raster refresh were disclosed, the
-maintainer separately instructed the project to authorize, install, and commit
-the 52 exact current snapshots under the repository's existing user-attested
-distribution authority. That exact-snapshot exception does not answer the
-underlying ownership or broader-reuse questions.
+after the then-current limits were disclosed, the maintainer separately
+authorized, installed, and committed 52 exact snapshots under the repository's
+existing user-attested distribution authority. That authorization remains a
+historical record for those prior bytes. It does not cover changed snapshots or
+answer the underlying ownership or broader-reuse questions.
 
 ## Learner, entry assumptions, and exit standard
 
@@ -137,10 +137,10 @@ unresolved loci are recorded without concealment in `passage-inventory.md`.
 
 The work has no imprimatur, nihil obstat, ecclesiastical approval, or
 independent Latin, liturgical, pedagogical, theological, textual, canonical,
-or rights review. Its donor provenance, incorporated liturgical wording,
-page-image collation, and final exact-snapshot raster review remain incomplete.
-The 52 PDFs are nevertheless installed and catalog-linked under the
-maintainer's explicit exact-snapshot exception of 20 July 2026. The release
-manifest binds only those exact bytes under the existing user-attested
-authority; it does not record completion of any missing review, establish an
-open license, or authorize extracted material or later snapshots.
+or rights review. Its donor provenance, incorporated liturgical wording, and
+page-image collation remain incomplete; current production verification is
+recorded separately. The 52 rebuilt PDFs remain uninstalled review candidates.
+The prior installed snapshots and their exact-byte authorization are unchanged;
+that authorization does not record completion of any missing review, establish
+an open license, authorize extracted material, or authorize later replacement
+bytes. Installation and changed-byte release authorization remain separate.

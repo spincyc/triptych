@@ -85,5 +85,7 @@ envelopes or gates, or validated writable space and workload in use. The
 envelope is an editorial design target, not evidence that every learner should
 advance after two days. Received-text attribution and collation are controlled
 separately by `passage-inventory.md`; an answer can be grammatically coherent
-while still quoting or identifying a source incorrectly. All packets therefore
-remain on hold even after internal build and production checks.
+while still quoting or identifying a source incorrectly. The rebuilt packets
+therefore remain uninstalled review candidates even after internal build and
+production checks; installation and any changed-byte release authorization are
+separate decisions.

@@ -3,110 +3,126 @@
 ## Record boundary
 
 - **Audit date:** 2026-07-20.
-- **Object:** the complete installed set of 52 independent Ecclesiastical Latin
-  leaves: two course companions, 46 two-session learning modules, and four
-  stage-assessment companions.
-- **Snapshot total:** 947 pages and 26,841,251 bytes.
-- **Publication state:** installed working snapshots under the maintainer's
-  explicit exact-snapshot exception of 20 July 2026.
+- **Object:** the complete exact build candidate set of 52 independent
+  Ecclesiastical Latin leaves: two course companions, 46 two-session learning
+  modules, and four stage-assessment companions.
+- **Candidate total:** 920 pages and 24,966,965 bytes.
+- **Publication state:** uninstalled review candidates. Installation and any
+  changed-byte distribution decision remain separate maintainer actions.
 
-The hashes below identify identical files in the course build and installed
-mirrors. The release record binds these exact bytes under the repository's
-existing user-attested authority. That exception does not satisfy the
-unresolved rights analysis, text-permission analysis, page-image collation, or
-final exact-snapshot raster-review work.
+The hashes below identify files only under the mirrored curriculum build path.
+None is byte-identical to its installed mirror. The installed set remains
+unchanged at 52 PDFs, 947 pages, and 26,841,251 bytes, and every curriculum
+binding in the release record still matches those installed bytes. The
+maintainer's exact-snapshot authorization of 20 July 2026 applies only to that
+prior installed set; it does not authorize these rebuilt candidates.
 
 ## Verification state
 
-The 52 leaves completed the repository build recipe after shared-source and
-sequencing changes. The settled checks cover generation metadata, PDF parsing
-and structure, embedded and subset fonts, text extraction, TeX log warnings,
-worksheet-to-key selection, stable worksheet and assessment identifiers, and
-enrichment-page spill detection. The source and answer audits record the
-content-level checking and remaining evidence limits.
+All 52 candidates completed the repository build recipe and the complete
+source-and-rendered structure audit after the hierarchy and pagination repair.
+The settled automated checks cover generation metadata, continuous chapter and
+section numbering, Part--chapter--section contents and bookmarks, PDF
+destinations, source selection, worksheet and assessment identifiers, terminal
+keys, chapter/first-solution co-location, later-form page starts, indivisible
+exercise and assessment items, blank or rule-only pages, isolated advancement
+boxes, and sparse form continuations.
 
-Every page in the preceding complete raster set was visually inspected.
-A sparse spill found in EL-I.7 was corrected in the shared packet structure and
-the affected consumers were rebuilt; automated post-correction checks found no
-remaining enrichment spill. The final exact-snapshot raster refresh and
-every-page inspection remain outstanding, so these files are not described as
-production-reviewed. The maintainer expressly directed installation after this
-limitation was disclosed; installation is therefore recorded as a one-snapshot
-exception rather than completion of the universal review gate.
+A complete page-by-page raster review of the immediately preceding 919-page
+candidate found three answer-key unit chapters separated from their first
+solutions. The shared opening guard, the long keyed-form split, and the
+rendered regression gate were corrected in response. Forty-nine PDFs retain
+the exact bytes already reviewed. The three rebuilt packets listed below have
+passed the final rendered checks, but their post-correction exact-byte raster
+confirmation remains pending because the bounded review tool failed closed
+when the host could not preserve its required memory reserve:
 
-## Exact build snapshots
+- `01-foundations/04-third-declension.pdf`;
+- `04-advanced/40-vulgate-texture.pdf`; and
+- `04-advanced/45-guided-composition.pdf`.
+
+Targeted exact-build page diagnostics confirm that each repaired unit chapter
+now stays with its first solution and that the guided-composition split and
+terminal apparatus remain unclipped and substantive. Those diagnostics do not
+replace the required bounded full-packet raster refresh.
+
+This manifest therefore records a technically verified build candidate, not a
+completed universal production review or an installation authorization. The
+source and answer audits record the content-level checking and remaining
+evidence limits.
+
+## Exact build candidates
 
 Paths are relative to
 `build/gpt/curriculums/ecclesiastical-latin/`.
 
 | Snapshot | Pages | Bytes | SHA-256 |
 | --- | ---: | ---: | --- |
-| `00-course-guide.pdf` | 36 | 456716 | `3589584ff718f996c28605c82f05f9f0a593d84aa28b184b226887a286b48456` |
-| `00-reference-grammar.pdf` | 29 | 564027 | `38597c819b03727d58eac5543d9cd5d9846c7b6a2be8c6784afeaa8034351ea5` |
-| `01-foundations/01-grammar-bridge.pdf` | 17 | 544777 | `b7196769cbd1d7600a99cf0da959f390205316b7f40ef0fb319994a99beea49f` |
-| `01-foundations/02-case-number-gender-agreement.pdf` | 17 | 539635 | `e2efd44cee0b1241653f3c1fbd345f07f7029369e4aba06fd511a180f90d025a` |
-| `01-foundations/03-first-second-declensions.pdf` | 15 | 537687 | `ab98c275245fea72539e51b7f224ae3c2facae05f1e90bcf7fd5e2e73a4c1ae9` |
-| `01-foundations/04-third-declension.pdf` | 15 | 533147 | `a2a9e8429f275925b9e0d235cd426cc1006ba0c48bcd6efc73d78530607c859e` |
-| `01-foundations/05-fourth-fifth-declensions.pdf` | 18 | 539703 | `f46f1f7a42f39c05d3d2909d5caa10beccff038946fb582506e07e23b9f5b9e8` |
-| `01-foundations/06-adjectives-agreement.pdf` | 17 | 540917 | `f82f5203c5c6651626a1d4c2efb0b410e5e88631f5b367b6cf4e8447472a859b` |
-| `01-foundations/07-sum-possum.pdf` | 16 | 581401 | `4f9863aa9d98acb32b956342d2b35ed7b572801d6ff6bed0e8ff3e5d7bff6725` |
-| `01-foundations/08-present-active-system.pdf` | 16 | 540508 | `cfde67422706c018ba7641df8d315c17c81b936248841f5d65e912ffcc5619aa` |
-| `01-foundations/09-perfect-active-system.pdf` | 16 | 536656 | `05b4e1438e38e0b121a9797bc81e00bbd86c76ce89d89a9fbee7df0bafbee04e` |
-| `01-foundations/10-passive-deponents.pdf` | 18 | 560745 | `7eb8cb549dfd16cd22b8e85ba1f4c487a6fd5281f7c5f7915e50b4cc9a54d5b5` |
-| `01-foundations/11-pronouns-prepositions.pdf` | 19 | 568621 | `c9d326055859467a8fed18f723c36e64052678fe1675fe80f98f5427627c8aad` |
-| `01-foundations/12-repeatable-missal-reading.pdf` | 22 | 519924 | `920259828ee6c7e252f35f33a0a662ff18013348c18e224f8c6d5c618a0116da` |
-| `02-core-grammar/13-relative-interrogative-indefinite-pronouns.pdf` | 19 | 536493 | `ef10bee4e6ac7d542cce853388043643e22458cecd2865160a9d076cf5823939` |
-| `02-core-grammar/14-comparison-adverbs-numerals.pdf` | 19 | 509141 | `82b0397e7c9134d3946c606e12c95904bc7e89d8ac8f25b5f800e55d3765191a` |
-| `02-core-grammar/15-infinitives-indirect-statement.pdf` | 18 | 508125 | `aba1b1434d48f98662536850bc580c8cc290c639193ebdc3a82cb254521873cd` |
-| `02-core-grammar/16-participles-ablative-absolute.pdf` | 18 | 513283 | `297844458d6c73bb538a7c842c95c77c8ed5abc8cd75862aad0b0588449167eb` |
-| `02-core-grammar/17-subjunctive-morphology-sequence.pdf` | 17 | 511283 | `6e022bf12bc3465a17fb00690f5aa844309e43018f8014a6f576c3e4143ddb24` |
-| `02-core-grammar/18-purpose-result-indirect-command.pdf` | 18 | 550561 | `6b774bea4965d7ef7f3699aa8d6476e6807c79d6f7baf5bbfe9fd8248e082c01` |
-| `02-core-grammar/19-substantive-clauses.pdf` | 18 | 512113 | `4400c0fcd09819315d8bf1fe750c8a47a372190a5ec5b258e3f9ab65a4a8a5f9` |
-| `02-core-grammar/20-temporal-causal-concessive.pdf` | 18 | 587623 | `19c15140eda4eecb5fa06b435ce735d9de60baa89ab938cf0129e06056d66b2c` |
-| `02-core-grammar/21-conditions.pdf` | 18 | 506403 | `2c72052feb1ce82b5bce1a76c7961d787695e68590c96bbba6208a52e94ff5c2` |
-| `02-core-grammar/22-relative-characteristic.pdf` | 17 | 507683 | `63ba5dd152b7ccd8ed4986a43f330d071164238591c0467ece1610d92b40608f` |
-| `02-core-grammar/23-commands-wishes-fearing.pdf` | 18 | 507575 | `91dfcfd27ffbe77ae1d69285407aadd8da51fc70f268f1c2d1f44f98a0428063` |
-| `02-core-grammar/24-verbal-nouns-periphrastics.pdf` | 18 | 508791 | `2e842445effc6f103b94175ac65a8187643bcf6c3107cd3c811985c70406e655` |
-| `02-core-grammar/25-adverbial-cases.pdf` | 18 | 528470 | `ec5835710ee7266d5201e15b8d4a3d82bece44c885bf059fa2773e22eab71fd0` |
-| `02-core-grammar/26-liturgical-compression.pdf` | 20 | 517842 | `b9c2c270d500174849b272ca9637e24dd51fb99be67151e388df31d2c645c2da` |
-| `03-missal-reading/27-independent-reader-workflow.pdf` | 18 | 512719 | `73c80fbfd0d01111eb0d3ff9dfcb1caea514158546dc58ae6704c2b3087e3a24` |
-| `03-missal-reading/28-ordinary-fixed-order.pdf` | 17 | 509529 | `da4620b0d53612ae69bc644bc95df87bcf93a8e49321985a76449b2f60c8d0a0` |
-| `03-missal-reading/29-collects.pdf` | 17 | 508166 | `33089655c6aa971e32ca1f3e9241796c4d5bf48b4cd7994feeb152367faed668` |
-| `03-missal-reading/30-secrets-postcommunions.pdf` | 16 | 505756 | `542f680a57e2a8adea5fd5970f9d6fe69d0f8ecec3332cea8cfe1f14a15fe8a6` |
-| `03-missal-reading/31-lessons-epistles.pdf` | 17 | 508187 | `b6946a840ff5ad61b987324fbd37e7e3c80adb09bc108d36ad5ee0aa303c869c` |
-| `03-missal-reading/32-gospels.pdf` | 17 | 507662 | `d2ced8bdde732701e896a75eebf257c1acca8ad85e804e1ccb2e0823625b9be2` |
-| `03-missal-reading/33-chants-sequences.pdf` | 16 | 518527 | `b0992519537c84884ce8b90491520c1e6b383bb05c0f2a8232e7d929ba678caf` |
-| `03-missal-reading/34-prefaces-roman-canon.pdf` | 18 | 537962 | `3fef6de4931c3fe8e4464074f8ba969b085077448388b8175029a1837c17ff7f` |
-| `03-missal-reading/35-temporal-cycle.pdf` | 18 | 506956 | `f3da13cce6e0e24a1c326adda118338d992dff692fad288d79728d7b0499af76` |
-| `03-missal-reading/36-sanctoral-commons.pdf` | 17 | 507939 | `3f21263e3c410008da6b2fa6cd2df333df14d86ef0edb876cab9fb59d91a6c4c` |
-| `03-missal-reading/37-requiem-holy-week.pdf` | 20 | 511530 | `733d9f5b9c5aa5c3fc4bb70c954500441b216f772c54a6fb325ff6e7223b5736` |
-| `03-missal-reading/38-full-mass-capstone.pdf` | 17 | 489566 | `e4253b7adde1ca0a19756d2a7e2dbe74a71b3525dd22bce4cb2c8227f017c457` |
-| `04-advanced/39-register-across-time.pdf` | 17 | 533845 | `17e7cc1587ed43a71ff4642f9c410fcc015d0aeeba5784161781e9d05d0034da` |
-| `04-advanced/40-vulgate-texture.pdf` | 16 | 504897 | `f6129e825bddfa75590ab09da453605f95a372addaad89525bf30d581387815d` |
-| `04-advanced/41-allusion-context-typology.pdf` | 16 | 528993 | `167f00eddbe05ae21d3ff9aec67e85476ad5fe4ece70d9d235ada6a794e675c2` |
-| `04-advanced/42-rhetoric-periodic-prose.pdf` | 17 | 503210 | `a165a2efb46b969754adaa8972bbe5834b9068dac1800edd14fd6e211e3358c5` |
-| `04-advanced/43-textual-comparison-commentary.pdf` | 17 | 484919 | `27e6d4c2686aee5d12da237ee495399d47281451dcc2a53d4aa66f1adda6d88e` |
-| `04-advanced/44-controlled-imitation.pdf` | 16 | 500865 | `af00dde559cb039f7a2a6ff5f5985866f6c20bdfc619a82bcc341c5b3176fd9b` |
-| `04-advanced/45-guided-composition.pdf` | 18 | 487692 | `a1373971e957735ae75d70f33b8e9c5a4bc277d088df2133b15aaabddd9cc533` |
-| `04-advanced/46-free-composition-research.pdf` | 18 | 487494 | `1119c5ee38f176865f0e15268952fd9f39d7a82c9df0093c1b36a5e2f067e7bc` |
-| `05-stage-assessments/01-foundations.pdf` | 20 | 453812 | `2684d8489b1cc30b17a5459154945231d54119821975f69249389576eafea14c` |
-| `05-stage-assessments/02-core-grammar.pdf` | 20 | 456531 | `ece241d1ef82ea8acd77ad3f330a69bb8183af1af794a020cf3344e93498b644` |
-| `05-stage-assessments/03-missal-reading.pdf` | 23 | 460557 | `fb4a5a0905d90aa57b0bc521993b32d3aafe3540acf66dee887b55c2f62a6b9e` |
-| `05-stage-assessments/04-advanced.pdf` | 16 | 444087 | `2bb4a56725996fea0b21fe5730f9be5b67211b9266cb831d0a4702b5a1406ea4` |
+| `00-course-guide.pdf` | 37 | 458854 | `5ac6323a573f8f6e49a911d5beba92a457804ac0be4fabe0e2a677fb89190d9b` |
+| `00-reference-grammar.pdf` | 30 | 565277 | `7d778b5294430b0e491d8356dac1da8f4c7fc8520e8e7ae6ea60eeddc687ae50` |
+| `01-foundations/01-grammar-bridge.pdf` | 17 | 501073 | `3a51b82ce78b336d9af6ddeeaa0b4d5e62f8d01db70820dac755b3f20278c936` |
+| `01-foundations/02-case-number-gender-agreement.pdf` | 16 | 495793 | `9a40b398aedac0e6943d2c9f30f1c3588caffda2ae16c2b6c4633dbef670573e` |
+| `01-foundations/03-first-second-declensions.pdf` | 16 | 494928 | `61ce97ee2e860de1611f38aca4bace59962df64d16b75e1b383c3e140da68fd0` |
+| `01-foundations/04-third-declension.pdf` | 16 | 490134 | `fedf2d8e81b33297b1f4de7cca54ecc7fcf3662dcb9cfe5fb9576f8db535c158` |
+| `01-foundations/05-fourth-fifth-declensions.pdf` | 16 | 494423 | `d2f2fd914d97418f9e4b05001131b6723cadd5d2de73c475de82a19bf6f61d04` |
+| `01-foundations/06-adjectives-agreement.pdf` | 17 | 521954 | `076c970533e3cff054c7024c2737bcafd3a3222826fd28a00c3a09cbe29295ed` |
+| `01-foundations/07-sum-possum.pdf` | 16 | 573214 | `86dfa00565cc625c23c66000f3bb2d2ef67fdeefcc964b476ce5f75b94a05da6` |
+| `01-foundations/08-present-active-system.pdf` | 16 | 521210 | `d0befa5763d87c2261cc40bf5938dea18fd9414ccf990f5e0affd6f3e612425f` |
+| `01-foundations/09-perfect-active-system.pdf` | 16 | 492686 | `c9f0405ea815a8c4f7517024b0a9625c5cab6becc467ede04bddde884b20309f` |
+| `01-foundations/10-passive-deponents.pdf` | 17 | 540916 | `610b5d8dcd0d3cc6a0b590445a66fdf869365475bfbe414cc794a249d135b34d` |
+| `01-foundations/11-pronouns-prepositions.pdf` | 18 | 562971 | `03f6fd573f6477ca26f016070c1e54fe0e1658e6b5fbe6760db62d126c279ffc` |
+| `01-foundations/12-repeatable-missal-reading.pdf` | 21 | 475290 | `58724aea6f75f1aebc54803c69c900d726d1428ba05c865aa0b70d38ce96b0cf` |
+| `02-core-grammar/13-relative-interrogative-indefinite-pronouns.pdf` | 19 | 490958 | `fa16cf52576ead4f431653e72c4a1cf5cfe11a248c76cfc2cc9d6bfbbb53838e` |
+| `02-core-grammar/14-comparison-adverbs-numerals.pdf` | 18 | 464097 | `31f3ae4fb2ded6420c781dd2a3521afaf2ea4434b5d0c759901dffb876d59285` |
+| `02-core-grammar/15-infinitives-indirect-statement.pdf` | 17 | 463385 | `3a723c199558ee3924269a61e31bfa95387bdd05959ef6ebd3c2fe93e2a11605` |
+| `02-core-grammar/16-participles-ablative-absolute.pdf` | 18 | 469141 | `3437d6f794c9643171c9797b4061a78dfed2d61ae7dc1304213fafd70f115b61` |
+| `02-core-grammar/17-subjunctive-morphology-sequence.pdf` | 18 | 467268 | `7a26f33617f0c55148c166e729b885659df6d993ac5b2fa1754d779553c45eb8` |
+| `02-core-grammar/18-purpose-result-indirect-command.pdf` | 17 | 505838 | `4cab44257d53a91a987d1d347c43db9999f0e3703c63857f4c4c348126814866` |
+| `02-core-grammar/19-substantive-clauses.pdf` | 18 | 467371 | `77deaab9786feb1bd9c77b84a301d5fcf0fd20959896bfcbee81845ad922e4d6` |
+| `02-core-grammar/20-temporal-causal-concessive.pdf` | 18 | 542884 | `fc4677be05e6e3abbccb062de5f336bc4ba01e64e997709c653bda98ce0875f6` |
+| `02-core-grammar/21-conditions.pdf` | 17 | 461427 | `0f920ff72c46d87d11d6e80a60d2a29866372d3c9da6f35a113af380f9002045` |
+| `02-core-grammar/22-relative-characteristic.pdf` | 16 | 463461 | `64749f24c04d8df72b445450de3ba2955897f5e35959d6094439caf3b309fbe5` |
+| `02-core-grammar/23-commands-wishes-fearing.pdf` | 17 | 463613 | `e40cecd4cd414ab3d9bc95496d822a9174297d71ffbc2650d1ddceb643f8b280` |
+| `02-core-grammar/24-verbal-nouns-periphrastics.pdf` | 17 | 464305 | `f420ac04d82dc20457e812c64b5a98d11dfe5edc10c65df2e4a031fe8cb56eaf` |
+| `02-core-grammar/25-adverbial-cases.pdf` | 17 | 484191 | `914a188e20c413dde008664e7630a3aef515a270641c56d157d05575b3e51102` |
+| `02-core-grammar/26-liturgical-compression.pdf` | 19 | 472826 | `4d16d41d803cb73206de3d5f65da7196a73ee7560e37ac54a125e909f9a00b9b` |
+| `03-missal-reading/27-independent-reader-workflow.pdf` | 18 | 468838 | `24c839c0de25601bf84ebd49a2739417b757db7ac897c1ece4a3e2085febf323` |
+| `03-missal-reading/28-ordinary-fixed-order.pdf` | 16 | 466205 | `8fb764c7d11146fff41f2d3c0f185b3a2383826d166cb8ad1e307f9907ebd061` |
+| `03-missal-reading/29-collects.pdf` | 16 | 464139 | `19e79a9ae8d57747b7fce0b0eff0df22cdd4bdc465d69ab465a7675bb8f51cd8` |
+| `03-missal-reading/30-secrets-postcommunions.pdf` | 16 | 462414 | `15ac1137a51f385ebb8452633364cbc871fb96bb90e2b87f402c16a4573f4fb2` |
+| `03-missal-reading/31-lessons-epistles.pdf` | 16 | 464219 | `33e9f6e9dd059e0b7dfefa2b3ae70cda8e851e71e3eda1f2dcbd2bbd21c0175e` |
+| `03-missal-reading/32-gospels.pdf` | 16 | 464176 | `f33d5248b8777b79ef93ecbe545cb36de8cedd458ed9d9205c7912d907a56036` |
+| `03-missal-reading/33-chants-sequences.pdf` | 16 | 474972 | `00f1339f4931b0e4c44f8208a7d156ee801194b34ba65416e65fcbb3e4281249` |
+| `03-missal-reading/34-prefaces-roman-canon.pdf` | 17 | 507216 | `1840f8ee4411b4392c71c93be46386666cfa22d4f7ff530ebab1e6d1c43416bb` |
+| `03-missal-reading/35-temporal-cycle.pdf` | 17 | 462121 | `19b538116e128580be829a264cfff0797eb50950c9b0435fd93939c2c30ff3d1` |
+| `03-missal-reading/36-sanctoral-commons.pdf` | 17 | 464031 | `b6a0af8f00deec554594a454e71f1949632127c708c92c42d3f1b056b7346dc1` |
+| `03-missal-reading/37-requiem-holy-week.pdf` | 18 | 467251 | `9a2f374566d4ba8aa5b1e6583847425ff1b7149fd567173a7c3716af75169ef7` |
+| `03-missal-reading/38-full-mass-capstone.pdf` | 16 | 445947 | `3ce5076da9417145ae823cec473303014a9a2c29cd0739017eecdbadda561412` |
+| `04-advanced/39-register-across-time.pdf` | 16 | 490324 | `db3a6ed029b4e888039303ebe90a3a6af4e173adc09c4d09827f656dc91f492c` |
+| `04-advanced/40-vulgate-texture.pdf` | 16 | 461610 | `8d8c43d07795856786ca492c66fb1eb819ff3e2ecebfbdaf7440a029bf7dbf61` |
+| `04-advanced/41-allusion-context-typology.pdf` | 16 | 485124 | `2a0e0470b54b90e3e584eadc838ae90fe6813ea70b5652ea4bad31b2ec5923eb` |
+| `04-advanced/42-rhetoric-periodic-prose.pdf` | 16 | 459373 | `851b488a1c029d6a6b2ec94d4d81a580423d2bbaf7282998dc11acfca4ea1bb6` |
+| `04-advanced/43-textual-comparison-commentary.pdf` | 16 | 441367 | `fefe5e589ec1346f8a0e9817f337e6f34f2dfb9adac6c66b8b467350fa460879` |
+| `04-advanced/44-controlled-imitation.pdf` | 16 | 456636 | `8e8e7ac52c75bf5c7e3f2e878e8049a00d9faf9999634febe852efcb1668b328` |
+| `04-advanced/45-guided-composition.pdf` | 19 | 444313 | `a39a457531ecb3b24dfbec9eab7098a799dab5ef56c45e6b314898f5985c880e` |
+| `04-advanced/46-free-composition-research.pdf` | 17 | 443061 | `9999bcbed553e4e9d9aa7f922368c90dd06d49697f45cb2e07297431e8b771ca` |
+| `05-stage-assessments/01-foundations.pdf` | 19 | 451086 | `5b5993b4df4ebcbb811c9b8ee6913fc50de1f09c0abf30236a9023d988acb8d6` |
+| `05-stage-assessments/02-core-grammar.pdf` | 19 | 454227 | `dcae6d5e145e069251d47b5c5aa26dc4dec8019af298ac5c4f405a69d69b983d` |
+| `05-stage-assessments/03-missal-reading.pdf` | 20 | 456881 | `bc334827c93931cc60986a0d4164eb8a22f562ab5a14bdfad3f8d414f7e2f0bc` |
+| `05-stage-assessments/04-advanced.pdf` | 16 | 441946 | `5a1bcabbbc02000df288a04aee33b25805e485a486272adc1bfa308ab185760f` |
 
-## Consequential limitations and snapshot exception
+## Consequential limitations and publication boundary
 
 Page-image collation remains incomplete, the donor tree contains no local
-license, the distribution basis for received liturgical text remains
-unresolved, and the final raster refresh remains incomplete. Successful
-compilation, installation, and exact-byte authorization do not alter those
-facts.
+license, and the distribution basis for received liturgical text remains
+unresolved. Successful compilation, internal review, and exact hashing do not
+alter those facts.
 
-After all four limitations were disclosed, the maintainer instructed the
-project on 20 July 2026 to authorize, install, and commit these 52 exact
-snapshots. The release record treats that direction as an exact-snapshot
-distribution exception under the existing user-attested perpetual authority.
-It does not establish donor ownership, an open license, broader permission for
-liturgical wording, profile-final status, or independent review.
+The release record preserves the maintainer's 20 July 2026 exact-snapshot
+exception for the earlier installed bytes. It does not establish donor
+ownership, an open license, broader permission for liturgical wording,
+profile-final status, independent review, or authority to replace those files
+with the candidates recorded here.
 
-No integration, push, or deployment is implied by this manifest.
+This manifest does not authorize installation, changed-byte distribution,
+integration, push, or deployment.
