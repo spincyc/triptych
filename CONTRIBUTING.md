@@ -35,6 +35,16 @@ Git keeps the project’s files and history. An AI coding agent can edit, check,
 
 Agent results remain local until deliberately integrated and pushed. Pushing any branch to the public repository exposes its tracked files and reachable history. Pushing `main` also starts the reader-site publication workflow. Do not ask an agent to push unless the remote and ref, public-exposure review, and publication consequences have been expressly approved.
 
+### Exceptional rewritten-quarantine retirement
+
+Retiring an explicitly superseded quarantine after its worker history was rewritten is a destructive maintenance operation, not an ordinary cleanup or integration step. It requires separate, explicit authorization to discard the exact worker head and must be run from the primary checkout with the direct launcher command:
+
+```sh
+scripts/triptych-codex --triptych-retire RUN_ID --discard-head FULL_OID --target-contains FULL_OID
+```
+
+There is deliberately no Make wrapper. `--discard-head` is the full commit ID of the exact clean worker head authorized for destruction. `--target-contains` is a full commit ID chosen by the operator as a reachability checkpoint that the recorded target must contain; it does not prove that the target semantically incorporates, supersedes, or is equivalent to the discarded work. The launcher verifies but never moves the target, durably records the initial eligibility proof once, and anchors the discarded head. Before worktree removal and again before the atomic ref transaction, it freshly requires the current target to contain the selected checkpoint and records that exact target for a compare-and-swap verification. The transaction creates a per-run receipt at the discarded head and exact-deletes the worker branch and anchor. If the target races, those refs remain and an exact retry may use a newer containing descendant; if containment is lost, deletion is refused until it is restored. Only after recording the observed transaction does the launcher exact-delete the receipt and record its absence. Post-transaction recovery uses the durable record and strict phase refs, so it remains retryable after completed objects are pruned. Active, dirty, changed, conflicting, partial, or tampered state is refused. Changing either object argument is rejected. `make clean-run <run-id>` still refuses an untouched quarantine and may only resume retirement after the direct command has established its durable checkpoint.
+
 A useful starting prompt is:
 
 ```text

@@ -243,6 +243,154 @@ class TriptychCodexTests(unittest.TestCase):
     def source_anchor_ref(self, run_id: str) -> str:
         return f"refs/triptych-codex/runs/{run_id}/integration-source"
 
+    def retirement_anchor_ref(self, run_id: str) -> str:
+        return f"refs/triptych-codex/runs/{run_id}/retirement-discard"
+
+    def retirement_receipt_ref(self, run_id: str) -> str:
+        return f"refs/triptych-codex/runs/{run_id}/retirement-receipt"
+
+    def direct_ref_commit(self, ref: str) -> str | None:
+        symbolic = self.git(
+            self.control,
+            "symbolic-ref",
+            "--quiet",
+            ref,
+            check=False,
+        )
+        self.assertIn(symbolic.returncode, (0, 1), symbolic.stderr)
+        if symbolic.returncode == 0:
+            return None
+        resolved = self.git(
+            self.control,
+            "rev-parse",
+            "--verify",
+            f"{ref}^{{commit}}",
+            check=False,
+        )
+        self.assertIn(resolved.returncode, (0, 128), resolved.stderr)
+        return resolved.stdout.strip() if resolved.returncode == 0 else None
+
+    def retirement_ref_tuple(
+        self,
+        manifest: dict,
+    ) -> tuple[str | None, str | None, str | None]:
+        return (
+            self.direct_ref_commit(f"refs/heads/{manifest['branch']}"),
+            self.direct_ref_commit(self.retirement_anchor_ref(manifest["run_id"])),
+            self.direct_ref_commit(self.retirement_receipt_ref(manifest["run_id"])),
+        )
+
+    def expire_reflogs_and_prune(self) -> None:
+        self.git(
+            self.control,
+            "reflog",
+            "expire",
+            "--expire=now",
+            "--expire-unreachable=now",
+            "--all",
+        )
+        self.git(self.control, "gc", "--prune=now")
+
+    def commit_exists(self, commit: str) -> bool:
+        return (
+            self.git(
+                self.control,
+                "cat-file",
+                "-e",
+                f"{commit}^{{commit}}",
+                check=False,
+            ).returncode
+            == 0
+        )
+
+    def manifest_file(self, manifest: dict) -> Path:
+        return self.repo_state() / "runs" / f"{manifest['run_id']}.json"
+
+    def write_test_manifest(self, manifest: dict) -> None:
+        self.manifest_file(manifest).write_text(
+            json.dumps(manifest, indent=2, sort_keys=True) + "\n",
+            encoding="utf-8",
+        )
+
+    def retire_arguments(
+        self,
+        manifest: dict,
+        *,
+        discard_head: str | None = None,
+        target_contains: str | None = None,
+    ) -> list[str]:
+        return [
+            "--triptych-retire",
+            manifest["run_id"],
+            "--discard-head",
+            discard_head or manifest["observed_head"],
+            "--target-contains",
+            target_contains or self.git(
+                self.control,
+                "rev-parse",
+                "--verify",
+                f"{manifest['target_ref']}^{{commit}}",
+            ).stdout.strip(),
+        ]
+
+    def create_rewritten_quarantine(self) -> tuple[dict, Path, str, str, str]:
+        first = self.run_launcher(
+            environment={
+                "FAKE_CODEX_LOG": str(self.root / "retirement-first.jsonl"),
+                "FAKE_CODEX_ACTION": "commit",
+            }
+        )
+        self.assertEqual(first.returncode, 0, first.stderr.decode())
+        manifest = self.manifests()[0]
+        worker = Path(manifest["worktree"])
+        final_head = manifest["final_head"]
+
+        second = self.run_launcher(
+            ["--triptych-reopen", manifest["run_id"]],
+            environment={
+                "FAKE_CODEX_LOG": str(self.root / "retirement-rewrite.jsonl"),
+                "FAKE_CODEX_ACTION": "rewrite-sibling",
+            },
+        )
+        self.assertEqual(second.returncode, 0, second.stderr.decode())
+        quarantined = self.manifests()[0]
+        discard_head = quarantined["observed_head"]
+        target_head = self.git(
+            self.control,
+            "rev-parse",
+            "--verify",
+            f"{quarantined['target_ref']}^{{commit}}",
+        ).stdout.strip()
+        self.assertEqual(quarantined["state"], "quarantined")
+        self.assertFalse(quarantined["observed_dirty"])
+        self.assertNotEqual(final_head, discard_head)
+        self.assertNotEqual(target_head, discard_head)
+        self.assertEqual(
+            self.git(worker, "rev-parse", f"{final_head}^").stdout.strip(),
+            self.base_head,
+        )
+        self.assertEqual(
+            self.git(worker, "rev-parse", f"{discard_head}^").stdout.strip(),
+            self.base_head,
+        )
+        self.assertEqual(
+            self.git(
+                self.control,
+                "merge-base",
+                "--is-ancestor",
+                discard_head,
+                target_head,
+                check=False,
+            ).returncode,
+            1,
+        )
+        self.assertEqual(
+            self.git(worker, "rev-parse", "HEAD").stdout.strip(),
+            discard_head,
+        )
+        self.assertEqual(self.git(worker, "status", "--porcelain=v1").stdout, "")
+        return quarantined, worker, final_head, discard_head, target_head
+
     def post_git_action_environment(
         self,
         *,
@@ -251,6 +399,7 @@ class TriptychCodexTests(unittest.TestCase):
         marker: Path,
         action: str = "kill-parent",
         dirty_path: Path | None = None,
+        dangling_link: tuple[Path, Path] | None = None,
         move_ref: tuple[str, str, str] | None = None,
     ) -> dict[str, str]:
         real_git = shutil.which("git")
@@ -269,6 +418,11 @@ class TriptychCodexTests(unittest.TestCase):
             "not pathlib.Path(os.environ['TRIPTYCH_TEST_GIT_MARKER']).exists())\n"
             "action = os.environ['TRIPTYCH_TEST_GIT_ACTION']\n"
             "marker = pathlib.Path(os.environ['TRIPTYCH_TEST_GIT_MARKER'])\n"
+            "if matched and action == 'kill-parent-before':\n"
+            "    marker.write_text('matched-before\\n', encoding='utf-8')\n"
+            "    os.kill(os.getppid(), signal.SIGKILL)\n"
+            "    time.sleep(0.05)\n"
+            "    raise SystemExit(94)\n"
             "if matched and action == 'refuse':\n"
             "    marker.write_text('refused\\n', encoding='utf-8')\n"
             "    raise SystemExit(93)\n"
@@ -289,6 +443,10 @@ class TriptychCodexTests(unittest.TestCase):
             "    elif action == 'dirty':\n"
             "        pathlib.Path(os.environ['TRIPTYCH_TEST_GIT_DIRTY']).write_text("
             "'post-Git dirt\\n', encoding='utf-8')\n"
+            "    elif action == 'dangling-symlink':\n"
+            "        pathlib.Path(os.environ['TRIPTYCH_TEST_GIT_LINK']).symlink_to("
+            "pathlib.Path(os.environ['TRIPTYCH_TEST_GIT_LINK_TARGET']), "
+            "target_is_directory=True)\n"
             "raise SystemExit(result.returncode)\n",
             encoding="utf-8",
         )
@@ -303,6 +461,10 @@ class TriptychCodexTests(unittest.TestCase):
         }
         if dirty_path is not None:
             environment["TRIPTYCH_TEST_GIT_DIRTY"] = str(dirty_path)
+        if dangling_link is not None:
+            link, target = dangling_link
+            environment["TRIPTYCH_TEST_GIT_LINK"] = str(link)
+            environment["TRIPTYCH_TEST_GIT_LINK_TARGET"] = str(target)
         if move_ref is not None:
             ref, new, old = move_ref
             environment["TRIPTYCH_TEST_MOVE_REF"] = ref
@@ -1243,6 +1405,14 @@ class TriptychCodexTests(unittest.TestCase):
         self.assertTrue(Path(manifest["worktree"]).exists())
         self.assertEqual(len(self.worktree_paths()), 2)
 
+        clean = self.run_launcher(["--triptych-clean", manifest["run_id"]])
+        self.assertEqual(clean.returncode, 2, clean.stderr.decode())
+        self.assertIn(b"quarantined run", clean.stderr)
+        self.assertIn(b"no retirement checkpoint", clean.stderr)
+        self.assertNotIn(b"rewritten quarantine", clean.stderr)
+        self.assertEqual(self.manifests()[0]["state"], "quarantined")
+        self.assertTrue(Path(manifest["worktree"]).exists())
+
     def test_forged_worker_marker_does_not_run_in_control_checkout(self) -> None:
         log = self.root / "forged.jsonl"
         result = self.run_launcher(
@@ -1405,7 +1575,1685 @@ class TriptychCodexTests(unittest.TestCase):
 
         clean = self.run_launcher(["--triptych-clean", manifest["run_id"]])
         self.assertEqual(clean.returncode, 2)
-        self.assertIn(b"changed since its last launcher audit", clean.stderr)
+        self.assertIn(b"quarantined run", clean.stderr)
+        self.assertIn(b"no retirement checkpoint", clean.stderr)
+        self.assertNotIn(b"rewritten quarantine", clean.stderr)
+
+    def test_retire_cli_is_direct_only_and_requires_exact_full_commit_ids(self) -> None:
+        manifest, worker, final_head, discard_head, target_head = (
+            self.create_rewritten_quarantine()
+        )
+        before = self.manifest_file(manifest).read_bytes()
+        tree_id = self.git(
+            self.control,
+            "rev-parse",
+            f"{target_head}^{{tree}}",
+        ).stdout.strip()
+        malformed = (
+            ["--triptych-retire"],
+            ["--triptych-retire", manifest["run_id"]],
+            [
+                "--triptych-retire",
+                manifest["run_id"],
+                "--discard-head",
+                discard_head,
+            ],
+            [
+                "--triptych-retire",
+                manifest["run_id"],
+                "--discard-head",
+                discard_head,
+                "--target-contains",
+            ],
+            [
+                *self.retire_arguments(manifest),
+                "unexpected-extra-argument",
+            ],
+            [
+                "--triptych-retire",
+                manifest["run_id"],
+                "--discard-head",
+                discard_head,
+                "--discard-head",
+                discard_head,
+                "--target-contains",
+                target_head,
+            ],
+            self.retire_arguments(
+                manifest,
+                discard_head=discard_head[:12],
+            ),
+            self.retire_arguments(
+                manifest,
+                target_contains=target_head[:12],
+            ),
+            self.retire_arguments(
+                manifest,
+                discard_head="g" * len(discard_head),
+            ),
+            self.retire_arguments(
+                manifest,
+                target_contains=target_head.upper(),
+            ),
+            self.retire_arguments(manifest, discard_head=tree_id),
+            self.retire_arguments(manifest, target_contains=tree_id),
+        )
+
+        for arguments in malformed:
+            with self.subTest(arguments=arguments):
+                refusal = self.run_launcher(arguments)
+                self.assertEqual(refusal.returncode, 2, refusal.stderr.decode())
+                self.assertEqual(self.manifest_file(manifest).read_bytes(), before)
+                self.assertTrue(worker.exists())
+                self.assertIn(manifest["branch"], self.worker_branches())
+                self.assertEqual(
+                    self.git(
+                        self.control,
+                        "show-ref",
+                        "--verify",
+                        "--quiet",
+                        self.retirement_anchor_ref(manifest["run_id"]),
+                        check=False,
+                    ).returncode,
+                    1,
+                )
+
+        launcher_help = self.run_launcher(["--triptych-help"])
+        self.assertEqual(launcher_help.returncode, 0, launcher_help.stderr.decode())
+        self.assertIn(
+            b"--triptych-retire RUN_ID --discard-head FULL_OID --target-contains FULL_OID",
+            launcher_help.stdout,
+        )
+        help_text = launcher_help.stdout.lower()
+        self.assertIn(b"direct", help_text)
+        self.assertIn(b"no make wrapper", help_text)
+        self.assertIn(b"operator-selected", help_text)
+        self.assertIn(b"reachability checkpoint", help_text)
+        self.assertIn(b"semantic equivalence", help_text)
+
+        make_help = self.run_make(["help"])
+        self.assertEqual(make_help.returncode, 0, make_help.stderr.decode())
+        self.assertNotIn(b"make retire", make_help.stdout)
+        plain_make_retire = self.run_make(["retire"])
+        self.assertEqual(plain_make_retire.returncode, 2)
+        self.assertIn(b"No rule to make target", plain_make_retire.stderr)
+        make_retire = self.run_make(["retire", manifest["run_id"]])
+        self.assertEqual(make_retire.returncode, 2)
+        self.assertIn(b"No rule to make target", make_retire.stderr)
+
+    def test_retire_requires_primary_checkout_invocation(self) -> None:
+        manifest, worker, _, _, _ = self.create_rewritten_quarantine()
+        before = self.manifest_file(manifest).read_bytes()
+
+        refusal = self.run_launcher(
+            self.retire_arguments(manifest),
+            cwd=worker,
+        )
+
+        self.assertEqual(refusal.returncode, 2)
+        self.assertIn(b"primary checkout", refusal.stderr)
+        self.assertEqual(self.manifest_file(manifest).read_bytes(), before)
+        self.assertTrue(worker.exists())
+
+    def test_retire_refuses_noncanonical_equivalent_tmpdir_before_checkpoint(
+        self,
+    ) -> None:
+        manifest, worker, _, discard_head, target_head = (
+            self.create_rewritten_quarantine()
+        )
+        canonical_tmpdir = Path(manifest["tmpdir"])
+        detour = canonical_tmpdir.parent / "sub"
+        detour.mkdir()
+        manifest["tmpdir"] = str(detour / ".." / manifest["run_id"])
+        self.assertNotEqual(manifest["tmpdir"], str(canonical_tmpdir))
+        self.assertEqual(Path(manifest["tmpdir"]).resolve(), canonical_tmpdir.resolve())
+        self.write_test_manifest(manifest)
+
+        manifest_before = self.manifest_file(manifest).read_bytes()
+        worktrees_before = self.worktree_output()
+        worktree_paths_before = self.worktree_paths()
+        worker_metadata = worker.stat()
+        refs_before = self.retirement_ref_tuple(manifest)
+        target_before = self.direct_ref_commit(manifest["target_ref"])
+        self.assertEqual(refs_before, (discard_head, None, None))
+        self.assertEqual(target_before, target_head)
+        self.assertTrue(canonical_tmpdir.is_dir())
+
+        refusal = self.run_launcher(self.retire_arguments(manifest))
+
+        self.assertEqual(refusal.returncode, 2, refusal.stderr.decode())
+        self.assertIn(b"exact launcher path", refusal.stderr)
+        self.assertEqual(self.manifest_file(manifest).read_bytes(), manifest_before)
+        self.assertEqual(self.manifests()[0]["state"], "quarantined")
+        self.assertEqual(self.worktree_output(), worktrees_before)
+        self.assertEqual(self.worktree_paths(), worktree_paths_before)
+        self.assertTrue(worker.is_dir())
+        retained_metadata = worker.stat()
+        self.assertEqual(
+            (retained_metadata.st_dev, retained_metadata.st_ino),
+            (worker_metadata.st_dev, worker_metadata.st_ino),
+        )
+        self.assertEqual(self.retirement_ref_tuple(manifest), refs_before)
+        self.assertEqual(self.direct_ref_commit(manifest["target_ref"]), target_before)
+        self.assertTrue(canonical_tmpdir.is_dir())
+
+    def test_retire_exact_rewritten_quarantine_is_audited_and_idempotent(self) -> None:
+        manifest, worker, final_head, discard_head, target_head = (
+            self.create_rewritten_quarantine()
+        )
+        arguments = self.retire_arguments(manifest)
+        branch_ref = f"refs/heads/{manifest['branch']}"
+        anchor_ref = self.retirement_anchor_ref(manifest["run_id"])
+        receipt_ref = self.retirement_receipt_ref(manifest["run_id"])
+        control_head = self.git(self.control, "rev-parse", "HEAD").stdout.strip()
+        control_tree = self.git(self.control, "write-tree").stdout.strip()
+        control_status = self.git(
+            self.control,
+            "status",
+            "--porcelain=v1",
+            "--untracked-files=all",
+        ).stdout
+
+        retirement = self.run_launcher(arguments)
+
+        self.assertEqual(retirement.returncode, 0, retirement.stderr.decode())
+        cleaned = self.manifests()[0]
+        self.assertEqual(cleaned["state"], "cleaned")
+        self.assertEqual(cleaned["retirement_discard_head"], discard_head)
+        self.assertEqual(cleaned["retirement_target_contains"], target_head)
+        self.assertEqual(cleaned["retirement_initial_target_head"], target_head)
+        self.assertEqual(cleaned["retirement_cleanup_target_head"], target_head)
+        self.assertIs(cleaned["retirement_anchor_created"], True)
+        for field in (
+            "retirement_started_at",
+            "retirement_worktree_removed_at",
+            "retirement_ref_cleanup_started_at",
+            "retirement_ref_transaction_committed_at",
+            "retirement_receipt_removed_at",
+            "retirement_completed_at",
+        ):
+            self.assertIn(field, cleaned)
+        self.assertNotIn("retirement_cleanup_warning", cleaned)
+        self.assertEqual(cleaned["final_head"], final_head)
+        self.assertEqual(cleaned["observed_head"], discard_head)
+        self.assertFalse(cleaned["observed_dirty"])
+        self.assertFalse(worker.exists())
+        self.assertEqual(self.worktree_paths(), [self.control.resolve()])
+        self.assertEqual(self.worker_branches(), [])
+        for ref in (branch_ref, anchor_ref, receipt_ref):
+            self.assertEqual(
+                self.git(
+                    self.control,
+                    "show-ref",
+                    "--verify",
+                    "--quiet",
+                    ref,
+                    check=False,
+                ).returncode,
+                1,
+            )
+        self.assertEqual(
+            self.git(self.control, "rev-parse", "HEAD").stdout.strip(),
+            control_head,
+        )
+        self.assertEqual(self.git(self.control, "write-tree").stdout.strip(), control_tree)
+        self.assertEqual(
+            self.git(
+                self.control,
+                "status",
+                "--porcelain=v1",
+                "--untracked-files=all",
+            ).stdout,
+            control_status,
+        )
+
+        repeated = self.run_launcher(arguments)
+        self.assertEqual(repeated.returncode, 0, repeated.stderr.decode())
+        self.assertEqual(self.manifests()[0], cleaned)
+
+        temporary = Path(cleaned["tmpdir"])
+        temporary.mkdir()
+        cleaned_checkpoint = self.manifest_file(cleaned).read_bytes()
+        retained_temporary = self.run_launcher(
+            ["--triptych-clean", manifest["run_id"]]
+        )
+        self.assertEqual(
+            retained_temporary.returncode,
+            2,
+            retained_temporary.stderr.decode(),
+        )
+        self.assertIn(b"retains a temporary path", retained_temporary.stderr)
+        self.assertTrue(temporary.is_dir())
+        self.assertEqual(self.manifest_file(cleaned).read_bytes(), cleaned_checkpoint)
+
+        temporary.rmdir()
+        cleared_temporary = self.run_launcher(
+            ["--triptych-clean", manifest["run_id"]]
+        )
+        self.assertEqual(
+            cleared_temporary.returncode,
+            0,
+            cleared_temporary.stderr.decode(),
+        )
+        self.assertEqual(self.manifests()[0], cleaned)
+
+        (self.control / "retirement-target-descendant.txt").write_text(
+            "target may advance after retirement\n",
+            encoding="utf-8",
+        )
+        self.git(self.control, "add", "retirement-target-descendant.txt")
+        self.git(self.control, "commit", "-m", "Advance target after retirement")
+        descendant = self.git(self.control, "rev-parse", "HEAD").stdout.strip()
+        descendant_retry = self.run_launcher(arguments)
+        self.assertEqual(
+            descendant_retry.returncode,
+            0,
+            descendant_retry.stderr.decode(),
+        )
+        changed_target = self.run_launcher(
+            self.retire_arguments(manifest, target_contains=descendant)
+        )
+        self.assertEqual(changed_target.returncode, 2)
+        changed_discard = self.run_launcher(
+            self.retire_arguments(manifest, discard_head=final_head)
+        )
+        self.assertEqual(changed_discard.returncode, 2)
+        self.assertEqual(self.git(self.control, "rev-parse", "HEAD").stdout.strip(), descendant)
+
+        overview = self.run_launcher(["--triptych-status"])
+        self.assertEqual(overview.returncode, 0, overview.stderr.decode())
+        self.assertEqual(overview.stdout, b"No Triptych Codex runs.\n")
+        exact = self.run_launcher(["--triptych-status", manifest["run_id"]])
+        self.assertEqual(exact.returncode, 0, exact.stderr.decode())
+        self.assertIn(os.fsencode(manifest["run_id"]), exact.stdout)
+        self.assertIn(b"cleaned", exact.stdout)
+
+    def test_retire_rejects_nonquarantine_and_nonrewritten_history(self) -> None:
+        result = self.run_launcher(
+            environment={
+                "FAKE_CODEX_LOG": str(self.root / "retirement-ineligible.jsonl"),
+                "FAKE_CODEX_ACTION": "commit",
+            }
+        )
+        self.assertEqual(result.returncode, 0, result.stderr.decode())
+        manifest = self.manifests()[0]
+        worker = Path(manifest["worktree"])
+        final_head = manifest["final_head"]
+        target_head = self.git(
+            self.control,
+            "rev-parse",
+            f"{manifest['target_ref']}^{{commit}}",
+        ).stdout.strip()
+        arguments = self.retire_arguments(
+            manifest,
+            discard_head=final_head,
+            target_contains=target_head,
+        )
+
+        ordinary = self.run_launcher(arguments)
+        self.assertEqual(ordinary.returncode, 2)
+        self.assertTrue(worker.exists())
+
+        manifest.update(
+            {
+                "state": "quarantined",
+                "observed_head": final_head,
+                "observed_dirty": False,
+                "quarantine_reason": (
+                    "the retained worker history no longer descends from its last "
+                    "terminal audit"
+                ),
+            }
+        )
+        self.write_test_manifest(manifest)
+        continuous = self.run_launcher(arguments)
+        self.assertEqual(continuous.returncode, 2)
+        self.assertIn(b"still descends", continuous.stderr)
+        self.assertTrue(worker.exists())
+
+    def test_retire_requires_exact_resolvable_terminal_and_observed_heads(self) -> None:
+        manifest, worker, final_head, discard_head, _ = (
+            self.create_rewritten_quarantine()
+        )
+        original = json.loads(json.dumps(manifest))
+        cases = (
+            ("missing-final", {"final_head": "0" * len(final_head)}, None),
+            ("missing-observed", {"observed_head": "0" * len(discard_head)}, None),
+            ("recorded-dirty", {"observed_dirty": True}, None),
+            ("unknown-dirty", {"observed_dirty": None}, None),
+            ("wrong-discard", {}, final_head),
+        )
+        for label, changes, argument_head in cases:
+            with self.subTest(case=label):
+                candidate = json.loads(json.dumps(original))
+                candidate.update(changes)
+                self.write_test_manifest(candidate)
+                refusal = self.run_launcher(
+                    self.retire_arguments(
+                        candidate,
+                        discard_head=argument_head or candidate["observed_head"],
+                    )
+                )
+                self.assertEqual(refusal.returncode, 2, refusal.stderr.decode())
+                self.assertTrue(worker.exists())
+                self.assertEqual(
+                    self.git(
+                        self.control,
+                        "show-ref",
+                        "--verify",
+                        "--quiet",
+                        self.retirement_anchor_ref(manifest["run_id"]),
+                        check=False,
+                    ).returncode,
+                    1,
+                )
+        self.write_test_manifest(original)
+
+    def test_retire_enforces_base_and_terminal_ancestry_before_mutation(self) -> None:
+        manifest, worker, final_head, discard_head, _ = (
+            self.create_rewritten_quarantine()
+        )
+        original = json.loads(json.dumps(manifest))
+        cases = (
+            ("base-not-ancestor", {"base_sha": final_head}),
+            ("terminal-is-ancestor", {"final_head": discard_head}),
+        )
+        for label, changes in cases:
+            with self.subTest(case=label):
+                candidate = json.loads(json.dumps(original))
+                candidate.update(changes)
+                self.write_test_manifest(candidate)
+                refusal = self.run_launcher(self.retire_arguments(candidate))
+                self.assertEqual(refusal.returncode, 2, refusal.stderr.decode())
+                self.assertTrue(worker.exists())
+                self.assertEqual(
+                    self.git(
+                        self.control,
+                        "show-ref",
+                        "--verify",
+                        "--quiet",
+                        self.retirement_anchor_ref(manifest["run_id"]),
+                        check=False,
+                    ).returncode,
+                    1,
+                )
+        self.write_test_manifest(original)
+
+    def test_retire_refuses_fresh_dirty_or_changed_worker_state(self) -> None:
+        manifest, worker, _, discard_head, _ = self.create_rewritten_quarantine()
+        arguments = self.retire_arguments(manifest)
+        late_change = worker / "late-retirement-change.txt"
+        late_change.write_text("unreviewed dirt\n", encoding="utf-8")
+
+        dirty = self.run_launcher(arguments)
+        self.assertEqual(dirty.returncode, 2)
+        self.assertTrue(worker.exists())
+        self.assertIn("?? late-retirement-change.txt", self.git(
+            worker,
+            "status",
+            "--porcelain=v1",
+        ).stdout)
+        late_change.unlink()
+
+        (worker / "rewritten-after-audit.txt").write_text(
+            "new clean commit after the quarantine audit\n",
+            encoding="utf-8",
+        )
+        self.git(worker, "add", "rewritten-after-audit.txt")
+        self.git(worker, "commit", "-m", "Change rewritten worker after audit")
+        changed_head = self.git(worker, "rev-parse", "HEAD").stdout.strip()
+        self.assertNotEqual(changed_head, discard_head)
+
+        changed = self.run_launcher(arguments)
+        self.assertEqual(changed.returncode, 2)
+        self.assertEqual(self.git(worker, "rev-parse", "HEAD").stdout.strip(), changed_head)
+        self.assertEqual(self.git(worker, "status", "--porcelain=v1").stdout, "")
+        self.assertEqual(
+            self.git(
+                self.control,
+                "show-ref",
+                "--verify",
+                "--quiet",
+                self.retirement_anchor_ref(manifest["run_id"]),
+                check=False,
+            ).returncode,
+            1,
+        )
+
+    def test_retire_refuses_changed_worker_branch_ref_and_lock_state(self) -> None:
+        manifest, worker, final_head, discard_head, _ = (
+            self.create_rewritten_quarantine()
+        )
+        arguments = self.retire_arguments(manifest)
+
+        self.git(worker, "switch", "-c", "retirement-wrong-branch")
+        wrong_branch = self.run_launcher(arguments)
+        self.assertEqual(wrong_branch.returncode, 2)
+        self.assertTrue(worker.exists())
+        self.git(worker, "switch", manifest["branch"])
+
+        self.git(self.control, "worktree", "unlock", str(worker))
+        unlocked = self.run_launcher(arguments)
+        self.assertEqual(unlocked.returncode, 2)
+        self.assertTrue(worker.exists())
+        self.git(
+            self.control,
+            "worktree",
+            "lock",
+            "--reason",
+            f"triptych-codex {manifest['run_id']}",
+            str(worker),
+        )
+
+        branch_ref = f"refs/heads/{manifest['branch']}"
+        self.git(
+            self.control,
+            "update-ref",
+            branch_ref,
+            final_head,
+            discard_head,
+        )
+        changed_ref = self.run_launcher(arguments)
+        self.assertEqual(changed_ref.returncode, 2)
+        self.assertEqual(
+            self.git(self.control, "rev-parse", branch_ref).stdout.strip(),
+            final_head,
+        )
+        self.assertTrue(worker.exists())
+
+    def test_retire_refuses_unregistered_or_unauthenticated_worktree(self) -> None:
+        manifest, worker, _, _, _ = self.create_rewritten_quarantine()
+        arguments = self.retire_arguments(manifest)
+        admin = self.retained_admin_directory(worker)
+        original_pointer = (worker / ".git").read_bytes()
+        (worker / ".git").write_text(
+            f"gitdir: {self.control / '.git'}\n",
+            encoding="utf-8",
+        )
+
+        unauthenticated = self.run_launcher(arguments)
+        self.assertEqual(unauthenticated.returncode, 2)
+        self.assertTrue(worker.exists())
+        (worker / ".git").write_bytes(original_pointer)
+
+        gitdir_backlink = admin / "gitdir"
+        original_backlink = gitdir_backlink.read_bytes()
+        gitdir_backlink.write_text(
+            f"{self.control / '.git/HEAD'}\n",
+            encoding="utf-8",
+        )
+        unregistered = self.run_launcher(arguments)
+        self.assertEqual(unregistered.returncode, 2)
+        self.assertTrue(worker.exists())
+        gitdir_backlink.write_bytes(original_backlink)
+
+        self.git(self.control, "worktree", "unlock", str(worker))
+        self.git(self.control, "worktree", "remove", str(worker))
+        missing_registration = self.run_launcher(arguments)
+        self.assertEqual(missing_registration.returncode, 2)
+        self.assertFalse(worker.exists())
+        self.assertIn(manifest["branch"], self.worker_branches())
+        self.assertEqual(
+            self.git(
+                self.control,
+                "show-ref",
+                "--verify",
+                "--quiet",
+                self.retirement_anchor_ref(manifest["run_id"]),
+                check=False,
+            ).returncode,
+            1,
+        )
+
+    def test_retire_requires_recorded_target_to_contain_exact_selected_commit(self) -> None:
+        manifest, worker, final_head, _, target_head = (
+            self.create_rewritten_quarantine()
+        )
+        original = json.loads(json.dumps(manifest))
+
+        not_contained = self.run_launcher(
+            self.retire_arguments(manifest, target_contains=final_head)
+        )
+        self.assertEqual(not_contained.returncode, 2)
+        self.assertTrue(worker.exists())
+
+        missing = json.loads(json.dumps(original))
+        missing["target_ref"] = "refs/heads/missing-retirement-target"
+        self.write_test_manifest(missing)
+        missing_target = self.run_launcher(
+            self.retire_arguments(
+                missing,
+                target_contains=target_head,
+            )
+        )
+        self.assertEqual(missing_target.returncode, 2)
+        self.assertTrue(worker.exists())
+
+        alias_ref = "refs/heads/retirement-target-alias"
+        self.git(self.control, "symbolic-ref", alias_ref, original["target_ref"])
+        symbolic = json.loads(json.dumps(original))
+        symbolic["target_ref"] = alias_ref
+        self.write_test_manifest(symbolic)
+        symbolic_target = self.run_launcher(
+            self.retire_arguments(
+                symbolic,
+                target_contains=target_head,
+            )
+        )
+        self.assertEqual(symbolic_target.returncode, 2)
+        self.assertTrue(worker.exists())
+        self.write_test_manifest(original)
+
+    def test_retire_refuses_active_worker_and_background_lock(self) -> None:
+        manifest, worker, _, _, _ = self.create_rewritten_quarantine()
+        manifest["background_process_active"] = True
+        self.write_test_manifest(manifest)
+        lock_path = self.repo_state() / "runs" / f"{manifest['run_id']}.lock"
+
+        with lock_path.open("a+", encoding="utf-8") as stream:
+            fcntl.flock(stream.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+            refusal = self.run_launcher(self.retire_arguments(manifest))
+            fcntl.flock(stream.fileno(), fcntl.LOCK_UN)
+
+        self.assertEqual(refusal.returncode, 2)
+        self.assertIn(b"already active", refusal.stderr)
+        self.assertTrue(worker.exists())
+        retained = self.manifests()[0]
+        self.assertEqual(retained["state"], "quarantined")
+        self.assertTrue(retained["background_process_active"])
+
+        inactive_background = self.run_launcher(self.retire_arguments(manifest))
+        self.assertEqual(inactive_background.returncode, 2)
+        self.assertIn(b"background worker", inactive_background.stderr)
+        self.assertTrue(worker.exists())
+        self.assertTrue(self.manifests()[0]["background_process_active"])
+
+        background = self.run_launcher(self.retire_arguments(manifest))
+        self.assertEqual(background.returncode, 2)
+        self.assertIn(b"background worker", background.stderr)
+        self.assertTrue(worker.exists())
+
+    def test_retire_refuses_transactions_rebase_and_conflicting_private_refs(self) -> None:
+        manifest, worker, final_head, discard_head, _ = (
+            self.create_rewritten_quarantine()
+        )
+        original = json.loads(json.dumps(manifest))
+        transactions = (
+            ("integration", {"integration_started_at": "2000-01-01T00:00:00+00:00"}),
+            (
+                "landing",
+                {"integration_landing_expected_head": self.base_head},
+            ),
+            ("landing-timestamp", {"integrated_at": "2000-01-01T00:00:00+00:00"}),
+            (
+                "cleanup",
+                {"cleanup_expected_head": discard_head},
+            ),
+            ("integrated", {"integrated_head": final_head}),
+        )
+        for label, fields in transactions:
+            with self.subTest(transaction=label):
+                candidate = json.loads(json.dumps(original))
+                candidate.update(fields)
+                self.write_test_manifest(candidate)
+                refusal = self.run_launcher(self.retire_arguments(candidate))
+                self.assertEqual(refusal.returncode, 2, refusal.stderr.decode())
+                self.assertTrue(worker.exists())
+                self.assertEqual(
+                    self.git(
+                        self.control,
+                        "show-ref",
+                        "--verify",
+                        "--quiet",
+                        self.retirement_anchor_ref(manifest["run_id"]),
+                        check=False,
+                    ).returncode,
+                    1,
+                )
+        self.write_test_manifest(original)
+
+        rebase_marker = Path(
+            self.git(worker, "rev-parse", "--git-path", "rebase-merge").stdout.strip()
+        )
+        if not rebase_marker.is_absolute():
+            rebase_marker = worker / rebase_marker
+        rebase_marker.mkdir()
+        active_rebase = self.run_launcher(self.retire_arguments(original))
+        self.assertEqual(active_rebase.returncode, 2)
+        self.assertTrue(rebase_marker.exists())
+        rebase_marker.rmdir()
+
+        integration_anchor = self.source_anchor_ref(manifest["run_id"])
+        self.git(self.control, "update-ref", integration_anchor, final_head)
+        conflicting_integration_ref = self.run_launcher(self.retire_arguments(original))
+        self.assertEqual(conflicting_integration_ref.returncode, 2)
+        self.assertEqual(
+            self.git(self.control, "rev-parse", integration_anchor).stdout.strip(),
+            final_head,
+        )
+        self.git(self.control, "update-ref", "-d", integration_anchor, final_head)
+
+        retirement_receipt = self.retirement_receipt_ref(manifest["run_id"])
+        self.git(self.control, "update-ref", retirement_receipt, discard_head)
+        uncheckpointed_retirement_receipt = self.run_launcher(
+            self.retire_arguments(original)
+        )
+        self.assertEqual(uncheckpointed_retirement_receipt.returncode, 2)
+        self.assertEqual(
+            self.git(self.control, "rev-parse", retirement_receipt).stdout.strip(),
+            discard_head,
+        )
+        self.git(
+            self.control,
+            "update-ref",
+            "-d",
+            retirement_receipt,
+            discard_head,
+        )
+
+        retirement_anchor = self.retirement_anchor_ref(manifest["run_id"])
+        self.git(self.control, "update-ref", retirement_anchor, discard_head)
+        uncheckpointed_retirement_ref = self.run_launcher(
+            self.retire_arguments(original)
+        )
+        self.assertEqual(uncheckpointed_retirement_ref.returncode, 2)
+        self.assertEqual(
+            self.git(self.control, "rev-parse", retirement_anchor).stdout.strip(),
+            discard_head,
+        )
+
+    def test_retire_anchor_creation_crash_is_retryable_with_exact_arguments(self) -> None:
+        manifest, worker, _, discard_head, target_head = (
+            self.create_rewritten_quarantine()
+        )
+        arguments = self.retire_arguments(manifest)
+        anchor = self.retirement_anchor_ref(manifest["run_id"])
+        marker = self.root / "post-retirement-anchor-create-kill"
+
+        crashed = self.run_launcher(
+            arguments,
+            environment=self.post_git_action_environment(
+                cwd=self.control,
+                tokens=["update-ref", "--no-deref", anchor, discard_head],
+                marker=marker,
+            ),
+        )
+
+        self.assertLess(crashed.returncode, 0)
+        self.assertTrue(marker.exists())
+        pending = self.manifests()[0]
+        self.assertEqual(pending["state"], "retirement-pending")
+        self.assertEqual(pending["retirement_discard_head"], discard_head)
+        self.assertEqual(pending["retirement_target_contains"], target_head)
+        self.assertEqual(pending["retirement_initial_target_head"], target_head)
+        self.assertNotIn("retirement_anchor_created", pending)
+        self.assertEqual(self.git(self.control, "rev-parse", anchor).stdout.strip(), discard_head)
+        self.assertTrue(worker.exists())
+
+        changed = self.run_launcher(
+            self.retire_arguments(pending, target_contains=pending["final_head"])
+        )
+        self.assertEqual(changed.returncode, 2)
+        self.assertTrue(worker.exists())
+        self.assertEqual(self.git(self.control, "rev-parse", anchor).stdout.strip(), discard_head)
+
+        retry = self.run_launcher(arguments)
+        self.assertEqual(retry.returncode, 0, retry.stderr.decode())
+        self.assertEqual(self.manifests()[0]["state"], "cleaned")
+        self.assertFalse(worker.exists())
+
+    def test_retire_retry_with_worktree_requires_restored_target_containment(
+        self,
+    ) -> None:
+        manifest, worker, _, discard_head, _ = self.create_rewritten_quarantine()
+        (self.control / "worktree-retirement-checkpoint.txt").write_text(
+            "operator-selected checkpoint before worktree retirement\n",
+            encoding="utf-8",
+        )
+        self.git(self.control, "add", "worktree-retirement-checkpoint.txt")
+        self.git(self.control, "commit", "-m", "Select worktree retirement checkpoint")
+        selected = self.git(self.control, "rev-parse", "HEAD").stdout.strip()
+        arguments = self.retire_arguments(manifest, target_contains=selected)
+        anchor = self.retirement_anchor_ref(manifest["run_id"])
+        marker = self.root / "post-worktree-retirement-anchor-create-kill"
+
+        crashed = self.run_launcher(
+            arguments,
+            environment=self.post_git_action_environment(
+                cwd=self.control,
+                tokens=["update-ref", "--no-deref", anchor, discard_head],
+                marker=marker,
+            ),
+        )
+        self.assertLess(crashed.returncode, 0)
+        self.assertTrue(worker.exists())
+        self.assertEqual(
+            self.retirement_ref_tuple(manifest),
+            (discard_head, discard_head, None),
+        )
+
+        self.git(self.control, "reset", "--hard", self.base_head)
+        lost = self.run_launcher(arguments)
+        self.assertEqual(lost.returncode, 2, lost.stderr.decode())
+        self.assertIn(b"no longer contains", lost.stderr)
+        self.assertTrue(worker.exists())
+        self.assertIn("locked triptych-codex", self.worktree_output())
+        pending = self.manifests()[0]
+        self.assertEqual(pending["state"], "retirement-pending")
+        self.assertNotIn("retirement_worktree_removed_at", pending)
+        self.assertNotIn("retirement_cleanup_target_head", pending)
+        self.assertEqual(
+            self.retirement_ref_tuple(manifest),
+            (discard_head, discard_head, None),
+        )
+
+        self.git(self.control, "reset", "--hard", selected)
+        (self.control / "restored-worktree-retirement-descendant.txt").write_text(
+            "restored containing descendant\n",
+            encoding="utf-8",
+        )
+        self.git(
+            self.control,
+            "add",
+            "restored-worktree-retirement-descendant.txt",
+        )
+        self.git(
+            self.control,
+            "commit",
+            "-m",
+            "Restore worktree retirement containment",
+        )
+        descendant = self.git(self.control, "rev-parse", "HEAD").stdout.strip()
+
+        retry = self.run_launcher(arguments)
+        self.assertEqual(retry.returncode, 0, retry.stderr.decode())
+        cleaned = self.manifests()[0]
+        self.assertEqual(cleaned["state"], "cleaned")
+        self.assertEqual(cleaned["retirement_initial_target_head"], selected)
+        self.assertEqual(cleaned["retirement_cleanup_target_head"], descendant)
+        self.assertFalse(worker.exists())
+
+    def test_clean_refuses_untouched_quarantine_but_resumes_retirement_checkpoint(
+        self,
+    ) -> None:
+        manifest, worker, _, discard_head, _ = self.create_rewritten_quarantine()
+        untouched = self.run_launcher(["--triptych-clean", manifest["run_id"]])
+        self.assertEqual(untouched.returncode, 2)
+        self.assertIn(b"quarantined run", untouched.stderr)
+        self.assertIn(b"no retirement checkpoint", untouched.stderr)
+        self.assertNotIn(b"rewritten quarantine", untouched.stderr)
+        self.assertEqual(self.manifests()[0]["state"], "quarantined")
+
+        anchor = self.retirement_anchor_ref(manifest["run_id"])
+        marker = self.root / "clean-resumes-retirement-anchor-checkpoint"
+        crashed = self.run_launcher(
+            self.retire_arguments(manifest),
+            environment=self.post_git_action_environment(
+                cwd=self.control,
+                tokens=["update-ref", "--no-deref", anchor, discard_head],
+                marker=marker,
+            ),
+        )
+        self.assertLess(crashed.returncode, 0)
+        self.assertTrue(worker.exists())
+        pending = self.manifests()[0]
+        self.assertEqual(pending["state"], "retirement-pending")
+        checkpoint = self.manifest_file(pending).read_bytes()
+        expected_direction = os.fsencode(
+            f"scripts/triptych-codex --triptych-clean {manifest['run_id']}"
+        )
+
+        for option in ("--triptych-reopen", "--triptych-integrate"):
+            with self.subTest(option=option):
+                refused = self.run_launcher([option, manifest["run_id"]])
+                self.assertEqual(refused.returncode, 2, refused.stderr.decode())
+                self.assertIn(b"checkpointed retirement", refused.stderr)
+                self.assertIn(expected_direction, refused.stderr)
+                self.assertEqual(self.manifest_file(pending).read_bytes(), checkpoint)
+                self.assertTrue(worker.exists())
+                self.assertEqual(
+                    self.retirement_ref_tuple(manifest),
+                    (discard_head, discard_head, None),
+                )
+
+        resumed = self.run_launcher(["--triptych-clean", manifest["run_id"]])
+        self.assertEqual(resumed.returncode, 0, resumed.stderr.decode())
+        self.assertEqual(self.manifests()[0]["state"], "cleaned")
+        self.assertFalse(worker.exists())
+
+    def test_retire_unlock_crash_relocks_and_retries_exact_worker(self) -> None:
+        manifest, worker, _, discard_head, _ = self.create_rewritten_quarantine()
+        anchor = self.retirement_anchor_ref(manifest["run_id"])
+        marker = self.root / "post-retirement-unlock-kill"
+
+        crashed = self.run_launcher(
+            self.retire_arguments(manifest),
+            environment=self.post_git_action_environment(
+                cwd=self.control,
+                tokens=["worktree", "unlock", str(worker)],
+                marker=marker,
+            ),
+        )
+
+        self.assertLess(crashed.returncode, 0)
+        self.assertTrue(marker.exists())
+        self.assertTrue(worker.exists())
+        self.assertNotIn("locked\n", self.worktree_output())
+        pending = self.manifests()[0]
+        self.assertEqual(pending["state"], "retirement-pending")
+        self.assertIs(pending["retirement_anchor_created"], True)
+        self.assertEqual(self.git(self.control, "rev-parse", anchor).stdout.strip(), discard_head)
+
+        retry = self.run_launcher(self.retire_arguments(manifest))
+        self.assertEqual(retry.returncode, 0, retry.stderr.decode())
+        self.assertFalse(worker.exists())
+        self.assertEqual(self.manifests()[0]["state"], "cleaned")
+
+    def test_retire_revalidates_after_unlock_and_relocks_changed_worker(self) -> None:
+        manifest, worker, _, discard_head, _ = self.create_rewritten_quarantine()
+        anchor = self.retirement_anchor_ref(manifest["run_id"])
+        marker = self.root / "dirty-after-retirement-unlock"
+        late_change = worker / "post-retirement-unlock-dirt.txt"
+
+        refusal = self.run_launcher(
+            self.retire_arguments(manifest),
+            environment=self.post_git_action_environment(
+                cwd=self.control,
+                tokens=["worktree", "unlock", str(worker)],
+                marker=marker,
+                action="dirty",
+                dirty_path=late_change,
+            ),
+        )
+
+        self.assertEqual(refusal.returncode, 2)
+        self.assertTrue(marker.exists())
+        self.assertTrue(worker.exists())
+        self.assertIn("locked triptych-codex", self.worktree_output())
+        self.assertEqual(self.git(self.control, "rev-parse", anchor).stdout.strip(), discard_head)
+        self.assertEqual(self.manifests()[0]["state"], "retirement-pending")
+        self.assertIn(
+            "?? post-retirement-unlock-dirt.txt",
+            self.git(worker, "status", "--porcelain=v1").stdout,
+        )
+
+        late_change.unlink()
+        retry = self.run_launcher(self.retire_arguments(manifest))
+        self.assertEqual(retry.returncode, 0, retry.stderr.decode())
+        self.assertEqual(self.manifests()[0]["state"], "cleaned")
+
+    def test_retire_ref_cleanup_rejects_partial_ref_deletion(self) -> None:
+        manifest, worker, _, discard_head, _ = self.create_rewritten_quarantine()
+        anchor = self.retirement_anchor_ref(manifest["run_id"])
+        branch_ref = f"refs/heads/{manifest['branch']}"
+        marker = self.root / "retain-retirement-refs-for-partial-test"
+        refusal = self.run_launcher(
+            self.retire_arguments(manifest),
+            environment=self.post_git_action_environment(
+                cwd=self.control,
+                tokens=["update-ref", "--stdin"],
+                marker=marker,
+                action="refuse",
+            ),
+        )
+        self.assertEqual(refusal.returncode, 1, refusal.stderr.decode())
+        self.assertFalse(worker.exists())
+        self.assertEqual(
+            self.retirement_ref_tuple(manifest),
+            (discard_head, discard_head, None),
+        )
+
+        self.git(self.control, "update-ref", "-d", anchor, discard_head)
+        missing_anchor = self.run_launcher(self.retire_arguments(manifest))
+        self.assertEqual(missing_anchor.returncode, 2)
+        self.assertIn(b"partial", missing_anchor.stderr)
+        self.assertEqual(
+            self.git(self.control, "rev-parse", branch_ref).stdout.strip(),
+            discard_head,
+        )
+
+        self.git(self.control, "update-ref", anchor, discard_head)
+        self.git(self.control, "update-ref", "-d", branch_ref, discard_head)
+        missing_branch = self.run_launcher(self.retire_arguments(manifest))
+        self.assertEqual(missing_branch.returncode, 2)
+        self.assertIn(b"partial", missing_branch.stderr)
+        self.assertEqual(
+            self.git(self.control, "rev-parse", anchor).stdout.strip(),
+            discard_head,
+        )
+        self.assertEqual(
+            self.manifests()[0]["state"],
+            "retirement-ref-cleanup-pending",
+        )
+
+        self.git(self.control, "update-ref", "-d", anchor, discard_head)
+        both_deletion_refs_missing = self.run_launcher(
+            self.retire_arguments(manifest)
+        )
+        self.assertEqual(
+            both_deletion_refs_missing.returncode,
+            2,
+            both_deletion_refs_missing.stderr.decode(),
+        )
+        self.assertIn(b"partial", both_deletion_refs_missing.stderr)
+        self.assertEqual(self.retirement_ref_tuple(manifest), (None, None, None))
+        pending = self.manifests()[0]
+        self.assertEqual(pending["state"], "retirement-ref-cleanup-pending")
+        self.assertNotIn("retirement_ref_transaction_committed_at", pending)
+        self.assertNotIn("retirement_receipt_removed_at", pending)
+
+    def test_retire_ref_cleanup_rejects_anchor_and_branch_tampering(self) -> None:
+        manifest, worker, final_head, discard_head, _ = (
+            self.create_rewritten_quarantine()
+        )
+        anchor = self.retirement_anchor_ref(manifest["run_id"])
+        branch_ref = f"refs/heads/{manifest['branch']}"
+        marker = self.root / "retain-retirement-refs-for-tamper-test"
+        refusal = self.run_launcher(
+            self.retire_arguments(manifest),
+            environment=self.post_git_action_environment(
+                cwd=self.control,
+                tokens=["update-ref", "--stdin"],
+                marker=marker,
+                action="refuse",
+            ),
+        )
+        self.assertEqual(refusal.returncode, 1, refusal.stderr.decode())
+        self.assertFalse(worker.exists())
+
+        self.git(self.control, "update-ref", anchor, final_head, discard_head)
+        changed_anchor = self.run_launcher(self.retire_arguments(manifest))
+        self.assertEqual(changed_anchor.returncode, 2)
+        self.assertIn(b"ref changed", changed_anchor.stderr)
+        self.assertEqual(
+            self.git(self.control, "rev-parse", branch_ref).stdout.strip(),
+            discard_head,
+        )
+        self.assertEqual(
+            self.git(self.control, "rev-parse", anchor).stdout.strip(),
+            final_head,
+        )
+
+        self.git(self.control, "update-ref", anchor, discard_head, final_head)
+        self.git(self.control, "update-ref", branch_ref, final_head, discard_head)
+        changed_branch = self.run_launcher(self.retire_arguments(manifest))
+        self.assertEqual(changed_branch.returncode, 2)
+        self.assertIn(b"ref changed", changed_branch.stderr)
+        self.assertEqual(
+            self.git(self.control, "rev-parse", branch_ref).stdout.strip(),
+            final_head,
+        )
+        self.assertEqual(
+            self.git(self.control, "rev-parse", anchor).stdout.strip(),
+            discard_head,
+        )
+
+    def test_retire_target_ref_race_accepts_containing_descendant_on_retry(self) -> None:
+        manifest, worker, _, discard_head, target_head = (
+            self.create_rewritten_quarantine()
+        )
+        (self.control / "retirement-race-descendant.txt").write_text(
+            "descendant target raced into place\n",
+            encoding="utf-8",
+        )
+        self.git(self.control, "add", "retirement-race-descendant.txt")
+        self.git(self.control, "commit", "-m", "Prepare retirement target race")
+        descendant = self.git(self.control, "rev-parse", "HEAD").stdout.strip()
+        self.git(self.control, "reset", "--hard", target_head)
+        arguments = self.retire_arguments(manifest)
+        marker = self.root / "retirement-target-ref-race"
+
+        raced = self.run_launcher(
+            arguments,
+            environment=self.post_git_action_environment(
+                cwd=self.control,
+                tokens=["update-ref", "--stdin"],
+                marker=marker,
+                action="move-ref",
+                move_ref=(manifest["target_ref"], descendant, target_head),
+            ),
+        )
+
+        self.assertEqual(raced.returncode, 1, raced.stderr.decode())
+        self.assertTrue(marker.exists())
+        self.assertFalse(worker.exists())
+        self.assertEqual(
+            self.git(self.control, "rev-parse", manifest["target_ref"]).stdout.strip(),
+            descendant,
+        )
+        self.assertEqual(
+            self.retirement_ref_tuple(manifest),
+            (discard_head, discard_head, None),
+        )
+        pending = self.manifests()[0]
+        self.assertEqual(pending["state"], "retirement-ref-cleanup-pending")
+        self.assertEqual(pending["retirement_initial_target_head"], target_head)
+        self.assertEqual(pending["retirement_cleanup_target_head"], target_head)
+
+        self.git(self.control, "reset", "--hard", descendant)
+        descendant_marker = self.root / "retain-descendant-retirement-checkpoint"
+        checkpointed = self.run_launcher(
+            arguments,
+            environment=self.post_git_action_environment(
+                cwd=self.control,
+                tokens=["update-ref", "--stdin"],
+                marker=descendant_marker,
+                action="refuse",
+            ),
+        )
+        self.assertEqual(checkpointed.returncode, 1, checkpointed.stderr.decode())
+        self.assertEqual(
+            self.retirement_ref_tuple(manifest),
+            (discard_head, discard_head, None),
+        )
+        pending = self.manifests()[0]
+        self.assertEqual(pending["retirement_initial_target_head"], target_head)
+        self.assertEqual(pending["retirement_cleanup_target_head"], descendant)
+        status = self.run_launcher(["--triptych-status", manifest["run_id"]])
+        self.assertEqual(status.returncode, 0, status.stderr.decode())
+
+        retry = self.run_launcher(arguments)
+        self.assertEqual(retry.returncode, 0, retry.stderr.decode())
+        cleaned = self.manifests()[0]
+        self.assertEqual(cleaned["state"], "cleaned")
+        self.assertEqual(cleaned["retirement_initial_target_head"], target_head)
+        self.assertEqual(cleaned["retirement_cleanup_target_head"], descendant)
+        self.assertEqual(
+            self.git(self.control, "rev-parse", manifest["target_ref"]).stdout.strip(),
+            descendant,
+        )
+        self.assertEqual(self.retirement_ref_tuple(manifest), (None, None, None))
+
+    def test_retire_retry_fails_closed_until_target_containment_is_restored(self) -> None:
+        manifest, worker, _, discard_head, _ = self.create_rewritten_quarantine()
+        (self.control / "selected-retirement-checkpoint.txt").write_text(
+            "operator-selected target checkpoint\n",
+            encoding="utf-8",
+        )
+        self.git(self.control, "add", "selected-retirement-checkpoint.txt")
+        self.git(self.control, "commit", "-m", "Create selected retirement checkpoint")
+        selected = self.git(self.control, "rev-parse", "HEAD").stdout.strip()
+        arguments = self.retire_arguments(manifest, target_contains=selected)
+        marker = self.root / "retain-retirement-refs-before-target-rewind"
+        refusal = self.run_launcher(
+            arguments,
+            environment=self.post_git_action_environment(
+                cwd=self.control,
+                tokens=["update-ref", "--stdin"],
+                marker=marker,
+                action="refuse",
+            ),
+        )
+        self.assertEqual(refusal.returncode, 1, refusal.stderr.decode())
+        self.assertFalse(worker.exists())
+
+        self.git(self.control, "reset", "--hard", self.base_head)
+        lost = self.run_launcher(arguments)
+        self.assertNotEqual(lost.returncode, 0)
+        self.assertEqual(
+            self.retirement_ref_tuple(manifest),
+            (discard_head, discard_head, None),
+        )
+
+        self.git(self.control, "reset", "--hard", selected)
+        (self.control / "selected-retirement-descendant.txt").write_text(
+            "descendant still contains the selected checkpoint\n",
+            encoding="utf-8",
+        )
+        self.git(self.control, "add", "selected-retirement-descendant.txt")
+        self.git(self.control, "commit", "-m", "Advance selected retirement checkpoint")
+        descendant = self.git(self.control, "rev-parse", "HEAD").stdout.strip()
+        descendant_retry = self.run_launcher(arguments)
+        self.assertEqual(
+            descendant_retry.returncode,
+            0,
+            descendant_retry.stderr.decode(),
+        )
+        cleaned = self.manifests()[0]
+        self.assertEqual(cleaned["state"], "cleaned")
+        self.assertEqual(cleaned["retirement_target_contains"], selected)
+        self.assertEqual(cleaned["retirement_initial_target_head"], selected)
+        self.assertEqual(cleaned["retirement_cleanup_target_head"], descendant)
+
+    def test_retirement_object_fields_and_observed_head_are_manifest_validated(
+        self,
+    ) -> None:
+        manifest, _, _, _, _ = self.create_rewritten_quarantine()
+        retirement = self.run_launcher(self.retire_arguments(manifest))
+        self.assertEqual(retirement.returncode, 0, retirement.stderr.decode())
+        cleaned = self.manifests()[0]
+        original = json.loads(json.dumps(cleaned))
+        fields = (
+            "observed_head",
+            "retirement_discard_head",
+            "retirement_target_contains",
+            "retirement_initial_target_head",
+            "retirement_cleanup_target_head",
+        )
+
+        for field in fields:
+            with self.subTest(field=field):
+                tampered = json.loads(json.dumps(original))
+                tampered.setdefault(field, self.base_head)
+                tampered[field] = tampered[field][:12]
+                self.write_test_manifest(tampered)
+                status = self.run_launcher(
+                    ["--triptych-status", manifest["run_id"]]
+                )
+                self.assertEqual(status.returncode, 2)
+                self.assertIn(
+                    f"invalid {field.replace('_', ' ')}".encode(),
+                    status.stderr,
+                )
+        self.write_test_manifest(original)
+
+    def test_retirement_pending_manifest_validates_receipt_marker_order(
+        self,
+    ) -> None:
+        manifest, worker, _, discard_head, _ = self.create_rewritten_quarantine()
+        marker = self.root / "retain-retirement-checkpoint-for-validation"
+        refusal = self.run_launcher(
+            self.retire_arguments(manifest),
+            environment=self.post_git_action_environment(
+                cwd=self.control,
+                tokens=["update-ref", "--no-deref", "--stdin"],
+                marker=marker,
+                action="refuse",
+            ),
+        )
+        self.assertEqual(refusal.returncode, 1, refusal.stderr.decode())
+        self.assertFalse(worker.exists())
+        pending = self.manifests()[0]
+        self.assertEqual(pending["state"], "retirement-ref-cleanup-pending")
+        self.assertEqual(
+            self.retirement_ref_tuple(manifest),
+            (discard_head, discard_head, None),
+        )
+
+        valid_status = self.run_launcher(
+            ["--triptych-status", manifest["run_id"]]
+        )
+        self.assertEqual(valid_status.returncode, 0, valid_status.stderr.decode())
+
+        transaction_marked = json.loads(json.dumps(pending))
+        transaction_marked["retirement_ref_transaction_committed_at"] = (
+            "2000-01-01T00:00:00+00:00"
+        )
+        self.write_test_manifest(transaction_marked)
+        transaction_status = self.run_launcher(
+            ["--triptych-status", manifest["run_id"]]
+        )
+        self.assertEqual(
+            transaction_status.returncode,
+            0,
+            transaction_status.stderr.decode(),
+        )
+
+        receipt_removed = json.loads(json.dumps(transaction_marked))
+        receipt_removed["retirement_receipt_removed_at"] = (
+            "2000-01-01T00:00:01+00:00"
+        )
+        self.write_test_manifest(receipt_removed)
+        receipt_status = self.run_launcher(
+            ["--triptych-status", manifest["run_id"]]
+        )
+        self.assertEqual(receipt_status.returncode, 0, receipt_status.stderr.decode())
+
+        invalid_cases = []
+        receipt_without_transaction = json.loads(json.dumps(pending))
+        receipt_without_transaction["retirement_receipt_removed_at"] = (
+            "2000-01-01T00:00:01+00:00"
+        )
+        invalid_cases.append(("receipt-without-transaction", receipt_without_transaction))
+
+        for field in (
+            "retirement_cleanup_target_head",
+            "retirement_ref_cleanup_started_at",
+            "retirement_worktree_removed_at",
+            "retirement_anchor_created",
+        ):
+            missing = json.loads(json.dumps(transaction_marked))
+            missing.pop(field)
+            invalid_cases.append((f"transaction-missing-{field}", missing))
+
+        invalid_timestamp = json.loads(json.dumps(transaction_marked))
+        invalid_timestamp["retirement_ref_transaction_committed_at"] = ""
+        invalid_cases.append(("empty-transaction-timestamp", invalid_timestamp))
+        invalid_receipt_timestamp = json.loads(json.dumps(receipt_removed))
+        invalid_receipt_timestamp["retirement_receipt_removed_at"] = False
+        invalid_cases.append(("invalid-receipt-timestamp", invalid_receipt_timestamp))
+
+        for label, candidate in invalid_cases:
+            with self.subTest(case=label):
+                self.write_test_manifest(candidate)
+                status = self.run_launcher(
+                    ["--triptych-status", manifest["run_id"]]
+                )
+                self.assertEqual(status.returncode, 2, status.stderr.decode())
+
+        self.write_test_manifest(pending)
+
+    def test_cleaned_retirement_manifest_requires_complete_receipt_audit(
+        self,
+    ) -> None:
+        manifest, _, _, _, _ = self.create_rewritten_quarantine()
+        retirement = self.run_launcher(self.retire_arguments(manifest))
+        self.assertEqual(retirement.returncode, 0, retirement.stderr.decode())
+        cleaned = self.manifests()[0]
+        self.assertEqual(cleaned["state"], "cleaned")
+        valid_status = self.run_launcher(
+            ["--triptych-status", manifest["run_id"]]
+        )
+        self.assertEqual(valid_status.returncode, 0, valid_status.stderr.decode())
+
+        required = (
+            "retirement_discard_head",
+            "retirement_target_contains",
+            "retirement_initial_target_head",
+            "retirement_cleanup_target_head",
+            "retirement_started_at",
+            "retirement_anchor_created",
+            "retirement_worktree_removed_at",
+            "retirement_ref_cleanup_started_at",
+            "retirement_ref_transaction_committed_at",
+            "retirement_receipt_removed_at",
+            "retirement_completed_at",
+        )
+        for field in required:
+            with self.subTest(missing=field):
+                missing = json.loads(json.dumps(cleaned))
+                missing.pop(field)
+                self.write_test_manifest(missing)
+                status = self.run_launcher(
+                    ["--triptych-status", manifest["run_id"]]
+                )
+                self.assertEqual(status.returncode, 2, status.stderr.decode())
+
+        for field in (
+            "retirement_ref_transaction_committed_at",
+            "retirement_receipt_removed_at",
+        ):
+            with self.subTest(invalid_timestamp=field):
+                invalid = json.loads(json.dumps(cleaned))
+                invalid[field] = ""
+                self.write_test_manifest(invalid)
+                status = self.run_launcher(
+                    ["--triptych-status", manifest["run_id"]]
+                )
+                self.assertEqual(status.returncode, 2, status.stderr.decode())
+
+        self.write_test_manifest(cleaned)
+
+    def test_retire_worktree_removal_crash_is_adopted(self) -> None:
+        manifest, worker, _, discard_head, _ = self.create_rewritten_quarantine()
+        marker = self.root / "post-retirement-worktree-removal-kill"
+
+        crashed = self.run_launcher(
+            self.retire_arguments(manifest),
+            environment=self.post_git_action_environment(
+                cwd=self.control,
+                tokens=["worktree", "remove", str(worker)],
+                marker=marker,
+            ),
+        )
+
+        self.assertLess(crashed.returncode, 0)
+        self.assertTrue(marker.exists())
+        self.assertFalse(worker.exists())
+        pending = self.manifests()[0]
+        self.assertEqual(pending["state"], "retirement-pending")
+        self.assertNotIn("retirement_worktree_removed_at", pending)
+        self.assertEqual(
+            self.retirement_ref_tuple(manifest),
+            (discard_head, discard_head, None),
+        )
+
+        retry = self.run_launcher(self.retire_arguments(manifest))
+        self.assertEqual(retry.returncode, 0, retry.stderr.decode())
+        cleaned = self.manifests()[0]
+        self.assertEqual(cleaned["state"], "cleaned")
+        self.assertIn("retirement_worktree_removed_at", cleaned)
+
+    def test_retire_worktree_removal_dangling_symlink_race_fails_closed(
+        self,
+    ) -> None:
+        manifest, worker, _, discard_head, _ = self.create_rewritten_quarantine()
+        arguments = self.retire_arguments(manifest)
+        marker = self.root / "post-retirement-worktree-removal-symlink"
+        nonexistent_target = self.root / "nonexistent-retirement-worktree-target"
+
+        raced = self.run_launcher(
+            arguments,
+            environment=self.post_git_action_environment(
+                cwd=self.control,
+                tokens=["worktree", "remove", str(worker)],
+                marker=marker,
+                action="dangling-symlink",
+                dangling_link=(worker, nonexistent_target),
+            ),
+        )
+
+        self.assertEqual(raced.returncode, 2, raced.stderr.decode())
+        self.assertTrue(marker.exists())
+        self.assertTrue(worker.is_symlink())
+        self.assertFalse(worker.exists())
+        pending = self.manifests()[0]
+        self.assertEqual(pending["state"], "retirement-pending")
+        self.assertNotIn("retirement_worktree_removed_at", pending)
+        self.assertEqual(
+            self.retirement_ref_tuple(manifest),
+            (discard_head, discard_head, None),
+        )
+
+        unsafe_retry = self.run_launcher(arguments)
+        self.assertEqual(unsafe_retry.returncode, 2, unsafe_retry.stderr.decode())
+        self.assertEqual(self.manifests()[0], pending)
+        self.assertTrue(worker.is_symlink())
+
+        worker.unlink()
+        retry = self.run_launcher(arguments)
+        self.assertEqual(retry.returncode, 0, retry.stderr.decode())
+        self.assertEqual(self.manifests()[0]["state"], "cleaned")
+        self.assertEqual(self.retirement_ref_tuple(manifest), (None, None, None))
+
+    def test_retire_ref_transaction_refusal_is_clean_run_retryable(self) -> None:
+        manifest, worker, _, discard_head, _ = self.create_rewritten_quarantine()
+        marker = self.root / "refuse-retirement-ref-transaction"
+
+        refusal = self.run_launcher(
+            self.retire_arguments(manifest),
+            environment=self.post_git_action_environment(
+                cwd=self.control,
+                tokens=["update-ref", "--stdin"],
+                marker=marker,
+                action="refuse",
+            ),
+        )
+
+        self.assertEqual(refusal.returncode, 1, refusal.stderr.decode())
+        self.assertTrue(marker.exists())
+        self.assertFalse(worker.exists())
+        pending = self.manifests()[0]
+        self.assertEqual(pending["state"], "retirement-ref-cleanup-pending")
+        self.assertEqual(pending["retirement_cleanup_target_head"], self.base_head)
+        self.assertIn("retirement_ref_cleanup_started_at", pending)
+        self.assertIn("retirement_cleanup_warning", pending)
+        self.assertNotIn("retirement_ref_transaction_committed_at", pending)
+        self.assertNotIn("retirement_receipt_removed_at", pending)
+        self.assertEqual(
+            self.retirement_ref_tuple(manifest),
+            (discard_head, discard_head, None),
+        )
+
+        resumed = self.run_launcher(["--triptych-clean", manifest["run_id"]])
+        self.assertEqual(resumed.returncode, 0, resumed.stderr.decode())
+        cleaned = self.manifests()[0]
+        self.assertEqual(cleaned["state"], "cleaned")
+        self.assertIn("retirement_ref_transaction_committed_at", cleaned)
+        self.assertIn("retirement_receipt_removed_at", cleaned)
+        self.assertIn("retirement_completed_at", cleaned)
+        self.assertNotIn("retirement_cleanup_warning", cleaned)
+        self.assertEqual(self.retirement_ref_tuple(manifest), (None, None, None))
+
+    def test_retire_receipt_deletion_refusal_keeps_exact_receipt_and_retries(
+        self,
+    ) -> None:
+        manifest, worker, _, discard_head, _ = self.create_rewritten_quarantine()
+        marker = self.root / "refuse-retirement-receipt-deletion"
+        receipt = self.retirement_receipt_ref(manifest["run_id"])
+
+        refusal = self.run_launcher(
+            self.retire_arguments(manifest),
+            environment=self.post_git_action_environment(
+                cwd=self.control,
+                tokens=["update-ref", "--no-deref", "-d", receipt, discard_head],
+                marker=marker,
+                action="refuse",
+            ),
+        )
+
+        self.assertEqual(refusal.returncode, 1, refusal.stderr.decode())
+        self.assertTrue(marker.exists())
+        self.assertFalse(worker.exists())
+        pending = self.manifests()[0]
+        self.assertEqual(pending["state"], "retirement-ref-cleanup-pending")
+        self.assertIn("retirement_ref_transaction_committed_at", pending)
+        self.assertNotIn("retirement_receipt_removed_at", pending)
+        self.assertNotIn("retirement_completed_at", pending)
+        self.assertIn("retirement_cleanup_warning", pending)
+        self.assertEqual(
+            self.retirement_ref_tuple(manifest),
+            (None, None, discard_head),
+        )
+
+        retry = self.run_launcher(["--triptych-clean", manifest["run_id"]])
+        self.assertEqual(retry.returncode, 0, retry.stderr.decode())
+        cleaned = self.manifests()[0]
+        self.assertEqual(cleaned["state"], "cleaned")
+        self.assertIn("retirement_receipt_removed_at", cleaned)
+        self.assertIn("retirement_completed_at", cleaned)
+        self.assertNotIn("retirement_cleanup_warning", cleaned)
+        self.assertEqual(self.retirement_ref_tuple(manifest), (None, None, None))
+
+    def test_retire_post_ref_transaction_crash_uses_receipt_after_gc(self) -> None:
+        manifest, worker, final_head, discard_head, _ = (
+            self.create_rewritten_quarantine()
+        )
+        (self.control / "one-use-retirement-target.txt").write_text(
+            "operator-selected checkpoint may later be pruned\n",
+            encoding="utf-8",
+        )
+        self.git(self.control, "add", "one-use-retirement-target.txt")
+        self.git(self.control, "commit", "-m", "Create one-use retirement target")
+        selected_target = self.git(self.control, "rev-parse", "HEAD").stdout.strip()
+        arguments = self.retire_arguments(
+            manifest,
+            target_contains=selected_target,
+        )
+        marker = self.root / "post-retirement-ref-transaction-kill"
+
+        crashed = self.run_launcher(
+            arguments,
+            environment=self.post_git_action_environment(
+                cwd=self.control,
+                tokens=["update-ref", "--no-deref", "--stdin"],
+                marker=marker,
+            ),
+        )
+
+        self.assertLess(crashed.returncode, 0)
+        self.assertTrue(marker.exists())
+        self.assertFalse(worker.exists())
+        pending = self.manifests()[0]
+        self.assertEqual(pending["state"], "retirement-ref-cleanup-pending")
+        self.assertNotIn("retirement_ref_transaction_committed_at", pending)
+        self.assertNotIn("retirement_receipt_removed_at", pending)
+        self.assertEqual(
+            self.retirement_ref_tuple(manifest),
+            (None, None, discard_head),
+        )
+
+        self.git(self.control, "reset", "--hard", self.base_head)
+        self.expire_reflogs_and_prune()
+        self.assertFalse(self.commit_exists(final_head))
+        self.assertFalse(self.commit_exists(selected_target))
+        self.assertTrue(self.commit_exists(discard_head))
+
+        retry = self.run_launcher(arguments)
+        self.assertEqual(retry.returncode, 0, retry.stderr.decode())
+        cleaned = self.manifests()[0]
+        self.assertEqual(cleaned["state"], "cleaned")
+        self.assertIn("retirement_ref_transaction_committed_at", cleaned)
+        self.assertIn("retirement_receipt_removed_at", cleaned)
+        self.assertEqual(self.retirement_ref_tuple(manifest), (None, None, None))
+
+        self.expire_reflogs_and_prune()
+        self.assertFalse(self.commit_exists(discard_head))
+        repeated = self.run_launcher(arguments)
+        self.assertEqual(repeated.returncode, 0, repeated.stderr.decode())
+        self.assertEqual(self.manifests()[0], cleaned)
+
+    def test_retire_post_transaction_receipt_tampering_prevents_marker(self) -> None:
+        manifest, worker, final_head, discard_head, _ = (
+            self.create_rewritten_quarantine()
+        )
+        arguments = self.retire_arguments(manifest)
+        marker = self.root / "post-retirement-ref-transaction-tamper"
+        receipt = self.retirement_receipt_ref(manifest["run_id"])
+
+        crashed = self.run_launcher(
+            arguments,
+            environment=self.post_git_action_environment(
+                cwd=self.control,
+                tokens=["update-ref", "--no-deref", "--stdin"],
+                marker=marker,
+            ),
+        )
+        self.assertLess(crashed.returncode, 0)
+        self.assertFalse(worker.exists())
+        self.assertEqual(
+            self.retirement_ref_tuple(manifest),
+            (None, None, discard_head),
+        )
+
+        self.git(self.control, "update-ref", receipt, final_head, discard_head)
+        tampered = self.run_launcher(arguments)
+        self.assertEqual(tampered.returncode, 2, tampered.stderr.decode())
+        self.assertIn(b"receipt", tampered.stderr)
+        pending = self.manifests()[0]
+        self.assertEqual(pending["state"], "retirement-ref-cleanup-pending")
+        self.assertNotIn("retirement_ref_transaction_committed_at", pending)
+        self.assertNotIn("retirement_receipt_removed_at", pending)
+        self.assertEqual(
+            self.retirement_ref_tuple(manifest),
+            (None, None, final_head),
+        )
+
+    def test_retire_crash_after_transaction_marker_keeps_exact_receipt(self) -> None:
+        manifest, worker, final_head, discard_head, _ = (
+            self.create_rewritten_quarantine()
+        )
+        arguments = self.retire_arguments(manifest)
+        marker = self.root / "before-retirement-receipt-delete-kill"
+        receipt = self.retirement_receipt_ref(manifest["run_id"])
+
+        crashed = self.run_launcher(
+            arguments,
+            environment=self.post_git_action_environment(
+                cwd=self.control,
+                tokens=["update-ref", "--no-deref", "-d", receipt, discard_head],
+                marker=marker,
+                action="kill-parent-before",
+            ),
+        )
+
+        self.assertLess(crashed.returncode, 0)
+        self.assertTrue(marker.exists())
+        self.assertFalse(worker.exists())
+        pending = self.manifests()[0]
+        self.assertEqual(pending["state"], "retirement-ref-cleanup-pending")
+        self.assertIn("retirement_ref_transaction_committed_at", pending)
+        self.assertNotIn("retirement_receipt_removed_at", pending)
+        self.assertEqual(
+            self.retirement_ref_tuple(manifest),
+            (None, None, discard_head),
+        )
+
+        self.git(self.control, "update-ref", receipt, final_head, discard_head)
+        tampered = self.run_launcher(arguments)
+        self.assertEqual(tampered.returncode, 2, tampered.stderr.decode())
+        self.assertIn(b"receipt", tampered.stderr)
+        self.assertEqual(
+            self.retirement_ref_tuple(manifest),
+            (None, None, final_head),
+        )
+        self.git(self.control, "update-ref", receipt, discard_head, final_head)
+
+        retry = self.run_launcher(arguments)
+        self.assertEqual(retry.returncode, 0, retry.stderr.decode())
+        cleaned = self.manifests()[0]
+        self.assertEqual(cleaned["state"], "cleaned")
+        self.assertIn("retirement_receipt_removed_at", cleaned)
+        self.assertEqual(self.retirement_ref_tuple(manifest), (None, None, None))
+
+    def test_retire_crash_after_receipt_deletion_recovers_with_pruned_objects(
+        self,
+    ) -> None:
+        manifest, worker, final_head, discard_head, _ = (
+            self.create_rewritten_quarantine()
+        )
+        (self.control / "prunable-retirement-target.txt").write_text(
+            "temporary selected target\n",
+            encoding="utf-8",
+        )
+        self.git(self.control, "add", "prunable-retirement-target.txt")
+        self.git(self.control, "commit", "-m", "Create prunable retirement target")
+        selected_target = self.git(self.control, "rev-parse", "HEAD").stdout.strip()
+        arguments = self.retire_arguments(
+            manifest,
+            target_contains=selected_target,
+        )
+        receipt = self.retirement_receipt_ref(manifest["run_id"])
+        marker = self.root / "after-retirement-receipt-delete-kill"
+
+        crashed = self.run_launcher(
+            arguments,
+            environment=self.post_git_action_environment(
+                cwd=self.control,
+                tokens=["update-ref", "--no-deref", "-d", receipt, discard_head],
+                marker=marker,
+            ),
+        )
+
+        self.assertLess(crashed.returncode, 0)
+        self.assertTrue(marker.exists())
+        self.assertFalse(worker.exists())
+        pending = self.manifests()[0]
+        self.assertEqual(pending["state"], "retirement-ref-cleanup-pending")
+        self.assertIn("retirement_ref_transaction_committed_at", pending)
+        self.assertNotIn("retirement_receipt_removed_at", pending)
+        self.assertEqual(self.retirement_ref_tuple(manifest), (None, None, None))
+
+        temporary = Path(manifest["tmpdir"])
+        shutil.rmtree(temporary)
+        temporary.write_text("obstruct retirement finalization\n", encoding="utf-8")
+        self.git(self.control, "reset", "--hard", self.base_head)
+        self.expire_reflogs_and_prune()
+        for commit in (final_head, discard_head, selected_target):
+            self.assertFalse(self.commit_exists(commit), commit)
+
+        obstructed = self.run_launcher(arguments)
+        self.assertEqual(obstructed.returncode, 2, obstructed.stderr.decode())
+        self.assertIn(b"not an exact real directory", obstructed.stderr)
+        still_pending = self.manifests()[0]
+        self.assertEqual(
+            still_pending["state"],
+            "retirement-ref-cleanup-pending",
+        )
+        self.assertIn("retirement_ref_transaction_committed_at", still_pending)
+        self.assertIn("retirement_receipt_removed_at", still_pending)
+        self.assertNotIn("retirement_completed_at", still_pending)
+        self.assertNotIn("cleaned_at", still_pending)
+        self.assertIn("retirement_cleanup_warning", still_pending)
+        self.assertTrue(temporary.is_file())
+        self.assertEqual(self.retirement_ref_tuple(manifest), (None, None, None))
+        for commit in (final_head, discard_head, selected_target):
+            self.assertFalse(self.commit_exists(commit), commit)
+
+        temporary.unlink()
+        retry = self.run_launcher(arguments)
+        self.assertEqual(retry.returncode, 0, retry.stderr.decode())
+        cleaned = self.manifests()[0]
+        self.assertEqual(cleaned["state"], "cleaned")
+        self.assertIn("retirement_receipt_removed_at", cleaned)
+        self.assertIn("retirement_completed_at", cleaned)
+        self.assertNotIn("retirement_cleanup_warning", cleaned)
+        self.assertFalse(os.path.lexists(temporary))
+        self.assertEqual(self.retirement_ref_tuple(manifest), (None, None, None))
+
+        repeated = self.run_launcher(arguments)
+        self.assertEqual(repeated.returncode, 0, repeated.stderr.decode())
+        self.assertEqual(self.manifests()[0], cleaned)
 
     def test_reopen_records_a_clean_result_before_explicit_cleanup(self) -> None:
         first_log = self.root / "reopen-clean-first.jsonl"

@@ -36,6 +36,36 @@ SOURCE_ANCHOR_PREFIX = "refs/triptych-codex/runs/"
 ROLE_ENV = "TRIPTYCH_CODEX_ROLE"
 REAL_CODEX_ENV = "TRIPTYCH_CODEX_REAL"
 STATE_DIR_ENV = "TRIPTYCH_CODEX_STATE_DIR"
+RETIREMENT_PENDING_STATES = {
+    "retirement-pending",
+    "retirement-ref-cleanup-pending",
+}
+RETIREMENT_OBJECT_FIELDS = (
+    "retirement_discard_head",
+    "retirement_target_contains",
+    "retirement_initial_target_head",
+    "retirement_cleanup_target_head",
+)
+RETIREMENT_CORE_FIELDS = RETIREMENT_OBJECT_FIELDS[:3]
+RETIREMENT_FIELDS = (
+    *RETIREMENT_OBJECT_FIELDS,
+    "retirement_started_at",
+    "retirement_anchor_created",
+    "retirement_worktree_removed_at",
+    "retirement_ref_cleanup_started_at",
+    "retirement_ref_transaction_committed_at",
+    "retirement_receipt_removed_at",
+    "retirement_completed_at",
+    "retirement_cleanup_warning",
+)
+RETIREMENT_TIMESTAMP_FIELDS = (
+    "retirement_started_at",
+    "retirement_worktree_removed_at",
+    "retirement_ref_cleanup_started_at",
+    "retirement_ref_transaction_committed_at",
+    "retirement_receipt_removed_at",
+    "retirement_completed_at",
+)
 MANUAL_LANDING_CHECKPOINT_FIELDS = (
     "integration_manual_landing_started_at",
     "integration_landing_expected_head",
@@ -86,6 +116,7 @@ RUN_STATES = {
     "failed-preserved",
     "interrupted",
     "quarantined",
+    *RETIREMENT_PENDING_STATES,
     "cleaned",
     "cleaned-branch-retained",
     "integration-conflict",
@@ -612,6 +643,16 @@ def exact_real_directory(path: Path, *, label: str) -> Path:
     return absolute
 
 
+def path_entry_exists(path: Path, *, label: str) -> bool:
+    try:
+        path.lstat()
+    except FileNotFoundError:
+        return False
+    except OSError as exc:
+        raise LauncherError(f"cannot inspect {label}") from exc
+    return True
+
+
 def authenticate_linked_worktree_path(
     worktree: Path,
     *,
@@ -831,6 +872,21 @@ def validate_run_id(run_id: str) -> None:
         raise LauncherError("invalid Triptych Codex run ID")
 
 
+def validate_exact_retirement_tmpdir(
+    repository: Repository,
+    manifest: dict,
+) -> Path:
+    run_id = manifest.get("run_id")
+    if not isinstance(run_id, str):
+        raise LauncherError("the retained run has no valid temporary-path identity")
+    validate_run_id(run_id)
+    expected = repository.state_root / "tmp" / run_id
+    temporary_value = manifest.get("tmpdir")
+    if not isinstance(temporary_value, str) or temporary_value != str(expected):
+        raise LauncherError("the retirement temporary path is not the exact launcher path")
+    return expected
+
+
 def write_manifest(repository: Repository, manifest: dict) -> None:
     run_id = manifest.get("run_id")
     if not isinstance(run_id, str):
@@ -902,15 +958,24 @@ def validate_manifest_paths(repository: Repository, manifest: dict) -> None:
         or worktree.is_symlink()
     ):
         raise LauncherError("run manifest has an unsafe worktree path")
-    tmp_root = (repository.state_root / "tmp").resolve()
-    temporary = Path(str(manifest.get("tmpdir", "")))
-    if (
-        not temporary.is_absolute()
-        or temporary.parent.resolve() != tmp_root
-        or temporary.is_symlink()
-    ):
-        raise LauncherError("run manifest has an unsafe temporary path")
     run_id = manifest.get("run_id")
+    tmp_root = (repository.state_root / "tmp").resolve()
+    temporary_value = manifest.get("tmpdir")
+    temporary = Path(temporary_value) if isinstance(temporary_value, str) else Path("")
+    retirement_temporary = state in RETIREMENT_PENDING_STATES or (
+        state == "cleaned" and "retirement_completed_at" in manifest
+    )
+    if retirement_temporary:
+        validate_exact_retirement_tmpdir(repository, manifest)
+        unsafe_temporary = False
+    else:
+        unsafe_temporary = (
+            not temporary.is_absolute()
+            or temporary.parent.resolve() != tmp_root
+            or temporary.is_symlink()
+        )
+    if unsafe_temporary:
+        raise LauncherError("run manifest has an unsafe temporary path")
     if worktree.name != run_id or temporary.name != run_id:
         raise LauncherError("run manifest paths do not match its run ID")
     if manifest.get("branch") != f"{WORKER_BRANCH_PREFIX}{run_id}":
@@ -938,6 +1003,7 @@ def validate_manifest_paths(repository: Repository, manifest: dict) -> None:
         raise LauncherError("run manifest has an invalid base commit")
     for field in (
         "final_head",
+        "observed_head",
         "integrated_head",
         "integration_source_head",
         "integration_target_head",
@@ -957,6 +1023,13 @@ def validate_manifest_paths(repository: Repository, manifest: dict) -> None:
             not isinstance(value, str) or not OBJECT_ID_RE.fullmatch(value)
         ):
             raise LauncherError(f"run manifest has an invalid {field.replace('_', ' ')}")
+    for field in RETIREMENT_OBJECT_FIELDS:
+        if field in manifest:
+            value = manifest[field]
+            if not isinstance(value, str) or not OBJECT_ID_RE.fullmatch(value):
+                raise LauncherError(
+                    f"run manifest has an invalid {field.replace('_', ' ')}"
+                )
     for field in (
         "integration_conflict_paths",
         "integration_unmerged_paths",
@@ -998,6 +1071,81 @@ def validate_manifest_paths(repository: Repository, manifest: dict) -> None:
     source_anchor_created = manifest.get("integration_source_anchor_created")
     if source_anchor_created is not None and source_anchor_created is not True:
         raise LauncherError("run manifest has an invalid source-anchor marker")
+    retirement_anchor_created = manifest.get("retirement_anchor_created")
+    if retirement_anchor_created is not None and retirement_anchor_created is not True:
+        raise LauncherError("run manifest has an invalid retirement-anchor marker")
+    for field in RETIREMENT_TIMESTAMP_FIELDS:
+        if field in manifest and (
+            not isinstance(manifest[field], str) or not manifest[field].strip()
+        ):
+            raise LauncherError(f"run manifest has an invalid {field.replace('_', ' ')}")
+    if "retirement_cleanup_warning" in manifest and (
+        not isinstance(manifest["retirement_cleanup_warning"], str)
+        or not manifest["retirement_cleanup_warning"].strip()
+    ):
+        raise LauncherError("run manifest has an invalid retirement cleanup warning")
+    retirement_fields_present = any(field in manifest for field in RETIREMENT_FIELDS)
+    if state in RETIREMENT_PENDING_STATES:
+        if any(
+            field not in manifest
+            for field in (*RETIREMENT_CORE_FIELDS, "retirement_started_at")
+        ):
+            raise LauncherError("run manifest has an incomplete retirement checkpoint")
+        if state == "retirement-pending":
+            if any(
+                field in manifest
+                for field in (
+                    "retirement_worktree_removed_at",
+                    "retirement_ref_transaction_committed_at",
+                    "retirement_receipt_removed_at",
+                    "retirement_completed_at",
+                    "retirement_cleanup_warning",
+                )
+            ):
+                raise LauncherError("run manifest has retirement cleanup data too early")
+            cleanup_target_present = "retirement_cleanup_target_head" in manifest
+            cleanup_started = "retirement_ref_cleanup_started_at" in manifest
+            if cleanup_target_present != cleanup_started or (
+                cleanup_target_present
+                and manifest.get("retirement_anchor_created") is not True
+            ):
+                raise LauncherError(
+                    "run manifest has an incomplete retirement cleanup checkpoint"
+                )
+        if state == "retirement-ref-cleanup-pending":
+            if (
+                manifest.get("retirement_anchor_created") is not True
+                or "retirement_worktree_removed_at" not in manifest
+                or "retirement_cleanup_target_head" not in manifest
+                or "retirement_ref_cleanup_started_at" not in manifest
+                or "retirement_completed_at" in manifest
+                or (
+                    "retirement_receipt_removed_at" in manifest
+                    and "retirement_ref_transaction_committed_at" not in manifest
+                )
+            ):
+                raise LauncherError(
+                    "run manifest has an incomplete retirement cleanup checkpoint"
+                )
+    elif retirement_fields_present:
+        if state != "cleaned" or "retirement_completed_at" not in manifest:
+            raise LauncherError("run manifest has retirement data outside its lifecycle")
+        if any(
+            field not in manifest
+            for field in (
+                *RETIREMENT_CORE_FIELDS,
+                "retirement_cleanup_target_head",
+                "retirement_started_at",
+                "retirement_worktree_removed_at",
+                "retirement_ref_cleanup_started_at",
+                "retirement_ref_transaction_committed_at",
+                "retirement_receipt_removed_at",
+            )
+        ) or (
+            manifest.get("retirement_anchor_created") is not True
+            or "retirement_cleanup_warning" in manifest
+        ):
+            raise LauncherError("run manifest has incomplete retired metadata")
     target_ref = manifest.get("target_ref")
     if (
         not isinstance(target_ref, str)
@@ -1473,12 +1621,64 @@ def recorded_commit(repository: Repository, manifest: dict, field: str) -> str:
     return value
 
 
+def exact_commit_argument(repository: Repository, value: str, option: str) -> str:
+    if not OBJECT_ID_RE.fullmatch(value):
+        raise LauncherError(f"{option} requires a full lowercase commit object ID")
+    resolved = git(
+        repository.root,
+        "rev-parse",
+        "--verify",
+        f"{value}^{{commit}}",
+        check=False,
+    )
+    if resolved.returncode or resolved.stdout.strip() != value:
+        raise LauncherError(f"{option} does not name an exact available commit")
+    return value
+
+
 def integration_source_ref(manifest: dict) -> str:
     run_id = manifest.get("run_id")
     if not isinstance(run_id, str):
         raise LauncherError("the retained run has no valid source-anchor identity")
     validate_run_id(run_id)
     return f"{SOURCE_ANCHOR_PREFIX}{run_id}/integration-source"
+
+
+def retirement_anchor_ref(manifest: dict) -> str:
+    run_id = manifest.get("run_id")
+    if not isinstance(run_id, str):
+        raise LauncherError("the retained run has no valid retirement-anchor identity")
+    validate_run_id(run_id)
+    return f"{SOURCE_ANCHOR_PREFIX}{run_id}/retirement-discard"
+
+
+def retirement_receipt_ref(manifest: dict) -> str:
+    run_id = manifest.get("run_id")
+    if not isinstance(run_id, str):
+        raise LauncherError("the retained run has no valid retirement-receipt identity")
+    validate_run_id(run_id)
+    return f"{SOURCE_ANCHOR_PREFIX}{run_id}/retirement-receipt"
+
+
+def private_run_refs(repository: Repository, manifest: dict) -> set[str]:
+    run_id = manifest.get("run_id")
+    if not isinstance(run_id, str):
+        raise LauncherError("the retained run has no valid private-ref identity")
+    validate_run_id(run_id)
+    prefix = f"{SOURCE_ANCHOR_PREFIX}{run_id}/"
+    result = git(
+        repository.root,
+        "for-each-ref",
+        "--format=%(refname)",
+        prefix,
+        check=False,
+    )
+    if result.returncode:
+        raise LauncherError("cannot inspect the retained run's private refs")
+    refs = {line for line in result.stdout.splitlines() if line}
+    if any(not ref.startswith(prefix) for ref in refs):
+        raise LauncherError("Git returned an unexpected retained-run private ref")
+    return refs
 
 
 def direct_ref_commit(repository: Repository, ref: str) -> str | None:
@@ -1804,6 +2004,167 @@ def branch_commit(repository: Repository, manifest: dict) -> str | None:
         check=False,
     )
     return result.stdout.strip() if result.returncode == 0 else None
+
+
+def retirement_parameters(manifest: dict) -> tuple[str, str, str]:
+    values: list[str] = []
+    for field in RETIREMENT_CORE_FIELDS:
+        value = manifest.get(field)
+        if not isinstance(value, str) or not OBJECT_ID_RE.fullmatch(value):
+            raise LauncherError("the retained run has an incomplete retirement checkpoint")
+        values.append(value)
+    return values[0], values[1], values[2]
+
+
+def require_matching_retirement_arguments(
+    manifest: dict,
+    discard_head: str,
+    target_contains: str,
+) -> None:
+    recorded_discard, recorded_contains, _ = retirement_parameters(manifest)
+    if recorded_discard != discard_head or recorded_contains != target_contains:
+        raise LauncherError(
+            "the retirement command's object arguments differ from the durable checkpoint"
+        )
+
+
+def reject_conflicting_retirement_lifecycle(manifest: dict) -> None:
+    if manifest.get("background_process_active"):
+        raise LauncherError("the quarantined run still records a background worker")
+    if (
+        manifest.get("integrated_head") is not None
+        or "integrated_at" in manifest
+        or any(field.startswith("integration_") for field in manifest)
+    ):
+        raise LauncherError("the quarantined run has a conflicting integration transaction")
+    if any(
+        field in manifest
+        for field in (
+            "cleanup_expected_head",
+            "cleanup_warning",
+            "cleaned_at",
+            "branch_cleaned_at",
+        )
+    ):
+        raise LauncherError("the quarantined run has an unrelated cleanup transaction")
+
+
+def target_containing_retirement_checkpoint(
+    repository: Repository,
+    manifest: dict,
+    target_contains: str,
+) -> str:
+    target_head = direct_ref_commit(repository, manifest["target_ref"])
+    if target_head is None:
+        raise LauncherError("the recorded target ref is unavailable for retirement")
+    if not commit_is_ancestor(repository, target_contains, target_head):
+        raise LauncherError(
+            "the recorded target no longer contains the operator-selected checkpoint"
+        )
+    return target_head
+
+
+def validate_retirement_recorded_history(
+    repository: Repository,
+    manifest: dict,
+    discard_head: str,
+    target_contains: str,
+) -> None:
+    final_head = recorded_commit(repository, manifest, "final_head")
+    observed_head = recorded_commit(repository, manifest, "observed_head")
+    base_sha = recorded_commit(repository, manifest, "base_sha")
+    if observed_head != discard_head:
+        raise LauncherError("the recorded observed head is not the authorized discard head")
+    if manifest.get("observed_dirty") is not False:
+        raise LauncherError("the rewritten quarantine was not observed clean")
+    if not commit_is_ancestor(repository, base_sha, discard_head):
+        raise LauncherError("the discard head no longer descends from the run's recorded base")
+    if commit_is_ancestor(repository, final_head, discard_head):
+        raise LauncherError(
+            "the observed history still descends from its last terminal audit"
+        )
+    exact_commit_argument(repository, target_contains, "--target-contains")
+
+
+def retirement_private_ref_pair(
+    repository: Repository,
+    manifest: dict,
+) -> tuple[str | None, str | None]:
+    anchor_ref = retirement_anchor_ref(manifest)
+    receipt_ref = retirement_receipt_ref(manifest)
+    refs = private_run_refs(repository, manifest)
+    unexpected = refs - {anchor_ref, receipt_ref}
+    if unexpected:
+        raise LauncherError("the quarantined run has a conflicting private ref")
+    return (
+        direct_ref_commit(repository, anchor_ref),
+        direct_ref_commit(repository, receipt_ref),
+    )
+
+
+def ensure_retirement_anchor(
+    repository: Repository,
+    manifest: dict,
+    discard_head: str,
+) -> None:
+    authenticate_retained_worktree(repository, manifest)
+    branch_ref = f"refs/heads/{manifest['branch']}"
+    if direct_ref_commit(repository, branch_ref) != discard_head:
+        raise LauncherError("the checkpointed retirement worker branch changed")
+    anchor_ref = retirement_anchor_ref(manifest)
+    anchor, receipt = retirement_private_ref_pair(repository, manifest)
+    if receipt is not None:
+        raise LauncherError("the retirement receipt exists before ref cleanup")
+    if anchor is None:
+        if manifest.get("retirement_anchor_created") is True:
+            raise LauncherError("the retirement anchor is missing after its checkpoint")
+        creation = git(
+            repository.root,
+            "update-ref",
+            "--no-deref",
+            anchor_ref,
+            discard_head,
+            "0" * len(discard_head),
+            check=False,
+        )
+        anchor, receipt = retirement_private_ref_pair(repository, manifest)
+        if creation.returncode and anchor != discard_head:
+            raise LauncherError("cannot create the quarantined run's retirement anchor")
+    if anchor != discard_head or receipt is not None:
+        raise LauncherError("the quarantined run's retirement anchor changed")
+    if manifest.get("retirement_anchor_created") is not True:
+        manifest["retirement_anchor_created"] = True
+        write_manifest(repository, manifest)
+
+
+def validate_retirement_worktree(
+    repository: Repository,
+    manifest: dict,
+    *,
+    require_locked: bool,
+) -> None:
+    discard_head, _, _ = retirement_parameters(manifest)
+    worktree = Path(manifest["worktree"])
+    audit = audit_run(repository, manifest)
+    if not audit.registered:
+        raise LauncherError("the checkpointed retirement worktree is not registered")
+    if audit.locked is not require_locked:
+        expected = "locked" if require_locked else "unlocked"
+        raise LauncherError(f"the checkpointed retirement worktree is not {expected}")
+    if audit.branch != manifest["branch"]:
+        raise LauncherError("the checkpointed retirement worktree changed branches")
+    if audit.head != discard_head or not audit.clean:
+        raise LauncherError("the checkpointed retirement worktree changed after its audit")
+    if rebase_in_progress(worktree):
+        raise LauncherError("the checkpointed retirement worktree has an active rebase")
+    branch_ref = f"refs/heads/{manifest['branch']}"
+    if direct_ref_commit(repository, branch_ref) != discard_head:
+        raise LauncherError("the checkpointed retirement worker branch changed")
+    if manifest.get("retirement_anchor_created") is not True:
+        raise LauncherError("the retirement anchor has no durable creation checkpoint")
+    anchor, receipt = retirement_private_ref_pair(repository, manifest)
+    if anchor != discard_head or receipt is not None:
+        raise LauncherError("the quarantined run's retirement anchor is missing or changed")
 
 
 def rebase_head_name(worktree: Path) -> str | None:
@@ -4161,6 +4522,11 @@ def reopen_run(repository: Repository, run_id: str, arguments: Sequence[str]) ->
             "cleaned-ref-retained",
         }:
             raise LauncherError(f"run {run_id} has already been cleaned")
+        if manifest.get("state") in RETIREMENT_PENDING_STATES:
+            raise LauncherError(
+                f"run {run_id} has a checkpointed retirement; resume it with "
+                f"scripts/triptych-codex --triptych-clean {run_id}"
+            )
         if manifest.get("integrated_head") is not None:
             raise LauncherError(
                 f"run {run_id} has already advanced its target; retry "
@@ -4631,6 +4997,11 @@ def integrate_run(repository: Repository, run_id: str) -> int:
     with file_lock(repo_lock_path(repository)):
         manifest = load_manifest(repository, run_id)
         reconcile_stale_run(repository, manifest)
+        if manifest.get("state") in RETIREMENT_PENDING_STATES:
+            raise LauncherError(
+                f"run {run_id} has a checkpointed retirement; resume it with "
+                f"scripts/triptych-codex --triptych-clean {run_id}"
+            )
         if manifest.get("state") == "cleaned":
             return confirm_cleaned_integration(repository, manifest)
         if manifest.get("state") in {"cleaned-branch-retained", "cleaned-ref-retained"}:
@@ -5359,20 +5730,667 @@ def show_final_diff(repository: Repository, run_id: str) -> int:
     return 0
 
 
+def checkpoint_rewritten_quarantine_retirement(
+    repository: Repository,
+    manifest: dict,
+    discard_head: str,
+    target_contains: str,
+) -> None:
+    if manifest.get("state") != "quarantined":
+        raise LauncherError("only an exact rewritten quarantine may be retired")
+    validate_exact_retirement_tmpdir(repository, manifest)
+    if any(field in manifest for field in RETIREMENT_FIELDS):
+        raise LauncherError("the quarantine has invalid uncheckpointed retirement data")
+    reject_conflicting_retirement_lifecycle(manifest)
+    validate_retirement_recorded_history(
+        repository,
+        manifest,
+        discard_head,
+        target_contains,
+    )
+
+    worktree = Path(manifest["worktree"])
+    audit = audit_run(repository, manifest)
+    if not audit_matches_clean_head(manifest, audit, discard_head):
+        raise LauncherError(
+            "the rewritten quarantine is not a registered, locked, clean, exact worker"
+        )
+    if rebase_in_progress(worktree):
+        raise LauncherError("the rewritten quarantine has an active rebase")
+    branch_ref = f"refs/heads/{manifest['branch']}"
+    if direct_ref_commit(repository, branch_ref) != discard_head:
+        raise LauncherError("the rewritten quarantine's direct worker branch changed")
+    if private_run_refs(repository, manifest):
+        raise LauncherError("the rewritten quarantine has a conflicting private ref")
+    initial_target = target_containing_retirement_checkpoint(
+        repository,
+        manifest,
+        target_contains,
+    )
+
+    manifest["state"] = "retirement-pending"
+    manifest["retirement_discard_head"] = discard_head
+    manifest["retirement_target_contains"] = target_contains
+    manifest["retirement_initial_target_head"] = initial_target
+    manifest["retirement_started_at"] = utc_now()
+    write_manifest(repository, manifest)
+    ensure_retirement_anchor(repository, manifest, discard_head)
+
+
+def relock_retirement_worktree(repository: Repository, manifest: dict) -> None:
+    worktree = Path(manifest["worktree"])
+    authenticate_retained_worktree(repository, manifest)
+    relock = git(
+        repository.root,
+        "worktree",
+        "lock",
+        "--reason",
+        f"triptych-codex {manifest['run_id']}",
+        str(worktree),
+        check=False,
+    )
+    audit = audit_run(repository, manifest)
+    if relock.returncode or not audit.registered or not audit.locked:
+        raise LauncherError("the checkpointed retirement worktree could not be relocked")
+
+
+def refresh_retirement_cleanup_target(
+    repository: Repository,
+    manifest: dict,
+) -> str:
+    _, target_contains, _ = retirement_parameters(manifest)
+    target_head = target_containing_retirement_checkpoint(
+        repository,
+        manifest,
+        target_contains,
+    )
+    manifest["retirement_cleanup_target_head"] = target_head
+    manifest.setdefault("retirement_ref_cleanup_started_at", utc_now())
+    write_manifest(repository, manifest)
+    return target_head
+
+
+def mark_retirement_worktree_removed(
+    repository: Repository,
+    manifest: dict,
+) -> None:
+    refresh_retirement_cleanup_target(repository, manifest)
+    manifest["state"] = "retirement-ref-cleanup-pending"
+    manifest.setdefault("retirement_worktree_removed_at", utc_now())
+    manifest["retirement_cleanup_warning"] = (
+        "transactional worker-branch, retirement-anchor, and receipt cleanup pending"
+    )
+    write_manifest(repository, manifest)
+
+
+def remove_checkpointed_retirement_worktree(
+    repository: Repository,
+    manifest: dict,
+) -> None:
+    worktree = Path(manifest["worktree"])
+    validate_retirement_worktree(repository, manifest, require_locked=True)
+    authenticate_retained_worktree(repository, manifest)
+    refresh_retirement_cleanup_target(repository, manifest)
+    unlock = git(
+        repository.root,
+        "worktree",
+        "unlock",
+        str(worktree),
+        check=False,
+    )
+    if unlock.returncode:
+        audit = audit_run(repository, manifest)
+        if audit.registered and not audit.locked:
+            relock_retirement_worktree(repository, manifest)
+        raise LauncherError("the retirement worktree could not be safely unlocked")
+
+    try:
+        authenticate_retained_worktree(repository, manifest)
+        validate_retirement_worktree(repository, manifest, require_locked=False)
+        refresh_retirement_cleanup_target(repository, manifest)
+    except LauncherError:
+        try:
+            relock_retirement_worktree(repository, manifest)
+        except LauncherError:
+            pass
+        raise
+
+    removal = git(
+        repository.root,
+        "worktree",
+        "remove",
+        str(worktree),
+        check=False,
+    )
+    registered = registered_record(repository, worktree)
+    exists = path_entry_exists(worktree, label="the retirement worktree path")
+    if removal.returncode or registered is not None or exists:
+        if registered is not None and exists:
+            try:
+                relock_retirement_worktree(repository, manifest)
+            except LauncherError:
+                pass
+        if (registered is None) != (not exists):
+            raise LauncherError(
+                "retirement worktree removal left an inconsistent managed path"
+            )
+        raise LauncherError("authenticated retirement worktree removal failed")
+    mark_retirement_worktree_removed(repository, manifest)
+
+
+def retirement_ref_tuple(
+    repository: Repository,
+    manifest: dict,
+) -> tuple[str | None, str | None, str | None]:
+    anchor, receipt = retirement_private_ref_pair(repository, manifest)
+    branch_ref = f"refs/heads/{manifest['branch']}"
+    branch = direct_ref_commit(repository, branch_ref)
+    return branch, anchor, receipt
+
+
+def retirement_cleanup_target(manifest: dict) -> str:
+    cleanup_target = manifest.get("retirement_cleanup_target_head")
+    if (
+        not isinstance(cleanup_target, str)
+        or not OBJECT_ID_RE.fullmatch(cleanup_target)
+        or "retirement_ref_cleanup_started_at" not in manifest
+    ):
+        raise LauncherError("the retirement ref cleanup has no exact target checkpoint")
+    return cleanup_target
+
+
+@contextmanager
+def exact_retirement_tmp_parent(
+    repository: Repository,
+    manifest: dict,
+) -> Iterator[tuple[int, str]]:
+    expected = validate_exact_retirement_tmpdir(repository, manifest)
+    temporary_root = expected.parent
+    run_id = expected.name
+
+    directory_flag = getattr(os, "O_DIRECTORY", 0)
+    nofollow_flag = getattr(os, "O_NOFOLLOW", 0)
+    if not directory_flag or not nofollow_flag:
+        raise LauncherError("safe retirement temporary-path inspection is unavailable")
+    try:
+        root_metadata = temporary_root.lstat()
+    except OSError as exc:
+        raise LauncherError("cannot inspect the retirement temporary root") from exc
+    if not stat.S_ISDIR(root_metadata.st_mode):
+        raise LauncherError("the retirement temporary root is not a real directory")
+
+    try:
+        descriptor = os.open(
+            temporary_root,
+            os.O_RDONLY
+            | directory_flag
+            | nofollow_flag
+            | getattr(os, "O_CLOEXEC", 0),
+        )
+    except OSError as exc:
+        raise LauncherError("cannot open the retirement temporary root safely") from exc
+    try:
+        try:
+            opened_metadata = os.fstat(descriptor)
+        except OSError as exc:
+            raise LauncherError(
+                "cannot authenticate the retirement temporary root"
+            ) from exc
+        if (
+            not stat.S_ISDIR(opened_metadata.st_mode)
+            or not os.path.samestat(root_metadata, opened_metadata)
+        ):
+            raise LauncherError("the retirement temporary root changed during inspection")
+        yield descriptor, run_id
+    finally:
+        try:
+            os.close(descriptor)
+        except OSError as exc:
+            raise LauncherError("cannot close the retirement temporary root") from exc
+
+
+def retirement_tmp_entry(
+    parent_descriptor: int,
+    run_id: str,
+) -> os.stat_result | None:
+    try:
+        return os.stat(
+            run_id,
+            dir_fd=parent_descriptor,
+            follow_symlinks=False,
+        )
+    except FileNotFoundError:
+        return None
+    except OSError as exc:
+        raise LauncherError("cannot inspect the retirement temporary path") from exc
+
+
+@contextmanager
+def working_directory_at(directory_descriptor: int) -> Iterator[None]:
+    directory_flag = getattr(os, "O_DIRECTORY", 0)
+    if not directory_flag or not hasattr(os, "fchdir"):
+        raise LauncherError("safe temporary-directory traversal is unavailable")
+    try:
+        original_descriptor = os.open(
+            ".",
+            os.O_RDONLY | directory_flag | getattr(os, "O_CLOEXEC", 0),
+        )
+    except OSError as exc:
+        raise LauncherError("cannot preserve the launcher working directory") from exc
+    try:
+        try:
+            os.fchdir(directory_descriptor)
+        except OSError as exc:
+            raise LauncherError(
+                "cannot enter the authenticated retirement temporary root"
+            ) from exc
+        yield
+    finally:
+        restore_error: OSError | None = None
+        close_error: OSError | None = None
+        try:
+            os.fchdir(original_descriptor)
+        except OSError as exc:
+            restore_error = exc
+        try:
+            os.close(original_descriptor)
+        except OSError as exc:
+            close_error = exc
+        if restore_error is not None:
+            raise LauncherError(
+                "cannot restore the launcher working directory"
+            ) from restore_error
+        if close_error is not None:
+            raise LauncherError(
+                "cannot close the saved launcher working directory"
+            ) from close_error
+
+
+def remove_retirement_tmpdir(repository: Repository, manifest: dict) -> None:
+    with exact_retirement_tmp_parent(repository, manifest) as (
+        parent_descriptor,
+        run_id,
+    ):
+        before = retirement_tmp_entry(parent_descriptor, run_id)
+        if before is None:
+            return
+        if not stat.S_ISDIR(before.st_mode):
+            raise LauncherError(
+                "the retirement temporary path is not an exact real directory"
+            )
+        if not getattr(shutil.rmtree, "avoids_symlink_attacks", False):
+            raise LauncherError("safe retirement temporary-directory removal is unavailable")
+        try:
+            with working_directory_at(parent_descriptor):
+                shutil.rmtree(run_id)
+        except (OSError, NotImplementedError) as exc:
+            raise LauncherError(
+                "authenticated retirement temporary-directory removal failed"
+            ) from exc
+        after = retirement_tmp_entry(parent_descriptor, run_id)
+        if after is not None:
+            disposition = (
+                "retained"
+                if os.path.samestat(before, after)
+                else "replaced during removal"
+            )
+            raise LauncherError(f"the retirement temporary path was {disposition}")
+
+
+def require_retirement_tmp_absent(repository: Repository, manifest: dict) -> None:
+    with exact_retirement_tmp_parent(repository, manifest) as (
+        parent_descriptor,
+        run_id,
+    ):
+        if retirement_tmp_entry(parent_descriptor, run_id) is not None:
+            raise LauncherError("the retired run unexpectedly retains a temporary path")
+
+
+def record_retirement_cleanup_failure(
+    repository: Repository,
+    manifest: dict,
+    warning: str,
+) -> None:
+    manifest["retirement_cleanup_warning"] = warning
+    write_manifest(repository, manifest)
+
+
+def reject_retirement_ref_tuple(
+    repository: Repository,
+    manifest: dict,
+    warning: str,
+) -> None:
+    record_retirement_cleanup_failure(repository, manifest, warning)
+    raise LauncherError(
+        "a retirement ref changed: the branch, anchor, and receipt tuple is partial "
+        "or tampered; destructive recovery was refused"
+    )
+
+
+def finalize_retirement(repository: Repository, manifest: dict) -> None:
+    if manifest.get("state") != "retirement-ref-cleanup-pending":
+        raise LauncherError("the retained run has no completed retirement transaction")
+    retirement_parameters(manifest)
+    retirement_cleanup_target(manifest)
+    if (
+        "retirement_ref_transaction_committed_at" not in manifest
+        or "retirement_receipt_removed_at" not in manifest
+    ):
+        raise LauncherError("the retirement ref transaction is not durably complete")
+    worktree = Path(manifest["worktree"])
+    if registered_record(repository, worktree) is not None or path_entry_exists(
+        worktree,
+        label="the retirement worktree path",
+    ):
+        raise LauncherError("cannot finalize retirement while the worktree remains")
+    if retirement_ref_tuple(repository, manifest) != (None, None, None):
+        raise LauncherError("retirement refs remain after transactional cleanup")
+
+    try:
+        remove_retirement_tmpdir(repository, manifest)
+    except LauncherError as exc:
+        record_retirement_cleanup_failure(repository, manifest, str(exc))
+        raise
+    manifest["state"] = "cleaned"
+    manifest["retirement_completed_at"] = utc_now()
+    manifest["cleaned_at"] = manifest["retirement_completed_at"]
+    manifest.pop("retirement_cleanup_warning", None)
+    write_manifest(repository, manifest)
+
+
+def remove_retirement_receipt_after_transaction(
+    repository: Repository,
+    manifest: dict,
+    discard_head: str,
+) -> bool:
+    branch, anchor, receipt = retirement_ref_tuple(repository, manifest)
+    if branch is not None or anchor is not None or receipt not in {None, discard_head}:
+        reject_retirement_ref_tuple(
+            repository,
+            manifest,
+            "retirement refs changed after the durable ref transaction checkpoint",
+        )
+
+    if "retirement_receipt_removed_at" in manifest:
+        if receipt is not None:
+            reject_retirement_ref_tuple(
+                repository,
+                manifest,
+                "the retirement receipt exists after its durable removal checkpoint",
+            )
+        finalize_retirement(repository, manifest)
+        return True
+
+    if receipt == discard_head:
+        receipt_ref = retirement_receipt_ref(manifest)
+        deletion = git(
+            repository.root,
+            "update-ref",
+            "--no-deref",
+            "-d",
+            receipt_ref,
+            discard_head,
+            check=False,
+        )
+        remaining = retirement_ref_tuple(repository, manifest)
+        if remaining == (None, None, discard_head):
+            record_retirement_cleanup_failure(
+                repository,
+                manifest,
+                deletion.stderr.strip() or "the retirement receipt was retained",
+            )
+            return False
+        if remaining != (None, None, None):
+            reject_retirement_ref_tuple(
+                repository,
+                manifest,
+                deletion.stderr.strip()
+                or "retirement receipt removal became partial or tampered",
+            )
+
+    manifest["retirement_receipt_removed_at"] = utc_now()
+    manifest.pop("retirement_cleanup_warning", None)
+    write_manifest(repository, manifest)
+    finalize_retirement(repository, manifest)
+    return True
+
+
+def cleanup_retirement_refs(repository: Repository, manifest: dict) -> bool:
+    worktree = Path(manifest["worktree"])
+    if registered_record(repository, worktree) is not None or path_entry_exists(
+        worktree,
+        label="the retirement worktree path",
+    ):
+        raise LauncherError("cannot clean retirement refs while the worktree remains")
+    discard_head, _, _ = retirement_parameters(manifest)
+    retirement_cleanup_target(manifest)
+    current_tuple = retirement_ref_tuple(repository, manifest)
+
+    if "retirement_ref_transaction_committed_at" in manifest:
+        return remove_retirement_receipt_after_transaction(
+            repository,
+            manifest,
+            discard_head,
+        )
+
+    pre_transaction = (discard_head, discard_head, None)
+    post_transaction = (None, None, discard_head)
+    if current_tuple == post_transaction:
+        manifest["retirement_ref_transaction_committed_at"] = utc_now()
+        manifest.pop("retirement_cleanup_warning", None)
+        write_manifest(repository, manifest)
+        return remove_retirement_receipt_after_transaction(
+            repository,
+            manifest,
+            discard_head,
+        )
+    if current_tuple != pre_transaction:
+        reject_retirement_ref_tuple(
+            repository,
+            manifest,
+            "the pre-transaction retirement refs are partial or tampered",
+        )
+
+    target_head = refresh_retirement_cleanup_target(repository, manifest)
+    branch_ref = f"refs/heads/{manifest['branch']}"
+    if any(record.get("branch") == branch_ref for record in worktree_records(repository)):
+        raise LauncherError("the retirement worker branch is checked out elsewhere")
+
+    anchor_ref = retirement_anchor_ref(manifest)
+    receipt_ref = retirement_receipt_ref(manifest)
+    commands = [
+        "start",
+        f"verify {manifest['target_ref']} {target_head}",
+        f"create {receipt_ref} {discard_head}",
+        f"delete {branch_ref} {discard_head}",
+        f"delete {anchor_ref} {discard_head}",
+        "prepare",
+        "commit",
+        "",
+    ]
+    deletion = git(
+        repository.root,
+        "update-ref",
+        "--no-deref",
+        "--stdin",
+        check=False,
+        input_data="\n".join(commands),
+    )
+    remaining = retirement_ref_tuple(repository, manifest)
+    if remaining == pre_transaction:
+        record_retirement_cleanup_failure(
+            repository,
+            manifest,
+            deletion.stderr.strip() or "retirement refs were retained",
+        )
+        return False
+    if remaining != post_transaction:
+        reject_retirement_ref_tuple(
+            repository,
+            manifest,
+            deletion.stderr.strip()
+            or "the retirement ref transaction became partial or tampered",
+        )
+
+    manifest["retirement_ref_transaction_committed_at"] = utc_now()
+    manifest.pop("retirement_cleanup_warning", None)
+    write_manifest(repository, manifest)
+    return remove_retirement_receipt_after_transaction(
+        repository,
+        manifest,
+        discard_head,
+    )
+
+
+def confirm_cleaned_retirement(repository: Repository, manifest: dict) -> None:
+    retirement_parameters(manifest)
+    retirement_cleanup_target(manifest)
+    if (
+        "retirement_ref_transaction_committed_at" not in manifest
+        or "retirement_receipt_removed_at" not in manifest
+        or "retirement_completed_at" not in manifest
+    ):
+        raise LauncherError("the retired run has incomplete durable metadata")
+    worktree = Path(manifest["worktree"])
+    if registered_record(repository, worktree) is not None or path_entry_exists(
+        worktree,
+        label="the retirement worktree path",
+    ):
+        raise LauncherError("the retired run unexpectedly retains a worktree")
+    if retirement_ref_tuple(repository, manifest) != (None, None, None):
+        raise LauncherError("the retired run's ref tuple was recreated or tampered")
+    require_retirement_tmp_absent(repository, manifest)
+
+
+def resume_checkpointed_retirement(
+    repository: Repository,
+    manifest: dict,
+) -> bool:
+    if manifest.get("state") not in RETIREMENT_PENDING_STATES:
+        raise LauncherError("the retained run has no retryable retirement checkpoint")
+    validate_exact_retirement_tmpdir(repository, manifest)
+    reject_conflicting_retirement_lifecycle(manifest)
+    discard_head, _, _ = retirement_parameters(manifest)
+    worktree = Path(manifest["worktree"])
+    record = registered_record(repository, worktree)
+    exists = path_entry_exists(worktree, label="the retirement worktree path")
+
+    if record is not None and exists:
+        if manifest.get("state") != "retirement-pending":
+            raise LauncherError(
+                "the retirement ref-cleanup checkpoint unexpectedly has a worktree"
+            )
+        ensure_retirement_anchor(repository, manifest, discard_head)
+        audit = audit_run(repository, manifest)
+        if not audit.locked:
+            validate_retirement_worktree(
+                repository,
+                manifest,
+                require_locked=False,
+            )
+            relock_retirement_worktree(repository, manifest)
+        remove_checkpointed_retirement_worktree(repository, manifest)
+    elif record is None and not exists:
+        branch, anchor, receipt = retirement_ref_tuple(repository, manifest)
+        if manifest.get("state") == "retirement-pending" and (
+            branch != discard_head
+            or anchor != discard_head
+            or receipt is not None
+        ):
+            raise LauncherError(
+                "the interrupted retirement has no exact worktree-removal checkpoint"
+            )
+        if manifest.get("state") == "retirement-pending":
+            mark_retirement_worktree_removed(repository, manifest)
+    else:
+        raise LauncherError("the checkpointed retirement worktree state is inconsistent")
+
+    return cleanup_retirement_refs(repository, manifest)
+
+
+def retire_run(
+    repository: Repository,
+    run_id: str,
+    discard_head: str,
+    target_contains: str,
+) -> int:
+    if repository.linked_worktree:
+        raise LauncherError("retire managed runs from the primary checkout")
+    if not OBJECT_ID_RE.fullmatch(discard_head):
+        raise LauncherError("--discard-head requires a full lowercase commit object ID")
+    if not OBJECT_ID_RE.fullmatch(target_contains):
+        raise LauncherError("--target-contains requires a full lowercase commit object ID")
+    initialize_state(repository)
+    with file_lock(repo_lock_path(repository)):
+        manifest = load_manifest(repository, run_id)
+        run_lock_stream = acquire_existing_run_lock(repository, run_id)
+        try:
+            if manifest.get("state") == "cleaned" and manifest.get(
+                "retirement_completed_at"
+            ) is not None:
+                require_matching_retirement_arguments(
+                    manifest,
+                    discard_head,
+                    target_contains,
+                )
+                confirm_cleaned_retirement(repository, manifest)
+                diagnostic(f"run {run_id} was already retired and cleaned")
+                return 0
+
+            if manifest.get("state") in RETIREMENT_PENDING_STATES:
+                require_matching_retirement_arguments(
+                    manifest,
+                    discard_head,
+                    target_contains,
+                )
+            elif manifest.get("state") != "quarantined":
+                raise LauncherError("only an exact rewritten quarantine may be retired")
+
+            if manifest.get("state") == "quarantined":
+                exact_commit_argument(repository, discard_head, "--discard-head")
+                exact_commit_argument(repository, target_contains, "--target-contains")
+                checkpoint_rewritten_quarantine_retirement(
+                    repository,
+                    manifest,
+                    discard_head,
+                    target_contains,
+                )
+            retired = resume_checkpointed_retirement(repository, manifest)
+        finally:
+            run_lock_stream.close()
+    if not retired:
+        diagnostic(
+            f"run {run_id} retirement is checkpointed with recoverable refs; retry the exact command"
+        )
+        return 1
+    diagnostic(f"run {run_id} rewritten quarantine was retired and cleaned")
+    return 0
+
+
 def clean_run(repository: Repository, run_id: str) -> int:
     if repository.linked_worktree:
         raise LauncherError("clean managed runs from the primary checkout")
     initialize_state(repository)
     with file_lock(repo_lock_path(repository)):
         manifest = load_manifest(repository, run_id)
-        reconcile_stale_run(repository, manifest)
+        if manifest.get("state") not in RETIREMENT_PENDING_STATES | {"quarantined"}:
+            reconcile_stale_run(repository, manifest)
         if manifest.get("state") == "cleaned":
+            if manifest.get("retirement_completed_at") is not None:
+                confirm_cleaned_retirement(repository, manifest)
             return 0
         run_lock_stream = acquire_existing_run_lock(repository, run_id)
         try:
             state = manifest.get("state")
             worktree = Path(manifest["worktree"])
-            if state in {
+            if state in RETIREMENT_PENDING_STATES:
+                branch_removed = resume_checkpointed_retirement(repository, manifest)
+            elif state == "quarantined":
+                raise LauncherError(
+                    "the quarantined run has no retirement checkpoint; "
+                    "--triptych-clean cannot discard it"
+                )
+            elif state in {
                 "integrated-pending-cleanup",
                 "integration-cleanup-pending",
                 "integration-cleanup-failed",
@@ -5553,6 +6571,7 @@ def launcher_help() -> str:
   scripts/triptych-codex --triptych-final-diff RUN_ID
   scripts/triptych-codex --triptych-integrate RUN_ID
   scripts/triptych-codex --triptych-clean RUN_ID
+  scripts/triptych-codex --triptych-retire RUN_ID --discard-head FULL_OID --target-contains FULL_OID
   scripts/triptych-codex --triptych-help
 
 The default command starts Codex in a unique locked worktree. A successful
@@ -5574,6 +6593,17 @@ its captured target without exposing its private worktree. A later fresh integra
 authorization may fast-forward that exact candidate only while the captured target
 is unchanged. Target movement or unverified state retains manual work without reset,
 rebase, merge, or cleanup.
+Retirement is a destructive, direct-only exception for an explicitly superseded,
+clean rewritten quarantine; it deliberately has no Make wrapper. Both object values
+must be full exact commit IDs. The discard head is the exact worker history authorized
+for deletion. The target-contains value is only an operator-selected reachability checkpoint,
+not evidence of semantic equivalence, incorporation, or supersession.
+Retirement never updates the target. It freshly requires selected-checkpoint containment
+before avoidable worktree removal and checkpoints the exact current containing target for
+the atomic branch, anchor, and receipt transaction. A target race retains those refs so an
+exact retry may use a newer containing descendant; lost containment refuses until restored.
+After the receipt transaction, recovery uses only durable checkpoints and strict phase refs,
+and exact-argument retries remain idempotent after object pruning.
 """
 
 
@@ -5615,6 +6645,17 @@ def main(arguments: Sequence[str] | None = None) -> int:
             if len(argv) != 2:
                 raise LauncherError("--triptych-clean requires exactly one run ID")
             return clean_run(repository, argv[1])
+        if argv and argv[0] == "--triptych-retire":
+            if (
+                len(argv) != 6
+                or argv[2] != "--discard-head"
+                or argv[4] != "--target-contains"
+            ):
+                raise LauncherError(
+                    "--triptych-retire requires exactly RUN_ID --discard-head "
+                    "FULL_OID --target-contains FULL_OID"
+                )
+            return retire_run(repository, argv[1], argv[3], argv[5])
         if argv and argv[0] == "--triptych-reopen":
             if len(argv) < 2:
                 raise LauncherError("--triptych-reopen requires a run ID")

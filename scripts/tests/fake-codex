@@ -209,6 +209,14 @@ def main() -> int:
             stream.write("exec false\n")
     elif action == "reset-parent":
         git(root, "reset", "--hard", "HEAD^")
+    elif action == "rewrite-sibling":
+        git(root, "reset", "--hard", "HEAD^")
+        (root / "rewritten-sibling-result.txt").write_text(
+            "clean rewritten sibling result\n",
+            encoding="utf-8",
+        )
+        git(root, "add", "rewritten-sibling-result.txt")
+        git(root, "commit", "-m", "Replace audited result with sibling history")
     elif action == "remove-dirty-result":
         (root / "agent-result.txt").unlink(missing_ok=True)
     elif action == "recursive":
