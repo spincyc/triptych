@@ -2,7 +2,7 @@
 
 **Publication slug:** `pc-s41-seventeenth-sunday-in-ordinary-time-year-a`
 **Resolved occurrence:** Sunday, 2026-07-26
-**Last resolved:** 2026-07-20
+**Last resolved:** 2026-07-21
 
 ## Identity and authority
 
@@ -24,7 +24,7 @@
 - **Latin Missal basis:** *Missale Romanum*, editio typica tertia. The shared owner collated Week XVII against the accessible 2002 page witness at printed pp. 466–467 and checked the official published 2008 variation list, which identifies Ordinary Time changes only at pp. 457 and 471 and none at pp. 466–467. Direct 2008 reprint page images were not inspected, so typography, layout, and any unlisted page-level difference remain outstanding.
 - **Vernacular Missal:** *Roman Missal, Third Edition, for Use in the Dioceses of the United States of America*, English, implemented 2011-11-27. Official antiphon assignments and Latin oration identities are checked. Full publisher- and printing-specific collation of the protected U.S. English orations against a named altar book remains outstanding.
 - **Lectionary:** *Lectionary for Mass for Use in the Dioceses of the United States of America*, Second Typical Edition, Volume I, English, no. 109. The official USCCB occurrence page fixes the readings and longer/shorter Gospel branch.
-- **As-of date:** 2026-07-20 for calendar, structure, and source records. Later decrees, a competent Ordo, and every applicable proper calendar still govern an actual celebration.
+- **As-of date:** 2026-07-21 for calendar, structure, and source records. Later decrees, a competent Ordo, and every applicable proper calendar still govern an actual celebration.
 
 ## Occurrence resolution
 
@@ -61,4 +61,4 @@ The official occurrence pages were used for identifiers, boundaries, and calenda
 
 This is a working preparation guide, source-audited at the stated layers, for use beside approved liturgical books. It is not a worship aid, annual Ordo, parish record, profile-final guide, or ecclesiastically approved publication. Work-specific rights review, liturgical-text permission, named U.S. altar-book collation, and independent proper-guide review remain outstanding as profile-maturity and rights-analysis limits; the later exact-snapshot exception does not complete any of them.
 
-The maintainer's later instruction “approve all,” effective `2026-07-20T11:30:03-05:00` in `America/Chicago`, supersedes the operational distribution hold only for the immutable 12-page installed PDF with SHA-256 `e23673ede4454f8390d0e733ed4fab70e7f3b8d1afc33ac437452cfff6d374a7`. Under authorization `perpetual-public-repository-2026`, the release manifest records this exact snapshot as `release` with empty gates, subject to `no-project-initiated-promotion`. This exact-byte clearance is not an imprimatur, nihil obstat, ecclesiastical approval, completed independent review or collation, general license, or broader reuse permission; changed bytes require renewed authorization.
+The maintainer's later instruction “approve all,” effective `2026-07-20T11:30:03-05:00` in `America/Chicago`, superseded the operational distribution hold only for the historical 12-page PDF with SHA-256 `e23673ede4454f8390d0e733ed4fab70e7f3b8d1afc33ac437452cfff6d374a7`. The revised and reviewed 11-page installed PDF has SHA-256 `333b6a5047a0c1728b04fc2410cfbca004d5ad6ef0c349103b3b4d932bd8df18`; because those bytes are new, the release manifest places the current snapshot in `review` pending renewed exact-snapshot authorization and the substantive gates above. The historical clearance is not an imprimatur, nihil obstat, ecclesiastical approval, completed independent review or collation, general license, or broader reuse permission.

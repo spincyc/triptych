@@ -4,8 +4,8 @@
   "provider": "gpt",
   "expected_counts": {
     "publications": 115,
-    "release": 110,
-    "review": 0,
+    "release": 109,
+    "review": 1,
     "hold": 5
   },
   "gates": {
@@ -1054,12 +1054,15 @@
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a",
       "catalog": "library/novus-ordo-liturgy.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "e23673ede4454f8390d0e733ed4fab70e7f3b8d1afc33ac437452cfff6d374a7"
-      }
+      "status": "review",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "named-us-altar-book-collation",
+        "independent-proper-guide-review",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a",
