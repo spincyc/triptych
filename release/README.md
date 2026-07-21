@@ -1,24 +1,26 @@
 # Public Release Boundary
 
-The current release manifest contains 60 publications: 58 are marked
-`release`, no item is marked `review`, and the new Saint Thomas Aquinas and
-Saint Robert Bellarmine biographies are marked `hold`. The later 20 July 2026
+The current release manifest contains 112 publications: 110 are marked
+`release`, no item is marked `review`, and the Saint Thomas Aquinas and
+Saint Robert Bellarmine biographies are marked `hold`. The latest 20 July 2026
 supplement in `rights/public-alpha-2026-07-15.md` records the maintainer's
-instruction “approve all” as exact-current-snapshot distribution authorization,
-effective at `2026-07-20T11:30:03-05:00` in `America/Chicago`, under the
-existing represented perpetual worldwide public-repository and GitHub Pages
-authority. It binds the 58 exact installed PDF snapshots and 21
-artifact-affecting site inputs as they stood at that authorization, subject to
-no project-initiated promotion. Changed PDF or site-input bytes require renewed
-authorization.
+instruction to authorize, install, and commit the Ecclesiastical Latin
+curriculum as exact-current-snapshot distribution authorization, effective at
+`2026-07-20T20:23:41-05:00` in `America/Chicago`, under the existing represented
+perpetual worldwide public-repository and GitHub Pages authority. It binds the
+52 curriculum snapshots and the 22 site-input snapshots recorded there, subject
+to no project-initiated promotion. Fifty-seven other installed PDFs still match
+their earlier approvals. The installed Ninth Sunday after Pentecost PDF retains
+its pre-existing mismatch with the earlier approved hash and remains
+fail-closed.
 
 The Aquinas and Bellarmine biographies have no approval, remain excluded from
 both public and preview artifacts, and each awaits a work-specific rights
-review. Their catalog changes make the recorded `LIBRARY.md` and
+review. Their catalog changes leave the recorded `LIBRARY.md` and
 `library/biographies.md` site-source hashes stale. Together with the already
 changed `CONTRIBUTING.md` site input and Ninth Sunday after Pentecost PDF, these
 changes cause the public check to fail closed until renewed exact-snapshot
-authorization.
+authorization. Changed PDF or site-input bytes require renewed authorization.
 
 This is operational exact-byte release clearance, not a judgment that a work
 is editorially or profile-final. It is not ecclesiastical approval, an
@@ -29,6 +31,16 @@ permission. The Ninth Sunday after Pentecost and PC-S41-A retain every such
 substantive limitation in their source audits. Their manifest entries have
 empty release gates, but only the recorded hashes received exact-snapshot
 clearance.
+
+The Ecclesiastical Latin curriculum's two course companions, 46 learning
+modules, and four assessment sequences are installed under an explicit
+exact-snapshot exception. Their donor tree still has no local license;
+work-specific rights analysis, liturgical-text distribution analysis,
+page-image collation, and the final exact-snapshot raster refresh remain
+incomplete. The authorization clears distribution of the bound bytes only. It
+does not complete those acts, establish ownership or an open license, make the
+curriculum profile-final or production-reviewed, or authorize later snapshots
+or extracted donor or liturgical wording.
 
 `public-alpha.json` is the exhaustive publication policy for every discovered source document and installed PDF:
 
@@ -54,7 +66,7 @@ and is not an ecclesiastical interpretation, dispensation, canonical opinion,
 imprimatur, nihil obstat, or approval of the secret or this publication. It
 does not supply independent rights, canonical, specialist, liturgical, or
 ecclesiastical review. Apparition and cult approvals remain object-limited and
-do not approve this publication. The manifest retains this PDF among all 58
+do not approve this publication. The manifest retains this PDF among all 110
 `release` items and binds its exact current hash.
 
 For every fully authorized snapshot the generator will:
@@ -137,11 +149,12 @@ any of them. See the rights record and each publication's linked research
 records for the complete boundaries.
 
 Only when all snapshot and site-source bindings verify may the GitHub Pages
-workflow build and verify `build/public-alpha/site`; at this revision the
-changed Ninth Sunday after Pentecost PDF and the stale `CONTRIBUTING.md`,
-`LIBRARY.md`, and `library/biographies.md` site-source bindings deliberately
-prevent that result. A future verified workflow may upload only that artifact
-through the `github-pages` environment. Pages must never publish the repository root or
+workflow build and verify `build/public-alpha/site`. The current authorization
+binds the 52 curriculum PDFs and records 22 recognized site-source snapshots,
+but the stale `CONTRIBUTING.md`, `LIBRARY.md`, and `library/biographies.md`
+bindings and the unrelated Ninth Sunday snapshot mismatch deliberately prevent
+verification. A future verified workflow may upload only that artifact through
+the `github-pages` environment. Pages must never publish the repository root or
 `build/public-alpha/preview`. This
 record documents the boundary only; it does not authorize a worker to perform a
 push or deployment, which remain separate operations.
@@ -161,7 +174,8 @@ python scripts/public-alpha verify --deployment-target github-pages
 `prepare-public-alpha` is read-only and deliberately works when old snapshot
 hashes are stale or the old source-binding list lacks newly recognized inputs.
 It validates the exhaustive publication and current artifact-input scope, then
-reports the current 60 publication PDF hashes and the hashes of all 21 current
+reports the hashes of the 112 currently installed publication PDFs and all 22
+current
 Markdown, layout, style, license, generator, and dependency-lock inputs as a
 deterministic candidate inventory. The inventory explicitly confers no
 approval, changes no

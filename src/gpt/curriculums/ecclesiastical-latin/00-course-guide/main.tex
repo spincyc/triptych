@@ -1,0 +1,46 @@
+\input{common/preamble}
+\input{curriculums/ecclesiastical-latin/shared/course-format.sty}
+\newcommand{\CourseRoot}{curriculums/ecclesiastical-latin}
+\newcommand{\CompanionID}{EL-GUIDE}
+\newcommand{\CompanionTitle}{Course Guide and Reusable Practice Forms}
+\newcommand{\CompanionBoundary}{It contains the course destination, study method, complete stage and module roadmap, advancement rules, and reusable blank forms. It contains no teaching module, worksheet answer bank, or assessment form.}
+\newcommand{\CompanionPacingNote}{Read the guide before EL-I.1 and return to individual forms only when a module calls for them.}
+\newcommand{\CompanionGenerationMetadata}{\input{curriculums/ecclesiastical-latin/00-course-guide/generation-metadata}}
+\renewcommand{\CoursePacing}{Read before EL-I.1; reuse forms as the module evidence requires}
+
+\hypersetup{
+  pdftitle={Ecclesiastical Latin — Course Guide and Reusable Practice Forms},
+  pdfsubject={Roadmap, study method, advancement rules, and blank records for a modular 1962 Missal reading curriculum}
+}
+
+\begin{document}
+\CourseTitlePage
+  {Course Guide and Reusable Practice Forms}
+  {From entry assumptions to independent reading and composition}
+  {The curriculum roadmap, evidence-based study method, module sequence, and
+   reusable handwritten records. Learning modules and stage assessments are
+   separate printable packets.}
+  {Curriculum guide and blank-form companion}
+
+\pagenumbering{roman}
+\begingroup\small\sloppy\hbadness=10000\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage\pagenumbering{arabic}
+
+\part{Course Handbook}
+\input{\CourseRoot/shared/content/00-using-the-course}
+\input{\CourseRoot/shared/content/shared/roadmap}
+
+\clearpage
+\part{Reusable Practice Forms}
+\chapter{Blank Forms for Repeated Work}
+\input{\CourseRoot/shared/content/practice-forms}
+
+\clearpage
+\part{Scope and Sources}
+\input{\CourseRoot/shared/companion-scope}
+\input{\CourseRoot/shared/content/shared/sources}
+\chapter{Generation Metadata}
+{\footnotesize\CompanionGenerationMetadata}
+\end{document}

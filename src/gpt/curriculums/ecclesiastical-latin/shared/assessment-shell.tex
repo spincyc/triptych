@@ -1,0 +1,56 @@
+\hypersetup{
+  pdftitle={Ecclesiastical Latin — \CompanionID: \CompanionTitle},
+  pdfsubject={A mastery-assessment sequence for the modular Ecclesiastical Latin curriculum}
+}
+
+\renewcommand{\CoursePacing}{A multi-sitting assessment sequence; follow the local delay and aid rules}
+
+\begin{document}
+
+\CourseTitlePage
+  {\CompanionID: \CompanionTitle}
+  {\CompanionSubtitle}
+  {A detachable assessment sequence with learner forms, scoring protocol, and
+   terminal solutions. It is not a two-session learning module and must not be
+   used as a substitute for the prerequisite modules.}
+  {Stage assessment; learner and terminal-key edition}
+
+\pagenumbering{roman}
+\begingroup
+\small
+\sloppy
+\hbadness=10000
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+\pagenumbering{arabic}
+
+\part{Assessment Protocol}
+\chapter{Use, timing, and decision}
+\AssessmentProtocol
+
+\clearpage
+\part{Learner Forms}
+\solutionsfalse
+\SelectAssessments{\AssessmentSelection}
+\BeginExerciseBank{ASSESSMENT}
+\input{\CourseRoot/shared/assessments/all}
+
+\clearpage
+\part{Solutions and Rubrics}
+\input{\CourseRoot/shared/content/80-answer-key-notice}
+\solutionstrue
+\SelectAssessments{\AssessmentSelection}
+\BeginExerciseBank{ASSESSMENT}
+\input{\CourseRoot/shared/assessments/all}
+\solutionsfalse
+
+\clearpage
+\part{Scope and Sources}
+\input{\CourseRoot/shared/companion-scope}
+\input{\CourseRoot/shared/content/shared/sources}
+\chapter{Generation Metadata}
+{\footnotesize\CompanionGenerationMetadata}
+
+\end{document}
