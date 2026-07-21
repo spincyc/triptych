@@ -1,0 +1,65 @@
+\input{common/preamble}
+\input{theology/mariology/shared/prayer-reference-format}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+
+\hypersetup{
+  pdftitle={The Angelus: Incarnation Remembered Through the Day},
+  pdfsubject={A bilingual prayer text and source-first study of the Angelus, its scriptural structure, history, daily rhythm, and current discipline}
+}
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.18\textheight}
+{\Huge\bfseries The Angelus\par}
+\vspace{0.35em}
+{\Large\itshape Incarnation remembered through the day\par}
+\vspace{0.7em}
+{\large A bilingual prayer text and source-first study\par}
+\vfill
+{\small The received prayer comes first; source, rights, and use qualifications appear in the appendices.\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{theology/mariology/angelus/sections/00-prayer}
+\input{theology/mariology/angelus/sections/10-scripture-doctrine}
+\input{theology/mariology/angelus/sections/20-history-reception}
+\input{theology/mariology/angelus/sections/30-practice-discipline}
+\appendix
+\input{theology/mariology/angelus/sections/90-scope-status-qualifications}
+\begingroup
+\setlist[itemize]{leftmargin=1.25em,itemsep=0pt,parsep=0pt,topsep=0.2em}
+\input{theology/mariology/angelus/sections/99-references}
+\endgroup
+\section{Generation Metadata}
+\begingroup
+\footnotesize
+\input{theology/mariology/angelus/generation-metadata}
+\endgroup
+\end{deepstudy}
+
+\end{document}

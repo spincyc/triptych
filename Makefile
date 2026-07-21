@@ -181,6 +181,8 @@ FIRST_NOVENA_ROOT := $(NOVENA_ROOT)/00-ascension-to-pentecost
 CARMEL_NOVENA_ROOT := $(NOVENA_ROOT)/10-our-lady-of-mount-carmel
 FIRST_NOVENA_PRAYERS := $(wildcard $(FIRST_NOVENA_ROOT)/prayers/*.tex)
 CARMEL_NOVENA_PRAYERS := $(wildcard $(CARMEL_NOVENA_ROOT)/prayers/*.tex)
+MARIOLOGY_PRAYER_FORMAT := $(SOURCE_ROOT)/theology/mariology/shared/prayer-reference-format.tex
+ANGELUS_HAIL_MARY := $(CARMEL_NOVENA_ROOT)/prayers/hail-mary.tex
 
 .DEFAULT_GOAL := all
 
@@ -598,6 +600,10 @@ $(BIOGRAPHY_BUILD_PDFS): $(BIOGRAPHY_SHARED)
 $(HISTORICAL_TRANSLATION_BUILD_PDFS): $(HISTORICAL_TRANSLATION_SHARED)
 $(PARISH_HISTORY_BUILD_PDFS): $(PARISH_HISTORY_SHARED)
 $(TRADITIONAL_INSTITUTE_BUILD_PDFS): $(TRADITIONAL_INSTITUTE_SHARED)
+$(BUILD_ROOT)/theology/mariology/angelus.pdf: \
+	$(MARIOLOGY_PRAYER_FORMAT) \
+	$(ANGELUS_HAIL_MARY)
+$(BUILD_ROOT)/theology/mariology/regina-coeli.pdf: $(MARIOLOGY_PRAYER_FORMAT)
 $(BUILD_ROOT)/devotions/novenas/00-ascension-to-pentecost-daily-prayer.pdf: \
 	$(FIRST_NOVENA_PRAYERS) \
 	$(FIRST_NOVENA_ROOT)/generation-metadata.tex

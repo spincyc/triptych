@@ -1,23 +1,32 @@
 # Public Release Boundary
 
-The current release manifest contains 115 publications: all 115 are marked
-`release`, with no item in `review` or on `hold`. The latest 21 July 2026
-supplement in `rights/public-alpha-2026-07-15.md` records the maintainer's
-instruction “approve all docs” as exact-current-snapshot distribution
-authorization, effective at `2026-07-21T11:50:35-05:00` in
+The current release manifest contains 117 publications: 115 are marked
+`release`, no item is marked `review`, and two are marked `hold`. The latest
+21 July 2026 supplement in `rights/public-alpha-2026-07-15.md` records the
+maintainer's instruction “approve all docs” as exact-current-snapshot
+distribution authorization, effective at `2026-07-21T11:50:35-05:00` in
 `America/Chicago`, under the existing represented perpetual worldwide
-public-repository and GitHub Pages authority. It binds all 115 exact current
-installed PDF snapshots, all 22 exact current recognized reader-site inputs,
-and the updated rights record, subject to no project-initiated promotion.
-Every publication has empty manifest gates only as an exact-snapshot exception.
-Changed PDF, rights-record, or site-input bytes require renewed authorization.
+public-repository and GitHub Pages authority. It binds the 115 exact installed
+PDF snapshots and all 22 exact reader-site input snapshots inventoried in that
+record, together with the updated rights record, subject to no
+project-initiated promotion. The later Angelus and Regina Coeli references were
+not part of that exact inventory. They await initial exact-snapshot
+authorization and retain prayer-text-permission gates for their unresolved
+non-US historical-English translation status. Their addition changes
+`LIBRARY.md` and `library/mariology.md` from their recorded exact site-source
+bytes. Every one of the 115 release publications has empty manifest gates only
+as an exact-snapshot exception. The two held works are excluded from both
+public and private-preview artifacts. Changed PDF, rights-record, or site-input
+bytes require renewed authorization.
 
-This exact snapshot is publication-ready only when the focused release tests,
-policy check, deterministic pre/post inventory comparison, public-site build,
-independent site verification, and named GitHub Pages target verification all
-pass. At the committed revision those checks have passed. Any failed check or
-later byte change withdraws that statement and returns the release controls to
-their fail-closed state.
+The 115-publication snapshot described in the 21 July record is
+publication-ready only when the focused release tests, policy check,
+deterministic pre/post inventory comparison, public-site build, independent
+site verification, and named GitHub Pages target verification all pass. At its
+committed revision those checks passed. The later 117-publication snapshot is
+not publication-ready: its two added PDFs are held and its changed catalog
+inputs no longer match the recorded site-source hashes. Release controls must
+remain fail-closed until the required bindings and gates are cleared.
 
 This is operational exact-byte release clearance, not a judgment that a work
 is editorially or profile-final. It is not ecclesiastical approval, an
@@ -150,20 +159,20 @@ records for the complete boundaries.
 
 Only when all snapshot, rights-record, and site-source bindings verify may the
 GitHub Pages workflow build and verify `build/public-alpha/site`. The current
-authorization binds all 115 exact current PDFs and all 22 recognized
-reader-site inputs. At this recorded revision the focused tests, policy check,
-deterministic inventory comparison, site build, independent site verification,
-and GitHub Pages target verification pass; the generated `site` artifact is
-therefore publication-ready for the separately authorized primary-session
-workflow. That workflow may upload only the independently verified artifact
-through the `github-pages` environment. Pages must never publish the
-repository root or `build/public-alpha/preview`.
+authorization binds the 115 exact PDFs and all 22 reader-site input snapshots
+recorded by the 21 July supplement. It does not bind the two new Marian-prayer
+PDFs or the current changed catalog bytes, so release and site verification
+must remain fail-closed and no current site artifact is publication-ready. Both
+held works remain outside public and private-preview artifacts. A future fully
+verified workflow may upload only its independently verified artifact through
+the `github-pages` environment. Pages must never publish the repository root or
+`build/public-alpha/preview`.
 
-The user's “commit; publish” instruction is separate operational authority:
-this worker may create the coherent release-control commit, and the primary
-session may separately audit, integrate, and publish the exact verified result.
-It is not broader substantive clearance and does not authorize this worker to
-push or deploy, future changed bytes, or project-initiated promotion.
+The user's earlier “commit; publish” instruction is separate operational
+authority for only the exact structurally bound 115-publication history
+described in the rights record. It does not authorize this later changed
+snapshot or authorize this worker to push or deploy it, future changed bytes,
+or project-initiated promotion.
 
 Use:
 
@@ -180,7 +189,7 @@ python scripts/public-alpha verify --deployment-target github-pages
 `prepare-public-alpha` is read-only and deliberately works when old snapshot
 hashes are stale or the old source-binding list lacks newly recognized inputs.
 It validates the exhaustive publication and current artifact-input scope, then
-reports the hashes of the 115 currently installed publication PDFs and all 22
+reports the hashes of the 117 currently installed publication PDFs and all 22
 current Markdown, layout, style, license, generator, and dependency-lock inputs
 as a deterministic candidate inventory. The inventory explicitly confers no
 approval, changes no

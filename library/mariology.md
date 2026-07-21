@@ -2,13 +2,15 @@
 
 [Return to the Library](../LIBRARY.md)
 
-All are source-audited working studies without independent specialist or ecclesiastical review. The exact current installed snapshots of all eight are release-cleared by the 21 July 2026 exact-current-snapshot exception. Approval of a title, apparition, cult, shrine, or devotion does not approve these publications.
+All are source-audited working studies without independent specialist or ecclesiastical review. The exact installed snapshots of the eight previously cataloged works are release-cleared by the 21 July 2026 exact-current-snapshot exception. The new Angelus and Regina Coeli references were added after that exact inventory and await initial exact-snapshot authorization and resolution of their non-US historical-English translation basis. Approval of a title, apparition, cult, shrine, or devotion does not approve these publications.
 
 ## Doctrine and Prayer
 
 | Publication | Focus | Supporting records |
 | --- | --- | --- |
+| **[The Angelus: Incarnation Remembered Through the Day](../doc/gpt/theology/mariology/angelus.pdf)** | The received Latin and historical English prayer, its scriptural and doctrinal structure, composite history, daily rhythm, and current discipline. | [Research scope](../src/gpt/theology/mariology/angelus/research/scope.md) · [Source audit](../src/gpt/theology/mariology/angelus/research/source-audit.md) · [Prayer-text audit](../src/gpt/theology/mariology/angelus/research/prayer-text-audit.md) |
 | **[The Marian Dogmas: Mother of God, Ever-Virgin, Immaculate, Assumed](../doc/gpt/theology/mariology/marian-dogmas.pdf)** | The four dogmas and their biblical, patristic, Thomistic, historical, liturgical, and magisterial boundaries. | [Research scope](../src/gpt/theology/mariology/marian-dogmas/research/scope.md) · [Source audit](../src/gpt/theology/mariology/marian-dogmas/research/source-audit.md) · [Definitions inventory](../src/gpt/theology/mariology/marian-dogmas/research/definitions-inventory.md) |
+| **[The Regina Coeli: Easter Joy with the Mother of the Risen Lord](../doc/gpt/theology/mariology/regina-coeli.pdf)** | The received Latin and historical English prayer, medieval antiphon, Easter theology, seasonal practice, and current discipline. | [Research scope](../src/gpt/theology/mariology/regina-coeli/research/scope.md) · [Source audit](../src/gpt/theology/mariology/regina-coeli/research/source-audit.md) · [Prayer-text audit](../src/gpt/theology/mariology/regina-coeli/research/prayer-text-audit.md) |
 | **[The Holy Rosary: The Gospel Contemplated with Mary](../doc/gpt/theology/mariology/rosary.pdf)** | Biblical, doctrinal, patristic, historical, and spiritual exposition of the Rosary's twenty mysteries. | [Research scope](../src/gpt/theology/mariology/rosary/research/scope.md) · [Source audit](../src/gpt/theology/mariology/rosary/research/source-audit.md) |
 
 ## Apparitions and Ecclesial Judgment
