@@ -37,6 +37,13 @@ class MakefileBuildGraphTests(unittest.TestCase):
         (curriculum_shared / "course-format.sty").write_text(
             "% curriculum-wide render dependency\n", encoding="utf-8"
         )
+        curriculum_research = (
+            self.root / "src/gpt/curriculums/ecclesiastical-latin/research"
+        )
+        curriculum_research.mkdir()
+        (curriculum_research / "curriculum-map.md").write_text(
+            "# Fake curriculum map\n", encoding="utf-8"
+        )
         for document in ("demo-a", "demo-b"):
             leaf = self.root / "src/gpt" / document
             (leaf / "research").mkdir(parents=True)
@@ -64,6 +71,26 @@ fi
             encoding="utf-8",
         )
         self.checker.chmod(0o755)
+
+        self.structure_checker = scripts / "check-curriculum-structure"
+        self.structure_checker.write_text(
+            """#!/usr/bin/env python3
+import os
+import sys
+from pathlib import Path
+
+arguments = sys.argv[1:]
+with open(os.environ["MAKE_TEST_STRUCTURE_LOG"], "a", encoding="utf-8") as log:
+    log.write(" ".join(arguments) + "\\n")
+if "--sources-only" not in arguments:
+    for option in ("--toc", "--out", "--pdf"):
+        value = Path(arguments[arguments.index(option) + 1])
+        if not value.is_file():
+            raise SystemExit(f"missing {option}: {value}")
+""",
+            encoding="utf-8",
+        )
+        self.structure_checker.chmod(0o755)
 
         self.pdf_review = scripts / "pdf-review"
         self.pdf_review.write_text(
@@ -93,12 +120,15 @@ for argument do
 done
 mkdir -p "$output_directory"
 printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
+: > "$output_directory/$job_name.toc"
+: > "$output_directory/$job_name.out"
 """,
             encoding="utf-8",
         )
         self.pdflatex.chmod(0o755)
 
         self.check_log = self.root / "checker.log"
+        self.structure_log = self.root / "structure.log"
         self.latex_log = self.root / "latex.log"
         self.flags_log = self.root / "flags.log"
         self.review_log = self.root / "review.log"
@@ -108,6 +138,7 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         self.environment.update(
             {
                 "MAKE_TEST_CHECK_LOG": str(self.check_log),
+                "MAKE_TEST_STRUCTURE_LOG": str(self.structure_log),
                 "MAKE_TEST_LATEX_LOG": str(self.latex_log),
                 "MAKE_TEST_FLAGS_LOG": str(self.flags_log),
                 "MAKE_TEST_REVIEW_LOG": str(self.review_log),
@@ -144,6 +175,7 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
 
     def clear_logs(self) -> None:
         self.check_log.write_text("", encoding="utf-8")
+        self.structure_log.write_text("", encoding="utf-8")
         self.latex_log.write_text("", encoding="utf-8")
         self.flags_log.write_text("", encoding="utf-8")
         self.review_log.write_text("", encoding="utf-8")
@@ -286,7 +318,20 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
             if "curriculums/ecclesiastical-latin" in line
         ]
         self.assertEqual(len(curriculum_jobs), 4)
+        self.assertEqual(len(self.lines(self.structure_log)), 3)
         self.assertFalse(any("demo-a" in line or "demo-b" in line for line in self.lines(self.latex_log)))
+
+        self.clear_logs()
+        self.run_make("check-curriculum-structure")
+        self.assertEqual(self.lines(self.latex_log), [])
+        self.assertEqual(len(self.lines(self.structure_log)), 3)
+        self.assertTrue(
+            all(
+                "--toc" in line and "--out" in line and "--pdf" in line
+                for line in self.lines(self.structure_log)
+                if "--sources-only" not in line
+            )
+        )
 
     def test_install_uses_only_validated_builds_and_refreshes_changed_pdf(self) -> None:
         self.run_make("-j4", "install")

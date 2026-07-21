@@ -137,6 +137,7 @@ BUILD_METADATA_STAMPS := $(addprefix $(BUILD_ROOT)/.metadata/,$(addsuffix .ok,$(
 BUILD_METADATA_VERIFICATIONS := $(addprefix $(BUILD_ROOT)/.metadata/,$(addsuffix .verify,$(DOCUMENTS)))
 DOC_PDFS := $(addprefix $(DOC_ROOT)/,$(addsuffix .pdf,$(DOCUMENTS)))
 METADATA_CHECKER := scripts/check-generation-metadata
+CURRICULUM_STRUCTURE_CHECKER := scripts/check-curriculum-structure
 PDF_REVIEW_TOOL := scripts/pdf-review
 PUBLIC_ALPHA_TOOL := scripts/public-alpha
 CODEX_LAUNCHER := scripts/triptych-codex
@@ -149,6 +150,8 @@ ECCLESIASTICAL_LATIN_SHARED := $(shell find $(ECCLESIASTICAL_LATIN_ROOT)/shared 
 	-name '*.pdf' -o -name '*.eps' \) 2>/dev/null | sort)
 ECCLESIASTICAL_LATIN_BUILD_PDFS := $(filter \
 	$(BUILD_ROOT)/curriculums/ecclesiastical-latin/%,$(BUILD_PDFS))
+ECCLESIASTICAL_LATIN_DOCUMENTS := $(filter \
+	curriculums/ecclesiastical-latin/%,$(DOCUMENTS))
 SACRAMENT_ROOT := $(SOURCE_ROOT)/theology/sacraments
 SACRAMENT_SHARED := \
 	$(SACRAMENT_ROOT)/summary-preamble.tex \
@@ -195,7 +198,9 @@ BOUNDED_PDF_JOB_OPTION = $(if $(strip $(MAKE_PARALLEL_FLAGS)),,\
 
 .PHONY: all pdf review-pdfs review-all-pdfs install list help clean \
 	distclean check-tools check-metadata check-public-alpha prepare-public-alpha \
-	check-pdf-review check-agent-isolation codex public-site public-preview \
+	check-pdf-review check-agent-isolation check-curriculum-sources \
+	check-curriculum-structure \
+	codex public-site public-preview \
 	dependencies-arch install-dependencies-arch \
 	verify-public-site verify-public-preview status reopen clean-run \
 	integrate resolve continue abort final-diff \
@@ -367,6 +372,29 @@ check-agent-isolation:
 check-pdf-review:
 	@$(PYTHON) -m unittest discover -s scripts/tests -p 'test_pdf_review.py' -v
 
+check-curriculum-sources: check-tools
+	@$(PYTHON) $(CURRICULUM_STRUCTURE_CHECKER) \
+		--curriculum-root '$(ECCLESIASTICAL_LATIN_ROOT)' --sources-only
+
+check-curriculum-structure: \
+	check-tools check-curriculum-sources $(ECCLESIASTICAL_LATIN_BUILD_PDFS)
+	@set -u; \
+		status=0; \
+		if [ -z '$(strip $(ECCLESIASTICAL_LATIN_DOCUMENTS))' ]; then \
+			echo 'No Ecclesiastical Latin publications were discovered' >&2; \
+			exit 1; \
+		fi; \
+		for document in $(ECCLESIASTICAL_LATIN_DOCUMENTS); do \
+			$(PYTHON) $(CURRICULUM_STRUCTURE_CHECKER) \
+				--curriculum-root '$(ECCLESIASTICAL_LATIN_ROOT)' \
+				--skip-source-audit \
+				--document "$$document" \
+				--toc "$(BUILD_ROOT)/$$document.toc" \
+				--out "$(BUILD_ROOT)/$$document.out" \
+				--pdf "$(BUILD_ROOT)/$$document.pdf" || status=1; \
+		done; \
+		exit $$status
+
 help:
 	@printf '%s\n' \
 		'make          Build every document with at most $(PDF_JOBS) parallel jobs' \
@@ -389,6 +417,7 @@ help:
 		'Run-ID Make wrappers require a launcher-produced ID; use scripts/triptych-codex directly for external input' \
 		'make check-agent-isolation  Test the transparent Codex launcher' \
 		'make check-pdf-review  Test memory-bounded PDF inspection tooling' \
+		'make check-curriculum-structure  Build and audit every Ecclesiastical Latin publication hierarchy' \
 		'make check-metadata  Validate structured and inherited AI provenance' \
 		'make check-public-alpha  Validate the exhaustive public-release policy' \
 		'make prepare-public-alpha  Print current candidate hashes; grants no approval' \
@@ -437,6 +466,16 @@ $(BUILD_ROOT)/%.pdf: $(SOURCE_ROOT)/%/main.tex $(COMMON_SOURCES) | check-metadat
 	@rm -f -- '$(BUILD_ROOT)/.metadata/$*.ok'
 	cd $(SOURCE_ROOT) && $(PDFLATEX) -interaction=nonstopmode -halt-on-error -jobname=$(notdir $*) -output-directory=$(abspath $(@D)) $*/main.tex
 	cd $(SOURCE_ROOT) && $(PDFLATEX) -interaction=nonstopmode -halt-on-error -jobname=$(notdir $*) -output-directory=$(abspath $(@D)) $*/main.tex
+	@case '$*' in \
+		curriculums/ecclesiastical-latin/*) \
+			$(PYTHON) $(CURRICULUM_STRUCTURE_CHECKER) \
+				--curriculum-root '$(ECCLESIASTICAL_LATIN_ROOT)' \
+				--skip-source-audit \
+				--document '$*' \
+				--toc '$(BUILD_ROOT)/$*.toc' \
+				--out '$(BUILD_ROOT)/$*.out' \
+				--pdf '$@' ;; \
+	esac
 	@set -eu; \
 		pdf='$@'; \
 		stamp='$(BUILD_ROOT)/.metadata/$*.ok'; \
@@ -528,7 +567,9 @@ $(BUILD_ROOT)/.metadata/%.verify: $(BUILD_ROOT)/.metadata/%.ok FORCE_METADATA_VE
 		mv -f -- "$$temporary" "$$stamp"; \
 		trap - 0 1 2 15
 
-$(ECCLESIASTICAL_LATIN_BUILD_PDFS): $(ECCLESIASTICAL_LATIN_SHARED)
+$(ECCLESIASTICAL_LATIN_BUILD_PDFS): \
+	$(ECCLESIASTICAL_LATIN_SHARED) \
+	$(CURRICULUM_STRUCTURE_CHECKER) | check-curriculum-sources
 $(BUILD_ROOT)/theology/sacraments-at-a-glance.pdf: $(SACRAMENT_SHARED) $(SACRAMENT_INITIATION_TABLE)
 $(BUILD_ROOT)/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass.pdf: \
 	$(SACRAMENT_ROOT)/summary-preamble.tex \

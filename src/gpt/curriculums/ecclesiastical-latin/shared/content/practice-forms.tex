@@ -1,5 +1,9 @@
 \newcommand{\FormPage}[2]{%
-  \clearpage
+  % Discard terminal glue before forcing the next form.  If the preceding
+  % form already filled and shipped its page, do not clear the new empty page:
+  % doing so would create a running-head-and-footer-only leaf.
+  \par\removelastskip
+  \ifdim\pagetotal=0pt\else\clearpage\fi
   \section*{#1}
   \phantomsection
   \addcontentsline{toc}{section}{#1}
@@ -316,7 +320,7 @@ Communion & & & \rule{0pt}{0.55in} \\
 Postcommunion & & & \rule{0pt}{0.55in} \\\bottomrule
 \end{tabularx}
 Direct Latin summary and remaining uncertainty:
-\RuleLines
+\RuleLine\RuleLine
 
 \FormPage{Mastery gate record}{Advance by stable evidence and delayed recall, never by finishing every page.}
 Gate/form: \hrulefill\quad Conditions/aids: \hrulefill

@@ -32,17 +32,60 @@
 % The shared Triptych preamble uses the article class.  Add a book-like chapter
 % level without duplicating the shared metadata and final-page rights machinery.
 \titleclass{\chapter}{straight}[\part]
-\newcounter{chapter}[part]
+\newcounter{chapter}
 \renewcommand{\thechapter}{\arabic{chapter}}
 \makeatletter
 \providecommand{\@chapapp}{Chapter}
 \@addtoreset{section}{chapter}
+% Hyperref saw the article hierarchy before titlesec added chapters.  Declare
+% the actual book-like outline levels explicitly so chapters nest under Parts.
+\def\toclevel@part{0}
+\def\toclevel@chapter{1}
+\def\toclevel@section{2}
+\def\toclevel@subsection{3}
+\providecommand*\l@chapter{}
+\renewcommand*\l@chapter{\@dottedtocline{0}{0em}{2.7em}}
+\renewcommand*\l@section{\@dottedtocline{1}{1.5em}{3.2em}}
+% The universal preamble loads hyperref before this document-local titlesec
+% layer.  Install hyperref's own titlesec bridge explicitly so numbered
+% destinations are deferred until titlesec places the printed heading; without
+% it, a heading pushed to the next page can leave its link behind.
+\def\ttl@Hy@steplink#1{%
+  \Hy@MakeCurrentHrefAuto{#1*}%
+  \edef\ttl@Hy@saveanchor{%
+    \noexpand\Hy@raisedlink{%
+      \noexpand\hyper@anchorstart{\@currentHref}%
+      \noexpand\hyper@anchorend
+      \def\noexpand\ttl@Hy@SavedCurrentHref{\@currentHref}%
+      \noexpand\ttl@Hy@PatchSaveWrite
+    }%
+  }%
+}
+\def\ttl@Hy@PatchSaveWrite{%
+  \begingroup
+    \toks@\expandafter{\ttl@savewrite}%
+    \edef\x{\endgroup
+      \def\noexpand\ttl@savewrite{%
+        \let\noexpand\@currentHref\noexpand\ttl@Hy@SavedCurrentHref
+        \the\toks@
+      }%
+    }%
+  \x
+}
+\def\ttl@Hy@refstepcounter#1{%
+  \let\ttl@b\Hy@raisedlink
+  \def\Hy@raisedlink##1{%
+    \def\ttl@Hy@saveanchor{\Hy@raisedlink{##1}}%
+  }%
+  \refstepcounter{#1}%
+  \let\Hy@raisedlink\ttl@b
+}
 \makeatother
 \renewcommand{\thesection}{\thechapter.\arabic{section}}
 \providecommand{\chaptername}{Chapter}
-\makeatletter
-\renewcommand*\l@section{\@dottedtocline{1}{1.5em}{3.2em}}
-\makeatother
+\def\theHchapter{\arabic{chapter}}
+\def\theHsection{\theHchapter.\arabic{section}}
+\def\theHsubsection{\theHsection.\arabic{subsection}}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -60,6 +103,13 @@
 \titlespacing*{\chapter}{0pt}{3.5ex plus 1ex minus 0.2ex}{2.3ex}
 \titleformat{\section}{\sffamily\bfseries\large}{\thesection}{0.6em}{}
 \titleformat{\subsection}{\sffamily\bfseries}{\thesubsection}{0.55em}{}
+% Keep the display heading with a meaningful opening block.  Titlesec's
+% article-class chapter does not provide the book classes' page-break guard,
+% so an explicit reserve prevents a chapter label and title from being left at
+% the foot of a page while the chapter itself begins on the next one.
+\pretocmd{\chapter}{\Needspace{12\baselineskip}}{}{
+  \PackageError{course-format}{Could not install chapter page-break guard}{}
+}
 
 \newcommand{\Latin}[1]{\textit{#1}}
 \newcommand{\English}[1]{``#1''}
@@ -74,9 +124,20 @@
 % renderings able to include every unit deliberately.
 \newcommand{\SelectedCourseUnits}{all}
 \newcommand{\SelectCourseUnits}[1]{\renewcommand{\SelectedCourseUnits}{#1}}
+% Every selected unit begins with its source-owned chapter.  Reserve the
+% chapter display and the first form's own opening guard together; otherwise a
+% first worksheet or solution can move to the next page while its chapter is
+% left behind at the foot of the preceding page.
+\newcommand{\CourseUnitOpeningGuard}{%
+  \ifsolutions
+    \par\Needspace{28\baselineskip}%
+  \else
+    \par\Needspace{40\baselineskip}%
+  \fi
+}
 \NewEnviron{courseunit}[1]{%
-  \IfStrEq{\SelectedCourseUnits}{all}{\BODY}{%
-    \IfSubStr{,\SelectedCourseUnits,}{,#1,}{\BODY}{}%
+  \IfStrEq{\SelectedCourseUnits}{all}{\CourseUnitOpeningGuard\BODY}{%
+    \IfSubStr{,\SelectedCourseUnits,}{,#1,}{\CourseUnitOpeningGuard\BODY}{}%
   }%
 }
 
@@ -198,6 +259,7 @@
 \newcommand{\CourseBankID}{UNSET}
 \newcommand{\CourseWorksheetID}{UNSET}
 \newcommand{\CourseItemNamespace}{UNSET}
+\newif\iffirstcourseworksheet
 \def\theHworksheet{\arabic{exercisebank}.\CourseWorksheetID}
 \def\theHexercise{\arabic{exercisebank}.\CourseItemNamespace.\arabic{exercise}}
 \def\theHpassage{\arabic{exercisebank}.\CourseWorksheetID.\arabic{passage}}
@@ -206,6 +268,7 @@
   \setcounter{worksheet}{0}%
   \setcounter{exercise}{0}%
   \setcounter{passage}{0}%
+  \firstcourseworksheettrue
   \renewcommand{\CourseBankID}{#1}%
 }
 
@@ -221,10 +284,41 @@
   \ifrendercourseworksheet
     \renewcommand{\CourseWorksheetID}{#1}%
     \renewcommand{\CourseItemNamespace}{#1}%
-    \ifsolutions\Needspace{16\baselineskip}\else\clearpage\fi
+    \ifsolutions
+      \iffirstcourseworksheet
+        % The worksheet environment is grouped; retain this bank-level state
+        % after the first rendered form closes.
+        \global\firstcourseworksheetfalse
+        \par\Needspace{16\baselineskip}%
+      \else
+        % Keep each later selected solution together as a navigable key leaf.
+        % A fixed reserve proved fragile because solution lengths vary by
+        % module and could still leave one answer on a tail-only page.
+        \par\removelastskip\clearpage
+      \fi
+    \else
+      \iffirstcourseworksheet
+        \global\firstcourseworksheetfalse
+        % Do not begin the first form beneath a long unit-selection note when
+        % too little room remains for a useful block of exercises.
+        \par\Needspace{28\baselineskip}%
+      \else
+        \par\removelastskip\clearpage
+      \fi
+    \fi
     \refstepcounter{worksheet}%
     \setcounter{passage}{0}%
-    \section*{#3 — #4}%
+    \ifsolutions
+      \section*{Solution #1 — #4}%
+      \phantomsection
+      \addcontentsline{toc}{section}{Solution #1 — #4}%
+      \markboth{Solution #1 — #4}{Solution #1 — #4}%
+    \else
+      \section*{Worksheet #1 — #4}%
+      \phantomsection
+      \addcontentsline{toc}{section}{Worksheet #1 — #4}%
+      \markboth{Worksheet #1 — #4}{Worksheet #1 — #4}%
+    \fi
     \textbf{Worksheet ID:} #1\par
     \textbf{Focus:} #5\par
     \textbf{Use:} #6\par
@@ -232,39 +326,67 @@
     \begin{enumerate}[label=\textbf{\arabic*.},leftmargin=2em]
       \BODY
     \end{enumerate}
-    \ifsolutions\normalsize\else
-      \vfill
-      {\scriptsize\textbf{Definition/error check:} First define uncertain Focus
-      terms from memory; after the work, record each correction's rule.}\par
-      \vspace{0.18in}\hrule
-    \fi
+    \ifsolutions\normalsize\fi
   \fi
 }
 
 \newcommand{\Exercise}[3][0.38in]{%
-  \refstepcounter{exercise}\item #2
-  \ifsolutions
-    \par\textbf{Answer / model:} #3\par\smallskip
-  \else
-    \par\vspace{#1}\hrulefill\par\smallskip
-  \fi
+  \refstepcounter{exercise}\item
+  % Keep a prompt with its response space or keyed answer.  Apart from making
+  % each item reviewable as a unit, this prevents an answer rule from spilling
+  % onto a page that would otherwise contain only running furniture.
+  \begin{minipage}[t]{\linewidth}
+    #2
+    \ifsolutions
+      \par\textbf{Answer / model:} #3\par\smallskip
+    \else
+      \par\vspace{#1}\hrulefill\par\smallskip
+    \fi
+  \end{minipage}%
 }
 
 \newcommand{\ShortExercise}[2]{\Exercise[0.22in]{#1}{#2}}
 \newcommand{\LongExercise}[2]{\Exercise[0.9in]{#1}{#2}}
+% Long learner forms may declare a deliberate midpoint after visual review.
+% Keys remain compact; their independently reviewed pagination is unchanged.
+\newcommand{\LearnerWorksheetBreak}{%
+  \ifsolutions\else\par\removelastskip\clearpage\fi}
+\newcommand{\SolutionWorksheetBreak}{%
+  \ifsolutions\par\removelastskip\clearpage\fi}
 \newcommand{\PassageExercise}[3]{%
-  \refstepcounter{passage}\item \textbf{Text:} \Latin{#1}\par
-  {\scriptsize\textit{Passage ID: \CourseWorksheetID.\arabic{passage};
-  exact source and collation state are recorded in the passage inventory.}}\par
-  #2
-  \ifsolutions\par\textbf{Answer / notes:} #3\par\smallskip
-  \else\par\vspace{1.15in}\hrulefill\par\smallskip\fi
+  \refstepcounter{passage}\item
+  \begin{minipage}[t]{\linewidth}
+    \textbf{Text:} \Latin{#1}\par
+    {\scriptsize\textit{Passage ID: \CourseWorksheetID.\arabic{passage};
+    exact source and collation state are recorded in the passage inventory.}}\par
+    #2
+    \ifsolutions\par\textbf{Answer / notes:} #3\par\smallskip
+    \else\par\vspace{1.15in}\hrulefill\par\smallskip\fi
+  \end{minipage}%
 }
 
 \newcommand{\SelectedAssessments}{all}
-\newcommand{\SelectAssessments}[1]{\renewcommand{\SelectedAssessments}{#1}}
+\newif\iffirstcourseassessment
+\newcommand{\SelectAssessments}[1]{%
+  \renewcommand{\SelectedAssessments}{#1}%
+  \firstcourseassessmenttrue
+}
 \newcommand{\CourseAssessmentID}{UNSET}
 \newif\ifrendercourseassessment
+\newif\ifrenderassessmentgroup
+\newcommand{\CheckAssessmentGroupSelection}[1]{%
+  \IfStrEq{\SelectedAssessments}{all}{\renderassessmentgrouptrue}{%
+    \IfSubStr{,\SelectedAssessments,}{,#1,}{\renderassessmentgrouptrue}{}%
+  }%
+}
+\NewEnviron{assessmentgroup}[2]{%
+  \renderassessmentgroupfalse
+  \forcsvlist{\CheckAssessmentGroupSelection}{#1}%
+  \ifrenderassessmentgroup
+    \chapter{#2}%
+    \BODY
+  \fi
+}
 \NewEnviron{assessment}[4]{%
   \rendercourseassessmentfalse
   \IfStrEq{\SelectedAssessments}{all}{\rendercourseassessmenttrue}{%
@@ -274,7 +396,16 @@
     \renewcommand{\CourseAssessmentID}{#1}%
     \renewcommand{\CourseItemNamespace}{#1}%
     \setcounter{exercise}{0}%
-    \clearpage\chapter*{#2}\addcontentsline{toc}{chapter}{#2}%
+    \iffirstcourseassessment
+      % Assessment environments are grouped just like worksheets.
+      \global\firstcourseassessmentfalse
+    \else
+      \par\removelastskip\clearpage
+    \fi
+    \section*{#2}%
+    \phantomsection
+    \addcontentsline{toc}{section}{#2}%
+    \markboth{#2}{#2}%
     \textbf{Assessment ID:} #1\par
     \textbf{Level:} #3\par
     \textbf{Conditions:} #4\par\medskip
@@ -285,7 +416,19 @@
 }
 
 \newcommand{\AssessmentItem}[3][0.65in]{%
-  \Exercise[#1]{{\scriptsize\textit{Item ID: \CourseAssessmentID.\arabic{exercise}}}\par #2}{#3}}
+  \refstepcounter{exercise}\item
+  % One assessment item is one reviewable unit.  Keeping its identifier,
+  % prompt, response space, and (in a key) answer in an unbreakable block
+  % prevents identifiers and one-word answer tails from crossing pages.
+  \begin{minipage}[t]{\linewidth}
+    {\scriptsize\textit{Item ID: \CourseAssessmentID.\arabic{exercise}}}\par
+    #2
+    \ifsolutions
+      \par\textbf{Answer / model:} #3\par\smallskip
+    \else
+      \par\vspace{#1}\hrulefill\par\smallskip
+    \fi
+  \end{minipage}}
 
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
