@@ -149,9 +149,9 @@ From the primary checkout, inspect and manage ordinary retained runs with:
 
 ```sh
 make status                 # list runs that still need attention
-make status <run-id>        # inspect one exact record, including a cleaned run
-make reopen <run-id>        # start a fresh Codex process in a retained worker
-make clean-run <run-id>     # request launcher-verified safe cleanup
+make status RUN=<run-id>    # inspect one exact record, including a cleaned run
+make reopen RUN=<run-id>    # start a fresh Codex process in a retained worker
+make clean-run RUN=<run-id> # request launcher-verified safe cleanup
 ```
 
 The cleanup command never force-discards a result, and `make clean` remains the build-artifact cleanup target. The Make reopen wrapper accepts only the exact run ID; use the direct `--triptych-reopen` launcher form when supported Codex arguments are needed. Status may reconcile a stale lifecycle record while reporting it.
@@ -159,14 +159,14 @@ The cleanup command never force-discards a result, and `make clean` remains the 
 Integration is launcher-owned and separately authorized. The opaque lifecycle is:
 
 ```sh
-make final-diff <run-id>
-make integrate <run-id>
-make resolve <run-id>    # only after a recorded conflict
-make continue <run-id>
-make abort <run-id>
+make final-diff RUN=<run-id>
+make integrate RUN=<run-id>
+make resolve RUN=<run-id>    # only after a recorded conflict
+make continue RUN=<run-id>
+make abort RUN=<run-id>
 ```
 
-Except for the no-argument status overview, Make lifecycle commands are convenience wrappers for exact launcher-produced run IDs. Use direct launcher forms for untrusted or externally supplied input because GNU Make interprets options and assignments before target validation. A resolver may edit and stage only the recorded conflict; it may not commit or administer the rebase. Only the launcher continues, aborts, lands, and cleans the retained run. Review the complete object-to-object final diff and every affected consumer before authorizing landing. Reconcile PDF conflicts from authoritative sources and rebuild; never choose one binary side. The launcher never pushes or deploys.
+Except for the no-argument status overview, Make lifecycle commands take an exact launcher-produced ID as `RUN=<run-id>`. The former positional spelling remains accepted for local compatibility, but new instructions and automation use `RUN=`. Use direct launcher forms for untrusted or externally supplied input because GNU Make interprets assignments before target validation. A resolver may edit and stage only the recorded conflict; it may not commit or administer the rebase. Only the launcher continues, aborts, lands, and cleans the retained run. Review the complete object-to-object final diff and every affected consumer before authorizing landing. Reconcile PDF conflicts from authoritative sources and rebuild; never choose one binary side. The launcher never pushes or deploys.
 
 ### Exceptional rewritten-quarantine retirement
 
@@ -180,7 +180,7 @@ There is deliberately no Make wrapper. Both object arguments must be full, exact
 
 Before removing the authenticated worker checkout, the launcher resolves and verifies the retirement arguments, terminal and observed heads, base ancestry, selected containment checkpoint, and exact initial target once, then durably records that eligibility proof and anchors the discarded head under a private per-run ref. Retries do not repeat that initial history proof. Before every still-avoidable worktree removal, the launcher freshly resolves the recorded target and requires it to contain the selected checkpoint. While the only valid pre-transaction tuple remains branch and anchor at the discarded head with the receipt absent, it checks containment again, durably updates `retirement_cleanup_target_head` to that exact current target, and atomically verifies that ref while creating the receipt and exact-deleting the branch and anchor. The only valid post-transaction tuple is branch and anchor absent with the receipt at the discarded head. Every other tuple fails closed.
 
-Only after observing the exact post-transaction tuple does the launcher durably record the transaction. It then deletes the receipt with an exact-old-object check, observes its absence, durably records that removal, and finalizes cleaned metadata. A target race leaves the pre-transaction refs intact; an exact retry may checkpoint a newer target descendant that still contains the selected checkpoint. Loss of containment fails closed without deleting those refs and succeeds only after containment is restored. Once the receipt transaction has committed, recovery uses only durable fields and strict phase refs without resolving the initial, discard, final, base, selected-checkpoint, or target objects, so garbage collection may already have pruned them. Conflicting lifecycle state, a partial deletion, an active worker, a changed checkout, or a tampered tuple also fails closed. Repeating the command with the exact checkpointed argument text is idempotent; changed arguments are rejected. A completed retirement uses the ordinary cleaned state, so the overview omits it; its durable record remains addressable by exact run ID with `make status <run-id>`. The compact status output does not print the full retirement audit, which remains in the durable manifest. `make clean-run <run-id>` may resume a retirement only after the direct command has checkpointed it and must continue to reject an untouched quarantine.
+Only after observing the exact post-transaction tuple does the launcher durably record the transaction. It then deletes the receipt with an exact-old-object check, observes its absence, durably records that removal, and finalizes cleaned metadata. A target race leaves the pre-transaction refs intact; an exact retry may checkpoint a newer target descendant that still contains the selected checkpoint. Loss of containment fails closed without deleting those refs and succeeds only after containment is restored. Once the receipt transaction has committed, recovery uses only durable fields and strict phase refs without resolving the initial, discard, final, base, selected-checkpoint, or target objects, so garbage collection may already have pruned them. Conflicting lifecycle state, a partial deletion, an active worker, a changed checkout, or a tampered tuple also fails closed. Repeating the command with the exact checkpointed argument text is idempotent; changed arguments are rejected. A completed retirement uses the ordinary cleaned state, so the overview omits it; its durable record remains addressable by exact run ID with `make status RUN=<run-id>`. The compact status output does not print the full retirement audit, which remains in the durable manifest. `make clean-run RUN=<run-id>` may resume a retirement only after the direct command has checkpointed it and must continue to reject an untouched quarantine.
 
 ## Adding or moving a publication
 
