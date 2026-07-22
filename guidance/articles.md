@@ -8,12 +8,13 @@ profile only to the claims in its field.
 
 ## Governing priorities
 
-1. State the question or thesis and identify whether faith, theology, canon law,
-   or a deliberate combination governs the argument.
+1. Make the governing question or claim identifiable from the argument and scope
+   record, without requiring an opening thesis statement, and identify whether
+   faith, theology, canon law, or a deliberate combination governs the argument.
 2. Distinguish received authority, historical evidence, interpretation, and
    project synthesis at every consequential claim.
-3. Begin the body with the question and argument; do not inherit another genre's
-   inventory or section template.
+3. Begin the body with substantive argumentative pressure in the work's natural
+   epistemic order; do not inherit another genre's inventory or section template.
 4. Verify mutable law and discipline against the competent current sources.
 5. Consolidate work-wide scope, dates, jurisdiction, method, and qualifications
    in terminal apparatus without moving claim-local limits away from their claims.
@@ -25,6 +26,28 @@ comparative inventory that prose cannot audit reliably.
 In mixed work, theological reasons do not create juridic obligations, legal
 permission does not settle theology or prudence, and historical practice does
 not establish present law.
+
+## Voice and argumentative movement
+
+An article may let its governing claim emerge progressively when stating it at
+the outset would preempt the inquiry. Preserve epistemic order: do not name a
+cause, category, or conclusion before the relevant argument or received source
+has warranted it, and do not present a revealed claim as though it were the
+result of a philosophical ascent.
+
+Openings and section seams should derive their force from a real tension in the
+subject, evidence, or argument. Do not manufacture suspense with doctrinally
+foreclosed questions, assign a reaction or simplistic objection to the reader,
+announce what the next passage will prove, or substitute generic uplift for
+intellectual stakes. Retain a question when it is genuinely live at that point;
+otherwise state the pressure directly and let the next claim answer it.
+
+A conversational article addresses the reader at equal altitude. Concrete
+examples, images, and changes of pace should perform analytical work rather than
+simulate intimacy or reduce a serious position to a teaching prompt. Each
+section should begin and end with enough argumentative consequence to sustain
+the reader's attention without repeating the title or previewing the next
+heading.
 
 ## Faith and theology
 
