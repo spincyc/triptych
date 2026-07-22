@@ -1,0 +1,446 @@
+% Shared renderers for the cumulative vocabulary and grammar-memory system.
+% This is the public entry point: it loads each authoritative registry once.
+\ifcsdef{memory@renderers@loaded}{\endinput}{}
+\csdef{memory@renderers@loaded}{1}
+
+\input{\CourseRoot/shared/memory/lexemes}
+\input{\CourseRoot/shared/memory/grammar-facts}
+\input{\CourseRoot/shared/memory/sets}
+
+\makeatletter
+
+\newif\ifmemorysolutions
+\newif\iffirstmemorysheet
+
+\newcommand{\memory@usesequence}[3]{%
+  % Alignment cells are groups, so the callback must survive the first `&`.
+  % Put the assignment in noalign material: an empty sequence must not begin an
+  % otherwise unclosed alignment row before the following booktabs rule.
+  \noalign{\gdef\MemorySequenceItem##1{#3{##1}}}%
+  \csuse{memory@set@#1@#2sequence}%
+}
+
+\newcommand{\memory@sheetstart}[3]{%
+  \iffirstmemorysheet
+    \firstmemorysheetfalse
+  \else
+    \clearpage
+  \fi
+  \section{#1 --- #2}
+  \textit{#3}\par\medskip
+}
+
+\newcommand{\memory@blankcell}{%
+  \rule{0pt}{2.2\baselineskip}\hrulefill}
+
+\newcommand{\memory@twolines}{%
+  \par\medskip\hrulefill\par\vspace{1.1\baselineskip}\hrulefill}
+
+\newcommand{\memory@fourlines}{%
+  \memory@twolines\par\vspace{1.1\baselineskip}\hrulefill
+  \par\vspace{1.1\baselineskip}\hrulefill}
+
+\newcommand{\memory@studyrow}[1]{%
+  \texttt{#1} & \Latin{\MemoryLexemeField{#1}{citation}} &
+  \MemoryLexemeField{#1}{sense} &
+  \MemoryLexemeField{#1}{morphology} &
+  \MemoryLexemeField{#1}{usage}\par
+    \scriptsize\textit{Work:} \MemoryLexemeField{#1}{expectation};
+    \textit{pedagogical strand:} \MemoryLexemeField{#1}{strand}.
+    \textit{Source state:} \MemoryLexemeSourceState.\\[0.45em]
+}
+
+\newcommand{\memory@compactnewrow}[1]{%
+  \texttt{#1} & \Latin{\MemoryLexemeField{#1}{citation}} &
+  \MemoryLexemeField{#1}{sense} &
+  \MemoryLexemeField{#1}{morphology}; \MemoryLexemeField{#1}{usage}\\
+}
+
+\newcommand{\memory@latinsenserow}[1]{%
+  \memory@event & \texttt{#1} &
+  \Latin{\MemoryLexemeField{#1}{citation}} &
+  \ifmemorysolutions
+    \MemoryLexemeField{#1}{sense}%
+  \else
+    \memory@blankcell
+  \fi\\
+}
+
+\newcommand{\memory@senselatinrow}[1]{%
+  \memory@event & \texttt{#1} &
+  \MemoryLexemeField{#1}{sense} &
+  \ifmemorysolutions
+    \Latin{\MemoryLexemeField{#1}{citation}}%
+  \else
+    \memory@blankcell
+  \fi\\
+}
+
+\newcommand{\memory@morphologyrow}[1]{%
+  \texttt{#1} & \Latin{\MemoryLexemeField{#1}{citation}} &
+  \ifmemorysolutions
+    \MemoryLexemeField{#1}{morphology}%
+  \else
+    \memory@blankcell
+  \fi\\
+}
+
+\newcommand{\memory@usagerow}[1]{%
+  \texttt{#1} & \Latin{\MemoryLexemeField{#1}{citation}} &
+  \ifmemorysolutions
+    \MemoryLexemeField{#1}{usage}%
+  \else
+    \memory@blankcell
+  \fi\\
+}
+
+\newcommand{\memory@grammarrow}[1]{%
+  \texttt{#1} &
+  \textbf{\MemoryGrammarField{#1}{title}}\par
+  \scriptsize\textit{\MemoryGrammarField{#1}{family}} &
+  \MemoryGrammarField{#1}{prompt} &
+  \ifmemorysolutions
+    \MemoryGrammarField{#1}{answer}%
+  \else
+    \memory@blankcell
+  \fi\\[0.45em]
+}
+
+\newcommand{\memory@eventrows}[3]{%
+  \noalign{\gdef\memory@event{#2}}%
+  \memory@usesequence{#1}{#3}{\memory@latinsenserow}%
+}
+
+\newcommand{\memory@reverseeventrows}[3]{%
+  \noalign{\gdef\memory@event{#2}}%
+  \memory@usesequence{#1}{#3}{\memory@senselatinrow}%
+}
+
+\newcommand{\MemoryNewStudySheet}[1]{%
+  \memory@sheetstart{#1-S}{New-lexeme study sheet}{%
+    Copy each complete entry, then cover the table and reconstruct citation
+    form, project gloss, morphology, and principal usage.  The strand is a
+    teaching allocation, not a claim that this lexeme has been checked in a
+    named author.}%
+  \begingroup\footnotesize
+  \begin{xltabular}{\linewidth}{@{}P{0.48in}P{1.25in}P{1.0in}P{1.6in}Y@{}}
+    \toprule
+    \textbf{ID} & \textbf{Citation form} & \textbf{Project gloss} &
+    \textbf{Morphology} & \textbf{Usage / government}\\
+    \midrule
+    \endhead
+    \memory@usesequence{#1}{new}{\memory@studyrow}
+    \bottomrule
+  \end{xltabular}
+  \endgroup
+}
+
+\newcommand{\MemoryLatinToEnglishSheet}[1]{%
+  \memory@sheetstart{#1-L2E}{Latin-to-sense retrieval}{%
+    Supply the principal project gloss from memory, then add another sense
+    only if the packet's reading gives evidence for it.  Event labels mark
+    first encounter (N), one-packet return (R1), two-packet return (R2),
+    five-packet return (R5), and broad stage return (S).}%
+  \begingroup\small
+  \begin{xltabular}{\linewidth}{@{}P{0.43in}P{0.48in}P{2.00in}Y@{}}
+    \toprule
+    \textbf{Event} & \textbf{ID} & \textbf{Latin} & \textbf{Sense}\\
+    \midrule
+    \endhead
+    \memory@eventrows{#1}{N}{new}
+    \memory@eventrows{#1}{R1}{rone}
+    \memory@eventrows{#1}{R2}{rtwo}
+    \memory@eventrows{#1}{R5}{rfive}
+    \memory@eventrows{#1}{S}{stage}
+    \bottomrule
+  \end{xltabular}
+  \endgroup
+}
+
+\newcommand{\MemoryEnglishToLatinSheet}[1]{%
+  \memory@sheetstart{#1-E2L}{Sense-to-Latin retrieval}{%
+    Reconstruct the complete citation form, not merely a convenient printed
+    form.  New items return here immediately; the longest-gap and stage items
+    demand a second direction of recall.}%
+  \begingroup\small
+  \begin{xltabular}{\linewidth}{@{}P{0.43in}P{0.48in}P{2.10in}Y@{}}
+    \toprule
+    \textbf{Event} & \textbf{ID} & \textbf{Project gloss} &
+    \textbf{Citation form}\\
+    \midrule
+    \endhead
+    \memory@reverseeventrows{#1}{N}{new}
+    \memory@reverseeventrows{#1}{R5}{rfive}
+    \memory@reverseeventrows{#1}{S}{stage}
+    \bottomrule
+  \end{xltabular}
+  \endgroup
+}
+
+\newcommand{\MemoryMorphologySheet}[1]{%
+  \memory@sheetstart{#1-MORPH}{Morphology retrieval}{%
+    Supply the dictionary information that permits an unfamiliar printed form
+    to be parsed: declension and gender, adjective pattern, principal parts,
+    conjugation, or indeclinable class as appropriate.}%
+  \begingroup\small
+  \begin{xltabular}{\linewidth}{@{}P{0.48in}P{2.1in}Y@{}}
+    \toprule
+    \textbf{ID} & \textbf{Citation form} & \textbf{Morphological facts}\\
+    \midrule
+    \endhead
+    \memory@usesequence{#1}{new}{\memory@morphologyrow}
+    \memory@usesequence{#1}{rtwo}{\memory@morphologyrow}
+    \bottomrule
+  \end{xltabular}
+  \endgroup
+}
+
+\newcommand{\MemoryUsageSheet}[1]{%
+  \memory@sheetstart{#1-GOV}{Usage and government retrieval}{%
+    State the principal construction, governed case, complement pattern, or
+    lexical warning.  Then write one short project sentence that exhibits it.}%
+  \begingroup\small
+  \begin{xltabular}{\linewidth}{@{}P{0.48in}P{2.1in}Y@{}}
+    \toprule
+    \textbf{ID} & \textbf{Citation form} & \textbf{Usage / government}\\
+    \midrule
+    \endhead
+    \memory@usesequence{#1}{new}{\memory@usagerow}
+    \memory@usesequence{#1}{rone}{\memory@usagerow}
+    \bottomrule
+  \end{xltabular}
+  \endgroup
+  \ifmemorysolutions\else
+    \textbf{One checked sentence:}\memory@twolines
+  \fi
+}
+
+\newcommand{\MemoryGrammarSheet}[1]{%
+  \memory@sheetstart{#1-GRAM}{Grammar-fact retrieval}{%
+    Answer in complete grammatical language and give a Latin example where
+    the prompt permits one.  Compare the model only after a fresh attempt.}%
+  \begingroup\footnotesize
+  \begin{xltabular}{\linewidth}{@{}P{0.48in}P{1.65in}P{2.3in}Y@{}}
+    \toprule
+    \textbf{ID} & \textbf{Fact} & \textbf{Prompt} & \textbf{Response}\\
+    \midrule
+    \endhead
+    \memory@usesequence{#1}{grammar}{\memory@grammarrow}
+    \bottomrule
+  \end{xltabular}
+  \endgroup
+}
+
+\newcommand{\MemoryReconstructionSheet}[1]{%
+  \memory@sheetstart{#1-RECON}{Sentence reconstruction}{%
+    Reconstruct before consulting any model.  Account for every supplied form,
+    then annotate agreement, government, and clause structure.}%
+  \textbf{Prompt.} \MemorySetField{#1}{reconstruction}
+  \ifmemorysolutions
+    \par\medskip\textbf{Model and points to check.}
+    \MemorySetField{#1}{reconstructionmodel}
+  \else
+    \memory@fourlines
+    \par\medskip\textbf{Morphology and syntax notes:}\memory@fourlines
+  \fi
+}
+
+\newcommand{\MemoryCompositionSheet}[1]{%
+  \memory@sheetstart{#1-COMP}{Cumulative composition}{%
+    Plan the propositions first; draft, check every form and construction,
+    revise, and only then compare the model.  The model is one defensible
+    project composition, not a sentence to imitate mechanically.}%
+  \textbf{Prompt.} \MemorySetField{#1}{composition}
+  \ifmemorysolutions
+    \par\medskip\textbf{Model and points to check.}
+    \MemorySetField{#1}{compositionmodel}
+  \else
+    \par\medskip\textbf{Proposition outline:}\memory@twolines
+    \par\medskip\textbf{Draft and revision:}\memory@fourlines
+    \par\vspace{1.1\baselineskip}\hrulefill
+    \par\vspace{1.1\baselineskip}\hrulefill
+  \fi
+}
+
+\newcommand{\memory@packetheading}[2]{%
+  \clearpage
+  \chapter{#1: \MemorySetField{#1}{title} --- #2}
+  \textbf{Packet memory key:} #1.  Work by study event, not by a calendar.
+  A dependable return means that citation forms, core senses, morphological
+  facts, constructions, and the packet's grammar explanations can be produced
+  on fresh material without first looking at the model.
+  \firstmemorysheettrue
+}
+
+\newcommand{\RenderMemoryWorkbookLearnerPacket}[1]{%
+  \memorysolutionsfalse
+  \memory@packetheading{#1}{practice sheets}
+  \MemoryNewStudySheet{#1}
+  \MemoryLatinToEnglishSheet{#1}
+  \MemoryEnglishToLatinSheet{#1}
+  \MemoryMorphologySheet{#1}
+  \MemoryUsageSheet{#1}
+  \MemoryGrammarSheet{#1}
+  \MemoryReconstructionSheet{#1}
+  \MemoryCompositionSheet{#1}
+  \BeforeContinuing{Return to this packet's words and facts until their recall
+    is reasonably dependable in both isolated prompts and fresh connected
+    Latin; retain uncertain entries in the next packet's personal return list.}%
+}
+
+\newcommand{\RenderMemoryWorkbookSolutionPacket}[1]{%
+  \memorysolutionstrue
+  \memory@packetheading{#1}{models and checks}
+  \MemoryNewStudySheet{#1}
+  \MemoryLatinToEnglishSheet{#1}
+  \MemoryEnglishToLatinSheet{#1}
+  \MemoryMorphologySheet{#1}
+  \MemoryUsageSheet{#1}
+  \MemoryGrammarSheet{#1}
+  \MemoryReconstructionSheet{#1}
+  \MemoryCompositionSheet{#1}
+}
+
+\newcommand{\RenderModuleMemoryLearner}[1]{%
+  \memorysolutionsfalse
+  \section{New lexemes}
+  The entries below are sufficient for the packet's controlled memory work.
+  English senses are project glosses; pedagogical strands do not assert a
+  checked occurrence in a named corpus.
+  \begingroup\footnotesize
+  \begin{xltabular}{\linewidth}{@{}P{0.48in}P{1.35in}P{1.15in}Y@{}}
+    \toprule
+    \textbf{ID} & \textbf{Citation form} & \textbf{Project gloss} &
+    \textbf{Morphology and use}\\
+    \midrule
+    \endhead
+    \memory@usesequence{#1}{new}{\memory@compactnewrow}
+    \bottomrule
+  \end{xltabular}
+  \endgroup
+
+  \section{Cumulative retrieval}
+  Supply the gloss from memory.  N is the new set; R1, R2, R5, and S are
+  scheduled returns at widening intervals.
+  \begingroup\small
+  \begin{xltabular}{\linewidth}{@{}P{0.43in}P{0.48in}P{2.05in}Y@{}}
+    \toprule
+    \textbf{Event} & \textbf{ID} & \textbf{Latin} & \textbf{Sense}\\
+    \midrule
+    \endhead
+    \memory@eventrows{#1}{N}{new}
+    \memory@eventrows{#1}{R1}{rone}
+    \memory@eventrows{#1}{R2}{rtwo}
+    \memory@eventrows{#1}{R5}{rfive}
+    \memory@eventrows{#1}{S}{stage}
+    \bottomrule
+  \end{xltabular}
+  \endgroup
+
+  \section{Grammar retrieval}
+  \begingroup\footnotesize
+  \begin{xltabular}{\linewidth}{@{}P{0.48in}P{1.7in}P{2.4in}Y@{}}
+    \toprule
+    \textbf{ID} & \textbf{Fact} & \textbf{Prompt} & \textbf{Response}\\
+    \midrule
+    \endhead
+    \memory@usesequence{#1}{grammar}{\memory@grammarrow}
+    \bottomrule
+  \end{xltabular}
+  \endgroup
+
+  % Keep the final prompts and their ruled response space as one useful leaf.
+  % Without this reserve, a nearly full grammar table can leave only the last
+  % three writing rules on a body page between Parts II and III.
+  \par\Needspace{24\baselineskip}%
+  \section{Reconstruct and compose}
+  \textbf{Reconstruction.} \MemorySetField{#1}{reconstruction}
+  \memory@twolines
+  \par\medskip\textbf{Composition.} \MemorySetField{#1}{composition}
+  \memory@fourlines
+}
+
+\newcommand{\RenderModuleMemorySolutions}[1]{%
+  \memorysolutionstrue
+  \section*{Lexeme and retrieval models}
+  \phantomsection
+  \CourseUnnumberedSectionContents{Lexeme and retrieval models}
+  \begingroup\small
+  \begin{xltabular}{\linewidth}{@{}P{0.43in}P{0.48in}P{2.05in}Y@{}}
+    \toprule
+    \textbf{Event} & \textbf{ID} & \textbf{Latin} & \textbf{Project gloss}\\
+    \midrule
+    \endhead
+    \memory@eventrows{#1}{N}{new}
+    \memory@eventrows{#1}{R1}{rone}
+    \memory@eventrows{#1}{R2}{rtwo}
+    \memory@eventrows{#1}{R5}{rfive}
+    \memory@eventrows{#1}{S}{stage}
+    \bottomrule
+  \end{xltabular}
+  \endgroup
+
+  \section*{Grammar models}
+  \phantomsection
+  \CourseUnnumberedSectionContents{Grammar models}
+  \begingroup\footnotesize
+  \begin{xltabular}{\linewidth}{@{}P{0.48in}P{1.7in}P{2.4in}Y@{}}
+    \toprule
+    \textbf{ID} & \textbf{Fact} & \textbf{Prompt} & \textbf{Model}\\
+    \midrule
+    \endhead
+    \memory@usesequence{#1}{grammar}{\memory@grammarrow}
+    \bottomrule
+  \end{xltabular}
+  \endgroup
+
+  \section*{Reconstruction and composition models}
+  \phantomsection
+  \CourseUnnumberedSectionContents{Reconstruction and composition models}
+  \textbf{Reconstruction prompt.} \MemorySetField{#1}{reconstruction}
+
+  \textbf{Model.} \MemorySetField{#1}{reconstructionmodel}
+
+  \textbf{Composition prompt.} \MemorySetField{#1}{composition}
+
+  \textbf{Model.} \MemorySetField{#1}{compositionmodel}
+}
+
+% Complete registry view for EL-REFERENCE.  This macro owns its chapter so the
+% reference companion can replace the legacy hand-maintained core list with a
+% single call and cannot drift from packet memory sheets.
+\newcommand{\memory@referencelexemerow}[1]{%
+  \texttt{#1} & \Latin{\MemoryLexemeField{#1}{citation}} &
+  \MemoryLexemeField{#1}{sense} &
+  \MemoryLexemeField{#1}{morphology} &
+  \MemoryLexemeField{#1}{usage} &
+  \MemoryLexemeField{#1}{strand}; \textit{\MemoryLexemeField{#1}{expectation}}\\[0.3em]
+}
+
+\newcommand{\RenderCompleteMemoryLexicon}{%
+  \chapter{Controlled Reading Lexicon}
+  This cumulative lexicon contains \arabic{MemoryLexemeCount} stable entries
+  used by the packet memory sets.  Citation form, concise project gloss,
+  morphology or principal parts, and the principal construction cue are
+  printed here so assigned packet work does not depend on an outside
+  dictionary.  The strand is a pedagogical allocation, not a claim that an
+  occurrence has been verified in a named author.  Broader dictionaries are
+  appropriate later for extension research, semantic range, and source-specific
+  idiom after an unaided hypothesis has been formed.
+
+  \begingroup\scriptsize
+  \begin{xltabular}{\linewidth}{@{}P{0.43in}P{1.15in}P{0.8in}P{1.25in}P{1.55in}Y@{}}
+    \toprule
+    \textbf{ID} & \textbf{Citation form} & \textbf{Project gloss} &
+    \textbf{Morphology} & \textbf{Usage / government} &
+    \textbf{Strand / expectation}\\
+    \midrule
+    \endhead
+    \noalign{\gdef\MemorySequenceItem##1{\memory@referencelexemerow{##1}}}%
+    \MemoryLexemeIDSequence
+    \bottomrule
+  \end{xltabular}
+  \endgroup
+}
+
+\makeatother

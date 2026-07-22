@@ -20,7 +20,7 @@ and read.
 | **[Traditional Latin Mass (1962 Roman Rite)](library/traditional-latin-mass.md)** | The Ordinary, Mass assembly, and regularly updated proper expositions. |
 | **[Novus Ordo (Postconciliar Roman Rite)](library/novus-ordo-liturgy.md)** | The Order of Mass and proper studies identified by edition, language, territory, cycle, and date. |
 | **[Prayer](library/prayer.md)** | Novenas and condensed daily prayer books. |
-| **[Curriculums](library/curriculums.md)** | Prerequisite-ordered courses, printable learning modules, reference companions, and assessment sequences. |
+| **[Curriculums](library/curriculums.md)** | Self-paced courses, substantial printable packets, memory and reference companions, and cumulative self-reviews. |
 | **[Faith](library/faith.md)** | Doctrine, sacraments, and theological studies. |
 | **[Biographies](library/biographies.md)** | Historical and hagiographic lives, with evidence and later tradition kept distinct. |
 | **[Heresies](library/heresies.md)** | Historical studies of condemned propositions, ecclesial responses, and their aftermaths. |

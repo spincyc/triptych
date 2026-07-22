@@ -2,21 +2,18 @@
 
 ## Boundary, witnesses, and status
 
-This owner-level register covers every `PassageExercise` occurrence, every
-received reading quoted as a worked passage in Volume III, and the
-source-dependent assessment material. A module selects only two worksheet
-variants, but selection does not erase the optional variants or alter their
-source decisions. Explicit stable worksheet and worked-passage IDs are printed
-unchanged in every packet that renders them, in both learner and solution
-passes. Repeated wording retains every occurrence ID even when one source
-decision governs the repetitions.
+This owner-level register covers every inherited `PassageExercise` occurrence,
+every received reading quoted as a worked passage in Volume III, the new
+connected-reader and poetry corpora, and source-dependent cumulative-review
+material. Each packet now renders all four A–D worksheet variants belonging to
+its stable lessons. Explicit worksheet and worked-passage IDs remain unchanged
+between question and answer renderings. Repeated wording retains every
+occurrence ID even when one source decision governs several occurrences.
 
 Uncited morphology drills, controlled transformations, and model compositions
 are instructional Latin rather than received prayer or liturgical text. A row
 marked `P` is expressly project-composed. A row marked `A` is an instructional
 abridgment or adaptation whose received base and material change are stated.
-Dynamic learner-selected assessment texts are marked `D` and cannot receive a
-fixed locus until the learner records the selection.
 
 Verification codes are deliberately fail-closed:
 
@@ -28,16 +25,19 @@ Verification codes are deliberately fail-closed:
   still outstanding;
 - `V-M` / `V-V` — wording, boundary, and material typography have been
   visually collated against the controlling Missal or Hetzenauer page image;
+- `V-R` — a non-Missal received prose or poetry excerpt has been visually
+  checked against its identified edition and page image;
 - `L` — a credible exact locus is identified, but the wording has not yet
   received the required controlling-witness collation;
-- `A`, `P`, and `D` — adapted, project-composed, and dynamic as defined above;
+- `A` and `P` — adapted and project-composed as defined above;
   and
 - `U` — source identity or exact locus remains unresolved.
 
-No row in this integration snapshot is marked visually collated. OCR and
-searchable transcriptions remain finding aids. Consequently this register is
-exhaustive as an occurrence ledger but does **not** yet satisfy the profile's
-pre-installation source gate.
+The new connected-reader excerpts, poetry branch texts, and four complete
+Missal formularies have reached visual verification. Most inherited short
+worksheet and worked-example excerpts remain L, C-M, or C-V and therefore do
+not inherit that stronger state merely because related wording was checked
+elsewhere. OCR and searchable transcriptions remain finding aids.
 
 Running text normally normalizes consonantal *j* to *i*, expands or contracts
 *ae/æ* to the course house form *æ*, and uses pedagogical capitalization and
@@ -51,6 +51,49 @@ relicensed by Triptych; their work-specific distribution basis remains under
 review. The SacredBible.org host represents the 1914 Hetzenauer text and scans
 as public domain. Donor-corpus authorship and licensing remain unresolved as
 recorded in `scope.md` and `source-audit.md`.
+
+## Verified connected-reader register
+
+| Stable source ID | Received object | Edition locator | State |
+|---|---|---|---|
+| CAES-DUPONTET1900 | Caesar, *Bellum Gallicum* 1.1.1 | Du Pontet 1900, printed p. 1 / PDF p. 13 | V-R |
+| CIC-FALCONER1923 | Cicero, *Laelius de amicitia* 6.20 | Falconer 1923, printed p. 130 / PDF p. 89 | V-R |
+| HIER-CSEL54 | Jerome, *Epistula* 22.30.4 | CSEL 54, printed p. 190 / PDF p. 204 | V-R |
+| AUG-CSEL33 | Augustine, *Confessiones* 1.1.1, complete three-sentence opening through *donec requiescat in te*; 10.27.38, complete opening sentence plus the next sentence through *quaerebam*, with editorial ellipsis | CSEL 33, printed pp. 1 and 255 / PDF pp. 46 and 306 | V-R |
+| AMB-KRAB1857 | Ambrose, *De officiis* 1.11.38 | Krabinger 1857, printed p. 44 / PDF p. 61 | V-R |
+| THOM-LEON4 | Thomas Aquinas, *Summa theologiae* I, q. 1, a. 1, corpus opening | Leonine vol. 4, printed p. 6 / PDF p. 24 | V-R |
+| PHAED-POST1919 | Phaedrus, Book 1 Prologue 1–2 and 1.1.1–6 | Postgate 1919, printed p. 1 / PDF p. 35 | V-R |
+| VERG-HEND1891 | Virgil, *Aeneid* 1.1–4 | Henderson 1891, printed p. 27 / PDF p. 31 | V-R |
+| OVID-OWEN1885 | Ovid, *Tristia* 1.1.1–2 | Owen 1885, opening text leaf / PDF p. 70 | V-R |
+| HOR-WICKGAR1912 | Horace, *Carmina* 1.11 | Wickham–Garrod 1912, PDF p. 29 | V-R |
+| VULG-HETZ1914-MT8.23-27 | Clementine Vulgate, Mt. 8:23–27, complete storm narrative from entry into the boat through the witnesses' final question | Hetzenauer 1914, indexed scan p. 0960 | V-V |
+| MR62-CANON-TEIGITUR | complete *Te igitur* prayer sentence through *catholicae et apostolicae fidei cultoribus* | 1962 Missal, Canon Missae, local evidence PDF p. 382, beginning at marginal no. 1088 | V-M |
+| MR62-FORM-ADV1 | complete First Sunday of Advent Proper | 1962 Missal, printed pp. 1–2 | V-M |
+| MR62-FORM-PENT | complete Pentecost Proper and Sequence | 1962 Missal, printed pp. 356–358 | V-M |
+| MR62-FORM-XII-PENT | complete Twelfth Sunday after Pentecost Proper | 1962 Missal, printed pp. 392–393 | V-M |
+| MR62-FORM-XXIII-PENT | complete Twenty-third Sunday after Pentecost Proper | 1962 Missal, printed pp. 416–417 | V-M |
+| MR62-SANC-POLYCARP | St. Polycarp, 26 January, Postcommunion | 1962 Missal, printed p. 457 / local evidence PDF p. 538 | V-M |
+| MR62-COM-MARTYR-BISHOP-1-POST | Common of One Martyr outside Paschal time, I *Pro Martyre Pontifice*, Postcommunion | 1962 Missal, printed Common p. [5] / local evidence PDF p. 813 | V-M |
+
+`authentic-source-ladder.md`, `poetry-branch-map.md`, and
+`edition-manifest.md` provide full bibliographic and normalization records.
+All accompanying English translations, prose orders, decompressions, and
+scansion displays are project work.
+
+P6 and P7 locally reprint exact subsets of this register rather than invoking
+an outside anthology: P6 prints the complete Pentecost Sequence and Virgil
+1.1–4; P7 prints Phaedrus 1.1.1–6, Virgil 1.1–4, Horace 1.11, and the complete
+Sequence. The Sequence wording remains R, while its three-member analytical
+lineation in P6/P7 is N course apparatus; printed accents are omitted and no
+stress or pronunciation is supplied.
+
+M17 locally prints the First Sunday of Advent Secret and Postcommunion from
+`MR62-FORM-ADV1` as its two fresh Temporal selections, then the exact St.
+Polycarp and Common Postcommunions above as its Sanctoral/Common collation.
+M22 locally prints `VULG-HETZ1914-MT8.23-27` before the guided narrative task.
+The Matthew text omits printed accents, regularizes `j/i`, expands the printed
+ligature, and uses course capitalization and display punctuation; no words
+are omitted.
 
 ## Teaching worked-passage register
 
@@ -125,7 +168,7 @@ boundary; adapted or unresolved rows keep their own state.
 | W.IV.2 → IV.6.1 | Mt. 8:8 and the exact *puer meus / anima mea* adaptation into the 1962 Ordinary | L |
 | W.IV.3 → I.16.1 and II.49.1 | Ps. 42:4 and the 1962 Prayers at the Foot | L |
 | W.IV.4 → IV.6.2 | Is. 6:3 compared with the 1962 Sanctus; every altered form is stated in the worked example | L |
-| W.IV.5 → III.31.1 | 1962 Missal, Canon Missæ, deictic series in *Te igitur* | L |
+| W.IV.5 | Exact deictic series *haec dona, haec munera, haec sancta sacrificia illibata* within MR62-CANON-TEIGITUR | V-M |
 | W.IV.6 → IV.16.1 | 1962 Missal, common preface opening | L |
 | W.IV.7 | 1962 Missal, Dominica Pentecostes, Oratio *Deus, qui hodierna die*; used as a composition frame | L |
 
@@ -289,7 +332,7 @@ liturgical location beside each worked reading.
 | III.28.1 | *Hæc dies, quam fecit Dominus* | 1962 Missal, Dominica Resurrectionis, Graduale, Ps. 117:24, 1 | L |
 | III.29.1 | *Vere dignum et iustum est* | 1962 Missal, Præfatio communis and common preface opening | L |
 | III.30.1 | *Quia per incarnati Verbi mysterium* | 1962 Missal, Præfatio de Nativitate | L |
-| III.31.1 | *Te igitur, clementissime Pater* | 1962 Missal, Canon Missæ, *Te igitur* | L |
+| III.31.1 | *Te igitur, clementissime Pater, supplices … illibata* | Abridged from MR62-CANON-TEIGITUR: omits *per Iesum Christum Filium tuum Dominum nostrum* and stops after *illibata* | A |
 | III.31.2 | *Quam oblationem benedictam* | 1962 Missal, Canon Missæ, *Quam oblationem*; contiguous abridgment before *ut nobis* | L |
 | III.32.1 | *Supplices te rogamus, omnipotens Deus* | 1962 Missal, Canon Missæ, *Supplices te rogamus* | L |
 | III.33.1 | *Rorate cæli desuper* | 1962 Missal, Dominica IV Adventus, Introitus, Is. 45:8 | L |
@@ -322,12 +365,29 @@ liturgical location beside each worked reading.
 | IV.16.2 | *Dies iræ, dies illa* | 1962 Missal, Missæ Defunctorum, Sequentia *Dies iræ* | L |
 | IV.20.1 | *Sacerdos, facta genuflexione, accedit ad altare* | Course-composed rubric-style example, explicitly labeled | P |
 | IV.20.2 | *Celebrans, elevata Hostia, eam populo ostendit* | Course-composed rubric-style example, explicitly labeled | P |
+| IV.14 packet source | Complete *Te igitur* prayer sentence through *cultoribus*, MR62-CANON-TEIGITUR | V-M |
 
-## Assessment source register
+## Poetry-branch worksheet readings
 
-Short isolated forms used only to test morphology are governed by the
+| Stable passage ID(s) | Received object or project decision | State |
+|---|---|---|
+| P.2.1 | Phaedrus 1.1.1–2, bounded excerpt from PHAED-POST1919 | V-R |
+| P.26.1 | Phaedrus 1.1.1–3, bounded excerpt from PHAED-POST1919 | V-R |
+| P.4.1; P.26.2 | Phaedrus 1.1.3–4, bounded excerpts from PHAED-POST1919 | V-R |
+| P.6.1 | Virgil, *Aeneid* 1.1 from VERG-HEND1891 | V-R |
+| P.7.1 | Virgil, *Aeneid* 1.2–4 from VERG-HEND1891; source line breaks suppressed but word sequence retained | V-R |
+| P.10.1 | Ovid, *Tristia* 1.1.1–2 from OVID-OWEN1885 | V-R |
+| P.14.1; P.16.1 | bounded excerpts from Horace, *Carmina* 1.11, HOR-WICKGAR1912 | V-R |
+| P.18.1; P.18.2 | bounded selections of the Pentecost Sequence, MR62-FORM-PENT | V-M |
+| P.19.1 | Pentecost Collect, MR62-FORM-PENT | V-M |
+| P.19.2 | Pentecost Postcommunion, MR62-FORM-PENT | V-M |
+| P.15.1; P.24.1 | course-built hymn-style comparison and rhythmic-imitation texts, expressly labeled | P |
+
+## Cumulative self-review source register
+
+Short isolated forms used only to exercise morphology are governed by the
 project-composed-drill boundary above. The following rows account for the
-received connected texts, fixed formularies, and dynamic source tasks.
+received connected texts, fixed formularies, and supplied comparison sets.
 
 | Form / item family | Received object and exact locus | State |
 |---|---|---|
@@ -341,19 +401,19 @@ received connected texts, fixed formularies, and dynamic source tasks.
 | C-B, command/result passage | 1914 Hetzenauer Clementine Vulgate, Mt. 7:7 | L |
 | C-B, preface passage | 1962 Missal, Præfatio de Apostolis, *quos operis tui vicarios eidem contulisti præesse pastores* | L |
 | C-B, petition | 1962 Missal, Ordo Missæ, Pater noster, *ne nos inducas in tentationem* | L |
-| M-A | Complete 1962 Missal formulary, Dominica I Adventus; fixed taught diagnostic | L |
-| M-B | Complete 1962 Missal formulary, Dominica Pentecostes; fixed taught diagnostic | L |
-| M-C | Two learner-selected universal-calendar Masses chosen by the recorded blind method, excluding passages already used by the course | D |
-| A-A | One learner-selected unfamiliar universal-calendar proper, with recorded base page image and comparison witnesses | D |
-| A-B | A second learner-selected unfamiliar proper from a different season and temporal/sanctoral category | D |
+| M-A | MR62-FORM-ADV1, complete First Sunday of Advent formulary printed in the companion | V-M |
+| M-B | MR62-FORM-PENT, complete Pentecost formulary printed in the companion | V-M |
+| M-C | MR62-FORM-XII-PENT and MR62-FORM-XXIII-PENT, both complete and printed in the companion | V-M |
+| A-A | MR62-FORM-XII-PENT; course-built Comparison Set A; M19–M22 supplied source anthology | V-M / P / V-R as identified |
+| A-B | MR62-FORM-XXIII-PENT; course-built Comparison Set B; M19–M22 supplied source anthology | V-M / P / V-R as identified |
 
 ## Outstanding source work
 
-Before this publication can be called profile-final or installed, a reviewer
-must visually collate every received `L`, `C-M`, and `C-V` row against the
-controlling page image, replace those states with `V-M`, `V-V`, or an explicitly
-unresolved result, confirm that repeated occurrences introduce no silent
-wording change, and record page-image locators. The M-C and advanced dynamic rows remain protocols,
-not pre-collatable fixed quotations. The mechanically pluralized martyr formula
+Before this publication can be called profile-final, a reviewer must visually
+collate every received `L`, `C-M`, and `C-V` row against the controlling page
+image, replace those states with `V-M`, `V-V`, or an explicitly unresolved
+result, confirm that repeated occurrences introduce no silent wording change,
+and record page-image locators. Installation does not complete that collation.
+The mechanically pluralized martyr formula
 in III.10 is a transformation exercise, not a received plural formulary; its
 key already says that exact Missal verification remains necessary.

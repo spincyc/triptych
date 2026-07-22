@@ -1,231 +1,334 @@
 # Ecclesiastical Latin Curriculum Profile
 
-This profile governs a self-paced language curriculum whose controlling reader
-is the 1962 *Missale Romanum*, including its course guide, independently
-printable learning modules, reference grammar, selected and extension
-worksheets, assessment sequences, reusable forms, and answer keys. The
-curriculum has one non-publishable course owner with shared sources and audit
-records; each module or companion is a separate publication that imports those
-sources. It does not govern a proper guide, an exposition of the Ordinary,
-ceremonial instruction, a history of Latin, a critical edition, or a general
-classical-Latin course. Universal evidence, rights, metadata, review, and
-publication rules remain in `guidance/editorial.md`; repository paths and build
-rules remain in `guidance/repository.md`.
+This profile governs a self-paced Latin curriculum whose principal destination
+is independent reading of the 1962 *Missale Romanum*. The Missal controls the
+course's final specialization, but it is not the whole instructional corpus.
+The course forms broad reading ability through project-composed ordinary Latin
+and progressively more demanding classical, biblical, patristic,
+ecclesiastical, theological, canonical, liturgical, and poetic texts. It also
+builds composition from the first transformations through sustained advanced
+prose. Pronunciation remains outside the present course.
+
+The curriculum has one non-publishable course owner with shared teaching,
+memory, reading, exercise, answer, and audit sources. Substantial modules and
+course companions import those sources without duplicating them. This profile
+does not govern a proper guide, an exposition of the Ordinary, ceremonial
+instruction, a history of Latin, or a critical edition. Universal evidence,
+rights, metadata, review, and publication rules remain in
+`guidance/editorial.md`; repository paths and build rules remain in
+`guidance/repository.md`.
 
 The course is a study aid for acquiring language competence. It is not an
-official liturgical book, an approved seminary curriculum, a substitute for the
-identified editions, or evidence that a learner is qualified to make
-liturgical, textual, theological, or canonical judgments.
+official liturgical book, an approved seminary curriculum, a credential, a
+substitute for an identified edition, or evidence that grammatical knowledge
+alone qualifies anyone to make liturgical, textual, theological, or canonical
+judgments.
 
 ## Governing priorities
 
-1. Make the entry assumptions, progression, exercises, gates, and exit standard
-   agree as one observable curriculum.
-2. Distinguish received Latin, normalized transcription, source-grounded
-   explanation, project-composed practice Latin, project translation, and an
-   unverified lead wherever a reader could confuse them.
-3. Check every paradigm, grammatical rule, parse, translation, closed answer,
-   and source attribution; do not let a generally sound key conceal a wrong or
-   ambiguous item.
-4. Teach direct reading of the identified corpus before historical,
-   rhetorical, textual, or compositional extension.
-5. Keep student work usable in print while isolating solutions and terminal
-   editorial apparatus from the learning sequence.
-6. Put course-wide orientation in one required starter guide, then make each
-   learning module an independently printable local sequence designed for two
-   focused study sessions, without confusing elapsed time or page completion
-   with mastery.
+1. Make the entry assumptions, teaching sequence, repeated memory work,
+   readings, composition, qualitative readiness descriptions, and final
+   abilities agree as one observable curriculum.
+2. Supply within the course bundle every explanation, paradigm, vocabulary
+   set, ordinary reading, exercise, model, review form, and answer needed to
+   follow that sequence.
+3. Distinguish received Latin, normalized transcription, adaptation,
+   source-grounded explanation, project-composed practice Latin, project
+   translation, and unverified leads wherever they could be confused.
+4. Check every paradigm, grammatical rule, parse, translation, closed answer,
+   source attribution, and model composition; a generally sound key never
+   excuses a wrong or ambiguous item.
+5. Use the Missal as the governing destination while making transfer across
+   authors, periods, genres, and ordinary subject matter a normal part of
+   learning Latin.
+6. Build composition cumulatively from substitution and sentence
+   transformation through imitation, paragraph construction, revision, and
+   independent advanced prose.
+7. Keep all work usable in print, provide ample retrieval and memorization
+   sheets, and place answers after the work they answer.
 
 ## Identity, corpus, and bounds
 
 The course owner identifies its provider, canonical collection, intended
-learner, entry and exit standard, language, rite, Missal edition, supporting
-biblical edition, geography or jurisdiction when relevant, orthographic
-convention, and as-of date for mutable online witnesses. Every publication also
-identifies its stable module or companion ID, prerequisite edge, local outcome,
-and relationship to that owner. A reference to “the Missal” means the
-identified 1962 typical edition unless a local label says otherwise.
+reader, entry and final abilities, instructional language, rite, Missal
+edition, supporting biblical edition, broader reading corpus, geography or
+jurisdiction when relevant, orthographic convention, and as-of date for mutable
+online witnesses. Every publication also identifies its stable packet or
+companion ID, the stable lesson IDs it contains, the abilities it assumes and
+develops, and its place in the course map. A reference to “the Missal” means
+the identified 1962 typical edition unless a local label says otherwise.
 
 The 1962 *Missale Romanum* controls Missal wording, rubrics, text boundaries,
 and printed citations. An edition-identified page-image witness controls over
-OCR or a searchable presentation. The Clementine Vulgate may control biblical
-comparison only through a named edition; identify whether a quotation follows
-the Missal's received text or the selected Vulgate witness when they differ.
-Psalm citations use the Missal's Vulgate/Septuagint numbering first, with a
-modern parallel only when it helps the learner.
+OCR or a searchable presentation. Biblical comparison uses a named Vulgate
+edition; the course states whether wording follows the Missal's received text
+or the selected biblical witness when they differ. Psalm citations use the
+Missal's Vulgate/Septuagint numbering first, with a modern parallel only when
+it helps reading.
+
+The broader corpus is instructional, not decorative. Early lessons begin with
+short project-composed Latin about visible things and ordinary actions so that
+new forms can be learned without simultaneous liturgical or theological
+complexity. Authentic reading enters as soon as the taught grammar permits and
+expands through Scripture, Cicero, Augustine, other excellent classical and
+Christian prose, Fathers, hymnody, theology, canon law, and the Missal. Later
+modules use distinguished and sublime models to teach lucidity, balance,
+periodic structure, imagery, compression, cadence, and register. Adapted or
+abridged wording is labeled as such and is never presented as an author's exact
+text.
 
 Classical grammars and lexica establish inherited morphology, syntax, and
-lexical range only to the degree of their exact checked loci. Ecclesiastical,
-biblical, late, or medieval usage requires an appropriate witness rather than a
-generic appeal to classical Latin. A Holy See archive, searchable database,
-corpus, OCR, parser, or dictionary interface is a finding aid until the work,
-edition, entry or locus actually used has been recorded and checked.
+lexical range only to the degree of their checked loci. Biblical, patristic,
+late, medieval, scholastic, canonical, and liturgical usage receives an
+appropriate witness rather than a generic appeal to classical Latin. A Holy
+See archive, searchable database, corpus, OCR, parser, or dictionary interface
+is a finding aid until the work, edition, entry, or locus actually used has
+been recorded and checked.
 
-Pronunciation, chant, ceremonial instruction, calendar assembly, current
-authorization to use liturgical books, and theological interpretation remain
-outside scope unless the publication expressly expands its identity and
-governing profiles. Familiarity with the structure of Mass may be an entry
-assumption; doctrinal, liturgical, or canonical conclusions may not be inferred
-from grammatical competence.
+The course bundle supplies its own English-grammar bridge, orientation to the
+Missal genres used in exercises, teaching grammar, reading lexicon, source
+excerpts, memory work, practice, composition prompts, self-review, and answers.
+Consulting a complete Missal, wider lexicon, or source edition remains a
+valuable extension and a final act of transfer, not an unstated instructional
+dependency. Pronunciation, phonetics, singing, chant notation, ceremonial
+instruction, calendar assembly, and current authorization to use liturgical
+books remain outside scope. Doctrinal, liturgical, or canonical conclusions
+may not be inferred from linguistic competence alone.
 
 ## Text and claim classes
 
-Use these classes in the publication and audit records:
+Use these classes in publications and audit records:
 
-- **received source text**: wording checked in the identified Missal, Vulgate,
-  official document, or historical work at an exact locus;
+- **received source text**: wording checked in an identified Missal, Vulgate,
+  classical work, patristic work, official document, or historical edition at
+  an exact locus;
 - **normalized transcription**: received wording whose typography,
   capitalization, punctuation, consonantal *i/j*, ligatures, macrons, or other
-  features have been changed under a stated house rule;
-- **source-grounded explanation**: a grammatical, lexical, historical, or
-  rhetorical statement checked against the named source and locus;
-- **project-composed Latin**: an original example, transformation, prompt, or
-  model written for instruction and checked for the construction it teaches;
+  features have changed under a stated house rule;
+- **adapted instructional text**: received wording deliberately simplified,
+  abridged, reordered, or otherwise altered for instruction, with the change
+  and its source relationship made explicit;
+- **source-grounded explanation**: a grammatical, lexical, historical,
+  rhetorical, or poetic statement checked against a named source and locus;
+- **project-composed Latin**: an original example, transformation, ordinary
+  reading, prompt, or model written for instruction and checked for every
+  feature it teaches;
 - **project translation or gloss**: original English whose grammatical
   decisions and material alternatives have been checked; and
 - **unverified lead**: a possible text, parallel, attribution, sense, or
   explanation retained only in research.
 
 A work-wide convention may state that uncited short examples are
-project-composed, but every received excerpt long enough to function as a
-reading passage or assessment text has an inventory row and either a local
-exact citation or a stable printed passage identifier mapped to an exact locus
-in that inventory.
-Do not present newly composed or adapted Latin as received prayer, liturgical
-text, Scripture, patristic prose, or official ecclesiastical usage. A model
+project-composed. Every received or adapted excerpt long enough to function as
+a reading or self-review passage has an inventory row and either a local exact
+citation or a stable passage ID mapped to an exact locus. Do not present newly
+composed or adapted Latin as received prayer, liturgical text, Scripture,
+patristic prose, official usage, or an author's exact wording. A model
 composition remains visibly instructional even when it imitates an identified
 source.
 
-Record every normalization that could change parsing, syntax, meaning, or
-source identification. Preserve a diplomatic transcription in a collation
-exercise; do not silently regularize the evidence being compared. A translation
-may expose grammatical structure before giving natural English, but neither
-version may erase a material ambiguity.
+Record every normalization or adaptation that could change parsing, syntax,
+meaning, style, or source identification. Preserve diplomatic wording in a
+collation exercise. A translation may expose grammatical structure before
+giving natural English, but neither version may erase a material ambiguity.
 
-## Curriculum and answer contract
+## Course sequence and packet contract
 
-The course guide is the required starter publication. It owns entry
-assumptions, packet order, the study and lookup methods, pacing, worksheet and
-answer protocols, error records, delayed recall, and advancement decisions.
-Module packets point to that guide rather than restating those conventions.
+The guide opens the course and owns its study, lookup, answer, error-record,
+and repetition methods. The current trunk groups the forty-six established
+lesson IDs into twenty-two substantial packets. Those lesson IDs remain stable
+and appear in packet covers, contents, bookmarks, exercise records, and the
+course map; regrouping them does not renumber them. A packet may contain two or
+three closely connected lessons, but each lesson retains its own definitions,
+teaching sequence, reading work, composition step, vocabulary assignment, and
+source identity.
 
-Each learning module identifies its prerequisite, observable outcome, practice
-sequence, mastery gate, and next dependency. It then moves from its lesson's
-new definitions and governing idea through worked examples and purposeful
-transfer practice, selected worksheets, and a local mastery assessment. Its
-internal submodules each receive a new connection, transfer task, worked
-process model, contrast, or retrieval prompt with a checkable model or rubric.
-A genuinely new definition states a deciding feature, not only a synonym.
-Later modules assume terminology established by their prerequisites and define
-it again only when materially refining its meaning or adding a new contrast.
-Contrast neighboring terms that commonly produce a different parse or
-construction.
+Every packet states:
 
-A learning module is designed for two focused study sessions. The starter
-guide states that workload envelope once; the module map records its local
-allocation, detachable delayed work, and optional remediation variants. This
-is not an advancement promise: the learner repeats or delays the gate whenever
-the stated evidence is not met. Longer stage assessments are labeled
-assessment sequences rather than two-session learning modules.
+- what should already be reasonably dependable;
+- what new abilities the packet develops;
+- which stable lessons, readings, vocabulary sets, and practice families it
+  contains;
+- what a person should reasonably be able to recognize, explain, read, and
+  compose before continuing; and
+- which exact explanations or sheets to repeat when uncertainty remains.
 
-Practice may be abundant without requiring page completion. A normal learning
-module prints two deliberately contrasting variants and their matching keys;
-the other authoritative variants remain optional remediation or delayed-recall
-sources. The guide states how the learner checks work and records error
-families; the post-worksheet assessment names the local evidence, any delayed
-work, and the next decision. An “unseen” gate cannot reuse a memorized teaching
-passage without disclosure. The entry and exit standards must be demonstrable
-by the supplied assessments rather than aspirational advertising.
+These are qualitative boundaries, not grades or institutional decisions. The
+course prescribes no schedule, session count, percentage, rank, certificate,
+or fixed amount of repetition. Dates and item counts may identify work or help
+space retrieval, but they do not turn the course into a scored program. An
+occasional lapse that can be detected, explained, and repaired differs from a
+recurring uncertainty about the governing rule; the readiness language should
+say so plainly.
 
-Every closed exercise, transfer-practice task, and assessment item has a checkable
-answer or model.
-Record acceptable alternatives where Latin form, syntax, or translation permits
-them. Every open composition or research task has a rubric that evaluates the
-promised skill instead of inventing one uniquely correct answer. Student and
-solution renderings come from one authoritative exercise source. Every packet
-places its selected keys in a clearly marked terminal answer part and warns the
-learner at the point of use that answers are later in the same file. Stable
-worksheet, passage, worked-example, and assessment IDs are explicit source
-identifiers; selective rendering must never renumber them.
+Each stable lesson moves from new definitions and a governing idea through
+complete explanation, paradigms or decision procedures, several graduated
+worked examples, contrasts and common errors, guided practice, independent
+application, reading, memory work, and a composition step. Later lessons
+assume terminology established earlier and define it again only when refining
+its meaning or adding a consequential contrast. Early composition includes
+substitution, inflection, phrase building, and sentence transformation;
+intermediate work adds clause combination, constrained translation into
+Latin, and model imitation; advanced work includes sustained prose,
+register-sensitive revision, and documented source choices.
 
-The reference grammar agrees with the teaching volumes and keys. Every
-paradigm, vocabulary entry, construction label, and cross-reference exposed in
-more than one place has one controlling decision in the audit records; do not
-leave contradictory variants for the learner to reconcile.
+Every closed exercise, retrieval task, reading question, and self-review item
+has a checkable answer or model. Record acceptable alternatives where form,
+syntax, interpretation, or translation permits them. Every open composition
+or research task has points to inspect that evaluate the promised ability
+without pretending that one model is uniquely correct. Practice and solutions
+come from the same authoritative source. Stable worksheet, passage,
+worked-example, memory-set, lesson, and review-form IDs never change under
+selective rendering.
 
-## Required records and ownership
+Each trunk packet exposes all four authoritative worksheet variants for every
+lesson it contains, together with all matching answers. No course-owned
+variant remains an invisible dependency. Repetition is normal formation, not
+a penalty: the person may use as many rounds as make the forms, words, and
+constructions readily available from memory.
+
+## Vocabulary and memory work
+
+Vocabulary is a controlled, cumulative strand rather than a collection of
+incidental glosses. Its owner record identifies each lemma or formula,
+dictionary form, gender or principal parts, taught senses, construction or
+case government, word family and common collocations, first teaching point,
+later retrieval points, productive or receptive role, source evidence, and
+material semantic distinctions. Frequency and coverage work across the full
+instructional corpus determines the final inventory; do not advertise an
+unsupported numerical coverage claim.
+
+Every substantial packet includes populated and reusable memory sheets for
+its new material and earlier material scheduled to return. Across the course,
+the sheets include:
+
+- Latin-to-English recognition and English-to-Latin production;
+- complete dictionary forms, gender, principal parts, and inflection classes;
+- full and blank noun, adjective, pronoun, and verb paradigms;
+- endings, formation rules, governed cases, and construction signals;
+- word families, semantic contrasts, collocations, and recurring formulas;
+- passage reconstruction, copywork, and dictation-ready text without adding a
+  pronunciation lesson;
+- sentence transformation and controlled composition; and
+- mixed cumulative retrieval in new grammatical and authorial settings.
+
+New vocabulary returns immediately in examples, in the next packet, after
+longer intervals, and in cumulative reading. A word is not treated as known
+merely because it appeared once or because one English gloss was memorized.
+The reading lexicon agrees with module lists, memory sheets, readings, and
+keys; one controlling source decision governs every repeated entry.
+
+## Poetry in the trunk and advanced branch
+
+Poetry appears throughout the common trunk. Early work uses brief transparent
+verses without asking for scansion; later work teaches poetic order,
+hyperbaton, ellipsis, compression, imagery, parallelism, and the differences
+between prose reconstruction and poetic effect. Biblical poetry, hymns,
+classical verse, chants, and sequences prepare a person to read poetic texts in
+the Missal as poetry rather than as defective prose.
+
+After the common advanced trunk, a separate eight-part poetry branch develops:
+
+1. textual prosody: quantity, feet, scansion, elision, caesura, and poetic
+   syntax without becoming a pronunciation course;
+2. hexameter and elevated narrative through an audited classical text,
+   beginning with Virgil, with later Christian comparisons added only when an
+   exact source witness has been verified;
+3. elegiac movement, epigrammatic compression, and selected classical
+   contrasts;
+4. lyric architecture through selected Horatian meters and disciplined
+   comparison with clearly labeled hymn-style project work, with historical
+   reception added only when an exact witness has been verified;
+5. Christian poetics through audited hymns, sequences, and authorial texts,
+   including classical inheritance, biblical transformation, and explicit
+   limits on attribution claims;
+6. syllabic and page-rhythmic analysis of hymnody and Missal sequences,
+   carefully distinguished from classical quantitative organization and from
+   unsupported claims about pronunciation;
+7. source-aware poetic commentary and textual comparison; and
+8. controlled imitation, revision, and original verse composition.
+
+The branch states the abilities it assumes at its opening. It does not replace
+the trunk's Missal poetry or its advanced prose composition. Its source record
+distinguishes classical quantitative verse from later syllabic, rhythmic, or
+other textually demonstrable forms and avoids deriving stress, rhyme, or
+historical pronunciation from visual scansion or spelling alone.
+
+## Records and ownership
 
 The non-publishable course owner keeps:
 
-- `research/scope.md`: identity, learner, entry and exit standards, inclusions,
-  exclusions, corpus, orthography, completeness, rights, currentness, review,
-  and unresolved limits;
-- `research/edition-manifest.md`: exact Missal, Vulgate, grammar, lexicon, and
-  other witnesses actually used, including source role, edition, stable
-  locator, access date where applicable, transcription or facsimile status,
-  rights information, and substitutions;
-- `research/passage-inventory.md`: received reading and assessment passages,
-  their exact loci and verification state, normalizations, translations,
-  rights, uses, and unresolved variants, plus the declared boundary for
-  project-composed examples;
-- `research/curriculum-map.md`: entry assumptions, stage and unit sequence,
-  objectives, prerequisite edges, definitions, practice families, gates,
-  assessments, and exit-standard coverage;
-- `research/answer-key-audit.md`: exercise and assessment family, answer-source
-  identity, closed or open status, ambiguity policy, completed checks,
-  corrections, and outstanding review; and
+- `research/scope.md`: identity, reader, entry and final abilities,
+  inclusions, exclusions, corpus, orthography, self-contained boundary,
+  rights, currentness, review, and unresolved limits;
+- `research/edition-manifest.md`: exact Missal, Vulgate, classical, patristic,
+  poetic, grammar, lexicon, and other witnesses actually used, including
+  source role, edition, stable locator, access date where applicable,
+  transcription or facsimile status, rights information, and substitutions;
+- `research/passage-inventory.md`: every received or adapted reading and
+  self-review passage, its exact locus and verification state,
+  normalizations, adaptation, translation, rights, uses, and unresolved
+  variants, plus the declared boundary for project-composed examples;
+- `research/curriculum-map.md`: entry assumptions, packet and stable-lesson
+  sequence, objectives, dependency edges, definitions, reading corpus,
+  practice and memory families, qualitative readiness descriptions,
+  cumulative reviews, poetry branch, and final-ability coverage;
+- `research/vocabulary-map.md`: the controlled lemma, formula, construction,
+  productive/receptive, recurrence, source, and coverage decisions;
+- `research/answer-key-audit.md`: exercise, memory, composition, and review
+  family; answer-source identity; closed or open status; ambiguity policy;
+  completed checks; corrections; and outstanding review; and
 - `research/source-audit.md`: grammar, lexicography, diachronic, rhetorical,
-  textual, and source-attribution claims; checked loci; material disagreements
-  and negative results; rights; and completed content and production review.
+  poetic, textual, and source-attribution claims; checked loci; material
+  disagreements and negative results; rights; and completed content and
+  production review.
 
-Each learning-module leaf keeps `research/module-map.md`, naming its stable ID,
-source unit, internal submodules, prerequisites, two-session core, printed and
-omitted practice variants, transfer practice, mastery evidence, next edge, and
-any delayed work. Each guide, reference, or assessment companion keeps
-`research/companion-map.md`, naming its role, source inputs, reader order, and
-relationship to the learning sequence. These local records point to, but do not
-copy, course-wide source and answer decisions.
+Each substantial packet keeps `research/module-map.md`, naming its packet ID,
+stable lesson IDs, internal teaching sequence, assumed abilities, memory and
+vocabulary sets, readings, all four worksheet variants per lesson,
+composition work, qualitative readiness description, next edge, and any
+delayed retrieval. Each guide, reference, memory workbook, cumulative-review
+companion, or poetry companion keeps `research/companion-map.md`, naming its
+role, source inputs, reading order, and relationship to the trunk. Local
+records point to, but do not copy, course-wide source and answer decisions.
 
-The records may group repetitive project-composed drills by an authoritative
-source family, but they may not hide a received passage, a unique grammatical
-claim, an answer discrepancy, or an unresolved source attribution inside a
-generic row. Never claim a passage, answer, volume, or course is source-audited
-unless its required record identifies the completed check.
+Records may group repetitive project-composed drills by an authoritative
+source family, but they may not hide a received passage, adaptation, unique
+grammatical claim, answer discrepancy, vocabulary decision, or unresolved
+attribution inside a generic row. Never claim that a passage, answer, module,
+or course is source-audited unless its record identifies the completed check.
 
 ## Reader order and terminal apparatus
 
-After a compact cover naming the module ID, outcome, prerequisite, and next
-edge, and after compact contents, begin immediately with the lesson. Use these
-Parts in order: `Lesson`, `Practice`, `Worksheets`, `Assessment`, `Answer Key`,
-and `Scope and Sources`. The lesson introduces genuinely new definitions and
-the governing idea before worked examples and local application. Practice then
-adds transfer and retrieval work. Put both selected worksheets before the
-module's mastery criterion, delayed-work direction, and work record. Place all
-keys after all student-facing and assessment material.
+After a compact cover naming the packet ID, stable lesson IDs, developed
+abilities, assumed abilities, and next edge, and after compact contents, begin
+immediately with substantive teaching. Use these Parts in order:
+
+1. `Teaching`;
+2. `Memory Work`;
+3. `Reading and Composition`;
+4. `Cumulative Practice`;
+5. `Answers and Models`; and
+6. `Scope and Sources`.
+
+`Teaching` contains every stable lesson in the packet. `Memory Work` contains
+populated new, review, and cumulative retrieval sheets. `Reading and
+Composition` supplies project-composed ordinary Latin and progressively
+authentic source reading, followed by the composition work those lessons
+support. `Cumulative Practice` prints all four variants for each lesson and
+ends with a qualitative `Before continuing` chapter and a compact self-record.
+`Answers and Models` follows all material on which it comments and renders the
+same authoritative memory, reading, composition, worksheet, and review
+sources in solution mode.
 
 Within each publication, restart Arabic chapter numbering inside every Part
-and number sections from their owning chapter. Qualify PDF destinations by
-Part so repeated local chapter and section numbers remain unique. Contents and
-PDF bookmarks preserve the Part--chapter--section hierarchy: chapter entries
-are visibly indented beneath Parts, section entries are indented another step,
-and an unnumbered section title aligns with numbered peer titles after the same
-reserved number gutter. Every chapter listed in the contents is numbered. Each
-selected worksheet source owns exactly one numbered unit chapter in both its
-learner and solution renderings; the shell does not add a second generic
-solution chapter. List every rendered worksheet or solution beneath that
-chapter as an unnumbered section whose navigation title contains its stable
-worksheet ID. Begin the first selected worksheet on the unit chapter's page
-when space permits and force a new page between later learner worksheets and
-between later keyed solutions, so neither form ends as a fragmentary spill
-page. Keep each exercise or assessment item's identifier, prompt, response
-space, and keyed answer together as one reviewable unit. For a long form,
-declare and review a deliberate midpoint rather than leaving a lone item,
-answer fragment, or answer rule on a tail page. No physical page contains only
-running furniture or unwritten rules, and an `Advance when` box is not the only
-substantive content on a module page. A selectively rendered assessment emits
-only its selected Gate heading, lists the selected forms as sections beneath
-it, and prints common protocol and scoring apparatus once rather than once per
-learner/key rendering.
+and qualify PDF destinations by Part. Contents and PDF bookmarks preserve the
+Part--chapter--section hierarchy. Every selected source owns one numbered unit
+chapter in both practice and solution renderings; stable form IDs appear in
+unnumbered navigation sections. Keep each prompt, response space, and answer
+together. For a long form, declare and review a deliberate midpoint rather
+than leaving a lone item or answer fragment on a tail page. No page contains
+only running furniture, unwritten rules, or a readiness box.
 
 Then give, in order:
 
@@ -234,41 +337,42 @@ Then give, in order:
    rights notes; and
 3. `Generation Metadata` as the final content block.
 
-The starter guide and course records own course-wide corpus, edition,
-completeness, orthography, normalization, translation, rights, review, and use
-bounds. A module's compact local scope appendix names only its packet boundary,
-omitted practice, consequential local limits, and pointers to those controlling
-records. Keep a source or answer qualification beside the affected passage or
-item when it changes how that material should be read. The common rights
-colophon remains the final-page colophon supplied by the repository preamble.
+The guide and course records own course-wide corpus, edition, completeness,
+orthography, normalization, translation, rights, review, and use bounds. A
+packet's compact local appendix names its boundary, consequential local
+limits, and pointers to controlling records. Keep a source or answer
+qualification beside the affected passage when it changes how that material
+should be read. The common rights colophon remains the final-page colophon
+supplied by the repository preamble.
 
-## Profile gate
+## Profile checks
 
-Before installation, verify that the curriculum map accounts for every module,
-submodule, practice family, gate, assessment, and prerequisite edge; every
-local module or companion record agrees with that map; the passage inventory
-accounts for every received reading and assessment passage; and the answer
-audit accounts for every closed item and open-task rubric. Check each packet's
-lesson, transfer practice, selected worksheets, post-worksheet assessment, and
-keys against one another after every correction. Across the complete module
-set, verify that explicit stable IDs remain unique and reconcile with the
-course-wide inventories.
+Before installation, verify that the curriculum map accounts for every packet,
+stable lesson, teaching section, memory and practice family, reading,
+composition step, qualitative readiness description, cumulative review,
+dependency edge, and poetry-branch part. Confirm that every local module or
+companion record agrees with that map; the passage inventory accounts for
+every received or adapted reading and review passage; the vocabulary map
+accounts for every scheduled item; and the answer audit accounts for every
+closed item and open-task model.
 
-Visually collate received Missal text against the identified page-image witness
-and biblical text against the identified edition. Check every project-composed
-example and model for the feature it teaches. Verify all grammar, historical,
-diachronic, allusion, rhetoric, and textual-critical claims at exact loci or
-remove, narrow, or label them as unresolved. Confirm that no modern Missal
-translation, protected corpus, database transcription, or other third-party
-material is redistributed without a recorded basis.
+Visually collate received Missal and biblical text against the identified
+page-image witnesses and other received texts against their recorded
+editions. Check every project-composed example and model for all forms and
+features it teaches. Verify grammar, historical, diachronic, allusion,
+rhetoric, poetic, and textual claims at exact loci or remove, narrow, or label
+them as unresolved. Confirm that no protected translation, corpus, database
+transcription, or other third-party material is redistributed without a
+recorded basis.
 
-Run the universal metadata, build, log, PDF, and every-page review gates for
-every affected packet. Additionally inspect packet identity, lesson and
-practice boundaries, answer-key separation, writable space, explicit IDs,
-contents entries, work records, duplex usability, and the final-page colophon.
+Run the universal metadata, build, log, PDF, and every-page review checks for
+every affected publication. Additionally inspect packet identity, stable
+lesson boundaries, memory and vocabulary recurrence, reading-source labels,
+composition progression, answer separation, writable space, explicit IDs,
+contents entries, self-records, duplex usability, and the final-page colophon.
 Run `make check-curriculum-structure` whenever a curriculum publication or
-shared curriculum source changes; it must reconcile the source registry and
-selection contract and pass the rendered contents, numbering, and bookmark
-checks for the complete discovered publication set.
-Independent Latin, liturgical, pedagogical, or ecclesiastical review is claimed
-only when a named event is recorded.
+shared source changes; it must reconcile the source registry, multi-unit
+selection, all-variant practice contract, qualitative readiness language,
+stable-ID coverage, and rendered hierarchy for the complete discovered
+publication set. Independent Latin, liturgical, pedagogical, or ecclesiastical
+review is claimed only when a named event is recorded.

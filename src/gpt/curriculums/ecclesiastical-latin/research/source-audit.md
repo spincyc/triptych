@@ -1,136 +1,173 @@
 # Ecclesiastical Latin — Source and Content Audit
 
-## Audit object and method
+## Audit object
 
-- **Audit date:** 2026-07-21.
-- **Object:** the Telos Ecclesiastical Latin curriculum integrated under one
-  Triptych course owner and partitioned into 46 learning modules, two course
-  companions, and four assessment sequences.
-- **Claim:** an internally audited working curriculum, not a critical edition,
-  official liturgical text, certified course, or independently reviewed Latin
+- **Audit date:** 2026-07-22.
+- **Object:** the redesigned self-paced Ecclesiastical Latin course: three
+  course companions, twenty-two substantial trunk packets, eight advanced
+  poetry packets, and four cumulative self-review companions.
+- **Claim:** an internally audited working curriculum centered on direct
+  reading of the 1962 *Missale Romanum* and broad Latin competence. It is not a
+  critical edition, official liturgical book, or independently certified
   grammar.
 
-The audit fixed donor provenance, separated corpus and finding aids, inspected
-the reference, teaching, exercise, assessment, and solution sources, ran two
-independent Latin/answer passes over disjoint portions of the manuscript, and
-searched each reported construction across all consumers before correction.
-The 1962 Missal facsimile and the 1914 Hetzenauer Vulgate are the named received
-text witnesses. OCR and searchable presentations were used only to find
-candidate loci.
+The redesign retains the forty-six stable trunk lesson IDs and all 184 prose
+worksheet IDs while changing their publication scale and instructional
+context. It adds ordinary connected Latin, an authentic prose ladder, four
+complete Missal formularies, a controlled 598-lexeme memory system, thirty-two
+poetry worksheets, and a separate eight-packet poetry branch. Prompts,
+passages, glosses, memory sheets, reference material, and models needed for the
+ordinary course work are printed in the curriculum bundle.
 
-## Donor-source findings
+## Source hierarchy
 
-The donor project was complete as a multi-booklet course but lacked:
+1. The 1962 Vatican typical edition controls received Missal wording,
+   boundaries, headings, and printed locators.
+2. Identified public-domain scholarly editions and their page images control
+   the new classical, patristic, medieval, and poetic excerpts.
+3. The 1914 Hetzenauer Clementine Vulgate controls biblical comparison where
+   the record identifies it; Missal and Vulgate wording are never silently
+   harmonized.
+4. Searchable transcriptions, OCR, and indices are finding aids. A page image
+   controls when the record says a text was visually checked.
+5. Project-composed Latin is marked P. It may teach grammar, narrative,
+   imitation, or collation method but is never attributed to an ancient,
+   patristic, scholastic, or liturgical source.
 
-- a local license or independently verifiable rights grant;
-- edition hashes, access dates, or a source hierarchy that made page images
-  control over searchable text;
-- a passage-by-passage inventory or record of visual collation;
-- exact grammar and lexicon loci for most rules;
-- patristic readings despite an advertised ability to recognize principal
-  patristic allusions; and
-- an independent Latin, liturgical, pedagogical, or production review record.
+The stable evidence vocabulary is U (unverified lead), L (located), T
+(transcribed), and V (visually verified). P and R distinguish project from
+received wording; they do not replace verification state.
 
-Triptych therefore preserves the complete instructional corpus but narrows the
-claimed outcome, adds the required records and terminal qualifications,
-selectively publishes normal worksheets, adds transfer practice to every
-teaching submodule, and
-keeps changed packets in review rather than converting missing evidence into a
-claim.
+## Newly verified connected corpus
 
-## High-confidence internal corrections
+The connected-reader layer now moves through ordinary P narrative and
+exposition into verified R excerpts. Exact editions, page-image locators,
+normalizations, and rights notes are in `authentic-source-ladder.md` and
+`poetry-branch-map.md`.
 
-The following families summarize corrections made in the authoritative source;
-the answer audit records their propagation into terminal keys.
-
-| Family | Donor problem | Resolution |
+| Stratum | Stable IDs and loci | State |
 |---|---|---|
-| morphology and paradigms | incomplete or mislabeled comparative, pronoun, vocative, perfect-ending, participle/gerundive, gender, tense, or voice statements | completed or qualified the forms; made assessment and reference terminology agree |
-| syntax | genitive illustrated by `ex + ablative`; ordinary prepositional location called locative; subject equated with actor; finite-only clause tests; relatives required antecedents; personal-subject test applied to impersonals | replaced examples and diagnostics with case-, government-, and construction-accurate wording |
-| late and liturgical usage | classical category sometimes forced onto received Late Latin or liturgical formula; source-language influence asserted without comparison | identify the received construction first; label diachronic or source-language claims only when an exact comparison supports them |
-| Missal sources | one Common-of-a-Martyr Collect omitted *atque Pontificis* and named the wrong Common; a Pentecost assessment omitted *ad-* in *advenientis* | restored the wording and exact Missal locus; corrected every propagated prompt/key |
-| poetic analysis | *conflixere* called syncopated | identify inherited third-plural perfect `-ere` as an alternative to `-erunt` |
-| gerund analysis | *praeveniendo* called indeclinable | identify it as the ablative singular of a declining verbal noun |
-| assessment validity | two “unfamiliar” gates reused extensively taught First Advent and Pentecost formularies; percentages lacked a stated denominator | disclose M-A/M-B as designated diagnostics, add blind-selection M-C, and define atomic and four-category scoring denominators |
-| source/allusion tasks | prompts could reward invented allusions or imply that comparison itself creates a hybrid | require evidence-scaled investigation and permit negative results; identify only silent import into a base witness as hybridization |
-| document structure | the article-based chapter layer lacked a chapter contents renderer and unique Part-qualified anchors; later repair flattened the printed Part/chapter margins and imposed a continuous chapter sequence despite Part ownership; PDF bookmarks were originally flat, practice chapters were duplicated or omitted, worksheet IDs were hidden from navigation, and unselected assessment Gate headings leaked | restart visible chapter numbers inside each Part while keeping Part-qualified anchors; enforce progressively indented Part--chapter--section contents that agree with the nested PDF outline; align unnumbered section titles with numbered peers; give each module's Worksheets and Answer Key renderings one source-owned unit chapter with stable-ID worksheet or solution sections; emit only the selected assessment Gate and forms; validate all 52 rendered structures during every curriculum build |
-| instructional sequence | the shared shell repeated a plan and local reference preamble in every module; several later lessons also restated course mechanics or prior terminology; mastery directions were separated from the worksheets they evaluated | make EL-GUIDE the required owner of course-wide orientation; begin modules with genuinely new definitions and the governing idea; require Lesson--Practice--Worksheets--Assessment--Answer Key--Scope and Sources flow; assume prerequisite terminology; retain local mastery evidence after the worksheets and stage gates as separate publications |
+| Classical prose | CAES-DUPONTET1900, *Bellum Gallicum* 1.1.1; CIC-FALCONER1923, *Laelius* 6.20 | V |
+| Patristic prose | HIER-CSEL54, *Epistula* 22.30.4; AUG-CSEL33, *Confessiones* 1.1.1 three complete opening sentences through *donec requiescat in te* and 10.27.38 explicitly bounded after *quaerebam*; AMB-KRAB1857, *De officiis* 1.11.38 | V |
+| Scholastic prose | THOM-LEON4, *Summa theologiae* I, q.1, a.1, corpus opening | V |
+| Biblical prose | VULG-HETZ1914-MT8.23-27, Clementine Vulgate Mt. 8:23–27, complete storm narrative | V |
+| Classical poetry | PHAED-POST1919, Phaedrus Book 1 Prologue 1–2 and 1.1.1–6; VERG-HEND1891, *Aeneid* 1.1–4; OVID-OWEN1885, *Tristia* 1.1.1–2; HOR-WICKGAR1912, *Carmina* 1.11 | V |
+| Missal poetry | MR62-FORM-PENT, Pentecost Sequence | V |
 
-The instructional refactor kept the stable course-unit, worksheet,
-worked-passage, and assessment identifiers needed by the revised course,
-together with its source-owned lessons, received quotations, selected
-worksheets and keys, local module criteria, and separately published stage
-gates. It removed or relocated course orientation, obsolete local
-plan/reference data, redundant definitions, former volume-level cumulative
-protocols, and other material that interrupted the new reader order. These
-editorial changes do not count as new source verification.
+Every English rendering in these readers is a new project translation. Prose
+orders, decompressions, scansion displays, comparison sets, and imitation
+models are labeled as project analysis. The branch does not quote candidate
+Prudentius, Sedulius, Fortunatus, or Ambrosian hymn passages whose exact pages
+have not yet been checked.
 
-## Grammar and lexicon evidence boundary
+## Complete 1962 Missal corpus
 
-The listed Bennett, Allen–Greenough, Lewis–Short, and Du Cange editions are
-appropriate reference layers, but the donor did not record exact loci used to
-draft most statements. Internal correction against morphology, syntax,
-cross-consistency, and received passages is recorded as such. The publication
-does not claim every rule is locus-audited or that a classical grammar proves a
-Vulgate, late, medieval, or liturgical development. A future rule-level audit
-should add exact grammar sections or lexicon entries for every disputed or
-diachronic claim.
+Four full Proper dossiers are transcribed from visually checked pages of the
+identified 1962 Missal:
 
-## Passage and attribution audit
+| Stable ID | Formulary | Printed pages | State |
+|---|---|---:|---|
+| MR62-FORM-ADV1 | First Sunday of Advent | 1–2 | V |
+| MR62-FORM-PENT | Pentecost | 356–358 | V |
+| MR62-FORM-XII-PENT | Twelfth Sunday after Pentecost | 392–393 | V |
+| MR62-FORM-XXIII-PENT | Twenty-third Sunday after Pentecost | 416–417 | V |
 
-`passage-inventory.md` is the exhaustive owner-level occurrence register for
-the 39 locally cited Volume III readings, all 174 stable-ID worksheet readings,
-all 127 stable-ID teaching worked passages, and the source-dependent assessment
-material. Module selection changes which occurrences print in one packet but
-does not change their identifiers or source decisions. The register records
-exact or unresolved liturgical and biblical loci, witness, normalization, use,
-and visual-collation state. A repeated passage may share one source decision,
-but every occurrence remains discoverable. Short uncited drills, transfer-practice
-examples, and model compositions are project-created by declared convention.
+The M18 packet prints all four. The first pair develops the sustained-reading
+method; the second pair provides fresh cumulative transfer. The Missal-reading
+and advanced self-review companions reuse these fixed complete texts, so their
+answers do not depend on selecting or obtaining an outside Missal. The
+Pentecost Sequence also introduces poetry in the common trunk before formal
+prosody becomes its own branch.
 
-No source is called visually collated from an OCR match alone. Any unresolved
-locus or variant remains explicit and prevents a profile-final source-audit
-claim. The rebuilt candidate's review status and the installed set's historical
-exact-snapshot exception are not substitutes for completing those rows.
+M17 additionally prints two fresh First-Advent selections from
+MR62-FORM-ADV1 and a visually checked Sanctoral/Common comparison:
+MR62-SANC-POLYCARP against MR62-COM-MARTYR-BISHOP-1-POST. Their exact proper
+name / `N.` difference and differing conclusion boundaries remain visible.
 
-## Rights audit
+## Inherited source audit and corrections
 
-The underlying 1903, 1918, 1879, and 1883–1887 reference works are public
-domain in the United States; the digital interfaces retain separate terms.
-The 1914 Vulgate host represents its scan and electronic text as public domain.
-The course uses focused excerpts and does not import complete databases or
-scans. The 1962 Missal wording and other received material remain excluded from
-the project license unless a separate basis applies.
+The inherited teaching and worksheet corpus contained valuable comprehensive
+grammar but lacked exact loci for most rules and many short received phrases.
+The owner passage inventory therefore preserves each stable occurrence and its
+actual state instead of treating familiarity as verification. Much of that
+legacy short-passage bank remains L pending page-image collation.
 
-The donor tree contains no local license, and the integration request is not
-independent evidence of ownership or a general public-distribution license.
-After those limitations were disclosed, the maintainer gave a separate
-instruction on 20 July 2026 to authorize and install the then-current 52 exact
-PDF snapshots under the repository's existing user-attested distribution
-authority. The release record preserves that authorization as historical: it
-does not cover rebuilt bytes and did not complete donor provenance,
-quotation-and-link review, liturgical-text review, or independent rights
-review.
+High-confidence internal corrections retained in the redesigned sources
+include:
 
-## Production record
+| Family | Correction retained |
+|---|---|
+| morphology | completed or qualified comparative, pronoun, vocative, perfect-ending, participle, gerundive, gender, tense, and voice statements |
+| syntax | replaced `ex +` ablative as a genitive example; separated subject from actor; corrected locative, impersonal, finite-clause, and relative-clause diagnostics |
+| late and liturgical usage | identifies the received construction before making a diachronic or source-language claim |
+| Missal text | corrected the Common-of-a-Martyr source and restored *atque Pontificis*; restored *advenientis* in the Pentecost text |
+| Canon boundary | visually verifies MR62-CANON-TEIGITUR through *cultoribus* at local evidence PDF p. 382 and distinguishes that complete prayer sentence from adapted III.31.1, which omits the mediator phrase and stops after *illibata* |
+| Augustine excerpt boundaries | M12 now marks its stopping point after *quaerebam* with an editorial ellipsis instead of false terminal punctuation; M20 now prints three complete opening sentences through *donec requiescat in te* and analyzes their linkage without calling the sequence one Augustine period |
+| poetic analysis | supplies the complete iambic-senarius frame and substitutions from Bennett §370.1–2; treats *conflixere* as an alternative inherited perfect ending rather than syncope; corrects the greater-Asclepiadean working scheme to three choriambic sequences from visually checked Allen–Greenough §§625.6 and 626.8; replaces unsupported lexical-stress ledgers with quantity, grammar, syllable-count, line-grouping, and written-ending records; and restores all sixteen forms in the P6 imperative chain, including four occurrences each of *veni* and *da* |
+| verbal nouns | identifies *praeveniendo* as an inflected ablative gerund |
+| source and allusion work | requires exact comparison, allows a negative result, and distinguishes project collation simulations from historical witnesses |
 
-The earlier 494-page omnibus working build was superseded by the modular
-architecture and is not a publication candidate. Its former page count, hash,
-and review event do not establish the integrity of any new packet. The
-[production manifest](production-manifest.md) records the current complete set
-of 52 independent leaves, each leaf's exact page count and SHA-256, and the
-technical and visual verification performed on those exact bytes.
+These corrections are internal philological review, not proof that every rule
+has been independently locus-audited. Bennett, Allen–Greenough, Lewis–Short,
+and Du Cange remain appropriate comparison layers under the edition manifest,
+but the inherited manuscript did not record a rule-by-rule chain to them.
 
-All 52 rebuilt PDFs are installed as revised working snapshots at the user's
-direction. The prior installed snapshots and their exact release bindings are
-historical. At this audit's 21 July cutoff, the 21 July 2026
-exact-current-snapshot exception release-cleared only the now-superseded
-installed hashes, so the release record failed closed for the revised bytes.
-Internal verification and this audit were not themselves distribution
-authorization. The separate 22 July 2026 release record now release-clears only
-the exact current 52 PDF hashes under its exact-byte exception. It does not
-resolve the outstanding page-image collation or donor and received-text rights
-analysis, establish donor ownership or an open license, authorize extraction,
-or permit broader reuse.
+## Memory and self-contained boundary
 
-No integration, push, or deployment is implied by this research record.
+The memory registry has 598 controlled lexemes, 81 grammar facts, and thirty
+packet sets. It prints citation form, working gloss, morphology, usage or
+government, reading strand, recurrence lists, reconstruction, composition,
+and answer models. Project lexical glosses whose exact external dictionary
+locus remains open are identified as such; the course does not convert an
+internal working lexicon into a critical lexicon claim.
+
+The reference companion renders the complete controlled Reading Lexicon as an
+internal lookup source. Every packet prints its own new and returning memory
+material. Cumulative reviews print their Latin, comparison sets, and relevant
+reader sources. Ordinary progress through the course therefore does not
+depend on a separate hand missal, commercial dictionary, parser, anthology,
+classroom handout, or source-selection procedure.
+
+The poetry packets likewise print the evidence their tasks require. P1 now
+prints the verified Phaedrus prologue locus behind *versibus senariis*; P4
+prints the complete working scheme; P6 prints its complete Sequence and
+Virgil comparison; and P7 reprints Phaedrus, Virgil, Horace, and the complete
+Sequence. The Sequence's analytical three-member lineation is declared as
+course apparatus, not received typography or a pronunciation claim.
+
+“Self-contained” does not mean source-independent. Edition and passage records
+remain necessary to verify received wording, attribution, and the distinction
+between source and project Latin.
+
+## Provenance and rights boundary
+
+The shared grammar and worksheet manuscript derives from the Telos project
+identified in `scope.md` and `edition-manifest.md`. It arrived without a local
+project-specific license or passage-level source audit. Prior authorizations
+applied to named exact PDF bytes of earlier publication sets; they do not
+silently authorize the substantively redesigned source edition or its new PDF
+hashes.
+
+The listed classical, patristic, scholastic, and poetry editions are
+public-domain print editions in the United States as recorded. Focused Latin
+excerpts and new project translations are used; scan files are verification
+witnesses and are not vendored. The Missal wording, rubrics, chants, hymns, and
+formularies are not relicensed by Triptych. `edition-manifest.md` records the
+known work-specific distribution boundary.
+
+## Production and review boundary
+
+The source and rendered structure gates confirm the exact thirty-packet
+registry, all 216 worksheet IDs, the three course companions, four cumulative
+self-reviews with nine forms, selector and shell order, and Makefile discovery.
+All thirty-seven installed PDFs built cleanly; the metadata, source, and
+rendered-structure gates passed; the final logs were clean; and all 2,068 pages
+were accounted for in exact raster review. The exact installed counts, hashes,
+mirror verification, and page-review method belong in `production-manifest.md`.
+
+That completed internal production review does not prove every Latin judgment,
+received wording, source relationship, pedagogical decision, or rights basis,
+and it is not independent specialist or ecclesiastical review. This audit did
+not itself authorize installation or commit; those actions received separate
+user authorization. Release, integration, push, deployment, and publication
+remain separate and unauthorized.

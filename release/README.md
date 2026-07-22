@@ -1,28 +1,23 @@
 # Public Release Boundary
 
-The current release manifest contains 118 publications: all 118 are marked
-`release`, with no item in `review` or on `hold`. The latest 22 July 2026
-supplement in `rights/public-alpha-2026-07-15.md` records the maintainer's
-instruction “approve all ; commit ; publish ;” as exact-current-snapshot
-distribution authorization, effective at `2026-07-22T07:55:24-05:00` in
-`America/Chicago`, under the existing represented perpetual worldwide
-public-repository and GitHub Pages authority. It binds all 118 exact current
-installed PDF snapshots, all 23 exact current recognized reader-site inputs,
-and the updated rights record, subject to no project-initiated promotion. This
-includes the 52 rebuilt Ecclesiastical Latin PDFs and clears the four current
-holds—revised Saint Stanislaus, new Saint Anthony, Angelus, and Regina Coeli—
-only as exact-byte exceptions. The Marian exceptions clear the manifest's
-prayer-text-permission gates without claiming that the underlying permission
-or distribution-basis questions have been resolved. Every publication has
-empty manifest gates only under the recorded exact-snapshot decision. Changed
-PDF, rights-record, or site-input bytes require renewed authorization.
+The current release manifest accounts for 103 installed publications: 66
+unchanged PDFs retain their recorded `release` entries, none is in `review`,
+and the 37 redesigned Ecclesiastical Latin PDFs are on `hold`. The latest 22
+July 2026 supplement in `rights/public-alpha-2026-07-15.md` remains the
+historical exact-snapshot authorization for the 118 PDFs and 23 reader-site
+inputs it names. It does not bind the redesigned Latin PDFs or the changed
+catalog inputs. The 66 retained release entries preserve their exact PDF
+approvals, but the current public artifact is fail-closed because the shared
+site-input binding is stale. Changed PDF, rights-record, or site-input bytes
+require renewed authorization.
 
-This exact snapshot is publication-ready only when the focused release tests,
-policy check, deterministic pre/post inventory comparison, private-preview and
-public-site builds, their independent verifications, and named GitHub Pages
-target verification all pass. At the committed revision those checks have
-passed. Any failed check or later byte change withdraws that statement and
-returns the release controls to their fail-closed state.
+The historical 118-PDF snapshot was publication-ready after its focused
+release tests, policy check, deterministic inventory comparison, private and
+public builds, independent verifications, and named GitHub Pages target check
+passed. That statement applies only to the historical bound bytes. The current
+103-PDF installed state is not publication-ready and must remain fail-closed
+until a renewed exact-snapshot and site-input authorization is recorded and
+all release checks pass again.
 
 This is operational exact-byte release clearance, not a judgment that a work
 is editorially or profile-final. It is not ecclesiastical approval, an
@@ -32,19 +27,24 @@ independent proper-guide review, a general license, or broader reuse
 permission. The revised proper guides retain every such substantive limitation
 in their source audits. The Aquinas and Bellarmine work-specific rights reviews
 also remain incomplete. Their predecessor hashes and former holds remain part
-of the historical record; the current bytes are `release` only under the
-current exact-snapshot exception.
+of the historical record; the 66 unchanged PDFs retain `release` entries only
+under their recorded exact-snapshot exception, while the current shared site
+artifact remains fail-closed.
 
-The Ecclesiastical Latin curriculum's prior two course companions, 46 learning
-modules, and four assessment sequences were installed under earlier exact-
-snapshot exceptions. The 22 July supplement binds all 52 rebuilt current
-snapshots. Their donor tree still has no local license; work-specific rights
-analysis, received-liturgical-text distribution analysis, page-image
-collation, and independent Latin, liturgical, pedagogical, textual, canonical,
-rights, and ecclesiastical review remain incomplete. The current authorization
-is a distribution exception for the bound bytes only. It does not complete
-those acts, establish ownership or an open license, make the curriculum
-profile-final, or authorize extracted donor or liturgical wording.
+The Ecclesiastical Latin curriculum's superseded two course companions, 46
+learning modules, and four assessment sequences were installed under earlier
+exact-snapshot exceptions; the 22 July supplement historically bound all 52
+of those rebuilt snapshots. They have now been replaced by 37 installed,
+internally reviewed PDFs comprising three companions, 22 trunk packets, eight
+advanced-poetry packets, and four cumulative self-reviews. The redesign is on
+hold and inherits no prior exact-snapshot clearance. Its donor tree still has
+no local license; work-specific rights analysis, received-liturgical-text
+distribution analysis, page-image collation, and independent Latin,
+liturgical, pedagogical, textual, canonical, rights, and ecclesiastical review
+remain incomplete. The specifically authorized working-snapshot installation
+does not establish ownership or an open license, make the curriculum
+profile-final, authorize distribution, or permit extraction of donor or
+liturgical wording.
 
 The Angelus and Regina Coeli exceptions bind only their exact current PDFs.
 Their identified 1925 source edition is public domain in the United States by
@@ -86,7 +86,7 @@ and is not an ecclesiastical interpretation, dispensation, canonical opinion,
 imprimatur, nihil obstat, or approval of the secret or this publication. It
 does not supply independent rights, canonical, specialist, liturgical, or
 ecclesiastical review. Apparition and cult approvals remain object-limited and
-do not approve this publication. The manifest retains this PDF among the 118
+do not approve this publication. The manifest retains this PDF among the 66
 `release` items and binds its exact current hash.
 
 For every fully authorized snapshot the generator will:
@@ -171,21 +171,18 @@ records for the complete boundaries.
 
 Only when all snapshot, rights-record, and site-source bindings verify may the
 GitHub Pages workflow build and verify `build/public-alpha/site`. The current
-authorization binds all 118 exact current PDFs and all 23 recognized
-reader-site inputs. At this recorded revision the focused tests, policy check,
-deterministic inventory comparison, preview and site builds, independent
-artifact verifications, and GitHub Pages target verification pass; the
-generated `site` artifact is therefore publication-ready for the separately
-authorized primary-session workflow. That workflow may upload only the
-independently verified artifact through the `github-pages` environment. Pages
-must never publish the repository root or `build/public-alpha/preview`.
+authorization binds the historical 118-PDF set and its 23 recognized
+reader-site inputs, not the present installed bytes and catalogs. No current
+public artifact may be described as publication-ready. A later deployment
+workflow may upload only a newly authorized and independently verified
+artifact through the `github-pages` environment. Pages must never publish the
+repository root or `build/public-alpha/preview`.
 
-The user's `commit ; publish` instruction is separate operational authority:
-this worker may create the coherent release-control commit, and a primary
-session may separately audit, integrate, and publish the exact verified result.
-It is not broader substantive clearance and does not authorize this worker to
-push or deploy, future changed bytes, a force update or history rewrite, another
-ref or host, a public release attachment, or project-initiated promotion.
+The historical `commit ; publish` instruction applied to its recorded exact
+snapshot. The present instruction authorizes installation and amendment of the
+local redesign commit only. It does not authorize integration, push,
+deployment, another ref or host, a public release attachment, or
+project-initiated promotion.
 
 Use:
 
@@ -202,7 +199,7 @@ python scripts/public-alpha verify --deployment-target github-pages
 `prepare-public-alpha` is read-only and deliberately works when old snapshot
 hashes are stale or the old source-binding list lacks newly recognized inputs.
 It validates the exhaustive publication and current artifact-input scope, then
-reports the hashes of the 118 currently installed publication PDFs and all 23
+reports the hashes of the 103 currently installed publication PDFs and all 23
 current Markdown, layout, style, license, generator, and dependency-lock inputs
 as a deterministic candidate inventory. The inventory explicitly confers no
 approval, changes no

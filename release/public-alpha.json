@@ -3,10 +3,10 @@
   "release_id": "public-alpha",
   "provider": "gpt",
   "expected_counts": {
-    "publications": 118,
-    "release": 118,
+    "publications": 103,
+    "release": 66,
     "review": 0,
-    "hold": 0
+    "hold": 37
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
@@ -230,522 +230,409 @@
     {
       "id": "curriculums/ecclesiastical-latin/00-course-guide",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "48d2ef0cafbc28cc191444181d1dc8e5161bbe9a1d8431317ffd560153a56e8b"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
+    },
+    {
+      "id": "curriculums/ecclesiastical-latin/00-memory-workbook",
+      "catalog": "library/ecclesiastical-latin.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "curriculums/ecclesiastical-latin/00-reference-grammar",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "92b507fbb8cbbf5f7e59acbdbf95358aae487057571ee07e5c930559ab3ac8bc"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
-      "id": "curriculums/ecclesiastical-latin/01-foundations/01-grammar-bridge",
+      "id": "curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "b84050e756a5029892f2a3d467982fff259267bb8bd88ae08e8afc5c27c3a0f1"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
-      "id": "curriculums/ecclesiastical-latin/01-foundations/02-case-number-gender-agreement",
+      "id": "curriculums/ecclesiastical-latin/01-foundations/02-noun-systems",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "42fbb7afde54a45bb9bb08000bf45547df4457231ddd9df21db495c6b59f8c41"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
-      "id": "curriculums/ecclesiastical-latin/01-foundations/03-first-second-declensions",
+      "id": "curriculums/ecclesiastical-latin/01-foundations/03-nouns-and-adjectives",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "c53b769014f96c2acde4d917a54b59e4681ebea155fe5fa024099c5129747557"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
-      "id": "curriculums/ecclesiastical-latin/01-foundations/04-third-declension",
+      "id": "curriculums/ecclesiastical-latin/01-foundations/04-being-and-present-action",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "4ba1f867b00fdef0ede9decb67eaddd151c9a25112b0dbb155dab03d84e4c5df"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
-      "id": "curriculums/ecclesiastical-latin/01-foundations/05-fourth-fifth-declensions",
+      "id": "curriculums/ecclesiastical-latin/01-foundations/05-perfect-passive-and-deponents",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "0bef2c0a0c291f341f1fcb222af09c41d5921d04dbd8c730616b88a7c0fdf552"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
-      "id": "curriculums/ecclesiastical-latin/01-foundations/06-adjectives-agreement",
+      "id": "curriculums/ecclesiastical-latin/01-foundations/06-pronouns-prepositions-and-reading",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "682642964dfe2d1d77738d2b13e4218243cb6e900378c87eb6c1a9989d6d3482"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
-      "id": "curriculums/ecclesiastical-latin/01-foundations/07-sum-possum",
+      "id": "curriculums/ecclesiastical-latin/02-core-grammar/07-reference-comparison-and-number",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "0783ced47a5fb91de5bbb311baa3a6c798c9755582cc1d5a101b7bff4fa93a9e"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
-      "id": "curriculums/ecclesiastical-latin/01-foundations/08-present-active-system",
+      "id": "curriculums/ecclesiastical-latin/02-core-grammar/08-infinitives-participles-and-absolutes",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "ce7ea10e066d1773afd6da709a89c6b3999c375f06013c30a7f5423b3cd2bbdc"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
-      "id": "curriculums/ecclesiastical-latin/01-foundations/09-perfect-active-system",
+      "id": "curriculums/ecclesiastical-latin/02-core-grammar/09-subjunctive-system-purpose-result",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "2fa8dc75fba49d4d416e86cc913d48e4825ac64351e20aa8cb323d150037df6f"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
-      "id": "curriculums/ecclesiastical-latin/01-foundations/10-passive-deponents",
+      "id": "curriculums/ecclesiastical-latin/02-core-grammar/10-circumstance-conditions-characteristic",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "00e3579b4d41a15a8adefeec3350dbd9103bcad18f3d67e8e14c88a3d068c102"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
-      "id": "curriculums/ecclesiastical-latin/01-foundations/11-pronouns-prepositions",
+      "id": "curriculums/ecclesiastical-latin/02-core-grammar/11-commands-wishes-verbal-nouns",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "5f29c7ea53bd574f1e01da8a03b4a75eba6380ca010cf9f80e9b34747972f1b2"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
-      "id": "curriculums/ecclesiastical-latin/01-foundations/12-repeatable-missal-reading",
+      "id": "curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-compression",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "a6b906b9b50ca15e4ac2e8a680f6d4b394babac9f923ffe68bc8e88b916f66ee"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
-      "id": "curriculums/ecclesiastical-latin/02-core-grammar/13-relative-interrogative-indefinite-pronouns",
+      "id": "curriculums/ecclesiastical-latin/03-missal-reading/13-reader-method-and-ordinary",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "1ad5987b04f20cbac995df52a4b016803e803c8cc11c098071a2cfd3ed10a849"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
-      "id": "curriculums/ecclesiastical-latin/02-core-grammar/14-comparison-adverbs-numerals",
+      "id": "curriculums/ecclesiastical-latin/03-missal-reading/14-orations-and-petitions",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "d364c0bc9b43e36b52bef4838b4ee601d8bfb493b9c2d3b74ed30e35a9061528"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
-      "id": "curriculums/ecclesiastical-latin/02-core-grammar/15-infinitives-indirect-statement",
+      "id": "curriculums/ecclesiastical-latin/03-missal-reading/15-lessons-epistles-and-gospels",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "8785051a93dbf66612c0568190daa74f47f06b6a8383d295a2ff674a2f6750e7"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
-      "id": "curriculums/ecclesiastical-latin/02-core-grammar/16-participles-ablative-absolute",
+      "id": "curriculums/ecclesiastical-latin/03-missal-reading/16-chants-prefaces-and-canon",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "5f4391d86bda561eac1f55ba15fe2950f563204a8ddb2c899cd6c2147ed6917a"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
-      "id": "curriculums/ecclesiastical-latin/02-core-grammar/17-subjunctive-morphology-sequence",
+      "id": "curriculums/ecclesiastical-latin/03-missal-reading/17-temporal-sanctoral-and-commons",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "573544a85e7add1022bd29576a8d2c04284584afea61869b5b8be5d988e7aa3b"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
-      "id": "curriculums/ecclesiastical-latin/02-core-grammar/18-purpose-result-indirect-command",
+      "id": "curriculums/ecclesiastical-latin/03-missal-reading/18-holy-week-requiem-and-complete-mass",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "4096413abe1853f1a09b27f56a2cbeb1311e2b345d55f37662e83320df3c47bf"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
-      "id": "curriculums/ecclesiastical-latin/02-core-grammar/19-substantive-clauses",
+      "id": "curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-texture",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "27f9943bced0c47aecf508a98959664bc834a7692e53ca12227320b8daffdea6"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
-      "id": "curriculums/ecclesiastical-latin/02-core-grammar/20-temporal-causal-concessive",
+      "id": "curriculums/ecclesiastical-latin/04-advanced/20-allusion-rhetoric-and-periodic-prose",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "f6cf925857ef6345e4cac2cb7f0662bb3bf97c199f8cedb05aa4a547c6269c28"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
-      "id": "curriculums/ecclesiastical-latin/02-core-grammar/21-conditions",
+      "id": "curriculums/ecclesiastical-latin/04-advanced/21-collation-and-controlled-imitation",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "d6dbeac0b1ee9a92893680da8fc91b4c7141952d04221d88663defd1c1f080aa"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
-      "id": "curriculums/ecclesiastical-latin/02-core-grammar/22-relative-characteristic",
+      "id": "curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-and-independent-research",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "153efd6572b3f662380ddf81188af1801488cb5f8279da118a82142f83f29045"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
-      "id": "curriculums/ecclesiastical-latin/02-core-grammar/23-commands-wishes-fearing",
+      "id": "curriculums/ecclesiastical-latin/04-advanced/poetry/01-textual-prosody",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "5ca9833341af90a3edd9e26b20917c78ce912875de381626668127be1fdb8fb2"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
-      "id": "curriculums/ecclesiastical-latin/02-core-grammar/24-verbal-nouns-periphrastics",
+      "id": "curriculums/ecclesiastical-latin/04-advanced/poetry/02-hexameter",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "1be4a0f4682ed03edb183954f75a223bd607a6493818e636f07a27d2c3968f57"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
-      "id": "curriculums/ecclesiastical-latin/02-core-grammar/25-adverbial-cases",
+      "id": "curriculums/ecclesiastical-latin/04-advanced/poetry/03-elegiac-verse",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "159aecd7b825354a678545b0d5b2ca5063595f43c7f1312ba9cc8c3d4930b82b"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
-      "id": "curriculums/ecclesiastical-latin/02-core-grammar/26-liturgical-compression",
+      "id": "curriculums/ecclesiastical-latin/04-advanced/poetry/04-lyric-meters",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "28f0634807f1a4d069a646a7caabcd25ebc9b4bb3791893339383a119d3ebbcf"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
-      "id": "curriculums/ecclesiastical-latin/03-missal-reading/27-independent-reader-workflow",
+      "id": "curriculums/ecclesiastical-latin/04-advanced/poetry/05-christian-poetics",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "7350758b10bf7ec5effe473a78da97985305b20d57e902e62221138cf3e182ae"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
-      "id": "curriculums/ecclesiastical-latin/03-missal-reading/28-ordinary-fixed-order",
+      "id": "curriculums/ecclesiastical-latin/04-advanced/poetry/06-rhythmic-hymnody-and-sequences",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "16d9761af261a837461eadfa865239de90299908e92346956fa6eed23131229c"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
-      "id": "curriculums/ecclesiastical-latin/03-missal-reading/29-collects",
+      "id": "curriculums/ecclesiastical-latin/04-advanced/poetry/07-poetic-commentary",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "f58af9939a3bd12375f5d9a71e185f951adb66ee42e12b36dc8cf68a113fd0b3"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
-      "id": "curriculums/ecclesiastical-latin/03-missal-reading/30-secrets-postcommunions",
+      "id": "curriculums/ecclesiastical-latin/04-advanced/poetry/08-verse-composition",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "6c957bc4a7cc5fd001df11a447bcc49bdb34d28a3980e77969c8a576a0b8456d"
-      }
-    },
-    {
-      "id": "curriculums/ecclesiastical-latin/03-missal-reading/31-lessons-epistles",
-      "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "6b739d0e60e968065e9c619355085e47d666917f6e1fcfa8a52cba214482f665"
-      }
-    },
-    {
-      "id": "curriculums/ecclesiastical-latin/03-missal-reading/32-gospels",
-      "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "0dbfa957bda624fcbcc65def6abe1be6f78d9bb7fc50e9fbe34a79945b84de82"
-      }
-    },
-    {
-      "id": "curriculums/ecclesiastical-latin/03-missal-reading/33-chants-sequences",
-      "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "6b67b8e30cb6ab0c8f3e7d5da50a79a37b55d3f05208715454aaf3febaf4c34b"
-      }
-    },
-    {
-      "id": "curriculums/ecclesiastical-latin/03-missal-reading/34-prefaces-roman-canon",
-      "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "2211a30abc1ea7b47488d01e05782ab903db91b0cde59ac1a2bd367e31bfa1be"
-      }
-    },
-    {
-      "id": "curriculums/ecclesiastical-latin/03-missal-reading/35-temporal-cycle",
-      "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "3a1b6a5e1f4c376133886726db8b140db4d14c685bccf5d9a99b40887b87b12a"
-      }
-    },
-    {
-      "id": "curriculums/ecclesiastical-latin/03-missal-reading/36-sanctoral-commons",
-      "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "8188a0ca84dc81e53aaa8924a0dfe2f01ab52d385f2948239b5923698eeb3d58"
-      }
-    },
-    {
-      "id": "curriculums/ecclesiastical-latin/03-missal-reading/37-requiem-holy-week",
-      "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "8910008f4921df7d62a757b1fd61e45f8e29601a9f1e0db2b1d61a4d1254caf0"
-      }
-    },
-    {
-      "id": "curriculums/ecclesiastical-latin/03-missal-reading/38-full-mass-capstone",
-      "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "34a0c0dab534ae794e56a4508efce981ef1136a4c9adab6f1deacc750c149414"
-      }
-    },
-    {
-      "id": "curriculums/ecclesiastical-latin/04-advanced/39-register-across-time",
-      "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "ff0c016273fff826be90f216bef57c5ad75bc6b2af7667c30c4e751391bdf711"
-      }
-    },
-    {
-      "id": "curriculums/ecclesiastical-latin/04-advanced/40-vulgate-texture",
-      "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "a87b02d4ee7819998a4f7031613ddc33f8936336cdaa38002337d4e283643236"
-      }
-    },
-    {
-      "id": "curriculums/ecclesiastical-latin/04-advanced/41-allusion-context-typology",
-      "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "f8faf83741162ccedd18012b15c5dca903c9ac3da5024ff96e48549648b738da"
-      }
-    },
-    {
-      "id": "curriculums/ecclesiastical-latin/04-advanced/42-rhetoric-periodic-prose",
-      "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "cfdcb0c111eaf53e95b532c2ac719b5e39a92fe313255c165d20ce3c7931f857"
-      }
-    },
-    {
-      "id": "curriculums/ecclesiastical-latin/04-advanced/43-textual-comparison-commentary",
-      "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "7750ac6f5cc0de894503309af7148b52bf1a40e3f7515984450a8903ac688bab"
-      }
-    },
-    {
-      "id": "curriculums/ecclesiastical-latin/04-advanced/44-controlled-imitation",
-      "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "66b99c507a9b27538046cd78d1dc76d22c8466ab3a3c5e7a0643a117237960cf"
-      }
-    },
-    {
-      "id": "curriculums/ecclesiastical-latin/04-advanced/45-guided-composition",
-      "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "46c4436ca5b5a4d1e091729705b6cfff13149973d665cb4409c553b20faee473"
-      }
-    },
-    {
-      "id": "curriculums/ecclesiastical-latin/04-advanced/46-free-composition-research",
-      "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "136105f961a427e2ed20f027a5b81aa34244dd59ab3928bf3784e8bb440e64ea"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "curriculums/ecclesiastical-latin/05-stage-assessments/01-foundations",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "40172eda5ea67407d01018aeb6fe4c4994a23b39ad86d3c8678e37fc5148c0ea"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "curriculums/ecclesiastical-latin/05-stage-assessments/02-core-grammar",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "4f8f2490705d0b9fb3d2d3b27e3a195fed980e40913b9240003e586ad0f4343a"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "curriculums/ecclesiastical-latin/05-stage-assessments/03-missal-reading",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "3f09171b87586b60d2438d5679bf4e582ab75801b729e05ccb77d4c2059e56f0"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced",
       "catalog": "library/ecclesiastical-latin.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "9d0ef12aaef44f02b9e01fb992b6689c93d4dd421c41e78ae421047270381315"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "devotions/novenas/00-ascension-to-pentecost",

@@ -155,93 +155,93 @@ def generic_entries():
 
 
 def module_entries():
-    entries = []
-    worksheet_title = r"Unit 7: \Latin {Sum} and \Latin {Possum}"
-    chapters_by_part = (
-        (worksheet_title,),
-        ("Transfer, retrieval, and application",),
-        (worksheet_title,),
-        ("Mastery assessment and record",),
-        ("Practice models and rubrics", worksheet_title),
-        ("Scope and Qualifications", "References", "Generation Metadata"),
-    )
-    for ordinal, (part_title, chapter_titles) in enumerate(
-        zip(CHECKER.MODULE_PARTS, chapters_by_part), 1
-    ):
-        entries.append(part(ordinal, part_title))
-        for chapter_number, title in enumerate(chapter_titles, 1):
-            chapter_page = "1"
-            if part_title == "Worksheets":
-                chapter_page = "6"
-            elif part_title == "Answer Key" and title == worksheet_title:
-                chapter_page = "10"
-            entries.append(
-                chapter(
-                    chapter_number,
-                    title,
-                    f"chapter.{ordinal}.{chapter_number}",
-                    chapter_page,
-                )
+    unit_one = r"Unit I.1: Form, function, and \Latin {sum}"
+    unit_two = r"Unit I.2: Case, agreement, and a first reading"
+    entries = [
+        part(1, "Teaching"),
+        chapter(1, unit_one, "chapter.1.1", "1"),
+        section("1.1", r"The indicative of \Latin {sum}", "section.1.1.1", "1"),
+        chapter(2, unit_two, "chapter.1.2", "3"),
+        section("2.1", "Case and agreement", "section.1.2.1", "3"),
+        part(2, "Memory Work", "5"),
+        chapter(1, "Vocabulary and forms for M01", "chapter.2.1", "5"),
+        part(3, "Reading and Composition", "7"),
+        chapter(1, "Connected Latin and controlled composition", "chapter.3.1", "7"),
+        part(4, "Cumulative Practice", "10"),
+        chapter(1, unit_one, "chapter.4.1", "10"),
+    ]
+    for offset, variant in enumerate("ABCD", 11):
+        entries.append(
+            section(
+                None,
+                f"Worksheet I.1 — Variant {variant}",
+                f"section*.worksheet-i1-{variant.lower()}",
+                str(offset),
             )
-            if part_title == "Lesson":
-                entries.append(
-                    section(
-                        f"{chapter_number}.1",
-                        r"The indicative of \Latin {Sum}",
-                        f"section.{ordinal}.{chapter_number}.1",
-                    )
-                )
-            elif part_title == "Worksheets":
-                entries.extend(
-                    (
-                        section(
-                            None,
-                            "Worksheet I.26 — Variant B",
-                            "section*.worksheet-b",
-                            "6",
-                        ),
-                        section(
-                            None,
-                            "Worksheet I.27 — Variant C",
-                            "section*.worksheet-c",
-                            "7",
-                        ),
-                    )
-                )
-            elif part_title == "Answer Key" and title == worksheet_title:
-                entries.extend(
-                    (
-                        section(
-                            None,
-                            "Solution I.26 — Variant B",
-                            "section*.solution-b",
-                            "10",
-                        ),
-                        section(
-                            None,
-                            "Solution I.27 — Variant C",
-                            "section*.solution-c",
-                            "11",
-                        ),
-                    )
-                )
+        )
+    entries.append(chapter(2, unit_two, "chapter.4.2", "15"))
+    for offset, variant in enumerate("ABCD", 16):
+        entries.append(
+            section(
+                None,
+                f"Worksheet I.2 — Variant {variant}",
+                f"section*.worksheet-i2-{variant.lower()}",
+                str(offset),
+            )
+        )
+    entries.extend(
+        (
+            chapter(3, "Before continuing", "chapter.4.3", "20"),
+            part(5, "Answers and Models", "21"),
+            chapter(1, "Memory-work answers", "chapter.5.1", "21"),
+            chapter(2, "Reading and composition models", "chapter.5.2", "22"),
+            chapter(3, unit_one, "chapter.5.3", "23"),
+        )
+    )
+    for offset, variant in enumerate("ABCD", 24):
+        entries.append(
+            section(
+                None,
+                f"Solution I.1 — Variant {variant}",
+                f"section*.solution-i1-{variant.lower()}",
+                str(offset),
+            )
+        )
+    entries.append(chapter(4, unit_two, "chapter.5.4", "28"))
+    for offset, variant in enumerate("ABCD", 29):
+        entries.append(
+            section(
+                None,
+                f"Solution I.2 — Variant {variant}",
+                f"section*.solution-i2-{variant.lower()}",
+                str(offset),
+            )
+        )
+    entries.extend(
+        (
+            part(6, "Scope and Sources", "33"),
+            chapter(1, "Scope and Qualifications", "chapter.6.1", "33"),
+            chapter(2, "References", "chapter.6.2", "34"),
+            chapter(3, "Generation Metadata", "chapter.6.3", "35"),
+        )
+    )
     return entries
 
 
 def assessment_entries():
     entries = [
-        part(1, "Assessment Protocol"),
-        chapter(1, "Use, timing, and decision", "chapter.1.1"),
-        chapter(2, "Common assessment protocol", "chapter.1.2"),
-        chapter(3, "Scoring and remediation map", "chapter.1.3"),
-        part(2, "Learner Forms"),
-        chapter(1, "Gate I: Foundations", "chapter.2.1"),
-        section(None, "F-A. Foundations mastery, Form A", "section*.fa.learner"),
-        section(None, "F-B. Foundations mastery, Form B", "section*.fb.learner"),
-        part(3, "Solutions and Rubrics"),
-        chapter(1, "Gate I: Foundations", "chapter.3.1"),
-        section(None, "F-A. Foundations mastery, Form A", "section*.fa.key"),
-        section(None, "F-B. Foundations mastery, Form B", "section*.fb.key"),
+        part(1, "Using This Review"),
+        chapter(1, "Purpose and method", "chapter.1.1"),
+        chapter(2, "Common self-review method", "chapter.1.2"),
+        chapter(3, "Reading the result qualitatively", "chapter.1.3"),
+        part(2, "Review Forms"),
+        chapter(1, "Foundations Cumulative Review", "chapter.2.1"),
+        section(None, "F-A. Foundations, first review", "section*.fa.review"),
+        section(None, "F-B. Foundations, later review", "section*.fb.review"),
+        part(3, "Answers and Models"),
+        chapter(1, "Foundations Cumulative Review", "chapter.3.1"),
+        section(None, "F-A. Foundations, first review", "section*.fa.model"),
+        section(None, "F-B. Foundations, later review", "section*.fb.model"),
         part(4, "Scope and Sources"),
         chapter(1, "Scope", "chapter.4.1"),
     ]
@@ -580,26 +580,26 @@ I First Part                                                   1
         ):
             CHECKER.validate_body_word_pages(header_footer_only)
 
-    def test_rejects_sparse_module_advance_when_pages(self) -> None:
+    def test_rejects_sparse_module_before_continuing_pages(self) -> None:
         def page_with_words(marker: str, total: int) -> str:
             marker_count = len(marker.split())
             self.assertGreaterEqual(total, marker_count)
             return marker + " " + "evidence " * (total - marker_count)
 
         CHECKER.validate_fragmentary_pages(
-            page_with_words("Advance when:", 90), is_module=True
+            page_with_words("Before continuing", 90), is_module=True
         )
         with self.assertRaisesRegex(
             CHECKER.StructureError,
-            "Advance when: but only 89 words; expected at least 90",
+            "Before continuing but only 89 words; expected at least 90",
         ):
             CHECKER.validate_fragmentary_pages(
-                page_with_words("Advance when:", 89), is_module=True
+                page_with_words("Before continuing", 89), is_module=True
             )
 
-        # The density floor belongs only to two-session learning modules.
+        # The density floor belongs only to learning packets.
         CHECKER.validate_fragmentary_pages(
-            page_with_words("Advance when:", 20), is_module=False
+            page_with_words("Before continuing", 20), is_module=False
         )
 
     def test_rejects_sparse_worksheet_and_solution_continuations(self) -> None:
@@ -712,14 +712,53 @@ I First Part                                                   1
                         remove_occurrence(token, ordinal), path
                     )
 
+        begin_bank_start = source.index(r"\newcommand{\BeginExerciseBank}")
+        begin_bank_end = source.index(
+            r"\newcommand{\SelectedWorksheetVariants}", begin_bank_start
+        )
+        begin_bank_source = source[begin_bank_start:begin_bank_end]
         without_initialization = source.replace(
-            r"\firstcourseworksheettrue", "", 1
+            begin_bank_source,
+            begin_bank_source.replace(r"\firstcourseworksheettrue", "", 1),
+            1,
         )
         with self.assertRaisesRegex(
             CHECKER.StructureError,
             "must initialize firstcourseworksheettrue",
         ):
             CHECKER.validate_course_format_layout(without_initialization, path)
+
+        unit_guard_start = source.index(r"\newcommand{\CourseUnitOpeningGuard}")
+        unit_guard_end = source.index(r"\NewEnviron{courseunit}", unit_guard_start)
+        unit_guard_source = source[unit_guard_start:unit_guard_end]
+        without_unit_reset = source.replace(
+            unit_guard_source,
+            unit_guard_source.replace(
+                r"\global\firstcourseworksheettrue", "", 1
+            ),
+            1,
+        )
+        with self.assertRaisesRegex(
+            CHECKER.StructureError,
+            "must reset firstcourseworksheettrue for every selected unit",
+        ):
+            CHECKER.validate_course_format_layout(without_unit_reset, path)
+
+        courseunit_start = source.index(r"\NewEnviron{courseunit}")
+        courseunit_end = source.index(
+            r"\newcommand{\Definition}", courseunit_start
+        )
+        courseunit_source = source[courseunit_start:courseunit_end]
+        without_guard_use = source.replace(
+            courseunit_source,
+            courseunit_source.replace(r"\CourseUnitOpeningGuard", ""),
+            1,
+        )
+        with self.assertRaisesRegex(
+            CHECKER.StructureError,
+            "must invoke CourseUnitOpeningGuard in both selection branches",
+        ):
+            CHECKER.validate_course_format_layout(without_guard_use, path)
 
     def test_course_format_requires_part_qualified_hypertext_destinations(self) -> None:
         path = (
@@ -847,13 +886,75 @@ I First Part                                                   1
                 CHECKER.validate_obsolete_definition_checks(root)
 
     def test_authoritative_source_registry_reconciles_all_publications(self) -> None:
-        result = CHECKER.audit_sources(
-            ROOT / "src/gpt/curriculums/ecclesiastical-latin"
-        )
+        curriculum_root = ROOT / "src/gpt/curriculums/ecclesiastical-latin"
+        result = CHECKER.audit_sources(curriculum_root)
         self.assertEqual(
             result,
-            CHECKER.SourceAudit(46, 46, 6, 9),
+            CHECKER.SourceAudit(30, 30, 7, 9),
         )
+
+        rows = CHECKER._registry_rows(curriculum_root)
+        CHECKER._validate_registry_shape(rows)
+        short_trunk = list(rows)
+        module_id, _, worksheets, leaf = short_trunk[0]
+        short_trunk[0] = (module_id, "I.1", worksheets, leaf)
+        with self.assertRaisesRegex(
+            CHECKER.StructureError,
+            "must contain two or three common-trunk units|46 stable lessons",
+        ):
+            CHECKER._validate_registry_shape(short_trunk)
+
+        misplaced_poetry = list(rows)
+        module_id, units, worksheets, _ = misplaced_poetry[-1]
+        misplaced_poetry[-1] = (
+            module_id,
+            units,
+            worksheets,
+            "04-advanced/08-verse-composition",
+        )
+        with self.assertRaisesRegex(
+            CHECKER.StructureError, "non-poetry canonical leaf"
+        ):
+            CHECKER._validate_registry_shape(misplaced_poetry)
+
+    def test_module_packet_keys_control_memory_reader_and_practice(self) -> None:
+        path = (
+            ROOT
+            / "src/gpt/curriculums/ecclesiastical-latin/01-foundations/"
+            "01-form-case-and-agreement/module-data.tex"
+        )
+        source = CHECKER._strip_tex_comments(path.read_text(encoding="utf-8"))
+        CHECKER._validate_module_key_alignment(source, path, "EL-M01")
+
+        for old, new, diagnostic in (
+            (
+                r"\newcommand{\ModuleIDKey}{M01}",
+                r"\newcommand{\ModuleIDKey}{M02}",
+                "ModuleIDKey 'M02' != packet key 'M01'",
+            ),
+            (
+                r"\newcommand{\ModuleMemorySet}{M01}",
+                r"\newcommand{\ModuleMemorySet}{M02}",
+                "ModuleMemorySet 'M02' != packet key 'M01'",
+            ),
+            (
+                r"\newcommand{\ModuleReaderSet}{M01}",
+                r"\newcommand{\ModuleReaderSet}{M02}",
+                "ModuleReaderSet 'M02' != packet key 'M01'",
+            ),
+            (
+                r"\SelectCourseUnits{M01}",
+                r"\SelectCourseUnits{M02}",
+                "ModulePractice must select only packet key 'M01'",
+            ),
+        ):
+            with self.subTest(old=old):
+                mutated = source.replace(old, new, 1)
+                self.assertNotEqual(mutated, source)
+                with self.assertRaisesRegex(CHECKER.StructureError, diagnostic):
+                    CHECKER._validate_module_key_alignment(
+                        mutated, path, "EL-M01"
+                    )
 
     def test_publication_inventory_rejects_every_unregistered_main(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -1010,80 +1111,118 @@ Page  Destination                 Name
                 self.generic_document, entries, rendered_bookmarks
             )
 
-    def test_module_requires_worksheet_chapter_in_the_answer_key(self) -> None:
+    def test_module_requires_matching_solution_unit_chapters(self) -> None:
         document = (
             "curriculums/ecclesiastical-latin/01-foundations/"
-            "01-grammar-bridge"
+            "01-form-case-and-agreement"
         )
         entries = module_entries()
         CHECKER.validate_document(document, entries, bookmarks(entries))
 
-        broken = [
-            replace(entry, title="Different worksheet")
-            if entry.destination == "chapter.5.2"
+        broken_title = [
+            replace(entry, title="Different source unit")
+            if entry.destination == "chapter.5.4"
             else entry
             for entry in entries
         ]
         with self.assertRaisesRegex(
-            CHECKER.StructureError, "exactly one matching source-owned unit chapter"
+            CHECKER.StructureError,
+            "source-owned worksheet and solution unit chapters differ",
         ):
-            CHECKER.validate_document(document, broken, bookmarks(broken))
-
-        wrapped = [
-            replace(entry, title="Selected worksheet solutions")
-            if entry.destination == "chapter.5.1"
-            else entry
-            for entry in entries
-        ]
-        with self.assertRaisesRegex(CHECKER.StructureError, "forbidden generic"):
-            CHECKER.validate_document(document, wrapped, bookmarks(wrapped))
-
-        unnumbered_wrapped = list(entries)
-        answer_part_index = next(
-            index
-            for index, entry in enumerate(unnumbered_wrapped)
-            if entry.kind == "part" and "Answer Key" in entry.title
-        )
-        unnumbered_wrapped.insert(
-            answer_part_index + 1,
-            chapter(
-                None,
-                "Selected worksheet solutions",
-                "section*.generic-solution-wrapper",
-            ),
-        )
-        with self.assertRaisesRegex(CHECKER.StructureError, "forbidden generic"):
             CHECKER.validate_document(
-                document,
-                unnumbered_wrapped,
-                bookmarks(unnumbered_wrapped),
+                document, broken_title, bookmarks(broken_title)
             )
 
         missing_solution = [
             entry
             for entry in entries
-            if entry.destination != "section*.solution-c"
+            if entry.destination != "section*.solution-i2-d"
         ]
         with self.assertRaisesRegex(
-            CHECKER.StructureError, "exactly two solution sections|section IDs differ"
+            CHECKER.StructureError,
+            "one solution for every worksheet|IDs/titles differ",
         ):
             CHECKER.validate_document(
                 document, missing_solution, bookmarks(missing_solution)
             )
 
-    def test_module_requires_assessment_immediately_after_worksheets(self) -> None:
+    def test_common_trunk_requires_every_declared_teaching_unit(self) -> None:
         document = (
             "curriculums/ecclesiastical-latin/01-foundations/"
-            "01-grammar-bridge"
+            "01-form-case-and-agreement"
+        )
+        entries = module_entries()
+
+        without_second_teaching = [
+            entry
+            for entry in entries
+            if entry.destination not in {"chapter.1.2", "section.1.2.1"}
+        ]
+        with self.assertRaisesRegex(
+            CHECKER.StructureError,
+            "Teaching and Cumulative Practice must render the same number",
+        ):
+            CHECKER.validate_document(
+                document,
+                without_second_teaching,
+                bookmarks(without_second_teaching),
+            )
+
+        one_unit = []
+        for entry in entries:
+            if (
+                entry.destination in {"chapter.1.2", "section.1.2.1", "chapter.4.2", "chapter.5.4"}
+                or entry.destination.startswith("section*.worksheet-i2-")
+                or entry.destination.startswith("section*.solution-i2-")
+            ):
+                continue
+            if entry.destination == "chapter.4.3":
+                entry = replace(entry, number="2")
+            one_unit.append(entry)
+        with self.assertRaisesRegex(
+            CHECKER.StructureError,
+            "common-trunk packet must render two or three teaching units",
+        ):
+            CHECKER.validate_document(document, one_unit, bookmarks(one_unit))
+
+        fixture_expectation = (
+            ("I.1", "I.2"),
+            ("I.1", "I.1", "I.1", "I.1", "I.2", "I.2", "I.2", "I.2"),
+        )
+        CHECKER.validate_document(
+            document,
+            entries,
+            bookmarks(entries),
+            expected_module=fixture_expectation,
+        )
+        wrong_ids = (
+            fixture_expectation[0],
+            fixture_expectation[1][:-1] + ("I.99",),
+        )
+        with self.assertRaisesRegex(
+            CHECKER.StructureError,
+            "rendered worksheet IDs differ from the canonical registry",
+        ):
+            CHECKER.validate_document(
+                document,
+                entries,
+                bookmarks(entries),
+                expected_module=wrong_ids,
+            )
+
+    def test_module_requires_declared_packet_parts(self) -> None:
+        document = (
+            "curriculums/ecclesiastical-latin/01-foundations/"
+            "01-form-case-and-agreement"
         )
         self.assertEqual(
             CHECKER.MODULE_PARTS,
             (
-                "Lesson",
-                "Practice",
-                "Worksheets",
-                "Assessment",
-                "Answer Key",
+                "Teaching",
+                "Memory Work",
+                "Reading and Composition",
+                "Cumulative Practice",
+                "Answers and Models",
                 "Scope and Sources",
             ),
         )
@@ -1091,36 +1230,36 @@ Page  Destination                 Name
         CHECKER.validate_document(document, entries, bookmarks(entries))
 
         broken = [
-            replace(entry, title=part(3, "Assessment").title)
+            replace(entry, title=part(3, "Cumulative Practice").title)
             if entry.destination == "part.3"
-            else replace(entry, title=part(4, "Worksheets").title)
+            else replace(entry, title=part(4, "Reading and Composition").title)
             if entry.destination == "part.4"
             else entry
             for entry in entries
         ]
         with self.assertRaisesRegex(
             CHECKER.StructureError,
-            "learning module Parts differ from the required sequence",
+            "learning packet Parts differ from the declared sequence",
         ):
             CHECKER.validate_document(document, broken, bookmarks(broken))
 
     def test_module_navigation_stays_beneath_source_owned_units(self) -> None:
         document = (
             "curriculums/ecclesiastical-latin/01-foundations/"
-            "01-grammar-bridge"
+            "01-form-case-and-agreement"
         )
         entries = module_entries()
         CHECKER.validate_document(document, entries, bookmarks(entries))
         for destination, wrapper_destination, expected in (
             (
-                "chapter.3.1",
+                "chapter.4.1",
                 "chapter*.worksheet-wrapper",
-                "worksheet .*expected source-owned unit",
+                "worksheet .*has no numbered unit-chapter parent",
             ),
             (
-                "chapter.5.2",
+                "chapter.5.3",
                 "chapter*.solution-wrapper",
-                "solution .*expected source-owned unit",
+                "solution .*has no numbered unit-chapter parent",
             ),
         ):
             with self.subTest(destination=destination):
@@ -1142,13 +1281,21 @@ Page  Destination                 Name
     def test_module_later_worksheet_and_solution_forms_start_new_pages(self) -> None:
         document = (
             "curriculums/ecclesiastical-latin/01-foundations/"
-            "01-grammar-bridge"
+            "01-form-case-and-agreement"
         )
         entries = module_entries()
         CHECKER.validate_document(document, entries, bookmarks(entries))
         for destination, prior_destination, label in (
-            ("section*.worksheet-c", "section*.worksheet-b", "learner worksheets"),
-            ("section*.solution-c", "section*.solution-b", "keyed solutions"),
+            (
+                "section*.worksheet-i1-c",
+                "section*.worksheet-i1-b",
+                "learner worksheets",
+            ),
+            (
+                "section*.solution-i1-c",
+                "section*.solution-i1-b",
+                "keyed solutions",
+            ),
         ):
             with self.subTest(label=label):
                 prior_page = next(
@@ -1188,24 +1335,26 @@ Page  Destination                 Name
                         bookmarks(reversed_pages),
                     )
 
-    def test_module_answer_unit_chapter_stays_with_first_solution(self) -> None:
+    def test_module_requires_four_variants_per_source_unit(self) -> None:
         document = (
             "curriculums/ecclesiastical-latin/01-foundations/"
-            "01-grammar-bridge"
+            "01-form-case-and-agreement"
         )
         entries = module_entries()
         CHECKER.validate_document(document, entries, bookmarks(entries))
 
         broken = [
-            replace(entry, page="9")
-            if entry.destination == "chapter.5.2"
-            else entry
+            entry
             for entry in entries
+            if entry.destination
+            not in {
+                "section*.worksheet-i1-d",
+                "section*.solution-i1-d",
+            }
         ]
         with self.assertRaisesRegex(
             CHECKER.StructureError,
-            "Answer Key source-owned unit chapter and first solution must "
-            "share one logical page",
+            "must contain four A–D forms",
         ):
             CHECKER.validate_document(
                 document,
@@ -1213,7 +1362,7 @@ Page  Destination                 Name
                 bookmarks(broken),
             )
 
-    def test_assessment_rejects_foreign_gate_and_form_headings(self) -> None:
+    def test_assessment_rejects_foreign_review_group_and_forms(self) -> None:
         document = (
             "curriculums/ecclesiastical-latin/05-stage-assessments/"
             "01-foundations"
@@ -1222,10 +1371,10 @@ Page  Destination                 Name
         CHECKER.validate_document(document, entries, bookmarks(entries))
 
         broken = [
-            replace(entry, title="Gate II: Complete Core Grammar")
+            replace(entry, title="Core Grammar Cumulative Review")
             if entry.destination == "chapter.2.1"
             else replace(entry, title="C-A. Foreign form")
-            if entry.destination == "section*.fa.learner"
+            if entry.destination == "section*.fa.review"
             else entry
             for entry in entries
         ]
@@ -1236,7 +1385,7 @@ Page  Destination                 Name
 
         peer_chapter = [
             replace(entry, kind="chapter")
-            if entry.destination == "section*.fa.learner"
+            if entry.destination == "section*.fa.review"
             else entry
             for entry in entries
         ]
@@ -1247,25 +1396,26 @@ Page  Destination                 Name
                 document, peer_chapter, bookmarks(peer_chapter)
             )
 
-    def test_assessment_forms_remain_bookmarked_under_their_gate(self) -> None:
+    def test_assessment_forms_remain_bookmarked_under_their_review_group(self) -> None:
         document = (
             "curriculums/ecclesiastical-latin/05-stage-assessments/"
             "01-foundations"
         )
         entries = assessment_entries()
         CHECKER.validate_document(document, entries, bookmarks(entries))
-        gate_index = next(
+        group_index = next(
             index
             for index, entry in enumerate(entries)
             if entry.destination == "chapter.2.1"
         )
         broken = list(entries)
         broken.insert(
-            gate_index + 1,
+            group_index + 1,
             chapter(None, "Generic forms wrapper", "chapter*.forms-wrapper"),
         )
         with self.assertRaisesRegex(
-            CHECKER.StructureError, "Learner Forms form F-A .*expected gate"
+            CHECKER.StructureError,
+            "Review Forms form F-A .*expected review group",
         ):
             CHECKER.validate_document(document, broken, bookmarks(broken))
 
@@ -1278,7 +1428,7 @@ Page  Destination                 Name
         CHECKER.validate_document(document, entries, bookmarks(entries))
 
         repeated = [
-            replace(entry, title="Common assessment protocol")
+            replace(entry, title="Common self-review method")
             if entry.destination == "chapter.4.1"
             else entry
             for entry in entries

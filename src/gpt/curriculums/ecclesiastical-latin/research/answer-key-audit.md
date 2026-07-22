@@ -1,98 +1,113 @@
-# Ecclesiastical Latin — Answer-Key Audit
+# Ecclesiastical Latin — Answer and Model Audit
 
-## Object and rendering identity
+## Record boundary
 
-The authoritative exercise inputs are the four worksheet-bank sources,
-`assessments/all.tex`, and each module's local transfer-practice source. A learning
-packet selects two of its unit's four worksheet variants and renders only those
-sources twice: once with `solutionsfalse` in the student sequence and once with
-`solutionstrue` in the terminal answer part. An assessment companion applies
-the same two-pass rule to its selected stable forms. There is no separately
-maintained answer manuscript. The solution pass preserves explicit worksheet,
-passage, worked-example, assessment, and item identifiers while using a
-separate PDF-anchor namespace. This removes drift without implying that every
-open model is uniquely correct.
+- **Audit date:** 2026-07-22.
+- **Object:** the authoritative memory, reading, composition, worksheet,
+  cumulative-practice, self-review, and answer sources for the redesigned
+  Ecclesiastical Latin curriculum.
+- **Publication state:** source redesign complete as an installed,
+  unreleased 37-PDF set; build, exact every-page review, and installed-mirror
+  verification are recorded separately in `production-manifest.md`.
 
-Inventory at integration:
+Prompts and answers are not maintained as parallel manuscripts. The same
+source environment renders once with answers closed and again with answers
+open. Stable worksheet, passage, assessment, memory-set, lexeme, and
+grammar-fact identifiers remain unchanged between those renderings. Open
+composition and commentary responses are explicitly models or points to check,
+not the only possible Latin.
 
-| Family | Worksheet forms | Exercise / assessment calls | Answer type |
-|---|---:|---:|---|
-| Volume I | 48 | 288 | closed morphology and parsing; translation alternatives; controlled models |
-| Volume II | 56 | 340 | closed syntax discrimination; reconstruction; translations; controlled and open models |
-| Volume III | 48 | 288 | received-passage analysis; source checks; reconstruction; direct-reading rubrics |
-| Volume IV | 32 | 162 | comparison, rhetoric, source dossiers, imitation, open composition rubrics |
-| Assessments | 9 forms after integration | 133 items after M-C addition | closed checks, designated-form diagnostics, unfamiliar-formulary rubric, advanced portfolios |
+## Authoritative inventory
 
-Counts are structural coverage, not evidence that an answer is correct.
+Counts below describe source calls, not claims that every answer has received
+external review.
 
-## Ambiguity and scoring policy
+| Family | Worksheet or form count | Prompt/model calls | Received-passage calls | Principal answer types |
+|---|---:|---:|---:|---|
+| Volume I | 48 worksheets | 288 | 57 | morphology, parsing, reconstruction, translation, controlled prose |
+| Volume II | 56 worksheets | 340 | 56 | clause analysis, discrimination, transformation, translation, composition |
+| Volume III | 48 worksheets | 264 | 51 | Missal reading, source-aware parsing, genre work, direct summaries |
+| Volume IV | 32 worksheets | 160 | 14 | rhetoric, comparison, commentary, imitation, advanced prose |
+| Poetry branch | 32 worksheets | 159 | 15 | quantity, scansion method, poetic syntax, commentary, verse ledgers and composition |
+| Cumulative self-reviews | 9 forms | 133 | included in form count | fresh retrieval, complete-formulary reading, comparison, prose and revision |
 
-- A form or parse is closed only to the extent that the supplied context rules
-  out real alternatives. The key must state unresolved morphological or
-  syntactic ambiguity rather than silently choose one.
-- A structural translation preserves relations; a natural translation may
-  vary. The key names material alternatives and rejects only a rendering that
-  loses the tested grammar or proposition.
-- Reconstruction may reorder or bracket supplied material but may not rewrite
-  received text. An interpretive supply is labeled.
-- Open composition answers are models. They are scored for morphology,
-  agreement, government, syntax, intended proposition, and defensible idiom.
-- Source, register, allusion, and collation tasks use evidence rubrics and allow
-  a documented negative result. They do not require invention of a source.
-- Percentages use the denominator defined in the assessment protocol and
-  `curriculum-map.md`; no many-part response receives one opaque point.
+The twenty-two trunk packets select all 184 inherited prose worksheets once
+across the sequence. The eight poetry packets select all 32 new poetry
+worksheets once. Each packet renders every A–D variant belonging to its two or
+three stable lessons; no variant is hidden from the self-guided packet.
 
-## Completed internal checks and corrections
+The trunk also has 66 keyed `SubmoduleExtension` blocks: three connected,
+recall, or transfer practices for each packet. The memory registry contains 30
+packet sets, 598 controlled lexemes, and 81 grammar facts. Its study,
+Latin-to-sense, sense-to-Latin, morphology, government, grammar,
+reconstruction, and composition sheets draw both prompts and models from that
+one registry.
 
-Two independent read-only audit passes divided Volumes I–II and Volumes
-III–IV/reference/assessments. The integration pass then searched every reported
-term through teaching, worksheet, assessment, and solution renderings before
-editing the authoritative source. High-confidence corrections include:
+## What makes an answer checkable
 
-- replacing false gender, tense, voice, case-use, compound-pronoun, and
-  participle labels where the printed form contradicted them;
-- distinguishing the alternative third-person plural perfect ending
-  `-ere` from syncope in *conflixere*;
-- identifying *praeveniendo* as an inflected ablative gerund rather than an
+- A closed parse is exact only when the printed context rules out genuine
+  alternatives. Where it does not, the model states the alternatives and the
+  evidence that would decide between them.
+- A close translation displays structure; a natural translation may vary.
+  The model protects the tested grammatical relations and proposition rather
+  than prescribing one English wording.
+- A reconstruction may reorder or bracket supplied Latin for analysis but is
+  labeled project work and never presented as a variant witness.
+- A prose or verse composition model is judged by morphology, agreement,
+  government, syntax, intended sense, defensible idiom, declared register or
+  form, and visible revision. A grammatically sound alternative remains open.
+- Source, allusion, register, and collation work must distinguish observation,
+  comparison, inference, and uncertainty. A documented negative result is a
+  sound result when the proposed relationship lacks evidence.
+- “Before continuing” records ask what has become reasonably dependable and
+  what deserves another return. They do not reduce the work to a number.
+
+## Corrections retained from the inherited audit
+
+The redesigned sources preserve the earlier high-confidence corrections,
+including:
+
+- corrected gender, tense, voice, case-use, comparative, pronoun, participle,
+  gerundive, and principal-part labels where the printed form contradicted the
+  explanation;
+- distinction of the inherited third-person plural perfect ending `-ere` from
+  syncope in *conflixere*;
+- identification of *praeveniendo* as an ablative gerund rather than an
   indeclinable form;
-- correcting a Common-of-a-Martyr source and its propagated placeholder
-  exercise;
-- distinguishing interrogative `-ne` from negative `ne`, personal subjects
-  from impersonal verbs, and antecedent relatives from free relatives;
-- correcting exact assessment wording (*advenientis*, hortatory subjunctives,
-  gerundive status, and purpose/result ambiguity); and
-- adding M-C because the original M-A/M-B reused extensively taught First
-  Advent and Pentecost formularies and therefore could not prove unfamiliar
-  transfer.
+- correction of the Common-of-a-Martyr source and its propagated exercise;
+- distinction of interrogative `-ne` from negative *ne*, personal subjects
+  from impersonal constructions, and antecedent relatives from free relatives;
+- restoration of *advenientis* in the Pentecost text and correction of the
+  dependent answers; and
+- correction of P4's greater-Asclepiadean model from two to three choriambic
+  sequences, and replacement of P6's unsupported stress-ledger answers with
+  checkable grammar, syllable-count, line-grouping, quantity, and written-ending
+  records; and
+- replacement of vague or source-external advanced prompts with complete
+  printed texts, comparison sets, lexicon material, and answer criteria.
+- supply of the complete verified *Te igitur* prayer sentence for IV.14 while
+  retaining III.31.1's distinct adapted boundary in the owner inventory.
 
-The detailed textual decisions and remaining source limits are in
-`source-audit.md`. The post-correction macro inventory found 48/56/48/32
-worksheet forms, 288/340/288/162 exercise calls, and 9 assessment forms with
-133 assessment items in the four authoritative banks and assessment source.
-Across all 46 learning packets, the selectors account for 92 of the 184
-worksheet variants and 539 of the 1,078 exercise calls. Every selected prompt
-and its answer come from the same captured source environment; the other 92
-variants remain optional owner sources rather than omitted required answers.
-Each module also keeps its transfer-practice prompt and checkable model or rubric in
-one `SubmoduleExtension` call. The four assessment companions account for all
-nine forms and 133 items in both student and solution passes.
+The new poetry bank was drafted against the branch's supplied Phaedrus,
+Virgil, Ovid, Horace, and Pentecost Sequence texts. It repeatedly distinguishes
+received text from project reconstruction or imitation, separates textual
+quantity and visible page pattern from spoken realization, and keeps all four
+composition ledgers in the answer model. P6 and P7 now reprint every received
+text named by their comparison and commentary tasks. The P6 memory model also
+restores the complete sixteen-form imperative chain, including all four
+occurrences each of *veni* and *da*.
 
-## Open review boundary
+## Remaining review boundary
 
-The audit is internal, not an independent examination by a Latinist or
-pedagogue. No human learner has completed the curriculum, timed the two-session
-envelopes or gates, or validated writable space and workload in use. The
-envelope is an editorial design target, not evidence that every learner should
-advance after two days. Received-text attribution and collation are controlled
-separately by `passage-inventory.md`; an answer can be grammatically coherent
-while still quoting or identifying a source incorrectly. The rebuilt packets
-are installed as revised working snapshots after internal build and
-production checks. That user-directed installation and this audit did not
-supply independent review or themselves grant changed-byte release
-authorization. The immediately preceding exact installed set was
-release-cleared by the 21 July 2026 exact-current-snapshot exception; that
-binding is now historical. At this audit's 21 July cutoff, the revised set had
-changed every installed PDF and remained fail-closed pending a renewed exact
-binding. The separate 22 July 2026 release record now release-clears only the
-exact current 52 PDF hashes under its exact-byte exception. None of the audits,
-the installation, or the exact-byte exceptions completes any missing review.
+The source structure gate confirms unique IDs, complete A–D ownership, the
+216-worksheet total, terminal answer placement, and the nine self-review
+forms. That structural result does not prove every Latin judgment or received
+wording. `passage-inventory.md`, `edition-manifest.md`,
+`authentic-source-ladder.md`, and `source-audit.md` record those distinct
+evidence questions.
+
+No claim is made here that an independent Latinist has completed a full
+content review or that long-term use has established the workload. PDF build,
+log, rendered-structure, exact every-page visual, and installed-mirror results
+belong in `production-manifest.md`. The redesigned PDFs are installed but
+remain unreleased on explicit hold.

@@ -1,6 +1,22 @@
+% Packet-data integration contract. New leaves provide the named keys and
+% sources. Fallbacks keep the shell usable while the grouped leaves and the
+% shared memory/reader registries are assembled.
+\InputIfFileExists{\CourseRoot/shared/memory/renderers.tex}{}{}
+\providecommand{\RenderModuleReaderSet}[1]{}
+\InputIfFileExists{\CourseRoot/shared/readers/renderers.tex}{}{}
+\providecommand{\ModuleIDKey}{\ModuleID}
+\providecommand{\ModuleMemorySet}{\ModuleIDKey}
+\providecommand{\ModuleReaderSet}{\ModuleIDKey}
+\providecommand{\ModuleWorksheetVariants}{all}
+\providecommand{\RenderModuleMemoryLearner}[1]{}
+\providecommand{\RenderModuleMemorySolutions}[1]{}
+\providecommand{\ModuleBeforeContinuing}{Use fresh Latin to identify what is
+reasonably dependable and what deserves another return before continuing.}
+\providecommand{\ModulePractice}{}
+
 \hypersetup{
   pdftitle={Ecclesiastical Latin — \ModuleID: \ModuleTitle},
-  pdfsubject={Lesson, practice, worksheets, assessment, and answers for reading the 1962 Roman Missal}
+  pdfsubject={Teaching, memory work, broad Latin reading, composition, cumulative practice, and answers on the way to reading the 1962 Roman Missal}
 }
 
 \begin{document}
@@ -18,39 +34,47 @@
 \clearpage
 \pagenumbering{arabic}
 
-\part{Lesson}
+\part{Teaching}
 \SelectCourseUnits{\ModuleUnit}
 \BeginWorkedPassageBank{\ModuleWorkedBank}
-% Unit-owned gates remain in the authoritative lesson source, but a packet
-% prints its locally audited mastery criterion once, after the worksheets.
+% Stable lessons retain their source-owned readiness statements for reference,
+% but the grouped packet prints one integrated qualitative boundary after its
+% cumulative practice.
 \begingroup
-\renewcommand{\MasteryGate}[1]{}
+\renewcommand{\BeforeContinuing}[1]{}
 \input{\ModuleLessonSource}
 \endgroup
 
 \clearpage
-\part{Practice}
-\chapter{Transfer, retrieval, and application}
+\part{Memory Work}
+\chapter{Vocabulary, forms, and constructions from memory}
 \solutionsfalse
+\RenderModuleMemoryLearner{\ModuleMemorySet}
+
+\clearpage
+\part{Reading and Composition}
+\chapter{Connected Latin and written expression}
+\solutionsfalse
+\RenderModuleReaderSet{\ModuleReaderSet}
 \ModulePractice
 
 \clearpage
-\part{Worksheets}
+\part{Cumulative Practice}
 \solutionsfalse
 \SelectCourseUnits{\ModuleUnit}
 \SelectWorksheetVariants{\ModuleWorksheetVariants}
 \BeginExerciseBank{\ModuleExerciseBank}
 \input{\ModuleExerciseSource}
+\ModuleReadinessRecord
 
 \clearpage
-\part{Assessment}
-\ModuleWorkRecord
-
-\clearpage
-\part{Answer Key}
+\part{Answers and Models}
 \input{\CourseRoot/shared/content/80-answer-key-notice}
 \solutionstrue
-\chapter{Practice models and rubrics}
+\chapter{Memory-work answers}
+\RenderModuleMemorySolutions{\ModuleMemorySet}
+\chapter{Reading, composition, and practice models}
+\RenderModuleReaderSet{\ModuleReaderSet}
 \ModulePractice
 \SelectCourseUnits{\ModuleUnit}
 \SelectWorksheetVariants{\ModuleWorksheetVariants}
