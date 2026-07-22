@@ -7,18 +7,21 @@
   Ecclesiastical Latin leaves: two course companions, 46 two-session learning
   modules, and four stage-assessment companions.
 - **Installed total:** 779 pages and 23,359,930 bytes.
-- **Publication state:** revised working snapshots installed at the user's
-  direction; changed-byte distribution remains on hold pending renewed
-  exact-snapshot authorization.
+- **Publication state at audit completion:** revised working snapshots installed
+  at the user's direction; changed-byte distribution remained on hold pending
+  renewed exact-snapshot authorization.
+- **Current release state:** the separate 22 July 2026 release record
+  release-clears all exact hashes below under its exact-byte exception.
 
 The hashes below identify byte-identical files under the mirrored curriculum
 build and installed paths. They replace the release-cleared working set that
 immediately preceded them: 52 PDFs, 920 pages, and 24,936,030 bytes. The
 release records preserve the 20 July 2026 bindings for the still-earlier set
 and the 21 July 2026 exact-current-snapshot bindings for that immediately
-preceding set as historical. Neither binds the revised hashes recorded here,
-so the exact-snapshot check fails closed for every changed curriculum PDF
-pending renewed authorization.
+preceding set as historical. At this audit's completion, neither bound the
+revised hashes recorded here, so the exact-snapshot check failed closed for
+every changed curriculum PDF pending renewed authorization. The separate 22
+July 2026 exact-byte exception now binds every revised hash listed below.
 
 ## Verification state
 
@@ -64,10 +67,12 @@ checks of contents pages and identified high-risk pages. The complete exact set
 showed no clipping, overflow, blank-or-rule-only pages, or remaining structure
 or pagination defect.
 
-This manifest records a technically and visually verified installed working
-set, not a completed universal production review. It is not itself release
-authorization. The source and answer audits record the content-level checking
-and remaining evidence limits.
+The complete 779-page exact installed working set has completed the technical
+and visual verification recorded here. That completed exact-page review is not
+a completed universal production review, and this manifest is not itself
+release authorization. The separate 22 July 2026 release record now authorizes
+distribution of only the exact PDF bytes listed below. The source and answer
+audits record the content-level checking and remaining evidence limits.
 
 ## Exact installed snapshots
 
@@ -140,11 +145,15 @@ alter those facts.
 The release records preserve the maintainer's 20 July 2026 Ecclesiastical
 Latin exact-snapshot exception for the earlier installed bytes and the 21 July
 2026 exact-current-snapshot exception for the immediately preceding installed
-bytes. Those bindings are historical and do not cover the revised snapshots
-recorded here. Neither exception establishes donor ownership, an open license,
-broader permission for liturgical wording, profile-final status, independent
-review, or general distribution authority beyond the exact snapshots it binds.
+bytes. Those bindings are historical and did not cover the revised snapshots
+at this audit's completion. The separate 22 July 2026 exact-byte exception now
+release-clears every exact revised snapshot recorded here. No exception
+establishes donor ownership, an open license, broader permission for liturgical
+wording, profile-final status, independent review, or general distribution
+authority beyond the exact snapshots it binds.
 
-This manifest records the user-directed installation and commit preparation.
-It does not itself authorize distribution, integration, push, or deployment;
-changed bytes require a new exact binding.
+This manifest records the user-directed installation and commit preparation;
+it did not itself authorize distribution, integration, push, or deployment.
+The separate 22 July release record authorizes distribution of the exact
+current PDF bytes only. It does not authorize this worker to integrate, push,
+or deploy, and changed bytes require a new exact binding.

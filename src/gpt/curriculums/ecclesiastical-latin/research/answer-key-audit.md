@@ -87,10 +87,12 @@ advance after two days. Received-text attribution and collation are controlled
 separately by `passage-inventory.md`; an answer can be grammatically coherent
 while still quoting or identifying a source incorrectly. The rebuilt packets
 are installed as revised working snapshots after internal build and
-production checks. That user-directed installation does not supply independent
-review or itself grant changed-byte release authorization. The immediately
-preceding exact installed set was release-cleared by the 21 July 2026
-exact-current-snapshot exception; that binding is now historical. The revised set
-changes every installed PDF and remains fail-closed pending a renewed exact
-binding. Neither that exception nor the present installation completes any
-missing review.
+production checks. That user-directed installation and this audit did not
+supply independent review or themselves grant changed-byte release
+authorization. The immediately preceding exact installed set was
+release-cleared by the 21 July 2026 exact-current-snapshot exception; that
+binding is now historical. At this audit's 21 July cutoff, the revised set had
+changed every installed PDF and remained fail-closed pending a renewed exact
+binding. The separate 22 July 2026 release record now release-clears only the
+exact current 52 PDF hashes under its exact-byte exception. None of the audits,
+the installation, or the exact-byte exceptions completes any missing review.

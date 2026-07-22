@@ -123,12 +123,14 @@ technical and visual verification performed on those exact bytes.
 
 All 52 rebuilt PDFs are installed as revised working snapshots at the user's
 direction. The prior installed snapshots and their exact release bindings are
-historical. The 21 July 2026 exact-current-snapshot exception release-cleared
-only the now-superseded installed hashes; because the release record retains
-those bindings, it fails closed for the revised bytes. Internal verification
-and the historical exact-byte release do not resolve the outstanding page-image
-collation or donor and received-text rights analysis, authorize changed-byte
-distribution, or permit broader reuse; internal verification is not itself
-distribution authorization.
+historical. At this audit's 21 July cutoff, the 21 July 2026
+exact-current-snapshot exception release-cleared only the now-superseded
+installed hashes, so the release record failed closed for the revised bytes.
+Internal verification and this audit were not themselves distribution
+authorization. The separate 22 July 2026 release record now release-clears only
+the exact current 52 PDF hashes under its exact-byte exception. It does not
+resolve the outstanding page-image collation or donor and received-text rights
+analysis, establish donor ownership or an open license, authorize extraction,
+or permit broader reuse.
 
 No integration, push, or deployment is implied by this research record.

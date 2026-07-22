@@ -2,7 +2,7 @@
 
 [Return to the Library](../LIBRARY.md)
 
-All are source-audited working studies without independent specialist or ecclesiastical review. The exact installed snapshots of the eight previously cataloged works are release-cleared by the 21 July 2026 exact-current-snapshot exception. The new Angelus and Regina Coeli references were added after that exact inventory and await initial exact-snapshot authorization and resolution of their non-US historical-English translation basis. Approval of a title, apparition, cult, shrine, or devotion does not approve these publications.
+All are source-audited working studies without independent specialist or ecclesiastical review. The 21 July 2026 exception remains the historical release record for the eight exact installed snapshots then cataloged; the separate 22 July 2026 exact-current-snapshot exception now release-clears all 10 exact current installed PDFs as bound working studies only. For the Angelus and Regina Coeli, the exact historical-English translator or author remains unidentified and non-U.S. rights remain unresolved; the received Latin and English prayer wording remains outside Triptych's CC BY 4.0 grant; the historical English is not represented as a competent-authority-approved current vernacular for gaining the indulgence in every territory; and exact-byte clearance supplies no independent rights conclusion, general license, extraction or reuse permission, imprimatur, nihil obstat, or ecclesiastical approval. Historical permissions for a source edition and approval of a title, apparition, cult, shrine, or devotion do not approve these publications.
 
 ## Doctrine and Prayer
 
