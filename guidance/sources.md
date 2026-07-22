@@ -47,9 +47,11 @@ Keep the following objects distinct:
 - **Passage** — an addressable locus in an edition or artifact. A passage record
   may preserve a checked transcription, page or line map, discrepancy, or
   verification event. It never erases the edition and artifact that control it.
-- **Corpus** — a versioned, explicit set of works, editions, or artifacts used
-  as a search boundary. A corpus name alone never implies completeness beyond
-  its declared members and snapshot.
+- **Corpus** — a versioned, explicit search boundary. Schema version 1 members
+  are exact, hashed artifact records; broader intellectual scope belongs in the
+  corpus description rather than a dynamically expanding work or edition
+  pointer. A corpus name alone never implies completeness beyond its declared
+  members and snapshot.
 - **Binding** — a publication-local declaration that an identified source or
   corpus was used, searched, or retained as a lead at stated loci and in a
   stated role. Bindings belong beside the publication's research records.
@@ -128,7 +130,12 @@ basis; online availability and successful download are insufficient.
 Preserve exact acquired bytes when they serve as an evidence artifact. Put
 normalization, corrected OCR, extracted text, page maps, tokenization, and other
 derivatives in separate artifacts linked to their inputs. Do not silently
-correct raw OCR or represent a normalized derivative as a facsimile.
+correct raw OCR or represent a normalized derivative as a facsimile. A
+derivative's parent artifact must have an exact hash; a URL or mutable identity
+alone does not reproducibly identify the transformation input.
+Every tracked payload must remain beneath its own artifact manifest, be the only
+payload owned by that manifest, and be covered by the manifest's rights record.
+Unmanifested files and duplicate retained bytes fail validation.
 
 ## Research and verification states
 
@@ -137,7 +144,9 @@ Availability and evidentiary review are orthogonal. Use these terms exactly:
 - **cataloged** — identity metadata exists;
 - **acquired** — exact bytes were obtained and hashed or an authenticated
   remote object was checked;
-- **indexed** — a reproducible search derivative covers the declared artifact;
+- **indexable** — validation has established that an exact tracked text
+  artifact can be searched by the registered raw-line mechanism; this is a
+  capability, not an assertion that an index was built;
 - **searched** — a recorded query or method was run over a named corpus or
   artifact snapshot for a stated research question;
 - **inspected** — a person or agent read the identified passage and the stated
@@ -145,10 +154,15 @@ Availability and evidentiary review are orthogonal. Use these terms exactly:
 - **verified** — wording, attribution, edition identity, or a publication claim
   received the source- and profile-appropriate direct check.
 
-These states are cumulative only when the record actually establishes each
-one. Possession is not reading; indexing is not search; a search hit is not
-inspection; inspection of a transcription is not image collation; checking one
-passage is not examination of a work or author-wide corpus.
+These labels are cumulative only when the record actually establishes each
+one. Possession is not reading; search capability is not search; a search hit
+is not inspection; inspection of a transcription is not image collation;
+checking one passage is not examination of a work or author-wide corpus.
+
+Schema version 1 reserves and rejects an `indexed` evidence state until an
+index receipt or reproducible recipe can identify its date, stable method,
+exact source coverage, and retained derivative. Model reusable normalized text
+or a retained search index as its own derived artifact in the meantime.
 
 An OCR, normalized text, search index, concordance, or embedding remains a
 discovery aid unless separately verified as the profile requires. Semantic or
@@ -188,12 +202,29 @@ a local claim key or research-matrix row. Schema version 1 does not require a
 machine ID for every sentence; profiles may require claim-level bindings for
 consequential claims or structured inventories.
 
+Any binding that records acquisition, search, inspection, or verification pins
+the complete bound record and its evidence ancestors with the schema-defined
+source fingerprint. Its represented artifact or corpus boundary must have exact
+hashes; search additionally requires registered indexable bytes, a canonical
+tool mode, and a replayed matching-line count. Verification records its date. A
+changed fingerprint is a consumer review obligation, not permission to copy a
+new value mechanically. Catalog-only leads have no fingerprint because no
+exact witness has yet been reviewed.
+
 When a publication makes a work-wide, author-wide, completeness, originality,
 or negative-search claim, bind a versioned corpus or artifact snapshot and
 record the material search boundary, languages, methods, and limitations.
 Phrase negative results as bounded and correctable. A literal search cannot
 exclude synonyms, inflection, paraphrase, translation difference, damaged OCR,
-unindexed material, or unsearched languages.
+unindexed material, or unsearched languages. The repository's built-in search
+is narrower still: it tests literal text within each physical UTF-8 line and
+does not cross line or raw-markup boundaries. Use an exact registered normalized
+derivative for broader content search, and never promote an empty raw-line
+result into a semantic absence claim. Schema version 1 accepts a
+`negative-search` binding only over exact `text/plain` search representations,
+and validation replays its zero-result receipt. Register a normalized
+plain-text derivative when source markup or layout would frustrate content
+search.
 
 References and reader-facing prose continue to cite a human-usable work,
 edition, and locus. Stable source IDs support audit and tooling; they do not

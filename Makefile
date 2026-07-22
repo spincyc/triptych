@@ -76,7 +76,7 @@ CODEX ?= /usr/bin/codex
 #   make, /bin/sh, /usr/bin/env, find, sort, cmp, id and core utilities
 #   (cat, install, mkdir, mv, rm and sha256sum):
 #     make bash findutils coreutils diffutils
-#   Python >= 3.10, stdlib (including fcntl/zoneinfo), IANA timezone data, and
+#   Python >= 3.11, stdlib (including fcntl/tomllib/zoneinfo), IANA timezone data, and
 #   the public renderer's version-locked third-party module:
 #     python tzdata python-markdown (exact version in requirements-public-alpha.txt)
 #   pdflatex, kpsewhich/kpathsea and every directly loaded class/package/font:
@@ -141,6 +141,7 @@ CURRICULUM_STRUCTURE_CHECKER := scripts/check-curriculum-structure
 PDF_REVIEW_TOOL := scripts/pdf-review
 PUBLIC_ALPHA_TOOL := scripts/public-alpha
 CODEX_LAUNCHER := scripts/triptych-codex
+SOURCE_LIBRARY_TOOL := scripts/source-library
 
 COMMON_SOURCES := $(shell find $(SOURCE_ROOT)/common -type f | sort)
 ECCLESIASTICAL_LATIN_ROOT := $(SOURCE_ROOT)/curriculums/ecclesiastical-latin
@@ -206,7 +207,8 @@ BOUNDED_PDF_JOB_OPTION = $(if $(strip $(MAKE_PARALLEL_FLAGS)),,\
 	$(if $(PDF_JOBS_INVALID),$(error PDF_JOBS requires a positive integer),--jobs=$(PDF_JOBS)))
 
 .PHONY: all pdf review-pdfs review-all-pdfs install list help clean \
-	distclean check-tools check-metadata check-public-alpha prepare-public-alpha \
+	distclean check-tools check-metadata check-sources check-source-library \
+	check-public-alpha prepare-public-alpha \
 	check-pdf-review check-agent-isolation check-curriculum-sources \
 	check-curriculum-structure \
 	codex public-site public-preview \
@@ -381,6 +383,12 @@ check-agent-isolation:
 check-pdf-review:
 	@$(PYTHON) -m unittest discover -s scripts/tests -p 'test_pdf_review.py' -v
 
+check-sources:
+	@$(PYTHON) $(SOURCE_LIBRARY_TOOL) validate
+
+check-source-library:
+	@$(PYTHON) -m unittest discover -s scripts/tests -p 'test_source_library.py' -v
+
 check-curriculum-sources: check-tools
 	@$(PYTHON) $(CURRICULUM_STRUCTURE_CHECKER) \
 		--curriculum-root '$(ECCLESIASTICAL_LATIN_ROOT)' --sources-only
@@ -426,6 +434,8 @@ help:
 		'Run-ID Make wrappers require a launcher-produced ID; use scripts/triptych-codex directly for external input' \
 		'make check-agent-isolation  Test the transparent Codex launcher' \
 		'make check-pdf-review  Test memory-bounded PDF inspection tooling' \
+		'make check-sources  Validate reusable source records and publication bindings' \
+		'make check-source-library  Test reusable source-library tooling' \
 		'make check-curriculum-structure  Build and audit every Ecclesiastical Latin publication hierarchy' \
 		'make check-metadata  Validate structured and inherited AI provenance' \
 		'make check-public-alpha  Validate the exhaustive public-release policy' \

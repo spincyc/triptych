@@ -1,0 +1,1792 @@
+#!/usr/bin/env python3
+"""Validate and query Triptych's provider-neutral reusable source library."""
+
+from __future__ import annotations
+
+import argparse
+import dataclasses
+import datetime as dt
+import hashlib
+import ipaddress
+import json
+import os
+import re
+import sys
+from collections import defaultdict
+from pathlib import Path
+from typing import Any, Iterable, Sequence
+from urllib.parse import urlsplit
+
+if sys.version_info < (3, 11):
+    raise SystemExit("source-library requires Python 3.11 or newer")
+
+import tomllib
+
+
+ROOT = Path(__file__).resolve().parents[1]
+ID_PATTERN = re.compile(r"^[a-z0-9](?:[a-z0-9.-]*[a-z0-9])?$")
+KEBAB_PATTERN = re.compile(r"^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$")
+SHA256_PATTERN = re.compile(r"^[0-9a-f]{64}$")
+FINGERPRINT_PATTERN = re.compile(r"^sha256:[0-9a-f]{64}$")
+
+RECORD_TYPES = {"work", "edition", "artifact", "passage", "corpus"}
+STORAGE_DISPOSITIONS = {"tracked", "remote", "restricted", "unavailable"}
+RIGHTS_STATUSES = {
+    "public-domain",
+    "licensed",
+    "permission",
+    "legal-exception",
+    "project-created",
+    "restricted",
+    "unresolved",
+}
+TRACKABLE_RIGHTS = {
+    "public-domain",
+    "licensed",
+    "permission",
+    "legal-exception",
+    "project-created",
+}
+EVIDENCE_STATES = {
+    "cataloged",
+    "acquired",
+    "searched",
+    "inspected",
+    "verified",
+}
+PASSAGE_STATES = {"cataloged", "acquired", "inspected", "verified"}
+FINGERPRINTED_STATES = {"acquired", "searched", "inspected", "verified"}
+SEARCH_MODES = {
+    "raw-line-literal-casefold-v1": False,
+    "raw-line-literal-case-sensitive-v1": True,
+}
+BINDING_ROLES = {
+    "direct-witness",
+    "textual-control",
+    "context",
+    "reception",
+    "analogue",
+    "negative-search",
+    "lead",
+    "bibliographic",
+    "official-control",
+    "currentness-control",
+    "translation-control",
+    "rights-control",
+    "corpus-boundary",
+}
+
+COMMON_FIELDS = {"schema", "record_type", "id"}
+ALLOWED_FIELDS = {
+    "work": COMMON_FIELDS
+    | {
+        "title",
+        "responsible",
+        "work_type",
+        "alternate_titles",
+        "languages",
+        "locus_pattern",
+        "description",
+        "relations",
+    },
+    "edition": COMMON_FIELDS
+    | {
+        "work_id",
+        "title",
+        "language",
+        "publication",
+        "date",
+        "editors",
+        "translators",
+        "authority",
+        "jurisdiction",
+        "notes",
+    },
+    "artifact": COMMON_FIELDS
+    | {
+        "edition_id",
+        "artifact_type",
+        "media_type",
+        "storage",
+        "rights_status",
+        "rights_basis",
+        "rights_jurisdiction",
+        "source_url",
+        "provenance",
+        "retrieved",
+        "sha256",
+        "byte_size",
+        "path",
+        "derived_from",
+        "transformation",
+        "encoding",
+        "indexable",
+        "notes",
+    },
+    "passage": COMMON_FIELDS
+    | {
+        "edition_id",
+        "artifact_id",
+        "artifact_sha256",
+        "locus",
+        "states",
+        "context",
+        "text",
+        "verified_on",
+        "notes",
+    },
+    "corpus": COMMON_FIELDS
+    | {
+        "title",
+        "members",
+        "snapshot",
+        "languages",
+        "scope",
+        "completeness",
+        "notes",
+    },
+}
+BINDINGS_FILE_FIELDS = {"schema", "record_type", "document", "bindings"}
+BINDING_FIELDS = {
+    "source_id",
+    "loci",
+    "role",
+    "states",
+    "context",
+    "claim_keys",
+    "notes",
+    "search_scope",
+    "searched_on",
+    "search_mode",
+    "matching_line_count",
+    "verified_on",
+    "query",
+    "method",
+    "source_fingerprint",
+}
+
+REQUIRED_FIELDS = {
+    "work": {"schema", "record_type", "id", "title", "responsible", "work_type"},
+    "edition": {
+        "schema",
+        "record_type",
+        "id",
+        "work_id",
+        "title",
+        "language",
+        "publication",
+    },
+    "artifact": {
+        "schema",
+        "record_type",
+        "id",
+        "edition_id",
+        "artifact_type",
+        "media_type",
+        "storage",
+        "rights_status",
+        "rights_basis",
+    },
+    "passage": {
+        "schema",
+        "record_type",
+        "id",
+        "edition_id",
+        "locus",
+        "states",
+        "context",
+    },
+    "corpus": {"schema", "record_type", "id", "title", "members", "snapshot", "scope"},
+}
+
+
+@dataclasses.dataclass(frozen=True)
+class Record:
+    """One parsed source manifest."""
+
+    path: Path
+    record_type: str
+    record_id: str
+    data: dict[str, Any]
+
+
+@dataclasses.dataclass(frozen=True)
+class Binding:
+    """One publication-local source binding."""
+
+    path: Path
+    document: str
+    ordinal: int
+    source_id: str
+    data: dict[str, Any]
+
+
+@dataclasses.dataclass
+class Library:
+    """Loaded records, bindings, and deterministic validation errors."""
+
+    root: Path
+    source_root: Path
+    publication_root: Path
+    records: dict[str, Record] = dataclasses.field(default_factory=dict)
+    bindings: list[Binding] = dataclasses.field(default_factory=list)
+    payload_paths: set[Path] = dataclasses.field(default_factory=set)
+    errors: list[str] = dataclasses.field(default_factory=list)
+
+    def relative(self, path: Path) -> str:
+        try:
+            return path.relative_to(self.root).as_posix()
+        except ValueError:
+            return path.as_posix()
+
+    def error(self, path: Path, message: str) -> None:
+        self.errors.append(f"{self.relative(path)}: {message}")
+
+
+class SourceLibraryQueryError(ValueError):
+    """A query cannot be answered honestly from the registered graph."""
+
+
+def _is_schema_one(value: Any) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool) and value == 1
+
+
+def _is_string(value: Any) -> bool:
+    return isinstance(value, str) and bool(value.strip())
+
+
+def _is_string_list(value: Any, *, allow_empty: bool = True) -> bool:
+    return (
+        isinstance(value, list)
+        and (allow_empty or bool(value))
+        and all(_is_string(item) for item in value)
+    )
+
+
+def _read_toml(library: Library, path: Path) -> dict[str, Any] | None:
+    try:
+        return tomllib.loads(path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeError, tomllib.TOMLDecodeError, RecursionError) as error:
+        library.error(path, f"cannot parse TOML: {error}")
+        return None
+
+
+def _unknown_and_missing_fields(
+    library: Library,
+    path: Path,
+    data: dict[str, Any],
+    *,
+    allowed: set[str],
+    required: set[str],
+) -> None:
+    unknown = sorted(set(data) - allowed)
+    missing = sorted(required - set(data))
+    if unknown:
+        library.error(path, f"unknown fields: {', '.join(unknown)}")
+    if missing:
+        library.error(path, f"missing required fields: {', '.join(missing)}")
+
+
+def _validate_common_record(library: Library, path: Path, data: dict[str, Any]) -> tuple[str, str] | None:
+    if not _is_schema_one(data.get("schema")):
+        library.error(path, "schema must be integer 1")
+    record_type = data.get("record_type")
+    record_id = data.get("id")
+    if not _is_string(record_type) or record_type not in RECORD_TYPES:
+        library.error(path, f"record_type must be one of: {', '.join(sorted(RECORD_TYPES))}")
+        return None
+    _unknown_and_missing_fields(
+        library,
+        path,
+        data,
+        allowed=ALLOWED_FIELDS[record_type],
+        required=REQUIRED_FIELDS[record_type],
+    )
+    if not _is_string(record_id) or not ID_PATTERN.fullmatch(record_id):
+        library.error(path, "id must contain lowercase letters, digits, dots, or hyphens")
+        return None
+    expected_prefix = f"{record_type}."
+    if not record_id.startswith(expected_prefix):
+        library.error(path, f"id must begin with {expected_prefix}")
+    return record_type, record_id
+
+
+def _validate_strings(library: Library, record: Record) -> None:
+    data = record.data
+    path = record.path
+    scalar_fields = {
+        "title",
+        "responsible",
+        "work_type",
+        "description",
+        "locus_pattern",
+        "work_id",
+        "language",
+        "publication",
+        "date",
+        "authority",
+        "jurisdiction",
+        "edition_id",
+        "artifact_type",
+        "media_type",
+        "storage",
+        "rights_status",
+        "rights_basis",
+        "rights_jurisdiction",
+        "source_url",
+        "provenance",
+        "retrieved",
+        "sha256",
+        "path",
+        "derived_from",
+        "transformation",
+        "encoding",
+        "artifact_id",
+        "artifact_sha256",
+        "locus",
+        "context",
+        "text",
+        "verified_on",
+        "snapshot",
+        "scope",
+        "completeness",
+        "notes",
+    }
+    list_fields = {
+        "alternate_titles",
+        "languages",
+        "relations",
+        "editors",
+        "translators",
+        "states",
+        "members",
+    }
+    for field in sorted(scalar_fields & set(data)):
+        if not _is_string(data[field]):
+            library.error(path, f"{field} must be a nonempty string")
+    for field in sorted(list_fields & set(data)):
+        if not _is_string_list(data[field], allow_empty=False):
+            library.error(path, f"{field} must be a nonempty array of nonempty strings")
+
+    if "work_type" in data and _is_string(data["work_type"]) and not KEBAB_PATTERN.fullmatch(data["work_type"]):
+        library.error(path, "work_type must be lowercase kebab-case")
+    if "artifact_type" in data and _is_string(data["artifact_type"]) and not KEBAB_PATTERN.fullmatch(data["artifact_type"]):
+        library.error(path, "artifact_type must be lowercase kebab-case")
+    if "locus_pattern" in data and _is_string(data["locus_pattern"]):
+        if len(data["locus_pattern"]) > 512:
+            library.error(path, "locus_pattern must not exceed 512 characters")
+            return
+        try:
+            re.compile(data["locus_pattern"])
+        except (re.error, OverflowError, RecursionError) as error:
+            library.error(path, f"invalid locus_pattern: {error}")
+
+
+def _path_contains_symlink(path: Path, root: Path) -> bool:
+    current = path
+    while current != root and current != current.parent:
+        if current.is_symlink():
+            return True
+        current = current.parent
+    return False
+
+
+def _record_manifest_paths(library: Library) -> list[Path]:
+    """Return authoritative source manifests, excluding audit inventories."""
+
+    patterns = (
+        "works/*/*/work.toml",
+        "works/*/*/editions/*/edition.toml",
+        "works/*/*/editions/*/artifacts/*/artifact.toml",
+        "works/*/*/editions/*/passages/*.toml",
+        "corpora/*.toml",
+    )
+    candidates = {
+        path
+        for pattern in patterns
+        for path in library.source_root.glob(pattern)
+    }
+    paths: set[Path] = set()
+    for path in sorted(candidates):
+        if _path_contains_symlink(path, library.source_root):
+            library.error(path, "source manifest path must not contain symbolic links")
+        elif not path.is_file():
+            library.error(path, "source manifest must be a regular file")
+        else:
+            paths.add(path)
+    works_root = library.source_root / "works"
+    if works_root.is_dir():
+        artifact_roots = tuple(
+            library.source_root.glob(
+                "works/*/*/editions/*/artifacts/*"
+            )
+        )
+        for path in works_root.rglob("*.toml"):
+            if path in candidates:
+                continue
+            if any(path.is_relative_to(root) for root in artifact_roots):
+                continue
+            library.error(path, "TOML record is not at a canonical manifest path")
+    return sorted(paths)
+
+
+def _validate_record_path(library: Library, record: Record) -> None:
+    """Keep every identity at its one canonical schema location."""
+
+    relative = record.path.relative_to(library.source_root)
+    parts = relative.parts
+    expected_shape = {
+        "work": len(parts) == 4
+        and parts[0] == "works"
+        and parts[-1] == "work.toml",
+        "edition": len(parts) == 6
+        and parts[0] == "works"
+        and parts[3] == "editions"
+        and parts[-1] == "edition.toml",
+        "artifact": len(parts) == 8
+        and parts[0] == "works"
+        and parts[3] == "editions"
+        and parts[5] == "artifacts"
+        and parts[-1] == "artifact.toml",
+        "passage": len(parts) == 7
+        and parts[0] == "works"
+        and parts[3] == "editions"
+        and parts[5] == "passages"
+        and parts[-1].endswith(".toml"),
+        "corpus": len(parts) == 2
+        and parts[0] == "corpora"
+        and parts[-1].endswith(".toml"),
+    }[record.record_type]
+    if not expected_shape:
+        library.error(
+            record.path,
+            f"{record.record_type} manifest is not at its canonical schema path",
+        )
+
+
+def _load_source_records(library: Library) -> None:
+    if not library.source_root.exists():
+        library.errors.append(f"{library.relative(library.source_root)}: source root does not exist")
+        return
+    if _path_contains_symlink(library.source_root, library.root):
+        library.errors.append(
+            f"{library.relative(library.source_root)}: source root path must not contain symbolic links"
+        )
+        return
+    for path in _record_manifest_paths(library):
+        data = _read_toml(library, path)
+        if data is None:
+            continue
+        common = _validate_common_record(library, path, data)
+        if common is None:
+            continue
+        record_type, record_id = common
+        record = Record(path=path, record_type=record_type, record_id=record_id, data=data)
+        _validate_strings(library, record)
+        _validate_record_path(library, record)
+        if record_id in library.records:
+            prior = library.relative(library.records[record_id].path)
+            library.error(path, f"duplicate id {record_id}; first declared in {prior}")
+            continue
+        library.records[record_id] = record
+
+
+def _validate_binding_table(library: Library, path: Path, ordinal: int, data: Any) -> Binding | None:
+    label = f"bindings[{ordinal}]"
+    if not isinstance(data, dict):
+        library.error(path, f"{label} must be a table")
+        return None
+    unknown = sorted(set(data) - BINDING_FIELDS)
+    missing = sorted({"source_id", "role", "states", "context"} - set(data))
+    if unknown:
+        library.error(path, f"{label} has unknown fields: {', '.join(unknown)}")
+    if missing:
+        library.error(path, f"{label} is missing: {', '.join(missing)}")
+    source_id = data.get("source_id")
+    if not _is_string(source_id) or not ID_PATTERN.fullmatch(source_id):
+        library.error(path, f"{label}.source_id must be a valid source id")
+        return None
+    role = data.get("role")
+    if not _is_string(role) or role not in BINDING_ROLES:
+        library.error(path, f"{label}.role must be one of: {', '.join(sorted(BINDING_ROLES))}")
+    states = data.get("states")
+    if not _is_string_list(states, allow_empty=False):
+        library.error(path, f"{label}.states must be a nonempty string array")
+    else:
+        invalid_states = sorted(set(states) - EVIDENCE_STATES)
+        if invalid_states:
+            library.error(path, f"{label}.states has invalid values: {', '.join(invalid_states)}")
+        if len(states) != len(set(states)):
+            library.error(path, f"{label}.states contains duplicates")
+    if not _is_string(data.get("context")):
+        library.error(path, f"{label}.context must be a nonempty string")
+    for field in ("loci", "claim_keys"):
+        if field in data:
+            if not _is_string_list(data[field], allow_empty=False):
+                library.error(path, f"{label}.{field} must be a nonempty string array")
+            elif len(data[field]) != len(set(data[field])):
+                library.error(path, f"{label}.{field} contains duplicates")
+    for field in (
+        "notes",
+        "search_scope",
+        "searched_on",
+        "search_mode",
+        "verified_on",
+        "query",
+        "method",
+        "source_fingerprint",
+    ):
+        if field in data and not _is_string(data[field]):
+            library.error(path, f"{label}.{field} must be a nonempty string")
+    if "matching_line_count" in data and (
+        not isinstance(data["matching_line_count"], int)
+        or isinstance(data["matching_line_count"], bool)
+        or data["matching_line_count"] < 0
+    ):
+        library.error(path, f"{label}.matching_line_count must be a nonnegative integer")
+    if (
+        "search_mode" in data
+        and _is_string(data["search_mode"])
+        and data["search_mode"] not in SEARCH_MODES
+    ):
+        library.error(
+            path,
+            f"{label}.search_mode must be one of: {', '.join(sorted(SEARCH_MODES))}",
+        )
+    search_fields = {
+        "search_scope",
+        "searched_on",
+        "search_mode",
+        "query",
+        "method",
+        "matching_line_count",
+    }
+    valid_states = states if _is_string_list(states, allow_empty=False) else []
+    if "searched" in valid_states:
+        missing_search = sorted(search_fields - set(data))
+        if missing_search:
+            library.error(path, f"{label} searched state requires: {', '.join(missing_search)}")
+    elif search_fields & set(data):
+        library.error(path, f"{label} search fields require the searched state")
+    if role == "negative-search" and "searched" not in valid_states:
+        library.error(path, f"{label}.negative-search role requires the searched state")
+    if role == "negative-search" and data.get("matching_line_count") != 0:
+        library.error(path, f"{label}.negative-search role requires matching_line_count = 0")
+    if "searched_on" in data and not _is_iso_date(data["searched_on"]):
+        library.error(path, f"{label}.searched_on must be an ISO date in YYYY-MM-DD form")
+    if "verified" in valid_states:
+        if not _is_iso_date(data.get("verified_on")):
+            library.error(path, f"{label} verified state requires verified_on ISO date")
+    elif "verified_on" in data:
+        library.error(path, f"{label}.verified_on requires the verified state")
+    return Binding(path=path, document="", ordinal=ordinal, source_id=source_id, data=data)
+
+
+def _load_bindings(library: Library) -> None:
+    if not library.publication_root.exists():
+        library.errors.append(f"{library.relative(library.publication_root)}: publication root does not exist")
+        return
+    if _path_contains_symlink(library.publication_root, library.root):
+        library.errors.append(
+            f"{library.relative(library.publication_root)}: publication root path must not contain symbolic links"
+        )
+        return
+    pattern = "**/research/source-bindings.toml"
+    for path in sorted(library.publication_root.glob(pattern)):
+        if _path_contains_symlink(path, library.publication_root):
+            library.error(path, "binding manifest path must not contain symbolic links")
+            continue
+        if not path.is_file():
+            library.error(path, "binding manifest must be a regular file")
+            continue
+        data = _read_toml(library, path)
+        if data is None:
+            continue
+        _unknown_and_missing_fields(
+            library,
+            path,
+            data,
+            allowed=BINDINGS_FILE_FIELDS,
+            required={"schema", "record_type", "document", "bindings"},
+        )
+        if not _is_schema_one(data.get("schema")):
+            library.error(path, "schema must be integer 1")
+        if data.get("record_type") != "bindings":
+            library.error(path, 'record_type must be "bindings"')
+        document = data.get("document")
+        if not _is_string(document):
+            library.error(path, "document must be a nonempty string")
+            continue
+        leaf = path.parent.parent
+        try:
+            expected_document = leaf.relative_to(library.publication_root).as_posix()
+        except ValueError:
+            library.error(path, "binding file is outside the publication root")
+            continue
+        if document != expected_document:
+            library.error(path, f"document must be {expected_document!r} for this path")
+        if not (leaf / "main.tex").is_file():
+            library.error(path, f"document has no main.tex: {expected_document}")
+        tables = data.get("bindings")
+        if not isinstance(tables, list) or not tables:
+            library.error(path, "bindings must be a nonempty array of tables")
+            continue
+        seen: set[str] = set()
+        for ordinal, table in enumerate(tables, start=1):
+            binding = _validate_binding_table(library, path, ordinal, table)
+            if binding is None:
+                continue
+            key = json.dumps(table, ensure_ascii=False, sort_keys=True, default=str)
+            if key in seen:
+                library.error(path, f"bindings[{ordinal}] exactly duplicates an earlier binding")
+            seen.add(key)
+            library.bindings.append(dataclasses.replace(binding, document=document))
+
+
+def _dependency_ids(record: Record) -> list[str]:
+    data = record.data
+    if record.record_type == "edition":
+        return [data["work_id"]] if _is_string(data.get("work_id")) else []
+    if record.record_type == "artifact":
+        dependencies = [data["edition_id"]] if _is_string(data.get("edition_id")) else []
+        if _is_string(data.get("derived_from")):
+            dependencies.append(data["derived_from"])
+        return dependencies
+    if record.record_type == "passage":
+        dependencies = [data["edition_id"]] if _is_string(data.get("edition_id")) else []
+        if _is_string(data.get("artifact_id")):
+            dependencies.append(data["artifact_id"])
+        return dependencies
+    if record.record_type == "corpus" and isinstance(data.get("members"), list):
+        return [member for member in data["members"] if _is_string(member)]
+    return []
+
+
+def _corpus_snapshot(library: Library, members: Sequence[str]) -> str | None:
+    lines = []
+    for member in sorted(members):
+        target = library.records.get(member)
+        if target is None or target.record_type != "artifact":
+            return None
+        digest = target.data.get("sha256")
+        if not _is_string(digest) or not SHA256_PATTERN.fullmatch(digest):
+            return None
+        lines.append(f"{member}\t{digest}\n")
+    payload = "".join(lines).encode("utf-8")
+    return f"sha256:{hashlib.sha256(payload).hexdigest()}"
+
+
+def source_fingerprint(
+    library: Library,
+    source_id: str,
+    _cache: dict[str, str] | None = None,
+) -> str:
+    """Return a canonical digest of a source record and its exact ancestors."""
+
+    if _cache is None:
+        _cache = {}
+    if source_id in _cache:
+        return _cache[source_id]
+    if source_id not in library.records:
+        raise KeyError(source_id)
+
+    visiting: set[str] = set()
+    stack: list[tuple[str, bool]] = [(source_id, False)]
+    while stack:
+        current, expanded = stack.pop()
+        if current in _cache:
+            continue
+        record = library.records[current]
+        dependencies = sorted(
+            dependency
+            for dependency in _dependency_ids(record)
+            if dependency in library.records
+        )
+        if expanded:
+            payload = json.dumps(
+                {
+                    "record": record.data,
+                    "dependencies": [
+                        {"id": dependency, "fingerprint": _cache[dependency]}
+                        for dependency in dependencies
+                    ],
+                },
+                ensure_ascii=False,
+                sort_keys=True,
+                separators=(",", ":"),
+                default=str,
+            ).encode("utf-8")
+            _cache[current] = f"sha256:{hashlib.sha256(payload).hexdigest()}"
+            visiting.remove(current)
+            continue
+        if current in visiting:
+            raise SourceLibraryQueryError("cannot fingerprint a cyclic source graph")
+        visiting.add(current)
+        stack.append((current, True))
+        for dependency in reversed(dependencies):
+            if dependency in visiting:
+                raise SourceLibraryQueryError("cannot fingerprint a cyclic source graph")
+            if dependency not in _cache:
+                stack.append((dependency, False))
+    return _cache[source_id]
+
+
+def _exact_artifacts(library: Library, record: Record) -> list[Record]:
+    """Return the exact artifacts directly represented by a reviewable source."""
+
+    if record.record_type == "artifact":
+        return [record]
+    if record.record_type == "passage":
+        artifact_id = record.data.get("artifact_id")
+        artifact = library.records.get(artifact_id) if _is_string(artifact_id) else None
+        return [artifact] if artifact is not None and artifact.record_type == "artifact" else []
+    if record.record_type == "corpus":
+        members = record.data.get("members")
+        if not _is_string_list(members, allow_empty=False):
+            return []
+        return [
+            library.records[member]
+            for member in members
+            if member in library.records
+            and library.records[member].record_type == "artifact"
+        ]
+    return []
+
+
+def _validate_relationships(library: Library) -> None:
+    records_by_path = {record.path: record for record in library.records.values()}
+    for record in sorted(library.records.values(), key=lambda item: item.record_id):
+        for dependency in _dependency_ids(record):
+            if dependency not in library.records:
+                library.error(record.path, f"references unknown source id: {dependency}")
+        if record.record_type == "work":
+            relations = record.data.get("relations", [])
+            for relation in relations if _is_string_list(relations) else []:
+                target = library.records.get(relation)
+                if target is None:
+                    library.error(record.path, f"references unknown related work id: {relation}")
+                elif target.record_type != "work":
+                    library.error(record.path, "relations must reference work records")
+        expected_parent = {
+            "edition": "work",
+            "artifact": "edition",
+            "passage": "edition",
+        }.get(record.record_type)
+        if expected_parent:
+            field = f"{expected_parent}_id"
+            parent_id = record.data.get(field)
+            target = library.records.get(parent_id) if _is_string(parent_id) else None
+            if target is not None and target.record_type != expected_parent:
+                article = "an" if expected_parent[0] in "aeiou" else "a"
+                library.error(record.path, f"{field} must reference {article} {expected_parent} record")
+            enclosing_path = {
+                "edition": record.path.parents[2] / "work.toml",
+                "artifact": record.path.parents[2] / "edition.toml",
+                "passage": record.path.parents[1] / "edition.toml",
+            }[record.record_type]
+            enclosing = records_by_path.get(enclosing_path)
+            if enclosing is None:
+                library.error(
+                    record.path,
+                    f"enclosing {expected_parent} manifest is missing or invalid",
+                )
+            elif record.data.get(field) != enclosing.record_id:
+                library.error(
+                    record.path,
+                    f"{field} must match enclosing {expected_parent} {enclosing.record_id}",
+                )
+        if record.record_type == "artifact" and _is_string(record.data.get("derived_from")):
+            target = library.records.get(record.data["derived_from"])
+            if target is not None and target.record_type != "artifact":
+                library.error(record.path, "derived_from must reference an artifact record")
+            elif target is not None and target.data.get("edition_id") != record.data.get("edition_id"):
+                library.error(record.path, "derived_from artifact must belong to the same edition")
+            elif target is not None and (
+                not _is_string(target.data.get("sha256"))
+                or not SHA256_PATTERN.fullmatch(target.data["sha256"])
+            ):
+                library.error(record.path, "derived_from artifact must have an exact sha256")
+        if record.record_type == "passage" and _is_string(record.data.get("artifact_id")):
+            target = library.records.get(record.data["artifact_id"])
+            if target is not None and target.record_type != "artifact":
+                library.error(record.path, "artifact_id must reference an artifact record")
+            elif target is not None and target.data.get("edition_id") != record.data.get("edition_id"):
+                library.error(record.path, "artifact_id must belong to the passage edition")
+        if record.record_type == "passage":
+            states = record.data.get("states", [])
+            if _is_string_list(states, allow_empty=False) and FINGERPRINTED_STATES & set(states):
+                artifact_id = record.data.get("artifact_id")
+                target = library.records.get(artifact_id) if _is_string(artifact_id) else None
+                if not _is_string(artifact_id):
+                    library.error(record.path, "reviewed passage requires artifact_id")
+                artifact_sha256 = record.data.get("artifact_sha256")
+                if not _is_string(artifact_sha256) or not SHA256_PATTERN.fullmatch(artifact_sha256):
+                    library.error(record.path, "reviewed passage requires artifact_sha256")
+                elif target is not None and target.data.get("sha256") != artifact_sha256:
+                    library.error(record.path, "artifact_sha256 does not match the controlling artifact")
+        if record.record_type == "corpus":
+            members = record.data.get("members")
+            if _is_string_list(members, allow_empty=False):
+                if len(members) != len(set(members)):
+                    library.error(record.path, "members contains duplicates")
+                for member in members:
+                    target = library.records.get(member)
+                    if target is not None and target.record_type != "artifact":
+                        library.error(record.path, "members must reference exact artifact records")
+                    elif target is not None and not SHA256_PATTERN.fullmatch(str(target.data.get("sha256", ""))):
+                        library.error(record.path, f"member artifact has no exact sha256: {member}")
+                expected_snapshot = _corpus_snapshot(library, members)
+                if expected_snapshot is not None and record.data.get("snapshot") != expected_snapshot:
+                    library.error(
+                        record.path,
+                        f"snapshot must be {expected_snapshot!r} for the declared artifacts",
+                    )
+
+    for binding in library.bindings:
+        target = library.records.get(binding.source_id)
+        if target is None:
+            library.error(binding.path, f"bindings[{binding.ordinal}] references unknown source id: {binding.source_id}")
+            continue
+        states = binding.data.get("states", [])
+        valid_states = states if _is_string_list(states, allow_empty=False) else []
+        exact_artifacts = _exact_artifacts(library, target)
+        exact_required = {"acquired", "inspected", "verified"} & set(valid_states)
+        if exact_required and (
+            not exact_artifacts
+            or any(
+                not _is_string(artifact.data.get("sha256"))
+                or not SHA256_PATTERN.fullmatch(artifact.data["sha256"])
+                for artifact in exact_artifacts
+            )
+        ):
+            library.error(
+                binding.path,
+                f"bindings[{binding.ordinal}] {', '.join(sorted(exact_required))} state requires exact hashed artifacts",
+            )
+        if {"inspected", "verified"} & set(valid_states) and target.record_type in {"work", "edition"}:
+            library.error(
+                binding.path,
+                f"bindings[{binding.ordinal}] inspection or verification requires an artifact, passage, or corpus witness",
+            )
+        if "searched" in valid_states:
+            if target.record_type not in {"artifact", "corpus"}:
+                library.error(
+                    binding.path,
+                    f"bindings[{binding.ordinal}] searched source must be an exact artifact or corpus",
+                )
+            if not exact_artifacts or any(
+                not _is_search_eligible_artifact(artifact)
+                for artifact in exact_artifacts
+            ):
+                library.error(
+                    binding.path,
+                    f"bindings[{binding.ordinal}] searched boundary must contain only indexable tracked artifacts",
+                )
+        if (
+            _is_string(binding.data.get("role"))
+            and binding.data["role"]
+            in {"direct-witness", "textual-control", "translation-control"}
+            and target.record_type != "passage"
+            and not _is_string_list(binding.data.get("loci"), allow_empty=False)
+        ):
+            library.error(
+                binding.path,
+                f"bindings[{binding.ordinal}] direct textual use requires loci or a passage source",
+            )
+        if target.record_type == "passage" and _is_string_list(binding.data.get("loci"), allow_empty=False):
+            if target.data.get("locus") not in binding.data["loci"]:
+                library.error(
+                    binding.path,
+                    f"bindings[{binding.ordinal}] loci do not include the bound passage locus",
+                )
+
+
+def _safe_source_path(library: Library, manifest: Path, value: str) -> Path | None:
+    if any(ord(character) < 32 for character in value):
+        library.error(manifest, "artifact path must not contain control characters")
+        return None
+    try:
+        candidate = Path(value)
+    except (OSError, ValueError) as error:
+        library.error(manifest, f"invalid artifact path: {error}")
+        return None
+    if candidate.is_absolute() or ".." in candidate.parts:
+        library.error(manifest, "artifact path must be repository-relative without '..'")
+        return None
+    lexical = library.root / candidate
+    if lexical.is_symlink():
+        library.error(manifest, "artifact path must not be a symbolic link")
+        return None
+    try:
+        resolved = lexical.resolve()
+    except (OSError, ValueError) as error:
+        library.error(manifest, f"invalid artifact path: {error}")
+        return None
+    source_resolved = library.source_root.resolve()
+    try:
+        resolved.relative_to(source_resolved)
+    except ValueError:
+        library.error(manifest, "artifact path must resolve beneath src/sources")
+        return None
+    try:
+        resolved.relative_to(manifest.parent.resolve())
+    except ValueError:
+        library.error(manifest, "artifact path must resolve beneath its artifact manifest directory")
+        return None
+    if resolved == manifest.resolve():
+        library.error(manifest, "artifact path must not name artifact.toml")
+        return None
+    return resolved
+
+
+def _is_iso_date(value: Any) -> bool:
+    if not _is_string(value):
+        return False
+    try:
+        return dt.date.fromisoformat(value).isoformat() == value
+    except ValueError:
+        return False
+
+
+def _is_safe_public_url(value: Any) -> bool:
+    if not _is_string(value):
+        return False
+    if any(character.isspace() or ord(character) < 32 for character in value):
+        return False
+    try:
+        parsed = urlsplit(value)
+        host = parsed.hostname
+        if (
+            parsed.scheme not in {"http", "https"}
+            or not host
+            or parsed.username is not None
+            or parsed.password is not None
+        ):
+            return False
+        parsed.port
+        normalized = host.rstrip(".").lower()
+        if normalized == "localhost" or normalized.endswith(
+            (
+                ".example",
+                ".home",
+                ".internal",
+                ".invalid",
+                ".lan",
+                ".local",
+                ".localdomain",
+                ".localhost",
+                ".test",
+            )
+        ):
+            return False
+        try:
+            address = ipaddress.ip_address(normalized)
+        except ValueError:
+            if "." not in normalized:
+                return False
+            labels = normalized.split(".")
+            if all(
+                re.fullmatch(r"(?:0[xX][0-9a-fA-F]+|0[0-7]+|[0-9]+)", label)
+                for label in labels
+            ):
+                return False
+            return all(
+                label
+                and label[0].isalnum()
+                and label[-1].isalnum()
+                and all(character.isalnum() or character == "-" for character in label)
+                for label in labels
+            )
+        return not (
+            address.is_private
+            or address.is_loopback
+            or address.is_link_local
+            or address.is_reserved
+            or address.is_unspecified
+        )
+    except ValueError:
+        return False
+
+
+def _is_searchable_media(value: Any) -> bool:
+    if not _is_string(value):
+        return False
+    media_type = value.lower().split(";", 1)[0].strip()
+    return (
+        media_type.startswith("text/")
+        or media_type in {"application/json", "application/xml"}
+        or media_type.endswith("+json")
+        or media_type.endswith("+xml")
+    )
+
+
+def _is_search_eligible_artifact(record: Record) -> bool:
+    return (
+        record.record_type == "artifact"
+        and record.data.get("storage") == "tracked"
+        and record.data.get("indexable") is True
+        and record.data.get("encoding") == "utf-8"
+        and _is_searchable_media(record.data.get("media_type"))
+    )
+
+
+def _hash_and_size(path: Path) -> tuple[str, int]:
+    digest = hashlib.sha256()
+    size = 0
+    with path.open("rb") as source:
+        for chunk in iter(lambda: source.read(1024 * 1024), b""):
+            digest.update(chunk)
+            size += len(chunk)
+    return digest.hexdigest(), size
+
+
+def _validate_utf8(library: Library, manifest: Path, path: Path) -> None:
+    try:
+        with path.open("r", encoding="utf-8") as source:
+            for _chunk in iter(lambda: source.read(1024 * 1024), ""):
+                pass
+    except (OSError, UnicodeError) as error:
+        library.error(manifest, f"indexable artifact is not readable UTF-8: {error}")
+
+
+def _validate_artifacts(library: Library) -> None:
+    declared_paths: dict[Path, Record] = {}
+    declared_hashes: dict[str, Record] = {}
+    for record in sorted(library.records.values(), key=lambda item: item.record_id):
+        if record.record_type != "artifact":
+            continue
+        data = record.data
+        storage = data.get("storage")
+        rights = data.get("rights_status")
+        if not _is_string(storage) or storage not in STORAGE_DISPOSITIONS:
+            library.error(record.path, f"storage must be one of: {', '.join(sorted(STORAGE_DISPOSITIONS))}")
+        if not _is_string(rights) or rights not in RIGHTS_STATUSES:
+            library.error(record.path, f"rights_status must be one of: {', '.join(sorted(RIGHTS_STATUSES))}")
+        if "indexable" in data and not isinstance(data["indexable"], bool):
+            library.error(record.path, "indexable must be boolean")
+        if "byte_size" in data and (not isinstance(data["byte_size"], int) or isinstance(data["byte_size"], bool) or data["byte_size"] < 0):
+            library.error(record.path, "byte_size must be a nonnegative integer")
+        sha256 = data.get("sha256")
+        if sha256 is not None and (not _is_string(sha256) or not SHA256_PATTERN.fullmatch(sha256)):
+            library.error(record.path, "sha256 must be 64 lowercase hexadecimal characters")
+        if "retrieved" in data and not _is_iso_date(data["retrieved"]):
+            library.error(record.path, "retrieved must be an ISO date in YYYY-MM-DD form")
+        if "source_url" in data and not _is_safe_public_url(data["source_url"]):
+            library.error(record.path, "source_url must be a public http(s) URL without credentials")
+        if _is_string(rights) and rights in {"public-domain", "legal-exception"} and not _is_string(data.get("rights_jurisdiction")):
+            library.error(record.path, f"{rights} artifact requires rights_jurisdiction")
+        if _is_string(data.get("derived_from")) and not _is_string(data.get("transformation")):
+            library.error(record.path, "derived artifact requires transformation provenance")
+        if "transformation" in data and not _is_string(data.get("derived_from")):
+            library.error(record.path, "transformation requires derived_from")
+        if data.get("indexable") is True:
+            if storage != "tracked" or not _is_searchable_media(data.get("media_type")):
+                library.error(record.path, "indexable artifact must be tracked searchable text")
+            if data.get("encoding") != "utf-8":
+                library.error(record.path, 'indexable artifact encoding must be "utf-8"')
+
+        artifact_path = data.get("path")
+        if storage == "tracked":
+            for field in ("path", "sha256", "byte_size"):
+                if field not in data:
+                    library.error(record.path, f"tracked artifact requires {field}")
+            if not _is_string(rights) or rights not in TRACKABLE_RIGHTS:
+                library.error(record.path, "tracked artifact requires an affirmative distribution rights_status")
+            if not any(
+                _is_string(data.get(field))
+                for field in ("source_url", "provenance", "derived_from")
+            ):
+                library.error(
+                    record.path,
+                    "tracked artifact requires source_url, provenance, or derived_from",
+                )
+            if not _is_iso_date(data.get("retrieved")):
+                library.error(record.path, "tracked artifact requires retrieved ISO date")
+            if _is_string(artifact_path):
+                resolved = _safe_source_path(library, record.path, artifact_path)
+                if resolved is not None:
+                    prior_path = declared_paths.get(resolved)
+                    if prior_path is not None:
+                        library.error(
+                            record.path,
+                            f"artifact path is already owned by {prior_path.record_id}",
+                        )
+                    else:
+                        declared_paths[resolved] = record
+                        library.payload_paths.add(resolved)
+                    if not resolved.is_file():
+                        library.error(record.path, f"tracked artifact file does not exist: {artifact_path}")
+                    else:
+                        try:
+                            actual_hash, actual_size = _hash_and_size(resolved)
+                        except OSError as error:
+                            library.error(record.path, f"cannot read tracked artifact: {error}")
+                        else:
+                            if _is_string(sha256) and SHA256_PATTERN.fullmatch(sha256) and actual_hash != sha256:
+                                library.error(record.path, f"sha256 mismatch for {artifact_path}: {actual_hash}")
+                            if isinstance(data.get("byte_size"), int) and not isinstance(data.get("byte_size"), bool) and actual_size != data["byte_size"]:
+                                library.error(record.path, f"byte_size mismatch for {artifact_path}: {actual_size}")
+                            if data.get("indexable") is True:
+                                _validate_utf8(library, record.path, resolved)
+                if _is_string(sha256) and SHA256_PATTERN.fullmatch(sha256):
+                    prior_hash = declared_hashes.get(sha256)
+                    if prior_hash is not None:
+                        library.error(
+                            record.path,
+                            f"tracked sha256 is already owned by {prior_hash.record_id}",
+                        )
+                    else:
+                        declared_hashes[sha256] = record
+        elif artifact_path is not None:
+            library.error(record.path, f"{storage or 'non-tracked'} artifact must not declare a tracked path")
+        if storage == "remote" and not _is_string(data.get("source_url")):
+            library.error(record.path, "remote artifact requires source_url")
+        if ("sha256" in data or "byte_size" in data) and not _is_iso_date(data.get("retrieved")):
+            library.error(record.path, "hashed artifact requires retrieved ISO date")
+
+    for artifact_directory in sorted(
+        library.source_root.glob("works/*/*/editions/*/artifacts/*")
+    ):
+        if artifact_directory.is_symlink():
+            library.error(artifact_directory, "artifact directory must not be a symbolic link")
+            continue
+        if not artifact_directory.is_dir():
+            continue
+        for entry in sorted(artifact_directory.rglob("*")):
+            if entry.is_symlink():
+                library.error(entry, "artifact directory must not contain symbolic links")
+                continue
+            if not entry.is_file() or entry == artifact_directory / "artifact.toml":
+                continue
+            if entry.resolve() not in declared_paths:
+                library.error(entry, "artifact payload is not declared by its local artifact manifest")
+
+
+def _validate_source_tree(library: Library) -> None:
+    """Reject files that evade a manifest, schema, or inventory owner."""
+
+    manifest_patterns = (
+        "works/*/*/work.toml",
+        "works/*/*/editions/*/edition.toml",
+        "works/*/*/editions/*/artifacts/*/artifact.toml",
+        "works/*/*/editions/*/passages/*.toml",
+        "corpora/*.toml",
+    )
+    manifest_paths = {
+        path
+        for pattern in manifest_patterns
+        for path in library.source_root.glob(pattern)
+    }
+    for entry in sorted(library.source_root.rglob("*")):
+        if entry.is_symlink():
+            library.error(entry, "source-library tree must not contain symbolic links")
+            continue
+        if not entry.is_file():
+            continue
+        relative = entry.relative_to(library.source_root)
+        if relative == Path("README.md") or entry in manifest_paths:
+            continue
+        if relative.parts[0] == "schema" and entry.suffix in {".json", ".md", ".toml"}:
+            continue
+        if relative.parts[0] == "inventories" and entry.suffix in {".md", ".toml"}:
+            continue
+        if entry.resolve() in library.payload_paths:
+            continue
+        if relative.parts[0] == "works" and entry.suffix == ".toml":
+            # Canonical discovery or the local artifact scan already diagnoses it.
+            continue
+        library.error(entry, "file is outside the source-library schema and has no artifact owner")
+
+
+def _ancestors(library: Library, source_id: str) -> set[str]:
+    found: set[str] = set()
+    pending = [source_id]
+    while pending:
+        current = pending.pop()
+        if current in found:
+            continue
+        found.add(current)
+        record = library.records.get(current)
+        if record is not None:
+            pending.extend(_dependency_ids(record))
+    return found
+
+
+def _work_for_source(library: Library, source_id: str) -> Record | None:
+    works = [
+        library.records[item]
+        for item in _ancestors(library, source_id)
+        if item in library.records and library.records[item].record_type == "work"
+    ]
+    return works[0] if len(works) == 1 else None
+
+
+def _validate_loci(library: Library) -> None:
+    for record in sorted(library.records.values(), key=lambda item: item.record_id):
+        if record.record_type != "passage":
+            continue
+        work = _work_for_source(library, record.record_id)
+        pattern = work.data.get("locus_pattern") if work else None
+        if _is_string(pattern) and _is_string(record.data.get("locus")):
+            try:
+                if re.fullmatch(pattern, record.data["locus"]) is None:
+                    library.error(record.path, f"locus does not match {work.record_id} locus_pattern: {record.data['locus']}")
+            except (re.error, OverflowError, RecursionError):
+                pass
+        states = record.data.get("states")
+        if _is_string_list(states, allow_empty=False):
+            invalid = sorted(set(states) - PASSAGE_STATES)
+            if invalid:
+                library.error(record.path, f"states has invalid values: {', '.join(invalid)}")
+            if len(states) != len(set(states)):
+                library.error(record.path, "states contains duplicates")
+            if "verified" in states:
+                if not _is_string(record.data.get("artifact_id")):
+                    library.error(record.path, "verified passage requires artifact_id")
+                if not _is_iso_date(record.data.get("verified_on")):
+                    library.error(record.path, "verified passage requires verified_on ISO date")
+            elif "verified_on" in record.data:
+                library.error(record.path, "verified_on requires the verified state")
+
+    for binding in library.bindings:
+        loci = binding.data.get("loci", [])
+        if not isinstance(loci, list):
+            continue
+        work = _work_for_source(library, binding.source_id)
+        pattern = work.data.get("locus_pattern") if work else None
+        if not _is_string(pattern):
+            continue
+        for locus in loci:
+            if _is_string(locus):
+                try:
+                    if re.fullmatch(pattern, locus) is None:
+                        library.error(binding.path, f"bindings[{binding.ordinal}] locus does not match {work.record_id}: {locus}")
+                except (re.error, OverflowError, RecursionError):
+                    break
+
+
+def _validate_cycles(library: Library) -> None:
+    state: dict[str, int] = {}
+    reported: set[frozenset[str]] = set()
+    for start in sorted(library.records):
+        if state.get(start, 0) != 0:
+            continue
+        state[start] = 1
+        path = [start]
+        positions = {start: 0}
+        stack: list[tuple[str, Iterable[str]]] = [
+            (
+                start,
+                iter(
+                    sorted(
+                        dependency
+                        for dependency in _dependency_ids(library.records[start])
+                        if dependency in library.records
+                    )
+                ),
+            )
+        ]
+        while stack:
+            current, dependencies = stack[-1]
+            try:
+                dependency = next(dependencies)
+            except StopIteration:
+                stack.pop()
+                state[current] = 2
+                positions.pop(current, None)
+                path.pop()
+                continue
+            dependency_state = state.get(dependency, 0)
+            if dependency_state == 0:
+                state[dependency] = 1
+                positions[dependency] = len(path)
+                path.append(dependency)
+                stack.append(
+                    (
+                        dependency,
+                        iter(
+                            sorted(
+                                child
+                                for child in _dependency_ids(library.records[dependency])
+                                if child in library.records
+                            )
+                        ),
+                    )
+                )
+            elif dependency_state == 1:
+                cycle = path[positions[dependency] :]
+                cycle_key = frozenset(cycle)
+                if cycle_key not in reported:
+                    reported.add(cycle_key)
+                    record = library.records[dependency]
+                    library.error(
+                        record.path,
+                        f"source dependency cycle: {' -> '.join(cycle)}",
+                    )
+
+
+def _validate_binding_fingerprints(library: Library) -> None:
+    cache: dict[str, str] = {}
+    for binding in library.bindings:
+        states = binding.data.get("states", [])
+        reviewed = (
+            _is_string_list(states, allow_empty=False)
+            and bool(FINGERPRINTED_STATES & set(states))
+        )
+        supplied = binding.data.get("source_fingerprint")
+        if reviewed:
+            if not _is_string(supplied) or not FINGERPRINT_PATTERN.fullmatch(supplied):
+                library.error(
+                    binding.path,
+                    f"bindings[{binding.ordinal}] reviewed state requires canonical source_fingerprint",
+                )
+                continue
+            try:
+                expected = source_fingerprint(library, binding.source_id, _cache=cache)
+            except (KeyError, SourceLibraryQueryError):
+                continue
+            if supplied != expected:
+                library.error(
+                    binding.path,
+                    f"bindings[{binding.ordinal}].source_fingerprint must be {expected!r}",
+                )
+        elif supplied is not None:
+            library.error(
+                binding.path,
+                f"bindings[{binding.ordinal}].source_fingerprint requires a reviewed state",
+            )
+
+
+def _validate_search_receipts(library: Library) -> None:
+    """Re-run schema-v1 searches and prove their recorded result counts."""
+
+    cache: dict[tuple[str, str, str], int] = {}
+    for binding in library.bindings:
+        states = binding.data.get("states")
+        if not _is_string_list(states, allow_empty=False) or "searched" not in states:
+            continue
+        target = library.records.get(binding.source_id)
+        mode = binding.data.get("search_mode")
+        query = binding.data.get("query")
+        matching_line_count = binding.data.get("matching_line_count")
+        if (
+            target is None
+            or target.record_type not in {"artifact", "corpus"}
+            or not _is_string(mode)
+            or mode not in SEARCH_MODES
+            or not _is_string(query)
+            or not isinstance(matching_line_count, int)
+            or isinstance(matching_line_count, bool)
+            or matching_line_count < 0
+        ):
+            continue
+        artifacts = _exact_artifacts(library, target)
+        if binding.data.get("role") == "negative-search" and any(
+            not _is_string(artifact.data.get("media_type"))
+            or artifact.data["media_type"].split(";", 1)[0].strip().lower()
+            != "text/plain"
+            for artifact in artifacts
+        ):
+            library.error(
+                binding.path,
+                f"bindings[{binding.ordinal}] negative-search requires text/plain search representations",
+            )
+        key = (binding.source_id, mode, query)
+        if key not in cache:
+            try:
+                cache[key] = len(
+                    search_rows(
+                        library,
+                        binding.source_id,
+                        query,
+                        case_sensitive=SEARCH_MODES[mode],
+                    )
+                )
+            except (KeyError, SourceLibraryQueryError) as error:
+                library.error(
+                    binding.path,
+                    f"bindings[{binding.ordinal}] cannot verify search receipt: {error}",
+                )
+                continue
+        if matching_line_count != cache[key]:
+            library.error(
+                binding.path,
+                f"bindings[{binding.ordinal}].matching_line_count must be {cache[key]} for the exact search",
+            )
+
+
+def _preflight_tree(library: Library, root: Path, label: str) -> bool:
+    """Prove a tree is local and symlink-free before recursive discovery."""
+
+    if _path_contains_symlink(root, library.root):
+        library.errors.append(
+            f"{library.relative(root)}: {label} root path must not contain symbolic links"
+        )
+        return False
+    if not root.is_dir():
+        library.errors.append(f"{library.relative(root)}: {label} root is not a directory")
+        return False
+    safe = True
+    for current, directories, filenames in os.walk(root, followlinks=False):
+        current_path = Path(current)
+        retained_directories = []
+        for name in directories:
+            path = current_path / name
+            if path.is_symlink():
+                library.error(path, f"{label} tree must not contain symbolic links")
+                safe = False
+            else:
+                retained_directories.append(name)
+        directories[:] = retained_directories
+        for name in filenames:
+            path = current_path / name
+            if path.is_symlink():
+                library.error(path, f"{label} tree must not contain symbolic links")
+    return safe
+
+
+def load_library(
+    root: Path = ROOT,
+    *,
+    check_binding_fingerprints: bool = True,
+) -> Library:
+    """Load and validate the source graph rooted at *root*."""
+
+    root = root.resolve()
+    library = Library(
+        root=root,
+        source_root=root / "src/sources",
+        publication_root=root / "src/gpt",
+    )
+    sources_safe = _preflight_tree(library, library.source_root, "source-library")
+    publications_safe = _preflight_tree(library, library.publication_root, "publication")
+    if not sources_safe or not publications_safe:
+        library.errors.sort()
+        return library
+    _load_source_records(library)
+    _load_bindings(library)
+    _validate_relationships(library)
+    _validate_artifacts(library)
+    _validate_search_receipts(library)
+    _validate_source_tree(library)
+    _validate_loci(library)
+    _validate_cycles(library)
+    if check_binding_fingerprints:
+        _validate_binding_fingerprints(library)
+    library.errors.sort()
+    return library
+
+
+def binding_rows(library: Library, source_id: str, locus: str | None = None) -> list[dict[str, Any]]:
+    """Return consumer bindings whose source depends on *source_id*."""
+
+    if source_id not in library.records:
+        raise KeyError(source_id)
+    rows: list[dict[str, Any]] = []
+    for binding in library.bindings:
+        if source_id not in _ancestors(library, binding.source_id):
+            continue
+        loci = binding.data.get("loci", [])
+        bound_source = library.records.get(binding.source_id)
+        if (
+            not loci
+            and bound_source is not None
+            and bound_source.record_type == "passage"
+            and _is_string(bound_source.data.get("locus"))
+        ):
+            loci = [bound_source.data["locus"]]
+        if locus is not None and locus not in loci:
+            continue
+        rows.append(
+            {
+                "document": binding.document,
+                "source_id": binding.source_id,
+                "loci": list(loci) if isinstance(loci, list) else [],
+                "role": binding.data.get("role", ""),
+                "states": list(binding.data.get("states", [])),
+                "path": library.relative(binding.path),
+            }
+        )
+    return sorted(rows, key=lambda row: (row["document"], row["source_id"], row["loci"], row["role"]))
+
+
+def impact_rows(library: Library, source_id: str, locus: str | None = None) -> list[dict[str, Any]]:
+    """Return dependent source records and publication bindings."""
+
+    if source_id not in library.records:
+        raise KeyError(source_id)
+    rows: list[dict[str, Any]] = []
+    for record in library.records.values():
+        if record.record_id != source_id and source_id in _ancestors(library, record.record_id):
+            rows.append(
+                {
+                    "kind": "source",
+                    "id": record.record_id,
+                    "type": record.record_type,
+                    "path": library.relative(record.path),
+                }
+            )
+    for binding in binding_rows(library, source_id, locus):
+        rows.append(
+            {
+                "kind": "document",
+                "id": binding["document"],
+                "type": binding["role"],
+                "path": binding["path"],
+            }
+        )
+    return sorted(rows, key=lambda row: (row["kind"], row["id"], row["type"], row["path"]))
+
+
+def _artifact_ids_for_search(library: Library, source_id: str) -> list[str]:
+    record = library.records[source_id]
+    if record.record_type == "artifact":
+        return [source_id]
+    if record.record_type == "passage":
+        artifact_id = record.data.get("artifact_id")
+        return [artifact_id] if _is_string(artifact_id) and artifact_id in library.records else []
+    if record.record_type == "corpus":
+        members = record.data.get("members")
+        if not isinstance(members, list):
+            return []
+        return sorted(
+            member
+            for member in members
+            if _is_string(member)
+            and member in library.records
+            and library.records[member].record_type == "artifact"
+        )
+    if record.record_type in {"work", "edition"}:
+        found = []
+        for candidate in library.records.values():
+            if candidate.record_type == "artifact" and source_id in _ancestors(library, candidate.record_id):
+                found.append(candidate.record_id)
+        return sorted(found)
+    return []
+
+
+def search_rows(library: Library, source_id: str, query: str, *, case_sensitive: bool = False) -> list[dict[str, Any]]:
+    """Run a literal query against each physical UTF-8 line in the boundary."""
+
+    if source_id not in library.records:
+        raise KeyError(source_id)
+    if not _is_string(query):
+        raise SourceLibraryQueryError("search query must contain non-whitespace text")
+    if "\n" in query or "\r" in query:
+        raise SourceLibraryQueryError(
+            "raw-line search query must not contain a line break"
+        )
+    needle = query if case_sensitive else query.casefold()
+    rows: list[dict[str, Any]] = []
+    source_record = library.records[source_id]
+    if source_record.record_type == "passage":
+        raise SourceLibraryQueryError(
+            "passage search is undefined until the passage records exact byte or line ranges; search its artifact explicitly"
+        )
+    selected = _artifact_ids_for_search(library, source_id)
+    eligible = [
+        artifact_id
+        for artifact_id in selected
+        if _is_search_eligible_artifact(library.records[artifact_id])
+    ]
+    if source_record.record_type in {"artifact", "corpus"} and eligible != selected:
+        raise SourceLibraryQueryError(
+            "exact artifact or corpus search boundary contains a non-indexable artifact"
+        )
+    if not eligible:
+        raise SourceLibraryQueryError("search boundary contains no indexable tracked artifacts")
+    for artifact_id in eligible:
+        artifact = library.records[artifact_id]
+        data = artifact.data
+        path_value = data.get("path")
+        if not _is_string(path_value):
+            raise SourceLibraryQueryError(f"indexable artifact has no path: {artifact_id}")
+        path = _safe_source_path(library, artifact.path, path_value)
+        if path is None or not path.is_file():
+            raise SourceLibraryQueryError(f"indexable artifact is unavailable: {artifact_id}")
+        try:
+            digest = hashlib.sha256()
+            byte_size = 0
+            artifact_rows: list[dict[str, Any]] = []
+            with path.open("rb") as source:
+                for line_number, raw_line in enumerate(source, start=1):
+                    digest.update(raw_line)
+                    byte_size += len(raw_line)
+                    line = raw_line.decode("utf-8").rstrip("\r\n")
+                    haystack = line if case_sensitive else line.casefold()
+                    if needle in haystack:
+                        artifact_rows.append(
+                            {
+                                "artifact_id": artifact_id,
+                                "line": line_number,
+                                "text": line,
+                                "path": library.relative(path),
+                            }
+                        )
+            if (
+                digest.hexdigest() != data.get("sha256")
+                or byte_size != data.get("byte_size")
+            ):
+                raise SourceLibraryQueryError(
+                    f"indexable artifact changed from its manifest: {artifact_id}"
+                )
+            rows.extend(artifact_rows)
+        except SourceLibraryQueryError:
+            raise
+        except (OSError, UnicodeError) as error:
+            raise SourceLibraryQueryError(
+                f"cannot search indexable artifact {artifact_id}: {error}"
+            ) from error
+    return rows
+
+
+def _print_errors(library: Library) -> int:
+    for error in library.errors:
+        print(f"source-library error: {error}", file=sys.stderr)
+    return 1
+
+
+def _print_rows(rows: Sequence[dict[str, Any]], output_format: str, fields: Sequence[str]) -> None:
+    if output_format == "json":
+        print(json.dumps(rows, ensure_ascii=False, indent=2, sort_keys=True))
+        return
+    for row in rows:
+        values = []
+        for field in fields:
+            value = row.get(field, "")
+            if isinstance(value, list):
+                value = ",".join(str(item) for item in value)
+            values.append(str(value))
+        print("\t".join(values))
+
+
+def _validated_library(args: argparse.Namespace) -> Library | None:
+    library = load_library(Path(args.root))
+    if library.errors:
+        _print_errors(library)
+        return None
+    return library
+
+
+def command_validate(args: argparse.Namespace) -> int:
+    library = load_library(Path(args.root))
+    if library.errors:
+        return _print_errors(library)
+    counts = defaultdict(int)
+    for record in library.records.values():
+        counts[record.record_type] += 1
+    summary = " ".join(f"{kind}={counts[kind]}" for kind in sorted(RECORD_TYPES))
+    print(f"source-library valid: {summary} bindings={len(library.bindings)}")
+    return 0
+
+
+def command_uses(args: argparse.Namespace) -> int:
+    library = _validated_library(args)
+    if library is None:
+        return 1
+    try:
+        rows = binding_rows(library, args.source_id, args.locus)
+    except KeyError:
+        print(f"source-library error: unknown source id: {args.source_id}", file=sys.stderr)
+        return 1
+    _print_rows(rows, args.format, ("document", "source_id", "loci", "role", "states", "path"))
+    return 0
+
+
+def command_fingerprint(args: argparse.Namespace) -> int:
+    library = load_library(
+        Path(args.root),
+        check_binding_fingerprints=False,
+    )
+    if library.errors:
+        _print_errors(library)
+        return 1
+    try:
+        print(source_fingerprint(library, args.source_id))
+    except KeyError:
+        print(f"source-library error: unknown source id: {args.source_id}", file=sys.stderr)
+        return 1
+    except SourceLibraryQueryError as error:
+        print(f"source-library error: {error}", file=sys.stderr)
+        return 1
+    return 0
+
+
+def command_impact(args: argparse.Namespace) -> int:
+    library = _validated_library(args)
+    if library is None:
+        return 1
+    try:
+        rows = impact_rows(library, args.source_id, args.locus)
+    except KeyError:
+        print(f"source-library error: unknown source id: {args.source_id}", file=sys.stderr)
+        return 1
+    _print_rows(rows, args.format, ("kind", "id", "type", "path"))
+    return 0
+
+
+def command_search(args: argparse.Namespace) -> int:
+    library = _validated_library(args)
+    if library is None:
+        return 1
+    try:
+        rows = search_rows(library, args.source_id, args.query, case_sensitive=args.case_sensitive)
+    except KeyError:
+        print(f"source-library error: unknown source id: {args.source_id}", file=sys.stderr)
+        return 1
+    except SourceLibraryQueryError as error:
+        print(f"source-library error: {error}", file=sys.stderr)
+        return 1
+    if args.count:
+        print(len(rows))
+        return 0
+    _print_rows(rows, args.format, ("artifact_id", "line", "text", "path"))
+    return 0
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--root", default=str(ROOT), help=argparse.SUPPRESS)
+    subparsers = parser.add_subparsers(dest="command", required=True)
+
+    validate = subparsers.add_parser("validate", help="validate registered source records and bindings")
+    validate.set_defaults(function=command_validate)
+
+    fingerprint = subparsers.add_parser(
+        "fingerprint", help="print the canonical review fingerprint for a source"
+    )
+    fingerprint.add_argument("source_id")
+    fingerprint.set_defaults(function=command_fingerprint)
+
+    uses = subparsers.add_parser("uses", help="list publications bound to a source or its descendants")
+    uses.add_argument("source_id")
+    uses.add_argument("--locus")
+    uses.add_argument("--format", choices=("tsv", "json"), default="tsv")
+    uses.set_defaults(function=command_uses)
+
+    impact = subparsers.add_parser("impact", help="list source records and publications affected by a source")
+    impact.add_argument("source_id")
+    impact.add_argument("--locus")
+    impact.add_argument("--format", choices=("tsv", "json"), default="tsv")
+    impact.set_defaults(function=command_impact)
+
+    search = subparsers.add_parser(
+        "search",
+        help="search physical lines in registered tracked UTF-8 artifacts",
+    )
+    search.add_argument("source_id")
+    search.add_argument("query")
+    search.add_argument("--case-sensitive", action="store_true")
+    search.add_argument("--count", action="store_true", help="print only the matching-line count")
+    search.add_argument("--format", choices=("tsv", "json"), default="tsv")
+    search.set_defaults(function=command_search)
+    return parser
+
+
+def main(argv: Sequence[str] | None = None) -> int:
+    args = build_parser().parse_args(argv)
+    return int(args.function(args))
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

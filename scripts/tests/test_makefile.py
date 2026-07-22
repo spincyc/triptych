@@ -105,6 +105,19 @@ with open(os.environ["MAKE_TEST_REVIEW_LOG"], "a", encoding="utf-8") as log:
         )
         self.pdf_review.chmod(0o755)
 
+        self.source_library = scripts / "source-library"
+        self.source_library.write_text(
+            """#!/usr/bin/env python3
+import os
+import sys
+
+with open(os.environ["MAKE_TEST_SOURCE_LIBRARY_LOG"], "a", encoding="utf-8") as log:
+    log.write(" ".join(sys.argv[1:]) + "\\n")
+""",
+            encoding="utf-8",
+        )
+        self.source_library.chmod(0o755)
+
         self.pdflatex = scripts / "fake-pdflatex"
         self.pdflatex.write_text(
             """#!/bin/sh
@@ -132,6 +145,7 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         self.latex_log = self.root / "latex.log"
         self.flags_log = self.root / "flags.log"
         self.review_log = self.root / "review.log"
+        self.source_library_log = self.root / "source-library.log"
         self.pacman_log = self.root / "pacman.log"
         self.codex_log = self.root / "codex.log"
         self.environment = os.environ.copy()
@@ -142,6 +156,7 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
                 "MAKE_TEST_LATEX_LOG": str(self.latex_log),
                 "MAKE_TEST_FLAGS_LOG": str(self.flags_log),
                 "MAKE_TEST_REVIEW_LOG": str(self.review_log),
+                "MAKE_TEST_SOURCE_LIBRARY_LOG": str(self.source_library_log),
                 "MAKE_TEST_PACMAN_LOG": str(self.pacman_log),
                 "MAKE_TEST_CODEX_LOG": str(self.codex_log),
                 "PDFLATEX": str(self.pdflatex),
@@ -179,6 +194,7 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         self.latex_log.write_text("", encoding="utf-8")
         self.flags_log.write_text("", encoding="utf-8")
         self.review_log.write_text("", encoding="utf-8")
+        self.source_library_log.write_text("", encoding="utf-8")
 
     @staticmethod
     def sha256(path: Path) -> str:
@@ -226,6 +242,12 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         self.run_make("-j4", "all", "pdf")
         self.assertEqual(self.lines(self.latex_log), [])
         self.assertEqual(len(self.lines(self.check_log)), 1)
+
+    def test_check_sources_invokes_validation_without_building(self) -> None:
+        self.run_make("check-sources")
+        self.assertEqual(self.lines(self.source_library_log), ["validate"])
+        self.assertEqual(self.lines(self.latex_log), [])
+        self.assertEqual(self.lines(self.check_log), [])
 
     def test_clean_review_bootstraps_bounded_jobs_and_reuses_a_jobserver(self) -> None:
         result = self.run_make("review-pdfs", "PDF_JOBS=2")
