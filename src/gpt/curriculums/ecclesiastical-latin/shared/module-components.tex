@@ -1,8 +1,17 @@
 % Shared packet furniture. Course-wide orientation belongs to EL-GUIDE;
-% module-specific claims and tasks live in each publishable leaf's
-% module-data.tex.
+% packet-specific teaching and practice live in the grouped publication leaf
+% or in one of its explicitly keyed shared sources.
 
-\providecommand{\ModuleAssessmentDetails}{}
+\providecommand{\ModuleIDKey}{\ModuleID}
+\newcommand{\PrintStableLessonID}[1]{EL-#1\space}
+\providecommand{\ModuleLessonIDs}{\forcsvlist{\PrintStableLessonID}{\ModuleUnit}}
+\providecommand{\ModuleAssumptions}{\ModulePrerequisites}
+\providecommand{\ModuleContinueWith}{\ModuleNext}
+\providecommand{\ModuleBeforeContinuing}{Use fresh Latin to identify what is
+reasonably dependable and what deserves another return before continuing.}
+\providecommand{\ModuleUncertainWork}{\ModuleExtensionPractice}
+\providecommand{\ModuleReadinessDetails}{}
+\providecommand{\ModuleReadinessNote}{}
 
 \newcommand{\ModuleTitlePage}{%
   \hypersetup{pageanchor=false}%
@@ -17,15 +26,18 @@
     \vspace{0.48in}
     \rule{\linewidth}{1pt}
     \vspace{0.28in}
-    \begin{tabularx}{\linewidth}{@{}P{1.15in}X@{}}
-      \textbf{Stage} & \ModuleStage \\
-      \textbf{Prerequisite} & \ModulePrerequisites \\
-      \textbf{Next} & \ModuleNext \\
+    \begin{tabularx}{\linewidth}{@{}P{1.35in}X@{}}
+      \textbf{Packet key} & \ModuleIDKey \\
+      \textbf{Stable lessons} & \ModuleLessonIDs \\
+      \textbf{Course stage} & \ModuleStage \\
+      \textbf{What this assumes} & \ModuleAssumptions \\
+      \textbf{Continue with} & \ModuleContinueWith \\
     \end{tabularx}
     \vfill
-    {\small Read \emph{EL-GUIDE: Start Here} before using this packet. Course
-    method, pacing, source conventions, and answer protocol are stated there;
-    this module begins with its lesson and assumes previously taught terms.\par}
+    {\small EL-GUIDE explains the course-wide study loop, source labels,
+    answer use, and repetition method. This packet begins with substantive
+    teaching and supplies its own memory work, readings, composition,
+    cumulative practice, and models.\par}
     \vspace{0.3in}
     {\sffamily\small Triptych: AI Driven Studies in Catholic Faith, Worship, and Law\par}
   \end{titlepage}
@@ -34,50 +46,55 @@
 
 \newcommand{\SubmoduleExtension}[5]{%
   \ifsolutions
-    \Needspace{7\baselineskip}\section*{#1 --- model and rubric}
-    \textbf{Model / acceptable evidence.} #5
+    \Needspace{7\baselineskip}\section*{#1 --- model and points to check}
+    \textbf{Model / points to check.} #5
   \else
-    \par\Needspace{8\baselineskip}\section{#1 --- transfer practice}
+    \par\Needspace{8\baselineskip}\section{#1 --- connected practice}
     \textbf{Connection.} #2
 
-    \textbf{Transfer task.} #3
+    \textbf{Practice.} #3
 
-    \textbf{Retrieval check.} #4
+    \textbf{Recall without notes.} #4
 
     \par\medskip
   \fi
 }
 
-\newcommand{\ModuleWorkRecord}{%
-  \chapter{Mastery assessment and record}
-  \ModuleAssessmentDetails
-  \MasteryGate{\ModuleMastery}
-  \ModuleDelayNote
+\newcommand{\ModuleReadinessRecord}{%
+  \clearpage
+  \chapter{Before continuing}
+  \ModuleReadinessDetails
+  \BeforeContinuing{\ModuleBeforeContinuing}
+  \ModuleReadinessNote
 
-  Complete the assessment before opening the answer part. Record evidence,
-  not confidence or elapsed time.
+  Use fresh work before consulting the answers. The purpose of this record is
+  to identify what has become dependable and what deserves another round of
+  explanation, memory work, or reading.
 
-  \begin{xltabular}{\linewidth}{@{}P{1.05in}Y Y@{}}
+  \begin{xltabular}{\linewidth}{@{}P{1.55in}Y Y@{}}
     \toprule
-    \textbf{Evidence} & \textbf{First attempt} & \textbf{Delayed check} \\
+    \textbf{Area} & \textbf{Fresh attempt} & \textbf{Later return} \\
     \midrule
-    Date and conditions & & \\
-    Worksheet ID and score & & \\
-    Mastery task and result & & \\
-    One recurring error family & & \\
-    Correction stated as a rule & & \\
-    Unseen or remediation item used & & \\
+    Date, passage, or form used & & \\
+    Vocabulary recalled directly & & \\
+    Forms and constructions explained & & \\
+    Connected Latin read directly & & \\
+    Latin composed and revised & & \\
+    Recurring uncertainty & & \\
+    Explanation or sheet repeated & & \\
+    What is reasonably dependable now & & \\
     \bottomrule
   \end{xltabular}
 
-  \textbf{If the criterion is met:} continue to \ModuleNext.
-
-  \textbf{If it is not met:} \ModuleExtensionPractice.
+  \textbf{If an ability remains uncertain:} \ModuleUncertainWork
 
   \par\medskip
-  \textbf{Advance / remediate decision:} \LongBlank\quad
-  \textbf{Next review date:} \LongBlank
+  \textbf{What I will revisit next:} \LongBlank\quad
+  \textbf{Date of a later return:} \LongBlank
 
   \par\medskip
   \textbf{Reason in one complete sentence:}\quad\hrulefill
 }
+
+% Compatibility name for the earlier record macro.
+\let\ModuleWorkRecord\ModuleReadinessRecord

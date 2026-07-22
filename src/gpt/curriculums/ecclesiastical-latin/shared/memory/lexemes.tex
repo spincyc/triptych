@@ -1,0 +1,745 @@
+% Authoritative controlled lexeme registry for the Ecclesiastical Latin course.
+% English senses are project-created study glosses.  The strand field assigns
+% pedagogical work; it does not claim attestation in a named author or edition.
+% Exact attestations belong in the owner-level lexicon inventory and passage
+% records when they have been checked at a locus.
+
+\newcounter{MemoryLexemeCount}
+\newcommand{\MemoryLexemeIDs}{}
+\newcommand{\MemoryLexemeIDSequence}{}
+\newcommand{\MemoryLexemeSourceState}{Project gloss; external lexical locus open (U)}
+
+\newcommand{\DeclareMemoryLexeme}[7]{%
+  \ifcsdef{memory@lexeme@#1@citation}{%
+    \PackageError{memory-registry}{Duplicate lexeme ID #1}{}%
+  }{%
+    \stepcounter{MemoryLexemeCount}%
+    \ifnum\value{MemoryLexemeCount}=1
+      \gdef\MemoryLexemeIDs{#1}%
+    \else
+      \gappto{\MemoryLexemeIDs}{,#1}%
+    \fi
+    \gappto{\MemoryLexemeIDSequence}{\MemorySequenceItem{#1}}%
+    \csdef{memory@lexeme@#1@citation}{#2}%
+    \csdef{memory@lexeme@#1@sense}{#3}%
+    \csdef{memory@lexeme@#1@morphology}{#4}%
+    \csdef{memory@lexeme@#1@usage}{#5}%
+    \csdef{memory@lexeme@#1@strand}{#6}%
+    \csdef{memory@lexeme@#1@expectation}{#7}%
+  }%
+}
+
+\newcommand{\MemoryLexemeField}[2]{%
+  \ifcsdef{memory@lexeme@#1@#2}{%
+    \csuse{memory@lexeme@#1@#2}%
+  }{%
+    \PackageError{memory-registry}{Unknown lexeme ID or field #1/#2}{}%
+  }%
+}
+
+% M01: concrete predication and transparent beginner sentences.
+\DeclareMemoryLexeme{L001}{vulpes, vulpis f.}{fox}{noun; third declension; feminine}{learn nominative and genitive together}{general concrete Latin}{active}
+\DeclareMemoryLexeme{L002}{fuscus, -a, -um}{dark, dusky, brown}{first/second-declension adjective}{agree with the described noun; the exact color sense depends on context}{general concrete Latin}{active}
+\DeclareMemoryLexeme{L003}{canis, canis m./f.}{dog}{noun; third declension; common gender}{gender follows the animal meant; genitive reveals the stem}{general concrete Latin}{active}
+\DeclareMemoryLexeme{L004}{avis, avis f.}{bird}{noun; third declension; feminine}{regularly pair forms with a governing verb or preposition}{general concrete Latin}{active}
+\DeclareMemoryLexeme{L005}{via, -æ f.}{road, way}{noun; first declension; feminine}{literal route or figurative way; sense follows context}{general and biblical reading}{active}
+\DeclareMemoryLexeme{L006}{aqua, -æ f.}{water}{noun; first declension; feminine}{learn with verbs of carrying, giving, and pouring}{general and biblical reading}{active}
+\DeclareMemoryLexeme{L007}{magnus, -a, -um}{large, great}{first/second-declension adjective}{agree in gender, number, and case; physical or evaluative sense}{general Latin}{active}
+\DeclareMemoryLexeme{L008}{parvus, -a, -um}{small, little}{first/second-declension adjective}{agree in gender, number, and case}{general Latin}{active}
+
+% M02: people, home, sight, and motion.
+\DeclareMemoryLexeme{L009}{puer, pueri m.}{boy, child}{noun; second declension; masculine}{stem puer-; nominative retains no -us}{general narrative}{active}
+\DeclareMemoryLexeme{L010}{puella, -æ f.}{girl}{noun; first declension; feminine}{use as subject, object, possessor, recipient, and address}{general narrative}{active}
+\DeclareMemoryLexeme{L011}{vir, viri m.}{man}{noun; second declension; masculine}{stem vir-; distinguish from vis}{general and classical prose}{active}
+\DeclareMemoryLexeme{L012}{femina, -æ f.}{woman}{noun; first declension; feminine}{use in ordinary narrative before specialized titles}{general narrative}{active}
+\DeclareMemoryLexeme{L013}{agricola, -æ m.}{farmer}{noun; first declension; masculine}{lexical gender is masculine despite first-declension endings}{general and classical narrative}{active}
+\DeclareMemoryLexeme{L014}{domus, -us f.}{house, home}{noun; fourth declension with mixed forms; feminine}{learn common place forms with their constructions}{general, biblical, and liturgical reading}{active}
+\DeclareMemoryLexeme{L015}{porto, -are, -avi, -atum}{carry}{verb; first conjugation}{normally takes an accusative object}{general narrative}{active}
+\DeclareMemoryLexeme{L016}{video, -ere, vidi, visum}{see}{verb; second conjugation}{takes an accusative object; learn the irregular perfect stem}{general, biblical, and classical prose}{active}
+
+% M03: the ordinary physical world and giving.
+\DeclareMemoryLexeme{L017}{terra, -æ f.}{earth, land, ground}{noun; first declension; feminine}{literal land or earth; preposition and context narrow the sense}{general, biblical, and liturgical reading}{active}
+\DeclareMemoryLexeme{L018}{silva, -æ f.}{wood, forest}{noun; first declension; feminine}{common place noun for transparent narrative}{general and classical narrative}{active}
+\DeclareMemoryLexeme{L019}{urbs, urbis f.}{city}{noun; third declension; feminine}{stem urb-; learn place constructions separately}{general, classical, and patristic prose}{active}
+\DeclareMemoryLexeme{L020}{liber, libri m.}{book}{noun; second declension; masculine}{stem libr-; distinguish from liber, free}{general, biblical, and learned prose}{active}
+\DeclareMemoryLexeme{L021}{mensa, -æ f.}{table}{noun; first declension; feminine}{use with place phrases and verbs of setting or approaching}{general and biblical reading}{active}
+\DeclareMemoryLexeme{L022}{panis, panis m.}{bread}{noun; third declension; masculine}{genitive equals nominative in spelling; syntax resolves forms}{general, biblical, and liturgical reading}{active}
+\DeclareMemoryLexeme{L023}{vinum, -i n.}{wine}{noun; second declension; neuter}{apply the neuter nominative-accusative rule}{general, biblical, and liturgical reading}{active}
+\DeclareMemoryLexeme{L024}{do, dare, dedi, datum}{give, grant}{verb; first conjugation with irregular short stem vowel}{often takes accusative thing and dative recipient}{general, biblical, and liturgical reading}{active}
+
+% M04: broadly useful modifiers.
+\DeclareMemoryLexeme{L025}{bonus, -a, -um}{good}{first/second-declension adjective}{attributive or predicate; agree with the controlling noun}{general Latin}{active}
+\DeclareMemoryLexeme{L026}{malus, -a, -um}{bad, evil}{first/second-declension adjective}{context distinguishes quality from moral evaluation}{general, biblical, and patristic prose}{active}
+\DeclareMemoryLexeme{L027}{novus, -a, -um}{new}{first/second-declension adjective}{contrast with antiquus; position may affect emphasis}{general Latin}{active}
+\DeclareMemoryLexeme{L028}{antiquus, -a, -um}{ancient, old}{first/second-declension adjective}{do not confuse age, former status, and venerability}{general, classical, and historical prose}{active}
+\DeclareMemoryLexeme{L029}{clarus, -a, -um}{bright, clear, renowned}{first/second-declension adjective}{choose the contextual sense from its head and register}{general and classical prose}{active}
+\DeclareMemoryLexeme{L030}{longus, -a, -um}{long}{first/second-declension adjective}{physical length, duration, or prosodic quantity as context requires}{general and poetry study}{active}
+\DeclareMemoryLexeme{L031}{omnis, omne}{every, all, whole}{third-declension adjective; two terminations}{agree with its noun; singular and plural scope differ}{general, biblical, and liturgical reading}{active}
+\DeclareMemoryLexeme{L032}{multus, -a, -um}{much, many}{first/second-declension adjective}{singular mass sense or plural count sense}{general Latin}{active}
+
+% M05: regular verbal action.
+\DeclareMemoryLexeme{L033}{amo, -are, -avi, -atum}{love}{verb; first conjugation}{normally takes an accusative object}{general, classical, and patristic prose}{active}
+\DeclareMemoryLexeme{L034}{laudo, -are, -avi, -atum}{praise}{verb; first conjugation}{normally takes an accusative object}{general, biblical, and liturgical reading}{active}
+\DeclareMemoryLexeme{L035}{voco, -are, -avi, -atum}{call, summon}{verb; first conjugation}{takes an object; naming constructions require context}{general and biblical narrative}{active}
+\DeclareMemoryLexeme{L036}{custodio, -ire, -ivi, -itum}{guard, keep}{verb; fourth conjugation}{normally takes an accusative object}{general, biblical, and liturgical reading}{active}
+\DeclareMemoryLexeme{L037}{audio, -ire, -ivi, -itum}{hear, listen to}{verb; fourth conjugation}{normally takes an accusative object}{general, biblical, and liturgical reading}{active}
+\DeclareMemoryLexeme{L038}{lego, -ere, legi, lectum}{read, gather, choose}{verb; third conjugation}{context selects the sense; reading normally takes an object}{general, classical, and ecclesiastical prose}{active}
+\DeclareMemoryLexeme{L039}{scribo, -ere, scripsi, scriptum}{write}{verb; third conjugation}{takes a written object; recipient may be dative or introduced}{general, classical, and patristic prose}{active}
+\DeclareMemoryLexeme{L040}{venio, -ire, veni, ventum}{come}{verb; fourth conjugation}{destination commonly uses ad or in with accusative}{general, biblical, and liturgical reading}{active}
+
+% M06: high-frequency irregular and stem-changing verbs.
+\DeclareMemoryLexeme{L041}{sum, esse, fui, futurus}{be}{irregular verb}{links subject and predicate or expresses existence and location}{general Latin}{active}
+\DeclareMemoryLexeme{L042}{possum, posse, potui}{be able, can}{irregular compound of sum}{normally governs a complementary infinitive}{general Latin}{active}
+\DeclareMemoryLexeme{L043}{habeo, -ere, habui, habitum}{have, hold, regard}{verb; second conjugation}{takes an object; idiomatic constructions require context}{general, classical, biblical, and patristic prose}{active}
+\DeclareMemoryLexeme{L044}{facio, -ere, feci, factum}{make, do}{verb; third-io conjugation}{takes an object or predicate complement; present passive uses fio}{general Latin}{active}
+\DeclareMemoryLexeme{L045}{dico, -ere, dixi, dictum}{say, tell}{verb; third conjugation}{may govern direct speech, object, or indirect statement}{general, classical, biblical, and liturgical reading}{active}
+\DeclareMemoryLexeme{L046}{accipio, -ere, accepi, acceptum}{receive, take, accept}{verb; third-io conjugation}{normally takes an accusative object}{general, biblical, and liturgical reading}{active}
+\DeclareMemoryLexeme{L047}{mitto, -ere, misi, missum}{send, release}{verb; third conjugation}{takes an object; destination or recipient follows context}{general, classical, and biblical narrative}{active}
+\DeclareMemoryLexeme{L048}{duco, -ere, duxi, ductum}{lead, bring}{verb; third conjugation}{takes an object; compounds often preserve motion}{general, classical, biblical, and liturgical reading}{active}
+
+% M07: perfect stems, passive systems, and deponents.
+\DeclareMemoryLexeme{L049}{creo, -are, -avi, -atum}{create, appoint}{verb; first conjugation}{normally takes an accusative object; sense follows register}{general, biblical, and ecclesiastical prose}{active}
+\DeclareMemoryLexeme{L050}{aperio, -ire, aperui, apertum}{open}{verb; fourth conjugation}{normally takes an accusative object}{general and biblical narrative}{active}
+\DeclareMemoryLexeme{L051}{invenio, -ire, inveni, inventum}{find}{verb; fourth conjugation}{normally takes an accusative object}{general, classical, and biblical narrative}{active}
+\DeclareMemoryLexeme{L052}{peto, -ere, petivi, petitum}{seek, ask for, aim at}{verb; third conjugation}{object and context distinguish request from movement or attack}{general, classical, and liturgical prose}{active}
+\DeclareMemoryLexeme{L053}{sequor, sequi, secutus sum}{follow}{deponent verb; third conjugation}{takes an accusative object despite passive-looking forms}{general, biblical, and liturgical reading}{active}
+\DeclareMemoryLexeme{L054}{loquor, loqui, locutus sum}{speak}{deponent verb; third conjugation}{topic or addressee construction follows context}{general, classical, biblical, and patristic prose}{active}
+\DeclareMemoryLexeme{L055}{confiteor, confiteri, confessus sum}{confess, acknowledge, praise}{deponent verb; second conjugation}{object or addressee depends on the contextual sense}{biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L056}{misereor, misereri, misertus sum}{have mercy, pity}{deponent verb; second conjugation}{learn the complement actually used in the source; liturgical nobis is dative}{biblical, patristic, and liturgical reading}{active}
+
+% M08: personal, demonstrative, and relative reference.
+\DeclareMemoryLexeme{L057}{ego, mei}{I}{personal pronoun; first person singular}{case follows function; nominative is often omitted}{general Latin}{active}
+\DeclareMemoryLexeme{L058}{tu, tui}{you}{personal pronoun; second person singular}{case follows function; nominative is often omitted}{general Latin}{active}
+\DeclareMemoryLexeme{L059}{nos, nostri or nostrum}{we, us}{personal pronoun; first person plural}{genitive forms differ by construction; other cases follow the paradigm}{general Latin}{active}
+\DeclareMemoryLexeme{L060}{vos, vestri or vestrum}{you}{personal pronoun; second person plural}{genitive forms differ by construction; other cases follow the paradigm}{general Latin}{active}
+\DeclareMemoryLexeme{L061}{is, ea, id}{he, she, it; that}{demonstrative and anaphoric pronoun}{gender and number follow reference; case follows clause function}{general Latin}{active}
+\DeclareMemoryLexeme{L062}{hic, hæc, hoc}{this; this person or thing}{demonstrative pronoun and adjective}{near or discourse-present reference; case follows function}{general, biblical, and liturgical reading}{active}
+\DeclareMemoryLexeme{L063}{ille, illa, illud}{that; that person or thing}{demonstrative pronoun and adjective}{remote or emphatic reference; context decides force}{general, classical, biblical, and patristic prose}{active}
+\DeclareMemoryLexeme{L064}{qui, quæ, quod}{who, which, that}{relative pronoun}{gender and number from antecedent; case from its own clause}{general Latin}{active}
+
+% M09: core preposition government.
+\DeclareMemoryLexeme{L065}{ad + accusative}{to, toward, for}{preposition governing accusative}{motion, direction, relation, or purpose follows context}{general Latin}{active}
+\DeclareMemoryLexeme{L066}{a or ab + ablative}{from, away from, by}{preposition governing ablative}{source or personal agent; form chosen partly by following sound}{general Latin}{active}
+\DeclareMemoryLexeme{L067}{cum + ablative}{with}{preposition governing ablative}{accompaniment or associated circumstance; distinguish conjunction cum}{general Latin}{active}
+\DeclareMemoryLexeme{L068}{de + ablative}{down from, from, about}{preposition governing ablative}{source, topic, or relation follows context}{general, classical, and ecclesiastical prose}{active}
+\DeclareMemoryLexeme{L069}{e or ex + ablative}{out of, from}{preposition governing ablative}{source or emergence; form chosen partly by following sound}{general Latin}{active}
+\DeclareMemoryLexeme{L070}{in + accusative or ablative}{into or onto; in or on}{preposition governing two cases}{accusative commonly marks destination; ablative commonly marks location}{general Latin}{active}
+\DeclareMemoryLexeme{L071}{per + accusative}{through, by means of}{preposition governing accusative}{route, duration, means, or mediation follows context}{general, biblical, and liturgical reading}{active}
+\DeclareMemoryLexeme{L072}{sine + ablative}{without}{preposition governing ablative}{learn the governed case with the headword}{general and ecclesiastical prose}{active}
+
+% M10: indispensable connectors.
+\DeclareMemoryLexeme{L073}{et}{and, also, even}{coordinating conjunction or particle}{relation may be additive, sequential, or contextually stronger}{general Latin}{active}
+\DeclareMemoryLexeme{L074}{sed}{but}{coordinating conjunction}{marks contrast or correction}{general Latin}{active}
+\DeclareMemoryLexeme{L075}{autem}{but, moreover, now}{postpositive discourse particle}{normally follows the first constituent; force may be mild}{general, biblical, and patristic prose}{active}
+\DeclareMemoryLexeme{L076}{enim}{for, indeed}{postpositive explanatory particle}{normally follows the first constituent}{general, classical, biblical, and patristic prose}{active}
+\DeclareMemoryLexeme{L077}{igitur}{therefore, then}{inferential particle; often postpositive}{marks inference, transition, or resumption}{general, classical, and liturgical prose}{active}
+\DeclareMemoryLexeme{L078}{quia}{because; that}{subordinating conjunction}{may introduce cause or content; governing context decides}{general, biblical, and patristic prose}{active}
+\DeclareMemoryLexeme{L079}{ut}{as, when, that, so that}{conjunction or adverb}{mood, correlatives, and governor decide the construction}{general Latin}{active}
+\DeclareMemoryLexeme{L080}{ne}{lest, that not; not in certain commands}{subordinating conjunction or negative particle}{distinguish from interrogative enclitic -ne}{general Latin}{active}
+
+% M11: persons and embodied language central to the Missal.
+\DeclareMemoryLexeme{L081}{Deus, Dei m.}{God, a god}{noun; second declension; masculine}{learn its familiar irregular plural alternatives only when needed}{biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L082}{dominus, -i m.}{lord, master, the Lord}{noun; second declension; masculine}{vocative singular domine; capitalization does not determine syntax}{general, biblical, and liturgical reading}{active}
+\DeclareMemoryLexeme{L083}{pater, patris m.}{father}{noun; third declension; masculine}{stem patr-; common title and kinship noun}{general, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L084}{filius, -i m.}{son}{noun; second declension; masculine}{vocative singular fili}{general, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L085}{spiritus, -us m.}{spirit, breath}{noun; fourth declension; masculine}{many forms are syncretic; governor and syntax decide}{biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L086}{anima, -æ f.}{soul, life}{noun; first declension; feminine}{distinguish contextual soul or life from animus}{biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L087}{corpus, corporis n.}{body}{noun; third declension; neuter}{stem corpor-; apply the neuter rule}{general, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L088}{cor, cordis n.}{heart}{noun; third declension; neuter}{stem cord-; literal or figurative center follows context}{general, biblical, patristic, and liturgical reading}{active}
+
+% M12: recurring abstractions of Christian prose.
+\DeclareMemoryLexeme{L089}{gratia, -æ f.}{grace, favor, thanks}{noun; first declension; feminine}{sense follows construction; gratias commonly means thanks}{biblical, patristic, theological, and liturgical reading}{active}
+\DeclareMemoryLexeme{L090}{gloria, -æ f.}{glory, praise, splendor}{noun; first declension; feminine}{sense follows subject, possessor, and register}{biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L091}{pax, pacis f.}{peace}{noun; third declension; feminine}{stem pac-; often subject, object, or wished good}{general, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L092}{fides, fidei f.}{faith, trust, fidelity}{noun; fifth declension; feminine}{context distinguishes belief, trust, and faithfulness}{classical, biblical, patristic, and theological prose}{active}
+\DeclareMemoryLexeme{L093}{caritas, caritatis f.}{charity, love, dearness}{noun; third declension; feminine}{Christian and ordinary value senses require context}{biblical, patristic, and theological prose}{active}
+\DeclareMemoryLexeme{L094}{spes, spei f.}{hope}{noun; fifth declension; feminine}{learn common constructions with in and genitives from context}{classical, biblical, patristic, and theological prose}{active}
+\DeclareMemoryLexeme{L095}{vita, -æ f.}{life}{noun; first declension; feminine}{physical, manner-of-life, or eternal sense follows context}{general, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L096}{mors, mortis f.}{death}{noun; third declension; feminine}{stem mort-; contrast literal and figurative senses only from context}{general, biblical, patristic, liturgical, and poetry reading}{active}
+
+% M13: offerings, prayer, and ecclesial objects.
+\DeclareMemoryLexeme{L097}{altare, altaris n.}{altar}{noun; third declension; neuter}{often occurs with ad or in; case follows relation}{liturgical and biblical reading}{active}
+\DeclareMemoryLexeme{L098}{ecclesia, -æ f.}{church, assembly}{noun; first declension; feminine}{capitalization does not determine grammatical role}{biblical, patristic, canonical, and liturgical reading}{active}
+\DeclareMemoryLexeme{L099}{sacrificium, -i n.}{sacrifice, offering}{noun; second declension; neuter}{context and complements narrow the sense}{biblical, patristic, theological, and liturgical reading}{active}
+\DeclareMemoryLexeme{L100}{hostia, -æ f.}{sacrificial victim, offering}{noun; first declension; feminine}{distinguish from hostis, enemy}{biblical, patristic, theological, and liturgical reading}{active}
+\DeclareMemoryLexeme{L101}{munus, muneris n.}{gift, duty, service, offering}{noun; third declension; neuter}{a deliberately broad lexeme; context decides}{classical, patristic, theological, and liturgical reading}{active}
+\DeclareMemoryLexeme{L102}{donum, -i n.}{gift}{noun; second declension; neuter}{compare munus without treating them as automatic synonyms}{general, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L103}{oblatio, oblationis f.}{offering, oblation}{noun; third declension; feminine}{word family with offero and oblatus}{patristic, theological, and liturgical reading}{active}
+\DeclareMemoryLexeme{L104}{prex, precis f.}{prayer, entreaty}{noun; third declension; feminine}{frequently plural preces; learn the actual number in context}{classical, patristic, and liturgical reading}{active}
+
+% M14: recurrent petition and offering verbs.
+\DeclareMemoryLexeme{L105}{oro, -are, -avi, -atum}{pray, entreat, speak formally}{verb; first conjugation}{person, object, or clause construction follows context}{classical, patristic, and liturgical prose}{active}
+\DeclareMemoryLexeme{L106}{concedo, -ere, concessi, concessum}{grant, yield, concede}{verb; third conjugation}{often takes a thing and a recipient or dependent clause}{classical, patristic, canonical, and liturgical prose}{active}
+\DeclareMemoryLexeme{L107}{tribuo, -ere, tribui, tributum}{assign, grant, bestow}{verb; third conjugation}{thing commonly accusative and recipient dative}{classical, patristic, and liturgical prose}{active}
+\DeclareMemoryLexeme{L108}{largior, -iri, largitus sum}{bestow generously}{deponent verb; fourth conjugation}{normally takes an object and may take a dative recipient}{classical and liturgical prose}{active}
+\DeclareMemoryLexeme{L109}{offero, offerre, obtuli, oblatum}{offer, present}{irregular compound of fero}{normally takes an accusative object and often dative recipient}{classical, patristic, and liturgical prose}{active}
+\DeclareMemoryLexeme{L110}{suscipio, -ere, suscepi, susceptum}{receive, take up, sustain}{verb; third-io conjugation}{normally takes an accusative object}{biblical, patristic, and liturgical prose}{active}
+\DeclareMemoryLexeme{L111}{benedico, -ere, benedixi, benedictum}{bless, speak well of}{verb; third conjugation}{complement varies across periods; follow the actual source}{biblical, patristic, and liturgical prose}{active}
+\DeclareMemoryLexeme{L112}{sanctifico, -are, -avi, -atum}{make holy, sanctify}{verb; first conjugation}{normally takes an accusative object}{biblical, patristic, theological, and liturgical prose}{active}
+
+% M15: biblical and liturgical images.
+\DeclareMemoryLexeme{L113}{lux, lucis f.}{light}{noun; third declension; feminine}{stem luc-; literal or figurative sense follows context}{biblical, patristic, liturgical, and poetry reading}{active}
+\DeclareMemoryLexeme{L114}{verbum, -i n.}{word, saying, the Word}{noun; second declension; neuter}{capitalization may signal a title but does not determine syntax}{general, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L115}{nomen, nominis n.}{name}{noun; third declension; neuter}{stem nomin-; learn governing constructions from the sentence}{general, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L116}{populus, -i m.}{people}{noun; second declension; masculine}{collective singular; verb agreement follows the grammatical number}{classical, biblical, patristic, canonical, and liturgical reading}{active}
+\DeclareMemoryLexeme{L117}{lex, legis f.}{law}{noun; third declension; feminine}{stem leg-; governing body of law must come from context}{classical, biblical, patristic, theological, and canonical prose}{active}
+\DeclareMemoryLexeme{L118}{opus, operis n.}{work, deed, task}{noun; third declension; neuter}{stem oper-; distinguish from ops and from verb forms by context}{classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L119}{regnum, -i n.}{kingdom, rule, reign}{noun; second declension; neuter}{political, spiritual, or abstract sense follows context}{classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L120}{cælum, -i n.; plural cæli, -orum m.}{sky, heaven; heavens}{heteroclite noun; second declension}{learn the frequent masculine plural alongside the neuter singular}{general, biblical, patristic, liturgical, and poetry reading}{active}
+
+% M16: time, thought, and abstract argument.
+\DeclareMemoryLexeme{L121}{tempus, temporis n.}{time, occasion, season}{noun; third declension; neuter}{stem tempor-; contextual range is broad}{general, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L122}{dies, diei m./f.}{day}{noun; fifth declension; variable gender}{gender varies with usage; learn the form in its phrase}{general, classical, biblical, and liturgical reading}{active}
+\DeclareMemoryLexeme{L123}{res, rei f.}{thing, matter, affair, reality}{noun; fifth declension; feminine}{highly context-sensitive; compounds and fixed phrases matter}{general, classical, patristic, theological, and canonical prose}{active}
+\DeclareMemoryLexeme{L124}{causa, -æ f.}{cause, reason, case}{noun; first declension; feminine}{with genitive may express for the sake of; context decides}{classical, patristic, theological, and canonical prose}{active}
+\DeclareMemoryLexeme{L125}{ratio, rationis f.}{reckoning, reason, account, method}{noun; third declension; feminine}{do not reduce its contextual range to modern reason}{classical, patristic, scholastic, and canonical prose}{active}
+\DeclareMemoryLexeme{L126}{memoria, -æ f.}{memory, remembrance}{noun; first declension; feminine}{word family with memor and commemoro}{classical, patristic, and liturgical prose}{active}
+\DeclareMemoryLexeme{L127}{veritas, veritatis f.}{truth}{noun; third declension; feminine}{abstract noun; complements and contrast establish the local claim}{classical, biblical, patristic, and theological prose}{active}
+\DeclareMemoryLexeme{L128}{sapientia, -æ f.}{wisdom}{noun; first declension; feminine}{distinguish practical, philosophical, and theological contexts}{classical, biblical, patristic, and theological prose}{active}
+
+% M17: knowing, teaching, and judgment.
+\DeclareMemoryLexeme{L129}{cognosco, -ere, cognovi, cognitum}{know, learn, recognize}{verb; third conjugation}{perfect may present acquired knowledge; object or clause follows context}{classical, biblical, patristic, and theological prose}{active}
+\DeclareMemoryLexeme{L130}{quæro, -ere, quæsivi, quæsitum}{seek, ask, inquire}{verb; third conjugation}{takes an object or indirect question; distinguish quæso}{classical, biblical, patristic, and scholastic prose}{active}
+\DeclareMemoryLexeme{L131}{respondeo, -ere, respondi, responsum}{answer, respond}{verb; second conjugation}{addressee, answer, or clause depends on context}{classical, biblical, patristic, canonical, and liturgical prose}{active}
+\DeclareMemoryLexeme{L132}{doceo, -ere, docui, doctum}{teach, show}{verb; second conjugation}{may take person and subject matter; follow the attested construction}{classical, biblical, patristic, and theological prose}{active}
+\DeclareMemoryLexeme{L133}{disco, -ere, didici}{learn}{verb; third conjugation}{perfect stem is lexical; normally takes an object or clause}{classical and patristic prose}{active}
+\DeclareMemoryLexeme{L134}{intellego, -ere, intellexi, intellectum}{understand, discern}{verb; third conjugation}{normally takes an object or clause}{classical, patristic, theological, and scholastic prose}{active}
+\DeclareMemoryLexeme{L135}{iudico, -are, -avi, -atum}{judge, decide, consider}{verb; first conjugation}{object, predicate, or clause construction follows context}{classical, biblical, patristic, canonical, and theological prose}{active}
+\DeclareMemoryLexeme{L136}{permaneo, -ere, permansi, permansum}{remain, endure}{verb; second conjugation}{often intransitive; complement or circumstance follows context}{classical, biblical, patristic, and liturgical prose}{active}
+
+% M18: evaluative language used in prayer and prose.
+\DeclareMemoryLexeme{L137}{dignus, -a, -um}{worthy, fitting}{first/second-declension adjective}{often completed by ablative, genitive, or infinitive according to usage}{classical, biblical, patristic, and liturgical prose}{active}
+\DeclareMemoryLexeme{L138}{sanctus, -a, -um}{holy, sacred; saint}{first/second-declension adjective or substantivized adjective}{agree with the head; substantival use depends on context}{biblical, patristic, theological, and liturgical prose}{active}
+\DeclareMemoryLexeme{L139}{æternus, -a, -um}{eternal, everlasting}{first/second-declension adjective}{agree with the head; philosophical or theological force follows context}{patristic, theological, and liturgical prose}{active}
+\DeclareMemoryLexeme{L140}{misericors, misericordis}{merciful, compassionate}{third-declension adjective; one termination}{genitive reveals the stem; may be attributive or predicate}{biblical, patristic, and liturgical prose}{active}
+\DeclareMemoryLexeme{L141}{fidelis, fidele}{faithful, trustworthy}{third-declension adjective; two terminations}{may be substantivized; context identifies reference}{classical, biblical, patristic, and liturgical prose}{active}
+\DeclareMemoryLexeme{L142}{iustus, -a, -um}{just, righteous}{first/second-declension adjective}{legal, ethical, or biblical sense follows context}{classical, biblical, patristic, theological, and canonical prose}{active}
+\DeclareMemoryLexeme{L143}{vere}{truly, rightly}{adverb}{modifies an assertion or predicate; distinguish from ablative of verus}{classical, patristic, and liturgical prose}{active}
+\DeclareMemoryLexeme{L144}{semper}{always}{adverb}{temporal scope follows the clause}{general, biblical, patristic, and liturgical reading}{active}
+
+% M19: clause and discourse relations.
+\DeclareMemoryLexeme{L145}{quoniam}{because, since; that}{subordinating conjunction}{may introduce cause or content; context decides}{biblical, patristic, and liturgical prose}{active}
+\DeclareMemoryLexeme{L146}{dum}{while, until, provided that}{subordinating conjunction}{tense and mood depend on the relation expressed}{classical, biblical, patristic, and liturgical prose}{active}
+\DeclareMemoryLexeme{L147}{quamvis}{although; however much}{subordinating conjunction or adverbial form}{mood and structure follow the construction and period}{classical and patristic prose}{active}
+\DeclareMemoryLexeme{L148}{si}{if}{conditional conjunction}{read protasis together with its apodosis}{general Latin}{active}
+\DeclareMemoryLexeme{L149}{nisi}{unless, if not, except}{conditional or exceptive conjunction}{scope of negation and exception follows context}{classical, biblical, patristic, and canonical prose}{active}
+\DeclareMemoryLexeme{L150}{tam}{so, to such a degree}{degree adverb}{often correlates with quam or an ensuing result}{general and classical prose}{active}
+\DeclareMemoryLexeme{L151}{ita}{thus, so, in this way}{adverb}{manner, discourse resumption, or result correlation follows context}{general, classical, biblical, and patristic prose}{active}
+\DeclareMemoryLexeme{L152}{quoque}{also, too}{postpositive particle}{normally follows the word or phrase in focus}{general, classical, biblical, and patristic prose}{active}
+
+% M20: theological, juridical, and institutional vocabulary.
+\DeclareMemoryLexeme{L153}{sacramentum, -i n.}{sacrament, sacred sign, oath}{noun; second declension; neuter}{historical and theological sense must be established from context}{classical, patristic, theological, canonical, and liturgical prose}{active}
+\DeclareMemoryLexeme{L154}{mysterium, -i n.}{mystery, sacred reality}{noun; second declension; neuter}{do not reduce the word to a modern puzzle}{biblical, patristic, theological, and liturgical prose}{active}
+\DeclareMemoryLexeme{L155}{ius, iuris n.}{right, law, justice}{noun; third declension; neuter}{identify the governing legal or moral context}{classical, theological, and canonical prose}{active}
+\DeclareMemoryLexeme{L156}{canon, canonis m.}{rule, canon}{noun; third declension; masculine}{technical sense depends on ecclesial, textual, or legal context}{patristic, liturgical, and canonical prose}{active}
+\DeclareMemoryLexeme{L157}{officium, -i n.}{duty, service, office}{noun; second declension; neuter}{ethical, liturgical, or institutional sense follows context}{classical, patristic, liturgical, and canonical prose}{active}
+\DeclareMemoryLexeme{L158}{potestas, potestatis f.}{power, authority, capacity}{noun; third declension; feminine}{identify source, object, and kind of power in context}{classical, biblical, patristic, theological, and canonical prose}{active}
+\DeclareMemoryLexeme{L159}{auctoritas, auctoritatis f.}{authority, influence, warrant}{noun; third declension; feminine}{distinguish personal, textual, institutional, and legal uses}{classical, patristic, theological, and canonical prose}{active}
+\DeclareMemoryLexeme{L160}{natura, -æ f.}{nature, character, birth}{noun; first declension; feminine}{philosophical and theological use requires contextual definition}{classical, patristic, and scholastic prose}{active}
+
+% M21: inward life, community, and discursive prose.
+\DeclareMemoryLexeme{L161}{persona, -æ f.}{person, role, character}{noun; first declension; feminine}{dramatic, grammatical, legal, and theological senses differ}{classical, patristic, theological, and canonical prose}{active}
+\DeclareMemoryLexeme{L162}{desiderium, -i n.}{desire, longing}{noun; second declension; neuter}{object may appear in a genitive or be supplied by context}{classical, patristic, and liturgical prose}{active}
+\DeclareMemoryLexeme{L163}{voluntas, voluntatis f.}{will, intention, good will}{noun; third declension; feminine}{possessor and object determine the local sense}{classical, biblical, patristic, theological, and liturgical prose}{active}
+\DeclareMemoryLexeme{L164}{confessio, confessionis f.}{confession, acknowledgment, praise}{noun; third declension; feminine}{sense follows object, setting, and relation to confiteor}{biblical, patristic, and liturgical prose}{active}
+\DeclareMemoryLexeme{L165}{civitas, civitatis f.}{city, civic body, commonwealth}{noun; third declension; feminine}{physical and corporate senses require context}{classical, biblical, patristic, and canonical prose}{active}
+\DeclareMemoryLexeme{L166}{doctrina, -æ f.}{teaching, learning, doctrine}{noun; first declension; feminine}{identify teacher, content, and authority from context}{classical, biblical, patristic, and theological prose}{active}
+\DeclareMemoryLexeme{L167}{oratio, orationis f.}{speech, discourse, prayer}{noun; third declension; feminine}{genre and context decide whether speech or prayer is meant}{classical, patristic, rhetorical, and liturgical prose}{active}
+\DeclareMemoryLexeme{L168}{sententia, -æ f.}{opinion, judgment, thought, sentence}{noun; first declension; feminine}{rhetorical, philosophical, legal, and grammatical senses differ}{classical, patristic, rhetorical, and canonical prose}{active}
+
+% M22: verbs for sustained analysis and composition.
+\DeclareMemoryLexeme{L169}{compono, -ere, composui, compositum}{put together, compose}{verb; third conjugation}{takes an object; style or reconciliation senses follow context}{classical, patristic, rhetorical, and composition work}{active}
+\DeclareMemoryLexeme{L170}{explico, -are, -avi, -atum}{unfold, explain}{verb; first conjugation}{normally takes an object; figurative sense develops from unfolding}{classical, patristic, and scholarly prose}{active}
+\DeclareMemoryLexeme{L171}{demonstro, -are, -avi, -atum}{show, demonstrate}{verb; first conjugation}{takes an object or clause; strength of proof follows context}{classical, patristic, and scholastic prose}{active}
+\DeclareMemoryLexeme{L172}{distinguo, -ere, distinxi, distinctum}{distinguish, divide, mark}{verb; third conjugation}{takes objects or contrasted members}{classical, patristic, scholastic, and canonical prose}{active}
+\DeclareMemoryLexeme{L173}{imitor, imitari, imitatus sum}{imitate}{deponent verb; first conjugation}{normally takes an accusative object}{classical, patristic, rhetorical, and composition work}{active}
+\DeclareMemoryLexeme{L174}{corrigo, -ere, correxi, correctum}{correct, straighten}{verb; third conjugation}{normally takes an accusative object}{classical, patristic, canonical, and composition work}{active}
+\DeclareMemoryLexeme{L175}{eligo, -ere, elegi, electum}{choose, select}{verb; third conjugation}{normally takes an accusative object; source or group may be expressed}{classical, biblical, patristic, and composition work}{active}
+\DeclareMemoryLexeme{L176}{defendo, -ere, defendi, defensum}{defend, ward off}{verb; third conjugation}{object and opposing danger or claim follow context}{classical, patristic, canonical, and composition work}{active}
+
+% P1--P8: poetry-branch metalanguage and productive tools.
+\DeclareMemoryLexeme{L177}{poeta, -æ m.}{poet}{noun; first declension; masculine}{lexical gender is masculine despite first-declension endings}{classical and Christian poetry study}{recognition}
+\DeclareMemoryLexeme{L178}{carmen, carminis n.}{song, poem}{noun; third declension; neuter}{genre and setting determine song, poem, or formal utterance}{classical and Christian poetry study}{active}
+\DeclareMemoryLexeme{L179}{versus, -us m.}{line of verse, verse}{noun; fourth declension; masculine}{distinguish technical line from a broad poem or biblical verse reference}{poetry study}{active}
+\DeclareMemoryLexeme{L180}{metrum, -i n.}{meter, metrical pattern}{noun; second declension; neuter}{name the pattern only after testing the line}{poetry study}{active}
+\DeclareMemoryLexeme{L181}{syllaba, -æ f.}{syllable}{noun; first declension; feminine}{analyze quantity and word boundary separately}{poetry study}{active}
+\DeclareMemoryLexeme{L182}{pes, pedis m.}{foot}{noun; third declension; masculine}{a metrical unit; do not confuse with ordinary foot without context}{poetry study}{active}
+\DeclareMemoryLexeme{L183}{brevis, breve}{short, brief}{third-declension adjective; two terminations}{in meter may describe quantity; elsewhere duration or extent}{general and poetry study}{active}
+\DeclareMemoryLexeme{L184}{quantitas, quantitatis f.}{quantity, amount}{noun; third declension; feminine}{metrical quantity is a technical contextual sense}{scholastic and poetry study}{recognition}
+\DeclareMemoryLexeme{L185}{cæsura, -æ f.}{caesura, metrical word-break}{noun; first declension; feminine}{locate from the actual metrical structure, not punctuation alone}{poetry study}{active}
+\DeclareMemoryLexeme{L186}{ictus, -us m.}{beat, stroke, ictus}{noun; fourth declension; masculine}{use as analytical metalanguage without turning it into a pronunciation rule}{poetry study}{recognition}
+\DeclareMemoryLexeme{L187}{imago, imaginis f.}{image, likeness}{noun; third declension; feminine}{literal, rhetorical, and theological senses require context}{classical, biblical, patristic, and poetry reading}{active}
+\DeclareMemoryLexeme{L188}{figura, -æ f.}{shape, figure, form}{noun; first declension; feminine}{rhetorical, grammatical, and typological senses differ}{classical, patristic, rhetorical, and poetry reading}{active}
+\DeclareMemoryLexeme{L189}{cano, canere, cecini, cantum}{sing, chant, celebrate in song}{verb; third conjugation}{may take an object; do not infer performance details from the lemma alone}{classical and Christian poetry reading}{active}
+\DeclareMemoryLexeme{L190}{modulor, modulari, modulatus sum}{measure, modulate, compose rhythmically}{deponent verb; first conjugation}{technical or musical sense follows the source context}{classical and Christian poetry study}{recognition}
+\DeclareMemoryLexeme{L191}{hymnus, -i m.}{hymn, song of praise}{noun; second declension; masculine}{genre label requires source and context, not devotional subject alone}{Christian poetry and liturgical study}{active}
+\DeclareMemoryLexeme{L192}{sequentia, -æ f.}{sequence; following order}{noun; first declension; feminine}{liturgical-poetic genre and ordinary sequence are contextual senses}{liturgical and Christian poetry study}{active}
+
+% Controlled-baseline expansion.  IDs remain stable even though these entries
+% enlarge earlier packet sets after the first registry skeleton was drafted.
+% M01 expansion: ordinary animals, landscape, color, and transparent action.
+\DeclareMemoryLexeme{L193}{felis, felis f.}{cat}{noun; third declension; feminine}{genitive reveals the unchanged stem; natural gender follows the animal meant}{ordinary narrative and description}{active}
+\DeclareMemoryLexeme{L194}{equus, -i m.}{horse}{noun; second declension; masculine}{use with verbs of seeing, leading, riding, or motion as the construction permits}{ordinary and classical narrative}{active}
+\DeclareMemoryLexeme{L195}{bos, bovis m./f.}{ox, bull, cow}{noun; irregular third declension; common gender}{gender and sense follow the animal meant; learn genitive singular \Latin{bovis} and plural \Latin{boum}}{ordinary, biblical, and classical narrative}{active}
+\DeclareMemoryLexeme{L196}{ovis, ovis f.}{sheep}{noun; third declension; feminine}{use singular or plural according to the flock context; genitive and nominative coincide in spelling}{ordinary, biblical, and liturgical reading}{active}
+\DeclareMemoryLexeme{L197}{lupus, -i m.}{wolf}{noun; second declension; masculine}{literal animal and figurative use must be distinguished from context}{ordinary, classical, biblical, and patristic narrative}{active}
+\DeclareMemoryLexeme{L198}{lepus, leporis m.}{hare}{noun; third declension; masculine}{stem \Latin{lepor-} appears outside the nominative}{ordinary and classical narrative}{active}
+\DeclareMemoryLexeme{L199}{arbor, arboris f.}{tree}{noun; third declension; feminine}{learn the lexical gender and stem; modifiers agree in the form required by syntax}{ordinary, biblical, and classical description}{active}
+\DeclareMemoryLexeme{L200}{herba, -æ f.}{grass, plant, herb}{noun; first declension; feminine}{context selects ground cover, a plant, or an herb}{ordinary, biblical, and liturgical reading}{active}
+\DeclareMemoryLexeme{L201}{saxum, -i n.}{rock, stone}{noun; second declension; neuter}{apply the neuter nominative-accusative rule; distinguish a mass of rock from a small stone by context}{ordinary, biblical, and classical description}{active}
+\DeclareMemoryLexeme{L202}{sol, solis m.}{sun}{noun; third declension; masculine}{stem \Latin{sol-}; literal and figurative senses require context}{ordinary, biblical, patristic, and poetic reading}{active}
+\DeclareMemoryLexeme{L203}{luna, -æ f.}{moon}{noun; first declension; feminine}{use with time, light, and sky descriptions without inferring a figurative sense automatically}{ordinary, biblical, and poetic reading}{active}
+\DeclareMemoryLexeme{L204}{stella, -æ f.}{star}{noun; first declension; feminine}{literal and symbolic senses must be established by the passage}{ordinary, biblical, liturgical, and poetic reading}{active}
+\DeclareMemoryLexeme{L205}{nubes, nubis f.}{cloud}{noun; third declension; feminine}{stem \Latin{nub-}; use with weather, motion, and figurative description as context warrants}{ordinary, biblical, and poetic reading}{active}
+\DeclareMemoryLexeme{L206}{albus, -a, -um}{white}{first/second-declension adjective}{agree with its noun; color, brightness, and figurative force depend on context}{ordinary and literary description}{active}
+\DeclareMemoryLexeme{L207}{niger, nigra, nigrum}{black, dark}{first/second-declension adjective with stem \Latin{nigr-}}{learn all three nominative forms; agree with the described noun}{ordinary and literary description}{active}
+\DeclareMemoryLexeme{L208}{ruber, rubra, rubrum}{red}{first/second-declension adjective with stem \Latin{rubr-}}{learn all three nominative forms; literal color and figurative force require context}{ordinary, biblical, liturgical, and poetic description}{active}
+\DeclareMemoryLexeme{L209}{ambulo, -are, -avi, -atum}{walk}{verb; first conjugation}{usually intransitive; route, place, accompaniment, or manner is supplied by an appropriate case or phrase}{ordinary and biblical narrative}{active}
+
+% M02 expansion: family, house, settlement, and natural place nouns.
+\DeclareMemoryLexeme{L210}{mater, matris f.}{mother}{noun; third declension; feminine}{stem \Latin{matr-}; relational genitive or possessive context may specify whose mother}{ordinary, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L211}{frater, fratris m.}{brother}{noun; third declension; masculine}{stem \Latin{fratr-}; literal kinship and communal address depend on context}{ordinary, biblical, patristic, and ecclesiastical prose}{active}
+\DeclareMemoryLexeme{L212}{soror, sororis f.}{sister}{noun; third declension; feminine}{stem \Latin{soror-}; literal and communal senses require context}{ordinary, biblical, patristic, and ecclesiastical prose}{active}
+\DeclareMemoryLexeme{L213}{amicus, -i m.}{friend}{noun; second declension; masculine}{a person related by friendship; distinguish from the adjective \Latin{amicus, -a, -um} by syntax}{ordinary, classical, biblical, and patristic prose}{active}
+\DeclareMemoryLexeme{L214}{familia, -æ f.}{household, family}{noun; first declension; feminine}{may denote a household or dependants as well as modern family relations; context controls}{ordinary, classical, biblical, and ecclesiastical prose}{active}
+\DeclareMemoryLexeme{L215}{ianua, -æ f.}{door, entrance}{noun; first declension; feminine}{use with verbs of opening, closing, entering, or standing near}{ordinary and biblical narrative}{active}
+\DeclareMemoryLexeme{L216}{fenestra, -æ f.}{window}{noun; first declension; feminine}{use with place, light, opening, and looking constructions}{ordinary and biblical narrative}{active}
+\DeclareMemoryLexeme{L217}{paries, parietis m.}{wall of a building}{noun; third declension; masculine}{stem \Latin{pariet-}; distinguish a structural wall from a city wall when the passage does}{ordinary, biblical, and classical description}{active}
+\DeclareMemoryLexeme{L218}{tectum, -i n.}{roof, house, shelter}{noun; second declension; neuter}{literal roof may stand for the dwelling by context; apply the neuter rule}{ordinary, classical, and biblical narrative}{active}
+\DeclareMemoryLexeme{L219}{lectus, -i m.}{bed, couch}{noun; second declension; masculine}{distinguish this noun from the participle \Latin{lectus} by agreement and syntax}{ordinary, biblical, and classical narrative}{active}
+\DeclareMemoryLexeme{L220}{sella, -æ f.}{seat, chair}{noun; first declension; feminine}{use with verbs of sitting, placing, carrying, or authority only as context licenses}{ordinary and classical narrative}{active}
+\DeclareMemoryLexeme{L221}{hortus, -i m.}{garden}{noun; second declension; masculine}{place constructions follow the governing preposition or case use}{ordinary, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L222}{vicus, -i m.}{village, district, street}{noun; second declension; masculine}{the scale of settlement or urban subdivision depends on historical context}{ordinary, classical, and historical prose}{active}
+\DeclareMemoryLexeme{L223}{flumen, fluminis n.}{river, stream}{noun; third declension; neuter}{stem \Latin{flumin-}; apply the neuter rule and learn place constructions separately}{ordinary, classical, biblical, and poetic reading}{active}
+\DeclareMemoryLexeme{L224}{mons, montis m.}{mountain, hill}{noun; third declension; masculine}{stem \Latin{mont-}; motion and location take the construction selected by context}{ordinary, classical, biblical, and liturgical reading}{active}
+\DeclareMemoryLexeme{L225}{mare, maris n.}{sea}{noun; third-declension neuter i-stem}{learn ablative singular \Latin{mari} and neuter plural forms with the full paradigm}{ordinary, classical, biblical, patristic, and poetic reading}{active}
+\DeclareMemoryLexeme{L226}{navis, navis f.}{ship, boat}{noun; third-declension i-stem; feminine}{context selects vessel size; use place and motion constructions according to syntax}{ordinary, classical, biblical, and patristic narrative}{active}
+
+% M03 expansion: work, body, food, materials, clothing, and public life.
+\DeclareMemoryLexeme{L227}{ager, agri m.}{field, land, territory}{noun; second declension; masculine; stem \Latin{agr-}}{literal field, countryside, or territory depends on context}{ordinary, classical, biblical, and historical prose}{active}
+\DeclareMemoryLexeme{L228}{labor, laboris m.}{work, toil, hardship}{noun; third declension; masculine}{context distinguishes productive work, exertion, and suffering}{ordinary, classical, biblical, patristic, and composition work}{active}
+\DeclareMemoryLexeme{L229}{manus, -us f.}{hand; band of people}{noun; fourth declension; feminine}{literal body part, agency, possession, or organized band depends on context}{ordinary, classical, biblical, liturgical, and canonical reading}{active}
+\DeclareMemoryLexeme{L230}{caput, capitis n.}{head; chapter; chief point}{noun; third declension; neuter}{stem \Latin{capit-}; physical, textual, and figurative senses require context}{ordinary, classical, biblical, patristic, and textual work}{active}
+\DeclareMemoryLexeme{L231}{oculus, -i m.}{eye}{noun; second declension; masculine}{literal sight and figurative perception must be distinguished by context}{ordinary, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L232}{auris, auris f.}{ear}{noun; third-declension i-stem; feminine}{use with verbs of hearing and giving attention as the construction permits}{ordinary, classical, biblical, and liturgical reading}{active}
+\DeclareMemoryLexeme{L233}{cibus, -i m.}{food}{noun; second declension; masculine}{mass or particular nourishment depends on number and context}{ordinary, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L234}{fructus, -us m.}{fruit, produce, result}{noun; fourth declension; masculine}{literal produce and figurative outcome require contextual control}{ordinary, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L235}{caro, carnis f.}{flesh, meat}{noun; third declension; feminine}{bodily, dietary, theological, and figurative senses must not be collapsed}{ordinary, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L236}{lac, lactis n.}{milk}{noun; third declension; neuter}{stem \Latin{lact-}; usually a mass noun, with number governed by actual usage}{ordinary, classical, biblical, and patristic reading}{active}
+\DeclareMemoryLexeme{L237}{ignis, ignis m.}{fire}{noun; third-declension i-stem; masculine}{literal, punitive, purifying, and figurative senses require context}{ordinary, classical, biblical, patristic, liturgical, and poetic reading}{active}
+\DeclareMemoryLexeme{L238}{lignum, -i n.}{wood, piece of wood}{noun; second declension; neuter}{material, object, and marked liturgical or biblical senses depend on context}{ordinary, classical, biblical, and liturgical reading}{active}
+\DeclareMemoryLexeme{L239}{ferrum, -i n.}{iron, iron weapon}{noun; second declension; neuter}{material may stand for a weapon by metonymy; prove the contextual sense}{ordinary, classical, biblical, and historical prose}{active}
+\DeclareMemoryLexeme{L240}{vestis, vestis f.}{garment, clothing}{noun; third-declension i-stem; feminine}{singular may denote a garment or clothing collectively; context decides}{ordinary, biblical, liturgical, and historical reading}{active}
+\DeclareMemoryLexeme{L241}{calceus, -i m.}{shoe}{noun; second declension; masculine}{use with putting on, removing, binding, or walking only as syntax licenses}{ordinary, classical, and biblical narrative}{active}
+\DeclareMemoryLexeme{L242}{nummus, -i m.}{coin, money}{noun; second declension; masculine}{singular object and plural monetary amount depend on context}{ordinary, classical, biblical, and historical prose}{active}
+\DeclareMemoryLexeme{L243}{forum, -i n.}{marketplace, forum}{noun; second declension; neuter}{place, civic, judicial, and institutional senses depend on context}{ordinary, classical, legal, and historical prose}{active}
+
+% M04 expansion: states, ordinary present action, and descriptive contrasts.
+\DeclareMemoryLexeme{L244}{habito, -are, -avi, -atum}{live, dwell}{verb; first conjugation}{normally intransitive; place is expressed by an appropriate locative construction}{ordinary, classical, biblical, and patristic narrative}{active}
+\DeclareMemoryLexeme{L245}{sto, stare, steti, statum}{stand}{verb; first conjugation with irregular principal parts}{normally intransitive; position, place, and figurative persistence follow context}{ordinary, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L246}{sedeo, -ere, sedi, sessum}{sit}{verb; second conjugation}{normally intransitive; place and figurative office follow context}{ordinary, classical, biblical, and liturgical reading}{active}
+\DeclareMemoryLexeme{L247}{iaceo, -ere, iacui}{lie, be situated}{verb; second conjugation; no ordinary fourth principal part}{normally intransitive; distinguish state from the transitive action of throwing}{ordinary, classical, biblical, and historical narrative}{active}
+\DeclareMemoryLexeme{L248}{maneo, -ere, mansi, mansum}{remain, stay, await}{verb; second conjugation}{may be intransitive or take an object in the sense await; context controls}{ordinary, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L249}{moveo, -ere, movi, motum}{move, stir}{verb; second conjugation}{transitive or intransitive according to context; compounds may change the relation}{ordinary, classical, biblical, patristic, and composition work}{active}
+\DeclareMemoryLexeme{L250}{incedo, -ere, incessi, incessum}{advance, walk, proceed}{verb; third conjugation}{normally intransitive; manner, path, or state may accompany it}{ordinary, classical, biblical, and literary narrative}{active}
+\DeclareMemoryLexeme{L251}{claudo, -ere, clausi, clausum}{close, shut}{verb; third conjugation}{normally takes an accusative object; compounds and figurative use require context}{ordinary, classical, biblical, and liturgical reading}{active}
+\DeclareMemoryLexeme{L252}{calidus, -a, -um}{warm, hot}{first/second-declension adjective}{agree with its noun; literal temperature and figurative force depend on context}{ordinary description}{active}
+\DeclareMemoryLexeme{L253}{frigidus, -a, -um}{cold, cool}{first/second-declension adjective}{agree with its noun; physical and figurative senses require context}{ordinary, classical, and patristic description}{active}
+\DeclareMemoryLexeme{L254}{altus, -a, -um}{high, deep}{first/second-declension adjective}{the same form may describe height or depth from the relevant point of view}{ordinary, classical, biblical, liturgical, and poetic reading}{active}
+\DeclareMemoryLexeme{L255}{humilis, humile}{low, humble}{third-declension adjective; two terminations}{physical lowliness, rank, and moral humility depend on context}{ordinary, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L256}{celer, celeris, celere}{swift, quick}{third-declension adjective; three terminations}{learn the nominative forms and agree with the controlling noun}{ordinary, classical, and literary description}{active}
+\DeclareMemoryLexeme{L257}{lentus, -a, -um}{slow; pliant; tenacious}{first/second-declension adjective}{the basic sense varies widely; choose from the described noun and context}{ordinary, classical, and poetic reading}{active}
+\DeclareMemoryLexeme{L258}{plenus, -a, -um}{full}{first/second-declension adjective}{commonly completed by a genitive or ablative according to usage; verify the construction}{ordinary, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L259}{vacuus, -a, -um}{empty, free from}{first/second-declension adjective}{literal emptiness or freedom from something depends on its complement and context}{ordinary, classical, biblical, and patristic reading}{active}
+\DeclareMemoryLexeme{L260}{curro, -ere, cucurri, cursum}{run}{verb; third conjugation}{normally intransitive; route, goal, contest, or figurative course follows context}{ordinary, classical, biblical, patristic, and poetic reading}{active}
+
+% M05 expansion: high-frequency principal parts, perfects, passives, and deponents.
+\DeclareMemoryLexeme{L261}{laboro, -are, -avi, -atum}{work, toil}{verb; first conjugation}{normally intransitive; a task or purpose may be expressed by the construction}{ordinary, classical, biblical, patristic, and composition work}{active}
+\DeclareMemoryLexeme{L262}{paro, -are, -avi, -atum}{prepare, obtain}{verb; first conjugation}{normally takes an accusative object; a purpose or recipient may be added}{ordinary, classical, biblical, and liturgical reading}{active}
+\DeclareMemoryLexeme{L263}{servo, -are, -avi, -atum}{save, preserve, keep}{verb; first conjugation}{normally takes an accusative object; context distinguishes rescue, preservation, and observance}{ordinary, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L264}{narro, -are, -avi, -atum}{tell, relate}{verb; first conjugation}{takes the matter told as an object or clause; recipient may be dative}{ordinary, classical, biblical, patristic, and composition work}{active}
+\DeclareMemoryLexeme{L265}{specto, -are, -avi, -atum}{look at, watch, consider}{verb; first conjugation}{normally takes an accusative object; figurative reference depends on context}{ordinary, classical, biblical, and rhetorical prose}{active}
+\DeclareMemoryLexeme{L266}{teneo, -ere, tenui, tentum}{hold, keep, occupy}{verb; second conjugation}{normally takes an accusative object; physical and figurative possession vary by context}{ordinary, classical, biblical, patristic, and canonical prose}{active}
+\DeclareMemoryLexeme{L267}{deleo, -ere, delevi, deletum}{destroy, erase}{verb; second conjugation}{normally takes an accusative object; textual and physical senses require context}{ordinary, classical, biblical, and textual work}{active}
+\DeclareMemoryLexeme{L268}{ago, agere, egi, actum}{drive, do, conduct}{verb; third conjugation}{highly context-dependent; object, idiom, and compounds determine the sense}{ordinary, classical, biblical, patristic, canonical, and liturgical reading}{active}
+\DeclareMemoryLexeme{L269}{gero, -ere, gessi, gestum}{carry, bear, conduct}{verb; third conjugation}{normally takes an object; clothing, office, action, and conduct are contextual senses}{ordinary, classical, biblical, patristic, and historical prose}{active}
+\DeclareMemoryLexeme{L270}{pono, -ere, posui, positum}{put, place, set down}{verb; third conjugation}{takes an object; location, predicate, or figurative object follows the construction}{ordinary, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L271}{relinquo, -ere, reliqui, relictum}{leave, abandon, leave behind}{verb; third conjugation}{normally takes an accusative object; a complement may specify place or state}{ordinary, classical, biblical, patristic, and historical prose}{active}
+\DeclareMemoryLexeme{L272}{capio, -ere, cepi, captum}{take, seize, receive}{verb; third-io conjugation}{normally takes an accusative object; compounds often modify direction or result}{ordinary, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L273}{fugio, -ere, fugi, fugitum}{flee, avoid}{verb; third-io conjugation}{may be intransitive or take an object in the sense avoid; context decides}{ordinary, classical, biblical, patristic, and moral prose}{active}
+\DeclareMemoryLexeme{L274}{morior, mori, mortuus sum}{die}{deponent verb; third-io conjugation}{passive-form morphology with active lexical sense; normally intransitive}{ordinary, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L275}{ingredior, ingredi, ingressus sum}{enter, go in}{deponent verb; third-io conjugation}{may take an accusative object or a place phrase according to usage}{ordinary, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L276}{egredior, egredi, egressus sum}{go out, depart}{deponent verb; third-io conjugation}{normally intransitive; source is expressed by an appropriate construction}{ordinary, classical, biblical, and liturgical reading}{active}
+\DeclareMemoryLexeme{L277}{proficiscor, proficisci, profectus sum}{set out, depart}{deponent verb; third-io conjugation}{normally intransitive; destination, source, and purpose follow their constructions}{ordinary, classical, biblical, and historical narrative}{active}
+
+% M06 expansion: reference words and high-frequency preposition government.
+\DeclareMemoryLexeme{L278}{ipse, ipsa, ipsum}{self, very; he or she personally}{intensive pronoun and adjective}{agrees with its referent; its discourse emphasis must be read in context}{general, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L279}{idem, eadem, idem}{same; the same person or thing}{demonstrative pronoun and adjective}{agrees with its referent; learn the compounded forms rather than guessing them}{general, classical, biblical, patristic, and canonical prose}{active}
+\DeclareMemoryLexeme{L280}{aliquis, aliquid}{someone, something; anyone, anything}{indefinite pronoun}{declines from \Latin{quis}; after certain particles the shorter indefinite may occur}{general, classical, biblical, and patristic prose}{active}
+\DeclareMemoryLexeme{L281}{quisquam, quidquam or quicquam}{anyone, anything}{indefinite pronoun}{especially common where existence is denied, questioned, or limited; syntax fixes case}{general, classical, biblical, and patristic prose}{recognition}
+\DeclareMemoryLexeme{L282}{nemo, neminis m./f.}{no one, nobody}{irregular negative pronoun}{case forms are partly supplied from \Latin{nullus}; record the actual form rather than extrapolating mechanically}{general, classical, biblical, patristic, and canonical prose}{active}
+\DeclareMemoryLexeme{L283}{nihil, indeclinable n.}{nothing}{indeclinable neuter pronoun or substantive}{commonly nominative or accusative; oblique relations use other expressions}{general, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L284}{uter, utra, utrum}{which of two?}{interrogative pronoun and adjective}{declines with pronominal genitive \Latin{-ius} and dative \Latin{-i}}{general, classical, patristic, and canonical prose}{active}
+\DeclareMemoryLexeme{L285}{alter, altera, alterum}{the other of two, a second}{pronominal adjective}{genitive singular \Latin{alterius}, dative \Latin{alteri}; agree with the noun or referent}{general, classical, biblical, patristic, and rhetorical prose}{active}
+\DeclareMemoryLexeme{L286}{alius, alia, aliud}{other, another}{pronominal adjective}{genitive singular \Latin{alius}, dative \Latin{alii}; contrast with \Latin{alter}}{general, classical, biblical, patristic, and rhetorical prose}{active}
+\DeclareMemoryLexeme{L287}{totus, -a, -um}{whole, entire}{pronominal adjective}{genitive singular \Latin{totius}, dative \Latin{toti}; agrees with its noun}{general, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L288}{nullus, -a, -um}{no, none}{pronominal adjective}{genitive singular \Latin{nullius}, dative \Latin{nulli}; agree with its noun or stand substantively}{general, classical, biblical, patristic, and canonical prose}{active}
+\DeclareMemoryLexeme{L289}{super + accusative or ablative}{over, above; upon; concerning}{preposition with accusative or ablative}{memorize the attested case and construction; case and register narrow the relation}{general, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L290}{sub + accusative or ablative}{under, up to beneath}{preposition with accusative or ablative}{accusative commonly marks motion toward; ablative commonly marks position, with idioms checked separately}{general, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L291}{apud + accusative}{at, among, in the presence of, in the writings of}{preposition governing the accusative}{person, place, community, or cited author controls the contextual rendering}{general, classical, biblical, patristic, and scholarly prose}{active}
+\DeclareMemoryLexeme{L292}{contra + accusative}{against, opposite}{preposition governing the accusative}{literal opposition, legal or rhetorical opposition, and exchange idioms require context}{general, classical, biblical, patristic, and canonical prose}{active}
+\DeclareMemoryLexeme{L293}{inter + accusative}{between, among, during}{preposition governing the accusative}{number of participants, spatial relation, or temporal interval depends on context}{general, classical, biblical, patristic, and canonical prose}{active}
+\DeclareMemoryLexeme{L294}{pro + ablative}{before, on behalf of, in place of, in proportion to}{preposition governing the ablative}{choose the contextual relation from governor and discourse rather than one English equivalent}{general, classical, biblical, patristic, canonical, and liturgical reading}{active}
+
+% M07 expansion: cardinal and ordinal number, comparison, and quantity.
+\DeclareMemoryLexeme{L295}{unus, -a, -um}{one; one alone}{cardinal numeral; pronominal adjective}{genitive singular \Latin{unius}, dative \Latin{uni}; agrees with its noun and may stand substantively}{general, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L296}{duo, duæ, duo}{two}{irregular cardinal numeral}{declines in the plural with distinct gender forms; learn the complete paradigm}{general, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L297}{tres, tria}{three}{cardinal numeral; third-declension plural adjective}{masculine and feminine \Latin{tres}, neuter \Latin{tria}; genitive \Latin{trium}}{general, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L298}{quattuor}{four}{indeclinable cardinal numeral}{number and syntactic function are shown by the counted noun and clause}{general, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L299}{quinque}{five}{indeclinable cardinal numeral}{number and syntactic function are shown by the counted noun and clause}{general, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L300}{primus, -a, -um}{first}{first/second-declension ordinal adjective}{agrees with its noun; order, rank, and first part of a whole depend on context}{general, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L301}{secundus, -a, -um}{second; following; favorable}{first/second-declension adjective and ordinal}{agree with its noun; ordinal and non-ordinal senses require context}{general, classical, biblical, patristic, and historical prose}{active}
+\DeclareMemoryLexeme{L302}{tertius, -a, -um}{third}{first/second-declension ordinal adjective}{agrees with its noun and may stand substantively}{general, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L303}{maior, maius}{greater, larger, older}{comparative adjective; third declension}{genitive \Latin{maioris}; comparison may use \Latin{quam} or an ablative according to construction}{general, classical, biblical, patristic, and rhetorical prose}{active}
+\DeclareMemoryLexeme{L304}{minor, minus}{smaller, less, younger}{comparative adjective; third declension}{genitive \Latin{minoris}; agree with the compared noun and prove the comparison construction}{general, classical, biblical, patristic, and rhetorical prose}{active}
+\DeclareMemoryLexeme{L305}{melior, melius}{better}{irregular comparative adjective}{genitive \Latin{melioris}; masculine and feminine \Latin{melior}, neuter \Latin{melius}}{general, classical, biblical, patristic, and moral prose}{active}
+\DeclareMemoryLexeme{L306}{peior, peius}{worse}{irregular comparative adjective}{genitive \Latin{peioris}; agree with the noun or read substantively as syntax requires}{general, classical, biblical, patristic, and moral prose}{active}
+\DeclareMemoryLexeme{L307}{plus, pluris n.}{more}{irregular comparative adjective, substantive, or adverb}{case, agreement, and construction distinguish substantive quantity from adverbial degree}{general, classical, biblical, patristic, and argumentative prose}{active}
+\DeclareMemoryLexeme{L308}{plurimus, -a, -um}{most, very many}{irregular superlative adjective}{agrees with its noun; singular mass and plural count uses differ}{general, classical, biblical, patristic, and rhetorical prose}{active}
+\DeclareMemoryLexeme{L309}{paucus, -a, -um}{few, little}{first/second-declension adjective, chiefly plural for count nouns}{number and head noun determine few people or things versus little amount}{general, classical, biblical, patristic, and historical prose}{active}
+\DeclareMemoryLexeme{L310}{satis}{enough, sufficiently}{indeclinable noun-like quantifier or adverb}{may take a partitive genitive; distinguish quantity from adverbial degree}{general, classical, biblical, patristic, and argumentative prose}{active}
+\DeclareMemoryLexeme{L311}{sæpe}{often}{adverb}{modifies a verb, adjective, adverb, or wider proposition according to placement}{general, classical, biblical, patristic, and liturgical reading}{active}
+
+% M08 expansion: governors and deponents needed for non-finite constructions.
+\DeclareMemoryLexeme{L312}{scio, scire, scivi, scitum}{know}{verb; fourth conjugation}{may take an object, interrogative clause, or indirect statement according to context}{general, classical, biblical, patristic, and composition work}{active}
+\DeclareMemoryLexeme{L313}{puto, -are, -avi, -atum}{think, consider, reckon}{verb; first conjugation}{may take an object or accusative-and-infinitive indirect statement}{general, classical, patristic, rhetorical, and composition work}{active}
+\DeclareMemoryLexeme{L314}{credo, -ere, credidi, creditum}{believe, trust, entrust}{verb; third conjugation}{person trusted is commonly dative; a proposition may be expressed by object or clause}{general, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L315}{spero, -are, -avi, -atum}{hope, expect}{verb; first conjugation}{may take an object, infinitive, or content clause; distinguish theological and ordinary use by context}{general, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L316}{iubeo, -ere, iussi, iussum}{order, bid}{verb; second conjugation}{commonly governs an accusative person plus infinitive; passive construction changes the personal subject}{general, classical, biblical, patristic, and canonical prose}{active}
+\DeclareMemoryLexeme{L317}{prohibeo, -ere, prohibui, prohibitum}{prevent, prohibit, keep away}{verb; second conjugation}{takes an object and may govern an infinitive or clause according to construction}{general, classical, biblical, patristic, and canonical prose}{active}
+\DeclareMemoryLexeme{L318}{cogo, -ere, coegi, coactum}{drive together, compel}{verb; third conjugation}{normally takes an accusative person plus infinitive in the sense compel}{general, classical, biblical, patristic, and historical prose}{active}
+\DeclareMemoryLexeme{L319}{cupio, -ere, cupivi, cupitum}{desire, wish}{verb; third-io conjugation}{may take an object or complementary infinitive; context fixes the desired thing}{general, classical, biblical, patristic, and moral prose}{active}
+\DeclareMemoryLexeme{L320}{incipio, -ere, incepi, inceptum}{begin}{verb; third-io conjugation}{may be intransitive or govern an object or complementary infinitive}{general, classical, biblical, patristic, and narrative prose}{active}
+\DeclareMemoryLexeme{L321}{desino, -ere, desii or desivi, desitum}{cease, stop}{verb; third conjugation}{commonly governs a complementary infinitive or is used intransitively}{general, classical, biblical, patristic, and narrative prose}{active}
+\DeclareMemoryLexeme{L322}{conor, conari, conatus sum}{try, attempt}{deponent verb; first conjugation}{normally governs a complementary infinitive; passive-form morphology has active sense}{general, classical, patristic, and composition work}{active}
+\DeclareMemoryLexeme{L323}{patior, pati, passus sum}{suffer, endure, allow}{deponent verb; third-io conjugation}{takes an object; an infinitive may express what one allows to happen}{general, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L324}{nascor, nasci, natus sum}{be born, arise}{deponent verb; third conjugation}{normally intransitive; source, parentage, time, or place follows its construction}{general, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L325}{orior, oriri, ortus sum}{rise, arise, originate}{deponent verb; fourth conjugation with variant forms}{normally intransitive; source or beginning is expressed by context and construction}{general, classical, biblical, patristic, and poetic reading}{active}
+\DeclareMemoryLexeme{L326}{utor, uti, usus sum}{use, employ, enjoy the use of}{deponent verb; third conjugation}{governs the ablative of the thing used}{general, classical, patristic, canonical, and composition work}{active}
+\DeclareMemoryLexeme{L327}{fruor, frui, fructus sum}{enjoy}{deponent verb; third conjugation}{normally governs the ablative of the thing enjoyed}{general, classical, biblical, patristic, and theological prose}{active}
+\DeclareMemoryLexeme{L328}{vescor, vesci}{feed on, eat}{deponent verb; third conjugation; no ordinary perfect system}{commonly governs the ablative of the food}{general, classical, biblical, patristic, and liturgical reading}{recognition}
+
+% M09 expansion: purpose, result, command, fear, and impersonal governors.
+\DeclareMemoryLexeme{L329}{impero, -are, -avi, -atum}{command, order}{verb; first conjugation}{person commanded is commonly dative; content may use \Latin{ut} or \Latin{ne} with subjunctive}{general, classical, biblical, patristic, and canonical prose}{active}
+\DeclareMemoryLexeme{L330}{moneo, -ere, monui, monitum}{warn, advise, remind}{verb; second conjugation}{takes an object and may govern content by infinitive, clause, or other complement}{general, classical, biblical, patristic, and moral prose}{active}
+\DeclareMemoryLexeme{L331}{persuadeo, -ere, persuasi, persuasum}{persuade}{verb; second conjugation}{person persuaded is dative; content is supplied by an appropriate clause or complement}{general, classical, patristic, rhetorical, and canonical prose}{active}
+\DeclareMemoryLexeme{L332}{hortor, hortari, hortatus sum}{urge, exhort}{deponent verb; first conjugation}{takes an accusative person and commonly an \Latin{ut} or \Latin{ne} content clause}{general, classical, biblical, patristic, and homiletic prose}{active}
+\DeclareMemoryLexeme{L333}{precor, precari, precatus sum}{pray, entreat}{deponent verb; first conjugation}{may take an object, person addressed, or content clause as the construction requires}{general, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L334}{timeo, -ere, timui}{fear, be afraid}{verb; second conjugation; no ordinary fourth principal part}{takes an object or fear clause; interpret \Latin{ne} and \Latin{ut} from the construction}{general, classical, biblical, patristic, and moral prose}{active}
+\DeclareMemoryLexeme{L335}{vereor, vereri, veritus sum}{fear, revere, hesitate}{deponent verb; second conjugation}{takes an object or fear clause; respectful and fearful senses depend on context}{general, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L336}{efficio, -ere, effeci, effectum}{bring about, accomplish, make}{verb; third-io conjugation}{takes an object and may govern a result clause or predicate complement}{general, classical, patristic, rhetorical, and composition work}{active}
+\DeclareMemoryLexeme{L337}{curo, -are, -avi, -atum}{care for, arrange, see to}{verb; first conjugation}{takes an object; may govern a purpose or substantive clause in the sense arrange}{general, classical, biblical, patristic, and administrative prose}{active}
+\DeclareMemoryLexeme{L338}{sino, -ere, sivi, situm}{allow, permit, let}{verb; third conjugation}{normally takes an accusative person or thing plus infinitive}{general, classical, biblical, patristic, and canonical prose}{active}
+\DeclareMemoryLexeme{L339}{veto, -are, vetui, vetitum}{forbid}{verb; first conjugation}{commonly governs an accusative person plus infinitive; passive usage must be parsed carefully}{general, classical, patristic, and canonical prose}{active}
+\DeclareMemoryLexeme{L340}{caveo, -ere, cavi, cautum}{beware, take care, provide}{verb; second conjugation}{may be intransitive, take an object, govern \Latin{ne}, or take dative according to sense}{general, classical, patristic, and canonical prose}{active}
+\DeclareMemoryLexeme{L341}{evenio, -ire, eveni, eventum}{come out, happen, result}{verb; fourth conjugation}{often intransitive; a dative may mark the person affected}{general, classical, biblical, patristic, and historical prose}{active}
+\DeclareMemoryLexeme{L342}{accido, -ere, accidi}{fall upon, happen}{verb; third conjugation; no ordinary supine in the sense happen}{often impersonal with a substantive clause; dative may mark the person affected}{general, classical, patristic, and historical prose}{active}
+\DeclareMemoryLexeme{L343}{oportet, oportere, oportuit}{it is fitting, one ought}{impersonal verb; second conjugation}{commonly governs an accusative person plus infinitive or a substantive clause}{general, classical, biblical, patristic, and moral prose}{active}
+\DeclareMemoryLexeme{L344}{necesse}{necessary, unavoidably}{indeclinable adjective or adverb, especially with \Latin{sum}}{\Latin{necesse est} may govern a dative of the person concerned and an infinitive or clause}{general, classical, biblical, patristic, and theological prose}{active}
+\DeclareMemoryLexeme{L345}{tantus, -a, -um}{so great, so much}{first/second-declension demonstrative adjective}{agrees with its noun; may anticipate a result clause and correlates with \Latin{quantus}}{general, classical, biblical, patristic, and rhetorical prose}{active}
+
+% M10 expansion: temporal, concessive, conditional, and circumstantial links.
+\DeclareMemoryLexeme{L346}{cum}{when, since, although; with}{subordinating conjunction or preposition with ablative}{distinguish conjunction from preposition; mood, tense, and context classify the clause}{general, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L347}{ubi}{where; when}{relative or interrogative adverb and subordinating conjunction}{place, time, question, or relative connection depends on clause structure}{general, classical, biblical, patristic, and narrative prose}{active}
+\DeclareMemoryLexeme{L348}{postquam}{after, after the time when}{subordinating conjunction}{introduces a temporal clause; tense and discourse relation require contextual analysis}{general, classical, biblical, patristic, and historical narrative}{active}
+\DeclareMemoryLexeme{L349}{antequam}{before}{subordinating conjunction}{mood and tense depend on factuality, anticipation, and context, not the conjunction alone}{general, classical, biblical, patristic, and historical narrative}{active}
+\DeclareMemoryLexeme{L350}{priusquam}{before, sooner than}{subordinating conjunction}{often split as \Latin{prius ... quam}; mood and tense follow construction and viewpoint}{general, classical, biblical, patristic, and historical narrative}{active}
+\DeclareMemoryLexeme{L351}{donec}{until, while, as long as}{subordinating conjunction}{temporal limit, duration, anticipation, mood, and tense must be read from context}{general, classical, biblical, patristic, and narrative prose}{active}
+\DeclareMemoryLexeme{L352}{simul}{at the same time; as soon as}{adverb or conjunction}{may modify a clause or join a temporal relation, sometimes with \Latin{ac/atque}}{general, classical, biblical, patristic, and narrative prose}{active}
+\DeclareMemoryLexeme{L353}{forte}{by chance, perhaps}{adverb}{modifies event manner or speaker commitment according to context}{general, classical, biblical, patristic, and narrative prose}{active}
+\DeclareMemoryLexeme{L354}{forsitan}{perhaps}{modal adverb}{commonly qualifies the whole proposition; mood tendencies do not replace parsing}{general, classical, patristic, and rhetorical prose}{active}
+\DeclareMemoryLexeme{L355}{tamen}{nevertheless, still}{adversative adverb}{commonly resumes or marks a concession; identify the contrasted propositions}{general, classical, biblical, patristic, and argumentative prose}{active}
+\DeclareMemoryLexeme{L356}{quamquam}{although}{subordinating conjunction}{introduces concession; mood and register must be checked in the actual passage}{general, classical, biblical, patristic, and argumentative prose}{active}
+\DeclareMemoryLexeme{L357}{etsi}{even if, although}{subordinating conjunction}{conditional and concessive force overlap; classify from both clauses and speaker stance}{general, classical, biblical, patristic, and argumentative prose}{active}
+\DeclareMemoryLexeme{L358}{dummodo}{provided that, so long as}{subordinating conjunction}{introduces a limiting proviso and commonly takes subjunctive; negation is often \Latin{ne}}{general, classical, patristic, canonical, and argumentative prose}{active}
+\DeclareMemoryLexeme{L359}{modo}{only; just now; in a manner}{adverb and limiting particle}{temporal, modal, and limiting senses depend on placement and construction}{general, classical, biblical, patristic, and argumentative prose}{active}
+\DeclareMemoryLexeme{L360}{condicio, condicionis f.}{condition, agreement, status}{noun; third declension; feminine}{logical condition, negotiated terms, and social status are distinct contextual senses}{general, classical, patristic, canonical, and argumentative prose}{active}
+\DeclareMemoryLexeme{L361}{eventus, -us m.}{outcome, event}{noun; fourth declension; masculine}{result, occurrence, and success or failure depend on context}{general, classical, patristic, historical, and argumentative prose}{active}
+\DeclareMemoryLexeme{L362}{occasio, occasionis f.}{occasion, opportunity}{noun; third declension; feminine}{time, circumstance, and favorable opportunity must be distinguished contextually}{general, classical, patristic, historical, and pastoral prose}{active}
+
+% M11 expansion: volition, command, wish, necessity, and deliberation.
+\DeclareMemoryLexeme{L363}{volo, velle, volui}{will, wish, want}{irregular verb}{may take an object, complementary infinitive, or content clause; no ordinary passive}{general, classical, biblical, patristic, and composition work}{active}
+\DeclareMemoryLexeme{L364}{nolo, nolle, nolui}{be unwilling, not want}{irregular compound of \Latin{volo}}{may govern an infinitive; imperative forms commonly express prohibition}{general, classical, biblical, patristic, and moral prose}{active}
+\DeclareMemoryLexeme{L365}{malo, malle, malui}{prefer}{irregular compound of \Latin{magis} and \Latin{volo}}{may govern an infinitive or compared alternatives; no ordinary passive}{general, classical, patristic, and argumentative prose}{active}
+\DeclareMemoryLexeme{L366}{fero, ferre, tuli, latum}{bear, carry, bring, endure}{highly irregular verb}{normally takes an object; compounds and idioms determine many contextual senses}{general, classical, biblical, patristic, liturgical, and composition work}{active}
+\DeclareMemoryLexeme{L367}{eo, ire, ii or ivi, itum}{go}{irregular verb}{normally intransitive; destination, path, purpose, and compounds follow their constructions}{general, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L368}{fio, fieri, factus sum}{become, happen, be made}{irregular verb; present system supplies the passive of \Latin{facio}}{predicate complement agrees as required; distinguish becoming, occurrence, and passive making}{general, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L369}{licet, licere, licuit}{it is permitted, one may}{impersonal verb; second conjugation}{commonly takes dative of the person permitted plus infinitive, or a substantive clause}{general, classical, patristic, canonical, and moral prose}{active}
+\DeclareMemoryLexeme{L370}{memini, meminisse}{remember}{defective verb; perfect-system forms have present meaning}{takes genitive or accusative according to construction and sense; no ordinary present system}{general, classical, biblical, patristic, and rhetorical prose}{active}
+\DeclareMemoryLexeme{L371}{obliviscor, oblivisci, oblitus sum}{forget}{deponent verb; third conjugation}{commonly takes genitive or accusative according to the object and construction}{general, classical, biblical, patristic, and moral prose}{active}
+\DeclareMemoryLexeme{L372}{taceo, -ere, tacui, tacitum}{be silent, leave unmentioned}{verb; second conjugation}{may be intransitive or take an object in the sense conceal or omit}{general, classical, biblical, patristic, and rhetorical prose}{active}
+\DeclareMemoryLexeme{L373}{attendo, -ere, attendi, attentum}{stretch toward, attend, heed}{verb; third conjugation}{may take an object, dative, or prepositional complement according to sense and register}{general, biblical, patristic, liturgical, and instructional prose}{active}
+\DeclareMemoryLexeme{L374}{iussum, -i n.}{order, command}{noun; second declension; neuter}{often used with possessive or dependent genitive; distinguish from a participial form by syntax}{general, classical, patristic, canonical, and historical prose}{active}
+\DeclareMemoryLexeme{L375}{mandatum, -i n.}{command, charge, mandate}{noun; second declension; neuter}{biblical command, entrusted charge, and juridical mandate require contextual distinction}{general, biblical, patristic, canonical, and liturgical reading}{active}
+\DeclareMemoryLexeme{L376}{consilium, -i n.}{plan, counsel, deliberation}{noun; second declension; neuter}{context distinguishes a plan, advice, decision, or deliberative body}{general, classical, biblical, patristic, and canonical prose}{active}
+\DeclareMemoryLexeme{L377}{metus, -us m.}{fear, dread}{noun; fourth declension; masculine}{the feared thing may be expressed by genitive or other construction; context controls}{general, classical, biblical, patristic, and moral prose}{active}
+\DeclareMemoryLexeme{L378}{necessitas, necessitatis f.}{necessity, constraint}{noun; third declension; feminine}{logical, practical, and compelled necessity require contextual distinction}{general, classical, patristic, theological, and canonical prose}{active}
+\DeclareMemoryLexeme{L379}{opto, -are, -avi, -atum}{choose, wish for}{verb; first conjugation}{normally takes an object and may govern an infinitive or wish construction}{general, classical, patristic, rhetorical, and composition work}{active}
+
+% M12 expansion: place, direction, and time without a preposition.
+\DeclareMemoryLexeme{L380}{ibi}{there}{adverb of place}{may locate an event or resume a previously named place or stage in an argument}{general, classical, biblical, patristic, and narrative prose}{active}
+\DeclareMemoryLexeme{L381}{ubique}{everywhere}{indefinite adverb of place}{modifies the event or proposition; do not parse as an inflected relative form}{general, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L382}{nusquam}{nowhere}{negative adverb of place}{carries negative force; observe the language's treatment of accompanying negatives}{general, classical, biblical, patristic, and moral prose}{active}
+\DeclareMemoryLexeme{L383}{foris}{outdoors, outside}{adverb of place}{marks position outside; distinguish from motion outward and from the noun \Latin{foris}}{general, classical, biblical, and narrative prose}{active}
+\DeclareMemoryLexeme{L384}{intro}{within, inward}{adverb of place or direction}{context distinguishes position inside from motion inward}{general, classical, biblical, and narrative prose}{active}
+\DeclareMemoryLexeme{L385}{sursum}{upward, above}{adverb of direction or place}{modifies motion or orientation; liturgical use must still be parsed in its clause}{general, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L386}{deorsum}{downward, below}{adverb of direction or place}{modifies motion or orientation; contrast with \Latin{sursum}}{general, biblical, patristic, and narrative prose}{active}
+\DeclareMemoryLexeme{L387}{antea}{before, previously}{temporal adverb}{locates an event before a contextual reference point}{general, classical, biblical, patristic, and historical prose}{active}
+\DeclareMemoryLexeme{L388}{postea}{afterward}{temporal adverb}{locates an event after a contextual reference point and may advance a narrative}{general, classical, biblical, patristic, and historical prose}{active}
+\DeclareMemoryLexeme{L389}{heri}{yesterday}{temporal adverb}{anchors time relative to the speaking or narrated viewpoint}{ordinary, classical, biblical, and narrative prose}{active}
+\DeclareMemoryLexeme{L390}{cras}{tomorrow}{temporal adverb}{anchors time relative to the speaking or narrated viewpoint}{ordinary, classical, biblical, and narrative prose}{active}
+\DeclareMemoryLexeme{L391}{mane}{morning, in the morning}{indeclinable neuter noun used adverbially}{often functions as a time expression without a preposition; parse from the clause}{ordinary, classical, biblical, and liturgical reading}{active}
+\DeclareMemoryLexeme{L392}{vesperi}{in the evening}{temporal adverb}{marks time when; distinguish from inflected forms of \Latin{vesper}}{ordinary, classical, biblical, and liturgical reading}{active}
+\DeclareMemoryLexeme{L393}{noctu}{by night, at night}{temporal adverb; old ablative form}{marks time or circumstance without a preposition}{ordinary, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L394}{diu}{for a long time}{temporal adverb}{marks duration; compare with adjective and case expressions of duration}{general, classical, biblical, patristic, and narrative prose}{active}
+\DeclareMemoryLexeme{L395}{paulisper}{for a little while}{temporal adverb}{marks brief duration and modifies a verb or whole event}{general, classical, biblical, patristic, and narrative prose}{active}
+\DeclareMemoryLexeme{L396}{procul}{far away, at a distance}{adverb of place}{may be absolute or take a complement according to usage; distinguish position from motion}{general, classical, biblical, patristic, and poetic reading}{active}
+
+% M13 expansion: the Ordinary, ministers, books, chants, and vessels.
+\DeclareMemoryLexeme{L397}{missa, -æ f.}{Mass; dismissal}{noun; first declension; feminine}{liturgical celebration and the older ordinary sense of dismissal require contextual distinction}{liturgical, historical, and ecclesiastical reading}{active}
+\DeclareMemoryLexeme{L398}{sacerdos, sacerdotis m./f.}{priest}{noun; third declension; common gender}{gender follows the person; context distinguishes cultic office and broader priestly language}{biblical, patristic, liturgical, and historical reading}{active}
+\DeclareMemoryLexeme{L399}{minister, ministri m.}{minister, attendant, servant}{noun; second declension; masculine; stem \Latin{ministr-}}{liturgical role, public office, and ordinary service depend on context}{general, biblical, patristic, liturgical, and canonical reading}{active}
+\DeclareMemoryLexeme{L400}{plebs, plebis f.}{people, common people, congregation}{noun; third declension; feminine}{civic rank, collective people, and worshipping congregation are contextual senses}{classical, biblical, patristic, liturgical, and historical reading}{active}
+\DeclareMemoryLexeme{L401}{sanctuarium, -i n.}{sanctuary, holy place}{noun; second declension; neuter}{building area, sacred place, and figurative refuge must be distinguished by context}{biblical, patristic, liturgical, and historical reading}{active}
+\DeclareMemoryLexeme{L402}{evangelium, -i n.}{gospel, good news}{noun; second declension; neuter}{message, written Gospel, and liturgical Gospel reading require contextual distinction}{biblical, patristic, liturgical, and theological reading}{active}
+\DeclareMemoryLexeme{L403}{epistola, -æ f.}{letter, epistle}{noun; first declension; feminine}{ordinary correspondence, biblical book, and liturgical reading depend on context}{general, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L404}{lectio, lectionis f.}{reading, lesson, selection read}{noun; third declension; feminine}{act of reading, selected text, and liturgical lesson are distinct contextual senses}{general, biblical, patristic, liturgical, and textual work}{active}
+\DeclareMemoryLexeme{L405}{psalmus, -i m.}{psalm}{noun; second declension; masculine}{identify book, liturgical unit, quotation, or generic song from the source context}{biblical, patristic, liturgical, and poetic reading}{active}
+\DeclareMemoryLexeme{L406}{canticum, -i n.}{song, canticle}{noun; second declension; neuter}{biblical canticle, liturgical chant, and ordinary song require contextual distinction}{biblical, patristic, liturgical, and poetic reading}{active}
+\DeclareMemoryLexeme{L407}{introitus, -us m.}{entrance, beginning; Introit}{noun; fourth declension; masculine}{ordinary entry, textual beginning, and liturgical chant are contextual senses}{general, patristic, liturgical, and historical reading}{active}
+\DeclareMemoryLexeme{L408}{graduale, gradualis n.}{Gradual; gradual book}{noun; third declension; neuter}{liturgical chant and book title depend on context; do not infer performance details from the label}{liturgical, musical, and historical reading}{active}
+\DeclareMemoryLexeme{L409}{offertorium, -i n.}{Offertory; place or act of offering}{noun; second declension; neuter}{chant, liturgical segment, and broader offering-related sense require context}{liturgical, historical, and ecclesiastical reading}{active}
+\DeclareMemoryLexeme{L410}{communio, communionis f.}{communion, sharing; Communion chant}{noun; third declension; feminine}{sacramental, ecclesial, social, and chant senses must be kept distinct}{biblical, patristic, theological, liturgical, and canonical reading}{active}
+\DeclareMemoryLexeme{L411}{calix, calicis m.}{cup, chalice}{noun; third declension; masculine}{ordinary vessel, scriptural image, and liturgical chalice depend on context}{general, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L412}{patena, -æ f.}{paten, shallow dish}{noun; first declension; feminine}{ordinary vessel and specialized liturgical object require contextual identification}{liturgical, historical, and ecclesiastical reading}{active}
+\DeclareMemoryLexeme{L413}{ritus, -us m.}{rite, usage, manner}{noun; fourth declension; masculine}{ordinary manner, customary observance, and defined liturgical rite require context}{classical, patristic, liturgical, canonical, and historical reading}{active}
+
+% M14 expansion: petition, divine favor, cleansing, direction, and protection.
+\DeclareMemoryLexeme{L414}{præsto, -are, præstiti, præstitum}{provide, grant; excel}{verb; first conjugation}{takes an object in the sense provide; other senses and complements require context}{general, classical, patristic, liturgical, and canonical prose}{active}
+\DeclareMemoryLexeme{L415}{exaudio, -ire, exaudivi, exauditum}{hear favorably, answer}{verb; fourth conjugation}{normally takes an accusative person, prayer, or petition; not every act of hearing implies granting}{biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L416}{adiuvo, -are, adiuvi, adiutum}{help, assist}{verb; first conjugation}{normally takes an accusative person or cause assisted}{general, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L417}{libero, -are, -avi, -atum}{free, release, deliver}{verb; first conjugation}{takes an accusative object; what one is freed from may use \Latin{a/ab}, \Latin{ex}, or ablative according to usage}{general, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L418}{propitior, propitiari, propitiatus sum}{be favorable, show mercy}{deponent verb; first conjugation}{commonly governs the dative of the person or thing favored}{classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L419}{mereor, mereri, meritus sum}{earn, deserve, be accounted worthy}{deponent verb; second conjugation}{may take an object or infinitive; theological contexts require careful interpretation rather than an isolated gloss}{classical, patristic, theological, and liturgical reading}{active}
+\DeclareMemoryLexeme{L420}{dignor, dignari, dignatus sum}{deem worthy, condescend, deign}{deponent verb; first conjugation}{may take an object with predicate or an infinitive in later usage; verify the actual construction}{classical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L421}{supplico, -are, -avi, -atum}{kneel, supplicate, beseech}{verb; first conjugation}{commonly governs the dative of the person addressed}{classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L422}{invoco, -are, -avi, -atum}{call upon, invoke}{verb; first conjugation}{normally takes an accusative person or name called upon}{biblical, patristic, liturgical, and theological reading}{active}
+\DeclareMemoryLexeme{L423}{adoro, -are, -avi, -atum}{adore, worship, entreat}{verb; first conjugation}{normally takes an accusative object; bodily gesture, worship, and petition depend on context}{classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L424}{agnosco, -ere, agnovi, agnitum}{recognize, acknowledge}{verb; third conjugation}{normally takes an accusative object or a content clause}{general, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L425}{placeo, -ere, placui, placitum}{please, be pleasing}{verb; second conjugation}{the person pleased is commonly dative; impersonal forms may express a decision}{general, classical, biblical, patristic, canonical, and liturgical reading}{active}
+\DeclareMemoryLexeme{L426}{dirigo, -ere, direxi, directum}{direct, guide, make straight}{verb; third conjugation}{normally takes an accusative object; destination or standard may be added by construction}{general, biblical, patristic, liturgical, and moral prose}{active}
+\DeclareMemoryLexeme{L427}{purgo, -are, -avi, -atum}{cleanse, purify, clear}{verb; first conjugation}{takes an accusative object; what is removed may be expressed by ablative or a phrase}{general, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L428}{mundo, -are, -avi, -atum}{cleanse, make clean}{verb; first conjugation}{normally takes an accusative object; distinguish from the noun \Latin{mundus}}{biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L429}{renovo, -are, -avi, -atum}{renew, restore}{verb; first conjugation}{normally takes an accusative object; physical, moral, and sacramental senses depend on context}{biblical, patristic, theological, and liturgical reading}{active}
+\DeclareMemoryLexeme{L430}{protego, -ere, protexi, protectum}{cover, protect}{verb; third conjugation}{normally takes an accusative object; the danger opposed follows context}{general, classical, biblical, patristic, and liturgical reading}{active}
+
+% M15 expansion: persons and groups common in lessons, epistles, and Gospels.
+\DeclareMemoryLexeme{L431}{discipulus, -i m.}{disciple, pupil}{noun; second declension; masculine}{ordinary pupil and religious disciple depend on context; feminine is separately formed}{biblical, patristic, ecclesiastical, and historical reading}{active}
+\DeclareMemoryLexeme{L432}{apostolus, -i m.}{apostle, envoy}{noun; second declension; masculine}{specific apostolic office and broader messenger sense require context}{biblical, patristic, liturgical, and theological reading}{active}
+\DeclareMemoryLexeme{L433}{propheta, -æ m.}{prophet}{noun; first declension; masculine}{lexical gender is masculine despite first-declension endings}{biblical, patristic, liturgical, and theological reading}{active}
+\DeclareMemoryLexeme{L434}{angelus, -i m.}{angel, messenger}{noun; second declension; masculine}{heavenly being and ordinary messenger depend on source and context}{biblical, patristic, liturgical, and theological reading}{active}
+\DeclareMemoryLexeme{L435}{turba, -æ f.}{crowd, multitude, disturbance}{noun; first declension; feminine}{collective people and disorder are contextual senses; a singular collective may take sense-driven continuations}{classical, biblical, patristic, and narrative prose}{active}
+\DeclareMemoryLexeme{L436}{gens, gentis f.}{people, nation, clan}{noun; third declension; feminine}{ethnic, political, familial, and biblical Gentile senses require context}{classical, biblical, patristic, liturgical, and historical reading}{active}
+\DeclareMemoryLexeme{L437}{Iudæus, -a, -um}{Jewish; a Jew}{first/second-declension adjective used substantively}{agree adjectivally or parse as a substantive; historical and theological claims require source context}{biblical, patristic, liturgical, and historical reading}{active}
+\DeclareMemoryLexeme{L438}{rex, regis m.}{king}{noun; third declension; masculine}{stem \Latin{reg-}; literal ruler, divine title, and figurative use depend on context}{classical, biblical, patristic, liturgical, and historical reading}{active}
+\DeclareMemoryLexeme{L439}{servus, -i m.}{enslaved person, servant}{noun; second declension; masculine}{legal status, household service, humility formula, and theological relation require context}{classical, biblical, patristic, liturgical, and historical reading}{active}
+\DeclareMemoryLexeme{L440}{magister, magistri m.}{master, teacher}{noun; second declension; masculine; stem \Latin{magistr-}}{school, craft, office, authority, and forms of address depend on context}{general, classical, biblical, patristic, and historical reading}{active}
+\DeclareMemoryLexeme{L441}{mulier, mulieris f.}{woman}{noun; third declension; feminine}{stem \Latin{mulier-}; distinguish from words marking wife, virgin, widow, or social role}{general, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L442}{infans, infantis m./f.}{infant, young child}{noun; third declension; common gender; originally a participial adjective}{gender follows the child; the lexical noun is distinguished by syntax}{general, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L443}{peccator, peccatoris m.}{sinner}{agent noun; third declension; masculine}{feminine is \Latin{peccatrix}; moral and theological use depends on the proposition}{biblical, patristic, liturgical, and theological reading}{active}
+\DeclareMemoryLexeme{L444}{inimicus, -a, -um}{hostile; enemy}{first/second-declension adjective used substantively}{agree as an adjective or identify a substantive person; distinguish private, military, and spiritual opposition}{classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L445}{vidua, -æ f.}{widow}{noun; first declension; feminine}{social condition and any typological or moral force must be established by context}{classical, biblical, patristic, and ecclesiastical reading}{active}
+\DeclareMemoryLexeme{L446}{pauper, pauperis}{poor, needy; a poor person}{third-declension adjective; one termination; used substantively}{agree with a noun or parse substantively; material and spiritual senses require context}{classical, biblical, patristic, liturgical, and social reading}{active}
+\DeclareMemoryLexeme{L447}{cæcus, -a, -um}{blind; a blind person}{first/second-declension adjective used substantively}{literal inability to see and figurative lack of perception require contextual evidence}{classical, biblical, patristic, and liturgical reading}{active}
+
+% M16 expansion: praise and the principal mysteries named in chants, Prefaces,
+% and the Canon.
+\DeclareMemoryLexeme{L448}{maiestas, maiestatis f.}{majesty, greatness}{noun; third declension; feminine}{human dignity, sovereign majesty, and divine title or attribute require context}{classical, biblical, patristic, liturgical, and theological reading}{active}
+\DeclareMemoryLexeme{L449}{laus, laudis f.}{praise, commendation}{noun; third declension; feminine}{act, words, or object of praise depend on context}{classical, biblical, patristic, liturgical, and rhetorical prose}{active}
+\DeclareMemoryLexeme{L450}{honor, honoris m.}{honor, office, public distinction}{noun; third declension; masculine}{esteem, office, cultic honor, and rhetorical credit require context}{classical, biblical, patristic, liturgical, and historical reading}{active}
+\DeclareMemoryLexeme{L451}{virtus, virtutis f.}{excellence, courage, virtue, power}{noun; third declension; feminine}{ethical quality, valor, efficacy, and divine power are distinct contextual senses}{classical, biblical, patristic, theological, liturgical, and philosophical prose}{active}
+\DeclareMemoryLexeme{L452}{adoratio, adorationis f.}{adoration, worship}{noun; third declension; feminine}{gesture, act of worship, and theological category require contextual distinction}{biblical, patristic, liturgical, and theological reading}{active}
+\DeclareMemoryLexeme{L453}{creatura, -æ f.}{creature, created thing}{noun; first declension; feminine}{individual creature, created order, and rhetorical contrast with Creator depend on context}{biblical, patristic, liturgical, and theological prose}{active}
+\DeclareMemoryLexeme{L454}{providentia, -æ f.}{foresight, providence}{noun; first declension; feminine}{human planning and divine providence require contextual distinction}{classical, patristic, liturgical, theological, and philosophical prose}{active}
+\DeclareMemoryLexeme{L455}{incarnatio, incarnationis f.}{incarnation, taking flesh}{noun; third declension; feminine}{technical Christological and more general embodiment senses must be source-controlled}{patristic, liturgical, historical, and theological reading}{active}
+\DeclareMemoryLexeme{L456}{nativitas, nativitatis f.}{birth, nativity}{noun; third declension; feminine}{ordinary birth, feast title, and theological mystery depend on context}{biblical, patristic, liturgical, historical, and theological reading}{active}
+\DeclareMemoryLexeme{L457}{passio, passionis f.}{suffering, passion}{noun; third declension; feminine}{experience, suffering, Christ's Passion, and technical affect require context}{classical, biblical, patristic, liturgical, and theological reading}{active}
+\DeclareMemoryLexeme{L458}{resurrectio, resurrectionis f.}{rising again, resurrection}{noun; third declension; feminine}{narrative event, general resurrection, and liturgical mystery require context}{biblical, patristic, liturgical, and theological reading}{active}
+\DeclareMemoryLexeme{L459}{ascensio, ascensionis f.}{ascent, Ascension}{noun; third declension; feminine}{ordinary ascent and liturgical or theological title depend on context}{biblical, patristic, liturgical, and theological reading}{active}
+\DeclareMemoryLexeme{L460}{redemptio, redemptionis f.}{buying back, redemption}{noun; third declension; feminine}{commercial, legal, biblical, and theological senses require contextual distinction}{classical, biblical, patristic, liturgical, canonical, and theological reading}{active}
+\DeclareMemoryLexeme{L461}{salus, salutis f.}{health, safety, salvation}{noun; third declension; feminine}{physical welfare, public safety, greeting, and theological salvation depend on context}{classical, biblical, patristic, liturgical, and theological reading}{active}
+\DeclareMemoryLexeme{L462}{culpa, -æ f.}{fault, blame}{noun; first declension; feminine}{legal responsibility, moral fault, and liturgical confession require context}{classical, biblical, patristic, liturgical, canonical, and moral prose}{active}
+\DeclareMemoryLexeme{L463}{peccatum, -i n.}{sin, fault}{noun; second declension; neuter}{act, state, collective sin, and technical theological use depend on number and context}{biblical, patristic, liturgical, canonical, and theological reading}{active}
+\DeclareMemoryLexeme{L464}{remissio, remissionis f.}{release, remission, forgiveness}{noun; third declension; feminine}{physical relaxation, legal remission, and forgiveness of sins require context}{biblical, patristic, liturgical, canonical, and theological reading}{active}
+
+% M17 expansion: calendar and Common vocabulary.
+\DeclareMemoryLexeme{L465}{festum, -i n.}{feast, festival}{noun; second declension; neuter}{generic celebration, feast day, and calendar title depend on context}{classical, patristic, liturgical, and historical reading}{active}
+\DeclareMemoryLexeme{L466}{sollemnitas, sollemnitatis f.}{solemn observance, solemnity}{noun; third declension; feminine}{customary ceremony, degree of feast, and general solemnity require context}{classical, patristic, liturgical, canonical, and historical reading}{active}
+\DeclareMemoryLexeme{L467}{vigilia, -æ f.}{wakefulness, watch, vigil}{noun; first declension; feminine}{military watch, devotional vigil, and liturgical day or Mass require context}{classical, biblical, patristic, liturgical, and historical reading}{active}
+\DeclareMemoryLexeme{L468}{feria, -æ f.}{weekday; day of rest or observance}{noun; first declension; feminine}{Roman civic usage and ecclesiastical weekday numbering must be distinguished}{liturgical, canonical, and historical reading}{active}
+\DeclareMemoryLexeme{L469}{dominica, -æ f.}{the Lord's day, Sunday}{substantive first-declension feminine adjective with \Latin{dies} understood}{calendar day, Mass, or office context must be identified}{patristic, liturgical, canonical, and historical reading}{active}
+\DeclareMemoryLexeme{L470}{natalis, natale}{of birth; birthday or anniversary}{third-declension adjective; two terminations; used substantively}{ordinary birth and a saint's heavenly birthday or feast require context}{classical, patristic, liturgical, and hagiographic reading}{active}
+\DeclareMemoryLexeme{L471}{martyr, martyris m./f.}{martyr, witness}{noun; third declension; common gender}{ordinary witness and one who dies for the faith require historical and textual context}{biblical, patristic, liturgical, and hagiographic reading}{active}
+\DeclareMemoryLexeme{L472}{virgo, virginis f.}{maiden, virgin}{noun; third declension; feminine}{ordinary state, ascetical title, and liturgical class require context}{classical, biblical, patristic, liturgical, and hagiographic reading}{active}
+\DeclareMemoryLexeme{L473}{confessor, confessoris m.}{one who confesses; confessor}{agent noun; third declension; masculine}{confession of faith, sacramental role, and historical liturgical class require context}{patristic, liturgical, canonical, and hagiographic reading}{active}
+\DeclareMemoryLexeme{L474}{pontifex, pontificis m.}{pontiff, high priest}{noun; third declension; masculine}{Roman office, biblical high priest, bishop, and papal title require context}{classical, biblical, patristic, liturgical, canonical, and historical reading}{active}
+\DeclareMemoryLexeme{L475}{episcopus, -i m.}{bishop, overseer}{noun; second declension; masculine}{New Testament oversight, ecclesiastical office, and historical title require context}{biblical, patristic, liturgical, canonical, and historical reading}{active}
+\DeclareMemoryLexeme{L476}{abbas, abbatis m.}{abbot, father}{noun; third declension; masculine}{Semitic-derived title; monastic office and respectful address depend on context}{patristic, liturgical, canonical, monastic, and historical reading}{active}
+\DeclareMemoryLexeme{L477}{doctor, doctoris m.}{teacher; Doctor}{agent noun; third declension; masculine}{ordinary teacher, authoritative theologian, and liturgical class require context}{classical, patristic, liturgical, theological, and historical reading}{active}
+\DeclareMemoryLexeme{L478}{dedicatio, dedicationis f.}{dedication, consecration}{noun; third declension; feminine}{act, anniversary, feast title, and book dedication require context}{classical, patristic, liturgical, and historical reading}{active}
+\DeclareMemoryLexeme{L479}{commemoratio, commemorationis f.}{remembrance, commemoration}{noun; third declension; feminine}{mental recollection, rhetorical mention, and liturgical observance require context}{classical, patristic, liturgical, and historical reading}{active}
+\DeclareMemoryLexeme{L480}{monachus, -i m.}{monk}{noun; second declension; masculine}{historical form of religious life and title require contextual identification}{patristic, monastic, liturgical, canonical, and historical reading}{active}
+\DeclareMemoryLexeme{L481}{octava, -æ f.}{eighth day; octave}{substantive first-declension feminine adjective}{numbered day, musical interval, and historical liturgical observance require context}{liturgical, musical, and historical reading}{recognition}
+
+% M18 expansion: Passion, Easter, burial, judgment, and Requiem vocabulary.
+\DeclareMemoryLexeme{L482}{crux, crucis f.}{cross}{noun; third declension; feminine}{instrument, event, sign, suffering, and liturgical object require context}{classical, biblical, patristic, liturgical, and theological reading}{active}
+\DeclareMemoryLexeme{L483}{sepulcrum, -i n.}{tomb, grave}{noun; second declension; neuter}{literal burial place and figurative use require context}{classical, biblical, patristic, liturgical, and hagiographic reading}{active}
+\DeclareMemoryLexeme{L484}{inferi, -orum m. pl.}{those or places below, the dead, lower regions}{plural second-declension substantive}{meaning depends on biblical, creedal, poetic, or cosmological context; do not flatten into one English term}{classical, biblical, patristic, liturgical, and theological reading}{active}
+\DeclareMemoryLexeme{L485}{sanguis, sanguinis m.}{blood}{noun; third declension; masculine}{bodily substance, kinship, violence, sacrifice, and sacramental language require context}{classical, biblical, patristic, liturgical, and theological reading}{active}
+\DeclareMemoryLexeme{L486}{vulnus, vulneris n.}{wound}{noun; third declension; neuter}{physical, emotional, moral, and rhetorical senses require context}{classical, biblical, patristic, liturgical, and poetic reading}{active}
+\DeclareMemoryLexeme{L487}{lacrima, -æ f.}{tear}{noun; first declension; feminine}{literal tears and signs of grief, penitence, or rhetoric depend on context}{classical, biblical, patristic, liturgical, and poetic reading}{active}
+\DeclareMemoryLexeme{L488}{dolor, doloris m.}{pain, grief, sorrow}{noun; third declension; masculine}{bodily pain, emotional grief, and theological or rhetorical use require context}{classical, biblical, patristic, liturgical, and poetic reading}{active}
+\DeclareMemoryLexeme{L489}{luctus, -us m.}{mourning, grief}{noun; fourth declension; masculine}{internal grief, outward mourning, and ritual context require distinction}{classical, biblical, patristic, liturgical, and historical reading}{active}
+\DeclareMemoryLexeme{L490}{requies, requietis f.}{rest, repose}{noun; third declension; feminine}{physical rest, cessation, eschatological repose, and Requiem formula require context}{classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L491}{iudicium, -i n.}{judgment, trial, decision}{noun; second declension; neuter}{mental judgment, court process, decree, and divine judgment require context}{classical, biblical, patristic, liturgical, canonical, and theological reading}{active}
+\DeclareMemoryLexeme{L492}{poena, -æ f.}{penalty, punishment, suffering}{noun; first declension; feminine}{legal penalty, consequence, pain, and theological punishment require context}{classical, biblical, patristic, liturgical, canonical, and theological reading}{active}
+\DeclareMemoryLexeme{L493}{reatus, -us m.}{accusation, guilt, liability}{noun; fourth declension; masculine}{charge, state of guilt, and canonical or theological liability require context}{classical, patristic, liturgical, canonical, and theological reading}{active}
+\DeclareMemoryLexeme{L494}{agnus, -i m.}{lamb}{noun; second declension; masculine}{literal animal, sacrificial image, and title require biblical and liturgical context}{ordinary, biblical, patristic, liturgical, and theological reading}{active}
+\DeclareMemoryLexeme{L495}{Pascha, Paschatis n.}{Passover, Easter, Paschal feast}{noun; third declension; neuter; Greek and Hebrew loanword}{Jewish feast, Christian Easter, and paschal mystery require source-controlled context}{biblical, patristic, liturgical, and historical reading}{active}
+\DeclareMemoryLexeme{L496}{mortuus, -a, -um}{dead; a dead person}{perfect participle of \Latin{morior} used adjectivally or substantively}{agree with the referent; distinguish state, substantive person, and verbal force}{general, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L497}{crucifigo, -ere, crucifixi, crucifixum}{fasten to a cross, crucify}{verb; third conjugation}{normally takes an accusative object; historical and theological claims require context}{biblical, patristic, liturgical, and historical reading}{active}
+\DeclareMemoryLexeme{L498}{sepelio, -ire, sepelivi, sepultum}{bury}{verb; fourth conjugation}{normally takes an accusative object; place and manner of burial follow the construction}{classical, biblical, patristic, liturgical, and historical narrative}{active}
+
+% M19 expansion: biblical texture, discourse particles, and comparisons.
+\DeclareMemoryLexeme{L499}{ecce}{behold, look, here is}{presentative particle and interjection}{directs attention to a person, object, or proposition; syntax of what follows must still be parsed}{biblical, patristic, liturgical, and rhetorical reading}{active}
+\DeclareMemoryLexeme{L500}{amen}{amen, truly, let it be so}{indeclinable Hebrew loanword used responsorially or adverbially}{affirmation, response, and doubled biblical formula depend on context}{biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L501}{alleluia}{alleluia, praise the Lord}{indeclinable Hebrew liturgical acclamation}{acclamation, chant title, and textual refrain require liturgical and literary context}{biblical, patristic, liturgical, and poetic reading}{active}
+\DeclareMemoryLexeme{L502}{ergo}{therefore, then}{inferential particle, often postpositive}{marks conclusion, transition, or pragmatic response; identify the propositions connected}{general, classical, biblical, patristic, and argumentative prose}{active}
+\DeclareMemoryLexeme{L503}{etenim}{for indeed}{explanatory conjunction or particle}{introduces support or explanation with added emphasis; identify its discourse scope}{classical, biblical, patristic, and rhetorical prose}{active}
+\DeclareMemoryLexeme{L504}{nam}{for}{explanatory conjunction}{introduces a reason, explanation, or supporting observation; not every instance translates naturally as English for}{general, classical, biblical, patristic, and argumentative prose}{active}
+\DeclareMemoryLexeme{L505}{namque}{for indeed, for}{explanatory conjunction with enclitic \Latin{-que}}{introduces support or elaboration; its position and scope organize the discourse}{classical, biblical, patristic, and rhetorical prose}{active}
+\DeclareMemoryLexeme{L506}{quidem}{indeed, certainly; at least}{emphatic or concessive particle, often postpositive}{force depends on a contrast, paired particle, or focused constituent}{classical, biblical, patristic, rhetorical, and argumentative prose}{active}
+\DeclareMemoryLexeme{L507}{vero}{truly; but, however}{adverb or postpositive connective}{truth emphasis, transition, and contrast depend on placement and discourse relation}{general, classical, biblical, patristic, and rhetorical prose}{active}
+\DeclareMemoryLexeme{L508}{propterea}{for that reason, therefore}{demonstrative adverb}{points back to a stated cause and may correlate with a following clause}{classical, biblical, patristic, rhetorical, and argumentative prose}{active}
+\DeclareMemoryLexeme{L509}{ideo}{for that reason, therefore}{demonstrative adverb}{marks cause-to-conclusion relation and may correlate with a following clause}{classical, biblical, patristic, rhetorical, and argumentative prose}{active}
+\DeclareMemoryLexeme{L510}{quomodo}{how; in what manner}{interrogative or relative adverb}{direct question, indirect question, comparison, and connective use depend on clause structure}{general, classical, biblical, patristic, and liturgical reading}{active}
+\DeclareMemoryLexeme{L511}{sicut}{just as, as}{comparative conjunction or adverb}{introduces comparison or manner and often correlates with \Latin{ita}; prove the compared members}{biblical, patristic, liturgical, and rhetorical reading}{active}
+\DeclareMemoryLexeme{L512}{velut}{just as, as if}{comparative conjunction or adverb}{literal comparison, illustration, and hypothetical comparison require contextual distinction}{classical, biblical, patristic, rhetorical, and poetic reading}{active}
+\DeclareMemoryLexeme{L513}{tamquam}{as, just as; as though}{comparative conjunction or adverb}{may mark an asserted role or an imagined comparison; mood and context decide}{classical, biblical, patristic, rhetorical, and argumentative prose}{active}
+\DeclareMemoryLexeme{L514}{quasi}{as if, almost}{comparative or qualifying particle}{marks resemblance, approximation, or authorial qualification; identify its scope}{classical, biblical, patristic, rhetorical, and theological prose}{active}
+\DeclareMemoryLexeme{L515}{quicumque, quæcumque, quodcumque}{whoever, whatever, every ... who}{indefinite relative pronoun or adjective}{decline the relative element and keep the enclitic element unchanged; case comes from the relative clause}{general, classical, biblical, patristic, and canonical prose}{active}
+
+% M20 expansion: rhetorical and periodic-prose metalanguage.
+\DeclareMemoryLexeme{L516}{argumentum, -i n.}{proof, argument, subject, sign}{noun; second declension; neuter}{evidentiary proof, line of reasoning, subject matter, and literary plot require context}{classical, patristic, rhetorical, philosophical, and composition work}{active}
+\DeclareMemoryLexeme{L517}{exemplum, -i n.}{example, model, precedent, copy}{noun; second declension; neuter}{illustration, moral model, legal precedent, and physical copy require context}{classical, biblical, patristic, rhetorical, canonical, and composition work}{active}
+\DeclareMemoryLexeme{L518}{similitudo, similitudinis f.}{likeness, comparison, similitude}{noun; third declension; feminine}{resemblance, rhetorical comparison, biblical parable-like form, and theological likeness require context}{classical, biblical, patristic, rhetorical, and theological prose}{active}
+\DeclareMemoryLexeme{L519}{metaphora, -æ f.}{metaphor, transfer of meaning}{noun; first declension; feminine}{identify exact source words, compared domains, and contextual function before applying the label}{classical, patristic, rhetorical, and poetic study}{recognition}
+\DeclareMemoryLexeme{L520}{anaphora, -æ f.}{anaphora, repetition at beginnings}{noun; first declension; feminine}{prove the repeated forms and corresponding unit boundaries before naming the figure}{classical, biblical, patristic, rhetorical, liturgical, and poetic study}{recognition}
+\DeclareMemoryLexeme{L521}{antithesis, antithesis f.}{antithesis, pointed opposition}{noun; third declension; feminine; Greek inflection}{identify balanced or opposed terms and explain their grammatical relation and argumentative work}{classical, biblical, patristic, rhetorical, and poetic study}{recognition}
+\DeclareMemoryLexeme{L522}{narratio, narrationis f.}{narration, statement of facts}{noun; third declension; feminine}{storytelling, rhetorical statement of facts, and explanatory account depend on genre}{classical, biblical, patristic, rhetorical, and composition work}{active}
+\DeclareMemoryLexeme{L523}{propositio, propositionis f.}{statement, proposition, presentation}{noun; third declension; feminine}{grammatical statement, logical proposition, and rhetorical division require context}{classical, patristic, rhetorical, logical, and composition work}{active}
+\DeclareMemoryLexeme{L524}{conclusio, conclusionis f.}{closing, conclusion, inference}{noun; third declension; feminine}{physical enclosure, logical inference, and rhetorical ending require context}{classical, patristic, rhetorical, logical, and composition work}{active}
+\DeclareMemoryLexeme{L525}{exordium, -i n.}{beginning, introduction}{noun; second declension; neuter}{ordinary beginning and formal rhetorical introduction must be distinguished by genre}{classical, patristic, rhetorical, and composition work}{active}
+\DeclareMemoryLexeme{L526}{periodus, -i f.}{period, circuit, complete sentence}{noun; second declension; feminine; Greek loanword}{temporal cycle, circuit, and rhetorical period depend on context}{classical, patristic, rhetorical, grammatical, and composition work}{recognition}
+\DeclareMemoryLexeme{L527}{membrum, -i n.}{limb, member, clause-member}{noun; second declension; neuter}{bodily, corporate, and rhetorical structural senses require context}{classical, biblical, patristic, rhetorical, and canonical prose}{active}
+\DeclareMemoryLexeme{L528}{clausula, -æ f.}{close, clause, cadence}{noun; first declension; feminine}{legal provision, grammatical clause, rhetorical close, and cadence require context}{classical, patristic, rhetorical, grammatical, canonical, and composition work}{active}
+\DeclareMemoryLexeme{L529}{locus, -i m.; plural loca n. or loci m.}{place, passage, topic}{noun; second declension with sense-sensitive plural}{physical places commonly use neuter \Latin{loca}; passages or topics often masculine \Latin{loci}}{general, classical, biblical, patristic, rhetorical, and source work}{active}
+\DeclareMemoryLexeme{L530}{auctor, auctoris m.}{originator, author, authority}{agent noun; third declension; masculine}{writer, founder, guarantor, and authoritative source depend on context}{classical, patristic, rhetorical, canonical, and source work}{active}
+\DeclareMemoryLexeme{L531}{lector, lectoris m.}{reader, lector}{agent noun; third declension; masculine}{ordinary reader, public reader, and instituted or historical liturgical office require context}{classical, patristic, liturgical, rhetorical, and textual work}{active}
+\DeclareMemoryLexeme{L532}{eloquentia, -æ f.}{eloquence, skilled expression}{noun; first declension; feminine}{ability, style, and praise or criticism of discourse depend on context}{classical, patristic, rhetorical, and composition work}{active}
+
+% M21 expansion: textual witnesses, editions, variants, and apparatus.
+\DeclareMemoryLexeme{L533}{textus, -us m.}{text, connected wording, fabric}{noun; fourth declension; masculine}{material weaving, connected discourse, and an edited text require historical context}{patristic, medieval, textual, and scholarly work}{active}
+\DeclareMemoryLexeme{L534}{codex, codicis m.}{codex, manuscript book, code}{noun; third declension; masculine}{physical manuscript, bound book, and organized body of law require context}{classical, patristic, textual, canonical, and historical work}{active}
+\DeclareMemoryLexeme{L535}{manuscriptum, -i n.}{manuscript}{substantive neuter of a first/second-declension adjective}{identify the physical or digital witness and do not use the label as an edition citation}{medieval, textual, and scholarly work}{active}
+\DeclareMemoryLexeme{L536}{editio, editionis f.}{publication, edition}{noun; third declension; feminine}{act of publishing and a particular edited form require bibliographic context}{patristic, textual, historical, and scholarly work}{active}
+\DeclareMemoryLexeme{L537}{exemplar, exemplaris n.}{copy, model, exemplar}{noun; third declension; neuter}{physical copy, source model, and ideal pattern depend on context}{classical, patristic, textual, theological, and scholarly work}{active}
+\DeclareMemoryLexeme{L538}{scriptura, -æ f.}{writing; Scripture}{noun; first declension; feminine}{act or product of writing, written character, and sacred Scripture require context}{classical, biblical, patristic, theological, and textual work}{active}
+\DeclareMemoryLexeme{L539}{pagina, -æ f.}{page, written sheet}{noun; first declension; feminine}{physical page, passage, and editorial page reference require context}{classical, patristic, textual, and scholarly work}{active}
+\DeclareMemoryLexeme{L540}{versio, versionis f.}{turning, translation, version}{noun; third declension; feminine}{physical turning, translation, and textual version require context}{patristic, textual, translation, and scholarly work}{active}
+\DeclareMemoryLexeme{L541}{titulus, -i m.}{title, inscription, heading}{noun; second declension; masculine}{inscription, legal claim, book title, and liturgical heading require context}{classical, biblical, patristic, liturgical, canonical, and textual work}{active}
+\DeclareMemoryLexeme{L542}{rubrica, -æ f.}{red earth or ink; rubric}{noun; first declension; feminine}{material red pigment, red heading, and liturgical or legal direction require context}{liturgical, canonical, textual, and historical work}{active}
+\DeclareMemoryLexeme{L543}{orthographia, -æ f.}{orthography, correct spelling}{noun; first declension; feminine}{describes writing convention, not pronunciation; identify the edition and period being compared}{grammatical, textual, and scholarly work}{recognition}
+\DeclareMemoryLexeme{L544}{punctum, -i n.}{point, mark, punctuation point}{noun; second declension; neuter}{physical point, textual mark, moment, and argumentative point require context}{classical, patristic, textual, rhetorical, and scholarly work}{active}
+\DeclareMemoryLexeme{L545}{lacuna, -æ f.}{gap, missing portion}{noun; first declension; feminine}{physical hollow and a loss in a textual witness must be distinguished by evidence}{classical, textual, and scholarly work}{active}
+\DeclareMemoryLexeme{L546}{coniectura, -æ f.}{inference, conjecture, conjectural reading}{noun; first declension; feminine}{ordinary inference and proposed textual repair require explicit evidence and uncertainty}{classical, patristic, textual, rhetorical, and scholarly work}{active}
+\DeclareMemoryLexeme{L547}{testimonium, -i n.}{testimony, evidence, cited witness}{noun; second declension; neuter}{personal testimony, scriptural proof, and textual evidence require source context}{classical, biblical, patristic, canonical, rhetorical, and textual work}{active}
+\DeclareMemoryLexeme{L548}{fons, fontis m.}{spring, source, font}{noun; third declension; masculine}{water source, baptismal font, and documentary or intellectual source require context}{classical, biblical, patristic, liturgical, and source work}{active}
+\DeclareMemoryLexeme{L549}{apparatus, -us m.}{equipment, preparation, apparatus}{noun; fourth declension; masculine}{material equipment, ceremony, and critical apparatus depend on context}{classical, liturgical, textual, and scholarly work}{recognition}
+
+% M22 expansion: independent argument, interpretation, revision, and exposition.
+\DeclareMemoryLexeme{L550}{affirmo, -are, -avi, -atum}{affirm, assert, strengthen}{verb; first conjugation}{takes an object or content statement; distinguish proof from mere assertion}{classical, patristic, rhetorical, canonical, and composition work}{active}
+\DeclareMemoryLexeme{L551}{nego, -are, -avi, -atum}{deny, say that not, refuse}{verb; first conjugation}{may take an object, infinitive, or indirect statement; Latin often negates through the governor}{classical, patristic, rhetorical, canonical, and composition work}{active}
+\DeclareMemoryLexeme{L552}{probo, -are, -avi, -atum}{approve, test, prove}{verb; first conjugation}{normally takes an object; approval, examination, and demonstration require context}{classical, patristic, rhetorical, canonical, and composition work}{active}
+\DeclareMemoryLexeme{L553}{refuto, -are, -avi, -atum}{refute, repel}{verb; first conjugation}{normally takes an accusative claim, argument, or person opposed}{classical, patristic, rhetorical, polemical, and composition work}{active}
+\DeclareMemoryLexeme{L554}{definio, -ire, definivi, definitum}{bound, define, determine}{verb; fourth conjugation}{takes an object and may add a predicate or boundary; lexical and authoritative definition differ}{classical, patristic, rhetorical, philosophical, canonical, and composition work}{active}
+\DeclareMemoryLexeme{L555}{divido, -ere, divisi, divisum}{divide, distribute}{verb; third conjugation}{takes an object; parts, recipients, or categories follow their constructions}{classical, biblical, patristic, rhetorical, and composition work}{active}
+\DeclareMemoryLexeme{L556}{coniungo, -ere, coniunxi, coniunctum}{join, connect}{verb; third conjugation}{takes an object; the joined counterpart may use \Latin{cum}, dative, or another construction}{classical, biblical, patristic, rhetorical, grammatical, and composition work}{active}
+\DeclareMemoryLexeme{L557}{comparo, -are, -avi, -atum}{prepare, obtain; compare}{verb; first conjugation}{sense and comparison construction depend on complements and context}{classical, patristic, rhetorical, textual, and composition work}{active}
+\DeclareMemoryLexeme{L558}{interpretor, interpretari, interpretatus sum}{interpret, explain, translate}{deponent verb; first conjugation}{normally takes an object; explanatory and translational work require an identified source text}{classical, biblical, patristic, textual, and composition work}{active}
+\DeclareMemoryLexeme{L559}{verto, -ere, verti, versum}{turn, change, translate}{verb; third conjugation}{takes an object; direction, resulting state, and source or target language follow context}{classical, biblical, patristic, translation, and composition work}{active}
+\DeclareMemoryLexeme{L560}{trado, -ere, tradidi, traditum}{hand over, transmit, teach}{verb; third conjugation}{takes an object and often a dative recipient; betrayal and tradition senses require context}{classical, biblical, patristic, theological, historical, and composition work}{active}
+\DeclareMemoryLexeme{L561}{recenseo, -ere, recensui, recensum}{review, enumerate, revise}{verb; second conjugation}{normally takes an object; counting, editorial recension, and critical review require context}{classical, patristic, textual, and scholarly work}{active}
+\DeclareMemoryLexeme{L562}{emendo, -are, -avi, -atum}{correct, amend}{verb; first conjugation}{normally takes an object; textual, moral, and legal correction require context}{patristic, textual, canonical, and composition work}{active}
+\DeclareMemoryLexeme{L563}{argumentor, argumentari, argumentatus sum}{reason, argue}{deponent verb; first conjugation}{may be intransitive or take the matter argued; evidence and conclusion should be stated}{classical, patristic, rhetorical, philosophical, and composition work}{active}
+\DeclareMemoryLexeme{L564}{concludo, -ere, conclusi, conclusum}{shut up, conclude, infer}{verb; third conjugation}{takes an object or proposition; physical closure and logical inference require context}{classical, biblical, patristic, rhetorical, logical, and composition work}{active}
+\DeclareMemoryLexeme{L565}{infero, inferre, intuli, illatum}{bring in, infer, inflict}{irregular compound of \Latin{fero}}{takes an object; destination, person affected, or inferred proposition follows the construction}{classical, biblical, patristic, rhetorical, logical, and composition work}{active}
+\DeclareMemoryLexeme{L566}{expono, -ere, exposui, expositum}{set out, expose, explain}{verb; third conjugation}{takes an object; physical placement, narration, and systematic exposition require context}{classical, biblical, patristic, rhetorical, theological, and composition work}{active}
+
+% P1 expansion: textual prosody.
+\DeclareMemoryLexeme{L567}{prosodia, -æ f.}{prosody}{noun; first declension; feminine; Greek loanword}{identify the exact system under discussion: quantity, meter, syllable count, or another later pattern}{grammatical, textual, and poetry study}{recognition}
+\DeclareMemoryLexeme{L568}{vocalis, vocalis f.}{vowel}{substantive third-declension adjective; feminine with \Latin{littera} understood}{identify the written vowel and syllabic role; this is not a pronunciation direction}{grammatical, textual, and poetry study}{active}
+\DeclareMemoryLexeme{L569}{diphthongus, -i f.}{diphthong}{noun; second declension; feminine; Greek loanword}{record the written vowel pair and test its metrical treatment with the supplied P1 rules and examples}{grammatical, textual, and poetry study}{recognition}
+\DeclareMemoryLexeme{L570}{elisio, elisionis f.}{elision}{noun; third declension; feminine}{mark the word boundary and candidate sounds, then test the actual metrical scheme}{textual, metrical, and poetry study}{active}
+
+% P2 expansion: hexameter.
+\DeclareMemoryLexeme{L571}{dactylus, -i m.}{dactyl}{noun; second declension; masculine; Greek loanword}{metrical foot with long--short--short pattern; prove it from the scanned positions}{classical, metrical, and poetry study}{active}
+\DeclareMemoryLexeme{L572}{spondeus, -i m.}{spondee}{noun; second declension; masculine; Greek loanword}{metrical foot with two long positions; distinguish a position from a spoken prescription}{classical, metrical, and poetry study}{active}
+\DeclareMemoryLexeme{L573}{hexameter, hexametri m.}{hexameter line}{noun; second declension; masculine; Greek compound}{name the line only after testing its six-foot quantitative scheme}{classical, Christian, metrical, and poetry study}{active}
+\DeclareMemoryLexeme{L574}{arsis, arsis f.}{arsis, metrical raising}{noun; third declension; feminine; Greek loanword}{technical definitions vary by system; use the definition printed in the branch sheet and do not convert it into a pronunciation rule}{classical, metrical, and poetry study}{recognition}
+
+% P3 expansion: elegiac verse.
+\DeclareMemoryLexeme{L575}{elegia, -æ f.}{elegy, elegiac poem}{noun; first declension; feminine; Greek loanword}{genre, tone, and elegiac meter are related but not identical claims}{classical, Christian, literary, and poetry study}{active}
+\DeclareMemoryLexeme{L576}{pentameter, pentametri m.}{pentameter line}{noun; second declension; masculine; Greek compound}{in elegiac verse identify the divided quantitative scheme rather than counting five ordinary feet mechanically}{classical, metrical, and poetry study}{active}
+\DeclareMemoryLexeme{L577}{distichon, -i n.}{couplet, pair of lines}{noun; second declension; neuter; Greek loanword}{identify the two-line unit and then specify whether it is elegiac or another kind}{classical, Christian, textual, and poetry study}{active}
+\DeclareMemoryLexeme{L578}{hemistichium, -i n.}{half-line}{noun; second declension; neuter; Greek loanword}{locate the division from meter and syntax rather than page typography alone}{classical, textual, metrical, and poetry study}{recognition}
+
+% P4 expansion: lyric meters.
+\DeclareMemoryLexeme{L579}{lyricus, -a, -um}{lyric}{first/second-declension adjective; Greek loanword}{agree with poem, poet, meter, or genre term; the label does not identify one scheme by itself}{classical, Christian, literary, and poetry study}{active}
+\DeclareMemoryLexeme{L580}{stropha, -æ f.}{strophe, stanza}{noun; first declension; feminine; Greek loanword}{identify the repeated line-group pattern and distinguish printed paragraphing from metrical structure}{classical, Christian, textual, and poetry study}{active}
+\DeclareMemoryLexeme{L581}{Sapphicus, -a, -um}{Sapphic}{first/second-declension adjective}{agree with line, stanza, or meter and test the named quantitative pattern}{classical, Christian, metrical, and poetry study}{recognition}
+\DeclareMemoryLexeme{L582}{Alcaicus, -a, -um}{Alcaic}{first/second-declension adjective}{agree with line, stanza, or meter and test the named quantitative pattern}{classical, Christian, metrical, and poetry study}{recognition}
+
+% P5 expansion: Christian poetics and figural reading.
+\DeclareMemoryLexeme{L583}{typologia, -æ f.}{typology}{noun; first declension; feminine; later scholarly formation}{identify exact earlier and later texts and state the warranted relation; resemblance alone is insufficient}{biblical, patristic, theological, and poetry study}{recognition}
+\DeclareMemoryLexeme{L584}{symbolum, -i n.}{sign, token, symbol; creed}{noun; second declension; neuter; Greek loanword}{ordinary token, literary symbol, and ecclesiastical creed are distinct contextual senses}{classical, patristic, liturgical, theological, and poetry study}{active}
+\DeclareMemoryLexeme{L585}{allusio, allusionis f.}{allusion}{noun; third declension; feminine}{claim only after exact verbal, formal, or contextual evidence is compared with a plausible source}{rhetorical, patristic, textual, and poetry study}{recognition}
+\DeclareMemoryLexeme{L586}{paradoxon, -i n.}{paradox, unexpected proposition}{noun; second declension; neuter; Greek loanword}{state the apparent conflict and explain its resolution or rhetorical function from context}{classical, patristic, rhetorical, theological, and poetry study}{recognition}
+
+% P6 expansion: rhythmic hymnody and sequences.
+\DeclareMemoryLexeme{L587}{rhythmus, -i m.}{rhythm, rhythmic verse}{noun; second declension; masculine; Greek loanword}{name only the organization actually supported: quantity, syllable count, line grouping, repeated syntax, written endings, or another stated pattern}{classical, Christian, musical, and poetry study}{active}
+\DeclareMemoryLexeme{L588}{accentus, -us m.}{accent, accent mark; accentual pattern}{noun; fourth declension; masculine}{recognize that its technical sense depends on a stated system; this course neither assigns lexical stress nor teaches pronunciation}{grammatical, musical, liturgical, and poetry study}{recognition}
+\DeclareMemoryLexeme{L589}{rima, -æ f.}{rhyme}{noun; first declension; feminine; medieval and later term}{rhyme classifies recurring terminal sound; record visible ending correspondence separately and withhold a rhyme claim when no phonological evidence is supplied}{medieval, Christian, textual, and poetry study}{recognition}
+\DeclareMemoryLexeme{L590}{tropus, -i m.}{turn, trope, interpolation}{noun; second declension; masculine; Greek loanword}{rhetorical figure, chant addition, and modal terminology require contextual distinction}{rhetorical, liturgical, musical, historical, and poetry study}{recognition}
+
+% P7 expansion: poetic commentary.
+\DeclareMemoryLexeme{L591}{lemma, lemmatis n.}{heading, cited word or passage for comment}{noun; third declension; neuter; Greek loanword}{quote the exact source wording and identify its locus before commenting}{textual, exegetical, and poetry study}{active}
+\DeclareMemoryLexeme{L592}{scholium, -i n.}{scholium, explanatory note}{noun; second declension; neuter; Greek loanword}{distinguish ancient or medieval annotation from a modern project note and cite its witness}{classical, patristic, textual, and poetry study}{recognition}
+\DeclareMemoryLexeme{L593}{interpretatio, interpretationis f.}{interpretation, explanation, translation}{noun; third declension; feminine}{state whether the work explains grammar, meaning, rhetoric, theology, or translates wording}{classical, biblical, patristic, textual, and poetry study}{active}
+\DeclareMemoryLexeme{L594}{enarratio, enarrationis f.}{detailed exposition, commentary}{noun; third declension; feminine}{identify the text expounded and distinguish source paraphrase from original explanation}{classical, patristic, exegetical, rhetorical, and poetry study}{active}
+
+% P8 expansion: verse composition and revision.
+\DeclareMemoryLexeme{L595}{compositio, compositionis f.}{putting together, arrangement, composition}{noun; third declension; feminine}{physical combination, stylistic arrangement, and written composition require context}{classical, patristic, rhetorical, musical, and poetry composition}{active}
+\DeclareMemoryLexeme{L596}{emendatio, emendationis f.}{correction, revision, emendation}{noun; third declension; feminine}{distinguish correcting one's project draft from conjecturally changing a received text}{classical, textual, rhetorical, and poetry composition}{active}
+\DeclareMemoryLexeme{L597}{imitatio, imitationis f.}{imitation}{noun; third declension; feminine}{name the received model and exact feature imitated; label new wording as project composition}{classical, patristic, rhetorical, and poetry composition}{active}
+\DeclareMemoryLexeme{L598}{inventio, inventionis f.}{discovery, devising, rhetorical invention}{noun; third declension; feminine}{finding evidence, devising subject matter, and rhetorical discovery require context}{classical, patristic, rhetorical, and poetry composition}{active}

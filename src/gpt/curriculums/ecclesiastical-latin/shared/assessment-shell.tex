@@ -1,24 +1,46 @@
 \hypersetup{
   pdftitle={Ecclesiastical Latin — \CompanionID: \CompanionTitle},
-  pdfsubject={A mastery-assessment sequence for the modular Ecclesiastical Latin curriculum}
+  pdfsubject={A cumulative self-review with fresh Latin work and complete answers for the self-paced Ecclesiastical Latin curriculum}
 }
 
-\renewcommand{\CoursePacing}{A multi-sitting assessment sequence; follow the local delay and aid rules}
+\renewcommand{\CoursePacing}{Use when fresh cumulative work would clarify what is dependable and what deserves another return}
 \providecommand{\AssessmentProtocolDetails}{}
+\providecommand{\CompanionContentsSize}{\small}
+\providecommand{\RenderModuleReaderSet}[1]{}
+\InputIfFileExists{\CourseRoot/shared/readers/renderers.tex}{}{}
+\providecommand{\ReviewSourceSet}{}
+\providecommand{\ReviewReaderSet}{}
+\providecommand{\RenderReviewSourceSet}[1]{}
+\newcommand{\RenderIncludedLatinIfAny}{%
+  \ifdefempty{\ReviewSourceSet}{%
+    \ifdefempty{\ReviewReaderSet}{}{%
+      \clearpage
+      \part{Included Latin}
+      \RenderModuleReaderSet{\ReviewReaderSet}%
+    }%
+  }{%
+    \clearpage
+    \part{Included Latin}
+    \RenderReviewSourceSet{\ReviewSourceSet}%
+    \ifdefempty{\ReviewReaderSet}{}{%
+      \RenderModuleReaderSet{\ReviewReaderSet}%
+    }%
+  }%
+}
 
 \begin{document}
 
 \CourseTitlePage
   {\CompanionID: \CompanionTitle}
   {\CompanionSubtitle}
-  {A detachable assessment sequence with learner forms, scoring protocol, and
-   terminal solutions. It is not a two-session learning module and must not be
-   used as a substitute for the prerequisite modules.}
-  {Stage assessment; learner and terminal-key edition}
+  {A detachable cumulative self-review with fresh forms, connected reading,
+   composition, and complete answers. Use it honestly, at your own pace, to
+   locate strengths and recurring uncertainty.}
+  {Cumulative self-review and answer companion}
 
 \pagenumbering{roman}
 \begingroup
-\small
+\CompanionContentsSize
 \sloppy
 \hbadness=10000
 \setlength{\parskip}{0pt}
@@ -27,25 +49,27 @@
 \clearpage
 \pagenumbering{arabic}
 
-\part{Assessment Protocol}
-\chapter{Use, timing, and decision}
+\part{Using This Review}
+\chapter{Purpose and method}
 \AssessmentProtocol
 \input{\CourseRoot/shared/assessments/protocol}
 \AssessmentProtocolDetails
 
+\RenderIncludedLatinIfAny
+
 \clearpage
-\part{Learner Forms}
+\part{Review Forms}
 \solutionsfalse
 \SelectAssessments{\AssessmentSelection}
-\BeginExerciseBank{ASSESSMENT}
+\BeginExerciseBank{REVIEW}
 \input{\CourseRoot/shared/assessments/all}
 
 \clearpage
-\part{Solutions and Rubrics}
+\part{Answers and Models}
 \input{\CourseRoot/shared/content/80-answer-key-notice}
 \solutionstrue
 \SelectAssessments{\AssessmentSelection}
-\BeginExerciseBank{ASSESSMENT}
+\BeginExerciseBank{REVIEW}
 \input{\CourseRoot/shared/assessments/all}
 \solutionsfalse
 

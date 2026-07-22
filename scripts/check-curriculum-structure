@@ -30,28 +30,35 @@ PARENT_KIND = {
     "subsubsection": "subsection",
 }
 MODULE_PARTS = (
-    "Lesson",
-    "Practice",
-    "Worksheets",
-    "Assessment",
-    "Answer Key",
+    "Teaching",
+    "Memory Work",
+    "Reading and Composition",
+    "Cumulative Practice",
+    "Answers and Models",
     "Scope and Sources",
 )
 ASSESSMENT_PARTS = (
-    "Assessment Protocol",
-    "Learner Forms",
-    "Solutions and Rubrics",
+    "Using This Review",
+    "Review Forms",
+    "Answers and Models",
+    "Scope and Sources",
+)
+ASSESSMENT_PARTS_WITH_SOURCES = (
+    "Using This Review",
+    "Included Latin",
+    "Review Forms",
+    "Answers and Models",
     "Scope and Sources",
 )
 ASSESSMENT_EXPECTATIONS = {
-    "01-foundations": ("Gate I: Foundations", ("F-A", "F-B")),
-    "02-core-grammar": ("Gate II: Complete Core Grammar", ("C-A", "C-B")),
+    "01-foundations": ("Foundations Cumulative Review", ("F-A", "F-B")),
+    "02-core-grammar": ("Core Grammar Cumulative Review", ("C-A", "C-B")),
     "03-missal-reading": (
-        "Gate III: Independent Missal Reading",
+        "Missal Reading Cumulative Review",
         ("M-A", "M-B", "M-C"),
     ),
     "04-advanced": (
-        "Gate IV: Advanced Reading and Composition",
+        "Advanced Reading and Composition Cumulative Review",
         ("A-A", "A-B"),
     ),
 }
@@ -62,9 +69,9 @@ FORM_CONTINUATION_MARKER = re.compile(
     r"\b(?:Worksheet|Solution)\s+[IVXLCDM]+\.\d+\b", re.IGNORECASE
 )
 WORKSHEET_ID_MARKER = re.compile(r"\bWorksheet\s+ID\s*:", re.IGNORECASE)
-ADVANCE_WHEN_MARKER = re.compile(r"\bAdvance\s+when\s*:", re.IGNORECASE)
+READINESS_MARKER = re.compile(r"\bBefore\s+continuing\b", re.IGNORECASE)
 BODY_MARGIN_POINTS = 70.0
-MINIMUM_ADVANCE_PAGE_WORDS = 90
+MINIMUM_READINESS_PAGE_WORDS = 90
 MINIMUM_FORM_CONTINUATION_WORDS = 80
 TOC_ROW_Y_TOLERANCE_POINTS = 1.5
 TOC_TITLE_X_TOLERANCE_POINTS = 2.0
@@ -337,6 +344,26 @@ def validate_course_format_layout(source_text: str, path: Path) -> None:
         raise StructureError(
             f"{path}: BeginExerciseBank must initialize firstcourseworksheettrue"
         )
+    unit_opening_guard = _definition_body(
+        text, r"\newcommand", r"\CourseUnitOpeningGuard", path
+    )
+    if re.search(
+        r"\\global\s*\\firstcourseworksheettrue(?![A-Za-z@])",
+        unit_opening_guard,
+    ) is None:
+        raise StructureError(
+            f"{path}: CourseUnitOpeningGuard must reset "
+            "firstcourseworksheettrue for every selected unit"
+        )
+    courseunit = _definition_body(text, r"\NewEnviron", "courseunit", path)
+    guard_invocations = re.findall(
+        r"\\CourseUnitOpeningGuard(?![A-Za-z@])", courseunit
+    )
+    if len(guard_invocations) != 2:
+        raise StructureError(
+            f"{path}: courseunit must invoke CourseUnitOpeningGuard in both "
+            f"selection branches; found {len(guard_invocations)} invocations"
+        )
 
     worksheet = _definition_body(text, r"\NewEnviron", "worksheet", path)
     solution_path, learner_path = _conditional_branches(
@@ -450,6 +477,29 @@ def _macro_value(text: str, name: str, path: Path) -> str:
     return matches[0].strip()
 
 
+def _validate_module_key_alignment(text: str, path: Path, module_id: str) -> None:
+    """Keep every packet-local renderer keyed to the packet's stable ID."""
+    expected_key = module_id.removeprefix("EL-")
+    errors: list[str] = []
+    for macro_name in ("ModuleIDKey", "ModuleMemorySet", "ModuleReaderSet"):
+        value = _macro_value(text, macro_name, path)
+        if value != expected_key:
+            errors.append(
+                f"{path}: {macro_name} {value!r} != packet key {expected_key!r}"
+            )
+    practice = _definition_body(text, r"\newcommand", r"\ModulePractice", path)
+    practice_selections = re.findall(
+        r"\\SelectCourseUnits\s*\{([^{}]+)\}", practice
+    )
+    if practice_selections != [expected_key]:
+        errors.append(
+            f"{path}: ModulePractice must select only packet key "
+            f"{expected_key!r}; found {practice_selections!r}"
+        )
+    if errors:
+        raise StructureError("\n".join(errors))
+
+
 def _source_path(curriculum_root: Path, value: str, path: Path) -> Path:
     prefix = r"\CourseRoot/"
     if not value.startswith(prefix):
@@ -556,6 +606,84 @@ def _publication_leaves(
     return discovered
 
 
+def _validate_registry_shape(
+    rows: Sequence[tuple[str, str, tuple[str, ...], str]],
+) -> None:
+    """Enforce the declared 22-packet trunk and eight-packet poetry branch."""
+    errors: list[str] = []
+    expected_ids = [f"EL-M{number:02d}" for number in range(1, 23)] + [
+        f"EL-P{number}" for number in range(1, 9)
+    ]
+    actual_ids = [module_id for module_id, _, _, _ in rows]
+    if actual_ids != expected_ids:
+        errors.append(
+            "curriculum registry packet IDs must run EL-M01--EL-M22 then "
+            f"EL-P1--EL-P8; found {actual_ids!r}"
+        )
+
+    expected_trunk_units = (
+        [f"I.{number}" for number in range(1, 13)]
+        + [f"II.{number}" for number in range(1, 15)]
+        + [f"III.{number}" for number in range(1, 13)]
+        + [f"A{number}" for number in range(1, 9)]
+    )
+    expected_poetry_units = [f"P{number}" for number in range(1, 9)]
+    actual_trunk_units: list[str] = []
+    actual_poetry_units: list[str] = []
+
+    for module_id, owner_unit, _, leaf in rows:
+        row_units = [unit.strip() for unit in owner_unit.split(",") if unit.strip()]
+        if module_id.startswith("EL-M"):
+            actual_trunk_units.extend(row_units)
+            if len(row_units) not in {2, 3}:
+                errors.append(
+                    f"curriculum registry {module_id} must contain two or three "
+                    f"common-trunk units; found {row_units!r}"
+                )
+            try:
+                number = int(module_id.removeprefix("EL-M"))
+            except ValueError:
+                number = 0
+            if 1 <= number <= 6:
+                expected_prefix = "01-foundations/"
+            elif number <= 12:
+                expected_prefix = "02-core-grammar/"
+            elif number <= 18:
+                expected_prefix = "03-missal-reading/"
+            else:
+                expected_prefix = "04-advanced/"
+            if not leaf.startswith(expected_prefix) or "/poetry/" in f"/{leaf}/":
+                errors.append(
+                    f"curriculum registry {module_id} has a canonical leaf outside "
+                    f"{expected_prefix!r}: {leaf!r}"
+                )
+        elif module_id.startswith("EL-P"):
+            actual_poetry_units.extend(row_units)
+            if len(row_units) != 1:
+                errors.append(
+                    f"curriculum registry {module_id} must contain one poetry unit; "
+                    f"found {row_units!r}"
+                )
+            if not leaf.startswith("04-advanced/poetry/"):
+                errors.append(
+                    f"curriculum registry {module_id} has a non-poetry canonical "
+                    f"leaf: {leaf!r}"
+                )
+
+    if actual_trunk_units != expected_trunk_units:
+        errors.append(
+            "curriculum registry common-trunk units must cover the 46 stable "
+            f"lessons in order; found {actual_trunk_units!r}"
+        )
+    if actual_poetry_units != expected_poetry_units:
+        errors.append(
+            "curriculum registry poetry units must run P1--P8 in order; "
+            f"found {actual_poetry_units!r}"
+        )
+    if errors:
+        raise StructureError("\n".join(errors))
+
+
 def audit_sources(curriculum_root: Path) -> SourceAudit:
     errors: list[str] = []
     course_format_path = curriculum_root / "shared/course-format.sty"
@@ -571,11 +699,10 @@ def audit_sources(curriculum_root: Path) -> SourceAudit:
         errors.append(str(error))
 
     rows = _registry_rows(curriculum_root)
-    if len(rows) != 46:
-        errors.append(
-            "curriculum registry must contain 46 learning-module rows; "
-            f"found {len(rows)}"
-        )
+    try:
+        _validate_registry_shape(rows)
+    except StructureError as error:
+        errors.append(str(error))
 
     row_by_leaf: dict[str, tuple[str, str, tuple[str, ...]]] = {}
     module_ids: set[str] = set()
@@ -587,19 +714,30 @@ def audit_sources(curriculum_root: Path) -> SourceAudit:
         if module_id in module_ids:
             errors.append(f"curriculum registry repeats module ID {module_id}")
         module_ids.add(module_id)
-        if owner_unit in owner_units:
-            errors.append(f"curriculum registry repeats owner unit {owner_unit}")
-        owner_units.add(owner_unit)
-        if len(worksheet_ids) != 2 or len(set(worksheet_ids)) != 2:
+        row_units = tuple(
+            unit.strip() for unit in owner_unit.split(",") if unit.strip()
+        )
+        if not row_units:
+            errors.append(f"curriculum registry {module_id} has no teaching units")
+        for unit in row_units:
+            if unit in owner_units:
+                errors.append(f"curriculum registry repeats owner unit {unit}")
+            owner_units.add(unit)
+        expected_worksheet_count = 4 * len(row_units)
+        if (
+            len(worksheet_ids) != expected_worksheet_count
+            or len(set(worksheet_ids)) != expected_worksheet_count
+        ):
             errors.append(
-                f"curriculum registry {module_id} must select two distinct worksheets; "
+                f"curriculum registry {module_id} must list all four worksheets "
+                f"for each of its {len(row_units)} units; "
                 f"found {worksheet_ids!r}"
             )
 
     stages = {"01-foundations", "02-core-grammar", "03-missal-reading", "04-advanced"}
     module_paths = sorted(
         path
-        for path in curriculum_root.glob("[0-9][0-9]-*/*/module-data.tex")
+        for path in curriculum_root.rglob("module-data.tex")
         if path.relative_to(curriculum_root).parts[0] in stages
     )
     discovered_leaves = {
@@ -613,6 +751,7 @@ def audit_sources(curriculum_root: Path) -> SourceAudit:
 
     expected_companions = {
         "00-course-guide",
+        "00-memory-workbook",
         "00-reference-grammar",
         "05-stage-assessments/01-foundations",
         "05-stage-assessments/02-core-grammar",
@@ -706,6 +845,7 @@ def audit_sources(curriculum_root: Path) -> SourceAudit:
         try:
             text = _strip_tex_comments(path.read_text(encoding="utf-8"))
             module_id = _macro_value(text, "ModuleID", path)
+            _validate_module_key_alignment(text, path, module_id)
             owner_unit = _macro_value(text, "ModuleUnit", path)
             lesson_value = _macro_value(text, "ModuleLessonSource", path)
             exercise_value = _macro_value(text, "ModuleExerciseSource", path)
@@ -729,52 +869,60 @@ def audit_sources(curriculum_root: Path) -> SourceAudit:
             errors.append(
                 f"{path}: ModuleUnit {owner_unit!r} != registry {expected_unit!r}"
             )
-        if len(variants) != 2 or len(set(variants)) != 2:
+        if variants != ("A", "B", "C", "D"):
             errors.append(
-                f"{path}: ModuleWorksheetVariants must select two distinct variants; "
+                f"{path}: ModuleWorksheetVariants must select A,B,C,D in order; "
                 f"found {variants!r}"
             )
 
         try:
             lesson_units = cached_course_units(lesson_path)
             exercise_units = cached_course_units(exercise_path)
-            if owner_unit not in lesson_units:
-                errors.append(f"{path}: lesson source lacks courseunit {owner_unit}")
-            exercise_block = exercise_units.get(owner_unit)
-            if exercise_block is None:
-                errors.append(f"{path}: exercise source lacks courseunit {owner_unit}")
-                continue
-            definitions = _worksheet_definitions(exercise_block, exercise_path, owner_unit)
         except StructureError as error:
             errors.append(str(error))
             continue
 
         selected_ids: list[str] = []
-        for variant in variants:
-            worksheet_id = definitions.get(variant)
-            if worksheet_id is None:
-                errors.append(
-                    f"{path}: courseunit {owner_unit} has no worksheet variant {variant}"
-                )
+        for unit in (item.strip() for item in owner_unit.split(",") if item.strip()):
+            if unit not in lesson_units:
+                errors.append(f"{path}: lesson source lacks courseunit {unit}")
                 continue
-            selected_ids.append(worksheet_id)
+            exercise_block = exercise_units.get(unit)
+            if exercise_block is None:
+                errors.append(f"{path}: exercise source lacks courseunit {unit}")
+                continue
+            try:
+                definitions = _worksheet_definitions(
+                    exercise_block, exercise_path, unit
+                )
+            except StructureError as error:
+                errors.append(str(error))
+                continue
+            for variant in variants:
+                worksheet_id = definitions.get(variant)
+                if worksheet_id is None:
+                    errors.append(
+                        f"{path}: courseunit {unit} has no worksheet variant {variant}"
+                    )
+                    continue
+                selected_ids.append(worksheet_id)
+            for worksheet_id in definitions.values():
+                previous = all_worksheet_ids.get(worksheet_id)
+                if previous is not None:
+                    errors.append(
+                        f"worksheet ID {worksheet_id} is duplicated in "
+                        f"{previous[0]} ({previous[1]}) and {exercise_path} ({unit})"
+                    )
+                all_worksheet_ids[worksheet_id] = (exercise_path, unit)
         if tuple(selected_ids) != expected_worksheets:
             errors.append(
                 f"{path}: selected worksheet IDs {tuple(selected_ids)!r} != registry "
                 f"{expected_worksheets!r}"
             )
-        for worksheet_id in definitions.values():
-            previous = all_worksheet_ids.get(worksheet_id)
-            if previous is not None:
-                errors.append(
-                    f"worksheet ID {worksheet_id} is duplicated in "
-                    f"{previous[0]} ({previous[1]}) and {exercise_path} ({owner_unit})"
-                )
-            all_worksheet_ids[worksheet_id] = (exercise_path, owner_unit)
 
-    if len(all_worksheet_ids) != 184:
+    if len(all_worksheet_ids) != 216:
         errors.append(
-            "shared exercise definitions must contain 184 unique worksheet IDs; "
+            "shared exercise definitions must contain 216 unique worksheet IDs; "
             f"found {len(all_worksheet_ids)}"
         )
 
@@ -1459,13 +1607,13 @@ def validate_fragmentary_pages(
             )
         if (
             is_module
-            and ADVANCE_WHEN_MARKER.search(page) is not None
-            and word_count < MINIMUM_ADVANCE_PAGE_WORDS
+            and READINESS_MARKER.search(page) is not None
+            and word_count < MINIMUM_READINESS_PAGE_WORDS
         ):
             errors.append(
-                f"module physical page {physical_page} contains Advance when: "
+                f"module physical page {physical_page} contains Before continuing "
                 f"but only {word_count} words; expected at least "
-                f"{MINIMUM_ADVANCE_PAGE_WORDS}"
+                f"{MINIMUM_READINESS_PAGE_WORDS}"
             )
         if (
             _form_marker_near_page_top(page)
@@ -1489,9 +1637,7 @@ def validate_pdf(
     extracted = _run_text(
         ("pdftotext", "-layout", str(pdf_path), "-"), "PDF text extraction"
     )
-    validate_toc_rendering(
-        extracted, entries, require_single_page=_is_module(document)
-    )
+    validate_toc_rendering(extracted, entries, require_single_page=False)
     validate_fragmentary_pages(extracted, is_module=_is_module(document))
 
     bbox_text = _run_text(
@@ -1737,7 +1883,7 @@ def _entries_by_part(
     return result
 
 
-def _validate_module(
+def _validate_legacy_module(
     entries: Sequence[TocEntry],
     bookmarks: Sequence[Bookmark],
     part_titles: Sequence[str],
@@ -1880,6 +2026,187 @@ def _validate_module(
                 )
 
 
+def _validate_module(
+    document: str,
+    entries: Sequence[TocEntry],
+    bookmarks: Sequence[Bookmark],
+    part_titles: Sequence[str],
+    part_indexes: Sequence[int],
+    errors: list[str],
+    expected_module: tuple[tuple[str, ...], tuple[str, ...]] | None = None,
+) -> None:
+    """Validate a grouped self-paced teaching or poetry packet."""
+    if tuple(part_titles) != MODULE_PARTS:
+        errors.append(
+            "learning packet Parts differ from the declared sequence: "
+            + " / ".join(part_titles)
+        )
+        return
+
+    parts = _entries_by_part(entries, part_indexes)
+    teaching_chapters = [
+        entry
+        for entry in parts[0]
+        if entry.kind == "chapter" and entry.number is not None
+    ]
+    practice_part = parts[3]
+    answer_part = parts[4]
+    bookmark_by_destination = {
+        bookmark.destination: bookmark for bookmark in bookmarks
+    }
+    chapter_by_destination = {
+        entry.destination: entry
+        for entry in entries
+        if entry.kind == "chapter" and entry.number is not None
+    }
+
+    worksheet_prefix = "worksheet "
+    solution_prefix = "solution "
+    worksheets = [
+        entry
+        for entry in practice_part
+        if entry.kind == "section"
+        and _normalized_title(entry.title).casefold().startswith(worksheet_prefix)
+    ]
+    solutions = [
+        entry
+        for entry in answer_part
+        if entry.kind == "section"
+        and _normalized_title(entry.title).casefold().startswith(solution_prefix)
+    ]
+    if not worksheets:
+        errors.append("Cumulative Practice contains no worksheet sections")
+        return
+    if len(worksheets) % 4:
+        errors.append(
+            "Cumulative Practice must expose four worksheet variants per "
+            f"teaching unit; found {len(worksheets)} sections"
+        )
+    if len(solutions) != len(worksheets):
+        errors.append(
+            "Answers and Models must expose one solution for every worksheet; "
+            f"found {len(solutions)} solutions for {len(worksheets)} worksheets"
+        )
+
+    worksheet_labels = [
+        _normalized_title(entry.title)[len(worksheet_prefix) :]
+        for entry in worksheets
+    ]
+    solution_labels = [
+        _normalized_title(entry.title)[len(solution_prefix) :]
+        for entry in solutions
+    ]
+    if worksheet_labels != solution_labels:
+        errors.append(
+            "worksheet and solution section IDs/titles differ: "
+            f"{worksheet_labels!r} != {solution_labels!r}"
+        )
+    rendered_worksheet_ids = tuple(
+        label.split(" — ", 1)[0].strip() for label in worksheet_labels
+    )
+    if any(entry.number is not None for entry in worksheets + solutions):
+        errors.append("worksheet and solution navigation entries must be unnumbered")
+
+    def grouped_parents(
+        rendered_entries: Sequence[TocEntry], label: str
+    ) -> list[str]:
+        groups: list[str] = []
+        counts: dict[str, int] = {}
+        for entry in rendered_entries:
+            bookmark = bookmark_by_destination.get(entry.destination)
+            if bookmark is None:
+                continue
+            parent = bookmark.parent
+            if parent not in counts:
+                groups.append(parent)
+                counts[parent] = 0
+            counts[parent] += 1
+            if parent not in chapter_by_destination:
+                errors.append(
+                    f"{label} {entry.destination} has no numbered unit-chapter parent"
+                )
+        for parent in groups:
+            if counts[parent] != 4:
+                title = _normalized_title(
+                    chapter_by_destination.get(parent, TocEntry("chapter", parent, parent, None)).title
+                )
+                errors.append(
+                    f"{label} unit {title!r} must contain four A–D forms; "
+                    f"found {counts[parent]}"
+                )
+        return groups
+
+    worksheet_parents = grouped_parents(worksheets, "worksheet")
+    solution_parents = grouped_parents(solutions, "solution")
+    is_poetry = document.startswith(
+        f"{CURRICULUM_PREFIX}04-advanced/poetry/"
+    )
+    allowed_unit_counts = {1} if is_poetry else {2, 3}
+    if len(worksheet_parents) not in allowed_unit_counts:
+        packet_kind = "poetry" if is_poetry else "common-trunk"
+        errors.append(
+            f"a {packet_kind} packet must render "
+            f"{'one' if is_poetry else 'two or three'} teaching units; "
+            f"found {len(worksheet_parents)} worksheet units"
+        )
+    if len(teaching_chapters) != len(worksheet_parents):
+        errors.append(
+            "Teaching and Cumulative Practice must render the same number of "
+            f"source units; found {len(teaching_chapters)} teaching chapters "
+            f"and {len(worksheet_parents)} worksheet units"
+        )
+    if expected_module is not None:
+        expected_units, expected_worksheet_ids = expected_module
+        if len(teaching_chapters) != len(expected_units):
+            errors.append(
+                f"rendered Teaching unit count differs from registry {expected_units!r}: "
+                f"found {len(teaching_chapters)}"
+            )
+        if len(worksheet_parents) != len(expected_units):
+            errors.append(
+                f"rendered worksheet-unit count differs from registry "
+                f"{expected_units!r}: found {len(worksheet_parents)}"
+            )
+        if rendered_worksheet_ids != expected_worksheet_ids:
+            errors.append(
+                "rendered worksheet IDs differ from the canonical registry: "
+                f"{rendered_worksheet_ids!r} != {expected_worksheet_ids!r}"
+            )
+    worksheet_parent_titles = [
+        _normalized_title(chapter_by_destination[parent].title)
+        for parent in worksheet_parents
+        if parent in chapter_by_destination
+    ]
+    solution_parent_titles = [
+        _normalized_title(chapter_by_destination[parent].title)
+        for parent in solution_parents
+        if parent in chapter_by_destination
+    ]
+    if worksheet_parent_titles != solution_parent_titles:
+        errors.append(
+            "source-owned worksheet and solution unit chapters differ: "
+            f"{worksheet_parent_titles!r} != {solution_parent_titles!r}"
+        )
+
+    for label, rendered_entries in (
+        ("learner worksheets", worksheets),
+        ("keyed solutions", solutions),
+    ):
+        pages = [entry.page for entry in rendered_entries]
+        try:
+            numeric_pages = [int(page) for page in pages]
+        except ValueError:
+            numeric_pages = []
+        if len(numeric_pages) != len(pages) or any(
+            later <= earlier
+            for earlier, later in zip(numeric_pages, numeric_pages[1:])
+        ):
+            errors.append(
+                f"later {label} must start on a strictly later logical page; "
+                f"found {pages!r}"
+            )
+
+
 def _validate_assessment(
     document: str,
     entries: Sequence[TocEntry],
@@ -1888,9 +2215,10 @@ def _validate_assessment(
     part_indexes: Sequence[int],
     errors: list[str],
 ) -> None:
-    if tuple(part_titles) != ASSESSMENT_PARTS:
+    rendered_parts = tuple(part_titles)
+    if rendered_parts not in {ASSESSMENT_PARTS, ASSESSMENT_PARTS_WITH_SOURCES}:
         errors.append(
-            "stage assessment Parts differ from the required sequence: "
+            "cumulative-review Parts differ from the declared sequence: "
             + " / ".join(part_titles)
         )
         return
@@ -1899,9 +2227,15 @@ def _validate_assessment(
     if expectation is None:
         errors.append(f"unknown stage-assessment leaf {leaf!r}")
         return
-    expected_gate, expected_forms = expectation
+    expected_group, expected_forms = expectation
     parts = _entries_by_part(entries, part_indexes)
-    protocol_titles = ("Common assessment protocol", "Scoring and remediation map")
+    review_part_index = 2 if rendered_parts == ASSESSMENT_PARTS_WITH_SOURCES else 1
+    answer_part_index = review_part_index + 1
+    protocol_titles = (
+        "Purpose and method",
+        "Common self-review method",
+        "Reading the result qualitatively",
+    )
     for required_title in protocol_titles:
         protocol_matches = [
             entry
@@ -1925,20 +2259,20 @@ def _validate_assessment(
         bookmark.destination: bookmark for bookmark in bookmarks
     }
     for label, assessment_part in zip(
-        ("Learner Forms", "Solutions and Rubrics"), (parts[1], parts[2])
+        ("Review Forms", "Answers and Models"),
+        (parts[review_part_index], parts[answer_part_index]),
     ):
-        gates = [
+        groups = [
             entry
             for entry in assessment_part
-            if _normalized_title(entry.title).casefold().startswith("gate ")
+            if entry.kind == "chapter"
+            and entry.number is not None
         ]
-        gate_titles = [_normalized_title(entry.title) for entry in gates]
-        if gate_titles != [expected_gate]:
+        group_titles = [_normalized_title(entry.title) for entry in groups]
+        if group_titles != [expected_group]:
             errors.append(
-                f"{label} must render only {expected_gate!r}; found {gate_titles!r}"
+                f"{label} must render only {expected_group!r}; found {group_titles!r}"
             )
-        if any(entry.kind != "chapter" or entry.number is None for entry in gates):
-            errors.append(f"{label} gate must be one numbered chapter")
 
         forms = []
         for entry in assessment_part:
@@ -1953,20 +2287,24 @@ def _validate_assessment(
                 f"{list(expected_forms)!r}, found {found_forms!r}"
             )
         if any(entry.kind != "section" or entry.number is not None for _, entry in forms):
-            errors.append(f"{label} forms must be unnumbered sections under their gate")
-        if len(gates) == 1:
-            gate_parent = gates[0].destination
+            errors.append(f"{label} forms must be unnumbered sections under their review group")
+        if len(groups) == 1:
+            group_parent = groups[0].destination
             for form_id, entry in forms:
                 bookmark = bookmark_by_destination.get(entry.destination)
-                if bookmark is not None and bookmark.parent != gate_parent:
+                if bookmark is not None and bookmark.parent != group_parent:
                     errors.append(
                         f"{label} form {form_id} has bookmark parent "
-                        f"{bookmark.parent!r}; expected gate {gate_parent!r}"
+                        f"{bookmark.parent!r}; expected review group {group_parent!r}"
                     )
 
 
 def validate_document(
-    document: str, toc_entries: Sequence[TocEntry], bookmarks: Sequence[Bookmark]
+    document: str,
+    toc_entries: Sequence[TocEntry],
+    bookmarks: Sequence[Bookmark],
+    *,
+    expected_module: tuple[tuple[str, ...], tuple[str, ...]] | None = None,
 ) -> None:
     errors: list[str] = []
     if not document.startswith(CURRICULUM_PREFIX):
@@ -2006,7 +2344,15 @@ def validate_document(
     _validate_numbers(toc_entries, errors)
     _validate_bookmarks(toc_entries, bookmarks, errors)
     if _is_module(document):
-        _validate_module(toc_entries, bookmarks, part_titles, part_indexes, errors)
+        _validate_module(
+            document,
+            toc_entries,
+            bookmarks,
+            part_titles,
+            part_indexes,
+            errors,
+            expected_module,
+        )
     elif _is_assessment(document):
         _validate_assessment(
             document, toc_entries, bookmarks, part_titles, part_indexes, errors
@@ -2017,7 +2363,11 @@ def validate_document(
 
 
 def check_files(
-    document: str, toc_path: Path, out_path: Path, pdf_path: Path
+    curriculum_root: Path,
+    document: str,
+    toc_path: Path,
+    out_path: Path,
+    pdf_path: Path,
 ) -> None:
     try:
         toc_text = toc_path.read_text(encoding="utf-8")
@@ -2028,7 +2378,30 @@ def check_files(
     except (OSError, UnicodeError) as error:
         raise StructureError(f"cannot read {out_path}: {error}") from error
     entries = parse_toc(toc_text)
-    validate_document(document, entries, parse_bookmarks(out_text))
+    expected_module = None
+    if _is_module(document):
+        leaf = document.removeprefix(CURRICULUM_PREFIX)
+        matching_rows = [
+            (owner_unit, worksheet_ids)
+            for _, owner_unit, worksheet_ids, row_leaf in _registry_rows(curriculum_root)
+            if row_leaf == leaf
+        ]
+        if len(matching_rows) != 1:
+            raise StructureError(
+                f"rendered module {leaf!r} must have exactly one registry row; "
+                f"found {len(matching_rows)}"
+            )
+        owner_unit, worksheet_ids = matching_rows[0]
+        expected_module = (
+            tuple(unit.strip() for unit in owner_unit.split(",") if unit.strip()),
+            worksheet_ids,
+        )
+    validate_document(
+        document,
+        entries,
+        parse_bookmarks(out_text),
+        expected_module=expected_module,
+    )
     validate_pdf(document, pdf_path, entries)
 
 
@@ -2059,7 +2432,13 @@ def main(argv: Sequence[str] | None = None) -> int:
         if not arguments.skip_source_audit:
             audit_sources(arguments.curriculum_root)
         if not arguments.sources_only:
-            check_files(arguments.document, arguments.toc, arguments.out, arguments.pdf)
+            check_files(
+                arguments.curriculum_root,
+                arguments.document,
+                arguments.toc,
+                arguments.out,
+                arguments.pdf,
+            )
     except StructureError as error:
         context = arguments.document or "curriculum sources"
         for message in str(error).splitlines():

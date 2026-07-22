@@ -1,0 +1,48 @@
+% Stable render API for the common-trunk readers and cumulative source sets.
+% course-format.sty supplies courseunit and the CSV selector used for M packets.
+
+\providecommand{\SelectedReviewSources}{none}
+\newcommand{\SelectReviewSources}[1]{\renewcommand{\SelectedReviewSources}{#1}}
+
+\NewEnviron{reviewsourceunit}[1]{%
+  \IfStrEq{\SelectedReviewSources}{all}{\CourseUnitOpeningGuard\BODY}{%
+    \IfSubStr{,\SelectedReviewSources,}{,#1,}{\CourseUnitOpeningGuard\BODY}{}%
+  }%
+}
+
+% Render one or more comma-separated M keys. M18 carries all four complete
+% formularies: two guided readings followed by two delayed cumulative texts.
+% M21 and M22 each carry the one complete formulary named by their local work.
+% The same stable blocks remain independently reusable through the review API.
+\renewcommand{\RenderModuleReaderSet}[1]{%
+  \begingroup
+    \SelectCourseUnits{#1}%
+    \SelectReviewSources{none}%
+    \input{\CourseRoot/shared/content/readers/all}%
+    \IfSubStr{,#1,}{,M18,}{%
+      \SelectCourseUnits{none}%
+      \SelectReviewSources{MR62-FORM-ADV1,MR62-FORM-PENT,MR62-FORM-XII-PENT,MR62-FORM-XXIII-PENT}%
+      \input{\CourseRoot/shared/content/readers/all}%
+    }{}%
+    \IfStrEq{#1}{M21}{%
+      \SelectCourseUnits{none}%
+      \SelectReviewSources{MR62-FORM-XII-PENT}%
+      \input{\CourseRoot/shared/content/readers/all}%
+    }{}%
+    \IfStrEq{#1}{M22}{%
+      \SelectCourseUnits{none}%
+      \SelectReviewSources{MR62-FORM-XXIII-PENT}%
+      \input{\CourseRoot/shared/content/readers/all}%
+    }{}%
+  \endgroup
+}
+
+% Render any comma-separated subset of the four stable formulary IDs without
+% also printing an M lesson.
+\providecommand{\RenderReviewSourceSet}[1]{%
+  \begingroup
+    \SelectCourseUnits{none}%
+    \SelectReviewSources{#1}%
+    \input{\CourseRoot/shared/content/readers/all}%
+  \endgroup
+}

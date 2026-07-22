@@ -1,0 +1,124 @@
+% Stable packet allocations and recurrence-by-study-event map.
+% N = first study; R1 = next packet; R2 = two packets later; R5 = five
+% packets later; S = broad cumulative return at a stage boundary.
+
+\newcounter{MemorySetCount}
+
+% Convert CSV allocations to flat callback sequences while the registry loads,
+% before any alignment begins. Runtime CSV parsers leave recursive conditionals
+% around table rows and are unsafe in xltabular/longtable alignments.
+\newcommand{\DeclareMemoryIDSequence}[3]{%
+  \csgdef{memory@set@#1@#2sequence}{}%
+  \def\do##1{%
+    \csgappto{memory@set@#1@#2sequence}{\MemorySequenceItem{##1}}}%
+  \docsvlist{#3}%
+}
+
+\newcommand{\DeclareMemorySet}[8]{%
+  \ifcsdef{memory@set@#1@title}{%
+    \PackageError{memory-registry}{Duplicate memory set ID #1}{}%
+  }{%
+    \stepcounter{MemorySetCount}%
+    \csdef{memory@set@#1@title}{#2}%
+    \csdef{memory@set@#1@new}{#3}%
+    \csdef{memory@set@#1@rone}{#4}%
+    \csdef{memory@set@#1@rtwo}{#5}%
+    \csdef{memory@set@#1@rfive}{#6}%
+    \csdef{memory@set@#1@stage}{#7}%
+    \csdef{memory@set@#1@grammar}{#8}%
+    \DeclareMemoryIDSequence{#1}{new}{#3}%
+    \DeclareMemoryIDSequence{#1}{rone}{#4}%
+    \DeclareMemoryIDSequence{#1}{rtwo}{#5}%
+    \DeclareMemoryIDSequence{#1}{rfive}{#6}%
+    \DeclareMemoryIDSequence{#1}{stage}{#7}%
+    \DeclareMemoryIDSequence{#1}{grammar}{#8}%
+  }%
+}
+
+\newcommand{\DeclareMemoryPrompts}[5]{%
+  \ifcsdef{memory@set@#1@reconstruction}{%
+    \PackageError{memory-registry}{Duplicate memory prompt set #1}{}%
+  }{%
+    \csdef{memory@set@#1@reconstruction}{#2}%
+    \csdef{memory@set@#1@reconstructionmodel}{#3}%
+    \csdef{memory@set@#1@composition}{#4}%
+    \csdef{memory@set@#1@compositionmodel}{#5}%
+  }%
+}
+
+\newcommand{\MemorySetField}[2]{%
+  \ifcsdef{memory@set@#1@#2}{%
+    \csuse{memory@set@#1@#2}%
+  }{%
+    \PackageError{memory-registry}{Unknown memory set ID or field #1/#2}{}%
+  }%
+}
+
+\newcommand{\MemoryAllTrunkSets}{M01,M02,M03,M04,M05,M06,M07,M08,M09,M10,M11,M12,M13,M14,M15,M16,M17,M18,M19,M20,M21,M22}
+\newcommand{\MemoryAllPoetrySets}{P1,P2,P3,P4,P5,P6,P7,P8}
+\newcommand{\MemoryAllSets}{\MemoryAllTrunkSets,\MemoryAllPoetrySets}
+
+\DeclareMemorySet{M01}{Form, Case, and Agreement}{L001,L002,L003,L004,L005,L006,L007,L008,L193,L194,L195,L196,L197,L198,L199,L200,L201,L202,L203,L204,L205,L206,L207,L208,L209}{}{}{}{}{G001,G002,G003,G004,G005,G006}
+\DeclareMemorySet{M02}{Noun Systems}{L009,L010,L011,L012,L013,L014,L015,L016,L210,L211,L212,L213,L214,L215,L216,L217,L218,L219,L220,L221,L222,L223,L224,L225,L226}{L001,L002,L003,L004,L193,L197,L202,L209}{}{}{}{G007,G008,G009,G010,G011,G012}
+\DeclareMemorySet{M03}{Nouns and Adjectives}{L017,L018,L019,L020,L021,L022,L023,L024,L227,L228,L229,L230,L231,L232,L233,L234,L235,L236,L237,L238,L239,L240,L241,L242,L243}{L009,L010,L011,L012,L210,L215,L223,L226}{L005,L006,L007,L008,L194,L199,L206,L208}{}{}{G009,G013,G014,G015}
+\DeclareMemorySet{M04}{Being and Present Action}{L025,L026,L027,L028,L029,L030,L031,L032,L244,L245,L246,L247,L248,L249,L250,L251,L252,L253,L254,L255,L256,L257,L258,L259,L260}{L017,L018,L019,L020,L227,L229,L234,L243}{L013,L014,L015,L016,L211,L217,L224,L225}{}{}{G016,G017,G018,G019,G020,G021}
+\DeclareMemorySet{M05}{Perfect, Passive, and Deponents}{L033,L034,L035,L036,L037,L038,L039,L040,L261,L262,L263,L264,L265,L266,L267,L268,L269,L270,L271,L272,L273,L274,L275,L276,L277}{L025,L026,L027,L028,L244,L248,L254,L260}{L021,L022,L023,L024,L228,L230,L237,L240}{}{}{G022,G023,G024,G025,G026,G027}
+\DeclareMemorySet{M06}{Pronouns, Prepositions, and Reading}{L041,L042,L043,L044,L045,L046,L047,L048,L278,L279,L280,L281,L282,L283,L284,L285,L286,L287,L288,L289,L290,L291,L292,L293,L294}{L033,L034,L035,L036,L261,L268,L274,L277}{L029,L030,L031,L032,L245,L249,L255,L258}{L001,L002,L003,L004,L193,L200,L202,L209}{L005,L012,L019,L026,L033,L040,L194,L210,L227,L244}{G028,G029,G030,G031,G032,G033,G051,G052,G077}
+\DeclareMemorySet{M07}{Reference, Comparison, and Number}{L049,L050,L051,L052,L053,L054,L055,L056,L295,L296,L297,L298,L299,L300,L301,L302,L303,L304,L305,L306,L307,L308,L309,L310,L311}{L041,L042,L043,L044,L278,L283,L289,L294}{L037,L038,L039,L040,L263,L270,L275,L277}{L009,L010,L011,L012,L211,L218,L223,L226}{}{G029,G030,G073,G074}
+\DeclareMemorySet{M08}{Infinitives, Participles, and Absolutes}{L057,L058,L059,L060,L061,L062,L063,L064,L312,L313,L314,L315,L316,L317,L318,L319,L320,L321,L322,L323,L324,L325,L326,L327,L328}{L049,L050,L051,L052,L295,L300,L303,L311}{L045,L046,L047,L048,L279,L284,L290,L293}{L017,L018,L019,L020,L229,L233,L237,L243}{}{G034,G035,G036,G037,G038}
+\DeclareMemorySet{M09}{Subjunctive System, Purpose, and Result}{L065,L066,L067,L068,L069,L070,L071,L072,L329,L330,L331,L332,L333,L334,L335,L336,L337,L338,L339,L340,L341,L342,L343,L344,L345}{L057,L058,L059,L060,L312,L316,L323,L326}{L053,L054,L055,L056,L296,L302,L305,L310}{L025,L026,L027,L028,L245,L250,L254,L260}{}{G039,G040,G041,G042,G043}
+\DeclareMemorySet{M10}{Circumstance, Conditions, and Characteristic}{L073,L074,L075,L076,L077,L078,L079,L080,L346,L347,L348,L349,L350,L351,L352,L353,L354,L355,L356,L357,L358,L359,L360,L361,L362}{L065,L066,L067,L068,L329,L332,L336,L343}{L061,L062,L063,L064,L314,L318,L324,L327}{L033,L034,L035,L036,L262,L268,L274,L276}{}{G044,G045,G046,G075}
+\DeclareMemorySet{M11}{Commands, Wishes, and Verbal Nouns}{L081,L082,L083,L084,L085,L086,L087,L088,L363,L364,L365,L366,L367,L368,L369,L370,L371,L372,L373,L374,L375,L376,L377,L378,L379}{L073,L074,L075,L076,L346,L351,L355,L360}{L069,L070,L071,L072,L330,L333,L340,L344}{L041,L042,L043,L044,L278,L283,L289,L294}{L001,L015,L024,L031,L038,L047,L055,L064,L070,L079,L193,L210,L227,L244}{G046,G047,G048,G076}
+\DeclareMemorySet{M12}{Adverbial Cases, Order, and Compression}{L089,L090,L091,L092,L093,L094,L095,L096,L380,L381,L382,L383,L384,L385,L386,L387,L388,L389,L390,L391,L392,L393,L394,L395,L396}{L081,L082,L083,L084,L363,L366,L369,L375}{L077,L078,L079,L080,L347,L352,L357,L362}{L049,L050,L051,L052,L295,L300,L303,L310}{}{G049,G050,G051,G052}
+\DeclareMemorySet{M13}{Reader Method and the Ordinary}{L097,L098,L099,L100,L101,L102,L103,L104,L397,L398,L399,L400,L401,L402,L403,L404,L405,L406,L407,L408,L409,L410,L411,L412,L413}{L089,L090,L091,L092,L380,L385,L391,L396}{L085,L086,L087,L088,L364,L367,L370,L378}{L057,L058,L059,L060,L312,L316,L323,L326}{}{G051,G052,G054,G056,G077}
+\DeclareMemorySet{M14}{Orations and Petitions}{L105,L106,L107,L108,L109,L110,L111,L112,L414,L415,L416,L417,L418,L419,L420,L421,L422,L423,L424,L425,L426,L427,L428,L429,L430}{L097,L098,L099,L100,L397,L402,L407,L413}{L093,L094,L095,L096,L381,L387,L393,L395}{L065,L066,L067,L068,L329,L332,L336,L343}{}{G041,G042,G053,G078}
+\DeclareMemorySet{M15}{Lessons, Epistles, and Gospels}{L113,L114,L115,L116,L117,L118,L119,L120,L431,L432,L433,L434,L435,L436,L437,L438,L439,L440,L441,L442,L443,L444,L445,L446,L447}{L105,L106,L107,L108,L414,L418,L425,L430}{L101,L102,L103,L104,L398,L403,L408,L411}{L073,L074,L075,L076,L346,L351,L355,L360}{}{G034,G035,G037,G044,G050}
+\DeclareMemorySet{M16}{Chants, Prefaces, and the Canon}{L121,L122,L123,L124,L125,L126,L127,L128,L448,L449,L450,L451,L452,L453,L454,L455,L456,L457,L458,L459,L460,L461,L462,L463,L464}{L113,L114,L115,L116,L431,L434,L438,L447}{L109,L110,L111,L112,L415,L419,L426,L429}{L081,L082,L083,L084,L363,L366,L371,L375}{L089,L097,L105,L113,L120,L031,L064,L079,L397,L414,L431,L448}{G051,G052,G054,G057,G079}
+\DeclareMemorySet{M17}{Temporal, Sanctoral, and Commons}{L129,L130,L131,L132,L133,L134,L135,L136,L465,L466,L467,L468,L469,L470,L471,L472,L473,L474,L475,L476,L477,L478,L479,L480,L481}{L121,L122,L123,L124,L448,L451,L458,L464}{L117,L118,L119,L120,L432,L435,L439,L446}{L089,L090,L091,L092,L380,L385,L391,L396}{}{G028,G029,G030,G053,G054}
+\DeclareMemorySet{M18}{Holy Week, Requiem, and the Complete Mass}{L137,L138,L139,L140,L141,L142,L143,L144,L482,L483,L484,L485,L486,L487,L488,L489,L490,L491,L492,L493,L494,L495,L496,L497,L498}{L129,L130,L131,L132,L465,L471,L475,L481}{L125,L126,L127,L128,L449,L455,L460,L463}{L097,L098,L099,L100,L397,L402,L407,L413}{}{G050,G051,G052,G056,G077}
+\DeclareMemorySet{M19}{Register and Biblical Texture}{L145,L146,L147,L148,L149,L150,L151,L152,L499,L500,L501,L502,L503,L504,L505,L506,L507,L508,L509,L510,L511,L512,L513,L514,L515}{L137,L138,L139,L140,L482,L485,L490,L495}{L133,L134,L135,L136,L466,L472,L477,L479}{L105,L106,L107,L108,L414,L418,L425,L430}{}{G033,G044,G054,G056}
+\DeclareMemorySet{M20}{Allusion, Rhetoric, and Periodic Prose}{L153,L154,L155,L156,L157,L158,L159,L160,L516,L517,L518,L519,L520,L521,L522,L523,L524,L525,L526,L527,L528,L529,L530,L531,L532}{L145,L146,L147,L148,L499,L502,L511,L515}{L141,L142,L143,L144,L483,L486,L491,L497}{L113,L114,L115,L116,L431,L434,L438,L447}{}{G051,G056,G070,G079}
+\DeclareMemorySet{M21}{Collation and Controlled Imitation}{L161,L162,L163,L164,L165,L166,L167,L168,L533,L534,L535,L536,L537,L538,L539,L540,L541,L542,L543,L544,L545,L546,L547,L548,L549}{L153,L154,L155,L156,L516,L520,L526,L532}{L149,L150,L151,L152,L500,L503,L509,L514}{L121,L122,L123,L124,L448,L455,L461,L464}{}{G051,G055,G056,G080}
+\DeclareMemorySet{M22}{Guided Composition and Independent Research}{L169,L170,L171,L172,L173,L174,L175,L176,L550,L551,L552,L553,L554,L555,L556,L557,L558,L559,L560,L561,L562,L563,L564,L565,L566}{L161,L162,L163,L164,L533,L538,L544,L549}{L157,L158,L159,L160,L517,L521,L527,L530}{L129,L130,L131,L132,L465,L471,L475,L481}{L081,L092,L103,L114,L125,L134,L142,L151,L160,L168,L482,L499,L516,L533}{G055,G056,G081}
+
+\DeclareMemorySet{P1}{Textual Prosody}{L177,L178,L567,L568,L569,L570}{L169,L170,L171,L172,L550,L558,L563,L566}{L165,L166,L167,L168,L533,L538,L544,L549}{L145,L146,L147,L148,L499,L502,L511,L515}{}{G057,G058,G059,G060,G061}
+\DeclareMemorySet{P2}{Hexameter}{L179,L180,L571,L572,L573,L574}{L177,L178,L567,L568,L569,L570}{L169,L170,L171,L172,L550,L558,L563,L566}{L137,L138,L139,L140,L482,L485,L490,L495}{}{G060,G061,G062,G063}
+\DeclareMemorySet{P3}{Elegiac Verse}{L181,L182,L575,L576,L577,L578}{L177,L178,L179,L180,L567,L570,L571,L573}{L169,L170,L171,L172,L550,L558,L563,L566}{L121,L122,L125,L130,L448,L455,L458,L464}{}{G063,G064,G065}
+\DeclareMemorySet{P4}{Lyric Meters}{L183,L184,L579,L580,L581,L582}{L181,L182,L575,L576,L577,L578}{L179,L180,L571,L572,L573,L574}{L113,L120,L121,L130,L431,L434,L438,L447}{}{G059,G060,G066}
+\DeclareMemorySet{P5}{Christian Poetics}{L185,L186,L583,L584,L585,L586}{L183,L184,L579,L580,L581,L582}{L181,L182,L575,L576,L577,L578}{L177,L178,L179,L180,L567,L570,L571,L573}{}{G067,G068,G069,G070}
+\DeclareMemorySet{P6}{Rhythmic Hymnody and Sequences}{L187,L188,L587,L588,L589,L590}{L185,L186,L583,L584,L585,L586}{L183,L184,L579,L580,L581,L582}{L113,L127,L167,L168,L431,L448,L533,L550}{}{G068,G069,G070,G071}
+\DeclareMemorySet{P7}{Poetic Commentary}{L189,L190,L591,L592,L593,L594}{L187,L188,L587,L588,L589,L590}{L185,L186,L583,L584,L585,L586}{L177,L178,L179,L180,L567,L570,L571,L573}{}{G056,G063,G064,G069,G070}
+\DeclareMemorySet{P8}{Verse Composition}{L191,L192,L595,L596,L597,L598}{L189,L190,L591,L592,L593,L594}{L187,L188,L587,L588,L589,L590}{L181,L182,L183,L184,L185,L186,L575,L576,L577,L578,L579,L580,L581,L582,L583,L584,L585,L586}{L177,L178,L179,L180,L181,L182,L183,L184,L185,L186,L187,L188,L189,L190,L191,L192,L567,L570,L571,L573,L575,L577,L579,L580,L583,L584,L587,L589,L591,L593,L595,L598}{G055,G069,G070,G071,G072}
+
+% All Latin below is project-composed instructional material.
+\DeclareMemoryPrompts{M01}{Arrange \Latin{vulpes / fusca / est} as a complete clause and label subject, copula, and predicate adjective.}{\Latin{Vulpes fusca est.}  \Latin{Vulpes} is subject, \Latin{est} copula, and \Latin{fusca} feminine singular nominative predicate adjective.}{Write two transparent clauses about an animal, using one size adjective and one color adjective.}{Model: \Latin{Avis parva est. Vulpes magna et fusca est.}  Other accurate ordinary clauses are possible.}
+\DeclareMemoryPrompts{M02}{Build a clause from \Latin{agricola / aquam / portat}; then change the subject to \Latin{puella}.}{\Latin{Agricola aquam portat. Puella aquam portat.}  The first-declension ending does not make \Latin{agricola} feminine.}{Write two clauses in which different people see or carry different concrete things.}{Model: \Latin{Puer viam videt. Puella aquam portat.}}
+\DeclareMemoryPrompts{M03}{Reconstruct a giving clause from \Latin{agricola / panem / puero / dat} and label both objects.}{\Latin{Agricola panem puero dat.}  \Latin{panem} is accusative thing given; \Latin{puero} is dative recipient.}{Write one sentence joining two objects and one sentence containing a place phrase.}{Model: \Latin{Agricola panem et vinum dat. Liber in mensa est.}}
+\DeclareMemoryPrompts{M04}{Make each adjective agree: \Latin{via / antiquus / longus}; \Latin{urbs / novus / magnus}.}{\Latin{Via antiqua longa est. Urbs nova magna est.}}{Write two contrasting descriptions with \Latin{novus/antiquus} or \Latin{magnus/parvus}.}{Model: \Latin{Liber antiquus magnus est; liber novus parvus est.}}
+\DeclareMemoryPrompts{M05}{Reconstruct two actions from \Latin{agricola / aquam / portat / puella / librum / legit}.}{\Latin{Agricola aquam portat; puella librum legit.}}{Write a three-clause sequence using three different present-tense verbs.}{Model: \Latin{Puella librum legit, verba scribit, aquam portat.}  The project word \Latin{verba} is supplied for the exercise.}
+\DeclareMemoryPrompts{M06}{Join ability to possession: \Latin{puer / librum / habet / legere / potest}.}{\Latin{Puer librum habet et legere potest.}  \Latin{legere} complements \Latin{potest}.}{Write one clause with \Latin{sum} and one with \Latin{possum}; annotate every finite form.}{Model: \Latin{Liber bonus est. Puella eum legere potest.}  \Latin{est} and \Latin{potest} are third singular present active indicative.}
+\DeclareMemoryPrompts{M07}{Combine the perfect passive participles \Latin{inventus} and \Latin{apertus} with the proper form of \Latin{sum}.}{\Latin{Liber inventus et apertus est.}  Both participles are masculine singular nominative and agree with \Latin{liber}.}{Write one true passive and one deponent clause, then identify why their similar endings do not imply the same voice meaning.}{Model: \Latin{Liber aperitur. Puer viam sequitur.}  \Latin{aperitur} is true passive; \Latin{sequitur} is deponent with active sense.}
+\DeclareMemoryPrompts{M08}{Reconstruct reference from \Latin{hæc / puella / librum / legit / ille / puer / eam / videt}.}{\Latin{Hæc puella librum legit; ille puer eam videt.}  \Latin{eam} refers to the girl and is object.}{Write two linked clauses using a demonstrative and a relative pronoun; identify antecedent and in-clause case.}{Model: \Latin{Hic est liber quem puella legit.}  \Latin{Quem} is masculine singular from \Latin{liber} and accusative as object of \Latin{legit}.}
+\DeclareMemoryPrompts{M09}{Choose cases and reconstruct: \Latin{puer / ad / urbem / venit / in / urbe / cum / puella / manet}.}{\Latin{Puer ad urbem venit; in urbe cum puella manet.}  \Latin{ad} governs accusative, while locative \Latin{in} and \Latin{cum} govern ablative here.}{Write four short place phrases showing destination, location, source, and route.}{Model: \Latin{ad urbem; in urbe; ex urbe; per urbem}.}
+\DeclareMemoryPrompts{M10}{Place the postpositive correctly: \Latin{puer / librum / habet / autem / puella / aquam / portat}.}{\Latin{Puer librum habet; puella autem aquam portat.}  \Latin{Autem} follows the first constituent of its clause.}{Write a four-clause paragraph using \Latin{et}, \Latin{sed}, \Latin{enim}, and \Latin{igitur}; label the relation of each.}{Model: \Latin{Puer librum habet et legit; puella autem aquam portat. Liber bonus est; puer enim eum laudat. Igitur puella quoque librum legit.}}
+\DeclareMemoryPrompts{M11}{Make a coordinated clause from \Latin{pater / filium / videt / spiritus / cor / custodit}.}{\Latin{Pater filium videt, et spiritus cor custodit.}}{Write three clauses that distinguish person, body, soul, and heart without treating the English gloss as a parse.}{Model: \Latin{Pater corpus videt. Anima vitam habet. Cor spiritum non videt.}  These are project-created grammar sentences, not doctrinal propositions.}
+\DeclareMemoryPrompts{M12}{Make the predicate agree in \Latin{fides / spes / caritas / bonus / sunt}.}{\Latin{Fides, spes et caritas bonæ sunt.}  The coordinated feminine singular nouns take a feminine plural predicate adjective.}{Write a balanced sentence pairing life with hope and death with fear; use only grammar already studied.}{Model: \Latin{In vita spes est; in morte fides manet.}  \Latin{Manet} is supplied project vocabulary for this exercise.}
+\DeclareMemoryPrompts{M13}{Parse and expand \Latin{hostia / in / altari / est}.}{\Latin{Hostia in altari est.}  \Latin{Hostia} is nominative subject; \Latin{in altari} is an ablative location phrase.}{Write two ordinary analytical clauses using four words from the prayer-and-offering family.}{Model: \Latin{Donum ad altare portatur. Prex in ecclesia auditur.}  Both are project-created practice clauses.}
+\DeclareMemoryPrompts{M14}{Reconstruct the object series: \Latin{ecclesia / dona / suscipit / et / offert}.}{\Latin{Ecclesia dona suscipit et offert.}  One subject and object serve both coordinated verbs.}{Write a petition with a thing granted and a dative recipient, then an offering clause with a different recipient.}{Model: \Latin{Pacem nobis concede. Dona Deo offerimus.}}
+\DeclareMemoryPrompts{M15}{Reconstruct \Latin{Verbum / lux / est / populus / nomen / Dei / laudat}.}{\Latin{Verbum lux est; populus nomen Dei laudat.}  The first clause has a predicate noun; the second has an object plus dependent genitive.}{Write a three-clause paragraph using one image, one law or work noun, and one kingdom or people noun.}{Model: \Latin{Lux magna est. Populus legem legit. Regnum opus iustum habet.}}
+\DeclareMemoryPrompts{M16}{Build two copular clauses from \Latin{veritas / magna / res / est / tempus / longum / est}.}{\Latin{Veritas magna res est; tempus longum est.}}{Write three connected claims using \Latin{causa}, \Latin{ratio}, \Latin{memoria}, and \Latin{sapientia}; keep the syntax simple enough to verify.}{Model: \Latin{Sapientia rationem quærit. Memoria causam servat. Veritas in memoria manet.}  The verbs are supplied project vocabulary.}
+\DeclareMemoryPrompts{M17}{Order and parse \Latin{puer / discit / intellegit / respondet}.}{\Latin{Puer discit, intellegit, respondet.}  All three verbs are third singular present active indicative.}{Write a short question-and-answer sequence using three knowing or teaching verbs.}{Model: \Latin{Puella quærit; puer respondet. Magister docet, et ambo intellegunt.}  \Latin{Magister} and \Latin{ambo} are supplied and glossed by the prompt context.}
+\DeclareMemoryPrompts{M18}{Make agreement exact: \Latin{Deus / misericors / iustus / est / populus / fidelis / semper / orat}.}{\Latin{Deus misericors et iustus est; populus fidelis semper orat.}}{Write one attributive and one predicate use of two different adjectives from this set.}{Model: \Latin{Populus fidelis orat. Populus fidelis est.}}
+\DeclareMemoryPrompts{M19}{Reconstruct the condition \Latin{si / veritatem / cognoscimus / ita / iudicamus}.}{\Latin{Si veritatem cognoscimus, ita iudicamus.}  The two indicative clauses present an open logical relation in this project sentence.}{Write four short clause pairs using \Latin{si}, \Latin{nisi}, \Latin{quoniam}, and \Latin{quamvis}; label relation and mood.}{Model: \Latin{Si discimus, intellegimus. Nisi legimus, non respondemus. Quoniam discimus, respondemus. Quamvis discamus, erramus.}  The final contrast is project-created and its subjunctive is deliberate.}
+\DeclareMemoryPrompts{M20}{Reconstruct \Latin{ius / potestas / auctoritas / res / diversæ / sunt}; explain agreement.}{\Latin{Ius, potestas et auctoritas res diversæ sunt.}  The supplied predicate noun \Latin{res} and adjective \Latin{diversæ} are feminine plural, gathering the coordinated subjects under a plural predication.}{Write three definitions that keep \Latin{ius}, \Latin{potestas}, and \Latin{auctoritas} distinct without claiming a complete legal theory.}{Model: \Latin{Ius regula iusta est. Potestas facultas agendi est. Auctoritas pondus testimonii est.}  These are deliberately simplified project definitions, not canonical propositions.}
+\DeclareMemoryPrompts{M21}{Build a sentence from \Latin{doctrina / voluntatem / format / oratio / sententiam / explicat}.}{\Latin{Doctrina voluntatem format; oratio sententiam explicat.}  \Latin{format} and \Latin{explicat} are supplied project verbs.}{Write a four-sentence paragraph linking memory, desire, community, teaching, and discourse.}{Model: \Latin{Memoria doctrinam servat. Desiderium voluntatem movet. Civitas doctrinam audit. Oratio sententiam explicat.}  Supplied verbs are project vocabulary.}
+\DeclareMemoryPrompts{M22}{Reconstruct \Latin{puer / sententias / componit / corrigit / defendit}; identify shared elements.}{\Latin{Puer sententias componit, corrigit et defendit.}  One subject and one object serve three coordinated verbs.}{Draft a five-sentence analytical paragraph that demonstrates, distinguishes, explains, corrects, and defends one simple claim.}{Model: \Latin{Veritatem demonstro. Verum a falso distinguo. Rationem explico. Sententiam obscuram corrigo. Sententiam correctam defendo.}  This is a project model for architecture, not a received stylistic passage.}
+
+\DeclareMemoryPrompts{P1}{Reconstruct \Latin{poeta / carmen / componit}.}{\Latin{Poeta carmen componit.}  \Latin{Poeta} is masculine nominative despite first-declension form.}{Write three prose statements distinguishing poet, poem, and act of composition.}{Model: \Latin{Poeta carmen componit. Carmen verba ordinat. Compositio laborem requirit.}  Supplied words are project vocabulary.}
+\DeclareMemoryPrompts{P2}{Reconstruct \Latin{carmen / quattuor / versus / habet / versus / unum / metrum / servant}.}{\Latin{Carmen quattuor versus habet; versus unum metrum servant.}  The first \Latin{versus} is accusative plural; the second is nominative plural.}{Write a prose inventory of a short poem: number of lines, proposed meter, and one uncertainty.}{Model: \Latin{Carmen quattuor versus habet. Metrum adhuc incertum est. Quantitas unius syllabæ examinanda est.}}
+\DeclareMemoryPrompts{P3}{Reconstruct the project definition \Latin{versus / in / syllabas / et / pedes / dividitur}.}{\Latin{Versus in syllabas et pedes dividitur.}  Both \Latin{in}-phrases use accusative because analytical division into units is expressed.}{Write three prose sentences explaining how syllables form feet and feet form a line.}{Model: \Latin{Syllabæ pedes constituunt. Pedes versum constituunt. Metrum ordinem pedum regit.}}
+\DeclareMemoryPrompts{P4}{Reconstruct \Latin{syllaba / longa / vel / brevis / est / quantitas / examinatur}.}{\Latin{Syllaba longa vel brevis est; quantitas examinatur.}}{Write a four-step prose checklist for marking quantity without giving pronunciation directions.}{Model: \Latin{Syllabas divide. Vocales nota. Positionem examina. Quantitatem cum metro compara.}}
+\DeclareMemoryPrompts{P5}{Reconstruct \Latin{cæsura / intra / pedem / cadit / ictus / cum / ea / non / semper / congruit}.}{\Latin{Cæsura intra pedem cadit; ictus cum ea non semper congruit.}  The sentence is project-created analytical prose.}{Write three prose contrasts among foot boundary, caesura, punctuation, and ictus.}{Model: \Latin{Finis pedis et cæsura non idem sunt. Punctum cæsuram non probat. Ictus ex schemate examinatur.}}
+\DeclareMemoryPrompts{P6}{Reconstruct \Latin{imago / et / figura / sensum / carminis / augent}.}{\Latin{Imago et figura sensum carminis augent.}  The compound subject controls plural \Latin{augent}.}{Write a four-sentence note that identifies an image, names a figure, proves its grammar, and states its effect.}{Model: \Latin{Imago lucis apparet. Figura est anaphora. Idem verbum ter repetitur. Repetitio lucem ante oculos ponit.}}
+\DeclareMemoryPrompts{P7}{Reconstruct \Latin{poeta / carmen / canit / et / versus / modulatur}.}{\Latin{Poeta carmen canit et versus modulatur.}  \Latin{Modulatur} is deponent with active sense.}{Write project prose explaining the difference between composing, singing, and scanning a poem.}{Model: \Latin{Poeta carmen componit et canit. Lector autem versus scandit. Scansio formam examinat, non cantum præscribit.}}
+\DeclareMemoryPrompts{P8}{Reconstruct \Latin{hymnus / et / sequentia / carmina / sunt / genus / ex / forma / et / usu / cognoscitur}.}{\Latin{Hymnus et sequentia carmina sunt; genus ex forma et usu cognoscitur.}}{Compose two short, visibly project-created rhythmic lines and annotate their grammar; do not present them as a received hymn.}{Model: \Latin{Lux vera corda recreat; / spes firma mentes roborat.}  The two project lines use parallel subject--object--verb order; no claim of a received text or classical meter is made.}

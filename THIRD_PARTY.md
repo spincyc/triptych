@@ -60,11 +60,12 @@ integrate and edit the manuscript is not recorded as independent evidence of
 authorship, ownership, or a general public-distribution license. The prior 52
 installed working snapshots received an explicit exact-snapshot distribution
 exception on 20 July 2026 under the repository's existing user-attested
-authority. Those bindings remain historical facts about the prior bytes. The
-corrected replacement snapshots are release-cleared by the 21 July 2026
-exact-current-snapshot exception. Neither exception establishes donor
-authorship or ownership, supplies a general public-distribution license, or
-authorizes extracted donor wording outside the exact files it binds.
+authority. Later exact-current-snapshot exceptions bound corrected files from
+that same superseded edition. Those bindings remain historical facts about the
+prior bytes. The redesigned 37-PDF installed edition is not covered by them
+and remains on release hold. No exception establishes donor authorship or
+ownership, supplies a general public-distribution license, or authorizes
+extracted donor wording outside the exact files it binds.
 Their course-wide provenance and rights boundary are recorded in the adjacent
 `research/edition-manifest.md`, `research/scope.md`, and
 `research/source-audit.md`. No donor manuscript wording is offered under CC BY

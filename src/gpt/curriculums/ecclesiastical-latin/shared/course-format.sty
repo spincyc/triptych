@@ -128,11 +128,12 @@
 \newcommand{\Blank}{\rule{1.3in}{0.4pt}}
 \newcommand{\LongBlank}{\rule{2.6in}{0.4pt}}
 \newcommand{\Missal}{\textit{Missale Romanum} (1962)}
-\newcommand{\CoursePacing}{Advance by demonstrated mastery; module packets use two focused sessions as a planning envelope}
+\newcommand{\CoursePacing}{Work at the pace needed for reliable recall, direct reading, and composition}
 
-% Course units remain authoritative in the stage source files while individual
-% packet publications select one unit.  The default keeps shared companion
-% renderings able to include every unit deliberately.
+% Stable lessons remain authoritative in the stage source files while each
+% substantial packet selects a comma-separated group.  The membership test
+% already treats a single ID as a one-item list.  The default keeps shared
+% companion renderings able to include every lesson deliberately.
 \newcommand{\SelectedCourseUnits}{all}
 \newcommand{\SelectCourseUnits}[1]{\renewcommand{\SelectedCourseUnits}{#1}}
 % Every selected unit begins with its source-owned chapter.  Reserve the
@@ -140,8 +141,13 @@
 % first worksheet or solution can move to the next page while its chapter is
 % left behind at the foot of the preceding page.
 \newcommand{\CourseUnitOpeningGuard}{%
+  % Worksheet banks may contain several independently selectable units.  The
+  % first-form flag therefore belongs to the selected unit, not merely to the
+  % bank: without this reset a later unit's first worksheet clears the page
+  % immediately after the unit chapter heading.
+  \global\firstcourseworksheettrue
   \ifsolutions
-    \par\Needspace{28\baselineskip}%
+    \par\Needspace{40\baselineskip}%
   \else
     \par\Needspace{40\baselineskip}%
   \fi
@@ -187,7 +193,7 @@
     {\large #3\par}
     \vfill
     \begin{tabularx}{\linewidth}{@{}lX@{}}
-      \textbf{Corpus} & 1962 \textit{Missale Romanum}; Vulgate and ecclesiastical prose as supporting readers \\
+      \textbf{Corpus} & Ordinary project Latin; classical, biblical, patristic, ecclesiastical, and poetic sources; 1962 \textit{Missale Romanum} as the principal destination \\
       \textbf{Method} & Print, annotate, parse, copy, transform, translate, and compose by hand \\
       \textbf{Pacing} & \CoursePacing \\
       \textbf{Document} & #4 \\
@@ -199,29 +205,32 @@
 }
 
 \newenvironment{learningobjectives}
-  {\begin{quote}\textbf{On completing this unit, you can:}\begin{itemize}}
+  {\begin{quote}\textbf{This lesson develops the ability to:}\begin{itemize}}
   {\end{itemize}\end{quote}}
 
-\newcommand{\MasteryGate}[1]{%
+\newcommand{\BeforeContinuing}[1]{%
   \par\medskip
   \noindent\fcolorbox{black}{LatinGray}{%
     \begin{minipage}{0.94\linewidth}
-      \textbf{Advance when:} #1
+      \textbf{Before continuing.} #1
     \end{minipage}}
   \par\medskip
 }
-
 \newcommand{\StudyLoop}{%
   \begin{enumerate}
-    \item Read the lesson once without taking notes.
-    \item Copy every paradigm and worked Latin example by hand.
-    \item Close the lesson and retrieve the new definitions and forms from
-          memory; for each definition, state the decisive feature and add an
-          example or contrast before checking it.
-    \item Complete two contrasting worksheet variants in ink.
-    \item Check in a different color, explain each correction in writing, and
-          choose more practice only where the error pattern persists.
-    \item Attempt the unit gate on an unseen text before advancing.
+    \item Read one coherent teaching section and follow every worked example.
+    \item Copy its paradigms, vocabulary forms, and model Latin by hand.
+    \item Close the teaching pages and retrieve the new forms, words,
+          definitions, and contrasts before checking them.
+    \item Read the assigned Latin and complete its sentence-building or
+          composition work without consulting the answers.
+    \item Use contrasting practice variants now and preserve others for later
+          returns. Correct in another color and state the rule behind each
+          substantive correction; the four printed variants are a repetition
+          bank, not a page quota.
+    \item Use the packet's cumulative practice on fresh material. Continue
+          when its listed abilities are reasonably dependable; otherwise
+          repeat the named explanation or memory sheet and try different Latin.
   \end{enumerate}}
 
 \newenvironment{grammarbox}[1]
@@ -260,7 +269,7 @@
 
 \newcommand{\Lexeme}[4]{\Latin{#1} --- #2; #3. #4}
 
-% The same exercise source renders a spacious student worksheet or a compact key.
+% The same exercise source renders a spacious practice worksheet or a compact key.
 \newif\ifsolutions
 \solutionsfalse
 \newcounter{exercisebank}
@@ -408,7 +417,7 @@
     \renewcommand{\CourseItemNamespace}{#1}%
     \setcounter{exercise}{0}%
     \iffirstcourseassessment
-      % Assessment environments are grouped just like worksheets.
+      % Cumulative-review environments are grouped just like worksheets.
       \global\firstcourseassessmentfalse
     \else
       \par\removelastskip\clearpage
@@ -417,9 +426,9 @@
     \phantomsection
     \CourseUnnumberedSectionContents{#2}%
     \markboth{#2}{#2}%
-    \textbf{Assessment ID:} #1\par
-    \textbf{Level:} #3\par
-    \textbf{Conditions:} #4\par\medskip
+    \textbf{Review form ID:} #1\par
+    \textbf{Focus:} #3\par
+    \textbf{Use:} #4\par\medskip
     \begin{enumerate}[label=\textbf{\arabic*.},leftmargin=2em]
       \BODY
     \end{enumerate}
@@ -428,7 +437,7 @@
 
 \newcommand{\AssessmentItem}[3][0.65in]{%
   \refstepcounter{exercise}\item
-  % One assessment item is one reviewable unit.  Keeping its identifier,
+  % One cumulative-review item is one reviewable unit. Keeping its identifier,
   % prompt, response space, and (in a key) answer in an unbreakable block
   % prevents identifiers and one-word answer tails from crossing pages.
   \begin{minipage}[t]{\linewidth}
