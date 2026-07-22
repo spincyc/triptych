@@ -75,6 +75,7 @@ class SourceLibraryTests(unittest.TestCase):
             "No match here.\n"
             "The City offers Sacrifice.\n"
             "A second SACRIFICE witness.\n"
+            "Companion: illustration.png\n"
         ).encode("utf-8")
         artifact_path = (
             "src/sources/works/augustine/de-civitate-dei/editions/"
@@ -147,7 +148,9 @@ class SourceLibraryTests(unittest.TestCase):
             locus = "{LOCUS}"
             states = ["inspected", "verified"]
             context = "The complete chapter and adjacent chapter were inspected."
-            text = "The redeemed city offers sacrifice."
+            physical_line_ranges = [[2, 2]]
+            text = "The City offers Sacrifice."
+            transcription_segments = [{{ line = 2, text = "The City offers Sacrifice." }}]
             verified_on = "2026-07-22"
             ''',
         )
@@ -311,8 +314,23 @@ class SourceLibraryTests(unittest.TestCase):
         )
         self.assertEqual(
             rows,
-            sorted(rows, key=lambda row: (row["kind"], row["id"], row["type"], row["path"])),
+            sorted(
+                rows,
+                key=lambda row: (
+                    row["kind"],
+                    row["id"],
+                    row["type"],
+                    row.get("source_id", ""),
+                    tuple(row.get("loci", [])),
+                    tuple(row.get("states", [])),
+                    row["path"],
+                ),
+            ),
         )
+        document_rows = [row for row in rows if row["kind"] == "document"]
+        self.assertTrue(all("source_id" in row for row in document_rows))
+        self.assertTrue(all("loci" in row for row in document_rows))
+        self.assertTrue(all("states" in row for row in document_rows))
 
         locus_rows = SOURCE_LIBRARY.impact_rows(library, WORK_ID, LOCUS)
         self.assertEqual(
@@ -409,12 +427,19 @@ class SourceLibraryTests(unittest.TestCase):
             library, WORK_ID, "Sacrifice", case_sensitive=True
         )
         self.assertEqual([row["line"] for row in sensitive], [2])
-        with self.assertRaisesRegex(
-            SOURCE_LIBRARY.SourceLibraryQueryError, "passage search is undefined"
-        ):
+        passage_rows = SOURCE_LIBRARY.search_rows(
+            library, PASSAGE_ID, "Sacrifice", case_sensitive=True
+        )
+        self.assertEqual(
+            [(row["line"], row["text"]) for row in passage_rows],
+            [(2, "The City offers Sacrifice.")],
+        )
+        self.assertEqual(
             SOURCE_LIBRARY.search_rows(
                 library, PASSAGE_ID, "SACRIFICE", case_sensitive=True
-            )
+            ),
+            [],
+        )
         self.assertEqual(SOURCE_LIBRARY.search_rows(library, CORPUS_ID, "absent"), [])
 
         result = self.run_cli("search", WORK_ID, "sacrifice", "--format", "json")
@@ -1409,11 +1434,11 @@ class SourceLibraryTests(unittest.TestCase):
             context = "Nested arrays must report errors, not crash."
 
             [[bindings]]
-            source_id = "{PASSAGE_ID}"
+            source_id = "{WORK_ID}"
             role = "negative-search"
             states = ["searched"]
-            context = "A passage is not a search boundary."
-            search_scope = "One passage."
+            context = "A work identity is not an exact search boundary."
+            search_scope = "An unversioned work identity."
             searched_on = "not-a-date"
             search_mode = "raw-line-literal-casefold-v1"
             query = "test"
@@ -1449,7 +1474,10 @@ class SourceLibraryTests(unittest.TestCase):
         self.assertIn("bindings[4].role must be one of", joined)
         self.assertIn("bindings[4].states must be a nonempty string array", joined)
         self.assertIn("bindings[5].searched_on must be an ISO date", joined)
-        self.assertIn("bindings[5] searched source must be an exact artifact or corpus", joined)
+        self.assertIn(
+            "bindings[5] searched source must be an exact artifact, ranged passage, or corpus",
+            joined,
+        )
         self.assertIn("bindings[6] verified state requires verified_on ISO date", joined)
         self.assertIn("bindings[7].states has invalid values: indexed", joined)
 
@@ -1749,6 +1777,284 @@ class SourceLibraryTests(unittest.TestCase):
                     "source-library error: unknown source id: work.unknown\n",
                 )
 
+    def test_passage_ranges_segments_and_search_receipts_are_exact(self) -> None:
+        self.add_valid_vertical_fixture()
+        library = SOURCE_LIBRARY.load_library(self.root)
+
+        self.assertEqual(library.errors, [])
+        self.assertEqual(
+            [row["line"] for row in SOURCE_LIBRARY.search_rows(
+                library, PASSAGE_ID, "sacrifice"
+            )],
+            [2],
+        )
+        self.assertEqual(
+            SOURCE_LIBRARY.search_rows(library, PASSAGE_ID, "No match here"),
+            [],
+        )
+
+        passage_fingerprint = SOURCE_LIBRARY.source_fingerprint(library, PASSAGE_ID)
+        self.write(
+            "src/gpt/theology/demo/research/source-bindings.toml",
+            f'''
+            schema = 1
+            record_type = "bindings"
+            document = "theology/demo"
+
+            [[bindings]]
+            source_id = "{PASSAGE_ID}"
+            role = "lead"
+            states = ["searched"]
+            context = "The exact ranged passage was searched as a locator."
+            search_scope = "Only physical line 2 of the exact artifact."
+            searched_on = "2026-07-22"
+            search_mode = "raw-line-literal-casefold-v1"
+            query = "sacrifice"
+            method = "Built-in casefolded physical-line literal search."
+            matching_line_count = 1
+            source_fingerprint = "{passage_fingerprint}"
+            ''',
+        )
+        with_receipt = SOURCE_LIBRARY.load_library(self.root)
+        self.assertEqual(with_receipt.errors, [])
+
+        artifact = with_receipt.records[ARTIFACT_ID]
+        self.write(
+            "src/sources/works/augustine/de-civitate-dei/editions/"
+            "npnf-dods/passages/10-6.toml",
+            f'''
+            schema = 1
+            record_type = "passage"
+            id = "{PASSAGE_ID}"
+            edition_id = "{EDITION_ID}"
+            artifact_id = "{ARTIFACT_ID}"
+            artifact_sha256 = "{artifact.data['sha256']}"
+            locus = "{LOCUS}"
+            states = ["inspected"]
+            context = "Intentionally invalid locator fixture."
+            physical_line_ranges = [[true, 1], [0, 1], [3, 2], [2, 3], [3, 3], [99, 99]]
+            text = "The City offers Sacrifice."
+            transcription_segments = [
+              {{ line = 1, text = "No match here." }},
+              {{ line = 2, text = "not an exact segment" }},
+              {{ line = 99, text = "future line" }},
+            ]
+            ''',
+        )
+        invalid = SOURCE_LIBRARY.load_library(self.root)
+        joined = "\n".join(invalid.errors)
+        self.assertIn("values must be positive non-boolean integers", joined)
+        self.assertIn("start must not exceed end", joined)
+        self.assertIn("must be sorted and non-overlapping", joined)
+        self.assertIn("ends after artifact line 4", joined)
+        self.assertIn("line is outside physical_line_ranges", joined)
+        self.assertIn("text is not an exact ordered substring", joined)
+        self.assertIn("line is after artifact line 4", joined)
+        self.assertIn("do not reproduce text exactly", joined)
+
+    def test_passage_validation_and_search_share_lf_line_boundaries(self) -> None:
+        old_bytes = self.add_valid_vertical_fixture()
+        new_bytes = b"First\rSecond target\rThird\nFourth\r\n"
+        old_digest = hashlib.sha256(old_bytes).hexdigest()
+        new_digest = hashlib.sha256(new_bytes).hexdigest()
+        artifact_path = (
+            "src/sources/works/augustine/de-civitate-dei/editions/"
+            "npnf-dods/artifacts/plain-text/city-of-god.txt"
+        )
+        self.write(artifact_path, new_bytes)
+
+        artifact_manifest = (
+            "src/sources/works/augustine/de-civitate-dei/editions/"
+            "npnf-dods/artifacts/plain-text/artifact.toml"
+        )
+        artifact_text = (self.root / artifact_manifest).read_text(encoding="utf-8")
+        self.write(
+            artifact_manifest,
+            artifact_text.replace(old_digest, new_digest).replace(
+                f"byte_size = {len(old_bytes)}", f"byte_size = {len(new_bytes)}"
+            ),
+        )
+
+        passage_manifest = (
+            "src/sources/works/augustine/de-civitate-dei/editions/"
+            "npnf-dods/passages/10-6.toml"
+        )
+        passage_text = (self.root / passage_manifest).read_text(encoding="utf-8")
+        self.write(
+            passage_manifest,
+            passage_text.replace(old_digest, new_digest)
+            .replace("physical_line_ranges = [[2, 2]]", "physical_line_ranges = [[1, 1]]")
+            .replace("The City offers Sacrifice.", "Second target")
+            .replace("line = 2", "line = 1"),
+        )
+
+        corpus_manifest = "src/sources/corpora/augustine-city-of-god-english.toml"
+        corpus_text = (self.root / corpus_manifest).read_text(encoding="utf-8")
+        old_snapshot = hashlib.sha256(
+            f"{ARTIFACT_ID}\t{old_digest}\n".encode("utf-8")
+        ).hexdigest()
+        new_snapshot = hashlib.sha256(
+            f"{ARTIFACT_ID}\t{new_digest}\n".encode("utf-8")
+        ).hexdigest()
+        self.write(corpus_manifest, corpus_text.replace(old_snapshot, new_snapshot))
+
+        library = SOURCE_LIBRARY.load_library(
+            self.root, check_binding_fingerprints=False
+        )
+        self.assertEqual(library.errors, [])
+        self.assertEqual(
+            [
+                (row["line"], row["text"])
+                for row in SOURCE_LIBRARY.search_rows(
+                    library, PASSAGE_ID, "Second target", case_sensitive=True
+                )
+            ],
+            [(1, "First\rSecond target\rThird")],
+        )
+
+    def test_transcription_segments_require_an_indexable_artifact(self) -> None:
+        self.add_valid_vertical_fixture()
+        artifact_manifest = (
+            self.root
+            / "src/sources/works/augustine/de-civitate-dei/editions/"
+            "npnf-dods/artifacts/plain-text/artifact.toml"
+        )
+        self.write(
+            artifact_manifest.relative_to(self.root).as_posix(),
+            artifact_manifest.read_text(encoding="utf-8").replace(
+                "indexable = true", "indexable = false"
+            ),
+        )
+        passage_manifest = (
+            self.root
+            / "src/sources/works/augustine/de-civitate-dei/editions/"
+            "npnf-dods/passages/10-6.toml"
+        )
+        self.write(
+            passage_manifest.relative_to(self.root).as_posix(),
+            passage_manifest.read_text(encoding="utf-8").replace(
+                "physical_line_ranges = [[2, 2]]\n", ""
+            ),
+        )
+
+        library = SOURCE_LIBRARY.load_library(
+            self.root, check_binding_fingerprints=False
+        )
+        self.assertIn(
+            "text and transcription_segments require an indexable tracked UTF-8 artifact",
+            "\n".join(library.errors),
+        )
+
+    def test_support_artifacts_are_first_class_dependencies(self) -> None:
+        self.add_valid_vertical_fixture()
+        before = SOURCE_LIBRARY.load_library(self.root)
+        old_fingerprint = SOURCE_LIBRARY.source_fingerprint(before, ARTIFACT_ID)
+        support_id = "artifact.augustine.de-civitate-dei.npnf-dods.illustration"
+        image = b"\x89PNG\r\n"
+        image_path = (
+            "src/sources/works/augustine/de-civitate-dei/editions/"
+            "npnf-dods/artifacts/illustration/illustration.png"
+        )
+        self.write(image_path, image)
+        self.write(
+            "src/sources/works/augustine/de-civitate-dei/editions/"
+            "npnf-dods/artifacts/illustration/artifact.toml",
+            f'''
+            schema = 1
+            record_type = "artifact"
+            id = "{support_id}"
+            edition_id = "{EDITION_ID}"
+            artifact_type = "illustration"
+            media_type = "image/png"
+            storage = "tracked"
+            rights_status = "public-domain"
+            rights_basis = "Test support image"
+            rights_jurisdiction = "United States"
+            source_url = "https://example.org/illustration.png"
+            retrieved = "2026-07-22"
+            sha256 = "{hashlib.sha256(image).hexdigest()}"
+            byte_size = {len(image)}
+            path = "{image_path}"
+            indexable = false
+            ''',
+        )
+        parent_manifest = before.records[ARTIFACT_ID].path
+        parent_text = parent_manifest.read_text(encoding="utf-8")
+        self.write(
+            parent_manifest.relative_to(self.root).as_posix(),
+            parent_text
+            + f'''support_artifacts = [
+              {{ artifact_id = "{support_id}", embedded_reference = "illustration.png" }},
+            ]
+            ''',
+        )
+
+        library = SOURCE_LIBRARY.load_library(
+            self.root, check_binding_fingerprints=False
+        )
+        self.assertEqual(library.errors, [])
+        self.assertNotEqual(
+            old_fingerprint,
+            SOURCE_LIBRARY.source_fingerprint(library, ARTIFACT_ID),
+        )
+        impacted_sources = {
+            row["id"]
+            for row in SOURCE_LIBRARY.impact_rows(library, support_id)
+            if row["kind"] == "source"
+        }
+        self.assertTrue({ARTIFACT_ID, PASSAGE_ID, CORPUS_ID} <= impacted_sources)
+        self.assertTrue(
+            any(
+                row["kind"] == "document" and row["id"] == "theology/demo"
+                for row in SOURCE_LIBRARY.impact_rows(library, support_id)
+            )
+        )
+        self.assertEqual(
+            len(SOURCE_LIBRARY.search_rows(library, CORPUS_ID, "sacrifice")),
+            2,
+        )
+
+        for unsafe_reference in (
+            "../missing.png",
+            "%2e%2e/missing.png",
+            "a/%2E%2E/missing.png",
+            "safe%2f..%2fmissing.png",
+            "a/./illustration.png",
+            "a//illustration.png",
+        ):
+            with self.subTest(unsafe_reference=unsafe_reference):
+                self.write(
+                    parent_manifest.relative_to(self.root).as_posix(),
+                    parent_text
+                    + f'''support_artifacts = [
+                      {{ artifact_id = "{support_id}", embedded_reference = "{unsafe_reference}" }},
+                    ]
+                    ''',
+                )
+                unsafe = SOURCE_LIBRARY.load_library(
+                    self.root, check_binding_fingerprints=False
+                )
+                self.assertIn(
+                    "embedded_reference must be a safe relative path",
+                    "\n".join(unsafe.errors),
+                )
+
+        self.write(
+            parent_manifest.relative_to(self.root).as_posix(),
+            parent_text
+            + f'''support_artifacts = [
+              {{ artifact_id = "{support_id}", embedded_reference = "missing.png" }},
+            ]
+            ''',
+        )
+        missing = SOURCE_LIBRARY.load_library(
+            self.root, check_binding_fingerprints=False
+        )
+        self.assertIn(
+            "embedded_reference does not occur in the exact parent artifact",
+            "\n".join(missing.errors),
+        )
+
     def test_git_attributes_preserve_arbitrary_payload_bytes(self) -> None:
         paths = (
             "src/sources/works/x/y/editions/z/artifacts/a/source.txt",
@@ -1757,7 +2063,7 @@ class SourceLibraryTests(unittest.TestCase):
             "src/sources/works/x/y/editions/z/artifacts/a/artifact.toml",
         )
         result = subprocess.run(
-            ["git", "check-attr", "text", "eol", "--", *paths],
+            ["git", "check-attr", "text", "eol", "whitespace", "--", *paths],
             cwd=ROOT,
             text=True,
             capture_output=True,
@@ -1766,8 +2072,10 @@ class SourceLibraryTests(unittest.TestCase):
 
         for payload in paths[:3]:
             self.assertIn(f"{payload}: text: unset", result.stdout)
+            self.assertIn(f"{payload}: whitespace: unset", result.stdout)
         self.assertIn(f"{paths[3]}: text: set", result.stdout)
         self.assertIn(f"{paths[3]}: eol: lf", result.stdout)
+        self.assertIn(f"{paths[3]}: whitespace: unspecified", result.stdout)
 
 
 if __name__ == "__main__":

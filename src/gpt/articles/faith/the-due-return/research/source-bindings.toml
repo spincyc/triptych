@@ -1,0 +1,54 @@
+schema = 1
+record_type = "bindings"
+document = "articles/faith/the-due-return"
+
+[[bindings]]
+source_id = "corpus.augustine.de-civitate-dei.bilingual-tracer-2026-07-22"
+role = "lead"
+states = ["cataloged", "acquired"]
+context = "The complete retained Dods 1871 English and Hoffmann CSEL 40 Latin text representations are available to this publication for later work-wide examination. The present article did not thereby search or inspect the whole bilingual corpus."
+source_fingerprint = "sha256:8376e0d2b3fffdf571a534220acf57717808a93bb4bed4c6d4b5cda7f7613148"
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45304-body-lf"
+loci = ["10.5-6"]
+role = "lead"
+states = ["cataloged", "acquired", "searched"]
+context = "A literal raw-line locator search of the exact English volume found the true-sacrifice sentence before both chapters were inspected. It did not search for paraphrases or establish a work-wide absence or completeness claim."
+search_scope = "Exact normalized Dods 1871 volume I artifact, books 1-13 and retained historical matter."
+searched_on = "2026-07-22"
+search_mode = "raw-line-literal-casefold-v1"
+query = "Thus a true sacrifice is every work"
+method = "Replayable scripts/source-library physical-line literal search."
+matching_line_count = 1
+source_fingerprint = "sha256:3b6e07da2d1ed3cedf883f7671a37d82f99427badc4daa23239366798e78d34b"
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-1-tei"
+loci = ["10.5-6"]
+role = "lead"
+states = ["cataloged", "acquired", "searched"]
+context = "A literal raw-XML-line locator search of the exact Latin volume found the true-sacrifice phrase before both chapters and their apparatus were inspected. The search did not normalize markup or cross physical lines."
+search_scope = "Exact Hoffmann CSEL 40.1 TEI artifact at pinned csel-dev commit 2813e3a52b4206df0324299e5110e5bd0d95cee4."
+searched_on = "2026-07-22"
+search_mode = "raw-line-literal-casefold-v1"
+query = "Proinde uerum sacrificium est omne opus"
+method = "Replayable scripts/source-library physical-line literal search."
+matching_line_count = 1
+source_fingerprint = "sha256:a2bb5ceb6cd8bd6948a84c369f38dae8a20e8e1b4d3a784ef29b542a74dea615"
+
+[[bindings]]
+source_id = "passage.augustine.de-civitate-dei.dods-1871.10.5-6"
+loci = ["10.5-6"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Both chapters were read together so the article's language about every work remains qualified by holy fellowship, the supreme good, divine non-need, personal offering, the redeemed city, and Christ the High Priest. The 1871 witness supplements the existing NPNF working English."
+source_fingerprint = "sha256:656887cdeca9dd94a0c1de3e15400368956fa27922c7e981ce60aa90688d671c"
+
+[[bindings]]
+source_id = "passage.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.10.5-6"
+loci = ["10.5-6"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Both Latin TEI chapter divisions and their apparatus were read for the same qualifying structure. The page and apparatus markup that interrupts the prose remains recorded; no page-image collation or verification of City of God X.1, 3, or 19-20 is claimed here."
+source_fingerprint = "sha256:f6e1e889bb4f2198ccebab9d7119d2edb9160c51892a0bc4fc9b8a202ab617b4"

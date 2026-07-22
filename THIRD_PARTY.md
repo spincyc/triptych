@@ -5,6 +5,39 @@ or incorporate material that the project does not own. The project's CC BY
 4.0 license applies only to project-created contributions and does not apply
 to the third-party or public-domain material described below.
 
+## Retained Reusable Source Artifacts
+
+The reusable source library under `src/sources/` may retain exact source bytes
+when an artifact manifest records an affirmative distribution basis. Those
+bytes keep their own status and are not offered under Triptych's CC BY 4.0
+license merely because they are committed beside project-created metadata.
+
+The retained 1871 English *City of God* texts are normalized derivatives of
+Project Gutenberg eBooks 45304 and 45305. Marcus Dods edited the edition and is
+the named translator; George Wilson translated Books IV, XVII, and XVIII, and
+J. J. Smith translated Books V--VIII. Douglas L. Alley III, Charlene Taylor,
+Joe C, and the Online Distributed Proofreading Team produced the Gutenberg
+transcriptions from Internet Archive and Canadian Libraries images. The
+retained derivatives remove the Gutenberg wrapper, license, trademark
+references, and marker lines; normalize line endings; and otherwise preserve
+the transcription between the markers. The transcriber notes disclose
+punctuation and spelling corrections, so these files are neither facsimiles
+nor diplomatic transcriptions. The 1871 text is recorded as public domain in
+the United States; users must determine its status in other jurisdictions.
+
+The retained University of Leipzig/OpenGreekAndLatin CSEL 40.1--40.2 TEI files
+are governed by their recorded [Creative Commons Attribution-ShareAlike 4.0
+International License](https://creativecommons.org/licenses/by-sa/4.0/), not
+Triptych's CC BY 4.0 license. The unmodified XML headers identify University of
+Leipzig (2014), Emanuel Hoffmann's 1899--1900 edition, Jouve for OCR,
+correction, and encoding, Gregory Crane as principal, and Greta Franzini,
+Simona Stoyanova, Bruce Robertson, and Uvius Fonticola in the listed project
+roles. Reusers must retain attribution, indicate changes, and satisfy
+ShareAlike where the license requires it. The separately manifested figure
+referenced by the first XML file reproduces a specimen from the 1899 volume and
+is recorded as public domain in the United States. The underlying historical
+edition, digital encoding, and support image remain distinct rights objects.
+
 ## Liturgical and Scriptural Texts
 
 Scripture, Missal formularies, Orders of Mass, rubrics, chants, and texts from

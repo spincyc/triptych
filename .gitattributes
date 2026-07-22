@@ -1,6 +1,7 @@
 # Raw retrieval extracts are byte-preserved source records.
 src/gpt/**/propers/retrieved.txt -whitespace
 
-# Reusable source payloads are hashed as exact bytes, without line conversion.
-src/sources/**/artifacts/** -text
-src/sources/**/artifacts/**/artifact.toml text eol=lf
+# Reusable source payloads are hashed as exact bytes, without line conversion
+# or cleanup of source-significant whitespace. Manifests remain ordinary text.
+src/sources/**/artifacts/** -text -whitespace
+src/sources/**/artifacts/**/artifact.toml text eol=lf !whitespace

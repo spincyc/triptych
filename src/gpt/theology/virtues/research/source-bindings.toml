@@ -1,0 +1,54 @@
+schema = 1
+record_type = "bindings"
+document = "theology/virtues"
+
+[[bindings]]
+source_id = "corpus.augustine.de-civitate-dei.bilingual-tracer-2026-07-22"
+role = "lead"
+states = ["cataloged", "acquired"]
+context = "The complete retained Dods 1871 English and Hoffmann CSEL 40 Latin text representations are available to this publication for later work-wide examination. Acquisition does not mean that this virtues edition searched or inspected all twenty-two books in either representation."
+source_fingerprint = "sha256:8376e0d2b3fffdf571a534220acf57717808a93bb4bed4c6d4b5cda7f7613148"
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45305-body-lf"
+loci = ["15.22"]
+role = "lead"
+states = ["cataloged", "acquired", "searched"]
+context = "A literal raw-line locator search of the exact English volume found the order-of-love formulation before chapter inspection. It was not a semantic or whole-Augustinian-corpus search."
+search_scope = "Exact normalized Dods 1871 volume II artifact, books 14-22 and retained historical matter."
+searched_on = "2026-07-22"
+search_mode = "raw-line-literal-casefold-v1"
+query = "virtue to say, it is the order of love"
+method = "Replayable scripts/source-library physical-line literal search."
+matching_line_count = 1
+source_fingerprint = "sha256:6bd16ca34656e4a17b7967a6b8ce070ebb4fdffa9b8c855088ab3e08e30bf996"
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-2-tei"
+loci = ["15.22"]
+role = "lead"
+states = ["cataloged", "acquired", "searched"]
+context = "A literal raw-XML-line locator search of the exact Latin volume found the virtue-definition phrase before chapter and apparatus inspection. It does not normalize markup or cross physical lines."
+search_scope = "Exact Hoffmann CSEL 40.2 TEI artifact at pinned csel-dev commit 2813e3a52b4206df0324299e5110e5bd0d95cee4."
+searched_on = "2026-07-22"
+search_mode = "raw-line-literal-casefold-v1"
+query = "definitio breuis et uera uirtutis ordo"
+method = "Replayable scripts/source-library physical-line literal search."
+matching_line_count = 1
+source_fingerprint = "sha256:c8c46915ec1d5dd7bf34a4332481bd214a4c8c42aadf62da985ec3fd29224b9a"
+
+[[bindings]]
+source_id = "passage.augustine.de-civitate-dei.dods-1871.15.22"
+loci = ["15.22"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "The complete chapter was read for created goods, ordered and disordered love, the brief definition of virtue, and the two cities. This 1871 translation supplements rather than silently replaces the later NPNF/New Advent working English recorded in the existing audit."
+source_fingerprint = "sha256:7bf1c1311f5340ebaffe612f9f557cb118ea37c2f2089929809a8262ac8d44f9"
+
+[[bindings]]
+source_id = "passage.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.15.22"
+loci = ["15.22"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "The complete Latin TEI chapter and apparatus were read. The nearby unresolved TEI sic/corr choice remains disclosed, and this inspection is not represented as page-image collation or verification of the other City of God loci in the virtues audit."
+source_fingerprint = "sha256:cb7e128beb255c0d6f60b65edde45d3da5e7192b2961b00609596a23bcbcae75"

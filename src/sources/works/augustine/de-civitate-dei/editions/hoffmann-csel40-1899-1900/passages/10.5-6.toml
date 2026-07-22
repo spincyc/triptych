@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.10.5-6"
+edition_id = "edition.augustine.de-civitate-dei.hoffmann-csel40-1899-1900"
+artifact_id = "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-1-tei"
+artifact_sha256 = "593cd90f9c1d5f59578d9dddbe489aecb1c1c9297fc651d5cb91b34240ffe710"
+locus = "10.5-6"
+states = ["cataloged", "acquired", "inspected"]
+context = "Both complete TEI chapter divisions, including their apparatus, were inspected at physical XML lines 19970-20172 for the visible sign, divine non-need, true sacrifice, personal offering, redeemed city, and High Priest."
+physical_line_ranges = [[19970, 20072], [20074, 20172]]
+text = "Proinde uerum sacrificium est omne opus, quod agitur ut sancta societate inhaereamus Deo, relatum scilicet ad illum finem boni, quo ueraciter beati esse possimus."
+transcription_segments = [
+  { line = 20077, text = "Proinde uerum sacrificium est omne opus, quod agitur" },
+  { line = 20078, text = "ut sancta societate inhaereamus Deo, relatum scilicet ad illum" },
+  { line = 20092, text = "finem boni, quo ueraciter beati esse possimus." },
+]
+notes = "Physical XML lines are not CSEL printed line numbers. Page and apparatus markup interrupts the prose at 20078-20091. The TEI was not collated against page images."
