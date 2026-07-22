@@ -118,6 +118,8 @@ Mutating Codex sessions follow the isolation and authority contract in `AGENTS.m
 
 Workers may edit, build, inspect, and commit only when authorized. They never switch branches, merge, rebase, amend, push, use the shared stash, change shared Git configuration or remotes, administer worktrees, or leave background processes running. Runtime paths, run IDs, locks, manifests, prompts, logs, and private launcher state are never tracked.
 
+The launcher exports the same exact run-owned directory as `TMPDIR`, `TMP`, and `TEMP`. Every off-worktree transient produced by a worker or resolver—downloads, OCR and text extracts, generated helper scripts, screenshots, review rasters, and ad hoc caches—must be created below that directory rather than in an arbitrary shared `/tmp` path. Stable shared IPC locks are the narrow exception. Reproducible repository intermediates belong in the ignored `build/` tree while a worker is retained; material that must survive completed integration must be incorporated into the authorized tracked paths. No process may keep using the run-owned temporary tree after its worker or resolver exits; the inherited lifecycle lock and prohibition on background processes establish cleanup exclusivity. Ordinary managed cleanup authenticates and removes only the exact temporary path recorded for that run before deleting its private lifecycle refs; failure leaves a retryable retained state, and a cleaned run must have no such path. The separately authorized rewritten-quarantine retirement retains its stricter receipt transaction and removes the same authenticated temporary path only during finalization.
+
 From the primary checkout, inspect and manage ordinary retained runs with:
 
 ```sh
