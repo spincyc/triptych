@@ -1,6 +1,6 @@
 # Source Audit — At the End of Every Why
 
-The core online witnesses were checked through 2026-07-20; the added Augustine, *Homilies on First John* IX and Aquinas ST I--II, q. 109, a. 6 and II--II, qq. 19 and 29 loci were checked on 2026-07-21. Public English translations are working study witnesses unless otherwise stated. Consequential claims are governed by the identified work and exact locus, not by a claim that an online translation or re-typeset edition is critical.
+The core online witnesses were checked through 2026-07-20; the added Augustine, *Homilies on First John* IX and Aquinas ST I--II, q. 109, a. 6 and II--II, qq. 19 and 29 loci were checked on 2026-07-21. The 2026-07-22 literary revision changes project-authored entrances and transitions but adds no consequential theological claim or source. Public English translations are working study witnesses unless otherwise stated. Consequential claims are governed by the identified work and exact locus, not by a claim that an online translation or re-typeset edition is critical.
 
 ## Core claim-to-source matrix
 
@@ -96,4 +96,4 @@ Particularly controlling distinctions:
 
 Quotations are brief and claim-driven. Scripture, official texts, patristic and mystical phrases, and third-party translations retain their own status and are not relicensed by the project's CC BY 4.0 grant. The source record links to online witnesses but incorporates no scan, wrapper, bulk transcription, image, or source typesetting.
 
-Completed for the refactored source: exact-locus source check; command/freedom and grace/agency audit; charity/justice and friendship/participation audit; Scripture attribution check; patristic, Thomistic, mystical, Trinitarian, and rights review. Production checks and final artifact data are recorded in the scope file. The exact current installed snapshot is release-cleared by the 21 July 2026 exact-current-snapshot exception. Independent specialist and ecclesiastical review remain outstanding.
+Completed for the revised source: exact-locus source check; command/freedom and grace/agency audit; charity/justice and friendship/participation audit; Scripture attribution check; patristic, Thomistic, mystical, Trinitarian, rights, and source-record consistency review. The revised framing preserves the audited claims and qualifications. It has also received fresh literary, build, log, structural, metadata, extracted-text, bounded-raster, all-page visual, widow-and-orphan, and deterministic-rebuild review. Current artifact data and the uninstalled disposition are recorded in the scope file; no installation or release clearance is claimed. Independent specialist and ecclesiastical review remain outstanding.
