@@ -72,7 +72,7 @@ The Catholic Archives catalog is an official archival description system. Catalo
 
 ## Rights and review
 
-No archival or directory image, newspaper page, map, logo, or third-party table is reproduced. Source language is narrowly paraphrased, and catalog records are not used as substitutes for unseen file contents. Internal work-specific source-use review was completed 2026-07-21; independent historical, tribal-history, architectural, canonical, ecclesiastical, legal, and rights review remains outstanding. Source audit does not grant exact-snapshot distribution authorization.
+No archival or directory image, newspaper page, map, logo, or third-party table is reproduced. Source language is narrowly paraphrased, and catalog records are not used as substitutes for unseen file contents. Internal work-specific source-use review was completed 2026-07-21; independent historical, tribal-history, architectural, canonical, ecclesiastical, legal, and rights review remains outstanding. This source audit and internal source-use review did not themselves grant exact-snapshot distribution authorization; the separate 22 July 2026 release record does so only for the exact current PDF bytes recorded below.
 
 ## Production record
 
@@ -84,5 +84,5 @@ No archival or directory image, newspaper page, map, logo, or third-party table 
 - Every-page raster review: `scripts/pdf-review` generated the bounded review set, and every one of the 28 rendered pages was inspected individually. No clipping, overflow, collision, orphaned heading, accidental blank page, or illegible table was found; the terminal generation-metadata colophon remains legible.
 - Deterministic rebuild: the reviewed build and final forced rebuild were byte-identical at SHA-256 `8cf0c0e1f758fa96862a4af9ed70ffd921a20a43b223b6a910f5d7f33585ae0e`.
 - Installed PDF checksum: `doc/gpt/history/catholic-parish-histories/02-st-anthony-willits.pdf` is byte-identical to the reviewed build at SHA-256 `8cf0c0e1f758fa96862a4af9ed70ffd921a20a43b223b6a910f5d7f33585ae0e`. The predecessor installed snapshot was SHA-256 `a320b619518f803d19021a0931c2b081ea0ee82057043e6ab0ce33a270004ab9`.
-- The revised installed snapshot has no active release approval and is held pending renewed exact-snapshot authorization.
+- The separate 22 July 2026 exact-current-snapshot exception release-clears the exact installed PDF at SHA-256 `8cf0c0e1f758fa96862a4af9ed70ffd921a20a43b223b6a910f5d7f33585ae0e` as a bound working study only; changed bytes require renewed exact-snapshot authorization.
 - Source-audited status does not imply independent historical, tribal-history, architectural, canonical, ecclesiastical, legal, or rights review.

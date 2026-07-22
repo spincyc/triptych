@@ -139,14 +139,15 @@ unresolved loci are recorded without concealment in `passage-inventory.md`.
 The work has no imprimatur, nihil obstat, ecclesiastical approval, or
 independent Latin, liturgical, pedagogical, theological, textual, canonical,
 or rights review. Its donor provenance, incorporated liturgical wording, and
-page-image collation remain incomplete; current production verification is
-recorded separately. The 52 rebuilt PDFs are installed as revised working
-snapshots at the user's direction. The prior installed snapshots and their
-exact-byte authorization are now historical; that authorization does not
-record completion of any missing review, establish an open license, authorize
-extracted material, or authorize the replacement bytes. The revised set
-remains on changed-byte release hold pending renewed exact-snapshot
-authorization. The 21 July 2026 exact-current-snapshot exception
-release-cleared only the now-superseded installed hashes; it completed no
-missing review, established no open license, and authorized no extracted
-material or broader reuse.
+page-image collation remain incomplete; the completed technical and visual
+verification of the current 779-page set is recorded separately. The 52
+rebuilt PDFs are installed as revised working snapshots at the user's
+direction. At this scope record's 21 July cutoff, the revised set remained on
+changed-byte release hold: the 21 July 2026 exact-current-snapshot exception
+release-cleared only the now-superseded installed hashes. This scope, its
+audits, and installation did not themselves authorize distribution. The
+separate 22 July 2026 release record now release-clears only the exact current
+52 PDF hashes under its exact-byte exception. Neither historical nor current
+exact-byte authorization records completion of any missing review, establishes
+donor ownership or an open license, resolves received-text rights or page-image
+collation, or authorizes extracted material or broader reuse.
