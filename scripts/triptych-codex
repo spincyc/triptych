@@ -789,8 +789,39 @@ def state_base() -> Path:
 
 
 def private_directory(path: Path) -> None:
-    path.mkdir(mode=0o700, parents=True, exist_ok=True)
-    path.chmod(0o700)
+    try:
+        path.mkdir(mode=0o700, parents=True, exist_ok=True)
+        metadata = path.lstat()
+    except OSError as exc:
+        raise LauncherError("cannot create or inspect a private launcher directory") from exc
+    if not stat.S_ISDIR(metadata.st_mode):
+        raise LauncherError("a private launcher path is not a real directory")
+    directory_flag = getattr(os, "O_DIRECTORY", 0)
+    nofollow_flag = getattr(os, "O_NOFOLLOW", 0)
+    if not directory_flag or not nofollow_flag:
+        raise LauncherError("safe private launcher directory setup is unavailable")
+    try:
+        descriptor = os.open(
+            path,
+            os.O_RDONLY
+            | directory_flag
+            | nofollow_flag
+            | getattr(os, "O_CLOEXEC", 0),
+        )
+    except OSError as exc:
+        raise LauncherError("cannot open a private launcher directory safely") from exc
+    try:
+        opened = os.fstat(descriptor)
+        if (
+            not stat.S_ISDIR(opened.st_mode)
+            or not os.path.samestat(metadata, opened)
+        ):
+            raise LauncherError("a private launcher directory changed during setup")
+        os.fchmod(descriptor, 0o700)
+    except OSError as exc:
+        raise LauncherError("cannot authenticate a private launcher directory") from exc
+    finally:
+        os.close(descriptor)
 
 
 def repository_slug(root: Path) -> str:
@@ -872,7 +903,7 @@ def validate_run_id(run_id: str) -> None:
         raise LauncherError("invalid Triptych Codex run ID")
 
 
-def validate_exact_retirement_tmpdir(
+def validate_exact_run_tmpdir(
     repository: Repository,
     manifest: dict,
 ) -> Path:
@@ -883,7 +914,7 @@ def validate_exact_retirement_tmpdir(
     expected = repository.state_root / "tmp" / run_id
     temporary_value = manifest.get("tmpdir")
     if not isinstance(temporary_value, str) or temporary_value != str(expected):
-        raise LauncherError("the retirement temporary path is not the exact launcher path")
+        raise LauncherError("the temporary path is not the exact launcher path")
     return expected
 
 
@@ -960,20 +991,17 @@ def validate_manifest_paths(repository: Repository, manifest: dict) -> None:
         raise LauncherError("run manifest has an unsafe worktree path")
     run_id = manifest.get("run_id")
     tmp_root = (repository.state_root / "tmp").resolve()
-    temporary_value = manifest.get("tmpdir")
-    temporary = Path(temporary_value) if isinstance(temporary_value, str) else Path("")
+    temporary = validate_exact_run_tmpdir(repository, manifest)
+    with exact_run_tmp_parent(repository, manifest):
+        pass
     retirement_temporary = state in RETIREMENT_PENDING_STATES or (
         state == "cleaned" and "retirement_completed_at" in manifest
     )
-    if retirement_temporary:
-        validate_exact_retirement_tmpdir(repository, manifest)
-        unsafe_temporary = False
-    else:
-        unsafe_temporary = (
-            not temporary.is_absolute()
-            or temporary.parent.resolve() != tmp_root
-            or temporary.is_symlink()
-        )
+    unsafe_temporary = not retirement_temporary and (
+        not temporary.is_absolute()
+        or temporary.parent.resolve() != tmp_root
+        or temporary.is_symlink()
+    )
     if unsafe_temporary:
         raise LauncherError("run manifest has an unsafe temporary path")
     if worktree.name != run_id or temporary.name != run_id:
@@ -1508,7 +1536,8 @@ def child_environment(manifest: dict, real_codex: Path) -> dict[str, str]:
     environment = codex_environment(real_codex)
     environment[ROLE_ENV] = "worker"
     environment["TRIPTYCH_CODEX_RUN_ID"] = manifest["run_id"]
-    environment["TMPDIR"] = manifest["tmpdir"]
+    for name in ("TMPDIR", "TMP", "TEMP"):
+        environment[name] = manifest["tmpdir"]
     return environment
 
 
@@ -1516,7 +1545,8 @@ def resolver_environment(manifest: dict, real_codex: Path) -> dict[str, str]:
     environment = codex_environment(real_codex)
     environment[ROLE_ENV] = "resolver"
     environment["TRIPTYCH_CODEX_RUN_ID"] = manifest["run_id"]
-    environment["TMPDIR"] = manifest["tmpdir"]
+    for name in ("TMPDIR", "TMP", "TEMP"):
+        environment[name] = manifest["tmpdir"]
     return environment
 
 
@@ -3045,6 +3075,19 @@ def retry_retained_ref_cleanup(repository: Repository, manifest: dict) -> bool:
                 "the transactional worker-branch and source-anchor cleanup is only partial"
             )
 
+    retained_state = (
+        "cleaned-ref-retained"
+        if source_head is not None
+        else "cleaned-branch-retained"
+    )
+    try:
+        remove_run_tmpdir(repository, manifest)
+    except LauncherError as exc:
+        manifest["state"] = retained_state
+        manifest["cleanup_warning"] = str(exc)
+        write_manifest(repository, manifest)
+        return False
+
     commands = ["start", f"verify {manifest['target_ref']} {target_head}"]
     if branch_head is not None:
         commands.append(f"delete {branch_ref} {branch_head}")
@@ -3064,11 +3107,7 @@ def retry_retained_ref_cleanup(repository: Repository, manifest: dict) -> bool:
         direct_ref_commit(repository, anchor_ref) if anchor_ref is not None else None
     )
     if deletion.returncode or remaining_branch is not None or remaining_anchor is not None:
-        manifest["state"] = (
-            "cleaned-ref-retained"
-            if source_head is not None
-            else "cleaned-branch-retained"
-        )
+        manifest["state"] = retained_state
         manifest["cleanup_warning"] = (
             deletion.stderr.strip() or "private lifecycle refs were retained"
         )
@@ -3286,9 +3325,6 @@ def safe_cleanup(
             write_manifest(repository, manifest)
             branch_removed = False
 
-    temporary = Path(manifest["tmpdir"])
-    if temporary.parent.resolve() == (repository.state_root / "tmp").resolve():
-        shutil.rmtree(temporary, ignore_errors=True)
     return branch_removed
 
 
@@ -3348,6 +3384,7 @@ def launch_child(
 ) -> int:
     worktree = Path(manifest["worktree"])
     authenticate_retained_worktree(repository, manifest)
+    require_run_tmp_directory(repository, manifest)
     if worktree.is_symlink():
         raise LauncherError("the retained worktree path was replaced by a symlink")
     child_cwd = worktree / Path(manifest["relative_cwd"])
@@ -3479,6 +3516,7 @@ def launch_resolver(
 ) -> int:
     child_cwd = Path(manifest["worktree"])
     authenticate_retained_worktree(repository, manifest)
+    require_run_tmp_directory(repository, manifest)
     argv = codex_argv(real_codex, child_cwd, [RESOLVER_PROMPT])
     manifest["resolver_started_at"] = utc_now()
     manifest.pop("background_process_active", None)
@@ -4575,6 +4613,7 @@ def confirm_cleaned_integration(repository: Repository, manifest: dict) -> int:
             "the run was cleaned after integration, but its recorded target no longer "
             "contains the integrated commit"
         )
+    require_run_tmp_absent(repository, manifest)
     diagnostic(f"run {manifest['run_id']} was already integrated and cleaned")
     return 0
 
@@ -5738,7 +5777,7 @@ def checkpoint_rewritten_quarantine_retirement(
 ) -> None:
     if manifest.get("state") != "quarantined":
         raise LauncherError("only an exact rewritten quarantine may be retired")
-    validate_exact_retirement_tmpdir(repository, manifest)
+    validate_exact_run_tmpdir(repository, manifest)
     if any(field in manifest for field in RETIREMENT_FIELDS):
         raise LauncherError("the quarantine has invalid uncheckpointed retirement data")
     reject_conflicting_retirement_lifecycle(manifest)
@@ -5900,24 +5939,24 @@ def retirement_cleanup_target(manifest: dict) -> str:
 
 
 @contextmanager
-def exact_retirement_tmp_parent(
+def exact_run_tmp_parent(
     repository: Repository,
     manifest: dict,
 ) -> Iterator[tuple[int, str]]:
-    expected = validate_exact_retirement_tmpdir(repository, manifest)
+    expected = validate_exact_run_tmpdir(repository, manifest)
     temporary_root = expected.parent
     run_id = expected.name
 
     directory_flag = getattr(os, "O_DIRECTORY", 0)
     nofollow_flag = getattr(os, "O_NOFOLLOW", 0)
     if not directory_flag or not nofollow_flag:
-        raise LauncherError("safe retirement temporary-path inspection is unavailable")
+        raise LauncherError("safe run temporary-path inspection is unavailable")
     try:
         root_metadata = temporary_root.lstat()
     except OSError as exc:
-        raise LauncherError("cannot inspect the retirement temporary root") from exc
+        raise LauncherError("cannot inspect the run temporary root") from exc
     if not stat.S_ISDIR(root_metadata.st_mode):
-        raise LauncherError("the retirement temporary root is not a real directory")
+        raise LauncherError("the run temporary root is not a real directory")
 
     try:
         descriptor = os.open(
@@ -5928,28 +5967,28 @@ def exact_retirement_tmp_parent(
             | getattr(os, "O_CLOEXEC", 0),
         )
     except OSError as exc:
-        raise LauncherError("cannot open the retirement temporary root safely") from exc
+        raise LauncherError("cannot open the run temporary root safely") from exc
     try:
         try:
             opened_metadata = os.fstat(descriptor)
         except OSError as exc:
             raise LauncherError(
-                "cannot authenticate the retirement temporary root"
+                "cannot authenticate the run temporary root"
             ) from exc
         if (
             not stat.S_ISDIR(opened_metadata.st_mode)
             or not os.path.samestat(root_metadata, opened_metadata)
         ):
-            raise LauncherError("the retirement temporary root changed during inspection")
+            raise LauncherError("the run temporary root changed during inspection")
         yield descriptor, run_id
     finally:
         try:
             os.close(descriptor)
         except OSError as exc:
-            raise LauncherError("cannot close the retirement temporary root") from exc
+            raise LauncherError("cannot close the run temporary root") from exc
 
 
-def retirement_tmp_entry(
+def run_tmp_entry(
     parent_descriptor: int,
     run_id: str,
 ) -> os.stat_result | None:
@@ -5962,88 +6001,149 @@ def retirement_tmp_entry(
     except FileNotFoundError:
         return None
     except OSError as exc:
-        raise LauncherError("cannot inspect the retirement temporary path") from exc
+        raise LauncherError("cannot inspect the run temporary path") from exc
 
 
-@contextmanager
-def working_directory_at(directory_descriptor: int) -> Iterator[None]:
+def open_exact_temporary_directory(
+    parent_descriptor: int,
+    name: str,
+    expected: os.stat_result,
+) -> int:
     directory_flag = getattr(os, "O_DIRECTORY", 0)
-    if not directory_flag or not hasattr(os, "fchdir"):
+    nofollow_flag = getattr(os, "O_NOFOLLOW", 0)
+    if not directory_flag or not nofollow_flag:
         raise LauncherError("safe temporary-directory traversal is unavailable")
     try:
-        original_descriptor = os.open(
-            ".",
-            os.O_RDONLY | directory_flag | getattr(os, "O_CLOEXEC", 0),
+        descriptor = os.open(
+            name,
+            os.O_RDONLY
+            | directory_flag
+            | nofollow_flag
+            | getattr(os, "O_CLOEXEC", 0),
+            dir_fd=parent_descriptor,
         )
     except OSError as exc:
-        raise LauncherError("cannot preserve the launcher working directory") from exc
+        raise LauncherError("cannot open an authenticated temporary directory") from exc
     try:
-        try:
-            os.fchdir(directory_descriptor)
-        except OSError as exc:
-            raise LauncherError(
-                "cannot enter the authenticated retirement temporary root"
-            ) from exc
-        yield
-    finally:
-        restore_error: OSError | None = None
-        close_error: OSError | None = None
-        try:
-            os.fchdir(original_descriptor)
-        except OSError as exc:
-            restore_error = exc
-        try:
-            os.close(original_descriptor)
-        except OSError as exc:
-            close_error = exc
-        if restore_error is not None:
-            raise LauncherError(
-                "cannot restore the launcher working directory"
-            ) from restore_error
-        if close_error is not None:
-            raise LauncherError(
-                "cannot close the saved launcher working directory"
-            ) from close_error
+        opened = os.fstat(descriptor)
+    except OSError as exc:
+        os.close(descriptor)
+        raise LauncherError("cannot authenticate a temporary directory") from exc
+    if not stat.S_ISDIR(opened.st_mode) or not os.path.samestat(expected, opened):
+        os.close(descriptor)
+        raise LauncherError("a temporary directory changed before removal")
+    return descriptor
 
 
-def remove_retirement_tmpdir(repository: Repository, manifest: dict) -> None:
-    with exact_retirement_tmp_parent(repository, manifest) as (
+def remove_open_temporary_contents(directory_descriptor: int) -> None:
+    # The inherited lifecycle lock and no-background-process contract make this
+    # tree inactive before cleanup. Descriptor-relative traversal prevents a
+    # replaced directory from redirecting recursion; final unlink/rmdir calls
+    # remain POSIX name operations inside the authenticated parent descriptor.
+    try:
+        names = os.listdir(directory_descriptor)
+    except OSError as exc:
+        raise LauncherError("cannot list an authenticated temporary directory") from exc
+    for name in names:
+        before = run_tmp_entry(directory_descriptor, name)
+        if before is None:
+            raise LauncherError("a temporary entry changed during removal")
+        if stat.S_ISDIR(before.st_mode):
+            child_descriptor = open_exact_temporary_directory(
+                directory_descriptor,
+                name,
+                before,
+            )
+            try:
+                remove_open_temporary_contents(child_descriptor)
+                current = run_tmp_entry(directory_descriptor, name)
+                if current is None or not os.path.samestat(before, current):
+                    raise LauncherError("a temporary directory changed during removal")
+                try:
+                    os.rmdir(name, dir_fd=directory_descriptor)
+                except OSError as exc:
+                    raise LauncherError(
+                        "cannot remove an authenticated temporary directory"
+                    ) from exc
+            finally:
+                os.close(child_descriptor)
+        else:
+            current = run_tmp_entry(directory_descriptor, name)
+            if current is None or not os.path.samestat(before, current):
+                raise LauncherError("a temporary entry changed during removal")
+            try:
+                os.unlink(name, dir_fd=directory_descriptor)
+            except OSError as exc:
+                raise LauncherError("cannot remove an authenticated temporary entry") from exc
+        if run_tmp_entry(directory_descriptor, name) is not None:
+            raise LauncherError("a temporary entry was replaced during removal")
+
+
+def remove_run_tmpdir(repository: Repository, manifest: dict) -> None:
+    with exact_run_tmp_parent(repository, manifest) as (
         parent_descriptor,
         run_id,
     ):
-        before = retirement_tmp_entry(parent_descriptor, run_id)
+        before = run_tmp_entry(parent_descriptor, run_id)
         if before is None:
             return
         if not stat.S_ISDIR(before.st_mode):
             raise LauncherError(
-                "the retirement temporary path is not an exact real directory"
+                "the run temporary path is not an exact real directory"
             )
-        if not getattr(shutil.rmtree, "avoids_symlink_attacks", False):
-            raise LauncherError("safe retirement temporary-directory removal is unavailable")
+        directory_descriptor = open_exact_temporary_directory(
+            parent_descriptor,
+            run_id,
+            before,
+        )
         try:
-            with working_directory_at(parent_descriptor):
-                shutil.rmtree(run_id)
-        except (OSError, NotImplementedError) as exc:
-            raise LauncherError(
-                "authenticated retirement temporary-directory removal failed"
-            ) from exc
-        after = retirement_tmp_entry(parent_descriptor, run_id)
+            remove_open_temporary_contents(directory_descriptor)
+            current = run_tmp_entry(parent_descriptor, run_id)
+            if current is None:
+                raise LauncherError("the run temporary path moved during removal")
+            if not os.path.samestat(before, current):
+                raise LauncherError("the run temporary path was replaced during removal")
+            try:
+                os.rmdir(run_id, dir_fd=parent_descriptor)
+            except OSError as exc:
+                raise LauncherError(
+                    "authenticated run temporary-directory removal failed"
+                ) from exc
+        finally:
+            os.close(directory_descriptor)
+        after = run_tmp_entry(parent_descriptor, run_id)
         if after is not None:
             disposition = (
                 "retained"
                 if os.path.samestat(before, after)
                 else "replaced during removal"
             )
-            raise LauncherError(f"the retirement temporary path was {disposition}")
+            raise LauncherError(f"the run temporary path was {disposition}")
 
 
-def require_retirement_tmp_absent(repository: Repository, manifest: dict) -> None:
-    with exact_retirement_tmp_parent(repository, manifest) as (
+def require_run_tmp_absent(repository: Repository, manifest: dict) -> None:
+    with exact_run_tmp_parent(repository, manifest) as (
         parent_descriptor,
         run_id,
     ):
-        if retirement_tmp_entry(parent_descriptor, run_id) is not None:
-            raise LauncherError("the retired run unexpectedly retains a temporary path")
+        if run_tmp_entry(parent_descriptor, run_id) is not None:
+            raise LauncherError("the cleaned run unexpectedly retains a temporary path")
+
+
+def require_run_tmp_directory(repository: Repository, manifest: dict) -> None:
+    with exact_run_tmp_parent(repository, manifest) as (
+        parent_descriptor,
+        run_id,
+    ):
+        metadata = run_tmp_entry(parent_descriptor, run_id)
+        if metadata is None or not stat.S_ISDIR(metadata.st_mode):
+            raise LauncherError("the run temporary path is not an exact real directory")
+        descriptor = open_exact_temporary_directory(
+            parent_descriptor,
+            run_id,
+            metadata,
+        )
+        os.close(descriptor)
 
 
 def record_retirement_cleanup_failure(
@@ -6087,7 +6187,7 @@ def finalize_retirement(repository: Repository, manifest: dict) -> None:
         raise LauncherError("retirement refs remain after transactional cleanup")
 
     try:
-        remove_retirement_tmpdir(repository, manifest)
+        remove_run_tmpdir(repository, manifest)
     except LauncherError as exc:
         record_retirement_cleanup_failure(repository, manifest, str(exc))
         raise
@@ -6259,7 +6359,7 @@ def confirm_cleaned_retirement(repository: Repository, manifest: dict) -> None:
         raise LauncherError("the retired run unexpectedly retains a worktree")
     if retirement_ref_tuple(repository, manifest) != (None, None, None):
         raise LauncherError("the retired run's ref tuple was recreated or tampered")
-    require_retirement_tmp_absent(repository, manifest)
+    require_run_tmp_absent(repository, manifest)
 
 
 def resume_checkpointed_retirement(
@@ -6268,7 +6368,7 @@ def resume_checkpointed_retirement(
 ) -> bool:
     if manifest.get("state") not in RETIREMENT_PENDING_STATES:
         raise LauncherError("the retained run has no retryable retirement checkpoint")
-    validate_exact_retirement_tmpdir(repository, manifest)
+    validate_exact_run_tmpdir(repository, manifest)
     reject_conflicting_retirement_lifecycle(manifest)
     discard_head, _, _ = retirement_parameters(manifest)
     worktree = Path(manifest["worktree"])
@@ -6378,6 +6478,8 @@ def clean_run(repository: Repository, run_id: str) -> int:
         if manifest.get("state") == "cleaned":
             if manifest.get("retirement_completed_at") is not None:
                 confirm_cleaned_retirement(repository, manifest)
+            else:
+                require_run_tmp_absent(repository, manifest)
             return 0
         run_lock_stream = acquire_existing_run_lock(repository, run_id)
         try:
@@ -6577,6 +6679,9 @@ def launcher_help() -> str:
 The default command starts Codex in a unique locked worktree. A successful
 first unchanged run is cleaned automatically. Changed, committed, failed, or
 inconsistent runs are preserved and identified by an opaque run ID.
+Workers and resolvers receive one exact run-owned directory as TMPDIR, TMP, and
+TEMP. Ordinary managed cleanup authenticates and removes it before deleting
+private refs; a run is never marked cleaned while that path remains.
 Status without a run ID lists only runs that still require attention; pass an
 explicit run ID to inspect a cleaned record.
 Reopening starts a new Codex process in the retained worktree; it does not

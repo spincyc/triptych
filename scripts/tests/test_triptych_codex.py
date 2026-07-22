@@ -7,12 +7,14 @@ import base64
 import fcntl
 import json
 import os
+import runpy
 import shutil
 import subprocess
 import tempfile
 import time
 import unittest
 from pathlib import Path
+from unittest import mock
 
 
 SCRIPTS_ROOT = Path(__file__).resolve().parents[1]
@@ -21,6 +23,67 @@ SOURCE_LAUNCHER = SCRIPTS_ROOT / "triptych-codex"
 SOURCE_FAKE = Path(__file__).resolve().with_name("fake-codex")
 COMMAND_TIMEOUT_SECONDS = 60
 LOCK_CHECKPOINT_TIMEOUT_SECONDS = 30
+
+
+class RunTemporaryRemovalTests(unittest.TestCase):
+    def test_leaf_replacement_is_not_recursively_deleted(self) -> None:
+        launcher = runpy.run_path(str(SOURCE_LAUNCHER), run_name="triptych_codex_unit")
+        run_id = "20260722t000000z-000000000000"
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            state_root = root / "state"
+            temporary_root = state_root / "tmp"
+            run_temporary = temporary_root / run_id
+            replacement = temporary_root / "replacement"
+            displaced = temporary_root / "displaced"
+            run_temporary.mkdir(parents=True)
+            replacement.mkdir()
+            (run_temporary / "owned.txt").write_text("owned\n", encoding="utf-8")
+            (replacement / "preserved.txt").write_text(
+                "preserved\n",
+                encoding="utf-8",
+            )
+            repository = launcher["Repository"](
+                root=root,
+                git_dir=root / ".git",
+                common_git_dir=root / ".git",
+                relative_cwd=Path("."),
+                linked_worktree=False,
+                state_root=state_root,
+            )
+            manifest = {"run_id": run_id, "tmpdir": str(run_temporary)}
+            real_open = os.open
+            swapped = False
+
+            def racing_open(path, flags, mode=0o777, *, dir_fd=None):
+                nonlocal swapped
+                if path == run_id and dir_fd is not None and not swapped:
+                    swapped = True
+                    os.rename(run_id, displaced.name, src_dir_fd=dir_fd, dst_dir_fd=dir_fd)
+                    os.rename(
+                        replacement.name,
+                        run_id,
+                        src_dir_fd=dir_fd,
+                        dst_dir_fd=dir_fd,
+                    )
+                return real_open(path, flags, mode, dir_fd=dir_fd)
+
+            with mock.patch.object(launcher["os"], "open", side_effect=racing_open):
+                with self.assertRaisesRegex(
+                    launcher["LauncherError"],
+                    "changed before removal",
+                ):
+                    launcher["remove_run_tmpdir"](repository, manifest)
+
+            self.assertTrue(swapped)
+            self.assertEqual(
+                (run_temporary / "preserved.txt").read_text(encoding="utf-8"),
+                "preserved\n",
+            )
+            self.assertEqual(
+                (displaced / "owned.txt").read_text(encoding="utf-8"),
+                "owned\n",
+            )
 
 
 class TriptychCodexTests(unittest.TestCase):
@@ -979,6 +1042,11 @@ class TriptychCodexTests(unittest.TestCase):
         self.assertEqual(record["process_cwd"], record["workdir"])
         self.assertEqual(record["role"], "worker")
         self.assertNotEqual(Path(record["workdir"]), self.control)
+        manifest = self.manifests()[0]
+        self.assertEqual(
+            record["temporary_environment"],
+            {name: manifest["tmpdir"] for name in ("TMPDIR", "TMP", "TEMP")},
+        )
         self.assert_control_unchanged()
 
     def test_post_git_ordinary_branch_cleanup_crash_is_idempotent(self) -> None:
@@ -998,6 +1066,7 @@ class TriptychCodexTests(unittest.TestCase):
         self.assertEqual(manifest["state"], "cleaned-branch-retained")
         self.assertEqual(self.worktree_paths(), [self.control.resolve()])
         self.assertEqual(self.worker_branches(), [])
+        self.assertFalse(Path(manifest["tmpdir"]).exists())
 
         retry = self.run_launcher(["--triptych-clean", manifest["run_id"]])
         self.assertEqual(retry.returncode, 0, retry.stderr.decode())
@@ -1534,6 +1603,91 @@ class TriptychCodexTests(unittest.TestCase):
         self.assertEqual(tmp_reopen.returncode, 2)
         self.assertIn(b"unsafe temporary path", tmp_reopen.stderr)
         self.assertNotIn(os.fsencode(manifest["tmpdir"]), tmp_reopen.stderr)
+
+    def test_reopen_rejects_a_symlinked_tmp_root_before_launch(self) -> None:
+        log = self.root / "symlinked-tmp-root-worker.jsonl"
+        result = self.run_launcher(
+            environment={
+                "FAKE_CODEX_LOG": str(log),
+                "FAKE_CODEX_ACTION": "dirty",
+            }
+        )
+        self.assertEqual(result.returncode, 0, result.stderr.decode())
+        manifest = self.manifests()[0]
+        temporary_root = self.repo_state() / "tmp"
+        moved_root = self.root / "moved-tmp-root"
+        outside_root = self.root / "outside-tmp-root"
+        temporary_root.rename(moved_root)
+        outside_root.mkdir()
+        (outside_root / "preserved.txt").write_text("outside\n", encoding="utf-8")
+        temporary_root.symlink_to(outside_root, target_is_directory=True)
+        reopen_log = self.root / "symlinked-tmp-root-reopen.jsonl"
+        try:
+            reopen = self.run_launcher(
+                ["--triptych-reopen", manifest["run_id"]],
+                environment={"FAKE_CODEX_LOG": str(reopen_log)},
+            )
+            self.assertEqual(reopen.returncode, 2)
+            self.assertIn(b"not a real directory", reopen.stderr)
+            self.assertFalse(reopen_log.exists())
+            self.assertEqual(
+                (outside_root / "preserved.txt").read_text(encoding="utf-8"),
+                "outside\n",
+            )
+        finally:
+            temporary_root.unlink()
+            moved_root.rename(temporary_root)
+
+    def test_reopen_rejects_a_non_directory_tmpdir_before_launch(self) -> None:
+        result = self.run_launcher(
+            environment={
+                "FAKE_CODEX_LOG": str(self.root / "regular-tmp-worker.jsonl"),
+                "FAKE_CODEX_ACTION": "dirty",
+            }
+        )
+        self.assertEqual(result.returncode, 0, result.stderr.decode())
+        manifest = self.manifests()[0]
+        temporary = Path(manifest["tmpdir"])
+        shutil.rmtree(temporary)
+        temporary.write_text("preserve this obstruction\n", encoding="utf-8")
+        reopen_log = self.root / "regular-tmp-reopen.jsonl"
+
+        reopen = self.run_launcher(
+            ["--triptych-reopen", manifest["run_id"]],
+            environment={"FAKE_CODEX_LOG": str(reopen_log)},
+        )
+
+        self.assertEqual(reopen.returncode, 2)
+        self.assertIn(b"not an exact real directory", reopen.stderr)
+        self.assertFalse(reopen_log.exists())
+        self.assertEqual(
+            temporary.read_text(encoding="utf-8"),
+            "preserve this obstruction\n",
+        )
+
+    def test_reopen_rejects_noncanonical_equivalent_tmpdir(self) -> None:
+        result = self.run_launcher(
+            environment={
+                "FAKE_CODEX_LOG": str(self.root / "noncanonical-tmp-worker.jsonl"),
+                "FAKE_CODEX_ACTION": "dirty",
+            }
+        )
+        self.assertEqual(result.returncode, 0, result.stderr.decode())
+        manifest = self.manifests()[0]
+        canonical = Path(manifest["tmpdir"])
+        detour = canonical.parent / "detour"
+        detour.mkdir()
+        manifest["tmpdir"] = str(detour / ".." / manifest["run_id"])
+        self.write_test_manifest(manifest)
+        before = self.manifest_file(manifest).read_bytes()
+
+        reopen = self.run_launcher(["--triptych-reopen", manifest["run_id"]])
+
+        self.assertEqual(reopen.returncode, 2)
+        self.assertIn(b"exact launcher path", reopen.stderr)
+        self.assertEqual(self.manifest_file(manifest).read_bytes(), before)
+        self.assertTrue(Path(manifest["worktree"]).is_dir())
+        self.assertTrue(canonical.is_dir())
 
     def test_reopen_authenticates_retained_worktree_git_file(self) -> None:
         self.assert_retained_admin_tamper_rejected(".git")
@@ -3491,6 +3645,13 @@ class TriptychCodexTests(unittest.TestCase):
         manifest = self.manifests()[0]
         worker_head = manifest["final_head"]
         temporary = Path(manifest["tmpdir"])
+        nested = temporary / "downloads/source"
+        nested.mkdir(parents=True)
+        (nested / "artifact.bin").write_bytes(b"run-owned artifact")
+        outside = self.root / "outside-temp-target"
+        outside.mkdir()
+        (outside / "preserved.txt").write_text("outside\n", encoding="utf-8")
+        (temporary / "outside-link").symlink_to(outside, target_is_directory=True)
 
         integrate = self.run_launcher(["--triptych-integrate", manifest["run_id"]])
         self.assertEqual(integrate.returncode, 0, integrate.stderr.decode())
@@ -3510,6 +3671,10 @@ class TriptychCodexTests(unittest.TestCase):
         self.assertEqual(self.worktree_paths(), [self.control.resolve()])
         self.assertEqual(self.worker_branches(), [])
         self.assertFalse(temporary.exists())
+        self.assertEqual(
+            (outside / "preserved.txt").read_text(encoding="utf-8"),
+            "outside\n",
+        )
         integrated_manifest = self.manifests()[0]
         self.assertEqual(integrated_manifest["state"], "cleaned")
         self.assertEqual(integrated_manifest["integrated_head"], worker_head)
@@ -3527,6 +3692,76 @@ class TriptychCodexTests(unittest.TestCase):
         repeated = self.run_launcher(["--triptych-integrate", manifest["run_id"]])
         self.assertEqual(repeated.returncode, 0, repeated.stderr.decode())
         self.assertIn(b"already integrated and cleaned", repeated.stderr)
+
+    def test_integrate_retains_refs_when_tmpdir_is_not_a_real_directory(self) -> None:
+        result = self.run_launcher(
+            environment={
+                "FAKE_CODEX_LOG": str(self.root / "obstructed-tmp.jsonl"),
+                "FAKE_CODEX_ACTION": "commit",
+            }
+        )
+        self.assertEqual(result.returncode, 0, result.stderr.decode())
+        manifest = self.manifests()[0]
+        temporary = Path(manifest["tmpdir"])
+        shutil.rmtree(temporary)
+        temporary.write_text("operator-owned obstruction\n", encoding="utf-8")
+
+        integrate = self.run_launcher(["--triptych-integrate", manifest["run_id"]])
+
+        self.assertEqual(integrate.returncode, 1, integrate.stderr.decode())
+        retained = self.manifests()[0]
+        self.assertEqual(retained["state"], "cleaned-branch-retained")
+        self.assertIn("not an exact real directory", retained["cleanup_warning"])
+        self.assertTrue(temporary.is_file())
+        self.assertEqual(
+            temporary.read_text(encoding="utf-8"),
+            "operator-owned obstruction\n",
+        )
+        self.assertEqual(self.worktree_paths(), [self.control.resolve()])
+        self.assertIn(manifest["branch"], self.worker_branches())
+        self.assertIsNone(self.direct_ref_commit(self.source_anchor_ref(manifest["run_id"])))
+
+        temporary.unlink()
+        (temporary / "retry-artifacts").mkdir(parents=True)
+        retry = self.run_launcher(["--triptych-clean", manifest["run_id"]])
+
+        self.assertEqual(retry.returncode, 0, retry.stderr.decode())
+        self.assertFalse(temporary.exists())
+        self.assertEqual(self.worker_branches(), [])
+        self.assertIsNone(self.direct_ref_commit(self.source_anchor_ref(manifest["run_id"])))
+        self.assertEqual(self.manifests()[0]["state"], "cleaned")
+
+    def test_cleaned_integration_refuses_a_recreated_tmpdir(self) -> None:
+        result = self.run_launcher(
+            environment={
+                "FAKE_CODEX_LOG": str(self.root / "recreated-tmp.jsonl"),
+                "FAKE_CODEX_ACTION": "commit",
+            }
+        )
+        self.assertEqual(result.returncode, 0, result.stderr.decode())
+        manifest = self.manifests()[0]
+        integrate = self.run_launcher(["--triptych-integrate", manifest["run_id"]])
+        self.assertEqual(integrate.returncode, 0, integrate.stderr.decode())
+        cleaned = self.manifests()[0]
+        temporary = Path(cleaned["tmpdir"])
+        temporary.mkdir()
+        (temporary / "unexpected.txt").write_text("unexpected\n", encoding="utf-8")
+        checkpoint = self.manifest_file(cleaned).read_bytes()
+
+        for arguments in (
+            ["--triptych-integrate", cleaned["run_id"]],
+            ["--triptych-clean", cleaned["run_id"]],
+        ):
+            with self.subTest(arguments=arguments):
+                refusal = self.run_launcher(arguments)
+                self.assertEqual(refusal.returncode, 2, refusal.stderr.decode())
+                self.assertIn(b"retains a temporary path", refusal.stderr)
+                self.assertTrue(temporary.is_dir())
+                self.assertEqual(self.manifest_file(cleaned).read_bytes(), checkpoint)
+
+        shutil.rmtree(temporary)
+        confirmation = self.run_launcher(["--triptych-clean", cleaned["run_id"]])
+        self.assertEqual(confirmation.returncode, 0, confirmation.stderr.decode())
 
     def test_make_integrate_forwards_one_run_id_without_masking_unknown_targets(self) -> None:
         log = self.root / "make-integrate.jsonl"
@@ -4479,6 +4714,10 @@ class TriptychCodexTests(unittest.TestCase):
         record = records[0]
         self.assertEqual(record["role"], "resolver")
         self.assertEqual(record["run_id"], manifest["run_id"])
+        self.assertEqual(
+            record["temporary_environment"],
+            {name: manifest["tmpdir"] for name in ("TMPDIR", "TMP", "TEMP")},
+        )
         self.assertEqual(Path(record["root"]), worker)
         self.assertEqual(Path(record["workdir"]), worker)
         self.assertEqual(Path(record["process_cwd"]), worker)
@@ -5649,6 +5888,9 @@ class TriptychCodexTests(unittest.TestCase):
         manifest, worker, candidate, _ = self.create_review_pending_candidate()
         anchor = self.source_anchor_ref(manifest["run_id"])
         marker = self.root / "post-worktree-removal-kill"
+        temporary = Path(manifest["tmpdir"])
+        (temporary / "pending-review").mkdir()
+        (temporary / "pending-review/page.png").write_bytes(b"review raster")
 
         crashed = self.run_launcher(
             ["--triptych-integrate", manifest["run_id"]],
@@ -5670,11 +5912,13 @@ class TriptychCodexTests(unittest.TestCase):
             self.git(self.control, "rev-parse", anchor).stdout.strip(),
             pending["integration_source_head"],
         )
+        self.assertTrue((temporary / "pending-review/page.png").is_file())
 
         retry = self.run_launcher(["--triptych-clean", manifest["run_id"]])
         self.assertEqual(retry.returncode, 0, retry.stderr.decode())
         self.assertEqual(self.worker_branches(), [])
         self.assertEqual(self.manifests()[0]["state"], "cleaned")
+        self.assertFalse(temporary.exists())
         self.assertEqual(
             self.git(
                 self.control,
@@ -6548,17 +6792,27 @@ class TriptychCodexTests(unittest.TestCase):
             if manifest["run_id"] != first_manifest["run_id"]
         )
         self.assertNotEqual(first_manifest["final_head"], second_manifest["final_head"])
+        first_temporary = Path(first_manifest["tmpdir"])
+        second_temporary = Path(second_manifest["tmpdir"])
+        (first_temporary / "first-only.txt").write_text("first\n", encoding="utf-8")
+        (second_temporary / "second-only.txt").write_text("second\n", encoding="utf-8")
 
         integrate_first = self.run_launcher(
             ["--triptych-integrate", first_manifest["run_id"]]
         )
         self.assertEqual(integrate_first.returncode, 0, integrate_first.stderr.decode())
         first_landed_head = self.git(self.control, "rev-parse", "HEAD").stdout.strip()
+        self.assertFalse(first_temporary.exists())
+        self.assertEqual(
+            (second_temporary / "second-only.txt").read_text(encoding="utf-8"),
+            "second\n",
+        )
 
         integrate_second = self.run_launcher(
             ["--triptych-integrate", second_manifest["run_id"]]
         )
         self.assertEqual(integrate_second.returncode, 0, integrate_second.stderr.decode())
+        self.assertFalse(second_temporary.exists())
         self.assertEqual(
             self.git(self.control, "rev-parse", "HEAD").stdout.strip(),
             first_landed_head,

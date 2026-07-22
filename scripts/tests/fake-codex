@@ -68,6 +68,9 @@ def main() -> int:
         ).stdout,
         "role": os.environ.get("TRIPTYCH_CODEX_ROLE"),
         "run_id": os.environ.get("TRIPTYCH_CODEX_RUN_ID"),
+        "temporary_environment": {
+            name: os.environ.get(name) for name in ("TMPDIR", "TMP", "TEMP")
+        },
         "git_environment": {
             name: os.environ[name]
             for name in (

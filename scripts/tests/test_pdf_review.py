@@ -321,6 +321,39 @@ os.execv(
             self.assertEqual(review.cgroup_cpu_quota(mount, leaf), 2)
 
 
+class ArtifactPathTests(unittest.TestCase):
+    def test_managed_worker_accepts_only_a_tmpdir_subdirectory(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            run_id = "20260722t000000z-000000000000"
+            managed_root = Path(temporary) / "tmp" / run_id
+            managed_root.mkdir(parents=True)
+            environment = {
+                "TMPDIR": str(managed_root),
+                "TMP": str(managed_root),
+                "TEMP": str(managed_root),
+                "TRIPTYCH_CODEX_ROLE": "worker",
+                "TRIPTYCH_CODEX_RUN_ID": run_id,
+            }
+            with mock.patch.dict(os.environ, environment, clear=True):
+                expected = managed_root / "review"
+                self.assertEqual(review.validate_output_root(expected), expected.resolve())
+                with self.assertRaisesRegex(review.ReviewError, "managed TMPDIR"):
+                    review.validate_cache_root(managed_root)
+                with self.assertRaisesRegex(review.ReviewError, "managed TMPDIR"):
+                    review.validate_output_root(Path("/tmp/unmanaged-review-output"))
+
+    def test_unmanaged_invocation_ignores_a_caller_selected_tmpdir(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary, mock.patch.dict(
+            os.environ,
+            {"TMPDIR": temporary},
+            clear=True,
+        ):
+            with self.assertRaisesRegex(review.ReviewError, "/tmp"):
+                review.validate_output_root(Path(temporary) / "review")
+            output = Path("/tmp/triptych-pdf-review-unmanaged")
+            self.assertEqual(review.validate_output_root(output), output.resolve())
+
+
 class PdfReviewCommandTests(unittest.TestCase):
     def setUp(self) -> None:
         temporary_root = ROOT / "build/test-tmp"

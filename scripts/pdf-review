@@ -51,6 +51,7 @@ CONTACT_FONT_FILENAME = "lmsans10-regular.otf"
 METADATA_NAME = "review-cache.json"
 RUN_MANIFEST_NAME = "review-run.json"
 RUN_MANIFEST_SCHEMA = 1
+RUN_ID_RE = re.compile(r"^[0-9]{8}t[0-9]{6}z-[0-9a-f]{12}$")
 
 
 class ReviewError(RuntimeError):
@@ -406,13 +407,54 @@ def is_relative_to(path: Path, parent: Path) -> bool:
 def validate_artifact_root(value: Path, option: str) -> Path:
     output = (ROOT / value).resolve() if not value.is_absolute() else value.resolve()
     build_root = (ROOT / "build").resolve()
-    temporary_root = Path("/tmp").resolve()
-    allowed = is_relative_to(output, build_root) or (
-        output != temporary_root and is_relative_to(output, temporary_root)
+    run_id = os.environ.get("TRIPTYCH_CODEX_RUN_ID")
+    managed_worker = (
+        os.environ.get("TRIPTYCH_CODEX_ROLE") in {"worker", "resolver"}
+        and isinstance(run_id, str)
+        and RUN_ID_RE.fullmatch(run_id) is not None
     )
+    temporary_roots: list[Path] = []
+    if managed_worker:
+        configured_values = {
+            os.environ.get(name) for name in ("TMPDIR", "TMP", "TEMP")
+        }
+        if None not in configured_values and len(configured_values) == 1:
+            configured_value = configured_values.pop()
+            assert configured_value is not None
+            candidate = Path(configured_value)
+            try:
+                candidate_metadata = candidate.lstat()
+                parent_metadata = candidate.parent.lstat()
+            except OSError:
+                pass
+            else:
+                if (
+                    candidate.is_absolute()
+                    and candidate.name == run_id
+                    and candidate.parent.name == "tmp"
+                    and stat.S_ISDIR(candidate_metadata.st_mode)
+                    and stat.S_ISDIR(parent_metadata.st_mode)
+                    and candidate_metadata.st_uid == os.getuid()
+                    and parent_metadata.st_uid == os.getuid()
+                    and candidate == candidate.resolve()
+                ):
+                    temporary_roots.append(candidate)
+    else:
+        temporary_roots.append(Path("/tmp").resolve())
+    allowed_temporary = any(
+        output != temporary_root and is_relative_to(output, temporary_root)
+        for temporary_root in temporary_roots
+    )
+    allowed = is_relative_to(output, build_root) or allowed_temporary
     if not allowed:
+        temporary_description = (
+            "the managed TMPDIR"
+            if managed_worker
+            else "/tmp"
+        )
         raise ReviewError(
-            f"{option} must remain under this checkout's build/ tree or a /tmp subdirectory"
+            f"{option} must remain under this checkout's build/ tree or a "
+            f"{temporary_description} subdirectory"
         )
     return output
 
