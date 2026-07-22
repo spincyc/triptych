@@ -5,7 +5,7 @@ catalog home.
 
 | Section | Contents |
 | --- | --- |
-| **[Traditional Latin Mass (1962 Roman Rite)](library/traditional-latin-mass.md)** | Ordinary, assembly, calendar, and proper guides. |
+| **[Traditional Latin Mass (1962 Roman Rite)](library/traditional-latin-mass.md)** | Ordinary, altar-server training, assembly, calendar, and proper guides. |
 | **[Novus Ordo (Postconciliar Roman Rite)](library/novus-ordo-liturgy.md)** | Edition-specific Order, calendar, and proper guides. |
 | **[Prayer](library/prayer.md)** | Novenas and daily prayer books. |
 | **[Curriculums](library/curriculums.md)** | Course guides, substantial printable packets, memory and reference works, and cumulative self-reviews. |
@@ -25,11 +25,17 @@ The latest release-cleared snapshot is the historical 22 July 2026 record:
 `hold`, and that record bound those 118 exact PDF snapshots and 23 exact site
 inputs. Its “exact current” language describes only the bytes named in that
 record. In particular, it bound the then-installed 52-PDF Ecclesiastical Latin
-edition; it does not bind the redesigned 37-PDF edition or the changed catalog
-bytes that describe it. Those 37 PDFs are now installed and linked but remain
-unreleased on explicit hold. The 21 July 2026 binding of 115 exact PDFs and 22
-exact site inputs, the 20 July bindings, and all predecessor-hash dispositions
-likewise remain historical facts about only the bytes they bound.
+edition; it does not bind the redesigned 37-PDF edition, the six altar-server
+publications, or the changed catalog bytes that describe them. The current
+release manifest accounts for 109 publications: 66 are marked `release`, 0 are
+in `review`, and 43 are on `hold`. The 37 redesigned Ecclesiastical Latin PDFs
+are installed and linked but remain unreleased on explicit hold. The three
+altar-server guides and their three cue-card companions likewise remain on
+hold pending work-specific rights review, a recorded distribution basis for
+received liturgical text, independent server-guide review, and renewed
+exact-snapshot authorization. The 21 July 2026 binding of 115 exact PDFs and
+22 exact site inputs, the 20 July bindings, and all predecessor-hash
+dispositions likewise remain historical facts about only the bytes they bound.
 
 The 22 July exception supplies no missing page-image, source, or altar-book
 collation; direct-image inspection; donor license; received liturgical- or

@@ -1,0 +1,356 @@
+\section{Learn your own role}
+
+Find the role written on ``Today's Mass'' in the contents. Print from that
+role heading to the next role heading; keep a shared boundary page when two
+headings land on it. Read the short route before opening the coach chart.
+Each row follows the eight-scene map. Shorter or optional jobs combine scenes
+in which the server waits. An action ID is the adult's lookup key, not a
+second route for the child to memorize.
+
+% Keep this strip short enough to repeat on every independently printable role
+% route. Moving it to a single earlier page would save a few lines, but a child
+% handed only his own role pages would lose the voice, object-safety, incense,
+% and missed-cue rules that apply in every scene.
+\newcommand{\MCRoleAlways}{Hands joined when free. Follow all printed
+all-server cues; sing publicly only if assigned. At MC-032 do only your role's
+incense duty; with an object, use its taught reverence. Missed cue: stop, hold
+safely and still, watch the MC, and rejoin at the next known cue (MC-003).}
+
+\begin{watchbox}{}
+\textbf{How to read one role route.} Read down the scene column. ``Wait''
+means stay at the named place, attentive
+and still, until the next listed cue. The action IDs take an adult to the
+complete coach chart when a handoff or branch needs more detail.
+\end{watchbox}
+
+% Role routes are learner sheets, not the dense coach inventory. The table
+% removes list indentation and repeated vertical gaps while retaining a
+% readable 10-point setting, full prose, and page breaks only between scenes.
+\newenvironment{mcroleroute}[1]{%
+  \begingroup
+  \small
+  \setlength{\LTpre}{0.15em}%
+  \setlength{\LTpost}{0.65em}%
+  \renewcommand{\arraystretch}{1.06}%
+  \begin{longtable}{@{}>{\RaggedRight\arraybackslash\bfseries}p{0.20\linewidth}>{\RaggedRight\arraybackslash}p{0.75\linewidth}@{}}
+  \toprule
+  Scene & \textbf{Your route}\\
+  \midrule
+  \endfirsthead
+  \multicolumn{2}{@{}l}{\textbf{#1 role route, continued}}\\[0.12em]
+  \toprule
+  Scene & \textbf{Your route}\\
+  \midrule
+  \endhead
+  \textbf{Every scene} & \MCRoleAlways\\[0.18em]
+}{%
+  \bottomrule
+  \end{longtable}
+  \endgroup
+}
+\newcommand{\mcrolerow}[2]{#1 & #2\\[0.18em]}
+\newcommand{\mcroleheading}[1]{%
+  \Needspace{9\baselineskip}%
+  \subsection{#1}}
+
+\mcroleheading{MC --- master of ceremonies}
+
+\begin{mcroleroute}{MC}
+  \mcrolerow{1. Get ready}{Check every named object and return place, confirm the
+  roster and branches, and ask each server for his first three jobs. Receive
+  the priest's biretta at the sanctuary, place it at the sedilia, make the
+  arrival reverence, and meet him at the center foot (MC-001, 003--007).
+  }
+  \mcrolerow{2. Begin}{Kneel with A1 and A2 and make the quiet answers and gestures.
+  Clear the center when the priest ascends. On the incense track coordinate the
+  first handoff, incense the priest, and return the thurible to TH. Use the full
+  escort-and-biretta route whenever the priest sits (MC-008--016).
+  }
+  \mcrolerow{3. Listen}{Cue L only on the selected alternate lesson route. Time the
+  Gospel preparation, keep TH and the candle pair from crossing, pass the
+  Gospel thurible between TH and the priest, and coordinate the sermon and
+  Credo seating routes (MC-020--029).
+  }
+  \mcrolerow{4. Prepare}{Clear the Offertory incense route. With incense, cue the
+  Lavabo after the priest is incensed; without incense, cue it when he reaches
+  the Lavabo place. Keep the acolytes' inner lane clear of TH's outer lane, then
+  face TH and bow before and after his one-double incensation of you. Make the
+  quiet \textit{Suscipiat} with A1 and A2 (MC-032--036).
+  }
+  \mcrolerow{5. Adore}{Cue the torch entry, A1's exact bell signals, and elevation
+  incense. Know whether torches return at MC-041 or remain until MC-048
+  (MC-037--042).
+  }
+  \mcrolerow{6. Receive}{Cue the Communion bell and plate only if the faithful will
+  receive. Coordinate both ablutions and the applicable torch return; then
+  carry the Missal and stand from the Gospel side to the Epistle side
+  (MC-043--050).
+  }
+  \mcrolerow{7--8. Finish / return}{Cue the day's posture, dismissal, blessing,
+  and Last-Gospel branch. Take the biretta, form the recession, make the final
+  reverence, give the biretta to the priest, and count every person and object
+  in the sacristy (MC-051--057).
+  }
+\end{mcroleroute}
+
+\mcroleheading{A1 --- first acolyte, bell, and Communion plate}
+
+\begin{mcroleroute}{A1}
+  \mcrolerow{1. Get ready}{Check the wine cruet, towel, bell and pad, Communion
+  plate when needed, your candle stand, and your partner's lane. Receive a
+  lighted candle from the adult, process level with A2, set it at the credence,
+  and go to the foot-prayer place (MC-001, 003--008).
+  }
+  \mcrolerow{2. Begin}{With MC and A2, make every quiet foot-prayer answer and its
+  printed gesture. Remain at base while MC serves the first incensation and
+  sedilia route (MC-008--018).
+  }
+  \mcrolerow{3. Listen}{Stand at base for the chanted Epistle and add no \textit{Deo
+  gratias}. At the Gospel cue, take your candle with A2, form without crossing
+  TH, stand level at the Gospel, remain upright with the candle at any prescribed
+  Gospel genuflection, then replace the candle with A2 (MC-019, 023--029).
+  }
+  \mcrolerow{4. Prepare}{Take the wine cruet and present it first. For the Lavabo,
+  present and receive the towel while A2 pours water over the priest's fingers.
+  Use the inner credence lane; with A2, face TH and bow before and after your
+  pair's one-double incensation. Make the quiet \textit{Suscipiat} with MC and
+  A2 (MC-030--034).
+  }
+  \mcrolerow{5. Adore}{Give one Sanctus signal, one warning before the Consecration,
+  and three distinct strokes at each elevation. Keep the bell low and still
+  between signals; kneel at the assigned step (MC-038--042).
+  }
+  \mcrolerow{6. Receive}{If the faithful receive, give the one warning signal, then
+  carry the plate level beneath each communicant and complete its handoff and
+  return. At the ablutions pour the first wine at MC-048; at MC-049 pour wine
+  while A2 pours water (MC-043--049).
+  }
+  \mcrolerow{7--8. Finish / return}{With MC and A2 make the three quiet Last-Gospel
+  answers when it is said. Take the exit candle with A2, use the assigned
+  object-bearer's final reverence, process level, and set the candle in its
+  sacristy stand for the adult to extinguish (MC-051--057).
+  }
+\end{mcroleroute}
+
+\mcroleheading{A2 --- second acolyte, water, and basin}
+
+\begin{mcroleroute}{A2}
+  \mcrolerow{1. Get ready}{Check the water cruet, Lavabo basin, your candle stand,
+  and your partner's lane. Receive a lighted candle from the adult, process
+  level with A1, set it at the credence, and go to the foot-prayer place
+  (MC-001, 003--008).
+  }
+  \mcrolerow{2. Begin}{With MC and A1, make every quiet foot-prayer answer and its
+  printed gesture. Remain at base while MC serves the first incensation and
+  sedilia route (MC-008--018).
+  }
+  \mcrolerow{3. Listen}{Stand at base for the chanted Epistle and add no \textit{Deo
+  gratias}. At the Gospel cue, take your candle with A1, form without crossing
+  TH, stand level at the Gospel, remain upright with the candle at any prescribed
+  Gospel genuflection, then replace the candle with A1 (MC-019, 023--029).
+  }
+  \mcrolerow{4. Prepare}{Take the water cruet and present it after A1's wine. For the
+  Lavabo, hold the basin and pour water over the priest's fingers while A1
+  handles the towel. Use the inner credence lane; with A1, face TH and bow
+  before and after your pair's one-double incensation. Make the quiet
+  \textit{Suscipiat} with MC and A1 (MC-030--034).
+  }
+  \mcrolerow{5. Adore}{Kneel at the assigned place for the Canon and elevations. A1,
+  not A2, gives this model's bell signals (MC-038--042).
+  }
+  \mcrolerow{6. Receive}{Bring both cruets with A1 for the ablutions. Wait during
+  A1's first wine ablution; at the second ablution pour water over the priest's
+  fingers while A1 pours wine. Receive and replace the water cruet
+  (MC-043--049).
+  }
+  \mcrolerow{7--8. Finish / return}{With MC and A1 make the three quiet Last-Gospel
+  answers when it is said. Take the exit candle with A1, use the assigned
+  object-bearer's final reverence, process level, and set the candle in its
+  sacristy stand for the adult to extinguish (MC-051--057).
+  }
+\end{mcroleroute}
+
+\mcroleheading{TH --- thurifer, on the incense track}
+
+\begin{mcroleroute}{TH}
+  \mcrolerow{1. Get ready}{Under adult supervision, test the chains and lid and
+  prepare a steady coal. Process with BB in the chosen lead position, then take
+  the thurible to the safe station (MC-002, 004--006).
+  }
+  \mcrolerow{2. Begin}{Bring the open thurible for the first incensation, receive it
+  after incense is imposed, and wait while the altar is incensed. Receive it
+  from MC after he incenses the priest, close it, and return with BB
+  (MC-011--012).
+  }
+  \mcrolerow{3. Listen}{Return for the Gospel, receive the thurible after incense is
+  imposed, lead the formation, and pass it to MC for the book incensation.
+  Receive it back and hold it closed. If the Gospel text requires a
+  genuflection, face the altar and genuflect while holding it closed; then
+  return it to the safe station after the Gospel (MC-022--026).
+  }
+  \mcrolerow{4. Prepare}{Bring the open thurible for the Offertory and receive it
+  from MC after he incenses the priest. Use the outer lane while A1/A2 complete
+  the Lavabo. Then incense, with the stated bows and one double swing for each
+  named individual or pair: MC; A1/A2; BB; T1/T2; T3/T4; optional CB; optional
+  L; then the people. Close and return it (MC-032--033).
+  }
+  \mcrolerow{5. Adore}{Before the Consecration, open the thurible while MC adds
+  unblessed incense from BB's boat. Kneel at the assigned station, incense the
+  Host three times and the chalice three times, then close and return the
+  thurible independently of the torch route (MC-037--040).
+  }
+  \mcrolerow{6. Receive}{Remain at the safe station and follow the applicable
+  all-server posture; do not invent another incense visit (MC-041--050).
+  }
+  \mcrolerow{7--8. Finish / return}{After the Last Gospel, take the closed
+  thurible, use the assigned object-bearer's final reverence, recess with BB,
+  and give it to the adult at the metal-safe station (MC-051--057).
+  }
+\end{mcroleroute}
+
+\mcroleheading{BB --- boat bearer, on the incense track}
+
+\begin{mcroleroute}{BB}
+  \mcrolerow{1. Get ready}{Check the boat, spoon, route, and safe station with TH.
+  Process beside TH in the chosen lead position, then land at the safe station
+  with the boat (MC-002, 004--006).
+  }
+  \mcrolerow{2. Begin}{At the first incense cue, give the boat to the priest and
+  receive it back. Remain clear while the altar and priest are incensed, then
+  return with TH (MC-011--012).
+  }
+  \mcrolerow{3. Listen}{At the Gospel preparation, give the boat to the priest and
+  receive it back, return it to the safe station, and wait there while TH joins
+  the Gospel formation (MC-022--026).
+  }
+  \mcrolerow{4. Prepare}{At the Offertory, give the boat to the priest and receive
+  it back. Wait clear during the remaining incensations. When TH reaches you as
+  a named recipient, face him and bow before and after the one double swing;
+  then return with TH (MC-032--033).
+  }
+  \mcrolerow{5. Adore}{Before the Consecration, give the boat and spoon to MC and
+  receive them back after he adds unblessed incense. Return the boat to the safe
+  station while TH takes the elevation place (MC-037--040).
+  }
+  \mcrolerow{6. Receive}{Remain at the safe station and follow the applicable
+  all-server posture; do not invent another boat handoff (MC-041--050).
+  }
+  \mcrolerow{7--8. Finish / return}{After the Last Gospel, take the boat, use the
+  assigned object-bearer's final reverence, recess beside TH, and give it to the
+  adult at the metal-safe station (MC-051--057).
+  }
+\end{mcroleroute}
+
+\mcroleheading{T1--T4 --- torchbearers}
+
+\begin{mcroleroute}{T1--T4}
+  \mcrolerow{1. Get ready}{Check your numbered stand, partner, entrance place, and
+  return branch. Process and recess empty-handed; reach your base place without
+  touching a torch (MC-001, 003--007).
+  }
+  \mcrolerow{2--4. Begin / listen / prepare}{Follow the repeated all-server cues from
+  base. Before the Preface ends, know whether today's route is ordinary or
+  extended for faithful Communion or a fast day. On the incense track, face TH
+  with your partner and bow before and after your pair's one-double incensation
+  (MC-008--036).
+  }
+  \mcrolerow{5. Adore}{After the adult lights the four torches, take your assigned
+  one at MC's cue. Form in pairs, make the taught object-bearer's reverence,
+  divide evenly, and kneel. Hold the torch with both hands and use only the safe
+  bow cued at each elevation (MC-037--041).
+  }
+  \mcrolerow{6. Receive}{On an ordinary day without faithful Communion, return in
+  pairs after the chalice elevation at MC-041. If the faithful receive, or on a
+  fast day, remain through Communion and the first wine ablution at MC-048.
+  At the applicable cue, return in pairs, set every torch securely, let the
+  adult extinguish it, and return empty-handed to base (MC-041--048).
+  }
+  \mcrolerow{7--8. Finish / return}{Remain empty-handed. At the final reverence,
+  genuflect if the Blessed Sacrament is reserved at this altar and make a
+  profound bow if it is not; then recess in your pair and report to the adult
+  only for the tasks named before Mass (MC-051--057).
+  }
+\end{mcroleroute}
+
+\mcroleheading{CB --- cross-bearer, when assigned}
+
+\begin{mcroleroute}{CB}
+  \mcrolerow{1. Get ready}{Take the cross from its named stand, carry it upright in
+  the assigned entrance place, use the reverence taught for this object, and
+  set it in its sanctuary stand before going to base (MC-003--006).
+  }
+  \mcrolerow{2--6. Begin through receive}{Follow every free-handed all-server cue
+  from base. If incense is used, face TH and make the bows assigned to you as
+  an individual recipient at MC-032 (MC-008--050).
+  }
+  \mcrolerow{7--8. Finish / return}{Take the cross only at MC's exit cue. Keep it
+  upright, use the model's object-bearer head bow at the final reverence, form
+  with A1/A2, recess, and replace it in the named sacristy stand
+  (MC-051--057).
+  }
+\end{mcroleroute}
+
+\mcroleheading{L --- lesson singer, on the alternate branch}
+
+\begin{mcroleroute}{L}
+  \mcrolerow{1. Get ready}{Confirm that the marked Epistle book is already on its
+  lectern and that an adult is assigned to recover it after Mass. Process and
+  reach base empty-handed (MC-001, 004--006).
+  }
+  \mcrolerow{2. Begin}{Follow the applicable all-server cues at base (MC-008--018).
+  }
+  \mcrolerow{3. Listen}{At MC's cue, go empty-handed to the prepared lectern, make
+  the site's prescribed reverence on the route, chant the Epistle, make the
+  same reverence, and return empty-handed. Add no \textit{Deo gratias}; leave
+  the book on its lectern for the assigned adult (MC-020).
+  }
+  \mcrolerow{4--6. Prepare through receive}{Follow every free-handed all-server cue
+  from base. If incense is used, face TH and make the bows assigned to you as
+  an individual recipient at MC-032 (MC-030--050).
+  }
+  \mcrolerow{7--8. Finish / return}{At the final reverence, genuflect if the
+  Blessed Sacrament is reserved at this altar and make a profound bow if it is
+  not. Recess empty-handed, then report that the adult-recovered Epistle book is
+  accounted for (MC-051--057).
+  }
+\end{mcroleroute}
+
+\begin{coachbox}{One-minute role test}
+Without looking, name your starting place, first object, first handoff, Gospel
+waiting place, elevation job, Communion branch, and final object. Then point to
+the matching scene and action IDs. A child who cannot yet answer repeats only
+that scene, not the whole Mass.
+\end{coachbox}
+
+\section{Practice one scene at a time}
+
+\begin{enumerate}
+  \item Point through the eight-scene map and name where your role waits.
+  \item Walk scenes 1--2 with no objects and no words.
+  \item Add scenes 3--4, still with no objects; then use cold, empty objects.
+  \item Add scenes 5--6 and rehearse the ordinary and extended torch cues.
+  \item Add scenes 7--8, the ending branch chosen on ``Today's Mass,'' and the
+  final reverence assigned to your object or free hands.
+  \item Add priest and choir cue words. Use safe lighted candles, and then
+  incense, only under the named adult supervision.
+  \item Run the complete form without coaching. Stop after each scene to repair
+  one mistake, then repeat that scene correctly before moving on.
+\end{enumerate}
+
+\noindent
+\masterybox{I know today's branch.}
+\masterybox{I know my first three jobs.}\par
+\masterybox{I can name my handoffs.}
+\masterybox{I can recover by watching the MC.}
+
+\begin{coachbox}{Day and ending branches}
+At the named ferial Masses, kneel for the Collects at MC-018 and for the
+Postcommunion at MC-051. From Ash Wednesday through Wednesday of Holy Week,
+MC-051 also keeps the team kneeling for \textit{Humiliate capita vestra Deo}
+and the Prayer over the People. The Canon posture runs from the
+\textit{Sanctus} at MC-038 through the beginning of the Lord's Prayer at
+MC-042. Ordinary torches return at MC-041; extended torches remain through the
+first ablution at MC-048. At MC-056, free-handed servers use the
+reserved/unreserved branch; object-bearers use the model's named head bow while
+MC delivers the biretta.
+\end{coachbox}

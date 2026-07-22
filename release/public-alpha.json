@@ -3,16 +3,17 @@
   "release_id": "public-alpha",
   "provider": "gpt",
   "expected_counts": {
-    "publications": 103,
+    "publications": 109,
     "release": 66,
     "review": 0,
-    "hold": 37
+    "hold": 43
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
     "liturgical-text-permission": "Obtain and record the permission or other distribution basis required for incorporated liturgical text.",
     "named-us-altar-book-collation": "Collate the U.S.-English orations against an identified current altar-book publisher and printing, and record the exact locators.",
     "independent-proper-guide-review": "Complete and record independent liturgical, biblical, theological, and historical review of the proper guide.",
+    "independent-server-guide-review": "Complete and record independent liturgical, ceremonial, Ecclesiastical Latin pronunciation, and age-appropriate pedagogical review of the altar-server guide series.",
     "prayer-text-permission": "Obtain and record the permission or other distribution basis required for incorporated prayer text and translations.",
     "rubrical-adaptation-clearance": "Resolve and record the distribution basis for the close adaptation of the rubrical corpus.",
     "renewed-exact-snapshot-authorization": "Review and authorize the exact current PDF snapshot before public distribution."
@@ -853,6 +854,78 @@
         "authorization": "perpetual-public-repository-2026",
         "pdf_sha256": "6a7cf2a08a865ef30cc766ee8497f980d499c55cc9fa5ec3ea4ce5bb6d3481b0"
       }
+    },
+    {
+      "id": "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass",
+      "catalog": "library/traditional-latin-mass.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "independent-server-guide-review",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
+    },
+    {
+      "id": "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-cue-cards",
+      "catalog": "library/traditional-latin-mass.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "independent-server-guide-review",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
+    },
+    {
+      "id": "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata",
+      "catalog": "library/traditional-latin-mass.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "independent-server-guide-review",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
+    },
+    {
+      "id": "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards",
+      "catalog": "library/traditional-latin-mass.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "independent-server-guide-review",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
+    },
+    {
+      "id": "liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass",
+      "catalog": "library/traditional-latin-mass.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "independent-server-guide-review",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
+    },
+    {
+      "id": "liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards",
+      "catalog": "library/traditional-latin-mass.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "independent-server-guide-review",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/1962/reference/assembling-the-mass",

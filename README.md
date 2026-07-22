@@ -17,7 +17,7 @@ and read.
 
 | Section | Focus |
 | --- | --- |
-| **[Traditional Latin Mass (1962 Roman Rite)](library/traditional-latin-mass.md)** | The Ordinary, Mass assembly, and regularly updated proper expositions. |
+| **[Traditional Latin Mass (1962 Roman Rite)](library/traditional-latin-mass.md)** | The Ordinary, altar-server training, Mass assembly, calendar, and regularly updated proper expositions. |
 | **[Novus Ordo (Postconciliar Roman Rite)](library/novus-ordo-liturgy.md)** | The Order of Mass and proper studies identified by edition, language, territory, cycle, and date. |
 | **[Prayer](library/prayer.md)** | Novenas and condensed daily prayer books. |
 | **[Curriculums](library/curriculums.md)** | Self-paced courses, substantial printable packets, memory and reference companions, and cumulative self-reviews. |

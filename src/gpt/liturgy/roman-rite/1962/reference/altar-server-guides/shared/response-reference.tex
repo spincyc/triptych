@@ -1,0 +1,1114 @@
+% Shared spoken-response, pronunciation, memory, and flash-card material.
+% This file is content: input it after \begin{document}.  It relies on the
+% commands and packages supplied by shared/server-guide-format.tex.
+
+\newcommand{\ServerStress}[1]{\textbf{\MakeUppercase{#1}}}
+\newcommand{\ServerLearnerLine}[1]{{\sffamily #1}}
+\newcommand{\ServerAnswerRef}[1]{\textbf{#1}}
+
+% Extract the stable A-number from a title of the form ``A1 --- Title'' and
+% retain every teaching field for the quick reference and both card decks.
+% This keeps the bank, pronunciation cards, and their meanings on one datum.
+\def\serverextractid#1 --- #2\ServerTitleEnd{\def\CurrentServerID{#1}}
+\newcommand{\ServerLatinData}[1]{\csname serverlatin@#1\endcsname}
+\newcommand{\ServerLearnerData}[1]{\csname serverlearner@#1\endcsname}
+\newcommand{\ServerSoundData}[1]{\csname serversound@#1\endcsname}
+\newcommand{\ServerIPAData}[1]{\csname serveripa@#1\endcsname}
+\newcommand{\ServerMeaningData}[1]{\csname servermeaning@#1\endcsname}
+\newcommand{\ServerTitleData}[1]{\csname servertitle@#1\endcsname}
+\newcommand{\RegisterServerData}[6]{%
+  \expandafter\gdef\csname serverlatin@#1\endcsname{#2}%
+  \expandafter\gdef\csname serverlearner@#1\endcsname{#3}%
+  \expandafter\gdef\csname serversound@#1\endcsname{#4}%
+  \expandafter\gdef\csname serveripa@#1\endcsname{#5}%
+  \expandafter\gdef\csname servermeaning@#1\endcsname{#6}%
+}
+
+\newcommand{\serveranswer}[6]{%
+  \serverextractid#1\ServerTitleEnd
+  \expandafter\gdef\csname servertitle@\CurrentServerID\endcsname{#1}%
+  \RegisterServerData{\CurrentServerID}{#2}{#3}{#4}{#5}{#6}%
+}
+
+\newcommand{\GuideVoiceChoice}[3]{%
+  \ifLowMassGuide #1\else
+    \ifMissaCantataGuide #2\else #3\fi
+  \fi}
+
+\newcommand{\DefineResponseVoice}[4]{%
+  \expandafter\gdef\csname servervoice@low@#1\endcsname{#2}%
+  \expandafter\gdef\csname servervoice@cantata@#1\endcsname{#3}%
+  \expandafter\gdef\csname servervoice@solemn@#1\endcsname{#4}}
+\newcommand{\ServerVoiceData}[1]{%
+  \ifLowMassGuide\csname servervoice@low@#1\endcsname\else
+    \ifMissaCantataGuide\csname servervoice@cantata@#1\endcsname\else
+      \csname servervoice@solemn@#1\endcsname
+    \fi
+  \fi}
+
+\newcommand{\QuietFootVoiceLow}{Server or servers, spoken.}
+\newcommand{\QuietFootVoiceCantata}{MC, A1, and A2, spoken quietly. Other
+servers listen and do not join.}
+\newcommand{\QuietFootVoiceSolemn}{Sacred ministers, spoken quietly. Lay
+servers listen and do not join.}
+\DefineResponseVoice{A1}{\QuietFootVoiceLow}{\QuietFootVoiceCantata}{\QuietFootVoiceSolemn}
+\DefineResponseVoice{A2}{\QuietFootVoiceLow}{\QuietFootVoiceCantata}{\QuietFootVoiceSolemn}
+\DefineResponseVoice{A3}{\QuietFootVoiceLow}{\QuietFootVoiceCantata}{\QuietFootVoiceSolemn}
+\DefineResponseVoice{A4}{\QuietFootVoiceLow}{\QuietFootVoiceCantata}{\QuietFootVoiceSolemn}
+\DefineResponseVoice{A5}{\QuietFootVoiceLow}{\QuietFootVoiceCantata}{\QuietFootVoiceSolemn}
+\DefineResponseVoice{A6}{\QuietFootVoiceLow}{\QuietFootVoiceCantata}{\QuietFootVoiceSolemn}
+\DefineResponseVoice{A7}{\QuietFootVoiceLow}{\QuietFootVoiceCantata}{\QuietFootVoiceSolemn}
+\DefineResponseVoice{A8}{\QuietFootVoiceLow}{\QuietFootVoiceCantata}{\QuietFootVoiceSolemn}
+\DefineResponseVoice{A9}{Server, when the cue calls for an answer.}{At the
+foot MC/A1/A2 answer quietly; outward \CanonLatin{Amen} belongs to the
+choir/public.}{At the foot the sacred ministers answer quietly; outward
+\CanonLatin{Amen} belongs to the choir/public.}
+\DefineResponseVoice{A10}{Server, spoken.}{MC/A1/A2, spoken quietly.}{Sacred
+ministers, spoken quietly; lay servers listen.}
+\DefineResponseVoice{A11}{Server, spoken.}{MC/A1/A2, spoken quietly.}{Sacred
+ministers, spoken quietly; lay servers listen.}
+\DefineResponseVoice{A12}{Server, spoken.}{MC/A1/A2, spoken quietly.}{Sacred
+ministers, spoken quietly; lay servers listen.}
+\DefineResponseVoice{A13}{Server, spoken; also the recipient of the pax if it
+is given.}{MC/A1/A2 answer quietly at the foot and Last Gospel; choir/public
+sings outward greetings; a pax recipient answers quietly.}{Sacred ministers
+answer at the foot, the subdeacon at the Last Gospel, and choir/public at
+outward greetings; a pax recipient answers quietly.}
+\DefineResponseVoice{A14}{Priest and server alternate the nine invocations.}
+{Choir/public sings; a server joins only if separately assigned there.}
+{Choir/public sings; a server joins only if separately assigned there.}
+\DefineResponseVoice{A15}{Server, spoken.}{Choir/public sings at the dismissal;
+MC/A1/A2 answer at the Last Gospel; no answer follows the chanted Epistle.}
+{Choir/public sings at the dismissal; the subdeacon answers at the Last
+Gospel; no answer follows the chanted Epistle.}
+\DefineResponseVoice{A16}{Server, spoken.}{Choir/public sings at the principal
+Gospel; MC/A1/A2 answer quietly at the Last Gospel.}{Choir/public sings at the
+principal Gospel; the subdeacon answers quietly at the Last Gospel.}
+\DefineResponseVoice{A17}{Server after a Gospel read at Low Mass.}{No answer
+after the chanted Gospel.}{No answer after the chanted Gospel.}
+\DefineResponseVoice{A18}{Server, spoken.}{MC/A1/A2, spoken quietly.}{Sacred
+ministers or those present, spoken quietly; follow the MC.}
+\DefineResponseVoice{A19}{Server, spoken.}{Choir/public sings.}{Choir/public sings.}
+\DefineResponseVoice{A20}{Server, spoken.}{Choir/public sings.}{Choir/public sings.}
+\DefineResponseVoice{A21}{Server, spoken.}{Choir/public sings.}{Choir/public sings.}
+\DefineResponseVoice{A22}{Server, spoken when this dismissal is appointed.}
+{Choir/public sings when this dismissal is appointed.}{Choir/public sings when
+this dismissal is appointed.}
+
+\newcommand{\DefineResponseCue}[2]{%
+  \expandafter\gdef\csname servercue@#1\endcsname{#2}}
+\newcommand{\ServerCueData}[1]{\csname servercue@#1\endcsname}
+\DefineResponseCue{A1}{\CanonLatin{Introibo ad altare Dei.}}
+\DefineResponseCue{A2}{The psalm verse ending \CanonLatin{erue me.}}
+\DefineResponseCue{A3}{The psalm verse ending \CanonLatin{tabernacula tua.}}
+\DefineResponseCue{A4}{The psalm verse ending \CanonLatin{quare conturbas me?}}
+\DefineResponseCue{A5}{\CanonLatin{Gloria Patri, et Filio, et Spiritui Sancto.}}
+\DefineResponseCue{A6}{\CanonLatin{Adiutorium nostrum in nomine Domini.}}
+\DefineResponseCue{A7}{The priest finishes his \CanonLatin{Confiteor}.}
+\DefineResponseCue{A8}{It is time for the ministers' \CanonLatin{Confiteor}.}
+\DefineResponseCue{A9}{An audible prayer ending or the blessing calls for
+\CanonLatin{Amen}.}
+\DefineResponseCue{A10}{\CanonLatin{Deus, tu conversus vivificabis nos.}}
+\DefineResponseCue{A11}{\CanonLatin{Ostende nobis, Domine, misericordiam tuam.}}
+\DefineResponseCue{A12}{\CanonLatin{Domine, exaudi orationem meam.}}
+\DefineResponseCue{A13}{A greeting such as \CanonLatin{Dominus vobiscum} or
+\CanonLatin{Pax vobis}.}
+\DefineResponseCue{A14}{The ninefold \CanonLatin{Kyrie}/\CanonLatin{Christe}.}
+\DefineResponseCue{A15}{A read Epistle or Last Gospel ends, or the dismissal is
+\CanonLatin{Ite, missa est} or \CanonLatin{Benedicamus Domino}.}
+\DefineResponseCue{A16}{\CanonLatin{Sequentia} or \CanonLatin{Initium sancti
+Evangelii secundum N.}}
+\DefineResponseCue{A17}{A Gospel read in the Low-Mass manner ends.}
+\DefineResponseCue{A18}{The priest finishes \CanonLatin{Orate, fratres.}}
+\DefineResponseCue{A19}{\CanonLatin{Sursum corda.}}
+\DefineResponseCue{A20}{\CanonLatin{Gratias agamus Domino Deo nostro.}}
+\DefineResponseCue{A21}{\CanonLatin{Et ne nos inducas in tentationem.}}
+\DefineResponseCue{A22}{The Easter-octave dismissal ends
+\CanonLatin{alleluia, alleluia}.}
+
+\newcommand{\PrintServerAnswer}[1]{%
+  \Needspace{7\baselineskip}%
+  \begin{learnerbox}{\ServerTitleData{#1}}
+  \small
+  {\scriptsize\bfseries HEAR}\quad \ServerCueData{#1}\par
+  {\scriptsize\bfseries \ifLowMassGuide SAY\else ANSWER\fi}\quad
+  {\large\CanonLatin{\ServerLatinData{#1}}}\par
+  {\scriptsize\bfseries SOUND}\quad
+  \SoundLine{\ServerSoundData{#1}}\par
+  {\scriptsize\bfseries MEANING}\quad \ServerMeaningData{#1}\par
+  {\scriptsize\bfseries WHO}\quad {\small\ServerVoiceData{#1}}\par
+  {\scriptsize\bfseries COACH CHECK}\quad
+  {\footnotesize\ServerLearnerLine{\ServerLearnerData{#1}}; IPA:
+  \BroadIPA{\ServerIPAData{#1}}}
+  \end{learnerbox}%
+}
+
+\newenvironment{servervoicetable}{%
+  \begingroup
+  \small
+  \setlength{\LTpre}{0.35em}
+  \setlength{\LTpost}{0.8em}
+  \renewcommand{\arraystretch}{1.14}
+  \begin{longtable}{@{}>{\RaggedRight\arraybackslash}p{0.50\linewidth}>{\centering\arraybackslash}p{0.10\linewidth}>{\RaggedRight\arraybackslash}p{0.34\linewidth}@{}}
+  \toprule
+  \textbf{What you hear or where you are} & \textbf{Bank} & \textbf{Who answers in this guide}\\
+  \midrule
+  \endfirsthead
+  \toprule
+  \textbf{What you hear or where you are} & \textbf{Bank} & \textbf{Who answers in this guide}\\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+}{%
+  \end{longtable}
+  \endgroup
+}
+
+\newcommand{\servervoicerow}[5]{#1 & #2 & \GuideVoiceChoice{#3}{#4}{#5}\\}
+
+\ifCardsOnlyGuide\else
+\phantomsection\label{course:first}
+\section{Five Latin sounds to learn first}
+
+This guide follows the Roman pronunciation taught in the 1961
+\emph{Liber Usualis}, section IX, pp.~xxxv--xxxix. It is a broad learner
+model, not a claim that every competent singer has the same fine accent. Give
+every vowel its full sound, keep every syllable, and make the stressed syllable
+firm without doubling it.
+
+\begin{learnerbox}{Say these five sounds}
+\textbf{a = ah}\quad \textbf{e = eh}\quad \textbf{i = ee}\quad
+\textbf{o = oh}\quad \textbf{u = oo}
+
+Point to each one and say it three times. Then try
+\CanonLatin{Amen}: \SoundLine{AH-mehn}. Capitals show the strong syllable;
+they are not extra letters to say.
+\end{learnerbox}
+
+\begin{center}
+\small
+\begin{tabularx}{\linewidth}{@{}>{\bfseries}p{0.08\linewidth}>{\RaggedRight\arraybackslash}p{0.25\linewidth}>{\bfseries}p{0.08\linewidth}>{\RaggedRight\arraybackslash}X@{}}
+\toprule
+Letter & Learner sound & IPA & Reminder\\
+\midrule
+a & \SoundLine{ah} & \BroadIPA{a} & as in \emph{father}\\
+e & \SoundLine{eh} & \BroadIPA{e} & as in \emph{red}; never \emph{ee}\\
+i, y & \SoundLine{ee} & \BroadIPA{i} & as in \emph{machine}\\
+o & \SoundLine{oh} & \BroadIPA{o} & one pure vowel\\
+u & \SoundLine{oo} & \BroadIPA{u} & as in \emph{rule}\\
+ae, oe & \SoundLine{eh} & \BroadIPA{e} & one sound; this guide prints \textit{ae}/\textit{oe}, not ligatures\\
+au & \SoundLine{ow} & \BroadIPA{au} & let both vowel sounds be heard in one syllable\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\coachreference
+The rest of this page is for the adult who checks the child's sounds. The
+child may begin Lesson 1 after learning the five vowels above.
+
+\begin{multicols}{2}
+\small
+\begin{itemize}
+\item \textbf{c} before \textit{e, ae, oe, i, y} is \SoundLine{ch}; otherwise
+  it is \SoundLine{k}. \textbf{ch} is \SoundLine{k}.
+\item \textbf{g} before those front vowels is English \SoundLine{j};
+  otherwise it is hard \SoundLine{g}.
+\item \textbf{sc} before a front vowel is \SoundLine{sh}; \textbf{gn} is
+  one softened \SoundLine{ny} sound.
+\item \textbf{ti} before another vowel is normally \SoundLine{tsee}; it
+  stays \SoundLine{tee} after \textit{s, x,} or \textit{t}.
+\item \textbf{qu} before a vowel is \SoundLine{kw}. Consonantal
+  \mbox{\textbf{i/j} is English \SoundLine{y}.}
+\item \textbf{h} is silent here; \textbf{th} is \SoundLine{t};
+  \textbf{x} is \SoundLine{ks}; \textbf{z} is \SoundLine{dz}.
+\item Tap or lightly roll \textbf{r}. Let doubled consonants be heard:
+  \CanonLatin{peccatis} is not the same as a word with one \textit{c}.
+\item Use a clear \SoundLine{s}. Between vowels it may be lightly
+  softened; the IPA keeps \BroadIPA{s} so this is not mistaken for a new
+  spelling rule.
+\end{itemize}
+\end{multicols}
+
+In a learner line, hyphens show syllables and CAPITALS show stress. In a
+sound line, \SoundLine{ch, j, sh, ny, tsee, kw, y} have their usual meanings
+in the key above. The IPA line is the more exact check; it uses
+\BroadIPA{r} for a tapped or lightly trilled \textit{r}, \BroadIPA{S} for
+\SoundLine{sh}, \BroadIPA{tS} for \SoundLine{ch}, and
+\BroadIPA{dZ} for English \SoundLine{j}.
+
+\newcommand{\PrintMassOrderVoiceMap}{%
+\section{Put the answers in Mass order}
+
+This section is a speaking and listening trainer.  The italic line marked
+``Canonical Latin'' is the text to say.  Hyphens, capitalized stress, the
+English-looking sound line, IPA, and the short meaning are teaching helps;
+they are never added to the liturgical words.  The meanings are brief glosses,
+not translations to recite at Mass.
+
+\begin{familybox}{Read only your book's third column}
+\GuideVoiceChoice
+{At Low Mass, the server normally supplies the audible answers. Practice the
+whole route below.}
+{At Missa Cantata, MC/A1/A2 supply the quiet altar dialogue. The appointed
+choir or congregation supplies the outward sung answers. A server joins a
+sung answer only when separately assigned to do so.}
+{At Solemn Mass, the sacred ministers supply the quiet altar dialogue and the
+appointed choir or congregation supplies the outward sung answers. A lay
+server's skill is often to recognize the cue and keep serving without adding
+a response.}
+Follow the celebrant and master of ceremonies; never begin merely because an
+answer appears on the page.
+\end{familybox}
+
+\begin{coachbox}{What is deliberately not in the response bank}
+The 1962 \emph{Ordo Missae} does not appoint a second Confiteor immediately
+before the Communion of the faithful.  It also gives the threefold
+\CanonLatin{Domine, non sum dignus} at that point to the celebrant, not to the
+server, and the communicant does not add an answer to the priest's Communion
+formula.  Those words are therefore not trained here as server responses.
+The Leonine Prayers are prayers after Low Mass, not part of the Order of Mass,
+and are outside all three guides.
+\end{coachbox}
+
+\subsection{Sequence map: prayers at the foot of the altar}
+
+Where the ordinary Order taught here is otherwise applicable, the psalm and
+its repeated antiphon are omitted in Masses of the season from the First
+Sunday of the Passion through Holy Thursday inclusive. In those Masses, answer the first
+\CanonLatin{Introibo}, then go directly to \CanonLatin{Adiutorium nostrum}.
+Other special rites can omit more of the opening prayers; follow the proper
+book and the master of ceremonies.
+
+\begin{servervoicetable}
+\servervoicerow{\CanonLatin{In nomine Patris, et Filii, et Spiritus Sancti. Amen.}}{--}{No separate answer: the priest's formula includes \CanonLatin{Amen}.}{The celebrant says the formula; do not add another \CanonLatin{Amen}.}{The celebrant says the formula; sacred ministers observe their own rubric.}
+\servervoicerow{\CanonLatin{Introibo ad altare Dei.}}{A1}{Server, spoken}{MC/A1/A2, spoken quietly}{Sacred ministers, spoken quietly}
+\servervoicerow{After \CanonLatin{Iudica me, Deus, ... erue me.}}{A2}{Server, spoken}{MC/A1/A2, spoken quietly}{Sacred ministers, spoken quietly}
+\servervoicerow{After \CanonLatin{Emitte lucem tuam, ... tabernacula tua.}}{A3}{Server, spoken}{MC/A1/A2, spoken quietly}{Sacred ministers, spoken quietly}
+\servervoicerow{After \CanonLatin{Confitebor tibi in cithara, ... conturbas me?}}{A4}{Server, spoken}{MC/A1/A2, spoken quietly}{Sacred ministers, spoken quietly}
+\servervoicerow{\CanonLatin{Gloria Patri, et Filio, et Spiritui Sancto.}}{A5}{Server, spoken}{MC/A1/A2, spoken quietly}{Sacred ministers, spoken quietly}
+\servervoicerow{The repeated \CanonLatin{Introibo ad altare Dei.}}{A1}{Server, spoken}{MC/A1/A2, spoken quietly}{Sacred ministers, spoken quietly}
+\servervoicerow{\CanonLatin{Adiutorium nostrum in nomine Domini.}}{A6}{Server, spoken}{MC/A1/A2, spoken quietly}{Sacred ministers, spoken quietly}
+\servervoicerow{After the priest's \CanonLatin{Confiteor}}{A7}{Server, spoken}{MC/A1/A2, spoken quietly}{Sacred ministers, spoken quietly}
+\servervoicerow{The ministers' \CanonLatin{Confiteor}}{A8}{Server(s), spoken}{MC/A1/A2, spoken quietly}{Sacred ministers, spoken quietly}
+\servervoicerow{\CanonLatin{Misereatur vestri ... vitam aeternam.}}{A9}{Server, spoken}{MC/A1/A2, spoken quietly}{Sacred ministers, spoken quietly}
+\servervoicerow{\CanonLatin{Indulgentiam, absolutionem ... Dominus.}}{A9}{Server, spoken}{MC/A1/A2, spoken quietly}{Sacred ministers, spoken quietly}
+\servervoicerow{\CanonLatin{Deus, tu conversus vivificabis nos.}}{A10}{Server, spoken}{MC/A1/A2, spoken quietly}{Sacred ministers, spoken quietly}
+\servervoicerow{\CanonLatin{Ostende nobis, Domine, misericordiam tuam.}}{A11}{Server, spoken}{MC/A1/A2, spoken quietly}{Sacred ministers, spoken quietly}
+\servervoicerow{\CanonLatin{Domine, exaudi orationem meam.}}{A12}{Server, spoken}{MC/A1/A2, spoken quietly}{Sacred ministers, spoken quietly}
+\servervoicerow{\CanonLatin{Dominus vobiscum.}}{A13}{Server, spoken}{MC/A1/A2, spoken quietly}{Sacred ministers, spoken quietly}
+\end{servervoicetable}
+
+\Needspace{8\baselineskip}
+\subsection{Sequence map: from the Kyrie through the Last Gospel}
+
+\begin{servervoicetable}
+\servervoicerow{Ninefold \CanonLatin{Kyrie}/\CanonLatin{Christe}}{A14}{Priest and server alternate}{Choir/public sings}{Choir/public sings}
+\servervoicerow{Greeting before the Collect; \CanonLatin{Dominus vobiscum} (or a bishop's \CanonLatin{Pax vobis})}{A13}{Server}{Choir/public sings}{Choir/public sings}
+\servervoicerow{Audible conclusion of each appointed Collect}{A9}{Server}{Choir/public sings}{Choir/public sings}
+\servervoicerow{End of an Epistle read in the Low-Mass manner}{A15}{Server}{No added answer in this guide's priest- or L-chanted routes}{No added sung answer after the chanted Epistle}
+\servervoicerow{Gospel greeting, \CanonLatin{Dominus vobiscum}}{A13}{Server}{Choir/public sings}{Choir/public sings}
+\servervoicerow{\CanonLatin{Sequentia} or \CanonLatin{Initium sancti Evangelii secundum N.}}{A16}{Server}{Choir/public sings}{Choir/public sings}
+\servervoicerow{End of a Gospel read in the Low-Mass manner}{A17}{Server}{No added sung answer after a chanted Gospel}{No added sung answer after the chanted Gospel}
+\servervoicerow{Offertory greeting, \CanonLatin{Dominus vobiscum}}{A13}{Server}{Choir/public sings}{Choir/public sings}
+\servervoicerow{\CanonLatin{Orate, fratres ... Deum Patrem omnipotentem.}}{A18}{Server}{MC/A1/A2, spoken quietly}{Sacred ministers or those present, spoken quietly}
+\servervoicerow{Audible conclusion of the last Secret, \CanonLatin{Per omnia saecula saeculorum}}{A9}{Server}{Choir/public sings}{Choir/public sings}
+\servervoicerow{Preface greeting, \CanonLatin{Dominus vobiscum}}{A13}{Server}{Choir/public sings}{Choir/public sings}
+\servervoicerow{\CanonLatin{Sursum corda.}}{A19}{Server}{Choir/public sings}{Choir/public sings}
+\servervoicerow{\CanonLatin{Gratias agamus Domino Deo nostro.}}{A20}{Server}{Choir/public sings}{Choir/public sings}
+\servervoicerow{Canon conclusion, \CanonLatin{Per omnia saecula saeculorum}}{A9}{Server}{Choir/public sings}{Choir/public sings}
+\servervoicerow{End of the Pater noster, \CanonLatin{Et ne nos inducas in tentationem.}}{A21}{Server}{Choir/public sings}{Choir/public sings}
+\servervoicerow{Embolism conclusion, \CanonLatin{Per omnia saecula saeculorum}}{A9}{Server}{Choir/public sings}{Choir/public sings}
+\servervoicerow{\CanonLatin{Pax Domini sit semper vobiscum.}}{A13}{Server}{Choir/public sings}{Choir/public sings}
+\servervoicerow{If the pax is actually given: \CanonLatin{Pax tecum.}}{A13}{The person receiving it}{The person receiving it}{The person receiving it}
+\servervoicerow{Postcommunion greeting, \CanonLatin{Dominus vobiscum}}{A13}{Server}{Choir/public sings}{Choir/public sings}
+\servervoicerow{Audible conclusion of each appointed Postcommunion}{A9}{Server}{Choir/public sings}{Choir/public sings}
+\servervoicerow{Audible conclusion of the Prayer over the People, when appointed}{A9}{Server}{Choir/public sings}{Choir/public sings}
+\servervoicerow{Final greeting, \CanonLatin{Dominus vobiscum}}{A13}{Server}{Choir/public sings}{Choir/public sings}
+\servervoicerow{\CanonLatin{Ite, missa est.}}{A15}{Server}{Choir/public sings}{Choir/public sings}
+\servervoicerow{At a Mass of the season within the Easter octave: \CanonLatin{Ite, missa est, alleluia, alleluia.}}{A22}{Server}{Choir/public sings}{Choir/public sings}
+\servervoicerow{If a liturgical procession follows: \CanonLatin{Benedicamus Domino.}; no blessing or Last Gospel follows in this branch}{A15}{Server}{Choir/public sings}{Choir/public sings}
+\servervoicerow{Blessing, \CanonLatin{Pater, et Filius, et Spiritus Sanctus.}}{A9}{Server}{Choir/public answers}{Choir/public answers}
+\servervoicerow{Last Gospel greeting, if the Last Gospel is said}{A13}{Server, spoken}{MC/A1/A2, spoken quietly}{Subdeacon, spoken quietly}
+\servervoicerow{\CanonLatin{Initium sancti Evangelii secundum Ioannem.}}{A16}{Server, spoken}{MC/A1/A2, spoken quietly}{Subdeacon, spoken quietly}
+\servervoicerow{End of the Last Gospel}{A15}{Server, spoken}{MC/A1/A2, spoken quietly}{Subdeacon, spoken quietly}
+\end{servervoicetable}
+
+At \CanonLatin{Orate, fratres}, the learner always says
+\CanonLatin{de manibus tuis}.  The Missal's alternative
+\CanonLatin{de manibus meis} is for the priest only when he must supply the
+response himself; it is not a server variant.  If the Last Gospel is omitted
+by its proper rubric, there are no Last-Gospel answers. The Last Gospel is
+omitted at the third Mass of Christmas. Other proper or omitted cases require
+their own edition-checked lesson.
+
+\Needspace{7\baselineskip}
+\begin{coachbox}{Do not confuse a sung part with a server answer}
+At a sung Mass the Introit, Gradual or Tract or Alleluia, Offertory, and
+Communion are proper chants.  The Gloria and Credo, when appointed, and the
+Sanctus--Benedictus and Agnus Dei are complete Ordinary chants.  The Kyrie is
+shown in A14 because its ninefold alternation is also used at Low Mass.
+
+These complete chants are not short cue-and-answer responses, so this bank
+does not reproduce them. A server sings them only when assigned to the choir
+or participating congregation; at Low Mass, never add a choir part as a
+server answer.
+\end{coachbox}
+}
+\fi
+
+% The declarations below own the shared words and teaching data. They render
+% later in short lessons, after all entries have been registered.
+
+\serveranswer{A1 --- Opening antiphon answer}
+  {Ad Deum qui laetificat iuventutem meam.}
+  {ad \ServerStress{De}-um qui lae-\ServerStress{ti}-fi-cat iu-ven-\ServerStress{tu}-tem \ServerStress{me}-am}
+  {ahd DEH-oom kwee leh-TEE-fee-kaht yoo-vehn-TOO-tehm MEH-ahm}
+  {ad "de.um kwi le"ti.fi.kat ju.ven"tu.tem "me.am}
+  {To God, who gives joy to my youth.}
+
+\serveranswer{A2 --- First psalm answer}
+  {Quia tu es, Deus, fortitudo mea: quare me repulisti, et quare tristis incedo, dum affligit me inimicus?}
+  {\ServerStress{qui}-a tu es, \ServerStress{De}-us, for-ti-\ServerStress{tu}-do \ServerStress{me}-a: \ServerStress{qua}-re me re-pu-\ServerStress{li}-sti, et \ServerStress{qua}-re \ServerStress{tris}-tis in-\ServerStress{ce}-do, dum af-\ServerStress{fli}-git me i-ni-\ServerStress{mi}-cus?}
+  {KWEE-ah too ehs, DEH-oos, for-tee-TOO-doh MEH-ah: KWAH-reh meh reh-poo-LEE-stee, eht KWAH-reh TREES-tees een-CHEH-doh, doom ahf-FLEE-jeet meh ee-nee-MEE-koos?}
+  {"kwi.a tu es "de.us for.ti"tu.do "me.a "kwa.re me re.pu"li.sti et "kwa.re "tris.tis in"tSe.do dum af"fli.dZit me i.ni"mi.kus}
+  {You are my strength; why am I cast off and sad while the enemy troubles me?}
+
+\serveranswer{A3 --- Second psalm answer}
+  {Et introibo ad altare Dei: ad Deum qui laetificat iuventutem meam.}
+  {Et in-tro-\ServerStress{i}-bo ad al-\ServerStress{ta}-re \ServerStress{De}-i: ad \ServerStress{De}-um qui lae-\ServerStress{ti}-fi-cat iu-ven-\ServerStress{tu}-tem \ServerStress{me}-am}
+  {eht een-troh-EE-boh ahd ahl-TAH-reh DEH-ee: ahd DEH-oom kwee leh-TEE-fee-kaht yoo-vehn-TOO-tehm MEH-ahm}
+  {et in.tro"i.bo ad al"ta.re "de.i ad "de.um kwi le"ti.fi.kat ju.ven"tu.tem "me.am}
+  {And I will go to God's altar, to God who gives joy to my youth.}
+
+\serveranswer{A4 --- Third psalm answer}
+  {Spera in Deo, quoniam adhuc confitebor illi: salutare vultus mei, et Deus meus.}
+  {\ServerStress{spe}-ra in \ServerStress{De}-o, \ServerStress{quo}-ni-am \ServerStress{ad}-huc con-fi-\ServerStress{te}-bor \ServerStress{il}-li: sa-lu-\ServerStress{ta}-re \ServerStress{vul}-tus \ServerStress{me}-i, et \ServerStress{De}-us \ServerStress{me}-us}
+  {SPEH-rah een DEH-oh, KWOH-nee-ahm AHD-ook kohn-fee-TEH-bor EEL-lee: sah-loo-TAH-reh VOOL-toos MEH-ee, eht DEH-oos MEH-oos}
+  {"spe.ra in "de.o "kwo.ni.am "ad.uk kon.fi"te.bor "il.li sa.lu"ta.re "vul.tus "me.i et "de.us "me.us}
+  {Hope in God; I shall praise him, my salvation and my God.}
+
+\serveranswer{A5 --- Psalm doxology answer}
+  {Sicut erat in principio, et nunc, et semper: et in saecula saeculorum. Amen.}
+  {\ServerStress{si}-cut \ServerStress{e}-rat in prin-\ServerStress{ci}-pi-o, et nunc, et \ServerStress{sem}-per: et in \ServerStress{sae}-cu-la sae-cu-\ServerStress{lo}-rum. \ServerStress{A}-men}
+  {SEE-koot EH-raht een preen-CHEE-pee-oh, eht noonk, eht SEHM-pehr: eht een SEH-koo-lah seh-koo-LOH-room. AH-mehn}
+  {"si.kut "e.rat in prin"tSi.pi.o et nunk et "sem.per et in "se.ku.la se.ku"lo.rum "a.men}
+  {As it was in the beginning, is now, and always will be, for ages of ages. Amen.}
+
+\serveranswer{A6 --- After Adiutorium nostrum}
+  {Qui fecit caelum et terram.}
+  {qui \ServerStress{fe}-cit \ServerStress{cae}-lum et \ServerStress{ter}-ram}
+  {kwee FEH-cheet CHEH-loom eht TEHR-rahm}
+  {kwi "fe.tSit "tSe.lum et "ter.ram}
+  {Who made heaven and earth.}
+
+\serveranswer{A7 --- After the priest's Confiteor}
+  {Misereatur tui omnipotens Deus, et, dimissis peccatis tuis, perducat te ad vitam aeternam.}
+  {mi-se-re-\ServerStress{a}-tur \ServerStress{tu}-i om-\ServerStress{ni}-po-tens \ServerStress{De}-us, et, di-\ServerStress{mis}-sis pec-\ServerStress{ca}-tis \ServerStress{tu}-is, per-\ServerStress{du}-cat te ad \ServerStress{vi}-tam ae-\ServerStress{ter}-nam}
+  {mee-seh-reh-AH-toor TOO-ee ohm-NEE-poh-tehns DEH-oos, eht, dee-MEES-sees pehk-KAH-tees TOO-ees, pehr-DOO-kaht teh ahd VEE-tahm eh-TEHR-nahm}
+  {mi.se.re"a.tur "tu.i om"ni.po.tens "de.us et di"mis.sis pek"ka.tis "tu.is per"du.kat te ad "vi.tam e"ter.nam}
+  {May almighty God have mercy on you, forgive your sins, and bring you to everlasting life.}
+
+\RegisterServerData{A8}
+  {Confiteor Deo omnipotenti, beatae Mariae semper Virgini, beato Michaeli Archangelo, beato Ioanni Baptistae, sanctis Apostolis Petro et Paulo, omnibus Sanctis, et tibi, pater: quia peccavi nimis cogitatione, verbo et opere: mea culpa, mea culpa, mea maxima culpa. Ideo precor beatam Mariam semper Virginem, beatum Michaelem Archangelum, beatum Ioannem Baptistam, sanctos Apostolos Petrum et Paulum, omnes Sanctos, et te, pater, orare pro me ad Dominum Deum nostrum.}
+  {con-\ServerStress{fi}-te-or \ServerStress{De}-o om-ni-po-\ServerStress{ten}-ti, be-\ServerStress{a}-tae Ma-\ServerStress{ri}-ae \ServerStress{sem}-per \ServerStress{Vir}-gi-ni, be-\ServerStress{a}-to Mi-cha-\ServerStress{e}-li Ar-\ServerStress{chan}-ge-lo, be-\ServerStress{a}-to Io-\ServerStress{an}-ni Bap-\ServerStress{tis}-tae, \ServerStress{sanc}-tis A-\ServerStress{pos}-to-lis \ServerStress{Pe}-tro et \ServerStress{Pau}-lo, \ServerStress{om}-ni-bus \ServerStress{Sanc}-tis, et \ServerStress{ti}-bi, \ServerStress{pa}-ter: \ServerStress{qui}-a pec-\ServerStress{ca}-vi \ServerStress{ni}-mis co-gi-ta-ti-\ServerStress{o}-ne, \ServerStress{ver}-bo et \ServerStress{o}-pe-re: \ServerStress{me}-a \ServerStress{cul}-pa, \ServerStress{me}-a \ServerStress{cul}-pa, \ServerStress{me}-a \ServerStress{max}-i-ma \ServerStress{cul}-pa. \ServerStress{I}-de-o \ServerStress{pre}-cor be-\ServerStress{a}-tam Ma-\ServerStress{ri}-am \ServerStress{sem}-per \ServerStress{Vir}-gi-nem, be-\ServerStress{a}-tum Mi-cha-\ServerStress{e}-lem Ar-\ServerStress{chan}-ge-lum, be-\ServerStress{a}-tum Io-\ServerStress{an}-nem Bap-\ServerStress{tis}-tam, \ServerStress{sanc}-tos A-\ServerStress{pos}-to-los \ServerStress{Pe}-trum et \ServerStress{Pau}-lum, \ServerStress{om}-nes \ServerStress{Sanc}-tos, et te, \ServerStress{pa}-ter, o-\ServerStress{ra}-re pro me ad \ServerStress{Do}-mi-num \ServerStress{De}-um \ServerStress{nos}-trum.}
+  {kohn-FEE-teh-or DEH-oh ohm-nee-poh-TEHN-tee, beh-AH-teh mah-REE-eh SEHM-pehr VEER-jee-nee, beh-AH-toh mee-kah-EH-lee ahr-KAHN-jeh-loh, beh-AH-toh yoh-AHN-nee bahp-TEES-teh, SAHNK-tees ah-POHS-toh-lees PEH-troh eht POW-loh, OHM-nee-boos SAHNK-tees, eht TEE-bee, PAH-tehr: KWEE-ah pehk-KAH-vee NEE-mees koh-jee-tah-tsee-OH-neh, VEHR-boh eht OH-peh-reh: MEH-ah KOOL-pah, MEH-ah KOOL-pah, MEH-ah MAHK-see-mah KOOL-pah. EE-deh-oh PREH-kor beh-AH-tahm mah-REE-ahm SEHM-pehr VEER-jee-nehm, beh-AH-toom mee-kah-EH-lehm ahr-KAHN-jeh-loom, beh-AH-toom yoh-AHN-nehm bahp-TEES-tahm, SAHNK-tohs ah-POHS-toh-lohs PEH-troom eht POW-loom, OHM-nehs SAHNK-tohs, eht teh, PAH-tehr, oh-RAH-reh proh meh ahd DOH-mee-noom DEH-oom NOHS-troom.}
+  {kon"fi.te.or "de.o om.ni.po"ten.ti be"a.te ma"ri.e "sem.per "vir.dZi.ni be"a.to mi.ka"e.li ar"kan.dZe.lo be"a.to jo"an.ni bap"tis.te "saN.ktis a"pos.to.lis "pe.tro et "pau.lo "om.ni.bus "saN.ktis et "ti.bi "pa.ter "kwi.a pek"ka.vi "ni.mis ko.dZi.ta.tsi"o.ne "ver.bo et "o.pe.re "me.a "kul.pa "me.a "kul.pa "me.a "mak.si.ma "kul.pa "i.de.o "pre.kor be"a.tam ma"ri.am "sem.per "vir.dZi.nem be"a.tum mi.ka"e.lem ar"kan.dZe.lum be"a.tum jo"an.nem bap"tis.tam "saN.ktos a"pos.to.los "pe.trum et "pau.lum "om.nes "saN.ktos et te "pa.ter o"ra.re pro me ad "do.mi.num "de.um "nos.trum}
+  {I confess my sins to almighty God, to the saints, and to you, Father; I ask them and you to pray for me to the Lord our God.}
+\expandafter\gdef\csname servertitle@A8\endcsname{A8 --- The ministers' Confiteor}
+
+\serveranswer{A9 --- Amen}
+  {Amen.}
+  {\ServerStress{A}-men}
+  {AH-mehn}
+  {"a.men}
+  {Truly; so be it.}
+
+\serveranswer{A10 --- After Deus, tu conversus}
+  {Et plebs tua laetabitur in te.}
+  {Et plebs \ServerStress{tu}-a lae-\ServerStress{ta}-bi-tur in te}
+  {eht plehbs TOO-ah leh-TAH-bee-toor een teh}
+  {et plebs "tu.a le"ta.bi.tur in te}
+  {And your people will rejoice in you.}
+
+\serveranswer{A11 --- After Ostende nobis}
+  {Et salutare tuum da nobis.}
+  {Et sa-lu-\ServerStress{ta}-re \ServerStress{tu}-um da \ServerStress{no}-bis}
+  {eht sah-loo-TAH-reh TOO-oom dah NOH-bees}
+  {et sa.lu"ta.re "tu.um da "no.bis}
+  {And grant us your salvation.}
+
+\serveranswer{A12 --- After Domine, exaudi}
+  {Et clamor meus ad te veniat.}
+  {Et \ServerStress{cla}-mor \ServerStress{me}-us ad te \ServerStress{ve}-ni-at}
+  {eht KLAH-mor MEH-oos ahd teh VEH-nee-aht}
+  {et "kla.mor "me.us ad te "ve.ni.at}
+  {And let my cry come to you.}
+
+\serveranswer{A13 --- Greeting and peace answer}
+  {Et cum spiritu tuo.}
+  {Et cum \ServerStress{spi}-ri-tu \ServerStress{tu}-o}
+  {eht koom SPEE-ree-too TOO-oh}
+  {et kum "spi.ri.tu "tu.o}
+  {And with your spirit.}
+
+\RegisterServerData{A14}
+  {Kyrie, eleison. Christe, eleison.}
+  {\ServerStress{Ky}-ri-e, e-\ServerStress{le}-i-son. \ServerStress{Chris}-te, e-\ServerStress{le}-i-son.}
+  {KEE-ree-eh, eh-LEH-ee-sohn. KREES-teh, eh-LEH-ee-sohn.}
+  {"ki.ri.e e"le.i.son "kri.ste e"le.i.son}
+  {Lord, have mercy. Christ, have mercy.}
+\expandafter\gdef\csname servertitle@A14\endcsname{A14 --- Kyrie and Christe}
+
+\newcommand{\LowMassKyriePattern}{Priest K -- \textbf{server K} -- priest K;
+\textbf{server C} -- priest C -- \textbf{server C};
+priest K -- \textbf{server K} -- priest K.}
+
+
+\serveranswer{A15 --- Thanks to God}
+  {Deo gratias.}
+  {\ServerStress{De}-o \ServerStress{gra}-ti-as}
+  {DEH-oh GRAH-tsee-ahs}
+  {"de.o "gra.tsi.as}
+  {Thanks be to God.}
+
+\serveranswer{A16 --- At the Gospel announcement}
+  {Gloria tibi, Domine.}
+  {\ServerStress{Glo}-ri-a \ServerStress{ti}-bi, \ServerStress{Do}-mi-ne}
+  {GLOH-ree-ah TEE-bee, DOH-mee-neh}
+  {"glo.ri.a "ti.bi "do.mi.ne}
+  {Glory to you, O Lord.}
+
+\serveranswer{A17 --- After a Gospel read at Low Mass}
+  {Laus tibi, Christe.}
+  {Laus \ServerStress{ti}-bi, \ServerStress{Chris}-te}
+  {lows TEE-bee, KREES-teh}
+  {laus "ti.bi "kri.ste}
+  {Praise to you, O Christ.}
+
+\serveranswer{A18 --- At Orate, fratres}
+  {Suscipiat Dominus sacrificium de manibus tuis ad laudem et gloriam nominis sui, ad utilitatem quoque nostram, totiusque Ecclesiae suae sanctae.}
+  {su-\ServerStress{sci}-pi-at \ServerStress{Do}-mi-nus sa-cri-\ServerStress{fi}-ci-um de \ServerStress{ma}-ni-bus \ServerStress{tu}-is ad \ServerStress{lau}-dem et \ServerStress{glo}-ri-am \ServerStress{no}-mi-nis \ServerStress{su}-i, ad u-ti-li-\ServerStress{ta}-tem \ServerStress{quo}-que \ServerStress{nos}-tram, \ServerStress{to}-ti-us-que Ec-\ServerStress{cle}-si-ae \ServerStress{su}-ae \ServerStress{sanc}-tae}
+  {soo-SHEE-pee-aht DOH-mee-noos sah-kree-FEE-chee-oom deh MAH-nee-boos TOO-ees ahd LOW-dehm eht GLOH-ree-ahm NOH-mee-nees SOO-ee, ahd oo-tee-lee-TAH-tehm KWOH-kweh NOHS-trahm, TOH-tsee-oos-kweh ehk-KLEH-see-eh SOO-eh SAHNK-teh}
+  {su"Si.pi.at "do.mi.nus sa.kri"fi.tSi.um de "ma.ni.bus "tu.is ad "lau.dem et "glo.ri.am "no.mi.nis "su.i ad u.ti.li"ta.tem "kwo.kwe "nos.tram "to.tsi.us.kwe ek"kle.si.e "su.e "saN.kte}
+  {May the Lord receive the sacrifice from your hands for his glory and for the good of us and of his holy Church.}
+
+\serveranswer{A19 --- After Sursum corda}
+  {Habemus ad Dominum.}
+  {ha-\ServerStress{be}-mus ad \ServerStress{Do}-mi-num}
+  {ah-BEH-moos ahd DOH-mee-noom}
+  {a"be.mus ad "do.mi.num}
+  {We have lifted them to the Lord.}
+
+\serveranswer{A20 --- After Gratias agamus}
+  {Dignum et iustum est.}
+  {\ServerStress{Dig}-num et \ServerStress{ius}-tum est}
+  {DEE-nyoom eht YOOS-toom ehst}
+  {"di.\textltailn um et "jus.tum est}
+  {It is right and just.}
+
+\serveranswer{A21 --- End of the Pater noster}
+  {Sed libera nos a malo.}
+  {Sed \ServerStress{li}-be-ra nos a \ServerStress{ma}-lo}
+  {sehd LEE-beh-rah nohs ah MAH-loh}
+  {sed "li.be.ra nos a "ma.lo}
+  {But deliver us from evil.}
+
+\serveranswer{A22 --- dismissal at a Mass of the season in the Easter octave}
+  {Deo gratias, alleluia, alleluia.}
+  {\ServerStress{De}-o \ServerStress{gra}-ti-as, al-le-\ServerStress{lu}-ia, al-le-\ServerStress{lu}-ia}
+  {DEH-oh GRAH-tsee-ahs, ahl-leh-LOO-yah, ahl-leh-LOO-yah}
+  {"de.o "gra.tsi.as al.le"lu.ja al.le"lu.ja}
+  {Thanks be to God, alleluia, alleluia.}
+
+\ifCardsOnlyGuide\else
+\section{Learn the responses in six short lessons}
+\label{sec:response-lessons}
+
+\begin{familybox}{Choose the child's speaking track first}
+\GuideVoiceChoice
+{The Low-Mass server learns every answer in these six lessons.}
+{MC, A1, and A2 learn the quiet altar answers. Other servers first learn the
+words marked “listen and do not join.” Learn a choir/public answer only if the
+child is separately assigned to sing with those voices.}
+{A lay server first learns which words belong to the sacred ministers and
+choir/public, so that he does not answer over them. He memorizes a spoken reply
+only when his assigned route actually gives it to him, such as receiving the
+pax.}
+
+For each box: read the cue, have the child say the answer three times, cover
+the answer, and ask again. Stop after five to ten minutes. Do not require the
+next lesson until the current cues work in a mixed order.
+\end{familybox}
+
+\subsection{Lesson 1: three answers that return often}
+\begin{learnerbox}{Today's goal}
+Hear the cue and begin A9, A13, or A15 without guessing.
+\par\smallskip
+\masterybox{words}\masterybox{cue}\masterybox{sound}
+\end{learnerbox}
+\PrintServerAnswer{A9}
+\PrintServerAnswer{A13}
+\PrintServerAnswer{A15}
+
+\subsection{Lesson 2: Gospel and Preface gates}
+\begin{learnerbox}{Today's goal}
+Keep the Gospel pair separate from the two Preface answers and the end of the
+Pater noster.
+\par\smallskip
+\masterybox{words}\masterybox{cue}\masterybox{sound}
+\end{learnerbox}
+\PrintServerAnswer{A16}
+\PrintServerAnswer{A17}
+\PrintServerAnswer{A19}
+\PrintServerAnswer{A20}
+\PrintServerAnswer{A21}
+
+\subsection{Lesson 3: short opening answers}
+\begin{learnerbox}{Today's goal}
+Answer five short cues from the prayers at the foot without using Mass order
+as a crutch.
+\par\smallskip
+\masterybox{words}\masterybox{cue}\masterybox{sound}
+\end{learnerbox}
+\PrintServerAnswer{A1}
+\PrintServerAnswer{A6}
+\PrintServerAnswer{A10}
+\PrintServerAnswer{A11}
+\PrintServerAnswer{A12}
+
+\subsection{Lesson 4: the psalm chain}
+\begin{learnerbox}{Today's goal}
+Build each long answer from its final phrase backward, then mix all four cues.
+\par\smallskip
+\masterybox{words}\masterybox{cue}\masterybox{sound}
+\end{learnerbox}
+\PrintServerAnswer{A2}
+\PrintServerAnswer{A3}
+\PrintServerAnswer{A4}
+\PrintServerAnswer{A5}
+
+\subsection{Lesson 5: the three long answers}
+\begin{learnerbox}{Today's goal}
+Learn one sense-sized piece at a time. Join the pieces only after each can be
+said correctly by itself.
+\par\smallskip
+\masterybox{words}\masterybox{cue}\masterybox{sound}
+\end{learnerbox}
+\PrintServerAnswer{A7}
+\PrintServerAnswer{A8}
+\PrintServerAnswer{A18}
+
+\subsection{Lesson 6: Kyrie and the special dismissal}
+\begin{learnerbox}{Today's goal}
+Know who supplies the Kyrie in this form and recognize when the longer Easter
+dismissal replaces ordinary A15.
+\ifLowMassGuide\par\smallskip\textbf{Low-Mass alternation:}
+\LowMassKyriePattern\fi
+\par\smallskip
+\masterybox{words}\masterybox{cue}\masterybox{sound}
+\end{learnerbox}
+\PrintServerAnswer{A14}
+\PrintServerAnswer{A22}
+
+\PrintMassOrderVoiceMap
+
+\section{Practice and prove it}
+
+Practice for five to ten quiet minutes.  One person reads only the cue; the
+learner answers without looking.  A stage is mastered when the learner gives
+every answer correctly in two scrambled rounds, with a short break between
+them.  Correct words come first; steady pace and clean pronunciation come
+next.
+
+\begin{enumerate}[leftmargin=1.6em,label=\textbf{Stage \arabic*:}]
+\item \textbf{Three anchors.}  A9 \CanonLatin{Amen}; A13
+  \CanonLatin{Et cum spiritu tuo}; A15 \CanonLatin{Deo gratias}.
+  \par\masterybox{words}\masterybox{cue}\masterybox{sound}
+\item \textbf{Gospel and Preface gates.}  Add A16, A17, A19, A20, and A21.
+  Mix their cues so that similar short answers do not become guesses.
+  \par\masterybox{words}\masterybox{cue}\masterybox{sound}
+\ifSolemnMassGuide\Needspace{3\baselineskip}\fi
+\item \textbf{Short foot-prayer answers.}  Add A1, A6, and A10--A12.
+  Drill once with and once without the psalm.
+  \par\masterybox{words}\masterybox{cue}\masterybox{sound}
+\item \textbf{The psalm chain.}  Learn A2--A5 one clause at a time.  Say the
+  last clause first, add the clause before it, and build backward until the
+  whole answer is secure.
+  \par\masterybox{words}\masterybox{cue}\masterybox{sound}
+\item \textbf{The long answers.}  Learn A7, A8, and A18 in sense-sized chunks.
+  For A8, use the four hooks: ``I confess''; ``because I sinned''; ``therefore
+  I ask''; ``pray for me.''  Join chunks only after each is accurate.
+  \par\masterybox{words}\masterybox{cue}\masterybox{sound}
+\item \textbf{Patterns and variants.}  Drill A14's ninefold alternation, then
+  ordinary, Easter-octave Mass-of-the-season, and procession dismissals. Finish with
+  one complete run in the voice plan of the form you will serve.
+  \par\masterybox{words}\masterybox{cue}\masterybox{sound}
+\end{enumerate}
+
+\Needspace{10\baselineskip}
+\begin{coachbox}{Four drills that work}
+\begin{enumerate}[leftmargin=1.5em]
+\item \textbf{Echo, cover, answer:} hear a phrase, repeat it three times,
+  cover it, then answer the cue.
+\item \textbf{Build backward:} master the final phrase, then attach the
+  phrase before it.  This prevents endings from fading away.
+\item \textbf{First-letter rescue:} write only the first letter of each word;
+  use it once, then remove it.
+\item \textbf{Wrong-cue check:} mix \CanonLatin{Dominus vobiscum},
+  \CanonLatin{Sursum corda}, and \CanonLatin{Ite, missa est}.  A response is
+  learned only when the cue selects it.
+\end{enumerate}
+\end{coachbox}
+
+\begin{coachbox}{Mastery includes recovery}
+In the final shuffled check, the trainer deliberately includes one cue the
+learner is likely to miss. If the answer does not begin within three seconds,
+the learner says ``again,'' listens to the cue once more, and answers without
+opening the guide. If the second attempt is wrong, the trainer gives the bank
+ID, the learner corrects the complete response, and that cue returns after
+three unrelated cards. Pass when two scrambled rounds are accurate and every
+miss is recovered by the delayed repeat.
+\end{coachbox}
+
+\section{Quick route by response ID}
+
+Use this only after learning the bank. A trainer calls the cue; the learner
+finds the right ID from memory and says the complete answer.
+
+\begin{center}
+\small
+\begin{tabularx}{\linewidth}{@{}>{\bfseries}p{0.25\linewidth}>{\RaggedRight\arraybackslash}X@{}}
+\toprule
+Mass stage & Response route\\
+\midrule
+Foot prayers & A1, A2, A3, A4, A5, A1, A6, A7, A8, A9, A9, A10, A11, A12, A13\\
+Kyrie through Gospel & A14; then A13 and A9 at the prayers; A15 after a read Epistle; A13 and A16 before the Gospel; A17 only after a read Gospel\\
+Offertory and Preface & A13, A18, A9, A13, A19, A20\\
+Canon and Communion & A9, A21, A9, A13\\
+Postcommunion and ending & A13, A9; add A9 for a Prayer over the People when appointed; then A13 and either A15 or A22 according to the dismissal; blessing A9 only after the \CanonLatin{Ite} branch\\
+Last Gospel, when said & A13, A16, A15\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{watchbox}{Sung-reading checkpoint}
+At Missa Cantata or Solemn Mass, do not add A15 after a chanted Epistle and do
+not add A17 after a chanted Gospel. Follow the form-specific voice table.
+\end{watchbox}
+
+\begin{watchbox}{Ending checkpoint}
+If \CanonLatin{Benedicamus Domino} announces a following liturgical
+procession, answer A15; that branch has no blessing and no Last Gospel. At the
+third Mass of Christmas, the blessing is followed by no Last Gospel, so omit
+the final A13, A16, and A15 sequence.
+\end{watchbox}
+
+\phantomsection\label{course:last}
+\fi
+
+\newcommand{\responseflashfront}[2]{\flashfront{#1}{#2}}
+\newcommand{\responseflashback}[4]{\flashback{#1}{#2}{#3}{#4}}
+
+% A8 remains one response. These three print-sized study chunks are owned
+% here once and are consumed by both card decks.
+\newcommand{\AightOneLatin}{Confiteor Deo omnipotenti, beatae Mariae semper
+Virgini, beato Michaeli Archangelo, beato Ioanni Baptistae, sanctis Apostolis
+Petro et Paulo, omnibus Sanctis, et tibi, pater:}
+\newcommand{\AightOneLearner}{con-\ServerStress{fi}-te-or
+\ServerStress{De}-o om-ni-po-\ServerStress{ten}-ti, be-\ServerStress{a}-tae
+Ma-\ServerStress{ri}-ae \ServerStress{sem}-per \ServerStress{Vir}-gi-ni,
+be-\ServerStress{a}-to Mi-cha-\ServerStress{e}-li
+Ar-\ServerStress{chan}-ge-lo, be-\ServerStress{a}-to
+Io-\ServerStress{an}-ni Bap-\ServerStress{tis}-tae,
+\ServerStress{sanc}-tis A-\ServerStress{pos}-to-lis
+\ServerStress{Pe}-tro et \ServerStress{Pau}-lo,
+\ServerStress{om}-ni-bus \ServerStress{Sanc}-tis, et
+\ServerStress{ti}-bi, \ServerStress{pa}-ter:}
+\newcommand{\AightOneSound}{kohn-FEE-teh-or DEH-oh
+ohm-nee-poh-TEHN-tee, beh-AH-teh mah-REE-eh SEHM-pehr VEER-jee-nee,
+beh-AH-toh mee-kah-EH-lee ahr-KAHN-jeh-loh, beh-AH-toh yoh-AHN-nee
+bahp-TEES-teh, SAHNK-tees ah-POHS-toh-lees PEH-troh eht POW-loh,
+OHM-nee-boos SAHNK-tees, eht TEE-bee, PAH-tehr}
+\newcommand{\AightOneMeaning}{I confess to almighty God, the saints, and you,
+Father.}
+
+\newcommand{\AightTwoLatin}{quia peccavi nimis cogitatione, verbo et opere:
+mea culpa, mea culpa, mea maxima culpa.}
+\newcommand{\AightTwoLearner}{\ServerStress{qui}-a
+pec-\ServerStress{ca}-vi \ServerStress{ni}-mis
+co-gi-ta-ti-\ServerStress{o}-ne, \ServerStress{ver}-bo et
+\ServerStress{o}-pe-re: \ServerStress{me}-a \ServerStress{cul}-pa,
+\ServerStress{me}-a \ServerStress{cul}-pa, \ServerStress{me}-a
+\ServerStress{max}-i-ma \ServerStress{cul}-pa.}
+\newcommand{\AightTwoSound}{KWEE-ah pehk-KAH-vee NEE-mees
+koh-jee-tah-tsee-OH-neh, VEHR-boh eht OH-peh-reh: MEH-ah KOOL-pah,
+MEH-ah KOOL-pah, MEH-ah MAHK-see-mah KOOL-pah}
+\newcommand{\AightTwoMeaning}{I have sinned greatly in thought, word, and
+deed---through my fault.}
+
+\newcommand{\AightThreeLatin}{Ideo precor beatam Mariam semper Virginem,
+beatum Michaelem Archangelum, beatum Ioannem Baptistam, sanctos Apostolos
+Petrum et Paulum, omnes Sanctos, et te, pater, orare pro me ad Dominum Deum
+nostrum.}
+\newcommand{\AightThreeLearner}{\ServerStress{I}-de-o
+\ServerStress{pre}-cor be-\ServerStress{a}-tam Ma-\ServerStress{ri}-am
+\ServerStress{sem}-per \ServerStress{Vir}-gi-nem,
+be-\ServerStress{a}-tum Mi-cha-\ServerStress{e}-lem
+Ar-\ServerStress{chan}-ge-lum, be-\ServerStress{a}-tum
+Io-\ServerStress{an}-nem Bap-\ServerStress{tis}-tam,
+\ServerStress{sanc}-tos A-\ServerStress{pos}-to-los
+\ServerStress{Pe}-trum et \ServerStress{Pau}-lum,
+\ServerStress{om}-nes \ServerStress{Sanc}-tos, et te,
+\ServerStress{pa}-ter, o-\ServerStress{ra}-re pro me ad
+\ServerStress{Do}-mi-num \ServerStress{De}-um
+\ServerStress{nos}-trum.}
+\newcommand{\AightThreeSound}{EE-deh-oh PREH-kor beh-AH-tahm
+mah-REE-ahm SEHM-pehr VEER-jee-nehm, beh-AH-toom mee-kah-EH-lehm
+ahr-KAHN-jeh-loom, beh-AH-toom yoh-AHN-nehm bahp-TEES-tahm, SAHNK-tohs
+ah-POHS-toh-lohs PEH-troom eht POW-loom, OHM-nehs SAHNK-tohs, eht teh,
+PAH-tehr, oh-RAH-reh proh meh ahd DOH-mee-noom DEH-oom NOHS-troom}
+\newcommand{\AightThreeMeaning}{Therefore I ask the saints and you, Father,
+to pray for me to the Lord our God.}
+
+\ifCardsOnlyGuide\else
+\section{Printable study-card pages}
+
+\begin{coachbox}{One printing setup for every deck}
+Print the desired numbered page range on US-letter paper, six cards per face,
+two-sided in portrait orientation, at actual size, with \textbf{long-edge
+binding}. Keep each front/back pair in order. Every back sheet reverses each
+row left-to-right so it aligns after the long-edge turn. Cut on the box
+borders. The number is at upper left; the side is at upper right.
+\end{coachbox}
+
+\begin{watchbox}{Who answers}
+\GuideVoiceChoice
+{These cards train the Low-Mass server's spoken answers. Use a conditional
+card only when its printed condition applies.}
+{MC, A1, and A2 give the quiet altar answers in this model. Choir or people
+give the public sung answers; other servers listen unless separately assigned.
+No answer follows a chanted reading.}
+{Sacred ministers give the quiet altar answers in this model; choir or people
+give the public sung answers. A lay server answers only where his own route
+assigns it, such as when he receives the pax. No answer follows a chanted
+reading.}
+\end{watchbox}
+
+\begin{watchbox}{Practise the whole cue}
+Fixed cue texts are printed in full. Because the appointed Epistle and Gospel
+change with the day, their cards direct the trainer to read the complete final
+sentence or verse from that day's Missal; never replace it with only the last
+few words. The answer sides may use a shortened sound line; the full
+pronunciation remains in the A-bank.
+\end{watchbox}
+
+\noindent\textbf{Deck order.} C cards: hear the whole cue, then answer.
+P cards: read the Latin, then check pronunciation and meaning.
+\ifLowMassGuide\else Action cards follow the P cards and rehearse the assigned
+route.\fi
+
+{\small\noindent\textbf{Text basis.} Latin was collated from the 1962
+\emph{Missale Romanum}, \emph{Ritus servandus} III--VII and X--XIII and
+\emph{Ordo Missae}, printed pp.~216--328. Pronunciation follows the 1961
+\emph{Liber Usualis}, \emph{Rules for Interpretation}, IX. Sound spellings,
+glosses, staging, and card design are teaching aids.\par}
+\fi
+
+\carddeckoddpage
+\phantomsection
+\addcontentsline{toc}{subsection}{Cue-to-response cards}
+\label{cards:cue-first}
+% Duplex sheet 1, fronts: C01 C02 / C03 C04 / C05 C06.
+\begin{flashgrid}
+\responseflashfront{C01}{{\small
+  \CanonLatin{Dominus vobiscum.}\par
+  \CanonLatin{Pax vobis.}\par
+  \CanonLatin{Pax Domini sit semper vobiscum.}\par
+  \CanonLatin{Pax tecum.}}}
+&
+\responseflashfront{C02}{{\scriptsize\textbf{Use one complete cue:}\par
+  \CanonLatin{Misereatur vestri omnipotens Deus, et, dimissis peccatis
+  vestris, perducat vos ad vitam aeternam.}\par\smallskip
+  \CanonLatin{Indulgentiam, absolutionem et remissionem peccatorum nostrorum
+  tribuat nobis omnipotens et misericors Dominus.}\par\smallskip
+  \CanonLatin{Per omnia saecula saeculorum.}\par\smallskip
+  \CanonLatin{Benedicat vos omnipotens Deus: Pater, et Filius, et Spiritus
+  Sanctus.}}}\\[4pt]
+\responseflashfront{C03}{{\scriptsize\textbf{Use one complete cue:}\par
+  Read Epistle: trainer reads its complete final sentence from today's
+  Missal.\par
+  \CanonLatin{Ite, missa est.}\par
+  \CanonLatin{Benedicamus Domino.}\par
+  Last Gospel: \CanonLatin{Et Verbum caro factum est, et habitavit in nobis:
+  et vidimus gloriam eius, gloriam quasi Unigeniti a Patre, plenum gratiae et
+  veritatis.}}}
+&
+\responseflashfront{C04}{\CanonLatin{Introibo ad altare Dei.}}\\[4pt]
+\responseflashfront{C05}{{\small\CanonLatin{Iudica me, Deus, et discerne
+  causam meam de gente non sancta: ab homine iniquo, et doloso erue me.}}}
+&
+\responseflashfront{C06}{{\small\CanonLatin{Emitte lucem tuam, et veritatem
+  tuam: ipsa me deduxerunt, et adduxerunt in montem sanctum tuum, et in
+  tabernacula tua.}}}\\
+\end{flashgrid}
+\clearpage
+% Duplex sheet 1, backs mirrored by column: C02 C01 / C04 C03 / C06 C05.
+\begin{flashgrid}
+\responseflashback{C02}{\ServerLatinData{A9}}{\SoundLine{\ServerSoundData{A9}}}{A9 --- Do not add a separate \CanonLatin{Amen} after the opening sign-of-the-Cross formula.}
+&
+\responseflashback{C01}{\ServerLatinData{A13}}{\SoundLine{\ServerSoundData{A13}}}{A13 --- The same answer serves all four cues.}\\[4pt]
+\responseflashback{C04}{\ServerLatinData{A1}}{\SoundLine{\ServerSoundData{A1}}}{A1 --- This answer remains when the psalm is omitted.}
+&
+\responseflashback{C03}{\ServerLatinData{A15}}{\SoundLine{\ServerSoundData{A15}}}{A15 --- No answer follows a chanted Epistle. At the appointed Easter-octave dismissal, use A22.}\\[4pt]
+\responseflashback{C06}{\ServerLatinData{A3}}{\SoundLine{\ServerSoundData{A3}}}{A3 --- The second half repeats A1.}
+&
+\responseflashback{C05}{\ServerLatinData{A2}}{\SoundLine{\ServerSoundData{A2}}}{A2 --- Build the five sense chunks before joining them.}\\
+\end{flashgrid}
+\clearpage
+
+% Duplex sheet 2, fronts: C07 C08 / C09 C10 / C11 C12.
+\begin{flashgrid}
+\responseflashfront{C07}{{\small\CanonLatin{Confitebor tibi in cithara, Deus,
+  Deus meus: quare tristis es, anima mea, et quare conturbas me?}}}
+&
+\responseflashfront{C08}{\CanonLatin{Gloria Patri, et Filio, et Spiritui Sancto.}}\\[4pt]
+\responseflashfront{C09}{\CanonLatin{Adiutorium nostrum in nomine Domini.}}
+&
+\responseflashfront{C10}{{\scriptsize\CanonLatin{Confiteor Deo omnipotenti,
+  beatae Mariae semper Virgini, beato Michaeli Archangelo, beato Ioanni
+  Baptistae, sanctis Apostolis Petro et Paulo, omnibus Sanctis, et vobis,
+  fratres: quia peccavi nimis cogitatione, verbo et opere: mea culpa, mea
+  culpa, mea maxima culpa. Ideo precor beatam Mariam semper Virginem, beatum
+  Michaelem Archangelum, beatum Ioannem Baptistam, sanctos Apostolos Petrum et
+  Paulum, omnes Sanctos, et vos, fratres, orare pro me ad Dominum Deum
+  nostrum.}}}\\[4pt]
+\responseflashfront{C11}{{\scriptsize After the ministers say
+  \CanonLatin{Misereatur tui omnipotens Deus, et, dimissis peccatis tuis,
+  perducat te ad vitam aeternam.}, the celebrant answers
+  \CanonLatin{Amen.}}}
+&
+\responseflashfront{C12}{{\scriptsize\textbf{Continue after the complete first
+  part:}\par\CanonLatin{\AightOneLatin}}}\\
+\end{flashgrid}
+\clearpage
+% Duplex sheet 2, backs mirrored by column: C08 C07 / C10 C09 / C12 C11.
+\begin{flashgrid}
+\responseflashback{C08}{\ServerLatinData{A5}}{\SoundLine{\ServerSoundData{A5}}}{A5 --- Beginning; now; always; ages of ages.}
+&
+\responseflashback{C07}{\ServerLatinData{A4}}{\SoundLine{\ServerSoundData{A4}}}{A4 --- Hope; praise; salvation; God.}\\[4pt]
+\responseflashback{C10}{\ServerLatinData{A7}}{\SoundLine{\ServerSoundData{A7}}}{A7 --- Notice \CanonLatin{tui} and \CanonLatin{tuis}: the response addresses one priest.}
+&
+\responseflashback{C09}{\ServerLatinData{A6}}{\SoundLine{\ServerSoundData{A6}}}{A6}\\[4pt]
+\responseflashback{C12}{{\footnotesize \AightTwoLatin}}{{\scriptsize \SoundLine{\AightTwoSound}}}{A8 --- part 2 of 3: thought; word; deed; threefold fault.}
+&
+\responseflashback{C11}{{\scriptsize \AightOneLatin}}{{\scriptsize \SoundLine{\AightOneSound}}}{A8 --- part 1 of 3: persons named in the confession.}\\
+\end{flashgrid}
+\clearpage
+
+% Duplex sheet 3, fronts: C13 C14A / C14B C14C / C15 C16A.
+\begin{flashgrid}
+\responseflashfront{C13}{{\scriptsize\textbf{Continue after the complete
+  second part:}\par\CanonLatin{\AightTwoLatin}}}
+&
+\responseflashfront{C14A}{\CanonLatin{Deus, tu conversus vivificabis nos.}}\\[4pt]
+\responseflashfront{C14B}{\CanonLatin{Ostende nobis, Domine, misericordiam tuam.}}
+&
+\responseflashfront{C14C}{\CanonLatin{Domine, exaudi orationem meam.}}\\[4pt]
+\responseflashfront{C15}{{\scriptsize
+  \GuideVoiceChoice
+  {\textbf{Complete Low-Mass pattern:}\par
+   P: \CanonLatin{Kyrie, eleison.}\quad Server: \rule{1.9cm}{0.3pt}\par
+   P: \CanonLatin{Kyrie, eleison.}\par
+   Server begins: \rule{1.9cm}{0.3pt}\quad
+   P: \CanonLatin{Christe, eleison.}\par
+   Server: \rule{1.9cm}{0.3pt}\quad
+   P: \CanonLatin{Kyrie, eleison.}\par
+   Server: \rule{1.9cm}{0.3pt}\quad
+   P: \CanonLatin{Kyrie, eleison.}}
+  {\textbf{If assigned to sing:} the trainer sings the other side's complete
+   invocation, \CanonLatin{Kyrie, eleison.} or
+   \CanonLatin{Christe, eleison.}; continue through all nine in the appointed
+   side division.}
+  {\textbf{If assigned to sing:} the trainer sings the other side's complete
+   invocation, \CanonLatin{Kyrie, eleison.} or
+   \CanonLatin{Christe, eleison.}; continue through all nine in the appointed
+   side division.}}}
+&
+\responseflashfront{C16A}{{\scriptsize\textbf{Trainer reads one complete
+  announcement:}\par
+  \CanonLatin{Sequentia sancti Evangelii secundum Matthaeum.}\par
+  \CanonLatin{Sequentia sancti Evangelii secundum Marcum.}\par
+  \CanonLatin{Sequentia sancti Evangelii secundum Lucam.}\par
+  \CanonLatin{Sequentia sancti Evangelii secundum Ioannem.}\par
+  \CanonLatin{Initium sancti Evangelii secundum Matthaeum.}\par
+  \CanonLatin{Initium sancti Evangelii secundum Marcum.}\par
+  \CanonLatin{Initium sancti Evangelii secundum Lucam.}\par
+  \CanonLatin{Initium sancti Evangelii secundum Ioannem.}}}\\
+\end{flashgrid}
+\clearpage
+% Duplex sheet 3, backs mirrored: C14A C13 / C14C C14B / C16A C15.
+\begin{flashgrid}
+\responseflashback{C14A}{\ServerLatinData{A10}}{\SoundLine{\ServerSoundData{A10}}}{A10 --- Rejoice.}
+&
+\responseflashback{C13}{{\scriptsize \AightThreeLatin}}{{\scriptsize \SoundLine{\AightThreeSound}}}{A8 --- part 3 of 3: ask the saints and the priest to pray.}\\[4pt]
+\responseflashback{C14C}{\ServerLatinData{A12}}{\SoundLine{\ServerSoundData{A12}}}{A12 --- Let my cry come to you.}
+&
+\responseflashback{C14B}{\ServerLatinData{A11}}{\SoundLine{\ServerSoundData{A11}}}{A11 --- Grant us salvation.}\\[4pt]
+\responseflashback{C16A}{\ServerLatinData{A16}}{\SoundLine{\ServerSoundData{A16}}}{A16 --- Glory to you, O Lord.}
+&
+\responseflashback{C15}{{\small\GuideVoiceChoice
+  {\LowMassKyriePattern}
+  {\ServerLatinData{A14} Follow the appointed ninefold side division.}
+  {\ServerLatinData{A14} Follow the appointed ninefold side division.}}}
+  {\SoundLine{\ServerSoundData{A14}}}{A14 --- Say each complete invocation; do not rush the three--three--three pattern.}\\
+\end{flashgrid}
+\clearpage
+
+% Duplex sheet 4, fronts: C16B C17 / C18A C18B / C19 C20.
+\begin{flashgrid}
+\responseflashfront{C16B}{{\small Trainer reads the \textbf{complete final
+  sentence or verse} of today's Gospel from the Missal. Use only after a
+  Gospel read in the Low-Mass manner; never after a chanted Gospel or the Last
+  Gospel.}}
+&
+\responseflashfront{C17}{\CanonLatin{Orate, fratres: ut meum ac vestrum sacrificium acceptabile fiat apud Deum Patrem omnipotentem.}}
+\\[4pt]
+\responseflashfront{C18A}{\CanonLatin{Sursum corda.}}
+&
+\responseflashfront{C18B}{\CanonLatin{Gratias agamus Domino Deo nostro.}}\\[4pt]
+\responseflashfront{C19}{\CanonLatin{Et ne nos inducas in tentationem.}}
+&
+\responseflashfront{C20}{\CanonLatin{Ite, missa est, alleluia, alleluia.}\par
+  {\scriptsize Only when appointed at a Mass of the season in the Easter
+  octave.}}\\
+\end{flashgrid}
+\clearpage
+% Duplex sheet 4, backs mirrored: C17 C16B / C18B C18A / C20 C19.
+\begin{flashgrid}
+\responseflashback{C17}{{\footnotesize \ServerLatinData{A18}}}{{\scriptsize \SoundLine{\ServerSoundData{A18}}}}{A18 --- The learner says \CanonLatin{tuis}, never the priest's self-answer \CanonLatin{meis}.}
+&
+\responseflashback{C16B}{\ServerLatinData{A17}}{\SoundLine{\ServerSoundData{A17}}}{A17 --- Do not add this answer after a chanted Gospel.}\\[4pt]
+\responseflashback{C18B}{\ServerLatinData{A20}}{\SoundLine{\ServerSoundData{A20}}}{A20 --- It is right and just.}
+&
+\responseflashback{C18A}{\ServerLatinData{A19}}{\SoundLine{\ServerSoundData{A19}}}{A19 --- We have lifted them to the Lord.}\\[4pt]
+\responseflashback{C20}{{\small \ServerLatinData{A22}}}{\SoundLine{\ServerSoundData{A22}}}{A22 --- Use only at an appointed Mass of the season within the Easter octave.}
+&
+\responseflashback{C19}{\ServerLatinData{A21}}{\SoundLine{\ServerSoundData{A21}}}{A21 --- The priest, not the server, then says the quiet \CanonLatin{Amen}.}\\
+\end{flashgrid}
+\label{cards:cue-last}
+
+\clearpage
+\newcommand{\learningflashfront}[3]{%
+  \begin{tcolorbox}[height=2.96in,colback=white,colframe=black,
+  sharp corners,boxrule=0.5pt,left=7pt,right=7pt,top=5pt,bottom=5pt]
+  \flashheader{#1}{Cue}
+  \centering
+  {\scriptsize Bank #2\par}\vfill
+  {\small\itshape #3\par}\vfill
+  \end{tcolorbox}%
+}
+\newcommand{\learningflashback}[6]{%
+  \begin{tcolorbox}[height=2.96in,colback=white,colframe=black,
+  sharp corners,boxrule=0.5pt,left=7pt,right=7pt,top=5pt,bottom=5pt]
+  \flashheader{#1}{Answer}
+  \centering
+  {\scriptsize Bank #2\par}\vspace{0.3em}
+  {\scriptsize\textbf{Syllables:} \ServerLearnerLine{#3}\par}
+  {\scriptsize\textbf{Sound:} \SoundLine{#4}\par}\vfill
+  {\small\textbf{Meaning:} #5\par}\vspace{0.3em}
+  {\tiny #6\par}
+  \end{tcolorbox}%
+}
+\newcommand{\storedlearningfront}[2]{%
+  \learningflashfront{#1}{#2}{\ServerLatinData{#2}}}
+\newcommand{\storedlearningback}[2]{%
+  \learningflashback{#1}{#2}{\ServerLearnerData{#2}}{\ServerSoundData{#2}}%
+  {\ServerMeaningData{#2}}%
+  {Broad IPA remains in the A-bank for a human listener's check.}}
+
+% Duplex pronunciation sheet 1: P01--P06.
+\phantomsection
+\addcontentsline{toc}{subsection}{Latin pronunciation-and-meaning cards}
+\label{cards:pron-first}
+\begin{flashgrid}
+\storedlearningfront{P01}{A1} &
+\storedlearningfront{P02}{A2}\\[4pt]
+\storedlearningfront{P03}{A3} &
+\storedlearningfront{P04}{A4}\\[4pt]
+\storedlearningfront{P05}{A5} &
+\storedlearningfront{P06}{A6}\\
+\end{flashgrid}
+\clearpage
+\begin{flashgrid}
+\storedlearningback{P02}{A2} &
+\storedlearningback{P01}{A1}\\[4pt]
+\storedlearningback{P04}{A4} &
+\storedlearningback{P03}{A3}\\[4pt]
+\storedlearningback{P06}{A6} &
+\storedlearningback{P05}{A5}\\
+\end{flashgrid}
+
+% Duplex pronunciation sheet 2: P07--P10, with A8 on three cards.
+\clearpage
+\begin{flashgrid}
+\storedlearningfront{P07}{A7} &
+\learningflashfront{P08A}{A8 --- part 1 of 3}{\AightOneLatin}\\[4pt]
+\learningflashfront{P08B}{A8 --- part 2 of 3}{\AightTwoLatin} &
+\learningflashfront{P08C}{A8 --- part 3 of 3}{\AightThreeLatin}\\[4pt]
+\storedlearningfront{P09}{A9} &
+\storedlearningfront{P10}{A10}\\
+\end{flashgrid}
+\clearpage
+\begin{flashgrid}
+\learningflashback{P08A}{A8 --- part 1 of 3}{\AightOneLearner}{\AightOneSound}{\AightOneMeaning}{Continue with P08B; all three cards are one response.} &
+\storedlearningback{P07}{A7}\\[4pt]
+\learningflashback{P08C}{A8 --- part 3 of 3}{\AightThreeLearner}{\AightThreeSound}{\AightThreeMeaning}{Join P08A--P08C before marking A8 learned.} &
+\learningflashback{P08B}{A8 --- part 2 of 3}{\AightTwoLearner}{\AightTwoSound}{\AightTwoMeaning}{Continue with P08C; all three cards are one response.}\\[4pt]
+\storedlearningback{P10}{A10} &
+\storedlearningback{P09}{A9}\\
+\end{flashgrid}
+
+% Duplex pronunciation sheet 3: P11--P16.
+\clearpage
+\begin{flashgrid}
+\storedlearningfront{P11}{A11} &
+\storedlearningfront{P12}{A12}\\[4pt]
+\storedlearningfront{P13}{A13} &
+\storedlearningfront{P14}{A14}\\[4pt]
+\storedlearningfront{P15}{A15} &
+\storedlearningfront{P16}{A16}\\
+\end{flashgrid}
+\clearpage
+\begin{flashgrid}
+\storedlearningback{P12}{A12} &
+\storedlearningback{P11}{A11}\\[4pt]
+\storedlearningback{P14}{A14} &
+\storedlearningback{P13}{A13}\\[4pt]
+\storedlearningback{P16}{A16} &
+\storedlearningback{P15}{A15}\\
+\end{flashgrid}
+
+% Duplex pronunciation sheet 4: P17--P22.
+\clearpage
+\begin{flashgrid}
+\storedlearningfront{P17}{A17} &
+\storedlearningfront{P18}{A18}\\[4pt]
+\storedlearningfront{P19}{A19} &
+\storedlearningfront{P20}{A20}\\[4pt]
+\storedlearningfront{P21}{A21} &
+\storedlearningfront{P22}{A22}\\
+\end{flashgrid}
+\clearpage
+\begin{flashgrid}
+\storedlearningback{P18}{A18} &
+\storedlearningback{P17}{A17}\\[4pt]
+\storedlearningback{P20}{A20} &
+\storedlearningback{P19}{A19}\\[4pt]
+\storedlearningback{P22}{A22} &
+\storedlearningback{P21}{A21}\\
+\end{flashgrid}
+\label{cards:pron-last}
+\ifCardsOnlyGuide
+  \ifLowMassGuide\CardCompanionEndHook\fi
+\fi
