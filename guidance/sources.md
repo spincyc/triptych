@@ -230,9 +230,9 @@ Phrase negative results as bounded and correctable. A literal search cannot
 exclude synonyms, inflection, paraphrase, translation difference, damaged OCR,
 unindexed material, or unsearched languages. The repository's built-in search
 is narrower still: it tests literal text within each LF-delimited physical
-UTF-8 line and does not cross line or raw-markup boundaries. Use an exact registered normalized
-derivative for broader content search, and never promote an empty raw-line
-result into a semantic absence claim. Schema version 1 accepts a
+UTF-8 line and does not cross line or raw-markup boundaries. Use an exact
+registered normalized derivative for broader content search, and never promote
+an empty raw-line result into a semantic absence claim. Schema version 1 accepts a
 `negative-search` binding only over exact `text/plain` search representations,
 and validation replays its zero-result receipt. Register a normalized
 plain-text derivative when source markup or layout would frustrate content
@@ -263,6 +263,28 @@ receive a new artifact record and consumers remain pinned until reviewed.
 Mutable official texts, law, institutional pages, and current facts require a
 dated edition or artifact state and retain every profile-specific currentness
 rule.
+
+## Schema stability
+
+Schema version 1 was frozen on 2026-07-22 after the complete-source City of God
+tracer. Its accepted manifest and binding fields, record meanings, evidence
+states, dependency and fingerprint inputs, corpus snapshot rule, passage-line
+semantics, and search-receipt modes form one compatibility boundary.
+
+Do not silently reinterpret a version 1 record. A change that adds or removes
+accepted fields, changes the meaning or fingerprint of valid data, changes
+search results or receipt replay, or makes a valid version 1 record mean
+something materially different requires an explicit schema-version decision.
+Use a new schema version when old and new meanings cannot be applied together
+without ambiguity, and make migration explicit rather than mechanically
+rewriting consumer review pins.
+
+An implementation or documentation correction may remain version 1 only when
+it enforces the already documented contract without assigning a new meaning to
+valid data. It must include a regression test and a schema changelog entry when
+the observable validator or query behavior changes. Pure diagnostic output may
+evolve compatibly when it does not alter manifests, bindings, fingerprints, or
+research receipts.
 
 ## Migration and gates
 

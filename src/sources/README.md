@@ -8,12 +8,12 @@ Publication-local interpretations and evidence judgments do not move here.
 They remain in each publication's research records and are connected to this
 library through `research/source-bindings.toml`.
 
-The source manifests currently use the provisional schema version 1 exercised
-by the first tracer; the schema is not frozen until that tracer review is
-complete. During migration,
-`scripts/source-library validate` checks only records already entered into this
-tree and publication binding files that already exist. Generated indexes and
-reports belong in ignored `build/sources/`.
+The source manifests use schema version 1, frozen on 2026-07-22 after the
+complete-source City of God tracer and its consumer, rights, query, and impact
+reviews. During migration, `scripts/source-library validate` checks only
+records already entered into this tree and publication binding files that
+already exist. Generated indexes and reports belong in ignored
+`build/sources/`.
 
 ## Commands
 
@@ -37,10 +37,11 @@ be reviewed and updated.
 distinct review obligations in one publication remain distinguishable.
 
 The built-in search is a case-insensitive literal search by default. It tests
-each LF-delimited physical UTF-8 line independently and does not strip XML markup, normalize
-whitespace, cross line boundaries, stem words, or infer synonyms. Its empty
-result supports only that narrow raw-text statement. Searches bound as evidence
-record a canonical mode and matching-line count that validation replays.
+each LF-delimited physical UTF-8 line independently and does not strip XML
+markup, normalize whitespace, cross line boundaries, stem words, or infer
+synonyms. Its empty result supports only that narrow raw-text statement.
+Searches bound as evidence record a canonical mode and matching-line count that
+validation replays.
 Negative-search bindings use `text/plain` search representations; create and
 register an exact normalized derivative when markup or layout affects content,
 and record the actual method and limitations in the binding.
