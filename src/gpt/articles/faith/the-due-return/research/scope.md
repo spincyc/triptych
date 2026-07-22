@@ -22,6 +22,12 @@ The sequence is not three sealed virtue compartments. Faith, hope, charity, just
 2. **Justice rendered** — the due recognized and voluntarily answered in oblation, common worship, and mercy.
 3. **Love returned** — charity perfecting, not canceling, the due and transforming fear into filial awe.
 
+## Reader-facing literary design
+
+The published argument opens with Psalm 116's impossible-return question and lets the psalmist's response of reception, invocation, vows, thanksgiving, and public worship lead into the Pauline paradox of unrepayable gift and living sacrifice. It does not display the formal governing thesis as reader-facing front matter. That thesis remains below as a research and audit control.
+
+Each substantive section begins from a human question, scriptural image, or recognizable phrase before introducing technical distinctions, and closes by returning the argument to embodied action or to the next question. This conversational design changes neither authority levels nor claim boundaries. Exact sources, claim-local qualifications, the current-law example, and the formal terminal apparatus remain controlling.
+
 ## Governing thesis
 
 The unowed gift of creaturehood establishes a real but unequal due. The rational creature ought freely to acknowledge God as first principle and last end through worship and through justice toward the neighbor. In Christian life this return takes the form of a living sacrifice incorporated into Christ's prior oblation. Natural and revealed law articulate this order; ecclesiastical law gives determinate common form to some practices by which it is lived; grace gives the power to answer, and hope relies upon that help. The asymmetry remains while action begins to agree with it.
@@ -84,7 +90,7 @@ The article's three summary formulas are:
 
 1. Rom 11:33–12:5 as the governing movement from the denial that God can be put in creaturely debt to self-offering “by the mercies of God” within the many-membered body in Christ.
 2. Exod 19–20 and Deut 5 on deliverance and covenant preceding the Decalogue.
-3. Psalm 116 on the impossible return answered by receiving the cup, thanksgiving, vows, and public worship.
+3. Psalm 116 as the reader-facing question of impossible return, answered by receiving the cup, invoking God, thanksgiving, vows, and public worship.
 4. The two tablets as order toward God and justice among persons; Christ's summary in love of God and neighbor.
 5. Irenaeus, *Against Heresies* IV.14, 17–18, on divine non-need, service for creaturely good, sacrifice, and justice.
 6. Justin, *First Apology* 67, as early witness to common Sunday Scripture, prayer, Eucharist, Communion, and mercy.
@@ -149,7 +155,6 @@ The article uses only brief, claim-driven source phrases. Scripture, official te
 
 ## Review state
 
-- Completed: profile routing; exact-locus Scripture, patristic, Thomistic, catechetical, conciliar, and universal Latin current-law audit; jurisdiction, authority, culpability, and negative-claim boundary drafting; rights review.
-- The exact current installed Part II snapshot is release-cleared by the 21 July 2026 exact-current-snapshot exception.
-- Completed production review: settled two-pass build; clean log, metadata, PDF-structure, embedded/subset/Unicode-font, and extracted-text checks; bounded raster review and visual inspection of all 15 pages; and a forced deterministic rebuild with an identical SHA-256. The reviewed artifact was installed byte-for-byte at `doc/gpt/articles/faith/the-due-return.pdf` with SHA-256 `6738115a803abc424c219c0f9545b8458f3bbffbbce962727f7076975bf27bdb`.
+- Completed for the current source: profile routing; exact-locus Scripture, patristic, Thomistic, catechetical, conciliar, and universal Latin current-law audit; jurisdiction, authority, culpability, and negative-claim boundary drafting; rights review; source-consistency review of the revised Psalm 116 opening; and trilogy-wide literary and series-coherence review.
+- Production state: the present source received repeated settled builds; clean log, PDF-structure, embedded/subset/Unicode-font, metadata, and extracted-text checks; bounded raster review and visual inspection of all 16 pages; and a forced deterministic rebuild. The resulting build PDF has SHA-256 `29650f87bd5c951a225665b5282a3dfcaf4258f4ae1919da8bd4219ca3ef00d5`. It remains under `build/` only and has not been installed or release-cleared; the predecessor remains the installed PDF.
 - Outstanding: independent scriptural, patristic, Thomistic, moral-theological, liturgical, Latin-canonical, literary, and ecclesiastical review. No imprimatur, nihil obstat, legal opinion, or ecclesiastical approval is claimed.
