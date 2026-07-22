@@ -4,9 +4,9 @@
   "provider": "gpt",
   "expected_counts": {
     "publications": 118,
-    "release": 114,
+    "release": 118,
     "review": 0,
-    "hold": 4
+    "hold": 0
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
@@ -30,22 +30,23 @@
         "worldwide"
       ],
       "rights_record": "release/rights/public-alpha-2026-07-15.md",
-      "rights_record_sha256": "f48a59095429df4a9e7072d17f38b05c9947a8bc6bc6c67b96f2eae8a3237497",
+      "rights_record_sha256": "6ab5f9c7746ee1bdd6d33d43b83a3d752c763b1d828b48cf6df2b274dbe60c9f",
       "site_sources": {
         "CONTRIBUTING.md": "47fc90b8b6ad73ae45af02a6b1ccf51f7e6af1a558a816984fdad694bee7a928",
-        "LIBRARY.md": "c2f82791bbb73a7edd069d41d330812b45666633d0753f4ac8de3f0c6169cedb",
+        "LIBRARY.md": "d9a597435859fea0134d27847bd84e239da539eb0e8b597067b4e771f4a40b04",
         "LICENSE": "6830030f2e4ff888ee116bc68e45adcd83f3929d2d82eb4eed3c6a663f665f91",
         "LICENSES/CC-BY-4.0.txt": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744",
         "LICENSES/MIT.txt": "afd9c125b68a36b60c78cf63656f4cea2613fadce57e95ebabacebff8817ef60",
         "README.md": "c52f2563a59a150f68d35949764045398d4b2cf7b3f928729392f7c2e9f0d056",
         "THIRD_PARTY.md": "e121e2679a396b3a24afea1554a8ce872197e2e02a53090b7ff3e08eda9245f8",
         "library/biographies.md": "71fc0c89f6e58f7cab478dc5c1be707b59f4fde55d43273cbf7917e8add3f623",
-        "library/curriculums.md": "2c4230f493691e2ad42a9b482d7986de3afba48cc78d0e6e134b6519ef4d5aa6",
+        "library/curriculums.md": "0aef4a0b64515ccb37b50a7f8717ad4d083d12fef27e62c6c99c7b0bf48dba2b",
+        "library/ecclesiastical-latin.md": "278fcfa237218529da7294e410f09847d67c885d2aaf09946239ceb5d53a5f7a",
         "library/faith.md": "9da84d831ec3574f387b8e28fbbc107908e70d94f8898ed86b8f306418e76698",
         "library/heresies.md": "f7b6cf154fb2875cd4a8a23a1ca6188d9dcae16770fa7d6fad7817b595797c8f",
-        "library/historical-accounts.md": "8243de7aebd969da353df9b5f7b32bf7a856262f30194e244b260f6a07f9f3ee",
+        "library/historical-accounts.md": "90311c96e573131d4309929fdc1e128267824c59866583b6d7e08569ebe9389b",
         "library/law-and-church-discipline.md": "f768255de091da8174b2e822024f6b10739b9f6dac3740a6cc602e34399e7ce2",
-        "library/mariology.md": "938678339f2303e761e4182cc4b7c6164ee1744e8413c3c468fd74c1120011c0",
+        "library/mariology.md": "3d3083210cfabdbea2acbb7d7f41be690ba798ad153b5293ca070aecbbd537ba",
         "library/novus-ordo-liturgy.md": "cb873c1f7c898f825e266433efc17ed2b1efbe302bd74362bd42106f0d935b5e",
         "library/prayer.md": "be21efc07c0c3585b2ac8a4ba0a8969331783a9f6378273f4a5e254b9a93e560",
         "library/traditional-latin-mass.md": "ceb685b1c4cd5f075594ce7c4e5124907814a9568196c128be5a4cdc83911e02",
@@ -53,11 +54,11 @@
         "release/public-alpha/assets/site.css": "358d86f3587fc03f62a17cd4b5fd0126fb2dc3d952afa48eb33fc3a88fce54e9",
         "release/public-alpha/layout.html": "1add2c3f7e6faed6cde4f71b471b5d275089aa719a779f250ef761b3754bea63",
         "requirements-public-alpha.txt": "c30202fbc2f2eb1da451b8bae46b6867c07915844cec203a243991d14b8d4efc",
-        "scripts/public-alpha": "506b0b3a0cfb8d996daa83c9a0646e566ac7ec89d1afb6659e1f5db1047ae83a"
+        "scripts/public-alpha": "4907c8971c4d3719703cbca715f4e09ad7940c43ac010f10979ce49d83204314"
       },
-      "approved_on": "2026-07-21",
+      "approved_on": "2026-07-22",
       "duration": "perpetual",
-      "effective_at": "2026-07-21T11:50:35-05:00",
+      "effective_at": "2026-07-22T07:55:24-05:00",
       "expires_at": null,
       "timezone": "America/Chicago",
       "conditions": [
@@ -233,7 +234,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "f39c5e2e7ca27e13589117ae6811123218be5f6589ca5a63a1ce6acb1b53ae7b"
+        "pdf_sha256": "48d2ef0cafbc28cc191444181d1dc8e5161bbe9a1d8431317ffd560153a56e8b"
       }
     },
     {
@@ -243,7 +244,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "64141fffcf7ec17a948bf2f99da498e0701a0b89a0464b83e954dfd15b0d8f7e"
+        "pdf_sha256": "92b507fbb8cbbf5f7e59acbdbf95358aae487057571ee07e5c930559ab3ac8bc"
       }
     },
     {
@@ -253,7 +254,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "57cc23f41d69f8076d9ff1a881c1c9ee387db0922e03480208669b6fc9fca2a7"
+        "pdf_sha256": "b84050e756a5029892f2a3d467982fff259267bb8bd88ae08e8afc5c27c3a0f1"
       }
     },
     {
@@ -263,7 +264,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "695867bdea591267f84d81b794e242cb76108f686c9520e83c51cd583020ab77"
+        "pdf_sha256": "42fbb7afde54a45bb9bb08000bf45547df4457231ddd9df21db495c6b59f8c41"
       }
     },
     {
@@ -273,7 +274,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "38f073bc83035e7e902ce2feccb8335e5c9eb70a90ae56d16dc5981ddbe5b739"
+        "pdf_sha256": "c53b769014f96c2acde4d917a54b59e4681ebea155fe5fa024099c5129747557"
       }
     },
     {
@@ -283,7 +284,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "71b63f386c5408f1a55163b63454766b3861eee2d68d99ea04d09da3a037e230"
+        "pdf_sha256": "4ba1f867b00fdef0ede9decb67eaddd151c9a25112b0dbb155dab03d84e4c5df"
       }
     },
     {
@@ -293,7 +294,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "794264d6e1e15b697ef3e72edaf54677a917aa94eb5b7c99617a46bb0b9ead0c"
+        "pdf_sha256": "0bef2c0a0c291f341f1fcb222af09c41d5921d04dbd8c730616b88a7c0fdf552"
       }
     },
     {
@@ -303,7 +304,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "7fefcba7f1c9aeef2274a2422c1eb111e85d3e1bae545059f1030bbda32e9ab7"
+        "pdf_sha256": "682642964dfe2d1d77738d2b13e4218243cb6e900378c87eb6c1a9989d6d3482"
       }
     },
     {
@@ -313,7 +314,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "66ee409ee53ebc45329575eef368bced1bb044620358d1dd6295cd31bb74723d"
+        "pdf_sha256": "0783ced47a5fb91de5bbb311baa3a6c798c9755582cc1d5a101b7bff4fa93a9e"
       }
     },
     {
@@ -323,7 +324,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "c7a4b4822a3013f9a527f2e19d90ae3d6273ce57edf23cadc287c9a3df05232b"
+        "pdf_sha256": "ce7ea10e066d1773afd6da709a89c6b3999c375f06013c30a7f5423b3cd2bbdc"
       }
     },
     {
@@ -333,7 +334,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "06186955e75f24e44c578c4c4e83a882a4e9bb54dee68d8b6d43f36997020ae0"
+        "pdf_sha256": "2fa8dc75fba49d4d416e86cc913d48e4825ac64351e20aa8cb323d150037df6f"
       }
     },
     {
@@ -343,7 +344,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "c2e8658ea29d0a475c53b983076078047dc2cfe8a7be0c09d58aa81f252e58bf"
+        "pdf_sha256": "00e3579b4d41a15a8adefeec3350dbd9103bcad18f3d67e8e14c88a3d068c102"
       }
     },
     {
@@ -353,7 +354,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "336b46967748659102831f040e1c555c498cd5e91dc71826bcb7e2c0f5bd9093"
+        "pdf_sha256": "5f29c7ea53bd574f1e01da8a03b4a75eba6380ca010cf9f80e9b34747972f1b2"
       }
     },
     {
@@ -363,7 +364,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "3ca64fe51ca467759447aff45d92ed5226ba25d6a36d8648ecdd10f322d7de36"
+        "pdf_sha256": "a6b906b9b50ca15e4ac2e8a680f6d4b394babac9f923ffe68bc8e88b916f66ee"
       }
     },
     {
@@ -373,7 +374,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "fa5d9669c8fc277b15d7713d903836ed25bc9a61017590f593b6fc4a92ca8cbe"
+        "pdf_sha256": "1ad5987b04f20cbac995df52a4b016803e803c8cc11c098071a2cfd3ed10a849"
       }
     },
     {
@@ -383,7 +384,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "8b18ce3f9b3a423763b24a15f055a4b4a57d77ab5a818d032250a2b0335f0e7f"
+        "pdf_sha256": "d364c0bc9b43e36b52bef4838b4ee601d8bfb493b9c2d3b74ed30e35a9061528"
       }
     },
     {
@@ -393,7 +394,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "57f50495c7a79abc967a75e6b2702a4e6fcac1c59d9d4d99570f8278bee981f6"
+        "pdf_sha256": "8785051a93dbf66612c0568190daa74f47f06b6a8383d295a2ff674a2f6750e7"
       }
     },
     {
@@ -403,7 +404,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "fc22a09603680218465da4a895ec41adf6d83e186e91b60a5777431247cc5cab"
+        "pdf_sha256": "5f4391d86bda561eac1f55ba15fe2950f563204a8ddb2c899cd6c2147ed6917a"
       }
     },
     {
@@ -413,7 +414,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "d39d5449f4f93c3bcfbd0182d95d0f32c7bea77bca14c463adda6233ace26aa8"
+        "pdf_sha256": "573544a85e7add1022bd29576a8d2c04284584afea61869b5b8be5d988e7aa3b"
       }
     },
     {
@@ -423,7 +424,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "0c022618ab40d5062f0c17cafdbd40f5504fad1ddc3aea521611c27ab4365016"
+        "pdf_sha256": "4096413abe1853f1a09b27f56a2cbeb1311e2b345d55f37662e83320df3c47bf"
       }
     },
     {
@@ -433,7 +434,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "4629533ec0bf99c9051f6c47179f571303863b553ee54b0f3611e6073249b140"
+        "pdf_sha256": "27f9943bced0c47aecf508a98959664bc834a7692e53ca12227320b8daffdea6"
       }
     },
     {
@@ -443,7 +444,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "f0d3a4bfb9fdd15159d98997c21a0c52fc3d0e63460a7290e2488326f8e434ba"
+        "pdf_sha256": "f6cf925857ef6345e4cac2cb7f0662bb3bf97c199f8cedb05aa4a547c6269c28"
       }
     },
     {
@@ -453,7 +454,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "7507d3169b3afdd8c656c715a160016ef7fca1f7ed497de7bb7f81cae07ae501"
+        "pdf_sha256": "d6dbeac0b1ee9a92893680da8fc91b4c7141952d04221d88663defd1c1f080aa"
       }
     },
     {
@@ -463,7 +464,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "e0e46b4e6d9fe385b322624776df5697813647ed4f395607137f0199dab0b36f"
+        "pdf_sha256": "153efd6572b3f662380ddf81188af1801488cb5f8279da118a82142f83f29045"
       }
     },
     {
@@ -473,7 +474,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "9ba23e1f68980cd9b64e4f1dd2247544dd4acc47c32151e47d532ed6700ead0e"
+        "pdf_sha256": "5ca9833341af90a3edd9e26b20917c78ce912875de381626668127be1fdb8fb2"
       }
     },
     {
@@ -483,7 +484,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "0f0304c2be54de3b2a277b93d63dbd208299943e8f123dbf54cb54fb036ab988"
+        "pdf_sha256": "1be4a0f4682ed03edb183954f75a223bd607a6493818e636f07a27d2c3968f57"
       }
     },
     {
@@ -493,7 +494,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "5ffbd7c2e24b55d8e31ea4fdac599e577c6b78d7e9d674eec6aa604621be2a82"
+        "pdf_sha256": "159aecd7b825354a678545b0d5b2ca5063595f43c7f1312ba9cc8c3d4930b82b"
       }
     },
     {
@@ -503,7 +504,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "4a6db315c9bca2006199e5e62b12c558a540f311d81f0f4565e8250ea1b4f36d"
+        "pdf_sha256": "28f0634807f1a4d069a646a7caabcd25ebc9b4bb3791893339383a119d3ebbcf"
       }
     },
     {
@@ -513,7 +514,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "1e91d81510dc431a17a46bbe019434c5cabac6c1475cb876cadece87af716a05"
+        "pdf_sha256": "7350758b10bf7ec5effe473a78da97985305b20d57e902e62221138cf3e182ae"
       }
     },
     {
@@ -523,7 +524,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "3d929f1ac67b55d3c43751d65ef0b4ede731b6c65f762e00a93e5a94509c3ac6"
+        "pdf_sha256": "16d9761af261a837461eadfa865239de90299908e92346956fa6eed23131229c"
       }
     },
     {
@@ -533,7 +534,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "d5edc3b7a797419b9f0c905a9726e53e39b6b394c621e8f709ef6be9606e37c3"
+        "pdf_sha256": "f58af9939a3bd12375f5d9a71e185f951adb66ee42e12b36dc8cf68a113fd0b3"
       }
     },
     {
@@ -543,7 +544,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "9a449e5312fb469adcfe4e68c0e7e3820867ff40929bfad79d23ae079cd2a250"
+        "pdf_sha256": "6c957bc4a7cc5fd001df11a447bcc49bdb34d28a3980e77969c8a576a0b8456d"
       }
     },
     {
@@ -553,7 +554,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "83ee86df3a28972e2245e0a9eeae999809b97800a5d6a124714dd80a3bea86f9"
+        "pdf_sha256": "6b739d0e60e968065e9c619355085e47d666917f6e1fcfa8a52cba214482f665"
       }
     },
     {
@@ -563,7 +564,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "6b953d70f0b0262e62b1bec20b8eb9b7abfbe487c7b6da64129248b9c583c2a0"
+        "pdf_sha256": "0dbfa957bda624fcbcc65def6abe1be6f78d9bb7fc50e9fbe34a79945b84de82"
       }
     },
     {
@@ -573,7 +574,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "4a1224955686d68310467b7a161607eb06b8d793107765d75c7f702a9c2f6857"
+        "pdf_sha256": "6b67b8e30cb6ab0c8f3e7d5da50a79a37b55d3f05208715454aaf3febaf4c34b"
       }
     },
     {
@@ -583,7 +584,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "0e7d3bd623d9628dc4b8ed96636e692b38fc201fdf6049ba13b46ba98560391b"
+        "pdf_sha256": "2211a30abc1ea7b47488d01e05782ab903db91b0cde59ac1a2bd367e31bfa1be"
       }
     },
     {
@@ -593,7 +594,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "be5accbbfbedd64a823af854cb7a2cb126991b52110426e75515ac6e811756a2"
+        "pdf_sha256": "3a1b6a5e1f4c376133886726db8b140db4d14c685bccf5d9a99b40887b87b12a"
       }
     },
     {
@@ -603,7 +604,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "aed4959adf3c28f56b54c26a7dad92626fb1bc0da052909500c2f00cb4dade25"
+        "pdf_sha256": "8188a0ca84dc81e53aaa8924a0dfe2f01ab52d385f2948239b5923698eeb3d58"
       }
     },
     {
@@ -613,7 +614,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "f83ccefd69147646ff4551ee2d686ce6ba0162cfe66326ef5cbd3163bb4f9dc3"
+        "pdf_sha256": "8910008f4921df7d62a757b1fd61e45f8e29601a9f1e0db2b1d61a4d1254caf0"
       }
     },
     {
@@ -623,7 +624,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "5fd2442d71d15ab37de2cf2e6a3fd58f858db72955bb2a19fba33bf347c95313"
+        "pdf_sha256": "34a0c0dab534ae794e56a4508efce981ef1136a4c9adab6f1deacc750c149414"
       }
     },
     {
@@ -633,7 +634,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "ede7e08c6d4c387ab794423131261e05cae7997f2fddb2ed03c9c78328422b94"
+        "pdf_sha256": "ff0c016273fff826be90f216bef57c5ad75bc6b2af7667c30c4e751391bdf711"
       }
     },
     {
@@ -643,7 +644,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "5d6e5c5f76f9dc480b69f76157e7957ffe7cc65db6dde1cf5bd0cfc4fbc568cf"
+        "pdf_sha256": "a87b02d4ee7819998a4f7031613ddc33f8936336cdaa38002337d4e283643236"
       }
     },
     {
@@ -653,7 +654,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "5cba5b3c19b95ee5c8ecfd46c5462b10f7aeae7111ca63afc1731b32784b8d72"
+        "pdf_sha256": "f8faf83741162ccedd18012b15c5dca903c9ac3da5024ff96e48549648b738da"
       }
     },
     {
@@ -663,7 +664,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "b7daaa1789d0c54e9e8d4a4e23a31a663ffe2bbc21785a71f2a95efeefb7fba8"
+        "pdf_sha256": "cfdcb0c111eaf53e95b532c2ac719b5e39a92fe313255c165d20ce3c7931f857"
       }
     },
     {
@@ -673,7 +674,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "c40e8bb5861a7c7b96d9776278b1474f60c321c7e4a040a0b9a92fa505bc3041"
+        "pdf_sha256": "7750ac6f5cc0de894503309af7148b52bf1a40e3f7515984450a8903ac688bab"
       }
     },
     {
@@ -683,7 +684,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "e7d2c41335cb7d6ed017d5517168f585dddf25248b6e011bef7efe4309d7c945"
+        "pdf_sha256": "66b99c507a9b27538046cd78d1dc76d22c8466ab3a3c5e7a0643a117237960cf"
       }
     },
     {
@@ -693,7 +694,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "02140a667727b4dc81a98abefa9393dba77d7beb3a8c82ac38ae877967f17fd5"
+        "pdf_sha256": "46c4436ca5b5a4d1e091729705b6cfff13149973d665cb4409c553b20faee473"
       }
     },
     {
@@ -703,7 +704,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "9b552be00310ffc9271051bf2b9418384f61b4260f66a30837c74c7834ab9b97"
+        "pdf_sha256": "136105f961a427e2ed20f027a5b81aa34244dd59ab3928bf3784e8bb440e64ea"
       }
     },
     {
@@ -713,7 +714,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "f2ba55f816d8a919fbd2251b8457bee89d38620bf40725d28191b75d9342fc67"
+        "pdf_sha256": "40172eda5ea67407d01018aeb6fe4c4994a23b39ad86d3c8678e37fc5148c0ea"
       }
     },
     {
@@ -723,7 +724,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "621e698d73e757f79306e459f6f361b2d08b2b7c64237511ccc6556eac3b06ec"
+        "pdf_sha256": "4f8f2490705d0b9fb3d2d3b27e3a195fed980e40913b9240003e586ad0f4343a"
       }
     },
     {
@@ -733,7 +734,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "2fafc83f577ab63a30b5cb2e0cdd4b5c4fee54dbec99529eb4a846e01b70f1dc"
+        "pdf_sha256": "3f09171b87586b60d2438d5679bf4e582ab75801b729e05ccb77d4c2059e56f0"
       }
     },
     {
@@ -743,7 +744,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "3ad1a473f4f8dfc5a2f071083672969b46567301461f93583cfaa5ec1700652b"
+        "pdf_sha256": "9d0ef12aaef44f02b9e01fb992b6689c93d4dd421c41e78ae421047270381315"
       }
     },
     {
@@ -809,20 +810,22 @@
     {
       "id": "history/catholic-parish-histories/01-st-stanislaus-milwaukee",
       "catalog": "library/historical-accounts.md",
-      "status": "hold",
-      "gates": [
-        "renewed-exact-snapshot-authorization"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "41f99d1acc1655f8a8e452f94230620daabf4e14b8a43435587da8f9d7e723d3"
+      }
     },
     {
       "id": "history/catholic-parish-histories/02-st-anthony-willits",
       "catalog": "library/historical-accounts.md",
-      "status": "hold",
-      "gates": [
-        "renewed-exact-snapshot-authorization"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "8cf0c0e1f758fa96862a4af9ed70ffd921a20a43b223b6a910f5d7f33585ae0e"
+      }
     },
     {
       "id": "history/traditional-priestly-institutes/01-sspx",
@@ -1107,12 +1110,12 @@
     {
       "id": "theology/mariology/angelus",
       "catalog": "library/mariology.md",
-      "status": "hold",
-      "gates": [
-        "prayer-text-permission",
-        "renewed-exact-snapshot-authorization"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "5416f7b4a6de668dcf07368887517b553cc0b28edfa88fc6dd5149f52473b13d"
+      }
     },
     {
       "id": "theology/mariology/apparitions",
@@ -1187,12 +1190,12 @@
     {
       "id": "theology/mariology/regina-coeli",
       "catalog": "library/mariology.md",
-      "status": "hold",
-      "gates": [
-        "prayer-text-permission",
-        "renewed-exact-snapshot-authorization"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "74789568a76ef0f25bc58cd6ad6e119dbd4bde43ffad47cbf6b55747c634b30f"
+      }
     },
     {
       "id": "theology/mariology/rosary",

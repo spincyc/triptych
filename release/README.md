@@ -1,44 +1,28 @@
 # Public Release Boundary
 
-The current release manifest contains 118 publications: 114 are marked
-`release`, no item is marked `review`, and four are marked `hold`. The latest
-21 July 2026 supplement in `rights/public-alpha-2026-07-15.md` records the
-maintainer's instruction “approve all docs” as exact-current-snapshot
-distribution authorization, effective at `2026-07-21T11:50:35-05:00` in
+The current release manifest contains 118 publications: all 118 are marked
+`release`, with no item in `review` or on `hold`. The latest 22 July 2026
+supplement in `rights/public-alpha-2026-07-15.md` records the maintainer's
+instruction “approve all ; commit ; publish ;” as exact-current-snapshot
+distribution authorization, effective at `2026-07-22T07:55:24-05:00` in
 `America/Chicago`, under the existing represented perpetual worldwide
-public-repository and GitHub Pages authority. It binds the 115 exact installed
-PDF snapshots and all 22 exact reader-site input snapshots inventoried in that
-record, together with the updated rights record, subject to no
-project-initiated promotion. The later Angelus and Regina Coeli references and
-Saint Anthony in Willits parish history were not part of that exact inventory.
-All three await exact-snapshot authorization. The two Marian references also
-retain prayer-text-permission gates for their unresolved non-US
-historical-English translation status. The revised Saint Stanislaus in
-Milwaukee parish history no longer matches its bound snapshot and awaits
-renewed exact-snapshot authorization. The dated rights record still preserves
-its previously authorized predecessor hash. Because the active manifest now
-holds the revised work and carries no approval for it, that historical row
-intentionally no longer matches the manifest's active approved-publication
-inventory; `make check-public-alpha` therefore also fails closed on the
-rights-record inventory mismatch. The predecessor record does not authorize
-the revised PDF. The Marian additions change `LIBRARY.md` and
-`library/mariology.md`, while the parish-history additions and revisions change
-`library/historical-accounts.md`, from their recorded exact site-source bytes.
-Each of the remaining 114 release publications has empty manifest gates only as
-an exact-snapshot exception. The four held works are excluded from both public
-and private-preview artifacts. Changed PDF, rights-record, or site-input bytes
-require renewed authorization.
+public-repository and GitHub Pages authority. It binds all 118 exact current
+installed PDF snapshots, all 23 exact current recognized reader-site inputs,
+and the updated rights record, subject to no project-initiated promotion. This
+includes the 52 rebuilt Ecclesiastical Latin PDFs and clears the four current
+holds—revised Saint Stanislaus, new Saint Anthony, Angelus, and Regina Coeli—
+only as exact-byte exceptions. The Marian exceptions clear the manifest's
+prayer-text-permission gates without claiming that the underlying permission
+or distribution-basis questions have been resolved. Every publication has
+empty manifest gates only under the recorded exact-snapshot decision. Changed
+PDF, rights-record, or site-input bytes require renewed authorization.
 
-The 115-publication snapshot described in the 21 July record is
-publication-ready only when the focused release tests, policy check,
-deterministic pre/post inventory comparison, public-site build, independent
-site verification, and named GitHub Pages target verification all pass. At its
-committed revision those checks passed. The later 118-publication snapshot is
-not publication-ready: its three added PDFs and revised Saint Stanislaus PDF
-are held, its changed catalog inputs no longer match the recorded site-source
-hashes, and its active approved-publication inventory no longer matches the
-historical authorization record. Release controls must remain fail-closed
-until the required bindings and gates are cleared.
+This exact snapshot is publication-ready only when the focused release tests,
+policy check, deterministic pre/post inventory comparison, private-preview and
+public-site builds, their independent verifications, and named GitHub Pages
+target verification all pass. At the committed revision those checks have
+passed. Any failed check or later byte change withdraws that statement and
+returns the release controls to their fail-closed state.
 
 This is operational exact-byte release clearance, not a judgment that a work
 is editorially or profile-final. It is not ecclesiastical approval, an
@@ -49,18 +33,34 @@ permission. The revised proper guides retain every such substantive limitation
 in their source audits. The Aquinas and Bellarmine work-specific rights reviews
 also remain incomplete. Their predecessor hashes and former holds remain part
 of the historical record; the current bytes are `release` only under the
-21 July exact-snapshot exception.
+current exact-snapshot exception.
 
 The Ecclesiastical Latin curriculum's prior two course companions, 46 learning
-modules, and four assessment sequences were installed under an explicit
-20 July exact-snapshot exception. The 21 July supplement now binds all 52
-corrected replacement snapshots. Their donor tree still has no local license;
-work-specific rights analysis, received-liturgical-text distribution analysis,
-page-image collation, and the final exact-snapshot raster refresh remain
-incomplete. The current authorization is a distribution exception for the
-bound bytes only. It does not complete those acts, establish ownership or an
-open license, make the curriculum profile-final, or authorize extracted donor
-or liturgical wording.
+modules, and four assessment sequences were installed under earlier exact-
+snapshot exceptions. The 22 July supplement binds all 52 rebuilt current
+snapshots. Their donor tree still has no local license; work-specific rights
+analysis, received-liturgical-text distribution analysis, page-image
+collation, and independent Latin, liturgical, pedagogical, textual, canonical,
+rights, and ecclesiastical review remain incomplete. The current authorization
+is a distribution exception for the bound bytes only. It does not complete
+those acts, establish ownership or an open license, make the curriculum
+profile-final, or authorize extracted donor or liturgical wording.
+
+The Angelus and Regina Coeli exceptions bind only their exact current PDFs.
+Their identified 1925 source edition is public domain in the United States by
+publication date, but the exact historical English translator or author was
+not established and non-U.S. rights remain unresolved. The received Latin and
+English prayer wording remains excluded from Triptych's CC BY 4.0 grant, and
+the historical English is not represented as a competent-authority-approved
+vernacular text for gaining the indulgence in every territory. Clearance is
+not an independent rights conclusion, general license, permission to extract
+or reuse the prayers, imprimatur, nihil obstat, or ecclesiastical approval.
+
+The Saint Stanislaus and Saint Anthony parish histories likewise retain every
+recorded source gap, conflict, jurisdictional and currentness bound, and
+outstanding independent historical, architectural, Indigenous-community,
+rights, canonical, liturgical, theological, and ecclesiastical review. Their
+exact current PDFs are distribution-cleared as working studies only.
 
 `public-alpha.json` is the exhaustive publication policy for every discovered source document and installed PDF:
 
@@ -86,7 +86,7 @@ and is not an ecclesiastical interpretation, dispensation, canonical opinion,
 imprimatur, nihil obstat, or approval of the secret or this publication. It
 does not supply independent rights, canonical, specialist, liturgical, or
 ecclesiastical review. Apparition and cult approvals remain object-limited and
-do not approve this publication. The manifest retains this PDF among the 114
+do not approve this publication. The manifest retains this PDF among the 118
 `release` items and binds its exact current hash.
 
 For every fully authorized snapshot the generator will:
@@ -113,7 +113,7 @@ source-audited but is not a critical edition; manuscript collation and
 comprehensive source-language lexical review have not occurred, and independent
 Aristotelian, patristic, Thomistic, moral-theological, pastoral, and clinical
 review remain outstanding. All ten 1962 proper guides and all nine
-postconciliar proper guides are marked `release` under the 21 July exact-byte
+postconciliar proper guides are marked `release` under the current exact-byte
 exception. Revised 1962 IDs 15, 22, and 23 and revised postconciliar PC-S58-A,
 PC-S59-A, and PC-S35-A through PC-S41-A retain their rights, collation,
 direct-image, and independent-review limitations and are not profile-final or
@@ -171,23 +171,21 @@ records for the complete boundaries.
 
 Only when all snapshot, rights-record, and site-source bindings verify may the
 GitHub Pages workflow build and verify `build/public-alpha/site`. The current
-authorization record binds the 115 exact PDF snapshots and all 22 reader-site
-input snapshots recorded by the 21 July supplement. It does not bind the two
-new Marian-prayer PDFs, the new Saint Anthony parish-history PDF, the revised
-Saint Stanislaus parish-history PDF, or the current changed catalog bytes. The
-active manifest's held Saint Stanislaus entry also no longer matches the rights
-record's historical approved-publication inventory. Release and site
-verification must therefore remain fail-closed, and no current site artifact
-is publication-ready. All four held works remain outside public and
-private-preview artifacts. A future fully verified workflow may upload only its
+authorization binds all 118 exact current PDFs and all 23 recognized
+reader-site inputs. At this recorded revision the focused tests, policy check,
+deterministic inventory comparison, preview and site builds, independent
+artifact verifications, and GitHub Pages target verification pass; the
+generated `site` artifact is therefore publication-ready for the separately
+authorized primary-session workflow. That workflow may upload only the
 independently verified artifact through the `github-pages` environment. Pages
 must never publish the repository root or `build/public-alpha/preview`.
 
-The user's earlier “commit; publish” instruction is separate operational
-authority for only the exact structurally bound 115-publication history
-described in the rights record. It does not authorize this later changed
-snapshot or authorize this worker to push or deploy it, future changed bytes,
-or project-initiated promotion.
+The user's `commit ; publish` instruction is separate operational authority:
+this worker may create the coherent release-control commit, and a primary
+session may separately audit, integrate, and publish the exact verified result.
+It is not broader substantive clearance and does not authorize this worker to
+push or deploy, future changed bytes, a force update or history rewrite, another
+ref or host, a public release attachment, or project-initiated promotion.
 
 Use:
 
@@ -204,7 +202,7 @@ python scripts/public-alpha verify --deployment-target github-pages
 `prepare-public-alpha` is read-only and deliberately works when old snapshot
 hashes are stale or the old source-binding list lacks newly recognized inputs.
 It validates the exhaustive publication and current artifact-input scope, then
-reports the hashes of the 118 currently installed publication PDFs and all 22
+reports the hashes of the 118 currently installed publication PDFs and all 23
 current Markdown, layout, style, license, generator, and dependency-lock inputs
 as a deterministic candidate inventory. The inventory explicitly confers no
 approval, changes no
