@@ -1,0 +1,301 @@
+\usepackage{ragged2e}
+\usepackage{titlesec}
+\usepackage{tipa}
+
+% Each independently printable guide turns on exactly one of these switches
+% after loading this shared format file.  Shared lessons and detached cards can
+% then name only the voices that matter in the book a family is holding.
+\newif\ifLowMassGuide
+\newif\ifMissaCantataGuide
+\newif\ifSolemnMassGuide
+\newif\ifCardsOnlyGuide
+
+% A cards-only companion supplies this hook so its inherited revision record
+% and compact rights notice can occupy the unused margin below the final back
+% sheet.  Full guides leave it empty and render their ordinary terminal matter.
+\newcommand{\CardCompanionEndHook}{}
+\newcommand{\CardCompanionRightsNotice}{%
+  \begingroup
+  % This required 7pt notice deliberately uses the narrow strip beneath the
+  % cut grid. Short final lines there are expected, so do not report them as
+  % layout defects in an otherwise exact card sheet.
+  \hbadness=10000
+  % The inherited timestamp is first rendered here. Fill its deliberately
+  % short line so the compact final-margin colophon stays warning-free.
+  \renewcommand{\AIDisplayDocumentRevisionTimestamp}{%
+    \ifAIDocumentRevisionRendered\else
+      \noindent\hbox to \linewidth{\textbf{Last revised (UTC):}
+        \AIDocumentRevisionTimestampValue\hfil}\par
+      \global\AIDocumentRevisionRenderedtrue
+    \fi}%
+  \TriptychRightsNotice
+  \par\endgroup}
+
+% Families need to find one lesson or one assigned role without paging through
+% the technical route.  Include subsections in the contents for that purpose.
+\setcounter{tocdepth}{2}
+\setlength{\emergencystretch}{3em}
+\raggedbottom
+\setlength{\parskip}{0.42em plus 0.08em minus 0.04em}
+\titleformat{\section}{\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.55em}{}
+\titlespacing*{\section}{0pt}{1.25ex plus 0.3ex minus 0.2ex}{0.55ex}
+\titlespacing*{\subsection}{0pt}{1ex plus 0.25ex minus 0.15ex}{0.4ex}
+\setlist{topsep=0.35em,itemsep=0.12em,parsep=0pt,partopsep=0pt}
+
+\newcommand{\serverguidetitle}[3]{%
+  \hypersetup{pageanchor=false}%
+  \begin{titlepage}
+  \thispagestyle{empty}
+  \centering
+  \vspace*{0.10\textheight}
+  {\Huge\bfseries #1\par}
+  \vspace{0.5em}
+  {\Large\itshape #2\par}
+  \vspace{0.75em}
+  {\large #3\par}
+  \vfill
+  {\small A training aid for the 1962 Roman Missal. Follow the priest, master of ceremonies, and customs of your own church. This is not an official liturgical book.\par}
+  \end{titlepage}
+  \hypersetup{pageanchor=true}%
+}
+
+\newtcolorbox{coachbox}[1]{
+  enhanced,
+  breakable,
+  colback=white,
+  colframe=black,
+  colbacktitle=white,
+  coltitle=black,
+  boxrule=0.6pt,
+  sharp corners,
+  left=7pt,
+  right=7pt,
+  top=4pt,
+  bottom=4pt,
+  toptitle=3pt,
+  bottomtitle=3pt,
+  title={#1},
+  title after break={#1 (continued)},
+  fonttitle=\small\bfseries,
+  before upper={\setlength{\parskip}{0.24em}},
+  before skip=5pt,
+  after skip=5pt
+}
+
+\newtcolorbox{watchbox}[1]{
+  enhanced,
+  breakable,
+  colback=white,
+  frame hidden,
+  boxrule=0pt,
+  sharp corners,
+  borderline west={1.4pt}{0pt}{black},
+  left=8pt,
+  right=2pt,
+  top=3pt,
+  bottom=3pt,
+  title={#1},
+  title after break={#1 (continued)},
+  fonttitle=\small\bfseries,
+  before upper={\setlength{\parskip}{0.24em}},
+  before skip=5pt,
+  after skip=5pt
+}
+
+\newtcolorbox{familybox}[1]{
+  enhanced,
+  breakable,
+  colback=black!4,
+  colframe=black,
+  boxrule=0.8pt,
+  sharp corners,
+  left=8pt,
+  right=8pt,
+  top=5pt,
+  bottom=5pt,
+  title={FOR MOM OR TRAINER: #1},
+  title after break={FOR MOM OR TRAINER: #1 (continued)},
+  fonttitle=\small\bfseries,
+  before upper={\setlength{\parskip}{0.24em}},
+  before skip=5pt,
+  after skip=5pt
+}
+
+\newtcolorbox{learnerbox}[1]{
+  enhanced,
+  colback=white,
+  colframe=black,
+  boxrule=1pt,
+  sharp corners,
+  left=7pt,
+  right=7pt,
+  top=4pt,
+  bottom=4pt,
+  title={FOR THE SERVER: #1},
+  fonttitle=\normalsize\bfseries,
+  fontupper=\small,
+  before upper={\setlength{\parskip}{0.18em}},
+  before skip=5pt,
+  after skip=5pt
+}
+
+\newcommand{\coachreference}{\par\smallskip\noindent\textbf{COACH REFERENCE}\par\smallskip}
+
+\newcommand{\rolecard}[2]{%
+  \begin{coachbox}{#1}
+  #2
+  \end{coachbox}
+}
+
+% Keep a coach-chart heading with its repeated column head and at least one
+% action row. Longtable cannot by itself reserve that space before a heading.
+\newcommand{\actionsection}[1]{%
+  \Needspace{9\baselineskip}%
+  \subsection{#1}}
+
+\newenvironment{actiontable}{%
+  \begingroup
+  \footnotesize
+  \setlength{\LTpre}{0.35em}
+  \setlength{\LTpost}{0.5em}
+  \renewcommand{\arraystretch}{1.04}
+  \begin{longtable}{@{}>{\RaggedRight\arraybackslash}p{0.15\linewidth}>{\RaggedRight\arraybackslash}p{0.11\linewidth}>{\RaggedRight\arraybackslash}p{0.68\linewidth}@{}}
+  \toprule
+  \textbf{When this happens} & \textbf{Who} & \textbf{Do this \(\rightarrow\) finish / next}\\
+  \midrule
+  \endfirsthead
+  \toprule
+  \textbf{When this happens} & \textbf{Who} & \textbf{Do this \(\rightarrow\) finish / next}\\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+}{%
+  \end{longtable}
+  \endgroup
+}
+\newcommand{\actionrow}[4]{#1 & \textbf{#2} & #3\par
+  \textit{Finish / next:} #4\\}
+\newcommand{\actionrowid}[5]{\textsc{#1}\par #2 & \textbf{#3} & #4\par
+  \textit{Finish / next:} #5\\}
+
+\newenvironment{responsetable}{%
+  \begingroup
+  \footnotesize
+  \setlength{\LTpre}{0.35em}
+  \setlength{\LTpost}{0.5em}
+  \renewcommand{\arraystretch}{1.07}
+  \begin{longtable}{@{}>{\RaggedRight\arraybackslash}p{0.20\linewidth}>{\RaggedRight\arraybackslash}p{0.38\linewidth}>{\RaggedRight\arraybackslash}p{0.34\linewidth}@{}}
+  \toprule
+  \textbf{Hear / see} & \textbf{Answer} & \textbf{Pronounce and remember}\\
+  \midrule
+  \endfirsthead
+  \toprule
+  \textbf{Hear / see} & \textbf{Answer} & \textbf{Pronounce and remember}\\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+}{%
+  \end{longtable}
+  \endgroup
+}
+
+\newcommand{\CanonLatin}[1]{\textit{#1}}
+\newcommand{\LearnLatin}[1]{\textbf{#1}}
+\newcommand{\SoundLine}[1]{\textsc{#1}}
+\newcommand{\BroadIPA}[1]{{\fontfamily{cmr}\selectfont\textipa{/#1/}}}
+\newcommand{\LocalChoice}{\textsc{local choice}}
+\newcommand{\MissalRule}{\textsc{missal}}
+\newcommand{\ModelRule}{\textsc{model}}
+
+\newcommand{\masterybox}[1]{%
+  \fbox{\rule{0pt}{1.1ex}\rule{1.1ex}{0pt}}\,#1\hspace{1em}%
+}
+
+\newenvironment{flashgrid}{%
+  \begingroup
+  \centering
+  \setlength{\tabcolsep}{4pt}
+  \renewcommand{\arraystretch}{1}
+  \begin{tabular}{@{}p{0.49\linewidth}p{0.49\linewidth}@{}}
+}{%
+  \end{tabular}
+  \par
+  \endgroup
+}
+
+\newcommand{\flashheader}[2]{%
+  \noindent\hbox to \linewidth{{\scriptsize\bfseries #1}\hfil
+  {\scriptsize\bfseries #2}}\par}
+
+\newcommand{\flashfront}[2]{%
+  \begin{tcolorbox}[height=2.96in,colback=white,colframe=black,sharp corners,boxrule=0.5pt,left=7pt,right=7pt,top=5pt,bottom=5pt]
+  \flashheader{#1}{Cue}\vfill
+  \centering
+  {\normalsize #2\par}\vfill
+  \end{tcolorbox}%
+}
+
+\newcommand{\flashback}[4]{%
+  \begin{tcolorbox}[height=2.96in,colback=white,colframe=black,sharp corners,boxrule=0.5pt,left=7pt,right=7pt,top=5pt,bottom=5pt]
+  \flashheader{#1}{Answer}\vfill
+  \centering
+  {\normalsize\itshape #2\par}\vspace{0.35em}
+  {\small #3\par}\vfill
+  {\scriptsize #4\par}
+  \end{tcolorbox}%
+}
+
+\newcommand{\flashblank}{%
+  \begin{tcolorbox}[height=2.96in,colback=white,colframe=black!35,sharp corners,boxrule=0.3pt]
+  \mbox{}
+  \end{tcolorbox}%
+}
+
+% The first deck in a contiguous card module must begin on an odd physical PDF
+% page. Checking the kernel shipout counter, rather than the reset visible page
+% number, keeps the rule true for both a whole-document print and a selected
+% page range. Every deck has an even page count, so later decks in the same
+% module also begin on odd pages without additional instruction or parity
+% leaves.
+\newcommand{\carddeckoddpage}{%
+  \clearpage
+  \ifodd\the\ReadonlyShipoutCounter\relax
+    \thispagestyle{empty}%
+    \null\vfill
+    \begin{center}
+      {\small\itshape Intentionally blank so the next card deck begins on an
+      odd PDF page for correct two-sided printing.\par}
+    \end{center}
+    \vfill\null
+    \clearpage
+  \fi
+}
+
+\newcommand{\guidecontents}{%
+  \pagenumbering{roman}
+  \begingroup
+  % The Missa Cantata contents carries a separate entry for every child role.
+  % Keep that complete map on one sheet instead of orphaning the action-deck
+  % and appendix entries on an otherwise empty second contents page.
+  \ifMissaCantataGuide\footnotesize\else\small\fi
+  \setlength{\parskip}{0pt}
+  \tableofcontents
+  % A form may lower the depth near the end of its stored contents to keep
+  % technical back matter out of the family navigation page. Restore the
+  % normal learner depth before the document writes its next contents file.
+  \setcounter{tocdepth}{2}
+  \endgroup
+  \clearpage
+  \pagenumbering{arabic}
+}
+
+\newcommand{\guidegenerationmetadata}[1]{%
+  \appendix
+  \section{Sources, scope, and qualifications}
+  #1
+  \section{Generation Metadata}
+  {\scriptsize\input{\GuideRoot/generation-metadata}}
+}

@@ -1,0 +1,85 @@
+\appendix
+\section{Scope, Edition, and Qualifications}
+
+% This is adult-facing audit matter, not a learner lesson.  A compact local
+% two-column setting keeps the qualifications, bibliography, generation
+% metadata, and rights colophon together on the terminal page without changing
+% the type or spacing used anywhere else in the guide.
+\begingroup
+\footnotesize
+\microtypesetup{protrusion=false,expansion=false}
+\RaggedRight
+\setlength{\columnsep}{0.8em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.22em}
+\newcommand{\TerminalNote}[2]{\textbf{#1.} #2\par}
+\begin{multicols}{2}
+
+\TerminalNote{Form}{\GuideFormStatement}
+
+\TerminalNote{Training boundary}{\GuideBoundaryStatement}
+
+\TerminalNote{Roster and model}{\GuideRosterStatement}
+
+\TerminalNote{Text and pronunciation}{The Latin response sequence is collated to
+the 1962 Vatican typical Missal. The printed house form expands the ligatures
+\textit{ae} and \textit{oe}; stress marks and syllable divisions appear only
+on separately labeled learner lines. The pronunciation course teaches the
+Roman-style ecclesiastical Latin described in the 1961 \textit{Liber Usualis}.
+Its broad IPA, sound spelling, memory aids, and short English meanings are
+original editorial layers. They are not chant notation or an English ritual
+translation. For sung delivery, the appointed chant and the choir director
+control melody, rhythm, and phrasing.}
+
+\TerminalNote{Edition limits}{This ordinary route excludes the Asperges,
+processions, Candlemas, Ash Wednesday, Palm Sunday, Holy Week, Rogation rites,
+Nuptial and Requiem ceremonies, funerals and absolutions, Mass before the
+Blessed Sacrament exposed, pontifical functions, Benediction, and Communion
+outside Mass. Compact branch warnings do not teach those functions. The
+Leonine prayers are outside Mass and are not included. The printed 1962
+Communion rite has no second \textit{Confiteor}.}
+
+\columnbreak
+\TerminalNote{Authority and training}{This is a study and rehearsal aid, not an
+official liturgical book, parish directive, certificate of competence, or
+statement of present authorization. The priest and master of ceremonies govern
+the actual function. \GuideSafetyStatement}
+
+\TerminalNote{Review and rights}{Internal source, text, layout, and production
+checks are recorded in the series research files. Independent liturgical,
+ceremonial, Latin-pronunciation, pedagogical, rights, and ecclesiastical review
+remain outstanding. Project-created teaching matter falls within the
+repository license boundary; received liturgical text, official sources,
+chant, scans, fonts, and third-party manuals retain their own status.
+Installation does not authorize public distribution.}
+
+% Missa Cantata already has the series' longest learner-facing contents map.
+% Keep its technical bibliography and metadata in the book without making a
+% nearly empty second contents page for those two entries alone.
+\ifMissaCantataGuide
+  \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+\fi
+\titleformat{\section}{\normalsize\bfseries}{\thesection}{0.45em}{}
+\titlespacing*{\section}{0pt}{0.45\baselineskip}{0.2\baselineskip}
+\section{References}
+
+\begin{itemize}[leftmargin=1.05em,labelsep=0.35em,topsep=0.1em,
+  itemsep=0.12em,parsep=0pt,partopsep=0pt]
+  \item \textit{Missale Romanum}, editio typica (Typis Polyglottis Vaticanis,
+  1962), especially the General Rubrics, \textit{Ritus servandus}, and
+  \textit{Ordo Missae}; page-image facsimile:
+  \url{https://media.churchmusicassociation.org/pdf/missale62.pdf}.
+  \item Sacred Congregation of Rites, \textit{De musica sacra et sacra
+  liturgia}, 3 September 1958, \textit{AAS} 50 (1958), 630--663, especially
+  nn.\ 24--27 and 31--32:
+  \url{https://www.vatican.va/archive/aas/documents/AAS-50-1958-ocr.pdf}.
+  \item \textit{Liber Usualis} (Solesmes, 1961), English introduction,
+  section IX, pp.\ xxxv--xxxix.
+  \item \GuideCeremonialReferences
+\end{itemize}
+
+Full source roles, access state, discrepancies, and rights treatment are
+recorded in the series edition manifest and source audit.
+
+\end{multicols}
+\endgroup
