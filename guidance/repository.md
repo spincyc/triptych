@@ -6,7 +6,7 @@ Apply these rules in order:
 
 1. keep authoritative inputs and audit records under `src/`, reviewed publications under `doc/`, and reproducible intermediates under ignored `build/`;
 2. preserve provider, collection, rite, edition, locale, jurisdiction, and document identity in the path and records;
-3. give shared text one owner and declare every consumer dependency;
+3. give shared text one owner, keep reusable external sources provider-neutral, and declare every consumer dependency;
 4. build deterministically, inspect every affected page, and install only the reviewed PDF; and
 5. treat editing, committing, integrating, pushing, and deployment as separate authorized operations.
 
@@ -14,11 +14,16 @@ Apply these rules in order:
 
 ## Ownership and paths
 
-- `src/` contains tracked authoring sources, focused evidence and research records, and reusable fragments.
+- `src/` contains tracked authoring sources, focused evidence and research records, reusable fragments, and the provider-neutral reusable source library governed by `guidance/sources.md`.
 - `doc/` contains tracked PDFs installed from reviewed builds.
 - `build/` contains only ignored, reproducible intermediates, logs, caches, review rasters, and generated release artifacts.
 
 Anything required to understand, verify, or reproduce a publication belongs under `src/`, never `build/`. `doc/` is not a build directory. Cleaning may remove `build/` but never `src/` or `doc/`.
+
+External source identities and lawful reusable artifacts live under
+`src/sources/`, not under a generated provider branch. Provider publications
+remain under `src/<provider>/`. Generated source indexes and reports live under
+ignored `build/sources/` and may always be reconstructed from tracked inputs.
 
 Generated documents retain a provider branch. The present provider is `gpt`; do not flatten it from existing paths. Use this collection hierarchy:
 
@@ -74,6 +79,14 @@ One text has one authoritative owner. Import it into every consumer and declare 
 
 Keep records with the owning leaf or a clearly owned shared source. They must identify the exact editions, witnesses, translations, jurisdictions, dates, source roles, checked loci, unresolved discrepancies, rights basis, and completed review required by the profile. Focused third-party extracts may be tracked when necessary and distributable; complete scans, bulk OCR, private caches, and machine-specific corpora do not belong in publication leaves.
 
+Repository-wide external-source reuse follows `guidance/sources.md`. Its work,
+edition, artifact, passage, corpus, and binding records remain distinct from
+shared authored publication fragments. Lawful, reasonably sized, distributable
+source artifacts may be tracked under `src/sources/`; restricted bytes and
+machine-private caches may not. A publication-local binding records why and how
+that publication used a central source. Central identity never supplies a
+consumer's interpretation automatically.
+
 Do not combine unlike formularies, editions, translations, jurisdictions, or unrelated works in one record merely because they share a theme. Never record credentials, private communications, host or user identity, machine paths, network data, launcher state, or session identifiers.
 
 ## Rights and project identity
@@ -110,7 +123,7 @@ Compile each affected publication for enough passes to settle references and con
 
 Use only `make review-pdfs`, `make review-all-pdfs`, or `scripts/pdf-review` to prepare page rasters and bounded contact sheets. The helper owns concurrency and memory controls; do not replace it with raw parallel ImageMagick or equivalent whole-document commands. A cache hit or contact sheet is not review. Inspect every rendered page, opening full-size rasters where scale matters, then verify PDF structure, fonts, metadata, extracted text, and byte identity between reviewed build and installed mirror.
 
-Research records that cannot affect rendered bytes need not force recompilation. Adding a publication may use deterministic controlled discovery; exceptional shared dependencies must be explicit.
+Research records that cannot affect rendered bytes need not force recompilation. Evidence dependencies on reusable external sources must nevertheless be queryable for freshness and impact under `guidance/sources.md`. Adding a publication may use deterministic controlled discovery; exceptional shared render dependencies must be explicit.
 
 ## Isolated Codex workers
 

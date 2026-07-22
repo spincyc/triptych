@@ -13,6 +13,10 @@ Read these files before changing document content, structure, or build behavior:
 5. `guidance/repository.md` for source ownership, target paths, mirrored publications, and build rules.
 6. The one or more profiles that govern the requested document.
 
+Read `guidance/sources.md` before adding, migrating, storing, or reusing a
+repository-wide external source, corpus, edition, artifact, passage record, or
+publication binding.
+
 The user's request takes priority when it deliberately changes a project convention. Record the new convention in the correct universal or profile guidance rather than leaving the implementation and guidance inconsistent.
 
 ## Profile routing
@@ -88,6 +92,8 @@ When legal rules, current discipline, translations, software, or other mutable f
 Preserve the provider hierarchy under `src/gpt/`. New and migrated documents follow the collection schema in `guidance/repository.md`; their installed PDFs and transient artifacts mirror the same relative path under `doc/gpt/` and `build/gpt/`.
 
 - Tracked inputs and audit records belong under `src/`.
+- Provider-neutral reusable external-source records and lawful retained
+  artifacts belong under `src/sources/` and follow `guidance/sources.md`.
 - Reviewed, publishable PDFs belong under `doc/`.
 - LaTeX intermediates, logs, caches, and other reproducible artifacts belong only under ignored `build/`.
 - Shared theological or typesetting text has one authoritative source and is imported by its consumers; do not create drifting copies.

@@ -45,6 +45,12 @@ Do not invent a fact, quotation, citation, source search, verification event, co
 
 Prefer primary, official, edition-identified, stable sources. OCR, searchable transcriptions, aggregations, quotation sites, and secondary citations are finding aids until the underlying witness is checked. Cite enough edition/version and locus information to reproduce the claim; record stable links and access dates where online evidence matters.
 
+When an external source is registered for repository-wide reuse, follow
+`guidance/sources.md`. Cataloging, acquiring, indexing, searching, inspecting,
+and verifying are distinct states. Full-work availability never implies that a
+publication examined the whole work, and a reusable source note never replaces
+the publication's claim-level judgment.
+
 Research is claim-driven, not quota-driven. Search broadly enough to test the governing claims, serious alternatives, and gaps; stop collecting sources that merely repeat a point. Preserve consequential negative results and disclose unresolved records rather than filling them by inference.
 
 Do not introduce a weak, prejudicial, sensational, conspiratorial, or otherwise extraneous claim merely to reject it. If an argument is not needed to understand the work's subject, a retained source, or a material reception history, omit it from reader-facing prose and audit records instead of creating a corrective callout, disclaimer, or rejected-lead inventory. When an error or harmful reception is materially within scope, explain its evidentiary role and analyze it directly and proportionately.
@@ -53,7 +59,7 @@ Liturgical claims identify the rite, use or form, typical edition, calendar, lan
 
 ## Rights, quotation, and received prayer
 
-Quote only what the argument requires. Record the known author, source, attribution, license, permission, public-domain basis, or legal exception at the nearest useful source record. Online availability, age, official status, and citation do not establish permission. Do not vendor complete scans, bulk OCR, or third-party corpora when a focused record and stable citation suffice.
+Quote only what the argument requires. Record the known author, source, attribution, license, permission, public-domain basis, or legal exception at the nearest useful source record. Online availability, age, official status, and citation do not establish permission. Do not place complete scans, bulk OCR, or third-party corpora in publication leaves when a focused record and stable citation suffice. A lawful, reasonably sized source acquired for genuine repository-wide reuse may instead enter the provider-neutral source library under `guidance/sources.md`; acquisition alone does not justify quotation or publication use.
 
 The repository license does not relicense Scripture, official or liturgical text, received prayers or hymns, third-party translations, quotations, images, fonts, or other external material. Put a local notice wherever excluded wording could reasonably be mistaken for project-owned expression.
 
