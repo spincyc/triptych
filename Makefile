@@ -1,65 +1,3 @@
-override CODEX_REQUIRED_RUN_ID_GOALS := reopen clean-run integrate resolve continue abort final-diff
-override CODEX_OPTIONAL_RUN_ID_GOALS := status
-override CODEX_LIFECYCLE_GOALS := $(CODEX_OPTIONAL_RUN_ID_GOALS) $(CODEX_REQUIRED_RUN_ID_GOALS)
-
-# Except for the no-argument status overview, these targets are convenience
-# wrappers for exact run IDs emitted by the launcher. GNU Make processes options
-# and command-line variable assignments before reading this file, so never
-# forward arbitrary data here; use scripts/triptych-codex directly when the
-# value is external or untrusted. Once Make has parsed a value as the second
-# goal, validate it without a parse-time shell command. Ordinary command-line
-# variable assignments cannot replace these override functions.
-override codex_make_strip_decimal = $(subst 9,,$(subst 8,,$(subst 7,,$(subst 6,,$(subst 5,,$(subst 4,,$(subst 3,,$(subst 2,,$(subst 1,,$(subst 0,,$(1)))))))))))
-override codex_make_strip_hex = $(subst f,,$(subst e,,$(subst d,,$(subst c,,$(subst b,,$(subst a,,$(call codex_make_strip_decimal,$(1))))))))
-override codex_make_hex_to_words = $(subst f,x ,$(subst e,x ,$(subst d,x ,$(subst c,x ,$(subst b,x ,$(subst a,x ,$(subst 9,x ,$(subst 8,x ,$(subst 7,x ,$(subst 6,x ,$(subst 5,x ,$(subst 4,x ,$(subst 3,x ,$(subst 2,x ,$(subst 1,x ,$(subst 0,x ,$(1)))))))))))))))))
-override codex_make_character_count = $(words $(call codex_make_hex_to_words,$(1)))
-
-# Opaque lifecycle commands that take a run ID present it as a second Make
-# goal. Limit the fallback rule to lifecycle invocations so ordinary unknown
-# targets still fail.
-ifeq ($(filter undefined default,$(origin MAKECMDGOALS)),)
-$(error MAKECMDGOALS may not be overridden)
-endif
-# MAKECMDGOALS is meaningful only to the current Make process. In particular,
-# do not leak an empty automatic value into the bounded recursive default build,
-# where it would look like an environment override and trip the guard above.
-unexport MAKECMDGOALS
-ifneq ($(filter $(CODEX_LIFECYCLE_GOALS),$(MAKECMDGOALS)),)
-override CODEX_MAKE_LIFECYCLE_GOAL := $(firstword $(filter $(CODEX_LIFECYCLE_GOALS),$(MAKECMDGOALS)))
-ifneq ($(firstword $(MAKECMDGOALS)),$(CODEX_MAKE_LIFECYCLE_GOAL))
-$(error Usage: make $(CODEX_MAKE_LIFECYCLE_GOAL) $(if $(filter status,$(CODEX_MAKE_LIFECYCLE_GOAL)),[<run-id>],<run-id>))
-endif
-ifneq ($(filter status,$(CODEX_MAKE_LIFECYCLE_GOAL)),)
-ifneq ($(filter 1 2,$(words $(MAKECMDGOALS))),$(words $(MAKECMDGOALS)))
-$(error Usage: make status [<run-id>])
-endif
-else
-ifneq ($(words $(MAKECMDGOALS)),2)
-$(error Usage: make $(CODEX_MAKE_LIFECYCLE_GOAL) <run-id>)
-endif
-endif
-override CODEX_MAKE_RUN_ID := $(word 2,$(MAKECMDGOALS))
-ifneq ($(strip $(CODEX_MAKE_RUN_ID)),)
-override CODEX_MAKE_RUN_ID_DATE := $(word 1,$(subst t, ,$(CODEX_MAKE_RUN_ID)))
-override CODEX_MAKE_RUN_ID_AFTER_T := $(word 2,$(subst t, ,$(CODEX_MAKE_RUN_ID)))
-override CODEX_MAKE_RUN_ID_TIME := $(word 1,$(subst z, ,$(CODEX_MAKE_RUN_ID_AFTER_T)))
-override CODEX_MAKE_RUN_ID_AFTER_Z := $(word 2,$(subst z, ,$(CODEX_MAKE_RUN_ID_AFTER_T)))
-override CODEX_MAKE_RUN_ID_HEX := $(patsubst -%,%,$(CODEX_MAKE_RUN_ID_AFTER_Z))
-override CODEX_MAKE_RUN_ID_RECONSTRUCTED := $(CODEX_MAKE_RUN_ID_DATE)t$(CODEX_MAKE_RUN_ID_TIME)z-$(CODEX_MAKE_RUN_ID_HEX)
-override CODEX_MAKE_RUN_ID_INVALID := $(strip \
-	$(call codex_make_strip_decimal,$(CODEX_MAKE_RUN_ID_DATE)) \
-	$(if $(filter 8,$(call codex_make_character_count,$(CODEX_MAKE_RUN_ID_DATE))),,date-length) \
-	$(call codex_make_strip_decimal,$(CODEX_MAKE_RUN_ID_TIME)) \
-	$(if $(filter 6,$(call codex_make_character_count,$(CODEX_MAKE_RUN_ID_TIME))),,time-length) \
-	$(call codex_make_strip_hex,$(CODEX_MAKE_RUN_ID_HEX)) \
-	$(if $(filter 12,$(call codex_make_character_count,$(CODEX_MAKE_RUN_ID_HEX))),,hex-length) \
-	$(subst $(CODEX_MAKE_RUN_ID_RECONSTRUCTED),,$(CODEX_MAKE_RUN_ID)))
-$(if $(CODEX_MAKE_RUN_ID_INVALID),$(error invalid Triptych Codex run ID))
-endif
-.DEFAULT:
-	@:
-endif
-
 PDFLATEX ?= pdflatex
 PYTHON ?= python3
 PROVIDER ?= gpt
@@ -140,10 +78,36 @@ METADATA_CHECKER := scripts/check-generation-metadata
 CURRICULUM_STRUCTURE_CHECKER := scripts/check-curriculum-structure
 PDF_REVIEW_TOOL := scripts/pdf-review
 PUBLIC_ALPHA_TOOL := scripts/public-alpha
-CODEX_LAUNCHER := scripts/triptych-codex
+override CODEX_LAUNCHER := scripts/triptych-codex
 SOURCE_LIBRARY_TOOL := scripts/source-library
 SOURCE_INVENTORY_TOOL := scripts/source-inventory
 SOURCE_FAMILY_MIGRATION_TOOL := scripts/source-family-migration
+
+# Triptych consumes the reusable Worktree Marshal Make API through the existing
+# compatibility launcher. Keep target names plain; lifecycle IDs are supplied
+# only as validated RUN=<run-id> command-line assignments.
+override WORKTREE_MARSHAL := $(CODEX_LAUNCHER)
+override WORKTREE_MARSHAL_DISPLAY_NAME := Triptych Codex
+override WORKTREE_MARSHAL_RUN_TARGET := codex
+override WORKTREE_MARSHAL_STATUS_TARGET := status
+override WORKTREE_MARSHAL_REOPEN_TARGET := reopen
+override WORKTREE_MARSHAL_DIFF_TARGET := final-diff
+override WORKTREE_MARSHAL_INTEGRATE_TARGET := integrate
+override WORKTREE_MARSHAL_RESOLVE_TARGET := resolve
+override WORKTREE_MARSHAL_CONTINUE_TARGET := continue
+override WORKTREE_MARSHAL_ABORT_TARGET := abort
+override WORKTREE_MARSHAL_CLEAN_TARGET := clean-run
+override WORKTREE_MARSHAL_POSITIONAL_RUN_ID_COMPAT := 1
+override WORKTREE_MARSHAL_RUN_ARGUMENTS :=
+override WORKTREE_MARSHAL_STATUS_ARGUMENTS := --triptych-status
+override WORKTREE_MARSHAL_REOPEN_ARGUMENTS := --triptych-reopen
+override WORKTREE_MARSHAL_DIFF_ARGUMENTS := --triptych-final-diff
+override WORKTREE_MARSHAL_INTEGRATE_ARGUMENTS := --triptych-integrate
+override WORKTREE_MARSHAL_RESOLVE_ARGUMENTS := --triptych-resolve
+override WORKTREE_MARSHAL_CONTINUE_ARGUMENTS := --triptych-continue
+override WORKTREE_MARSHAL_ABORT_ARGUMENTS := --triptych-abort
+override WORKTREE_MARSHAL_CLEAN_ARGUMENTS := --triptych-clean
+include tools/worktree-marshal/src/worktree_marshal/resources/worktree-marshal.mk
 
 COMMON_SOURCES := $(shell find $(SOURCE_ROOT)/common -type f | sort)
 ECCLESIASTICAL_LATIN_ROOT := $(SOURCE_ROOT)/curriculums/ecclesiastical-latin
@@ -200,13 +164,14 @@ ANGELUS_HAIL_MARY := $(CARMEL_NOVENA_ROOT)/prayers/hail-mary.tex
 # share. Bootstrap aggregate builds with a bounded recursive Make in that case.
 # If a caller already supplied -j (including an inherited jobserver), keep the
 # complete graph in this Make process so combined goals cannot race one another.
-MAKE_PARALLEL_FLAGS := $(filter -j% j% --jobs% --jobserver-auth=% --jobserver-fds=%,$(MAKEFLAGS))
-PDF_JOBS_INVALID = $(strip \
-	$(call codex_make_strip_decimal,$(PDF_JOBS)) \
+override _TRIPTYCH_MAKE_PARALLEL_FLAGS := $(filter -j% j% --jobs% --jobserver-auth=% --jobserver-fds=%,$(MAKEFLAGS))
+override _triptych_make_strip_decimal = $(subst 9,,$(subst 8,,$(subst 7,,$(subst 6,,$(subst 5,,$(subst 4,,$(subst 3,,$(subst 2,,$(subst 1,,$(subst 0,,$(1)))))))))))
+override _TRIPTYCH_PDF_JOBS_INVALID = $(strip \
+	$(call _triptych_make_strip_decimal,$(PDF_JOBS)) \
 	$(if $(strip $(PDF_JOBS)),,empty) \
 	$(if $(subst 0,,$(strip $(PDF_JOBS))),,zero))
-BOUNDED_PDF_JOB_OPTION = $(if $(strip $(MAKE_PARALLEL_FLAGS)),,\
-	$(if $(PDF_JOBS_INVALID),$(error PDF_JOBS requires a positive integer),--jobs=$(PDF_JOBS)))
+override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALLEL_FLAGS)),,\
+	$(if $(_TRIPTYCH_PDF_JOBS_INVALID),$(error PDF_JOBS requires a positive integer),--jobs=$(PDF_JOBS)))
 
 .PHONY: all pdf review-pdfs review-all-pdfs install list help clean \
 	distclean check-tools check-metadata check-sources check-source-library \
@@ -216,24 +181,23 @@ BOUNDED_PDF_JOB_OPTION = $(if $(strip $(MAKE_PARALLEL_FLAGS)),,\
 	check-public-alpha prepare-public-alpha \
 	check-pdf-review check-agent-isolation check-curriculum-sources \
 	check-curriculum-structure \
-	codex public-site public-preview \
+	public-site public-preview \
 	dependencies-arch install-dependencies-arch \
-	verify-public-site verify-public-preview status reopen clean-run \
-	integrate resolve continue abort final-diff \
+	verify-public-site verify-public-preview \
 	FORCE_METADATA_VERIFICATION
 .DELETE_ON_ERROR:
 .SECONDARY: $(BUILD_METADATA_STAMPS)
 
-ifeq ($(strip $(MAKE_PARALLEL_FLAGS)),)
+ifeq ($(strip $(_TRIPTYCH_MAKE_PARALLEL_FLAGS)),)
 all:
-	+@$(MAKE) --no-print-directory $(BOUNDED_PDF_JOB_OPTION) pdf
+	+@$(MAKE) --no-print-directory $(_TRIPTYCH_BOUNDED_PDF_JOB_OPTION) pdf
 
 review-pdfs:
-	+@$(MAKE) --no-print-directory $(BOUNDED_PDF_JOB_OPTION) pdf
+	+@$(MAKE) --no-print-directory $(_TRIPTYCH_BOUNDED_PDF_JOB_OPTION) pdf
 	@$(PYTHON) $(PDF_REVIEW_TOOL) --changed-against $(DOC_ROOT) $(BUILD_PDFS)
 
 review-all-pdfs:
-	+@$(MAKE) --no-print-directory $(BOUNDED_PDF_JOB_OPTION) pdf
+	+@$(MAKE) --no-print-directory $(_TRIPTYCH_BOUNDED_PDF_JOB_OPTION) pdf
 	@$(PYTHON) $(PDF_REVIEW_TOOL) $(BUILD_PDFS)
 else
 all: pdf
@@ -267,9 +231,6 @@ list:
 	@printf '%s\n' $(DOCUMENTS)
 
 codex reopen resolve: private export TRIPTYCH_CODEX_REAL := $(CODEX)
-
-codex:
-	@$(CODEX_LAUNCHER)
 
 dependencies-arch:
 	@printf '%s\n' $(ARCH_DEPENDENCY_PACKAGES)
@@ -319,70 +280,8 @@ install-dependencies-arch:
 		fi; \
 	done
 
-$(CODEX_LIFECYCLE_GOALS): private override export TRIPTYCH_MAKE_FIRST_GOAL := $(firstword $(MAKECMDGOALS))
-$(CODEX_LIFECYCLE_GOALS): private override export TRIPTYCH_MAKE_RUN_ID := $(word 2,$(MAKECMDGOALS))
-$(CODEX_LIFECYCLE_GOALS): private override CODEX_LAUNCHER := scripts/triptych-codex
-status:
-	@if [ "$$TRIPTYCH_MAKE_FIRST_GOAL" != status ]; then \
-		printf '%s\n' 'Usage: make status [<run-id>]' >&2; \
-		exit 2; \
-	fi
-	@if [ -n "$$TRIPTYCH_MAKE_RUN_ID" ]; then \
-		$(CODEX_LAUNCHER) --triptych-status "$$TRIPTYCH_MAKE_RUN_ID"; \
-	else \
-		$(CODEX_LAUNCHER) --triptych-status; \
-	fi
-
-reopen:
-	@if [ "$$TRIPTYCH_MAKE_FIRST_GOAL" != reopen ]; then \
-		printf '%s\n' 'Usage: make reopen <run-id>' >&2; \
-		exit 2; \
-	fi
-	@$(CODEX_LAUNCHER) --triptych-reopen "$$TRIPTYCH_MAKE_RUN_ID"
-
-clean-run:
-	@if [ "$$TRIPTYCH_MAKE_FIRST_GOAL" != clean-run ]; then \
-		printf '%s\n' 'Usage: make clean-run <run-id>' >&2; \
-		exit 2; \
-	fi
-	@$(CODEX_LAUNCHER) --triptych-clean "$$TRIPTYCH_MAKE_RUN_ID"
-
-integrate:
-	@if [ "$$TRIPTYCH_MAKE_FIRST_GOAL" != integrate ]; then \
-		printf '%s\n' 'Usage: make integrate <run-id>' >&2; \
-		exit 2; \
-	fi
-	@$(CODEX_LAUNCHER) --triptych-integrate "$$TRIPTYCH_MAKE_RUN_ID"
-
-resolve:
-	@if [ "$$TRIPTYCH_MAKE_FIRST_GOAL" != resolve ]; then \
-		printf '%s\n' 'Usage: make resolve <run-id>' >&2; \
-		exit 2; \
-	fi
-	@$(CODEX_LAUNCHER) --triptych-resolve "$$TRIPTYCH_MAKE_RUN_ID"
-
-continue:
-	@if [ "$$TRIPTYCH_MAKE_FIRST_GOAL" != continue ]; then \
-		printf '%s\n' 'Usage: make continue <run-id>' >&2; \
-		exit 2; \
-	fi
-	@$(CODEX_LAUNCHER) --triptych-continue "$$TRIPTYCH_MAKE_RUN_ID"
-
-abort:
-	@if [ "$$TRIPTYCH_MAKE_FIRST_GOAL" != abort ]; then \
-		printf '%s\n' 'Usage: make abort <run-id>' >&2; \
-		exit 2; \
-	fi
-	@$(CODEX_LAUNCHER) --triptych-abort "$$TRIPTYCH_MAKE_RUN_ID"
-
-final-diff:
-	@if [ "$$TRIPTYCH_MAKE_FIRST_GOAL" != final-diff ]; then \
-		printf '%s\n' 'Usage: make final-diff <run-id>' >&2; \
-		exit 2; \
-	fi
-	@$(CODEX_LAUNCHER) --triptych-final-diff "$$TRIPTYCH_MAKE_RUN_ID"
-
 check-agent-isolation:
+	@$(PYTHON) -m unittest discover -s tools/worktree-marshal/tests -v
 	@$(PYTHON) -m unittest discover -s scripts/tests -p 'test_triptych_codex.py' -v
 
 check-pdf-review:
@@ -445,14 +344,14 @@ help:
 		'make dependencies-arch  List canonical Arch package dependencies' \
 		'make install-dependencies-arch  Run a full Arch upgrade and install canonical packages' \
 		'make codex    Start Codex in an automatically isolated task checkout' \
-		'make status [<run-id>]  List runs needing attention or inspect one exact record' \
-		'make reopen <run-id>  Start a new Codex process in a retained task checkout' \
-		'make clean-run <run-id>  Safely clean an eligible retained run' \
-		'make integrate <run-id>  Integrate a clean run or land an unchanged review-pending candidate' \
-		'make resolve <run-id>  Open Codex to resolve and stage a managed rebase conflict' \
-		'make continue <run-id>  Continue staged resolutions to a review-pending candidate' \
-		'make abort <run-id>  Abort a managed rebase and restore its exact audited source' \
-		'make final-diff <run-id>  Show the complete review-pending diff without a worktree path' \
+		'make status [RUN=<run-id>]  List runs needing attention or inspect one exact record' \
+		'make reopen RUN=<run-id>  Start a new Codex process in a retained task checkout' \
+		'make clean-run RUN=<run-id>  Safely clean an eligible retained run' \
+		'make integrate RUN=<run-id>  Integrate a clean run or land an unchanged review-pending candidate' \
+		'make resolve RUN=<run-id>  Open Codex to resolve and stage a managed rebase conflict' \
+		'make continue RUN=<run-id>  Continue staged resolutions to a review-pending candidate' \
+		'make abort RUN=<run-id>  Abort a managed rebase and restore its exact audited source' \
+		'make final-diff RUN=<run-id>  Show the complete review-pending diff without a worktree path' \
 		'Run-ID Make wrappers require a launcher-produced ID; use scripts/triptych-codex directly for external input' \
 		'make check-agent-isolation  Test the transparent Codex launcher' \
 		'make check-pdf-review  Test memory-bounded PDF inspection tooling' \

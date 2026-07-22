@@ -14,6 +14,10 @@ from pathlib import Path
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
+MAKE_FRAGMENT = (
+    REPOSITORY_ROOT
+    / "tools/worktree-marshal/src/worktree_marshal/resources/worktree-marshal.mk"
+)
 
 
 class MakefileBuildGraphTests(unittest.TestCase):
@@ -21,6 +25,12 @@ class MakefileBuildGraphTests(unittest.TestCase):
         self.temporary_directory = tempfile.TemporaryDirectory()
         self.root = Path(self.temporary_directory.name)
         shutil.copy2(REPOSITORY_ROOT / "Makefile", self.root / "Makefile")
+        make_fragment = (
+            self.root
+            / "tools/worktree-marshal/src/worktree_marshal/resources/worktree-marshal.mk"
+        )
+        make_fragment.parent.mkdir(parents=True)
+        shutil.copy2(MAKE_FRAGMENT, make_fragment)
         shutil.copy2(
             REPOSITORY_ROOT / "requirements-public-alpha.txt",
             self.root / "requirements-public-alpha.txt",
@@ -521,9 +531,17 @@ chmod 0644 "$4"
         )
 
     def test_empty_parallel_limit_fails_closed(self) -> None:
-        result = self.run_make("PDF_JOBS=", check=False)
-        self.assertNotEqual(result.returncode, 0)
-        self.assertIn("requires a positive integer", result.stderr)
+        for arguments in (
+            ("PDF_JOBS=",),
+            ("PDF_JOBS=bad",),
+            ("PDF_JOBS=bad", "_triptych_make_strip_decimal="),
+            ("PDF_JOBS=bad", "_TRIPTYCH_PDF_JOBS_INVALID="),
+            ("PDF_JOBS=bad", "_TRIPTYCH_MAKE_PARALLEL_FLAGS=-j"),
+        ):
+            with self.subTest(arguments=arguments):
+                result = self.run_make(*arguments, check=False)
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn("requires a positive integer", result.stderr)
 
     def test_arch_dependency_target_uses_one_canonical_pacman_transaction(self) -> None:
         os_release = self.root / "arch-os-release"
@@ -662,7 +680,7 @@ printf '%s\\n' "$TRIPTYCH_CODEX_REAL" >> "$MAKE_TEST_CODEX_LOG"
         self.environment["TRIPTYCH_CODEX_REAL"] = "/home/test/.local/bin/codex"
 
         self.run_make("codex")
-        self.run_make("reopen", "20260720t141000z-112955d84c04")
+        self.run_make("reopen", "RUN=20260720t141000z-112955d84c04")
 
         self.assertEqual(
             self.lines(self.codex_log),

@@ -19,6 +19,10 @@ from unittest import mock
 
 SCRIPTS_ROOT = Path(__file__).resolve().parents[1]
 SOURCE_MAKEFILE = SCRIPTS_ROOT.parent / "Makefile"
+SOURCE_MAKE_FRAGMENT = (
+    SCRIPTS_ROOT.parent
+    / "tools/worktree-marshal/src/worktree_marshal/resources/worktree-marshal.mk"
+)
 SOURCE_LAUNCHER = SCRIPTS_ROOT / "triptych-codex"
 SOURCE_FAKE = Path(__file__).resolve().with_name("fake-codex")
 COMMAND_TIMEOUT_SECONDS = 60
@@ -113,6 +117,12 @@ class TriptychCodexTests(unittest.TestCase):
         (self.control / "src/gpt/common").mkdir(parents=True)
         (self.control / "scripts").mkdir()
         shutil.copy2(SOURCE_MAKEFILE, self.control / "Makefile")
+        make_fragment = (
+            self.control
+            / "tools/worktree-marshal/src/worktree_marshal/resources/worktree-marshal.mk"
+        )
+        make_fragment.parent.mkdir(parents=True)
+        shutil.copy2(SOURCE_MAKE_FRAGMENT, make_fragment)
         self.launcher = self.control / "scripts/triptych-codex"
         shutil.copy2(SOURCE_LAUNCHER, self.launcher)
         self.launcher.chmod(0o755)
@@ -3773,7 +3783,7 @@ class TriptychCodexTests(unittest.TestCase):
 
         missing = self.run_make(["integrate"])
         self.assertEqual(missing.returncode, 2)
-        self.assertIn(b"Usage: make integrate <run-id>", missing.stderr)
+        self.assertIn(b"Usage: make integrate RUN=<run-id>", missing.stderr)
         self.assert_control_unchanged()
         self.assertTrue(Path(manifest["worktree"]).exists())
 
@@ -3785,7 +3795,7 @@ class TriptychCodexTests(unittest.TestCase):
             self.assertEqual(patterned.returncode, 2)
             self.assertIn(b"No rule to make target", patterned.stderr)
 
-        integrate = self.run_make(["integrate", manifest["run_id"]])
+        integrate = self.run_make(["integrate", f"RUN={manifest['run_id']}"])
         self.assertEqual(integrate.returncode, 0, integrate.stderr.decode())
         self.assertEqual(
             self.git(self.control, "rev-parse", "HEAD").stdout.strip(),
@@ -6374,7 +6384,7 @@ class TriptychCodexTests(unittest.TestCase):
         resolver_log = self.root / "make-conflict-resolver.jsonl"
 
         resolve = self.run_make(
-            ["resolve", manifest["run_id"]],
+            ["resolve", f"RUN={manifest['run_id']}"],
             environment={
                 "FAKE_CODEX_LOG": str(resolver_log),
                 "FAKE_CODEX_ACTION": "stage-conflict",
@@ -6382,10 +6392,10 @@ class TriptychCodexTests(unittest.TestCase):
         )
         self.assertEqual(resolve.returncode, 0, resolve.stderr.decode())
         self.assertEqual(self.records(resolver_log)[0]["role"], "resolver")
-        continuation = self.run_make(["continue", manifest["run_id"]])
+        continuation = self.run_make(["continue", f"RUN={manifest['run_id']}"])
         self.assertEqual(continuation.returncode, 0, continuation.stderr.decode())
         self.assertEqual(self.manifests()[0]["state"], "integration-review-pending")
-        final_diff = self.run_make(["final-diff", manifest["run_id"]])
+        final_diff = self.run_make(["final-diff", f"RUN={manifest['run_id']}"])
         self.assertEqual(final_diff.returncode, 0, final_diff.stderr.decode())
         self.assertIn(b"manually resolved result", final_diff.stdout)
         self.assertNotIn(os.fsencode(manifest["worktree"]), final_diff.stdout)
@@ -6407,15 +6417,26 @@ class TriptychCodexTests(unittest.TestCase):
         self.assertIn(b"preserved", overview.stdout)
         self.assertNotIn(os.fsencode(manifest["worktree"]), overview.stdout)
 
-        exact = self.run_make(["status", manifest["run_id"]])
+        exact = self.run_make(["status", f"RUN={manifest['run_id']}"])
         self.assertEqual(exact.returncode, 0, exact.stderr.decode())
         self.assertIn(os.fsencode(manifest["run_id"]), exact.stdout)
         self.assertIn(b"preserved", exact.stdout)
         self.assertNotIn(os.fsencode(manifest["worktree"]), exact.stdout)
 
+        positional_compatibility = self.run_make(["status", manifest["run_id"]])
+        self.assertEqual(
+            positional_compatibility.returncode,
+            0,
+            positional_compatibility.stderr.decode(),
+        )
+        self.assertIn(os.fsencode(manifest["run_id"]), positional_compatibility.stdout)
+        self.assertNotIn(
+            os.fsencode(manifest["worktree"]), positional_compatibility.stdout
+        )
+
         second_log = self.root / "make-lifecycle-second.jsonl"
         reopened = self.run_make(
-            ["reopen", manifest["run_id"]],
+            ["reopen", f"RUN={manifest['run_id']}"],
             environment={
                 "FAKE_CODEX_LOG": str(second_log),
                 "FAKE_CODEX_ACTION": "remove-dirty-result",
@@ -6431,7 +6452,7 @@ class TriptychCodexTests(unittest.TestCase):
         self.assertFalse(refreshed["dirty"])
         self.assertEqual(refreshed["final_head"], self.base_head)
 
-        cleaned = self.run_make(["clean-run", manifest["run_id"]])
+        cleaned = self.run_make(["clean-run", f"RUN={manifest['run_id']}"])
         self.assertEqual(cleaned.returncode, 0, cleaned.stderr.decode())
         self.assertEqual(self.worktree_paths(), [self.control.resolve()])
         self.assertEqual(self.worker_branches(), [])
@@ -6444,7 +6465,7 @@ class TriptychCodexTests(unittest.TestCase):
             empty_overview.stderr.decode(),
         )
         self.assertEqual(empty_overview.stdout, b"No Triptych Codex runs.\n")
-        cleaned_exact = self.run_make(["status", manifest["run_id"]])
+        cleaned_exact = self.run_make(["status", f"RUN={manifest['run_id']}"])
         self.assertEqual(
             cleaned_exact.returncode,
             0,
@@ -6476,48 +6497,59 @@ class TriptychCodexTests(unittest.TestCase):
         for target in required_targets:
             missing = self.run_make([target], environment=environment)
             self.assertEqual(missing.returncode, 2, (target, missing.stderr.decode()))
-            self.assertIn(f"Usage: make {target} <run-id>".encode(), missing.stderr)
+            self.assertIn(
+                f"Usage: make {target} RUN=<run-id>".encode(), missing.stderr
+            )
 
         extra = self.run_make(
-            ["resolve", manifest["run_id"], "unexpected-extra-goal"],
+            ["resolve", "unexpected-extra-goal", f"RUN={manifest['run_id']}"],
             environment=environment,
         )
         self.assertEqual(extra.returncode, 2)
-        self.assertIn(b"Usage: make resolve <run-id>", extra.stderr)
+        self.assertIn(b"targets must be invoked directly and alone", extra.stderr)
 
         status_extra = self.run_make(
-            ["status", manifest["run_id"], "unexpected-extra-goal"],
+            ["status", "unexpected-extra-goal", f"RUN={manifest['run_id']}"],
             environment=environment,
         )
         self.assertEqual(status_extra.returncode, 2)
-        self.assertIn(b"Usage: make status [<run-id>]", status_extra.stderr)
+        self.assertIn(
+            b"targets must be invoked directly and alone", status_extra.stderr
+        )
 
         build_sentinel = self.control / "build" / "malformed-make-must-not-clean"
         build_sentinel.parent.mkdir(parents=True, exist_ok=True)
         build_sentinel.write_text("preserve\n", encoding="utf-8")
         keep_going = self.run_make(
-            ["-k", "resolve", manifest["run_id"], "clean"],
+            ["-k", "resolve", "clean", f"RUN={manifest['run_id']}"],
             environment=environment,
         )
         self.assertEqual(keep_going.returncode, 2)
-        self.assertIn(b"Usage: make resolve <run-id>", keep_going.stderr)
+        self.assertIn(
+            b"targets must be invoked directly and alone", keep_going.stderr
+        )
         self.assertTrue(build_sentinel.exists())
 
         reversed_keep_going = self.run_make(
-            ["-k", "clean", "resolve", manifest["run_id"]],
+            ["-k", "clean", "resolve", f"RUN={manifest['run_id']}"],
             environment=environment,
         )
         self.assertEqual(reversed_keep_going.returncode, 2)
-        self.assertIn(b"Usage: make resolve <run-id>", reversed_keep_going.stderr)
+        self.assertIn(
+            b"targets must be invoked directly and alone",
+            reversed_keep_going.stderr,
+        )
         self.assertTrue(build_sentinel.exists())
 
         for option in ("-k", "-j"):
             exact_two = self.run_make(
-                [option, "resolve", "clean"],
+                [option, "resolve", "clean", f"RUN={manifest['run_id']}"],
                 environment=environment,
             )
             self.assertEqual(exact_two.returncode, 2, exact_two.stderr.decode())
-            self.assertIn(b"invalid Triptych Codex run ID", exact_two.stderr)
+            self.assertIn(
+                b"targets must be invoked directly and alone", exact_two.stderr
+            )
             self.assertTrue(build_sentinel.exists())
 
         malformed_run_ids = (
@@ -6535,7 +6567,7 @@ class TriptychCodexTests(unittest.TestCase):
         for malformed_run_id in malformed_run_ids:
             for target in ("resolve", "status"):
                 malformed = self.run_make(
-                    [target, malformed_run_id],
+                    [target, f"RUN={malformed_run_id}"],
                     environment=environment,
                 )
                 self.assertEqual(
@@ -6547,7 +6579,7 @@ class TriptychCodexTests(unittest.TestCase):
 
         for target in ("reopen", "clean-run"):
             malformed = self.run_make(
-                [target, "not-a-run-id"],
+                [target, "RUN=not-a-run-id"],
                 environment=environment,
             )
             self.assertEqual(
@@ -6561,7 +6593,7 @@ class TriptychCodexTests(unittest.TestCase):
         injection = self.run_make(
             [
                 "resolve",
-                f"';touch${{IFS}}{injection_marker};:'",
+                f"RUN=';touch${{IFS}}{injection_marker};:'",
             ],
             environment=environment,
         )
@@ -6572,35 +6604,41 @@ class TriptychCodexTests(unittest.TestCase):
         launcher_marker = self.root / "overridden-lifecycle-launcher-called"
         launcher_override = self.run_make(
             [
-                "resolve",
-                "not-a-run-id",
-                f"CODEX_LAUNCHER=:; touch {launcher_marker}; :",
+                "status",
+                f"RUN={manifest['run_id']}",
+                f"WORKTREE_MARSHAL=:; touch {launcher_marker}; :",
+                f"WORKTREE_MARSHAL_STATUS_ARGUMENTS=:; touch {launcher_marker}; :",
             ],
             environment=environment,
         )
-        self.assertEqual(launcher_override.returncode, 2)
-        self.assertIn(b"invalid Triptych Codex run ID", launcher_override.stderr)
+        self.assertEqual(
+            launcher_override.returncode,
+            0,
+            launcher_override.stderr.decode(),
+        )
+        self.assertIn(os.fsencode(manifest["run_id"]), launcher_override.stdout)
         self.assertFalse(launcher_marker.exists())
 
-        for target in ("resolve", "reopen", "clean-run"):
-            variable_spoof = self.run_make(
-                [
-                    target,
-                    "not-a-run-id",
-                    f"TRIPTYCH_MAKE_RUN_ID={manifest['run_id']}",
-                    f"TRIPTYCH_MAKE_FIRST_GOAL={target}",
-                ],
-                environment=environment,
-            )
-            self.assertEqual(
-                variable_spoof.returncode,
-                2,
-                (target, variable_spoof.stderr.decode()),
-            )
-            self.assertIn(b"invalid Triptych Codex run ID", variable_spoof.stderr)
+        environment_run = self.run_make(
+            ["resolve"],
+            environment={**environment, "RUN": manifest["run_id"]},
+        )
+        self.assertEqual(environment_run.returncode, 2, environment_run.stderr.decode())
+        self.assertIn(b"Usage: make resolve RUN=<run-id>", environment_run.stderr)
+
+        internal_spoof = self.run_make(
+            [
+                "resolve",
+                "RUN=not-a-run-id",
+                f"_WORKTREE_MARSHAL_RUN_ID={manifest['run_id']}",
+            ],
+            environment=environment,
+        )
+        self.assertEqual(internal_spoof.returncode, 2, internal_spoof.stderr.decode())
+        self.assertIn(b"invalid Triptych Codex run ID", internal_spoof.stderr)
 
         goals_spoof = self.run_make(
-            ["resolve", f"MAKECMDGOALS=resolve {manifest['run_id']}"],
+            ["resolve", f"RUN={manifest['run_id']}", "MAKECMDGOALS=resolve"],
             environment=environment,
         )
         self.assertEqual(goals_spoof.returncode, 2)
@@ -6612,7 +6650,7 @@ class TriptychCodexTests(unittest.TestCase):
         manifest, worker, source_head, _, integrate = self.create_integration_conflict()
         self.assertEqual(integrate.returncode, 2)
 
-        abort = self.run_make(["abort", manifest["run_id"]])
+        abort = self.run_make(["abort", f"RUN={manifest['run_id']}"])
         self.assertEqual(abort.returncode, 0, abort.stderr.decode())
         self.assertEqual(self.git(worker, "rev-parse", "HEAD").stdout.strip(), source_head)
         self.assertEqual(self.git(worker, "status", "--porcelain=v1").stdout, "")
@@ -6701,10 +6739,10 @@ class TriptychCodexTests(unittest.TestCase):
         self.assertIn(b"--triptych-clean RUN_ID", launcher_help.stdout)
         make_help = self.run_make(["help"])
         self.assertEqual(make_help.returncode, 0, make_help.stderr.decode())
-        self.assertIn(b"make status [<run-id>]", make_help.stdout)
-        self.assertIn(b"make reopen <run-id>", make_help.stdout)
-        self.assertIn(b"make final-diff <run-id>", make_help.stdout)
-        self.assertIn(b"make clean-run <run-id>", make_help.stdout)
+        self.assertIn(b"make status [RUN=<run-id>]", make_help.stdout)
+        self.assertIn(b"make reopen RUN=<run-id>", make_help.stdout)
+        self.assertIn(b"make final-diff RUN=<run-id>", make_help.stdout)
+        self.assertIn(b"make clean-run RUN=<run-id>", make_help.stdout)
 
     def test_integrate_refuses_worker_merge_that_could_hide_merge_only_content(
         self,
