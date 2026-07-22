@@ -13,7 +13,7 @@ import os
 import re
 import sys
 from collections import defaultdict
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from typing import Any, Iterable, Sequence
 from urllib.parse import urlsplit
 
@@ -60,6 +60,8 @@ SEARCH_MODES = {
     "raw-line-literal-casefold-v1": False,
     "raw-line-literal-case-sensitive-v1": True,
 }
+PASSAGE_SEGMENT_FIELDS = {"line", "text"}
+SUPPORT_ARTIFACT_FIELDS = {"artifact_id", "embedded_reference"}
 BINDING_ROLES = {
     "direct-witness",
     "textual-control",
@@ -119,6 +121,7 @@ ALLOWED_FIELDS = {
         "path",
         "derived_from",
         "transformation",
+        "support_artifacts",
         "encoding",
         "indexable",
         "notes",
@@ -131,7 +134,9 @@ ALLOWED_FIELDS = {
         "locus",
         "states",
         "context",
+        "physical_line_ranges",
         "text",
+        "transcription_segments",
         "verified_on",
         "notes",
     },
@@ -260,6 +265,23 @@ def _is_string_list(value: Any, *, allow_empty: bool = True) -> bool:
         isinstance(value, list)
         and (allow_empty or bool(value))
         and all(_is_string(item) for item in value)
+    )
+
+
+def _is_safe_embedded_reference(value: Any) -> bool:
+    if not _is_string(value) or "\\" in value or "%" in value:
+        return False
+    if any(ord(character) < 32 for character in value):
+        return False
+    parsed = urlsplit(value)
+    if parsed.scheme or parsed.netloc or parsed.query or parsed.fragment:
+        return False
+    reference = PurePosixPath(value)
+    return (
+        not reference.is_absolute()
+        and reference.parts
+        and all(part not in {"", ".", ".."} for part in reference.parts)
+        and reference.as_posix() == value
     )
 
 
@@ -651,6 +673,14 @@ def _dependency_ids(record: Record) -> list[str]:
         dependencies = [data["edition_id"]] if _is_string(data.get("edition_id")) else []
         if _is_string(data.get("derived_from")):
             dependencies.append(data["derived_from"])
+        support_artifacts = data.get("support_artifacts")
+        if isinstance(support_artifacts, list):
+            dependencies.extend(
+                support["artifact_id"]
+                for support in support_artifacts
+                if isinstance(support, dict)
+                and _is_string(support.get("artifact_id"))
+            )
         return dependencies
     if record.record_type == "passage":
         dependencies = [data["edition_id"]] if _is_string(data.get("edition_id")) else []
@@ -806,6 +836,54 @@ def _validate_relationships(library: Library) -> None:
                 or not SHA256_PATTERN.fullmatch(target.data["sha256"])
             ):
                 library.error(record.path, "derived_from artifact must have an exact sha256")
+        if record.record_type == "artifact" and "support_artifacts" in record.data:
+            support_artifacts = record.data["support_artifacts"]
+            if not isinstance(support_artifacts, list) or not support_artifacts:
+                library.error(record.path, "support_artifacts must be a nonempty array of tables")
+            else:
+                seen_ids: set[str] = set()
+                seen_references: set[str] = set()
+                for ordinal, support in enumerate(support_artifacts, start=1):
+                    label = f"support_artifacts[{ordinal}]"
+                    if not isinstance(support, dict):
+                        library.error(record.path, f"{label} must be a table")
+                        continue
+                    unknown = sorted(set(support) - SUPPORT_ARTIFACT_FIELDS)
+                    missing = sorted(SUPPORT_ARTIFACT_FIELDS - set(support))
+                    if unknown:
+                        library.error(record.path, f"{label} has unknown fields: {', '.join(unknown)}")
+                    if missing:
+                        library.error(record.path, f"{label} is missing: {', '.join(missing)}")
+                    artifact_id = support.get("artifact_id")
+                    embedded_reference = support.get("embedded_reference")
+                    if not _is_string(artifact_id) or not ID_PATTERN.fullmatch(artifact_id):
+                        library.error(record.path, f"{label}.artifact_id must be a valid source id")
+                    elif artifact_id in seen_ids:
+                        library.error(record.path, f"{label}.artifact_id is duplicated")
+                    else:
+                        seen_ids.add(artifact_id)
+                    if not _is_safe_embedded_reference(embedded_reference):
+                        library.error(record.path, f"{label}.embedded_reference must be a safe relative path")
+                    elif embedded_reference in seen_references:
+                        library.error(record.path, f"{label}.embedded_reference is duplicated")
+                    else:
+                        seen_references.add(embedded_reference)
+                    target = library.records.get(artifact_id) if _is_string(artifact_id) else None
+                    if artifact_id == record.record_id:
+                        library.error(record.path, f"{label}.artifact_id must not reference itself")
+                    elif target is None:
+                        if _is_string(artifact_id):
+                            library.error(record.path, f"{label} references unknown source id: {artifact_id}")
+                    elif target.record_type != "artifact":
+                        library.error(record.path, f"{label}.artifact_id must reference an artifact record")
+                    elif target.data.get("edition_id") != record.data.get("edition_id"):
+                        library.error(record.path, f"{label}.artifact_id must belong to the same edition")
+                    elif (
+                        target.data.get("storage") != "tracked"
+                        or not _is_string(target.data.get("sha256"))
+                        or not SHA256_PATTERN.fullmatch(target.data["sha256"])
+                    ):
+                        library.error(record.path, f"{label}.artifact_id must reference an exact tracked artifact")
         if record.record_type == "passage" and _is_string(record.data.get("artifact_id")):
             target = library.records.get(record.data["artifact_id"])
             if target is not None and target.record_type != "artifact":
@@ -869,10 +947,15 @@ def _validate_relationships(library: Library) -> None:
                 f"bindings[{binding.ordinal}] inspection or verification requires an artifact, passage, or corpus witness",
             )
         if "searched" in valid_states:
-            if target.record_type not in {"artifact", "corpus"}:
+            if target.record_type not in {"artifact", "passage", "corpus"}:
                 library.error(
                     binding.path,
-                    f"bindings[{binding.ordinal}] searched source must be an exact artifact or corpus",
+                    f"bindings[{binding.ordinal}] searched source must be an exact artifact, ranged passage, or corpus",
+                )
+            if target.record_type == "passage" and not _physical_line_ranges(target):
+                library.error(
+                    binding.path,
+                    f"bindings[{binding.ordinal}] searched passage requires physical_line_ranges",
                 )
             if not exact_artifacts or any(
                 not _is_search_eligible_artifact(artifact)
@@ -1162,6 +1245,203 @@ def _validate_artifacts(library: Library) -> None:
                 library.error(entry, "artifact payload is not declared by its local artifact manifest")
 
 
+def _validate_support_artifact_references(library: Library) -> None:
+    """Prove that first-class companion mappings occur in exact parent bytes."""
+
+    for record in sorted(library.records.values(), key=lambda item: item.record_id):
+        support_artifacts = record.data.get("support_artifacts")
+        if record.record_type != "artifact" or not isinstance(support_artifacts, list):
+            continue
+        if record.data.get("storage") != "tracked":
+            library.error(record.path, "support_artifacts requires a tracked parent artifact")
+            continue
+        path_value = record.data.get("path")
+        if not _is_string(path_value):
+            continue
+        payload_path = _safe_source_path(library, record.path, path_value)
+        if payload_path is None or not payload_path.is_file():
+            continue
+        try:
+            payload = payload_path.read_bytes()
+        except OSError as error:
+            library.error(record.path, f"cannot inspect support_artifacts references: {error}")
+            continue
+        for ordinal, support in enumerate(support_artifacts, start=1):
+            if not isinstance(support, dict):
+                continue
+            embedded_reference = support.get("embedded_reference")
+            if (
+                _is_safe_embedded_reference(embedded_reference)
+                and embedded_reference.encode("utf-8") not in payload
+            ):
+                library.error(
+                    record.path,
+                    f"support_artifacts[{ordinal}].embedded_reference does not occur in the exact parent artifact",
+                )
+
+
+def _is_positive_int(value: Any) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool) and value > 0
+
+
+def _normalized_space(value: str) -> str:
+    return " ".join(value.split())
+
+
+def _iter_physical_lines(source: Iterable[bytes]) -> Iterable[bytes]:
+    """Yield LF-delimited byte lines using binary file-iteration semantics."""
+
+    yield from source
+
+
+def _physical_line_ranges(record: Record) -> list[tuple[int, int]]:
+    value = record.data.get("physical_line_ranges")
+    if not isinstance(value, list):
+        return []
+    ranges: list[tuple[int, int]] = []
+    for item in value:
+        if (
+            isinstance(item, list)
+            and len(item) == 2
+            and _is_positive_int(item[0])
+            and _is_positive_int(item[1])
+            and item[0] <= item[1]
+        ):
+            ranges.append((item[0], item[1]))
+    return ranges
+
+
+def _validate_passage_locators(library: Library) -> None:
+    """Validate exact physical-line scopes and checked transcription segments."""
+
+    for record in sorted(library.records.values(), key=lambda item: item.record_id):
+        if record.record_type != "passage":
+            continue
+        data = record.data
+        states = data.get("states")
+        reviewed = (
+            _is_string_list(states, allow_empty=False)
+            and bool({"inspected", "verified"} & set(states))
+        )
+        artifact_id = data.get("artifact_id")
+        artifact = library.records.get(artifact_id) if _is_string(artifact_id) else None
+        indexable_artifact = (
+            artifact is not None
+            and artifact.record_type == "artifact"
+            and _is_search_eligible_artifact(artifact)
+        )
+        raw_ranges = data.get("physical_line_ranges")
+        if reviewed and indexable_artifact and raw_ranges is None:
+            library.error(record.path, "inspected or verified text passage requires physical_line_ranges")
+        valid_ranges: list[tuple[int, int]] = []
+        if raw_ranges is not None:
+            if not isinstance(raw_ranges, list) or not raw_ranges:
+                library.error(record.path, "physical_line_ranges must be a nonempty array of [start, end] pairs")
+            else:
+                previous_end = 0
+                for ordinal, item in enumerate(raw_ranges, start=1):
+                    label = f"physical_line_ranges[{ordinal}]"
+                    if not isinstance(item, list) or len(item) != 2:
+                        library.error(record.path, f"{label} must be a two-integer [start, end] pair")
+                        continue
+                    start, end = item
+                    if not _is_positive_int(start) or not _is_positive_int(end):
+                        library.error(record.path, f"{label} values must be positive non-boolean integers")
+                        continue
+                    if start > end:
+                        library.error(record.path, f"{label} start must not exceed end")
+                        continue
+                    if start <= previous_end:
+                        library.error(record.path, f"{label} must be sorted and non-overlapping")
+                    previous_end = max(previous_end, end)
+                    valid_ranges.append((start, end))
+            if not indexable_artifact:
+                library.error(record.path, "physical_line_ranges requires an indexable tracked UTF-8 artifact")
+
+        text = data.get("text")
+        raw_segments = data.get("transcription_segments")
+        if text is not None and not reviewed:
+            library.error(record.path, "text requires the inspected or verified state")
+        if text is not None and raw_segments is None:
+            library.error(record.path, "text requires transcription_segments")
+        if raw_segments is not None and text is None:
+            library.error(record.path, "transcription_segments requires text")
+        if (text is not None or raw_segments is not None) and not indexable_artifact:
+            library.error(
+                record.path,
+                "text and transcription_segments require an indexable tracked UTF-8 artifact",
+            )
+
+        if not indexable_artifact or not valid_ranges:
+            continue
+        path_value = artifact.data.get("path")
+        if not _is_string(path_value):
+            continue
+        payload_path = _safe_source_path(library, artifact.path, path_value)
+        if payload_path is None or not payload_path.is_file():
+            continue
+        try:
+            with payload_path.open("rb") as source:
+                raw_lines = list(_iter_physical_lines(source))
+            decoded_lines = [line.decode("utf-8").rstrip("\r\n") for line in raw_lines]
+        except (OSError, UnicodeError) as error:
+            library.error(record.path, f"cannot inspect passage physical lines: {error}")
+            continue
+        line_count = len(decoded_lines)
+        for ordinal, (_start, end) in enumerate(valid_ranges, start=1):
+            if end > line_count:
+                library.error(
+                    record.path,
+                    f"physical_line_ranges[{ordinal}] ends after artifact line {line_count}",
+                )
+
+        if raw_segments is None:
+            continue
+        if not isinstance(raw_segments, list) or not raw_segments:
+            library.error(record.path, "transcription_segments must be a nonempty array of tables")
+            continue
+        segment_texts: list[str] = []
+        previous_line = 0
+        previous_offset = 0
+        for ordinal, segment in enumerate(raw_segments, start=1):
+            label = f"transcription_segments[{ordinal}]"
+            if not isinstance(segment, dict):
+                library.error(record.path, f"{label} must be a table")
+                continue
+            unknown = sorted(set(segment) - PASSAGE_SEGMENT_FIELDS)
+            missing = sorted(PASSAGE_SEGMENT_FIELDS - set(segment))
+            if unknown:
+                library.error(record.path, f"{label} has unknown fields: {', '.join(unknown)}")
+            if missing:
+                library.error(record.path, f"{label} is missing: {', '.join(missing)}")
+            line_number = segment.get("line")
+            segment_text = segment.get("text")
+            if not _is_positive_int(line_number):
+                library.error(record.path, f"{label}.line must be a positive non-boolean integer")
+                continue
+            if not _is_string(segment_text):
+                library.error(record.path, f"{label}.text must be a nonempty string")
+                continue
+            if line_number < previous_line:
+                library.error(record.path, f"{label} must be ordered by line and occurrence")
+            if not any(start <= line_number <= end for start, end in valid_ranges):
+                library.error(record.path, f"{label}.line is outside physical_line_ranges")
+            if line_number > line_count:
+                library.error(record.path, f"{label}.line is after artifact line {line_count}")
+                continue
+            line = decoded_lines[line_number - 1]
+            offset = previous_offset if line_number == previous_line else 0
+            occurrence = line.find(segment_text, offset)
+            if occurrence < 0:
+                library.error(record.path, f"{label}.text is not an exact ordered substring of its raw line")
+            else:
+                previous_offset = occurrence + len(segment_text)
+            previous_line = line_number
+            segment_texts.append(segment_text)
+        if _is_string(text) and _normalized_space(" ".join(segment_texts)) != _normalized_space(text):
+            library.error(record.path, "transcription_segments do not reproduce text exactly after whitespace joining")
+
+
 def _validate_source_tree(library: Library) -> None:
     """Reject files that evade a manifest, schema, or inventory owner."""
 
@@ -1371,7 +1651,7 @@ def _validate_search_receipts(library: Library) -> None:
         matching_line_count = binding.data.get("matching_line_count")
         if (
             target is None
-            or target.record_type not in {"artifact", "corpus"}
+            or target.record_type not in {"artifact", "passage", "corpus"}
             or not _is_string(mode)
             or mode not in SEARCH_MODES
             or not _is_string(query)
@@ -1467,6 +1747,8 @@ def load_library(
     _load_bindings(library)
     _validate_relationships(library)
     _validate_artifacts(library)
+    _validate_support_artifact_references(library)
+    _validate_passage_locators(library)
     _validate_search_receipts(library)
     _validate_source_tree(library)
     _validate_loci(library)
@@ -1532,10 +1814,24 @@ def impact_rows(library: Library, source_id: str, locus: str | None = None) -> l
                 "kind": "document",
                 "id": binding["document"],
                 "type": binding["role"],
+                "source_id": binding["source_id"],
+                "loci": binding["loci"],
+                "states": binding["states"],
                 "path": binding["path"],
             }
         )
-    return sorted(rows, key=lambda row: (row["kind"], row["id"], row["type"], row["path"]))
+    return sorted(
+        rows,
+        key=lambda row: (
+            row["kind"],
+            row["id"],
+            row["type"],
+            row.get("source_id", ""),
+            tuple(row.get("loci", [])),
+            tuple(row.get("states", [])),
+            row["path"],
+        ),
+    )
 
 
 def _artifact_ids_for_search(library: Library, source_id: str) -> list[str]:
@@ -1579,9 +1875,14 @@ def search_rows(library: Library, source_id: str, query: str, *, case_sensitive:
     needle = query if case_sensitive else query.casefold()
     rows: list[dict[str, Any]] = []
     source_record = library.records[source_id]
-    if source_record.record_type == "passage":
+    passage_ranges = (
+        _physical_line_ranges(source_record)
+        if source_record.record_type == "passage"
+        else []
+    )
+    if source_record.record_type == "passage" and not passage_ranges:
         raise SourceLibraryQueryError(
-            "passage search is undefined until the passage records exact byte or line ranges; search its artifact explicitly"
+            "passage search requires validated physical_line_ranges"
         )
     selected = _artifact_ids_for_search(library, source_id)
     eligible = [
@@ -1589,9 +1890,9 @@ def search_rows(library: Library, source_id: str, query: str, *, case_sensitive:
         for artifact_id in selected
         if _is_search_eligible_artifact(library.records[artifact_id])
     ]
-    if source_record.record_type in {"artifact", "corpus"} and eligible != selected:
+    if source_record.record_type in {"artifact", "passage", "corpus"} and eligible != selected:
         raise SourceLibraryQueryError(
-            "exact artifact or corpus search boundary contains a non-indexable artifact"
+            "exact artifact, ranged passage, or corpus search boundary contains a non-indexable artifact"
         )
     if not eligible:
         raise SourceLibraryQueryError("search boundary contains no indexable tracked artifacts")
@@ -1609,10 +1910,17 @@ def search_rows(library: Library, source_id: str, query: str, *, case_sensitive:
             byte_size = 0
             artifact_rows: list[dict[str, Any]] = []
             with path.open("rb") as source:
-                for line_number, raw_line in enumerate(source, start=1):
+                for line_number, raw_line in enumerate(
+                    _iter_physical_lines(source), start=1
+                ):
                     digest.update(raw_line)
                     byte_size += len(raw_line)
                     line = raw_line.decode("utf-8").rstrip("\r\n")
+                    if passage_ranges and not any(
+                        start <= line_number <= end
+                        for start, end in passage_ranges
+                    ):
+                        continue
                     haystack = line if case_sensitive else line.casefold()
                     if needle in haystack:
                         artifact_rows.append(
@@ -1721,7 +2029,11 @@ def command_impact(args: argparse.Namespace) -> int:
     except KeyError:
         print(f"source-library error: unknown source id: {args.source_id}", file=sys.stderr)
         return 1
-    _print_rows(rows, args.format, ("kind", "id", "type", "path"))
+    _print_rows(
+        rows,
+        args.format,
+        ("kind", "id", "type", "source_id", "loci", "states", "path"),
+    )
     return 0
 
 

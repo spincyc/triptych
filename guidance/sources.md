@@ -43,7 +43,9 @@ Keep the following objects distinct:
   image, HTML response, EPUB, XML file, OCR transcription, diplomatic text, or
   normalized derivative. An artifact records its cryptographic hash when bytes
   were acquired, provenance, retrieval route and date, media type, extent,
-  rights status, storage disposition, and derivation relationships.
+  rights status, storage disposition, derivation relationships, and any
+  first-class mapping from an embedded relative reference to a separately
+  owned support artifact.
 - **Passage** — an addressable locus in an edition or artifact. A passage record
   may preserve a checked transcription, page or line map, discrepancy, or
   verification event. It never erases the edition and artifact that control it.
@@ -137,6 +139,15 @@ Every tracked payload must remain beneath its own artifact manifest, be the only
 payload owned by that manifest, and be covered by the manifest's rights record.
 Unmanifested files and duplicate retained bytes fail validation.
 
+Do not rewrite exact source bytes merely to make an embedded relative link fit
+the canonical library layout. Map the literal reference to its separately
+manifested exact support artifact. The mapping participates in dependency and
+fingerprint impact while leaving search-corpus membership explicit. A source
+package can then be materialized with its original relative filenames without
+duplicating the canonical bytes. Treat the stored reference literally: it must
+be an undecoded canonical relative POSIX path, with no percent encoding,
+traversal, dot or empty segments, URI authority, query, or fragment.
+
 ## Research and verification states
 
 Availability and evidentiary review are orthogonal. Use these terms exactly:
@@ -147,8 +158,8 @@ Availability and evidentiary review are orthogonal. Use these terms exactly:
 - **indexable** — validation has established that an exact tracked text
   artifact can be searched by the registered raw-line mechanism; this is a
   capability, not an assertion that an index was built;
-- **searched** — a recorded query or method was run over a named corpus or
-  artifact snapshot for a stated research question;
+- **searched** — a recorded query or method was run over a named corpus,
+  artifact snapshot, or machine-ranged passage for a stated research question;
 - **inspected** — a person or agent read the identified passage and the stated
   amount of surrounding context; and
 - **verified** — wording, attribution, edition identity, or a publication claim
@@ -204,12 +215,13 @@ consequential claims or structured inventories.
 
 Any binding that records acquisition, search, inspection, or verification pins
 the complete bound record and its evidence ancestors with the schema-defined
-source fingerprint. Its represented artifact or corpus boundary must have exact
-hashes; search additionally requires registered indexable bytes, a canonical
-tool mode, and a replayed matching-line count. Verification records its date. A
-changed fingerprint is a consumer review obligation, not permission to copy a
-new value mechanically. Catalog-only leads have no fingerprint because no
-exact witness has yet been reviewed.
+source fingerprint. Its represented artifact, ranged passage, or corpus
+boundary must have exact hashes; a passage search also requires validated
+physical-line ranges. Search additionally requires registered indexable bytes,
+a canonical tool mode, and a replayed matching-line count. Verification records
+its date. A changed fingerprint is a consumer review obligation, not permission
+to copy a new value mechanically. Catalog-only leads have no fingerprint
+because no exact witness has yet been reviewed.
 
 When a publication makes a work-wide, author-wide, completeness, originality,
 or negative-search claim, bind a versioned corpus or artifact snapshot and
@@ -217,8 +229,8 @@ record the material search boundary, languages, methods, and limitations.
 Phrase negative results as bounded and correctable. A literal search cannot
 exclude synonyms, inflection, paraphrase, translation difference, damaged OCR,
 unindexed material, or unsearched languages. The repository's built-in search
-is narrower still: it tests literal text within each physical UTF-8 line and
-does not cross line or raw-markup boundaries. Use an exact registered normalized
+is narrower still: it tests literal text within each LF-delimited physical
+UTF-8 line and does not cross line or raw-markup boundaries. Use an exact registered normalized
 derivative for broader content search, and never promote an empty raw-line
 result into a semantic absence claim. Schema version 1 accepts a
 `negative-search` binding only over exact `text/plain` search representations,

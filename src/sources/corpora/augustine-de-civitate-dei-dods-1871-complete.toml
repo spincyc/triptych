@@ -1,0 +1,12 @@
+schema = 1
+record_type = "corpus"
+id = "corpus.augustine.de-civitate-dei.dods-1871-complete"
+title = "De civitate Dei — complete Dods 1871 English corpus"
+members = [
+  "artifact.augustine.de-civitate-dei.dods-1871.pg45304-body-lf",
+  "artifact.augustine.de-civitate-dei.dods-1871.pg45305-body-lf",
+]
+snapshot = "sha256:877c81390ca993202bf48d8d26b8eb42544020a958aaa9658b5f20d15bc91f20"
+languages = ["en"]
+scope = "All twenty-two books in both volumes of the 1871 English edition, including historical front matter, notes, publisher matter, and Project Gutenberg transcriber notes retained inside the normalized edition bodies."
+completeness = "Complete for the two named normalized Project Gutenberg transcriptions; their notes disclose punctuation and spelling corrections, so this is not a facsimile, diplomatic transcription, complete English translation history, or reception history."

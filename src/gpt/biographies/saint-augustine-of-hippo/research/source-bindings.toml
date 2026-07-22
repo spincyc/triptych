@@ -1,0 +1,98 @@
+schema = 1
+record_type = "bindings"
+document = "biographies/saint-augustine-of-hippo"
+
+[[bindings]]
+source_id = "corpus.augustine.de-civitate-dei.bilingual-tracer-2026-07-22"
+role = "lead"
+states = ["cataloged", "acquired"]
+context = "The complete retained Dods 1871 English and Hoffmann CSEL 40 Latin text representations are available for wider biographical and intellectual-historical examination. This tracer inspected the two loci used for hard-legacy claims, not the whole work."
+source_fingerprint = "sha256:8376e0d2b3fffdf571a534220acf57717808a93bb4bed4c6d4b5cda7f7613148"
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45305-body-lf"
+loci = ["18.46"]
+role = "lead"
+states = ["cataloged", "acquired", "searched"]
+context = "A literal raw-line locator search of the exact English volume located City of God 18.46 before the complete chapter was inspected for both its protective and subordinating elements."
+search_scope = "Exact normalized Dods 1871 volume II artifact, books 14-22 and retained historical matter."
+searched_on = "2026-07-22"
+search_mode = "raw-line-literal-casefold-v1"
+query = "Christ was born in Bethlehem"
+method = "Replayable scripts/source-library physical-line literal search."
+matching_line_count = 1
+source_fingerprint = "sha256:6bd16ca34656e4a17b7967a6b8ce070ebb4fdffa9b8c855088ab3e08e30bf996"
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-2-tei"
+loci = ["18.46"]
+role = "lead"
+states = ["cataloged", "acquired", "searched"]
+context = "A literal raw-XML-line locator search of the exact Latin volume located City of God 18.46 before the complete chapter and apparatus were inspected."
+search_scope = "Exact Hoffmann CSEL 40.2 TEI artifact at pinned csel-dev commit 2813e3a52b4206df0324299e5110e5bd0d95cee4."
+searched_on = "2026-07-22"
+search_mode = "raw-line-literal-casefold-v1"
+query = "natus est Christus secundum praecedentem"
+method = "Replayable scripts/source-library physical-line literal search."
+matching_line_count = 1
+source_fingerprint = "sha256:c8c46915ec1d5dd7bf34a4332481bd214a4c8c42aadf62da985ec3fd29224b9a"
+
+[[bindings]]
+source_id = "passage.augustine.de-civitate-dei.dods-1871.18.46"
+loci = ["18.46"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The complete chapter was read. The binding preserves Augustine's claim that Jewish Scriptures witness to Christian prophecy together with his subordinating account of Jewish unbelief and dispersion; it records his argument without endorsing it."
+source_fingerprint = "sha256:71b8500305e3e7c716c4940a0f97f7c316ab9fbbbbcb6f86bed31d73441a2bf1"
+
+[[bindings]]
+source_id = "passage.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.18.46"
+loci = ["18.46"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "The complete Latin TEI chapter and apparatus were read for the same protective and subordinating elements. This is textual control, not project endorsement or page-image collation."
+source_fingerprint = "sha256:1009081fe1953d3d87ddf2d0cacaff20bdaaf9037d2d271c83e26d085fe945b1"
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45305-body-lf"
+loci = ["19.15"]
+role = "lead"
+states = ["cataloged", "acquired", "searched"]
+context = "A separate literal raw-line locator search of the same exact English volume found the sin-and-slavery formulation before the complete chapter was inspected."
+search_scope = "Exact normalized Dods 1871 volume II artifact, books 14-22 and retained historical matter."
+searched_on = "2026-07-22"
+search_mode = "raw-line-literal-casefold-v1"
+query = "condition of slavery is the result of sin"
+method = "Replayable scripts/source-library physical-line literal search."
+matching_line_count = 1
+source_fingerprint = "sha256:6bd16ca34656e4a17b7967a6b8ce070ebb4fdffa9b8c855088ab3e08e30bf996"
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-2-tei"
+loci = ["19.15"]
+role = "lead"
+states = ["cataloged", "acquired", "searched"]
+context = "A separate literal raw-XML-line locator search of the same exact Latin volume found the servitude-and-sin formulation before the complete chapter and apparatus were inspected."
+search_scope = "Exact Hoffmann CSEL 40.2 TEI artifact at pinned csel-dev commit 2813e3a52b4206df0324299e5110e5bd0d95cee4."
+searched_on = "2026-07-22"
+search_mode = "raw-line-literal-casefold-v1"
+query = "Condicio quippe seruitutis iure intellegitur inposita"
+method = "Replayable scripts/source-library physical-line literal search."
+matching_line_count = 1
+source_fingerprint = "sha256:c8c46915ec1d5dd7bf34a4332481bd214a4c8c42aadf62da985ec3fd29224b9a"
+
+[[bindings]]
+source_id = "passage.augustine.de-civitate-dei.dods-1871.19.15"
+loci = ["19.15"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The complete chapter was read for both sides of the biographical claim: human domination is denied a place in created nature and traced to sin, while servitude is also accepted as penal within fallen order. No abolitionist program is attributed."
+source_fingerprint = "sha256:73c0765ecafa961e74f5829e7c3d5a9d3eaa45c7b5fe156112da48a88c5fd163"
+
+[[bindings]]
+source_id = "passage.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.19.15"
+loci = ["19.15"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "The complete Latin TEI chapter and apparatus were read for the same natural-order, sin, penal-servitude, and eschatological qualifications. This is textual control, not endorsement, abolitionist attribution, or page-image collation."
+source_fingerprint = "sha256:eb292fba786befa27b8343a4de80b8c50203cb61f6b42c675fbb1c4cbf9568b7"

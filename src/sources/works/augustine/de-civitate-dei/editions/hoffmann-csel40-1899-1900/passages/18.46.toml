@@ -1,0 +1,16 @@
+schema = 1
+record_type = "passage"
+id = "passage.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.18.46"
+edition_id = "edition.augustine.de-civitate-dei.hoffmann-csel40-1899-1900"
+artifact_id = "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-2-tei"
+artifact_sha256 = "0246eaf2cf9c7dc946469582c46da83e959c61477c5631eb3b02f0428725069a"
+locus = "18.46"
+states = ["cataloged", "acquired", "inspected"]
+context = "The complete TEI chapter division, including its apparatus, was inspected at physical XML lines 14840-14923. The record preserves both the claimed scriptural-witness function and the passage's subordinating account of Jewish unbelief and dispersion."
+physical_line_ranges = [[14840, 14923]]
+text = "per scripturas suas testimonio nobis sunt prophetias nos non finxisse de Christo;"
+transcription_segments = [
+  { line = 14876, text = "per scripturas suas testimonio nobis sunt prophetias" },
+  { line = 14877, text = "nos non finxisse de Christo;" },
+]
+notes = "Physical XML lines are not printed CSEL lines. The TEI was not collated against page images, and the passage is retained as evidence for Augustine's argument rather than project endorsement."

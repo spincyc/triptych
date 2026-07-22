@@ -1,0 +1,15 @@
+schema = 1
+record_type = "passage"
+id = "passage.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.19.15"
+edition_id = "edition.augustine.de-civitate-dei.hoffmann-csel40-1899-1900"
+artifact_id = "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-2-tei"
+artifact_sha256 = "0246eaf2cf9c7dc946469582c46da83e959c61477c5631eb3b02f0428725069a"
+locus = "19.15"
+states = ["cataloged", "acquired", "inspected"]
+context = "The complete TEI chapter division, including its apparatus, was inspected at physical XML lines 17169-17242. It denies that human dominion over humans belonged to the created natural order, traces servitude to sin, also treats it as penal within fallen order, counsels faithful service where civil freedom is unavailable, and looks toward the passing of unrighteousness and human power."
+physical_line_ranges = [[17169, 17242]]
+text = "Nomen itaque istuc culpa meruit, non natura."
+transcription_segments = [
+  { line = 17196, text = "Nomen itaque istuc culpa meruit, non natura." },
+]
+notes = "Physical XML lines are not printed CSEL lines. The TEI was not collated against page images. The passage is retained as evidence for Augustine's complex argument, not as project endorsement or an abolitionist claim."

@@ -1,0 +1,15 @@
+schema = 1
+record_type = "corpus"
+id = "corpus.augustine.de-civitate-dei.bilingual-tracer-2026-07-22"
+title = "De civitate Dei — retained bilingual research corpus"
+members = [
+  "artifact.augustine.de-civitate-dei.dods-1871.pg45304-body-lf",
+  "artifact.augustine.de-civitate-dei.dods-1871.pg45305-body-lf",
+  "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-1-tei",
+  "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-2-tei",
+]
+snapshot = "sha256:9bb816b731740fea492be68fa7d54fdb85e7082d51ab398e33bd09f68a38df26"
+languages = ["la", "en"]
+scope = "The retained normalized Dods 1871 English text and Hoffmann CSEL 40 Latin TEI text, available for bounded whole-work raw-line search and later passage inspection. Non-text support assets are excluded."
+completeness = "Complete at the work level for the two named text representations only. The Dods transcription includes disclosed corrections and the CSEL TEI was not collated here against page images; this is not every edition, translation, manuscript, commentary, or reception witness."
+notes = "Acquisition does not establish that any publication searched or inspected the entire corpus."

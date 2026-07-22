@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.19.13"
+edition_id = "edition.augustine.de-civitate-dei.hoffmann-csel40-1899-1900"
+artifact_id = "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-2-tei"
+artifact_sha256 = "0246eaf2cf9c7dc946469582c46da83e959c61477c5631eb3b02f0428725069a"
+locus = "19.13"
+states = ["cataloged", "acquired", "inspected"]
+context = "The complete TEI chapter division, including its apparatus, was inspected at physical XML lines 16975-17080 for bodily, rational, domestic, civic, celestial, and universal peace and the distinction between temporal and final peace."
+physical_line_ranges = [[16975, 17080]]
+text = "pax omnium rerum tranquillitas ordinis. Ordo est parium dispariumque rerum sua cuique loca tribuens dispositio."
+transcription_segments = [
+  { line = 16992, text = "pax omnium rerum tranquillitas" },
+  { line = 16993, text = "ordinis. Ordo est parium dispariumque rerum sua cuique" },
+  { line = 16994, text = "loca tribuens dispositio." },
+]
+notes = "The key phrase crosses physical XML lines 16992-16993. Physical XML lines are not printed CSEL lines, and the TEI was not collated against page images."

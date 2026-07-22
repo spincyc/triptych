@@ -1,0 +1,12 @@
+schema = 1
+record_type = "corpus"
+id = "corpus.augustine.de-civitate-dei.hoffmann-csel40-2813e3a"
+title = "De civitate Dei — complete Hoffmann CSEL 40 Latin corpus"
+members = [
+  "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-1-tei",
+  "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-2-tei",
+]
+snapshot = "sha256:56db02fc1fb4737074423a37851c30a48f96b7b965ff98443adef89e9a4fc35d"
+languages = ["la"]
+scope = "All twenty-two books in the two TEI-encoded text files based on Hoffmann's CSEL 40.1-40.2 at OpenGreekAndLatin csel-dev commit 2813e3a52b4206df0324299e5110e5bd0d95cee4. The separately retained preface figure is a support asset, not a search member."
+completeness = "Complete as a text-search boundary for the two named TEI edition files; not a manuscript census, page-image collation, or complete critical-edition history."
