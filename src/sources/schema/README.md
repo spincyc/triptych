@@ -1,8 +1,10 @@
 # Source Manifest Schema
 
-`scripts/source-library` is the executable schema and validator. Version 1 is
-provisional until the first complete-source tracer has exercised and frozen
-it. It uses five source record types and one publication-local binding record:
+`scripts/source-library` is the executable schema and validator. Version 1 was
+frozen on 2026-07-22 after the complete-source City of God tracer exercised its
+identity, artifact, corpus, passage, binding, rights, search, fingerprint, and
+impact semantics. It uses five source record types and one publication-local
+binding record:
 
 - `work`
 - `edition`
@@ -96,10 +98,10 @@ matching-line count to agree.
 A `negative-search` requires zero matching lines and only `text/plain` search
 representations; register a plain-text derivative when markup or layout impairs
 content search. The built-in modes examine literal text within one physical
-LF-delimited UTF-8 line at a time. They do not establish absence across line breaks,
-normalized whitespace, inflection, synonyms, or translations. Direct textual
-use binds a passage or supplies explicit loci. A verified binding records
-`verified_on`.
+LF-delimited UTF-8 line at a time. They do not establish absence across line
+breaks, normalized whitespace, inflection, synonyms, or translations. Direct
+textual use binds a passage or supplies explicit loci. A verified binding
+records `verified_on`.
 
 Bindings with any of `acquired`, `searched`, `inspected`, or `verified` also
 carry a canonical `source_fingerprint`; `cataloged`-only bindings do not. The
@@ -137,7 +139,8 @@ id = "corpus.augustine.de-civitate-dei.complete-english"
 ```
 
 The validator's tests contain minimal complete fixtures and adversarial rights,
-ownership, type, graph, snapshot, and search cases. During the provisional
-tracer period, a schema adjustment must update this file and those tests in the
-same commit. After the freeze checkpoint, changing accepted fields or semantics
-requires a schema-version decision under `guidance/sources.md`.
+ownership, type, graph, snapshot, and search cases. Every implementation change
+must update this file and those tests in the same commit when their documented
+surface is affected. Changing accepted fields, manifest meaning, fingerprint
+inputs, or search-receipt semantics requires the schema-version decision in
+`guidance/sources.md` and a changelog entry.
