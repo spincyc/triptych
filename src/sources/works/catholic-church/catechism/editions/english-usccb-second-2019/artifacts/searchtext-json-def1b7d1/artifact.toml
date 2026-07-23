@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.catechism.english-usccb-second-2019.searchtext-json-def1b7d1"
+edition_id = "edition.catholic-church.catechism.english-usccb-second-2019"
+artifact_type = "flipbook-search-json"
+media_type = "application/json"
+storage = "restricted"
+rights_status = "restricted"
+rights_basis = "The edition imprint reserves the represented Catechism and translation rights, and no permission to redistribute the USCCB flipbook's extracted search text was established. The exact search representation is therefore registered but not retained."
+source_url = "https://www.usccb.org/sites/default/files/flipbooks/catechism/files/assets/mobile/search/searchtext.js"
+provenance = "Exact UTF-8-with-BOM JSON response acquired directly from the USCCB flipbook search asset route over HTTPS. Inspection found 924 page objects with unique @ID values 1 through 924."
+retrieved = "2026-07-23"
+sha256 = "def1b7d1465a903d915d5505aae3d99b719167a3f456f1dc2d9bdd676109f49f"
+byte_size = 1999929
+indexable = false
+notes = "A platform-generated search/extraction representation whose array order is not canonical page order. It may contain extraction defects and does not preserve page images, typography, or guaranteed paragraph order. Because the restricted bytes are absent from an ordinary clone, source-library search cannot replay it; the hash supports bounded reacquisition and identity checking only."

@@ -1,0 +1,11 @@
+schema = 1
+record_type = "corpus"
+id = "corpus.catholic-church.catechism.english-usccb-second-2019-search-representation-2026-07-23"
+title = "Catechism of the Catholic Church, USCCB second edition — 2026-07-23 flipbook search representation"
+members = [
+  "artifact.catholic-church.catechism.english-usccb-second-2019.searchtext-json-def1b7d1",
+]
+snapshot = "sha256:a736038624eca4a61cfee391511c30a1b334225ce225bd4dcd02187ac4d0be0a"
+languages = ["en"]
+scope = "The one exact USCCB flipbook search JSON response acquired 2026-07-23, containing 924 page objects with unique platform @ID values 1 through 924."
+completeness = "Complete only for all 924 numbered entries delivered by that exact search endpoint at retrieval. It is not a complete intellectual or textual Catechism corpus, facsimile, diplomatic transcription, guarantee of canonical paragraph order, verification of extraction fidelity, collection of every edition or translation, or promise about any future endpoint state. Restricted storage also means an ordinary clone cannot search or replay the corpus without lawful reacquisition of the exact bytes."

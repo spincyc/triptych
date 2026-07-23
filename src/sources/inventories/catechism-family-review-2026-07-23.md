@@ -66,7 +66,8 @@ for identity and rights review. Their bytes are not repository content.
 
 | Candidate | SHA-256 | Bytes | Finding |
 |---|---|---:|---|
-| Holy See Latin index | `fb4587784aefc57043cf32cb7e9647f3307a83a51ae1339c40890392eea04b67` | 71,014 | Official Latin typical-edition navigation artifact |
+| Holy See Latin index | `fb4587784aefc57043cf32cb7e9647f3307a83a51ae1339c40890392eea04b67` | 71,014 | Official Latin navigation artifact in a dated web state |
+| Holy See Latin Fifth Commandment page | `8d5f9d14cae3c414cf7584680e8dabb088fce408f250da45f274cb13698b1c80` | 49,562 | Contains revised Latin paragraph 2267 and a separately labelled preservation of the preceding wording |
 | Holy See archived English index | `92199edc96afdb8d76df6682fced3a2e631f786c2d171abfed49a3dc64e3e05d` | 38,941 | IntraText delivery dated 2003-11-04; not silently current |
 | Holy See current English index | `9d6cfe2fc10b3479cc129fdfddf16b0cc924ab1a61f2ec37ac6a6604af9a7ca3` | 106,296 | Mutable current navigation artifact |
 | Holy See current English “Respect for Human Life” page | `9e71e262a054b2c617c4a0b29bf2c68937c96b986bf3613ddd7b729e1309fe16` | 123,465 | Contains the 2018 wording of paragraph 2267 |
@@ -100,6 +101,9 @@ The first canonical slice will use these stable identities:
 
 - `work.catholic-church.catechism`;
 - `edition.catholic-church.catechism.latin-typical-1997`;
+- `edition.catholic-church.catechism.latin-vatican-web-2026-07-23`, because
+  the acquired Latin pages incorporate revised paragraph 2267 and cannot be
+  attached silently to the fixed 1997 baseline;
 - `edition.catholic-church.catechism.english-vatican-archive-2003`;
 - `edition.catholic-church.catechism.english-vatican-web-2026-07-23`;
 - `edition.catholic-church.catechism.english-usccb-second-2019`;
@@ -110,12 +114,14 @@ The first canonical slice will use these stable identities:
 - `work.holy-see.catechism-2267-rescript-2018`; and
 - distinct Latin and English delivery editions and artifacts for that act.
 
-The complete USCCB search representation makes whole-book examination
-possible without pretending that its extracted text is a facsimile or that a
-whole-corpus acquisition verifies any publication claim. Its order is the
-flipbook search system’s order rather than canonical paragraph order, and its
-text can contain extraction defects. It is a restricted discovery and
-inspection witness; page images or another authoritative presentation remain
+The bounded USCCB search representation identifies all 924 numbered entries
+delivered by that exact endpoint, without pretending that its extracted text
+is a complete intellectual or textual corpus, a facsimile, or verification of
+any publication claim. Its array order is not canonical page order, and its
+text can contain extraction defects. Because the restricted bytes are not
+distributed, an ordinary clone cannot search or replay it; the exact hash and
+entry coordinates instead support bounded lawful reacquisition and manual
+reinspection. Page images or another authoritative presentation remain
 necessary where typography, punctuation, or exact formula wording is
 consequential.
 

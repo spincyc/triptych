@@ -5,10 +5,10 @@ inventory_path = "src/sources/inventories/publications-v1.toml"
 inventory_snapshot = "sha256:37d8f9634c13dcf239385cb963f863bf70a9513a83ca04c6dbbe47ad3c5b99cd"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:dafeabb5de4701ba2d641eaed5f3c550cb19836e6140a6cb39f44a74cc4e1c92"
-canonical_catalog_snapshot = "sha256:47edf48497a9215ea5ed04b1a3127c746f9437b4ee25713060f5d39f30b1530e"
+canonical_catalog_snapshot = "sha256:81801e92b3f40cda34c879f6101d91245c0b6b10f3ec17ba4d0993bded4aa3ea"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:2b3f6d19f32f058c9c9bdc077097bc91f5918b243206e4a282a9060d1e850c87"
+snapshot = "sha256:e623e6e5024467f4664ec95cecb0e7181c2b5252d1604f69bb3fcdb0d7a79ad7"
 
 [[families]]
 id = "family.acta.aas-ass"
@@ -47,7 +47,7 @@ disposition = "bind-existing"
 priority = "p0"
 canonical_ids = ["artifact.augustine.de-civitate-dei.dods-1871.pg45304-body-lf", "artifact.augustine.de-civitate-dei.dods-1871.pg45304-raw", "artifact.augustine.de-civitate-dei.dods-1871.pg45305-body-lf", "artifact.augustine.de-civitate-dei.dods-1871.pg45305-raw", "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-1-fig1", "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-1-tei", "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-2-tei", "corpus.augustine.de-civitate-dei.bilingual-tracer-2026-07-22", "corpus.augustine.de-civitate-dei.dods-1871-complete", "corpus.augustine.de-civitate-dei.hoffmann-csel40-2813e3a", "edition.augustine.de-civitate-dei.dods-1871", "edition.augustine.de-civitate-dei.hoffmann-csel40-1899-1900", "passage.augustine.de-civitate-dei.dods-1871.10.5-6", "passage.augustine.de-civitate-dei.dods-1871.15.22", "passage.augustine.de-civitate-dei.dods-1871.18.46", "passage.augustine.de-civitate-dei.dods-1871.19.13", "passage.augustine.de-civitate-dei.dods-1871.19.15", "passage.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.10.5-6", "passage.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.15.22", "passage.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.18.46", "passage.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.19.13", "passage.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.19.15", "work.augustine.de-civitate-dei"]
 trace_patterns = ["City of God", "De civitate Dei"]
-reviewed_on = "2026-07-22"
+reviewed_on = "2026-07-23"
 notes = "Reuse the existing work, editions, exact artifacts, passages, and bounded corpora; add publication bindings only after each legacy use is reviewed."
 
 [[families]]
@@ -57,18 +57,18 @@ kind = "mixed-cluster"
 source_categories = ["magisterial"]
 identity_confidence = "confirmed"
 identity_gaps = ["expression"]
-artifact_availability = "candidate-complete"
+artifact_availability = "canonicalized"
 storage_plan = ["restricted"]
 rights_review = "partially-reviewed"
-mutability = "officially-mutable"
+mutability = "mixed"
 freshness_rule = "Pin each language and official web or print state by date and review amendments before updating consumers."
 evidence_ceiling = "edition-locus"
-disposition = "split-then-canonicalize"
+disposition = "bind-existing"
 priority = "p0"
-canonical_ids = []
+canonical_ids = ["artifact.catholic-church.catechism.english-usccb-second-2019.flipbook-landing-html-f90d8aab", "artifact.catholic-church.catechism.english-usccb-second-2019.imprint-html-10b80026", "artifact.catholic-church.catechism.english-usccb-second-2019.searchtext-json-def1b7d1", "artifact.catholic-church.catechism.english-usccb-second-2019.workspace-js-a093c697", "artifact.catholic-church.catechism.english-vatican-archive-2003.index-html-92199edc", "artifact.catholic-church.catechism.english-vatican-web-2026-07-23.index-html-9d6cfe2f", "artifact.catholic-church.catechism.english-vatican-web-2026-07-23.respect-human-life-html-9e71e262", "artifact.catholic-church.catechism.latin-vatican-web-2026-07-23.fifth-commandment-html-8d5f9d14", "artifact.catholic-church.catechism.latin-vatican-web-2026-07-23.index-html-fb458778", "artifact.holy-see.catechism-2267-rescript-2018.english-2018.vatican-html-2026-07-23-fa5cea2c", "artifact.holy-see.catechism-2267-rescript-2018.latin-2018.vatican-html-2026-07-23-6078b43b", "corpus.catholic-church.catechism.english-usccb-second-2019-search-representation-2026-07-23", "edition.catholic-church.catechism.english-usccb-second-2019", "edition.catholic-church.catechism.english-vatican-archive-2003", "edition.catholic-church.catechism.english-vatican-web-2026-07-23", "edition.catholic-church.catechism.latin-typical-1997", "edition.catholic-church.catechism.latin-vatican-web-2026-07-23", "edition.holy-see.catechism-2267-rescript-2018.english-2018", "edition.holy-see.catechism-2267-rescript-2018.latin-2018", "passage.catholic-church.catechism.english-usccb-second-2019.1131", "passage.catholic-church.catechism.english-usccb-second-2019.1240", "passage.catholic-church.catechism.english-usccb-second-2019.1300", "passage.catholic-church.catechism.english-usccb-second-2019.1449", "passage.catholic-church.catechism.english-usccb-second-2019.2267", "passage.catholic-church.catechism.english-usccb-second-2019.499", "passage.catholic-church.catechism.english-usccb-second-2019.65-67", "passage.catholic-church.catechism.english-usccb-second-2019.970", "passage.catholic-church.catechism.english-vatican-web-2026-07-23.2267", "passage.catholic-church.catechism.latin-vatican-web-2026-07-23.2267", "passage.holy-see.catechism-2267-rescript-2018.english-2018.new-text-of-catechism-2267", "passage.holy-see.catechism-2267-rescript-2018.latin-2018.new-text-of-catechism-2267", "work.catholic-church.catechism", "work.holy-see.catechism-2267-rescript-2018"]
 trace_patterns = ["Catechism of the Catholic Church", "Catechismus Catholicae Ecclesiae"]
 reviewed_on = "2026-07-23"
-notes = "The 2026-07-23 family review resolves 42 positive owners and identifies a complete 924-page official USCCB English search representation, distinct Latin, archived-English, current-English, and 2018-amendment states, and a restricted-rights boundary. Canonicalize those identities without treating paragraph numbers, delivery hosts, or legacy verification prose as exact evidence."
+notes = "The 2026-07-23 family review resolves 42 positive owners and identifies an exact bounded 924-entry official USCCB English search representation, distinct fixed and amended Latin states, archived-English and current-English states, the 2018 amendment act, and a restricted-rights boundary. Canonicalize those identities without treating paragraph numbers, delivery hosts, or legacy verification prose as exact evidence; restricted bytes are not ordinary-clone searchable."
 
 [[families]]
 id = "family.holy-see.cceo-1990"
@@ -187,7 +187,7 @@ disposition = "bind-existing"
 priority = "p0"
 canonical_ids = ["artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu", "artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu-ocr", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf", "edition.catholic-church.missale-romanum.benziger-iuxta-typicam-1962", "edition.catholic-church.missale-romanum.vatican-typica-1962", "work.catholic-church.missale-romanum"]
 trace_patterns = ["(?:Missale Romanum.{0,40}1962|1962.{0,40}(?:Roman )?Missal)"]
-reviewed_on = "2026-07-22"
+reviewed_on = "2026-07-23"
 notes = "Reuse the canonical work, distinct Vatican typical and Benziger iuxta-typicam editions, and three exact remote artifacts. Artifact-level rights were reviewed but remain unresolved, so no payload is stored; publication loci still require separate binding review."
 
 [[families]]
