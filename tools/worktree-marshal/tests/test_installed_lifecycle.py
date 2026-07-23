@@ -3,20 +3,26 @@
 
 from __future__ import annotations
 
-import importlib.util
 import json
 import os
 import shutil
 import subprocess
-import sys
-import tarfile
-import tempfile
 import unittest
 from pathlib import Path
 
+if __package__:
+    from ._artifact_fixture import (
+        SETUPTOOLS_AVAILABLE,
+        get_built_artifacts,
+    )
+else:
+    from _artifact_fixture import (  # type: ignore[import-not-found]
+        SETUPTOOLS_AVAILABLE,
+        get_built_artifacts,
+    )
+
 
 PACKAGE_ROOT = Path(__file__).resolve().parents[1]
-SETUPTOOLS_AVAILABLE = importlib.util.find_spec("setuptools") is not None
 COMMAND_TIMEOUT_SECONDS = 60
 
 
@@ -45,10 +51,24 @@ workdir_index = arguments.index("-C")
 workdir = Path(arguments[workdir_index + 1]).resolve()
 root = Path(git(workdir, "rev-parse", "--show-toplevel").stdout.strip()).resolve()
 
-if os.environ.get("FAKE_CODEX_ACTION") == "commit":
-    (root / "agent-result.txt").write_text("installed result\\n", encoding="utf-8")
+action = os.environ.get("FAKE_CODEX_ACTION")
+if action == "commit":
+    (root / "agent-result.txt").write_text(
+        os.environ.get("FAKE_CODEX_CONTENT", "installed result\\n"),
+        encoding="utf-8",
+    )
     git(root, "add", "agent-result.txt")
     git(root, "commit", "-m", "Installed agent result")
+elif action == "stage-conflict":
+    conflict = root / os.environ.get(
+        "FAKE_CODEX_CONFLICT_PATH",
+        "agent-result.txt",
+    )
+    conflict.write_text(
+        os.environ.get("FAKE_CODEX_CONTENT", "installed resolved result\\n"),
+        encoding="utf-8",
+    )
+    git(root, "add", str(conflict.relative_to(root)))
 
 raise SystemExit(int(os.environ.get("FAKE_CODEX_EXIT", "0")))
 """
@@ -106,129 +126,18 @@ class InstalledLifecycleTests(unittest.TestCase):
             raise AssertionError("GNU Make is unavailable")
         cls.make_executable = Path(make).resolve()
 
-        cls.temporary = tempfile.TemporaryDirectory(
-            prefix="worktree-marshal-installed-lifecycle-"
-        )
-        cls.addClassCleanup(cls.temporary.cleanup)
-        cls.root = Path(cls.temporary.name)
-        source = cls.root / "source"
-        sdist_artifacts = cls.root / "sdist-artifacts"
-        rebuilt_artifacts = cls.root / "rebuilt-artifacts"
-        extracted = cls.root / "extracted-sdist"
-        cls.copied_build_source = source
-        cls.extracted_sdist = extracted
-        shutil.copytree(
-            PACKAGE_ROOT,
-            source,
-            ignore=shutil.ignore_patterns(
-                "__pycache__",
-                "*.pyc",
-                "*.pyo",
-                "*.egg-info",
-                "build",
-                "dist",
-            ),
-        )
-        sdist_artifacts.mkdir()
-        rebuilt_artifacts.mkdir()
-        extracted.mkdir()
-
-        build_environment = os.environ.copy()
-        build_environment.pop("PYTHONHOME", None)
-        build_environment.pop("PYTHONPATH", None)
-        build_environment["PYTHONDONTWRITEBYTECODE"] = "1"
-        cls.checked(
-            [
-                sys.executable,
-                "-c",
-                (
-                    "import pathlib, sys; "
-                    "from setuptools.build_meta import build_sdist; "
-                    "build_sdist(str(pathlib.Path(sys.argv[1])))"
-                ),
-                str(sdist_artifacts),
-            ],
-            cwd=source,
-            environment=build_environment,
-            purpose="source-distribution build",
-        )
-        source_distributions = sorted(sdist_artifacts.glob("*.tar.gz"))
-        if len(source_distributions) != 1:
-            raise AssertionError(
-                "expected one source distribution; "
-                f"found {source_distributions!r}"
-            )
-        cls.source_distribution = source_distributions[0]
-
-        with tarfile.open(cls.source_distribution, mode="r:gz") as archive:
-            archive.extractall(extracted)
-        extracted_roots = [path for path in extracted.iterdir() if path.is_dir()]
-        if len(extracted_roots) != 1:
-            raise AssertionError(
-                "expected one extracted source-distribution root; "
-                f"found {extracted_roots!r}"
-            )
-        cls.checked(
-            [
-                sys.executable,
-                "-c",
-                (
-                    "import pathlib, sys; "
-                    "from setuptools.build_meta import build_wheel; "
-                    "build_wheel(str(pathlib.Path(sys.argv[1])))"
-                ),
-                str(rebuilt_artifacts),
-            ],
-            cwd=extracted_roots[0],
-            environment=build_environment,
-            purpose="wheel rebuild from source distribution",
-        )
-        wheels = sorted(rebuilt_artifacts.glob("*.whl"))
-        if len(wheels) != 1:
-            raise AssertionError(
-                "expected one wheel rebuilt from the source distribution; "
-                f"found {wheels!r}"
-            )
-        cls.sdist_wheel = wheels[0]
-
-        cls.venv = cls.root / "venv"
-        cls.checked(
-            [sys.executable, "-m", "venv", str(cls.venv)],
-            cwd=cls.root,
-            environment=build_environment,
-            purpose="virtual-environment creation",
-        )
-        cls.venv_bin = cls.venv / "bin"
-        cls.venv_python = cls.venv_bin / "python"
-        cls.console = cls.venv_bin / "worktree-marshal"
-        cls.checked(
-            [
-                str(cls.venv_python),
-                "-m",
-                "pip",
-                "install",
-                "--disable-pip-version-check",
-                "--no-cache-dir",
-                "--no-deps",
-                "--no-index",
-                str(cls.sdist_wheel),
-            ],
-            cwd=cls.root,
-            environment=build_environment,
-            purpose="sdist-rebuilt wheel installation",
-        )
-        if not cls.console.is_file():
-            raise AssertionError("the rebuilt wheel did not install its console script")
-        for build_tree in (cls.copied_build_source, cls.extracted_sdist):
-            if build_tree.parent != cls.root:
-                raise AssertionError(f"refusing to remove unexpected path {build_tree}")
-            shutil.rmtree(build_tree)
-            if build_tree.exists():
-                raise AssertionError(f"temporary build tree remains at {build_tree}")
+        artifacts = get_built_artifacts(PACKAGE_ROOT)
+        cls.artifacts = artifacts
+        cls.root = artifacts.root
+        cls.copied_build_source = artifacts.copied_source
+        cls.extracted_sdist = artifacts.extracted_sdist
+        cls.venv = artifacts.venv
+        cls.venv_bin = artifacts.venv_bin
+        cls.venv_python = artifacts.venv_python
+        cls.console = artifacts.installed_command
 
     def setUp(self) -> None:
-        self.case = tempfile.TemporaryDirectory(
-            dir=self.root,
+        self.case = self.artifacts.new_case(
             prefix="outside-checkout-",
         )
         self.addCleanup(self.case.cleanup)
@@ -270,6 +179,7 @@ class InstalledLifecycleTests(unittest.TestCase):
         (self.control / "baseline.txt").write_text("baseline\n", encoding="utf-8")
         self.git("add", "baseline.txt")
         self.git("commit", "-m", "Synthetic installed baseline")
+        self.installed_origins = self.prepare_installed_consumer()
 
     @property
     def generic_profile_state(self) -> Path:
@@ -330,10 +240,11 @@ class InstalledLifecycleTests(unittest.TestCase):
         self,
         *arguments: str,
         check: bool = True,
+        cwd: Path | None = None,
     ) -> subprocess.CompletedProcess[str]:
         return subprocess.run(
             [str(self.git_executable), *arguments],
-            cwd=self.control,
+            cwd=cwd or self.control,
             env=self.environment(),
             text=True,
             capture_output=True,
@@ -401,29 +312,7 @@ class InstalledLifecycleTests(unittest.TestCase):
         metadata = path.stat()
         return path.read_bytes(), metadata.st_mode, metadata.st_mtime_ns
 
-    def launch_and_read_manifest(
-        self,
-        state_root: Path,
-        *arguments: str,
-        expected_status: int,
-        environment: dict[str, str] | None = None,
-        compatibility: bool = False,
-    ) -> tuple[Path, dict]:
-        before = self.manifests(state_root)
-        runner = self.run_compatibility if compatibility else self.run_console
-        launched = runner(*arguments, environment=environment)
-        self.assertEqual(launched.returncode, expected_status, launched.stderr)
-        created = self.manifests(state_root) - before
-        self.assertEqual(len(created), 1, created)
-        path = created.pop()
-        return path, json.loads(path.read_text(encoding="utf-8"))
-
-    def test_sdist_rebuilt_wheel_runs_generic_and_triptych_lifecycles(self) -> None:
-        self.assertFalse(self.control.resolve().is_relative_to(PACKAGE_ROOT))
-        self.assertFalse(self.copied_build_source.exists())
-        self.assertFalse(self.extracted_sdist.exists())
-        self.assertNotIn("PYTHONPATH", self.environment())
-        self.assertNotIn("PYTHONHOME", self.environment())
+    def prepare_installed_consumer(self) -> dict[str, Path]:
         provenance = self.checked(
             [
                 str(self.venv_python),
@@ -467,6 +356,7 @@ class InstalledLifecycleTests(unittest.TestCase):
                 self.assertTrue(origin.is_relative_to(self.venv), origin)
                 self.assertFalse(origin.is_relative_to(PACKAGE_ROOT), origin)
                 self.assertTrue(origin.is_file(), origin)
+
         installed_fragment = origins["make_fragment"]
         shutil.copy2(installed_fragment, self.consumer_fragment)
         self.consumer_console.symlink_to(self.console)
@@ -489,6 +379,59 @@ class InstalledLifecycleTests(unittest.TestCase):
         )
         self.assertEqual(self.consumer_console.resolve(), self.console.resolve())
         self.assertEqual(self.git("status", "--porcelain").stdout, "")
+        return origins
+
+    def active_rebase_paths(self, worker: Path) -> list[Path]:
+        paths: list[Path] = []
+        for name in ("rebase-merge", "rebase-apply"):
+            path = Path(
+                self.git(
+                    "rev-parse",
+                    "--git-path",
+                    name,
+                    cwd=worker,
+                ).stdout.strip()
+            )
+            if not path.is_absolute():
+                path = worker / path
+            if path.exists():
+                paths.append(path)
+        return paths
+
+    def worktree_paths(self) -> list[Path]:
+        return [
+            Path(line.removeprefix("worktree ")).resolve()
+            for line in self.git("worktree", "list", "--porcelain").stdout.splitlines()
+            if line.startswith("worktree ")
+        ]
+
+    def ref_oid(self, ref: str) -> str | None:
+        result = self.git("rev-parse", "--verify", ref, check=False)
+        return result.stdout.strip() if result.returncode == 0 else None
+
+    def launch_and_read_manifest(
+        self,
+        state_root: Path,
+        *arguments: str,
+        expected_status: int,
+        environment: dict[str, str] | None = None,
+        compatibility: bool = False,
+    ) -> tuple[Path, dict]:
+        before = self.manifests(state_root)
+        runner = self.run_compatibility if compatibility else self.run_console
+        launched = runner(*arguments, environment=environment)
+        self.assertEqual(launched.returncode, expected_status, launched.stderr)
+        created = self.manifests(state_root) - before
+        self.assertEqual(len(created), 1, created)
+        path = created.pop()
+        return path, json.loads(path.read_text(encoding="utf-8"))
+
+    def test_sdist_rebuilt_wheel_runs_generic_and_triptych_lifecycles(self) -> None:
+        self.assertFalse(self.control.resolve().is_relative_to(PACKAGE_ROOT))
+        self.assertFalse(self.copied_build_source.exists())
+        self.assertFalse(self.extracted_sdist.exists())
+        self.assertNotIn("PYTHONPATH", self.environment())
+        self.assertNotIn("PYTHONHOME", self.environment())
         self.assertTrue(self.compatibility.resolve().is_relative_to(self.lifecycle_root))
         self.assertTrue(self.venv_python.is_relative_to(self.venv))
         self.assertEqual(
@@ -697,6 +640,377 @@ class InstalledLifecycleTests(unittest.TestCase):
             self.manifests(self.triptych_state),
             {compatibility_path, triptych_path},
         )
+
+    def test_installed_generic_managed_conflict_lifecycle(self) -> None:
+        before = self.manifests(self.generic_profile_state)
+        launched = self.run_make(
+            "codex",
+            environment={
+                "FAKE_CODEX_ACTION": "commit",
+                "FAKE_CODEX_CONTENT": "installed worker result\n",
+            },
+        )
+        self.assertEqual(launched.returncode, 0, launched.stderr)
+        created = self.manifests(self.generic_profile_state) - before
+        self.assertEqual(len(created), 1, created)
+        manifest_path = created.pop()
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        run_id = manifest["run_id"]
+        worker = Path(manifest["worktree"])
+        source_head = manifest["final_head"]
+        source_anchor = (
+            f"refs/worktree-marshal/generic-v1/runs/{run_id}/"
+            "integration-source"
+        )
+        self.assertEqual(manifest["state"], "preserved")
+        self.assertFalse(manifest["dirty"])
+        self.assertEqual(manifest["format_id"], "worktree-marshal-run")
+        self.assertEqual(manifest["profile_id"], "generic-v1")
+        self.assertEqual(manifest["agent"], "codex")
+
+        (self.control / "agent-result.txt").write_text(
+            "installed conflicting target\n",
+            encoding="utf-8",
+        )
+        self.git("add", "agent-result.txt")
+        self.git("commit", "-m", "Add installed conflicting target")
+        target_head = self.git("rev-parse", "HEAD").stdout.strip()
+
+        conflicted_result = self.run_make("integrate", f"RUN={run_id}")
+        self.assertEqual(
+            conflicted_result.returncode,
+            2,
+            conflicted_result.stderr,
+        )
+        self.assertIn("conflict", conflicted_result.stderr.lower())
+        self.assertNotIn(str(worker), conflicted_result.stderr)
+        conflicted = json.loads(manifest_path.read_text(encoding="utf-8"))
+        self.assertEqual(conflicted["state"], "integration-conflict")
+        self.assertEqual(conflicted["final_head"], source_head)
+        self.assertEqual(conflicted["integration_source_head"], source_head)
+        self.assertEqual(conflicted["integration_target_head"], target_head)
+        self.assertEqual(
+            conflicted["integration_conflict_paths"],
+            ["agent-result.txt"],
+        )
+        self.assertNotIn("integration_candidate_head", conflicted)
+        self.assertNotIn("integrated_head", conflicted)
+        self.assertEqual(self.ref_oid(source_anchor), source_head)
+        self.assertTrue(self.active_rebase_paths(worker))
+        self.assertEqual(
+            self.git(
+                "diff",
+                "--name-only",
+                "--diff-filter=U",
+                cwd=worker,
+            ).stdout.splitlines(),
+            ["agent-result.txt"],
+        )
+        self.assertEqual(
+            self.git("rev-parse", "refs/heads/main").stdout.strip(),
+            target_head,
+        )
+
+        resolved = self.run_make(
+            "resolve",
+            f"RUN={run_id}",
+            environment={
+                "FAKE_CODEX_ACTION": "stage-conflict",
+                "FAKE_CODEX_CONTENT": "installed resolved result\n",
+            },
+        )
+        self.assertEqual(resolved.returncode, 0, resolved.stderr)
+        staged = json.loads(manifest_path.read_text(encoding="utf-8"))
+        self.assertEqual(staged["state"], "integration-conflict")
+        self.assertNotIn("integration_candidate_head", staged)
+        self.assertEqual(
+            self.git(
+                "diff",
+                "--name-only",
+                "--diff-filter=U",
+                cwd=worker,
+            ).stdout,
+            "",
+        )
+        self.assertEqual(
+            self.git(
+                "diff",
+                "--cached",
+                "--name-only",
+                cwd=worker,
+            ).stdout.splitlines(),
+            ["agent-result.txt"],
+        )
+
+        continued = self.run_make("continue", f"RUN={run_id}")
+        self.assertEqual(continued.returncode, 0, continued.stderr)
+        self.assertIn("review", continued.stderr.lower())
+        pending = json.loads(manifest_path.read_text(encoding="utf-8"))
+        candidate_head = pending["integration_candidate_head"]
+        self.assertEqual(pending["state"], "integration-review-pending")
+        self.assertTrue(pending["integration_manual_resolution"])
+        self.assertEqual(pending["integration_unmerged_paths"], [])
+        self.assertEqual(pending["integration_source_head"], source_head)
+        self.assertEqual(pending["integration_target_head"], target_head)
+        self.assertNotEqual(candidate_head, source_head)
+        self.assertEqual(
+            self.git("rev-parse", "HEAD", cwd=worker).stdout.strip(),
+            candidate_head,
+        )
+        self.assertEqual(
+            self.git("rev-parse", "HEAD^", cwd=worker).stdout.strip(),
+            target_head,
+        )
+        self.assertEqual(
+            self.git("status", "--porcelain=v1", cwd=worker).stdout,
+            "",
+        )
+        self.assertEqual(
+            self.git(
+                "symbolic-ref",
+                "--short",
+                "HEAD",
+                cwd=worker,
+            ).stdout.strip(),
+            manifest["branch"],
+        )
+        self.assertEqual(self.active_rebase_paths(worker), [])
+        self.assertEqual(
+            self.git("rev-parse", "refs/heads/main").stdout.strip(),
+            target_head,
+        )
+
+        manifest_before_diff = self.manifest_snapshot(manifest_path)
+        worker_status_before_diff = self.git(
+            "status",
+            "--porcelain=v1",
+            cwd=worker,
+        ).stdout
+        control_status_before_diff = self.git(
+            "status",
+            "--porcelain=v1",
+            "--untracked-files=all",
+        ).stdout
+        reviewed = self.run_make("final-diff", f"RUN={run_id}")
+        self.assertEqual(reviewed.returncode, 0, reviewed.stderr)
+        self.assertIn("installed conflicting target", reviewed.stdout)
+        self.assertIn("installed resolved result", reviewed.stdout)
+        for private_path in (
+            str(self.control),
+            str(worker),
+            manifest["tmpdir"],
+            str(self.generic_state),
+        ):
+            self.assertNotIn(private_path, reviewed.stdout)
+            self.assertNotIn(private_path, reviewed.stderr)
+        self.assertEqual(
+            self.manifest_snapshot(manifest_path),
+            manifest_before_diff,
+        )
+        self.assertEqual(
+            self.git("rev-parse", "HEAD", cwd=worker).stdout.strip(),
+            candidate_head,
+        )
+        self.assertEqual(
+            self.git("status", "--porcelain=v1", cwd=worker).stdout,
+            worker_status_before_diff,
+        )
+        self.assertEqual(
+            self.git("rev-parse", "refs/heads/main").stdout.strip(),
+            target_head,
+        )
+        self.assertEqual(
+            self.git(
+                "status",
+                "--porcelain=v1",
+                "--untracked-files=all",
+            ).stdout,
+            control_status_before_diff,
+        )
+
+        landed = self.run_make("integrate", f"RUN={run_id}")
+        self.assertEqual(landed.returncode, 0, landed.stderr)
+        cleaned = json.loads(manifest_path.read_text(encoding="utf-8"))
+        self.assertEqual(cleaned["state"], "cleaned")
+        self.assertEqual(cleaned["integration_candidate_head"], candidate_head)
+        self.assertEqual(cleaned["integrated_head"], candidate_head)
+        self.assertEqual(
+            self.git("rev-parse", "refs/heads/main").stdout.strip(),
+            candidate_head,
+        )
+        self.assertEqual(
+            (self.control / "agent-result.txt").read_text(encoding="utf-8"),
+            "installed resolved result\n",
+        )
+        self.assertEqual(self.git("status", "--porcelain=v1").stdout, "")
+        self.assertEqual(self.worktree_paths(), [self.control.resolve()])
+        self.assertFalse(worker.exists())
+        self.assertFalse(Path(manifest["tmpdir"]).exists())
+        self.assertIsNone(self.ref_oid(f"refs/heads/{manifest['branch']}"))
+        self.assertIsNone(self.ref_oid(source_anchor))
+
+    def test_installed_triptych_conflict_abort_restores_audited_source(
+        self,
+    ) -> None:
+        manifest_path, manifest = self.launch_and_read_manifest(
+            self.triptych_state,
+            "installed Triptych conflict run",
+            expected_status=0,
+            environment={
+                "FAKE_CODEX_ACTION": "commit",
+                "FAKE_CODEX_CONTENT": "installed Triptych worker result\n",
+            },
+            compatibility=True,
+        )
+        run_id = manifest["run_id"]
+        worker = Path(manifest["worktree"])
+        source_head = manifest["final_head"]
+        source_anchor = (
+            f"refs/triptych-codex/runs/{run_id}/integration-source"
+        )
+        self.assertEqual(manifest["state"], "preserved")
+        self.assertNotIn("format_id", manifest)
+        self.assertNotIn("profile_id", manifest)
+        self.assertNotIn("agent", manifest)
+
+        (self.control / "agent-result.txt").write_text(
+            "installed Triptych conflicting target\n",
+            encoding="utf-8",
+        )
+        self.git("add", "agent-result.txt")
+        self.git("commit", "-m", "Add installed Triptych conflicting target")
+        target_head = self.git("rev-parse", "HEAD").stdout.strip()
+
+        conflicted_result = self.run_console(
+            "--profile",
+            "triptych",
+            "integrate",
+            run_id,
+        )
+        self.assertEqual(
+            conflicted_result.returncode,
+            2,
+            conflicted_result.stderr,
+        )
+        conflicted = json.loads(manifest_path.read_text(encoding="utf-8"))
+        self.assertEqual(conflicted["state"], "integration-conflict")
+        self.assertEqual(conflicted["integration_source_head"], source_head)
+        self.assertEqual(conflicted["integration_target_head"], target_head)
+        self.assertEqual(
+            conflicted["integration_conflict_paths"],
+            ["agent-result.txt"],
+        )
+        self.assertEqual(self.ref_oid(source_anchor), source_head)
+        self.assertTrue(self.active_rebase_paths(worker))
+
+        resolved = self.run_console(
+            "--profile",
+            "triptych",
+            "resolve",
+            run_id,
+            environment={
+                "FAKE_CODEX_ACTION": "stage-conflict",
+                "FAKE_CODEX_CONTENT": "discarded Triptych resolution\n",
+            },
+        )
+        self.assertEqual(resolved.returncode, 0, resolved.stderr)
+        self.assertEqual(
+            self.git(
+                "diff",
+                "--name-only",
+                "--diff-filter=U",
+                cwd=worker,
+            ).stdout,
+            "",
+        )
+        self.assertEqual(
+            self.git(
+                "diff",
+                "--cached",
+                "--name-only",
+                cwd=worker,
+            ).stdout.splitlines(),
+            ["agent-result.txt"],
+        )
+        self.assertEqual(
+            (worker / "agent-result.txt").read_text(encoding="utf-8"),
+            "discarded Triptych resolution\n",
+        )
+
+        aborted = self.run_console(
+            "--profile",
+            "triptych",
+            "abort",
+            run_id,
+        )
+        self.assertEqual(aborted.returncode, 0, aborted.stderr)
+        self.assertIn("restored", aborted.stderr.lower())
+        self.assertEqual(
+            self.git("rev-parse", "refs/heads/main").stdout.strip(),
+            target_head,
+        )
+        self.assertEqual(
+            (self.control / "agent-result.txt").read_text(encoding="utf-8"),
+            "installed Triptych conflicting target\n",
+        )
+        self.assertEqual(
+            self.git("rev-parse", "HEAD", cwd=worker).stdout.strip(),
+            source_head,
+        )
+        self.assertEqual(
+            self.git("status", "--porcelain=v1", cwd=worker).stdout,
+            "",
+        )
+        self.assertEqual(
+            self.git(
+                "symbolic-ref",
+                "--short",
+                "HEAD",
+                cwd=worker,
+            ).stdout.strip(),
+            manifest["branch"],
+        )
+        self.assertEqual(self.active_rebase_paths(worker), [])
+        self.assertEqual(
+            (worker / "agent-result.txt").read_text(encoding="utf-8"),
+            "installed Triptych worker result\n",
+        )
+
+        restored = json.loads(manifest_path.read_text(encoding="utf-8"))
+        self.assertEqual(restored["state"], "preserved")
+        self.assertEqual(restored["final_head"], source_head)
+        self.assertNotIn("format_id", restored)
+        self.assertNotIn("profile_id", restored)
+        self.assertNotIn("agent", restored)
+        self.assertEqual(
+            restored["last_integration_source_head"],
+            source_head,
+        )
+        self.assertEqual(
+            restored["last_integration_target_head"],
+            target_head,
+        )
+        self.assertEqual(
+            restored["last_integration_conflict_paths"],
+            ["agent-result.txt"],
+        )
+        self.assertIn("last_integration_aborted_at", restored)
+        self.assertEqual(
+            [key for key in restored if key.startswith("integration_")],
+            [],
+        )
+        self.assertIsNone(self.ref_oid(source_anchor))
+        self.assertTrue(worker.is_dir())
+        self.assertTrue(Path(manifest["tmpdir"]).is_dir())
+        self.assertEqual(
+            self.ref_oid(f"refs/heads/{manifest['branch']}"),
+            source_head,
+        )
+        self.assertEqual(
+            set(self.worktree_paths()),
+            {self.control.resolve(), worker.resolve()},
+        )
+        self.assertEqual(self.manifests(self.generic_profile_state), set())
 
 
 if __name__ == "__main__":

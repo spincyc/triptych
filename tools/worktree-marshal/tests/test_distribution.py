@@ -3,171 +3,45 @@
 
 from __future__ import annotations
 
-import importlib.util
 import os
-import shutil
 import subprocess
-import sys
 import tarfile
-import tempfile
 import unittest
 import zipfile
 from pathlib import Path
 
+if __package__:
+    from ._artifact_fixture import (
+        SETUPTOOLS_AVAILABLE,
+        get_built_artifacts,
+    )
+else:
+    from _artifact_fixture import (  # type: ignore[import-not-found]
+        SETUPTOOLS_AVAILABLE,
+        get_built_artifacts,
+    )
+
 
 PACKAGE_ROOT = Path(__file__).resolve().parents[1]
-SETUPTOOLS_AVAILABLE = importlib.util.find_spec("setuptools") is not None
 
 
 @unittest.skipUnless(SETUPTOOLS_AVAILABLE, "setuptools build backend is unavailable")
 class DistributionArtifactTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        cls.temporary_directory = tempfile.TemporaryDirectory()
-        cls.addClassCleanup(cls.temporary_directory.cleanup)
-        temporary_root = Path(cls.temporary_directory.name)
-        source = temporary_root / "source"
-        artifacts = temporary_root / "artifacts"
-        shutil.copytree(
-            PACKAGE_ROOT,
-            source,
-            ignore=shutil.ignore_patterns(
-                "__pycache__",
-                "*.pyc",
-                "*.pyo",
-                "*.egg-info",
-                "build",
-                "dist",
-            ),
-        )
-        artifacts.mkdir()
-        environment = os.environ.copy()
-        environment["PYTHONDONTWRITEBYTECODE"] = "1"
-        build = subprocess.run(
-            [
-                sys.executable,
-                "-c",
-                (
-                    "import pathlib, sys; "
-                    "from setuptools.build_meta import build_sdist, build_wheel; "
-                    "output = pathlib.Path(sys.argv[1]); "
-                    "build_sdist(str(output)); "
-                    "build_wheel(str(output))"
-                ),
-                str(artifacts),
-            ],
-            cwd=source,
-            env=environment,
-            text=True,
-            capture_output=True,
-            check=False,
-            timeout=60,
-        )
-        if build.returncode:
-            raise AssertionError(
-                "distribution build failed\n"
-                f"stdout:\n{build.stdout}\n"
-                f"stderr:\n{build.stderr}"
-            )
-        wheels = sorted(artifacts.glob("*.whl"))
-        source_distributions = sorted(artifacts.glob("*.tar.gz"))
-        if len(wheels) != 1 or len(source_distributions) != 1:
-            raise AssertionError(
-                "expected one wheel and one source distribution; "
-                f"found wheels={wheels!r}, source distributions={source_distributions!r}"
-            )
-        cls.wheel = wheels[0]
-        cls.source_distribution = source_distributions[0]
+        artifacts = get_built_artifacts(PACKAGE_ROOT)
+        cls.artifacts = artifacts
+        cls.wheel = artifacts.wheel
+        cls.source_distribution = artifacts.source_distribution
+        cls.sdist_wheel = artifacts.sdist_wheel
+        cls.venv = artifacts.venv
+        cls.venv_bin = artifacts.venv_bin
+        cls.venv_python = artifacts.venv_python
+        cls.installed_command = artifacts.installed_command
 
-        extracted = temporary_root / "extracted-sdist"
-        extracted.mkdir()
-        with tarfile.open(cls.source_distribution, mode="r:gz") as archive:
-            archive.extractall(extracted)
-        extracted_roots = [path for path in extracted.iterdir() if path.is_dir()]
-        if len(extracted_roots) != 1:
-            raise AssertionError(
-                "expected one extracted source-distribution root; "
-                f"found {extracted_roots!r}"
-            )
-
-        rebuilt_artifacts = temporary_root / "rebuilt-artifacts"
-        rebuilt_artifacts.mkdir()
-        rebuilt = subprocess.run(
-            [
-                sys.executable,
-                "-c",
-                (
-                    "import pathlib, sys; "
-                    "from setuptools.build_meta import build_wheel; "
-                    "build_wheel(str(pathlib.Path(sys.argv[1])))"
-                ),
-                str(rebuilt_artifacts),
-            ],
-            cwd=extracted_roots[0],
-            env=environment,
-            text=True,
-            capture_output=True,
-            check=False,
-            timeout=60,
-        )
-        if rebuilt.returncode:
-            raise AssertionError(
-                "wheel build from source distribution failed\n"
-                f"stdout:\n{rebuilt.stdout}\n"
-                f"stderr:\n{rebuilt.stderr}"
-            )
-        rebuilt_wheels = sorted(rebuilt_artifacts.glob("*.whl"))
-        if len(rebuilt_wheels) != 1:
-            raise AssertionError(
-                "expected one wheel rebuilt from the source distribution; "
-                f"found {rebuilt_wheels!r}"
-            )
-        cls.sdist_wheel = rebuilt_wheels[0]
-
-        cls.venv = temporary_root / "venv"
-        create_venv = subprocess.run(
-            [sys.executable, "-m", "venv", str(cls.venv)],
-            text=True,
-            capture_output=True,
-            check=False,
-            timeout=60,
-        )
-        if create_venv.returncode:
-            raise AssertionError(
-                "test virtual environment creation failed\n"
-                f"stdout:\n{create_venv.stdout}\n"
-                f"stderr:\n{create_venv.stderr}"
-            )
-        cls.venv_bin = cls.venv / "bin"
-        cls.venv_python = cls.venv_bin / "python"
-        cls.installed_command = cls.venv_bin / "worktree-marshal"
-        install = subprocess.run(
-            [
-                str(cls.venv_python),
-                "-m",
-                "pip",
-                "install",
-                "--disable-pip-version-check",
-                "--no-cache-dir",
-                "--no-deps",
-                "--no-index",
-                str(cls.sdist_wheel),
-            ],
-            text=True,
-            capture_output=True,
-            check=False,
-            timeout=60,
-        )
-        if install.returncode:
-            raise AssertionError(
-                "wheel installation failed\n"
-                f"stdout:\n{install.stdout}\n"
-                f"stderr:\n{install.stderr}"
-            )
-        if not cls.installed_command.is_file():
-            raise AssertionError("wheel did not install the worktree-marshal command")
-
-        cls.outside = temporary_root / "outside-source-tree"
+        cls.runtime_case = artifacts.new_case(prefix="distribution-runtime-")
+        cls.addClassCleanup(cls.runtime_case.cleanup)
+        cls.outside = Path(cls.runtime_case.name)
         cls.home = cls.outside / "home"
         cls.home.mkdir(parents=True)
         cls.state_home = cls.outside / "state"
@@ -268,6 +142,8 @@ class DistributionArtifactTests(unittest.TestCase):
             "src/worktree_marshal/triptych_compat.py",
             "src/worktree_marshal/resources/__init__.py",
             "src/worktree_marshal/resources/worktree-marshal.mk",
+            "tests/__init__.py",
+            "tests/_artifact_fixture.py",
             "tests/test_distribution.py",
             "tests/test_installed_lifecycle.py",
             "tests/test_cli.py",

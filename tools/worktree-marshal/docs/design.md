@@ -92,11 +92,14 @@ stateful checkpoint covering generic preservation, integration, and cleanup
 through the packaged unprefixed Make targets; bidirectional Triptych schema-1
 run, status, and clean interoperability through the packaged compatibility
 adapter; cross-profile selected-run lookup isolation without manifest
-mutation; and generic installed-console alias rejection. The next
-installed-artifact checkpoint covers managed conflict resolution,
-continuation, abort, and final-diff. Retirement, concurrency, crash recovery,
-and broader security coverage remain release gates. This bounded checkpoint
-advances but does not satisfy step 6: a release still waits on the complete
+mutation; and generic installed-console alias rejection. A second installed
+checkpoint now covers the generic packaged Make conflict flow through
+resolution, continuation, opaque final-diff review, and fresh exact-candidate
+landing, plus exact Triptych source restoration when aborting after a staged
+resolution. The next installed-artifact checkpoint covers concurrent generic
+allocation and conflict-free diverged integration. Retirement, crash recovery,
+and broader security coverage remain release gates. These bounded checkpoints
+advance but do not satisfy step 6: a release still waits on the complete
 installed lifecycle matrix and the broader CI gate.
 
 ## Distribution and repository integration

@@ -65,13 +65,18 @@ Make targets; bidirectional Triptych schema-1 run, status, and clean
 interoperability through the packaged compatibility adapter; cross-profile
 selected-run lookup isolation without manifest mutation; and rejection when
 the generic profile's configured Codex executable aliases the installed
-console, including symbolic- and hard-link aliases. This checkpoint is not the
-complete installed lifecycle or release matrix. The next installed-artifact
-checkpoint covers managed conflict resolution, continuation, abort, and
-final-diff. Retirement, concurrency, crash recovery, and broader security
-coverage remain release gates; the step-5 helper split remains protected by
-the source and installed parity suites. The frozen legacy contract and current
-security boundary are recorded in
+console, including symbolic- and hard-link aliases. It also passes a managed
+conflict checkpoint: the generic packaged Make flow retains a conflict, stages
+a resolver result, continues to a review-pending candidate, renders an opaque
+read-only final diff, and lands that exact candidate only on a fresh integrate;
+the installed Triptych adapter discards a staged resolution and restores the
+exact audited source on abort. These checkpoints are not the complete installed
+lifecycle or release matrix. The next installed-artifact checkpoint covers
+concurrent generic allocation and conflict-free diverged integration.
+Retirement, crash recovery, and broader security coverage remain release
+gates; the step-5 helper split remains protected by the source and installed
+parity suites. The frozen legacy contract and current security boundary are
+recorded in
 [`docs/compatibility-contract.md`](docs/compatibility-contract.md); the target
 architecture and release sequence are in [`docs/design.md`](docs/design.md).
 
@@ -80,7 +85,7 @@ architecture and release sequence are in [`docs/design.md`](docs/design.md).
 From this directory, run the package tests with:
 
 ```sh
-python3 -m unittest discover -s tests -v
+python3 -m unittest discover -s tests -t . -v
 ```
 
 This package suite includes artifact-content checks and the bounded
