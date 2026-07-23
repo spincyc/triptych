@@ -185,11 +185,24 @@ records for the complete boundaries.
 Only when all snapshot, rights-record, and site-source bindings verify may the
 GitHub Pages workflow build and verify `build/public-alpha/site`. The current
 authorization binds the current 111-PDF set and its 23 recognized reader-site
-inputs. The received `commit` term authorizes one coherent release-control
-commit in this isolated worker. The separate `publish` term authorizes the
-primary session, after exact review and integration, to publish only the
-verified result to public `refs/heads/main` and through its GitHub Pages
-workflow. It does not authorize this worker to integrate, push, deploy, tag,
+inputs. The original `commit` term authorized exact initial release-control
+commit `6bb9d6a9aceded73e747a2e98a32ed31ab676344`, whose sole parent is the
+audited preapproval tip `e1715d98601147122eff8a8845a3274b775fec55`. After
+that commit was integrated locally but before any push, the false terminal
+period in the recorded exact instruction was caught. The maintainer's exact
+`authorize` reply supplies fresh authority for exactly one follow-up
+corrective commit whose sole parent is
+`6bb9d6a9aceded73e747a2e98a32ed31ab676344`, integration by the primary
+session, and ordinary non-force publication of the corrected
+`refs/heads/main` and independently verified GitHub Pages artifact.
+
+The authorized outgoing history from exact public base
+`657f29b6f819623dee241677c1ccc3e8591b1f1b` is therefore the eight audited
+preapproval commits through `e1715d98601147122eff8a8845a3274b775fec55`,
+exact initial release-control commit
+`6bb9d6a9aceded73e747a2e98a32ed31ab676344`, and exactly one structurally bound
+corrective commit, with no intervening or later commit.
+Neither instruction authorizes this worker to integrate, push, deploy, tag,
 rewrite history, administer worktrees, publish another ref or host, create a
 public release attachment, or initiate promotion. Target movement or failure
 of any outgoing-range, binding, release, artifact, or named-deployment-target
