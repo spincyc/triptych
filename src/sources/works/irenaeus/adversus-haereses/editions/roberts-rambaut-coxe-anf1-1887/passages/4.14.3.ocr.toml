@@ -1,0 +1,16 @@
+schema = 2
+record_type = "passage"
+id = "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.14.3.ocr"
+edition_id = "edition.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887"
+segment_id = "segment.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.ia-djvu-ocr-12cdc519"
+artifact_sha256 = "12cdc519c642b446cb4c6c3ba0bad9a2288687937975df6ca4c8b42aa6d92d84"
+locus = "4.14.3"
+states = ["cataloged", "acquired", "inspected"]
+context = "The complete numbered section was inspected in the exact raw OCR. It describes a people prone to turn to idols and the pedagogical ordering of temporal types toward eternal realities; the paired facsimile controls wording, page identity, and attribution."
+physical_line_ranges = [[60897, 60910], [60921, 60939]]
+text = "to things that are real, by means of those that are typical"
+transcription_segments = [
+  { line = 60921, text = "to  things  that  are  real,  by" },
+  { line = 60922, text = "means  of  those  that  are  typical" },
+]
+notes = "The checked excerpt preserves OCR wording while normalizing whitespace through the schema's transcription-segment rule. The section's separate 'turn to idols' phrase is recorded in its context and full ranges. This is a locator aid, not a corrected quotation or independent witness."

@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-07-23"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:b776ab235d79cdcee1b7c315501af3ca615e417c7b97b252bae886956bf056b5"
+inventory_snapshot = "sha256:ed27014bd707ceee8535627fc3e5bf628a8f6f4f79685fa2c9308ab8dba135c4"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:dafeabb5de4701ba2d641eaed5f3c550cb19836e6140a6cb39f44a74cc4e1c92"
-canonical_catalog_snapshot = "sha256:33cd2706c392691380feeb368cb6b1c50655532ddce3bfd400fea601012e1445"
+canonical_catalog_snapshot = "sha256:d0fbcc0848cc3314fc371abc78ce5a4cfaaae455fd556c3618e158b6e38cab79"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:d35586538ed0d366b775e7fd972f19e9afdfb383753d5b43a6a9b2844dc1c5c7"
+snapshot = "sha256:86f9a15f5b5c8a7e6a05aba128d5eec1bcebf3e579e2e707184e6f4eb1c53733"
 
 [[families]]
 id = "family.acta.aas-ass"
@@ -129,6 +129,26 @@ canonical_ids = []
 trace_patterns = ["1983 Code of Canon Law", "CIC/1983", "Code of Canon Law", "Codex Iuris Canonici"]
 reviewed_on = "2026-07-22"
 notes = "Canonicalize dated official states and keep the 1917 code and CCEO in separate coordinated family rows rather than merging jurisdictions or versions."
+
+[[families]]
+id = "family.irenaeus.adversus-haereses-anf1-1887"
+label = "Irenaeus, Against Heresies, Roberts-Rambaut ANF 1 (Buffalo 1887)"
+kind = "mixed-cluster"
+source_categories = ["patristic"]
+identity_confidence = "confirmed"
+identity_gaps = []
+artifact_availability = "canonicalized"
+storage_plan = ["remote", "tracked"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "passage-pin"
+disposition = "bind-existing"
+priority = "p0"
+canonical_ids = ["artifact.ante-nicene-fathers.volume-1.buffalo-1887.ia-djvu-ocr-12cdc519", "artifact.ante-nicene-fathers.volume-1.buffalo-1887.ia-facsimile-pdf-b50e358e", "artifact.ante-nicene-fathers.volume-1.buffalo-1887.ia-page-number-map-8ab2289d", "edition.ante-nicene-fathers.volume-1.buffalo-1887", "edition.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.13.1-4.facsimile", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.13.1-4.ocr", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.14.1.facsimile", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.14.1.ocr", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.14.2.facsimile", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.14.2.ocr", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.14.3.facsimile", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.14.3.ocr", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.17.1.facsimile", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.17.1.ocr", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.18.1-6.facsimile", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.18.1-6.ocr", "segment.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.ia-djvu-ocr-12cdc519", "segment.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.ia-facsimile-pdf-b50e358e", "work.ante-nicene-fathers.volume-1", "work.irenaeus.adversus-haereses"]
+trace_patterns = ["Roberts.{0,20}Rambaut.{0,80}(?:ANF|Ante-Nicene Fathers|Buffalo)", "irenaeus\\.adversus-haereses\\.roberts-rambaut-coxe-anf1-1887"]
+reviewed_on = "2026-07-23"
+notes = "This bounded family keeps ANF volume 1 as the artifact container and Against Heresies as its constituent work and translated edition. The complete constituent is bounded in retained OCR and a remote facsimile, while paired OCR and facsimile passages govern two reviewed consumers. New Advent is a distinct later revised presentation. The broader ANF/NPNF series remains unresolved."
 
 [[families]]
 id = "family.patristics.anf-npnf-schaff"
@@ -386,12 +406,16 @@ record_paths = ["src/gpt/articles/canon-law/natural-positive-divine-human-law/re
 
 [[review_units]]
 owner_id = "articles/faith/at-the-end-of-every-why"
-surface_snapshot = "sha256:53fba5d21e872084d44c828d34aa004ea1831a2559f658b60fe8c6237d6f65da"
+surface_snapshot = "sha256:f4255be1bf72d15e333cf6dc1ee1c07910bfdc36f70efb99eb23cfbea915cea8"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
 basis = "trace-scan"
 record_paths = ["src/gpt/articles/faith/at-the-end-of-every-why/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.irenaeus.adversus-haereses-anf1-1887"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/at-the-end-of-every-why/research/source-bindings.toml"]
 [[review_units.family_presence]]
 family_id = "family.patristics.anf-npnf-schaff"
 basis = "trace-scan"
@@ -498,7 +522,7 @@ record_paths = ["src/gpt/articles/faith/ontological-vertigo/sections/99-referenc
 
 [[review_units]]
 owner_id = "articles/faith/the-due-return"
-surface_snapshot = "sha256:ebb90eb1bf324f29260f1f3536ba6510a3e605967d953fc58b405e7a1c4fc3b2"
+surface_snapshot = "sha256:88dedc92185ee23bdb4a4bc28ba69fad3b3516d3461d620fe8455d28db38d852"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -516,6 +540,10 @@ record_paths = ["src/gpt/articles/faith/the-due-return/research/scope.md"]
 family_id = "family.holy-see.cic-1983"
 basis = "trace-scan"
 record_paths = ["src/gpt/articles/faith/the-due-return/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.irenaeus.adversus-haereses-anf1-1887"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/the-due-return/research/source-bindings.toml"]
 [[review_units.family_presence]]
 family_id = "family.patristics.anf-npnf-schaff"
 basis = "trace-scan"

@@ -1,6 +1,6 @@
 # Source Audit — At the End of Every Why
 
-Sources were checked through 2026-07-23. Public English translations are working study witnesses unless identified as official Holy See English. Consequential claims are governed by the named work and exact locus, not by a claim that an online re-typesetting is critical. No controversial private revelation, extraordinary mystical phenomenon, eroticized report, or disputed locution is used.
+Sources were checked through 2026-07-23; the exact Buffalo 1887 ANF Irenaeus passages were checked against their facsimile and raw OCR on that date. Public English translations are working study witnesses unless identified as official Holy See English. Consequential claims are governed by the named work and exact locus, not by a claim that an online re-typesetting is critical. No controversial private revelation, extraordinary mystical phenomenon, eroticized report, or disputed locution is used.
 
 ## Core claim-to-source matrix
 
@@ -49,7 +49,7 @@ Authoritative witnesses actually used are CCC 1812–1829, 1965–1974, 1992, 19
 
 ### Patristic and Thomistic witnesses
 
-- Irenaeus, *Against Heresies* IV.13.1–4 and IV.14.1.
+- Irenaeus, *Against Heresies* IV.13.1–4 and IV.14.1. The controlling working witness is the Roberts–Rambaut English as printed in ANF volume 1 (Buffalo, 1887), checked at printed pp. 477–479 / artifact PDF pp. 495–497. The complete work body is centrally bounded in the retained raw OCR and the remote facsimile. New Advent's IV.13 and IV.14 pages are a later Kevin Knight revision and remain locating links rather than artifact-equivalent witnesses.
 - Augustine, *On the Spirit and the Letter* 32–36; *Confessions* VII.10.16 and X.29.40; *Homilies on the First Epistle of John* VII.8–9 and IX.4–6.
 - Aquinas, ST I, q. 37, aa. 1–2 and q. 43, aa. 1–3; I–II, q. 10, a. 4, q. 106, a. 1, and q. 109, a. 6; II–II, q. 19, aa. 10–11, q. 23, aa. 1–2, 5, and 8, q. 24, a. 2, q. 44, a. 1, and q. 83, aa. 1–7; III, q. 73, a. 3 and q. 79, aa. 1 and 4–8.
 
@@ -78,16 +78,17 @@ Corpus Thomisticum supplies the governing Latin corpus. New Advent is a working 
 
 ## Rights and review record
 
-Quotations are short and claim-driven. Scripture, official texts, patristic and mystical phrases, and third-party translations retain their own rights and are not relicensed by the project's CC BY 4.0 grant. The source record links to public witnesses but incorporates no scan, wrapper, image, source typesetting, or bulk transcription.
+Quotations are short and claim-driven. Scripture, official texts, patristic and mystical phrases, and third-party translations retain their own rights and are not relicensed by the project's CC BY 4.0 grant. The rendered article incorporates no scan, wrapper, image, source typesetting, or bulk transcription. The reusable source library separately retains the exact public-domain ANF raw OCR and automated page map; its facsimile record remains remote. Those artifacts are research evidence governed by their own manifests and `THIRD_PARTY.md`, not article text or Triptych-licensed prose.
 
-Completed for this source revision: exact-locus checks; prayer/providence, Eucharist, Gethsemane, dryness, suffering, merit-within-grace, participation, severe-asceticism-boundary, and neighbor audits; Scripture-quotation check; private-revelation exclusion check; rights and source-record consistency review; and internal doctrinal-boundary, argument-chain, literary, and endnote review.
+Completed for this source revision: exact-locus checks, including exact Buffalo 1887 ANF facsimile and OCR checks for Irenaeus IV.13.1–4 and IV.14.1; prayer/providence, Eucharist, Gethsemane, dryness, suffering, merit-within-grace, participation, severe-asceticism-boundary, and neighbor audits; Scripture-quotation check; private-revelation exclusion check; rights and source-record consistency review; and internal doctrinal-boundary, argument-chain, literary, and endnote review.
 
 The revised source also received a settled build, clean log and PDF checks,
 extracted-text review, bounded raster and contact-sheet review, individual
 inspection of all 14 pages, exact deterministic-rebuild comparison, and
 installation. The installed artifact and hash are recorded in the scope file.
-The 23 July 2026 exact-byte exception release-clears only those immutable
-installed bytes. The PDF necessarily retains its conservative
+The 23 July 2026 exact-byte exception applied only to the superseded
+predecessor bytes and does not release-clear the rebuilt installed artifact.
+The PDF necessarily retains its conservative
 preauthorization hold and no-clearance wording; the manifest, dated rights
 record, and non-rendered audit records control its later operational status.
 Independent specialist and ecclesiastical review remain outstanding; no

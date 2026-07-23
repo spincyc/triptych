@@ -1,0 +1,17 @@
+schema = 2
+record_type = "passage"
+id = "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.14.1.ocr"
+edition_id = "edition.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887"
+segment_id = "segment.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.ia-djvu-ocr-12cdc519"
+artifact_sha256 = "12cdc519c642b446cb4c6c3ba0bad9a2288687937975df6ca4c8b42aa6d92d84"
+locus = "4.14.1"
+states = ["cataloged", "acquired", "inspected"]
+context = "The numbered section and its continuation across the printed page boundary were inspected in the exact raw OCR. It states that service and obedience do not answer a divine need but benefit the creature; the paired facsimile controls wording, page identity, and attribution."
+physical_line_ranges = [[60794, 60839], [60853, 60864]]
+text = "Thus, also, service [rendered] to God does indeed profit God nothing, nor has God need of human obedience"
+transcription_segments = [
+  { line = 60812, text = "Thus,  also,  service  [rendered]  to" },
+  { line = 60813, text = "God  does  indeed  profit  God  nothing,  nor  has" },
+  { line = 60814, text = "God  need  of  human  obedience" },
+]
+notes = "The checked excerpt preserves OCR wording while normalizing whitespace through the schema's transcription-segment rule. It is a locator aid, not a corrected quotation or independent witness."

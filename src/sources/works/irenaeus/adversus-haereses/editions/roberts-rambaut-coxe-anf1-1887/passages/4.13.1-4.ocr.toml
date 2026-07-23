@@ -1,0 +1,21 @@
+schema = 2
+record_type = "passage"
+id = "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.13.1-4.ocr"
+edition_id = "edition.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887"
+segment_id = "segment.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.ia-djvu-ocr-12cdc519"
+artifact_sha256 = "12cdc519c642b446cb4c6c3ba0bad9a2288687937975df6ca4c8b42aa6d92d84"
+locus = "4.13.1-4"
+states = ["cataloged", "acquired", "inspected"]
+context = "The four numbered sections and their immediate boundaries were inspected in the exact raw OCR. The passage moves from fulfillment of the law through the fuller obedience of liberty to servants made friends; the paired facsimile passage controls wording, page identity, and attribution."
+physical_line_ranges = [[60585, 60626], [60642, 60646], [60648, 60700], [60714, 60730], [60732, 60770], [60781, 60783]]
+text = "For to yield assent to God, and to follow His Word, and to love Him above all, and one's neighbour as one's self (now man is neighbour to man), and to abstain from every evil deed, and all other things of a like nature which are common to both [covenants], do reveal one and the same God."
+transcription_segments = [
+  { line = 60736, text = "For  to  yield  assent  to  God,  and  to" },
+  { line = 60737, text = "follow  His  Word,  and  to  love  Him  above  all," },
+  { line = 60738, text = "and  one's  neighbour  as  one's  self  (now  man  is" },
+  { line = 60739, text = "neighbour  to  man),  and  to  abstain  from  every" },
+  { line = 60740, text = "evil  deed,  and  all  other  things  of  a  like  nature" },
+  { line = 60741, text = "which  are  common  to  both  [covenants],  do" },
+  { line = 60742, text = "reveal  one  and  the  same  God." },
+]
+notes = "The checked excerpt preserves OCR wording while normalizing whitespace through the schema's transcription-segment rule. It is a locator aid, not a corrected quotation or independent witness."

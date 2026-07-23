@@ -1,4 +1,4 @@
-schema = 1
+schema = 2
 record_type = "bindings"
 document = "articles/faith/the-due-return"
 
@@ -66,3 +66,95 @@ loci = ["1730-1748", "1854-1864", "1950-1974", "2030-2043", "2060-2100", "2168-2
 role = "context"
 states = ["cataloged"]
 context = "These are the article's broader Catechism reference ranges. Their overlap with claim-specific loci is retained to distinguish the bibliography's scope from the narrower claims actually audited; cataloging them does not assert inspection or verification of every paragraph."
+
+[[bindings]]
+source_id = "segment.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.ia-djvu-ocr-12cdc519"
+role = "lead"
+states = ["cataloged", "acquired"]
+context = "The complete translated body of Against Heresies in the exact retained ANF volume 1 OCR is available for later work-wide examination. This article did not thereby search or inspect the whole constituent, and the OCR remains subordinate to the separately registered facsimile."
+source_fingerprint = "sha256:ea00f29ae6ab077695602577ced76ec07fe111afca2d4fd185be95b3988e792d"
+
+[[bindings]]
+source_id = "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.14.1.ocr"
+loci = ["4.14.1"]
+role = "lead"
+states = ["cataloged", "acquired", "inspected"]
+context = "The exact OCR ranges were inspected as a reusable locator for divine non-need and service benefiting the creature. OCR wording does not control the article."
+source_fingerprint = "sha256:79acf71691e1f974fcd9eec6cdf588be79955c978e5a9187615b530dced28089"
+
+[[bindings]]
+source_id = "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.14.1.facsimile"
+loci = ["4.14.1"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete section was visually checked in the exact Buffalo 1887 ANF facsimile for the article's claim that service benefits the creature rather than supplying a need in God. The check does not make this translation a critical text."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:5d8d4d0ddf0416e0f6910eb9d294eef6f4c953a00996869274e1b31e13270eb4"
+
+[[bindings]]
+source_id = "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.14.2.ocr"
+loci = ["4.14.2"]
+role = "lead"
+states = ["cataloged", "acquired", "inspected"]
+context = "The exact OCR range was inspected as a reusable locator for divine non-need and God's gift of communion to those who need it. OCR wording does not control the article."
+source_fingerprint = "sha256:1ab67a9d9b7dc35ad387aa8692dbe503e09c5ca570046b0994512bdfc233bb3c"
+
+[[bindings]]
+source_id = "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.14.2.facsimile"
+loci = ["4.14.2"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete section was visually checked in the exact Buffalo 1887 ANF facsimile for the article's claim that God grants communion rather than receiving a needed benefit. The check does not make this translation a critical text."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:0532a23d226fa0aac8a61f40d0d1b4cec9fbf5f171a8fdd28c1b5291dc60741f"
+
+[[bindings]]
+source_id = "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.14.3.ocr"
+loci = ["4.14.3"]
+role = "lead"
+states = ["cataloged", "acquired", "inspected"]
+context = "The exact OCR ranges were inspected as a reusable locator for the people prone to turn to idols and the pedagogical order of temporal signs toward eternal realities. OCR wording does not control the article."
+source_fingerprint = "sha256:7750080739208a26251be3cefa0e65623b66d591edae59dda28bee84dd49fe61"
+
+[[bindings]]
+source_id = "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.14.3.facsimile"
+loci = ["4.14.3"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete section was visually checked in the exact Buffalo 1887 ANF facsimile for the article's statement that God teaches a people prone to turn to idols. This corrects the former association of that phrase only with IV.17.1 and IV.18.1-6."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:320d261378d69d1e844b5391be0c9b7fd4fe13486272427de880368ef60e58f5"
+
+[[bindings]]
+source_id = "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.17.1.ocr"
+loci = ["4.17.1"]
+role = "lead"
+states = ["cataloged", "acquired", "inspected"]
+context = "The exact OCR ranges were inspected as a reusable locator for divine non-need, obedience, justice, and sacrifice. OCR wording does not control the article."
+source_fingerprint = "sha256:1e7b106a382c6490ee8c8f453bf57c54a315b51cc2a4301a2eb0e4c08d6f5a5f"
+
+[[bindings]]
+source_id = "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.17.1.facsimile"
+loci = ["4.17.1"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete section was visually checked in the exact Buffalo 1887 ANF facsimile for the article's claims about divine non-need, obedience rather than merely propitiatory sacrifice, and justice toward the vulnerable."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:e6ab780e6f71fab387fb8b6e10023eb83d5ea0ae5c5d9b884c4f1e6fb2a17719"
+
+[[bindings]]
+source_id = "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.18.1-6.ocr"
+loci = ["4.18.1-6"]
+role = "lead"
+states = ["cataloged", "acquired", "inspected"]
+context = "The exact OCR ranges were inspected as a reusable locator for pure offering, gratitude, liberty, conscience, Eucharistic confession, divine non-need, and service of the poor. OCR wording does not control the article."
+source_fingerprint = "sha256:4a4c9b346431a10d484f5a5750ea3b6375e9bc547b6dd139aff9ee99424d8188"
+
+[[bindings]]
+source_id = "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.18.1-6.facsimile"
+loci = ["4.18.1-6"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "All six sections were visually checked in the exact Buffalo 1887 ANF facsimile for the article's claims about pure offering, gratitude, liberty, conscience, Eucharistic confession, divine non-need, and service of the poor. Coxe's editorial notes remain distinct."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:03a2088250e024d9d78d0ab62c87296c4ccc8bdf2d393234842dac6a24f29787"
