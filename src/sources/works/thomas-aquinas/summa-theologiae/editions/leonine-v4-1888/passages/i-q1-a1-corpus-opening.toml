@@ -1,0 +1,16 @@
+schema = 1
+record_type = "passage"
+id = "passage.thomas-aquinas.summa-theologiae.leonine-v4-1888.i-q1-a1-corpus-opening"
+edition_id = "edition.thomas-aquinas.summa-theologiae.leonine-v4-1888"
+artifact_id = "artifact.thomas-aquinas.summa-theologiae.leonine-v4-1888.i-q1-a1-corpus-opening-checked-text-03457a82"
+artifact_sha256 = "03457a82a37e2f5ac58541579c4c04bcc3eb4cd6cfc18b1813847c038f017fb3"
+locus = "I.1.1.corpus-opening"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete opening sentence of the corpus was visually checked on printed p. 6 / artifact PDF p. 24, together with its article heading and the beginning of the surrounding response. The sentence states the necessity for a divinely revealed doctrine in addition to philosophical disciplines investigated by human reason."
+physical_line_ranges = [[1, 1]]
+text = "Respondeo dicendum quod necessarium fuit ad humanam salutem, esse doctrinam quandam secundum revelationem divinam, praeter philosophicas disciplinas, quae ratione humana investigantur."
+transcription_segments = [
+  { line = 1, text = "Respondeo dicendum quod necessarium fuit ad humanam salutem, esse doctrinam quandam secundum revelationem divinam, praeter philosophicas disciplinas, quae ratione humana investigantur." },
+]
+verified_on = "2026-07-23"
+notes = "The checked transcription preserves the Leonine comma after 'salutem'. The passage fingerprint includes both the one-line transcription and its exact remote page-image ancestor."

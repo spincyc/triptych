@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-07-23"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:2823506995594cad71d1ba2c619b4212d5b218b5a28305e1782c1ce1ac030cb2"
+inventory_snapshot = "sha256:eb37b31a7e3c44f7006e23822667992b6fad8b528c43cf4122d1710e376257e2"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:dafeabb5de4701ba2d641eaed5f3c550cb19836e6140a6cb39f44a74cc4e1c92"
-canonical_catalog_snapshot = "sha256:5c6fe366c21947901eb9bf70d75a2ea2a389a4d93e5156881dfe2a4e8728489f"
+canonical_catalog_snapshot = "sha256:9ebedefa10377576f06d67e9be1613dc6a4c1c24c0f3cc7d1e46d2bb9fbb4974"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:9b657163c9b2faa17e0180f62b36b01e07fc04c70d290031057ee6c2ce1a5149"
+snapshot = "sha256:9d100275b62b60ae95dbe07f881fe3c813e815606c5778bed50ffdc9dc6e8559"
 
 [[families]]
 id = "family.acta.aas-ass"
@@ -236,19 +236,19 @@ label = "Thomas Aquinas, Summa theologiae"
 kind = "work"
 source_categories = ["scholastic"]
 identity_confidence = "confirmed"
-identity_gaps = ["artifact", "edition", "expression", "relation"]
-artifact_availability = "candidate-partial"
-storage_plan = ["remote", "unknown"]
-rights_review = "partially-reviewed"
+identity_gaps = ["edition", "expression", "relation"]
+artifact_availability = "mixed"
+storage_plan = ["remote", "tracked", "unknown"]
+rights_review = "all-known-artifacts-reviewed"
 mutability = "mixed"
 freshness_rule = "Keep fixed Leonine volumes and translations distinct while recording the continuing critical-edition project state."
 evidence_ceiling = "passage-pin"
 disposition = "split-then-canonicalize"
 priority = "p0"
-canonical_ids = []
+canonical_ids = ["artifact.thomas-aquinas.summa-theologiae.leonine-v4-1888.i-q1-a1-corpus-opening-checked-text-03457a82", "artifact.thomas-aquinas.summa-theologiae.leonine-v4-1888.ia-facsimile-pdf-13c54976", "edition.thomas-aquinas.summa-theologiae.leonine-v4-1888", "passage.thomas-aquinas.summa-theologiae.leonine-v4-1888.i-q1-a1-corpus-opening", "work.thomas-aquinas.summa-theologiae"]
 trace_patterns = ["Summa (?:theologiae|theologica)"]
-reviewed_on = "2026-07-22"
-notes = "Create one work identity with separate Leonine Latin volumes, public-domain translations, Corpus Thomisticum delivery artifacts, and stable part-question-article loci."
+reviewed_on = "2026-07-23"
+notes = "The first canonical slice identifies Leonine volume 4 (1888), its exact remote Internet Archive PDF, and a tracked checked transcription and passage for I q.1 a.1 corpus opening. Rights review covers both known exact artifacts and leaves the remote PDF unresolved rather than treating review completion as clearance. Continue to keep other Leonine volumes, Latin printings, public-domain translations, and Corpus Thomisticum delivery artifacts separate at stable part-question-article loci."
 
 [[families]]
 id = "family.trent.acts"
@@ -773,7 +773,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-texture"
-surface_snapshot = "sha256:d8fd86d5f15fbb8f9c7bc503cbb0f6528b9f9239c969884709958ff741713e32"
+surface_snapshot = "sha256:654797d935a7a77fd76337657e7bae6e9eb1c0ae1e497a0007463cb2c80c7d30"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
@@ -783,6 +783,10 @@ record_paths = ["src/gpt/curriculums/ecclesiastical-latin/04-advanced/19-registe
 family_id = "family.scripture.vulgate-editions"
 basis = "trace-scan"
 record_paths = ["src/gpt/curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-texture/research/module-map.md"]
+[[review_units.family_presence]]
+family_id = "family.thomas-aquinas.summa-theologiae"
+basis = "trace-scan"
+record_paths = ["src/gpt/curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-texture/research/source-bindings.toml"]
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/20-allusion-rhetoric-and-periodic-prose"
@@ -791,13 +795,21 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/21-collation-and-controlled-imitation"
-surface_snapshot = "sha256:7dd4cda5919115af520c53125cc105b3d02555915d9e552b102b88d48d8b48df"
+surface_snapshot = "sha256:271d4c9a169011812fb6f9799b2545fb98b95cfe41ac006e6a721e50c57d0c14"
 review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.thomas-aquinas.summa-theologiae"
+basis = "trace-scan"
+record_paths = ["src/gpt/curriculums/ecclesiastical-latin/04-advanced/21-collation-and-controlled-imitation/research/source-bindings.toml"]
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-and-independent-research"
-surface_snapshot = "sha256:e2f404147b46c7a99bc5788dbb3f86ed826147704679d49d5dd2e998be8fa09d"
+surface_snapshot = "sha256:4e36e4959a86b8d4c115aa01982cfeae35109eba8b3646da1b4b666ca6dd41df"
 review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.thomas-aquinas.summa-theologiae"
+basis = "trace-scan"
+record_paths = ["src/gpt/curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-and-independent-research/research/source-bindings.toml"]
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/01-textual-prosody"
@@ -856,8 +868,12 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced"
-surface_snapshot = "sha256:3c31b25daafca6ed315300be5594a853c6947dd3048422c6a019fe95b05e25a5"
+surface_snapshot = "sha256:68724dba1abe06df7cdbd68648b5027159761e246d827f9bb725344cb39169e2"
 review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.thomas-aquinas.summa-theologiae"
+basis = "trace-scan"
+record_paths = ["src/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced/research/source-bindings.toml"]
 
 [[review_units]]
 owner_id = "devotions/novenas/00-ascension-to-pentecost"
@@ -1706,7 +1722,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "owner.curriculums.ecclesiastical-latin"
-surface_snapshot = "sha256:77aa39d9698ac3d7144c0b175de4516467e0d01e4524bb12480f5e3faf566b99"
+surface_snapshot = "sha256:63fa391c76da8f9c7a166ad0e144b6218d86416580e75cb1803f922eb039943c"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"

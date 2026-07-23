@@ -1,0 +1,12 @@
+schema = 1
+record_type = "bindings"
+document = "curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-texture"
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.summa-theologiae.leonine-v4-1888.i-q1-a1-corpus-opening"
+loci = ["I.1.1.corpus-opening"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The shared Leonine Summa theologiae passage controls the complete Thomas sentence printed in EL-M19's register comparison. The course macro omits the source comma after 'salutem' under its declared punctuation normalization but changes no word."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:19f90858ed7a2dd770cd7842d6f5036f6c8cbf0fddffee2c1fe1c938fe4609f0"

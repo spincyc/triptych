@@ -60,7 +60,7 @@ interchangeable.
 | AUG-CSEL33 | Pius Knöll, ed., S. Aureli Augustini Confessionum libri XIII, CSEL 33 (Vienna: Tempsky, 1896); Internet Archive corpusscriptoru11wiengoog | Confessiones 1.1.1, complete three-sentence opening through *donec requiescat in te*; 10.27.38, complete opening sentence plus the next sentence through *quaerebam*, with editorial ellipsis | printed pp.1, 255; PDF pp.46, 306 | V |
 | HIER-CSEL54 | Isidor Hilberg, ed., S. Eusebii Hieronymi Epistulae, CSEL 54 (Vienna and Leipzig: Tempsky and Freytag, 1910); Internet Archive corpusscriptorum54stuoft | Epistula 22.30.4, bounded dream narration | printed p.190; PDF p.204 | V |
 | AMB-KRAB1857 | Johann Georg Krabinger, ed., De officiis ministrorum libri III (Tübingen: H. Laupp, 1857); Internet Archive deofficiisminis00krabgoog | De officiis 1.11.38, first two sentences | printed p.44; PDF p.61 | V |
-| THOM-LEON4 | Sancti Thomae Aquinatis Opera omnia iussu impensaque Leonis XIII, vol.4 (Rome: Typographia Polyglotta, 1888); Internet Archive operaomniaiussui04thom | Summa theologiae I, q.1, a.1, corpus opening | printed p.6; PDF p.24 | V |
+| THOM-LEON4 | Sancti Thomae Aquinatis Opera omnia iussu impensaque Leonis XIII, vol.4 (Rome: Typographia Polyglotta, 1888); Internet Archive operaomniaiussui04thom | Summa theologiae I, q.1, a.1, complete corpus opening sentence | printed p.6; PDF p.24; canonical passage `passage.thomas-aquinas.summa-theologiae.leonine-v4-1888.i-q1-a1-corpus-opening` | V |
 
 ## Verified biblical manifest
 
@@ -73,6 +73,12 @@ Every English rendering in the reader is a new project translation. The
 underlying editions listed above are public-domain print editions in the United
 States as of this record; scans are used as verification witnesses and are not
 vendored. Focused Latin excerpts remain tied to these records.
+
+For THOM-LEON4, the exact Internet Archive PDF is a remote, hash-pinned
+verification witness whose artifact-level rights remain unresolved. The
+separate tracked checked transcription contains only the verified sentence,
+preserves the Leonine comma after *salutem*, and supports M19, M21, M22, and
+EL-REVIEW-IV. The course's punctuation-normalized rendering omits that comma.
 
 ## 1962 Missal complete-formulary set
 

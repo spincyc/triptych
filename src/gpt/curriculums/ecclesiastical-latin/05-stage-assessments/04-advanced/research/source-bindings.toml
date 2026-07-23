@@ -19,3 +19,12 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The shared passage record controls the complete Te igitur model that EL-REVIEW-IV imports through its M20 reader set. The separate artifact binding retains only the two complete proper formularies."
 verified_on = "2026-07-23"
 source_fingerprint = "sha256:3c281ce4834eadccf164d4535fd0eb97146a72d1db7513c7050a21b2d7c3afbf"
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.summa-theologiae.leonine-v4-1888.i-q1-a1-corpus-opening"
+loci = ["I.1.1.corpus-opening"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The shared Leonine Summa theologiae passage controls the complete Thomas sentence imported into EL-REVIEW-IV through M19, M21, and M22 within its M19-M22 reader set. The shared course macro preserves every word while omitting the source comma after 'salutem' under its declared punctuation normalization."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:19f90858ed7a2dd770cd7842d6f5036f6c8cbf0fddffee2c1fe1c938fe4609f0"
