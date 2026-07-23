@@ -53,6 +53,24 @@ Read AGENTS.md and the applicable guidance completely. Revise [document] to [des
 
 The agent should do the technical work. The contributor remains responsible for judging whether the result is faithful, clear, and worth proposing.
 
+### Contributing reusable research
+
+When several publications use the same external work, identify the work,
+edition, exact artifact, and checked locus once under `src/sources/` and give
+each publication its own `research/source-bindings.toml`. Reuse the canonical
+identity and evidence; do not copy a consumer's interpretation or sufficiency
+judgment into the other publications. Record the retrieval route, artifact
+hash when bytes were acquired, and the rights basis for anything proposed for
+tracking. A whole searchable source may be retained when it is lawful and
+reasonably sized, but possessing or searching it does not mean every passage
+was inspected or verified.
+
+After changing a publication or source record, refresh the structural source
+inventory, review any new classification or source-family presence, refresh
+the family ledger, and run `make check-sources`. The detailed order and the
+separate family-screening completion audit are in
+[`guidance/sources.md`](guidance/sources.md).
+
 ## Most Sophisticated: Test Different Base Objectives
 
 A Git branch is a separate line of work. It lets you change the project’s underlying editorial objectives without disturbing the main library.
@@ -78,6 +96,8 @@ Submit only material you created or have authority to provide. Identify quotatio
 - [Repository instructions](AGENTS.md)
 - [Editorial and evidence standard](guidance/editorial.md)
 - [Repository and publication contract](guidance/repository.md)
+- [Reusable source library contract](guidance/sources.md)
+- [Reusable source library](src/sources/README.md)
 - [Library index](LIBRARY.md)
 
 `AGENTS.md` routes each kind of document to its detailed profile.

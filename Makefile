@@ -142,6 +142,8 @@ PDF_REVIEW_TOOL := scripts/pdf-review
 PUBLIC_ALPHA_TOOL := scripts/public-alpha
 CODEX_LAUNCHER := scripts/triptych-codex
 SOURCE_LIBRARY_TOOL := scripts/source-library
+SOURCE_INVENTORY_TOOL := scripts/source-inventory
+SOURCE_FAMILY_MIGRATION_TOOL := scripts/source-family-migration
 
 COMMON_SOURCES := $(shell find $(SOURCE_ROOT)/common -type f | sort)
 ECCLESIASTICAL_LATIN_ROOT := $(SOURCE_ROOT)/curriculums/ecclesiastical-latin
@@ -208,6 +210,9 @@ BOUNDED_PDF_JOB_OPTION = $(if $(strip $(MAKE_PARALLEL_FLAGS)),,\
 
 .PHONY: all pdf review-pdfs review-all-pdfs install list help clean \
 	distclean check-tools check-metadata check-sources check-source-library \
+	check-source-inventory check-source-inventory-tool \
+	check-source-family-migration check-source-family-migration-tool \
+	check-source-family-screening \
 	check-public-alpha prepare-public-alpha \
 	check-pdf-review check-agent-isolation check-curriculum-sources \
 	check-curriculum-structure \
@@ -385,9 +390,26 @@ check-pdf-review:
 
 check-sources:
 	@$(PYTHON) $(SOURCE_LIBRARY_TOOL) validate
+	@$(PYTHON) $(SOURCE_INVENTORY_TOOL) check
+	@$(PYTHON) $(SOURCE_FAMILY_MIGRATION_TOOL) check
 
 check-source-library:
 	@$(PYTHON) -m unittest discover -s scripts/tests -p 'test_source_library.py' -v
+
+check-source-inventory:
+	@$(PYTHON) $(SOURCE_INVENTORY_TOOL) check
+
+check-source-inventory-tool:
+	@$(PYTHON) -m unittest discover -s scripts/tests -p 'test_source_inventory.py' -v
+
+check-source-family-migration:
+	@$(PYTHON) $(SOURCE_FAMILY_MIGRATION_TOOL) check
+
+check-source-family-migration-tool:
+	@$(PYTHON) -m unittest discover -s scripts/tests -p 'test_source_family_migration.py' -v
+
+check-source-family-screening:
+	@$(PYTHON) $(SOURCE_FAMILY_MIGRATION_TOOL) check --require-family-screened
 
 check-curriculum-sources: check-tools
 	@$(PYTHON) $(CURRICULUM_STRUCTURE_CHECKER) \
@@ -434,8 +456,13 @@ help:
 		'Run-ID Make wrappers require a launcher-produced ID; use scripts/triptych-codex directly for external input' \
 		'make check-agent-isolation  Test the transparent Codex launcher' \
 		'make check-pdf-review  Test memory-bounded PDF inspection tooling' \
-		'make check-sources  Validate reusable source records and publication bindings' \
+		'make check-sources  Validate the source library, inventory, and migration ledger' \
 		'make check-source-library  Test reusable source-library tooling' \
+		'make check-source-inventory  Replay the exhaustive legacy-source inventory' \
+		'make check-source-inventory-tool  Test legacy-source inventory tooling' \
+		'make check-source-family-migration  Check the reviewed family migration ledger' \
+		'make check-source-family-migration-tool  Test family migration ledger tooling' \
+		'make check-source-family-screening  Require every migration review unit to be screened' \
 		'make check-curriculum-structure  Build and audit every Ecclesiastical Latin publication hierarchy' \
 		'make check-metadata  Validate structured and inherited AI provenance' \
 		'make check-public-alpha  Validate the exhaustive public-release policy' \

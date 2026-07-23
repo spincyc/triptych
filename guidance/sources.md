@@ -298,6 +298,30 @@ Migrate through a dual-record period:
 6. retain local roles, interpretations, limits, and consequential negative
    results permanently.
 
+For an ordinary source-bearing change, refresh and review in this order:
+
+1. run `scripts/source-inventory refresh --audited-on YYYY-MM-DD` after the
+   publication or its owned source surface changes;
+2. review any new or unresolved publication in
+   `classification-review-v1.toml`, then rerun `scripts/source-inventory
+   classify` when its broad source strata change;
+3. run `scripts/source-family-migration refresh --audited-on YYYY-MM-DD`, and
+   manually review any new family presence rather than expecting refresh to
+   infer it;
+4. use `--accept-canonical-catalog` only after the source library validates and
+   every family with canonical IDs has received the ledger review required
+   below, including families whose own manifests did not change; and
+5. run `make check-sources` before finalizing the change.
+
+`make check-sources` is the normal, non-completion gate: it validates the
+canonical source graph and bindings, replays the exhaustive inventory, and
+checks the family ledger while permitting honestly pending review units. Run
+`make check-source-family-screening` only as the explicit family-screening
+completion audit; it fails until every exact review-unit surface is
+`family-screened`.
+Neither target asserts atomic citation coverage, and neither is an implicit PDF
+build dependency.
+
 The migration inventory is a separate audit contract, not a source-manifest
 record type and not an extension of frozen source schema version 1. It must
 enumerate the exact `main.tex` publication universe, explicit nonpublication

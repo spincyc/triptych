@@ -54,6 +54,15 @@ Artifact and corpus searches use their exact registered members. A passage
 search uses only its validated 1-based physical-line ranges while still
 rechecking the whole controlling artifact's hash and size.
 
+`make check-sources` runs the three normal read-only gates in order: source
+library validation, exhaustive inventory replay, and non-completion family
+ledger validation. It permits review units that are explicitly still pending.
+Use `make check-source-family-screening` only when auditing whether every
+review unit has completed family screening; even that strict gate does not
+claim atomic citation coverage. The focused tool regression targets are
+`make check-source-library`, `make check-source-inventory-tool`, and
+`make check-source-family-migration-tool`.
+
 ## Layout
 
 ```text
