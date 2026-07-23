@@ -20,24 +20,20 @@ catalog home.
 
 Every PDF is a working study, not an approved Church publication. “Source-audited” means an internal evidence check, not independent specialist or ecclesiastical review; no current publication records such review.
 
-The latest release-cleared snapshot is the historical 22 July 2026 record:
-118 installed PDFs were marked `release`, 0 were in `review`, and 0 were on
-`hold`, and that record bound those 118 exact PDF snapshots and 23 exact site
-inputs. Its “exact current” language describes only the bytes named in that
-record. In particular, it bound the then-installed 52-PDF Ecclesiastical Latin
-edition; it does not bind the redesigned 37-PDF edition, the six altar-server
-publications, or the changed catalog bytes that describe them. The current
-release manifest accounts for 109 publications: 66 are marked `release`, 0 are
-in `review`, and 43 are on `hold`. The 37 redesigned Ecclesiastical Latin PDFs
-are installed and linked but remain unreleased on explicit hold. The three
-altar-server guides and their three cue-card companions likewise remain on
-hold pending work-specific rights review, a recorded distribution basis for
-received liturgical text, independent server-guide review, and renewed
-exact-snapshot authorization. The 21 July 2026 binding of 115 exact PDFs and
-22 exact site inputs, the 20 July bindings, and all predecessor-hash
-dispositions likewise remain historical facts about only the bytes they bound.
+The current release-cleared snapshot is the 23 July 2026 bare-`approve`
+exact-current-snapshot record: all 111 installed PDFs are marked `release`,
+none is in `review` or on `hold`, and the record binds those 111 exact PDF
+snapshots and all 23 exact recognized reader-site inputs. It supersedes the
+active effect of the 63-release, 48-hold preapproval state and clears the 37
+redesigned Ecclesiastical Latin PDFs, five changed or new *Creature Before
+God* PDFs, and six altar-server PDFs only as exact-byte distribution
+exceptions. The lower current count reflects the 37-PDF Latin redesign
+replacing its superseded 52-PDF edition. The 22 July binding of 118 exact PDFs,
+the 21 July binding of 115 exact PDFs, the 20 July bindings, and all
+predecessor-hash dispositions remain historical facts about only the bytes
+they bound.
 
-The 22 July exception supplies no missing page-image, source, or altar-book
+The 23 July exception supplies no missing page-image, source, or altar-book
 collation; direct-image inspection; donor license; received liturgical- or
 prayer-text permission; work-specific or independent rights review;
 independent specialist, historical, Indigenous-community, architectural,
@@ -46,10 +42,12 @@ or ecclesiastical review; source criticism or currentness work; textual
 authentication; profile or editorial finality; ownership; imprimatur; nihil
 obstat; ecclesiastical approval; open or general license; extraction
 permission; or broader reuse permission. The Ecclesiastical Latin donor and
-received-text limits remain operative. For the Angelus and Regina Coeli, the
-exact historical-English translator or author and non-U.S. rights remain
-unresolved, and the historical English is not established as a current
-vernacular approved by competent authority for indulgence use in every
+received-text limits remain operative. The altar-server series retains its
+recorded received-liturgical-text, work-specific-rights, pronunciation,
+ceremonial, pedagogical, and independent-review limits. For the Angelus and
+Regina Coeli, the exact historical-English translator or author and non-U.S.
+rights remain unresolved, and the historical English is not established as a
+current vernacular approved by competent authority for indulgence use in every
 territory. Changed bytes require renewed authorization. Every parish-history
 gap and review remains operative, and the La Salette study retains its
 recorded question about the present force of the 1915 Holy Office decree.

@@ -183,4 +183,17 @@ No located amendment or authentic interpretation changed CIC cc. 1246–1248 thr
 
 Quotations are short and claim-driven. Scripture, official texts, patristic translations, Thomistic translations, current clinical resources, and source wrappers retain their own status and are not relicensed under the project's CC BY 4.0 grant. The 1929 Alphonsus edition is used as a public-domain working witness. International OCD Foundation pages are paraphrased without direct quotation. No modern commentary is quoted or closely paraphrased.
 
-Completed for the current source tree: exact-locus source audit; natural/divine/ecclesiastical-law boundary audit; jurisdiction and currentness check through 23 July 2026; objective-act/virtue/merit, satisfaction, suffering, and obligation/culpability audits; sacramental, ascetical, mystical-witness, Christological, Alphonsian, and IOCDF clinical-boundary review; negative-claim and rights review; and internal trilogy-wide rhetorical and source-consistency review. It also received a settled build, clean log and PDF checks, extracted-text review, bounded raster and contact-sheet review, individual inspection of all 18 pages, exact deterministic-rebuild comparison, and installation. The installed artifact and hash are recorded in the scope file. It remains on hold pending renewed exact-snapshot authorization; no release clearance is claimed. Independent specialist and ecclesiastical review remain outstanding.
+Completed for the current source tree: exact-locus source audit;
+natural/divine/ecclesiastical-law boundary audit; jurisdiction and currentness
+check through 23 July 2026; objective-act/virtue/merit, satisfaction, suffering,
+and obligation/culpability audits; sacramental, ascetical, mystical-witness,
+Christological, Alphonsian, and IOCDF clinical-boundary review; negative-claim
+and rights review; and internal trilogy-wide rhetorical and source-consistency
+review. It also received a settled build, clean log and PDF checks,
+extracted-text review, bounded raster and contact-sheet review, individual
+inspection of all 18 pages, exact deterministic-rebuild comparison, and
+installation. The installed artifact and hash are recorded in the scope file.
+The 23 July 2026 exact-byte exception release-clears only those immutable
+installed bytes. Independent specialist and ecclesiastical review remain
+outstanding; the exception supplies none of that review, any legal opinion, or
+any ecclesiastical approval.

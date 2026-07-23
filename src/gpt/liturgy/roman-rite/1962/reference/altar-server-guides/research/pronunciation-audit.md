@@ -147,4 +147,7 @@ The source-level projection check accounts for 24 R-card IDs mapped to exactly
 
 Accordingly, pronunciation mastery in any guide requires a competent human
 listener. Independent pronunciation and age-appropriate pedagogical review
-remain release gates even when every written row is internally consistent.
+remain outstanding maturity and review limits even when every written row is
+internally consistent. The 23 July 2026 exact-byte exception clears only the
+operational distribution gate for the six immutable installed PDF hashes; it
+does not complete those reviews.

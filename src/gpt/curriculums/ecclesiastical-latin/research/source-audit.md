@@ -144,9 +144,12 @@ between source and project Latin.
 The shared grammar and worksheet manuscript derives from the Telos project
 identified in `scope.md` and `edition-manifest.md`. It arrived without a local
 project-specific license or passage-level source audit. Prior authorizations
-applied to named exact PDF bytes of earlier publication sets; they do not
-silently authorize the substantively redesigned source edition or its new PDF
-hashes.
+applied to named exact PDF bytes of earlier publication sets; at this audit's
+22 July cutoff they did not authorize the substantively redesigned source
+edition or its new PDF hashes. The separate 23 July 2026 exact-byte exception
+now release-clears only the exact 37 installed hashes recorded in the
+production manifest; it does not license the donor source or extracted
+received wording.
 
 The listed classical, patristic, scholastic, and poetry editions are
 public-domain print editions in the United States as recorded. Focused Latin
@@ -168,6 +171,8 @@ mirror verification, and page-review method belong in `production-manifest.md`.
 That completed internal production review does not prove every Latin judgment,
 received wording, source relationship, pedagogical decision, or rights basis,
 and it is not independent specialist or ecclesiastical review. This audit did
-not itself authorize installation or commit; those actions received separate
-user authorization. Release, integration, push, deployment, and publication
-remain separate and unauthorized.
+not itself authorize installation, commit, distribution, integration, push,
+deployment, or publication. The separate 23 July 2026 instruction
+release-clears only the exact installed PDF bytes and reserves its distinct
+integration and publication authority to the primary session after the
+recorded gates; it supplies no missing rights analysis or review.

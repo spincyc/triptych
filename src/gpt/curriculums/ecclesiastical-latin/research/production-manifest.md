@@ -7,12 +7,16 @@
   Ecclesiastical Latin PDFs: three course companions, 22 common-trunk packets,
   eight advanced-poetry packets, and four cumulative self-reviews.
 - **Installed total:** 2,068 pages and 21,197,286 bytes.
-- **Publication state:** built, internally reviewed, installed, linked, and
-  committed as one redesign; unreleased on explicit hold.
+- **Publication state at audit completion:** built, internally reviewed,
+  installed, linked, and committed as one redesign; unreleased on explicit
+  hold.
+- **Current release state:** the separate 23 July 2026 exact-byte exception
+  release-clears all 37 exact installed hashes below.
 
 The 37 installed PDFs replace the 52-PDF superseded edition under the mirrored
 `doc/` path. Earlier exact-byte release records bind only the historical
-snapshots they name; none binds the installed hashes below for distribution.
+snapshots they name; at this audit's completion none bound the installed hashes
+below for distribution. The separate 23 July 2026 record now binds them.
 Installation is a specifically authorized working-snapshot exception to the
 profile's pre-installation page-collation gate. The 207 received-text rows still
 marked `L` remain outstanding, so installation does not make the edition
@@ -128,7 +132,9 @@ edition. It has no imprimatur, nihil obstat, ecclesiastical approval,
 profile-final status, or general distribution authority.
 
 This record did not itself authorize installation, linking, staging, commit,
-or history rewriting; those actions received separate user authorization.
-Release, integration, push, deployment, and distribution remain unauthorized.
-Any later distribution authorization must identify the exact installed bytes
-it covers.
+distribution, integration, push, deployment, publication, or history
+rewriting; those actions require separate authority. The separate 23 July 2026
+instruction now release-clears only the exact installed hashes below and
+reserves its distinct integration and publication authority to the primary
+session after the recorded gates. It does not resolve any limitation above;
+changed bytes require renewed exact-snapshot authorization.

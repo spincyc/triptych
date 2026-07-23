@@ -125,4 +125,9 @@ the final page, parity, alignment, visual, extraction, and installed-identity
 checks recorded in the production manifest.
 Independent liturgical, ceremonial, Latin-pronunciation, pedagogical, rights,
 and ecclesiastical review remain outstanding. Installation of a reviewed PDF
-does not remove those limits or authorize public distribution.
+does not remove those limits or itself authorize public distribution. The
+separate 23 July 2026 exact-byte exception now release-clears only the six
+immutable installed PDF hashes recorded in the production manifest; it
+supplies none of the missing review or rights analysis and does not make the
+guides official liturgical books, parish directives, or evidence of present
+authorization to use the 1962 books.

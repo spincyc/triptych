@@ -93,4 +93,13 @@ The online witnesses listed above were checked through 2026-07-23. No mutable la
 
 Completed for the draft source: exact-locus checks; authority classification; internal metaphysical, Christological, Israel/Church, interreligious, sacramental, Scripture, rights, and source-record consistency review; and a check that the main argumentative chain remains in the body rather than the Notes. Independent specialist and ecclesiastical review remain outstanding.
 
-The source received a settled build, clean log and PDF checks, extracted-text review, bounded raster and contact-sheet review, individual inspection of all 12 pages, exact deterministic-rebuild comparison, installation, and catalog registration. The installed artifact and hash are recorded in the scope file. It remains on hold pending exact-snapshot authorization. No release clearance, exact-snapshot approval, imprimatur, nihil obstat, or ecclesiastical approval is claimed.
+The source received a settled build, clean log and PDF checks, extracted-text
+review, bounded raster and contact-sheet review, individual inspection of all
+12 pages, exact deterministic-rebuild comparison, installation, and catalog
+registration. The installed artifact and hash are recorded in the scope file.
+The 23 July 2026 exact-byte exception release-clears only those immutable
+installed bytes. The PDF necessarily retains its conservative
+preauthorization hold and no-clearance wording; the manifest, dated rights
+record, and non-rendered audit records control its later operational status.
+No imprimatur, nihil obstat, ecclesiastical approval, broader reuse permission,
+or completion of independent review is claimed.

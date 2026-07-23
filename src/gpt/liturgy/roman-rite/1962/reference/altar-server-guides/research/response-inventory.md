@@ -165,5 +165,8 @@ requires a competent human listener.
 The source-to-inventory reconciliation is complete for A1–A22. Independent
 liturgical review of the form-specific speaker assignments and received Latin
 remains outstanding. The received text also remains subject to the series'
-unresolved rights and public-distribution gates; an audit row is not release
-authorization.
+unresolved substantive rights analysis; an audit row is not release
+authorization. The separate 23 July 2026 exact-byte exception clears the
+operational distribution gate only for the six immutable installed PDF
+hashes, without resolving that analysis or authorizing extraction or broader
+reuse.

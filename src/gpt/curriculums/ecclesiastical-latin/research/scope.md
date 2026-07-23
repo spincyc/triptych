@@ -53,11 +53,15 @@ The donor tree had no project-specific license or passage audit.  The earlier
 maintainer authorizations release-cleared only exact installed PDF bytes from
 the prior edition.  They do not cover a newly built PDF, prove donor ownership,
 grant an open license, resolve received-text rights, or authorize extraction
-and broader reuse.  The redesigned PDFs are installed as a specifically
-authorized working-snapshot exception after internal review, but remain
-unreleased on hold until their exact bytes receive separate distribution
-review and authorization. Installation does not waive the profile-final
-page-collation work recorded in `passage-inventory.md`.
+and broader reuse.  At this scope record's 22 July cutoff, the redesigned PDFs
+were installed as a specifically authorized working-snapshot exception after
+internal review but remained unreleased on hold pending separate exact-byte
+distribution authorization.  The 23 July 2026 exact-byte exception now
+release-clears only the exact installed hashes recorded in
+`production-manifest.md`.  Installation and that later exception do not waive
+the profile-final page-collation work recorded in `passage-inventory.md`,
+resolve received-text or donor rights, or authorize extraction or broader
+reuse.
 
 ## Intended reader and reasonable terminal ability
 
@@ -224,5 +228,7 @@ or rights review. Received-text rights, donor provenance, and page-image
 collation remain qualified passage by passage. Source checks, automated
 checks, builds, log review, and exact every-page raster review of the
 redesigned PDFs are recorded without converting internal review into an
-independent review. Installation of the redesigned set does not release-clear
-it or resolve any recorded source, rights, or review limit.
+independent review. Installation did not itself release-clear the redesigned
+set or resolve any recorded source, rights, or review limit. The separate 23
+July 2026 exact-byte exception now release-clears only the 37 immutable
+installed PDF hashes; it completes none of those outstanding matters.

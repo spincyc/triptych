@@ -72,6 +72,16 @@ The article quotes no Lewis wording and only one brief attributed phrase from *F
 
 Completed: source-role classification; exact-locus review of the governing conciliar, papal, Thomistic, and metrological claims; distinction audit across the neighboring philosophical positions; Lewis–Anscombe qualification; rights review; and internal argumentative and source-consistency review.
 
-The source received a settled build, clean log and PDF checks, extracted-text review, bounded raster and contact-sheet review, individual inspection of all 9 pages, exact deterministic-rebuild comparison, and installation. The installed artifact and hash are recorded in the scope file. It remains on hold pending exact-snapshot authorization.
+The source received a settled build, clean log and PDF checks, extracted-text
+review, bounded raster and contact-sheet review, individual inspection of all
+9 pages, exact deterministic-rebuild comparison, and installation. The
+installed artifact and hash are recorded in the scope file. The 23 July 2026
+exact-byte exception release-clears only those immutable installed bytes. The
+PDF necessarily retains its conservative preauthorization hold and
+no-clearance wording; the manifest, dated rights record, and non-rendered audit
+records control its later operational status.
 
-Outstanding: independent philosophy-of-science, metrological, Thomistic, theological, literary, scientific, and ecclesiastical review. No release clearance, imprimatur, nihil obstat, or ecclesiastical approval is claimed.
+Outstanding: independent philosophy-of-science, metrological, Thomistic,
+theological, literary, scientific, and ecclesiastical review. No imprimatur,
+nihil obstat, ecclesiastical approval, broader reuse permission, or completion
+of independent review is claimed.
