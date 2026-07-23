@@ -2,11 +2,14 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
+import runpy
 import subprocess
 import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 import tomllib
 
@@ -50,6 +53,23 @@ class SourceInventoryTests(unittest.TestCase):
     def bootstrap(self) -> None:
         result = self.run_tool(
             "bootstrap", self.inventory.as_posix(), "--audited-on", "2026-07-22"
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+
+    def bootstrap_and_classify(
+        self,
+        categories: list[str] | None = None,
+    ) -> None:
+        self.bootstrap()
+        self.write_review(
+            ["articles/faith/demo"],
+            {"articles/faith/demo": categories or ["secondary"]},
+        )
+        result = self.run_tool(
+            "classify",
+            self.inventory.as_posix(),
+            "--review",
+            self.review.as_posix(),
         )
         self.assertEqual(result.returncode, 0, result.stderr)
 
@@ -224,6 +244,376 @@ class SourceInventoryTests(unittest.TestCase):
                 },
             ],
         )
+
+    def test_refresh_registers_a_new_binding_file(self) -> None:
+        self.bootstrap_and_classify()
+        binding = self.write(
+            "src/gpt/articles/faith/demo/source-bindings.toml",
+            "schema = 1\n",
+        )
+
+        refreshed = self.run_tool(
+            "refresh",
+            self.inventory.as_posix(),
+            "--review",
+            self.review.as_posix(),
+            "--audited-on",
+            "2026-07-23",
+        )
+
+        self.assertEqual(refreshed.returncode, 0, refreshed.stderr)
+        inventory = tomllib.loads(
+            (self.root / self.inventory).read_text(encoding="utf-8")
+        )
+        binding_rows = [
+            row for row in inventory["files"] if row["path"].endswith("source-bindings.toml")
+        ]
+        self.assertEqual(
+            binding_rows,
+            [
+                {
+                    "path": "src/gpt/articles/faith/demo/source-bindings.toml",
+                    "sha256": hashlib.sha256(binding.read_bytes()).hexdigest(),
+                    "kind": "source-binding",
+                    "owners": ["articles/faith/demo"],
+                }
+            ],
+        )
+        self.assertEqual(
+            self.run_tool(
+                "check",
+                self.inventory.as_posix(),
+                "--review",
+                self.review.as_posix(),
+            ).returncode,
+            0,
+        )
+
+    def test_refresh_preserves_later_state_and_reviewed_categories(self) -> None:
+        categories = ["magisterial", "secondary"]
+        self.bootstrap_and_classify(categories)
+        inventory_path = self.root / self.inventory
+        text = inventory_path.read_text(encoding="utf-8").replace(
+            'inventory_state = "sources-categorized"',
+            'inventory_state = "partially-migrated"',
+            1,
+        )
+        inventory_path.write_text(self.resnapshot_inventory(text), encoding="utf-8")
+        self.write(
+            "src/gpt/articles/faith/demo/research/source-audit.md",
+            "# Revised legacy audit\n",
+        )
+
+        refreshed = self.run_tool(
+            "refresh",
+            self.inventory.as_posix(),
+            "--review",
+            self.review.as_posix(),
+            "--audited-on",
+            "2026-07-23",
+        )
+
+        self.assertEqual(refreshed.returncode, 0, refreshed.stderr)
+        inventory = tomllib.loads(inventory_path.read_text(encoding="utf-8"))
+        document = inventory["documents"][0]
+        self.assertEqual(document["inventory_state"], "partially-migrated")
+        self.assertEqual(document["source_categories"], categories)
+        review = tomllib.loads(
+            (self.root / self.review).read_text(encoding="utf-8")
+        )
+        self.assertEqual(review["classifications"][0]["source_categories"], categories)
+
+    def test_refresh_preserves_the_semantic_review_audit_date(self) -> None:
+        self.bootstrap_and_classify()
+        self.write(
+            "src/gpt/articles/faith/demo/source-bindings.toml",
+            "schema = 1\n",
+        )
+
+        refreshed = self.run_tool(
+            "refresh",
+            self.inventory.as_posix(),
+            "--review",
+            self.review.as_posix(),
+            "--audited-on",
+            "2026-07-23",
+        )
+
+        self.assertEqual(refreshed.returncode, 0, refreshed.stderr)
+        inventory = tomllib.loads(
+            (self.root / self.inventory).read_text(encoding="utf-8")
+        )
+        review = tomllib.loads(
+            (self.root / self.review).read_text(encoding="utf-8")
+        )
+        self.assertEqual(inventory["audited_on"], "2026-07-23")
+        self.assertEqual(review["audited_on"], "2026-07-22")
+
+    def test_refresh_rejects_a_backward_inventory_audit_date(self) -> None:
+        self.bootstrap_and_classify()
+        self.write(
+            "src/gpt/articles/faith/demo/source-bindings.toml",
+            "schema = 1\n",
+        )
+        inventory_path = self.root / self.inventory
+        review_path = self.root / self.review
+        inventory_before = inventory_path.read_bytes()
+        review_before = review_path.read_bytes()
+
+        refreshed = self.run_tool(
+            "refresh",
+            self.inventory.as_posix(),
+            "--review",
+            self.review.as_posix(),
+            "--audited-on",
+            "2026-07-21",
+        )
+
+        self.assertEqual(refreshed.returncode, 1)
+        self.assertIn("is earlier than prior inventory audited_on", refreshed.stderr)
+        self.assertEqual(inventory_path.read_bytes(), inventory_before)
+        self.assertEqual(review_path.read_bytes(), review_before)
+
+    def test_refresh_adds_new_publication_as_unresolved_until_reviewed(self) -> None:
+        self.bootstrap_and_classify()
+        self.write("src/gpt/theology/new/main.tex", "New\n")
+        self.write("src/gpt/theology/new/research/scope.md", "# Scope\n")
+
+        refreshed = self.run_tool(
+            "refresh",
+            self.inventory.as_posix(),
+            "--review",
+            self.review.as_posix(),
+            "--audited-on",
+            "2026-07-23",
+        )
+
+        self.assertEqual(refreshed.returncode, 0, refreshed.stderr)
+        inventory = tomllib.loads(
+            (self.root / self.inventory).read_text(encoding="utf-8")
+        )
+        new_document = next(
+            document
+            for document in inventory["documents"]
+            if document["id"] == "theology/new"
+        )
+        self.assertEqual(new_document["inventory_state"], "records-enumerated")
+        self.assertEqual(new_document["source_categories"], ["unresolved"])
+        review = tomllib.loads(
+            (self.root / self.review).read_text(encoding="utf-8")
+        )
+        new_review = next(
+            row
+            for row in review["classifications"]
+            if row["document"] == "theology/new"
+        )
+        self.assertEqual(new_review["source_categories"], ["unresolved"])
+        checked = self.run_tool(
+            "check",
+            self.inventory.as_posix(),
+            "--review",
+            self.review.as_posix(),
+        )
+        self.assertEqual(checked.returncode, 1)
+        self.assertIn("source_categories must be resolved", checked.stderr)
+
+        replayed = self.run_tool(
+            "refresh",
+            self.inventory.as_posix(),
+            "--review",
+            self.review.as_posix(),
+            "--audited-on",
+            "2026-07-23",
+        )
+        self.assertEqual(replayed.returncode, 0, replayed.stderr)
+        self.assertEqual(
+            self.run_tool(
+                "check",
+                self.inventory.as_posix(),
+                "--review",
+                self.review.as_posix(),
+            ).returncode,
+            1,
+        )
+
+        self.write_review(
+            ["articles/faith/demo", "theology/new"],
+            {
+                "articles/faith/demo": ["secondary"],
+                "theology/new": ["scripture"],
+            },
+        )
+        classified = self.run_tool(
+            "classify",
+            self.inventory.as_posix(),
+            "--review",
+            self.review.as_posix(),
+        )
+        self.assertEqual(classified.returncode, 0, classified.stderr)
+        self.assertEqual(
+            self.run_tool(
+                "check",
+                self.inventory.as_posix(),
+                "--review",
+                self.review.as_posix(),
+            ).returncode,
+            0,
+        )
+
+    def test_refresh_rejects_a_tampered_prior_snapshot_without_writing(self) -> None:
+        self.bootstrap_and_classify()
+        inventory_path = self.root / self.inventory
+        inventory_path.write_text(
+            inventory_path.read_text(encoding="utf-8").replace(
+                "sha256:",
+                "sha256:0",
+                1,
+            ),
+            encoding="utf-8",
+        )
+        self.write(
+            "src/gpt/articles/faith/demo/source-bindings.toml",
+            "schema = 1\n",
+        )
+        inventory_before = inventory_path.read_bytes()
+        review_path = self.root / self.review
+        review_before = review_path.read_bytes()
+
+        refreshed = self.run_tool(
+            "refresh",
+            self.inventory.as_posix(),
+            "--review",
+            self.review.as_posix(),
+            "--audited-on",
+            "2026-07-23",
+        )
+
+        self.assertEqual(refreshed.returncode, 1)
+        self.assertIn("snapshot is stale", refreshed.stderr)
+        self.assertEqual(inventory_path.read_bytes(), inventory_before)
+        self.assertEqual(review_path.read_bytes(), review_before)
+
+    def test_refresh_rejects_categories_diverging_from_the_review(self) -> None:
+        self.bootstrap_and_classify()
+        inventory_path = self.root / self.inventory
+        text = inventory_path.read_text(encoding="utf-8").replace(
+            'source_categories = ["secondary"]',
+            'source_categories = ["scripture"]',
+            1,
+        )
+        inventory_path.write_text(self.resnapshot_inventory(text), encoding="utf-8")
+        inventory_before = inventory_path.read_bytes()
+        review_path = self.root / self.review
+        review_before = review_path.read_bytes()
+
+        refreshed = self.run_tool(
+            "refresh",
+            self.inventory.as_posix(),
+            "--review",
+            self.review.as_posix(),
+            "--audited-on",
+            "2026-07-23",
+        )
+
+        self.assertEqual(refreshed.returncode, 1)
+        self.assertIn("inventory categories diverge", refreshed.stderr)
+        self.assertEqual(inventory_path.read_bytes(), inventory_before)
+        self.assertEqual(review_path.read_bytes(), review_before)
+
+    def test_refresh_repairs_a_review_first_interruption(self) -> None:
+        self.bootstrap_and_classify()
+        self.write("src/gpt/theology/new/main.tex", "New\n")
+        self.write("src/gpt/theology/new/research/scope.md", "# Scope\n")
+        self.write_review(
+            ["articles/faith/demo", "theology/new"],
+            {
+                "articles/faith/demo": ["secondary"],
+                "theology/new": ["unresolved"],
+            },
+        )
+
+        refreshed = self.run_tool(
+            "refresh",
+            self.inventory.as_posix(),
+            "--review",
+            self.review.as_posix(),
+            "--audited-on",
+            "2026-07-23",
+        )
+
+        self.assertEqual(refreshed.returncode, 0, refreshed.stderr)
+        inventory = tomllib.loads(
+            (self.root / self.inventory).read_text(encoding="utf-8")
+        )
+        self.assertEqual(inventory["publication_count"], 2)
+        new_document = next(
+            document
+            for document in inventory["documents"]
+            if document["id"] == "theology/new"
+        )
+        self.assertEqual(new_document["inventory_state"], "records-enumerated")
+        self.assertEqual(new_document["source_categories"], ["unresolved"])
+
+    def test_refresh_rejects_an_audit_date_before_the_review(self) -> None:
+        self.bootstrap_and_classify()
+        review_path = self.root / self.review
+        review_path.write_text(
+            review_path.read_text(encoding="utf-8").replace(
+                'audited_on = "2026-07-22"',
+                'audited_on = "2026-07-24"',
+                1,
+            ),
+            encoding="utf-8",
+        )
+        inventory_before = (self.root / self.inventory).read_bytes()
+        review_before = review_path.read_bytes()
+
+        refreshed = self.run_tool(
+            "refresh",
+            self.inventory.as_posix(),
+            "--review",
+            self.review.as_posix(),
+            "--audited-on",
+            "2026-07-23",
+        )
+
+        self.assertEqual(refreshed.returncode, 1)
+        self.assertIn("earlier than classification review audited_on", refreshed.stderr)
+        self.assertEqual((self.root / self.inventory).read_bytes(), inventory_before)
+        self.assertEqual(review_path.read_bytes(), review_before)
+
+    def test_refresh_pair_rolls_back_when_the_second_replace_fails(self) -> None:
+        self.bootstrap_and_classify()
+        inventory_path = self.root / self.inventory
+        review_path = self.root / self.review
+        inventory_before = inventory_path.read_bytes()
+        review_before = review_path.read_bytes()
+        namespace = runpy.run_path(str(TOOL), run_name="source_inventory_test")
+        real_replace = os.replace
+        calls = 0
+
+        def fail_second_replace(source: Path, target: Path) -> None:
+            nonlocal calls
+            calls += 1
+            if calls == 2:
+                raise OSError("injected second replace failure")
+            real_replace(source, target)
+
+        with mock.patch.object(
+            namespace["os"],
+            "replace",
+            side_effect=fail_second_replace,
+        ):
+            with self.assertRaisesRegex(OSError, "injected second replace failure"):
+                namespace["_replace_refresh_pair"](
+                    inventory_path,
+                    inventory_before.decode("utf-8") + "# new inventory\n",
+                    review_path,
+                    review_before.decode("utf-8") + "# new review\n",
+                )
+
+        self.assertEqual(inventory_path.read_bytes(), inventory_before)
+        self.assertEqual(review_path.read_bytes(), review_before)
 
     def test_classify_fails_closed_for_an_unreviewed_collection(self) -> None:
         self.write("src/gpt/articles/faith/future-study/main.tex", "Demo\n")

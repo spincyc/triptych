@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Bootstrap and validate Triptych's legacy publication-source inventory."""
+"""Bootstrap, refresh, and validate Triptych's publication-source inventory."""
 
 from __future__ import annotations
 
@@ -7,7 +7,10 @@ import argparse
 import datetime as dt
 import hashlib
 import json
+import os
+import stat
 import sys
+import tempfile
 from pathlib import Path, PurePosixPath
 from typing import Any
 
@@ -646,7 +649,12 @@ def _string_list(value: Any, *, nonempty: bool = False) -> bool:
     )
 
 
-def _validate(root: Path, path: Path) -> list[str]:
+def _validate(
+    root: Path,
+    path: Path,
+    *,
+    allow_source_drift: bool = False,
+) -> list[str]:
     data, errors = _read_inventory(path)
     if data is None:
         return errors
@@ -717,18 +725,37 @@ def _validate(root: Path, path: Path) -> list[str]:
             errors.append(f"{label}.kind must be a nonempty string")
         if not _string_list(roots, nonempty=True):
             errors.append(f"{label}.roots must be a nonempty string array")
-        else:
+        elif not allow_source_drift:
             for root_value in roots:
                 if not (root / root_value).is_dir():
                     errors.append(f"{label}.roots path does not exist: {root_value}")
+        if allow_source_drift:
+            expected_owner = next(
+                (candidate for candidate in NONPUBLICATION_OWNERS if candidate["id"] == owner_id),
+                None,
+            )
+            if expected_owner is None or owner != {
+                "id": expected_owner["id"],
+                "kind": expected_owner["kind"],
+                "roots": list(expected_owner["roots"]),
+            }:
+                errors.append(f"{label} does not match explicit ownership rules")
         owner_ids.append(owner_id)
         normalized_owners.append(owner)
     if owner_ids != sorted(set(owner_ids)):
         errors.append(f"{path}: owner IDs must be unique and sorted")
-    if normalized_owners != _active_owners(root):
+    if not allow_source_drift and normalized_owners != _active_owners(root):
         errors.append(f"{path}: nonpublication owners do not match explicit ownership rules")
 
     actual_documents = _documents(root)
+    recorded_documents = [
+        document.get("id")
+        for document in document_rows
+        if isinstance(document, dict)
+        and isinstance(document.get("id"), str)
+        and document.get("id")
+    ]
+    ownership_documents = recorded_documents if allow_source_drift else actual_documents
     document_ids: list[str] = []
     normalized_documents: list[dict[str, Any]] = []
     for index, document in enumerate(document_rows, start=1):
@@ -788,7 +815,7 @@ def _validate(root: Path, path: Path) -> list[str]:
                     errors.append(f"{label}.record_owners entry is malformed")
                     continue
                 target = edge.get("id")
-                if target not in actual_documents and target not in owner_ids:
+                if target not in ownership_documents and target not in owner_ids:
                     errors.append(f"{label}.record_owners references unknown owner: {target}")
                 relationship = edge.get("relationship")
                 if not isinstance(relationship, str) or relationship not in RELATIONSHIPS:
@@ -796,19 +823,20 @@ def _validate(root: Path, path: Path) -> list[str]:
         normalized_documents.append(document)
     if document_ids != sorted(set(document_ids)):
         errors.append(f"{path}: document IDs must be unique and sorted")
-    missing_documents = sorted(set(actual_documents) - set(document_ids))
-    extra_documents = sorted(set(document_ids) - set(actual_documents))
-    if missing_documents:
-        errors.append(f"{path}: publications missing from inventory: {', '.join(missing_documents)}")
-    if extra_documents:
-        errors.append(f"{path}: inventory has unknown publications: {', '.join(extra_documents)}")
+    if not allow_source_drift:
+        missing_documents = sorted(set(actual_documents) - set(document_ids))
+        extra_documents = sorted(set(document_ids) - set(actual_documents))
+        if missing_documents:
+            errors.append(f"{path}: publications missing from inventory: {', '.join(missing_documents)}")
+        if extra_documents:
+            errors.append(f"{path}: inventory has unknown publications: {', '.join(extra_documents)}")
     if data.get("publication_count") != len(document_rows):
         errors.append(f"{path}: publication_count does not match document rows")
 
-    actual_files = _surface_files(root)
+    actual_files = [] if allow_source_drift else _surface_files(root)
     file_paths: list[str] = []
     normalized_files: list[dict[str, Any]] = []
-    known_owners = set(actual_documents) | set(owner_ids)
+    known_owners = set(ownership_documents) | set(owner_ids)
     for index, item in enumerate(file_rows, start=1):
         label = f"{path}: files[{index}]"
         if not isinstance(item, dict) or set(item) != {"path", "sha256", "kind", "owners"}:
@@ -823,15 +851,23 @@ def _validate(root: Path, path: Path) -> list[str]:
             errors.append(f"{label}.path must be below src/gpt")
             continue
         file_paths.append(relative)
-        target = root / relative
-        if target.is_symlink():
-            errors.append(f"{label}.path must not be a symbolic link: {relative}")
-        elif not target.is_file():
-            errors.append(f"{label}.path does not exist: {relative}")
-        else:
-            actual_hash = _sha256(target)
-            if item.get("sha256") != actual_hash:
-                errors.append(f"{label}.sha256 is stale for {relative}")
+        digest = item.get("sha256")
+        if (
+            not isinstance(digest, str)
+            or len(digest) != 64
+            or any(character not in "0123456789abcdef" for character in digest)
+        ):
+            errors.append(f"{label}.sha256 must be a lowercase SHA-256 digest")
+        if not allow_source_drift:
+            target = root / relative
+            if target.is_symlink():
+                errors.append(f"{label}.path must not be a symbolic link: {relative}")
+            elif not target.is_file():
+                errors.append(f"{label}.path does not exist: {relative}")
+            else:
+                actual_hash = _sha256(target)
+                if digest != actual_hash:
+                    errors.append(f"{label}.sha256 is stale for {relative}")
         kind = item.get("kind")
         if not isinstance(kind, str) or kind not in FILE_KINDS:
             errors.append(f"{label}.kind is invalid")
@@ -841,7 +877,7 @@ def _validate(root: Path, path: Path) -> list[str]:
         if not _string_list(owners, nonempty=True):
             errors.append(f"{label}.owners must be a nonempty string array")
         else:
-            expected_owner = _owner_for_file(relative, actual_documents)
+            expected_owner = _owner_for_file(relative, ownership_documents)
             if owners != ([expected_owner] if expected_owner else []):
                 errors.append(f"{label}.owners do not match explicit ownership rules")
             unknown_owners = sorted(set(owners) - known_owners)
@@ -850,12 +886,13 @@ def _validate(root: Path, path: Path) -> list[str]:
         normalized_files.append(item)
     if file_paths != sorted(set(file_paths)):
         errors.append(f"{path}: file paths must be unique and sorted")
-    missing_files = sorted(set(actual_files) - set(file_paths))
-    extra_files = sorted(set(file_paths) - set(actual_files))
-    if missing_files:
-        errors.append(f"{path}: source-bearing files missing from inventory: {', '.join(missing_files)}")
-    if extra_files:
-        errors.append(f"{path}: inventory has unknown source-bearing files: {', '.join(extra_files)}")
+    if not allow_source_drift:
+        missing_files = sorted(set(actual_files) - set(file_paths))
+        extra_files = sorted(set(file_paths) - set(actual_files))
+        if missing_files:
+            errors.append(f"{path}: source-bearing files missing from inventory: {', '.join(missing_files)}")
+        if extra_files:
+            errors.append(f"{path}: inventory has unknown source-bearing files: {', '.join(extra_files)}")
     if data.get("source_surface_file_count") != len(file_rows):
         errors.append(f"{path}: source_surface_file_count does not match file rows")
 
@@ -865,6 +902,135 @@ def _validate(root: Path, path: Path) -> list[str]:
     if data.get("snapshot") != expected_snapshot:
         errors.append(f"{path}: snapshot is stale; expected {expected_snapshot}")
     return sorted(set(errors))
+
+
+def _reviewed_prior_categories(
+    review_path: Path,
+    documents: list[dict[str, Any]],
+    current_documents: list[str],
+) -> tuple[dict[str, list[str]], list[str]]:
+    prior_document_ids = [document["id"] for document in documents]
+    mapping, errors = _classification_review(
+        review_path,
+        None,
+        allow_unresolved=True,
+    )
+    if errors:
+        return mapping, errors
+    reviewed_ids = set(mapping)
+    prior_ids = set(prior_document_ids)
+    current_ids = set(current_documents)
+    if frozenset(reviewed_ids) not in {
+        frozenset(prior_ids),
+        frozenset(current_ids),
+    }:
+        errors.append(
+            f"{review_path}: reviewed publication set must match either the prior "
+            "inventory or the current source tree during refresh"
+        )
+        return mapping, sorted(set(errors))
+    for document in documents:
+        document_id = document["id"]
+        if document_id not in current_ids:
+            continue
+        categories = document["source_categories"]
+        reviewed_categories = mapping.get(document_id)
+        if reviewed_categories is None:
+            errors.append(
+                f"{review_path}: surviving publication is unreviewed: {document_id}"
+            )
+            continue
+        if document["inventory_state"] == "records-enumerated" and categories != [
+            "unresolved"
+        ]:
+            errors.append(
+                f"{review_path}: records-enumerated publication must remain unresolved: "
+                f"{document_id}"
+            )
+        if categories != reviewed_categories:
+            errors.append(
+                f"{review_path}: inventory categories diverge for {document_id}; "
+                f"expected {', '.join(reviewed_categories)}"
+            )
+    for document_id in sorted(current_ids - prior_ids):
+        if document_id in mapping and mapping[document_id] != ["unresolved"]:
+            errors.append(
+                f"{review_path}: new publication must remain unresolved until classify: "
+                f"{document_id}"
+            )
+    return mapping, sorted(set(errors))
+
+
+def _refresh_data(
+    root: Path,
+    audited_on: str,
+    prior_documents: list[dict[str, Any]],
+) -> dict[str, Any]:
+    data = _bootstrap_data(root, audited_on)
+    prior_by_id = {document["id"]: document for document in prior_documents}
+    for document in data["documents"]:
+        prior = prior_by_id.get(document["id"])
+        if prior is None:
+            continue
+        document["inventory_state"] = prior["inventory_state"]
+        document["source_categories"] = list(prior["source_categories"])
+    data["snapshot"] = _snapshot(data["documents"], data["owners"], data["files"])
+    return data
+
+
+def _stage_text(path: Path, text: str) -> Path:
+    """Write a durable sibling temporary while preserving the target's mode."""
+    descriptor, temporary_name = tempfile.mkstemp(
+        dir=path.parent,
+        prefix=f".{path.name}.",
+        suffix=".tmp",
+    )
+    temporary = Path(temporary_name)
+    try:
+        with os.fdopen(descriptor, "w", encoding="utf-8", newline="") as output:
+            output.write(text)
+            output.flush()
+            os.fsync(output.fileno())
+        os.chmod(temporary, stat.S_IMODE(path.stat().st_mode))
+    except BaseException:
+        temporary.unlink(missing_ok=True)
+        raise
+    return temporary
+
+
+def _replace_refresh_pair(
+    inventory: Path,
+    inventory_text: str,
+    review: Path,
+    review_text: str,
+) -> None:
+    """Replace the review first so an interrupted pair remains refresh-replayable."""
+    staged_inventory: Path | None = None
+    staged_review: Path | None = None
+    staged_review_rollback: Path | None = None
+    review_replaced = False
+    try:
+        staged_inventory = _stage_text(inventory, inventory_text)
+        staged_review = _stage_text(review, review_text)
+        staged_review_rollback = _stage_text(
+            review,
+            review.read_text(encoding="utf-8"),
+        )
+        os.replace(staged_review, review)
+        review_replaced = True
+        os.replace(staged_inventory, inventory)
+    except BaseException:
+        if review_replaced:
+            os.replace(staged_review_rollback, review)
+        raise
+    finally:
+        for temporary in (
+            staged_inventory,
+            staged_review,
+            staged_review_rollback,
+        ):
+            if temporary is not None:
+                temporary.unlink(missing_ok=True)
 
 
 def _rooted(root: Path, value: Path) -> Path:
@@ -891,6 +1057,12 @@ def main() -> int:
     classify.add_argument(
         "--review", type=Path, default=DEFAULT_CLASSIFICATION_REVIEW
     )
+    refresh = subparsers.add_parser("refresh")
+    refresh.add_argument("inventory", nargs="?", type=Path, default=DEFAULT_INVENTORY)
+    refresh.add_argument(
+        "--review", type=Path, default=DEFAULT_CLASSIFICATION_REVIEW
+    )
+    refresh.add_argument("--audited-on", required=True)
     args = parser.parse_args()
     root = args.root.resolve()
     if args.command == "bootstrap-classification-review":
@@ -937,6 +1109,119 @@ def main() -> int:
         output = _rooted(root, args.output)
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(_render(data), encoding="utf-8")
+        return 0
+    if args.command == "refresh":
+        try:
+            refresh_date = dt.date.fromisoformat(args.audited_on)
+        except ValueError:
+            parser.error("--audited-on must be an ISO date")
+        inventory = _rooted(root, args.inventory)
+        review = _rooted(root, args.review)
+        if inventory.resolve() == review.resolve():
+            parser.error("inventory and --review must be different paths")
+        errors: list[str] = []
+        inventory_before: bytes | None = None
+        review_before: bytes | None = None
+        try:
+            inventory_before = inventory.read_bytes()
+            review_before = review.read_bytes()
+        except OSError as error:
+            errors.append(f"cannot capture refresh inputs: {error}")
+        if not errors:
+            errors.extend(_validate(root, inventory, allow_source_drift=True))
+        data = None
+        if not errors:
+            data, read_errors = _read_inventory(inventory)
+            errors.extend(read_errors)
+        if not errors and data is not None:
+            prior_inventory_date = dt.date.fromisoformat(data["audited_on"])
+            if refresh_date < prior_inventory_date:
+                errors.append(
+                    f"{inventory}: --audited-on {args.audited_on} is earlier than "
+                    f"prior inventory audited_on {data['audited_on']}"
+                )
+        prior_categories: dict[str, list[str]] = {}
+        review_audited_on = ""
+        current_documents = _documents(root)
+        if not errors and data is not None:
+            prior_categories, review_errors = _reviewed_prior_categories(
+                review,
+                data["documents"],
+                current_documents,
+            )
+            errors.extend(review_errors)
+        if not errors:
+            review_data, review_read_errors = _read_inventory(review)
+            errors.extend(review_read_errors)
+            if review_data is not None:
+                review_audited_on = review_data["audited_on"]
+                review_date = dt.date.fromisoformat(review_audited_on)
+                if refresh_date < review_date:
+                    errors.append(
+                        f"{inventory}: --audited-on {args.audited_on} is earlier "
+                        f"than classification review audited_on {review_audited_on}"
+                    )
+        if errors:
+            for error in sorted(set(errors)):
+                print(f"source-inventory error: {error}", file=sys.stderr)
+            return 1
+        refreshed = _refresh_data(root, args.audited_on, data["documents"])
+        unowned = [item["path"] for item in refreshed["files"] if not item["owners"]]
+        known_owners = {
+            document["id"] for document in refreshed["documents"]
+        } | {owner["id"] for owner in refreshed["owners"]}
+        unknown_edges = sorted(
+            {
+                edge["id"]
+                for document in refreshed["documents"]
+                for edge in document["record_owners"]
+                if edge["id"] not in known_owners
+            }
+        )
+        symbolic_links = [
+            item["path"]
+            for item in refreshed["files"]
+            if (root / item["path"]).is_symlink()
+        ]
+        for relative in unowned:
+            errors.append(f"source-bearing file has no explicit owner: {relative}")
+        for owner_id in unknown_edges:
+            errors.append(f"record_owners references unknown owner: {owner_id}")
+        for relative in symbolic_links:
+            errors.append(f"source-bearing file must not be a symbolic link: {relative}")
+        if errors:
+            for error in sorted(set(errors)):
+                print(f"source-inventory error: {error}", file=sys.stderr)
+            return 1
+        current_documents = [document["id"] for document in refreshed["documents"]]
+        inventory_text = _render(refreshed)
+        review_text = _render_classification_review(
+            current_documents,
+            review_audited_on,
+            prior_categories,
+        )
+        confirmation = _refresh_data(root, args.audited_on, data["documents"])
+        if confirmation["snapshot"] != refreshed["snapshot"]:
+            print(
+                "source-inventory error: source tree changed during refresh; retry",
+                file=sys.stderr,
+            )
+            return 1
+        try:
+            if (
+                inventory.read_bytes() != inventory_before
+                or review.read_bytes() != review_before
+            ):
+                raise RuntimeError("inventory or classification review changed during refresh")
+            _replace_refresh_pair(
+                inventory,
+                inventory_text,
+                review,
+                review_text,
+            )
+        except (OSError, RuntimeError) as error:
+            print(f"source-inventory error: cannot complete refresh: {error}", file=sys.stderr)
+            return 1
         return 0
     if args.command == "classify":
         inventory = _rooted(root, args.inventory)
