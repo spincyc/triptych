@@ -28,3 +28,12 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The shared Leonine Summa theologiae passage controls the complete Thomas sentence imported into EL-REVIEW-IV through M19, M21, and M22 within its M19-M22 reader set. The shared course macro preserves every word while omitting the source comma after 'salutem' under its declared punctuation normalization."
 verified_on = "2026-07-23"
 source_fingerprint = "sha256:19f90858ed7a2dd770cd7842d6f5036f6c8cbf0fddffee2c1fe1c938fe4609f0"
+
+[[bindings]]
+source_id = "passage.catholic-church.vulgata-clementina.hetzenauer-1914.mt-8.23-27"
+loci = ["Mt.8.23-27"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The shared checked Hetzenauer passage controls the complete Matthew 8:23-27 narrative imported into EL-REVIEW-IV through M22 within its M19-M22 reader set. The shared course rendering retains every word while applying the owner's declared accent, j/i, ligature, capitalization, and display-punctuation normalization."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:940c5736816f1872a15e3cfd33c697a7c3a927e991456c7a27db920ff6ee490b"

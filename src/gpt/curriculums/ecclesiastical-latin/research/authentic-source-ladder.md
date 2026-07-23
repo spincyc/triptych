@@ -66,7 +66,7 @@ interchangeable.
 
 | Stable ID | Edition and scan | Course locus | Locator | State |
 | --- | --- | --- | --- | --- |
-| VULG-HETZ1914-MT8.23-27 | Michael Hetzenauer, ed., *Biblia Sacra Vulgatae Editionis, Sixti V et Clementis VIII* (1914); SacredBible.org indexed scans | Mt. 8:23–27, complete storm narrative | indexed scan p. 0960 | V |
+| VULG-HETZ1914-MT8.23-27 | Michael Hetzenauer, ed., *Biblia Sacra Vulgatae Editionis, Sixti V et Clementis VIII* (1914); SacredBible.org indexed scans | Mt. 8:23–27, complete storm narrative; canonical passage `passage.catholic-church.vulgata-clementina.hetzenauer-1914.mt-8.23-27` | indexed scan p. 0960 | V |
 
 The Cicero scan is bilingual, but the course reproduces no edition translation.
 Every English rendering in the reader is a new project translation. The
@@ -79,6 +79,12 @@ verification witness whose artifact-level rights remain unresolved. The
 separate tracked checked transcription contains only the verified sentence,
 preserves the Leonine comma after *salutem*, and supports M19, M21, M22, and
 EL-REVIEW-IV. The course's punctuation-normalized rendering omits that comma.
+
+For VULG-HETZ1914-MT8.23-27, the exact public-domain title leaf and page 0960
+scan are tracked with a five-line checked transcription. M22 and EL-REVIEW-IV
+consume the complete passage; M08 consumes only the bounded phrase *secuti sunt
+eum discipuli eius*. SacredBible's separately transcribed Matthew HTML is a
+finding aid rather than textual control because it contains a nearby error.
 
 ## 1962 Missal complete-formulary set
 

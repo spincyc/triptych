@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-07-23"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:eb37b31a7e3c44f7006e23822667992b6fad8b528c43cf4122d1710e376257e2"
+inventory_snapshot = "sha256:b776ab235d79cdcee1b7c315501af3ca615e417c7b97b252bae886956bf056b5"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:dafeabb5de4701ba2d641eaed5f3c550cb19836e6140a6cb39f44a74cc4e1c92"
-canonical_catalog_snapshot = "sha256:9ebedefa10377576f06d67e9be1613dc6a4c1c24c0f3cc7d1e46d2bb9fbb4974"
+canonical_catalog_snapshot = "sha256:33cd2706c392691380feeb368cb6b1c50655532ddce3bfd400fea601012e1445"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:9d100275b62b60ae95dbe07f881fe3c813e815606c5778bed50ffdc9dc6e8559"
+snapshot = "sha256:d35586538ed0d366b775e7fd972f19e9afdfb383753d5b43a6a9b2844dc1c5c7"
 
 [[families]]
 id = "family.acta.aas-ass"
@@ -209,6 +209,26 @@ canonical_ids = []
 trace_patterns = ["(?:Missale Romanum.{0,40}(?:2002|2008)|Roman Missal.{0,60}(?:Third Edition|2011)|General Instruction of the Roman Missal|\\bGIRM\\b|\\bIGMR\\b)"]
 reviewed_on = "2026-07-22"
 notes = "Central metadata can be shared, but Latin, territorial English, GIRM states, later variations, and copyrighted artifacts must not be conflated."
+
+[[families]]
+id = "family.scripture.vulgata-clementina-hetzenauer-1914"
+label = "Hetzenauer 1914 Vulgata Clementina"
+kind = "edition"
+source_categories = ["scripture"]
+identity_confidence = "confirmed"
+identity_gaps = []
+artifact_availability = "canonicalized"
+storage_plan = ["tracked"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "passage-pin"
+disposition = "bind-existing"
+priority = "p0"
+canonical_ids = ["artifact.catholic-church.vulgata-clementina.hetzenauer-1914.mt-8.23-27-checked-text-771cbab2", "artifact.catholic-church.vulgata-clementina.hetzenauer-1914.sacredbible-scan-0960-a40b1065", "artifact.catholic-church.vulgata-clementina.hetzenauer-1914.sacredbible-title-page-39fa403a", "edition.catholic-church.vulgata-clementina.hetzenauer-1914", "passage.catholic-church.vulgata-clementina.hetzenauer-1914.mt-8.23-27", "work.catholic-church.vulgata-clementina"]
+trace_patterns = ["(?:Hetzenauer 1914|VULG-HETZ1914|vulgata-clementina\\.hetzenauer-1914)"]
+reviewed_on = "2026-07-23"
+notes = "Reuse the canonical fixed edition, exact public-domain title and Matthew page images, checked Matthew 8:23-27 transcription, and verified passage. The complete passage has two reviewed consumers; a third publication binds only a bounded Matthew 8:23 phrase."
 
 [[families]]
 id = "family.scripture.vulgate-editions"
@@ -718,8 +738,12 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/02-core-grammar/08-infinitives-participles-and-absolutes"
-surface_snapshot = "sha256:bddc6f0f656380fb721be43de7aa57b81ccc919db53593f2b06cdc7584f12150"
+surface_snapshot = "sha256:52be40de95444cd4af4c9724651d18b35033217b28a78eebd530224e2bdbd5b1"
 review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgata-clementina-hetzenauer-1914"
+basis = "trace-scan"
+record_paths = ["src/gpt/curriculums/ecclesiastical-latin/02-core-grammar/08-infinitives-participles-and-absolutes/research/source-bindings.toml"]
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/02-core-grammar/09-subjunctive-system-purpose-result"
@@ -804,8 +828,12 @@ record_paths = ["src/gpt/curriculums/ecclesiastical-latin/04-advanced/21-collati
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-and-independent-research"
-surface_snapshot = "sha256:4e36e4959a86b8d4c115aa01982cfeae35109eba8b3646da1b4b666ca6dd41df"
+surface_snapshot = "sha256:97e651afba832726c64e1f445d1c95bcbdbe6557bac749d2fe78bf14eff9e116"
 review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgata-clementina-hetzenauer-1914"
+basis = "trace-scan"
+record_paths = ["src/gpt/curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-and-independent-research/research/source-bindings.toml"]
 [[review_units.family_presence]]
 family_id = "family.thomas-aquinas.summa-theologiae"
 basis = "trace-scan"
@@ -868,8 +896,12 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced"
-surface_snapshot = "sha256:68724dba1abe06df7cdbd68648b5027159761e246d827f9bb725344cb39169e2"
+surface_snapshot = "sha256:eecf641cd0c95b3a2ec39c76fe0172276af38400bc1a0555d3bc3c2527c72d81"
 review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgata-clementina-hetzenauer-1914"
+basis = "trace-scan"
+record_paths = ["src/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced/research/source-bindings.toml"]
 [[review_units.family_presence]]
 family_id = "family.thomas-aquinas.summa-theologiae"
 basis = "trace-scan"
@@ -1722,7 +1754,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "owner.curriculums.ecclesiastical-latin"
-surface_snapshot = "sha256:63fa391c76da8f9c7a166ad0e144b6218d86416580e75cb1803f922eb039943c"
+surface_snapshot = "sha256:8b65136d5821682425cc2713cd7c1eeaa2b600f37e3d819cdb7ac095d25b6ecb"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"

@@ -50,7 +50,7 @@ normalizations, and rights notes are in `authentic-source-ladder.md` and
 | Classical prose | CAES-DUPONTET1900, *Bellum Gallicum* 1.1.1; CIC-FALCONER1923, *Laelius* 6.20 | V |
 | Patristic prose | HIER-CSEL54, *Epistula* 22.30.4; AUG-CSEL33, *Confessiones* 1.1.1 three complete opening sentences through *donec requiescat in te* and 10.27.38 explicitly bounded after *quaerebam*; AMB-KRAB1857, *De officiis* 1.11.38 | V |
 | Scholastic prose | THOM-LEON4, *Summa theologiae* I, q.1, a.1, complete corpus opening sentence; canonical Leonine passage shared by M19, M21, M22, and EL-REVIEW-IV | V |
-| Biblical prose | VULG-HETZ1914-MT8.23-27, Clementine Vulgate Mt. 8:23–27, complete storm narrative | V |
+| Biblical prose | VULG-HETZ1914-MT8.23-27, canonical Hetzenauer 1914 Clementine Vulgate Mt. 8:23–27 complete storm narrative in M22 and EL-REVIEW-IV; bounded Mt. 8:23 phrase in M08 | V |
 | Classical poetry | PHAED-POST1919, Phaedrus Book 1 Prologue 1–2 and 1.1.1–6; VERG-HEND1891, *Aeneid* 1.1–4; OVID-OWEN1885, *Tristia* 1.1.1–2; HOR-WICKGAR1912, *Carmina* 1.11 | V |
 | Missal poetry | MR62-FORM-PENT, Pentecost Sequence | V |
 

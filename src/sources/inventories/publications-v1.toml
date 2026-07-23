@@ -4,8 +4,8 @@ provider = "gpt"
 audited_on = "2026-07-23"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 103
-source_surface_file_count = 1182
-snapshot = "sha256:eb37b31a7e3c44f7006e23822667992b6fad8b528c43cf4122d1710e376257e2"
+source_surface_file_count = 1183
+snapshot = "sha256:b776ab235d79cdcee1b7c315501af3ca615e417c7b97b252bae886956bf056b5"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -3446,6 +3446,12 @@ kind = "research-record"
 owners = ["curriculums/ecclesiastical-latin/02-core-grammar/08-infinitives-participles-and-absolutes"]
 
 [[files]]
+path = "src/gpt/curriculums/ecclesiastical-latin/02-core-grammar/08-infinitives-participles-and-absolutes/research/source-bindings.toml"
+sha256 = "2c4154e1f42ffbc799a03e83d67b988ed91d52402fa00b08a6a5d4f0ecffbf39"
+kind = "source-binding"
+owners = ["curriculums/ecclesiastical-latin/02-core-grammar/08-infinitives-participles-and-absolutes"]
+
+[[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/02-core-grammar/09-subjunctive-system-purpose-result/main.tex"
 sha256 = "0e26d239bed7732affdb92ef3787fa1217e9100a690f5221d58533872fbed1ad"
 kind = "publication-main"
@@ -3741,7 +3747,7 @@ owners = ["curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-an
 
 [[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-and-independent-research/research/source-bindings.toml"
-sha256 = "02c2f4c3340aa0b978ccad0415f30589bd07ab85eb4c4b77cba609768915946a"
+sha256 = "408b1e7ce1ae62acf70257eff55ae509375542567216ccc7a6c91dfa7905ac5a"
 kind = "source-binding"
 owners = ["curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-and-independent-research"]
 
@@ -3963,13 +3969,13 @@ owners = ["curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced"]
 
 [[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced/research/companion-map.md"
-sha256 = "21c62ece45cb904fe31f261c58412b07d3d2cebabb0f1b06ec61ed9ab3acdc86"
+sha256 = "1471ad2830e884cc542776b7b605ce67ab8cb92b8495476f353fc045a849958c"
 kind = "research-record"
 owners = ["curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced"]
 
 [[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced/research/source-bindings.toml"
-sha256 = "6cc7a681245374a844bf25828e44de576ea402a10dde9631844519c289939d38"
+sha256 = "db6385a5b3843c305cc17a5735b660bf23739ac9a80c442a88f5ceb51d3ee736"
 kind = "source-binding"
 owners = ["curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced"]
 
@@ -3981,7 +3987,7 @@ owners = ["owner.curriculums.ecclesiastical-latin"]
 
 [[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/research/authentic-source-ladder.md"
-sha256 = "2dac1a2e7b6fd476caa03e05d55f260c04c1c31540d9cca85109bde2e084f11b"
+sha256 = "eca3f4c35e6255c1d32564cd37be405fec269092b03d3fbd7a834a8f97274115"
 kind = "research-record"
 owners = ["owner.curriculums.ecclesiastical-latin"]
 
@@ -3993,7 +3999,7 @@ owners = ["owner.curriculums.ecclesiastical-latin"]
 
 [[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/research/edition-manifest.md"
-sha256 = "88d0f189528c79a2ab0b958164035f4e7389b91a5970c47a0d8c8320407d1c4a"
+sha256 = "43bc92bc133cdd98987901ad32b6edf9dfcd8dc0ed01ffb90282223313ee13fd"
 kind = "research-record"
 owners = ["owner.curriculums.ecclesiastical-latin"]
 
@@ -4005,7 +4011,7 @@ owners = ["owner.curriculums.ecclesiastical-latin"]
 
 [[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/research/passage-inventory.md"
-sha256 = "ee2109852c0a3bb74ddfecb0c2089e1607e25a244f2c0fa0fa4154fa67b53654"
+sha256 = "f7a18da4e0489ca9aaf067fc86ac4b318e890d19835d1fcb118ce57dcb8edbf3"
 kind = "research-record"
 owners = ["owner.curriculums.ecclesiastical-latin"]
 
@@ -4029,7 +4035,7 @@ owners = ["owner.curriculums.ecclesiastical-latin"]
 
 [[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/research/source-audit.md"
-sha256 = "2b17d0f5d73ceb4c9e9fa9412331a0a8c8ba09beac0c6eb75c325f98e5014150"
+sha256 = "bb3f9f3a211f5b4b358daa88d3b89c39a6bea590141c7b9a181b3ba2d94c051f"
 kind = "legacy-source-audit"
 owners = ["owner.curriculums.ecclesiastical-latin"]
 
