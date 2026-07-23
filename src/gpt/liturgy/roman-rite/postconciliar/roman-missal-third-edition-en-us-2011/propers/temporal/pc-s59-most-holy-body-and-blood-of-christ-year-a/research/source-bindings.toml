@@ -1,6 +1,13 @@
-schema = 1
+schema = 2
 record_type = "bindings"
 document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s59-most-holy-body-and-blood-of-christ-year-a"
+
+[[bindings]]
+source_id = "edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008"
+loci = ["complete altar-book identity"]
+role = "bibliographic"
+states = ["cataloged"]
+context = "This catalog-only binding records the 2008 emended reprint as the governing Latin altar-book edition identified by the guide. No exact complete 2008 artifact is registered or inspected, so the binding supplies edition identity but no textual or page-level evidence."
 
 [[bindings]]
 source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
@@ -35,3 +42,30 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The exact rule was checked against the guide's Eucharistic Prayer branch: either appointed proper Eucharistic Preface excludes Eucharistic Prayer IV because its Preface is invariable. The actual compatible Prayer remains unresolved."
 verified_on = "2026-07-23"
 source_fingerprint = "sha256:7197153b7137a151997474608d070bb179b73f5c08f22be4c8b6a3c6842bb70d"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.sanctissimum-corpus-et-sanguis-christi"
+loci = ["Sanctissimi Corporis et Sanguinis Christi, printed pp. 489-491"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact 2002 witness was checked against the shared Corpus Christi owner's complete Latin formulary, two Eucharistic Preface paths, procession rubric, appointed-element, incipit, boundary, and locator audit. It controls that Latin evidence without standing in for the 2008 reprint typography or a protected United States English altar book."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:2d16bc9ab2b8521ff188eaacd0bb640dc71508eba81fd6977b79c964439ed792"
+
+[[bindings]]
+source_id = "passage.holy-see.reimpressio-emendata-missalis-romani-notice-2008.italian-notitiae-503-504.edition-status"
+loci = ["edition-status"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The official notice controls the guide's identification of the 2008 book as an emended reprint rather than a new typical edition and preserves the published correction and pagination limits. It is not direct inspection of the Corpus Christi reprint pages."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:2b6afb5f0ceae280b31d66ef7f53b6520ba156439d7991acb69e6b2d3e1e9f14"
+
+[[bindings]]
+source_id = "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.tempus-per-annum"
+loci = ["tempus-per-annum"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete published Tempus per annum variation subsection lists changes only at Missal pp. 457 and 471 and none at the Corpus Christi formulary, pp. 489-491. This is bounded no-listed-change evidence, not proof that the 2002 and 2008 pages are otherwise identical."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:dca2fb4e1dce71f98132cc55c9ffce5cb213af57d2732bab908824ea00bb40fb"

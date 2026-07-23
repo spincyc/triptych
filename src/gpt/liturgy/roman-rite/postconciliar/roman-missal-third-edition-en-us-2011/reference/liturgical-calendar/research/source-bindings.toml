@@ -1,0 +1,109 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"
+
+[[bindings]]
+source_id = "edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008"
+loci = ["complete altar-book identity"]
+role = "bibliographic"
+states = ["cataloged"]
+context = "This catalog-only binding records the 2008 emended reprint as the governing Latin altar-book edition identified by the reference. No exact complete 2008 artifact is registered or inspected, so the binding supplies edition identity but no textual or page-level evidence."
+
+[[bindings]]
+source_id = "passage.holy-see.decretum-de-editione-typica-tertia-missalis-romani-2000.latin-missale-romanum-typica-tertia-2002.complete-decree"
+loci = ["complete-decree"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete decree was checked for papal approval, the Congregation's declaration of the third typical edition, the preparation of territorial translations, and the edition's initial force. It controls edition chronology without being falsely owned as a passage of the Missal work."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:7838301958b8a5e17c903ac2cbd10fc20891c775127be5092c4a3f976df24b1b"
+
+[[bindings]]
+source_id = "passage.paul-vi.mysterii-paschalis.latin-missale-romanum-typica-tertia-2002.complete-text"
+loci = ["complete-text"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete apostolic letter was checked for Paul VI's approval of the Universal Norms and General Roman Calendar and their effective date. The binding reuses the act as its own work while the 2002 Missal PDF remains its exact container witness."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:8f47eff408a0cfbb60b0eef540bc0c1b122227c5716076f005c801466e57083e"
+
+[[bindings]]
+source_id = "passage.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-missale-romanum-typica-tertia-2002.complete-text"
+loci = ["complete-text"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete Universal Norms and precedence table were checked for rank, occurrence, transfer, omission, temporal-cycle, and proper-vigil rules used throughout the reference. This is a reusable constituent work rather than a Missal-owned excerpt."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:28462ed005480e0805d39996c9a2eb315a79b1da8c25d91e930a32e7978b5fa4"
+
+[[bindings]]
+source_id = "passage.catholic-church.calendarium-romanum-generale.latin-missale-romanum-typica-tertia-2002.complete-calendar"
+loci = ["complete-calendar"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete fixed General Roman Calendar printed in 2002 was checked as the reference's universal base, including the note governing entries whose rank is not otherwise marked. Later additions and the United States overlay remain separately controlled."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:8bef1c29da813d7dccc6aa23be1df3156345cad7ac86e14c1e3df1e7a55f4f6d"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.epiphania-domini-vigilia-et-die"
+loci = ["In Epiphania Domini: Ad Missam in Vigilia et In die"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The Missal headings were checked directly for the reference's distinction between the proper Vigil Mass and Mass during the Day for the Epiphany."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:1e178d04c5028beb5f0ffe022190654737a6da221d3434772eebd9f5f8883b51"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.ascensio-domini-vigilia-et-die"
+loci = ["In Ascensione Domini: Ad Missam in Vigilia et In die"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The Missal headings were checked directly for the reference's distinction between the proper Vigil Mass and Mass during the Day for the Ascension."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:8eb89a19429bfb74fc2ef89a8201b10b93bf009c12d872f1aad168b8051867b8"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.nativitas-sancti-ioannis-baptistae-vigilia-et-die"
+loci = ["In Nativitate Sancti Ioannis Baptistae: Ad Missam in Vigilia et In die"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The Missal headings were checked directly for the reference's distinction between the proper Vigil Mass and Mass during the Day for the Nativity of Saint John the Baptist."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:d4c7f0e4a434238c35b48fb88ce6841773d6b5c20f702862898be12dd062a53a"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.sancti-petri-et-pauli-vigilia-et-die"
+loci = ["Sanctorum Petri et Pauli, Apostolorum: Ad Missam in Vigilia et In die"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The Missal headings were checked directly for the reference's distinction between the proper Vigil Mass and Mass during the Day for Saints Peter and Paul."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:86ce4b45e75e20846bdbfe7fa4aa73db40244aff1dea22fe20588f7d96410698"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.assumptio-beatae-mariae-virginis-vigilia-et-die"
+loci = ["In Assumptione Beatae Mariae Virginis: Ad Missam in Vigilia et In die"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The Missal headings were checked directly for the reference's distinction between the proper Vigil Mass and Mass during the Day for the Assumption."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:70d47e6d9e95dd663188f1614e5af7c712f75e83c3c7c921d5e7b68d17fc7e7a"
+
+[[bindings]]
+source_id = "passage.holy-see.reimpressio-emendata-missalis-romani-notice-2008.italian-notitiae-503-504.edition-status"
+loci = ["edition-status"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official notice controls the reference's identification of the 2008 book as an emended reprint rather than a new typical edition, its general pagination boundary, and the limited nature of this proof. The notice reports but is not itself decree Prot. N. 652/08/L."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:2b6afb5f0ceae280b31d66ef7f53b6520ba156439d7991acb69e6b2d3e1e9f14"
+
+[[bindings]]
+source_id = "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.calendarium-romanum-generale"
+loci = ["calendarium-romanum-generale"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete General Calendar subsection of the official 2008 variation list was checked for the integrations and title correction represented in the reference. It is a bounded change list, not a substitute for direct collation of the complete 2008 altar-book calendar."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:9cfe66d7a9677c0d36bfe19256e54865e1e89529ef9218bc62238d446fd5f22b"

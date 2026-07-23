@@ -1,0 +1,17 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+edition_id = "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+artifact_type = "secondary-digital-reproduction-pdf"
+media_type = "application/pdf"
+storage = "restricted"
+rights_status = "restricted"
+rights_basis = "The exact PDF reproduces a modern official Latin liturgical book whose title matter asserts copyright. Public download from a secondary host does not establish permission to redistribute either the official content or this digital reproduction, so Triptych retains only identity and review metadata."
+source_url = "https://media.musicasacra.com/books/latin_missal2002.pdf"
+provenance = "Exact 828-page PDF acquired from a non-ecclesiastical secondary host. The reproduced title and decree identify the Vatican third typical edition, while PDFCreator and Ghostscript metadata, zero embedded raster images, and one embedded Times New Roman subset establish that these bytes are digitally typeset rather than page images of the printed altar book."
+retrieved = "2026-07-23"
+sha256 = "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7"
+byte_size = 3333382
+page_count = 828
+indexable = false
+notes = "Two acquisitions in this review were byte-identical. Artifact pagination and the edition's printed pagination diverge; every registered passage therefore records physical PDF pages separately from any printed locus. Only the registered page ranges were inspected, and no claim is made that every digitally typeset word reproduces the printed edition without error."

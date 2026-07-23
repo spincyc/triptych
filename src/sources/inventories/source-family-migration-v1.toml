@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-07-23"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:e44718d85b2472a403908717f4ada68fba8dc2563ae0c8bfb86588628ed16c8b"
+inventory_snapshot = "sha256:ad94e19b1ceedab832821100294895ba5720dd06d2b6f819fa083ad9fbfdce6e"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:dafeabb5de4701ba2d641eaed5f3c550cb19836e6140a6cb39f44a74cc4e1c92"
-canonical_catalog_snapshot = "sha256:a0ff658fb6b9af29547f29118f92921c2b8ff38f0946c36875a1cbf82b681975"
+canonical_catalog_snapshot = "sha256:9b5094815f2e6d706bc362ad6104fdee5d8bd1b0ea1348ce8c2da989a8fe8d44"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:11e6a881fb207464fc536f8584d43001267fa47d279f010dcaf15d6928a85585"
+snapshot = "sha256:9783563f17a08dffe45f1d8c7a14b82cea80bb093861c9b0f0e5956ea0d7940a"
 
 [[families]]
 id = "family.acta.aas-ass"
@@ -225,10 +225,10 @@ freshness_rule = "Pin the 2008 Latin state, 2011 United States English edition, 
 evidence_ceiling = "edition-locus"
 disposition = "split-then-canonicalize"
 priority = "p0"
-canonical_ids = ["artifact.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.usccb-chapter-vii-html-2026-07-23-7b765649", "artifact.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.usccb-landing-html-2026-07-23-8ec0eb3d", "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021", "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.363", "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-a", "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-b", "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-c", "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-d", "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.online-edition-notice", "work.catholic-church.institutio-generalis-missalis-romani"]
+canonical_ids = ["artifact.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.usccb-chapter-vii-html-2026-07-23-7b765649", "artifact.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.usccb-landing-html-2026-07-23-8ec0eb3d", "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944", "artifact.holy-see.notitiae.volume-44-numbers-503-504-2008.official-pdf-74c8d174", "edition.catholic-church.calendarium-romanum-generale.latin-missale-romanum-typica-tertia-2002", "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021", "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002", "edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008", "edition.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-missale-romanum-typica-tertia-2002", "edition.holy-see.decretum-de-editione-typica-tertia-missalis-romani-2000.latin-missale-romanum-typica-tertia-2002", "edition.holy-see.notitiae.volume-44-numbers-503-504-2008", "edition.holy-see.reimpressio-emendata-missalis-romani-notice-2008.italian-notitiae-503-504", "edition.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504", "edition.paul-vi.mysterii-paschalis.latin-missale-romanum-typica-tertia-2002", "passage.catholic-church.calendarium-romanum-generale.latin-missale-romanum-typica-tertia-2002.complete-calendar", "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.363", "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-a", "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-b", "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-c", "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-d", "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.online-edition-notice", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.ascensio-domini-vigilia-et-die", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.assumptio-beatae-mariae-virginis-vigilia-et-die", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xi-per-annum", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xii-per-annum", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xiii-per-annum", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xiv-per-annum", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xv-per-annum", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xvi-per-annum", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xvii-per-annum", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.epiphania-domini-vigilia-et-die", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.nativitas-sancti-ioannis-baptistae-vigilia-et-die", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.sancti-petri-et-pauli-vigilia-et-die", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.sanctissima-trinitas", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.sanctissimum-corpus-et-sanguis-christi", "passage.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-missale-romanum-typica-tertia-2002.complete-text", "passage.holy-see.decretum-de-editione-typica-tertia-missalis-romani-2000.latin-missale-romanum-typica-tertia-2002.complete-decree", "passage.holy-see.reimpressio-emendata-missalis-romani-notice-2008.italian-notitiae-503-504.edition-status", "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.calendarium-romanum-generale", "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.tempus-per-annum", "passage.paul-vi.mysterii-paschalis.latin-missale-romanum-typica-tertia-2002.complete-text", "segment.catholic-church.calendarium-romanum-generale.latin-missale-romanum-typica-tertia-2002.missale-romanum-artifact-pages-71-81", "segment.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-missale-romanum-typica-tertia-2002.missale-romanum-artifact-pages-64-71", "segment.holy-see.decretum-de-editione-typica-tertia-missalis-romani-2000.latin-missale-romanum-typica-tertia-2002.missale-romanum-artifact-pages-2-3", "segment.holy-see.reimpressio-emendata-missalis-romani-notice-2008.italian-notitiae-503-504.notitiae-page-367", "segment.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.notitiae-pages-368-387", "segment.paul-vi.mysterii-paschalis.latin-missale-romanum-typica-tertia-2002.missale-romanum-artifact-pages-61-64", "work.catholic-church.calendarium-romanum-generale", "work.catholic-church.institutio-generalis-missalis-romani", "work.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario", "work.holy-see.decretum-de-editione-typica-tertia-missalis-romani-2000", "work.holy-see.notitiae", "work.holy-see.reimpressio-emendata-missalis-romani-notice-2008", "work.holy-see.variationes-et-additiones-missalis-romani-2008", "work.paul-vi.mysterii-paschalis"]
 trace_patterns = ["(?:Missale Romanum.{0,40}(?:2002|2008)|Roman Missal.{0,60}(?:Third Edition|2011)|General Instruction of the Roman Missal|\\bGIRM\\b|\\bIGMR\\b)"]
 reviewed_on = "2026-07-23"
-notes = "The canonical membership now covers one bounded current United States GIRM slice: a separate related work, the 2011 English edition state emended through 2021, exact restricted landing and Chapter VII responses, and checked passages 363 and 365(a-d). The Latin 2002 and 2008 states, the complete split-HTML GIRM presentation, the 2011 altar book, later variations, and other territorial expressions remain separate migration work and must not be conflated."
+notes = "The canonical membership covers two bounded slices without conflating them: the current United States GIRM controls already recorded, and a Latin third-edition slice comprising the exact restricted 2002 secondary digital reproduction, genuine Missal formularies and proper headings, separately owned constituent acts and calendar works, the metadata-only 2008 altar-book identity, and the exact official Notitiae container, status notice, and variation-list passages. The variation list is not treated as the complete 2008 altar book. The complete split-HTML GIRM presentation, the 2011 U.S. altar book, direct 2008 reprint-page collation, later variations, and other territorial expressions remain separate migration work."
 
 [[families]]
 id = "family.scripture.vulgata-clementina-hetzenauer-1914"
@@ -1503,7 +1503,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-eng
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s35-eleventh-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:dc8a153b6be08d9bd895913b10ce0aed4bf595969d1acbabeece6bd6bf14b50a"
+surface_snapshot = "sha256:80abdbc1c9062554a421e094235b3cce89909085b3c928dd30da7ea3c8a2a47c"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1532,7 +1532,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s36-twelfth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:b2647d231aa9480b7154b710e59cb76dba210819cbd622f645bdf6a499975a62"
+surface_snapshot = "sha256:8d4c2c57c5c72ab4f121a7a8c3103911f9cb326eb68515cded146437caf39b38"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1561,7 +1561,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-thirteenth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:60547cb239583eaab068c6de46609330f721b5df0b64d489225256fe5472acab"
+surface_snapshot = "sha256:b09521a452bd7bf7d8d36c01a04c3726dc7ef91d46479e60856f729da02ded98"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -1590,7 +1590,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-fourteenth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:75062e417e0f5425f7eeb8c670e166c375521923527415c7fa1cec3ac238e101"
+surface_snapshot = "sha256:c9bd5caaf26300e47c553f0b277d3ffc11a99cf56aa31b3caf4f90163bf11750"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1615,7 +1615,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-fifteenth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:f6a526d2e02baf6166cb5b75535c91237d173cc33ae233e560c56329bd141d87"
+surface_snapshot = "sha256:9845a30cdbaf9ad9d3b599387218b189aa537290f01c1708365129dcb25641c3"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1640,7 +1640,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:584fb91e37750e2ee9f316de9f4fec253ebd5e4e232d139cc71de498d8423b7d"
+surface_snapshot = "sha256:2842067dbb9564d2cf403d33db7831c65dd08555107145203f9b27cd28e16bb8"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1669,7 +1669,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:e3999ea32d69460471dc78ee061c26a4a8d57f2bbe94c8784d87a387dea81e1d"
+surface_snapshot = "sha256:319e6e89f826d45dc8c00b0dede46797dd61e4cda3d3bec9a95fade16fe04adc"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1698,7 +1698,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a"
-surface_snapshot = "sha256:cc53ceaf4da65e2ed48c401a6eac035b35833bb984d5218ce9677d0e0f7459e8"
+surface_snapshot = "sha256:495377d555378e2b2f6841e83f204139b8d2fb6105b3ef4d07e87cc09f717530"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -1731,7 +1731,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s59-most-holy-body-and-blood-of-christ-year-a"
-surface_snapshot = "sha256:c89b3d4cefcb337be2ccd42ff1ed8e0f7129f887a710b2c4178e60ed5dfb7d43"
+surface_snapshot = "sha256:780309a06b3af4444cf61f72469a92ca8ebc4af86f6d474a26cf68e0040de6e9"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1756,7 +1756,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"
-surface_snapshot = "sha256:15203db53a1be06126671a1686ff1113624204e302778df2b13bd2db113fbffd"
+surface_snapshot = "sha256:b99f6e03b67ffc0adaf0bf882581a254e4e5d4976628ccbccd2620f455d30522"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
@@ -1823,7 +1823,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en-us-2011-propers"
-surface_snapshot = "sha256:7ff90ab0517519112d67fd92ec28efc99998444ef3d12db8e45803b403d998f8"
+surface_snapshot = "sha256:bfd94b8cde4a624e64eb88f148561c3260c6375cd1b96833ec1f33ddd87dcaaf"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-lectionary.olm-us-lectionary"

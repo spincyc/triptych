@@ -1,17 +1,17 @@
 # Source Audit
 
-Access date for web sources: 2026-07-17.
+Original publication-audit access date for web sources: 2026-07-17. The reusable 2002 Missal and 2008 *Notitiae* witnesses were reacquired and rechecked on 2026-07-23.
 
 ## A. Controlling and near-controlling sources actually used
 
 ### A1. *Missale Romanum*, editio typica tertia (2002)
 
 - **Bibliography:** *Missale Romanum ex decreto Sacrosancti Oecumenici Concilii Vaticani II instauratum auctoritate Pauli PP. VI promulgatum Ioannis Pauli PP. II cura recognitum*, editio typica tertia (Civitas Vaticana: Typis Vaticanis, 2002).
-- **Delivery witness:** page-image facsimile at <https://media.musicasacra.com/books/latin_missal2002.pdf>, 828 pages, 3,333,382 bytes, SHA-256 `0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7`. The title page identifies the official book; the non-ecclesiastical host is only a secondary delivery witness.
-- **Loci used:** PDF pp. 64–71, *Mysterii Paschalis*, Universal Norms, and table of liturgical days; PDF pp. 71–82, *Calendarium Romanum generale*. Calendar text extracted at lines 3992–4461 of the temporary text layer.
+- **Delivery witness:** exact secondary-host digitally typeset PDF reproduction at <https://media.musicasacra.com/books/latin_missal2002.pdf>, 828 pages, 3,333,382 bytes, SHA-256 `0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7`. Two acquisitions were byte-identical. The title page identifies the official book; the non-ecclesiastical host is only a secondary delivery witness.
+- **Loci used:** PDF pp. 61–64, complete *Mysterii Paschalis*; pp. 64–71, complete Universal Norms and table of liturgical days; pp. 71–81, complete *Calendarium Romanum generale*. The overlapping boundary pages are intentional, and PDF p. 82 is not represented as part of the General Calendar.
 - **Additional loci used:** the publication decree records papal approval on 10 April 2000, declaration as the typical edition on 20 April 2000, and initial force from Corpus Christi 2000. Proper Vigil and Day headings were checked for Epiphany, Ascension, the Nativity of St John the Baptist, Sts Peter and Paul, and the Assumption.
 - **Role:** primary Latin base for rank rules, temporal placement, proper vigils, and every 2002 fixed row.
-- **Text quality:** embedded text, not newly generated OCR; page images remain the edition witness.
+- **Text quality:** embedded text, not newly generated OCR. PDF inspection found no embedded raster images and one embedded font subset, so these exact bytes are a digitally typeset reproduction rather than a page-image facsimile. The artifact remains a secondary edition witness, and only the registered ranges were verified.
 - **Rights:** official liturgical book; no prayers or formularies reproduced. The temporary PDF and extraction are not included in the leaf.
 
 ### A2. Third-edition chronology, 2008 emended printing, and post-2002 integrations
@@ -19,7 +19,7 @@ Access date for web sources: 2026-07-17.
 - **Chronology witness:** *Notitiae* 41 (2005), p. 165, records the 20 April 2000 decree and completion of printing around Easter 2002: <https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/2000/notitiae-41-%282005%29/Notitiae-463-464-2005.pdf>.
 - **Pius witness:** *Ex uberi terra*, Prot. N. 887/02/L, 26 June 2002, *Notitiae* 38 (2002), 549–551: <https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/2000/notitiae-38-%282002%29/Notitiae-435-2002.pdf>.
 - **Juan Diego and Guadalupe witness:** *Notitiae* 40 (2004), 195–197, records the 22 January 1999 all-Americas feast and the later universal inscriptions under Prots. N. 1828/02/L and 1622/02/L, 28 September 2002: <https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/2000/notitiae-40-%282004%29/Notitiae-451-452-2004.pdf>.
-- **Emended-printing witness:** decree Prot. N. 652/08/L, 8 June 2008, and supplement, *Notitiae* 44 (2008), 367–387, including the 29 August title correction at p. 369: <https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/2000/notitiae-44-%282008%29/Notitiae-503-504-2008.pdf>; official 2009 report, *Notitiae* 45 (2009), no. 511–512, 84–86: <https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/2000/notitiae-45-%282009%29/Notitiae-511-512-2009.pdf>.
+- **Emended-printing witnesses:** the Italian status notice at printed p. 367 reports decree Prot. N. 652/08/L of 8 June 2008 but is not itself that decree. The separately titled Latin *Variationes et additiones* and *Supplementum* occupy printed pp. 368–387 and include the 29 August title correction at p. 369: <https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/2000/notitiae-44-%282008%29/Notitiae-503-504-2008.pdf>. The exact issue masthead anomalously prints “Vol. 45 (2008),” while the official archive path and the official 2009 report identify the citation as *Notitiae* 44 (2008); the source record preserves that discrepancy: <https://www.cultodivino.va/content/dam/cultodivino/rivista-notitiae/2000/notitiae-45-%282009%29/Notitiae-511-512-2009.pdf>.
 - **Role:** official control for the edition chronology, the three post-publication additions, their incorporation into the 2008 *reimpressio emendata*, and the 29 August title correction; the source distinguishes the reprint from a new typical edition.
 - **Limitation:** the complete 2008 altar-book page sequence was not locally collated.
 
@@ -131,4 +131,4 @@ Access date for web sources: 2026-07-17.
 
 ## C. Link and quotation review
 
-All normative web links point to Vatican, Dicastery, or USCCB sources; the one non-ecclesiastical link is identified only as the delivery host for the page-image witness of the official 2002 book. The publication uses no extended quotation and no prayer text. Official titles are either short factual labels or bibliographic titles. Link recheck and independent English-edition collation remain publication-review tasks.
+All normative web links point to Vatican, Dicastery, or USCCB sources; the one non-ecclesiastical link is identified only as the delivery host for the exact secondary digitally typeset witness of the official 2002 book. The publication uses no extended quotation and no prayer text. Official titles are either short factual labels or bibliographic titles. Link recheck and independent English-edition collation remain publication-review tasks.
