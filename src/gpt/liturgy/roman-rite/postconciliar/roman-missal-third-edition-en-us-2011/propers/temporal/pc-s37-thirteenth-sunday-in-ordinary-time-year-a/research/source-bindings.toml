@@ -7,3 +7,10 @@ source_id = "work.augustine.de-civitate-dei"
 role = "lead"
 states = ["cataloged"]
 context = "The legacy research record identifies City of God without a precise locus. This catalog-only binding claims no inspection of a central edition or artifact. Where the legacy record relies on NPNF/New Advent, the centrally registered Dods English and CSEL Latin texts are different witnesses and are not silently substituted."
+
+[[bindings]]
+source_id = "work.catholic-church.catechism"
+loci = ["1213", "1227", "1265-1270"]
+role = "context"
+states = ["cataloged"]
+context = "The legacy scope uses these Catechism loci to illuminate Baptism as new birth, participation in Christ's death and resurrection, incorporation, and vocation without replacing Paul's argument. No language, edition, URL, or dated delivery state is pinned, so this catalog-only binding remains at work level."

@@ -16,3 +16,10 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The exact CMAA-hosted facsimile of the 1962 Vatican typical edition is the baseline witness visually collated for the complete appointed formulary."
 verified_on = "2026-07-15"
 source_fingerprint = "sha256:6b4dcd3ee771d6d92734992ecabfe09b289235954e963afcf523fc8f8ee9b12d"
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["1127-1129", "1385", "1391-1395", "1402-1405"]
+role = "official-control"
+states = ["cataloged"]
+context = "The legacy scope and bibliography identify modern Holy See English Catechism pages at these loci for sacramental efficacy and disposition, worthy reception, Communion's fruits, and the pledge of glory. This catalog-only binding claims no inspection of a canonical artifact."

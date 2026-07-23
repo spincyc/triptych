@@ -10,3 +10,24 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The exact CMAA-hosted facsimile of the 1962 Vatican typical edition controls the Nuptial Mass formulary, its appointed prayers, seasonal alternatives, post-Pater sequence, final blessing and admonition, and the governing general rubrics."
 verified_on = "2026-07-14"
 source_fingerprint = "sha256:6b4dcd3ee771d6d92734992ecabfe09b289235954e963afcf523fc8f8ee9b12d"
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["1601", "1623", "1638-1642", "1652"]
+role = "currentness-control"
+states = ["cataloged"]
+context = "The leaf's legacy research identifies the modern Holy See English Catechism presentation for current doctrinal qualifications concerning marriage's goods, consent and blessing, bond and grace, and children. It does not control the historical 1962 liturgical text. This catalog-only binding claims no inspection of a canonical artifact."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["1655-1658", "1663", "1666", "2378-2379"]
+role = "analogue"
+states = ["cataloged"]
+context = "The 2026-07-18 proposal audit names these modern Holy See English Catechism loci as official analogues for the domestic Church, marriage's public ecclesial state, and widened fruitfulness. They remain distinct from the leaf's core currentness controls. This catalog-only binding claims no inspection of a canonical artifact."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["1618-1666", "1623"]
+role = "official-control"
+states = ["cataloged"]
+context = "This publication renders the shared Matrimony summary owned by theology/sacraments. That imported summary names CCC 1618-1666, especially 1623, as a doctrinal control for marriage and the Latin/Eastern ministerial distinction. This catalog-only inherited binding records the rendered evidence dependency and claims no inspection of a canonical artifact."

@@ -15,3 +15,10 @@ loci = ["Ritus servandus, printed pages LII-LXIV", "Ordo Missae and Canon Missae
 role = "textual-control"
 states = ["cataloged"]
 context = "The publication's legacy edition manifest and source audit identify the 1962 Vatican typical edition as its textual control at these loci, but do not pin the exact consulted bytes with a recorded hash; this is therefore catalog-only."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-archive-2003"
+loci = ["605", "1066-1209", "1322-1419", "1544-1553"]
+role = "official-control"
+states = ["cataloged"]
+context = "The legacy source audit and references identify the archived Holy See English Catechism presentation at these doctrinal loci. It controls sacramental, Eucharistic, priestly, and universal-redemption claims, never the 1962 text or rubrics. This catalog-only binding preserves the legacy English-expression identity and claims no inspection of a canonical artifact."

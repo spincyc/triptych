@@ -8,3 +8,10 @@ loci = ["Order of Mass", "Rubricae generales and Ritus servandus", "Calendarium 
 role = "textual-control"
 states = ["cataloged"]
 context = "The comparative publication's legacy edition manifest identifies the 1962 Vatican typical edition as the control for its treatment of the Order, rubrics, calendar, and Saint Joseph decree, but does not pin the exact consulted bytes with a recorded hash; this is therefore catalog-only."
+
+[[bindings]]
+source_id = "work.catholic-church.catechism"
+loci = ["1066-1209", "1322-1419", "1536-1666", "1127-1128", "1362-1372", "1373-1381"]
+role = "official-control"
+states = ["cataloged"]
+context = "The legacy audit and references use these Catechism loci to distinguish validity, liceity, abuse, and fruitfulness and to control Eucharistic memorial, sacrifice, and Presence. No language, edition, URL, or dated delivery state is pinned, so this binding remains at work level. The separate reference to the Roman Catechism published in 1566 is not part of this binding."
