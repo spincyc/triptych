@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "gpt"
-audited_on = "2026-07-22"
+audited_on = "2026-07-23"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 103
-source_surface_file_count = 1155
-snapshot = "sha256:37d8f9634c13dcf239385cb963f863bf70a9513a83ca04c6dbbe47ad3c5b99cd"
+source_surface_file_count = 1182
+snapshot = "sha256:980f920d5dac8b7ef658c455d64940127b6c1436ec6dd2f51059c06e4bfe12a0"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -52,7 +52,7 @@ id = "articles/canon-law/clerical-celibacy-chastity-and-continence"
 main = "src/gpt/articles/canon-law/clerical-celibacy-chastity-and-continence/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "magisterial", "patristic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -74,7 +74,7 @@ id = "articles/faith/at-the-end-of-every-why"
 main = "src/gpt/articles/faith/at-the-end-of-every-why/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["magisterial", "patristic", "prayer-devotional", "scholastic", "scripture"]
 [[documents.record_owners]]
 id = "articles/faith/at-the-end-of-every-why"
@@ -107,7 +107,7 @@ id = "articles/faith/ontological-vertigo"
 main = "src/gpt/articles/faith/ontological-vertigo/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["classical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "articles/faith/ontological-vertigo"
@@ -140,7 +140,7 @@ id = "biographies/origen"
 main = "src/gpt/biographies/origen/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["archival-material", "classical", "finding-aid", "historical-primary", "magisterial", "patristic", "prayer-devotional", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "biographies/origen"
@@ -182,7 +182,7 @@ id = "biographies/saint-paul"
 main = "src/gpt/biographies/saint-paul/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["classical", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "biographies/saint-paul"
@@ -196,7 +196,7 @@ id = "biographies/saint-peter"
 main = "src/gpt/biographies/saint-peter/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["classical", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "biographies/saint-peter"
@@ -224,7 +224,7 @@ id = "biographies/saint-thomas-aquinas"
 main = "src/gpt/biographies/saint-thomas-aquinas/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["archival-material", "classical", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "prayer-devotional", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "biographies/saint-thomas-aquinas"
@@ -238,7 +238,7 @@ id = "biographies/tertullian"
 main = "src/gpt/biographies/tertullian/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["archival-material", "finding-aid", "historical-primary", "magisterial", "patristic", "prayer-devotional", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "biographies/tertullian"
@@ -1098,7 +1098,7 @@ id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/pro
 main = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s35-eleventh-sunday-in-ordinary-time-year-a/main.tex"
 publication_kind = "proper-instance"
 source_mode = "mixed"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s35-eleventh-sunday-in-ordinary-time-year-a"
@@ -1112,7 +1112,7 @@ id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/pro
 main = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s36-twelfth-sunday-in-ordinary-time-year-a/main.tex"
 publication_kind = "proper-instance"
 source_mode = "mixed"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s36-twelfth-sunday-in-ordinary-time-year-a"
@@ -1140,7 +1140,7 @@ id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/pro
 main = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-fourteenth-sunday-in-ordinary-time-year-a/main.tex"
 publication_kind = "proper-instance"
 source_mode = "mixed"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-fourteenth-sunday-in-ordinary-time-year-a"
@@ -1154,7 +1154,7 @@ id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/pro
 main = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-fifteenth-sunday-in-ordinary-time-year-a/main.tex"
 publication_kind = "proper-instance"
 source_mode = "mixed"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-fifteenth-sunday-in-ordinary-time-year-a"
@@ -1168,7 +1168,7 @@ id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/pro
 main = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/main.tex"
 publication_kind = "proper-instance"
 source_mode = "mixed"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a"
@@ -1182,7 +1182,7 @@ id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/pro
 main = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/main.tex"
 publication_kind = "proper-instance"
 source_mode = "mixed"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"
@@ -1210,7 +1210,7 @@ id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/pro
 main = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s59-most-holy-body-and-blood-of-christ-year-a/main.tex"
 publication_kind = "proper-instance"
 source_mode = "mixed"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s59-most-holy-body-and-blood-of-christ-year-a"
@@ -1235,7 +1235,7 @@ id = "theology/heresies/heresies-in-catholic-history"
 main = "src/gpt/theology/heresies/heresies-in-catholic-history/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["archival-material", "canon-law", "dataset-survey", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "theology/heresies/heresies-in-catholic-history"
@@ -1246,7 +1246,7 @@ id = "theology/mariology/angelus"
 main = "src/gpt/theology/mariology/angelus/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["canon-law", "historical-primary", "institutional-current", "liturgical", "magisterial", "prayer-devotional", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "theology/mariology/angelus"
@@ -1263,7 +1263,7 @@ id = "theology/mariology/apparitions"
 main = "src/gpt/theology/mariology/apparitions/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["archival-material", "canon-law", "dataset-survey", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "theology/mariology/apparitions"
@@ -1274,7 +1274,7 @@ id = "theology/mariology/champion"
 main = "src/gpt/theology/mariology/champion/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["archival-material", "canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "prayer-devotional", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "theology/mariology/champion"
@@ -1285,7 +1285,7 @@ id = "theology/mariology/fatima"
 main = "src/gpt/theology/mariology/fatima/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["archival-material", "canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "prayer-devotional", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "theology/mariology/fatima"
@@ -1296,7 +1296,7 @@ id = "theology/mariology/guadalupe"
 main = "src/gpt/theology/mariology/guadalupe/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["archival-material", "canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "prayer-devotional", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "theology/mariology/guadalupe"
@@ -1307,7 +1307,7 @@ id = "theology/mariology/la-salette"
 main = "src/gpt/theology/mariology/la-salette/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["archival-material", "canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "prayer-devotional", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "theology/mariology/la-salette"
@@ -1318,7 +1318,7 @@ id = "theology/mariology/lourdes"
 main = "src/gpt/theology/mariology/lourdes/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["archival-material", "canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "prayer-devotional", "scripture"]
 [[documents.record_owners]]
 id = "theology/mariology/lourdes"
@@ -1329,7 +1329,7 @@ id = "theology/mariology/marian-dogmas"
 main = "src/gpt/theology/mariology/marian-dogmas/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "theology/mariology/marian-dogmas"
@@ -1340,7 +1340,7 @@ id = "theology/mariology/regina-coeli"
 main = "src/gpt/theology/mariology/regina-coeli/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["canon-law", "historical-primary", "institutional-current", "liturgical", "magisterial", "prayer-devotional", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "theology/mariology/regina-coeli"
@@ -1354,7 +1354,7 @@ id = "theology/mariology/rosary"
 main = "src/gpt/theology/mariology/rosary/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["canon-law", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "theology/mariology/rosary"
@@ -1376,7 +1376,7 @@ id = "theology/sacraments-at-a-glance"
 main = "src/gpt/theology/sacraments-at-a-glance/main.tex"
 publication_kind = "derived-companion"
 source_mode = "inherited"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["canon-law", "classical", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "theology/sacraments"
@@ -1439,6 +1439,12 @@ owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
 path = "src/gpt/articles/canon-law/clerical-celibacy-chastity-and-continence/research/source-audit.md"
 sha256 = "a3929cfb997b7f6a9c9794bd0538d53ab544c764a94c0c36a9934db67112c9b7"
 kind = "legacy-source-audit"
+owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
+
+[[files]]
+path = "src/gpt/articles/canon-law/clerical-celibacy-chastity-and-continence/research/source-bindings.toml"
+sha256 = "cb10c287dfd7d7784b04d09d97dde534e6555156480562fab10ce1d5c2c8445e"
+kind = "source-binding"
 owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
 
 [[files]]
@@ -1569,7 +1575,7 @@ owners = ["articles/canon-law/natural-positive-divine-human-law"]
 
 [[files]]
 path = "src/gpt/articles/canon-law/natural-positive-divine-human-law/research/source-bindings.toml"
-sha256 = "6d73c1174625731707ed333b324e04e0d9850fa3154e6d908d4cc4ffcb4bb57f"
+sha256 = "83ac4287b1c8c02680b9bf9fd2a14eab9a377f5cf312cd9d63bf6e7eb0486778"
 kind = "source-binding"
 owners = ["articles/canon-law/natural-positive-divine-human-law"]
 
@@ -1706,6 +1712,12 @@ kind = "legacy-source-audit"
 owners = ["articles/faith/at-the-end-of-every-why"]
 
 [[files]]
+path = "src/gpt/articles/faith/at-the-end-of-every-why/research/source-bindings.toml"
+sha256 = "845d11abac9c11769b5b17b744be3fe1bd78ca88808f1b54aa9b1bcf39258abf"
+kind = "source-binding"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
 path = "src/gpt/articles/faith/at-the-end-of-every-why/sections/00-commanded-love.tex"
 sha256 = "27733b22261145151f35b4b26ffc256c04f0e1239312b5aabc8130e23acb4aac"
 kind = "rendered-content"
@@ -1791,7 +1803,7 @@ owners = ["articles/faith/council-missal-and-crisis"]
 
 [[files]]
 path = "src/gpt/articles/faith/council-missal-and-crisis/research/source-bindings.toml"
-sha256 = "229734db590d6d10f5825ae8a6831b7739f90ee2c51159a45440829cd8d287cd"
+sha256 = "e83cc6c573ca8b4567c2dc048c1e38dfb8d310a6735d807f9ff8faca4ac5cc85"
 kind = "source-binding"
 owners = ["articles/faith/council-missal-and-crisis"]
 
@@ -1935,7 +1947,7 @@ owners = ["articles/faith/freemasonry-and-the-catholic-church"]
 
 [[files]]
 path = "src/gpt/articles/faith/freemasonry-and-the-catholic-church/research/source-bindings.toml"
-sha256 = "3e4ae6719f093c7467d381da000b07ff881e223960fffb7550992f762146571b"
+sha256 = "de5cd8529c9b45682cd3d917479fae7141bddda5505fafbf7da4088ef9b11d72"
 kind = "source-binding"
 owners = ["articles/faith/freemasonry-and-the-catholic-church"]
 
@@ -2048,6 +2060,12 @@ kind = "legacy-source-audit"
 owners = ["articles/faith/ontological-vertigo"]
 
 [[files]]
+path = "src/gpt/articles/faith/ontological-vertigo/research/source-bindings.toml"
+sha256 = "807d71f4cc58004d2cd5ac7c9678308014dae80d9fd30c9f255719f83986679c"
+kind = "source-binding"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
 path = "src/gpt/articles/faith/ontological-vertigo/sections/00-the-weight-of-is.tex"
 sha256 = "dd30af51c18e408bf9f8fd5c28614e0ec075c6e5d8b346d839ad106f59eeed2d"
 kind = "rendered-content"
@@ -2133,7 +2151,7 @@ owners = ["articles/faith/the-due-return"]
 
 [[files]]
 path = "src/gpt/articles/faith/the-due-return/research/source-bindings.toml"
-sha256 = "1e499a2f1139380d1c43ee979ba068b121f2d14c1a87ebb73aa414fc6f7b7911"
+sha256 = "1831b68cac896433b856b8dce16611cdce387eb3c7b1ff8fb8957fd8bc43bab7"
 kind = "source-binding"
 owners = ["articles/faith/the-due-return"]
 
@@ -2223,7 +2241,7 @@ owners = ["articles/faith/trustful-surrender-to-divine-providence"]
 
 [[files]]
 path = "src/gpt/articles/faith/trustful-surrender-to-divine-providence/research/source-bindings.toml"
-sha256 = "60e64c5be396d34f9c6f1c6a54ece3a1833ff2e4f9922aebb67f636ecff40dc1"
+sha256 = "ce88ff3bb3480795c5208c505e2edb153ef3f6e8d43f2c81d9566e90cf5c69d7"
 kind = "source-binding"
 owners = ["articles/faith/trustful-surrender-to-divine-providence"]
 
@@ -2309,6 +2327,12 @@ owners = ["biographies/origen"]
 path = "src/gpt/biographies/origen/research/source-audit.md"
 sha256 = "a57cdb73d5e49c27179b68cbe3014a7e1b0c6cb32d19a5dcd2d124aa6d033347"
 kind = "legacy-source-audit"
+owners = ["biographies/origen"]
+
+[[files]]
+path = "src/gpt/biographies/origen/research/source-bindings.toml"
+sha256 = "6acd0f0ec942a8afdd5e379e49e9a4a0882973338386ad116ce2cc84860eeae6"
+kind = "source-binding"
 owners = ["biographies/origen"]
 
 [[files]]
@@ -2636,6 +2660,12 @@ kind = "legacy-source-audit"
 owners = ["biographies/saint-paul"]
 
 [[files]]
+path = "src/gpt/biographies/saint-paul/research/source-bindings.toml"
+sha256 = "e0f3f3c5f2bf3270e112d502a2d987b9e04e44751860677ad688658e06cbafc4"
+kind = "source-binding"
+owners = ["biographies/saint-paul"]
+
+[[files]]
 path = "src/gpt/biographies/saint-paul/research/tradition-audit.md"
 sha256 = "406202016f1ce7c791c73e459ca14dbe53e942c9c931e582e4d8ff4e7b9df0a2"
 kind = "research-record"
@@ -2753,6 +2783,12 @@ owners = ["biographies/saint-peter"]
 path = "src/gpt/biographies/saint-peter/research/source-audit.md"
 sha256 = "81300a5c159c45ea669fa540dba3529b3ab72371252f0d95e644d802625e1cc5"
 kind = "legacy-source-audit"
+owners = ["biographies/saint-peter"]
+
+[[files]]
+path = "src/gpt/biographies/saint-peter/research/source-bindings.toml"
+sha256 = "2aed7efa74e7ac8edcc27c50d4bf512784288e277df6cd4d7fcb589cf04d5082"
+kind = "source-binding"
 owners = ["biographies/saint-peter"]
 
 [[files]]
@@ -2996,6 +3032,12 @@ kind = "legacy-source-audit"
 owners = ["biographies/saint-thomas-aquinas"]
 
 [[files]]
+path = "src/gpt/biographies/saint-thomas-aquinas/research/source-bindings.toml"
+sha256 = "fd9e2fc53cbad1e489bd2e9c969f842b277ca8f6882d755cb6cc32e3eb66a682"
+kind = "source-binding"
+owners = ["biographies/saint-thomas-aquinas"]
+
+[[files]]
 path = "src/gpt/biographies/saint-thomas-aquinas/research/tradition-audit.md"
 sha256 = "b3c6b66f55f700515fe805331f6caabf5d9080f27caacc0b65d5754cc11e37eb"
 kind = "research-record"
@@ -3119,6 +3161,12 @@ owners = ["biographies/tertullian"]
 path = "src/gpt/biographies/tertullian/research/source-audit.md"
 sha256 = "dd279f082c0b0553e926a6c45ced9c864d5e0448118b79e75beb560e7038b1b2"
 kind = "legacy-source-audit"
+owners = ["biographies/tertullian"]
+
+[[files]]
+path = "src/gpt/biographies/tertullian/research/source-bindings.toml"
+sha256 = "2fab7784fcefec5988a91bb1f07f9cdcacf7fbf247a4a4dd17be2a43c1139ba2"
+kind = "source-binding"
 owners = ["biographies/tertullian"]
 
 [[files]]
@@ -4401,7 +4449,7 @@ owners = ["devotions/novenas/00-ascension-to-pentecost"]
 
 [[files]]
 path = "src/gpt/devotions/novenas/00-ascension-to-pentecost/research/source-bindings.toml"
-sha256 = "39ecef65f82b541f2d980bac5e407ff581ca54c8492e135d62644ad964b4e49d"
+sha256 = "a11c2302dff48ce51595296b1037468805be19bed9395d5b4f8c9c08f059db86"
 kind = "source-binding"
 owners = ["devotions/novenas/00-ascension-to-pentecost"]
 
@@ -4641,7 +4689,7 @@ owners = ["devotions/novenas/10-our-lady-of-mount-carmel"]
 
 [[files]]
 path = "src/gpt/devotions/novenas/10-our-lady-of-mount-carmel/research/source-bindings.toml"
-sha256 = "a7402d997f4a3e78c8f5e85356cc8ec9354ff8ea4e131397ef941a2e43c7116c"
+sha256 = "af5ceb4092cadd21c655d703877b101ea16332d2427c603490d8787bbb5503d2"
 kind = "source-binding"
 owners = ["devotions/novenas/10-our-lady-of-mount-carmel"]
 
@@ -5721,7 +5769,7 @@ owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/source-bindings.toml"
-sha256 = "4f1dbe9bc1d6fa4e3035ea95408f3c14cf12f807b2bf29aae3cb20b2e96f438e"
+sha256 = "874a2ec8e0cb1d92371e80947681e5fe27851e3e6102d4201987cb04421e6dcf"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
@@ -5823,7 +5871,7 @@ owners = ["liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass/research/source-bindings.toml"
-sha256 = "f6906655b8b1709276b2d2d8a464d9e85f3e850bdf459774e531fea901956182"
+sha256 = "b78f61873ea0db0022cddde532b83c5ca34658c18ddfd51ff49a36f8ba640681"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass"]
 
@@ -6063,7 +6111,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/research/source-bindings.toml"
-sha256 = "916d1dfbfb6c77e60f32ced358e62dbc2dc9fb65f7813d3fa39f2b2bcc6a41df"
+sha256 = "2f2879f3eb920511c9c73b658daeda19c7845a00848d347fae8bf6ec796b6497"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
 
@@ -6363,7 +6411,7 @@ owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice/research/source-bindings.toml"
-sha256 = "7c122cbac7e204e10e22036fa6cf9dbea43e8ab3e063a60f50d52f63eac636a7"
+sha256 = "032d4ccce526c8d1f08f7666501ff50d0063af0504b4bae94a0cc7ab80194864"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
 
@@ -6483,7 +6531,7 @@ owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/research/source-bindings.toml"
-sha256 = "0b8ccfee6da1d423c98ba6f6153bd86bad9eabf9488e774f409e0f03be8eb7d8"
+sha256 = "b2303327b001c7f96ddd5087fba4ca5285b71644dc5eab16f3f7c7bfa233a0d9"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"]
 
@@ -6620,6 +6668,12 @@ kind = "research-scope"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s35-eleventh-sunday-in-ordinary-time-year-a"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s35-eleventh-sunday-in-ordinary-time-year-a/research/source-bindings.toml"
+sha256 = "6db138da0558e16af76a91eb2d914a92deac4e582c47cb3b6e0e40fbbb019051"
+kind = "source-binding"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s35-eleventh-sunday-in-ordinary-time-year-a"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s36-twelfth-sunday-in-ordinary-time-year-a/instance/manifest.md"
 sha256 = "f904b0b54004e0038616a952785c0b598e024e687357d84b96c78ddef5ea48b3"
 kind = "instance-manifest"
@@ -6641,6 +6695,12 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s36-twelfth-sunday-in-ordinary-time-year-a/research/scope.md"
 sha256 = "9cd1c0b26f18e7b3bf12c63786748957aa672da09d14a6860982d272a02b2128"
 kind = "research-scope"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s36-twelfth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s36-twelfth-sunday-in-ordinary-time-year-a/research/source-bindings.toml"
+sha256 = "058b7542f92728faab7f6536587843a5f19ac5c8eefe2355dfcd4d9386ab9997"
+kind = "source-binding"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s36-twelfth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
@@ -6669,7 +6729,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-thirteenth-sunday-in-ordinary-time-year-a/research/source-bindings.toml"
-sha256 = "01bd794a3029aa920cc32ab3c87d499e4e7be5319048335022aabd3df1549e4a"
+sha256 = "0c495aa5652224e8013ce13620875756b27de712d5d23d69a2b053ed6c093f54"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-thirteenth-sunday-in-ordinary-time-year-a"]
 
@@ -6698,6 +6758,12 @@ kind = "research-scope"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-fourteenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-fourteenth-sunday-in-ordinary-time-year-a/research/source-bindings.toml"
+sha256 = "a97c6a343e09dad79e3b18c62a9d7472a6f4055b3423d47965a6b645ab8ed0d9"
+kind = "source-binding"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-fourteenth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-fifteenth-sunday-in-ordinary-time-year-a/instance/manifest.md"
 sha256 = "f51f29f4fe1ae180eb394e4b1016bbfc0f0d7ccf8069f831a920aed4a9f2c889"
 kind = "instance-manifest"
@@ -6719,6 +6785,12 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-fifteenth-sunday-in-ordinary-time-year-a/research/scope.md"
 sha256 = "7e8dc7d0dc20025a11216c54c3f648a058f87ac80c1232340a654ed99d9a3fdc"
 kind = "research-scope"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-fifteenth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-fifteenth-sunday-in-ordinary-time-year-a/research/source-bindings.toml"
+sha256 = "ee2e69eb1352c1e98588c7ed59576c09c482ba19c33313cf5f7954917f0aa1d3"
+kind = "source-binding"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-fifteenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
@@ -6746,6 +6818,12 @@ kind = "research-scope"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/research/source-bindings.toml"
+sha256 = "8e3888b5be4ea45937a131276e3d8c78f146b2d44899a3cd91eac1864ccc19a6"
+kind = "source-binding"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/instance/manifest.md"
 sha256 = "73e0bd3c33a256c84820cad649ffb50c3b954f5881f44d7a6dd5ff1c4e7d14a7"
 kind = "instance-manifest"
@@ -6767,6 +6845,12 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/research/scope.md"
 sha256 = "bceb8376ee9daf4d7bae2f12d8271e0c7a2756fed39844f3264771b53695805d"
 kind = "research-scope"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/research/source-bindings.toml"
+sha256 = "3eed548d6390580b8bc52d435e58e4145729e5334a3e7ebe80fd4260e5d823e3"
+kind = "source-binding"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
@@ -6795,7 +6879,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a/research/source-bindings.toml"
-sha256 = "7445a4d4d6086ed2ed16b205baba4a2ab097d56835cacabfde143fb8ea7b7417"
+sha256 = "14f5c856029902b19bd6a54e48136981564bd8040fdf54da5de2b6904acc068c"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a"]
 
@@ -6821,6 +6905,12 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s59-most-holy-body-and-blood-of-christ-year-a/research/scope.md"
 sha256 = "aefde78c5a400e958c20dbf3811bce5054382904b8a1456b61449cb9945aa6d7"
 kind = "research-scope"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s59-most-holy-body-and-blood-of-christ-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s59-most-holy-body-and-blood-of-christ-year-a/research/source-bindings.toml"
+sha256 = "8777f33c904c600056c8c4a9221e7689222aa1a8fcb2921dca11ca1513e7144b"
+kind = "source-binding"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s59-most-holy-body-and-blood-of-christ-year-a"]
 
 [[files]]
@@ -7004,6 +7094,12 @@ kind = "legacy-source-audit"
 owners = ["theology/heresies/heresies-in-catholic-history"]
 
 [[files]]
+path = "src/gpt/theology/heresies/heresies-in-catholic-history/research/source-bindings.toml"
+sha256 = "f68b88451f4b0f4d9b12524ddd67871c6a6ef52a4dde95f1aa3ea107cc6af08e"
+kind = "source-binding"
+owners = ["theology/heresies/heresies-in-catholic-history"]
+
+[[files]]
 path = "src/gpt/theology/heresies/heresies-in-catholic-history/research/timeline-audit-ancient-medieval.md"
 sha256 = "17d58ddd7d72b2050143772436cdc28fa4075f8ad257c228331dbbf2b1e35d9a"
 kind = "research-record"
@@ -7130,6 +7226,12 @@ kind = "legacy-source-audit"
 owners = ["theology/mariology/angelus"]
 
 [[files]]
+path = "src/gpt/theology/mariology/angelus/research/source-bindings.toml"
+sha256 = "04f2b4ea9c9f8fd97cfe88ee6a127ad3f93b568e0e83c19de931295932c90317"
+kind = "source-binding"
+owners = ["theology/mariology/angelus"]
+
+[[files]]
 path = "src/gpt/theology/mariology/angelus/sections/00-prayer.tex"
 sha256 = "7159c458a556d8a7028f0afcf40e41b27d640b6d9407c66d72e2f7a5745d2a1c"
 kind = "rendered-content"
@@ -7193,6 +7295,12 @@ owners = ["theology/mariology/apparitions"]
 path = "src/gpt/theology/mariology/apparitions/research/source-audit.md"
 sha256 = "e8d757308d193f494288a26349bacf63aa76ca14dc1f3b0ebc19b184ee5cff9f"
 kind = "legacy-source-audit"
+owners = ["theology/mariology/apparitions"]
+
+[[files]]
+path = "src/gpt/theology/mariology/apparitions/research/source-bindings.toml"
+sha256 = "8b31f83440f1fcfa6e2d965d03623b07bc42645f9d3d96a10cbc9ba061d21258"
+kind = "source-binding"
 owners = ["theology/mariology/apparitions"]
 
 [[files]]
@@ -7298,6 +7406,12 @@ kind = "legacy-source-audit"
 owners = ["theology/mariology/champion"]
 
 [[files]]
+path = "src/gpt/theology/mariology/champion/research/source-bindings.toml"
+sha256 = "29a02bc5623ea7c80c011436a19e15ad354f12817063059af49a063bd84613e2"
+kind = "source-binding"
+owners = ["theology/mariology/champion"]
+
+[[files]]
 path = "src/gpt/theology/mariology/champion/research/source-strata.md"
 sha256 = "29114d534dc70d2e7cb5ab86c94264e5ce0b946e017738a104d2cc1874010406"
 kind = "research-record"
@@ -7400,6 +7514,12 @@ kind = "legacy-source-audit"
 owners = ["theology/mariology/fatima"]
 
 [[files]]
+path = "src/gpt/theology/mariology/fatima/research/source-bindings.toml"
+sha256 = "a55f1dd726380be419da9f294bc633a226efb22f191c95990892d7866d7f8b8d"
+kind = "source-binding"
+owners = ["theology/mariology/fatima"]
+
+[[files]]
 path = "src/gpt/theology/mariology/fatima/sections/00-method-status.tex"
 sha256 = "20c602fa9c6dc9641db02a2cc9aa006852eb721bcba8f80fb077f0505ba7161b"
 kind = "rendered-content"
@@ -7499,6 +7619,12 @@ owners = ["theology/mariology/guadalupe"]
 path = "src/gpt/theology/mariology/guadalupe/research/source-audit.md"
 sha256 = "ad74f25efdc6ce98e713e59e537a8eb2655b00e2ab88e5133a4a19bebe869371"
 kind = "legacy-source-audit"
+owners = ["theology/mariology/guadalupe"]
+
+[[files]]
+path = "src/gpt/theology/mariology/guadalupe/research/source-bindings.toml"
+sha256 = "063d8622aa52436614800bd87f839d563384874e0bb3e8f7eb4ba85aca10de89"
+kind = "source-binding"
 owners = ["theology/mariology/guadalupe"]
 
 [[files]]
@@ -7610,6 +7736,12 @@ kind = "legacy-source-audit"
 owners = ["theology/mariology/la-salette"]
 
 [[files]]
+path = "src/gpt/theology/mariology/la-salette/research/source-bindings.toml"
+sha256 = "1a15accc092c3cdf1906afa139dcadd7d978f70536e233b379f68b013e94987a"
+kind = "source-binding"
+owners = ["theology/mariology/la-salette"]
+
+[[files]]
 path = "src/gpt/theology/mariology/la-salette/sections/00-method-status.tex"
 sha256 = "81d852f4439d62b88a50410bae202fde4713627f23943acf27d62c583ccc223d"
 kind = "rendered-content"
@@ -7718,6 +7850,12 @@ kind = "legacy-source-audit"
 owners = ["theology/mariology/lourdes"]
 
 [[files]]
+path = "src/gpt/theology/mariology/lourdes/research/source-bindings.toml"
+sha256 = "f87f6a87582512a2d851670bf540c2939a9092f46e38b0c9429171f96d9d184e"
+kind = "source-binding"
+owners = ["theology/mariology/lourdes"]
+
+[[files]]
 path = "src/gpt/theology/mariology/lourdes/research/water-claim-audit.md"
 sha256 = "eee1c05d35c913c2351f973f2e5e7e5fa6b5c952ae6a08bf3682886d49f45b8d"
 kind = "research-record"
@@ -7820,6 +7958,12 @@ kind = "legacy-source-audit"
 owners = ["theology/mariology/marian-dogmas"]
 
 [[files]]
+path = "src/gpt/theology/mariology/marian-dogmas/research/source-bindings.toml"
+sha256 = "bc98c2ad833a2dbd92d64e747e32e383cb499415fa382969dca613bf070b9b03"
+kind = "source-binding"
+owners = ["theology/mariology/marian-dogmas"]
+
+[[files]]
 path = "src/gpt/theology/mariology/marian-dogmas/sections/00-method-dogma.tex"
 sha256 = "24c598281dfb00b0fb85e7ff18a66253851311a36550ea656fd858e53accd946"
 kind = "rendered-content"
@@ -7916,6 +8060,12 @@ kind = "legacy-source-audit"
 owners = ["theology/mariology/regina-coeli"]
 
 [[files]]
+path = "src/gpt/theology/mariology/regina-coeli/research/source-bindings.toml"
+sha256 = "796b1799615bd567ee755c60a86c6dc8304a457214a58c56494d94da84092eb4"
+kind = "source-binding"
+owners = ["theology/mariology/regina-coeli"]
+
+[[files]]
 path = "src/gpt/theology/mariology/regina-coeli/sections/00-prayer.tex"
 sha256 = "20fcc1b27a738988d903931ff50123883ab388776591daebd1dcd86c8710b84e"
 kind = "rendered-content"
@@ -7967,6 +8117,12 @@ owners = ["theology/mariology/rosary"]
 path = "src/gpt/theology/mariology/rosary/research/source-audit.md"
 sha256 = "f7148f3696a32da6fc0fb83ca50ca141441a11b467d924b10269c827cee6ba9e"
 kind = "legacy-source-audit"
+owners = ["theology/mariology/rosary"]
+
+[[files]]
+path = "src/gpt/theology/mariology/rosary/research/source-bindings.toml"
+sha256 = "28690796937db5fe67948997c579bbdaea833cc78709db7ce815e80ceae16f2f"
+kind = "source-binding"
 owners = ["theology/mariology/rosary"]
 
 [[files]]
@@ -8048,6 +8204,12 @@ kind = "publication-main"
 owners = ["theology/sacraments-at-a-glance"]
 
 [[files]]
+path = "src/gpt/theology/sacraments-at-a-glance/research/source-bindings.toml"
+sha256 = "f65953711ae3bfe453ae046000e9486823a43772d8ef985c7cc8cff4e60104fa"
+kind = "source-binding"
+owners = ["theology/sacraments-at-a-glance"]
+
+[[files]]
 path = "src/gpt/theology/sacraments/fragments/full-matrix.tex"
 sha256 = "bbdff83b9d4156c856bd556bb9a73c655175d8e7f9382671539a9b70cbd50b3c"
 kind = "rendered-content"
@@ -8073,7 +8235,7 @@ owners = ["theology/sacraments"]
 
 [[files]]
 path = "src/gpt/theology/sacraments/research/source-bindings.toml"
-sha256 = "1036812e557bfb0c102167617f83579b666aef2dcdcab9f28f7e0f1af718d05e"
+sha256 = "bb652495bbbb6505133bd3ec706629c01b3a2c865f91114d752e87e3bed86be9"
 kind = "source-binding"
 owners = ["theology/sacraments"]
 
@@ -8229,7 +8391,7 @@ owners = ["theology/virtues"]
 
 [[files]]
 path = "src/gpt/theology/virtues/research/source-bindings.toml"
-sha256 = "4a73b763056e68bf1e56fd9c897f6c382a4901400ebe61a01e10e8837c8fa1e3"
+sha256 = "f80e6dabbb7442b4a4c3e4d9e80da3ffcf0686d4761d09dc936798748e16df7b"
 kind = "source-binding"
 owners = ["theology/virtues"]
 
