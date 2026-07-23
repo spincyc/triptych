@@ -80,12 +80,15 @@ One text has one authoritative owner. Import it into every consumer and declare 
 Keep records with the owning leaf or a clearly owned shared source. They must identify the exact editions, witnesses, translations, jurisdictions, dates, source roles, checked loci, unresolved discrepancies, rights basis, and completed review required by the profile. Focused third-party extracts may be tracked when necessary and distributable; complete scans, bulk OCR, private caches, and machine-specific corpora do not belong in publication leaves.
 
 Repository-wide external-source reuse follows `guidance/sources.md`. Its work,
-edition, artifact, passage, corpus, and binding records remain distinct from
-shared authored publication fragments. Lawful, reasonably sized, distributable
-source artifacts may be tracked under `src/sources/`; restricted bytes and
-machine-private caches may not. A publication-local binding records why and how
-that publication used a central source. Central identity never supplies a
-consumer's interpretation automatically.
+edition, artifact, segment, passage, corpus, and binding records remain
+distinct from shared authored publication fragments. A segment may identify a
+constituent under its truthful edition while pointing to exact container bytes
+owned by another work; it does not transfer or duplicate those bytes. Lawful,
+reasonably sized, distributable source artifacts may be tracked under
+`src/sources/`; restricted bytes and machine-private caches may not. A
+publication-local binding records why and how that publication used a central
+source. Central identity never supplies a consumer's interpretation
+automatically.
 
 Do not combine unlike formularies, editions, translations, jurisdictions, or unrelated works in one record merely because they share a theme. Never record credentials, private communications, host or user identity, machine paths, network data, launcher state, or session identifiers.
 

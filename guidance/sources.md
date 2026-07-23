@@ -46,14 +46,24 @@ Keep the following objects distinct:
   rights status, storage disposition, derivation relationships, and any
   first-class mapping from an embedded relative reference to a separately
   owned support artifact.
-- **Passage** — an addressable locus in an edition or artifact. A passage record
-  may preserve a checked transcription, page or line map, discrepancy, or
-  verification event. It never erases the edition and artifact that control it.
+- **Segment** — a bounded constituent of exactly one controlling artifact,
+  attributed to the work and edition that the constituent actually represents.
+  Use a segment when an anthology, collected volume, archival bundle, or other
+  container artifact belongs to one work while a bounded extent within it
+  witnesses another. The segment records machine-checkable line or artifact
+  page bounds without moving, duplicating, or falsely re-owning the container
+  bytes.
+- **Passage** — an addressable locus in an edition. A version 2 passage chooses
+  exactly one artifact or segment controller; version 1 retains its frozen
+  controller rules. A passage record may preserve a checked transcription,
+  page or line map, discrepancy, or verification event. It never erases the
+  edition and exact artifact that control it.
 - **Corpus** — a versioned, explicit search boundary. Schema version 1 members
   are exact, hashed artifact records; broader intellectual scope belongs in the
   corpus description rather than a dynamically expanding work or edition
-  pointer. A corpus name alone never implies completeness beyond its declared
-  members and snapshot.
+  pointer. Schema version 2 does not change this artifact-only corpus model. A
+  corpus name alone never implies completeness beyond its declared members and
+  snapshot.
 - **Binding** — a publication-local declaration that an identified source or
   corpus was used, searched, or retained as a lead at stated loci and in a
   stated role. Bindings belong beside the publication's research records.
@@ -80,6 +90,8 @@ src/sources/
       artifacts/<artifact>/
         artifact.toml
         <distributable source files when retained>
+      segments/<segment>.toml
+      passages/<passage>.toml
   corpora/<corpus>.toml
   inventories/
 ```
@@ -89,6 +101,18 @@ stable owner needed to avoid collisions; it is not a theological or editorial
 classification. Put an artifact at the narrowest work and edition owner that
 truthfully identifies it. Do not duplicate identical bytes under several
 publication leaves or source records.
+
+A segment lives beneath the edition of the constituent it identifies, and its
+`edition_id` must name that enclosing edition. Its one `artifact_id` may point
+across the work boundary to a container artifact under the container's truthful
+owner. The segment pins that artifact's exact SHA-256 and records
+`segment_type`, evidence states, context, and at least one bounded locator:
+`physical_line_ranges` or `artifact_page_ranges`. `segment_type` is an open
+kebab-case description such as `constituent-work`, not a closed subject
+taxonomy. This cross-work evidence edge does not make the container artifact
+part of the constituent work. Keep structural ownership traversal through the
+segment's edition distinct from evidence-dependency traversal through its
+artifact.
 
 Each publication that enters the source system keeps
 `research/source-bindings.toml` beside its existing profile-required records.
@@ -129,6 +153,13 @@ jurisdiction and basis, license, permission, legal exception, restriction, or
 unresolved status. `tracked` requires an affirmative recorded distribution
 basis; online availability and successful download are insufficient.
 
+Segments have no independent storage disposition or rights declaration. They
+inherit both from their one controlling artifact, and a segment cannot make
+restricted or remote bytes trackable. When a schema version 2 artifact records
+`page_count`, that count describes the exact artifact and bounds any segment
+`artifact_page_ranges`; it is not a claim about the pagination printed within
+the source.
+
 Preserve exact acquired bytes when they serve as an evidence artifact. Put
 normalization, corrected OCR, extracted text, page maps, tokenization, and other
 derivatives in separate artifacts linked to their inputs. Do not silently
@@ -159,7 +190,8 @@ Availability and evidentiary review are orthogonal. Use these terms exactly:
   artifact can be searched by the registered raw-line mechanism; this is a
   capability, not an assertion that an index was built;
 - **searched** — a recorded query or method was run over a named corpus,
-  artifact snapshot, or machine-ranged passage for a stated research question;
+  artifact snapshot, or machine-ranged segment or passage for a stated research
+  question;
 - **inspected** — a person or agent read the identified passage and the stated
   amount of surrounding context; and
 - **verified** — wording, attribution, edition identity, or a publication claim
@@ -170,7 +202,7 @@ one. Possession is not reading; search capability is not search; a search hit
 is not inspection; inspection of a transcription is not image collation;
 checking one passage is not examination of a work or author-wide corpus.
 
-Schema version 1 reserves and rejects an `indexed` evidence state until an
+Both schema versions reserve and reject an `indexed` evidence state until an
 index receipt or reproducible recipe can identify its date, stable method,
 exact source coverage, and retained derivative. Model reusable normalized text
 or a retained search index as its own derived artifact in the meantime.
@@ -185,6 +217,7 @@ attribution by itself.
 Centralize only facts and evidence that genuinely remain true across consumers:
 
 - work, edition, translation, artifact, and locus identity;
+- a constituent segment's exact container artifact and physical bounds;
 - artifact provenance, hash, retrieval, language, rights, and derivation;
 - checked transcription and page or line correspondence;
 - source-local discrepancies and verification events; and
@@ -206,22 +239,40 @@ may cite such a card as though it independently verified the underlying text.
 
 ## Bindings and search records
 
-A source binding identifies the publication, work, edition or artifact when
-material, exact loci where known, source role, verification state, and enough
-context to distinguish a checked passage from a bare citation. It may also name
-a local claim key or research-matrix row. Schema version 1 does not require a
-machine ID for every sentence; profiles may require claim-level bindings for
-consequential claims or structured inventories.
+A source binding identifies the publication, work, edition, artifact, segment,
+passage, or corpus when material, exact loci where known, source role,
+verification state, and enough context to distinguish a checked passage from a
+bare citation. It may also name a local claim key or research-matrix row.
+Schema version 1 does not require a machine ID for every sentence; profiles may
+require claim-level bindings for consequential claims or structured
+inventories.
+
+Use a schema version 2 binding file when any binding directly names a schema
+version 2 record, including a segment or a version 2 passage. A version 2
+binding file may continue to bind version 1 sources; raising the binding schema
+does not migrate or reinterpret those sources. A schema version 1 binding may
+name only version 1 records.
 
 Any binding that records acquisition, search, inspection, or verification pins
 the complete bound record and its evidence ancestors with the schema-defined
-source fingerprint. Its represented artifact, ranged passage, or corpus
-boundary must have exact hashes; a passage search also requires validated
-physical-line ranges. Search additionally requires registered indexable bytes,
-a canonical tool mode, and a replayed matching-line count. Verification records
-its date. A changed fingerprint is a consumer review obligation, not permission
-to copy a new value mechanically. Catalog-only leads have no fingerprint
-because no exact witness has yet been reviewed.
+source fingerprint. Its represented artifact, ranged segment, ranged passage,
+or corpus boundary must have exact hashes; a segment or passage search also
+requires validated physical-line ranges. Search additionally requires
+registered indexable bytes, a canonical tool mode, and a replayed matching-line
+count. Verification records its date. A changed fingerprint is a consumer
+review obligation, not permission to copy a new value mechanically.
+Catalog-only leads have no fingerprint because no exact witness has yet been
+reviewed.
+
+An indexable segment with `physical_line_ranges` is searchable only within
+those ranges of its exact controlling artifact. A segment that has only
+`artifact_page_ranges` is not searchable by the repository's raw-line modes.
+A passage controlled by a segment remains inside both that segment's bounds
+and the exact artifact hash pinned by the segment and passage. A version 2
+passage may use `artifact_page_ranges` under the same containment rule, but a
+page-only passage is likewise not raw-line searchable. These limits are
+evidence boundaries, not claims that the constituent is complete beyond the
+declared ranges.
 
 When a publication makes a work-wide, author-wide, completeness, originality,
 or negative-search claim, bind a versioned corpus or artifact snapshot and
@@ -232,11 +283,11 @@ unindexed material, or unsearched languages. The repository's built-in search
 is narrower still: it tests literal text within each LF-delimited physical
 UTF-8 line and does not cross line or raw-markup boundaries. Use an exact
 registered normalized derivative for broader content search, and never promote
-an empty raw-line result into a semantic absence claim. Schema version 1 accepts a
-`negative-search` binding only over exact `text/plain` search representations,
-and validation replays its zero-result receipt. Register a normalized
-plain-text derivative when source markup or layout would frustrate content
-search.
+an empty raw-line result into a semantic absence claim. Both schema versions
+accept a `negative-search` binding only over exact `text/plain` search
+representations, and validation replays its zero-result receipt. Register a
+normalized plain-text derivative when source markup or layout would frustrate
+content search.
 
 References and reader-facing prose continue to cite a human-usable work,
 edition, and locus. Stable source IDs support audit and tooling; they do not
@@ -249,7 +300,15 @@ Maintain separate dependency classes:
 - **render dependencies** rebuild publications whose visible bytes import or
   render a shared source; and
 - **evidence dependencies** identify publications whose claims or audits rely
-  on a source record, passage, artifact, or corpus.
+  on a source record, passage, segment, artifact, or corpus.
+
+A segment's structural owner is the work reached through its enclosing
+`edition_id`; source-family and locus checks use that ownership. Its evidence
+dependencies include the exact controlling artifact even when that artifact is
+owned by another work. Fingerprints, reverse uses, and impact therefore follow
+the container evidence without changing the constituent's intellectual
+identity. A passage likewise follows its edition for ownership and its one
+artifact or segment controller for evidence freshness.
 
 A changed research record need not rebuild an unchanged PDF, but it must make
 affected consumers discoverable. Source tooling reports reverse uses and impact
@@ -270,6 +329,17 @@ Schema version 1 was frozen on 2026-07-22 after the complete-source City of God
 tracer. Its accepted manifest and binding fields, record meanings, evidence
 states, dependency and fingerprint inputs, corpus snapshot rule, passage-line
 semantics, and search-receipt modes form one compatibility boundary.
+
+Schema version 2 is a narrow additive layer for truthful constituent ownership
+inside an exact artifact, including a separately owned container artifact. It
+adds the `segment` record, permits `page_count` on a version 2 artifact, permits
+a version 2 passage to choose exactly one `artifact_id` or `segment_id`, and
+requires version 2 bindings when they directly name version 2 records. A
+version 2 passage retains `artifact_sha256`, which is always the bare digest of
+the ultimate controlling artifact whether the passage names it directly or
+through a segment. Corpora remain schema version 1 artifact-only snapshots. No
+valid version 1 manifest, binding, fingerprint, search result, or receipt
+changes meaning.
 
 Do not silently reinterpret a version 1 record. A change that adds or removes
 accepted fields, changes the meaning or fingerprint of valid data, changes
