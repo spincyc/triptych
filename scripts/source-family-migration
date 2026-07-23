@@ -103,7 +103,10 @@ DISPOSITIONS = {
 PRIORITIES = {"p0", "p1", "p2", "p3"}
 REVIEW_STATES = {"pending", "family-screened"}
 PRESENCE_BASES = {"trace-scan", "reviewed"}
-CANONICAL_RECORD_TYPES = {"work", "edition", "artifact", "passage", "corpus"}
+CANONICAL_RECORD_TYPES_BY_SCHEMA = {
+    1: {"work", "edition", "artifact", "passage", "corpus"},
+    2: {"artifact", "passage", "segment"},
+}
 SHA256_RE = re.compile(r"^sha256:[0-9a-f]{64}$")
 FAMILY_ID_RE = re.compile(r"^family\.[a-z0-9](?:[a-z0-9.-]*[a-z0-9])?$")
 
@@ -371,6 +374,7 @@ def _canonical_catalog(root: Path) -> tuple[set[str], str, list[str]]:
         *root.glob("src/sources/works/**/edition.toml"),
         *root.glob("src/sources/works/**/artifact.toml"),
         *root.glob("src/sources/works/**/passages/*.toml"),
+        *root.glob("src/sources/works/**/segments/*.toml"),
         *root.glob("src/sources/corpora/*.toml"),
     ]
     found: set[str] = set()
@@ -395,10 +399,14 @@ def _canonical_catalog(root: Path) -> tuple[set[str], str, list[str]]:
         record_type = data.get("record_type")
         record_id = data.get("id")
         schema = data.get("schema")
+        allowed_record_types = (
+            CANONICAL_RECORD_TYPES_BY_SCHEMA.get(schema)
+            if isinstance(schema, int) and not isinstance(schema, bool)
+            else None
+        )
         if (
-            schema != 1
-            or isinstance(schema, bool)
-            or not _choice(record_type, CANONICAL_RECORD_TYPES)
+            allowed_record_types is None
+            or not _choice(record_type, allowed_record_types)
             or not isinstance(record_id, str)
             or not record_id.startswith(f"{record_type}.")
         ):

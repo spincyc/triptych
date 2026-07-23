@@ -559,6 +559,126 @@ class SourceFamilyMigrationTests(unittest.TestCase):
         self.assertEqual(added.returncode, 1)
         self.assertIn("pinned canonical_catalog_snapshot is stale", added.stderr)
 
+    def test_canonical_catalog_accepts_each_supported_schema_type_pair(self) -> None:
+        manifests = (
+            (
+                1,
+                "work",
+                "work.fixture.catalog-v1",
+                "src/sources/works/fixture/catalog-v1/work.toml",
+            ),
+            (
+                1,
+                "edition",
+                "edition.fixture.catalog-v1.one",
+                "src/sources/works/fixture/catalog-v1/editions/one/edition.toml",
+            ),
+            (
+                1,
+                "artifact",
+                "artifact.fixture.catalog-v1.one",
+                "src/sources/works/fixture/catalog-v1/editions/one/artifacts/v1/artifact.toml",
+            ),
+            (
+                1,
+                "passage",
+                "passage.fixture.catalog-v1.one",
+                "src/sources/works/fixture/catalog-v1/editions/one/passages/v1.toml",
+            ),
+            (
+                1,
+                "corpus",
+                "corpus.fixture.catalog-v1",
+                "src/sources/corpora/catalog-v1.toml",
+            ),
+            (
+                2,
+                "artifact",
+                "artifact.fixture.catalog-v2.one",
+                "src/sources/works/fixture/catalog-v2/editions/one/artifacts/v2/artifact.toml",
+            ),
+            (
+                2,
+                "passage",
+                "passage.fixture.catalog-v2.one",
+                "src/sources/works/fixture/catalog-v2/editions/one/passages/v2.toml",
+            ),
+            (
+                2,
+                "segment",
+                "segment.fixture.catalog-v2.one",
+                "src/sources/works/fixture/catalog-v2/editions/one/segments/v2.toml",
+            ),
+        )
+        for schema, record_type, record_id, relative in manifests:
+            self.write(
+                relative,
+                "\n".join(
+                    [
+                        f"schema = {schema}",
+                        f'record_type = "{record_type}"',
+                        f'id = "{record_id}"',
+                        "",
+                    ]
+                ),
+            )
+
+        found, _, errors = MODULE._canonical_catalog(self.root)
+
+        self.assertEqual(errors, [])
+        self.assertEqual(found, {record_id for _, _, record_id, _ in manifests})
+
+    def test_canonical_catalog_rejects_unsupported_schema_type_pairs(self) -> None:
+        cases = (
+            (
+                1,
+                "segment",
+                "src/sources/works/fixture/invalid/editions/one/segments/invalid.toml",
+            ),
+            (
+                2,
+                "work",
+                "src/sources/works/fixture/invalid/work.toml",
+            ),
+            (
+                2,
+                "edition",
+                "src/sources/works/fixture/invalid/editions/one/edition.toml",
+            ),
+            (
+                2,
+                "corpus",
+                "src/sources/corpora/invalid.toml",
+            ),
+            (
+                3,
+                "artifact",
+                "src/sources/works/fixture/invalid/editions/one/artifacts/invalid/artifact.toml",
+            ),
+        )
+        for schema, record_type, relative in cases:
+            with self.subTest(schema=schema, record_type=record_type):
+                path = self.write(
+                    relative,
+                    "\n".join(
+                        [
+                            f"schema = {schema}",
+                            f'record_type = "{record_type}"',
+                            f'id = "{record_type}.fixture.invalid"',
+                            "",
+                        ]
+                    ),
+                )
+
+                found, _, errors = MODULE._canonical_catalog(self.root)
+
+                self.assertEqual(found, set())
+                self.assertEqual(
+                    errors,
+                    [f"{path}: canonical source identity is malformed"],
+                )
+                path.unlink()
+
     def test_catalog_acceptance_requires_complete_reviewed_family_membership(self) -> None:
         self.bootstrap_ledger()
         self.add_city_family()

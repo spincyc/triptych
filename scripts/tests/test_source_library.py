@@ -32,6 +32,25 @@ PASSAGE_ID = "passage.augustine.de-civitate-dei.npnf-dods.10.6"
 CORPUS_ID = "corpus.augustine.de-civitate-dei.complete-english"
 LOCUS = "book-10.chapter-6"
 
+CONTAINER_WORK_ID = "work.ante-nicene-fathers.volume-1"
+CONTAINER_EDITION_ID = "edition.ante-nicene-fathers.volume-1.buffalo-1887"
+CONTAINER_ARTIFACT_ID = (
+    "artifact.ante-nicene-fathers.volume-1.buffalo-1887.plain-text"
+)
+CONSTITUENT_WORK_ID = "work.irenaeus.adversus-haereses"
+CONSTITUENT_EDITION_ID = (
+    "edition.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887"
+)
+SEGMENT_ID = (
+    "segment.irenaeus.adversus-haereses."
+    "roberts-rambaut-coxe-anf1-1887.plain-text"
+)
+SEGMENT_PASSAGE_ID = (
+    "passage.irenaeus.adversus-haereses."
+    "roberts-rambaut-coxe-anf1-1887.4.14.1"
+)
+SEGMENT_LOCUS = "book-4.chapter-14.section-1"
+
 
 class SourceLibraryTests(unittest.TestCase):
     def setUp(self) -> None:
@@ -215,6 +234,193 @@ class SourceLibraryTests(unittest.TestCase):
         )
         return artifact_bytes
 
+    def add_valid_cross_work_segment_fixture(self) -> dict[str, str | bytes]:
+        """Add a constituent work bounded inside another work's artifact."""
+
+        artifact_bytes = (
+            "needle outside before\n"
+            "Container preface.\n"
+            "Irenaeus opening needle.\n"
+            "Irenaeus shared needle.\n"
+            "Irenaeus closing.\n"
+            "needle outside after\n"
+            "Appendix needle.\n"
+        ).encode("utf-8")
+        digest = hashlib.sha256(artifact_bytes).hexdigest()
+        artifact_path = (
+            "src/sources/works/ante-nicene-fathers/volume-1/editions/"
+            "buffalo-1887/artifacts/plain-text/anf-volume-1.txt"
+        )
+        segment_path = (
+            "src/sources/works/irenaeus/adversus-haereses/editions/"
+            "roberts-rambaut-coxe-anf1-1887/segments/plain-text.toml"
+        )
+        passage_path = (
+            "src/sources/works/irenaeus/adversus-haereses/editions/"
+            "roberts-rambaut-coxe-anf1-1887/passages/4-14-1.toml"
+        )
+        binding_path = (
+            "src/gpt/articles/segment-consumer/research/source-bindings.toml"
+        )
+
+        self.write(artifact_path, artifact_bytes)
+        self.write(
+            "src/sources/works/ante-nicene-fathers/volume-1/work.toml",
+            r'''
+            schema = 1
+            record_type = "work"
+            id = "work.ante-nicene-fathers.volume-1"
+            title = "The Ante-Nicene Fathers, Volume I"
+            responsible = "Alexander Roberts and James Donaldson"
+            work_type = "edited-anthology"
+            languages = ["en"]
+            locus_pattern = 'volume-[0-9]+'
+            ''',
+        )
+        self.write(
+            "src/sources/works/ante-nicene-fathers/volume-1/editions/"
+            "buffalo-1887/edition.toml",
+            f'''
+            schema = 1
+            record_type = "edition"
+            id = "{CONTAINER_EDITION_ID}"
+            work_id = "{CONTAINER_WORK_ID}"
+            title = "The Apostolic Fathers with Justin Martyr and Irenaeus"
+            language = "en"
+            publication = "Buffalo, 1887"
+            date = "1887"
+            editors = ["Alexander Roberts", "James Donaldson", "A. Cleveland Coxe"]
+            ''',
+        )
+        self.write(
+            "src/sources/works/ante-nicene-fathers/volume-1/editions/"
+            "buffalo-1887/artifacts/plain-text/artifact.toml",
+            f'''
+            schema = 2
+            record_type = "artifact"
+            id = "{CONTAINER_ARTIFACT_ID}"
+            edition_id = "{CONTAINER_EDITION_ID}"
+            artifact_type = "plain-text"
+            media_type = "text/plain"
+            storage = "tracked"
+            rights_status = "public-domain"
+            rights_basis = "Public-domain anthology and transcription"
+            rights_jurisdiction = "United States"
+            source_url = "https://example.org/anf-volume-1.txt"
+            retrieved = "2026-07-23"
+            sha256 = "{digest}"
+            byte_size = {len(artifact_bytes)}
+            path = "{artifact_path}"
+            page_count = 7
+            indexable = true
+            encoding = "utf-8"
+            ''',
+        )
+        self.write(
+            "src/sources/works/irenaeus/adversus-haereses/work.toml",
+            r'''
+            schema = 1
+            record_type = "work"
+            id = "work.irenaeus.adversus-haereses"
+            title = "Adversus haereses"
+            responsible = "Irenaeus of Lyons"
+            work_type = "patristic-treatise"
+            languages = ["grc", "la"]
+            locus_pattern = 'book-[0-9]+\.chapter-[0-9]+\.section-[0-9]+'
+            ''',
+        )
+        self.write(
+            "src/sources/works/irenaeus/adversus-haereses/editions/"
+            "roberts-rambaut-coxe-anf1-1887/edition.toml",
+            f'''
+            schema = 1
+            record_type = "edition"
+            id = "{CONSTITUENT_EDITION_ID}"
+            work_id = "{CONSTITUENT_WORK_ID}"
+            title = "Against Heresies"
+            language = "en"
+            publication = "Ante-Nicene Fathers, volume 1, Buffalo, 1887"
+            date = "1887"
+            translators = ["Alexander Roberts", "W. H. Rambaut"]
+            editors = ["A. Cleveland Coxe"]
+            ''',
+        )
+        self.write(
+            segment_path,
+            f'''
+            schema = 2
+            record_type = "segment"
+            id = "{SEGMENT_ID}"
+            edition_id = "{CONSTITUENT_EDITION_ID}"
+            artifact_id = "{CONTAINER_ARTIFACT_ID}"
+            artifact_sha256 = "{digest}"
+            segment_type = "constituent-work"
+            states = ["acquired", "inspected", "verified"]
+            context = "The exact constituent range was checked in the container."
+            physical_line_ranges = [[3, 5]]
+            artifact_page_ranges = [[3, 5]]
+            verified_on = "2026-07-23"
+            ''',
+        )
+
+        with_segment = SOURCE_LIBRARY.load_library(self.root)
+        if with_segment.errors:
+            raise AssertionError(with_segment.errors)
+        self.write(
+            passage_path,
+            f'''
+            schema = 2
+            record_type = "passage"
+            id = "{SEGMENT_PASSAGE_ID}"
+            edition_id = "{CONSTITUENT_EDITION_ID}"
+            segment_id = "{SEGMENT_ID}"
+            artifact_sha256 = "{digest}"
+            locus = "{SEGMENT_LOCUS}"
+            states = ["inspected", "verified"]
+            context = "The exact section and its constituent context were checked."
+            physical_line_ranges = [[4, 4]]
+            artifact_page_ranges = [[4, 4]]
+            text = "Irenaeus shared needle."
+            transcription_segments = [
+              {{ line = 4, text = "Irenaeus shared needle." }},
+            ]
+            verified_on = "2026-07-23"
+            ''',
+        )
+        with_passage = SOURCE_LIBRARY.load_library(self.root)
+        if with_passage.errors:
+            raise AssertionError(with_passage.errors)
+        passage_fingerprint = SOURCE_LIBRARY.source_fingerprint(
+            with_passage, SEGMENT_PASSAGE_ID
+        )
+        self.write("src/gpt/articles/segment-consumer/main.tex", "Segment consumer\n")
+        self.write(
+            binding_path,
+            f'''
+            schema = 2
+            record_type = "bindings"
+            document = "articles/segment-consumer"
+
+            [[bindings]]
+            source_id = "{SEGMENT_PASSAGE_ID}"
+            role = "direct-witness"
+            states = ["inspected", "verified"]
+            verified_on = "2026-07-23"
+            source_fingerprint = "{passage_fingerprint}"
+            context = "The publication checked the section in its exact container."
+            claim_keys = ["irenaeus-shared"]
+            ''',
+        )
+        return {
+            "artifact_bytes": artifact_bytes,
+            "artifact_digest": digest,
+            "artifact_path": artifact_path,
+            "segment_path": segment_path,
+            "passage_path": passage_path,
+            "binding_path": binding_path,
+            "passage_fingerprint": passage_fingerprint,
+        }
+
     def test_valid_vertical_fixture_and_validate_cli_summary(self) -> None:
         self.add_valid_vertical_fixture()
         library = SOURCE_LIBRARY.load_library(self.root)
@@ -228,6 +434,25 @@ class SourceLibraryTests(unittest.TestCase):
             CORPUS_ID,
         })
         self.assertEqual(len(library.bindings), 2)
+        self.assertEqual(
+            {
+                source_id: SOURCE_LIBRARY.source_fingerprint(library, source_id)
+                for source_id in (
+                    WORK_ID,
+                    EDITION_ID,
+                    ARTIFACT_ID,
+                    PASSAGE_ID,
+                    CORPUS_ID,
+                )
+            },
+            {
+                WORK_ID: "sha256:85f4d7488fcc33a6e1bcfc11cb114c515b8c3b498cb9384049f170ab9eec1e16",
+                EDITION_ID: "sha256:bfa1413ee018fa8e945bef9c38866ff9f42b969d6ab6ccfcd63b14ef0d55f06f",
+                ARTIFACT_ID: "sha256:357e092e1ef63806b171f2a9eb3d3aaed27b86f33c8bcd96c021a57c735a3d0d",
+                PASSAGE_ID: "sha256:17914e31961b4c5f496343ea257d83045fd5e7009b7b078c83957595a2490524",
+                CORPUS_ID: "sha256:3cb2023fe299df1c0e88bb744bb3e87554f5528315c049bb21dfa20400142801",
+            },
+        )
 
         result = self.run_cli("validate")
         self.assertEqual(result.returncode, 0, result.stderr)
@@ -235,7 +460,385 @@ class SourceLibraryTests(unittest.TestCase):
         self.assertEqual(
             result.stdout,
             "source-library valid: artifact=1 corpus=1 edition=1 "
-            "passage=1 work=1 bindings=2\n",
+            "passage=1 segment=0 work=1 bindings=2\n",
+        )
+
+    def test_schema_two_segment_preserves_constituent_identity_and_bounds_search(
+        self,
+    ) -> None:
+        self.add_valid_cross_work_segment_fixture()
+        library = SOURCE_LIBRARY.load_library(self.root)
+
+        self.assertEqual(library.errors, [])
+        self.assertEqual(
+            {
+                record_id: record.record_type
+                for record_id, record in library.records.items()
+            },
+            {
+                CONTAINER_WORK_ID: "work",
+                CONTAINER_EDITION_ID: "edition",
+                CONTAINER_ARTIFACT_ID: "artifact",
+                CONSTITUENT_WORK_ID: "work",
+                CONSTITUENT_EDITION_ID: "edition",
+                SEGMENT_ID: "segment",
+                SEGMENT_PASSAGE_ID: "passage",
+            },
+        )
+        self.assertEqual(
+            SOURCE_LIBRARY._work_for_source(
+                library, SEGMENT_PASSAGE_ID
+            ).record_id,
+            CONSTITUENT_WORK_ID,
+        )
+        self.assertEqual(
+            [
+                (row["line"], row["text"])
+                for row in SOURCE_LIBRARY.search_rows(
+                    library, SEGMENT_ID, "needle"
+                )
+            ],
+            [
+                (3, "Irenaeus opening needle."),
+                (4, "Irenaeus shared needle."),
+            ],
+        )
+        self.assertEqual(
+            [
+                (row["line"], row["text"])
+                for row in SOURCE_LIBRARY.search_rows(
+                    library, SEGMENT_PASSAGE_ID, "needle"
+                )
+            ],
+            [(4, "Irenaeus shared needle.")],
+        )
+        constituent_bindings = SOURCE_LIBRARY.binding_rows(
+            library, CONSTITUENT_WORK_ID, SEGMENT_LOCUS
+        )
+        self.assertEqual(
+            [row["document"] for row in constituent_bindings],
+            ["articles/segment-consumer"],
+        )
+        container_impact = SOURCE_LIBRARY.impact_rows(
+            library, CONTAINER_ARTIFACT_ID
+        )
+        self.assertTrue(
+            {SEGMENT_ID, SEGMENT_PASSAGE_ID}
+            <= {
+                row["id"]
+                for row in container_impact
+                if row["kind"] == "source"
+            }
+        )
+        self.assertEqual(
+            [
+                row["id"]
+                for row in container_impact
+                if row["kind"] == "document"
+            ],
+            ["articles/segment-consumer"],
+        )
+
+        result = self.run_cli("validate")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(
+            result.stdout,
+            "source-library valid: artifact=1 corpus=0 edition=2 "
+            "passage=1 segment=1 work=2 bindings=1\n",
+        )
+
+    def test_schema_two_source_requires_schema_two_binding_file(self) -> None:
+        fixture = self.add_valid_cross_work_segment_fixture()
+        binding_path = str(fixture["binding_path"])
+        path = self.root / binding_path
+        self.write(
+            binding_path,
+            path.read_text(encoding="utf-8").replace(
+                "schema = 2", "schema = 1", 1
+            ),
+        )
+
+        library = SOURCE_LIBRARY.load_library(self.root)
+
+        self.assertIn(
+            "bindings[1] must use schema 2 when naming a schema 2 source",
+            "\n".join(library.errors),
+        )
+
+    def test_schema_one_does_not_accept_segment_fields_or_records(self) -> None:
+        self.add_valid_vertical_fixture()
+        passage = self.root / (
+            "src/sources/works/augustine/de-civitate-dei/editions/"
+            "npnf-dods/passages/10-6.toml"
+        )
+        self.write(
+            passage.relative_to(self.root).as_posix(),
+            passage.read_text(encoding="utf-8")
+            + f'segment_id = "{SEGMENT_ID}"\n',
+        )
+        self.write(
+            "src/sources/works/augustine/de-civitate-dei/editions/"
+            "npnf-dods/segments/invalid-v1.toml",
+            f'''
+            schema = 1
+            record_type = "segment"
+            id = "{SEGMENT_ID}"
+            edition_id = "{EDITION_ID}"
+            artifact_id = "{ARTIFACT_ID}"
+            artifact_sha256 = "{"0" * 64}"
+            segment_type = "constituent-work"
+            states = ["cataloged"]
+            context = "Invalid schema-version fixture."
+            physical_line_ranges = [[1, 1]]
+            ''',
+        )
+
+        library = SOURCE_LIBRARY.load_library(
+            self.root, check_binding_fingerprints=False
+        )
+        joined = "\n".join(library.errors)
+
+        self.assertIn("unknown fields: segment_id", joined)
+        self.assertIn("segment schema must be integer 2", joined)
+
+    def test_segment_and_segment_passage_ranges_are_exact_and_contained(
+        self,
+    ) -> None:
+        fixture = self.add_valid_cross_work_segment_fixture()
+        segment_path = str(fixture["segment_path"])
+        passage_path = str(fixture["passage_path"])
+        segment_text = (self.root / segment_path).read_text(encoding="utf-8")
+        passage_text = (self.root / passage_path).read_text(encoding="utf-8")
+
+        self.write(
+            segment_path,
+            segment_text.replace(
+                "physical_line_ranges = [[3, 5]]",
+                "physical_line_ranges = [[true, 1], [0, 1], [5, 4], "
+                "[3, 5], [5, 6], [99, 99]]",
+            ).replace(
+                "artifact_page_ranges = [[3, 5]]",
+                "artifact_page_ranges = [[true, 1], [0, 1], [5, 4], "
+                "[3, 5], [5, 6], [99, 99]]",
+            ),
+        )
+        malformed = SOURCE_LIBRARY.load_library(
+            self.root, check_binding_fingerprints=False
+        )
+        malformed_errors = "\n".join(malformed.errors)
+        self.assertIn("physical_line_ranges", malformed_errors)
+        self.assertIn("artifact_page_ranges", malformed_errors)
+        self.assertIn("positive non-boolean integers", malformed_errors)
+        self.assertIn("start must not exceed end", malformed_errors)
+        self.assertIn("sorted and non-overlapping", malformed_errors)
+        self.assertIn("artifact line 7", malformed_errors)
+        self.assertIn("artifact page 7", malformed_errors)
+
+        self.write(
+            segment_path,
+            "\n".join(
+                line
+                for line in segment_text.splitlines()
+                if not line.startswith(
+                    ("physical_line_ranges =", "artifact_page_ranges =")
+                )
+            )
+            + "\n",
+        )
+        unbounded = SOURCE_LIBRARY.load_library(
+            self.root, check_binding_fingerprints=False
+        )
+        self.assertTrue(
+            any(
+                "segment" in error
+                and "physical_line_ranges or artifact_page_ranges" in error
+                for error in unbounded.errors
+            ),
+            unbounded.errors,
+        )
+
+        self.write(segment_path, segment_text)
+        self.write(
+            passage_path,
+            passage_text.replace(
+                f'segment_id = "{SEGMENT_ID}"',
+                f'artifact_id = "{CONTAINER_ARTIFACT_ID}"\n'
+                f'segment_id = "{SEGMENT_ID}"',
+            )
+            .replace(
+                f'artifact_sha256 = "{fixture["artifact_digest"]}"',
+                f'artifact_sha256 = "{"0" * 64}"',
+            )
+            .replace(
+                "physical_line_ranges = [[4, 4]]",
+                "physical_line_ranges = [[2, 4]]",
+            )
+            .replace(
+                "artifact_page_ranges = [[4, 4]]",
+                "artifact_page_ranges = [[4, 6]]",
+            ),
+        )
+        outside = SOURCE_LIBRARY.load_library(
+            self.root, check_binding_fingerprints=False
+        )
+        outside_errors = "\n".join(outside.errors)
+        self.assertIn(
+            "schema 2 passage requires exactly one of artifact_id or segment_id",
+            outside_errors,
+        )
+        self.assertIn(
+            "artifact_sha256 does not match the controlling artifact",
+            outside_errors,
+        )
+        self.assertTrue(
+            any(
+                "physical_line_ranges" in error and "segment" in error
+                for error in outside.errors
+            ),
+            outside.errors,
+        )
+        self.assertTrue(
+            any(
+                "artifact_page_ranges" in error and "segment" in error
+                for error in outside.errors
+            ),
+            outside.errors,
+        )
+
+    def test_segment_parent_mutations_stale_consumers_but_unrelated_segments_do_not(
+        self,
+    ) -> None:
+        fixture = self.add_valid_cross_work_segment_fixture()
+        baseline = SOURCE_LIBRARY.load_library(self.root)
+        baseline_fingerprint = SOURCE_LIBRARY.source_fingerprint(
+            baseline, SEGMENT_PASSAGE_ID
+        )
+        self.write(
+            "src/sources/works/test/unrelated/work.toml",
+            '''
+            schema = 1
+            record_type = "work"
+            id = "work.test.unrelated"
+            title = "Unrelated constituent"
+            responsible = "Test"
+            work_type = "test-work"
+            ''',
+        )
+        self.write(
+            "src/sources/works/test/unrelated/editions/test/edition.toml",
+            '''
+            schema = 1
+            record_type = "edition"
+            id = "edition.test.unrelated"
+            work_id = "work.test.unrelated"
+            title = "Unrelated constituent edition"
+            language = "en"
+            publication = "Test"
+            ''',
+        )
+        self.write(
+            "src/sources/works/test/unrelated/editions/test/segments/"
+            "unrelated.toml",
+            f'''
+            schema = 2
+            record_type = "segment"
+            id = "segment.test.unrelated"
+            edition_id = "edition.test.unrelated"
+            artifact_id = "{CONTAINER_ARTIFACT_ID}"
+            artifact_sha256 = "{fixture["artifact_digest"]}"
+            segment_type = "constituent-work"
+            states = ["cataloged"]
+            context = "A disjoint segment in the same physical container."
+            physical_line_ranges = [[6, 7]]
+            artifact_page_ranges = [[6, 7]]
+            ''',
+        )
+        with_unrelated = SOURCE_LIBRARY.load_library(self.root)
+        self.assertEqual(with_unrelated.errors, [])
+        self.assertEqual(
+            SOURCE_LIBRARY.source_fingerprint(
+                with_unrelated, SEGMENT_PASSAGE_ID
+            ),
+            baseline_fingerprint,
+        )
+
+        segment_path = str(fixture["segment_path"])
+        segment = (self.root / segment_path).read_text(encoding="utf-8")
+        self.write(
+            segment_path,
+            segment.replace(
+                "physical_line_ranges = [[3, 5]]",
+                "physical_line_ranges = [[2, 5]]",
+            ),
+        )
+        ranged = SOURCE_LIBRARY.load_library(self.root)
+        ranged_fingerprint = SOURCE_LIBRARY.source_fingerprint(
+            ranged, SEGMENT_PASSAGE_ID
+        )
+        self.assertNotEqual(ranged_fingerprint, baseline_fingerprint)
+        self.assertEqual(
+            ranged.errors,
+            [
+                f'{fixture["binding_path"]}: '
+                "bindings[1].source_fingerprint must be "
+                f"{ranged_fingerprint!r}"
+            ],
+        )
+
+        binding_path = str(fixture["binding_path"])
+        binding = (self.root / binding_path).read_text(encoding="utf-8")
+        self.write(
+            binding_path,
+            binding.replace(baseline_fingerprint, ranged_fingerprint),
+        )
+        range_reviewed = SOURCE_LIBRARY.load_library(self.root)
+        self.assertEqual(range_reviewed.errors, [])
+
+        old_bytes = fixture["artifact_bytes"]
+        assert isinstance(old_bytes, bytes)
+        new_bytes = old_bytes.replace(
+            b"needle outside before", b"changed outside segment"
+        )
+        old_digest = str(fixture["artifact_digest"])
+        new_digest = hashlib.sha256(new_bytes).hexdigest()
+        artifact_path = str(fixture["artifact_path"])
+        self.write(artifact_path, new_bytes)
+        artifact_manifest = range_reviewed.records[CONTAINER_ARTIFACT_ID].path
+        self.write(
+            artifact_manifest.relative_to(self.root).as_posix(),
+            artifact_manifest.read_text(encoding="utf-8")
+            .replace(old_digest, new_digest)
+            .replace(
+                f"byte_size = {len(old_bytes)}",
+                f"byte_size = {len(new_bytes)}",
+            ),
+        )
+        for manifest_path in (
+            segment_path,
+            str(fixture["passage_path"]),
+            "src/sources/works/test/unrelated/editions/test/segments/"
+            "unrelated.toml",
+        ):
+            manifest = self.root / manifest_path
+            self.write(
+                manifest_path,
+                manifest.read_text(encoding="utf-8").replace(
+                    old_digest, new_digest
+                ),
+            )
+
+        changed = SOURCE_LIBRARY.load_library(self.root)
+        changed_fingerprint = SOURCE_LIBRARY.source_fingerprint(
+            changed, SEGMENT_PASSAGE_ID
+        )
+        self.assertNotEqual(changed_fingerprint, ranged_fingerprint)
+        self.assertEqual(
+            changed.errors,
+            [
+                f'{fixture["binding_path"]}: '
+                "bindings[1].source_fingerprint must be "
+                f"{changed_fingerprint!r}"
+            ],
         )
 
     def test_stale_fingerprint_is_reported_and_cli_prints_replacement(self) -> None:
