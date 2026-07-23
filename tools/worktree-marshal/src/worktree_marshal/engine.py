@@ -67,7 +67,9 @@ from .state import (
     manifest_path as _manifest_path,
     new_run_id as _new_run_id,
     repo_lock_path as _repo_lock_path,
+    repository_slug as _repository_slug,
     run_lock_path as _run_lock_path,
+    state_base as _state_base,
 )
 
 OBJECT_ID_RE = re.compile(r"^(?:[0-9a-f]{40}|[0-9a-f]{64})$")
@@ -617,23 +619,12 @@ def authenticate_git_cwd(cwd: Path) -> None:
 
 def state_base() -> Path:
     profile = active_profile()
-    override = os.environ.get(profile.state_environment)
-    if override:
-        candidate = Path(override)
-        if not candidate.is_absolute():
-            raise LauncherError(
-                f"{profile.state_environment} must be an absolute path"
-            )
-        return candidate.joinpath(*profile.override_state_suffix)
-
-    xdg_state = os.environ.get("XDG_STATE_HOME")
-    if xdg_state:
-        candidate = Path(xdg_state)
-        if not candidate.is_absolute():
-            raise LauncherError("XDG_STATE_HOME must be an absolute path")
-        return candidate.joinpath(*profile.default_state_parts)
-    return (Path.home() / ".local" / "state").joinpath(
-        *profile.default_state_parts
+    return _state_base(
+        profile=profile,
+        environment=lambda: os.environ,
+        path_factory=lambda value: Path(value),
+        home=lambda: Path.home(),
+        error_type=lambda: LauncherError,
     )
 
 
@@ -674,8 +665,7 @@ def private_directory(path: Path) -> None:
 
 
 def repository_slug(root: Path) -> str:
-    slug = re.sub(r"[^a-z0-9]+", "-", root.name.lower()).strip("-")
-    return slug or "repository"
+    return _repository_slug(root, substitute=re.sub)
 
 
 def discover_repository(cwd: Path | None = None) -> Repository:

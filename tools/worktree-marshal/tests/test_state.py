@@ -90,6 +90,63 @@ class StatePolicyTests(unittest.TestCase):
                     )
                     self.assertIs(parameter.default, inspect.Parameter.empty)
 
+    def test_state_location_kernel_and_engine_wrapper_signatures(self) -> None:
+        state_base_parameters = inspect.signature(
+            self.state_policy.state_base
+        ).parameters
+        self.assertEqual(
+            tuple(state_base_parameters),
+            (
+                "profile",
+                "environment",
+                "path_factory",
+                "home",
+                "error_type",
+            ),
+        )
+        for parameter in state_base_parameters.values():
+            self.assertIs(parameter.kind, inspect.Parameter.KEYWORD_ONLY)
+            self.assertIs(parameter.default, inspect.Parameter.empty)
+
+        repository_slug_parameters = inspect.signature(
+            self.state_policy.repository_slug
+        ).parameters
+        self.assertEqual(
+            tuple(repository_slug_parameters),
+            ("root", "substitute"),
+        )
+        self.assertIs(
+            repository_slug_parameters["root"].kind,
+            inspect.Parameter.POSITIONAL_OR_KEYWORD,
+        )
+        self.assertIs(
+            repository_slug_parameters["substitute"].kind,
+            inspect.Parameter.KEYWORD_ONLY,
+        )
+        for parameter in repository_slug_parameters.values():
+            self.assertIs(parameter.default, inspect.Parameter.empty)
+
+        expected_engine_parameters = {
+            "state_base": (),
+            "repository_slug": ("root",),
+        }
+        for helper_name, expected in expected_engine_parameters.items():
+            with self.subTest(engine_wrapper=helper_name):
+                self.assertIsNot(
+                    getattr(self.engine, helper_name),
+                    getattr(self.state_policy, helper_name),
+                )
+                parameters = inspect.signature(
+                    getattr(self.engine, helper_name)
+                ).parameters
+                self.assertEqual(tuple(parameters), expected)
+                for parameter in parameters.values():
+                    self.assertIs(
+                        parameter.kind,
+                        inspect.Parameter.POSITIONAL_OR_KEYWORD,
+                    )
+                    self.assertIs(parameter.default, inspect.Parameter.empty)
+
     def test_run_id_grammar_is_exact_and_syntactic(self) -> None:
         self.assertEqual(
             self.state_policy.RUN_ID_RE.pattern,
@@ -448,6 +505,1201 @@ class StatePolicyTests(unittest.TestCase):
                 ("token-hex", 6),
             ],
         )
+
+    def test_state_base_override_precedes_xdg_and_preserves_order(self) -> None:
+        events: list[tuple[str, object]] = []
+        result = object()
+
+        class Profile:
+            @property
+            def state_environment(profile_self) -> str:
+                events.append(("profile-state-environment", None))
+                return "CUSTOM_STATE"
+
+            @property
+            def override_state_suffix(profile_self) -> tuple[str, ...]:
+                events.append(("profile-override-suffix", None))
+                return ("profiles", "selected")
+
+            @property
+            def default_state_parts(profile_self) -> tuple[str, ...]:
+                raise AssertionError("read the default suffix after an override")
+
+        class Environment:
+            @property
+            def get(environment_self) -> object:
+                events.append(("resolve-get", None))
+
+                def lookup(name: str) -> str:
+                    events.append(("get", name))
+                    values = {
+                        "CUSTOM_STATE": "/override",
+                        "XDG_STATE_HOME": "/xdg",
+                    }
+                    return values[name]
+
+                return lookup
+
+        class Candidate:
+            def is_absolute(candidate_self) -> bool:
+                events.append(("is-absolute", None))
+                return True
+
+            @property
+            def joinpath(candidate_self) -> object:
+                events.append(("bind-joinpath", None))
+
+                def join(*parts: str) -> object:
+                    events.append(("joinpath", parts))
+                    return result
+
+                return join
+
+        def environment() -> object:
+            events.append(("environment", None))
+            return Environment()
+
+        def path_factory(value: str) -> object:
+            events.append(("path-factory", value))
+            return Candidate()
+
+        home = mock.Mock(side_effect=AssertionError("used home after override"))
+        error_type = mock.Mock(
+            side_effect=AssertionError("resolved error type for absolute path")
+        )
+        observed = self.state_policy.state_base(
+            profile=Profile(),
+            environment=environment,
+            path_factory=path_factory,
+            home=home,
+            error_type=error_type,
+        )
+
+        self.assertIs(observed, result)
+        self.assertEqual(
+            events,
+            [
+                ("environment", None),
+                ("resolve-get", None),
+                ("profile-state-environment", None),
+                ("get", "CUSTOM_STATE"),
+                ("path-factory", "/override"),
+                ("is-absolute", None),
+                ("bind-joinpath", None),
+                ("profile-override-suffix", None),
+                ("joinpath", ("profiles", "selected")),
+            ],
+        )
+        home.assert_not_called()
+        error_type.assert_not_called()
+
+    def test_state_base_reacquires_environment_for_xdg_branch(self) -> None:
+        events: list[tuple[str, object]] = []
+        result = object()
+
+        class Profile:
+            @property
+            def state_environment(profile_self) -> str:
+                events.append(("profile-state-environment", None))
+                return "CUSTOM_STATE"
+
+            @property
+            def override_state_suffix(profile_self) -> tuple[str, ...]:
+                raise AssertionError("read override suffix without an override")
+
+            @property
+            def default_state_parts(profile_self) -> tuple[str, ...]:
+                events.append(("profile-default-parts", None))
+                return ("marshal", "profile")
+
+        class Environment:
+            def __init__(
+                environment_self,
+                label: str,
+                values: dict[str, str],
+            ) -> None:
+                environment_self.label = label
+                environment_self.values = values
+
+            def get(environment_self, name: str) -> str | None:
+                events.append(
+                    ("get", (environment_self.label, name))
+                )
+                return environment_self.values.get(name)
+
+        environments = iter(
+            (
+                Environment("first", {"CUSTOM_STATE": ""}),
+                Environment("second", {"XDG_STATE_HOME": "/xdg"}),
+            )
+        )
+
+        def environment() -> object:
+            events.append(("environment", None))
+            return next(environments)
+
+        class Candidate:
+            def is_absolute(candidate_self) -> bool:
+                events.append(("is-absolute", None))
+                return True
+
+            @property
+            def joinpath(candidate_self) -> object:
+                events.append(("bind-joinpath", None))
+
+                def join(*parts: str) -> object:
+                    events.append(("joinpath", parts))
+                    return result
+
+                return join
+
+        def path_factory(value: str) -> object:
+            events.append(("path-factory", value))
+            return Candidate()
+
+        home = mock.Mock(side_effect=AssertionError("used home after XDG"))
+        error_type = mock.Mock(
+            side_effect=AssertionError("resolved error type for absolute path")
+        )
+        observed = self.state_policy.state_base(
+            profile=Profile(),
+            environment=environment,
+            path_factory=path_factory,
+            home=home,
+            error_type=error_type,
+        )
+
+        self.assertIs(observed, result)
+        self.assertEqual(
+            events,
+            [
+                ("environment", None),
+                ("profile-state-environment", None),
+                ("get", ("first", "CUSTOM_STATE")),
+                ("environment", None),
+                ("get", ("second", "XDG_STATE_HOME")),
+                ("path-factory", "/xdg"),
+                ("is-absolute", None),
+                ("bind-joinpath", None),
+                ("profile-default-parts", None),
+                ("joinpath", ("marshal", "profile")),
+            ],
+        )
+        home.assert_not_called()
+        error_type.assert_not_called()
+
+    def test_state_base_home_fallback_preserves_lexical_join_order(
+        self,
+    ) -> None:
+        events: list[tuple[str, object]] = []
+        result = object()
+
+        class Profile:
+            @property
+            def state_environment(profile_self) -> str:
+                events.append(("profile-state-environment", None))
+                return "CUSTOM_STATE"
+
+            @property
+            def override_state_suffix(profile_self) -> tuple[str, ...]:
+                raise AssertionError("read override suffix on home fallback")
+
+            @property
+            def default_state_parts(profile_self) -> tuple[str, ...]:
+                events.append(("profile-default-parts", None))
+                return ("marshal", "profile")
+
+        class Environment:
+            def get(environment_self, name: str) -> None:
+                events.append(("get", name))
+                return None
+
+        def environment() -> object:
+            events.append(("environment", None))
+            return Environment()
+
+        class TracingPath:
+            def __init__(path_self, label: str) -> None:
+                path_self.label = label
+
+            def __truediv__(path_self, component: str) -> object:
+                events.append(("divide", (path_self.label, component)))
+                labels = {
+                    ("home", ".local"): "local",
+                    ("local", "state"): "state",
+                }
+                return TracingPath(labels[(path_self.label, component)])
+
+            @property
+            def joinpath(path_self) -> object:
+                events.append(("bind-joinpath", path_self.label))
+
+                def join(*parts: str) -> object:
+                    events.append(
+                        ("joinpath", (path_self.label, parts))
+                    )
+                    return result
+
+                return join
+
+        def home() -> object:
+            events.append(("home", None))
+            return TracingPath("home")
+
+        path_factory = mock.Mock(
+            side_effect=AssertionError("constructed an empty environment value")
+        )
+        error_type = mock.Mock(
+            side_effect=AssertionError("resolved error type on home fallback")
+        )
+        observed = self.state_policy.state_base(
+            profile=Profile(),
+            environment=environment,
+            path_factory=path_factory,
+            home=home,
+            error_type=error_type,
+        )
+
+        self.assertIs(observed, result)
+        self.assertEqual(
+            events,
+            [
+                ("environment", None),
+                ("profile-state-environment", None),
+                ("get", "CUSTOM_STATE"),
+                ("environment", None),
+                ("get", "XDG_STATE_HOME"),
+                ("home", None),
+                ("divide", ("home", ".local")),
+                ("divide", ("local", "state")),
+                ("bind-joinpath", "state"),
+                ("profile-default-parts", None),
+                ("joinpath", ("state", ("marshal", "profile"))),
+            ],
+        )
+        path_factory.assert_not_called()
+        error_type.assert_not_called()
+
+    def test_state_base_relative_diagnostics_are_exact_and_lazy(self) -> None:
+        class RelativeStateError(RuntimeError):
+            pass
+
+        cases = (
+            (
+                "override",
+                {
+                    "CUSTOM_STATE": "relative/override",
+                    "XDG_STATE_HOME": "/unused",
+                },
+                "CUSTOM_STATE must be an absolute path",
+            ),
+            (
+                "xdg",
+                {
+                    "CUSTOM_STATE": "",
+                    "XDG_STATE_HOME": "relative/xdg",
+                },
+                "XDG_STATE_HOME must be an absolute path",
+            ),
+        )
+        for name, values, expected_message in cases:
+            with self.subTest(branch=name):
+                events: list[tuple[str, object]] = []
+
+                class Profile:
+                    @property
+                    def state_environment(profile_self) -> str:
+                        events.append(
+                            ("profile-state-environment", None)
+                        )
+                        return "CUSTOM_STATE"
+
+                    @property
+                    def override_state_suffix(
+                        profile_self,
+                    ) -> tuple[str, ...]:
+                        raise AssertionError("read suffix for a relative path")
+
+                    @property
+                    def default_state_parts(
+                        profile_self,
+                    ) -> tuple[str, ...]:
+                        raise AssertionError("read suffix for a relative path")
+
+                class Candidate:
+                    def is_absolute(candidate_self) -> bool:
+                        events.append(("is-absolute", None))
+                        return False
+
+                    def joinpath(
+                        candidate_self,
+                        *parts: str,
+                    ) -> object:
+                        raise AssertionError("joined a relative state path")
+
+                def environment() -> object:
+                    events.append(("environment", None))
+                    return values
+
+                def path_factory(value: str) -> object:
+                    events.append(("path-factory", value))
+                    return Candidate()
+
+                def error_type() -> type[Exception]:
+                    events.append(("error-type", None))
+                    return RelativeStateError
+
+                home = mock.Mock(
+                    side_effect=AssertionError(
+                        "used home after a relative configured path"
+                    )
+                )
+                with self.assertRaisesRegex(
+                    RelativeStateError,
+                    f"^{re.escape(expected_message)}$",
+                ):
+                    self.state_policy.state_base(
+                        profile=Profile(),
+                        environment=environment,
+                        path_factory=path_factory,
+                        home=home,
+                        error_type=error_type,
+                    )
+
+                expected_environment_calls = 1 if name == "override" else 2
+                self.assertEqual(
+                    sum(
+                        event == ("environment", None)
+                        for event in events
+                    ),
+                    expected_environment_calls,
+                )
+                expected_profile_reads = 2 if name == "override" else 1
+                self.assertEqual(
+                    sum(
+                        event == ("profile-state-environment", None)
+                        for event in events
+                    ),
+                    expected_profile_reads,
+                )
+                expected_tail = [
+                    ("is-absolute", None),
+                    ("error-type", None),
+                ]
+                if name == "override":
+                    expected_tail.append(
+                        ("profile-state-environment", None)
+                    )
+                self.assertEqual(
+                    events[-len(expected_tail) :],
+                    expected_tail,
+                )
+                home.assert_not_called()
+
+    def test_state_base_failures_short_circuit_later_providers(self) -> None:
+        class ProviderFailure(RuntimeError):
+            pass
+
+        profile = SimpleNamespace(
+            state_environment="CUSTOM_STATE",
+            override_state_suffix=("override",),
+            default_state_parts=("default",),
+        )
+        unused_path_factory = mock.Mock(
+            side_effect=AssertionError("called path factory after failure")
+        )
+        unused_home = mock.Mock(
+            side_effect=AssertionError("called home after failure")
+        )
+        unused_error_type = mock.Mock(
+            side_effect=AssertionError("called error type after failure")
+        )
+
+        with self.assertRaisesRegex(
+            ProviderFailure,
+            "^environment failed$",
+        ):
+            self.state_policy.state_base(
+                profile=profile,
+                environment=mock.Mock(
+                    side_effect=ProviderFailure("environment failed")
+                ),
+                path_factory=unused_path_factory,
+                home=unused_home,
+                error_type=unused_error_type,
+            )
+        unused_path_factory.assert_not_called()
+        unused_home.assert_not_called()
+        unused_error_type.assert_not_called()
+
+        path_failure = mock.Mock(
+            side_effect=ProviderFailure("path construction failed")
+        )
+        with self.assertRaisesRegex(
+            ProviderFailure,
+            "^path construction failed$",
+        ):
+            self.state_policy.state_base(
+                profile=profile,
+                environment=lambda: {"CUSTOM_STATE": "/override"},
+                path_factory=path_failure,
+                home=unused_home,
+                error_type=unused_error_type,
+            )
+        path_failure.assert_called_once_with("/override")
+        unused_home.assert_not_called()
+        unused_error_type.assert_not_called()
+
+        class AbsoluteFailure:
+            def is_absolute(candidate_self) -> bool:
+                raise ProviderFailure("absolute check failed")
+
+        with self.assertRaisesRegex(
+            ProviderFailure,
+            "^absolute check failed$",
+        ):
+            self.state_policy.state_base(
+                profile=profile,
+                environment=lambda: {"CUSTOM_STATE": "/override"},
+                path_factory=lambda value: AbsoluteFailure(),
+                home=unused_home,
+                error_type=unused_error_type,
+            )
+        unused_home.assert_not_called()
+        unused_error_type.assert_not_called()
+
+        environment_calls = 0
+
+        def changing_environment() -> dict[str, str]:
+            nonlocal environment_calls
+            environment_calls += 1
+            if environment_calls == 1:
+                return {"CUSTOM_STATE": ""}
+            raise ProviderFailure("second environment failed")
+
+        with self.assertRaisesRegex(
+            ProviderFailure,
+            "^second environment failed$",
+        ):
+            self.state_policy.state_base(
+                profile=profile,
+                environment=changing_environment,
+                path_factory=unused_path_factory,
+                home=unused_home,
+                error_type=unused_error_type,
+            )
+        self.assertEqual(environment_calls, 2)
+        unused_home.assert_not_called()
+
+        default_reads = 0
+
+        class FallbackProfile:
+            state_environment = "CUSTOM_STATE"
+
+            @property
+            def default_state_parts(
+                profile_self,
+            ) -> tuple[str, ...]:
+                nonlocal default_reads
+                default_reads += 1
+                return ("default",)
+
+        with self.assertRaisesRegex(ProviderFailure, "^home failed$"):
+            self.state_policy.state_base(
+                profile=FallbackProfile(),
+                environment=lambda: {},
+                path_factory=unused_path_factory,
+                home=mock.Mock(
+                    side_effect=ProviderFailure("home failed")
+                ),
+                error_type=unused_error_type,
+            )
+        self.assertEqual(default_reads, 0)
+
+    def test_engine_state_base_defers_mutable_runtime_providers(self) -> None:
+        events: list[tuple[str, object]] = []
+        profile = object()
+        result = object()
+
+        class EnvironmentApi:
+            def __init__(api_self, label: str) -> None:
+                api_self.label = label
+
+            @property
+            def environ(api_self) -> object:
+                events.append(("environment", api_self.label))
+                return ("environment", api_self.label)
+
+        class PathApi:
+            def __init__(api_self, label: str) -> None:
+                api_self.label = label
+
+            def __call__(api_self, value: str) -> object:
+                events.append(("path-factory", (api_self.label, value)))
+                return ("path", api_self.label, value)
+
+            def home(api_self) -> object:
+                events.append(("home", api_self.label))
+                return ("home", api_self.label)
+
+        class InitialError(RuntimeError):
+            pass
+
+        class ReboundError(RuntimeError):
+            pass
+
+        initial_os = EnvironmentApi("initial")
+        rebound_os = EnvironmentApi("rebound")
+        initial_path = PathApi("initial")
+        rebound_path = PathApi("rebound")
+
+        def active_profile() -> object:
+            events.append(("active-profile", None))
+            self.engine.os = rebound_os
+            self.engine.Path = rebound_path
+            self.engine.LauncherError = ReboundError
+            return profile
+
+        def state_base_kernel(**providers: object) -> object:
+            events.append(("kernel", tuple(providers)))
+            self.assertIs(providers["profile"], profile)
+            self.assertEqual(
+                providers["environment"](),
+                ("environment", "rebound"),
+            )
+            self.assertEqual(
+                providers["path_factory"]("configured"),
+                ("path", "rebound", "configured"),
+            )
+            self.assertEqual(
+                providers["home"](),
+                ("home", "rebound"),
+            )
+            self.assertIs(providers["error_type"](), ReboundError)
+            return result
+
+        with (
+            mock.patch.object(self.engine, "os", initial_os),
+            mock.patch.object(self.engine, "Path", initial_path),
+            mock.patch.object(self.engine, "LauncherError", InitialError),
+            mock.patch.object(
+                self.engine,
+                "active_profile",
+                side_effect=active_profile,
+            ),
+            mock.patch.object(
+                self.engine,
+                "_state_base",
+                side_effect=state_base_kernel,
+            ),
+        ):
+            observed = self.engine.state_base()
+
+        self.assertIs(observed, result)
+        self.assertEqual(
+            events,
+            [
+                ("active-profile", None),
+                (
+                    "kernel",
+                    (
+                        "profile",
+                        "environment",
+                        "path_factory",
+                        "home",
+                        "error_type",
+                    ),
+                ),
+                ("environment", "rebound"),
+                ("path-factory", ("rebound", "configured")),
+                ("home", "rebound"),
+            ],
+        )
+
+    def test_engine_state_base_real_kernel_resolves_providers_at_use(
+        self,
+    ) -> None:
+        events: list[tuple[str, object]] = []
+
+        class InitialError(RuntimeError):
+            pass
+
+        class ReboundError(RuntimeError):
+            pass
+
+        class Profile:
+            @property
+            def state_environment(profile_self) -> str:
+                events.append(("profile-state-environment", None))
+                return "CUSTOM_STATE"
+
+            @property
+            def override_state_suffix(
+                profile_self,
+            ) -> tuple[str, ...]:
+                raise AssertionError("read override suffix for a falsey value")
+
+            @property
+            def default_state_parts(
+                profile_self,
+            ) -> tuple[str, ...]:
+                raise AssertionError("read default suffix for a relative path")
+
+        class ReboundEnvironment:
+            def get(environment_self, name: str) -> object:
+                events.append(("rebound-get", name))
+                if name != "XDG_STATE_HOME":
+                    raise AssertionError(f"unexpected rebound lookup: {name}")
+                return xdg_value
+
+        class ReboundOs:
+            @property
+            def environ(api_self) -> object:
+                events.append(("rebound-environment", None))
+                return ReboundEnvironment()
+
+        class FalseyOverride:
+            def __bool__(value_self) -> bool:
+                events.append(("override-truthiness", None))
+                self.engine.os = ReboundOs()
+                return False
+
+        class InitialEnvironment:
+            def get(environment_self, name: str) -> object:
+                events.append(("initial-get", name))
+                if name != "CUSTOM_STATE":
+                    raise AssertionError(f"reused initial environment: {name}")
+                return FalseyOverride()
+
+        class InitialOs:
+            @property
+            def environ(api_self) -> object:
+                events.append(("initial-environment", None))
+                return InitialEnvironment()
+
+        class Candidate:
+            def is_absolute(candidate_self) -> bool:
+                events.append(("is-absolute", None))
+                self.engine.LauncherError = ReboundError
+                return False
+
+        class ReboundPath:
+            def __call__(path_self, value: object) -> object:
+                events.append(("rebound-path", value))
+                self.assertIs(value, xdg_value)
+                return Candidate()
+
+            def home(path_self) -> object:
+                raise AssertionError("used home after a truthy XDG value")
+
+        class InitialPath:
+            def __call__(path_self, value: object) -> object:
+                raise AssertionError("captured Path before XDG truthiness")
+
+            def home(path_self) -> object:
+                raise AssertionError("used home after a truthy XDG value")
+
+        class TruthyXdg:
+            def __bool__(value_self) -> bool:
+                events.append(("xdg-truthiness", None))
+                self.engine.Path = ReboundPath()
+                return True
+
+        xdg_value = TruthyXdg()
+
+        def active_profile() -> object:
+            events.append(("active-profile", None))
+            return Profile()
+
+        with (
+            mock.patch.object(
+                self.engine,
+                "active_profile",
+                side_effect=active_profile,
+            ),
+            mock.patch.object(self.engine, "os", InitialOs()),
+            mock.patch.object(self.engine, "Path", InitialPath()),
+            mock.patch.object(
+                self.engine,
+                "LauncherError",
+                InitialError,
+            ),
+        ):
+            with self.assertRaisesRegex(
+                ReboundError,
+                "^XDG_STATE_HOME must be an absolute path$",
+            ):
+                self.engine.state_base()
+
+        self.assertEqual(
+            events,
+            [
+                ("active-profile", None),
+                ("initial-environment", None),
+                ("profile-state-environment", None),
+                ("initial-get", "CUSTOM_STATE"),
+                ("override-truthiness", None),
+                ("rebound-environment", None),
+                ("rebound-get", "XDG_STATE_HOME"),
+                ("xdg-truthiness", None),
+                ("rebound-path", xdg_value),
+                ("is-absolute", None),
+            ],
+        )
+
+    def test_engine_override_error_is_captured_before_diagnostic_name(
+        self,
+    ) -> None:
+        events: list[tuple[str, object]] = []
+
+        class ExpectedError(RuntimeError):
+            pass
+
+        class TooLateError(RuntimeError):
+            pass
+
+        class Profile:
+            reads = 0
+
+            @property
+            def state_environment(profile_self) -> str:
+                profile_self.reads += 1
+                events.append(
+                    ("profile-state-environment", profile_self.reads)
+                )
+                if profile_self.reads == 2:
+                    self.engine.LauncherError = TooLateError
+                return "CUSTOM_STATE"
+
+            @property
+            def override_state_suffix(
+                profile_self,
+            ) -> tuple[str, ...]:
+                raise AssertionError("read suffix for a relative override")
+
+        class Candidate:
+            def is_absolute(candidate_self) -> bool:
+                events.append(("is-absolute", None))
+                return False
+
+        class PathApi:
+            def __call__(path_self, value: str) -> object:
+                events.append(("path", value))
+                return Candidate()
+
+        with (
+            mock.patch.object(
+                self.engine,
+                "active_profile",
+                return_value=Profile(),
+            ),
+            mock.patch.object(
+                self.engine,
+                "os",
+                SimpleNamespace(
+                    environ={"CUSTOM_STATE": "relative/path"}
+                ),
+            ),
+            mock.patch.object(self.engine, "Path", PathApi()),
+            mock.patch.object(
+                self.engine,
+                "LauncherError",
+                ExpectedError,
+            ),
+        ):
+            with self.assertRaisesRegex(
+                ExpectedError,
+                "^CUSTOM_STATE must be an absolute path$",
+            ):
+                self.engine.state_base()
+
+        self.assertEqual(
+            events,
+            [
+                ("profile-state-environment", 1),
+                ("path", "relative/path"),
+                ("is-absolute", None),
+                ("profile-state-environment", 2),
+            ],
+        )
+
+    def test_repository_slug_normalization_is_exactly_ascii(self) -> None:
+        cases = (
+            ("Triptych", "triptych"),
+            ("Hello_World.git", "hello-world-git"),
+            ("a..B__C", "a-b-c"),
+            ("123 Project 456", "123-project-456"),
+            ("Église Café", "glise-caf"),
+            ("Straße", "stra-e"),
+            ("Καλημέρα", "repository"),
+            ("ＦＯＯ", "repository"),
+            ("---", "repository"),
+            ("", "repository"),
+        )
+        for name, expected in cases:
+            with self.subTest(name=name):
+                observed = self.state_policy.repository_slug(
+                    SimpleNamespace(name=name),
+                    substitute=re.sub,
+                )
+                self.assertEqual(observed, expected)
+
+    def test_repository_slug_kernel_preserves_operation_order(self) -> None:
+        events: list[tuple[str, object]] = []
+        truthy_result = object()
+
+        class Slug:
+            def strip(slug_self, characters: str) -> object:
+                events.append(("strip", characters))
+                return truthy_result
+
+        class LoweredName:
+            def __format__(
+                name_self,
+                specification: str,
+            ) -> str:
+                raise AssertionError("formatted repository name")
+
+        class Name:
+            def lower(name_self) -> object:
+                events.append(("lower", None))
+                return LoweredName()
+
+        class Root:
+            @property
+            def name(root_self) -> object:
+                events.append(("root-name", None))
+                return Name()
+
+        def substitute(
+            pattern: str,
+            replacement: str,
+            value: object,
+        ) -> object:
+            events.append(
+                ("substitute", (pattern, replacement, value.__class__))
+            )
+            return Slug()
+
+        observed = self.state_policy.repository_slug(
+            Root(),
+            substitute=substitute,
+        )
+
+        self.assertIs(observed, truthy_result)
+        self.assertEqual(
+            events,
+            [
+                ("root-name", None),
+                ("lower", None),
+                (
+                    "substitute",
+                    (r"[^a-z0-9]+", "-", LoweredName),
+                ),
+                ("strip", "-"),
+            ],
+        )
+
+        self.assertEqual(
+            self.state_policy.repository_slug(
+                SimpleNamespace(name="---"),
+                substitute=re.sub,
+            ),
+            "repository",
+        )
+
+    def test_repository_slug_failures_propagate_without_fallback(self) -> None:
+        class SlugFailure(RuntimeError):
+            pass
+
+        class BrokenRoot:
+            @property
+            def name(root_self) -> str:
+                raise SlugFailure("name failed")
+
+        substitute = mock.Mock(
+            side_effect=AssertionError("substituted after name failure")
+        )
+        with self.assertRaisesRegex(SlugFailure, "^name failed$"):
+            self.state_policy.repository_slug(
+                BrokenRoot(),
+                substitute=substitute,
+            )
+        substitute.assert_not_called()
+
+        class BrokenName:
+            def lower(name_self) -> str:
+                raise SlugFailure("lower failed")
+
+        substitute.reset_mock()
+        with self.assertRaisesRegex(SlugFailure, "^lower failed$"):
+            self.state_policy.repository_slug(
+                SimpleNamespace(name=BrokenName()),
+                substitute=substitute,
+            )
+        substitute.assert_not_called()
+
+        with self.assertRaisesRegex(SlugFailure, "^substitute failed$"):
+            self.state_policy.repository_slug(
+                SimpleNamespace(name="repository"),
+                substitute=mock.Mock(
+                    side_effect=SlugFailure("substitute failed")
+                ),
+            )
+
+        class BrokenSlug:
+            def strip(slug_self, characters: str) -> str:
+                raise SlugFailure("strip failed")
+
+        with self.assertRaisesRegex(SlugFailure, "^strip failed$"):
+            self.state_policy.repository_slug(
+                SimpleNamespace(name="repository"),
+                substitute=lambda pattern, replacement, value: BrokenSlug(),
+            )
+
+    def test_engine_repository_slug_captures_substitute_before_root_name(
+        self,
+    ) -> None:
+        events: list[tuple[str, object]] = []
+
+        def initial_substitute(
+            pattern: str,
+            replacement: str,
+            value: str,
+        ) -> str:
+            events.append(
+                ("initial-substitute", (pattern, replacement, value))
+            )
+            return re.sub(pattern, replacement, value)
+
+        class InitialRegexApi:
+            @property
+            def sub(api_self) -> object:
+                events.append(("capture-substitute", None))
+                return initial_substitute
+
+        class ReboundRegexApi:
+            @property
+            def sub(api_self) -> object:
+                raise AssertionError(
+                    "resolved substitute after reading the repository name"
+                )
+
+        class Root:
+            @property
+            def name(root_self) -> str:
+                events.append(("root-name", None))
+                self.engine.re = ReboundRegexApi()
+                return "Project Name"
+
+        with mock.patch.object(self.engine, "re", InitialRegexApi()):
+            observed = self.engine.repository_slug(Root())
+
+        self.assertEqual(observed, "project-name")
+        self.assertEqual(
+            events,
+            [
+                ("capture-substitute", None),
+                ("root-name", None),
+                (
+                    "initial-substitute",
+                    (r"[^a-z0-9]+", "-", "project name"),
+                ),
+            ],
+        )
+
+    def test_discover_repository_keeps_state_outside_security_boundary(
+        self,
+    ) -> None:
+        events: list[tuple[str, object]] = []
+        start = Path("/repository/subdirectory")
+        root = Path("/repository")
+        git_dir = Path("/repository/.git")
+        common_git_dir = Path("/repository/.git")
+
+        def git(
+            cwd: Path,
+            *arguments: str,
+            check: bool = True,
+        ) -> object:
+            events.append(("git", (cwd, arguments, check)))
+            outputs = {
+                ("rev-parse", "--is-inside-work-tree"): "true\n",
+                ("rev-parse", "--show-toplevel"): f"{root}\n",
+            }
+            return SimpleNamespace(
+                returncode=0,
+                stdout=outputs[arguments],
+            )
+
+        def absolute_git_path(cwd: Path, selector: str) -> Path:
+            events.append(("absolute-git-path", (cwd, selector)))
+            paths = {
+                "--git-dir": git_dir,
+                "--git-common-dir": common_git_dir,
+            }
+            return paths[selector]
+
+        class OperatingSystemApi:
+            def fsencode(api_self, value: object) -> bytes:
+                events.append(("fsencode", value))
+                return b"common-git-directory"
+
+        class Digest:
+            def hexdigest(digest_self) -> str:
+                events.append(("hexdigest", None))
+                return "0123456789abcdef"
+
+        class HashApi:
+            def sha256(api_self, value: bytes) -> object:
+                events.append(("sha256", value))
+                return Digest()
+
+        class Profile:
+            @property
+            def state_environment(profile_self) -> str:
+                events.append(("profile-state-environment", None))
+                return "CUSTOM_STATE"
+
+        def state_base() -> Path:
+            events.append(("state-base", None))
+            return root / ".marshal-state"
+
+        def repository_slug(discovered_root: Path) -> str:
+            events.append(("repository-slug", discovered_root))
+            return "project"
+
+        def active_profile() -> object:
+            events.append(("active-profile", None))
+            return Profile()
+
+        with (
+            mock.patch.object(self.engine, "git", side_effect=git),
+            mock.patch.object(
+                self.engine,
+                "absolute_git_path",
+                side_effect=absolute_git_path,
+            ),
+            mock.patch.object(self.engine, "os", OperatingSystemApi()),
+            mock.patch.object(self.engine, "hashlib", HashApi()),
+            mock.patch.object(
+                self.engine,
+                "state_base",
+                side_effect=state_base,
+            ),
+            mock.patch.object(
+                self.engine,
+                "repository_slug",
+                side_effect=repository_slug,
+            ),
+            mock.patch.object(
+                self.engine,
+                "active_profile",
+                side_effect=active_profile,
+            ),
+            mock.patch.object(
+                self.engine,
+                "Repository",
+                side_effect=AssertionError(
+                    "constructed a repository with state inside its worktree"
+                ),
+            ) as repository_type,
+        ):
+            with self.assertRaisesRegex(
+                self.engine.LauncherError,
+                "^CUSTOM_STATE must keep launcher state outside the worktree$",
+            ):
+                self.engine.discover_repository(start)
+
+        repository_type.assert_not_called()
+        self.assertEqual(
+            events,
+            [
+                (
+                    "git",
+                    (
+                        start,
+                        ("rev-parse", "--is-inside-work-tree"),
+                        False,
+                    ),
+                ),
+                (
+                    "git",
+                    (
+                        start,
+                        ("rev-parse", "--show-toplevel"),
+                        True,
+                    ),
+                ),
+                ("absolute-git-path", (root, "--git-dir")),
+                ("absolute-git-path", (root, "--git-common-dir")),
+                ("fsencode", common_git_dir),
+                ("sha256", b"common-git-directory"),
+                ("hexdigest", None),
+                ("state-base", None),
+                ("repository-slug", root),
+                ("active-profile", None),
+                ("profile-state-environment", None),
+            ],
+        )
+
+    def test_discover_repository_rejects_outside_cwd_before_state_policy(
+        self,
+    ) -> None:
+        start = Path("/outside")
+        root = Path("/repository")
+        git_outputs = iter(
+            (
+                SimpleNamespace(returncode=0, stdout="true\n"),
+                SimpleNamespace(returncode=0, stdout=f"{root}\n"),
+            )
+        )
+        state_base = mock.Mock(
+            side_effect=AssertionError(
+                "selected state before authenticating the discovered root"
+            )
+        )
+        repository_slug = mock.Mock(
+            side_effect=AssertionError(
+                "slugged a root before checking the current directory"
+            )
+        )
+        with (
+            mock.patch.object(
+                self.engine,
+                "git",
+                side_effect=lambda *args, **kwargs: next(git_outputs),
+            ),
+            mock.patch.object(
+                self.engine,
+                "absolute_git_path",
+                side_effect=(
+                    Path("/repository/.git"),
+                    Path("/repository/.git"),
+                ),
+            ),
+            mock.patch.object(self.engine, "state_base", state_base),
+            mock.patch.object(
+                self.engine,
+                "repository_slug",
+                repository_slug,
+            ),
+            mock.patch.object(
+                self.engine.hashlib,
+                "sha256",
+                side_effect=AssertionError(
+                    "hashed state identity before relative-cwd validation"
+                ),
+            ),
+        ):
+            with self.assertRaisesRegex(
+                self.engine.LauncherError,
+                "^the current directory is outside the discovered worktree$",
+            ):
+                self.engine.discover_repository(start)
+
+        state_base.assert_not_called()
+        repository_slug.assert_not_called()
 
     def test_lexical_path_kernels_preserve_exact_opaque_joins(self) -> None:
         roots = (Path("/state/root"), Path("relative/state"))
