@@ -4,9 +4,18 @@ document = "curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced"
 
 [[bindings]]
 source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
-loci = ["Twelfth Sunday after Pentecost complete formulary, printed pages 392-393", "Twenty-third Sunday after Pentecost complete formulary, printed pages 416-417", "Canon Missae, Te igitur source model, local evidence PDF page 382"]
+loci = ["Twelfth Sunday after Pentecost complete formulary, printed pages 392-393", "Twenty-third Sunday after Pentecost complete formulary, printed pages 416-417"]
 role = "textual-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
-context = "The curriculum owner passage inventory records these formularies and bounded Missal models as visually verified against the exact CMAA facsimile artifact. EL-REVIEW-IV's companion map and render routing import only these selections; this binding does not claim a work-wide inspection or search."
+context = "The curriculum owner passage inventory records these two complete formularies as visually verified against the exact CMAA facsimile artifact. EL-REVIEW-IV's companion map and render routing import only these selections; this binding does not claim a work-wide inspection or search."
 verified_on = "2026-07-22"
 source_fingerprint = "sha256:6b4dcd3ee771d6d92734992ecabfe09b289235954e963afcf523fc8f8ee9b12d"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-te-igitur"
+loci = ["Canon Missae, Te igitur through catholicae et apostolicae fidei cultoribus, artifact PDF p. 382, beginning at marginal no. 1088"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The shared passage record controls the complete Te igitur model that EL-REVIEW-IV imports through its M20 reader set. The separate artifact binding retains only the two complete proper formularies."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:3c281ce4834eadccf164d4535fd0eb97146a72d1db7513c7050a21b2d7c3afbf"

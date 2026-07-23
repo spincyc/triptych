@@ -145,7 +145,7 @@ boundary; adapted or unresolved rows keep their own state.
 | W.II.21 → II.21.1; W.II.23 → II.22.1; W.II.24 → II.23.1 | Same source decision | L |
 | W.II.22 | Clementine Vulgate, Mt. 26:41, negative purpose after *vigilate et orate* | L |
 | W.II.25 | Clementine Vulgate, Num. 31:4, relative-purpose example | L |
-| W.II.26 | 1962 Missal, Canon Missæ, substantive request in *Te igitur* | L |
+| W.II.26 | 1962 Missal, Canon Missæ, controlled *Te igitur* abridgment omitting *per Iesum Christum Filium tuum Dominum nostrum* | A |
 | W.II.27 → II.26.1; W.II.28 → II.27.1; W.II.29 → II.28.1 | Same source decision | L |
 | W.II.30 | Clementine Vulgate, Io. 6:6, indirect question | L |
 | W.II.31 → II.29.1; W.II.33 → II.32.1; W.II.34 → II.30.1; W.II.35 → II.36.1 | Same source decision | L |
@@ -157,7 +157,8 @@ boundary; adapted or unresolved rows keep their own state.
 | W.II.49 → II.45.1; W.II.50 → II.46.1; W.II.51 → II.47.1; W.II.52 → II.48.1 | Same source decision | L |
 | W.II.53 | 1962 Missal, Credo, *Et iterum venturus est cum gloria, iudicare vivos et mortuos* | L |
 | W.II.54 → II.49.1; W.II.55 → II.51.1; W.II.56 → II.50.1; W.II.57 → II.7.1; W.II.58 → II.52.1 | Same source decision | L |
-| W.II.59 → II.53.1; W.II.60 → II.54.1; W.II.61 → II.55.1; W.II.63 → II.56.1 | Same source decision | L |
+| W.II.59 → II.53.1 | Exact opening of MR62-CANON-TEIGITUR through *supplices rogamus ac petimus* | V-M |
+| W.II.60 → II.54.1; W.II.61 → II.55.1; W.II.63 → II.56.1 | Same source decision | L |
 | W.II.62 | Clementine Vulgate, Mt. 7:2 | L |
 
 ### Volume IV worked passages
@@ -285,7 +286,7 @@ a familiar prayer or verse.
 | II.49.1 | Ps. 42:4; also 1962 Missal, Prayers at the Foot | L |
 | II.50.1 | 1962 Missal, Credo, *Qui propter nos homines* | L |
 | II.51.1 | 1962 Missal, opening of Gloria; sentence division normalized | L |
-| II.53.1 | 1962 Missal, Canon Missæ, exact opening of *Te igitur* through *rogamus ac petimus* | L |
+| II.53.1 | 1962 Missal, Canon Missæ, exact opening of *Te igitur* through *rogamus ac petimus* | V-M |
 | II.54.1 | 1962 Missal, Canon Missæ, *Quam oblationem* | L |
 | II.55.1 | 1962 Missal, Sanctus through *gloria tua* | L |
 | II.56.1 | 1962 Missal, Canon Missæ, opening of *Hanc igitur* through *placatus accipias* | L |

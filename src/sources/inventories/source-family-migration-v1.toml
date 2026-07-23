@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-07-23"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:edd451815de7452682554b74b9db557fcae10ef1b3b87ce4084f0048988bd459"
+inventory_snapshot = "sha256:7ba54e6d58231876a5ad265afc935fe73af8ebd8300d53785462bf88c44e8109"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:dafeabb5de4701ba2d641eaed5f3c550cb19836e6140a6cb39f44a74cc4e1c92"
-canonical_catalog_snapshot = "sha256:6db40cb53fd454fe4680d0550dfd0f29c314df4149160527e2447c516690fb58"
+canonical_catalog_snapshot = "sha256:cf5e296ff901067e841d280c79ddb4dc23aa7df2835fba59a56fbad914db94ab"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:1060299e02218c9ae0f93bbde74b0d2289070377c86e97ade4c9870cfcdbcdc6"
+snapshot = "sha256:57f5b7b31e520acfdc9c60f5b70bbdeea0a8f53ff65509cdb6f2da88d0a031c5"
 
 [[families]]
 id = "family.acta.aas-ass"
@@ -185,7 +185,7 @@ freshness_rule = "not-applicable"
 evidence_ceiling = "passage-pin"
 disposition = "bind-existing"
 priority = "p0"
-canonical_ids = ["artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu", "artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu-ocr", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf", "edition.catholic-church.missale-romanum.benziger-iuxta-typicam-1962", "edition.catholic-church.missale-romanum.vatican-typica-1962", "passage.catholic-church.missale-romanum.vatican-typica-1962.pentecost-sequence", "work.catholic-church.missale-romanum"]
+canonical_ids = ["artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu", "artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu-ocr", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf", "edition.catholic-church.missale-romanum.benziger-iuxta-typicam-1962", "edition.catholic-church.missale-romanum.vatican-typica-1962", "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-te-igitur", "passage.catholic-church.missale-romanum.vatican-typica-1962.pentecost-sequence", "work.catholic-church.missale-romanum"]
 trace_patterns = ["(?:Missale Romanum.{0,40}1962|1962.{0,40}(?:Roman )?Missal)"]
 reviewed_on = "2026-07-23"
 notes = "Reuse the canonical work, distinct Vatican typical and Benziger iuxta-typicam editions, and three exact remote artifacts. Artifact-level rights were reviewed but remain unresolved, so no payload is stored; publication loci still require separate binding review."
@@ -738,7 +738,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-compression"
-surface_snapshot = "sha256:25560ac1f2354191ae03099a6ce70ebe19a226aa8e91b549b3ad1778b50131cc"
+surface_snapshot = "sha256:6a045b4947ca88c3c173303d367d1db869685730f428f35daa367f749cb90b43"
 review_state = "pending"
 
 [[review_units]]
@@ -758,7 +758,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/03-missal-reading/16-chants-prefaces-and-canon"
-surface_snapshot = "sha256:95c4ee82e985288c90a4671e2ed7ab88fb98e571e10f2a5784c548cbd7ed1a4c"
+surface_snapshot = "sha256:35a859735585ae2456e34f344c8e425e0684f99f7bed4b1a0cedd2d72585bd50"
 review_state = "pending"
 
 [[review_units]]
@@ -773,8 +773,12 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-texture"
-surface_snapshot = "sha256:aecbdf9eb727e72a04f85d14685520c332a18952bd39a2ffc945713344407a74"
+surface_snapshot = "sha256:d8fd86d5f15fbb8f9c7bc503cbb0f6528b9f9239c969884709958ff741713e32"
 review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.roman-missal.1962"
+basis = "trace-scan"
+record_paths = ["src/gpt/curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-texture/research/module-map.md"]
 [[review_units.family_presence]]
 family_id = "family.scripture.vulgate-editions"
 basis = "trace-scan"
@@ -782,7 +786,7 @@ record_paths = ["src/gpt/curriculums/ecclesiastical-latin/04-advanced/19-registe
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/20-allusion-rhetoric-and-periodic-prose"
-surface_snapshot = "sha256:80f76ffa0af6a652930b64f3a80142eb7fa9bb28466e55e924951d772a59e810"
+surface_snapshot = "sha256:24566fc764b8572b994de491092ef52eda7f99b94f1a7be0fed6351c4e6e8145"
 review_state = "pending"
 
 [[review_units]]
@@ -852,7 +856,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced"
-surface_snapshot = "sha256:8292f0e9792d54901b0b336470b517aa4400e1432b000bb6d7b1776ea8c3cb65"
+surface_snapshot = "sha256:3c31b25daafca6ed315300be5594a853c6947dd3048422c6a019fe95b05e25a5"
 review_state = "pending"
 
 [[review_units]]
@@ -1044,7 +1048,7 @@ record_paths = ["src/gpt/history/traditional-priestly-institutes/03-icksp/sectio
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"
-surface_snapshot = "sha256:d2288abb9aecec10dedf6671ac5adf5f8cf15ca8763e87cc22f8d4507a4b52d4"
+surface_snapshot = "sha256:f055b18dcc82f6ff5b0503f96ecaa774d794c5d9a5c0c0948c7a0aa5fef0bcf8"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -1702,7 +1706,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "owner.curriculums.ecclesiastical-latin"
-surface_snapshot = "sha256:dc453e9110d1b1a8d2e0668f89fa9e1141d6bcc72030d71a025532a3427cf4e8"
+surface_snapshot = "sha256:77aa39d9698ac3d7144c0b175de4516467e0d01e4524bb12480f5e3faf566b99"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
