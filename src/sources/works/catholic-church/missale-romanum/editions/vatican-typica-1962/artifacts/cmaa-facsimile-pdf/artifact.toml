@@ -1,0 +1,15 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+edition_id = "edition.catholic-church.missale-romanum.vatican-typica-1962"
+artifact_type = "facsimile-pdf"
+media_type = "application/pdf"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "The facsimile is publicly downloadable, but the audit located no artifact-level statement establishing redistribution rights for this exact scanned and OCR-bearing PDF. The age and status of the underlying liturgical book do not by themselves establish rights in this digitization, so Triptych records the exact remote bytes and retains no payload."
+source_url = "https://media.churchmusicassociation.org/pdf/missale62.pdf"
+provenance = "Church Music Association of America-hosted 1,088-page facsimile of the 1962 Vatican editio typica. PDF metadata identifies the title as 'Missale Romanum 1962' and ABBYY FineReader as the 2007 image and OCR producer; that producer date describes the digitization, not the edition."
+retrieved = "2026-07-20"
+sha256 = "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+byte_size = 82815941
+notes = "Exact remote facsimile record only; no PDF payload is installed. Existing 1962-Missal research uses the page images as its controlling textual witness, but that research role does not collapse this artifact into the separate Benziger edition or create a publication binding."
