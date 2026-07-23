@@ -7,7 +7,7 @@ source_id = "edition.catholic-church.catechism.english-vatican-archive-2003"
 loci = ["4-10", "65-67", "302-314", "309-314", "426-429", "849-856", "970", "1210-1498", "1817-1821", "2221-2231", "2683-2684"]
 role = "official-control"
 states = ["cataloged"]
-context = "The rendered bibliography identifies the archived Holy See English index for the publication's Catechism ranges. The migration audit additionally retains paragraphs 4-10 and the overlapping 309-314 safeguard from the claim record; neither the overlap nor the broader archived list is represented as inspection of the exact central artifact."
+context = "The rendered bibliography identifies the archived Holy See English index for the publication's Catechism ranges. The migration audit additionally retains paragraphs 4-10 and the overlapping 309-314 safeguard from the claim record. Except for the separately bound and checked paragraph 970, the broader archived list remains catalog-only."
 
 [[bindings]]
 source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
@@ -15,3 +15,12 @@ loci = ["65-67"]
 role = "official-control"
 states = ["cataloged"]
 context = "The legacy source audit separately links the modern Holy See page for the finality of public Revelation. Its overlap with the archived-expression binding records two legacy delivery witnesses, not duplicate verification, and the 2026-07-23 central bytes were not replayed for this publication."
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-vatican-archive-2003.970"
+loci = ["970"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The checked archived paragraph supplies the apparition study's doctrinal safeguard: Marian cooperation and intercession are real only through and under Christ's unique mediation, never as a parallel source of grace."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:979d13d27cd9ad7570cf774a31d80a1b260ac4156d9d5532864b290c49342364"

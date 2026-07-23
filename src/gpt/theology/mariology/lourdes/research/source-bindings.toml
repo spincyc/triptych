@@ -7,7 +7,7 @@ source_id = "edition.catholic-church.catechism.english-vatican-archive-2003"
 loci = ["65-67", "490-493", "547-550", "963-975", "1213-1284", "1500-1525"]
 role = "official-control"
 states = ["cataloged"]
-context = "The rendered bibliography identifies the archived Holy See English index for the doctrinal ranges on Revelation, the Immaculate Conception, Marian intercession, Baptism, signs, illness, and care. This preserves the legacy expression without claiming inspection of the exact central archive artifact."
+context = "The rendered bibliography identifies the archived Holy See English index for the doctrinal ranges on Revelation, the Immaculate Conception, Marian intercession, Baptism, signs, illness, and care. Except for the separately bound and checked paragraph 970, these broad ranges remain catalog-only."
 
 [[bindings]]
 source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
@@ -15,3 +15,12 @@ loci = ["65-67"]
 role = "official-control"
 states = ["cataloged"]
 context = "The claim audit separately links the modern Holy See page for the finality of Revelation. Its overlap with the archived binding records two legacy delivery witnesses, not duplicate verification, and no exact central artifact replay occurred."
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-vatican-archive-2003.970"
+loci = ["970"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The checked archived paragraph governs the study's presentation of Mary's real but subordinate maternal role and intercession within Christ's one mediation."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:979d13d27cd9ad7570cf774a31d80a1b260ac4156d9d5532864b290c49342364"

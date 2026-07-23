@@ -7,7 +7,7 @@ source_id = "edition.catholic-church.catechism.english-vatican-archive-2003"
 loci = ["65-67", "668-682", "963-975", "1033-1037", "1362-1372", "2006-2011", "2683-2684"]
 role = "official-control"
 states = ["cataloged"]
-context = "The rendered bibliography assigns these doctrinal ranges to the archived Holy See English presentation. This catalog-only binding preserves that expression identity and does not convert the local audit's prior checks into inspection of the exact central archive artifact."
+context = "The rendered bibliography assigns these doctrinal ranges to the archived Holy See English presentation. Except for the separately bound and checked paragraph 970, this catalog-only binding does not convert the local audit's prior checks into central source-library verification."
 
 [[bindings]]
 source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
@@ -15,3 +15,12 @@ loci = ["65-67"]
 role = "official-control"
 states = ["cataloged"]
 context = "The legacy source audit separately links the modern Holy See page for public Revelation and private revelation. The overlap records a second legacy delivery witness rather than duplicate verification, and no exact central artifact was replayed."
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-vatican-archive-2003.970"
+loci = ["970"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The checked archived paragraph controls the study's account of Mary's maternal intercession and graced cooperation as wholly dependent on Christ's unique mediation."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:979d13d27cd9ad7570cf774a31d80a1b260ac4156d9d5532864b290c49342364"

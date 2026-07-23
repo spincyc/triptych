@@ -7,4 +7,13 @@ source_id = "edition.catholic-church.catechism.english-vatican-archive-2003"
 loci = ["456-511", "963-975"]
 role = "official-control"
 states = ["cataloged"]
-context = "The rendered references identify the archived Holy See English presentation for the Incarnation, Mary's grace-enabled consent, and subordinate intercession, especially paragraph 970. The legacy audit does not pin or inspect the exact central archive artifact, so this remains catalog-only."
+context = "The rendered references identify the archived Holy See English presentation for the Incarnation, Mary's grace-enabled consent, and subordinate intercession, especially paragraph 970. Except for the separately bound and checked paragraph 970, these broad ranges remain catalog-only."
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-vatican-archive-2003.970"
+loci = ["970"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The checked archived paragraph governs the publication's account of Mary's intercession as real but wholly dependent on Christ's unique mediation, including the doctrinal sense of the closing petition 'Pray for us.'"
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:979d13d27cd9ad7570cf774a31d80a1b260ac4156d9d5532864b290c49342364"

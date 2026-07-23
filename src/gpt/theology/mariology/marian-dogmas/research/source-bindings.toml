@@ -7,7 +7,7 @@ source_id = "edition.catholic-church.catechism.english-vatican-archive-2003"
 loci = ["65-67", "396-421", "456-511", "659-682", "946-975", "1618-1620", "2673-2679"]
 role = "official-control"
 states = ["cataloged"]
-context = "The rendered references use the archived Holy See English index for the work's broad Catechism synthesis. The migration audit retains 659-682 while the rendered reference prints 668-682; that unresolved coverage discrepancy remains explicit rather than being silently normalized, and no exact central archive artifact was inspected."
+context = "The rendered references use the archived Holy See English index for the work's broad Catechism synthesis. The migration audit retains 659-682 while the rendered reference prints 668-682; that unresolved coverage discrepancy remains explicit rather than being silently normalized. Except for the separately bound and checked paragraph 970, these broad ranges remain catalog-only."
 
 [[bindings]]
 source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
@@ -22,3 +22,12 @@ loci = ["499"]
 role = "textual-control"
 states = ["cataloged"]
 context = "The local audit uses paragraph 499 for the precise threefold-virginity synthesis and treats earlier patristic and conciliar material cited through the Catechism as reception rather than primary inspection. This exact-passage role remains separate from the broad official-control binding and has not been replayed against central bytes."
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-vatican-archive-2003.970"
+loci = ["970"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The checked archived paragraph controls the chapter's account of Marian cooperation and titles: Christ's mediation is unique, and Mary's influence depends wholly on it rather than constituting parallel causality."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:979d13d27cd9ad7570cf774a31d80a1b260ac4156d9d5532864b290c49342364"

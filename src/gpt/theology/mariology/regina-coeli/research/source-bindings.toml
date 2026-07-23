@@ -7,4 +7,13 @@ source_id = "edition.catholic-church.catechism.english-vatican-archive-2003"
 loci = ["638-658", "963-975"]
 role = "official-control"
 states = ["cataloged"]
-context = "The rendered references identify the archived Holy See English presentation for Christ's Resurrection and Mary's derived queenship and subordinate intercession, especially paragraphs 966 and 970. The legacy audit does not establish inspection of the exact central archive artifact."
+context = "The rendered references identify the archived Holy See English presentation for Christ's Resurrection and Mary's derived queenship and subordinate intercession, especially paragraphs 966 and 970. Except for the separately bound and checked paragraph 970, these broad ranges remain catalog-only."
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-vatican-archive-2003.970"
+loci = ["970"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The checked archived paragraph controls the publication's explanation that Marian prayer and intercession derive entirely from and remain subordinate to Christ's unique mediation."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:979d13d27cd9ad7570cf774a31d80a1b260ac4156d9d5532864b290c49342364"

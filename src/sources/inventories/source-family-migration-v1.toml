@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-07-23"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:7ba54e6d58231876a5ad265afc935fe73af8ebd8300d53785462bf88c44e8109"
+inventory_snapshot = "sha256:2823506995594cad71d1ba2c619b4212d5b218b5a28305e1782c1ce1ac030cb2"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:dafeabb5de4701ba2d641eaed5f3c550cb19836e6140a6cb39f44a74cc4e1c92"
-canonical_catalog_snapshot = "sha256:cf5e296ff901067e841d280c79ddb4dc23aa7df2835fba59a56fbad914db94ab"
+canonical_catalog_snapshot = "sha256:5c6fe366c21947901eb9bf70d75a2ea2a389a4d93e5156881dfe2a4e8728489f"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:57f5b7b31e520acfdc9c60f5b70bbdeea0a8f53ff65509cdb6f2da88d0a031c5"
+snapshot = "sha256:9b657163c9b2faa17e0180f62b36b01e07fc04c70d290031057ee6c2ce1a5149"
 
 [[families]]
 id = "family.acta.aas-ass"
@@ -62,10 +62,10 @@ storage_plan = ["restricted"]
 rights_review = "partially-reviewed"
 mutability = "mixed"
 freshness_rule = "Pin each language and official web or print state by date and review amendments before updating consumers."
-evidence_ceiling = "edition-locus"
+evidence_ceiling = "passage-pin"
 disposition = "bind-existing"
 priority = "p0"
-canonical_ids = ["artifact.catholic-church.catechism.english-usccb-second-2019.flipbook-landing-html-f90d8aab", "artifact.catholic-church.catechism.english-usccb-second-2019.imprint-html-10b80026", "artifact.catholic-church.catechism.english-usccb-second-2019.searchtext-json-def1b7d1", "artifact.catholic-church.catechism.english-usccb-second-2019.workspace-js-a093c697", "artifact.catholic-church.catechism.english-vatican-archive-2003.index-html-92199edc", "artifact.catholic-church.catechism.english-vatican-web-2026-07-23.baptism-celebration-html-d42f082a", "artifact.catholic-church.catechism.english-vatican-web-2026-07-23.confirmation-signs-rite-html-6289add4", "artifact.catholic-church.catechism.english-vatican-web-2026-07-23.in-brief-html-7004d8d9", "artifact.catholic-church.catechism.english-vatican-web-2026-07-23.index-html-9d6cfe2f", "artifact.catholic-church.catechism.english-vatican-web-2026-07-23.penance-reconciliation-html-d8a3127a", "artifact.catholic-church.catechism.english-vatican-web-2026-07-23.respect-human-life-html-9e71e262", "artifact.catholic-church.catechism.latin-vatican-web-2026-07-23.fifth-commandment-html-8d5f9d14", "artifact.catholic-church.catechism.latin-vatican-web-2026-07-23.index-html-fb458778", "artifact.holy-see.catechism-2267-rescript-2018.english-2018.vatican-html-2026-07-23-fa5cea2c", "artifact.holy-see.catechism-2267-rescript-2018.latin-2018.vatican-html-2026-07-23-6078b43b", "corpus.catholic-church.catechism.english-usccb-second-2019-search-representation-2026-07-23", "edition.catholic-church.catechism.english-usccb-second-2019", "edition.catholic-church.catechism.english-vatican-archive-2003", "edition.catholic-church.catechism.english-vatican-web-2026-07-23", "edition.catholic-church.catechism.latin-typical-1997", "edition.catholic-church.catechism.latin-vatican-web-2026-07-23", "edition.holy-see.catechism-2267-rescript-2018.english-2018", "edition.holy-see.catechism-2267-rescript-2018.latin-2018", "passage.catholic-church.catechism.english-usccb-second-2019.1131", "passage.catholic-church.catechism.english-usccb-second-2019.1240", "passage.catholic-church.catechism.english-usccb-second-2019.1300", "passage.catholic-church.catechism.english-usccb-second-2019.1449", "passage.catholic-church.catechism.english-usccb-second-2019.2267", "passage.catholic-church.catechism.english-usccb-second-2019.499", "passage.catholic-church.catechism.english-usccb-second-2019.65-67", "passage.catholic-church.catechism.english-usccb-second-2019.970", "passage.catholic-church.catechism.english-vatican-web-2026-07-23.1131", "passage.catholic-church.catechism.english-vatican-web-2026-07-23.1240", "passage.catholic-church.catechism.english-vatican-web-2026-07-23.1300", "passage.catholic-church.catechism.english-vatican-web-2026-07-23.1449", "passage.catholic-church.catechism.english-vatican-web-2026-07-23.2267", "passage.catholic-church.catechism.latin-vatican-web-2026-07-23.2267", "passage.holy-see.catechism-2267-rescript-2018.english-2018.new-text-of-catechism-2267", "passage.holy-see.catechism-2267-rescript-2018.latin-2018.new-text-of-catechism-2267", "work.catholic-church.catechism", "work.holy-see.catechism-2267-rescript-2018"]
+canonical_ids = ["artifact.catholic-church.catechism.english-usccb-second-2019.flipbook-landing-html-f90d8aab", "artifact.catholic-church.catechism.english-usccb-second-2019.imprint-html-10b80026", "artifact.catholic-church.catechism.english-usccb-second-2019.searchtext-json-def1b7d1", "artifact.catholic-church.catechism.english-usccb-second-2019.workspace-js-a093c697", "artifact.catholic-church.catechism.english-vatican-archive-2003.index-html-92199edc", "artifact.catholic-church.catechism.english-vatican-archive-2003.mary-mother-christ-church-html-779e21c8", "artifact.catholic-church.catechism.english-vatican-web-2026-07-23.baptism-celebration-html-d42f082a", "artifact.catholic-church.catechism.english-vatican-web-2026-07-23.confirmation-signs-rite-html-6289add4", "artifact.catholic-church.catechism.english-vatican-web-2026-07-23.in-brief-html-7004d8d9", "artifact.catholic-church.catechism.english-vatican-web-2026-07-23.index-html-9d6cfe2f", "artifact.catholic-church.catechism.english-vatican-web-2026-07-23.penance-reconciliation-html-d8a3127a", "artifact.catholic-church.catechism.english-vatican-web-2026-07-23.respect-human-life-html-9e71e262", "artifact.catholic-church.catechism.latin-vatican-web-2026-07-23.fifth-commandment-html-8d5f9d14", "artifact.catholic-church.catechism.latin-vatican-web-2026-07-23.index-html-fb458778", "artifact.holy-see.catechism-2267-rescript-2018.english-2018.vatican-html-2026-07-23-fa5cea2c", "artifact.holy-see.catechism-2267-rescript-2018.latin-2018.vatican-html-2026-07-23-6078b43b", "corpus.catholic-church.catechism.english-usccb-second-2019-search-representation-2026-07-23", "edition.catholic-church.catechism.english-usccb-second-2019", "edition.catholic-church.catechism.english-vatican-archive-2003", "edition.catholic-church.catechism.english-vatican-web-2026-07-23", "edition.catholic-church.catechism.latin-typical-1997", "edition.catholic-church.catechism.latin-vatican-web-2026-07-23", "edition.holy-see.catechism-2267-rescript-2018.english-2018", "edition.holy-see.catechism-2267-rescript-2018.latin-2018", "passage.catholic-church.catechism.english-usccb-second-2019.1131", "passage.catholic-church.catechism.english-usccb-second-2019.1240", "passage.catholic-church.catechism.english-usccb-second-2019.1300", "passage.catholic-church.catechism.english-usccb-second-2019.1449", "passage.catholic-church.catechism.english-usccb-second-2019.2267", "passage.catholic-church.catechism.english-usccb-second-2019.499", "passage.catholic-church.catechism.english-usccb-second-2019.65-67", "passage.catholic-church.catechism.english-usccb-second-2019.970", "passage.catholic-church.catechism.english-vatican-archive-2003.970", "passage.catholic-church.catechism.english-vatican-web-2026-07-23.1131", "passage.catholic-church.catechism.english-vatican-web-2026-07-23.1240", "passage.catholic-church.catechism.english-vatican-web-2026-07-23.1300", "passage.catholic-church.catechism.english-vatican-web-2026-07-23.1449", "passage.catholic-church.catechism.english-vatican-web-2026-07-23.2267", "passage.catholic-church.catechism.latin-vatican-web-2026-07-23.2267", "passage.holy-see.catechism-2267-rescript-2018.english-2018.new-text-of-catechism-2267", "passage.holy-see.catechism-2267-rescript-2018.latin-2018.new-text-of-catechism-2267", "work.catholic-church.catechism", "work.holy-see.catechism-2267-rescript-2018"]
 trace_patterns = ["Catechism of the Catholic Church", "Catechismus Catholicae Ecclesiae"]
 reviewed_on = "2026-07-23"
 notes = "The 2026-07-23 family review resolves 42 positive owners and identifies an exact bounded 924-entry official USCCB English search representation, distinct fixed and amended Latin states, archived-English and current-English states, the 2018 amendment act, and a restricted-rights boundary. Canonicalize those identities without treating paragraph numbers, delivery hosts, or legacy verification prose as exact evidence; restricted bytes are not ordinary-clone searchable."
@@ -1806,7 +1806,7 @@ record_paths = ["src/gpt/theology/heresies/heresies-in-catholic-history/research
 
 [[review_units]]
 owner_id = "theology/mariology/angelus"
-surface_snapshot = "sha256:ad1ff2876b38cbc4a8e9f3b1bf6e8f1c456cb5e143c7d2a78001321db4ffa875"
+surface_snapshot = "sha256:44676f57b0db73d897495167f18607a8a081ea5e9fcb712fc7f6929e51128875"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1840,7 +1840,7 @@ record_paths = ["src/gpt/theology/mariology/apparitions/research/source-audit.md
 
 [[review_units]]
 owner_id = "theology/mariology/champion"
-surface_snapshot = "sha256:d98f0fd4a38c5a2c422c24c2b6e682db56f2dbd815c50f74d83ed412faa59b19"
+surface_snapshot = "sha256:51d3f6f26c312fa5d7972455d921686301c204d593bc8ddabb412d941f364044"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1857,7 +1857,7 @@ record_paths = ["src/gpt/theology/mariology/champion/research/source-audit.md"]
 
 [[review_units]]
 owner_id = "theology/mariology/fatima"
-surface_snapshot = "sha256:e5f03160dcd508fbf51ad73a95c3807710a4d51882b9ab357804c20160a52fd1"
+surface_snapshot = "sha256:7252d1346a0610ef582c8f4504a1a22e9b439202af7e721ebc13b34c562e54fe"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1908,7 +1908,7 @@ record_paths = ["src/gpt/theology/mariology/la-salette/research/source-audit.md"
 
 [[review_units]]
 owner_id = "theology/mariology/lourdes"
-surface_snapshot = "sha256:5a74d7f6247e17766a8cc18923a2489f97de13f686ba3d3eb8f332a8adb1dc0d"
+surface_snapshot = "sha256:75411845c1bbb32aa9e2e4c15deefdcfe798e035e1fd16f7ed38ee9dd3efcdb8"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1921,7 +1921,7 @@ record_paths = ["src/gpt/theology/mariology/lourdes/research/source-audit.md"]
 
 [[review_units]]
 owner_id = "theology/mariology/marian-dogmas"
-surface_snapshot = "sha256:9109f8467b99ff1006adad844be49fce9e90429c0e9a948562061d5b57421789"
+surface_snapshot = "sha256:2cd376d2661873049e9980188712f0610ad65c9cc3e5a16c7e778561848c8e12"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1946,7 +1946,7 @@ record_paths = ["src/gpt/theology/mariology/marian-dogmas/research/source-audit.
 
 [[review_units]]
 owner_id = "theology/mariology/regina-coeli"
-surface_snapshot = "sha256:7e0e525c96c585eb33365304b42bae678277616ec760d575a438cd936a9be1d4"
+surface_snapshot = "sha256:2bd7948decc0e32e2e5e94ed8f661aead7b80f0e2bbb933479da0713eabd32c5"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -1967,7 +1967,7 @@ record_paths = ["src/gpt/theology/mariology/regina-coeli/research/source-audit.m
 
 [[review_units]]
 owner_id = "theology/mariology/rosary"
-surface_snapshot = "sha256:e13ede282ab9a5c667fe660870f71920de0a9ecf57190bf57a277f9e0747ec7f"
+surface_snapshot = "sha256:b5d50357c9bf5284c1efaa3e1c730fa0bd4f706937a3b1b72dc27513f7ca9e07"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
