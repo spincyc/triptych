@@ -20,7 +20,7 @@ MAKE_FRAGMENT = (
     / "resources"
     / "worktree-marshal.mk"
 )
-RUN_ID = "20260722t193413z-beeedf7901a7"
+RUN_ID = "20000101t000000z-abcdef012345"
 
 
 class MakeFragmentTests(unittest.TestCase):
@@ -112,16 +112,17 @@ with open(os.environ["WORKTREE_MARSHAL_TEST_LOG"], "a", encoding="utf-8") as log
         return result
 
     def test_default_targets_delegate_exact_generic_argv(self) -> None:
+        profile = ["--profile", "generic-v1"]
         cases = (
-            (("codex",), ["run", "--agent", "codex"]),
-            (("status",), ["status"]),
-            (("reopen", f"RUN={RUN_ID}"), ["reopen", RUN_ID]),
-            (("final-diff", f"RUN={RUN_ID}"), ["final-diff", RUN_ID]),
-            (("integrate", f"RUN={RUN_ID}"), ["integrate", RUN_ID]),
-            (("resolve", f"RUN={RUN_ID}"), ["resolve", RUN_ID]),
-            (("continue", f"RUN={RUN_ID}"), ["continue", RUN_ID]),
-            (("abort", f"RUN={RUN_ID}"), ["abort", RUN_ID]),
-            (("clean-run", f"RUN={RUN_ID}"), ["clean", RUN_ID]),
+            (("codex",), [*profile, "run", "--agent", "codex"]),
+            (("status",), [*profile, "status"]),
+            (("reopen", f"RUN={RUN_ID}"), [*profile, "reopen", RUN_ID]),
+            (("final-diff", f"RUN={RUN_ID}"), [*profile, "final-diff", RUN_ID]),
+            (("integrate", f"RUN={RUN_ID}"), [*profile, "integrate", RUN_ID]),
+            (("resolve", f"RUN={RUN_ID}"), [*profile, "resolve", RUN_ID]),
+            (("continue", f"RUN={RUN_ID}"), [*profile, "continue", RUN_ID]),
+            (("abort", f"RUN={RUN_ID}"), [*profile, "abort", RUN_ID]),
+            (("clean-run", f"RUN={RUN_ID}"), [*profile, "clean", RUN_ID]),
         )
 
         for arguments, expected in cases:
@@ -133,12 +134,18 @@ with open(os.environ["WORKTREE_MARSHAL_TEST_LOG"], "a", encoding="utf-8") as log
     def test_status_accepts_only_an_optional_command_line_run_id(self) -> None:
         exact = self.run_make("status", f"RUN={RUN_ID}")
         self.assertEqual(exact.returncode, 0, exact.stderr)
-        self.assertEqual(self.invocations(), [["status", RUN_ID]])
+        self.assertEqual(
+            self.invocations(),
+            [["--profile", "generic-v1", "status", RUN_ID]],
+        )
 
         rejected = self.run_make("status", environment={"RUN": RUN_ID})
         self.assertEqual(rejected.returncode, 2, rejected.stderr)
         self.assertIn("RUN must be supplied on the Make command line", rejected.stderr)
-        self.assertEqual(self.invocations(), [["status", RUN_ID]])
+        self.assertEqual(
+            self.invocations(),
+            [["--profile", "generic-v1", "status", RUN_ID]],
+        )
 
     def test_missing_malformed_and_injected_run_ids_never_invoke_command(self) -> None:
         self.assert_rejected_without_invocation(
@@ -147,10 +154,10 @@ with open(os.environ["WORKTREE_MARSHAL_TEST_LOG"], "a", encoding="utf-8") as log
         )
         for malformed in (
             "not-a-run-id",
-            "20260722T193413z-beeedf7901a7",
-            "20260722t193413z-BEEEDF7901A7",
-            "20260722t193413z-beeedf7901a",
-            "20260722t193413z-beeedf7901a70",
+            "20000101T000000z-abcdef012345",
+            "20000101t000000z-ABCDEF012345",
+            "20000101t000000z-abcdef01234",
+            "20000101t000000z-abcdef0123456",
         ):
             with self.subTest(run_id=malformed):
                 self.assert_rejected_without_invocation(
@@ -261,6 +268,40 @@ with open(os.environ["WORKTREE_MARSHAL_TEST_LOG"], "a", encoding="utf-8") as log
         self.assertIn("must be configured in a Makefile", environment.stderr)
         self.assertEqual(self.invocations(), [])
 
+        global_command_line = self.run_make(
+            "status",
+            "WORKTREE_MARSHAL_GLOBAL_ARGUMENTS=:; touch must-not-run",
+        )
+        self.assertEqual(global_command_line.returncode, 2, global_command_line.stderr)
+        self.assertIn("must be configured in a Makefile", global_command_line.stderr)
+        self.assertEqual(self.invocations(), [])
+
+        global_environment = self.run_make(
+            "status",
+            environment={"WORKTREE_MARSHAL_GLOBAL_ARGUMENTS": "--profile triptych"},
+        )
+        self.assertEqual(global_environment.returncode, 2, global_environment.stderr)
+        self.assertIn("must be configured in a Makefile", global_environment.stderr)
+        self.assertEqual(self.invocations(), [])
+
+    def test_trusted_global_arguments_precede_every_command_argument(self) -> None:
+        self.write_makefile(
+            configuration="WORKTREE_MARSHAL_GLOBAL_ARGUMENTS := --profile triptych\n"
+        )
+
+        status = self.run_make("status", f"RUN={RUN_ID}")
+        run = self.run_make("codex")
+
+        self.assertEqual(status.returncode, 0, status.stderr)
+        self.assertEqual(run.returncode, 0, run.stderr)
+        self.assertEqual(
+            self.invocations(),
+            [
+                ["--profile", "triptych", "status", RUN_ID],
+                ["--profile", "triptych", "run", "--agent", "codex"],
+            ],
+        )
+
     def test_opt_in_positional_compatibility_delegates_the_same_run_id(self) -> None:
         self.write_makefile(
             configuration="WORKTREE_MARSHAL_POSITIONAL_RUN_ID_COMPAT := 1\n"
@@ -273,7 +314,10 @@ with open(os.environ["WORKTREE_MARSHAL_TEST_LOG"], "a", encoding="utf-8") as log
         self.assertEqual(integrate.returncode, 0, integrate.stderr)
         self.assertEqual(
             self.invocations(),
-            [["status", RUN_ID], ["integrate", RUN_ID]],
+            [
+                ["--profile", "generic-v1", "status", RUN_ID],
+                ["--profile", "generic-v1", "integrate", RUN_ID],
+            ],
         )
 
         malformed = self.run_make("integrate", "not-a-run-id")
@@ -283,6 +327,7 @@ with open(os.environ["WORKTREE_MARSHAL_TEST_LOG"], "a", encoding="utf-8") as log
 
     def test_targets_display_name_and_legacy_argument_lists_are_configurable(self) -> None:
         configuration = """WORKTREE_MARSHAL_DISPLAY_NAME := Triptych Codex
+WORKTREE_MARSHAL_GLOBAL_ARGUMENTS :=
 WORKTREE_MARSHAL_RUN_TARGET := agent
 WORKTREE_MARSHAL_STATUS_TARGET := agent-status
 WORKTREE_MARSHAL_RUN_ARGUMENTS :=
@@ -342,7 +387,10 @@ WORKTREE_MARSHAL_CLEAN_ARGUMENTS := --triptych-clean
         )
         result = self.run_make("status")
         self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertEqual(self.invocations(), [["status"]])
+        self.assertEqual(
+            self.invocations(),
+            [["--profile", "generic-v1", "status"]],
+        )
 
 
 if __name__ == "__main__":

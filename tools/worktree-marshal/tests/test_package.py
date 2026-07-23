@@ -70,19 +70,34 @@ class PackageTests(unittest.TestCase):
         )
 
     def test_triptych_engine_import_has_no_git_pinning_side_effect(self) -> None:
-        engine = importlib.import_module("worktree_marshal.triptych_compat")
+        engine = importlib.import_module("worktree_marshal.engine")
+        compatibility = importlib.import_module("worktree_marshal.triptych_compat")
 
         self.assertIsNone(engine._PINNED_GIT)
-        signature = inspect.signature(engine.main)
+        signature = inspect.signature(compatibility.main)
         invocation_path = signature.parameters["invocation_path"]
         self.assertEqual(invocation_path.kind, inspect.Parameter.KEYWORD_ONLY)
         self.assertIs(invocation_path.default, inspect.Parameter.empty)
 
-    def test_package_has_no_published_command_entry_point(self) -> None:
+    def test_shared_engine_requires_an_explicit_profile_context(self) -> None:
+        engine = importlib.import_module("worktree_marshal.engine")
+        profiles = importlib.import_module("worktree_marshal.profiles")
+
+        with self.assertRaisesRegex(RuntimeError, "profile is not bound"):
+            engine.active_profile()
+        with engine.profile_context(profiles.GENERIC_V1_PROFILE):
+            self.assertIs(engine.active_profile(), profiles.GENERIC_V1_PROFILE)
+        with self.assertRaisesRegex(RuntimeError, "profile is not bound"):
+            engine.active_profile()
+
+    def test_package_publishes_only_the_generic_command_entry_point(self) -> None:
         metadata = PYPROJECT.read_text(encoding="utf-8")
 
-        self.assertNotIn("[project.scripts]", metadata)
-        self.assertNotIn("worktree-marshal =", project_section())
+        self.assertIn(
+            '[project.scripts]\nworktree-marshal = "worktree_marshal.cli:main"\n',
+            metadata,
+        )
+        self.assertNotIn("triptych-codex =", metadata)
 
 
 if __name__ == "__main__":

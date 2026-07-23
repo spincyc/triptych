@@ -26,6 +26,9 @@ classifiers = [
   "Topic :: Software Development :: Version Control :: Git",
 ]
 
+[project.scripts]
+worktree-marshal = "worktree_marshal.cli:main"
+
 [tool.setuptools]
 package-dir = { "" = "src" }
 

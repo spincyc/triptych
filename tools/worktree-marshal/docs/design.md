@@ -15,8 +15,11 @@ arbitrary executable is not equivalent support.
 
 ## Intended package boundaries
 
-The monolithic compatibility implementation will be separated behind these
-modules only after parity tests protect each seam:
+The current package deliberately keeps lifecycle transitions in one shared
+`engine.py`. `cli.py` owns the installed grammar, `profiles.py` owns immutable
+durable identities, and `triptych_compat.py` binds the frozen adapter. The
+engine will be separated behind these modules only after parity tests protect
+each seam:
 
 ```text
 worktree_marshal/
@@ -62,10 +65,11 @@ state that it is unconfined.
 2. Relocate the existing launcher behind a thin `scripts/triptych-codex`
    compatibility entry point, preserving state paths, refs, environment names,
    diagnostics, and every retained run.
-3. Add wheel and source-distribution parity tests, including cross-entry-point
-   management of constructed legacy runs.
-4. Introduce generic branding and configuration while keeping the Codex
-   adapter as the only supported confined agent.
+3. Add wheel and source-distribution parity tests, including installation of a
+   wheel rebuilt from the source distribution.
+4. Introduce the explicit `generic-v1` profile and generic branding while
+   keeping the Codex adapter as the only supported confined agent and the
+   Triptych domain available only by explicit compatibility selection.
 5. Split pure identity, state, locking, Git, and process helpers; encode valid
    state transitions before separating integration and recovery logic.
 6. Publish a `0.x` release only after installation outside the Triptych
@@ -77,11 +81,14 @@ Each step remains behavior-preserving unless it includes a documented state or
 command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
-The repository currently implements steps 1 and 2: the Make API and contract
-are frozen, and the monolithic schema-1 engine is co-located in the package
-behind the thin `scripts/triptych-codex` compatibility bootstrap. The generic
-console name remains intentionally unpublished until its profile, namespace,
-and command semantics are explicit.
+The repository currently implements steps 1 through 4 as pre-release seams:
+the Make API and legacy contract are frozen; the shared engine is co-located
+behind the thin `scripts/triptych-codex` bootstrap; wheel and source artifacts
+are built, a wheel is rebuilt from the extracted source artifact, and that
+wheel is installed in a clean test environment; and the generic console
+requires the versioned, separately named `generic-v1` state profile. A release
+still waits on installed-artifact lifecycle parity and the broader CI gate in
+step 6.
 
 ## Distribution and repository integration
 

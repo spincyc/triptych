@@ -5,11 +5,12 @@ from __future__ import annotations
 
 import base64
 import fcntl
+import importlib
 import json
 import os
-import runpy
 import shutil
 import subprocess
+import sys
 import tempfile
 import time
 import unittest
@@ -19,11 +20,8 @@ from unittest import mock
 
 SCRIPTS_ROOT = Path(__file__).resolve().parents[1]
 SOURCE_MAKEFILE = SCRIPTS_ROOT.parent / "Makefile"
-SOURCE_PACKAGE_RUNTIME = (
-    SCRIPTS_ROOT.parent
-    / "tools/worktree-marshal/src/worktree_marshal"
-)
-SOURCE_ENGINE = SOURCE_PACKAGE_RUNTIME / "triptych_compat.py"
+SOURCE_PACKAGE_SOURCE = SCRIPTS_ROOT.parent / "tools/worktree-marshal/src"
+SOURCE_PACKAGE_RUNTIME = SOURCE_PACKAGE_SOURCE / "worktree_marshal"
 SOURCE_LAUNCHER = SCRIPTS_ROOT / "triptych-codex"
 SOURCE_FAKE = Path(__file__).resolve().with_name("fake-codex")
 COMMAND_TIMEOUT_SECONDS = 60
@@ -32,7 +30,12 @@ LOCK_CHECKPOINT_TIMEOUT_SECONDS = 30
 
 class RunTemporaryRemovalTests(unittest.TestCase):
     def test_leaf_replacement_is_not_recursively_deleted(self) -> None:
-        engine = runpy.run_path(str(SOURCE_ENGINE), run_name="triptych_compat_unit")
+        sys.path.insert(0, str(SOURCE_PACKAGE_SOURCE))
+        try:
+            engine = importlib.import_module("worktree_marshal.engine")
+            profiles = importlib.import_module("worktree_marshal.profiles")
+        finally:
+            sys.path.remove(str(SOURCE_PACKAGE_SOURCE))
         run_id = "20260722t000000z-000000000000"
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
@@ -48,7 +51,7 @@ class RunTemporaryRemovalTests(unittest.TestCase):
                 "preserved\n",
                 encoding="utf-8",
             )
-            repository = engine["Repository"](
+            repository = engine.Repository(
                 root=root,
                 git_dir=root / ".git",
                 common_git_dir=root / ".git",
@@ -73,12 +76,13 @@ class RunTemporaryRemovalTests(unittest.TestCase):
                     )
                 return real_open(path, flags, mode, dir_fd=dir_fd)
 
-            with mock.patch.object(engine["os"], "open", side_effect=racing_open):
-                with self.assertRaisesRegex(
-                    engine["LauncherError"],
-                    "changed before removal",
-                ):
-                    engine["remove_run_tmpdir"](repository, manifest)
+            with engine.profile_context(profiles.TRIPTYCH_PROFILE):
+                with mock.patch.object(engine.os, "open", side_effect=racing_open):
+                    with self.assertRaisesRegex(
+                        engine.LauncherError,
+                        "changed before removal",
+                    ):
+                        engine.remove_run_tmpdir(repository, manifest)
 
             self.assertTrue(swapped)
             self.assertEqual(

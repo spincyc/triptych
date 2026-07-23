@@ -1,7 +1,7 @@
 """Pre-release transactional Git worktree supervision.
 
-The operational engine currently implements only the frozen Triptych
-compatibility profile.  No generic command-line interface is published yet.
+The package publishes an explicit-profile generic command and preserves the
+frozen Triptych compatibility profile as a co-located adapter.
 """
 
 __all__ = ["__version__"]

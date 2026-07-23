@@ -14,6 +14,13 @@ Existing retained runs must continue to be managed by code that understands
 their exact legacy identity. A generic command must not silently adopt,
 rename, rewrite, or clean legacy state.
 
+The installed command may address this domain only through the explicit
+spelling `worktree-marshal --profile triptych COMMAND ...`. Its parser maps
+the generic command words to the legacy options below and then enters this
+adapter. It does not change the state base, manifest, branch, ref, environment,
+lock, diagnostic, or Codex-policy identity. Omitting `--profile triptych`
+never selects this domain by discovery or fallback.
+
 ## Legacy identity
 
 The compatibility mode owns these exact identifiers:
@@ -31,10 +38,11 @@ The compatibility mode owns these exact identifiers:
 
 The state-base override in `TRIPTYCH_CODEX_STATE_DIR` must be absolute. Without
 it, the base is `$XDG_STATE_HOME/triptych-codex` when `XDG_STATE_HOME` is an
-absolute path, otherwise `$HOME/.local/state/triptych-codex`. Beneath that
-base, each repository owns a directory formed from a normalized checkout name
-and the first twelve hexadecimal digits of the SHA-256 digest of its common
-Git-directory path.
+absolute path. When it is unset, the base is
+`$HOME/.local/state/triptych-codex`; a set relative `XDG_STATE_HOME` is
+rejected. Beneath that base, each repository owns a directory formed from a
+normalized checkout name and the first twelve hexadecimal digits of the
+SHA-256 digest of its common Git-directory path.
 
 Each repository directory contains `repository.lock`, `runs/`, `worktrees/`,
 and `tmp/`. One run owns matching `<run-id>` entries in the latter three
