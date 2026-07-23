@@ -4,8 +4,8 @@ provider = "gpt"
 audited_on = "2026-07-22"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 103
-source_surface_file_count = 1114
-snapshot = "sha256:b42b3dea11c6c69a90aa118078294a5a0f2c6adbeaeb42d309d97a7899e4725e"
+source_surface_file_count = 1130
+snapshot = "sha256:795f37396df8a20a38d14b6d9d1bc501f4b8465d74000ee5d2a0bba43e4bd2cf"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -1568,6 +1568,12 @@ kind = "legacy-source-audit"
 owners = ["articles/canon-law/natural-positive-divine-human-law"]
 
 [[files]]
+path = "src/gpt/articles/canon-law/natural-positive-divine-human-law/research/source-bindings.toml"
+sha256 = "6d73c1174625731707ed333b324e04e0d9850fa3154e6d908d4cc4ffcb4bb57f"
+kind = "source-binding"
+owners = ["articles/canon-law/natural-positive-divine-human-law"]
+
+[[files]]
 path = "src/gpt/articles/canon-law/natural-positive-divine-human-law/research/taxonomy-matrix.md"
 sha256 = "6186b6f89566bd63daa09fe67a5e59dbaae892bfdfe3809005666a269ff44787"
 kind = "research-record"
@@ -1784,6 +1790,12 @@ kind = "legacy-source-audit"
 owners = ["articles/faith/council-missal-and-crisis"]
 
 [[files]]
+path = "src/gpt/articles/faith/council-missal-and-crisis/research/source-bindings.toml"
+sha256 = "bd5d532fb70b0fad12dfa6b43c0a9b2f1c7d60d5757471c77d44e85385082e8d"
+kind = "source-binding"
+owners = ["articles/faith/council-missal-and-crisis"]
+
+[[files]]
 path = "src/gpt/articles/faith/council-missal-and-crisis/research/sspx-canonical-status.md"
 sha256 = "63ce66f04714f0123cad1889018afcae77e643b66cbd98a3f5fc6270703d44f3"
 kind = "research-record"
@@ -1919,6 +1931,12 @@ owners = ["articles/faith/freemasonry-and-the-catholic-church"]
 path = "src/gpt/articles/faith/freemasonry-and-the-catholic-church/research/source-audit.md"
 sha256 = "3b2077f2f628aea722d8914ed7f17732072aec89ee53d0a524f3ad0937f5c03f"
 kind = "legacy-source-audit"
+owners = ["articles/faith/freemasonry-and-the-catholic-church"]
+
+[[files]]
+path = "src/gpt/articles/faith/freemasonry-and-the-catholic-church/research/source-bindings.toml"
+sha256 = "3e4ae6719f093c7467d381da000b07ff881e223960fffb7550992f762146571b"
+kind = "source-binding"
 owners = ["articles/faith/freemasonry-and-the-catholic-church"]
 
 [[files]]
@@ -2201,6 +2219,12 @@ owners = ["articles/faith/trustful-surrender-to-divine-providence"]
 path = "src/gpt/articles/faith/trustful-surrender-to-divine-providence/research/source-audit.md"
 sha256 = "01e5a8f30ec4606a726c7723eace7f8826d2ef2654970718651ab3e0cc76b09e"
 kind = "legacy-source-audit"
+owners = ["articles/faith/trustful-surrender-to-divine-providence"]
+
+[[files]]
+path = "src/gpt/articles/faith/trustful-surrender-to-divine-providence/research/source-bindings.toml"
+sha256 = "60e64c5be396d34f9c6f1c6a54ece3a1833ff2e4f9922aebb67f636ecff40dc1"
+kind = "source-binding"
 owners = ["articles/faith/trustful-surrender-to-divine-providence"]
 
 [[files]]
@@ -4616,6 +4640,12 @@ kind = "legacy-source-audit"
 owners = ["history/biblical-translations/01-septuagint"]
 
 [[files]]
+path = "src/gpt/history/biblical-translations/01-septuagint/research/source-bindings.toml"
+sha256 = "292332b2f60e631805b6fb0bfd63c403570a5d395f9b1f3262c6abb43ee2a5b5"
+kind = "source-binding"
+owners = ["history/biblical-translations/01-septuagint"]
+
+[[files]]
 path = "src/gpt/history/biblical-translations/01-septuagint/sections/00-object-method.tex"
 sha256 = "16025953abcbb8113e042f07f15e741dd34d370cd952223da1055fcffe28a752"
 kind = "rendered-content"
@@ -4727,6 +4757,12 @@ owners = ["history/biblical-translations/02-vulgate"]
 path = "src/gpt/history/biblical-translations/02-vulgate/research/source-audit.md"
 sha256 = "eda79284b27a9e29481a377459bac575edcb335fa0f6b2c96d2bf9ece6d7a7eb"
 kind = "legacy-source-audit"
+owners = ["history/biblical-translations/02-vulgate"]
+
+[[files]]
+path = "src/gpt/history/biblical-translations/02-vulgate/research/source-bindings.toml"
+sha256 = "e1a6578480b8e04233fc99823c166fcb8227ed450bc9984226e0f1b7592fc906"
+kind = "source-binding"
 owners = ["history/biblical-translations/02-vulgate"]
 
 [[files]]
@@ -5576,6 +5612,12 @@ kind = "legacy-source-audit"
 owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/source-bindings.toml"
+sha256 = "b7836577a971b7e2b15936a3cfae33bff1aa84f80dcab493ff255f751da92b24"
+kind = "source-binding"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/unit-source-matrix.md"
 sha256 = "77b98344344f2a6426cd908e52d3cf7db177779206789716bc1bb787ba03f6d6"
 kind = "research-record"
@@ -5696,6 +5738,12 @@ kind = "research-scope"
 owners = ["liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday/research/source-bindings.toml"
+sha256 = "0eae1fa543c1e23c9f13acb3639123b48212304e2a6db46ad97d6d3abb287857"
+kind = "source-binding"
+owners = ["liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost/main.tex"
 sha256 = "a51f146586d7002528382f5e1cbbb99519296564ac1ca58342ff5cad58454072"
 kind = "publication-main"
@@ -5717,6 +5765,12 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost"]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost/research/scope.md"
 sha256 = "06e228cce17f182e8042f42cc3b1758c76d2782c2a5493987f6f69e8386ab75f"
 kind = "research-scope"
+owners = ["liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost/research/source-bindings.toml"
+sha256 = "eaf40ac760196ce426cb040cb32723bcfb8089abfb435807247d1ef89fcac655"
+kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost"]
 
 [[files]]
@@ -5798,6 +5852,12 @@ kind = "research-scope"
 owners = ["liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost/research/source-bindings.toml"
+sha256 = "86c711ebf83d3e7061712deb86fc376ead1c24bfe0b86d06fb0e13b2de6c5011"
+kind = "source-binding"
+owners = ["liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost/main.tex"
 sha256 = "683c7b9255fec4b4e9352ac64c9242a30427d9a356fe859a05512439313724f4"
 kind = "publication-main"
@@ -5846,6 +5906,12 @@ kind = "research-scope"
 owners = ["liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost/research/source-bindings.toml"
+sha256 = "7581d916fb3a63b8c89d60521ac96dccc072d6d4ad886497cb9bb8c0763f4c38"
+kind = "source-binding"
+owners = ["liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/main.tex"
 sha256 = "be821ef733622fdc525354e67e1a89d05b37f5583a8ecab7ebfdf149c5125256"
 kind = "publication-main"
@@ -5870,6 +5936,12 @@ kind = "research-scope"
 owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/research/source-bindings.toml"
+sha256 = "241f6617d6518288501854deb3a993c24b704cb27a82a5cd056d259cb91eb3c8"
+kind = "source-binding"
+owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/main.tex"
 sha256 = "3f7c35a4b1620ea559ce3ac11ff1db4eddc8a67845f16f1f98bb836dedc89461"
 kind = "publication-main"
@@ -5891,6 +5963,12 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/research/scope.md"
 sha256 = "42ab25444cfaf5e0d3655090238439aa5ed9b7c9ac793188ccc0f55517e1a353"
 kind = "research-scope"
+owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/research/source-bindings.toml"
+sha256 = "6b1e4eb319f2ab3d778d0ccb26b9f7a8531181452b24e2bc903c64a7b8aa20b8"
+kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
@@ -6260,6 +6338,12 @@ kind = "legacy-source-audit"
 owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/research/source-bindings.toml"
+sha256 = "0b8ccfee6da1d423c98ba6f6153bd86bad9eabf9488e774f409e0f03be8eb7d8"
+kind = "source-binding"
+owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/research/unit-source-matrix.md"
 sha256 = "f341b3f3d2ea18ff817f49db7fb4acde15c992ed21e432a88c06efb67f438936"
 kind = "research-record"
@@ -6440,6 +6524,12 @@ kind = "research-scope"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-thirteenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-thirteenth-sunday-in-ordinary-time-year-a/research/source-bindings.toml"
+sha256 = "01bd794a3029aa920cc32ab3c87d499e4e7be5319048335022aabd3df1549e4a"
+kind = "source-binding"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-thirteenth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-fourteenth-sunday-in-ordinary-time-year-a/instance/manifest.md"
 sha256 = "b87fc6fefde23a265810c29da9a038e5edfb7a07cdff1632143d8d66d4f4177d"
 kind = "instance-manifest"
@@ -6557,6 +6647,12 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a/research/scope.md"
 sha256 = "dd82841b54597d6e6880670b6cce416a5a4816842bb73f94716b9c4c2cd51bb2"
 kind = "research-scope"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a/research/source-bindings.toml"
+sha256 = "7445a4d4d6086ed2ed16b205baba4a2ab097d56835cacabfde143fb8ea7b7417"
+kind = "source-binding"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a"]
 
 [[files]]
