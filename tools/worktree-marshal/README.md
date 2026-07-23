@@ -70,13 +70,22 @@ conflict checkpoint: the generic packaged Make flow retains a conflict, stages
 a resolver result, continues to a review-pending candidate, renders an opaque
 read-only final diff, and lands that exact candidate only on a fresh integrate;
 the installed Triptych adapter discards a staged resolution and restores the
-exact audited source on abort. These checkpoints are not the complete installed
-lifecycle or release matrix. The next installed-artifact checkpoint covers
-concurrent generic allocation and conflict-free diverged integration.
-Retirement, crash recovery, and broader security coverage remain release
-gates; the step-5 helper split remains protected by the source and installed
-parity suites. The frozen legacy contract and current security boundary are
-recorded in
+exact audited source on abort. A further installed checkpoint starts two
+deliberately overlapping generic run invocations from one unchanged control
+base and verifies distinct run IDs, branches, locked worktrees, active run
+locks, temporary roots, and isolated committed results without entering the
+Triptych state domain. Serial integration through the packaged Make targets
+then lands the first result by fast-forward and rebases the second result onto
+that advanced target. The rebased landing records the exact source, target,
+candidate, and integrated heads and produces linear no-merge history containing
+both results; both integrations clean their worker namespaces. These bounded
+overlap and non-racing integration checks do not establish scheduler
+throughput, concurrent integration, target-race handling, or recovery
+guarantees. Retirement, crash and race recovery, broader security coverage,
+the complete installed lifecycle matrix, and the supported Python and Git CI
+matrix remain release gates; the step-5 helper split remains protected by the
+source and installed parity suites. The frozen legacy contract and current
+security boundary are recorded in
 [`docs/compatibility-contract.md`](docs/compatibility-contract.md); the target
 architecture and release sequence are in [`docs/design.md`](docs/design.md).
 
@@ -89,7 +98,7 @@ python3 -m unittest discover -s tests -t . -v
 ```
 
 This package suite includes artifact-content checks and the bounded
-installed-artifact lifecycle checkpoint described above; it does not yet run
+installed-artifact lifecycle checkpoints described above; it does not yet run
 the complete legacy lifecycle matrix against the installed console.
 
 The repository's `make check-agent-isolation` target additionally runs the

@@ -96,11 +96,16 @@ mutation; and generic installed-console alias rejection. A second installed
 checkpoint now covers the generic packaged Make conflict flow through
 resolution, continuation, opaque final-diff review, and fresh exact-candidate
 landing, plus exact Triptych source restoration when aborting after a staged
-resolution. The next installed-artifact checkpoint covers concurrent generic
-allocation and conflict-free diverged integration. Retirement, crash recovery,
-and broader security coverage remain release gates. These bounded checkpoints
-advance but do not satisfy step 6: a release still waits on the complete
-installed lifecycle matrix and the broader CI gate.
+resolution. A third installed checkpoint covers two deliberately overlapping
+generic runs with distinct locked namespaces and isolated committed results,
+followed by serial packaged Make integration: one direct fast-forward and one
+conflict-free rebase onto the captured advanced target. The latter lands a
+linear candidate containing both results, records its exact integration
+identities, and cleans the generic worker namespace. This does not establish
+scheduling throughput, concurrent integration, target-race handling, or crash
+recovery. Retirement, recovery, broader security coverage, the complete
+installed lifecycle matrix, and the supported Python and Git CI matrix remain
+release gates. These bounded checkpoints advance but do not satisfy step 6.
 
 ## Distribution and repository integration
 

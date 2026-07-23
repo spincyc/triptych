@@ -3,11 +3,15 @@
 
 from __future__ import annotations
 
+import fcntl
 import json
 import os
+import signal
 import shutil
 import subprocess
+import time
 import unittest
+from dataclasses import dataclass
 from pathlib import Path
 
 if __package__:
@@ -33,6 +37,7 @@ from __future__ import annotations
 import os
 import subprocess
 import sys
+import time
 from pathlib import Path
 
 
@@ -53,11 +58,22 @@ root = Path(git(workdir, "rev-parse", "--show-toplevel").stdout.strip()).resolve
 
 action = os.environ.get("FAKE_CODEX_ACTION")
 if action == "commit":
-    (root / "agent-result.txt").write_text(
+    result_name = os.environ.get("FAKE_CODEX_RESULT_PATH", "agent-result.txt")
+    result_path = Path(result_name)
+    if (
+        not result_name
+        or result_path == Path(".")
+        or result_path.is_absolute()
+        or ".." in result_path.parts
+    ):
+        raise SystemExit("FAKE_CODEX_RESULT_PATH must be a relative child path")
+    result = root / result_path
+    result.parent.mkdir(parents=True, exist_ok=True)
+    result.write_text(
         os.environ.get("FAKE_CODEX_CONTENT", "installed result\\n"),
         encoding="utf-8",
     )
-    git(root, "add", "agent-result.txt")
+    git(root, "add", "--", result_path.as_posix())
     git(root, "commit", "-m", "Installed agent result")
 elif action == "stage-conflict":
     conflict = root / os.environ.get(
@@ -70,8 +86,39 @@ elif action == "stage-conflict":
     )
     git(root, "add", str(conflict.relative_to(root)))
 
+ready = os.environ.get("FAKE_CODEX_READY")
+release = os.environ.get("FAKE_CODEX_RELEASE")
+if ready:
+    Path(ready).touch()
+if release:
+    release_path = Path(release)
+    deadline = time.monotonic() + 60
+    while not release_path.exists():
+        if time.monotonic() >= deadline:
+            raise SystemExit(124)
+        time.sleep(0.02)
+
 raise SystemExit(int(os.environ.get("FAKE_CODEX_EXIT", "0")))
 """
+
+
+@dataclass(frozen=True)
+class OverlapSpecification:
+    name: str
+    result_path: str
+    content: str
+    ready: Path
+
+
+@dataclass
+class InstalledOverlapRun:
+    specification: OverlapSpecification
+    process: subprocess.Popen[str]
+    manifest_path: Path
+    manifest: dict
+    worker: Path
+    run_lock: Path
+    source_head: str
 
 
 class InstalledLifecycleTests(unittest.TestCase):
@@ -191,6 +238,7 @@ class InstalledLifecycleTests(unittest.TestCase):
             if (
                 name.startswith("WORKTREE_MARSHAL_")
                 or name.startswith("TRIPTYCH_CODEX_")
+                or name.startswith("FAKE_CODEX_")
                 or name
                 in {
                     "GIT_ALTERNATE_OBJECT_DIRECTORIES",
@@ -404,6 +452,238 @@ class InstalledLifecycleTests(unittest.TestCase):
             for line in self.git("worktree", "list", "--porcelain").stdout.splitlines()
             if line.startswith("worktree ")
         ]
+
+    def worktree_records(self) -> dict[Path, dict[str, str]]:
+        records: dict[Path, dict[str, str]] = {}
+        output = self.git("worktree", "list", "--porcelain").stdout
+        for block in output.strip().split("\n\n"):
+            fields: dict[str, str] = {}
+            for line in block.splitlines():
+                name, separator, value = line.partition(" ")
+                fields[name] = value if separator else ""
+            worktree = fields.get("worktree")
+            if worktree is not None:
+                records[Path(worktree).resolve()] = fields
+        return records
+
+    def refs_under(self, prefix: str) -> list[str]:
+        return self.git(
+            "for-each-ref",
+            "--format=%(refname)",
+            prefix,
+        ).stdout.splitlines()
+
+    @staticmethod
+    def file_lock_is_held(path: Path) -> bool:
+        with path.open("r+", encoding="utf-8") as stream:
+            try:
+                fcntl.flock(stream.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+            except BlockingIOError:
+                return True
+            fcntl.flock(stream.fileno(), fcntl.LOCK_UN)
+        return False
+
+    @staticmethod
+    def process_group_exists(process: subprocess.Popen[str]) -> bool:
+        try:
+            os.killpg(process.pid, 0)
+        except ProcessLookupError:
+            return False
+        return True
+
+    @classmethod
+    def wait_for_process_group(
+        cls,
+        process: subprocess.Popen[str],
+        timeout: float,
+    ) -> bool:
+        deadline = time.monotonic() + timeout
+        while cls.process_group_exists(process):
+            if time.monotonic() >= deadline:
+                return False
+            time.sleep(0.02)
+        return True
+
+    @classmethod
+    def reap_process_groups(
+        cls,
+        processes: list[subprocess.Popen[str]],
+        release: Path,
+    ) -> None:
+        release.touch(exist_ok=True)
+        for process in processes:
+            try:
+                process.communicate(timeout=5)
+            except subprocess.TimeoutExpired:
+                try:
+                    os.killpg(process.pid, signal.SIGTERM)
+                except ProcessLookupError:
+                    pass
+                try:
+                    process.communicate(timeout=5)
+                except subprocess.TimeoutExpired:
+                    try:
+                        os.killpg(process.pid, signal.SIGKILL)
+                    except ProcessLookupError:
+                        pass
+                    try:
+                        process.communicate(timeout=5)
+                    except subprocess.TimeoutExpired:
+                        pass
+            if not cls.process_group_exists(process):
+                continue
+            try:
+                os.killpg(process.pid, signal.SIGTERM)
+            except ProcessLookupError:
+                continue
+            if cls.wait_for_process_group(process, 2):
+                continue
+            try:
+                os.killpg(process.pid, signal.SIGKILL)
+            except ProcessLookupError:
+                continue
+            if not cls.wait_for_process_group(process, 2):
+                raise AssertionError(
+                    "installed launcher process group survived cleanup"
+                )
+
+    def start_overlap_process(
+        self,
+        specification: OverlapSpecification,
+        release: Path,
+    ) -> subprocess.Popen[str]:
+        return subprocess.Popen(
+            [
+                str(self.console),
+                "--profile",
+                "generic-v1",
+                "run",
+                "--agent",
+                "codex",
+            ],
+            cwd=self.control,
+            env=self.environment(
+                {
+                    "FAKE_CODEX_ACTION": "commit",
+                    "FAKE_CODEX_RESULT_PATH": specification.result_path,
+                    "FAKE_CODEX_CONTENT": specification.content,
+                    "FAKE_CODEX_READY": str(specification.ready),
+                    "FAKE_CODEX_RELEASE": str(release),
+                }
+            ),
+            stdin=subprocess.DEVNULL,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            start_new_session=True,
+        )
+
+    def await_overlap_barrier(
+        self,
+        runs: list[tuple[OverlapSpecification, subprocess.Popen[str]]],
+    ) -> None:
+        deadline = time.monotonic() + 30
+        while not all(specification.ready.is_file() for specification, _ in runs):
+            for specification, process in runs:
+                if process.poll() is None:
+                    continue
+                stdout, stderr = process.communicate()
+                self.fail(
+                    f"{specification.name} installed launcher exited before the "
+                    f"overlap barrier with status {process.returncode}\n"
+                    f"stdout:\n{stdout}\nstderr:\n{stderr}"
+                )
+            if time.monotonic() >= deadline:
+                self.fail("installed launchers did not reach the overlap barrier")
+            time.sleep(0.02)
+        for _, process in runs:
+            self.assertIsNone(process.poll())
+
+    def assert_live_overlap_run(
+        self,
+        run: InstalledOverlapRun,
+        peer: InstalledOverlapRun,
+        base_head: str,
+        record: dict[str, str],
+    ) -> None:
+        manifest = run.manifest
+        branch = manifest["branch"]
+        result = run.worker / run.specification.result_path
+        self.assertEqual(manifest["state"], "running")
+        self.assertEqual(
+            (
+                manifest["schema_version"],
+                manifest["format_id"],
+                manifest["profile_id"],
+                manifest["agent"],
+            ),
+            (1, "worktree-marshal-run", "generic-v1", "codex"),
+        )
+        self.assertEqual(manifest["base_sha"], base_head)
+        self.assertEqual(manifest["target_ref"], "refs/heads/main")
+        self.assertNotEqual(run.manifest["run_id"], peer.manifest["run_id"])
+        self.assertNotEqual(branch, peer.manifest["branch"])
+        self.assertNotEqual(run.worker, peer.worker)
+        self.assertNotEqual(manifest["tmpdir"], peer.manifest["tmpdir"])
+        self.assertTrue(Path(manifest["tmpdir"]).is_dir())
+        self.assertEqual(
+            result.read_text(encoding="utf-8"),
+            run.specification.content,
+        )
+        self.assertFalse((run.worker / peer.specification.result_path).exists())
+        self.assertEqual(
+            (run.worker / "baseline.txt").read_text(encoding="utf-8"),
+            "baseline\n",
+        )
+        self.assertEqual(
+            self.git(
+                "diff-tree",
+                "--no-commit-id",
+                "--name-only",
+                "-r",
+                run.source_head,
+            ).stdout.splitlines(),
+            [run.specification.result_path],
+        )
+        self.assertEqual(
+            self.git(
+                "status",
+                "--porcelain=v1",
+                "--untracked-files=all",
+                cwd=run.worker,
+            ).stdout,
+            "",
+        )
+        self.assertEqual(
+            self.git("rev-parse", f"refs/heads/{branch}").stdout.strip(),
+            run.source_head,
+        )
+        self.assertEqual(
+            self.git("rev-parse", "HEAD^", cwd=run.worker).stdout.strip(),
+            base_head,
+        )
+        self.assertEqual(record["branch"], f"refs/heads/{branch}")
+        self.assertEqual(record["HEAD"], run.source_head)
+        self.assertEqual(
+            record["locked"],
+            f"worktree-marshal generic-v1 {manifest['run_id']}",
+        )
+        self.assertTrue(self.file_lock_is_held(run.run_lock))
+
+    def assert_cleaned_overlap_run(self, run: InstalledOverlapRun) -> dict:
+        cleaned = json.loads(run.manifest_path.read_text(encoding="utf-8"))
+        self.assertEqual(cleaned["state"], "cleaned")
+        self.assertFalse(run.worker.exists())
+        self.assertFalse(Path(run.manifest["tmpdir"]).exists())
+        self.assertIsNone(self.ref_oid(f"refs/heads/{run.manifest['branch']}"))
+        self.assertEqual(
+            self.refs_under(
+                "refs/worktree-marshal/generic-v1/"
+                f"runs/{run.manifest['run_id']}/"
+            ),
+            [],
+        )
+        return cleaned
 
     def ref_oid(self, ref: str) -> str | None:
         result = self.git("rev-parse", "--verify", ref, check=False)
@@ -640,6 +920,290 @@ class InstalledLifecycleTests(unittest.TestCase):
             self.manifests(self.triptych_state),
             {compatibility_path, triptych_path},
         )
+
+    def test_installed_overlapping_generic_runs_land_as_flat_serial_history(
+        self,
+    ) -> None:
+        base_head = self.git("rev-parse", "HEAD").stdout.strip()
+        release = self.lifecycle_root / "overlapping.release"
+        specifications = [
+            OverlapSpecification(
+                "first",
+                "parallel-first.txt",
+                "installed parallel first\n",
+                self.lifecycle_root / "parallel-first.ready",
+            ),
+            OverlapSpecification(
+                "second",
+                "parallel-second.txt",
+                "installed parallel second\n",
+                self.lifecycle_root / "parallel-second.ready",
+            ),
+        ]
+        processes: list[subprocess.Popen[str]] = []
+        self.addCleanup(self.reap_process_groups, processes, release)
+        pending: list[
+            tuple[OverlapSpecification, subprocess.Popen[str]]
+        ] = []
+        for specification in specifications:
+            process = self.start_overlap_process(specification, release)
+            processes.append(process)
+            pending.append((specification, process))
+        self.await_overlap_barrier(pending)
+
+        manifest_paths = self.manifests(self.generic_profile_state)
+        self.assertEqual(len(manifest_paths), 2, manifest_paths)
+        live_by_worktree: dict[Path, tuple[Path, dict]] = {}
+        for manifest_path in manifest_paths:
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+            live_by_worktree[Path(manifest["worktree"]).resolve()] = (
+                manifest_path,
+                manifest,
+            )
+        self.assertEqual(len(live_by_worktree), 2)
+
+        runs: list[InstalledOverlapRun] = []
+        for specification, process in pending:
+            matches = [
+                worker
+                for worker in live_by_worktree
+                if (worker / specification.result_path).is_file()
+            ]
+            self.assertEqual(len(matches), 1, matches)
+            worker = matches[0]
+            manifest_path, manifest = live_by_worktree[worker]
+            runs.append(
+                InstalledOverlapRun(
+                    specification=specification,
+                    process=process,
+                    manifest_path=manifest_path,
+                    manifest=manifest,
+                    worker=worker,
+                    run_lock=manifest_path.with_suffix(".lock"),
+                    source_head=self.git(
+                        "rev-parse",
+                        "HEAD",
+                        cwd=worker,
+                    ).stdout.strip(),
+                )
+            )
+
+        first, second = runs
+        records = self.worktree_records()
+        self.assertEqual(
+            set(records),
+            {self.control.resolve(), first.worker, second.worker},
+        )
+        self.assert_live_overlap_run(first, second, base_head, records[first.worker])
+        self.assert_live_overlap_run(second, first, base_head, records[second.worker])
+        self.assertNotEqual(first.source_head, second.source_head)
+        self.assertEqual(self.git("rev-parse", "HEAD").stdout.strip(), base_head)
+        self.assertEqual(
+            self.git(
+                "status",
+                "--porcelain=v1",
+                "--untracked-files=all",
+            ).stdout,
+            "",
+        )
+        self.assertFalse(self.triptych_state.exists())
+        self.assertEqual(self.refs_under("refs/heads/codex/isolated/"), [])
+        self.assertEqual(self.refs_under("refs/triptych-codex/"), [])
+        self.assertEqual(
+            self.refs_under("refs/worktree-marshal/generic-v1/runs/"),
+            [],
+        )
+
+        release.touch()
+        for run in runs:
+            stdout, stderr = run.process.communicate(
+                timeout=COMMAND_TIMEOUT_SECONDS
+            )
+            self.assertEqual(
+                run.process.returncode,
+                0,
+                (
+                    run.specification.name,
+                    run.process.returncode,
+                    stdout,
+                    stderr,
+                ),
+            )
+            run.manifest = json.loads(
+                run.manifest_path.read_text(encoding="utf-8")
+            )
+            self.assertEqual(run.manifest["state"], "preserved")
+            self.assertFalse(run.manifest["dirty"])
+            self.assertEqual(run.manifest["final_head"], run.source_head)
+            self.assertEqual(
+                self.ref_oid(f"refs/heads/{run.manifest['branch']}"),
+                run.source_head,
+            )
+            self.assertFalse(self.file_lock_is_held(run.run_lock))
+
+        second_manifest_snapshot = self.manifest_snapshot(second.manifest_path)
+        second_status = self.git(
+            "status",
+            "--porcelain=v1",
+            "--untracked-files=all",
+            cwd=second.worker,
+        ).stdout
+        second_record = self.worktree_records()[second.worker].copy()
+
+        integrated_first = self.run_make(
+            "integrate",
+            f"RUN={first.manifest['run_id']}",
+        )
+        self.assertEqual(
+            integrated_first.returncode,
+            0,
+            integrated_first.stderr,
+        )
+        first_landed = self.git("rev-parse", "HEAD").stdout.strip()
+        self.assertEqual(first_landed, first.source_head)
+        first_cleaned = self.assert_cleaned_overlap_run(first)
+        self.assertEqual(first_cleaned["final_head"], first.source_head)
+        self.assertEqual(first_cleaned["integrated_head"], first_landed)
+        self.assertEqual(
+            self.manifest_snapshot(second.manifest_path),
+            second_manifest_snapshot,
+        )
+        self.assertEqual(
+            self.git("rev-parse", "HEAD", cwd=second.worker).stdout.strip(),
+            second.source_head,
+        )
+        self.assertEqual(
+            self.git(
+                "status",
+                "--porcelain=v1",
+                "--untracked-files=all",
+                cwd=second.worker,
+            ).stdout,
+            second_status,
+        )
+        self.assertEqual(
+            self.worktree_records()[second.worker],
+            second_record,
+        )
+        self.assertEqual(
+            (self.control / first.specification.result_path).read_text(
+                encoding="utf-8"
+            ),
+            first.specification.content,
+        )
+        self.assertFalse(
+            (self.control / second.specification.result_path).exists()
+        )
+
+        integrated_second = self.run_make(
+            "integrate",
+            f"RUN={second.manifest['run_id']}",
+        )
+        self.assertEqual(
+            integrated_second.returncode,
+            0,
+            integrated_second.stderr,
+        )
+        final_head = self.git("rev-parse", "HEAD").stdout.strip()
+        second_cleaned = self.assert_cleaned_overlap_run(second)
+        self.assertEqual(second_cleaned["final_head"], second.source_head)
+        self.assertEqual(
+            second_cleaned["integration_source_head"],
+            second.source_head,
+        )
+        self.assertEqual(
+            second_cleaned["integration_target_head"],
+            first_landed,
+        )
+        self.assertEqual(
+            second_cleaned["integration_candidate_head"],
+            final_head,
+        )
+        self.assertEqual(second_cleaned["integrated_head"], final_head)
+        self.assertNotIn(
+            final_head,
+            {first_landed, second.source_head},
+        )
+        self.assertEqual(
+            self.git("rev-parse", "HEAD^").stdout.strip(),
+            first_landed,
+        )
+        self.assertEqual(
+            self.git(
+                "diff-tree",
+                "--no-commit-id",
+                "--name-only",
+                "-r",
+                final_head,
+            ).stdout.splitlines(),
+            [second.specification.result_path],
+        )
+        self.assertEqual(
+            self.git(
+                "rev-list",
+                "--count",
+                f"{base_head}..HEAD",
+            ).stdout.strip(),
+            "2",
+        )
+        self.assertEqual(
+            self.git(
+                "rev-list",
+                "--merges",
+                f"{base_head}..HEAD",
+            ).stdout,
+            "",
+        )
+        self.assertEqual(
+            self.git(
+                "merge-base",
+                "--is-ancestor",
+                second.source_head,
+                final_head,
+                check=False,
+            ).returncode,
+            1,
+        )
+        self.assertEqual(
+            self.git(
+                "ls-tree",
+                "-r",
+                "--name-only",
+                "HEAD",
+            ).stdout.splitlines(),
+            [
+                "baseline.txt",
+                first.specification.result_path,
+                second.specification.result_path,
+            ],
+        )
+        self.assertEqual(
+            (self.control / "baseline.txt").read_text(encoding="utf-8"),
+            "baseline\n",
+        )
+        for run in runs:
+            self.assertEqual(
+                (self.control / run.specification.result_path).read_text(
+                    encoding="utf-8"
+                ),
+                run.specification.content,
+            )
+        self.assertEqual(
+            self.git(
+                "status",
+                "--porcelain=v1",
+                "--untracked-files=all",
+            ).stdout,
+            "",
+        )
+        self.assertEqual(self.worktree_paths(), [self.control.resolve()])
+        self.assertEqual(
+            self.manifests(self.generic_profile_state),
+            {first.manifest_path, second.manifest_path},
+        )
+        self.assertFalse(self.triptych_state.exists())
+        self.assertEqual(self.refs_under("refs/heads/codex/isolated/"), [])
+        self.assertEqual(self.refs_under("refs/triptych-codex/"), [])
 
     def test_installed_generic_managed_conflict_lifecycle(self) -> None:
         before = self.manifests(self.generic_profile_state)
