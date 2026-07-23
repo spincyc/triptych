@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-07-23"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:40eb859a5e3aaf133413549b7a49ee87842f41d653f0592b6732af2590837da3"
+inventory_snapshot = "sha256:1d95327a8e67e6c7b51cf17f958b7f896fd65134c1cfcc9b369e41b4b5f81220"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:dafeabb5de4701ba2d641eaed5f3c550cb19836e6140a6cb39f44a74cc4e1c92"
-canonical_catalog_snapshot = "sha256:88b641d2f2df538055455496ca572cd5395a2d355abcf8de45283ede41e1b936"
+canonical_catalog_snapshot = "sha256:113bb866bfc5ff9cd11c47c3cd9ca665c9bd39afb3a40bdbeb4e613f3d031677"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:b1c8605c24ab99523d42d60962bafaaa8b266da9bf03fad7a692a4ddf7f4ad7d"
+snapshot = "sha256:7b00b52fffcfa51d432e10e45cc33eb41819a9499b6ae4c7c0418f4229ea38d0"
 
 [[families]]
 id = "family.acta.aas-ass"
@@ -17,18 +17,18 @@ kind = "series"
 source_categories = ["canon-law", "historical-primary", "magisterial"]
 identity_confidence = "confirmed"
 identity_gaps = ["artifact", "locus"]
-artifact_availability = "candidate-partial"
-storage_plan = ["remote", "unknown"]
+artifact_availability = "mixed"
+storage_plan = ["remote", "restricted", "unknown"]
 rights_review = "partially-reviewed"
 mutability = "serial"
 freshness_rule = "Treat published volumes as fixed and review newly cited volumes and acts independently."
 evidence_ceiling = "artifact-pin"
 disposition = "canonicalize"
 priority = "p1"
-canonical_ids = []
-trace_patterns = ["Acta Apostolicae Sedis", "Acta Sanctae Sedis"]
-reviewed_on = "2026-07-22"
-notes = "Canonicalize cited volumes as exact artifacts while keeping each promulgated act a distinct work. OCR remains a finding aid until checked against the official pages."
+canonical_ids = ["artifact.holy-see.acta-apostolicae-sedis.volume-57-1965.vatican-ocr-pdf-bd6d813d", "edition.holy-see.acta-apostolicae-sedis.volume-57-1965", "work.holy-see.acta-apostolicae-sedis"]
+trace_patterns = ["Acta Apostolicae Sedis", "Acta Sanctae Sedis", "latin-aas-57-1965"]
+reviewed_on = "2026-07-23"
+notes = "Volume 57 (1965) now has a canonical container edition and one exact restricted Holy See PDF artifact. Other cited volumes and acts remain only partially resolved; each promulgated act remains a distinct work, and OCR remains a finding aid until checked against the official pages."
 
 [[families]]
 id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
@@ -357,7 +357,7 @@ kind = "corpus-plan"
 source_categories = ["magisterial"]
 identity_confidence = "confirmed"
 identity_gaps = ["artifact", "edition", "expression", "language"]
-artifact_availability = "candidate-partial"
+artifact_availability = "mixed"
 storage_plan = ["remote", "restricted"]
 rights_review = "partially-reviewed"
 mutability = "fixed"
@@ -365,14 +365,14 @@ freshness_rule = "not-applicable"
 evidence_ceiling = "passage-pin"
 disposition = "canonicalize"
 priority = "p1"
-canonical_ids = []
+canonical_ids = ["artifact.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.vatican-html-579d2ef7", "artifact.second-vatican-council.lumen-gentium.latin-vatican-web-2026-07-23.vatican-html-0a828abb", "edition.second-vatican-council.lumen-gentium-notificationes.english-vatican-web-2026-07-23", "edition.second-vatican-council.lumen-gentium-notificationes.latin-aas-57-1965", "edition.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23", "edition.second-vatican-council.lumen-gentium.latin-aas-57-1965", "edition.second-vatican-council.lumen-gentium.latin-vatican-web-2026-07-23", "edition.second-vatican-council.nota-explicativa-praevia.english-vatican-web-2026-07-23", "edition.second-vatican-council.nota-explicativa-praevia.latin-aas-57-1965", "passage.second-vatican-council.lumen-gentium-notificationes.latin-aas-57-1965.complete", "passage.second-vatican-council.lumen-gentium-notificationes.latin-aas-57-1965.declaration-1964-03-06", "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.10-11", "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.52-69", "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.53", "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.56", "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.60-62", "passage.second-vatican-council.lumen-gentium.latin-aas-57-1965.1-69", "passage.second-vatican-council.nota-explicativa-praevia.latin-aas-57-1965.complete", "segment.second-vatican-council.lumen-gentium-notificationes.latin-aas-57-1965.aas-57-1965-page-72", "segment.second-vatican-council.lumen-gentium.latin-aas-57-1965.aas-57-1965-pages-5-71", "segment.second-vatican-council.nota-explicativa-praevia.latin-aas-57-1965.aas-57-1965-pages-72-75", "work.second-vatican-council.lumen-gentium", "work.second-vatican-council.lumen-gentium-notificationes", "work.second-vatican-council.nota-explicativa-praevia"]
 trace_patterns = ["(?:Lumen gentium|Dei Verbum|Sacrosanctum Concilium|Gaudium et spes|Vatican II)"]
-reviewed_on = "2026-07-22"
-notes = "Create distinct work and language-edition identities for the conciliar acts, then an explicit corpus; do not treat the Vatican website as the intellectual family."
+reviewed_on = "2026-07-23"
+notes = "Lumen gentium now has distinct work, Latin Acta, dated Latin and English web, exact artifact, complete-numbered-text, and high-reuse passage identities; its Notificationes and Nota explicativa praevia are separately modeled works. Other conciliar acts remain pending, and the Vatican website is not treated as the intellectual family."
 
 [[review_units]]
 owner_id = "articles/canon-law/clerical-celibacy-chastity-and-continence"
-surface_snapshot = "sha256:85b5cef707ec7f61daaea710f4b03d72d6d6105dd293c1a8fe4b37c3db197f08"
+surface_snapshot = "sha256:ccaf71ef329569ff5b35e16147514b45fe1602ef9b4808e1f80f4c8d06bbbe48"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -471,8 +471,12 @@ record_paths = ["src/gpt/articles/faith/at-the-end-of-every-why/sections/99-refe
 
 [[review_units]]
 owner_id = "articles/faith/council-missal-and-crisis"
-surface_snapshot = "sha256:1ebf340ad31553b44acfcfd38b9efd73c0e3d5a03e4f3792eb7f53ef36b6c159"
+surface_snapshot = "sha256:33ff9a257a83bf088e7445b67028d5a99aa597f8fe3fbcde432d9016e9c12b17"
 review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.acta.aas-ass"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/council-missal-and-crisis/research/source-bindings.toml"]
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
 basis = "trace-scan"
@@ -566,7 +570,7 @@ record_paths = ["src/gpt/articles/faith/ontological-vertigo/sections/99-referenc
 
 [[review_units]]
 owner_id = "articles/faith/the-due-return"
-surface_snapshot = "sha256:d90a4ff6a14f628c0a4e5c332e62277169ae7e09ebc465915da33698aec5e235"
+surface_snapshot = "sha256:c621c0f5d89ea4e068f79757f98ea7f653dce63f60802f5338092e5f990c72a1"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
@@ -675,7 +679,7 @@ record_paths = ["src/gpt/biographies/saint-jerome/research/source-audit.md"]
 
 [[review_units]]
 owner_id = "biographies/saint-paul"
-surface_snapshot = "sha256:d65cfa3ba562dc17ffe1653059055f74126e99425d58284d0ea9e7a47e86c2fa"
+surface_snapshot = "sha256:318c51654ce4959c479f981bb55b8162ce5ca3b4c4e00374a4f7a4e71f71d4fb"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -692,7 +696,7 @@ record_paths = ["src/gpt/biographies/saint-paul/research/source-audit.md"]
 
 [[review_units]]
 owner_id = "biographies/saint-peter"
-surface_snapshot = "sha256:c86c4b21655b827a5aa3d6eab0bd3eedc93bf0128c059a7376f755b8f65aebd0"
+surface_snapshot = "sha256:78ccc1389745d06bd6d2e5710c05656cd852dd8023dc555eecd0fc210934ec27"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -989,7 +993,7 @@ record_paths = ["src/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/0
 
 [[review_units]]
 owner_id = "devotions/novenas/00-ascension-to-pentecost"
-surface_snapshot = "sha256:8674117021f403d2068f92db6c352a5acb5f66ddcc1c518174bccce68bf5bd7a"
+surface_snapshot = "sha256:080f3983833c7a0eda480184a72783ac185451736a6348b922b15b9b17ee6504"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1023,7 +1027,7 @@ record_paths = ["src/gpt/devotions/novenas/00-ascension-to-pentecost-daily-praye
 
 [[review_units]]
 owner_id = "devotions/novenas/10-our-lady-of-mount-carmel"
-surface_snapshot = "sha256:5c08fd378156f395a6146cc6d55c34e2e2ada5325a56792bd424ecb21df828cb"
+surface_snapshot = "sha256:33516520775f15889abbc000648d8e3ee6502984344f65882ce40236e7d04a34"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1176,7 +1180,7 @@ record_paths = ["src/gpt/history/traditional-priestly-institutes/03-icksp/sectio
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"
-surface_snapshot = "sha256:c71bcc49c1f1ef3478b7893da3a6ddcf7238261e29e74ee3b9aee72279314e73"
+surface_snapshot = "sha256:ca89b2bab4ffd046431dbfb3ef961e3c157591f13060c88b1f0a834419ffc51d"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -1426,8 +1430,12 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/22-eighth-afte
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"
-surface_snapshot = "sha256:0cb0fa87aef7b08461ce13f6046d23b65d2e4ed7c14500ea854ff6b5a3c14cb4"
+surface_snapshot = "sha256:872f121bd0d2dd2a84632c3847d245bb707b3f780028226d5a72dc860b4f576e"
 review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.acta.aas-ass"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/research/source-bindings.toml"]
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
 basis = "trace-scan"
@@ -1481,7 +1489,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/s
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/comparative/two-missals-one-sacrifice"
-surface_snapshot = "sha256:46976eb469872455db0299fa3dec455c590caeb92fd90eabe2600c9dc13ebeb3"
+surface_snapshot = "sha256:a8dfe0a925dc6cc53bdf6b860b4340571e48d6242f5e9cdbdcb664003b92f6b9"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1518,7 +1526,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrific
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"
-surface_snapshot = "sha256:2b560418414f2d47456bdefe89ab755726c70ba34ddddfaf37408a8deeb2efee"
+surface_snapshot = "sha256:f3fc021d4a4569302f3ae8a978ed7e44aff0485eb9b2349ab7926ba7dcfdbfe1"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
@@ -1571,7 +1579,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-eng
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s35-eleventh-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:80abdbc1c9062554a421e094235b3cce89909085b3c928dd30da7ea3c8a2a47c"
+surface_snapshot = "sha256:55e819d7c3068f436117b4d2f5e2d76ac7cc1aae3392f555a6f97ced75bb1256"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1913,7 +1921,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "theology/heresies/heresies-in-catholic-history"
-surface_snapshot = "sha256:033ce22c5489793f2f390af80931065ddf815e0e60ad0e0b5646b2107a06693f"
+surface_snapshot = "sha256:d23fe35773fc26076b69b60c6b7e20427c52758f5d0b60b7aedaf90e9a79a803"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -1950,7 +1958,7 @@ record_paths = ["src/gpt/theology/heresies/heresies-in-catholic-history/research
 
 [[review_units]]
 owner_id = "theology/mariology/angelus"
-surface_snapshot = "sha256:44676f57b0db73d897495167f18607a8a081ea5e9fcb712fc7f6929e51128875"
+surface_snapshot = "sha256:c947bd334e5729ccb5b4f8f08f2a0261b417381f478501cdee5adb11412c12fb"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1967,7 +1975,7 @@ record_paths = ["src/gpt/theology/mariology/angelus/research/source-audit.md"]
 
 [[review_units]]
 owner_id = "theology/mariology/apparitions"
-surface_snapshot = "sha256:000ed2f90b1768ff3996b1a9246fc31b1b0fab28cb83390b2d08b0fb4622dbcf"
+surface_snapshot = "sha256:e22faf3c0335c1ad82d31cfa9184bd15c05c5d38620b7a9c79cb67f494dc11bd"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1984,7 +1992,7 @@ record_paths = ["src/gpt/theology/mariology/apparitions/research/source-audit.md
 
 [[review_units]]
 owner_id = "theology/mariology/champion"
-surface_snapshot = "sha256:51d3f6f26c312fa5d7972455d921686301c204d593bc8ddabb412d941f364044"
+surface_snapshot = "sha256:8a2da02ad9023dd23334c7734c2f066c74e8e2edd0baa608130041cdc0637f67"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -2001,7 +2009,7 @@ record_paths = ["src/gpt/theology/mariology/champion/research/source-audit.md"]
 
 [[review_units]]
 owner_id = "theology/mariology/fatima"
-surface_snapshot = "sha256:7252d1346a0610ef582c8f4504a1a22e9b439202af7e721ebc13b34c562e54fe"
+surface_snapshot = "sha256:eea00450fdf79af58f774cc66a955eebd12b1c0b7ccdf255f3943a7658657c04"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -2014,7 +2022,7 @@ record_paths = ["src/gpt/theology/mariology/fatima/research/source-audit.md"]
 
 [[review_units]]
 owner_id = "theology/mariology/guadalupe"
-surface_snapshot = "sha256:9cd15541d39a2751a999c0b4545cb0cd94154d3533bcdb26aae2af0c9e14bc7f"
+surface_snapshot = "sha256:06d165311a8d8c7a4355f0f6ea4280c9418a559970d651e1e872d83bcd969364"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -2027,7 +2035,7 @@ record_paths = ["src/gpt/theology/mariology/guadalupe/research/source-audit.md"]
 
 [[review_units]]
 owner_id = "theology/mariology/la-salette"
-surface_snapshot = "sha256:07f51c0a1fe390325a0c294d47189985d3eb447e590eecce28316b7517669a9b"
+surface_snapshot = "sha256:4e6dc50fd93ec568e3cc92e60607c0b155baad6104013b421a29799221511b3e"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -2052,7 +2060,7 @@ record_paths = ["src/gpt/theology/mariology/la-salette/research/source-audit.md"
 
 [[review_units]]
 owner_id = "theology/mariology/lourdes"
-surface_snapshot = "sha256:75411845c1bbb32aa9e2e4c15deefdcfe798e035e1fd16f7ed38ee9dd3efcdb8"
+surface_snapshot = "sha256:d0b2b1e96aa8e9a8fd4072f28862fa86b1f50a8b29d3c608882297056c59504b"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -2065,7 +2073,7 @@ record_paths = ["src/gpt/theology/mariology/lourdes/research/source-audit.md"]
 
 [[review_units]]
 owner_id = "theology/mariology/marian-dogmas"
-surface_snapshot = "sha256:2cd376d2661873049e9980188712f0610ad65c9cc3e5a16c7e778561848c8e12"
+surface_snapshot = "sha256:d50a873ff5f11921fab064d0e15b21cd2f7d935456e5a17e7fa1a4bce757ae70"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -2090,7 +2098,7 @@ record_paths = ["src/gpt/theology/mariology/marian-dogmas/research/source-audit.
 
 [[review_units]]
 owner_id = "theology/mariology/regina-coeli"
-surface_snapshot = "sha256:2bd7948decc0e32e2e5e94ed8f661aead7b80f0e2bbb933479da0713eabd32c5"
+surface_snapshot = "sha256:67f1c7ebc819bf34832318e3775a553328e04bb0a96653fbe6756adbf03c4db3"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -2111,7 +2119,7 @@ record_paths = ["src/gpt/theology/mariology/regina-coeli/research/source-audit.m
 
 [[review_units]]
 owner_id = "theology/mariology/rosary"
-surface_snapshot = "sha256:15d224b2d145fea0e5815ca60fd8427504f27a3f070c372f614c7664063f8d97"
+surface_snapshot = "sha256:eec6eca17cfd89ec354da8bccffd95d650b4bcd54b7d17a023059ec72aae41ca"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
@@ -2136,7 +2144,7 @@ record_paths = ["src/gpt/theology/mariology/rosary/research/source-audit.md"]
 
 [[review_units]]
 owner_id = "theology/sacraments"
-surface_snapshot = "sha256:6316ae06db9d726578e581170ca1f4dbcd9ede233eaf2c60e4067dce7eed28a8"
+surface_snapshot = "sha256:a896e8f721ea7b3ca328fb938529a0ef535075b7a0b4f4df0ae2d6c31e3ea061"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
@@ -2185,7 +2193,7 @@ record_paths = ["src/gpt/theology/sacraments/sections/30-communion-introduction.
 
 [[review_units]]
 owner_id = "theology/sacraments-at-a-glance"
-surface_snapshot = "sha256:499959cb0cb1abf4c44852c61394b2b34fb4c8a9d89c65f2e630ec6737481da6"
+surface_snapshot = "sha256:7674f3ebf58f1c21e9c2817ac94099c6e7b43fc743dd0ef42068a3471f05e3e4"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
@@ -2197,6 +2205,10 @@ basis = "trace-scan"
 record_paths = ["src/gpt/theology/sacraments-at-a-glance/research/source-bindings.toml"]
 [[review_units.family_presence]]
 family_id = "family.justin-martyr.first-apology-anf1-1887"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/sacraments-at-a-glance/research/source-bindings.toml"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
 basis = "trace-scan"
 record_paths = ["src/gpt/theology/sacraments-at-a-glance/research/source-bindings.toml"]
 

@@ -1,0 +1,11 @@
+schema = 1
+record_type = "work"
+id = "work.second-vatican-council.lumen-gentium-notificationes"
+title = "Notificationes"
+responsible = "Second Vatican Council"
+work_type = "conciliar-notification"
+alternate_titles = ["Notificationes given by the Secretary General of the Council at the 123rd General Congregation"]
+languages = ["la"]
+locus_pattern = '(?:complete|declaration-1964-03-06)'
+description = "The notification delivered by the Council's Secretary General at the 123rd General Congregation on 16 November 1964 concerning the theological qualification and interpretation of the teaching in the schema De Ecclesia. It reproduces the Doctrinal Commission's declaration of 6 March 1964 and precedes the separately titled Nota explicativa praevia."
+relations = ["work.holy-see.acta-apostolicae-sedis", "work.second-vatican-council.lumen-gentium", "work.second-vatican-council.nota-explicativa-praevia"]

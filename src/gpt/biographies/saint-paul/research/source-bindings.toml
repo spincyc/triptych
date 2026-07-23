@@ -9,3 +9,13 @@ role = "reception"
 states = ["cataloged"]
 claim_keys = ["PA-M02"]
 context = "The legacy source row uses the official English Vatican Catechism state for ecclesial reception of Paul's confession, the Body of Christ, and justification, not for chronology, authorship, or independent historical reconstruction. The publication-local audit was reviewed through 2026-07-16, but names only the Vatican Catechism index and retains no exact page artifact fingerprint, so this binding claims no central inspection or verification."
+
+[[bindings]]
+source_id = "artifact.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.vatican-html-579d2ef7"
+loci = ["19-20"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+claim_keys = ["PA-M02"]
+context = "The exact official English paragraphs were checked for Catholic reception of the apostolic college, Peter's place within it, the apostles' mission, and succession in the episcopate. They establish ecclesial teaching rather than Pauline authorship, chronology, or an independent reconstruction of the first-century offices."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:e014e50e07c31c0e2682ce0c6eea2573e0d4572d85fe0181e7bd0664617a7e78"

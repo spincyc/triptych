@@ -24,3 +24,21 @@ loci = ["797-801", "1076", "1285-1321", "1695", "1996-2005", "2623"]
 role = "context"
 states = ["cataloged"]
 context = "These broader Catechism loci occur in the parent guide's doctrinal references. The 797-801 citation overlaps the claim matrix's narrower 799-801 use. Because no concrete Catechism expression or artifact is pinned, the binding remains at work level and catalog-only."
+
+[[bindings]]
+source_id = "artifact.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.vatican-html-579d2ef7"
+loci = ["4"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact official English paragraph was checked for the Holy Spirit's Pentecostal mission, continual sanctification of the Church, indwelling, communion, ministries, gifts, fruits, and renewal. It controls the novena's Trinitarian and ecclesial synthesis rather than supplying a devotional formula."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:e014e50e07c31c0e2682ce0c6eea2573e0d4572d85fe0181e7bd0664617a7e78"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.60-62"
+loci = ["60-62"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official English paragraphs were checked for Mary's maternal intercession as received, participatory, and wholly dependent on Christ's unique mediation. They support the parent theology and Day 3 without attributing independent Marian causality."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:319ecc3fadbe4a72b333648b084c117e36a4e1e26e341426a95b89c0f70073ba"

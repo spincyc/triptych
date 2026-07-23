@@ -135,3 +135,21 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The complete chapter was visually checked in the exact Buffalo 1887 ANF facsimile for the exposition's bounded early structural claims about Sunday Word, prayer, Eucharist, distribution, and charity. It is not a transcript of the 2008 Order, and editorial notes remain distinct from Justin's text."
 verified_on = "2026-07-23"
 source_fingerprint = "sha256:bac02d64cdb19410b0d954a444ad57942628b732fc5fbf6ff1b1b7331dd4c9d6"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.10-11"
+loci = ["10-11"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official English paragraphs were checked for the exposition's account of differentiated common and ministerial priesthood, Eucharistic offering, self-offering, sacramental participation, and ecclesial unity."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:a1530ed1e2c173aa46a742fd2676bca27194a7dc568a2962026c62d46d382fab"
+
+[[bindings]]
+source_id = "artifact.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.vatican-html-579d2ef7"
+loci = ["1", "20-29", "48-51"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact official English paragraphs were checked for the Church as sacrament and instrument of union, apostolic succession and differentiated ordained ministries, Eucharistic governance and service, and eschatological communion with the Church in heaven. These bounded loci support the source-audit synthesis without promoting the complete Constitution as inspected."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:e014e50e07c31c0e2682ce0c6eea2573e0d4572d85fe0181e7bd0664617a7e78"

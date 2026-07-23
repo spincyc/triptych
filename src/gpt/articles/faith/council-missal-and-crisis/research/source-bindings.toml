@@ -1,4 +1,4 @@
-schema = 1
+schema = 2
 record_type = "bindings"
 document = "articles/faith/council-missal-and-crisis"
 
@@ -27,3 +27,39 @@ source_id = "work.catholic-church.catechism"
 role = "bibliographic"
 states = ["cataloged"]
 context = "The 1992 publication entry in the article's timeline is work-level historical metadata, not a passage claim. The generic sentence about ritual change even when a catechism remains unchanged is not treated as a source occurrence."
+
+[[bindings]]
+source_id = "artifact.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.vatican-html-579d2ef7"
+loci = ["8", "12", "16", "18-27", "32", "39-42"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact official English paragraphs were checked for the article's bounded claims about subsistence and ecclesial elements, prophetic discernment and charisms, salvation and mission, Peter and the episcopal college, hierarchical authority and infallibility, equal Christian dignity amid differentiated ministries, and the universal call to holiness. This does not promote the complete Constitution or its appended texts as inspected for unrelated claims."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:e014e50e07c31c0e2682ce0c6eea2573e0d4572d85fe0181e7bd0664617a7e78"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.lumen-gentium-notificationes.latin-aas-57-1965.complete"
+loci = ["complete"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete Latin Notificationes was checked as the General Secretary's communication at the 123rd General Congregation on 16 November 1964: it answers the qualification question, reproduces a distinct Doctrinal Commission declaration dated 6 March 1964, and introduces the separately titled preliminary note."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:1415a97f4ba982a27c41e95e36e160b1ac02a56e98a9388ebf1c9d6139c95b5f"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.lumen-gentium-notificationes.latin-aas-57-1965.declaration-1964-03-06"
+loci = ["declaration-1964-03-06"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact embedded two-paragraph Doctrinal Commission declaration of 6 March 1964 was checked for the article's rule distinguishing matters openly declared definitive from the Council's remaining teaching, which is to be received according to the Council's manifested mind. Its date and authorship are not conflated with the General Secretary's 16 November Notificationes."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:9e82a76614f6be7acba30a0a2bbf2bdb959c89097bec80fd2775db7074dbc398"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.nota-explicativa-praevia.latin-aas-57-1965.complete"
+loci = ["complete"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete Latin Nota explicativa praevia was checked for its interpretation of Lumen gentium chapter III: the episcopal college is not a body of equals delegating power to a president, exists only with its head, and acts collegially only with the head's consent. It remains a separately titled constituent rather than part of the 6 March declaration."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:47c80d18dba532b916e7f924af0bb8b71ad84c9552e18922808ab005b12a679d"
