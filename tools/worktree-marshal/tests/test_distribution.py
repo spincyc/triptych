@@ -76,6 +76,7 @@ class DistributionArtifactTests(unittest.TestCase):
         self.assertIn("worktree_marshal/__init__.py", names)
         self.assertIn("worktree_marshal/cli.py", names)
         self.assertIn("worktree_marshal/engine.py", names)
+        self.assertIn("worktree_marshal/git.py", names)
         self.assertIn("worktree_marshal/profiles.py", names)
         self.assertIn("worktree_marshal/triptych_compat.py", names)
         self.assertIn("worktree_marshal/resources/__init__.py", names)
@@ -138,6 +139,7 @@ class DistributionArtifactTests(unittest.TestCase):
             "src/worktree_marshal/__init__.py",
             "src/worktree_marshal/cli.py",
             "src/worktree_marshal/engine.py",
+            "src/worktree_marshal/git.py",
             "src/worktree_marshal/profiles.py",
             "src/worktree_marshal/triptych_compat.py",
             "src/worktree_marshal/resources/__init__.py",
@@ -145,6 +147,7 @@ class DistributionArtifactTests(unittest.TestCase):
             "tests/__init__.py",
             "tests/_artifact_fixture.py",
             "tests/test_distribution.py",
+            "tests/test_git.py",
             "tests/test_installed_lifecycle.py",
             "tests/test_cli.py",
             "tests/test_make_fragment.py",
@@ -156,7 +159,7 @@ class DistributionArtifactTests(unittest.TestCase):
         }
         self.assertEqual(missing, set())
 
-    def test_wheel_rebuilt_from_sdist_has_the_command_and_cli_module(self) -> None:
+    def test_wheel_rebuilt_from_sdist_has_command_and_runtime_modules(self) -> None:
         with zipfile.ZipFile(self.sdist_wheel) as archive:
             names = set(archive.namelist())
             entry_point_names = [
@@ -166,6 +169,7 @@ class DistributionArtifactTests(unittest.TestCase):
             entry_points = archive.read(entry_point_names[0]).decode("utf-8")
 
         self.assertIn("worktree_marshal/cli.py", names)
+        self.assertIn("worktree_marshal/git.py", names)
         self.assertIn(
             "worktree-marshal = worktree_marshal.cli:main",
             entry_points,

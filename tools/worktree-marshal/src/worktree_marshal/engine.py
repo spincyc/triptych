@@ -27,6 +27,15 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Iterator, Sequence, TextIO
 
+from .git import (
+    GIT_BASE_ARGUMENTS,
+    GIT_BOOLEAN_VALUES,
+    GIT_COMMAND_CONFIG_RE,
+    GIT_INDEXED_CONFIG_ENV_RE,
+    GIT_UNSAFE_ENV,
+    hardened_git_arguments,
+    sanitized_git_environment as _sanitized_git_environment,
+)
 from .profiles import (
     BUILTIN_PROFILES,
     CONTROL_ENVIRONMENTS,
@@ -138,79 +147,6 @@ RUN_STATES = {
     "integration-cleanup-failed",
     "cleaned-ref-retained",
 }
-GIT_UNSAFE_ENV = {
-    "GIT_ALTERNATE_OBJECT_DIRECTORIES",
-    "GIT_ASKPASS",
-    "GIT_ATTR_GLOBAL",
-    "GIT_ATTR_SOURCE",
-    "GIT_ATTR_SYSTEM",
-    "GIT_CEILING_DIRECTORIES",
-    "GIT_COMMON_DIR",
-    "GIT_CONFIG",
-    "GIT_CONFIG_COUNT",
-    "GIT_CONFIG_GLOBAL",
-    "GIT_CONFIG_NOSYSTEM",
-    "GIT_CONFIG_PARAMETERS",
-    "GIT_CONFIG_SYSTEM",
-    "GIT_DIFF_OPTS",
-    "GIT_DIR",
-    "GIT_DISCOVERY_ACROSS_FILESYSTEM",
-    "GIT_EDITOR",
-    "GIT_EXEC_PATH",
-    "GIT_EXTERNAL_DIFF",
-    "GIT_EXTERNAL_DIFF_TRUST_EXIT_CODE",
-    "GIT_GLOB_PATHSPECS",
-    "GIT_GRAFT_FILE",
-    "GIT_ICASE_PATHSPECS",
-    "GIT_IMPLICIT_WORK_TREE",
-    "GIT_INDEX_FILE",
-    "GIT_LITERAL_PATHSPECS",
-    "GIT_MERGE_AUTOEDIT",
-    "GIT_NAMESPACE",
-    "GIT_NOGLOB_PATHSPECS",
-    "GIT_NO_REPLACE_OBJECTS",
-    "GIT_OBJECT_DIRECTORY",
-    "GIT_OPTIONAL_LOCKS",
-    "GIT_PREFIX",
-    "GIT_PROXY_COMMAND",
-    "GIT_QUARANTINE_PATH",
-    "GIT_REDIRECT_STDERR",
-    "GIT_REDIRECT_STDIN",
-    "GIT_REDIRECT_STDOUT",
-    "GIT_REPLACE_REF_BASE",
-    "GIT_SEQUENCE_EDITOR",
-    "GIT_SHALLOW_FILE",
-    "GIT_SHELL_PATH",
-    "GIT_SSH",
-    "GIT_SSH_COMMAND",
-    "GIT_SSH_VARIANT",
-    "GIT_TEMPLATE_DIR",
-    "GIT_WORK_TREE",
-}
-GIT_INDEXED_CONFIG_ENV_RE = re.compile(r"^GIT_CONFIG_(?:KEY|VALUE)_[0-9]+$")
-GIT_COMMAND_CONFIG_RE = re.compile(
-    r"^(?:"
-    r"filter\..+\.(?:clean|smudge|process)|"
-    r"merge\..+\.driver|"
-    r"diff\.external|"
-    r"diff\..+\.(?:command|textconv)"
-    r")$",
-    re.IGNORECASE,
-)
-GIT_BOOLEAN_VALUES = {"", "0", "1", "false", "no", "off", "on", "true", "yes"}
-GIT_BASE_ARGUMENTS = (
-    "--no-replace-objects",
-    "-c",
-    "core.hooksPath=/dev/null",
-    "-c",
-    "commit.gpgSign=false",
-    "-c",
-    "tag.gpgSign=false",
-    "-c",
-    "core.editor=:",
-    "-c",
-    "sequence.editor=:",
-)
 MAX_ADMIN_FILE_BYTES = 16 * 1024 * 1024
 MAX_ADMIN_TREE_BYTES = 64 * 1024 * 1024
 ROOT_FLAG_OPTIONS = {
@@ -415,34 +351,12 @@ def pin_git_executable() -> Path:
 def sanitized_git_environment(
     source: dict[str, str] | None = None,
 ) -> dict[str, str]:
-    environment = dict(os.environ if source is None else source)
-    for name in list(environment):
-        if (
-            name in GIT_UNSAFE_ENV
-            or GIT_INDEXED_CONFIG_ENV_RE.fullmatch(name)
-            or name.startswith("GIT_TEST_")
-            or name.startswith("GIT_TRACE")
-        ):
-            environment.pop(name, None)
-    environment.pop("CDPATH", None)
-    environment.pop("SSH_ASKPASS", None)
-    environment.update(
-        {
-            "EDITOR": ":",
-            "GIT_ATTR_GLOBAL": os.devnull,
-            "GIT_ATTR_NOSYSTEM": "1",
-            "GIT_CONFIG_GLOBAL": os.devnull,
-            "GIT_CONFIG_NOSYSTEM": "1",
-            "GIT_EDITOR": ":",
-            "GIT_NO_REPLACE_OBJECTS": "1",
-            "GIT_OPTIONAL_LOCKS": "1",
-            "GIT_PAGER": "",
-            "GIT_SEQUENCE_EDITOR": ":",
-            "GIT_TERMINAL_PROMPT": "0",
-            "VISUAL": ":",
-        }
+    """Preserve the legacy optional-source API around the pure policy helper."""
+    return _sanitized_git_environment(
+        os.environ if source is None else source,
+        unsafe_names=GIT_UNSAFE_ENV,
+        indexed_config_pattern=GIT_INDEXED_CONFIG_ENV_RE,
     )
-    return environment
 
 
 def register_lock_descriptor(stream: TextIO) -> None:
@@ -557,23 +471,6 @@ def validate_effective_git_configuration(cwd: Path) -> None:
     for key, value in effective.items():
         if GIT_COMMAND_CONFIG_RE.fullmatch(key) and value.strip():
             raise LauncherError(f"unsafe command-bearing Git configuration {key!r}")
-
-
-def hardened_git_arguments(args: Sequence[str]) -> list[str]:
-    hardened = list(args)
-    try:
-        rebase_index = hardened.index("rebase")
-    except ValueError:
-        return hardened
-    rebase_arguments = hardened[rebase_index + 1 :]
-    administrative = {"--abort", "--continue", "--edit-todo", "--quit", "--skip"}
-    if not administrative.intersection(rebase_arguments) and not any(
-        argument in {"--no-gpg-sign", "--gpg-sign"}
-        or argument.startswith("--gpg-sign=")
-        for argument in rebase_arguments
-    ):
-        hardened.insert(rebase_index + 1, "--no-gpg-sign")
-    return hardened
 
 
 def git(

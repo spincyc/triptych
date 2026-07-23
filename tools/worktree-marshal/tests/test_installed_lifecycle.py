@@ -379,6 +379,7 @@ class InstalledLifecycleTests(unittest.TestCase):
                         "import json",
                         "from importlib.resources import files",
                         "import worktree_marshal",
+                        "import worktree_marshal.git as git_policy",
                         "import worktree_marshal.resources as resources",
                         (
                             "from worktree_marshal import "
@@ -392,6 +393,7 @@ class InstalledLifecycleTests(unittest.TestCase):
                         "    'package': worktree_marshal.__file__,",
                         "    'cli': cli.__file__,",
                         "    'engine': engine.__file__,",
+                        "    'git': git_policy.__file__,",
                         "    'profiles': profiles.__file__,",
                         "    'triptych_compat': triptych_compat.__file__,",
                         "    'resources': resources.__file__,",

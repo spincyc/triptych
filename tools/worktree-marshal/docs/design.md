@@ -17,9 +17,9 @@ arbitrary executable is not equivalent support.
 
 The current package deliberately keeps lifecycle transitions in one shared
 `engine.py`. `cli.py` owns the installed grammar, `profiles.py` owns immutable
-durable identities, and `triptych_compat.py` binds the frozen adapter. The
-engine will be separated behind these modules only after parity tests protect
-each seam:
+durable identities, `git.py` now owns only the cycle-free Git policy kernel,
+and `triptych_compat.py` binds the frozen adapter. The rest of the engine will
+be separated behind these modules only after parity tests protect each seam:
 
 ```text
 worktree_marshal/
@@ -27,7 +27,7 @@ worktree_marshal/
   model.py               typed run records and state transitions
   state.py               private paths and durable manifest writes
   locks.py               repository and per-run locking
-  git.py                 hardened Git invocation and ref transactions
+  git.py                 Git policy now; hardened invocation and ref transactions later
   identity.py            repository, checkout, and path authentication
   worktrees.py           allocation, audit, reopen, and cleanup
   integration.py         verification, rebase, landing, and rollback
@@ -81,13 +81,20 @@ Each step remains behavior-preserving unless it includes a documented state or
 command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
-The repository currently implements steps 1 through 4 as pre-release seams:
-the Make API and legacy contract are frozen; the shared engine is co-located
-behind the thin `scripts/triptych-codex` bootstrap; wheel and source artifacts
-are built, a wheel is rebuilt from the extracted source artifact, and that
-wheel is installed and checked outside the source checkout without source-tree
-import paths; and the generic console requires the versioned, separately named
-`generic-v1` state profile. The installed artifact now also passes a bounded
+The repository currently implements steps 1 through 4 as pre-release seams and
+has begun step 5 with one behavior-preserving boundary. The pure Git policy
+kernel now transforms an explicit environment mapping and Git argument
+sequence in `git.py`; `engine.py` retains its optional environment-acquisition
+wrapper and all executable discovery, subprocess, lock inheritance, repository
+authentication, configuration probing, ref transactions, and lifecycle state.
+Direct tests freeze this policy, its compatibility surface, and artifact
+inclusion. The Make API and legacy contract are frozen; the shared engine is
+co-located behind the thin `scripts/triptych-codex` bootstrap; wheel and source
+artifacts are built, a wheel is rebuilt from the extracted source artifact,
+and that wheel is installed and checked outside the source checkout without
+source-tree import paths; and the generic console requires the versioned,
+separately named `generic-v1` state profile. The installed artifact now also
+passes a bounded
 stateful checkpoint covering generic preservation, integration, and cleanup
 through the packaged unprefixed Make targets; bidirectional Triptych schema-1
 run, status, and clean interoperability through the packaged compatibility
