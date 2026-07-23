@@ -88,6 +88,7 @@ SOURCE_FAMILY_MIGRATION_TOOL := scripts/source-family-migration
 # only as validated RUN=<run-id> command-line assignments.
 override WORKTREE_MARSHAL := $(CODEX_LAUNCHER)
 override WORKTREE_MARSHAL_DISPLAY_NAME := Triptych Codex
+override WORKTREE_MARSHAL_GLOBAL_ARGUMENTS :=
 override WORKTREE_MARSHAL_RUN_TARGET := codex
 override WORKTREE_MARSHAL_STATUS_TARGET := status
 override WORKTREE_MARSHAL_REOPEN_TARGET := reopen
