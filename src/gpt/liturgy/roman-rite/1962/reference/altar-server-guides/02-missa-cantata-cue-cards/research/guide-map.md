@@ -1,31 +1,40 @@
 # Guide map: Missa Cantata cue-card companion
 
 - Stable publication ID: liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards
-- Canonical full guide: liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata
-- Form: Missa Cantata according to the declared model in the canonical guide
-- Reader and use: a parent, trainer, or young altar server printing the full
-  guide's detachable practice cards without its lessons or reference pages
-- Inherited authoritative selections: C01--C13, C14A--C14C, C15,
-  C16A--C16B, C17, C18A--C18B, C19--C20; P01--P07, P08A--P08C, P09--P22;
-  and MC-A01--MC-A12
+- Paired full training guide: liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata
+- Form: Missa Cantata according to the declared model in the paired full guide
+- Reader and use: a trainer or young altar server printing the card faces for
+  practice alongside the paired full guide
+- Inherited authoritative response selection: R01--R07, R08A--R08C, and
+  R09--R22, ordered by the six lesson groups
+- Inherited ceremonial selection: MC-A01--MC-A12
 
 ## Print map and boundary
 
-This prose-free companion renders the exact shared card faces selected by the
-canonical Missa Cantata guide. It adds no cover, contents, instruction,
-actor-key, lesson, ceremony, assessment, parity, or terminal-reference page.
-The compact required revision and rights notice stays below the cut grid on
-the final back.
+This card-face-only companion renders the integrated response and Missa
+Cantata action cards selected by the paired full guide. Each response front
+gives the complete practice cue; its back combines the canonical answer with
+learner syllables and stress, sound line, meaning, response or chunk ID, and
+any necessary condition. The visible response ID carries the `MC` form marker
+while the underlying R ID remains stable.
 
-The C deck occupies physical PDF pages 1--8, the P deck pages 9--16, and the
-Missa Cantata action deck pages 17--20. Thus every front begins on an odd page,
-every front is immediately followed by its mirrored back, and the document
-ends on a complete back. Print US letter, portrait, two-sided, actual size,
-flipped on the long edge, and cut on the box borders.
+The companion adds no cover, contents, instruction, actor key, lesson,
+ceremony, assessment, parity leaf, or terminal-reference page. The compact
+required revision and rights notice stays below the cut grid on the final
+back. The full guide owns the printing, actor, roster, branch, and safety keys
+and points to the paired downloads in the same catalog row; it does not embed
+these faces.
 
-This leaf is a print companion, not a self-contained trainer. Use it with the
-full guide's printing, actor, roster, branch, and safety keys; conditions that
-affect an individual response or action remain printed on the affected card.
-It inherits generation provenance from the full guide and remains governed by
-the series-wide source, response, pronunciation, ceremonial, flash-card,
-production, rights, and review records.
+The final companion is twelve physical pages. Response fronts are pages 1, 3,
+5, and 7; their mirrored backs are pages 2, 4, 6, and 8. Action fronts are
+pages 9 and 11; their mirrored backs are pages 10 and 12. Print US letter,
+portrait, two-sided, actual size, flipped on the long edge, and cut on the box
+borders. Final review confirmed page parity, row mirroring, border alignment,
+legibility, and installed identity; the production manifest records the exact
+artifact.
+
+This leaf is not a self-contained trainer. Use it with the paired full guide's
+keys; conditions that affect an individual response or action remain on the
+affected card. It inherits generation provenance from the full guide and
+remains governed by the series-wide source, response, pronunciation,
+ceremonial, flash-card, production, rights, and review records.

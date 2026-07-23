@@ -80,42 +80,47 @@ certification.
 | A21 | Sed **LI**-be-ra nos a **MA**-lo | sehd LEE-beh-rah nohs ah MAH-loh | /sed ˈli.be.ra nos a ˈma.lo/ | R, S, V, X. |
 | A22 | **DE**-o **GRA**-ti-as, al-le-**LU**-ia, al-le-**LU**-ia | DEH-oh GRAH-tsee-ahs, ahl-leh-LOO-yah, ahl-leh-LOO-yah | /ˈde.o ˈgra.tsi.as al.leˈlu.ja al.leˈlu.ja/ | D (hiatus), TJ (*ti-a* and consonantal I), Q (*ll*), R, S, V, X. |
 
-## Latin-to-pronunciation-and-meaning card projection
+## Audited-bank projection into the integrated response deck
 
-The shared source projects the audited bank into a 24-card learning deck:
-P01–P07 map to A1–A7, P08A–P08C divide A8 into three readable study parts,
-and P09–P22 map to A9–A22. Each front shows canonical Latin and the bank ID.
-Each back shows the same learner syllables and stress, English-like sound
-line, short meaning, bank ID, and centralized form, speaker, and
-spoken/sung-mode metadata. The broad IPA
-stays in the A-bank for checking with a competent listener rather than being
-compressed onto the card.
+The shared source projects the audited bank into one integrated 24-card R
+deck: R01–R07 map to A1–A7, R08A–R08C divide A8 into three readable study
+parts, and R09–R22 map to A9–A22. A front identifies the R card and gives the
+complete cue used for practice; the paired full guide supplies the
+form-specific actor and mode key. Its back gives the canonical response,
+learner syllables and stress, English-like sound line, concise meaning, and
+A-bank or chunk ID. Combining those layers on one physical card does not make
+the card a new textual, pronunciation, or translation authority.
 
-P08A–P08C are three card IDs, not three response IDs; together they teach
-the single A8 Confiteor. Their boundaries match the same three study parts
-used by response cards C11–C13. The shared metadata enumerates the selected
-Last-Gospel roles directly: MC/A1/A2 at Missa Cantata and the subdeacon at
-Solemn Mass. The shared response source also preserves
-that A9 answers the Prayer over the People when appointed, that a
-procession-linked *Benedicamus Domino* has no blessing or Last Gospel, and
-that the Last Gospel
-is omitted at the third Mass of Christmas.
+R08A–R08C are three card IDs, not three response IDs; together they teach the
+single A8 Confiteor. The shared metadata enumerates the selected Last-Gospel
+roles directly: MC/A1/A2 at Missa Cantata and the subdeacon at Solemn Mass.
+The shared response source also preserves that A9 answers the Prayer over the
+People when appointed, that a procession-linked *Benedicamus Domino* has no
+blessing or Last Gospel, and that the Last Gospel is omitted at the third Mass
+of Christmas.
 
-The source produces four six-up long-edge duplex pairs for this deck. Their rendered
-mirror order, cut borders, and final-PDF alignment were checked as recorded in
-`flash-card-manifest.md` and `production-manifest.md`. In shuffled practice,
-a missed cue follows the shared delayed-repeat recovery: ask for the cue
-again, use the bank ID after a second miss, and retry it after three unrelated
-cards.
+The paired full guide consolidates the technical broad IPA in one A1–A22
+trainer key instead of compressing IPA onto every answer face. The learner
+line and sound line remain on the R-card back, and a competent human listener
+still controls when the editorial respelling is ambiguous. The cards-only
+companion inherits this analysis and must be used with its paired full guide.
+
+The six-up long-edge duplex order is a composition contract recorded in
+`flash-card-manifest.md`. Renewed final production verification confirmed page
+extent, mirror order, cut-border alignment, legibility, and installed-artifact
+identity as recorded in `production-manifest.md`. In
+shuffled practice, a missed cue follows the shared delayed-repeat recovery:
+ask for the cue again, use the bank ID after a second miss, and retry it after
+three unrelated cards.
 
 ## Consistency results and limits
 
-The source-level projection check accounts for 24 P-card IDs mapped to
-exactly 22 response IDs; only A8 is split, into P08A–P08C.
+The source-level projection check accounts for 24 R-card IDs mapped to exactly
+22 response IDs; only A8 is split, into R08A–R08C.
 
 - **Completed desk check:** all 22 canonical entries have one marked learner
   line, one sound line, and one broad-IPA line; stress capitals agree with IPA
-  primary stress, and the child-readable digraphs agree with the rule key.
+  primary stress, and the server-readable digraphs agree with the rule key.
 - **Completed source check:** the Roman-style rules actually invoked above
   were verified on printed xxxv–xxxix / PDF physical 35–39. The page-39 breath
   rule and other chant phrasing were not misrepresented as a spoken-response
@@ -127,15 +132,14 @@ exactly 22 response IDs; only A8 is split, into P08A–P08C.
   as a different Latin spelling.
 - **No completed oral certification:** no competent human listener or
   independent ecclesiastical-Latin specialist has yet heard and approved
-  these response lines. The desk audit cannot establish a child's
+  these response lines. The desk audit cannot establish a server's
   intelligibility, rhythm, stress weight, gemination, or recovery after an
   error.
-- **Completed production check:** all 187 pages in the exact final PDFs were
-  inspected; IPA glyphs were spot-checked at full size, the four six-up P-deck
-  duplex pairs in each full guide and cards-only companion passed the measured
-  alignment audit, and the
-  final PDFs passed text-extraction checks. Rendering success remains distinct
-  from linguistic and oral review.
+- **Completed renewed production check:** full-size inspection confirmed the
+  consolidated trainer-key IPA glyphs and every integrated R-card face.
+  Physical-page parity, duplex alignment, text extraction, page counts, and
+  installed identities are recorded in the production manifest. Rendering
+  success remains distinct from linguistic and oral review.
 - **Outstanding chant boundary:** the pronunciation rows may support initial
   diction practice, but they neither encode nor certify Gregorian melody,
   rhythm, morae, liquescence, or choir division. Those require the identified

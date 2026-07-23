@@ -1,15 +1,14 @@
-\section{Learn your own role}
+\section{Your Role from Sacristy to Sacristy}
 
-Find the role written on ``Today's Mass'' in the contents. Print from that
-role heading to the next role heading; keep a shared boundary page when two
-headings land on it. Read the short route before opening the coach chart.
-Each row follows the eight-scene map. Shorter or optional jobs combine scenes
-in which the server waits. An action ID is the adult's lookup key, not a
-second route for the child to memorize.
+Find the role written on ``Today's Mass'' and use the page range on the start
+sheet. Read your short route before opening the complete team reference. Each
+row follows the eight-scene map. Shorter or optional jobs combine scenes in
+which you wait. An action ID is your trainer's lookup key; you do not need to
+memorize it.
 
 % Keep this strip short enough to repeat on every independently printable role
-% route. Moving it to a single earlier page would save a few lines, but a child
-% handed only his own role pages would lose the voice, object-safety, incense,
+% route. Moving it to a single earlier page would save a few lines, but a server
+% handed only the assigned role pages would lose the voice, object-safety, incense,
 % and missed-cue rules that apply in every scene.
 \newcommand{\MCRoleAlways}{Hands joined when free. Follow all printed
 all-server cues; sing publicly only if assigned. At MC-032 do only your role's
@@ -17,13 +16,13 @@ incense duty; with an object, use its taught reverence. Missed cue: stop, hold
 safely and still, watch the MC, and rejoin at the next known cue (MC-003).}
 
 \begin{watchbox}{}
-\textbf{How to read one role route.} Read down the scene column. ``Wait''
-means stay at the named place, attentive
-and still, until the next listed cue. The action IDs take an adult to the
-complete coach chart when a handoff or branch needs more detail.
+\textbf{How to read your role route.} Read down the scene column. ``Wait''
+means stay at the named place, attentive and still, until the next listed cue.
+The action IDs take your trainer to the complete team reference when a handoff
+or branch needs more detail.
 \end{watchbox}
 
-% Role routes are learner sheets, not the dense coach inventory. The table
+% Role routes are server sheets, not the dense complete inventory. The table
 % removes list indentation and repeated vertical gaps while retaining a
 % readable 10-point setting, full prose, and page breaks only between scenes.
 \newenvironment{mcroleroute}[1]{%
@@ -54,6 +53,7 @@ complete coach chart when a handoff or branch needs more detail.
   \subsection{#1}}
 
 \mcroleheading{MC --- master of ceremonies}
+\label{mc-role:mc:first}
 
 \begin{mcroleroute}{MC}
   \mcrolerow{1. Get ready}{Check every named object and return place, confirm the
@@ -92,8 +92,10 @@ complete coach chart when a handoff or branch needs more detail.
   in the sacristy (MC-051--057).
   }
 \end{mcroleroute}
+\label{mc-role:mc:last}
 
 \mcroleheading{A1 --- first acolyte, bell, and Communion plate}
+\label{mc-role:a1:first}
 
 \begin{mcroleroute}{A1}
   \mcrolerow{1. Get ready}{Check the wine cruet, towel, bell and pad, Communion
@@ -131,8 +133,10 @@ complete coach chart when a handoff or branch needs more detail.
   sacristy stand for the adult to extinguish (MC-051--057).
   }
 \end{mcroleroute}
+\label{mc-role:a1:last}
 
 \mcroleheading{A2 --- second acolyte, water, and basin}
+\label{mc-role:a2:first}
 
 \begin{mcroleroute}{A2}
   \mcrolerow{1. Get ready}{Check the water cruet, Lavabo basin, your candle stand,
@@ -169,8 +173,10 @@ complete coach chart when a handoff or branch needs more detail.
   sacristy stand for the adult to extinguish (MC-051--057).
   }
 \end{mcroleroute}
+\label{mc-role:a2:last}
 
 \mcroleheading{TH --- thurifer, on the incense track}
+\label{mc-role:th:first}
 
 \begin{mcroleroute}{TH}
   \mcrolerow{1. Get ready}{Under adult supervision, test the chains and lid and
@@ -207,8 +213,10 @@ complete coach chart when a handoff or branch needs more detail.
   and give it to the adult at the metal-safe station (MC-051--057).
   }
 \end{mcroleroute}
+\label{mc-role:th:last}
 
 \mcroleheading{BB --- boat bearer, on the incense track}
+\label{mc-role:bb:first}
 
 \begin{mcroleroute}{BB}
   \mcrolerow{1. Get ready}{Check the boat, spoon, route, and safe station with TH.
@@ -240,8 +248,10 @@ complete coach chart when a handoff or branch needs more detail.
   adult at the metal-safe station (MC-051--057).
   }
 \end{mcroleroute}
+\label{mc-role:bb:last}
 
 \mcroleheading{T1--T4 --- torchbearers}
+\label{mc-role:t:first}
 
 \begin{mcroleroute}{T1--T4}
   \mcrolerow{1. Get ready}{Check your numbered stand, partner, entrance place, and
@@ -271,8 +281,10 @@ complete coach chart when a handoff or branch needs more detail.
   only for the tasks named before Mass (MC-051--057).
   }
 \end{mcroleroute}
+\label{mc-role:t:last}
 
 \mcroleheading{CB --- cross-bearer, when assigned}
+\label{mc-role:cb:first}
 
 \begin{mcroleroute}{CB}
   \mcrolerow{1. Get ready}{Take the cross from its named stand, carry it upright in
@@ -289,8 +301,10 @@ complete coach chart when a handoff or branch needs more detail.
   (MC-051--057).
   }
 \end{mcroleroute}
+\label{mc-role:cb:last}
 
 \mcroleheading{L --- lesson singer, on the alternate branch}
+\label{mc-role:l:first}
 
 \begin{mcroleroute}{L}
   \mcrolerow{1. Get ready}{Confirm that the marked Epistle book is already on its
@@ -314,13 +328,15 @@ complete coach chart when a handoff or branch needs more detail.
   accounted for (MC-051--057).
   }
 \end{mcroleroute}
+\label{mc-role:l:last}
 
-\begin{coachbox}{One-minute role test}
+\Needspace{9\baselineskip}
+\begin{learnerbox}{One-minute role check}
 Without looking, name your starting place, first object, first handoff, Gospel
-waiting place, elevation job, Communion branch, and final object. Then point to
-the matching scene and action IDs. A child who cannot yet answer repeats only
-that scene, not the whole Mass.
-\end{coachbox}
+waiting place, elevation job, Communion branch, and final object. If you miss
+one, practise only that scene again, not the whole Mass. Your trainer may use
+the action IDs to check the detail.
+\end{learnerbox}
 
 \section{Practice one scene at a time}
 
@@ -333,7 +349,7 @@ that scene, not the whole Mass.
   final reverence assigned to your object or free hands.
   \item Add priest and choir cue words. Use safe lighted candles, and then
   incense, only under the named adult supervision.
-  \item Run the complete form without coaching. Stop after each scene to repair
+  \item Run the complete form without prompts. Stop after each scene to repair
   one mistake, then repeat that scene correctly before moving on.
 \end{enumerate}
 
@@ -343,7 +359,7 @@ that scene, not the whole Mass.
 \masterybox{I can name my handoffs.}
 \masterybox{I can recover by watching the MC.}
 
-\begin{coachbox}{Day and ending branches}
+\begin{coachbox}{FOR THE TRAINER: Day and ending branches}
 At the named ferial Masses, kneel for the Collects at MC-018 and for the
 Postcommunion at MC-051. From Ash Wednesday through Wednesday of Holy Week,
 MC-051 also keeps the team kneeling for \textit{Humiliate capita vestra Deo}
