@@ -66,7 +66,7 @@ recorded in `scope.md` and `source-audit.md`.
 | VERG-HEND1891 | Virgil, *Aeneid* 1.1–4 | Henderson 1891, printed p. 27 / PDF p. 31 | V-R |
 | OVID-OWEN1885 | Ovid, *Tristia* 1.1.1–2 | Owen 1885, opening text leaf / PDF p. 70 | V-R |
 | HOR-WICKGAR1912 | Horace, *Carmina* 1.11 | Wickham–Garrod 1912, PDF p. 29 | V-R |
-| VULG-HETZ1914-MT8.23-27 | Clementine Vulgate, Mt. 8:23–27, complete storm narrative from entry into the boat through the witnesses' final question | Hetzenauer 1914, indexed scan p. 0960 | V-V |
+| VULG-HETZ1914-MT8.23-27 | Clementine Vulgate, Mt. 8:23–27, complete storm narrative from entry into the boat through the witnesses' final question; complete use in M22 and EL-REVIEW-IV, with only the bounded 8:23 phrase *secuti sunt eum discipuli eius* used in M08 | Hetzenauer 1914, exact SacredBible scan p. 0960 and canonical five-line checked transcription | V-V |
 | MR62-CANON-TEIGITUR | complete *Te igitur* prayer sentence through *catholicae et apostolicae fidei cultoribus* | 1962 Missal, Canon Missae, local evidence PDF p. 382, beginning at marginal no. 1088 | V-M |
 | MR62-FORM-ADV1 | complete First Sunday of Advent Proper | 1962 Missal, printed pp. 1–2 | V-M |
 | MR62-FORM-PENT | complete Pentecost Proper and Sequence | 1962 Missal, printed pp. 356–358 | V-M |
@@ -90,10 +90,13 @@ stress or pronunciation is supplied.
 M17 locally prints the First Sunday of Advent Secret and Postcommunion from
 `MR62-FORM-ADV1` as its two fresh Temporal selections, then the exact St.
 Polycarp and Common Postcommunions above as its Sanctoral/Common collation.
-M22 locally prints `VULG-HETZ1914-MT8.23-27` before the guided narrative task.
-The Matthew text omits printed accents, regularizes `j/i`, expands the printed
-ligature, and uses course capitalization and display punctuation; no words
-are omitted.
+M22 locally prints `VULG-HETZ1914-MT8.23-27` before the guided narrative task,
+and EL-REVIEW-IV imports that complete passage through its M22 reader set. M08
+quotes only *secuti sunt eum discipuli eius* from Matthew 8:23. The canonical
+checked text preserves the page's capitalization, ligature, and punctuation;
+the course rendering omits printed accents, regularizes `j/i`, expands the
+printed ligature, and uses course capitalization and display punctuation. No
+words are omitted from the complete M22/Review IV rendering.
 
 ## Teaching worked-passage register
 
