@@ -21,9 +21,10 @@ owns the installed grammar, `profiles.py` owns immutable durable identities,
 `git.py` now owns only the cycle-free Git policy kernel, `model.py` now owns
 the exact state vocabulary, pure classifier, and I/O-free
 integration-transaction restoration transform, `locks.py` now owns
-lock-descriptor bookkeeping and validation algorithms, and
-`triptych_compat.py` binds the frozen adapter. The rest of the engine will be
-separated behind these modules only after parity tests protect each seam:
+lock-descriptor bookkeeping and validation algorithms, `process.py` now owns
+child waiting and exit-status normalization, and `triptych_compat.py` binds
+the frozen adapter. The rest of the engine will be separated behind these
+modules only after parity tests protect each seam:
 
 ```text
 worktree_marshal/
@@ -32,6 +33,7 @@ worktree_marshal/
   state.py               private paths and durable manifest writes
   locks.py               descriptor bookkeeping now; flock acquisition later
   git.py                 Git policy now; hardened invocation and ref transactions later
+  process.py             child signal forwarding and exit normalization
   identity.py            repository, checkout, and path authentication
   worktrees.py           allocation, audit, reopen, and cleanup
   integration.py         verification, rebase, landing, and rollback
@@ -86,12 +88,12 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with four behavior-preserving boundaries. The pure Git policy
+has begun step 5 with five behavior-preserving boundaries. The pure Git policy
 kernel now transforms an explicit environment mapping and Git argument
 sequence in `git.py`; `engine.py` retains its optional environment-acquisition
-wrapper and all executable discovery, subprocess execution, lock acquisition,
-repository authentication, configuration probing, ref transactions, and
-lifecycle orchestration.
+wrapper and all executable discovery, subprocess creation and command
+execution, lock acquisition, repository authentication, configuration
+probing, ref transactions, and lifecycle orchestration.
 The second cycle-free boundary places the exact durable state vocabulary, the
 existing retirement-pending and managed-conflict families, and a pure
 classifier in `model.py`. Manifest validation uses that predicate while
@@ -112,7 +114,17 @@ wrappers obtain the current registry and record factory at the same operation
 points as before, preserving even reentrant rebinding behavior. The
 process-global registry, repository and per-run lock paths, `flock` acquisition
 and release, subprocess `pass_fds`, and lifecycle lock ownership remain in
-`engine.py`. Direct tests freeze all four extracted boundaries, their
+`engine.py`. The fifth boundary moves only the existing child wait loop,
+temporary `SIGHUP` and `SIGTERM` forwarding, interrupt escalation, handler
+restoration after successful setup, and negative-return-code normalization
+into `process.py`. The engine wrapper supplies lazy resolvers at the original
+signal-operation, handled-exception, timeout, and negative-status
+absolute-value lookup points. Process creation, command execution, executable
+discovery, arguments, environments, inherited descriptors, and post-exit
+lifecycle decisions remain in `engine.py`. Direct tests also retain the legacy
+partial-setup behavior: a failure while installing the second handler occurs
+before the protected wait and does not roll back the first installation.
+Direct tests freeze all five extracted boundaries, their
 compatibility surfaces, artifact inclusion, field and operation order,
 partial-failure behavior, and the dynamic restoration of every vocabulary
 value currently accepted in

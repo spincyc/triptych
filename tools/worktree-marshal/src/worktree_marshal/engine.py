@@ -51,6 +51,10 @@ from .model import (
     is_run_state,
     restore_integration_transaction as _restore_integration_transaction,
 )
+from .process import (
+    normalized_exit_status as _normalized_exit_status,
+    wait_for_child as _wait_for_child,
+)
 from .profiles import (
     BUILTIN_PROFILES,
     CONTROL_ENVIRONMENTS,
@@ -1510,41 +1514,26 @@ def codex_environment(real_codex: Path) -> dict[str, str]:
 
 
 def wait_for_child(process: subprocess.Popen) -> int:
-    forwarded_handlers: dict[int, signal.Handlers] = {}
-
-    def forward(signum: int, _frame: object) -> None:
-        if process.poll() is None:
-            try:
-                process.send_signal(signum)
-            except ProcessLookupError:
-                pass
-
-    for signum in (signal.SIGHUP, signal.SIGTERM):
-        forwarded_handlers[signum] = signal.getsignal(signum)
-        signal.signal(signum, forward)
-    try:
-        try:
-            return process.wait()
-        except KeyboardInterrupt:
-            if process.poll() is None:
-                try:
-                    process.send_signal(signal.SIGINT)
-                except ProcessLookupError:
-                    pass
-            try:
-                return process.wait(timeout=10)
-            except subprocess.TimeoutExpired:
-                process.terminate()
-                return process.wait()
-    finally:
-        for signum, handler in forwarded_handlers.items():
-            signal.signal(signum, handler)
+    return _wait_for_child(
+        process,
+        forwarded_signals=lambda: (signal.SIGHUP, signal.SIGTERM),
+        get_signal_handler=lambda signum: signal.getsignal(signum),
+        set_signal_handler=lambda signum, handler: signal.signal(
+            signum,
+            handler,
+        ),
+        interrupt_signal=lambda: signal.SIGINT,
+        keyboard_interrupt=lambda: KeyboardInterrupt,
+        process_lookup_error=lambda: ProcessLookupError,
+        timeout_expired=lambda: subprocess.TimeoutExpired,
+    )
 
 
 def normalized_exit_status(returncode: int) -> int:
-    if returncode < 0:
-        return 128 + abs(returncode)
-    return returncode
+    return _normalized_exit_status(
+        returncode,
+        absolute=lambda value: abs(value),
+    )
 
 
 def branch_is_integrated(repository: Repository, manifest: dict, head: str) -> bool:

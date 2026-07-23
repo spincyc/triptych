@@ -382,6 +382,7 @@ class InstalledLifecycleTests(unittest.TestCase):
                         "import worktree_marshal.git as git_policy",
                         "import worktree_marshal.locks as locks",
                         "import worktree_marshal.model as model",
+                        "import worktree_marshal.process as process_policy",
                         "import worktree_marshal.resources as resources",
                         (
                             "from worktree_marshal import "
@@ -398,6 +399,7 @@ class InstalledLifecycleTests(unittest.TestCase):
                         "    'git': git_policy.__file__,",
                         "    'locks': locks.__file__,",
                         "    'model': model.__file__,",
+                        "    'process': process_policy.__file__,",
                         "    'profiles': profiles.__file__,",
                         "    'triptych_compat': triptych_compat.__file__,",
                         "    'resources': resources.__file__,",
