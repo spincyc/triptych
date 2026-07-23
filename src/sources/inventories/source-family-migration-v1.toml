@@ -1,0 +1,2046 @@
+migration_ledger_schema = 1
+record_type = "reviewed-source-family-migration-ledger"
+audited_on = "2026-07-22"
+inventory_path = "src/sources/inventories/publications-v1.toml"
+inventory_snapshot = "sha256:b42b3dea11c6c69a90aa118078294a5a0f2c6adbeaeb42d309d97a7899e4725e"
+classification_review_path = "src/sources/inventories/classification-review-v1.toml"
+classification_snapshot = "sha256:dafeabb5de4701ba2d641eaed5f3c550cb19836e6140a6cb39f44a74cc4e1c92"
+canonical_catalog_snapshot = "sha256:47edf48497a9215ea5ed04b1a3127c746f9437b4ee25713060f5d39f30b1530e"
+coverage_granularity = "owner-record-family"
+atomic_citation_coverage = false
+snapshot = "sha256:758bbc91dbdc370ade18a1686ade5a8ce26d1a7dd8befdca6906d4fc7470c389"
+
+[[families]]
+id = "family.acta.aas-ass"
+label = "Acta Apostolicae Sedis and Acta Sanctae Sedis"
+kind = "series"
+source_categories = ["canon-law", "historical-primary", "magisterial"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "locus"]
+artifact_availability = "candidate-partial"
+storage_plan = ["remote", "unknown"]
+rights_review = "partially-reviewed"
+mutability = "serial"
+freshness_rule = "Treat published volumes as fixed and review newly cited volumes and acts independently."
+evidence_ceiling = "artifact-pin"
+disposition = "canonicalize"
+priority = "p1"
+canonical_ids = []
+trace_patterns = ["Acta Apostolicae Sedis", "Acta Sanctae Sedis"]
+reviewed_on = "2026-07-22"
+notes = "Canonicalize cited volumes as exact artifacts while keeping each promulgated act a distinct work. OCR remains a finding aid until checked against the official pages."
+
+[[families]]
+id = "family.augustine.de-civitate-dei"
+label = "Augustine, De civitate Dei"
+kind = "work"
+source_categories = ["patristic"]
+identity_confidence = "confirmed"
+identity_gaps = []
+artifact_availability = "canonicalized"
+storage_plan = ["remote", "tracked"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "bounded-corpus"
+disposition = "bind-existing"
+priority = "p0"
+canonical_ids = ["artifact.augustine.de-civitate-dei.dods-1871.pg45304-body-lf", "artifact.augustine.de-civitate-dei.dods-1871.pg45304-raw", "artifact.augustine.de-civitate-dei.dods-1871.pg45305-body-lf", "artifact.augustine.de-civitate-dei.dods-1871.pg45305-raw", "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-1-fig1", "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-1-tei", "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-2-tei", "corpus.augustine.de-civitate-dei.bilingual-tracer-2026-07-22", "corpus.augustine.de-civitate-dei.dods-1871-complete", "corpus.augustine.de-civitate-dei.hoffmann-csel40-2813e3a", "edition.augustine.de-civitate-dei.dods-1871", "edition.augustine.de-civitate-dei.hoffmann-csel40-1899-1900", "passage.augustine.de-civitate-dei.dods-1871.10.5-6", "passage.augustine.de-civitate-dei.dods-1871.15.22", "passage.augustine.de-civitate-dei.dods-1871.18.46", "passage.augustine.de-civitate-dei.dods-1871.19.13", "passage.augustine.de-civitate-dei.dods-1871.19.15", "passage.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.10.5-6", "passage.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.15.22", "passage.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.18.46", "passage.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.19.13", "passage.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.19.15", "work.augustine.de-civitate-dei"]
+trace_patterns = ["City of God", "De civitate Dei"]
+reviewed_on = "2026-07-22"
+notes = "Reuse the existing work, editions, exact artifacts, passages, and bounded corpora; add publication bindings only after each legacy use is reviewed."
+
+[[families]]
+id = "family.catholic-church.catechism"
+label = "Catechism of the Catholic Church"
+kind = "mixed-cluster"
+source_categories = ["magisterial"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "date", "expression", "language"]
+artifact_availability = "candidate-partial"
+storage_plan = ["remote", "restricted"]
+rights_review = "unreviewed"
+mutability = "officially-mutable"
+freshness_rule = "Pin each language and official web or print state by date and review amendments before updating consumers."
+evidence_ceiling = "edition-locus"
+disposition = "split-then-canonicalize"
+priority = "p0"
+canonical_ids = []
+trace_patterns = ["Catechism of the Catholic Church", "Catechismus Catholicae Ecclesiae"]
+reviewed_on = "2026-07-22"
+notes = "Separate the promulgated work, Latin typical edition, translations, revised paragraphs, and mutable delivery artifacts; paragraph numbers alone do not pin wording."
+
+[[families]]
+id = "family.holy-see.cceo-1990"
+label = "1990 Code of Canons of the Eastern Churches"
+kind = "work"
+source_categories = ["canon-law"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "date", "expression", "language"]
+artifact_availability = "candidate-partial"
+storage_plan = ["remote"]
+rights_review = "unreviewed"
+mutability = "officially-mutable"
+freshness_rule = "Record the official language, consolidated as-of date, amendments, authentic interpretations, and applicable particular law for every current-law consumer."
+evidence_ceiling = "edition-locus"
+disposition = "canonicalize"
+priority = "p0"
+canonical_ids = []
+trace_patterns = ["Code of Canons of the Eastern Churches", "Codex Canonum Ecclesiarum Orientalium", "\\bCCEO\\b"]
+reviewed_on = "2026-07-22"
+notes = "Canonicalize dated official states and keep CCEO distinct from the Latin codes; translations are aids unless their edition and rights are separately identified."
+
+[[families]]
+id = "family.holy-see.cic-1917"
+label = "1917 Code of Canon Law"
+kind = "work"
+source_categories = ["canon-law"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "edition", "expression", "language"]
+artifact_availability = "candidate-partial"
+storage_plan = ["remote", "unknown"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "edition-locus"
+disposition = "canonicalize"
+priority = "p1"
+canonical_ids = []
+trace_patterns = ["(?:\\b1917\\b[^\\n]{0,24}\\b(?:CIC|Code|can(?:on)?s?)\\b|\\b(?:CIC|Codex Iuris Canonici|Code of Canon Law)\\b[^\\n]{0,24}\\b1917\\b)"]
+reviewed_on = "2026-07-22"
+notes = "Canonicalize the superseded Latin code and identified translations as fixed historical editions; do not merge its canon loci or legal force with the 1983 CIC."
+
+[[families]]
+id = "family.holy-see.cic-1983"
+label = "1983 Code of Canon Law"
+kind = "work"
+source_categories = ["canon-law"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "date", "expression", "language"]
+artifact_availability = "candidate-partial"
+storage_plan = ["remote"]
+rights_review = "unreviewed"
+mutability = "officially-mutable"
+freshness_rule = "Record the governing language, consolidated as-of date, amendments, and authentic interpretations for every current-law consumer."
+evidence_ceiling = "edition-locus"
+disposition = "canonicalize"
+priority = "p0"
+canonical_ids = []
+trace_patterns = ["1983 Code of Canon Law", "CIC/1983", "Code of Canon Law", "Codex Iuris Canonici"]
+reviewed_on = "2026-07-22"
+notes = "Canonicalize dated official states and keep the 1917 code and CCEO in separate coordinated family rows rather than merging jurisdictions or versions."
+
+[[families]]
+id = "family.patristics.anf-npnf-schaff"
+label = "Schaff ANF and NPNF translation series"
+kind = "series"
+source_categories = ["patristic"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "edition", "relation", "work"]
+artifact_availability = "candidate-partial"
+storage_plan = ["remote", "unknown"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "bounded-corpus"
+disposition = "canonicalize"
+priority = "p1"
+canonical_ids = []
+trace_patterns = ["Ante-Nicene Fathers", "Nicene and Post-Nicene Fathers", "\\b(?:ANF|NPNF)\\b"]
+reviewed_on = "2026-07-22"
+notes = "Treat ANF and NPNF as identified public-domain translation series and map each constituent work and volume; New Advent and other hosts are delivery routes, not identities."
+
+[[families]]
+id = "family.roman-lectionary.olm-us-lectionary"
+label = "Ordo Lectionum Missae and United States Lectionary"
+kind = "mixed-cluster"
+source_categories = ["liturgical", "scripture"]
+identity_confidence = "probable"
+identity_gaps = ["artifact", "date", "edition", "expression", "jurisdiction", "language", "relation"]
+artifact_availability = "candidate-partial"
+storage_plan = ["remote", "restricted"]
+rights_review = "unreviewed"
+mutability = "officially-mutable"
+freshness_rule = "Separate universal reading architecture from territorial translations and recheck revisions and effective dates."
+evidence_ceiling = "edition-locus"
+disposition = "split-then-canonicalize"
+priority = "p0"
+canonical_ids = []
+trace_patterns = ["Ordo Lectionum Missae", "U.S. Lectionary", "US Lectionary"]
+reviewed_on = "2026-07-22"
+notes = "The universal Ordo and copyrighted territorial lectionaries differ in authority, wording, jurisdiction, revision cycle, and lawful storage."
+
+[[families]]
+id = "family.roman-missal.1962"
+label = "Missale Romanum 1962 source family"
+kind = "mixed-cluster"
+source_categories = ["liturgical"]
+identity_confidence = "confirmed"
+identity_gaps = ["locus"]
+artifact_availability = "canonicalized"
+storage_plan = ["remote"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "passage-pin"
+disposition = "bind-existing"
+priority = "p0"
+canonical_ids = ["artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu", "artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu-ocr", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf", "edition.catholic-church.missale-romanum.benziger-iuxta-typicam-1962", "edition.catholic-church.missale-romanum.vatican-typica-1962", "work.catholic-church.missale-romanum"]
+trace_patterns = ["(?:Missale Romanum.{0,40}1962|1962.{0,40}(?:Roman )?Missal)"]
+reviewed_on = "2026-07-22"
+notes = "Reuse the canonical work, distinct Vatican typical and Benziger iuxta-typicam editions, and three exact remote artifacts. Artifact-level rights were reviewed but remain unresolved, so no payload is stored; publication loci still require separate binding review."
+
+[[families]]
+id = "family.roman-missal.third-edition-latin-us-english"
+label = "Roman Missal, third edition, Latin and United States English"
+kind = "mixed-cluster"
+source_categories = ["liturgical"]
+identity_confidence = "probable"
+identity_gaps = ["artifact", "date", "edition", "expression", "jurisdiction", "language", "relation"]
+artifact_availability = "candidate-partial"
+storage_plan = ["remote", "restricted"]
+rights_review = "unreviewed"
+mutability = "officially-mutable"
+freshness_rule = "Pin the 2008 Latin state, 2011 United States English edition, and every later variation or emendation separately."
+evidence_ceiling = "edition-locus"
+disposition = "split-then-canonicalize"
+priority = "p0"
+canonical_ids = []
+trace_patterns = ["(?:Missale Romanum.{0,40}(?:2002|2008)|Roman Missal.{0,60}(?:Third Edition|2011)|General Instruction of the Roman Missal|\\bGIRM\\b|\\bIGMR\\b)"]
+reviewed_on = "2026-07-22"
+notes = "Central metadata can be shared, but Latin, territorial English, GIRM states, later variations, and copyrighted artifacts must not be conflated."
+
+[[families]]
+id = "family.scripture.vulgate-editions"
+label = "Vulgate edition and witness cluster"
+kind = "mixed-cluster"
+source_categories = ["scripture"]
+identity_confidence = "ambiguous"
+identity_gaps = ["artifact", "edition", "expression", "language", "relation"]
+artifact_availability = "mixed"
+storage_plan = ["remote", "restricted", "unknown"]
+rights_review = "partially-reviewed"
+mutability = "mixed"
+freshness_rule = "Split fixed historical editions from the current official Nova Vulgata state and review each delivery artifact independently."
+evidence_ceiling = "mixed"
+disposition = "split-then-canonicalize"
+priority = "p0"
+canonical_ids = []
+trace_patterns = ["(?:\\b(?:Vulgate|Vulgata|Nova Vulgata)\\b|Douay[- ]Rheims)"]
+reviewed_on = "2026-07-22"
+notes = "Do not canonicalize a generic Vulgate: distinguish Clementine and Hetzenauer, Oxford, Benedictine, Weber-Gryson, Vetus Latina, Nova Vulgata, translations, and manuscript witnesses."
+
+[[families]]
+id = "family.thomas-aquinas.summa-theologiae"
+label = "Thomas Aquinas, Summa theologiae"
+kind = "work"
+source_categories = ["scholastic"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "edition", "expression", "relation"]
+artifact_availability = "candidate-partial"
+storage_plan = ["remote", "unknown"]
+rights_review = "partially-reviewed"
+mutability = "mixed"
+freshness_rule = "Keep fixed Leonine volumes and translations distinct while recording the continuing critical-edition project state."
+evidence_ceiling = "passage-pin"
+disposition = "split-then-canonicalize"
+priority = "p0"
+canonical_ids = []
+trace_patterns = ["Summa (?:theologiae|theologica)"]
+reviewed_on = "2026-07-22"
+notes = "Create one work identity with separate Leonine Latin volumes, public-domain translations, Corpus Thomisticum delivery artifacts, and stable part-question-article loci."
+
+[[families]]
+id = "family.trent.acts"
+label = "Council of Trent acts"
+kind = "corpus-plan"
+source_categories = ["magisterial"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "edition", "expression", "language"]
+artifact_availability = "candidate-partial"
+storage_plan = ["remote", "unknown"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "passage-pin"
+disposition = "canonicalize"
+priority = "p1"
+canonical_ids = []
+trace_patterns = ["(?:Council of Trent|Concilium Tridentinum|Trent.{0,30}(?:session|decree|canon))"]
+reviewed_on = "2026-07-22"
+notes = "Canonicalize distinct session, chapter, canon, and decree works with original-language and translation editions; Denzinger locators remain separate witnesses."
+
+[[families]]
+id = "family.vatican-ii.acts"
+label = "Second Vatican Council acts"
+kind = "corpus-plan"
+source_categories = ["magisterial"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "edition", "expression", "language"]
+artifact_availability = "candidate-partial"
+storage_plan = ["remote", "restricted"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "passage-pin"
+disposition = "canonicalize"
+priority = "p1"
+canonical_ids = []
+trace_patterns = ["(?:Lumen gentium|Dei Verbum|Sacrosanctum Concilium|Gaudium et spes|Vatican II)"]
+reviewed_on = "2026-07-22"
+notes = "Create distinct work and language-edition identities for the conciliar acts, then an explicit corpus; do not treat the Vatican website as the intellectual family."
+
+[[review_units]]
+owner_id = "articles/canon-law/clerical-celibacy-chastity-and-continence"
+surface_snapshot = "sha256:49345aba37e87d3482b623df347a7a83277d84afbb45e5a37075a023519fa17f"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.acta.aas-ass"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/canon-law/clerical-celibacy-chastity-and-continence/sections/140-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/canon-law/clerical-celibacy-chastity-and-continence/sections/140-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.holy-see.cceo-1990"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/canon-law/clerical-celibacy-chastity-and-continence/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.holy-see.cic-1917"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/canon-law/clerical-celibacy-chastity-and-continence/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.holy-see.cic-1983"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/canon-law/clerical-celibacy-chastity-and-continence/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.trent.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/canon-law/clerical-celibacy-chastity-and-continence/research/historical-legal-corpus.md"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/canon-law/clerical-celibacy-chastity-and-continence/research/source-audit.md"]
+
+[[review_units]]
+owner_id = "articles/canon-law/natural-positive-divine-human-law"
+surface_snapshot = "sha256:eb3857c7bc2a58ea1c1c6436f6abc6aa8a71a9ac89bfd14854772beb26d933df"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.acta.aas-ass"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/canon-law/natural-positive-divine-human-law/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.augustine.de-civitate-dei"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/canon-law/natural-positive-divine-human-law/sections/160-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/canon-law/natural-positive-divine-human-law/sections/160-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.holy-see.cceo-1990"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/canon-law/natural-positive-divine-human-law/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.holy-see.cic-1917"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/canon-law/natural-positive-divine-human-law/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.holy-see.cic-1983"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/canon-law/natural-positive-divine-human-law/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.thomas-aquinas.summa-theologiae"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/canon-law/natural-positive-divine-human-law/sections/10-map-and-vocabulary.tex"]
+[[review_units.family_presence]]
+family_id = "family.trent.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/canon-law/natural-positive-divine-human-law/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/canon-law/natural-positive-divine-human-law/research/source-audit.md"]
+
+[[review_units]]
+owner_id = "articles/faith/at-the-end-of-every-why"
+surface_snapshot = "sha256:c3d2e358c68f199e3781f2798aec07ced7cb46f890a5a40f93f8c25eb64ca58b"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/at-the-end-of-every-why/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.patristics.anf-npnf-schaff"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/at-the-end-of-every-why/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.thomas-aquinas.summa-theologiae"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/at-the-end-of-every-why/sections/99-references.tex"]
+
+[[review_units]]
+owner_id = "articles/faith/council-missal-and-crisis"
+surface_snapshot = "sha256:1526563fb238cb0b57b14528220857eecadb228e04e6e4577300e3e0da634c21"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.augustine.de-civitate-dei"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/council-missal-and-crisis/sections/160-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/council-missal-and-crisis/sections/150-timeline.tex"]
+[[review_units.family_presence]]
+family_id = "family.holy-see.cic-1917"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/council-missal-and-crisis/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.holy-see.cic-1983"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/council-missal-and-crisis/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-lectionary.olm-us-lectionary"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/council-missal-and-crisis/research/liturgical-development-matrix.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.1962"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/council-missal-and-crisis/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.third-edition-latin-us-english"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/council-missal-and-crisis/sections/160-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.trent.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/council-missal-and-crisis/sections/150-timeline.tex"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/council-missal-and-crisis/research/source-audit.md"]
+
+[[review_units]]
+owner_id = "articles/faith/freemasonry-and-the-catholic-church"
+surface_snapshot = "sha256:1dbf09afb4bf133aa246665c460ebbf6d5c0cf72582897f251b85451a2b7ef59"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.acta.aas-ass"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/freemasonry-and-the-catholic-church/research/prayer-provenance.md"]
+[[review_units.family_presence]]
+family_id = "family.augustine.de-civitate-dei"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/freemasonry-and-the-catholic-church/sections/130-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/freemasonry-and-the-catholic-church/sections/130-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.holy-see.cceo-1990"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/freemasonry-and-the-catholic-church/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.holy-see.cic-1917"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/freemasonry-and-the-catholic-church/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.holy-see.cic-1983"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/freemasonry-and-the-catholic-church/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.thomas-aquinas.summa-theologiae"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/freemasonry-and-the-catholic-church/sections/130-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/freemasonry-and-the-catholic-church/research/scope.md"]
+
+[[review_units]]
+owner_id = "articles/faith/ontological-vertigo"
+surface_snapshot = "sha256:707bd565718bd9a67706c995a5165349d220fc5c8b010a29ae6d6109597ee6d8"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/ontological-vertigo/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.patristics.anf-npnf-schaff"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/ontological-vertigo/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.thomas-aquinas.summa-theologiae"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/ontological-vertigo/sections/99-references.tex"]
+
+[[review_units]]
+owner_id = "articles/faith/the-due-return"
+surface_snapshot = "sha256:e2d7927c7352e0b790ac8996b1a2d7f4e337c80f0e4fecf8d5bc8e96daac69a9"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.augustine.de-civitate-dei"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/the-due-return/research/source-bindings.toml"]
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/the-due-return/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.holy-see.cceo-1990"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/the-due-return/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.holy-see.cic-1983"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/the-due-return/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.patristics.anf-npnf-schaff"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/the-due-return/research/source-bindings.toml"]
+[[review_units.family_presence]]
+family_id = "family.thomas-aquinas.summa-theologiae"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/the-due-return/sections/99-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/the-due-return/research/source-audit.md"]
+
+[[review_units]]
+owner_id = "articles/faith/trustful-surrender-to-divine-providence"
+surface_snapshot = "sha256:067d44e82a7f7d9b79b67566314e3de25708583daf58181298ec4633ee88c27a"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.augustine.de-civitate-dei"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/trustful-surrender-to-divine-providence/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/trustful-surrender-to-divine-providence/sections/00-question-thesis.tex"]
+[[review_units.family_presence]]
+family_id = "family.thomas-aquinas.summa-theologiae"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/trustful-surrender-to-divine-providence/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.trent.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/trustful-surrender-to-divine-providence/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/trustful-surrender-to-divine-providence/research/source-audit.md"]
+
+[[review_units]]
+owner_id = "biographies/origen"
+surface_snapshot = "sha256:070b27ef1235907413c982e9eb0190305742aa4e95d9a0ec48f4c6abea165871"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/biographies/origen/sections/130-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.patristics.anf-npnf-schaff"
+basis = "trace-scan"
+record_paths = ["src/gpt/biographies/origen/research/source-audit.md"]
+
+[[review_units]]
+owner_id = "biographies/saint-augustine-of-hippo"
+surface_snapshot = "sha256:94a8159635644179849a660b90cbf24e08fdb2fca0d5e027d008710572078d1b"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.augustine.de-civitate-dei"
+basis = "trace-scan"
+record_paths = ["src/gpt/biographies/saint-augustine-of-hippo/research/source-bindings.toml"]
+
+[[review_units]]
+owner_id = "biographies/saint-jerome"
+surface_snapshot = "sha256:cb3cac0965e92e60c7e532b5b9f55be5932467108ba746bcaa95995d6781d31a"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.patristics.anf-npnf-schaff"
+basis = "trace-scan"
+record_paths = ["src/gpt/biographies/saint-jerome/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/biographies/saint-jerome/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.trent.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/biographies/saint-jerome/research/source-audit.md"]
+
+[[review_units]]
+owner_id = "biographies/saint-paul"
+surface_snapshot = "sha256:e4fff885ce507d5c9dd2f856e79a2a0bd4f9b0177b00f697f6ed384b9fbd6398"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/biographies/saint-paul/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.patristics.anf-npnf-schaff"
+basis = "trace-scan"
+record_paths = ["src/gpt/biographies/saint-paul/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/biographies/saint-paul/research/source-audit.md"]
+
+[[review_units]]
+owner_id = "biographies/saint-peter"
+surface_snapshot = "sha256:46404d42dd7222063491edc9f4af87fc8a8177f5309454ad9bba2c10f7c6a86d"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/biographies/saint-peter/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.patristics.anf-npnf-schaff"
+basis = "trace-scan"
+record_paths = ["src/gpt/biographies/saint-peter/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/biographies/saint-peter/research/source-audit.md"]
+
+[[review_units]]
+owner_id = "biographies/saint-robert-bellarmine"
+surface_snapshot = "sha256:6458c512c04362c18d021fd2d34b23dea541ea3e3f876a6755b7b97a2f0d5c8b"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.acta.aas-ass"
+basis = "trace-scan"
+record_paths = ["src/gpt/biographies/saint-robert-bellarmine/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/biographies/saint-robert-bellarmine/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.trent.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/biographies/saint-robert-bellarmine/sections/20-louvain-ordination-and-method.tex"]
+
+[[review_units]]
+owner_id = "biographies/saint-thomas-aquinas"
+surface_snapshot = "sha256:e54f60708a9b407a8d678a288c35fa349f71e4963627902489009d6d3fcabbdd"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/biographies/saint-thomas-aquinas/sections/140-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.third-edition-latin-us-english"
+basis = "trace-scan"
+record_paths = ["src/gpt/biographies/saint-thomas-aquinas/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.thomas-aquinas.summa-theologiae"
+basis = "trace-scan"
+record_paths = ["src/gpt/biographies/saint-thomas-aquinas/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/biographies/saint-thomas-aquinas/research/source-audit.md"]
+
+[[review_units]]
+owner_id = "biographies/tertullian"
+surface_snapshot = "sha256:e512662b9999326379c8593b7a3daa12886c20743bfcd132c51c623a38aaf5e9"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/biographies/tertullian/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.patristics.anf-npnf-schaff"
+basis = "trace-scan"
+record_paths = ["src/gpt/biographies/tertullian/research/source-audit.md"]
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/00-course-guide"
+surface_snapshot = "sha256:fa9d02aa95bbdb33be6cd69e891686117ce82bac1e35e34b086ab491bb38f2f3"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.roman-missal.1962"
+basis = "trace-scan"
+record_paths = ["src/gpt/curriculums/ecclesiastical-latin/00-course-guide/main.tex"]
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/00-memory-workbook"
+surface_snapshot = "sha256:473ce249d879dc2144b33dab15f04f6308d64bd34973fc2903fe20b4076dd853"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.roman-missal.1962"
+basis = "trace-scan"
+record_paths = ["src/gpt/curriculums/ecclesiastical-latin/00-memory-workbook/main.tex"]
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/00-reference-grammar"
+surface_snapshot = "sha256:e2c8110d9214dcc7dc9b5dbf2a70c8b07ad44208302951871cc0747b31064392"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement"
+surface_snapshot = "sha256:5311566edf827fe328aea1bdade54ca51e57ec1d7dd4876233d6912e9763e93f"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/01-foundations/02-noun-systems"
+surface_snapshot = "sha256:5369cc4b19275d84599930ec701c6873ee38f9053d5759d82be422d9da0ff293"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/01-foundations/03-nouns-and-adjectives"
+surface_snapshot = "sha256:73a61171c15cc9f41b098352ca87d07c35b5fd7303676c2be7a8c916ad936f55"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/01-foundations/04-being-and-present-action"
+surface_snapshot = "sha256:a001f59f3201c7d328389d6dea827444fdeb7459e83100a5a77a6794c807cb66"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/01-foundations/05-perfect-passive-and-deponents"
+surface_snapshot = "sha256:7817bbc179062baad5c7aba7c6fed15d2d65d15d409fd3017b877c43d7f4b23d"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/01-foundations/06-pronouns-prepositions-and-reading"
+surface_snapshot = "sha256:d69ecb454e1122ff5e21ba3f5aee625243fe0a810b377fc595ec859e20004ba4"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/02-core-grammar/07-reference-comparison-and-number"
+surface_snapshot = "sha256:d78126bce655f3cd59c05643fb398caec9e9524e87b13feaf546a28a06cc8682"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/02-core-grammar/08-infinitives-participles-and-absolutes"
+surface_snapshot = "sha256:bddc6f0f656380fb721be43de7aa57b81ccc919db53593f2b06cdc7584f12150"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/02-core-grammar/09-subjunctive-system-purpose-result"
+surface_snapshot = "sha256:c46f5076d7ee87e6402ab58f6daaca0f3e09afe12070326131a85f7e6374c892"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/02-core-grammar/10-circumstance-conditions-characteristic"
+surface_snapshot = "sha256:0c892dca555354daa3f46226ac569b40235a7e74f8c63abb0193e5df8b919d10"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/02-core-grammar/11-commands-wishes-verbal-nouns"
+surface_snapshot = "sha256:29f8e5e70f73d193672cba68efb1920362aa435af67e3153f1b9847cf8d548ea"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-compression"
+surface_snapshot = "sha256:ba1ac5565eef22f0e543c1f27da7b015033ffa130e8c4385d13c8c65c834d9eb"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/03-missal-reading/13-reader-method-and-ordinary"
+surface_snapshot = "sha256:3d7f83ad0cbeb2e30a2f32a46dc0fbe33b153ef07c51c233daff7fafd5b00627"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/03-missal-reading/14-orations-and-petitions"
+surface_snapshot = "sha256:e83bb3fdf31448913a4824686609741490598fc79720cb29bcf50c5fe758e949"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/03-missal-reading/15-lessons-epistles-and-gospels"
+surface_snapshot = "sha256:fc1aaa299133ad8c62584ba449e13ced4dd1065e64f150a0edb09c7e5023175b"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/03-missal-reading/16-chants-prefaces-and-canon"
+surface_snapshot = "sha256:5084eac7e7e491806e18001d798361cc2c74289b700be347703f07b9a8d7c0b6"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/03-missal-reading/17-temporal-sanctoral-and-commons"
+surface_snapshot = "sha256:9aae0532fc0f29047ac460df26c35b6369ab36238784914571fa482bf22c186f"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/03-missal-reading/18-holy-week-requiem-and-complete-mass"
+surface_snapshot = "sha256:400d0a615565546094c92bc37b7ed9e7812266a63f1589179417116643dd2395"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-texture"
+surface_snapshot = "sha256:5290c07416d076b0ed169074ea0370d1c19040bbd210933d8a5c9988b3f1ffbe"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-texture/research/module-map.md"]
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/04-advanced/20-allusion-rhetoric-and-periodic-prose"
+surface_snapshot = "sha256:766b41f35bd25c41856d2e89d7dec399872767afbf3bd658d8a7ae91f83ef268"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/04-advanced/21-collation-and-controlled-imitation"
+surface_snapshot = "sha256:940a521927de4b6c6d9d82680671bbd2be5a87f786c768859076e96bc7608f78"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-and-independent-research"
+surface_snapshot = "sha256:3b23e24ff0d8fcf5bf2f36567b65cce754af12029eeb3e8ccd544f74b90cda9d"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/01-textual-prosody"
+surface_snapshot = "sha256:b213d53bbd9f37a1ebaa7e186b2b9b85d8d5eda667045b43a0c7e58f7c77dc3b"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/02-hexameter"
+surface_snapshot = "sha256:d9c634e55ccd8d40550ea0c894f873d934e625238d05d7a8f71c2ba6d45f1ba1"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/03-elegiac-verse"
+surface_snapshot = "sha256:752065199a5a9228f34f665e05da32ac5d318a8526639e02df7d461a627225c2"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/04-lyric-meters"
+surface_snapshot = "sha256:fb825c275447bf36fa6e9e7032fc034be4518ef66f488b92095a3b4944c2d925"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/05-christian-poetics"
+surface_snapshot = "sha256:be338eff5ace10004697a305b8c5fa05e783e5fb033ba7373f96f1b68b38e753"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/06-rhythmic-hymnody-and-sequences"
+surface_snapshot = "sha256:d4a6814903433d9eba772b49c9a893385a11aae266e45fd2dec6222b65620c54"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/07-poetic-commentary"
+surface_snapshot = "sha256:1541ebcecd259adec520d358d574a4d1102835cb584dcaff0cd2fe08108d2673"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/08-verse-composition"
+surface_snapshot = "sha256:3d6df410f38b4b3d4c3611ba9f0312b039eb09ff213f2f6235c61f92a100ec39"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/05-stage-assessments/01-foundations"
+surface_snapshot = "sha256:50e72e644bc4d3d9679586139ea937d36256404b1a7de131bcaa3f8b9e3fd4cf"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/05-stage-assessments/02-core-grammar"
+surface_snapshot = "sha256:5410c6bed4b7d5d12a4b0a188fbf386619a1f67ab760cff6a95ce108ba41fef9"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/05-stage-assessments/03-missal-reading"
+surface_snapshot = "sha256:8f7c87a00b77435625f777725f820af520ea331d457d0a420e86619740fd3064"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced"
+surface_snapshot = "sha256:b45eddf9247bdebb69953968febbeeb23bb9edb816b6c898cec3621dad801395"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "devotions/novenas/00-ascension-to-pentecost"
+surface_snapshot = "sha256:a98f168e6fc8795ca1bb6405d31d390c2df8fee64403eb5a1825992b14ef48bb"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/devotions/novenas/00-ascension-to-pentecost/sections/90-hymns.tex"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.1962"
+basis = "trace-scan"
+record_paths = ["src/gpt/devotions/novenas/00-ascension-to-pentecost/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/devotions/novenas/00-ascension-to-pentecost/days/06-sevenfold-gift.tex"]
+[[review_units.family_presence]]
+family_id = "family.thomas-aquinas.summa-theologiae"
+basis = "trace-scan"
+record_paths = ["src/gpt/devotions/novenas/00-ascension-to-pentecost/days/06-sevenfold-gift.tex"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/devotions/novenas/00-ascension-to-pentecost/days/03-mary-church.tex"]
+
+[[review_units]]
+owner_id = "devotions/novenas/00-ascension-to-pentecost-daily-prayer"
+surface_snapshot = "sha256:c6f63faad6bead67977eae17bee0734e142ee7d760ece8e0bc49d4db9dc49d65"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.roman-missal.1962"
+basis = "trace-scan"
+record_paths = ["src/gpt/devotions/novenas/00-ascension-to-pentecost-daily-prayer/main.tex"]
+
+[[review_units]]
+owner_id = "devotions/novenas/10-our-lady-of-mount-carmel"
+surface_snapshot = "sha256:bf6a32b97bb8f2c1b55759e9027df561e8915fbcaedcbc95b2863f8f0b494d5a"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/devotions/novenas/10-our-lady-of-mount-carmel/sections/99-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.1962"
+basis = "trace-scan"
+record_paths = ["src/gpt/devotions/novenas/10-our-lady-of-mount-carmel/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.third-edition-latin-us-english"
+basis = "trace-scan"
+record_paths = ["src/gpt/devotions/novenas/10-our-lady-of-mount-carmel/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.thomas-aquinas.summa-theologiae"
+basis = "trace-scan"
+record_paths = ["src/gpt/devotions/novenas/10-our-lady-of-mount-carmel/sections/99-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/devotions/novenas/10-our-lady-of-mount-carmel/research/source-audit.md"]
+
+[[review_units]]
+owner_id = "devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer"
+surface_snapshot = "sha256:1442190272e7a4c5e8ec7fffd7278a40d476a11729cc2620e6f3a56a8f943916"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.roman-missal.third-edition-latin-us-english"
+basis = "trace-scan"
+record_paths = ["src/gpt/devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer/research/derivation.md"]
+
+[[review_units]]
+owner_id = "history/biblical-translations/01-septuagint"
+surface_snapshot = "sha256:8e16629f677fdbbf3ade88a07845f0acfc9b2ca1a85c0a75d36ab2381f3fcfcf"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.augustine.de-civitate-dei"
+basis = "trace-scan"
+record_paths = ["src/gpt/history/biblical-translations/01-septuagint/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.patristics.anf-npnf-schaff"
+basis = "trace-scan"
+record_paths = ["src/gpt/history/biblical-translations/01-septuagint/research/source-audit.md"]
+
+[[review_units]]
+owner_id = "history/biblical-translations/02-vulgate"
+surface_snapshot = "sha256:d15ceb5e6d5130644a21046da093db811e83941200f448f1a103118aecdfca01"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.augustine.de-civitate-dei"
+basis = "trace-scan"
+record_paths = ["src/gpt/history/biblical-translations/02-vulgate/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.patristics.anf-npnf-schaff"
+basis = "trace-scan"
+record_paths = ["src/gpt/history/biblical-translations/02-vulgate/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/history/biblical-translations/02-vulgate/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.trent.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/history/biblical-translations/02-vulgate/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/history/biblical-translations/02-vulgate/research/source-audit.md"]
+
+[[review_units]]
+owner_id = "history/catholic-parish-histories/01-st-stanislaus-milwaukee"
+surface_snapshot = "sha256:531e770e752dbdf0de5fa8f10d49c3fc6451348bb6f7586386549de6ba9d686f"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.roman-missal.1962"
+basis = "trace-scan"
+record_paths = ["src/gpt/history/catholic-parish-histories/01-st-stanislaus-milwaukee/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/history/catholic-parish-histories/01-st-stanislaus-milwaukee/sections/70-midcentury-remaking.tex"]
+
+[[review_units]]
+owner_id = "history/catholic-parish-histories/02-st-anthony-willits"
+surface_snapshot = "sha256:5b07e300a7b2fa2d6d15295a8d2344c63d7e56dea974374ae85e4e44cda6089f"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "history/traditional-priestly-institutes/01-sspx"
+surface_snapshot = "sha256:9b7fb76baeef0d947bf7f4b963cd02ae3fd45bd745c4d9f1db09fd4e515d48fb"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.holy-see.cic-1917"
+basis = "trace-scan"
+record_paths = ["src/gpt/history/traditional-priestly-institutes/01-sspx/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.holy-see.cic-1983"
+basis = "trace-scan"
+record_paths = ["src/gpt/history/traditional-priestly-institutes/01-sspx/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.1962"
+basis = "trace-scan"
+record_paths = ["src/gpt/history/traditional-priestly-institutes/01-sspx/sections/150-timeline.tex"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/history/traditional-priestly-institutes/01-sspx/research/source-audit.md"]
+
+[[review_units]]
+owner_id = "history/traditional-priestly-institutes/02-fssp"
+surface_snapshot = "sha256:e440c73066439a905aa4b6606f57ef7cbe260f875c2d065c61a99b8d4cec4b32"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.acta.aas-ass"
+basis = "trace-scan"
+record_paths = ["src/gpt/history/traditional-priestly-institutes/02-fssp/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.holy-see.cic-1983"
+basis = "trace-scan"
+record_paths = ["src/gpt/history/traditional-priestly-institutes/02-fssp/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.1962"
+basis = "trace-scan"
+record_paths = ["src/gpt/history/traditional-priestly-institutes/02-fssp/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/history/traditional-priestly-institutes/02-fssp/research/scope.md"]
+
+[[review_units]]
+owner_id = "history/traditional-priestly-institutes/03-icksp"
+surface_snapshot = "sha256:fd36923e092b137e4b9ac1cbd79718e2f9ec2f1e0df853870a153b282c725f61"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.acta.aas-ass"
+basis = "trace-scan"
+record_paths = ["src/gpt/history/traditional-priestly-institutes/03-icksp/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.holy-see.cic-1983"
+basis = "trace-scan"
+record_paths = ["src/gpt/history/traditional-priestly-institutes/03-icksp/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.1962"
+basis = "trace-scan"
+record_paths = ["src/gpt/history/traditional-priestly-institutes/03-icksp/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/history/traditional-priestly-institutes/03-icksp/sections/140-local-variation.tex"]
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"
+surface_snapshot = "sha256:af9ddb5dab0856ce44aedaaee513ab40430d45145295012073a7e6ee58b2126f"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.acta.aas-ass"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.augustine.de-civitate-dei"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.patristics.anf-npnf-schaff"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.1962"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/00-scope-thesis.tex"]
+[[review_units.family_presence]]
+family_id = "family.thomas-aquinas.summa-theologiae"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.trent.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/source-audit.md"]
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass"
+surface_snapshot = "sha256:afbe03532c9374c03e7798b5bd4c54b2ddc1919c64743cc749e5bf2323f611ff"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass/main.tex"]
+[[review_units.family_presence]]
+family_id = "family.holy-see.cceo-1990"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.holy-see.cic-1917"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.holy-see.cic-1983"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.patristics.anf-npnf-schaff"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.1962"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.thomas-aquinas.summa-theologiae"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.trent.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass/research/scope.md"]
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday"
+surface_snapshot = "sha256:6b6213472751e4f7b133cb4da407b5fea46b46efd51b4100b37c8d4b049eca71"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.augustine.de-civitate-dei"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.1962"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday/research/scope.md"]
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost"
+surface_snapshot = "sha256:c9663ff5bae360665ad41b528b401d551da67401a304c6f22a3259886a5c7911"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.augustine.de-civitate-dei"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.patristics.anf-npnf-schaff"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.1962"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost/propers/verified.md"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost/research/scope.md"]
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost"
+surface_snapshot = "sha256:a629f3d61e95619ff31a05f4e5aafb0d999f728aad9984326e48289a34130713"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.roman-missal.1962"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost/research/scope.md"]
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost"
+surface_snapshot = "sha256:6ef38db18ecc273eb5b73e447a3d7a844b233c019f1d9edf34b32c85352506d7"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.augustine.de-civitate-dei"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost/research/source-bindings.toml"]
+[[review_units.family_presence]]
+family_id = "family.patristics.anf-npnf-schaff"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.1962"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost/propers/verified.md"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost/research/scope.md"]
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost"
+surface_snapshot = "sha256:121480c81f2c8036d5fe99b43847b80154d0f2244941ebb425d189ad0bc2d58f"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.augustine.de-civitate-dei"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.1962"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost/research/scope.md"]
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost"
+surface_snapshot = "sha256:76f0f4ca2c9dad4dd8f6c0e7f4b51e16c33a2ccf6500f9e7c97b40d31dc96a82"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.roman-missal.1962"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost/research/scope.md"]
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost"
+surface_snapshot = "sha256:7c3f076c5ed19e001d28c945c3bc0d55bb1e2a83c85dfa63a39cb6726c0e4464"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.augustine.de-civitate-dei"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.patristics.anf-npnf-schaff"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.1962"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost/propers/verified.md"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.thomas-aquinas.summa-theologiae"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.trent.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost/research/scope.md"]
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"
+surface_snapshot = "sha256:dc8d7db6e5efa135292dbc70b72555d27bd0d8302c57f2d8dbaf2d251d7bbe84"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.augustine.de-civitate-dei"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.patristics.anf-npnf-schaff"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.1962"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.thomas-aquinas.summa-theologiae"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/research/scope.md"]
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"
+surface_snapshot = "sha256:b6cc0bb2a20050cec81c87a9801a1c2c2344b19ef3c332562574b6d9f1565b79"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.augustine.de-civitate-dei"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.1962"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/main.tex"]
+[[review_units.family_presence]]
+family_id = "family.thomas-aquinas.summa-theologiae"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/research/scope.md"]
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/1962/reference/assembling-the-mass"
+surface_snapshot = "sha256:2576bbaf6eecfc0c1840450bee3b7e1ac05b8fb7ce1706fa15db3b31b1bd62b3"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.acta.aas-ass"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.1962"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/research/source-audit.md"]
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/1962/reference/liturgical-calendar"
+surface_snapshot = "sha256:d02bb454222a65d78c7ed625165e101b556d5b6b2a4de0823f554b1829934559"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.acta.aas-ass"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/99-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.1962"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.trent.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/10-construction-history.tex"]
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/comparative/two-missals-one-sacrifice"
+surface_snapshot = "sha256:54171ef0539f2943164ab42620f7b1ae3ec886bdc40e19c6b7074eb5a1326d60"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/120-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.holy-see.cic-1983"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/00-question-method.tex"]
+[[review_units.family_presence]]
+family_id = "family.roman-lectionary.olm-us-lectionary"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice/research/edition-manifest.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.1962"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.third-edition-latin-us-english"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.thomas-aquinas.summa-theologiae"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/120-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.trent.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice/research/source-audit.md"]
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"
+surface_snapshot = "sha256:d4bfd9476d2c8eba5bbdd679e60afb5a0e422ba8b9a339f8ecb248f629c4f329"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.augustine.de-civitate-dei"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.holy-see.cic-1983"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/90-sources.tex"]
+[[review_units.family_presence]]
+family_id = "family.roman-lectionary.olm-us-lectionary"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.1962"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.third-edition-latin-us-english"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/40-preparation-of-the-gifts.tex"]
+[[review_units.family_presence]]
+family_id = "family.thomas-aquinas.summa-theologiae"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.trent.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/research/source-audit.md"]
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s35-eleventh-sunday-in-ordinary-time-year-a"
+surface_snapshot = "sha256:8e790a46a6350f24e8b95e61814e4d8a8d67ea183d32e112f9d132543df6ab63"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s35-eleventh-sunday-in-ordinary-time-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.patristics.anf-npnf-schaff"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s35-eleventh-sunday-in-ordinary-time-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-lectionary.olm-us-lectionary"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s35-eleventh-sunday-in-ordinary-time-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.third-edition-latin-us-english"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s35-eleventh-sunday-in-ordinary-time-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s35-eleventh-sunday-in-ordinary-time-year-a/main.tex"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s35-eleventh-sunday-in-ordinary-time-year-a/research/scope.md"]
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s36-twelfth-sunday-in-ordinary-time-year-a"
+surface_snapshot = "sha256:12aa6bb46432ad3ce6eaf97dcda39aa544a03b935883ca975ee461eab26747ef"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s36-twelfth-sunday-in-ordinary-time-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.patristics.anf-npnf-schaff"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s36-twelfth-sunday-in-ordinary-time-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-lectionary.olm-us-lectionary"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s36-twelfth-sunday-in-ordinary-time-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.third-edition-latin-us-english"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s36-twelfth-sunday-in-ordinary-time-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s36-twelfth-sunday-in-ordinary-time-year-a/main.tex"]
+[[review_units.family_presence]]
+family_id = "family.trent.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s36-twelfth-sunday-in-ordinary-time-year-a/research/scope.md"]
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-thirteenth-sunday-in-ordinary-time-year-a"
+surface_snapshot = "sha256:1192e5d2c7874e10abb1d4048f85bfee804d4e5f4003c46813f69887123f4fdd"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.augustine.de-civitate-dei"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-thirteenth-sunday-in-ordinary-time-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-thirteenth-sunday-in-ordinary-time-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.patristics.anf-npnf-schaff"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-thirteenth-sunday-in-ordinary-time-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-lectionary.olm-us-lectionary"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-thirteenth-sunday-in-ordinary-time-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.third-edition-latin-us-english"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-thirteenth-sunday-in-ordinary-time-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-thirteenth-sunday-in-ordinary-time-year-a/main.tex"]
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-fourteenth-sunday-in-ordinary-time-year-a"
+surface_snapshot = "sha256:64e9aef7f4260bd1e0bb4841f9e41a019aeaa071f6ad9bd0568cee481679f0af"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-fourteenth-sunday-in-ordinary-time-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.patristics.anf-npnf-schaff"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-fourteenth-sunday-in-ordinary-time-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-lectionary.olm-us-lectionary"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-fourteenth-sunday-in-ordinary-time-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.third-edition-latin-us-english"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-fourteenth-sunday-in-ordinary-time-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-fourteenth-sunday-in-ordinary-time-year-a/main.tex"]
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-fifteenth-sunday-in-ordinary-time-year-a"
+surface_snapshot = "sha256:5e74744c4b464657034c310c52f2925583e0cc824704638dd2274a693aaa4f19"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-fifteenth-sunday-in-ordinary-time-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.patristics.anf-npnf-schaff"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-fifteenth-sunday-in-ordinary-time-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-lectionary.olm-us-lectionary"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-fifteenth-sunday-in-ordinary-time-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.third-edition-latin-us-english"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-fifteenth-sunday-in-ordinary-time-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-fifteenth-sunday-in-ordinary-time-year-a/research/scope.md"]
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a"
+surface_snapshot = "sha256:43ac700046f0f3d34ef977e9f59ec76c1c39b11383bba500e3b019906968fc25"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.patristics.anf-npnf-schaff"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-lectionary.olm-us-lectionary"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.third-edition-latin-us-english"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.thomas-aquinas.summa-theologiae"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/research/scope.md"]
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"
+surface_snapshot = "sha256:d3e2d1599f8b4cccaa4a6a9b5c903288f8961bf017c16003d2628dbb8141d526"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/main.tex"]
+[[review_units.family_presence]]
+family_id = "family.patristics.anf-npnf-schaff"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-lectionary.olm-us-lectionary"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.third-edition-latin-us-english"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/research/scope.md"]
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a"
+surface_snapshot = "sha256:fab81d82d6a0aa96e9dca5923abc441f238d25a62c324788a3aa536309955d7e"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.augustine.de-civitate-dei"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.patristics.anf-npnf-schaff"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-lectionary.olm-us-lectionary"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.third-edition-latin-us-english"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a/main.tex"]
+[[review_units.family_presence]]
+family_id = "family.thomas-aquinas.summa-theologiae"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a/research/scope.md"]
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s59-most-holy-body-and-blood-of-christ-year-a"
+surface_snapshot = "sha256:8c803dfdca5841ef6a0b27124a711e2d3fd4c7a127a549cf6813852d79b0e8b5"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s59-most-holy-body-and-blood-of-christ-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-lectionary.olm-us-lectionary"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s59-most-holy-body-and-blood-of-christ-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.third-edition-latin-us-english"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s59-most-holy-body-and-blood-of-christ-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s59-most-holy-body-and-blood-of-christ-year-a/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.thomas-aquinas.summa-theologiae"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s59-most-holy-body-and-blood-of-christ-year-a/research/scope.md"]
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"
+surface_snapshot = "sha256:15203db53a1be06126671a1686ff1113624204e302778df2b13bd2db113fbffd"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.roman-missal.1962"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/research/edition-manifest.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.third-edition-latin-us-english"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.trent.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/10-history.tex"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/research/source-audit.md"]
+
+[[review_units]]
+owner_id = "owner.biographies.shared"
+surface_snapshot = "sha256:df13a54a56979cec46c1f7ed548d0249257970606fc9918265bafa6deb425ae7"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "owner.curriculums.ecclesiastical-latin"
+surface_snapshot = "sha256:dc453e9110d1b1a8d2e0668f89fa9e1141d6bcc72030d71a025532a3427cf4e8"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.roman-missal.1962"
+basis = "trace-scan"
+record_paths = ["src/gpt/curriculums/ecclesiastical-latin/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/curriculums/ecclesiastical-latin/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.thomas-aquinas.summa-theologiae"
+basis = "trace-scan"
+record_paths = ["src/gpt/curriculums/ecclesiastical-latin/research/source-audit.md"]
+
+[[review_units]]
+owner_id = "owner.devotions.novenas.shared"
+surface_snapshot = "sha256:2f7f5c197d29569d28970c4f7137b3adc9fdb3aaa30ecb9f9fe349f86aaf5a73"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.roman-missal.1962"
+basis = "trace-scan"
+record_paths = ["src/gpt/devotions/novenas/shared/common-prayers.tex"]
+
+[[review_units]]
+owner_id = "owner.history.biblical-translations"
+surface_snapshot = "sha256:6a1389ba16f4f1c22315696f1e385ac95e6bda7031dbee5bc78169e0803e89b8"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "owner.history.catholic-parish-histories"
+surface_snapshot = "sha256:b15933ddfd3985da511d43db092984a24e18b87d7d9610d1671ec163ff00d935"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "owner.history.traditional-priestly-institutes"
+surface_snapshot = "sha256:ce60bfe641f64e128986a9aab51081029c034e7c423a9d28f19873618c897eb0"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en-us-2011-propers"
+surface_snapshot = "sha256:7ff90ab0517519112d67fd92ec28efc99998444ef3d12db8e45803b403d998f8"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.roman-lectionary.olm-us-lectionary"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/formula-dispositions.md"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.third-edition-latin-us-english"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/README.md"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/17/propers/verified.md"]
+
+[[review_units]]
+owner_id = "owner.theology.mariology.shared"
+surface_snapshot = "sha256:e08e4ed137fc8d38065437c7914d053f3ac83e1e8090f56e14a39510abfab61f"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "theology/heresies/heresies-in-catholic-history"
+surface_snapshot = "sha256:a472007ab7a142f7368ac53a3f893a612486f48c277a9838676b583cb2f4f8b0"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.acta.aas-ass"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/heresies/heresies-in-catholic-history/research/corpus-inventory.md"]
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/heresies/heresies-in-catholic-history/sections/00-method-and-boundaries.tex"]
+[[review_units.family_presence]]
+family_id = "family.holy-see.cceo-1990"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/heresies/heresies-in-catholic-history/sections/99-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.holy-see.cic-1983"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/heresies/heresies-in-catholic-history/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.patristics.anf-npnf-schaff"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/heresies/heresies-in-catholic-history/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/heresies/heresies-in-catholic-history/sections/95-timeline.tex"]
+[[review_units.family_presence]]
+family_id = "family.trent.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/heresies/heresies-in-catholic-history/research/source-audit-modern.md"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/heresies/heresies-in-catholic-history/research/source-audit-modern.md"]
+
+[[review_units]]
+owner_id = "theology/mariology/angelus"
+surface_snapshot = "sha256:533930b36e244e79eeb619394790bd534f2b0f4aa9a2ab973a5c79cfff655b39"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/angelus/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/angelus/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/angelus/research/source-audit.md"]
+
+[[review_units]]
+owner_id = "theology/mariology/apparitions"
+surface_snapshot = "sha256:9efa95c82531cce470990125c219edddcf794a47c4505ed223814ce0bafed4c1"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/apparitions/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.trent.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/apparitions/sections/30-legacy-origins.tex"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/apparitions/research/source-audit.md"]
+
+[[review_units]]
+owner_id = "theology/mariology/champion"
+surface_snapshot = "sha256:c1867d63c2236c91abf796ee980ca388080969cc4fcd07e71dd7dfe4db283944"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/champion/sections/99-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.holy-see.cic-1983"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/champion/sections/99-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/champion/research/source-audit.md"]
+
+[[review_units]]
+owner_id = "theology/mariology/fatima"
+surface_snapshot = "sha256:8b6edbbbfd70c484e8f02c084fa20403b2b6a4f30eaf0cc6082043ba401b4adc"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/fatima/sections/99-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/fatima/research/source-audit.md"]
+
+[[review_units]]
+owner_id = "theology/mariology/guadalupe"
+surface_snapshot = "sha256:cbae61aa3f653f56923b4d665672f645595fa3ccd16763d4a9a75bdbd90ee75f"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/guadalupe/sections/99-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/guadalupe/research/source-audit.md"]
+
+[[review_units]]
+owner_id = "theology/mariology/la-salette"
+surface_snapshot = "sha256:16c225c68b8a555352d0a265561bd59c8a40f62a022c04ad6fbe7c98bd4ec23e"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.acta.aas-ass"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/la-salette/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/la-salette/sections/99-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.holy-see.cic-1917"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/la-salette/sections/55-roman-discipline.tex"]
+[[review_units.family_presence]]
+family_id = "family.holy-see.cic-1983"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/la-salette/sections/99-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/la-salette/research/source-audit.md"]
+
+[[review_units]]
+owner_id = "theology/mariology/lourdes"
+surface_snapshot = "sha256:5058336908527653ccdd6ee401da34a59228e7d0476a30704855e0f14aaeb28a"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/lourdes/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/lourdes/research/source-audit.md"]
+
+[[review_units]]
+owner_id = "theology/mariology/marian-dogmas"
+surface_snapshot = "sha256:25d3cce80578eb217719a6b859d4bf78bae89c16c9ffccf5e24c33dc582f00fc"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/marian-dogmas/sections/99-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/marian-dogmas/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.thomas-aquinas.summa-theologiae"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/marian-dogmas/sections/20-divine-motherhood.tex"]
+[[review_units.family_presence]]
+family_id = "family.trent.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/marian-dogmas/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/marian-dogmas/research/source-audit.md"]
+
+[[review_units]]
+owner_id = "theology/mariology/regina-coeli"
+surface_snapshot = "sha256:74d09fb36ddeee9193d607ddaeb92389b498d6de30d0d9639743ae2d0b333bf1"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.acta.aas-ass"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/regina-coeli/sections/99-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/regina-coeli/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/regina-coeli/sections/99-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/regina-coeli/research/source-audit.md"]
+
+[[review_units]]
+owner_id = "theology/mariology/rosary"
+surface_snapshot = "sha256:8ab8476de8cc6656a536a78c7eb1a48a759dd8661d1e3e69fb2072d11ab6db33"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/rosary/sections/99-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.trent.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/rosary/sections/50-luminous.tex"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/rosary/research/source-audit.md"]
+
+[[review_units]]
+owner_id = "theology/sacraments"
+surface_snapshot = "sha256:a05cb1f1394949cacf2be1df057c7626cd356278edbdf6e22871ea84d9b69ee5"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/sacraments/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.holy-see.cceo-1990"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/sacraments/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.holy-see.cic-1917"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/sacraments/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.holy-see.cic-1983"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/sacraments/sections/90-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.roman-missal.1962"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/sacraments/sections/13-eucharist.tex"]
+[[review_units.family_presence]]
+family_id = "family.scripture.vulgate-editions"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/sacraments/sections/20-healing-introduction.tex"]
+[[review_units.family_presence]]
+family_id = "family.thomas-aquinas.summa-theologiae"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/sacraments/sections/90-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.trent.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/sacraments/research/scope.md"]
+[[review_units.family_presence]]
+family_id = "family.vatican-ii.acts"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/sacraments/sections/30-communion-introduction.tex"]
+
+[[review_units]]
+owner_id = "theology/sacraments-at-a-glance"
+surface_snapshot = "sha256:af15439152ffaa7ca7c1f15d2682a0b870f479876c1a73f8c7c4cc749808cb9e"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "theology/virtues"
+surface_snapshot = "sha256:1d2409278b443e007d0e08e0c26c7361b22d1adfdb157485178da90a96227e3e"
+review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.augustine.de-civitate-dei"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/virtues/research/source-bindings.toml"]
+[[review_units.family_presence]]
+family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/virtues/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.patristics.anf-npnf-schaff"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/virtues/research/source-bindings.toml"]
+[[review_units.family_presence]]
+family_id = "family.thomas-aquinas.summa-theologiae"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/virtues/research/scope.md"]
