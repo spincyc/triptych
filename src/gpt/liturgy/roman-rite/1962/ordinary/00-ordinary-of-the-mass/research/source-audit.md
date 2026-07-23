@@ -33,7 +33,7 @@ The movement-shaped rewrite received a second direct facsimile collation on 2026
 | --- | --- | --- |
 | Council of Trent, Sessions XIII and XXII | Eucharist chs. 1--5/canons 1--4; Mass chs. 1--9/canons 1--9 | Real presence and transubstantiation; one sacrifice of Calvary sacramentally present; priesthood; propitiation; legitimacy of the Canon, rites, and quiet prayer |
 | Pius XII, *Mediator Dei* | nos. 20--23, 47--59, 68--78, 80--104 | Liturgy as public worship of the Mystical Body; Christ's principal priesthood; ordered participation; sacrifice and Communion; legitimate development |
-| Vatican II, *Sacrosanctum Concilium* | nos. 7, 14, 47--58 | Christ's liturgical presence; Paschal sacrifice; participation; unity of Word and Eucharist; parts and their relation |
+| Vatican II, *Sacrosanctum Concilium* | nos. 7, 14, 47--48, 50, 56 | Christ's liturgical presence; Paschal sacrifice; participation; unity of Word and Eucharist; parts and their relation |
 | Vatican II, *Lumen gentium*; *Presbyterorum ordinis* | LG 10--11; PO 2, 5 | Essential distinction and ordered relation of common and ministerial priesthood; priestly ministry in Eucharistic worship |
 | Vatican II, *Lumen gentium* | LG 60--62 | Mary's maternal intercession is wholly subordinate to Christ's unique mediation; doctrinal control for the Leonine Marian prayers |
 | *Catechism of the Catholic Church* | 1066--1209; 1322--1419; 1544--1553 | Sacramental economy; Eucharistic structure, sacrifice, presence, banquet, fruits, and ministerial priesthood |
