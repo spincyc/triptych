@@ -91,7 +91,7 @@ The article's three summary formulas are:
 2. Exod 19–20 and Deut 5 on deliverance and covenant preceding the Decalogue.
 3. Psalm 116 as the reader-facing question of impossible return, answered by receiving the cup, invoking God, thanksgiving, vows, and public worship.
 4. The parable of the two sons on deed and speech; the two tablets as order toward God and justice among persons; Christ's summary in love of God and neighbor; and Gethsemane as Christ's real human consent.
-5. Irenaeus, *Against Heresies* IV.14, 17–18, on divine non-need, service for creaturely good, sacrifice, and justice.
+5. Irenaeus, *Against Heresies* IV.14.1–3, 17.1, and 18.1–6, on divine non-need, service for creaturely good, instruction away from idols, sacrifice, and justice.
 6. Justin, *First Apology* 67, as early witness to common Sunday Scripture, prayer, Eucharist, Communion, and mercy.
 7. Augustine, *City of God* X.1, 3, 5–6, 19–20, on *latria*, true sacrifice, and the Church's self-offering through Christ.
 8. Gregory Nazianzen, *Oration* 14.23–25 and 39.8–10, on received goods answered in mercy and on grace, commandment, purification, illumination, and desire; Chrysostom, *Homilies on Matthew* 50.3–4, on Eucharistic honor and the poor; Teresa, *Interior Castle* V.3 and VII.4, on prayer bearing works.
@@ -159,15 +159,15 @@ The article's three summary formulas are:
 
 ## Rights and quotation boundary
 
-The article uses only brief, claim-driven source phrases. Scripture, official texts, patristic wording, Thomistic translations, current clinical resources, and online source wrappers remain outside the project's CC BY 4.0 grant. Public-domain ANF, NPNF, and the identified 1929 Alphonsus edition are research aids. Corpus Thomisticum supplies checked Latin loci; no bulk corpus text is reproduced. The International OCD Foundation pages are paraphrased without direct quotation. No modern copyrighted commentary or Scripture translation is incorporated at length.
+The article uses only brief, claim-driven source phrases. Scripture, official texts, patristic wording, Thomistic translations, current clinical resources, and online source wrappers remain outside the project's CC BY 4.0 grant. Public-domain ANF, NPNF, and the identified 1929 Alphonsus edition are research aids. The reusable source library retains the exact public-domain Buffalo 1887 ANF raw OCR and automated page map, with the facsimile registered remotely; those artifacts remain outside the project's CC BY 4.0 grant. Corpus Thomisticum supplies checked Latin loci; no bulk corpus text is reproduced in the article. The International OCD Foundation pages are paraphrased without direct quotation. No modern copyrighted commentary or Scripture translation is incorporated at length.
 
 ## Review state
 
-- Completed for the current source: profile routing; exact-locus Scripture, patristic, mystical, monastic, Alphonsian, Thomistic, catechetical, conciliar, Christological, sacramental, and universal Latin current-law audit; the International OCD Foundation clinical-boundary check; jurisdiction, authority, act/virtue/merit, satisfaction, suffering, culpability, ascetical-safety, and negative-claim boundary drafting; rights review; and trilogy-wide rhetorical and series-coherence review.
+- Completed for the current source: profile routing; exact-locus Scripture, patristic, mystical, monastic, Alphonsian, Thomistic, catechetical, conciliar, Christological, sacramental, and universal Latin current-law audit; exact Buffalo 1887 ANF facsimile and OCR checks for Irenaeus IV.14.1–3, IV.17.1, and IV.18.1–6, including correction of the former “turn from idols” citation mismatch; the International OCD Foundation clinical-boundary check; jurisdiction, authority, act/virtue/merit, satisfaction, suffering, culpability, ascetical-safety, and negative-claim boundary drafting; rights review; and trilogy-wide rhetorical and series-coherence review.
 - Prior artifact record only: the preceding source snapshot received repeated settled builds and full production review. Its 14-page installed PDF had SHA-256 `8e16272509e6dc9e92eef4f26665077a46025fd5230977394787f03e06a9a314`. It predates the present revision and is not a reviewed representation of the current source.
-- Current artifact record: the revised source received a settled multipass build; clean fatal-error, undefined-reference, overflow, underflow, and layout-warning scans; extracted-text, metadata, pagination, PDF-structure, and embedded-font checks; bounded raster and contact-sheet review; and individual visual inspection of all 18 pages. A forced rebuild reproduced the reviewed bytes exactly. The installed PDF at `doc/gpt/articles/faith/the-due-return.pdf` has SHA-256 `743a17205fa43aded5c17e7ed463cd94261f227efc40ca625ff26fc674e44a5f`.
-- Publication state: the exact installed snapshot is cataloged and
-  release-cleared under the 23 July 2026 exact-byte exception. That operational
-  exception supplies no missing review, legal opinion, or ecclesiastical
-  approval and does not alter the immutable artifact.
+- Current artifact record: the revised source received a settled multipass build; clean fatal-error, undefined-reference, overflow, underflow, and layout-warning scans; extracted-text, metadata, pagination, PDF-structure, and embedded-font checks; bounded raster and contact-sheet review; and individual visual inspection of all 18 pages. A forced rebuild reproduced the reviewed bytes exactly. The installed PDF at `doc/gpt/articles/faith/the-due-return.pdf` has SHA-256 `96aacaa8e75509964dba53aacfcc9ce5338dc22fe467cafc63b7cef50d59af75`.
+- Publication state: the rebuilt installed snapshot differs from the exact bytes
+  cleared under the 23 July 2026 exception and has no release clearance. The
+  release manifest remains outside this conflict resolution and still binds
+  only the predecessor bytes; renewed exact-snapshot authorization is required.
 - Outstanding: independent scriptural, patristic, Thomistic, moral-theological, mystical-theological, Christological, liturgical, Latin-canonical, literary, clinical, and ecclesiastical review. No imprimatur, nihil obstat, legal opinion, or ecclesiastical approval is claimed.

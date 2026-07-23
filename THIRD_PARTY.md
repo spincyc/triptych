@@ -38,6 +38,18 @@ referenced by the first XML file reproduces a specimen from the 1899 volume and
 is recorded as public domain in the United States. The underlying historical
 edition, digital encoding, and support image remain distinct rights objects.
 
+The retained Internet Archive OCR and automated page-number map for *The
+Ante-Nicene Fathers*, volume 1, reproduce a Buffalo 1887 publication carrying
+an 1885 copyright notice. The volume and notice are public domain in the United
+States, and Internet Archive records the item as not in copyright in that
+region. The exact uncorrected OCR and generated pagination data are retained as
+locating and research derivatives; they are not facsimiles, corrected
+transcriptions, or independent textual witnesses. The Roberts--Rambaut
+translation and A. Cleveland Coxe's editorial prefaces and bracketed notes
+retain their public-domain status and are not offered under Triptych's CC BY
+4.0 license. OCR errors must not be attributed to the historical translators,
+and Coxe's editorial matter must not be attributed to Irenaeus.
+
 ## Liturgical and Scriptural Texts
 
 Scripture, Missal formularies, Orders of Mass, rubrics, chants, and texts from

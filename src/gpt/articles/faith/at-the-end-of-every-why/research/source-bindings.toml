@@ -1,4 +1,4 @@
-schema = 1
+schema = 2
 record_type = "bindings"
 document = "articles/faith/at-the-end-of-every-why"
 
@@ -8,3 +8,44 @@ loci = ["221", "257", "1812-1829", "1965-1974", "1987-1995", "1996-2005", "2006-
 role = "textual-control"
 states = ["cataloged"]
 context = "The article uses these official English Catechism loci to control its synthesis of Trinitarian love, charity and friendship, the New Law, justification, grace, merit, and religion. The claim matrix especially relies on 1822, 1827-1828, 1972, 1992, 2010, and 2095. The publication-local audit was checked through 2026-07-20, but only some cited Vatican pages appear in the source-audit witness list and no exact artifact fingerprint was retained; this binding therefore preserves the edition-locus verification ceiling without claiming central inspection or verification."
+
+[[bindings]]
+source_id = "segment.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.ia-djvu-ocr-12cdc519"
+role = "lead"
+states = ["cataloged", "acquired"]
+context = "The complete translated body of Against Heresies in the exact retained ANF volume 1 OCR is available for later work-wide examination. This article did not thereby search or inspect the whole constituent, and the OCR remains subordinate to the separately registered facsimile."
+source_fingerprint = "sha256:ea00f29ae6ab077695602577ced76ec07fe111afca2d4fd185be95b3988e792d"
+
+[[bindings]]
+source_id = "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.13.1-4.ocr"
+loci = ["4.13.1-4"]
+role = "lead"
+states = ["cataloged", "acquired", "inspected"]
+context = "The exact OCR ranges were inspected as a reusable locator for Irenaeus's movement from fulfilled law through the fuller obedience of liberty to servants made friends. OCR wording does not control the article."
+source_fingerprint = "sha256:5b24d4c12a92da2b928dbd467521b296e9c6558f9d138d98de8d3a028e1ab602"
+
+[[bindings]]
+source_id = "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.13.1-4.facsimile"
+loci = ["4.13.1-4"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete sections were visually checked in the exact Buffalo 1887 ANF facsimile for the article's claims about fulfilled law, the greater obedience of liberty, and servants made friends. The check does not make this translation a critical text."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:148627e9add70b7c07950bbdb3cbbac2b516cdeb1fa7001ab6eec6cd6d6f0a3e"
+
+[[bindings]]
+source_id = "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.14.1.ocr"
+loci = ["4.14.1"]
+role = "lead"
+states = ["cataloged", "acquired", "inspected"]
+context = "The exact OCR ranges were inspected as a reusable locator for divine non-need and service benefiting the creature. OCR wording does not control the article."
+source_fingerprint = "sha256:79acf71691e1f974fcd9eec6cdf588be79955c978e5a9187615b530dced28089"
+
+[[bindings]]
+source_id = "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.14.1.facsimile"
+loci = ["4.14.1"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete section was visually checked in the exact Buffalo 1887 ANF facsimile for the article's claim that service benefits the creature rather than supplying a need in God. The check does not make this translation a critical text."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:5d8d4d0ddf0416e0f6910eb9d294eef6f4c953a00996869274e1b31e13270eb4"

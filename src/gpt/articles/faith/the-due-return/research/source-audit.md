@@ -1,6 +1,6 @@
 # Source Audit — The Due Return
 
-The legal currentness audit was refreshed through 23 July 2026. The scriptural, sacramental, Christological, Thomistic, Teresian, Benedictine, Carmelite, and Alphonsian loci and the International OCD Foundation clinical-boundary resources added in the present revision were checked on 23 July 2026. Public-domain English translations are working witnesses unless otherwise stated. Consequential claims are governed by identified work and exact locus, not by a claim that an online edition is critical or that an English canonical rendering is the authoritative legislative text.
+The legal currentness audit was refreshed through 23 July 2026. The scriptural, sacramental, Christological, Thomistic, Teresian, Benedictine, Carmelite, and Alphonsian loci and the International OCD Foundation clinical-boundary resources added in the present revision were checked on 23 July 2026. The exact Buffalo 1887 ANF Irenaeus passages were checked against their facsimile and raw OCR on that date. Public-domain English translations are working witnesses unless otherwise stated. Consequential claims are governed by identified work and exact locus, not by a claim that an online edition is critical or that an English canonical rendering is the authoritative legislative text.
 
 ## Core claim-to-source matrix
 
@@ -13,7 +13,7 @@ The legal currentness audit was refreshed through 23 July 2026. The scriptural, 
 | Doing a due act before affection matures is not hypocrisy merely on that account; Christ's two sons are distinguished by action rather than deferential speech. | Matt 21:28–31. | Scriptural governing witness for action before affection. It does not identify external compliance with complete virtue. |
 | Love of God and justice toward the visible neighbor cannot be divided. | Matt 22:34–40; Rom 13:8–10; Jas 1:22–27; 1 John 4:19–21. | Scripture; governs the two directions of the due and prevents cultic reduction. |
 | God did not create or command because he needed human service; service benefits the creature through fellowship with God. | Irenaeus, *Against Heresies* IV.14.1–2. | Patristic witness. It does not reduce worship to subjective therapy or deny real divine excellence. |
-| Sacrifice and observance do not supply a divine need and are falsified when severed from obedience and justice. | Irenaeus, *Against Heresies* IV.17.1; 18.1–6. | Patristic witness within Irenaeus's anti-heretical and salvation-historical argument. |
+| Pedagogical observance leads a people prone to idols toward true service; sacrifice and observance do not supply a divine need and are falsified when severed from obedience and justice. | Irenaeus, *Against Heresies* IV.14.3; 17.1; 18.1–6. | Patristic witness within Irenaeus's anti-heretical and salvation-historical argument. The added IV.14.3 locus corrects the former citation mismatch for “turn from idols.” |
 | Early Christians assembled on Sunday for Scripture, common prayer, Eucharistic thanksgiving and Communion, and care for those in need. | Justin Martyr, *First Apology* 67. | Mid-second-century apologetic witness, not by itself current law or proof of every later discipline. |
 | True sacrifice is an act ordered to holy fellowship with God; the redeemed city offers itself through Christ the High Priest. | Augustine, *City of God* X.6, with X.1, 3, 5, 19–20. | Patristic theology of worship and sacrifice; preserves both inward offering and ecclesial-sacramental form. |
 | The faithful offer the divine Victim and themselves with him; ordinary life becomes spiritual sacrifice through Christ and is brought into the Eucharistic oblation. | *Sacrosanctum Concilium* 47–48; *Lumen Gentium* 10–11, 34. | Conciliar account of participation and self-offering. The Church's self-offering depends wholly upon Christ's perfect prior oblation. |
@@ -71,13 +71,13 @@ The short phrases “Who has given him anything that he may be repaid?”, “Ho
 
 | Witness | Exact loci | Checked role and limit |
 | --- | --- | --- |
-| St. Irenaeus | *Against Heresies* IV.14.1–2; IV.17.1; IV.18.1–6 | God needs neither humanity nor service; command and sacrifice order the creature to life, obedience, justice, and communion. Immediate anti-heretical context and salvation history are retained. |
+| St. Irenaeus | *Against Heresies* IV.14.1–3; IV.17.1; IV.18.1–6 | God needs neither humanity nor service; command and sacrifice order the creature to life, obedience, justice, and communion. IV.14.3 supplies the exact “turn from idols” locus. Immediate anti-heretical context and salvation history are retained. |
 | St. Justin Martyr | *First Apology* 67 | Sunday assembly joins Scripture, prayer, Eucharist, and almsgiving. Apologetic description is not current universal legislation. |
 | St. Augustine | *City of God* X.1, 3, 5–6, 19–20 | *Latria*, true religion, signs, inward sacrifice, the redeemed city, Christ's prior sacrifice, and divine non-need. “Every work” remains qualified by its order to holy fellowship and the supreme good. |
 | St. Gregory Nazianzen | *Oration* 14.23–25; *Oration* 39.8–10 | Received goods issue in kindness and justice toward the poor; prior grace and determinate obedience dispose toward illumination and desire. Neither locus is made a theory of earned vision or emotional regulation. |
 | St. John Chrysostom | *Homilies on Matthew* 50.3–4 | Eucharistic reverence and care for the poor must not be severed; almsgiving does not replace worship. |
 
-Public-domain ANF and NPNF working translations are linked in the rendered references. No patristic source is quoted at length.
+The Roberts–Rambaut English as printed in ANF volume 1 (Buffalo, 1887) was checked at printed pp. 478–486 / artifact PDF pp. 496–504, with the complete translated work body centrally bounded in the retained raw OCR and remote facsimile. New Advent's linked pages are a later Kevin Knight revision and remain locating links rather than artifact-equivalent witnesses. Public-domain ANF and NPNF working translations are not quoted at length.
 
 ## Thomistic source corpus
 
@@ -181,11 +181,13 @@ No located amendment or authentic interpretation changed CIC cc. 1246–1248 thr
 
 ## Rights and review record
 
-Quotations are short and claim-driven. Scripture, official texts, patristic translations, Thomistic translations, current clinical resources, and source wrappers retain their own status and are not relicensed under the project's CC BY 4.0 grant. The 1929 Alphonsus edition is used as a public-domain working witness. International OCD Foundation pages are paraphrased without direct quotation. No modern commentary is quoted or closely paraphrased.
+Quotations are short and claim-driven. Scripture, official texts, patristic translations, Thomistic translations, current clinical resources, and source wrappers retain their own status and are not relicensed under the project's CC BY 4.0 grant. The rendered article incorporates no bulk source text. The reusable source library separately retains the exact public-domain ANF raw OCR and automated page map; its facsimile record remains remote. Those artifacts are research evidence governed by their own manifests and `THIRD_PARTY.md`. The 1929 Alphonsus edition is used as a public-domain working witness. International OCD Foundation pages are paraphrased without direct quotation. No modern commentary is quoted or closely paraphrased.
 
 Completed for the current source tree: exact-locus source audit;
 natural/divine/ecclesiastical-law boundary audit; jurisdiction and currentness
-check through 23 July 2026; objective-act/virtue/merit, satisfaction, suffering,
+check through 23 July 2026; exact Buffalo 1887 ANF facsimile and OCR checks for
+Irenaeus IV.14.1--3, IV.17.1, and IV.18.1--6, including correction of the
+former “turn from idols” citation mismatch; objective-act/virtue/merit, satisfaction, suffering,
 and obligation/culpability audits; sacramental, ascetical, mystical-witness,
 Christological, Alphonsian, and IOCDF clinical-boundary review; negative-claim
 and rights review; and internal trilogy-wide rhetorical and source-consistency
@@ -193,7 +195,8 @@ review. It also received a settled build, clean log and PDF checks,
 extracted-text review, bounded raster and contact-sheet review, individual
 inspection of all 18 pages, exact deterministic-rebuild comparison, and
 installation. The installed artifact and hash are recorded in the scope file.
-The 23 July 2026 exact-byte exception release-clears only those immutable
-installed bytes. Independent specialist and ecclesiastical review remain
-outstanding; the exception supplies none of that review, any legal opinion, or
-any ecclesiastical approval.
+The 23 July 2026 exact-byte exception applied only to the superseded
+predecessor bytes and does not release-clear the rebuilt installed artifact.
+Independent specialist and ecclesiastical review remain outstanding; the
+exception supplies none of that review, any legal opinion, or any
+ecclesiastical approval.
