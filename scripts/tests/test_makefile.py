@@ -113,10 +113,42 @@ import sys
 
 with open(os.environ["MAKE_TEST_SOURCE_LIBRARY_LOG"], "a", encoding="utf-8") as log:
     log.write(" ".join(sys.argv[1:]) + "\\n")
+with open(os.environ["MAKE_TEST_SOURCE_GATE_ORDER_LOG"], "a", encoding="utf-8") as log:
+    log.write("library\\n")
 """,
             encoding="utf-8",
         )
         self.source_library.chmod(0o755)
+
+        self.source_inventory = scripts / "source-inventory"
+        self.source_inventory.write_text(
+            """#!/usr/bin/env python3
+import os
+import sys
+
+with open(os.environ["MAKE_TEST_SOURCE_INVENTORY_LOG"], "a", encoding="utf-8") as log:
+    log.write(" ".join(sys.argv[1:]) + "\\n")
+with open(os.environ["MAKE_TEST_SOURCE_GATE_ORDER_LOG"], "a", encoding="utf-8") as log:
+    log.write("inventory\\n")
+""",
+            encoding="utf-8",
+        )
+        self.source_inventory.chmod(0o755)
+
+        self.source_family_migration = scripts / "source-family-migration"
+        self.source_family_migration.write_text(
+            """#!/usr/bin/env python3
+import os
+import sys
+
+with open(os.environ["MAKE_TEST_SOURCE_FAMILY_MIGRATION_LOG"], "a", encoding="utf-8") as log:
+    log.write(" ".join(sys.argv[1:]) + "\\n")
+with open(os.environ["MAKE_TEST_SOURCE_GATE_ORDER_LOG"], "a", encoding="utf-8") as log:
+    log.write("family\\n")
+""",
+            encoding="utf-8",
+        )
+        self.source_family_migration.chmod(0o755)
 
         self.pdflatex = scripts / "fake-pdflatex"
         self.pdflatex.write_text(
@@ -146,6 +178,9 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         self.flags_log = self.root / "flags.log"
         self.review_log = self.root / "review.log"
         self.source_library_log = self.root / "source-library.log"
+        self.source_inventory_log = self.root / "source-inventory.log"
+        self.source_family_migration_log = self.root / "source-family-migration.log"
+        self.source_gate_order_log = self.root / "source-gate-order.log"
         self.pacman_log = self.root / "pacman.log"
         self.codex_log = self.root / "codex.log"
         self.environment = os.environ.copy()
@@ -157,6 +192,11 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
                 "MAKE_TEST_FLAGS_LOG": str(self.flags_log),
                 "MAKE_TEST_REVIEW_LOG": str(self.review_log),
                 "MAKE_TEST_SOURCE_LIBRARY_LOG": str(self.source_library_log),
+                "MAKE_TEST_SOURCE_INVENTORY_LOG": str(self.source_inventory_log),
+                "MAKE_TEST_SOURCE_FAMILY_MIGRATION_LOG": str(
+                    self.source_family_migration_log
+                ),
+                "MAKE_TEST_SOURCE_GATE_ORDER_LOG": str(self.source_gate_order_log),
                 "MAKE_TEST_PACMAN_LOG": str(self.pacman_log),
                 "MAKE_TEST_CODEX_LOG": str(self.codex_log),
                 "PDFLATEX": str(self.pdflatex),
@@ -195,6 +235,9 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         self.flags_log.write_text("", encoding="utf-8")
         self.review_log.write_text("", encoding="utf-8")
         self.source_library_log.write_text("", encoding="utf-8")
+        self.source_inventory_log.write_text("", encoding="utf-8")
+        self.source_family_migration_log.write_text("", encoding="utf-8")
+        self.source_gate_order_log.write_text("", encoding="utf-8")
 
     @staticmethod
     def sha256(path: Path) -> str:
@@ -246,8 +289,26 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
     def test_check_sources_invokes_validation_without_building(self) -> None:
         self.run_make("check-sources")
         self.assertEqual(self.lines(self.source_library_log), ["validate"])
+        self.assertEqual(self.lines(self.source_inventory_log), ["check"])
+        self.assertEqual(self.lines(self.source_family_migration_log), ["check"])
+        self.assertEqual(
+            self.lines(self.source_gate_order_log),
+            ["library", "inventory", "family"],
+        )
         self.assertEqual(self.lines(self.latex_log), [])
         self.assertEqual(self.lines(self.check_log), [])
+
+    def test_individual_source_gates_keep_completion_screening_explicit(self) -> None:
+        self.run_make("check-source-inventory")
+        self.run_make("check-source-family-migration")
+        self.run_make("check-source-family-screening")
+        self.assertEqual(self.lines(self.source_library_log), [])
+        self.assertEqual(self.lines(self.source_inventory_log), ["check"])
+        self.assertEqual(
+            self.lines(self.source_family_migration_log),
+            ["check", "check --require-family-screened"],
+        )
+        self.assertEqual(self.lines(self.latex_log), [])
 
     def test_clean_review_bootstraps_bounded_jobs_and_reuses_a_jobserver(self) -> None:
         result = self.run_make("review-pdfs", "PDF_JOBS=2")

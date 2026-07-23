@@ -192,6 +192,15 @@ to exactly one family, updates the catalog pin, and still applies the ordinary
 surface-refresh and screening-invalidation rules. Without the flag, catalog
 drift is never adopted silently.
 
+For routine maintenance, refresh the publication inventory first, complete any
+new classification review and rerun `classify` when needed, then refresh this
+family ledger. Inspect newly pending or surface-changed units and add newly
+discovered family presence manually; neither refresh command performs that
+semantic judgment. Finish with `make check-sources`, which permits explicit
+pending work while checking all three contracts. Reserve
+`make check-source-family-screening` for the explicit family-screening
+completion audit.
+
 ## Migration states
 
 Publication inventory states describe migration progress only:

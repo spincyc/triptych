@@ -125,6 +125,15 @@ Use only `make review-pdfs`, `make review-all-pdfs`, or `scripts/pdf-review` to 
 
 Research records that cannot affect rendered bytes need not force recompilation. Evidence dependencies on reusable external sources must nevertheless be queryable for freshness and impact under `guidance/sources.md`. Adding a publication may use deterministic controlled discovery; exceptional shared render dependencies must be explicit.
 
+Before finalizing a source-bearing change, run `make check-sources`. It
+validates the reusable source graph and publication bindings, replays the
+exhaustive legacy-source inventory, and checks the reviewed family-migration
+ledger. Honestly pending family review is allowed by this routine gate;
+`make check-source-family-screening` is the separate family-screening
+completion audit. These research gates are deliberately not prerequisites of `all`,
+`pdf`, or an individual PDF build. Rendered source changes still require every
+profile-specific build, page review, and installation gate above.
+
 ## Isolated Codex workers
 
 Mutating Codex sessions follow the isolation and authority contract in `AGENTS.md`. Start them through `make codex` or `scripts/triptych-codex`; a session already in its assigned linked worktree must not invoke the launcher again or administer worktrees.
