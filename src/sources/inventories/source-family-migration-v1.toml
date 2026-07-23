@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-07-22"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:b42b3dea11c6c69a90aa118078294a5a0f2c6adbeaeb42d309d97a7899e4725e"
+inventory_snapshot = "sha256:795f37396df8a20a38d14b6d9d1bc501f4b8465d74000ee5d2a0bba43e4bd2cf"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:dafeabb5de4701ba2d641eaed5f3c550cb19836e6140a6cb39f44a74cc4e1c92"
 canonical_catalog_snapshot = "sha256:47edf48497a9215ea5ed04b1a3127c746f9437b4ee25713060f5d39f30b1530e"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:758bbc91dbdc370ade18a1686ade5a8ce26d1a7dd8befdca6906d4fc7470c389"
+snapshot = "sha256:0f9070a8d7b1135f194568d28b5b14b6c9387ce4220f5319aac7d3890b0892d5"
 
 [[families]]
 id = "family.acta.aas-ass"
@@ -325,7 +325,7 @@ record_paths = ["src/gpt/articles/canon-law/clerical-celibacy-chastity-and-conti
 
 [[review_units]]
 owner_id = "articles/canon-law/natural-positive-divine-human-law"
-surface_snapshot = "sha256:eb3857c7bc2a58ea1c1c6436f6abc6aa8a71a9ac89bfd14854772beb26d933df"
+surface_snapshot = "sha256:72ee90917a12fb2092d6294584beeb3ebbf096b7eea30f605c780c96476750d6"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -383,7 +383,7 @@ record_paths = ["src/gpt/articles/faith/at-the-end-of-every-why/sections/99-refe
 
 [[review_units]]
 owner_id = "articles/faith/council-missal-and-crisis"
-surface_snapshot = "sha256:1526563fb238cb0b57b14528220857eecadb228e04e6e4577300e3e0da634c21"
+surface_snapshot = "sha256:785af08e6a6b977cf751f6156c16b686a3616610ffda85dc693e08513eb75d34"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -424,7 +424,7 @@ record_paths = ["src/gpt/articles/faith/council-missal-and-crisis/research/sourc
 
 [[review_units]]
 owner_id = "articles/faith/freemasonry-and-the-catholic-church"
-surface_snapshot = "sha256:1dbf09afb4bf133aa246665c460ebbf6d5c0cf72582897f251b85451a2b7ef59"
+surface_snapshot = "sha256:9563041e5bd3b0f699b6f7d816fd98416a9fed2679281c0acb2b56d4eb7faa3a"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -511,7 +511,7 @@ record_paths = ["src/gpt/articles/faith/the-due-return/research/source-audit.md"
 
 [[review_units]]
 owner_id = "articles/faith/trustful-surrender-to-divine-providence"
-surface_snapshot = "sha256:067d44e82a7f7d9b79b67566314e3de25708583daf58181298ec4633ee88c27a"
+surface_snapshot = "sha256:e465cc67c1be69d855381f7526d3d926459822007a4f4d45ca6f967ac8f25dbc"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -925,7 +925,7 @@ record_paths = ["src/gpt/devotions/novenas/10-our-lady-of-mount-carmel-daily-pra
 
 [[review_units]]
 owner_id = "history/biblical-translations/01-septuagint"
-surface_snapshot = "sha256:8e16629f677fdbbf3ade88a07845f0acfc9b2ca1a85c0a75d36ab2381f3fcfcf"
+surface_snapshot = "sha256:b8be3f75b97c1936bfa22f745bd85e0031e20afc659875cabe90b63d8d4b5084"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -938,7 +938,7 @@ record_paths = ["src/gpt/history/biblical-translations/01-septuagint/research/so
 
 [[review_units]]
 owner_id = "history/biblical-translations/02-vulgate"
-surface_snapshot = "sha256:d15ceb5e6d5130644a21046da093db811e83941200f448f1a103118aecdfca01"
+surface_snapshot = "sha256:962885bf06209f747171606f1c60cacec34cac69fed9526344062fdeea7378b0"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -1044,7 +1044,7 @@ record_paths = ["src/gpt/history/traditional-priestly-institutes/03-icksp/sectio
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"
-surface_snapshot = "sha256:af9ddb5dab0856ce44aedaaee513ab40430d45145295012073a7e6ee58b2126f"
+surface_snapshot = "sha256:c76f8c1d0256d21f550b33ae9fa33eb7314eb97daa56504129c3ec32dff4a1ac"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -1126,7 +1126,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday"
-surface_snapshot = "sha256:6b6213472751e4f7b133cb4da407b5fea46b46efd51b4100b37c8d4b049eca71"
+surface_snapshot = "sha256:00e2cb5e13f8befad628e42231ccb8e7e958243331a9186a936cab1365f550b8"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -1143,7 +1143,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/15-trinity-sun
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost"
-surface_snapshot = "sha256:c9663ff5bae360665ad41b528b401d551da67401a304c6f22a3259886a5c7911"
+surface_snapshot = "sha256:8b37f43dc8d7c749ccd8c2c9067ec3037c2d9882a9dbed6c741dc4ab185f9f3b"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -1198,7 +1198,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/18-fourth-afte
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost"
-surface_snapshot = "sha256:121480c81f2c8036d5fe99b43847b80154d0f2244941ebb425d189ad0bc2d58f"
+surface_snapshot = "sha256:4141ff5cea7f1afdfee588a382a4548da57bc249d23a6159e8d07ae617207ecd"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -1228,7 +1228,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/20-sixth-after
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost"
-surface_snapshot = "sha256:7c3f076c5ed19e001d28c945c3bc0d55bb1e2a83c85dfa63a39cb6726c0e4464"
+surface_snapshot = "sha256:6e480ef2ac40513711a748e79df05e88ccfbb2e79436ce0fe25b187e340dafbd"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -1257,7 +1257,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/21-seventh-aft
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"
-surface_snapshot = "sha256:dc8d7db6e5efa135292dbc70b72555d27bd0d8302c57f2d8dbaf2d251d7bbe84"
+surface_snapshot = "sha256:6975aeb57586a04297d5a5b0acf6da8371dffe1ef2ddc284446a3f3f50b4d0c1"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -1286,7 +1286,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/22-eighth-afte
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"
-surface_snapshot = "sha256:b6cc0bb2a20050cec81c87a9801a1c2c2344b19ef3c332562574b6d9f1565b79"
+surface_snapshot = "sha256:7797d03229bc065f4cc83f81595b1fd7a29180603060c22a409bb248e06a0fd3"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -1378,7 +1378,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrific
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"
-surface_snapshot = "sha256:d4bfd9476d2c8eba5bbdd679e60afb5a0e422ba8b9a339f8ecb248f629c4f329"
+surface_snapshot = "sha256:16c63b470483479b3132248ca70966608eb5900a4deb1e39d3e32968fb3c34a4"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -1481,7 +1481,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-thirteenth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:1192e5d2c7874e10abb1d4048f85bfee804d4e5f4003c46813f69887123f4fdd"
+surface_snapshot = "sha256:04fa027c4e4aeaae3dd44c6e8ab45448f2ea5b881039380144820c8100820fb5"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -1618,7 +1618,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a"
-surface_snapshot = "sha256:fab81d82d6a0aa96e9dca5923abc441f238d25a62c324788a3aa536309955d7e"
+surface_snapshot = "sha256:cee110d34bd4db6f50c0e3066cce451c4ad911e4c2bc9f1c9fe181af8a6686c4"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
