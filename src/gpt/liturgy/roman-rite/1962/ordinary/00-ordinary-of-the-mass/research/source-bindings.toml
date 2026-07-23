@@ -8,3 +8,10 @@ loci = ["10.6", "10.20"]
 role = "lead"
 states = ["cataloged"]
 context = "The legacy research record identifies City of God at these loci. This catalog-only binding claims no inspection of a central edition or artifact. Where the legacy record relies on NPNF/New Advent, the centrally registered Dods English and CSEL Latin texts are different witnesses and are not silently substituted."
+
+[[bindings]]
+source_id = "edition.catholic-church.missale-romanum.vatican-typica-1962"
+loci = ["Ritus servandus, printed pages LII-LXIV", "Ordo Missae and Canon Missae, printed pages 216-328"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The publication's legacy edition manifest and source audit identify the 1962 Vatican typical edition as its textual control at these loci, but do not pin the exact consulted bytes with a recorded hash; this is therefore catalog-only."

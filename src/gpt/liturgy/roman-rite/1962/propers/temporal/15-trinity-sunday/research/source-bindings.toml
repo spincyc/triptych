@@ -8,3 +8,21 @@ loci = ["10.5-6", "10.20"]
 role = "lead"
 states = ["cataloged"]
 context = "The legacy research record identifies City of God at these loci. This catalog-only binding claims no inspection of a central edition or artifact. Where the legacy record relies on NPNF/New Advent, the centrally registered Dods English and CSEL Latin texts are different witnesses and are not silently substituted."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+loci = ["Trinity Sunday formulary, printed pages 372-373, PDF pages 453-454"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact CMAA-hosted facsimile of the 1962 Vatican typical edition is the baseline witness visually collated for the complete appointed formulary."
+verified_on = "2026-07-14"
+source_fingerprint = "sha256:6b4dcd3ee771d6d92734992ecabfe09b289235954e963afcf523fc8f8ee9b12d"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu"
+loci = ["Trinity Sunday formulary, printed pages 366-367, DjVu pages 443-444"]
+role = "analogue"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact Internet Archive DjVu of the 1962 Benziger edition was compared as a secondary image witness; its variants and distinct pagination do not control the Vatican typical-edition transcription."
+verified_on = "2026-07-14"
+source_fingerprint = "sha256:8f68b01f48faa23fbd6fb830e8e7e5008a5e7aec2289ee37506b617d02cd515a"

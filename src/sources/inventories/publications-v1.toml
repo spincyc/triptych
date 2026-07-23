@@ -4,8 +4,8 @@ provider = "gpt"
 audited_on = "2026-07-22"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 103
-source_surface_file_count = 1130
-snapshot = "sha256:795f37396df8a20a38d14b6d9d1bc501f4b8465d74000ee5d2a0bba43e4bd2cf"
+source_surface_file_count = 1155
+snapshot = "sha256:37d8f9634c13dcf239385cb963f863bf70a9513a83ca04c6dbbe47ad3c5b99cd"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -63,7 +63,7 @@ id = "articles/canon-law/natural-positive-divine-human-law"
 main = "src/gpt/articles/canon-law/natural-positive-divine-human-law/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["canon-law", "classical", "finding-aid", "historical-primary", "institutional-current", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "articles/canon-law/natural-positive-divine-human-law"
@@ -85,7 +85,7 @@ id = "articles/faith/council-missal-and-crisis"
 main = "src/gpt/articles/faith/council-missal-and-crisis/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["canon-law", "dataset-survey", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "articles/faith/council-missal-and-crisis"
@@ -96,7 +96,7 @@ id = "articles/faith/freemasonry-and-the-catholic-church"
 main = "src/gpt/articles/faith/freemasonry-and-the-catholic-church/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["archival-material", "canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "articles/faith/freemasonry-and-the-catholic-church"
@@ -118,7 +118,7 @@ id = "articles/faith/the-due-return"
 main = "src/gpt/articles/faith/the-due-return/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["canon-law", "finding-aid", "magisterial", "patristic", "scholastic", "scripture"]
 [[documents.record_owners]]
 id = "articles/faith/the-due-return"
@@ -129,7 +129,7 @@ id = "articles/faith/trustful-surrender-to-divine-providence"
 main = "src/gpt/articles/faith/trustful-surrender-to-divine-providence/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["finding-aid", "historical-primary", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "articles/faith/trustful-surrender-to-divine-providence"
@@ -154,7 +154,7 @@ id = "biographies/saint-augustine-of-hippo"
 main = "src/gpt/biographies/saint-augustine-of-hippo/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["archival-material", "finding-aid", "historical-primary", "magisterial", "patristic", "prayer-devotional", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "biographies/saint-augustine-of-hippo"
@@ -448,7 +448,7 @@ id = "curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-
 main = "src/gpt/curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-compression/main.tex"
 publication_kind = "curriculum-packet"
 source_mode = "mixed"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["classical", "finding-aid", "liturgical", "patristic", "prayer-devotional", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-compression"
@@ -504,7 +504,7 @@ id = "curriculums/ecclesiastical-latin/03-missal-reading/16-chants-prefaces-and-
 main = "src/gpt/curriculums/ecclesiastical-latin/03-missal-reading/16-chants-prefaces-and-canon/main.tex"
 publication_kind = "curriculum-packet"
 source_mode = "mixed"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["classical", "finding-aid", "liturgical", "patristic", "prayer-devotional", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "curriculums/ecclesiastical-latin/03-missal-reading/16-chants-prefaces-and-canon"
@@ -518,7 +518,7 @@ id = "curriculums/ecclesiastical-latin/03-missal-reading/17-temporal-sanctoral-a
 main = "src/gpt/curriculums/ecclesiastical-latin/03-missal-reading/17-temporal-sanctoral-and-commons/main.tex"
 publication_kind = "curriculum-packet"
 source_mode = "mixed"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["classical", "finding-aid", "liturgical", "patristic", "prayer-devotional", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "curriculums/ecclesiastical-latin/03-missal-reading/17-temporal-sanctoral-and-commons"
@@ -532,7 +532,7 @@ id = "curriculums/ecclesiastical-latin/03-missal-reading/18-holy-week-requiem-an
 main = "src/gpt/curriculums/ecclesiastical-latin/03-missal-reading/18-holy-week-requiem-and-complete-mass/main.tex"
 publication_kind = "curriculum-packet"
 source_mode = "mixed"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["classical", "finding-aid", "liturgical", "patristic", "prayer-devotional", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "curriculums/ecclesiastical-latin/03-missal-reading/18-holy-week-requiem-and-complete-mass"
@@ -546,7 +546,7 @@ id = "curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-text
 main = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-texture/main.tex"
 publication_kind = "curriculum-packet"
 source_mode = "mixed"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["classical", "finding-aid", "liturgical", "patristic", "prayer-devotional", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-texture"
@@ -560,7 +560,7 @@ id = "curriculums/ecclesiastical-latin/04-advanced/20-allusion-rhetoric-and-peri
 main = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/20-allusion-rhetoric-and-periodic-prose/main.tex"
 publication_kind = "curriculum-packet"
 source_mode = "mixed"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["classical", "finding-aid", "liturgical", "patristic", "prayer-devotional", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "curriculums/ecclesiastical-latin/04-advanced/20-allusion-rhetoric-and-periodic-prose"
@@ -574,7 +574,7 @@ id = "curriculums/ecclesiastical-latin/04-advanced/21-collation-and-controlled-i
 main = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/21-collation-and-controlled-imitation/main.tex"
 publication_kind = "curriculum-packet"
 source_mode = "mixed"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["classical", "finding-aid", "liturgical", "patristic", "prayer-devotional", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "curriculums/ecclesiastical-latin/04-advanced/21-collation-and-controlled-imitation"
@@ -588,7 +588,7 @@ id = "curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-and-ind
 main = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-and-independent-research/main.tex"
 publication_kind = "curriculum-packet"
 source_mode = "mixed"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["classical", "finding-aid", "liturgical", "patristic", "prayer-devotional", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-and-independent-research"
@@ -658,7 +658,7 @@ id = "curriculums/ecclesiastical-latin/04-advanced/poetry/05-christian-poetics"
 main = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/05-christian-poetics/main.tex"
 publication_kind = "curriculum-packet"
 source_mode = "mixed"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["classical", "finding-aid", "liturgical", "patristic", "prayer-devotional", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "curriculums/ecclesiastical-latin/04-advanced/poetry/05-christian-poetics"
@@ -672,7 +672,7 @@ id = "curriculums/ecclesiastical-latin/04-advanced/poetry/06-rhythmic-hymnody-an
 main = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/06-rhythmic-hymnody-and-sequences/main.tex"
 publication_kind = "curriculum-packet"
 source_mode = "mixed"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["classical", "finding-aid", "liturgical", "patristic", "prayer-devotional", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "curriculums/ecclesiastical-latin/04-advanced/poetry/06-rhythmic-hymnody-and-sequences"
@@ -686,7 +686,7 @@ id = "curriculums/ecclesiastical-latin/04-advanced/poetry/07-poetic-commentary"
 main = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/07-poetic-commentary/main.tex"
 publication_kind = "curriculum-packet"
 source_mode = "mixed"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["classical", "finding-aid", "liturgical", "patristic", "prayer-devotional", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "curriculums/ecclesiastical-latin/04-advanced/poetry/07-poetic-commentary"
@@ -700,7 +700,7 @@ id = "curriculums/ecclesiastical-latin/04-advanced/poetry/08-verse-composition"
 main = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/08-verse-composition/main.tex"
 publication_kind = "curriculum-packet"
 source_mode = "mixed"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["classical", "finding-aid", "liturgical", "patristic", "prayer-devotional", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "curriculums/ecclesiastical-latin/04-advanced/poetry/08-verse-composition"
@@ -742,7 +742,7 @@ id = "curriculums/ecclesiastical-latin/05-stage-assessments/03-missal-reading"
 main = "src/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/03-missal-reading/main.tex"
 publication_kind = "curriculum-packet"
 source_mode = "mixed"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["classical", "finding-aid", "liturgical", "patristic", "prayer-devotional", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "curriculums/ecclesiastical-latin/05-stage-assessments/03-missal-reading"
@@ -756,7 +756,7 @@ id = "curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced"
 main = "src/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced/main.tex"
 publication_kind = "curriculum-packet"
 source_mode = "mixed"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["classical", "finding-aid", "liturgical", "patristic", "prayer-devotional", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced"
@@ -770,7 +770,7 @@ id = "devotions/novenas/00-ascension-to-pentecost"
 main = "src/gpt/devotions/novenas/00-ascension-to-pentecost/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["canon-law", "finding-aid", "historical-primary", "liturgical", "magisterial", "patristic", "prayer-devotional", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "devotions/novenas/00-ascension-to-pentecost"
@@ -784,7 +784,7 @@ id = "devotions/novenas/00-ascension-to-pentecost-daily-prayer"
 main = "src/gpt/devotions/novenas/00-ascension-to-pentecost-daily-prayer/main.tex"
 publication_kind = "derived-companion"
 source_mode = "mixed"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["canon-law", "finding-aid", "historical-primary", "liturgical", "magisterial", "patristic", "prayer-devotional", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "devotions/novenas/00-ascension-to-pentecost-daily-prayer"
@@ -801,7 +801,7 @@ id = "devotions/novenas/10-our-lady-of-mount-carmel"
 main = "src/gpt/devotions/novenas/10-our-lady-of-mount-carmel/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["canon-law", "dataset-survey", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "prayer-devotional", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "devotions/novenas/10-our-lady-of-mount-carmel"
@@ -815,7 +815,7 @@ id = "devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer"
 main = "src/gpt/devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer/main.tex"
 publication_kind = "derived-companion"
 source_mode = "mixed"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["canon-law", "dataset-survey", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "prayer-devotional", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer"
@@ -832,7 +832,7 @@ id = "history/biblical-translations/01-septuagint"
 main = "src/gpt/history/biblical-translations/01-septuagint/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["archival-material", "classical", "finding-aid", "historical-primary", "institutional-current", "patristic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "history/biblical-translations/01-septuagint"
@@ -846,7 +846,7 @@ id = "history/biblical-translations/02-vulgate"
 main = "src/gpt/history/biblical-translations/02-vulgate/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["archival-material", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "history/biblical-translations/02-vulgate"
@@ -930,7 +930,7 @@ id = "liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"
 main = "src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["canon-law", "finding-aid", "historical-primary", "liturgical", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"
@@ -941,7 +941,7 @@ id = "liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass"
 main = "src/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["canon-law", "classical", "finding-aid", "historical-primary", "liturgical", "magisterial", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass"
@@ -955,7 +955,7 @@ id = "liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday"
 main = "src/gpt/liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["finding-aid", "historical-primary", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday"
@@ -966,7 +966,7 @@ id = "liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost"
 main = "src/gpt/liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["finding-aid", "historical-primary", "liturgical", "patristic", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost"
@@ -977,7 +977,7 @@ id = "liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost"
 main = "src/gpt/liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["finding-aid", "historical-primary", "liturgical", "patristic", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost"
@@ -988,7 +988,7 @@ id = "liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost"
 main = "src/gpt/liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["finding-aid", "historical-primary", "liturgical", "patristic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost"
@@ -999,7 +999,7 @@ id = "liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost"
 main = "src/gpt/liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["finding-aid", "historical-primary", "liturgical", "patristic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost"
@@ -1010,7 +1010,7 @@ id = "liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost"
 main = "src/gpt/liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["finding-aid", "historical-primary", "liturgical", "patristic", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost"
@@ -1021,7 +1021,7 @@ id = "liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost"
 main = "src/gpt/liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["finding-aid", "historical-primary", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost"
@@ -1032,7 +1032,7 @@ id = "liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"
 main = "src/gpt/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["finding-aid", "historical-primary", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"
@@ -1043,7 +1043,7 @@ id = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"
 main = "src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["finding-aid", "historical-primary", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"
@@ -1054,7 +1054,7 @@ id = "liturgy/roman-rite/1962/reference/assembling-the-mass"
 main = "src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["canon-law", "finding-aid", "historical-primary", "liturgical", "magisterial", "repository-internal"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/reference/assembling-the-mass"
@@ -1065,7 +1065,7 @@ id = "liturgy/roman-rite/1962/reference/liturgical-calendar"
 main = "src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["canon-law", "finding-aid", "historical-primary", "liturgical", "magisterial", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/reference/liturgical-calendar"
@@ -1076,7 +1076,7 @@ id = "liturgy/roman-rite/comparative/two-missals-one-sacrifice"
 main = "src/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["canon-law", "dataset-survey", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/comparative/two-missals-one-sacrifice"
@@ -1087,7 +1087,7 @@ id = "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-or
 main = "src/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"
@@ -1126,7 +1126,7 @@ id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/pro
 main = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-thirteenth-sunday-in-ordinary-time-year-a/main.tex"
 publication_kind = "proper-instance"
 source_mode = "mixed"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-thirteenth-sunday-in-ordinary-time-year-a"
@@ -1196,7 +1196,7 @@ id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/pro
 main = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a/main.tex"
 publication_kind = "proper-instance"
 source_mode = "mixed"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a"
@@ -1365,7 +1365,7 @@ id = "theology/sacraments"
 main = "src/gpt/theology/sacraments/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["canon-law", "classical", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "theology/sacraments"
@@ -1387,7 +1387,7 @@ id = "theology/virtues"
 main = "src/gpt/theology/virtues/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "sources-categorized"
+inventory_state = "partially-migrated"
 source_categories = ["classical", "magisterial", "patristic", "scholastic", "scripture"]
 [[documents.record_owners]]
 id = "theology/virtues"
@@ -1791,7 +1791,7 @@ owners = ["articles/faith/council-missal-and-crisis"]
 
 [[files]]
 path = "src/gpt/articles/faith/council-missal-and-crisis/research/source-bindings.toml"
-sha256 = "bd5d532fb70b0fad12dfa6b43c0a9b2f1c7d60d5757471c77d44e85385082e8d"
+sha256 = "229734db590d6d10f5825ae8a6831b7739f90ee2c51159a45440829cd8d287cd"
 kind = "source-binding"
 owners = ["articles/faith/council-missal-and-crisis"]
 
@@ -3470,6 +3470,12 @@ kind = "research-record"
 owners = ["curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-compression"]
 
 [[files]]
+path = "src/gpt/curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-compression/research/source-bindings.toml"
+sha256 = "11a00a6f5e3309ede8e2dea92455d0e645946ec61b5a7a12113c1c0b56e0f8fc"
+kind = "source-binding"
+owners = ["curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-compression"]
+
+[[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/03-missal-reading/13-reader-method-and-ordinary/main.tex"
 sha256 = "e9de27298271989a436a3db1faae1406c9637e7347d2e374e1da5bc3a2cca597"
 kind = "publication-main"
@@ -3542,6 +3548,12 @@ kind = "research-record"
 owners = ["curriculums/ecclesiastical-latin/03-missal-reading/16-chants-prefaces-and-canon"]
 
 [[files]]
+path = "src/gpt/curriculums/ecclesiastical-latin/03-missal-reading/16-chants-prefaces-and-canon/research/source-bindings.toml"
+sha256 = "bb55b1aec57919a1fa429e1182b9461ea9dc7fd177f52e199e8ee3d59d222661"
+kind = "source-binding"
+owners = ["curriculums/ecclesiastical-latin/03-missal-reading/16-chants-prefaces-and-canon"]
+
+[[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/03-missal-reading/17-temporal-sanctoral-and-commons/main.tex"
 sha256 = "5cf0019807f54a25043a048d6e59dff7d5f312283a064278809c1fa89ce6249c"
 kind = "publication-main"
@@ -3557,6 +3569,12 @@ owners = ["curriculums/ecclesiastical-latin/03-missal-reading/17-temporal-sancto
 path = "src/gpt/curriculums/ecclesiastical-latin/03-missal-reading/17-temporal-sanctoral-and-commons/research/module-map.md"
 sha256 = "b8e30d1bcc6ca87adacf0ffc487e266ae823682ec6ed25b30620032d15347f59"
 kind = "research-record"
+owners = ["curriculums/ecclesiastical-latin/03-missal-reading/17-temporal-sanctoral-and-commons"]
+
+[[files]]
+path = "src/gpt/curriculums/ecclesiastical-latin/03-missal-reading/17-temporal-sanctoral-and-commons/research/source-bindings.toml"
+sha256 = "bd6ce6183dd08afddbac9bbb454e47ed6c2e005543934c44b96ad747e6c8be50"
+kind = "source-binding"
 owners = ["curriculums/ecclesiastical-latin/03-missal-reading/17-temporal-sanctoral-and-commons"]
 
 [[files]]
@@ -3578,6 +3596,12 @@ kind = "research-record"
 owners = ["curriculums/ecclesiastical-latin/03-missal-reading/18-holy-week-requiem-and-complete-mass"]
 
 [[files]]
+path = "src/gpt/curriculums/ecclesiastical-latin/03-missal-reading/18-holy-week-requiem-and-complete-mass/research/source-bindings.toml"
+sha256 = "3b3f080360985c3692788ab2f146521714b5859da8531d4fb8a4761b4891c280"
+kind = "source-binding"
+owners = ["curriculums/ecclesiastical-latin/03-missal-reading/18-holy-week-requiem-and-complete-mass"]
+
+[[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-texture/main.tex"
 sha256 = "89919f5e4d3f599fa0195c16217ac9b8f1798979c78947cfe6cfab54ae72a24e"
 kind = "publication-main"
@@ -3593,6 +3617,12 @@ owners = ["curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical
 path = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-texture/research/module-map.md"
 sha256 = "29c9a13378a301140a9e320ad1a67c812f3577c74797a16e67b320909f0bf30e"
 kind = "research-record"
+owners = ["curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-texture"]
+
+[[files]]
+path = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-texture/research/source-bindings.toml"
+sha256 = "6755e434243c36aae8c5459ed654e695b9dddd64092025cf409e53d016582546"
+kind = "source-binding"
 owners = ["curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-texture"]
 
 [[files]]
@@ -3614,6 +3644,12 @@ kind = "research-record"
 owners = ["curriculums/ecclesiastical-latin/04-advanced/20-allusion-rhetoric-and-periodic-prose"]
 
 [[files]]
+path = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/20-allusion-rhetoric-and-periodic-prose/research/source-bindings.toml"
+sha256 = "8661519d6b24588b7ee4ce8ea6389f095882954e6e728be98cb26eeaba9d8538"
+kind = "source-binding"
+owners = ["curriculums/ecclesiastical-latin/04-advanced/20-allusion-rhetoric-and-periodic-prose"]
+
+[[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/21-collation-and-controlled-imitation/main.tex"
 sha256 = "d5957cf8b7af5744e96d59865bf929b7dc3e253f76c171851037176931b6be1a"
 kind = "publication-main"
@@ -3632,6 +3668,12 @@ kind = "research-record"
 owners = ["curriculums/ecclesiastical-latin/04-advanced/21-collation-and-controlled-imitation"]
 
 [[files]]
+path = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/21-collation-and-controlled-imitation/research/source-bindings.toml"
+sha256 = "fe5f9f0dffffed3c297c2379de5d237d789c8116ccf08f7791cf4a48ce46771e"
+kind = "source-binding"
+owners = ["curriculums/ecclesiastical-latin/04-advanced/21-collation-and-controlled-imitation"]
+
+[[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-and-independent-research/main.tex"
 sha256 = "c0a37915b11ff021ab9ec45d905faede2a392872e2be7dac5baad215b1b02d8b"
 kind = "publication-main"
@@ -3647,6 +3689,12 @@ owners = ["curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-an
 path = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-and-independent-research/research/module-map.md"
 sha256 = "5218a51dcf45f9b295454c243f94055d84c71658c35ceed8c76287b88878ed23"
 kind = "research-record"
+owners = ["curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-and-independent-research"]
+
+[[files]]
+path = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-and-independent-research/research/source-bindings.toml"
+sha256 = "4df68ccaa36cce388bcbab7f125665abb3c21a8f221a3dc89bf8344bebcc3f22"
+kind = "source-binding"
 owners = ["curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-and-independent-research"]
 
 [[files]]
@@ -3740,6 +3788,12 @@ kind = "research-record"
 owners = ["curriculums/ecclesiastical-latin/04-advanced/poetry/05-christian-poetics"]
 
 [[files]]
+path = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/05-christian-poetics/research/source-bindings.toml"
+sha256 = "1faa87a1bcea8d22e91854935217a93cd19bb7c65954f018cce5d7041b4865b9"
+kind = "source-binding"
+owners = ["curriculums/ecclesiastical-latin/04-advanced/poetry/05-christian-poetics"]
+
+[[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/06-rhythmic-hymnody-and-sequences/main.tex"
 sha256 = "b83e925c95ae9924ed24e31471e415679b74d4f9e1c7fabfa75d0d2af4fe0fdb"
 kind = "publication-main"
@@ -3755,6 +3809,12 @@ owners = ["curriculums/ecclesiastical-latin/04-advanced/poetry/06-rhythmic-hymno
 path = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/06-rhythmic-hymnody-and-sequences/research/module-map.md"
 sha256 = "b28605e5bee9ad2363c00d15b97dbaf83bcb92d0bd331db4c839d9bd1e3d904d"
 kind = "research-record"
+owners = ["curriculums/ecclesiastical-latin/04-advanced/poetry/06-rhythmic-hymnody-and-sequences"]
+
+[[files]]
+path = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/06-rhythmic-hymnody-and-sequences/research/source-bindings.toml"
+sha256 = "9c41132015bd948af9597566c4bd018a155ca5ce198921c39dc423908c0643be"
+kind = "source-binding"
 owners = ["curriculums/ecclesiastical-latin/04-advanced/poetry/06-rhythmic-hymnody-and-sequences"]
 
 [[files]]
@@ -3776,6 +3836,12 @@ kind = "research-record"
 owners = ["curriculums/ecclesiastical-latin/04-advanced/poetry/07-poetic-commentary"]
 
 [[files]]
+path = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/07-poetic-commentary/research/source-bindings.toml"
+sha256 = "3c39d2aba1382f038073938fcca0bb1bd5587aa8fa062d3b4c21b6771065066b"
+kind = "source-binding"
+owners = ["curriculums/ecclesiastical-latin/04-advanced/poetry/07-poetic-commentary"]
+
+[[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/08-verse-composition/main.tex"
 sha256 = "235a9a5f1ac7c72548f53fb5e7b712f3437ef3a9851b0c22e305a4d455a70665"
 kind = "publication-main"
@@ -3791,6 +3857,12 @@ owners = ["curriculums/ecclesiastical-latin/04-advanced/poetry/08-verse-composit
 path = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/08-verse-composition/research/module-map.md"
 sha256 = "831740fd9d2022def3ea00bfff16501c1e4d2559900936b5c8df75828e033575"
 kind = "research-record"
+owners = ["curriculums/ecclesiastical-latin/04-advanced/poetry/08-verse-composition"]
+
+[[files]]
+path = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/08-verse-composition/research/source-bindings.toml"
+sha256 = "9d40f9352110d56de6830a6121e836b5fc56d830a9e23f6fc9d68acb5e6f852f"
+kind = "source-binding"
 owners = ["curriculums/ecclesiastical-latin/04-advanced/poetry/08-verse-composition"]
 
 [[files]]
@@ -3830,6 +3902,12 @@ kind = "research-record"
 owners = ["curriculums/ecclesiastical-latin/05-stage-assessments/03-missal-reading"]
 
 [[files]]
+path = "src/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/03-missal-reading/research/source-bindings.toml"
+sha256 = "177b5c1f6ca418410d2d713176a5dbc60deb810711afc37a173efc9aab2246f9"
+kind = "source-binding"
+owners = ["curriculums/ecclesiastical-latin/05-stage-assessments/03-missal-reading"]
+
+[[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced/main.tex"
 sha256 = "f0ef21e888dab67d029b7476c15a150c3b709a090f3f5d736d502566572baf7a"
 kind = "publication-main"
@@ -3839,6 +3917,12 @@ owners = ["curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced"]
 path = "src/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced/research/companion-map.md"
 sha256 = "55fbbbc3c46b29ccc328a7e58be26821dd32f5f9eb62abb6a9325e458818a7dc"
 kind = "research-record"
+owners = ["curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced"]
+
+[[files]]
+path = "src/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced/research/source-bindings.toml"
+sha256 = "e0377a9b711ba2c24265bcab6558caa2848a5e741537c2bfa32a69f7f5a1434b"
+kind = "source-binding"
 owners = ["curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced"]
 
 [[files]]
@@ -4160,6 +4244,12 @@ kind = "research-record"
 owners = ["devotions/novenas/00-ascension-to-pentecost-daily-prayer"]
 
 [[files]]
+path = "src/gpt/devotions/novenas/00-ascension-to-pentecost-daily-prayer/research/source-bindings.toml"
+sha256 = "30c2720eace73abe24745cbac2a89af3d56b119970a4e74974e9bc4e387a0013"
+kind = "source-binding"
+owners = ["devotions/novenas/00-ascension-to-pentecost-daily-prayer"]
+
+[[files]]
 path = "src/gpt/devotions/novenas/00-ascension-to-pentecost/days/01-ascension-promise.tex"
 sha256 = "b043aca4b2733bc16c3650ee078fac594da63dd1f9420d32fd10753cd5e5193e"
 kind = "rendered-content"
@@ -4310,6 +4400,12 @@ kind = "legacy-source-audit"
 owners = ["devotions/novenas/00-ascension-to-pentecost"]
 
 [[files]]
+path = "src/gpt/devotions/novenas/00-ascension-to-pentecost/research/source-bindings.toml"
+sha256 = "39ecef65f82b541f2d980bac5e407ff581ca54c8492e135d62644ad964b4e49d"
+kind = "source-binding"
+owners = ["devotions/novenas/00-ascension-to-pentecost"]
+
+[[files]]
 path = "src/gpt/devotions/novenas/00-ascension-to-pentecost/sections/00-identity-calendar.tex"
 sha256 = "a26a0cdf587cedefdfa441ec1859f83f7e9f60755b848b542e4c2d720929deb0"
 kind = "rendered-content"
@@ -4367,6 +4463,12 @@ owners = ["devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer"]
 path = "src/gpt/devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer/research/derivation.md"
 sha256 = "47b4b3a6919d03a54cfcd453ac625ede7d323318f5bbf116760f948cfbd9d220"
 kind = "research-record"
+owners = ["devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer"]
+
+[[files]]
+path = "src/gpt/devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer/research/source-bindings.toml"
+sha256 = "f732fd58a32a62fbf225c97be8ad0fb2e365e95b1ab293de1d736a242029590c"
+kind = "source-binding"
 owners = ["devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer"]
 
 [[files]]
@@ -4535,6 +4637,12 @@ owners = ["devotions/novenas/10-our-lady-of-mount-carmel"]
 path = "src/gpt/devotions/novenas/10-our-lady-of-mount-carmel/research/source-audit.md"
 sha256 = "6dd445fe07289bf105d91c5eb74f1c686cd77428291dc5cca711e682fae3e541"
 kind = "legacy-source-audit"
+owners = ["devotions/novenas/10-our-lady-of-mount-carmel"]
+
+[[files]]
+path = "src/gpt/devotions/novenas/10-our-lady-of-mount-carmel/research/source-bindings.toml"
+sha256 = "a7402d997f4a3e78c8f5e85356cc8ec9354ff8ea4e131397ef941a2e43c7116c"
+kind = "source-binding"
 owners = ["devotions/novenas/10-our-lady-of-mount-carmel"]
 
 [[files]]
@@ -5613,7 +5721,7 @@ owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/source-bindings.toml"
-sha256 = "b7836577a971b7e2b15936a3cfae33bff1aa84f80dcab493ff255f751da92b24"
+sha256 = "4f1dbe9bc1d6fa4e3035ea95408f3c14cf12f807b2bf29aae3cb20b2e96f438e"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
@@ -5714,6 +5822,12 @@ kind = "research-scope"
 owners = ["liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass/research/source-bindings.toml"
+sha256 = "f6906655b8b1709276b2d2d8a464d9e85f3e850bdf459774e531fea901956182"
+kind = "source-binding"
+owners = ["liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday/main.tex"
 sha256 = "e9766cdbc8569dd95cf76d65cda171970e36eb70933570a6968cbe4247b3656f"
 kind = "publication-main"
@@ -5739,7 +5853,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday/research/source-bindings.toml"
-sha256 = "0eae1fa543c1e23c9f13acb3639123b48212304e2a6db46ad97d6d3abb287857"
+sha256 = "992dbd704c046794f7d097a6484cf95d389f4b6f6c28a0709fd0af4fe497393e"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday"]
 
@@ -5769,7 +5883,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost/research/source-bindings.toml"
-sha256 = "eaf40ac760196ce426cb040cb32723bcfb8089abfb435807247d1ef89fcac655"
+sha256 = "e64940ccc4edb6fc2721d3d74fdbbf2a42f26f84682fd7545056a20b678c302a"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost"]
 
@@ -5798,6 +5912,12 @@ kind = "research-scope"
 owners = ["liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost/research/source-bindings.toml"
+sha256 = "bd017cbd15193fc804fe91be326c0cf23c1114f8353b0984efd8d7e750972a8e"
+kind = "source-binding"
+owners = ["liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost/main.tex"
 sha256 = "e6ed3d27c357f91a8dc9db9750b965302166f127b8d46bb9174a3e691cd1e2b1"
 kind = "publication-main"
@@ -5823,7 +5943,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost/research/source-bindings.toml"
-sha256 = "ab4cdb9aa386d189f56f1473ab81f0ff6117637b9d13a4d809d6918b6104f597"
+sha256 = "0de53f72e10831dbbca4f9b39e56e0946e7777a769757f5be6ebb8a7a1ee421f"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost"]
 
@@ -5853,7 +5973,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost/research/source-bindings.toml"
-sha256 = "86c711ebf83d3e7061712deb86fc376ead1c24bfe0b86d06fb0e13b2de6c5011"
+sha256 = "efb692eca63211f110375fd7272a63d9e836ddcbfccd8e514f4a5792e87e7f58"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost"]
 
@@ -5882,6 +6002,12 @@ kind = "research-scope"
 owners = ["liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost/research/source-bindings.toml"
+sha256 = "7418c5e5992fa4985bf74ed10451ec1845ea5731f8de94ace5adb15d782d2ba6"
+kind = "source-binding"
+owners = ["liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost/main.tex"
 sha256 = "75d74542a57af90463739c0c0cdc22dbfc75f61a53a1698ede7b56174d4cc2c8"
 kind = "publication-main"
@@ -5907,7 +6033,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost/research/source-bindings.toml"
-sha256 = "7581d916fb3a63b8c89d60521ac96dccc072d6d4ad886497cb9bb8c0763f4c38"
+sha256 = "3c9b6e1a37d3aee287f5bfb444cd364e585ea0be961596f3c079255cce86e633"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost"]
 
@@ -5937,7 +6063,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/research/source-bindings.toml"
-sha256 = "241f6617d6518288501854deb3a993c24b704cb27a82a5cd056d259cb91eb3c8"
+sha256 = "916d1dfbfb6c77e60f32ced358e62dbc2dc9fb65f7813d3fa39f2b2bcc6a41df"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
 
@@ -5967,7 +6093,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/research/source-bindings.toml"
-sha256 = "6b1e4eb319f2ab3d778d0ccb26b9f7a8531181452b24e2bc903c64a7b8aa20b8"
+sha256 = "bd5ff2e458de48ef7f78d16ce6501bc3dbb2a6ab6d442639fd8ee41fae788fb8"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
@@ -5999,6 +6125,12 @@ owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
 path = "src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/research/source-audit.md"
 sha256 = "bdf533c318d5fb205027f758c50729f678c55893a397cc4d66cb5fa06f6f4fde"
 kind = "legacy-source-audit"
+owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/research/source-bindings.toml"
+sha256 = "d5c32d18faa15f12243567fdc7df2d992f6f8ca595527e1425bce2854e009e15"
+kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
 
 [[files]]
@@ -6122,6 +6254,12 @@ kind = "legacy-source-audit"
 owners = ["liturgy/roman-rite/1962/reference/liturgical-calendar"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/research/source-bindings.toml"
+sha256 = "c3729f17653b24f38506051a12ff7b4baa663a2f10bca20d9aedbc96cfca27a4"
+kind = "source-binding"
+owners = ["liturgy/roman-rite/1962/reference/liturgical-calendar"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/00-scope-method.tex"
 sha256 = "0242d8d2a5ada3c4951d543a604e75276a261cc7655c2932cbf68d5e6e467439"
 kind = "rendered-content"
@@ -6221,6 +6359,12 @@ owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
 path = "src/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice/research/source-audit.md"
 sha256 = "51e837f5465df16c8a9884019442d5c9eee7f4c28a204d41e119400e917fc4d0"
 kind = "legacy-source-audit"
+owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice/research/source-bindings.toml"
+sha256 = "7c122cbac7e204e10e22036fa6cf9dbea43e8ab3e063a60f50d52f63eac636a7"
+kind = "source-binding"
 owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
 
 [[files]]
@@ -7925,6 +8069,12 @@ owners = ["theology/sacraments"]
 path = "src/gpt/theology/sacraments/research/scope.md"
 sha256 = "7405323527be88d4012302bb78e9625870c35c4ad2fd9303e5fb22ce2374ed42"
 kind = "research-scope"
+owners = ["theology/sacraments"]
+
+[[files]]
+path = "src/gpt/theology/sacraments/research/source-bindings.toml"
+sha256 = "1036812e557bfb0c102167617f83579b666aef2dcdcab9f28f7e0f1af718d05e"
+kind = "source-binding"
 owners = ["theology/sacraments"]
 
 [[files]]

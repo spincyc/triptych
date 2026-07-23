@@ -8,3 +8,12 @@ loci = ["10.5-6"]
 role = "lead"
 states = ["cataloged"]
 context = "The legacy research record identifies City of God at this locus. This catalog-only binding claims no inspection of a central edition or artifact. Where the legacy record relies on NPNF/New Advent, the centrally registered Dods English and CSEL Latin texts are different witnesses and are not silently substituted."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+loci = ["Ninth Sunday after Pentecost formulary, printed pages 388-389, PDF pages 469-470"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact CMAA-hosted facsimile of the 1962 Vatican typical edition is the baseline witness visually collated for the complete appointed formulary."
+verified_on = "2026-07-20"
+source_fingerprint = "sha256:6b4dcd3ee771d6d92734992ecabfe09b289235954e963afcf523fc8f8ee9b12d"
