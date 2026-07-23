@@ -7,11 +7,44 @@ source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
 loci = ["1076-1209", "1210-1666"]
 role = "official-control"
 states = ["cataloged"]
-context = "This companion renders the sacramental treatise's shared master matrix, lexicon, and seven summaries and therefore inherits their Catechism of the Catholic Church doctrinal evidence dependency. The dependency is catalog-only because neither consumer replayed the exact 2026-07-23 central artifacts."
+context = "This companion renders the sacramental treatise's shared master matrix, lexicon, and seven summaries and therefore inherits their Catechism of the Catholic Church doctrinal evidence dependency. The 2026-07-23 proof reviewed four exact passages rather than these complete ranges, so this broad binding remains catalog-only."
 
 [[bindings]]
-source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
-loci = ["1131", "1240", "1300", "1449"]
+source_id = "passage.catholic-church.catechism.english-vatican-web-2026-07-23.1131"
+loci = ["1131"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The companion directly imports the treatise-owned full matrix containing the formal definition checked against paragraph 1131. Review confirmed the shared source file, its unchanged direct import, the rendered companion wording, and the absence of independent companion prose; the definition remains an editorial synthesis rather than a verbatim Catechism quotation."
+claim_keys = ["formal-definition"]
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:07edd5b79e89a98627ac86e5ade88d61a52d2ae4e65037d12c1e39e8c3b1e322"
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-vatican-web-2026-07-23.1240"
+loci = ["1240"]
 role = "textual-control"
-states = ["cataloged"]
-context = "The imported matrix and summaries carry the treatise's exact definition and formula wording at these paragraphs into the companion. This inherited evidence binding preserves that rendered dependency without claiming an independent audit or inspection of exact central bytes."
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The companion directly imports the treatise-owned Baptism summary containing the formula wording checked against paragraph 1240. Review confirmed the shared source file, its unchanged direct import, the rendered companion wording, and the absence of independent companion prose."
+claim_keys = ["baptism-formulas"]
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:a5fddc2fa9d2e9ec844e91bd0dd828e2f137ab4f02ea39dbc22302c164c2f35e"
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-vatican-web-2026-07-23.1300"
+loci = ["1300"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The companion directly imports the treatise-owned Confirmation summary containing the formula wording checked against paragraph 1300. Review confirmed the shared source file, its unchanged direct import, the rendered companion wording, and the absence of independent companion prose."
+claim_keys = ["confirmation-formulas"]
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:0b46767599cbf289aaaf6e5aa2bb322849c052a470506657e5a2bf37588609ed"
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-vatican-web-2026-07-23.1449"
+loci = ["1449"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The companion directly imports the treatise-owned Penance summary containing the formula wording checked against paragraph 1449. Review confirmed the shared source file, its unchanged direct import, the rendered companion wording, and the absence of independent companion prose."
+claim_keys = ["penance-absolution-formula"]
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:1c86747958f4605500efcb17169331c6871f503a59612aac5c0d37fcea7521fa"

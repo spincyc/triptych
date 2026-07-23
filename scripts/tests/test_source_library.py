@@ -264,6 +264,85 @@ class SourceLibraryTests(unittest.TestCase):
         self.assertEqual(result.stderr, "")
         self.assertEqual(result.stdout, f"{new_fingerprint}\n")
 
+    def test_shared_passage_change_stales_every_reviewed_consumer(self) -> None:
+        self.add_valid_vertical_fixture()
+        before = SOURCE_LIBRARY.load_library(self.root)
+        old_fingerprint = SOURCE_LIBRARY.source_fingerprint(before, PASSAGE_ID)
+        second_document = "articles/shared-source-consumer"
+        second_binding_path = (
+            "src/gpt/articles/shared-source-consumer/research/source-bindings.toml"
+        )
+        self.write(f"src/gpt/{second_document}/main.tex", "Second consumer\n")
+        self.write(
+            second_binding_path,
+            f'''
+            schema = 1
+            record_type = "bindings"
+            document = "{second_document}"
+
+            [[bindings]]
+            source_id = "{PASSAGE_ID}"
+            loci = ["{LOCUS}"]
+            role = "textual-control"
+            states = ["inspected"]
+            source_fingerprint = "{old_fingerprint}"
+            context = "A second publication inspected the same shared passage."
+            ''',
+        )
+        with_two_consumers = SOURCE_LIBRARY.load_library(self.root)
+        self.assertEqual(with_two_consumers.errors, [])
+        self.assertEqual(
+            [
+                row["document"]
+                for row in SOURCE_LIBRARY.binding_rows(
+                    with_two_consumers, PASSAGE_ID
+                )
+            ],
+            [second_document, "theology/demo"],
+        )
+
+        passage_manifest = with_two_consumers.records[PASSAGE_ID].path
+        self.write(
+            passage_manifest.relative_to(self.root).as_posix(),
+            passage_manifest.read_text(encoding="utf-8")
+            + 'notes = "Corrected shared passage metadata."\n',
+        )
+
+        stale = SOURCE_LIBRARY.load_library(self.root)
+        new_fingerprint = SOURCE_LIBRARY.source_fingerprint(stale, PASSAGE_ID)
+        stale_suffix = (
+            f"bindings[1].source_fingerprint must be {new_fingerprint!r}"
+        )
+        self.assertNotEqual(old_fingerprint, new_fingerprint)
+        self.assertEqual(
+            stale.errors,
+            [
+                f"{second_binding_path}: {stale_suffix}",
+                "src/gpt/theology/demo/research/source-bindings.toml: "
+                f"{stale_suffix}",
+            ],
+        )
+
+        impact_library = SOURCE_LIBRARY.load_library(
+            self.root, check_binding_fingerprints=False
+        )
+        self.assertEqual(impact_library.errors, [])
+        self.assertEqual(
+            {
+                row["id"]
+                for row in SOURCE_LIBRARY.impact_rows(
+                    impact_library, PASSAGE_ID
+                )
+                if row["kind"] == "document"
+            },
+            {second_document, "theology/demo"},
+        )
+
+        result = self.run_cli("fingerprint", PASSAGE_ID)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(result.stderr, "")
+        self.assertEqual(result.stdout, f"{new_fingerprint}\n")
+
     def test_uses_follows_source_ancestry_and_filters_exact_loci(self) -> None:
         self.add_valid_vertical_fixture()
         library = SOURCE_LIBRARY.load_library(self.root)

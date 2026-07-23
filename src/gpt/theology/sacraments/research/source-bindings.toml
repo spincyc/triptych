@@ -14,11 +14,44 @@ source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
 loci = ["1076-1209", "1210-1666"]
 role = "official-control"
 states = ["cataloged"]
-context = "The legacy scope identifies these ranges as the controlling modern sacramental synthesis and records earlier review against modern Holy See English pages. That history does not establish inspection of the exact 2026-07-23 central artifacts, so the canonical binding remains catalog-only."
+context = "The legacy scope identifies these ranges as the controlling modern sacramental synthesis and records earlier review against modern Holy See English pages. The 2026-07-23 proof reviewed four exact passages rather than these complete ranges, so this broad binding remains catalog-only."
 
 [[bindings]]
-source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
-loci = ["1131", "1240", "1300", "1449"]
+source_id = "passage.catholic-church.catechism.english-vatican-web-2026-07-23.1131"
+loci = ["1131"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Paragraph 1131 was checked against the treatise-owned formal definition in fragments/full-matrix.tex and its scope record. The publication wording is an editorial patristic and Thomistic synthesis consistent with the official passage, not a verbatim Catechism quotation."
+claim_keys = ["formal-definition"]
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:07edd5b79e89a98627ac86e5ade88d61a52d2ae4e65037d12c1e39e8c3b1e322"
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-vatican-web-2026-07-23.1240"
+loci = ["1240"]
 role = "textual-control"
-states = ["cataloged"]
-context = "The legacy record uses paragraph 1131 for the exact opening definition and records exact English formula checks at 1240, 1300, and 1449 on 2026-07-14. Those legacy checks remain disclosed locally but were not replayed against exact central bytes, so this separate exact-wording binding is not promoted."
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Paragraph 1240 was collated against the Latin and Eastern baptismal formula wording in sections/11-baptism.tex and summaries/baptism.tex. Both treatise-owned surfaces agree with the exact current Vatican English passage."
+claim_keys = ["baptism-formulas"]
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:a5fddc2fa9d2e9ec844e91bd0dd828e2f137ab4f02ea39dbc22302c164c2f35e"
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-vatican-web-2026-07-23.1300"
+loci = ["1300"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Paragraph 1300 was collated against the current Latin and Eastern Confirmation formula wording in sections/12-confirmation.tex and summaries/confirmation.tex. Both treatise-owned surfaces preserve the current Vatican expression, including its wording that the gift is the Holy Spirit."
+claim_keys = ["confirmation-formulas"]
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:0b46767599cbf289aaaf6e5aa2bb322849c052a470506657e5a2bf37588609ed"
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-vatican-web-2026-07-23.1449"
+loci = ["1449"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Paragraph 1449 was collated against the Latin absolution conclusion in sections/21-penance.tex and summaries/penance.tex. Both treatise-owned surfaces agree with the exact current Vatican English passage, including its punctuation before the final conjunction."
+claim_keys = ["penance-absolution-formula"]
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:1c86747958f4605500efcb17169331c6871f503a59612aac5c0d37fcea7521fa"
