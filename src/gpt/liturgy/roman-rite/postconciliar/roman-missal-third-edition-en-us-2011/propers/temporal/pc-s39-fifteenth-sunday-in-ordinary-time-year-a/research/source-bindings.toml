@@ -8,3 +8,39 @@ loci = ["541-550"]
 role = "context"
 states = ["cataloged"]
 context = "The legacy publication identifies the modern Holy See English Catechism presentation at these loci as doctrinal context for the Kingdom and its parables, not direct commentary on the Week XV formula. This catalog-only binding shares the edition identity used by the neighboring proper studies but claims no inspection of a canonical artifact."
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.online-edition-notice"
+loci = ["online-edition-notice"]
+role = "currentness-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The official notice pins the United States GIRM state governing this 2026 proper guide, including the 2021 emendations. It does not substitute for the guide's outstanding publisher-specific U.S. altar-book collation."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:bcf8f698fcea295978be2151acf5cde111a133ad0ad812ad1475eaf6a2a5a5bc"
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.363"
+loci = ["363"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The passage was checked against the Week XV owner's oration inventory and the leaf's weekday-spillover limit: the Sunday orations are proper to the formula, while eligible Ordinary Time ferial use is permitted under the stated rule rather than automatic."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:de05c212c3db5334c1e83f91bc77ec7d05739bcc50f2da214ca38e84ebd0fb42"
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-d"
+loci = ["365(d)"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact rule was checked against the guide's unresolved Eucharistic Prayer IV branch: because Week XV has no proper Preface, Prayer IV may be selected only with its own invariable Preface. No actual selection is inferred."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:7197153b7137a151997474608d070bb179b73f5c08f22be4c8b6a3c6842bb70d"
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-b"
+loci = ["365(b)"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact rule was checked against the guide's compatible non-IV branch: Eucharistic Prayer II may use its own Preface or another qualifying Preface. This is a permitted unresolved path, not an inferred selection."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:55ff9568ce6ec9c09c8c9633c8371955dde89062888e95394f91657579a65420"

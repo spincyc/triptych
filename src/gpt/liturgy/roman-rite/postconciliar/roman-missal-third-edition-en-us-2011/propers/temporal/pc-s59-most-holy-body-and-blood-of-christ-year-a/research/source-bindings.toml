@@ -8,3 +8,30 @@ loci = ["1322-1419"]
 role = "official-control"
 states = ["cataloged"]
 context = "The legacy scope and bibliography identify the modern Holy See English Catechism presentation as the doctrinal control for Eucharistic memorial, sacrifice, Presence, transubstantiation, worship, worthy reception, union, ecclesial unity, and pledge. This catalog-only binding claims no inspection of a canonical artifact."
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.online-edition-notice"
+loci = ["online-edition-notice"]
+role = "currentness-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The official notice pins the United States GIRM state governing this 2026 proper guide, including the 2021 emendations. It does not substitute for the guide's outstanding publisher-specific U.S. altar-book collation."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:bcf8f698fcea295978be2151acf5cde111a133ad0ad812ad1475eaf6a2a5a5bc"
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.363"
+loci = ["363"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The passage was checked against the guide's proper-oration inventory and its limit on any later Ordinary Time ferial reuse. It governs use of orations already proper to this Mass; the Missal formulary, not no. 363, establishes their identity, and no automatic weekday continuation is inferred."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:de05c212c3db5334c1e83f91bc77ec7d05739bcc50f2da214ca38e84ebd0fb42"
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-d"
+loci = ["365(d)"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact rule was checked against the guide's Eucharistic Prayer branch: either appointed proper Eucharistic Preface excludes Eucharistic Prayer IV because its Preface is invariable. The actual compatible Prayer remains unresolved."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:7197153b7137a151997474608d070bb179b73f5c08f22be4c8b6a3c6842bb70d"

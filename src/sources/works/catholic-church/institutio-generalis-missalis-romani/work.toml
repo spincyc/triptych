@@ -1,0 +1,11 @@
+schema = 1
+record_type = "work"
+id = "work.catholic-church.institutio-generalis-missalis-romani"
+title = "Institutio Generalis Missalis Romani"
+responsible = "Catholic Church"
+work_type = "liturgical-instruction"
+alternate_titles = ["General Instruction of the Roman Missal", "GIRM", "IGMR"]
+languages = ["la"]
+locus_pattern = '(?:[1-9][0-9]{0,2}(?:\([a-z]\))?|online-edition-notice)'
+description = "The numbered General Instruction belonging to the Roman Missal. Its Latin typical texts, translations, territorial adaptations, amendment states, and delivery artifacts require distinct edition records."
+relations = ["work.catholic-church.missale-romanum"]
