@@ -4,8 +4,8 @@ provider = "gpt"
 audited_on = "2026-07-23"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 103
-source_surface_file_count = 1182
-snapshot = "sha256:edd451815de7452682554b74b9db557fcae10ef1b3b87ce4084f0048988bd459"
+source_surface_file_count = 1181
+snapshot = "sha256:7ba54e6d58231876a5ad265afc935fe73af8ebd8300d53785462bf88c44e8109"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -3513,13 +3513,13 @@ owners = ["curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-o
 
 [[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-compression/research/module-map.md"
-sha256 = "25883ab44198679c779808663b09d9774e91e425561f496c4cfe070c8a7f605d"
+sha256 = "29a47f76bd475f60869b91546138fc8ef656a4864dff1476e140b113c9569a12"
 kind = "research-record"
 owners = ["curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-compression"]
 
 [[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-compression/research/source-bindings.toml"
-sha256 = "11a00a6f5e3309ede8e2dea92455d0e645946ec61b5a7a12113c1c0b56e0f8fc"
+sha256 = "c668c3e953eddbddb5dcb2c8b5ead0c91c7eca1562732be5755d8446e927c163"
 kind = "source-binding"
 owners = ["curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-compression"]
 
@@ -3591,13 +3591,13 @@ owners = ["curriculums/ecclesiastical-latin/03-missal-reading/16-chants-prefaces
 
 [[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/03-missal-reading/16-chants-prefaces-and-canon/research/module-map.md"
-sha256 = "68baa181908c509212540f538ff0e093f846aeee9ba83bcb00bcbdb01a52a8f4"
+sha256 = "40b7a2fa5286a1cef1288b8306513f48353d6d22f67ec37182d2f46007e31967"
 kind = "research-record"
 owners = ["curriculums/ecclesiastical-latin/03-missal-reading/16-chants-prefaces-and-canon"]
 
 [[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/03-missal-reading/16-chants-prefaces-and-canon/research/source-bindings.toml"
-sha256 = "bb55b1aec57919a1fa429e1182b9461ea9dc7fd177f52e199e8ee3d59d222661"
+sha256 = "11e9ef6d55994dc3d502192dd73178a362f68ffe5c784efdd793aadd124ebe0c"
 kind = "source-binding"
 owners = ["curriculums/ecclesiastical-latin/03-missal-reading/16-chants-prefaces-and-canon"]
 
@@ -3663,14 +3663,8 @@ owners = ["curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical
 
 [[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-texture/research/module-map.md"
-sha256 = "29c9a13378a301140a9e320ad1a67c812f3577c74797a16e67b320909f0bf30e"
+sha256 = "b9eda9506492c0a74cef4d3c483f5675c56784a5492ae5540aeac12fbaf27308"
 kind = "research-record"
-owners = ["curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-texture"]
-
-[[files]]
-path = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-texture/research/source-bindings.toml"
-sha256 = "6755e434243c36aae8c5459ed654e695b9dddd64092025cf409e53d016582546"
-kind = "source-binding"
 owners = ["curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-texture"]
 
 [[files]]
@@ -3693,7 +3687,7 @@ owners = ["curriculums/ecclesiastical-latin/04-advanced/20-allusion-rhetoric-and
 
 [[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/04-advanced/20-allusion-rhetoric-and-periodic-prose/research/source-bindings.toml"
-sha256 = "8661519d6b24588b7ee4ce8ea6389f095882954e6e728be98cb26eeaba9d8538"
+sha256 = "4924126542a6c1196161a5a828747792b8d3738af4c148fa91948e7a30c71995"
 kind = "source-binding"
 owners = ["curriculums/ecclesiastical-latin/04-advanced/20-allusion-rhetoric-and-periodic-prose"]
 
@@ -3963,13 +3957,13 @@ owners = ["curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced"]
 
 [[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced/research/companion-map.md"
-sha256 = "55fbbbc3c46b29ccc328a7e58be26821dd32f5f9eb62abb6a9325e458818a7dc"
+sha256 = "21c62ece45cb904fe31f261c58412b07d3d2cebabb0f1b06ec61ed9ab3acdc86"
 kind = "research-record"
 owners = ["curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced"]
 
 [[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced/research/source-bindings.toml"
-sha256 = "e0377a9b711ba2c24265bcab6558caa2848a5e741537c2bfa32a69f7f5a1434b"
+sha256 = "9d058a1096cab87b92fe5ed539bf23207dbdf21198d4031515d1915dd5866cc7"
 kind = "source-binding"
 owners = ["curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced"]
 
@@ -4005,7 +3999,7 @@ owners = ["owner.curriculums.ecclesiastical-latin"]
 
 [[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/research/passage-inventory.md"
-sha256 = "090b88ff624f5446e866f2bf44f85266e40b6ec6d3344f18efc019d3e4ffcea1"
+sha256 = "1b08c3e03e086a84e474630773e0a44c49e9631de9bc1abd9841017e40adbdd7"
 kind = "research-record"
 owners = ["owner.curriculums.ecclesiastical-latin"]
 
@@ -5763,13 +5757,13 @@ owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/source-audit.md"
-sha256 = "11a2a69ea3983c7a8d2396e0f735dd31e3906519722b04574977063b1c8df922"
+sha256 = "0169f28d25f7b2429039b23ec026694b643c4ecd1ed0b60d81616e6c09bce497"
 kind = "legacy-source-audit"
 owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/source-bindings.toml"
-sha256 = "874a2ec8e0cb1d92371e80947681e5fe27851e3e6102d4201987cb04421e6dcf"
+sha256 = "dc2e0916da8b6475c2e98aee021df494cfe38762cb99e872c88a36891c69b61e"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 

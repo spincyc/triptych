@@ -10,3 +10,12 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The curriculum owner passage inventory records these lines as visually verified against the exact CMAA facsimile artifact. EL-M16's leaf routing imports only this bounded Sequence selection; this binding does not claim a work-wide inspection or search."
 verified_on = "2026-07-22"
 source_fingerprint = "sha256:6b4dcd3ee771d6d92734992ecabfe09b289235954e963afcf523fc8f8ee9b12d"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-te-igitur"
+loci = ["Canon Missae, Te igitur through catholicae et apostolicae fidei cultoribus, artifact PDF p. 382, beginning at marginal no. 1088", "Exact lesson opening through haec sancta sacrificia illibata"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The shared passage record controls EL-M16's exact lesson excerpt from Te igitur through the deictic gift series. Worksheet III.31.1 separately omits the Christological mediation phrase and remains an identified course adaptation."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:3c281ce4834eadccf164d4535fd0eb97146a72d1db7513c7050a21b2d7c3afbf"

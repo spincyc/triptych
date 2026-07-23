@@ -1,16 +1,28 @@
 # Source audit: The Ordinary and Order of the Mass
 
-Access dates for public web sources: 2026-07-12 through 2026-07-15. “Used” means the source controls or materially supports a claim in the publication; it does not mean every page of a large work is relied upon.
+Access dates for public web sources: 2026-07-12 through 2026-07-15, with the
+exact Missal artifact reacquired on 2026-07-23. “Used” means the source controls
+or materially supports a claim in the publication; it does not mean every page
+of a large work is relied upon.
 
 ## Controlling liturgical witness
 
 | Source | Locus checked | Claim families controlled | Status and limitations |
 | --- | --- | --- | --- |
-| *Missale Romanum*, editio typica 1962, CMMA facsimile | *Ritus servandus*, printed pp. LII--LXIV; *Ordo Missae* and *Canon Missae*, printed pp. 216--328 | Sequence, Latin incipits, ministers, gestures, audibility, omissions, proper slots, Low/sung/Solemn distinctions | Controlling received text. Public scan checked directly; OCR and hand-missal transcriptions do not override it. A repository-wide Latin-integrity re-collation on 2026-07-14 restored omitted words and responses, including `sed et`, `Domine Deus`, `Et cum spiritu tuo`, and the Last-Gospel response; restored the facsimile's `neglegentiis`; and reconciled source punctuation and capitalization across quoted units 4, 6--7, 14--16, 20--23, 25--26, 29--31, and 33. |
+| *Missale Romanum*, editio typica 1962, CMAA facsimile | *Ritus servandus*, printed pp. LII--LXIV; *Ordo Missae* and *Canon Missae*, printed pp. 216--328 | Sequence, Latin incipits, ministers, gestures, audibility, omissions, proper slots, Low/sung/Solemn distinctions | Controlling received text. Public scan checked directly; OCR and hand-missal transcriptions do not override it. A repository-wide Latin-integrity re-collation on 2026-07-14 restored omitted words and responses, including `sed et`, `Domine Deus`, `Et cum spiritu tuo`, and the Last-Gospel response; restored the facsimile's `neglegentiis`; and reconciled source punctuation and capitalization across quoted units 4, 6--7, 14--16, 20--23, 25--26, 29--31, and 33. |
 | John XXIII, *Rubricarum instructum* (1960) | nos. 1--5 and promulgated rubrical context | Promulgation and immediate history of the 1960 rubrical code incorporated into the 1962 Missal | Official Holy See text. Does not itself supply a complete history of every change. |
 | Predecessor printed Roman Missals | Lippe's edition of the 1474 Milan Missal, pp. 198--212; 1570, 1604, and 1634 typical editions at their Orders of Mass | Plenary-Missal inheritance, Tridentine standardization, subsequent authorized correction | The 1474 sequence was checked unit by unit. The later editions are used for identified standardization points, not represented as a complete diplomatic collation. |
 
 Primary facsimile: <https://media.churchmusicassociation.org/pdf/missale62.pdf>. Official promulgation text: <https://www.vatican.va/content/john-xxiii/la/motu_proprio/documents/hf_j-xxiii_motu-proprio_19600725_rubricarum-instructum.html>.
+
+On 2026-07-23 the exact hashed facsimile registered as
+`artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf`
+was reacquired and its Canon page 382 reopened. The complete *Te igitur*
+sentence through *catholicae et apostolicae fidei cultoribus*, together with
+its intervening ceremonial rubrics, was visually checked and registered as a
+reusable passage. The publication binding uses that passage only for the
+ecclesial-intercession paraphrase in the Canon exposition; broader ceremonial
+and whole-Canon claims remain under the edition-level audit.
 
 The movement-shaped rewrite received a second direct facsimile collation on 2026-07-15. It corrected the paten's sign of the Cross, Preface and Canon page ranges, the memorial clause before the chalice elevation, three incipit punctuation points, the fragment-gathering and paten-wiping sequence, the dismissal's Easter and Requiem variants, the exact blessing omissions, and the order and conditional branches of the Last Gospel. A subsequent heading audit restored received incipits and standard ritual designations to the primary headings. It also kept *Oremus* with the Collect rather than the preceding greeting, restored *Epistola vel Lectio* in place of the postconciliar-sounding “First Reading,” and named *Alleluia vel Tractus* as alternatives. General Rubric 426 corrects a Solemn-only simplification: the incensations prescribed at Solemn Mass may also be used at any sung Mass. General Rubric 473 separately controls the sung-Mass concurrency map: the celebrant reads the interlection chants but does not duplicate the lesson or Gospel proclaimed by their proper ministers.
 

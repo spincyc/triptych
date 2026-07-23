@@ -14,7 +14,16 @@ source_id = "edition.catholic-church.missale-romanum.vatican-typica-1962"
 loci = ["Ritus servandus, printed pages LII-LXIV", "Ordo Missae and Canon Missae, printed pages 216-328"]
 role = "textual-control"
 states = ["cataloged"]
-context = "The publication's legacy edition manifest and source audit identify the 1962 Vatican typical edition as its textual control at these loci, but do not pin the exact consulted bytes with a recorded hash; this is therefore catalog-only."
+context = "The publication's legacy edition manifest and source audit identify the 1962 Vatican typical edition as its broad textual control at these loci, but do not pin every consulted locus to exact bytes; this remains catalog-only apart from separately registered and bound passages."
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-te-igitur"
+loci = ["Canon Missae, Te igitur through catholicae et apostolicae fidei cultoribus, artifact PDF p. 382, beginning at marginal no. 1088", "Ecclesial-intercession tail from pro Ecclesia tua sancta catholica through catholicae et apostolicae fidei cultoribus"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact passage controls the exposition's paraphrase of the Te igitur intercession for the Church, pope, local ordinary, and persons described in relation to Catholic and apostolic faith. This binding does not promote the publication's broader gesture sequence or the whole Canon beyond the separately cataloged edition loci."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:3c281ce4834eadccf164d4535fd0eb97146a72d1db7513c7050a21b2d7c3afbf"
 
 [[bindings]]
 source_id = "edition.catholic-church.catechism.english-vatican-archive-2003"
