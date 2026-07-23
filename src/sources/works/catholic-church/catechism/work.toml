@@ -1,0 +1,11 @@
+schema = 1
+record_type = "work"
+id = "work.catholic-church.catechism"
+title = "Catechism of the Catholic Church"
+responsible = "Catholic Church"
+work_type = "catechism"
+alternate_titles = ["Catechismus Catholicae Ecclesiae"]
+languages = ["fr", "la"]
+locus_pattern = '[1-9][0-9]{0,3}(?:-[1-9][0-9]{0,3})?'
+description = "The universal Catechism promulgated in its first French text in 1992 and in its definitive Latin typical edition in 1997. Edition records distinguish language, translation, dated delivery state, and amendments rather than treating paragraph numbers alone as exact textual identity."
+relations = ["work.holy-see.catechism-2267-rescript-2018"]
