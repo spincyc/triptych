@@ -77,6 +77,7 @@ class DistributionArtifactTests(unittest.TestCase):
         self.assertIn("worktree_marshal/cli.py", names)
         self.assertIn("worktree_marshal/engine.py", names)
         self.assertIn("worktree_marshal/git.py", names)
+        self.assertIn("worktree_marshal/model.py", names)
         self.assertIn("worktree_marshal/profiles.py", names)
         self.assertIn("worktree_marshal/triptych_compat.py", names)
         self.assertIn("worktree_marshal/resources/__init__.py", names)
@@ -140,6 +141,7 @@ class DistributionArtifactTests(unittest.TestCase):
             "src/worktree_marshal/cli.py",
             "src/worktree_marshal/engine.py",
             "src/worktree_marshal/git.py",
+            "src/worktree_marshal/model.py",
             "src/worktree_marshal/profiles.py",
             "src/worktree_marshal/triptych_compat.py",
             "src/worktree_marshal/resources/__init__.py",
@@ -151,6 +153,7 @@ class DistributionArtifactTests(unittest.TestCase):
             "tests/test_installed_lifecycle.py",
             "tests/test_cli.py",
             "tests/test_make_fragment.py",
+            "tests/test_model.py",
             "tests/test_package.py",
             "tests/test_profile_isolation.py",
         }
@@ -170,6 +173,7 @@ class DistributionArtifactTests(unittest.TestCase):
 
         self.assertIn("worktree_marshal/cli.py", names)
         self.assertIn("worktree_marshal/git.py", names)
+        self.assertIn("worktree_marshal/model.py", names)
         self.assertIn(
             "worktree-marshal = worktree_marshal.cli:main",
             entry_points,

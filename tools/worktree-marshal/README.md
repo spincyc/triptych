@@ -5,9 +5,9 @@ Transactional Git worktrees for coding agents.
 ## Extraction status
 
 This directory contains the shared lifecycle engine, its first extracted
-cycle-free Git policy seam, its first generic profile, the frozen Triptych
-compatibility adapter, the Python distribution, and the Make integration
-fragment. The repository-local
+cycle-free Git policy and durable-state vocabulary seams, its first generic
+profile, the frozen Triptych compatibility adapter, the Python distribution,
+and the Make integration fragment. The repository-local
 [`scripts/triptych-codex`](../../scripts/triptych-codex) command is a thin,
 in-process bootstrap for the co-located package engine.
 
@@ -108,17 +108,23 @@ worktree-removal or ref-transaction failures, receipt recovery, garbage
 collection, or concurrent retirement. Those retirement cases, broader crash
 and race recovery, broader security coverage, the complete installed lifecycle
 matrix, and the supported Python and Git CI matrix remain release gates; the
-first step-5 seam is protected by the source and installed parity suites, and
-each remaining helper boundary still requires its own direct parity coverage.
+first two step-5 seams are protected by the source and installed parity suites,
+and each remaining helper boundary still requires its own direct parity
+coverage.
 
 Step 5 has begun narrowly: [`git.py`](src/worktree_marshal/git.py) owns only
 the deterministic environment and argument transforms plus their fixed policy
 constants. Direct tests freeze that seam, its source-copy behavior, and its
-wheel and source-distribution presence. Executable discovery, subprocess
-execution, inherited locks, repository authentication, effective-configuration
-probing, ref transactions, and every lifecycle transition remain together in
-`engine.py`. The frozen legacy contract and current security boundary are
-recorded in
+wheel and source-distribution presence.
+
+[`model.py`](src/worktree_marshal/model.py) now owns the exact durable state
+vocabulary, its two existing pending-state families, and the pure predicate
+used by manifest validation. It does not yet own typed run records or a
+transition graph, and no state mutation or recovery decision moved out of
+`engine.py`. Executable discovery, subprocess execution, inherited locks,
+repository authentication, effective-configuration probing, ref transactions,
+and every lifecycle transition also remain together there. The frozen legacy
+contract and current security boundary are recorded in
 [`docs/compatibility-contract.md`](docs/compatibility-contract.md); the target
 architecture and release sequence are in [`docs/design.md`](docs/design.md).
 

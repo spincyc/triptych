@@ -36,6 +36,12 @@ from .git import (
     hardened_git_arguments,
     sanitized_git_environment as _sanitized_git_environment,
 )
+from .model import (
+    MANAGED_CONFLICT_STATES,
+    RETIREMENT_PENDING_STATES,
+    RUN_STATES,
+    is_run_state,
+)
 from .profiles import (
     BUILTIN_PROFILES,
     CONTROL_ENVIRONMENTS,
@@ -45,10 +51,6 @@ from .profiles import (
 
 RUN_ID_RE = re.compile(r"^[0-9]{8}t[0-9]{6}z-[0-9a-f]{12}$")
 OBJECT_ID_RE = re.compile(r"^(?:[0-9a-f]{40}|[0-9a-f]{64})$")
-RETIREMENT_PENDING_STATES = {
-    "retirement-pending",
-    "retirement-ref-cleanup-pending",
-}
 RETIREMENT_OBJECT_FIELDS = (
     "retirement_discard_head",
     "retirement_target_contains",
@@ -111,42 +113,6 @@ INTEGRATION_TRANSACTION_FIELDS = (
     "integration_rebased_at",
     "integration_previous_state",
 )
-MANAGED_CONFLICT_STATES = {
-    "integration-conflict",
-    "integration-continue-pending",
-    "integration-abort-pending",
-}
-RUN_STATES = {
-    "allocating",
-    "allocation-failed",
-    "ready",
-    "running",
-    "preserved",
-    "failed-preserved",
-    "interrupted",
-    "quarantined",
-    *RETIREMENT_PENDING_STATES,
-    "cleaned",
-    "cleaned-branch-retained",
-    "integration-conflict",
-    "integration-continue-pending",
-    "integration-review-pending",
-    "integration-manual-landing-pending",
-    "integration-abort-pending",
-    "integration-abort-recovery-failed",
-    "integration-rebase-pending",
-    "integration-rebase-recovery-failed",
-    "integration-rebase-rollback-pending",
-    "integration-rebase-rollback-failed",
-    "integration-merge-pending",
-    "integration-merge-failed",
-    "integration-verification-pending",
-    "integration-verification-failed",
-    "integrated-pending-cleanup",
-    "integration-cleanup-pending",
-    "integration-cleanup-failed",
-    "cleaned-ref-retained",
-}
 MAX_ADMIN_FILE_BYTES = 16 * 1024 * 1024
 MAX_ADMIN_TREE_BYTES = 64 * 1024 * 1024
 ROOT_FLAG_OPTIONS = {
@@ -992,11 +958,12 @@ def load_manifest(repository: Repository, run_id: str) -> dict:
 
 def validate_manifest_paths(repository: Repository, manifest: dict) -> None:
     state = manifest.get("state")
-    if not isinstance(state, str) or state not in RUN_STATES:
+    if not is_run_state(state, run_states=RUN_STATES):
         raise LauncherError("run manifest has an invalid lifecycle state")
     previous_state = manifest.get("integration_previous_state")
-    if previous_state is not None and (
-        not isinstance(previous_state, str) or previous_state not in RUN_STATES
+    if previous_state is not None and not is_run_state(
+        previous_state,
+        run_states=RUN_STATES,
     ):
         raise LauncherError("run manifest has an invalid previous lifecycle state")
     worktrees_root = (repository.state_root / "worktrees").resolve()

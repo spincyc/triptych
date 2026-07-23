@@ -18,13 +18,14 @@ arbitrary executable is not equivalent support.
 The current package deliberately keeps lifecycle transitions in one shared
 `engine.py`. `cli.py` owns the installed grammar, `profiles.py` owns immutable
 durable identities, `git.py` now owns only the cycle-free Git policy kernel,
-and `triptych_compat.py` binds the frozen adapter. The rest of the engine will
-be separated behind these modules only after parity tests protect each seam:
+`model.py` now owns only the exact state vocabulary and pure classifier, and
+`triptych_compat.py` binds the frozen adapter. The rest of the engine will be
+separated behind these modules only after parity tests protect each seam:
 
 ```text
 worktree_marshal/
   cli.py                 command parsing and stable exit behavior
-  model.py               typed run records and state transitions
+  model.py               state vocabulary now; typed records and transitions later
   state.py               private paths and durable manifest writes
   locks.py               repository and per-run locking
   git.py                 Git policy now; hardened invocation and ref transactions later
@@ -82,13 +83,21 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with one behavior-preserving boundary. The pure Git policy
+has begun step 5 with two behavior-preserving boundaries. The pure Git policy
 kernel now transforms an explicit environment mapping and Git argument
 sequence in `git.py`; `engine.py` retains its optional environment-acquisition
 wrapper and all executable discovery, subprocess, lock inheritance, repository
 authentication, configuration probing, ref transactions, and lifecycle state.
-Direct tests freeze this policy, its compatibility surface, and artifact
-inclusion. The Make API and legacy contract are frozen; the shared engine is
+The second cycle-free boundary places the exact durable state vocabulary, the
+existing retirement-pending and managed-conflict families, and a pure
+classifier in `model.py`. Manifest validation uses that predicate while
+retaining its exact diagnostics and engine-global rebinding behavior. State
+assignment, a transition graph, typed run records, checkpoint validation, and
+all recovery choices remain in `engine.py`. Direct tests freeze both extracted
+policies, their compatibility surfaces, artifact inclusion, and the existing
+dynamic restoration of every vocabulary value currently accepted in
+`integration_previous_state` before any graph is introduced. The Make API and
+legacy contract are frozen; the shared engine is
 co-located behind the thin `scripts/triptych-codex` bootstrap; wheel and source
 artifacts are built, a wheel is rebuilt from the extracted source artifact,
 and that wheel is installed and checked outside the source checkout without
