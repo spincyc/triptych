@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-07-23"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:6f9fbf242b10865bdb04a8dc36c992dab00782d71459fd47f91476cfc754129d"
+inventory_snapshot = "sha256:edd451815de7452682554b74b9db557fcae10ef1b3b87ce4084f0048988bd459"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:dafeabb5de4701ba2d641eaed5f3c550cb19836e6140a6cb39f44a74cc4e1c92"
-canonical_catalog_snapshot = "sha256:46d5cdd0122313f3d9fb5e0549aa714007ed0069ccb2e7fc8788853b06215d39"
+canonical_catalog_snapshot = "sha256:6db40cb53fd454fe4680d0550dfd0f29c314df4149160527e2447c516690fb58"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:af93cd216115be209df7478856269ea7e449669343346ac194b6d660e069ee06"
+snapshot = "sha256:1060299e02218c9ae0f93bbde74b0d2289070377c86e97ade4c9870cfcdbcdc6"
 
 [[families]]
 id = "family.acta.aas-ass"
@@ -185,7 +185,7 @@ freshness_rule = "not-applicable"
 evidence_ceiling = "passage-pin"
 disposition = "bind-existing"
 priority = "p0"
-canonical_ids = ["artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu", "artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu-ocr", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf", "edition.catholic-church.missale-romanum.benziger-iuxta-typicam-1962", "edition.catholic-church.missale-romanum.vatican-typica-1962", "work.catholic-church.missale-romanum"]
+canonical_ids = ["artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu", "artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu-ocr", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf", "edition.catholic-church.missale-romanum.benziger-iuxta-typicam-1962", "edition.catholic-church.missale-romanum.vatican-typica-1962", "passage.catholic-church.missale-romanum.vatican-typica-1962.pentecost-sequence", "work.catholic-church.missale-romanum"]
 trace_patterns = ["(?:Missale Romanum.{0,40}1962|1962.{0,40}(?:Roman )?Missal)"]
 reviewed_on = "2026-07-23"
 notes = "Reuse the canonical work, distinct Vatican typical and Benziger iuxta-typicam editions, and three exact remote artifacts. Artifact-level rights were reviewed but remain unresolved, so no payload is stored; publication loci still require separate binding review."
@@ -822,12 +822,12 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/06-rhythmic-hymnody-and-sequences"
-surface_snapshot = "sha256:97c6950369d7c04eaa15c2a115b6c540259842ac28940956d705ce1b3e98ba40"
+surface_snapshot = "sha256:e3a13b23a9a6428628ac8d8e18dcb6a6c669800673eec43e940dce4357b4a8e4"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/07-poetic-commentary"
-surface_snapshot = "sha256:10c75db7375bd0e665865ea82abdd6273feaa9781806be61ed04119d9cabfe1f"
+surface_snapshot = "sha256:ba20dc9eaeeeb311459fdb3c1834543e01b7c646dbdbc71b1ab8bd6d03941537"
 review_state = "pending"
 
 [[review_units]]
