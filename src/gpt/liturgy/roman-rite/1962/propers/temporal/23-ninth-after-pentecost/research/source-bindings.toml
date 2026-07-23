@@ -1,4 +1,4 @@
-schema = 1
+schema = 2
 record_type = "bindings"
 document = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"
 
@@ -17,3 +17,12 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The exact CMAA-hosted facsimile of the 1962 Vatican typical edition is the baseline witness visually collated for the complete appointed formulary."
 verified_on = "2026-07-20"
 source_fingerprint = "sha256:6b4dcd3ee771d6d92734992ecabfe09b289235954e963afcf523fc8f8ee9b12d"
+
+[[bindings]]
+source_id = "segment.second-vatican-council.lumen-gentium.latin-aas-57-1965.aas-57-1965-pages-5-71"
+loci = ["3", "15"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact official Latin Acta text was checked at both loci. Paragraph 3 clearly reuses the Secret's redemption clause and immediately joins Eucharistic sacrifice to effected unity, but supplies no note identifying this Sunday; paragraph 15 places purification and renewal within the Church's work for unity and controls the publication's account of later Postcommunion reception rather than the 1962 compiler's intent."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:86fb1dd11609d9fba8420606bf08e7a5e5935512d6968306dd939d0277ef93d6"

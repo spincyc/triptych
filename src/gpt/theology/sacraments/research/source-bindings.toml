@@ -130,3 +130,30 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The complete chapter was visually checked in the exact Buffalo 1887 ANF facsimile for the treatise's account of Sunday Word, Eucharist, distribution, and charity. It does not supply later scholastic analysis or establish a verbatim universal order."
 verified_on = "2026-07-23"
 source_fingerprint = "sha256:bac02d64cdb19410b0d954a444ad57942628b732fc5fbf6ff1b1b7331dd4c9d6"
+
+[[bindings]]
+source_id = "edition.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23"
+loci = ["7-11", "18-29", "35", "41"]
+role = "official-control"
+states = ["cataloged"]
+context = "The treatise's consolidated references identify these broader Lumen gentium ranges. Its research scope separately maps the claims actually checked in this proof; the remaining bibliography-context loci are not promoted to inspected or verified evidence."
+
+[[bindings]]
+source_id = "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.10-11"
+loci = ["10-11"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Paragraph 10 was checked against sections/30-communion-introduction.tex. It controls the ordered relation and essential distinction between the common and ministerial priesthoods; paragraph 11 is present in the reusable passage but is not claimed as a separately mapped treatise locus."
+claim_keys = ["common-and-ministerial-priesthood"]
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:a1530ed1e2c173aa46a742fd2676bca27194a7dc568a2962026c62d46d382fab"
+
+[[bindings]]
+source_id = "artifact.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.vatican-html-579d2ef7"
+loci = ["18-29"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The official English chapter III range was checked against sections/31-orders.tex and the canonical summaries/orders.tex imported by both sacramental publications. Paragraphs 20-22 and 26 directly control apostolic succession, the fullness conferred in episcopal consecration, hierarchical communion, and the bishop's Eucharistic and sacramental ministry; the complete 18-29 range supports the shared summary's bounded three-degree witness."
+claim_keys = ["orders-episcopate", "orders-three-degrees-summary"]
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:e014e50e07c31c0e2682ce0c6eea2573e0d4572d85fe0181e7bd0664617a7e78"

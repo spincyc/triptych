@@ -123,3 +123,13 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The complete chapter was visually checked in the exact Buffalo 1887 ANF facsimile against the directly imported treatise-owned Eucharist summary. It is a bounded structural witness, not a verbatim universal order or a later scholastic analysis."
 verified_on = "2026-07-23"
 source_fingerprint = "sha256:bac02d64cdb19410b0d954a444ad57942628b732fc5fbf6ff1b1b7331dd4c9d6"
+
+[[bindings]]
+source_id = "artifact.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.vatican-html-579d2ef7"
+loci = ["18-29"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The companion directly imports the treatise-owned Orders summary citing Lumen gentium 18-29. The official English range was checked against that unchanged shared source and its rendered claim that episcopate, presbyterate, and diaconate are sacramental degrees, with character, imposition of hands, consecratory words, and differentiated ministry kept within the range's actual teaching."
+claim_keys = ["orders-three-degrees-summary"]
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:e014e50e07c31c0e2682ce0c6eea2573e0d4572d85fe0181e7bd0664617a7e78"

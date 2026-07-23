@@ -156,6 +156,7 @@ Primary Latin pages:
 
 | Claim | Source and exact locus | Authority / limit |
 | --- | --- | --- |
+| The Church is holy by Christ's gift while embracing sinners and always needing purification. | LG 8 | Authoritative conciliar doctrine. Mary's singular immaculate beginning is not transferred without qualification to the pilgrim Church. |
 | Mary remained free from every personal sin by special privilege. | Trent session VI, canon 23; LG 56; CCC 493; John Paul II, 19 June 1996. | Authoritative doctrine related to but not identical with the 1854 object. |
 | Mary is Mother of the Church and mother in the order of grace. | John 19:25–27; LG 61–63; Paul VI's 1964 proclamation; CCC 963–970. | Conciliar/papal doctrine and title. No independent efficient causality over divine life. |
 | Mary is Queen by limited and analogous participation in Christ. | Pius XII, *Ad caeli Reginam* §§31, 34, 39; LG 59; CCC 966. | Authoritative doctrine. No separate dogmatic visual coronation event. |

@@ -82,3 +82,46 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The complete chapter was visually checked in the exact Buffalo 1887 ANF facsimile for the Institution-mystery account of Sunday worship, distribution, and concrete charity. It does not equate the second-century outline with every later form."
 verified_on = "2026-07-23"
 source_fingerprint = "sha256:bac02d64cdb19410b0d954a444ad57942628b732fc5fbf6ff1b1b7331dd4c9d6"
+
+[[bindings]]
+source_id = "edition.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23"
+loci = ["52-69"]
+role = "context"
+states = ["cataloged"]
+context = "The consolidated reference list names the complete Marian chapter as the Rosary's broad conciliar frame. The mystery audit establishes extensive but bounded use at paragraphs 53 and 56-65, represented below; no review of every paragraph in 52-69 is claimed."
+
+[[bindings]]
+source_id = "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.53"
+loci = ["53"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The checked official English paragraph supports the Rosary's account of Mary's divine motherhood, graced creaturehood, ecclesial membership, and exemplarship."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:3393fa29f51e20a049ab4ac7230ebbe9e9f897732ac095c4967e6cd9d5e0da3d"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.56"
+loci = ["56"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The checked official English paragraph governs the Annunciation study's account of Mary's free, grace-enabled fiat and subordinate cooperation."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:c4f6979b1a2ad138490ef8c2c432badb1953a65f92bfab7dfbdef93cb9e2f8ad"
+
+[[bindings]]
+source_id = "artifact.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.vatican-html-579d2ef7"
+loci = ["57-59", "63-65"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "These exact official English loci were checked against the mystery-by-mystery audit for Mary's pilgrimage of faith, union with Christ through the Cross, prayer at Pentecost, Assumption and derived Queenship, and typological relation to the Church. The binding does not extend to unexamined paragraphs in Chapter VIII."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:e014e50e07c31c0e2682ce0c6eea2573e0d4572d85fe0181e7bd0664617a7e78"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.60-62"
+loci = ["60-62"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The checked official English paragraphs control the Rosary's repeated doctrinal boundary: Marian cooperation and intercession are subordinate participation in Christ's one all-sufficient mediation."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:319ecc3fadbe4a72b333648b084c117e36a4e1e26e341426a95b89c0f70073ba"

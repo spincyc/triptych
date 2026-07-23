@@ -24,3 +24,46 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The checked archived paragraph governs the study's presentation of Mary's real but subordinate maternal role and intercession within Christ's one mediation."
 verified_on = "2026-07-23"
 source_fingerprint = "sha256:979d13d27cd9ad7570cf774a31d80a1b260ac4156d9d5532864b290c49342364"
+
+[[bindings]]
+source_id = "edition.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23"
+loci = ["52-69"]
+role = "context"
+states = ["cataloged"]
+context = "The rendered bibliography names the complete Marian chapter as doctrinal context. The audit establishes bounded use at paragraphs 53-56, 60-62, and 65, which are represented by the exact verified bindings below; the rest of the chapter remains catalog-only here."
+
+[[bindings]]
+source_id = "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.53"
+loci = ["53"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The checked official English paragraph supports the Lourdes study's Christological account of Mary's divine motherhood, redeemed creaturehood, and sublime graced vocation."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:3393fa29f51e20a049ab4ac7230ebbe9e9f897732ac095c4967e6cd9d5e0da3d"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.56"
+loci = ["56"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The checked official English paragraph governs the study's description of Mary's received holiness and Christ-dependent cooperation, including the distinction between lifelong holiness and the exact 1854 dogmatic object."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:c4f6979b1a2ad138490ef8c2c432badb1953a65f92bfab7dfbdef93cb9e2f8ad"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.60-62"
+loci = ["60-62"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The checked official English paragraphs govern every reference to Marian healing intercession: Mary's maternal role is created, subordinate, and wholly dependent upon Christ the one Mediator."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:319ecc3fadbe4a72b333648b084c117e36a4e1e26e341426a95b89c0f70073ba"
+
+[[bindings]]
+source_id = "artifact.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.vatican-html-579d2ef7"
+loci = ["54-55", "65"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "These exact official English loci complete the audit's bounded use of paragraphs 53-56 and 65: the Council's Marian scope and scriptural economy, and Mary as the Church's Christ-directed model of holiness. No inspection of the remainder of Chapter VIII is claimed."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:e014e50e07c31c0e2682ce0c6eea2573e0d4572d85fe0181e7bd0664617a7e78"

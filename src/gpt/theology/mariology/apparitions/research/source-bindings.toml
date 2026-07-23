@@ -8,3 +8,28 @@ loci = ["65-67", "956", "963-975", "1324", "2115-2117", "2617-2619", "2673-2679"
 role = "official-control"
 states = ["cataloged"]
 context = "The legacy judgment study uses modern Holy See English Catechism pages for the finality of public Revelation, Marian and ecclesial limits, liturgical and prayer ordering, and image and worship safeguards. Earlier internal review is retained in the local audit but does not promote this canonical binding beyond cataloged."
+
+[[bindings]]
+source_id = "edition.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23"
+loci = ["52-69"]
+role = "context"
+states = ["cataloged"]
+context = "The rendered reference list names the whole Marian chapter as doctrinal context. The publication audit establishes exact use only at paragraphs 56 and 63, bound separately below; the broad chapter citation is not promoted to an inspected or verified claim."
+
+[[bindings]]
+source_id = "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.56"
+loci = ["56"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The checked official English paragraph supplies the study's conciliar reception of Mary's graced obedience and New-Eve cooperation. It is a theological witness, not evidence for any alleged apparition."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:c4f6979b1a2ad138490ef8c2c432badb1953a65f92bfab7dfbdef93cb9e2f8ad"
+
+[[bindings]]
+source_id = "artifact.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.vatican-html-579d2ef7"
+loci = ["63"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact official English paragraph was checked for the study's use of Ambrose as received by the Council: Mary is type of the Church in faith, charity, and perfect union with Christ. This reception claim does not verify the underlying Ambrosian text."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:e014e50e07c31c0e2682ce0c6eea2573e0d4572d85fe0181e7bd0664617a7e78"

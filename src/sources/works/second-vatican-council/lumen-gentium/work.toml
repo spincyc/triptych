@@ -1,0 +1,11 @@
+schema = 1
+record_type = "work"
+id = "work.second-vatican-council.lumen-gentium"
+title = "Lumen gentium"
+responsible = "Second Vatican Council"
+work_type = "dogmatic-constitution"
+alternate_titles = ["Constitutio dogmatica de Ecclesia", "Dogmatic Constitution on the Church"]
+languages = ["la"]
+locus_pattern = '(?:[1-9]|[1-5][0-9]|6[0-9])(?:-(?:[1-9]|[1-5][0-9]|6[0-9]))?'
+description = "The Second Vatican Council's Dogmatic Constitution on the Church, solemnly promulgated by Pope Paul VI on 21 November 1964. Edition records distinguish the Latin Acta witness from dated Vatican web delivery states and translations."
+relations = ["work.holy-see.acta-apostolicae-sedis", "work.second-vatican-council.lumen-gentium-notificationes", "work.second-vatican-council.nota-explicativa-praevia"]

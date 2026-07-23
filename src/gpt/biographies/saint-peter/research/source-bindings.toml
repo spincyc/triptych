@@ -9,3 +9,13 @@ role = "reception"
 states = ["cataloged"]
 claim_keys = ["P-M02"]
 context = "The legacy source row uses the official English Vatican Catechism state for Catholic reception of the rock, keys, binding and loosing, pastoral authority, and succession. It is catechetical synthesis rather than independent first-century historical evidence. The publication-local audit accessed the index on 2026-07-15 but retained no exact page artifact fingerprint, so this binding claims no central inspection or verification."
+
+[[bindings]]
+source_id = "artifact.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.vatican-html-579d2ef7"
+loci = ["18-23"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+claim_keys = ["P-M01"]
+context = "The exact official English paragraphs were checked for Catholic doctrine concerning Peter, the apostolic college, apostolic succession, the Roman Pontiff, bishops, and hierarchical communion. They are magisterial reception rather than a first-century administrative diary or independent historical proof."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:e014e50e07c31c0e2682ce0c6eea2573e0d4572d85fe0181e7bd0664617a7e78"

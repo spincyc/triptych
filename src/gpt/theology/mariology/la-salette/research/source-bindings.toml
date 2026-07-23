@@ -8,3 +8,28 @@ loci = ["65-67", "970", "2168-2195", "2683-2684"]
 role = "official-control"
 states = ["cataloged"]
 context = "The legacy monograph uses the modern Holy See English Catechism for the finality of Revelation, Marian mediation, Sunday worship, and prayer. The local 2026-07-16 source review is preserved without claiming that this publication inspected the exact 2026-07-23 central artifacts."
+
+[[bindings]]
+source_id = "edition.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23"
+loci = ["52-69"]
+role = "context"
+states = ["cataloged"]
+context = "The rendered bibliography names the full Marian chapter as doctrinal context. Only paragraphs 56 and 60-62 are established as exact controlling loci in the publication audit and are verified separately below."
+
+[[bindings]]
+source_id = "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.56"
+loci = ["56"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The checked official English paragraph supports the monograph's account of Marian cooperation as created, graced, free, and subordinate to Christ."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:c4f6979b1a2ad138490ef8c2c432badb1953a65f92bfab7dfbdef93cb9e2f8ad"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.60-62"
+loci = ["60-62"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The checked official English paragraphs control the study's language of reconciliation, tears, reparation, and intercession: Mary neither rivals Christ nor supplies an independent source of grace."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:319ecc3fadbe4a72b333648b084c117e36a4e1e26e341426a95b89c0f70073ba"

@@ -31,3 +31,46 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The checked archived paragraph controls the chapter's account of Marian cooperation and titles: Christ's mediation is unique, and Mary's influence depends wholly on it rather than constituting parallel causality."
 verified_on = "2026-07-23"
 source_fingerprint = "sha256:979d13d27cd9ad7570cf774a31d80a1b260ac4156d9d5532864b290c49342364"
+
+[[bindings]]
+source_id = "edition.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23"
+loci = ["52-69"]
+role = "context"
+states = ["cataloged"]
+context = "The consolidated references identify Chapter VIII as the work's broad conciliar frame. The treatise makes many exact uses across that chapter, represented below, but its audit does not claim a paragraph-by-paragraph review of every locus in 52-69; the whole range therefore remains catalog-only."
+
+[[bindings]]
+source_id = "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.53"
+loci = ["53"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The checked official English paragraph supports the treatise's Christological account of divine motherhood, Mary's redeemed creaturehood, and her singular membership and exemplarship in the Church."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:3393fa29f51e20a049ab4ac7230ebbe9e9f897732ac095c4967e6cd9d5e0da3d"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.56"
+loci = ["56"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The checked official English paragraph controls the treatise's claims about Mary's graced holiness, free consent, obedient cooperation, and status as a creature under Christ."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:c4f6979b1a2ad138490ef8c2c432badb1953a65f92bfab7dfbdef93cb9e2f8ad"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.60-62"
+loci = ["60-62"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The checked official English paragraphs govern the sustained titles analysis: Mary's maternal cooperation and intercession rest on, depend upon, and draw all power from Christ's unique mediation."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:319ecc3fadbe4a72b333648b084c117e36a4e1e26e341426a95b89c0f70073ba"
+
+[[bindings]]
+source_id = "artifact.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.vatican-html-579d2ef7"
+loci = ["8", "52", "57-59", "63-66", "68"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "These exact official English loci were checked for the treatise's remaining conciliar claims: the pilgrim Church's need of purification; Marian doctrine's Christological opening; virginal integrity, faith, Cross, Pentecost, Assumption, and Queenship; ecclesial typology; right veneration; and eschatological hope. Paragraphs 67 and 69 remain only within the separate cataloged chapter reference."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:e014e50e07c31c0e2682ce0c6eea2573e0d4572d85fe0181e7bd0664617a7e78"

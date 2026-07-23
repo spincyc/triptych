@@ -35,6 +35,7 @@ The movement-shaped rewrite received a second direct facsimile collation on 2026
 | Pius XII, *Mediator Dei* | nos. 20--23, 47--59, 68--78, 80--104 | Liturgy as public worship of the Mystical Body; Christ's principal priesthood; ordered participation; sacrifice and Communion; legitimate development |
 | Vatican II, *Sacrosanctum Concilium* | nos. 7, 14, 47--58 | Christ's liturgical presence; Paschal sacrifice; participation; unity of Word and Eucharist; parts and their relation |
 | Vatican II, *Lumen gentium*; *Presbyterorum ordinis* | LG 10--11; PO 2, 5 | Essential distinction and ordered relation of common and ministerial priesthood; priestly ministry in Eucharistic worship |
+| Vatican II, *Lumen gentium* | LG 60--62 | Mary's maternal intercession is wholly subordinate to Christ's unique mediation; doctrinal control for the Leonine Marian prayers |
 | *Catechism of the Catholic Church* | 1066--1209; 1322--1419; 1544--1553 | Sacramental economy; Eucharistic structure, sacrifice, presence, banquet, fruits, and ministerial priesthood |
 | Benedict XVI, *Sacramentum Caritatis* | no. 64 | Mystagogy relates rites to salvation history, interprets their signs, and orders them to Christian life; methodological warrant for movement-specific rather than formulaic exposition |
 | Paul VI, *Mysterium Fidei* | nos. 45--46 | Christ remains present while the Eucharistic species subsist; doctrinal control for purification and care of particles |
