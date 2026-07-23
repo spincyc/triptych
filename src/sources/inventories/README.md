@@ -92,6 +92,106 @@ separate reviewed occurrence and family ledger may disaggregate citations
 within those files. Until that ledger is complete, do not describe structural
 coverage as atomic citation coverage.
 
+## Reviewed family migration ledger
+
+`source-family-migration-v1.toml` is that separate planning contract. It pins
+the exact publication inventory, classification review, and canonical-manifest
+catalog; records reviewed decisions about recurring source families; and gives
+every publication or nonpublication owner a hash of its complete owned file surface. It remains
+outside source-manifest schema version 1: `family.*` IDs cannot be cited by a
+publication or used as source-binding targets.
+
+Family rows keep identity confidence and gaps, candidate-artifact
+availability, proposed storage, candidate-artifact rights review, mutability,
+the legacy evidence ceiling, priority, and migration disposition independent.
+`canonical_ids` is the exhaustive sorted membership already present in the
+central source library for that family, not merely a suggested entry point.
+`all-known-artifacts-reviewed` records completion of that rights review; it
+does not mean that redistribution was cleared, and the canonical artifact's
+own rights status remains controlling. A reviewed family decision may remain
+in the ledger with no current presence so refresh cannot silently erase the
+migration backlog when its last known trace disappears.
+An evidence ceiling describes only what the pinned legacy records could support
+without new source work; it is not a source-library evidence state. Stored
+trace paths are replayable record-level discovery evidence. They do not prove
+that every mention in the record was found, that two citations have the same
+edition, or that the family identity applies without review.
+
+Every review unit begins `pending`. `family-screened` means the exact pinned
+owner surface was reviewed for recurring-family presence; it still does not
+mean atomic citations were enumerated. The schema therefore requires
+`atomic_citation_coverage = false` even when all units are screened. Shared
+owner reuse is derived through the explicit inventory ownership edges rather
+than copied into every consumer.
+
+The family fields use these fixed meanings:
+
+- `artifact_availability` distinguishes records already `canonicalized`, a
+  known `candidate-complete` or `candidate-partial` artifact, a
+  `citation-only` lead, an `unavailable` or `unknown` artifact, and a `mixed`
+  cluster whose members differ.
+- `storage_plan` records the intended `tracked`, `remote`, `restricted`,
+  `unavailable`, or `unknown` treatment. It is a plan, not evidence that a
+  payload was acquired.
+- `rights_review` is `all-known-artifacts-reviewed`, `partially-reviewed`,
+  `unreviewed`, or `blocked`. Review completion never overrides the rights
+  status on an artifact manifest.
+- `mutability` is `fixed`, `officially-mutable`, `serial`, `mixed`, or
+  `unknown`. Every non-fixed family needs an operational `freshness_rule`.
+- `evidence_ceiling` describes the strongest replayable legacy support:
+  `work-only` identifies only the intellectual work; `edition-locus` names an
+  edition and locator without pinning exact bytes; `artifact-pin` identifies
+  exact artifact bytes; `passage-pin` also identifies a checked passage;
+  `bounded-corpus` records an exact searched scope; and `mixed` means members
+  have different ceilings. These values are not current evidence states.
+- `disposition` chooses `bind-existing`, `canonicalize`,
+  `split-then-canonicalize`, `research-identity`, `research-rights`,
+  `retain-local`, `keep-lead`, or `defer`.
+
+`trace_patterns` are case-insensitive Python regular expressions evaluated
+with DOTALL semantics. Every stored trace path must be owned by its review unit
+and match at least one pattern. A screened unit pins a
+`family_screening_snapshot` covering family identity boundaries and trace
+patterns; adding a family or changing those screening semantics returns the
+unit to pending on refresh. Migration-only changes such as priority or storage
+do not invalidate source-surface screening. The top-level
+`canonical_catalog_snapshot` hashes every canonical source manifest's path and
+bytes, so new records or changes to rights, storage, relationships, hashes, or
+other manifest metadata force a fresh ledger review.
+
+Use the standalone tool directly:
+
+```sh
+scripts/source-family-migration bootstrap \
+  src/sources/inventories/source-family-migration-v1.toml \
+  --audited-on YYYY-MM-DD
+scripts/source-family-migration check
+scripts/source-family-migration check --require-family-screened
+scripts/source-family-migration refresh --audited-on YYYY-MM-DD
+scripts/source-family-migration refresh --audited-on YYYY-MM-DD \
+  --accept-canonical-catalog
+```
+
+Bootstrap creates only pending review units and performs no semantic family
+classification. Refresh preserves family decisions and unchanged review
+units. A new or owner-surface-changed unit becomes pending; an existing path is
+retained only when it remains owned by that unit and still replays as trace
+evidence. Refresh never discovers or adds a new family presence. Review and add
+that presence explicitly.
+
+A canonical-manifest addition or edit intentionally blocks ordinary refresh.
+First run `scripts/source-library validate`, review the changed manifests, and
+update their family membership. Version 1 uses a conservative global catalog
+checkpoint: every family with canonical IDs must then be re-reviewed and set
+to a `reviewed_on` equal to the new ledger audit date, even when its own
+manifests did not change. Then use
+`--accept-canonical-catalog`. That explicit acceptance seals reviewed ledger
+edits as the operator's semantic-review checkpoint, independently reruns the
+full source-library validator, requires every current canonical ID to belong
+to exactly one family, updates the catalog pin, and still applies the ordinary
+surface-refresh and screening-invalidation rules. Without the flag, catalog
+drift is never adopted silently.
+
 ## Migration states
 
 Publication inventory states describe migration progress only:
