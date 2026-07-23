@@ -72,6 +72,10 @@ for identity and rights review. Their bytes are not repository content.
 | Holy See archived English index | `92199edc96afdb8d76df6682fced3a2e631f786c2d171abfed49a3dc64e3e05d` | 38,941 | IntraText delivery dated 2003-11-04; not silently current |
 | Holy See current English index | `9d6cfe2fc10b3479cc129fdfddf16b0cc924ab1a61f2ec37ac6a6604af9a7ca3` | 106,296 | Mutable current navigation artifact |
 | Holy See current English “Respect for Human Life” page | `9e71e262a054b2c617c4a0b29bf2c68937c96b986bf3613ddd7b729e1309fe16` | 123,465 | Contains the 2018 wording of paragraph 2267 |
+| Holy See current English sacramental “In Brief” page | `7004d8d92534eecebd07fc9c40ffe57f13b0b38b2d7a6a4564220df872e2787a` | 108,876 | Contains paragraphs 1131–1134 |
+| Holy See current English Baptism celebration page | `d42f082af01c15e2dc5010dac51cf8a4a1d6ed24a86d2c541ded0afd96c1c522` | 116,183 | Contains paragraph 1240 and its Latin and Eastern formulas |
+| Holy See current English Confirmation signs and rite page | `6289add4b17bb98c524f9911f351e98eb24f895ba33ea1fb2fca20a9092e960b` | 114,583 | Contains paragraph 1300 and its Latin and Eastern formulas |
+| Holy See current English Penance and Reconciliation page | `d8a3127ad843691eaa10a945ee3b635f2d8114cccdedc502806c1fd2bbab2759` | 115,345 | Contains paragraph 1449 and the Latin formula of absolution |
 | USCCB flipbook landing page | `f90d8aab80ef5af293e4b539c20bd3c2db67367774fe0ac21709244cb0ec2f60` | 4,011 | Identifies the second edition and inclusion of revised paragraph 2267 |
 | USCCB flipbook imprint page | `10b80026d520768a446b7010a01b29aaf1c4d15f3fe4ecf2328a5a8bc4d9efea` | 8,537 | Identifies ISBN 978-1-60137-649-7 and first printing, November 2019 |
 | USCCB flipbook workspace | `a093c697cda349af4c13d67428699962a5fb2a40453f6458d835ac09a5418dc4` | 29,679 | Identifies the table of contents and digital publication metadata |
@@ -110,8 +114,8 @@ The first canonical slice uses these stable identities:
 - `edition.catholic-church.catechism.english-usccb-second-2019`;
 - exact restricted artifacts beneath those editions;
 - a bounded corpus over the exact USCCB 924-page search representation;
-- reusable inspected passages for 65–67, 499, 970, 1131, 1240, 1300, 1449,
-  and 2267;
+- reusable inspected or verified passages for 65–67, 499, 970, 1131, 1240,
+  1300, 1449, and 2267;
 - `work.holy-see.catechism-2267-rescript-2018`; and
 - distinct Latin and English delivery editions and artifacts for that act.
 
@@ -215,22 +219,72 @@ The 1962 Nuptial Mass separately imports the Matrimony summary and therefore
 needs its own inherited binding for 1618–1666, especially 1623. Mariology’s
 shared formatting files contain no Catechism source material.
 
+## End-to-end reuse proof
+
+The sacramental pair now proves the source model with a complete, deliberately
+narrow replay. Four exact current Holy See English HTML responses were acquired
+into run-local restricted storage, hashed, inspected in context, and collated
+against the rendered official pages. The repository records their immutable
+artifact identities and verified paragraph records without distributing the
+responses or excerpts.
+
+Both publications bind the same four passage IDs. The fingerprints below are
+properties of the shared source graph and therefore recur unchanged in each
+consumer; publication-local role, claim, review date, and context remain in
+the two binding records.
+
+| Passage | Shared source fingerprint | Treatise claim | Companion path |
+|---|---|---|---|
+| 1131 | `sha256:07edd5b79e89a98627ac86e5ade88d61a52d2ae4e65037d12c1e39e8c3b1e322` | The formal definition is a checked editorial synthesis, not a verbatim quotation | Direct import of the treatise-owned master matrix |
+| 1240 | `sha256:a5fddc2fa9d2e9ec844e91bd0dd828e2f137ab4f02ea39dbc22302c164c2f35e` | Latin and Eastern baptismal formulas | Direct import of the treatise-owned Baptism summary |
+| 1300 | `sha256:0b46767599cbf289aaaf6e5aa2bb322849c052a470506657e5a2bf37588609ed` | Current Latin and Eastern Confirmation formulas | Direct import of the treatise-owned Confirmation summary |
+| 1449 | `sha256:1c86747958f4605500efcb17169331c6871f503a59612aac5c0d37fcea7521fa` | Latin absolution conclusion | Direct import of the treatise-owned Penance summary |
+
+The review checked the treatise-owned source files, the companion’s unchanged
+direct imports, and the relevant installed render pages in both publications.
+No rendered wording changed, so this research-only promotion does not rebuild
+or replace either installed PDF.
+
+For every passage, reverse-use lookup returns exactly
+`theology/sacraments` and `theology/sacraments-at-a-glance`. Impact lookup from
+the controlling artifact reaches its passage and both consumers. A regression
+fixture now binds two independent publications to one shared passage, changes
+valid shared passage metadata, and proves that validation reports two stale
+consumer fingerprints requiring the same replacement value. Impact remains
+available to a review workflow that explicitly disables stale-fingerprint
+checking, while ordinary validation fails closed.
+
+The same invalidation was then replayed against a run-local mirror of the
+actual source graph and both sacramental binding files. Its 11-binding baseline
+validated; changing paragraph 1131’s shared metadata produced exactly two
+stale diagnostics, one for each real consumer, with the same replacement
+fingerprint.
+
+This proof does not substitute the distinct USCCB 2019 expression for the
+Vatican web expression. That distinction matters at paragraphs 1300 and 1449,
+where wording or punctuation differs. Nor do four verified passages promote
+the broad 1076–1209 and 1210–1666 ranges: both consumers retain those range
+bindings as `cataloged` until a bounded range-level review is performed.
+
 ## Implemented result
 
-The implemented graph contains 64 Catechism binding rows across 43
+The implemented graph contains 70 Catechism binding rows across 43
 publications: the 42 positive trace owners plus the inherited
 `theology/sacraments-at-a-glance` consumer. Thirteen rows target the work,
-twelve the archived Vatican English state, and thirty-nine the current Vatican
-English web state. One additional catalog-only binding connects the Saint
-Thomas Aquinas biography to the 2018 paragraph-2267 rescript, yielding 65
-Catechism-family and amendment-act bindings in total.
+twelve the archived Vatican English state, and forty-five the current Vatican
+English web state. Eight current-web passage rows are verified reuse bindings;
+the other 62 Catechism rows remain catalog-only. One additional catalog-only
+binding connects the Saint Thomas Aquinas biography to the 2018
+paragraph-2267 rescript, yielding 71 Catechism-family and amendment-act
+bindings in total.
 
 No publication binding substitutes the acquired USCCB edition, and neither
-novena daily-prayer companion carries a Catechism binding. All 65 migrated
-bindings remain `cataloged` pending publication-specific review against exact
-canonical bytes. The 11 acquired artifacts remain restricted provenance
-records without repository payloads, and the bounded USCCB corpus remains a
-reacquisition aid rather than ordinary-clone searchable text.
+novena daily-prayer companion carries a Catechism binding. All 65 rows in the
+original migration checkpoint began `cataloged`; the proof replaces two of
+those rows with the eight verified passage bindings described above. The 15
+acquired artifacts remain restricted provenance records without repository
+payloads, and the bounded USCCB corpus remains a reacquisition aid rather than
+ordinary-clone searchable text.
 
 All legacy source audits, scopes, and rendered references remain in place.
 Their removal is deferred until a later comparison proves that the canonical
