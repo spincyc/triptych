@@ -52,3 +52,17 @@ role = "textual-control"
 states = ["cataloged", "acquired", "inspected"]
 context = "Both Latin TEI chapter divisions and their apparatus were read for the same qualifying structure. The page and apparatus markup that interrupts the prose remains recorded; no page-image collation or verification of City of God X.1, 3, or 19-20 is claimed here."
 source_fingerprint = "sha256:f6e1e889bb4f2198ccebab9d7119d2edb9160c51892a0bc4fc9b8a202ab617b4"
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["1817-1821", "1857-1861", "1950-1974", "1965-1974", "2060-2062", "2064-2082", "2084", "2090-2092", "2174-2177", "2180", "2181", "2183", "2184-2187"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The official English Vatican pages identified by the article control its claims about prior covenant gift, law, hope, the Decalogue, Sunday worship and rest, serious reasons, and mortal culpability. The publication-local exact-locus audit was completed through 2026-07-20, but no exact Catechism artifact fingerprint was retained, so this binding preserves that legacy ceiling without claiming central inspection or verification."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["1730-1748", "1854-1864", "1950-1974", "2030-2043", "2060-2100", "2168-2195"]
+role = "context"
+states = ["cataloged"]
+context = "These are the article's broader Catechism reference ranges. Their overlap with claim-specific loci is retained to distinguish the bibliography's scope from the narrower claims actually audited; cataloging them does not assert inspection or verification of every paragraph."

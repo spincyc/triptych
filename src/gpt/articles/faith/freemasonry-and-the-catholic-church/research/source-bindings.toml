@@ -8,3 +8,17 @@ loci = ["14.28"]
 role = "lead"
 states = ["cataloged"]
 context = "The legacy research record identifies City of God at this locus. This catalog-only binding claims no inspection of a central edition or artifact. Where the legacy record relies on NPNF/New Advent, the centrally registered Dods English and CSEL Latin texts are different witnesses and are not silently substituted."
+
+[[bindings]]
+source_id = "work.catholic-church.catechism"
+loci = ["405", "1263-1264", "1451-1460", "1857-1861", "2115-2117", "2477-2479"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The publication uses these paragraphs to control claims about inherited guilt and Baptism, Penance, mortal culpability, occult practices, and calumny. Its legacy claim audit was completed through 2026-07-13, but no Catechism URL, language expression, or exact artifact fingerprint was retained; the work-level binding therefore preserves only the edition-locus ceiling without silently selecting a registered English edition."
+
+[[bindings]]
+source_id = "work.catholic-church.catechism"
+loci = ["391-395", "813-822", "1237", "1262-1274", "1673", "1735", "2104-2109", "2110-2117", "2150-2155"]
+role = "context"
+states = ["cataloged"]
+context = "These additional Catechism loci appear as broader doctrinal references. Some ranges contain narrower claim-control paragraphs recorded separately, but the legacy source record does not pin a concrete expression or artifact and does not establish claim-level verification for every paragraph in the broader ranges."

@@ -8,3 +8,17 @@ loci = ["Good Friday no. 960, p. 180", "Ordo Missae, p. 216"]
 role = "textual-control"
 states = ["cataloged"]
 context = "The legacy audit identifies the Vatican 1962 typical edition at these loci for the imported shared Latin formulas. This catalog-only binding claims no inspection of an exact central artifact."
+
+[[bindings]]
+source_id = "work.catholic-church.catechism"
+loci = ["963-975", "1021-1037", "1667-1673", "2016"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The parent guide uses these Catechism loci to control Marian intercession, judgment and perseverance, purgatory, and sacramentals; 1030-1032 is the consequential subrange for the Sabbatine boundary. The publication-local audit reached exact loci through 2026-07-15, but retained no Catechism URL, pinned language expression, or exact artifact fingerprint. The rendered references omit 1021-1037 even though the audit relies on it; that discrepancy is preserved for review."
+
+[[bindings]]
+source_id = "work.catholic-church.catechism"
+loci = ["487-507", "2673-2679"]
+role = "context"
+states = ["cataloged"]
+context = "These additional Marian loci appear in the guide's broader Catechism references. With no concrete edition or artifact pinned, this work-level catalog binding claims no central inspection or verification."

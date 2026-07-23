@@ -1,0 +1,17 @@
+schema = 1
+record_type = "bindings"
+document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["2337-2350"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The official English Vatican page identified by the legacy audit supplies the doctrinal distinction among chastity, continence, and celibacy. The publication-local audit marked this claim verified on 2026-07-15, but no exact artifact fingerprint was retained, so this binding preserves only that legacy ceiling and claims no central inspection or verification."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["1577-1580"]
+role = "context"
+states = ["cataloged"]
+context = "The official English Vatican page identified in the references provides catechetical context for Latin and Eastern ordination discipline; the CIC and CCEO remain the legal controls. These paragraphs have no separate claim-verification row in the legacy audit, and this catalog-only binding claims no central inspection or verification."

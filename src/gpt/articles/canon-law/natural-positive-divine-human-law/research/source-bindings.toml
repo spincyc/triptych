@@ -8,3 +8,17 @@ loci = ["19.17"]
 role = "lead"
 states = ["cataloged"]
 context = "The legacy research record identifies City of God at this locus. This catalog-only binding claims no inspection of a central edition or artifact. Where the legacy record relies on NPNF/New Advent, the centrally registered Dods English and CSEL Latin texts are different witnesses and are not silently substituted."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["1776-1802", "1950-1974", "2238-2243", "2284-2287"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The official English Vatican pages identified by the legacy audit control its taxonomy of moral law, account of conscience, and duties toward civil authority and affected third parties. The publication-local claim rows were marked verified through 2026-07-16, but no exact artifact fingerprint was retained; this binding preserves only that edition-locus verification ceiling and claims no central inspection or verification."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["1750-1761", "1950-1986", "1954-1960", "2234-2246"]
+role = "context"
+states = ["cataloged"]
+context = "These broader or separately cited Catechism ranges supply moral-theological and civil-authority context around the claim-specific loci. Their overlap with the textual-control binding preserves the legacy citation granularity rather than asserting an additional verification event. No exact artifact fingerprint or Latin witness was retained."
