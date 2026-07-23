@@ -1,15 +1,17 @@
 """Pure policy for hardened Git invocation.
 
-This module owns deterministic environment and argument transformation only.
-Executable discovery, subprocess execution, repository authentication, and ref
-transactions remain in the lifecycle engine until their own parity seams are
-protected.
+This module owns deterministic environment and argument transformation plus
+validation of captured effective-configuration output. Executable discovery,
+configuration probing, subprocess execution, repository authentication, and
+ref transactions remain in the lifecycle engine until their own parity seams
+are protected.
 """
 
 from __future__ import annotations
 
 import os
 import re
+from collections.abc import Callable
 from typing import Collection, Mapping, Sequence
 
 
@@ -139,3 +141,37 @@ def hardened_git_arguments(args: Sequence[str]) -> list[str]:
     ):
         hardened.insert(rebase_index + 1, "--no-gpg-sign")
     return hardened
+
+
+def validate_effective_git_configuration(
+    output: bytes,
+    *,
+    error_type: Callable[[], type[BaseException]],
+    boolean_values: Callable[[], Collection[str]],
+    command_config_pattern: Callable[[], re.Pattern[str]],
+) -> None:
+    """Reject command-bearing values in one captured effective configuration."""
+
+    effective: dict[str, str] = {}
+    for record in output.split(b"\0"):
+        if not record:
+            continue
+        raw_key, separator, raw_value = record.partition(b"\n")
+        if not separator or not raw_key:
+            raise error_type()("Git returned malformed effective configuration")
+        key = raw_key.decode("utf-8", errors="surrogateescape").casefold()
+        value = raw_value.decode("utf-8", errors="surrogateescape")
+        effective[key] = value
+    fsmonitor = effective.get("core.fsmonitor")
+    if (
+        fsmonitor is not None
+        and fsmonitor.strip().casefold() not in boolean_values()
+    ):
+        raise error_type()(
+            "unsafe command-bearing Git configuration 'core.fsmonitor'"
+        )
+    for key, value in effective.items():
+        if command_config_pattern().fullmatch(key) and value.strip():
+            raise error_type()(
+                f"unsafe command-bearing Git configuration {key!r}"
+            )

@@ -34,6 +34,7 @@ from .git import (
     GIT_UNSAFE_ENV,
     hardened_git_arguments,
     sanitized_git_environment as _sanitized_git_environment,
+    validate_effective_git_configuration as _validate_effective_git_configuration,
 )
 from .locks import (
     RegisteredLockDescriptor,
@@ -366,22 +367,12 @@ def validate_effective_git_configuration(cwd: Path) -> None:
     result = raw_git(cwd, "config", "--null", "--list", text=False, check=False)
     if result.returncode:
         raise LauncherError("cannot inspect the repository's effective Git configuration")
-    effective: dict[str, str] = {}
-    for record in result.stdout.split(b"\0"):
-        if not record:
-            continue
-        raw_key, separator, raw_value = record.partition(b"\n")
-        if not separator or not raw_key:
-            raise LauncherError("Git returned malformed effective configuration")
-        key = raw_key.decode("utf-8", errors="surrogateescape").casefold()
-        value = raw_value.decode("utf-8", errors="surrogateescape")
-        effective[key] = value
-    fsmonitor = effective.get("core.fsmonitor")
-    if fsmonitor is not None and fsmonitor.strip().casefold() not in GIT_BOOLEAN_VALUES:
-        raise LauncherError("unsafe command-bearing Git configuration 'core.fsmonitor'")
-    for key, value in effective.items():
-        if GIT_COMMAND_CONFIG_RE.fullmatch(key) and value.strip():
-            raise LauncherError(f"unsafe command-bearing Git configuration {key!r}")
+    _validate_effective_git_configuration(
+        result.stdout,
+        error_type=lambda: LauncherError,
+        boolean_values=lambda: GIT_BOOLEAN_VALUES,
+        command_config_pattern=lambda: GIT_COMMAND_CONFIG_RE,
+    )
 
 
 def git(

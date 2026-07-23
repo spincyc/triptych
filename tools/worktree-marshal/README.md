@@ -110,15 +110,18 @@ worktree-removal or ref-transaction failures, receipt recovery, garbage
 collection, or concurrent retirement. Those retirement cases, broader crash
 and race recovery, broader security coverage, the complete installed lifecycle
 matrix, and the supported Python and Git CI matrix remain release gates; the
-first five step-5 seams are protected by direct source tests and artifact
+first six step-5 seams are protected by direct source tests and artifact
 provenance, and the installed abort checkpoint covers archived transaction
 restoration. Each remaining helper boundary still requires its own direct
 parity coverage.
 
 Step 5 has begun narrowly: [`git.py`](src/worktree_marshal/git.py) owns only
-the deterministic environment and argument transforms plus their fixed policy
-constants. Direct tests freeze that seam, its source-copy behavior, and its
-wheel and source-distribution presence.
+the deterministic environment and argument transforms, their fixed policy
+constants, and validation of effective-configuration bytes captured by the
+engine. The engine still authenticates the repository, executes the exact
+configuration probe, and diagnoses probe failure. Direct tests freeze those
+seams, their source-copy behavior, and their wheel and source-distribution
+presence.
 
 [`model.py`](src/worktree_marshal/model.py) now owns the exact durable state
 vocabulary, its two existing pending-state families, and the pure predicate

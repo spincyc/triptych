@@ -32,7 +32,7 @@ worktree_marshal/
   model.py               state vocabulary and transaction restoration now
   state.py               private paths and durable manifest writes
   locks.py               descriptor bookkeeping now; flock acquisition later
-  git.py                 Git policy now; hardened invocation and ref transactions later
+  git.py                 transforms and captured-config policy now; invocation later
   process.py             child signal forwarding and exit normalization
   identity.py            repository, checkout, and path authentication
   worktrees.py           allocation, audit, reopen, and cleanup
@@ -88,7 +88,7 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with five behavior-preserving boundaries. The pure Git policy
+has begun step 5 with six behavior-preserving boundaries. The pure Git policy
 kernel now transforms an explicit environment mapping and Git argument
 sequence in `git.py`; `engine.py` retains its optional environment-acquisition
 wrapper and all executable discovery, subprocess creation and command
@@ -124,7 +124,13 @@ discovery, arguments, environments, inherited descriptors, and post-exit
 lifecycle decisions remain in `engine.py`. Direct tests also retain the legacy
 partial-setup behavior: a failure while installing the second handler occurs
 before the protected wait and does not roll back the first installation.
-Direct tests freeze all five extracted boundaries, their
+The sixth boundary extends `git.py` with deterministic parsing and rejection
+of command-bearing values in the effective-configuration bytes captured by the
+engine. The engine retains working-directory authentication, the exact Git
+configuration probe, unsuccessful-probe diagnosis, executable pinning, and
+subprocess execution. Lazy resolvers preserve the engine's existing
+configuration-policy and error lookups at their original decision points.
+Direct tests freeze all six extracted boundaries, their
 compatibility surfaces, artifact inclusion, field and operation order,
 partial-failure behavior, and the dynamic restoration of every vocabulary
 value currently accepted in
