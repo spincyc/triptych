@@ -19,6 +19,9 @@ import tomllib
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_INVENTORY = Path("src/sources/inventories/publications-v1.toml")
+DEFAULT_CLASSIFICATION_REVIEW = Path(
+    "src/sources/inventories/classification-review-v1.toml"
+)
 
 SOURCE_CATEGORIES = {
     "scripture",
@@ -334,6 +337,181 @@ def _snapshot(
         separators=(",", ":"),
     ).encode("utf-8")
     return "sha256:" + hashlib.sha256(encoded).hexdigest()
+
+
+def _document_set_snapshot(documents: list[str]) -> str:
+    payload = "".join(f"{document}\n" for document in sorted(documents)).encode("utf-8")
+    return "sha256:" + hashlib.sha256(payload).hexdigest()
+
+
+def _classification_snapshot(classifications: list[dict[str, Any]]) -> str:
+    payload = json.dumps(
+        classifications,
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+    ).encode("utf-8")
+    return "sha256:" + hashlib.sha256(payload).hexdigest()
+
+
+def _render_classification_review(
+    documents: list[str],
+    audited_on: str,
+    seed: dict[str, list[str]] | None = None,
+) -> str:
+    documents = sorted(documents)
+    seed = seed or {}
+    classifications = [
+        {
+            "document": document,
+            "source_categories": list(seed.get(document, ["unresolved"])),
+        }
+        for document in documents
+    ]
+    lines = [
+        "classification_schema = 1",
+        'record_type = "publication-source-classification-review"',
+        f"audited_on = {_toml_string(audited_on)}",
+        f"publication_snapshot = {_toml_string(_document_set_snapshot(documents))}",
+        f"classification_snapshot = {_toml_string(_classification_snapshot(classifications))}",
+    ]
+    for classification in classifications:
+        lines.extend(
+            [
+                "",
+                "[[classifications]]",
+                f"document = {_toml_string(classification['document'])}",
+                "source_categories = "
+                + _toml_array(classification["source_categories"]),
+            ]
+        )
+    return "\n".join(lines) + "\n"
+
+
+def _classification_review(
+    path: Path,
+    actual_documents: list[str] | None,
+    *,
+    allow_unresolved: bool = False,
+) -> tuple[dict[str, list[str]], list[str]]:
+    data, errors = _read_inventory(path)
+    if data is None:
+        return {}, errors
+    expected = {
+        "classification_schema",
+        "record_type",
+        "audited_on",
+        "publication_snapshot",
+        "classification_snapshot",
+        "classifications",
+    }
+    if set(data) != expected:
+        errors.append(f"{path}: classification review must contain exactly the documented fields")
+    if data.get("classification_schema") != 1 or isinstance(
+        data.get("classification_schema"), bool
+    ):
+        errors.append(f"{path}: classification_schema must be integer 1")
+    if data.get("record_type") != "publication-source-classification-review":
+        errors.append(
+            f"{path}: record_type must be publication-source-classification-review"
+        )
+    audited_on = data.get("audited_on")
+    try:
+        if not isinstance(audited_on, str):
+            raise ValueError
+        dt.date.fromisoformat(audited_on)
+    except ValueError:
+        errors.append(f"{path}: audited_on must be an ISO date")
+    rows = data.get("classifications")
+    if not isinstance(rows, list) or not rows:
+        errors.append(f"{path}: classifications must be a nonempty array of tables")
+        rows = []
+    normalized: list[dict[str, Any]] = []
+    documents: list[str] = []
+    mapping: dict[str, list[str]] = {}
+    for index, row in enumerate(rows, start=1):
+        label = f"{path}: classifications[{index}]"
+        if not isinstance(row, dict) or set(row) != {"document", "source_categories"}:
+            errors.append(
+                f"{label} must contain exactly document and source_categories"
+            )
+            continue
+        document = row.get("document")
+        categories = row.get("source_categories")
+        if not isinstance(document, str) or not document:
+            errors.append(f"{label}.document must be a nonempty string")
+            continue
+        documents.append(document)
+        if not _string_list(categories, nonempty=True):
+            errors.append(
+                f"{label}.source_categories must be a nonempty string array"
+            )
+            continue
+        invalid = sorted(set(categories) - SOURCE_CATEGORIES)
+        if invalid:
+            errors.append(
+                f"{label}.source_categories are invalid: {', '.join(invalid)}"
+            )
+        if categories != sorted(set(categories)):
+            errors.append(f"{label}.source_categories must be unique and sorted")
+        if not allow_unresolved and "unresolved" in categories:
+            errors.append(f"{label}.source_categories must be resolved")
+        normalized.append(
+            {"document": document, "source_categories": categories}
+        )
+        mapping[document] = categories
+    if documents != sorted(set(documents)):
+        errors.append(f"{path}: reviewed document IDs must be unique and sorted")
+    if actual_documents is not None:
+        missing = sorted(set(actual_documents) - set(documents))
+        extra = sorted(set(documents) - set(actual_documents))
+        if missing:
+            errors.append(
+                f"{path}: publications lack classification review: {', '.join(missing)}"
+            )
+        if extra:
+            errors.append(
+                f"{path}: classification review has unknown publications: {', '.join(extra)}"
+            )
+    expected_snapshot = _document_set_snapshot(documents)
+    if data.get("publication_snapshot") != expected_snapshot:
+        errors.append(
+            f"{path}: publication_snapshot is stale; expected {expected_snapshot}"
+        )
+    expected_classification_snapshot = _classification_snapshot(normalized)
+    if data.get("classification_snapshot") != expected_classification_snapshot:
+        errors.append(
+            f"{path}: classification_snapshot is stale; "
+            f"expected {expected_classification_snapshot}"
+        )
+    return mapping, sorted(set(errors))
+
+
+def _inventory_classification_errors(
+    review_path: Path,
+    documents: list[dict[str, Any]],
+) -> list[str]:
+    categorized = [
+        document
+        for document in documents
+        if document["inventory_state"] != "records-enumerated"
+    ]
+    if not categorized:
+        return []
+    mapping, errors = _classification_review(
+        review_path,
+        [document["id"] for document in documents],
+    )
+    if errors:
+        return errors
+    for document in categorized:
+        expected = mapping[document["id"]]
+        if document["source_categories"] != expected:
+            errors.append(
+                f"{review_path}: inventory categories diverge for "
+                f"{document['id']}; expected {', '.join(expected)}"
+            )
+    return sorted(set(errors))
 
 
 def _active_owners(root: Path) -> list[dict[str, Any]]:
@@ -699,11 +877,49 @@ def main() -> int:
     subparsers = parser.add_subparsers(dest="command", required=True)
     check = subparsers.add_parser("check")
     check.add_argument("inventory", nargs="?", type=Path, default=DEFAULT_INVENTORY)
+    check.add_argument(
+        "--review", type=Path, default=DEFAULT_CLASSIFICATION_REVIEW
+    )
     bootstrap = subparsers.add_parser("bootstrap")
     bootstrap.add_argument("output", type=Path)
     bootstrap.add_argument("--audited-on", required=True)
+    review_bootstrap = subparsers.add_parser("bootstrap-classification-review")
+    review_bootstrap.add_argument("output", type=Path)
+    review_bootstrap.add_argument("--audited-on", required=True)
+    classify = subparsers.add_parser("classify")
+    classify.add_argument("inventory", nargs="?", type=Path, default=DEFAULT_INVENTORY)
+    classify.add_argument(
+        "--review", type=Path, default=DEFAULT_CLASSIFICATION_REVIEW
+    )
     args = parser.parse_args()
     root = args.root.resolve()
+    if args.command == "bootstrap-classification-review":
+        try:
+            dt.date.fromisoformat(args.audited_on)
+        except ValueError:
+            parser.error("--audited-on must be an ISO date")
+        output = _rooted(root, args.output)
+        seed: dict[str, list[str]] = {}
+        if output.exists():
+            seed, seed_errors = _classification_review(
+                output,
+                None,
+                allow_unresolved=True,
+            )
+            if seed_errors:
+                for error in seed_errors:
+                    print(f"source-inventory error: {error}", file=sys.stderr)
+                return 1
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(
+            _render_classification_review(
+                _documents(root),
+                args.audited_on,
+                seed,
+            ),
+            encoding="utf-8",
+        )
+        return 0
     if args.command == "bootstrap":
         try:
             dt.date.fromisoformat(args.audited_on)
@@ -722,13 +938,50 @@ def main() -> int:
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(_render(data), encoding="utf-8")
         return 0
+    if args.command == "classify":
+        inventory = _rooted(root, args.inventory)
+        errors = _validate(root, inventory)
+        if errors:
+            for error in errors:
+                print(f"source-inventory error: {error}", file=sys.stderr)
+            return 1
+        data, read_errors = _read_inventory(inventory)
+        if data is None:
+            for error in read_errors:
+                print(f"source-inventory error: {error}", file=sys.stderr)
+            return 1
+        review = _rooted(root, args.review)
+        categories_by_document, review_errors = _classification_review(
+            review, [document["id"] for document in data["documents"]]
+        )
+        if review_errors:
+            for error in review_errors:
+                print(f"source-inventory error: {error}", file=sys.stderr)
+            return 1
+        for document in data["documents"]:
+            document["source_categories"] = categories_by_document[document["id"]]
+            if document["inventory_state"] == "records-enumerated":
+                document["inventory_state"] = "sources-categorized"
+        data["snapshot"] = _snapshot(data["documents"], data["owners"], data["files"])
+        inventory.write_text(_render(data), encoding="utf-8")
+        return 0
     inventory = _rooted(root, args.inventory)
     errors = _validate(root, inventory)
+    data = None
+    if not errors:
+        data, read_errors = _read_inventory(inventory)
+        errors.extend(read_errors)
+    if not errors and data is not None:
+        errors.extend(
+            _inventory_classification_errors(
+                _rooted(root, args.review),
+                data["documents"],
+            )
+        )
     if errors:
         for error in errors:
             print(f"source-inventory error: {error}", file=sys.stderr)
         return 1
-    data, _ = _read_inventory(inventory)
     print(
         "source-inventory valid: "
         f"publications={data['publication_count']} "
