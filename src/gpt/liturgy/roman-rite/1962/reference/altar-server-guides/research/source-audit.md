@@ -21,10 +21,11 @@ was checked against the displayed page image.
 | 60--61 | Ritus servandus VI.5--8 and VII.7--11 | Solemn and Missa-Cantata Gospel differences; Offertory response and incense; Sanctus bell; Solemn credence and paten sequence | Fixes sung-reading replies, complete incense handoffs, and the prescribed Sanctus signal |
 | 62--63 | Ritus servandus VIII.6--8 and IX.4 | Warning and elevation bell options; at least two torches and their ordinary, communicant, and fast-day timing; unblessed elevation incense; post-elevation posture | Selects one warning plus three distinct elevation strokes, four-torch routes, and the independent thurifer return |
 | 65 | Ritus servandus X.6 and XI | Communion of the faithful proceeds directly to Ecce Agnus Dei; ablutions and postcommunion transition | Excludes a second Communion Confiteor |
-| 297--298 | Ordo Missae, printed pp. 216--217 | Opening formula, Introibo exchange, every Psalm 42 verse, the celebrant's complete Confiteor, both Misereatur formulas, Indulgentiam, the short foot-prayer versicles, and the complete ninefold Kyrie | Controls the complete C04--C15 fixed cues and prevents an added Amen after the opening formula |
+| 297--298 | Ordo Missae, printed pp. 216--217 | Opening formula, Introibo exchange, every Psalm 42 verse, the celebrant's complete Confiteor, both Misereatur formulas, Indulgentiam, the short foot-prayer versicles, and the complete ninefold Kyrie | Controls R01--R08, the foot-prayer occurrences of R09--R13, and R14, and prevents an added Amen after the opening formula |
 | 303 | Ordo Missae, printed p. 222 | Orate, fratres and Suscipiat Dominus | Controls A18 and the server form de manibus tuis |
-| 404 | Ordo Missae, printed p. 323 | Ite, missa est, the procession-linked Benedicamus Domino, and the Easter-octave double-alleluia dismissal | Controls the complete C03 and C20 dismissal cues and their branches |
-| 407--409 | Ordo Missae, printed pp. 326--328 | Complete blessing formula, Last-Gospel greeting and title, John 1:14 in full, and the terminal Deo gratias | Controls C01--C03 and C16A at the ordinary ending |
+| 404 | Ordo Missae, printed p. 323 | Ite, missa est, the procession-linked Benedicamus Domino, and the Easter-octave double-alleluia dismissal | Controls the complete R15 and R22 dismissal cues and their branches |
+| 407--409 | Ordo Missae, printed pp. 326--328 | Complete blessing formula, Last-Gospel greeting and title, John 1:14 in full, and the terminal Deo gratias | Controls R09, R13, R15, and R16 at the ordinary ending |
+| 464--465 | Fifth Sunday after Pentecost, printed pp. 383--384 | Complete printed ending of 1 Peter 3:8--15 and complete final Gospel verse, Matthew 5:24 | Supplies the clearly labeled, complete example cues on R15 and R17; neither example is represented as the proper for every day |
 
 The form-specific lesson check also used Ritus servandus VI.1--2, VI.4--5,
 and VI.8 and Ordo Missae printed p. 219. In the read or Low-Mass branch the
@@ -46,8 +47,8 @@ response inventory and both sung guides follow that distinction.
 The 1962 Missal controls every conflict. The twelfth Fortescue--O'Connell
 edition was identified by edition, date, publisher, length, and contents
 metadata, but its protected page text was not available for full direct
-collation. It therefore names the selected ceremonial family and is not cited
-for an unverified page-specific rule.
+collation. It therefore names the selected ceremonial model lineage and is not
+cited for an unverified page-specific rule.
 
 The directly read 1917 Fortescue edition supplied a historical traffic and
 role baseline where the official books do not specify every lay-server path.
@@ -63,11 +64,12 @@ and site-dependent routes are labeled LOCAL.
 
 | Lead or common practice | Controlling check | Resolution |
 | --- | --- | --- |
-| A second Confiteor before faithful Communion | Ritus servandus X.6 goes directly to Ecce Agnus Dei | Excluded from all three form families and called out so an older card is not followed accidentally |
+| A second Confiteor before faithful Communion | Ritus servandus X.6 goes directly to Ecce Agnus Dei | Excluded from all three forms and called out so an older card is not followed accidentally |
 | Claim that incense is restricted to Solemn Mass | General Rubric 426 and Ritus IV.8 permit incense at any sung Mass | Missa Cantata has explicit with-incense and without-incense branches |
 | Deo gratias or Laus tibi, Christe added after a chanted lesson | Ritus VI and the form-specific Ordo placement add neither response | Taught only for a lesson or Gospel read in the Low-Mass manner |
 | Opening In nomine formula followed by a second Amen | Ritus III.4 and Ordo printed p. 216 include Amen in the celebrant's formula | No separate server answer is printed |
 | Priest's self-response de manibus meis transferred to a server | Ordo printed p. 222 distinguishes the priest's exceptional self-response | A server always learns de manibus tuis |
+| Lay servers assigned the quiet *Suscipiat* at Solemn Mass | Ritus servandus VII.7 assigns the response to the sacred ministers in the Solemn rite | A18 remains in the common study bank, but the Solemn guide marks it `SM`; lay servers listen and do not join |
 | Leonine prayers treated as the end of Mass | They are prayers after Low Mass, outside the Ordo Missae | Excluded from the series |
 | Sanctus and elevation bells treated as wholly optional local customs | Ritus servandus VII.8 and VIII.6 prescribe the small bell at the Sanctus, a warning shortly before the Consecration, and either three strokes or a continuous ring at each elevation | Both sung guides teach one short Sanctus signal, one short warning, and three distinct strokes at each elevation; continuous elevation ringing remains the printed alternate |
 | All sung-form Collects and Postcommunions treated as standing occasions | General Rubric 521 prescribes kneeling at the named ferial Masses and also governs the Prayer-over-the-People posture | Both sung routes name the ferial Collect and Postcommunion branches; the applicable Ash-Wednesday-through-Holy-Wednesday route remains kneeling for *Humiliate capita vestra Deo* and the Prayer over the People |
@@ -83,7 +85,7 @@ and site-dependent routes are labeled LOCAL.
 
 Canonical Latin was independently collated from the identified Missal.
 Displayed ae and oe typography, syllable breaks, stress marks, capitalization
-used to show stress, broad IPA, child-readable sound lines, brief meanings,
+used to show stress, broad IPA, young-server-readable sound lines, brief meanings,
 memory drills, movement prose, and card design are editorial layers. They are
 not represented as text printed in the Missal or Liber.
 
@@ -94,11 +96,13 @@ in this repository.
 
 ## Outstanding independent checks
 
-Internal source, response, pronunciation, ceremonial, pedagogical, build,
-and production checks for the installed snapshot are complete. Exact PDF
-hashes, every-page review, font and text checks, and measured duplex results
-are recorded in `production-manifest.md`. These internal checks are not an
-independent approval.
+The source, response, pronunciation, ceremonial, and pedagogical checks above
+remain the audit basis for the revised paired publications. The integrated
+R-card companions and full-guide catalog pointers received a fresh build and
+production review. Exact page counts, PDF hashes, every-page review, font and
+text checks, and duplex results are recorded in `production-manifest.md`; they
+are not independently reasserted by this source audit. These internal checks
+are not an independent approval.
 
 Before public release, an independent reviewer should check the complete
 response collation, the Roman-pronunciation details, both ceremonial routes,

@@ -9,7 +9,8 @@
 - **Rite and edition:** Roman Rite, Latin typical edition of the 1962 Roman
   Missal and the official rubrical horizon incorporated into it.
 - **Reader:** a beginning or advancing server approximately eight to fourteen
-  years old, working with a priest, adult trainer, or master of ceremonies.
+  years old, working with a trainer. The priest or master of ceremonies sets
+  the route used at the actual function.
 - **Languages:** received responses in Latin; original English instruction,
   pronunciation respelling, and short explanatory glosses.
 - **Pronunciation model:** broad Roman-style ecclesiastical Latin as described
@@ -37,36 +38,50 @@
    cross-bearer. Celebrant, deacon, and subdeacon appear only as cues or
    handoff partners.
 
-Each canonical full guide has a mechanically composed `-cue-cards` companion
-that reproduces only that guide's complete selected card faces. A companion
-adds no teaching or ceremonial claim, inherits provenance from its matching
-full guide, and must be used with the full guide's printing, actor, branch, and
-safety keys as applicable.
+Each form is a paired publication: a canonical full training guide and a
+mechanically composed `-cue-cards` companion linked from the same catalog row.
+The full guide owns the lesson sequence, consolidated trainer IPA key, and the
+printing, actor, branch, and safety keys; it renders no card faces. Every
+companion renders the same integrated 24-card response deck, R01–R07,
+R08A–R08C, and R09–R22. The two sung-form companions then render their own
+action-card deck. The integrated R deck is the sole current physical response
+deck; no separate cue-only or pronunciation-only deck belongs to the paired
+publication.
+
+A companion adds no teaching, pronunciation, or ceremonial claim. It inherits
+provenance from its matching full guide and must be used with that guide's
+keys.
 
 “Complete” in the two ceremonial leaves means complete for the declared model
 roster and ordinary route, not for every possible local roster or special
 function. A local trainer must map the model to the actual sanctuary before a
-child serves.
+server takes part.
 
 ## Included learning progression
 
-Each full guide now begins with a one-page family start sheet: what the child is
-learning, a five-to-ten-minute practice routine, the shortest useful print
-selection, and the path to the assigned lesson or role. The verbal course
-moves from five essential vowel sounds through six easy-to-hard response
+Each full guide now begins with a one-page trainer-and-server start sheet: what
+the server is learning, a five-to-ten-minute practice routine, the shortest
+useful print selection, and the path to the assigned lesson or role. The verbal
+course moves from five essential vowel sounds through six easy-to-hard response
 groups, then consolidates those learned answers in Mass order before covered
 retrieval, shuffled recall, and delayed review. Canonical Latin, marked learner
 Latin, sound spelling, IPA, and meaning remain distinct.
 
-The ceremonial courses put standalone child role sheets and a short scene map
-before the complete chronological coach inventory. They then add dry walking,
+The ceremonial courses put standalone server role sheets and a short scene map
+before the complete chronological trainer inventory. They then add dry walking,
 empty-object handoffs, cue recognition, safe candle and incense practice,
 complete role-runs, and branch recovery. Flash cards are detachable review
 tools, not a substitute for a live pronunciation or safety check. Card faces
 use a two-column by three-row portrait grid: six cards per long-edge duplex
 sheet pair.
-The parallel companions begin directly with the first C-deck front on physical
-page 1, add no setup or parity sheet, and preserve the same six-up imposition.
+Each cards-only companion begins directly with the first integrated-response
+front on physical PDF page 1, adds no setup or parity sheet, and preserves the
+six-up imposition. In the sung-form companions, the action-card range begins
+on the next odd physical page. Final production verification confirms eight
+pages for the Low-Mass companion and twelve pages for each sung companion:
+response fronts begin on pages 1, 3, 5, and 7, and sung action fronts begin on
+pages 9 and 11. The production manifest records alignment and artifact
+identity.
 
 ## Exclusions
 
@@ -88,7 +103,7 @@ older elements.
 These are study and rehearsal aids, not official liturgical books, parish
 directives, certificates of competence, or statements of present
 authorization. The priest and master of ceremonies retain responsibility for
-the actual function. A child must receive hands-on instruction before handling
+the actual function. A server must receive hands-on instruction before handling
 fire, hot charcoal, the Communion plate, vessels, or unfamiliar sanctuary
 steps.
 
@@ -103,11 +118,11 @@ pronunciation and ceremonial sources, and reproduce no third-party diagram or
 extended manual prose.
 
 As of 2026-07-22, source, response, pronunciation, and ceremonial claims retain
-their completed internal audit. The family-first restructuring, six-up card
-imposition, parallel card companions, and odd-page deck starts have also
-completed their renewed build, all-187-page visual review, physical-page parity
-check, and measured 56-pair duplex production review. The exact installed snapshot is recorded in the
-production manifest.
+their completed internal audit. The paired-publication split, integrated R
+deck, consolidated trainer IPA key, and cards-only composition contract are
+represented in the tracked source. Renewed production verification completed
+the final page, parity, alignment, visual, extraction, and installed-identity
+checks recorded in the production manifest.
 Independent liturgical, ceremonial, Latin-pronunciation, pedagogical, rights,
 and ecclesiastical review remain outstanding. Installation of a reviewed PDF
 does not remove those limits or authorize public distribution.

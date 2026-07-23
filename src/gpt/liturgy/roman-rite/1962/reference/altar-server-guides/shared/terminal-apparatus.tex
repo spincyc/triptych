@@ -6,12 +6,16 @@
 % metadata, and rights colophon together on the terminal page without changing
 % the type or spacing used anywhere else in the guide.
 \begingroup
-\footnotesize
+\ifLowMassGuide\footnotesize\else\scriptsize\fi
 \microtypesetup{protrusion=false,expansion=false}
 \RaggedRight
 \setlength{\columnsep}{0.8em}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{0.22em}
+\ifLowMassGuide
+  \setlength{\parskip}{0.22em}
+\else
+  \setlength{\parskip}{0.12em}
+\fi
 \newcommand{\TerminalNote}[2]{\textbf{#1.} #2\par}
 \begin{multicols}{2}
 

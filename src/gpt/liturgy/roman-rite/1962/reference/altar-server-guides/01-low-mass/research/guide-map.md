@@ -4,19 +4,19 @@
 - Form: Low Mass according to the 1962 Roman Missal
 - Reader: altar server, approximately ages eight to fourteen
 - Boundary: verbal cues, canonical Latin replies, Roman-style pronunciation,
-  meanings, memory work, and verbal flash cards only
-- Imported authoritative selections: A1--A22; C01--C13, C14A--C14C, C15,
-  C16A--C16B, C17, C18A--C18B, and C19--C20 from
-  shared/response-reference.tex
-- Imported pronunciation-card selection: P01--P07, P08A--P08C, and
-  P09--P22 from shared/response-reference.tex
+  meanings, memory work, and the linked response-card companion only
+- Imported authoritative response selection: A1--A22 from
+  `shared/response-reference.tex`
+- Paired companion selection: R01--R07, R08A--R08C, and R09--R22, ordered by
+  the six lesson groups; the full guide owns the card key and catalog pointer
+  but renders no card faces
 - Ceremonial selection: none
 
 ## Reader order
 
 1. Title, contents, the words-only training boundary, and a one-page start
-   sheet for Mom or trainer. The start sheet gives a ten-minute practice
-   routine, six-lesson road map, and print menu.
+   sheet for the trainer and server. The start sheet gives a ten-minute
+   practice routine, six-lesson road map, and print menu.
 2. Compact Roman-pronunciation and practice key.
 3. Six easy-to-hard lessons: three anchors; Gospel and Preface; short opening
    answers; the psalm chain; the long answers; and Kyrie and endings.
@@ -24,8 +24,8 @@
    A1--A22 response bank, and the locally placed opening and ending branches.
 5. Cumulative covered recall, shuffled-cue assessment, recovery practice, and
    compact quick reference.
-6. Twenty-four mirrored six-up duplex cue-to-response cards, followed by the
-   P01--P07, P08A--P08C, P09--P22 Latin-to-pronunciation-and-meaning cards.
+6. A compact printing and actor key that points to the paired downloads in the
+   same catalog row. No card faces are embedded in this guide.
 7. Scope, edition, qualifications, references, and generation metadata.
 
 ## Verbal branches
@@ -39,16 +39,22 @@ The Last-Gospel A13/A16/A15 sequence is spoken by the server only when that
 Gospel is said; it is omitted at the third Mass of Christmas. Special rites
 and Dialogue-Mass expansions are not taught.
 
-The C deck has 24 card IDs. Its shared print key states the Low-Mass
-speaker/mode rule once; fixed cue faces print complete formulas or verses, and
-the two variable-reading cards require the trainer to use the complete
-appointed ending. C11--C13 are the three print-sized parts of A8, not response
-IDs. Composite C14, C16, and C18 were retired: their singular successors
-C14A--C14C, C16A--C16B, and C18A--C18B keep one response point on each card.
-The P deck has 24 card IDs: P01--P07, P08A--P08C, and P09--P22. Together the
-Low-Mass leaf selects 48 cards on eight full long-edge duplex sheet pairs.
-Completed production review must confirm the mirrored three-row grid order
-and measured cut-border alignment in the exact PDF.
+The paired companion has twenty-four integrated response cards, one for each
+stable A-bank response or A8 study chunk. R01--R07, R08A--R08C, and R09--R22
+combine cue recall, canonical answer, learner syllables and stress, sound line,
+and meaning on one front/back pair. Response cards follow the six lesson groups
+rather than numerical order and carry a `LOW` form marker with the visible ID.
+Every front gives the complete formula or verse selected for practice; a
+variable-reading example is complete, facsimile checked, and labeled as an
+example rather than a universal proper ending.
+
+The full guide's key states the Low-Mass speaker and mode rule, printing setup,
+and catalog pointer. The guide has no embedded card range. The companion begins
+with its first response front on physical page 1 and contains four six-up,
+long-edge duplex sheet pairs. The final full guide is fifteen physical pages;
+the companion is eight. Completed production review confirmed the companion's
+odd-page starts, mirrored three-row order, cut-border alignment, legibility,
+and installed identity.
 
 ## Mastery evidence
 

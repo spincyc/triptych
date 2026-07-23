@@ -8,24 +8,26 @@
 - Branch roles: separate thurifer and boat bearer on the incense branch, optional
   processional cross-bearer, and an assigned lesson singer on the alternate
   lesson branch
-- Imported selections: MC-001--MC-057, A1--A22, C01--C13, C14A--C14C,
-  C15, C16A--C16B, C17, C18A--C18B, C19--C20, P01--P07, P08A--P08C,
-  P09--P22, and MC-A01--MC-A12
+- Imported training selections: MC-001--MC-057 and A1--A22
+- Paired companion selections: R01--R07, R08A--R08C, R09--R22, and
+  MC-A01--MC-A12; the full guide owns the card key and catalog pointer but
+  renders no card faces
 
 ## Reader order
 
 1. Title and contents.
-2. Mom-or-trainer Start Here path, Today's Mass fill-in, and the child's
+2. Trainer-and-server Start Here path, Today's Mass fill-in, and the server's
    eight-scene whole-Mass map.
 3. Form boundary, model roster, source labels, movement vocabulary, and
    incense safety.
 4. Standalone MC, A1, A2, TH, BB, torchbearer, CB, and L role routes, followed
    by scene-sized rehearsal and mastery checks.
-5. MC-001--MC-057 complete chronological coach reference and branch summary.
+5. MC-001--MC-057 complete chronological trainer reference and branch summary.
 6. Pronunciation key, six short response lessons, Missa-Cantata voice map and
    Mass-order consolidation, followed by cumulative verbal drills.
-7. The 24-card C cue-to-response deck, P01--P07, P08A--P08C, P09--P22
-   Latin-to-pronunciation-and-meaning cards, and MC-A01--MC-A12 action cards.
+7. A compact printing, actor, roster, branch, and safety key that points to the
+   paired downloads in the same catalog row. No card faces are embedded in
+   this guide.
 8. Scope, edition, qualifications, references, and generation metadata.
 
 ## Branches and rejoins
@@ -72,21 +74,28 @@ MC-056 free-handed T1--T4 and L genuflect if the Blessed
 Sacrament is reserved and make a profound bow if it is not; the named
 object-bearers remain upright and bow the head.
 
-The C deck has 24 card IDs. Its shared print key states the form-specific
-actor/mode distinction once; fixed cue faces print complete formulas or
-verses, while the two variable-reading cards require the complete appointed
-ending. C11--C13 are three study parts of A8; C14A--C14C, C16A--C16B, and
-C18A--C18B divide multi-cue study material without creating new response IDs.
-The P deck has 24 card IDs: P01--P07, P08A--P08C, and
-P09--P22. With MC-A01--MC-A12, this guide selects 60 cards on ten complete
-six-up, long-edge duplex sheet pairs: four C, four P, and two action pairs.
-Final measured alignment and installed-build identity belong to the production
-record, not this planning map.
+The paired companion has twenty-four integrated response cards, one for each
+stable A-bank response or A8 study chunk. R01--R07, R08A--R08C, and R09--R22
+combine cue recall, canonical answer, learner syllables and stress, sound line,
+and meaning on one front/back pair. Response cards follow the six lesson groups
+rather than numerical order and carry an `MC` form marker with the visible ID.
+Every front gives the complete formula or verse selected for practice; a
+variable-reading example is complete, facsimile checked, and labeled as an
+example rather than a universal proper ending. The paired full guide's key
+states the form-specific actor and mode distinction once.
+
+MC-A01--MC-A12 follow the integrated response run in the companion. The
+companion begins with its first response front on physical page 1; the action
+run begins on the next odd page after four complete six-up response sheet
+pairs. The full guide has no embedded card range. The final full guide is
+twenty-nine physical pages; the companion is twelve. Production review
+confirmed response fronts on pages 1, 3, 5, and 7, action fronts on pages 9
+and 11, mirrored backs, border alignment, legibility, and installed identity.
 
 The action-card cross-view is anchored to the chronology: MC-A01 links the
 adult entrance handoff and MC's complete biretta exit lifecycle through the
-post-reverence handoff; MC-A03 links the outer
-incense lane and complete recipient roster; and MC-A05 links both Lavabo cues
+post-reverence handoff; MC-A03 rehearses all four incense stations and returns
+both boat and thurible to the safe station; and MC-A05 links both Lavabo cues
 and the two-stage ablutions. MC-A08 links the rehearsed recovery rule to
 MC-003. MC-A09 records the Gospel-genuflection object exceptions; MC-A10
 records L's empty-handed lectern route and the adult's recovery; MC-A11 and

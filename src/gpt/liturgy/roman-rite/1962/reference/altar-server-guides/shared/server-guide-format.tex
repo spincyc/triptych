@@ -4,7 +4,7 @@
 
 % Each independently printable guide turns on exactly one of these switches
 % after loading this shared format file.  Shared lessons and detached cards can
-% then name only the voices that matter in the book a family is holding.
+% then name only the voices that matter in the guide being printed.
 \newif\ifLowMassGuide
 \newif\ifMissaCantataGuide
 \newif\ifSolemnMassGuide
@@ -31,8 +31,8 @@
   \TriptychRightsNotice
   \par\endgroup}
 
-% Families need to find one lesson or one assigned role without paging through
-% the technical route.  Include subsections in the contents for that purpose.
+% Trainers and servers need to find one lesson or one assigned role without
+% paging through the technical route. Include subsections in the contents.
 \setcounter{tocdepth}{2}
 \setlength{\emergencystretch}{3em}
 \raggedbottom
@@ -97,6 +97,7 @@
   bottom=3pt,
   title={#1},
   title after break={#1 (continued)},
+  coltitle=black,
   fonttitle=\small\bfseries,
   before upper={\setlength{\parskip}{0.24em}},
   before skip=5pt,
@@ -114,8 +115,8 @@
   right=8pt,
   top=5pt,
   bottom=5pt,
-  title={FOR MOM OR TRAINER: #1},
-  title after break={FOR MOM OR TRAINER: #1 (continued)},
+  title={FOR THE TRAINER: #1},
+  title after break={FOR THE TRAINER: #1 (continued)},
   fonttitle=\small\bfseries,
   before upper={\setlength{\parskip}{0.24em}},
   before skip=5pt,
@@ -124,6 +125,7 @@
 
 \newtcolorbox{learnerbox}[1]{
   enhanced,
+  breakable,
   colback=white,
   colframe=black,
   boxrule=1pt,
@@ -140,7 +142,7 @@
   after skip=5pt
 }
 
-\newcommand{\coachreference}{\par\smallskip\noindent\textbf{COACH REFERENCE}\par\smallskip}
+\newcommand{\coachreference}{\par\smallskip\noindent\textbf{TRAINER REFERENCE}\par\smallskip}
 
 \newcommand{\rolecard}[2]{%
   \begin{coachbox}{#1}
@@ -148,7 +150,7 @@
   \end{coachbox}
 }
 
-% Keep a coach-chart heading with its repeated column head and at least one
+% Keep a trainer-chart heading with its repeated column head and at least one
 % action row. Longtable cannot by itself reserve that space before a heading.
 \newcommand{\actionsection}[1]{%
   \Needspace{9\baselineskip}%
@@ -162,11 +164,11 @@
   \renewcommand{\arraystretch}{1.04}
   \begin{longtable}{@{}>{\RaggedRight\arraybackslash}p{0.15\linewidth}>{\RaggedRight\arraybackslash}p{0.11\linewidth}>{\RaggedRight\arraybackslash}p{0.68\linewidth}@{}}
   \toprule
-  \textbf{When this happens} & \textbf{Who} & \textbf{Do this \(\rightarrow\) finish / next}\\
+  \textbf{When this \mbox{happens}} & \textbf{Who} & \textbf{Do this \(\rightarrow\) finish / next}\\
   \midrule
   \endfirsthead
   \toprule
-  \textbf{When this happens} & \textbf{Who} & \textbf{Do this \(\rightarrow\) finish / next}\\
+  \textbf{When this \mbox{happens}} & \textbf{Who} & \textbf{Do this \(\rightarrow\) finish / next}\\
   \midrule
   \endhead
   \bottomrule
@@ -175,9 +177,9 @@
   \end{longtable}
   \endgroup
 }
-\newcommand{\actionrow}[4]{#1 & \textbf{#2} & #3\par
+\newcommand{\actionrow}[4]{#1 & \textbf{#2} & #3\enspace
   \textit{Finish / next:} #4\\}
-\newcommand{\actionrowid}[5]{\textsc{#1}\par #2 & \textbf{#3} & #4\par
+\newcommand{\actionrowid}[5]{\textsc{#1}\par #2 & \textbf{#3} & #4\enspace
   \textit{Finish / next:} #5\\}
 
 \newenvironment{responsetable}{%
@@ -204,7 +206,8 @@
 
 \newcommand{\CanonLatin}[1]{\textit{#1}}
 \newcommand{\LearnLatin}[1]{\textbf{#1}}
-\newcommand{\SoundLine}[1]{\textsc{#1}}
+% Preserve genuine upper/lower case: capitals, not small caps, mark stress.
+\newcommand{\SoundLine}[1]{{\sffamily #1}}
 \newcommand{\BroadIPA}[1]{{\fontfamily{cmr}\selectfont\textipa{/#1/}}}
 \newcommand{\LocalChoice}{\textsc{local choice}}
 \newcommand{\MissalRule}{\textsc{missal}}
@@ -277,14 +280,14 @@
 \newcommand{\guidecontents}{%
   \pagenumbering{roman}
   \begingroup
-  % The Missa Cantata contents carries a separate entry for every child role.
+  % The Missa Cantata contents carries a separate entry for every server role.
   % Keep that complete map on one sheet instead of orphaning the action-deck
   % and appendix entries on an otherwise empty second contents page.
   \ifMissaCantataGuide\footnotesize\else\small\fi
   \setlength{\parskip}{0pt}
   \tableofcontents
   % A form may lower the depth near the end of its stored contents to keep
-  % technical back matter out of the family navigation page. Restore the
+  % technical back matter out of the learner navigation page. Restore the
   % normal learner depth before the document writes its next contents file.
   \setcounter{tocdepth}{2}
   \endgroup

@@ -8,26 +8,28 @@
   four torchbearers
 - Alternate role: optional processional cross-bearer (Cb is not part of the
   core roster); this guide requires separate Th and Bb roles
-- Imported selections: SO-001--SO-070, A1--A22; C01--C13, C14A--C14C, C15,
-  C16A--C16B, C17, C18A--C18B, C19--C20; and
-  P01--P07, P08A--P08C, P09--P22, and SO-A01--SO-A12
+- Imported training selections: SO-001--SO-070 and A1--A22
+- Paired companion selections: R01--R07, R08A--R08C, R09--R22, and
+  SO-A01--SO-A12; the full guide owns the card key and catalog pointer but
+  renders no card faces
 
 ## Reader order
 
 1. Title and contents.
-2. Family start page, MC-completed Today's Mass sheet, seven-scene overview,
-   form boundary, roster, source labels, movement vocabulary, and safe reset.
-3. Complete learner-first, sacristy-to-sacristy route for the child's selected
+2. Trainer-and-server start page, MC-completed Today's Mass sheet, seven-scene
+   overview, form boundary, roster, source labels, movement vocabulary, and
+   safe reset.
+3. Complete learner-first, sacristy-to-sacristy route for the server's selected
    role. Each rendered route includes the common team track and needs no
    separate common-route lookup.
-4. SO-001--SO-070 coach-and-MC chronology, still complete for every roster
+4. SO-001--SO-070 trainer-and-MC chronology, still complete for every roster
    state, object, handoff, branch, and waiting state.
 5. Full-run ceremonial mastery check.
 6. Pronunciation key, six easy-to-hard response lessons, form-specific voice
    map and Mass-order consolidation, followed by cumulative verbal drills.
-7. Twenty-four cue-to-response cards; P01--P07, P08A--P08C, P09--P22
-   Latin-to-pronunciation-and-meaning cards; and SO-A01--SO-A12 action and
-   rehearsal cards.
+7. A compact printing, actor, roster, branch, and safety key that points to the
+   paired downloads in the same catalog row. No card faces are embedded in
+   this guide.
 8. Scope, edition, qualifications, references, and generation metadata.
 
 ## Branches and rejoins
@@ -85,23 +87,33 @@ and do not insert a second Communion Confiteor. The subdeacon, not a lay
 server, makes the three quiet Last-Gospel answers in the selected Solemn-Mass
 model.
 
-The C deck has 24 card IDs. Its shared print key states the form-specific
-actor/mode distinction once; fixed cue faces print complete formulas or
-verses, while the two variable-reading cards require the complete appointed
-ending. C11--C13 are three study parts of A8, not response IDs. Composite C14,
-C16, and C18 are retired in favor of singular-point C14A--C14C, C16A--C16B,
-and C18A--C18B. The P deck has 24 card IDs:
-P01--P07, P08A--P08C, and P09--P22. The Solemn action deck has 12 IDs,
-SO-A01--SO-A12. The guide therefore selects 60 cards on ten complete duplex
-sheets: four C, four P, and two action pairs. Every US-letter portrait sheet
-places six cards on each face in a two-column by three-row grid; each back
-mirrors every row for long-edge printing and has no blank card.
+The paired companion has twenty-four integrated response cards, one for each
+stable A-bank response or A8 study chunk. R01--R07, R08A--R08C, and R09--R22
+combine cue recall, canonical answer, learner syllables and stress, sound line,
+and meaning on one front/back pair. Response cards follow the six lesson groups
+rather than numerical order and carry a `SOLEMN` form marker with the visible
+ID. Every front gives the complete formula or verse selected for practice; a
+variable-reading example is complete, facsimile checked, and labeled as an
+example rather than a universal proper ending. The paired full guide's key
+states the form-specific actor and mode distinction once.
 
-The action-card cross-view is anchored to the chronology: SO-A06 records the
+SO-A01--SO-A12 follow the integrated response run in the companion. The
+companion begins with its first response front on physical page 1; the action
+run begins on the next odd page after four complete six-up response sheet
+pairs. Every US-letter portrait sheet places six cards on each face in a
+two-column by three-row grid; each back mirrors every row for long-edge
+printing and has no blank card. The full guide has no embedded card range.
+The final full guide is thirty-one physical pages; the companion is twelve.
+Production review confirmed response fronts on pages 1, 3, 5, and 7, action
+fronts on pages 9 and 11, mirrored backs, border alignment, legibility, and
+installed identity.
+
+The action-card cross-view is anchored to the chronology: SO-A02 fixes the
+boat and thurible endpoints at all four incense stations; SO-A06 records the
 concurrent Lavabo and closed-thurible reset; SO-A07 and SO-A03 distinguish the
 SO-057 first-wine/torch-return cue from the SO-058 second-ablution cruet
-return; and SO-A02 with SO-A08 records Bb's SO-067 boat pickup and
-boat-bearing exit formation. SO-A09 rehearses the seven existing action
+return; and SO-A08 records Bb's SO-067 boat pickup and boat-bearing exit
+formation. SO-A09 rehearses the seven existing action
 ranges, SO-A10 rehearses the documented pre-Mass branch call, SO-A11 isolates
 the existing SO-050--060 acolyte handoff chain, and SO-A12 applies the guide's
 existing partner, recovery, and safe-finish rules. The cards add no handoff

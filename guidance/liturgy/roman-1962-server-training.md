@@ -56,9 +56,9 @@ altar-server-guides/
 
 Each leaf has its own `main.tex`, `generation-metadata.tex`, and local guide
 map. The three full guides are substantive publications and keep independent
-generation metadata. A cards-only leaf is a prose-free mechanical companion
-and may inherit generation provenance only from its matching full guide while
-displaying its own revision timestamp once.
+generation metadata. A cards-only leaf is a card-face-only mechanical
+companion and may inherit generation provenance only from its matching full
+guide while displaying its own revision timestamp once.
 
 The boundaries are strict:
 
@@ -165,7 +165,7 @@ minimum, every response entry has a stable ID and records:
 - exact source Latin and locus;
 - any displayed normalization, syllable division, and stress;
 - phonemic or phonetic IPA, identified as such;
-- the child-readable respelling and the rule set behind it;
+- the young-server-readable respelling and the rule set behind it;
 - a concise meaning or gloss and its authorship or witness status; and
 - form, role, spoken-or-sung mode, omission, option, and local-custom status.
 
@@ -193,10 +193,10 @@ servers, schola or choir, and people; distinguish spoken, chanted, and silent
 text. A printed `R.` is not by itself evidence that an altar server says the
 response in all three forms. When the choir sings an item while servers perform
 an action, print those as different tracks. When a sacred minister answers, do
-not reassign the reply to a server. A card deck may state the form's actor and
-mode rule once in its immediately preceding print key instead of repeating a
-`Voice` field on every face; any condition that changes whether the card is
-used still appears on the affected card.
+not reassign the reply to a server. A paired full guide may state the form's
+actor and mode rule once in its card key instead of repeating a `Voice` field
+on every face in the cards-only companion; any condition that changes whether
+the card is used still appears on the affected card.
 
 Give a compact pronunciation key before first use, then keep every local entry
 consistent with it. Syllable breaks and primary stress must agree with the
@@ -254,58 +254,71 @@ made consultation necessary.
 
 ## Flash-card contract
 
-Every full guide contains a detachable, duplex-friendly card section and has a
-parallel cards-only print companion generated from the same source. The Low
-Mass set contains verbal cue-to-response cards and
-Latin-to-pronunciation-and-meaning cards only. The Missa Cantata and Solemn
-sets contain their applicable verbal cards plus form- and role-specific
-action-sequence cards.
+Each full guide has a parallel cards-only companion generated from the same
+shared data. The full guide owns the printing, actor and form, branch, and
+safety key and points to its paired catalog companion; it does not reproduce
+or embed card faces. The Low Mass companion contains integrated verbal-response
+cards only. The Missa Cantata and Solemn Mass companions contain the same
+applicable integrated response cards followed by their form- and role-specific
+action cards.
 
-Each card has a stable ID. Its front and back are generated as one audited pair
-from the shared data, and the flash-card manifest identifies the guides that
-select it. Put the ID alone at upper left and `Cue` or `Answer` at upper right;
-do not add the generic word `Card` or a repeated recall slogan. Response-card
-fronts print every fixed cue in full. When the cue is the variable end of an
-appointed Epistle or Gospel, direct the trainer to read the complete final
-sentence or verse from that day's identified Missal rather than printing a
-misleading universal fragment. The full guide's deck-level key preserves the
-speaker and form distinction so a choir or sacred-minister text is not turned
-into an automatic lay-server response. Action cards identify the role, form, cue,
-branch, and next action; they do not compress two incompatible local routes
-into one answer.
+Use one physical response card for each stable response or deliberately split
+study chunk. Do not maintain separate cue-to-response and
+Latin-to-pronunciation physical decks. The front gives the complete spoken cue
+or complete verse used for practice. An isolated last word or ellipsis is not
+a complete cue. When an appointed reading varies, print a complete,
+facsimile-checked example ending on the face and identify it as an example,
+not the universal proper text. The trainer may additionally practise the
+complete ending from the identified Missal for the actual day. The back gives
+the canonical answer, learner syllables and stress, the consistent sound line,
+a concise meaning, the response or chunk ID, and any condition needed to
+prevent a false response. These are renderings of the received Latin and
+audited editorial learning layers; consolidation does not transfer their
+ownership to the card layout.
+
+Each physical card has a stable response/chunk or action ID. Its front and back
+are generated as one audited pair from the shared data, and the flash-card
+manifest identifies the companion that selects it. Put the rendered ID at
+upper left and `Cue` or `Answer` at upper right; do not add the generic word
+`Card`, a repeated recall slogan, or a repeated `Voice` field. Add a compact
+form marker to the rendered ID so cut cards from Low Mass, Missa Cantata, and
+Solemn Mass cannot be silently mixed while the underlying stable ID remains
+unchanged. Order response cards by the six lesson groups, not numerically. The
+full guide's card key preserves the speaker and form distinction so a choir or
+sacred-minister text is not turned into an automatic lay-server response.
+Action cards identify the role, form, cue, branch, and next action; they do not
+compress two incompatible local routes into one answer.
 
 State paper size, actual-size setting, duplex edge, page orientation, cutting
-order, and whether blank backs are intentional in the full guide's immediately
-preceding card key. Keep text and cut marks within safe margins. Verify
-front/back order and alignment by measured overlay or an equivalent rendered
-check, then inspect both faces at full size. A contact sheet alone cannot
-establish duplex alignment or small-type legibility.
+order, and whether blank backs are intentional in the full guide's card key.
+Keep text and cut marks within safe margins. Verify front/back order and
+alignment by measured overlay or an equivalent rendered check, then inspect
+both faces at full size. A contact sheet alone cannot establish duplex
+alignment or small-type legibility.
 
-The standard family-print layout is six portrait cards on each letter-size
+The standard trainer-print layout is six portrait cards on each letter-size
 face, in two columns by three rows, with the backs mirrored by row for
-long-edge duplex printing. A guide may depart from six-up only when a recorded
-legibility or cut-safety check shows that the actual card text cannot fit at
-the profile's minimum readable size. Prefer splitting a composite prompt into
-single-cue cards over shrinking the teaching text.
+long-edge duplex printing. A companion may depart from six-up only when a
+recorded legibility or cut-safety check shows that the actual card text cannot
+fit at the profile's minimum readable size. Prefer splitting a genuinely long
+response into stable sense chunks over shrinking the teaching text.
 
 The cards-only leaf is a print companion, not a self-contained trainer. It
 reproduces only the complete selected card faces: no cover, contents,
 instruction, actor key, lessons, parity leaf, or terminal reference apparatus.
-Its catalog link must tell the reader to use the matching full guide's card
-key. The required revision and rights notice may occupy the unused margin below
-the final back grid but must not add a page or enter a cut card. Every condition
-needed to prevent a false individual response or action remains on the
-affected face.
+Its catalog link and the full guide's catalog pointer must tell the reader to
+use the matching full guide's card key. The required revision and rights notice may
+occupy the unused margin below the final back grid but must not add a page or
+enter a cut card. Every condition needed to prevent a false individual
+response or action remains on the affected face.
 
-The first actual card front of every independently printable deck begins on
-an odd physical PDF page, and its back follows on the next even page. This
-must hold when the deck's page range is printed alone and when the complete
-guide is printed. Several even-length decks may run consecutively after one
-shared instruction page and, when required, one explicitly intentional parity
-page: the even page count then places every later deck front on an odd page
-without another transition leaf. Exclude instructions and parity pages from
-the advertised card ranges. Verify physical PDF page parity after the final
-build; logical page numbering alone is not sufficient.
+The companion begins with the first integrated-response front on odd physical
+PDF page 1, and its mirrored back follows on even page 2. Each later sheet
+front likewise falls on an odd page. In a sung-form companion, the action deck
+begins on the next odd page after the complete even-length response run. Do not
+add a cover, instruction, or parity leaf before the card faces. Verify physical
+PDF parity after the final build; logical page numbering alone is not
+sufficient. The full guide has no embedded card range to advertise.
 
 ## Required records and ownership
 
@@ -328,7 +341,8 @@ The non-publishable series owner keeps:
   route, handoff, source class, locus, option, custom, reassignment, and
   unresolved discrepancy;
 - `research/flash-card-manifest.md`: every card ID, front/back data source,
-  guide selection, ordering, duplex pairing, and completed alignment check;
+  companion selection, ordering, duplex pairing, and either the completed
+  alignment check or an explicit pre-build status;
 - `research/source-audit.md`: facsimile checks, official-source and manual
   comparisons, consequential negative results, rejected edition mixing,
   rights, and completed liturgical, Latin, pedagogical, and production review;
@@ -339,54 +353,57 @@ The non-publishable series owner keeps:
 
 Each publishable leaf keeps `research/guide-map.md`, naming its form, stable
 guide identity, imported data selections, model roster where applicable,
-reader order, lessons, drills, assessments, flash-card range, branches,
-appendices, and relationship to the series-wide records. It must account for
-everything rendered without copying the controlling inventories.
+reader order, lessons, drills, assessments, paired-guide or card-face boundary,
+branches, appendices, and relationship to the series-wide records. It must
+account for everything rendered without copying the controlling inventories.
 
 ## Reader order and terminal apparatus
 
-After a compact title and contents, every full guide begins with a one-page family
-start sheet. It tells a parent or trainer what to print, what the child should
-learn first, how to run a short practice, and where an assigned role or lesson
-begins. Labels such as “For Mom or Trainer,” “For the Server,” and “Coach
-Reference” keep instructions, learner text, and technical audit material
-visibly distinct. The main learning route must not require a family to decode
-an inventory table before beginning practice.
+After a compact title and contents, every full guide begins with a one-page
+trainer start sheet. It tells the trainer which publication to print, what the
+server should learn first, how to run a short practice, and where an assigned
+role or lesson begins. Labels such as “For the Trainer,” “For the Server,” and
+“MC / Trainer Reference” keep instructions, learner text, and technical audit
+material visibly distinct. The main learning route must not require a trainer or server
+to decode an inventory table before beginning practice.
 
 The Low Mass guide begins with the compact pronunciation key and teaches the
 responses in short, easy-to-hard lessons. It then consolidates those learned
 answers in Mass order, followed by cumulative drills, mastery, quick reference,
-and flash cards. The lesson order may differ from Mass order when that reduces
-the child's first memory burden, provided the later Mass-order route is
-complete and derived from the same response data. It does not acquire
-ceremonial material through an introduction, diagram, quiz, or card.
+and a linked cards-only companion. The lesson order may differ from Mass order
+when that reduces the server's first memory burden, provided the later
+Mass-order route is complete and derived from the same response data. It does
+not acquire ceremonial material through an introduction, diagram, quiz, or
+card.
 
 Each sung guide begins with its model roster, today's local-route choices, and
 a short scene map. Standalone role-by-role learner sheets come before the full
-chronological inventory so a child can first find and rehearse one assigned
-job. The complete chronological walkthrough follows as coach reference, then
+chronological inventory so a server can first find and rehearse one assigned
+job. The complete chronological walkthrough follows as MC/trainer reference, then
 cumulative rehearsal and mastery checks, verbal-response practice, quick
-reference, and flash cards. Role sheets and the chronology remain derived from
-the same inventory; reader order does not change evidentiary priority. Put
-optional and local branches beside the affected action rather than in an
-unconnected miscellany.
+reference, and a linked cards-only companion. Role sheets and the chronology
+remain derived from the same inventory; reader order does not change
+evidentiary priority. Put optional and local branches beside the affected
+action rather than in an unconnected miscellany.
 
 Each full guide ends with `Scope, Edition, and Qualifications`, references, and
 `Generation Metadata` as the final content block. The terminal appendix owns
 the form boundary, edition, model roster status, excluded ceremonies,
 pronunciation convention, current-authorization boundary, global custom and
-manual limits, rights, and review state. A condition that changes what a child
+manual limits, rights, and review state. A condition that changes what a server
 says or does remains local as well.
 
 Each cards-only companion follows the source selection and form boundary of its
-matching full guide, begins directly with the first C-deck front on physical
-page 1, and contains no independent teaching prose. Its local guide map records
-the complete physical page map and inherited relationship.
+matching full guide, begins directly with the first integrated-response front
+on physical page 1, and contains no independent teaching prose. Its local guide
+map records the planned duplex order, final verified physical page map, and
+inherited relationship.
 
 The six installed PDFs have one catalog home in
-`library/traditional-latin-mass.md` and remain together in three form rows. Build,
-installation, cataloging, exact-snapshot release authorization, public push,
-and deployment are separate operations.
+`library/traditional-latin-mass.md` and remain together in three form rows.
+Each form row gives separate, clearly labeled links for the full training guide
+and its cards-only companion. Build, installation, cataloging, exact-snapshot
+release authorization, public push, and deployment are separate operations.
 
 ## Profile gate
 
@@ -413,9 +430,10 @@ Before installation or release, in addition to the universal gates:
 - inspect every page for age-appropriate type size, density, navigation,
   monochrome legibility, writable space, split action units, unsafe diagram
   ambiguity, clipping, accidental blanks, and final-colophon fit;
-- inspect flash-card faces at full size and verify that every first front is
-  on an odd physical PDF page, then verify duplex edge, front/back alignment,
-  cut safety, selection order, and intentional parity pages; and
+- inspect flash-card faces at full size and verify that the first integrated
+  response front and each later sheet front are on odd physical PDF pages,
+  then verify duplex edge, front/back alignment, cut safety, lesson-group
+  order, form markers, and the absence of an inserted cover or parity page; and
 - state liturgical, ceremonial, Latin-pronunciation, pedagogical, rights, and
   independent-review status accurately. Received Latin and other third-party
   material require a local rights statement and recorded distribution basis;
