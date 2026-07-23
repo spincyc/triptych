@@ -24,16 +24,17 @@ The shared postconciliar proper owner contributes Missal formulary evidence to
 its leaves but contains no Catechism occurrence and must not receive a
 Catechism binding.
 
-No reviewed publication currently has a canonical Catechism source ID, a
-retained or hash-pinned Catechism artifact, or a source fingerprint. Every
-legacy migration binding therefore begins `cataloged`, even where a local
-research record honestly preserves an earlier inspection or verification
-event. Promotion requires a new review against exact canonical bytes.
+At the audit checkpoint, no reviewed publication had a canonical Catechism
+source ID, a retained or hash-pinned Catechism artifact, or a source
+fingerprint. Every legacy migration binding therefore began `cataloged`, even
+where a local research record honestly preserves an earlier inspection or
+verification event. Promotion requires a new review against exact canonical
+bytes.
 
 ## Identity decision
 
-The recurring family is not one undifferentiated web source. Canonicalization
-will distinguish:
+The recurring family is not one undifferentiated web source. The canonical
+graph distinguishes:
 
 1. the promulgated intellectual work, *Catechism of the Catholic Church*;
 2. the 1997 Latin typical edition approved and promulgated by
@@ -82,7 +83,7 @@ The Holy See portal terms permit viewing for personal and non-profit use but
 prohibit collection, reproduction, dissemination, and transfer absent written
 authorization. The USCCB imprint reserves the Catechism and translation rights
 and states that reprinting requires permission. Successful public retrieval is
-therefore not a repository distribution license. These artifacts will be
+therefore not a repository distribution license. These artifacts are
 registered as `restricted`, with exact hashes, retrieval dates, provenance,
 and public retrieval routes, but without payloads.
 
@@ -95,9 +96,9 @@ hashed, but its issue PDF belongs to the separate AAS serial family. It must
 not be duplicated under the paragraph-2267 act merely because that act occurs
 inside the issue.
 
-## Planned canonical graph
+## Canonical graph decision
 
-The first canonical slice will use these stable identities:
+The first canonical slice uses these stable identities:
 
 - `work.catholic-church.catechism`;
 - `edition.catholic-church.catechism.latin-typical-1997`;
@@ -214,17 +215,23 @@ The 1962 Nuptial Mass separately imports the Matrimony summary and therefore
 needs its own inherited binding for 1618–1666, especially 1623. Mariology’s
 shared formatting files contain no Catechism source material.
 
-## Migration order
+## Implemented result
 
-1. Commit this reviewed semantic boundary.
-2. Add and validate the canonical work, editions, exact restricted artifacts,
-   passages, amendment act, and bounded corpus.
-3. Add publication bindings in collection-sized commits while preserving all
-   legacy research records.
-4. Add explicit inherited bindings where rendered shared content carries the
-   evidence dependency.
-5. Refresh the exhaustive publication inventory and family ledger, accept the
-   reviewed canonical catalog, and run all source gates.
-6. Remove no legacy provenance until a later comparison proves the central
-   graph and every local role, date, limitation, and discrepancy remain
-   represented.
+The implemented graph contains 64 Catechism binding rows across 43
+publications: the 42 positive trace owners plus the inherited
+`theology/sacraments-at-a-glance` consumer. Thirteen rows target the work,
+twelve the archived Vatican English state, and thirty-nine the current Vatican
+English web state. One additional catalog-only binding connects the Saint
+Thomas Aquinas biography to the 2018 paragraph-2267 rescript, yielding 65
+Catechism-family and amendment-act bindings in total.
+
+No publication binding substitutes the acquired USCCB edition, and neither
+novena daily-prayer companion carries a Catechism binding. All 65 migrated
+bindings remain `cataloged` pending publication-specific review against exact
+canonical bytes. The 11 acquired artifacts remain restricted provenance
+records without repository payloads, and the bounded USCCB corpus remains a
+reacquisition aid rather than ordinary-clone searchable text.
+
+All legacy source audits, scopes, and rendered references remain in place.
+Their removal is deferred until a later comparison proves that the canonical
+graph preserves every local role, date, limitation, and discrepancy.
