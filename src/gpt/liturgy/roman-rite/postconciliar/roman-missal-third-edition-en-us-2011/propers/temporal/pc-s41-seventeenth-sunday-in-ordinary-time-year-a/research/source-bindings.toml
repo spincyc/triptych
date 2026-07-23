@@ -1,0 +1,17 @@
+schema = 1
+record_type = "bindings"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"
+
+[[bindings]]
+source_id = "work.catholic-church.catechism"
+loci = ["121-123", "128-130", "541-546"]
+role = "context"
+states = ["cataloged"]
+context = "The legacy publication uses these loci for the enduring value and unity of the Old Testament and for the Kingdom disclosed through parables. Its sole recorded Catechism URL is the Creator page and does not support these ranges, so they remain a catalog-only work-level binding rather than being silently attached to the modern English web edition."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["311-312"]
+role = "official-control"
+states = ["cataloged"]
+context = "The 2026-07-21 legacy expansion identifies the modern Holy See English Creator page for these moral-evil and Providence guardrails. That URL supports 311-312 but not the publication's separate 121-130 or 541-546 uses. This binding preserves the recorded mismatch and claims no inspection of a canonical artifact."

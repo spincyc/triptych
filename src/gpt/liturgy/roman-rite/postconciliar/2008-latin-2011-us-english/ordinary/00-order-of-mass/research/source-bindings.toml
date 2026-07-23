@@ -8,3 +8,10 @@ loci = ["10.6", "10.20", "19.13", "19.17"]
 role = "lead"
 states = ["cataloged"]
 context = "The legacy research record identifies City of God at these loci. This catalog-only binding claims no inspection of a central edition or artifact. Where the legacy record relies on NPNF/New Advent, the centrally registered Dods English and CSEL Latin texts are different witnesses and are not silently substituted."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-archive-2003"
+loci = ["185-1065", "1066-1209", "1213-1284", "1322-1419"]
+role = "official-control"
+states = ["cataloged"]
+context = "The legacy records identify the archived Holy See English Catechism presentation as doctrinal synthesis for the Order of Mass, not as an edition-specific rubric source. The bibliography omits matrix-only loci 185-1065 and 1213-1284; this binding preserves those audited uses without correcting the legacy bibliography. It is catalog-only and claims no inspection of a canonical artifact."
