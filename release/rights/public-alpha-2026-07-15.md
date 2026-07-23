@@ -519,7 +519,7 @@ no-project-initiated-promotion condition.
 ## Supplemental bare “approve” exact-current-snapshot clearance — 23 July 2026
 
 At `2026-07-23T09:04:32-05:00` in `America/Chicago`, the maintainer
-instructed exactly `approve ; commit ; publish.` Consistent with the 20 July
+instructed exactly `approve ; commit ; publish`. Consistent with the 20 July
 bare `approve` precedent, the `approve` term is recorded as
 exact-current-snapshot distribution authorization under the existing
 represented authority in record `perpetual-public-repository-2026`. It
@@ -609,6 +609,34 @@ rewrite history, administer worktrees, publish another ref or host, create a
 public release attachment, initiate promotion, broaden the substantive
 clearance, or waive any verification.
 
+### Corrective authorization — 23 July 2026
+
+After exact initial release-control commit
+`6bb9d6a9aceded73e747a2e98a32ed31ab676344` was integrated locally, but before
+any push, the primary session caught the invented period in the exact
+instruction quoted above and asked exactly: “Please authorize one follow-up
+correction commit, integration, and publication of the corrected main and
+GitHub Pages tip.” The maintainer replied exactly `authorize`.
+
+That reply is fresh authority for exactly one follow-up corrective
+release-control commit whose sole parent is
+`6bb9d6a9aceded73e747a2e98a32ed31ab676344`, primary-session integration of
+that commit, and one ordinary non-force publication of the corrected
+`refs/heads/main` and its independently verified GitHub Pages artifact. This
+corrective authority permits changes only to `release/README.md`,
+`release/public-alpha.json`, and
+`release/rights/public-alpha-2026-07-15.md`: correcting the exact quotation,
+recording this fresh authorization and its strict boundary, reconciling the
+README with the two-release-control-commit history, and updating only
+`rights_record_sha256` to bind the final rights record. It leaves all 111 PDF
+approval hashes, all 23 site-source bindings, statuses, gates, counts, and
+substantive limits unchanged.
+
+The authority remains subject to the exact remote-base check, every required
+gate, and the `no-project-initiated-promotion` condition. It authorizes no other
+commit, force update, tag, ref, host, public release attachment, history
+rewrite, promotion, worker integration, push, or deployment.
+
 ### Completed exact outgoing-history technical-exposure audit
 
 The exact public base
@@ -660,20 +688,28 @@ above.
 
 ### Strict publication boundary
 
-The 23 July 2026 `publish` instruction authorizes exactly one ordinary,
-non-force fast-forward of the public repository's `refs/heads/main`, and only
-if that ref still resolves to exact base
+The original 23 July 2026 `publish` instruction and the later exact
+`authorize` reply together authorize exactly one ordinary, non-force
+fast-forward of the public repository's `refs/heads/main`, and only if that
+ref still resolves to exact base
 `657f29b6f819623dee241677c1ccc3e8591b1f1b` immediately before the update.
 The authorized history after that base consists exactly of the eight audited
 linear commits ending at preapproval tip
-`e1715d98601147122eff8a8845a3274b775fec55`, followed immediately by exactly
-one coherent release-control commit whose sole parent is that preapproval tip.
-The final commit is bound by parentage and position because it cannot name its
-own object ID here. No intervening or later commit is authorized.
+`e1715d98601147122eff8a8845a3274b775fec55`, followed immediately by exact
+initial release-control commit
+`6bb9d6a9aceded73e747a2e98a32ed31ab676344`, whose sole parent is that
+preapproval tip, followed immediately by exactly one corrective release-control
+commit whose sole parent is
+`6bb9d6a9aceded73e747a2e98a32ed31ab676344`. The corrective commit is bound by
+parentage and position because it cannot name its own object ID here. No
+intervening or later commit is authorized.
 
 Before that ref update, a final incremental audit from the preapproval tip
-through the structurally bound final commit must prove the exact one-commit
-linear suffix and that it changes only these 29 release-control paths:
+through the structurally bound corrective commit must prove the exact
+two-commit linear suffix. It must prove that the first commit is exact
+`6bb9d6a9aceded73e747a2e98a32ed31ab676344`, with sole parent
+`e1715d98601147122eff8a8845a3274b775fec55`, and that this initial commit
+changes only these 29 release-control paths:
 `LIBRARY.md`; `THIRD_PARTY.md`; `library/curriculums.md`;
 `library/ecclesiastical-latin.md`; `library/faith.md`;
 `library/traditional-latin-mass.md`; `release/README.md`;
@@ -700,17 +736,32 @@ linear suffix and that it changes only these 29 release-control paths:
 `src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/scope.md`;
 and
 `src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/source-audit.md`.
-The same audit must prove that the final commit changes no installed PDF,
+The audit must separately prove that the structurally bound corrective commit
+changes only `release/README.md`, `release/public-alpha.json`, and
+`release/rights/public-alpha-2026-07-15.md`; corrects the exact quotation;
+records the fresh `authorize` reply; reconciles the release README with the
+two-release-control-commit history; and changes only `rights_record_sha256` in
+the manifest to the exact final rights-record hash.
+It must prove that the corrective commit leaves all 111 PDF approval hashes
+and all 23 site-source bindings unchanged and changes no installed PDF or
+recognized reader-site input.
+
+Across the two-commit suffix, the same audit must prove that no installed PDF,
 publication TeX, shared render source, guidance, style, generator, dependency
-lock, workflow, or other rendering or artifact input except the six listed
-reader-site status files; that the twenty listed research changes are
-non-rendered status reconciliations only; that all 111 manifest PDF hashes
-remain unchanged; that the final 23 site-input bindings and rights-record
-binding are exact; and that every required focused release-policy,
-deterministic-inventory, preview, public-site, independent-verification, and
-named GitHub Pages deployment-target gate passes. If the target ref has moved
-or any ancestry, scope, hash, count, test, build, verification, or
-deployment-target condition fails, publication must stop.
+lock, workflow, or other rendering or reader-site input changes except the six
+reader-site status files listed for the initial commit; that the twenty listed
+research changes occur only in the initial commit and are non-rendered status
+reconciliations; that the final rights-record binding is exact; and that every
+required focused release-policy, deterministic-inventory, preview,
+public-site, independent-verification, and named GitHub Pages
+deployment-target gate passes. If the target ref has moved or any ancestry,
+scope, hash, count, test, build, verification, or deployment-target condition
+fails, publication must stop.
+
+A final audit of the complete base-exclusive outgoing range must prove exactly
+ten linear commits and no merges, the prescribed ancestry and path scopes,
+safe objects, unchanged corrective-suffix PDF and site-input hashes, exact
+final bindings, cleanliness, and every required gate.
 
 Only that one public `refs/heads/main` update and the independently verified
 GitHub Pages artifact built from its exact final tip are authorized. The
@@ -724,10 +775,9 @@ permission.
 
 No later commit, other branch or ref, tag, force update, history rewrite,
 public release attachment, other hosting artifact, announcement, promotion,
-advertising, or syndication is authorized. The instruction remains separate
-operational authority for the primary session; it does not authorize this
-worker to integrate, push, deploy, or broaden the substantive exact-snapshot
-clearance.
+advertising, or syndication is authorized. The combined operational authority
+remains confined to the primary session; it does not authorize this worker to
+integrate, push, deploy, or broaden the substantive exact-snapshot clearance.
 
 ## Exact approved snapshots
 
