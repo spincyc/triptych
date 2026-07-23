@@ -1,4 +1,4 @@
-schema = 1
+schema = 2
 record_type = "bindings"
 document = "theology/sacraments-at-a-glance"
 
@@ -48,3 +48,78 @@ context = "The companion directly imports the treatise-owned Penance summary con
 claim_keys = ["penance-absolution-formula"]
 verified_on = "2026-07-23"
 source_fingerprint = "sha256:1c86747958f4605500efcb17169331c6871f503a59612aac5c0d37fcea7521fa"
+
+[[bindings]]
+source_id = "segment.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.ia-djvu-ocr-12cdc519"
+role = "lead"
+states = ["cataloged", "acquired"]
+context = "The complete translated body of the First Apology in the exact retained Buffalo 1887 ANF volume 1 OCR is available for later work-wide examination. This companion did not thereby search or inspect the whole constituent, and the OCR remains subordinate to the separately registered facsimile."
+source_fingerprint = "sha256:d8cbdcf54647a2f4b1b641ed1fc2f5b3681cd7d04e94fd7a648bcd3fda9379fe"
+
+[[bindings]]
+source_id = "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.61.ocr"
+loci = ["61"]
+role = "lead"
+states = ["cataloged", "acquired", "inspected"]
+context = "The companion directly imports the treatise-owned Baptism summary. The exact OCR ranges were inspected as a reusable locator for its Justin witness to regeneration and Trinitarian washing; OCR wording does not control the shared summary."
+source_fingerprint = "sha256:1b4d415ba792523c2164481db4bef7cced35099515352edd6c3798a53d632b43"
+
+[[bindings]]
+source_id = "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.61.facsimile"
+loci = ["61"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete chapter was visually checked in the exact Buffalo 1887 ANF facsimile against the directly imported treatise-owned Baptism summary. Justin supports regeneration and Trinitarian washing in an adult catechumenal setting; he specifies neither pouring nor immersion, does not settle infant Baptism, and is not the source for the summary's principal-minister claim."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:fd2d39abf81b34b763c660a4e45092ce708c53ef92b72dfe17bf307db874d70d"
+
+[[bindings]]
+source_id = "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.65.ocr"
+loci = ["65"]
+role = "lead"
+states = ["cataloged", "acquired", "inspected"]
+context = "The companion directly imports the treatise-owned Eucharist summary. The exact OCR ranges were inspected as a reusable locator for prayer, mixed gifts, presidential thanksgiving, Amen, and diaconal distribution; OCR wording does not control the shared summary."
+source_fingerprint = "sha256:afbcf3ba5bce23f6038e3ab8f01d3859b5f49192a8aca7c8e4a428831959d669"
+
+[[bindings]]
+source_id = "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.65.facsimile"
+loci = ["65"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete chapter was visually checked in the exact Buffalo 1887 ANF facsimile against the directly imported treatise-owned Eucharist summary. It witnesses presidential thanksgiving and differentiated diaconal distribution without itself identifying the president's ordination status."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:33ef0205f7341f18e4740a62a28c5b1ad007d38b34055e7e38a23f588563bc60"
+
+[[bindings]]
+source_id = "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.66.ocr"
+loci = ["66"]
+role = "lead"
+states = ["cataloged", "acquired", "inspected"]
+context = "The companion directly imports the treatise-owned Eucharist summary. The exact OCR range was inspected as a reusable locator for non-common food, the flesh and blood of the incarnate Jesus, and institution tradition; OCR wording does not control the shared summary."
+source_fingerprint = "sha256:fbc65b4bb9084d9f31aba26b315280ad6bec2c71c3c4d26e6c19a9b6c070ab33"
+
+[[bindings]]
+source_id = "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.66.facsimile"
+loci = ["66"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete chapter was visually checked in the exact Buffalo 1887 ANF facsimile against the directly imported treatise-owned Eucharist summary. Coxe's bracketed intervention and other editorial annotation remain distinct from Justin and do not control the summary's Catholic doctrinal synthesis."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:d2b7ffc3be3f4bc46040257f0aa77cbb07b1d51358900efc9ae35225bfb4383f"
+
+[[bindings]]
+source_id = "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.67.ocr"
+loci = ["67"]
+role = "lead"
+states = ["cataloged", "acquired", "inspected"]
+context = "The companion directly imports the treatise-owned Eucharist summary. The exact OCR ranges were inspected as a reusable locator for Sunday gathering, Word, Eucharist, distribution, and charity; OCR wording does not control the shared summary."
+source_fingerprint = "sha256:ad2f064fd9563d157fb8c0473bb7c174dfd60652074539ba83026fcb52cb500c"
+
+[[bindings]]
+source_id = "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.67.facsimile"
+loci = ["67"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete chapter was visually checked in the exact Buffalo 1887 ANF facsimile against the directly imported treatise-owned Eucharist summary. It is a bounded structural witness, not a verbatim universal order or a later scholastic analysis."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:bac02d64cdb19410b0d954a444ad57942628b732fc5fbf6ff1b1b7331dd4c9d6"

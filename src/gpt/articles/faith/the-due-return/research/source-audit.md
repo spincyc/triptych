@@ -1,6 +1,6 @@
 # Source Audit — The Due Return
 
-The legal currentness audit was refreshed through 23 July 2026. The scriptural, sacramental, Christological, Thomistic, Teresian, Benedictine, Carmelite, and Alphonsian loci and the International OCD Foundation clinical-boundary resources added in the present revision were checked on 23 July 2026. The exact Buffalo 1887 ANF Irenaeus passages were checked against their facsimile and raw OCR on that date. Public-domain English translations are working witnesses unless otherwise stated. Consequential claims are governed by identified work and exact locus, not by a claim that an online edition is critical or that an English canonical rendering is the authoritative legislative text.
+The legal currentness audit was refreshed through 23 July 2026. The scriptural, sacramental, Christological, Thomistic, Teresian, Benedictine, Carmelite, and Alphonsian loci and the International OCD Foundation clinical-boundary resources added in the present revision were checked on 23 July 2026. The exact Buffalo 1887 ANF Irenaeus passages and Justin's *First Apology* 67 were checked against their facsimile and raw OCR on that date. Public-domain English translations are working witnesses unless otherwise stated. Consequential claims are governed by identified work and exact locus, not by a claim that an online edition is critical or that an English canonical rendering is the authoritative legislative text.
 
 ## Core claim-to-source matrix
 
@@ -77,7 +77,7 @@ The short phrases “Who has given him anything that he may be repaid?”, “Ho
 | St. Gregory Nazianzen | *Oration* 14.23–25; *Oration* 39.8–10 | Received goods issue in kindness and justice toward the poor; prior grace and determinate obedience dispose toward illumination and desire. Neither locus is made a theory of earned vision or emotional regulation. |
 | St. John Chrysostom | *Homilies on Matthew* 50.3–4 | Eucharistic reverence and care for the poor must not be severed; almsgiving does not replace worship. |
 
-The Roberts–Rambaut English as printed in ANF volume 1 (Buffalo, 1887) was checked at printed pp. 478–486 / artifact PDF pp. 496–504, with the complete translated work body centrally bounded in the retained raw OCR and remote facsimile. New Advent's linked pages are a later Kevin Knight revision and remain locating links rather than artifact-equivalent witnesses. Public-domain ANF and NPNF working translations are not quoted at length.
+The Roberts–Rambaut Irenaeus as printed in ANF volume 1 (Buffalo, 1887) was checked at printed pp. 478–486 / artifact PDF pp. 496–504. Justin's Dods–Reith *First Apology* 67 was checked in the same exact edition at printed pp. 185–186 / artifact PDF pp. 203–204. Each complete translated constituent is centrally bounded in the retained raw OCR and remote facsimile, but this article did not thereby inspect either whole work. Coxe's bracketed notes and other editorial matter remain distinct from the Fathers' text. New Advent's linked pages are later Kevin Knight revisions and remain locating links rather than artifact-equivalent witnesses. Public-domain ANF and NPNF working translations are not quoted at length.
 
 ## Thomistic source corpus
 
@@ -186,7 +186,8 @@ Quotations are short and claim-driven. Scripture, official texts, patristic tran
 Completed for the current source tree: exact-locus source audit;
 natural/divine/ecclesiastical-law boundary audit; jurisdiction and currentness
 check through 23 July 2026; exact Buffalo 1887 ANF facsimile and OCR checks for
-Irenaeus IV.14.1--3, IV.17.1, and IV.18.1--6, including correction of the
+Irenaeus IV.14.1--3, IV.17.1, and IV.18.1--6 and Justin's *First Apology* 67,
+including correction of the
 former “turn from idols” citation mismatch; objective-act/virtue/merit, satisfaction, suffering,
 and obligation/culpability audits; sacramental, ascetical, mystical-witness,
 Christological, Alphonsian, and IOCDF clinical-boundary review; negative-claim

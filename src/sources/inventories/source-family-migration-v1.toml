@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-07-23"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:ad94e19b1ceedab832821100294895ba5720dd06d2b6f819fa083ad9fbfdce6e"
+inventory_snapshot = "sha256:40eb859a5e3aaf133413549b7a49ee87842f41d653f0592b6732af2590837da3"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:dafeabb5de4701ba2d641eaed5f3c550cb19836e6140a6cb39f44a74cc4e1c92"
-canonical_catalog_snapshot = "sha256:9b5094815f2e6d706bc362ad6104fdee5d8bd1b0ea1348ce8c2da989a8fe8d44"
+canonical_catalog_snapshot = "sha256:88b641d2f2df538055455496ca572cd5395a2d355abcf8de45283ede41e1b936"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:9783563f17a08dffe45f1d8c7a14b82cea80bb093861c9b0f0e5956ea0d7940a"
+snapshot = "sha256:b1c8605c24ab99523d42d60962bafaaa8b266da9bf03fad7a692a4ddf7f4ad7d"
 
 [[families]]
 id = "family.acta.aas-ass"
@@ -29,6 +29,26 @@ canonical_ids = []
 trace_patterns = ["Acta Apostolicae Sedis", "Acta Sanctae Sedis"]
 reviewed_on = "2026-07-22"
 notes = "Canonicalize cited volumes as exact artifacts while keeping each promulgated act a distinct work. OCR remains a finding aid until checked against the official pages."
+
+[[families]]
+id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
+label = "Ante-Nicene Fathers, volume 1 (Buffalo 1887)"
+kind = "edition"
+source_categories = ["patristic"]
+identity_confidence = "confirmed"
+identity_gaps = []
+artifact_availability = "canonicalized"
+storage_plan = ["remote", "tracked"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "artifact-pin"
+disposition = "bind-existing"
+priority = "p0"
+canonical_ids = ["artifact.ante-nicene-fathers.volume-1.buffalo-1887.ia-djvu-ocr-12cdc519", "artifact.ante-nicene-fathers.volume-1.buffalo-1887.ia-facsimile-pdf-b50e358e", "artifact.ante-nicene-fathers.volume-1.buffalo-1887.ia-page-number-map-8ab2289d", "edition.ante-nicene-fathers.volume-1.buffalo-1887", "work.ante-nicene-fathers.volume-1"]
+trace_patterns = ["(?:Ante-Nicene Fathers|\\bANF\\b).{0,24}vol(?:ume)?\\.?\\s*1(?!\\d)(?:.{0,24}(?:Buffalo|1887))?", "ante-nicene-fathers\\.volume-1\\.buffalo-1887"]
+reviewed_on = "2026-07-23"
+notes = "This exact anthology-volume family owns the shared Buffalo 1887 container and its three digitized artifacts. Constituent works and translated editions remain separate canonical families, so one retained OCR, page map, and remote facsimile can support bounded reuse without collapsing Justin, Irenaeus, or later constituents into the container."
 
 [[families]]
 id = "family.augustine.de-civitate-dei"
@@ -133,7 +153,7 @@ notes = "Canonicalize dated official states and keep the 1917 code and CCEO in s
 [[families]]
 id = "family.irenaeus.adversus-haereses-anf1-1887"
 label = "Irenaeus, Against Heresies, Roberts-Rambaut ANF 1 (Buffalo 1887)"
-kind = "mixed-cluster"
+kind = "edition"
 source_categories = ["patristic"]
 identity_confidence = "confirmed"
 identity_gaps = []
@@ -145,10 +165,30 @@ freshness_rule = "not-applicable"
 evidence_ceiling = "passage-pin"
 disposition = "bind-existing"
 priority = "p0"
-canonical_ids = ["artifact.ante-nicene-fathers.volume-1.buffalo-1887.ia-djvu-ocr-12cdc519", "artifact.ante-nicene-fathers.volume-1.buffalo-1887.ia-facsimile-pdf-b50e358e", "artifact.ante-nicene-fathers.volume-1.buffalo-1887.ia-page-number-map-8ab2289d", "edition.ante-nicene-fathers.volume-1.buffalo-1887", "edition.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.13.1-4.facsimile", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.13.1-4.ocr", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.14.1.facsimile", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.14.1.ocr", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.14.2.facsimile", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.14.2.ocr", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.14.3.facsimile", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.14.3.ocr", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.17.1.facsimile", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.17.1.ocr", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.18.1-6.facsimile", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.18.1-6.ocr", "segment.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.ia-djvu-ocr-12cdc519", "segment.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.ia-facsimile-pdf-b50e358e", "work.ante-nicene-fathers.volume-1", "work.irenaeus.adversus-haereses"]
+canonical_ids = ["edition.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.13.1-4.facsimile", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.13.1-4.ocr", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.14.1.facsimile", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.14.1.ocr", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.14.2.facsimile", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.14.2.ocr", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.14.3.facsimile", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.14.3.ocr", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.17.1.facsimile", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.17.1.ocr", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.18.1-6.facsimile", "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.4.18.1-6.ocr", "segment.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.ia-djvu-ocr-12cdc519", "segment.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.ia-facsimile-pdf-b50e358e", "work.irenaeus.adversus-haereses"]
 trace_patterns = ["Roberts.{0,20}Rambaut.{0,80}(?:ANF|Ante-Nicene Fathers|Buffalo)", "irenaeus\\.adversus-haereses\\.roberts-rambaut-coxe-anf1-1887"]
 reviewed_on = "2026-07-23"
-notes = "This bounded family keeps ANF volume 1 as the artifact container and Against Heresies as its constituent work and translated edition. The complete constituent is bounded in retained OCR and a remote facsimile, while paired OCR and facsimile passages govern two reviewed consumers. New Advent is a distinct later revised presentation. The broader ANF/NPNF series remains unresolved."
+notes = "This bounded family owns Against Heresies as a constituent work and translated edition of the separately canonicalized ANF volume 1 container. The complete constituent is bounded in retained OCR and a remote facsimile, while paired OCR and facsimile passages govern two reviewed consumers. New Advent is a distinct later revised presentation. The broader ANF/NPNF series remains unresolved."
+
+[[families]]
+id = "family.justin-martyr.first-apology-anf1-1887"
+label = "Justin Martyr, First Apology, Dods-Reith ANF 1 (Buffalo 1887)"
+kind = "edition"
+source_categories = ["patristic"]
+identity_confidence = "confirmed"
+identity_gaps = []
+artifact_availability = "canonicalized"
+storage_plan = ["remote", "tracked"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "passage-pin"
+disposition = "bind-existing"
+priority = "p0"
+canonical_ids = ["edition.justin-martyr.first-apology.dods-reith-coxe-anf1-1887", "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.61.facsimile", "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.61.ocr", "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.65.facsimile", "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.65.ocr", "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.66.facsimile", "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.66.ocr", "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.67.facsimile", "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.67.ocr", "segment.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.ia-djvu-ocr-12cdc519", "segment.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.ia-facsimile-pdf-b50e358e", "work.justin-martyr.first-apology"]
+trace_patterns = ["Justin.{0,30}First Apology.{0,60}(?:Dods|Reith|Buffalo|1887|ANF)", "justin-martyr\\.first-apology\\.dods-reith-coxe-anf1-1887"]
+reviewed_on = "2026-07-23"
+notes = "This bounded family owns Justin's conventionally named First Apology and the Dods-Reith translation as a constituent of the separately canonicalized ANF volume 1 container. Complete OCR and facsimile segments make later whole-work examination possible without asserting it occurred; paired chapter 61 and 65-67 records control the present consumer claims. Coxe's apparatus remains distinct, and New Advent's later presentation is not assumed textually identical without collation."
 
 [[families]]
 id = "family.patristics.anf-npnf-schaff"
@@ -409,6 +449,10 @@ owner_id = "articles/faith/at-the-end-of-every-why"
 surface_snapshot = "sha256:f4255be1bf72d15e333cf6dc1ee1c07910bfdc36f70efb99eb23cfbea915cea8"
 review_state = "pending"
 [[review_units.family_presence]]
+family_id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/at-the-end-of-every-why/research/source-audit.md", "src/gpt/articles/faith/at-the-end-of-every-why/research/source-bindings.toml"]
+[[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
 basis = "trace-scan"
 record_paths = ["src/gpt/articles/faith/at-the-end-of-every-why/research/source-audit.md"]
@@ -522,8 +566,12 @@ record_paths = ["src/gpt/articles/faith/ontological-vertigo/sections/99-referenc
 
 [[review_units]]
 owner_id = "articles/faith/the-due-return"
-surface_snapshot = "sha256:88dedc92185ee23bdb4a4bc28ba69fad3b3516d3461d620fe8455d28db38d852"
+surface_snapshot = "sha256:d90a4ff6a14f628c0a4e5c332e62277169ae7e09ebc465915da33698aec5e235"
 review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/the-due-return/research/source-audit.md", "src/gpt/articles/faith/the-due-return/research/source-bindings.toml"]
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
 basis = "trace-scan"
@@ -542,6 +590,10 @@ basis = "trace-scan"
 record_paths = ["src/gpt/articles/faith/the-due-return/research/scope.md"]
 [[review_units.family_presence]]
 family_id = "family.irenaeus.adversus-haereses-anf1-1887"
+basis = "trace-scan"
+record_paths = ["src/gpt/articles/faith/the-due-return/research/source-bindings.toml"]
+[[review_units.family_presence]]
+family_id = "family.justin-martyr.first-apology-anf1-1887"
 basis = "trace-scan"
 record_paths = ["src/gpt/articles/faith/the-due-return/research/source-bindings.toml"]
 [[review_units.family_presence]]
@@ -1124,12 +1176,16 @@ record_paths = ["src/gpt/history/traditional-priestly-institutes/03-icksp/sectio
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"
-surface_snapshot = "sha256:f055b18dcc82f6ff5b0503f96ecaa774d794c5d9a5c0c0948c7a0aa5fef0bcf8"
+surface_snapshot = "sha256:c71bcc49c1f1ef3478b7893da3a6ddcf7238261e29e74ee3b9aee72279314e73"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
 basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/scope.md", "src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/source-audit.md", "src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/source-bindings.toml"]
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
 basis = "trace-scan"
@@ -1138,6 +1194,10 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mas
 family_id = "family.catholic-church.catechism"
 basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/source-audit.md"]
+[[review_units.family_presence]]
+family_id = "family.justin-martyr.first-apology-anf1-1887"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/source-bindings.toml", "src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/90-references.tex"]
 [[review_units.family_presence]]
 family_id = "family.patristics.anf-npnf-schaff"
 basis = "trace-scan"
@@ -1458,8 +1518,12 @@ record_paths = ["src/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrific
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"
-surface_snapshot = "sha256:b907a67634aa25a5354fc430b5b2f69342d914d7b2eff65d7fd0fdfe999e3df5"
+surface_snapshot = "sha256:2b560418414f2d47456bdefe89ab755726c70ba34ddddfaf37408a8deeb2efee"
 review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/research/scope.md", "src/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/research/source-bindings.toml"]
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
 basis = "trace-scan"
@@ -1472,6 +1536,10 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-eng
 family_id = "family.holy-see.cic-1983"
 basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/90-sources.tex"]
+[[review_units.family_presence]]
+family_id = "family.justin-martyr.first-apology-anf1-1887"
+basis = "trace-scan"
+record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/research/source-bindings.toml"]
 [[review_units.family_presence]]
 family_id = "family.roman-lectionary.olm-us-lectionary"
 basis = "trace-scan"
@@ -2043,12 +2111,20 @@ record_paths = ["src/gpt/theology/mariology/regina-coeli/research/source-audit.m
 
 [[review_units]]
 owner_id = "theology/mariology/rosary"
-surface_snapshot = "sha256:b5d50357c9bf5284c1efaa3e1c730fa0bd4f706937a3b1b72dc27513f7ca9e07"
+surface_snapshot = "sha256:15d224b2d145fea0e5815ca60fd8427504f27a3f070c372f614c7664063f8d97"
 review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/rosary/research/scope.md", "src/gpt/theology/mariology/rosary/research/source-audit.md", "src/gpt/theology/mariology/rosary/research/source-bindings.toml"]
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
 basis = "trace-scan"
 record_paths = ["src/gpt/theology/mariology/rosary/sections/99-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.justin-martyr.first-apology-anf1-1887"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/rosary/research/scope.md", "src/gpt/theology/mariology/rosary/research/source-bindings.toml", "src/gpt/theology/mariology/rosary/sections/99-references.tex"]
 [[review_units.family_presence]]
 family_id = "family.trent.acts"
 basis = "trace-scan"
@@ -2060,8 +2136,12 @@ record_paths = ["src/gpt/theology/mariology/rosary/research/source-audit.md"]
 
 [[review_units]]
 owner_id = "theology/sacraments"
-surface_snapshot = "sha256:fced1f4479b8dda4331118f62ca121ee5f224333692af6d5131ab318e015cb68"
+surface_snapshot = "sha256:6316ae06db9d726578e581170ca1f4dbcd9ede233eaf2c60e4067dce7eed28a8"
 review_state = "pending"
+[[review_units.family_presence]]
+family_id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/sacraments/research/scope.md", "src/gpt/theology/sacraments/research/source-bindings.toml"]
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
 basis = "trace-scan"
@@ -2078,6 +2158,10 @@ record_paths = ["src/gpt/theology/sacraments/research/scope.md"]
 family_id = "family.holy-see.cic-1983"
 basis = "trace-scan"
 record_paths = ["src/gpt/theology/sacraments/sections/90-references.tex"]
+[[review_units.family_presence]]
+family_id = "family.justin-martyr.first-apology-anf1-1887"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/sacraments/research/scope.md", "src/gpt/theology/sacraments/research/source-bindings.toml"]
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
 basis = "trace-scan"
@@ -2101,10 +2185,18 @@ record_paths = ["src/gpt/theology/sacraments/sections/30-communion-introduction.
 
 [[review_units]]
 owner_id = "theology/sacraments-at-a-glance"
-surface_snapshot = "sha256:b8b6b3ef159324e12615e9de253b53836c2e30e6042f3383f2b1e49a2f41ca22"
+surface_snapshot = "sha256:499959cb0cb1abf4c44852c61394b2b34fb4c8a9d89c65f2e630ec6737481da6"
 review_state = "pending"
 [[review_units.family_presence]]
+family_id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/sacraments-at-a-glance/research/source-bindings.toml"]
+[[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/sacraments-at-a-glance/research/source-bindings.toml"]
+[[review_units.family_presence]]
+family_id = "family.justin-martyr.first-apology-anf1-1887"
 basis = "trace-scan"
 record_paths = ["src/gpt/theology/sacraments-at-a-glance/research/source-bindings.toml"]
 

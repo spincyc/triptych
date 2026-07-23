@@ -107,7 +107,7 @@ The phrases below identify received Latin boundaries without pretending that a v
 | 9 | Appointed lesson; *Deo gratias* | Proper slot | Justin; Würzburg Comes; one pre-Gospel lesson plus Gospel becomes usual Roman arrangement |
 | 10 | Gradual; Alleluia or Tract; occasional Sequence | Proper/conditional | Early Roman chant; textual Sequences from the mid-ninth century; later Sequence histories separately dated |
 | 11 | *Munda cor* and deacon's blessing | Fixed with variants | *Ordo Romanus I* long-recension blessing about 750; *Iube* and *Munda* from eleventh-century books; full triad in 1474 |
-| 12 | Gospel greeting, title, pericope, praise, kiss | Proper in fixed frame | Justin and *Ordo Romanus I*; exact *Per evangelica dicta* in late-fifteenth-century Noyon, not after the principal Gospel in 1474 |
+| 12 | Gospel greeting, title, pericope, praise, kiss | Proper in fixed frame | Justin for apostolic memoirs read on Sunday, not developed Gospel ceremony; *Ordo Romanus I* for that ceremony; exact *Per evangelica dicta* in late-fifteenth-century Noyon, not after the principal Gospel in 1474 |
 | 13 | *Credo in unum Deum* through Amen | Conditional fixed profession | Nicaea 325; received expanded text witnessed at Chalcedon 451; Toledo 589; Rome 1014 |
 | 14 | Offertory; *Suscipe, sancte Pater* | Proper plus fixed prayer | Early gifts; *Suscipe* family about 1030/eleventh century; exact prayer in 1474 |
 | 15 | *Deus, qui humanae substantiae*; *Offerimus* | Fixed | Early mixed cup; ancient Christmas oration repurposed about 1030; partial chalice formula before exact 1474 form |

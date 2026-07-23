@@ -1,0 +1,18 @@
+schema = 2
+record_type = "passage"
+id = "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.65.ocr"
+edition_id = "edition.justin-martyr.first-apology.dods-reith-coxe-anf1-1887"
+segment_id = "segment.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.ia-djvu-ocr-12cdc519"
+artifact_sha256 = "12cdc519c642b446cb4c6c3ba0bad9a2288687937975df6ca4c8b42aa6d92d84"
+locus = "65"
+states = ["cataloged", "acquired", "inspected"]
+context = "The complete numbered chapter was inspected in the exact raw OCR. It describes common prayer, the kiss, bread and a mixed cup, presidential thanksgiving, the people's Amen, and diaconal distribution; the paired facsimile controls wording, page identity, and attribution."
+physical_line_ranges = [[20082, 20110], [20129, 20133]]
+text = "And when he has concluded the prayers and thanksgivings, all the people present express their assent by saying Amen."
+transcription_segments = [
+  { line = 20103, text = "And  when  he  has" },
+  { line = 20104, text = "concluded  the  prayers  and  thanksgivings,  all  the" },
+  { line = 20105, text = "people  present  express  their  assent  by  saying" },
+  { line = 20106, text = "Amen." },
+]
+notes = "The checked excerpt preserves OCR wording while normalizing whitespace through the schema's transcription-segment rule. It is a locator aid, not a corrected quotation or independent witness."

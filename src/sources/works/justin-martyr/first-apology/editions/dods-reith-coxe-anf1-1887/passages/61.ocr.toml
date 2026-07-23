@@ -1,0 +1,18 @@
+schema = 2
+record_type = "passage"
+id = "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.61.ocr"
+edition_id = "edition.justin-martyr.first-apology.dods-reith-coxe-anf1-1887"
+segment_id = "segment.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.ia-djvu-ocr-12cdc519"
+artifact_sha256 = "12cdc519c642b446cb4c6c3ba0bad9a2288687937975df6ca4c8b42aa6d92d84"
+locus = "61"
+states = ["cataloged", "acquired", "inspected"]
+context = "The complete numbered chapter was inspected in the exact raw OCR. It describes catechumens' faith and fasting, washing in water, regeneration, the triune name, remission, and illumination; the paired facsimile controls wording, page identity, and attribution."
+physical_line_ranges = [[19820, 19826], [19844, 19897]]
+text = "Then they are brought by us where there is water, and are regenerated in the same manner in which we were ourselves regenerated."
+transcription_segments = [
+  { line = 19849, text = "Then  they  are  brought" },
+  { line = 19850, text = "by  us  where  there  is  water,  and  are  regenerated" },
+  { line = 19851, text = "in  the  same  manner  in  which  we  were  ourselves" },
+  { line = 19852, text = "regenerated." },
+]
+notes = "The checked excerpt preserves OCR wording while normalizing whitespace through the schema's transcription-segment rule. It is a locator aid, not a corrected quotation or independent witness."
