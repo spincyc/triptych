@@ -70,6 +70,7 @@ for identity and rights review. Their bytes are not repository content.
 | Holy See Latin index | `fb4587784aefc57043cf32cb7e9647f3307a83a51ae1339c40890392eea04b67` | 71,014 | Official Latin navigation artifact in a dated web state |
 | Holy See Latin Fifth Commandment page | `8d5f9d14cae3c414cf7584680e8dabb088fce408f250da45f274cb13698b1c80` | 49,562 | Contains revised Latin paragraph 2267 and a separately labelled preservation of the preceding wording |
 | Holy See archived English index | `92199edc96afdb8d76df6682fced3a2e631f786c2d171abfed49a3dc64e3e05d` | 38,941 | IntraText delivery dated 2003-11-04; not silently current |
+| Holy See archived English “Mary—Mother of Christ, Mother of the Church” page | `779e21c8cef55b17d8dca479303e63d7d10acfd17aa39712c94590413e6aa0a6` | 14,855 | Dated IntraText page containing paragraphs 963–975, including complete paragraph 970 |
 | Holy See current English index | `9d6cfe2fc10b3479cc129fdfddf16b0cc924ab1a61f2ec37ac6a6604af9a7ca3` | 106,296 | Mutable current navigation artifact |
 | Holy See current English “Respect for Human Life” page | `9e71e262a054b2c617c4a0b29bf2c68937c96b986bf3613ddd7b729e1309fe16` | 123,465 | Contains the 2018 wording of paragraph 2267 |
 | Holy See current English sacramental “In Brief” page | `7004d8d92534eecebd07fc9c40ffe57f13b0b38b2d7a6a4564220df872e2787a` | 108,876 | Contains paragraphs 1131–1134 |
@@ -115,7 +116,8 @@ The first canonical slice uses these stable identities:
 - exact restricted artifacts beneath those editions;
 - a bounded corpus over the exact USCCB 924-page search representation;
 - reusable inspected or verified passages for 65–67, 499, 970, 1131, 1240,
-  1300, 1449, and 2267;
+  1300, 1449, and 2267, including distinct USCCB 2019 and archived Vatican
+  2003 records for paragraph 970;
 - `work.holy-see.catechism-2267-rescript-2018`; and
 - distinct Latin and English delivery editions and artifacts for that act.
 
@@ -219,7 +221,9 @@ The 1962 Nuptial Mass separately imports the Matrimony summary and therefore
 needs its own inherited binding for 1618–1666, especially 1623. Mariology’s
 shared formatting files contain no Catechism source material.
 
-## End-to-end reuse proof
+## End-to-end reuse proofs
+
+### Current Vatican sacramental passages
 
 The sacramental pair now proves the source model with a complete, deliberately
 narrow replay. Four exact current Holy See English HTML responses were acquired
@@ -266,23 +270,62 @@ where wording or punctuation differs. Nor do four verified passages promote
 the broad 1076–1209 and 1210–1666 ranges: both consumers retain those range
 bindings as `cataloged` until a bounded range-level review is performed.
 
+### Archived Vatican paragraph 970
+
+A second vertical slice acquired and checked the exact archived Vatican
+English page containing paragraphs 963–975. The page is a dated 2003 IntraText
+expression, not the current Vatican web state and not the USCCB 2019 edition.
+Its exact restricted artifact and paragraph 970 now have a shared canonical
+identity without distributing the response or a source-text payload.
+
+Seven publications bind the same archived paragraph record and fingerprint,
+`sha256:979d13d27cd9ad7570cf774a31d80a1b260ac4156d9d5532864b290c49342364`:
+
+- `theology/mariology/angelus`;
+- `theology/mariology/champion`;
+- `theology/mariology/fatima`;
+- `theology/mariology/lourdes`;
+- `theology/mariology/marian-dogmas`;
+- `theology/mariology/regina-coeli`; and
+- `theology/mariology/rosary`.
+
+Their local contexts distinguish prayer, apparition discernment, dogmatic
+synthesis, and Rosary exposition while sharing the same checked control:
+Mary's cooperation and influence depend wholly on Christ's unique mediation.
+Each broader archived-edition row remains `cataloged`; inspection of paragraph
+970 does not promote the surrounding ranges.
+
+Reverse-use lookup returns exactly those seven consumers, and impact lookup
+from the controlling artifact reaches paragraph 970 and all seven. A run-local
+mirror of the actual graph validated before mutation; changing valid shared
+passage metadata then produced exactly seven stale-fingerprint diagnostics
+with one common replacement value.
+
+The existing USCCB 2019 paragraph-970 record remains a separate expression.
+The Guadalupe and La Salette publications point to modern Vatican web
+material, so they do not inherit this archived passage merely because their
+legacy loci also include paragraph 970.
+
 ## Implemented result
 
-The implemented graph contains 70 Catechism binding rows across 43
+The implemented graph contains 77 Catechism binding rows across 43
 publications: the 42 positive trace owners plus the inherited
 `theology/sacraments-at-a-glance` consumer. Thirteen rows target the work,
-twelve the archived Vatican English state, and forty-five the current Vatican
-English web state. Eight current-web passage rows are verified reuse bindings;
-the other 62 Catechism rows remain catalog-only. One additional catalog-only
-binding connects the Saint Thomas Aquinas biography to the 2018
-paragraph-2267 rescript, yielding 71 Catechism-family and amendment-act
+twelve broad rows and seven passage rows target the archived Vatican English
+state, and forty-five rows target the current Vatican English web state. Eight
+current-web and seven archived-English passage rows are verified reuse
+bindings; the other 62 Catechism rows remain catalog-only. One additional
+catalog-only binding connects the Saint Thomas Aquinas biography to the 2018
+paragraph-2267 rescript, yielding 78 Catechism-family and amendment-act
 bindings in total.
 
 No publication binding substitutes the acquired USCCB edition, and neither
 novena daily-prayer companion carries a Catechism binding. All 65 rows in the
-original migration checkpoint began `cataloged`; the proof replaces two of
-those rows with the eight verified passage bindings described above. The 15
-acquired artifacts remain restricted provenance records without repository
+original migration checkpoint began `cataloged`; the sacramental proof
+replaced two of those rows with eight verified passage bindings, while the
+archived paragraph-970 proof added seven exact bindings without promoting or
+removing the broad legacy rows. The 16 acquired artifacts remain restricted
+provenance records without repository
 payloads, and the bounded USCCB corpus remains a reacquisition aid rather than
 ordinary-clone searchable text.
 
