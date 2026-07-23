@@ -1,0 +1,77 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+\usepackage{endnotes}
+
+\hypersetup{
+  pdftitle={In Support of the Particular},
+  pdfsubject={A companion essay in The Creature Before God}
+}
+
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\makeatletter
+\renewcommand{\enoteheading}{%
+  \section*{\notesname}%
+  \addcontentsline{toc}{section}{\notesname}%
+  \@mkboth{\MakeUppercase{\notesname}}{\MakeUppercase{\notesname}}}
+\makeatother
+\renewcommand{\makeenmark}{\hbox{\textsuperscript{\normalfont\theenmark}}}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.14\textheight}
+{\large\scshape The Creature Before God\par}
+\vspace{0.35em}
+{\small Companion Essay\par}
+\vspace{1.5em}
+{\Huge\bfseries In Support of the Particular\par}
+\vfill
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{articles/faith/in-support-of-the-particular/sections/00-under-pontius-pilate}
+\input{articles/faith/in-support-of-the-particular/sections/10-universal-cause}
+\input{articles/faith/in-support-of-the-particular/sections/20-chosen-for-all}
+\input{articles/faith/in-support-of-the-particular/sections/30-whole-in-the-part}
+\input{articles/faith/in-support-of-the-particular/sections/40-water-bread-person}
+\input{articles/faith/in-support-of-the-particular/sections/50-who-do-you-say}
+\clearpage
+\input{articles/faith/in-support-of-the-particular/sections/80-notes}
+\clearpage
+\appendix
+\input{articles/faith/in-support-of-the-particular/sections/90-scope-method-qualifications}
+\input{articles/faith/in-support-of-the-particular/sections/99-references}
+\begingroup
+\setlength{\parskip}{0pt}
+\vspace{-0.6\baselineskip}
+\section{Generation Metadata}
+\vspace{-0.35\baselineskip}
+{\scriptsize\input{articles/faith/in-support-of-the-particular/generation-metadata}}
+\endgroup
+\end{deepstudy}
+
+\end{document}

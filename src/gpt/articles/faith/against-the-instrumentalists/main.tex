@@ -1,0 +1,74 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+\usepackage{endnotes}
+
+\hypersetup{
+  pdftitle={Against the Instrumentalists},
+  pdfsubject={A companion essay to The Creature Before God on measurement, reason, and metaphysical inquiry}
+}
+
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\renewcommand{\notesname}{Notes}
+\renewcommand{\enoteheading}{%
+  \section*{\notesname}%
+  \addcontentsline{toc}{section}{\notesname}%
+  \mbox{}\par\vskip-\baselineskip}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.14\textheight}
+{\large\scshape The Creature Before God\par}
+\vspace{0.35em}
+{\small Companion Essay\par}
+\vspace{1.5em}
+{\Huge\bfseries Against the Instrumentalists\par}
+\vfill
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{articles/faith/against-the-instrumentalists/sections/00-a-superb-servant}
+\input{articles/faith/against-the-instrumentalists/sections/10-no-reading-reads-itself}
+\input{articles/faith/against-the-instrumentalists/sections/20-the-rule-no-instrument-reports}
+\input{articles/faith/against-the-instrumentalists/sections/30-from-phenomenon-to-foundation}
+\input{articles/faith/against-the-instrumentalists/sections/40-the-instrument-restored}
+\clearpage
+\input{articles/faith/against-the-instrumentalists/sections/80-notes}
+\clearpage
+\appendix
+\input{articles/faith/against-the-instrumentalists/sections/90-scope-method-qualifications}
+\input{articles/faith/against-the-instrumentalists/sections/99-references}
+\begingroup
+\setlength{\parskip}{0pt}
+\vspace{-0.6\baselineskip}
+\section{Generation Metadata}
+\vspace{-0.35\baselineskip}
+{\scriptsize\input{articles/faith/against-the-instrumentalists/generation-metadata}}
+\endgroup
+\end{deepstudy}
+
+\end{document}

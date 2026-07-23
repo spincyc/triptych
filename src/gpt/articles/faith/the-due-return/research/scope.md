@@ -6,31 +6,30 @@
 - Collection: discursive articles on faith.
 - Series: *The Creature Before God*, Part II.
 - Title: *The Due Return*.
-- Subtitle: *Religion and the Justice of Creaturehood*.
 - Primary profile: `guidance/articles.md`.
 - Genre: deliberately mixed theological and canon-law article. Theology governs the argument; canon law governs only identified current juridical claims.
 - Intended reader: serious general Catholic reader; no prior training in scholastic philosophy or canon law assumed.
-- Juridical as-of date: 20 July 2026.
+- Juridical as-of date: 23 July 2026.
 
 ## Series function
 
-Part I, *Ontological Vertigo*, argues that a creature is genuinely real and active yet receives being and is conserved in it while the uncreated source depends upon it in no corresponding ontological way. Part II asks how the response to the fork of recoil or adoration takes embodied form in living sacrifice, common worship, mercy, and hope. Part III asks how grace brings the will from a just response into charity and filial freedom. Proper response deepens awareness of dependence while progressively removing the demand to stand outside it.
+Part I, *Ontological Vertigo*, argues that a creature is genuinely real and active yet receives being and is conserved in it while the uncreated source depends upon it in no corresponding ontological way. Part II asks what is due before affection matures and how that answer takes embodied form in living sacrifice, sacramental and common worship, mercy, penance, and hope. It then shows why no fulfilled act can close the relation and culminates in Christ's free human consent at Gethsemane. Part III asks how grace brings the will from just response into charity, prayer, Eucharistic desire, and union with God.
 
 The sequence is not three sealed virtue compartments. Faith, hope, charity, justice, and religion can be simultaneously active. The series movement is conceptual:
 
 1. **Being received** — dependence apprehended.
-2. **Justice rendered** — the due recognized and voluntarily answered in oblation, common worship, and mercy.
+2. **Justice rendered** — the due recognized and voluntarily answered in oblation, sacramental and common worship, mercy, and state-of-life fidelity.
 3. **Love returned** — charity perfecting, not canceling, the due and transforming fear into filial awe.
 
 ## Reader-facing literary design
 
-The published argument first orients the reader from Part I's earned judgment that God loves and states the unequal conditions under which any return must be made. Only then does Psalm 116 give the problem liturgical form through reception, invocation, vows, thanksgiving, and public worship; its pattern returns after the discussion of grace and creaturely agency. The article does not display the formal governing thesis as reader-facing front matter. That thesis remains below as a research and audit control.
+The published argument opens from Part I's present-tense conclusion and uses the parable of the two sons to establish that action need not await mature affection. Psalm 116 then gives the unequal return liturgical form through reception, invocation, vows, thanksgiving, and public worship. The argument distinguishes objective conformity, virtue, and supernatural merit; moves through sacramental and common form, neighbor, and penance; exposes completed action used as “spiritual laundering”; and culminates at Gethsemane. The article does not display the formal governing thesis as reader-facing front matter. That thesis remains below as a research and audit control.
 
-Each substantive section begins from a real argumentative, scriptural, liturgical, moral, or legal pressure rather than a doctrinally foreclosed question or a simplified reader objection. Authorial transitions are declarative; the only questions retained in the body are the questions quoted from Psalm 116 and Romans 11. This equal-altitude design changes neither authority levels nor claim boundaries. Exact sources, claim-local qualifications, the current-law example, and the formal terminal apparatus remain controlling.
+Each substantive section begins from a real argumentative, scriptural, liturgical, moral, or legal pressure rather than a doctrinally foreclosed question or a simplified reader objection. Questions occur where Scripture or the argument itself makes them necessary. Endnotes receive branch objections, legal detail, and source qualifications without removing a premise needed by the main chain. This equal-altitude design changes neither authority levels nor claim boundaries.
 
 ## Governing thesis
 
-The unowed gift of creaturehood establishes a real but unequal due. The rational creature ought freely to acknowledge God as first principle and last end through worship and through justice toward the neighbor. In Christian life this return takes the form of a living sacrifice incorporated into Christ's prior oblation. Natural and revealed law articulate this order; ecclesiastical law gives determinate common form to some practices by which it is lived; grace gives the power to answer, and hope relies upon that help. The asymmetry remains while action begins to agree with it.
+The unowed gift of creaturehood establishes a real but unequal due. The rational creature ought freely to acknowledge God as first principle and last end through worship and through justice toward the neighbor. A due act remains a real good before affection matures, although full virtue and supernatural merit require further distinctions. In Christian life the return takes sacramental and moral form within Christ's prior oblation. Natural and revealed law articulate this order; ecclesiastical law gives determinate common form to some practices; grace gives the power to answer, and hope relies upon that help. No aggregate of fulfilled acts can make the creature independent of the giver. Gethsemane reveals the answer's summit as Christ's complete created human will freely adhering to the Father's saving will.
 
 The argument turns on two compatible propositions:
 
@@ -47,10 +46,10 @@ Neither proposition makes creation a contract. The due is not equivalent repayme
 4. What distinct realities are hidden by the phrase “I have to,” and what is gained by a four-term grammar of dependence, duty, precept, and culpability?
 5. How do natural moral law, revealed divine law, and human ecclesiastical law relate without becoming one flat inventory?
 6. How does the Decalogue join gift, worship, and justice toward the neighbor?
-7. Why does common Eucharistic worship require received temporal and juridical form, and what does current universal Latin law actually require on Sunday?
+7. Why does common Eucharistic worship require received sacramental, temporal, and juridical form, and what does current universal Latin law actually require on Sunday?
 8. Why must the Godward return pass through justice and mercy toward the neighbor?
 9. How do grace and hope enable the answer while preserving its status as a free human act?
-10. How can the response begin to resolve the arrest without reducing dependence, promising calm, or trespassing upon charity's work in Part III?
+10. Why can no completed action close the creature's relation to God, and how does Gethsemane reveal freedom without making physical abnegation its universal form?
 
 ## Terse taxonomy
 
@@ -82,7 +81,7 @@ The article's three summary formulas are:
 - Particular-law boundary: c. 1246 §2 permits episcopal conferences, with prior Apostolic See approval, to suppress or transfer certain other holy days; c. 1245 makes diocesan prescriptions and competent authority material to dispensation or commutation. No complete list beyond universal Sunday is asserted.
 - Eastern boundary: CIC c. 1 prevents application of the Latin Code as such to Eastern Catholics. CCEO c. 881 is named only to identify that boundary; Eastern common and proper law are excluded from legal analysis.
 - Material facts assumed for the abstract example: adult Latin Catholic with sufficient use of reason, no serious reason or impossibility, no dispensation or commutation, and no applicable privilege, special law, or unexamined particular norm.
-- Currentness check: official Latin Code pages, Holy See English reference pages, the Holy See code/amendment archive, and the Holy See's published compilation of authentic interpretations were checked through 20 July 2026. No located amendment or published authentic interpretation modified CIC cc. 1246–1248 in a way material to this article.
+- Currentness check: official Latin Code pages, Holy See English reference pages, the Holy See code/amendment archive, and the Holy See's published compilation of authentic interpretations were checked through 23 July 2026. No located amendment or published authentic interpretation modified CIC cc. 1246–1248 in a way material to this article.
 - Negative-result limit: this is an audit result, not proof that every online index is exhaustive or that unpublished, unlocated, territorial, proper, or singular law is absent.
 - Advice boundary: general study only. No conclusion determines a named person's obligation, excuse, dispensation, culpability, canonical status, sacramental access, or penalty.
 
@@ -91,20 +90,22 @@ The article's three summary formulas are:
 1. Rom 11:33–12:5 as the governing movement from the denial that God can be put in creaturely debt to self-offering “by the mercies of God” within the many-membered body in Christ.
 2. Exod 19–20 and Deut 5 on deliverance and covenant preceding the Decalogue.
 3. Psalm 116 as the reader-facing question of impossible return, answered by receiving the cup, invoking God, thanksgiving, vows, and public worship.
-4. The two tablets as order toward God and justice among persons; Christ's summary in love of God and neighbor.
+4. The parable of the two sons on deed and speech; the two tablets as order toward God and justice among persons; Christ's summary in love of God and neighbor; and Gethsemane as Christ's real human consent.
 5. Irenaeus, *Against Heresies* IV.14, 17–18, on divine non-need, service for creaturely good, sacrifice, and justice.
 6. Justin, *First Apology* 67, as early witness to common Sunday Scripture, prayer, Eucharist, Communion, and mercy.
 7. Augustine, *City of God* X.1, 3, 5–6, 19–20, on *latria*, true sacrifice, and the Church's self-offering through Christ.
-8. Gregory Nazianzen, *Oration* 14.23–25 and 39.8–10, on received goods answered in mercy and on grace, commandment, purification, illumination, and desire; Chrysostom, *Homilies on Matthew* 50.3–4, on Eucharistic honor and the poor.
-9. Aquinas, ST I q. 21; I–II qq. 10, 90–91, 94, 100, 106, 108–109; II–II qq. 17, 23, 29, 58, 80–82, 85, 122.
-10. *Catechism of the Catholic Church* 1730–1748, 1854–1864, 1950–1974, 2030–2043, 2060–2100, and 2168–2195.
-11. Vatican II, *Sacrosanctum Concilium* 47–48 and 106 and *Lumen Gentium* 10–11 and 34, together with John Paul II, *Dies Domini* 46–53, as authoritative liturgical, ecclesial, and pastoral teaching distinct from the Code.
-12. The current universal Latin Sunday obligation, satisfaction, impossibility, rest, dispensation, commutation, and culpability boundaries as a bounded example rather than the article's governing subject.
-13. Grace, hope, devotion, and the living sacrifice as the threshold of Part III.
+8. Gregory Nazianzen, *Oration* 14.23–25 and 39.8–10, on received goods answered in mercy and on grace, commandment, purification, illumination, and desire; Chrysostom, *Homilies on Matthew* 50.3–4, on Eucharistic honor and the poor; Teresa, *Interior Castle* V.3 and VII.4, on prayer bearing works.
+9. Benedict, *Rule* 49, and John of the Cross, *Dark Night* I.6, on penance governed by joy, obedience, discretion, and bodily limits.
+10. St. Alphonsus, *The True Spouse of Jesus Christ*, ch. 18 §2, as ascetical witness for steadiness under prudent spiritual direction, and the International OCD Foundation's Faith and OCD Resource Center as current clinical education on scrupulosity and distinct clergy-clinician roles.
+11. Aquinas, ST I q. 21; I–II qq. 10, 18, 65, 90–91, 94, 100, 106, 108–109, 114; II–II qq. 17, 23, 29, 58, 80–82, 85, 122.
+12. *Catechism of the Catholic Church* 475, 618, 1127–1129, 1422 and 1440–1460 (especially 1459–1460), 1505, 1508, 1730–1748, 1854–1864, 1950–1974, 2006–2011, 2030–2043, 2060–2100, and 2168–2195.
+13. Vatican II, *Sacrosanctum Concilium* 47–48 and 106 and *Lumen Gentium* 10–11 and 34, John Paul II, *Dies Domini* 46–53, and Benedict XVI on Gethsemane, as authoritative liturgical, ecclesial, pastoral, and Christological teaching distinct from the Code.
+14. The current universal Latin Sunday obligation, satisfaction, impossibility, rest, dispensation, commutation, and culpability boundaries as a bounded example rather than the article's governing subject.
+15. Grace, hope, devotion, sacramental mediation, Reconciliation, ascetical moderation, action's inability to close the relation, and Gethsemane as the threshold of Part III.
 
 ## Excluded or bounded scope
 
-1. A comprehensive treatise on virtue, law, conscience, sin, merit, grace, worship, sacrifice, Eucharist, ecclesiology, or eschatology.
+1. A comprehensive treatise on virtue, law, conscience, sin, merit, grace, worship, sacrifice, sacraments, Christology, asceticism, scrupulosity, ecclesiology, or eschatology.
 2. A complete history of Sabbath and Sunday, historical canonical discipline, or every patristic Sunday witness.
 3. National episcopal-conference and diocesan feast-day calendars or norms.
 4. Eastern Catholic obligations and proper law beyond the express jurisdictional exclusion.
@@ -115,7 +116,7 @@ The article's three summary formulas are:
 9. A list of all facts constituting serious reason, grave cause, just cause, impossibility, or sufficient excuse.
 10. Judgment of a named person's mortal culpability, conscience, or canonical situation.
 11. Civil Sunday-closing law, labor law, accommodation, public holidays, or religious-liberty litigation.
-12. A complete account of evangelical counsels or states of life.
+12. A complete account of evangelical counsels, states of life, spiritual direction, bodily penance, or clinical treatment of scrupulosity.
 
 ## Method and source hierarchy
 
@@ -125,8 +126,9 @@ The article's three summary formulas are:
 4. Patristic witnesses are used at exact work and locus; their conceptual role is not retrofitted with later technical vocabulary.
 5. Aquinas supplies the principal theological architecture. Work, part, question, article, and reply take precedence over online translation wording.
 6. The current-law audit checks jurisdiction, persons, source, amendments, authentic interpretations, particular-law boundary, facts, and effects separately.
-7. Project synthesis is labeled as such and never attributed wholesale to an authority.
-8. Claim-local limits remain adjacent to the claim they change; consolidated limits appear in terminal scope apparatus.
+7. Ascetical and clinical witnesses remain within their competence: St. Alphonsus supplies traditional spiritual counsel, while the International OCD Foundation supplies current clinical education. Neither substitutes for Catholic doctrine, current law, individualized spiritual direction, or diagnosis.
+8. Project synthesis is labeled as such and never attributed wholesale to an authority.
+9. Claim-local limits remain adjacent to the claim they change; consolidated limits appear in terminal scope apparatus.
 
 ## Material qualifications
 
@@ -134,7 +136,7 @@ The article's three summary formulas are:
 2. A due can arise within a freely established order without turning the original gift into a bargain.
 3. “Debt” to God is unequal and analogical. The creature never supplies a lack or produces an absolute equality.
 4. Religion is a special moral virtue annexed to justice, not faith, hope, or charity; the theological virtues can command and inform its acts.
-5. Constraint and command-necessity differ. The latter can be voluntarily fulfilled and meritorious.
+5. Constraint and command-necessity differ. Objective conformity, the virtuous mode, and supernatural merit are also distinct. CCC 2006–2011 places grace before cooperation, excludes merit of initial grace, and locates Christian merit in Christ's charity; no exterior act discloses merit or a person's state of grace.
 6. The article's “responsive justice” is a project label for freely rendering a received due; it is not presented as Aquinas's technical term.
 7. Natural law, revealed law, and ecclesiastical law overlap in subject matter without having identical sources or effects.
 8. The Decalogue's moral substance and the positive determination of Sabbath or Sunday observance must remain distinct.
@@ -142,19 +144,27 @@ The article's three summary formulas are:
 10. The Mass precept and reception of Communion are separate; no reader's sacramental disposition is assessed.
 11. A grave external omission does not establish full knowledge or deliberate consent.
 12. Canonical obligation, moral sin, and canonical penalty are distinct effects.
-13. Hope does not erase the due. Grace does not replace created agency.
+13. Hope does not erase the due. Grace does not replace created agency. Sacramental mediation is neither magic nor a private technique.
 14. Charity perfects justice by ordering its act to God as beloved; it does not abolish commandments.
 15. The Church's self-offering depends wholly upon Christ's perfect prior oblation; it is neither autonomous nor deducible from natural theology. The revealed oblation of Christ governs Christian sacrifice.
 16. Mercy is a fruit and test of Eucharistic incorporation, not a substitute for Mass or an addition to a supposedly deficient offering of Christ.
 17. Sunday is the primary legal illustration because it unites common worship, received time, rest, and mercy. The article does not present attendance as psychological regulation or use convert discomfort as evidence of bad faith.
-18. “Resolution” is project synthesis. Justice, religion, and hope bring action into agreement with dependence and remove obstacles to peace; they do not make asymmetry smaller, guarantee sensible calm, or perform charity's direct unification of desire.
+18. Reconciliation addresses failure through Christ's mercy rather than spiritual self-payment. Absolution removes sin without necessarily repairing every remaining injury or disorder; satisfaction in CCC 1459–1460 is adapted to the penitent, serves repair and spiritual health, and has efficacy through Christ rather than earning initial forgiveness.
+19. Voluntary penance is subordinate to charity, health, duties of state, obedience, and care of others. It never excuses neglect of preventable suffering or remediable injustice.
+20. Unavoidable suffering can be united to Christ only within his unique redemptive sacrifice (CCC 618, 1505, 1508). This makes neither pain good nor suffering automatically meritorious and never forbids treatment, relief, necessary disclosure, or resistance to preventable harm.
+21. Scrupulosity is neither more exact law nor superior devotion. St. Alphonsus is ascetical witness, not clinical protocol or current universal rule; the International OCD Foundation is clinical education, not Catholic doctrinal authority. The article neither diagnoses nor treats every sensitive conscience as disordered.
+22. “Spiritual laundering” is project synthesis naming the misuse of fulfilled acts as a supposed purchase of independence; it does not deny the objective good of those acts.
+23. Gethsemane affirms Christ's complete created human will and unique redemptive obedience. Createdness belongs to the assumed human nature and will, never the divine Person. The article universalizes filial consent, not a material form of physical abnegation.
+24. “Resolution” is project synthesis. Justice, religion, and hope bring action into agreement with dependence and remove obstacles to peace; they do not make asymmetry smaller, guarantee sensible calm, or perform charity's direct unification of desire.
 
 ## Rights and quotation boundary
 
-The article uses only brief, claim-driven source phrases. Scripture, official texts, patristic wording, Thomistic translations, and online source wrappers remain outside the project's CC BY 4.0 grant. Public-domain ANF and NPNF English witnesses are research aids. Corpus Thomisticum supplies checked Latin loci; no bulk corpus text is reproduced. No modern copyrighted commentary or Scripture translation is incorporated at length.
+The article uses only brief, claim-driven source phrases. Scripture, official texts, patristic wording, Thomistic translations, current clinical resources, and online source wrappers remain outside the project's CC BY 4.0 grant. Public-domain ANF, NPNF, and the identified 1929 Alphonsus edition are research aids. Corpus Thomisticum supplies checked Latin loci; no bulk corpus text is reproduced. The International OCD Foundation pages are paraphrased without direct quotation. No modern copyrighted commentary or Scripture translation is incorporated at length.
 
 ## Review state
 
-- Completed for the current source: profile routing; exact-locus Scripture, patristic, Thomistic, catechetical, conciliar, and universal Latin current-law audit; jurisdiction, authority, culpability, and negative-claim boundary drafting; rights review; source-consistency review of the oriented Psalm 116 frame and closing return; and trilogy-wide equal-altitude, argumentative-seam, literary, and series-coherence review.
-- Production state: the present source received repeated settled builds; clean log, PDF-structure, embedded/subset/Unicode-font, metadata, extracted-text, pagination, bounded-raster, contact-sheet, and all-page visual checks; and a forced deterministic rebuild. The resulting 14-page PDF has SHA-256 `8e16272509e6dc9e92eef4f26665077a46025fd5230977394787f03e06a9a314`. The exact reviewed bytes are installed at `doc/gpt/articles/faith/the-due-return.pdf`. No release clearance is claimed.
-- Outstanding: independent scriptural, patristic, Thomistic, moral-theological, liturgical, Latin-canonical, literary, and ecclesiastical review. No imprimatur, nihil obstat, legal opinion, or ecclesiastical approval is claimed.
+- Completed for the current source: profile routing; exact-locus Scripture, patristic, mystical, monastic, Alphonsian, Thomistic, catechetical, conciliar, Christological, sacramental, and universal Latin current-law audit; the International OCD Foundation clinical-boundary check; jurisdiction, authority, act/virtue/merit, satisfaction, suffering, culpability, ascetical-safety, and negative-claim boundary drafting; rights review; and trilogy-wide rhetorical and series-coherence review.
+- Prior artifact record only: the preceding source snapshot received repeated settled builds and full production review. Its 14-page installed PDF had SHA-256 `8e16272509e6dc9e92eef4f26665077a46025fd5230977394787f03e06a9a314`. It predates the present revision and is not a reviewed representation of the current source.
+- Current artifact record: the revised source received a settled multipass build; clean fatal-error, undefined-reference, overflow, underflow, and layout-warning scans; extracted-text, metadata, pagination, PDF-structure, and embedded-font checks; bounded raster and contact-sheet review; and individual visual inspection of all 18 pages. A forced rebuild reproduced the reviewed bytes exactly. The installed PDF at `doc/gpt/articles/faith/the-due-return.pdf` has SHA-256 `743a17205fa43aded5c17e7ed463cd94261f227efc40ca625ff26fc674e44a5f`.
+- Publication state: the installed snapshot is cataloged and remains on hold in the public-alpha manifest pending renewed exact-snapshot authorization. No release clearance is claimed.
+- Outstanding: independent scriptural, patristic, Thomistic, moral-theological, mystical-theological, Christological, liturgical, Latin-canonical, literary, clinical, and ecclesiastical review. No imprimatur, nihil obstat, legal opinion, or ecclesiastical approval is claimed.

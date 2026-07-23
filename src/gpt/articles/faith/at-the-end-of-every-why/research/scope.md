@@ -6,75 +6,68 @@ This record supports `src/gpt/articles/faith/at-the-end-of-every-why/main.tex`.
 
 - **Provider and collection:** GPT; faith and theology articles.
 - **Genre and profile:** discursive moral- and spiritual-theological article; `guidance/articles.md` governs.
-- **Series position:** Part III of *The Creature Before God*, following the apprehension of received being and its embodied response in oblation, worship, mercy, and hope. It completes the account of ontological vertigo by distinguishing dependence, which remains, from alienation, which charity begins to remove. The article remains intelligible on its own.
-- **Language, rite, jurisdiction, and currentness:** English; no liturgical rite, civil jurisdiction, canonical jurisdiction, or mutable discipline governs the central argument. The core online witnesses were checked through 2026-07-20; the added Augustinian and Thomistic loci were checked on 2026-07-21.
-- **Intended reader:** a serious general reader not presumed to know scholastic vocabulary.
-- **Governing question:** How can love be commanded and still be free, and how do grace, friendship, transformed fear, peace, and mystical participation make asymmetric dependence habitable as communion?
-- **Thesis:** charity is the graced freedom by which the creature comes to will the good that justice commands. The external precept names the end but cannot cause its own inward fulfillment; the Holy Spirit infuses charity, brings the will into voluntary friendship with God, casts out servility while increasing filial reverence, and gives justice its final Godward form. The resulting return remains entirely creaturely and asymmetric—received from God, unequal to the divine love it answers, yet capable by grace of being whole. The apprehension of dependence deepens while alienation recedes.
-- **Intended literary effect:** a conversational, equal-altitude movement from the exact tension between a command that requires love and coercion that cannot produce it, through the inward New Law, friendship, justice, and mystical participation, to the Johannine confession. Each substantive section begins from real pressure within the argument or a source rather than assigning the reader a reaction, simplified objection, or motivational question; friendship, communion, participation, and the received power to return are named only after their sources have earned them. The compressed conclusion crosses explicitly from natural reason's bounded judgment that God loves to revelation's disclosure that God is love. It enacts no premise and claims no private revelation or reproducible experience.
+- **Series position:** Part III of *The Creature Before God*. The trilogy moves from received being, through actions required in justice, to the end desired in charity. This part remains independently intelligible.
+- **Language, rite, jurisdiction, and as-of date:** English; no liturgical rite, civil jurisdiction, canonical jurisdiction, or mutable discipline governs the central argument. Sources were checked through 2026-07-23.
+- **Intended reader:** an intellectually serious Christian near the first apprehension of ontological vertigo, a reader retracing that landscape, or an advanced reader willing to revisit first principles. Scholastic terms are introduced in contexts that disclose their function rather than as glossary entries.
+- **Governing question:** Whom or what ought the creature ultimately to want once justice has named necessary action?
+- **Thesis:** the final end is God loved for God's own sake. Infused charity is filial friendship with God: a created participation by which grace makes the creature's genuinely voluntary return possible, perfects rather than discards justice, and tends toward conformity and union without absorption. Prayer, Eucharistic communion, suffering, work, and love of neighbor become forms of this return when ordered by charity.
+- **Literary aim:** a Lewisian movement through objections that arise from the argument itself, an Augustinian scriptural atmosphere in which every scriptural phrase is actually quoted, Thomistic distinctions underneath ordinary language, and selected mystical witnesses only where their expression adds persuasive force. The affective culmination is earned from Christ's human prayer, sacramental self-gift, and continuous divine presence rather than announced as a desired reader reaction.
 
 ## Included scope
 
 The article includes:
 
-1. the command to love God and neighbor and Aquinas's account of why a free act can be commanded;
-2. the distinction between external precept and the inward New Law of grace;
-3. Augustine on law, Spirit, and the gift that enables fulfillment;
-4. Aquinas on noncoercive divine motion, the graced turning of the will, infused charity, friendship with God, transformed fear, peace, and charity as the form of the virtues;
-5. Irenaeus on the passage from servile obedience to the more complete obedience of children and friends;
-6. the preservation and perfection of justice, worship, truth, and determinate moral obligation under charity;
-7. the Johannine test of love in the mission of the Son and love of the visible neighbor;
-8. Pseudo-Dionysius on ecstatic return, Bernard on the unequal but whole response, and John of the Cross on love by participation in the Holy Spirit;
-9. the Trinitarian boundary between essential divine love, the Holy Spirit as proceeding Love, and created charity as an infused participation; and
-10. the series-level resolution of ontological vertigo as the removal of recoil and alienation rather than a reduction of Creator–creature asymmetry.
+1. commanded love, infused charity, and the distinction between voluntary fulfillment and coercion;
+2. the inward New Law, grace, and genuine creaturely agency;
+3. Gethsemane as the paradigmatic conformity of Christ's true human will, without universalizing physical abnegation;
+4. charity as friendship, filial fear, and the perfection of justice;
+5. the danger of using objectively good actions as “spiritual laundering,” while defending action before affection matures;
+6. a direct but terse treatment of scrupulosity;
+7. felt distance, dryness, and distinctions among ontological presence, sanctifying indwelling, sacramental communion, and sensible consolation;
+8. petition and intercession under omniscience and immutable providence, including prayer as an eternally ordained secondary cause and transformation of the praying heart as first but not sole effect;
+9. rejection of instrumental promises and preservation of proportionate human work;
+10. Eucharistic duty ripening into desire, worthy reception and Reconciliation, Thomistic effects, Benedictine assimilation language, and Thérèse's ecclesially received witness;
+11. suffering as evil experienced, not presumptive punishment; resistance to removable suffering; participation in Christ when suffering cannot be removed; merit only in a free act proceeding within grace and charity; offering for others without controlling freedom or guaranteeing a temporal outcome; and boundaries against passivity, self-harm, imposed suffering, and generalized severe asceticism;
+12. love of neighbor as the expected fruit and test of love of God; and
+13. Bernard and John of the Cross on a whole but unequal return, with union strictly bounded as created participation rather than absorption.
 
 ## Excluded scope
 
-Excluded are a complete treatise on law, grace, justification, merit, predestination, assurance, the sacraments, moral culpability, or the loss and restoration of charity; a catalogue of moral, ecclesiastical, or canonical precepts; a full theology of religious life and the counsels; a general history of Christian mysticism; and disputed questions about extraordinary mystical states.
+Excluded are complete treatises on grace, justification, merit, predestination, assurance, providence, the sacraments, spiritual direction, asceticism, moral culpability, discernment of spirits, mental illness, theodicy, social ethics, or mystical theology. The article does not catalogue ecclesiastical precepts, diagnose a dark night, prescribe penances, decide a reader's state of grace, promise a temporal answer to prayer, or replace medical, psychological, legal, pastoral, or sacramental counsel.
 
-The article does not imply that affective intensity proves charity, that grace may be inferred from experience alone, that love licenses an objectively evil act, or that friendship with God abolishes divine lordship or the Creator–creature distinction. It composes no prayer for vocal recitation.
+No extraordinary mystical phenomenon, eroticized report, disputed locution, or controversial private revelation is used as evidence. Teresa and Thérèse appear through ecclesially received public texts; John of the Cross and Bernard are used at exact doctrinally bounded loci. If later revision proposes a controversial text as necessary evidence, the user must be consulted case by case before inclusion.
 
-## Authority classes and boundaries
+## Controlling distinctions
 
-- **Sacred Scripture:** governs the commands to love, the New Covenant promise, the missions of Son and Spirit, friendship, adoption, charity's moral test, and the exact Johannine confession.
-- **Dogma and authoritative synthesis:** Vatican I and the *Catechism* govern divine non-need, free creation, the theological virtues, grace as participation in divine life, the New Law as law of love, grace, and freedom, and charity's relation to moral action.
-- **Patristic witness:** Irenaeus and Augustine supply early Christian accounts of freedom, obedience, friendship, external law, interior grace, punitive and chaste fear, abiding, and ethically tested charity. Their texts are used at exact loci rather than as an undifferentiated consensus.
-- **Thomistic theology:** Aquinas supplies the principal distinctions among command, freedom, infused habit, friendship, form of the virtues, servile and filial fear, peace, divine motion, Trinitarian mission, and Love as a divine name.
-- **Mystical and monastic witness:** Pseudo-Dionysius articulates ecstatic return, Bernard articulates unequal reciprocity, and John of the Cross articulates participated conformity in love. Their images neither define grace nor guarantee a sensible experience.
-- **Project synthesis:** the command/grace/friendship/return taxonomy, “the apprehension of dependence deepens; alienation recedes,” and the language of ontological resolution belong to this article.
+1. Love is commanded but cannot be coerced; grace infuses a voluntary capacity rather than loving in place of the person.
+2. “Interior law” is not private revelation and does not oppose Scripture, sacrament, Church, or objective command.
+3. Gethsemane displays Christ's true human will freely conformed amid anguish. It does not make suppression, abuse, pain, or physical abnegation universal signs of freedom.
+4. Friendship does not abolish lordship, worship, obligation, Creator–creature asymmetry, or filial reverence.
+5. Charity is the form of the virtues by ordering them to the supernatural end; it does not erase their objects.
+6. “Spiritual laundering” criticizes a transactional use of good acts, not obedience or acts performed before mature affection.
+7. Scrupulosity is treated as recurrent moral reopening after competent judgment, not as greater moral seriousness.
+8. Felt distance cannot by itself establish divine absence, punishment, or loss of grace.
+9. Prayer neither informs God nor changes his eternal disposition. It can be a real created cause within providence.
+10. The praying person's transformation is first, not exclusive; intercession can have real effects outside the praying person.
+11. Temporal goods may be requested subordinately, but devotion cannot guarantee them or substitute for proportionate action.
+12. Eucharistic desire does not replace sacramental reception; reception without required disposition is not validated by subjective desire.
+13. Reconciliation is mentioned as the ordinary sacramental remedy for known grave sin, not developed as a sacramental treatise.
+14. Suffering is not good in itself and is not presumptively punishment. What can be removed should be resisted.
+15. Participation in Christ gives unavoidable suffering a relation to his complete Redemption without adding to its worth.
+16. Pain has no merit in itself. A free act united to Christ can be meritorious only within grace and charity; the first grace cannot be merited. One may merit for oneself and for others graces ordered to sanctification and eternal life without controlling another's freedom or guaranteeing a temporal outcome (CCC 2007–2011, especially 2010).
+17. Penance is bounded by moderation, state in life, bodily integrity, duties, legitimate authority, and spiritual direction. Severe asceticism is restricted, if at all, to cloistered contemplative or closely analogous vocations under competent direction and is never generalized. This is the article's conservative prudential boundary, not a claim that severity proves holiness.
+18. Union is friendship, conformity, and participation, never absorption, identity of essence, partition of God, or loss of personhood.
+19. “God is love” is the revealed Johannine culmination; it is not reversed into “love is God.”
 
-## Material qualifications
+## Endnote and quotation policy
 
-1. “Love can be commanded” does not mean that coercion produces charity. It means that charity is the due end of spiritual life and that the act required by the precept must be voluntary (ST II–II, q. 44, a. 1).
-2. External teaching remains good and necessary. The claim that it cannot heal the will by itself distinguishes precept from assisting and sanctifying grace; it does not oppose grace to revealed doctrine, ecclesial teaching, or sacramental mediation.
-3. The New Law is chiefly the grace of the Holy Spirit and secondarily written instruction disposing persons to grace and directing its use (ST I–II, q. 106, a. 1). “Interior” does not mean private, subjective, or independent of Christ and the Church.
-4. Charity is an infused theological virtue and a created habit in the soul, not the divine essence, the Person of the Holy Spirit, natural affection, or emotional intensity (ST II–II, q. 23, a. 2; q. 24, a. 2).
-5. Grace neither bypasses nor coerces the will. God moves voluntary causes according to their voluntary mode; even the free turning toward grace depends upon gratuitous inward motion, and a graced act can be wholly dependent and genuinely the person's act (ST I–II, q. 10, a. 4; q. 109, a. 6).
-6. No antecedent merit of the recipient earns initial justification or the first sanctifying grace. This does not deny Christ's merit or the merit of acts already proceeding from grace (CCC 1992, 2010).
-7. Friendship with God rests on God's gratuitous communication of beatitude and does not imply equality of nature, independent reciprocity, or satisfaction of a divine need (ST II–II, q. 23, a. 1).
-8. Charity removes servility, not divine lordship, moral obligation, filial reverence, or every imperfect motive at once. Fear of punishment may remain while filial fear grows with love; the wholly secure wonder of ST II–II, q. 19, a. 11 describes beatitude, not a guaranteed present affect.
-9. Calling charity the form of the virtues does not collapse justice and the other virtues into charity. It means that charity directs their acts to the supernatural final end (ST II–II, q. 23, a. 8).
-10. “Love, and do what you will” is read in Augustine's account of acts proceeding from the root of charity. It does not canonize impulse, preference, permissiveness, or consequentialism.
-11. Charity exceeds calculation of repayment but never falls beneath justice. It cannot make intrinsically evil conduct good, erase determinate duties, or substitute intention for the moral object and circumstances.
-12. Johannine charity is Trinitarian, Paschal, and ethically tested: the Father sends the Son, the Spirit is given, and claimed love of God is tested in love of neighbor (1 John 4:7–21).
-13. Pseudo-Dionysian ecstasy means movement beyond self-enclosure toward the beloved, not emotional transport, emanation, annihilation, or absorption.
-14. Bernard's unequal reciprocity and John of the Cross's participated equality or conformity in love are compatible: the creature receives the very capacity by which it answers. “Whole” concerns graced self-gift, not equality of essence, source, power, or causal priority.
-15. Love is said essentially of the one God and personally of the Holy Spirit according to relation of origin. Created charity is an effect of grace and a created participation, not an identification of the soul with proceeding Love (ST I, q. 37, aa. 1–2).
-16. “God is love” occurs at 1 John 4:8 and 4:16, not in the Gospel of John. It is not reversed into “love is God,” used as a natural proof of Trinity, or detached from Son, Spirit, Cross, commandment, and neighbor.
-17. Ontological vertigo is not identical with servile fear, filial fear, or the gift of fear. Aquinas illuminates its transformation analogically; the project term initially names a pre-moral apprehension.
-18. Charity's peace is an objective unification of appetite that remains imperfect in the wayfarer. Disturbance, dryness, and conflict can coexist with charity (ST II–II, q. 29, a. 3).
-19. Augustine's language of divine “departure” in the fear passage concerns loss of communion, not cessation of ontological conservation.
-20. “Resolution” removes the demand for independent ground and the alienation of the will; it neither narrows infinite Creator–creature distance nor promises an affective cure.
+The main chain remains complete without the Notes. Endnotes hold exact loci, source roles, translation cautions, and material qualifications that would impede the argument. Direct quotations are brief and claim-driven. Scripture is quoted whenever its language enters the prose. Attributions appear in the body when speaker, moment, or provenance gives the wording rhetorical force; otherwise superscript endnote marks carry the source.
 
-## Rights and quotation boundary
-
-The rendered article uses only short, claim-driven source phrases: a brief traditional English rendering from Augustine's *Confessions*, the commonly cited short instruction from his seventh homily on First John, Bernard's *etsi non ex aequo*, and the three-word Johannine confession. No extended modern Scripture translation, modern scholarly translation, scan, or source-site wrapper is incorporated.
-
-Public-domain ANF, NPNF, Parker, Eales, and Lewis–Zimmerman translations were used as working English witnesses. Corpus Thomisticum supplies a checked Latin corpus whose site edition retains its stated rights; the repository links to it and reproduces no bulk text. Scripture, official texts, patristic and mystical wording, and third-party translations remain outside the project's CC BY 4.0 grant.
+Scripture, official texts, patristic and mystical wording, and third-party translations retain their own rights status and are not relicensed by the project's CC BY 4.0 grant. Public-domain ANF, NPNF, Eales, and Lewis–Zimmerman translations are working aids. Corpus Thomisticum supplies a checked Latin corpus whose site edition retains its stated rights. No bulk source text, scan, wrapper, or modern scholarly translation is incorporated.
 
 ## Review state
 
-- Completed for the revised source: genre/profile routing; claim-driven source selection; exact-locus checks for command and liberty, the inward New Law, infused charity, friendship, charity as form, filial fear, Irenaean freedom, Augustinian charity, Dionysian return, Bernard's unequal answer, and Johannine and Carmelite participation; preservation of claim-local qualifications; source-record consistency review; internal theological review; and internal equal-altitude, command/coercion, argumentative-seam, literary, and conclusion review.
-- Historical production review applies only to the predecessor snapshot: it received a settled two-pass build; clean log, metadata, PDF-structure, embedded/subset/Unicode-font, and extracted-text checks; bounded raster review and visual inspection of all 11 pages; and a forced deterministic rebuild with an identical SHA-256. That reviewed artifact was previously installed at `doc/gpt/articles/faith/at-the-end-of-every-why.pdf` with SHA-256 `ec7df2ba5a3458b4721a11166e9ebc2b0b529c13a5786da74f843b9e255ff952`.
-- Current reviewed artifact: the present source received repeated settled builds; clean log, PDF-structure, embedded/subset/Unicode-font, metadata, extracted-text, pagination, bounded-raster, contact-sheet, and all-page visual checks; and a forced deterministic rebuild. The resulting 10-page PDF has SHA-256 `9af58f52b2afffb4fa6df0ecec995bde832b8d262f6ce112f7858cd77cbcdb42`. The exact reviewed bytes are installed at `doc/gpt/articles/faith/at-the-end-of-every-why.pdf`. No release clearance is claimed.
-- Outstanding external review: independent moral-theological, patristic, Thomistic, mystical-theological, dogmatic, literary, and ecclesiastical review. No imprimatur, nihil obstat, or ecclesiastical approval is claimed.
+- Completed for this source revision: profile routing; source selection; exact-locus checks for the new prayer, Eucharist, Gethsemane, dryness, Thérèse, suffering, and merit-within-grace claims; retention and rechecking of the established charity, friendship, filial-fear, Bernard, and John-of-the-Cross claims; Scripture-quotation audit; private-revelation exclusion audit; severe-asceticism prudential-boundary audit; doctrinal-boundary, argument-chain, rhetorical, endnote, rights, and source-record consistency review.
+- Current artifact record: the revised source received a settled multipass build; clean fatal-error, undefined-reference, overflow, underflow, and layout-warning scans; extracted-text, metadata, pagination, PDF-structure, and embedded-font checks; bounded raster and contact-sheet review; and individual visual inspection of all 14 pages. A forced rebuild reproduced the reviewed bytes exactly. The installed PDF at `doc/gpt/articles/faith/at-the-end-of-every-why.pdf` has SHA-256 `a333a75c01f9fe003c8ba4e652c5b816ee61ba19a5cafecf377997d2012897be`.
+- Publication state: the installed snapshot is cataloged and remains on hold in the public-alpha manifest pending renewed exact-snapshot authorization. No release clearance is claimed.
+- Outstanding: independent moral-theological, Thomistic, mystical-theological, sacramental, pastoral, literary, and ecclesiastical review. No imprimatur, nihil obstat, or ecclesiastical approval is claimed.
