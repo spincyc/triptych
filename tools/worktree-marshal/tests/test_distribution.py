@@ -269,6 +269,7 @@ class DistributionArtifactTests(unittest.TestCase):
             "src/worktree_marshal/resources/__init__.py",
             "src/worktree_marshal/resources/worktree-marshal.mk",
             "tests/test_distribution.py",
+            "tests/test_installed_lifecycle.py",
             "tests/test_cli.py",
             "tests/test_make_fragment.py",
             "tests/test_package.py",

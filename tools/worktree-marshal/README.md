@@ -57,9 +57,20 @@ package command will install or update a pinned copy in a consumer repository;
 consumers should not locate package resources dynamically during every Make
 parse.
 
-The extraction will continue by exercising the installed artifact against the
-complete lifecycle matrix and then separating the still-monolithic engine
-behind typed state-machine boundaries. The frozen legacy contract and current
+The package tests now install a wheel rebuilt from the source distribution in
+an environment outside this checkout, with source-tree import paths removed.
+That installed artifact passes a bounded lifecycle checkpoint covering generic
+run preservation, integration, and cleanup through the packaged unprefixed
+Make targets; bidirectional Triptych schema-1 run, status, and clean
+interoperability through the packaged compatibility adapter; cross-profile
+selected-run lookup isolation without manifest mutation; and rejection when
+the generic profile's configured Codex executable aliases the installed
+console, including symbolic- and hard-link aliases. This checkpoint is not the
+complete installed lifecycle or release matrix. The next installed-artifact
+checkpoint covers managed conflict resolution, continuation, abort, and
+final-diff. Retirement, concurrency, crash recovery, and broader security
+coverage remain release gates; the step-5 helper split remains protected by
+the source and installed parity suites. The frozen legacy contract and current
 security boundary are recorded in
 [`docs/compatibility-contract.md`](docs/compatibility-contract.md); the target
 architecture and release sequence are in [`docs/design.md`](docs/design.md).
@@ -71,6 +82,10 @@ From this directory, run the package tests with:
 ```sh
 python3 -m unittest discover -s tests -v
 ```
+
+This package suite includes artifact-content checks and the bounded
+installed-artifact lifecycle checkpoint described above; it does not yet run
+the complete legacy lifecycle matrix against the installed console.
 
 The repository's `make check-agent-isolation` target additionally runs the
 complete Triptych lifecycle suite through the thin compatibility bootstrap.
