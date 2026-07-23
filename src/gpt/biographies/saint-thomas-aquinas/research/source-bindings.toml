@@ -1,0 +1,24 @@
+schema = 1
+record_type = "bindings"
+document = "biographies/saint-thomas-aquinas"
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-archive-2003"
+loci = ["369", "372", "2334-2335", "2414"]
+role = "reception"
+states = ["cataloged"]
+context = "The biography cites the archived official English Catechism state as later Catholic reception concerning equal personal dignity and the condemnation of slavery. This evidence is kept distinct from wording or conclusions attributed to Thomas himself. The publication-local audit checked the loci through 2026-07-20 but retained no exact content artifact fingerprint, so this binding preserves only its legacy edition-locus ceiling."
+
+[[bindings]]
+source_id = "work.catholic-church.catechism"
+loci = ["2267"]
+role = "reception"
+states = ["cataloged"]
+context = "The biography invokes current Catechism paragraph 2267 as later Catholic reception of capital punishment. Its legacy record pins the paragraph but not a concrete current Catechism delivery artifact, so the work-level binding avoids substituting either the archived pre-2018 English state or the separately registered USCCB expression. Current wording remains mutable and must be rechecked."
+
+[[bindings]]
+source_id = "passage.holy-see.catechism-2267-rescript-2018.english-2018.new-text-of-catechism-2267"
+loci = ["new-text-of-catechism-2267"]
+role = "currentness-control"
+states = ["cataloged"]
+context = "The official 1 August 2018 English revision record is an additional currentness control for the paragraph 2267 wording actually used by the biography. It is a distinct rescript work, not a substitute identity for the Catechism paragraph, and this publication binding remains catalog-only despite the canonical passage's stronger central evidence state."

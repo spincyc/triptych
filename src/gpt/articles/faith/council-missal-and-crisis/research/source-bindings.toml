@@ -14,3 +14,16 @@ loci = ["Decree declaring the edition typical, 23 June 1962"]
 role = "official-control"
 states = ["cataloged"]
 context = "The legacy audit identifies the Vatican 1962 typical edition and its decree declaring the edition typical on 23 June 1962. This catalog-only binding claims no inspection of an exact central artifact."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-archive-2003"
+loci = ["74-100", "748-975", "1322-1419", "2032-2051"]
+role = "context"
+states = ["cataloged"]
+context = "The article's bibliography identifies these broad ranges through the archived official English Catechism index. No Catechism claim-matrix row or paragraph-level verification event accompanies them, so this catalog-only binding records contextual citation rather than inspected or verified support."
+
+[[bindings]]
+source_id = "work.catholic-church.catechism"
+role = "bibliographic"
+states = ["cataloged"]
+context = "The 1992 publication entry in the article's timeline is work-level historical metadata, not a passage claim. The generic sentence about ritual change even when a catechism remains unchanged is not treated as a source occurrence."

@@ -10,3 +10,17 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The parent audit and prayer inventory visually collated these windows against the exact CMAA facsimile for the shared Latin formulas and nine daily collect bodies and conclusions. This binding claims no work-wide search."
 verified_on = "2026-07-14"
 source_fingerprint = "sha256:6b4dcd3ee771d6d92734992ecabfe09b289235954e963afcf523fc8f8ee9b12d"
+
+[[bindings]]
+source_id = "work.catholic-church.catechism"
+loci = ["243-248", "683-747", "733-741", "799-801", "965-970", "1830-1832", "2670-2672"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The parent guide uses these Catechism paragraphs as doctrinal controls for the Holy Spirit, renewed invocation, gifts, fruits, charisms, and Mary's subordinate Pentecostal presence. The publication-local audit reached exact loci through 2026-07-13, but retained no Catechism URL, pinned language expression, or exact artifact fingerprint. The rendered references omit 965-970 even though the audit uses it; that discrepancy is preserved for review."
+
+[[bindings]]
+source_id = "work.catholic-church.catechism"
+loci = ["797-801", "1076", "1285-1321", "1695", "1996-2005", "2623"]
+role = "context"
+states = ["cataloged"]
+context = "These broader Catechism loci occur in the parent guide's doctrinal references. The 797-801 citation overlaps the claim matrix's narrower 799-801 use. Because no concrete Catechism expression or artifact is pinned, the binding remains at work level and catalog-only."

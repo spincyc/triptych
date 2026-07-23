@@ -8,3 +8,17 @@ loci = ["5.9-10", "12.7-9"]
 role = "lead"
 states = ["cataloged"]
 context = "The legacy research record identifies City of God at these loci. This catalog-only binding claims no inspection of a central edition or artifact. Where the legacy record relies on NPNF/New Advent, the centrally registered Dods English and CSEL Latin texts are different witnesses and are not silently substituted."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["268-278", "301-324", "475", "599-600", "606-614", "1376", "1730-1748", "1750-1761", "1857-1861", "1989-2002"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The named official English Vatican pages control the article's claims about omnipotence, providence and evil, Christ's wills and Passion, Eucharistic change, freedom, moral action, culpability, and grace. The publication-local exact-locus audit checked these uses through 2026-07-12, but retained no exact artifact fingerprint, so this binding preserves only that legacy ceiling."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["295", "1806", "2725", "2734-2745"]
+role = "context"
+states = ["cataloged"]
+context = "These additional creation, prudence, and prayer loci appear in the publication's Catechism references but lack the same direct page evidence or claim-row treatment as the controlling ranges. This catalog-only binding makes no inspection or verification claim. Gregory of Nyssa's Great Catechism is a distinct patristic work and is deliberately excluded."
