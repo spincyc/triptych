@@ -20,17 +20,18 @@ validation, persistence, and orchestration in one shared `engine.py`. `cli.py`
 owns the installed grammar, `profiles.py` owns immutable durable identities,
 `git.py` now owns only the cycle-free Git policy kernel, `model.py` now owns
 the exact state vocabulary, pure classifier, and I/O-free
-integration-transaction restoration transform, `locks.py` now owns
+integration-transaction restoration transform, `state.py` now owns run
+identity and lexical lock and manifest paths, `locks.py` now owns
 lock-descriptor bookkeeping and validation algorithms, `process.py` now owns
-child waiting and exit-status normalization, and `triptych_compat.py` binds
-the frozen adapter. The rest of the engine will be separated behind these
-modules only after parity tests protect each seam:
+child waiting and exit-status normalization, and `triptych_compat.py` binds the
+frozen adapter. The rest of the engine will be separated behind these modules
+only after parity tests protect each seam:
 
 ```text
 worktree_marshal/
   cli.py                 command parsing and stable exit behavior
   model.py               state vocabulary and transaction restoration now
-  state.py               private paths and durable manifest writes
+  state.py               run identity and lexical lock/manifest paths; writes later
   locks.py               descriptor bookkeeping now; flock acquisition later
   git.py                 transforms and captured-config policy now; invocation later
   process.py             child signal forwarding and exit normalization
@@ -88,7 +89,7 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with six behavior-preserving boundaries. The pure Git policy
+has begun step 5 with seven behavior-preserving boundaries. The pure Git policy
 kernel now transforms an explicit environment mapping and Git argument
 sequence in `git.py`; `engine.py` retains its optional environment-acquisition
 wrapper and all executable discovery, subprocess creation and command
@@ -130,7 +131,16 @@ engine. The engine retains working-directory authentication, the exact Git
 configuration probe, unsuccessful-probe diagnosis, executable pinning, and
 subprocess execution. Lazy resolvers preserve the engine's existing
 configuration-policy and error lookups at their original decision points.
-Direct tests freeze all six extracted boundaries, their
+The seventh boundary moves the exact run-ID grammar, dependency-injected
+timestamp and random-suffix composition, and lexical repository-lock,
+run-lock, and manifest path construction into `state.py`. Engine wrappers
+retain their original signatures, profile-aware invalid-ID diagnostics, and
+lazy clock and entropy lookup order. These constructors intentionally perform
+no validation, resolution, authentication, directory creation, or filesystem
+access. State-base selection, private-directory and profile-marker setup,
+manifest persistence and validation, temporary-path authentication, lock
+acquisition, and lifecycle decisions remain in `engine.py`.
+Direct tests freeze all seven extracted boundaries, their
 compatibility surfaces, artifact inclusion, field and operation order,
 partial-failure behavior, and the dynamic restoration of every vocabulary
 value currently accepted in

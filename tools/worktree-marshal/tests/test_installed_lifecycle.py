@@ -384,6 +384,7 @@ class InstalledLifecycleTests(unittest.TestCase):
                         "import worktree_marshal.model as model",
                         "import worktree_marshal.process as process_policy",
                         "import worktree_marshal.resources as resources",
+                        "import worktree_marshal.state as state_policy",
                         (
                             "from worktree_marshal import "
                             "cli, engine, profiles, triptych_compat"
@@ -403,6 +404,7 @@ class InstalledLifecycleTests(unittest.TestCase):
                         "    'profiles': profiles.__file__,",
                         "    'triptych_compat': triptych_compat.__file__,",
                         "    'resources': resources.__file__,",
+                        "    'state': state_policy.__file__,",
                         "    'make_fragment': str(fragment),",
                         "}, sort_keys=True))",
                     )

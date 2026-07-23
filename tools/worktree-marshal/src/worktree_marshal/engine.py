@@ -62,8 +62,14 @@ from .profiles import (
     MANAGED_CONTEXT_ENVIRONMENTS,
     RuntimeProfile,
 )
+from .state import (
+    RUN_ID_RE,
+    manifest_path as _manifest_path,
+    new_run_id as _new_run_id,
+    repo_lock_path as _repo_lock_path,
+    run_lock_path as _run_lock_path,
+)
 
-RUN_ID_RE = re.compile(r"^[0-9]{8}t[0-9]{6}z-[0-9a-f]{12}$")
 OBJECT_ID_RE = re.compile(r"^(?:[0-9a-f]{40}|[0-9a-f]{64})$")
 RETIREMENT_OBJECT_FIELDS = (
     "retirement_discard_head",
@@ -242,8 +248,10 @@ def utc_now() -> str:
 
 
 def new_run_id() -> str:
-    stamp = datetime.now(timezone.utc).strftime("%Y%m%dt%H%M%Sz").lower()
-    return f"{stamp}-{secrets.token_hex(6)}"
+    return _new_run_id(
+        current_time=lambda: datetime.now(timezone.utc),
+        random_suffix=lambda: secrets.token_hex(6),
+    )
 
 
 def diagnostic(message: str) -> None:
@@ -800,15 +808,18 @@ def file_lock(path: Path, *, blocking: bool = True) -> Iterator[TextIO]:
 
 
 def repo_lock_path(repository: Repository) -> Path:
-    return repository.state_root / "repository.lock"
+    state_root = repository.state_root
+    return _repo_lock_path(state_root)
 
 
 def run_lock_path(repository: Repository, run_id: str) -> Path:
-    return repository.state_root / "runs" / f"{run_id}.lock"
+    state_root = repository.state_root
+    return _run_lock_path(state_root, run_id)
 
 
 def manifest_path(repository: Repository, run_id: str) -> Path:
-    return repository.state_root / "runs" / f"{run_id}.json"
+    state_root = repository.state_root
+    return _manifest_path(state_root, run_id)
 
 
 def validate_run_id(run_id: str) -> None:
