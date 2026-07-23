@@ -201,6 +201,14 @@ pending work while checking all three contracts. Reserve
 `make check-source-family-screening` for the explicit family-screening
 completion audit.
 
+Family-specific review records may preserve the human semantic audit that
+precedes canonicalization and binding. They supplement the ledger rather than
+becoming source manifests or evidence states. The first such record is the
+[Catechism family review](catechism-family-review-2026-07-23.md), which
+disaggregates the work, official expressions, amendment act, delivery
+artifacts, rights boundary, 42 positive owner occurrences, and inherited
+consumers before migration.
+
 ## Migration states
 
 Publication inventory states describe migration progress only:

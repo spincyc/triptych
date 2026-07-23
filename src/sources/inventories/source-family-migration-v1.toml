@@ -1,6 +1,6 @@
 migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
-audited_on = "2026-07-22"
+audited_on = "2026-07-23"
 inventory_path = "src/sources/inventories/publications-v1.toml"
 inventory_snapshot = "sha256:37d8f9634c13dcf239385cb963f863bf70a9513a83ca04c6dbbe47ad3c5b99cd"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
@@ -8,7 +8,7 @@ classification_snapshot = "sha256:dafeabb5de4701ba2d641eaed5f3c550cb19836e6140a6
 canonical_catalog_snapshot = "sha256:47edf48497a9215ea5ed04b1a3127c746f9437b4ee25713060f5d39f30b1530e"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:53661708bb411475e4e8af0f551658fa97c5b0ce8afa8e2f3d37a83c6073413a"
+snapshot = "sha256:2b3f6d19f32f058c9c9bdc077097bc91f5918b243206e4a282a9060d1e850c87"
 
 [[families]]
 id = "family.acta.aas-ass"
@@ -56,10 +56,10 @@ label = "Catechism of the Catholic Church"
 kind = "mixed-cluster"
 source_categories = ["magisterial"]
 identity_confidence = "confirmed"
-identity_gaps = ["artifact", "date", "expression", "language"]
-artifact_availability = "candidate-partial"
-storage_plan = ["remote", "restricted"]
-rights_review = "unreviewed"
+identity_gaps = ["expression"]
+artifact_availability = "candidate-complete"
+storage_plan = ["restricted"]
+rights_review = "partially-reviewed"
 mutability = "officially-mutable"
 freshness_rule = "Pin each language and official web or print state by date and review amendments before updating consumers."
 evidence_ceiling = "edition-locus"
@@ -67,8 +67,8 @@ disposition = "split-then-canonicalize"
 priority = "p0"
 canonical_ids = []
 trace_patterns = ["Catechism of the Catholic Church", "Catechismus Catholicae Ecclesiae"]
-reviewed_on = "2026-07-22"
-notes = "Separate the promulgated work, Latin typical edition, translations, revised paragraphs, and mutable delivery artifacts; paragraph numbers alone do not pin wording."
+reviewed_on = "2026-07-23"
+notes = "The 2026-07-23 family review resolves 42 positive owners and identifies a complete 924-page official USCCB English search representation, distinct Latin, archived-English, current-English, and 2018-amendment states, and a restricted-rights boundary. Canonicalize those identities without treating paragraph numbers, delivery hosts, or legacy verification prose as exact evidence."
 
 [[families]]
 id = "family.holy-see.cceo-1990"
