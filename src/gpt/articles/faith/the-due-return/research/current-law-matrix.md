@@ -1,6 +1,6 @@
 # Current-Law Matrix — The Latin Sunday Obligation
 
-This matrix records the current universal Latin-law example used in *The Due Return*. It is current through 20 July 2026. It does not determine any named person's obligation, excuse, culpability, canonical status, or sacramental access.
+This matrix records the current universal Latin-law example used in *The Due Return*. It is current through 23 July 2026. It does not determine any named person's obligation, excuse, culpability, canonical status, or sacramental access.
 
 ## Governing proposition
 
@@ -39,7 +39,7 @@ Natural and revealed theological reasons establish the good of worship and the P
 
 ## Currentness audit
 
-Checked through 20 July 2026:
+Checked through 23 July 2026:
 
 - Official Latin CIC Books I and IV.
 - Holy See-hosted English reference pages for cc. 7–22, 35–93, and 1244–1253.

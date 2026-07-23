@@ -3,10 +3,10 @@
   "release_id": "public-alpha",
   "provider": "gpt",
   "expected_counts": {
-    "publications": 109,
-    "release": 66,
+    "publications": 111,
+    "release": 63,
     "review": 0,
-    "hold": 43
+    "hold": 48
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
@@ -16,6 +16,7 @@
     "independent-server-guide-review": "Complete and record independent liturgical, ceremonial, Ecclesiastical Latin pronunciation, and age-appropriate pedagogical review of the altar-server guide series.",
     "prayer-text-permission": "Obtain and record the permission or other distribution basis required for incorporated prayer text and translations.",
     "rubrical-adaptation-clearance": "Resolve and record the distribution basis for the close adaptation of the rubrical corpus.",
+    "exact-snapshot-authorization": "Review and authorize the exact current PDF snapshot before its first public distribution.",
     "renewed-exact-snapshot-authorization": "Review and authorize the exact current PDF snapshot before public distribution."
   },
   "authorizations": {
@@ -69,14 +70,22 @@
   },
   "publications": [
     {
+      "id": "articles/faith/against-the-instrumentalists",
+      "catalog": "library/faith.md",
+      "status": "hold",
+      "gates": [
+        "exact-snapshot-authorization"
+      ],
+      "approval": null
+    },
+    {
       "id": "articles/faith/at-the-end-of-every-why",
       "catalog": "library/faith.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "ec7df2ba5a3458b4721a11166e9ebc2b0b529c13a5786da74f843b9e255ff952"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "articles/faith/council-missal-and-crisis",
@@ -99,24 +108,31 @@
       }
     },
     {
+      "id": "articles/faith/in-support-of-the-particular",
+      "catalog": "library/faith.md",
+      "status": "hold",
+      "gates": [
+        "exact-snapshot-authorization"
+      ],
+      "approval": null
+    },
+    {
       "id": "articles/faith/ontological-vertigo",
       "catalog": "library/faith.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "c712e5abe3f944fc78633dfb3861817abdff6eb333c9000079fd7cfbaebd7df2"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "articles/faith/the-due-return",
       "catalog": "library/faith.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "6738115a803abc424c219c0f9545b8458f3bbffbbce962727f7076975bf27bdb"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "articles/faith/trustful-surrender-to-divine-providence",

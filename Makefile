@@ -84,7 +84,7 @@ CODEX ?= /usr/bin/codex
 #     texlive-latexextra texlive-pictures texlive-fontsrecommended
 #     article, geometry, fontenc, inputenc, lmodern, microtype, array,
 #     booktabs, longtable, tabularx, enumitem, needspace, multicol, xcolor,
-#     hyperref, tcolorbox, tikz/PGF, pdflscape, ragged2e and titlesec
+#     hyperref, tcolorbox, tikz/PGF, pdflscape, ragged2e, titlesec and endnotes
 #   PDF metadata/text/raster and bounded PNG/contact-sheet processing:
 #     poppler (pdfinfo, pdftotext, pdftoppm) and imagemagick (magick 7)
 #   repository/review/isolated-agent workflow:

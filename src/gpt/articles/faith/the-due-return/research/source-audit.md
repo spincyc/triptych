@@ -1,6 +1,6 @@
 # Source Audit — The Due Return
 
-The legal currentness audit and core online witnesses were checked through 20 July 2026; the added patristic, conciliar, and Thomistic loci were checked on 21 July 2026. The 22 July 2026 equal-altitude revision changes project-authored framing and transitions but adds no new source or unaudited consequential claim. Public-domain English translations are working witnesses unless otherwise stated. Consequential claims are governed by identified work and exact locus, not by a claim that an online edition is critical or that an English canonical rendering is the authoritative legislative text.
+The legal currentness audit was refreshed through 23 July 2026. The scriptural, sacramental, Christological, Thomistic, Teresian, Benedictine, Carmelite, and Alphonsian loci and the International OCD Foundation clinical-boundary resources added in the present revision were checked on 23 July 2026. Public-domain English translations are working witnesses unless otherwise stated. Consequential claims are governed by identified work and exact locus, not by a claim that an online edition is critical or that an English canonical rendering is the authoritative legislative text.
 
 ## Core claim-to-source matrix
 
@@ -10,6 +10,7 @@ The legal currentness audit and core online witnesses were checked through 20 Ju
 | Christian self-offering follows “by the mercies of God” rather than purchasing mercy and is ordered within the many-membered body in Christ. | Rom 12:1–5. | Scripture; controls the article's movement from prior gift to living sacrifice and its ecclesial form. |
 | Covenant and deliverance precede the Decalogue's imperatives. | Exod 19:3–6; 20:1–17; Deut 5:1–22; CCC 2060–2062, 2084. | Scriptural order and authoritative catechesis. It does not make the commandments optional expressions of gratitude. |
 | The response to divine benefits cannot be equal repayment; it takes the form of receiving the cup, calling on God, vows, thanksgiving, and public worship. | Ps 116:12–19. | Scriptural poetic grammar and the article's reader-facing opening question; the Eucharistic resonance is received typologically, not asserted as the psalm's exhaustive literal sense. |
+| Doing a due act before affection matures is not hypocrisy merely on that account; Christ's two sons are distinguished by action rather than deferential speech. | Matt 21:28–31. | Scriptural governing witness for action before affection. It does not identify external compliance with complete virtue. |
 | Love of God and justice toward the visible neighbor cannot be divided. | Matt 22:34–40; Rom 13:8–10; Jas 1:22–27; 1 John 4:19–21. | Scripture; governs the two directions of the due and prevents cultic reduction. |
 | God did not create or command because he needed human service; service benefits the creature through fellowship with God. | Irenaeus, *Against Heresies* IV.14.1–2. | Patristic witness. It does not reduce worship to subjective therapy or deny real divine excellence. |
 | Sacrifice and observance do not supply a divine need and are falsified when severed from obedience and justice. | Irenaeus, *Against Heresies* IV.17.1; 18.1–6. | Patristic witness within Irenaeus's anti-heretical and salvation-historical argument. |
@@ -21,6 +22,7 @@ The legal currentness audit and core online witnesses were checked through 20 Ju
 | Within prior grace, fear can take form in keeping commandments, obedience in purification, and purification in illumination and desire. | Gregory Nazianzen, *Oration* 39.8–10. | Theophany and baptismal exhortation used as a spiritual grammar, not as earned vision, automatic therapy, or judgment on unsettled readers. |
 | God gives creatures what belongs to their nature and condition within the order of divine wisdom, yet God is not directed to creatures as debtor. | Aquinas, ST I, q. 21, a. 1, ad 2–3; a. 4, ad 4. | Thomistic account of divine justice. Grounds the distinction between no antecedent claim to creation and real derivative dues. |
 | Justice is the stable will to render each one the due; command-necessity differs from constraint and can be voluntarily fulfilled. | Aquinas, ST II–II, q. 58, aa. 1–4, especially a. 3, ad 2. | Thomistic moral analysis. Does not make voluntariness the creator of objective right. |
+| An act's objective order, its virtuous mode, and its supernatural merit must be distinguished. | Aquinas, ST I–II, qq. 18, 65, and 114; II–II, q. 58, a. 1; CCC 2006–2011. | A due act remains a real good before desire is mature. Grace precedes cooperation; initial grace cannot be merited; Christian merit arises from Christ's charity in us. Neither full virtue, merit, nor a person's state of grace is inferred from an exterior act. |
 | Religion renders the special honor due to God as first principle and last end. | Aquinas, ST II–II, q. 81, aa. 1–4. | Thomistic definition. “Religion” is not used as a sociological genus here. |
 | Religion is annexed to justice but cannot achieve absolute equality; faith, hope, and charity can command its acts without being identical to it. | Aquinas, ST II–II, q. 80, a. 1; q. 81, aa. 5–6. | Governs “justice without equivalence” and the series' noncompartmental virtue architecture. |
 | Outward worship adds nothing to God but perfects the worshipper through subjection and employs sensible signs to arouse the inward acts that unite the mind to God. | Aquinas, ST II–II, q. 81, a. 7. | Grounds embodied response without reducing worship to subjective therapy. |
@@ -34,6 +36,14 @@ The legal currentness audit and core online witnesses were checked through 20 Ju
 | Theological hope tends toward beatitude as arduous but possible through divine assistance. | Aquinas, ST II–II, q. 17, aa. 1–2; CCC 1817–1821, 2090–2092. | Hope is distinct from justice and religion; it excludes both despair and presumption. |
 | Justice produces peace indirectly by removing obstacles; charity directly unifies appetite in the beloved good. | Aquinas, ST II–II, q. 29, a. 3, especially ad 3. | Marks the Part II–III boundary: responsive justice orders action, while charity's direct unity remains for Part III. |
 | Charity directs other virtues to the last end and so gives their acts form without abolishing their distinct objects. | Aquinas, ST II–II, q. 23, a. 8; Rom 13:8–10. | Boundary for Part III. The present article does not supply a complete treatise on charity. |
+| Christ acts in the sacraments; for believers the sacraments of the New Covenant are necessary for salvation, and their fruits also depend on the recipient's disposition. | CCC 1127–1129. | Governs the ordinary sacramental means without making sacraments techniques, private achievements, or undifferentiated requirements for every person. |
+| Reconciliation receives pardon and ecclesial reconciliation through Christ's mercy and includes confession, contrition, satisfaction, and amendment. | CCC 1422, 1440–1460. | Bounded sacramental account of the received way back after failures of justice; not a complete sacramental treatise. |
+| Absolution removes sin without necessarily repairing every remaining injury and disorder; satisfaction serves repair and spiritual health and has efficacy through Christ. | CCC 1459–1460, read with CCC 618 and 2006–2011. | Satisfaction is adapted to the penitent and may include prayer, mercy, service, self-denial, and sacrifice. It neither earns initial forgiveness nor supplements a deficiency in Christ's unique atonement. |
+| Mature contemplative prayer issues in works and love of neighbor rather than protected enjoyment of an interior state. | Teresa of Jesus, *Interior Castle* V.3.11–12 and VII.4. | Ecclesially received mystical witness. It displays the lived intelligibility of obligation; it does not create doctrine or promise experience. |
+| Voluntary penance must be governed by obedience, discretion, bodily limits, and freedom from presumption. | Rule of St. Benedict 49; John of the Cross, *Dark Night* I.6. | Monastic and Carmelite witness applied conservatively; no monastic austerity is universalized to lay or active states. |
+| Scrupulosity is not a higher justice; stable spiritual counsel and competent clinical care can have distinct, potentially collaborative roles. | St. Alphonsus, *The True Spouse of Jesus Christ*, ch. 18 §2; International OCD Foundation, Faith and OCD Resource Center, “What Is OCD & Scrupulosity?” and “For Faith Leaders.” | Alphonsus is ascetical witness in a religious context, not clinical protocol or current universal law. The Foundation supplies clinical education, not Catholic doctrine or individual diagnosis. Neither source relaxes known precepts or makes every sensitive conscience disordered. |
+| Christ's healings do not remove all illness; when healing is not given, suffering may be united to his Passion for the good of his Body. | CCC 1505 and 1508, read with CCC 618. | Participation is derivative and wholly within Christ's unique sacrifice. Pain is not thereby good, treatment or disclosure is not forbidden, and suffering is not automatically meritorious. |
+| Christ possesses a complete created human will which freely adheres to the divine saving will; Gethsemane manifests rather than abolishes human freedom. | Luke 22:39–46; CCC 475; Benedict XVI, general audience, 1 Feb. 2012. | Createdness belongs to the assumed human nature and will, never to the divine Person. The culmination neither universalizes physical abnegation nor reduces Christ's unique redemptive act to moral example. |
 | Sunday is the Paschal Lord's Day, fulfillment of the Sabbath's spiritual truth, and a day of public, regular worship. | CCC 2174–2177; *Sacrosanctum Concilium* 106; *Dies Domini* 18–20, 31–34. | Authoritative teaching and liturgical witness. Current juridical effects are checked separately in the Code. |
 | Merely ecclesiastical Latin laws bind the persons identified in CIC c. 11, under the Latin jurisdiction established by c. 1. | CIC cc. 1 and 11. | Current universal Latin law. No Latin-Code conclusion is applied as such to an Eastern Catholic. |
 | Sunday is the universal Latin Church's primordial holy day; certain other holy days can be suppressed or transferred by an episcopal conference with prior Apostolic See approval. | CIC c. 1246 §§1–2. | Current universal Latin law. No national list is inferred without selected particular law. |
@@ -46,7 +56,7 @@ The legal currentness audit and core online witnesses were checked through 20 Ju
 
 ## Scriptural witnesses and use
 
-The article uses Exod 19:3–6 and 20:1–17; Deut 5:1–22; Psalm 116:1–19; Matt 22:34–40; John 14:15; Rom 11:33–12:5 and 13:8–10; Jas 1:22–27; 1 John 4:19–21 and 5:3.
+The article uses Exod 19:3–6 and 20:1–17; Deut 5:1–22; Psalm 116:1–19; Matt 21:28–31 and 22:34–40; Luke 22:39–46; John 14:15; Rom 11:33–12:5 and 13:8–10; Jas 1:22–27; 1 John 4:19–21 and 5:3.
 
 Working English was checked through Holy See-hosted NAB pages:
 
@@ -82,6 +92,7 @@ Particularly controlling loci:
 - ST I–II, q. 100, a. 8: first-table order to God and second-table justice among persons.
 - ST I–II, q. 106, a. 1: the New Law chiefly consists in the inward grace of the Holy Spirit.
 - ST I–II, q. 10, a. 4 and q. 109, a. 6: divine motion preserves the will's voluntary mode, and even free preparation for grace depends upon gratuitous inward motion.
+- ST I–II, q. 18; q. 65; q. 114, especially aa. 2 and 4: an act's object, circumstances, relation to charity, and merit within grace.
 - ST II–II, q. 17, aa. 1–2: hope relies upon divine help for the arduous good of beatitude.
 - ST II–II, q. 23, a. 8: charity gives the other virtues' acts their order to the final end.
 - ST II–II, q. 29, a. 3, ad 3: justice removes obstacles to peace indirectly; charity causes peace directly by unifying desire.
@@ -96,12 +107,29 @@ Particularly controlling loci:
 
 ## Authoritative Catholic witnesses
 
-- *Catechism of the Catholic Church* 1730–1748; 1854–1864; 1950–1974; 2030–2043; 2060–2100; 2168–2195.
+- *Catechism of the Catholic Church* 475; 618; 1127–1129; 1422 and 1440–1460, especially 1459–1460; 1505 and 1508; 1730–1748; 1854–1864; 1950–1974; 2006–2011; 2030–2043; 2060–2100; 2168–2195.
+- Exact official-English pages checked for the present remediation: [CCC 618 on participation in Christ's unique sacrifice](https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/article_4/paragraph_2_jesus_died_crucified.html); [CCC 1459–1460 on satisfaction](https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_4.html); [CCC 1505 and 1508 on illness, healing, and union with Christ](https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_two/article_5/i_its_foundations_in_the_economy_of_salvation.html); and [CCC 2006–2011 on merit](https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_three/article_2/iii_merit.html).
 - Vatican II, *Sacrosanctum Concilium* 7, 10–12, 14, 47–48, 106: <https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html>.
 - Vatican II, *Lumen Gentium* 10–11, 34: <https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html>.
 - John Paul II, *Dies Domini* 6–8, 18–20, 31–34, 46–53: <https://www.vatican.va/content/john-paul-ii/en/apost_letters/1998/documents/hf_jp-ii_apl_05071998_dies-domini.html>.
+- Benedict XVI, general audience on Gethsemane (1 February 2012): <https://www.vatican.va/content/benedict-xvi/en/audiences/2012/documents/hf_ben-xvi_aud_20120201.html>.
 
 These sources teach doctrine and explain Christian practice. The current legal obligation is reproduced from the governing Code rather than inferred from a pastoral or catechetical paraphrase.
+
+## Monastic and mystical witnesses
+
+- Teresa of Jesus, *Interior Castle* V.3.11–12 and VII.4, with the Holy See-hosted excerpt at <https://press.vatican.va/spirit/documents/spirit_20001013_teresa_en.html> and Benedict XVI's catechesis at <https://www.vatican.va/content/benedict-xvi/en/audiences/2011/documents/hf_ben-xvi_aud_20110202.html>. The body paraphrases; no modern translation is reproduced at length.
+- Rule of St. Benedict, ch. 49, public-domain working witness: <https://pressbooks.palni.org/ruleofbenedict/chapter/rb-49/>.
+- John of the Cross, *Dark Night* I.6, David Lewis translation revised by Benedict Zimmerman (1912), public-domain working witness: <https://ccel.org/ccel/john_cross/dark_night.vii.vi.html>.
+- St. Alphonsus Maria de Liguori, *The True Spouse of Jesus Christ*, ch. 18 §2, “On Scruples,” especially “Obedience to the Director Is the Great Remedy Against Scruples,” pp. 545–563, in *The Complete Ascetical Works*, vols. X–XI, Eugene Grimm, trans. and ed. (New York: Benziger Brothers, 1929 combined edition), public-domain working scan: <https://archive.org/details/truespouseofjesu1011stal>. This is ascetical counsel addressed in a religious context; it is not treated as current canon law, a universal rule for every conscience, or a clinical protocol.
+
+## Pastoral and clinical boundary
+
+- International OCD Foundation, Faith and OCD Resource Center: <https://iocdf.org/faith-ocd/>.
+- International OCD Foundation, “What Is OCD & Scrupulosity?”: <https://iocdf.org/faith-ocd/what-is-ocd-scrupulosity/>.
+- International OCD Foundation, “For Faith Leaders”: <https://iocdf.org/faith-ocd/for-faith-leaders/>.
+
+These pages were checked on 23 July 2026. They identify scrupulosity as an OCD presentation, distinguish ordinary spiritual doubt from a compulsive pursuit of certainty, name repeated reassurance and excessive confession among possible compulsions, and describe distinct, potentially collaborative roles for faith leaders and mental-health clinicians. They are current clinical-education resources, not Catholic doctrinal or canonical authority, an individual diagnosis, or warrant to relax known religious standards. The article does not adopt their broader value or feeling language as a Catholic moral criterion.
 
 ## Current universal Latin law
 
@@ -115,7 +143,7 @@ The controlling legal audit is recorded in `current-law-matrix.md`. Principal on
 - Code and amendment archive: <https://press.vatican.va/archive/cdc/index.htm>
 - Authentic interpretations: <https://www.vatican.va/roman_curia/pontifical_councils/intrptxt/documents/rc_pc_intrptxt_doc_20020604_interpretationes-authenticae_lt.html>
 
-No located amendment or authentic interpretation changed CIC cc. 1246–1248 through the cutoff. No particular territorial law was selected or checked.
+No located amendment or authentic interpretation changed CIC cc. 1246–1248 through 23 July 2026. No particular territorial law was selected or checked.
 
 ## Consequential negative results and rejected formulations
 
@@ -125,6 +153,9 @@ No located amendment or authentic interpretation changed CIC cc. 1246–1248 thr
 - Rejected: “The living sacrifice is an autonomous creaturely offering alongside Christ's.” Christian self-offering depends wholly upon and is incorporated into the prior oblation of Christ the High Priest and Victim.
 - Rejected: “Religion is the theological virtue that loves God.” In Aquinas religion is a moral virtue annexed to justice; charity is distinct and can command it.
 - Rejected: “Obligation means coercion.” Aquinas distinguishes command-necessity from constraint.
+- Rejected: “An act performed before affection is mature is necessarily hypocritical.” The deed can be objectively due and freely chosen while virtue remains incomplete; pretense, not imperfect affection as such, constitutes the hypocrisy at issue.
+- Rejected: “External observance proves virtue or supernatural merit.” Neither the agent's full moral mode nor the state of grace is inferred from the exterior act.
+- Rejected: “Creaturely merit gives God a strict claim arising independently of grace” and “a good exterior act necessarily merits.” CCC 2006–2011 places God's gratuitous initiative before human cooperation, denies merit of initial grace, and locates Christian merit in Christ's charity.
 - Rejected: “The Decalogue is either only natural law or only arbitrary revelation.” Its moral precepts express natural moral order and are divinely revealed within covenant.
 - Rejected: “Natural law by itself specifies attendance at the Catholic Eucharist on Sunday.” It grounds worship generically; Christian revelation, apostolic tradition, and ecclesiastical law supply determinate form.
 - Rejected: “The Ten Commandments and the Sunday precept have the same source and juridical status.” Their relations and authority levels differ.
@@ -132,10 +163,17 @@ No located amendment or authentic interpretation changed CIC cc. 1246–1248 thr
 - Rejected: “Every Catholic everywhere has the same list of holy days beyond Sunday.” CIC c. 1246 §2 makes approved conference determinations material.
 - Rejected: “The Latin canons govern Eastern Catholics.” CIC c. 1 excludes that application.
 - Rejected: “Attendance and reception of Communion are the same obligation.” CIC cc. 912–923 separately govern reception.
+- Rejected: “Private sincerity can replace the sacramental life.” The sacraments are Christ's received ecclesial means; their differentiated necessity and fruitful reception remain governed by Catholic doctrine and discipline.
+- Rejected: “Sacramental satisfaction earns forgiveness” and “human penance completes something missing in Christ's atonement.” CCC 1459–1460 distinguishes absolution from remaining repair and locates Christian satisfaction wholly through Christ.
 - Rejected: “Any absence is mortal sin.” CCC 2181 requires deliberate failure without serious reason, and CCC 1857–1861 requires grave matter, full knowledge, and deliberate consent.
 - Rejected: “A serious reason is a dispensation.” Excuse, impossibility, dispensation, and commutation have distinct sources and effects.
 - Rejected: “Violation of c. 1247 automatically creates a canonical delict or penalty.” No penal effect is inferred without a controlling penal norm and facts.
 - Rejected: “Grace makes obedience unnecessary” and “grace replaces the human act.” The New Law heals and enables free creaturely agency.
+- Rejected: “Penance is measured by severity.” Benedict and John of the Cross subordinate voluntary austerity to obedience, discretion, bodily limits, and charity.
+- Rejected: “Chosen penance justifies leaving preventable suffering or injustice untouched.” Remediable evil remains an object of virtuous action.
+- Rejected: “Suffering is automatically meritorious,” “pain is good in itself,” and “union with Christ forbids treatment or disclosure.” CCC 618, 1505, and 1508 permit derivative participation within Christ's unique sacrifice; merit still presupposes grace and charity, while preventable harm remains to be resisted.
+- Rejected: “Every sensitive conscience is clinically scrupulous,” “a clinical resource can settle Catholic doctrine,” and “religious counsel alone excludes competent OCD treatment.” The article keeps spiritual direction, doctrinal authority, and clinical competence distinct while allowing responsible collaboration.
+- Rejected: “Gethsemane abolishes Christ's human will” and “all freedom must imitate its physical suffering.” Catholic Christology affirms a complete created human will freely adhering to the divine will; createdness belongs to the assumed humanity, not the divine Person, and the article universalizes filial consent rather than a material form of abnegation.
 - Rejected: “Charity begins only after justice ends.” Charity perfects and commands justice without abolishing its due.
 - Rejected: “Sunday worship is prescribed as emotional regulation.” Its truth, good, and formal effects do not guarantee sensible calm or make continuing disturbance proof of bad faith.
 - Rejected: “Resolution means less dependence.” The response makes action agree with asymmetric dependence; hope deepens the recognition that even the power to answer is received.
@@ -143,6 +181,6 @@ No located amendment or authentic interpretation changed CIC cc. 1246–1248 thr
 
 ## Rights and review record
 
-Quotations are short and claim-driven. Scripture, official texts, patristic translations, Thomistic translations, and source wrappers retain their own status and are not relicensed under the project's CC BY 4.0 grant. No modern commentary is quoted or closely paraphrased.
+Quotations are short and claim-driven. Scripture, official texts, patristic translations, Thomistic translations, current clinical resources, and source wrappers retain their own status and are not relicensed under the project's CC BY 4.0 grant. The 1929 Alphonsus edition is used as a public-domain working witness. International OCD Foundation pages are paraphrased without direct quotation. No modern commentary is quoted or closely paraphrased.
 
-Completed for the current source tree: exact-locus source audit; natural/divine/ecclesiastical-law boundary audit; jurisdiction and currentness check; objective-obligation/culpability audit; negative-claim and rights review; confirmation that the oriented Psalm 116 frame and closing return remain within the already audited locus and use; trilogy-wide equal-altitude, argumentative-seam, literary, build, log, structural, metadata, extracted-text, pagination, deterministic-rebuild, bounded-raster, and all-page visual review. Exact installed-artifact data are recorded in the scope file; no release clearance is claimed. Independent specialist and ecclesiastical review remain outstanding.
+Completed for the current source tree: exact-locus source audit; natural/divine/ecclesiastical-law boundary audit; jurisdiction and currentness check through 23 July 2026; objective-act/virtue/merit, satisfaction, suffering, and obligation/culpability audits; sacramental, ascetical, mystical-witness, Christological, Alphonsian, and IOCDF clinical-boundary review; negative-claim and rights review; and internal trilogy-wide rhetorical and source-consistency review. It also received a settled build, clean log and PDF checks, extracted-text review, bounded raster and contact-sheet review, individual inspection of all 18 pages, exact deterministic-rebuild comparison, and installation. The installed artifact and hash are recorded in the scope file. It remains on hold pending renewed exact-snapshot authorization; no release clearance is claimed. Independent specialist and ecclesiastical review remain outstanding.
