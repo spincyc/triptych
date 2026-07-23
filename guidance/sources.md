@@ -298,6 +298,29 @@ Migrate through a dual-record period:
 6. retain local roles, interpretations, limits, and consequential negative
    results permanently.
 
+The migration inventory is a separate audit contract, not a source-manifest
+record type and not an extension of frozen source schema version 1. It must
+enumerate the exact `main.tex` publication universe, explicit nonpublication
+research owners, inherited and mixed ownership edges, and the complete textual
+authoring surface outside global typesetting primitives, each with a content
+hash. This conservative superset includes legacy source-bearing records and
+rendered claim surfaces. It may preserve legacy words such as
+“checked” or “verified” as quoted audit history, but its own states must not
+promote them into source-library evidence states.
+
+Classify inventory candidates on independent axes: intellectual source family,
+identity confidence, artifact availability, mutability, rights-review state,
+evidence ceiling, and migration disposition. Access hosts are delivery routes,
+not source families. Exact URL, DOI, title, or byte-hash clusters are discovery
+evidence only; merge them into one work or edition only after the identity has
+been reviewed. Ambiguity is a valid inventory result and must remain visible.
+
+An inventory is complete structurally when every publication and source-bearing
+record is represented and its snapshot replays. That does not mean every
+citation has been semantically disaggregated, every edition identified, every
+artifact acquired, or every claim verified. Close those dimensions explicitly
+through reviewed source-family dispositions and publication bindings.
+
 Keep a structural migration separate from any substantive correction it
 uncovers. A wrong locus, attribution, quotation, legal state, or theological
 claim receives its own source-aware content revision and every profile-required

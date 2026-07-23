@@ -8,6 +8,11 @@ Publication-local interpretations and evidence judgments do not move here.
 They remain in each publication's research records and are connected to this
 library through `research/source-bindings.toml`.
 
+Migration coverage under `inventories/` has its own audit schema and checker.
+It inventories legacy records and ownership without turning their prose labels
+into source-manifest evidence; see
+[`inventories/README.md`](inventories/README.md).
+
 The source manifests use schema version 1, frozen on 2026-07-22 after the
 complete-source City of God tracer and its consumer, rights, query, and impact
 reviews. During migration, `scripts/source-library validate` checks only
