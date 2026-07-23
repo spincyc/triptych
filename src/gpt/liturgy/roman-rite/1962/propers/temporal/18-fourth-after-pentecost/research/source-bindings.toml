@@ -52,3 +52,21 @@ role = "textual-control"
 states = ["cataloged", "acquired", "inspected"]
 context = "The complete Latin TEI chapter and apparatus were read to control the wording behind the analogue. The key phrase crosses XML lines, and the inspection is not represented as page-image collation or direct commentary on the Collect."
 source_fingerprint = "sha256:43591ddff880bb6f2748e7ee97d63a72f4efb2a2dceac755415629547af7643a"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+loci = ["Fourth Sunday after Pentecost formulary, printed pages 382-383, PDF pages 463-464"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact CMAA-hosted facsimile of the 1962 Vatican typical edition is the baseline witness visually collated for the complete appointed formulary."
+verified_on = "2026-07-14"
+source_fingerprint = "sha256:6b4dcd3ee771d6d92734992ecabfe09b289235954e963afcf523fc8f8ee9b12d"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu"
+loci = ["Fourth Sunday after Pentecost formulary, printed pages 376-377, DjVu pages 453-454"]
+role = "analogue"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact Internet Archive DjVu of the 1962 Benziger edition was compared as a secondary image witness; its variants and distinct pagination do not control the Vatican typical-edition transcription."
+verified_on = "2026-07-14"
+source_fingerprint = "sha256:8f68b01f48faa23fbd6fb830e8e7e5008a5e7aec2289ee37506b617d02cd515a"

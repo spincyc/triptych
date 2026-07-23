@@ -1,0 +1,10 @@
+schema = 1
+record_type = "bindings"
+document = "liturgy/roman-rite/comparative/two-missals-one-sacrifice"
+
+[[bindings]]
+source_id = "edition.catholic-church.missale-romanum.vatican-typica-1962"
+loci = ["Order of Mass", "Rubricae generales and Ritus servandus", "Calendarium Romanum", "Decree inserting Saint Joseph into the Canon"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The comparative publication's legacy edition manifest identifies the 1962 Vatican typical edition as the control for its treatment of the Order, rubrics, calendar, and Saint Joseph decree, but does not pin the exact consulted bytes with a recorded hash; this is therefore catalog-only."
