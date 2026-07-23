@@ -104,4 +104,19 @@ Particularly controlling distinctions:
 
 Quotations are brief and necessary to the argument. Official texts, patristic wording, and third-party translations retain their own status and are not relicensed by the project's CC BY 4.0 grant. Lewis is paraphrased without reproducing his wording. The source record links to online witnesses but incorporates no scan, wrapper, bulk transcription, image, or source typesetting.
 
-Completed for the underlying Part I argument: exact-locus checks for the First Way, divine motion and sinful defect, humility–magnanimity, divine will, divine justice, divine love, the natural-reason boundary, Augustinian arrest, Dionysian apophatic restraint, and the Lewis claim; historical-boundary review; separate internal philosophical, theological, patristic, apologetic, and literary consultation; and rights review for the focused Lewis paraphrase. The present revision received fresh epistemic-order, source-consistency, source-to-note, reference-completeness, argumentative-seam, and series-coherence review. It also received a settled build, clean log and PDF checks, extracted-text review, bounded raster and contact-sheet review, individual inspection of all 13 pages, exact deterministic-rebuild comparison, and installation. The installed artifact and hash are recorded in the scope file. It remains on hold pending renewed exact-snapshot authorization; no release clearance is claimed. Independent specialist and ecclesiastical review remain outstanding.
+Completed for the underlying Part I argument: exact-locus checks for the First
+Way, divine motion and sinful defect, humility–magnanimity, divine will, divine
+justice, divine love, the natural-reason boundary, Augustinian arrest,
+Dionysian apophatic restraint, and the Lewis claim; historical-boundary review;
+separate internal philosophical, theological, patristic, apologetic, and
+literary consultation; and rights review for the focused Lewis paraphrase. The
+present revision received fresh epistemic-order, source-consistency,
+source-to-note, reference-completeness, argumentative-seam, and
+series-coherence review. It also received a settled build, clean log and PDF
+checks, extracted-text review, bounded raster and contact-sheet review,
+individual inspection of all 13 pages, exact deterministic-rebuild comparison,
+and installation. The installed artifact and hash are recorded in the scope
+file. The 23 July 2026 exact-byte exception release-clears only those immutable
+installed bytes. Independent specialist and ecclesiastical review remain
+outstanding; the exception supplies none of that review or any ecclesiastical
+approval.

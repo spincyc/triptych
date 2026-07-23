@@ -69,5 +69,10 @@ Scripture, official texts, patristic and mystical wording, and third-party trans
 
 - Completed for this source revision: profile routing; source selection; exact-locus checks for the new prayer, Eucharist, Gethsemane, dryness, Thérèse, suffering, and merit-within-grace claims; retention and rechecking of the established charity, friendship, filial-fear, Bernard, and John-of-the-Cross claims; Scripture-quotation audit; private-revelation exclusion audit; severe-asceticism prudential-boundary audit; doctrinal-boundary, argument-chain, rhetorical, endnote, rights, and source-record consistency review.
 - Current artifact record: the revised source received a settled multipass build; clean fatal-error, undefined-reference, overflow, underflow, and layout-warning scans; extracted-text, metadata, pagination, PDF-structure, and embedded-font checks; bounded raster and contact-sheet review; and individual visual inspection of all 14 pages. A forced rebuild reproduced the reviewed bytes exactly. The installed PDF at `doc/gpt/articles/faith/at-the-end-of-every-why.pdf` has SHA-256 `a333a75c01f9fe003c8ba4e652c5b816ee61ba19a5cafecf377997d2012897be`.
-- Publication state: the installed snapshot is cataloged and remains on hold in the public-alpha manifest pending renewed exact-snapshot authorization. No release clearance is claimed.
+- Publication state: the exact installed snapshot is cataloged and
+  release-cleared under the 23 July 2026 exact-byte exception. Its immutable
+  rendered Scope appendix necessarily retains the conservative hold and
+  no-clearance wording finalized before that authorization; current
+  operational status is controlled by `release/public-alpha.json`, the dated
+  rights record, and this non-rendered audit record.
 - Outstanding: independent moral-theological, Thomistic, mystical-theological, sacramental, pastoral, literary, and ecclesiastical review. No imprimatur, nihil obstat, or ecclesiastical approval is claimed.

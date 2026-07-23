@@ -104,9 +104,11 @@ text checks, and duplex results are recorded in `production-manifest.md`; they
 are not independently reasserted by this source audit. These internal checks
 are not an independent approval.
 
-Before public release, an independent reviewer should check the complete
-response collation, the Roman-pronunciation details, both ceremonial routes,
-the educational suitability for ages eight to fourteen, the rights treatment,
-and ecclesiastical suitability. Particular attention should be given to
-Michaeli, adhuc, totiusque, Kyrie eleison, doubled consonants, sanctuary
-reverences, torch departure branches, and every site-dependent handoff.
+Outstanding independent maturity review should check the complete response
+collation, the Roman-pronunciation details, both ceremonial routes, the
+educational suitability for ages eight to fourteen, the rights treatment, and
+ecclesiastical suitability. Particular attention should be given to Michaeli,
+adhuc, totiusque, Kyrie eleison, doubled consonants, sanctuary reverences,
+torch departure branches, and every site-dependent handoff. The 23 July 2026
+exact-byte exception release-clears only the six immutable installed PDF
+hashes despite those outstanding matters; it does not complete or waive them.

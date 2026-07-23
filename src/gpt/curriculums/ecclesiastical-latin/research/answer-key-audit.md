@@ -6,9 +6,12 @@
 - **Object:** the authoritative memory, reading, composition, worksheet,
   cumulative-practice, self-review, and answer sources for the redesigned
   Ecclesiastical Latin curriculum.
-- **Publication state:** source redesign complete as an installed,
-  unreleased 37-PDF set; build, exact every-page review, and installed-mirror
-  verification are recorded separately in `production-manifest.md`.
+- **Publication state at audit completion:** source redesign complete as an
+  installed, unreleased 37-PDF set; build, exact every-page review, and
+  installed-mirror verification are recorded separately in
+  `production-manifest.md`.
+- **Current release state:** the separate 23 July 2026 exact-byte exception
+  release-clears only those 37 exact installed hashes.
 
 Prompts and answers are not maintained as parallel manuscripts. The same
 source environment renders once with answers closed and again with answers
@@ -109,5 +112,7 @@ evidence questions.
 No claim is made here that an independent Latinist has completed a full
 content review or that long-term use has established the workload. PDF build,
 log, rendered-structure, exact every-page visual, and installed-mirror results
-belong in `production-manifest.md`. The redesigned PDFs are installed but
-remain unreleased on explicit hold.
+belong in `production-manifest.md`. At this audit's completion, the redesigned
+PDFs were installed but remained unreleased on explicit hold. The separate 23
+July 2026 exact-byte exception now release-clears only their immutable
+installed hashes; it supplies no missing Latin, rights, or independent review.

@@ -14,8 +14,9 @@
   workbook whenever additional handwritten returns or a complete answer set
   are useful
 - **Pacing:** self-paced by study event; qualitative readiness only
-- **Publication state:** exact 758-page reviewed build installed; release is
-  on hold and independent review remains pending
+- **Publication state:** exact 758-page reviewed build installed and
+  release-cleared by the 23 July 2026 exact-byte exception; independent review
+  remains pending
 
 Course-wide edition, passage, answer, rights, and review decisions remain in
 the owner root's `research/` records. The owner-level lexicon inventory records

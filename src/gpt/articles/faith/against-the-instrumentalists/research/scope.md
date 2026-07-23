@@ -56,4 +56,12 @@ Completed: claim-driven source review; distinction audit for instrumentalism, sc
 
 Production completed: settled multipass build; clean fatal-error, undefined-reference, overflow, underflow, and layout-warning scans; extracted-text, metadata, pagination, PDF-structure, and embedded-font checks; bounded raster and contact-sheet review; and individual visual inspection of all 9 pages. A forced rebuild reproduced the reviewed bytes exactly. The installed PDF at `doc/gpt/articles/faith/against-the-instrumentalists.pdf` has SHA-256 `3bb2998cc1bc07d2e9e4d6358f9bb9470399fdf81f3a09294c3a2d47737e9d91`.
 
-The installed snapshot is cataloged and remains on hold in the public-alpha manifest pending exact-snapshot authorization. Outstanding: independent philosophy-of-science, metrological, Thomistic, theological, literary, scientific, and ecclesiastical review. No release clearance, imprimatur, nihil obstat, or ecclesiastical approval is claimed.
+The exact installed snapshot is cataloged and release-cleared under the 23 July
+2026 exact-byte exception. Its immutable rendered Scope appendix necessarily
+retains the conservative hold and no-clearance wording finalized before that
+authorization; current operational status is controlled by
+`release/public-alpha.json`, the dated rights record, and this non-rendered
+audit record. Outstanding: independent philosophy-of-science, metrological,
+Thomistic, theological, literary, scientific, and ecclesiastical review. No
+imprimatur, nihil obstat, ecclesiastical approval, broader reuse permission, or
+completion of independent review is claimed.

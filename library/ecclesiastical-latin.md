@@ -20,12 +20,13 @@ morphological, construction, reconstruction, and composition retrieval.
 The reorganized edition is installed as 37 exact reviewed PDFs: three course
 companions, 22 common-trunk packets, eight advanced-poetry packets, and four
 cumulative self-reviews, totalling 2,068 pages. These snapshots replace the 52
-installed PDFs of the superseded edition. They remain on release hold; install
-and catalog linkage do not grant public-distribution clearance. Internal
-source, structure, answer, build, and visual review does not constitute
-independent Latin, pedagogical, liturgical, textual, theological, canonical,
-rights, or ecclesiastical review; the recorded donor, collation, and
-received-text rights limits remain operative.
+installed PDFs of the superseded edition. Their exact current bytes are
+release-cleared by the 23 July 2026 exact-current-snapshot exception. That
+distribution exception does not constitute independent Latin, pedagogical,
+liturgical, textual, theological, canonical, rights, or ecclesiastical review;
+the recorded donor, collation, and received-text rights limits remain
+operative, and no donor ownership, general license, or permission to extract
+donor or liturgical wording is claimed.
 
 ## Course companions
 

@@ -82,4 +82,14 @@ Quotations are short and claim-driven. Scripture, official texts, patristic and 
 
 Completed for this source revision: exact-locus checks; prayer/providence, Eucharist, Gethsemane, dryness, suffering, merit-within-grace, participation, severe-asceticism-boundary, and neighbor audits; Scripture-quotation check; private-revelation exclusion check; rights and source-record consistency review; and internal doctrinal-boundary, argument-chain, literary, and endnote review.
 
-The revised source also received a settled build, clean log and PDF checks, extracted-text review, bounded raster and contact-sheet review, individual inspection of all 14 pages, exact deterministic-rebuild comparison, and installation. The installed artifact and hash are recorded in the scope file. It remains on hold pending renewed exact-snapshot authorization. Independent specialist and ecclesiastical review remain outstanding; no release clearance or ecclesiastical approval is claimed.
+The revised source also received a settled build, clean log and PDF checks,
+extracted-text review, bounded raster and contact-sheet review, individual
+inspection of all 14 pages, exact deterministic-rebuild comparison, and
+installation. The installed artifact and hash are recorded in the scope file.
+The 23 July 2026 exact-byte exception release-clears only those immutable
+installed bytes. The PDF necessarily retains its conservative
+preauthorization hold and no-clearance wording; the manifest, dated rights
+record, and non-rendered audit records control its later operational status.
+Independent specialist and ecclesiastical review remain outstanding; no
+imprimatur, nihil obstat, ecclesiastical approval, broader reuse permission, or
+completion of independent review is claimed.

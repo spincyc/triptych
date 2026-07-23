@@ -116,13 +116,15 @@ The reviewed files are installed at:
 ## Release state
 
 Technical completion and installation do not authorize public distribution.
-All six entries remain `hold` in `release/public-alpha.json`, with null
-approval. Each companion inherits the same release boundary as its matching
-full guide. Independent liturgical and ceremonial accuracy,
-Ecclesiastical-Latin pronunciation, age-appropriate pedagogy, rights, and
-ecclesiastical-suitability review remain outstanding, as does authorization
-of the exact PDF snapshot.
+At this production record's 22 July cutoff, all six entries remained `hold` in
+`release/public-alpha.json`, with null approval, and each companion inherited
+the same release boundary as its matching full guide. Independent liturgical
+and ceremonial accuracy, Ecclesiastical-Latin pronunciation, age-appropriate
+pedagogy, rights, and ecclesiastical-suitability review remain outstanding.
 
-The public-alpha policy therefore remains intentionally fail-closed for this
-unapproved revision. The earlier authorization and approved site-source
-hashes were not changed.
+At that cutoff the public-alpha policy therefore failed closed for the
+unapproved revision and the earlier authorization and approved site-source
+hashes were unchanged. The separate 23 July 2026 exact-byte exception now
+binds all six exact PDF hashes and the current recognized site inputs. It
+release-clears only those immutable bytes and supplies no missing rights
+analysis, review, or ecclesiastical approval.
