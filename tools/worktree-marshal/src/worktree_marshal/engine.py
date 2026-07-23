@@ -37,10 +37,14 @@ from .git import (
     sanitized_git_environment as _sanitized_git_environment,
 )
 from .model import (
+    ABORTED_INTEGRATION_ARCHIVE_FIELDS as _ABORTED_INTEGRATION_ARCHIVE_FIELDS,
+    INTEGRATION_TRANSACTION_FIELDS,
     MANAGED_CONFLICT_STATES,
+    MANUAL_LANDING_CHECKPOINT_FIELDS,
     RETIREMENT_PENDING_STATES,
     RUN_STATES,
     is_run_state,
+    restore_integration_transaction as _restore_integration_transaction,
 )
 from .profiles import (
     BUILTIN_PROFILES,
@@ -76,42 +80,6 @@ RETIREMENT_TIMESTAMP_FIELDS = (
     "retirement_ref_transaction_committed_at",
     "retirement_receipt_removed_at",
     "retirement_completed_at",
-)
-MANUAL_LANDING_CHECKPOINT_FIELDS = (
-    "integration_manual_landing_started_at",
-    "integration_landing_expected_head",
-    "integration_landing_candidate_head",
-    "integration_landing_started_at",
-)
-INTEGRATION_TRANSACTION_FIELDS = (
-    "integration_source_head",
-    "integration_target_head",
-    "integration_candidate_head",
-    "integration_conflict_head",
-    "integration_conflict_commit",
-    "integration_conflict_paths",
-    "integration_unmerged_paths",
-    "integration_allowed_staged_paths",
-    "integration_protected_index_paths",
-    "integration_protected_index_hash",
-    "integration_rebase_metadata_hash",
-    "integration_conflicted_at",
-    "integration_conflict_error",
-    "integration_resolution_staged_at",
-    "integration_resolver_scope_error",
-    "integration_continue_started_at",
-    "integration_manual_resolution",
-    *MANUAL_LANDING_CHECKPOINT_FIELDS,
-    "integration_abort_mode",
-    "integration_abort_started_at",
-    "integration_rollback_started_at",
-    "integration_target_mismatch_head",
-    "integration_target_mismatch_at",
-    "integration_target_verification_error",
-    "integration_started_at",
-    "integration_source_anchor_created",
-    "integration_rebased_at",
-    "integration_previous_state",
 )
 MAX_ADMIN_FILE_BYTES = 16 * 1024 * 1024
 MAX_ADMIN_TREE_BYTES = 64 * 1024 * 1024
@@ -2747,26 +2715,19 @@ def target_head_containing_commit(
 
 
 def clear_integration_transaction(manifest: dict) -> None:
-    previous_state = manifest.get("integration_previous_state")
-    for field in INTEGRATION_TRANSACTION_FIELDS:
-        manifest.pop(field, None)
-    manifest["state"] = previous_state if isinstance(previous_state, str) else "preserved"
+    _restore_integration_transaction(
+        manifest,
+        transaction_fields=INTEGRATION_TRANSACTION_FIELDS,
+        archive_fields=(),
+    )
 
 
 def archive_aborted_integration(manifest: dict) -> None:
-    previous_state = manifest.get("integration_previous_state")
-    for current, archived in (
-        ("integration_source_head", "last_integration_source_head"),
-        ("integration_target_head", "last_integration_target_head"),
-        ("integration_candidate_head", "last_integration_candidate_head"),
-        ("integration_conflict_paths", "last_integration_conflict_paths"),
-    ):
-        value = manifest.get(current)
-        if value is not None:
-            manifest[archived] = value
-    for field in INTEGRATION_TRANSACTION_FIELDS:
-        manifest.pop(field, None)
-    manifest["state"] = previous_state if isinstance(previous_state, str) else "preserved"
+    _restore_integration_transaction(
+        manifest,
+        transaction_fields=INTEGRATION_TRANSACTION_FIELDS,
+        archive_fields=_ABORTED_INTEGRATION_ARCHIVE_FIELDS,
+    )
     manifest["last_integration_aborted_at"] = utc_now()
 
 

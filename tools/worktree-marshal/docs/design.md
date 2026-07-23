@@ -15,17 +15,19 @@ arbitrary executable is not equivalent support.
 
 ## Intended package boundaries
 
-The current package deliberately keeps lifecycle transitions in one shared
-`engine.py`. `cli.py` owns the installed grammar, `profiles.py` owns immutable
-durable identities, `git.py` now owns only the cycle-free Git policy kernel,
-`model.py` now owns only the exact state vocabulary and pure classifier, and
-`triptych_compat.py` binds the frozen adapter. The rest of the engine will be
-separated behind these modules only after parity tests protect each seam:
+The current package deliberately keeps lifecycle transition selection,
+validation, persistence, and orchestration in one shared `engine.py`. `cli.py`
+owns the installed grammar, `profiles.py` owns immutable durable identities,
+`git.py` now owns only the cycle-free Git policy kernel, `model.py` now owns
+the exact state vocabulary, pure classifier, and I/O-free
+integration-transaction restoration transform, and `triptych_compat.py` binds
+the frozen adapter. The rest of the engine will be separated behind these
+modules only after parity tests protect each seam:
 
 ```text
 worktree_marshal/
   cli.py                 command parsing and stable exit behavior
-  model.py               state vocabulary now; typed records and transitions later
+  model.py               state vocabulary and transaction restoration now
   state.py               private paths and durable manifest writes
   locks.py               repository and per-run locking
   git.py                 Git policy now; hardened invocation and ref transactions later
@@ -40,9 +42,9 @@ worktree_marshal/
   resources/             generated integration assets such as the Make fragment
 ```
 
-Integration, conflict, and retirement transitions remain together until their
+Integration, conflict, and retirement workflows remain together until their
 durable invariants have direct state-machine tests. File boundaries are not a
-reason to weaken an atomic transition.
+reason to weaken an atomic lifecycle operation.
 
 ## Trust model
 
@@ -83,21 +85,30 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with two behavior-preserving boundaries. The pure Git policy
+has begun step 5 with three behavior-preserving boundaries. The pure Git policy
 kernel now transforms an explicit environment mapping and Git argument
 sequence in `git.py`; `engine.py` retains its optional environment-acquisition
 wrapper and all executable discovery, subprocess, lock inheritance, repository
-authentication, configuration probing, ref transactions, and lifecycle state.
+authentication, configuration probing, ref transactions, and lifecycle
+orchestration.
 The second cycle-free boundary places the exact durable state vocabulary, the
 existing retirement-pending and managed-conflict families, and a pure
 classifier in `model.py`. Manifest validation uses that predicate while
-retaining its exact diagnostics and engine-global rebinding behavior. State
-assignment, a transition graph, typed run records, checkpoint validation, and
-all recovery choices remain in `engine.py`. Direct tests freeze both extracted
-policies, their compatibility surfaces, artifact inclusion, and the existing
-dynamic restoration of every vocabulary value currently accepted in
-`integration_previous_state` before any graph is introduced. The Make API and
-legacy contract are frozen; the shared engine is
+retaining its exact diagnostics and engine-global rebinding behavior. The
+third boundary moves the ordered integration-transaction and manual-landing
+field inventories plus their deterministic in-place clear/archive transform
+into `model.py`. Engine wrappers retain their existing signatures, pass their
+current field inventories explicitly, acquire the abort timestamp only after
+the transform, and continue to own transition selection, validation, durable
+writes, and recovery. The transform deliberately preserves the existing
+direct-call behavior of restoring any string previous state; manifest loading
+still validates durable states separately. A transition graph, typed run
+records, checkpoint validation, and all recovery choices remain deferred.
+Direct tests freeze all three extracted boundaries, their compatibility
+surfaces, artifact inclusion, field order, operation and archive-timestamp
+failure ordering, and the dynamic restoration of every vocabulary value
+currently accepted in `integration_previous_state` before any graph is
+introduced. The Make API and legacy contract are frozen; the shared engine is
 co-located behind the thin `scripts/triptych-codex` bootstrap; wheel and source
 artifacts are built, a wheel is rebuilt from the extracted source artifact,
 and that wheel is installed and checked outside the source checkout without

@@ -5,9 +5,10 @@ Transactional Git worktrees for coding agents.
 ## Extraction status
 
 This directory contains the shared lifecycle engine, its first extracted
-cycle-free Git policy and durable-state vocabulary seams, its first generic
-profile, the frozen Triptych compatibility adapter, the Python distribution,
-and the Make integration fragment. The repository-local
+cycle-free Git policy, durable-state vocabulary, and integration-transaction
+restoration seams, its first generic profile, the frozen Triptych
+compatibility adapter, the Python distribution, and the Make integration
+fragment. The repository-local
 [`scripts/triptych-codex`](../../scripts/triptych-codex) command is a thin,
 in-process bootstrap for the co-located package engine.
 
@@ -108,9 +109,10 @@ worktree-removal or ref-transaction failures, receipt recovery, garbage
 collection, or concurrent retirement. Those retirement cases, broader crash
 and race recovery, broader security coverage, the complete installed lifecycle
 matrix, and the supported Python and Git CI matrix remain release gates; the
-first two step-5 seams are protected by the source and installed parity suites,
-and each remaining helper boundary still requires its own direct parity
-coverage.
+first three step-5 seams are protected by direct source tests and artifact
+provenance, and the installed abort checkpoint covers archived transaction
+restoration. Each remaining helper boundary still requires its own direct
+parity coverage.
 
 Step 5 has begun narrowly: [`git.py`](src/worktree_marshal/git.py) owns only
 the deterministic environment and argument transforms plus their fixed policy
@@ -119,12 +121,16 @@ wheel and source-distribution presence.
 
 [`model.py`](src/worktree_marshal/model.py) now owns the exact durable state
 vocabulary, its two existing pending-state families, and the pure predicate
-used by manifest validation. It does not yet own typed run records or a
-transition graph, and no state mutation or recovery decision moved out of
-`engine.py`. Executable discovery, subprocess execution, inherited locks,
-repository authentication, effective-configuration probing, ref transactions,
-and every lifecycle transition also remain together there. The frozen legacy
-contract and current security boundary are recorded in
+used by manifest validation. It also owns the ordered integration-transaction
+field inventories and the deterministic in-place transform used to clear or
+archive a transaction and restore its recorded prior state. The existing
+engine wrappers still choose when to apply that transform, acquire the archive
+timestamp afterward, and own validation, persistence, and recovery. Typed run
+records and transition-graph enforcement remain deferred. Executable
+discovery, subprocess execution, inherited locks, repository authentication,
+effective-configuration probing, ref transactions, and lifecycle
+orchestration also remain together in `engine.py`. The frozen legacy contract
+and current security boundary are recorded in
 [`docs/compatibility-contract.md`](docs/compatibility-contract.md); the target
 architecture and release sequence are in [`docs/design.md`](docs/design.md).
 
