@@ -35,14 +35,33 @@ The structural baseline is created and checked with:
 ```sh
 scripts/source-inventory bootstrap \
   src/sources/inventories/publications-v1.toml --audited-on YYYY-MM-DD
+scripts/source-inventory bootstrap-classification-review \
+  src/sources/inventories/classification-review-v1.toml \
+  --audited-on YYYY-MM-DD
+scripts/source-inventory classify
 scripts/source-inventory check
 ```
 
 `bootstrap` deliberately begins every publication at `records-enumerated` with
 an `unresolved` source category. It is a trace-bullet generator, not a semantic
 classifier, and must not overwrite a reviewed inventory without examining the
-diff. `check` is read-only and validates the tracked review state as well as its
-current paths and hashes.
+diff. `classify` requires the exact publication set pinned in
+`classification-review-v1.toml`, applies the broad source strata recorded there
+for each exact publication, and fails closed if a new publication has not been
+added to that review checkpoint. Bootstrapping a new checkpoint emits an
+`unresolved` row for every publication. Refreshing an existing checkpoint
+preserves its reviewed rows, drops publications no longer present, and adds
+only newly discovered publications as `unresolved`; replace every placeholder
+through an actual source-record audit before running `classify`. The review
+file pins both the exact publication set and the complete category map, so
+later tool changes cannot silently reinterpret an old review.
+These strata say which kinds of source occur in the publication's
+records; they are not a claim that every individual source has already been
+disaggregated or canonicalized. `check` is read-only and validates the tracked
+review state as well as its current paths and hashes. Once any publication is
+categorized, `check` also requires the review checkpoint and rejects a category
+row that diverges from its pinned reviewed value even if the inventory's own
+snapshot has been recomputed.
 
 ## Classification
 
