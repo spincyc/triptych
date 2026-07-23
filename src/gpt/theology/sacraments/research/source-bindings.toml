@@ -8,3 +8,17 @@ loci = ["Pro sponsis no. 11, pp. [75]-[77]"]
 role = "textual-control"
 states = ["cataloged"]
 context = "The legacy publication identifies this edition and locus for the nuptial orations and sequence. This catalog-only binding claims no inspection of an exact central artifact."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["1076-1209", "1210-1666"]
+role = "official-control"
+states = ["cataloged"]
+context = "The legacy scope identifies these ranges as the controlling modern sacramental synthesis and records earlier review against modern Holy See English pages. That history does not establish inspection of the exact 2026-07-23 central artifacts, so the canonical binding remains catalog-only."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["1131", "1240", "1300", "1449"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The legacy record uses paragraph 1131 for the exact opening definition and records exact English formula checks at 1240, 1300, and 1449 on 2026-07-14. Those legacy checks remain disclosed locally but were not replayed against exact central bytes, so this separate exact-wording binding is not promoted."

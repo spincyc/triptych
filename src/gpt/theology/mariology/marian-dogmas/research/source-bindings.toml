@@ -1,0 +1,24 @@
+schema = 1
+record_type = "bindings"
+document = "theology/mariology/marian-dogmas"
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-archive-2003"
+loci = ["65-67", "396-421", "456-511", "659-682", "946-975", "1618-1620", "2673-2679"]
+role = "official-control"
+states = ["cataloged"]
+context = "The rendered references use the archived Holy See English index for the work's broad Catechism synthesis. The migration audit retains 659-682 while the rendered reference prints 668-682; that unresolved coverage discrepancy remains explicit rather than being silently normalized, and no exact central archive artifact was inspected."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["484-511", "963-975"]
+role = "official-control"
+states = ["cataloged"]
+context = "The rendered references separately identify modern Holy See pages for virginal conception and birth and for Mary and the Church. These page-supported portions overlap the broader archived ranges as distinct legacy delivery witnesses; the binding makes no new inspection claim."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["499"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The local audit uses paragraph 499 for the precise threefold-virginity synthesis and treats earlier patristic and conciliar material cited through the Catechism as reception rather than primary inspection. This exact-passage role remains separate from the broad official-control binding and has not been replayed against central bytes."

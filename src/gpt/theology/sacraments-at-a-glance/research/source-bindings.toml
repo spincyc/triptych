@@ -1,0 +1,17 @@
+schema = 1
+record_type = "bindings"
+document = "theology/sacraments-at-a-glance"
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["1076-1209", "1210-1666"]
+role = "official-control"
+states = ["cataloged"]
+context = "This companion renders the sacramental treatise's shared master matrix, lexicon, and seven summaries and therefore inherits their doctrinal evidence dependency. The dependency is catalog-only because neither consumer replayed the exact 2026-07-23 central artifacts."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["1131", "1240", "1300", "1449"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The imported matrix and summaries carry the treatise's exact definition and formula wording at these paragraphs into the companion. This inherited evidence binding preserves that rendered dependency without claiming an independent audit or inspection of exact central bytes."

@@ -1,0 +1,17 @@
+schema = 1
+record_type = "bindings"
+document = "theology/heresies/heresies-in-catholic-history"
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["27-49", "185-267", "385-421", "456-483", "638-682", "675-677", "748-870", "976-987", "1987-2029"]
+role = "official-control"
+states = ["cataloged"]
+context = "The legacy audit uses the modern Holy See English Catechism as an official doctrinal control across the historical dossiers. Its recorded 2026-07-16 checks do not establish inspection of the exact 2026-07-23 central artifacts, so this migration remains catalog-only."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["2088-2089"]
+role = "currentness-control"
+states = ["cataloged"]
+context = "The legacy audit uses these paragraphs with current canon 751 to keep apostasy distinct from heresy and schism. This currentness control is separate from the broad historical-doctrine binding and claims no replay against the exact central artifacts."

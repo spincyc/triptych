@@ -52,3 +52,10 @@ role = "textual-control"
 states = ["cataloged", "acquired", "inspected"]
 context = "The complete Latin TEI chapter and apparatus were read. The nearby unresolved TEI sic/corr choice remains disclosed, and this inspection is not represented as page-image collation or verification of the other City of God loci in the virtues audit."
 source_fingerprint = "sha256:cb7e128beb255c0d6f60b65edde45d3da5e7192b2961b00609596a23bcbcae75"
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["1716-1729", "1803-1811", "1812-1829", "1830-1845", "2337"]
+role = "official-control"
+states = ["cataloged"]
+context = "The legacy audit uses modern Holy See English pages as the present Catholic catechetical synopsis and exclusion control, with a recorded 2026-07-16 review. That review predates and does not fingerprint the exact 2026-07-23 central artifacts, so the new binding remains catalog-only."
