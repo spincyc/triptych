@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-07-23"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:58c99da1e6db8e0b6e31a601af9b4f5dbea3cd264376ce3e532c519b8b80f7bb"
+inventory_snapshot = "sha256:6f9fbf242b10865bdb04a8dc36c992dab00782d71459fd47f91476cfc754129d"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:dafeabb5de4701ba2d641eaed5f3c550cb19836e6140a6cb39f44a74cc4e1c92"
 canonical_catalog_snapshot = "sha256:46d5cdd0122313f3d9fb5e0549aa714007ed0069ccb2e7fc8788853b06215d39"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:9d2684dfc8933829b27251f7934d0bb090613c761460c124f13fe09cbaf2b8b0"
+snapshot = "sha256:af93cd216115be209df7478856269ea7e449669343346ac194b6d660e069ee06"
 
 [[families]]
 id = "family.acta.aas-ass"
@@ -1126,7 +1126,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday"
-surface_snapshot = "sha256:46d0cd1445390960ca5b05d09ad12e6155bb82599010c6a0207e394fd9fe02b8"
+surface_snapshot = "sha256:1690ed5c568f7a957ce368f2c7b87088822d36e4ce38c608be5f16bf09a88a9d"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -1143,7 +1143,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/15-trinity-sun
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost"
-surface_snapshot = "sha256:6c2acbd9466fb4bf111cbdb0577f8cd51e680919f33419b47d95d2733f18cb85"
+surface_snapshot = "sha256:fba9ef3501c22b1a18bac3717d2f2bb9f8e2d35156d11038b3f949638ff925d9"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -1198,7 +1198,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/18-fourth-afte
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost"
-surface_snapshot = "sha256:98d1127873d6057f17d98eadd671b046857672494cd2e93d11813db9a190cd2e"
+surface_snapshot = "sha256:186b57c37f8ba1b449fb2ed7ebeabcc0ba8861529b29b4fb9a89d2e906622c76"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -1228,7 +1228,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/20-sixth-after
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost"
-surface_snapshot = "sha256:c695462ca093c77a79415fb09b08b4d0698c598b0b5625340db6fe3a323668ae"
+surface_snapshot = "sha256:1f9e55cfe8d799ccc52af5159168adf1313c1ff8d1a9e6729a306878dbe034b3"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -1618,7 +1618,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a"
-surface_snapshot = "sha256:4fbacf258b5d983ca2ea1f8eb8ba219a4f73d998abf4d76729c57eac6d6ed24a"
+surface_snapshot = "sha256:14f5b5cf85fccacd0b2d741709a0b0521da73dbffeb85bd11c29729cd481cf84"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
