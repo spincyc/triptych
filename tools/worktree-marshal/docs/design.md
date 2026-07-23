@@ -77,6 +77,12 @@ Each step remains behavior-preserving unless it includes a documented state or
 command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
+The repository currently implements steps 1 and 2: the Make API and contract
+are frozen, and the monolithic schema-1 engine is co-located in the package
+behind the thin `scripts/triptych-codex` compatibility bootstrap. The generic
+console name remains intentionally unpublished until its profile, namespace,
+and command semantics are explicit.
+
 ## Distribution and repository integration
 
 The extracted project is a standard Python package named `worktree-marshal`,

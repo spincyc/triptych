@@ -4,14 +4,17 @@ Transactional Git worktrees for coding agents.
 
 ## Extraction status
 
-This directory is an extraction-stage package scaffold. It establishes the
-future distribution name, Python import namespace, license, and compatibility
-baseline while the operational implementation remains in
-[`scripts/triptych-codex`](../../scripts/triptych-codex).
+This directory now contains the operational Triptych compatibility engine as
+well as the future distribution name, Python import namespace, license, and
+compatibility baseline. The repository-local
+[`scripts/triptych-codex`](../../scripts/triptych-codex) command is a thin,
+in-process bootstrap for the co-located package engine.
 
-The package is not publishable yet. It has no command-line entry point and does
-not create, supervise, integrate, or clean worktrees. Do not upload this
-version to a package index or substitute it for Triptych's launcher.
+The package is not publishable yet and deliberately has no installed generic
+command-line entry point. Its current engine still owns Triptych's schema-1
+state namespace, refs, environment variables, flags, diagnostics, and Codex
+policy. Do not upload this version to a package index or treat importing it as
+authorization to operate on a repository or retained run.
 
 It does contain the first extracted integration surface: the importable
 [`worktree-marshal.mk`](src/worktree_marshal/resources/worktree-marshal.mk)
@@ -34,19 +37,23 @@ package command will install or update a pinned copy in a consumer repository;
 consumers should not locate package resources dynamically during every Make
 parse.
 
-The extraction will proceed by moving behavior behind tested package
-boundaries while preserving existing Triptych runs. The frozen legacy
-contract and current security boundary are recorded in
+The extraction will continue by adding artifact-level parity for the packaged
+compatibility engine, then introducing a generic CLI only with an explicit
+profile and state namespace. The frozen legacy contract and current security
+boundary are recorded in
 [`docs/compatibility-contract.md`](docs/compatibility-contract.md); the target
 architecture and release sequence are in [`docs/design.md`](docs/design.md).
 
 ## Development check
 
-From this directory, run the scaffold tests with:
+From this directory, run the package tests with:
 
 ```sh
 python3 -m unittest discover -s tests -v
 ```
+
+The repository's `make check-agent-isolation` target additionally runs the
+complete Triptych lifecycle suite through the thin compatibility bootstrap.
 
 The initial package uses only the Python standard library at runtime and
 requires Python 3.10 or newer. Its source is licensed under the MIT License.

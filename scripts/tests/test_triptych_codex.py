@@ -19,10 +19,11 @@ from unittest import mock
 
 SCRIPTS_ROOT = Path(__file__).resolve().parents[1]
 SOURCE_MAKEFILE = SCRIPTS_ROOT.parent / "Makefile"
-SOURCE_MAKE_FRAGMENT = (
+SOURCE_PACKAGE_RUNTIME = (
     SCRIPTS_ROOT.parent
-    / "tools/worktree-marshal/src/worktree_marshal/resources/worktree-marshal.mk"
+    / "tools/worktree-marshal/src/worktree_marshal"
 )
+SOURCE_ENGINE = SOURCE_PACKAGE_RUNTIME / "triptych_compat.py"
 SOURCE_LAUNCHER = SCRIPTS_ROOT / "triptych-codex"
 SOURCE_FAKE = Path(__file__).resolve().with_name("fake-codex")
 COMMAND_TIMEOUT_SECONDS = 60
@@ -31,7 +32,7 @@ LOCK_CHECKPOINT_TIMEOUT_SECONDS = 30
 
 class RunTemporaryRemovalTests(unittest.TestCase):
     def test_leaf_replacement_is_not_recursively_deleted(self) -> None:
-        launcher = runpy.run_path(str(SOURCE_LAUNCHER), run_name="triptych_codex_unit")
+        engine = runpy.run_path(str(SOURCE_ENGINE), run_name="triptych_compat_unit")
         run_id = "20260722t000000z-000000000000"
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
@@ -47,7 +48,7 @@ class RunTemporaryRemovalTests(unittest.TestCase):
                 "preserved\n",
                 encoding="utf-8",
             )
-            repository = launcher["Repository"](
+            repository = engine["Repository"](
                 root=root,
                 git_dir=root / ".git",
                 common_git_dir=root / ".git",
@@ -72,12 +73,12 @@ class RunTemporaryRemovalTests(unittest.TestCase):
                     )
                 return real_open(path, flags, mode, dir_fd=dir_fd)
 
-            with mock.patch.object(launcher["os"], "open", side_effect=racing_open):
+            with mock.patch.object(engine["os"], "open", side_effect=racing_open):
                 with self.assertRaisesRegex(
-                    launcher["LauncherError"],
+                    engine["LauncherError"],
                     "changed before removal",
                 ):
-                    launcher["remove_run_tmpdir"](repository, manifest)
+                    engine["remove_run_tmpdir"](repository, manifest)
 
             self.assertTrue(swapped)
             self.assertEqual(
@@ -110,19 +111,26 @@ class TriptychCodexTests(unittest.TestCase):
         self.git(self.control, "config", "user.name", "Triptych Test")
         self.git(self.control, "config", "user.email", "triptych-test@example.invalid")
         self.git(self.control, "config", "commit.gpgSign", "false")
-        (self.control / ".gitignore").write_text("/build/\n", encoding="utf-8")
+        (self.control / ".gitignore").write_text(
+            "/build/\n__pycache__/\n*.py[cod]\n",
+            encoding="utf-8",
+        )
         (self.control / "baseline.txt").write_text("baseline\n", encoding="utf-8")
         (self.control / "subdir").mkdir()
         (self.control / "subdir/placeholder.txt").write_text("context\n", encoding="utf-8")
         (self.control / "src/gpt/common").mkdir(parents=True)
         (self.control / "scripts").mkdir()
         shutil.copy2(SOURCE_MAKEFILE, self.control / "Makefile")
-        make_fragment = (
+        self.package_runtime = (
             self.control
-            / "tools/worktree-marshal/src/worktree_marshal/resources/worktree-marshal.mk"
+            / "tools/worktree-marshal/src/worktree_marshal"
         )
-        make_fragment.parent.mkdir(parents=True)
-        shutil.copy2(SOURCE_MAKE_FRAGMENT, make_fragment)
+        self.package_runtime.parent.mkdir(parents=True)
+        shutil.copytree(
+            SOURCE_PACKAGE_RUNTIME,
+            self.package_runtime,
+            ignore=shutil.ignore_patterns("__pycache__", "*.pyc", "*.pyo"),
+        )
         self.launcher = self.control / "scripts/triptych-codex"
         shutil.copy2(SOURCE_LAUNCHER, self.launcher)
         self.launcher.chmod(0o755)
@@ -1510,13 +1518,34 @@ class TriptychCodexTests(unittest.TestCase):
         self.assertEqual(status.returncode, 2)
         self.assertIn(b"worker marker is invalid", status.stderr)
 
-    def test_real_binary_cannot_be_the_launcher(self) -> None:
-        result = self.run_launcher(
-            environment={"TRIPTYCH_CODEX_REAL": str(self.launcher)}
-        )
+    def test_shim_fails_closed_without_the_colocated_package_engine(self) -> None:
+        engine = self.package_runtime / "triptych_compat.py"
+        displaced = engine.with_suffix(".missing")
+        engine.rename(displaced)
+        try:
+            result = self.run_launcher()
+        finally:
+            displaced.rename(engine)
+
         self.assertEqual(result.returncode, 2)
-        self.assertIn(b"non-launcher executable", result.stderr)
+        self.assertIn(b"co-located Worktree Marshal engine is unavailable", result.stderr)
+        self.assertEqual(self.manifests(), [])
         self.assertEqual(self.worktree_paths(), [self.control.resolve()])
+
+    def test_real_binary_cannot_be_the_launcher(self) -> None:
+        hardlink = self.root / "hardlinked-triptych-codex"
+        symlink = self.root / "symlinked-triptych-codex"
+        os.link(self.launcher, hardlink)
+        symlink.symlink_to(self.launcher)
+
+        for candidate in (self.launcher, hardlink, symlink):
+            with self.subTest(candidate=candidate.name):
+                result = self.run_launcher(
+                    environment={"TRIPTYCH_CODEX_REAL": str(candidate)}
+                )
+                self.assertEqual(result.returncode, 2)
+                self.assertIn(b"non-launcher executable", result.stderr)
+                self.assertEqual(self.worktree_paths(), [self.control.resolve()])
 
     def test_runtime_state_cannot_be_placed_inside_the_control_worktree(self) -> None:
         log = self.root / "inside-state.jsonl"

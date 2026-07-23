@@ -1,6 +1,7 @@
-"""Extraction scaffold for transactional Git worktree supervision.
+"""Pre-release transactional Git worktree supervision.
 
-The extraction-stage package does not yet expose the operational launcher.
+The operational engine currently implements only the frozen Triptych
+compatibility profile.  No generic command-line interface is published yet.
 """
 
 __all__ = ["__version__"]

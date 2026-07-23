@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Focused tests for the extraction-stage package metadata and import."""
+"""Focused tests for the pre-release package metadata and imports."""
 
 from __future__ import annotations
 
 import importlib
+import inspect
 import re
 import sys
 import unittest
@@ -31,7 +32,7 @@ def project_string(name: str) -> str:
     return match.group(1)
 
 
-class PackageScaffoldTests(unittest.TestCase):
+class PackageTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         sys.path.insert(0, str(SOURCE_ROOT))
@@ -68,7 +69,16 @@ class PackageScaffoldTests(unittest.TestCase):
             resources.read_make_fragment(),
         )
 
-    def test_scaffold_has_no_published_command_entry_point(self) -> None:
+    def test_triptych_engine_import_has_no_git_pinning_side_effect(self) -> None:
+        engine = importlib.import_module("worktree_marshal.triptych_compat")
+
+        self.assertIsNone(engine._PINNED_GIT)
+        signature = inspect.signature(engine.main)
+        invocation_path = signature.parameters["invocation_path"]
+        self.assertEqual(invocation_path.kind, inspect.Parameter.KEYWORD_ONLY)
+        self.assertIs(invocation_path.default, inspect.Parameter.empty)
+
+    def test_package_has_no_published_command_entry_point(self) -> None:
         metadata = PYPROJECT.read_text(encoding="utf-8")
 
         self.assertNotIn("[project.scripts]", metadata)

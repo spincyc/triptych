@@ -4,10 +4,12 @@
 
 This document freezes the observable compatibility baseline for extracting
 `scripts/triptych-codex` into Worktree Marshal. It describes the legacy
-launcher at schema version 1; it does not make this scaffold operational.
+launcher at schema version 1. The package now contains that compatibility
+engine, while the repository-local command remains its stable entry point.
 
 Until an extraction change deliberately replaces a behavior and supplies a
-migration, the existing launcher and its black-box tests remain authoritative.
+migration, the compatibility engine and its legacy black-box tests remain
+authoritative.
 Existing retained runs must continue to be managed by code that understands
 their exact legacy identity. A generic command must not silently adopt,
 rename, rewrite, or clean legacy state.
@@ -206,9 +208,10 @@ Codex executables while they are in use.
 
 ## Extraction acceptance baseline
 
-The legacy suite contains 184 focused tests in
-`scripts/tests/test_triptych_codex.py`. Before any compatibility wrapper
-delegates to packaged code, the package test matrix must cover the same
-observable lifecycle, failure, concurrency, recovery, Make forwarding, and
-security behavior against disposable repositories. Triptych-specific output
-and identities remain compatibility assertions rather than generic defaults.
+The compatibility suite contains 185 focused tests in
+`scripts/tests/test_triptych_codex.py`. The repository-local wrapper delegates
+to the packaged engine, so that complete suite remains the required parity
+gate for observable lifecycle, failure, concurrency, recovery, Make
+forwarding, and security behavior against disposable repositories.
+Triptych-specific output and identities remain compatibility assertions rather
+than generic defaults.
