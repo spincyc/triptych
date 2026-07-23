@@ -282,7 +282,7 @@ install-dependencies-arch:
 	done
 
 check-agent-isolation:
-	@$(PYTHON) -m unittest discover -s tools/worktree-marshal/tests -v
+	@$(PYTHON) -m unittest discover -s tools/worktree-marshal/tests -t tools/worktree-marshal -v
 	@$(PYTHON) -m unittest discover -s scripts/tests -p 'test_triptych_codex.py' -v
 
 check-pdf-review:
