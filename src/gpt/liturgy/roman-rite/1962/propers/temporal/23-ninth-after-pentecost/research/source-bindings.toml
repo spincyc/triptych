@@ -26,3 +26,21 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The exact official Latin Acta text was checked at both loci. Paragraph 3 clearly reuses the Secret's redemption clause and immediately joins Eucharistic sacrifice to effected unity, but supplies no note identifying this Sunday; paragraph 15 places purification and renewal within the Church's work for unity and controls the publication's account of later Postcommunion reception rather than the 1962 compiler's intent."
 verified_on = "2026-07-23"
 source_fingerprint = "sha256:86fb1dd11609d9fba8420606bf08e7a5e5935512d6968306dd939d0277ef93d6"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.sacrosanctum-concilium.latin-vatican-web-2026-07-23.2"
+loci = ["2"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete dated official Latin web article and its first source note were checked for the publication's reception claim: article 2 uses « opus nostrae Redemptionis exercetur », and note 1 identifies the Ninth Sunday after Pentecost super oblata. This dated web witness is distinct from the official Acta witness bound separately below."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:d75609be5209ac5747154e2274d239fc1839092bba7a3bb93f71db87ad50421b"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.sacrosanctum-concilium.latin-aas-56-1964.2"
+loci = ["2"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The official Latin Acta pages were checked independently for the same reception claim and its source attribution: article 2 prints the redemption clause and note 1 names the Secret of the Ninth Sunday after Pentecost. The overlap with the dated web passage preserves two materially distinct official witnesses rather than treating either delivery as the other."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:7a7d1ee1846a2fe0bec2eee1c44b89a06bd6d0e502a504f361b93922d398b71f"

@@ -8,3 +8,12 @@ loci = ["18.43"]
 role = "lead"
 states = ["cataloged"]
 context = "The legacy research record identifies City of God at this locus. This catalog-only binding claims no inspection of a central edition or artifact. Where the legacy record relies on NPNF/New Advent, the centrally registered Dods English and CSEL Latin texts are different witnesses and are not silently substituted."
+
+[[bindings]]
+source_id = "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.91"
+loci = ["91"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The official English article directly controls the account of the Council's Psalter revision: prompt completion attentive to Christian Latin, liturgical and sung use, and the entire Latin Church tradition. It does not commission a whole-Bible Nova Vulgata; the history attributes that later extension to Paul VI."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:6f6dadfd7cb9e75428ec0f84cf4b7be2a10ca6f0ba5784b58ab1dc55cb01cef7"

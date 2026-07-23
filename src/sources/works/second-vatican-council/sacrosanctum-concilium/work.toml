@@ -1,0 +1,11 @@
+schema = 1
+record_type = "work"
+id = "work.second-vatican-council.sacrosanctum-concilium"
+title = "Sacrosanctum Concilium"
+responsible = "Second Vatican Council"
+work_type = "conciliar-constitution"
+alternate_titles = ["Constitutio de Sacra Liturgia", "Constitution on the Sacred Liturgy"]
+languages = ["la"]
+locus_pattern = '(?:(?:[1-9]|[1-9][0-9]|1[0-2][0-9]|130)(?:-(?:[1-9]|[1-9][0-9]|1[0-2][0-9]|130))?|appendix-calendar)'
+description = "The Second Vatican Council's Constitution on the Sacred Liturgy, solemnly promulgated by Pope Paul VI on 4 December 1963. It comprises articles 1-130 and the appended declaration on revision of the calendar; edition records distinguish the Latin Acta witness from dated Vatican web delivery states and translations."
+relations = ["work.holy-see.acta-apostolicae-sedis"]
