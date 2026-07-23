@@ -20,16 +20,17 @@ validation, persistence, and orchestration in one shared `engine.py`. `cli.py`
 owns the installed grammar, `profiles.py` owns immutable durable identities,
 `git.py` now owns only the cycle-free Git policy kernel, `model.py` now owns
 the exact state vocabulary, pure classifier, and I/O-free
-integration-transaction restoration transform, and `triptych_compat.py` binds
-the frozen adapter. The rest of the engine will be separated behind these
-modules only after parity tests protect each seam:
+integration-transaction restoration transform, `locks.py` now owns
+lock-descriptor bookkeeping and validation algorithms, and
+`triptych_compat.py` binds the frozen adapter. The rest of the engine will be
+separated behind these modules only after parity tests protect each seam:
 
 ```text
 worktree_marshal/
   cli.py                 command parsing and stable exit behavior
   model.py               state vocabulary and transaction restoration now
   state.py               private paths and durable manifest writes
-  locks.py               repository and per-run locking
+  locks.py               descriptor bookkeeping now; flock acquisition later
   git.py                 Git policy now; hardened invocation and ref transactions later
   identity.py            repository, checkout, and path authentication
   worktrees.py           allocation, audit, reopen, and cleanup
@@ -85,12 +86,12 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with three behavior-preserving boundaries. The pure Git policy
+has begun step 5 with four behavior-preserving boundaries. The pure Git policy
 kernel now transforms an explicit environment mapping and Git argument
 sequence in `git.py`; `engine.py` retains its optional environment-acquisition
-wrapper and all executable discovery, subprocess, lock inheritance, repository
-authentication, configuration probing, ref transactions, and lifecycle
-orchestration.
+wrapper and all executable discovery, subprocess execution, lock acquisition,
+repository authentication, configuration probing, ref transactions, and
+lifecycle orchestration.
 The second cycle-free boundary places the exact durable state vocabulary, the
 existing retirement-pending and managed-conflict families, and a pure
 classifier in `model.py`. Manifest validation uses that predicate while
@@ -104,11 +105,19 @@ writes, and recovery. The transform deliberately preserves the existing
 direct-call behavior of restoring any string previous state; manifest loading
 still validates durable states separately. A transition graph, typed run
 records, checkpoint validation, and all recovery choices remain deferred.
-Direct tests freeze all three extracted boundaries, their compatibility
-surfaces, artifact inclusion, field order, operation and archive-timestamp
-failure ordering, and the dynamic restoration of every vocabulary value
-currently accepted in `integration_previous_state` before any graph is
-introduced. The Make API and legacy contract are frozen; the shared engine is
+The fourth boundary moves the immutable registered-lock descriptor and the
+register, unregister, stale-entry pruning, identity-validation, and
+sorted-selection algorithms into `locks.py`. Explicit resolvers let engine
+wrappers obtain the current registry and record factory at the same operation
+points as before, preserving even reentrant rebinding behavior. The
+process-global registry, repository and per-run lock paths, `flock` acquisition
+and release, subprocess `pass_fds`, and lifecycle lock ownership remain in
+`engine.py`. Direct tests freeze all four extracted boundaries, their
+compatibility surfaces, artifact inclusion, field and operation order,
+partial-failure behavior, and the dynamic restoration of every vocabulary
+value currently accepted in
+`integration_previous_state` before any graph is introduced. The Make API and
+legacy contract are frozen; the shared engine is
 co-located behind the thin `scripts/triptych-codex` bootstrap; wheel and source
 artifacts are built, a wheel is rebuilt from the extracted source artifact,
 and that wheel is installed and checked outside the source checkout without

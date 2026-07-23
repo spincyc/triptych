@@ -19,7 +19,6 @@ import stat
 import subprocess
 import sys
 import tempfile
-import weakref
 from contextlib import contextmanager
 from contextvars import ContextVar
 from dataclasses import dataclass
@@ -35,6 +34,12 @@ from .git import (
     GIT_UNSAFE_ENV,
     hardened_git_arguments,
     sanitized_git_environment as _sanitized_git_environment,
+)
+from .locks import (
+    RegisteredLockDescriptor,
+    inherited_lock_descriptors as _inherited_lock_descriptors,
+    register_lock_descriptor as _register_lock_descriptor,
+    unregister_lock_descriptor as _unregister_lock_descriptor,
 )
 from .model import (
     ABORTED_INTEGRATION_ARCHIVE_FIELDS as _ABORTED_INTEGRATION_ARCHIVE_FIELDS,
@@ -194,13 +199,6 @@ class LinkedWorktreeIdentity:
 
 
 @dataclass(frozen=True)
-class RegisteredLockDescriptor:
-    stream: weakref.ReferenceType[TextIO]
-    device: int
-    inode: int
-
-
-@dataclass(frozen=True)
 class LauncherIdentity:
     """Authenticated identity of the in-process command entry point."""
 
@@ -294,47 +292,22 @@ def sanitized_git_environment(
 
 
 def register_lock_descriptor(stream: TextIO) -> None:
-    descriptor = stream.fileno()
-    metadata = os.fstat(descriptor)
-    _LOCK_FD_REGISTRY[descriptor] = RegisteredLockDescriptor(
-        stream=weakref.ref(stream),
-        device=metadata.st_dev,
-        inode=metadata.st_ino,
+    _register_lock_descriptor(
+        stream,
+        registry=lambda: _LOCK_FD_REGISTRY,
+        record_factory=lambda: RegisteredLockDescriptor,
     )
 
 
 def unregister_lock_descriptor(stream: TextIO) -> None:
-    try:
-        descriptor = stream.fileno()
-    except (OSError, ValueError):
-        return
-    registered = _LOCK_FD_REGISTRY.get(descriptor)
-    if registered is not None and registered.stream() is stream:
-        _LOCK_FD_REGISTRY.pop(descriptor, None)
+    _unregister_lock_descriptor(
+        stream,
+        registry=lambda: _LOCK_FD_REGISTRY,
+    )
 
 
 def inherited_lock_descriptors() -> tuple[int, ...]:
-    inherited: list[int] = []
-    for descriptor, registered in list(_LOCK_FD_REGISTRY.items()):
-        stream = registered.stream()
-        if stream is None or stream.closed:
-            _LOCK_FD_REGISTRY.pop(descriptor, None)
-            continue
-        try:
-            if stream.fileno() != descriptor:
-                raise OSError
-            metadata = os.fstat(descriptor)
-        except (OSError, ValueError):
-            _LOCK_FD_REGISTRY.pop(descriptor, None)
-            continue
-        if (metadata.st_dev, metadata.st_ino) != (
-            registered.device,
-            registered.inode,
-        ):
-            _LOCK_FD_REGISTRY.pop(descriptor, None)
-            continue
-        inherited.append(descriptor)
-    return tuple(sorted(inherited))
+    return _inherited_lock_descriptors(registry=lambda: _LOCK_FD_REGISTRY)
 
 
 def command(

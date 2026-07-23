@@ -6,9 +6,9 @@ Transactional Git worktrees for coding agents.
 
 This directory contains the shared lifecycle engine, its first extracted
 cycle-free Git policy, durable-state vocabulary, and integration-transaction
-restoration seams, its first generic profile, the frozen Triptych
-compatibility adapter, the Python distribution, and the Make integration
-fragment. The repository-local
+restoration seams, its lock-descriptor bookkeeping boundary, its first generic
+profile, the frozen Triptych compatibility adapter, the Python distribution,
+and the Make integration fragment. The repository-local
 [`scripts/triptych-codex`](../../scripts/triptych-codex) command is a thin,
 in-process bootstrap for the co-located package engine.
 
@@ -109,7 +109,7 @@ worktree-removal or ref-transaction failures, receipt recovery, garbage
 collection, or concurrent retirement. Those retirement cases, broader crash
 and race recovery, broader security coverage, the complete installed lifecycle
 matrix, and the supported Python and Git CI matrix remain release gates; the
-first three step-5 seams are protected by direct source tests and artifact
+first four step-5 seams are protected by direct source tests and artifact
 provenance, and the installed abort checkpoint covers archived transaction
 restoration. Each remaining helper boundary still requires its own direct
 parity coverage.
@@ -127,10 +127,18 @@ archive a transaction and restore its recorded prior state. The existing
 engine wrappers still choose when to apply that transform, acquire the archive
 timestamp afterward, and own validation, persistence, and recovery. Typed run
 records and transition-graph enforcement remain deferred. Executable
-discovery, subprocess execution, inherited locks, repository authentication,
-effective-configuration probing, ref transactions, and lifecycle
-orchestration also remain together in `engine.py`. The frozen legacy contract
-and current security boundary are recorded in
+discovery, subprocess execution, repository authentication,
+effective-configuration probing, ref transactions, and lifecycle orchestration
+also remain together in `engine.py`.
+
+[`locks.py`](src/worktree_marshal/locks.py) owns only the immutable registered
+descriptor record and the algorithms that register, unregister, authenticate,
+prune, and sort descriptors inherited by child processes through explicit
+registry and record-factory resolvers. The engine retains the process-global
+registry and compatibility wrappers. Repository and per-run lock paths,
+`flock` acquisition and release, subprocess propagation, and every lifecycle
+locking decision remain in `engine.py`. The frozen legacy contract and current
+security boundary are recorded in
 [`docs/compatibility-contract.md`](docs/compatibility-contract.md); the target
 architecture and release sequence are in [`docs/design.md`](docs/design.md).
 
