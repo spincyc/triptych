@@ -75,6 +75,15 @@ if action == "commit":
     )
     git(root, "add", "--", result_path.as_posix())
     git(root, "commit", "-m", "Installed agent result")
+elif action == "rewrite-sibling":
+    git(root, "reset", "--hard", "HEAD^")
+    rewritten = root / "rewritten-sibling-result.txt"
+    rewritten.write_text(
+        "installed clean rewritten sibling result\\n",
+        encoding="utf-8",
+    )
+    git(root, "add", "--", rewritten.name)
+    git(root, "commit", "-m", "Replace installed audited result")
 elif action == "stage-conflict":
     conflict = root / os.environ.get(
         "FAKE_CODEX_CONFLICT_PATH",
@@ -1204,6 +1213,480 @@ class InstalledLifecycleTests(unittest.TestCase):
         self.assertFalse(self.triptych_state.exists())
         self.assertEqual(self.refs_under("refs/heads/codex/isolated/"), [])
         self.assertEqual(self.refs_under("refs/triptych-codex/"), [])
+
+    def test_installed_generic_retirement_is_exact_and_idempotent(self) -> None:
+        manifest_path, initial = self.launch_and_read_manifest(
+            self.generic_profile_state,
+            "--profile",
+            "generic-v1",
+            "run",
+            "--agent",
+            "codex",
+            expected_status=0,
+            environment={
+                "FAKE_CODEX_ACTION": "commit",
+                "FAKE_CODEX_CONTENT": "installed audited retirement result\n",
+            },
+        )
+        run_id = initial["run_id"]
+        worker = Path(initial["worktree"])
+        temporary = Path(initial["tmpdir"])
+        final_head = initial["final_head"]
+        base_head = initial["base_sha"]
+        target_ref = initial["target_ref"]
+        selected_checkpoint = self.git(
+            "rev-parse",
+            "--verify",
+            f"{target_ref}^{{commit}}",
+        ).stdout.strip()
+        self.assertEqual(selected_checkpoint, base_head)
+        self.assertEqual(initial["state"], "preserved")
+        self.assertFalse(initial["dirty"])
+        self.assertEqual(
+            self.git("rev-parse", f"{final_head}^").stdout.strip(),
+            base_head,
+        )
+
+        reopened = self.run_console(
+            "--profile",
+            "generic-v1",
+            "reopen",
+            run_id,
+            environment={"FAKE_CODEX_ACTION": "rewrite-sibling"},
+        )
+        self.assertEqual(reopened.returncode, 0, reopened.stderr)
+        quarantined = json.loads(
+            manifest_path.read_text(encoding="utf-8")
+        )
+        discard_head = quarantined["observed_head"]
+        branch_ref = f"refs/heads/{quarantined['branch']}"
+        private_prefix = (
+            f"refs/worktree-marshal/generic-v1/runs/{run_id}/"
+        )
+        anchor_ref = f"{private_prefix}retirement-discard"
+        receipt_ref = f"{private_prefix}retirement-receipt"
+        self.assertEqual(quarantined["state"], "quarantined")
+        self.assertEqual(
+            (
+                quarantined["schema_version"],
+                quarantined["format_id"],
+                quarantined["profile_id"],
+                quarantined["agent"],
+            ),
+            (1, "worktree-marshal-run", "generic-v1", "codex"),
+        )
+        self.assertEqual(quarantined["final_head"], final_head)
+        self.assertFalse(quarantined["observed_dirty"])
+        self.assertEqual(
+            quarantined["quarantine_reason"],
+            (
+                "the retained worker history no longer descends from its "
+                "last terminal audit"
+            ),
+        )
+        self.assertNotEqual(discard_head, final_head)
+        self.assertEqual(
+            self.git("rev-parse", f"{discard_head}^").stdout.strip(),
+            base_head,
+        )
+        self.assertEqual(
+            self.git(
+                "merge-base",
+                "--is-ancestor",
+                final_head,
+                discard_head,
+                check=False,
+            ).returncode,
+            1,
+        )
+        self.assertEqual(
+            self.git("rev-parse", "HEAD", cwd=worker).stdout.strip(),
+            discard_head,
+        )
+        self.assertEqual(self.ref_oid(branch_ref), discard_head)
+        self.assertEqual(
+            self.git(
+                "status",
+                "--porcelain=v1",
+                "--untracked-files=all",
+                cwd=worker,
+            ).stdout,
+            "",
+        )
+        self.assertEqual(
+            self.git(
+                "diff-tree",
+                "--no-commit-id",
+                "--name-only",
+                "-r",
+                final_head,
+            ).stdout.splitlines(),
+            ["agent-result.txt"],
+        )
+        self.assertEqual(
+            self.git(
+                "diff-tree",
+                "--no-commit-id",
+                "--name-only",
+                "-r",
+                discard_head,
+            ).stdout.splitlines(),
+            ["rewritten-sibling-result.txt"],
+        )
+        worker_record = self.worktree_records()[worker.resolve()]
+        self.assertEqual(
+            worker_record["locked"],
+            f"worktree-marshal generic-v1 {run_id}",
+        )
+        self.assertTrue(temporary.is_dir())
+        self.assertEqual(self.refs_under(private_prefix), [])
+
+        nested_temporary = temporary / "downloads" / "source"
+        nested_temporary.mkdir(parents=True)
+        temporary_sentinel = nested_temporary / "sentinel.bin"
+        temporary_sentinel_bytes = b"installed retirement temporary sentinel"
+        temporary_sentinel.write_bytes(temporary_sentinel_bytes)
+        temporary_metadata = temporary.stat()
+        adjacent_temporary = temporary.parent / "retirement-neighbor"
+        adjacent_temporary.mkdir()
+        adjacent_sentinel = adjacent_temporary / "preserved.txt"
+        adjacent_sentinel.write_text(
+            "adjacent retirement state survives\n",
+            encoding="utf-8",
+        )
+        (self.control / "retirement-target.txt").write_text(
+            "independent target result\n",
+            encoding="utf-8",
+        )
+        self.git("add", "retirement-target.txt")
+        self.git("commit", "-m", "Advance installed retirement target")
+        target_head = self.git("rev-parse", "HEAD").stdout.strip()
+        survivor_ref = "refs/heads/retirement-survivor"
+        self.git("update-ref", survivor_ref, target_head)
+        self.assertEqual(
+            self.git(
+                "merge-base",
+                "--is-ancestor",
+                discard_head,
+                target_head,
+                check=False,
+            ).returncode,
+            1,
+        )
+
+        control_head = self.git("rev-parse", "HEAD").stdout.strip()
+        control_tree = self.git("write-tree").stdout.strip()
+        control_status = self.git(
+            "status",
+            "--porcelain=v1",
+            "--untracked-files=all",
+        ).stdout
+        quarantine_snapshot = self.manifest_snapshot(manifest_path)
+        worker_metadata = worker.stat()
+
+        def assert_quarantine_unchanged(
+            refusal: subprocess.CompletedProcess[str],
+        ) -> None:
+            self.assertEqual(refusal.returncode, 2, refusal.stderr)
+            self.assertEqual(
+                self.manifest_snapshot(manifest_path),
+                quarantine_snapshot,
+            )
+            retained_metadata = worker.stat()
+            self.assertEqual(
+                (retained_metadata.st_dev, retained_metadata.st_ino),
+                (worker_metadata.st_dev, worker_metadata.st_ino),
+            )
+            self.assertEqual(
+                self.worktree_records()[worker.resolve()],
+                worker_record,
+            )
+            self.assertEqual(
+                self.git("rev-parse", "HEAD", cwd=worker).stdout.strip(),
+                discard_head,
+            )
+            self.assertEqual(self.ref_oid(branch_ref), discard_head)
+            self.assertEqual(
+                self.git(
+                    "status",
+                    "--porcelain=v1",
+                    "--untracked-files=all",
+                    cwd=worker,
+                ).stdout,
+                "",
+            )
+            self.assertEqual(
+                self.git(
+                    "ls-tree",
+                    "-r",
+                    "--name-only",
+                    "HEAD",
+                    cwd=worker,
+                ).stdout.splitlines(),
+                ["baseline.txt", "rewritten-sibling-result.txt"],
+            )
+            self.assertEqual(
+                (worker / "rewritten-sibling-result.txt").read_text(
+                    encoding="utf-8"
+                ),
+                "installed clean rewritten sibling result\n",
+            )
+            retained_temporary = temporary.stat()
+            self.assertEqual(
+                (retained_temporary.st_dev, retained_temporary.st_ino),
+                (temporary_metadata.st_dev, temporary_metadata.st_ino),
+            )
+            self.assertEqual(self.refs_under(private_prefix), [])
+            self.assertEqual(
+                temporary_sentinel.read_bytes(),
+                temporary_sentinel_bytes,
+            )
+            self.assertEqual(
+                adjacent_sentinel.read_text(encoding="utf-8"),
+                "adjacent retirement state survives\n",
+            )
+            self.assertEqual(
+                self.git("rev-parse", "--verify", target_ref).stdout.strip(),
+                target_head,
+            )
+            self.assertEqual(self.ref_oid(survivor_ref), target_head)
+            self.assertEqual(self.git("rev-parse", "HEAD").stdout.strip(), control_head)
+            self.assertEqual(self.git("write-tree").stdout.strip(), control_tree)
+            self.assertEqual(
+                self.git(
+                    "status",
+                    "--porcelain=v1",
+                    "--untracked-files=all",
+                ).stdout,
+                control_status,
+            )
+
+        no_make_wrapper = self.run_make("retire", f"RUN={run_id}")
+        self.assertIn("No rule to make target", no_make_wrapper.stderr)
+        assert_quarantine_unchanged(no_make_wrapper)
+        ordinary_clean = self.run_make("clean-run", f"RUN={run_id}")
+        self.assertIn("no retirement checkpoint", ordinary_clean.stderr)
+        assert_quarantine_unchanged(ordinary_clean)
+        wrong_discard = self.run_console(
+            "--profile",
+            "generic-v1",
+            "retire",
+            run_id,
+            "--discard-head",
+            final_head,
+            "--target-contains",
+            selected_checkpoint,
+        )
+        assert_quarantine_unchanged(wrong_discard)
+        uncontained_checkpoint = self.run_console(
+            "--profile",
+            "generic-v1",
+            "retire",
+            run_id,
+            "--discard-head",
+            discard_head,
+            "--target-contains",
+            discard_head,
+        )
+        assert_quarantine_unchanged(uncontained_checkpoint)
+
+        retirement_arguments = (
+            "--profile",
+            "generic-v1",
+            "retire",
+            run_id,
+            "--discard-head",
+            discard_head,
+            "--target-contains",
+            selected_checkpoint,
+        )
+        retired = self.run_console(*retirement_arguments)
+        self.assertEqual(retired.returncode, 0, retired.stderr)
+        self.assertIn("retired and cleaned", retired.stderr)
+        for private_path in (
+            str(worker),
+            str(temporary),
+            str(self.generic_state),
+        ):
+            self.assertNotIn(private_path, retired.stdout)
+            self.assertNotIn(private_path, retired.stderr)
+
+        cleaned = json.loads(manifest_path.read_text(encoding="utf-8"))
+        self.assertEqual(cleaned["state"], "cleaned")
+        self.assertEqual(
+            (
+                cleaned["schema_version"],
+                cleaned["format_id"],
+                cleaned["profile_id"],
+                cleaned["agent"],
+            ),
+            (1, "worktree-marshal-run", "generic-v1", "codex"),
+        )
+        self.assertEqual(cleaned["retirement_discard_head"], discard_head)
+        self.assertEqual(
+            cleaned["retirement_target_contains"],
+            selected_checkpoint,
+        )
+        self.assertEqual(cleaned["retirement_initial_target_head"], target_head)
+        self.assertEqual(cleaned["retirement_cleanup_target_head"], target_head)
+        self.assertIs(cleaned["retirement_anchor_created"], True)
+        for field in (
+            "retirement_started_at",
+            "retirement_worktree_removed_at",
+            "retirement_ref_cleanup_started_at",
+            "retirement_ref_transaction_committed_at",
+            "retirement_receipt_removed_at",
+            "retirement_completed_at",
+        ):
+            self.assertIn(field, cleaned)
+        self.assertEqual(
+            cleaned["cleaned_at"],
+            cleaned["retirement_completed_at"],
+        )
+        self.assertNotIn("retirement_cleanup_warning", cleaned)
+        self.assertEqual(cleaned["final_head"], final_head)
+        self.assertEqual(cleaned["observed_head"], discard_head)
+        self.assertFalse(cleaned["observed_dirty"])
+        self.assertFalse(worker.exists())
+        self.assertFalse(temporary.exists())
+        self.assertFalse(temporary_sentinel.exists())
+        self.assertEqual(
+            adjacent_sentinel.read_text(encoding="utf-8"),
+            "adjacent retirement state survives\n",
+        )
+        self.assertEqual(self.worktree_paths(), [self.control.resolve()])
+        for ref in (branch_ref, anchor_ref, receipt_ref):
+            self.assertIsNone(self.ref_oid(ref))
+        self.assertEqual(self.refs_under(private_prefix), [])
+        self.assertEqual(self.ref_oid(survivor_ref), target_head)
+        self.assertEqual(
+            self.git("rev-parse", "--verify", target_ref).stdout.strip(),
+            target_head,
+        )
+        self.assertEqual(self.git("rev-parse", "HEAD").stdout.strip(), control_head)
+        self.assertEqual(self.git("write-tree").stdout.strip(), control_tree)
+        self.assertEqual(
+            self.git(
+                "status",
+                "--porcelain=v1",
+                "--untracked-files=all",
+            ).stdout,
+            control_status,
+        )
+        self.assertFalse(self.triptych_state.exists())
+        self.assertEqual(self.refs_under("refs/triptych-codex/"), [])
+
+        cleaned_snapshot = self.manifest_snapshot(manifest_path)
+        cleaned_ref_snapshot = self.git(
+            "for-each-ref",
+            "--format=%(refname) %(objectname)",
+        ).stdout
+        cleaned_worktree_snapshot = self.git(
+            "worktree",
+            "list",
+            "--porcelain",
+        ).stdout
+        cleaned_manifest_paths = self.manifests(self.generic_profile_state)
+        self.assertEqual(cleaned_manifest_paths, {manifest_path})
+
+        def assert_cleaned_unchanged(
+            result: subprocess.CompletedProcess[str],
+            expected_status: int,
+        ) -> None:
+            self.assertEqual(result.returncode, expected_status, result.stderr)
+            self.assertEqual(
+                self.manifest_snapshot(manifest_path),
+                cleaned_snapshot,
+            )
+            self.assertEqual(
+                self.git("rev-parse", "--verify", target_ref).stdout.strip(),
+                target_head,
+            )
+            self.assertEqual(self.ref_oid(survivor_ref), target_head)
+            self.assertEqual(self.git("rev-parse", "HEAD").stdout.strip(), control_head)
+            self.assertEqual(self.git("write-tree").stdout.strip(), control_tree)
+            self.assertEqual(
+                self.git(
+                    "status",
+                    "--porcelain=v1",
+                    "--untracked-files=all",
+                ).stdout,
+                control_status,
+            )
+            self.assertEqual(self.worktree_paths(), [self.control.resolve()])
+            self.assertEqual(
+                self.git(
+                    "worktree",
+                    "list",
+                    "--porcelain",
+                ).stdout,
+                cleaned_worktree_snapshot,
+            )
+            self.assertEqual(
+                self.git(
+                    "for-each-ref",
+                    "--format=%(refname) %(objectname)",
+                ).stdout,
+                cleaned_ref_snapshot,
+            )
+            self.assertEqual(
+                self.manifests(self.generic_profile_state),
+                cleaned_manifest_paths,
+            )
+            self.assertEqual(self.refs_under(private_prefix), [])
+            self.assertEqual(
+                self.refs_under(
+                    "refs/heads/worktree-marshal/generic-v1/isolated/"
+                ),
+                [],
+            )
+            self.assertFalse(worker.exists())
+            self.assertFalse(temporary.exists())
+            self.assertEqual(
+                adjacent_sentinel.read_text(encoding="utf-8"),
+                "adjacent retirement state survives\n",
+            )
+            for ref in (branch_ref, anchor_ref, receipt_ref):
+                self.assertIsNone(self.ref_oid(ref))
+
+        repeated = self.run_console(*retirement_arguments)
+        self.assertIn("already retired and cleaned", repeated.stderr)
+        assert_cleaned_unchanged(repeated, 0)
+        changed_discard = self.run_console(
+            "--profile",
+            "generic-v1",
+            "retire",
+            run_id,
+            "--discard-head",
+            final_head,
+            "--target-contains",
+            selected_checkpoint,
+        )
+        assert_cleaned_unchanged(changed_discard, 2)
+        changed_checkpoint = self.run_console(
+            "--profile",
+            "generic-v1",
+            "retire",
+            run_id,
+            "--discard-head",
+            discard_head,
+            "--target-contains",
+            target_head,
+        )
+        assert_cleaned_unchanged(changed_checkpoint, 2)
+
+        overview = self.run_console("--profile", "generic-v1", "status")
+        self.assertEqual(overview.returncode, 0, overview.stderr)
+        self.assertNotIn(run_id, overview.stdout)
+        exact_status = self.run_console(
+            "--profile",
+            "generic-v1",
+            "status",
+            run_id,
+        )
+        self.assertEqual(exact_status.returncode, 0, exact_status.stderr)
+        self.assertIn(run_id, exact_status.stdout)
+        self.assertIn("cleaned", exact_status.stdout)
 
     def test_installed_generic_managed_conflict_lifecycle(self) -> None:
         before = self.manifests(self.generic_profile_state)

@@ -103,8 +103,21 @@ conflict-free rebase onto the captured advanced target. The latter lands a
 linear candidate containing both results, records its exact integration
 identities, and cleans the generic worker namespace. This does not establish
 scheduling throughput, concurrent integration, target-race handling, or crash
-recovery. Retirement, recovery, broader security coverage, the complete
-installed lifecycle matrix, and the supported Python and Git CI matrix remain
+recovery. A fourth installed checkpoint covers direct generic retirement of one
+eligible clean rewritten quarantine. It verifies representative non-mutating
+refusals, the exact discard, containment, initial-target, and cleanup-target
+identities, unchanged target and control state, bounded removal of the worker
+and its exact namespace as observed at completion, retention of the cleaned
+manifest, durable completion checkpoints, and completed-state exact-command
+idempotency across the manifest, refs, worktree registrations, and surviving
+sentinels. The containment checkpoint proves reachability only, not
+incorporation or semantic supersession.
+
+The retirement checkpoint does not establish the full eligibility and refusal
+matrix, target-race, tamper, active-worker, interrupted-checkpoint,
+worktree-removal, ref-transaction, receipt-recovery, garbage-collection, or
+concurrent-retirement behavior. Those cases and the broader recovery, security,
+complete installed-lifecycle, and supported Python and Git CI matrices remain
 release gates. These bounded checkpoints advance but do not satisfy step 6.
 
 ## Distribution and repository integration

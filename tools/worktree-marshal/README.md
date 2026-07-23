@@ -81,11 +81,35 @@ candidate, and integrated heads and produces linear no-merge history containing
 both results; both integrations clean their worker namespaces. These bounded
 overlap and non-racing integration checks do not establish scheduler
 throughput, concurrent integration, target-race handling, or recovery
-guarantees. Retirement, crash and race recovery, broader security coverage,
-the complete installed lifecycle matrix, and the supported Python and Git CI
-matrix remain release gates; the step-5 helper split remains protected by the
-source and installed parity suites. The frozen legacy contract and current
-security boundary are recorded in
+guarantees.
+
+A fourth installed checkpoint creates one eligible clean rewritten generic
+quarantine through the installed run and reopen commands. It verifies that no
+Make retirement target exists, ordinary cleanup cannot acquire destructive
+authority, and representative wrong full object IDs leave the quarantine
+unchanged. The exact direct-only retirement command records the selected
+discard and target-containment identities while leaving the target and control
+checkout unchanged. Its manifest records the completed worktree-removal,
+ref-transaction, and receipt-removal checkpoints; afterward the worker
+worktree, run temporary directory, worker branch, and exact per-run retirement
+refs are absent, while the cleaned manifest, adjacent state, and an unrelated
+ref remain. An immediate repeat with the identical command and object IDs
+leaves that manifest, the target and control snapshot, the ref set, worktree
+registrations, and surviving sentinels unchanged; changed valid object IDs are
+refused. The selected target checkpoint establishes reachability only, not
+incorporation, semantic equivalence, or supersession of the discarded history.
+
+This is one stable-target retirement happy path, representative pre-checkpoint
+refusals, and completed-state exact-command idempotency. It does not cover the
+full eligibility and refusal matrix, target races or lost containment,
+active-worker, path, manifest, or ref tampering, interrupted checkpoints,
+worktree-removal or ref-transaction failures, receipt recovery, garbage
+collection, or concurrent retirement. Those retirement cases, broader crash
+and race recovery, broader security coverage, the complete installed lifecycle
+matrix, and the supported Python and Git CI matrix remain release gates; the
+step-5 helper split remains protected by the source and installed parity
+suites. The frozen legacy contract and current security boundary are recorded
+in
 [`docs/compatibility-contract.md`](docs/compatibility-contract.md); the target
 architecture and release sequence are in [`docs/design.md`](docs/design.md).
 
