@@ -1,0 +1,17 @@
+schema = 1
+record_type = "bindings"
+document = "theology/mariology/rosary"
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-archive-2003"
+loci = ["65-67", "244-248", "475", "484-486", "495", "529", "534-550", "554-556", "571-623", "638-667", "717", "731-741", "767-768", "963-972", "1213-1284", "1322-1419", "1427-1429", "1471-1479", "2617-2619", "2673-2679", "2705-2708"]
+role = "official-control"
+states = ["cataloged"]
+context = "The rendered bibliography identifies the archived Holy See English index for the complete broad Catechism reference, while the migration audit preserves the more granular mystery-level loci recorded in the source audit. This catalog-only binding claims no inspection of the exact central archive artifact."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["484-486", "495", "571-623", "638-667", "731-741", "767-768", "963-972", "1322-1419", "2673-2679", "2705-2708"]
+role = "official-control"
+states = ["cataloged"]
+context = "The source audit separately lists modern Holy See division pages for the Incarnation, Passion, Resurrection, Ascension, Pentecost, Mary and the Church, Eucharistic sacrifice, Marian prayer, and meditation. These overlapping loci record supplemental legacy delivery routes, not duplicate verification or inspection of the exact 2026-07-23 central artifacts."

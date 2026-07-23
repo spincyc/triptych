@@ -1,0 +1,17 @@
+schema = 1
+record_type = "bindings"
+document = "theology/mariology/champion"
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-archive-2003"
+loci = ["4-10", "65-67", "302-314", "309-314", "426-429", "849-856", "970", "1210-1498", "1817-1821", "2221-2231", "2683-2684"]
+role = "official-control"
+states = ["cataloged"]
+context = "The rendered bibliography identifies the archived Holy See English index for the publication's Catechism ranges. The migration audit additionally retains paragraphs 4-10 and the overlapping 309-314 safeguard from the claim record; neither the overlap nor the broader archived list is represented as inspection of the exact central artifact."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["65-67"]
+role = "official-control"
+states = ["cataloged"]
+context = "The legacy source audit separately links the modern Holy See page for the finality of public Revelation. Its overlap with the archived-expression binding records two legacy delivery witnesses, not duplicate verification, and the 2026-07-23 central bytes were not replayed for this publication."
