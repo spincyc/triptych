@@ -15,3 +15,48 @@ loci = ["185-1065", "1066-1209", "1213-1284", "1322-1419"]
 role = "official-control"
 states = ["cataloged"]
 context = "The legacy records identify the archived Holy See English Catechism presentation as doctrinal synthesis for the Order of Mass, not as an edition-specific rubric source. The bibliography omits matrix-only loci 185-1065 and 1213-1284; this binding preserves those audited uses without correcting the legacy bibliography. It is catalog-only and claims no inspection of a canonical artifact."
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.online-edition-notice"
+loci = ["online-edition-notice"]
+role = "currentness-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The official landing notice was checked against the exposition's edition boundary: current United States GIRM, no. 54 emendation, and the separate emendations promulgated on 22 October 2021, all within the publication's 15 July 2026 disciplinary cutoff. This controls the dated GIRM state, not the uncollated 2011 altar-book artifact or the Latin 2008 reprint."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:bcf8f698fcea295978be2151acf5cde111a133ad0ad812ad1475eaf6a2a5a5bc"
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-a"
+loci = ["365(a)"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact subdivision was checked against the exposition's Roman Canon selection guidance: general availability, the stated especially suitable circumstances, and its qualified Sunday suitability. The binding controls the GIRM rule, not the prayer text or the publication's separate historical analysis."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:9c6183bc680379bd89d1f53e6118200439049345c236e8cf55a0efe93732852a"
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-b"
+loci = ["365(b)"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact subdivision was checked against the exposition's Eucharistic Prayer II guidance: its especially suitable circumstances, its own or another qualifying Preface, and its deceased-person insertion. It does not control the prayer's protected wording or historical-source claims."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:55ff9568ce6ec9c09c8c9633c8371955dde89062888e95394f91657579a65420"
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-c"
+loci = ["365(c)"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact subdivision was checked against the exposition's Eucharistic Prayer III guidance: Preface compatibility, preference on Sundays and festive days, and the deceased-person insertion. It does not control the prayer's protected wording or composition history."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:f37ecd39631a88df3048669a071f590b9221cf3f6ba3ef00b2a62bb9f1136314"
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-d"
+loci = ["365(d)"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact subdivision was checked against the exposition's Eucharistic Prayer IV guidance: its invariable Preface, the conditions admitting its use, its Ordinary Time Sunday suitability, and the absence of a deceased-person insertion. The binding does not control the prayer's protected wording or historical-source analysis."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:7197153b7137a151997474608d070bb179b73f5c08f22be4c8b6a3c6842bb70d"

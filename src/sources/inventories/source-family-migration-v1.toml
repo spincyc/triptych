@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-07-23"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:ed27014bd707ceee8535627fc3e5bf628a8f6f4f79685fa2c9308ab8dba135c4"
+inventory_snapshot = "sha256:e44718d85b2472a403908717f4ada68fba8dc2563ae0c8bfb86588628ed16c8b"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:dafeabb5de4701ba2d641eaed5f3c550cb19836e6140a6cb39f44a74cc4e1c92"
-canonical_catalog_snapshot = "sha256:d0fbcc0848cc3314fc371abc78ce5a4cfaaae455fd556c3618e158b6e38cab79"
+canonical_catalog_snapshot = "sha256:a0ff658fb6b9af29547f29118f92921c2b8ff38f0946c36875a1cbf82b681975"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:86f9a15f5b5c8a7e6a05aba128d5eec1bcebf3e579e2e707184e6f4eb1c53733"
+snapshot = "sha256:11e6a881fb207464fc536f8584d43001267fa47d279f010dcaf15d6928a85585"
 
 [[families]]
 id = "family.acta.aas-ass"
@@ -217,18 +217,18 @@ kind = "mixed-cluster"
 source_categories = ["liturgical"]
 identity_confidence = "probable"
 identity_gaps = ["artifact", "date", "edition", "expression", "jurisdiction", "language", "relation"]
-artifact_availability = "candidate-partial"
+artifact_availability = "mixed"
 storage_plan = ["remote", "restricted"]
-rights_review = "unreviewed"
+rights_review = "partially-reviewed"
 mutability = "officially-mutable"
 freshness_rule = "Pin the 2008 Latin state, 2011 United States English edition, and every later variation or emendation separately."
 evidence_ceiling = "edition-locus"
 disposition = "split-then-canonicalize"
 priority = "p0"
-canonical_ids = []
+canonical_ids = ["artifact.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.usccb-chapter-vii-html-2026-07-23-7b765649", "artifact.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.usccb-landing-html-2026-07-23-8ec0eb3d", "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021", "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.363", "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-a", "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-b", "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-c", "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-d", "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.online-edition-notice", "work.catholic-church.institutio-generalis-missalis-romani"]
 trace_patterns = ["(?:Missale Romanum.{0,40}(?:2002|2008)|Roman Missal.{0,60}(?:Third Edition|2011)|General Instruction of the Roman Missal|\\bGIRM\\b|\\bIGMR\\b)"]
-reviewed_on = "2026-07-22"
-notes = "Central metadata can be shared, but Latin, territorial English, GIRM states, later variations, and copyrighted artifacts must not be conflated."
+reviewed_on = "2026-07-23"
+notes = "The canonical membership now covers one bounded current United States GIRM slice: a separate related work, the 2011 English edition state emended through 2021, exact restricted landing and Chapter VII responses, and checked passages 363 and 365(a-d). The Latin 2002 and 2008 states, the complete split-HTML GIRM presentation, the 2011 altar book, later variations, and other territorial expressions remain separate migration work and must not be conflated."
 
 [[families]]
 id = "family.scripture.vulgata-clementina-hetzenauer-1914"
@@ -1458,7 +1458,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrific
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"
-surface_snapshot = "sha256:abb5d8c66dfef1efe870686a3948a330b53f105213706ac8230ec86cf0be85b0"
+surface_snapshot = "sha256:b907a67634aa25a5354fc430b5b2f69342d914d7b2eff65d7fd0fdfe999e3df5"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -1503,7 +1503,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-eng
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s35-eleventh-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:eed3448b9183bec12bfaae97a18ef4bbd73fc1f0eb7e3c89a091820e37f75792"
+surface_snapshot = "sha256:dc8a153b6be08d9bd895913b10ce0aed4bf595969d1acbabeece6bd6bf14b50a"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1532,7 +1532,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s36-twelfth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:3b9a59f9960df8c0f40987b22927ff1ae54d94b16c0c1e951b41449a923b7ed9"
+surface_snapshot = "sha256:b2647d231aa9480b7154b710e59cb76dba210819cbd622f645bdf6a499975a62"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1561,7 +1561,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-thirteenth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:b832faf07505825a42811b8585d58a661a295dc625861370559d751d1ab49eea"
+surface_snapshot = "sha256:60547cb239583eaab068c6de46609330f721b5df0b64d489225256fe5472acab"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -1590,7 +1590,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-fourteenth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:d61427c423267ad20dd4f43f6bcd89a167196e31f07049f992259b4c1061579e"
+surface_snapshot = "sha256:75062e417e0f5425f7eeb8c670e166c375521923527415c7fa1cec3ac238e101"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1615,7 +1615,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-fifteenth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:5ad7af14c86663cd1ce349e13ed2e47f93daedc62209edd7f005bf08d2d36576"
+surface_snapshot = "sha256:f6a526d2e02baf6166cb5b75535c91237d173cc33ae233e560c56329bd141d87"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1640,7 +1640,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:12ccdaa69771ea577720856feb1cb1b651e7dd2be3bdedfb1efb88f7a9382958"
+surface_snapshot = "sha256:584fb91e37750e2ee9f316de9f4fec253ebd5e4e232d139cc71de498d8423b7d"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1669,7 +1669,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:2867c079220eacc5feec93748f1e8d13272a2ded48a5093837c941daf5879c60"
+surface_snapshot = "sha256:e3999ea32d69460471dc78ee061c26a4a8d57f2bbe94c8784d87a387dea81e1d"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1698,7 +1698,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a"
-surface_snapshot = "sha256:14f5b5cf85fccacd0b2d741709a0b0521da73dbffeb85bd11c29729cd481cf84"
+surface_snapshot = "sha256:cc53ceaf4da65e2ed48c401a6eac035b35833bb984d5218ce9677d0e0f7459e8"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -1731,7 +1731,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s59-most-holy-body-and-blood-of-christ-year-a"
-surface_snapshot = "sha256:442b2453f43b2c322acb290b24a1d7162c571c8912b51e5236cddf9c544f525d"
+surface_snapshot = "sha256:c89b3d4cefcb337be2ccd42ff1ed8e0f7129f887a710b2c4178e60ed5dfb7d43"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
