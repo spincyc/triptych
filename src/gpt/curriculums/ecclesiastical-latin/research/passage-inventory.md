@@ -61,7 +61,7 @@ recorded in `scope.md` and `source-audit.md`.
 | HIER-CSEL54 | Jerome, *Epistula* 22.30.4 | CSEL 54, printed p. 190 / PDF p. 204 | V-R |
 | AUG-CSEL33 | Augustine, *Confessiones* 1.1.1, complete three-sentence opening through *donec requiescat in te*; 10.27.38, complete opening sentence plus the next sentence through *quaerebam*, with editorial ellipsis | CSEL 33, printed pp. 1 and 255 / PDF pp. 46 and 306 | V-R |
 | AMB-KRAB1857 | Ambrose, *De officiis* 1.11.38 | Krabinger 1857, printed p. 44 / PDF p. 61 | V-R |
-| THOM-LEON4 | Thomas Aquinas, *Summa theologiae* I, q. 1, a. 1, corpus opening | Leonine vol. 4, printed p. 6 / PDF p. 24 | V-R |
+| THOM-LEON4 | Thomas Aquinas, *Summa theologiae* I, q. 1, a. 1, complete corpus opening sentence; used by M19, M21, M22, and EL-REVIEW-IV | Leonine vol. 4, printed p. 6 / PDF p. 24; canonical passage preserves the comma after *salutem*, while the course rendering normalizes it away | V-R |
 | PHAED-POST1919 | Phaedrus, Book 1 Prologue 1–2 and 1.1.1–6 | Postgate 1919, printed p. 1 / PDF p. 35 | V-R |
 | VERG-HEND1891 | Virgil, *Aeneid* 1.1–4 | Henderson 1891, printed p. 27 / PDF p. 31 | V-R |
 | OVID-OWEN1885 | Ovid, *Tristia* 1.1.1–2 | Owen 1885, opening text leaf / PDF p. 70 | V-R |

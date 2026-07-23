@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.thomas-aquinas.summa-theologiae.leonine-v4-1888.i-q1-a1-corpus-opening-checked-text-03457a82"
+edition_id = "edition.thomas-aquinas.summa-theologiae.leonine-v4-1888"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces one Latin sentence by Thomas Aquinas from the public-domain 1888 Leonine edition. It contains no Internet Archive interface text, OCR, annotations, or protected translation, and Triptych claims no exclusive right in the source wording."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription visually collated against the exact parent facsimile at printed p. 6 / artifact PDF p. 24 on 2026-07-23."
+retrieved = "2026-07-23"
+sha256 = "03457a82a37e2f5ac58541579c4c04bcc3eb4cd6cfc18b1813847c038f017fb3"
+byte_size = 185
+path = "src/sources/works/thomas-aquinas/summa-theologiae/editions/leonine-v4-1888/artifacts/i-q1-a1-corpus-opening-checked-text/summa-theologiae-i-q1-a1-corpus-opening.txt"
+derived_from = "artifact.thomas-aquinas.summa-theologiae.leonine-v4-1888.ia-facsimile-pdf-13c54976"
+transformation = "Transcribe the complete opening sentence of Summa theologiae I, q. 1, a. 1, corpus from the page image; preserve its wording, capitalization, spelling, and punctuation, including the comma after 'salutem'; collapse column lineation to one LF-terminated UTF-8 line; omit the surrounding article, Cajetan commentary, and critical apparatus."
+indexable = true
+encoding = "utf-8"
+notes = "Focused checked transcription for reusable textual comparison. It is not a complete transcription of the article, question, volume, or work."

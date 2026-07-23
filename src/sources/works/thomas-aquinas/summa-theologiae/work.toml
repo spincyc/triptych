@@ -1,0 +1,10 @@
+schema = 1
+record_type = "work"
+id = "work.thomas-aquinas.summa-theologiae"
+title = "Summa theologiae"
+responsible = "Thomas Aquinas"
+work_type = "scholastic-treatise"
+alternate_titles = ["Summa theologica", "Summa Theologiae"]
+languages = ["la"]
+locus_pattern = '(?:I|I-II|II-II|III|Supplementum)\.(?:[1-9]|[1-9][0-9]|1[0-9][0-9])\.(?:[1-9]|[1-9][0-9])\.(?:objection-[1-9][0-9]*|sed-contra|corpus(?:-opening)?|reply-[1-9][0-9]*)'
+description = "Thomas Aquinas's scholastic synthesis of sacred doctrine, conventionally addressed by part, question, article, and article division."

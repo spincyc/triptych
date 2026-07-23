@@ -27,7 +27,7 @@ printed and PDF pages, normalization, and how each excerpt enters the course.
 | `HIER-CSEL54` | Isidor Hilberg, ed., *S. Eusebii Hieronymi Epistulae*, CSEL 54 (Vienna and Leipzig: Tempsky and Freytag, 1910); `corpusscriptorum54stuoft` | *Epistula* 22.30.4 | visually checked |
 | `AUG-CSEL33` | Pius Knöll, ed., *S. Aureli Augustini Confessionum libri XIII*, CSEL 33 (Vienna: Tempsky, 1896); `corpusscriptoru11wiengoog` | *Confessiones* 1.1.1, complete three-sentence opening; 10.27.38, complete opening sentence plus the next sentence through *quaerebam*, explicitly ellipsized | visually checked |
 | `AMB-KRAB1857` | Johann Georg Krabinger, ed., *De officiis ministrorum libri III* (Tübingen: H. Laupp, 1857); `deofficiisminis00krabgoog` | *De officiis* 1.11.38 | visually checked |
-| `THOM-LEON4` | *Sancti Thomae Aquinatis Opera omnia iussu impensaque Leonis XIII*, vol. 4 (Rome: Typographia Polyglotta, 1888); `operaomniaiussui04thom` | *Summa theologiae* I, q. 1, a. 1, corpus opening | visually checked |
+| `THOM-LEON4` | *Sancti Thomae Aquinatis Opera omnia iussu impensaque Leonis XIII*, vol. 4 (Rome: Typographia Polyglotta, 1888); `operaomniaiussui04thom`; exact 50,128,370-byte remote PDF SHA-256 `13c5497631563814f3573fe81b63f17470b5e06ff669a48607125951cbaf85ce` | *Summa theologiae* I, q. 1, a. 1, corpus opening | visually checked; canonical checked transcription preserves the Leonine comma after *salutem* |
 | `PHAED-POST1919` | J. P. Postgate, ed., *Phaedri Fabulae Aesopiae* (Oxford: Clarendon, 1919); `fabulaeaesopiae00phaeuoft` | Book 1 Prologue 1–2; 1.1.1–6 | visually checked on the same printed p. 1 / PDF p. 35 |
 | `VERG-HEND1891` | John Henderson, ed., *Aeneid, Book I* (Toronto: Copp, Clark, 1891); `aeneidbooki00virguoft` | *Aeneid* 1.1–4 | visually checked |
 | `OVID-OWEN1885` | S. G. Owen, ed., *P. Ovidi Nasonis Tristium libri V* (Oxford: Clarendon, 1885); `tristia00owengoog` | *Tristia* 1.1.1–2 | visually checked |
@@ -38,6 +38,13 @@ translation. The scans are verification witnesses and are not vendored. The
 course retains edition readings where material, including Henderson's
 *Lavinaque*, while recording declared `j/i`, `u/v`, ligature, capitalization,
 or accent normalization separately.
+
+`THOM-LEON4` now crosswalks to
+`passage.thomas-aquinas.summa-theologiae.leonine-v4-1888.i-q1-a1-corpus-opening`.
+Its exact Internet Archive PDF remains remote with unresolved artifact rights;
+a separate public-domain, one-sentence checked transcription is tracked for
+reusable comparison. The course rendering omits the source comma after
+*salutem* under the declared punctuation normalization and changes no word.
 
 ## Additional verified Missal and biblical windows
 
