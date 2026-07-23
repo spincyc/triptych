@@ -1,6 +1,6 @@
 # Source audit: The Order of Mass
 
-Checked 13--15 July 2026. “Used” means that the source controls or materially supports a claim in the publication; it does not mean that every page of a large work was relied upon. “Official public witness” distinguishes an authority-maintained text from an unofficial transcription. “Identified, collation outstanding” means the exact edition is bibliographically controlling but a licensed physical copy has not yet been checked formula by formula in this research session.
+Checked 13--15 July 2026, with Justin's exact ANF *First Apology* passages checked on 23 July 2026. “Used” means that the source controls or materially supports a claim in the publication; it does not mean that every page of a large work was relied upon. “Official public witness” distinguishes an authority-maintained text from an unofficial transcription. “Identified, collation outstanding” means the exact edition is bibliographically controlling but a licensed physical copy has not yet been checked formula by formula in this research session.
 
 This audit is deliberately stricter than the bibliography. It records negative controls, unresolved claims, source status, and the rights boundary. It must be updated after any exact-book collation, independent review, or artifact rebuild.
 
@@ -41,7 +41,7 @@ The public official sources are sufficient to establish the structural inventory
 | --- | --- | --- | --- |
 | New Testament | Institution accounts; Luke 24; John 6; Acts 2 and 20; 1 Cor 10--11; Heb 7--10; Rev 4--5 and 19 | Institution, breaking of bread, thanksgiving, sacrifice, ecclesial communion, heavenly worship and wedding supper | Scripture establishes the mystery and supplies direct/allusive language; it does not print the later Roman ceremonial. |
 | *Didache* | 8--10, 14 | Lord’s Prayer, debated meal thanksgivings, unity, confession and reconciliation before Lord’s Day Eucharist | Exact Eucharist/agape relation is debated; no present Penitential Act or EP is derived directly. |
-| Justin | *First Apology* 61, 65--67; *Dialogue with Trypho* 41 | Baptismal Trinitarian practice; readings, exhortation, intercession, kiss, mixed gifts, thanksgiving, Amen, distribution, Sunday assembly and charity; Malachi 1:11 | A second-century structural/apologetic witness, not a blueprint for today’s sequence or proof of a current formula. |
+| Justin | *First Apology* 61, 65--67; *Dialogue with Trypho* 41 | Baptismal Trinitarian practice; readings, exhortation, intercession, kiss, mixed gifts, thanksgiving, Amen, distribution, Sunday assembly and charity; Malachi 1:11 | A second-century structural/apologetic witness, not a blueprint for today’s sequence or proof of a current formula. Chapter 61 specifies neither pouring nor immersion and does not settle infant Baptism. The *Dialogue* is a separate work and witness. |
 | Ignatius | *Magnesians* 7; *Philadelphians* 4; *Smyrnaeans* 8; *Trallians* 2.3 | One assembly, Eucharist, cup, altar, Bishop, presbytery, Deacons and ministerial service | Ecclesial unity and office, not current entrance or Gospel choreography. |
 | Irenaeus | *Against Heresies* III.3.1--4, III.11.8, III.18--22, IV.14--18, V.2 | Apostolic proclamation, Gospel, recapitulation, pedagogy, created gifts, thanksgiving, pure offering, ecclesial oblation and bodily resurrection | Theological witness; no claim that he knew present offertory formulas or composed current anaphoral themes. |
 | Tertullian | *De corona* 3; *De oratione* 11--18, 27--28; *Adversus Marcionem* IV.9; *De praescriptione* 13 | Signing, care of species, reconciliation, washing, posture, peace, psalm response, Kyrie-related Gospel cry, spiritual sacrifice and rule of faith | Habitual sign of cross does not prove present opening position; North African practice does not become Roman genealogy. |
@@ -57,6 +57,17 @@ The public official sources are sufficient to establish the structural inventory
 | *1 Clement*; Egeria | 59.2--61.3; *Itinerarium* 24.2, 6--7, 11; 25.1--2 | Common intercession; Jerusalem announcements, blessings, dismissal and congregation after Eucharist | Roman letter and Jerusalem itinerary illuminate functions without establishing current rubrics. |
 | Gregory I | *Registrum* IX.26 (598), MGH *Epistolae* II, 59--60; *Regula pastoralis* III prologue | Alleluia, Roman Kyrie/Christe practice, Pater placement; differentiated preaching | Bounded report and pastoral rule; Gregory regulates and explains but is not called inventor of the rites. |
 | Thomas Aquinas | *ST* III q.78 aa.1--4; q.82 a.1; q.83 a.3 ad 2, a.4 and ad 8 | Effective words, ordained minister, altar symbolism, Canon unity and biblical offerings | Scholastic synthesis controls interpretation, not the early date or authorship of a ritual clause. |
+
+The Dods--Reith *First Apology* 61 and 65--67 were checked in the exact ANF
+volume 1 facsimile (Buffalo, 1887) at printed pp. 183 and 185--186 / artifact
+PDF pp. 201 and 203--204, together with the paired raw-OCR ranges. The complete
+translated apology is centrally bounded for later work-wide examination, but
+this exposition did not search or inspect the whole constituent. Coxe's
+bracketed notes, the translators' annotations, and editorial headings remain
+distinct from Justin's text. New Advent's Kevin Knight--revised web
+presentation is a separate access witness, not the exact Buffalo artifact.
+The *Dialogue with Trypho* remains independently cited and is not represented
+by these *First Apology* records.
 
 ## Roman historical controls
 

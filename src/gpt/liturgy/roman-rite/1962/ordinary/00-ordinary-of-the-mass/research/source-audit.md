@@ -1,7 +1,8 @@
 # Source audit: The Ordinary and Order of the Mass
 
 Access dates for public web sources: 2026-07-12 through 2026-07-15, with the
-exact Missal artifact reacquired on 2026-07-23. “Used” means the source controls
+exact Missal artifact reacquired and Justin's exact ANF passages checked on
+2026-07-23. “Used” means the source controls
 or materially supports a claim in the publication; it does not mean every page
 of a large work is relied upon.
 
@@ -48,7 +49,7 @@ Official public texts used include <https://www.vatican.va/content/pius-xii/en/e
 | --- | --- | --- |
 | New Testament | Synoptic institution accounts; John 6; Acts 2:42 and 20:7; 1 Cor 10--11; Hebrews 7--10; Revelation 4--5, 19 | Divine institution, apostolic assembly, sacrificial and ecclesial communion, eschatological worship. It does not provide a later Roman ceremonial transcript. |
 | *Didache* | 9--10, 14 | Thanksgiving, Sunday gathering, confession, reconciliation, and pure sacrifice; exact relation to a complete Eucharistic order remains debated. |
-| Justin Martyr | *First Apology* 65--67 | Readings, exhortation, prayers, kiss, mixed gifts, thanksgiving/Amen, distribution and care for absent members. |
+| Justin Martyr | *First Apology* 65 and 67 | Readings and exhortation; common prayer, kiss, mixed gifts, thanksgiving/Amen, distribution, care for absent members, and Sunday charity. The witness does not prescribe the 1962 sequence. |
 | Irenaeus | *Against Heresies* IV.17--18; V.2 | Eucharistic offering of creation, resurrection, and ecclesial confession. |
 | Cyprian | *Epistle* 63 | Institution, sacrifice, mixed chalice, and ecclesial symbolism. |
 | Tertullian; Origen; *Apostolic Constitutions* | *De corona* 3; *Commentary on John* I.6; VII.47 | Early sign-of-the-Cross practice, relation of written and living Gospel, and the Gloria's ancient Greek-hymn witness. None is treated as the direct source of the complete later Roman unit. |
@@ -60,6 +61,15 @@ Official public texts used include <https://www.vatican.va/content/pius-xii/en/e
 | Gregory the Great | *Register* IX.26, October 598, MGH *Epistolae* II, 59 (IX.12 in NPNF) | Bounded direct witness to Roman Kyrie, Alleluia, and Pater placement; not used to assert word-for-word fixation of the later Canon. |
 | *Liber pontificalis* | Life of Sergius I, no. 86 | Historical notice concerning introduction of the Agnus Dei chant; used with the source's genre and transmission limits. |
 | *Ordo Romanus I* | Andrieu, *Ordines Romani*, II (1948), pp. 38--51 for recension/date; pp. 81--108, nn. 42--71 for the entrance through conclusion | Papal stational movement, differentiated ministry, Gospel procession, offertory, Canon gestures, Communion, and dismissal. Short- and long-recension evidence is kept distinct. |
+
+Justin's Dods--Reith English was checked in the exact ANF volume 1 facsimile
+(Buffalo, 1887) at chapter 65, printed p. 185 / artifact PDF p. 203, and chapter
+67, printed pp. 185--186 / artifact PDF pp. 203--204, together with the paired
+raw-OCR ranges. The complete translated apology is centrally bounded for later
+work-wide examination, but this exposition did not search or inspect the whole
+constituent. Coxe's bracketed notes and other editorial matter remain distinct
+from Justin's text. New Advent's Kevin Knight--revised web presentation is a
+separate access witness, not the exact Buffalo artifact.
 
 The work conventionally called the *Apostolic Tradition* is treated as a redactionally complex witness. No claim rests on an unqualified attribution to Hippolytus or on treating its reconstructed prayer as the Roman Canon.
 

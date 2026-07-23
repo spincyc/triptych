@@ -1,4 +1,4 @@
-schema = 1
+schema = 2
 record_type = "bindings"
 document = "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"
 
@@ -60,3 +60,78 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The exact subdivision was checked against the exposition's Eucharistic Prayer IV guidance: its invariable Preface, the conditions admitting its use, its Ordinary Time Sunday suitability, and the absence of a deceased-person insertion. The binding does not control the prayer's protected wording or historical-source analysis."
 verified_on = "2026-07-23"
 source_fingerprint = "sha256:7197153b7137a151997474608d070bb179b73f5c08f22be4c8b6a3c6842bb70d"
+
+[[bindings]]
+source_id = "segment.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.ia-djvu-ocr-12cdc519"
+role = "lead"
+states = ["cataloged", "acquired"]
+context = "The complete translated body of the First Apology in the exact retained Buffalo 1887 ANF volume 1 OCR is available for later work-wide examination. This exposition did not thereby search or inspect the whole constituent, and the OCR remains subordinate to the separately registered facsimile."
+source_fingerprint = "sha256:d8cbdcf54647a2f4b1b641ed1fc2f5b3681cd7d04e94fd7a648bcd3fda9379fe"
+
+[[bindings]]
+source_id = "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.61.ocr"
+loci = ["61"]
+role = "lead"
+states = ["cataloged", "acquired", "inspected"]
+context = "The exact OCR ranges were inspected as a reusable locator for catechumenal faith and fasting, washing in water, regeneration, the triune name, remission, and illumination. OCR wording does not control the exposition."
+source_fingerprint = "sha256:1b4d415ba792523c2164481db4bef7cced35099515352edd6c3798a53d632b43"
+
+[[bindings]]
+source_id = "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.61.facsimile"
+loci = ["61"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete chapter was visually checked in the exact Buffalo 1887 ANF facsimile for the exposition's baptismal interpretation of the sprinkling option. Justin describes adult catechumens' regeneration and Trinitarian washing, not the present Sunday sprinkling; the chapter specifies neither pouring nor immersion and does not settle infant Baptism."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:fd2d39abf81b34b763c660a4e45092ce708c53ef92b72dfe17bf307db874d70d"
+
+[[bindings]]
+source_id = "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.65.ocr"
+loci = ["65"]
+role = "lead"
+states = ["cataloged", "acquired", "inspected"]
+context = "The exact OCR ranges were inspected as a reusable locator for common prayer, the kiss, mixed gifts, presidential thanksgiving, the people's Amen, and diaconal distribution. OCR wording does not control the exposition."
+source_fingerprint = "sha256:afbcf3ba5bce23f6038e3ab8f01d3859b5f49192a8aca7c8e4a428831959d669"
+
+[[bindings]]
+source_id = "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.65.facsimile"
+loci = ["65"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete chapter was visually checked in the exact Buffalo 1887 ANF facsimile for the exposition's bounded early structural claims about prayer, peace, mixed gifts, thanksgiving, assent, and distribution. It does not prescribe the current Order."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:33ef0205f7341f18e4740a62a28c5b1ad007d38b34055e7e38a23f588563bc60"
+
+[[bindings]]
+source_id = "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.66.ocr"
+loci = ["66"]
+role = "lead"
+states = ["cataloged", "acquired", "inspected"]
+context = "The exact OCR range was inspected as a reusable locator for admission to the Eucharist, non-common food, the flesh and blood of the incarnate Jesus, institution tradition, and the apostolic memoirs called Gospels. OCR wording does not control the exposition."
+source_fingerprint = "sha256:fbc65b4bb9084d9f31aba26b315280ad6bec2c71c3c4d26e6c19a9b6c070ab33"
+
+[[bindings]]
+source_id = "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.66.facsimile"
+loci = ["66"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete chapter was visually checked in the exact Buffalo 1887 ANF facsimile for Eucharistic realism, institution tradition, and the identity of apostolic memoirs as Gospels. Coxe's bracketed intervention and the translators' annotations remain distinct from Justin and do not control later doctrinal analysis."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:d2b7ffc3be3f4bc46040257f0aa77cbb07b1d51358900efc9ae35225bfb4383f"
+
+[[bindings]]
+source_id = "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.67.ocr"
+loci = ["67"]
+role = "lead"
+states = ["cataloged", "acquired", "inspected"]
+context = "The exact OCR ranges were inspected as a reusable locator for Sunday gathering, apostolic and prophetic readings, exhortation, common prayer, Eucharistic thanksgiving and distribution, and care for absent and needy people. OCR wording does not control the exposition."
+source_fingerprint = "sha256:ad2f064fd9563d157fb8c0473bb7c174dfd60652074539ba83026fcb52cb500c"
+
+[[bindings]]
+source_id = "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.67.facsimile"
+loci = ["67"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete chapter was visually checked in the exact Buffalo 1887 ANF facsimile for the exposition's bounded early structural claims about Sunday Word, prayer, Eucharist, distribution, and charity. It is not a transcript of the 2008 Order, and editorial notes remain distinct from Justin's text."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:bac02d64cdb19410b0d954a444ad57942628b732fc5fbf6ff1b1b7331dd4c9d6"

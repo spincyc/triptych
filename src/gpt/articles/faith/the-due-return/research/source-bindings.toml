@@ -158,3 +158,27 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "All six sections were visually checked in the exact Buffalo 1887 ANF facsimile for the article's claims about pure offering, gratitude, liberty, conscience, Eucharistic confession, divine non-need, and service of the poor. Coxe's editorial notes remain distinct."
 verified_on = "2026-07-23"
 source_fingerprint = "sha256:03a2088250e024d9d78d0ab62c87296c4ccc8bdf2d393234842dac6a24f29787"
+
+[[bindings]]
+source_id = "segment.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.ia-djvu-ocr-12cdc519"
+role = "lead"
+states = ["cataloged", "acquired"]
+context = "The complete translated body of the First Apology in the exact retained Buffalo 1887 ANF volume 1 OCR is available for later work-wide examination. This article did not thereby search or inspect the whole constituent, and the OCR remains subordinate to the separately registered facsimile."
+source_fingerprint = "sha256:d8cbdcf54647a2f4b1b641ed1fc2f5b3681cd7d04e94fd7a648bcd3fda9379fe"
+
+[[bindings]]
+source_id = "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.67.ocr"
+loci = ["67"]
+role = "lead"
+states = ["cataloged", "acquired", "inspected"]
+context = "The exact OCR ranges were inspected as a reusable locator for the article's account of Sunday gathering, readings, exhortation, common prayer, Eucharistic thanksgiving and distribution, and care for absent and needy people. OCR wording does not control the article."
+source_fingerprint = "sha256:ad2f064fd9563d157fb8c0473bb7c174dfd60652074539ba83026fcb52cb500c"
+
+[[bindings]]
+source_id = "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.67.facsimile"
+loci = ["67"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete chapter was visually checked in the exact Buffalo 1887 ANF facsimile for the article's bounded account of Sunday worship and concrete aid to those in need. The apologetic description is not current legislation or proof of every later discipline, and editorial notes remain distinct from Justin's text."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:bac02d64cdb19410b0d954a444ad57942628b732fc5fbf6ff1b1b7331dd4c9d6"

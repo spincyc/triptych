@@ -1,6 +1,6 @@
 # Source Audit — The Holy Rosary
 
-Access dates below are 2026-07-12. Holy See sources are primary or official ecclesial texts. Patristic links provide working English translations; claims attach to the identified work and locus rather than to a claim that the online translation is critical.
+Access dates below are 2026-07-12, with Justin's exact ANF *First Apology* passages checked on 2026-07-23. Holy See sources are primary or official ecclesial texts. Patristic links provide working English translations; claims attach to the identified work and locus rather than to a claim that the online translation is critical.
 
 ## Governing theology and method
 
@@ -131,7 +131,7 @@ Primary dogmatic pages:
 | Cana | Augustine, *Tractates on John* 8 | The sign belongs to the same Word's divine agency manifested ordinarily through creation. <https://www.newadvent.org/fathers/1701008.htm> |
 | Proclamation of the Kingdom | Cyril of Alexandria, *Commentary on Luke*, Sermon XII on Luke 4:14–30 | Christ's advent, liberation, illumination, forgiveness, and Kingdom. Cyril is not claimed to know the later Rosary mystery. <https://www.tertullian.org/fathers/cyril_on_luke_02_sermons_12_25.htm> |
 | Transfiguration | Leo the Great, Sermon 51.2–5 | Confirmation against the scandal of the Cross and hope of members in the Head. <https://www.newadvent.org/fathers/360351.htm> |
-| Eucharist | Justin Martyr, *First Apology* 65–67 | Early liturgical, realist, ecclesial, and charitable Eucharistic witness. <https://www.newadvent.org/fathers/0126.htm> |
+| Eucharist | Justin Martyr, *First Apology* 65–67 | Early liturgical, realist, ecclesial, and charitable Eucharistic witness. The exact checked witness is the Dods–Reith English in ANF volume 1 (Buffalo, 1887); <https://www.newadvent.org/fathers/0126.htm> is a distinct Kevin Knight–revised access presentation. |
 | Agony | John Damascene, *Exposition of the Orthodox Faith* III.23–24 | Natural innocent fear, voluntary acceptance of death, and two natural wills without opposition. <https://www.newadvent.org/fathers/33043.htm> |
 | Scourging | Cyril of Jerusalem, *Catechetical Lecture* XIII.13 | Isaiah 50 applied to the foreknown and freely endured scourging. <https://www.newadvent.org/fathers/310113.htm> |
 | Crowning with Thorns | Cyril of Jerusalem, *Catechetical Lecture* XIII.17–18 | Ancient Genesis-thorn typology; no botanical or numerical claim. <https://www.newadvent.org/fathers/310113.htm> |
@@ -144,6 +144,13 @@ Primary dogmatic pages:
 | Queenship / Coronation | John Damascene, *Exposition of the Orthodox Faith* IV.14; confirmed in *Ad caeli Reginam* 20, 31–34, 39 | Divine maternity as the ground of derived Queenship; no discrete crowning ceremony is asserted as patristic narrative or dogma. <https://www.newadvent.org/fathers/33044.htm> |
 
 Every mystery now has an exact patristic witness, but no claim is made that these Fathers knew or used the later decade structure. The witnesses illuminate the mysteries' ancient reception rather than proving the Rosary's later form.
+
+For Justin, chapters 65--67 were checked in the exact Buffalo 1887 ANF
+facsimile at printed pp. 185--186 / artifact PDF pp. 203--204, together with
+the paired raw-OCR ranges. The complete translated apology is centrally
+bounded for later work-wide examination, but this Rosary study did not search
+or inspect the whole constituent. Coxe's bracketed notes, the translators'
+annotations, and editorial headings remain distinct from Justin's text.
 
 ## Private revelation and Fatima
 

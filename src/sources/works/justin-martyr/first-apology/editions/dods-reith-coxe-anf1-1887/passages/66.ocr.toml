@@ -1,0 +1,16 @@
+schema = 2
+record_type = "passage"
+id = "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.66.ocr"
+edition_id = "edition.justin-martyr.first-apology.dods-reith-coxe-anf1-1887"
+segment_id = "segment.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.ia-djvu-ocr-12cdc519"
+artifact_sha256 = "12cdc519c642b446cb4c6c3ba0bad9a2288687937975df6ca4c8b42aa6d92d84"
+locus = "66"
+states = ["cataloged", "acquired", "inspected"]
+context = "The complete numbered chapter was inspected in the exact raw OCR. It distinguishes the Eucharist from common food and relates it to the flesh and blood of the incarnate Jesus and the apostolic institution narrative; the paired facsimile controls wording, page identity, and attribution."
+physical_line_ranges = [[20135, 20166]]
+text = "is the flesh and blood of that Jesus who was made flesh."
+transcription_segments = [
+  { line = 20151, text = "is  the  flesh  and  blood  of" },
+  { line = 20152, text = "that  Jesus  who  was  made  flesh." },
+]
+notes = "The checked excerpt preserves OCR wording while normalizing whitespace through the schema's transcription-segment rule. It is a locator aid, not a corrected quotation or independent witness."
