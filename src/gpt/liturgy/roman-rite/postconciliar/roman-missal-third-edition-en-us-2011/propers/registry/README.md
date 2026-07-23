@@ -7,7 +7,7 @@ This non-publishable directory records how this edition-locale adopts and resolv
 
 ## Edition identity
 
-- **Latin base:** `Missale Romanum`, editio typica tertia, reimpressio emendata (2008). Current formulary audits collate accessible 2002 page images and the official 2008 variation list; direct inspection of the corresponding 2008 reprint pages remains outstanding where each owner says so.
+- **Latin base:** `Missale Romanum`, editio typica tertia, reimpressio emendata (2008). Current formulary audits collate the accessible 2002 digitally typeset PDF reproduction and the official 2008 variation list; direct inspection of the corresponding 2008 reprint pages remains outstanding where each owner says so.
 - **Vernacular Missal:** `Roman Missal, Third Edition, for Use in the Dioceses of the United States of America`, English, implemented 2011-11-27. Publisher-specific collation of protected English orations remains outstanding where the owner audit says so.
 - **Lectionary:** `Lectionary for Mass for Use in the Dioceses of the United States of America`, Second Typical Edition, Volume I, for the nine evaluated Sunday targets.
 - **Calendar:** General Roman Calendar as implemented nationally in the United States. Unknown diocesan, religious, parish, titular, dedication, patronal, and other church-proper overlays are not resolved.
