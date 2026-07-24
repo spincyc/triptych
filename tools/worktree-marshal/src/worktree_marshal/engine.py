@@ -99,6 +99,7 @@ from .state import (
     RUN_ID_RE,
     manifest_path as _manifest_path,
     new_run_id as _new_run_id,
+    private_directory as _private_directory,
     repo_lock_path as _repo_lock_path,
     repository_slug as _repository_slug,
     run_lock_path as _run_lock_path,
@@ -496,39 +497,19 @@ def state_base() -> Path:
 
 
 def private_directory(path: Path) -> None:
-    try:
-        path.mkdir(mode=0o700, parents=True, exist_ok=True)
-        metadata = path.lstat()
-    except OSError as exc:
-        raise LauncherError("cannot create or inspect a private launcher directory") from exc
-    if not stat.S_ISDIR(metadata.st_mode):
-        raise LauncherError("a private launcher path is not a real directory")
-    directory_flag = getattr(os, "O_DIRECTORY", 0)
-    nofollow_flag = getattr(os, "O_NOFOLLOW", 0)
-    if not directory_flag or not nofollow_flag:
-        raise LauncherError("safe private launcher directory setup is unavailable")
-    try:
-        descriptor = os.open(
-            path,
-            os.O_RDONLY
-            | directory_flag
-            | nofollow_flag
-            | getattr(os, "O_CLOEXEC", 0),
-        )
-    except OSError as exc:
-        raise LauncherError("cannot open a private launcher directory safely") from exc
-    try:
-        opened = os.fstat(descriptor)
-        if (
-            not stat.S_ISDIR(opened.st_mode)
-            or not os.path.samestat(metadata, opened)
-        ):
-            raise LauncherError("a private launcher directory changed during setup")
-        os.fchmod(descriptor, 0o700)
-    except OSError as exc:
-        raise LauncherError("cannot authenticate a private launcher directory") from exc
-    finally:
-        os.close(descriptor)
+    _private_directory(
+        path,
+        os_error_type=lambda: OSError,
+        error_type=lambda: LauncherError,
+        directory_test=lambda: stat.S_ISDIR,
+        flag_lookup=lambda: lambda name, default: getattr(os, name, default),
+        read_only_flag=lambda: os.O_RDONLY,
+        file_open=lambda: os.open,
+        file_stat=lambda: os.fstat,
+        same_stat=lambda: os.path.samestat,
+        file_chmod=lambda: os.fchmod,
+        file_close=lambda: os.close,
+    )
 
 
 def repository_slug(root: Path) -> str:

@@ -1984,6 +1984,116 @@ class StatePolicyTests(unittest.TestCase):
                 "second",
             )
 
+    def test_private_directory_kernel_and_wrapper_surfaces(self) -> None:
+        self.assertEqual(
+            tuple(
+                inspect.signature(
+                    self.state_policy.private_directory
+                ).parameters
+            ),
+            (
+                "path",
+                "os_error_type",
+                "error_type",
+                "directory_test",
+                "flag_lookup",
+                "read_only_flag",
+                "file_open",
+                "file_stat",
+                "same_stat",
+                "file_chmod",
+                "file_close",
+            ),
+        )
+        self.assertEqual(
+            str(inspect.signature(self.engine.private_directory)),
+            "(path: 'Path') -> 'None'",
+        )
+
+    def test_private_directory_matches_real_filesystem_behavior(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            engine_path = root / "engine" / "state"
+            kernel_path = root / "kernel" / "state"
+
+            self.engine.private_directory(engine_path)
+            self.state_policy.private_directory(
+                kernel_path,
+                os_error_type=lambda: OSError,
+                error_type=lambda: self.engine.LauncherError,
+                directory_test=lambda: self.engine.stat.S_ISDIR,
+                flag_lookup=lambda: (
+                    lambda name, default: getattr(
+                        self.engine.os,
+                        name,
+                        default,
+                    )
+                ),
+                read_only_flag=lambda: self.engine.os.O_RDONLY,
+                file_open=lambda: self.engine.os.open,
+                file_stat=lambda: self.engine.os.fstat,
+                same_stat=lambda: self.engine.os.path.samestat,
+                file_chmod=lambda: self.engine.os.fchmod,
+                file_close=lambda: self.engine.os.close,
+            )
+
+            self.assertTrue(engine_path.is_dir())
+            self.assertTrue(kernel_path.is_dir())
+            self.assertEqual(engine_path.stat().st_mode & 0o777, 0o700)
+            self.assertEqual(kernel_path.stat().st_mode & 0o777, 0o700)
+
+            regular_file = root / "not-a-directory"
+            regular_file.write_text("content", encoding="utf-8")
+            with self.assertRaisesRegex(
+                self.engine.LauncherError,
+                "^cannot create or inspect a private launcher directory$",
+            ):
+                self.engine.private_directory(regular_file)
+
+    def test_engine_private_directory_wrapper_supplies_lazy_globals(
+        self,
+    ) -> None:
+        sentinel_path = object()
+        captured: dict[str, object] = {}
+
+        def kernel(path: object, **dependencies: object) -> None:
+            captured["path"] = path
+            captured.update(dependencies)
+
+        with mock.patch.object(
+            self.engine,
+            "_private_directory",
+            side_effect=kernel,
+        ):
+            self.engine.private_directory(sentinel_path)
+
+        self.assertIs(captured["path"], sentinel_path)
+        self.assertIs(captured["os_error_type"](), OSError)
+        self.assertIs(
+            captured["error_type"](),
+            self.engine.LauncherError,
+        )
+        self.assertIs(
+            captured["directory_test"](),
+            self.engine.stat.S_ISDIR,
+        )
+        self.assertEqual(
+            captured["flag_lookup"]()("missing", 17),
+            17,
+        )
+        self.assertEqual(
+            captured["read_only_flag"](),
+            self.engine.os.O_RDONLY,
+        )
+        self.assertIs(captured["file_open"](), self.engine.os.open)
+        self.assertIs(captured["file_stat"](), self.engine.os.fstat)
+        self.assertIs(
+            captured["same_stat"](),
+            self.engine.os.path.samestat,
+        )
+        self.assertIs(captured["file_chmod"](), self.engine.os.fchmod)
+        self.assertIs(captured["file_close"](), self.engine.os.close)
+
 
 if __name__ == "__main__":
     unittest.main()

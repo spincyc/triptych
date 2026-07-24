@@ -8,7 +8,8 @@ This directory contains the shared lifecycle engine, its first extracted
 cycle-free Git policy, durable-state vocabulary, and integration-transaction
 restoration seams, its lock-descriptor bookkeeping boundary, its first generic
 profile, its child-process supervision boundary, its run-identity and lexical
-state-path boundary, its state-location and repository-name boundary, the
+state-path boundary, its state-location, repository-name, and private-directory
+authentication boundaries, the
 immutable runtime-identity record and launcher-entry authentication
 boundaries, its Git-executable discovery, pre-pin validation, and absolute-path
 selection boundaries, the
@@ -123,7 +124,7 @@ worktree-removal or ref-transaction failures, receipt recovery, garbage
 collection, or concurrent retirement. Those retirement cases, broader crash
 and race recovery, broader security coverage, the complete installed lifecycle
 matrix, and the supported Python and Git CI matrix remain release gates; the
-first twenty-five step-5 seams are protected by direct source tests and artifact
+first twenty-six step-5 seams are protected by direct source tests and artifact
 provenance, and the installed abort checkpoint covers archived transaction
 restoration. Each remaining helper boundary still requires its own direct
 parity coverage.
@@ -456,14 +457,19 @@ the dependency-injected precedence policy that selects a profile override,
 `XDG_STATE_HOME`, or the home-directory fallback, plus ASCII repository-name
 filtering for repository slugs. Engine wrappers retain their existing signatures,
 profile-aware invalid-ID and relative-path diagnostics, and lazy environment,
-path, home, error, clock, and entropy lookups. State-base selection acquires
+path, home, error, clock, and entropy lookups. The module now also owns
+descriptor-authenticated private-directory creation with mode 0700, mandatory
+no-follow and directory flags, pre/open identity comparison, and unconditional
+post-open closure. The engine retains selection and sequencing of every
+directory, initialization, locks, persistence, temporary allocation, and
+lifecycle mutation. State-base selection acquires
 the current profile once, and repository normalization captures the current
-substitution operation before reading the repository name. These helpers do
-not resolve, authenticate, create, or otherwise touch a selected path.
-Repository digesting, final state-root construction and containment rejection,
-private-directory setup, the profile marker, manifest persistence and
-validation, temporary-path authentication, lock acquisition, and all lifecycle
-decisions remain in `engine.py`.
+substitution operation before reading the repository name. Those selection and
+lexical helpers do not resolve, authenticate, create, or otherwise touch a
+selected path. Repository digesting, final state-root construction and
+containment rejection, the profile marker, manifest persistence and validation,
+temporary-path authentication, lock acquisition, and all lifecycle decisions
+remain in `engine.py`.
 
 [`locks.py`](src/worktree_marshal/locks.py) owns only the immutable registered
 descriptor record and the algorithms that register, unregister, authenticate,

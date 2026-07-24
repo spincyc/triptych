@@ -23,7 +23,8 @@ Git-executable discovery and pre-pin validation, and absolute path selection,
 `model.py` now owns the exact
 state vocabulary, pure classifier, and I/O-free integration-transaction
 restoration transform, `state.py` now owns run identity, state-location
-selection, repository-name normalization, and lexical lock and manifest paths,
+selection, repository-name normalization, lexical lock and manifest paths, and
+private state-directory authentication,
 `identity.py` now owns immutable runtime identity records and launcher-entry
 authentication plus exact Git-administration line-format validation and the
 bounded descriptor-based regular-file reader plus exact pointer-path and
@@ -44,7 +45,7 @@ modules only after parity tests protect each seam:
 worktree_marshal/
   cli.py                 command parsing and stable exit behavior
   model.py               state vocabulary and transaction restoration now
-  state.py               run identity, state-base policy, and lexical paths; writes later
+  state.py               identity, location, lexical paths, and private directories
   locks.py               descriptor bookkeeping now; flock acquisition later
   git.py                 policy, config, executable discovery, and absolute paths
   process.py             child signal forwarding and exit normalization
@@ -104,7 +105,7 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with twenty-five behavior-preserving boundaries. The original
+has begun step 5 with twenty-six behavior-preserving boundaries. The original
 pure Git policy kernel transforms an explicit environment mapping and Git
 argument sequence in `git.py`; `engine.py` retains its optional
 environment-acquisition wrapper, subprocess creation and command execution,
@@ -661,7 +662,28 @@ instant; it establishes no type, ownership, containment, stable descriptor
 identity, or protection against later replacement. This boundary adds no
 workflow, state, packaging, or release change.
 
-Direct tests freeze all twenty-five extracted boundaries, their
+The twenty-sixth boundary moves the complete `private_directory` operation
+into `state.private_directory`. Its exact engine wrapper remains `(path)` and
+supplies the operating-system and launcher error types, directory predicate,
+portable flag lookup, read-only flag, descriptor open/stat/chmod/close
+operations, and same-file predicate lazily.
+
+The operation preserves recursive mode-0700 creation followed by final-entry
+`lstat` in one translated block, the real-directory rejection, mandatory
+`O_DIRECTORY` and `O_NOFOLLOW` support, and the separately translated safe
+open. It then compares the opened descriptor with the pre-open metadata,
+enforces mode 0700 through the descriptor, and closes that descriptor for
+every post-open outcome. Closure failures may still mask the earlier result.
+
+The engine retains directory-selection and call sequencing, profile-root and
+manifest initialization, lock acquisition, manifest persistence, temporary
+directory allocation, lifecycle workflows, and all higher-level mutation.
+The helper narrows final-component link traversal and detects a changed
+directory identity across its snapshots; it does not authenticate ancestors,
+ownership, mount behavior, or later replacement. This boundary adds no state
+schema, workflow, packaging, or release change.
+
+Direct tests freeze all twenty-six extracted boundaries, their
 compatibility surfaces, artifact inclusion, field and operation order,
 partial-failure behavior, and the dynamic restoration of every vocabulary
 value currently accepted in
