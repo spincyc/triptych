@@ -134,6 +134,154 @@ def validate_manifest_core_paths(
     return state
 
 
+def validate_manifest_checkpoint_fields(
+    manifest: Mapping[str, Any],
+    state: str,
+    *,
+    object_fields: Sequence[str],
+    retirement_object_fields: Sequence[str],
+    path_fields: Sequence[str],
+    hash_fields: Sequence[str],
+    retirement_timestamp_fields: Sequence[str],
+    retirement_fields: Sequence[str],
+    retirement_core_fields: Sequence[str],
+    retirement_states: set[str],
+    object_id_pattern: Any,
+    hash_match: Callable[[str], Any],
+    error_type: type[BaseException],
+) -> None:
+    """Validate integration and retirement checkpoint field structure."""
+
+    for field in object_fields:
+        value = manifest.get(field)
+        if value is not None and (
+            not isinstance(value, str) or not object_id_pattern.fullmatch(value)
+        ):
+            raise error_type(
+                f"run manifest has an invalid {field.replace('_', ' ')}"
+            )
+    for field in retirement_object_fields:
+        if field in manifest:
+            value = manifest[field]
+            if not isinstance(value, str) or not object_id_pattern.fullmatch(value):
+                raise error_type(
+                    f"run manifest has an invalid {field.replace('_', ' ')}"
+                )
+    for field in path_fields:
+        paths = manifest.get(field)
+        if paths is not None and (
+            not isinstance(paths, list)
+            or any(
+                not isinstance(path, str)
+                or not path
+                or "\0" in path
+                or path.startswith("/")
+                or any(part in {"", ".", ".."} for part in path.split("/"))
+                for path in paths
+            )
+        ):
+            raise error_type(
+                f"run manifest has invalid {field.replace('_', ' ')}"
+            )
+    for field in hash_fields:
+        value = manifest.get(field)
+        if value is not None and (
+            not isinstance(value, str) or not hash_match(value)
+        ):
+            raise error_type(
+                f"run manifest has an invalid {field.replace('_', ' ')}"
+            )
+    abort_mode = manifest.get("integration_abort_mode")
+    if abort_mode is not None and (
+        not isinstance(abort_mode, str)
+        or abort_mode not in {"rebase", "precommit-rebase", "candidate"}
+    ):
+        raise error_type("run manifest has an invalid integration abort mode")
+    manual_resolution = manifest.get("integration_manual_resolution")
+    if manual_resolution is not None and manual_resolution is not True:
+        raise error_type("run manifest has an invalid manual-resolution marker")
+    source_anchor_created = manifest.get("integration_source_anchor_created")
+    if source_anchor_created is not None and source_anchor_created is not True:
+        raise error_type("run manifest has an invalid source-anchor marker")
+    retirement_anchor_created = manifest.get("retirement_anchor_created")
+    if retirement_anchor_created is not None and retirement_anchor_created is not True:
+        raise error_type("run manifest has an invalid retirement-anchor marker")
+    for field in retirement_timestamp_fields:
+        if field in manifest and (
+            not isinstance(manifest[field], str) or not manifest[field].strip()
+        ):
+            raise error_type(
+                f"run manifest has an invalid {field.replace('_', ' ')}"
+            )
+    if "retirement_cleanup_warning" in manifest and (
+        not isinstance(manifest["retirement_cleanup_warning"], str)
+        or not manifest["retirement_cleanup_warning"].strip()
+    ):
+        raise error_type("run manifest has an invalid retirement cleanup warning")
+    retirement_fields_present = any(field in manifest for field in retirement_fields)
+    if state in retirement_states:
+        if any(
+            field not in manifest
+            for field in (*retirement_core_fields, "retirement_started_at")
+        ):
+            raise error_type("run manifest has an incomplete retirement checkpoint")
+        if state == "retirement-pending":
+            if any(
+                field in manifest
+                for field in (
+                    "retirement_worktree_removed_at",
+                    "retirement_ref_transaction_committed_at",
+                    "retirement_receipt_removed_at",
+                    "retirement_completed_at",
+                    "retirement_cleanup_warning",
+                )
+            ):
+                raise error_type("run manifest has retirement cleanup data too early")
+            cleanup_target_present = "retirement_cleanup_target_head" in manifest
+            cleanup_started = "retirement_ref_cleanup_started_at" in manifest
+            if cleanup_target_present != cleanup_started or (
+                cleanup_target_present
+                and manifest.get("retirement_anchor_created") is not True
+            ):
+                raise error_type(
+                    "run manifest has an incomplete retirement cleanup checkpoint"
+                )
+        if state == "retirement-ref-cleanup-pending":
+            if (
+                manifest.get("retirement_anchor_created") is not True
+                or "retirement_worktree_removed_at" not in manifest
+                or "retirement_cleanup_target_head" not in manifest
+                or "retirement_ref_cleanup_started_at" not in manifest
+                or "retirement_completed_at" in manifest
+                or (
+                    "retirement_receipt_removed_at" in manifest
+                    and "retirement_ref_transaction_committed_at" not in manifest
+                )
+            ):
+                raise error_type(
+                    "run manifest has an incomplete retirement cleanup checkpoint"
+                )
+    elif retirement_fields_present:
+        if state != "cleaned" or "retirement_completed_at" not in manifest:
+            raise error_type("run manifest has retirement data outside its lifecycle")
+        if any(
+            field not in manifest
+            for field in (
+                *retirement_core_fields,
+                "retirement_cleanup_target_head",
+                "retirement_started_at",
+                "retirement_worktree_removed_at",
+                "retirement_ref_cleanup_started_at",
+                "retirement_ref_transaction_committed_at",
+                "retirement_receipt_removed_at",
+            )
+        ) or (
+            manifest.get("retirement_anchor_created") is not True
+            or "retirement_cleanup_warning" in manifest
+        ):
+            raise error_type("run manifest has incomplete retired metadata")
+
+
 def validate_exact_run_tmpdir(
     repository: StateRepository,
     manifest: Mapping[str, Any],

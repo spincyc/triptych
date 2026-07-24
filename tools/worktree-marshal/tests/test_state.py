@@ -56,6 +56,132 @@ class StatePolicyTests(unittest.TestCase):
 
         self.assertEqual(result.returncode, 0, result.stderr)
 
+    def checkpoint_dependencies(self) -> dict[str, object]:
+        return {
+            "object_fields": ("object_field",),
+            "retirement_object_fields": ("retirement_object",),
+            "path_fields": ("path_field",),
+            "hash_fields": ("hash_field",),
+            "retirement_timestamp_fields": ("retirement_started_at",),
+            "retirement_fields": (
+                "retirement_object",
+                "retirement_started_at",
+                "retirement_anchor_created",
+                "retirement_cleanup_target_head",
+                "retirement_worktree_removed_at",
+                "retirement_ref_cleanup_started_at",
+                "retirement_ref_transaction_committed_at",
+                "retirement_receipt_removed_at",
+                "retirement_completed_at",
+                "retirement_cleanup_warning",
+            ),
+            "retirement_core_fields": ("retirement_object",),
+            "retirement_states": {
+                "retirement-pending",
+                "retirement-ref-cleanup-pending",
+            },
+            "object_id_pattern": re.compile(r"^[0-9a-f]{40}$"),
+            "hash_match": re.compile(r"^[0-9a-f]{64}$").fullmatch,
+            "error_type": self.engine.LauncherError,
+        }
+
+    def test_checkpoint_field_kernel_signature_is_explicit(self) -> None:
+        parameters = inspect.signature(
+            self.state_policy.validate_manifest_checkpoint_fields
+        ).parameters
+        self.assertEqual(
+            tuple(parameters),
+            (
+                "manifest",
+                "state",
+                "object_fields",
+                "retirement_object_fields",
+                "path_fields",
+                "hash_fields",
+                "retirement_timestamp_fields",
+                "retirement_fields",
+                "retirement_core_fields",
+                "retirement_states",
+                "object_id_pattern",
+                "hash_match",
+                "error_type",
+            ),
+        )
+        self.assertIs(
+            parameters["manifest"].kind,
+            inspect.Parameter.POSITIONAL_OR_KEYWORD,
+        )
+        self.assertIs(
+            parameters["state"].kind,
+            inspect.Parameter.POSITIONAL_OR_KEYWORD,
+        )
+        for parameter in tuple(parameters.values())[2:]:
+            self.assertIs(parameter.kind, inspect.Parameter.KEYWORD_ONLY)
+            self.assertIs(parameter.default, inspect.Parameter.empty)
+
+    def test_checkpoint_field_kernel_validates_in_legacy_order(self) -> None:
+        invalid = {
+            "object_field": "bad-object",
+            "retirement_object": "bad-retirement-object",
+            "path_field": ["../bad"],
+            "hash_field": "bad-hash",
+            "integration_abort_mode": "bad-mode",
+            "integration_manual_resolution": False,
+            "integration_source_anchor_created": False,
+            "retirement_anchor_created": False,
+            "retirement_started_at": "",
+            "retirement_cleanup_warning": "",
+        }
+        with self.assertRaisesRegex(
+            self.engine.LauncherError,
+            "^run manifest has an invalid object field$",
+        ):
+            self.state_policy.validate_manifest_checkpoint_fields(
+                invalid,
+                "preserved",
+                **self.checkpoint_dependencies(),
+            )
+
+        valid = {
+            "object_field": "a" * 40,
+            "path_field": ["one/two"],
+            "hash_field": "b" * 64,
+            "integration_abort_mode": "candidate",
+            "integration_manual_resolution": True,
+            "integration_source_anchor_created": True,
+        }
+        self.assertIsNone(
+            self.state_policy.validate_manifest_checkpoint_fields(
+                valid,
+                "preserved",
+                **self.checkpoint_dependencies(),
+            )
+        )
+
+    def test_checkpoint_field_kernel_enforces_retirement_lifecycle(self) -> None:
+        dependencies = self.checkpoint_dependencies()
+        with self.assertRaisesRegex(
+            self.engine.LauncherError,
+            "^run manifest has an incomplete retirement checkpoint$",
+        ):
+            self.state_policy.validate_manifest_checkpoint_fields(
+                {},
+                "retirement-pending",
+                **dependencies,
+            )
+
+        pending = {
+            "retirement_object": "a" * 40,
+            "retirement_started_at": "now",
+        }
+        self.assertIsNone(
+            self.state_policy.validate_manifest_checkpoint_fields(
+                pending,
+                "retirement-pending",
+                **dependencies,
+            )
+        )
+
     def test_engine_preserves_run_identity_and_path_surfaces(self) -> None:
         self.assertIs(self.engine.RUN_ID_RE, self.state_policy.RUN_ID_RE)
         for helper_name in (

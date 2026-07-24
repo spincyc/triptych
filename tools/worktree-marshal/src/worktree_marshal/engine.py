@@ -110,6 +110,7 @@ from .state import (
     run_lock_path as _run_lock_path,
     state_base as _state_base,
     validate_exact_run_tmpdir as _validate_exact_run_tmpdir,
+    validate_manifest_checkpoint_fields as _validate_manifest_checkpoint_fields,
     validate_manifest_core_paths as _validate_manifest_core_paths,
     validate_run_id as _validate_run_id,
     write_manifest as _write_manifest,
@@ -730,153 +731,48 @@ def validate_manifest_paths(repository: Repository, manifest: dict) -> None:
         object_id_pattern=OBJECT_ID_RE,
         error_type=LauncherError,
     )
-    for field in (
-        "final_head",
-        "observed_head",
-        "integrated_head",
-        "integration_source_head",
-        "integration_target_head",
-        "integration_candidate_head",
-        "integration_conflict_head",
-        "integration_conflict_commit",
-        "integration_precommit_commit",
-        "integration_precommit_index_tree",
-        "integration_target_mismatch_head",
-        "integration_landing_expected_head",
-        "integration_landing_candidate_head",
-        "cleanup_expected_head",
-        "last_integration_source_head",
-        "last_integration_target_head",
-        "last_integration_candidate_head",
-    ):
-        value = manifest.get(field)
-        if value is not None and (
-            not isinstance(value, str) or not OBJECT_ID_RE.fullmatch(value)
-        ):
-            raise LauncherError(f"run manifest has an invalid {field.replace('_', ' ')}")
-    for field in RETIREMENT_OBJECT_FIELDS:
-        if field in manifest:
-            value = manifest[field]
-            if not isinstance(value, str) or not OBJECT_ID_RE.fullmatch(value):
-                raise LauncherError(
-                    f"run manifest has an invalid {field.replace('_', ' ')}"
-                )
-    for field in (
-        "integration_conflict_paths",
-        "integration_unmerged_paths",
-        "integration_allowed_staged_paths",
-        "integration_protected_index_paths",
-        "last_integration_conflict_paths",
-    ):
-        paths = manifest.get(field)
-        if paths is not None and (
-            not isinstance(paths, list)
-            or any(
-                not isinstance(path, str)
-                or not path
-                or "\0" in path
-                or path.startswith("/")
-                or any(part in {"", ".", ".."} for part in path.split("/"))
-                for path in paths
-            )
-        ):
-            raise LauncherError(f"run manifest has invalid {field.replace('_', ' ')}")
-    for field in (
-        "integration_protected_index_hash",
-        "integration_rebase_metadata_hash",
-    ):
-        value = manifest.get(field)
-        if value is not None and (
-            not isinstance(value, str) or not re.fullmatch(r"[0-9a-f]{64}", value)
-        ):
-            raise LauncherError(f"run manifest has an invalid {field.replace('_', ' ')}")
-    abort_mode = manifest.get("integration_abort_mode")
-    if abort_mode is not None and (
-        not isinstance(abort_mode, str)
-        or abort_mode not in {"rebase", "precommit-rebase", "candidate"}
-    ):
-        raise LauncherError("run manifest has an invalid integration abort mode")
-    manual_resolution = manifest.get("integration_manual_resolution")
-    if manual_resolution is not None and manual_resolution is not True:
-        raise LauncherError("run manifest has an invalid manual-resolution marker")
-    source_anchor_created = manifest.get("integration_source_anchor_created")
-    if source_anchor_created is not None and source_anchor_created is not True:
-        raise LauncherError("run manifest has an invalid source-anchor marker")
-    retirement_anchor_created = manifest.get("retirement_anchor_created")
-    if retirement_anchor_created is not None and retirement_anchor_created is not True:
-        raise LauncherError("run manifest has an invalid retirement-anchor marker")
-    for field in RETIREMENT_TIMESTAMP_FIELDS:
-        if field in manifest and (
-            not isinstance(manifest[field], str) or not manifest[field].strip()
-        ):
-            raise LauncherError(f"run manifest has an invalid {field.replace('_', ' ')}")
-    if "retirement_cleanup_warning" in manifest and (
-        not isinstance(manifest["retirement_cleanup_warning"], str)
-        or not manifest["retirement_cleanup_warning"].strip()
-    ):
-        raise LauncherError("run manifest has an invalid retirement cleanup warning")
-    retirement_fields_present = any(field in manifest for field in RETIREMENT_FIELDS)
-    if state in RETIREMENT_PENDING_STATES:
-        if any(
-            field not in manifest
-            for field in (*RETIREMENT_CORE_FIELDS, "retirement_started_at")
-        ):
-            raise LauncherError("run manifest has an incomplete retirement checkpoint")
-        if state == "retirement-pending":
-            if any(
-                field in manifest
-                for field in (
-                    "retirement_worktree_removed_at",
-                    "retirement_ref_transaction_committed_at",
-                    "retirement_receipt_removed_at",
-                    "retirement_completed_at",
-                    "retirement_cleanup_warning",
-                )
-            ):
-                raise LauncherError("run manifest has retirement cleanup data too early")
-            cleanup_target_present = "retirement_cleanup_target_head" in manifest
-            cleanup_started = "retirement_ref_cleanup_started_at" in manifest
-            if cleanup_target_present != cleanup_started or (
-                cleanup_target_present
-                and manifest.get("retirement_anchor_created") is not True
-            ):
-                raise LauncherError(
-                    "run manifest has an incomplete retirement cleanup checkpoint"
-                )
-        if state == "retirement-ref-cleanup-pending":
-            if (
-                manifest.get("retirement_anchor_created") is not True
-                or "retirement_worktree_removed_at" not in manifest
-                or "retirement_cleanup_target_head" not in manifest
-                or "retirement_ref_cleanup_started_at" not in manifest
-                or "retirement_completed_at" in manifest
-                or (
-                    "retirement_receipt_removed_at" in manifest
-                    and "retirement_ref_transaction_committed_at" not in manifest
-                )
-            ):
-                raise LauncherError(
-                    "run manifest has an incomplete retirement cleanup checkpoint"
-                )
-    elif retirement_fields_present:
-        if state != "cleaned" or "retirement_completed_at" not in manifest:
-            raise LauncherError("run manifest has retirement data outside its lifecycle")
-        if any(
-            field not in manifest
-            for field in (
-                *RETIREMENT_CORE_FIELDS,
-                "retirement_cleanup_target_head",
-                "retirement_started_at",
-                "retirement_worktree_removed_at",
-                "retirement_ref_cleanup_started_at",
-                "retirement_ref_transaction_committed_at",
-                "retirement_receipt_removed_at",
-            )
-        ) or (
-            manifest.get("retirement_anchor_created") is not True
-            or "retirement_cleanup_warning" in manifest
-        ):
-            raise LauncherError("run manifest has incomplete retired metadata")
+    _validate_manifest_checkpoint_fields(
+        manifest,
+        state,
+        object_fields=(
+            "final_head",
+            "observed_head",
+            "integrated_head",
+            "integration_source_head",
+            "integration_target_head",
+            "integration_candidate_head",
+            "integration_conflict_head",
+            "integration_conflict_commit",
+            "integration_precommit_commit",
+            "integration_precommit_index_tree",
+            "integration_target_mismatch_head",
+            "integration_landing_expected_head",
+            "integration_landing_candidate_head",
+            "cleanup_expected_head",
+            "last_integration_source_head",
+            "last_integration_target_head",
+            "last_integration_candidate_head",
+        ),
+        retirement_object_fields=RETIREMENT_OBJECT_FIELDS,
+        path_fields=(
+            "integration_conflict_paths",
+            "integration_unmerged_paths",
+            "integration_allowed_staged_paths",
+            "integration_protected_index_paths",
+            "last_integration_conflict_paths",
+        ),
+        hash_fields=(
+            "integration_protected_index_hash",
+            "integration_rebase_metadata_hash",
+        ),
+        retirement_timestamp_fields=RETIREMENT_TIMESTAMP_FIELDS,
+        retirement_fields=RETIREMENT_FIELDS,
+        retirement_core_fields=RETIREMENT_CORE_FIELDS,
+        retirement_states=RETIREMENT_PENDING_STATES,
+        object_id_pattern=OBJECT_ID_RE,
+        hash_match=lambda value: re.fullmatch(r"[0-9a-f]{64}", value),
+        error_type=LauncherError,
+    )
     target_ref = manifest.get("target_ref")
     if (
         not isinstance(target_ref, str)
