@@ -1708,6 +1708,41 @@ class GitPolicyTests(unittest.TestCase):
             "(cwd: 'Path', selector: 'str') -> 'Path'",
         )
 
+    def test_git_invocation_kernel_surfaces_are_exact(self) -> None:
+        self.assertEqual(
+            tuple(inspect.signature(self.policy.raw_git).parameters),
+            (
+                "cwd",
+                "args",
+                "check",
+                "text",
+                "environment",
+                "input_data",
+                "executable",
+                "base_arguments",
+                "command_call",
+            ),
+        )
+        self.assertEqual(
+            tuple(
+                inspect.signature(
+                    self.policy.authenticated_git
+                ).parameters
+            ),
+            (
+                "cwd",
+                "args",
+                "check",
+                "text",
+                "environment",
+                "input_data",
+                "authenticate_cwd",
+                "validate_configuration",
+                "harden_arguments",
+                "raw_git_call",
+            ),
+        )
+
     def test_absolute_git_path_preserves_call_and_resolution_order(self) -> None:
         cwd = Path("/repository")
         events: list[tuple[str, object]] = []

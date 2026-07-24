@@ -14,7 +14,7 @@ state-path boundary, its state-location, repository-name, and private-directory
 authentication boundaries, the
 immutable runtime-identity record and launcher-entry authentication
 boundaries, its Git-executable discovery, pre-pin validation, and absolute-path
-selection boundaries, the
+selection boundaries, its raw and authenticated Git-invocation boundary, the
 exact Git-administration line-format validation and bounded descriptor-reader
 boundaries, its exact pointer-path and real-directory validation boundary, its
 read-only linked-worktree path-validation and cache-consistency boundaries,
@@ -126,7 +126,7 @@ worktree-removal or ref-transaction failures, receipt recovery, garbage
 collection, or concurrent retirement. Those retirement cases, broader crash
 and race recovery, broader security coverage, the complete installed lifecycle
 matrix, and the supported Python and Git CI matrix remain release gates; the
-first twenty-eight step-5 seams are protected by direct source tests and artifact
+first twenty-nine step-5 seams are protected by direct source tests and artifact
 provenance, and the installed abort checkpoint covers archived transaction
 restoration. Each remaining helper boundary still requires its own direct
 parity coverage.
@@ -351,6 +351,14 @@ lazily. The engine retains authentication, configuration validation, argument
 hardening, executable caching, subprocess execution, repository discovery,
 and every lifecycle caller. The returned path remains a point-in-time
 pathname observation rather than a pinned administration identity.
+
+The module now also owns raw Git argument construction and authenticated Git
+invocation sequencing. Raw invocation preserves the pinned executable, fixed
+base arguments, caller arguments, and command forwarding. Authenticated
+invocation preserves Git-CWD authentication, effective-configuration
+validation, argument hardening, and execution order. The engine retains the
+executable cache, configuration probe, subprocess execution, lifecycle
+callers, ref operations, and every mutation.
 
 The dependency-injected `discover_repository` operation now owns the complete
 read-only discovery and state-identity derivation sequence. It resolves the

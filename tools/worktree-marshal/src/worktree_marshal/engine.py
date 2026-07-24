@@ -48,8 +48,10 @@ from .git import (
     GIT_INDEXED_CONFIG_ENV_RE,
     GIT_UNSAFE_ENV,
     absolute_git_path as _absolute_git_path,
+    authenticated_git as _authenticated_git,
     discover_git_executable as _discover_git_executable,
     hardened_git_arguments,
+    raw_git as _raw_git,
     sanitized_git_environment as _sanitized_git_environment,
     validate_effective_git_configuration as _validate_effective_git_configuration,
 )
@@ -292,13 +294,16 @@ def raw_git(
     environment: dict[str, str] | None = None,
     input_data: str | bytes | None = None,
 ) -> subprocess.CompletedProcess:
-    return command(
-        (str(pin_git_executable()), *GIT_BASE_ARGUMENTS, *args),
+    return _raw_git(
         cwd=cwd,
+        args=args,
         check=check,
         text=text,
         environment=environment,
         input_data=input_data,
+        executable=lambda: pin_git_executable(),
+        base_arguments=lambda: GIT_BASE_ARGUMENTS,
+        command_call=lambda: command,
     )
 
 
@@ -322,15 +327,17 @@ def git(
     environment: dict[str, str] | None = None,
     input_data: str | bytes | None = None,
 ) -> subprocess.CompletedProcess:
-    authenticate_git_cwd(cwd)
-    validate_effective_git_configuration(cwd)
-    return raw_git(
+    return _authenticated_git(
         cwd,
-        *hardened_git_arguments(args),
+        args,
         check=check,
         text=text,
         environment=environment,
         input_data=input_data,
+        authenticate_cwd=lambda: authenticate_git_cwd,
+        validate_configuration=lambda: validate_effective_git_configuration,
+        harden_arguments=lambda: hardened_git_arguments,
+        raw_git_call=lambda: raw_git,
     )
 
 

@@ -91,6 +91,53 @@ GIT_BASE_ARGUMENTS = (
 )
 
 
+def raw_git(
+    cwd: Path,
+    args: Sequence[str],
+    *,
+    check: bool,
+    text: bool,
+    environment: Mapping[str, str] | None,
+    input_data: str | bytes | None,
+    executable: Callable[[], Path],
+    base_arguments: Callable[[], Sequence[str]],
+    command_call: Callable[[], Callable[..., object]],
+) -> object:
+    return command_call()(
+        (str(executable()), *base_arguments(), *args),
+        cwd=cwd,
+        check=check,
+        text=text,
+        environment=environment,
+        input_data=input_data,
+    )
+
+
+def authenticated_git(
+    cwd: Path,
+    args: Sequence[str],
+    *,
+    check: bool,
+    text: bool,
+    environment: Mapping[str, str] | None,
+    input_data: str | bytes | None,
+    authenticate_cwd: Callable[[], Callable[[Path], None]],
+    validate_configuration: Callable[[], Callable[[Path], None]],
+    harden_arguments: Callable[[], Callable[[Sequence[str]], list[str]]],
+    raw_git_call: Callable[[], Callable[..., object]],
+) -> object:
+    authenticate_cwd()(cwd)
+    validate_configuration()(cwd)
+    return raw_git_call()(
+        cwd,
+        *harden_arguments()(args),
+        check=check,
+        text=text,
+        environment=environment,
+        input_data=input_data,
+    )
+
+
 def absolute_git_path(
     cwd: Path,
     selector: str,

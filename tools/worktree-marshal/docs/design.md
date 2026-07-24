@@ -20,6 +20,7 @@ validation, persistence, and orchestration in one shared `engine.py`. `cli.py`
 owns the installed grammar, `profiles.py` owns immutable durable profile
 identities, `git.py` now owns the cycle-free Git policy kernel,
 Git-executable discovery and pre-pin validation, and absolute path selection,
+plus raw and authenticated invocation sequencing,
 `model.py` now owns the exact
 state vocabulary, pure classifier, and I/O-free integration-transaction
 restoration transform, `state.py` now owns run identity, state-location
@@ -49,7 +50,7 @@ worktree_marshal/
   model.py               state vocabulary and transaction restoration now
   state.py               identity, location, lexical paths, and private directories
   locks.py               advisory acquisition and descriptor bookkeeping
-  git.py                 policy, config, executable discovery, and absolute paths
+  git.py                 policy, discovery, paths, and invocation sequencing
   process.py             command execution, signal forwarding, and exit status
   identity.py            records, auth, path/cache checks, and repository discovery
                          public wrappers and linked registry objects/writes remain in engine
@@ -107,7 +108,7 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with twenty-eight behavior-preserving boundaries. The original
+has begun step 5 with twenty-nine behavior-preserving boundaries. The original
 pure Git policy kernel transforms an explicit environment mapping and Git
 argument sequence in `git.py`; `engine.py` retains its optional
 environment-acquisition wrapper, subprocess creation and command execution,
@@ -712,7 +713,17 @@ selection, Git argument construction and policy, all callers, and every
 lifecycle decision. This boundary adds no command surface, state, workflow,
 packaging, or release change.
 
-Direct tests freeze all twenty-eight extracted boundaries, their
+The twenty-ninth boundary moves raw Git argument construction and authenticated
+Git invocation sequencing into `git.raw_git` and `git.authenticated_git`.
+Exact engine wrappers and defaults remain unchanged. Raw invocation preserves
+pinned-executable stringification, base-argument placement, caller arguments,
+and command forwarding. Authenticated invocation preserves CWD authentication,
+effective-configuration validation, hardening, and raw execution order. The
+engine retains executable caching, the configuration probe, subprocess
+execution, all ref and lifecycle callers, and every mutation. This boundary
+adds no Git command, state, workflow, packaging, or release change.
+
+Direct tests freeze all twenty-nine extracted boundaries, their
 compatibility surfaces, artifact inclusion, field and operation order,
 partial-failure behavior, and the dynamic restoration of every vocabulary
 value currently accepted in
