@@ -515,6 +515,34 @@ class IdentityModelTests(unittest.TestCase):
             **dependencies,
         )
 
+    def git_cwd(
+        self,
+        cwd: object,
+        **overrides: object,
+    ) -> None:
+        dependencies = {
+            "path_factory": lambda: Path,
+            "os_error_type": lambda: OSError,
+            "runtime_error_type": lambda: RuntimeError,
+            "file_not_found_error_type": (
+                lambda: FileNotFoundError
+            ),
+            "directory_test": lambda: stat.S_ISDIR,
+            "regular_file_test": lambda: stat.S_ISREG,
+            "identity_lookup": lambda: (
+                lambda candidate: None
+            ),
+            "linked_worktree_authenticator": lambda: (
+                lambda candidate, *, expected_common_git_dir: None
+            ),
+            "error_type": lambda: RuntimeError,
+        }
+        dependencies.update(overrides)
+        return self.identity.authenticate_git_cwd(
+            cwd,
+            **dependencies,
+        )
+
     def test_identity_import_is_cycle_free_and_environment_neutral(
         self,
     ) -> None:
@@ -2680,6 +2708,2239 @@ class IdentityModelTests(unittest.TestCase):
                 caught.exception.__cause__,
                 OSError,
             )
+
+    def test_git_cwd_kernel_and_wrapper_signatures(self) -> None:
+        self.assertIs(
+            self.engine._authenticate_git_cwd,
+            self.identity.authenticate_git_cwd,
+        )
+        parameters = inspect.signature(
+            self.identity.authenticate_git_cwd
+        ).parameters
+        self.assertEqual(
+            tuple(parameters),
+            (
+                "cwd",
+                "path_factory",
+                "os_error_type",
+                "runtime_error_type",
+                "file_not_found_error_type",
+                "directory_test",
+                "regular_file_test",
+                "identity_lookup",
+                "linked_worktree_authenticator",
+                "error_type",
+            ),
+        )
+        self.assertIs(
+            parameters["cwd"].kind,
+            inspect.Parameter.POSITIONAL_OR_KEYWORD,
+        )
+        for name in tuple(parameters)[1:]:
+            self.assertIs(
+                parameters[name].kind,
+                inspect.Parameter.KEYWORD_ONLY,
+            )
+        for parameter in parameters.values():
+            self.assertIs(
+                parameter.default,
+                inspect.Parameter.empty,
+            )
+
+        self.assertIsNot(
+            self.engine.authenticate_git_cwd,
+            self.identity.authenticate_git_cwd,
+        )
+        wrapper = inspect.signature(
+            self.engine.authenticate_git_cwd
+        ).parameters
+        self.assertEqual(tuple(wrapper), ("cwd",))
+        self.assertIs(
+            wrapper["cwd"].kind,
+            inspect.Parameter.POSITIONAL_OR_KEYWORD,
+        )
+        self.assertIs(
+            wrapper["cwd"].default,
+            inspect.Parameter.empty,
+        )
+
+    def test_git_cwd_materializes_all_parents_before_missing_scan(
+        self,
+    ) -> None:
+        events: list[tuple[str, object]] = []
+        raw_cwd = OpaqueValue("raw-git-cwd")
+
+        class MissingMarker(Exception):
+            pass
+
+        class Marker:
+            def __init__(
+                marker_self,
+                name: str,
+            ) -> None:
+                marker_self.name = name
+
+            def lstat(marker_self) -> None:
+                events.append(
+                    ("lstat", marker_self.name)
+                )
+                raise MissingMarker(marker_self.name)
+
+        class Candidate:
+            def __init__(
+                candidate_self,
+                name: str,
+            ) -> None:
+                candidate_self.name = name
+
+            def __truediv__(
+                candidate_self,
+                component: object,
+            ) -> object:
+                events.append(
+                    (
+                        "join",
+                        (candidate_self.name, component),
+                    )
+                )
+                return Marker(candidate_self.name)
+
+        parent_one = Candidate("parent-one")
+        parent_two = Candidate("parent-two")
+
+        class ParentIterator:
+            def __init__(iterator_self) -> None:
+                iterator_self.index = 0
+
+            def __iter__(
+                iterator_self,
+            ) -> object:
+                events.append(("parents-iterator-iter", None))
+                return iterator_self
+
+            def __next__(
+                iterator_self,
+            ) -> object:
+                values = (parent_one, parent_two)
+                if iterator_self.index == len(values):
+                    events.append(
+                        ("parents-iterator-stop", None)
+                    )
+                    raise StopIteration
+                value = values[iterator_self.index]
+                iterator_self.index += 1
+                events.append(
+                    (
+                        "parents-iterator-yield",
+                        value.name,
+                    )
+                )
+                return value
+
+        class Parents:
+            def __iter__(parents_self) -> object:
+                events.append(("parents-iter", None))
+                return ParentIterator()
+
+        class Directory(Candidate):
+            @property
+            def parents(directory_self) -> object:
+                events.append(("parents-attribute", None))
+                return Parents()
+
+        directory = Directory("directory")
+
+        class InputPath:
+            def resolve(
+                input_self,
+                *,
+                strict: bool,
+            ) -> object:
+                events.append(("resolve", strict))
+                return directory
+
+        def path_factory() -> object:
+            events.append(("path-provider", None))
+
+            def construct(value: object) -> object:
+                events.append(("path-call", value))
+                self.assertIs(value, raw_cwd)
+                return InputPath()
+
+            return construct
+
+        def missing_error_type() -> type[BaseException]:
+            events.append(("missing-error-provider", None))
+            return MissingMarker
+
+        observed = self.git_cwd(
+            raw_cwd,
+            path_factory=path_factory,
+            os_error_type=mock.Mock(
+                side_effect=AssertionError(
+                    "resolved OSError for missing marker"
+                )
+            ),
+            runtime_error_type=mock.Mock(
+                side_effect=AssertionError(
+                    "resolved RuntimeError without cwd failure"
+                )
+            ),
+            file_not_found_error_type=missing_error_type,
+            directory_test=mock.Mock(
+                side_effect=AssertionError(
+                    "classified a missing marker"
+                )
+            ),
+            regular_file_test=mock.Mock(
+                side_effect=AssertionError(
+                    "classified a missing marker"
+                )
+            ),
+            identity_lookup=mock.Mock(
+                side_effect=AssertionError(
+                    "looked up identity without marker"
+                )
+            ),
+            linked_worktree_authenticator=mock.Mock(
+                side_effect=AssertionError(
+                    "authenticated without marker"
+                )
+            ),
+            error_type=mock.Mock(
+                side_effect=AssertionError(
+                    "raised for an all-missing scan"
+                )
+            ),
+        )
+
+        self.assertIsNone(observed)
+        self.assertEqual(
+            events,
+            [
+                ("path-provider", None),
+                ("path-call", raw_cwd),
+                ("resolve", True),
+                ("parents-attribute", None),
+                ("parents-iter", None),
+                ("parents-iterator-yield", "parent-one"),
+                ("parents-iterator-yield", "parent-two"),
+                ("parents-iterator-stop", None),
+                ("join", ("directory", ".git")),
+                ("lstat", "directory"),
+                ("missing-error-provider", None),
+                ("join", ("parent-one", ".git")),
+                ("lstat", "parent-one"),
+                ("missing-error-provider", None),
+                ("join", ("parent-two", ".git")),
+                ("lstat", "parent-two"),
+                ("missing-error-provider", None),
+            ],
+        )
+
+    def test_git_cwd_translates_initial_path_failures_exactly(
+        self,
+    ) -> None:
+        class SelectedOSError(Exception):
+            pass
+
+        class SelectedRuntimeError(Exception):
+            pass
+
+        class CwdError(Exception):
+            pass
+
+        stages = (
+            "path-provider",
+            "path-call",
+            "resolve-attribute",
+            "resolve-call",
+        )
+        for stage in stages:
+            for selected_type in (
+                SelectedOSError,
+                SelectedRuntimeError,
+            ):
+                with self.subTest(
+                    stage=stage,
+                    selected_type=selected_type.__name__,
+                ):
+                    events: list[str] = []
+                    original = selected_type(stage)
+
+                    def fail_at(observed: str) -> None:
+                        events.append(observed)
+                        if stage == observed:
+                            raise original
+
+                    class InputPath:
+                        @property
+                        def resolve(input_self) -> object:
+                            fail_at("resolve-attribute")
+
+                            def resolve(*, strict: bool) -> None:
+                                self.assertTrue(strict)
+                                fail_at("resolve-call")
+                                raise AssertionError(
+                                    "resolve unexpectedly succeeded"
+                                )
+
+                            return resolve
+
+                    def path_factory() -> object:
+                        fail_at("path-provider")
+
+                        def construct(value: object) -> object:
+                            fail_at("path-call")
+                            return InputPath()
+
+                        return construct
+
+                    def os_error_type() -> type[BaseException]:
+                        events.append("os-error-provider")
+                        return SelectedOSError
+
+                    def runtime_error_type() -> type[BaseException]:
+                        events.append(
+                            "runtime-error-provider"
+                        )
+                        return SelectedRuntimeError
+
+                    class Error(CwdError):
+                        def __init__(
+                            error_self,
+                            message: str,
+                        ) -> None:
+                            events.append("error-constructor")
+                            super().__init__(message)
+
+                    def error_type() -> type[BaseException]:
+                        events.append("error-provider")
+                        return Error
+
+                    with self.assertRaises(Error) as caught:
+                        self.git_cwd(
+                            object(),
+                            path_factory=path_factory,
+                            os_error_type=os_error_type,
+                            runtime_error_type=(
+                                runtime_error_type
+                            ),
+                            file_not_found_error_type=mock.Mock(
+                                side_effect=AssertionError(
+                                    "resolved marker matcher"
+                                )
+                            ),
+                            error_type=error_type,
+                        )
+
+                    self.assertEqual(
+                        str(caught.exception),
+                        "the Git working directory is unavailable",
+                    )
+                    self.assertIs(
+                        caught.exception.__cause__,
+                        original,
+                    )
+                    self.assertIs(
+                        caught.exception.__context__,
+                        original,
+                    )
+                    self.assertEqual(
+                        events[-4:],
+                        [
+                            "os-error-provider",
+                            "runtime-error-provider",
+                            "error-provider",
+                            "error-constructor",
+                        ],
+                    )
+
+    def test_git_cwd_initial_matchers_leave_nonmatches_untranslated(
+        self,
+    ) -> None:
+        class SelectedOSError(Exception):
+            pass
+
+        class SelectedRuntimeError(Exception):
+            pass
+
+        original = LookupError("resolve failed")
+        events: list[str] = []
+
+        class InputPath:
+            def resolve(
+                input_self,
+                *,
+                strict: bool,
+            ) -> None:
+                raise original
+
+        def os_error_type() -> type[BaseException]:
+            events.append("os-error-provider")
+            return SelectedOSError
+
+        def runtime_error_type() -> type[BaseException]:
+            events.append("runtime-error-provider")
+            return SelectedRuntimeError
+
+        blocked_error = mock.Mock(
+            side_effect=AssertionError(
+                "translated nonmatching cwd failure"
+            )
+        )
+        with self.assertRaises(LookupError) as caught:
+            self.git_cwd(
+                object(),
+                path_factory=lambda: (
+                    lambda value: InputPath()
+                ),
+                os_error_type=os_error_type,
+                runtime_error_type=runtime_error_type,
+                error_type=blocked_error,
+            )
+
+        self.assertIs(caught.exception, original)
+        self.assertEqual(
+            events,
+            ["os-error-provider", "runtime-error-provider"],
+        )
+        blocked_error.assert_not_called()
+
+        original = SelectedRuntimeError("resolve failed")
+        for broken_matcher in ("os", "runtime"):
+            with self.subTest(broken_matcher=broken_matcher):
+                matcher_failure = RuntimeError(
+                    f"{broken_matcher} matcher failed"
+                )
+
+                def broken_os() -> type[BaseException]:
+                    if broken_matcher == "os":
+                        raise matcher_failure
+                    return LookupError
+
+                def broken_runtime() -> type[BaseException]:
+                    if broken_matcher == "runtime":
+                        raise matcher_failure
+                    return SelectedRuntimeError
+
+                with self.assertRaises(RuntimeError) as caught:
+                    self.git_cwd(
+                        object(),
+                        path_factory=lambda: (
+                            lambda value: InputPath()
+                        ),
+                        os_error_type=broken_os,
+                        runtime_error_type=broken_runtime,
+                        error_type=blocked_error,
+                    )
+
+                self.assertIs(caught.exception, matcher_failure)
+                self.assertIs(
+                    caught.exception.__context__,
+                    original,
+                )
+        blocked_error.assert_not_called()
+
+    def test_git_cwd_parent_expansion_and_join_failures_are_raw(
+        self,
+    ) -> None:
+        class SelectedFailure(Exception):
+            pass
+
+        stages = (
+            "parents-attribute",
+            "parents-iter",
+            "parents-next",
+            "marker-join",
+        )
+
+        for stage in stages:
+            with self.subTest(unwrapped_stage=stage):
+                original = SelectedFailure(stage)
+
+                def fail_at(observed: str) -> None:
+                    if stage == observed:
+                        raise original
+
+                class ParentIterator:
+                    def __iter__(
+                        iterator_self,
+                    ) -> object:
+                        return iterator_self
+
+                    def __next__(
+                        iterator_self,
+                    ) -> object:
+                        fail_at("parents-next")
+                        raise StopIteration
+
+                class Parents:
+                    def __iter__(parents_self) -> object:
+                        fail_at("parents-iter")
+                        return ParentIterator()
+
+                class Directory:
+                    @property
+                    def parents(directory_self) -> object:
+                        fail_at("parents-attribute")
+                        return Parents()
+
+                    def __truediv__(
+                        directory_self,
+                        component: object,
+                    ) -> object:
+                        fail_at("marker-join")
+                        raise AssertionError(
+                            "marker join unexpectedly succeeded"
+                        )
+
+                blocked_matcher = mock.Mock(
+                    side_effect=AssertionError(
+                        "matched failure outside a try block"
+                    )
+                )
+                blocked_error = mock.Mock(
+                    side_effect=AssertionError(
+                        "translated failure outside a try block"
+                    )
+                )
+                with self.assertRaises(
+                    SelectedFailure
+                ) as caught:
+                    self.git_cwd(
+                        object(),
+                        path_factory=lambda: (
+                            lambda value: SimpleNamespace(
+                                resolve=lambda *, strict: Directory()
+                            )
+                        ),
+                        os_error_type=blocked_matcher,
+                        runtime_error_type=blocked_matcher,
+                        file_not_found_error_type=(
+                            blocked_matcher
+                        ),
+                        error_type=blocked_error,
+                    )
+
+                self.assertIs(caught.exception, original)
+                blocked_matcher.assert_not_called()
+                blocked_error.assert_not_called()
+
+    def test_git_cwd_lstat_exception_partition_is_exact(
+        self,
+    ) -> None:
+        class SelectedMissing(Exception):
+            pass
+
+        class SelectedOSError(Exception):
+            pass
+
+        class MarkerError(Exception):
+            pass
+
+        for stage in ("lstat-attribute", "lstat-call"):
+            for failure in ("missing", "os"):
+                with self.subTest(stage=stage, failure=failure):
+                    events: list[str] = []
+                    selected_type = (
+                        SelectedMissing
+                        if failure == "missing"
+                        else SelectedOSError
+                    )
+                    original = selected_type(stage)
+
+                    def fail_at(observed: str) -> None:
+                        events.append(observed)
+                        if stage == observed:
+                            raise original
+
+                    class Marker:
+                        @property
+                        def lstat(marker_self) -> object:
+                            fail_at("lstat-attribute")
+
+                            def lstat() -> None:
+                                fail_at("lstat-call")
+                                raise AssertionError(
+                                    "lstat unexpectedly succeeded"
+                                )
+
+                            return lstat
+
+                    class Candidate:
+                        parents = ()
+
+                        def __truediv__(
+                            candidate_self,
+                            component: object,
+                        ) -> object:
+                            return Marker()
+
+                    def missing_error_type() -> type[BaseException]:
+                        events.append("missing-error-provider")
+                        return SelectedMissing
+
+                    def os_error_type() -> type[BaseException]:
+                        events.append("os-error-provider")
+                        return SelectedOSError
+
+                    class Error(MarkerError):
+                        def __init__(
+                            error_self,
+                            message: str,
+                        ) -> None:
+                            events.append("error-constructor")
+                            super().__init__(message)
+
+                    def error_type() -> type[BaseException]:
+                        events.append("error-provider")
+                        return Error
+
+                    if failure == "missing":
+                        observed = self.git_cwd(
+                            object(),
+                            path_factory=lambda: (
+                                lambda value: SimpleNamespace(
+                                    resolve=lambda *, strict: (
+                                        Candidate()
+                                    )
+                                )
+                            ),
+                            os_error_type=os_error_type,
+                            runtime_error_type=mock.Mock(
+                                side_effect=AssertionError(
+                                    "resolved initial matcher"
+                                )
+                            ),
+                            file_not_found_error_type=(
+                                missing_error_type
+                            ),
+                            directory_test=mock.Mock(
+                                side_effect=AssertionError(
+                                    "classified missing marker"
+                                )
+                            ),
+                            error_type=error_type,
+                        )
+                        self.assertIsNone(observed)
+                        self.assertEqual(
+                            events[-1],
+                            "missing-error-provider",
+                        )
+                        self.assertNotIn(
+                            "os-error-provider",
+                            events,
+                        )
+                        self.assertNotIn(
+                            "error-provider",
+                            events,
+                        )
+                    else:
+                        with self.assertRaises(Error) as caught:
+                            self.git_cwd(
+                                object(),
+                                path_factory=lambda: (
+                                    lambda value: (
+                                        SimpleNamespace(
+                                            resolve=(
+                                                lambda *, strict: (
+                                                    Candidate()
+                                                )
+                                            )
+                                        )
+                                    )
+                                ),
+                                os_error_type=os_error_type,
+                                runtime_error_type=mock.Mock(
+                                    side_effect=AssertionError(
+                                        "resolved initial matcher"
+                                    )
+                                ),
+                                file_not_found_error_type=(
+                                    missing_error_type
+                                ),
+                                error_type=error_type,
+                            )
+                        self.assertEqual(
+                            str(caught.exception),
+                            "cannot inspect the Git "
+                            "administration marker",
+                        )
+                        self.assertIs(
+                            caught.exception.__cause__,
+                            original,
+                        )
+                        self.assertEqual(
+                            events[-4:],
+                            [
+                                "missing-error-provider",
+                                "os-error-provider",
+                                "error-provider",
+                                "error-constructor",
+                            ],
+                        )
+
+    def test_git_cwd_lstat_nonmatches_and_matcher_failures_are_raw(
+        self,
+    ) -> None:
+        class SelectedMissing(Exception):
+            pass
+
+        class SelectedOSError(Exception):
+            pass
+
+        class Candidate:
+            parents = ()
+
+            def __truediv__(
+                candidate_self,
+                component: object,
+            ) -> object:
+                return marker
+
+        class Marker:
+            def lstat(marker_self) -> None:
+                raise original
+
+        marker = Marker()
+
+        events: list[str] = []
+        original = LookupError("lstat failed")
+
+        def missing_error_type() -> type[BaseException]:
+            events.append("missing-error-provider")
+            return SelectedMissing
+
+        def os_error_type() -> type[BaseException]:
+            events.append("os-error-provider")
+            return SelectedOSError
+
+        blocked_error = mock.Mock(
+            side_effect=AssertionError(
+                "translated nonmatching lstat failure"
+            )
+        )
+        with self.assertRaises(LookupError) as caught:
+            self.git_cwd(
+                object(),
+                path_factory=lambda: (
+                    lambda value: SimpleNamespace(
+                        resolve=lambda *, strict: Candidate()
+                    )
+                ),
+                os_error_type=os_error_type,
+                runtime_error_type=mock.Mock(
+                    side_effect=AssertionError(
+                        "resolved initial matcher"
+                    )
+                ),
+                file_not_found_error_type=missing_error_type,
+                error_type=blocked_error,
+            )
+
+        self.assertIs(caught.exception, original)
+        self.assertEqual(
+            events,
+            ["missing-error-provider", "os-error-provider"],
+        )
+        blocked_error.assert_not_called()
+
+        original = SelectedOSError("lstat failed")
+        for broken_matcher in ("missing", "os"):
+            with self.subTest(broken_matcher=broken_matcher):
+                matcher_failure = RuntimeError(
+                    f"{broken_matcher} matcher failed"
+                )
+
+                def broken_missing() -> type[BaseException]:
+                    if broken_matcher == "missing":
+                        raise matcher_failure
+                    return LookupError
+
+                def broken_os() -> type[BaseException]:
+                    if broken_matcher == "os":
+                        raise matcher_failure
+                    return SelectedOSError
+
+                with self.assertRaises(RuntimeError) as caught:
+                    self.git_cwd(
+                        object(),
+                        path_factory=lambda: (
+                            lambda value: SimpleNamespace(
+                                resolve=lambda *, strict: (
+                                    Candidate()
+                                )
+                            )
+                        ),
+                        os_error_type=broken_os,
+                        runtime_error_type=mock.Mock(
+                            side_effect=AssertionError(
+                                "resolved initial matcher"
+                            )
+                        ),
+                        file_not_found_error_type=(
+                            broken_missing
+                        ),
+                        error_type=blocked_error,
+                    )
+
+                self.assertIs(caught.exception, matcher_failure)
+                self.assertIs(
+                    caught.exception.__context__,
+                    original,
+                )
+        blocked_error.assert_not_called()
+
+    def test_git_cwd_directory_marker_order_and_symbolic_rejection(
+        self,
+    ) -> None:
+        class MarkerError(RuntimeError):
+            pass
+
+        for symbolic in (False, True):
+            with self.subTest(symbolic=symbolic):
+                events: list[tuple[str, object]] = []
+                mode = OpaqueValue("directory-mode")
+
+                class Metadata:
+                    @property
+                    def st_mode(metadata_self) -> object:
+                        events.append(("metadata-mode", None))
+                        return mode
+
+                class ComparisonTruth:
+                    def __bool__(
+                        truth_self,
+                    ) -> bool:
+                        events.append(
+                            ("comparison-truth", symbolic)
+                        )
+                        return symbolic
+
+                class ResolvedMarker:
+                    def __ne__(
+                        resolved_self,
+                        other: object,
+                    ) -> object:
+                        events.append(("resolved-ne", other))
+                        self.assertIs(other, marker)
+                        return ComparisonTruth()
+
+                class Marker:
+                    def lstat(marker_self) -> object:
+                        events.append(("lstat", None))
+                        return Metadata()
+
+                    def resolve(
+                        marker_self,
+                        *,
+                        strict: bool,
+                    ) -> object:
+                        events.append(("marker-resolve", strict))
+                        return ResolvedMarker()
+
+                marker = Marker()
+
+                class Parent:
+                    def __truediv__(
+                        parent_self,
+                        component: object,
+                    ) -> object:
+                        raise AssertionError(
+                            "scanned parent after directory marker"
+                        )
+
+                class Candidate:
+                    @property
+                    def parents(candidate_self) -> object:
+                        events.append(("parents", None))
+                        return (Parent(),)
+
+                    def __truediv__(
+                        candidate_self,
+                        component: object,
+                    ) -> object:
+                        events.append(("join", component))
+                        return marker
+
+                class DirectoryTruth:
+                    def __bool__(truth_self) -> bool:
+                        events.append(("directory-truth", True))
+                        return True
+
+                def directory_test() -> object:
+                    events.append(("directory-provider", None))
+
+                    def test(observed_mode: object) -> object:
+                        events.append(
+                            ("directory-call", observed_mode)
+                        )
+                        self.assertIs(observed_mode, mode)
+                        return DirectoryTruth()
+
+                    return test
+
+                class Error(MarkerError):
+                    def __init__(
+                        error_self,
+                        message: str,
+                    ) -> None:
+                        events.append(
+                            ("error-constructor", message)
+                        )
+                        super().__init__(message)
+
+                def error_type() -> type[BaseException]:
+                    events.append(("error-provider", None))
+                    return Error
+
+                arguments = {
+                    "path_factory": lambda: (
+                        lambda value: SimpleNamespace(
+                            resolve=lambda *, strict: Candidate()
+                        )
+                    ),
+                    "os_error_type": mock.Mock(
+                        side_effect=AssertionError(
+                            "resolved matcher after successful lstat"
+                        )
+                    ),
+                    "runtime_error_type": mock.Mock(
+                        side_effect=AssertionError(
+                            "resolved initial matcher"
+                        )
+                    ),
+                    "file_not_found_error_type": mock.Mock(
+                        side_effect=AssertionError(
+                            "resolved matcher after successful lstat"
+                        )
+                    ),
+                    "directory_test": directory_test,
+                    "regular_file_test": mock.Mock(
+                        side_effect=AssertionError(
+                            "tested regular mode after directory"
+                        )
+                    ),
+                    "identity_lookup": mock.Mock(
+                        side_effect=AssertionError(
+                            "read cache for directory marker"
+                        )
+                    ),
+                    "linked_worktree_authenticator": mock.Mock(
+                        side_effect=AssertionError(
+                            "used linked auth for directory marker"
+                        )
+                    ),
+                    "error_type": error_type,
+                }
+
+                if symbolic:
+                    with self.assertRaises(Error) as caught:
+                        self.git_cwd(object(), **arguments)
+                    self.assertEqual(
+                        str(caught.exception),
+                        "the primary Git administration "
+                        "directory is symbolic",
+                    )
+                    self.assertIsNone(
+                        caught.exception.__cause__
+                    )
+                else:
+                    observed = self.git_cwd(
+                        object(),
+                        **arguments,
+                    )
+                    self.assertIsNone(observed)
+
+                self.assertEqual(
+                    events,
+                    [
+                        ("parents", None),
+                        ("join", ".git"),
+                        ("lstat", None),
+                        ("directory-provider", None),
+                        ("metadata-mode", None),
+                        ("directory-call", mode),
+                        ("directory-truth", True),
+                        ("marker-resolve", True),
+                        ("resolved-ne", marker),
+                        ("comparison-truth", symbolic),
+                    ]
+                    + (
+                        [
+                            ("error-provider", None),
+                            (
+                                "error-constructor",
+                                "the primary Git administration "
+                                "directory is symbolic",
+                            ),
+                        ]
+                        if symbolic
+                        else []
+                    ),
+                )
+
+    def test_git_cwd_directory_post_lstat_failures_are_raw(
+        self,
+    ) -> None:
+        class SelectedFailure(Exception):
+            pass
+
+        stages = (
+            "directory-provider",
+            "metadata-mode",
+            "directory-call",
+            "directory-truth",
+            "marker-resolve-attribute",
+            "marker-resolve-call",
+            "marker-ne",
+            "marker-truth",
+        )
+
+        for stage in stages:
+            with self.subTest(unwrapped_stage=stage):
+                original = SelectedFailure(stage)
+
+                def fail_at(observed: str) -> None:
+                    if stage == observed:
+                        raise original
+
+                class Metadata:
+                    @property
+                    def st_mode(metadata_self) -> int:
+                        fail_at("metadata-mode")
+                        return 1
+
+                class ComparisonTruth:
+                    def __bool__(truth_self) -> bool:
+                        fail_at("marker-truth")
+                        return False
+
+                class ResolvedMarker:
+                    def __ne__(
+                        resolved_self,
+                        other: object,
+                    ) -> object:
+                        fail_at("marker-ne")
+                        return ComparisonTruth()
+
+                class Marker:
+                    def lstat(marker_self) -> object:
+                        return Metadata()
+
+                    @property
+                    def resolve(marker_self) -> object:
+                        fail_at("marker-resolve-attribute")
+
+                        def resolve(*, strict: bool) -> object:
+                            fail_at("marker-resolve-call")
+                            return ResolvedMarker()
+
+                        return resolve
+
+                marker = Marker()
+
+                class Candidate:
+                    parents = ()
+
+                    def __truediv__(
+                        candidate_self,
+                        component: object,
+                    ) -> object:
+                        return marker
+
+                class DirectoryTruth:
+                    def __bool__(truth_self) -> bool:
+                        fail_at("directory-truth")
+                        return True
+
+                def directory_test() -> object:
+                    fail_at("directory-provider")
+
+                    def test(mode: object) -> object:
+                        fail_at("directory-call")
+                        return DirectoryTruth()
+
+                    return test
+
+                blocked_matcher = mock.Mock(
+                    side_effect=AssertionError(
+                        "matched post-lstat failure"
+                    )
+                )
+                blocked_error = mock.Mock(
+                    side_effect=AssertionError(
+                        "translated post-lstat failure"
+                    )
+                )
+                with self.assertRaises(
+                    SelectedFailure
+                ) as caught:
+                    self.git_cwd(
+                        object(),
+                        path_factory=lambda: (
+                            lambda value: SimpleNamespace(
+                                resolve=lambda *, strict: Candidate()
+                            )
+                        ),
+                        os_error_type=blocked_matcher,
+                        runtime_error_type=blocked_matcher,
+                        file_not_found_error_type=(
+                            blocked_matcher
+                        ),
+                        directory_test=directory_test,
+                        regular_file_test=mock.Mock(
+                            side_effect=AssertionError(
+                                "reached regular predicate"
+                            )
+                        ),
+                        error_type=blocked_error,
+                    )
+
+                self.assertIs(caught.exception, original)
+                blocked_matcher.assert_not_called()
+                blocked_error.assert_not_called()
+
+    def test_git_cwd_regular_marker_cache_and_auth_order(
+        self,
+    ) -> None:
+        for prior_present in (False, True):
+            with self.subTest(prior_present=prior_present):
+                events: list[tuple[str, object]] = []
+                first_mode = OpaqueValue("first-mode")
+                second_mode = OpaqueValue("second-mode")
+                expected_common = OpaqueValue(
+                    "cached-common-directory"
+                )
+                auth_result = OpaqueValue(
+                    "ignored-linked-auth-result"
+                )
+
+                class Prior:
+                    def __bool__(prior_self) -> bool:
+                        raise AssertionError(
+                            "truth-tested cached identity"
+                        )
+
+                    @property
+                    def common_git_dir(
+                        prior_self,
+                    ) -> object:
+                        events.append(("prior-common", None))
+                        return expected_common
+
+                prior = Prior() if prior_present else None
+
+                class Metadata:
+                    def __init__(
+                        metadata_self,
+                    ) -> None:
+                        metadata_self.reads = 0
+
+                    @property
+                    def st_mode(metadata_self) -> object:
+                        metadata_self.reads += 1
+                        events.append(
+                            (
+                                "metadata-mode",
+                                metadata_self.reads,
+                            )
+                        )
+                        return (
+                            first_mode
+                            if metadata_self.reads == 1
+                            else second_mode
+                        )
+
+                class Marker:
+                    def lstat(marker_self) -> object:
+                        events.append(("lstat", None))
+                        return Metadata()
+
+                marker = Marker()
+
+                class Parent:
+                    def __truediv__(
+                        parent_self,
+                        component: object,
+                    ) -> object:
+                        raise AssertionError(
+                            "scanned parent after regular marker"
+                        )
+
+                class Candidate:
+                    @property
+                    def parents(candidate_self) -> object:
+                        events.append(("parents", None))
+                        return (Parent(),)
+
+                    def __truediv__(
+                        candidate_self,
+                        component: object,
+                    ) -> object:
+                        events.append(("join", component))
+                        return marker
+
+                candidate = Candidate()
+
+                class PredicateTruth:
+                    def __init__(
+                        truth_self,
+                        name: str,
+                        value: bool,
+                    ) -> None:
+                        truth_self.name = name
+                        truth_self.value = value
+
+                    def __bool__(truth_self) -> bool:
+                        events.append(
+                            (
+                                f"{truth_self.name}-truth",
+                                truth_self.value,
+                            )
+                        )
+                        return truth_self.value
+
+                def directory_test() -> object:
+                    events.append(("directory-provider", None))
+
+                    def test(mode: object) -> object:
+                        events.append(("directory-call", mode))
+                        self.assertIs(mode, first_mode)
+                        return PredicateTruth(
+                            "directory",
+                            False,
+                        )
+
+                    return test
+
+                def regular_file_test() -> object:
+                    events.append(("regular-provider", None))
+
+                    def test(mode: object) -> object:
+                        events.append(("regular-call", mode))
+                        self.assertIs(mode, second_mode)
+                        return PredicateTruth("regular", True)
+
+                    return test
+
+                def identity_lookup() -> object:
+                    events.append(("identity-provider", None))
+
+                    def lookup(observed: object) -> object:
+                        events.append(
+                            ("identity-call", observed)
+                        )
+                        self.assertIs(observed, candidate)
+                        return prior
+
+                    return lookup
+
+                def authenticator_provider() -> object:
+                    events.append(("auth-provider", None))
+
+                    def authenticate(
+                        observed: object,
+                        *,
+                        expected_common_git_dir: object,
+                    ) -> object:
+                        events.append(
+                            (
+                                "auth-call",
+                                (
+                                    observed,
+                                    expected_common_git_dir,
+                                ),
+                            )
+                        )
+                        self.assertIs(observed, candidate)
+                        self.assertIs(
+                            expected_common_git_dir,
+                            (
+                                expected_common
+                                if prior_present
+                                else None
+                            ),
+                        )
+                        return auth_result
+
+                    return authenticate
+
+                observed = self.git_cwd(
+                    object(),
+                    path_factory=lambda: (
+                        lambda value: SimpleNamespace(
+                            resolve=lambda *, strict: candidate
+                        )
+                    ),
+                    os_error_type=mock.Mock(
+                        side_effect=AssertionError(
+                            "resolved matcher after successful lstat"
+                        )
+                    ),
+                    runtime_error_type=mock.Mock(
+                        side_effect=AssertionError(
+                            "resolved initial matcher"
+                        )
+                    ),
+                    file_not_found_error_type=mock.Mock(
+                        side_effect=AssertionError(
+                            "resolved matcher after successful lstat"
+                        )
+                    ),
+                    directory_test=directory_test,
+                    regular_file_test=regular_file_test,
+                    identity_lookup=identity_lookup,
+                    linked_worktree_authenticator=(
+                        authenticator_provider
+                    ),
+                    error_type=mock.Mock(
+                        side_effect=AssertionError(
+                            "raised for regular marker"
+                        )
+                    ),
+                )
+
+                self.assertIsNone(observed)
+                self.assertEqual(
+                    events,
+                    [
+                        ("parents", None),
+                        ("join", ".git"),
+                        ("lstat", None),
+                        ("directory-provider", None),
+                        ("metadata-mode", 1),
+                        ("directory-call", first_mode),
+                        ("directory-truth", False),
+                        ("regular-provider", None),
+                        ("metadata-mode", 2),
+                        ("regular-call", second_mode),
+                        ("regular-truth", True),
+                        ("identity-provider", None),
+                        ("identity-call", candidate),
+                    ]
+                    + (
+                        [("prior-common", None)]
+                        if prior_present
+                        else []
+                    )
+                    + [
+                        ("auth-provider", None),
+                        (
+                            "auth-call",
+                            (
+                                candidate,
+                                (
+                                    expected_common
+                                    if prior_present
+                                    else None
+                                ),
+                            ),
+                        ),
+                    ],
+                )
+
+    def test_git_cwd_invalid_marker_stops_ancestor_scan(
+        self,
+    ) -> None:
+        events: list[str] = []
+
+        class Metadata:
+            @property
+            def st_mode(metadata_self) -> int:
+                events.append("metadata-mode")
+                return 0
+
+        class Marker:
+            def lstat(marker_self) -> object:
+                events.append("lstat")
+                return Metadata()
+
+        class Parent:
+            def __truediv__(
+                parent_self,
+                component: object,
+            ) -> object:
+                raise AssertionError(
+                    "scanned parent after invalid marker"
+                )
+
+        class Candidate:
+            parents = (Parent(),)
+
+            def __truediv__(
+                candidate_self,
+                component: object,
+            ) -> object:
+                events.append("join")
+                return Marker()
+
+        class PredicateTruth:
+            def __init__(
+                truth_self,
+                name: str,
+            ) -> None:
+                truth_self.name = name
+
+            def __bool__(truth_self) -> bool:
+                events.append(f"{truth_self.name}-truth")
+                return False
+
+        def predicate(name: str) -> object:
+            def provider() -> object:
+                events.append(f"{name}-provider")
+
+                def test(mode: object) -> object:
+                    events.append(f"{name}-call")
+                    return PredicateTruth(name)
+
+                return test
+
+            return provider
+
+        class MarkerError(RuntimeError):
+            pass
+
+        def error_type() -> type[BaseException]:
+            events.append("error-provider")
+            return MarkerError
+
+        with self.assertRaises(MarkerError) as caught:
+            self.git_cwd(
+                object(),
+                path_factory=lambda: (
+                    lambda value: SimpleNamespace(
+                        resolve=lambda *, strict: Candidate()
+                    )
+                ),
+                os_error_type=mock.Mock(
+                    side_effect=AssertionError(
+                        "resolved matcher after lstat"
+                    )
+                ),
+                runtime_error_type=mock.Mock(
+                    side_effect=AssertionError(
+                        "resolved initial matcher"
+                    )
+                ),
+                file_not_found_error_type=mock.Mock(
+                    side_effect=AssertionError(
+                        "resolved matcher after lstat"
+                    )
+                ),
+                directory_test=predicate("directory"),
+                regular_file_test=predicate("regular"),
+                identity_lookup=mock.Mock(
+                    side_effect=AssertionError(
+                        "read cache for invalid marker"
+                    )
+                ),
+                linked_worktree_authenticator=mock.Mock(
+                    side_effect=AssertionError(
+                        "authenticated invalid marker"
+                    )
+                ),
+                error_type=error_type,
+            )
+
+        self.assertEqual(
+            str(caught.exception),
+            "the Git administration marker is not "
+            "a real file or directory",
+        )
+        self.assertIsNone(caught.exception.__cause__)
+        self.assertEqual(
+            events,
+            [
+                "join",
+                "lstat",
+                "directory-provider",
+                "metadata-mode",
+                "directory-call",
+                "directory-truth",
+                "regular-provider",
+                "metadata-mode",
+                "regular-call",
+                "regular-truth",
+                "error-provider",
+            ],
+        )
+
+    def test_git_cwd_regular_branch_failures_are_raw(
+        self,
+    ) -> None:
+        class SelectedFailure(Exception):
+            pass
+
+        stages = (
+            "regular-provider",
+            "metadata-mode-second",
+            "regular-call",
+            "regular-truth",
+            "identity-provider",
+            "identity-call",
+            "prior-common",
+            "auth-provider",
+            "auth-call",
+        )
+
+        for stage in stages:
+            with self.subTest(unwrapped_stage=stage):
+                original = SelectedFailure(stage)
+
+                def fail_at(observed: str) -> None:
+                    if stage == observed:
+                        raise original
+
+                class Prior:
+                    @property
+                    def common_git_dir(
+                        prior_self,
+                    ) -> object:
+                        fail_at("prior-common")
+                        return object()
+
+                class Metadata:
+                    def __init__(
+                        metadata_self,
+                    ) -> None:
+                        metadata_self.reads = 0
+
+                    @property
+                    def st_mode(metadata_self) -> int:
+                        metadata_self.reads += 1
+                        if metadata_self.reads == 2:
+                            fail_at("metadata-mode-second")
+                        return metadata_self.reads
+
+                class Marker:
+                    def lstat(marker_self) -> object:
+                        return Metadata()
+
+                marker = Marker()
+
+                class Candidate:
+                    parents = ()
+
+                    def __truediv__(
+                        candidate_self,
+                        component: object,
+                    ) -> object:
+                        return marker
+
+                candidate = Candidate()
+
+                class RegularTruth:
+                    def __bool__(truth_self) -> bool:
+                        fail_at("regular-truth")
+                        return True
+
+                def regular_file_test() -> object:
+                    fail_at("regular-provider")
+
+                    def test(mode: object) -> object:
+                        fail_at("regular-call")
+                        return RegularTruth()
+
+                    return test
+
+                def identity_lookup() -> object:
+                    fail_at("identity-provider")
+
+                    def lookup(observed: object) -> object:
+                        fail_at("identity-call")
+                        return (
+                            Prior()
+                            if stage == "prior-common"
+                            else None
+                        )
+
+                    return lookup
+
+                def authenticator_provider() -> object:
+                    fail_at("auth-provider")
+
+                    def authenticate(
+                        observed: object,
+                        *,
+                        expected_common_git_dir: object,
+                    ) -> None:
+                        fail_at("auth-call")
+                        raise AssertionError(
+                            "authentication unexpectedly succeeded"
+                        )
+
+                    return authenticate
+
+                blocked_matcher = mock.Mock(
+                    side_effect=AssertionError(
+                        "matched post-lstat failure"
+                    )
+                )
+                blocked_error = mock.Mock(
+                    side_effect=AssertionError(
+                        "translated regular-branch failure"
+                    )
+                )
+                with self.assertRaises(
+                    SelectedFailure
+                ) as caught:
+                    self.git_cwd(
+                        object(),
+                        path_factory=lambda: (
+                            lambda value: SimpleNamespace(
+                                resolve=lambda *, strict: candidate
+                            )
+                        ),
+                        os_error_type=blocked_matcher,
+                        runtime_error_type=blocked_matcher,
+                        file_not_found_error_type=(
+                            blocked_matcher
+                        ),
+                        directory_test=lambda: (
+                            lambda mode: False
+                        ),
+                        regular_file_test=regular_file_test,
+                        identity_lookup=identity_lookup,
+                        linked_worktree_authenticator=(
+                            authenticator_provider
+                        ),
+                        error_type=blocked_error,
+                    )
+
+                self.assertIs(caught.exception, original)
+                blocked_matcher.assert_not_called()
+                blocked_error.assert_not_called()
+
+    def test_git_cwd_error_dependency_failures_are_untranslated(
+        self,
+    ) -> None:
+        class ProtectedFailure(Exception):
+            pass
+
+        class ErrorDependencyFailure(Exception):
+            pass
+
+        for rejection in (
+            "initial",
+            "lstat",
+            "symbolic",
+            "invalid",
+        ):
+            for error_stage in ("provider", "constructor"):
+                with self.subTest(
+                    rejection=rejection,
+                    error_stage=error_stage,
+                ):
+                    protected = ProtectedFailure(rejection)
+                    original = ErrorDependencyFailure(
+                        f"{rejection}-{error_stage}"
+                    )
+
+                    class Metadata:
+                        st_mode = 1
+
+                    class ResolvedMarker:
+                        def __ne__(
+                            resolved_self,
+                            other: object,
+                        ) -> bool:
+                            return True
+
+                    class Marker:
+                        def lstat(marker_self) -> object:
+                            if rejection == "lstat":
+                                raise protected
+                            return Metadata()
+
+                        def resolve(
+                            marker_self,
+                            *,
+                            strict: bool,
+                        ) -> object:
+                            return ResolvedMarker()
+
+                    marker = Marker()
+
+                    class Candidate:
+                        parents = ()
+
+                        def __truediv__(
+                            candidate_self,
+                            component: object,
+                        ) -> object:
+                            return marker
+
+                    class InputPath:
+                        def resolve(
+                            input_self,
+                            *,
+                            strict: bool,
+                        ) -> object:
+                            if rejection == "initial":
+                                raise protected
+                            return Candidate()
+
+                    class BrokenError:
+                        def __new__(
+                            cls,
+                            message: object,
+                        ) -> object:
+                            if error_stage == "constructor":
+                                raise original
+                            raise AssertionError(
+                                "error constructor was reached "
+                                "for provider failure"
+                            )
+
+                    def error_type() -> type:
+                        if error_stage == "provider":
+                            raise original
+                        return BrokenError
+
+                    def directory_test() -> object:
+                        return lambda mode: (
+                            rejection == "symbolic"
+                        )
+
+                    def regular_file_test() -> object:
+                        return lambda mode: False
+
+                    with self.assertRaises(
+                        ErrorDependencyFailure
+                    ) as caught:
+                        self.git_cwd(
+                            object(),
+                            path_factory=lambda: (
+                                lambda value: InputPath()
+                            ),
+                            os_error_type=lambda: (
+                                ProtectedFailure
+                            ),
+                            runtime_error_type=lambda: LookupError,
+                            file_not_found_error_type=(
+                                lambda: LookupError
+                            ),
+                            directory_test=directory_test,
+                            regular_file_test=regular_file_test,
+                            error_type=error_type,
+                        )
+
+                    self.assertIs(caught.exception, original)
+                    self.assertIsNone(
+                        caught.exception.__cause__
+                    )
+                    if rejection in {"initial", "lstat"}:
+                        self.assertIs(
+                            caught.exception.__context__,
+                            protected,
+                        )
+                    else:
+                        self.assertIsNone(
+                            caught.exception.__context__
+                        )
+
+    def test_engine_git_cwd_wrapper_uses_fresh_globals_and_ignores_result(
+        self,
+    ) -> None:
+        cwd = OpaqueValue("engine-git-cwd")
+        ignored = OpaqueValue("ignored-git-cwd-result")
+        initial_path = object()
+        path_one = object()
+        path_two = object()
+        initial_directory_test = object()
+        directory_one = object()
+        directory_two = object()
+        initial_regular_test = object()
+        regular_one = object()
+        regular_two = object()
+        initial_authenticator = object()
+        authenticator_one = object()
+        authenticator_two = object()
+
+        class InitialOSError(Exception):
+            pass
+
+        class OSErrorOne(Exception):
+            pass
+
+        class OSErrorTwo(Exception):
+            pass
+
+        class InitialRuntimeError(Exception):
+            pass
+
+        class RuntimeErrorOne(Exception):
+            pass
+
+        class RuntimeErrorTwo(Exception):
+            pass
+
+        class InitialMissingError(Exception):
+            pass
+
+        class MissingErrorOne(Exception):
+            pass
+
+        class MissingErrorTwo(Exception):
+            pass
+
+        class InitialLauncherError(Exception):
+            pass
+
+        class LauncherErrorOne(Exception):
+            pass
+
+        class LauncherErrorTwo(Exception):
+            pass
+
+        initial_registry: dict[object, object] = {}
+        registry_one: dict[object, object] = {}
+        registry_two: dict[object, object] = {}
+
+        def stat_api(
+            directory_value: object,
+            regular_value: object,
+        ) -> object:
+            return SimpleNamespace(
+                S_ISDIR=directory_value,
+                S_ISREG=regular_value,
+            )
+
+        def kernel(
+            observed_cwd: object,
+            **dependencies: object,
+        ) -> object:
+            self.assertIs(observed_cwd, cwd)
+            self.assertEqual(
+                tuple(dependencies),
+                (
+                    "path_factory",
+                    "os_error_type",
+                    "runtime_error_type",
+                    "file_not_found_error_type",
+                    "directory_test",
+                    "regular_file_test",
+                    "identity_lookup",
+                    "linked_worktree_authenticator",
+                    "error_type",
+                ),
+            )
+
+            self.engine.Path = path_one
+            self.assertIs(
+                dependencies["path_factory"](),
+                path_one,
+            )
+            self.engine.Path = path_two
+            self.assertIs(
+                dependencies["path_factory"](),
+                path_two,
+            )
+            self.engine.OSError = OSErrorOne
+            self.assertIs(
+                dependencies["os_error_type"](),
+                OSErrorOne,
+            )
+            self.engine.OSError = OSErrorTwo
+            self.assertIs(
+                dependencies["os_error_type"](),
+                OSErrorTwo,
+            )
+            self.engine.RuntimeError = RuntimeErrorOne
+            self.assertIs(
+                dependencies["runtime_error_type"](),
+                RuntimeErrorOne,
+            )
+            self.engine.RuntimeError = RuntimeErrorTwo
+            self.assertIs(
+                dependencies["runtime_error_type"](),
+                RuntimeErrorTwo,
+            )
+            self.engine.FileNotFoundError = MissingErrorOne
+            self.assertIs(
+                dependencies[
+                    "file_not_found_error_type"
+                ](),
+                MissingErrorOne,
+            )
+            self.engine.FileNotFoundError = MissingErrorTwo
+            self.assertIs(
+                dependencies[
+                    "file_not_found_error_type"
+                ](),
+                MissingErrorTwo,
+            )
+
+            self.engine.stat = stat_api(
+                directory_one,
+                regular_one,
+            )
+            self.assertIs(
+                dependencies["directory_test"](),
+                directory_one,
+            )
+            self.assertIs(
+                dependencies["regular_file_test"](),
+                regular_one,
+            )
+            self.engine.stat = stat_api(
+                directory_two,
+                regular_two,
+            )
+            self.assertIs(
+                dependencies["directory_test"](),
+                directory_two,
+            )
+            self.assertIs(
+                dependencies["regular_file_test"](),
+                regular_two,
+            )
+
+            self.engine._LINKED_WORKTREE_IDENTITIES = (
+                registry_one
+            )
+            lookup = dependencies["identity_lookup"]()
+            self.assertIs(lookup.__self__, registry_one)
+            self.assertEqual(lookup, registry_one.get)
+            self.engine._LINKED_WORKTREE_IDENTITIES = (
+                registry_two
+            )
+            lookup = dependencies["identity_lookup"]()
+            self.assertIs(lookup.__self__, registry_two)
+            self.assertEqual(lookup, registry_two.get)
+
+            self.engine.authenticate_linked_worktree_path = (
+                authenticator_one
+            )
+            self.assertIs(
+                dependencies[
+                    "linked_worktree_authenticator"
+                ](),
+                authenticator_one,
+            )
+            self.engine.authenticate_linked_worktree_path = (
+                authenticator_two
+            )
+            self.assertIs(
+                dependencies[
+                    "linked_worktree_authenticator"
+                ](),
+                authenticator_two,
+            )
+            self.engine.LauncherError = LauncherErrorOne
+            self.assertIs(
+                dependencies["error_type"](),
+                LauncherErrorOne,
+            )
+            self.engine.LauncherError = LauncherErrorTwo
+            self.assertIs(
+                dependencies["error_type"](),
+                LauncherErrorTwo,
+            )
+            return ignored
+
+        with (
+            mock.patch.object(
+                self.engine,
+                "_authenticate_git_cwd",
+                side_effect=kernel,
+            ) as kernel_mock,
+            mock.patch.object(
+                self.engine,
+                "Path",
+                initial_path,
+            ),
+            mock.patch.object(
+                self.engine,
+                "OSError",
+                InitialOSError,
+                create=True,
+            ),
+            mock.patch.object(
+                self.engine,
+                "RuntimeError",
+                InitialRuntimeError,
+                create=True,
+            ),
+            mock.patch.object(
+                self.engine,
+                "FileNotFoundError",
+                InitialMissingError,
+                create=True,
+            ),
+            mock.patch.object(
+                self.engine,
+                "stat",
+                stat_api(
+                    initial_directory_test,
+                    initial_regular_test,
+                ),
+            ),
+            mock.patch.object(
+                self.engine,
+                "_LINKED_WORKTREE_IDENTITIES",
+                initial_registry,
+            ),
+            mock.patch.object(
+                self.engine,
+                "authenticate_linked_worktree_path",
+                initial_authenticator,
+            ),
+            mock.patch.object(
+                self.engine,
+                "LauncherError",
+                InitialLauncherError,
+            ),
+        ):
+            observed = self.engine.authenticate_git_cwd(cwd)
+
+        self.assertIsNone(observed)
+        kernel_mock.assert_called_once()
+
+    def test_engine_git_cwd_matches_real_filesystem_behavior(
+        self,
+    ) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            plain = root / "plain"
+            plain.mkdir()
+            repository = root / "repository"
+            subprocess.run(
+                ("git", "init", "-q", os.fspath(repository)),
+                cwd=root,
+                text=True,
+                capture_output=True,
+                check=True,
+                timeout=20,
+            )
+            nested = repository / "one" / "two"
+            nested.mkdir(parents=True)
+            cwd_link = root / "cwd-link"
+            cwd_link.symlink_to(nested, target_is_directory=True)
+            relative_nested = Path(
+                os.path.relpath(nested, Path.cwd())
+            )
+
+            with (
+                mock.patch.object(
+                    self.engine,
+                    "_LINKED_WORKTREE_IDENTITIES",
+                    {},
+                ),
+                mock.patch.object(
+                    self.engine,
+                    "_LINKED_ADMIN_OWNERS",
+                    {},
+                ),
+            ):
+                self.assertIsNone(
+                    self.engine.authenticate_git_cwd(plain)
+                )
+                self.assertIsNone(
+                    self.engine.authenticate_git_cwd(nested)
+                )
+                self.assertIsNone(
+                    self.engine.authenticate_git_cwd(
+                        relative_nested
+                    )
+                )
+                self.assertIsNone(
+                    self.engine.authenticate_git_cwd(cwd_link)
+                )
+
+                missing = root / "missing"
+                with self.assertRaises(
+                    self.engine.LauncherError
+                ) as caught:
+                    self.engine.authenticate_git_cwd(missing)
+                self.assertEqual(
+                    str(caught.exception),
+                    "the Git working directory is unavailable",
+                )
+                self.assertIsInstance(
+                    caught.exception.__cause__,
+                    FileNotFoundError,
+                )
+
+                regular_cwd = root / "regular-cwd"
+                regular_cwd.write_text(
+                    "not a directory\n",
+                    encoding="utf-8",
+                )
+                with self.assertRaises(
+                    self.engine.LauncherError
+                ) as caught:
+                    self.engine.authenticate_git_cwd(
+                        regular_cwd
+                    )
+                self.assertEqual(
+                    str(caught.exception),
+                    "cannot inspect the Git "
+                    "administration marker",
+                )
+                self.assertIsInstance(
+                    caught.exception.__cause__,
+                    OSError,
+                )
+
+                symbolic_root = root / "symbolic-marker"
+                symbolic_root.mkdir()
+                symbolic_target = root / "symbolic-target"
+                symbolic_target.mkdir()
+                (symbolic_root / ".git").symlink_to(
+                    symbolic_target,
+                    target_is_directory=True,
+                )
+                with self.assertRaises(
+                    self.engine.LauncherError
+                ) as caught:
+                    self.engine.authenticate_git_cwd(
+                        symbolic_root
+                    )
+                self.assertEqual(
+                    str(caught.exception),
+                    "the Git administration marker is not "
+                    "a real file or directory",
+                )
+                self.assertIsNone(
+                    caught.exception.__cause__
+                )
+
+    def test_engine_git_cwd_matches_real_linked_worktree_cache(
+        self,
+    ) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            repository = root / "repository"
+            worker = root / "worker"
+
+            def run_git(*arguments: str) -> None:
+                subprocess.run(
+                    ("git", *arguments),
+                    cwd=root,
+                    text=True,
+                    capture_output=True,
+                    check=True,
+                    timeout=20,
+                )
+
+            run_git("init", "-q", os.fspath(repository))
+            run_git(
+                "-C",
+                os.fspath(repository),
+                "config",
+                "user.name",
+                "Worktree Marshal Test",
+            )
+            run_git(
+                "-C",
+                os.fspath(repository),
+                "config",
+                "user.email",
+                "marshal@example.invalid",
+            )
+            (repository / "tracked").write_text(
+                "initial\n",
+                encoding="utf-8",
+            )
+            run_git(
+                "-C",
+                os.fspath(repository),
+                "add",
+                "tracked",
+            )
+            run_git(
+                "-C",
+                os.fspath(repository),
+                "commit",
+                "-q",
+                "-m",
+                "initial",
+            )
+            run_git(
+                "-C",
+                os.fspath(repository),
+                "worktree",
+                "add",
+                "-q",
+                "--detach",
+                os.fspath(worker),
+                "HEAD",
+            )
+            nested = worker / "nested"
+            nested.mkdir()
+            git_file = worker / ".git"
+            raw_git_dir = (
+                git_file.read_text(encoding="utf-8")
+                .removeprefix("gitdir: ")
+                .removesuffix("\n")
+            )
+            git_dir_candidate = Path(raw_git_dir)
+            if not git_dir_candidate.is_absolute():
+                git_dir_candidate = worker / git_dir_candidate
+            git_dir = git_dir_candidate.resolve(strict=True)
+            raw_common = (
+                (git_dir / "commondir")
+                .read_text(encoding="utf-8")
+                .removesuffix("\n")
+            )
+            common_candidate = Path(raw_common)
+            if not common_candidate.is_absolute():
+                common_candidate = git_dir / common_candidate
+            common_git_dir = common_candidate.resolve(strict=True)
+            identities: dict[Path, object] = {}
+            owners: dict[Path, Path] = {}
+
+            with (
+                mock.patch.object(
+                    self.engine,
+                    "_LINKED_WORKTREE_IDENTITIES",
+                    identities,
+                ),
+                mock.patch.object(
+                    self.engine,
+                    "_LINKED_ADMIN_OWNERS",
+                    owners,
+                ),
+            ):
+                self.assertIsNone(
+                    self.engine.authenticate_git_cwd(nested)
+                )
+                cached = identities[worker]
+                self.assertEqual(
+                    cached.common_git_dir,
+                    common_git_dir,
+                )
+                self.assertEqual(owners, {git_dir: worker})
+                self.assertIsNone(
+                    self.engine.authenticate_git_cwd(nested)
+                )
+                cached_again = identities[worker]
+                self.assertEqual(cached_again, cached)
+                self.assertIsNot(cached_again, cached)
+
+                other_common = root / "other-common"
+                other_common.mkdir()
+                (git_dir / "commondir").write_text(
+                    os.fspath(other_common) + "\n",
+                    encoding="utf-8",
+                )
+                with self.assertRaises(
+                    self.engine.LauncherError
+                ) as caught:
+                    self.engine.authenticate_git_cwd(nested)
+                self.assertEqual(
+                    str(caught.exception),
+                    "the retained worktree has an unexpected "
+                    "common Git directory",
+                )
+                self.assertIs(
+                    identities[worker],
+                    cached_again,
+                )
+                self.assertEqual(owners, {git_dir: worker})
 
     def test_retained_worktree_kernel_and_wrapper_signatures(
         self,

@@ -56,6 +56,7 @@ from .identity import (
     LauncherIdentity,
     LinkedWorktreeIdentity,
     Repository,
+    authenticate_git_cwd as _authenticate_git_cwd,
     authenticate_launcher as _authenticate_launcher,
     authenticate_retained_worktree as _authenticate_retained_worktree,
     exact_pointer_path as _exact_pointer_path,
@@ -467,31 +468,18 @@ def authenticate_retained_worktree(
 
 
 def authenticate_git_cwd(cwd: Path) -> None:
-    try:
-        directory = Path(cwd).resolve(strict=True)
-    except (OSError, RuntimeError) as exc:
-        raise LauncherError("the Git working directory is unavailable") from exc
-    for candidate in (directory, *directory.parents):
-        marker = candidate / ".git"
-        try:
-            metadata = marker.lstat()
-        except FileNotFoundError:
-            continue
-        except OSError as exc:
-            raise LauncherError("cannot inspect the Git administration marker") from exc
-        if stat.S_ISDIR(metadata.st_mode):
-            if marker.resolve(strict=True) != marker:
-                raise LauncherError("the primary Git administration directory is symbolic")
-            return
-        if stat.S_ISREG(metadata.st_mode):
-            prior = _LINKED_WORKTREE_IDENTITIES.get(candidate)
-            expected_common = prior.common_git_dir if prior is not None else None
-            authenticate_linked_worktree_path(
-                candidate,
-                expected_common_git_dir=expected_common,
-            )
-            return
-        raise LauncherError("the Git administration marker is not a real file or directory")
+    _authenticate_git_cwd(
+        cwd,
+        path_factory=lambda: Path,
+        os_error_type=lambda: OSError,
+        runtime_error_type=lambda: RuntimeError,
+        file_not_found_error_type=lambda: FileNotFoundError,
+        directory_test=lambda: stat.S_ISDIR,
+        regular_file_test=lambda: stat.S_ISREG,
+        identity_lookup=lambda: _LINKED_WORKTREE_IDENTITIES.get,
+        linked_worktree_authenticator=lambda: authenticate_linked_worktree_path,
+        error_type=lambda: LauncherError,
+    )
 
 
 def state_base() -> Path:

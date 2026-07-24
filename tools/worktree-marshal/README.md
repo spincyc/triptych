@@ -15,6 +15,7 @@ exact Git-administration line-format validation and bounded descriptor-reader
 boundaries, its exact pointer-path and real-directory validation boundary, its
 read-only linked-worktree path-validation and cache-consistency boundaries,
 its retained-worktree manifest-binding and authentication-dispatch boundary,
+its Git-working-directory ancestor-authentication boundary,
 its Codex-executable candidate-selection, static argument-policy, sanitized
 base-environment, and deterministic marker-enrichment boundaries, the frozen
 Triptych compatibility adapter, the Python distribution, and the Make
@@ -119,7 +120,7 @@ worktree-removal or ref-transaction failures, receipt recovery, garbage
 collection, or concurrent retirement. Those retirement cases, broader crash
 and race recovery, broader security coverage, the complete installed lifecycle
 matrix, and the supported Python and Git CI matrix remain release gates; the
-first twenty-one step-5 seams are protected by direct source tests and artifact
+first twenty-two step-5 seams are protected by direct source tests and artifact
 provenance, and the installed abort checkpoint covers archived transaction
 restoration. Each remaining helper boundary still requires its own direct
 parity coverage.
@@ -171,14 +172,16 @@ validates the constructed identity against the engine-supplied prior-identity
 and Git-administration-owner lookups. The dependency-injected
 `authenticate_retained_worktree` operation binds a retained manifest to the
 repository's current common-directory spelling and lazily dispatches its
-worktree path to the engine-supplied linked-worktree authenticator. `engine.py`
-continues to re-export the same class objects. The launcher wrapper supplies
-the error, filesystem-policy, access, executable-mode, and identity factory
-dependencies lazily at their established lookup points. Only strict
-resolution and metadata-read operating-system errors are translated by that
-operation. The exact-line wrapper likewise supplies the current regular-file
-byte-reader wrapper, Unicode decoding error type, and launcher error type
-lazily.
+worktree path to the engine-supplied linked-worktree authenticator. The
+dependency-injected `authenticate_git_cwd` operation now owns the complete
+ancestor traversal that authenticates the `.git` marker governing a Git
+working directory. `engine.py` continues to re-export the same class objects.
+The launcher wrapper supplies the error, filesystem-policy, access,
+executable-mode, and identity factory dependencies lazily at their established
+lookup points. Only strict resolution and metadata-read operating-system errors
+are translated by that operation. The exact-line wrapper likewise supplies the
+current regular-file byte-reader wrapper, Unicode decoding error type, and
+launcher error type lazily.
 
 The reader opens the final path component with `O_NOFOLLOW` when that flag is
 available, requires the pre-read descriptor snapshot to describe a regular
@@ -237,16 +240,61 @@ repository common directory a second time for the
 Mapping, property, provider, stringification, comparison, path-construction,
 callback, and error-construction failures remain untranslated.
 
+Git-working-directory authentication first constructs and strictly resolves
+the supplied directory. Only the selected operating-system and runtime errors
+from that protected operation become `the Git working directory is
+unavailable`, explicitly chained from the original error. It then eagerly
+materializes `(directory, *directory.parents)` before inspecting any marker,
+fixing the candidate order from the directory through its nearest-to-farthest
+ancestors. Parent access and iteration, marker joining, and their failures are
+outside that protected block and remain untranslated.
+
+For each candidate, the operation applies `lstat` to its `.git` marker. The
+selected file-not-found exception is handled before the broader
+operating-system exception and silently advances to the next ancestor; another
+selected operating-system error becomes `cannot inspect the Git administration
+marker` with an explicit cause. A directory predicate is resolved first and
+receives the first fresh `st_mode` read. A truthy result short-circuits the
+regular-file, cache, and linked-authentication paths; the marker must then
+strictly resolve equal to its exact pathname or
+`the primary Git administration directory is symbolic` is raised without an
+explicit cause. If the directory predicate is false, the regular-file
+predicate is resolved and receives a second fresh `st_mode` read. A marker
+that satisfies neither predicate immediately raises
+`the Git administration marker is not a real file or directory`, without
+examining another ancestor.
+
+For a regular-file marker, the operation resolves the engine-supplied identity
+lookup and queries it with the candidate. A prior value is distinguished by
+identity with `None`, not truthiness: a present value supplies its
+`common_git_dir`, while absence supplies `None`. Only after that selection does
+the operation resolve and invoke the linked-worktree authenticator with the
+candidate and exact `expected_common_git_dir` keyword. The callback may perform
+the engine-owned linked-identity and Git-admin-owner cache mutations, but its
+return is ignored. A successful directory or file branch returns `None`; when
+every marker is absent, the operation falls through with the same implicit
+`None` and performs no cache lookup or linked authentication. Except for the
+two narrow translations above, dependency, metadata-property, predicate,
+resolution, comparison, truth-conversion, cache, callback, and error
+construction failures remain untranslated.
+
 The exact-signature engine wrapper retains the current size limit and supplies
 all primitive operations and policy values lazily. `MAX_ADMIN_FILE_BYTES`
 remains in `engine.py` because the active-rebase administration audit also
 uses it. The engine also retains every existing reader and path-check consumer,
 the exact public retained-worktree wrapper and all of its existing callers,
-the public linked-worktree authentication wrapper, late
-`LinkedWorktreeIdentity` construction, both process-global identity and
-Git-admin-owner registry objects, both assignments after a successful check,
-all workflows, lifecycle sequencing, top-level error handling, and every
-mutation. Each registry is resolved again for its assignment. An
+the public linked-worktree authentication wrapper, and the exact public
+`authenticate_git_cwd(cwd)` wrapper. That wrapper intentionally does not
+return the injected kernel's result, preserving an implicit `None` on success
+even under rebinding. The engine's `git()` path retains authentication followed
+by effective-configuration validation followed by raw Git execution, as well
+as Git argument construction, the configuration probe and its diagnosis, and
+all subprocess execution. The engine also retains late `LinkedWorktreeIdentity`
+construction, both process-global identity and Git-admin-owner registry
+objects, their bound lookups, both assignments after a successful check, all
+repository discovery and lifecycle workflows, lifecycle sequencing, top-level
+error handling, and every mutation. Each registry is resolved again for its
+assignment. An
 identity-registry assignment failure prevents the owner assignment; an owner
 assignment failure retains the identity entry, preserving the existing
 partial-mutation and dynamic-rebinding behavior. The injected authenticator
@@ -276,6 +324,15 @@ authentication. It neither validates the manifest schema or path ownership
 nor freezes an atomic view across its two repository common-directory reads.
 The supplied linked-worktree authenticator remains responsible for the actual
 path, topology, identity-cache, and owner-cache checks.
+Git-working-directory authentication is likewise a sequence of pathname and
+metadata snapshots, not a locked or descriptor-pinned proof; the canonical
+starting directory or any eagerly selected ancestor or marker may be replaced
+between or after its checks. A primary-directory marker check establishes only
+strict-resolution equality with the exact marker pathname, not ownership,
+permissions, contents, repository identity, or lifecycle authority. A linked
+marker delegates those path, topology, and process-local cache checks to the
+linked-worktree authenticator. Absence of every marker deliberately succeeds,
+so a later configuration probe or Git command may still reject the directory.
 Git-executable discovery and pre-pin validation belong to `git.py`, while its
 process-global cache and invocation remain in `engine.py`; neither is a future
 responsibility of `identity.py`.
@@ -334,11 +391,11 @@ version, distinguish a copy or wrapper, pin a file descriptor or device/inode
 identity, close the stat/access/use replacement window, or establish sandbox
 assurance. Symbolic links are followed while reading metadata, and either the
 link or file may later be replaced. The engine retains profile binding, its
-legacy wrappers and startup ordering, working-directory authentication and
-choice, profile lookup and enrichment call timing, role selection, manifest
-authority, the Git-sanitized mapping source, linked-worktree refusal checks,
-process creation and replacement, inherited descriptors, and every post-exit
-and lifecycle decision.
+legacy wrappers and startup ordering, the working-directory authentication
+wrapper and choice, profile lookup and enrichment call timing, role selection,
+manifest authority, the Git-sanitized mapping source, linked-worktree refusal
+checks, process creation and replacement, inherited descriptors, and every
+post-exit and lifecycle decision.
 
 The static grammar and fixed argv prefix rely on the selected executable
 continuing to honor the recognized Codex CLI grammar and option precedence.

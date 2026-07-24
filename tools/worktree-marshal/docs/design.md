@@ -28,7 +28,8 @@ authentication plus exact Git-administration line-format validation and the
 bounded descriptor-based regular-file reader plus exact pointer-path and
 real-directory validation, read-only linked-worktree path validation, and
 read-only linked-worktree cache-consistency policy plus retained-worktree
-manifest binding and authentication dispatch,
+manifest binding and authentication dispatch plus Git-working-directory
+ancestor authentication,
 `locks.py` now owns lock-descriptor bookkeeping and validation algorithms,
 `process.py` now owns child waiting and exit-status normalization,
 `adapters/codex.py` now owns Codex executable candidate selection and static
@@ -45,7 +46,7 @@ worktree_marshal/
   locks.py               descriptor bookkeeping now; flock acquisition later
   git.py                 policy, captured config, and executable discovery; invocation later
   process.py             child signal forwarding and exit normalization
-  identity.py            records, launcher auth, path/cache checks, retained dispatch
+  identity.py            records, launcher auth, path/cache checks, retained and Git-CWD auth
                          public wrappers and linked registry objects/writes remain in engine
   worktrees.py           allocation, audit, reopen, and cleanup
   integration.py         verification, rebase, landing, and rollback
@@ -101,7 +102,7 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with twenty-one behavior-preserving boundaries. The original
+has begun step 5 with twenty-two behavior-preserving boundaries. The original
 pure Git policy kernel transforms an explicit environment mapping and Git
 argument sequence in `git.py`; `engine.py` retains its optional
 environment-acquisition wrapper, subprocess creation and command execution,
@@ -140,11 +141,11 @@ partial-setup behavior: a failure while installing the second handler occurs
 before the protected wait and does not roll back the first installation.
 The sixth boundary extends `git.py` with deterministic parsing and rejection
 of command-bearing values in the effective-configuration bytes captured by the
-engine. The engine retains working-directory authentication, the exact Git
-configuration probe, unsuccessful-probe diagnosis, process-global executable
-pinning, and subprocess execution. Lazy resolvers preserve the engine's
-existing configuration-policy and error lookups at their original decision
-points.
+engine. At that boundary, the engine retained working-directory authentication,
+the exact Git configuration probe, unsuccessful-probe diagnosis,
+process-global executable pinning, and subprocess execution. Lazy resolvers
+preserved the engine's existing configuration-policy and error lookups at
+their original decision points.
 The seventh boundary moves the exact run-ID grammar, dependency-injected
 timestamp and random-suffix composition, and lexical repository-lock,
 run-lock, and manifest path construction into `state.py`. Engine wrappers
@@ -508,7 +509,89 @@ policy. This boundary introduces no generic contract, durable identity or
 migration change, sandbox or lifecycle authority, packaging or distribution
 change, or release assurance.
 
-Direct tests freeze all twenty-one extracted boundaries, their
+The twenty-second boundary moves the full eager ancestor and marker traversal
+of `authenticate_git_cwd` into `identity.authenticate_git_cwd`. Its
+exact-signature engine wrapper remains `(cwd)` and lazily supplies the current
+path factory, protected operating-system and runtime error types,
+file-not-found error type, directory and regular-file predicates, linked
+identity lookup, linked-worktree authenticator, and launcher error type. The
+public wrapper deliberately invokes the kernel without returning its result,
+so a successful call still returns implicit `None` even if the injected kernel
+alias is rebound to return an opaque value.
+
+The operation first constructs and strictly resolves the supplied directory.
+Only a selected operating-system or runtime failure in that block becomes
+`the Git working directory is unavailable`, explicitly chained from the
+original error. It then evaluates the literal
+`(directory, *directory.parents)` before the loop: access to and complete
+iteration of `parents` therefore precede the first marker join or `lstat`, and
+the fixed candidates run from the directory through its
+nearest-to-farthest ancestors. Parent access or iteration and candidate-marker
+joining are outside the protected block, so their failures remain
+untranslated.
+
+For each candidate, the operation joins `.git` and applies `lstat`. The
+file-not-found handler is selected first and advances silently; only then can a
+selected broader operating-system failure become
+`cannot inspect the Git administration marker`, explicitly chained from that
+failure. All-marker absence falls through with implicit `None`, without a
+cache lookup or linked-worktree authentication.
+
+For an existing marker, the directory-predicate provider is resolved before a
+first fresh `metadata.st_mode` read. A truthy directory result short-circuits
+the regular-file predicate and every cache or linked-authentication operation.
+The marker is then strictly resolved outside the `lstat` exception block and
+compared with its exact pathname; a truthy inequality raises
+`the primary Git administration directory is symbolic` without an explicit
+cause, while equality returns `None`. If the directory predicate is false,
+the regular-file-predicate provider is resolved before a second fresh
+`metadata.st_mode` read. If that result is also false, the operation
+immediately raises
+`the Git administration marker is not a real file or directory` without an
+explicit cause or further ancestor traversal.
+
+A regular-file marker resolves the supplied identity lookup and calls it with
+the candidate. The result is tested by identity with `None`, not by truthiness.
+A present identity supplies a fresh `common_git_dir` read; absence supplies
+`None`. Only after that choice does the operation resolve and call the
+linked-worktree authenticator with the candidate positionally and the exact
+`expected_common_git_dir` keyword. The authenticator's return is ignored and
+the kernel returns `None`. Dependency-provider, metadata-property, predicate,
+strict-resolution, comparison, truth-conversion, lookup, identity-property,
+callback, and error-construction failures outside the two narrow protected
+blocks remain untranslated. Lazy providers preserve the established dynamic
+rebinding points.
+
+The engine retains the exact non-returning public wrapper and every caller.
+`git()` still authenticates the working directory, validates the effective Git
+configuration, and only then performs the raw Git operation; Git argument
+construction, command and subprocess execution, configuration probing and
+failure diagnosis remain in the engine. It also retains the public
+linked-worktree and retained-worktree authentication wrappers, boundary-19
+path validation, boundary-20 cache validation, late
+`LinkedWorktreeIdentity` construction, both process-global registry objects,
+both registry writes, their dynamic rebinding and partial-mutation behavior,
+all repository-discovery and lifecycle workflows, and every mutation. The
+kernel receives only the identity registry's currently bound `get` operation,
+not the registry object. Its linked authenticator may reach the engine-owned
+registry writes, but the Git-CWD kernel performs no registry assignment
+itself.
+
+This traversal is a point-in-time pathname and metadata observation, not an
+atomic authentication proof. It canonicalizes the starting directory and
+eagerly snapshots the ancestor sequence but acquires no lock and pins no
+descriptor; directories and markers may be replaced between or after checks.
+An accepted primary `.git` directory proves only exact path equality after
+strict resolution, not ownership, permissions, content, Git identity, or
+lifecycle authority. A regular-file marker delegates its path, topology, and
+process-local cache checks to linked-worktree authentication. No-marker
+success is deliberate compatibility behavior, and a later configuration
+probe or Git command may still fail. This boundary adds no generic
+authentication contract, durable identity or migration change, sandbox or
+lifecycle authority, packaging or distribution change, workflow change, or
+release assurance.
+
+Direct tests freeze all twenty-two extracted boundaries, their
 compatibility surfaces, artifact inclusion, field and operation order,
 partial-failure behavior, and the dynamic restoration of every vocabulary
 value currently accepted in

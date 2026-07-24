@@ -45,6 +45,62 @@ class RegularFileMetadata(Protocol):
     st_ctime_ns: int
 
 
+def authenticate_git_cwd(
+    cwd: Path,
+    *,
+    path_factory: Callable[[], Callable[[Path], Path]],
+    os_error_type: Callable[[], type[BaseException]],
+    runtime_error_type: Callable[[], type[BaseException]],
+    file_not_found_error_type: Callable[[], type[BaseException]],
+    directory_test: Callable[[], Callable[[int], bool]],
+    regular_file_test: Callable[[], Callable[[int], bool]],
+    identity_lookup: Callable[
+        [],
+        Callable[[Path], LinkedWorktreeIdentity | None],
+    ],
+    linked_worktree_authenticator: Callable[
+        [],
+        Callable[..., LinkedWorktreeIdentity],
+    ],
+    error_type: Callable[[], type[BaseException]],
+) -> None:
+    """Authenticate the Git administration marker governing one directory."""
+
+    try:
+        directory = path_factory()(cwd).resolve(strict=True)
+    except (os_error_type(), runtime_error_type()) as exc:
+        raise error_type()("the Git working directory is unavailable") from exc
+    for candidate in (directory, *directory.parents):
+        marker = candidate / ".git"
+        try:
+            metadata = marker.lstat()
+        except file_not_found_error_type():
+            continue
+        except os_error_type() as exc:
+            raise error_type()(
+                "cannot inspect the Git administration marker"
+            ) from exc
+        if directory_test()(metadata.st_mode):
+            if marker.resolve(strict=True) != marker:
+                raise error_type()(
+                    "the primary Git administration directory is symbolic"
+                )
+            return
+        if regular_file_test()(metadata.st_mode):
+            prior = identity_lookup()(candidate)
+            expected_common = (
+                prior.common_git_dir if prior is not None else None
+            )
+            linked_worktree_authenticator()(
+                candidate,
+                expected_common_git_dir=expected_common,
+            )
+            return
+        raise error_type()(
+            "the Git administration marker is not a real file or directory"
+        )
+
+
 def authenticate_retained_worktree(
     repository: Repository,
     manifest: dict,
