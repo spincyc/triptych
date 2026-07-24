@@ -1,6 +1,19 @@
 # Source Audit — Trustful Surrender to Divine Providence
 
-Access dates below are 2026-07-12 unless otherwise noted; the Augustine/Crowley sources were rechecked 2026-07-13, and the Mullan edition of the *Spiritual Exercises* was checked 2026-07-14. Public English translations are working study texts; doctrinal claims rest on the identified works and loci rather than on a claim that one translation is critical.
+Access dates below are 2026-07-12 unless otherwise noted; the Augustine/Crowley sources were rechecked 2026-07-13, and the Mullan edition of the *Spiritual Exercises* was checked 2026-07-14. On 2026-07-24 the official Holy See witnesses for CCC 268--278 and 303--314, Vatican I's \emph{Dei Filius}, \emph{Gaudium et spes}, and \emph{Veritatis splendor} were opened and their relevant context re-inspected. Public English translations are working study texts; doctrinal claims rest on the identified works and loci rather than on a claim that one translation is critical.
+
+The 2026-07-24 full-article research and rhetoric pass re-audited every
+rendered consequential claim against the governing matrix and recorded loci.
+The re-inspection confirmed the article's controlling distinctions: loving
+omnipotence and the mystery of apparent powerlessness (CCC 268--278); concrete
+Providence, real secondary causes, God's innocence of moral evil, the
+inadequacy of a quick theodicy, and the hiddenness of particular providential
+ways (CCC 303--314); freedom as a graced and responsible act
+(\emph{Dei Filius}; \emph{Gaudium et spes}); and creaturely freedom perfected
+as truth-governed self-gift in Christ (\emph{Veritatis splendor} 86--89). The
+revision introduces no new source identity or extended quotation. Its new
+formulations remain source-grounded editorial synthesis and do not change the
+authority classifications or unresolved review state below.
 
 ## Governing doctrine
 
@@ -13,7 +26,7 @@ Access dates below are 2026-07-12 unless otherwise noted; the Augustine/Crowley 
 | God is not directly or indirectly the cause of moral evil; he permits it and causes good to arise from every evil he permits. | CCC 309–324, especially 311–314 and 324. | Authoritative synthesis; governs all devotional rhetoric. The form of the good may remain hidden until eternal life. |
 | The Passion belongs to God's definite plan; Christ freely offers himself, while its sinful agents remain free and responsible. | Acts 2:23; 4:27–28; Heb 10:5–10; CCC 599–600, 606–614. | Revealed and authoritative controlling paradigm for distinct formal objects in one governed history. |
 | Freedom is rooted in reason and will, perfected in the good, and responsible to the extent an act is voluntary. | *Gaudium et spes* 17; CCC 1730–1748, especially 1731–1735. | *Gaudium et spes* 17 controls freedom's orientation to the good, injury by sin, and healing by grace; the Catechism controls the more exact reason, will, voluntariness, and responsibility language. |
-| Object, intention, and circumstances specify moral acts; a good intention cannot make an evil object good. | CCC 1750–1761; John Paul II, *Veritatis splendor* 35, 40–41, 78–83. | Governing moral-theological boundary. |
+| Object, intention, and circumstances specify moral acts; a good intention cannot make an evil object good. Creaturely freedom is received, cultivated in truth, and perfected as Christological self-gift; faith has moral content and must pass into action. | CCC 1750–1761; John Paul II, *Veritatis splendor* 35, 40–41, 78–89. | Governing moral-theological and Christological boundary. |
 | Grave matter does not by itself establish mortal culpability; full knowledge and deliberate consent are required. | CCC 1857–1861. | Governs the distinction between objective gravity and subjective imputability. |
 | Grace precedes and enables the free response without making the person inactive. | Council of Trent, sess. VI, ch. 5 and canons 4–6; CCC 1989–2002, especially 1993 and 2001. | Conciliar doctrine and authoritative synthesis. |
 | Christ’s natural human will freely adheres and is subject to his divine will; it is not suppressed. | Third Council of Constantinople, exposition of faith (DS 556); CCC 475. | Christological dogmatic boundary governing the Gethsemane analysis. |
@@ -131,3 +144,17 @@ The historical result is deliberately limited. Crowley acknowledged Augustine re
 - The phrase “permissive will” was rejected wherever it could suggest a second, weaker faculty in God. The article instead speaks of the one divine will knowingly willing permission, following Augustine, *Enchiridion* 95–102, and Aquinas, ST I, q. 19, a. 9.
 - The article does not infer that God permits sin because created freedom prevents intervention. It expressly states the Thomistic conclusion that God can prevent a particular sin or inwardly move the will to good without coercing it, while leaving the mechanics disputed among Catholic schools.
 - The article does not claim that God needs evil as a means, that evil becomes good by being ordered, or that the editor can identify the particular temporal good connected with every tragedy.
+
+## Full research and rhetoric pass production review — 2026-07-24
+
+Completed: official-source re-inspection at the recorded loci; article-wide
+claim and authority re-audit; direct treatment of the
+permission/complicity objection; compression of the historical excursus;
+settled two-pass build; clean log, metadata, font, page-size, and
+extracted-text checks; approved-helper raster generation; visual inspection of
+all 25 pages; and byte-identical installation. The installed SHA-256 is
+`01f09c1214d22efd5998fd65304c1356a8dfcb2f0f75894cfeb5e0d0da397fd6`.
+`qpdf` structure inspection was unavailable because the tool is not installed.
+The changed snapshot has no renewed distribution authorization and is held on
+that gate. Independent theological, patristics-specialist, and ecclesiastical
+review remain outstanding.

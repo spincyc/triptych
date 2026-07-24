@@ -3,10 +3,10 @@
   "release_id": "public-alpha",
   "provider": "gpt",
   "expected_counts": {
-    "publications": 112,
-    "release": 109,
+    "publications": 116,
+    "release": 108,
     "review": 0,
-    "hold": 3
+    "hold": 8
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
@@ -100,6 +100,42 @@
       }
     },
     {
+      "id": "articles/faith/four-last-things-01-death",
+      "catalog": "library/faith.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "exact-snapshot-authorization"
+      ]
+    },
+    {
+      "id": "articles/faith/four-last-things-02-judgment",
+      "catalog": "library/faith.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "exact-snapshot-authorization"
+      ]
+    },
+    {
+      "id": "articles/faith/four-last-things-03-hell",
+      "catalog": "library/faith.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "exact-snapshot-authorization"
+      ]
+    },
+    {
+      "id": "articles/faith/four-last-things-04-heaven",
+      "catalog": "library/faith.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "exact-snapshot-authorization"
+      ]
+    },
+    {
       "id": "articles/faith/freemasonry-and-the-catholic-church",
       "catalog": "library/faith.md",
       "status": "release",
@@ -142,12 +178,10 @@
     {
       "id": "articles/faith/trustful-surrender-to-divine-providence",
       "catalog": "library/faith.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "4b334136752b0db6a8e73cced7157d7bfee30fee73392dd7fac295637e1186a7"
-      }
+      "status": "hold",
+      "gates": [
+        "renewed-exact-snapshot-authorization"
+      ]
     },
     {
       "id": "articles/canon-law/clerical-celibacy-chastity-and-continence",

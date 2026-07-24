@@ -70,3 +70,36 @@ The settled 24-page PDF, SHA-256 `9090de74e63a42c97ef626d996cfcd58235098ff366b98
 The source and audit records were revised in the corpus-wide omission audit. A settled two-pass build produced this 24-page PDF with SHA-256 `4b334136752b0db6a8e73cced7157d7bfee30fee73392dd7fac295637e1186a7`. The final log contained no fatal error, undefined reference, overfull or underfull box, or unresolved rerun or layout warning. Generation metadata, `qpdf` structure, Letter page size, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed. Review rasters were generated through `scripts/pdf-review`; every rendered page was visually inspected for clipping, overlap, accidental blanks, bad breaks, footer and metadata placement, and legibility. The reviewed build was installed at its mirrored `doc/` path and verified byte-identical.
 
 This is internal production review only; it grants no independent editorial, specialist, rights, theological, or ecclesiastical approval. The exact current installed PDF is release-cleared by the 21 July 2026 exact-current-snapshot exception; the exception supplies none of the missing review or approval just named and authorizes no changed bytes.
+
+## Full-article research and rhetoric pass — 2026-07-24
+
+The complete publication, governing doctrine matrix, patristic and Thomistic
+loci, devotional-source bounds, consequential negative results, and
+publication-local bindings were re-read together. The revision strengthens
+the argument at its highest-pressure points: wrongdoing as the test case for
+Providence, the noncompetitive relation of first and secondary causes,
+Providence as the ground rather than solvent of moral attribution, the direct
+objection from divine permission to complicity, the threefold practical rule,
+and surrender's Christological end. Official Holy See witnesses for the
+governing Catechism, conciliar, and encyclical loci were re-inspected on
+2026-07-24; *Veritatis splendor* 86–89 now supplies the article's
+Christological account of creaturely freedom and lived faith. The Crowley
+excursus was compressed to the historical result actually established. No new
+source identity, extended quotation, or genealogical claim was introduced.
+Existing source distinctions and unresolved independent review limits remain
+controlling. The changed render requires a new build,
+every-page visual review, exact installed-byte comparison, and renewed
+exact-snapshot distribution authorization before release.
+
+The settled two-pass build produced a 25-page PDF with SHA-256
+`01f09c1214d22efd5998fd65304c1356a8dfcb2f0f75894cfeb5e0d0da397fd6`.
+The final log contained no fatal error, undefined reference, overfull or
+underfull box, or unresolved rerun warning. PDF title, subject,
+revision-derived modification date, Letter page size, embedded/subsetted fonts
+with Unicode maps, and nonempty text extraction passed. Review rasters were
+generated through `scripts/pdf-review`; all 25 pages were visually inspected,
+with full-size inspection of the new permission/complicity discussion and
+terminal metadata/rights page. The reviewed build was installed and verified
+byte-identical. `qpdf` structure checking was unavailable because `qpdf` is not
+installed. Internal production review supplies no independent theological or
+ecclesiastical review and no renewed exact-snapshot distribution authorization.

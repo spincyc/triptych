@@ -4,9 +4,9 @@
 
 ## Novenas
 
-Each Daily Prayer Book is derived from its full guide and shares that guide's sources and review status.
+Each title includes a full guide and a shorter daily prayer book.
 
-| Novena and prayer book | Focus and status | Supporting records |
-| --- | --- | --- |
-| **[The First Novena: From Ascension to Pentecost](../doc/gpt/devotions/novenas/00-ascension-to-pentecost.pdf)** · [The First Novena: Daily Prayer Book](../doc/gpt/devotions/novenas/00-ascension-to-pentecost-daily-prayer.pdf) | Bilingual preparation rooted in Acts, the Fathers, and the Church's prayer. Source-audited. | [Prayer inventory](../src/gpt/devotions/novenas/00-ascension-to-pentecost/research/prayer-inventory.md) · [Research scope](../src/gpt/devotions/novenas/00-ascension-to-pentecost/research/scope.md) · [Source audit](../src/gpt/devotions/novenas/00-ascension-to-pentecost/research/source-audit.md) · [Derivation record](../src/gpt/devotions/novenas/00-ascension-to-pentecost-daily-prayer/research/derivation.md) |
-| **[The Novena of Our Lady of Mount Carmel](../doc/gpt/devotions/novenas/10-our-lady-of-mount-carmel.pdf)** · [The Novena of Our Lady of Mount Carmel: Daily Prayer Book](../doc/gpt/devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer.pdf) | Preparation for 16 July, distinguishing feast, Scapular, and later apparition traditions. Source-audited. | [Prayer inventory](../src/gpt/devotions/novenas/10-our-lady-of-mount-carmel/research/prayer-inventory.md) · [Translation search](../src/gpt/devotions/novenas/10-our-lady-of-mount-carmel/research/flos-carmeli-translation-search.md) · [Research scope](../src/gpt/devotions/novenas/10-our-lady-of-mount-carmel/research/scope.md) · [Tradition status](../src/gpt/devotions/novenas/10-our-lady-of-mount-carmel/research/tradition-status.md) · [Source audit](../src/gpt/devotions/novenas/10-our-lady-of-mount-carmel/research/source-audit.md) · [Derivation record](../src/gpt/devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer/research/derivation.md) |
+| Novena and prayer book | Focus |
+| --- | --- |
+| **[The First Novena: From Ascension to Pentecost](../doc/gpt/devotions/novenas/00-ascension-to-pentecost.pdf)** · [Daily Prayer Book](../doc/gpt/devotions/novenas/00-ascension-to-pentecost-daily-prayer.pdf) | Bilingual preparation rooted in Acts, the Fathers, and the Church's prayer. |
+| **[The Novena of Our Lady of Mount Carmel](../doc/gpt/devotions/novenas/10-our-lady-of-mount-carmel.pdf)** · [Daily Prayer Book](../doc/gpt/devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer.pdf) | Preparation for 16 July, distinguishing feast, Scapular, and later apparition traditions. |
