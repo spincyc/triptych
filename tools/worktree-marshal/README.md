@@ -16,6 +16,7 @@ boundaries, its exact pointer-path and real-directory validation boundary, its
 read-only linked-worktree path-validation and cache-consistency boundaries,
 its retained-worktree manifest-binding and authentication-dispatch boundary,
 its Git-working-directory ancestor-authentication boundary,
+its read-only repository-discovery boundary,
 its Codex-executable candidate-selection, static argument-policy, sanitized
 base-environment, and deterministic marker-enrichment boundaries, the frozen
 Triptych compatibility adapter, the Python distribution, and the Make
@@ -120,7 +121,7 @@ worktree-removal or ref-transaction failures, receipt recovery, garbage
 collection, or concurrent retirement. Those retirement cases, broader crash
 and race recovery, broader security coverage, the complete installed lifecycle
 matrix, and the supported Python and Git CI matrix remain release gates; the
-first twenty-two step-5 seams are protected by direct source tests and artifact
+first twenty-three step-5 seams are protected by direct source tests and artifact
 provenance, and the installed abort checkpoint covers archived transaction
 restoration. Each remaining helper boundary still requires its own direct
 parity coverage.
@@ -336,6 +337,25 @@ so a later configuration probe or Git command may still reject the directory.
 Git-executable discovery and pre-pin validation belong to `git.py`, while its
 process-global cache and invocation remain in `engine.py`; neither is a future
 responsibility of `identity.py`.
+
+The dependency-injected `discover_repository` operation now owns the complete
+read-only discovery and state-identity derivation sequence. It resolves the
+supplied directory or current directory, requires Git's exact non-bare
+working-tree response, resolves the reported top level, obtains absolute worktree
+and common administration paths in order, and authenticates the relative
+current directory before selecting any state policy. It derives the unchanged
+twelve-character common-directory digest, selects and resolves the
+profile-bound state path, rejects state inside the worktree, and constructs
+the immutable repository record last.
+
+The engine wrapper supplies the current path, Git, hashing, filesystem,
+state-policy, profile, constructor, and error dependencies lazily. The engine
+retains all Git execution and configuration validation, state selection and
+slug wrappers, profile binding, initialization, persistence, discovery callers,
+lifecycle workflows, and mutation. Discovery remains a sequence of read-only
+observations rather than an atomic repository or state authentication proof;
+the observed checkout, administration paths, or state location may later
+change.
 
 [`adapters/codex.py`](src/worktree_marshal/adapters/codex.py) owns the
 dependency-injected `select_codex_executable` operation for a usable,

@@ -29,7 +29,7 @@ bounded descriptor-based regular-file reader plus exact pointer-path and
 real-directory validation, read-only linked-worktree path validation, and
 read-only linked-worktree cache-consistency policy plus retained-worktree
 manifest binding and authentication dispatch plus Git-working-directory
-ancestor authentication,
+ancestor authentication and read-only repository discovery,
 `locks.py` now owns lock-descriptor bookkeeping and validation algorithms,
 `process.py` now owns child waiting and exit-status normalization,
 `adapters/codex.py` now owns Codex executable candidate selection and static
@@ -46,7 +46,7 @@ worktree_marshal/
   locks.py               descriptor bookkeeping now; flock acquisition later
   git.py                 policy, captured config, and executable discovery; invocation later
   process.py             child signal forwarding and exit normalization
-  identity.py            records, launcher auth, path/cache checks, retained and Git-CWD auth
+  identity.py            records, auth, path/cache checks, and repository discovery
                          public wrappers and linked registry objects/writes remain in engine
   worktrees.py           allocation, audit, reopen, and cleanup
   integration.py         verification, rebase, landing, and rollback
@@ -102,7 +102,7 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with twenty-two behavior-preserving boundaries. The original
+has begun step 5 with twenty-three behavior-preserving boundaries. The original
 pure Git policy kernel transforms an explicit environment mapping and Git
 argument sequence in `git.py`; `engine.py` retains its optional
 environment-acquisition wrapper, subprocess creation and command execution,
@@ -591,7 +591,44 @@ authentication contract, durable identity or migration change, sandbox or
 lifecycle authority, packaging or distribution change, workflow change, or
 release assurance.
 
-Direct tests freeze all twenty-two extracted boundaries, their
+The twenty-third boundary moves the complete read-only `discover_repository`
+operation into `identity.discover_repository`. Its exact-signature engine
+wrapper remains `(cwd=None)` and supplies the current path type, authenticated
+Git call, absolute Git-path helper, digest and filesystem-encoding operations,
+state-base and repository-slug helpers, selected profile's state-environment
+name, late `Repository` constructor, selected value-error type, and launcher
+error type lazily at their established lookup points.
+
+The operation preserves the optional-current-directory selection and resolves
+the start before its first authenticated Git call. It requires the exact
+non-bare working-tree response, discovers and resolves the top level, then
+obtains the worktree and common administration paths in selector order.
+Relative-current-directory authentication precedes every state operation and
+retains its exact explicitly chained diagnostic. The common-directory digest
+is still the first twelve hexadecimal characters of the engine-supplied
+SHA-256 operation over the engine-supplied filesystem encoding.
+
+State-base selection remains before repository-name normalization. The joined
+state path is resolved, compared with the worktree root, and only then has its
+parents inspected. A state path inside the worktree resolves the selected
+profile's state-environment name only while constructing the unchanged
+diagnostic. On success the operation resolves the repository constructor last
+and preserves every discovered component, the linked-worktree inequality,
+and the resolved state root.
+
+The engine retains the Git working-directory authentication wrapper and every
+Git command, effective-configuration probe, executable cache, state-location
+and repository-slug wrappers, active-profile binding, all repository
+initialization and durable state operations, every repository-discovery
+caller, every lifecycle workflow, and every mutation. Repository discovery is
+a sequential set of Git, pathname, and state-policy observations, not an
+atomic repository or state authentication proof; the checkout, Git
+administration, or selected state path may change between or after them. This
+boundary adds no state migration, generic adapter contract, sandbox or
+lifecycle authority, packaging or distribution change, workflow change, or
+release assurance.
+
+Direct tests freeze all twenty-three extracted boundaries, their
 compatibility surfaces, artifact inclusion, field and operation order,
 partial-failure behavior, and the dynamic restoration of every vocabulary
 value currently accepted in

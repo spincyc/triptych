@@ -11579,6 +11579,157 @@ class IdentityModelTests(unittest.TestCase):
             ),
         )
 
+    def test_repository_discovery_kernel_and_wrapper_signatures(self) -> None:
+        self.assertEqual(
+            str(inspect.signature(self.identity.discover_repository)),
+            "(cwd: 'Path | None', *, path_factory: "
+            "'Callable[[], type[Path]]', git_call: "
+            "'Callable[[], Callable[..., object]]', absolute_git_path: "
+            "'Callable[[], Callable[[Path, str], Path]]', digest_factory: "
+            "'Callable[[], Callable[[bytes], object]]', filesystem_encode: "
+            "'Callable[[], Callable[[object], bytes]]', state_base: "
+            "'Callable[[], Callable[[], Path]]', repository_slug: "
+            "'Callable[[], Callable[[Path], str]]', state_environment: "
+            "'Callable[[], str]', repository_factory: "
+            "'Callable[[], Callable[..., Repository]]', value_error_type: "
+            "'Callable[[], type[BaseException]]', error_type: "
+            "'Callable[[], type[BaseException]]') -> 'Repository'",
+        )
+        self.assertEqual(
+            str(inspect.signature(self.engine.discover_repository)),
+            "(cwd: 'Path | None' = None) -> 'Repository'",
+        )
+        self.assertIs(
+            self.engine.Repository,
+            self.identity.Repository,
+        )
+
+    def test_repository_discovery_kernel_preserves_success_values(self) -> None:
+        start = Path("/repository/subdirectory")
+        root = Path("/repository")
+        git_dir = Path("/repository/.git/worktrees/run")
+        common_git_dir = Path("/repository/.git")
+        state_root = Path("/state/project-0123456789ab")
+        events: list[tuple[str, object]] = []
+        git_results = iter(
+            (
+                SimpleNamespace(returncode=0, stdout="true\n"),
+                SimpleNamespace(returncode=0, stdout=f"{root}\n"),
+            )
+        )
+        absolute_paths = iter((git_dir, common_git_dir))
+        sentinel = object()
+
+        class Digest:
+            def hexdigest(digest_self) -> str:
+                events.append(("hexdigest", None))
+                return "0123456789abcdef"
+
+        def git_call(*args: object, **kwargs: object) -> object:
+            events.append(("git", (args, kwargs)))
+            return next(git_results)
+
+        def absolute_path(cwd: Path, selector: str) -> Path:
+            events.append(("absolute-git-path", (cwd, selector)))
+            return next(absolute_paths)
+
+        def repository_factory(**values: object) -> object:
+            events.append(("repository-factory", values))
+            return sentinel
+
+        observed = self.identity.discover_repository(
+            start,
+            path_factory=lambda: Path,
+            git_call=lambda: git_call,
+            absolute_git_path=lambda: absolute_path,
+            digest_factory=lambda: (
+                lambda value: (
+                    events.append(("digest", value)),
+                    Digest(),
+                )[1]
+            ),
+            filesystem_encode=lambda: (
+                lambda value: (
+                    events.append(("fsencode", value)),
+                    b"common-git-directory",
+                )[1]
+            ),
+            state_base=lambda: lambda: Path("/state"),
+            repository_slug=lambda: lambda value: "project",
+            state_environment=lambda: "STATE_HOME",
+            repository_factory=lambda: repository_factory,
+            value_error_type=lambda: ValueError,
+            error_type=lambda: RuntimeError,
+        )
+
+        self.assertIs(observed, sentinel)
+        self.assertEqual(
+            events[-1],
+            (
+                "repository-factory",
+                {
+                    "root": root,
+                    "git_dir": git_dir,
+                    "common_git_dir": common_git_dir,
+                    "relative_cwd": Path("subdirectory"),
+                    "linked_worktree": True,
+                    "state_root": state_root,
+                },
+            ),
+        )
+        self.assertLess(
+            events.index(("fsencode", common_git_dir)),
+            events.index(("hexdigest", None)),
+        )
+
+    def test_engine_repository_discovery_wrapper_supplies_lazy_globals(
+        self,
+    ) -> None:
+        sentinel = object()
+        captured: dict[str, object] = {}
+
+        def kernel(cwd: object, **dependencies: object) -> object:
+            captured["cwd"] = cwd
+            captured.update(dependencies)
+            return sentinel
+
+        profile = SimpleNamespace(state_environment="STATE_HOME")
+        with (
+            mock.patch.object(
+                self.engine,
+                "_discover_repository",
+                side_effect=kernel,
+            ),
+            mock.patch.object(
+                self.engine,
+                "active_profile",
+                return_value=profile,
+            ),
+        ):
+            observed = self.engine.discover_repository(Path("/start"))
+            state_environment = captured["state_environment"]()
+
+        self.assertIs(observed, sentinel)
+        self.assertEqual(captured["cwd"], Path("/start"))
+        expected = {
+            "path_factory": self.engine.Path,
+            "git_call": self.engine.git,
+            "absolute_git_path": self.engine.absolute_git_path,
+            "digest_factory": self.engine.hashlib.sha256,
+            "filesystem_encode": self.engine.os.fsencode,
+            "state_base": self.engine.state_base,
+            "repository_slug": self.engine.repository_slug,
+            "repository_factory": self.engine.Repository,
+            "value_error_type": ValueError,
+            "error_type": self.engine.LauncherError,
+        }
+        for name, value in expected.items():
+            self.assertIs(captured[name](), value)
+        self.assertEqual(
+            state_environment,
+            "STATE_HOME",
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

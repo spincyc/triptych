@@ -59,6 +59,7 @@ from .identity import (
     authenticate_git_cwd as _authenticate_git_cwd,
     authenticate_launcher as _authenticate_launcher,
     authenticate_retained_worktree as _authenticate_retained_worktree,
+    discover_repository as _discover_repository,
     exact_pointer_path as _exact_pointer_path,
     exact_real_directory as _exact_real_directory,
     exact_single_line as _exact_single_line,
@@ -534,33 +535,19 @@ def repository_slug(root: Path) -> str:
 
 
 def discover_repository(cwd: Path | None = None) -> Repository:
-    start = (cwd or Path.cwd()).resolve()
-    inside = git(start, "rev-parse", "--is-inside-work-tree", check=False)
-    if inside.returncode or inside.stdout.strip() != "true":
-        raise LauncherError("run this launcher from inside a non-bare Git working tree")
-
-    root = Path(git(start, "rev-parse", "--show-toplevel").stdout.strip()).resolve()
-    git_dir = absolute_git_path(root, "--git-dir")
-    common_git_dir = absolute_git_path(root, "--git-common-dir")
-    try:
-        relative_cwd = start.relative_to(root)
-    except ValueError as exc:
-        raise LauncherError("the current directory is outside the discovered worktree") from exc
-
-    digest = hashlib.sha256(os.fsencode(common_git_dir)).hexdigest()[:12]
-    repo_state = (state_base() / f"{repository_slug(root)}-{digest}").resolve()
-    if repo_state == root or root in repo_state.parents:
-        raise LauncherError(
-            f"{active_profile().state_environment} must keep launcher state outside "
-            "the worktree"
-        )
-    return Repository(
-        root=root,
-        git_dir=git_dir,
-        common_git_dir=common_git_dir,
-        relative_cwd=relative_cwd,
-        linked_worktree=git_dir != common_git_dir,
-        state_root=repo_state,
+    return _discover_repository(
+        cwd,
+        path_factory=lambda: Path,
+        git_call=lambda: git,
+        absolute_git_path=lambda: absolute_git_path,
+        digest_factory=lambda: hashlib.sha256,
+        filesystem_encode=lambda: os.fsencode,
+        state_base=lambda: state_base,
+        repository_slug=lambda: repository_slug,
+        state_environment=lambda: active_profile().state_environment,
+        repository_factory=lambda: Repository,
+        value_error_type=lambda: ValueError,
+        error_type=lambda: LauncherError,
     )
 
 

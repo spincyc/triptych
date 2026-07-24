@@ -45,6 +45,73 @@ class RegularFileMetadata(Protocol):
     st_ctime_ns: int
 
 
+def discover_repository(
+    cwd: Path | None,
+    *,
+    path_factory: Callable[[], type[Path]],
+    git_call: Callable[[], Callable[..., object]],
+    absolute_git_path: Callable[[], Callable[[Path, str], Path]],
+    digest_factory: Callable[[], Callable[[bytes], object]],
+    filesystem_encode: Callable[[], Callable[[object], bytes]],
+    state_base: Callable[[], Callable[[], Path]],
+    repository_slug: Callable[[], Callable[[Path], str]],
+    state_environment: Callable[[], str],
+    repository_factory: Callable[[], Callable[..., Repository]],
+    value_error_type: Callable[[], type[BaseException]],
+    error_type: Callable[[], type[BaseException]],
+) -> Repository:
+    """Discover one working tree and derive its profile-bound state identity."""
+
+    start = (cwd or path_factory().cwd()).resolve()
+    inside = git_call()(
+        start,
+        "rev-parse",
+        "--is-inside-work-tree",
+        check=False,
+    )
+    if inside.returncode or inside.stdout.strip() != "true":
+        raise error_type()(
+            "run this launcher from inside a non-bare Git working tree"
+        )
+
+    root = path_factory()(
+        git_call()(
+            start,
+            "rev-parse",
+            "--show-toplevel",
+        ).stdout.strip()
+    ).resolve()
+    git_dir = absolute_git_path()(root, "--git-dir")
+    common_git_dir = absolute_git_path()(root, "--git-common-dir")
+    try:
+        relative_cwd = start.relative_to(root)
+    except value_error_type() as exc:
+        raise error_type()(
+            "the current directory is outside the discovered worktree"
+        ) from exc
+
+    digest = digest_factory()(
+        filesystem_encode()(common_git_dir)
+    ).hexdigest()[:12]
+    repo_state = (
+        state_base()()
+        / f"{repository_slug()(root)}-{digest}"
+    ).resolve()
+    if repo_state == root or root in repo_state.parents:
+        raise error_type()(
+            f"{state_environment()} must keep launcher state outside "
+            "the worktree"
+        )
+    return repository_factory()(
+        root=root,
+        git_dir=git_dir,
+        common_git_dir=common_git_dir,
+        relative_cwd=relative_cwd,
+        linked_worktree=git_dir != common_git_dir,
+        state_root=repo_state,
+    )
+
+
 def authenticate_git_cwd(
     cwd: Path,
     *,
