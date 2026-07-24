@@ -27,10 +27,10 @@ selection, repository-name normalization, and lexical lock and manifest paths,
 authentication plus exact Git-administration line-format validation,
 `locks.py` now owns lock-descriptor bookkeeping and validation algorithms,
 `process.py` now owns child waiting and exit-status normalization,
-`adapters/codex.py` now owns Codex executable candidate selection, and
-`triptych_compat.py` binds the frozen compatibility profile. The rest of the
-engine will be separated behind these modules only after parity tests protect
-each seam:
+`adapters/codex.py` now owns Codex executable candidate selection and static
+argument policy, and `triptych_compat.py` binds the frozen compatibility
+profile. The rest of the engine will be separated behind these modules only
+after parity tests protect each seam:
 
 ```text
 worktree_marshal/
@@ -47,7 +47,7 @@ worktree_marshal/
   conflicts.py           resolver scope, continuation, and abort
   retirement.py          separately authorized destructive retirement
   adapters/base.py       future agent contract; explicitly not introduced
-  adapters/codex.py      executable candidate selection now; agent policy later
+  adapters/codex.py      executable selection and argument policy now; environment later
   sandboxes/base.py      enforcement contract independent of an adapter
   resources/             generated integration assets such as the Make fragment
 ```
@@ -96,7 +96,7 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with thirteen behavior-preserving boundaries. The original
+has begun step 5 with fourteen behavior-preserving boundaries. The original
 pure Git policy kernel transforms an explicit environment mapping and Git
 argument sequence in `git.py`; `engine.py` retains its optional
 environment-acquisition wrapper, subprocess creation and command execution,
@@ -128,9 +128,9 @@ restoration after successful setup, and negative-return-code normalization
 into `process.py`. The engine wrapper supplies lazy resolvers at the original
 signal-operation, handled-exception, timeout, and negative-status
 absolute-value lookup points. Process creation, command execution, executable
-invocation for Codex, arguments, environments, sandbox-enforcement arguments,
-inherited descriptors, and post-exit lifecycle decisions remain in
-`engine.py`. Direct tests also retain the legacy partial-setup behavior: a
+invocation for Codex, working-directory authentication and choice,
+environments, inherited descriptors, and post-exit lifecycle decisions remain
+in `engine.py`. Direct tests also retain the legacy partial-setup behavior: a
 failure while installing the second handler occurs before the protected wait
 and does not roll back the first installation.
 The sixth boundary extends `git.py` with deterministic parsing and rejection
@@ -224,18 +224,51 @@ and inode equal the authenticated launcher snapshot are skipped. The returned
 path is the candidate spelling made absolute by `candidate.absolute()`, not a
 canonical resolution.
 
-The engine retains active-profile binding, the legacy `resolve_real_codex`
-wrapper and startup ordering, accepted-surface and option policy, argv and
-child/resolver environment construction, sandbox-enforcement arguments,
-process creation, and every post-exit and lifecycle decision. The selector
-does not authenticate origin, signature, version, or implementation; reject a
-copy or wrapper; pin a file descriptor or device/inode identity; close the
-stat/access/use replacement window; or establish sandbox assurance. Metadata
-lookup follows symbolic links, and the selected link or file may later be
-replaced. No common base adapter, capability contract, new agent, state
-migration, durable identity change, sandbox backend, or release assurance is
-introduced by this seam.
-Direct tests freeze all thirteen extracted boundaries, their
+That boundary left active-profile binding, the legacy
+`resolve_real_codex` wrapper and startup ordering, accepted-surface and option
+policy, argv and child/resolver environment construction,
+sandbox-enforcement arguments, process creation, and every post-exit and
+lifecycle decision in the engine. The selector does not authenticate origin,
+signature, version, or implementation; reject a copy or wrapper; pin a file
+descriptor or device/inode identity; close the stat/access/use replacement
+window; or establish sandbox assurance. Metadata lookup follows symbolic
+links, and the selected link or file may later be replaced.
+
+The fourteenth boundary extends `adapters/codex.py` with the existing static
+root, `exec`, and `review` option sets, known non-agent command set,
+`scan_allowed_options`, `normalize_codex_arguments`, and `codex_argv`. The
+dependency-injected operations preserve the exact engine wrapper signatures,
+policy-object and primitive-operation lookup points, profile-specific reopen
+hint, diagnostics, input-copy and separated-image mutation behavior, scoped
+sandbox tracking, and result order.
+
+Beyond executable selection, this seam adds adapter ownership only of the
+static Codex CLI grammar, prompt delimiting and normalization, and fixed
+argument-level sandbox configuration. Unknown options fail closed in each
+parsed scope. An explicit `--` remains authoritative; otherwise free-form
+interactive, `exec`, and `review` prompts receive a `--` delimiter so
+command-like words remain data. Known non-agent command surfaces are rejected.
+Only `read-only` and `workspace-write` sandbox values are accepted. The argv
+builder uses the engine-supplied executable and working directory, disables
+multi-agent mode, clears additional writable roots and sandbox permissions,
+and adds `--sandbox workspace-write` only when no accepted sandbox was
+supplied.
+
+The engine retains active-profile binding and lifecycle-hint selection,
+wrapper call timing and early validation, executable-selection sequencing,
+working-directory authentication and choice, resolver prompt selection, child
+and resolver environment construction and role markers, process creation and
+in-place replacement, inherited descriptors, and every state, audit,
+post-exit, and lifecycle decision. This adapter module is not a generic
+`AgentAdapter` or an operating-system sandbox. Its static allow and deny policy
+is sensitive to Codex CLI version and parsing changes and relies on the
+selected executable honoring the expected argument meanings and precedence.
+It does not repair executable provenance or replacement risks, sanitize the
+environment, constrain reads, credentials, providers, or network access, or
+provide filesystem/process isolation by itself. No common base adapter,
+capability contract, new agent, state migration, durable identity change,
+sandbox backend, or release assurance is introduced by this seam.
+Direct tests freeze all fourteen extracted boundaries, their
 compatibility surfaces, artifact inclusion, field and operation order,
 partial-failure behavior, and the dynamic restoration of every vocabulary
 value currently accepted in

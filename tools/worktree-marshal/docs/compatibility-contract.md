@@ -193,25 +193,38 @@ The exact selection failures remain
 respectively, a relative override, an unusable override, and unsuccessful
 inherited-path search.
 
-The engine still accepts only the interactive, `exec`, and `review` agent
-surfaces and allowlisted options, and treats free-form prompts as data. It
-forces the child working directory, disables Codex multi-agent mode, clears
-additional writable roots and sandbox permissions, and defaults to Codex
-`workspace-write` sandboxing. A caller may narrow that to `read-only` but may
-not request a broader sandbox through the launcher. The adapter module's
-`select_codex_executable` operation owns only executable candidate selection at
-the current extraction boundary; the engine retains profile binding, the
-compatibility wrapper, argv and environment construction, sandbox arguments,
-process creation, and lifecycle policy. No common base-adapter contract exists
-yet.
+The extracted static argument policy accepts only the interactive, `exec`, and
+`review` agent surfaces and their scoped allowlisted options. Unknown options
+fail closed, known non-agent command surfaces are rejected, an explicit `--`
+is preserved, and an implicit free-form prompt receives `--` so command-like
+words remain data. A separated image option is normalized into one token so
+its value is not classified as a command. These transforms preserve the
+legacy input-copy, argument order, partial-failure, and diagnostic behavior.
+
+The fixed argv prefix uses the executable and working directory supplied by
+the engine, disables Codex multi-agent mode, clears additional writable roots
+and sandbox permissions, and defaults to Codex `workspace-write` sandboxing.
+A caller may narrow that to `read-only` but may not request a broader sandbox
+through the launcher. The adapter module now owns executable candidate
+selection, the static option and command sets, scoped option scanning, prompt
+normalization, and this argument-level configuration. The engine retains
+profile binding and lifecycle hints, compatibility wrappers and validation
+timing, working-directory authentication and choice, child and resolver
+environment construction, process creation, and lifecycle policy. No common
+base-adapter contract exists yet.
 
 Selection does not verify executable provenance, signature, version, or actual
 Codex behavior; exclude copies or wrappers; pin a descriptor or device/inode
 identity; close the stat/access/use replacement window; or confer sandbox
 assurance. Metadata lookup follows symbolic links, and the selected link or
-file may be replaced later. A generic core must not claim the same containment
-for another agent unless an adapter and sandbox backend provide and test
-equivalent enforcement.
+file may be replaced later. The static allow and deny policy is
+version-sensitive and assumes that the selected executable continues to honor
+the recognized Codex argument grammar and precedence. Argument construction
+does not sanitize the child environment, constrain reads, credentials,
+providers, or network access, or itself create an operating-system sandbox. A
+generic core must not claim the same containment for another agent unless an
+agent-specific policy and enforcement layer provide and test equivalent
+behavior.
 
 ## Threat boundary and platform assumptions
 

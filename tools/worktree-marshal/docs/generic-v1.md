@@ -84,9 +84,38 @@ close the stat/access/use replacement window; or establish sandbox assurance.
 Metadata lookup follows symbolic links, and the selected link or file may
 later be replaced. Executable selection does not alter the profile's durable
 identity, discover or migrate retained runs, or grant lifecycle authority.
-The engine continues to bind the profile and own Codex arguments, child and
-resolver environments, sandbox-enforcement arguments, process creation, and
-post-exit lifecycle policy.
+The engine continues to bind the profile and own executable-selection timing,
+working-directory authentication and choice, child and resolver environments,
+process creation, and post-exit lifecycle policy.
+
+## Codex argument policy
+
+The Codex adapter owns static, separate allowlists for root, `exec`, and
+`review` options and a set of known non-agent command surfaces. Unknown options
+fail closed within each parsed scope. An explicit `--` forces the remaining
+tokens to be prompt data; otherwise an implicit free-form interactive, `exec`,
+or `review` prompt receives `--`. A separated `-i` or `--image` value is
+combined with its option before command classification. Native resume and fork
+surfaces are refused in favor of the retained-run lifecycle.
+
+Only `read-only` and `workspace-write` are accepted sandbox values. The fixed
+argv prefix uses the engine-supplied executable and working directory, disables
+Codex multi-agent mode, clears additional writable roots and sandbox
+permissions, and supplies `--sandbox workspace-write` when the accepted user
+arguments did not specify a sandbox. These are argument-level controls; the
+engine still authenticates and chooses the working directory, supplies the
+profile-specific lifecycle hint, constructs child and resolver environments
+and role markers, creates or replaces the process, and owns every lifecycle
+transition.
+
+This static policy is sensitive to Codex CLI version, aliases, parsing, and
+option-precedence changes. It assumes the selected executable honors the
+recognized grammar. It is not a generic `AgentAdapter` or an operating-system
+sandbox, and it does not authenticate executable provenance, close the
+selection/use replacement window, sanitize the inherited environment, or
+constrain filesystem reads, credentials, providers, or network access. Policy
+changes require new parity and enforcement review; this extraction changes no
+durable identity and adds no migration or lifecycle authority.
 
 ## Isolation and compatibility
 

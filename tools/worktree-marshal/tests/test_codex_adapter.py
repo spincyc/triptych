@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Direct parity tests for Codex executable candidate selection."""
+"""Direct parity tests for the Codex adapter."""
 
 from __future__ import annotations
 
@@ -11,6 +11,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from collections.abc import Sequence
 from pathlib import Path
 from types import SimpleNamespace
 from unittest import mock
@@ -69,6 +70,65 @@ class CodexAdapterTests(unittest.TestCase):
                 if profile is None
                 else profile
             ),
+            **dependencies,
+        )
+
+    def scan(
+        self,
+        arguments: list[str],
+        start: int = 0,
+        flag_options: set[str] | None = None,
+        value_options: set[str] | None = None,
+        **overrides: object,
+    ) -> tuple[int, bool, bool]:
+        dependencies = {
+            "length": lambda: len,
+            "error_type": lambda: RuntimeError,
+        }
+        dependencies.update(overrides)
+        return self.adapter.scan_allowed_options(
+            arguments,
+            start,
+            set() if flag_options is None else flag_options,
+            set() if value_options is None else value_options,
+            **dependencies,
+        )
+
+    def normalize(
+        self,
+        arguments: Sequence[str],
+        **overrides: object,
+    ) -> tuple[list[str], bool]:
+        dependencies = {
+            "list_factory": lambda: list,
+            "length": lambda: len,
+            "option_scanner": lambda: (
+                lambda values, start, flags, options: self.scan(
+                    values,
+                    start,
+                    flags,
+                    options,
+                )
+            ),
+            "root_flag_options": lambda: self.adapter.ROOT_FLAG_OPTIONS,
+            "root_value_options": lambda: self.adapter.ROOT_VALUE_OPTIONS,
+            "exec_flag_options": lambda: self.adapter.EXEC_FLAG_OPTIONS,
+            "exec_value_options": lambda: self.adapter.EXEC_VALUE_OPTIONS,
+            "review_flag_options": lambda: (
+                self.adapter.REVIEW_FLAG_OPTIONS
+            ),
+            "review_value_options": lambda: (
+                self.adapter.REVIEW_VALUE_OPTIONS
+            ),
+            "non_agent_commands": lambda: (
+                self.adapter.NON_AGENT_CODEX_COMMANDS
+            ),
+            "reopen_hint": lambda: "make reopen RUN=<run-id>",
+            "error_type": lambda: RuntimeError,
+        }
+        dependencies.update(overrides)
+        return self.adapter.normalize_codex_arguments(
+            arguments,
             **dependencies,
         )
 
@@ -1244,6 +1304,1180 @@ class CodexAdapterTests(unittest.TestCase):
             "non-launcher executable",
         )
         self.assertIsNone(caught.exception.__cause__)
+
+    def test_argument_policy_constants_and_surfaces_are_exact(self) -> None:
+        expected_constants = {
+            "ROOT_FLAG_OPTIONS": {
+                "--help",
+                "--no-alt-screen",
+                "--oss",
+                "--search",
+                "--strict-config",
+                "--version",
+                "-V",
+                "-h",
+            },
+            "ROOT_VALUE_OPTIONS": {
+                "--image",
+                "--local-provider",
+                "--model",
+                "--sandbox",
+                "-i",
+                "-m",
+                "-s",
+            },
+            "EXEC_FLAG_OPTIONS": {
+                "--ephemeral",
+                "--help",
+                "--ignore-user-config",
+                "--json",
+                "--oss",
+                "--skip-git-repo-check",
+                "--strict-config",
+                "--version",
+                "-V",
+                "-h",
+            },
+            "EXEC_VALUE_OPTIONS": {
+                "--color",
+                "--image",
+                "--local-provider",
+                "--model",
+                "--output-schema",
+                "--sandbox",
+                "-i",
+                "-m",
+                "-s",
+            },
+            "REVIEW_FLAG_OPTIONS": {
+                "--help",
+                "--strict-config",
+                "--uncommitted",
+                "-h",
+            },
+            "REVIEW_VALUE_OPTIONS": {
+                "--base",
+                "--commit",
+                "--title",
+            },
+            "NON_AGENT_CODEX_COMMANDS": {
+                "a",
+                "app-server",
+                "apply",
+                "archive",
+                "cloud",
+                "completion",
+                "debug",
+                "delete",
+                "doctor",
+                "exec-server",
+                "features",
+                "fork",
+                "help",
+                "login",
+                "logout",
+                "mcp",
+                "mcp-server",
+                "plugin",
+                "remote-control",
+                "resume",
+                "sandbox",
+                "unarchive",
+                "update",
+            },
+        }
+        for name, expected in expected_constants.items():
+            with self.subTest(constant=name):
+                actual = getattr(self.adapter, name)
+                self.assertIs(type(actual), set)
+                self.assertEqual(actual, expected)
+                self.assertIs(getattr(self.engine, name), actual)
+
+        surfaces = (
+            (
+                self.adapter.scan_allowed_options,
+                (
+                    "arguments",
+                    "start",
+                    "flag_options",
+                    "value_options",
+                    "length",
+                    "error_type",
+                ),
+                4,
+            ),
+            (
+                self.adapter.normalize_codex_arguments,
+                (
+                    "arguments",
+                    "list_factory",
+                    "length",
+                    "option_scanner",
+                    "root_flag_options",
+                    "root_value_options",
+                    "exec_flag_options",
+                    "exec_value_options",
+                    "review_flag_options",
+                    "review_value_options",
+                    "non_agent_commands",
+                    "reopen_hint",
+                    "error_type",
+                ),
+                1,
+            ),
+            (
+                self.adapter.codex_argv,
+                (
+                    "real_codex",
+                    "workdir",
+                    "arguments",
+                    "argument_normalizer",
+                    "stringifier",
+                ),
+                3,
+            ),
+        )
+        for function, names, positional_count in surfaces:
+            with self.subTest(surface=function.__name__):
+                parameters = inspect.signature(function).parameters
+                self.assertEqual(tuple(parameters), names)
+                for index, parameter in enumerate(parameters.values()):
+                    expected_kind = (
+                        inspect.Parameter.POSITIONAL_OR_KEYWORD
+                        if index < positional_count
+                        else inspect.Parameter.KEYWORD_ONLY
+                    )
+                    self.assertIs(parameter.kind, expected_kind)
+                    self.assertIs(
+                        parameter.default,
+                        inspect.Parameter.empty,
+                    )
+
+        wrappers = (
+            (
+                self.engine.scan_allowed_options,
+                (
+                    "arguments",
+                    "start",
+                    "flag_options",
+                    "value_options",
+                ),
+            ),
+            (
+                self.engine.normalize_codex_arguments,
+                ("arguments",),
+            ),
+            (
+                self.engine.codex_argv,
+                ("real_codex", "workdir", "arguments"),
+            ),
+        )
+        for function, names in wrappers:
+            with self.subTest(wrapper=function.__name__):
+                parameters = inspect.signature(function).parameters
+                self.assertEqual(tuple(parameters), names)
+                for parameter in parameters.values():
+                    self.assertIs(
+                        parameter.kind,
+                        inspect.Parameter.POSITIONAL_OR_KEYWORD,
+                    )
+                    self.assertIs(
+                        parameter.default,
+                        inspect.Parameter.empty,
+                    )
+
+        self.assertIs(
+            self.engine._scan_allowed_options,
+            self.adapter.scan_allowed_options,
+        )
+        self.assertIs(
+            self.engine._normalize_codex_arguments,
+            self.adapter.normalize_codex_arguments,
+        )
+        self.assertIs(
+            self.engine._codex_argv,
+            self.adapter.codex_argv,
+        )
+
+    def test_option_scanner_accepts_every_policy_form(self) -> None:
+        scopes = (
+            (
+                "root",
+                self.adapter.ROOT_FLAG_OPTIONS,
+                self.adapter.ROOT_VALUE_OPTIONS,
+            ),
+            (
+                "exec",
+                self.adapter.EXEC_FLAG_OPTIONS,
+                self.adapter.EXEC_VALUE_OPTIONS,
+            ),
+            (
+                "review",
+                self.adapter.REVIEW_FLAG_OPTIONS,
+                self.adapter.REVIEW_VALUE_OPTIONS,
+            ),
+        )
+        for scope, flags, values in scopes:
+            with self.subTest(scope=scope, form="flags"):
+                arguments = [*sorted(flags), "prompt"]
+                self.assertEqual(
+                    self.scan(arguments, 0, flags, values),
+                    (len(flags), False, False),
+                )
+
+            for option in sorted(values):
+                value = (
+                    "workspace-write"
+                    if option in {"-s", "--sandbox"}
+                    else "-value"
+                )
+                arguments = [option, value]
+                expected_arguments = (
+                    [f"--image={value}"]
+                    if option in {"-i", "--image"}
+                    else [option, value]
+                )
+                with self.subTest(
+                    scope=scope,
+                    form="separated",
+                    option=option,
+                ):
+                    self.assertEqual(
+                        self.scan(arguments, 0, flags, values),
+                        (
+                            len(expected_arguments),
+                            option in {"-s", "--sandbox"},
+                            False,
+                        ),
+                    )
+                    self.assertEqual(arguments, expected_arguments)
+
+        attached_forms = (
+            ("--model=value", False),
+            ("--model=", False),
+            ("--image=reference.png", False),
+            ("--local-provider=provider", False),
+            ("--sandbox=read-only", True),
+            ("-mvalue", False),
+            ("-m=value", False),
+            ("-ireference.png", False),
+            ("-i=reference.png", False),
+            ("-sworkspace-write", True),
+            ("-s=read-only", True),
+        )
+        for token, supplied_sandbox in attached_forms:
+            arguments = [token]
+            with self.subTest(form="attached", token=token):
+                self.assertEqual(
+                    self.scan(
+                        arguments,
+                        0,
+                        self.adapter.ROOT_FLAG_OPTIONS,
+                        self.adapter.ROOT_VALUE_OPTIONS,
+                    ),
+                    (1, supplied_sandbox, False),
+                )
+                self.assertEqual(arguments, [token])
+
+    def test_option_scanner_stops_at_each_boundary(self) -> None:
+        cases = (
+            ([], 0, (0, False, False)),
+            (["prompt"], 0, (0, False, False)),
+            (["-"], 0, (0, False, False)),
+            (["--", "prompt"], 0, (1, False, True)),
+            (
+                ["prefix", "--sandbox", "read-only", "--", "prompt"],
+                1,
+                (4, True, True),
+            ),
+            (
+                ["prefix", "--model", "model", "prompt"],
+                1,
+                (3, False, False),
+            ),
+        )
+        for arguments, start, expected in cases:
+            with self.subTest(arguments=arguments, start=start):
+                self.assertEqual(
+                    self.scan(
+                        list(arguments),
+                        start,
+                        self.adapter.ROOT_FLAG_OPTIONS,
+                        self.adapter.ROOT_VALUE_OPTIONS,
+                    ),
+                    expected,
+                )
+
+    def test_option_scanner_errors_are_exact_and_preserve_prior_mutation(
+        self,
+    ) -> None:
+        class ScanError(RuntimeError):
+            pass
+
+        all_value_options = (
+            self.adapter.ROOT_VALUE_OPTIONS
+            | self.adapter.EXEC_VALUE_OPTIONS
+            | self.adapter.REVIEW_VALUE_OPTIONS
+        )
+        for option in sorted(all_value_options):
+            with self.subTest(error="missing-value", option=option):
+                with self.assertRaises(ScanError) as caught:
+                    self.scan(
+                        [option],
+                        value_options=all_value_options,
+                        error_type=lambda: ScanError,
+                    )
+                self.assertEqual(
+                    str(caught.exception),
+                    f"Codex option {option} requires a value",
+                )
+                self.assertIsNone(caught.exception.__cause__)
+
+        for token in ("--future", "-x"):
+            with self.subTest(error="unsupported", token=token):
+                with self.assertRaises(ScanError) as caught:
+                    self.scan(
+                        [token],
+                        flag_options=self.adapter.ROOT_FLAG_OPTIONS,
+                        value_options=self.adapter.ROOT_VALUE_OPTIONS,
+                        error_type=lambda: ScanError,
+                    )
+                self.assertEqual(
+                    str(caught.exception),
+                    f"unsupported Codex option {token!r} in isolated sessions",
+                )
+                self.assertIsNone(caught.exception.__cause__)
+
+        unsafe_forms = (
+            ["--sandbox", "danger-full-access"],
+            ["--sandbox=danger-full-access"],
+            ["-sdanger-full-access"],
+            ["-s=danger-full-access"],
+        )
+        for arguments in unsafe_forms:
+            with self.subTest(error="unsafe-sandbox", arguments=arguments):
+                with self.assertRaises(ScanError) as caught:
+                    self.scan(
+                        list(arguments),
+                        flag_options=self.adapter.ROOT_FLAG_OPTIONS,
+                        value_options=self.adapter.ROOT_VALUE_OPTIONS,
+                        error_type=lambda: ScanError,
+                    )
+                self.assertEqual(
+                    str(caught.exception),
+                    "unsafe Codex sandbox mode 'danger-full-access'",
+                )
+                self.assertIsNone(caught.exception.__cause__)
+
+        arguments = ["--image", "reference.png", "--future"]
+        with self.assertRaisesRegex(
+            ScanError,
+            "^unsupported Codex option '--future' in isolated sessions$",
+        ):
+            self.scan(
+                arguments,
+                flag_options=self.adapter.ROOT_FLAG_OPTIONS,
+                value_options=self.adapter.ROOT_VALUE_OPTIONS,
+                error_type=lambda: ScanError,
+            )
+        self.assertEqual(arguments, ["--image=reference.png", "--future"])
+
+    def test_option_scanner_resolves_error_before_diagnostic_operands(
+        self,
+    ) -> None:
+        class ScanError(RuntimeError):
+            pass
+
+        class OrderedText(str):
+            def __new__(
+                cls,
+                value: str,
+                events: list[str],
+                operation: str,
+            ) -> OrderedText:
+                instance = super().__new__(cls, value)
+                instance.events = events
+                instance.operation = operation
+                return instance
+
+            def observe(self) -> None:
+                if self.events != ["error-type"]:
+                    raise AssertionError(
+                        "diagnostic operand evaluated before error type"
+                    )
+                self.events.append(self.operation)
+
+            def __format__(self, specification: str) -> str:
+                self.observe()
+                return super().__format__(specification)
+
+            def __repr__(self) -> str:
+                self.observe()
+                return super().__repr__()
+
+        for diagnostic in ("missing", "unsupported", "unsafe"):
+            events: list[str] = []
+            operation = "format" if diagnostic == "missing" else "repr"
+            observed = OrderedText("value", events, operation)
+            if diagnostic == "missing":
+                observed = OrderedText("--model", events, operation)
+                arguments = [observed]
+            elif diagnostic == "unsupported":
+                observed = OrderedText("--future", events, operation)
+                arguments = [observed]
+            else:
+                observed = OrderedText(
+                    "danger-full-access",
+                    events,
+                    operation,
+                )
+                arguments = ["--sandbox", observed]
+
+            def error_type() -> type[BaseException]:
+                events.append("error-type")
+                return ScanError
+
+            with self.subTest(diagnostic=diagnostic):
+                with self.assertRaises(ScanError):
+                    self.scan(
+                        arguments,
+                        flag_options=self.adapter.ROOT_FLAG_OPTIONS,
+                        value_options=self.adapter.ROOT_VALUE_OPTIONS,
+                        error_type=error_type,
+                    )
+                self.assertEqual(events, ["error-type", operation])
+
+    def test_argument_normalization_covers_each_command_branch(self) -> None:
+        cases = (
+            ([], [], False),
+            (["--help"], ["--help"], False),
+            (
+                ["--sandbox", "read-only"],
+                ["--sandbox", "read-only"],
+                True,
+            ),
+            (["--", "sandbox"], ["--", "sandbox"], False),
+            (["prompt"], ["--", "prompt"], False),
+            (["-"], ["--", "-"], False),
+            (
+                ["--model", "model", "prompt"],
+                ["--model", "model", "--", "prompt"],
+                False,
+            ),
+            (
+                ["--image", "reference.png", "prompt"],
+                ["--image=reference.png", "--", "prompt"],
+                False,
+            ),
+            (["exec"], ["exec"], False),
+            (["e", "--json"], ["e", "--json"], False),
+            (
+                ["exec", "--", "resume"],
+                ["exec", "--", "resume"],
+                False,
+            ),
+            (
+                ["exec", "--json", "prompt"],
+                ["exec", "--json", "--", "prompt"],
+                False,
+            ),
+            (
+                ["exec", "--sandbox", "workspace-write", "prompt"],
+                [
+                    "exec",
+                    "--sandbox",
+                    "workspace-write",
+                    "--",
+                    "prompt",
+                ],
+                True,
+            ),
+            (["review"], ["review"], False),
+            (
+                ["review", "--uncommitted", "prompt"],
+                ["review", "--uncommitted", "--", "prompt"],
+                False,
+            ),
+            (
+                ["review", "--title", "Title", "prompt"],
+                ["review", "--title", "Title", "--", "prompt"],
+                False,
+            ),
+            (
+                ["review", "--", "prompt"],
+                ["review", "--", "prompt"],
+                False,
+            ),
+            (["exec", "review"], ["exec", "review"], False),
+            (
+                ["exec", "review", "--uncommitted", "prompt"],
+                [
+                    "exec",
+                    "review",
+                    "--uncommitted",
+                    "--",
+                    "prompt",
+                ],
+                False,
+            ),
+            (
+                ["exec", "review", "--title", "Title", "prompt"],
+                [
+                    "exec",
+                    "review",
+                    "--title",
+                    "Title",
+                    "--",
+                    "prompt",
+                ],
+                False,
+            ),
+            (
+                ["exec", "review", "--", "prompt"],
+                ["exec", "review", "--", "prompt"],
+                False,
+            ),
+            (
+                [
+                    "--sandbox",
+                    "read-only",
+                    "exec",
+                    "--sandbox",
+                    "workspace-write",
+                ],
+                [
+                    "--sandbox",
+                    "read-only",
+                    "exec",
+                    "--sandbox",
+                    "workspace-write",
+                ],
+                True,
+            ),
+        )
+        for arguments, expected_arguments, expected_sandbox in cases:
+            with self.subTest(arguments=arguments):
+                original = list(arguments)
+                normalized, supplied_sandbox = self.normalize(original)
+                self.assertEqual(normalized, expected_arguments)
+                self.assertEqual(supplied_sandbox, expected_sandbox)
+                self.assertEqual(original, arguments)
+                self.assertIsNot(normalized, original)
+
+    def test_argument_normalization_rejects_every_non_agent_command(
+        self,
+    ) -> None:
+        class PolicyError(RuntimeError):
+            pass
+
+        hint = "make reopen RUN=example"
+        for command in sorted(self.adapter.NON_AGENT_CODEX_COMMANDS):
+            hint_calls: list[str] = []
+
+            def reopen_hint() -> str:
+                hint_calls.append(command)
+                return hint
+
+            with self.subTest(scope="root", command=command):
+                with self.assertRaises(PolicyError) as caught:
+                    self.normalize(
+                        ["--model", "model", command],
+                        reopen_hint=reopen_hint,
+                        error_type=lambda: PolicyError,
+                    )
+                if command in {"resume", "fork"}:
+                    self.assertEqual(
+                        str(caught.exception),
+                        f"reopen isolated worktrees with {hint}",
+                    )
+                    self.assertEqual(hint_calls, [command])
+                else:
+                    self.assertEqual(
+                        str(caught.exception),
+                        f"Codex subcommand {command!r} is outside the "
+                        "isolated agent launcher",
+                    )
+                    self.assertEqual(hint_calls, [])
+                self.assertIsNone(caught.exception.__cause__)
+
+        for alias in ("exec", "e"):
+            for command in ("help", "resume"):
+                with self.subTest(scope=alias, command=command):
+                    with self.assertRaises(PolicyError) as caught:
+                        self.normalize(
+                            [alias, command],
+                            reopen_hint=lambda: self.fail(
+                                "nested rejection must not resolve reopen hint"
+                            ),
+                            error_type=lambda: PolicyError,
+                        )
+                    self.assertEqual(
+                        str(caught.exception),
+                        f"Codex exec subcommand {command!r} is outside the "
+                        "isolated agent launcher",
+                    )
+                    self.assertIsNone(caught.exception.__cause__)
+
+    def test_argument_normalization_resolves_error_before_diagnostics(
+        self,
+    ) -> None:
+        class PolicyError(RuntimeError):
+            pass
+
+        class OrderedCommand(str):
+            def __new__(
+                cls,
+                value: str,
+                events: list[str],
+            ) -> OrderedCommand:
+                instance = super().__new__(cls, value)
+                instance.events = events
+                return instance
+
+            def __repr__(self) -> str:
+                if self.events != ["error-type"]:
+                    raise AssertionError(
+                        "command repr evaluated before error type"
+                    )
+                self.events.append("repr")
+                return super().__repr__()
+
+        for command in ("resume", "fork"):
+            events: list[str] = []
+
+            def error_type() -> type[BaseException]:
+                events.append("error-type")
+                return PolicyError
+
+            def reopen_hint() -> str:
+                if events != ["error-type"]:
+                    raise AssertionError(
+                        "reopen hint evaluated before error type"
+                    )
+                events.append("reopen-hint")
+                return "reopen"
+
+            with self.subTest(scope="root-reopen", command=command):
+                with self.assertRaises(PolicyError):
+                    self.normalize(
+                        [command],
+                        error_type=error_type,
+                        reopen_hint=reopen_hint,
+                    )
+                self.assertEqual(
+                    events,
+                    ["error-type", "reopen-hint"],
+                )
+
+        cases = (
+            ("root", ["help"]),
+            ("nested-help", ["exec", "help"]),
+            ("nested-resume", ["exec", "resume"]),
+        )
+        for scope, plain_arguments in cases:
+            events = []
+            arguments = [
+                (
+                    OrderedCommand(argument, events)
+                    if argument in {"help", "resume"}
+                    else argument
+                )
+                for argument in plain_arguments
+            ]
+
+            def error_type() -> type[BaseException]:
+                events.append("error-type")
+                return PolicyError
+
+            with self.subTest(scope=scope):
+                with self.assertRaises(PolicyError):
+                    self.normalize(
+                        arguments,
+                        error_type=error_type,
+                        reopen_hint=lambda: self.fail(
+                            "reopen hint must remain unused"
+                        ),
+                    )
+                self.assertEqual(events, ["error-type", "repr"])
+
+    def test_argument_normalization_aggregates_sandbox_across_scopes(
+        self,
+    ) -> None:
+        combinations = (
+            (False, False, False, False),
+            (True, False, False, True),
+            (False, True, False, True),
+            (False, False, True, True),
+            (True, True, True, True),
+        )
+        for root, nested, review, expected in combinations:
+            responses = iter(
+                (
+                    (0, root, False),
+                    (1, nested, False),
+                    (2, review, False),
+                )
+            )
+            calls: list[tuple[int, set[str], set[str]]] = []
+
+            def scanner(
+                arguments: list[str],
+                start: int,
+                flags: set[str],
+                values: set[str],
+            ) -> tuple[int, bool, bool]:
+                self.assertEqual(arguments, ["exec", "review"])
+                calls.append((start, flags, values))
+                return next(responses)
+
+            with self.subTest(
+                root=root,
+                nested=nested,
+                review=review,
+            ):
+                self.assertEqual(
+                    self.normalize(
+                        ["exec", "review"],
+                        option_scanner=lambda: scanner,
+                    ),
+                    (["exec", "review"], expected),
+                )
+                self.assertEqual(
+                    calls,
+                    [
+                        (
+                            0,
+                            self.adapter.ROOT_FLAG_OPTIONS,
+                            self.adapter.ROOT_VALUE_OPTIONS,
+                        ),
+                        (
+                            1,
+                            self.adapter.EXEC_FLAG_OPTIONS,
+                            self.adapter.EXEC_VALUE_OPTIONS,
+                        ),
+                        (
+                            2,
+                            self.adapter.REVIEW_FLAG_OPTIONS,
+                            self.adapter.REVIEW_VALUE_OPTIONS,
+                        ),
+                    ],
+                )
+
+    def test_argument_normalization_preserves_opaque_sandbox_operands(
+        self,
+    ) -> None:
+        class SandboxOperand:
+            def __init__(
+                operand_self,
+                name: str,
+                truth: bool | None,
+                events: list[str],
+            ) -> None:
+                operand_self.name = name
+                operand_self.truth = truth
+                operand_self.events = events
+
+            def __bool__(operand_self) -> bool:
+                if operand_self.truth is None:
+                    raise AssertionError(
+                        f"{operand_self.name} must not be truth-tested"
+                    )
+                operand_self.events.append(operand_self.name)
+                return operand_self.truth
+
+        cases = (
+            (True, None, "root", ["root", "root"]),
+            (False, True, "exec", ["root", "exec"]),
+            (False, False, "review", ["root", "exec"]),
+        )
+        for root_truth, exec_truth, expected_name, expected_events in cases:
+            events: list[str] = []
+            operands = {
+                "root": SandboxOperand("root", root_truth, events),
+                "exec": SandboxOperand("exec", exec_truth, events),
+                "review": SandboxOperand("review", None, events),
+            }
+            responses = iter(
+                (
+                    (0, operands["root"], False),
+                    (1, operands["exec"], False),
+                    (2, operands["review"], False),
+                )
+            )
+
+            def scanner(
+                _arguments: list[str],
+                _start: int,
+                _flags: set[str],
+                _values: set[str],
+            ) -> tuple[int, bool, bool]:
+                return next(responses)
+
+            with self.subTest(expected=expected_name):
+                normalized, supplied_sandbox = self.normalize(
+                    ["exec", "review"],
+                    option_scanner=lambda: scanner,
+                )
+                self.assertEqual(normalized, ["exec", "review"])
+                self.assertIs(
+                    supplied_sandbox,
+                    operands[expected_name],
+                )
+                self.assertEqual(events, expected_events)
+
+    def test_codex_argv_has_exact_order_and_resolves_dependencies_lazily(
+        self,
+    ) -> None:
+        real_codex = Path("/opt/codex")
+        workdir = Path("/worktree")
+        arguments = ("original",)
+        normalized = ["--", "prompt"]
+        for supplied_sandbox in (False, True):
+            events: list[tuple[str, object]] = []
+            stringifiers = iter(
+                (
+                    lambda value: (
+                        events.append(("stringify-real", value))
+                        or "REAL"
+                    ),
+                    lambda value: (
+                        events.append(("stringify-workdir", value))
+                        or "WORKDIR"
+                    ),
+                )
+            )
+
+            def normalizer(
+                values: Sequence[str],
+            ) -> tuple[list[str], bool]:
+                events.append(("normalize", values))
+                return normalized, supplied_sandbox
+
+            def normalizer_provider() -> object:
+                events.append(("normalizer-provider", None))
+                return normalizer
+
+            def stringifier_provider() -> object:
+                events.append(("stringifier-provider", None))
+                return next(stringifiers)
+
+            expected = [
+                "REAL",
+                "-C",
+                "WORKDIR",
+                "--disable",
+                "multi_agent",
+                "-c",
+                "sandbox_workspace_write.writable_roots=[]",
+                "-c",
+                "sandbox_permissions=[]",
+            ]
+            if not supplied_sandbox:
+                expected.extend(("--sandbox", "workspace-write"))
+            expected.extend(normalized)
+
+            with self.subTest(supplied_sandbox=supplied_sandbox):
+                self.assertEqual(
+                    self.adapter.codex_argv(
+                        real_codex,
+                        workdir,
+                        arguments,
+                        argument_normalizer=normalizer_provider,
+                        stringifier=stringifier_provider,
+                    ),
+                    expected,
+                )
+                self.assertEqual(arguments, ("original",))
+                self.assertEqual(
+                    events,
+                    [
+                        ("normalizer-provider", None),
+                        ("normalize", arguments),
+                        ("stringifier-provider", None),
+                        ("stringify-real", real_codex),
+                        ("stringifier-provider", None),
+                        ("stringify-workdir", workdir),
+                    ],
+                )
+
+    def test_new_adapter_kernels_leave_dependency_failures_untranslated(
+        self,
+    ) -> None:
+        class DependencyFailure(RuntimeError):
+            pass
+
+        failures = []
+
+        scan_failure = DependencyFailure("scan length")
+
+        def broken_length(_: object) -> int:
+            raise scan_failure
+
+        failures.append(
+            (
+                scan_failure,
+                lambda: self.scan(
+                    ["--help"],
+                    flag_options=self.adapter.ROOT_FLAG_OPTIONS,
+                    value_options=self.adapter.ROOT_VALUE_OPTIONS,
+                    length=lambda: broken_length,
+                ),
+            )
+        )
+
+        normalize_failure = DependencyFailure("list factory")
+
+        def broken_list_factory(_: Sequence[str]) -> list[str]:
+            raise normalize_failure
+
+        failures.append(
+            (
+                normalize_failure,
+                lambda: self.normalize(
+                    ["prompt"],
+                    list_factory=lambda: broken_list_factory,
+                ),
+            )
+        )
+
+        argv_normalizer_failure = DependencyFailure("normalizer")
+
+        def broken_normalizer(
+            _: Sequence[str],
+        ) -> tuple[list[str], bool]:
+            raise argv_normalizer_failure
+
+        failures.append(
+            (
+                argv_normalizer_failure,
+                lambda: self.adapter.codex_argv(
+                    Path("/codex"),
+                    Path("/worktree"),
+                    (),
+                    argument_normalizer=lambda: broken_normalizer,
+                    stringifier=lambda: str,
+                ),
+            )
+        )
+
+        stringify_failure = DependencyFailure("stringifier")
+
+        def broken_stringifier(_: object) -> str:
+            raise stringify_failure
+
+        failures.append(
+            (
+                stringify_failure,
+                lambda: self.adapter.codex_argv(
+                    Path("/codex"),
+                    Path("/worktree"),
+                    (),
+                    argument_normalizer=lambda: (
+                        lambda _: ([], False)
+                    ),
+                    stringifier=lambda: broken_stringifier,
+                ),
+            )
+        )
+
+        for failure, operation in failures:
+            with self.subTest(failure=str(failure)):
+                with self.assertRaises(DependencyFailure) as caught:
+                    operation()
+                self.assertIs(caught.exception, failure)
+                self.assertIsNone(caught.exception.__cause__)
+
+    def test_new_engine_wrappers_resolve_rebound_globals_lazily(self) -> None:
+        class InitialError(RuntimeError):
+            pass
+
+        class ReboundError(RuntimeError):
+            pass
+
+        initial_length = object()
+        rebound_length = object()
+        scanner_result = (7, True, False)
+        arguments = ["--help"]
+        flags = {"--help"}
+        values = {"--model"}
+
+        def scanner_kernel(
+            received_arguments: list[str],
+            start: int,
+            received_flags: set[str],
+            received_values: set[str],
+            *,
+            length: object,
+            error_type: object,
+        ) -> tuple[int, bool, bool]:
+            self.assertIs(received_arguments, arguments)
+            self.assertEqual(start, 3)
+            self.assertIs(received_flags, flags)
+            self.assertIs(received_values, values)
+            self.engine.len = rebound_length
+            self.engine.LauncherError = ReboundError
+            self.assertIs(length(), rebound_length)
+            self.assertIs(error_type(), ReboundError)
+            return scanner_result
+
+        with mock.patch.multiple(
+            self.engine,
+            _scan_allowed_options=scanner_kernel,
+            len=initial_length,
+            LauncherError=InitialError,
+            create=True,
+        ):
+            self.assertIs(
+                self.engine.scan_allowed_options(
+                    arguments,
+                    3,
+                    flags,
+                    values,
+                ),
+                scanner_result,
+            )
+
+        initial_values = {
+            "list": object(),
+            "len": object(),
+            "scan_allowed_options": object(),
+            "ROOT_FLAG_OPTIONS": object(),
+            "ROOT_VALUE_OPTIONS": object(),
+            "EXEC_FLAG_OPTIONS": object(),
+            "EXEC_VALUE_OPTIONS": object(),
+            "REVIEW_FLAG_OPTIONS": object(),
+            "REVIEW_VALUE_OPTIONS": object(),
+            "NON_AGENT_CODEX_COMMANDS": object(),
+        }
+        rebound_values = {
+            name: object()
+            for name in initial_values
+        }
+        normalize_result = (["normalized"], True)
+        normalize_arguments = ("argument",)
+        lifecycle_calls: list[str] = []
+
+        def lifecycle_hint(action: str) -> str:
+            lifecycle_calls.append(action)
+            return "rebound reopen hint"
+
+        rebound_profile = SimpleNamespace(
+            lifecycle_hint=lifecycle_hint,
+        )
+
+        def normalize_kernel(
+            received_arguments: object,
+            **dependencies: object,
+        ) -> tuple[list[str], bool]:
+            self.assertIs(received_arguments, normalize_arguments)
+            for name, value in rebound_values.items():
+                setattr(self.engine, name, value)
+            self.engine.active_profile = lambda: rebound_profile
+            self.engine.LauncherError = ReboundError
+
+            expected = {
+                "list_factory": rebound_values["list"],
+                "length": rebound_values["len"],
+                "option_scanner": rebound_values[
+                    "scan_allowed_options"
+                ],
+                "root_flag_options": rebound_values[
+                    "ROOT_FLAG_OPTIONS"
+                ],
+                "root_value_options": rebound_values[
+                    "ROOT_VALUE_OPTIONS"
+                ],
+                "exec_flag_options": rebound_values[
+                    "EXEC_FLAG_OPTIONS"
+                ],
+                "exec_value_options": rebound_values[
+                    "EXEC_VALUE_OPTIONS"
+                ],
+                "review_flag_options": rebound_values[
+                    "REVIEW_FLAG_OPTIONS"
+                ],
+                "review_value_options": rebound_values[
+                    "REVIEW_VALUE_OPTIONS"
+                ],
+                "non_agent_commands": rebound_values[
+                    "NON_AGENT_CODEX_COMMANDS"
+                ],
+                "error_type": ReboundError,
+            }
+            self.assertEqual(set(dependencies), {*expected, "reopen_hint"})
+            for name, value in expected.items():
+                self.assertIs(dependencies[name](), value)
+            self.assertEqual(
+                dependencies["reopen_hint"](),
+                "rebound reopen hint",
+            )
+            return normalize_result
+
+        with mock.patch.multiple(
+            self.engine,
+            _normalize_codex_arguments=normalize_kernel,
+            active_profile=lambda: self.fail(
+                "initial active profile must not be captured"
+            ),
+            LauncherError=InitialError,
+            create=True,
+            **initial_values,
+        ):
+            self.assertIs(
+                self.engine.normalize_codex_arguments(
+                    normalize_arguments
+                ),
+                normalize_result,
+            )
+        self.assertEqual(lifecycle_calls, ["reopen"])
+
+        initial_normalizer = object()
+        rebound_normalizer = object()
+        initial_stringifier = object()
+        first_stringifier = object()
+        second_stringifier = object()
+        argv_result = ["argv"]
+        argv_arguments = ("prompt",)
+        argv_real = Path("/codex")
+        argv_workdir = Path("/worktree")
+
+        def argv_kernel(
+            received_real: Path,
+            received_workdir: Path,
+            received_arguments: object,
+            *,
+            argument_normalizer: object,
+            stringifier: object,
+        ) -> list[str]:
+            self.assertIs(received_real, argv_real)
+            self.assertIs(received_workdir, argv_workdir)
+            self.assertIs(received_arguments, argv_arguments)
+            self.engine.normalize_codex_arguments = rebound_normalizer
+            self.engine.str = first_stringifier
+            self.assertIs(
+                argument_normalizer(),
+                rebound_normalizer,
+            )
+            self.assertIs(stringifier(), first_stringifier)
+            self.engine.str = second_stringifier
+            self.assertIs(stringifier(), second_stringifier)
+            return argv_result
+
+        with mock.patch.multiple(
+            self.engine,
+            _codex_argv=argv_kernel,
+            normalize_codex_arguments=initial_normalizer,
+            str=initial_stringifier,
+            create=True,
+        ):
+            self.assertIs(
+                self.engine.codex_argv(
+                    argv_real,
+                    argv_workdir,
+                    argv_arguments,
+                ),
+                argv_result,
+            )
 
     def test_real_filesystem_override_and_path_behavior(self) -> None:
         class SelectionError(RuntimeError):

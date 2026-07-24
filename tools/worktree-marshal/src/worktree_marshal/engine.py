@@ -27,6 +27,16 @@ from pathlib import Path
 from typing import Iterator, Sequence, TextIO
 
 from .adapters.codex import (
+    EXEC_FLAG_OPTIONS,
+    EXEC_VALUE_OPTIONS,
+    NON_AGENT_CODEX_COMMANDS,
+    REVIEW_FLAG_OPTIONS,
+    REVIEW_VALUE_OPTIONS,
+    ROOT_FLAG_OPTIONS,
+    ROOT_VALUE_OPTIONS,
+    codex_argv as _codex_argv,
+    normalize_codex_arguments as _normalize_codex_arguments,
+    scan_allowed_options as _scan_allowed_options,
     select_codex_executable as _select_codex_executable,
 )
 from .git import (
@@ -112,75 +122,6 @@ RETIREMENT_TIMESTAMP_FIELDS = (
 )
 MAX_ADMIN_FILE_BYTES = 16 * 1024 * 1024
 MAX_ADMIN_TREE_BYTES = 64 * 1024 * 1024
-ROOT_FLAG_OPTIONS = {
-    "--help",
-    "--no-alt-screen",
-    "--oss",
-    "--search",
-    "--strict-config",
-    "--version",
-    "-V",
-    "-h",
-}
-ROOT_VALUE_OPTIONS = {
-    "--image",
-    "--local-provider",
-    "--model",
-    "--sandbox",
-    "-i",
-    "-m",
-    "-s",
-}
-EXEC_FLAG_OPTIONS = {
-    "--ephemeral",
-    "--help",
-    "--ignore-user-config",
-    "--json",
-    "--oss",
-    "--skip-git-repo-check",
-    "--strict-config",
-    "--version",
-    "-V",
-    "-h",
-}
-EXEC_VALUE_OPTIONS = {
-    "--color",
-    "--image",
-    "--local-provider",
-    "--model",
-    "--output-schema",
-    "--sandbox",
-    "-i",
-    "-m",
-    "-s",
-}
-REVIEW_FLAG_OPTIONS = {"--help", "--strict-config", "--uncommitted", "-h"}
-REVIEW_VALUE_OPTIONS = {"--base", "--commit", "--title"}
-NON_AGENT_CODEX_COMMANDS = {
-    "a",
-    "app-server",
-    "apply",
-    "archive",
-    "cloud",
-    "completion",
-    "debug",
-    "delete",
-    "doctor",
-    "exec-server",
-    "features",
-    "fork",
-    "help",
-    "login",
-    "logout",
-    "mcp",
-    "mcp-server",
-    "plugin",
-    "remote-control",
-    "resume",
-    "sandbox",
-    "unarchive",
-    "update",
-}
 
 
 class LauncherError(RuntimeError):
@@ -1103,137 +1044,44 @@ def scan_allowed_options(
     flag_options: set[str],
     value_options: set[str],
 ) -> tuple[int, bool, bool]:
-    """Scan one Codex option scope and stop at a command or prompt."""
-    supplied_sandbox = False
-    short_value_options = {
-        option
-        for option in value_options
-        if option.startswith("-") and not option.startswith("--")
-    }
-    index = start
-    while index < len(arguments):
-        token = arguments[index]
-        if token == "--":
-            return index + 1, supplied_sandbox, True
-        if token == "-" or not token.startswith("-"):
-            return index, supplied_sandbox, False
-        if token in flag_options:
-            index += 1
-            continue
-        if token in value_options:
-            matched_option = token
-            if index + 1 >= len(arguments):
-                raise LauncherError(f"Codex option {token} requires a value")
-            value = arguments[index + 1]
-            if matched_option in {"-i", "--image"}:
-                arguments[index : index + 2] = [f"--image={value}"]
-                index += 1
-            else:
-                index += 2
-        else:
-            value = None
-            matched_option = None
-            for option in value_options:
-                if option.startswith("--") and token.startswith(f"{option}="):
-                    matched_option = option
-                    value = token[len(option) + 1 :]
-                    break
-            if value is None and not token.startswith("--"):
-                for option in short_value_options:
-                    if token.startswith(option) and token != option:
-                        matched_option = option
-                        value = token[len(option) :].removeprefix("=")
-                        break
-            if value is None:
-                raise LauncherError(f"unsupported Codex option {token!r} in isolated sessions")
-            index += 1
-        if matched_option in {"-s", "--sandbox"}:
-            if value not in {"read-only", "workspace-write"}:
-                raise LauncherError(f"unsafe Codex sandbox mode {value!r}")
-            supplied_sandbox = True
-    return index, supplied_sandbox, False
+    return _scan_allowed_options(
+        arguments,
+        start,
+        flag_options,
+        value_options,
+        length=lambda: len,
+        error_type=lambda: LauncherError,
+    )
 
 
 def normalize_codex_arguments(arguments: Sequence[str]) -> tuple[list[str], bool]:
-    """Default-deny Codex controls and force free-form prompts to remain data."""
-    normalized = list(arguments)
-    index, supplied_sandbox, forced_prompt = scan_allowed_options(
-        normalized,
-        0,
-        ROOT_FLAG_OPTIONS,
-        ROOT_VALUE_OPTIONS,
+    return _normalize_codex_arguments(
+        arguments,
+        list_factory=lambda: list,
+        length=lambda: len,
+        option_scanner=lambda: scan_allowed_options,
+        root_flag_options=lambda: ROOT_FLAG_OPTIONS,
+        root_value_options=lambda: ROOT_VALUE_OPTIONS,
+        exec_flag_options=lambda: EXEC_FLAG_OPTIONS,
+        exec_value_options=lambda: EXEC_VALUE_OPTIONS,
+        review_flag_options=lambda: REVIEW_FLAG_OPTIONS,
+        review_value_options=lambda: REVIEW_VALUE_OPTIONS,
+        non_agent_commands=lambda: NON_AGENT_CODEX_COMMANDS,
+        reopen_hint=lambda: (
+            active_profile().lifecycle_hint("reopen")
+        ),
+        error_type=lambda: LauncherError,
     )
-    if forced_prompt or index >= len(normalized):
-        return normalized, supplied_sandbox
-
-    first = normalized[index]
-    if first in NON_AGENT_CODEX_COMMANDS:
-        if first in {"resume", "fork"}:
-            raise LauncherError(
-                "reopen isolated worktrees with "
-                f"{active_profile().lifecycle_hint('reopen')}"
-            )
-        raise LauncherError(f"Codex subcommand {first!r} is outside the isolated agent launcher")
-
-    if first in {"exec", "e"}:
-        nested_index, nested_sandbox, nested_forced = scan_allowed_options(
-            normalized,
-            index + 1,
-            EXEC_FLAG_OPTIONS,
-            EXEC_VALUE_OPTIONS,
-        )
-        supplied_sandbox = supplied_sandbox or nested_sandbox
-        if nested_forced or nested_index >= len(normalized):
-            return normalized, supplied_sandbox
-        nested = normalized[nested_index]
-        if nested == "review":
-            prompt_index, review_sandbox, review_forced = scan_allowed_options(
-                normalized,
-                nested_index + 1,
-                REVIEW_FLAG_OPTIONS,
-                REVIEW_VALUE_OPTIONS,
-            )
-            supplied_sandbox = supplied_sandbox or review_sandbox
-            if not review_forced and prompt_index < len(normalized):
-                normalized.insert(prompt_index, "--")
-            return normalized, supplied_sandbox
-        if nested in {"help", "resume"}:
-            raise LauncherError(f"Codex exec subcommand {nested!r} is outside the isolated agent launcher")
-        normalized.insert(nested_index, "--")
-        return normalized, supplied_sandbox
-
-    if first == "review":
-        prompt_index, review_sandbox, review_forced = scan_allowed_options(
-            normalized,
-            index + 1,
-            REVIEW_FLAG_OPTIONS,
-            REVIEW_VALUE_OPTIONS,
-        )
-        supplied_sandbox = supplied_sandbox or review_sandbox
-        if not review_forced and prompt_index < len(normalized):
-            normalized.insert(prompt_index, "--")
-        return normalized, supplied_sandbox
-
-    normalized.insert(index, "--")
-    return normalized, supplied_sandbox
 
 
 def codex_argv(real_codex: Path, workdir: Path, arguments: Sequence[str]) -> list[str]:
-    normalized, supplied_sandbox = normalize_codex_arguments(arguments)
-    enforced = [
-        str(real_codex),
-        "-C",
-        str(workdir),
-        "--disable",
-        "multi_agent",
-        "-c",
-        "sandbox_workspace_write.writable_roots=[]",
-        "-c",
-        "sandbox_permissions=[]",
-    ]
-    if not supplied_sandbox:
-        enforced.extend(("--sandbox", "workspace-write"))
-    return [*enforced, *normalized]
+    return _codex_argv(
+        real_codex,
+        workdir,
+        arguments,
+        argument_normalizer=lambda: normalize_codex_arguments,
+        stringifier=lambda: str,
+    )
 
 
 def require_stable_clean_base(
