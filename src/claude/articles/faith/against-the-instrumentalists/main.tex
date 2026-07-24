@@ -1,0 +1,74 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+\usepackage{endnotes}
+
+\hypersetup{
+  pdftitle={Against the Instrumentalists},
+  pdfsubject={A discursive essay on verificationist exclusivism, its self-defeat, and the Catholic account of reason's natural reach toward God}
+}
+
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.14\textheight}
+{\large\scshape A Triptych Article\par}
+\vspace{1.5em}
+{\Huge\bfseries Against the Instrumentalists\par}
+\vspace{0.9em}
+{\Large Verification, Its Limits, and the Reach of Reason\par}
+\vfill
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{articles/faith/against-the-instrumentalists/sections/00-the-case-for-the-instruments}
+\input{articles/faith/against-the-instrumentalists/sections/10-the-criterion-meets-itself}
+\input{articles/faith/against-the-instrumentalists/sections/20-what-the-laboratory-already-knows}
+\input{articles/faith/against-the-instrumentalists/sections/30-from-effects-to-their-ground}
+\input{articles/faith/against-the-instrumentalists/sections/40-what-the-church-stakes-on-reason}
+\input{articles/faith/against-the-instrumentalists/sections/50-the-sciences-given-back}
+\clearpage
+\addcontentsline{toc}{section}{Notes}
+\begingroup
+\small
+\setlength{\parskip}{0.3em}
+\theendnotes
+\endgroup
+\clearpage
+\appendix
+\input{articles/faith/against-the-instrumentalists/sections/90-scope-method-qualifications}
+\input{articles/faith/against-the-instrumentalists/sections/99-references}
+\begingroup
+\setlength{\parskip}{0pt}
+\vspace{-0.6\baselineskip}
+\section{Generation Metadata}
+\vspace{-0.35\baselineskip}
+{\scriptsize\input{articles/faith/against-the-instrumentalists/generation-metadata}}
+\endgroup
+\end{deepstudy}
+
+\end{document}
