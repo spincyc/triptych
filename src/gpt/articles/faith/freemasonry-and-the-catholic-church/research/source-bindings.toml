@@ -22,3 +22,21 @@ loci = ["391-395", "813-822", "1237", "1262-1274", "1673", "1735", "2104-2109", 
 role = "context"
 states = ["cataloged"]
 context = "These additional Catechism loci appear as broader doctrinal references. Some ranges contain narrower claim-control paragraphs recorded separately, but the legacy source record does not pin a concrete expression or artifact and does not establish claim-level verification for every paragraph in the broader ranges."
+
+[[bindings]]
+source_id = "passage.second-vatican-council.dei-verbum.english-vatican-web-2026-07-23.2-4"
+loci = ["2-4"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official English articles were checked for the article's contrast between a minimal generic transcendence and God's determinate self-Revelation in Christ, who is mediator and fullness of Revelation. Article 3 remains historical-economy context within the cited range rather than a separate visible proposition."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:6f292e1fa2c049d8266f998a7073012f950ddb8ec9992b64c9c00cf4d46fba64"
+
+[[bindings]]
+source_id = "artifact.second-vatican-council.dei-verbum.english-vatican-web-2026-07-23.vatican-html-e5eac5f6"
+loci = ["5-6"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact official English articles were checked for faith as a grace-enabled free commitment of intellect and will to the revealing God and for the distinction between truths naturally knowable and goods disclosed through divine Revelation."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:b6587b3258f4513dddf8243fd1cfdc020a0906b3b7aae82fab4bc6be268e5278"

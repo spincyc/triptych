@@ -21,8 +21,10 @@ would collapse:
 - *Lumen gentium* is the separately promulgated dogmatic constitution;
 - the `Notificationes` delivered by the Council's Secretary General at the
   123rd General Congregation on 16 November 1964 are a separate work;
-- the Doctrinal Commission declaration of 6 March 1964 is a reusable
-  subpassage reproduced within those `Notificationes`; and
+- at this proof checkpoint, the Doctrinal Commission declaration of 6 March
+  1964 was represented as a reusable subpassage within those
+  `Notificationes`; the later *Dei Verbum* and AAS 58 proof promotes it to a
+  separate work with distinct AAS 57 and AAS 58 reproduction witnesses; and
 - the four-part *Nota explicativa praevia* is another separately titled work
   following the `Notificationes`.
 

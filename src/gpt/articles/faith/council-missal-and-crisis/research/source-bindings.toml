@@ -44,16 +44,16 @@ role = "official-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The complete Latin Notificationes was checked as the General Secretary's communication at the 123rd General Congregation on 16 November 1964: it answers the qualification question, reproduces a distinct Doctrinal Commission declaration dated 6 March 1964, and introduces the separately titled preliminary note."
 verified_on = "2026-07-23"
-source_fingerprint = "sha256:1415a97f4ba982a27c41e95e36e160b1ac02a56e98a9388ebf1c9d6139c95b5f"
+source_fingerprint = "sha256:3845e34becfd358ed4683594a13f796e079713b2954cc8ca43b5a514bb0dbcf3"
 
 [[bindings]]
-source_id = "passage.second-vatican-council.lumen-gentium-notificationes.latin-aas-57-1965.declaration-1964-03-06"
-loci = ["declaration-1964-03-06"]
+source_id = "passage.second-vatican-council.doctrinal-commission-declaration-1964-03-06.latin-aas-57-1965.complete"
+loci = ["complete"]
 role = "official-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The exact embedded two-paragraph Doctrinal Commission declaration of 6 March 1964 was checked for the article's rule distinguishing matters openly declared definitive from the Council's remaining teaching, which is to be received according to the Council's manifested mind. Its date and authorship are not conflated with the General Secretary's 16 November Notificationes."
 verified_on = "2026-07-23"
-source_fingerprint = "sha256:9e82a76614f6be7acba30a0a2bbf2bdb959c89097bec80fd2775db7074dbc398"
+source_fingerprint = "sha256:0b40c999e0d52c18630f8024237980aef361654e76ba350d4aaa1175d9ecd47a"
 
 [[bindings]]
 source_id = "passage.second-vatican-council.nota-explicativa-praevia.latin-aas-57-1965.complete"
@@ -144,3 +144,39 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The complete official English passage was checked for sacred music's liturgical purpose, preservation of its treasury, the faithful's sung participation, and Gregorian chant's pride of place without excluding other suitable music."
 verified_on = "2026-07-23"
 source_fingerprint = "sha256:635f43f110ce93a1cd771a0a9dbfedd7c662db955a7cc610e21bb95c58c4690b"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.dei-verbum.english-vatican-web-2026-07-23.1-26"
+loci = ["1-26"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete numbered official English body was inspected as a bounded control for the article's judgment that the postconciliar institutional effects described in the adjacent paragraph do not follow necessarily from Dei Verbum. The control found no explicit mandate entailing those effects; it does not prove a historical counterfactual, make a work-wide semantic-exhaustiveness claim, or exclude arguments from later acts and reception."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:91735ce1263c348686ecac0b524e1a20f77859f7c719b4986ebcbded3713619a"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.dei-verbum.english-vatican-web-2026-07-23.2-4"
+loci = ["2-4"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official English articles were checked for the article's summary of Revelation as God's Christ-centered self-communication through deeds and words, with Christ the mediator and fullness of Revelation."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:6f292e1fa2c049d8266f998a7073012f950ddb8ec9992b64c9c00cf4d46fba64"
+
+[[bindings]]
+source_id = "artifact.second-vatican-council.dei-verbum.english-vatican-web-2026-07-23.vatican-html-e5eac5f6"
+loci = ["7-10", "21-26"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "These exact official English loci were checked for the article's summary of Revelation's apostolic transmission, Scripture and Tradition, the teaching office, and Scripture in the Church's life. The binding is deliberately bounded even though the complete numbered body was separately inspected for one negative control."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:b6587b3258f4513dddf8243fd1cfdc020a0906b3b7aae82fab4bc6be268e5278"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.dei-verbum.english-vatican-web-2026-07-23.11-12"
+loci = ["11-12"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official English articles were checked for the article's summary of inspiration, scriptural truth, human authorship, literary forms, historical setting, and interpretation within Scripture's unity, Tradition, faith, and the Church's judgment."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:1f6425f1b8847ecb30725213161090d6545f7d6f35aaa4e27f9932870f11bd1e"

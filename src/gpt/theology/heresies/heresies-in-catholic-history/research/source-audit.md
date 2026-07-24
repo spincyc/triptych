@@ -123,7 +123,14 @@ The dossier headings, corpus keys, timeline events, and reader-facing census are
 
 Independent specialist review remains outstanding in all disciplines and languages listed in the research scope.
 
-## Current production verification — 2026-07-19
+## Current production verification — 2026-07-23
+
+- The Dei Verbum source-reuse revision received a dependency-complete, settled two-pass build, producing an 81-page letter-size PDF with SHA-256 `2cc01a3c2bd2f10c07511732752789081eff8a127fb2545768c6db3bd184e99f`.
+- The final log is free of fatal errors, undefined references, overflow, underfull boxes, package warnings, and rerun requests; `qpdf --check` found no syntax or stream-encoding error.
+- All 81 full-resolution page rasters were individually inspected, including the revised Dei Verbum reference, without finding clipping, collision, broken structures, unreadable text, stranded headings, or anomalous layout.
+- The installed PDF is byte-identical to the reviewed build.
+
+## Previous production verification — 2026-07-19 (superseded)
 
 - A dependency-complete, settled two-pass build produced the current 82-page letter-size PDF, SHA-256 `1f7db5637866f7f7a9269d6ddb4446cb473b18feeca5e3bc0b6e2c0bb8c517ef`.
 - The final log was warning-free; `qpdf`, PDF title and page metadata, embedded/subsetted/Unicode-mapped fonts, and nonempty text extraction passed.

@@ -51,3 +51,10 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The official English article directly controls the guide's liturgical-priority claim: pious exercises should harmonize with the liturgical seasons, accord with and derive from the liturgy, lead the people to it, and remain subordinate to it."
 verified_on = "2026-07-23"
 source_fingerprint = "sha256:1697f3fc3e80e902531be494078ee062911425ebeda9e7561355a279dc6569c5"
+
+[[bindings]]
+source_id = "edition.second-vatican-council.dei-verbum.english-vatican-web-2026-07-23"
+loci = ["7-10"]
+role = "context"
+states = ["cataloged"]
+context = "The consolidated bibliography names articles 7-10 as broad doctrinal context for apostolic transmission, Scripture, Tradition, and the teaching office. No publication-local claim row establishes a narrower Dei Verbum use, so this remains catalog-only and claims no inspection of the dated central artifact."

@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-07-23"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:b2e8cd753efd2883e972834db9d6f2de84ae647be5917fe90b548ac5df439b6c"
+inventory_snapshot = "sha256:48ba4ef0ca269e54f932b3188ef4138f6a681b85a45cbd18ae1dcc1b4f4ba2b4"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:dafeabb5de4701ba2d641eaed5f3c550cb19836e6140a6cb39f44a74cc4e1c92"
-canonical_catalog_snapshot = "sha256:af23bb1fb8f34885aa67a413a06c8087813fe5777cb187c5e78fa631075e6327"
+canonical_catalog_snapshot = "sha256:678c20f72a7f9249568058b99633604d4737688748e2e185ca4b0262df9615b9"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:3946c8866c3a5f9583f5eb0bcc843cd12f49fb83abb75c322306d86c7cd4a179"
+snapshot = "sha256:d5b9057ddfc721ef1a3ae0654f29497527f40d6d5908c7bfb0a11e5cedc27173"
 
 [[families]]
 id = "family.acta.aas-ass"
@@ -25,10 +25,10 @@ freshness_rule = "Treat published volumes as fixed and review newly cited volume
 evidence_ceiling = "artifact-pin"
 disposition = "canonicalize"
 priority = "p1"
-canonical_ids = ["artifact.holy-see.acta-apostolicae-sedis.volume-56-1964.vatican-ocr-pdf-e1f8b49d", "artifact.holy-see.acta-apostolicae-sedis.volume-57-1965.vatican-ocr-pdf-bd6d813d", "edition.holy-see.acta-apostolicae-sedis.volume-56-1964", "edition.holy-see.acta-apostolicae-sedis.volume-57-1965", "work.holy-see.acta-apostolicae-sedis"]
-trace_patterns = ["Acta Apostolicae Sedis", "Acta Sanctae Sedis", "latin-aas-56-1964", "latin-aas-57-1965"]
+canonical_ids = ["artifact.holy-see.acta-apostolicae-sedis.volume-56-1964.vatican-ocr-pdf-e1f8b49d", "artifact.holy-see.acta-apostolicae-sedis.volume-57-1965.vatican-ocr-pdf-bd6d813d", "artifact.holy-see.acta-apostolicae-sedis.volume-58-1966.vatican-ocr-pdf-69c27224", "edition.holy-see.acta-apostolicae-sedis.volume-56-1964", "edition.holy-see.acta-apostolicae-sedis.volume-57-1965", "edition.holy-see.acta-apostolicae-sedis.volume-58-1966", "work.holy-see.acta-apostolicae-sedis"]
+trace_patterns = ["Acta Apostolicae Sedis", "Acta Sanctae Sedis", "latin-aas-56-1964", "latin-aas-57-1965", "latin-aas-58-1966"]
 reviewed_on = "2026-07-23"
-notes = "Volumes 56 (1964) and 57 (1965) now have canonical container editions and exact restricted Holy See PDF artifacts. Other cited volumes and acts remain only partially resolved; each promulgated act remains a distinct work, and OCR remains a finding aid until checked against the official pages."
+notes = "Volumes 56 (1964), 57 (1965), and 58 (1966) now have canonical container editions and exact restricted Holy See PDF artifacts. Other cited volumes and acts remain only partially resolved; each promulgated act remains a distinct work, and OCR remains a finding aid until checked against the official pages."
 
 [[families]]
 id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
@@ -149,6 +149,26 @@ canonical_ids = []
 trace_patterns = ["1983 Code of Canon Law", "CIC/1983", "Code of Canon Law", "Codex Iuris Canonici"]
 reviewed_on = "2026-07-22"
 notes = "Canonicalize dated official states and keep the 1917 code and CCEO in separate coordinated family rows rather than merging jurisdictions or versions."
+
+[[families]]
+id = "family.holy-see.index-notification-1966"
+label = "Holy See notification on the Index of Prohibited Books (1966)"
+kind = "work"
+source_categories = ["canon-law", "historical-primary", "magisterial"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "edition", "expression"]
+artifact_availability = "mixed"
+storage_plan = ["restricted"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "passage-pin"
+disposition = "canonicalize"
+priority = "p1"
+canonical_ids = ["edition.holy-see.index-of-prohibited-books-notification-1966.latin-aas-58-1966", "passage.holy-see.index-of-prohibited-books-notification-1966.latin-aas-58-1966.complete", "segment.holy-see.index-of-prohibited-books-notification-1966.latin-aas-58-1966.aas-58-1966-page-445", "work.holy-see.index-of-prohibited-books-notification-1966"]
+trace_patterns = ["(?:1966.{0,24}Index notification|Index notification.{0,24}1966)", "(?:Index of Prohibited Books|Index Librorum Prohibitorum).{0,80}(?:1966|AAS\\s*58|445)", "index-of-prohibited-books-notification-1966"]
+reviewed_on = "2026-07-23"
+notes = "The 14 June 1966 notification is a distinct intellectual work, not the AAS 58 container. Its complete official Latin constituent is pinned to printed page 445 of the shared restricted AAS artifact and was checked against that page image; the official English web expression remains an identified but not yet canonicalized witness."
 
 [[families]]
 id = "family.irenaeus.adversus-haereses-anf1-1887"
@@ -365,10 +385,10 @@ freshness_rule = "not-applicable"
 evidence_ceiling = "passage-pin"
 disposition = "canonicalize"
 priority = "p1"
-canonical_ids = ["artifact.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.vatican-html-579d2ef7", "artifact.second-vatican-council.lumen-gentium.latin-vatican-web-2026-07-23.vatican-html-0a828abb", "artifact.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.vatican-html-3cfc290b", "artifact.second-vatican-council.sacrosanctum-concilium.latin-vatican-web-2026-07-23.vatican-html-a0e7f540", "edition.second-vatican-council.lumen-gentium-notificationes.english-vatican-web-2026-07-23", "edition.second-vatican-council.lumen-gentium-notificationes.latin-aas-57-1965", "edition.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23", "edition.second-vatican-council.lumen-gentium.latin-aas-57-1965", "edition.second-vatican-council.lumen-gentium.latin-vatican-web-2026-07-23", "edition.second-vatican-council.nota-explicativa-praevia.english-vatican-web-2026-07-23", "edition.second-vatican-council.nota-explicativa-praevia.latin-aas-57-1965", "edition.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23", "edition.second-vatican-council.sacrosanctum-concilium.latin-aas-56-1964", "edition.second-vatican-council.sacrosanctum-concilium.latin-vatican-web-2026-07-23", "passage.second-vatican-council.lumen-gentium-notificationes.latin-aas-57-1965.complete", "passage.second-vatican-council.lumen-gentium-notificationes.latin-aas-57-1965.declaration-1964-03-06", "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.10-11", "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.52-69", "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.53", "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.56", "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.60-62", "passage.second-vatican-council.lumen-gentium.latin-aas-57-1965.1-69", "passage.second-vatican-council.nota-explicativa-praevia.latin-aas-57-1965.complete", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.10", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.102-111", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.106", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.112-116", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.13", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.14", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.21-23", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.26-27", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.26-35", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.36-40", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.47-48", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.47-58", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.5-7", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.5-8", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.50", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.56", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.59-61", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.59-82", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.7", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.91", "passage.second-vatican-council.sacrosanctum-concilium.latin-aas-56-1964.1-130", "passage.second-vatican-council.sacrosanctum-concilium.latin-aas-56-1964.2", "passage.second-vatican-council.sacrosanctum-concilium.latin-aas-56-1964.appendix-calendar", "passage.second-vatican-council.sacrosanctum-concilium.latin-vatican-web-2026-07-23.2", "segment.second-vatican-council.lumen-gentium-notificationes.latin-aas-57-1965.aas-57-1965-page-72", "segment.second-vatican-council.lumen-gentium.latin-aas-57-1965.aas-57-1965-pages-5-71", "segment.second-vatican-council.nota-explicativa-praevia.latin-aas-57-1965.aas-57-1965-pages-72-75", "segment.second-vatican-council.sacrosanctum-concilium.latin-aas-56-1964.aas-56-1964-pages-97-138", "work.second-vatican-council.lumen-gentium", "work.second-vatican-council.lumen-gentium-notificationes", "work.second-vatican-council.nota-explicativa-praevia", "work.second-vatican-council.sacrosanctum-concilium"]
+canonical_ids = ["artifact.second-vatican-council.dei-verbum.english-vatican-web-2026-07-23.vatican-html-e5eac5f6", "artifact.second-vatican-council.dei-verbum.latin-vatican-web-2026-07-23.vatican-html-164f55e1", "artifact.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.vatican-html-579d2ef7", "artifact.second-vatican-council.lumen-gentium.latin-vatican-web-2026-07-23.vatican-html-0a828abb", "artifact.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.vatican-html-3cfc290b", "artifact.second-vatican-council.sacrosanctum-concilium.latin-vatican-web-2026-07-23.vatican-html-a0e7f540", "edition.second-vatican-council.dei-verbum-notificatio.latin-aas-58-1966", "edition.second-vatican-council.dei-verbum.english-vatican-web-2026-07-23", "edition.second-vatican-council.dei-verbum.latin-aas-58-1966", "edition.second-vatican-council.dei-verbum.latin-vatican-web-2026-07-23", "edition.second-vatican-council.doctrinal-commission-declaration-1964-03-06.latin-aas-57-1965", "edition.second-vatican-council.doctrinal-commission-declaration-1964-03-06.latin-aas-58-1966", "edition.second-vatican-council.lumen-gentium-notificationes.english-vatican-web-2026-07-23", "edition.second-vatican-council.lumen-gentium-notificationes.latin-aas-57-1965", "edition.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23", "edition.second-vatican-council.lumen-gentium.latin-aas-57-1965", "edition.second-vatican-council.lumen-gentium.latin-vatican-web-2026-07-23", "edition.second-vatican-council.nota-explicativa-praevia.english-vatican-web-2026-07-23", "edition.second-vatican-council.nota-explicativa-praevia.latin-aas-57-1965", "edition.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23", "edition.second-vatican-council.sacrosanctum-concilium.latin-aas-56-1964", "edition.second-vatican-council.sacrosanctum-concilium.latin-vatican-web-2026-07-23", "passage.second-vatican-council.dei-verbum-notificatio.latin-aas-58-1966.complete", "passage.second-vatican-council.dei-verbum.english-vatican-web-2026-07-23.1-26", "passage.second-vatican-council.dei-verbum.english-vatican-web-2026-07-23.10", "passage.second-vatican-council.dei-verbum.english-vatican-web-2026-07-23.11-12", "passage.second-vatican-council.dei-verbum.english-vatican-web-2026-07-23.2-4", "passage.second-vatican-council.dei-verbum.english-vatican-web-2026-07-23.21", "passage.second-vatican-council.dei-verbum.english-vatican-web-2026-07-23.8", "passage.second-vatican-council.dei-verbum.latin-aas-58-1966.1-26", "passage.second-vatican-council.doctrinal-commission-declaration-1964-03-06.latin-aas-57-1965.complete", "passage.second-vatican-council.doctrinal-commission-declaration-1964-03-06.latin-aas-58-1966.complete", "passage.second-vatican-council.lumen-gentium-notificationes.latin-aas-57-1965.complete", "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.10-11", "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.52-69", "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.53", "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.56", "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.60-62", "passage.second-vatican-council.lumen-gentium.latin-aas-57-1965.1-69", "passage.second-vatican-council.nota-explicativa-praevia.latin-aas-57-1965.complete", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.10", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.102-111", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.106", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.112-116", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.13", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.14", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.21-23", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.26-27", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.26-35", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.36-40", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.47-48", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.47-58", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.5-7", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.5-8", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.50", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.56", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.59-61", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.59-82", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.7", "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.91", "passage.second-vatican-council.sacrosanctum-concilium.latin-aas-56-1964.1-130", "passage.second-vatican-council.sacrosanctum-concilium.latin-aas-56-1964.2", "passage.second-vatican-council.sacrosanctum-concilium.latin-aas-56-1964.appendix-calendar", "passage.second-vatican-council.sacrosanctum-concilium.latin-vatican-web-2026-07-23.2", "segment.second-vatican-council.dei-verbum-notificatio.latin-aas-58-1966.aas-58-1966-page-836", "segment.second-vatican-council.dei-verbum.latin-aas-58-1966.aas-58-1966-pages-817-835", "segment.second-vatican-council.doctrinal-commission-declaration-1964-03-06.latin-aas-57-1965.aas-57-1965-page-72", "segment.second-vatican-council.doctrinal-commission-declaration-1964-03-06.latin-aas-58-1966.aas-58-1966-page-836", "segment.second-vatican-council.lumen-gentium-notificationes.latin-aas-57-1965.aas-57-1965-page-72", "segment.second-vatican-council.lumen-gentium.latin-aas-57-1965.aas-57-1965-pages-5-71", "segment.second-vatican-council.nota-explicativa-praevia.latin-aas-57-1965.aas-57-1965-pages-72-75", "segment.second-vatican-council.sacrosanctum-concilium.latin-aas-56-1964.aas-56-1964-pages-97-138", "work.second-vatican-council.dei-verbum", "work.second-vatican-council.dei-verbum-notificatio", "work.second-vatican-council.doctrinal-commission-declaration-1964-03-06", "work.second-vatican-council.lumen-gentium", "work.second-vatican-council.lumen-gentium-notificationes", "work.second-vatican-council.nota-explicativa-praevia", "work.second-vatican-council.sacrosanctum-concilium"]
 trace_patterns = ["(?:Lumen gentium|Dei Verbum|Sacrosanctum Concilium|Gaudium et spes|Vatican II)"]
 reviewed_on = "2026-07-23"
-notes = "Lumen gentium and Sacrosanctum Concilium now have distinct work, Latin Acta, dated Latin and English web, exact artifact, complete-numbered-text, and high-reuse passage identities; the Lumen gentium Notificationes and Nota explicativa praevia are separately modeled works. Other conciliar acts remain pending, and the Vatican website is not treated as the intellectual family."
+notes = "Lumen gentium, Sacrosanctum Concilium, and Dei Verbum now have distinct work, Latin Acta, dated Latin and English web, exact artifact, complete-numbered-text, and high-reuse passage identities. Their separately printed notifications, the Nota explicativa praevia, and the common 6 March 1964 Doctrinal Commission declaration remain distinct works; the declaration has separate AAS 57 and AAS 58 reproduction witnesses. Other conciliar acts remain pending, and the Vatican website is not treated as the intellectual family."
 
 [[review_units]]
 owner_id = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -471,7 +491,7 @@ record_paths = ["src/gpt/articles/faith/at-the-end-of-every-why/sections/99-refe
 
 [[review_units]]
 owner_id = "articles/faith/council-missal-and-crisis"
-surface_snapshot = "sha256:7626b9e034361357077125dd5e2d24a9ec9d062e3b3e21b3be2d256b6b2af388"
+surface_snapshot = "sha256:c1d37d7bc722e2a89be37ee70fea88a9515abbdeb31a2e1c0e4130b92f5e0611"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -516,7 +536,7 @@ record_paths = ["src/gpt/articles/faith/council-missal-and-crisis/research/sourc
 
 [[review_units]]
 owner_id = "articles/faith/freemasonry-and-the-catholic-church"
-surface_snapshot = "sha256:35db620410c056d9cac28c74fab39f4380d2dc0ab0a20e251c0f46b870496bfa"
+surface_snapshot = "sha256:8dcf7532327b1cd36e6002ff67961c0a6c38c5656a898e4f65fc872ce05979ac"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -993,7 +1013,7 @@ record_paths = ["src/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/0
 
 [[review_units]]
 owner_id = "devotions/novenas/00-ascension-to-pentecost"
-surface_snapshot = "sha256:f3cb225af5c176f79e0d31f3eccdada91ea23b2e760681b2fcdc081844040d7b"
+surface_snapshot = "sha256:64a4c8eb6d261bde9965444d0175d054341098cbec4bb4937c623e632b577d26"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1027,7 +1047,7 @@ record_paths = ["src/gpt/devotions/novenas/00-ascension-to-pentecost-daily-praye
 
 [[review_units]]
 owner_id = "devotions/novenas/10-our-lady-of-mount-carmel"
-surface_snapshot = "sha256:08d39dc6b4f2e587fd55fd511bf80a1e82231900b9a30d10761f92dab0701603"
+surface_snapshot = "sha256:f50bd2c8ab169408653ff8cddf6970056f7cbb053724b2c84cfa7729d9420053"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1526,7 +1546,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrific
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"
-surface_snapshot = "sha256:4005ed52e117267245e2f398ccf71c012c4f800b209088660d9fee343f6cc06f"
+surface_snapshot = "sha256:e2f8ff5b05f7fe52a27518c1e93f002c498b16fe95304568acf7104ae0715071"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
@@ -1921,7 +1941,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "theology/heresies/heresies-in-catholic-history"
-surface_snapshot = "sha256:d23fe35773fc26076b69b60c6b7e20427c52758f5d0b60b7aedaf90e9a79a803"
+surface_snapshot = "sha256:63ba2c75484cff91735b9c38d92a56349f6b424491aa20900e91c252c93be724"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -1975,7 +1995,7 @@ record_paths = ["src/gpt/theology/mariology/angelus/research/source-audit.md"]
 
 [[review_units]]
 owner_id = "theology/mariology/apparitions"
-surface_snapshot = "sha256:df967fa7706713f2160477bd65c8ae1aac98a1a045df6cbe4b81cec0d6007050"
+surface_snapshot = "sha256:f7701220d9cb998687284ed63def43b2fb7bd0da8b7e8e6c718508cc2cb2fb8c"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1992,7 +2012,7 @@ record_paths = ["src/gpt/theology/mariology/apparitions/research/source-audit.md
 
 [[review_units]]
 owner_id = "theology/mariology/champion"
-surface_snapshot = "sha256:8a2da02ad9023dd23334c7734c2f066c74e8e2edd0baa608130041cdc0637f67"
+surface_snapshot = "sha256:c3e82133d5ba957d7ff439fe22fd6928723e40572865cda9f6fbc575c4a34db1"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -2009,7 +2029,7 @@ record_paths = ["src/gpt/theology/mariology/champion/research/source-audit.md"]
 
 [[review_units]]
 owner_id = "theology/mariology/fatima"
-surface_snapshot = "sha256:eea00450fdf79af58f774cc66a955eebd12b1c0b7ccdf255f3943a7658657c04"
+surface_snapshot = "sha256:d6ccc8c8e3932441b400b5d4d571a376e1e515cef3e8361553ce8cb80fe86cd1"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -2022,7 +2042,7 @@ record_paths = ["src/gpt/theology/mariology/fatima/research/source-audit.md"]
 
 [[review_units]]
 owner_id = "theology/mariology/guadalupe"
-surface_snapshot = "sha256:06d165311a8d8c7a4355f0f6ea4280c9418a559970d651e1e872d83bcd969364"
+surface_snapshot = "sha256:b7f0ac917b8eccc4ce3e2ae65fd5056a17c8320b29eb69509820238e7897e3b2"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -2035,7 +2055,7 @@ record_paths = ["src/gpt/theology/mariology/guadalupe/research/source-audit.md"]
 
 [[review_units]]
 owner_id = "theology/mariology/la-salette"
-surface_snapshot = "sha256:4e6dc50fd93ec568e3cc92e60607c0b155baad6104013b421a29799221511b3e"
+surface_snapshot = "sha256:ef03a28b05c65e9cb84c472795aa92fc2e05fa1b907ac65af683b50e491267cd"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -2054,13 +2074,17 @@ family_id = "family.holy-see.cic-1983"
 basis = "trace-scan"
 record_paths = ["src/gpt/theology/mariology/la-salette/sections/99-references.tex"]
 [[review_units.family_presence]]
+family_id = "family.holy-see.index-notification-1966"
+basis = "trace-scan"
+record_paths = ["src/gpt/theology/mariology/la-salette/research/source-bindings.toml"]
+[[review_units.family_presence]]
 family_id = "family.vatican-ii.acts"
 basis = "trace-scan"
 record_paths = ["src/gpt/theology/mariology/la-salette/research/source-audit.md"]
 
 [[review_units]]
 owner_id = "theology/mariology/lourdes"
-surface_snapshot = "sha256:d0b2b1e96aa8e9a8fd4072f28862fa86b1f50a8b29d3c608882297056c59504b"
+surface_snapshot = "sha256:61183d0cf2c7ea946c1338bb475512831e08c033fc73d1a3104b94910a2bdc59"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -2073,7 +2097,7 @@ record_paths = ["src/gpt/theology/mariology/lourdes/research/source-audit.md"]
 
 [[review_units]]
 owner_id = "theology/mariology/marian-dogmas"
-surface_snapshot = "sha256:d50a873ff5f11921fab064d0e15b21cd2f7d935456e5a17e7fa1a4bce757ae70"
+surface_snapshot = "sha256:3f5106f6500b571e2cf092f4045e2baff46190e1b2edf19fc67b7fd137fd0c24"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -2119,7 +2143,7 @@ record_paths = ["src/gpt/theology/mariology/regina-coeli/research/source-audit.m
 
 [[review_units]]
 owner_id = "theology/mariology/rosary"
-surface_snapshot = "sha256:eec6eca17cfd89ec354da8bccffd95d650b4bcd54b7d17a023059ec72aae41ca"
+surface_snapshot = "sha256:91d4f321b4a8dc748b040e8ffc54678106807da83d33bfeb26810d4ec3fa29e3"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
