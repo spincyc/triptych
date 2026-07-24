@@ -1,0 +1,11 @@
+schema = 1
+record_type = "work"
+id = "work.second-vatican-council.gravissimum-educationis"
+title = "Gravissimum educationis"
+responsible = "Second Vatican Council"
+work_type = "declaration"
+alternate_titles = ["Declaratio de educatione christiana", "Declaration on Christian Education"]
+languages = ["la"]
+locus_pattern = '(?:[1-9]|1[0-2])(?:-(?:[1-9]|1[0-2]))?'
+description = "The Second Vatican Council's Declaration on Christian Education, solemnly promulgated by Pope Paul VI on 28 October 1965. It comprises an unnumbered preface and numbered articles 1-12; edition records distinguish the Latin Acta witness from dated Vatican web delivery states and translations."
+relations = ["work.holy-see.acta-apostolicae-sedis"]
