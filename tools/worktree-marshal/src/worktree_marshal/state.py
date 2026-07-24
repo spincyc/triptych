@@ -414,6 +414,107 @@ def run_tmp_entry(
         raise error_type("cannot inspect the run temporary path") from exc
 
 
+def open_exact_temporary_directory(
+    parent_descriptor: int,
+    name: str,
+    expected: Any,
+    *,
+    directory_flag: int,
+    nofollow_flag: int,
+    cloexec_flag: int,
+    read_only_flag: int,
+    directory_test: Callable[[int], bool],
+    file_open: Callable[..., int],
+    file_stat: Callable[[int], Any],
+    same_stat: Callable[[Any, Any], bool],
+    file_close: Callable[[int], None],
+    error_type: type[BaseException],
+) -> int:
+    """Open and authenticate one descriptor-relative temporary directory."""
+
+    if not directory_flag or not nofollow_flag:
+        raise error_type("safe temporary-directory traversal is unavailable")
+    try:
+        descriptor = file_open(
+            name,
+            read_only_flag
+            | directory_flag
+            | nofollow_flag
+            | cloexec_flag,
+            dir_fd=parent_descriptor,
+        )
+    except OSError as exc:
+        raise error_type("cannot open an authenticated temporary directory") from exc
+    try:
+        opened = file_stat(descriptor)
+    except OSError as exc:
+        file_close(descriptor)
+        raise error_type("cannot authenticate a temporary directory") from exc
+    if not directory_test(opened.st_mode) or not same_stat(expected, opened):
+        file_close(descriptor)
+        raise error_type("a temporary directory changed before removal")
+    return descriptor
+
+
+def remove_open_temporary_contents(
+    directory_descriptor: int,
+    *,
+    list_entries: Callable[[int], list[str]],
+    entry_metadata: Callable[[int, str], Any],
+    open_directory: Callable[[int, str, Any], int],
+    remove_contents: Callable[[int], None],
+    directory_test: Callable[[int], bool],
+    same_stat: Callable[[Any, Any], bool],
+    remove_directory: Callable[..., None],
+    remove_entry: Callable[..., None],
+    file_close: Callable[[int], None],
+    error_type: type[BaseException],
+) -> None:
+    """Remove one open temporary tree through descriptor-relative names."""
+
+    # The inherited lifecycle lock and no-background-process contract make this
+    # tree inactive before cleanup. Descriptor-relative traversal prevents a
+    # replaced directory from redirecting recursion; final unlink/rmdir calls
+    # remain POSIX name operations inside the authenticated parent descriptor.
+    try:
+        names = list_entries(directory_descriptor)
+    except OSError as exc:
+        raise error_type("cannot list an authenticated temporary directory") from exc
+    for name in names:
+        before = entry_metadata(directory_descriptor, name)
+        if before is None:
+            raise error_type("a temporary entry changed during removal")
+        if directory_test(before.st_mode):
+            child_descriptor = open_directory(
+                directory_descriptor,
+                name,
+                before,
+            )
+            try:
+                remove_contents(child_descriptor)
+                current = entry_metadata(directory_descriptor, name)
+                if current is None or not same_stat(before, current):
+                    raise error_type("a temporary directory changed during removal")
+                try:
+                    remove_directory(name, dir_fd=directory_descriptor)
+                except OSError as exc:
+                    raise error_type(
+                        "cannot remove an authenticated temporary directory"
+                    ) from exc
+            finally:
+                file_close(child_descriptor)
+        else:
+            current = entry_metadata(directory_descriptor, name)
+            if current is None or not same_stat(before, current):
+                raise error_type("a temporary entry changed during removal")
+            try:
+                remove_entry(name, dir_fd=directory_descriptor)
+            except OSError as exc:
+                raise error_type("cannot remove an authenticated temporary entry") from exc
+        if entry_metadata(directory_descriptor, name) is not None:
+            raise error_type("a temporary entry was replaced during removal")
+
+
 def load_manifest(
     repository: StateRepository,
     run_id: str,

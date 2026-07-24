@@ -105,7 +105,9 @@ from .state import (
     manifest_path as _manifest_path,
     load_manifest as _load_manifest,
     new_run_id as _new_run_id,
+    open_exact_temporary_directory as _open_exact_temporary_directory,
     private_directory as _private_directory,
+    remove_open_temporary_contents as _remove_open_temporary_contents,
     repo_lock_path as _repo_lock_path,
     repository_slug as _repository_slug,
     run_lock_path as _run_lock_path,
@@ -5711,74 +5713,37 @@ def open_exact_temporary_directory(
     name: str,
     expected: os.stat_result,
 ) -> int:
-    directory_flag = getattr(os, "O_DIRECTORY", 0)
-    nofollow_flag = getattr(os, "O_NOFOLLOW", 0)
-    if not directory_flag or not nofollow_flag:
-        raise LauncherError("safe temporary-directory traversal is unavailable")
-    try:
-        descriptor = os.open(
-            name,
-            os.O_RDONLY
-            | directory_flag
-            | nofollow_flag
-            | getattr(os, "O_CLOEXEC", 0),
-            dir_fd=parent_descriptor,
-        )
-    except OSError as exc:
-        raise LauncherError("cannot open an authenticated temporary directory") from exc
-    try:
-        opened = os.fstat(descriptor)
-    except OSError as exc:
-        os.close(descriptor)
-        raise LauncherError("cannot authenticate a temporary directory") from exc
-    if not stat.S_ISDIR(opened.st_mode) or not os.path.samestat(expected, opened):
-        os.close(descriptor)
-        raise LauncherError("a temporary directory changed before removal")
-    return descriptor
+    return _open_exact_temporary_directory(
+        parent_descriptor,
+        name,
+        expected,
+        directory_flag=getattr(os, "O_DIRECTORY", 0),
+        nofollow_flag=getattr(os, "O_NOFOLLOW", 0),
+        cloexec_flag=getattr(os, "O_CLOEXEC", 0),
+        read_only_flag=os.O_RDONLY,
+        directory_test=stat.S_ISDIR,
+        file_open=os.open,
+        file_stat=os.fstat,
+        same_stat=os.path.samestat,
+        file_close=os.close,
+        error_type=LauncherError,
+    )
 
 
 def remove_open_temporary_contents(directory_descriptor: int) -> None:
-    # The inherited lifecycle lock and no-background-process contract make this
-    # tree inactive before cleanup. Descriptor-relative traversal prevents a
-    # replaced directory from redirecting recursion; final unlink/rmdir calls
-    # remain POSIX name operations inside the authenticated parent descriptor.
-    try:
-        names = os.listdir(directory_descriptor)
-    except OSError as exc:
-        raise LauncherError("cannot list an authenticated temporary directory") from exc
-    for name in names:
-        before = run_tmp_entry(directory_descriptor, name)
-        if before is None:
-            raise LauncherError("a temporary entry changed during removal")
-        if stat.S_ISDIR(before.st_mode):
-            child_descriptor = open_exact_temporary_directory(
-                directory_descriptor,
-                name,
-                before,
-            )
-            try:
-                remove_open_temporary_contents(child_descriptor)
-                current = run_tmp_entry(directory_descriptor, name)
-                if current is None or not os.path.samestat(before, current):
-                    raise LauncherError("a temporary directory changed during removal")
-                try:
-                    os.rmdir(name, dir_fd=directory_descriptor)
-                except OSError as exc:
-                    raise LauncherError(
-                        "cannot remove an authenticated temporary directory"
-                    ) from exc
-            finally:
-                os.close(child_descriptor)
-        else:
-            current = run_tmp_entry(directory_descriptor, name)
-            if current is None or not os.path.samestat(before, current):
-                raise LauncherError("a temporary entry changed during removal")
-            try:
-                os.unlink(name, dir_fd=directory_descriptor)
-            except OSError as exc:
-                raise LauncherError("cannot remove an authenticated temporary entry") from exc
-        if run_tmp_entry(directory_descriptor, name) is not None:
-            raise LauncherError("a temporary entry was replaced during removal")
+    _remove_open_temporary_contents(
+        directory_descriptor,
+        list_entries=os.listdir,
+        entry_metadata=run_tmp_entry,
+        open_directory=open_exact_temporary_directory,
+        remove_contents=remove_open_temporary_contents,
+        directory_test=stat.S_ISDIR,
+        same_stat=os.path.samestat,
+        remove_directory=os.rmdir,
+        remove_entry=os.unlink,
+        file_close=os.close,
+        error_type=LauncherError,
+    )
 
 
 def remove_run_tmpdir(repository: Repository, manifest: dict) -> None:

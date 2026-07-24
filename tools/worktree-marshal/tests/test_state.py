@@ -708,6 +708,454 @@ class StatePolicyTests(unittest.TestCase):
                         with parent_context(missing_root, missing_manifest):
                             raise AssertionError("entered a missing root")
 
+    def open_temporary_dependencies(
+        self,
+        events: list[tuple[str, object]],
+        opened_metadata: object,
+    ) -> dict[str, object]:
+        def directory_test(mode: object) -> bool:
+            events.append(("directory-test", mode))
+            return True
+
+        def file_open(name: object, flags: int, dir_fd: int) -> int:
+            events.append(("open", (name, flags, dir_fd)))
+            return 21
+
+        def file_stat(descriptor: int) -> object:
+            events.append(("fstat", descriptor))
+            return opened_metadata
+
+        def same_stat(first: object, second: object) -> bool:
+            events.append(("samestat", (first, second)))
+            return True
+
+        def file_close(descriptor: int) -> None:
+            events.append(("close", descriptor))
+
+        return {
+            "directory_flag": 4,
+            "nofollow_flag": 8,
+            "cloexec_flag": 16,
+            "read_only_flag": 1,
+            "directory_test": directory_test,
+            "file_open": file_open,
+            "file_stat": file_stat,
+            "same_stat": same_stat,
+            "file_close": file_close,
+            "error_type": self.engine.LauncherError,
+        }
+
+    def temporary_removal_dependencies(
+        self,
+        events: list[tuple[str, object]],
+        metadata_sequences: dict[str, object],
+    ) -> dict[str, object]:
+        def list_entries(descriptor: int) -> list[str]:
+            events.append(("list", descriptor))
+            return list(metadata_sequences)
+
+        def entry_metadata(descriptor: int, name: str) -> object:
+            events.append(("entry", (descriptor, name)))
+            return next(metadata_sequences[name])
+
+        def open_directory(
+            descriptor: int,
+            name: str,
+            expected: object,
+        ) -> int:
+            events.append(("open-directory", (descriptor, name, expected)))
+            return 23
+
+        def remove_contents(descriptor: int) -> None:
+            events.append(("remove-contents", descriptor))
+
+        def directory_test(mode: object) -> bool:
+            events.append(("directory-test", mode))
+            return mode == "directory-mode"
+
+        def same_stat(first: object, second: object) -> bool:
+            events.append(("samestat", (first, second)))
+            return True
+
+        def remove_directory(name: str, *, dir_fd: int) -> None:
+            events.append(("rmdir", (name, dir_fd)))
+
+        def remove_entry(name: str, *, dir_fd: int) -> None:
+            events.append(("unlink", (name, dir_fd)))
+
+        def file_close(descriptor: int) -> None:
+            events.append(("close", descriptor))
+
+        return {
+            "list_entries": list_entries,
+            "entry_metadata": entry_metadata,
+            "open_directory": open_directory,
+            "remove_contents": remove_contents,
+            "directory_test": directory_test,
+            "same_stat": same_stat,
+            "remove_directory": remove_directory,
+            "remove_entry": remove_entry,
+            "file_close": file_close,
+            "error_type": self.engine.LauncherError,
+        }
+
+    def test_temporary_traversal_kernel_signatures_and_short_circuits(
+        self,
+    ) -> None:
+        parameters = inspect.signature(
+            self.state_policy.open_exact_temporary_directory
+        ).parameters
+        self.assertEqual(
+            tuple(parameters),
+            (
+                "parent_descriptor",
+                "name",
+                "expected",
+                "directory_flag",
+                "nofollow_flag",
+                "cloexec_flag",
+                "read_only_flag",
+                "directory_test",
+                "file_open",
+                "file_stat",
+                "same_stat",
+                "file_close",
+                "error_type",
+            ),
+        )
+        for name in ("parent_descriptor", "name", "expected"):
+            self.assertIs(
+                parameters[name].kind,
+                inspect.Parameter.POSITIONAL_OR_KEYWORD,
+            )
+        for parameter in tuple(parameters.values())[3:]:
+            self.assertIs(parameter.kind, inspect.Parameter.KEYWORD_ONLY)
+            self.assertIs(parameter.default, inspect.Parameter.empty)
+
+        removal_parameters = inspect.signature(
+            self.state_policy.remove_open_temporary_contents
+        ).parameters
+        self.assertEqual(
+            tuple(removal_parameters),
+            (
+                "directory_descriptor",
+                "list_entries",
+                "entry_metadata",
+                "open_directory",
+                "remove_contents",
+                "directory_test",
+                "same_stat",
+                "remove_directory",
+                "remove_entry",
+                "file_close",
+                "error_type",
+            ),
+        )
+        self.assertIs(
+            removal_parameters["directory_descriptor"].kind,
+            inspect.Parameter.POSITIONAL_OR_KEYWORD,
+        )
+        for parameter in tuple(removal_parameters.values())[1:]:
+            self.assertIs(parameter.kind, inspect.Parameter.KEYWORD_ONLY)
+            self.assertIs(parameter.default, inspect.Parameter.empty)
+
+        expected_metadata = SimpleNamespace(st_mode="expected-mode")
+        for missing_flag in ("directory_flag", "nofollow_flag"):
+            with self.subTest(missing_flag=missing_flag):
+                events: list[tuple[str, object]] = []
+                dependencies = self.open_temporary_dependencies(
+                    events,
+                    SimpleNamespace(st_mode="opened-mode"),
+                )
+                dependencies[missing_flag] = 0
+                file_open = mock.Mock(
+                    side_effect=AssertionError("opened without safe flags")
+                )
+                dependencies["file_open"] = file_open
+                with self.assertRaisesRegex(
+                    self.engine.LauncherError,
+                    "^safe temporary-directory traversal is unavailable$",
+                ):
+                    self.state_policy.open_exact_temporary_directory(
+                        9,
+                        "entry",
+                        expected_metadata,
+                        **dependencies,
+                    )
+                file_open.assert_not_called()
+                self.assertEqual(events, [])
+
+        events = []
+        dependencies = self.open_temporary_dependencies(
+            events,
+            SimpleNamespace(st_mode="opened-mode"),
+        )
+        dependencies["file_open"] = mock.Mock(side_effect=OSError("denied"))
+        file_close = mock.Mock(
+            side_effect=AssertionError("closed a never-opened descriptor")
+        )
+        dependencies["file_close"] = file_close
+        with self.assertRaisesRegex(
+            self.engine.LauncherError,
+            "^cannot open an authenticated temporary directory$",
+        ):
+            self.state_policy.open_exact_temporary_directory(
+                9,
+                "entry",
+                expected_metadata,
+                **dependencies,
+            )
+        file_close.assert_not_called()
+
+        events = []
+        dependencies = self.open_temporary_dependencies(
+            events,
+            SimpleNamespace(st_mode="opened-mode"),
+        )
+        dependencies["file_stat"] = mock.Mock(side_effect=OSError("stat"))
+        with self.assertRaisesRegex(
+            self.engine.LauncherError,
+            "^cannot authenticate a temporary directory$",
+        ):
+            self.state_policy.open_exact_temporary_directory(
+                9,
+                "entry",
+                expected_metadata,
+                **dependencies,
+            )
+        self.assertEqual(events[-1], ("close", 21))
+
+        for case, same_stat_result, opened_directory in (
+            ("replaced-mode", True, False),
+            ("replaced-identity", False, True),
+        ):
+            with self.subTest(case=case):
+                events = []
+                dependencies = self.open_temporary_dependencies(
+                    events,
+                    SimpleNamespace(st_mode="opened-mode"),
+                )
+                dependencies["directory_test"] = lambda mode: opened_directory
+                dependencies["same_stat"] = mock.Mock(
+                    return_value=same_stat_result
+                )
+                with self.assertRaisesRegex(
+                    self.engine.LauncherError,
+                    "^a temporary directory changed before removal$",
+                ):
+                    self.state_policy.open_exact_temporary_directory(
+                        9,
+                        "entry",
+                        expected_metadata,
+                        **dependencies,
+                    )
+                self.assertEqual(events[-1], ("close", 21))
+                if not opened_directory:
+                    dependencies["same_stat"].assert_not_called()
+
+        events = []
+        dependencies = self.temporary_removal_dependencies(events, {})
+        dependencies["list_entries"] = mock.Mock(side_effect=OSError("list"))
+        entry_metadata = mock.Mock(
+            side_effect=AssertionError("probed an unlisted directory")
+        )
+        dependencies["entry_metadata"] = entry_metadata
+        with self.assertRaisesRegex(
+            self.engine.LauncherError,
+            "^cannot list an authenticated temporary directory$",
+        ):
+            self.state_policy.remove_open_temporary_contents(
+                9,
+                **dependencies,
+            )
+        entry_metadata.assert_not_called()
+
+        events = []
+        dependencies = self.temporary_removal_dependencies(
+            events,
+            {"vanished": iter((None,))},
+        )
+        open_directory = mock.Mock(
+            side_effect=AssertionError("opened a vanished entry")
+        )
+        dependencies["open_directory"] = open_directory
+        with self.assertRaisesRegex(
+            self.engine.LauncherError,
+            "^a temporary entry changed during removal$",
+        ):
+            self.state_policy.remove_open_temporary_contents(
+                9,
+                **dependencies,
+            )
+        open_directory.assert_not_called()
+
+        before_file = SimpleNamespace(st_mode="file-mode")
+        for case, sequence, same_stat_result in (
+            ("vanished-current", (before_file, None), True),
+            ("replaced-current", (before_file, before_file), False),
+        ):
+            with self.subTest(case=case):
+                events = []
+                dependencies = self.temporary_removal_dependencies(
+                    events,
+                    {"leaf": iter(sequence)},
+                )
+                dependencies["same_stat"] = lambda first, second: (
+                    same_stat_result
+                )
+                remove_entry = mock.Mock(
+                    side_effect=AssertionError("removed a changed entry")
+                )
+                dependencies["remove_entry"] = remove_entry
+                with self.assertRaisesRegex(
+                    self.engine.LauncherError,
+                    "^a temporary entry changed during removal$",
+                ):
+                    self.state_policy.remove_open_temporary_contents(
+                        9,
+                        **dependencies,
+                    )
+                remove_entry.assert_not_called()
+
+        events = []
+        dependencies = self.temporary_removal_dependencies(
+            events,
+            {"leaf": iter((before_file, before_file))},
+        )
+        dependencies["remove_entry"] = mock.Mock(side_effect=OSError("unlink"))
+        with self.assertRaisesRegex(
+            self.engine.LauncherError,
+            "^cannot remove an authenticated temporary entry$",
+        ):
+            self.state_policy.remove_open_temporary_contents(
+                9,
+                **dependencies,
+            )
+
+        events = []
+        dependencies = self.temporary_removal_dependencies(
+            events,
+            {"leaf": iter((before_file, before_file, before_file))},
+        )
+        with self.assertRaisesRegex(
+            self.engine.LauncherError,
+            "^a temporary entry was replaced during removal$",
+        ):
+            self.state_policy.remove_open_temporary_contents(
+                9,
+                **dependencies,
+            )
+
+        before_directory = SimpleNamespace(st_mode="directory-mode")
+        events = []
+        dependencies = self.temporary_removal_dependencies(
+            events,
+            {"child": iter((before_directory, None))},
+        )
+        remove_directory = mock.Mock(
+            side_effect=AssertionError("removed a changed directory")
+        )
+        dependencies["remove_directory"] = remove_directory
+        with self.assertRaisesRegex(
+            self.engine.LauncherError,
+            "^a temporary directory changed during removal$",
+        ):
+            self.state_policy.remove_open_temporary_contents(
+                9,
+                **dependencies,
+            )
+        remove_directory.assert_not_called()
+        self.assertEqual(events[-1], ("close", 23))
+
+        events = []
+        dependencies = self.temporary_removal_dependencies(
+            events,
+            {"child": iter((before_directory, before_directory))},
+        )
+        dependencies["remove_directory"] = mock.Mock(
+            side_effect=OSError("rmdir")
+        )
+        with self.assertRaisesRegex(
+            self.engine.LauncherError,
+            "^cannot remove an authenticated temporary directory$",
+        ):
+            self.state_policy.remove_open_temporary_contents(
+                9,
+                **dependencies,
+            )
+        self.assertEqual(events[-1], ("close", 23))
+
+    def test_temporary_traversal_kernel_preserves_probe_order(self) -> None:
+        events: list[tuple[str, object]] = []
+        expected_metadata = SimpleNamespace(st_mode="expected-mode")
+        opened_metadata = SimpleNamespace(st_mode="opened-mode")
+        dependencies = self.open_temporary_dependencies(
+            events,
+            opened_metadata,
+        )
+        dependencies["file_close"] = mock.Mock(
+            side_effect=AssertionError("closed an authenticated descriptor")
+        )
+
+        observed = self.state_policy.open_exact_temporary_directory(
+            9,
+            "entry",
+            expected_metadata,
+            **dependencies,
+        )
+
+        self.assertEqual(observed, 21)
+        self.assertEqual(
+            events,
+            [
+                ("open", ("entry", 1 | 4 | 8 | 16, 9)),
+                ("fstat", 21),
+                ("directory-test", "opened-mode"),
+                ("samestat", (expected_metadata, opened_metadata)),
+            ],
+        )
+        dependencies["file_close"].assert_not_called()
+
+        events = []
+        before_directory = SimpleNamespace(st_mode="directory-mode")
+        before_file = SimpleNamespace(st_mode="file-mode")
+        metadata_sequences = {
+            "child": iter((before_directory, before_directory, None)),
+            "leaf": iter((before_file, before_file, None)),
+        }
+        removal_dependencies = self.temporary_removal_dependencies(
+            events,
+            metadata_sequences,
+        )
+
+        self.assertIsNone(
+            self.state_policy.remove_open_temporary_contents(
+                9,
+                **removal_dependencies,
+            )
+        )
+        self.assertEqual(
+            events,
+            [
+                ("list", 9),
+                ("entry", (9, "child")),
+                ("directory-test", "directory-mode"),
+                ("open-directory", (9, "child", before_directory)),
+                ("remove-contents", 23),
+                ("entry", (9, "child")),
+                ("samestat", (before_directory, before_directory)),
+                ("rmdir", ("child", 9)),
+                ("close", 23),
+                ("entry", (9, "child")),
+                ("entry", (9, "leaf")),
+                ("directory-test", "file-mode"),
+                ("entry", (9, "leaf")),
+                ("samestat", (before_file, before_file)),
+                ("unlink", ("leaf", 9)),
+                ("entry", (9, "leaf")),
+            ],
+        )
+
     def test_engine_preserves_run_identity_and_path_surfaces(self) -> None:
         self.assertIs(self.engine.RUN_ID_RE, self.state_policy.RUN_ID_RE)
         for helper_name in (
@@ -717,6 +1165,8 @@ class StatePolicyTests(unittest.TestCase):
             "manifest_path",
             "exact_run_tmp_parent",
             "run_tmp_entry",
+            "open_exact_temporary_directory",
+            "remove_open_temporary_contents",
         ):
             with self.subTest(helper=helper_name):
                 self.assertIsNot(
@@ -732,6 +1182,12 @@ class StatePolicyTests(unittest.TestCase):
             "validate_run_id": ("run_id",),
             "exact_run_tmp_parent": ("repository", "manifest"),
             "run_tmp_entry": ("parent_descriptor", "run_id"),
+            "open_exact_temporary_directory": (
+                "parent_descriptor",
+                "name",
+                "expected",
+            ),
+            "remove_open_temporary_contents": ("directory_descriptor",),
         }
         for helper_name, expected in expected_parameters.items():
             with self.subTest(signature=helper_name):
