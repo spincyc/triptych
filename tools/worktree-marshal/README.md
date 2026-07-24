@@ -10,7 +10,8 @@ restoration seams, its lock-descriptor bookkeeping boundary, its first generic
 profile, its child-process supervision boundary, its run-identity and lexical
 state-path boundary, its state-location and repository-name boundary, the
 immutable runtime-identity record and launcher-entry authentication
-boundaries, its Git-executable discovery and pre-pin validation boundary, the
+boundaries, its Git-executable discovery, pre-pin validation, and absolute-path
+selection boundaries, the
 exact Git-administration line-format validation and bounded descriptor-reader
 boundaries, its exact pointer-path and real-directory validation boundary, its
 read-only linked-worktree path-validation and cache-consistency boundaries,
@@ -121,7 +122,7 @@ worktree-removal or ref-transaction failures, receipt recovery, garbage
 collection, or concurrent retirement. Those retirement cases, broader crash
 and race recovery, broader security coverage, the complete installed lifecycle
 matrix, and the supported Python and Git CI matrix remain release gates; the
-first twenty-three step-5 seams are protected by direct source tests and artifact
+first twenty-four step-5 seams are protected by direct source tests and artifact
 provenance, and the installed abort checkpoint covers archived transaction
 restoration. Each remaining helper boundary still requires its own direct
 parity coverage.
@@ -337,6 +338,15 @@ so a later configuration probe or Git command may still reject the directory.
 Git-executable discovery and pre-pin validation belong to `git.py`, while its
 process-global cache and invocation remain in `engine.py`; neither is a future
 responsibility of `identity.py`.
+
+The dependency-injected `absolute_git_path` operation in `git.py` now owns the
+existing authenticated `rev-parse --path-format=absolute` query, output
+stripping, path construction, and non-strict resolution. Its exact engine
+wrapper supplies the current authenticated Git operation and path factory
+lazily. The engine retains authentication, configuration validation, argument
+hardening, executable caching, subprocess execution, repository discovery,
+and every lifecycle caller. The returned path remains a point-in-time
+pathname observation rather than a pinned administration identity.
 
 The dependency-injected `discover_repository` operation now owns the complete
 read-only discovery and state-identity derivation sequence. It resolves the

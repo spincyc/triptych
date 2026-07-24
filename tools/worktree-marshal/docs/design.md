@@ -18,8 +18,9 @@ arbitrary executable is not equivalent support.
 The current package deliberately keeps lifecycle transition selection,
 validation, persistence, and orchestration in one shared `engine.py`. `cli.py`
 owns the installed grammar, `profiles.py` owns immutable durable profile
-identities, `git.py` now owns the cycle-free Git policy kernel and
-Git-executable discovery and pre-pin validation, `model.py` now owns the exact
+identities, `git.py` now owns the cycle-free Git policy kernel,
+Git-executable discovery and pre-pin validation, and absolute path selection,
+`model.py` now owns the exact
 state vocabulary, pure classifier, and I/O-free integration-transaction
 restoration transform, `state.py` now owns run identity, state-location
 selection, repository-name normalization, and lexical lock and manifest paths,
@@ -44,7 +45,7 @@ worktree_marshal/
   model.py               state vocabulary and transaction restoration now
   state.py               run identity, state-base policy, and lexical paths; writes later
   locks.py               descriptor bookkeeping now; flock acquisition later
-  git.py                 policy, captured config, and executable discovery; invocation later
+  git.py                 policy, config, executable discovery, and absolute paths
   process.py             child signal forwarding and exit normalization
   identity.py            records, auth, path/cache checks, and repository discovery
                          public wrappers and linked registry objects/writes remain in engine
@@ -102,7 +103,7 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with twenty-three behavior-preserving boundaries. The original
+has begun step 5 with twenty-four behavior-preserving boundaries. The original
 pure Git policy kernel transforms an explicit environment mapping and Git
 argument sequence in `git.py`; `engine.py` retains its optional
 environment-acquisition wrapper, subprocess creation and command execution,
@@ -628,7 +629,22 @@ boundary adds no state migration, generic adapter contract, sandbox or
 lifecycle authority, packaging or distribution change, workflow change, or
 release assurance.
 
-Direct tests freeze all twenty-three extracted boundaries, their
+The twenty-fourth boundary moves the existing `absolute_git_path` operation
+into `git.absolute_git_path`. The exact engine wrapper remains
+`(cwd, selector)` and supplies the current authenticated Git operation and path
+factory lazily. The kernel preserves the exact `rev-parse`,
+`--path-format=absolute`, selector argument order, strips the captured standard
+output, constructs one path, resolves it with the existing non-strict default,
+and returns that result without adding translation or validation.
+
+The engine retains Git-CWD authentication, effective-configuration validation,
+argument hardening, subprocess construction and execution, the pinned
+executable cache, repository discovery and every lifecycle caller and
+mutation. The returned path is one post-command pathname observation, not a
+pinned administration identity; it may be absent or replaced after resolution.
+This boundary adds no command, state, packaging, workflow, or release change.
+
+Direct tests freeze all twenty-four extracted boundaries, their
 compatibility surfaces, artifact inclusion, field and operation order,
 partial-failure behavior, and the dynamic restoration of every vocabulary
 value currently accepted in

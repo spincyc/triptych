@@ -1696,6 +1696,94 @@ class GitPolicyTests(unittest.TestCase):
                 self.assertEqual(mutable, list(supplied))
                 self.assertIsNot(observed, mutable)
 
+    def test_absolute_git_path_kernel_and_wrapper_surfaces(self) -> None:
+        self.assertEqual(
+            str(inspect.signature(self.policy.absolute_git_path)),
+            "(cwd: 'Path', selector: 'str', *, git_call: "
+            "'Callable[[], Callable[..., object]]', path_factory: "
+            "'Callable[[], Callable[[str], Path]]') -> 'Path'",
+        )
+        self.assertEqual(
+            str(inspect.signature(self.engine.absolute_git_path)),
+            "(cwd: 'Path', selector: 'str') -> 'Path'",
+        )
+
+    def test_absolute_git_path_preserves_call_and_resolution_order(self) -> None:
+        cwd = Path("/repository")
+        events: list[tuple[str, object]] = []
+
+        class Candidate:
+            def resolve(candidate_self) -> Path:
+                events.append(("resolve", None))
+                return Path("/repository/.git")
+
+        def git_call(*args: object) -> object:
+            events.append(("git", args))
+            return SimpleNamespace(stdout="  /repository/.git  \n")
+
+        def path_factory(value: str) -> object:
+            events.append(("path", value))
+            return Candidate()
+
+        observed = self.policy.absolute_git_path(
+            cwd,
+            "--git-dir",
+            git_call=lambda: git_call,
+            path_factory=lambda: path_factory,
+        )
+
+        self.assertEqual(observed, Path("/repository/.git"))
+        self.assertEqual(
+            events,
+            [
+                (
+                    "git",
+                    (
+                        cwd,
+                        "rev-parse",
+                        "--path-format=absolute",
+                        "--git-dir",
+                    ),
+                ),
+                ("path", "/repository/.git"),
+                ("resolve", None),
+            ],
+        )
+
+    def test_engine_absolute_git_path_wrapper_resolves_globals_lazily(
+        self,
+    ) -> None:
+        sentinel = object()
+        captured: dict[str, object] = {}
+
+        def kernel(
+            cwd: object,
+            selector: object,
+            **dependencies: object,
+        ) -> object:
+            captured.update(
+                cwd=cwd,
+                selector=selector,
+                **dependencies,
+            )
+            return sentinel
+
+        with mock.patch.object(
+            self.engine,
+            "_absolute_git_path",
+            side_effect=kernel,
+        ):
+            observed = self.engine.absolute_git_path(
+                Path("/repository"),
+                "--git-common-dir",
+            )
+
+        self.assertIs(observed, sentinel)
+        self.assertEqual(captured["cwd"], Path("/repository"))
+        self.assertEqual(captured["selector"], "--git-common-dir")
+        self.assertIs(captured["git_call"](), self.engine.git)
+        self.assertIs(captured["path_factory"](), self.engine.Path)
+
 
 if __name__ == "__main__":
     unittest.main()

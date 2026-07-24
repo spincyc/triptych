@@ -91,6 +91,24 @@ GIT_BASE_ARGUMENTS = (
 )
 
 
+def absolute_git_path(
+    cwd: Path,
+    selector: str,
+    *,
+    git_call: Callable[[], Callable[..., object]],
+    path_factory: Callable[[], Callable[[str], Path]],
+) -> Path:
+    """Resolve one absolute path reported by authenticated Git."""
+
+    value = git_call()(
+        cwd,
+        "rev-parse",
+        "--path-format=absolute",
+        selector,
+    ).stdout.strip()
+    return path_factory()(value).resolve()
+
+
 def discover_git_executable(
     *,
     executable_locator: Callable[

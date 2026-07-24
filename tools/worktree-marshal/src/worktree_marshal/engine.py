@@ -47,6 +47,7 @@ from .git import (
     GIT_COMMAND_CONFIG_RE,
     GIT_INDEXED_CONFIG_ENV_RE,
     GIT_UNSAFE_ENV,
+    absolute_git_path as _absolute_git_path,
     discover_git_executable as _discover_git_executable,
     hardened_git_arguments,
     sanitized_git_environment as _sanitized_git_environment,
@@ -335,13 +336,12 @@ def git(
 
 
 def absolute_git_path(cwd: Path, selector: str) -> Path:
-    value = git(
+    return _absolute_git_path(
         cwd,
-        "rev-parse",
-        "--path-format=absolute",
         selector,
-    ).stdout.strip()
-    return Path(value).resolve()
+        git_call=lambda: git,
+        path_factory=lambda: Path,
+    )
 
 
 def safe_regular_file_bytes(path: Path, *, label: str) -> bytes:
