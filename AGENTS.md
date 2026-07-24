@@ -65,6 +65,8 @@ One destructive exception exists for an explicitly superseded rewritten quaranti
 
 Never record worktree paths, run identifiers, prompts, logs, process data, or other machine-local launcher state in tracked files or publication metadata. The launcher gives each worker and resolver one exact run-owned path through `TMPDIR`, `TMP`, and `TEMP`. Put every off-worktree transient created for the run—including downloads, OCR and text extracts, generated helper scripts, screenshots, review rasters, and ad hoc caches—below that path; do not create arbitrary siblings directly under `/tmp`. Stable shared IPC locks are the narrow exception. Reproducible repository intermediates belong in the ignored `build/` tree while the worker is retained; material that must survive completed integration must be incorporated into the authorized tracked paths. No process may keep reading or writing the run-owned temporary tree after its worker or resolver exits; the lifecycle lock and prohibition on background processes are the cleanup exclusivity boundary. Successful managed cleanup removes only the exact manifest-recorded temporary directory and does not mark the run cleaned while that path remains or cannot be authenticated.
 
+An initial rebase stopped before its first replay commit may be aborted only after the launcher proves its merge-backend administration, captured target HEAD, anchored source branch, first audited replay, independently reproduced index tree, and clean worktree boundary. Changed administration, index, worktree, or untracked state fails closed.
+
 ## Work sequence
 
 Before editing:

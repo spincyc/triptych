@@ -825,6 +825,8 @@ def validate_manifest_paths(repository: Repository, manifest: dict) -> None:
         "integration_candidate_head",
         "integration_conflict_head",
         "integration_conflict_commit",
+        "integration_precommit_commit",
+        "integration_precommit_index_tree",
         "integration_target_mismatch_head",
         "integration_landing_expected_head",
         "integration_landing_candidate_head",
@@ -877,7 +879,7 @@ def validate_manifest_paths(repository: Repository, manifest: dict) -> None:
     abort_mode = manifest.get("integration_abort_mode")
     if abort_mode is not None and (
         not isinstance(abort_mode, str)
-        or abort_mode not in {"rebase", "candidate"}
+        or abort_mode not in {"rebase", "precommit-rebase", "candidate"}
     ):
         raise LauncherError("run manifest has an invalid integration abort mode")
     manual_resolution = manifest.get("integration_manual_resolution")
@@ -1937,6 +1939,24 @@ def rebase_commit(worktree: Path) -> str | None:
     return result.stdout.strip() if result.returncode == 0 else None
 
 
+def rebase_first_done_commit(worktree: Path) -> str | None:
+    directories = active_rebase_directories(worktree)
+    if len(directories) != 1:
+        return None
+    try:
+        data = safe_regular_file_bytes(
+            directories[0] / "done",
+            label="the active rebase done file",
+        )
+        first_line = data.decode("utf-8").splitlines()[0]
+    except (UnicodeDecodeError, IndexError):
+        return None
+    fields = first_line.split(maxsplit=2)
+    if len(fields) < 2 or fields[0] != "pick" or not OBJECT_ID_RE.fullmatch(fields[1]):
+        return None
+    return fields[1]
+
+
 def commit_changed_paths(worktree: Path, commit: str) -> list[str]:
     result = git(
         worktree,
@@ -2054,6 +2074,130 @@ def expected_rebase_index_paths(
         | set(tree_transition_paths(worktree, current_head, result_tree))
     )
     return allowed, expected_entries, result_tree
+
+
+def expected_rebase_clean_tree(
+    worktree: Path,
+    current_head: str,
+    rebase_commit: str,
+) -> str:
+    """Independently reproduce one clean three-way replay."""
+    parent = git(
+        worktree,
+        "rev-parse",
+        "--verify",
+        f"{rebase_commit}^{{commit}}^",
+        check=False,
+    ).stdout.strip()
+    if not OBJECT_ID_RE.fullmatch(parent):
+        raise LauncherError("cannot inspect the stopped rebase commit's parent")
+    expected = git(
+        worktree,
+        "merge-tree",
+        "--write-tree",
+        f"--merge-base={parent}",
+        "-z",
+        current_head,
+        rebase_commit,
+        check=False,
+        text=False,
+    )
+    if expected.returncode:
+        raise LauncherError("the stopped replay is not an independently clean application")
+    try:
+        result_tree = expected.stdout.split(b"\0", 1)[0].strip().decode(
+            "ascii",
+            errors="strict",
+        )
+    except UnicodeDecodeError as exc:
+        raise LauncherError("Git returned an invalid independent replay tree") from exc
+    if not OBJECT_ID_RE.fullmatch(result_tree):
+        raise LauncherError("Git returned an invalid independent replay tree")
+    return result_tree
+
+
+def first_replayed_commit(
+    worktree: Path,
+    base_sha: str,
+    source_head: str,
+) -> str:
+    result = git(
+        worktree,
+        "rev-list",
+        "--reverse",
+        "--ancestry-path",
+        source_head,
+        "--not",
+        base_sha,
+        check=False,
+    )
+    commits = result.stdout.splitlines()
+    if result.returncode or not commits or any(
+        not OBJECT_ID_RE.fullmatch(commit) for commit in commits
+    ):
+        raise LauncherError("cannot identify the first audited replay commit")
+    return commits[0]
+
+
+def validate_initial_rebase_precommit(
+    repository: Repository,
+    manifest: dict,
+    audit: Audit,
+    *,
+    require_checkpoint: bool,
+) -> tuple[str, str, str]:
+    """Prove Git stopped after staging, but before committing, its first replay."""
+    worktree = Path(manifest["worktree"])
+    source_head = recorded_integration_source(repository, manifest)
+    target_head = recorded_commit(repository, manifest, "integration_target_head")
+    base_sha = recorded_commit(repository, manifest, "base_sha")
+    directories = active_rebase_directories(worktree)
+    current_commit = rebase_commit(worktree) or rebase_first_done_commit(worktree)
+    current_metadata_hash = rebase_metadata_hash(worktree)
+    expected_commit = first_replayed_commit(worktree, base_sha, source_head)
+    expected_tree = (
+        expected_rebase_clean_tree(worktree, target_head, expected_commit)
+        if current_commit == expected_commit
+        else None
+    )
+    index = git(worktree, "write-tree", check=False)
+    index_tree = index.stdout.strip()
+    checks = {
+        "registration": audit.registered,
+        "lock": audit.locked,
+        "detached HEAD": audit.branch is None,
+        "target HEAD": audit.head == target_head,
+        "merge-backend administration": (
+            len(directories) == 1 and directories[0].name == "rebase-merge"
+        ),
+        "head name": rebase_head_name(worktree)
+        == f"refs/heads/{manifest['branch']}",
+        "original head": rebase_recorded_commit(worktree, "orig-head") == source_head,
+        "onto head": rebase_recorded_commit(worktree, "onto") == target_head,
+        "worker branch": branch_commit(repository, manifest) == source_head,
+        "first replay commit": current_commit == expected_commit,
+        "rebase metadata": current_metadata_hash is not None,
+        "unmerged paths": not unmerged_paths(worktree),
+        "index tree": index.returncode == 0 and index_tree == expected_tree,
+        "unstaged changes": not worktree_has_unstaged_changes(worktree),
+        "untracked paths": not nonignored_untracked_paths(worktree),
+    }
+    valid = all(checks.values())
+    if require_checkpoint:
+        valid = bool(
+            valid
+            and manifest.get("integration_precommit_commit") == current_commit
+            and manifest.get("integration_precommit_index_tree") == index_tree
+            and manifest.get("integration_rebase_metadata_hash")
+            == current_metadata_hash
+        )
+    if not valid or current_commit is None or current_metadata_hash is None:
+        failed_checks = ", ".join(label for label, passed in checks.items() if not passed)
+        raise LauncherError(
+            "the interrupted initial rebase is not the exact staged first-replay "
+            f"pre-commit checkpoint ({failed_checks or 'checkpoint mismatch'})"
+        )
+    return current_commit, index_tree, current_metadata_hash
 
 
 def unmerged_paths(worktree: Path) -> list[str]:
@@ -3643,6 +3787,8 @@ def recover_interrupted_initial_rebase(
     repository: Repository,
     manifest: dict,
     audit: Audit,
+    *,
+    allow_precommit_abort: bool = False,
 ) -> str:
     if manifest.get("state") != "integration-rebase-pending":
         return "unchanged"
@@ -3669,6 +3815,18 @@ def recover_interrupted_initial_rebase(
                     "the interrupted integration rebase lacks its durable source-anchor checkpoint"
                 )
             recorded_integration_source(repository, manifest)
+            if allow_precommit_abort and not unmerged_paths(worktree):
+                commit, index_tree, metadata_hash = validate_initial_rebase_precommit(
+                    repository,
+                    manifest,
+                    audit,
+                    require_checkpoint=False,
+                )
+                manifest["integration_precommit_commit"] = commit
+                manifest["integration_precommit_index_tree"] = index_tree
+                manifest["integration_rebase_metadata_hash"] = metadata_hash
+                write_manifest(repository, manifest)
+                return "precommit"
             record_managed_conflict(
                 repository,
                 manifest,
@@ -3684,7 +3842,8 @@ def recover_interrupted_initial_rebase(
                 error=f"cannot adopt interrupted integration rebase: {exc}",
             )
             raise LauncherError(
-                "the interrupted integration rebase has an unprovable active state"
+                "the interrupted integration rebase has an unprovable active state: "
+                f"{exc}"
             ) from exc
         return "conflict"
     if audit_matches_clean_head(manifest, audit, source_head):
@@ -4036,6 +4195,7 @@ def abort_conflict_run(repository: Repository, run_id: str) -> int:
             "integration-merge-pending",
             "integration-abort-pending",
             "integration-rebase-pending",
+            "integration-rebase-recovery-failed",
         } and not pre_landing_manual_candidate:
             raise LauncherError(f"run {run_id} has no managed integration to abort")
         run_lock_stream = acquire_existing_run_lock(repository, run_id)
@@ -4043,17 +4203,33 @@ def abort_conflict_run(repository: Repository, run_id: str) -> int:
             worktree = Path(manifest["worktree"])
             source_head = recorded_commit(repository, manifest, "integration_source_head")
             audit = audit_run(repository, manifest)
-            initial_recovery = recover_interrupted_initial_rebase(
-                repository,
-                manifest,
-                audit,
-            )
+            if state == "integration-rebase-recovery-failed":
+                commit, index_tree, metadata_hash = validate_initial_rebase_precommit(
+                    repository,
+                    manifest,
+                    audit,
+                    require_checkpoint=False,
+                )
+                manifest["integration_precommit_commit"] = commit
+                manifest["integration_precommit_index_tree"] = index_tree
+                manifest["integration_rebase_metadata_hash"] = metadata_hash
+                write_manifest(repository, manifest)
+                initial_recovery = "precommit"
+            else:
+                initial_recovery = recover_interrupted_initial_rebase(
+                    repository,
+                    manifest,
+                    audit,
+                    allow_precommit_abort=True,
+                )
             audit = audit_run(repository, manifest)
             recover_interrupted_continue(repository, manifest, audit)
             state = manifest.get("state")
             audit = audit_run(repository, manifest)
-            if initial_recovery == "resume":
+            if initial_recovery in {"resume", "precommit"}:
                 manifest["state"] = "integration-abort-pending"
+                if initial_recovery == "precommit":
+                    manifest["integration_abort_mode"] = "precommit-rebase"
                 manifest["integration_abort_started_at"] = utc_now()
                 write_manifest(repository, manifest)
                 state = "integration-abort-pending"
@@ -4130,7 +4306,15 @@ def abort_conflict_run(repository: Repository, run_id: str) -> int:
                 mode = "candidate"
             else:
                 try:
-                    validate_managed_rebase_identity(repository, manifest, audit)
+                    if mode == "precommit-rebase":
+                        validate_initial_rebase_precommit(
+                            repository,
+                            manifest,
+                            audit,
+                            require_checkpoint=True,
+                        )
+                    else:
+                        validate_managed_rebase_identity(repository, manifest, audit)
                 except LauncherError as exc:
                     record_integration_recovery_failure(
                         repository,
@@ -4149,7 +4333,7 @@ def abort_conflict_run(repository: Repository, run_id: str) -> int:
             manifest["integration_abort_mode"] = mode
             manifest["integration_abort_started_at"] = utc_now()
             write_manifest(repository, manifest)
-            if mode == "rebase":
+            if mode in {"rebase", "precommit-rebase"}:
                 operation = git(
                     worktree,
                     "-c",
@@ -4176,12 +4360,20 @@ def abort_conflict_run(repository: Repository, run_id: str) -> int:
             ):
                 error = operation.stderr.strip() or "the worker was not restored exactly"
                 try:
-                    if mode == "rebase":
-                        validate_managed_rebase_identity(
-                            repository,
-                            manifest,
-                            restored,
-                        )
+                    if mode in {"rebase", "precommit-rebase"}:
+                        if mode == "precommit-rebase":
+                            validate_initial_rebase_precommit(
+                                repository,
+                                manifest,
+                                restored,
+                                require_checkpoint=True,
+                            )
+                        else:
+                            validate_managed_rebase_identity(
+                                repository,
+                                manifest,
+                                restored,
+                            )
                     else:
                         candidate_head = recorded_commit(
                             repository,

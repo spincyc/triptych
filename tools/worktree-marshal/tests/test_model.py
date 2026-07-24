@@ -75,6 +75,8 @@ EXPECTED_INTEGRATION_TRANSACTION_FIELDS = (
     "integration_candidate_head",
     "integration_conflict_head",
     "integration_conflict_commit",
+    "integration_precommit_commit",
+    "integration_precommit_index_tree",
     "integration_conflict_paths",
     "integration_unmerged_paths",
     "integration_allowed_staged_paths",

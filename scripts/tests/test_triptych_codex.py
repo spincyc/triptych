@@ -4461,6 +4461,62 @@ class TriptychCodexTests(unittest.TestCase):
         self.assertEqual(adopted["integration_conflict_paths"], ["agent-result.txt"])
         self.assertEqual(adopted["integration_source_head"], source_head)
 
+    def test_abort_recovers_exact_first_replay_precommit_identity_failure(self) -> None:
+        manifest, worker, source_head, target_head = self.prepare_successful_rebase()
+        self.git(self.control, "config", "--unset-all", "user.name")
+        self.git(self.control, "config", "--unset-all", "user.email")
+        failed = self.run_launcher(["--triptych-integrate", manifest["run_id"]])
+        self.assertEqual(failed.returncode, 2)
+        self.assertEqual(
+            self.manifests()[0]["state"],
+            "integration-rebase-recovery-failed",
+        )
+        self.assertTrue(self.active_rebase_paths(worker))
+        self.assertEqual(self.git(worker, "rev-parse", "HEAD").stdout.strip(), target_head)
+        self.assertEqual(self.git(worker, "diff", "--name-only", "--diff-filter=U").stdout, "")
+        self.assertNotEqual(self.git(worker, "diff", "--cached", "--name-only").stdout, "")
+
+        abort = self.run_launcher(["--triptych-abort", manifest["run_id"]])
+
+        self.assertEqual(abort.returncode, 0, abort.stderr.decode())
+        self.assertFalse(self.active_rebase_paths(worker))
+        self.assertEqual(self.git(worker, "rev-parse", "HEAD").stdout.strip(), source_head)
+        self.assertEqual(self.git(worker, "status", "--porcelain=v1").stdout, "")
+        restored = self.manifests()[0]
+        self.assertEqual(restored["state"], "preserved")
+        self.assertEqual(restored["last_integration_source_head"], source_head)
+        self.assertEqual(restored["last_integration_target_head"], target_head)
+
+    def test_abort_refuses_changed_first_replay_precommit_checkpoint(self) -> None:
+        manifest, worker, source_head, target_head = self.prepare_successful_rebase()
+        self.git(self.control, "config", "--unset-all", "user.name")
+        self.git(self.control, "config", "--unset-all", "user.email")
+        marker = self.root / "post-altered-identity-failure-rebase-kill"
+        crashed = self.run_launcher(
+            ["--triptych-integrate", manifest["run_id"]],
+            environment=self.post_git_action_environment(
+                cwd=worker,
+                tokens=["rebase", "--onto"],
+                marker=marker,
+            ),
+        )
+        self.assertLess(crashed.returncode, 0)
+        staged_path = self.git(worker, "diff", "--cached", "--name-only").stdout.splitlines()[0]
+        (worker / staged_path).write_text("externally altered replay\n", encoding="utf-8")
+        self.git(worker, "add", staged_path)
+        altered_tree = self.git(worker, "write-tree").stdout.strip()
+
+        abort = self.run_launcher(["--triptych-abort", manifest["run_id"]])
+
+        self.assertEqual(abort.returncode, 2)
+        self.assertIn(b"unprovable active state", abort.stderr.lower())
+        self.assertTrue(self.active_rebase_paths(worker))
+        self.assertEqual(self.git(worker, "rev-parse", "HEAD").stdout.strip(), target_head)
+        self.assertEqual(self.git(worker, "write-tree").stdout.strip(), altered_tree)
+        retained = self.manifests()[0]
+        self.assertEqual(retained["state"], "integration-rebase-recovery-failed")
+        self.assertEqual(retained["integration_source_head"], source_head)
+
     def test_initial_conflict_adoption_rejects_unrecorded_index_resolution(self) -> None:
         manifest, worker, source_head, target_head = self.prepare_integration_conflict()
         marker = self.root / "pre-adoption-index-tamper-kill"
