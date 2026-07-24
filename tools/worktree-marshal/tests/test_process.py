@@ -922,6 +922,33 @@ class ChildProcessTests(unittest.TestCase):
 
         absolute.assert_not_called()
 
+    def test_command_kernel_and_wrapper_surfaces_are_exact(self) -> None:
+        self.assertEqual(
+            tuple(inspect.signature(self.process_policy.command).parameters),
+            (
+                "argv",
+                "cwd",
+                "check",
+                "text",
+                "environment",
+                "input_data",
+                "base_environment",
+                "sanitize_environment",
+                "process_run",
+                "inherited_descriptors",
+                "filesystem_path",
+                "error_type",
+            ),
+        )
+        self.assertEqual(
+            str(inspect.signature(self.engine.command)),
+            "(argv: 'Sequence[str]', *, cwd: 'Path', check: 'bool' = "
+            "True, text: 'bool' = True, environment: "
+            "'dict[str, str] | None' = None, input_data: "
+            "'str | bytes | None' = None) -> "
+            "'subprocess.CompletedProcess'",
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

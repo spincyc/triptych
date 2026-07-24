@@ -87,6 +87,7 @@ from .model import (
     restore_integration_transaction as _restore_integration_transaction,
 )
 from .process import (
+    command as _command,
     normalized_exit_status as _normalized_exit_status,
     wait_for_child as _wait_for_child,
 )
@@ -267,25 +268,20 @@ def command(
     environment: dict[str, str] | None = None,
     input_data: str | bytes | None = None,
 ) -> subprocess.CompletedProcess:
-    command_environment = os.environ.copy()
-    if environment:
-        command_environment.update(environment)
-    command_environment = sanitized_git_environment(command_environment)
-    result = subprocess.run(
-        list(argv),
+    return _command(
+        argv,
         cwd=cwd,
-        env=command_environment,
-        check=False,
-        capture_output=True,
+        check=check,
         text=text,
-        input=input_data,
-        pass_fds=inherited_lock_descriptors(),
+        environment=environment,
+        input_data=input_data,
+        base_environment=lambda: os.environ,
+        sanitize_environment=lambda: sanitized_git_environment,
+        process_run=lambda: subprocess.run,
+        inherited_descriptors=lambda: inherited_lock_descriptors(),
+        filesystem_path=lambda: os.fspath,
+        error_type=lambda: LauncherError,
     )
-    if check and result.returncode:
-        stderr = result.stderr.strip() if text else result.stderr.decode(errors="replace").strip()
-        rendered = " ".join(os.fspath(value) for value in argv)
-        raise LauncherError(f"{rendered} failed: {stderr or 'no diagnostic'}")
-    return result
 
 
 def raw_git(

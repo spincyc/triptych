@@ -2,8 +2,58 @@
 
 from __future__ import annotations
 
-from collections.abc import Callable
+from collections.abc import Callable, Mapping, Sequence
+from pathlib import Path
 from typing import Protocol
+
+
+def command(
+    argv: Sequence[str],
+    *,
+    cwd: Path,
+    check: bool,
+    text: bool,
+    environment: Mapping[str, str] | None,
+    input_data: str | bytes | None,
+    base_environment: Callable[[], Mapping[str, str]],
+    sanitize_environment: Callable[
+        [],
+        Callable[[dict[str, str]], dict[str, str]],
+    ],
+    process_run: Callable[[], Callable[..., object]],
+    inherited_descriptors: Callable[[], tuple[int, ...]],
+    filesystem_path: Callable[[], Callable[[object], str]],
+    error_type: Callable[[], type[BaseException]],
+) -> object:
+    """Run one command with a sanitized environment and inherited lock FDs."""
+
+    command_environment = dict(base_environment())
+    if environment:
+        command_environment.update(environment)
+    command_environment = sanitize_environment()(command_environment)
+    result = process_run()(
+        list(argv),
+        cwd=cwd,
+        env=command_environment,
+        check=False,
+        capture_output=True,
+        text=text,
+        input=input_data,
+        pass_fds=inherited_descriptors(),
+    )
+    if check and result.returncode:
+        stderr = (
+            result.stderr.strip()
+            if text
+            else result.stderr.decode(errors="replace").strip()
+        )
+        rendered = " ".join(
+            filesystem_path()(value) for value in argv
+        )
+        raise error_type()(
+            f"{rendered} failed: {stderr or 'no diagnostic'}"
+        )
+    return result
 
 
 class ChildProcess(Protocol):

@@ -35,7 +35,8 @@ ancestor authentication, read-only repository discovery, and exact path-entry
 inspection,
 `locks.py` now owns advisory lock acquisition and lock-descriptor bookkeeping
 and validation algorithms,
-`process.py` now owns child waiting and exit-status normalization,
+`process.py` now owns command execution, child waiting, and exit-status
+normalization,
 `adapters/codex.py` now owns Codex executable candidate selection and static
 argument policy plus the sanitized Codex base-environment transform and
 deterministic marker enrichment, and `triptych_compat.py` binds the frozen
@@ -49,7 +50,7 @@ worktree_marshal/
   state.py               identity, location, lexical paths, and private directories
   locks.py               advisory acquisition and descriptor bookkeeping
   git.py                 policy, config, executable discovery, and absolute paths
-  process.py             child signal forwarding and exit normalization
+  process.py             command execution, signal forwarding, and exit status
   identity.py            records, auth, path/cache checks, and repository discovery
                          public wrappers and linked registry objects/writes remain in engine
   worktrees.py           allocation, audit, reopen, and cleanup
@@ -106,7 +107,7 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with twenty-seven behavior-preserving boundaries. The original
+has begun step 5 with twenty-eight behavior-preserving boundaries. The original
 pure Git policy kernel transforms an explicit environment mapping and Git
 argument sequence in `git.py`; `engine.py` retains its optional
 environment-acquisition wrapper, subprocess creation and command execution,
@@ -700,7 +701,18 @@ inheritance, and every workflow decision. Advisory locks remain cooperative
 and process-scoped; this boundary adds no state, workflow, packaging, or
 release change.
 
-Direct tests freeze all twenty-seven extracted boundaries, their
+The twenty-eighth boundary moves the complete generic `command` execution
+operation into `process.command`. Its exact engine wrapper retains every
+argument and default while supplying the inherited environment, Git sanitizer,
+subprocess runner, inherited lock descriptors, filesystem stringifier, and
+launcher error type lazily. The operation preserves copy/update/sanitize
+ordering, fixed subprocess options, text and byte diagnostics, command
+rendering, and exact failure fallback. The engine retains Git executable
+selection, Git argument construction and policy, all callers, and every
+lifecycle decision. This boundary adds no command surface, state, workflow,
+packaging, or release change.
+
+Direct tests freeze all twenty-eight extracted boundaries, their
 compatibility surfaces, artifact inclusion, field and operation order,
 partial-failure behavior, and the dynamic restoration of every vocabulary
 value currently accepted in

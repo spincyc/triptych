@@ -8,7 +8,8 @@ This directory contains the shared lifecycle engine, its first extracted
 cycle-free Git policy, durable-state vocabulary, and integration-transaction
 restoration seams, its advisory-lock and descriptor-bookkeeping boundaries,
 its first generic
-profile, its child-process supervision boundary, its run-identity and lexical
+profile, its command-execution and child-process supervision boundaries, its
+run-identity and lexical
 state-path boundary, its state-location, repository-name, and private-directory
 authentication boundaries, the
 immutable runtime-identity record and launcher-entry authentication
@@ -125,7 +126,7 @@ worktree-removal or ref-transaction failures, receipt recovery, garbage
 collection, or concurrent retirement. Those retirement cases, broader crash
 and race recovery, broader security coverage, the complete installed lifecycle
 matrix, and the supported Python and Git CI matrix remain release gates; the
-first twenty-seven step-5 seams are protected by direct source tests and artifact
+first twenty-eight step-5 seams are protected by direct source tests and artifact
 provenance, and the installed abort checkpoint covers archived transaction
 restoration. Each remaining helper boundary still requires its own direct
 parity coverage.
@@ -481,10 +482,12 @@ unregister/unlock/close release order. The engine retains the process-global
 registry, Repository-bound path wrappers, lifecycle lock ownership and
 nesting, subprocess propagation, and every lifecycle locking decision.
 
-[`process.py`](src/worktree_marshal/process.py) owns only the existing child
-wait loop, temporary `SIGHUP` and `SIGTERM` forwarding, interrupt escalation,
-handler restoration after successful setup, and negative-return-code
-normalization. The engine wrapper supplies lazy resolvers for signal operations,
+[`process.py`](src/worktree_marshal/process.py) owns generic subprocess
+execution with sanitized environment and inherited lock descriptors, plus the
+existing child wait loop, temporary `SIGHUP` and `SIGTERM` forwarding,
+interrupt escalation, handler restoration after successful setup, and
+negative-return-code normalization. Engine wrappers supply lazy resolvers for
+the environment, sanitizer, runner, descriptors, diagnostics, signal operations,
 handled exception classes, timeout matching, and negative-status absolute-value
 calculation, preserving its existing global rebinding behavior. The engine
 still creates every process, supplies the adapter's executable, working
