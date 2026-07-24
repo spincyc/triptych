@@ -1,0 +1,11 @@
+schema = 1
+record_type = "work"
+id = "work.second-vatican-council.dignitatis-humanae"
+title = "Dignitatis humanae"
+responsible = "Second Vatican Council"
+work_type = "declaration"
+alternate_titles = ["Declaratio de libertate religiosa", "Declaration on Religious Freedom"]
+languages = ["la"]
+locus_pattern = '(?:[1-9]|1[0-5])(?:-(?:[1-9]|1[0-5]))?'
+description = "The Second Vatican Council's Declaration on Religious Freedom, solemnly promulgated by Pope Paul VI on 7 December 1965. It comprises numbered articles 1-15; edition records distinguish the Latin Acta witness from dated Vatican web delivery states and translations."
+relations = ["work.holy-see.acta-apostolicae-sedis"]
