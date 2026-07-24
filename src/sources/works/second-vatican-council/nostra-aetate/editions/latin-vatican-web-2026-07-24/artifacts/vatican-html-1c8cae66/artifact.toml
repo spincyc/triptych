@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.second-vatican-council.nostra-aetate.latin-vatican-web-2026-07-24.vatican-html-1c8cae66"
+edition_id = "edition.second-vatican-council.nostra-aetate.latin-vatican-web-2026-07-24"
+artifact_type = "official-html"
+media_type = "text/html"
+storage = "restricted"
+rights_status = "restricted"
+rights_basis = "The Vatican portal Legal Notes, reviewed 2026-07-24 at https://www.vatican.va/content/vatican/en/legal-notes.html, limit portal content to personal and non-profit viewing and prohibit collection, reproduction, dissemination, or transfer without prior written authorization from the Dicastery for Communication. No repository redistribution permission was established."
+source_url = "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651028_nostra-aetate_lt.html"
+provenance = "Exact HTML response acquired directly over HTTPS from the Holy See's Latin Vatican II archive."
+retrieved = "2026-07-24"
+sha256 = "1c8cae6653f213d2585f0839b48260431dfa6a6f62024a4b4cc90988b177b6b4"
+byte_size = 23616
+indexable = false
+notes = "The content-delivery route https://www.vatican.va/content/dam/wss/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651028_nostra-aetate_lt.html returned a byte-identical 23616-byte response with this SHA-256 on 2026-07-24; the press route returned HTTP 404 and is not recorded as an alias. The response contains the complete numbered Latin body, promulgation formula, date, and papal signature. It then appends the distinct Vacatio legis pro decretis promulgatis in sessione VII and a shared subscription block that stops at Alexander Toki, omitting the remaining named subscriptions, continuation notice, and notarial attestations printed on Acta p. 701. Article 4 delivers «rami oleastri Genti» where the Acta prints «rami oleastri Gentium»; note 5 delivers «Gregorios VII» where the Acta prints «Gregorius VII»; and the final displayed subscription gives «ALEXANDER TOKI» where the Acta prints «ALEXANDER TOKIC». These appended materials and source-local defects are not part of the bounded articles 1-5. Exact bytes are identified but not retained."

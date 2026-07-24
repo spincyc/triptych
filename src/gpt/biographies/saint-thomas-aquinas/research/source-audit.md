@@ -1,11 +1,12 @@
 # Saint Thomas Aquinas — source audit
 
 Online witnesses, institutional records, and publisher records were inspected
-through **2026-07-20**. Codes follow `guidance/biographies.md`. “Used” means
-that the publication may rely on the source only for the identified claim and
-within the stated genre, transmission, access, and rights limit. Searchable OCR,
-old translations, catalogs, publisher pages, and official retrospective
-summaries are research controls, not substitutes for an exact primary witness.
+through **2026-07-20**, with exact *Nostra aetate* articles 4--5 rechecked on
+**2026-07-24**. Codes follow `guidance/biographies.md`. “Used” means that the
+publication may rely on the source only for the identified claim and within
+the stated genre, transmission, access, and rights limit. Searchable OCR, old
+translations, catalogs, publisher pages, and official retrospective summaries
+are research controls, not substitutes for an exact primary witness.
 
 ## Method and source hierarchy
 
@@ -114,7 +115,8 @@ separately inspected page or argument is expressly named.
 | Thomas calls the slave an instrument or part in relation to the master and denies full reciprocal justice, while retaining some justice insofar as both are human. | A | *Summa theologiae* | ST II–II, q. 57, a. 4 | State both the instrumental relation and human qualification; do not translate this into later racialized Atlantic chattel categories without historical argument. |
 | Servile domination would not exist in innocence, and a master's authority does not govern conscience or marriage; grace nevertheless does not end temporal bodily servitude. | A | *Summa theologiae* | ST I, q. 96, a. 4; II–II, q. 104, aa. 5–6, [Latin text](https://www.corpusthomisticum.org/sth3102.html) | Qualifications matter but are not emancipation. |
 | Vatican II teaches civil immunity from coercion in religion and acknowledges contrary Christian conduct. | M | Second Vatican Council, declaration | [*Dignitatis humanae* 2–3, 10–12](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651207_dignitatis-humanae_en.html) | Later official Catholic teaching, not wording already fully present in Thomas. |
-| Vatican II rejects collective Jewish guilt, portrayals of Jews as rejected or cursed, discrimination, and antisemitism. | M | Second Vatican Council, declaration | [*Nostra aetate* 4](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651028_nostra-aetate_en.html) | Later reception and correction; does not erase medieval anti-Jewish premises. |
+| Vatican II rejects collective Jewish guilt, portrayals of Jews as rejected or cursed, and antisemitism. | M | Second Vatican Council, declaration | [*Nostra aetate* 4](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651028_nostra-aetate_en.html) | Later reception and correction; does not erase medieval anti-Jewish premises. |
+| Vatican II rejects discrimination or harassment on grounds including religion. | M | Second Vatican Council, declaration | [*Nostra aetate* 5](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651028_nostra-aetate_en.html) | The general clause belongs to article 5 rather than article 4; it remains later reception, not Thomas's own conclusion. |
 | Current Catholic teaching affirms equal personal dignity regardless of sex and condemns slavery. | M | Vatican II and Catechism | [*Gaudium et spes* 27, 29](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_en.html); Catechism 369, 372, 2334–35, 2414 | Later official teaching. Keep distinct from a claim that Thomas personally reached every later conclusion. |
 | The current Catechism judges the death penalty inadmissible. | M | Catechism revision | Catechism 2267 and [2018 official revision record](https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20180801_catechismo-penadimorte_en.html) | Current teaching at cutoff; mutable and jurisdictionally exact wording must be rechecked later. |
 
@@ -204,6 +206,6 @@ calendar, image, reliquary, local church, or oral tradition has been exhausted.
   rights review has been completed. Deeper original-text and translation
   collation, URL and reuse review, and the unresolved dossier items recorded
   above remain outstanding. At that 20 July 2026 review point, the public-alpha
-  entry was held. The exact current installed PDF is release-cleared by the 21
-  July 2026 exact-current-snapshot exception; the exception completes none of
-  those reviews.
+  entry was held. The later exact 21 July 2026 installed snapshot was
+  release-cleared by the dated exact-current-snapshot exception; the exception
+  completed none of those reviews.
