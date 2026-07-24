@@ -1,133 +1,195 @@
 # Research scope: 1962 altar-server guides
 
-## Object and reader
+## Object and readers
 
-- **Provider:** OpenAI GPT, recorded separately in each leaf’s
-  generation-metadata.tex.
+- **Provider:** OpenAI GPT, recorded separately in each leaf's
+  `generation-metadata.tex`.
 - **Collection and genre:** Traditional Latin Mass reference; edition-specific
   altar-server formation.
 - **Rite and edition:** Roman Rite, Latin typical edition of the 1962 Roman
   Missal and the official rubrical horizon incorporated into it.
-- **Reader:** a beginning or advancing server approximately eight to fourteen
-  years old, working with a trainer. The priest or master of ceremonies sets
-  the route used at the actual function.
+- **Low-Mass child reader:** a young First or Second Acolyte, approximately
+  eight to ten years old, learning with a parent or other trainer.
+- **Low-Mass adult reader:** a mother, parent, or trainer with moderate
+  liturgical formation. The priest retains responsibility for the route used
+  at the actual Mass.
+- **Sung-form reader:** a beginning or advancing server approximately eight to
+  fourteen years old, working with a trainer and master of ceremonies.
 - **Languages:** received responses in Latin; original English instruction,
   pronunciation respelling, and short explanatory glosses.
 - **Pronunciation model:** broad Roman-style ecclesiastical Latin as described
   in the 1961 *Liber Usualis*. Editorial broad IPA and English-like respelling
   are learning aids, not text supplied by the *Liber*.
 - **Territory:** no particular diocese or parish is made normative. The
-  ceremonial route is an explicitly declared English-language
-  Fortescue–O’Connell-family training model, corrected wherever the 1962
+  ceremonial routes are declared English-language
+  Fortescue--O'Connell-family teaching models, corrected wherever the 1962
   Missal controls and qualified wherever local direction is needed.
-- **Research as-of date:** 2026-07-22.
+- **Research as-of date:** 2026-07-23.
 
-## Three guide-family boundaries
+## Three form-family boundaries
 
-1. 01-low-mass teaches only the words a Low-Mass server must recognize,
-   pronounce, and answer. It contains no posture, movement, object, bell,
-   vesture, or sanctuary directions.
-2. 02-missa-cantata teaches the quiet minister’s answers, distinguishes them
-   from the public sung responses, and accounts for the actions of the declared
-   core MC, two acolytes, and four torchbearers; a thurifer and boat bearer on
-   the incense branch; an optional cross-bearer; and an assigned lesson singer only on that
-   alternate branch. It has explicit with-incense and without-incense tracks.
-3. 03-solemn-mass distinguishes the responses of the sacred ministers and
-   choir or people from lay-server work, and accounts for the declared MC,
-   thurifer, boat bearer, two acolytes, torchbearers, and optional
-   cross-bearer. Celebrant, deacon, and subdeacon appear only as cues or
-   handoff partners.
+### Low Mass
 
-Each form is a paired publication: a canonical full training guide and a
-mechanically composed `-cue-cards` companion linked from the same catalog row.
-The full guide owns the lesson sequence, consolidated trainer IPA key, and the
-printing, actor, branch, and safety keys; it renders no card faces. Every
-companion renders the same integrated 24-card response deck, R01–R07,
-R08A–R08C, and R09–R22. The two sung-form companions then render their own
-action-card deck. The integrated R deck is the sole current physical response
-deck; no separate cue-only or pronunciation-only deck belongs to the paired
-publication.
+The Low-Mass family now has three independently printable publications:
 
-A companion adds no teaching, pronunciation, or ceremonial claim. It inherits
-provenance from its matching full guide and must be used with that guide's
-keys.
+1. `01-low-mass`, a child booklet for the complete ordinary two-server route;
+2. `01-low-mass-trainer-manual`, a page-matched adult edition whose main lane
+   repeats the child text word-for-word and whose narrow trainer-only rail
+   remains on the left; and
+3. `01-low-mass-flash-cards`, a twenty-two-card verbal-retrieval companion.
 
-“Complete” in the two ceremonial leaves means complete for the declared model
-roster and ordinary route, not for every possible local roster or special
-function. A local trainer must map the model to the actual sanctuary before a
-server takes part.
+This is a deliberate replacement of the former response-only Low-Mass guide
+and its six-up twenty-four-card `01-low-mass-cue-cards` source design. The
+earlier installed PDFs and their exact-snapshot approval remain historical
+facts about only those bytes; they do not describe or authorize the redesigned
+sources. After the remaining physical, user, independent, rights, and
+ecclesiastical-review gates were disclosed, the maintainer expressly authorized
+installation of the redesigned trio for evaluation. That override
+changes installation state only and supplies no release authorization.
 
-## Included learning progression
+The child and trainer publications integrate the responses, pronunciation
+aids, meanings, positions, movement, objects, bells, and conditional branches
+of one declared model. The First Acolyte begins at the priest's right
+(Epistle side; picture-right in every front view), leads the common response
+pace, and handles the wine, towel, bell, optional biretta, and chalice veil.
+The Second Acolyte begins at the priest's left (Gospel side; picture-left),
+and handles the water, bowl, Missal, and Communion plate. Both acolytes give
+the ordinary verbal responses together. Second retains the Communion plate
+throughout the selected branch so the model does not depend on an unspoken
+handoff.
 
-Each full guide now begins with a one-page trainer-and-server start sheet: what
-the server is learning, a five-to-ten-minute practice routine, the shortest
-useful print selection, and the path to the assigned lesson or role. The verbal
-course moves from five essential vowel sounds through six easy-to-hard response
-groups, then consolidates those learned answers in Mass order before covered
-retrieval, shuffled recall, and delayed review. Canonical Latin, marked learner
-Latin, sound spelling, IPA, and meaning remain distinct.
+The Missal begins on the Epistle side, moves to the Gospel side after the
+final lesson, and returns to the Epistle side after the ablutions. The model
+uses the sanctuary floor for the prayers at the foot, the first step for the
+normal places, the second step for cruet and Lavabo service, and the predella
+for elevation assistance. These are teaching levels in a model sanctuary, not
+a claim that the rubrics fix every church's number, dimensions, or traffic.
 
-The ceremonial courses put standalone server role sheets and a short scene map
-before the complete chronological trainer inventory. They then add dry walking,
-empty-object handoffs, cue recognition, safe candle and incense practice,
-complete role-runs, and branch recovery. Flash cards are detachable review
-tools, not a substitute for a live pronunciation or safety check. Card faces
-use a two-column by three-row portrait grid: six cards per long-edge duplex
-sheet pair.
-Each cards-only companion begins directly with the first integrated-response
-front on physical PDF page 1, adds no setup or parity sheet, and preserves the
-six-up imposition. In the sung-form companions, the action-card range begins
-on the next odd physical page. Final production verification confirms eight
-pages for the Low-Mass companion and twelve pages for each sung companion:
-response fronts begin on pages 1, 3, 5, and 7, and sung action fronts begin on
-pages 9 and 11. The production manifest records alignment and artifact
-identity.
+### Missa Cantata
+
+`02-missa-cantata` teaches the quiet minister's answers, distinguishes them
+from the public sung responses, and accounts for the actions of the declared
+core MC, two acolytes, and four torchbearers; a thurifer and boat bearer on
+the incense branch; an optional cross-bearer; and an assigned lesson singer
+only on that alternate branch. It has explicit with-incense and
+without-incense tracks. Its six-up cards-only companion remains
+`02-missa-cantata-cue-cards`.
+
+### Solemn Mass
+
+`03-solemn-mass` distinguishes the responses of the sacred ministers and
+choir or people from lay-server work, and accounts for the declared MC,
+thurifer, boat bearer, two acolytes, torchbearers, and optional cross-bearer.
+Celebrant, deacon, and subdeacon appear only as cues or handoff partners. Its
+six-up cards-only companion remains `03-solemn-mass-cue-cards`.
+
+“Complete” means complete for the declared model roster and ordinary route,
+not for every possible local roster or special function. A local trainer must
+map each model to the actual sanctuary before a server takes part.
+
+## Included learning and presentation
+
+The Low-Mass child route is continuous and chronological. It uses the six
+literal stages `Foot/Altar`, `Readings`, `Offertory`, `Canon`, `Communion`,
+and `Ending`; consistent priest/server dialogue lanes; and nearby action
+instructions or front-facing diagrams when place, level, posture, object, or
+movement materially benefits from a spatial representation. Pronunciation and
+meaning appear only at the first occurrence of a response. The complete
+servers' *Confiteor* is taught across three full-width phrase-ladder pages.
+There is no quiz, written exercise, self-score, or mastery record.
+
+The child and trainer books use US-letter portrait pages, black ink on white
+paper, and Atkinson Hyperlegible Next 2.001. The trainer edition imports the same
+thirty-three authored page units with the same hard page boundaries. Its
+left-hand rail adds only terse preparation, correction, branch, safety, or
+source-hierarchy notes. Genuflections are stated where needed but are not
+drawn; standing and kneeling are differentiated in both words and figure
+height.
+
+The Low-Mass flash-card companion is a retrieval tool, not a condensed
+booklet. It has twenty-two physical cue-to-response pairs in Mass order on
+three long-edge duplex sheets. Each letter-size portrait face is imposed two
+columns by four rows at fixed 11.5-point body type. Fronts identify
+`NUMBER · PRIEST`; backs identify `NUMBER · BOTH`; both keep `LOW MASS` and
+the stage in the header. Cues are regular, responses bold, and bodies
+top-aligned. The cards contain no pronunciation, meaning, action, exercise,
+score, or mastery field. The long servers' *Confiteor* remains in the books.
+The last sheet has six cards and two corresponding unbordered unused
+positions.
+
+The sung-form guides retain their existing role sheets, scene maps,
+chronological inventories, rehearsals, response practice, and six-up
+integrated response plus action-card companions. Their twenty-four-card
+R response selection and action decks are not changed by the Low-Mass
+redesign.
+
+## Low-Mass model choices and branch limits
+
+The ordinary Low-Mass route uses three clear Sanctus rings, one warning ring,
+and three distinct rings at each elevation; the Missal's continuous elevation
+ring remains an alternate to be set locally. If the faithful will receive,
+First rings once after each of the priest's three *Domine non sum dignus*.
+No bell is rung there when the faithful will not receive.
+
+The Low-Mass books locate the Psalm 42 omission, multiple-lesson caution,
+faithful-Communion branch, Lenten Prayer over the People, Easter-octave
+dismissal, procession-linked *Benedicamus Domino*, and Last-Gospel omission.
+Cruet kisses are retained as a trainer detail. Rail-cloth traffic and an
+optional pax instrument are outside the core route.
 
 ## Exclusions
 
-The series does not teach the celebrant’s ceremonial, sacred-minister offices,
-chant notation, a full English Order of Mass, Dialogue-Mass degrees, or current
-canonical permission to use the 1962 books. It does not cover the Asperges,
-Candlemas, Ash Wednesday, Palm Sunday, Holy Week, Rogation processions,
-Nuptial Mass, Requiem and funeral rites,
-pontifical functions, Benediction, Mass before the Blessed Sacrament exposed,
-or Communion outside Mass.
+The series does not teach the celebrant's complete ceremonial,
+sacred-minister offices as server jobs, chant notation, a full English Order
+of Mass, Dialogue-Mass degrees, or current canonical permission to use the
+1962 books. It does not cover the Asperges, Candlemas, Ash Wednesday, Palm
+Sunday, Holy Week, Rogation processions, Nuptial Mass, Requiem and funeral
+rites, pontifical functions, Benediction, Mass before the Blessed Sacrament
+exposed, or Communion outside Mass.
 
 The Leonine prayers are outside the Mass and excluded. The printed 1962
 Communion rite proceeds directly to *Ecce Agnus Dei* and contains no second
 *Confiteor*, *Misereatur*, or *Indulgentiam*; the series does not insert those
-older elements.
+older elements. There is no server response to the priest's or communicants'
+*Domine non sum dignus*.
 
 ## Authority and pastoral boundary
 
 These are study and rehearsal aids, not official liturgical books, parish
 directives, certificates of competence, or statements of present
 authorization. The priest and master of ceremonies retain responsibility for
-the actual function. A server must receive hands-on instruction before handling
-fire, hot charcoal, the Communion plate, vessels, or unfamiliar sanctuary
-steps.
+the actual function. A server must receive hands-on instruction before
+handling fire, hot charcoal, the Communion plate, sacred vessels, or
+unfamiliar sanctuary steps.
 
 ## Rights and review state
 
-Project-created prose, layouts, drills, respellings, IPA, and glosses fall
-within the repository’s project-license boundary. The Latin liturgical text,
-official rubrics, chant, scans, fonts, and third-party manuals retain their own
-status. Availability of a scan is not permission to redistribute it. The
-guides quote only the Latin required for response training, paraphrase
-pronunciation and ceremonial sources, and reproduce no third-party diagram or
-extended manual prose.
+Project-created prose, layouts, drills, diagrams, respellings, IPA, and
+glosses fall within the repository's project-license boundary. Latin
+liturgical text, official rubrics, chant, scans, fonts, and third-party
+manuals retain their own status. Availability of a scan is not permission to
+redistribute it. The guides quote only the Latin needed for response training,
+paraphrase pronunciation and ceremonial sources, and reproduce no third-party
+diagram or extended manual prose. Atkinson Hyperlegible Next remains an
+external font. Current upstream records identify SIL Open Font License 1.1,
+while the installed 2.001 font metadata retains separate no-derivatives
+wording. The PDFs embed subsetted font programs; that technical observation
+does not bring the font program under the project content license, reconcile
+the documentary difference, or characterize subsetting as a permitted
+alteration.
 
-As of 2026-07-22, source, response, pronunciation, and ceremonial claims retain
-their completed internal audit. The paired-publication split, integrated R
-deck, consolidated trainer IPA key, and cards-only composition contract are
-represented in the tracked source. Renewed production verification completed
-the final page, parity, alignment, visual, extraction, and installed-identity
-checks recorded in the production manifest.
+The response, pronunciation, and sung-form ceremonial records retain their
+completed internal audits. The redesigned Low-Mass text and route have been
+reconciled internally with the response bank and the new LM-001--LM-043
+ceremonial inventory. Its source-built exact identities, technical font and
+text checks, and every-page screen review are recorded in the production
+manifest, which also records the exact installed identities. Actual-size card
+legibility, physical duplex and photocopy review, and exact-snapshot release
+state remain pending and must not be inferred from installation.
+
 Independent liturgical, ceremonial, Latin-pronunciation, pedagogical, rights,
-and ecclesiastical review remain outstanding. Installation of a reviewed PDF
-does not remove those limits or itself authorize public distribution. The
-separate 23 July 2026 exact-byte exception now release-clears only the six
-immutable installed PDF hashes recorded in the production manifest; it
-supplies none of the missing review or rights analysis and does not make the
-guides official liturgical books, parish directives, or evidence of present
-authorization to use the 1962 books.
+and ecclesiastical review remain outstanding. The 23 July 2026 exact-byte
+exception remains a historical release decision for the six immutable PDFs
+and hashes it named. It supplies none of those missing reviews. The redesigned
+Low-Mass trio has received a separate installed-evaluation decision, but each
+snapshot still requires its own release decision.

@@ -1,13 +1,17 @@
 # Public Release Boundary
 
-The current release manifest accounts for 111 installed publications: all 111
-are marked `release`, none is in `review`, and none is on `hold`. The 23 July
-2026 bare-`approve` supplement in
-`rights/public-alpha-2026-07-15.md` binds all 111 exact current PDF snapshots
-and all 23 exact current recognized reader-site inputs under record
-`perpetual-public-repository-2026`. It is perpetual, worldwide, has no
-expiration, and retains the sole `no-project-initiated-promotion` condition.
-Changed PDF, rights-record, or site-input bytes require renewed authorization.
+The current release manifest accounts for 112 installed publications: 109 are
+marked `release`, none is in `review`, and the redesigned Low Mass child
+booklet, trainer manual, and flash cards are on `hold` as installed evaluation
+snapshots. The 23 July 2026 bare-`approve` supplement in
+`rights/public-alpha-2026-07-15.md` historically binds the 111 exact PDF
+snapshots and 23 exact reader-site inputs then current under record
+`perpetual-public-repository-2026`. Its exact approvals remain the basis for
+the 109 unchanged release entries, but its former Low Mass guide and cue-card
+hashes do not authorize the changed child booklet or the new trainer-manual
+and flash-card identities. Changed PDF, rights-record, or site-input bytes
+require renewed authorization, so public build and verification remain
+fail-closed for the current inventory.
 
 Immediately before that supplement, the manifest recorded 63 `release` and 48
 `hold` items. The 48 were the 37 redesigned Ecclesiastical Latin PDFs, five
@@ -50,8 +54,11 @@ constitute independent philosophical, theological, biblical, canonical,
 pastoral, clinical, or ecclesiastical review, and no imprimatur, nihil obstat,
 or ecclesiastical approval is claimed.
 
-The three altar-server guides and their three cue-card companions are likewise
-release-cleared only for their exact current bytes. Work-specific rights
+The unchanged Missa Cantata and Solemn Mass guides and their cue-card
+companions remain release-cleared only for their exact current bytes. The
+redesigned Low Mass child booklet, trainer manual, and flash cards are
+installed evaluation snapshots on `hold`; the 23 July exception binds only
+the superseded Low Mass guide and cue-card hashes. Work-specific rights
 review, a recorded independent distribution basis for received liturgical
 text, and independent liturgical, ceremonial, Ecclesiastical Latin
 pronunciation, age-appropriate pedagogical, and ecclesiastical review remain
@@ -99,7 +106,7 @@ and is not an ecclesiastical interpretation, dispensation, canonical opinion,
 imprimatur, nihil obstat, or approval of the secret or this publication. It
 does not supply independent rights, canonical, specialist, liturgical, or
 ecclesiastical review. Apparition and cult approvals remain object-limited and
-do not approve this publication. The manifest retains this PDF among the 111
+do not approve this publication. The manifest retains this PDF among the 109
 `release` items and binds its exact current hash.
 
 For every fully authorized snapshot the generator will:
@@ -183,12 +190,15 @@ any of them. See the rights record and each publication's linked research
 records for the complete boundaries.
 
 Only when all snapshot, rights-record, and site-source bindings verify may the
-GitHub Pages workflow build and verify `build/public-alpha/site`. The current
-authorization binds the current 111-PDF set and its 23 recognized reader-site
-inputs. The original `commit` term authorized exact initial release-control
-commit `6bb9d6a9aceded73e747a2e98a32ed31ab676344`, whose sole parent is the
-audited preapproval tip `e1715d98601147122eff8a8845a3274b775fec55`. After
-that commit was integrated locally but before any push, the false terminal
+GitHub Pages workflow build and verify `build/public-alpha/site`. The 23 July
+authorization historically binds the then-current 111-PDF set and its 23
+recognized reader-site inputs, not the present 112-PDF inventory or changed
+reader-site bytes. Public build and verification must therefore fail closed
+until a new exact binding is recorded. The original `commit` term authorized
+exact initial release-control commit
+`6bb9d6a9aceded73e747a2e98a32ed31ab676344`, whose sole parent is the audited
+preapproval tip `e1715d98601147122eff8a8845a3274b775fec55`. After that commit
+was integrated locally but before any push, the false terminal
 period in the recorded exact instruction was caught. The maintainer's exact
 `authorize` reply supplies fresh authority for exactly one follow-up
 corrective commit whose sole parent is
@@ -224,7 +234,7 @@ python scripts/public-alpha verify --deployment-target github-pages
 `prepare-public-alpha` is read-only and deliberately works when old snapshot
 hashes are stale or the old source-binding list lacks newly recognized inputs.
 It validates the exhaustive publication and current artifact-input scope, then
-reports the hashes of the 111 currently installed publication PDFs and all 23
+reports the hashes of the 112 currently installed publication PDFs and all 23
 current Markdown, layout, style, license, generator, and dependency-lock inputs
 as a deterministic candidate inventory. The inventory explicitly confers no
 approval, changes no

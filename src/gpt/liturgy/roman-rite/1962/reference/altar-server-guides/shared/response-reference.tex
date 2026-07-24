@@ -2,6 +2,12 @@
 % This file is content: input it after \begin{document}.  It relies on the
 % commands and packages supplied by shared/server-guide-format.tex.
 
+% The redesigned Low-Mass child booklet, trainer manual, and flash cards need
+% the audited response bank without the legacy lesson or six-up card rendering.
+% Turning on this switch makes the existing cards-only guards suppress the
+% lesson material; the final guard below also suppresses the legacy deck.
+\ifResponseDataOnlyGuide\CardsOnlyGuidetrue\fi
+
 \newcommand{\ServerStress}[1]{\textbf{\MakeUppercase{#1}}}
 \newcommand{\ServerLearnerLine}[1]{{\sffamily #1}}
 \newcommand{\ServerAnswerRef}[1]{\textbf{#1}}
@@ -954,7 +960,7 @@ the learner.
 The detachable cards are now kept in the matching cards-only companion, so
 this training guide stays short and easy to navigate. Open
 \GuideVoiceChoice
-{\emph{Low Mass Cue Cards}}
+{\emph{Low Mass Flash Cards}}
 {\emph{Missa Cantata Cue Cards}}
 {\emph{Solemn Mass Cue Cards}}
 from the same catalog row as this guide.
@@ -965,10 +971,11 @@ with \textbf{long-edge binding}. Keep each front/back pair in order. Every
 back sheet reverses each row left-to-right so it aligns after the long-edge
 turn. Cut on the box borders.
 
-The integrated response deck is on physical pages 1--8.
 \ifLowMassGuide
-Print all eight pages.
+The twenty-two-card response deck is on physical pages 1--6. Print all six
+pages.
 \else
+The integrated response deck is on physical pages 1--8.
 The action deck is on physical pages 9--12. Print all twelve pages for both
 decks, or print either complete range by itself. Both ranges begin on odd
 pages.
@@ -998,12 +1005,17 @@ also practise the complete final sentence or verse from that day's Missal;
 never replace it with only the last few words.
 \end{watchbox}
 
+\ifLowMassGuide
+\noindent\textbf{Deck order.} The 22 flash cards follow Mass order. Each back
+contains only the complete canonical response in bold; pronunciation and
+meaning remain in the page-matched books.
+\else
 \noindent\textbf{Deck order.} The 24 integrated response cards follow the six
 lesson groups. Each back joins the canonical response, marked Latin chunks,
 plain-language sound line, and short meaning. Broad IPA remains in this guide's
 trainer key.
-\ifLowMassGuide\else The twelve action cards follow and rehearse the assigned
-route.\fi
+The twelve action cards follow and rehearse the assigned route.
+\fi
 
 {\small\noindent\textbf{Text basis.} Latin was collated from the 1962
 \emph{Missale Romanum}, \emph{Ritus servandus} III--VII and X--XIII and
@@ -1012,6 +1024,7 @@ route.\fi
 glosses, staging, and card design are teaching aids.\par}
 \fi
 \ifCardsOnlyGuide
+\ifResponseDataOnlyGuide\else
 
 % The cards-only companions begin directly with the first front. The shared
 % physical-shipout check keeps that front odd if a future wrapper is added.
@@ -1327,4 +1340,5 @@ glosses, staging, and card design are teaching aids.\par}
 \label{cards:response-last}
 
 \ifLowMassGuide\CardCompanionEndHook\fi
+\fi
 \fi

@@ -1,70 +1,90 @@
-# Guide map: Low Mass responses
+# Guide map: Serving Low Mass child booklet
 
-- Stable guide ID: liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass
-- Form: Low Mass according to the 1962 Roman Missal
-- Reader: altar server, approximately ages eight to fourteen
-- Boundary: verbal cues, canonical Latin replies, Roman-style pronunciation,
-  meanings, memory work, and the linked response-card companion only
-- Imported authoritative response selection: A1--A22 from
-  `shared/response-reference.tex`
-- Paired companion selection: R01--R07, R08A--R08C, and R09--R22, ordered by
-  the six lesson groups; the full guide owns the card key and catalog pointer
-  but renders no card faces
-- Ceremonial selection: none
+- Stable publication ID:
+  `liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass`
+- Form: ordinary two-server Low Mass according to the 1962 Roman Missal
+- Primary reader: a child approximately eight to ten years old, using the
+  booklet with a trainer
+- Model roles: First Acolyte and Second Acolyte
+- Imported verbal owner: A1--A22 from `shared/response-reference.tex`
+- Imported ceremonial owner: LM-001--LM-043 as rendered from
+  `shared/low-mass-ceremony.tex` and audited in the owner ceremonial inventory
+- Page-matched trainer:
+  `liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual`
+- Detachable response deck:
+  `liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards`
 
 ## Reader order
 
-1. Title, contents, the words-only training boundary, and a one-page start
-   sheet for the trainer and server. The start sheet gives a ten-minute
-   practice routine, six-lesson road map, and print menu.
-2. Compact Roman-pronunciation and practice key.
-3. Six easy-to-hard lessons: three anchors; Gospel and Preface; short opening
-   answers; the psalm chain; the long answers; and Kyrie and endings.
-4. Mass-order consolidation using the actor and voice distinction, cue maps,
-   A1--A22 response bank, and the locally placed opening and ending branches.
-5. Cumulative covered recall, shuffled-cue assessment, recovery practice, and
-   compact quick reference.
-6. A compact printing and actor key that points to the paired downloads in the
-   same catalog row. No card faces are embedded in this guide.
-7. Scope, edition, qualifications, references, and generation metadata.
+1. Page 1: title and immediate use boundary.
+2. Page 2: role and one-page-at-a-time practice key.
+3. Page 3: front-facing model-sanctuary key with a first step, second step,
+   and predella; the opening Missal is on the Epistle side.
+4. Pages 4--13, `Foot/Altar`: arrive and kneel before beginning the prayers;
+   Psalm 42; the priest's and servers' Confiteors; absolution prayers; and the
+   final foot-prayer versicles.
+5. Pages 14--19, `Readings`: move to the normal places; Kyrie; Collect and
+   Epistle; move the Missal; answer at the Gospel; then the sermon and Creed
+   states.
+6. Pages 20--22, `Offertory`: greeting and cruets; Lavabo and bell pickup;
+   then the complete *Orate, fratres* cue and *Suscipiat* response.
+7. Pages 23--25, `Canon`: Preface dialogue, bell plan, and elevations.
+8. Pages 26--29, `Communion`: responses, faithful-Communion branch,
+   ablutions, and the Missal-and-veil return.
+9. Pages 30--32, `Ending`: Postcommunion and dismissal, blessing and Last
+   Gospel, then the final route and recessional.
+10. Page 33: six-stage quick route, scope and sources, and generation
+    provenance.
 
-## Verbal branches
+Numbered priest-to-server dialogue lanes stay in chronological order.
+Pronunciation and meaning appear only when a response first occurs; repeats
+retain the complete cue and canonical response without duplicating the aids.
+Pages 9--11 give the servers' complete Confiteor a three-page, full-width
+phrase ladder. Original front-view sanctuary diagrams appear only where
+positions, step levels, objects, or role traffic materially change.
 
-The ordinary opening and the branch that omits Psalm 42 are both located.
-Dismissal alternatives cover Ite, missa est, the Easter-octave addition,
-and Benedicamus Domino when prescribed. A9 also answers
-the Prayer over the People when appointed. When Benedicamus announces a
-following liturgical procession, there is no blessing and no Last Gospel.
-The Last-Gospel A13/A16/A15 sequence is spoken by the server only when that
-Gospel is said; it is omitted at the third Mass of Christmas. Special rites
-and Dialogue-Mass expansions are not taught.
+## Declared two-server model
 
-The paired companion has twenty-four integrated response cards, one for each
-stable A-bank response or A8 study chunk. R01--R07, R08A--R08C, and R09--R22
-combine cue recall, canonical answer, learner syllables and stress, sound line,
-and meaning on one front/back pair. Response cards follow the six lesson groups
-rather than numerical order and carry a `LOW` form marker with the visible ID.
-Every front gives the complete formula or verse selected for practice; a
-variable-reading example is complete, facsimile checked, and labeled as an
-example rather than a universal proper ending.
+First begins on the priest's right, the Epistle side and picture-right in the
+front-view diagrams. First leads the shared response pace and owns the bell,
+wine, towel, and chalice veil. Second begins on the priest's left, the Gospel
+side and picture-left; Second owns the Missal, water, bowl, and Communion
+plate. Both acolytes give every ordinary core verbal response together. The
+Communion diagram names its deliberate orientation exception: when the priest
+faces the nave, his right appears picture-left.
 
-The full guide's key states the Low-Mass speaker and mode rule, printing setup,
-and catalog pointer. The guide has no embedded card range. The companion begins
-with its first response front on physical page 1 and contains four six-up,
-long-edge duplex sheet pairs. The final full guide is fifteen physical pages;
-the companion is eight. Completed production review confirmed the companion's
-odd-page starts, mirrored three-row order, cut-border alignment, legibility,
-and installed identity.
+The Missal begins on the Epistle side, moves to the Gospel side after the final
+lesson or Epistle, and returns straight to the Epistle side after the
+ablutions. The model uses the sanctuary floor for the prayers at the foot,
+the first step for ordinary kneeling places, the second step for cruet and
+Lavabo service, and the predella for the elevation assistance.
 
-## Mastery evidence
+Required reverences are named in the words but genuflection is not pictured.
+The tested prototype did not distinguish that pose reliably from standing or
+kneeling. Stable kneeling figures instead show both knees, tucked feet, and a
+markedly lower head position.
 
-A learner advances from echo and covered recall to two shuffled, delayed
-cue rounds without seeing the reply. On a missed cue, the learner asks for it
-again; after a second miss the trainer supplies the bank ID and returns that
-cue after three unrelated cards. Pronunciation requires a competent human
-listener. The leaf contains no instruction for posture, gesture, position,
-movement, vesture, books, bells, vessels, flames, or other ceremonial work.
+## Branch boundary
 
-Series-wide source, response, pronunciation, card, rights, and production
-records are owned by the non-publishable altar-server-guides research
-directory.
+The booklet locates the Psalm 42 omission, multiple-lesson caution, faithful-
+Communion branch, Lenten Prayer over the People, Easter-octave dismissal,
+procession-linked `Benedicamus Domino`, and Last-Gospel omission. It corrects
+the older training-manual route by adding no second Communion Confiteor and
+no response to the priest's or faithful's `Domine non sum dignus`.
+
+Rail-cloth traffic, the optional pax instrument, special rites, Requiem Mass,
+and the Leonine prayers are outside the ordinary core. Local doorway,
+reverence, furniture, and precise lane choices must be fixed in the actual
+sanctuary before rehearsal.
+
+## Presentation boundary
+
+The child pages contain no trainer-only source discussion, IPA, assessment,
+mastery record, or written exercise. Atkinson Hyperlegible Next 2.001 supplies
+distinct capital forms; pages are monochrome US letter. No progression table
+compresses the order. Dialogue, action, and diagram blocks use stable
+placement and consistent type sizes.
+
+Series-wide source, response, pronunciation, presentation, ceremonial,
+flash-card, rights, and production records are owned by the non-publishable
+altar-server-guides research directory.

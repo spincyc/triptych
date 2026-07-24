@@ -1,0 +1,344 @@
+% Shared page and teaching format for the Low-Mass child booklet and its
+% page-matched trainer manual. Both publications import the same ceremonial
+% sequence; only the trainer's narrow left rail and type scale differ.
+
+\usepackage[sfdefault]{atkinson}
+\usepackage{ragged2e}
+\geometry{letterpaper,margin=0.62in}
+\setlength{\RaggedRightRightskip}{0pt plus 1fil}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\fboxsep}{8pt}
+\setlength{\fboxrule}{0.8pt}
+\setlength{\emergencystretch}{2em}
+\hyphenpenalty=8000
+\exhyphenpenalty=10000
+
+\newcommand{\LMStageHeader}[2]{%
+  \noindent\makebox[\textwidth][s]{%
+    \fontsize{8.5}{10}\selectfont\bfseries
+    SERVING LOW MASS \textperiodcentered\ FIRST AND SECOND ACOLYTE
+    \hfill #1}%
+  \par
+  \vspace{3pt}\hrule height 1.2pt
+  \vspace{8pt}
+  {\fontsize{23}{25}\selectfont\bfseries #2\par}}
+
+\newcommand{\LMTrainerRailTitle}{%
+  {\fontsize{7.8}{9.3}\selectfont\bfseries
+    MATCHES CHILD PAGE \thepage\par}
+  \vspace{2pt}
+  {\fontsize{14}{16}\selectfont\bfseries TRAINER\par}
+  \vspace{5pt}\hrule height 1pt
+  \vspace{7pt}}
+
+\newcommand{\LMTrainerNote}[2]{%
+  {\fontsize{8.5}{10}\selectfont\bfseries\MakeUppercase{#1}\par}
+  \vspace{2pt}
+  {\fontsize{9.6}{12}\selectfont\RaggedRight #2\par}
+  \vspace{9pt}}
+
+\newcommand{\BeginLMPage}[3]{%
+  \clearpage
+  \LMStageHeader{#1}{#2}
+  \vspace{6pt}
+  \ifTrainerManualGuide
+    \noindent
+    \begin{minipage}[t]{0.205\textwidth}
+      \vspace{0pt}
+      \LMTrainerRailTitle
+      #3
+    \end{minipage}
+    \hfill
+    \vrule width 0.7pt
+    \hfill
+    \begin{minipage}[t]{0.745\textwidth}
+      \vspace{0pt}
+  \fi}
+
+\newcommand{\EndLMPage}{%
+  \ifTrainerManualGuide
+    \end{minipage}
+  \fi
+  \par}
+
+\newcommand{\LMPageIntro}[1]{%
+  \ifTrainerManualGuide
+    {\fontsize{12}{15}\selectfont\RaggedRight #1\par}
+  \else
+    {\fontsize{12}{15}\selectfont\RaggedRight #1\par}
+  \fi
+  \vspace{8pt}}
+
+\newcommand{\LMLaneLabel}[1]{%
+  {\fontsize{9}{10.8}\selectfont\bfseries\MakeUppercase{#1}\par}}
+
+\newcommand{\LMLaneHeadings}{%
+  \noindent
+  \begin{minipage}[t]{0.47\linewidth}
+    \LMLaneLabel{Trainer / Priest}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.455\linewidth}
+    \LMLaneLabel{Server}
+  \end{minipage}
+  \vspace{3pt}\hrule height 1pt}
+
+\newcommand{\LMDialogueFirst}[3]{%
+  \ifTrainerManualGuide
+    \vspace{7pt}
+    \noindent
+    \begin{minipage}[t]{0.065\linewidth}
+      {\fontsize{12.5}{14}\selectfont\bfseries #1\par}
+    \end{minipage}%
+    \begin{minipage}[t]{0.39\linewidth}
+      \LMLaneLabel{Priest}
+      \vspace{4pt}
+      {\fontsize{12}{15}\selectfont\RaggedRight #2\par}
+    \end{minipage}%
+    \hfill\vrule width 0.6pt\hfill
+    \begin{minipage}[t]{0.46\linewidth}
+      \LMLaneLabel{Both}
+      \vspace{4pt}
+      {\fontsize{13}{16}\selectfont\bfseries\RaggedRight
+        \ServerLatinData{#3}\par}
+      \vspace{6pt}
+      {\fontsize{9}{10.8}\selectfont\bfseries SAY IT\par}
+      \vspace{2pt}
+      {\fontsize{12}{14.5}\selectfont\RaggedRight
+        \ServerSoundData{#3}\par}
+      \vspace{5pt}
+      {\fontsize{9}{10.8}\selectfont\bfseries MEANING\par}
+      \vspace{2pt}
+      {\fontsize{12}{14.5}\selectfont\RaggedRight
+        \ServerMeaningData{#3}\par}
+    \end{minipage}
+    \par\vspace{8pt}\hrule height 0.5pt
+  \else
+    \vspace{9pt}
+    \noindent
+    \begin{minipage}[t]{0.065\linewidth}
+      {\fontsize{16}{18}\selectfont\bfseries #1\par}
+    \end{minipage}%
+    \begin{minipage}[t]{0.405\linewidth}
+      \LMLaneLabel{Priest}
+      \vspace{5pt}
+      {\fontsize{13}{16}\selectfont\RaggedRight #2\par}
+    \end{minipage}%
+    \hfill\vrule width 0.65pt\hfill
+    \begin{minipage}[t]{0.455\linewidth}
+      \LMLaneLabel{Both}
+      \vspace{5pt}
+      {\fontsize{14.5}{17.5}\selectfont\bfseries\RaggedRight
+        \ServerLatinData{#3}\par}
+      \vspace{8pt}
+      {\fontsize{9}{10.8}\selectfont\bfseries SAY IT\par}
+      \vspace{2pt}
+      {\fontsize{12}{14.5}\selectfont\RaggedRight
+        \ServerSoundData{#3}\par}
+      \vspace{7pt}
+      {\fontsize{9}{10.8}\selectfont\bfseries MEANING\par}
+      \vspace{2pt}
+      {\fontsize{12}{14.5}\selectfont\RaggedRight
+        \ServerMeaningData{#3}\par}
+    \end{minipage}
+    \par\vspace{11pt}\hrule height 0.55pt
+  \fi}
+
+\newcommand{\LMDialogueRepeat}[3]{%
+  \ifTrainerManualGuide
+    \vspace{7pt}
+    \noindent
+    \begin{minipage}[t]{0.065\linewidth}
+      \LMRepeatTag{#1}
+    \end{minipage}%
+    \begin{minipage}[t]{0.39\linewidth}
+      \LMLaneLabel{Priest}
+      \vspace{4pt}
+      {\fontsize{12}{15}\selectfont\RaggedRight #2\par}
+    \end{minipage}%
+    \hfill\vrule width 0.6pt\hfill
+    \begin{minipage}[t]{0.46\linewidth}
+      \LMLaneLabel{Both}
+      \vspace{4pt}
+      {\fontsize{13}{16}\selectfont\bfseries\RaggedRight
+        \ServerLatinData{#3}\par}
+    \end{minipage}
+    \par\vspace{8pt}\hrule height 0.5pt
+  \else
+    \vspace{9pt}
+    \noindent
+    \begin{minipage}[t]{0.065\linewidth}
+      \LMRepeatTag{#1}
+    \end{minipage}%
+    \begin{minipage}[t]{0.405\linewidth}
+      \LMLaneLabel{Priest}
+      \vspace{5pt}
+      {\fontsize{13}{16}\selectfont\RaggedRight #2\par}
+    \end{minipage}%
+    \hfill\vrule width 0.65pt\hfill
+    \begin{minipage}[t]{0.455\linewidth}
+      \LMLaneLabel{Both}
+      \vspace{5pt}
+      {\fontsize{14.5}{17.5}\selectfont\bfseries\RaggedRight
+        \ServerLatinData{#3}\par}
+    \end{minipage}
+    \par\vspace{11pt}\hrule height 0.55pt
+  \fi}
+
+\newcommand{\LMDialogueLiteral}[4]{%
+  \ifTrainerManualGuide
+    \vspace{7pt}
+    \noindent
+    \begin{minipage}[t]{0.065\linewidth}
+      {\fontsize{12.5}{14}\selectfont\bfseries #1\par}
+    \end{minipage}%
+    \begin{minipage}[t]{0.39\linewidth}
+      \LMLaneLabel{#2}
+      \vspace{4pt}
+      {\fontsize{12}{15}\selectfont\RaggedRight #3\par}
+    \end{minipage}%
+    \hfill\vrule width 0.6pt\hfill
+    \begin{minipage}[t]{0.46\linewidth}
+      \LMLaneLabel{Both}
+      \vspace{4pt}
+      {\fontsize{13}{16}\selectfont\bfseries\RaggedRight #4\par}
+    \end{minipage}
+    \par\vspace{8pt}\hrule height 0.5pt
+  \else
+    \vspace{9pt}
+    \noindent
+    \begin{minipage}[t]{0.065\linewidth}
+      {\fontsize{16}{18}\selectfont\bfseries #1\par}
+    \end{minipage}%
+    \begin{minipage}[t]{0.405\linewidth}
+      \LMLaneLabel{#2}
+      \vspace{5pt}
+      {\fontsize{13}{16}\selectfont\RaggedRight #3\par}
+    \end{minipage}%
+    \hfill\vrule width 0.65pt\hfill
+    \begin{minipage}[t]{0.455\linewidth}
+      \LMLaneLabel{Both}
+      \vspace{5pt}
+      {\fontsize{14.5}{17.5}\selectfont\bfseries\RaggedRight #4\par}
+    \end{minipage}
+    \par\vspace{11pt}\hrule height 0.55pt
+  \fi}
+
+\newcommand{\LMAction}[4]{%
+  \vspace{8pt}
+  \noindent
+  \begin{minipage}[t]{0.07\linewidth}
+    \ifTrainerManualGuide
+      {\fontsize{12.5}{14}\selectfont\bfseries #1\par}
+    \else
+      {\fontsize{16}{18}\selectfont\bfseries #1\par}
+    \fi
+  \end{minipage}%
+  \hspace{0.8em}\vrule width 0.8pt\hspace{0.8em}%
+  \begin{minipage}[t]{\dimexpr0.89\linewidth-1.6em-0.8pt\relax}
+    \ifTrainerManualGuide
+      {\fontsize{9}{10.8}\selectfont\bfseries\MakeUppercase{#2}\par}
+      \vspace{2pt}
+      {\fontsize{12.5}{15}\selectfont\bfseries\RaggedRight #3\par}
+      \vspace{3pt}
+      {\fontsize{12}{15}\selectfont\RaggedRight #4\par}
+    \else
+      {\fontsize{9}{10.8}\selectfont\bfseries\MakeUppercase{#2}\par}
+      \vspace{2pt}
+      {\fontsize{14}{16.8}\selectfont\bfseries\RaggedRight #3\par}
+      \vspace{4pt}
+      {\fontsize{12}{15}\selectfont\RaggedRight #4\par}
+    \fi
+  \end{minipage}
+  \par\vspace{7pt}\hrule height 0.45pt}
+
+\newcommand{\LMBranch}[2]{%
+  \vspace{8pt}
+  \noindent\hrule height 0.8pt
+  \vspace{5pt}
+  {\fontsize{9}{10.8}\selectfont\bfseries\MakeUppercase{#1}\par}
+  \vspace{3pt}
+  \ifTrainerManualGuide
+    {\fontsize{12}{15}\selectfont\RaggedRight #2\par}
+  \else
+    {\fontsize{12}{15}\selectfont\RaggedRight #2\par}
+  \fi
+  \vspace{5pt}\hrule height 0.8pt}
+
+\newcommand{\LMPhraseBlock}[5]{%
+  \vspace{8pt}
+  {\fontsize{9}{10.8}\selectfont\bfseries #1 \textperiodcentered\ #2\par}
+  \vspace{4pt}
+  \ifTrainerManualGuide
+    {\fontsize{12.5}{15}\selectfont\bfseries\RaggedRight #3\par}
+    \vspace{5pt}
+    {\fontsize{9}{10.8}\selectfont\bfseries SAY IT\par}
+    {\fontsize{12}{14.5}\selectfont\RaggedRight #4\par}
+    \vspace{4pt}
+    {\fontsize{9}{10.8}\selectfont\bfseries MEANING\par}
+    {\fontsize{12}{14.5}\selectfont\RaggedRight #5\par}
+  \else
+    {\fontsize{13}{16}\selectfont\bfseries\RaggedRight #3\par}
+    \vspace{6pt}
+    {\fontsize{9}{10.8}\selectfont\bfseries SAY IT\par}
+    {\fontsize{12}{14.5}\selectfont\RaggedRight #4\par}
+    \vspace{5pt}
+    {\fontsize{9}{10.8}\selectfont\bfseries MEANING\par}
+    {\fontsize{12}{14.5}\selectfont\RaggedRight #5\par}
+  \fi
+  \vspace{8pt}\hrule height 0.5pt}
+
+\newcommand{\LMReadingKey}{%
+  \vfill
+  {\fontsize{12}{15}\selectfont
+    \textbf{Reading key:} capital letters in the sound line mark the stressed
+    syllable. Say every syllable; the sound line and meaning are practice
+    helps, never words added at Mass.\par}}
+
+\newcommand{\LMTitlePage}{%
+  \begin{titlepage}
+    \thispagestyle{empty}
+    \centering
+    \vspace*{0.09\textheight}
+    {\fontsize{14}{17}\selectfont\bfseries SERVING THE 1962 ROMAN MISSAL\par}
+    \vspace{14pt}
+    {\fontsize{32}{35}\selectfont\bfseries LOW MASS\par}
+    \vspace{8pt}
+    \ifTrainerManualGuide
+      {\fontsize{22}{25}\selectfont\bfseries TRAINER MANUAL\par}
+      \vspace{12pt}
+      {\fontsize{14}{18}\selectfont A page-matched guide to the child booklet\par}
+    \else
+      {\fontsize{22}{25}\selectfont\bfseries CHILD BOOKLET\par}
+      \vspace{12pt}
+      {\fontsize{14}{18}\selectfont First Acolyte and Second Acolyte\par}
+    \fi
+    \vfill
+    {\fontsize{12}{15}\selectfont\bfseries
+      Hear the cue. Say the response. Make the movement.\par}
+    \vspace{12pt}
+    {\fontsize{9.5}{12}\selectfont
+      A black-and-white training aid for two young servers.\par}
+    \vfill
+    {\fontsize{8.5}{10.5}\selectfont
+      Follow the priest and the customs taught for your church. This is not an
+      official liturgical book.\par}
+  \end{titlepage}
+  \setcounter{page}{2}}
+
+\newcommand{\LMRepeatTag}[1]{%
+  \begingroup
+  \def\LMRepeatTagParts##1 AGAIN\LMRepeatTagStop{%
+    \ifTrainerManualGuide
+      {\fontsize{12.5}{14}\selectfont\bfseries ##1\par}
+      \vspace{1pt}
+      {\fontsize{7.6}{9.2}\selectfont\bfseries AGAIN\par}
+    \else
+      {\fontsize{16}{18}\selectfont\bfseries ##1\par}
+      \vspace{1pt}
+      {\fontsize{9}{10.8}\selectfont\bfseries AGAIN\par}
+    \fi}%
+  \expandafter\LMRepeatTagParts#1\LMRepeatTagStop
+  \endgroup}

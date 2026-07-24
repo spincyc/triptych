@@ -6,18 +6,23 @@ This is the owner-level audit of the verbal bank rendered from
 `shared/response-reference.tex`. It does not supply a second editable render
 source. The Latin and sequence were checked there against the 1962 *Missale
 Romanum*; the loci below were also reconciled with the repository Ordinary's
-sequence inventory and source matrix. Research is current to 2026-07-22.
+sequence inventory and source matrix. Research is current to 2026-07-23.
 
 The form abbreviations are **L** (Low Mass), **C** (*Missa cantata*), and **S**
 (Solemn Mass). “Choir/public” means the voices appointed to sing at that
 celebration, not an instruction that every server sing. The ordinary voice
 plans are:
 
-- at L, the server normally gives the audible spoken replies;
+- at L, the server office gives the audible spoken replies; in the selected
+  two-server model First and Second give every ordinary core reply together;
 - at C, server(s) give the quiet altar dialogue and the appointed choir or
   congregation gives the outward sung replies; and
 - at S, the sacred ministers give the quiet ministerial replies and the
   appointed choir or congregation gives the outward sung replies.
+
+Accordingly, the table's compact phrase “L server” names the server office,
+not one acolyte acting alone. The Low-Mass child booklet, trainer manual, and
+flash-card backs render that office as **Both**.
 
 The entries distinguish six layers. **T** is the facsimile-checked received
 answer. **N** is displayed canonical Latin: printed accent marks are not
@@ -27,6 +32,11 @@ line, **I** is editorial broad IPA, and **M** is a project-written meaning.
 Only T/N is liturgical text. L/R/I/M are teaching aids and are never said at
 Mass. Full L/R/I fields and their rule audit are in
 `pronunciation-audit.md`.
+
+The last column preserves the six-lesson and R-card uses still rendered by the
+two sung-form publications. It also records historical shared-data lineage; it
+does not define the redesigned Low-Mass physical deck. The Low-Mass 01--22
+projection is audited in its own table below.
 
 ## Cue, answer, speaker, form, and locus
 
@@ -88,48 +98,78 @@ and is never substituted for the Latin.
 
 ## Render and learning reconciliation
 
-All three training guides import the same owner source. It renders the
-form-specific sequence maps, compact pronunciation key, A1–A22 six-lesson
-course, role-sensitive speaking/listening jobs, covered and shuffled drills,
-and a consolidated trainer IPA key. The training guides own the card printing
-and actor key and point to the paired catalog row, but they embed no card faces.
+### Low-Mass child and trainer books
 
-Each cards-only companion imports the exact matching integrated response faces
-from that source without duplicating teaching data. The physical response deck
-contains R01–R07, the three A8 study chunks R08A–R08C, and R09–R22: 24 cards
-mapped to exactly 22 response IDs. The order follows the six lesson groups:
-R09/R13/R15; R16/R17/R19–R21; R01/R06/R10–R12; R02–R05;
-R07/R08A–R08C/R18; and R14/R22.
+The Low-Mass child booklet and its page-matched trainer manual import A1--A22
+from the owner source. Both publications render the same complete Mass-order
+dialogue: the child main lane is word-for-word identical in the trainer
+edition. The first occurrence of a response supplies the canonical answer,
+learner syllables and stress, sound line, and short meaning. A later
+occurrence retains the complete cue and answer but does not repeat those
+learning aids.
 
-Each front puts the stable R ID and a compact LOW, MC, or SOLEMN marker at
-upper left, `Cue` at upper right, and the complete practice cue. The paired
-full guide's key supplies the form-specific actor and mode rule; the faces do
-not repeat a `Voice` or server-job field. R09 supplies complete fixed Amen
-cues; R15 supplies the complete dismissals and John 1:14; R02–R04 supply
-complete Psalm verses; R07 supplies the celebrant's complete Confiteor;
-R08A–R08C use the complete preceding exchange or study chunk; R14 prints the
-full ninefold practice pattern; and R16 groups all complete Gospel-title
-announcements under *Sequentia* and *Initium*. Because an appointed Epistle or
-Gospel is variable, R15 and R17 print a complete facsimile-checked practice
-ending and identify it as an example rather than as the universal proper text.
-No card uses an isolated final word, ellipsis, or direction to supply the
-missing verse orally.
+A8 remains one complete response. It is divided across three consecutive
+full-width phrase-ladder pages for learning, then joined without a pause. The
+division creates no new liturgical answer or physical flash card. The
+Low-Mass publications contain no shuffled drill, written assessment,
+self-score, or mastery record. Pronunciation still requires a competent human
+listener.
 
-Each back puts `Answer` at upper right and joins the canonical response,
-learner syllables and stress, plain-language sound line, short meaning, lesson
-or response reference, and any condition needed to prevent a false response.
-Broad IPA remains in the training guide's consolidated trainer key rather than
-being compressed onto a card. R08A–R08C are physical study chunks, not three
-new responses; together they teach A8. The two sung companions append their
-separate action-card sources after the integrated response run.
+### Low-Mass twenty-two-card selection
 
-The ladder order is the physical response-card order above. Mastery requires
-the correct form-specific job at shuffled unseen cues: an assigned speaker
-gives the complete response, while a listening server identifies the listening
-job during practice and remains silent at Mass. On a miss, the learner asks
-for the cue again; after a second miss the trainer supplies the response ID and
-returns that cue after three unrelated cards. Pronunciation mastery separately
-requires a competent human listener.
+The Low-Mass flash-card leaf imports each back's canonical answer from the
+same A bank. Its front cue is the complete fixed formula or the identified
+complete Fifth-Sunday-after-Pentecost exemplar audited below. The visible
+numbers are deck-local physical IDs; they do not replace A1--A22.
+
+| Low card | Bank answer | Complete cue or selected exemplar |
+| ---: | --- | --- |
+| 01 | A1 | *Introibo ad altare Dei.* |
+| 02 | A2 | Complete *Iudica me, Deus … erue me* verse |
+| 03 | A3 | Complete *Emitte lucem tuam … tabernacula tua* verse |
+| 04 | A4 | Complete *Confitebor tibi … conturbas me* verse |
+| 05 | A5 | *Gloria Patri, et Filio, et Spiritui Sancto.* |
+| 06 | A6 | *Adiutorium nostrum in nomine Domini.* |
+| 07 | A7 | The complete final *Ideo precor … Dominum Deum nostrum* sentence of the celebrant's *Confiteor* |
+| 08 | A9 | The first *Misereatur vestri … vitam aeternam* occurrence |
+| 09 | A10 | *Deus, tu conversus vivificabis nos.* |
+| 10 | A11 | *Ostende nobis, Domine, misericordiam tuam.* |
+| 11 | A12 | *Domine, exaudi orationem meam.* |
+| 12 | A13 | *Dominus vobiscum.* |
+| 13 | A14 | *Kyrie, eleison.* |
+| 14 | A14 | *Christe, eleison.* |
+| 15 | A15 | Complete final sentence of the Fifth Sunday after Pentecost Epistle |
+| 16 | A16 | *Sequentia sancti Evangelii secundum Matthaeum.* |
+| 17 | A17 | Complete final verse of the Fifth Sunday after Pentecost Gospel |
+| 18 | A18 | Complete *Orate, fratres … Deum Patrem omnipotentem* formula |
+| 19 | A19 | *Sursum corda.* |
+| 20 | A20 | *Gratias agamus Domino Deo nostro.* |
+| 21 | A21 | *Et ne nos inducas in tentationem.* |
+| 22 | A22 | *Ite, missa est, alleluia, alleluia.* |
+
+Card 08 is the one exemplar for the repeated A9 class; card 12 serves the
+repeated A13 class; and card 15 serves the A15 *Deo gratias* class. Cards 13
+and 14 are two physical priest-to-server pair types derived from the one
+audited A14 pattern. The ordinary dismissal therefore needs no duplicate A15
+card. A8 is deliberately absent because its complete response cannot fit the
+fixed 11.5-point eight-up format without either shrinking or turning one
+response into detached fragments.
+
+Every back is marked `BOTH`, because First and Second answer together in the
+selected model. The cards contain no learner syllables, sound line, IPA,
+meaning, action, exercise, score, or mastery field. Those data remain in the
+books or the live trainer's work.
+
+### Unchanged sung-form projection
+
+The Missa Cantata and Solemn Mass full guides continue to consume the shared
+A1--A22 bank, form-specific voice data, six-lesson course, speaking/listening
+jobs, drills, and consolidated trainer IPA key. Their cards-only companions
+continue to use the integrated twenty-four-card R deck: R01--R07,
+R08A--R08C, and R09--R22, followed by the applicable action deck. R08A--R08C
+remain three study chunks of the one A8 response. Their complete-cue,
+pronunciation-and-meaning back, six-up imposition, form markers, lesson order,
+and action-card contracts are unchanged by the Low-Mass redesign.
 
 ## Exclusions and negative controls
 
@@ -162,11 +202,17 @@ requires a competent human listener.
 
 ## Review state
 
-The source-to-inventory reconciliation is complete for A1–A22. Independent
-liturgical review of the form-specific speaker assignments and received Latin
-remains outstanding. The received text also remains subject to the series'
+The source-to-inventory reconciliation is complete for A1--A22. The redesigned
+Low-Mass child/trainer projection and the deck-local 01--22 selection have
+been reconciled at source and final-render level. Their rendered text,
+electronic pairing, production checks, and exact installed identities are
+recorded in the production manifest. The maintainer authorized installation
+for evaluation after the remaining physical and independent gates were
+disclosed; that decision does not complete them. Independent liturgical review
+of the form-specific speaker assignments and received Latin remains
+outstanding. The received text also remains subject to the series'
 unresolved substantive rights analysis; an audit row is not release
-authorization. The separate 23 July 2026 exact-byte exception clears the
-operational distribution gate only for the six immutable installed PDF
-hashes, without resolving that analysis or authorizing extraction or broader
-reuse.
+authorization. The separate 23 July 2026 exact-byte exception remains a
+historical clearance only for the six immutable predecessor PDF hashes it
+named; it does not clear changed or new Low-Mass snapshots, resolve that
+analysis, or authorize extraction or broader reuse.
