@@ -1,0 +1,22 @@
+schema = 2
+record_type = "bindings"
+document = "articles/faith/four-last-things-03-hell"
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["1033-1037", "1056-1058", "1735", "1854-1861"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The official English Catechism edition controls existence and eternity, principal punishment, salvific will, mortal-sin conditions, and diminished culpability. The binding records the edition and loci without overstating central artifact coverage."
+
+[[bindings]]
+source_id = "edition.augustine.de-civitate-dei.dods-1871"
+role = "reception"
+states = ["cataloged"]
+context = "Book 21 is used as a major Western theological witness to eternal punishment and disordered love, not as a substitute for Scripture or dogmatic teaching."
+
+[[bindings]]
+source_id = "edition.thomas-aquinas.summa-theologiae.leonine-v4-1888"
+role = "context"
+states = ["cataloged"]
+context = "The Leonine edition is registered for Aquinas's treatment of the divine will. The cited Supplement questions belong to another volume and remain bibliographically identified rather than falsely bound to this artifact."

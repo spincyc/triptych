@@ -4,8 +4,8 @@ provider = "gpt"
 audited_on = "2026-07-24"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 116
-source_surface_file_count = 1264
-snapshot = "sha256:a0102cda4a23e8d460ec3f3df2d34381fdc39089b8e21c18989500ac8c968612"
+source_surface_file_count = 1268
+snapshot = "sha256:f620900378a65484267c6355c48fd5bb010ea2f68cee12570855dfc7b32cc872"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -2176,13 +2176,13 @@ owners = ["articles/faith/council-missal-and-crisis"]
 
 [[files]]
 path = "src/gpt/articles/faith/four-last-things-01-death/main.tex"
-sha256 = "33638b73c82b49f6203c40e84e718cb8ac81978d4532fcb0883dae3e5c28c18c"
+sha256 = "28e67f51c9f39e4b8d9cf4e8a7630a242c3b9a75b59614a7439ab2a7b0c78c3a"
 kind = "publication-main"
 owners = ["articles/faith/four-last-things-01-death"]
 
 [[files]]
 path = "src/gpt/articles/faith/four-last-things-01-death/references.tex"
-sha256 = "6456c025b4c191e3ff1cdd11ddc1826ed6cf4c70e4f7d0207adb3e94766a3599"
+sha256 = "6795cb2f7757fb5e60b4fcd60feb6a4a390fe3b6931e7094464bd5f09c41f61e"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-01-death"]
 
@@ -2194,19 +2194,25 @@ owners = ["articles/faith/four-last-things-01-death"]
 
 [[files]]
 path = "src/gpt/articles/faith/four-last-things-01-death/research/source-audit.md"
-sha256 = "dc220759ee8637e6995ddc641dba6709917b0b5c70e3bf241f6cccaa697d2e66"
+sha256 = "d42e01e6725e3c52bb27081b6c52fdbb41c3d81ff999d0d74ec5de2a36337029"
 kind = "legacy-source-audit"
 owners = ["articles/faith/four-last-things-01-death"]
 
 [[files]]
+path = "src/gpt/articles/faith/four-last-things-01-death/research/source-bindings.toml"
+sha256 = "621fadd3fd5bfe84af49772af2afa4f49b4832efd7977eb9726b85b1a4ed3e22"
+kind = "source-binding"
+owners = ["articles/faith/four-last-things-01-death"]
+
+[[files]]
 path = "src/gpt/articles/faith/four-last-things-02-judgment/main.tex"
-sha256 = "11ef24bf1381a52f6732b0e2ec59b8cc7d0f13d1a5b54e9cb3bb6fe3519af38f"
+sha256 = "dc270087350ed12c25c64cec0f02e54fcb7809f9da7d093e9d09078c0d0c8909"
 kind = "publication-main"
 owners = ["articles/faith/four-last-things-02-judgment"]
 
 [[files]]
 path = "src/gpt/articles/faith/four-last-things-02-judgment/references.tex"
-sha256 = "5a6a8312b376d1af204d4caa5ddf3bdba795cb8bb16e5b3ae936c715cf2ba9f4"
+sha256 = "6f26505aef56d289adb660107d05c9522389290f34974aaab30147c93f7bf49a"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-02-judgment"]
 
@@ -2218,19 +2224,25 @@ owners = ["articles/faith/four-last-things-02-judgment"]
 
 [[files]]
 path = "src/gpt/articles/faith/four-last-things-02-judgment/research/source-audit.md"
-sha256 = "797cebec8196cf401bfaa0a02f7255061d9b00e12e8b72ce8769df103f2cec6f"
+sha256 = "ffd261f57ec5deaf95e281653993687aae84f88002abf1146508b1e4ad345180"
 kind = "legacy-source-audit"
 owners = ["articles/faith/four-last-things-02-judgment"]
 
 [[files]]
+path = "src/gpt/articles/faith/four-last-things-02-judgment/research/source-bindings.toml"
+sha256 = "68d425ee5162dd2f4bc09790bfcfb379dc06797b70ae29aa158f5ff8dcb8986a"
+kind = "source-binding"
+owners = ["articles/faith/four-last-things-02-judgment"]
+
+[[files]]
 path = "src/gpt/articles/faith/four-last-things-03-hell/main.tex"
-sha256 = "c808341057828d300da6b21f6376959c3024dda106b23a9492389ec63edd861e"
+sha256 = "c015c23b7c51eab7d783c6e2cb1a313ac6054dc0ffc36c660cbc919ea70ffc88"
 kind = "publication-main"
 owners = ["articles/faith/four-last-things-03-hell"]
 
 [[files]]
 path = "src/gpt/articles/faith/four-last-things-03-hell/references.tex"
-sha256 = "af58f5b3c84e8a5875b7adfd7832fd2ffdf6a7f83814cf27535840d934e20a91"
+sha256 = "f5bb104b81b798231d367c3fdb18abc7c280fc9b91dd67b886bf4766304a2c7b"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-03-hell"]
 
@@ -2242,19 +2254,25 @@ owners = ["articles/faith/four-last-things-03-hell"]
 
 [[files]]
 path = "src/gpt/articles/faith/four-last-things-03-hell/research/source-audit.md"
-sha256 = "736b1d3d8b1f82babbb473a6d34673d57ddcf48a853f43c4e787c50d50cbf4fd"
+sha256 = "a38163ccb04ff5891248914d85a73f53646a09735aa3ed0b4cd9a428aee18c3b"
 kind = "legacy-source-audit"
 owners = ["articles/faith/four-last-things-03-hell"]
 
 [[files]]
+path = "src/gpt/articles/faith/four-last-things-03-hell/research/source-bindings.toml"
+sha256 = "17f567d0cccc76c874c3df713f7e8fddfc09fe6f3aac883c6f21747f9ba1c9f6"
+kind = "source-binding"
+owners = ["articles/faith/four-last-things-03-hell"]
+
+[[files]]
 path = "src/gpt/articles/faith/four-last-things-04-heaven/main.tex"
-sha256 = "e42583e5d8343a3ddf60e0ae35f51a7ef7ecba2b0ff2686c752ac5715df4181f"
+sha256 = "75652e9aa7ffbeb7156ccc8b0b44793513dd8f541b347a4304b3e8bfe8dc742e"
 kind = "publication-main"
 owners = ["articles/faith/four-last-things-04-heaven"]
 
 [[files]]
 path = "src/gpt/articles/faith/four-last-things-04-heaven/references.tex"
-sha256 = "50260e3845d4fda8ba1d848f5baa2d488058c92b68b3f748df78c435ff525273"
+sha256 = "e23e3fc395700a4b311e14c8e6fec4eb20b9584328431767369bc50ee6d30556"
 kind = "rendered-content"
 owners = ["articles/faith/four-last-things-04-heaven"]
 
@@ -2266,8 +2284,14 @@ owners = ["articles/faith/four-last-things-04-heaven"]
 
 [[files]]
 path = "src/gpt/articles/faith/four-last-things-04-heaven/research/source-audit.md"
-sha256 = "c9878d7567b7be4dff86ce3d799590defe060279910dffe44da6d176fd3681cd"
+sha256 = "d193a4e87ddc0f10454081e439180d8e8a32674da1d4bb38b80a48c54feb2b3a"
 kind = "legacy-source-audit"
+owners = ["articles/faith/four-last-things-04-heaven"]
+
+[[files]]
+path = "src/gpt/articles/faith/four-last-things-04-heaven/research/source-bindings.toml"
+sha256 = "36fd1c37230c3a7b189b778199953a12386552469fdaaf5815737b85589eb757"
+kind = "source-binding"
 owners = ["articles/faith/four-last-things-04-heaven"]
 
 [[files]]

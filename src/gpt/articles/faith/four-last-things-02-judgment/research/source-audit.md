@@ -12,12 +12,16 @@
 | Conscience requires formation and can err | CCC 1776–1794 | Authoritative moral teaching |
 | Mercy does not abolish justice | Rom 8:3; ST I, q. 21, aa. 3–4 | Thomistic articulation |
 | The Church prays and hopes for all but does not declare all saved | 1 Tim 2:4; CCC 1037, 1058 | Boundary; no census inferred |
+| The judge is the incarnate, crucified, and risen Christ | Jn 5:22–29; Acts 17:31; Mt 25:31–46 | Christological control, not tribunal metaphor alone |
+| Public judgment manifests relations, consequences, and providence | CCC 1038–1041; ST Supplement, q. 88 | Authoritative boundary plus Thomistic explanation |
+| Objective gravity and subjective culpability must not be collapsed | CCC 1735, 1750–1756, 1860 | Human justice remains competent within its field; eternal judgment does not |
+| Purgatory purifies the saved and is neither a second chance nor a supplement to Christ | CCC 1030–1032; *Spe salvi* 46–48 | Doctrine plus papal theological account |
 
 ## Source roles and limits
 
 The Council of Trent governs claims about justification and grace-enabled works. The essay does not adjudicate Thomist, Molinist, Augustinian, or other Catholic accounts of predestination and efficacious grace. Aquinas's account of divine mercy and justice is theological explanation, not an additional dogmatic definition. The treatment of scrupulosity is a boundary and referral, not clinical guidance.
 
-No central-source binding is added because no registered reusable artifact is directly used. The shared reference file supplies readable bibliography; this publication-local matrix owns relevance and sufficiency.
+The publication-local binding records the official Catechism loci controlling judgment, culpability, conscience, and merit; the registered *Gaudium et spes* edition; and Augustine's *City of God* only as cataloged reception. Because not every cited locus has a retained exact artifact, the binding does not claim central inspection or verification beyond the evidence states actually recorded.
 
 ## Unresolved review
 
@@ -25,4 +29,4 @@ Independent exegetical, dogmatic, Thomistic, pastoral, psychological, and eccles
 
 ## Production record
 
-The source received a settled two-pass build with no fatal, undefined-reference, overflow, underflow, or layout warnings. PDF metadata, extracted text, structure, and embedded fonts were checked. Bounded review rasters were generated through `scripts/pdf-review`; all five pages were inspected, including terminal apparatus and the final-page rights colophon. The reviewed build and installed mirror are byte-identical. The installed PDF SHA-256 is `0ff768fba26437da20f2548ffdf7eb8c46ae845be74d82545b53b8e3cca885f5`.
+The revised source received a settled two-pass build with no fatal, undefined-reference, overflow, underflow, or layout warnings. PDF metadata, extracted text, structure, and embedded fonts were checked. Bounded review rasters were generated through `scripts/pdf-review`; all seven pages were inspected, including page seams, terminal apparatus, and the final-page rights colophon. The reviewed build and installed mirror are byte-identical. The installed PDF SHA-256 is `4f12ceb0f07e27b3b3de0acbf1c9a759b5a4ef662a0b13cd0701bb330b4a0022`.
