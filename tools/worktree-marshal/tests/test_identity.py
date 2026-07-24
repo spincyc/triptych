@@ -3139,6 +3139,649 @@ class IdentityModelTests(unittest.TestCase):
             ("error-provider", None),
         )
 
+    def test_linked_worktree_cache_kernel_signature_and_alias(
+        self,
+    ) -> None:
+        self.assertIs(
+            self.engine._validate_linked_worktree_identity_cache,
+            self.identity.validate_linked_worktree_identity_cache,
+        )
+        parameters = inspect.signature(
+            self.identity.validate_linked_worktree_identity_cache
+        ).parameters
+        self.assertEqual(
+            tuple(parameters),
+            (
+                "identity",
+                "canonical_worktree",
+                "prior_identity",
+                "admin_owner",
+                "error_type",
+            ),
+        )
+        self.assertIs(
+            parameters["identity"].kind,
+            inspect.Parameter.POSITIONAL_OR_KEYWORD,
+        )
+        for name in tuple(parameters)[1:]:
+            self.assertIs(
+                parameters[name].kind,
+                inspect.Parameter.KEYWORD_ONLY,
+            )
+        for parameter in parameters.values():
+            self.assertIs(
+                parameter.default,
+                inspect.Parameter.empty,
+            )
+
+    def test_linked_worktree_cache_accepts_absent_and_matching_entries(
+        self,
+    ) -> None:
+        for prior_present in (False, True):
+            for owner_present in (False, True):
+                with self.subTest(
+                    prior_present=prior_present,
+                    owner_present=owner_present,
+                ):
+                    events: list[tuple[str, object]] = []
+                    identity = OpaqueValue("cache-identity")
+                    canonical = OpaqueValue(
+                        "cache-canonical-worktree"
+                    )
+
+                    class Truth:
+                        def __init__(
+                            truth_self,
+                            name: str,
+                        ) -> None:
+                            truth_self.name = name
+
+                        def __bool__(truth_self) -> bool:
+                            events.append(
+                                (
+                                    f"{truth_self.name}-truth",
+                                    False,
+                                )
+                            )
+                            return False
+
+                    class Prior:
+                        def __bool__(prior_self) -> bool:
+                            raise AssertionError(
+                                "truth-tested a non-None prior"
+                            )
+
+                        def __ne__(
+                            prior_self,
+                            other: object,
+                        ) -> object:
+                            events.append(("prior-ne", other))
+                            self.assertIs(other, identity)
+                            return Truth("prior-ne")
+
+                    class Owner:
+                        def __bool__(owner_self) -> bool:
+                            raise AssertionError(
+                                "truth-tested a non-None owner"
+                            )
+
+                        def __ne__(
+                            owner_self,
+                            other: object,
+                        ) -> object:
+                            events.append(("owner-ne", other))
+                            self.assertIs(other, canonical)
+                            return Truth("owner-ne")
+
+                    prior = Prior() if prior_present else None
+                    owner = Owner() if owner_present else None
+
+                    def prior_identity() -> object:
+                        events.append(
+                            ("prior-callback", None)
+                        )
+                        return prior
+
+                    def admin_owner() -> object:
+                        events.append(
+                            ("owner-callback", None)
+                        )
+                        return owner
+
+                    observed = (
+                        self.identity
+                        .validate_linked_worktree_identity_cache(
+                            identity,
+                            canonical_worktree=canonical,
+                            prior_identity=prior_identity,
+                            admin_owner=admin_owner,
+                            error_type=mock.Mock(
+                                side_effect=AssertionError(
+                                    "resolved an error on "
+                                    "matching cache entries"
+                                )
+                            ),
+                        )
+                    )
+
+                    self.assertIsNone(observed)
+                    self.assertEqual(
+                        events,
+                        [("prior-callback", None)]
+                        + (
+                            [
+                                ("prior-ne", identity),
+                                ("prior-ne-truth", False),
+                            ]
+                            if prior_present
+                            else []
+                        )
+                        + [("owner-callback", None)]
+                        + (
+                            [
+                                ("owner-ne", canonical),
+                                ("owner-ne-truth", False),
+                            ]
+                            if owner_present
+                            else []
+                        ),
+                    )
+
+    def test_linked_worktree_cache_collisions_short_circuit_exactly(
+        self,
+    ) -> None:
+        identity = OpaqueValue("collision-identity")
+        canonical = OpaqueValue("collision-canonical")
+
+        class InitialError(RuntimeError):
+            pass
+
+        cases = (
+            (
+                "prior",
+                "the retained worktree Git identity changed",
+            ),
+            (
+                "owner",
+                "the retained worktree Git admin directory "
+                "is not unique",
+            ),
+        )
+
+        for collision, message in cases:
+            with self.subTest(collision=collision):
+                events: list[tuple[str, object]] = []
+
+                class SelectedError(RuntimeError):
+                    def __init__(
+                        error_self,
+                        diagnostic: str,
+                    ) -> None:
+                        events.append(
+                            ("error-constructor", diagnostic)
+                        )
+                        super().__init__(diagnostic)
+
+                error_types: list[type[BaseException]] = [
+                    InitialError
+                ]
+
+                class Truth:
+                    def __init__(
+                        truth_self,
+                        name: str,
+                    ) -> None:
+                        truth_self.name = name
+
+                    def __bool__(truth_self) -> bool:
+                        events.append(
+                            (
+                                f"{truth_self.name}-truth",
+                                True,
+                            )
+                        )
+                        error_types[0] = SelectedError
+                        return True
+
+                class Prior:
+                    def __ne__(
+                        prior_self,
+                        other: object,
+                    ) -> object:
+                        events.append(("prior-ne", other))
+                        self.assertIs(other, identity)
+                        return Truth("prior-ne")
+
+                class Owner:
+                    def __ne__(
+                        owner_self,
+                        other: object,
+                    ) -> object:
+                        events.append(("owner-ne", other))
+                        self.assertIs(other, canonical)
+                        return Truth("owner-ne")
+
+                def prior_identity() -> object:
+                    events.append(("prior-callback", None))
+                    return Prior() if collision == "prior" else None
+
+                def admin_owner() -> object:
+                    events.append(("owner-callback", None))
+                    return Owner()
+
+                def error_type() -> type[BaseException]:
+                    events.append(("error-provider", None))
+                    return error_types[0]
+
+                with self.assertRaises(SelectedError) as caught:
+                    (
+                        self.identity
+                        .validate_linked_worktree_identity_cache(
+                            identity,
+                            canonical_worktree=canonical,
+                            prior_identity=prior_identity,
+                            admin_owner=admin_owner,
+                            error_type=error_type,
+                        )
+                    )
+
+                self.assertEqual(str(caught.exception), message)
+                self.assertIsNone(caught.exception.__cause__)
+                self.assertEqual(
+                    events,
+                    [("prior-callback", None)]
+                    + (
+                        [
+                            ("prior-ne", identity),
+                            ("prior-ne-truth", True),
+                        ]
+                        if collision == "prior"
+                        else [
+                            ("owner-callback", None),
+                            ("owner-ne", canonical),
+                            ("owner-ne-truth", True),
+                        ]
+                    )
+                    + [
+                        ("error-provider", None),
+                        ("error-constructor", message),
+                    ],
+                )
+                if collision == "prior":
+                    self.assertNotIn(
+                        "owner-callback",
+                        tuple(
+                            name for name, value in events
+                        ),
+                    )
+
+    def test_linked_worktree_cache_never_translates_dependencies(
+        self,
+    ) -> None:
+        stages = (
+            "prior-callback",
+            "prior-ne",
+            "prior-truth",
+            "owner-callback",
+            "owner-ne",
+            "owner-truth",
+            "error-provider",
+            "error-constructor",
+        )
+
+        for stage in stages:
+            with self.subTest(unwrapped_stage=stage):
+                events: list[str] = []
+                original = LinkedDependencyError(stage)
+                identity = OpaqueValue(
+                    f"cache-failure-{stage}-identity"
+                )
+                canonical = OpaqueValue(
+                    f"cache-failure-{stage}-canonical"
+                )
+
+                def fail_at(observed: str) -> None:
+                    events.append(observed)
+                    if stage == observed:
+                        raise original
+
+                class Truth:
+                    def __init__(
+                        truth_self,
+                        observed_stage: str,
+                        value: bool,
+                    ) -> None:
+                        truth_self.observed_stage = (
+                            observed_stage
+                        )
+                        truth_self.value = value
+
+                    def __bool__(truth_self) -> bool:
+                        fail_at(truth_self.observed_stage)
+                        return truth_self.value
+
+                class Prior:
+                    def __ne__(
+                        prior_self,
+                        other: object,
+                    ) -> object:
+                        fail_at("prior-ne")
+                        return Truth(
+                            "prior-truth",
+                            stage in {
+                                "error-provider",
+                                "error-constructor",
+                            },
+                        )
+
+                class Owner:
+                    def __ne__(
+                        owner_self,
+                        other: object,
+                    ) -> object:
+                        fail_at("owner-ne")
+                        return Truth("owner-truth", False)
+
+                def prior_identity() -> object:
+                    fail_at("prior-callback")
+                    if stage in {
+                        "prior-ne",
+                        "prior-truth",
+                        "error-provider",
+                        "error-constructor",
+                    }:
+                        return Prior()
+                    return None
+
+                def admin_owner() -> object:
+                    fail_at("owner-callback")
+                    if stage in {"owner-ne", "owner-truth"}:
+                        return Owner()
+                    return None
+
+                class BrokenError:
+                    def __new__(
+                        cls,
+                        diagnostic: object,
+                    ) -> object:
+                        fail_at("error-constructor")
+                        raise AssertionError(
+                            "error construction unexpectedly succeeded"
+                        )
+
+                def error_type() -> type:
+                    fail_at("error-provider")
+                    return BrokenError
+
+                with self.assertRaises(
+                    LinkedDependencyError
+                ) as caught:
+                    (
+                        self.identity
+                        .validate_linked_worktree_identity_cache(
+                            identity,
+                            canonical_worktree=canonical,
+                            prior_identity=prior_identity,
+                            admin_owner=admin_owner,
+                            error_type=error_type,
+                        )
+                    )
+
+                self.assertIs(caught.exception, original)
+                self.assertEqual(events[-1], stage)
+
+    def test_linked_worktree_wrapper_sequences_new_cache_kernel(
+        self,
+    ) -> None:
+        events: list[tuple[str, object]] = []
+        worktree = OpaqueValue("cache-wrapper-input")
+        expected_common = OpaqueValue(
+            "cache-wrapper-expected-common"
+        )
+        canonical = OpaqueValue("cache-wrapper-canonical")
+        git_file = OpaqueValue("cache-wrapper-git-file")
+        git_dir = OpaqueValue("cache-wrapper-git-dir")
+        common = OpaqueValue("cache-wrapper-common")
+        identity = OpaqueValue("cache-wrapper-identity")
+
+        class Components:
+            def __iter__(
+                components_self,
+            ) -> object:
+                events.append(("components-iter", None))
+                for name, value in (
+                    ("canonical", canonical),
+                    ("git-file", git_file),
+                    ("git-dir", git_dir),
+                    ("common", common),
+                ):
+                    events.append(
+                        ("component-yield", (name, value))
+                    )
+                    yield value
+                events.append(("components-exhausted", None))
+
+        def path_validator(
+            observed_worktree: object,
+            **dependencies: object,
+        ) -> object:
+            events.append(("path-validator", observed_worktree))
+            self.assertIs(observed_worktree, worktree)
+            self.assertIs(
+                dependencies["expected_common_git_dir"],
+                expected_common,
+            )
+            return Components()
+
+        def factory(**values: object) -> object:
+            events.append(("constructor", values))
+            return identity
+
+        initial_identities = RecordingRegistry(
+            "initial-identities",
+            events,
+            get_failure=AssertionError(
+                "captured initial identity registry"
+            ),
+        )
+        initial_owners = RecordingRegistry(
+            "initial-owners",
+            events,
+            get_failure=AssertionError(
+                "captured initial owner registry"
+            ),
+        )
+        first_identity_lookup = RecordingRegistry(
+            "first-identity-lookup",
+            events,
+        )
+        second_identity_lookup = RecordingRegistry(
+            "second-identity-lookup",
+            events,
+        )
+        first_owner_lookup = RecordingRegistry(
+            "first-owner-lookup",
+            events,
+        )
+        second_owner_lookup = RecordingRegistry(
+            "second-owner-lookup",
+            events,
+        )
+        assignment_identities = RecordingRegistry(
+            "assignment-identities",
+            events,
+        )
+        assignment_owners = RecordingRegistry(
+            "assignment-owners",
+            events,
+        )
+
+        class InitialError(RuntimeError):
+            pass
+
+        class ErrorOne(RuntimeError):
+            pass
+
+        class ErrorTwo(RuntimeError):
+            pass
+
+        def cache_validator(
+            observed_identity: object,
+            **dependencies: object,
+        ) -> object:
+            events.append(
+                ("cache-validator", observed_identity)
+            )
+            self.assertIs(observed_identity, identity)
+            self.assertEqual(
+                tuple(dependencies),
+                (
+                    "canonical_worktree",
+                    "prior_identity",
+                    "admin_owner",
+                    "error_type",
+                ),
+            )
+            self.assertIs(
+                dependencies["canonical_worktree"],
+                canonical,
+            )
+
+            self.engine._LINKED_WORKTREE_IDENTITIES = (
+                first_identity_lookup
+            )
+            self.assertIsNone(
+                dependencies["prior_identity"]()
+            )
+            self.engine._LINKED_WORKTREE_IDENTITIES = (
+                second_identity_lookup
+            )
+            self.assertIsNone(
+                dependencies["prior_identity"]()
+            )
+            self.engine._LINKED_ADMIN_OWNERS = (
+                first_owner_lookup
+            )
+            self.assertIsNone(dependencies["admin_owner"]())
+            self.engine._LINKED_ADMIN_OWNERS = (
+                second_owner_lookup
+            )
+            self.assertIsNone(dependencies["admin_owner"]())
+
+            self.engine.LauncherError = ErrorOne
+            self.assertIs(
+                dependencies["error_type"](),
+                ErrorOne,
+            )
+            self.engine.LauncherError = ErrorTwo
+            self.assertIs(
+                dependencies["error_type"](),
+                ErrorTwo,
+            )
+            self.engine._LINKED_WORKTREE_IDENTITIES = (
+                assignment_identities
+            )
+            self.engine._LINKED_ADMIN_OWNERS = (
+                assignment_owners
+            )
+            events.append(("cache-validation-complete", None))
+            return OpaqueValue("ignored-cache-result")
+
+        with (
+            mock.patch.object(
+                self.engine,
+                "_validate_linked_worktree_path",
+                side_effect=path_validator,
+            ),
+            mock.patch.object(
+                self.engine,
+                "_validate_linked_worktree_identity_cache",
+                side_effect=cache_validator,
+            ) as cache_kernel,
+            mock.patch.object(
+                self.engine,
+                "LinkedWorktreeIdentity",
+                side_effect=factory,
+            ),
+            mock.patch.object(
+                self.engine,
+                "_LINKED_WORKTREE_IDENTITIES",
+                initial_identities,
+            ),
+            mock.patch.object(
+                self.engine,
+                "_LINKED_ADMIN_OWNERS",
+                initial_owners,
+            ),
+            mock.patch.object(
+                self.engine,
+                "LauncherError",
+                InitialError,
+            ),
+        ):
+            observed = self.engine.authenticate_linked_worktree_path(
+                worktree,
+                expected_common_git_dir=expected_common,
+            )
+
+        self.assertIs(observed, identity)
+        cache_kernel.assert_called_once()
+        self.assertEqual(
+            events,
+            [
+                ("path-validator", worktree),
+                ("components-iter", None),
+                (
+                    "component-yield",
+                    ("canonical", canonical),
+                ),
+                (
+                    "component-yield",
+                    ("git-file", git_file),
+                ),
+                (
+                    "component-yield",
+                    ("git-dir", git_dir),
+                ),
+                (
+                    "component-yield",
+                    ("common", common),
+                ),
+                ("components-exhausted", None),
+                (
+                    "constructor",
+                    {
+                        "worktree": canonical,
+                        "git_file": git_file,
+                        "git_dir": git_dir,
+                        "common_git_dir": common,
+                    },
+                ),
+                ("cache-validator", identity),
+                ("first-identity-lookup-get", canonical),
+                ("second-identity-lookup-get", canonical),
+                ("first-owner-lookup-get", git_dir),
+                ("second-owner-lookup-get", git_dir),
+                ("cache-validation-complete", None),
+                (
+                    "assignment-identities-set",
+                    (canonical, identity),
+                ),
+                (
+                    "assignment-owners-set",
+                    (git_dir, canonical),
+                ),
+            ],
+        )
+        self.assertIs(
+            assignment_identities.values[canonical],
+            identity,
+        )
+        self.assertIs(
+            assignment_owners.values[git_dir],
+            canonical,
+        )
+
     def test_linked_worktree_wrapper_forwards_fresh_lazy_globals(
         self,
     ) -> None:

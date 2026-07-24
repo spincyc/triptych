@@ -61,6 +61,7 @@ from .identity import (
     exact_real_directory as _exact_real_directory,
     exact_single_line as _exact_single_line,
     safe_regular_file_bytes as _safe_regular_file_bytes,
+    validate_linked_worktree_identity_cache as _validate_linked_worktree_identity_cache,
     validate_linked_worktree_path as _validate_linked_worktree_path,
 )
 from .locks import (
@@ -436,12 +437,15 @@ def authenticate_linked_worktree_path(
         git_dir=git_dir,
         common_git_dir=common_git_dir,
     )
-    prior = _LINKED_WORKTREE_IDENTITIES.get(canonical_worktree)
-    if prior is not None and prior != identity:
-        raise LauncherError("the retained worktree Git identity changed")
-    owner = _LINKED_ADMIN_OWNERS.get(git_dir)
-    if owner is not None and owner != canonical_worktree:
-        raise LauncherError("the retained worktree Git admin directory is not unique")
+    _validate_linked_worktree_identity_cache(
+        identity,
+        canonical_worktree=canonical_worktree,
+        prior_identity=lambda: _LINKED_WORKTREE_IDENTITIES.get(
+            canonical_worktree
+        ),
+        admin_owner=lambda: _LINKED_ADMIN_OWNERS.get(git_dir),
+        error_type=lambda: LauncherError,
+    )
     _LINKED_WORKTREE_IDENTITIES[canonical_worktree] = identity
     _LINKED_ADMIN_OWNERS[git_dir] = canonical_worktree
     return identity

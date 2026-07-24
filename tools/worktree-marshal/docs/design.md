@@ -26,7 +26,8 @@ selection, repository-name normalization, and lexical lock and manifest paths,
 `identity.py` now owns immutable runtime identity records and launcher-entry
 authentication plus exact Git-administration line-format validation and the
 bounded descriptor-based regular-file reader plus exact pointer-path and
-real-directory validation and read-only linked-worktree path validation,
+real-directory validation, read-only linked-worktree path validation, and
+read-only linked-worktree cache-consistency policy,
 `locks.py` now owns lock-descriptor bookkeeping and validation algorithms,
 `process.py` now owns child waiting and exit-status normalization,
 `adapters/codex.py` now owns Codex executable candidate selection and static
@@ -43,8 +44,8 @@ worktree_marshal/
   locks.py               descriptor bookkeeping now; flock acquisition later
   git.py                 policy, captured config, and executable discovery; invocation later
   process.py             child signal forwarding and exit normalization
-  identity.py            records, launcher auth, reader, path checks, worktree validation
-                         public authentication and identity registries remain in engine
+  identity.py            records, launcher auth, reader, path and cache checks
+                         public worktree auth and registry objects/writes remain in engine
   worktrees.py           allocation, audit, reopen, and cleanup
   integration.py         verification, rebase, landing, and rollback
   conflicts.py           resolver scope, continuation, and abort
@@ -99,7 +100,7 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with nineteen behavior-preserving boundaries. The original
+has begun step 5 with twenty behavior-preserving boundaries. The original
 pure Git policy kernel transforms an explicit environment mapping and Git
 argument sequence in `git.py`; `engine.py` retains its optional
 environment-acquisition wrapper, subprocess creation and command execution,
@@ -402,14 +403,14 @@ direct-child, and changed-backlink diagnostics and their no-explicit-cause
 scope remain unchanged; failures from the injected lower-level operations
 remain untranslated.
 
-The exact public engine wrapper receives the four components, constructs
-`LinkedWorktreeIdentity` only after every validation succeeds, and then
-performs the existing identity-cache and Git-admin-owner-cache checks and
-assignments in their established order. It retains both process-global
-registries, late constructor and registry rebinding, partial-mutation behavior,
-`authenticate_retained_worktree`, `authenticate_git_cwd`,
-`active_rebase_directories`, every other caller and workflow, and every
-mutation.
+At that boundary, the exact public engine wrapper received the four components,
+constructed `LinkedWorktreeIdentity` only after every validation succeeded,
+and then performed the existing identity-cache and Git-admin-owner-cache
+checks and assignments in their established order. It retained both
+process-global registries, late constructor and registry rebinding,
+partial-mutation behavior, `authenticate_retained_worktree`,
+`authenticate_git_cwd`, `active_rebase_directories`, every other caller and
+workflow, and every mutation.
 
 This kernel validates a linked-worktree path topology through a sequence of
 read-only snapshots; it is not an atomic filesystem or repository proof.
@@ -419,7 +420,49 @@ registration, enforce lifecycle state, or make the caches durable across
 processes. No generic repository-authentication contract, durable identity,
 migration, sandbox, lifecycle, or release assurance is introduced.
 
-Direct tests freeze all nineteen extracted boundaries, their
+The twentieth boundary moves only those two read-only cache-consistency checks
+into `identity.validate_linked_worktree_identity_cache`. After path validation
+and the exact four-component unpack, the engine still constructs
+`LinkedWorktreeIdentity` at its established late point. It then supplies the
+constructed identity and canonical worktree separately, preserving the
+rebound constructor's ability to return an opaque object without a readable
+`worktree` attribute. Lazy callbacks obtain the prior identity and prior Git
+administration-directory owner; the kernel receives neither registry object
+and performs no assignment.
+
+The check order remains exact. The kernel obtains the prior identity first.
+`None` means no prior claim; a non-`None` value is compared with the constructed
+identity, and a truthy inequality raises `the retained worktree Git identity
+changed` without an explicit cause. That failure short-circuits the owner
+lookup. Otherwise the kernel obtains the administration-directory owner.
+`None` again means no prior claim; a non-`None` value is compared with the
+canonical worktree, and a truthy inequality raises `the retained worktree Git
+admin directory is not unique` without an explicit cause. Lookup, comparison,
+truth-conversion, provider, and error-construction failures remain
+untranslated, and the launcher error type is resolved only after the relevant
+collision evaluates true.
+
+The public engine wrapper retains both process-global registry objects and
+both assignments. After the kernel succeeds, it reloads the identity registry
+and assigns the constructed identity, then reloads the owner registry and
+assigns the canonical worktree. Failure of the first assignment prevents the
+second; failure of the second preserves the first assignment. Registry
+rebinding during either lookup or the first assignment therefore remains
+observable exactly as before. The engine also retains the late constructor,
+boundary-19 path-validation orchestration, all authentication entry points and
+callers, every lifecycle workflow, and every mutation.
+
+This kernel reads process-local cache claims sequentially; it is not an atomic
+check-and-reserve operation. It neither locks nor writes either registry,
+reserves a worktree or Git administration directory, prevents a claim from
+changing between checking and assignment, nor makes an entry durable or
+visible to another process. It does not authenticate paths, prove filesystem
+or repository ownership, or validate Git registration or lifecycle state. It
+introduces no generic authentication contract, durable identity or migration
+change, sandbox or lifecycle authority, packaging or distribution change, or
+release assurance.
+
+Direct tests freeze all twenty extracted boundaries, their
 compatibility surfaces, artifact inclusion, field and operation order,
 partial-failure behavior, and the dynamic restoration of every vocabulary
 value currently accepted in

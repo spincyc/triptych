@@ -182,6 +182,26 @@ def validate_linked_worktree_path(
     return canonical_worktree, git_file, git_dir, common_git_dir
 
 
+def validate_linked_worktree_identity_cache(
+    identity: LinkedWorktreeIdentity,
+    *,
+    canonical_worktree: Path,
+    prior_identity: Callable[[], LinkedWorktreeIdentity | None],
+    admin_owner: Callable[[], Path | None],
+    error_type: Callable[[], type[BaseException]],
+) -> None:
+    """Validate process-local linked-worktree identity cache consistency."""
+
+    prior = prior_identity()
+    if prior is not None and prior != identity:
+        raise error_type()("the retained worktree Git identity changed")
+    owner = admin_owner()
+    if owner is not None and owner != canonical_worktree:
+        raise error_type()(
+            "the retained worktree Git admin directory is not unique"
+        )
+
+
 def authenticate_launcher(
     path: Path,
     *,
