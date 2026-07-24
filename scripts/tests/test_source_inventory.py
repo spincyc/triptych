@@ -775,6 +775,38 @@ class SourceInventoryTests(unittest.TestCase):
         self.assertIn("source-bearing file has no explicit owner", result.stderr)
         self.assertFalse((self.root / self.inventory).exists())
 
+    def test_bootstrap_owns_shared_altar_server_training_sources(self) -> None:
+        document = (
+            "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass"
+        )
+        self.write(f"src/gpt/{document}/main.tex", "Low Mass\n")
+        shared = self.write(
+            "src/gpt/liturgy/roman-rite/1962/reference/"
+            "altar-server-guides/shared/response-reference.tex",
+            "Responses\n",
+        )
+
+        self.bootstrap()
+
+        inventory = tomllib.loads(
+            (self.root / self.inventory).read_text(encoding="utf-8")
+        )
+        owner_id = "owner.liturgy.roman-rite.1962.altar-server-guides"
+        self.assertIn(owner_id, [owner["id"] for owner in inventory["owners"]])
+        shared_row = next(
+            row
+            for row in inventory["files"]
+            if row["path"] == shared.relative_to(self.root).as_posix()
+        )
+        self.assertEqual(shared_row["owners"], [owner_id])
+        document_row = next(
+            row for row in inventory["documents"] if row["id"] == document
+        )
+        self.assertIn(
+            {"id": owner_id, "relationship": "source-owner"},
+            document_row["record_owners"],
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

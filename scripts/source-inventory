@@ -84,6 +84,7 @@ MARIOLOGY_OWNER = "owner.theology.mariology.shared"
 BIBLICAL_HISTORY_OWNER = "owner.history.biblical-translations"
 PARISH_HISTORY_OWNER = "owner.history.catholic-parish-histories"
 INSTITUTE_HISTORY_OWNER = "owner.history.traditional-priestly-institutes"
+SERVER_TRAINING_OWNER = "owner.liturgy.roman-rite.1962.altar-server-guides"
 
 NONPUBLICATION_OWNERS = (
     {
@@ -118,6 +119,14 @@ NONPUBLICATION_OWNERS = (
         "id": INSTITUTE_HISTORY_OWNER,
         "roots": ["src/gpt/history/traditional-priestly-institutes"],
         "kind": "shared-render-owner",
+    },
+    {
+        "id": SERVER_TRAINING_OWNER,
+        "roots": [
+            "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research",
+            "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared",
+        ],
+        "kind": "server-training-source-owner",
     },
     {
         "id": POSTCONCILIAR_OWNER,
@@ -308,6 +317,10 @@ def _document_shape(document: str) -> tuple[str, list[dict[str, str]], str]:
     for prefix, owner_id in history_render_owners.items():
         if document.startswith(prefix):
             edges.append({"id": owner_id, "relationship": "render-import"})
+    if document.startswith(
+        "liturgy/roman-rite/1962/reference/altar-server-guides/"
+    ):
+        edges.append({"id": SERVER_TRAINING_OWNER, "relationship": "source-owner"})
     if document == "liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass":
         edges.append({"id": "theology/sacraments", "relationship": "render-import"})
     if document == "theology/mariology/angelus":

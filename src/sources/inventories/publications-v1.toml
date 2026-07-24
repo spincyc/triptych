@@ -3,9 +3,9 @@ record_type = "publication-source-inventory"
 provider = "gpt"
 audited_on = "2026-07-24"
 discovery_rule = "src/gpt/**/main.tex"
-publication_count = 103
-source_surface_file_count = 1184
-snapshot = "sha256:aab655abdb917aa325f6ea9a890729ce742464384a26205306ae77459746ac34"
+publication_count = 116
+source_surface_file_count = 1264
+snapshot = "sha256:a0102cda4a23e8d460ec3f3df2d34381fdc39089b8e21c18989500ac8c968612"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -36,6 +36,11 @@ roots = ["src/gpt/history/catholic-parish-histories"]
 id = "owner.history.traditional-priestly-institutes"
 kind = "shared-render-owner"
 roots = ["src/gpt/history/traditional-priestly-institutes"]
+
+[[owners]]
+id = "owner.liturgy.roman-rite.1962.altar-server-guides"
+kind = "server-training-source-owner"
+roots = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research", "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared"]
 
 [[owners]]
 id = "owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en-us-2011-propers"
@@ -70,6 +75,17 @@ id = "articles/canon-law/natural-positive-divine-human-law"
 relationship = "local"
 
 [[documents]]
+id = "articles/faith/against-the-instrumentalists"
+main = "src/gpt/articles/faith/against-the-instrumentalists/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["institutional-current", "magisterial", "scholastic", "secondary"]
+[[documents.record_owners]]
+id = "articles/faith/against-the-instrumentalists"
+relationship = "local"
+
+[[documents]]
 id = "articles/faith/at-the-end-of-every-why"
 main = "src/gpt/articles/faith/at-the-end-of-every-why/main.tex"
 publication_kind = "canonical"
@@ -92,6 +108,50 @@ id = "articles/faith/council-missal-and-crisis"
 relationship = "local"
 
 [[documents]]
+id = "articles/faith/four-last-things-01-death"
+main = "src/gpt/articles/faith/four-last-things-01-death/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["liturgical", "magisterial", "scholastic", "scripture"]
+[[documents.record_owners]]
+id = "articles/faith/four-last-things-01-death"
+relationship = "local"
+
+[[documents]]
+id = "articles/faith/four-last-things-02-judgment"
+main = "src/gpt/articles/faith/four-last-things-02-judgment/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["magisterial", "scholastic", "scripture"]
+[[documents.record_owners]]
+id = "articles/faith/four-last-things-02-judgment"
+relationship = "local"
+
+[[documents]]
+id = "articles/faith/four-last-things-03-hell"
+main = "src/gpt/articles/faith/four-last-things-03-hell/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["magisterial", "scholastic", "scripture"]
+[[documents.record_owners]]
+id = "articles/faith/four-last-things-03-hell"
+relationship = "local"
+
+[[documents]]
+id = "articles/faith/four-last-things-04-heaven"
+main = "src/gpt/articles/faith/four-last-things-04-heaven/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["magisterial", "scholastic", "scripture"]
+[[documents.record_owners]]
+id = "articles/faith/four-last-things-04-heaven"
+relationship = "local"
+
+[[documents]]
 id = "articles/faith/freemasonry-and-the-catholic-church"
 main = "src/gpt/articles/faith/freemasonry-and-the-catholic-church/main.tex"
 publication_kind = "canonical"
@@ -100,6 +160,17 @@ inventory_state = "partially-migrated"
 source_categories = ["archival-material", "canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "articles/faith/freemasonry-and-the-catholic-church"
+relationship = "local"
+
+[[documents]]
+id = "articles/faith/in-support-of-the-particular"
+main = "src/gpt/articles/faith/in-support-of-the-particular/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["liturgical", "magisterial", "scholastic", "scripture"]
+[[documents.record_owners]]
+id = "articles/faith/in-support-of-the-particular"
 relationship = "local"
 
 [[documents]]
@@ -1050,6 +1121,104 @@ id = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"
 relationship = "local"
 
 [[documents]]
+id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass"
+main = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "secondary"]
+[[documents.record_owners]]
+id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass"
+relationship = "local"
+[[documents.record_owners]]
+id = "owner.liturgy.roman-rite.1962.altar-server-guides"
+relationship = "source-owner"
+
+[[documents]]
+id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards"
+main = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "secondary"]
+[[documents.record_owners]]
+id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards"
+relationship = "local"
+[[documents.record_owners]]
+id = "owner.liturgy.roman-rite.1962.altar-server-guides"
+relationship = "source-owner"
+
+[[documents]]
+id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual"
+main = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "secondary"]
+[[documents.record_owners]]
+id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual"
+relationship = "local"
+[[documents.record_owners]]
+id = "owner.liturgy.roman-rite.1962.altar-server-guides"
+relationship = "source-owner"
+
+[[documents]]
+id = "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata"
+main = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "secondary"]
+[[documents.record_owners]]
+id = "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata"
+relationship = "local"
+[[documents.record_owners]]
+id = "owner.liturgy.roman-rite.1962.altar-server-guides"
+relationship = "source-owner"
+
+[[documents]]
+id = "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards"
+main = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "secondary"]
+[[documents.record_owners]]
+id = "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards"
+relationship = "local"
+[[documents.record_owners]]
+id = "owner.liturgy.roman-rite.1962.altar-server-guides"
+relationship = "source-owner"
+
+[[documents]]
+id = "liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass"
+main = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "secondary"]
+[[documents.record_owners]]
+id = "liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass"
+relationship = "local"
+[[documents.record_owners]]
+id = "owner.liturgy.roman-rite.1962.altar-server-guides"
+relationship = "source-owner"
+
+[[documents]]
+id = "liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards"
+main = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "secondary"]
+[[documents.record_owners]]
+id = "liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards"
+relationship = "local"
+[[documents.record_owners]]
+id = "owner.liturgy.roman-rite.1962.altar-server-guides"
+relationship = "source-owner"
+
+[[documents]]
 id = "liturgy/roman-rite/1962/reference/assembling-the-mass"
 main = "src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/main.tex"
 publication_kind = "canonical"
@@ -1694,20 +1863,86 @@ kind = "rendered-content"
 owners = ["articles/canon-law/natural-positive-divine-human-law"]
 
 [[files]]
+path = "src/gpt/articles/faith/against-the-instrumentalists/main.tex"
+sha256 = "9fb9247397d48e2996751fab64e637c84bf4d4e675a2720347cdfacebfe8f983"
+kind = "publication-main"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/gpt/articles/faith/against-the-instrumentalists/research/scope.md"
+sha256 = "e108350e490de03366018a3934aa807f2eadd4d78f02b4e1ec6ceb6987d400af"
+kind = "research-scope"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/gpt/articles/faith/against-the-instrumentalists/research/source-audit.md"
+sha256 = "6c3675d18cf91fb0bb77427b4e9c2770698fdff4e84b85198a333066acad728a"
+kind = "legacy-source-audit"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/gpt/articles/faith/against-the-instrumentalists/sections/00-a-superb-servant.tex"
+sha256 = "464584e7346e7285b5a840fe2e910903b97666aa6e992a366478c9478348d331"
+kind = "rendered-content"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/gpt/articles/faith/against-the-instrumentalists/sections/10-no-reading-reads-itself.tex"
+sha256 = "d2ab351c7c0b2f1548d48d3cf6cf04ed6a1bb6b682d9740f9ad04ec1b8ec3183"
+kind = "rendered-content"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/gpt/articles/faith/against-the-instrumentalists/sections/20-the-rule-no-instrument-reports.tex"
+sha256 = "38890f156b2656a5b4eb77afaf69c4f2f481cdd09d4255246d916d89b5dad831"
+kind = "rendered-content"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/gpt/articles/faith/against-the-instrumentalists/sections/30-from-phenomenon-to-foundation.tex"
+sha256 = "e7ff26a7455d5334b1dda21711e3ea3eccfb8bcc68e1e73567f1388706d10097"
+kind = "rendered-content"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/gpt/articles/faith/against-the-instrumentalists/sections/40-the-instrument-restored.tex"
+sha256 = "c7c54bb2e69003c3be3bafec86840c42ba7e55eca5388f815acf5adf24d3cc02"
+kind = "rendered-content"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/gpt/articles/faith/against-the-instrumentalists/sections/80-notes.tex"
+sha256 = "1e0d1b59aa225b3ff3a924a496ddbbf3bde50454ade09e5bcf6d213b9b72d844"
+kind = "rendered-content"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/gpt/articles/faith/against-the-instrumentalists/sections/90-scope-method-qualifications.tex"
+sha256 = "f3be7e6231764a830c024b3a9677063232561d6792750d025dd6697e7a3f5ba5"
+kind = "rendered-content"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/gpt/articles/faith/against-the-instrumentalists/sections/99-references.tex"
+sha256 = "6c42047a94afb290e8983fd2e1ef2b20580ed4b2cbcb699a74944be582b18672"
+kind = "rendered-content"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
 path = "src/gpt/articles/faith/at-the-end-of-every-why/main.tex"
-sha256 = "b6d756555a7db2cb94edca112d15841eb762c9b345dc7e25ccae4a9190ef1716"
+sha256 = "1ead948882b3c167c7b7b762fdc9e19edae930cdcb0a1852cda718708e8545bc"
 kind = "publication-main"
 owners = ["articles/faith/at-the-end-of-every-why"]
 
 [[files]]
 path = "src/gpt/articles/faith/at-the-end-of-every-why/research/scope.md"
-sha256 = "9e7e3852dfaaf3ee8dd0471ea571c3ef0bf6facc4436e49b185fab729358ef3b"
+sha256 = "965ed466d074b532857353d0a9d56f5a438c5f641cbc71da9e88453d594e42a2"
 kind = "research-scope"
 owners = ["articles/faith/at-the-end-of-every-why"]
 
 [[files]]
 path = "src/gpt/articles/faith/at-the-end-of-every-why/research/source-audit.md"
-sha256 = "6154a8053c86e83ac5b4d6c21c2e69c88b4d9991f55827e8d8aa8f63dbf344c8"
+sha256 = "1dc3d99f27fc543f79fbaf643d45cea319de49e9e14f1eae08dea1dfeda05609"
 kind = "legacy-source-audit"
 owners = ["articles/faith/at-the-end-of-every-why"]
 
@@ -1719,49 +1954,73 @@ owners = ["articles/faith/at-the-end-of-every-why"]
 
 [[files]]
 path = "src/gpt/articles/faith/at-the-end-of-every-why/sections/00-commanded-love.tex"
-sha256 = "27733b22261145151f35b4b26ffc256c04f0e1239312b5aabc8130e23acb4aac"
+sha256 = "18d61a65de32669f0a78f22ec7af05d718a84a06b91d8f88cdda21f00cb97ba6"
 kind = "rendered-content"
 owners = ["articles/faith/at-the-end-of-every-why"]
 
 [[files]]
 path = "src/gpt/articles/faith/at-the-end-of-every-why/sections/10-law-within.tex"
-sha256 = "65a2bba189f3c30273d3992d7cc9b4841f33263d7bb55ce2b509792a6eee0cf2"
+sha256 = "cd441afdfab5ef4644bb30b199ba27e90e4392246fa53936f4418c909161bfc4"
 kind = "rendered-content"
 owners = ["articles/faith/at-the-end-of-every-why"]
 
 [[files]]
 path = "src/gpt/articles/faith/at-the-end-of-every-why/sections/20-no-longer-servants.tex"
-sha256 = "f86d967f962e74f7310209782360d3fff444497f667bd56a67fd8cc23d5b1cc3"
+sha256 = "6f066254fef7bb156474bca97942d19a6582638bc6a1c7f25f21e2bc3465f43f"
 kind = "rendered-content"
 owners = ["articles/faith/at-the-end-of-every-why"]
 
 [[files]]
 path = "src/gpt/articles/faith/at-the-end-of-every-why/sections/30-charity-forms-justice.tex"
-sha256 = "f0a10f5dfede0b277ea8ee1b85c16c5dc5f12064ed82e8704cde9a2238c27586"
+sha256 = "ab686d96f18fc2ebfe1c5dacee961eb37221469e531b5412301ff1630fd32b29"
+kind = "rendered-content"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/gpt/articles/faith/at-the-end-of-every-why/sections/32-when-presence-is-not-felt.tex"
+sha256 = "48513c583feab3cc4118a36634a1fd117c4a431218d6cdff6618d435b187a928"
+kind = "rendered-content"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/gpt/articles/faith/at-the-end-of-every-why/sections/34-asking-the-unchanging-god.tex"
+sha256 = "1d32898aa9f450574cafb3913cf72f9b04b8e5d8e9849df3fb1179b0a2b48d86"
+kind = "rendered-content"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/gpt/articles/faith/at-the-end-of-every-why/sections/36-the-hunger-of-charity.tex"
+sha256 = "2af53c9e7cad9519fe163d02dab1e9b29d93c52d2a7a934848f176b65b4a13ae"
+kind = "rendered-content"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/gpt/articles/faith/at-the-end-of-every-why/sections/38-the-shape-of-the-cross.tex"
+sha256 = "3f711abb5171b29fd90c510d018e90f0355d01532ec63ff843db1a6f62241f1a"
 kind = "rendered-content"
 owners = ["articles/faith/at-the-end-of-every-why"]
 
 [[files]]
 path = "src/gpt/articles/faith/at-the-end-of-every-why/sections/40-whole-not-equal.tex"
-sha256 = "40f0aeee8649e27c2917fdcef9840e8396979c14d0b54062e0c7a6aab1053c93"
+sha256 = "5556279a0238f3af2dacb9b073ad3f38f4d9652239016c9538329d53c9c2c181"
 kind = "rendered-content"
 owners = ["articles/faith/at-the-end-of-every-why"]
 
 [[files]]
 path = "src/gpt/articles/faith/at-the-end-of-every-why/sections/50-at-the-end.tex"
-sha256 = "229b1aa7c4602cf37ee92794cc025c3c9ade3a4f8419290586dc3f57b9b783a3"
+sha256 = "2a85713601aab4e10bd569f9081020759db6929051a50ef160f26d882d814e9a"
 kind = "rendered-content"
 owners = ["articles/faith/at-the-end-of-every-why"]
 
 [[files]]
 path = "src/gpt/articles/faith/at-the-end-of-every-why/sections/90-scope-method-qualifications.tex"
-sha256 = "bde2bb3875ae736d3004ac4c87ff3580b1088dfc37d94ec3a5227b1f082068a0"
+sha256 = "024687c830ae8be39c1b868281ebce44d1f57221bff60ce2b9622be32b513572"
 kind = "rendered-content"
 owners = ["articles/faith/at-the-end-of-every-why"]
 
 [[files]]
 path = "src/gpt/articles/faith/at-the-end-of-every-why/sections/99-references.tex"
-sha256 = "5ee9dd44aaac3084a29a2827e3f42532f5515566db8bd816dd9cfc979df55849"
+sha256 = "8d203d75c686646a6f4d824021b2a6249ddec64a8e8d4de38eda0f398403e533"
 kind = "rendered-content"
 owners = ["articles/faith/at-the-end-of-every-why"]
 
@@ -1916,6 +2175,102 @@ kind = "rendered-content"
 owners = ["articles/faith/council-missal-and-crisis"]
 
 [[files]]
+path = "src/gpt/articles/faith/four-last-things-01-death/main.tex"
+sha256 = "33638b73c82b49f6203c40e84e718cb8ac81978d4532fcb0883dae3e5c28c18c"
+kind = "publication-main"
+owners = ["articles/faith/four-last-things-01-death"]
+
+[[files]]
+path = "src/gpt/articles/faith/four-last-things-01-death/references.tex"
+sha256 = "6456c025b4c191e3ff1cdd11ddc1826ed6cf4c70e4f7d0207adb3e94766a3599"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-01-death"]
+
+[[files]]
+path = "src/gpt/articles/faith/four-last-things-01-death/research/scope.md"
+sha256 = "07884f70d708ff2738335b1d10f666b9ddc9365b37d640ffe4fa5ed94fc417f6"
+kind = "research-scope"
+owners = ["articles/faith/four-last-things-01-death"]
+
+[[files]]
+path = "src/gpt/articles/faith/four-last-things-01-death/research/source-audit.md"
+sha256 = "dc220759ee8637e6995ddc641dba6709917b0b5c70e3bf241f6cccaa697d2e66"
+kind = "legacy-source-audit"
+owners = ["articles/faith/four-last-things-01-death"]
+
+[[files]]
+path = "src/gpt/articles/faith/four-last-things-02-judgment/main.tex"
+sha256 = "11ef24bf1381a52f6732b0e2ec59b8cc7d0f13d1a5b54e9cb3bb6fe3519af38f"
+kind = "publication-main"
+owners = ["articles/faith/four-last-things-02-judgment"]
+
+[[files]]
+path = "src/gpt/articles/faith/four-last-things-02-judgment/references.tex"
+sha256 = "5a6a8312b376d1af204d4caa5ddf3bdba795cb8bb16e5b3ae936c715cf2ba9f4"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-02-judgment"]
+
+[[files]]
+path = "src/gpt/articles/faith/four-last-things-02-judgment/research/scope.md"
+sha256 = "d2c5f829495405c00b31ce8ffd51f5644e182d9402993edfa4fc1edbac57b71d"
+kind = "research-scope"
+owners = ["articles/faith/four-last-things-02-judgment"]
+
+[[files]]
+path = "src/gpt/articles/faith/four-last-things-02-judgment/research/source-audit.md"
+sha256 = "797cebec8196cf401bfaa0a02f7255061d9b00e12e8b72ce8769df103f2cec6f"
+kind = "legacy-source-audit"
+owners = ["articles/faith/four-last-things-02-judgment"]
+
+[[files]]
+path = "src/gpt/articles/faith/four-last-things-03-hell/main.tex"
+sha256 = "c808341057828d300da6b21f6376959c3024dda106b23a9492389ec63edd861e"
+kind = "publication-main"
+owners = ["articles/faith/four-last-things-03-hell"]
+
+[[files]]
+path = "src/gpt/articles/faith/four-last-things-03-hell/references.tex"
+sha256 = "af58f5b3c84e8a5875b7adfd7832fd2ffdf6a7f83814cf27535840d934e20a91"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-03-hell"]
+
+[[files]]
+path = "src/gpt/articles/faith/four-last-things-03-hell/research/scope.md"
+sha256 = "6156d7e5b8a489695d4109526456c0db9def2bfbdf69234be0e54fa2ae5652fd"
+kind = "research-scope"
+owners = ["articles/faith/four-last-things-03-hell"]
+
+[[files]]
+path = "src/gpt/articles/faith/four-last-things-03-hell/research/source-audit.md"
+sha256 = "736b1d3d8b1f82babbb473a6d34673d57ddcf48a853f43c4e787c50d50cbf4fd"
+kind = "legacy-source-audit"
+owners = ["articles/faith/four-last-things-03-hell"]
+
+[[files]]
+path = "src/gpt/articles/faith/four-last-things-04-heaven/main.tex"
+sha256 = "e42583e5d8343a3ddf60e0ae35f51a7ef7ecba2b0ff2686c752ac5715df4181f"
+kind = "publication-main"
+owners = ["articles/faith/four-last-things-04-heaven"]
+
+[[files]]
+path = "src/gpt/articles/faith/four-last-things-04-heaven/references.tex"
+sha256 = "50260e3845d4fda8ba1d848f5baa2d488058c92b68b3f748df78c435ff525273"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-04-heaven"]
+
+[[files]]
+path = "src/gpt/articles/faith/four-last-things-04-heaven/research/scope.md"
+sha256 = "703b7a63c380706993325f51855ffacb01d240d72b1ae5a7d5ee2e97b988fc14"
+kind = "research-scope"
+owners = ["articles/faith/four-last-things-04-heaven"]
+
+[[files]]
+path = "src/gpt/articles/faith/four-last-things-04-heaven/research/source-audit.md"
+sha256 = "c9878d7567b7be4dff86ce3d799590defe060279910dffe44da6d176fd3681cd"
+kind = "legacy-source-audit"
+owners = ["articles/faith/four-last-things-04-heaven"]
+
+[[files]]
 path = "src/gpt/articles/faith/freemasonry-and-the-catholic-church/main.tex"
 sha256 = "682ee8e0041a5130f6731b9091fa97103b855ae55f2564733d8d7c39a513b90d"
 kind = "publication-main"
@@ -2042,20 +2397,92 @@ kind = "rendered-content"
 owners = ["articles/faith/freemasonry-and-the-catholic-church"]
 
 [[files]]
+path = "src/gpt/articles/faith/in-support-of-the-particular/main.tex"
+sha256 = "c2097f4ea7267b24ff3ab11408d48c158c294cb11d7eceee5c47453b437e762b"
+kind = "publication-main"
+owners = ["articles/faith/in-support-of-the-particular"]
+
+[[files]]
+path = "src/gpt/articles/faith/in-support-of-the-particular/research/scope.md"
+sha256 = "080395cd2db5fd4a01edae77366f36d47e186d0a6654fe10fe7c3248f5d8a940"
+kind = "research-scope"
+owners = ["articles/faith/in-support-of-the-particular"]
+
+[[files]]
+path = "src/gpt/articles/faith/in-support-of-the-particular/research/source-audit.md"
+sha256 = "f6dc8572f6eb4f3e06f50366ae0b9e5af540cec094a9897d16ab042df0074cb2"
+kind = "legacy-source-audit"
+owners = ["articles/faith/in-support-of-the-particular"]
+
+[[files]]
+path = "src/gpt/articles/faith/in-support-of-the-particular/sections/00-under-pontius-pilate.tex"
+sha256 = "999e0db0dcaf3076210a7bc85d9384d922469d4213785335e98e56293efbf911"
+kind = "rendered-content"
+owners = ["articles/faith/in-support-of-the-particular"]
+
+[[files]]
+path = "src/gpt/articles/faith/in-support-of-the-particular/sections/10-universal-cause.tex"
+sha256 = "11db60d7602d8c0a42c1ee00671b3b61db6ce0caa15b695224938195ad173bbc"
+kind = "rendered-content"
+owners = ["articles/faith/in-support-of-the-particular"]
+
+[[files]]
+path = "src/gpt/articles/faith/in-support-of-the-particular/sections/20-chosen-for-all.tex"
+sha256 = "4c1742f2a2090e7248163e102a9627611250e5ba1b5443bbea72e5dfbc14f271"
+kind = "rendered-content"
+owners = ["articles/faith/in-support-of-the-particular"]
+
+[[files]]
+path = "src/gpt/articles/faith/in-support-of-the-particular/sections/30-whole-in-the-part.tex"
+sha256 = "432da8eb20d149b65276efee3bbf6e1cbf8f4cb0975abb8eb0286108a2ad7436"
+kind = "rendered-content"
+owners = ["articles/faith/in-support-of-the-particular"]
+
+[[files]]
+path = "src/gpt/articles/faith/in-support-of-the-particular/sections/40-water-bread-person.tex"
+sha256 = "3cf58403e973b3d5134223ef370eccc30d90f2b03f5454f02a3290a81b4fb73a"
+kind = "rendered-content"
+owners = ["articles/faith/in-support-of-the-particular"]
+
+[[files]]
+path = "src/gpt/articles/faith/in-support-of-the-particular/sections/50-who-do-you-say.tex"
+sha256 = "f821777f6d0ddb753bcd1ed60674733de564aeaad62b27beef433cad86c21c30"
+kind = "rendered-content"
+owners = ["articles/faith/in-support-of-the-particular"]
+
+[[files]]
+path = "src/gpt/articles/faith/in-support-of-the-particular/sections/80-notes.tex"
+sha256 = "1e0d1b59aa225b3ff3a924a496ddbbf3bde50454ade09e5bcf6d213b9b72d844"
+kind = "rendered-content"
+owners = ["articles/faith/in-support-of-the-particular"]
+
+[[files]]
+path = "src/gpt/articles/faith/in-support-of-the-particular/sections/90-scope-method-qualifications.tex"
+sha256 = "2f3bea0265e41287016439b547b969f99eb0ae26a9f86f6f00368f0bccfe2eab"
+kind = "rendered-content"
+owners = ["articles/faith/in-support-of-the-particular"]
+
+[[files]]
+path = "src/gpt/articles/faith/in-support-of-the-particular/sections/99-references.tex"
+sha256 = "557e5714c299e86b26d27c5675a6cf303e80c12cc951fd425b3aebf143bd3130"
+kind = "rendered-content"
+owners = ["articles/faith/in-support-of-the-particular"]
+
+[[files]]
 path = "src/gpt/articles/faith/ontological-vertigo/main.tex"
-sha256 = "c8049a3407dbbae2c929f2c35fe2a3cc1746d92704c1c504ad15772108cf99ef"
+sha256 = "4f8c2ac9bb1b2400d7015f8245c404826c6d398c1626f645d4945b4a4cd067b5"
 kind = "publication-main"
 owners = ["articles/faith/ontological-vertigo"]
 
 [[files]]
 path = "src/gpt/articles/faith/ontological-vertigo/research/scope.md"
-sha256 = "6cd14118376dd285e8f7a950f4155052457bc2acc5b7f554a511f5bfc5b2eede"
+sha256 = "d940e26b2f91a603c05e483520f621d31a46ca8cd626fdb79c3370dc07a8be30"
 kind = "research-scope"
 owners = ["articles/faith/ontological-vertigo"]
 
 [[files]]
 path = "src/gpt/articles/faith/ontological-vertigo/research/source-audit.md"
-sha256 = "5b8022ab2db94b53855698f4300862487510747ce316cde35e8d67c6e50e7ca6"
+sha256 = "6bb3f948e514b875bb9db49e54724627165d13ef8adb7252f0febe390d8ed2c5"
 kind = "legacy-source-audit"
 owners = ["articles/faith/ontological-vertigo"]
 
@@ -2073,79 +2500,79 @@ owners = ["articles/faith/ontological-vertigo"]
 
 [[files]]
 path = "src/gpt/articles/faith/ontological-vertigo/sections/10-ancient-grammar.tex"
-sha256 = "6929e34a62677a330c4a86db2c2aa001b77cce9b864c438c04e6a8e448ae4804"
+sha256 = "8889ba45aa15c537daa8e39877cf1c69dca8570c8684f2b351f09343e18ba144"
 kind = "rendered-content"
 owners = ["articles/faith/ontological-vertigo"]
 
 [[files]]
 path = "src/gpt/articles/faith/ontological-vertigo/sections/20-patristic-dependence.tex"
-sha256 = "e849358873fe3b8505f0cbcc0cc5d681793b73889b21d370202e9fd49615e4f8"
+sha256 = "ad986d5d996c6024c327b2a411f85ec195392bacbed02517470f7e96eb31323c"
 kind = "rendered-content"
 owners = ["articles/faith/ontological-vertigo"]
 
 [[files]]
 path = "src/gpt/articles/faith/ontological-vertigo/sections/30-the-thomistic-center.tex"
-sha256 = "bd1d2d3dffdc47e344a13ef7f59507dfebe293aac42267bb572a75604df3d170"
+sha256 = "a3436e71f4944033be26f32c9fc5fd8fbfd3f098e16318f12cc28b7c92f6fdd9"
 kind = "rendered-content"
 owners = ["articles/faith/ontological-vertigo"]
 
 [[files]]
 path = "src/gpt/articles/faith/ontological-vertigo/sections/40-dependence-without-rivalry.tex"
-sha256 = "78971880a66ada040c06f0b610f0db5a4dddd1ad1895a9b30bec1a3484425945"
+sha256 = "857f9288451aad1e11bfdb6558ff81b7b42e6707ea65f0b8c6ab93704ec5fb19"
 kind = "rendered-content"
 owners = ["articles/faith/ontological-vertigo"]
 
 [[files]]
 path = "src/gpt/articles/faith/ontological-vertigo/sections/50-mystical-apprehension.tex"
-sha256 = "cba9aa74db08be073c103c09b940efcb7e6ffbba589c322c71cb304dc1f97726"
+sha256 = "61124fe0162ac24bc22d434a6a1b48dc489adee2671f17a500044d77c0faaf55"
 kind = "rendered-content"
 owners = ["articles/faith/ontological-vertigo"]
 
 [[files]]
 path = "src/gpt/articles/faith/ontological-vertigo/sections/60-after-the-scholastics.tex"
-sha256 = "7c0b360c99d1710ed13d0e3e0294e4a6ae9e5ee3f587f924ec588f631c41cb8a"
+sha256 = "450feda65e7440afddc88b2e8289ff680b27bb21755e42fbde11126bddb02792"
 kind = "rendered-content"
 owners = ["articles/faith/ontological-vertigo"]
 
 [[files]]
 path = "src/gpt/articles/faith/ontological-vertigo/sections/70-what-the-vertigo-sees.tex"
-sha256 = "3b105da4cf8319b04f42cd4b0699907c717eda866bc8ce82e41c249898ea8df2"
+sha256 = "8e461884dcddf3cca2a4b9a3f23dd551b83ade131ffea722a2453fe7c3283f11"
 kind = "rendered-content"
 owners = ["articles/faith/ontological-vertigo"]
 
 [[files]]
 path = "src/gpt/articles/faith/ontological-vertigo/sections/90-scope-method-qualifications.tex"
-sha256 = "89a07139a96df95925e7f50cb75a9ccec45b485cc3ebc0913bec92e15c33961a"
+sha256 = "b35c602b10aef1d955b7ab3204208a4a4d7cd47dbdfd54b977176761df88ae76"
 kind = "rendered-content"
 owners = ["articles/faith/ontological-vertigo"]
 
 [[files]]
 path = "src/gpt/articles/faith/ontological-vertigo/sections/99-references.tex"
-sha256 = "63c72ab107b8fa445d6a20b09edcdf8915d4754630cab13940635eafdef3c551"
+sha256 = "ab7860f8b84ba9d35b46304b1fb5a4b5681fa5f135736c0575c40e11d68e6107"
 kind = "rendered-content"
 owners = ["articles/faith/ontological-vertigo"]
 
 [[files]]
 path = "src/gpt/articles/faith/the-due-return/main.tex"
-sha256 = "dfcdc06fd516b9567fbc348fb72bbf9526ed25ffb56f241d2922bf507479ea9b"
+sha256 = "f8dbb20a8cb8a1df9a7cf26c98106a02cd5e7d31d7cf4ab451fdf03863fc08b1"
 kind = "publication-main"
 owners = ["articles/faith/the-due-return"]
 
 [[files]]
 path = "src/gpt/articles/faith/the-due-return/research/current-law-matrix.md"
-sha256 = "00f348d06d8732fd1e37d2996c112345cdeaa225dcebfd7e83089cd8b7fb1c29"
+sha256 = "a5d86947c7918312e4d7cb74dfa63b31d4b1957da454d761fb72031a8a75164a"
 kind = "research-record"
 owners = ["articles/faith/the-due-return"]
 
 [[files]]
 path = "src/gpt/articles/faith/the-due-return/research/scope.md"
-sha256 = "94a5da6b2815d13c527ee752ab756a002e935991f5b22366a5e4adf88f4e8d7d"
+sha256 = "5afb2f4ec550ec3cafba8460dca76d82b06cb509be3760ac9d27b11f8ef6c7d9"
 kind = "research-scope"
 owners = ["articles/faith/the-due-return"]
 
 [[files]]
 path = "src/gpt/articles/faith/the-due-return/research/source-audit.md"
-sha256 = "e780d626cab24e6b7653141e60d89c1245b21cd641e05f054555d2837244e807"
+sha256 = "c0aa47ee2de8764cd7b5bb0e77bf77a6cba02c10e649b5c96460a6998e7d33ea"
 kind = "legacy-source-audit"
 owners = ["articles/faith/the-due-return"]
 
@@ -2157,19 +2584,19 @@ owners = ["articles/faith/the-due-return"]
 
 [[files]]
 path = "src/gpt/articles/faith/the-due-return/sections/00-the-question-after-vertigo.tex"
-sha256 = "2b355ef569333a5a8575f238c9a70ae9ba5ce5ce163b72aa0c632c5ebc1e57b4"
+sha256 = "f7dc3f2c1b343f7c4da0fa3535f89a00f85cf79f6fee253f5bbccf9598161736"
 kind = "rendered-content"
 owners = ["articles/faith/the-due-return"]
 
 [[files]]
 path = "src/gpt/articles/faith/the-due-return/sections/10-the-gift-that-cannot-be-repaid.tex"
-sha256 = "ab3777e5bf83936adb389fb5f19b83454dee1091267d57de50a839c052107f73"
+sha256 = "5bb507e897f6b9e33c734ef0195617c665f8a9219ca856ed6bf7bc76b22cd96a"
 kind = "rendered-content"
 owners = ["articles/faith/the-due-return"]
 
 [[files]]
 path = "src/gpt/articles/faith/the-due-return/sections/20-justice-without-equivalence.tex"
-sha256 = "9009bc79dd6f9fb1ef4e64531c25d224acd09d6009b22b012b8dccbdad6f05c7"
+sha256 = "fd9700ff2c0b4d8ba00acd5b6eca6d84187dc7001cc61ac9ea7ed79c36db3b34"
 kind = "rendered-content"
 owners = ["articles/faith/the-due-return"]
 
@@ -2187,19 +2614,25 @@ owners = ["articles/faith/the-due-return"]
 
 [[files]]
 path = "src/gpt/articles/faith/the-due-return/sections/50-a-grammar-of-the-due.tex"
-sha256 = "86fe11b29a07f7ac5495a6e050362a0dd36b9bb3e0f0c8da3181aee47a71733e"
+sha256 = "c6e825073e0cff467e44da47beb87639981bdd78e8bb7b5441a05488f39ede96"
 kind = "rendered-content"
 owners = ["articles/faith/the-due-return"]
 
 [[files]]
 path = "src/gpt/articles/faith/the-due-return/sections/60-the-due-made-common.tex"
-sha256 = "d5131d981aa80f5bb25fa2076f329a21f7e1e8df84fe8a0d6bb5552ac0a99a2a"
+sha256 = "550c38c79c911987e7b7a1122e5fcc73ec43e164cf8359d961c7a6ed5f5e5de8"
 kind = "rendered-content"
 owners = ["articles/faith/the-due-return"]
 
 [[files]]
 path = "src/gpt/articles/faith/the-due-return/sections/70-the-return-passes-through-the-neighbor.tex"
-sha256 = "9234c41086e351cf183f66c3c9ebbdd1891d2a52edbe2fef336e59eafc1e1bbf"
+sha256 = "362b546709cacecd8503e9233817956ccedee92ed8d60727e30567bc430074ab"
+kind = "rendered-content"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/gpt/articles/faith/the-due-return/sections/75-what-action-cannot-close.tex"
+sha256 = "7137d69b112484c73c6968038d36299e8124537f2e75bd9c55046af40980c54d"
 kind = "rendered-content"
 owners = ["articles/faith/the-due-return"]
 
@@ -2210,14 +2643,20 @@ kind = "rendered-content"
 owners = ["articles/faith/the-due-return"]
 
 [[files]]
+path = "src/gpt/articles/faith/the-due-return/sections/85-gethsemane.tex"
+sha256 = "2e439a023b8be1daffc6a943939335a2e847ee851a360c10f9ce56f831bc6ff0"
+kind = "rendered-content"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
 path = "src/gpt/articles/faith/the-due-return/sections/90-scope-method-qualifications.tex"
-sha256 = "fe47dad8f0e45524a6f293c43dea03a0b3a0a51f7b7398d4dd8f6aa72163549c"
+sha256 = "2093ac99387dc2798070bfdc50db3cfe14d98eed441250d547801016eb45fa26"
 kind = "rendered-content"
 owners = ["articles/faith/the-due-return"]
 
 [[files]]
 path = "src/gpt/articles/faith/the-due-return/sections/99-references.tex"
-sha256 = "c9f72f96da3f2d55837cccb8159c86a8ed9472147d2a33ea3558b40a028a7cef"
+sha256 = "4b7376d404acf5638a41187a8fd6e38457925c4717d63973975d30f6e0945ced"
 kind = "rendered-content"
 owners = ["articles/faith/the-due-return"]
 
@@ -2229,13 +2668,13 @@ owners = ["articles/faith/trustful-surrender-to-divine-providence"]
 
 [[files]]
 path = "src/gpt/articles/faith/trustful-surrender-to-divine-providence/research/scope.md"
-sha256 = "5676a6eda2add304d2901d1a725148b2b8529c4da31c87ce1e938caf65295124"
+sha256 = "e48402b89907a45c708d5baaa01bc8c96298de79910c18f6f97752f3c9771de4"
 kind = "research-scope"
 owners = ["articles/faith/trustful-surrender-to-divine-providence"]
 
 [[files]]
 path = "src/gpt/articles/faith/trustful-surrender-to-divine-providence/research/source-audit.md"
-sha256 = "048697d3c8a16500007b43a01b48f29c3f8ed11d53772dfd676af37cba0e180f"
+sha256 = "1660a1c9bc9e1829c1abc4bd05d4f1ac334058797ff9155875691dd2c453cd7b"
 kind = "legacy-source-audit"
 owners = ["articles/faith/trustful-surrender-to-divine-providence"]
 
@@ -2247,13 +2686,13 @@ owners = ["articles/faith/trustful-surrender-to-divine-providence"]
 
 [[files]]
 path = "src/gpt/articles/faith/trustful-surrender-to-divine-providence/sections/00-question-thesis.tex"
-sha256 = "9c2fb25d74a9c3b27b5fadd2c24c068dc6a8f316f35af58621f1ea369eff60fe"
+sha256 = "a5ffe832822af513de0ee4e40904dd78160ad5b931200b96ff4d7c01c205c0af"
 kind = "rendered-content"
 owners = ["articles/faith/trustful-surrender-to-divine-providence"]
 
 [[files]]
 path = "src/gpt/articles/faith/trustful-surrender-to-divine-providence/sections/10-providence.tex"
-sha256 = "5b5763c26461470a8449d7105503ae922ce1dfcce25359baadafdf0bc2147ecb"
+sha256 = "c8a5726d95fed136c0723907957827c8370ffc8e9bd0ba1f0c8c840fb4fd0d6d"
 kind = "rendered-content"
 owners = ["articles/faith/trustful-surrender-to-divine-providence"]
 
@@ -2265,19 +2704,19 @@ owners = ["articles/faith/trustful-surrender-to-divine-providence"]
 
 [[files]]
 path = "src/gpt/articles/faith/trustful-surrender-to-divine-providence/sections/30-freedom.tex"
-sha256 = "22ca10c8dfcf85d6d5d8ece40311b3d768b2b77c516fb46e2e032f6facae1a40"
+sha256 = "9d0e9eedf3a49139890c9875a9db797758f78a2d026c5c3bda750f3a752c77f4"
 kind = "rendered-content"
 owners = ["articles/faith/trustful-surrender-to-divine-providence"]
 
 [[files]]
 path = "src/gpt/articles/faith/trustful-surrender-to-divine-providence/sections/40-agency-culpability.tex"
-sha256 = "c6bbaa022037050a7fe3c8a5ab833bd1612cc202405c0fa1b30c2de018d3fffb"
+sha256 = "35d83b6f8028c7452f16914e3b0e5f4b77d57d85fe5c56f4e9df826c8b61ec7c"
 kind = "rendered-content"
 owners = ["articles/faith/trustful-surrender-to-divine-providence"]
 
 [[files]]
 path = "src/gpt/articles/faith/trustful-surrender-to-divine-providence/sections/50-evil-suffering.tex"
-sha256 = "8b2119923f4ab3a34f0376aa368f50cfa3e726b79441fc511ec50c554865346f"
+sha256 = "ae5d5b97ae6816500bdb338df487d1c404f7f01f64ee78510a96a1158aa899e6"
 kind = "rendered-content"
 owners = ["articles/faith/trustful-surrender-to-divine-providence"]
 
@@ -2289,19 +2728,19 @@ owners = ["articles/faith/trustful-surrender-to-divine-providence"]
 
 [[files]]
 path = "src/gpt/articles/faith/trustful-surrender-to-divine-providence/sections/70-augustine-love.tex"
-sha256 = "b6dafaac80914dad831bb3734267e05ca76eb50a056e958a7f63e331db67e071"
+sha256 = "36eef9943ef11d96a982a5a109fed00763dca265dcd00260ce6fe8c49a662a0b"
 kind = "rendered-content"
 owners = ["articles/faith/trustful-surrender-to-divine-providence"]
 
 [[files]]
 path = "src/gpt/articles/faith/trustful-surrender-to-divine-providence/sections/90-practice.tex"
-sha256 = "1c6c059a10c9bce1729888b1aed3821bbd7acc976d17ca527613242d7fdbde60"
+sha256 = "fdececbe1b44b91699eb5d5707283095626985c40fb32fe1975c6c686a6cdec9"
 kind = "rendered-content"
 owners = ["articles/faith/trustful-surrender-to-divine-providence"]
 
 [[files]]
 path = "src/gpt/articles/faith/trustful-surrender-to-divine-providence/sections/99-references.tex"
-sha256 = "50c3aecfc9816134a24453b086a1530a2ed9bb3a7f0df2d1fd3ad650a6d918c6"
+sha256 = "9970b594f68cbdac95e023dd183b65f822016f4a611968f939dca2951d7f9b2a"
 kind = "rendered-content"
 owners = ["articles/faith/trustful-surrender-to-divine-providence"]
 
@@ -3285,7 +3724,7 @@ owners = ["curriculums/ecclesiastical-latin/00-memory-workbook"]
 
 [[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/00-memory-workbook/research/companion-map.md"
-sha256 = "203ff45a661dcab4c73eaa17f565f71455a75924caebb45c8e9f28cef6cdf488"
+sha256 = "12fb232e6c2bbfeb886de8994cc9121e48a42a7f483eff118600d09ea3438975"
 kind = "research-record"
 owners = ["curriculums/ecclesiastical-latin/00-memory-workbook"]
 
@@ -3981,7 +4420,7 @@ owners = ["curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced"]
 
 [[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/research/answer-key-audit.md"
-sha256 = "ef95df478560829cff1c8cdc4647b2709296b58e9f4634c20d35156ebfcf690c"
+sha256 = "7f130065da339a8b4a76d0f20facfab3c299bda7e9597e082b4a1ae405202d66"
 kind = "research-record"
 owners = ["owner.curriculums.ecclesiastical-latin"]
 
@@ -4023,19 +4462,19 @@ owners = ["owner.curriculums.ecclesiastical-latin"]
 
 [[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/research/production-manifest.md"
-sha256 = "e9319ec25b26d693294f07ade1121794dcbbfb80eab9c2d496fc5bd8966fd895"
+sha256 = "dd11c1a86c8b6db53d8e8b958778336a4db2dd6aaa694ed65d55fdb085d389bf"
 kind = "research-record"
 owners = ["owner.curriculums.ecclesiastical-latin"]
 
 [[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/research/scope.md"
-sha256 = "c2857ad0e3da276da346407fb21f4584dce854565cddd5b6a5a1f8b7830092d3"
+sha256 = "ea1afe0fd19c58c04b613dbfc016a82c183f314d10b4354ff28713ccfd906465"
 kind = "research-scope"
 owners = ["owner.curriculums.ecclesiastical-latin"]
 
 [[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/research/source-audit.md"
-sha256 = "bb3f9f3a211f5b4b358daa88d3b89c39a6bea590141c7b9a181b3ba2d94c051f"
+sha256 = "c5765469980dfc4768965553745bf08b617cfe6e6006a4ed1b2962d31ed9e863"
 kind = "legacy-source-audit"
 owners = ["owner.curriculums.ecclesiastical-latin"]
 
@@ -6150,6 +6589,216 @@ path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecos
 sha256 = "d5b852ab43b9c8b9ddfed542aa1a094ba4c06423bd1c46118a283641c48e04ca"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards/main.tex"
+sha256 = "d027e72844084dcf3d5b3e8538de1a2f636dd7df63757a0d0d0fa71d4f214b72"
+kind = "publication-main"
+owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards/research/guide-map.md"
+sha256 = "16cfbeff8664829448ac1eb4917310aea1f6353257bf436e8bb0bec486c3f9b6"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual/main.tex"
+sha256 = "79d1d9f8a923b12098de6bf3ca7a4c95a2f2c99dc49b771f484207e5b0422888"
+kind = "publication-main"
+owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual/research/guide-map.md"
+sha256 = "b2814a3aa6aee138cadde5dc115deaa547db331d41a9ed46af8144bbf87476a0"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass/main.tex"
+sha256 = "a1072574168cbb00df80e01ca6e4c255fb118f66fa2aeb264028f45fe59959fe"
+kind = "publication-main"
+owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass/research/guide-map.md"
+sha256 = "46afca7f399154f09d0d7e087a7f3e5a1ba1e01b658cc9256f4d63c15fb5db0f"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards/main.tex"
+sha256 = "69b039699be786b61acddad4f0858101d991bbb8402c75023ccf9cf7d5bee039"
+kind = "publication-main"
+owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards/research/guide-map.md"
+sha256 = "d19661f0356294a725ce3fcf87da3ce001dacb673bd3353a5a4c6e97321231e2"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata/main.tex"
+sha256 = "3ee9eabaa9036018253b374ea2fc335900be8d3c0614327fd35c810f4d318b5c"
+kind = "publication-main"
+owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata/research/guide-map.md"
+sha256 = "9824c07a929fc8d81054f51e282a1e2cba6c7d29288e7f2924488fcc04bbb081"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards/main.tex"
+sha256 = "112ab29a005309f2376ee609d712f2bfe249fe9b0b20669f4185dc75f9cc5e77"
+kind = "publication-main"
+owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards/research/guide-map.md"
+sha256 = "90eefaa2161775a8274326fa8a3aebe410c7a8c031224f24e36c8591b0fedf35"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass/main.tex"
+sha256 = "643d1c820fb360cbc3b5361bf3016c43bcd7263d7e518382f1ee8f5fc7ea4511"
+kind = "publication-main"
+owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass/research/guide-map.md"
+sha256 = "e886013f92cea109e5e09fa4f113faa426b15b0f07daba1cb1ef4570c2ae64fb"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/ceremonial-inventory.md"
+sha256 = "2ab7a26f41bf40c3ec7065ff5925b1cfab562739021f9e76319bfeb47d6170a9"
+kind = "research-record"
+owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/edition-manifest.md"
+sha256 = "a9b545efb33a89d8f9364a0ce5e2b7d9a52915e2badf2d93ac6f9ceb8978776c"
+kind = "research-record"
+owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/flash-card-manifest.md"
+sha256 = "56a1d6a857a34d192c6f2205cd059f498cdd8a751df25434c423d558acab413c"
+kind = "research-record"
+owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/presentation-research.md"
+sha256 = "aebdc7f8780253cba15d2dff676de9a01401795d9de0f511aea286ec7ce26b5b"
+kind = "research-record"
+owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/production-manifest.md"
+sha256 = "fc3fc9750574ae02a238e1a26723340b084db488f398d0e6c547963ecdb07f78"
+kind = "research-record"
+owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/pronunciation-audit.md"
+sha256 = "3d92aa588e490c4f1450dedba3229d06007b3ddb699cf412e0e071417967da99"
+kind = "research-record"
+owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/response-inventory.md"
+sha256 = "95ef55ef6bde29b7817bf1aa25760d84412c364a3a1be448e775160df41af50c"
+kind = "research-record"
+owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/scope.md"
+sha256 = "579b300453947fa739bfb86c319ec45f67dcd13d4d425360e6c1f0338e121cc6"
+kind = "research-scope"
+owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/source-audit.md"
+sha256 = "d07fb9d2c2fa70e0bafc87d6226f64f370ae16bd1bdaf11ad4a02854140270fe"
+kind = "legacy-source-audit"
+owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/low-mass-book-format.tex"
+sha256 = "8dd0dd4655d1ff5b86cb66074bd5da9e207016a74864db30bcf2da7e9bdf2bf1"
+kind = "shared-source-or-render"
+owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/low-mass-ceremony.tex"
+sha256 = "8fe010659042272970151f0986f646db8c2742e81127d21efbc48d7de225f864"
+kind = "shared-source-or-render"
+owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/low-mass-diagrams.tex"
+sha256 = "f92cb4cac6f1a05a139cd1702f116e742fd95cd34e704803f42a2de714118029"
+kind = "shared-source-or-render"
+owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/missa-cantata-action-cards.tex"
+sha256 = "1d8d6817871b3580f3105ae139bf5d980ae715422597c4fbfd90d06e8892bb63"
+kind = "shared-source-or-render"
+owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/missa-cantata-ceremony.tex"
+sha256 = "3f7a13c711d4b547990da30dc26ffe34d7399cb244cc8dc734ba42f8d3afe680"
+kind = "shared-source-or-render"
+owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/missa-cantata-role-sheets.tex"
+sha256 = "615d1e3ef13d3d7f5d2bfbd5fcc3ed0b6e8e8c1f66bbf20b70cf4f0fb72bb836"
+kind = "shared-source-or-render"
+owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/response-reference.tex"
+sha256 = "9ed4df81b6419a17ba941060b21037c2a7de8bceeedeff2ba61a28a38e063bcc"
+kind = "shared-source-or-render"
+owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/server-guide-format.tex"
+sha256 = "ea6231111d7f7cdedf9d3914e8185c03476d1c6b4ba3493ea350fc4f9d18eeec"
+kind = "shared-source-or-render"
+owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/solemn-action-cards.tex"
+sha256 = "ebb4c942020a22894807088469f2bc82b29e179c67796aa588a561565f9794e1"
+kind = "shared-source-or-render"
+owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/solemn-ceremony.tex"
+sha256 = "9f27158fcf41431db5bc1f12ff3eac8291377779be8040043af7b2080755cade"
+kind = "shared-source-or-render"
+owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/solemn-role-sheets.tex"
+sha256 = "d716ae5788b3f29337f43350c241058de2df9f603e0a621db9534c5e3fcf99c4"
+kind = "shared-source-or-render"
+owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/terminal-apparatus.tex"
+sha256 = "c2963c9e805655f4a6b04ae37d367c1ab77a5bf3b3a893fd735198756241f6d1"
+kind = "shared-source-or-render"
+owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/main.tex"

@@ -4,9 +4,9 @@
   "provider": "gpt",
   "expected_counts": {
     "publications": 116,
-    "release": 108,
+    "release": 116,
     "review": 0,
-    "hold": 8
+    "hold": 0
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
@@ -32,35 +32,35 @@
         "worldwide"
       ],
       "rights_record": "release/rights/public-alpha-2026-07-15.md",
-      "rights_record_sha256": "d8664c4368a927262e8e90022fb6b5224561d62ffc5862cb018893c0172de982",
+      "rights_record_sha256": "1a4463bbe43b6c35e7f6d4742f20e8d9b68f7da62b3adc7759797c07dca9dc96",
       "site_sources": {
-        "CONTRIBUTING.md": "47fc90b8b6ad73ae45af02a6b1ccf51f7e6af1a558a816984fdad694bee7a928",
-        "LIBRARY.md": "35a7c454a391de3ab285e7b91257120db030481f55d4149112a15c859c60ca27",
-        "LICENSE": "6830030f2e4ff888ee116bc68e45adcd83f3929d2d82eb4eed3c6a663f665f91",
+        "CONTRIBUTING.md": "48d3e3da2927a25b35945053a41a5d19a35a76a7b9abcb1aed10cd5bb59cd2f2",
+        "LIBRARY.md": "a3c5bf32a92a7fea870baaa08d6a37b35ae8a913f8f93b4207bf17a193a98dc3",
+        "LICENSE": "29cb5f2c6d250023542c5e1d88de1ef2b4ae3b4bd41222cbd299b14f4e221aca",
         "LICENSES/CC-BY-4.0.txt": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744",
         "LICENSES/MIT.txt": "afd9c125b68a36b60c78cf63656f4cea2613fadce57e95ebabacebff8817ef60",
-        "README.md": "218b3b8109f4266d9adc11235739b9a7799dfff1bf99b5f5a4ecc317a7cdc91d",
-        "THIRD_PARTY.md": "c8555fa3578745eb989cb8f0b84c851dbdfe8f02f6bfb510918d84599e07dbab",
-        "library/biographies.md": "71fc0c89f6e58f7cab478dc5c1be707b59f4fde55d43273cbf7917e8add3f623",
-        "library/curriculums.md": "ede48458af50fe3538b9b8154a38bd710ef695e7d4bc4cb8dbfd44d5ae97f541",
-        "library/ecclesiastical-latin.md": "68a75ba04da4092cb705d30289c8935080c931babc10e2990deb367636d48d09",
-        "library/faith.md": "855b457b84b3466210b1460dce4b600749de9d94725a442b13722139be398a69",
-        "library/heresies.md": "f7b6cf154fb2875cd4a8a23a1ca6188d9dcae16770fa7d6fad7817b595797c8f",
-        "library/historical-accounts.md": "067e1dc4d2daa17d699086855b4b4a2f6265f38cf880fbe0b0d7b5b18aaf85b0",
-        "library/law-and-church-discipline.md": "f768255de091da8174b2e822024f6b10739b9f6dac3740a6cc602e34399e7ce2",
-        "library/mariology.md": "e00ef102356e82b055bc11330721452ffcd81fe60727dba7a5d7f25f7a6b75a6",
-        "library/novus-ordo-liturgy.md": "cb873c1f7c898f825e266433efc17ed2b1efbe302bd74362bd42106f0d935b5e",
-        "library/prayer.md": "be21efc07c0c3585b2ac8a4ba0a8969331783a9f6378273f4a5e254b9a93e560",
-        "library/traditional-latin-mass.md": "b7ad3dca1e3ba528755b894d5f25f0783498485eb81f3e037005d22479877b9d",
+        "README.md": "2ab9915ccf39a8ac680b1a8d13e1d73a055e586d9568f07e5bbe33b85121afea",
+        "THIRD_PARTY.md": "965aaaff0e773815213fa8c9aada37213d6cb890eb374ef3d1bb1d1dbf966ec4",
+        "library/biographies.md": "450db8c58ecb85891c8b051887274fb81beef92d11241ac0f2e33940a7adf8ec",
+        "library/curriculums.md": "15f24d06b4911b1cbfe4d85d82c463d7c2eef8635ff25edf2817d5fa6e0fb2bc",
+        "library/ecclesiastical-latin.md": "266de80c245bc9c476e33cbef324a2a12d6eb91514bcac95c47274272008dd63",
+        "library/faith.md": "7f1ec2c1bfdfd54987602fc01a0e404641a0cccad5784a736bc6bae4554897f9",
+        "library/heresies.md": "76c82eac736f231ce15955584a79465af9e36e7cc8eaffc688bdb3fbbe9c9f47",
+        "library/historical-accounts.md": "7feed40bad2fbe1ed20c07b7ea6b0417f347b784fc2d1da746e94ef2839811ab",
+        "library/law-and-church-discipline.md": "3570188531c8f7121c1842055bc0f0da2fa640a1a4b01d421afe796532e006d6",
+        "library/mariology.md": "577de486e7ee428bc9fb2e55c5b027e1c462f5b92c243f1c3e1e4844373de542",
+        "library/novus-ordo-liturgy.md": "eef9142903ac2f537c6100b7f6aef276d12918462ddb496780594081c25e42db",
+        "library/prayer.md": "7872bbe1e711e16911ecd203415d2f25c6b3a9adebfab9c6d53b8dd07bb96c37",
+        "library/traditional-latin-mass.md": "3a502934d3c37d20b5e197dfb8f1dab0e92d2a48b86e13b815711916dce07743",
         "release/public-alpha/404.md": "551491f5521a5624911d63b398156d2236cbed2f0aa832eeb9c97070dcea568e",
         "release/public-alpha/assets/site.css": "358d86f3587fc03f62a17cd4b5fd0126fb2dc3d952afa48eb33fc3a88fce54e9",
         "release/public-alpha/layout.html": "1add2c3f7e6faed6cde4f71b471b5d275089aa719a779f250ef761b3754bea63",
         "requirements-public-alpha.txt": "c30202fbc2f2eb1da451b8bae46b6867c07915844cec203a243991d14b8d4efc",
         "scripts/public-alpha": "4907c8971c4d3719703cbca715f4e09ad7940c43ac010f10979ce49d83204314"
       },
-      "approved_on": "2026-07-23",
+      "approved_on": "2026-07-24",
       "duration": "perpetual",
-      "effective_at": "2026-07-23T09:04:32-05:00",
+      "effective_at": "2026-07-24T15:31:36-05:00",
       "expires_at": null,
       "timezone": "America/Chicago",
       "conditions": [
@@ -86,7 +86,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "a333a75c01f9fe003c8ba4e652c5b816ee61ba19a5cafecf377997d2012897be"
+        "pdf_sha256": "d68868669c34685118474f74606de33403a215c4f53575d835670e97130508b3"
       }
     },
     {
@@ -96,44 +96,48 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "4da0700f412ef6f74bf007754ef56cbfb573b32024108faa605a15c6f11dd18d"
+        "pdf_sha256": "c19f3b6aa75c0ebd394f1e6e6b5d30c6ccbf28da6ac96a9251ea54c43e96aebd"
       }
     },
     {
       "id": "articles/faith/four-last-things-01-death",
       "catalog": "library/faith.md",
-      "status": "hold",
-      "gates": [
-        "work-specific-rights-review",
-        "exact-snapshot-authorization"
-      ]
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "dfa66cefe1ed3fbf21c2fd059c6112a0d97f9f6dd9001acba4b5e125cd068bb8"
+      }
     },
     {
       "id": "articles/faith/four-last-things-02-judgment",
       "catalog": "library/faith.md",
-      "status": "hold",
-      "gates": [
-        "work-specific-rights-review",
-        "exact-snapshot-authorization"
-      ]
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "0ff768fba26437da20f2548ffdf7eb8c46ae845be74d82545b53b8e3cca885f5"
+      }
     },
     {
       "id": "articles/faith/four-last-things-03-hell",
       "catalog": "library/faith.md",
-      "status": "hold",
-      "gates": [
-        "work-specific-rights-review",
-        "exact-snapshot-authorization"
-      ]
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "4a8ce50e6b2e0e6d71206217012c9c003b2ddabb555f0f45f5bd3a322d0db946"
+      }
     },
     {
       "id": "articles/faith/four-last-things-04-heaven",
       "catalog": "library/faith.md",
-      "status": "hold",
-      "gates": [
-        "work-specific-rights-review",
-        "exact-snapshot-authorization"
-      ]
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "e2eae421b58bf3a297eae7fe0d3828225e2d74ca8d8145cbf87482a6d44f171b"
+      }
     },
     {
       "id": "articles/faith/freemasonry-and-the-catholic-church",
@@ -142,7 +146,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "e55573d946155fd2904ddbab663bc46add1bef032259f698de51c1b9170d85fc"
+        "pdf_sha256": "50f9743aed3fc17f327beafcff06cdbb9120b2ae8152922ec71db2af8b00edd4"
       }
     },
     {
@@ -172,16 +176,18 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "743a17205fa43aded5c17e7ed463cd94261f227efc40ca625ff26fc674e44a5f"
+        "pdf_sha256": "c135449a5c03012587cc363580cf83db7cde83fb5bb13150d51f3b6c7c40fdf1"
       }
     },
     {
       "id": "articles/faith/trustful-surrender-to-divine-providence",
       "catalog": "library/faith.md",
-      "status": "hold",
-      "gates": [
-        "renewed-exact-snapshot-authorization"
-      ]
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "01f09c1214d22efd5998fd65304c1356a8dfcb2f0f75894cfeb5e0d0da397fd6"
+      }
     },
     {
       "id": "articles/canon-law/clerical-celibacy-chastity-and-continence",
@@ -190,7 +196,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "178ef4c9a60a472bd2fdb6428182652ac35d4f655bdf6c099e48f553112224d7"
+        "pdf_sha256": "de073a0ab275159cfe4065105c432781b2d9bcb33c5394a22dfe103c3908561d"
       }
     },
     {
@@ -260,7 +266,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "280f76a18b37c34684b8da84f8e6a46f46cbfbede8b06b9d0f335a572dd09cc8"
+        "pdf_sha256": "05d1b1b792c5774e0aa10822e9722d3a844e442a09c54e5573bd5913fa2c275a"
       }
     },
     {
@@ -660,7 +666,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "e77627738332391562d544fea0f52bbbddc8879fc5514cb26be6b75fb0d97818"
+        "pdf_sha256": "73e11c6ad7f64c16ab813ac095c746f42f0c44ae252e2bd51829b2a3b26fca51"
       }
     },
     {
@@ -680,7 +686,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "639d93c67a5ba7f94729730d8c021543e0d3d2f6e596ddf735aceeda97157eb9"
+        "pdf_sha256": "2ae6e63c1363f7340a49f060769cb3a79fdd520d84a936a15406ed9d6395f812"
       }
     },
     {
@@ -770,7 +776,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "8f90c628720002de38604aa8c7cd83703ad6ccd0d023601a0a6d670d5e882c3d"
+        "pdf_sha256": "4b1945c54f5dce7b136976d0da4c0d98b7615c40b9adefd8335af6261687e565"
       }
     },
     {
@@ -870,44 +876,38 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "6a7cf2a08a865ef30cc766ee8497f980d499c55cc9fa5ec3ea4ce5bb6d3481b0"
+        "pdf_sha256": "e912d945ea1cdd3e6c50b9de3b626ab01f38563c1aaa1976a77df9404723da5e"
       }
     },
     {
       "id": "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass",
       "catalog": "library/traditional-latin-mass.md",
-      "status": "hold",
-      "gates": [
-        "work-specific-rights-review",
-        "liturgical-text-permission",
-        "independent-server-guide-review",
-        "renewed-exact-snapshot-authorization"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "25e61efa29745f5e69ac24ddcabc94bcba3ba4424a61261c71dbb7089473335b"
+      }
     },
     {
       "id": "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards",
       "catalog": "library/traditional-latin-mass.md",
-      "status": "hold",
-      "gates": [
-        "work-specific-rights-review",
-        "liturgical-text-permission",
-        "independent-server-guide-review",
-        "exact-snapshot-authorization"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "d361503e0bd46c873d07411ce3cce2fe184fb690bb3c7cb66aaa48e45ab7dc35"
+      }
     },
     {
       "id": "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual",
       "catalog": "library/traditional-latin-mass.md",
-      "status": "hold",
-      "gates": [
-        "work-specific-rights-review",
-        "liturgical-text-permission",
-        "independent-server-guide-review",
-        "exact-snapshot-authorization"
-      ],
-      "approval": null
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "c507df839af9b96ee273e0d4317a54109779d8bd155b955298c2f6d1ef207c56"
+      }
     },
     {
       "id": "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata",
@@ -976,7 +976,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "e52cfb69dac2bb6df6d99321f96af704b954ffdaa1580b1aea3640742b751743"
+        "pdf_sha256": "5ba86c4734a874fe0a7117bc0f350c667974895c1b63504a1bbfd0f5ed97ba05"
       }
     },
     {
@@ -986,7 +986,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "1c56d895d595323fa8c28adc5c2f9fccc28d7a868f1f6b42799651f54db3afe7"
+        "pdf_sha256": "71fe67ded09165b272a37eeff4b46552757fbd1439bad0b157e66ead8fc2222a"
       }
     },
     {
@@ -1106,7 +1106,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "ead14d229e114bb263dea8f64c2c797228754d18de0a9931bb4bb9f34f6274b0"
+        "pdf_sha256": "0b0b6a2c1d8a1a0005992c6a844c26c84fa618350f5d701621d2209c4fe0349b"
       }
     },
     {
@@ -1186,7 +1186,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "56151b607388f9d85bfbcc73b7b236bb51dede1579c0c9b4b8429e7b496a3d88"
+        "pdf_sha256": "13b681d49a80f54b25fd9e48c5a727681e06884308a7705460425135c3062548"
       }
     },
     {
@@ -1196,7 +1196,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "10cbdb6a9c9661e4c451f8033dbb642af799890d53e4a8d0e994816aa34e711c"
+        "pdf_sha256": "940ea7e631aef87fcfc6ec6338d2d3621cc111c21e304ce495d87130b2ce472e"
       }
     },
     {
@@ -1206,7 +1206,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "f1d73a9cc797c1dedec42851276062a1cebfca6ce632a30b8685be318005abb9"
+        "pdf_sha256": "d6ca971dec92aa4355cebdf706b38da71cc60109e0015607b32bbc0680db46d3"
       }
     },
     {
@@ -1226,7 +1226,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "b88beadd66e79b5c1500059ab03da0e55384c43c6cf913d0acd2605f6d24175d"
+        "pdf_sha256": "3d44c837d5dbfff4cba9e1ff2ff07f2b2be973d890214e8e80b45e00059f9c6c"
       }
     }
   ]
