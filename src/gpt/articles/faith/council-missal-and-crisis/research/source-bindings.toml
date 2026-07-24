@@ -451,3 +451,13 @@ context = "The complete official Latin delivery was checked for Pius IX's 29 Jun
 claim_keys = ["vatican-i-convocation"]
 verified_on = "2026-07-24"
 source_fingerprint = "sha256:9e0b6ad8320d83c2065fe9a78ef62b3d74478ebd81500854b392572447ccbc51"
+
+[[bindings]]
+source_id = "passage.john-xxiii.gaudet-mater-ecclesia.latin-vatican-web-2026-07-24.complete-text"
+loci = ["complete-text"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official Latin opening address was checked for John XXIII's opening of Vatican II, his distinction between the deposit of faith and its mode of expression while preserving the same meaning and judgment, and the address's pastoral orientation."
+claim_keys = ["vatican-ii-opening-program"]
+verified_on = "2026-07-24"
+source_fingerprint = "sha256:a690e30b0c86a9ec330ff746dcd44ff5077a5b82b0ec403e14eaaffdc6578193"
