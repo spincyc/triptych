@@ -1,0 +1,46 @@
+schema = 1
+record_type = "bindings"
+document = "articles/faith/ontological-vertigo"
+
+[[bindings]]
+source_id = "work.thomas-aquinas.summa-theologiae"
+loci = [
+  "I.2.3.corpus",
+  "I.3.4.corpus",
+  "I.8.1.corpus",
+  "I.13.7.corpus",
+  "I.20.2.corpus",
+  "I.32.1.corpus",
+  "I.44.1.corpus",
+  "I.46.2.corpus",
+  "I.104.1.corpus",
+  "II-II.84.1.reply-1",
+  "II-II.129.3.reply-4",
+  "II-II.161.1.corpus",
+  "II-II.161.1.reply-5",
+  "II-II.161.2.corpus",
+]
+role = "textual-control"
+states = ["cataloged"]
+context = "These loci govern the article's adopted metaphysical and moral framework: the First Way with its limits, essence and existence, innermost presence, the one-sided real relation, divine love as creative of goodness, the Trinity boundary, participation, the non-demonstrability of a temporal beginning, conservation, adoration, and the humility-magnanimity pairing. The authoring agent checked the English Dominican translation at New Advent for every locus and the Corpus Thomisticum Latin for the eight Prima Pars loci quoted in Latin, all on 2026-07-24 (see research/source-audit.md). The repository's registered Leonine edition record covers only ST I qq. 1-49, so this binding remains at the work level; no collation against a printed edition or registered artifact is claimed, and the publication-local check is the verification ceiling asserted here."
+
+[[bindings]]
+source_id = "edition.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887"
+loci = ["2.34.3", "2.34.4"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The registered ANF edition identifies the translation quoted for the patristic conservation witness: creatures continue according to the will of God, life bestowed rather than arising from our nature (II.34.3), and the soul partaking in life bestowed by God (II.34.4). The publication-local audit checked the New Advent transcription of this translation on 2026-07-24 and confirmed the section numbers from the page markers; no verification against the registered facsimile or OCR artifacts is claimed."
+
+[[bindings]]
+source_id = "edition.first-vatican-council.dei-filius.latin-vatican-web-2026-07-24"
+loci = ["complete-text"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The article quotes the chapter 1 creation sentence (liberrimo consilio simul ab initio temporis utramque de nihilo condidit creaturam; non ad augendam suam beatitudinem, nec ad acquirendam) and relies on canon 5 De Deo rerum omnium creatore condemning creation by necessity. The authoring agent fetched the same Holy See Latin page publication-locally on 2026-07-24 and extracted the quoted wording verbatim (see research/source-audit.md). English renderings in the article are labeled working glosses governed by the Latin. This binding records the edition-level dependence without claiming to have replayed any central artifact fingerprint; the publication-local check is the verification ceiling asserted here."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["300", "301"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The article quotes CCC 301 in full (With creation, God does not abandon his creatures to themselves... upholds and sustains them in being, enables them to act and brings them to their final end) and uses a checked reading of CCC 300 (transcendence and intimate presence, quoting Confessions III.6.11). The authoring agent fetched the official Vatican English page for these paragraphs publication-locally on 2026-07-24; the registered edition is the 2026-07-23 dated web state, and no material difference was observed at the cited loci. No central artifact fingerprint is claimed; the publication-local check is the verification ceiling asserted here."

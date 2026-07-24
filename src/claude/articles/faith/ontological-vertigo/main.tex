@@ -1,0 +1,77 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+\usepackage{endnotes}
+
+\hypersetup{
+  pdftitle={Ontological Vertigo},
+  pdfsubject={A discursive essay on the reflexive apprehension of asymmetric ontological dependence: received being, present conservation, and the fork of recoil or consent. The Creature Before God, Part I}
+}
+
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.14\textheight}
+{\large\scshape A Triptych Article\par}
+\vspace{1.5em}
+{\Huge\bfseries Ontological Vertigo\par}
+\vspace{0.9em}
+{\Large On Being Held in Being\par}
+\vspace{1.4em}
+{\normalsize\itshape The Creature Before God --- Part I\par}
+\vfill
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{articles/faith/ontological-vertigo/sections/00-the-song-and-the-house}
+\input{articles/faith/ontological-vertigo/sections/10-what-the-greeks-reached}
+\input{articles/faith/ontological-vertigo/sections/20-what-a-thing-is-and-that-it-is}
+\input{articles/faith/ontological-vertigo/sections/30-the-present-tense-of-creation}
+\input{articles/faith/ontological-vertigo/sections/40-this-is-true-of-me}
+\input{articles/faith/ontological-vertigo/sections/50-the-reading-that-recoils}
+\input{articles/faith/ontological-vertigo/sections/60-the-shape-of-the-gift}
+\clearpage
+\addcontentsline{toc}{section}{Notes}
+\begingroup
+\small
+\setlength{\parskip}{0.3em}
+\theendnotes
+\endgroup
+\clearpage
+\appendix
+\input{articles/faith/ontological-vertigo/sections/90-scope-method-qualifications}
+\input{articles/faith/ontological-vertigo/sections/99-references}
+\begingroup
+\setlength{\parskip}{0pt}
+\vspace{-0.6\baselineskip}
+\section{Generation Metadata}
+\vspace{-0.35\baselineskip}
+{\scriptsize\input{articles/faith/ontological-vertigo/generation-metadata}}
+\endgroup
+\end{deepstudy}
+
+\end{document}
