@@ -11,9 +11,9 @@ profile, its child-process supervision boundary, its run-identity and lexical
 state-path boundary, its state-location and repository-name boundary, the
 immutable runtime-identity record and launcher-entry authentication
 boundaries, its Git-executable discovery and pre-pin validation boundary, the
-exact Git-administration line-format validation boundary, the frozen Triptych
-compatibility adapter, the Python distribution, and the Make integration
-fragment. The repository-local
+exact Git-administration line-format validation boundary, its Codex-executable
+candidate-selection boundary, the frozen Triptych compatibility adapter, the
+Python distribution, and the Make integration fragment. The repository-local
 [`scripts/triptych-codex`](../../scripts/triptych-codex) command is a thin,
 in-process bootstrap for the co-located package engine.
 
@@ -114,7 +114,7 @@ worktree-removal or ref-transaction failures, receipt recovery, garbage
 collection, or concurrent retirement. Those retirement cases, broader crash
 and race recovery, broader security coverage, the complete installed lifecycle
 matrix, and the supported Python and Git CI matrix remain release gates; the
-first twelve step-5 seams are protected by direct source tests and artifact
+first thirteen step-5 seams are protected by direct source tests and artifact
 provenance, and the installed abort checkpoint covers archived transaction
 restoration. Each remaining helper boundary still requires its own direct
 parity coverage.
@@ -141,10 +141,12 @@ field inventories and the deterministic in-place transform used to clear or
 archive a transaction and restore its recorded prior state. The existing
 engine wrappers still choose when to apply that transform, acquire the archive
 timestamp afterward, and own validation, persistence, and recovery. Typed run
-records and transition-graph enforcement remain deferred. Codex executable
-discovery, subprocess creation and command execution, repository
-authentication, effective-configuration probing, ref transactions, and
-lifecycle orchestration also remain together in `engine.py`.
+records and transition-graph enforcement remain deferred. Codex argument
+normalization, child and resolver environment construction,
+sandbox-enforcement argument construction, subprocess creation and command
+execution, repository authentication, effective-configuration probing, ref
+transactions, and lifecycle orchestration also remain together in
+`engine.py`.
 
 [`identity.py`](src/worktree_marshal/identity.py) owns the three frozen runtime
 records for a discovered repository, an authenticated linked worktree, and the
@@ -172,6 +174,31 @@ establish pointer canonicality or containment, or close a symbolic-path or
 replacement race. Git-executable discovery and pre-pin validation belong to
 `git.py`, while its process-global cache and invocation remain in `engine.py`;
 neither is a future responsibility of `identity.py`.
+
+[`adapters/codex.py`](src/worktree_marshal/adapters/codex.py) now owns only the
+dependency-injected `select_codex_executable` operation for a usable,
+non-launcher Codex executable candidate. The exact-signature engine wrapper
+resolves and passes the active profile once, then supplies the current
+environment, path, filesystem, access, mode, and error providers lazily. The
+selector reads the captured profile's override field. A nonempty override must
+be absolute and is the sole candidate. Otherwise the selector scans the
+inherited executable path in order for the literal name `codex`, treating an
+empty entry as the current directory. It skips candidates whose metadata
+cannot be read, that are not regular executable files, or whose followed
+metadata has the authenticated launcher's device and inode, and returns the
+selected spelling made absolute. That return is `candidate.absolute()`, not
+`candidate.resolve()`.
+
+Here “real Codex” means only a candidate that passed those point-in-time
+checks. Selection does not canonicalize the result, authenticate provenance or
+version, distinguish a copy or wrapper, pin a file descriptor or device/inode
+identity, close the stat/access/use replacement window, or establish sandbox
+assurance. Symbolic links are followed while reading metadata, and either the
+link or file may later be replaced. The engine retains profile binding, its
+legacy `resolve_real_codex` wrapper and startup ordering, Codex option policy,
+argv and environment construction, sandbox arguments, process creation, and
+every post-exit and lifecycle decision. No shared base-adapter contract has
+been introduced.
 
 [`state.py`](src/worktree_marshal/state.py) owns only the exact run-ID grammar,
 dependency-injected timestamp and random-suffix composition, and lexical

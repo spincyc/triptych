@@ -74,6 +74,8 @@ class DistributionArtifactTests(unittest.TestCase):
             names = set(archive.namelist())
 
         self.assertIn("worktree_marshal/__init__.py", names)
+        self.assertIn("worktree_marshal/adapters/__init__.py", names)
+        self.assertIn("worktree_marshal/adapters/codex.py", names)
         self.assertIn("worktree_marshal/cli.py", names)
         self.assertIn("worktree_marshal/engine.py", names)
         self.assertIn("worktree_marshal/git.py", names)
@@ -142,6 +144,8 @@ class DistributionArtifactTests(unittest.TestCase):
             "docs/design.md",
             "docs/generic-v1.md",
             "src/worktree_marshal/__init__.py",
+            "src/worktree_marshal/adapters/__init__.py",
+            "src/worktree_marshal/adapters/codex.py",
             "src/worktree_marshal/cli.py",
             "src/worktree_marshal/engine.py",
             "src/worktree_marshal/git.py",
@@ -156,6 +160,7 @@ class DistributionArtifactTests(unittest.TestCase):
             "src/worktree_marshal/resources/worktree-marshal.mk",
             "tests/__init__.py",
             "tests/_artifact_fixture.py",
+            "tests/test_codex_adapter.py",
             "tests/test_distribution.py",
             "tests/test_git.py",
             "tests/test_identity.py",
@@ -184,6 +189,8 @@ class DistributionArtifactTests(unittest.TestCase):
             entry_points = archive.read(entry_point_names[0]).decode("utf-8")
 
         self.assertIn("worktree_marshal/cli.py", names)
+        self.assertIn("worktree_marshal/adapters/__init__.py", names)
+        self.assertIn("worktree_marshal/adapters/codex.py", names)
         self.assertIn("worktree_marshal/git.py", names)
         self.assertIn("worktree_marshal/identity.py", names)
         self.assertIn("worktree_marshal/locks.py", names)

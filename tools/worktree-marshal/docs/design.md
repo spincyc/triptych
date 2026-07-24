@@ -26,9 +26,11 @@ selection, repository-name normalization, and lexical lock and manifest paths,
 `identity.py` now owns immutable runtime identity records and launcher-entry
 authentication plus exact Git-administration line-format validation,
 `locks.py` now owns lock-descriptor bookkeeping and validation algorithms,
-`process.py` now owns child waiting and exit-status normalization, and
-`triptych_compat.py` binds the frozen adapter. The rest of the engine will be
-separated behind these modules only after parity tests protect each seam:
+`process.py` now owns child waiting and exit-status normalization,
+`adapters/codex.py` now owns Codex executable candidate selection, and
+`triptych_compat.py` binds the frozen compatibility profile. The rest of the
+engine will be separated behind these modules only after parity tests protect
+each seam:
 
 ```text
 worktree_marshal/
@@ -44,8 +46,8 @@ worktree_marshal/
   integration.py         verification, rebase, landing, and rollback
   conflicts.py           resolver scope, continuation, and abort
   retirement.py          separately authorized destructive retirement
-  adapters/base.py       agent contract and declared capabilities
-  adapters/codex.py      Codex argv, environment, and sandbox policy
+  adapters/base.py       future agent contract; explicitly not introduced
+  adapters/codex.py      executable candidate selection now; agent policy later
   sandboxes/base.py      enforcement contract independent of an adapter
   resources/             generated integration assets such as the Make fragment
 ```
@@ -63,11 +65,12 @@ potentially reach launcher state, other checkouts, credentials, and the
 network. Post-run auditing detects and contains many mistakes and races but
 cannot prove that hostile code never touched unrelated state.
 
-An `AgentAdapter` owns accepted arguments and environment construction. A
-separate `SandboxBackend` owns enforceable filesystem, process, and network
-claims. Marshal must not infer sandbox assurance merely because an adapter
-exists. Any future trusted-command adapter must be an explicit opt-in and must
-state that it is unconfined.
+A future `AgentAdapter` abstraction would own accepted arguments and
+environment construction. No common base-adapter contract exists at this
+boundary. A separate future `SandboxBackend` would own enforceable filesystem,
+process, and network claims. Marshal must not infer sandbox assurance merely
+because an adapter module exists. Any future trusted-command adapter must be
+an explicit opt-in and must state that it is unconfined.
 
 ## Extraction sequence
 
@@ -93,12 +96,12 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with twelve behavior-preserving boundaries. The original pure
-Git policy kernel transforms an explicit environment mapping and Git argument
-sequence in `git.py`; `engine.py` retains its optional environment-acquisition
-wrapper, subprocess creation and command execution, lock acquisition,
-repository authentication, configuration probing, ref transactions, and
-lifecycle orchestration.
+has begun step 5 with thirteen behavior-preserving boundaries. The original
+pure Git policy kernel transforms an explicit environment mapping and Git
+argument sequence in `git.py`; `engine.py` retains its optional
+environment-acquisition wrapper, subprocess creation and command execution,
+lock acquisition, repository authentication, configuration probing, ref
+transactions, and lifecycle orchestration.
 The second cycle-free boundary places the exact durable state vocabulary, the
 existing retirement-pending and managed-conflict families, and a pure
 classifier in `model.py`. Manifest validation uses that predicate while
@@ -125,11 +128,11 @@ restoration after successful setup, and negative-return-code normalization
 into `process.py`. The engine wrapper supplies lazy resolvers at the original
 signal-operation, handled-exception, timeout, and negative-status
 absolute-value lookup points. Process creation, command execution, executable
-discovery for Codex, arguments, environments, inherited descriptors, and
-post-exit lifecycle decisions remain in `engine.py`. Direct tests also retain
-the legacy partial-setup behavior: a failure while installing the second
-handler occurs before the protected wait and does not roll back the first
-installation.
+invocation for Codex, arguments, environments, sandbox-enforcement arguments,
+inherited descriptors, and post-exit lifecycle decisions remain in
+`engine.py`. Direct tests also retain the legacy partial-setup behavior: a
+failure while installing the second handler occurs before the protected wait
+and does not roll back the first installation.
 The sixth boundary extends `git.py` with deterministic parsing and rejection
 of command-bearing values in the effective-configuration bytes captured by the
 engine. The engine retains working-directory authentication, the exact Git
@@ -177,7 +180,8 @@ sequencing, the public error type, the remaining repository and
 linked-worktree authentication, identity caches, all other path and file
 authentication, lifecycle decisions, and every mutation remain in
 `engine.py`. Git-executable selection is a Git invocation concern, not a
-future `identity.py` responsibility.
+future `identity.py` responsibility; Codex-executable selection likewise
+belongs to its adapter rather than identity.
 The eleventh boundary extends `git.py` with the existing Git-executable
 discovery and pre-pin validation operation. Its dependency-injected lookup
 selects the literal `git` command from the inherited `PATH`, strictly resolves
@@ -205,7 +209,33 @@ The extracted helper validates only the line format presented by its injected
 reader. It does not independently authenticate a file or path, reject every
 symbolic traversal, establish pointer canonicality or containment, eliminate
 a replacement race, or add sandbox, lifecycle, or release assurance.
-Direct tests freeze all twelve extracted boundaries, their
+The thirteenth boundary starts `adapters/codex.py` with only the existing
+`select_codex_executable` candidate-selection operation. Its exact-signature
+engine wrapper resolves and passes the active profile once, then supplies lazy
+dependencies for environment access, path construction, the inherited
+executable path, current directory, metadata and regular-file checks,
+executable access and mode, and launcher error type. The operation reads the
+captured profile's override field. A nonempty override must be absolute and is
+the sole candidate. With an absent or empty override, the operation scans the
+inherited executable path in order for the literal name `codex`, treating an
+empty entry as the current directory. Metadata-read operating-system errors,
+nonregular or nonexecutable candidates, and candidates whose followed device
+and inode equal the authenticated launcher snapshot are skipped. The returned
+path is the candidate spelling made absolute by `candidate.absolute()`, not a
+canonical resolution.
+
+The engine retains active-profile binding, the legacy `resolve_real_codex`
+wrapper and startup ordering, accepted-surface and option policy, argv and
+child/resolver environment construction, sandbox-enforcement arguments,
+process creation, and every post-exit and lifecycle decision. The selector
+does not authenticate origin, signature, version, or implementation; reject a
+copy or wrapper; pin a file descriptor or device/inode identity; close the
+stat/access/use replacement window; or establish sandbox assurance. Metadata
+lookup follows symbolic links, and the selected link or file may later be
+replaced. No common base adapter, capability contract, new agent, state
+migration, durable identity change, sandbox backend, or release assurance is
+introduced by this seam.
+Direct tests freeze all thirteen extracted boundaries, their
 compatibility surfaces, artifact inclusion, field and operation order,
 partial-failure behavior, and the dynamic restoration of every vocabulary
 value currently accepted in

@@ -59,6 +59,35 @@ temporary paths are used. A generic run manifest includes the exact
 `format_id`, `profile_id`, and `agent` values above in addition to the shared
 lifecycle fields.
 
+## Codex executable selection
+
+A nonempty `WORKTREE_MARSHAL_REAL_CODEX` value is the sole executable
+candidate and must be an absolute path. When it is absent or empty, Marshal
+scans the inherited executable path in order for the literal name `codex`,
+treating an empty entry as the current directory. It skips candidates whose
+metadata cannot be read, that are not regular executable files, that fail the
+executable access check, or whose followed device and inode match the
+authenticated launcher snapshot. It returns the selected spelling using
+`candidate.absolute()`, not a canonical resolution.
+
+The exact failures are
+`WORKTREE_MARSHAL_REAL_CODEX must be an absolute path`,
+`WORKTREE_MARSHAL_REAL_CODEX does not name a usable non-launcher executable`,
+and `cannot find the real Codex executable; set WORKTREE_MARSHAL_REAL_CODEX`
+for, respectively, a relative override, an unusable override, and unsuccessful
+inherited-path search.
+
+This is point-in-time selection of a usable non-launcher candidate. It does not
+authenticate provenance, signature, version, or actual Codex behavior;
+distinguish a copy or wrapper; pin a file descriptor or device/inode identity;
+close the stat/access/use replacement window; or establish sandbox assurance.
+Metadata lookup follows symbolic links, and the selected link or file may
+later be replaced. Executable selection does not alter the profile's durable
+identity, discover or migrate retained runs, or grant lifecycle authority.
+The engine continues to bind the profile and own Codex arguments, child and
+resolver environments, sandbox-enforcement arguments, process creation, and
+post-exit lifecycle policy.
+
 ## Isolation and compatibility
 
 The generic profile and Triptych schema 1 are separate coordination domains.

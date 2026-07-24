@@ -26,6 +26,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Iterator, Sequence, TextIO
 
+from .adapters.codex import (
+    select_codex_executable as _select_codex_executable,
+)
 from .git import (
     GIT_BASE_ARGUMENTS,
     GIT_BOOLEAN_VALUES,
@@ -1079,36 +1082,18 @@ def validate_manifest_paths(repository: Repository, manifest: dict) -> None:
 
 def resolve_real_codex(launcher: LauncherIdentity) -> Path:
     profile = active_profile()
-    override = os.environ.get(profile.real_codex_environment)
-    if override:
-        candidate = Path(override)
-        if not candidate.is_absolute():
-            raise LauncherError(
-                f"{profile.real_codex_environment} must be an absolute path"
-            )
-        candidates = [candidate]
-    else:
-        candidates = [Path(entry or os.curdir) / "codex" for entry in os.get_exec_path()]
-
-    for candidate in candidates:
-        try:
-            metadata = candidate.stat()
-        except OSError:
-            continue
-        if not stat.S_ISREG(metadata.st_mode) or not os.access(candidate, os.X_OK):
-            continue
-        if (metadata.st_dev, metadata.st_ino) == (launcher.device, launcher.inode):
-            continue
-        return candidate.absolute()
-
-    if override:
-        raise LauncherError(
-            f"{profile.real_codex_environment} does not name a usable "
-            "non-launcher executable"
-        )
-    raise LauncherError(
-        "cannot find the real Codex executable; set "
-        f"{profile.real_codex_environment}"
+    return _select_codex_executable(
+        launcher,
+        profile=profile,
+        environment=lambda: os.environ,
+        path_factory=lambda: Path,
+        executable_path=lambda: os.get_exec_path,
+        current_directory=lambda: os.curdir,
+        os_error_type=lambda: OSError,
+        regular_file_test=lambda: stat.S_ISREG,
+        access_check=lambda: os.access,
+        executable_mode=lambda: os.X_OK,
+        error_type=lambda: LauncherError,
     )
 
 

@@ -175,17 +175,43 @@ Retirement deliberately has no Make target.
 
 ## Codex adapter boundary
 
-The legacy implementation supports Codex only. It resolves a real Codex
-executable, accepts only the interactive, `exec`, and `review` agent surfaces
-and allowlisted options, and treats free-form prompts as data. It forces the
-child working directory, disables Codex multi-agent mode, clears additional
-writable roots and sandbox permissions, and defaults to Codex
-`workspace-write` sandboxing. A caller may narrow that to `read-only` but may
-not request a broader sandbox through the launcher.
+The legacy implementation supports Codex only. Its extracted selector treats
+a nonempty `TRIPTYCH_CODEX_REAL` value as the sole candidate and requires that
+spelling to be absolute. When the variable is absent or empty, it scans the
+inherited executable path in order for the literal name `codex`, treating an
+empty path entry as the current directory. It skips metadata-read failures,
+nonregular or nonexecutable files, and any candidate whose followed device and
+inode match the authenticated launcher snapshot. The returned pathname is the
+selected spelling made absolute by `candidate.absolute()`, not a canonical
+resolution. In this contract, “real Codex” means only a usable non-launcher
+candidate under those point-in-time checks.
 
-These rules belong to a Codex adapter in the extracted design. A generic core
-must not claim the same containment for another agent unless an adapter
-provides and tests equivalent enforcement.
+The exact selection failures remain
+`TRIPTYCH_CODEX_REAL must be an absolute path`,
+`TRIPTYCH_CODEX_REAL does not name a usable non-launcher executable`, and
+`cannot find the real Codex executable; set TRIPTYCH_CODEX_REAL` for,
+respectively, a relative override, an unusable override, and unsuccessful
+inherited-path search.
+
+The engine still accepts only the interactive, `exec`, and `review` agent
+surfaces and allowlisted options, and treats free-form prompts as data. It
+forces the child working directory, disables Codex multi-agent mode, clears
+additional writable roots and sandbox permissions, and defaults to Codex
+`workspace-write` sandboxing. A caller may narrow that to `read-only` but may
+not request a broader sandbox through the launcher. The adapter module's
+`select_codex_executable` operation owns only executable candidate selection at
+the current extraction boundary; the engine retains profile binding, the
+compatibility wrapper, argv and environment construction, sandbox arguments,
+process creation, and lifecycle policy. No common base-adapter contract exists
+yet.
+
+Selection does not verify executable provenance, signature, version, or actual
+Codex behavior; exclude copies or wrappers; pin a descriptor or device/inode
+identity; close the stat/access/use replacement window; or confer sandbox
+assurance. Metadata lookup follows symbolic links, and the selected link or
+file may be replaced later. A generic core must not claim the same containment
+for another agent unless an adapter and sandbox backend provide and test
+equivalent enforcement.
 
 ## Threat boundary and platform assumptions
 
@@ -211,8 +237,8 @@ platform contract; WSL or a future separately tested backend is required.
 The launcher protects managed lifecycle state against accidental changes,
 races, path replacement, and many Git configuration attacks. It does not
 protect against a hostile account that can rewrite the launcher's code, its
-state files, the repository's Git object database, or the resolved Git or
-Codex executables while they are in use.
+state files, the repository's Git object database, or the resolved Git
+executable pathname or selected Codex executable pathname while it is in use.
 
 ## Extraction acceptance baseline
 
