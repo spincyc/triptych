@@ -128,6 +128,53 @@ class IdentityModelTests(unittest.TestCase):
             **dependencies,
         )
 
+    def pointer_path(
+        self,
+        raw_value: object,
+        *,
+        relative_to: object,
+        label: object = "the pointer",
+        **overrides: object,
+    ) -> object:
+        dependencies = {
+            "path_factory": lambda: Path,
+            "absolute_path": lambda: os.path.abspath,
+            "filesystem_path": lambda: os.fspath,
+            "os_error_type": lambda: OSError,
+            "runtime_error_type": lambda: RuntimeError,
+            "error_type": lambda: RuntimeError,
+        }
+        dependencies.update(overrides)
+        return self.identity.exact_pointer_path(
+            raw_value,
+            relative_to=relative_to,
+            label=label,
+            **dependencies,
+        )
+
+    def real_directory(
+        self,
+        path: object,
+        *,
+        label: object = "the directory",
+        **overrides: object,
+    ) -> object:
+        dependencies = {
+            "path_factory": lambda: Path,
+            "absolute_path": lambda: os.path.abspath,
+            "filesystem_path": lambda: os.fspath,
+            "os_error_type": lambda: OSError,
+            "runtime_error_type": lambda: RuntimeError,
+            "directory_test": lambda: stat.S_ISDIR,
+            "error_type": lambda: RuntimeError,
+        }
+        dependencies.update(overrides)
+        return self.identity.exact_real_directory(
+            path,
+            label=label,
+            **dependencies,
+        )
+
     def test_identity_import_is_cycle_free_and_environment_neutral(
         self,
     ) -> None:
@@ -241,6 +288,2058 @@ class IdentityModelTests(unittest.TestCase):
             wrapper_parameters["path"].default,
             inspect.Parameter.empty,
         )
+
+    def test_exact_path_kernels_and_engine_wrapper_signatures(
+        self,
+    ) -> None:
+        cases = (
+            (
+                "_exact_pointer_path",
+                "exact_pointer_path",
+                (
+                    "raw_value",
+                    "relative_to",
+                    "label",
+                    "path_factory",
+                    "absolute_path",
+                    "filesystem_path",
+                    "os_error_type",
+                    "runtime_error_type",
+                    "error_type",
+                ),
+                ("raw_value", "relative_to", "label"),
+            ),
+            (
+                "_exact_real_directory",
+                "exact_real_directory",
+                (
+                    "path",
+                    "label",
+                    "path_factory",
+                    "absolute_path",
+                    "filesystem_path",
+                    "os_error_type",
+                    "runtime_error_type",
+                    "directory_test",
+                    "error_type",
+                ),
+                ("path", "label"),
+            ),
+        )
+
+        for (
+            alias_name,
+            public_name,
+            kernel_names,
+            wrapper_names,
+        ) in cases:
+            with self.subTest(kernel=public_name):
+                kernel = getattr(self.identity, public_name)
+                self.assertIs(getattr(self.engine, alias_name), kernel)
+
+                parameters = inspect.signature(kernel).parameters
+                self.assertEqual(tuple(parameters), kernel_names)
+                self.assertIs(
+                    parameters[kernel_names[0]].kind,
+                    inspect.Parameter.POSITIONAL_OR_KEYWORD,
+                )
+                for name in kernel_names[1:]:
+                    self.assertIs(
+                        parameters[name].kind,
+                        inspect.Parameter.KEYWORD_ONLY,
+                    )
+                for parameter in parameters.values():
+                    self.assertIs(
+                        parameter.default,
+                        inspect.Parameter.empty,
+                    )
+
+                wrapper = getattr(self.engine, public_name)
+                self.assertIsNot(wrapper, kernel)
+                wrapper_parameters = inspect.signature(
+                    wrapper
+                ).parameters
+                self.assertEqual(
+                    tuple(wrapper_parameters),
+                    wrapper_names,
+                )
+                self.assertIs(
+                    wrapper_parameters[wrapper_names[0]].kind,
+                    inspect.Parameter.POSITIONAL_OR_KEYWORD,
+                )
+                for name in wrapper_names[1:]:
+                    self.assertIs(
+                        wrapper_parameters[name].kind,
+                        inspect.Parameter.KEYWORD_ONLY,
+                    )
+                for parameter in wrapper_parameters.values():
+                    self.assertIs(
+                        parameter.default,
+                        inspect.Parameter.empty,
+                    )
+
+    def test_exact_pointer_path_preserves_relative_success_order(
+        self,
+    ) -> None:
+        events: list[tuple[str, object]] = []
+        raw_value = object()
+
+        class Value:
+            def is_absolute(value_self) -> bool:
+                events.append(("is-absolute", None))
+                return False
+
+        value = Value()
+
+        class Resolved:
+            def __ne__(resolved_self, other: object) -> bool:
+                events.append(("resolved-ne", other))
+                self.assertIs(other, absolute)
+                return False
+
+        resolved = Resolved()
+
+        class Candidate:
+            def resolve(
+                candidate_self,
+                *,
+                strict: bool,
+            ) -> object:
+                events.append(("resolve", strict))
+                return resolved
+
+        candidate = Candidate()
+
+        class RelativeTo:
+            def __truediv__(
+                relative_self,
+                other: object,
+            ) -> object:
+                events.append(("join", other))
+                self.assertIs(other, value)
+                return candidate
+
+        relative_to = RelativeTo()
+        absolute = object()
+        filesystem_value = object()
+        absolute_value = object()
+
+        def raw_factory(observed: object) -> object:
+            events.append(("raw-factory-call", observed))
+            self.assertIs(observed, raw_value)
+            return value
+
+        def absolute_factory(observed: object) -> object:
+            events.append(("absolute-factory-call", observed))
+            self.assertIs(observed, absolute_value)
+            return absolute
+
+        factories = iter(
+            (
+                ("raw", raw_factory),
+                ("absolute", absolute_factory),
+            )
+        )
+
+        def path_factory() -> object:
+            name, factory = next(factories)
+            events.append(("path-factory-provider", name))
+            return factory
+
+        def absolute_path() -> object:
+            events.append(("absolute-path-provider", None))
+
+            def make_absolute(observed: object) -> object:
+                events.append(("absolute-path-call", observed))
+                self.assertIs(observed, filesystem_value)
+                return absolute_value
+
+            return make_absolute
+
+        def filesystem_path() -> object:
+            events.append(("filesystem-path-provider", None))
+
+            def convert(observed: object) -> object:
+                events.append(("filesystem-path-call", observed))
+                self.assertIs(observed, candidate)
+                return filesystem_value
+
+            return convert
+
+        observed = self.pointer_path(
+            raw_value,
+            relative_to=relative_to,
+            path_factory=path_factory,
+            absolute_path=absolute_path,
+            filesystem_path=filesystem_path,
+            os_error_type=mock.Mock(
+                side_effect=AssertionError(
+                    "resolved OSError on success"
+                )
+            ),
+            runtime_error_type=mock.Mock(
+                side_effect=AssertionError(
+                    "resolved RuntimeError on success"
+                )
+            ),
+            error_type=mock.Mock(
+                side_effect=AssertionError(
+                    "resolved launcher error on success"
+                )
+            ),
+        )
+
+        self.assertIs(observed, resolved)
+        self.assertEqual(
+            events,
+            [
+                ("path-factory-provider", "raw"),
+                ("raw-factory-call", raw_value),
+                ("is-absolute", None),
+                ("join", value),
+                ("path-factory-provider", "absolute"),
+                ("absolute-path-provider", None),
+                ("filesystem-path-provider", None),
+                ("filesystem-path-call", candidate),
+                ("absolute-path-call", filesystem_value),
+                ("absolute-factory-call", absolute_value),
+                ("resolve", True),
+                ("resolved-ne", absolute),
+            ],
+        )
+        with self.assertRaises(StopIteration):
+            next(factories)
+
+    def test_exact_pointer_path_preserves_absolute_short_circuit(
+        self,
+    ) -> None:
+        events: list[str] = []
+        raw_value = object()
+        absolute = object()
+
+        class Resolved:
+            def __ne__(resolved_self, other: object) -> bool:
+                events.append("compare")
+                self.assertIs(other, absolute)
+                return False
+
+        resolved = Resolved()
+
+        class Value:
+            def is_absolute(value_self) -> bool:
+                events.append("is-absolute")
+                return True
+
+            def resolve(
+                value_self,
+                *,
+                strict: bool,
+            ) -> object:
+                events.append("resolve")
+                self.assertTrue(strict)
+                return resolved
+
+        value = Value()
+
+        class RelativeTo:
+            def __truediv__(
+                relative_self,
+                other: object,
+            ) -> object:
+                raise AssertionError(
+                    "joined an already-absolute pointer"
+                )
+
+        path_factories = iter(
+            (
+                lambda observed: value,
+                lambda observed: absolute,
+            )
+        )
+
+        observed = self.pointer_path(
+            raw_value,
+            relative_to=RelativeTo(),
+            path_factory=lambda: next(path_factories),
+            absolute_path=lambda: (
+                lambda observed: "/absolute"
+            ),
+            filesystem_path=lambda: (
+                lambda observed: "/candidate"
+            ),
+        )
+
+        self.assertIs(observed, resolved)
+        self.assertEqual(
+            events,
+            ["is-absolute", "resolve", "compare"],
+        )
+
+    def test_exact_pointer_path_translates_only_resolve_os_failures(
+        self,
+    ) -> None:
+        class SelectedOSError(Exception):
+            pass
+
+        class SelectedRuntimeError(Exception):
+            pass
+
+        class PointerError(Exception):
+            pass
+
+        for selected_type in (
+            SelectedOSError,
+            SelectedRuntimeError,
+        ):
+            with self.subTest(selected_type=selected_type.__name__):
+                events: list[str] = []
+                original = selected_type("resolution failed")
+
+                class Label:
+                    def __format__(
+                        label_self,
+                        specification: str,
+                    ) -> str:
+                        self.assertEqual(specification, "")
+                        events.append("format-label")
+                        return "the pointer"
+
+                class Candidate:
+                    def is_absolute(candidate_self) -> bool:
+                        return True
+
+                    def resolve(
+                        candidate_self,
+                        *,
+                        strict: bool,
+                    ) -> None:
+                        self.assertTrue(strict)
+                        events.append("resolve")
+                        raise original
+
+                candidate = Candidate()
+                factories = iter(
+                    (
+                        lambda observed: candidate,
+                        lambda observed: object(),
+                    )
+                )
+
+                def os_error_type() -> type[BaseException]:
+                    events.append("os-error-provider")
+                    return SelectedOSError
+
+                def runtime_error_type() -> type[BaseException]:
+                    events.append("runtime-error-provider")
+                    return SelectedRuntimeError
+
+                def error_type() -> type[BaseException]:
+                    events.append("error-provider")
+                    return PointerError
+
+                with self.assertRaises(PointerError) as caught:
+                    self.pointer_path(
+                        object(),
+                        relative_to=object(),
+                        label=Label(),
+                        path_factory=lambda: next(factories),
+                        absolute_path=lambda: (
+                            lambda observed: "/candidate"
+                        ),
+                        filesystem_path=lambda: (
+                            lambda observed: "/candidate"
+                        ),
+                        os_error_type=os_error_type,
+                        runtime_error_type=runtime_error_type,
+                        error_type=error_type,
+                    )
+
+                self.assertEqual(
+                    str(caught.exception),
+                    "the pointer points to an unavailable path",
+                )
+                self.assertIs(caught.exception.__cause__, original)
+                self.assertIs(caught.exception.__context__, original)
+                self.assertEqual(
+                    events,
+                    [
+                        "resolve",
+                        "os-error-provider",
+                        "runtime-error-provider",
+                        "error-provider",
+                        "format-label",
+                    ],
+                )
+
+    def test_exact_pointer_path_leaves_conversion_failures_untranslated(
+        self,
+    ) -> None:
+        class SelectedOSError(Exception):
+            pass
+
+        stages = (
+            "raw-path-provider",
+            "raw-path-call",
+            "is-absolute",
+            "relative-join",
+            "absolute-path-provider",
+            "absolute-function-provider",
+            "filesystem-function-provider",
+            "filesystem-function-call",
+            "absolute-function-call",
+            "absolute-path-call",
+        )
+
+        for stage in stages:
+            with self.subTest(unwrapped_stage=stage):
+                original = SelectedOSError(stage)
+                provider_count = 0
+
+                def fail_at(observed: str) -> None:
+                    if stage == observed:
+                        raise original
+
+                class Candidate:
+                    def resolve(
+                        candidate_self,
+                        *,
+                        strict: bool,
+                    ) -> None:
+                        raise AssertionError(
+                            "resolved after a conversion failure"
+                        )
+
+                candidate = Candidate()
+
+                class Value:
+                    def is_absolute(value_self) -> bool:
+                        fail_at("is-absolute")
+                        return stage != "relative-join"
+
+                    def resolve(
+                        value_self,
+                        *,
+                        strict: bool,
+                    ) -> None:
+                        raise AssertionError(
+                            "resolved after a conversion failure"
+                        )
+
+                value = Value()
+
+                class RelativeTo:
+                    def __truediv__(
+                        relative_self,
+                        other: object,
+                    ) -> object:
+                        fail_at("relative-join")
+                        return candidate
+
+                def path_factory() -> object:
+                    nonlocal provider_count
+                    provider_count += 1
+                    provider_stage = (
+                        "raw-path-provider"
+                        if provider_count == 1
+                        else "absolute-path-provider"
+                    )
+                    fail_at(provider_stage)
+                    call_stage = (
+                        "raw-path-call"
+                        if provider_count == 1
+                        else "absolute-path-call"
+                    )
+
+                    def construct(observed: object) -> object:
+                        fail_at(call_stage)
+                        return (
+                            value
+                            if provider_count == 1
+                            else object()
+                        )
+
+                    return construct
+
+                def absolute_path() -> object:
+                    fail_at("absolute-function-provider")
+
+                    def make_absolute(observed: object) -> str:
+                        fail_at("absolute-function-call")
+                        return "/candidate"
+
+                    return make_absolute
+
+                def filesystem_path() -> object:
+                    fail_at("filesystem-function-provider")
+
+                    def convert(observed: object) -> str:
+                        fail_at("filesystem-function-call")
+                        return "/candidate"
+
+                    return convert
+
+                blocked_os_type = mock.Mock(
+                    side_effect=AssertionError(
+                        "caught a pre-resolution OSError"
+                    )
+                )
+                blocked_runtime_type = mock.Mock(
+                    side_effect=AssertionError(
+                        "caught a pre-resolution RuntimeError"
+                    )
+                )
+                blocked_error_type = mock.Mock(
+                    side_effect=AssertionError(
+                        "translated a pre-resolution failure"
+                    )
+                )
+
+                with self.assertRaises(SelectedOSError) as caught:
+                    self.pointer_path(
+                        object(),
+                        relative_to=RelativeTo(),
+                        path_factory=path_factory,
+                        absolute_path=absolute_path,
+                        filesystem_path=filesystem_path,
+                        os_error_type=blocked_os_type,
+                        runtime_error_type=blocked_runtime_type,
+                        error_type=blocked_error_type,
+                    )
+
+                self.assertIs(caught.exception, original)
+                blocked_os_type.assert_not_called()
+                blocked_runtime_type.assert_not_called()
+                blocked_error_type.assert_not_called()
+
+    def test_exact_pointer_path_does_not_translate_nonmatching_resolution(
+        self,
+    ) -> None:
+        class SelectedOSError(Exception):
+            pass
+
+        class SelectedRuntimeError(Exception):
+            pass
+
+        original = LookupError("resolution failed")
+        events: list[str] = []
+
+        class Candidate:
+            def is_absolute(candidate_self) -> bool:
+                return True
+
+            def resolve(
+                candidate_self,
+                *,
+                strict: bool,
+            ) -> None:
+                raise original
+
+        candidate = Candidate()
+        factories = iter(
+            (
+                lambda observed: candidate,
+                lambda observed: object(),
+            )
+        )
+
+        def os_error_type() -> type[BaseException]:
+            events.append("os-error-provider")
+            return SelectedOSError
+
+        def runtime_error_type() -> type[BaseException]:
+            events.append("runtime-error-provider")
+            return SelectedRuntimeError
+
+        blocked_error_type = mock.Mock(
+            side_effect=AssertionError(
+                "translated a nonmatching resolution failure"
+            )
+        )
+        with self.assertRaises(LookupError) as caught:
+            self.pointer_path(
+                object(),
+                relative_to=object(),
+                path_factory=lambda: next(factories),
+                absolute_path=lambda: (
+                    lambda observed: "/candidate"
+                ),
+                filesystem_path=lambda: (
+                    lambda observed: "/candidate"
+                ),
+                os_error_type=os_error_type,
+                runtime_error_type=runtime_error_type,
+                error_type=blocked_error_type,
+            )
+
+        self.assertIs(caught.exception, original)
+        self.assertEqual(
+            events,
+            ["os-error-provider", "runtime-error-provider"],
+        )
+        blocked_error_type.assert_not_called()
+
+    def test_exact_pointer_path_matcher_failures_replace_resolution(
+        self,
+    ) -> None:
+        class SelectedOSError(Exception):
+            pass
+
+        original = SelectedOSError("resolution failed")
+
+        class Candidate:
+            def is_absolute(candidate_self) -> bool:
+                return True
+
+            def resolve(
+                candidate_self,
+                *,
+                strict: bool,
+            ) -> None:
+                raise original
+
+        for broken_matcher in ("os", "runtime"):
+            with self.subTest(broken_matcher=broken_matcher):
+                matcher_failure = RuntimeError(
+                    f"{broken_matcher} matcher failed"
+                )
+
+                def os_error_type() -> type[BaseException]:
+                    if broken_matcher == "os":
+                        raise matcher_failure
+                    return LookupError
+
+                def runtime_error_type() -> type[BaseException]:
+                    if broken_matcher == "runtime":
+                        raise matcher_failure
+                    return SelectedOSError
+
+                factories = iter(
+                    (
+                        lambda observed: Candidate(),
+                        lambda observed: object(),
+                    )
+                )
+                blocked_error_type = mock.Mock(
+                    side_effect=AssertionError(
+                        "translated after matcher failure"
+                    )
+                )
+
+                with self.assertRaises(RuntimeError) as caught:
+                    self.pointer_path(
+                        object(),
+                        relative_to=object(),
+                        path_factory=lambda: next(factories),
+                        absolute_path=lambda: (
+                            lambda observed: "/candidate"
+                        ),
+                        filesystem_path=lambda: (
+                            lambda observed: "/candidate"
+                        ),
+                        os_error_type=os_error_type,
+                        runtime_error_type=runtime_error_type,
+                        error_type=blocked_error_type,
+                    )
+
+                self.assertIs(caught.exception, matcher_failure)
+                self.assertIs(caught.exception.__context__, original)
+                blocked_error_type.assert_not_called()
+
+    def test_exact_pointer_path_mismatch_and_comparison_boundaries(
+        self,
+    ) -> None:
+        class PointerError(Exception):
+            pass
+
+        events: list[str] = []
+
+        class Label:
+            def __format__(
+                label_self,
+                specification: str,
+            ) -> str:
+                self.assertEqual(specification, "")
+                events.append("format-label")
+                return "the pointer"
+
+        class Comparison:
+            def __bool__(comparison_self) -> bool:
+                events.append("comparison-truth")
+                return True
+
+        class Resolved:
+            def __ne__(resolved_self, other: object) -> object:
+                events.append("compare")
+                return Comparison()
+
+        class Candidate:
+            def is_absolute(candidate_self) -> bool:
+                return True
+
+            def resolve(
+                candidate_self,
+                *,
+                strict: bool,
+            ) -> object:
+                return Resolved()
+
+        candidate = Candidate()
+        factories = iter(
+            (
+                lambda observed: candidate,
+                lambda observed: object(),
+            )
+        )
+
+        def error_type() -> type[BaseException]:
+            events.append("error-provider")
+            return PointerError
+
+        with self.assertRaises(PointerError) as caught:
+            self.pointer_path(
+                object(),
+                relative_to=object(),
+                label=Label(),
+                path_factory=lambda: next(factories),
+                absolute_path=lambda: (
+                    lambda observed: "/candidate"
+                ),
+                filesystem_path=lambda: (
+                    lambda observed: "/candidate"
+                ),
+                os_error_type=mock.Mock(
+                    side_effect=AssertionError(
+                        "resolved matcher after successful resolution"
+                    )
+                ),
+                runtime_error_type=mock.Mock(
+                    side_effect=AssertionError(
+                        "resolved matcher after successful resolution"
+                    )
+                ),
+                error_type=error_type,
+            )
+
+        self.assertEqual(
+            str(caught.exception),
+            "the pointer traverses a symbolic path",
+        )
+        self.assertIsNone(caught.exception.__cause__)
+        self.assertEqual(
+            events,
+            [
+                "compare",
+                "comparison-truth",
+                "error-provider",
+                "format-label",
+            ],
+        )
+
+        original = OSError("comparison failed")
+
+        class BrokenResolved:
+            def __ne__(
+                resolved_self,
+                other: object,
+            ) -> bool:
+                raise original
+
+        class BrokenCandidate(Candidate):
+            def resolve(
+                candidate_self,
+                *,
+                strict: bool,
+            ) -> object:
+                return BrokenResolved()
+
+        factories = iter(
+            (
+                lambda observed: BrokenCandidate(),
+                lambda observed: object(),
+            )
+        )
+        blocked_error_type = mock.Mock(
+            side_effect=AssertionError(
+                "translated a post-resolution comparison failure"
+            )
+        )
+        with self.assertRaises(OSError) as comparison_caught:
+            self.pointer_path(
+                object(),
+                relative_to=object(),
+                path_factory=lambda: next(factories),
+                absolute_path=lambda: (
+                    lambda observed: "/candidate"
+                ),
+                filesystem_path=lambda: (
+                    lambda observed: "/candidate"
+                ),
+                os_error_type=mock.Mock(
+                    side_effect=AssertionError(
+                        "matched a post-resolution failure"
+                    )
+                ),
+                runtime_error_type=mock.Mock(
+                    side_effect=AssertionError(
+                        "matched a post-resolution failure"
+                    )
+                ),
+                error_type=blocked_error_type,
+            )
+
+        self.assertIs(comparison_caught.exception, original)
+        blocked_error_type.assert_not_called()
+
+    def test_exact_real_directory_preserves_success_order_and_return(
+        self,
+    ) -> None:
+        events: list[tuple[str, object]] = []
+        path = object()
+        filesystem_value = object()
+        absolute_value = object()
+
+        class Metadata:
+            @property
+            def st_mode(metadata_self) -> object:
+                events.append(("metadata-mode", None))
+                return mode
+
+        metadata = Metadata()
+        mode = object()
+
+        class Comparison:
+            def __bool__(comparison_self) -> bool:
+                events.append(("comparison-truth", None))
+                return False
+
+        class Resolved:
+            def __ne__(resolved_self, other: object) -> object:
+                events.append(("resolved-ne", other))
+                self.assertIs(other, absolute)
+                return Comparison()
+
+        resolved = Resolved()
+
+        class Absolute:
+            def lstat(absolute_self) -> object:
+                events.append(("lstat", None))
+                return metadata
+
+            def resolve(
+                absolute_self,
+                *,
+                strict: bool,
+            ) -> object:
+                events.append(("resolve", strict))
+                return resolved
+
+        absolute = Absolute()
+
+        def path_factory() -> object:
+            events.append(("path-factory-provider", None))
+
+            def construct(observed: object) -> object:
+                events.append(("path-factory-call", observed))
+                self.assertIs(observed, absolute_value)
+                return absolute
+
+            return construct
+
+        def absolute_path() -> object:
+            events.append(("absolute-path-provider", None))
+
+            def make_absolute(observed: object) -> object:
+                events.append(("absolute-path-call", observed))
+                self.assertIs(observed, filesystem_value)
+                return absolute_value
+
+            return make_absolute
+
+        def filesystem_path() -> object:
+            events.append(("filesystem-path-provider", None))
+
+            def convert(observed: object) -> object:
+                events.append(("filesystem-path-call", observed))
+                self.assertIs(observed, path)
+                return filesystem_value
+
+            return convert
+
+        class DirectoryTruth:
+            def __bool__(truth_self) -> bool:
+                events.append(("directory-truth", None))
+                return True
+
+        def directory_test() -> object:
+            events.append(("directory-test-provider", None))
+
+            def test(observed: object) -> object:
+                events.append(("directory-test-call", observed))
+                self.assertIs(observed, mode)
+                return DirectoryTruth()
+
+            return test
+
+        observed = self.real_directory(
+            path,
+            path_factory=path_factory,
+            absolute_path=absolute_path,
+            filesystem_path=filesystem_path,
+            os_error_type=mock.Mock(
+                side_effect=AssertionError(
+                    "resolved OSError on success"
+                )
+            ),
+            runtime_error_type=mock.Mock(
+                side_effect=AssertionError(
+                    "resolved RuntimeError on success"
+                )
+            ),
+            directory_test=directory_test,
+            error_type=mock.Mock(
+                side_effect=AssertionError(
+                    "resolved launcher error on success"
+                )
+            ),
+        )
+
+        self.assertIs(observed, absolute)
+        self.assertIsNot(observed, resolved)
+        self.assertEqual(
+            events,
+            [
+                ("path-factory-provider", None),
+                ("absolute-path-provider", None),
+                ("filesystem-path-provider", None),
+                ("filesystem-path-call", path),
+                ("absolute-path-call", filesystem_value),
+                ("path-factory-call", absolute_value),
+                ("lstat", None),
+                ("resolve", True),
+                ("directory-test-provider", None),
+                ("metadata-mode", None),
+                ("directory-test-call", mode),
+                ("directory-truth", None),
+                ("resolved-ne", absolute),
+                ("comparison-truth", None),
+            ],
+        )
+
+    def test_exact_real_directory_translates_lstat_and_resolve_failures(
+        self,
+    ) -> None:
+        class SelectedOSError(Exception):
+            pass
+
+        class SelectedRuntimeError(Exception):
+            pass
+
+        class DirectoryError(Exception):
+            pass
+
+        for stage in ("lstat", "resolve"):
+            for selected_type in (
+                SelectedOSError,
+                SelectedRuntimeError,
+            ):
+                with self.subTest(
+                    stage=stage,
+                    selected_type=selected_type.__name__,
+                ):
+                    events: list[str] = []
+                    original = selected_type(f"{stage} failed")
+
+                    class Label:
+                        def __format__(
+                            label_self,
+                            specification: str,
+                        ) -> str:
+                            self.assertEqual(specification, "")
+                            events.append("format-label")
+                            return "the directory"
+
+                    class Absolute:
+                        def lstat(absolute_self) -> object:
+                            events.append("lstat")
+                            if stage == "lstat":
+                                raise original
+                            return SimpleNamespace(st_mode=0)
+
+                        def resolve(
+                            absolute_self,
+                            *,
+                            strict: bool,
+                        ) -> None:
+                            self.assertTrue(strict)
+                            events.append("resolve")
+                            raise original
+
+                    def os_error_type() -> type[BaseException]:
+                        events.append("os-error-provider")
+                        return SelectedOSError
+
+                    def runtime_error_type() -> type[BaseException]:
+                        events.append("runtime-error-provider")
+                        return SelectedRuntimeError
+
+                    def error_type() -> type[BaseException]:
+                        events.append("error-provider")
+                        return DirectoryError
+
+                    with self.assertRaises(DirectoryError) as caught:
+                        self.real_directory(
+                            object(),
+                            label=Label(),
+                            path_factory=lambda: (
+                                lambda observed: Absolute()
+                            ),
+                            absolute_path=lambda: (
+                                lambda observed: "/directory"
+                            ),
+                            filesystem_path=lambda: (
+                                lambda observed: "/directory"
+                            ),
+                            os_error_type=os_error_type,
+                            runtime_error_type=runtime_error_type,
+                            directory_test=mock.Mock(
+                                side_effect=AssertionError(
+                                    "tested a directory after failure"
+                                )
+                            ),
+                            error_type=error_type,
+                        )
+
+                    self.assertEqual(
+                        str(caught.exception),
+                        "the directory is unavailable",
+                    )
+                    self.assertIs(
+                        caught.exception.__cause__,
+                        original,
+                    )
+                    self.assertIs(
+                        caught.exception.__context__,
+                        original,
+                    )
+                    self.assertEqual(
+                        events,
+                        (
+                            ["lstat"]
+                            if stage == "lstat"
+                            else ["lstat", "resolve"]
+                        )
+                        + [
+                            "os-error-provider",
+                            "runtime-error-provider",
+                            "error-provider",
+                            "format-label",
+                        ],
+                    )
+
+    def test_exact_real_directory_leaves_conversion_failures_untranslated(
+        self,
+    ) -> None:
+        class SelectedOSError(Exception):
+            pass
+
+        stages = (
+            "path-provider",
+            "absolute-function-provider",
+            "filesystem-function-provider",
+            "filesystem-function-call",
+            "absolute-function-call",
+            "path-call",
+        )
+
+        for stage in stages:
+            with self.subTest(unwrapped_stage=stage):
+                original = SelectedOSError(stage)
+
+                def fail_at(observed: str) -> None:
+                    if stage == observed:
+                        raise original
+
+                def path_factory() -> object:
+                    fail_at("path-provider")
+
+                    def construct(observed: object) -> object:
+                        fail_at("path-call")
+                        raise AssertionError(
+                            "constructed after selected failure"
+                        )
+
+                    return construct
+
+                def absolute_path() -> object:
+                    fail_at("absolute-function-provider")
+
+                    def make_absolute(observed: object) -> str:
+                        fail_at("absolute-function-call")
+                        return "/directory"
+
+                    return make_absolute
+
+                def filesystem_path() -> object:
+                    fail_at("filesystem-function-provider")
+
+                    def convert(observed: object) -> str:
+                        fail_at("filesystem-function-call")
+                        return "/directory"
+
+                    return convert
+
+                blocked_os_type = mock.Mock(
+                    side_effect=AssertionError(
+                        "caught a pre-lstat OSError"
+                    )
+                )
+                blocked_runtime_type = mock.Mock(
+                    side_effect=AssertionError(
+                        "caught a pre-lstat RuntimeError"
+                    )
+                )
+                blocked_directory_test = mock.Mock(
+                    side_effect=AssertionError(
+                        "tested a pre-lstat value"
+                    )
+                )
+                blocked_error_type = mock.Mock(
+                    side_effect=AssertionError(
+                        "translated a pre-lstat failure"
+                    )
+                )
+
+                with self.assertRaises(SelectedOSError) as caught:
+                    self.real_directory(
+                        object(),
+                        path_factory=path_factory,
+                        absolute_path=absolute_path,
+                        filesystem_path=filesystem_path,
+                        os_error_type=blocked_os_type,
+                        runtime_error_type=blocked_runtime_type,
+                        directory_test=blocked_directory_test,
+                        error_type=blocked_error_type,
+                    )
+
+                self.assertIs(caught.exception, original)
+                blocked_os_type.assert_not_called()
+                blocked_runtime_type.assert_not_called()
+                blocked_directory_test.assert_not_called()
+                blocked_error_type.assert_not_called()
+
+    def test_exact_real_directory_does_not_translate_nonmatching_io(
+        self,
+    ) -> None:
+        class SelectedOSError(Exception):
+            pass
+
+        class SelectedRuntimeError(Exception):
+            pass
+
+        for stage in ("lstat", "resolve"):
+            with self.subTest(unwrapped_stage=stage):
+                original = LookupError(f"{stage} failed")
+                events: list[str] = []
+
+                class Absolute:
+                    def lstat(absolute_self) -> object:
+                        if stage == "lstat":
+                            raise original
+                        return SimpleNamespace(st_mode=0)
+
+                    def resolve(
+                        absolute_self,
+                        *,
+                        strict: bool,
+                    ) -> None:
+                        raise original
+
+                def os_error_type() -> type[BaseException]:
+                    events.append("os-error-provider")
+                    return SelectedOSError
+
+                def runtime_error_type() -> type[BaseException]:
+                    events.append("runtime-error-provider")
+                    return SelectedRuntimeError
+
+                blocked_directory_test = mock.Mock(
+                    side_effect=AssertionError(
+                        "tested directory after failed I/O"
+                    )
+                )
+                blocked_error_type = mock.Mock(
+                    side_effect=AssertionError(
+                        "translated nonmatching I/O"
+                    )
+                )
+
+                with self.assertRaises(LookupError) as caught:
+                    self.real_directory(
+                        object(),
+                        path_factory=lambda: (
+                            lambda observed: Absolute()
+                        ),
+                        absolute_path=lambda: (
+                            lambda observed: "/directory"
+                        ),
+                        filesystem_path=lambda: (
+                            lambda observed: "/directory"
+                        ),
+                        os_error_type=os_error_type,
+                        runtime_error_type=runtime_error_type,
+                        directory_test=blocked_directory_test,
+                        error_type=blocked_error_type,
+                    )
+
+                self.assertIs(caught.exception, original)
+                self.assertEqual(
+                    events,
+                    [
+                        "os-error-provider",
+                        "runtime-error-provider",
+                    ],
+                )
+                blocked_directory_test.assert_not_called()
+                blocked_error_type.assert_not_called()
+
+    def test_exact_real_directory_matcher_failures_replace_io_failure(
+        self,
+    ) -> None:
+        class SelectedOSError(Exception):
+            pass
+
+        original = SelectedOSError("lstat failed")
+
+        class Absolute:
+            def lstat(absolute_self) -> None:
+                raise original
+
+            def resolve(
+                absolute_self,
+                *,
+                strict: bool,
+            ) -> None:
+                raise AssertionError("resolved after lstat failure")
+
+        for broken_matcher in ("os", "runtime"):
+            with self.subTest(broken_matcher=broken_matcher):
+                matcher_failure = RuntimeError(
+                    f"{broken_matcher} matcher failed"
+                )
+
+                def os_error_type() -> type[BaseException]:
+                    if broken_matcher == "os":
+                        raise matcher_failure
+                    return LookupError
+
+                def runtime_error_type() -> type[BaseException]:
+                    if broken_matcher == "runtime":
+                        raise matcher_failure
+                    return SelectedOSError
+
+                blocked_error_type = mock.Mock(
+                    side_effect=AssertionError(
+                        "translated after matcher failure"
+                    )
+                )
+                with self.assertRaises(RuntimeError) as caught:
+                    self.real_directory(
+                        object(),
+                        path_factory=lambda: (
+                            lambda observed: Absolute()
+                        ),
+                        absolute_path=lambda: (
+                            lambda observed: "/directory"
+                        ),
+                        filesystem_path=lambda: (
+                            lambda observed: "/directory"
+                        ),
+                        os_error_type=os_error_type,
+                        runtime_error_type=runtime_error_type,
+                        directory_test=mock.Mock(
+                            side_effect=AssertionError(
+                                "tested after lstat failure"
+                            )
+                        ),
+                        error_type=blocked_error_type,
+                    )
+
+                self.assertIs(caught.exception, matcher_failure)
+                self.assertIs(
+                    caught.exception.__context__,
+                    original,
+                )
+                blocked_error_type.assert_not_called()
+
+    def test_exact_real_directory_rejections_short_circuit_exactly(
+        self,
+    ) -> None:
+        class DirectoryError(Exception):
+            pass
+
+        for rejection in ("not-directory", "symbolic"):
+            with self.subTest(rejection=rejection):
+                events: list[str] = []
+
+                class Label:
+                    def __format__(
+                        label_self,
+                        specification: str,
+                    ) -> str:
+                        self.assertEqual(specification, "")
+                        events.append("format-label")
+                        return "the directory"
+
+                class Metadata:
+                    @property
+                    def st_mode(metadata_self) -> object:
+                        events.append("metadata-mode")
+                        return object()
+
+                class Comparison:
+                    def __bool__(comparison_self) -> bool:
+                        events.append("comparison-truth")
+                        return True
+
+                class Resolved:
+                    def __ne__(
+                        resolved_self,
+                        other: object,
+                    ) -> object:
+                        events.append("compare")
+                        return Comparison()
+
+                class Absolute:
+                    def lstat(absolute_self) -> object:
+                        events.append("lstat")
+                        return Metadata()
+
+                    def resolve(
+                        absolute_self,
+                        *,
+                        strict: bool,
+                    ) -> object:
+                        events.append("resolve")
+                        return Resolved()
+
+                class DirectoryTruth:
+                    def __bool__(truth_self) -> bool:
+                        events.append("directory-truth")
+                        return rejection == "symbolic"
+
+                def directory_test() -> object:
+                    events.append("directory-provider")
+
+                    def test(observed: object) -> object:
+                        events.append("directory-call")
+                        return DirectoryTruth()
+
+                    return test
+
+                def error_type() -> type[BaseException]:
+                    events.append("error-provider")
+                    return DirectoryError
+
+                with self.assertRaises(DirectoryError) as caught:
+                    self.real_directory(
+                        object(),
+                        label=Label(),
+                        path_factory=lambda: (
+                            lambda observed: Absolute()
+                        ),
+                        absolute_path=lambda: (
+                            lambda observed: "/directory"
+                        ),
+                        filesystem_path=lambda: (
+                            lambda observed: "/directory"
+                        ),
+                        os_error_type=mock.Mock(
+                            side_effect=AssertionError(
+                                "matched successful I/O"
+                            )
+                        ),
+                        runtime_error_type=mock.Mock(
+                            side_effect=AssertionError(
+                                "matched successful I/O"
+                            )
+                        ),
+                        directory_test=directory_test,
+                        error_type=error_type,
+                    )
+
+                self.assertEqual(
+                    str(caught.exception),
+                    "the directory is not an exact real directory",
+                )
+                self.assertIsNone(caught.exception.__cause__)
+                self.assertEqual(
+                    events,
+                    [
+                        "lstat",
+                        "resolve",
+                        "directory-provider",
+                        "metadata-mode",
+                        "directory-call",
+                        "directory-truth",
+                    ]
+                    + (
+                        ["compare", "comparison-truth"]
+                        if rejection == "symbolic"
+                        else []
+                    )
+                    + ["error-provider", "format-label"],
+                )
+
+    def test_exact_real_directory_leaves_post_io_failures_untranslated(
+        self,
+    ) -> None:
+        class SelectedOSError(Exception):
+            pass
+
+        stages = (
+            "directory-provider",
+            "metadata-mode",
+            "directory-call",
+            "directory-truth",
+            "compare",
+            "comparison-truth",
+        )
+
+        for stage in stages:
+            with self.subTest(unwrapped_stage=stage):
+                original = SelectedOSError(stage)
+
+                def fail_at(observed: str) -> None:
+                    if stage == observed:
+                        raise original
+
+                class Metadata:
+                    @property
+                    def st_mode(metadata_self) -> object:
+                        fail_at("metadata-mode")
+                        return object()
+
+                class Comparison:
+                    def __bool__(comparison_self) -> bool:
+                        fail_at("comparison-truth")
+                        return False
+
+                class Resolved:
+                    def __ne__(
+                        resolved_self,
+                        other: object,
+                    ) -> object:
+                        fail_at("compare")
+                        return Comparison()
+
+                class Absolute:
+                    def lstat(absolute_self) -> object:
+                        return Metadata()
+
+                    def resolve(
+                        absolute_self,
+                        *,
+                        strict: bool,
+                    ) -> object:
+                        return Resolved()
+
+                class DirectoryTruth:
+                    def __bool__(truth_self) -> bool:
+                        fail_at("directory-truth")
+                        return True
+
+                def directory_test() -> object:
+                    fail_at("directory-provider")
+
+                    def test(observed: object) -> object:
+                        fail_at("directory-call")
+                        return DirectoryTruth()
+
+                    return test
+
+                blocked_os_type = mock.Mock(
+                    side_effect=AssertionError(
+                        "matched a post-I/O failure"
+                    )
+                )
+                blocked_runtime_type = mock.Mock(
+                    side_effect=AssertionError(
+                        "matched a post-I/O failure"
+                    )
+                )
+                blocked_error_type = mock.Mock(
+                    side_effect=AssertionError(
+                        "translated a post-I/O failure"
+                    )
+                )
+
+                with self.assertRaises(SelectedOSError) as caught:
+                    self.real_directory(
+                        object(),
+                        path_factory=lambda: (
+                            lambda observed: Absolute()
+                        ),
+                        absolute_path=lambda: (
+                            lambda observed: "/directory"
+                        ),
+                        filesystem_path=lambda: (
+                            lambda observed: "/directory"
+                        ),
+                        os_error_type=blocked_os_type,
+                        runtime_error_type=blocked_runtime_type,
+                        directory_test=directory_test,
+                        error_type=blocked_error_type,
+                    )
+
+                self.assertIs(caught.exception, original)
+                blocked_os_type.assert_not_called()
+                blocked_runtime_type.assert_not_called()
+                blocked_error_type.assert_not_called()
+
+    def test_engine_exact_path_wrappers_forward_fresh_lazy_globals(
+        self,
+    ) -> None:
+        raw_value = object()
+        relative_to = object()
+        directory_path = object()
+        pointer_result = object()
+        directory_result = object()
+
+        initial_path = object()
+        pointer_path_one = object()
+        pointer_path_two = object()
+        directory_path_one = object()
+        directory_path_two = object()
+
+        initial_absolute = object()
+        pointer_absolute_one = object()
+        pointer_absolute_two = object()
+        directory_absolute_one = object()
+        directory_absolute_two = object()
+
+        initial_filesystem = object()
+        pointer_filesystem_one = object()
+        pointer_filesystem_two = object()
+        directory_filesystem_one = object()
+        directory_filesystem_two = object()
+
+        initial_directory_test = object()
+        directory_test_one = object()
+        directory_test_two = object()
+
+        class InitialOSError(Exception):
+            pass
+
+        class PointerOSErrorOne(Exception):
+            pass
+
+        class PointerOSErrorTwo(Exception):
+            pass
+
+        class DirectoryOSErrorOne(Exception):
+            pass
+
+        class DirectoryOSErrorTwo(Exception):
+            pass
+
+        class InitialRuntimeError(Exception):
+            pass
+
+        class PointerRuntimeErrorOne(Exception):
+            pass
+
+        class PointerRuntimeErrorTwo(Exception):
+            pass
+
+        class DirectoryRuntimeErrorOne(Exception):
+            pass
+
+        class DirectoryRuntimeErrorTwo(Exception):
+            pass
+
+        class InitialLauncherError(Exception):
+            pass
+
+        class PointerLauncherErrorOne(Exception):
+            pass
+
+        class PointerLauncherErrorTwo(Exception):
+            pass
+
+        class DirectoryLauncherErrorOne(Exception):
+            pass
+
+        class DirectoryLauncherErrorTwo(Exception):
+            pass
+
+        def os_namespace(
+            absolute: object,
+            filesystem: object,
+        ) -> object:
+            return SimpleNamespace(
+                path=SimpleNamespace(abspath=absolute),
+                fspath=filesystem,
+            )
+
+        initial_os = os_namespace(
+            initial_absolute,
+            initial_filesystem,
+        )
+
+        def pointer_kernel(
+            observed_raw: object,
+            **dependencies: object,
+        ) -> object:
+            self.assertIs(observed_raw, raw_value)
+            self.assertEqual(
+                tuple(dependencies),
+                (
+                    "relative_to",
+                    "label",
+                    "path_factory",
+                    "absolute_path",
+                    "filesystem_path",
+                    "os_error_type",
+                    "runtime_error_type",
+                    "error_type",
+                ),
+            )
+            self.assertIs(
+                dependencies["relative_to"],
+                relative_to,
+            )
+            self.assertEqual(
+                dependencies["label"],
+                "the pointer",
+            )
+
+            self.engine.Path = pointer_path_one
+            self.assertIs(
+                dependencies["path_factory"](),
+                pointer_path_one,
+            )
+            self.engine.Path = pointer_path_two
+            self.assertIs(
+                dependencies["path_factory"](),
+                pointer_path_two,
+            )
+
+            self.engine.os = os_namespace(
+                pointer_absolute_one,
+                pointer_filesystem_one,
+            )
+            self.assertIs(
+                dependencies["absolute_path"](),
+                pointer_absolute_one,
+            )
+            self.assertIs(
+                dependencies["filesystem_path"](),
+                pointer_filesystem_one,
+            )
+            self.engine.os = os_namespace(
+                pointer_absolute_two,
+                pointer_filesystem_two,
+            )
+            self.assertIs(
+                dependencies["absolute_path"](),
+                pointer_absolute_two,
+            )
+            self.assertIs(
+                dependencies["filesystem_path"](),
+                pointer_filesystem_two,
+            )
+
+            self.engine.OSError = PointerOSErrorOne
+            self.assertIs(
+                dependencies["os_error_type"](),
+                PointerOSErrorOne,
+            )
+            self.engine.OSError = PointerOSErrorTwo
+            self.assertIs(
+                dependencies["os_error_type"](),
+                PointerOSErrorTwo,
+            )
+            self.engine.RuntimeError = PointerRuntimeErrorOne
+            self.assertIs(
+                dependencies["runtime_error_type"](),
+                PointerRuntimeErrorOne,
+            )
+            self.engine.RuntimeError = PointerRuntimeErrorTwo
+            self.assertIs(
+                dependencies["runtime_error_type"](),
+                PointerRuntimeErrorTwo,
+            )
+            self.engine.LauncherError = PointerLauncherErrorOne
+            self.assertIs(
+                dependencies["error_type"](),
+                PointerLauncherErrorOne,
+            )
+            self.engine.LauncherError = PointerLauncherErrorTwo
+            self.assertIs(
+                dependencies["error_type"](),
+                PointerLauncherErrorTwo,
+            )
+            return pointer_result
+
+        def directory_kernel(
+            observed_path: object,
+            **dependencies: object,
+        ) -> object:
+            self.assertIs(observed_path, directory_path)
+            self.assertEqual(
+                tuple(dependencies),
+                (
+                    "label",
+                    "path_factory",
+                    "absolute_path",
+                    "filesystem_path",
+                    "os_error_type",
+                    "runtime_error_type",
+                    "directory_test",
+                    "error_type",
+                ),
+            )
+            self.assertEqual(
+                dependencies["label"],
+                "the directory",
+            )
+
+            self.engine.Path = directory_path_one
+            self.assertIs(
+                dependencies["path_factory"](),
+                directory_path_one,
+            )
+            self.engine.Path = directory_path_two
+            self.assertIs(
+                dependencies["path_factory"](),
+                directory_path_two,
+            )
+
+            self.engine.os = os_namespace(
+                directory_absolute_one,
+                directory_filesystem_one,
+            )
+            self.assertIs(
+                dependencies["absolute_path"](),
+                directory_absolute_one,
+            )
+            self.assertIs(
+                dependencies["filesystem_path"](),
+                directory_filesystem_one,
+            )
+            self.engine.os = os_namespace(
+                directory_absolute_two,
+                directory_filesystem_two,
+            )
+            self.assertIs(
+                dependencies["absolute_path"](),
+                directory_absolute_two,
+            )
+            self.assertIs(
+                dependencies["filesystem_path"](),
+                directory_filesystem_two,
+            )
+
+            self.engine.OSError = DirectoryOSErrorOne
+            self.assertIs(
+                dependencies["os_error_type"](),
+                DirectoryOSErrorOne,
+            )
+            self.engine.OSError = DirectoryOSErrorTwo
+            self.assertIs(
+                dependencies["os_error_type"](),
+                DirectoryOSErrorTwo,
+            )
+            self.engine.RuntimeError = DirectoryRuntimeErrorOne
+            self.assertIs(
+                dependencies["runtime_error_type"](),
+                DirectoryRuntimeErrorOne,
+            )
+            self.engine.RuntimeError = DirectoryRuntimeErrorTwo
+            self.assertIs(
+                dependencies["runtime_error_type"](),
+                DirectoryRuntimeErrorTwo,
+            )
+
+            self.engine.stat = SimpleNamespace(
+                S_ISDIR=directory_test_one
+            )
+            self.assertIs(
+                dependencies["directory_test"](),
+                directory_test_one,
+            )
+            self.engine.stat = SimpleNamespace(
+                S_ISDIR=directory_test_two
+            )
+            self.assertIs(
+                dependencies["directory_test"](),
+                directory_test_two,
+            )
+
+            self.engine.LauncherError = DirectoryLauncherErrorOne
+            self.assertIs(
+                dependencies["error_type"](),
+                DirectoryLauncherErrorOne,
+            )
+            self.engine.LauncherError = DirectoryLauncherErrorTwo
+            self.assertIs(
+                dependencies["error_type"](),
+                DirectoryLauncherErrorTwo,
+            )
+            return directory_result
+
+        with (
+            mock.patch.object(
+                self.engine,
+                "_exact_pointer_path",
+                side_effect=pointer_kernel,
+            ) as pointer_mock,
+            mock.patch.object(
+                self.engine,
+                "_exact_real_directory",
+                side_effect=directory_kernel,
+            ) as directory_mock,
+            mock.patch.object(
+                self.engine,
+                "Path",
+                initial_path,
+            ),
+            mock.patch.object(
+                self.engine,
+                "os",
+                initial_os,
+            ),
+            mock.patch.object(
+                self.engine,
+                "stat",
+                SimpleNamespace(S_ISDIR=initial_directory_test),
+            ),
+            mock.patch.object(
+                self.engine,
+                "OSError",
+                InitialOSError,
+                create=True,
+            ),
+            mock.patch.object(
+                self.engine,
+                "RuntimeError",
+                InitialRuntimeError,
+                create=True,
+            ),
+            mock.patch.object(
+                self.engine,
+                "LauncherError",
+                InitialLauncherError,
+            ),
+        ):
+            observed_pointer = self.engine.exact_pointer_path(
+                raw_value,
+                relative_to=relative_to,
+                label="the pointer",
+            )
+            observed_directory = self.engine.exact_real_directory(
+                directory_path,
+                label="the directory",
+            )
+
+        self.assertIs(observed_pointer, pointer_result)
+        self.assertIs(observed_directory, directory_result)
+        pointer_mock.assert_called_once()
+        directory_mock.assert_called_once()
+
+    def test_engine_exact_path_wrappers_match_real_filesystem_behavior(
+        self,
+    ) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            real_directory = root / "real-directory"
+            real_directory.mkdir()
+            nested = root / "nested"
+            nested.mkdir()
+            real_file = root / "real-file"
+            real_file.write_bytes(b"contents")
+
+            self.assertEqual(
+                self.engine.exact_pointer_path(
+                    "real-directory",
+                    relative_to=root,
+                    label="the pointer",
+                ),
+                real_directory.resolve(strict=True),
+            )
+            self.assertEqual(
+                self.engine.exact_pointer_path(
+                    "real-file",
+                    relative_to=root,
+                    label="the pointer",
+                ),
+                real_file.resolve(strict=True),
+            )
+            self.assertEqual(
+                self.engine.exact_pointer_path(
+                    "../real-file",
+                    relative_to=nested,
+                    label="the pointer",
+                ),
+                real_file.resolve(strict=True),
+            )
+            self.assertEqual(
+                self.engine.exact_pointer_path(
+                    "nested/../real-directory",
+                    relative_to=root,
+                    label="the pointer",
+                ),
+                real_directory.resolve(strict=True),
+            )
+
+            class PoisonRelative:
+                def __truediv__(
+                    relative_self,
+                    other: object,
+                ) -> object:
+                    raise AssertionError(
+                        "joined an absolute filesystem pointer"
+                    )
+
+            self.assertEqual(
+                self.engine.exact_pointer_path(
+                    os.fspath(real_file),
+                    relative_to=PoisonRelative(),
+                    label="the pointer",
+                ),
+                real_file.resolve(strict=True),
+            )
+
+            directory_symlink = root / "directory-link"
+            directory_symlink.symlink_to(
+                real_directory,
+                target_is_directory=True,
+            )
+            with self.assertRaises(
+                self.engine.LauncherError
+            ) as caught:
+                self.engine.exact_pointer_path(
+                    "directory-link",
+                    relative_to=root,
+                    label="the symbolic pointer",
+                )
+            self.assertEqual(
+                str(caught.exception),
+                "the symbolic pointer traverses a symbolic path",
+            )
+            self.assertIsNone(caught.exception.__cause__)
+
+            parent_symlink = root / "parent-link"
+            parent_symlink.symlink_to(root, target_is_directory=True)
+            with self.assertRaises(
+                self.engine.LauncherError
+            ) as caught:
+                self.engine.exact_pointer_path(
+                    "parent-link/real-file",
+                    relative_to=root,
+                    label="the parent-symbolic pointer",
+                )
+            self.assertEqual(
+                str(caught.exception),
+                "the parent-symbolic pointer "
+                "traverses a symbolic path",
+            )
+            self.assertIsNone(caught.exception.__cause__)
+
+            for raw_value in ("missing", "broken-link"):
+                if raw_value == "broken-link":
+                    (root / raw_value).symlink_to(root / "absent")
+                with self.subTest(pointer=raw_value):
+                    with self.assertRaises(
+                        self.engine.LauncherError
+                    ) as caught:
+                        self.engine.exact_pointer_path(
+                            raw_value,
+                            relative_to=root,
+                            label="the unavailable pointer",
+                        )
+                    self.assertEqual(
+                        str(caught.exception),
+                        "the unavailable pointer "
+                        "points to an unavailable path",
+                    )
+                    self.assertIsInstance(
+                        caught.exception.__cause__,
+                        OSError,
+                    )
+
+            self.assertEqual(
+                self.engine.exact_real_directory(
+                    real_directory,
+                    label="the directory",
+                ),
+                real_directory,
+            )
+            dotted_directory = nested / ".." / "real-directory"
+            self.assertEqual(
+                self.engine.exact_real_directory(
+                    dotted_directory,
+                    label="the dotted directory",
+                ),
+                Path(
+                    os.path.abspath(
+                        os.fspath(dotted_directory)
+                    )
+                ),
+            )
+            relative_directory = Path(
+                os.path.relpath(real_directory, Path.cwd())
+            )
+            self.assertEqual(
+                self.engine.exact_real_directory(
+                    relative_directory,
+                    label="the relative directory",
+                ),
+                Path(
+                    os.path.abspath(
+                        os.fspath(relative_directory)
+                    )
+                ),
+            )
+
+            for path, label in (
+                (real_file, "the file"),
+                (directory_symlink, "the symbolic directory"),
+                (
+                    parent_symlink / "real-directory",
+                    "the parent-symbolic directory",
+                ),
+            ):
+                with self.subTest(directory=label):
+                    with self.assertRaises(
+                        self.engine.LauncherError
+                    ) as caught:
+                        self.engine.exact_real_directory(
+                            path,
+                            label=label,
+                        )
+                    self.assertEqual(
+                        str(caught.exception),
+                        f"{label} is not an exact real directory",
+                    )
+                    self.assertIsNone(caught.exception.__cause__)
+
+            missing = root / "missing-directory"
+            with self.assertRaises(
+                self.engine.LauncherError
+            ) as caught:
+                self.engine.exact_real_directory(
+                    missing,
+                    label="the missing directory",
+                )
+            self.assertEqual(
+                str(caught.exception),
+                "the missing directory is unavailable",
+            )
+            self.assertIsInstance(
+                caught.exception.__cause__,
+                OSError,
+            )
 
     def test_safe_regular_file_kernel_and_wrapper_signatures(self) -> None:
         self.assertIs(

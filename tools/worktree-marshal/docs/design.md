@@ -25,7 +25,8 @@ restoration transform, `state.py` now owns run identity, state-location
 selection, repository-name normalization, and lexical lock and manifest paths,
 `identity.py` now owns immutable runtime identity records and launcher-entry
 authentication plus exact Git-administration line-format validation and the
-bounded descriptor-based regular-file reader,
+bounded descriptor-based regular-file reader plus exact pointer-path and
+real-directory validation,
 `locks.py` now owns lock-descriptor bookkeeping and validation algorithms,
 `process.py` now owns child waiting and exit-status normalization,
 `adapters/codex.py` now owns Codex executable candidate selection and static
@@ -42,7 +43,7 @@ worktree_marshal/
   locks.py               descriptor bookkeeping now; flock acquisition later
   git.py                 policy, captured config, and executable discovery; invocation later
   process.py             child signal forwarding and exit normalization
-  identity.py            records, launcher auth, Git-admin lines, and bounded reads now
+  identity.py            records, launcher auth, Git-admin lines, reader, and path checks
                          repository/worktree authentication later
   worktrees.py           allocation, audit, reopen, and cleanup
   integration.py         verification, rebase, landing, and rollback
@@ -98,7 +99,7 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with seventeen behavior-preserving boundaries. The original
+has begun step 5 with eighteen behavior-preserving boundaries. The original
 pure Git policy kernel transforms an explicit environment mapping and Git
 argument sequence in `git.py`; `engine.py` retains its optional
 environment-acquisition wrapper, subprocess creation and command execution,
@@ -339,13 +340,46 @@ descriptor-operation failures retain their existing scope.
 This is a bounded descriptor read, not complete pathname or mutation
 authentication. It does not authenticate or canonicalize parent components,
 establish path containment, lock the file, or prove the absence of a mutation
-that leaves the compared metadata unchanged. The engine retains pointer-prefix
+that leaves the compared metadata unchanged. That boundary left pointer-prefix
 and path interpretation, exact-directory and linked-worktree topology
 validation, identity registries, repository and retained-worktree
-authentication, all workflows, and every mutation. This seam adds no durable
+authentication, all workflows, and every mutation in the engine. It added no
+durable identity, migration, sandbox, lifecycle, or release assurance.
+
+The eighteenth boundary moves only the existing `exact_pointer_path` and
+`exact_real_directory` kernels into `identity.py`. Their exact-signature engine
+wrappers lazily supply the current path factory, lexical absolute-path and
+filesystem-spelling operations, protected operating-system and runtime error
+types, launcher error type, and directory predicate. Existing
+linked-worktree-authentication calls retain their established raw values,
+relative bases, labels, order, and wrapper lookup points.
+
+`exact_pointer_path` converts the raw value to a path, uses it directly when
+absolute or joins it to the supplied relative base, computes the candidate's
+lexical absolute spelling, and strictly resolves the existing candidate.
+Resolution failures retain the unavailable-path diagnostic; a resolved value
+different from the lexical absolute path retains the symbolic-traversal
+diagnostic. `exact_real_directory` computes a supplied path's lexical absolute
+spelling, applies `lstat` to that spelling, strictly resolves it, and requires
+both a directory mode and equality between the resolved and lexical paths.
+Its protected metadata or resolution failures retain the unavailable
+diagnostic, while failed mode or equality checks retain the
+exact-real-directory diagnostic.
+
+These are path snapshots, not full repository or linked-worktree
+authentication. The pointer kernel does not require a file type or containment
+under its relative base; normalized `..` components and absolute values may
+name any available path that passes the equality check. Neither kernel
+authenticates ownership or permissions, pins a descriptor identity, prevents
+replacement after validation, or grants lifecycle authority. The engine
+retains Git-pointer prefix parsing, selection of raw values and relative bases,
+common-directory and backlink comparison, direct-child topology, identity
+registries, repository and retained-worktree authentication, every workflow,
+and every mutation. It does not genericize repository or worktree
+authentication or add a shared capability contract. This seam adds no durable
 identity, migration, sandbox, lifecycle, or release assurance.
 
-Direct tests freeze all seventeen extracted boundaries, their
+Direct tests freeze all eighteen extracted boundaries, their
 compatibility surfaces, artifact inclusion, field and operation order,
 partial-failure behavior, and the dynamic restoration of every vocabulary
 value currently accepted in

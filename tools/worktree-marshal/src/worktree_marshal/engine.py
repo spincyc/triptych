@@ -57,6 +57,8 @@ from .identity import (
     LinkedWorktreeIdentity,
     Repository,
     authenticate_launcher as _authenticate_launcher,
+    exact_pointer_path as _exact_pointer_path,
+    exact_real_directory as _exact_real_directory,
     exact_single_line as _exact_single_line,
     safe_regular_file_bytes as _safe_regular_file_bytes,
 )
@@ -370,28 +372,31 @@ def exact_single_line(path: Path, *, label: str) -> str:
 
 
 def exact_pointer_path(raw_value: str, *, relative_to: Path, label: str) -> Path:
-    value = Path(raw_value)
-    candidate = value if value.is_absolute() else relative_to / value
-    absolute = Path(os.path.abspath(os.fspath(candidate)))
-    try:
-        resolved = candidate.resolve(strict=True)
-    except (OSError, RuntimeError) as exc:
-        raise LauncherError(f"{label} points to an unavailable path") from exc
-    if resolved != absolute:
-        raise LauncherError(f"{label} traverses a symbolic path")
-    return resolved
+    return _exact_pointer_path(
+        raw_value,
+        relative_to=relative_to,
+        label=label,
+        path_factory=lambda: Path,
+        absolute_path=lambda: os.path.abspath,
+        filesystem_path=lambda: os.fspath,
+        os_error_type=lambda: OSError,
+        runtime_error_type=lambda: RuntimeError,
+        error_type=lambda: LauncherError,
+    )
 
 
 def exact_real_directory(path: Path, *, label: str) -> Path:
-    absolute = Path(os.path.abspath(os.fspath(path)))
-    try:
-        metadata = absolute.lstat()
-        resolved = absolute.resolve(strict=True)
-    except (OSError, RuntimeError) as exc:
-        raise LauncherError(f"{label} is unavailable") from exc
-    if not stat.S_ISDIR(metadata.st_mode) or resolved != absolute:
-        raise LauncherError(f"{label} is not an exact real directory")
-    return absolute
+    return _exact_real_directory(
+        path,
+        label=label,
+        path_factory=lambda: Path,
+        absolute_path=lambda: os.path.abspath,
+        filesystem_path=lambda: os.fspath,
+        os_error_type=lambda: OSError,
+        runtime_error_type=lambda: RuntimeError,
+        directory_test=lambda: stat.S_ISDIR,
+        error_type=lambda: LauncherError,
+    )
 
 
 def path_entry_exists(path: Path, *, label: str) -> bool:

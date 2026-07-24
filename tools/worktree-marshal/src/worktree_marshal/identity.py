@@ -45,6 +45,57 @@ class RegularFileMetadata(Protocol):
     st_ctime_ns: int
 
 
+def exact_pointer_path(
+    raw_value: str,
+    *,
+    relative_to: Path,
+    label: str,
+    path_factory: Callable[[], Callable[[str], Path]],
+    absolute_path: Callable[[], Callable[[str], str]],
+    filesystem_path: Callable[[], Callable[[Path], str]],
+    os_error_type: Callable[[], type[BaseException]],
+    runtime_error_type: Callable[[], type[BaseException]],
+    error_type: Callable[[], type[BaseException]],
+) -> Path:
+    """Resolve a pointer without accepting symbolic-path traversal."""
+
+    value = path_factory()(raw_value)
+    candidate = value if value.is_absolute() else relative_to / value
+    absolute = path_factory()(absolute_path()(filesystem_path()(candidate)))
+    try:
+        resolved = candidate.resolve(strict=True)
+    except (os_error_type(), runtime_error_type()) as exc:
+        raise error_type()(f"{label} points to an unavailable path") from exc
+    if resolved != absolute:
+        raise error_type()(f"{label} traverses a symbolic path")
+    return resolved
+
+
+def exact_real_directory(
+    path: Path,
+    *,
+    label: str,
+    path_factory: Callable[[], Callable[[str], Path]],
+    absolute_path: Callable[[], Callable[[str], str]],
+    filesystem_path: Callable[[], Callable[[Path], str]],
+    os_error_type: Callable[[], type[BaseException]],
+    runtime_error_type: Callable[[], type[BaseException]],
+    directory_test: Callable[[], Callable[[int], bool]],
+    error_type: Callable[[], type[BaseException]],
+) -> Path:
+    """Require one existing directory with an exact nonsymbolic path."""
+
+    absolute = path_factory()(absolute_path()(filesystem_path()(path)))
+    try:
+        metadata = absolute.lstat()
+        resolved = absolute.resolve(strict=True)
+    except (os_error_type(), runtime_error_type()) as exc:
+        raise error_type()(f"{label} is unavailable") from exc
+    if not directory_test()(metadata.st_mode) or resolved != absolute:
+        raise error_type()(f"{label} is not an exact real directory")
+    return absolute
+
+
 def authenticate_launcher(
     path: Path,
     *,
