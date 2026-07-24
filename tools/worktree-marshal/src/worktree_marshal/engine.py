@@ -57,6 +57,7 @@ from .identity import (
     LinkedWorktreeIdentity,
     Repository,
     authenticate_launcher as _authenticate_launcher,
+    authenticate_retained_worktree as _authenticate_retained_worktree,
     exact_pointer_path as _exact_pointer_path,
     exact_real_directory as _exact_real_directory,
     exact_single_line as _exact_single_line,
@@ -455,12 +456,13 @@ def authenticate_retained_worktree(
     repository: Repository,
     manifest: dict,
 ) -> LinkedWorktreeIdentity:
-    recorded_common = manifest.get("common_git_dir")
-    if recorded_common != str(repository.common_git_dir):
-        raise LauncherError("the retained run's common Git directory changed")
-    return authenticate_linked_worktree_path(
-        Path(manifest["worktree"]),
-        expected_common_git_dir=repository.common_git_dir,
+    return _authenticate_retained_worktree(
+        repository,
+        manifest,
+        stringifier=lambda: str,
+        error_type=lambda: LauncherError,
+        linked_worktree_authenticator=lambda: authenticate_linked_worktree_path,
+        path_factory=lambda: Path,
     )
 
 

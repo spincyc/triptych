@@ -2681,6 +2681,688 @@ class IdentityModelTests(unittest.TestCase):
                 OSError,
             )
 
+    def test_retained_worktree_kernel_and_wrapper_signatures(
+        self,
+    ) -> None:
+        self.assertIs(
+            self.engine._authenticate_retained_worktree,
+            self.identity.authenticate_retained_worktree,
+        )
+        parameters = inspect.signature(
+            self.identity.authenticate_retained_worktree
+        ).parameters
+        self.assertEqual(
+            tuple(parameters),
+            (
+                "repository",
+                "manifest",
+                "stringifier",
+                "error_type",
+                "linked_worktree_authenticator",
+                "path_factory",
+            ),
+        )
+        for name in ("repository", "manifest"):
+            self.assertIs(
+                parameters[name].kind,
+                inspect.Parameter.POSITIONAL_OR_KEYWORD,
+            )
+        for name in tuple(parameters)[2:]:
+            self.assertIs(
+                parameters[name].kind,
+                inspect.Parameter.KEYWORD_ONLY,
+            )
+        for parameter in parameters.values():
+            self.assertIs(
+                parameter.default,
+                inspect.Parameter.empty,
+            )
+
+        self.assertIsNot(
+            self.engine.authenticate_retained_worktree,
+            self.identity.authenticate_retained_worktree,
+        )
+        wrapper_parameters = inspect.signature(
+            self.engine.authenticate_retained_worktree
+        ).parameters
+        self.assertEqual(
+            tuple(wrapper_parameters),
+            ("repository", "manifest"),
+        )
+        for parameter in wrapper_parameters.values():
+            self.assertIs(
+                parameter.kind,
+                inspect.Parameter.POSITIONAL_OR_KEYWORD,
+            )
+            self.assertIs(
+                parameter.default,
+                inspect.Parameter.empty,
+            )
+
+    def test_retained_worktree_kernel_preserves_exact_success_order(
+        self,
+    ) -> None:
+        events: list[tuple[str, object]] = []
+        first_common = OpaqueValue("first-common-read")
+        second_common = OpaqueValue("second-common-read")
+        stringified_common = OpaqueValue("stringified-common")
+        worktree_value = OpaqueValue("manifest-worktree")
+        worktree_path = OpaqueValue("constructed-worktree")
+        result = OpaqueValue("linked-authentication-result")
+
+        class Repository:
+            def __init__(repository_self) -> None:
+                repository_self.reads = 0
+
+            @property
+            def common_git_dir(
+                repository_self,
+            ) -> object:
+                repository_self.reads += 1
+                events.append(
+                    (
+                        "repository-common",
+                        repository_self.reads,
+                    )
+                )
+                return (
+                    first_common
+                    if repository_self.reads == 1
+                    else second_common
+                )
+
+        repository = Repository()
+
+        class ComparisonTruth:
+            def __bool__(truth_self) -> bool:
+                events.append(("comparison-truth", False))
+                return False
+
+        class RecordedCommon:
+            def __ne__(
+                recorded_self,
+                other: object,
+            ) -> object:
+                events.append(("recorded-common-ne", other))
+                self.assertIs(other, stringified_common)
+                return ComparisonTruth()
+
+        recorded_common = RecordedCommon()
+
+        class Manifest:
+            @property
+            def get(manifest_self) -> object:
+                events.append(("manifest-get-attribute", None))
+
+                def get(key: object) -> object:
+                    events.append(("manifest-get-call", key))
+                    return recorded_common
+
+                return get
+
+            def __getitem__(
+                manifest_self,
+                key: object,
+            ) -> object:
+                events.append(("manifest-subscript", key))
+                return worktree_value
+
+        manifest = Manifest()
+
+        def stringifier() -> object:
+            events.append(("stringifier-provider", None))
+
+            def stringify(value: object) -> object:
+                events.append(("stringifier-call", value))
+                self.assertIs(value, first_common)
+                return stringified_common
+
+            return stringify
+
+        def linked_worktree_authenticator() -> object:
+            events.append(("authenticator-provider", None))
+
+            def authenticate(
+                path: object,
+                *,
+                expected_common_git_dir: object,
+            ) -> object:
+                events.append(
+                    (
+                        "authenticator-call",
+                        (path, expected_common_git_dir),
+                    )
+                )
+                self.assertIs(path, worktree_path)
+                self.assertIs(
+                    expected_common_git_dir,
+                    second_common,
+                )
+                return result
+
+            return authenticate
+
+        def path_factory() -> object:
+            events.append(("path-provider", None))
+
+            def construct(value: object) -> object:
+                events.append(("path-call", value))
+                self.assertIs(value, worktree_value)
+                return worktree_path
+
+            return construct
+
+        observed = self.identity.authenticate_retained_worktree(
+            repository,
+            manifest,
+            stringifier=stringifier,
+            error_type=mock.Mock(
+                side_effect=AssertionError(
+                    "resolved error type on success"
+                )
+            ),
+            linked_worktree_authenticator=(
+                linked_worktree_authenticator
+            ),
+            path_factory=path_factory,
+        )
+
+        self.assertIs(observed, result)
+        self.assertEqual(repository.reads, 2)
+        self.assertEqual(
+            events,
+            [
+                ("manifest-get-attribute", None),
+                ("manifest-get-call", "common_git_dir"),
+                ("stringifier-provider", None),
+                ("repository-common", 1),
+                ("stringifier-call", first_common),
+                ("recorded-common-ne", stringified_common),
+                ("comparison-truth", False),
+                ("authenticator-provider", None),
+                ("path-provider", None),
+                ("manifest-subscript", "worktree"),
+                ("path-call", worktree_value),
+                ("repository-common", 2),
+                (
+                    "authenticator-call",
+                    (worktree_path, second_common),
+                ),
+            ],
+        )
+
+    def test_retained_worktree_mismatch_short_circuits_exactly(
+        self,
+    ) -> None:
+        events: list[tuple[str, object]] = []
+        common = OpaqueValue("mismatch-common")
+        rendered = OpaqueValue("mismatch-rendered")
+
+        class Repository:
+            @property
+            def common_git_dir(
+                repository_self,
+            ) -> object:
+                events.append(("repository-common", None))
+                return common
+
+        class Truth:
+            def __bool__(truth_self) -> bool:
+                events.append(("comparison-truth", True))
+                return True
+
+        class Recorded:
+            def __ne__(
+                recorded_self,
+                other: object,
+            ) -> object:
+                events.append(("recorded-ne", other))
+                return Truth()
+
+        class Manifest:
+            def get(
+                manifest_self,
+                key: object,
+            ) -> object:
+                events.append(("manifest-get", key))
+                return Recorded()
+
+            def __getitem__(
+                manifest_self,
+                key: object,
+            ) -> object:
+                raise AssertionError(
+                    "read worktree after common mismatch"
+                )
+
+        class RetainedError(RuntimeError):
+            def __init__(
+                error_self,
+                message: str,
+            ) -> None:
+                events.append(("error-constructor", message))
+                super().__init__(message)
+
+        def error_type() -> type[BaseException]:
+            events.append(("error-provider", None))
+            return RetainedError
+
+        with self.assertRaises(RetainedError) as caught:
+            self.identity.authenticate_retained_worktree(
+                Repository(),
+                Manifest(),
+                stringifier=lambda: (
+                    lambda value: (
+                        events.append(
+                            ("stringifier-call", value)
+                        )
+                        or rendered
+                    )
+                ),
+                error_type=error_type,
+                linked_worktree_authenticator=mock.Mock(
+                    side_effect=AssertionError(
+                        "resolved authenticator after mismatch"
+                    )
+                ),
+                path_factory=mock.Mock(
+                    side_effect=AssertionError(
+                        "resolved Path after mismatch"
+                    )
+                ),
+            )
+
+        self.assertEqual(
+            str(caught.exception),
+            "the retained run's common Git directory changed",
+        )
+        self.assertIsNone(caught.exception.__cause__)
+        self.assertEqual(
+            events,
+            [
+                ("manifest-get", "common_git_dir"),
+                ("repository-common", None),
+                ("stringifier-call", common),
+                ("recorded-ne", rendered),
+                ("comparison-truth", True),
+                ("error-provider", None),
+                (
+                    "error-constructor",
+                    "the retained run's common "
+                    "Git directory changed",
+                ),
+            ],
+        )
+
+    def test_retained_worktree_kernel_never_translates_failures(
+        self,
+    ) -> None:
+        stages = (
+            "manifest-get-attribute",
+            "manifest-get-call",
+            "stringifier-provider",
+            "repository-common-first",
+            "stringifier-call",
+            "recorded-ne",
+            "recorded-truth",
+            "authenticator-provider",
+            "path-provider",
+            "manifest-subscript",
+            "path-call",
+            "repository-common-second",
+            "authenticator-call",
+            "error-provider",
+            "error-constructor",
+        )
+
+        for stage in stages:
+            with self.subTest(unwrapped_stage=stage):
+                original = LinkedDependencyError(stage)
+                events: list[str] = []
+
+                def fail_at(observed: str) -> None:
+                    events.append(observed)
+                    if stage == observed:
+                        raise original
+
+                class Repository:
+                    def __init__(repository_self) -> None:
+                        repository_self.reads = 0
+
+                    @property
+                    def common_git_dir(
+                        repository_self,
+                    ) -> object:
+                        repository_self.reads += 1
+                        fail_at(
+                            "repository-common-first"
+                            if repository_self.reads == 1
+                            else "repository-common-second"
+                        )
+                        return OpaqueValue(
+                            f"common-{repository_self.reads}"
+                        )
+
+                class Truth:
+                    def __bool__(truth_self) -> bool:
+                        fail_at("recorded-truth")
+                        return stage in {
+                            "error-provider",
+                            "error-constructor",
+                        }
+
+                class Recorded:
+                    def __ne__(
+                        recorded_self,
+                        other: object,
+                    ) -> object:
+                        fail_at("recorded-ne")
+                        return Truth()
+
+                class Manifest:
+                    @property
+                    def get(manifest_self) -> object:
+                        fail_at("manifest-get-attribute")
+
+                        def get(key: object) -> object:
+                            fail_at("manifest-get-call")
+                            return Recorded()
+
+                        return get
+
+                    def __getitem__(
+                        manifest_self,
+                        key: object,
+                    ) -> object:
+                        fail_at("manifest-subscript")
+                        return OpaqueValue("worktree-value")
+
+                def stringifier() -> object:
+                    fail_at("stringifier-provider")
+
+                    def stringify(value: object) -> str:
+                        fail_at("stringifier-call")
+                        return "common"
+
+                    return stringify
+
+                def authenticator_provider() -> object:
+                    fail_at("authenticator-provider")
+
+                    def authenticate(
+                        path: object,
+                        *,
+                        expected_common_git_dir: object,
+                    ) -> object:
+                        fail_at("authenticator-call")
+                        return OpaqueValue("identity")
+
+                    return authenticate
+
+                def path_factory() -> object:
+                    fail_at("path-provider")
+
+                    def construct(value: object) -> object:
+                        fail_at("path-call")
+                        return OpaqueValue("worktree-path")
+
+                    return construct
+
+                class BrokenError:
+                    def __new__(
+                        cls,
+                        message: object,
+                    ) -> object:
+                        fail_at("error-constructor")
+                        raise AssertionError(
+                            "error construction unexpectedly succeeded"
+                        )
+
+                def error_type() -> type:
+                    fail_at("error-provider")
+                    return BrokenError
+
+                with self.assertRaises(
+                    LinkedDependencyError
+                ) as caught:
+                    self.identity.authenticate_retained_worktree(
+                        Repository(),
+                        Manifest(),
+                        stringifier=stringifier,
+                        error_type=error_type,
+                        linked_worktree_authenticator=(
+                            authenticator_provider
+                        ),
+                        path_factory=path_factory,
+                    )
+
+                self.assertIs(caught.exception, original)
+                self.assertEqual(events[-1], stage)
+
+    def test_engine_retained_worktree_wrapper_uses_fresh_globals(
+        self,
+    ) -> None:
+        repository = OpaqueValue("engine-retained-repository")
+        manifest = OpaqueValue("engine-retained-manifest")
+        result = OpaqueValue("engine-retained-result")
+        initial_stringifier = object()
+        stringifier_one = object()
+        stringifier_two = object()
+        initial_authenticator = object()
+        authenticator_one = object()
+        authenticator_two = object()
+        initial_path = object()
+        path_one = object()
+        path_two = object()
+
+        class InitialError(RuntimeError):
+            pass
+
+        class ErrorOne(RuntimeError):
+            pass
+
+        class ErrorTwo(RuntimeError):
+            pass
+
+        def kernel(
+            observed_repository: object,
+            observed_manifest: object,
+            **dependencies: object,
+        ) -> object:
+            self.assertIs(observed_repository, repository)
+            self.assertIs(observed_manifest, manifest)
+            self.assertEqual(
+                tuple(dependencies),
+                (
+                    "stringifier",
+                    "error_type",
+                    "linked_worktree_authenticator",
+                    "path_factory",
+                ),
+            )
+
+            self.engine.str = stringifier_one
+            self.assertIs(
+                dependencies["stringifier"](),
+                stringifier_one,
+            )
+            self.engine.str = stringifier_two
+            self.assertIs(
+                dependencies["stringifier"](),
+                stringifier_two,
+            )
+            self.engine.LauncherError = ErrorOne
+            self.assertIs(
+                dependencies["error_type"](),
+                ErrorOne,
+            )
+            self.engine.LauncherError = ErrorTwo
+            self.assertIs(
+                dependencies["error_type"](),
+                ErrorTwo,
+            )
+            self.engine.authenticate_linked_worktree_path = (
+                authenticator_one
+            )
+            self.assertIs(
+                dependencies[
+                    "linked_worktree_authenticator"
+                ](),
+                authenticator_one,
+            )
+            self.engine.authenticate_linked_worktree_path = (
+                authenticator_two
+            )
+            self.assertIs(
+                dependencies[
+                    "linked_worktree_authenticator"
+                ](),
+                authenticator_two,
+            )
+            self.engine.Path = path_one
+            self.assertIs(
+                dependencies["path_factory"](),
+                path_one,
+            )
+            self.engine.Path = path_two
+            self.assertIs(
+                dependencies["path_factory"](),
+                path_two,
+            )
+            return result
+
+        with (
+            mock.patch.object(
+                self.engine,
+                "_authenticate_retained_worktree",
+                side_effect=kernel,
+            ) as kernel_mock,
+            mock.patch.object(
+                self.engine,
+                "str",
+                initial_stringifier,
+                create=True,
+            ),
+            mock.patch.object(
+                self.engine,
+                "LauncherError",
+                InitialError,
+            ),
+            mock.patch.object(
+                self.engine,
+                "authenticate_linked_worktree_path",
+                initial_authenticator,
+            ),
+            mock.patch.object(
+                self.engine,
+                "Path",
+                initial_path,
+            ),
+        ):
+            observed = self.engine.authenticate_retained_worktree(
+                repository,
+                manifest,
+            )
+
+        self.assertIs(observed, result)
+        kernel_mock.assert_called_once()
+
+    def test_retained_worktree_wrapper_matches_real_manifest_values(
+        self,
+    ) -> None:
+        common_git_dir = Path("/repository/.git")
+        worktree = Path("/state/worktrees/run")
+        repository = self.identity.Repository(
+            root=Path("/repository"),
+            git_dir=common_git_dir,
+            common_git_dir=common_git_dir,
+            relative_cwd=Path("."),
+            linked_worktree=False,
+            state_root=Path("/state"),
+        )
+        manifest = {
+            "common_git_dir": os.fspath(common_git_dir),
+            "worktree": os.fspath(worktree),
+        }
+        result = OpaqueValue("real-manifest-result")
+        authenticator = mock.Mock(return_value=result)
+
+        with mock.patch.object(
+            self.engine,
+            "authenticate_linked_worktree_path",
+            authenticator,
+        ):
+            observed = self.engine.authenticate_retained_worktree(
+                repository,
+                manifest,
+            )
+
+        self.assertIs(observed, result)
+        authenticator.assert_called_once_with(
+            worktree,
+            expected_common_git_dir=common_git_dir,
+        )
+
+        for recorded_common in (
+            None,
+            "",
+            "/different/.git",
+            common_git_dir,
+        ):
+            with self.subTest(
+                recorded_common=recorded_common
+            ):
+                blocked_authenticator = mock.Mock(
+                    side_effect=AssertionError(
+                        "authenticated mismatched manifest"
+                    )
+                )
+                with mock.patch.object(
+                    self.engine,
+                    "authenticate_linked_worktree_path",
+                    blocked_authenticator,
+                ):
+                    with self.assertRaises(
+                        self.engine.LauncherError
+                    ) as caught:
+                        (
+                            self.engine
+                            .authenticate_retained_worktree(
+                                repository,
+                                {
+                                    "common_git_dir": (
+                                        recorded_common
+                                    ),
+                                    "worktree": os.fspath(
+                                        worktree
+                                    ),
+                                },
+                            )
+                        )
+
+                self.assertEqual(
+                    str(caught.exception),
+                    "the retained run's common "
+                    "Git directory changed",
+                )
+                self.assertIsNone(caught.exception.__cause__)
+                blocked_authenticator.assert_not_called()
+
+        missing_worktree = {
+            "common_git_dir": os.fspath(common_git_dir)
+        }
+        with mock.patch.object(
+            self.engine,
+            "authenticate_linked_worktree_path",
+            authenticator,
+        ):
+            with self.assertRaises(KeyError) as caught:
+                self.engine.authenticate_retained_worktree(
+                    repository,
+                    missing_worktree,
+                )
+        self.assertEqual(caught.exception.args, ("worktree",))
+
     def test_linked_worktree_validation_kernel_and_wrapper_signatures(
         self,
     ) -> None:

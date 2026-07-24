@@ -27,7 +27,8 @@ selection, repository-name normalization, and lexical lock and manifest paths,
 authentication plus exact Git-administration line-format validation and the
 bounded descriptor-based regular-file reader plus exact pointer-path and
 real-directory validation, read-only linked-worktree path validation, and
-read-only linked-worktree cache-consistency policy,
+read-only linked-worktree cache-consistency policy plus retained-worktree
+manifest binding and authentication dispatch,
 `locks.py` now owns lock-descriptor bookkeeping and validation algorithms,
 `process.py` now owns child waiting and exit-status normalization,
 `adapters/codex.py` now owns Codex executable candidate selection and static
@@ -44,8 +45,8 @@ worktree_marshal/
   locks.py               descriptor bookkeeping now; flock acquisition later
   git.py                 policy, captured config, and executable discovery; invocation later
   process.py             child signal forwarding and exit normalization
-  identity.py            records, launcher auth, reader, path and cache checks
-                         public worktree auth and registry objects/writes remain in engine
+  identity.py            records, launcher auth, path/cache checks, retained dispatch
+                         public wrappers and linked registry objects/writes remain in engine
   worktrees.py           allocation, audit, reopen, and cleanup
   integration.py         verification, rebase, landing, and rollback
   conflicts.py           resolver scope, continuation, and abort
@@ -100,7 +101,7 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with twenty behavior-preserving boundaries. The original
+has begun step 5 with twenty-one behavior-preserving boundaries. The original
 pure Git policy kernel transforms an explicit environment mapping and Git
 argument sequence in `git.py`; `engine.py` retains its optional
 environment-acquisition wrapper, subprocess creation and command execution,
@@ -442,15 +443,16 @@ truth-conversion, provider, and error-construction failures remain
 untranslated, and the launcher error type is resolved only after the relevant
 collision evaluates true.
 
-The public engine wrapper retains both process-global registry objects and
-both assignments. After the kernel succeeds, it reloads the identity registry
-and assigns the constructed identity, then reloads the owner registry and
-assigns the canonical worktree. Failure of the first assignment prevents the
-second; failure of the second preserves the first assignment. Registry
-rebinding during either lookup or the first assignment therefore remains
-observable exactly as before. The engine also retains the late constructor,
-boundary-19 path-validation orchestration, all authentication entry points and
-callers, every lifecycle workflow, and every mutation.
+At that boundary, the public engine wrapper retained both process-global
+registry objects and both assignments. After the kernel succeeded, it reloaded
+the identity registry and assigned the constructed identity, then reloaded the
+owner registry and assigned the canonical worktree. Failure of the first
+assignment prevented the second; failure of the second preserved the first
+assignment. Registry rebinding during either lookup or the first assignment
+therefore remained observable exactly as before. The engine also retained the
+late constructor, boundary-19 path-validation orchestration, all
+authentication entry points and callers, every lifecycle workflow, and every
+mutation.
 
 This kernel reads process-local cache claims sequentially; it is not an atomic
 check-and-reserve operation. It neither locks nor writes either registry,
@@ -462,7 +464,51 @@ introduces no generic authentication contract, durable identity or migration
 change, sandbox or lifecycle authority, packaging or distribution change, or
 release assurance.
 
-Direct tests freeze all twenty extracted boundaries, their
+The twenty-first boundary moves the full retained-worktree manifest binding and
+authentication dispatch into `identity.authenticate_retained_worktree`. Its
+exact-signature engine wrapper remains `(repository, manifest)` and lazily
+supplies the current stringifier, launcher error type, linked-worktree
+authenticator, and path factory. Every existing caller continues through that
+wrapper without changed arguments, return handling, or workflow placement.
+
+Evaluation order remains fixed. The operation first obtains
+`common_git_dir` with the manifest's `get` method. It resolves the stringifier
+before the first fresh read of `repository.common_git_dir`, stringifies that
+value, and applies the existing inequality and truth conversion. A truthy
+mismatch resolves the launcher error type only then and raises `the retained
+run's common Git directory changed` without an explicit cause. That branch
+does not resolve the authenticator or path factory, subscript the manifest's
+`worktree`, construct a path, or perform the second repository read.
+
+On success, the operation resolves and captures the linked-worktree
+authenticator before evaluating its arguments. It next resolves the path
+factory before subscripting the exact manifest `worktree` item, constructs
+that positional path, and reads `repository.common_git_dir` a second time for
+the exact `expected_common_git_dir` keyword. It invokes the captured
+authenticator and returns its result unchanged. Mapping, property, provider,
+stringification, comparison, truth-conversion, path-construction, callback,
+and error-construction failures remain untranslated.
+
+The engine continues to own the exact public retained-worktree wrapper and all
+of its callers, `authenticate_linked_worktree_path`, the boundary-19 path
+validator, the boundary-20 cache-consistency validator, late
+`LinkedWorktreeIdentity` construction, both process-global registry objects,
+both assignments, dynamic rebinding and partial-mutation behavior, every
+lifecycle workflow, and every mutation. The injected authenticator may reach
+those engine-owned cache mutations, but the retained-worktree operation
+receives no registry object and contains no registry access or assignment.
+
+This is a non-atomic manifest-to-repository spelling check followed by
+delegated authentication. It does not validate the manifest schema,
+authenticate the manifest file or its path ownership, canonicalize the
+recorded spelling, freeze one value across the two common-directory reads, or
+establish repository, Git-registration, or lifecycle authority. The injected
+authenticator remains responsible for path topology and process-local cache
+policy. This boundary introduces no generic contract, durable identity or
+migration change, sandbox or lifecycle authority, packaging or distribution
+change, or release assurance.
+
+Direct tests freeze all twenty-one extracted boundaries, their
 compatibility surfaces, artifact inclusion, field and operation order,
 partial-failure behavior, and the dynamic restoration of every vocabulary
 value currently accepted in

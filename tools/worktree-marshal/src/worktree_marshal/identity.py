@@ -45,6 +45,31 @@ class RegularFileMetadata(Protocol):
     st_ctime_ns: int
 
 
+def authenticate_retained_worktree(
+    repository: Repository,
+    manifest: dict,
+    *,
+    stringifier: Callable[[], Callable[[object], str]],
+    error_type: Callable[[], type[BaseException]],
+    linked_worktree_authenticator: Callable[
+        [],
+        Callable[..., LinkedWorktreeIdentity],
+    ],
+    path_factory: Callable[[], Callable[[str], Path]],
+) -> LinkedWorktreeIdentity:
+    """Authenticate a manifest-bound retained linked worktree."""
+
+    recorded_common = manifest.get("common_git_dir")
+    if recorded_common != stringifier()(repository.common_git_dir):
+        raise error_type()(
+            "the retained run's common Git directory changed"
+        )
+    return linked_worktree_authenticator()(
+        path_factory()(manifest["worktree"]),
+        expected_common_git_dir=repository.common_git_dir,
+    )
+
+
 def exact_pointer_path(
     raw_value: str,
     *,
