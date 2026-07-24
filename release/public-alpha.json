@@ -7,13 +7,13 @@
     "claude"
   ],
   "expected_counts": {
-    "publications": 119,
-    "release": 119,
+    "publications": 122,
+    "release": 122,
     "review": 0,
     "hold": 0,
     "providers": {
-      "gpt": 116,
-      "claude": 3
+      "claude": 6,
+      "gpt": 116
     }
   },
   "gates": {
@@ -40,7 +40,7 @@
         "worldwide"
       ],
       "rights_record": "release/rights/public-alpha-2026-07-15.md",
-      "rights_record_sha256": "e6d2e75fdf1495714f0d1c76b7455026d3c6a3c0083dc3cc9b1e21809a4a1abd",
+      "rights_record_sha256": "65669c5e355ad97a46869ee1e98a055be4c1dbc11356afaa1038bb64d2993ec1",
       "site_sources": {
         "CONTRIBUTING.md": "1bb9ef13c4f754f9a8bede73f0afd95c2266173726bcfbd709017dc342272d5e",
         "LIBRARY.md": "a45aae3359ac20ac3a4cf756007a08df9109d06661d5fc261798daf38ec5b881",
@@ -49,12 +49,12 @@
         "LICENSES/MIT.txt": "afd9c125b68a36b60c78cf63656f4cea2613fadce57e95ebabacebff8817ef60",
         "README.md": "5007509616e98056d397b315247e07307b7cc0f8b715c49847dcef45dadfcb2b",
         "THIRD_PARTY.md": "965aaaff0e773815213fa8c9aada37213d6cb890eb374ef3d1bb1d1dbf966ec4",
-        "library/biographies.md": "41256dbca4f35bdb82565dc29ab0c4516d2c0032b51e28c6e496adfc4ec74e9b",
+        "library/biographies.md": "326ee19bffda526e2be205262fa0c44b550d6f1accc7c310f7f648186bf1ebc8",
         "library/curriculums.md": "15f24d06b4911b1cbfe4d85d82c463d7c2eef8635ff25edf2817d5fa6e0fb2bc",
         "library/ecclesiastical-latin.md": "1b985372bc372990f8d748d7667620c76c89a4073a8dae146ecefbca84333c1b",
-        "library/faith.md": "fb453d08b243ef4ca1b8e5f65583ecaff60cee0c028ad52a5278ad8f9bc6dbd0",
+        "library/faith.md": "adfa2f151581cfa967c206d4902273d38bc49d79aa9bab200d464b297ad83e35",
         "library/heresies.md": "8f6f80b79266818a2b7d80db312ad33cd52ba594b329d4604dae53d17060f5df",
-        "library/historical-accounts.md": "0246c05f1a2aea019f8fffad12c8060917bb309404fdda4fd5577b7e5ba40db2",
+        "library/historical-accounts.md": "7adb3b08b05367af0c688fa08be774240da852876698081694018a412c24709e",
         "library/law-and-church-discipline.md": "f7a9c66895bde0dfa183fa9f93b79005c77c6c625b978ce2163d3566aa7189c4",
         "library/mariology.md": "bc3ffc4dde127750debeede3f968d5541af7a22098d8fe155d01a006aa74d955",
         "library/novus-ordo-liturgy.md": "861aba17f9e1788d852ba072bcdf8bf76a674e357eeadc7aa9030aed066e36fb",
@@ -68,7 +68,7 @@
       },
       "approved_on": "2026-07-24",
       "duration": "perpetual",
-      "effective_at": "2026-07-24T17:52:30-05:00",
+      "effective_at": "2026-07-24T18:24:17-05:00",
       "expires_at": null,
       "timezone": "America/Chicago",
       "conditions": [
@@ -1265,6 +1265,36 @@
       "approval": {
         "authorization": "perpetual-public-repository-2026",
         "pdf_sha256": "f6aad19c478b8535f3b3d31d413fb61b0d1ea723db3d0ba3e3221e596f346ba5"
+      }
+    },
+    {
+      "id": "claude:articles/faith/ontological-vertigo",
+      "catalog": "library/faith.md",
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "56ecbfad17c0ce6d6303c62d3e738eb2d2401dee8ddc663f306af9bf4e7d980e"
+      }
+    },
+    {
+      "id": "claude:biographies/origen",
+      "catalog": "library/biographies.md",
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "020b3f4452e2d0e89f6458824f6d33e8bf2db079ff80e0a73f42f9a2d6648d35"
+      }
+    },
+    {
+      "id": "claude:history/biblical-translations/01-septuagint",
+      "catalog": "library/historical-accounts.md",
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "6aaa22a66d05bf8e4cbe88a3dda814dd71354e00753bbb43f5ee794a25d161bf"
       }
     }
   ]
