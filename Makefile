@@ -68,7 +68,7 @@ SOURCE_ROOT := src/$(PROVIDER)
 BUILD_ROOT := build/$(PROVIDER)
 DOC_ROOT := doc/$(PROVIDER)
 
-MAIN_SOURCES := $(shell find $(SOURCE_ROOT) -type f -name main.tex | sort)
+MAIN_SOURCES := $(shell find $(SOURCE_ROOT) -type f -name main.tex 2>/dev/null | sort)
 DOCUMENTS := $(patsubst $(SOURCE_ROOT)/%/main.tex,%,$(MAIN_SOURCES))
 BUILD_PDFS := $(addprefix $(BUILD_ROOT)/,$(addsuffix .pdf,$(DOCUMENTS)))
 BUILD_METADATA_STAMPS := $(addprefix $(BUILD_ROOT)/.metadata/,$(addsuffix .ok,$(DOCUMENTS)))
@@ -110,7 +110,7 @@ override WORKTREE_MARSHAL_ABORT_ARGUMENTS := --triptych-abort
 override WORKTREE_MARSHAL_CLEAN_ARGUMENTS := --triptych-clean
 include tools/worktree-marshal/src/worktree_marshal/resources/worktree-marshal.mk
 
-COMMON_SOURCES := $(shell find $(SOURCE_ROOT)/common -type f | sort)
+COMMON_SOURCES := $(shell find src/common -type f 2>/dev/null | sort)
 ECCLESIASTICAL_LATIN_ROOT := $(SOURCE_ROOT)/curriculums/ecclesiastical-latin
 ECCLESIASTICAL_LATIN_SHARED := $(shell find $(ECCLESIASTICAL_LATIN_ROOT)/shared -type f \( \
 	-name '*.tex' -o -name '*.sty' -o -name '*.cls' -o -name '*.bib' -o \
@@ -195,7 +195,11 @@ all:
 
 review-pdfs:
 	+@$(MAKE) --no-print-directory $(_TRIPTYCH_BOUNDED_PDF_JOB_OPTION) pdf
-	@$(PYTHON) $(PDF_REVIEW_TOOL) --changed-against $(DOC_ROOT) $(BUILD_PDFS)
+	@if [ -d '$(DOC_ROOT)' ]; then \
+		$(PYTHON) $(PDF_REVIEW_TOOL) --changed-against $(DOC_ROOT) $(BUILD_PDFS); \
+	else \
+		$(PYTHON) $(PDF_REVIEW_TOOL) $(BUILD_PDFS); \
+	fi
 
 review-all-pdfs:
 	+@$(MAKE) --no-print-directory $(_TRIPTYCH_BOUNDED_PDF_JOB_OPTION) pdf
@@ -204,7 +208,11 @@ else
 all: pdf
 
 review-pdfs: pdf
-	@$(PYTHON) $(PDF_REVIEW_TOOL) --changed-against $(DOC_ROOT) $(BUILD_PDFS)
+	@if [ -d '$(DOC_ROOT)' ]; then \
+		$(PYTHON) $(PDF_REVIEW_TOOL) --changed-against $(DOC_ROOT) $(BUILD_PDFS); \
+	else \
+		$(PYTHON) $(PDF_REVIEW_TOOL) $(BUILD_PDFS); \
+	fi
 
 review-all-pdfs: pdf
 	@$(PYTHON) $(PDF_REVIEW_TOOL) $(BUILD_PDFS)
@@ -410,8 +418,8 @@ $(BUILD_ROOT)/%.pdf: $(SOURCE_ROOT)/%/main.tex $(COMMON_SOURCES) | check-metadat
 	@mkdir -p $(@D)
 	@mkdir -p '$(BUILD_ROOT)/.metadata/$(dir $*)'
 	@rm -f -- '$(BUILD_ROOT)/.metadata/$*.ok'
-	cd $(SOURCE_ROOT) && $(PDFLATEX) -interaction=nonstopmode -halt-on-error -jobname=$(notdir $*) -output-directory=$(abspath $(@D)) $*/main.tex
-	cd $(SOURCE_ROOT) && $(PDFLATEX) -interaction=nonstopmode -halt-on-error -jobname=$(notdir $*) -output-directory=$(abspath $(@D)) $*/main.tex
+	cd $(SOURCE_ROOT) && TEXINPUTS=..: $(PDFLATEX) -interaction=nonstopmode -halt-on-error -jobname=$(notdir $*) -output-directory=$(abspath $(@D)) $*/main.tex
+	cd $(SOURCE_ROOT) && TEXINPUTS=..: $(PDFLATEX) -interaction=nonstopmode -halt-on-error -jobname=$(notdir $*) -output-directory=$(abspath $(@D)) $*/main.tex
 	@case '$*' in \
 		curriculums/ecclesiastical-latin/*) \
 			$(PYTHON) $(CURRICULUM_STRUCTURE_CHECKER) \
