@@ -109,7 +109,7 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with thirty-five behavior-preserving boundaries. The original
+has begun step 5 with thirty-six behavior-preserving boundaries. The original
 pure Git policy kernel transforms an explicit environment mapping and Git
 argument sequence in `git.py`; `engine.py` retains its optional
 environment-acquisition wrapper, subprocess creation and command execution,
@@ -766,7 +766,12 @@ hash, marker, timestamp, and lifecycle-checkpoint validation into
 field inventories and patterns at the established lookup point and retains
 target-ref authentication and lifecycle sequencing.
 
-Direct tests freeze all thirty-five extracted boundaries, their
+The thirty-sixth boundary moves local target-branch type, namespace, and
+Git-ref-format result validation into `state.validate_manifest_target_ref`.
+The engine retains Git execution, supplies the exact non-raising ref-format
+probe, and preserves its position after all other manifest validation.
+
+Direct tests freeze all thirty-six extracted boundaries, their
 compatibility surfaces, artifact inclusion, field and operation order,
 partial-failure behavior, and the dynamic restoration of every vocabulary
 value currently accepted in

@@ -112,6 +112,7 @@ from .state import (
     validate_exact_run_tmpdir as _validate_exact_run_tmpdir,
     validate_manifest_checkpoint_fields as _validate_manifest_checkpoint_fields,
     validate_manifest_core_paths as _validate_manifest_core_paths,
+    validate_manifest_target_ref as _validate_manifest_target_ref,
     validate_run_id as _validate_run_id,
     write_manifest as _write_manifest,
 )
@@ -773,13 +774,17 @@ def validate_manifest_paths(repository: Repository, manifest: dict) -> None:
         hash_match=lambda value: re.fullmatch(r"[0-9a-f]{64}", value),
         error_type=LauncherError,
     )
-    target_ref = manifest.get("target_ref")
-    if (
-        not isinstance(target_ref, str)
-        or not target_ref.startswith("refs/heads/")
-        or git(repository.root, "check-ref-format", target_ref, check=False).returncode
-    ):
-        raise LauncherError("run manifest has an invalid target branch")
+    _validate_manifest_target_ref(
+        repository,
+        manifest,
+        check_ref_format=lambda root, target_ref: git(
+            root,
+            "check-ref-format",
+            target_ref,
+            check=False,
+        ),
+        error_type=LauncherError,
+    )
 
 
 def resolve_real_codex(launcher: LauncherIdentity) -> Path:

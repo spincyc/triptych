@@ -182,6 +182,74 @@ class StatePolicyTests(unittest.TestCase):
             )
         )
 
+    def test_target_ref_kernel_signature_and_short_circuits(self) -> None:
+        parameters = inspect.signature(
+            self.state_policy.validate_manifest_target_ref
+        ).parameters
+        self.assertEqual(
+            tuple(parameters),
+            ("repository", "manifest", "check_ref_format", "error_type"),
+        )
+        self.assertIs(
+            parameters["repository"].kind,
+            inspect.Parameter.POSITIONAL_OR_KEYWORD,
+        )
+        self.assertIs(
+            parameters["manifest"].kind,
+            inspect.Parameter.POSITIONAL_OR_KEYWORD,
+        )
+        for parameter in tuple(parameters.values())[2:]:
+            self.assertIs(parameter.kind, inspect.Parameter.KEYWORD_ONLY)
+            self.assertIs(parameter.default, inspect.Parameter.empty)
+
+        repository = SimpleNamespace(root=object())
+        check_ref_format = mock.Mock()
+        for target_ref in (None, 1, b"refs/heads/main", "main"):
+            with self.subTest(target_ref=target_ref), self.assertRaisesRegex(
+                self.engine.LauncherError,
+                "^run manifest has an invalid target branch$",
+            ):
+                self.state_policy.validate_manifest_target_ref(
+                    repository,
+                    {"target_ref": target_ref},
+                    check_ref_format=check_ref_format,
+                    error_type=self.engine.LauncherError,
+                )
+        check_ref_format.assert_not_called()
+
+    def test_target_ref_kernel_preserves_probe_and_result_behavior(self) -> None:
+        root = object()
+        repository = SimpleNamespace(root=root)
+        target_ref = "refs/heads/topic"
+        check_ref_format = mock.Mock(
+            return_value=SimpleNamespace(returncode=0)
+        )
+
+        self.assertIsNone(
+            self.state_policy.validate_manifest_target_ref(
+                repository,
+                {"target_ref": target_ref},
+                check_ref_format=check_ref_format,
+                error_type=self.engine.LauncherError,
+            )
+        )
+        check_ref_format.assert_called_once_with(root, target_ref)
+
+        check_ref_format.reset_mock(
+            return_value=True,
+        )
+        check_ref_format.return_value = SimpleNamespace(returncode=1)
+        with self.assertRaisesRegex(
+            self.engine.LauncherError,
+            "^run manifest has an invalid target branch$",
+        ):
+            self.state_policy.validate_manifest_target_ref(
+                repository,
+                {"target_ref": target_ref},
+                check_ref_format=check_ref_format,
+                error_type=self.engine.LauncherError,
+            )
+
     def test_engine_preserves_run_identity_and_path_surfaces(self) -> None:
         self.assertIs(self.engine.RUN_ID_RE, self.state_policy.RUN_ID_RE)
         for helper_name in (

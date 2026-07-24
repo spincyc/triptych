@@ -282,6 +282,24 @@ def validate_manifest_checkpoint_fields(
             raise error_type("run manifest has incomplete retired metadata")
 
 
+def validate_manifest_target_ref(
+    repository: StateRepository,
+    manifest: Mapping[str, Any],
+    *,
+    check_ref_format: Callable[[Path, str], Any],
+    error_type: type[BaseException],
+) -> None:
+    """Validate the manifest's target as one exact local branch ref."""
+
+    target_ref = manifest.get("target_ref")
+    if (
+        not isinstance(target_ref, str)
+        or not target_ref.startswith("refs/heads/")
+        or check_ref_format(repository.root, target_ref).returncode
+    ):
+        raise error_type("run manifest has an invalid target branch")
+
+
 def validate_exact_run_tmpdir(
     repository: StateRepository,
     manifest: Mapping[str, Any],
