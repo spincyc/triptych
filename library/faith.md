@@ -14,7 +14,7 @@
 
 | Publication | ChatGPT | Claude | Focus |
 | --- | --- | --- | --- |
-| **Ontological Vertigo** | [PDF](../doc/gpt/articles/faith/ontological-vertigo.pdf) | — | Part I: creation, present dependence upon God, and the natural-theological judgment that God loves. |
+| **Ontological Vertigo** | [PDF](../doc/gpt/articles/faith/ontological-vertigo.pdf) | [PDF](../doc/claude/articles/faith/ontological-vertigo.pdf) | Part I: creation, present dependence upon God, and the natural-theological judgment that God loves. |
 | **The Due Return** | [PDF](../doc/gpt/articles/faith/the-due-return.pdf) | — | Part II: worship as the creature's due return—sacrifice, sacrament, moral life, mercy, grace, and hope. |
 | **At the End of Every Why** | [PDF](../doc/gpt/articles/faith/at-the-end-of-every-why.pdf) | — | Part III: charity and friendship with God amid prayer, dryness, suffering, Eucharistic desire, and love of neighbor. |
 

@@ -6,7 +6,7 @@
 
 | Publication | ChatGPT | Claude | Coverage |
 | --- | --- | --- | --- |
-| BT-01 · **The Septuagint: The Making and Afterlife of the Greek Jewish Scriptures** | [PDF](../doc/gpt/history/biblical-translations/01-septuagint.pdf) | — | Torah translation, later Greek books, Jewish revisions, Christian codices, and modern editions. |
+| BT-01 · **The Septuagint: The Making and Afterlife of the Greek Jewish Scriptures** | [PDF](../doc/gpt/history/biblical-translations/01-septuagint.pdf) | [PDF](../doc/claude/history/biblical-translations/01-septuagint.pdf) | Torah translation, later Greek books, Jewish revisions, Christian codices, and modern editions. |
 | BT-02 · **The Vulgate: Jerome's Work and the Making of the Latin Bible** | [PDF](../doc/gpt/history/biblical-translations/02-vulgate.pdf) | — | Old Latin texts, Jerome's projects, medieval transmission, Roman editions, critical texts, and the *Nova Vulgata*. |
 
 ## Catholic Parish Histories

@@ -31,4 +31,4 @@ contemporary evidence from later tradition.
 | Biography | ChatGPT | Claude | Focus |
 | --- | --- | --- | --- |
 | **Tertullian: The Rhetorician of Carthage and the Cost of Rigor** | [PDF](../doc/gpt/biographies/tertullian.pdf) | [PDF](../doc/claude/biographies/tertullian.pdf) | Carthage, apologetics, Christian practice, New Prophecy, transmission, and Catholic reception. |
-| **Origen: Scripture, School, and the Long Trial of a Teacher** | [PDF](../doc/gpt/biographies/origen.pdf) | — | Alexandrian formation, teaching, textual scholarship, conflict, survival, and later controversies. |
+| **Origen: Scripture, School, and the Long Trial of a Teacher** | [PDF](../doc/gpt/biographies/origen.pdf) | [PDF](../doc/claude/biographies/origen.pdf) | Alexandrian formation, teaching, textual scholarship, conflict, survival, and later controversies. |
