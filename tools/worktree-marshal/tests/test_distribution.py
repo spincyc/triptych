@@ -77,6 +77,7 @@ class DistributionArtifactTests(unittest.TestCase):
         self.assertIn("worktree_marshal/cli.py", names)
         self.assertIn("worktree_marshal/engine.py", names)
         self.assertIn("worktree_marshal/git.py", names)
+        self.assertIn("worktree_marshal/identity.py", names)
         self.assertIn("worktree_marshal/locks.py", names)
         self.assertIn("worktree_marshal/model.py", names)
         self.assertIn("worktree_marshal/process.py", names)
@@ -144,6 +145,7 @@ class DistributionArtifactTests(unittest.TestCase):
             "src/worktree_marshal/cli.py",
             "src/worktree_marshal/engine.py",
             "src/worktree_marshal/git.py",
+            "src/worktree_marshal/identity.py",
             "src/worktree_marshal/locks.py",
             "src/worktree_marshal/model.py",
             "src/worktree_marshal/process.py",
@@ -156,6 +158,7 @@ class DistributionArtifactTests(unittest.TestCase):
             "tests/_artifact_fixture.py",
             "tests/test_distribution.py",
             "tests/test_git.py",
+            "tests/test_identity.py",
             "tests/test_installed_lifecycle.py",
             "tests/test_locks.py",
             "tests/test_cli.py",
@@ -182,6 +185,7 @@ class DistributionArtifactTests(unittest.TestCase):
 
         self.assertIn("worktree_marshal/cli.py", names)
         self.assertIn("worktree_marshal/git.py", names)
+        self.assertIn("worktree_marshal/identity.py", names)
         self.assertIn("worktree_marshal/locks.py", names)
         self.assertIn("worktree_marshal/model.py", names)
         self.assertIn("worktree_marshal/process.py", names)

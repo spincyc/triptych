@@ -17,16 +17,16 @@ arbitrary executable is not equivalent support.
 
 The current package deliberately keeps lifecycle transition selection,
 validation, persistence, and orchestration in one shared `engine.py`. `cli.py`
-owns the installed grammar, `profiles.py` owns immutable durable identities,
-`git.py` now owns only the cycle-free Git policy kernel, `model.py` now owns
-the exact state vocabulary, pure classifier, and I/O-free
+owns the installed grammar, `profiles.py` owns immutable durable profile
+identities, `git.py` now owns only the cycle-free Git policy kernel, `model.py`
+now owns the exact state vocabulary, pure classifier, and I/O-free
 integration-transaction restoration transform, `state.py` now owns run
 identity, state-location selection, repository-name normalization, and lexical
-lock and manifest paths, `locks.py` now owns lock-descriptor bookkeeping and
-validation algorithms, `process.py` now owns child waiting and exit-status
-normalization, and `triptych_compat.py` binds the frozen adapter. The rest of
-the engine will be separated behind these modules only after parity tests
-protect each seam:
+lock and manifest paths, `identity.py` now owns immutable runtime identity
+records, `locks.py` now owns lock-descriptor bookkeeping and validation
+algorithms, `process.py` now owns child waiting and exit-status normalization,
+and `triptych_compat.py` binds the frozen adapter. The rest of the engine will
+be separated behind these modules only after parity tests protect each seam:
 
 ```text
 worktree_marshal/
@@ -36,7 +36,7 @@ worktree_marshal/
   locks.py               descriptor bookkeeping now; flock acquisition later
   git.py                 transforms and captured-config policy now; invocation later
   process.py             child signal forwarding and exit normalization
-  identity.py            repository, checkout, and path authentication
+  identity.py            immutable runtime records now; authentication later
   worktrees.py           allocation, audit, reopen, and cleanup
   integration.py         verification, rebase, landing, and rollback
   conflicts.py           resolver scope, continuation, and abort
@@ -90,7 +90,7 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with eight behavior-preserving boundaries. The pure Git policy
+has begun step 5 with nine behavior-preserving boundaries. The pure Git policy
 kernel now transforms an explicit environment mapping and Git argument
 sequence in `git.py`; `engine.py` retains its optional environment-acquisition
 wrapper and all executable discovery, subprocess creation and command
@@ -149,7 +149,17 @@ captures the current substitution operation before reading the repository
 name. Repository digest calculation, final state-root joining and resolution,
 outside-worktree containment rejection, directory creation, authentication,
 and all durable writes remain in `engine.py`.
-Direct tests freeze all eight extracted boundaries, their
+The ninth boundary moves only the frozen `Repository`,
+`LinkedWorktreeIdentity`, and `LauncherIdentity` records into `identity.py`.
+The engine imports and re-exports those exact class objects, so existing
+constructors and type comparisons keep their established surface. Their
+canonical Python module and new pickle provenance are now `identity.py`; the
+engine aliases keep old engine-qualified lookups resolvable, and Marshal does
+not persist these records with pickle. Repository discovery, path and file
+authentication, launcher executable checks, linked-worktree identity caches,
+diagnostics, and all mutation remain in `engine.py`; the records do not perform
+validation or I/O.
+Direct tests freeze all nine extracted boundaries, their
 compatibility surfaces, artifact inclusion, field and operation order,
 partial-failure behavior, and the dynamic restoration of every vocabulary
 value currently accepted in

@@ -9,8 +9,9 @@ cycle-free Git policy, durable-state vocabulary, and integration-transaction
 restoration seams, its lock-descriptor bookkeeping boundary, its first generic
 profile, its child-process supervision boundary, its run-identity and lexical
 state-path boundary, its state-location and repository-name boundary, the
-frozen Triptych compatibility adapter, the Python distribution, and the Make
-integration fragment. The repository-local
+immutable runtime-identity record boundary, the frozen Triptych compatibility
+adapter, the Python distribution, and the Make integration fragment. The
+repository-local
 [`scripts/triptych-codex`](../../scripts/triptych-codex) command is a thin,
 in-process bootstrap for the co-located package engine.
 
@@ -111,7 +112,7 @@ worktree-removal or ref-transaction failures, receipt recovery, garbage
 collection, or concurrent retirement. Those retirement cases, broader crash
 and race recovery, broader security coverage, the complete installed lifecycle
 matrix, and the supported Python and Git CI matrix remain release gates; the
-first eight step-5 seams are protected by direct source tests and artifact
+first nine step-5 seams are protected by direct source tests and artifact
 provenance, and the installed abort checkpoint covers archived transaction
 restoration. Each remaining helper boundary still requires its own direct
 parity coverage.
@@ -135,6 +136,13 @@ records and transition-graph enforcement remain deferred. Executable
 discovery, subprocess creation and command execution, repository
 authentication, effective-configuration probing, ref transactions, and
 lifecycle orchestration also remain together in `engine.py`.
+
+[`identity.py`](src/worktree_marshal/identity.py) owns only the three frozen
+runtime records for a discovered repository, an authenticated linked worktree,
+and the authenticated launcher entry point. `engine.py` re-exports the same
+class objects for compatibility. Repository discovery, path and file
+authentication, executable checks, linked-worktree identity caches, all
+failure diagnostics, and every mutation remain in `engine.py`.
 
 [`state.py`](src/worktree_marshal/state.py) owns only the exact run-ID grammar,
 dependency-injected timestamp and random-suffix composition, and lexical

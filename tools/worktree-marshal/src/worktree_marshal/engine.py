@@ -36,6 +36,7 @@ from .git import (
     sanitized_git_environment as _sanitized_git_environment,
     validate_effective_git_configuration as _validate_effective_git_configuration,
 )
+from .identity import LauncherIdentity, LinkedWorktreeIdentity, Repository
 from .locks import (
     RegisteredLockDescriptor,
     inherited_lock_descriptors as _inherited_lock_descriptors,
@@ -181,16 +182,6 @@ class ManagedConflictScopeError(LauncherError):
 
 
 @dataclass(frozen=True)
-class Repository:
-    root: Path
-    git_dir: Path
-    common_git_dir: Path
-    relative_cwd: Path
-    linked_worktree: bool
-    state_root: Path
-
-
-@dataclass(frozen=True)
 class Audit:
     registered: bool
     locked: bool
@@ -201,23 +192,6 @@ class Audit:
     @property
     def clean(self) -> bool:
         return self.status == ""
-
-
-@dataclass(frozen=True)
-class LinkedWorktreeIdentity:
-    worktree: Path
-    git_file: Path
-    git_dir: Path
-    common_git_dir: Path
-
-
-@dataclass(frozen=True)
-class LauncherIdentity:
-    """Authenticated identity of the in-process command entry point."""
-
-    path: Path
-    device: int
-    inode: int
 
 
 _ACTIVE_PROFILE: ContextVar[RuntimeProfile] = ContextVar(
