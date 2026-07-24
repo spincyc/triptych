@@ -168,6 +168,8 @@ make abort RUN=<run-id>
 
 Except for the no-argument status overview, Make lifecycle commands take an exact launcher-produced ID as `RUN=<run-id>`. The former positional spelling remains accepted for local compatibility, but new instructions and automation use `RUN=`. Use direct launcher forms for untrusted or externally supplied input because GNU Make interprets assignments before target validation. A resolver may edit and stage only the recorded conflict; it may not commit or administer the rebase. Only the launcher continues, aborts, lands, and cleans the retained run. Review the complete object-to-object final diff and every affected consumer before authorizing landing. Reconcile PDF conflicts from authoritative sources and rebuild; never choose one binary side. The launcher never pushes or deploys.
 
+Explicit abort may restore an initial merge-backend rebase stopped before its first replay commit only after proving the captured target HEAD, audited source branch and private anchor, first replay identity, exact independently reproduced index tree, unchanged rebase administration, and absence of unstaged or untracked changes; otherwise it retains the worker unchanged.
+
 ### Exceptional rewritten-quarantine retirement
 
 Retirement is a destructive exception for a quarantined run that an operator has explicitly determined is superseded after its worker history was rewritten. It requires separate authorization to discard the exact head and is available only from the primary checkout through the direct launcher form:
