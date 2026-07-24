@@ -861,6 +861,26 @@ authorize a push, deployment, tag, history rewrite, public release
 attachment, announcement, or promotion; publication operations remain
 governed by their own explicit authorization.
 
+## Supplemental exact-current-snapshot clearance — 24 July 2026
+
+At `2026-07-24T17:52:30-05:00` in `America/Chicago`, the maintainer instructed:
+“Make ChatGPT its own named column beside Claude on every catalog page, unlink the title cells, and clean up the landing page tables so they present nicely.” This is recorded as perpetual worldwide
+exact-current-snapshot distribution authorization under the existing
+represented authority in this record. The sole condition remains
+`no-project-initiated-promotion`.
+
+The approval binds all 119 exact installed release
+PDF snapshots and every exact recognized artifact-affecting
+reader-site input inventoried below at their current bytes. It is an
+exact-byte distribution clearance only: it does not represent
+completion of any outstanding work-specific rights, source,
+collation, specialist, or ecclesiastical review, and no imprimatur,
+nihil obstat, or ecclesiastical approval is claimed. Every
+limitation in the prior supplements, release README, catalogs, and
+work-specific research records remains operative. This approval does
+not authorize a push, deployment, tag, history rewrite, public
+release attachment, announcement, or promotion.
+
 ## Exact approved snapshots
 
 | Publication ID | SHA-256 |
@@ -996,17 +1016,17 @@ governed by their own explicit authorization.
 | `LICENSES/MIT.txt` | `afd9c125b68a36b60c78cf63656f4cea2613fadce57e95ebabacebff8817ef60` |
 | `README.md` | `5007509616e98056d397b315247e07307b7cc0f8b715c49847dcef45dadfcb2b` |
 | `THIRD_PARTY.md` | `965aaaff0e773815213fa8c9aada37213d6cb890eb374ef3d1bb1d1dbf966ec4` |
-| `library/biographies.md` | `57ab5f9174da512d328abc4dba31916f9130183c6098f0ea778fbbed595c4fb1` |
+| `library/biographies.md` | `41256dbca4f35bdb82565dc29ab0c4516d2c0032b51e28c6e496adfc4ec74e9b` |
 | `library/curriculums.md` | `15f24d06b4911b1cbfe4d85d82c463d7c2eef8635ff25edf2817d5fa6e0fb2bc` |
-| `library/ecclesiastical-latin.md` | `65a8cb4df29f7044e3d3ed7179d2e4604267e1d52c74a1b810d44e21310e4adc` |
-| `library/faith.md` | `cbd2ec0a9748cef16cbdb580f6c32992e2d2e3bacf144e625658251b0a8da472` |
-| `library/heresies.md` | `e479654e2cee1e193425d8b9696d95d2dbc8a9deba6465f1e93e39b3c0a2670e` |
-| `library/historical-accounts.md` | `82ad950d4053ec4e4f6a43ee433ee25bfa1ab8fd39de681dcb27379bbe09846f` |
-| `library/law-and-church-discipline.md` | `f5b25c16f14e7f9fef084ee021bcf3d7f692eeff91c0ac23fa1c3d220f76bf73` |
-| `library/mariology.md` | `248fd849d7996edb4a2234583d1bfbe34cec4b4445b1f8c290eff9fe65e27fbf` |
-| `library/novus-ordo-liturgy.md` | `99f815db7c1af6df0b4a3d1004e493f6e4de2fe970e6f517ddb0168ffca68d84` |
-| `library/prayer.md` | `c0524270d357f071d3de8b5e352bb217e87ff2ba1f7e61a664f0113b3efda576` |
-| `library/traditional-latin-mass.md` | `480a5fec6f07b878a3fd4507488560e0e4c9c42cfa8b82bfa354b8faf4775180` |
+| `library/ecclesiastical-latin.md` | `1b985372bc372990f8d748d7667620c76c89a4073a8dae146ecefbca84333c1b` |
+| `library/faith.md` | `fb453d08b243ef4ca1b8e5f65583ecaff60cee0c028ad52a5278ad8f9bc6dbd0` |
+| `library/heresies.md` | `8f6f80b79266818a2b7d80db312ad33cd52ba594b329d4604dae53d17060f5df` |
+| `library/historical-accounts.md` | `0246c05f1a2aea019f8fffad12c8060917bb309404fdda4fd5577b7e5ba40db2` |
+| `library/law-and-church-discipline.md` | `f7a9c66895bde0dfa183fa9f93b79005c77c6c625b978ce2163d3566aa7189c4` |
+| `library/mariology.md` | `bc3ffc4dde127750debeede3f968d5541af7a22098d8fe155d01a006aa74d955` |
+| `library/novus-ordo-liturgy.md` | `861aba17f9e1788d852ba072bcdf8bf76a674e357eeadc7aa9030aed066e36fb` |
+| `library/prayer.md` | `f355ee2a34f4f47744cbc6f0fea71c04f2c303882dce1b8ae3adabfc2b2c850d` |
+| `library/traditional-latin-mass.md` | `5e68708e549d45014f4c59d1f1952e0dee427066a0ae559bdac7de030ea85b33` |
 | `release/public-alpha/404.md` | `551491f5521a5624911d63b398156d2236cbed2f0aa832eeb9c97070dcea568e` |
 | `release/public-alpha/assets/site.css` | `358d86f3587fc03f62a17cd4b5fd0126fb2dc3d952afa48eb33fc3a88fce54e9` |
 | `release/public-alpha/layout.html` | `1add2c3f7e6faed6cde4f71b471b5d275089aa719a779f250ef761b3754bea63` |

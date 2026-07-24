@@ -227,15 +227,17 @@ all `library/` pages at the same filesystem level so source and generated links
 remain predictable.
 
 A leaf ID keeps exactly one owning catalog page no matter how many provider
-editions exist. Its one row may carry per-provider links to each provider's
-installed PDF: the title link carries the `gpt` edition, and a `Claude` column
-beside it carries the `claude` edition. A provider edition that does not yet
-exist or is not released renders as an em dash placeholder. Per-provider links
-within the one owning row are not cross-listing; listing a leaf on more than
-one page is.
+editions exist. Each provider has its own named column — `ChatGPT` for the
+`gpt` edition, `Claude` for the `claude` edition — placed in that order
+immediately after the title column. Title cells are unlinked bold text; the
+per-provider cells carry the PDF links, with a canonical work's derived
+companions `·`-joined in the same cell under short distinguishing labels. A
+provider edition that does not yet exist or is not released renders as an em
+dash placeholder. Per-provider links within the one owning row are not
+cross-listing; listing a leaf on more than one page is.
 
 Do not cross-list. Keep derived companions in their canonical work's entry.
-Link titles directly to installed PDFs and describe each work in terse,
+Link installed PDFs from the provider columns and describe each work in terse,
 reader-useful language. Do not link TeX files, research records, audits,
 manifests, provenance, review state, production state, release bookkeeping, or
 other repository-facing apparatus from reader landing pages. That apparatus
@@ -244,7 +246,8 @@ as-of date, stable ID, or availability notice only when it helps a reader
 choose or safely use the work.
 
 Keep section landing pages terse and prefer compact tables. Normally expose
-only a linked title and a short statement of subject, use, or audience. Add a
+only a bold title, its provider links, and a short statement of subject, use,
+or audience. Add a
 date, stable ID, or companion column only when it materially aids navigation.
 Sort by a profile's stable series order or by occurrence or governing event
 date where one applies; otherwise use a deliberate reader sequence, keeping a
