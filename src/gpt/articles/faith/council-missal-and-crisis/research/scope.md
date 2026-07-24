@@ -166,3 +166,31 @@ mirrored `doc/` path and verified byte-identical. This source audit adds no
 independent specialist, theological, canonical, rights, or ecclesiastical
 review, and no prior exact-byte distribution clearance attaches to the
 changed render.
+
+## *Perfectae caritatis* source-reuse audit — 2026-07-24
+
+The exact official English articles 2, 3--4, 5--6, 12--15, and 17 were
+checked separately. They control, respectively, the Decree's
+return-to-sources and spiritual-renewal principles, the authorized breadth
+and governance of adaptation, consecration and prayer, the evangelical
+counsels and common life, and both sides of the rule on religious habit. The
+reader-facing discussion, reference, source audit, and publication bindings
+were corrected to preserve those distinct loci. Complete English, Latin web,
+and Latin *Acta Apostolicae Sedis* witnesses are now centrally identifiable
+for future work-wide examination, but the publication remains a verified
+consumer only of the exact English passages. Paul VI's distinct
+*Ecclesiae Sanctae* remains separately attributed implementation evidence.
+
+A settled two-pass build produced a 52-page PDF with SHA-256
+`c19f3b6aa75c0ebd394f1e6e6b5d30c6ccbf28da6ac96a9251ea54c43e96aebd`.
+The final log contained no fatal error, unresolved reference, overflow,
+underflow, rerun, or layout warning. Generation metadata, PDF structure and
+metadata, Letter page size, embedded/subsetted fonts with Unicode maps, and
+nonempty text extraction passed. Review rasters were generated through
+`scripts/pdf-review`; every physical page was visually inspected, with the
+revised religious-life prose, reference, dense tables, and terminal metadata
+and rights matter checked at full size. The reviewed build was installed at
+its mirrored `doc/` path and verified byte-identical. This source audit adds
+no independent specialist, theological, canonical, rights, or ecclesiastical
+review, and no prior exact-byte distribution clearance attaches to the
+changed render.
