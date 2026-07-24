@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "gpt"
-audited_on = "2026-07-23"
+audited_on = "2026-07-24"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 103
 source_surface_file_count = 1184
-snapshot = "sha256:3e8c33eb87eb2c7b3e0a553ee6a82870760acd990cf628e008085a51c0bab9aa"
+snapshot = "sha256:97df3ad08112cb3a86b466703cfa9cd63095f8ba6532454d5ec95d3bd3e00091"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -1407,7 +1407,7 @@ owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
 
 [[files]]
 path = "src/gpt/articles/canon-law/clerical-celibacy-chastity-and-continence/research/current-law-matrix.md"
-sha256 = "2ddaad2b1a01f90ae77b4697be97979aaed04083a7c7a9e3e782f2eed2d317fd"
+sha256 = "a70350a02dcdfde39cd5c746bd21320fdbc9b73f4715fddac77c7bf1fa8559e5"
 kind = "research-record"
 owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
 
@@ -1425,25 +1425,25 @@ owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
 
 [[files]]
 path = "src/gpt/articles/canon-law/clerical-celibacy-chastity-and-continence/research/permanent-diaconate-law.md"
-sha256 = "3c9ae876245314c31bf026be838aa236809ce6d7d0e30ed0835632bd453866da"
+sha256 = "99ffefc26db2404f6af170e0c86362455eb7179fadf11518d905d68ef6164ac8"
 kind = "research-record"
 owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
 
 [[files]]
 path = "src/gpt/articles/canon-law/clerical-celibacy-chastity-and-continence/research/scope.md"
-sha256 = "ba6b78e5e71171222bba2c53241bdb92b6f208aa640e1a096a809f192a96c98b"
+sha256 = "4d2c6164c86d7f2432246680d1029fc71b5a383d6748c4673a4595023707a98c"
 kind = "research-scope"
 owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
 
 [[files]]
 path = "src/gpt/articles/canon-law/clerical-celibacy-chastity-and-continence/research/source-audit.md"
-sha256 = "a3929cfb997b7f6a9c9794bd0538d53ab544c764a94c0c36a9934db67112c9b7"
+sha256 = "1656bfe1622fa907d2dc9e02258215f11c02ee2ab506cf0c9fbe7dd79eb0a6ba"
 kind = "legacy-source-audit"
 owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
 
 [[files]]
 path = "src/gpt/articles/canon-law/clerical-celibacy-chastity-and-continence/research/source-bindings.toml"
-sha256 = "9b4ab35d3cbd5ccfe20de6c79801b97a5ca784c7189fcf844354227a347ec693"
+sha256 = "7a3b1185ca86f248cd92a7802af09501e6ee302a4b919e38fd2af6dc799c0e65"
 kind = "source-binding"
 owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
 
@@ -1503,7 +1503,7 @@ owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
 
 [[files]]
 path = "src/gpt/articles/canon-law/clerical-celibacy-chastity-and-continence/sections/40-historical-development.tex"
-sha256 = "97ca1836cc0b7d1a56eae45fae52f93a47bae0b5314eb3f18946cfcdb8409224"
+sha256 = "485d9644e2a1b8c45dc00da2fa2c832e0e5ba5ce290efaf3d680f0aa7da952a7"
 kind = "rendered-content"
 owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
 
@@ -1521,7 +1521,7 @@ owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
 
 [[files]]
 path = "src/gpt/articles/canon-law/clerical-celibacy-chastity-and-continence/sections/70-current-eastern-law.tex"
-sha256 = "470fa88077a9c7042e8ae40d8ec145b0f68361b1bf7ac6feb2cdf79578343c29"
+sha256 = "5c577620dfcc3bb0603509ec1c81c60f46fd783b84068681d1791fcd2556b638"
 kind = "rendered-content"
 owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
 
@@ -1803,7 +1803,7 @@ owners = ["articles/faith/council-missal-and-crisis"]
 
 [[files]]
 path = "src/gpt/articles/faith/council-missal-and-crisis/research/source-bindings.toml"
-sha256 = "52af603fc389d2f599bcd49c62abef9d75c38dfc9b7c4895aefbe982fa81f775"
+sha256 = "52a70f24fa3a88296d085019a6194b06510fa5728bd4555eba7c2974e5233d49"
 kind = "source-binding"
 owners = ["articles/faith/council-missal-and-crisis"]
 
@@ -6147,7 +6147,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/research/source-bindings.toml"
-sha256 = "ad2f3f9e29537b680d1905ac92b3c00e91258b78e02e74aa8cb47090695ff9c0"
+sha256 = "41b01eeb3d6fa66b6730542ff44b171ffc5ddb4d40fa500da0605e89b67159d3"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
@@ -8217,7 +8217,7 @@ owners = ["theology/sacraments-at-a-glance"]
 
 [[files]]
 path = "src/gpt/theology/sacraments-at-a-glance/research/source-bindings.toml"
-sha256 = "e97f8df7680a466e13da3f1a98223cc80da71fa342acc9bb82c51e44781f3ec3"
+sha256 = "d8353c0a9a07856b032cfec0120f44b263b295a8ed0060c3937fa915e03c7bc1"
 kind = "source-binding"
 owners = ["theology/sacraments-at-a-glance"]
 
@@ -8235,19 +8235,19 @@ owners = ["theology/sacraments"]
 
 [[files]]
 path = "src/gpt/theology/sacraments/main.tex"
-sha256 = "bcd6cc2aabfed1e5aa1591ab01d5d11e06f31c0cd3d5739c185cc287fe634909"
+sha256 = "b861ce250c5b058835125dc780fa48cd5ae3e5f6a5bbb89e971d2f8a32eab969"
 kind = "publication-main"
 owners = ["theology/sacraments"]
 
 [[files]]
 path = "src/gpt/theology/sacraments/research/scope.md"
-sha256 = "8a2fb9e5e9c81302c5a62d9faeb28588b360ac92641ef252e91c081a4a92e606"
+sha256 = "5b152389025a882033c8cc5354bd04af4edde7a72f8b8107e70e3186b1047eb6"
 kind = "research-scope"
 owners = ["theology/sacraments"]
 
 [[files]]
 path = "src/gpt/theology/sacraments/research/source-bindings.toml"
-sha256 = "8818ea464bd470e07b05ce709b51a9ec8dc2c6a99c56f24fe43a75f17c7a5c1b"
+sha256 = "4c50fe17465343db9901936c6db53366a2708f92b48724e4f66b50fa80508ff6"
 kind = "source-binding"
 owners = ["theology/sacraments"]
 
@@ -8325,7 +8325,7 @@ owners = ["theology/sacraments"]
 
 [[files]]
 path = "src/gpt/theology/sacraments/sections/90-references.tex"
-sha256 = "1d4fce884dd3ae86874930f22c4dd9fafdc0310d12ad4a32296d2089106c1731"
+sha256 = "8f015e8e2a2524541632ddeb3b4f29586c66ea60ccef079496d6378c2fd719d3"
 kind = "rendered-content"
 owners = ["theology/sacraments"]
 

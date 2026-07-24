@@ -133,3 +133,13 @@ context = "The companion directly imports the treatise-owned Orders summary citi
 claim_keys = ["orders-three-degrees-summary"]
 verified_on = "2026-07-23"
 source_fingerprint = "sha256:e014e50e07c31c0e2682ce0c6eea2573e0d4572d85fe0181e7bd0664617a7e78"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.orientalium-ecclesiarum.english-vatican-web-2026-07-24.12-14"
+loci = ["12-14"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The companion directly imports the treatise-owned Confirmation summary and initiation table. The complete official English articles were checked against those unchanged imports and their rendered claims concerning ancient Eastern sacramental discipline and valid presbyteral Chrismation. The CCEO, 1996 Instruction, liturgical books, and particular law remain the controls for present ministry, sequence, liceity, and local implementation."
+claim_keys = ["confirmation-eastern-presbyteral-ministry", "eastern-initiation-discipline"]
+verified_on = "2026-07-24"
+source_fingerprint = "sha256:af14155bed7b34d496ca7a519e61e9d504e56c22973ccae45ed0c4a5ac9e0ddb"

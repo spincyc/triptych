@@ -14,7 +14,7 @@ Access and currentness checks were completed 2026-07-15 unless noted. The source
 | Current penal law punishes attempted marriage and specified sexual delicts. | CIC cann. 1394–1398, revised Book VI. | Verified. Not every moral breach is automatically a canonical delict; typicity, imputability, proof, and process remain necessary. |
 | Eastern common law honors celibate and married clergy and leaves admission of married men to particular/Apostolic law. | CCEO cann. 373–375, 758 §3. | Verified. Eastern married clergy are not individually dispensed from a Latin norm. |
 | Eastern bishop candidate may not be bound by marriage; married ordinand needs wife consent. | CCEO cann. 180 no. 3 and 769 §1 no. 2. | Verified. A widower is not presently bound by marriage. |
-| CCEO contemplates a deacon not destined to presbyterate. | CCEO can. 760 §2; Orientalium Ecclesiarum 17. | Verified legal capacity; implementation remains particular. |
+| CCEO contemplates a deacon not destined to presbyterate. | CCEO can. 760 §2. | Verified legal capacity; implementation remains particular. *Orientalium Ecclesiarum* 17 supplies the distinct conciliar desire to restore the permanent diaconate where it had fallen into disuse, not the Code's current legal capacity. |
 
 ## Permanent-diaconate interpretation
 
