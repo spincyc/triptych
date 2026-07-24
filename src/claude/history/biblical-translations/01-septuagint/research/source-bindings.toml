@@ -1,0 +1,92 @@
+schema = 1
+record_type = "bindings"
+document = "history/biblical-translations/01-septuagint"
+
+# Claude edition. Bindings are catalog-level: the actual passage checks were
+# performed against live web transcriptions (URLs and dates in
+# research/source-audit.md), not against registered artifact bytes, so no
+# acquisition/inspection/verification state is claimed against the
+# source-library records themselves.
+
+[[bindings]]
+source_id = "edition.aristeas.letter-of-aristeas.charles-1913"
+loci = ["9-11", "28-51", "30", "301-311", "312-316"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The earliest continuous origin narrative; each locus was read 2026-07-24 in the attalus.org transcription of the 1913 Oxford translation (see research/source-audit.md). Catalog-level binding; no exact artifact registered."
+
+[[bindings]]
+source_id = "edition.philo.de-vita-mosis.yonge-1855"
+loci = ["2.25-44"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Philo's inspiration account and Pharos festival notice; read 2026-07-24 in the earlychristianwritings.com transcription of Yonge. Loci use modern book.section numbering. Catalog-level binding; no exact artifact registered."
+
+[[bindings]]
+source_id = "edition.josephus.antiquitates-judaicae.whiston-1737"
+loci = ["12.2"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Josephus's dependent retelling of Aristeas; read 2026-07-24 in the University of Chicago Penelope transcription of Whiston (book.chapter numbering). Catalog-level binding; no exact artifact registered."
+
+[[bindings]]
+source_id = "edition.justin-martyr.first-apology.dods-reith-coxe-anf1-1887"
+loci = ["31"]
+role = "reception"
+states = ["cataloged"]
+context = "Justin's retelling with the Herod anachronism and prophets-wide scope; read 2026-07-24 at New Advent's transcription of the ANF text. Catalog-level binding; no exact artifact registered."
+
+[[bindings]]
+source_id = "edition.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887"
+loci = ["3.21.1-3"]
+role = "reception"
+states = ["cataloged"]
+context = "First extant separation-of-translators motif and the polemic against Aquila's and Theodotion's renderings; read 2026-07-24 at New Advent. Catalog-level binding; no exact artifact registered."
+
+[[bindings]]
+source_id = "edition.ante-nicene-fathers.volume-1.buffalo-1887"
+loci = [
+  "Dialogue with Trypho 71-73",
+  "Hortatory Address to the Greeks 13",
+]
+role = "reception"
+states = ["cataloged"]
+context = "Justin's Dialogue accusations of Jewish deletions and the pseudo-Justin cells-eyewitness claim, both printed in ANF volume 1; read 2026-07-24 at New Advent. Catalog-level binding of the container edition for constituents without their own registered work records."
+
+[[bindings]]
+source_id = "edition.augustine.de-civitate-dei.dods-1871"
+loci = ["18.42-43"]
+role = "reception"
+states = ["cataloged"]
+context = "Augustine's report of the legend, the Church's reception of the Septuagint 'as if it were the only one,' and the one-Spirit argument; read 2026-07-24 at CCEL's transcription of the Dods translation. Catalog-level binding; the registered artifact bytes were not used."
+
+[[bindings]]
+source_id = "edition.nicene-and-post-nicene-fathers.series-2-volume-6.new-york-1893"
+loci = [
+  "Letter 112 (reply to Augustine)",
+  "Prefaces to the Vulgate Old Testament",
+]
+role = "reception"
+states = ["cataloged"]
+context = "Jerome's defense of the Hebrew-based translation and his earlier hexaplaric-LXX Latin Psalter; Letter 112 read 2026-07-24 in the New Advent presentation (= Augustine Letters 75); the Genesis prologue was quoted from the public-domain Edgecomb 2006 translation (see research/source-audit.md), with NPNF2-6 bound as the governing anthology identity for Jerome's letters and prefaces. Catalog-level binding; no exact artifact registered."
+
+[[bindings]]
+source_id = "edition.babylonian-talmud.megillah.william-davidson-sefaria"
+loci = ["9a-9b"]
+role = "reception"
+states = ["cataloged"]
+context = "The baraita of King Ptolemy's seventy-two elders, the listed changes, and the halakhic frame on Greek scrolls; read 2026-07-24 via the Sefaria API. CC BY-NC translation, paraphrased only. Catalog-level binding; no exact artifact registered."
+
+[[bindings]]
+source_id = "edition.second-vatican-council.dei-verbum.english-vatican-web-2026-07-23"
+loci = ["22"]
+role = "official-control"
+states = ["cataloged"]
+context = "The conciliar sentence on the Church's reception of the Septuagint, quoted exactly; read 2026-07-24 at the live Vatican English page. The check was made against the live site, not the registered edition artifact, so only catalog-level use is claimed. The act establishes its own object only."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["120-123"]
+role = "official-control"
+states = ["cataloged"]
+context = "The canon list with the deuterocanon and the permanent value of the Old Testament; read 2026-07-24 at the live Vatican English site, together with a bounded negative check that CCC 101-141 does not name the Septuagint. Catalog-level use only; reception of these paragraphs adjudicates no historical claim."
