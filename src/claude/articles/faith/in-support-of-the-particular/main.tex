@@ -1,0 +1,79 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+\usepackage{endnotes}
+
+\hypersetup{
+  pdftitle={In Support of the Particular},
+  pdfsubject={A discursive theological article on the scandal of particularity: why the concrete and singular is fitting to divine action}
+}
+
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\renewcommand{\makeenmark}{\hbox{\textsuperscript{\normalfont\theenmark}}}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.14\textheight}
+{\large\scshape Faith and Theology\par}
+\vspace{0.35em}
+{\small A Discursive Article\par}
+\vspace{1.5em}
+{\Huge\bfseries In Support of the Particular\par}
+\vspace{0.9em}
+{\large On the Scandal of Particularity\par}
+\vfill
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{articles/faith/in-support-of-the-particular/sections/00-the-offense-at-nazareth}
+\input{articles/faith/in-support-of-the-particular/sections/10-the-objection-at-full-strength}
+\input{articles/faith/in-support-of-the-particular/sections/20-what-actually-exists}
+\input{articles/faith/in-support-of-the-particular/sections/30-the-fewest-of-any-people}
+\input{articles/faith/in-support-of-the-particular/sections/40-the-word-in-a-part}
+\input{articles/faith/in-support-of-the-particular/sections/50-this-water-this-bread}
+\input{articles/faith/in-support-of-the-particular/sections/60-a-name-which-no-man-knoweth}
+\clearpage
+\addcontentsline{toc}{section}{Notes}
+\begingroup
+\small
+\setlength{\parskip}{0.45em}
+\theendnotes
+\endgroup
+\clearpage
+\appendix
+\input{articles/faith/in-support-of-the-particular/sections/90-scope-method-qualifications}
+\input{articles/faith/in-support-of-the-particular/sections/99-references}
+\begingroup
+\setlength{\parskip}{0pt}
+\vspace{-0.6\baselineskip}
+\section{Generation Metadata}
+\vspace{-0.35\baselineskip}
+{\scriptsize\input{articles/faith/in-support-of-the-particular/generation-metadata}}
+\endgroup
+\end{deepstudy}
+
+\end{document}
