@@ -22,3 +22,35 @@ loci = ["1750-1761", "1950-1986", "1954-1960", "2234-2246"]
 role = "context"
 states = ["cataloged"]
 context = "These broader or separately cited Catechism ranges supply moral-theological and civil-authority context around the claim-specific loci. Their overlap with the textual-control binding preserves the legacy citation granularity rather than asserting an additional verification event. No exact artifact fingerprint or Latin witness was retained."
+
+[[bindings]]
+source_id = "edition.second-vatican-council.gaudium-et-spes.english-vatican-web-2026-07-23"
+loci = ["16"]
+role = "context"
+states = ["cataloged"]
+context = "The reader bibliography names article 16 for conscience and the moral order, but the publication's existing GS claim map does not assign a distinct proposition to this locus. The central passage is available for later review; this publication binding does not claim inspection."
+
+[[bindings]]
+source_id = "passage.second-vatican-council.gaudium-et-spes.english-vatican-web-2026-07-23.36"
+loci = ["36"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official English article was checked for the publication's distinction between the legitimate autonomy of temporal realities and an autonomy construed as independence from the Creator. The article supplies a conciliar principle, not a complete allocation of present civil or canonical competence."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:dc14fe9df2b56d1fedd7d4482189beff0493fc64fef6edf12617fbef09cf1ee5"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.gaudium-et-spes.english-vatican-web-2026-07-23.42-43"
+loci = ["42-43"]
+role = "context"
+states = ["cataloged"]
+context = "The reader bibliography names these articles as broader context for the Church's mission and Christians' temporal responsibility. No distinct publication-local claim row depends on them, so this binding remains catalog-only despite central availability."
+
+[[bindings]]
+source_id = "passage.second-vatican-council.gaudium-et-spes.english-vatican-web-2026-07-23.74-76"
+loci = ["74-76"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official English range was checked for the publication's claims that public authority operates within the moral order and that the Church and political community remain autonomous in their own fields while serving the same persons and cooperating for the common good. Current civil and canonical law still control concrete competence and effects."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:9d0167b557583dddcb1182466a188883943490becd65b74d880972c1a8f60199"
