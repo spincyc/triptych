@@ -946,6 +946,102 @@ class SourceLibraryTests(unittest.TestCase):
         self.assertEqual(result.stderr, "")
         self.assertEqual(result.stdout, f"{new_fingerprint}\n")
 
+    def test_claude_publication_root_is_validated_alongside_gpt(self) -> None:
+        self.add_valid_vertical_fixture()
+        before = SOURCE_LIBRARY.load_library(self.root)
+        fingerprint = SOURCE_LIBRARY.source_fingerprint(before, PASSAGE_ID)
+        self.write("src/claude/theology/demo/main.tex", "Claude demo\n")
+        self.write(
+            "src/claude/theology/demo/research/source-bindings.toml",
+            f'''
+            schema = 1
+            record_type = "bindings"
+            document = "theology/demo"
+
+            [[bindings]]
+            source_id = "{PASSAGE_ID}"
+            loci = ["{LOCUS}"]
+            role = "textual-control"
+            states = ["inspected"]
+            source_fingerprint = "{fingerprint}"
+            context = "A second provider inspected the same shared passage."
+            ''',
+        )
+
+        library = SOURCE_LIBRARY.load_library(self.root)
+        self.assertEqual(library.errors, [])
+        rows = SOURCE_LIBRARY.binding_rows(library, PASSAGE_ID)
+        self.assertEqual(
+            [row["document"] for row in rows],
+            ["theology/demo", "theology/demo"],
+        )
+        self.assertEqual(
+            sorted(row["path"] for row in rows),
+            [
+                "src/claude/theology/demo/research/source-bindings.toml",
+                "src/gpt/theology/demo/research/source-bindings.toml",
+            ],
+        )
+
+    def test_claude_binding_errors_cite_claude_relative_document(self) -> None:
+        self.add_valid_vertical_fixture()
+        self.write("src/claude/theology/demo/main.tex", "Claude demo\n")
+        self.write(
+            "src/claude/theology/demo/research/source-bindings.toml",
+            f'''
+            schema = 1
+            record_type = "bindings"
+            document = "claude/theology/demo"
+
+            [[bindings]]
+            source_id = "{PASSAGE_ID}"
+            loci = ["{LOCUS}"]
+            role = "textual-control"
+            states = ["cataloged"]
+            context = "The document must be provider-root relative."
+            ''',
+        )
+
+        library = SOURCE_LIBRARY.load_library(self.root)
+        self.assertEqual(
+            library.errors,
+            [
+                "src/claude/theology/demo/research/source-bindings.toml: "
+                "document must be 'theology/demo' for this path"
+            ],
+        )
+
+    def test_missing_claude_root_contributes_nothing(self) -> None:
+        self.add_valid_vertical_fixture()
+        self.assertFalse((self.root / "src/claude").exists())
+
+        library = SOURCE_LIBRARY.load_library(self.root)
+        self.assertEqual(library.errors, [])
+        self.assertEqual(
+            [row["path"] for row in SOURCE_LIBRARY.binding_rows(library, PASSAGE_ID)],
+            ["src/gpt/theology/demo/research/source-bindings.toml"],
+        )
+
+    def test_all_publication_roots_missing_is_one_error(self) -> None:
+        (self.root / "src/gpt").rmdir()
+
+        library = SOURCE_LIBRARY.load_library(self.root)
+        self.assertEqual(
+            library.errors,
+            ["src/gpt, src/claude: no publication root exists"],
+        )
+
+    def test_common_typesetting_tree_is_ignored(self) -> None:
+        self.add_valid_vertical_fixture()
+        self.write("src/common/preamble.tex", "% shared preamble\n")
+
+        library = SOURCE_LIBRARY.load_library(self.root)
+        self.assertEqual(library.errors, [])
+        self.assertNotIn(
+            "src/common",
+            "\n".join(library.errors),
+        )
+
     def test_uses_follows_source_ancestry_and_filters_exact_loci(self) -> None:
         self.add_valid_vertical_fixture()
         library = SOURCE_LIBRARY.load_library(self.root)
@@ -2342,7 +2438,7 @@ class SourceLibraryTests(unittest.TestCase):
         library = SOURCE_LIBRARY.Library(
             root=self.root,
             source_root=self.root / "src/sources",
-            publication_root=self.root / "src/gpt",
+            publication_roots=[self.root / "src/gpt"],
         )
         library.records["work.deep"] = SOURCE_LIBRARY.Record(
             path=self.root / "work.toml",

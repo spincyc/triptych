@@ -273,7 +273,7 @@ class Library:
 
     root: Path
     source_root: Path
-    publication_root: Path
+    publication_roots: list[Path]
     records: dict[str, Record] = dataclasses.field(default_factory=dict)
     bindings: list[Binding] = dataclasses.field(default_factory=list)
     payload_paths: set[Path] = dataclasses.field(default_factory=set)
@@ -694,18 +694,40 @@ def _validate_binding_table(
     )
 
 
+def _existing_publication_roots(library: Library) -> list[Path]:
+    """Provider roots that are present; a nonexistent root contributes nothing."""
+
+    return [
+        publication_root
+        for publication_root in library.publication_roots
+        if publication_root.is_symlink() or publication_root.exists()
+    ]
+
+
 def _load_bindings(library: Library) -> None:
-    if not library.publication_root.exists():
-        library.errors.append(f"{library.relative(library.publication_root)}: publication root does not exist")
-        return
-    if _path_contains_symlink(library.publication_root, library.root):
-        library.errors.append(
-            f"{library.relative(library.publication_root)}: publication root path must not contain symbolic links"
+    publication_roots = _existing_publication_roots(library)
+    if not publication_roots:
+        joined = ", ".join(
+            library.relative(publication_root)
+            for publication_root in library.publication_roots
         )
+        library.errors.append(f"{joined}: no publication root exists")
         return
     pattern = "**/research/source-bindings.toml"
-    for path in sorted(library.publication_root.glob(pattern)):
-        if _path_contains_symlink(path, library.publication_root):
+    for publication_root in publication_roots:
+        if _path_contains_symlink(publication_root, library.root):
+            library.errors.append(
+                f"{library.relative(publication_root)}: publication root path must not contain symbolic links"
+            )
+            continue
+        _load_bindings_under_root(library, publication_root, pattern)
+
+
+def _load_bindings_under_root(
+    library: Library, publication_root: Path, pattern: str
+) -> None:
+    for path in sorted(publication_root.glob(pattern)):
+        if _path_contains_symlink(path, publication_root):
             library.error(path, "binding manifest path must not contain symbolic links")
             continue
         if not path.is_file():
@@ -733,7 +755,7 @@ def _load_bindings(library: Library) -> None:
             continue
         leaf = path.parent.parent
         try:
-            expected_document = leaf.relative_to(library.publication_root).as_posix()
+            expected_document = leaf.relative_to(publication_root).as_posix()
         except ValueError:
             library.error(path, "binding file is outside the publication root")
             continue
@@ -2042,10 +2064,15 @@ def load_library(
     library = Library(
         root=root,
         source_root=root / "src/sources",
-        publication_root=root / "src/gpt",
+        publication_roots=[root / "src/gpt", root / "src/claude"],
     )
     sources_safe = _preflight_tree(library, library.source_root, "source-library")
-    publications_safe = _preflight_tree(library, library.publication_root, "publication")
+    publications_safe = all(
+        [
+            _preflight_tree(library, publication_root, "publication")
+            for publication_root in _existing_publication_roots(library)
+        ]
+    )
     if not sources_safe or not publications_safe:
         library.errors.sort()
         return library
