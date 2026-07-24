@@ -1,0 +1,55 @@
+\input{common/preamble}
+\input{biographies/shared/biography-format}
+
+\hypersetup{
+  pdftitle={Origen: Man of Adamant, Trial of the Church},
+  pdfsubject={A source-first historical biography of Origen of Alexandria}
+}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+  \thispagestyle{empty}
+  \centering
+  \vspace*{0.12\textheight}
+  {\Huge\bfseries Origen\par}
+  \vspace{0.9em}
+  {\Large Man of Adamant, Trial of the Church\par}
+  \vspace{1.6em}
+  {\large A source-first historical biography\par}
+  \vfill
+  {\small Triptych: AI Driven Studies in Catholic Faith, Worship, and Law\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+\pagenumbering{arabic}
+\hypersetup{pageanchor=true}
+
+\begin{deepstudy}
+\input{biographies/origen/sections/00-question}
+\input{biographies/origen/sections/10-alexandria}
+\input{biographies/origen/sections/20-martyrs-son}
+\input{biographies/origen/sections/30-catechist}
+\input{biographies/origen/sections/40-report}
+\input{biographies/origen/sections/50-scholar}
+\input{biographies/origen/sections/60-rupture}
+\input{biographies/origen/sections/70-late-works}
+\input{biographies/origen/sections/80-decius}
+\input{biographies/origen/sections/90-controversies}
+\input{biographies/origen/sections/100-reception}
+\input{biographies/origen/sections/110-conclusion}
+\appendix
+\input{biographies/origen/sections/120-scope-chronology-evidence}
+\input{biographies/origen/sections/130-references}
+\section{Generation Metadata}
+\input{biographies/origen/generation-metadata}
+\TriptychRightsNotice
+\end{deepstudy}
+
+\end{document}
