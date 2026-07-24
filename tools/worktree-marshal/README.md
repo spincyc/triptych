@@ -126,7 +126,7 @@ worktree-removal or ref-transaction failures, receipt recovery, garbage
 collection, or concurrent retirement. Those retirement cases, broader crash
 and race recovery, broader security coverage, the complete installed lifecycle
 matrix, and the supported Python and Git CI matrix remain release gates; the
-first thirty-eight step-5 seams are protected by direct source tests and artifact
+first thirty-nine step-5 seams are protected by direct source tests and artifact
 provenance, and the installed abort checkpoint covers archived transaction
 restoration. Each remaining helper boundary still requires its own direct
 parity coverage.
@@ -478,7 +478,8 @@ target-branch syntax validation through an engine-supplied Git probe. It now
 also owns exact run temporary-parent authentication and descriptor-relative
 no-follow entry probing through engine-supplied descriptor operations, plus
 authenticated temporary-directory opening and recursive open-descriptor
-content removal through the same injected operations. The
+content removal through the same injected operations, and the composed run
+temporary-root removal, absence, and exact-directory lifecycle checks. The
 engine retains Git execution and the selection and sequencing of every
 directory, initialization, lock, persistence, temporary allocation, and
 lifecycle mutation. State-base selection acquires

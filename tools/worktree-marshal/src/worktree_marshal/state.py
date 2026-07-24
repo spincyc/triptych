@@ -515,6 +515,109 @@ def remove_open_temporary_contents(
             raise error_type("a temporary entry was replaced during removal")
 
 
+def remove_run_tmpdir(
+    repository: StateRepository,
+    manifest: Mapping[str, Any],
+    *,
+    authenticate_parent: Callable[..., Any],
+    entry_metadata: Callable[[int, str], Any],
+    directory_test: Callable[[int], bool],
+    open_directory: Callable[[int, str, Any], int],
+    remove_contents: Callable[[int], None],
+    same_stat: Callable[[Any, Any], bool],
+    remove_directory: Callable[..., None],
+    file_close: Callable[[int], None],
+    error_type: type[BaseException],
+) -> None:
+    """Remove the exact authenticated run temporary directory if present."""
+
+    with authenticate_parent(repository, manifest) as (
+        parent_descriptor,
+        run_id,
+    ):
+        before = entry_metadata(parent_descriptor, run_id)
+        if before is None:
+            return
+        if not directory_test(before.st_mode):
+            raise error_type(
+                "the run temporary path is not an exact real directory"
+            )
+        directory_descriptor = open_directory(
+            parent_descriptor,
+            run_id,
+            before,
+        )
+        try:
+            remove_contents(directory_descriptor)
+            current = entry_metadata(parent_descriptor, run_id)
+            if current is None:
+                raise error_type("the run temporary path moved during removal")
+            if not same_stat(before, current):
+                raise error_type("the run temporary path was replaced during removal")
+            try:
+                remove_directory(run_id, dir_fd=parent_descriptor)
+            except OSError as exc:
+                raise error_type(
+                    "authenticated run temporary-directory removal failed"
+                ) from exc
+        finally:
+            file_close(directory_descriptor)
+        after = entry_metadata(parent_descriptor, run_id)
+        if after is not None:
+            disposition = (
+                "retained"
+                if same_stat(before, after)
+                else "replaced during removal"
+            )
+            raise error_type(f"the run temporary path was {disposition}")
+
+
+def require_run_tmp_absent(
+    repository: StateRepository,
+    manifest: Mapping[str, Any],
+    *,
+    authenticate_parent: Callable[..., Any],
+    entry_metadata: Callable[[int, str], Any],
+    error_type: type[BaseException],
+) -> None:
+    """Require that the cleaned run retains no temporary path."""
+
+    with authenticate_parent(repository, manifest) as (
+        parent_descriptor,
+        run_id,
+    ):
+        if entry_metadata(parent_descriptor, run_id) is not None:
+            raise error_type("the cleaned run unexpectedly retains a temporary path")
+
+
+def require_run_tmp_directory(
+    repository: StateRepository,
+    manifest: Mapping[str, Any],
+    *,
+    authenticate_parent: Callable[..., Any],
+    entry_metadata: Callable[[int, str], Any],
+    directory_test: Callable[[int], bool],
+    open_directory: Callable[[int, str, Any], int],
+    file_close: Callable[[int], None],
+    error_type: type[BaseException],
+) -> None:
+    """Require one exact real, openable run temporary directory."""
+
+    with authenticate_parent(repository, manifest) as (
+        parent_descriptor,
+        run_id,
+    ):
+        metadata = entry_metadata(parent_descriptor, run_id)
+        if metadata is None or not directory_test(metadata.st_mode):
+            raise error_type("the run temporary path is not an exact real directory")
+        descriptor = open_directory(
+            parent_descriptor,
+            run_id,
+            metadata,
+        )
+        file_close(descriptor)
+
+
 def load_manifest(
     repository: StateRepository,
     run_id: str,

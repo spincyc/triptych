@@ -1156,6 +1156,511 @@ class StatePolicyTests(unittest.TestCase):
             ],
         )
 
+    def run_tmp_lifecycle_dependencies(
+        self,
+        events: list[tuple[str, object]],
+        metadata_sequence: object,
+    ) -> dict[str, object]:
+        test_case = self
+
+        def authenticate_parent(repository: object, manifest: object) -> object:
+            events.append(("authenticate", (repository, manifest)))
+
+            class Parent:
+                def __enter__(parent_self) -> tuple[int, str]:
+                    events.append(("enter", None))
+                    return (9, "run-entry")
+
+                def __exit__(parent_self, *exc_info: object) -> bool:
+                    events.append(("exit", exc_info[0]))
+                    return False
+
+            return Parent()
+
+        def entry_metadata(descriptor: int, name: str) -> object:
+            events.append(("entry", (descriptor, name)))
+            return next(metadata_sequence)
+
+        def directory_test(mode: object) -> bool:
+            events.append(("directory-test", mode))
+            return mode == "directory-mode"
+
+        def open_directory(
+            descriptor: int,
+            name: str,
+            expected: object,
+        ) -> int:
+            events.append(("open-directory", (descriptor, name, expected)))
+            return 23
+
+        def remove_contents(descriptor: int) -> None:
+            events.append(("remove-contents", descriptor))
+
+        def same_stat(first: object, second: object) -> bool:
+            events.append(("samestat", (first, second)))
+            return True
+
+        def remove_directory(name: str, *, dir_fd: int) -> None:
+            events.append(("rmdir", (name, dir_fd)))
+
+        def file_close(descriptor: int) -> None:
+            events.append(("close", descriptor))
+
+        return {
+            "authenticate_parent": authenticate_parent,
+            "entry_metadata": entry_metadata,
+            "directory_test": directory_test,
+            "open_directory": open_directory,
+            "remove_contents": remove_contents,
+            "same_stat": same_stat,
+            "remove_directory": remove_directory,
+            "file_close": file_close,
+            "error_type": test_case.engine.LauncherError,
+        }
+
+    def test_run_tmp_lifecycle_kernel_signatures_and_short_circuits(
+        self,
+    ) -> None:
+        expected_signatures = {
+            "remove_run_tmpdir": (
+                "repository",
+                "manifest",
+                "authenticate_parent",
+                "entry_metadata",
+                "directory_test",
+                "open_directory",
+                "remove_contents",
+                "same_stat",
+                "remove_directory",
+                "file_close",
+                "error_type",
+            ),
+            "require_run_tmp_absent": (
+                "repository",
+                "manifest",
+                "authenticate_parent",
+                "entry_metadata",
+                "error_type",
+            ),
+            "require_run_tmp_directory": (
+                "repository",
+                "manifest",
+                "authenticate_parent",
+                "entry_metadata",
+                "directory_test",
+                "open_directory",
+                "file_close",
+                "error_type",
+            ),
+        }
+        for kernel_name, expected in expected_signatures.items():
+            with self.subTest(kernel=kernel_name):
+                parameters = inspect.signature(
+                    getattr(self.state_policy, kernel_name)
+                ).parameters
+                self.assertEqual(tuple(parameters), expected)
+                for name in ("repository", "manifest"):
+                    self.assertIs(
+                        parameters[name].kind,
+                        inspect.Parameter.POSITIONAL_OR_KEYWORD,
+                    )
+                for parameter in tuple(parameters.values())[2:]:
+                    self.assertIs(
+                        parameter.kind,
+                        inspect.Parameter.KEYWORD_ONLY,
+                    )
+                    self.assertIs(
+                        parameter.default,
+                        inspect.Parameter.empty,
+                    )
+
+        repository = object()
+        manifest = {"run_id": "opaque"}
+        before_directory = SimpleNamespace(st_mode="directory-mode")
+        before_file = SimpleNamespace(st_mode="file-mode")
+
+        events: list[tuple[str, object]] = []
+        dependencies = self.run_tmp_lifecycle_dependencies(
+            events,
+            iter((None,)),
+        )
+        open_directory = mock.Mock(
+            side_effect=AssertionError("opened an absent temporary path")
+        )
+        dependencies["open_directory"] = open_directory
+        self.assertIsNone(
+            self.state_policy.remove_run_tmpdir(
+                repository,
+                manifest,
+                **dependencies,
+            )
+        )
+        open_directory.assert_not_called()
+        self.assertEqual(events[-1], ("exit", None))
+
+        events = []
+        dependencies = self.run_tmp_lifecycle_dependencies(
+            events,
+            iter((before_file,)),
+        )
+        open_directory = mock.Mock(
+            side_effect=AssertionError("opened a non-directory path")
+        )
+        dependencies["open_directory"] = open_directory
+        with self.assertRaisesRegex(
+            self.engine.LauncherError,
+            "^the run temporary path is not an exact real directory$",
+        ):
+            self.state_policy.remove_run_tmpdir(
+                repository,
+                manifest,
+                **dependencies,
+            )
+        open_directory.assert_not_called()
+
+        events = []
+        dependencies = self.run_tmp_lifecycle_dependencies(
+            events,
+            iter((before_directory, None)),
+        )
+        remove_directory = mock.Mock(
+            side_effect=AssertionError("removed a moved path")
+        )
+        dependencies["remove_directory"] = remove_directory
+        with self.assertRaisesRegex(
+            self.engine.LauncherError,
+            "^the run temporary path moved during removal$",
+        ):
+            self.state_policy.remove_run_tmpdir(
+                repository,
+                manifest,
+                **dependencies,
+            )
+        remove_directory.assert_not_called()
+        self.assertIn(("close", 23), events)
+
+        events = []
+        dependencies = self.run_tmp_lifecycle_dependencies(
+            events,
+            iter((before_directory, before_directory)),
+        )
+        dependencies["same_stat"] = lambda first, second: False
+        remove_directory = mock.Mock(
+            side_effect=AssertionError("removed a replaced path")
+        )
+        dependencies["remove_directory"] = remove_directory
+        with self.assertRaisesRegex(
+            self.engine.LauncherError,
+            "^the run temporary path was replaced during removal$",
+        ):
+            self.state_policy.remove_run_tmpdir(
+                repository,
+                manifest,
+                **dependencies,
+            )
+        remove_directory.assert_not_called()
+        self.assertIn(("close", 23), events)
+
+        events = []
+        dependencies = self.run_tmp_lifecycle_dependencies(
+            events,
+            iter((before_directory, before_directory)),
+        )
+        dependencies["remove_directory"] = mock.Mock(
+            side_effect=OSError("rmdir")
+        )
+        with self.assertRaisesRegex(
+            self.engine.LauncherError,
+            "^authenticated run temporary-directory removal failed$",
+        ):
+            self.state_policy.remove_run_tmpdir(
+                repository,
+                manifest,
+                **dependencies,
+            )
+        self.assertIn(("close", 23), events)
+
+        for case, after_same, expected_message in (
+            ("retained", True, "the run temporary path was retained"),
+            (
+                "replaced",
+                False,
+                "the run temporary path was replaced during removal",
+            ),
+        ):
+            with self.subTest(case=case):
+                events = []
+                dependencies = self.run_tmp_lifecycle_dependencies(
+                    events,
+                    iter(
+                        (
+                            before_directory,
+                            before_directory,
+                            before_directory,
+                        )
+                    ),
+                )
+                same_stat_results = iter((True, after_same))
+                dependencies["same_stat"] = lambda first, second: next(
+                    same_stat_results
+                )
+                with self.assertRaisesRegex(
+                    self.engine.LauncherError,
+                    f"^{expected_message}$",
+                ):
+                    self.state_policy.remove_run_tmpdir(
+                        repository,
+                        manifest,
+                        **dependencies,
+                    )
+
+        events = []
+        dependencies = self.run_tmp_lifecycle_dependencies(
+            events,
+            iter((before_directory,)),
+        )
+        absent_dependencies = {
+            key: dependencies[key]
+            for key in ("authenticate_parent", "entry_metadata", "error_type")
+        }
+        with self.assertRaisesRegex(
+            self.engine.LauncherError,
+            "^the cleaned run unexpectedly retains a temporary path$",
+        ):
+            self.state_policy.require_run_tmp_absent(
+                repository,
+                manifest,
+                **absent_dependencies,
+            )
+
+        for case, sequence in (
+            ("absent", (None,)),
+            ("non-directory", (before_file,)),
+        ):
+            with self.subTest(case=case):
+                events = []
+                dependencies = self.run_tmp_lifecycle_dependencies(
+                    events,
+                    iter(sequence),
+                )
+                open_directory = mock.Mock(
+                    side_effect=AssertionError("opened an invalid path")
+                )
+                dependencies["open_directory"] = open_directory
+                directory_dependencies = {
+                    key: dependencies[key]
+                    for key in (
+                        "authenticate_parent",
+                        "entry_metadata",
+                        "directory_test",
+                        "open_directory",
+                        "file_close",
+                        "error_type",
+                    )
+                }
+                with self.assertRaisesRegex(
+                    self.engine.LauncherError,
+                    "^the run temporary path is not an exact real directory$",
+                ):
+                    self.state_policy.require_run_tmp_directory(
+                        repository,
+                        manifest,
+                        **directory_dependencies,
+                    )
+                open_directory.assert_not_called()
+
+    def test_run_tmp_lifecycle_kernels_preserve_probe_order(self) -> None:
+        repository = object()
+        manifest = {"run_id": "opaque"}
+        before_directory = SimpleNamespace(st_mode="directory-mode")
+
+        events: list[tuple[str, object]] = []
+        dependencies = self.run_tmp_lifecycle_dependencies(
+            events,
+            iter((before_directory, before_directory, None)),
+        )
+        self.assertIsNone(
+            self.state_policy.remove_run_tmpdir(
+                repository,
+                manifest,
+                **dependencies,
+            )
+        )
+        self.assertEqual(
+            events,
+            [
+                ("authenticate", (repository, manifest)),
+                ("enter", None),
+                ("entry", (9, "run-entry")),
+                ("directory-test", "directory-mode"),
+                ("open-directory", (9, "run-entry", before_directory)),
+                ("remove-contents", 23),
+                ("entry", (9, "run-entry")),
+                ("samestat", (before_directory, before_directory)),
+                ("rmdir", ("run-entry", 9)),
+                ("close", 23),
+                ("entry", (9, "run-entry")),
+                ("exit", None),
+            ],
+        )
+
+        events = []
+        dependencies = self.run_tmp_lifecycle_dependencies(
+            events,
+            iter((None,)),
+        )
+        absent_dependencies = {
+            key: dependencies[key]
+            for key in ("authenticate_parent", "entry_metadata", "error_type")
+        }
+        self.assertIsNone(
+            self.state_policy.require_run_tmp_absent(
+                repository,
+                manifest,
+                **absent_dependencies,
+            )
+        )
+        self.assertEqual(
+            events,
+            [
+                ("authenticate", (repository, manifest)),
+                ("enter", None),
+                ("entry", (9, "run-entry")),
+                ("exit", None),
+            ],
+        )
+
+        events = []
+        dependencies = self.run_tmp_lifecycle_dependencies(
+            events,
+            iter((before_directory,)),
+        )
+        directory_dependencies = {
+            key: dependencies[key]
+            for key in (
+                "authenticate_parent",
+                "entry_metadata",
+                "directory_test",
+                "open_directory",
+                "file_close",
+                "error_type",
+            )
+        }
+        self.assertIsNone(
+            self.state_policy.require_run_tmp_directory(
+                repository,
+                manifest,
+                **directory_dependencies,
+            )
+        )
+        self.assertEqual(
+            events,
+            [
+                ("authenticate", (repository, manifest)),
+                ("enter", None),
+                ("entry", (9, "run-entry")),
+                ("directory-test", "directory-mode"),
+                ("open-directory", (9, "run-entry", before_directory)),
+                ("close", 23),
+                ("exit", None),
+            ],
+        )
+
+    def test_run_tmp_lifecycle_matches_real_filesystem_behavior(self) -> None:
+        run_id = "20260723t010203z-0123456789ab"
+        remove_dependencies = {
+            "authenticate_parent": self.engine.exact_run_tmp_parent,
+            "entry_metadata": self.engine.run_tmp_entry,
+            "directory_test": self.engine.stat.S_ISDIR,
+            "open_directory": self.engine.open_exact_temporary_directory,
+            "remove_contents": self.engine.remove_open_temporary_contents,
+            "same_stat": self.engine.os.path.samestat,
+            "remove_directory": self.engine.os.rmdir,
+            "file_close": self.engine.os.close,
+            "error_type": self.engine.LauncherError,
+        }
+        absent_dependencies = {
+            key: remove_dependencies[key]
+            for key in ("authenticate_parent", "entry_metadata", "error_type")
+        }
+        directory_dependencies = {
+            key: remove_dependencies[key]
+            for key in (
+                "authenticate_parent",
+                "entry_metadata",
+                "directory_test",
+                "open_directory",
+                "file_close",
+                "error_type",
+            )
+        }
+        surfaces = (
+            (
+                "engine",
+                self.engine.remove_run_tmpdir,
+                self.engine.require_run_tmp_absent,
+                self.engine.require_run_tmp_directory,
+            ),
+            (
+                "kernel",
+                lambda repository, manifest: (
+                    self.state_policy.remove_run_tmpdir(
+                        repository,
+                        manifest,
+                        **remove_dependencies,
+                    )
+                ),
+                lambda repository, manifest: (
+                    self.state_policy.require_run_tmp_absent(
+                        repository,
+                        manifest,
+                        **absent_dependencies,
+                    )
+                ),
+                lambda repository, manifest: (
+                    self.state_policy.require_run_tmp_directory(
+                        repository,
+                        manifest,
+                        **directory_dependencies,
+                    )
+                ),
+            ),
+        )
+        for label, remove, require_absent, require_directory in surfaces:
+            with self.subTest(surface=label):
+                with tempfile.TemporaryDirectory() as temporary:
+                    state_root = Path(temporary)
+                    run_temporary = state_root / "tmp" / run_id
+                    (run_temporary / "nested").mkdir(parents=True)
+                    (run_temporary / "nested" / "inner.txt").write_text(
+                        "inner\n",
+                        encoding="utf-8",
+                    )
+                    (run_temporary / "outer.txt").write_text(
+                        "outer\n",
+                        encoding="utf-8",
+                    )
+                    repository = SimpleNamespace(state_root=state_root)
+                    manifest = {
+                        "run_id": run_id,
+                        "tmpdir": str(run_temporary),
+                    }
+
+                    self.assertIsNone(
+                        require_directory(repository, manifest)
+                    )
+                    self.assertIsNone(remove(repository, manifest))
+                    self.assertFalse(run_temporary.exists())
+                    self.assertTrue(run_temporary.parent.is_dir())
+                    self.assertIsNone(require_absent(repository, manifest))
+                    self.assertIsNone(remove(repository, manifest))
+                    with self.assertRaisesRegex(
+                        self.engine.LauncherError,
+                        "^the run temporary path is not an exact"
+                        " real directory$",
+                    ):
+                        require_directory(repository, manifest)
+
     def test_engine_preserves_run_identity_and_path_surfaces(self) -> None:
         self.assertIs(self.engine.RUN_ID_RE, self.state_policy.RUN_ID_RE)
         for helper_name in (
@@ -1167,6 +1672,9 @@ class StatePolicyTests(unittest.TestCase):
             "run_tmp_entry",
             "open_exact_temporary_directory",
             "remove_open_temporary_contents",
+            "remove_run_tmpdir",
+            "require_run_tmp_absent",
+            "require_run_tmp_directory",
         ):
             with self.subTest(helper=helper_name):
                 self.assertIsNot(
@@ -1188,6 +1696,9 @@ class StatePolicyTests(unittest.TestCase):
                 "expected",
             ),
             "remove_open_temporary_contents": ("directory_descriptor",),
+            "remove_run_tmpdir": ("repository", "manifest"),
+            "require_run_tmp_absent": ("repository", "manifest"),
+            "require_run_tmp_directory": ("repository", "manifest"),
         }
         for helper_name, expected in expected_parameters.items():
             with self.subTest(signature=helper_name):

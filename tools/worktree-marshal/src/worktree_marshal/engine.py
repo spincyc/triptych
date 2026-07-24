@@ -108,8 +108,11 @@ from .state import (
     open_exact_temporary_directory as _open_exact_temporary_directory,
     private_directory as _private_directory,
     remove_open_temporary_contents as _remove_open_temporary_contents,
+    remove_run_tmpdir as _remove_run_tmpdir,
     repo_lock_path as _repo_lock_path,
     repository_slug as _repository_slug,
+    require_run_tmp_absent as _require_run_tmp_absent,
+    require_run_tmp_directory as _require_run_tmp_directory,
     run_lock_path as _run_lock_path,
     run_tmp_entry as _run_tmp_entry,
     state_base as _state_base,
@@ -5747,70 +5750,42 @@ def remove_open_temporary_contents(directory_descriptor: int) -> None:
 
 
 def remove_run_tmpdir(repository: Repository, manifest: dict) -> None:
-    with exact_run_tmp_parent(repository, manifest) as (
-        parent_descriptor,
-        run_id,
-    ):
-        before = run_tmp_entry(parent_descriptor, run_id)
-        if before is None:
-            return
-        if not stat.S_ISDIR(before.st_mode):
-            raise LauncherError(
-                "the run temporary path is not an exact real directory"
-            )
-        directory_descriptor = open_exact_temporary_directory(
-            parent_descriptor,
-            run_id,
-            before,
-        )
-        try:
-            remove_open_temporary_contents(directory_descriptor)
-            current = run_tmp_entry(parent_descriptor, run_id)
-            if current is None:
-                raise LauncherError("the run temporary path moved during removal")
-            if not os.path.samestat(before, current):
-                raise LauncherError("the run temporary path was replaced during removal")
-            try:
-                os.rmdir(run_id, dir_fd=parent_descriptor)
-            except OSError as exc:
-                raise LauncherError(
-                    "authenticated run temporary-directory removal failed"
-                ) from exc
-        finally:
-            os.close(directory_descriptor)
-        after = run_tmp_entry(parent_descriptor, run_id)
-        if after is not None:
-            disposition = (
-                "retained"
-                if os.path.samestat(before, after)
-                else "replaced during removal"
-            )
-            raise LauncherError(f"the run temporary path was {disposition}")
+    _remove_run_tmpdir(
+        repository,
+        manifest,
+        authenticate_parent=exact_run_tmp_parent,
+        entry_metadata=run_tmp_entry,
+        directory_test=stat.S_ISDIR,
+        open_directory=open_exact_temporary_directory,
+        remove_contents=remove_open_temporary_contents,
+        same_stat=os.path.samestat,
+        remove_directory=os.rmdir,
+        file_close=os.close,
+        error_type=LauncherError,
+    )
 
 
 def require_run_tmp_absent(repository: Repository, manifest: dict) -> None:
-    with exact_run_tmp_parent(repository, manifest) as (
-        parent_descriptor,
-        run_id,
-    ):
-        if run_tmp_entry(parent_descriptor, run_id) is not None:
-            raise LauncherError("the cleaned run unexpectedly retains a temporary path")
+    _require_run_tmp_absent(
+        repository,
+        manifest,
+        authenticate_parent=exact_run_tmp_parent,
+        entry_metadata=run_tmp_entry,
+        error_type=LauncherError,
+    )
 
 
 def require_run_tmp_directory(repository: Repository, manifest: dict) -> None:
-    with exact_run_tmp_parent(repository, manifest) as (
-        parent_descriptor,
-        run_id,
-    ):
-        metadata = run_tmp_entry(parent_descriptor, run_id)
-        if metadata is None or not stat.S_ISDIR(metadata.st_mode):
-            raise LauncherError("the run temporary path is not an exact real directory")
-        descriptor = open_exact_temporary_directory(
-            parent_descriptor,
-            run_id,
-            metadata,
-        )
-        os.close(descriptor)
+    _require_run_tmp_directory(
+        repository,
+        manifest,
+        authenticate_parent=exact_run_tmp_parent,
+        entry_metadata=run_tmp_entry,
+        directory_test=stat.S_ISDIR,
+        open_directory=open_exact_temporary_directory,
+        file_close=os.close,
+        error_type=LauncherError,
+    )
 
 
 def record_retirement_cleanup_failure(
