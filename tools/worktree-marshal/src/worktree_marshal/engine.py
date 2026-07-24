@@ -36,7 +36,12 @@ from .git import (
     sanitized_git_environment as _sanitized_git_environment,
     validate_effective_git_configuration as _validate_effective_git_configuration,
 )
-from .identity import LauncherIdentity, LinkedWorktreeIdentity, Repository
+from .identity import (
+    LauncherIdentity,
+    LinkedWorktreeIdentity,
+    Repository,
+    authenticate_launcher as _authenticate_launcher,
+)
 from .locks import (
     RegisteredLockDescriptor,
     inherited_lock_descriptors as _inherited_lock_descriptors,
@@ -235,19 +240,14 @@ def diagnostic(message: str) -> None:
 
 
 def authenticate_launcher(path: Path) -> LauncherIdentity:
-    if not path.is_absolute():
-        raise LauncherError("the launcher entry point must be an absolute path")
-    try:
-        resolved = path.resolve(strict=True)
-        metadata = resolved.stat()
-    except OSError as exc:
-        raise LauncherError("cannot authenticate the launcher entry point") from exc
-    if not stat.S_ISREG(metadata.st_mode) or not os.access(resolved, os.X_OK):
-        raise LauncherError("the launcher entry point is not a usable executable")
-    return LauncherIdentity(
-        path=resolved,
-        device=metadata.st_dev,
-        inode=metadata.st_ino,
+    return _authenticate_launcher(
+        path,
+        os_error_type=lambda: OSError,
+        error_type=lambda: LauncherError,
+        regular_file_test=lambda: stat.S_ISREG,
+        access_check=lambda: os.access,
+        executable_mode=lambda: os.X_OK,
+        identity_factory=lambda: LauncherIdentity,
     )
 
 

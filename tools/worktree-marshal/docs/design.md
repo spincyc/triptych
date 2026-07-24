@@ -23,10 +23,11 @@ now owns the exact state vocabulary, pure classifier, and I/O-free
 integration-transaction restoration transform, `state.py` now owns run
 identity, state-location selection, repository-name normalization, and lexical
 lock and manifest paths, `identity.py` now owns immutable runtime identity
-records, `locks.py` now owns lock-descriptor bookkeeping and validation
-algorithms, `process.py` now owns child waiting and exit-status normalization,
-and `triptych_compat.py` binds the frozen adapter. The rest of the engine will
-be separated behind these modules only after parity tests protect each seam:
+records and launcher-entry authentication, `locks.py` now owns lock-descriptor
+bookkeeping and validation algorithms, `process.py` now owns child waiting and
+exit-status normalization, and `triptych_compat.py` binds the frozen adapter.
+The rest of the engine will be separated behind these modules only after
+parity tests protect each seam:
 
 ```text
 worktree_marshal/
@@ -36,7 +37,7 @@ worktree_marshal/
   locks.py               descriptor bookkeeping now; flock acquisition later
   git.py                 transforms and captured-config policy now; invocation later
   process.py             child signal forwarding and exit normalization
-  identity.py            immutable runtime records now; authentication later
+  identity.py            runtime records and launcher authentication now; other authentication later
   worktrees.py           allocation, audit, reopen, and cleanup
   integration.py         verification, rebase, landing, and rollback
   conflicts.py           resolver scope, continuation, and abort
@@ -90,7 +91,7 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with nine behavior-preserving boundaries. The pure Git policy
+has begun step 5 with ten behavior-preserving boundaries. The pure Git policy
 kernel now transforms an explicit environment mapping and Git argument
 sequence in `git.py`; `engine.py` retains its optional environment-acquisition
 wrapper and all executable discovery, subprocess creation and command
@@ -155,11 +156,24 @@ The engine imports and re-exports those exact class objects, so existing
 constructors and type comparisons keep their established surface. Their
 canonical Python module and new pickle provenance are now `identity.py`; the
 engine aliases keep old engine-qualified lookups resolvable, and Marshal does
-not persist these records with pickle. Repository discovery, path and file
-authentication, launcher executable checks, linked-worktree identity caches,
-diagnostics, and all mutation remain in `engine.py`; the records do not perform
-validation or I/O.
-Direct tests freeze all nine extracted boundaries, their
+not persist these records with pickle. That record-only checkpoint did not
+perform validation or I/O.
+The tenth boundary moves only the existing in-process launcher-entry
+authentication operation into `identity.py`. Its exact-signature engine
+wrapper supplies lazy resolvers for the current operating-system error and
+launcher error types, regular-file predicate, executable access operation and
+mode, and identity factory. This preserves lexical absolute-path rejection,
+strict resolution followed by metadata capture, short-circuiting regular-file
+and executable checks, late identity construction, the three exact
+diagnostics, and the narrow rule that only resolution or metadata-read
+operating-system errors are translated and chained. The operation
+authenticates a read-only path snapshot; it deliberately does not strengthen
+the existing stat/access race into descriptor-based authentication. Launcher
+sequencing, the public error type, Git executable pinning and discovery,
+repository and linked-worktree authentication, identity caches, all other
+path and file authentication, lifecycle decisions, and every mutation remain
+in `engine.py`.
+Direct tests freeze all ten extracted boundaries, their
 compatibility surfaces, artifact inclusion, field and operation order,
 partial-failure behavior, and the dynamic restoration of every vocabulary
 value currently accepted in

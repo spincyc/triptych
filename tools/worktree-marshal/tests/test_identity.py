@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Direct parity tests for immutable repository and launcher identities."""
+"""Direct parity tests for runtime identities and launcher authentication."""
 
 from __future__ import annotations
 
 import importlib
 import inspect
 import os
+import stat
 import subprocess
 import sys
 import tempfile
@@ -156,6 +157,53 @@ class IdentityModelTests(unittest.TestCase):
         self.assertEqual(
             self.identity.LauncherIdentity.__doc__,
             "Authenticated identity of the in-process command entry point.",
+        )
+
+    def test_launcher_authentication_kernel_and_wrapper_signatures(
+        self,
+    ) -> None:
+        parameters = inspect.signature(
+            self.identity.authenticate_launcher
+        ).parameters
+        self.assertEqual(
+            tuple(parameters),
+            (
+                "path",
+                "os_error_type",
+                "error_type",
+                "regular_file_test",
+                "access_check",
+                "executable_mode",
+                "identity_factory",
+            ),
+        )
+        self.assertIs(
+            parameters["path"].kind,
+            inspect.Parameter.POSITIONAL_OR_KEYWORD,
+        )
+        for name in tuple(parameters)[1:]:
+            self.assertIs(
+                parameters[name].kind,
+                inspect.Parameter.KEYWORD_ONLY,
+            )
+        for parameter in parameters.values():
+            self.assertIs(parameter.default, inspect.Parameter.empty)
+
+        self.assertIsNot(
+            self.engine.authenticate_launcher,
+            self.identity.authenticate_launcher,
+        )
+        wrapper_parameters = inspect.signature(
+            self.engine.authenticate_launcher
+        ).parameters
+        self.assertEqual(tuple(wrapper_parameters), ("path",))
+        self.assertIs(
+            wrapper_parameters["path"].kind,
+            inspect.Parameter.POSITIONAL_OR_KEYWORD,
+        )
+        self.assertIs(
+            wrapper_parameters["path"].default,
+            inspect.Parameter.empty,
         )
 
     def test_dataclass_schemas_and_constructor_surfaces_are_exact(
@@ -371,6 +419,866 @@ class IdentityModelTests(unittest.TestCase):
                 with self.assertRaises(TypeError):
                     hash(unhashable)
 
+    def test_launcher_authentication_kernel_preserves_exact_success_order(
+        self,
+    ) -> None:
+        events: list[tuple[str, object]] = []
+        sentinel = object()
+
+        class TruthValue:
+            def __init__(truth_self, label: str) -> None:
+                truth_self.label = label
+
+            def __bool__(truth_self) -> bool:
+                events.append(("truth", truth_self.label))
+                return True
+
+        class Metadata:
+            @property
+            def st_mode(metadata_self) -> object:
+                events.append(("st-mode", None))
+                return "opaque-mode"
+
+            @property
+            def st_dev(metadata_self) -> object:
+                events.append(("st-dev", None))
+                return "opaque-device"
+
+            @property
+            def st_ino(metadata_self) -> object:
+                events.append(("st-ino", None))
+                return "opaque-inode"
+
+        class ResolvedPath:
+            def stat(resolved_self) -> object:
+                events.append(("stat", None))
+                return Metadata()
+
+        resolved = ResolvedPath()
+
+        class InputPath:
+            def is_absolute(path_self) -> object:
+                events.append(("is-absolute", None))
+                return TruthValue("absolute")
+
+            def resolve(path_self, *, strict: bool) -> object:
+                events.append(("resolve", strict))
+                return resolved
+
+        path = InputPath()
+
+        def os_error_type() -> type[OSError]:
+            raise AssertionError("resolved OS error type without an exception")
+
+        def error_type() -> type[Exception]:
+            raise AssertionError("resolved launcher error on success")
+
+        def regular_file_test() -> object:
+            events.append(("regular-resolver", None))
+
+            def test(mode: object) -> object:
+                events.append(("regular-test", mode))
+                return TruthValue("regular")
+
+            return test
+
+        def access_check() -> object:
+            events.append(("access-resolver", None))
+
+            def check(candidate: object, mode: object) -> object:
+                events.append(("access-check", (candidate, mode)))
+                return TruthValue("executable")
+
+            return check
+
+        def executable_mode() -> object:
+            events.append(("mode-resolver", None))
+            return "opaque-executable-mode"
+
+        def identity_factory() -> object:
+            events.append(("identity-resolver", None))
+
+            def construct(**values: object) -> object:
+                events.append(("identity-constructor", values))
+                return sentinel
+
+            return construct
+
+        observed = self.identity.authenticate_launcher(
+            path,
+            os_error_type=os_error_type,
+            error_type=error_type,
+            regular_file_test=regular_file_test,
+            access_check=access_check,
+            executable_mode=executable_mode,
+            identity_factory=identity_factory,
+        )
+
+        self.assertIs(observed, sentinel)
+        self.assertEqual(
+            events,
+            [
+                ("is-absolute", None),
+                ("truth", "absolute"),
+                ("resolve", True),
+                ("stat", None),
+                ("regular-resolver", None),
+                ("st-mode", None),
+                ("regular-test", "opaque-mode"),
+                ("truth", "regular"),
+                ("access-resolver", None),
+                ("mode-resolver", None),
+                (
+                    "access-check",
+                    (resolved, "opaque-executable-mode"),
+                ),
+                ("truth", "executable"),
+                ("identity-resolver", None),
+                ("st-dev", None),
+                ("st-ino", None),
+                (
+                    "identity-constructor",
+                    {
+                        "path": resolved,
+                        "device": "opaque-device",
+                        "inode": "opaque-inode",
+                    },
+                ),
+            ],
+        )
+
+    def test_launcher_authentication_kernel_short_circuits_rejections(
+        self,
+    ) -> None:
+        class AuthenticationError(RuntimeError):
+            pass
+
+        dependencies = {
+            "os_error_type": mock.Mock(
+                side_effect=AssertionError("resolved OS error type")
+            ),
+            "regular_file_test": mock.Mock(
+                side_effect=AssertionError("resolved regular-file test")
+            ),
+            "access_check": mock.Mock(
+                side_effect=AssertionError("resolved access check")
+            ),
+            "executable_mode": mock.Mock(
+                side_effect=AssertionError("resolved executable mode")
+            ),
+            "identity_factory": mock.Mock(
+                side_effect=AssertionError("resolved identity factory")
+            ),
+        }
+        relative = mock.Mock()
+        relative.is_absolute.return_value = False
+        with self.assertRaisesRegex(
+            AuthenticationError,
+            "^the launcher entry point must be an absolute path$",
+        ):
+            self.identity.authenticate_launcher(
+                relative,
+                error_type=lambda: AuthenticationError,
+                **dependencies,
+            )
+        relative.resolve.assert_not_called()
+        for provider in dependencies.values():
+            provider.assert_not_called()
+
+        metadata = SimpleNamespace(st_mode="mode", st_dev=1, st_ino=2)
+        resolved = mock.Mock()
+        resolved.stat.return_value = metadata
+        absolute = mock.Mock()
+        absolute.is_absolute.return_value = True
+        absolute.resolve.return_value = resolved
+        os_error_type = mock.Mock(return_value=OSError)
+        regular_predicate = mock.Mock(return_value=False)
+        regular_file_test = mock.Mock(return_value=regular_predicate)
+        access_check = mock.Mock(
+            side_effect=AssertionError("checked access for a non-file")
+        )
+        executable_mode = mock.Mock(
+            side_effect=AssertionError("resolved mode for a non-file")
+        )
+        identity_factory = mock.Mock(
+            side_effect=AssertionError("constructed rejected identity")
+        )
+        with self.assertRaisesRegex(
+            AuthenticationError,
+            "^the launcher entry point is not a usable executable$",
+        ):
+            self.identity.authenticate_launcher(
+                absolute,
+                os_error_type=os_error_type,
+                error_type=lambda: AuthenticationError,
+                regular_file_test=regular_file_test,
+                access_check=access_check,
+                executable_mode=executable_mode,
+                identity_factory=identity_factory,
+            )
+        regular_file_test.assert_called_once_with()
+        regular_predicate.assert_called_once_with("mode")
+        access_check.assert_not_called()
+        executable_mode.assert_not_called()
+        identity_factory.assert_not_called()
+        os_error_type.assert_not_called()
+
+        access_predicate = mock.Mock(return_value=False)
+        access_check = mock.Mock(return_value=access_predicate)
+        executable_mode = mock.Mock(return_value="execute")
+        identity_factory = mock.Mock(
+            side_effect=AssertionError("constructed nonexecutable identity")
+        )
+        with self.assertRaisesRegex(
+            AuthenticationError,
+            "^the launcher entry point is not a usable executable$",
+        ):
+            self.identity.authenticate_launcher(
+                absolute,
+                os_error_type=os_error_type,
+                error_type=lambda: AuthenticationError,
+                regular_file_test=lambda: (
+                    lambda mode: True
+                ),
+                access_check=access_check,
+                executable_mode=executable_mode,
+                identity_factory=identity_factory,
+            )
+        access_check.assert_called_once_with()
+        executable_mode.assert_called_once_with()
+        access_predicate.assert_called_once_with(resolved, "execute")
+        identity_factory.assert_not_called()
+        os_error_type.assert_not_called()
+
+    def test_launcher_authentication_kernel_chains_only_lookup_os_errors(
+        self,
+    ) -> None:
+        class ExpectedOsError(OSError):
+            pass
+
+        class AuthenticationError(RuntimeError):
+            pass
+
+        for stage in (
+            "resolve-attribute",
+            "resolve-call",
+            "stat-attribute",
+            "stat-call",
+        ):
+            with self.subTest(wrapped_stage=stage):
+                original = ExpectedOsError(f"{stage} failed")
+                events: list[str] = []
+
+                class Resolved:
+                    @property
+                    def stat(resolved_self) -> object:
+                        events.append("stat-attribute")
+                        if stage == "stat-attribute":
+                            raise original
+
+                        def inspect() -> object:
+                            events.append("stat-call")
+                            if stage == "stat-call":
+                                raise original
+                            raise AssertionError(
+                                "continued after expected lookup failure"
+                            )
+
+                        return inspect
+
+                class InputPath:
+                    def is_absolute(path_self) -> bool:
+                        return True
+
+                    @property
+                    def resolve(path_self) -> object:
+                        events.append("resolve-attribute")
+                        if stage == "resolve-attribute":
+                            raise original
+
+                        def canonicalize(*, strict: bool) -> object:
+                            events.append("resolve-call")
+                            self.assertTrue(strict)
+                            if stage == "resolve-call":
+                                raise original
+                            return Resolved()
+
+                        return canonicalize
+
+                os_error_type = mock.Mock(
+                    return_value=ExpectedOsError
+                )
+                error_type = mock.Mock(
+                    return_value=AuthenticationError
+                )
+                regular_file_test = mock.Mock(
+                    side_effect=AssertionError(
+                        "validated after path lookup failed"
+                    )
+                )
+                identity_factory = mock.Mock(
+                    side_effect=AssertionError(
+                        "constructed after path lookup failed"
+                    )
+                )
+
+                with self.assertRaises(AuthenticationError) as raised:
+                    self.identity.authenticate_launcher(
+                        InputPath(),
+                        os_error_type=os_error_type,
+                        error_type=error_type,
+                        regular_file_test=regular_file_test,
+                        access_check=mock.Mock(),
+                        executable_mode=mock.Mock(),
+                        identity_factory=identity_factory,
+                    )
+
+                self.assertEqual(
+                    str(raised.exception),
+                    "cannot authenticate the launcher entry point",
+                )
+                self.assertIs(raised.exception.__cause__, original)
+                self.assertIs(raised.exception.__context__, original)
+                self.assertTrue(
+                    raised.exception.__suppress_context__
+                )
+                os_error_type.assert_called_once_with()
+                error_type.assert_called_once_with()
+                regular_file_test.assert_not_called()
+                identity_factory.assert_not_called()
+                expected_events = {
+                    "resolve-attribute": ["resolve-attribute"],
+                    "resolve-call": [
+                        "resolve-attribute",
+                        "resolve-call",
+                    ],
+                    "stat-attribute": [
+                        "resolve-attribute",
+                        "resolve-call",
+                        "stat-attribute",
+                    ],
+                    "stat-call": [
+                        "resolve-attribute",
+                        "resolve-call",
+                        "stat-attribute",
+                        "stat-call",
+                    ],
+                }
+                self.assertEqual(events, expected_events[stage])
+
+        class UnexpectedFailure(RuntimeError):
+            pass
+
+        for stage in ("resolve", "stat"):
+            with self.subTest(unmatched_stage=stage):
+                original = UnexpectedFailure(f"{stage} failed")
+                path = mock.Mock()
+                path.is_absolute.return_value = True
+                resolved = mock.Mock()
+                if stage == "resolve":
+                    path.resolve.side_effect = original
+                else:
+                    path.resolve.return_value = resolved
+                    resolved.stat.side_effect = original
+                os_error_type = mock.Mock(return_value=ExpectedOsError)
+                error_type = mock.Mock(
+                    side_effect=AssertionError(
+                        "wrapped a non-OS lookup failure"
+                    )
+                )
+
+                with self.assertRaises(UnexpectedFailure) as raised:
+                    self.identity.authenticate_launcher(
+                        path,
+                        os_error_type=os_error_type,
+                        error_type=error_type,
+                        regular_file_test=mock.Mock(),
+                        access_check=mock.Mock(),
+                        executable_mode=mock.Mock(),
+                        identity_factory=mock.Mock(),
+                    )
+
+                self.assertIs(raised.exception, original)
+                os_error_type.assert_called_once_with()
+                error_type.assert_not_called()
+
+    def test_launcher_authentication_kernel_keeps_other_failures_outside_catch(
+        self,
+    ) -> None:
+        stages = (
+            "is-absolute",
+            "absolute-truth",
+            "st-mode",
+            "regular-resolver",
+            "regular-call",
+            "regular-truth",
+            "access-resolver",
+            "mode-resolver",
+            "access-call",
+            "access-truth",
+            "identity-resolver",
+            "st-dev",
+            "st-ino",
+            "identity-call",
+        )
+        for stage in stages:
+            with self.subTest(stage=stage):
+                failure = OSError(f"{stage} failed")
+
+                class ExplodingTruth:
+                    def __bool__(truth_self) -> bool:
+                        raise failure
+
+                class Metadata:
+                    @property
+                    def st_mode(metadata_self) -> object:
+                        if stage == "st-mode":
+                            raise failure
+                        return "mode"
+
+                    @property
+                    def st_dev(metadata_self) -> object:
+                        if stage == "st-dev":
+                            raise failure
+                        return "device"
+
+                    @property
+                    def st_ino(metadata_self) -> object:
+                        if stage == "st-ino":
+                            raise failure
+                        return "inode"
+
+                class Resolved:
+                    def stat(resolved_self) -> object:
+                        return Metadata()
+
+                class InputPath:
+                    def is_absolute(path_self) -> object:
+                        if stage == "is-absolute":
+                            raise failure
+                        if stage == "absolute-truth":
+                            return ExplodingTruth()
+                        return True
+
+                    def resolve(
+                        path_self,
+                        *,
+                        strict: bool,
+                    ) -> object:
+                        return Resolved()
+
+                def regular_file_test() -> object:
+                    if stage == "regular-resolver":
+                        raise failure
+
+                    def test(mode: object) -> object:
+                        if stage == "regular-call":
+                            raise failure
+                        if stage == "regular-truth":
+                            return ExplodingTruth()
+                        return True
+
+                    return test
+
+                def access_check() -> object:
+                    if stage == "access-resolver":
+                        raise failure
+
+                    def check(
+                        path: object,
+                        mode: object,
+                    ) -> object:
+                        if stage == "access-call":
+                            raise failure
+                        if stage == "access-truth":
+                            return ExplodingTruth()
+                        return True
+
+                    return check
+
+                def executable_mode() -> object:
+                    if stage == "mode-resolver":
+                        raise failure
+                    return "execute"
+
+                def identity_factory() -> object:
+                    if stage == "identity-resolver":
+                        raise failure
+
+                    def construct(**values: object) -> object:
+                        if stage == "identity-call":
+                            raise failure
+                        return values
+
+                    return construct
+
+                os_error_type = mock.Mock(
+                    side_effect=AssertionError(
+                        "caught an error outside path lookup"
+                    )
+                )
+                error_type = mock.Mock(
+                    side_effect=AssertionError(
+                        "translated an error outside path lookup"
+                    )
+                )
+                with self.assertRaises(OSError) as raised:
+                    self.identity.authenticate_launcher(
+                        InputPath(),
+                        os_error_type=os_error_type,
+                        error_type=error_type,
+                        regular_file_test=regular_file_test,
+                        access_check=access_check,
+                        executable_mode=executable_mode,
+                        identity_factory=identity_factory,
+                    )
+
+                self.assertIs(raised.exception, failure)
+                os_error_type.assert_not_called()
+                error_type.assert_not_called()
+
+    def test_engine_launcher_wrapper_resolves_every_global_lazily(
+        self,
+    ) -> None:
+        path = object()
+        sentinel = object()
+        events: list[tuple[str, object]] = []
+
+        class InitialOsError(OSError):
+            pass
+
+        class ReboundOsError(OSError):
+            pass
+
+        class InitialLauncherError(RuntimeError):
+            pass
+
+        class ReboundLauncherError(RuntimeError):
+            pass
+
+        initial_identity = object()
+        rebound_identity = object()
+
+        class InitialStatApi:
+            @property
+            def S_ISREG(api_self) -> object:
+                raise AssertionError("resolved regular test eagerly")
+
+        class ReboundStatApi:
+            @property
+            def S_ISREG(api_self) -> object:
+                events.append(("regular-test", None))
+                return "rebound-regular-test"
+
+        class InitialOsApi:
+            @property
+            def access(api_self) -> object:
+                raise AssertionError("resolved access eagerly")
+
+            @property
+            def X_OK(api_self) -> object:
+                raise AssertionError("resolved executable mode eagerly")
+
+        class ModeOsApi:
+            @property
+            def X_OK(api_self) -> object:
+                events.append(("executable-mode", None))
+                return "rebound-executable-mode"
+
+        class AccessOsApi:
+            @property
+            def access(api_self) -> object:
+                events.append(("access-check", None))
+                self.engine.os = ModeOsApi()
+                return "rebound-access-check"
+
+        def kernel(observed_path: object, **providers: object) -> object:
+            events.append(("kernel", tuple(providers)))
+            self.assertIs(observed_path, path)
+
+            self.engine.OSError = ReboundOsError
+            self.assertIs(providers["os_error_type"](), ReboundOsError)
+            events.append(("os-error-type", None))
+
+            self.engine.LauncherError = ReboundLauncherError
+            self.assertIs(
+                providers["error_type"](),
+                ReboundLauncherError,
+            )
+            events.append(("launcher-error-type", None))
+
+            self.engine.stat = ReboundStatApi()
+            self.assertEqual(
+                providers["regular_file_test"](),
+                "rebound-regular-test",
+            )
+
+            self.engine.os = AccessOsApi()
+            self.assertEqual(
+                providers["access_check"](),
+                "rebound-access-check",
+            )
+            self.assertEqual(
+                providers["executable_mode"](),
+                "rebound-executable-mode",
+            )
+
+            self.engine.LauncherIdentity = rebound_identity
+            self.assertIs(
+                providers["identity_factory"](),
+                rebound_identity,
+            )
+            events.append(("identity-factory", None))
+            return sentinel
+
+        with (
+            mock.patch.object(
+                self.engine,
+                "_authenticate_launcher",
+                side_effect=kernel,
+                create=True,
+            ),
+            mock.patch.object(
+                self.engine,
+                "OSError",
+                InitialOsError,
+                create=True,
+            ),
+            mock.patch.object(
+                self.engine,
+                "LauncherError",
+                InitialLauncherError,
+            ),
+            mock.patch.object(
+                self.engine,
+                "stat",
+                InitialStatApi(),
+            ),
+            mock.patch.object(
+                self.engine,
+                "os",
+                InitialOsApi(),
+            ),
+            mock.patch.object(
+                self.engine,
+                "LauncherIdentity",
+                initial_identity,
+            ),
+        ):
+            observed = self.engine.authenticate_launcher(path)
+
+        self.assertIs(observed, sentinel)
+        self.assertEqual(
+            events,
+            [
+                (
+                    "kernel",
+                    (
+                        "os_error_type",
+                        "error_type",
+                        "regular_file_test",
+                        "access_check",
+                        "executable_mode",
+                        "identity_factory",
+                    ),
+                ),
+                ("os-error-type", None),
+                ("launcher-error-type", None),
+                ("regular-test", None),
+                ("access-check", None),
+                ("executable-mode", None),
+                ("identity-factory", None),
+            ],
+        )
+
+    def test_engine_and_real_kernel_rebind_error_types_at_failure(
+        self,
+    ) -> None:
+        events: list[str] = []
+
+        class InitialOsError(OSError):
+            pass
+
+        class ReboundOsError(OSError):
+            pass
+
+        class InitialLauncherError(RuntimeError):
+            pass
+
+        class ReboundLauncherError(RuntimeError):
+            pass
+
+        failure = ReboundOsError("lookup failed")
+
+        class InputPath:
+            def is_absolute(path_self) -> bool:
+                events.append("is-absolute")
+                return True
+
+            def resolve(path_self, *, strict: bool) -> object:
+                events.append("resolve")
+                self.assertTrue(strict)
+                self.engine.OSError = ReboundOsError
+                self.engine.LauncherError = ReboundLauncherError
+                raise failure
+
+        with (
+            mock.patch.object(
+                self.engine,
+                "OSError",
+                InitialOsError,
+                create=True,
+            ),
+            mock.patch.object(
+                self.engine,
+                "LauncherError",
+                InitialLauncherError,
+            ),
+        ):
+            with self.assertRaises(ReboundLauncherError) as raised:
+                self.engine.authenticate_launcher(InputPath())
+
+        self.assertEqual(events, ["is-absolute", "resolve"])
+        self.assertEqual(
+            str(raised.exception),
+            "cannot authenticate the launcher entry point",
+        )
+        self.assertIs(raised.exception.__cause__, failure)
+        self.assertIs(raised.exception.__context__, failure)
+
+    def test_engine_and_real_kernel_rebind_validation_globals_in_order(
+        self,
+    ) -> None:
+        events: list[tuple[str, object]] = []
+
+        class InitialLauncherError(RuntimeError):
+            pass
+
+        class ReboundLauncherError(RuntimeError):
+            def __init__(
+                error_self,
+                message: str,
+            ) -> None:
+                events.append(("launcher-error", message))
+                super().__init__(message)
+
+        class InitialStatApi:
+            @property
+            def S_ISREG(api_self) -> object:
+                raise AssertionError("captured regular-file test eagerly")
+
+        class InitialOsApi:
+            @property
+            def access(api_self) -> object:
+                raise AssertionError("captured access check eagerly")
+
+            @property
+            def X_OK(api_self) -> object:
+                raise AssertionError("captured executable mode eagerly")
+
+        class ModeOsApi:
+            @property
+            def X_OK(api_self) -> object:
+                events.append(("mode-lookup", None))
+                return "current-executable-mode"
+
+        class AccessOsApi:
+            @property
+            def access(api_self) -> object:
+                events.append(("access-lookup", None))
+                self.engine.os = ModeOsApi()
+
+                def access(
+                    candidate: object,
+                    mode: object,
+                ) -> bool:
+                    events.append(("access-call", (candidate, mode)))
+                    self.engine.LauncherError = ReboundLauncherError
+                    return False
+
+                return access
+
+        class ReboundStatApi:
+            @property
+            def S_ISREG(api_self) -> object:
+                events.append(("regular-lookup", None))
+
+                def is_regular(mode: object) -> bool:
+                    events.append(("regular-call", mode))
+                    self.engine.os = AccessOsApi()
+                    return True
+
+                return is_regular
+
+        class Metadata:
+            @property
+            def st_mode(metadata_self) -> object:
+                events.append(("st-mode", None))
+                return "current-mode"
+
+        class Resolved:
+            def stat(resolved_self) -> object:
+                events.append(("stat", None))
+                self.engine.stat = ReboundStatApi()
+                return Metadata()
+
+        resolved = Resolved()
+
+        class InputPath:
+            def is_absolute(path_self) -> bool:
+                events.append(("is-absolute", None))
+                return True
+
+            def resolve(path_self, *, strict: bool) -> object:
+                events.append(("resolve", strict))
+                return resolved
+
+        with (
+            mock.patch.object(
+                self.engine,
+                "LauncherError",
+                InitialLauncherError,
+            ),
+            mock.patch.object(
+                self.engine,
+                "stat",
+                InitialStatApi(),
+            ),
+            mock.patch.object(
+                self.engine,
+                "os",
+                InitialOsApi(),
+            ),
+        ):
+            with self.assertRaises(ReboundLauncherError) as raised:
+                self.engine.authenticate_launcher(InputPath())
+
+        self.assertEqual(
+            str(raised.exception),
+            "the launcher entry point is not a usable executable",
+        )
+        self.assertEqual(
+            events,
+            [
+                ("is-absolute", None),
+                ("resolve", True),
+                ("stat", None),
+                ("regular-lookup", None),
+                ("st-mode", None),
+                ("regular-call", "current-mode"),
+                ("access-lookup", None),
+                ("mode-lookup", None),
+                (
+                    "access-call",
+                    (resolved, "current-executable-mode"),
+                ),
+                (
+                    "launcher-error",
+                    "the launcher entry point is not a usable executable",
+                ),
+            ],
+        )
+
     def test_authenticate_launcher_resolves_rebound_constructor_last(
         self,
     ) -> None:
@@ -417,6 +1325,85 @@ class IdentityModelTests(unittest.TestCase):
             device=metadata.st_dev,
             inode=metadata.st_ino,
         )
+
+    def test_launcher_authentication_matches_real_filesystem_behavior(
+        self,
+    ) -> None:
+        class AuthenticationError(RuntimeError):
+            pass
+
+        def authenticate(path: Path) -> object:
+            return self.identity.authenticate_launcher(
+                path,
+                os_error_type=lambda: OSError,
+                error_type=lambda: AuthenticationError,
+                regular_file_test=lambda: stat.S_ISREG,
+                access_check=lambda: os.access,
+                executable_mode=lambda: os.X_OK,
+                identity_factory=lambda: (
+                    self.identity.LauncherIdentity
+                ),
+            )
+
+        executable = Path(sys.executable).resolve(strict=True)
+        metadata = executable.stat()
+        expected = self.identity.LauncherIdentity(
+            path=executable,
+            device=metadata.st_dev,
+            inode=metadata.st_ino,
+        )
+        self.assertEqual(authenticate(executable), expected)
+        self.assertEqual(
+            self.engine.authenticate_launcher(executable),
+            expected,
+        )
+
+        with tempfile.TemporaryDirectory() as directory:
+            temporary = Path(directory).resolve(strict=True)
+            with self.assertRaisesRegex(
+                AuthenticationError,
+                "^the launcher entry point is not a usable executable$",
+            ):
+                authenticate(temporary)
+
+            missing = temporary / "missing-launcher"
+            with self.assertRaises(AuthenticationError) as raised:
+                authenticate(missing)
+            self.assertEqual(
+                str(raised.exception),
+                "cannot authenticate the launcher entry point",
+            )
+            self.assertIsInstance(
+                raised.exception.__cause__,
+                FileNotFoundError,
+            )
+
+            nonexecutable = temporary / "nonexecutable"
+            nonexecutable.write_text("#!/bin/sh\n", encoding="utf-8")
+            nonexecutable.chmod(stat.S_IRUSR | stat.S_IWUSR)
+            if not os.access(nonexecutable, os.X_OK):
+                with self.assertRaisesRegex(
+                    AuthenticationError,
+                    "^the launcher entry point is not a usable executable$",
+                ):
+                    authenticate(nonexecutable)
+
+            link = temporary / "launcher-link"
+            try:
+                link.symlink_to(executable)
+            except (NotImplementedError, OSError):
+                pass
+            else:
+                self.assertEqual(authenticate(link), expected)
+
+        relative = Path("relative-launcher")
+        with self.assertRaises(AuthenticationError) as raised:
+            authenticate(relative)
+        self.assertEqual(
+            str(raised.exception),
+            "the launcher entry point must be an absolute path",
+        )
+        self.assertIsNone(raised.exception.__cause__)
 
     def test_linked_worktree_authentication_resolves_rebound_constructor_last(
         self,
