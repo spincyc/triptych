@@ -70,7 +70,7 @@ The catalog treats a Church *sui iuris* as distinct from a rite or liturgical fa
 - West Syriac / Antiochene: Maronite, Syriac, Syro-Malankara.
 - Byzantine: Albanian, Belarusian, Bulgarian, Greek Catholic Church of Croatia and Serbia, Greek, Hungarian, Italo-Albanian, Macedonian, Melkite Greek Catholic, Romanian, Russian, Ruthenian, Slovak, Ukrainian.
 
-The controlling initiation norms are CCEO 694–697 and 710, *Orientalium Ecclesiarum* 12–14, and the 1996 Eastern liturgical Instruction 50–51. The inherited Eastern norm is Baptism followed immediately by Chrismation and Eucharist, including infants; adult initiation likewise unites the three. Current local practice is not perfectly uniform. The Chaldean Catholic Diocese of St. Thomas the Apostle U.S.A. documents infant Baptism and Confirmation with Eucharist delayed to the age of reason in its “Sacraments” page and 2023 diocesan policies. Maronite eparchial sources document Baptism joined to Chrismation and the historical cessation of infant Communion; St. Anthony Maronite Church's eparchial Grade-2 curriculum documents one present parish First-Communion timetable without being universal Maronite law. The Syro-Malabar Synodal Commission's official *The Sacraments of the Syro-Malabar Church*, General Instructions 14–15, directs Communion “as early as possible” after Baptism and Chrismation; Paul Pallath's curial-hosted 2023 study supplies historical and implementation qualifications but is not legislation. The printed table therefore states common law, identifies these patterns as local or particular qualifications rather than universal counter-rules, and directs readers to the competent parish or eparchy for actual scheduling. A later solemn First Communion in an Eastern parish may be a catechetical public observance rather than the child's literal first reception.
+The current common-law initiation controls are CCEO 694–697 and 710. *Orientalium Ecclesiarum* 12–14 supplies the Council's confirmation and restoration of ancient Eastern sacramental discipline, while the 1996 Eastern liturgical Instruction 50–51 gives authoritative liturgical application and anti-Latinization guidance. The inherited Eastern norm is Baptism followed immediately by Chrismation and Eucharist, including infants; adult initiation likewise unites the three. Current local practice is not perfectly uniform. The Chaldean Catholic Diocese of St. Thomas the Apostle U.S.A. documents infant Baptism and Confirmation with Eucharist delayed to the age of reason in its “Sacraments” page and 2023 diocesan policies. Maronite eparchial sources document Baptism joined to Chrismation and the historical cessation of infant Communion; St. Anthony Maronite Church's eparchial Grade-2 curriculum documents one present parish First-Communion timetable without being universal Maronite law. The Syro-Malabar Synodal Commission's official *The Sacraments of the Syro-Malabar Church*, General Instructions 14–15, directs Communion “as early as possible” after Baptism and Chrismation; Paul Pallath's curial-hosted 2023 study supplies historical and implementation qualifications but is not legislation. The printed table therefore states common law, identifies these patterns as local or particular qualifications rather than universal counter-rules, and directs readers to the competent parish or eparchy for actual scheduling. A later solemn First Communion in an Eastern parish may be a catechetical public observance rather than the child's literal first reception.
 
 Exact public records used for those three named examples:
 
@@ -109,3 +109,31 @@ This is internal production review only; it grants no independent editorial, spe
 ## Justin First Apology source-family production review — 2026-07-23
 
 The exact Dods--Reith Buffalo 1887 witnesses for *First Apology* 61 and 65--67 were normalized and rebound after claim-level review in both consumers. Repeated settled and forced deterministic builds produced the current 71-page treatise, SHA-256 `ad94b6c4330e71e258a18239074598892745a59039870193bf08a063cbabde6e`, and 10-page at-a-glance companion, SHA-256 `9abffab8b97bf7139430cc7ae80bba109adf0df374653db07da8a3c79c39f04c`. Both final logs, PDF structure and metadata, embedded/subsetted/Unicode-mapped fonts, nonempty text extraction, and build/install byte identity passed. Bounded review rasters were generated through `scripts/pdf-review`; every rendered page of both publications was visually inspected, with the calibrated Eucharistic witness table, disaggregated baptism summary, references, and terminal provenance checked at full-page scale. No release clearance attaches to these changed bytes.
+
+## *Orientalium Ecclesiarum* source-family production review — 2026-07-24
+
+The exact English, Latin, and AAS 57 witnesses for *Orientalium Ecclesiarum*
+and the distinct AAS vacatio notice were normalized. The treatise and
+companion now bind only the initiation loci they use. Their source hierarchy
+is explicit: CCEO 694--697 and 710 control current common law; Decree
+articles 12--14 confirm and restore the ancient Eastern sacramental
+discipline at conciliar level; and the 1996 Eastern liturgical Instruction
+50--51 supplies authoritative liturgical application and anti-Latinization
+guidance. No current local timetable is inferred from the Decree.
+
+Settled builds produced the current 71-page treatise, SHA-256
+`d97fdea5bad97eab4cb4e85e6fc7c267454b24652ef8cc941bceeb71009ede5a`,
+and 10-page at-a-glance companion, SHA-256
+`a092436881584f3693d8d4a19f5a29ffd62fef59701ee5a56ed601d9f0f3052f`.
+The final logs contained no fatal error, unresolved reference, overflow,
+underflow, rerun, or layout warning. Generation metadata, `qpdf` structure,
+Letter page size, PDF titles, embedded and subsetted fonts with Unicode maps,
+and nonempty text extraction passed. Review rasters were generated through
+`scripts/pdf-review`, and every rendered page of both publications was
+visually inspected. That review caught a pre-existing rights-only final-page
+spill in the treatise; the terminal apparatus was repaginated so the four
+distinct generation records and compact rights colophon now share one
+readable metadata page. The corrected build was rerendered and its terminal
+pages rechecked. Both installed PDFs are byte-identical to the reviewed
+builds. No prior exact-byte release clearance attaches to these changed
+bytes.

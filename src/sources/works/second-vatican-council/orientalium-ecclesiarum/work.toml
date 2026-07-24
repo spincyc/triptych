@@ -1,0 +1,11 @@
+schema = 1
+record_type = "work"
+id = "work.second-vatican-council.orientalium-ecclesiarum"
+title = "Orientalium Ecclesiarum"
+responsible = "Second Vatican Council"
+work_type = "decree"
+alternate_titles = ["Decretum de Ecclesiis Orientalibus Catholicis", "Decree on the Catholic Churches of the Eastern Rite"]
+languages = ["la"]
+locus_pattern = '(?:[1-9]|[12][0-9]|30)(?:-(?:[1-9]|[12][0-9]|30))?'
+description = "The Second Vatican Council's Decree on the Catholic Eastern Churches, solemnly promulgated by Pope Paul VI on 21 November 1964. Its numbered articles 1-30 address the Churches' dignity, patrimony, governance, sacramental discipline, worship, and relations with separated Eastern Churches."
+relations = ["work.holy-see.acta-apostolicae-sedis", "work.second-vatican-council.orientalium-ecclesiarum-notificatio"]

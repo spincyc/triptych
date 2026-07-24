@@ -33,3 +33,23 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The complete official English article was checked for the article's bounded theological and disciplinary claim: priestly celibacy is especially fitting but is not demanded by the nature of priesthood, and the primitive Church and Eastern discipline include married presbyters. Current Latin and Eastern law remain controlled by the separately bound CIC and CCEO sources."
 verified_on = "2026-07-23"
 source_fingerprint = "sha256:cedade3b5cfefb101625965f52fbb6e64666bdfda97b563fcfc8c339b7b9198a"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.orientalium-ecclesiarum.english-vatican-web-2026-07-24.6"
+loci = ["6"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official English article was checked for the historical conciliar claim that Eastern Catholics should preserve their legitimate rite and established way of life and return to ancestral traditions where these had been lost. It does not itself mention married clergy; that distinct claim is controlled by Presbyterorum ordinis 16 and, for current law, CCEO 373."
+claim_keys = ["eastern-patrimony-preservation"]
+verified_on = "2026-07-24"
+source_fingerprint = "sha256:e5506e90158f9c603b0536743a277b14acb608f2652e8ef57844d7196614807a"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.orientalium-ecclesiarum.english-vatican-web-2026-07-24.17"
+loci = ["17"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official English article was checked only for the historical conciliar desire to restore the permanent diaconate where it had fallen into disuse. Its legislative-authority sentence concerns the subdiaconate and minor orders, not regulation of the permanent diaconate; CCEO 760 §2 and applicable particular and local law control present capacity, formation, and implementation."
+claim_keys = ["eastern-permanent-diaconate-restoration"]
+verified_on = "2026-07-24"
+source_fingerprint = "sha256:fd4621fbd2431635586077bee9f365056741890be8b737f6e78a598f13e6138e"

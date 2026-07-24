@@ -78,3 +78,26 @@ Final-typography production review completed on 2026-07-19: a settled two-pass b
 ## Compact-rights-colophon production review — 2026-07-19
 
 The settled 31-page PDF, SHA-256 `178ef4c9a60a472bd2fdb6428182652ac35d4f655bdf6c099e48f553112224d7`, is the exact repository-reviewed build snapshot. The final log was warning-free; generation metadata, `qpdf` structure, PDF title/page metadata, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed their gates. Repository production review inspected every physical page; the compact final-page reuse-and-rights colophon is readable, unclipped, non-overlapping, remains with terminal content, and creates no rights-only spill page. The installed PDF is byte-identical to this reviewed build. This reviewed build supersedes every earlier production snapshot. This exact current snapshot has release-specific distribution clearance under the 20 July 2026 dated rights supplement. That operational decision supplies no independent review or ecclesiastical approval.
+
+## *Orientalium Ecclesiarum* source-family production review — 2026-07-24
+
+The exact English, Latin, and AAS 57 witnesses for *Orientalium Ecclesiarum*
+were normalized and rebound after claim-level review. The historical account
+now distinguishes the Decree's protection of Eastern rite and way of life in
+article 6 from *Presbyterorum ordinis* 16's explicit honor for married
+presbyters. The permanent-diaconate discussion now states article 17's exact
+boundary: it desires restoration of the permanent diaconate, but its express
+legislative clause concerns the subdiaconate and minor orders; CCEO 760's
+common-law capacity does not by itself prove current Church-specific
+implementation.
+
+A settled build produced the current 31-page PDF, SHA-256
+`de073a0ab275159cfe4065105c432781b2d9bcb33c5394a22dfe103c3908561d`.
+The final log contained no fatal error, unresolved reference, overflow,
+underflow, rerun, or layout warning. Generation metadata, `qpdf` structure,
+Letter page size, PDF title, embedded and subsetted fonts with Unicode maps,
+and nonempty text extraction passed. Review rasters were generated through
+`scripts/pdf-review`; every rendered page was visually inspected, including
+the corrected historical and Eastern-law pages and the terminal provenance
+material. The installed PDF is byte-identical to the reviewed build. No prior
+exact-byte release clearance attaches to these changed bytes.

@@ -30,7 +30,7 @@ As-of date: 2026-07-15. Official Latin controls. “Result” is a general educa
 | 373 | Two states | Celibacy for kingdom is esteemed; married clerical state is honored as sanctioned by primitive and Eastern practice. | Neither is an individual dispensation from the other. |
 | 374–375 | Chastity/family | Celibate and married clergy owe chastity; married clergy model marriage and child education. | Particular law provides means. |
 | 758 §3 | Married candidates | Admission governed by own Church’s particular law or special Apostolic norms. | Common-law recognition is not current implementation. |
-| 760 §2 | Stable deacon | Expressly contemplates a deacon not destined for priesthood. | Each Church decides restoration and formation. |
+| 760 §2 | Stable deacon | Expressly contemplates a deacon not destined for priesthood. | Common-law capacity does not establish restoration, formation, or actual implementation; applicable particular and formation law must be checked. |
 | 769 §1 no. 2 | Wife consent | Married candidate supplies marriage certificate and wife’s written consent. | Other documents and suitability still required. |
 | 795–796 | Dispensation | Apostolic See ordinarily reserves dispensation from orders impediment, with narrow danger-of-death provision involving deacons. | Exact person, order, and danger-of-death conditions control. |
 | 804 | Marriage impediment | Person in sacred orders invalidly attempts marriage. | No general postordination marriage right exists. |

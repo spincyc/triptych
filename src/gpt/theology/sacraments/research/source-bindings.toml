@@ -214,3 +214,27 @@ loci = ["2-6"]
 role = "bibliographic"
 states = ["cataloged"]
 context = "The reader bibliography identifies this priestly-ministry range, but the treatise's existing research record does not map a sacramental claim to it. The central passage remains available for later review without promoting thematic overlap into publication-level inspection or verification, and no inherited PO binding passes to the at-a-glance companion or ritual-guide consumers."
+
+[[bindings]]
+source_id = "passage.second-vatican-council.orientalium-ecclesiarum.english-vatican-web-2026-07-24.2-6"
+loci = ["2-6"]
+role = "bibliographic"
+states = ["cataloged"]
+context = "The consolidated reader bibliography identifies this broad Eastern-Churches range. No treatise claim is mapped to articles 2-6 in the local scope record, so thematic overlap is not promoted into publication-level inspection or verification."
+
+[[bindings]]
+source_id = "passage.second-vatican-council.orientalium-ecclesiarum.english-vatican-web-2026-07-24.12-18"
+loci = ["12-18"]
+role = "bibliographic"
+states = ["cataloged"]
+context = "The consolidated reader bibliography identifies this broad sacramental-discipline range. Articles 12-14 are separately claim-mapped and verified below; articles 15-18 remain bibliography context for this publication."
+
+[[bindings]]
+source_id = "passage.second-vatican-council.orientalium-ecclesiarum.english-vatican-web-2026-07-24.12-14"
+loci = ["12-14"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official English articles were checked against the treatise's Confirmation treatment and shared initiation table. They support the bounded historical-conciliar claims that Vatican II confirmed ancient Eastern sacramental discipline and desired restored presbyteral Chrismation and its validity. Current ordinary ministry, joined administration, liceity, infant-Eucharist details, and local timetables remain controlled by the CCEO, the 1996 Instruction, liturgical books, and applicable particular or local sources."
+claim_keys = ["confirmation-eastern-presbyteral-ministry", "eastern-initiation-discipline"]
+verified_on = "2026-07-24"
+source_fingerprint = "sha256:af14155bed7b34d496ca7a519e61e9d504e56c22973ccae45ed0c4a5ac9e0ddb"

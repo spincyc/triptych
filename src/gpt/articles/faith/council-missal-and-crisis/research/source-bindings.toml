@@ -43,8 +43,8 @@ loci = ["complete"]
 role = "official-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The complete Latin Notificationes was checked as the General Secretary's communication at the 123rd General Congregation on 16 November 1964: it answers the qualification question, reproduces a distinct Doctrinal Commission declaration dated 6 March 1964, and introduces the separately titled preliminary note."
-verified_on = "2026-07-23"
-source_fingerprint = "sha256:3845e34becfd358ed4683594a13f796e079713b2954cc8ca43b5a514bb0dbcf3"
+verified_on = "2026-07-24"
+source_fingerprint = "sha256:9fc01a0be04e495e19c85737fc3a79546ebd96bd3c382d08481e5c58e576d393"
 
 [[bindings]]
 source_id = "passage.second-vatican-council.doctrinal-commission-declaration-1964-03-06.latin-aas-57-1965.complete"
@@ -52,8 +52,8 @@ loci = ["complete"]
 role = "official-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The exact embedded two-paragraph Doctrinal Commission declaration of 6 March 1964 was checked for the article's rule distinguishing matters openly declared definitive from the Council's remaining teaching, which is to be received according to the Council's manifested mind. Its date and authorship are not conflated with the General Secretary's 16 November Notificationes."
-verified_on = "2026-07-23"
-source_fingerprint = "sha256:0b40c999e0d52c18630f8024237980aef361654e76ba350d4aaa1175d9ecd47a"
+verified_on = "2026-07-24"
+source_fingerprint = "sha256:f0364f59a896b78dab72a6b86adf4c679c57218923c10b07025a22f47be4720f"
 
 [[bindings]]
 source_id = "passage.second-vatican-council.nota-explicativa-praevia.latin-aas-57-1965.complete"
@@ -61,8 +61,8 @@ loci = ["complete"]
 role = "official-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The complete Latin Nota explicativa praevia was checked for its interpretation of Lumen gentium chapter III: the episcopal college is not a body of equals delegating power to a president, exists only with its head, and acts collegially only with the head's consent. It remains a separately titled constituent rather than part of the 6 March declaration."
-verified_on = "2026-07-23"
-source_fingerprint = "sha256:47c80d18dba532b916e7f924af0bb8b71ad84c9552e18922808ab005b12a679d"
+verified_on = "2026-07-24"
+source_fingerprint = "sha256:b5099689a5203e98bd8658137f2ce3af4b95d97e6be350440fca9855d1979a36"
 
 [[bindings]]
 source_id = "artifact.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.vatican-html-3cfc290b"
@@ -213,3 +213,9 @@ source_id = "work.second-vatican-council.presbyterorum-ordinis"
 role = "context"
 states = ["cataloged"]
 context = "The work identity supports the article's sixteen-document inventory row for Presbyterorum ordinis by title, decree genre, promulgation date, and priestly subject. This work-level metadata binding claims no inspection of the numbered body, does not represent complete-body evidence, and does not close the article's separate all-sixteen-documents negative claim."
+
+[[bindings]]
+source_id = "work.second-vatican-council.orientalium-ecclesiarum"
+role = "context"
+states = ["cataloged"]
+context = "The work identity supports the article's third-session chronology and sixteen-document inventory by title, decree genre, promulgation date, and Eastern-Catholic subject. This work-level metadata binding claims no inspection of the numbered body and does not close the article's separate all-sixteen-documents negative claim."

@@ -47,7 +47,7 @@
 ## Eastern stable diaconate
 
 - CCEO 760 §2 recognizes a deacon not destined to presbyterate.
-- Orientalium Ecclesiarum 17 encourages restoration where it fell into disuse and leaves regulation to each Church.
+- *Orientalium Ecclesiarum* 17 encourages restoration where the permanent diaconate fell into disuse. Its legislative-authority clause governs the subdiaconate and minor orders and their rights and obligations, not regulation of the permanent diaconate.
 - CCEO does not enact a universal perfect-conjugal-continence rule for married Eastern clergy.
 - The 24-Church implementation record is in churches-sui-iuris-matrix.md. Capacity must not be confused with an active program.
 
