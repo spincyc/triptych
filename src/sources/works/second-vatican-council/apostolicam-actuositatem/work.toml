@@ -1,0 +1,11 @@
+schema = 1
+record_type = "work"
+id = "work.second-vatican-council.apostolicam-actuositatem"
+title = "Apostolicam actuositatem"
+responsible = "Second Vatican Council"
+work_type = "decree"
+alternate_titles = ["Decretum de apostolatu laicorum", "Decree on the Apostolate of the Laity"]
+languages = ["la"]
+locus_pattern = '(?:[1-9]|[12][0-9]|3[0-3])(?:-(?:[1-9]|[12][0-9]|3[0-3]))?'
+description = "The Second Vatican Council's Decree on the Apostolate of the Laity, solemnly promulgated by Pope Paul VI on 18 November 1965. It comprises numbered articles 1-33, including its proem and concluding exhortation; edition records distinguish the Latin Acta witness from dated Vatican web delivery states and translations."
+relations = ["work.holy-see.acta-apostolicae-sedis"]
