@@ -431,3 +431,13 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The complete official Latin constitution was checked for the article's synthesis of Petrine institution and perpetuity, universal primacy, preservation of bishops' ordinary and immediate jurisdiction, and conditioned ex cathedra infallibility."
 verified_on = "2026-07-24"
 source_fingerprint = "sha256:7a35a01851492752ef57647eb311d777b8e1e0262c88e3028411460b4cf80016"
+
+[[bindings]]
+source_id = "passage.pius-ix.postquam-dei-munere.latin-ass-6-1870-1871.complete-text"
+loci = ["complete-text"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official Latin constituent was checked for Pius IX's suspension of Vatican I until a more opportune time to be declared by the Holy See, the act's 20 October 1870 date, and its stated institutional circumstances."
+claim_keys = ["vatican-i-suspension"]
+verified_on = "2026-07-24"
+source_fingerprint = "sha256:61139ecbe9cac26fae785cf825fe74f522d36c3e6952b1dff30bf651446f5fe4"
