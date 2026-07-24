@@ -901,6 +901,26 @@ work-specific research records remains operative. This approval does
 not authorize a push, deployment, tag, history rewrite, public
 release attachment, announcement, or promotion.
 
+## Supplemental exact-current-snapshot clearance — 24 July 2026
+
+At `2026-07-24T18:37:45-05:00` in `America/Chicago`, the maintainer instructed:
+“Correct the published license scope to cover every provider branch and the provider-neutral common tree, and update the MIT file list for the hoisted preamble and the Claude-authored format files.” This is recorded as perpetual worldwide
+exact-current-snapshot distribution authorization under the existing
+represented authority in this record. The sole condition remains
+`no-project-initiated-promotion`.
+
+The approval binds all 122 exact installed release
+PDF snapshots and every exact recognized artifact-affecting
+reader-site input inventoried below at their current bytes. It is an
+exact-byte distribution clearance only: it does not represent
+completion of any outstanding work-specific rights, source,
+collation, specialist, or ecclesiastical review, and no imprimatur,
+nihil obstat, or ecclesiastical approval is claimed. Every
+limitation in the prior supplements, release README, catalogs, and
+work-specific research records remains operative. This approval does
+not authorize a push, deployment, tag, history rewrite, public
+release attachment, announcement, or promotion.
+
 ## Exact approved snapshots
 
 | Publication ID | SHA-256 |
@@ -1034,7 +1054,7 @@ release attachment, announcement, or promotion.
 | --- | --- |
 | `CONTRIBUTING.md` | `1bb9ef13c4f754f9a8bede73f0afd95c2266173726bcfbd709017dc342272d5e` |
 | `LIBRARY.md` | `a45aae3359ac20ac3a4cf756007a08df9109d06661d5fc261798daf38ec5b881` |
-| `LICENSE` | `29cb5f2c6d250023542c5e1d88de1ef2b4ae3b4bd41222cbd299b14f4e221aca` |
+| `LICENSE` | `5ac6501c8ad1ead4885d7691d97f2240e94934ba19ac548c259718e85f3e2cad` |
 | `LICENSES/CC-BY-4.0.txt` | `d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744` |
 | `LICENSES/MIT.txt` | `afd9c125b68a36b60c78cf63656f4cea2613fadce57e95ebabacebff8817ef60` |
 | `README.md` | `5007509616e98056d397b315247e07307b7cc0f8b715c49847dcef45dadfcb2b` |
