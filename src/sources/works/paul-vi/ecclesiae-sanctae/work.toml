@@ -1,0 +1,11 @@
+schema = 1
+record_type = "work"
+id = "work.paul-vi.ecclesiae-sanctae"
+title = "Ecclesiae Sanctae"
+responsible = "Pope Paul VI"
+work_type = "apostolic-letter-motu-proprio"
+alternate_titles = ["Normae ad quaedam exsequenda SS. Concilii Vaticani II Decreta", "Norms for implementing four decrees of the Second Vatican Council"]
+languages = ["la"]
+locus_pattern = '(?:[IV]+(?:\.(?:I{1,3}|IV|V|VI{0,3}))?\.(?:[1-9]|[1-9][0-9])(?:-(?:[1-9]|[1-9][0-9]))?)'
+description = "Paul VI's apostolic letter issued motu proprio on 6 August 1966 establishing experimental norms to implement Christus Dominus, Presbyterorum ordinis, Perfectae caritatis, and Ad gentes. Its four main sections retain distinct internal numbering."
+relations = ["work.holy-see.acta-apostolicae-sedis", "work.second-vatican-council.perfectae-caritatis", "work.second-vatican-council.christus-dominus", "work.second-vatican-council.ad-gentes", "work.second-vatican-council.presbyterorum-ordinis"]
