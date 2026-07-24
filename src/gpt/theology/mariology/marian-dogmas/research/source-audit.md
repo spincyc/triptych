@@ -11,6 +11,14 @@ All online sources were last checked 2026-07-13 unless a more specific status is
 - **S — source-grounded synthesis:** editorial synthesis drawn from multiple identified sources; not attributed verbatim to any one authority.
 - **L — bounded lead:** potentially useful locus retained with an explicit verification limit; it does not carry a consequential claim requiring a critical reading.
 
+## Revelation, development, and dogmatic proposal
+
+| Claim | Source and exact locus | Status | Use and boundary |
+| --- | --- | --- | --- |
+| God's self-Revelation is fulfilled in Christ; no new public revelation is expected before his glorious manifestation. | Vatican II, *Dei Verbum* 2–4. | O | Controls the finality of the apostolic deposit and the boundary on apparition claims. It does not deny growth in the Church's understanding of what was given. |
+| Apostolic Tradition develops in the Church through contemplation and study, spiritual understanding, and episcopal preaching under the Holy Spirit. | Vatican II, *Dei Verbum* 8. | O | Controls the publication's account of doctrinal development. Development is neither a new public revelation nor self-authentication of every later theological proposal. |
+| The teaching office serves the Word of God, listens to it, guards it, and explains it; Scripture, Tradition, and the teaching office remain inseparably ordered. | Vatican II, *Dei Verbum* 10. | O | Controls the claim that dogmatic proposal identifies and binds the faithful to truth already given in the apostolic deposit rather than manufacturing a new reality. |
+
 ## Exact dogmatic objects
 
 | Claim | Source and exact locus | Status | Use and boundary |

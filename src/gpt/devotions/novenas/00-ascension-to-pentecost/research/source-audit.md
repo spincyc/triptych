@@ -27,6 +27,10 @@
 | A collect's historical liturgical status does not approve this novena or establish a present liturgical use. | The identified 1962 formularies; *Directory on Popular Piety* 155; novena profile's approval boundary. | Authority-bounded editorial use. Each collect is reproduced devotionally outside its source formulary; the competent current books and authority remain controlling. |
 | Current discipline grants a partial indulgence for devout participation in a publicly conducted novena and separately treats solemn public *Veni Creator* on Pentecost. | Fourth *Enchiridion Indulgentiarum*, concessions 22 and 26. | Current universal Latin indulgence text checked 2026-07-13. General norms and exact circumstances still govern. |
 
+## Conciliar bibliography context
+
+The rendered bibliography retains *Dei Verbum* 7–10 as broad context for apostolic transmission, Scripture, Tradition, and the teaching office. No claim-level row in the primary matrix depends uniquely upon that range, so its central source-library binding is deliberately catalog-only rather than represented as a verified claim control.
+
 ## Prayer-text checks
 
 - Every source-specific prayer card was factored without verbal revision into a canonical file under `prayers/`; the full guide and its *Daily Prayer Book* import those same files, and their common formulas remain imported from `shared/common-prayers.tex`. The companion therefore has no independent prayer-text layer to drift.
@@ -66,5 +70,6 @@
 - Papal, conciliar, catechetical, patristic, and scholarly sources are paraphrased with exact loci.
 - Internal source, theology, prayer-completeness, calendar, hymn-transcription, and copyright-status checks were completed before publication. The 2026-07-14 historical-English revision replaced every prose English vocal-prayer body with exact wording from the 1925 witness, checked all source loci, mechanically completed its explicit conclusion abbreviations from its own formulas, and reconciled approval and rights records.
 - The internal ordering key was removed from reader-facing source, public catalog display, PDF text, and PDF metadata while remaining available in internal audit and ordering records.
-- The companion owns no prayer wording, translation, or substantive source judgment; it imports the revised canonical fragments. Rendered equivalence was re-established for the current full guide and companion, and their final artifact hashes are recorded in `scope.md`.
+- The companion owns no prayer wording, translation, or substantive source judgment; it imports the revised canonical fragments. Rendered equivalence was re-established for the current full guide and companion. Earlier artifact history is recorded in `scope.md`; the current production details are recorded below.
+- Dei Verbum source-reuse production review completed on 23 July 2026: two settled `pdflatex` passes produced a 27-page full guide, SHA-256 `bacd86f6427e07c4ceda205789871dd4b44fd11e3d0905aa7738a55e3b559a1e`, and rebuilt its unchanged 11-page companion, SHA-256 `675ae37d807d9ff0fadf4c1d5951480018f0ed6b56773b56493fd9b9c363c1ce`. Both final logs are warning-free, `qpdf --check` found no error in the changed full guide, all 38 full-resolution page rasters were individually inspected without finding a publication defect, the installed full guide matches its reviewed build byte-for-byte, and the unchanged companion remains byte-identical to its installed PDF.
 - Independent human historical, liturgical, theological, patristic, Latin, historical-English transcription, pastoral, and ecclesiastical review remains outstanding.

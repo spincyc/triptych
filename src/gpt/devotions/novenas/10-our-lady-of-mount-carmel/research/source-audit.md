@@ -29,6 +29,10 @@
 | The guide's 7–15 July reckoning and options after a missed day are private pastoral choices, not liturgical or canonical rules. | Arithmetic relation to 16 July; novena profile; Directory 189. | Transparent editorial construction. No legal or superstitious consequence is attached. |
 | No indulgence is claimed for completing this repository-authored form. | Absence of an identified grant attaching an indulgence to this text; universal indulgence discipline remains external. | Deliberate negative boundary, current through 2026-07-13. |
 
+## Conciliar bibliography context
+
+The rendered bibliography retains *Dei Verbum* 8–10 and 21–26 as broad context for Tradition, the deposit and teaching office, Scripture in the Church, theology, and devotional reading. No distinct claim-level row depends uniquely upon that range, so its central source-library binding is deliberately catalog-only rather than represented as verified claim support.
+
 ## Prayer-text checks
 
 - Every source-specific prayer card was factored without verbal revision into a canonical file under `prayers/`; the full guide and its *Daily Prayer Book* import those same files, and their common formulas remain imported from `shared/common-prayers.tex`. The companion therefore has no independent prayer-text layer to drift.
@@ -68,5 +72,6 @@
 - The expanded complete-*Flos Carmeli* translation search is recorded independently from the prayer inventory so that negative historical results, modern provenance leads, variant relationships, the selection decision, and the bounded permission record are not collapsed into a generic claim.
 - Internal source, theology, tradition-status, prayer-completeness, translation, calendar, copyright, and nine-day differentiation checks were completed before first build.
 - The internal ordering key was removed from reader-facing source, public catalog display, PDF text, and PDF metadata while remaining available in internal audit and ordering records.
-- The recitation companion imports the same canonical prayer fragments as the full guide and owns no prayer wording, translation, tradition judgment, or substantive source claim. Rendered-source comparison was renewed for the current revision; final artifact details are recorded in `scope.md`.
+- The recitation companion imports the same canonical prayer fragments as the full guide and owns no prayer wording, translation, tradition judgment, or substantive source claim. Rendered-source comparison was renewed for the current revision. Earlier artifact history is recorded in `scope.md`; the current production details are recorded below.
+- Dei Verbum source-reuse production review completed on 23 July 2026: two settled `pdflatex` passes produced a 29-page full guide, SHA-256 `2ae6e63c1363f7340a49f060769cb3a79fdd520d84a936a15406ed9d6395f812`, and rebuilt its unchanged 12-page companion, SHA-256 `d6eaf8220ff47fe26618c9dc4d3b0ae3e18e9770585514b9a55874f3c2d91c2c`. Both final logs are warning-free, `qpdf --check` found no error in the changed full guide, all 41 full-resolution page rasters were individually inspected without finding a publication defect, the installed full guide matches its reviewed build byte-for-byte, and the unchanged companion remains byte-identical to its installed PDF.
 - Independent human Carmelite, historical, liturgical, Mariological, sacramental-theological, linguistic, hymnological, pastoral, and ecclesiastical review remains outstanding.

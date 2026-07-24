@@ -1,4 +1,4 @@
-schema = 1
+schema = 2
 record_type = "bindings"
 document = "theology/mariology/la-salette"
 
@@ -33,3 +33,21 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The checked official English paragraphs control the study's language of reconciliation, tears, reparation, and intercession: Mary neither rivals Christ nor supplies an independent source of grace."
 verified_on = "2026-07-23"
 source_fingerprint = "sha256:319ecc3fadbe4a72b333648b084c117e36a4e1e26e341426a95b89c0f70073ba"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.dei-verbum.english-vatican-web-2026-07-23.2-4"
+loci = ["2-4"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official English articles were checked for the La Salette study's work-wide boundary that Revelation reaches its fullness in Christ and no new public revelation is expected before his return. The later-event judgment and assent category remain controlled by their own competent sources."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:6f292e1fa2c049d8266f998a7073012f950ddb8ec9992b64c9c00cf4d46fba64"
+
+[[bindings]]
+source_id = "passage.holy-see.index-of-prohibited-books-notification-1966.latin-aas-58-1966.complete"
+loci = ["complete"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete one-page official Latin notification was checked for the monograph's exact distinction: the Index retained moral force as an appeal to conscience under natural law but no longer had force as ecclesiastical law with attached censures. It does not authenticate a previously prohibited work or settle every separate earlier non-penal command."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:14e4802b8029241bceaee8d11648b002f12915de87870e677fa996e858b7416f"
