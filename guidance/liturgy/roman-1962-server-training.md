@@ -404,6 +404,16 @@ The child and trainer pages are monochrome letter-size publications with stable
 type sizes and a typeface whose capital `I`, `J`, and `L` remain clearly
 distinguishable.
 
+Their shared sanctuary diagrams use a restrained monochrome instructional
+illustration language rather than rough schematic marks or decorative
+imagery. Altar architecture, steps, figures, carried objects, and movement
+paths have distinct and consistent line treatments. Keep role labels in fixed
+high-contrast capsules, identify the three levels with stable numbered
+markers, and make standing and kneeling recognizable from the figure
+silhouette as well as the adjacent words. Object moves and walking routes must
+remain visually secondary to the final positions they explain, and crossing
+paths or labels may not obscure an actor, object, level, or destination.
+
 After a compact title and contents, each sung full guide retains a one-page
 trainer start sheet. It tells the trainer which publication to print, what the
 server should learn first, how to run a short practice, and where an assigned

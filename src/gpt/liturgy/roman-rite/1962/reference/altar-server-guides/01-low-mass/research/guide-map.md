@@ -30,7 +30,8 @@
    then the complete *Orate, fratres* cue and *Suscipiat* response.
 7. Pages 23--25, `Canon`: Preface dialogue, bell plan, and elevations.
 8. Pages 26--29, `Communion`: responses, faithful-Communion branch,
-   ablutions, and the Missal-and-veil return.
+   Communion-plate purification and return, ablutions, and the
+   Second Acolyte's Missal return while the priest prepares the chalice.
 9. Pages 30--32, `Ending`: Postcommunion and dismissal, blessing and Last
    Gospel, then the final route and recessional.
 10. Page 33: six-stage quick route, scope and sources, and generation
@@ -47,17 +48,25 @@ positions, step levels, objects, or role traffic materially change.
 
 First begins on the priest's right, the Epistle side and picture-right in the
 front-view diagrams. First leads the shared response pace and owns the bell,
-wine, towel, and chalice veil. Second begins on the priest's left, the Gospel
-side and picture-left; Second owns the Missal, water, bowl, and Communion
-plate. Both acolytes give every ordinary core verbal response together. The
-Communion diagram names its deliberate orientation exception: when the priest
-faces the nave, his right appears picture-left.
+wine, towel, the Epistle-to-Gospel Missal move, and the Communion plate.
+Second begins on the priest's left, the Gospel side and picture-left; Second
+owns water, bowl, and the Gospel-to-Epistle Missal return. Neither server
+transfers the chalice veil or chalice; the priest keeps the loose veil at a
+declared altar resting place and recovers it after the ablutions. Both
+acolytes give every ordinary core verbal response together. The Communion
+diagram names its deliberate orientation exception: when the priest faces the
+nave, his right appears picture-left.
 
 The Missal begins on the Epistle side, moves to the Gospel side after the final
-lesson or Epistle, and returns straight to the Epistle side after the
-ablutions. The model uses the sanctuary floor for the prayers at the foot,
-the first step for ordinary kneeling places, the second step for cruet and
-Lavabo service, and the predella for the elevation assistance.
+lesson or Epistle in First's hands, and returns straight to the Epistle side
+after the ablutions in Second's hands. First carries the Communion plate,
+leaves it at the altar for the priest's purification, and returns it to the
+credence after the final wine and water. The priest's paten and reassembled
+chalice never enter the server plate route; the priest himself recovers the
+loose veil, covers and centers the chalice, and leaves it at the altar until
+he carries it out. The model uses the sanctuary floor for the prayers at the
+foot, the first step for ordinary kneeling places, the second step for cruet
+and Lavabo service, and the predella for elevation assistance.
 
 Required reverences are named in the words but genuflection is not pictured.
 The tested prototype did not distinguish that pose reliably from standing or

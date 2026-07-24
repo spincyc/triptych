@@ -25,13 +25,14 @@ back. The full guide owns the printing, actor, roster, branch, and safety keys
 and points to the paired downloads in the same catalog row; it does not embed
 these faces.
 
-The final companion is twelve physical pages. Response fronts are pages 1, 3,
-5, and 7; their mirrored backs are pages 2, 4, 6, and 8. Action fronts are
-pages 9 and 11; their mirrored backs are pages 10 and 12. Print US letter,
-portrait, two-sided, actual size, flipped on the long edge, and cut on the box
-borders. Final review confirmed page parity, row mirroring, border alignment,
-legibility, and installed identity; the production manifest records the exact
-artifact.
+The current source-built companion is twelve physical pages. Response fronts
+are pages 1, 3, 5, and 7; their mirrored backs are pages 2, 4, 6, and 8.
+Action fronts are pages 9 and 11; their mirrored backs are pages 10 and 12.
+Print US letter, portrait, two-sided, actual size, flipped on the long edge,
+and cut on the box borders. Final rendered-screen review confirmed page parity,
+border alignment, legibility, and safe containment of the R08B continuation
+note. This corrected PDF is an uninstalled candidate; the production manifest
+records it separately from the installed predecessor artifact.
 
 This leaf is not a self-contained trainer. Use it with the paired full guide's
 keys; conditions that affect an individual response or action remain on the

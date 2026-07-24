@@ -46,18 +46,24 @@ steps remain under responsible adult supervision.
 
 The trainer preserves the source hierarchy: the identified 1962 Missal
 controls text, order, omissions, and prescribed actions; the declared
-Fortescue--O'Connell-family model supplies a coherent two-server allocation
-where the Missal does not; local decisions are named rather than presented as
-universal rubrics.
+Fortescue--O'Connell-family model supplies a documented two-server synthesis
+where the Missal does not and the manuals disagree; local decisions are named
+rather than presented as universal rubrics.
 
 ## Model and branch boundary
 
-First begins at the priest's right and owns the bell, wine, towel, and chalice
-veil. Second begins at the priest's left and owns the Missal, water, bowl, and
-Communion plate. Both give the ordinary verbal responses together. The
-Missal's Epistle--Gospel--Epistle movement, three-level model sanctuary, core
-branches, mandatory no-second-Confiteor correction, diagram policy, and
-exclusions are identical to the child guide map.
+First begins at the priest's right and owns the bell, wine, towel,
+Epistle-to-Gospel Missal move, and continuous Communion-plate route. Second
+begins at the priest's left and owns water, bowl, and the Gospel-to-Epistle
+Missal return. Both give the ordinary verbal responses together. First leaves
+the used Communion plate at the altar for the priest's purification and
+returns it to the credence after the final wine and water. The priest's paten
+and prepared chalice remain outside that route; the priest keeps the loose
+veil at a declared altar resting place, then recovers it as he reassembles,
+covers, centers, and carries the chalice. Neither server transfers the chalice
+or veil. The Missal's Epistle--Gospel--Epistle movement, three-level model
+sanctuary, core branches, mandatory no-second-Confiteor correction, diagram
+policy, and exclusions are identical to the child guide map.
 
 Series-wide source, response, pronunciation, presentation, ceremonial,
 flash-card, rights, and production records are owned by the non-publishable
