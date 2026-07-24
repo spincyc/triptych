@@ -42,6 +42,7 @@ from .identity import (
     LinkedWorktreeIdentity,
     Repository,
     authenticate_launcher as _authenticate_launcher,
+    exact_single_line as _exact_single_line,
 )
 from .locks import (
     RegisteredLockDescriptor,
@@ -426,16 +427,13 @@ def safe_regular_file_bytes(path: Path, *, label: str) -> bytes:
 
 
 def exact_single_line(path: Path, *, label: str) -> str:
-    data = safe_regular_file_bytes(path, label=label)
-    if not data.endswith(b"\n") or data.count(b"\n") != 1 or b"\r" in data:
-        raise LauncherError(f"{label} does not contain one exact line")
-    try:
-        value = data[:-1].decode("utf-8")
-    except UnicodeDecodeError as exc:
-        raise LauncherError(f"{label} is not valid UTF-8") from exc
-    if not value or "\0" in value:
-        raise LauncherError(f"{label} has an invalid path")
-    return value
+    return _exact_single_line(
+        path,
+        label=label,
+        file_reader=lambda: safe_regular_file_bytes,
+        decode_error_type=lambda: UnicodeDecodeError,
+        error_type=lambda: LauncherError,
+    )
 
 
 def exact_pointer_path(raw_value: str, *, relative_to: Path, label: str) -> Path:

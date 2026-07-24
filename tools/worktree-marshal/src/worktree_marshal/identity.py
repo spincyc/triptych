@@ -1,4 +1,4 @@
-"""Runtime identity records and launcher-entry authentication."""
+"""Runtime identity records and read-only authentication policy."""
 
 from __future__ import annotations
 
@@ -66,3 +66,29 @@ def authenticate_launcher(
         device=metadata.st_dev,
         inode=metadata.st_ino,
     )
+
+
+def exact_single_line(
+    path: Path,
+    *,
+    label: str,
+    file_reader: Callable[[], Callable[..., bytes]],
+    decode_error_type: Callable[[], type[BaseException]],
+    error_type: Callable[[], type[BaseException]],
+) -> str:
+    """Read and validate one exact Git-administration path line."""
+
+    data = file_reader()(path, label=label)
+    if (
+        not data.endswith(b"\n")
+        or data.count(b"\n") != 1
+        or b"\r" in data
+    ):
+        raise error_type()(f"{label} does not contain one exact line")
+    try:
+        value = data[:-1].decode("utf-8")
+    except decode_error_type() as exc:
+        raise error_type()(f"{label} is not valid UTF-8") from exc
+    if not value or "\0" in value:
+        raise error_type()(f"{label} has an invalid path")
+    return value

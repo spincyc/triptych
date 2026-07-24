@@ -206,6 +206,988 @@ class IdentityModelTests(unittest.TestCase):
             inspect.Parameter.empty,
         )
 
+    def test_exact_single_line_kernel_and_wrapper_signatures(self) -> None:
+        self.assertIs(
+            self.engine._exact_single_line,
+            self.identity.exact_single_line,
+        )
+        parameters = inspect.signature(
+            self.identity.exact_single_line
+        ).parameters
+        self.assertEqual(
+            tuple(parameters),
+            (
+                "path",
+                "label",
+                "file_reader",
+                "decode_error_type",
+                "error_type",
+            ),
+        )
+        self.assertIs(
+            parameters["path"].kind,
+            inspect.Parameter.POSITIONAL_OR_KEYWORD,
+        )
+        for name in tuple(parameters)[1:]:
+            self.assertIs(
+                parameters[name].kind,
+                inspect.Parameter.KEYWORD_ONLY,
+            )
+        for parameter in parameters.values():
+            self.assertIs(parameter.default, inspect.Parameter.empty)
+
+        self.assertIsNot(
+            self.engine.exact_single_line,
+            self.identity.exact_single_line,
+        )
+        wrapper_parameters = inspect.signature(
+            self.engine.exact_single_line
+        ).parameters
+        self.assertEqual(tuple(wrapper_parameters), ("path", "label"))
+        self.assertIs(
+            wrapper_parameters["path"].kind,
+            inspect.Parameter.POSITIONAL_OR_KEYWORD,
+        )
+        self.assertIs(
+            wrapper_parameters["label"].kind,
+            inspect.Parameter.KEYWORD_ONLY,
+        )
+        for parameter in wrapper_parameters.values():
+            self.assertIs(parameter.default, inspect.Parameter.empty)
+
+    def test_exact_single_line_kernel_preserves_success_order_and_values(
+        self,
+    ) -> None:
+        events: list[tuple[str, object]] = []
+        path = object()
+
+        class TruthValue:
+            def __bool__(truth_self) -> bool:
+                events.append(("endswith-truth", None))
+                return True
+
+        class CountValue:
+            def __ne__(count_self, other: object) -> bool:
+                events.append(("count-compare", other))
+                return False
+
+        class DecodedValue:
+            def __bool__(value_self) -> bool:
+                events.append(("value-truth", None))
+                return True
+
+            def __contains__(value_self, needle: object) -> bool:
+                events.append(("value-contains", needle))
+                return False
+
+        decoded = DecodedValue()
+
+        class EncodedValue:
+            def decode(encoded_self, encoding: str) -> object:
+                events.append(("decode", encoding))
+                return decoded
+
+        class Data:
+            def endswith(data_self, suffix: object) -> object:
+                events.append(("endswith", suffix))
+                return TruthValue()
+
+            def count(data_self, needle: object) -> object:
+                events.append(("count", needle))
+                return CountValue()
+
+            def __contains__(data_self, needle: object) -> bool:
+                events.append(("data-contains", needle))
+                return False
+
+            def __getitem__(data_self, key: object) -> object:
+                events.append(("slice", key))
+                return EncodedValue()
+
+        data = Data()
+
+        def file_reader() -> object:
+            events.append(("reader-provider", None))
+
+            def read(observed_path: object, *, label: str) -> object:
+                events.append(
+                    ("reader-call", (observed_path, label))
+                )
+                return data
+
+            return read
+
+        decode_error_type = mock.Mock(
+            side_effect=AssertionError(
+                "resolved the decode error type on success"
+            )
+        )
+        error_type = mock.Mock(
+            side_effect=AssertionError(
+                "resolved the launcher error on success"
+            )
+        )
+
+        observed = self.identity.exact_single_line(
+            path,
+            label="the admin file",
+            file_reader=file_reader,
+            decode_error_type=decode_error_type,
+            error_type=error_type,
+        )
+
+        self.assertIs(observed, decoded)
+        self.assertEqual(
+            events,
+            [
+                ("reader-provider", None),
+                ("reader-call", (path, "the admin file")),
+                ("endswith", b"\n"),
+                ("endswith-truth", None),
+                ("count", b"\n"),
+                ("count-compare", 1),
+                ("data-contains", b"\r"),
+                ("slice", slice(None, -1, None)),
+                ("decode", "utf-8"),
+                ("value-truth", None),
+                ("value-contains", "\0"),
+            ],
+        )
+        decode_error_type.assert_not_called()
+        error_type.assert_not_called()
+
+    def test_exact_single_line_kernel_accepts_the_legacy_byte_domain(
+        self,
+    ) -> None:
+        cases = (
+            (b"path\n", "path"),
+            ("café/δ\n".encode(), "café/δ"),
+            (b"../relative path\n", "../relative path"),
+            (b" \t \n", " \t "),
+            (b"\x01\n", "\x01"),
+            ("\u2028\n".encode(), "\u2028"),
+        )
+
+        for data, expected in cases:
+            with self.subTest(data=data):
+                reader = mock.Mock(return_value=data)
+                decode_error_type = mock.Mock(
+                    side_effect=AssertionError(
+                        "resolved decode error for valid UTF-8"
+                    )
+                )
+                error_type = mock.Mock(
+                    side_effect=AssertionError(
+                        "resolved launcher error for valid input"
+                    )
+                )
+
+                observed = self.identity.exact_single_line(
+                    Path("/admin/file"),
+                    label="the admin file",
+                    file_reader=lambda: reader,
+                    decode_error_type=decode_error_type,
+                    error_type=error_type,
+                )
+
+                self.assertEqual(observed, expected)
+                reader.assert_called_once_with(
+                    Path("/admin/file"),
+                    label="the admin file",
+                )
+                decode_error_type.assert_not_called()
+                error_type.assert_not_called()
+
+    def test_exact_single_line_shape_checks_short_circuit_in_order(
+        self,
+    ) -> None:
+        class LineError(RuntimeError):
+            pass
+
+        expected_events = {
+            "terminal-newline": ["endswith"],
+            "newline-count": ["endswith", "count"],
+            "carriage-return": ["endswith", "count", "contains"],
+        }
+
+        for rejection, expected in expected_events.items():
+            with self.subTest(rejection=rejection):
+                events: list[str] = []
+
+                class Data:
+                    def endswith(data_self, suffix: bytes) -> bool:
+                        self.assertEqual(suffix, b"\n")
+                        events.append("endswith")
+                        return rejection != "terminal-newline"
+
+                    def count(data_self, needle: bytes) -> int:
+                        self.assertEqual(needle, b"\n")
+                        events.append("count")
+                        return 2 if rejection == "newline-count" else 1
+
+                    def __contains__(data_self, needle: bytes) -> bool:
+                        self.assertEqual(needle, b"\r")
+                        events.append("contains")
+                        return rejection == "carriage-return"
+
+                    def __getitem__(data_self, key: object) -> object:
+                        raise AssertionError("decoded a malformed line")
+
+                def error_type() -> type[BaseException]:
+                    events.append("error-provider")
+                    return LineError
+
+                decode_error_type = mock.Mock(
+                    side_effect=AssertionError(
+                        "resolved decode error for a malformed line"
+                    )
+                )
+                with self.assertRaises(LineError) as caught:
+                    self.identity.exact_single_line(
+                        Path("/admin/file"),
+                        label="the admin file",
+                        file_reader=lambda: (
+                            lambda path, *, label: Data()
+                        ),
+                        decode_error_type=decode_error_type,
+                        error_type=error_type,
+                    )
+
+                self.assertEqual(
+                    str(caught.exception),
+                    "the admin file does not contain one exact line",
+                )
+                self.assertIsNone(caught.exception.__cause__)
+                self.assertEqual(events, expected + ["error-provider"])
+                decode_error_type.assert_not_called()
+
+    def test_exact_single_line_shape_rejection_precedes_decoding(
+        self,
+    ) -> None:
+        class LineError(RuntimeError):
+            pass
+
+        cases = (
+            b"",
+            b"path",
+            b"path\nextra",
+            b"path\nextra\n",
+            b"\n\n",
+            b"path\r\n",
+            b"pa\rth\n",
+            b"\xff",
+            b"\xff\r\n",
+            b"\xff\n\n",
+        )
+
+        for data in cases:
+            with self.subTest(data=data):
+                decode_error_type = mock.Mock(
+                    side_effect=AssertionError(
+                        "decoded before validating exact line shape"
+                    )
+                )
+                with self.assertRaises(LineError) as caught:
+                    self.identity.exact_single_line(
+                        Path("/admin/file"),
+                        label="the admin file",
+                        file_reader=lambda: (
+                            lambda path, *, label: data
+                        ),
+                        decode_error_type=decode_error_type,
+                        error_type=lambda: LineError,
+                    )
+
+                self.assertEqual(
+                    str(caught.exception),
+                    "the admin file does not contain one exact line",
+                )
+                self.assertIsNone(caught.exception.__cause__)
+                decode_error_type.assert_not_called()
+
+    def test_exact_single_line_chains_decode_errors_from_the_narrow_block(
+        self,
+    ) -> None:
+        class SelectedDecodeError(RuntimeError):
+            pass
+
+        class LineError(RuntimeError):
+            pass
+
+        for stage in ("slice", "decode-attribute", "decode-call"):
+            with self.subTest(wrapped_stage=stage):
+                original = SelectedDecodeError(stage)
+                events: list[str] = []
+
+                class EncodedValue:
+                    @property
+                    def decode(encoded_self) -> object:
+                        events.append("decode-attribute")
+                        if stage == "decode-attribute":
+                            raise original
+
+                        def decode(encoding: str) -> None:
+                            self.assertEqual(encoding, "utf-8")
+                            events.append("decode-call")
+                            if stage == "decode-call":
+                                raise original
+                            raise AssertionError(
+                                "decode unexpectedly succeeded"
+                            )
+
+                        return decode
+
+                class Data:
+                    def endswith(data_self, suffix: bytes) -> bool:
+                        return True
+
+                    def count(data_self, needle: bytes) -> int:
+                        return 1
+
+                    def __contains__(data_self, needle: bytes) -> bool:
+                        return False
+
+                    def __getitem__(data_self, key: object) -> EncodedValue:
+                        events.append("slice")
+                        if stage == "slice":
+                            raise original
+                        return EncodedValue()
+
+                decode_error_type = mock.Mock(
+                    return_value=SelectedDecodeError
+                )
+                error_type = mock.Mock(return_value=LineError)
+                with self.assertRaises(LineError) as caught:
+                    self.identity.exact_single_line(
+                        Path("/admin/file"),
+                        label="the admin file",
+                        file_reader=lambda: (
+                            lambda path, *, label: Data()
+                        ),
+                        decode_error_type=decode_error_type,
+                        error_type=error_type,
+                    )
+
+                self.assertEqual(
+                    str(caught.exception),
+                    "the admin file is not valid UTF-8",
+                )
+                self.assertIs(caught.exception.__cause__, original)
+                self.assertIs(caught.exception.__context__, original)
+                decode_error_type.assert_called_once_with()
+                error_type.assert_called_once_with()
+                self.assertEqual(
+                    events,
+                    {
+                        "slice": ["slice"],
+                        "decode-attribute": [
+                            "slice",
+                            "decode-attribute",
+                        ],
+                        "decode-call": [
+                            "slice",
+                            "decode-attribute",
+                            "decode-call",
+                        ],
+                    }[stage],
+                )
+
+    def test_exact_single_line_rejects_actual_invalid_utf8_with_exact_cause(
+        self,
+    ) -> None:
+        class LineError(RuntimeError):
+            pass
+
+        with self.assertRaises(LineError) as caught:
+            self.identity.exact_single_line(
+                Path("/admin/file"),
+                label="the admin file",
+                file_reader=lambda: (
+                    lambda path, *, label: b"\xff\n"
+                ),
+                decode_error_type=lambda: UnicodeDecodeError,
+                error_type=lambda: LineError,
+            )
+
+        self.assertEqual(
+            str(caught.exception),
+            "the admin file is not valid UTF-8",
+        )
+        self.assertIsInstance(
+            caught.exception.__cause__,
+            UnicodeDecodeError,
+        )
+        self.assertIs(
+            caught.exception.__context__,
+            caught.exception.__cause__,
+        )
+
+    def test_exact_single_line_does_not_translate_nonmatching_decode_errors(
+        self,
+    ) -> None:
+        class SelectedDecodeError(RuntimeError):
+            pass
+
+        for stage in ("slice", "decode-attribute", "decode-call"):
+            with self.subTest(unwrapped_stage=stage):
+                original = LookupError(stage)
+
+                class EncodedValue:
+                    @property
+                    def decode(encoded_self) -> object:
+                        if stage == "decode-attribute":
+                            raise original
+
+                        def decode(encoding: str) -> None:
+                            if stage == "decode-call":
+                                raise original
+                            raise AssertionError(
+                                "decode unexpectedly succeeded"
+                            )
+
+                        return decode
+
+                class Data:
+                    def endswith(data_self, suffix: bytes) -> bool:
+                        return True
+
+                    def count(data_self, needle: bytes) -> int:
+                        return 1
+
+                    def __contains__(data_self, needle: bytes) -> bool:
+                        return False
+
+                    def __getitem__(data_self, key: object) -> EncodedValue:
+                        if stage == "slice":
+                            raise original
+                        return EncodedValue()
+
+                decode_error_type = mock.Mock(
+                    return_value=SelectedDecodeError
+                )
+                error_type = mock.Mock(
+                    side_effect=AssertionError(
+                        "translated a nonmatching decode error"
+                    )
+                )
+                with self.assertRaises(LookupError) as caught:
+                    self.identity.exact_single_line(
+                        Path("/admin/file"),
+                        label="the admin file",
+                        file_reader=lambda: (
+                            lambda path, *, label: Data()
+                        ),
+                        decode_error_type=decode_error_type,
+                        error_type=error_type,
+                    )
+
+                self.assertIs(caught.exception, original)
+                decode_error_type.assert_called_once_with()
+                error_type.assert_not_called()
+
+        original = SelectedDecodeError("decode failed")
+        matcher_failure = RuntimeError("decode matcher failed")
+
+        class FailingData:
+            def endswith(data_self, suffix: bytes) -> bool:
+                return True
+
+            def count(data_self, needle: bytes) -> int:
+                return 1
+
+            def __contains__(data_self, needle: bytes) -> bool:
+                return False
+
+            def __getitem__(data_self, key: object) -> object:
+                raise original
+
+        def broken_decode_error_type() -> type[BaseException]:
+            raise matcher_failure
+
+        blocked_error_type = mock.Mock(
+            side_effect=AssertionError(
+                "translated after decode matcher failure"
+            )
+        )
+        with self.assertRaises(RuntimeError) as matcher_caught:
+            self.identity.exact_single_line(
+                Path("/admin/file"),
+                label="the admin file",
+                file_reader=lambda: (
+                    lambda path, *, label: FailingData()
+                ),
+                decode_error_type=broken_decode_error_type,
+                error_type=blocked_error_type,
+            )
+
+        self.assertIs(matcher_caught.exception, matcher_failure)
+        self.assertIs(matcher_caught.exception.__context__, original)
+        blocked_error_type.assert_not_called()
+
+    def test_exact_single_line_keeps_all_other_failures_outside_decode_catch(
+        self,
+    ) -> None:
+        class SelectedDecodeError(RuntimeError):
+            pass
+
+        stages = (
+            "reader-provider",
+            "reader-call",
+            "endswith",
+            "count",
+            "carriage-contains",
+            "value-truth",
+            "value-contains",
+        )
+
+        for stage in stages:
+            with self.subTest(unwrapped_stage=stage):
+                original = SelectedDecodeError(stage)
+
+                def fail_at(observed: str) -> None:
+                    if stage == observed:
+                        raise original
+
+                class DecodedValue:
+                    def __bool__(value_self) -> bool:
+                        fail_at("value-truth")
+                        return True
+
+                    def __contains__(
+                        value_self,
+                        needle: object,
+                    ) -> bool:
+                        self.assertEqual(needle, "\0")
+                        fail_at("value-contains")
+                        return False
+
+                class EncodedValue:
+                    def decode(
+                        encoded_self,
+                        encoding: str,
+                    ) -> DecodedValue:
+                        self.assertEqual(encoding, "utf-8")
+                        return DecodedValue()
+
+                class Data:
+                    def endswith(data_self, suffix: bytes) -> bool:
+                        self.assertEqual(suffix, b"\n")
+                        fail_at("endswith")
+                        return True
+
+                    def count(data_self, needle: bytes) -> int:
+                        self.assertEqual(needle, b"\n")
+                        fail_at("count")
+                        return 1
+
+                    def __contains__(
+                        data_self,
+                        needle: bytes,
+                    ) -> bool:
+                        self.assertEqual(needle, b"\r")
+                        fail_at("carriage-contains")
+                        return False
+
+                    def __getitem__(
+                        data_self,
+                        key: object,
+                    ) -> EncodedValue:
+                        return EncodedValue()
+
+                def file_reader() -> object:
+                    fail_at("reader-provider")
+
+                    def read(path: object, *, label: str) -> Data:
+                        fail_at("reader-call")
+                        return Data()
+
+                    return read
+
+                decode_error_type = mock.Mock(
+                    return_value=SelectedDecodeError
+                )
+                error_type = mock.Mock(
+                    side_effect=AssertionError(
+                        "translated a failure outside decoding"
+                    )
+                )
+                with self.assertRaises(SelectedDecodeError) as caught:
+                    self.identity.exact_single_line(
+                        Path("/admin/file"),
+                        label="the admin file",
+                        file_reader=file_reader,
+                        decode_error_type=decode_error_type,
+                        error_type=error_type,
+                    )
+
+                self.assertIs(caught.exception, original)
+                decode_error_type.assert_not_called()
+                error_type.assert_not_called()
+
+    def test_exact_single_line_invalid_path_checks_short_circuit_in_order(
+        self,
+    ) -> None:
+        class LineError(RuntimeError):
+            pass
+
+        for rejection in ("empty", "nul"):
+            with self.subTest(rejection=rejection):
+                events: list[str] = []
+
+                class DecodedValue:
+                    def __bool__(value_self) -> bool:
+                        events.append("value-truth")
+                        return rejection != "empty"
+
+                    def __contains__(
+                        value_self,
+                        needle: object,
+                    ) -> bool:
+                        self.assertEqual(needle, "\0")
+                        events.append("value-contains")
+                        return rejection == "nul"
+
+                class EncodedValue:
+                    def decode(
+                        encoded_self,
+                        encoding: str,
+                    ) -> DecodedValue:
+                        return DecodedValue()
+
+                class Data:
+                    def endswith(data_self, suffix: bytes) -> bool:
+                        return True
+
+                    def count(data_self, needle: bytes) -> int:
+                        return 1
+
+                    def __contains__(
+                        data_self,
+                        needle: bytes,
+                    ) -> bool:
+                        return False
+
+                    def __getitem__(
+                        data_self,
+                        key: object,
+                    ) -> EncodedValue:
+                        return EncodedValue()
+
+                def error_type() -> type[BaseException]:
+                    events.append("error-provider")
+                    return LineError
+
+                decode_error_type = mock.Mock(
+                    side_effect=AssertionError(
+                        "resolved decode error after successful decode"
+                    )
+                )
+                with self.assertRaises(LineError) as caught:
+                    self.identity.exact_single_line(
+                        Path("/admin/file"),
+                        label="the admin file",
+                        file_reader=lambda: (
+                            lambda path, *, label: Data()
+                        ),
+                        decode_error_type=decode_error_type,
+                        error_type=error_type,
+                    )
+
+                self.assertEqual(
+                    str(caught.exception),
+                    "the admin file has an invalid path",
+                )
+                self.assertIsNone(caught.exception.__cause__)
+                self.assertEqual(
+                    events,
+                    (
+                        ["value-truth", "error-provider"]
+                        if rejection == "empty"
+                        else [
+                            "value-truth",
+                            "value-contains",
+                            "error-provider",
+                        ]
+                    ),
+                )
+                decode_error_type.assert_not_called()
+
+        for data in (b"\n", b"a\0b\n"):
+            with self.subTest(actual_bytes=data):
+                with self.assertRaises(LineError) as caught:
+                    self.identity.exact_single_line(
+                        Path("/admin/file"),
+                        label="the admin file",
+                        file_reader=lambda: (
+                            lambda path, *, label: data
+                        ),
+                        decode_error_type=lambda: UnicodeDecodeError,
+                        error_type=lambda: LineError,
+                    )
+                self.assertEqual(
+                    str(caught.exception),
+                    "the admin file has an invalid path",
+                )
+                self.assertIsNone(caught.exception.__cause__)
+
+    def test_exact_single_line_resolves_error_before_formatting_label(
+        self,
+    ) -> None:
+        events: list[str] = []
+
+        class CapturedError(RuntimeError):
+            pass
+
+        class ReboundError(RuntimeError):
+            pass
+
+        class Label:
+            def __format__(
+                label_self,
+                format_specification: str,
+            ) -> str:
+                self.assertEqual(format_specification, "")
+                events.append("format-label")
+                error_types[0] = ReboundError
+                return "the admin file"
+
+        error_types: list[type[BaseException]] = [CapturedError]
+
+        def error_type() -> type[BaseException]:
+            events.append("error-provider")
+            return error_types[0]
+
+        with self.assertRaises(CapturedError) as caught:
+            self.identity.exact_single_line(
+                Path("/admin/file"),
+                label=Label(),
+                file_reader=lambda: (
+                    lambda path, *, label: b"missing-newline"
+                ),
+                decode_error_type=mock.Mock(
+                    side_effect=AssertionError("decoded malformed input")
+                ),
+                error_type=error_type,
+            )
+
+        self.assertEqual(
+            str(caught.exception),
+            "the admin file does not contain one exact line",
+        )
+        self.assertEqual(events, ["error-provider", "format-label"])
+        self.assertIs(error_types[0], ReboundError)
+
+    def test_engine_exact_single_line_wrapper_forwards_lazy_globals(
+        self,
+    ) -> None:
+        class InitialDecodeError(RuntimeError):
+            pass
+
+        class ReboundDecodeError(RuntimeError):
+            pass
+
+        class InitialLineError(RuntimeError):
+            pass
+
+        class ReboundLineError(RuntimeError):
+            pass
+
+        path = Path("/admin/file")
+        initial_reader = mock.Mock(name="initial-reader")
+        rebound_reader = mock.Mock(name="rebound-reader")
+        sentinel = object()
+
+        def exact_single_line(
+            observed_path: object,
+            **dependencies: object,
+        ) -> object:
+            self.assertIs(observed_path, path)
+            self.assertEqual(
+                tuple(dependencies),
+                (
+                    "label",
+                    "file_reader",
+                    "decode_error_type",
+                    "error_type",
+                ),
+            )
+            self.assertEqual(dependencies["label"], "the admin file")
+            self.engine.safe_regular_file_bytes = rebound_reader
+            self.assertIs(
+                dependencies["file_reader"](),
+                rebound_reader,
+            )
+            self.engine.UnicodeDecodeError = ReboundDecodeError
+            self.assertIs(
+                dependencies["decode_error_type"](),
+                ReboundDecodeError,
+            )
+            self.engine.LauncherError = ReboundLineError
+            self.assertIs(
+                dependencies["error_type"](),
+                ReboundLineError,
+            )
+            return sentinel
+
+        with (
+            mock.patch.object(
+                self.engine,
+                "_exact_single_line",
+                side_effect=exact_single_line,
+            ) as kernel,
+            mock.patch.object(
+                self.engine,
+                "safe_regular_file_bytes",
+                initial_reader,
+            ),
+            mock.patch.object(
+                self.engine,
+                "UnicodeDecodeError",
+                InitialDecodeError,
+                create=True,
+            ),
+            mock.patch.object(
+                self.engine,
+                "LauncherError",
+                InitialLineError,
+            ),
+        ):
+            observed = self.engine.exact_single_line(
+                path,
+                label="the admin file",
+            )
+
+        self.assertIs(observed, sentinel)
+        kernel.assert_called_once()
+        initial_reader.assert_not_called()
+        rebound_reader.assert_not_called()
+
+    def test_engine_real_exact_single_line_kernel_observes_rebound_errors(
+        self,
+    ) -> None:
+        class InitialDecodeError(RuntimeError):
+            pass
+
+        class ReboundDecodeError(RuntimeError):
+            pass
+
+        class InitialLineError(RuntimeError):
+            pass
+
+        class ReboundLineError(RuntimeError):
+            pass
+
+        decode_failure = ReboundDecodeError("invalid encoding")
+        path = Path("/admin/file")
+        reader = mock.Mock()
+
+        class EncodedValue:
+            def decode(encoded_self, encoding: str) -> None:
+                self.assertEqual(encoding, "utf-8")
+                raise decode_failure
+
+        class Data:
+            def endswith(data_self, suffix: bytes) -> bool:
+                return True
+
+            def count(data_self, needle: bytes) -> int:
+                return 1
+
+            def __contains__(data_self, needle: bytes) -> bool:
+                return False
+
+            def __getitem__(data_self, key: object) -> EncodedValue:
+                return EncodedValue()
+
+        def read(observed_path: object, *, label: str) -> Data:
+            self.assertIs(observed_path, path)
+            self.assertEqual(label, "the admin file")
+            self.engine.UnicodeDecodeError = ReboundDecodeError
+            self.engine.LauncherError = ReboundLineError
+            return Data()
+
+        reader.side_effect = read
+        with (
+            mock.patch.object(
+                self.engine,
+                "_exact_single_line",
+                self.identity.exact_single_line,
+            ),
+            mock.patch.object(
+                self.engine,
+                "safe_regular_file_bytes",
+                reader,
+            ),
+            mock.patch.object(
+                self.engine,
+                "UnicodeDecodeError",
+                InitialDecodeError,
+                create=True,
+            ),
+            mock.patch.object(
+                self.engine,
+                "LauncherError",
+                InitialLineError,
+            ),
+        ):
+            with self.assertRaises(ReboundLineError) as caught:
+                self.engine.exact_single_line(
+                    path,
+                    label="the admin file",
+                )
+
+        self.assertEqual(
+            str(caught.exception),
+            "the admin file is not valid UTF-8",
+        )
+        self.assertIs(caught.exception.__cause__, decode_failure)
+        reader.assert_called_once_with(path, label="the admin file")
+
+    def test_engine_exact_single_line_matches_real_file_behavior(
+        self,
+    ) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "commondir"
+            path.write_bytes("../..\n".encode())
+            self.assertEqual(
+                self.engine.exact_single_line(
+                    path,
+                    label="the retained worktree commondir file",
+                ),
+                "../..",
+            )
+
+            cases = (
+                (
+                    b"missing-newline",
+                    "the retained worktree commondir file "
+                    "does not contain one exact line",
+                ),
+                (
+                    b"\xff\n",
+                    "the retained worktree commondir file "
+                    "is not valid UTF-8",
+                ),
+                (
+                    b"\n",
+                    "the retained worktree commondir file "
+                    "has an invalid path",
+                ),
+            )
+            for data, message in cases:
+                with self.subTest(data=data):
+                    path.write_bytes(data)
+                    with self.assertRaisesRegex(
+                        self.engine.LauncherError,
+                        f"^{message}$",
+                    ):
+                        self.engine.exact_single_line(
+                            path,
+                            label=(
+                                "the retained worktree commondir file"
+                            ),
+                        )
+
     def test_dataclass_schemas_and_constructor_surfaces_are_exact(
         self,
     ) -> None:
@@ -1536,6 +2518,27 @@ class IdentityModelTests(unittest.TestCase):
         self.assertEqual(
             sum(event[0] == "single-line" for event in events),
             3,
+        )
+        self.assertEqual(
+            [
+                event[1]
+                for event in events
+                if event[0] == "single-line"
+            ],
+            [
+                (
+                    git_file,
+                    "the retained worktree .git file",
+                ),
+                (
+                    git_dir / "commondir",
+                    "the retained worktree commondir file",
+                ),
+                (
+                    git_dir / "gitdir",
+                    "the retained worktree gitdir backlink",
+                ),
+            ],
         )
         self.assertEqual(
             sum(event[0] == "pointer" for event in events),

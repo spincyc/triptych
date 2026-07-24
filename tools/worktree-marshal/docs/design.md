@@ -24,10 +24,11 @@ state vocabulary, pure classifier, and I/O-free integration-transaction
 restoration transform, `state.py` now owns run identity, state-location
 selection, repository-name normalization, and lexical lock and manifest paths,
 `identity.py` now owns immutable runtime identity records and launcher-entry
-authentication, `locks.py` now owns lock-descriptor bookkeeping and validation
-algorithms, `process.py` now owns child waiting and exit-status normalization,
-and `triptych_compat.py` binds the frozen adapter. The rest of the engine will
-be separated behind these modules only after parity tests protect each seam:
+authentication plus exact Git-administration line-format validation,
+`locks.py` now owns lock-descriptor bookkeeping and validation algorithms,
+`process.py` now owns child waiting and exit-status normalization, and
+`triptych_compat.py` binds the frozen adapter. The rest of the engine will be
+separated behind these modules only after parity tests protect each seam:
 
 ```text
 worktree_marshal/
@@ -37,7 +38,8 @@ worktree_marshal/
   locks.py               descriptor bookkeeping now; flock acquisition later
   git.py                 policy, captured config, and executable discovery; invocation later
   process.py             child signal forwarding and exit normalization
-  identity.py            records and launcher auth now; repository/worktree auth later
+  identity.py            records, launcher auth, and Git-admin line validation now
+                         repository/worktree authentication later
   worktrees.py           allocation, audit, reopen, and cleanup
   integration.py         verification, rebase, landing, and rollback
   conflicts.py           resolver scope, continuation, and abort
@@ -91,7 +93,7 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with eleven behavior-preserving boundaries. The original pure
+has begun step 5 with twelve behavior-preserving boundaries. The original pure
 Git policy kernel transforms an explicit environment mapping and Git argument
 sequence in `git.py`; `engine.py` retains its optional environment-acquisition
 wrapper, subprocess creation and command execution, lock acquisition,
@@ -171,11 +173,11 @@ diagnostics, and the narrow rule that only resolution or metadata-read
 operating-system errors are translated and chained. The operation
 authenticates a read-only path snapshot; it deliberately does not strengthen
 the existing stat/access race into descriptor-based authentication. Launcher
-sequencing, the public error type, repository and linked-worktree
-authentication, identity caches, all other path and file authentication,
-lifecycle decisions, and every mutation remain in `engine.py`. Git-executable
-selection is a Git invocation concern, not a future `identity.py`
-responsibility.
+sequencing, the public error type, the remaining repository and
+linked-worktree authentication, identity caches, all other path and file
+authentication, lifecycle decisions, and every mutation remain in
+`engine.py`. Git-executable selection is a Git invocation concern, not a
+future `identity.py` responsibility.
 The eleventh boundary extends `git.py` with the existing Git-executable
 discovery and pre-pin validation operation. Its dependency-injected lookup
 selects the literal `git` command from the inherited `PATH`, strictly resolves
@@ -188,7 +190,22 @@ subprocess execution. This is pathname selection and caching, not
 device/inode or descriptor authentication: it neither makes the inherited
 `PATH` trustworthy nor closes the existing stat/access/exec replacement
 window. It adds no new sandbox, lifecycle, or release assurance.
-Direct tests freeze all eleven extracted boundaries, their
+The twelfth boundary moves the existing exact Git-administration line-format
+operation into `identity.py`. Its exact-signature engine wrapper supplies lazy
+resolvers for the current `safe_regular_file_bytes` operation, Unicode
+decoding error type, and launcher error type. Byte acquisition still precedes
+format inspection. The short-circuiting enforcement of exactly one terminal
+line feed and no carriage return, strict UTF-8 decoding, the nonempty and
+NUL-free path-value checks, the three exact diagnostics, and the narrow
+decoding-error cause remain unchanged. The engine retains the safe reader and
+all descriptor I/O, size and change checks, pointer-prefix and path
+interpretation, exact-directory and topology validation, linked-worktree
+identity caches, and lifecycle orchestration.
+The extracted helper validates only the line format presented by its injected
+reader. It does not independently authenticate a file or path, reject every
+symbolic traversal, establish pointer canonicality or containment, eliminate
+a replacement race, or add sandbox, lifecycle, or release assurance.
+Direct tests freeze all twelve extracted boundaries, their
 compatibility surfaces, artifact inclusion, field and operation order,
 partial-failure behavior, and the dynamic restoration of every vocabulary
 value currently accepted in

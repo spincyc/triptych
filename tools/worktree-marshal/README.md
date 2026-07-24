@@ -11,8 +11,9 @@ profile, its child-process supervision boundary, its run-identity and lexical
 state-path boundary, its state-location and repository-name boundary, the
 immutable runtime-identity record and launcher-entry authentication
 boundaries, its Git-executable discovery and pre-pin validation boundary, the
-frozen Triptych compatibility adapter, the Python distribution, and the Make
-integration fragment. The repository-local
+exact Git-administration line-format validation boundary, the frozen Triptych
+compatibility adapter, the Python distribution, and the Make integration
+fragment. The repository-local
 [`scripts/triptych-codex`](../../scripts/triptych-codex) command is a thin,
 in-process bootstrap for the co-located package engine.
 
@@ -113,7 +114,7 @@ worktree-removal or ref-transaction failures, receipt recovery, garbage
 collection, or concurrent retirement. Those retirement cases, broader crash
 and race recovery, broader security coverage, the complete installed lifecycle
 matrix, and the supported Python and Git CI matrix remain release gates; the
-first eleven step-5 seams are protected by direct source tests and artifact
+first twelve step-5 seams are protected by direct source tests and artifact
 provenance, and the installed abort checkpoint covers archived transaction
 restoration. Each remaining helper boundary still requires its own direct
 parity coverage.
@@ -151,16 +152,26 @@ authenticated launcher entry point. It also owns the dependency-injected,
 read-only authentication operation for the in-process launcher path: lexical
 absolute-path rejection, strict resolution and metadata capture, the regular
 file and executable checks, and construction of the authenticated snapshot.
-`engine.py` continues to re-export the same class objects. Its exact-signature
-wrapper supplies the error, filesystem-policy, access, executable-mode, and
-identity factory dependencies lazily at their established lookup points. Only
-strict resolution and metadata-read operating-system errors are translated.
-Repository discovery, repository and linked-worktree authentication, other
-path and file authentication, linked-worktree identity caches, lifecycle
-sequencing and top-level error handling, and every mutation remain in
-`engine.py`. Git-executable discovery and pre-pin validation belong to
+It now also owns the dependency-injected format validation used for exact
+Git-administration path lines: exactly one terminal line feed, no carriage
+return, strict UTF-8, and a nonempty, NUL-free value. `engine.py` continues to
+re-export the same class objects. The launcher wrapper supplies the error,
+filesystem-policy, access, executable-mode, and identity factory dependencies
+lazily at their established lookup points. Only strict resolution and
+metadata-read operating-system errors are translated by that operation. The
+exact-line wrapper likewise supplies the current regular-file byte reader,
+Unicode decoding error type, and launcher error type lazily.
+
+The engine retains `safe_regular_file_bytes` and all descriptor I/O, size and
+change checks, repository discovery and the remaining repository and
+linked-worktree authentication, pointer-prefix and path interpretation,
+exact-directory and topology validation, linked-worktree identity caches,
+lifecycle sequencing, top-level error handling, and every mutation. The
+extracted line helper does not by itself authenticate a file or path,
+establish pointer canonicality or containment, or close a symbolic-path or
+replacement race. Git-executable discovery and pre-pin validation belong to
 `git.py`, while its process-global cache and invocation remain in `engine.py`;
-they are not future responsibilities of `identity.py`.
+neither is a future responsibility of `identity.py`.
 
 [`state.py`](src/worktree_marshal/state.py) owns only the exact run-ID grammar,
 dependency-injected timestamp and random-suffix composition, and lexical
