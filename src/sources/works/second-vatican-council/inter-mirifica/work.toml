@@ -1,0 +1,11 @@
+schema = 1
+record_type = "work"
+id = "work.second-vatican-council.inter-mirifica"
+title = "Inter mirifica"
+responsible = "Second Vatican Council"
+work_type = "decree"
+alternate_titles = ["Decretum de instrumentis communicationis socialis", "Decree on the Media of Social Communications"]
+languages = ["la"]
+locus_pattern = '(?:[1-9]|1[0-9]|2[0-4])(?:-(?:[1-9]|1[0-9]|2[0-4]))?'
+description = "The Second Vatican Council's Decree on the Media of Social Communications, solemnly promulgated by Pope Paul VI on 4 December 1963. It comprises numbered articles 1-24; edition records distinguish the Latin Acta witness from dated Vatican web delivery states and translations."
+relations = ["work.holy-see.acta-apostolicae-sedis"]
