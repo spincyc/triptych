@@ -1,0 +1,11 @@
+schema = 1
+record_type = "work"
+id = "work.second-vatican-council.optatam-totius"
+title = "Optatam totius"
+responsible = "Second Vatican Council"
+work_type = "decree"
+alternate_titles = ["Decretum de institutione sacerdotali", "Decree on Priestly Training"]
+languages = ["la"]
+locus_pattern = '(?:[1-9]|2[0-2])(?:-(?:[1-9]|2[0-2]))?'
+description = "The Second Vatican Council's Decree on Priestly Training, solemnly promulgated by Pope Paul VI on 28 October 1965. It comprises an unnumbered preface and numbered articles 1-22; edition records distinguish the Latin Acta witness from dated Vatican web delivery states and translations."
+relations = ["work.holy-see.acta-apostolicae-sedis"]
