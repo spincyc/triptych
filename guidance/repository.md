@@ -220,9 +220,21 @@ publication entries; do not repeat their PDF links on the landing page. Keep
 all `library/` pages at the same filesystem level so source and generated links
 remain predictable.
 
-Do not cross-list. Keep derived companions in their canonical work's entry. Link the title directly to the installed PDF, then give a short scope/status statement and separately named reader-facing records required by the profile. Do not link TeX authoring files. Distinguish generation provenance, source audit, independent review, production state, and release status; retain profile identifiers only when they aid readers.
+Do not cross-list. Keep derived companions in their canonical work's entry.
+Link titles directly to installed PDFs and describe each work in terse,
+reader-useful language. Do not link TeX files, research records, audits,
+manifests, provenance, review state, production state, release bookkeeping, or
+other repository-facing apparatus from reader landing pages. That apparatus
+remains in the publication's source records. Retain an edition, territory,
+as-of date, stable ID, or availability notice only when it helps a reader
+choose or safely use the work.
 
-Keep section landing pages terse and prefer compact tables. Expose only the columns a reader needs to choose a work: normally its linked title and a short scope/status statement, with a date, stable ID, or companion column only when it materially aids navigation. Put repository-facing audit links in a final `Supporting records` column. Sort by a profile's stable series order or by occurrence or governing event date where one applies; otherwise use a predictable alphabetical subject or title order, keeping a canonical work and its derived companions together.
+Keep section landing pages terse and prefer compact tables. Normally expose
+only a linked title and a short statement of subject, use, or audience. Add a
+date, stable ID, or companion column only when it materially aids navigation.
+Sort by a profile's stable series order or by occurrence or governing event
+date where one applies; otherwise use a deliberate reader sequence, keeping a
+canonical work and its derived companions together.
 
 On the 1962 page list the Ordinary first, assembly and calendar references second, and proper guides in their compact series table. Keep each curriculum's modules and assessment or reference companions together on its owning catalog page, grouped in prerequisite order. Keep novenas and their short forms together on the Prayer page. Every postconciliar entry names its exact books, edition, language, territory, and date; comparative or discursive works remain with their substantive study category.
 

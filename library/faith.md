@@ -2,31 +2,49 @@
 
 [Return to the Library](../LIBRARY.md)
 
+## Trustful Surrender
+
+| Publication | Focus |
+| --- | --- |
+| **[Trustful Surrender to Divine Providence](../doc/gpt/articles/faith/trustful-surrender-to-divine-providence.pdf)** | How confidence in providence differs from passivity, fatalism, presumption, and indifference to evil. |
+
 ## The Creature Before God
 
 ### Trilogy
 
-| Publication | Focus and status | Supporting records |
-| --- | --- | --- |
-| **[Ontological Vertigo](../doc/gpt/articles/faith/ontological-vertigo.pdf)** | Part I: present conservation, asymmetric dependence, ontological arrest, and the insufficiency of an impersonal First Mover, ending in the natural-theological judgment that God loves. Current revision source-audited through 23 July 2026; independent review outstanding. The exact current snapshot is release-cleared by the 23 July 2026 exact-byte exception. | [Research scope](../src/gpt/articles/faith/ontological-vertigo/research/scope.md) · [Source audit](../src/gpt/articles/faith/ontological-vertigo/research/source-audit.md) |
-| **[The Due Return](../doc/gpt/articles/faith/the-due-return.pdf)** | Part II: religion as unequal justice, the living sacrifice, gift before command, sacramental and moral form, mercy, grace, hope, and Gethsemane. Sources and current universal Latin law checked through 23 July 2026; independent review outstanding. The exact current snapshot is release-cleared by the 23 July 2026 exact-byte exception. | [Research scope](../src/gpt/articles/faith/the-due-return/research/scope.md) · [Source audit](../src/gpt/articles/faith/the-due-return/research/source-audit.md) · [Current-law matrix](../src/gpt/articles/faith/the-due-return/research/current-law-matrix.md) |
-| **[At the End of Every Why](../doc/gpt/articles/faith/at-the-end-of-every-why.pdf)** | Part III: infused charity and friendship with God; dryness, petition within immutable providence, Eucharistic desire, suffering, love of neighbor, and participated union. Sources checked through 23 July 2026; independent review outstanding. The exact current snapshot is release-cleared by the 23 July 2026 exact-byte exception. | [Research scope](../src/gpt/articles/faith/at-the-end-of-every-why/research/scope.md) · [Source audit](../src/gpt/articles/faith/at-the-end-of-every-why/research/source-audit.md) |
+| Publication | Focus |
+| --- | --- |
+| **[Ontological Vertigo](../doc/gpt/articles/faith/ontological-vertigo.pdf)** | Part I: creation, present dependence upon God, and the natural-theological judgment that God loves. |
+| **[The Due Return](../doc/gpt/articles/faith/the-due-return.pdf)** | Part II: worship as the creature's due return—sacrifice, sacrament, moral life, mercy, grace, and hope. |
+| **[At the End of Every Why](../doc/gpt/articles/faith/at-the-end-of-every-why.pdf)** | Part III: charity and friendship with God amid prayer, dryness, suffering, Eucharistic desire, and love of neighbor. |
 
 ### Companion Essays
 
-| Publication | Focus and status | Supporting records |
-| --- | --- | --- |
-| **[Against the Instrumentalists](../doc/gpt/articles/faith/against-the-instrumentalists.pdf)** | Instrumental exclusivism, measurement, rational warrant, and the passage from phenomenon to metaphysical foundation. Source-audited through 23 July 2026; independent review outstanding. The exact current snapshot is release-cleared by the 23 July 2026 exact-byte exception. | [Research scope](../src/gpt/articles/faith/against-the-instrumentalists/research/scope.md) · [Source audit](../src/gpt/articles/faith/against-the-instrumentalists/research/source-audit.md) |
-| **[In Support of the Particular](../doc/gpt/articles/faith/in-support-of-the-particular.pdf)** | Divine universality and concrete action in election, Incarnation, providence, sacramental signs, Eucharistic presence, and the neighbor. Source-audited through 23 July 2026; independent review outstanding. The exact current snapshot is release-cleared by the 23 July 2026 exact-byte exception. | [Research scope](../src/gpt/articles/faith/in-support-of-the-particular/research/scope.md) · [Source audit](../src/gpt/articles/faith/in-support-of-the-particular/research/source-audit.md) |
+| Publication | Focus |
+| --- | --- |
+| **[Against the Instrumentalists](../doc/gpt/articles/faith/against-the-instrumentalists.pdf)** | Why measurement alone cannot settle what is real or rationally knowable. |
+| **[In Support of the Particular](../doc/gpt/articles/faith/in-support-of-the-particular.pdf)** | How God's universal causality acts through concrete election, Incarnation, providence, sacraments, and neighbor. |
 
-## Other Faith Studies
+## The Four Last Things
 
-| Publication | Focus and status | Supporting records |
-| --- | --- | --- |
-| **[Council, Missal, and Crisis](../doc/gpt/articles/faith/council-missal-and-crisis.pdf)** | Vatican I and II, Missal reform, institutional contraction, belief, and the SSPX rupture. Source-audited through 16 July 2026; the exact current installed snapshot is release-cleared by the 21 July 2026 exact-current-snapshot exception. | [Research scope](../src/gpt/articles/faith/council-missal-and-crisis/research/scope.md) · [Source audit](../src/gpt/articles/faith/council-missal-and-crisis/research/source-audit.md) · [Conciliar authority](../src/gpt/articles/faith/council-missal-and-crisis/research/conciliar-authority-matrix.md) · [Liturgical development](../src/gpt/articles/faith/council-missal-and-crisis/research/liturgical-development-matrix.md) · [Demographic inventory](../src/gpt/articles/faith/council-missal-and-crisis/research/demographic-survey-inventory.md) · [SSPX record](../src/gpt/articles/faith/council-missal-and-crisis/research/sspx-canonical-status.md) |
-| **[Freemasonry and the Catholic Church](../doc/gpt/articles/faith/freemasonry-and-the-catholic-church.pdf)** | Masonic principles, Catholic teaching, spiritual claims, prayer provenance, and current discipline. Source-audited through 13 July 2026; the exact current installed snapshot is release-cleared by the 21 July 2026 exact-current-snapshot exception. | [Research scope](../src/gpt/articles/faith/freemasonry-and-the-catholic-church/research/scope.md) · [Source audit](../src/gpt/articles/faith/freemasonry-and-the-catholic-church/research/source-audit.md) · [Roman corpus](../src/gpt/articles/faith/freemasonry-and-the-catholic-church/research/roman-corpus.md) · [Prayer provenance](../src/gpt/articles/faith/freemasonry-and-the-catholic-church/research/prayer-provenance.md) |
-| **[The Seven Sacraments](../doc/gpt/theology/sacraments.pdf)** | Patristic and Thomistic treatise. Working reference; not independently reviewed. The exact current installed snapshot is release-cleared by the 21 July 2026 exact-current-snapshot exception. | [Research scope](../src/gpt/theology/sacraments/research/scope.md) |
-| **[The Seven Sacraments at a Glance](../doc/gpt/theology/sacraments-at-a-glance.pdf)** | Mechanical companion drawn entirely from the treatise, adding no new prose and inheriting its sources, provenance, and review status. The exact current installed companion snapshot is release-cleared by the 21 July 2026 exact-current-snapshot exception. | [Research scope](../src/gpt/theology/sacraments/research/scope.md) |
-| **[Trustful Surrender to Divine Providence](../doc/gpt/articles/faith/trustful-surrender-to-divine-providence.pdf)** | Providence, permission, freedom, agency, and culpability. Source-audited; the exact current installed snapshot is release-cleared by the 21 July 2026 exact-current-snapshot exception. | [Research scope](../src/gpt/articles/faith/trustful-surrender-to-divine-providence/research/scope.md) · [Source audit](../src/gpt/articles/faith/trustful-surrender-to-divine-providence/research/source-audit.md) |
-| **[Two Missals, One Sacrifice](../doc/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice.pdf)** | Comparison of the 1962 and postconciliar Roman Missals. Historical sources through 17 July 2026; current-law and community cutoffs 13 July 2026; the exact current installed snapshot is release-cleared by the 21 July 2026 exact-current-snapshot exception. | [Edition manifest](../src/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice/research/edition-manifest.md) · [Sequence inventory](../src/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice/research/sequence-inventory.md) · [Research scope](../src/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice/research/scope.md) · [Community census](../src/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice/research/community-census.md) · [Source audit](../src/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice/research/source-audit.md) |
-| **[The Virtues](../doc/gpt/theology/virtues.pdf)** | Aristotelian, Augustinian, and Thomistic reference, including a taxonomy of all 52 strict entries. Source-audited through 16 July 2026; not independently reviewed. | [Research scope](../src/gpt/theology/virtues/research/scope.md) · [Source audit](../src/gpt/theology/virtues/research/source-audit.md) · [Virtue inventory](../src/gpt/theology/virtues/research/virtue-inventory.md) · [Terminology audit](../src/gpt/theology/virtues/research/terminology-audit.md) |
+| Publication | Focus |
+| --- | --- |
+| **[The Four Last Things: The Hour That Cannot Be Delegated](../doc/gpt/articles/faith/four-last-things-01-death.pdf)** | Death: the rupture no one escapes, Christian preparation, grief, and hope in the resurrection. |
+| **[The Four Last Things: The Truth of a Life](../doc/gpt/articles/faith/four-last-things-02-judgment.pdf)** | Judgment: particular and final judgment, mercy, justice, responsibility, and the disclosure of every life in Christ. |
+| **[The Four Last Things: The Refusal That Becomes Final](../doc/gpt/articles/faith/four-last-things-03-hell.pdf)** | Hell: definitive self-exclusion from communion with God, the gravity of freedom, and the limits of what may be claimed about any person. |
+| **[The Four Last Things: The End for Which We Were Made](../doc/gpt/articles/faith/four-last-things-04-heaven.pdf)** | Heaven: the beatific vision, communion of saints, resurrection of the body, and the renewal of creation. |
+
+## Sacraments and the Moral Life
+
+| Publication | Focus |
+| --- | --- |
+| **[The Seven Sacraments](../doc/gpt/theology/sacraments.pdf)** · [At a Glance](../doc/gpt/theology/sacraments-at-a-glance.pdf) | Patristic and Thomistic account of the sacraments, with a compact companion. |
+| **[The Virtues](../doc/gpt/theology/virtues.pdf)** | Theological, cardinal, intellectual, and allied virtues in Aristotelian, Augustinian, and Thomistic thought. |
+
+## Church, Liturgy, and Modern Controversies
+
+| Publication | Focus |
+| --- | --- |
+| **[Two Missals, One Sacrifice](../doc/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice.pdf)** | Comparison of the 1962 and postconciliar Roman Missals, their shared sacrificial center, and their differences. |
+| **[Council, Missal, and Crisis](../doc/gpt/articles/faith/council-missal-and-crisis.pdf)** | Vatican I and II, Missal reform, institutional contraction, belief, and the SSPX rupture. |
+| **[Freemasonry and the Catholic Church](../doc/gpt/articles/faith/freemasonry-and-the-catholic-church.pdf)** | Masonic principles, Catholic teaching, spiritual claims, and current Church discipline. |

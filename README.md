@@ -4,14 +4,18 @@
 
 ## Don’t Panic!
 
-Triptych uses the breadth and depth of AI to assemble sources, distill material, and compose studies of Catholic faith, liturgy, and law—not to invent or revise Catholic doctrine. AI is a tool, not an authority. These working studies claim no ecclesiastical approval and do not supplant Sacred Scripture and Tradition, the Magisterium, the Church’s liturgical books, canon law, or competent pastoral, theological, or canonical judgment.
+Triptych uses AI to assemble carefully sourced studies of Catholic faith,
+worship, and law. AI is a tool, not an authority. These studies do not replace
+Scripture and Tradition, the Magisterium, the Church's liturgical books, canon
+law, or competent advice.
 
-Read with a skeptical eye: polished prose is not proof. Follow the citations and check important claims against the authoritative sources themselves.
+Polished prose is not proof. Follow the citations and check important claims
+against the authorities themselves.
 
-If a document helps, use it. If something is wrong, unclear, incomplete, or unbalanced, send the project team a short note; the team can often use AI to turn even brief feedback into substantial improvements. See [How to Contribute](CONTRIBUTING.md).
+If something is wrong, unclear, incomplete, or unbalanced, send a short note.
+See [How to Contribute](CONTRIBUTING.md).
 
-No technical background is needed: choose a section, open an installed PDF,
-and read.
+Choose a section, open a PDF, and read.
 
 ## Library
 
@@ -20,11 +24,11 @@ and read.
 | **[Traditional Latin Mass (1962 Roman Rite)](library/traditional-latin-mass.md)** | The Ordinary, altar-server training, Mass assembly, calendar, and regularly updated proper expositions. |
 | **[Novus Ordo (Postconciliar Roman Rite)](library/novus-ordo-liturgy.md)** | The Order of Mass and proper studies identified by edition, language, territory, cycle, and date. |
 | **[Prayer](library/prayer.md)** | Novenas and condensed daily prayer books. |
-| **[Curriculums](library/curriculums.md)** | Self-paced courses, substantial printable packets, memory and reference companions, and cumulative self-reviews. |
+| **[Curriculums](library/curriculums.md)** | Self-paced courses and printable study materials. |
 | **[Faith](library/faith.md)** | Doctrine, sacraments, and theological studies. |
-| **[Biographies](library/biographies.md)** | Historical and hagiographic lives, with evidence and later tradition kept distinct. |
+| **[Biographies](library/biographies.md)** | Historical and hagiographic lives. |
 | **[Heresies](library/heresies.md)** | Historical studies of condemned propositions, ecclesial responses, and their aftermaths. |
-| **[Historical Accounts](library/historical-accounts.md)** | Source-disciplined histories of texts, institutions, events, and reception. |
+| **[Historical Accounts](library/historical-accounts.md)** | Histories of texts, institutions, and events. |
 | **[Mariology](library/mariology.md)** | Marian doctrine, prayer, history, and ecclesial judgment. |
 | **[Law](library/law-and-church-discipline.md)** | Canon law and Church discipline. |
 
