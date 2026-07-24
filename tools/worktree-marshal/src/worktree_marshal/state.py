@@ -3,7 +3,8 @@
 from __future__ import annotations
 
 import re
-from collections.abc import Callable, Mapping, Sequence
+from collections.abc import Callable, Iterator, Mapping, Sequence
+from contextlib import contextmanager
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Protocol
@@ -326,6 +327,91 @@ def validate_exact_run_tmpdir(
             "the temporary path is not the exact launcher path"
         )
     return expected
+
+
+@contextmanager
+def exact_run_tmp_parent(
+    repository: StateRepository,
+    manifest: Mapping[str, Any],
+    *,
+    validate_exact_run_tmpdir: Callable[
+        [StateRepository, Mapping[str, Any]], Path
+    ],
+    directory_flag: int,
+    nofollow_flag: int,
+    cloexec_flag: int,
+    read_only_flag: int,
+    directory_test: Callable[[int], bool],
+    file_open: Callable[[Path, int], int],
+    file_stat: Callable[[int], Any],
+    same_stat: Callable[[Any, Any], bool],
+    file_close: Callable[[int], None],
+    error_type: type[BaseException],
+) -> Iterator[tuple[int, str]]:
+    """Authenticate and hold open the exact run temporary-path parent."""
+
+    expected = validate_exact_run_tmpdir(repository, manifest)
+    temporary_root = expected.parent
+    run_id = expected.name
+
+    if not directory_flag or not nofollow_flag:
+        raise error_type("safe run temporary-path inspection is unavailable")
+    try:
+        root_metadata = temporary_root.lstat()
+    except OSError as exc:
+        raise error_type("cannot inspect the run temporary root") from exc
+    if not directory_test(root_metadata.st_mode):
+        raise error_type("the run temporary root is not a real directory")
+
+    try:
+        descriptor = file_open(
+            temporary_root,
+            read_only_flag
+            | directory_flag
+            | nofollow_flag
+            | cloexec_flag,
+        )
+    except OSError as exc:
+        raise error_type("cannot open the run temporary root safely") from exc
+    try:
+        try:
+            opened_metadata = file_stat(descriptor)
+        except OSError as exc:
+            raise error_type(
+                "cannot authenticate the run temporary root"
+            ) from exc
+        if (
+            not directory_test(opened_metadata.st_mode)
+            or not same_stat(root_metadata, opened_metadata)
+        ):
+            raise error_type("the run temporary root changed during inspection")
+        yield descriptor, run_id
+    finally:
+        try:
+            file_close(descriptor)
+        except OSError as exc:
+            raise error_type("cannot close the run temporary root") from exc
+
+
+def run_tmp_entry(
+    parent_descriptor: int,
+    run_id: str,
+    *,
+    entry_stat: Callable[..., Any],
+    error_type: type[BaseException],
+) -> Any:
+    """Probe one descriptor-relative run temporary entry without following."""
+
+    try:
+        return entry_stat(
+            run_id,
+            dir_fd=parent_descriptor,
+            follow_symlinks=False,
+        )
+    except FileNotFoundError:
+        return None
+    except OSError as exc:
+        raise error_type("cannot inspect the run temporary path") from exc
 
 
 def load_manifest(

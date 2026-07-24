@@ -250,6 +250,464 @@ class StatePolicyTests(unittest.TestCase):
                 error_type=self.engine.LauncherError,
             )
 
+    def run_tmp_parent_dependencies(
+        self,
+        events: list[tuple[str, object]],
+        root_metadata: object,
+        opened_metadata: object,
+    ) -> tuple[dict[str, object], object]:
+        class TemporaryRoot:
+            def lstat(root_self) -> object:
+                events.append(("lstat", root_self))
+                return root_metadata
+
+        expected = SimpleNamespace(
+            parent=TemporaryRoot(),
+            name="20260723t010203z-0123456789ab",
+        )
+
+        def validate_exact_run_tmpdir(
+            repository: object,
+            manifest: object,
+        ) -> object:
+            events.append(("validate", (repository, manifest)))
+            return expected
+
+        def directory_test(mode: object) -> bool:
+            events.append(("directory-test", mode))
+            return True
+
+        def file_open(path: object, flags: int) -> int:
+            events.append(("open", (path, flags)))
+            return 17
+
+        def file_stat(descriptor: int) -> object:
+            events.append(("fstat", descriptor))
+            return opened_metadata
+
+        def same_stat(first: object, second: object) -> bool:
+            events.append(("samestat", (first, second)))
+            return True
+
+        def file_close(descriptor: int) -> None:
+            events.append(("close", descriptor))
+
+        dependencies = {
+            "validate_exact_run_tmpdir": validate_exact_run_tmpdir,
+            "directory_flag": 4,
+            "nofollow_flag": 8,
+            "cloexec_flag": 16,
+            "read_only_flag": 1,
+            "directory_test": directory_test,
+            "file_open": file_open,
+            "file_stat": file_stat,
+            "same_stat": same_stat,
+            "file_close": file_close,
+            "error_type": self.engine.LauncherError,
+        }
+        return dependencies, expected
+
+    def run_tmp_parent_filesystem_dependencies(self) -> dict[str, object]:
+        return {
+            "validate_exact_run_tmpdir": self.engine.validate_exact_run_tmpdir,
+            "directory_flag": getattr(self.engine.os, "O_DIRECTORY", 0),
+            "nofollow_flag": getattr(self.engine.os, "O_NOFOLLOW", 0),
+            "cloexec_flag": getattr(self.engine.os, "O_CLOEXEC", 0),
+            "read_only_flag": self.engine.os.O_RDONLY,
+            "directory_test": self.engine.stat.S_ISDIR,
+            "file_open": self.engine.os.open,
+            "file_stat": self.engine.os.fstat,
+            "same_stat": self.engine.os.path.samestat,
+            "file_close": self.engine.os.close,
+            "error_type": self.engine.LauncherError,
+        }
+
+    def test_run_tmp_parent_kernel_signatures_and_short_circuits(self) -> None:
+        parameters = inspect.signature(
+            self.state_policy.exact_run_tmp_parent
+        ).parameters
+        self.assertEqual(
+            tuple(parameters),
+            (
+                "repository",
+                "manifest",
+                "validate_exact_run_tmpdir",
+                "directory_flag",
+                "nofollow_flag",
+                "cloexec_flag",
+                "read_only_flag",
+                "directory_test",
+                "file_open",
+                "file_stat",
+                "same_stat",
+                "file_close",
+                "error_type",
+            ),
+        )
+        for name in ("repository", "manifest"):
+            self.assertIs(
+                parameters[name].kind,
+                inspect.Parameter.POSITIONAL_OR_KEYWORD,
+            )
+        for parameter in tuple(parameters.values())[2:]:
+            self.assertIs(parameter.kind, inspect.Parameter.KEYWORD_ONLY)
+            self.assertIs(parameter.default, inspect.Parameter.empty)
+
+        entry_parameters = inspect.signature(
+            self.state_policy.run_tmp_entry
+        ).parameters
+        self.assertEqual(
+            tuple(entry_parameters),
+            ("parent_descriptor", "run_id", "entry_stat", "error_type"),
+        )
+        for name in ("parent_descriptor", "run_id"):
+            self.assertIs(
+                entry_parameters[name].kind,
+                inspect.Parameter.POSITIONAL_OR_KEYWORD,
+            )
+        for parameter in tuple(entry_parameters.values())[2:]:
+            self.assertIs(parameter.kind, inspect.Parameter.KEYWORD_ONLY)
+            self.assertIs(parameter.default, inspect.Parameter.empty)
+
+        repository = object()
+        manifest = {"run_id": "opaque"}
+        for missing_flag in ("directory_flag", "nofollow_flag"):
+            with self.subTest(missing_flag=missing_flag):
+                events: list[tuple[str, object]] = []
+                dependencies, _ = self.run_tmp_parent_dependencies(
+                    events,
+                    SimpleNamespace(st_mode="root-mode"),
+                    SimpleNamespace(st_mode="opened-mode"),
+                )
+                dependencies[missing_flag] = 0
+                file_open = mock.Mock(
+                    side_effect=AssertionError("opened without safe flags")
+                )
+                dependencies["file_open"] = file_open
+                with self.assertRaisesRegex(
+                    self.engine.LauncherError,
+                    "^safe run temporary-path inspection is unavailable$",
+                ):
+                    with self.state_policy.exact_run_tmp_parent(
+                        repository,
+                        manifest,
+                        **dependencies,
+                    ):
+                        raise AssertionError("entered without safe flags")
+                file_open.assert_not_called()
+                self.assertEqual(
+                    events,
+                    [("validate", (repository, manifest))],
+                )
+
+        events = []
+        dependencies, _ = self.run_tmp_parent_dependencies(
+            events,
+            SimpleNamespace(st_mode="root-mode"),
+            SimpleNamespace(st_mode="opened-mode"),
+        )
+
+        class BrokenRoot:
+            def lstat(root_self) -> object:
+                raise OSError("lstat failed")
+
+        dependencies["validate_exact_run_tmpdir"] = lambda *_: SimpleNamespace(
+            parent=BrokenRoot(),
+            name="20260723t010203z-0123456789ab",
+        )
+        file_open = mock.Mock(
+            side_effect=AssertionError("opened an uninspected root")
+        )
+        dependencies["file_open"] = file_open
+        with self.assertRaisesRegex(
+            self.engine.LauncherError,
+            "^cannot inspect the run temporary root$",
+        ):
+            with self.state_policy.exact_run_tmp_parent(
+                repository,
+                manifest,
+                **dependencies,
+            ):
+                raise AssertionError("entered an uninspected root")
+        file_open.assert_not_called()
+
+        events = []
+        dependencies, _ = self.run_tmp_parent_dependencies(
+            events,
+            SimpleNamespace(st_mode="root-mode"),
+            SimpleNamespace(st_mode="opened-mode"),
+        )
+        dependencies["directory_test"] = lambda mode: False
+        file_open = mock.Mock(
+            side_effect=AssertionError("opened a non-directory root")
+        )
+        dependencies["file_open"] = file_open
+        with self.assertRaisesRegex(
+            self.engine.LauncherError,
+            "^the run temporary root is not a real directory$",
+        ):
+            with self.state_policy.exact_run_tmp_parent(
+                repository,
+                manifest,
+                **dependencies,
+            ):
+                raise AssertionError("entered a non-directory root")
+        file_open.assert_not_called()
+
+        events = []
+        dependencies, _ = self.run_tmp_parent_dependencies(
+            events,
+            SimpleNamespace(st_mode="root-mode"),
+            SimpleNamespace(st_mode="opened-mode"),
+        )
+        dependencies["file_open"] = mock.Mock(side_effect=OSError("denied"))
+        file_close = mock.Mock(
+            side_effect=AssertionError("closed a never-opened descriptor")
+        )
+        dependencies["file_close"] = file_close
+        with self.assertRaisesRegex(
+            self.engine.LauncherError,
+            "^cannot open the run temporary root safely$",
+        ):
+            with self.state_policy.exact_run_tmp_parent(
+                repository,
+                manifest,
+                **dependencies,
+            ):
+                raise AssertionError("entered an unopened root")
+        file_close.assert_not_called()
+
+        events = []
+        dependencies, _ = self.run_tmp_parent_dependencies(
+            events,
+            SimpleNamespace(st_mode="root-mode"),
+            SimpleNamespace(st_mode="opened-mode"),
+        )
+        dependencies["file_stat"] = mock.Mock(side_effect=OSError("stat"))
+        with self.assertRaisesRegex(
+            self.engine.LauncherError,
+            "^cannot authenticate the run temporary root$",
+        ):
+            with self.state_policy.exact_run_tmp_parent(
+                repository,
+                manifest,
+                **dependencies,
+            ):
+                raise AssertionError("entered an unauthenticated root")
+        self.assertEqual(events[-1], ("close", 17))
+
+        for case, same_stat_result, opened_mode_directory in (
+            ("replaced-mode", True, False),
+            ("replaced-identity", False, True),
+        ):
+            with self.subTest(case=case):
+                events = []
+                root_metadata = SimpleNamespace(st_mode="root-mode")
+                opened_metadata = SimpleNamespace(st_mode="opened-mode")
+                dependencies, _ = self.run_tmp_parent_dependencies(
+                    events,
+                    root_metadata,
+                    opened_metadata,
+                )
+                dependencies["directory_test"] = (
+                    lambda mode: opened_mode_directory
+                    if mode == "opened-mode"
+                    else True
+                )
+                dependencies["same_stat"] = mock.Mock(
+                    return_value=same_stat_result
+                )
+                with self.assertRaisesRegex(
+                    self.engine.LauncherError,
+                    "^the run temporary root changed during inspection$",
+                ):
+                    with self.state_policy.exact_run_tmp_parent(
+                        repository,
+                        manifest,
+                        **dependencies,
+                    ):
+                        raise AssertionError("entered a replaced root")
+                self.assertEqual(events[-1], ("close", 17))
+                if not opened_mode_directory:
+                    dependencies["same_stat"].assert_not_called()
+
+        events = []
+        dependencies, _ = self.run_tmp_parent_dependencies(
+            events,
+            SimpleNamespace(st_mode="root-mode"),
+            SimpleNamespace(st_mode="opened-mode"),
+        )
+        dependencies["file_close"] = mock.Mock(side_effect=OSError("close"))
+        with self.assertRaisesRegex(
+            self.engine.LauncherError,
+            "^cannot close the run temporary root$",
+        ):
+            with self.state_policy.exact_run_tmp_parent(
+                repository,
+                manifest,
+                **dependencies,
+            ):
+                pass
+
+        entry_stat = mock.Mock(side_effect=OSError("probe failed"))
+        with self.assertRaisesRegex(
+            self.engine.LauncherError,
+            "^cannot inspect the run temporary path$",
+        ):
+            self.state_policy.run_tmp_entry(
+                29,
+                "20260723t010203z-0123456789ab",
+                entry_stat=entry_stat,
+                error_type=self.engine.LauncherError,
+            )
+        entry_stat.assert_called_once_with(
+            "20260723t010203z-0123456789ab",
+            dir_fd=29,
+            follow_symlinks=False,
+        )
+
+    def test_run_tmp_parent_kernel_preserves_probe_order_and_close(
+        self,
+    ) -> None:
+        events: list[tuple[str, object]] = []
+        root_metadata = SimpleNamespace(st_mode="root-mode")
+        opened_metadata = SimpleNamespace(st_mode="opened-mode")
+        dependencies, expected = self.run_tmp_parent_dependencies(
+            events,
+            root_metadata,
+            opened_metadata,
+        )
+        repository = object()
+        manifest = {"run_id": "opaque"}
+
+        with self.state_policy.exact_run_tmp_parent(
+            repository,
+            manifest,
+            **dependencies,
+        ) as parent:
+            events.append(("body", parent))
+
+        self.assertEqual(
+            events,
+            [
+                ("validate", (repository, manifest)),
+                ("lstat", expected.parent),
+                ("directory-test", "root-mode"),
+                ("open", (expected.parent, 1 | 4 | 8 | 16)),
+                ("fstat", 17),
+                ("directory-test", "opened-mode"),
+                ("samestat", (root_metadata, opened_metadata)),
+                ("body", (17, "20260723t010203z-0123456789ab")),
+                ("close", 17),
+            ],
+        )
+
+        class BodyFailure(RuntimeError):
+            pass
+
+        events.clear()
+        with self.assertRaisesRegex(BodyFailure, "^body failed$"):
+            with self.state_policy.exact_run_tmp_parent(
+                repository,
+                manifest,
+                **dependencies,
+            ):
+                raise BodyFailure("body failed")
+        self.assertEqual(events[-1], ("close", 17))
+
+        entry_metadata = object()
+        entry_stat = mock.Mock(return_value=entry_metadata)
+        self.assertIs(
+            self.state_policy.run_tmp_entry(
+                31,
+                "20260723t010203z-0123456789ab",
+                entry_stat=entry_stat,
+                error_type=self.engine.LauncherError,
+            ),
+            entry_metadata,
+        )
+        entry_stat.assert_called_once_with(
+            "20260723t010203z-0123456789ab",
+            dir_fd=31,
+            follow_symlinks=False,
+        )
+
+        self.assertIsNone(
+            self.state_policy.run_tmp_entry(
+                31,
+                "20260723t010203z-0123456789ab",
+                entry_stat=mock.Mock(side_effect=FileNotFoundError("missing")),
+                error_type=mock.Mock(
+                    side_effect=AssertionError("raised for a missing entry")
+                ),
+            )
+        )
+
+    def test_run_tmp_parent_matches_real_filesystem_behavior(self) -> None:
+        run_id = "20260723t010203z-0123456789ab"
+        kernel_dependencies = self.run_tmp_parent_filesystem_dependencies()
+
+        def kernel_entry(descriptor: int, name: str) -> object:
+            return self.state_policy.run_tmp_entry(
+                descriptor,
+                name,
+                entry_stat=self.engine.os.stat,
+                error_type=self.engine.LauncherError,
+            )
+
+        surfaces = (
+            (
+                "engine",
+                self.engine.exact_run_tmp_parent,
+                self.engine.run_tmp_entry,
+            ),
+            (
+                "kernel",
+                lambda repository, manifest: (
+                    self.state_policy.exact_run_tmp_parent(
+                        repository,
+                        manifest,
+                        **kernel_dependencies,
+                    )
+                ),
+                kernel_entry,
+            ),
+        )
+        for label, parent_context, entry in surfaces:
+            with self.subTest(surface=label):
+                with tempfile.TemporaryDirectory() as temporary:
+                    state_root = Path(temporary)
+                    (state_root / "tmp" / run_id).mkdir(parents=True)
+                    repository = SimpleNamespace(state_root=state_root)
+                    manifest = {
+                        "run_id": run_id,
+                        "tmpdir": str(state_root / "tmp" / run_id),
+                    }
+
+                    with parent_context(repository, manifest) as (
+                        descriptor,
+                        observed_run_id,
+                    ):
+                        self.assertEqual(observed_run_id, run_id)
+                        self.assertIsNotNone(entry(descriptor, run_id))
+                        self.assertIsNone(entry(descriptor, "missing-entry"))
+
+                    missing_root = SimpleNamespace(
+                        state_root=state_root / "absent"
+                    )
+                    missing_manifest = {
+                        "run_id": run_id,
+                        "tmpdir": str(
+                            state_root / "absent" / "tmp" / run_id
+                        ),
+                    }
+                    with self.assertRaisesRegex(
+                        self.engine.LauncherError,
+                        "^cannot inspect the run temporary root$",
+                    ):
+                        with parent_context(missing_root, missing_manifest):
+                            raise AssertionError("entered a missing root")
+
     def test_engine_preserves_run_identity_and_path_surfaces(self) -> None:
         self.assertIs(self.engine.RUN_ID_RE, self.state_policy.RUN_ID_RE)
         for helper_name in (
@@ -257,6 +715,8 @@ class StatePolicyTests(unittest.TestCase):
             "repo_lock_path",
             "run_lock_path",
             "manifest_path",
+            "exact_run_tmp_parent",
+            "run_tmp_entry",
         ):
             with self.subTest(helper=helper_name):
                 self.assertIsNot(
@@ -270,6 +730,8 @@ class StatePolicyTests(unittest.TestCase):
             "run_lock_path": ("repository", "run_id"),
             "manifest_path": ("repository", "run_id"),
             "validate_run_id": ("run_id",),
+            "exact_run_tmp_parent": ("repository", "manifest"),
+            "run_tmp_entry": ("parent_descriptor", "run_id"),
         }
         for helper_name, expected in expected_parameters.items():
             with self.subTest(signature=helper_name):

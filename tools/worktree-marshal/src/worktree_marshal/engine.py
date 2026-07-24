@@ -101,6 +101,7 @@ from .profiles import (
 )
 from .state import (
     RUN_ID_RE,
+    exact_run_tmp_parent as _exact_run_tmp_parent,
     manifest_path as _manifest_path,
     load_manifest as _load_manifest,
     new_run_id as _new_run_id,
@@ -108,6 +109,7 @@ from .state import (
     repo_lock_path as _repo_lock_path,
     repository_slug as _repository_slug,
     run_lock_path as _run_lock_path,
+    run_tmp_entry as _run_tmp_entry,
     state_base as _state_base,
     validate_exact_run_tmpdir as _validate_exact_run_tmpdir,
     validate_manifest_checkpoint_fields as _validate_manifest_checkpoint_fields,
@@ -5674,65 +5676,34 @@ def exact_run_tmp_parent(
     repository: Repository,
     manifest: dict,
 ) -> Iterator[tuple[int, str]]:
-    expected = validate_exact_run_tmpdir(repository, manifest)
-    temporary_root = expected.parent
-    run_id = expected.name
-
-    directory_flag = getattr(os, "O_DIRECTORY", 0)
-    nofollow_flag = getattr(os, "O_NOFOLLOW", 0)
-    if not directory_flag or not nofollow_flag:
-        raise LauncherError("safe run temporary-path inspection is unavailable")
-    try:
-        root_metadata = temporary_root.lstat()
-    except OSError as exc:
-        raise LauncherError("cannot inspect the run temporary root") from exc
-    if not stat.S_ISDIR(root_metadata.st_mode):
-        raise LauncherError("the run temporary root is not a real directory")
-
-    try:
-        descriptor = os.open(
-            temporary_root,
-            os.O_RDONLY
-            | directory_flag
-            | nofollow_flag
-            | getattr(os, "O_CLOEXEC", 0),
-        )
-    except OSError as exc:
-        raise LauncherError("cannot open the run temporary root safely") from exc
-    try:
-        try:
-            opened_metadata = os.fstat(descriptor)
-        except OSError as exc:
-            raise LauncherError(
-                "cannot authenticate the run temporary root"
-            ) from exc
-        if (
-            not stat.S_ISDIR(opened_metadata.st_mode)
-            or not os.path.samestat(root_metadata, opened_metadata)
-        ):
-            raise LauncherError("the run temporary root changed during inspection")
-        yield descriptor, run_id
-    finally:
-        try:
-            os.close(descriptor)
-        except OSError as exc:
-            raise LauncherError("cannot close the run temporary root") from exc
+    with _exact_run_tmp_parent(
+        repository,
+        manifest,
+        validate_exact_run_tmpdir=validate_exact_run_tmpdir,
+        directory_flag=getattr(os, "O_DIRECTORY", 0),
+        nofollow_flag=getattr(os, "O_NOFOLLOW", 0),
+        cloexec_flag=getattr(os, "O_CLOEXEC", 0),
+        read_only_flag=os.O_RDONLY,
+        directory_test=stat.S_ISDIR,
+        file_open=os.open,
+        file_stat=os.fstat,
+        same_stat=os.path.samestat,
+        file_close=os.close,
+        error_type=LauncherError,
+    ) as parent:
+        yield parent
 
 
 def run_tmp_entry(
     parent_descriptor: int,
     run_id: str,
 ) -> os.stat_result | None:
-    try:
-        return os.stat(
-            run_id,
-            dir_fd=parent_descriptor,
-            follow_symlinks=False,
-        )
-    except FileNotFoundError:
-        return None
-    except OSError as exc:
-        raise LauncherError("cannot inspect the run temporary path") from exc
+    return _run_tmp_entry(
+        parent_descriptor,
+        run_id,
+        entry_stat=os.stat,
+        error_type=LauncherError,
+    )
 
 
 def open_exact_temporary_directory(

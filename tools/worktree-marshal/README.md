@@ -126,7 +126,7 @@ worktree-removal or ref-transaction failures, receipt recovery, garbage
 collection, or concurrent retirement. Those retirement cases, broader crash
 and race recovery, broader security coverage, the complete installed lifecycle
 matrix, and the supported Python and Git CI matrix remain release gates; the
-first thirty-six step-5 seams are protected by direct source tests and artifact
+first thirty-seven step-5 seams are protected by direct source tests and artifact
 provenance, and the installed abort checkpoint covers archived transaction
 restoration. Each remaining helper boundary still requires its own direct
 parity coverage.
@@ -474,7 +474,9 @@ post-open closure, plus atomic manifest persistence and profile/repository-bound
 manifest loading, plus exact lexical run temporary-path identity. The state
 module now also owns core manifest lifecycle and path-containment validation
 and integration and retirement checkpoint-field validation, plus local
-target-branch syntax validation through an engine-supplied Git probe. The
+target-branch syntax validation through an engine-supplied Git probe. It now
+also owns exact run temporary-parent authentication and descriptor-relative
+no-follow entry probing through engine-supplied descriptor operations. The
 engine retains Git execution and the selection and sequencing of every
 directory, initialization, lock, persistence, temporary allocation, and
 lifecycle mutation. State-base selection acquires
