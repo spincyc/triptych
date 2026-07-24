@@ -125,6 +125,7 @@ class PublicAlphaTest(unittest.TestCase):
                 "release": 1,
                 "review": 0,
                 "hold": 0,
+                "providers": {"gpt": 1},
             },
         }
 
@@ -177,15 +178,68 @@ class PublicAlphaTest(unittest.TestCase):
                 "approval": None,
             }
         )
+        self.refresh_expected_counts()
+
+    def publication_provider_and_leaf(self, publication_id: str) -> tuple[str, str]:
+        if ":" in publication_id:
+            provider, leaf = publication_id.split(":", 1)
+            return provider, leaf
+        return self.manifest["provider"], publication_id
+
+    def refresh_expected_counts(self) -> None:
         statuses = [
             publication["status"] for publication in self.manifest["publications"]
         ]
+        providers = self.manifest.get("providers", [self.manifest["provider"]])
+        provider_counts = {provider: 0 for provider in providers}
+        for publication in self.manifest["publications"]:
+            provider, _ = self.publication_provider_and_leaf(publication["id"])
+            provider_counts[provider] += 1
         self.manifest["expected_counts"] = {
             "publications": len(statuses),
             "release": statuses.count("release"),
             "review": statuses.count("review"),
             "hold": statuses.count("hold"),
+            "providers": provider_counts,
         }
+
+    def add_claude_publication(
+        self,
+        leaf: str,
+        status: str,
+        *,
+        install_pdf: bool = True,
+        link_catalog: str | None = None,
+        link_line: str | None = None,
+    ) -> None:
+        self.manifest["providers"] = ["gpt", "claude"]
+        self.write(f"src/claude/{leaf}/main.tex", b"claude source\n")
+        if install_pdf:
+            self.write(f"doc/claude/{leaf}.pdf", b"claude pdf bytes\n")
+        if link_catalog is not None:
+            catalog_path = self.root / link_catalog
+            existing = catalog_path.read_bytes() if catalog_path.is_file() else b""
+            addition = link_line or f"[{leaf} claude](../doc/claude/{leaf}.pdf)"
+            self.write(link_catalog, existing + f"\n{addition}\n".encode())
+        if status == "release":
+            gates: list[str] = []
+            approval = {
+                "authorization": "test-authorization",
+                "pdf_sha256": "0" * 64,
+            }
+        else:
+            gates = ["rights"]
+            approval = None
+        self.manifest["publications"].append(
+            {
+                "id": f"claude:{leaf}",
+                "status": status,
+                "catalog": "library/test.md",
+                "gates": gates,
+                "approval": approval,
+            }
+        )
+        self.refresh_expected_counts()
 
     def authorize_current_inputs(self) -> None:
         """Make the synthetic authorization exactly match the fixture files."""
@@ -198,7 +252,8 @@ class PublicAlphaTest(unittest.TestCase):
         for publication in self.manifest["publications"]:
             if publication["status"] != "release":
                 continue
-            pdf_path = self.root / "doc/gpt" / f"{publication['id']}.pdf"
+            provider, leaf = self.publication_provider_and_leaf(publication["id"])
+            pdf_path = self.root / "doc" / provider / f"{leaf}.pdf"
             pdf_hash = digest(pdf_path.read_bytes())
             publication["approval"]["pdf_sha256"] = pdf_hash
             publication_rows.append((publication["id"], pdf_hash))
@@ -291,7 +346,7 @@ class PublicAlphaTest(unittest.TestCase):
         publications = self.tool.validate_manifest(self.manifest)
         inventory = self.tool.prepare_candidate_inventory(self.manifest)
 
-        self.assertEqual(publications["held-work"]["status"], "hold")
+        self.assertEqual(publications[("gpt", "held-work")]["status"], "hold")
         self.assertEqual([entry["id"] for entry in inventory["pdfs"]], ["work"])
 
     def test_source_only_hold_catalog_entry_is_filtered_from_every_build(self) -> None:
@@ -299,7 +354,7 @@ class PublicAlphaTest(unittest.TestCase):
         catalog = (self.root / "library/test.md").read_text(encoding="utf-8")
 
         public_catalog = self.tool.filter_catalog(
-            "library/test.md", catalog, {"work"}
+            "library/test.md", catalog, {("gpt", "work")}
         )
         empty_catalog = self.tool.filter_catalog("library/test.md", catalog, set())
 
@@ -316,14 +371,14 @@ class PublicAlphaTest(unittest.TestCase):
             public_page = self.tool.render_source_page(
                 "library/test.md",
                 "library/test.html",
-                {"work"},
+                {("gpt", "work")},
                 False,
                 {},
             )
             preview_page = self.tool.render_source_page(
                 "library/test.md",
                 "library/test.html",
-                {"work"},
+                {("gpt", "work")},
                 True,
                 {},
             )
@@ -434,7 +489,7 @@ class PublicAlphaTest(unittest.TestCase):
             rendered = self.tool.render_source_page(
                 "library/test.md",
                 "library/test.html",
-                {"work"},
+                {("gpt", "work")},
                 False,
                 {},
             )
@@ -453,14 +508,14 @@ class PublicAlphaTest(unittest.TestCase):
             landing = self.tool.render_source_page(
                 "library/curriculums.md",
                 "library/curriculums.html",
-                {"work"},
+                {("gpt", "work")},
                 False,
                 {},
             )
             child = self.tool.render_source_page(
                 "library/ecclesiastical-latin.md",
                 "library/ecclesiastical-latin.html",
-                {"work"},
+                {("gpt", "work")},
                 False,
                 {},
             )
@@ -764,7 +819,13 @@ class PublicAlphaTest(unittest.TestCase):
             }
         )
         self.manifest["expected_counts"].update(
-            {"publications": 2, "release": 1, "review": 1, "hold": 0}
+            {
+                "publications": 2,
+                "release": 1,
+                "review": 1,
+                "hold": 0,
+                "providers": {"gpt": 2},
+            }
         )
         self.authorize_current_inputs()
         publications = self.tool.validate_manifest(
@@ -842,6 +903,160 @@ class PublicAlphaTest(unittest.TestCase):
             publications,
             self.tool.OUTPUT_ROOT / "site",
             False,
+        )
+
+
+    def mixed_provider_catalog(self) -> str:
+        return (
+            "# Test shelf\n\n"
+            "| Publication | Focus |\n"
+            "| --- | --- |\n"
+            "| **[Work](../doc/gpt/work.pdf)** · "
+            "[Claude edition](../doc/claude/work.pdf) | Focus text. |\n"
+        )
+
+    def test_mixed_provider_row_degrades_unreleased_edition_to_em_dash(self) -> None:
+        filtered = self.tool.filter_catalog(
+            "library/test.md", self.mixed_provider_catalog(), {("gpt", "work")}
+        )
+
+        self.assertIn("[Work](../doc/gpt/work.pdf)", filtered)
+        self.assertNotIn("doc/claude", filtered)
+        self.assertIn("—", filtered)
+        self.assertIn("Focus text.", filtered)
+
+    def test_mixed_provider_row_keeps_every_released_edition(self) -> None:
+        filtered = self.tool.filter_catalog(
+            "library/test.md",
+            self.mixed_provider_catalog(),
+            {("gpt", "work"), ("claude", "work")},
+        )
+
+        self.assertIn("[Work](../doc/gpt/work.pdf)", filtered)
+        self.assertIn("[Claude edition](../doc/claude/work.pdf)", filtered)
+        self.assertNotIn("—", filtered)
+
+    def test_row_with_no_released_edition_is_dropped(self) -> None:
+        filtered = self.tool.filter_catalog(
+            "library/test.md", self.mixed_provider_catalog(), set()
+        )
+
+        self.assertNotIn("doc/gpt", filtered)
+        self.assertNotIn("doc/claude", filtered)
+        self.assertIn("No publications from this section are included", filtered)
+
+    def test_catalog_link_to_undeclared_provider_is_rejected(self) -> None:
+        with (self.root / "library/test.md").open("a", encoding="utf-8") as stream:
+            stream.write("\n[Other edition](../doc/other/work.pdf)\n")
+        self.authorize_current_inputs()
+
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.validate_manifest(self.manifest)
+
+        self.assertIn(
+            "library/test.md: catalog references undeclared provider edition "
+            "doc/other/work.pdf",
+            str(failure.exception),
+        )
+
+    def test_mixed_status_row_survives_with_em_dash_for_held_claude_edition(self) -> None:
+        self.write(
+            "library/test.md",
+            "# Test shelf\n\n"
+            "[Work](../doc/gpt/work.pdf) · "
+            "[Claude edition](../doc/claude/work.pdf)\n".encode(),
+        )
+        self.add_claude_publication("work", "hold")
+        self.authorize_current_inputs()
+
+        publications = self.tool.validate_manifest(self.manifest)
+        included = self.tool.included_publications(publications, False)
+        self.assertEqual(set(included), {("gpt", "work")})
+
+        catalog = (self.root / "library/test.md").read_text(encoding="utf-8")
+        filtered = self.tool.filter_catalog("library/test.md", catalog, set(included))
+        self.assertIn("[Work](../doc/gpt/work.pdf)", filtered)
+        self.assertNotIn("doc/claude", filtered)
+        self.assertIn("—", filtered)
+
+    def test_released_claude_edition_validates_and_enters_the_artifact(self) -> None:
+        self.write(
+            "library/test.md",
+            "# Test shelf\n\n"
+            "[Work](../doc/gpt/work.pdf) · "
+            "[Claude edition](../doc/claude/work.pdf)\n".encode(),
+        )
+        self.add_claude_publication("work", "release")
+        self.authorize_current_inputs()
+
+        publications = self.tool.validate_manifest(self.manifest)
+        included = self.tool.included_publications(publications, False)
+        self.assertEqual(set(included), {("gpt", "work"), ("claude", "work")})
+
+        artifact = self.tool.artifact_manifest_data(self.manifest, included, False)
+        entries = {entry["id"]: entry["pdf"] for entry in artifact["publications"]}
+        self.assertEqual(
+            entries,
+            {"work": "doc/gpt/work.pdf", "claude:work": "doc/claude/work.pdf"},
+        )
+        expected_files = self.tool.expected_artifact_files(
+            self.manifest,
+            included,
+            False,
+            self.tool.artifact_authorization(self.manifest, included),
+        )
+        self.assertIn("doc/gpt/work.pdf", expected_files)
+        self.assertIn("doc/claude/work.pdf", expected_files)
+
+    def test_released_claude_edition_requires_catalog_link(self) -> None:
+        self.add_claude_publication("work", "release")
+        self.authorize_current_inputs()
+
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.validate_manifest(self.manifest)
+
+        self.assertIn(
+            "claude:work: expected one catalog link, found 0",
+            str(failure.exception),
+        )
+
+    def test_held_claude_edition_with_installed_pdf_may_stay_unlinked(self) -> None:
+        self.add_claude_publication("work", "hold")
+        self.authorize_current_inputs()
+
+        publications = self.tool.validate_manifest(self.manifest)
+
+        self.assertEqual(publications[("claude", "work")]["status"], "hold")
+
+    def test_expected_counts_track_publications_per_provider(self) -> None:
+        self.authorize_current_inputs()
+        self.manifest["expected_counts"]["providers"] = {"gpt": 5}
+
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.validate_manifest(self.manifest)
+
+        self.assertIn(
+            "expected_counts.providers is {'gpt': 5}, discovered {'gpt': 1}",
+            str(failure.exception),
+        )
+
+    def test_publication_naming_undeclared_provider_is_rejected(self) -> None:
+        self.manifest["publications"].append(
+            {
+                "id": "other:work",
+                "status": "hold",
+                "catalog": "library/test.md",
+                "gates": ["rights"],
+                "approval": None,
+            }
+        )
+
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.publication_map(self.manifest)
+
+        self.assertIn(
+            "names an undeclared provider: 'other:work'",
+            str(failure.exception),
         )
 
 

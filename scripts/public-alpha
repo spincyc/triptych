@@ -57,9 +57,13 @@ LICENSE_SOURCE_PATHS = {
 }
 SITE_SOURCE_PATHS = set(PAGE_MAP) | FIXED_ARTIFACT_INPUT_PATHS | LICENSE_SOURCE_PATHS
 
-PDF_LINK_RE = re.compile(r"(?:\.\./)?doc/gpt/([^)#\s]+)\.pdf(?:#[^)]*)?")
+# Matches any provider edition link; provider membership in the manifest's
+# declared provider set is enforced during validation so that a link to an
+# undeclared provider is a hard error rather than silently unmatched text.
+PDF_LINK_RE = re.compile(r"(?:\.\./)?doc/([a-z0-9-]+)/([^)#\s]+)\.pdf(?:#[^)]*)?")
 CATALOG_PUBLICATION_ID_RE = re.compile(
     r"<!--\s*triptych-publication-id:\s*"
+    r"(?:([a-z0-9-]+):)?"
     r"([a-z0-9][a-z0-9./-]*[a-z0-9])\s*-->"
 )
 MARKDOWN_LINK_RE = re.compile(r"(?<!!)\[([^\]]+)\]\(([^)\n]+)\)")
@@ -153,6 +157,41 @@ def load_manifest() -> dict:
     if manifest.get("schema_version") != 2:
         raise ReleaseError("release/public-alpha.json must use schema_version 2")
     return manifest
+
+
+def declared_providers(manifest: dict) -> tuple[str, list[str]]:
+    """Return the primary provider and the ordered set of declared providers.
+
+    ``provider`` names the primary provider; bare publication ids, catalog
+    identity markers, and rights-record rows belong to it. ``providers`` is an
+    optional ordered list of every provider whose ``doc/<provider>/`` and
+    ``src/<provider>/`` trees are discovered, validated, copied, and linkable;
+    it defaults to the primary provider alone and must include it.
+    """
+    primary = manifest.get("provider")
+    if not isinstance(primary, str) or not re.fullmatch(r"[a-z0-9-]+", primary):
+        raise ReleaseError(f"invalid provider: {primary!r}")
+    providers = manifest.get("providers", [primary])
+    if (
+        not isinstance(providers, list)
+        or not providers
+        or any(
+            not isinstance(item, str) or not re.fullmatch(r"[a-z0-9-]+", item)
+            for item in providers
+        )
+    ):
+        raise ReleaseError(f"invalid providers: {providers!r}")
+    if len(providers) != len(set(providers)):
+        raise ReleaseError(f"providers must not contain duplicates: {providers!r}")
+    if primary not in providers:
+        raise ReleaseError(f"providers must include the primary provider {primary!r}")
+    return primary, list(providers)
+
+
+def publication_label(key: tuple[str, str], primary: str) -> str:
+    """Serialize a (provider, leaf) key; bare ids belong to the primary provider."""
+    provider, leaf = key
+    return leaf if provider == primary else f"{provider}:{leaf}"
 
 
 def safe_relative_path(value: str, label: str) -> Path:
@@ -373,23 +412,39 @@ def validate_authorizations(
     return parsed_authorizations
 
 
-def publication_map(manifest: dict) -> dict[str, dict]:
+def publication_map(
+    manifest: dict,
+    primary: str | None = None,
+    providers: list[str] | None = None,
+) -> dict[tuple[str, str], dict]:
+    if primary is None or providers is None:
+        primary, providers = declared_providers(manifest)
     publications = manifest.get("publications")
     if not isinstance(publications, list):
         raise ReleaseError("manifest publications must be a list")
-    result: dict[str, dict] = {}
+    result: dict[tuple[str, str], dict] = {}
     for number, publication in enumerate(publications, start=1):
         if not isinstance(publication, dict):
             raise ReleaseError(f"publication {number} must be an object")
         publication_id = publication.get("id")
-        if not isinstance(publication_id, str) or not SAFE_ID_RE.fullmatch(publication_id):
+        if not isinstance(publication_id, str):
             raise ReleaseError(f"publication {number} has an invalid id: {publication_id!r}")
-        publication_path = PurePosixPath(publication_id)
-        if ".." in publication_path.parts or publication_path.as_posix() != publication_id:
+        provider, separator, leaf = publication_id.partition(":")
+        if not separator:
+            provider, leaf = primary, publication_id
+        elif provider not in providers:
+            raise ReleaseError(
+                f"publication {number} names an undeclared provider: {publication_id!r}"
+            )
+        if not SAFE_ID_RE.fullmatch(leaf):
+            raise ReleaseError(f"publication {number} has an invalid id: {publication_id!r}")
+        leaf_path = PurePosixPath(leaf)
+        if ".." in leaf_path.parts or leaf_path.as_posix() != leaf:
             raise ReleaseError(f"publication {number} has an unsafe id: {publication_id!r}")
-        if publication_id in result:
+        key = (provider, leaf)
+        if key in result:
             raise ReleaseError(f"duplicate publication id: {publication_id}")
-        result[publication_id] = publication
+        result[key] = publication
     return result
 
 
@@ -411,25 +466,45 @@ def discover_pdf_ids(provider: str) -> set[str]:
     }
 
 
-def catalog_occurrences() -> tuple[
-    dict[str, list[str]],
-    list[tuple[str, list[str]]],
-    dict[str, list[str]],
-    list[tuple[str, list[str], list[str]]],
+def catalog_occurrences(primary: str, providers: list[str]) -> tuple[
+    dict[tuple[str, str], list[str]],
+    list[tuple[str, list[tuple[str, str]]]],
+    dict[tuple[str, str], list[str]],
+    list[tuple[str, list[tuple[str, str]], list[tuple[str, str]]]],
+    list[tuple[str, str]],
 ]:
-    occurrences: dict[str, list[str]] = defaultdict(list)
-    multi_pdf_lines: list[tuple[str, list[str]]] = []
-    marked_occurrences: dict[str, list[str]] = defaultdict(list)
-    mismatched_identity_lines: list[tuple[str, list[str], list[str]]] = []
+    provider_set = set(providers)
+    occurrences: dict[tuple[str, str], list[str]] = defaultdict(list)
+    multi_pdf_lines: list[tuple[str, list[tuple[str, str]]]] = []
+    marked_occurrences: dict[tuple[str, str], list[str]] = defaultdict(list)
+    mismatched_identity_lines: list[
+        tuple[str, list[tuple[str, str]], list[tuple[str, str]]]
+    ] = []
+    undeclared_provider_references: list[tuple[str, str]] = []
     for path in sorted((ROOT / "library").glob("*.md")):
         relative = path.relative_to(ROOT).as_posix()
         for line in path.read_text(encoding="utf-8").splitlines():
-            ids = PDF_LINK_RE.findall(line)
-            marked_ids = CATALOG_PUBLICATION_ID_RE.findall(line)
-            for publication_id in ids:
-                occurrences[publication_id].append(relative)
-            for publication_id in marked_ids:
-                marked_occurrences[publication_id].append(relative)
+            ids: list[tuple[str, str]] = []
+            for link_provider, leaf in PDF_LINK_RE.findall(line):
+                if link_provider in provider_set:
+                    ids.append((link_provider, leaf))
+                else:
+                    undeclared_provider_references.append(
+                        (relative, f"doc/{link_provider}/{leaf}.pdf")
+                    )
+            marked_ids: list[tuple[str, str]] = []
+            for marked_provider, leaf in CATALOG_PUBLICATION_ID_RE.findall(line):
+                resolved_provider = marked_provider or primary
+                if resolved_provider in provider_set:
+                    marked_ids.append((resolved_provider, leaf))
+                else:
+                    undeclared_provider_references.append(
+                        (relative, f"{marked_provider}:{leaf}")
+                    )
+            for key in ids:
+                occurrences[key].append(relative)
+            for key in marked_ids:
+                marked_occurrences[key].append(relative)
             if len(ids) > 1:
                 multi_pdf_lines.append((relative, ids))
             if ids and marked_ids and set(ids) != set(marked_ids):
@@ -439,6 +514,7 @@ def catalog_occurrences() -> tuple[
         multi_pdf_lines,
         marked_occurrences,
         mismatched_identity_lines,
+        undeclared_provider_references,
     )
 
 
@@ -447,12 +523,17 @@ def validate_manifest(
     require_active_release: bool = True,
     current_time: datetime | None = None,
     verify_approval_bindings: bool = True,
-) -> dict[str, dict]:
+) -> dict[tuple[str, str], dict]:
     errors: list[str] = []
-    provider = manifest.get("provider")
-    if not isinstance(provider, str) or not re.fullmatch(r"[a-z0-9-]+", provider):
-        errors.append(f"invalid provider: {provider!r}")
-        provider = "gpt"
+    try:
+        primary, providers = declared_providers(manifest)
+    except ReleaseError as exc:
+        errors.append(str(exc))
+        primary, providers = "gpt", ["gpt"]
+
+    def labels(keys) -> list[str]:
+        return sorted(publication_label(key, primary) for key in keys)
+
     if manifest.get("release_id") != "public-alpha":
         errors.append("manifest release_id must be 'public-alpha'")
 
@@ -469,19 +550,27 @@ def validate_manifest(
     approved_snapshots: dict[str, list[tuple[str, str]]] = defaultdict(list)
 
     try:
-        publications = publication_map(manifest)
+        publications = publication_map(manifest, primary, providers)
     except ReleaseError as exc:
         raise exc
 
-    source_ids = discover_source_ids(provider)
-    pdf_ids = discover_pdf_ids(provider)
+    source_ids = {
+        (discovery_provider, leaf)
+        for discovery_provider in providers
+        for leaf in discover_source_ids(discovery_provider)
+    }
+    pdf_ids = {
+        (discovery_provider, leaf)
+        for discovery_provider in providers
+        for leaf in discover_pdf_ids(discovery_provider)
+    }
     manifest_ids = set(publications)
     if source_ids != manifest_ids:
         errors.append(
             "manifest/source mismatch: "
-            f"missing={sorted(source_ids - manifest_ids)!r}, extra={sorted(manifest_ids - source_ids)!r}"
+            f"missing={labels(source_ids - manifest_ids)!r}, extra={labels(manifest_ids - source_ids)!r}"
         )
-    unmanifested_pdf_ids = sorted(pdf_ids - manifest_ids)
+    unmanifested_pdf_ids = labels(pdf_ids - manifest_ids)
     if unmanifested_pdf_ids:
         errors.append(
             "manifest/PDF mismatch: "
@@ -494,65 +583,67 @@ def validate_manifest(
         gate_definitions = {}
 
     counts: Counter[str] = Counter()
-    for publication_id, publication in publications.items():
+    for key, publication in publications.items():
+        provider, leaf = key
+        label = publication_label(key, primary)
         status = publication.get("status")
         if status not in {"hold", "review", "release"}:
-            errors.append(f"{publication_id}: invalid status {status!r}")
+            errors.append(f"{label}: invalid status {status!r}")
             continue
         counts[status] += 1
-        has_pdf = publication_id in pdf_ids
+        has_pdf = key in pdf_ids
         if status in {"release", "review"} and not has_pdf:
-            errors.append(f"{publication_id}: {status} entries require an installed PDF")
+            errors.append(f"{label}: {status} entries require an installed PDF")
 
         catalog = publication.get("catalog")
         if not isinstance(catalog, str) or not catalog.startswith("library/") or not catalog.endswith(".md"):
-            errors.append(f"{publication_id}: invalid catalog {catalog!r}")
+            errors.append(f"{label}: invalid catalog {catalog!r}")
         elif not (ROOT / catalog).is_file():
-            errors.append(f"{publication_id}: missing catalog {catalog}")
+            errors.append(f"{label}: missing catalog {catalog}")
 
         gates = publication.get("gates")
         if not isinstance(gates, list) or any(not isinstance(gate, str) for gate in gates):
-            errors.append(f"{publication_id}: gates must be a list of gate ids")
+            errors.append(f"{label}: gates must be a list of gate ids")
             gates = []
         unknown_gates = sorted(set(gates) - set(gate_definitions))
         if unknown_gates:
-            errors.append(f"{publication_id}: unknown gates {unknown_gates!r}")
+            errors.append(f"{label}: unknown gates {unknown_gates!r}")
 
         approval = publication.get("approval")
         if status in {"hold", "review"}:
             if not gates:
-                errors.append(f"{publication_id}: {status} entries must retain at least one unresolved gate")
+                errors.append(f"{label}: {status} entries must retain at least one unresolved gate")
             if approval is not None:
-                errors.append(f"{publication_id}: {status} entries must have null approval")
+                errors.append(f"{label}: {status} entries must have null approval")
             continue
 
         if gates:
-            errors.append(f"{publication_id}: release entries must have no unresolved gates")
+            errors.append(f"{label}: release entries must have no unresolved gates")
         if not isinstance(approval, dict):
-            errors.append(f"{publication_id}: release entries require an approval object")
+            errors.append(f"{label}: release entries require an approval object")
             continue
         if set(approval) != {"authorization", "pdf_sha256"}:
             errors.append(
-                f"{publication_id}: release approval must contain only authorization and pdf_sha256"
+                f"{label}: release approval must contain only authorization and pdf_sha256"
             )
         authorization_id = approval.get("authorization")
         if not isinstance(authorization_id, str) or authorization_id not in authorization_ids:
-            errors.append(f"{publication_id}: approval references unknown authorization {authorization_id!r}")
+            errors.append(f"{label}: approval references unknown authorization {authorization_id!r}")
         else:
             referenced_authorizations.add(authorization_id)
         approved_hash = approval.get("pdf_sha256")
         if not isinstance(approved_hash, str) or not SHA256_RE.fullmatch(approved_hash):
-            errors.append(f"{publication_id}: pdf_sha256 must be a lowercase SHA-256")
+            errors.append(f"{label}: pdf_sha256 must be a lowercase SHA-256")
         else:
             if isinstance(authorization_id, str) and authorization_id in authorization_ids:
-                approved_snapshots[authorization_id].append((publication_id, approved_hash))
-            pdf_path = ROOT / "doc" / provider / f"{publication_id}.pdf"
+                approved_snapshots[authorization_id].append((label, approved_hash))
+            pdf_path = ROOT / "doc" / provider / f"{leaf}.pdf"
             if (
                 verify_approval_bindings
                 and pdf_path.is_file()
                 and sha256(pdf_path) != approved_hash
             ):
-                errors.append(f"{publication_id}: installed PDF does not match its approved SHA-256")
+                errors.append(f"{label}: installed PDF does not match its approved SHA-256")
 
     orphan_authorizations = sorted(authorization_ids - referenced_authorizations)
     if orphan_authorizations:
@@ -616,66 +707,111 @@ def validate_manifest(
             "review": counts["review"],
             "hold": counts["hold"],
         }
-        for key, actual in actual_counts.items():
-            if expected.get(key) != actual:
-                errors.append(f"expected_counts.{key} is {expected.get(key)!r}, discovered {actual}")
+        for count_key, actual in actual_counts.items():
+            if expected.get(count_key) != actual:
+                errors.append(
+                    f"expected_counts.{count_key} is {expected.get(count_key)!r}, discovered {actual}"
+                )
+        provider_totals = Counter(key[0] for key in publications)
+        actual_provider_counts = {
+            declared: provider_totals.get(declared, 0) for declared in providers
+        }
+        if expected.get("providers") != actual_provider_counts:
+            errors.append(
+                f"expected_counts.providers is {expected.get('providers')!r}, "
+                f"discovered {actual_provider_counts!r}"
+            )
 
     (
         occurrences,
         multi_pdf_lines,
         marked_occurrences,
         mismatched_identity_lines,
-    ) = catalog_occurrences()
-    for publication_id, publication in publications.items():
-        homes = occurrences.get(publication_id, [])
-        marked_homes = marked_occurrences.get(publication_id, [])
-        if publication_id in pdf_ids:
-            if len(homes) != 1:
-                errors.append(f"{publication_id}: expected one catalog link, found {len(homes)}")
-            elif homes[0] != publication.get("catalog"):
+        undeclared_provider_references,
+    ) = catalog_occurrences(primary, providers)
+    for catalog, reference in undeclared_provider_references:
+        errors.append(f"{catalog}: catalog references undeclared provider edition {reference}")
+    for key, publication in publications.items():
+        provider, leaf = key
+        label = publication_label(key, primary)
+        homes = occurrences.get(key, [])
+        marked_homes = marked_occurrences.get(key, [])
+        if key in pdf_ids:
+            # The primary provider's editions keep the exactly-once catalog
+            # requirement, as does any released edition; an installed but
+            # unreleased edition of a secondary provider may stay unlinked
+            # while catalog coverage grows.
+            if provider == primary or publication.get("status") == "release":
+                if len(homes) != 1:
+                    errors.append(f"{label}: expected one catalog link, found {len(homes)}")
+                elif homes[0] != publication.get("catalog"):
+                    errors.append(
+                        f"{label}: manifest catalog {publication.get('catalog')!r} "
+                        f"does not match {homes[0]!r}"
+                    )
+            elif len(homes) > 1:
+                errors.append(f"{label}: expected at most one catalog link, found {len(homes)}")
+            elif homes and homes[0] != publication.get("catalog"):
                 errors.append(
-                    f"{publication_id}: manifest catalog {publication.get('catalog')!r} "
+                    f"{label}: manifest catalog {publication.get('catalog')!r} "
                     f"does not match {homes[0]!r}"
                 )
         elif publication.get("status") == "hold" and homes:
             errors.append(
-                f"{publication_id}: source-only hold entries "
+                f"{label}: source-only hold entries "
                 f"require zero catalog PDF links, found {len(homes)}"
             )
         if marked_homes:
             if len(marked_homes) != 1:
                 errors.append(
-                    f"{publication_id}: expected at most one marked catalog identity, "
+                    f"{label}: expected at most one marked catalog identity, "
                     f"found {len(marked_homes)}"
                 )
             elif marked_homes[0] != publication.get("catalog"):
                 errors.append(
-                    f"{publication_id}: manifest catalog {publication.get('catalog')!r} "
+                    f"{label}: manifest catalog {publication.get('catalog')!r} "
                     f"does not match marked identity {marked_homes[0]!r}"
                 )
-        if publication_id not in pdf_ids and publication.get("status") == "hold":
+        if key not in pdf_ids and publication.get("status") == "hold":
             if len(marked_homes) != 1:
                 errors.append(
-                    f"{publication_id}: source-only hold entries require exactly one "
+                    f"{label}: source-only hold entries require exactly one "
                     f"marked catalog identity, found {len(marked_homes)}"
                 )
-    unowned = sorted(set(occurrences) - manifest_ids)
+    unowned = labels(set(occurrences) - manifest_ids)
     if unowned:
         errors.append(f"catalog links PDFs absent from manifest: {unowned!r}")
-    unowned_markers = sorted(set(marked_occurrences) - manifest_ids)
+    unowned_markers = labels(set(marked_occurrences) - manifest_ids)
     if unowned_markers:
         errors.append(
             "marked catalog identities absent from manifest: "
             f"{unowned_markers!r}"
         )
-    for catalog, ids in multi_pdf_lines:
-        statuses = {publications[item]["status"] for item in ids if item in publications}
-        if len(statuses) > 1:
-            errors.append(f"{catalog}: PDFs sharing one catalog row must share a status: {ids!r}")
+    for catalog, line_keys in multi_pdf_lines:
+        # Editions from different providers may share a row with differing
+        # statuses (an unreleased edition degrades to an em dash), but PDFs of
+        # one provider on one row must still share a status so a row is never
+        # partially hidden within a provider.
+        statuses_by_provider: dict[str, set[str]] = defaultdict(set)
+        for line_key in line_keys:
+            if line_key in publications:
+                statuses_by_provider[line_key[0]].add(publications[line_key]["status"])
+        for line_provider, statuses in sorted(statuses_by_provider.items()):
+            if len(statuses) > 1:
+                provider_labels = [
+                    publication_label(line_key, primary)
+                    for line_key in line_keys
+                    if line_key[0] == line_provider
+                ]
+                errors.append(
+                    f"{catalog}: {line_provider} PDFs sharing one catalog row "
+                    f"must share a status: {provider_labels!r}"
+                )
     for catalog, pdf_ids_on_line, source_ids_on_line in mismatched_identity_lines:
         errors.append(
-            f"{catalog}: catalog row PDF identities {pdf_ids_on_line!r} do not match "
-            f"marked identities {source_ids_on_line!r}"
+            f"{catalog}: catalog row PDF identities "
+            f"{[publication_label(item, primary) for item in pdf_ids_on_line]!r} do not match "
+            f"marked identities {[publication_label(item, primary) for item in source_ids_on_line]!r}"
         )
 
     if errors:
@@ -683,36 +819,41 @@ def validate_manifest(
     return publications
 
 
-def included_publications(publications: dict[str, dict], preview: bool) -> dict[str, dict]:
+def included_publications(
+    publications: dict[tuple[str, str], dict], preview: bool
+) -> dict[tuple[str, str], dict]:
     statuses = {"release", "review"} if preview else {"release"}
     return {
-        publication_id: publication
-        for publication_id, publication in publications.items()
+        key: publication
+        for key, publication in publications.items()
         if publication["status"] in statuses
     }
 
 
-def candidate_inventory_data(manifest: dict, publications: dict[str, dict]) -> dict:
+def candidate_inventory_data(
+    manifest: dict, publications: dict[tuple[str, str], dict]
+) -> dict:
     """Return current hashes without granting or recording release authority."""
-    provider = manifest["provider"]
+    primary, providers = declared_providers(manifest)
     errors: list[str] = []
     pdfs = []
-    for publication_id in sorted(publications):
-        source_path = ROOT / "src" / provider / publication_id / "main.tex"
-        pdf_path = ROOT / "doc" / provider / f"{publication_id}.pdf"
+    for key in sorted(publications):
+        provider, leaf = key
+        source_path = ROOT / "src" / provider / leaf / "main.tex"
+        pdf_path = ROOT / "doc" / provider / f"{leaf}.pdf"
         if source_path.is_symlink() or not source_path.is_file():
             errors.append(f"unsafe or missing publication source: {source_path.relative_to(ROOT)}")
         if pdf_path.is_symlink():
             errors.append(f"unsafe or missing installed PDF: {pdf_path.relative_to(ROOT)}")
             continue
         if not pdf_path.is_file():
-            if publications[publication_id]["status"] == "hold":
+            if publications[key]["status"] == "hold":
                 continue
             errors.append(f"unsafe or missing installed PDF: {pdf_path.relative_to(ROOT)}")
             continue
         pdfs.append(
             {
-                "id": publication_id,
+                "id": publication_label(key, primary),
                 "path": pdf_path.relative_to(ROOT).as_posix(),
                 "sha256": sha256(pdf_path),
             }
@@ -746,7 +887,8 @@ def candidate_inventory_data(manifest: dict, publications: dict[str, dict]) -> d
         "purpose": "candidate-current-hash-inventory",
         "approval_conferred": False,
         "notice": CANDIDATE_INVENTORY_NOTICE,
-        "provider": provider,
+        "provider": primary,
+        "providers": providers,
         "pdfs": pdfs,
         "site_sources": site_sources,
     }
@@ -762,7 +904,7 @@ def prepare_candidate_inventory(manifest: dict) -> dict:
     return candidate_inventory_data(manifest, publications)
 
 
-def artifact_authorization(manifest: dict, included: dict[str, dict]) -> dict:
+def artifact_authorization(manifest: dict, included: dict[tuple[str, str], dict]) -> dict:
     authorization_ids = sorted(
         {
             publication["approval"]["authorization"]
@@ -828,25 +970,25 @@ def validate_deployment_target(authorization: dict, deployment_target: str) -> N
 
 def artifact_manifest_data(
     manifest: dict,
-    included: dict[str, dict],
+    included: dict[tuple[str, str], dict],
     preview: bool,
 ) -> dict:
+    primary, _ = declared_providers(manifest)
     publication_entries = []
-    for publication_id, publication in sorted(included.items()):
+    for key, publication in sorted(included.items()):
+        provider, leaf = key
         approval = publication.get("approval")
         if publication["status"] == "release":
             authorization_id = approval["authorization"]
             pdf_hash = approval["pdf_sha256"]
         else:
             authorization_id = None
-            pdf_hash = sha256(
-                ROOT / "doc" / manifest["provider"] / f"{publication_id}.pdf"
-            )
+            pdf_hash = sha256(ROOT / "doc" / provider / f"{leaf}.pdf")
         publication_entries.append(
             {
-                "id": publication_id,
+                "id": publication_label(key, primary),
                 "status": publication["status"],
-                "pdf": f"doc/{manifest['provider']}/{publication_id}.pdf",
+                "pdf": f"doc/{provider}/{leaf}.pdf",
                 "authorization": authorization_id,
                 "pdf_sha256": pdf_hash,
             }
@@ -864,14 +1006,12 @@ def artifact_manifest_data(
 
 def expected_artifact_files(
     manifest: dict,
-    included: dict[str, dict],
+    included: dict[tuple[str, str], dict],
     preview: bool,
     authorization: dict,
 ) -> set[str]:
     expected = set(PAGE_MAP.values())
-    expected.update(
-        f"doc/{manifest['provider']}/{publication_id}.pdf" for publication_id in included
-    )
+    expected.update(f"doc/{provider}/{leaf}.pdf" for provider, leaf in included)
     expected.update(
         artifact_license_source_paths()
     )
@@ -975,22 +1115,52 @@ export default {{
 '''
 
 
-def filter_catalog(source: str, markdown_text: str, included_ids: set[str]) -> str:
-    original_ids = PDF_LINK_RE.findall(markdown_text)
-    original_ids.extend(CATALOG_PUBLICATION_ID_RE.findall(markdown_text))
-    if not original_ids:
+def filter_catalog(
+    source: str, markdown_text: str, included_ids: set[tuple[str, str]]
+) -> str:
+    if not PDF_LINK_RE.search(markdown_text) and not CATALOG_PUBLICATION_ID_RE.search(
+        markdown_text
+    ):
         return markdown_text
 
+    def degrade_excluded_link(match: re.Match[str]) -> str:
+        raw_target = match.group(2).strip()
+        target = raw_target.split(maxsplit=1)[0]
+        pdf_match = PDF_LINK_RE.search(target)
+        if pdf_match and (pdf_match.group(1), pdf_match.group(2)) not in included_ids:
+            return "—"
+        return match.group(0)
+
+    def marker_included(marker: tuple[str, str]) -> bool:
+        marked_provider, marked_leaf = marker
+        return any(
+            leaf == marked_leaf and marked_provider in {"", provider}
+            for provider, leaf in included_ids
+        )
+
     retained: list[str] = []
-    retained_ids: list[str] = []
+    any_included = False
     for line in markdown_text.splitlines():
         line_ids = PDF_LINK_RE.findall(line)
-        line_ids.extend(CATALOG_PUBLICATION_ID_RE.findall(line))
-        if line_ids and not set(line_ids).issubset(included_ids):
-            continue
+        markers = CATALOG_PUBLICATION_ID_RE.findall(line)
+        included_on_line = [item for item in line_ids if item in included_ids]
+        if line_ids:
+            if not included_on_line:
+                # A row with no released edition is dropped entirely.
+                continue
+            if len(included_on_line) != len(line_ids):
+                # The row survives on its released editions; each unreleased
+                # or absent edition's link degrades to an em dash.
+                line = MARKDOWN_LINK_RE.sub(degrade_excluded_link, line)
+                line = line.replace("**—**", "—").replace("*—*", "—")
+            any_included = True
+        elif markers:
+            if not all(marker_included(marker) for marker in markers):
+                # Source-only marked identities of excluded works are dropped.
+                continue
+            any_included = True
         retained.append(CATALOG_PUBLICATION_ID_RE.sub("", line))
-        retained_ids.extend(line_ids)
-    if retained_ids:
+    if any_included:
         return "\n".join(retained) + "\n"
 
     title = next((line for line in markdown_text.splitlines() if line.startswith("# ")), "# Library")
@@ -1005,7 +1175,9 @@ def filter_catalog(source: str, markdown_text: str, included_ids: set[str]) -> s
     )
 
 
-def source_to_output(source_relative: str, target: str, included_ids: set[str]) -> str | None:
+def source_to_output(
+    source_relative: str, target: str, included_ids: set[tuple[str, str]]
+) -> str | None:
     target_parts = urlsplit(target)
     if target_parts.scheme or target_parts.netloc or target.startswith("//"):
         return target
@@ -1024,9 +1196,9 @@ def source_to_output(source_relative: str, target: str, included_ids: set[str]) 
         license_path = ROOT.joinpath(*resolved.parts)
         if license_path.is_file():
             destination = resolved_text
-    if destination is None and resolved_text.startswith("doc/gpt/") and resolved_text.endswith(".pdf"):
-        publication_id = resolved_text[len("doc/gpt/") : -len(".pdf")]
-        if publication_id in included_ids:
+    if destination is None:
+        pdf_match = re.fullmatch(r"doc/([a-z0-9-]+)/(.+)\.pdf", resolved_text)
+        if pdf_match and (pdf_match.group(1), pdf_match.group(2)) in included_ids:
             destination = resolved_text
     if destination is None:
         return None
@@ -1041,7 +1213,9 @@ def source_to_output(source_relative: str, target: str, included_ids: set[str]) 
     return relative
 
 
-def rewrite_links(source_relative: str, markdown_text: str, included_ids: set[str]) -> str:
+def rewrite_links(
+    source_relative: str, markdown_text: str, included_ids: set[tuple[str, str]]
+) -> str:
     output_lines: list[str] = []
     for line in markdown_text.splitlines():
         catalog_entry = bool(
@@ -1196,7 +1370,7 @@ def render_page(
 def render_source_page(
     source_relative: str,
     output_relative: str,
-    included_ids: set[str],
+    included_ids: set[tuple[str, str]],
     preview: bool,
     authorization: dict,
 ) -> str:
@@ -1285,16 +1459,15 @@ def expected_checksum_text(output: Path) -> str:
 
 def verify_output(
     manifest: dict,
-    publications: dict[str, dict],
+    publications: dict[tuple[str, str], dict],
     output: Path,
     preview: bool,
 ) -> None:
     errors: list[str] = []
+    primary, _ = declared_providers(manifest)
     included = included_publications(publications, preview)
     expected_authorization = artifact_authorization(manifest, included)
-    expected_pdf_paths = {
-        f"doc/{manifest['provider']}/{publication_id}.pdf" for publication_id in included
-    }
+    expected_pdf_paths = {f"doc/{provider}/{leaf}.pdf" for provider, leaf in included}
     if not output.is_dir():
         raise ReleaseError(f"artifact does not exist: {output.relative_to(ROOT)}")
 
@@ -1343,20 +1516,21 @@ def verify_output(
         artifact_manifest = {}
     if artifact_manifest != artifact_manifest_data(manifest, included, preview):
         errors.append("artifact manifest does not exactly match the release policy")
-    for publication_id, publication in included.items():
-        pdf_path = output / "doc" / manifest["provider"] / f"{publication_id}.pdf"
+    for key, publication in included.items():
+        provider, leaf = key
+        pdf_path = output / "doc" / provider / f"{leaf}.pdf"
         if pdf_path.is_file():
             actual_hash = sha256(pdf_path)
             if publication["status"] == "release":
                 expected_hash = publication["approval"]["pdf_sha256"]
                 mismatch = "does not match its approved SHA-256"
             else:
-                expected_hash = sha256(
-                    ROOT / "doc" / manifest["provider"] / f"{publication_id}.pdf"
-                )
+                expected_hash = sha256(ROOT / "doc" / provider / f"{leaf}.pdf")
                 mismatch = "does not match its private-preview source snapshot"
             if actual_hash != expected_hash:
-                errors.append(f"{publication_id}: artifact PDF {mismatch}")
+                errors.append(
+                    f"{publication_label(key, primary)}: artifact PDF {mismatch}"
+                )
 
     included_ids = set(included)
     for source_relative, output_relative in PAGE_MAP.items():
@@ -1407,9 +1581,13 @@ def verify_output(
                 errors.append(f"{relative}: contains {label}")
         if path.suffix == ".html":
             for href in parsed_html(path).links:
-                for publication_id in disallowed_ids:
-                    if publication_id in unquote(href):
-                        errors.append(f"{relative}: links to excluded publication {publication_id}")
+                for excluded_key in disallowed_ids:
+                    excluded_provider, excluded_leaf = excluded_key
+                    if f"doc/{excluded_provider}/{excluded_leaf}.pdf" in unquote(href):
+                        errors.append(
+                            f"{relative}: links to excluded publication "
+                            f"{publication_label(excluded_key, primary)}"
+                        )
 
     robots = (output / "robots.txt").read_text(encoding="utf-8", errors="replace") if (output / "robots.txt").is_file() else ""
     controlled_hosting = requires_unadvertised_controls(expected_authorization)
@@ -1469,7 +1647,9 @@ def verify_output(
         raise ReleaseError("Public-alpha artifact verification failed:\n- " + "\n- ".join(errors))
 
 
-def build_site(manifest: dict, publications: dict[str, dict], preview: bool) -> Path:
+def build_site(
+    manifest: dict, publications: dict[tuple[str, str], dict], preview: bool
+) -> Path:
     included = included_publications(publications, preview)
     authorization = artifact_authorization(manifest, included)
     output = OUTPUT_ROOT / ("preview" if preview else "site")
@@ -1492,9 +1672,9 @@ def build_site(manifest: dict, publications: dict[str, dict], preview: bool) -> 
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(license_path, destination)
 
-    for publication_id in sorted(included):
-        source = ROOT / "doc" / manifest["provider"] / f"{publication_id}.pdf"
-        destination = output / "doc" / manifest["provider"] / f"{publication_id}.pdf"
+    for provider, leaf in sorted(included):
+        source = ROOT / "doc" / provider / f"{leaf}.pdf"
+        destination = output / "doc" / provider / f"{leaf}.pdf"
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(source, destination)
 
@@ -1537,7 +1717,7 @@ def build_site(manifest: dict, publications: dict[str, dict], preview: bool) -> 
     return output
 
 
-def print_policy_summary(manifest: dict, publications: dict[str, dict]) -> None:
+def print_policy_summary(manifest: dict, publications: dict[tuple[str, str], dict]) -> None:
     counts = Counter(publication["status"] for publication in publications.values())
     print(
         "public-alpha policy valid: "

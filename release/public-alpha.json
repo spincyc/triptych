@@ -2,11 +2,19 @@
   "schema_version": 2,
   "release_id": "public-alpha",
   "provider": "gpt",
+  "providers": [
+    "gpt",
+    "claude"
+  ],
   "expected_counts": {
     "publications": 116,
     "release": 116,
     "review": 0,
-    "hold": 0
+    "hold": 0,
+    "providers": {
+      "gpt": 116,
+      "claude": 0
+    }
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
