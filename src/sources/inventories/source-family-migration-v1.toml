@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-07-24"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:aab655abdb917aa325f6ea9a890729ce742464384a26205306ae77459746ac34"
+inventory_snapshot = "sha256:a0102cda4a23e8d460ec3f3df2d34381fdc39089b8e21c18989500ac8c968612"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
-classification_snapshot = "sha256:dafeabb5de4701ba2d641eaed5f3c550cb19836e6140a6cb39f44a74cc4e1c92"
+classification_snapshot = "sha256:2947c8f04bd1936f250fa112de037da4be866b8a78b9c272d295ade2645dfc74"
 canonical_catalog_snapshot = "sha256:05c378fbfa16da898c8e46fdea417b0b54b1d1ef0adde4af3ba5c03fc8421c16"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:6729d6c68ad729988e9916e8115ac238b4bd1242f7dbe8206c47f1114acaca65"
+snapshot = "sha256:17837bcc5df8caa6d75035c5d4c2b821ab7aae8daac97ab16b765a7c8575dc5d"
 
 [[families]]
 id = "family.acta.aas-ass"
@@ -465,17 +465,18 @@ basis = "trace-scan"
 record_paths = ["src/gpt/articles/canon-law/natural-positive-divine-human-law/research/source-audit.md"]
 
 [[review_units]]
+owner_id = "articles/faith/against-the-instrumentalists"
+surface_snapshot = "sha256:b0ed41ae3f88c4b270c593ad150046e5410c18c999ba53782baf23d4e6309e27"
+review_state = "pending"
+
+[[review_units]]
 owner_id = "articles/faith/at-the-end-of-every-why"
-surface_snapshot = "sha256:f4255be1bf72d15e333cf6dc1ee1c07910bfdc36f70efb99eb23cfbea915cea8"
+surface_snapshot = "sha256:a7a6d1bf64ab6ca7de97df7dbbd17c8285df5360277fcbb0916aaf633729a7c5"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
 basis = "trace-scan"
 record_paths = ["src/gpt/articles/faith/at-the-end-of-every-why/research/source-audit.md", "src/gpt/articles/faith/at-the-end-of-every-why/research/source-bindings.toml"]
-[[review_units.family_presence]]
-family_id = "family.catholic-church.catechism"
-basis = "trace-scan"
-record_paths = ["src/gpt/articles/faith/at-the-end-of-every-why/research/source-audit.md"]
 [[review_units.family_presence]]
 family_id = "family.irenaeus.adversus-haereses-anf1-1887"
 basis = "trace-scan"
@@ -535,6 +536,26 @@ basis = "trace-scan"
 record_paths = ["src/gpt/articles/faith/council-missal-and-crisis/research/source-audit.md", "src/gpt/articles/faith/council-missal-and-crisis/research/source-bindings.toml", "src/gpt/articles/faith/council-missal-and-crisis/sections/50-vatican-ii.tex"]
 
 [[review_units]]
+owner_id = "articles/faith/four-last-things-01-death"
+surface_snapshot = "sha256:ad3938fe74c461e86e4efcfe35e90925836d52ec2c76c619cc520d39f95c9ecb"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "articles/faith/four-last-things-02-judgment"
+surface_snapshot = "sha256:7fb227ec7ad4c1815137a17f2f1921b4e578b5538f9b2e56588ba8c6c0b3b4d1"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "articles/faith/four-last-things-03-hell"
+surface_snapshot = "sha256:4ec838f09f3df7285cdb185df46ade659b6e1676183d0666314da0238e3fee9b"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "articles/faith/four-last-things-04-heaven"
+surface_snapshot = "sha256:76ede538b8b6eae7fe899bd74a22f101b3aad2dcd0769dac6d1ae97cd4e56005"
+review_state = "pending"
+
+[[review_units]]
 owner_id = "articles/faith/freemasonry-and-the-catholic-church"
 surface_snapshot = "sha256:4d1c3c20b6352b8cb07817dadb74067318829e1183be994ca4ddfe2aa4e5d068"
 review_state = "pending"
@@ -572,8 +593,13 @@ basis = "trace-scan"
 record_paths = ["src/gpt/articles/faith/freemasonry-and-the-catholic-church/research/scope.md"]
 
 [[review_units]]
+owner_id = "articles/faith/in-support-of-the-particular"
+surface_snapshot = "sha256:4a32be5bb1a96dab2cbab985615f885982ebbd1a662cfcee91197e10d9703170"
+review_state = "pending"
+
+[[review_units]]
 owner_id = "articles/faith/ontological-vertigo"
-surface_snapshot = "sha256:bba36d6852c43a9e934996f2fb98c349ad3df20314d046c2d377b46d415dbc08"
+surface_snapshot = "sha256:142f8c6671f04d8809a24a97fff7670990c9754b4cc2f4ec4a64811fc41c9ea0"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -590,7 +616,7 @@ record_paths = ["src/gpt/articles/faith/ontological-vertigo/sections/99-referenc
 
 [[review_units]]
 owner_id = "articles/faith/the-due-return"
-surface_snapshot = "sha256:e9dcab412139778fc46a300e758586fc6de1d3b61dd2ba19cb2c229cc9ee9b45"
+surface_snapshot = "sha256:29a454df094afa6e1c1510de8de68854b886fb709df68b403eb06f06fd5d6ba5"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
@@ -635,7 +661,7 @@ record_paths = ["src/gpt/articles/faith/the-due-return/research/source-audit.md"
 
 [[review_units]]
 owner_id = "articles/faith/trustful-surrender-to-divine-providence"
-surface_snapshot = "sha256:e16bd5e8432f99661b0b7a920beeb7a7a20171d4beb2a30fb446b80dc2f13461"
+surface_snapshot = "sha256:7b22203537b1bba805381da7cfcd64757e9c96c368f9ff5a5afba8ea739bea59"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -793,7 +819,7 @@ record_paths = ["src/gpt/curriculums/ecclesiastical-latin/00-course-guide/main.t
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/00-memory-workbook"
-surface_snapshot = "sha256:473ce249d879dc2144b33dab15f04f6308d64bd34973fc2903fe20b4076dd853"
+surface_snapshot = "sha256:b091ed677fccfbfac7ad34fa26c155fad6893dbc8ff1d8a472f87a8370c7b71f"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
@@ -1478,6 +1504,41 @@ basis = "trace-scan"
 record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/main.tex", "src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/research/scope.md", "src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/research/source-bindings.toml"]
 
 [[review_units]]
+owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass"
+surface_snapshot = "sha256:05efc84d9f29012ae3b70bb685e2605ccafbfe4c33bf43023c60e35bdc226b95"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards"
+surface_snapshot = "sha256:df537143cbab9697d183cf709c3fd3177ba5aa5a96f7de6d0aa7ad270bad430b"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual"
+surface_snapshot = "sha256:419f29eb56d135f1de4c2591f2252211556bc92fe7b5750ae6c857faf748c9bc"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata"
+surface_snapshot = "sha256:1992e6fa0e6e053fcad9b75f72a03d592cee419a6a9a831cd1554b9069fd0a24"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards"
+surface_snapshot = "sha256:bec4cb49b6ceb46fddb33d64f32a72747000cb6d7d98eca4abe7f13faf861052"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass"
+surface_snapshot = "sha256:f5a52fc595a5159ae30a9f1a81a3703b13f2024f8d5323bbdf794110a8c80dd6"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards"
+surface_snapshot = "sha256:db760fe83d30286e2253f62904eef784012e1acfcdc376eccfb1a09d399c802a"
+review_state = "pending"
+
+[[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/assembling-the-mass"
 surface_snapshot = "sha256:e4f63fcf9834549cde31d90654f55fb405afb18df76877301a8d8b7216bd6a28"
 review_state = "pending"
@@ -1878,7 +1939,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "owner.curriculums.ecclesiastical-latin"
-surface_snapshot = "sha256:8b65136d5821682425cc2713cd7c1eeaa2b600f37e3d819cdb7ac095d25b6ecb"
+surface_snapshot = "sha256:11362b67e1f7715b9b3c60883f20a54777d7801afba646bc039408ac26672c25"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
@@ -1915,6 +1976,11 @@ review_state = "pending"
 [[review_units]]
 owner_id = "owner.history.traditional-priestly-institutes"
 surface_snapshot = "sha256:ce60bfe641f64e128986a9aab51081029c034e7c423a9d28f19873618c897eb0"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "owner.liturgy.roman-rite.1962.altar-server-guides"
+surface_snapshot = "sha256:5fb01133d952c6bd15b53ae69bd39d962c94ddd138f920d483af759201cfd811"
 review_state = "pending"
 
 [[review_units]]

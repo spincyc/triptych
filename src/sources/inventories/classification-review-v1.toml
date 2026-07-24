@@ -1,8 +1,8 @@
 classification_schema = 1
 record_type = "publication-source-classification-review"
 audited_on = "2026-07-22"
-publication_snapshot = "sha256:a0b68e48240aff11c525111979d017fede0afdaa75f4af1fdde8cb4ea4a73411"
-classification_snapshot = "sha256:dafeabb5de4701ba2d641eaed5f3c550cb19836e6140a6cb39f44a74cc4e1c92"
+publication_snapshot = "sha256:13643752307385572bc7e8af1c7ec8c7c9c0b2deb359f0bb1fcc44b8a286edfd"
+classification_snapshot = "sha256:2947c8f04bd1936f250fa112de037da4be866b8a78b9c272d295ade2645dfc74"
 
 [[classifications]]
 document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -13,6 +13,10 @@ document = "articles/canon-law/natural-positive-divine-human-law"
 source_categories = ["canon-law", "classical", "finding-aid", "historical-primary", "institutional-current", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
 
 [[classifications]]
+document = "articles/faith/against-the-instrumentalists"
+source_categories = ["institutional-current", "magisterial", "scholastic", "secondary"]
+
+[[classifications]]
 document = "articles/faith/at-the-end-of-every-why"
 source_categories = ["magisterial", "patristic", "prayer-devotional", "scholastic", "scripture"]
 
@@ -21,8 +25,28 @@ document = "articles/faith/council-missal-and-crisis"
 source_categories = ["canon-law", "dataset-survey", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scripture", "secondary"]
 
 [[classifications]]
+document = "articles/faith/four-last-things-01-death"
+source_categories = ["liturgical", "magisterial", "scholastic", "scripture"]
+
+[[classifications]]
+document = "articles/faith/four-last-things-02-judgment"
+source_categories = ["magisterial", "scholastic", "scripture"]
+
+[[classifications]]
+document = "articles/faith/four-last-things-03-hell"
+source_categories = ["magisterial", "scholastic", "scripture"]
+
+[[classifications]]
+document = "articles/faith/four-last-things-04-heaven"
+source_categories = ["magisterial", "scholastic", "scripture"]
+
+[[classifications]]
 document = "articles/faith/freemasonry-and-the-catholic-church"
 source_categories = ["archival-material", "canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture", "secondary"]
+
+[[classifications]]
+document = "articles/faith/in-support-of-the-particular"
+source_categories = ["liturgical", "magisterial", "scholastic", "scripture"]
 
 [[classifications]]
 document = "articles/faith/ontological-vertigo"
@@ -303,6 +327,34 @@ source_categories = ["finding-aid", "historical-primary", "liturgical", "magiste
 [[classifications]]
 document = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"
 source_categories = ["finding-aid", "historical-primary", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "secondary"]
 
 [[classifications]]
 document = "liturgy/roman-rite/1962/reference/assembling-the-mass"

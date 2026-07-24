@@ -1,17 +1,13 @@
 # Public Release Boundary
 
-The current release manifest accounts for 112 installed publications: 109 are
-marked `release`, none is in `review`, and the redesigned Low Mass child
-booklet, trainer manual, and flash cards are on `hold` as installed evaluation
-snapshots. The 23 July 2026 bare-`approve` supplement in
-`rights/public-alpha-2026-07-15.md` historically binds the 111 exact PDF
-snapshots and 23 exact reader-site inputs then current under record
-`perpetual-public-repository-2026`. Its exact approvals remain the basis for
-the 109 unchanged release entries, but its former Low Mass guide and cue-card
-hashes do not authorize the changed child booklet or the new trainer-manual
-and flash-card identities. Changed PDF, rights-record, or site-input bytes
-require renewed authorization, so public build and verification remain
-fail-closed for the current inventory.
+The current release manifest accounts for 116 installed publications. All 116
+are marked `release`; none is in `review` or on `hold`. The 24 July 2026
+exact-current-snapshot supplement in
+`rights/public-alpha-2026-07-15.md` binds all 116 exact PDF snapshots and 23
+exact reader-site inputs under record
+`perpetual-public-repository-2026`. Changed PDF, rights-record, or site-input
+bytes require renewed authorization, so public build and verification remain
+fail-closed after any bound byte changes.
 
 Immediately before that supplement, the manifest recorded 63 `release` and 48
 `hold` items. The 48 were the 37 redesigned Ecclesiastical Latin PDFs, five
@@ -54,11 +50,10 @@ constitute independent philosophical, theological, biblical, canonical,
 pastoral, clinical, or ecclesiastical review, and no imprimatur, nihil obstat,
 or ecclesiastical approval is claimed.
 
-The unchanged Missa Cantata and Solemn Mass guides and their cue-card
-companions remain release-cleared only for their exact current bytes. The
-redesigned Low Mass child booklet, trainer manual, and flash cards are
-installed evaluation snapshots on `hold`; the 23 July exception binds only
-the superseded Low Mass guide and cue-card hashes. Work-specific rights
+The Missa Cantata and Solemn Mass guides and their cue-card companions remain
+release-cleared only for their exact current bytes. The redesigned Low Mass
+child booklet, trainer manual, and flash cards are also release-cleared only
+as exact-byte exceptions under the 24 July supplement. Work-specific rights
 review, a recorded independent distribution basis for received liturgical
 text, and independent liturgical, ceremonial, Ecclesiastical Latin
 pronunciation, age-appropriate pedagogical, and ecclesiastical review remain
@@ -106,7 +101,7 @@ and is not an ecclesiastical interpretation, dispensation, canonical opinion,
 imprimatur, nihil obstat, or approval of the secret or this publication. It
 does not supply independent rights, canonical, specialist, liturgical, or
 ecclesiastical review. Apparition and cult approvals remain object-limited and
-do not approve this publication. The manifest retains this PDF among the 109
+do not approve this publication. The manifest retains this PDF among the 116
 `release` items and binds its exact current hash.
 
 For every fully authorized snapshot the generator will:
@@ -190,34 +185,20 @@ any of them. See the rights record and each publication's linked research
 records for the complete boundaries.
 
 Only when all snapshot, rights-record, and site-source bindings verify may the
-GitHub Pages workflow build and verify `build/public-alpha/site`. The 23 July
-authorization historically binds the then-current 111-PDF set and its 23
-recognized reader-site inputs, not the present 112-PDF inventory or changed
-reader-site bytes. Public build and verification must therefore fail closed
-until a new exact binding is recorded. The original `commit` term authorized
-exact initial release-control commit
-`6bb9d6a9aceded73e747a2e98a32ed31ab676344`, whose sole parent is the audited
-preapproval tip `e1715d98601147122eff8a8845a3274b775fec55`. After that commit
-was integrated locally but before any push, the false terminal
-period in the recorded exact instruction was caught. The maintainer's exact
-`authorize` reply supplies fresh authority for exactly one follow-up
-corrective commit whose sole parent is
-`6bb9d6a9aceded73e747a2e98a32ed31ab676344`, integration by the primary
-session, and ordinary non-force publication of the corrected
-`refs/heads/main` and independently verified GitHub Pages artifact.
+GitHub Pages workflow build and verify `build/public-alpha/site`. The 24 July
+authorization binds the current 116-PDF set and its 23 recognized reader-site
+inputs. It separately authorizes one coherent release-control commit whose
+sole parent is exact preapproval tip
+`82fc528c3ee53683ab6d192ffdae703d408b552c`, managed integration, an ordinary
+non-force push of the exact integrated `refs/heads/main`, and publication of
+the independently verified GitHub Pages artifact.
 
-The authorized outgoing history from exact public base
-`657f29b6f819623dee241677c1ccc3e8591b1f1b` is therefore the eight audited
-preapproval commits through `e1715d98601147122eff8a8845a3274b775fec55`,
-exact initial release-control commit
-`6bb9d6a9aceded73e747a2e98a32ed31ab676344`, and exactly one structurally bound
-corrective commit, with no intervening or later commit.
-Neither instruction authorizes this worker to integrate, push, deploy, tag,
-rewrite history, administer worktrees, publish another ref or host, create a
-public release attachment, or initiate promotion. Target movement or failure
-of any outgoing-range, binding, release, artifact, or named-deployment-target
-gate requires publication to stop. Pages must never publish the repository
-root or `build/public-alpha/preview`.
+The worker may create the authorized commit but may not integrate, push,
+deploy, tag, rewrite history, administer worktrees, publish another ref or
+host, create a public release attachment, or initiate promotion. Target
+movement or failure of any outgoing-range, binding, release, artifact,
+public-exposure, or named-deployment-target gate requires publication to stop.
+Pages must never publish the repository root or `build/public-alpha/preview`.
 
 Use:
 
@@ -234,7 +215,7 @@ python scripts/public-alpha verify --deployment-target github-pages
 `prepare-public-alpha` is read-only and deliberately works when old snapshot
 hashes are stale or the old source-binding list lacks newly recognized inputs.
 It validates the exhaustive publication and current artifact-input scope, then
-reports the hashes of the 112 currently installed publication PDFs and all 23
+reports the hashes of the 116 currently installed publication PDFs and all 23
 current Markdown, layout, style, license, generator, and dependency-lock inputs
 as a deterministic candidate inventory. The inventory explicitly confers no
 approval, changes no
