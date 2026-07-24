@@ -1,0 +1,24 @@
+schema = 2
+record_type = "bindings"
+document = "articles/faith/against-the-instrumentalists"
+
+[[bindings]]
+source_id = "edition.first-vatican-council.dei-filius.latin-vatican-web-2026-07-24"
+loci = ["complete-text"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The article quotes the chapter 2 definition (Eadem Sancta Mater Ecclesia tenet et docet...certo cognosci posse), canon 1 De revelatione, and the chapter 4 sentence nulla tamen umquam inter fidem et rationem vera dissensio esse potest. The authoring agent fetched the same Holy See Latin page publication-locally on 2026-07-24 and extracted the quoted wording verbatim (see research/source-audit.md). This binding records the edition-level dependence without claiming to have replayed the central passage record's artifact fingerprint; the publication-local check is the verification ceiling asserted here."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["31-35", "36-38", "39"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The article quotes CCC 31 (converging and convincing arguments), CCC 36 (the official English rendering of the Dei Filius definition), and CCC 37-38 (hampered...disordered appetites; stands in need of being enlightened by God's revelation; with ease, with firm certainty and with no admixture of error), and uses checked paraphrases of 32-35 and 39. The authoring agent fetched the corresponding official Vatican English pages publication-locally on 2026-07-24; the registered edition is the 2026-07-23 dated web state, and no material difference was observed at the cited loci. No central artifact fingerprint is claimed; the publication-local check is the verification ceiling asserted here."
+
+[[bindings]]
+source_id = "work.thomas-aquinas.summa-theologiae"
+loci = ["I.2.2.sed-contra", "I.2.2.corpus", "I.12.12.corpus"]
+role = "textual-control"
+states = ["cataloged"]
+context = "ST I, q. 2, a. 2 and I, q. 12, a. 12 govern the article's adopted account of demonstration from effects and the sense-origin and limits of natural knowledge of God. The authoring agent checked the Latin corpora at the Corpus Thomisticum web presentation and the public-domain English Dominican translation at New Advent on 2026-07-24 (see research/source-audit.md). The repository's Leonine 1888 volume 4 edition record identifies a printed witness containing these questions, but no collation against that edition or its artifacts is claimed; this binding therefore remains at the work level with a publication-local verification ceiling."
