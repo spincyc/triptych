@@ -92,6 +92,42 @@ class IdentityModelTests(unittest.TestCase):
             ),
         )
 
+    def read_regular_bytes(
+        self,
+        path: Path | None = None,
+        *,
+        label: object = "the file",
+        **overrides: object,
+    ) -> bytes:
+        metadata = SimpleNamespace(
+            st_mode=stat.S_IFREG | 0o600,
+            st_nlink=1,
+            st_size=0,
+            st_dev=1,
+            st_ino=2,
+            st_mtime_ns=3,
+            st_ctime_ns=4,
+        )
+        dependencies = {
+            "open_flags": lambda: 0,
+            "file_open": lambda: lambda _path, _flags: 7,
+            "os_error_type": lambda: OSError,
+            "error_type": lambda: RuntimeError,
+            "file_stat": lambda: lambda _descriptor: metadata,
+            "regular_file_test": lambda: lambda _mode: True,
+            "maximum_file_bytes": lambda: 16,
+            "file_read": lambda: lambda _descriptor, _size: b"",
+            "minimum": lambda: min,
+            "length": lambda: len,
+            "file_close": lambda: lambda _descriptor: None,
+        }
+        dependencies.update(overrides)
+        return self.identity.safe_regular_file_bytes(
+            Path("/regular-file") if path is None else path,
+            label=label,
+            **dependencies,
+        )
+
     def test_identity_import_is_cycle_free_and_environment_neutral(
         self,
     ) -> None:
@@ -205,6 +241,1092 @@ class IdentityModelTests(unittest.TestCase):
             wrapper_parameters["path"].default,
             inspect.Parameter.empty,
         )
+
+    def test_safe_regular_file_kernel_and_wrapper_signatures(self) -> None:
+        self.assertIs(
+            self.engine._safe_regular_file_bytes,
+            self.identity.safe_regular_file_bytes,
+        )
+        parameters = inspect.signature(
+            self.identity.safe_regular_file_bytes
+        ).parameters
+        self.assertEqual(
+            tuple(parameters),
+            (
+                "path",
+                "label",
+                "open_flags",
+                "file_open",
+                "os_error_type",
+                "error_type",
+                "file_stat",
+                "regular_file_test",
+                "maximum_file_bytes",
+                "file_read",
+                "minimum",
+                "length",
+                "file_close",
+            ),
+        )
+        self.assertIs(
+            parameters["path"].kind,
+            inspect.Parameter.POSITIONAL_OR_KEYWORD,
+        )
+        for name in tuple(parameters)[1:]:
+            self.assertIs(
+                parameters[name].kind,
+                inspect.Parameter.KEYWORD_ONLY,
+            )
+        for parameter in parameters.values():
+            self.assertIs(parameter.default, inspect.Parameter.empty)
+
+        self.assertIsNot(
+            self.engine.safe_regular_file_bytes,
+            self.identity.safe_regular_file_bytes,
+        )
+        wrapper = inspect.signature(
+            self.engine.safe_regular_file_bytes
+        ).parameters
+        self.assertEqual(tuple(wrapper), ("path", "label"))
+        self.assertIs(
+            wrapper["path"].kind,
+            inspect.Parameter.POSITIONAL_OR_KEYWORD,
+        )
+        self.assertIs(
+            wrapper["label"].kind,
+            inspect.Parameter.KEYWORD_ONLY,
+        )
+        for parameter in wrapper.values():
+            self.assertIs(parameter.default, inspect.Parameter.empty)
+
+    def test_safe_regular_file_builds_flags_before_open_and_accepts_fd_zero(
+        self,
+    ) -> None:
+        events: list[tuple[str, object]] = []
+        path = Path("/regular-file")
+
+        def open_flags() -> int:
+            events.append(("open-flags", None))
+            return 0x123
+
+        def file_open() -> object:
+            events.append(("file-open-provider", None))
+
+            def open_file(
+                received_path: Path,
+                flags: int,
+            ) -> int:
+                events.append(("file-open", (received_path, flags)))
+                return 0
+
+            return open_file
+
+        def file_close() -> object:
+            events.append(("file-close-provider", None))
+
+            def close_file(descriptor: int) -> None:
+                events.append(("file-close", descriptor))
+
+            return close_file
+
+        observed = self.read_regular_bytes(
+            path,
+            open_flags=open_flags,
+            file_open=file_open,
+            file_stat=lambda: lambda descriptor: (
+                events.append(("file-stat", descriptor))
+                or SimpleNamespace(
+                    st_mode=stat.S_IFREG,
+                    st_nlink=1,
+                    st_size=0,
+                    st_dev=1,
+                    st_ino=2,
+                    st_mtime_ns=3,
+                    st_ctime_ns=4,
+                )
+            ),
+            file_read=lambda: lambda descriptor, size: (
+                events.append(("file-read", (descriptor, size)))
+                or b""
+            ),
+            file_close=file_close,
+            os_error_type=lambda: self.fail(
+                "successful open must not resolve the OS error type"
+            ),
+        )
+
+        self.assertEqual(observed, b"")
+        self.assertEqual(
+            events,
+            [
+                ("open-flags", None),
+                ("file-open-provider", None),
+                ("file-open", (path, 0x123)),
+                ("file-stat", 0),
+                ("file-read", (0, 17)),
+                ("file-stat", 0),
+                ("file-close-provider", None),
+                ("file-close", 0),
+            ],
+        )
+
+    def test_safe_regular_file_translates_only_matching_open_errors(
+        self,
+    ) -> None:
+        class MatchingOpenError(OSError):
+            pass
+
+        class OtherOpenError(OSError):
+            pass
+
+        class ReadError(RuntimeError):
+            pass
+
+        events: list[str] = []
+        failure = MatchingOpenError("missing")
+
+        class Label:
+            def __format__(
+                label_self,
+                specification: str,
+            ) -> str:
+                self.assertEqual(specification, "")
+                self.assertEqual(events[-1], "error-type")
+                events.append("format-label")
+                return "the file"
+
+        def open_flags() -> int:
+            events.append("open-flags")
+            return 9
+
+        def file_open() -> object:
+            events.append("file-open-provider")
+
+            def open_file(_path: Path, _flags: int) -> int:
+                events.append("file-open")
+                raise failure
+
+            return open_file
+
+        def os_error_type() -> type[BaseException]:
+            events.append("os-error-type")
+            return MatchingOpenError
+
+        def error_type() -> type[BaseException]:
+            events.append("error-type")
+            return ReadError
+
+        with self.assertRaises(ReadError) as caught:
+            self.read_regular_bytes(
+                label=Label(),
+                open_flags=open_flags,
+                file_open=file_open,
+                os_error_type=os_error_type,
+                error_type=error_type,
+                file_close=lambda: self.fail(
+                    "failed open must not close a descriptor"
+                ),
+            )
+        self.assertEqual(
+            str(caught.exception),
+            "the file is not an intact regular file",
+        )
+        self.assertIs(caught.exception.__cause__, failure)
+        self.assertEqual(
+            events,
+            [
+                "open-flags",
+                "file-open-provider",
+                "file-open",
+                "os-error-type",
+                "error-type",
+                "format-label",
+            ],
+        )
+
+        other = OtherOpenError("other")
+        with self.assertRaises(OtherOpenError) as caught:
+            self.read_regular_bytes(
+                file_open=lambda: lambda _path, _flags: (
+                    (_ for _ in ()).throw(other)
+                ),
+                os_error_type=lambda: MatchingOpenError,
+                error_type=lambda: self.fail(
+                    "nonmatching open error must remain untranslated"
+                ),
+                file_close=lambda: self.fail(
+                    "failed open must not close a descriptor"
+                ),
+            )
+        self.assertIs(caught.exception, other)
+        self.assertIsNone(caught.exception.__cause__)
+
+        flag_failure = MatchingOpenError("flag")
+        with self.assertRaises(MatchingOpenError) as caught:
+            self.read_regular_bytes(
+                open_flags=lambda: (
+                    (_ for _ in ()).throw(flag_failure)
+                ),
+                file_open=lambda: self.fail(
+                    "flag failure must precede file-open lookup"
+                ),
+                os_error_type=lambda: self.fail(
+                    "flag failure is outside the translated-open block"
+                ),
+                file_close=lambda: self.fail(
+                    "flag failure must not close a descriptor"
+                ),
+            )
+        self.assertIs(caught.exception, flag_failure)
+        self.assertIsNone(caught.exception.__cause__)
+
+    def test_safe_regular_file_regular_and_link_checks_short_circuit(
+        self,
+    ) -> None:
+        class FileError(RuntimeError):
+            pass
+
+        for regular, links, expected_events in (
+            (
+                False,
+                2,
+                [
+                    "stat-mode",
+                    "regular-test",
+                    "error-type",
+                    "format-label",
+                    "close",
+                ],
+            ),
+            (
+                True,
+                2,
+                [
+                    "stat-mode",
+                    "regular-test",
+                    "stat-nlink",
+                    "error-type",
+                    "format-label",
+                    "close",
+                ],
+            ),
+        ):
+            events: list[str] = []
+
+            class Metadata:
+                @property
+                def st_mode(metadata_self) -> int:
+                    events.append("stat-mode")
+                    return 0o100600
+
+                @property
+                def st_nlink(metadata_self) -> int:
+                    events.append("stat-nlink")
+                    return links
+
+            class Label:
+                def __format__(
+                    label_self,
+                    specification: str,
+                ) -> str:
+                    self.assertEqual(specification, "")
+                    self.assertEqual(events[-1], "error-type")
+                    events.append("format-label")
+                    return "the file"
+
+            def regular_file_test() -> object:
+                def test(_mode: int) -> bool:
+                    events.append("regular-test")
+                    return regular
+
+                return test
+
+            def error_type() -> type[BaseException]:
+                events.append("error-type")
+                return FileError
+
+            with self.subTest(regular=regular, links=links):
+                with self.assertRaises(FileError) as caught:
+                    self.read_regular_bytes(
+                        label=Label(),
+                        file_stat=lambda: lambda _descriptor: Metadata(),
+                        regular_file_test=regular_file_test,
+                        error_type=error_type,
+                        file_close=lambda: lambda _descriptor: (
+                            events.append("close")
+                        ),
+                    )
+                self.assertEqual(
+                    str(caught.exception),
+                    "the file is not an intact regular file",
+                )
+                self.assertIsNone(caught.exception.__cause__)
+                self.assertEqual(events, expected_events)
+
+    def test_safe_regular_file_reads_bounded_chunks_and_three_lazy_limits(
+        self,
+    ) -> None:
+        maximum = 1024 * 1024 + 2
+        first_chunk = b"a" * (1024 * 1024)
+        second_chunk = b"bc"
+        chunks = iter((first_chunk, second_chunk, b""))
+        maximum_calls: list[int] = []
+        minimum_calls: list[tuple[int, int]] = []
+        length_calls: list[int] = []
+        read_calls: list[tuple[int, int]] = []
+        close_calls: list[int] = []
+        metadata = SimpleNamespace(
+            st_mode=stat.S_IFREG,
+            st_nlink=1,
+            st_size=maximum,
+            st_dev=1,
+            st_ino=2,
+            st_mtime_ns=3,
+            st_ctime_ns=4,
+        )
+
+        def maximum_file_bytes() -> int:
+            maximum_calls.append(len(maximum_calls) + 1)
+            return maximum
+
+        def minimum(left: int, right: int) -> int:
+            minimum_calls.append((left, right))
+            return min(left, right)
+
+        def length(value: object) -> int:
+            size = len(value)
+            length_calls.append(size)
+            return size
+
+        def read_file(descriptor: int, size: int) -> bytes:
+            read_calls.append((descriptor, size))
+            return next(chunks)
+
+        observed = self.read_regular_bytes(
+            file_open=lambda: lambda _path, _flags: 12,
+            file_stat=lambda: lambda _descriptor: metadata,
+            maximum_file_bytes=maximum_file_bytes,
+            file_read=lambda: read_file,
+            minimum=lambda: minimum,
+            length=lambda: length,
+            file_close=lambda: lambda descriptor: (
+                close_calls.append(descriptor)
+            ),
+        )
+
+        self.assertEqual(observed, first_chunk + second_chunk)
+        self.assertEqual(maximum_calls, [1, 2, 3])
+        self.assertEqual(
+            minimum_calls,
+            [
+                (1024 * 1024, maximum + 1),
+                (1024 * 1024, 3),
+                (1024 * 1024, 1),
+            ],
+        )
+        self.assertEqual(
+            read_calls,
+            [(12, 1024 * 1024), (12, 3), (12, 1)],
+        )
+        self.assertEqual(
+            length_calls,
+            [len(first_chunk), len(second_chunk), maximum],
+        )
+        self.assertEqual(close_calls, [12])
+
+    def test_safe_regular_file_enforces_both_size_checks_exactly(
+        self,
+    ) -> None:
+        class FileError(RuntimeError):
+            pass
+
+        for stage in ("metadata", "content"):
+            events: list[str] = []
+
+            class Label:
+                def __format__(
+                    label_self,
+                    specification: str,
+                ) -> str:
+                    self.assertEqual(specification, "")
+                    self.assertEqual(events[-1], "error-type")
+                    events.append("format-label")
+                    return "the file"
+
+            def error_type() -> type[BaseException]:
+                events.append("error-type")
+                return FileError
+
+            metadata = SimpleNamespace(
+                st_mode=stat.S_IFREG,
+                st_nlink=1,
+                st_size=4 if stage == "metadata" else 0,
+                st_dev=1,
+                st_ino=2,
+                st_mtime_ns=3,
+                st_ctime_ns=4,
+            )
+            reads = iter(
+                (
+                    b"four",
+                    b"",
+                )
+                if stage == "content"
+                else ()
+            )
+            with self.subTest(stage=stage):
+                with self.assertRaises(FileError) as caught:
+                    self.read_regular_bytes(
+                        label=Label(),
+                        file_stat=lambda: lambda _descriptor: metadata,
+                        maximum_file_bytes=lambda: 3,
+                        file_read=(
+                            lambda: lambda _descriptor, _size: next(reads)
+                        ),
+                        error_type=error_type,
+                        file_close=lambda: lambda _descriptor: (
+                            events.append("close")
+                        ),
+                    )
+                self.assertEqual(
+                    str(caught.exception),
+                    "the file is unexpectedly large",
+                )
+                self.assertIsNone(caught.exception.__cause__)
+                self.assertEqual(
+                    events,
+                    ["error-type", "format-label", "close"],
+                )
+
+        metadata = SimpleNamespace(
+            st_mode=stat.S_IFREG,
+            st_nlink=1,
+            st_size=3,
+            st_dev=1,
+            st_ino=2,
+            st_mtime_ns=3,
+            st_ctime_ns=4,
+        )
+        chunks = iter((b"abc", b""))
+        self.assertEqual(
+            self.read_regular_bytes(
+                file_stat=lambda: lambda _descriptor: metadata,
+                maximum_file_bytes=lambda: 3,
+                file_read=lambda: lambda _descriptor, _size: (
+                    next(chunks)
+                ),
+            ),
+            b"abc",
+        )
+
+    def test_safe_regular_file_compares_second_stat_in_exact_order(
+        self,
+    ) -> None:
+        class ChangedError(RuntimeError):
+            pass
+
+        cases = (
+            (
+                "tuple",
+                {"dev": 9},
+                [
+                    "stat-after",
+                    "before-dev",
+                    "before-ino",
+                    "before-size",
+                    "after-dev",
+                    "after-ino",
+                    "after-size",
+                    "error-type",
+                    "format-label",
+                    "close",
+                ],
+                True,
+            ),
+            (
+                "mtime",
+                {"mtime": 9},
+                [
+                    "stat-after",
+                    "before-dev",
+                    "before-ino",
+                    "before-size",
+                    "after-dev",
+                    "after-ino",
+                    "after-size",
+                    "before-mtime",
+                    "after-mtime",
+                    "error-type",
+                    "format-label",
+                    "close",
+                ],
+                True,
+            ),
+            (
+                "ctime",
+                {"ctime": 9},
+                [
+                    "stat-after",
+                    "before-dev",
+                    "before-ino",
+                    "before-size",
+                    "after-dev",
+                    "after-ino",
+                    "after-size",
+                    "before-mtime",
+                    "after-mtime",
+                    "before-ctime",
+                    "after-ctime",
+                    "error-type",
+                    "format-label",
+                    "close",
+                ],
+                True,
+            ),
+            (
+                "stable",
+                {},
+                [
+                    "stat-after",
+                    "before-dev",
+                    "before-ino",
+                    "before-size",
+                    "after-dev",
+                    "after-ino",
+                    "after-size",
+                    "before-mtime",
+                    "after-mtime",
+                    "before-ctime",
+                    "after-ctime",
+                    "close",
+                ],
+                False,
+            ),
+        )
+        for name, changed, expected_events, rejected in cases:
+            events: list[str] = []
+
+            class Metadata:
+                def __init__(
+                    metadata_self,
+                    prefix: str,
+                    values: dict[str, int],
+                ) -> None:
+                    metadata_self.prefix = prefix
+                    metadata_self.values = values
+
+                @property
+                def st_mode(metadata_self) -> int:
+                    return stat.S_IFREG
+
+                @property
+                def st_nlink(metadata_self) -> int:
+                    return 1
+
+                @property
+                def st_size(metadata_self) -> int:
+                    events.append(f"{metadata_self.prefix}-size")
+                    return metadata_self.values.get("size", 0)
+
+                @property
+                def st_dev(metadata_self) -> int:
+                    events.append(f"{metadata_self.prefix}-dev")
+                    return metadata_self.values.get("dev", 1)
+
+                @property
+                def st_ino(metadata_self) -> int:
+                    events.append(f"{metadata_self.prefix}-ino")
+                    return metadata_self.values.get("ino", 2)
+
+                @property
+                def st_mtime_ns(metadata_self) -> int:
+                    events.append(f"{metadata_self.prefix}-mtime")
+                    return metadata_self.values.get("mtime", 3)
+
+                @property
+                def st_ctime_ns(metadata_self) -> int:
+                    events.append(f"{metadata_self.prefix}-ctime")
+                    return metadata_self.values.get("ctime", 4)
+
+            before = Metadata("before", {})
+            after = Metadata("after", changed)
+            metadata = iter((before, after))
+            stat_calls = 0
+
+            def file_stat(_descriptor: int) -> object:
+                nonlocal stat_calls
+                stat_calls += 1
+                if stat_calls == 2:
+                    events.append("stat-after")
+                return next(metadata)
+
+            def file_read(
+                _descriptor: int,
+                _size: int,
+            ) -> bytes:
+                events.clear()
+                return b""
+
+            class Label:
+                def __format__(
+                    label_self,
+                    specification: str,
+                ) -> str:
+                    self.assertEqual(specification, "")
+                    self.assertEqual(events[-1], "error-type")
+                    events.append("format-label")
+                    return "the file"
+
+            def error_type() -> type[BaseException]:
+                events.append("error-type")
+                return ChangedError
+
+            with self.subTest(comparison=name):
+                if rejected:
+                    with self.assertRaises(ChangedError) as caught:
+                        self.read_regular_bytes(
+                            label=Label(),
+                            file_stat=lambda: file_stat,
+                            file_read=lambda: file_read,
+                            error_type=error_type,
+                            file_close=lambda: lambda _descriptor: (
+                                events.append("close")
+                            ),
+                        )
+                    self.assertEqual(
+                        str(caught.exception),
+                        "the file changed while it was inspected",
+                    )
+                    self.assertIsNone(caught.exception.__cause__)
+                else:
+                    self.assertEqual(
+                        self.read_regular_bytes(
+                            file_stat=lambda: file_stat,
+                            file_read=lambda: file_read,
+                            error_type=lambda: self.fail(
+                                "stable metadata must not resolve error type"
+                            ),
+                            file_close=lambda: lambda _descriptor: (
+                                events.append("close")
+                            ),
+                        ),
+                        b"",
+                    )
+                self.assertEqual(events, expected_events)
+
+    def test_safe_regular_file_keeps_other_failures_untranslated(
+        self,
+    ) -> None:
+        class DependencyFailure(RuntimeError):
+            pass
+
+        stages = (
+            ("open-flags", False),
+            ("file-open", False),
+            ("os-error-type", False),
+            ("file-stat", True),
+            ("regular-file-test", True),
+            ("error-type", True),
+            ("maximum-file-bytes", True),
+            ("file-read", True),
+            ("minimum", True),
+            ("length", True),
+            ("second-stat", True),
+            ("comparison", True),
+        )
+        for stage, expected_close in stages:
+            failure = DependencyFailure(stage)
+            closes: list[int] = []
+
+            def fail(*_args: object, **_kwargs: object) -> object:
+                raise failure
+
+            overrides: dict[str, object] = {
+                "file_close": lambda: lambda descriptor: (
+                    closes.append(descriptor)
+                ),
+            }
+            if stage == "open-flags":
+                overrides["open_flags"] = fail
+                overrides["file_open"] = lambda: self.fail(
+                    "open flags must precede file-open resolution"
+                )
+            elif stage == "file-open":
+                overrides["file_open"] = fail
+            elif stage == "os-error-type":
+                open_failure = OSError("open")
+
+                def broken_open(
+                    _path: Path,
+                    _flags: int,
+                ) -> int:
+                    raise open_failure
+
+                overrides["file_open"] = lambda: broken_open
+                overrides["os_error_type"] = fail
+            elif stage == "file-stat":
+                overrides["file_stat"] = fail
+            elif stage == "regular-file-test":
+                overrides["regular_file_test"] = fail
+            elif stage == "error-type":
+                overrides["regular_file_test"] = (
+                    lambda: lambda _mode: False
+                )
+                overrides["error_type"] = fail
+            elif stage == "maximum-file-bytes":
+                overrides["maximum_file_bytes"] = fail
+            elif stage == "file-read":
+                overrides["file_read"] = fail
+            elif stage == "minimum":
+                overrides["minimum"] = fail
+            elif stage == "length":
+                overrides["file_read"] = lambda: (
+                    lambda _descriptor, _size: b"x"
+                )
+                overrides["length"] = fail
+            elif stage == "second-stat":
+                metadata = SimpleNamespace(
+                    st_mode=stat.S_IFREG,
+                    st_nlink=1,
+                    st_size=0,
+                    st_dev=1,
+                    st_ino=2,
+                    st_mtime_ns=3,
+                    st_ctime_ns=4,
+                )
+                calls = 0
+
+                def file_stat(_descriptor: int) -> object:
+                    nonlocal calls
+                    calls += 1
+                    if calls == 2:
+                        raise failure
+                    return metadata
+
+                overrides["file_stat"] = lambda: file_stat
+            else:
+                class Metadata:
+                    st_mode = stat.S_IFREG
+                    st_nlink = 1
+                    st_size = 0
+                    st_ino = 2
+                    st_mtime_ns = 3
+                    st_ctime_ns = 4
+
+                    @property
+                    def st_dev(metadata_self) -> int:
+                        raise failure
+
+                overrides["file_stat"] = (
+                    lambda: lambda _descriptor: Metadata()
+                )
+
+            with self.subTest(stage=stage):
+                with self.assertRaises(DependencyFailure) as caught:
+                    self.read_regular_bytes(**overrides)
+                self.assertIs(caught.exception, failure)
+                self.assertIsNone(caught.exception.__cause__)
+                self.assertEqual(closes, [7] if expected_close else [])
+
+        class NonBytesChunk:
+            def __len__(chunk_self) -> int:
+                return 1
+
+        chunks = iter((NonBytesChunk(), b""))
+        closes = []
+        with self.assertRaises(TypeError) as caught:
+            self.read_regular_bytes(
+                file_read=lambda: lambda _descriptor, _size: (
+                    next(chunks)
+                ),
+                file_close=lambda: lambda descriptor: (
+                    closes.append(descriptor)
+                ),
+            )
+        self.assertIn("bytes-like object", str(caught.exception))
+        self.assertIsNone(caught.exception.__cause__)
+        self.assertEqual(closes, [7])
+
+    def test_safe_regular_file_close_always_runs_and_can_mask_outcome(
+        self,
+    ) -> None:
+        class BodyFailure(RuntimeError):
+            pass
+
+        class CloseFailure(RuntimeError):
+            pass
+
+        close_failure = CloseFailure("close")
+
+        def broken_close(_descriptor: int) -> None:
+            raise close_failure
+
+        with self.assertRaises(CloseFailure) as caught:
+            self.read_regular_bytes(
+                file_close=lambda: broken_close,
+            )
+        self.assertIs(caught.exception, close_failure)
+        self.assertIsNone(caught.exception.__cause__)
+        self.assertIsNone(caught.exception.__context__)
+
+        body_failure = BodyFailure("read")
+
+        def broken_read(
+            _descriptor: int,
+            _size: int,
+        ) -> bytes:
+            raise body_failure
+
+        close_failure = CloseFailure("close after body failure")
+        with self.assertRaises(CloseFailure) as caught:
+            self.read_regular_bytes(
+                file_read=lambda: broken_read,
+                file_close=lambda: broken_close,
+            )
+        self.assertIs(caught.exception, close_failure)
+        self.assertIsNone(caught.exception.__cause__)
+        self.assertIs(caught.exception.__context__, body_failure)
+
+        close_calls: list[int] = []
+        validation_failure = BodyFailure("not regular")
+        with self.assertRaises(BodyFailure) as caught:
+            self.read_regular_bytes(
+                regular_file_test=lambda: lambda _mode: False,
+                error_type=lambda: (
+                    lambda _message: validation_failure
+                ),
+                file_close=lambda: lambda descriptor: (
+                    close_calls.append(descriptor)
+                ),
+            )
+        self.assertIs(caught.exception, validation_failure)
+        self.assertEqual(close_calls, [7])
+
+    def test_engine_safe_regular_file_wrapper_resolves_every_global_lazily(
+        self,
+    ) -> None:
+        class InitialOSError(OSError):
+            pass
+
+        class ReboundOSError(OSError):
+            pass
+
+        class InitialFileError(RuntimeError):
+            pass
+
+        class ReboundFileError(RuntimeError):
+            pass
+
+        path = Path("/regular-file")
+        label = "the file"
+        initial_open = object()
+        rebound_open = object()
+        rebound_stat = object()
+        rebound_regular = object()
+        rebound_read = object()
+        rebound_minimum = object()
+        rebound_length = object()
+        rebound_close = object()
+        sentinel = object()
+
+        def kernel(
+            received_path: Path,
+            **dependencies: object,
+        ) -> object:
+            self.assertIs(received_path, path)
+            self.assertEqual(
+                tuple(dependencies),
+                (
+                    "label",
+                    "open_flags",
+                    "file_open",
+                    "os_error_type",
+                    "error_type",
+                    "file_stat",
+                    "regular_file_test",
+                    "maximum_file_bytes",
+                    "file_read",
+                    "minimum",
+                    "length",
+                    "file_close",
+                ),
+            )
+            self.assertEqual(dependencies.pop("label"), label)
+
+            self.engine.os = SimpleNamespace(
+                O_RDONLY=1,
+                O_CLOEXEC=2,
+                O_NOFOLLOW=4,
+                open=rebound_open,
+                fstat=object(),
+                read=object(),
+                close=object(),
+            )
+            self.assertEqual(dependencies["open_flags"](), 7)
+            self.engine.os = SimpleNamespace(O_RDONLY=8)
+            self.assertEqual(dependencies["open_flags"](), 8)
+            self.engine.os = SimpleNamespace(open=rebound_open)
+            self.assertIs(dependencies["file_open"](), rebound_open)
+
+            self.engine.OSError = ReboundOSError
+            self.assertIs(
+                dependencies["os_error_type"](),
+                ReboundOSError,
+            )
+            self.engine.LauncherError = ReboundFileError
+            self.assertIs(
+                dependencies["error_type"](),
+                ReboundFileError,
+            )
+
+            self.engine.os = SimpleNamespace(fstat=rebound_stat)
+            self.assertIs(dependencies["file_stat"](), rebound_stat)
+            self.engine.stat = SimpleNamespace(
+                S_ISREG=rebound_regular,
+            )
+            self.assertIs(
+                dependencies["regular_file_test"](),
+                rebound_regular,
+            )
+            self.engine.MAX_ADMIN_FILE_BYTES = 123
+            self.assertEqual(
+                dependencies["maximum_file_bytes"](),
+                123,
+            )
+
+            self.engine.os = SimpleNamespace(read=rebound_read)
+            self.assertIs(dependencies["file_read"](), rebound_read)
+            self.engine.min = rebound_minimum
+            self.assertIs(dependencies["minimum"](), rebound_minimum)
+            self.engine.len = rebound_length
+            self.assertIs(dependencies["length"](), rebound_length)
+            self.engine.os = SimpleNamespace(close=rebound_close)
+            self.assertIs(dependencies["file_close"](), rebound_close)
+            return sentinel
+
+        initial_os = SimpleNamespace(
+            O_RDONLY=8,
+            O_CLOEXEC=16,
+            O_NOFOLLOW=32,
+            open=initial_open,
+            fstat=object(),
+            read=object(),
+            close=object(),
+        )
+        with (
+            mock.patch.object(
+                self.engine,
+                "_safe_regular_file_bytes",
+                side_effect=kernel,
+            ) as extracted,
+            mock.patch.object(self.engine, "os", initial_os),
+            mock.patch.object(
+                self.engine,
+                "OSError",
+                InitialOSError,
+                create=True,
+            ),
+            mock.patch.object(
+                self.engine,
+                "LauncherError",
+                InitialFileError,
+            ),
+            mock.patch.object(
+                self.engine,
+                "stat",
+                SimpleNamespace(S_ISREG=object()),
+            ),
+            mock.patch.object(
+                self.engine,
+                "MAX_ADMIN_FILE_BYTES",
+                456,
+            ),
+            mock.patch.object(
+                self.engine,
+                "min",
+                object(),
+                create=True,
+            ),
+            mock.patch.object(
+                self.engine,
+                "len",
+                object(),
+                create=True,
+            ),
+        ):
+            observed = self.engine.safe_regular_file_bytes(
+                path,
+                label=label,
+            )
+
+        self.assertIs(observed, sentinel)
+        extracted.assert_called_once()
+
+    def test_safe_regular_file_matches_real_filesystem_behavior(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            path = root / "regular"
+            payload = b"plain\x00bytes\n"
+            path.write_bytes(payload)
+            self.assertEqual(
+                self.engine.safe_regular_file_bytes(
+                    path,
+                    label="the real file",
+                ),
+                payload,
+            )
+
+            missing = root / "missing"
+            with self.assertRaises(self.engine.LauncherError) as caught:
+                self.engine.safe_regular_file_bytes(
+                    missing,
+                    label="the missing file",
+                )
+            self.assertEqual(
+                str(caught.exception),
+                "the missing file is not an intact regular file",
+            )
+            self.assertIsInstance(caught.exception.__cause__, OSError)
+
+            with self.assertRaises(self.engine.LauncherError) as caught:
+                self.engine.safe_regular_file_bytes(
+                    root,
+                    label="the directory",
+                )
+            self.assertEqual(
+                str(caught.exception),
+                "the directory is not an intact regular file",
+            )
+            self.assertIsNone(caught.exception.__cause__)
+
+            symlink = root / "symbolic"
+            symlink.symlink_to(path)
+            with self.assertRaises(self.engine.LauncherError) as caught:
+                self.engine.safe_regular_file_bytes(
+                    symlink,
+                    label="the symbolic file",
+                )
+            self.assertEqual(
+                str(caught.exception),
+                "the symbolic file is not an intact regular file",
+            )
+            self.assertIsInstance(caught.exception.__cause__, OSError)
+
+            with mock.patch.object(
+                self.engine,
+                "MAX_ADMIN_FILE_BYTES",
+                len(payload) - 1,
+            ):
+                with self.assertRaises(self.engine.LauncherError) as caught:
+                    self.engine.safe_regular_file_bytes(
+                        path,
+                        label="the oversized file",
+                    )
+            self.assertEqual(
+                str(caught.exception),
+                "the oversized file is unexpectedly large",
+            )
+            self.assertIsNone(caught.exception.__cause__)
 
     def test_exact_single_line_kernel_and_wrapper_signatures(self) -> None:
         self.assertIs(

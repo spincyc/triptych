@@ -24,7 +24,8 @@ state vocabulary, pure classifier, and I/O-free integration-transaction
 restoration transform, `state.py` now owns run identity, state-location
 selection, repository-name normalization, and lexical lock and manifest paths,
 `identity.py` now owns immutable runtime identity records and launcher-entry
-authentication plus exact Git-administration line-format validation,
+authentication plus exact Git-administration line-format validation and the
+bounded descriptor-based regular-file reader,
 `locks.py` now owns lock-descriptor bookkeeping and validation algorithms,
 `process.py` now owns child waiting and exit-status normalization,
 `adapters/codex.py` now owns Codex executable candidate selection and static
@@ -41,7 +42,7 @@ worktree_marshal/
   locks.py               descriptor bookkeeping now; flock acquisition later
   git.py                 policy, captured config, and executable discovery; invocation later
   process.py             child signal forwarding and exit normalization
-  identity.py            records, launcher auth, and Git-admin line validation now
+  identity.py            records, launcher auth, Git-admin lines, and bounded reads now
                          repository/worktree authentication later
   worktrees.py           allocation, audit, reopen, and cleanup
   integration.py         verification, rebase, landing, and rollback
@@ -97,7 +98,7 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with sixteen behavior-preserving boundaries. The original
+has begun step 5 with seventeen behavior-preserving boundaries. The original
 pure Git policy kernel transforms an explicit environment mapping and Git
 argument sequence in `git.py`; `engine.py` retains its optional
 environment-acquisition wrapper, subprocess creation and command execution,
@@ -202,10 +203,10 @@ decoding error type, and launcher error type. Byte acquisition still precedes
 format inspection. The short-circuiting enforcement of exactly one terminal
 line feed and no carriage return, strict UTF-8 decoding, the nonempty and
 NUL-free path-value checks, the three exact diagnostics, and the narrow
-decoding-error cause remain unchanged. The engine retains the safe reader and
+decoding-error cause remain unchanged. That boundary left the safe reader and
 all descriptor I/O, size and change checks, pointer-prefix and path
 interpretation, exact-directory and topology validation, linked-worktree
-identity caches, and lifecycle orchestration.
+identity caches, and lifecycle orchestration in the engine.
 The extracted helper validates only the line format presented by its injected
 reader. It does not independently authenticate a file or path, reject every
 symbolic traversal, establish pointer canonicality or containment, eliminate
@@ -314,7 +315,37 @@ and lifecycle decision. This deterministic marker helper is not a generic
 contract, agent, sandbox backend, credential filtering, durable identity,
 migration, or release assurance.
 
-Direct tests freeze all sixteen extracted boundaries, their
+The seventeenth boundary moves only the existing
+`safe_regular_file_bytes` kernel into `identity.py`. Its exact-signature engine
+wrapper retains `MAX_ADMIN_FILE_BYTES` and lazily supplies the current open
+flags, descriptor operations, operating-system and launcher error types,
+regular-file predicate, size limit, and primitive minimum and length
+operations. The constant remains in the engine because the separate
+active-rebase administration audit also uses it. Existing callers—including
+the exact-line wrapper, generic profile-marker authentication, and active
+rebase metadata readers—continue through the engine wrapper at their
+established call points.
+
+The kernel opens the final path component with `O_NOFOLLOW` only when the
+platform provides that flag, requires the pre-read descriptor snapshot to
+describe a regular file with exactly one link, rejects a metadata size above
+16 MiB, and reads through a 16-MiB-plus-one detection budget in chunks no
+larger than 1 MiB. It then compares the descriptor's device, inode, size,
+modification time, and change time with the pre-read snapshot and runs
+descriptor closure on every post-open path. Only an operating-system error
+during open is translated into the intact-file diagnostic; later
+descriptor-operation failures retain their existing scope.
+
+This is a bounded descriptor read, not complete pathname or mutation
+authentication. It does not authenticate or canonicalize parent components,
+establish path containment, lock the file, or prove the absence of a mutation
+that leaves the compared metadata unchanged. The engine retains pointer-prefix
+and path interpretation, exact-directory and linked-worktree topology
+validation, identity registries, repository and retained-worktree
+authentication, all workflows, and every mutation. This seam adds no durable
+identity, migration, sandbox, lifecycle, or release assurance.
+
+Direct tests freeze all seventeen extracted boundaries, their
 compatibility surfaces, artifact inclusion, field and operation order,
 partial-failure behavior, and the dynamic restoration of every vocabulary
 value currently accepted in

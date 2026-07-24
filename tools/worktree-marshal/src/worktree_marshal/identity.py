@@ -2,9 +2,10 @@
 
 from __future__ import annotations
 
+from collections.abc import Sized
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Callable
+from typing import Callable, Protocol
 
 
 @dataclass(frozen=True)
@@ -32,6 +33,16 @@ class LauncherIdentity:
     path: Path
     device: int
     inode: int
+
+
+class RegularFileMetadata(Protocol):
+    st_mode: int
+    st_nlink: int
+    st_size: int
+    st_dev: int
+    st_ino: int
+    st_mtime_ns: int
+    st_ctime_ns: int
 
 
 def authenticate_launcher(
@@ -66,6 +77,68 @@ def authenticate_launcher(
         device=metadata.st_dev,
         inode=metadata.st_ino,
     )
+
+
+def safe_regular_file_bytes(
+    path: Path,
+    *,
+    label: str,
+    open_flags: Callable[[], int],
+    file_open: Callable[[], Callable[[Path, int], int]],
+    os_error_type: Callable[[], type[BaseException]],
+    error_type: Callable[[], type[BaseException]],
+    file_stat: Callable[
+        [],
+        Callable[[int], RegularFileMetadata],
+    ],
+    regular_file_test: Callable[[], Callable[[int], bool]],
+    maximum_file_bytes: Callable[[], int],
+    file_read: Callable[[], Callable[[int, int], bytes]],
+    minimum: Callable[[], Callable[[int, int], int]],
+    length: Callable[[], Callable[[Sized], int]],
+    file_close: Callable[[], Callable[[int], None]],
+) -> bytes:
+    """Read one bounded, stable, single-link regular file by descriptor."""
+
+    flags = open_flags()
+    try:
+        descriptor = file_open()(path, flags)
+    except os_error_type() as exc:
+        raise error_type()(f"{label} is not an intact regular file") from exc
+    try:
+        before = file_stat()(descriptor)
+        if (
+            not regular_file_test()(before.st_mode)
+            or before.st_nlink != 1
+        ):
+            raise error_type()(f"{label} is not an intact regular file")
+        if before.st_size > maximum_file_bytes():
+            raise error_type()(f"{label} is unexpectedly large")
+        chunks: list[bytes] = []
+        remaining = maximum_file_bytes() + 1
+        while remaining:
+            chunk = file_read()(
+                descriptor,
+                minimum()(1024 * 1024, remaining),
+            )
+            if not chunk:
+                break
+            chunks.append(chunk)
+            remaining -= length()(chunk)
+        data = b"".join(chunks)
+        if length()(data) > maximum_file_bytes():
+            raise error_type()(f"{label} is unexpectedly large")
+        after = file_stat()(descriptor)
+        if (
+            (before.st_dev, before.st_ino, before.st_size)
+            != (after.st_dev, after.st_ino, after.st_size)
+            or before.st_mtime_ns != after.st_mtime_ns
+            or before.st_ctime_ns != after.st_ctime_ns
+        ):
+            raise error_type()(f"{label} changed while it was inspected")
+        return data
+    finally:
+        file_close()(descriptor)
 
 
 def exact_single_line(

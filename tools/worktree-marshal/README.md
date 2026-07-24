@@ -11,11 +11,11 @@ profile, its child-process supervision boundary, its run-identity and lexical
 state-path boundary, its state-location and repository-name boundary, the
 immutable runtime-identity record and launcher-entry authentication
 boundaries, its Git-executable discovery and pre-pin validation boundary, the
-exact Git-administration line-format validation boundary, its Codex-executable
-candidate-selection, static argument-policy, sanitized base-environment, and
-deterministic marker-enrichment boundaries, the frozen Triptych compatibility
-adapter, the Python distribution, and the Make integration fragment. The
-repository-local
+exact Git-administration line-format validation and bounded descriptor-reader
+boundaries, its Codex-executable candidate-selection, static argument-policy,
+sanitized base-environment, and deterministic marker-enrichment boundaries,
+the frozen Triptych compatibility adapter, the Python distribution, and the
+Make integration fragment. The repository-local
 [`scripts/triptych-codex`](../../scripts/triptych-codex) command is a thin,
 in-process bootstrap for the co-located package engine.
 
@@ -116,7 +116,7 @@ worktree-removal or ref-transaction failures, receipt recovery, garbage
 collection, or concurrent retirement. Those retirement cases, broader crash
 and race recovery, broader security coverage, the complete installed lifecycle
 matrix, and the supported Python and Git CI matrix remain release gates; the
-first sixteen step-5 seams are protected by direct source tests and artifact
+first seventeen step-5 seams are protected by direct source tests and artifact
 provenance, and the installed abort checkpoint covers archived transaction
 restoration. Each remaining helper boundary still requires its own direct
 parity coverage.
@@ -157,24 +157,40 @@ absolute-path rejection, strict resolution and metadata capture, the regular
 file and executable checks, and construction of the authenticated snapshot.
 It now also owns the dependency-injected format validation used for exact
 Git-administration path lines: exactly one terminal line feed, no carriage
-return, strict UTF-8, and a nonempty, NUL-free value. `engine.py` continues to
-re-export the same class objects. The launcher wrapper supplies the error,
-filesystem-policy, access, executable-mode, and identity factory dependencies
-lazily at their established lookup points. Only strict resolution and
-metadata-read operating-system errors are translated by that operation. The
-exact-line wrapper likewise supplies the current regular-file byte reader,
-Unicode decoding error type, and launcher error type lazily.
+return, strict UTF-8, and a nonempty, NUL-free value. The module now also owns
+the dependency-injected `safe_regular_file_bytes` kernel for one bounded,
+descriptor-based file read. `engine.py` continues to re-export the same class
+objects. The launcher wrapper supplies the error, filesystem-policy, access,
+executable-mode, and identity factory dependencies lazily at their established
+lookup points. Only strict resolution and metadata-read operating-system
+errors are translated by that operation. The exact-line wrapper likewise
+supplies the current regular-file byte-reader wrapper, Unicode decoding error
+type, and launcher error type lazily.
 
-The engine retains `safe_regular_file_bytes` and all descriptor I/O, size and
-change checks, repository discovery and the remaining repository and
-linked-worktree authentication, pointer-prefix and path interpretation,
-exact-directory and topology validation, linked-worktree identity caches,
-lifecycle sequencing, top-level error handling, and every mutation. The
-extracted line helper does not by itself authenticate a file or path,
-establish pointer canonicality or containment, or close a symbolic-path or
-replacement race. Git-executable discovery and pre-pin validation belong to
-`git.py`, while its process-global cache and invocation remain in `engine.py`;
-neither is a future responsibility of `identity.py`.
+The reader opens the final path component with `O_NOFOLLOW` when that flag is
+available, requires the pre-read descriptor snapshot to describe a regular
+file with exactly one link, accepts at most 16 MiB, and reads with a
+16-MiB-plus-one detection budget in chunks of at most 1 MiB. It compares
+device, inode, size, modification time, and change time before and after the
+read and runs descriptor closure on every post-open path. Only an
+operating-system error while opening the file is translated into the
+intact-file diagnostic; later descriptor-operation failures remain outside
+that translation.
+
+The exact-signature engine wrapper retains the current size limit and supplies
+all primitive operations and policy values lazily. `MAX_ADMIN_FILE_BYTES`
+remains in `engine.py` because the active-rebase administration audit also
+uses it. The engine also retains every existing reader consumer, pointer-prefix
+and path interpretation, exact-directory and topology validation, repository
+and linked-worktree authentication, identity caches, lifecycle sequencing,
+top-level error handling, and every mutation. The bounded reader does not
+authenticate parent path components, establish canonicality or containment,
+lock the file, or prove that no content mutation occurred when the observed
+metadata is unchanged. The extracted line helper still does not independently
+establish pointer canonicality or containment. Git-executable discovery and
+pre-pin validation belong to `git.py`, while its process-global cache and
+invocation remain in `engine.py`; neither is a future responsibility of
+`identity.py`.
 
 [`adapters/codex.py`](src/worktree_marshal/adapters/codex.py) owns the
 dependency-injected `select_codex_executable` operation for a usable,

@@ -58,6 +58,7 @@ from .identity import (
     Repository,
     authenticate_launcher as _authenticate_launcher,
     exact_single_line as _exact_single_line,
+    safe_regular_file_bytes as _safe_regular_file_bytes,
 )
 from .locks import (
     RegisteredLockDescriptor,
@@ -337,39 +338,25 @@ def absolute_git_path(cwd: Path, selector: str) -> Path:
 
 
 def safe_regular_file_bytes(path: Path, *, label: str) -> bytes:
-    flags = os.O_RDONLY | getattr(os, "O_CLOEXEC", 0) | getattr(os, "O_NOFOLLOW", 0)
-    try:
-        descriptor = os.open(path, flags)
-    except OSError as exc:
-        raise LauncherError(f"{label} is not an intact regular file") from exc
-    try:
-        before = os.fstat(descriptor)
-        if not stat.S_ISREG(before.st_mode) or before.st_nlink != 1:
-            raise LauncherError(f"{label} is not an intact regular file")
-        if before.st_size > MAX_ADMIN_FILE_BYTES:
-            raise LauncherError(f"{label} is unexpectedly large")
-        chunks: list[bytes] = []
-        remaining = MAX_ADMIN_FILE_BYTES + 1
-        while remaining:
-            chunk = os.read(descriptor, min(1024 * 1024, remaining))
-            if not chunk:
-                break
-            chunks.append(chunk)
-            remaining -= len(chunk)
-        data = b"".join(chunks)
-        if len(data) > MAX_ADMIN_FILE_BYTES:
-            raise LauncherError(f"{label} is unexpectedly large")
-        after = os.fstat(descriptor)
-        if (
-            (before.st_dev, before.st_ino, before.st_size)
-            != (after.st_dev, after.st_ino, after.st_size)
-            or before.st_mtime_ns != after.st_mtime_ns
-            or before.st_ctime_ns != after.st_ctime_ns
-        ):
-            raise LauncherError(f"{label} changed while it was inspected")
-        return data
-    finally:
-        os.close(descriptor)
+    return _safe_regular_file_bytes(
+        path,
+        label=label,
+        open_flags=lambda: (
+            os.O_RDONLY
+            | getattr(os, "O_CLOEXEC", 0)
+            | getattr(os, "O_NOFOLLOW", 0)
+        ),
+        file_open=lambda: os.open,
+        os_error_type=lambda: OSError,
+        error_type=lambda: LauncherError,
+        file_stat=lambda: os.fstat,
+        regular_file_test=lambda: stat.S_ISREG,
+        maximum_file_bytes=lambda: MAX_ADMIN_FILE_BYTES,
+        file_read=lambda: os.read,
+        minimum=lambda: min,
+        length=lambda: len,
+        file_close=lambda: os.close,
+    )
 
 
 def exact_single_line(path: Path, *, label: str) -> str:
