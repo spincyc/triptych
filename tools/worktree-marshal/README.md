@@ -126,7 +126,7 @@ worktree-removal or ref-transaction failures, receipt recovery, garbage
 collection, or concurrent retirement. Those retirement cases, broader crash
 and race recovery, broader security coverage, the complete installed lifecycle
 matrix, and the supported Python and Git CI matrix remain release gates; the
-first thirty-two step-5 seams are protected by direct source tests and artifact
+first thirty-three step-5 seams are protected by direct source tests and artifact
 provenance, and the installed abort checkpoint covers archived transaction
 restoration. Each remaining helper boundary still requires its own direct
 parity coverage.

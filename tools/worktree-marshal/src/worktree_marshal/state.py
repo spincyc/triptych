@@ -23,6 +23,19 @@ class StateRepository(Protocol):
 RUN_ID_RE = re.compile(r"^[0-9]{8}t[0-9]{6}z-[0-9a-f]{12}$")
 
 
+def validate_run_id(
+    run_id: str,
+    *,
+    pattern: Callable[[], Any],
+    display_name: Callable[[], str],
+    error_type: Callable[[], type[BaseException]],
+) -> None:
+    """Validate one syntactic run ID with a profile-aware diagnostic."""
+
+    if not pattern().fullmatch(run_id):
+        raise error_type()(f"invalid {display_name()} run ID")
+
+
 def validate_exact_run_tmpdir(
     repository: StateRepository,
     manifest: Mapping[str, Any],

@@ -110,6 +110,7 @@ from .state import (
     run_lock_path as _run_lock_path,
     state_base as _state_base,
     validate_exact_run_tmpdir as _validate_exact_run_tmpdir,
+    validate_run_id as _validate_run_id,
     write_manifest as _write_manifest,
 )
 
@@ -651,8 +652,12 @@ def manifest_path(repository: Repository, run_id: str) -> Path:
 
 
 def validate_run_id(run_id: str) -> None:
-    if not RUN_ID_RE.fullmatch(run_id):
-        raise LauncherError(f"invalid {active_profile().display_name} run ID")
+    _validate_run_id(
+        run_id,
+        pattern=lambda: RUN_ID_RE,
+        display_name=lambda: active_profile().display_name,
+        error_type=lambda: LauncherError,
+    )
 
 
 def validate_exact_run_tmpdir(
