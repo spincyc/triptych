@@ -4,8 +4,10 @@ from __future__ import annotations
 
 import os
 import weakref
+from contextlib import contextmanager
 from dataclasses import dataclass
-from typing import Callable, MutableMapping, TextIO
+from pathlib import Path
+from typing import Callable, Iterator, MutableMapping, TextIO
 
 
 @dataclass(frozen=True)
@@ -19,6 +21,44 @@ LockRegistry = MutableMapping[int, RegisteredLockDescriptor]
 LockRegistryResolver = Callable[[], LockRegistry]
 LockRecordFactory = Callable[..., RegisteredLockDescriptor]
 LockRecordFactoryResolver = Callable[[], LockRecordFactory]
+
+
+@contextmanager
+def file_lock(
+    path: Path,
+    *,
+    blocking: bool,
+    private_directory: Callable[[], Callable[[Path], None]],
+    file_open: Callable[[], Callable[..., TextIO]],
+    file_chmod: Callable[[], Callable[[Path, int], None]],
+    exclusive_flag: Callable[[], int],
+    nonblocking_flag: Callable[[], int],
+    lock_operation: Callable[[], Callable[[int, int], None]],
+    blocking_error_type: Callable[[], type[BaseException]],
+    register_descriptor: Callable[[], Callable[[TextIO], None]],
+    unregister_descriptor: Callable[[], Callable[[TextIO], None]],
+    unlock_flag: Callable[[], int],
+) -> Iterator[TextIO]:
+    """Acquire, register, yield, and release one advisory file lock."""
+
+    private_directory()(path.parent)
+    stream = file_open()("a+", encoding="utf-8")
+    file_chmod()(path, 0o600)
+    flags = exclusive_flag()
+    if not blocking:
+        flags |= nonblocking_flag()
+    try:
+        lock_operation()(stream.fileno(), flags)
+    except blocking_error_type():
+        stream.close()
+        raise
+    register_descriptor()(stream)
+    try:
+        yield stream
+    finally:
+        unregister_descriptor()(stream)
+        lock_operation()(stream.fileno(), unlock_flag())
+        stream.close()
 
 
 def register_lock_descriptor(

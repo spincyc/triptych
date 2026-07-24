@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import gc
 import importlib
+import inspect
 import os
 import subprocess
 import sys
@@ -947,6 +948,30 @@ class LockPolicyTests(unittest.TestCase):
         self.assertIs(observed, completed)
         inherited.assert_called_once_with()
         self.assertEqual(run.call_args.kwargs["pass_fds"], (9, 3))
+
+    def test_file_lock_kernel_and_wrapper_surfaces_are_exact(self) -> None:
+        self.assertEqual(
+            tuple(inspect.signature(self.locks.file_lock).parameters),
+            (
+                "path",
+                "blocking",
+                "private_directory",
+                "file_open",
+                "file_chmod",
+                "exclusive_flag",
+                "nonblocking_flag",
+                "lock_operation",
+                "blocking_error_type",
+                "register_descriptor",
+                "unregister_descriptor",
+                "unlock_flag",
+            ),
+        )
+        self.assertEqual(
+            str(inspect.signature(self.engine.file_lock)),
+            "(path: 'Path', *, blocking: 'bool' = True) -> "
+            "'Iterator[TextIO]'",
+        )
 
     def test_real_file_lock_is_inherited_and_released_on_every_exit(self) -> None:
         registry: dict[int, object] = {}

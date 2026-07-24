@@ -6,7 +6,8 @@ Transactional Git worktrees for coding agents.
 
 This directory contains the shared lifecycle engine, its first extracted
 cycle-free Git policy, durable-state vocabulary, and integration-transaction
-restoration seams, its lock-descriptor bookkeeping boundary, its first generic
+restoration seams, its advisory-lock and descriptor-bookkeeping boundaries,
+its first generic
 profile, its child-process supervision boundary, its run-identity and lexical
 state-path boundary, its state-location, repository-name, and private-directory
 authentication boundaries, the
@@ -124,7 +125,7 @@ worktree-removal or ref-transaction failures, receipt recovery, garbage
 collection, or concurrent retirement. Those retirement cases, broader crash
 and race recovery, broader security coverage, the complete installed lifecycle
 matrix, and the supported Python and Git CI matrix remain release gates; the
-first twenty-six step-5 seams are protected by direct source tests and artifact
+first twenty-seven step-5 seams are protected by direct source tests and artifact
 provenance, and the installed abort checkpoint covers archived transaction
 restoration. Each remaining helper boundary still requires its own direct
 parity coverage.
@@ -471,12 +472,14 @@ containment rejection, the profile marker, manifest persistence and validation,
 temporary-path authentication, lock acquisition, and all lifecycle decisions
 remain in `engine.py`.
 
-[`locks.py`](src/worktree_marshal/locks.py) owns only the immutable registered
-descriptor record and the algorithms that register, unregister, authenticate,
-prune, and sort descriptors inherited by child processes through explicit
-registry and record-factory resolvers. The engine retains the process-global
-registry, Repository-bound path wrappers, `flock` acquisition and release,
-subprocess propagation, and every lifecycle locking decision in `engine.py`.
+[`locks.py`](src/worktree_marshal/locks.py) owns the immutable registered
+descriptor record; the algorithms that register, unregister, authenticate,
+prune, and sort inherited descriptors; and the complete advisory file-lock
+context manager. That manager preserves private parent setup, mode 0600,
+exclusive and optional nonblocking acquisition, registration timing, and
+unregister/unlock/close release order. The engine retains the process-global
+registry, Repository-bound path wrappers, lifecycle lock ownership and
+nesting, subprocess propagation, and every lifecycle locking decision.
 
 [`process.py`](src/worktree_marshal/process.py) owns only the existing child
 wait loop, temporary `SIGHUP` and `SIGTERM` forwarding, interrupt escalation,

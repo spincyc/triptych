@@ -33,7 +33,8 @@ read-only linked-worktree cache-consistency policy plus retained-worktree
 manifest binding and authentication dispatch plus Git-working-directory
 ancestor authentication, read-only repository discovery, and exact path-entry
 inspection,
-`locks.py` now owns lock-descriptor bookkeeping and validation algorithms,
+`locks.py` now owns advisory lock acquisition and lock-descriptor bookkeeping
+and validation algorithms,
 `process.py` now owns child waiting and exit-status normalization,
 `adapters/codex.py` now owns Codex executable candidate selection and static
 argument policy plus the sanitized Codex base-environment transform and
@@ -46,7 +47,7 @@ worktree_marshal/
   cli.py                 command parsing and stable exit behavior
   model.py               state vocabulary and transaction restoration now
   state.py               identity, location, lexical paths, and private directories
-  locks.py               descriptor bookkeeping now; flock acquisition later
+  locks.py               advisory acquisition and descriptor bookkeeping
   git.py                 policy, config, executable discovery, and absolute paths
   process.py             child signal forwarding and exit normalization
   identity.py            records, auth, path/cache checks, and repository discovery
@@ -105,7 +106,7 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with twenty-six behavior-preserving boundaries. The original
+has begun step 5 with twenty-seven behavior-preserving boundaries. The original
 pure Git policy kernel transforms an explicit environment mapping and Git
 argument sequence in `git.py`; `engine.py` retains its optional
 environment-acquisition wrapper, subprocess creation and command execution,
@@ -683,7 +684,23 @@ directory identity across its snapshots; it does not authenticate ancestors,
 ownership, mount behavior, or later replacement. This boundary adds no state
 schema, workflow, packaging, or release change.
 
-Direct tests freeze all twenty-six extracted boundaries, their
+The twenty-seventh boundary moves the complete `file_lock` context manager
+into `locks.file_lock`. The exact engine wrapper remains
+`(path, *, blocking=True)` and supplies private-directory setup, file open and
+mode enforcement, advisory-lock flags and operation, blocking-error type,
+descriptor registration and unregistration, and unlock behavior lazily.
+
+The operation preserves parent setup, append/update UTF-8 opening, mode 0600,
+exclusive and optional nonblocking acquisition, close-before-reraise on a
+selected blocking error, registration only after acquisition, and the exact
+unregister, unlock, close release order for every yielded outcome. The engine
+retains the process-global descriptor registry and wrappers, repository/run
+lock-path selection, lifecycle lock ownership and nesting, subprocess
+inheritance, and every workflow decision. Advisory locks remain cooperative
+and process-scoped; this boundary adds no state, workflow, packaging, or
+release change.
+
+Direct tests freeze all twenty-seven extracted boundaries, their
 compatibility surfaces, artifact inclusion, field and operation order,
 partial-failure behavior, and the dynamic restoration of every vocabulary
 value currently accepted in

@@ -71,6 +71,7 @@ from .identity import (
 )
 from .locks import (
     RegisteredLockDescriptor,
+    file_lock as _file_lock,
     inherited_lock_descriptors as _inherited_lock_descriptors,
     register_lock_descriptor as _register_lock_descriptor,
     unregister_lock_descriptor as _unregister_lock_descriptor,
@@ -611,24 +612,21 @@ def initialize_state(repository: Repository) -> None:
 
 @contextmanager
 def file_lock(path: Path, *, blocking: bool = True) -> Iterator[TextIO]:
-    private_directory(path.parent)
-    stream = path.open("a+", encoding="utf-8")
-    os.chmod(path, 0o600)
-    flags = fcntl.LOCK_EX
-    if not blocking:
-        flags |= fcntl.LOCK_NB
-    try:
-        fcntl.flock(stream.fileno(), flags)
-    except BlockingIOError:
-        stream.close()
-        raise
-    register_lock_descriptor(stream)
-    try:
+    with _file_lock(
+        path,
+        blocking=blocking,
+        private_directory=lambda: private_directory,
+        file_open=lambda: path.open,
+        file_chmod=lambda: os.chmod,
+        exclusive_flag=lambda: fcntl.LOCK_EX,
+        nonblocking_flag=lambda: fcntl.LOCK_NB,
+        lock_operation=lambda: fcntl.flock,
+        blocking_error_type=lambda: BlockingIOError,
+        register_descriptor=lambda: register_lock_descriptor,
+        unregister_descriptor=lambda: unregister_lock_descriptor,
+        unlock_flag=lambda: fcntl.LOCK_UN,
+    ) as stream:
         yield stream
-    finally:
-        unregister_lock_descriptor(stream)
-        fcntl.flock(stream.fileno(), fcntl.LOCK_UN)
-        stream.close()
 
 
 def repo_lock_path(repository: Repository) -> Path:
