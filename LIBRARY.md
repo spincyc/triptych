@@ -20,18 +20,24 @@ catalog home.
 
 Every PDF is a working study, not an approved Church publication. “Source-audited” means an internal evidence check, not independent specialist or ecclesiastical review; no current publication records such review.
 
-The current release-cleared snapshot is the 23 July 2026 bare-`approve`
-exact-current-snapshot record: all 111 installed PDFs are marked `release`,
-none is in `review` or on `hold`, and the record binds those 111 exact PDF
-snapshots and all 23 exact recognized reader-site inputs. It supersedes the
-active effect of the 63-release, 48-hold preapproval state and clears the 37
-redesigned Ecclesiastical Latin PDFs, five changed or new *Creature Before
-God* PDFs, and six altar-server PDFs only as exact-byte distribution
-exceptions. The lower current count reflects the 37-PDF Latin redesign
-replacing its superseded 52-PDF edition. The 22 July binding of 118 exact PDFs,
-the 21 July binding of 115 exact PDFs, the 20 July bindings, and all
-predecessor-hash dispositions remain historical facts about only the bytes
-they bound.
+The current installed inventory contains 112 PDFs: 109 are marked `release`,
+none is in `review`, and the redesigned Low Mass child booklet, trainer
+manual, and flash cards are on `hold` as evaluation snapshots. The 23 July
+2026 bare-`approve` record remains the exact-byte basis for the 109 unchanged
+release entries, including the four unchanged Missa Cantata and Solemn Mass
+PDFs. Its complete 111-PDF and 23-site-input snapshot is now historical: the
+Low Mass guide and cue-card hashes it named do not authorize the changed child
+booklet or the new trainer-manual and flash-card identities, and changed
+reader-site inputs require renewed authorization.
+
+That 23 July record superseded the active effect of the 63-release, 48-hold
+preapproval state and cleared the 37 redesigned Ecclesiastical Latin PDFs,
+five changed or new *Creature Before God* PDFs, and the former six
+altar-server PDFs only as exact-byte distribution exceptions. The lower
+historical count reflected the 37-PDF Latin redesign replacing its superseded
+52-PDF edition. The 22 July binding of 118 exact PDFs, the 21 July binding of
+115 exact PDFs, the 20 July bindings, and all predecessor-hash dispositions
+remain historical facts about only the bytes they bound.
 
 The 23 July exception supplies no missing page-image, source, or altar-book
 collation; direct-image inspection; donor license; received liturgical- or

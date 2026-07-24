@@ -64,7 +64,7 @@ certification.
 | A5 | **SI**-cut **E**-rat in prin-**CI**-pi-o, et nunc, et **SEM**-per: et in **SAE**-cu-la sae-cu-**LO**-rum. **A**-men | SEE-koot EH-raht een preen-CHEE-pee-oh, eht noonk, eht SEHM-pehr: eht een SEH-koo-lah seh-koo-LOH-room. AH-mehn | /ˈsi.kut ˈe.rat in prinˈtʃi.pi.o et nunk et ˈsem.per et in ˈse.ku.la se.kuˈlo.rum ˈa.men/ | C, D (AE), R, V, X; *principio* retains its final hiatus. |
 | A6 | qui **FE**-cit **CAE**-lum et **TER**-ram | kwee FEH-cheet CHEH-loom eht TEHR-rahm | /kwi ˈfe.tʃit ˈtʃe.lum et ˈter.ram/ | C applies before both I and AE; D (AE), O (QU), Q (*rr*), R, X. |
 | A7 | mi-se-re-**A**-tur **TU**-i om-**NI**-po-tens **DE**-us, et, di-**MIS**-sis pec-**CA**-tis **TU**-is, per-**DU**-cat te ad **VI**-tam ae-**TER**-nam | mee-seh-reh-AH-toor TOO-ee ohm-NEE-poh-tehns DEH-oos, eht, dee-MEES-sees pehk-KAH-tees TOO-ees, pehr-DOO-kaht teh ahd VEE-tahm eh-TEHR-nahm | /mi.se.reˈa.tur ˈtu.i omˈni.po.tens ˈde.us et diˈmis.sis pekˈka.tis ˈtu.is perˈdu.kat te ad ˈvi.tam eˈter.nam/ | D (AE and hiatus), Q (*ss, cc*), R, S, V, X. |
-| A8 | con-**FI**-te-or **DE**-o om-ni-po-**TEN**-ti, be-**A**-tae Ma-**RI**-ae **SEM**-per **VIR**-gi-ni, be-**A**-to Mi-cha-**E**-li Ar-**CHAN**-ge-lo, be-**A**-to Io-**AN**-ni Bap-**TIS**-tae, **SANC**-tis A-**POS**-to-lis **PE**-tro et **PAU**-lo, **OM**-ni-bus **SANC**-tis, et **TI**-bi, **PA**-ter:<br><br>**QUI**-a pec-**CA**-vi **NI**-mis co-gi-ta-ti-**O**-ne, **VER**-bo et **O**-pe-re: **ME**-a **CUL**-pa, **ME**-a **CUL**-pa, **ME**-a **MAX**-i-ma **CUL**-pa.<br><br>**I**-de-o **PRE**-cor be-**A**-tam Ma-**RI**-am **SEM**-per **VIR**-gi-nem, be-**A**-tum Mi-cha-**E**-lem Ar-**CHAN**-ge-lum, be-**A**-tum Io-**AN**-nem Bap-**TIS**-tam, **SANC**-tos A-**POS**-to-los **PE**-trum et **PAU**-lum, **OM**-nes **SANC**-tos, et te, **PA**-ter, o-**RA**-re pro me ad **DO**-mi-num **DE**-um **NOS**-trum. | kohn-FEE-teh-or DEH-oh ohm-nee-poh-TEHN-tee, beh-AH-teh mah-REE-eh SEHM-pehr VEER-jee-nee, beh-AH-toh mee-kah-EH-lee ahr-KAHN-jeh-loh, beh-AH-toh yoh-AHN-nee bahp-TEES-teh, SAHNK-tees ah-POHS-toh-lees PEH-troh eht POW-loh, OHM-nee-boos SAHNK-tees, eht TEE-bee, PAH-tehr:<br><br>KWEE-ah pehk-KAH-vee NEE-mees koh-jee-tah-tsee-OH-neh, VEHR-boh eht OH-peh-reh: MEH-ah KOOL-pah, MEH-ah KOOL-pah, MEH-ah MAHK-see-mah KOOL-pah.<br><br>EE-deh-oh PREH-kor beh-AH-tahm mah-REE-ahm SEHM-pehr VEER-jee-nehm, beh-AH-toom mee-kah-EH-lehm ahr-KAHN-jeh-loom, beh-AH-toom yoh-AHN-nehm bahp-TEES-tahm, SAHNK-tohs ah-POHS-toh-lohs PEH-troom eht POW-loom, OHM-nehs SAHNK-tohs, eht teh, PAH-tehr, oh-RAH-reh proh meh ahd DOH-mee-noom DEH-oom NOHS-troom. | /konˈfi.te.or ˈde.o om.ni.poˈten.ti beˈa.te maˈri.e ˈsem.per ˈvir.dʒi.ni beˈa.to mi.kaˈe.li arˈkan.dʒe.lo beˈa.to joˈan.ni bapˈtis.te ˈsaŋ.ktis aˈpos.to.lis ˈpe.tro et ˈpau.lo ˈom.ni.bus ˈsaŋ.ktis et ˈti.bi ˈpa.ter/<br><br>/ˈkwi.a pekˈka.vi ˈni.mis ko.dʒi.ta.tsiˈo.ne ˈver.bo et ˈo.pe.re ˈme.a ˈkul.pa ˈme.a ˈkul.pa ˈme.a ˈmak.si.ma ˈkul.pa/<br><br>/ˈi.de.o ˈpre.kor beˈa.tam maˈri.am ˈsem.per ˈvir.dʒi.nem beˈa.tum mi.kaˈe.lem arˈkan.dʒe.lum beˈa.tum joˈan.nem bapˈtis.tam ˈsaŋ.ktos aˈpos.to.los ˈpe.trum et ˈpau.lum ˈom.nes ˈsaŋ.ktos et te ˈpa.ter oˈra.re pro me ad ˈdo.mi.num ˈde.um ˈnos.trum/ | C (including CH `/k/`), D, G, TJ (*cogitatione*, consonantal I), O (QU), Q (*cc, nn*, and `/ŋk/` in *sanct-*), R, S, V, X. A8's three card chunks remain one response. |
+| A8 | con-**FI**-te-or **DE**-o om-ni-po-**TEN**-ti, be-**A**-tae Ma-**RI**-ae **SEM**-per **VIR**-gi-ni, be-**A**-to Mi-cha-**E**-li Ar-**CHAN**-ge-lo, be-**A**-to Io-**AN**-ni Bap-**TIS**-tae, **SANC**-tis A-**POS**-to-lis **PE**-tro et **PAU**-lo, **OM**-ni-bus **SANC**-tis, et **TI**-bi, **PA**-ter:<br><br>**QUI**-a pec-**CA**-vi **NI**-mis co-gi-ta-ti-**O**-ne, **VER**-bo et **O**-pe-re: **ME**-a **CUL**-pa, **ME**-a **CUL**-pa, **ME**-a **MAX**-i-ma **CUL**-pa.<br><br>**I**-de-o **PRE**-cor be-**A**-tam Ma-**RI**-am **SEM**-per **VIR**-gi-nem, be-**A**-tum Mi-cha-**E**-lem Ar-**CHAN**-ge-lum, be-**A**-tum Io-**AN**-nem Bap-**TIS**-tam, **SANC**-tos A-**POS**-to-los **PE**-trum et **PAU**-lum, **OM**-nes **SANC**-tos, et te, **PA**-ter, o-**RA**-re pro me ad **DO**-mi-num **DE**-um **NOS**-trum. | kohn-FEE-teh-or DEH-oh ohm-nee-poh-TEHN-tee, beh-AH-teh mah-REE-eh SEHM-pehr VEER-jee-nee, beh-AH-toh mee-kah-EH-lee ahr-KAHN-jeh-loh, beh-AH-toh yoh-AHN-nee bahp-TEES-teh, SAHNK-tees ah-POHS-toh-lees PEH-troh eht POW-loh, OHM-nee-boos SAHNK-tees, eht TEE-bee, PAH-tehr:<br><br>KWEE-ah pehk-KAH-vee NEE-mees koh-jee-tah-tsee-OH-neh, VEHR-boh eht OH-peh-reh: MEH-ah KOOL-pah, MEH-ah KOOL-pah, MEH-ah MAHK-see-mah KOOL-pah.<br><br>EE-deh-oh PREH-kor beh-AH-tahm mah-REE-ahm SEHM-pehr VEER-jee-nehm, beh-AH-toom mee-kah-EH-lehm ahr-KAHN-jeh-loom, beh-AH-toom yoh-AHN-nehm bahp-TEES-tahm, SAHNK-tohs ah-POHS-toh-lohs PEH-troom eht POW-loom, OHM-nehs SAHNK-tohs, eht teh, PAH-tehr, oh-RAH-reh proh meh ahd DOH-mee-noom DEH-oom NOHS-troom. | /konˈfi.te.or ˈde.o om.ni.poˈten.ti beˈa.te maˈri.e ˈsem.per ˈvir.dʒi.ni beˈa.to mi.kaˈe.li arˈkan.dʒe.lo beˈa.to joˈan.ni bapˈtis.te ˈsaŋ.ktis aˈpos.to.lis ˈpe.tro et ˈpau.lo ˈom.ni.bus ˈsaŋ.ktis et ˈti.bi ˈpa.ter/<br><br>/ˈkwi.a pekˈka.vi ˈni.mis ko.dʒi.ta.tsiˈo.ne ˈver.bo et ˈo.pe.re ˈme.a ˈkul.pa ˈme.a ˈkul.pa ˈme.a ˈmak.si.ma ˈkul.pa/<br><br>/ˈi.de.o ˈpre.kor beˈa.tam maˈri.am ˈsem.per ˈvir.dʒi.nem beˈa.tum mi.kaˈe.lem arˈkan.dʒe.lum beˈa.tum joˈan.nem bapˈtis.tam ˈsaŋ.ktos aˈpos.to.los ˈpe.trum et ˈpau.lum ˈom.nes ˈsaŋ.ktos et te ˈpa.ter oˈra.re pro me ad ˈdo.mi.num ˈde.um ˈnos.trum/ | C (including CH `/k/`), D, G, TJ (*cogitatione*, consonantal I), O (QU), Q (*cc, nn*, and `/ŋk/` in *sanct-*), R, S, V, X. A8's three sung R-card chunks remain one response; the Low-Mass flash deck omits A8. |
 | A9 | **A**-men | AH-mehn | /ˈa.men/ | V, X. |
 | A10 | Et plebs **TU**-a lae-**TA**-bi-tur in te | eht plehbs TOO-ah leh-TAH-bee-toor een teh | /et plebs ˈtu.a leˈta.bi.tur in te/ | D (AE and hiatus), V, X. |
 | A11 | Et sa-lu-**TA**-re **TU**-um da **NO**-bis | eht sah-loo-TAH-reh TOO-oom dah NOH-bees | /et sa.luˈta.re ˈtu.um da ˈno.bis/ | D (hiatus), V, X. |
@@ -80,43 +80,60 @@ certification.
 | A21 | Sed **LI**-be-ra nos a **MA**-lo | sehd LEE-beh-rah nohs ah MAH-loh | /sed ˈli.be.ra nos a ˈma.lo/ | R, S, V, X. |
 | A22 | **DE**-o **GRA**-ti-as, al-le-**LU**-ia, al-le-**LU**-ia | DEH-oh GRAH-tsee-ahs, ahl-leh-LOO-yah, ahl-leh-LOO-yah | /ˈde.o ˈgra.tsi.as al.leˈlu.ja al.leˈlu.ja/ | D (hiatus), TJ (*ti-a* and consonantal I), Q (*ll*), R, S, V, X. |
 
-## Audited-bank projection into the integrated response deck
+## Audited-bank projections
 
-The shared source projects the audited bank into one integrated 24-card R
-deck: R01–R07 map to A1–A7, R08A–R08C divide A8 into three readable study
-parts, and R09–R22 map to A9–A22. A front identifies the R card and gives the
-complete cue used for practice; the paired full guide supplies the
-form-specific actor and mode key. Its back gives the canonical response,
-learner syllables and stress, English-like sound line, concise meaning, and
-A-bank or chunk ID. Combining those layers on one physical card does not make
-the card a new textual, pronunciation, or translation authority.
+### Low-Mass child and trainer books
 
-R08A–R08C are three card IDs, not three response IDs; together they teach the
-single A8 Confiteor. The shared metadata enumerates the selected Last-Gospel
-roles directly: MC/A1/A2 at Missa Cantata and the subdeacon at Solemn Mass.
-The shared response source also preserves that A9 answers the Prayer over the
-People when appointed, that a procession-linked *Benedicamus Domino* has no
-blessing or Last Gospel, and that the Last Gospel is omitted at the third Mass
-of Christmas.
+The child booklet and page-matched trainer manual use the same A1--A22
+pronunciation data in one continuous Mass-order route. At a response's first
+occurrence, the main lane gives the learner syllables and stress,
+English-like sound line, and short meaning beneath the canonical answer. A
+repeat gives the complete cue and answer without repeating those aids. The
+trainer's left rail adds no second pronunciation system.
 
-The paired full guide consolidates the technical broad IPA in one A1–A22
-trainer key instead of compressing IPA onto every answer face. The learner
-line and sound line remain on the R-card back, and a competent human listener
-still controls when the editorial respelling is ambiguous. The cards-only
-companion inherits this analysis and must be used with its paired full guide.
+A8 remains one response and one audited row. Its learner Latin, sound line,
+and meaning are divided into three consecutive full-width phrase-ladder parts
+because the complete *Confiteor* is too long for one child-page learning
+block. Once learned, the parts are joined without an inserted pause.
 
-The six-up long-edge duplex order is a composition contract recorded in
-`flash-card-manifest.md`. Renewed final production verification confirmed page
-extent, mirror order, cut-border alignment, legibility, and installed-artifact
-identity as recorded in `production-manifest.md`. In
-shuffled practice, a missed cue follows the shared delayed-repeat recovery:
-ask for the cue again, use the bank ID after a second miss, and retry it after
-three unrelated cards.
+### Low-Mass flash-card boundary
+
+The Low-Mass twenty-two-card deck deliberately contains no syllabification,
+stress line, respelling, IPA, or meaning. Its back imports only the canonical
+Latin answer from the A bank. Cards 13 and 14 use the two response forms
+within A14; the full A8 response is omitted from the cards and remains in the
+books. Removing the pronunciation layer from these cards is a presentation
+decision, not a withdrawal or alteration of the audit data.
+
+The exact 11.5-point eight-up cards must therefore be used with a trainer who
+can model and correct the response. A learner's ability to recognize the
+printed Latin does not establish intelligible pronunciation.
+
+### Unchanged sung-form integrated deck
+
+The shared source continues to project the audited bank into the integrated
+twenty-four-card R deck used by the Missa Cantata and Solemn Mass companions:
+R01--R07 map to A1--A7, R08A--R08C divide A8 into three readable study parts,
+and R09--R22 map to A9--A22. Those backs retain canonical response, learner
+syllables and stress, sound line, concise meaning, and A-bank or chunk ID.
+R08A--R08C are three physical study cards, not three liturgical responses.
+
+The sung full guides retain the consolidated broad-IPA trainer key. Their
+six-up long-edge duplex order and prior production results remain recorded in
+the flash-card and production manifests; the Low-Mass redesign does not
+rewrite those historical results.
 
 ## Consistency results and limits
 
-The source-level projection check accounts for 24 R-card IDs mapped to exactly
-22 response IDs; only A8 is split, into R08A–R08C.
+The source-level checks now account for two projections:
+
+- the unchanged sung-form R deck has twenty-four physical R IDs mapped to
+  twenty-two response IDs; only A8 is split, into R08A--R08C; and
+- the Low-Mass flash deck has twenty-two physical cards mapped to twenty-one
+  response IDs: A8 is omitted and A14 supplies separate *Kyrie* and *Christe*
+  cards.
+
+Across the audited bank:
 
 - **Completed desk check:** all 22 canonical entries have one marked learner
   line, one sound line, and one broad-IPA line; stress capitals agree with IPA
@@ -135,19 +152,24 @@ The source-level projection check accounts for 24 R-card IDs mapped to exactly
   these response lines. The desk audit cannot establish a server's
   intelligibility, rhythm, stress weight, gemination, or recovery after an
   error.
-- **Completed renewed production check:** full-size inspection confirmed the
-  consolidated trainer-key IPA glyphs and every integrated R-card face.
-  Physical-page parity, duplex alignment, text extraction, page counts, and
-  installed identities are recorded in the production manifest. Rendering
-  success remains distinct from linguistic and oral review.
+- **Production boundary:** the production manifest preserves the completed
+  full-size IPA, integrated R-card, parity, alignment, extraction, and
+  installed-identity checks for the six predecessor PDFs. It also records the
+  redesigned Low-Mass first-occurrence aids, phrase ladder, text extraction,
+  absence of pronunciation data from every flash-card face, and exact
+  installed identities. The maintainer authorized installation for
+  evaluation after the remaining physical and independent gates were
+  disclosed. Rendering and installation success remain distinct from
+  linguistic and oral review.
 - **Outstanding chant boundary:** the pronunciation rows may support initial
   diction practice, but they neither encode nor certify Gregorian melody,
   rhythm, morae, liquescence, or choir division. Those require the identified
   chant witness and a competent director.
 
-Accordingly, pronunciation mastery in any guide requires a competent human
+Accordingly, pronunciation judgment in any guide requires a competent human
 listener. Independent pronunciation and age-appropriate pedagogical review
 remain outstanding maturity and review limits even when every written row is
-internally consistent. The 23 July 2026 exact-byte exception clears only the
-operational distribution gate for the six immutable installed PDF hashes; it
-does not complete those reviews.
+internally consistent. The 23 July 2026 exact-byte exception remains a
+historical clearance only for the six immutable predecessor PDF hashes it
+named; it does not complete those reviews or clear a changed or new Low-Mass
+snapshot.

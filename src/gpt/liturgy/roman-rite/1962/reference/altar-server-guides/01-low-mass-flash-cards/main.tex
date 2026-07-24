@@ -1,0 +1,220 @@
+\input{common/preamble}
+\input{liturgy/roman-rite/1962/reference/altar-server-guides/shared/server-guide-format}
+\LowMassGuidetrue
+\ResponseDataOnlyGuidetrue
+
+\usepackage[sfdefault]{atkinson}
+\geometry{letterpaper,margin=0in}
+
+\hypersetup{
+  pdftitle={Low Mass Flash Cards},
+  pdfsubject={Eight-up priest-cue and acolyte-response flash cards for young Low Mass servers}
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{1em}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+
+\newlength{\LowMassCardWidth}
+\newlength{\LowMassCardHeight}
+\setlength{\LowMassCardWidth}{3.95in}
+\setlength{\LowMassCardHeight}{2.45in}
+
+\newcommand{\LowMassFlashHeader}[1]{%
+  {\fontsize{8}{9.5}\selectfont\bfseries #1}}
+
+\newcommand{\LowMassFlashFrame}[4]{%
+  \draw[line width=0.75pt] (#1,#2)
+    rectangle ++(\LowMassCardWidth,\LowMassCardHeight);
+  \draw[line width=0.5pt] (#1,#2+2.04) -- ++(\LowMassCardWidth,0);
+  \node[anchor=west,inner sep=0pt]
+    at (#1+0.18,#2+2.245) {\LowMassFlashHeader{#3}};
+  \node[anchor=center,inner sep=0pt]
+    at (#1+1.975,#2+2.245) {\LowMassFlashHeader{LOW MASS}};
+  \node[anchor=east,inner sep=0pt]
+    at (#1+3.77,#2+2.245) {\LowMassFlashHeader{#4}};}
+
+\newcommand{\LowMassFrontCard}[5]{%
+  \LowMassFlashFrame{#1}{#2}{#3 \textperiodcentered\ PRIEST}{#4}%
+  \node[anchor=north,align=center,text width=3.59in,inner sep=0pt]
+    at (#1+1.975,#2+1.79)
+    {{\fontsize{11.5}{13.5}\selectfont #5}};}
+
+\newcommand{\LowMassBackCard}[5]{%
+  \LowMassFlashFrame{#1}{#2}{#3 \textperiodcentered\ BOTH}{#4}%
+  \node[anchor=north,align=center,text width=3.59in,inner sep=0pt]
+    at (#1+1.975,#2+1.79)
+    {{\fontsize{11.5}{13.5}\selectfont\bfseries #5}};}
+
+\newcommand{\LowMassSheetFooter}[1]{%
+  \node[anchor=center,font=\fontsize{7.5}{9}\selectfont\bfseries]
+    at (4.25,0.50) {#1};}
+
+\newcommand{\LowMassFinalNotice}{%
+  \node[anchor=south,align=center,text width=8.00in,inner sep=0pt]
+    at (4.25,0.06)
+    {{\fontsize{7}{7.8}\selectfont
+      Last revised (UTC): \AIDocumentRevisionTimestampValue\
+      \textperiodcentered\ Project-created content and design: CC BY 4.0.
+      Received liturgical text and third-party material retain their status.
+      Identify changes; attribution implies no ecclesiastical approval.
+      See \texttt{LICENSE} and \texttt{THIRD\_PARTY.md}.}};}
+
+\begin{document}
+\input{liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards/generation-metadata}
+\input{liturgy/roman-rite/1962/reference/altar-server-guides/shared/response-reference}
+
+% A14 owns both invocations as one audited datum.  Derive the two card-sized
+% responses from that datum rather than maintaining another editable answer.
+\edef\LowMassKyrieSource{\ServerLatinData{A14}}
+\def\LowMassSplitKyrie#1. #2.\LowMassKyrieEnd{%
+  \gdef\LowMassKyrieResponse{#1.}%
+  \gdef\LowMassChristeResponse{#2.}}
+\expandafter\LowMassSplitKyrie\LowMassKyrieSource\LowMassKyrieEnd
+
+% Sheet 1 fronts: natural reading order.
+\begin{tikzpicture}[remember picture,overlay,x=1in,y=1in]
+  \begin{scope}[shift={(current page.south west)}]
+    \LowMassFrontCard{0.25}{8.28}{01}{FOOT/ALTAR}%
+      {Introibo ad altare Dei.}
+    \LowMassFrontCard{4.30}{8.28}{02}{FOOT/ALTAR}%
+      {Iudica me, Deus, et discerne causam meam de gente non sancta:
+       ab homine iniquo, et doloso erue me.}
+
+    \LowMassFrontCard{0.25}{5.76}{03}{FOOT/ALTAR}%
+      {Emitte lucem tuam, et veritatem tuam: ipsa me deduxerunt, et
+       adduxerunt in montem sanctum tuum, et in tabernacula tua.}
+    \LowMassFrontCard{4.30}{5.76}{04}{FOOT/ALTAR}%
+      {Confitebor tibi in cithara, Deus, Deus meus: quare tristis es,
+       anima mea, et quare conturbas me?}
+
+    \LowMassFrontCard{0.25}{3.24}{05}{FOOT/ALTAR}%
+      {Gloria Patri, et Filio, et Spiritui Sancto.}
+    \LowMassFrontCard{4.30}{3.24}{06}{FOOT/ALTAR}%
+      {Adiutorium nostrum in nomine Domini.}
+
+    \LowMassFrontCard{0.25}{0.72}{07}{FOOT/ALTAR}%
+      {Ideo precor beatam Mariam semper Virginem, beatum Michaelem
+       Archangelum, beatum Ioannem Baptistam, sanctos Apostolos Petrum et
+       Paulum, omnes Sanctos, et vos, fratres, orare pro me ad Dominum Deum
+       nostrum.}
+    \LowMassFrontCard{4.30}{0.72}{08}{FOOT/ALTAR}%
+      {Misereatur vestri omnipotens Deus, et, dimissis peccatis vestris,
+       perducat vos ad vitam aeternam.}
+    \LowMassSheetFooter{FRONTS \textperiodcentered\ PRINT AT 100\%}
+  \end{scope}
+\end{tikzpicture}
+\null\clearpage
+
+% Sheet 1 backs: each row is mirrored for long-edge duplex printing.
+\begin{tikzpicture}[remember picture,overlay,x=1in,y=1in]
+  \begin{scope}[shift={(current page.south west)}]
+    \LowMassBackCard{0.25}{8.28}{02}{FOOT/ALTAR}{\ServerLatinData{A2}}
+    \LowMassBackCard{4.30}{8.28}{01}{FOOT/ALTAR}{\ServerLatinData{A1}}
+
+    \LowMassBackCard{0.25}{5.76}{04}{FOOT/ALTAR}{\ServerLatinData{A4}}
+    \LowMassBackCard{4.30}{5.76}{03}{FOOT/ALTAR}{\ServerLatinData{A3}}
+
+    \LowMassBackCard{0.25}{3.24}{06}{FOOT/ALTAR}{\ServerLatinData{A6}}
+    \LowMassBackCard{4.30}{3.24}{05}{FOOT/ALTAR}{\ServerLatinData{A5}}
+
+    \LowMassBackCard{0.25}{0.72}{08}{FOOT/ALTAR}{\ServerLatinData{A9}}
+    \LowMassBackCard{4.30}{0.72}{07}{FOOT/ALTAR}{\ServerLatinData{A7}}
+    \LowMassSheetFooter{BACKS \textperiodcentered\ LONG-EDGE DUPLEX}
+  \end{scope}
+\end{tikzpicture}
+\null\clearpage
+
+% Sheet 2 fronts.
+\begin{tikzpicture}[remember picture,overlay,x=1in,y=1in]
+  \begin{scope}[shift={(current page.south west)}]
+    \LowMassFrontCard{0.25}{8.28}{09}{FOOT/ALTAR}%
+      {Deus, tu conversus vivificabis nos.}
+    \LowMassFrontCard{4.30}{8.28}{10}{FOOT/ALTAR}%
+      {Ostende nobis, Domine, misericordiam tuam.}
+
+    \LowMassFrontCard{0.25}{5.76}{11}{FOOT/ALTAR}%
+      {Domine, exaudi orationem meam.}
+    \LowMassFrontCard{4.30}{5.76}{12}{FOOT/ALTAR}%
+      {Dominus vobiscum.}
+
+    \LowMassFrontCard{0.25}{3.24}{13}{READINGS}%
+      {\LowMassKyrieResponse}
+    \LowMassFrontCard{4.30}{3.24}{14}{READINGS}%
+      {\LowMassChristeResponse}
+
+    \LowMassFrontCard{0.25}{0.72}{15}{READINGS}%
+      {Dominum autem Christum sanctificate in cordibus vestris.}
+    \LowMassFrontCard{4.30}{0.72}{16}{READINGS}%
+      {Sequentia sancti Evangelii secundum Matthaeum.}
+    \LowMassSheetFooter{FRONTS \textperiodcentered\ PRINT AT 100\%}
+  \end{scope}
+\end{tikzpicture}
+\null\clearpage
+
+% Sheet 2 backs.
+\begin{tikzpicture}[remember picture,overlay,x=1in,y=1in]
+  \begin{scope}[shift={(current page.south west)}]
+    \LowMassBackCard{0.25}{8.28}{10}{FOOT/ALTAR}{\ServerLatinData{A11}}
+    \LowMassBackCard{4.30}{8.28}{09}{FOOT/ALTAR}{\ServerLatinData{A10}}
+
+    \LowMassBackCard{0.25}{5.76}{12}{FOOT/ALTAR}{\ServerLatinData{A13}}
+    \LowMassBackCard{4.30}{5.76}{11}{FOOT/ALTAR}{\ServerLatinData{A12}}
+
+    \LowMassBackCard{0.25}{3.24}{14}{READINGS}{\LowMassChristeResponse}
+    \LowMassBackCard{4.30}{3.24}{13}{READINGS}{\LowMassKyrieResponse}
+
+    \LowMassBackCard{0.25}{0.72}{16}{READINGS}{\ServerLatinData{A16}}
+    \LowMassBackCard{4.30}{0.72}{15}{READINGS}{\ServerLatinData{A15}}
+    \LowMassSheetFooter{BACKS \textperiodcentered\ LONG-EDGE DUPLEX}
+  \end{scope}
+\end{tikzpicture}
+\null\clearpage
+
+% Sheet 3 fronts.  The final two grid positions remain unbordered.
+\begin{tikzpicture}[remember picture,overlay,x=1in,y=1in]
+  \begin{scope}[shift={(current page.south west)}]
+    \LowMassFrontCard{0.25}{8.28}{17}{READINGS}%
+      {Relinque ibi munus tuum ante altare, et vade prius reconciliari
+       fratri tuo: et tunc veniens offeres munus tuum.}
+    \LowMassFrontCard{4.30}{8.28}{18}{OFFERTORY}%
+      {Orate, fratres: ut meum ac vestrum sacrificium acceptabile fiat
+       apud Deum Patrem omnipotentem.}
+
+    \LowMassFrontCard{0.25}{5.76}{19}{CANON}%
+      {Sursum corda.}
+    \LowMassFrontCard{4.30}{5.76}{20}{CANON}%
+      {Gratias agamus Domino Deo nostro.}
+
+    \LowMassFrontCard{0.25}{3.24}{21}{COMMUNION}%
+      {Et ne nos inducas in tentationem.}
+    \LowMassFrontCard{4.30}{3.24}{22}{ENDING}%
+      {Ite, missa est, alleluia, alleluia.}
+    \LowMassSheetFooter{FRONTS \textperiodcentered\ PRINT AT 100\%}
+  \end{scope}
+\end{tikzpicture}
+\null\clearpage
+
+% Sheet 3 backs.  The empty fourth row mirrors the unbordered front positions.
+\begin{tikzpicture}[remember picture,overlay,x=1in,y=1in]
+  \begin{scope}[shift={(current page.south west)}]
+    \LowMassBackCard{0.25}{8.28}{18}{OFFERTORY}{\ServerLatinData{A18}}
+    \LowMassBackCard{4.30}{8.28}{17}{READINGS}{\ServerLatinData{A17}}
+
+    \LowMassBackCard{0.25}{5.76}{20}{CANON}{\ServerLatinData{A20}}
+    \LowMassBackCard{4.30}{5.76}{19}{CANON}{\ServerLatinData{A19}}
+
+    \LowMassBackCard{0.25}{3.24}{22}{ENDING}{\ServerLatinData{A22}}
+    \LowMassBackCard{4.30}{3.24}{21}{COMMUNION}{\ServerLatinData{A21}}
+    \LowMassSheetFooter{BACKS \textperiodcentered\ LONG-EDGE DUPLEX}
+    \LowMassFinalNotice
+  \end{scope}
+\end{tikzpicture}
+\global\AIDocumentRevisionRenderedtrue
+\global\TriptychRightsNoticeRenderedtrue
+\null
+
+\end{document}

@@ -3,10 +3,10 @@
   "release_id": "public-alpha",
   "provider": "gpt",
   "expected_counts": {
-    "publications": 111,
-    "release": 111,
+    "publications": 112,
+    "release": 109,
     "review": 0,
-    "hold": 0
+    "hold": 3
   },
   "gates": {
     "work-specific-rights-review": "Complete and record a work-specific review of quotations, translations, embedded links, and source-site terms before public distribution.",
@@ -842,22 +842,38 @@
     {
       "id": "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass",
       "catalog": "library/traditional-latin-mass.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "bfed57816157141c676b6bf8e460e13d53696a14dc76d159a5c9b7cf5df35009"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "independent-server-guide-review",
+        "renewed-exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
-      "id": "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-cue-cards",
+      "id": "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards",
       "catalog": "library/traditional-latin-mass.md",
-      "status": "release",
-      "gates": [],
-      "approval": {
-        "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "2ee877985ecaa737ee62a3d8cfe2c87858c2a7526b626fbcc28eefe4dbcfb12e"
-      }
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "independent-server-guide-review",
+        "exact-snapshot-authorization"
+      ],
+      "approval": null
+    },
+    {
+      "id": "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual",
+      "catalog": "library/traditional-latin-mass.md",
+      "status": "hold",
+      "gates": [
+        "work-specific-rights-review",
+        "liturgical-text-permission",
+        "independent-server-guide-review",
+        "exact-snapshot-authorization"
+      ],
+      "approval": null
     },
     {
       "id": "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata",
