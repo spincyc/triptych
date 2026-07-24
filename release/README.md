@@ -1,9 +1,11 @@
 # Public Release Boundary
 
-The current release manifest accounts for 116 installed publications. All 116
-are marked `release`; none is in `review` or on `hold`. The 24 July 2026
-exact-current-snapshot supplement in
-`rights/public-alpha-2026-07-15.md` binds all 116 exact PDF snapshots and 23
+The current release manifest accounts for 119 installed publications: 116
+gpt-provider publications and three claude-provider editions under
+provider-qualified identifiers. All 119 are marked `release`; none is in
+`review` or on `hold`. The later 24 July 2026 exact-current-snapshot and
+Claude-provider-introduction supplement in
+`rights/public-alpha-2026-07-15.md` binds all 119 exact PDF snapshots and 23
 exact reader-site inputs under record
 `perpetual-public-repository-2026`. Changed PDF, rights-record, or site-input
 bytes require renewed authorization, so public build and verification remain

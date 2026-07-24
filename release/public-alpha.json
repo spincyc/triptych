@@ -7,13 +7,13 @@
     "claude"
   ],
   "expected_counts": {
-    "publications": 116,
-    "release": 116,
+    "publications": 119,
+    "release": 119,
     "review": 0,
     "hold": 0,
     "providers": {
       "gpt": 116,
-      "claude": 0
+      "claude": 3
     }
   },
   "gates": {
@@ -40,35 +40,35 @@
         "worldwide"
       ],
       "rights_record": "release/rights/public-alpha-2026-07-15.md",
-      "rights_record_sha256": "1a4463bbe43b6c35e7f6d4742f20e8d9b68f7da62b3adc7759797c07dca9dc96",
+      "rights_record_sha256": "2bb7c302cc87d83db42fce8a855ff169ca68966ea3246936826e54dc4fb30cac",
       "site_sources": {
-        "CONTRIBUTING.md": "48d3e3da2927a25b35945053a41a5d19a35a76a7b9abcb1aed10cd5bb59cd2f2",
-        "LIBRARY.md": "a3c5bf32a92a7fea870baaa08d6a37b35ae8a913f8f93b4207bf17a193a98dc3",
+        "CONTRIBUTING.md": "1bb9ef13c4f754f9a8bede73f0afd95c2266173726bcfbd709017dc342272d5e",
+        "LIBRARY.md": "a45aae3359ac20ac3a4cf756007a08df9109d06661d5fc261798daf38ec5b881",
         "LICENSE": "29cb5f2c6d250023542c5e1d88de1ef2b4ae3b4bd41222cbd299b14f4e221aca",
         "LICENSES/CC-BY-4.0.txt": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744",
         "LICENSES/MIT.txt": "afd9c125b68a36b60c78cf63656f4cea2613fadce57e95ebabacebff8817ef60",
-        "README.md": "2ab9915ccf39a8ac680b1a8d13e1d73a055e586d9568f07e5bbe33b85121afea",
+        "README.md": "5007509616e98056d397b315247e07307b7cc0f8b715c49847dcef45dadfcb2b",
         "THIRD_PARTY.md": "965aaaff0e773815213fa8c9aada37213d6cb890eb374ef3d1bb1d1dbf966ec4",
-        "library/biographies.md": "450db8c58ecb85891c8b051887274fb81beef92d11241ac0f2e33940a7adf8ec",
+        "library/biographies.md": "57ab5f9174da512d328abc4dba31916f9130183c6098f0ea778fbbed595c4fb1",
         "library/curriculums.md": "15f24d06b4911b1cbfe4d85d82c463d7c2eef8635ff25edf2817d5fa6e0fb2bc",
-        "library/ecclesiastical-latin.md": "266de80c245bc9c476e33cbef324a2a12d6eb91514bcac95c47274272008dd63",
-        "library/faith.md": "7f1ec2c1bfdfd54987602fc01a0e404641a0cccad5784a736bc6bae4554897f9",
-        "library/heresies.md": "76c82eac736f231ce15955584a79465af9e36e7cc8eaffc688bdb3fbbe9c9f47",
-        "library/historical-accounts.md": "7feed40bad2fbe1ed20c07b7ea6b0417f347b784fc2d1da746e94ef2839811ab",
-        "library/law-and-church-discipline.md": "3570188531c8f7121c1842055bc0f0da2fa640a1a4b01d421afe796532e006d6",
-        "library/mariology.md": "577de486e7ee428bc9fb2e55c5b027e1c462f5b92c243f1c3e1e4844373de542",
-        "library/novus-ordo-liturgy.md": "eef9142903ac2f537c6100b7f6aef276d12918462ddb496780594081c25e42db",
-        "library/prayer.md": "7872bbe1e711e16911ecd203415d2f25c6b3a9adebfab9c6d53b8dd07bb96c37",
-        "library/traditional-latin-mass.md": "3a502934d3c37d20b5e197dfb8f1dab0e92d2a48b86e13b815711916dce07743",
+        "library/ecclesiastical-latin.md": "65a8cb4df29f7044e3d3ed7179d2e4604267e1d52c74a1b810d44e21310e4adc",
+        "library/faith.md": "cbd2ec0a9748cef16cbdb580f6c32992e2d2e3bacf144e625658251b0a8da472",
+        "library/heresies.md": "e479654e2cee1e193425d8b9696d95d2dbc8a9deba6465f1e93e39b3c0a2670e",
+        "library/historical-accounts.md": "82ad950d4053ec4e4f6a43ee433ee25bfa1ab8fd39de681dcb27379bbe09846f",
+        "library/law-and-church-discipline.md": "f5b25c16f14e7f9fef084ee021bcf3d7f692eeff91c0ac23fa1c3d220f76bf73",
+        "library/mariology.md": "248fd849d7996edb4a2234583d1bfbe34cec4b4445b1f8c290eff9fe65e27fbf",
+        "library/novus-ordo-liturgy.md": "99f815db7c1af6df0b4a3d1004e493f6e4de2fe970e6f517ddb0168ffca68d84",
+        "library/prayer.md": "c0524270d357f071d3de8b5e352bb217e87ff2ba1f7e61a664f0113b3efda576",
+        "library/traditional-latin-mass.md": "480a5fec6f07b878a3fd4507488560e0e4c9c42cfa8b82bfa354b8faf4775180",
         "release/public-alpha/404.md": "551491f5521a5624911d63b398156d2236cbed2f0aa832eeb9c97070dcea568e",
         "release/public-alpha/assets/site.css": "358d86f3587fc03f62a17cd4b5fd0126fb2dc3d952afa48eb33fc3a88fce54e9",
         "release/public-alpha/layout.html": "1add2c3f7e6faed6cde4f71b471b5d275089aa719a779f250ef761b3754bea63",
         "requirements-public-alpha.txt": "c30202fbc2f2eb1da451b8bae46b6867c07915844cec203a243991d14b8d4efc",
-        "scripts/public-alpha": "4907c8971c4d3719703cbca715f4e09ad7940c43ac010f10979ce49d83204314"
+        "scripts/public-alpha": "e58593af1ae87f4a2ced2fcc5f2fdb95d7c162097197e8219f4e472001485643"
       },
       "approved_on": "2026-07-24",
       "duration": "perpetual",
-      "effective_at": "2026-07-24T15:31:36-05:00",
+      "effective_at": "2026-07-24T17:32:57-05:00",
       "expires_at": null,
       "timezone": "America/Chicago",
       "conditions": [
@@ -114,7 +114,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "dfa66cefe1ed3fbf21c2fd059c6112a0d97f9f6dd9001acba4b5e125cd068bb8"
+        "pdf_sha256": "0e263589f268fd861c125ae70e7683aea41018b804bf04df4ae1273883e1dfbd"
       }
     },
     {
@@ -124,7 +124,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "0ff768fba26437da20f2548ffdf7eb8c46ae845be74d82545b53b8e3cca885f5"
+        "pdf_sha256": "4f12ceb0f07e27b3b3de0acbf1c9a759b5a4ef662a0b13cd0701bb330b4a0022"
       }
     },
     {
@@ -134,7 +134,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "4a8ce50e6b2e0e6d71206217012c9c003b2ddabb555f0f45f5bd3a322d0db946"
+        "pdf_sha256": "d6c583a2979acc1b3041351c6780024eb73d34b5c4bd1f4a6dc0094540ecdc71"
       }
     },
     {
@@ -144,7 +144,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "e2eae421b58bf3a297eae7fe0d3828225e2d74ca8d8145cbf87482a6d44f171b"
+        "pdf_sha256": "07aa3d735a52ffb443630c089562e0d9430a15a07606e1dcd50f9b18733882c6"
       }
     },
     {
@@ -1235,6 +1235,36 @@
       "approval": {
         "authorization": "perpetual-public-repository-2026",
         "pdf_sha256": "3d44c837d5dbfff4cba9e1ff2ff07f2b2be973d890214e8e80b45e00059f9c6c"
+      }
+    },
+    {
+      "id": "claude:articles/faith/against-the-instrumentalists",
+      "catalog": "library/faith.md",
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "024b84c9b313e2547229f6b55079698656bb009ea6a5c73e36bd1d9a99a6a304"
+      }
+    },
+    {
+      "id": "claude:articles/faith/in-support-of-the-particular",
+      "catalog": "library/faith.md",
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "535994c75dbb7bff0be2e45528050154b31710c7cbe3cf0fd2926b3cab4e77cb"
+      }
+    },
+    {
+      "id": "claude:biographies/tertullian",
+      "catalog": "library/biographies.md",
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "f6aad19c478b8535f3b3d31d413fb61b0d1ea723db3d0ba3e3221e596f346ba5"
       }
     }
   ]
