@@ -96,6 +96,92 @@ def exact_real_directory(
     return absolute
 
 
+def validate_linked_worktree_path(
+    worktree: Path,
+    *,
+    expected_common_git_dir: Path | None,
+    real_directory: Callable[[], Callable[..., Path]],
+    single_line: Callable[[], Callable[..., str]],
+    pointer_path: Callable[[], Callable[..., Path]],
+    length: Callable[[], Callable[[Sized], int]],
+    error_type: Callable[[], type[BaseException]],
+) -> tuple[Path, Path, Path, Path]:
+    """Validate the read-only path topology of one linked worktree."""
+
+    canonical_worktree = real_directory()(
+        worktree,
+        label="the retained worktree",
+    )
+    git_file = canonical_worktree / ".git"
+    forward = single_line()(
+        git_file,
+        label="the retained worktree .git file",
+    )
+    prefix = "gitdir: "
+    if not forward.startswith(prefix) or forward == prefix:
+        raise error_type()(
+            "the retained worktree .git file has an invalid pointer"
+        )
+    git_dir = pointer_path()(
+        forward[length()(prefix) :],
+        relative_to=canonical_worktree,
+        label="the retained worktree .git file",
+    )
+    git_dir = real_directory()(
+        git_dir,
+        label="the retained worktree Git admin directory",
+    )
+
+    commondir_value = single_line()(
+        git_dir / "commondir",
+        label="the retained worktree commondir file",
+    )
+    common_git_dir = pointer_path()(
+        commondir_value,
+        relative_to=git_dir,
+        label="the retained worktree commondir file",
+    )
+    common_git_dir = real_directory()(
+        common_git_dir,
+        label="the retained worktree common Git directory",
+    )
+    if expected_common_git_dir is not None:
+        expected_common = real_directory()(
+            expected_common_git_dir,
+            label="the recorded common Git directory",
+        )
+        if common_git_dir != expected_common:
+            raise error_type()(
+                "the retained worktree has an unexpected common Git directory"
+            )
+
+    worktrees_admin = real_directory()(
+        common_git_dir / "worktrees",
+        label="the common linked-worktree administration directory",
+    )
+    if git_dir.parent != worktrees_admin or git_dir == worktrees_admin:
+        raise error_type()(
+            "the retained worktree Git admin directory is not its unique "
+            "direct child"
+        )
+
+    backlink_value = single_line()(
+        git_dir / "gitdir",
+        label="the retained worktree gitdir backlink",
+    )
+    backlink = pointer_path()(
+        backlink_value,
+        relative_to=git_dir,
+        label="the retained worktree gitdir backlink",
+    )
+    if backlink != git_file:
+        raise error_type()(
+            "the retained worktree Git admin backlink changed"
+        )
+
+    return canonical_worktree, git_file, git_dir, common_git_dir
+
+
 def authenticate_launcher(
     path: Path,
     *,

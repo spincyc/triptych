@@ -61,6 +61,7 @@ from .identity import (
     exact_real_directory as _exact_real_directory,
     exact_single_line as _exact_single_line,
     safe_regular_file_bytes as _safe_regular_file_bytes,
+    validate_linked_worktree_path as _validate_linked_worktree_path,
 )
 from .locks import (
     RegisteredLockDescriptor,
@@ -414,60 +415,20 @@ def authenticate_linked_worktree_path(
     *,
     expected_common_git_dir: Path | None = None,
 ) -> LinkedWorktreeIdentity:
-    canonical_worktree = exact_real_directory(worktree, label="the retained worktree")
-    git_file = canonical_worktree / ".git"
-    forward = exact_single_line(git_file, label="the retained worktree .git file")
-    prefix = "gitdir: "
-    if not forward.startswith(prefix) or forward == prefix:
-        raise LauncherError("the retained worktree .git file has an invalid pointer")
-    git_dir = exact_pointer_path(
-        forward[len(prefix) :],
-        relative_to=canonical_worktree,
-        label="the retained worktree .git file",
-    )
-    git_dir = exact_real_directory(git_dir, label="the retained worktree Git admin directory")
-
-    commondir_value = exact_single_line(
-        git_dir / "commondir",
-        label="the retained worktree commondir file",
-    )
-    common_git_dir = exact_pointer_path(
-        commondir_value,
-        relative_to=git_dir,
-        label="the retained worktree commondir file",
-    )
-    common_git_dir = exact_real_directory(
+    (
+        canonical_worktree,
+        git_file,
+        git_dir,
         common_git_dir,
-        label="the retained worktree common Git directory",
+    ) = _validate_linked_worktree_path(
+        worktree,
+        expected_common_git_dir=expected_common_git_dir,
+        real_directory=lambda: exact_real_directory,
+        single_line=lambda: exact_single_line,
+        pointer_path=lambda: exact_pointer_path,
+        length=lambda: len,
+        error_type=lambda: LauncherError,
     )
-    if expected_common_git_dir is not None:
-        expected_common = exact_real_directory(
-            expected_common_git_dir,
-            label="the recorded common Git directory",
-        )
-        if common_git_dir != expected_common:
-            raise LauncherError("the retained worktree has an unexpected common Git directory")
-
-    worktrees_admin = exact_real_directory(
-        common_git_dir / "worktrees",
-        label="the common linked-worktree administration directory",
-    )
-    if git_dir.parent != worktrees_admin or git_dir == worktrees_admin:
-        raise LauncherError(
-            "the retained worktree Git admin directory is not its unique direct child"
-        )
-
-    backlink_value = exact_single_line(
-        git_dir / "gitdir",
-        label="the retained worktree gitdir backlink",
-    )
-    backlink = exact_pointer_path(
-        backlink_value,
-        relative_to=git_dir,
-        label="the retained worktree gitdir backlink",
-    )
-    if backlink != git_file:
-        raise LauncherError("the retained worktree Git admin backlink changed")
 
     identity = LinkedWorktreeIdentity(
         worktree=canonical_worktree,

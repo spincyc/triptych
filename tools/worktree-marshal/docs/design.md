@@ -26,7 +26,7 @@ selection, repository-name normalization, and lexical lock and manifest paths,
 `identity.py` now owns immutable runtime identity records and launcher-entry
 authentication plus exact Git-administration line-format validation and the
 bounded descriptor-based regular-file reader plus exact pointer-path and
-real-directory validation,
+real-directory validation and read-only linked-worktree path validation,
 `locks.py` now owns lock-descriptor bookkeeping and validation algorithms,
 `process.py` now owns child waiting and exit-status normalization,
 `adapters/codex.py` now owns Codex executable candidate selection and static
@@ -43,8 +43,8 @@ worktree_marshal/
   locks.py               descriptor bookkeeping now; flock acquisition later
   git.py                 policy, captured config, and executable discovery; invocation later
   process.py             child signal forwarding and exit normalization
-  identity.py            records, launcher auth, Git-admin lines, reader, and path checks
-                         repository/worktree authentication later
+  identity.py            records, launcher auth, reader, path checks, worktree validation
+                         public authentication and identity registries remain in engine
   worktrees.py           allocation, audit, reopen, and cleanup
   integration.py         verification, rebase, landing, and rollback
   conflicts.py           resolver scope, continuation, and abort
@@ -99,7 +99,7 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with eighteen behavior-preserving boundaries. The original
+has begun step 5 with nineteen behavior-preserving boundaries. The original
 pure Git policy kernel transforms an explicit environment mapping and Git
 argument sequence in `git.py`; `engine.py` retains its optional
 environment-acquisition wrapper, subprocess creation and command execution,
@@ -372,14 +372,54 @@ under its relative base; normalized `..` components and absolute values may
 name any available path that passes the equality check. Neither kernel
 authenticates ownership or permissions, pins a descriptor identity, prevents
 replacement after validation, or grants lifecycle authority. The engine
-retains Git-pointer prefix parsing, selection of raw values and relative bases,
-common-directory and backlink comparison, direct-child topology, identity
-registries, repository and retained-worktree authentication, every workflow,
-and every mutation. It does not genericize repository or worktree
-authentication or add a shared capability contract. This seam adds no durable
-identity, migration, sandbox, lifecycle, or release assurance.
+retained Git-pointer prefix parsing, selection of raw values and relative
+bases, common-directory and backlink comparison, direct-child topology,
+identity registries, repository and retained-worktree authentication, every
+workflow, and every mutation at that boundary. It did not genericize
+repository or worktree authentication or add a shared capability contract.
+That seam added no durable identity, migration, sandbox, lifecycle, or release
+assurance.
 
-Direct tests freeze all eighteen extracted boundaries, their
+The nineteenth boundary moves only the read-only validation prefix of
+`authenticate_linked_worktree_path` into
+`identity.validate_linked_worktree_path`. The kernel lazily resolves the
+engine-supplied exact-directory, exact-line, and exact-pointer operations,
+primitive length operation, and launcher error type at their established call
+points. It performs no identity construction or registry access and returns
+exactly `(canonical_worktree, git_file, git_dir, common_git_dir)`.
+
+The validation sequence remains fixed. It requires an exact real worktree,
+reads its `.git` file as one exact line, requires a nonempty `gitdir: ` prefix,
+resolves that pointer relative to the worktree, and requires an exact real
+per-worktree Git administration directory. It reads and resolves `commondir`
+relative to that directory, requires an exact real common Git directory, and
+optionally validates the engine-supplied expected common directory by exact
+equality. It then requires the common `worktrees` administration directory,
+checks that the per-worktree directory is its distinct direct child, and reads
+and resolves the `gitdir` backlink to require exact equality with the
+worktree's `.git` file. The existing invalid-pointer, unexpected-common,
+direct-child, and changed-backlink diagnostics and their no-explicit-cause
+scope remain unchanged; failures from the injected lower-level operations
+remain untranslated.
+
+The exact public engine wrapper receives the four components, constructs
+`LinkedWorktreeIdentity` only after every validation succeeds, and then
+performs the existing identity-cache and Git-admin-owner-cache checks and
+assignments in their established order. It retains both process-global
+registries, late constructor and registry rebinding, partial-mutation behavior,
+`authenticate_retained_worktree`, `authenticate_git_cwd`,
+`active_rebase_directories`, every other caller and workflow, and every
+mutation.
+
+This kernel validates a linked-worktree path topology through a sequence of
+read-only snapshots; it is not an atomic filesystem or repository proof.
+Paths may be replaced between or after checks. It does not establish ownership
+or permissions, authenticate Git objects, refs, branches, or worktree
+registration, enforce lifecycle state, or make the caches durable across
+processes. No generic repository-authentication contract, durable identity,
+migration, sandbox, lifecycle, or release assurance is introduced.
+
+Direct tests freeze all nineteen extracted boundaries, their
 compatibility surfaces, artifact inclusion, field and operation order,
 partial-failure behavior, and the dynamic restoration of every vocabulary
 value currently accepted in

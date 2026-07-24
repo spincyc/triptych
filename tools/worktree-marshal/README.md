@@ -13,10 +13,11 @@ immutable runtime-identity record and launcher-entry authentication
 boundaries, its Git-executable discovery and pre-pin validation boundary, the
 exact Git-administration line-format validation and bounded descriptor-reader
 boundaries, its exact pointer-path and real-directory validation boundary, its
-Codex-executable candidate-selection, static argument-policy, sanitized
-base-environment, and deterministic marker-enrichment boundaries, the frozen
-Triptych compatibility adapter, the Python distribution, and the Make
-integration fragment. The repository-local
+read-only linked-worktree path-validation boundary, its Codex-executable
+candidate-selection, static argument-policy, sanitized base-environment, and
+deterministic marker-enrichment boundaries, the frozen Triptych compatibility
+adapter, the Python distribution, and the Make integration fragment. The
+repository-local
 [`scripts/triptych-codex`](../../scripts/triptych-codex) command is a thin,
 in-process bootstrap for the co-located package engine.
 
@@ -117,7 +118,7 @@ worktree-removal or ref-transaction failures, receipt recovery, garbage
 collection, or concurrent retirement. Those retirement cases, broader crash
 and race recovery, broader security coverage, the complete installed lifecycle
 matrix, and the supported Python and Git CI matrix remain release gates; the
-first eighteen step-5 seams are protected by direct source tests and artifact
+first nineteen step-5 seams are protected by direct source tests and artifact
 provenance, and the installed abort checkpoint covers archived transaction
 restoration. Each remaining helper boundary still requires its own direct
 parity coverage.
@@ -161,13 +162,16 @@ Git-administration path lines: exactly one terminal line feed, no carriage
 return, strict UTF-8, and a nonempty, NUL-free value. The module now also owns
 the dependency-injected `safe_regular_file_bytes` kernel for one bounded,
 descriptor-based file read. Two further dependency-injected kernels implement
-the existing exact pointer-path and real-directory checks. `engine.py`
-continues to re-export the same class objects. The launcher wrapper supplies
-the error, filesystem-policy, access, executable-mode, and identity factory
-dependencies lazily at their established lookup points. Only strict resolution
-and metadata-read operating-system errors are translated by that operation.
-The exact-line wrapper likewise supplies the current regular-file byte-reader
-wrapper, Unicode decoding error type, and launcher error type lazily.
+the existing exact pointer-path and real-directory checks. The read-only
+`validate_linked_worktree_path` kernel composes those operations with the
+exact-line reader to validate the linked-worktree administration paths and
+topology. `engine.py` continues to re-export the same class objects. The
+launcher wrapper supplies the error, filesystem-policy, access,
+executable-mode, and identity factory dependencies lazily at their established
+lookup points. Only strict resolution and metadata-read operating-system
+errors are translated by that operation. The exact-line wrapper likewise
+supplies the current regular-file byte-reader wrapper, Unicode decoding error
+type, and launcher error type lazily.
 
 The reader opens the final path component with `O_NOFOLLOW` when that flag is
 available, requires the pre-read descriptor snapshot to describe a regular
@@ -190,24 +194,40 @@ paths. Resolution or metadata failures in their narrow protected blocks retain
 the existing unavailable-path diagnostics; failed equality or directory checks
 retain the existing symbolic-path and exact-directory diagnostics.
 
+Linked-worktree validation first requires the worktree to be an exact real
+directory and reads its `.git` file as one exact line. It requires a nonempty
+`gitdir: ` pointer, resolves that pointer relative to the worktree, and
+requires an exact real Git administration directory. It then reads and
+resolves `commondir` relative to that directory, requires an exact common Git
+directory, and, when the engine supplies an expected common directory,
+requires their exact equality. Finally, it requires the common `worktrees`
+administration directory, proves that the per-worktree Git directory is its
+distinct direct child, and resolves the `gitdir` backlink back to the worktree's
+`.git` file. The kernel returns exactly the validated
+`(canonical_worktree, git_file, git_dir, common_git_dir)` components.
+
 The exact-signature engine wrapper retains the current size limit and supplies
 all primitive operations and policy values lazily. `MAX_ADMIN_FILE_BYTES`
 remains in `engine.py` because the active-rebase administration audit also
 uses it. The engine also retains every existing reader and path-check consumer,
-Git-pointer prefix parsing, choice of raw value and relative base,
-linked-worktree topology validation, repository and linked-worktree
-authentication, identity caches, lifecycle sequencing, top-level error
-handling, and every mutation. The bounded reader does not authenticate parent
-path components, establish canonicality or containment, lock the file, or
-prove that no content mutation occurred when the observed metadata is
-unchanged. The path kernels likewise establish neither containment, ownership,
-permissions, a stable descriptor identity, nor protection from replacement
-after validation.
+the public linked-worktree authentication wrapper, late
+`LinkedWorktreeIdentity` construction, both identity and Git-admin-owner
+registries and their cache checks, all callers and workflows, lifecycle
+sequencing, top-level error handling, and every mutation. The bounded reader
+does not authenticate parent path components, establish canonicality or
+containment, lock the file, or prove that no content mutation occurred when
+the observed metadata is unchanged. The path kernels likewise establish
+neither containment, ownership, permissions, a stable descriptor identity,
+nor protection from replacement after validation.
 `exact_pointer_path` imposes no file-type requirement, and a normalized `..`
 or an absolute value may name any available path that passes its equality
-check. Git-executable discovery and pre-pin validation belong to `git.py`,
-while its process-global cache and invocation remain in `engine.py`; neither
-is a future responsibility of `identity.py`.
+check. Linked-worktree validation is a sequence of read-only path snapshots,
+not one atomic filesystem proof; paths may be replaced between or after its
+checks. It does not authenticate repository ownership, permissions, Git object
+content, branch or ref state, worktree registration, or lifecycle authority.
+Git-executable discovery and pre-pin validation belong to `git.py`, while its
+process-global cache and invocation remain in `engine.py`; neither is a future
+responsibility of `identity.py`.
 
 [`adapters/codex.py`](src/worktree_marshal/adapters/codex.py) owns the
 dependency-injected `select_codex_executable` operation for a usable,

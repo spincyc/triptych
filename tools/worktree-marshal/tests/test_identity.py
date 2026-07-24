@@ -41,6 +41,346 @@ class OpaqueValue:
         return f"<opaque:{self.label}>"
 
 
+class LinkedValidationError(RuntimeError):
+    """Selected policy error for linked-worktree kernel tests."""
+
+
+class LinkedDependencyError(RuntimeError):
+    """Selected untranslated dependency error for kernel tests."""
+
+
+class LinkedValidationHarness:
+    """Observable linked-worktree validation dependency graph."""
+
+    def __init__(
+        self,
+        test_case: unittest.TestCase,
+        *,
+        expected_common: bool = True,
+        forward_starts: bool = True,
+        forward_equals_prefix: bool = False,
+        common_mismatch: bool = False,
+        parent_mismatch: bool = False,
+        git_dir_equals_admin: bool = False,
+        backlink_mismatch: bool = False,
+        fail_stage: str | None = None,
+    ) -> None:
+        self.test_case = test_case
+        self.events: list[tuple[str, object]] = []
+        self.fail_stage = fail_stage
+        self.failure = LinkedDependencyError(
+            fail_stage or "unused failure"
+        )
+        self.worktree = OpaqueValue("worktree-input")
+        self.expected_common_input = (
+            OpaqueValue("expected-common-input")
+            if expected_common
+            else None
+        )
+        self.git_file = OpaqueValue("git-file")
+        self.raw_git_dir = OpaqueValue("raw-git-dir")
+        self.commondir_file = OpaqueValue("commondir-file")
+        self.commondir_value = OpaqueValue("commondir-value")
+        self.raw_common = OpaqueValue("raw-common")
+        self.gitdir_file = OpaqueValue("gitdir-file")
+        self.backlink_value = OpaqueValue("backlink-value")
+        self.length_value = OpaqueValue("prefix-length")
+
+        harness = self
+
+        class Truth:
+            def __init__(
+                truth_self,
+                stage: str,
+                value: bool,
+            ) -> None:
+                truth_self.stage = stage
+                truth_self.value = value
+
+            def __bool__(truth_self) -> bool:
+                harness.record(
+                    truth_self.stage,
+                    truth_self.value,
+                )
+                return truth_self.value
+
+        class CanonicalWorktree:
+            def __truediv__(
+                worktree_self,
+                component: object,
+            ) -> object:
+                harness.record(
+                    "canonical-git-file",
+                    component,
+                )
+                return harness.git_file
+
+        self.canonical_worktree = CanonicalWorktree()
+
+        class Forward:
+            def startswith(
+                forward_self,
+                prefix: object,
+            ) -> object:
+                harness.record("forward-startswith", prefix)
+                return Truth(
+                    "forward-startswith-truth",
+                    forward_starts,
+                )
+
+            def __eq__(
+                forward_self,
+                other: object,
+            ) -> object:
+                harness.record("forward-equality", other)
+                return Truth(
+                    "forward-equality-truth",
+                    forward_equals_prefix,
+                )
+
+            def __getitem__(
+                forward_self,
+                key: object,
+            ) -> object:
+                harness.record("forward-slice", key)
+                return harness.raw_git_dir
+
+        self.forward = Forward()
+
+        class GitParent:
+            def __ne__(
+                parent_self,
+                other: object,
+            ) -> object:
+                harness.record("parent-mismatch", other)
+                return Truth(
+                    "parent-mismatch-truth",
+                    parent_mismatch,
+                )
+
+        self.git_parent = GitParent()
+
+        class GitDirectory:
+            @property
+            def parent(directory_self) -> object:
+                harness.record("git-directory-parent", None)
+                return harness.git_parent
+
+            def __eq__(
+                directory_self,
+                other: object,
+            ) -> object:
+                harness.record(
+                    "git-directory-admin-equality",
+                    other,
+                )
+                return Truth(
+                    "git-directory-admin-equality-truth",
+                    git_dir_equals_admin,
+                )
+
+            def __truediv__(
+                directory_self,
+                component: object,
+            ) -> object:
+                if component == "commondir":
+                    harness.record(
+                        "git-directory-commondir",
+                        component,
+                    )
+                    return harness.commondir_file
+                harness.record(
+                    "git-directory-gitdir",
+                    component,
+                )
+                return harness.gitdir_file
+
+        self.git_dir = GitDirectory()
+        self.expected_common = OpaqueValue("expected-common")
+        self.worktrees_path = OpaqueValue("worktrees-path")
+
+        class CommonDirectory:
+            def __ne__(
+                common_self,
+                other: object,
+            ) -> object:
+                harness.record("common-mismatch", other)
+                return Truth(
+                    "common-mismatch-truth",
+                    common_mismatch,
+                )
+
+            def __truediv__(
+                common_self,
+                component: object,
+            ) -> object:
+                harness.record("common-worktrees", component)
+                return harness.worktrees_path
+
+        self.common_git_dir = CommonDirectory()
+        self.worktrees_admin = OpaqueValue("worktrees-admin")
+
+        class Backlink:
+            def __ne__(
+                backlink_self,
+                other: object,
+            ) -> object:
+                harness.record("backlink-mismatch", other)
+                return Truth(
+                    "backlink-mismatch-truth",
+                    backlink_mismatch,
+                )
+
+        self.backlink = Backlink()
+
+        real_results: list[object] = [
+            self.canonical_worktree,
+            self.git_dir,
+            self.common_git_dir,
+        ]
+        if expected_common:
+            real_results.append(self.expected_common)
+        real_results.append(self.worktrees_admin)
+        self.real_results = iter(real_results)
+        self.line_results = iter(
+            (
+                self.forward,
+                self.commondir_value,
+                self.backlink_value,
+            )
+        )
+        self.pointer_results = iter(
+            (
+                self.raw_git_dir,
+                self.raw_common,
+                self.backlink,
+            )
+        )
+        self.real_provider_count = 0
+        self.line_provider_count = 0
+        self.pointer_provider_count = 0
+
+    def record(self, stage: str, value: object) -> None:
+        self.events.append((stage, value))
+        if stage == self.fail_stage:
+            raise self.failure
+
+    def real_directory(self) -> object:
+        self.real_provider_count += 1
+        number = self.real_provider_count
+        self.record(f"real-directory-provider-{number}", None)
+        result = next(self.real_results)
+
+        def validate(path: object, *, label: object) -> object:
+            self.record(
+                f"real-directory-call-{number}",
+                (path, label),
+            )
+            return result
+
+        return validate
+
+    def single_line(self) -> object:
+        self.line_provider_count += 1
+        number = self.line_provider_count
+        self.record(f"single-line-provider-{number}", None)
+        result = next(self.line_results)
+
+        def read(path: object, *, label: object) -> object:
+            self.record(
+                f"single-line-call-{number}",
+                (path, label),
+            )
+            return result
+
+        return read
+
+    def pointer_path(self) -> object:
+        self.pointer_provider_count += 1
+        number = self.pointer_provider_count
+        self.record(f"pointer-provider-{number}", None)
+        result = next(self.pointer_results)
+
+        def validate(
+            raw_value: object,
+            *,
+            relative_to: object,
+            label: object,
+        ) -> object:
+            self.record(
+                f"pointer-call-{number}",
+                (raw_value, relative_to, label),
+            )
+            return result
+
+        return validate
+
+    def length(self) -> object:
+        self.record("length-provider", None)
+
+        def measure(value: object) -> object:
+            self.record("length-call", value)
+            return self.length_value
+
+        return measure
+
+    def error_type(self) -> type[BaseException]:
+        self.record("error-provider", None)
+        return LinkedValidationError
+
+    def validate(self, identity_module: object) -> object:
+        return identity_module.validate_linked_worktree_path(
+            self.worktree,
+            expected_common_git_dir=self.expected_common_input,
+            real_directory=self.real_directory,
+            single_line=self.single_line,
+            pointer_path=self.pointer_path,
+            length=self.length,
+            error_type=self.error_type,
+        )
+
+
+class RecordingRegistry:
+    """Small observable mapping for linked-worktree wrapper tests."""
+
+    def __init__(
+        self,
+        name: str,
+        events: list[tuple[str, object]],
+        *,
+        values: dict[object, object] | None = None,
+        get_failure: BaseException | None = None,
+        set_failure: BaseException | None = None,
+        on_get: object = None,
+        on_set: object = None,
+    ) -> None:
+        self.name = name
+        self.events = events
+        self.values = {} if values is None else dict(values)
+        self.get_failure = get_failure
+        self.set_failure = set_failure
+        self.on_get = on_get
+        self.on_set = on_set
+
+    def get(self, key: object) -> object:
+        self.events.append((f"{self.name}-get", key))
+        if self.get_failure is not None:
+            raise self.get_failure
+        if self.on_get is not None:
+            self.on_get()
+        return self.values.get(key)
+
+    def __setitem__(self, key: object, value: object) -> None:
+        self.events.append(
+            (f"{self.name}-set", (key, value))
+        )
+        if self.set_failure is not None:
+            raise self.set_failure
+        self.values[key] = value
+        if self.on_set is not None:
+            self.on_set()
+
+
 class IdentityModelTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
@@ -2339,6 +2679,1787 @@ class IdentityModelTests(unittest.TestCase):
             self.assertIsInstance(
                 caught.exception.__cause__,
                 OSError,
+            )
+
+    def test_linked_worktree_validation_kernel_and_wrapper_signatures(
+        self,
+    ) -> None:
+        self.assertIs(
+            self.engine._validate_linked_worktree_path,
+            self.identity.validate_linked_worktree_path,
+        )
+        parameters = inspect.signature(
+            self.identity.validate_linked_worktree_path
+        ).parameters
+        self.assertEqual(
+            tuple(parameters),
+            (
+                "worktree",
+                "expected_common_git_dir",
+                "real_directory",
+                "single_line",
+                "pointer_path",
+                "length",
+                "error_type",
+            ),
+        )
+        self.assertIs(
+            parameters["worktree"].kind,
+            inspect.Parameter.POSITIONAL_OR_KEYWORD,
+        )
+        for name in tuple(parameters)[1:]:
+            self.assertIs(
+                parameters[name].kind,
+                inspect.Parameter.KEYWORD_ONLY,
+            )
+        for parameter in parameters.values():
+            self.assertIs(
+                parameter.default,
+                inspect.Parameter.empty,
+            )
+
+        wrapper_parameters = inspect.signature(
+            self.engine.authenticate_linked_worktree_path
+        ).parameters
+        self.assertEqual(
+            tuple(wrapper_parameters),
+            ("worktree", "expected_common_git_dir"),
+        )
+        self.assertIs(
+            wrapper_parameters["worktree"].kind,
+            inspect.Parameter.POSITIONAL_OR_KEYWORD,
+        )
+        self.assertIs(
+            wrapper_parameters[
+                "expected_common_git_dir"
+            ].kind,
+            inspect.Parameter.KEYWORD_ONLY,
+        )
+        self.assertIs(
+            wrapper_parameters["worktree"].default,
+            inspect.Parameter.empty,
+        )
+        self.assertIsNone(
+            wrapper_parameters[
+                "expected_common_git_dir"
+            ].default
+        )
+
+    def test_linked_worktree_validation_preserves_exact_success_order(
+        self,
+    ) -> None:
+        harness = LinkedValidationHarness(self)
+
+        observed = harness.validate(self.identity)
+
+        self.assertIs(type(observed), tuple)
+        self.assertEqual(len(observed), 4)
+        self.assertIs(observed[0], harness.canonical_worktree)
+        self.assertIs(observed[1], harness.git_file)
+        self.assertIs(observed[2], harness.git_dir)
+        self.assertIs(observed[3], harness.common_git_dir)
+        self.assertEqual(
+            harness.events,
+            [
+                ("real-directory-provider-1", None),
+                (
+                    "real-directory-call-1",
+                    (
+                        harness.worktree,
+                        "the retained worktree",
+                    ),
+                ),
+                ("canonical-git-file", ".git"),
+                ("single-line-provider-1", None),
+                (
+                    "single-line-call-1",
+                    (
+                        harness.git_file,
+                        "the retained worktree .git file",
+                    ),
+                ),
+                ("forward-startswith", "gitdir: "),
+                ("forward-startswith-truth", True),
+                ("forward-equality", "gitdir: "),
+                ("forward-equality-truth", False),
+                ("pointer-provider-1", None),
+                ("length-provider", None),
+                ("length-call", "gitdir: "),
+                (
+                    "forward-slice",
+                    slice(harness.length_value, None, None),
+                ),
+                (
+                    "pointer-call-1",
+                    (
+                        harness.raw_git_dir,
+                        harness.canonical_worktree,
+                        "the retained worktree .git file",
+                    ),
+                ),
+                ("real-directory-provider-2", None),
+                (
+                    "real-directory-call-2",
+                    (
+                        harness.raw_git_dir,
+                        "the retained worktree "
+                        "Git admin directory",
+                    ),
+                ),
+                ("single-line-provider-2", None),
+                ("git-directory-commondir", "commondir"),
+                (
+                    "single-line-call-2",
+                    (
+                        harness.commondir_file,
+                        "the retained worktree commondir file",
+                    ),
+                ),
+                ("pointer-provider-2", None),
+                (
+                    "pointer-call-2",
+                    (
+                        harness.commondir_value,
+                        harness.git_dir,
+                        "the retained worktree commondir file",
+                    ),
+                ),
+                ("real-directory-provider-3", None),
+                (
+                    "real-directory-call-3",
+                    (
+                        harness.raw_common,
+                        "the retained worktree "
+                        "common Git directory",
+                    ),
+                ),
+                ("real-directory-provider-4", None),
+                (
+                    "real-directory-call-4",
+                    (
+                        harness.expected_common_input,
+                        "the recorded common Git directory",
+                    ),
+                ),
+                ("common-mismatch", harness.expected_common),
+                ("common-mismatch-truth", False),
+                ("real-directory-provider-5", None),
+                ("common-worktrees", "worktrees"),
+                (
+                    "real-directory-call-5",
+                    (
+                        harness.worktrees_path,
+                        "the common linked-worktree "
+                        "administration directory",
+                    ),
+                ),
+                ("git-directory-parent", None),
+                ("parent-mismatch", harness.worktrees_admin),
+                ("parent-mismatch-truth", False),
+                (
+                    "git-directory-admin-equality",
+                    harness.worktrees_admin,
+                ),
+                (
+                    "git-directory-admin-equality-truth",
+                    False,
+                ),
+                ("single-line-provider-3", None),
+                ("git-directory-gitdir", "gitdir"),
+                (
+                    "single-line-call-3",
+                    (
+                        harness.gitdir_file,
+                        "the retained worktree gitdir backlink",
+                    ),
+                ),
+                ("pointer-provider-3", None),
+                (
+                    "pointer-call-3",
+                    (
+                        harness.backlink_value,
+                        harness.git_dir,
+                        "the retained worktree gitdir backlink",
+                    ),
+                ),
+                ("backlink-mismatch", harness.git_file),
+                ("backlink-mismatch-truth", False),
+            ],
+        )
+        self.assertEqual(harness.real_provider_count, 5)
+        self.assertEqual(harness.line_provider_count, 3)
+        self.assertEqual(harness.pointer_provider_count, 3)
+
+    def test_linked_worktree_validation_optional_expected_common(
+        self,
+    ) -> None:
+        harness = LinkedValidationHarness(
+            self,
+            expected_common=False,
+            common_mismatch=True,
+        )
+
+        observed = harness.validate(self.identity)
+
+        self.assertIs(observed[0], harness.canonical_worktree)
+        self.assertIs(observed[1], harness.git_file)
+        self.assertIs(observed[2], harness.git_dir)
+        self.assertIs(observed[3], harness.common_git_dir)
+        self.assertEqual(harness.real_provider_count, 4)
+        self.assertEqual(harness.line_provider_count, 3)
+        self.assertEqual(harness.pointer_provider_count, 3)
+        event_names = tuple(name for name, value in harness.events)
+        self.assertNotIn("common-mismatch", event_names)
+        self.assertNotIn(
+            "common-mismatch-truth",
+            event_names,
+        )
+        self.assertNotIn(
+            "real-directory-provider-5",
+            event_names,
+        )
+        self.assertIn(
+            (
+                "real-directory-call-4",
+                (
+                    harness.worktrees_path,
+                    "the common linked-worktree "
+                    "administration directory",
+                ),
+            ),
+            harness.events,
+        )
+
+    def test_linked_worktree_validation_policy_rejections_short_circuit(
+        self,
+    ) -> None:
+        cases = (
+            (
+                "wrong-prefix",
+                {"forward_starts": False},
+                "the retained worktree .git file "
+                "has an invalid pointer",
+                (
+                    "forward-equality",
+                    "length-provider",
+                    "pointer-provider-1",
+                ),
+            ),
+            (
+                "empty-pointer",
+                {"forward_equals_prefix": True},
+                "the retained worktree .git file "
+                "has an invalid pointer",
+                (
+                    "length-provider",
+                    "pointer-provider-1",
+                ),
+            ),
+            (
+                "unexpected-common",
+                {"common_mismatch": True},
+                "the retained worktree has an unexpected "
+                "common Git directory",
+                (
+                    "real-directory-provider-5",
+                    "common-worktrees",
+                    "single-line-provider-3",
+                ),
+            ),
+            (
+                "parent-mismatch",
+                {"parent_mismatch": True},
+                "the retained worktree Git admin directory "
+                "is not its unique direct child",
+                (
+                    "git-directory-admin-equality",
+                    "single-line-provider-3",
+                ),
+            ),
+            (
+                "admin-self",
+                {"git_dir_equals_admin": True},
+                "the retained worktree Git admin directory "
+                "is not its unique direct child",
+                ("single-line-provider-3",),
+            ),
+            (
+                "backlink-mismatch",
+                {"backlink_mismatch": True},
+                "the retained worktree Git admin backlink changed",
+                (),
+            ),
+        )
+
+        for (
+            rejection,
+            settings,
+            message,
+            forbidden_events,
+        ) in cases:
+            with self.subTest(rejection=rejection):
+                harness = LinkedValidationHarness(
+                    self,
+                    **settings,
+                )
+
+                with self.assertRaises(
+                    LinkedValidationError
+                ) as caught:
+                    harness.validate(self.identity)
+
+                self.assertEqual(str(caught.exception), message)
+                self.assertIsNone(caught.exception.__cause__)
+                self.assertEqual(
+                    harness.events[-1],
+                    ("error-provider", None),
+                )
+                event_names = tuple(
+                    name for name, value in harness.events
+                )
+                for forbidden in forbidden_events:
+                    self.assertNotIn(forbidden, event_names)
+
+    def test_linked_worktree_validation_never_translates_dependencies(
+        self,
+    ) -> None:
+        stages = (
+            "real-directory-provider-1",
+            "real-directory-call-1",
+            "canonical-git-file",
+            "single-line-provider-1",
+            "single-line-call-1",
+            "forward-startswith",
+            "forward-startswith-truth",
+            "forward-equality",
+            "forward-equality-truth",
+            "pointer-provider-1",
+            "length-provider",
+            "length-call",
+            "forward-slice",
+            "pointer-call-1",
+            "real-directory-provider-2",
+            "real-directory-call-2",
+            "single-line-provider-2",
+            "git-directory-commondir",
+            "single-line-call-2",
+            "pointer-provider-2",
+            "pointer-call-2",
+            "real-directory-provider-3",
+            "real-directory-call-3",
+            "real-directory-provider-4",
+            "real-directory-call-4",
+            "common-mismatch",
+            "common-mismatch-truth",
+            "real-directory-provider-5",
+            "common-worktrees",
+            "real-directory-call-5",
+            "git-directory-parent",
+            "parent-mismatch",
+            "parent-mismatch-truth",
+            "git-directory-admin-equality",
+            "git-directory-admin-equality-truth",
+            "single-line-provider-3",
+            "git-directory-gitdir",
+            "single-line-call-3",
+            "pointer-provider-3",
+            "pointer-call-3",
+            "backlink-mismatch",
+            "backlink-mismatch-truth",
+        )
+
+        for stage in stages:
+            with self.subTest(unwrapped_stage=stage):
+                harness = LinkedValidationHarness(
+                    self,
+                    fail_stage=stage,
+                )
+
+                with self.assertRaises(
+                    LinkedDependencyError
+                ) as caught:
+                    harness.validate(self.identity)
+
+                self.assertIs(caught.exception, harness.failure)
+                self.assertEqual(
+                    harness.events[-1][0],
+                    stage,
+                )
+                self.assertNotIn(
+                    "error-provider",
+                    tuple(
+                        name for name, value in harness.events
+                    ),
+                )
+
+    def test_linked_worktree_validation_error_dependency_is_untranslated(
+        self,
+    ) -> None:
+        harness = LinkedValidationHarness(
+            self,
+            forward_starts=False,
+            fail_stage="error-provider",
+        )
+
+        with self.assertRaises(LinkedDependencyError) as caught:
+            harness.validate(self.identity)
+
+        self.assertIs(caught.exception, harness.failure)
+        self.assertEqual(
+            harness.events[-1],
+            ("error-provider", None),
+        )
+
+        constructor_failure = LookupError(
+            "error construction failed"
+        )
+        harness = LinkedValidationHarness(
+            self,
+            forward_starts=False,
+        )
+
+        class BrokenError:
+            def __new__(
+                cls,
+                message: object,
+            ) -> object:
+                raise constructor_failure
+
+        def error_type() -> type:
+            harness.record("error-provider", None)
+            return BrokenError
+
+        harness.error_type = error_type
+        with self.assertRaises(LookupError) as caught:
+            harness.validate(self.identity)
+
+        self.assertIs(caught.exception, constructor_failure)
+        self.assertEqual(
+            harness.events[-1],
+            ("error-provider", None),
+        )
+
+    def test_linked_worktree_wrapper_forwards_fresh_lazy_globals(
+        self,
+    ) -> None:
+        events: list[tuple[str, object]] = []
+        worktree = OpaqueValue("wrapper-worktree")
+        expected_common = OpaqueValue("wrapper-expected-common")
+        canonical = OpaqueValue("wrapper-canonical")
+        git_file = OpaqueValue("wrapper-git-file")
+        git_dir = OpaqueValue("wrapper-git-dir")
+        common = OpaqueValue("wrapper-common")
+        identity = OpaqueValue("wrapper-identity")
+
+        initial_real = object()
+        real_one = object()
+        real_two = object()
+        initial_line = object()
+        line_one = object()
+        line_two = object()
+        initial_pointer = object()
+        pointer_one = object()
+        pointer_two = object()
+        initial_length = object()
+        length_one = object()
+        length_two = object()
+
+        class InitialError(Exception):
+            pass
+
+        class ErrorOne(Exception):
+            pass
+
+        class ErrorTwo(Exception):
+            pass
+
+        initial_factory = mock.Mock(
+            side_effect=AssertionError(
+                "constructed before validation completed"
+            )
+        )
+        initial_identities = RecordingRegistry(
+            "initial-identities",
+            events,
+            get_failure=AssertionError(
+                "read identity cache before validation"
+            ),
+        )
+        initial_owners = RecordingRegistry(
+            "initial-owners",
+            events,
+            get_failure=AssertionError(
+                "read owner cache before validation"
+            ),
+        )
+        identities = RecordingRegistry("identities", events)
+        owners = RecordingRegistry("owners", events)
+
+        def rebound_factory(**values: object) -> object:
+            events.append(("constructor", values))
+            return identity
+
+        def validator(
+            observed_worktree: object,
+            **dependencies: object,
+        ) -> tuple[object, object, object, object]:
+            events.append(("validator", observed_worktree))
+            self.assertIs(observed_worktree, worktree)
+            self.assertEqual(
+                tuple(dependencies),
+                (
+                    "expected_common_git_dir",
+                    "real_directory",
+                    "single_line",
+                    "pointer_path",
+                    "length",
+                    "error_type",
+                ),
+            )
+            self.assertIs(
+                dependencies["expected_common_git_dir"],
+                expected_common,
+            )
+
+            self.engine.exact_real_directory = real_one
+            self.assertIs(
+                dependencies["real_directory"](),
+                real_one,
+            )
+            self.engine.exact_real_directory = real_two
+            self.assertIs(
+                dependencies["real_directory"](),
+                real_two,
+            )
+            self.engine.exact_single_line = line_one
+            self.assertIs(
+                dependencies["single_line"](),
+                line_one,
+            )
+            self.engine.exact_single_line = line_two
+            self.assertIs(
+                dependencies["single_line"](),
+                line_two,
+            )
+            self.engine.exact_pointer_path = pointer_one
+            self.assertIs(
+                dependencies["pointer_path"](),
+                pointer_one,
+            )
+            self.engine.exact_pointer_path = pointer_two
+            self.assertIs(
+                dependencies["pointer_path"](),
+                pointer_two,
+            )
+            self.engine.len = length_one
+            self.assertIs(
+                dependencies["length"](),
+                length_one,
+            )
+            self.engine.len = length_two
+            self.assertIs(
+                dependencies["length"](),
+                length_two,
+            )
+            self.engine.LauncherError = ErrorOne
+            self.assertIs(
+                dependencies["error_type"](),
+                ErrorOne,
+            )
+            self.engine.LauncherError = ErrorTwo
+            self.assertIs(
+                dependencies["error_type"](),
+                ErrorTwo,
+            )
+
+            self.engine.LinkedWorktreeIdentity = rebound_factory
+            self.engine._LINKED_WORKTREE_IDENTITIES = identities
+            self.engine._LINKED_ADMIN_OWNERS = owners
+            events.append(("validation-complete", None))
+            return canonical, git_file, git_dir, common
+
+        with (
+            mock.patch.object(
+                self.engine,
+                "_validate_linked_worktree_path",
+                side_effect=validator,
+            ) as kernel,
+            mock.patch.object(
+                self.engine,
+                "exact_real_directory",
+                initial_real,
+            ),
+            mock.patch.object(
+                self.engine,
+                "exact_single_line",
+                initial_line,
+            ),
+            mock.patch.object(
+                self.engine,
+                "exact_pointer_path",
+                initial_pointer,
+            ),
+            mock.patch.object(
+                self.engine,
+                "len",
+                initial_length,
+                create=True,
+            ),
+            mock.patch.object(
+                self.engine,
+                "LauncherError",
+                InitialError,
+            ),
+            mock.patch.object(
+                self.engine,
+                "LinkedWorktreeIdentity",
+                initial_factory,
+            ),
+            mock.patch.object(
+                self.engine,
+                "_LINKED_WORKTREE_IDENTITIES",
+                initial_identities,
+            ),
+            mock.patch.object(
+                self.engine,
+                "_LINKED_ADMIN_OWNERS",
+                initial_owners,
+            ),
+        ):
+            observed = self.engine.authenticate_linked_worktree_path(
+                worktree,
+                expected_common_git_dir=expected_common,
+            )
+
+        self.assertIs(observed, identity)
+        kernel.assert_called_once()
+        initial_factory.assert_not_called()
+        self.assertEqual(
+            events,
+            [
+                ("validator", worktree),
+                ("validation-complete", None),
+                (
+                    "constructor",
+                    {
+                        "worktree": canonical,
+                        "git_file": git_file,
+                        "git_dir": git_dir,
+                        "common_git_dir": common,
+                    },
+                ),
+                ("identities-get", canonical),
+                ("owners-get", git_dir),
+                (
+                    "identities-set",
+                    (canonical, identity),
+                ),
+                ("owners-set", (git_dir, canonical)),
+            ],
+        )
+        self.assertIs(identities.values[canonical], identity)
+        self.assertIs(owners.values[git_dir], canonical)
+
+    def test_linked_worktree_wrapper_registry_policy_and_set_order(
+        self,
+    ) -> None:
+        worktree = OpaqueValue("registry-worktree-input")
+        canonical = OpaqueValue("registry-canonical")
+        git_file = OpaqueValue("registry-git-file")
+        git_dir = OpaqueValue("registry-git-dir")
+        common = OpaqueValue("registry-common")
+        identity = OpaqueValue("registry-identity")
+
+        cases = (
+            ("empty", "none", "none", None),
+            ("matching", "equal", "same", None),
+            (
+                "identity-mismatch",
+                "different",
+                "none",
+                "the retained worktree Git identity changed",
+            ),
+            (
+                "owner-collision",
+                "none",
+                "different",
+                "the retained worktree Git admin directory "
+                "is not unique",
+            ),
+        )
+
+        for (
+            case,
+            prior_state,
+            owner_state,
+            diagnostic,
+        ) in cases:
+            with self.subTest(case=case):
+                events: list[tuple[str, object]] = []
+
+                class Truth:
+                    def __init__(
+                        truth_self,
+                        name: str,
+                        value: bool,
+                    ) -> None:
+                        truth_self.name = name
+                        truth_self.value = value
+
+                    def __bool__(truth_self) -> bool:
+                        events.append(
+                            (
+                                f"{truth_self.name}-truth",
+                                truth_self.value,
+                            )
+                        )
+                        return truth_self.value
+
+                class Prior:
+                    def __ne__(
+                        prior_self,
+                        other: object,
+                    ) -> object:
+                        events.append(("prior-ne", other))
+                        return Truth(
+                            "prior-ne",
+                            prior_state == "different",
+                        )
+
+                class Owner:
+                    def __ne__(
+                        owner_self,
+                        other: object,
+                    ) -> object:
+                        events.append(("owner-ne", other))
+                        return Truth(
+                            "owner-ne",
+                            owner_state == "different",
+                        )
+
+                prior = (
+                    None
+                    if prior_state == "none"
+                    else Prior()
+                )
+                owner = {
+                    "none": None,
+                    "same": canonical,
+                    "different": Owner(),
+                }[owner_state]
+                identities = RecordingRegistry(
+                    "identities",
+                    events,
+                    values=(
+                        {}
+                        if prior is None
+                        else {canonical: prior}
+                    ),
+                )
+                owners = RecordingRegistry(
+                    "owners",
+                    events,
+                    values=(
+                        {}
+                        if owner is None
+                        else {git_dir: owner}
+                    ),
+                )
+
+                def validator(
+                    observed: object,
+                    **dependencies: object,
+                ) -> tuple[object, object, object, object]:
+                    events.append(("validator", observed))
+                    return canonical, git_file, git_dir, common
+
+                def factory(**values: object) -> object:
+                    events.append(("constructor", values))
+                    return identity
+
+                with (
+                    mock.patch.object(
+                        self.engine,
+                        "_validate_linked_worktree_path",
+                        side_effect=validator,
+                    ),
+                    mock.patch.object(
+                        self.engine,
+                        "LinkedWorktreeIdentity",
+                        side_effect=factory,
+                    ),
+                    mock.patch.object(
+                        self.engine,
+                        "_LINKED_WORKTREE_IDENTITIES",
+                        identities,
+                    ),
+                    mock.patch.object(
+                        self.engine,
+                        "_LINKED_ADMIN_OWNERS",
+                        owners,
+                    ),
+                ):
+                    if diagnostic is None:
+                        observed = (
+                            self.engine
+                            .authenticate_linked_worktree_path(
+                                worktree
+                            )
+                        )
+                    else:
+                        with self.assertRaises(
+                            self.engine.LauncherError
+                        ) as caught:
+                            (
+                                self.engine
+                                .authenticate_linked_worktree_path(
+                                    worktree
+                                )
+                            )
+
+                if diagnostic is None:
+                    self.assertIs(observed, identity)
+                    self.assertIs(
+                        identities.values[canonical],
+                        identity,
+                    )
+                    self.assertIs(
+                        owners.values[git_dir],
+                        canonical,
+                    )
+                    self.assertEqual(
+                        events[-2:],
+                        [
+                            (
+                                "identities-set",
+                                (canonical, identity),
+                            ),
+                            (
+                                "owners-set",
+                                (git_dir, canonical),
+                            ),
+                        ],
+                    )
+                else:
+                    self.assertEqual(
+                        str(caught.exception),
+                        diagnostic,
+                    )
+                    self.assertIsNone(
+                        caught.exception.__cause__
+                    )
+                    self.assertNotIn(
+                        "identities-set",
+                        tuple(name for name, value in events),
+                    )
+                    self.assertNotIn(
+                        "owners-set",
+                        tuple(name for name, value in events),
+                    )
+
+                event_names = tuple(
+                    name for name, value in events
+                )
+                self.assertLess(
+                    event_names.index("validator"),
+                    event_names.index("constructor"),
+                )
+                self.assertLess(
+                    event_names.index("constructor"),
+                    event_names.index("identities-get"),
+                )
+                if prior_state == "different":
+                    self.assertNotIn("owners-get", event_names)
+                else:
+                    self.assertIn("owners-get", event_names)
+
+    def test_linked_worktree_wrapper_requires_exactly_four_components(
+        self,
+    ) -> None:
+        component = OpaqueValue("unpack-component")
+
+        for count in (0, 3, 5):
+            with self.subTest(component_count=count):
+                blocked_factory = mock.Mock(
+                    side_effect=AssertionError(
+                        "constructed from the wrong component count"
+                    )
+                )
+                blocked_identities = RecordingRegistry(
+                    "blocked-identities",
+                    [],
+                    get_failure=AssertionError(
+                        "read cache after invalid component count"
+                    ),
+                )
+                blocked_owners = RecordingRegistry(
+                    "blocked-owners",
+                    [],
+                    get_failure=AssertionError(
+                        "read cache after invalid component count"
+                    ),
+                )
+
+                with (
+                    mock.patch.object(
+                        self.engine,
+                        "_validate_linked_worktree_path",
+                        return_value=(component,) * count,
+                    ),
+                    mock.patch.object(
+                        self.engine,
+                        "LinkedWorktreeIdentity",
+                        blocked_factory,
+                    ),
+                    mock.patch.object(
+                        self.engine,
+                        "_LINKED_WORKTREE_IDENTITIES",
+                        blocked_identities,
+                    ),
+                    mock.patch.object(
+                        self.engine,
+                        "_LINKED_ADMIN_OWNERS",
+                        blocked_owners,
+                    ),
+                ):
+                    with self.assertRaises(ValueError) as caught:
+                        (
+                            self.engine
+                            .authenticate_linked_worktree_path(
+                                OpaqueValue(
+                                    f"unpack-input-{count}"
+                                )
+                            )
+                        )
+
+                self.assertIsNone(caught.exception.__cause__)
+                blocked_factory.assert_not_called()
+                self.assertEqual(blocked_identities.events, [])
+                self.assertEqual(blocked_owners.events, [])
+
+    def test_linked_worktree_wrapper_registry_globals_are_reloaded(
+        self,
+    ) -> None:
+        events: list[tuple[str, object]] = []
+        canonical = OpaqueValue("rebind-canonical")
+        git_file = OpaqueValue("rebind-git-file")
+        git_dir = OpaqueValue("rebind-git-dir")
+        common = OpaqueValue("rebind-common")
+        identity = OpaqueValue("rebind-identity")
+
+        final_owners = RecordingRegistry("final-owners", events)
+        intermediate_owners = RecordingRegistry(
+            "intermediate-owners",
+            events,
+        )
+
+        def rebind_owner_after_identity_set() -> None:
+            events.append(("rebind-owner-after-set", None))
+            self.engine._LINKED_ADMIN_OWNERS = final_owners
+
+        rebound_identities = RecordingRegistry(
+            "rebound-identities",
+            events,
+            on_set=rebind_owner_after_identity_set,
+        )
+
+        def rebind_identity_after_get() -> None:
+            events.append(("rebind-identity-after-get", None))
+            self.engine._LINKED_WORKTREE_IDENTITIES = (
+                rebound_identities
+            )
+
+        initial_identities = RecordingRegistry(
+            "initial-identities",
+            events,
+            on_get=rebind_identity_after_get,
+        )
+
+        def rebind_owner_after_get() -> None:
+            events.append(("rebind-owner-after-get", None))
+            self.engine._LINKED_ADMIN_OWNERS = (
+                intermediate_owners
+            )
+
+        initial_owners = RecordingRegistry(
+            "initial-owners",
+            events,
+            on_get=rebind_owner_after_get,
+        )
+
+        with (
+            mock.patch.object(
+                self.engine,
+                "_validate_linked_worktree_path",
+                return_value=(
+                    canonical,
+                    git_file,
+                    git_dir,
+                    common,
+                ),
+            ),
+            mock.patch.object(
+                self.engine,
+                "LinkedWorktreeIdentity",
+                return_value=identity,
+            ),
+            mock.patch.object(
+                self.engine,
+                "_LINKED_WORKTREE_IDENTITIES",
+                initial_identities,
+            ),
+            mock.patch.object(
+                self.engine,
+                "_LINKED_ADMIN_OWNERS",
+                initial_owners,
+            ),
+        ):
+            observed = self.engine.authenticate_linked_worktree_path(
+                OpaqueValue("rebind-input")
+            )
+
+        self.assertIs(observed, identity)
+        self.assertEqual(
+            events,
+            [
+                ("initial-identities-get", canonical),
+                ("rebind-identity-after-get", None),
+                ("initial-owners-get", git_dir),
+                ("rebind-owner-after-get", None),
+                (
+                    "rebound-identities-set",
+                    (canonical, identity),
+                ),
+                ("rebind-owner-after-set", None),
+                ("final-owners-set", (git_dir, canonical)),
+            ],
+        )
+        self.assertEqual(initial_identities.values, {})
+        self.assertEqual(initial_owners.values, {})
+        self.assertEqual(intermediate_owners.values, {})
+        self.assertIs(
+            rebound_identities.values[canonical],
+            identity,
+        )
+        self.assertIs(final_owners.values[git_dir], canonical)
+
+    def test_linked_worktree_wrapper_failures_and_partial_mutation(
+        self,
+    ) -> None:
+        stages = (
+            "validator",
+            "unpack",
+            "constructor",
+            "identity-get",
+            "prior-ne",
+            "prior-truth",
+            "owner-get",
+            "owner-ne",
+            "owner-truth",
+            "identity-set",
+            "owner-set",
+        )
+
+        for stage in stages:
+            with self.subTest(unwrapped_stage=stage):
+                original = LinkedDependencyError(stage)
+                events: list[tuple[str, object]] = []
+                canonical = OpaqueValue(
+                    f"failure-{stage}-canonical"
+                )
+                git_file = OpaqueValue(
+                    f"failure-{stage}-git-file"
+                )
+                git_dir = OpaqueValue(
+                    f"failure-{stage}-git-dir"
+                )
+                common = OpaqueValue(
+                    f"failure-{stage}-common"
+                )
+                identity = OpaqueValue(
+                    f"failure-{stage}-identity"
+                )
+
+                def fail_at(observed: str) -> None:
+                    events.append((observed, None))
+                    if stage == observed:
+                        raise original
+
+                class Truth:
+                    def __init__(
+                        truth_self,
+                        observed_stage: str,
+                    ) -> None:
+                        truth_self.observed_stage = (
+                            observed_stage
+                        )
+
+                    def __bool__(truth_self) -> bool:
+                        fail_at(truth_self.observed_stage)
+                        return False
+
+                class Prior:
+                    def __ne__(
+                        prior_self,
+                        other: object,
+                    ) -> object:
+                        fail_at("prior-ne")
+                        return Truth("prior-truth")
+
+                class Owner:
+                    def __ne__(
+                        owner_self,
+                        other: object,
+                    ) -> object:
+                        fail_at("owner-ne")
+                        return Truth("owner-truth")
+
+                class BrokenComponents:
+                    def __iter__(
+                        components_self,
+                    ) -> object:
+                        fail_at("unpack")
+                        return iter(())
+
+                def validator(
+                    observed: object,
+                    **dependencies: object,
+                ) -> object:
+                    fail_at("validator")
+                    if stage == "unpack":
+                        return BrokenComponents()
+                    return canonical, git_file, git_dir, common
+
+                def factory(**values: object) -> object:
+                    fail_at("constructor")
+                    return identity
+
+                prior = (
+                    Prior()
+                    if stage in {"prior-ne", "prior-truth"}
+                    else None
+                )
+                owner = (
+                    Owner()
+                    if stage in {"owner-ne", "owner-truth"}
+                    else None
+                )
+                identities = RecordingRegistry(
+                    "identities",
+                    events,
+                    values=(
+                        {}
+                        if prior is None
+                        else {canonical: prior}
+                    ),
+                    get_failure=(
+                        original
+                        if stage == "identity-get"
+                        else None
+                    ),
+                    set_failure=(
+                        original
+                        if stage == "identity-set"
+                        else None
+                    ),
+                )
+                owners = RecordingRegistry(
+                    "owners",
+                    events,
+                    values=(
+                        {}
+                        if owner is None
+                        else {git_dir: owner}
+                    ),
+                    get_failure=(
+                        original
+                        if stage == "owner-get"
+                        else None
+                    ),
+                    set_failure=(
+                        original
+                        if stage == "owner-set"
+                        else None
+                    ),
+                )
+                initial_owner_values = dict(owners.values)
+                blocked_error = mock.Mock(
+                    side_effect=AssertionError(
+                        "translated wrapper dependency failure"
+                    )
+                )
+
+                with (
+                    mock.patch.object(
+                        self.engine,
+                        "_validate_linked_worktree_path",
+                        side_effect=validator,
+                    ),
+                    mock.patch.object(
+                        self.engine,
+                        "LinkedWorktreeIdentity",
+                        side_effect=factory,
+                    ),
+                    mock.patch.object(
+                        self.engine,
+                        "_LINKED_WORKTREE_IDENTITIES",
+                        identities,
+                    ),
+                    mock.patch.object(
+                        self.engine,
+                        "_LINKED_ADMIN_OWNERS",
+                        owners,
+                    ),
+                    mock.patch.object(
+                        self.engine,
+                        "LauncherError",
+                        blocked_error,
+                    ),
+                ):
+                    with self.assertRaises(
+                        LinkedDependencyError
+                    ) as caught:
+                        (
+                            self.engine
+                            .authenticate_linked_worktree_path(
+                                OpaqueValue(
+                                    f"failure-{stage}-input"
+                                )
+                            )
+                        )
+
+                self.assertIs(caught.exception, original)
+                blocked_error.assert_not_called()
+                if stage == "owner-set":
+                    self.assertIs(
+                        identities.values[canonical],
+                        identity,
+                    )
+                    self.assertEqual(
+                        owners.values,
+                        initial_owner_values,
+                    )
+                else:
+                    self.assertIsNot(
+                        identities.values.get(canonical),
+                        identity,
+                    )
+                    self.assertEqual(
+                        owners.values,
+                        initial_owner_values,
+                    )
+                if stage == "identity-set":
+                    self.assertNotIn(
+                        "owners-set",
+                        tuple(
+                            name for name, value in events
+                        ),
+                    )
+
+    def test_linked_worktree_wrapper_resolves_rebound_policy_errors(
+        self,
+    ) -> None:
+        canonical = OpaqueValue("error-rebind-canonical")
+        git_file = OpaqueValue("error-rebind-git-file")
+        git_dir = OpaqueValue("error-rebind-git-dir")
+        common = OpaqueValue("error-rebind-common")
+        identity = OpaqueValue("error-rebind-identity")
+
+        class InitialError(RuntimeError):
+            pass
+
+        class ReboundIdentityError(RuntimeError):
+            pass
+
+        class ReboundOwnerError(RuntimeError):
+            pass
+
+        class Mismatch:
+            def __init__(
+                mismatch_self,
+                error: type[BaseException],
+            ) -> None:
+                mismatch_self.error = error
+
+            def __ne__(
+                mismatch_self,
+                other: object,
+            ) -> bool:
+                self.engine.LauncherError = (
+                    mismatch_self.error
+                )
+                return True
+
+        cases = (
+            (
+                "identity",
+                {canonical: Mismatch(ReboundIdentityError)},
+                {},
+                ReboundIdentityError,
+                "the retained worktree Git identity changed",
+            ),
+            (
+                "owner",
+                {},
+                {git_dir: Mismatch(ReboundOwnerError)},
+                ReboundOwnerError,
+                "the retained worktree Git admin directory "
+                "is not unique",
+            ),
+        )
+
+        for (
+            collision,
+            identities,
+            owners,
+            expected_error,
+            message,
+        ) in cases:
+            with self.subTest(collision=collision):
+                with (
+                    mock.patch.object(
+                        self.engine,
+                        "_validate_linked_worktree_path",
+                        return_value=(
+                            canonical,
+                            git_file,
+                            git_dir,
+                            common,
+                        ),
+                    ),
+                    mock.patch.object(
+                        self.engine,
+                        "LinkedWorktreeIdentity",
+                        return_value=identity,
+                    ),
+                    mock.patch.object(
+                        self.engine,
+                        "_LINKED_WORKTREE_IDENTITIES",
+                        dict(identities),
+                    ),
+                    mock.patch.object(
+                        self.engine,
+                        "_LINKED_ADMIN_OWNERS",
+                        dict(owners),
+                    ),
+                    mock.patch.object(
+                        self.engine,
+                        "LauncherError",
+                        InitialError,
+                    ),
+                ):
+                    with self.assertRaises(
+                        expected_error
+                    ) as caught:
+                        (
+                            self.engine
+                            .authenticate_linked_worktree_path(
+                                OpaqueValue(
+                                    f"error-rebind-{collision}"
+                                )
+                            )
+                        )
+
+                self.assertEqual(str(caught.exception), message)
+                self.assertIsNone(caught.exception.__cause__)
+
+    def test_linked_worktree_authentication_matches_git_and_tampering(
+        self,
+    ) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            repository = root / "repository"
+            worker = root / "worker"
+
+            def run_git(*arguments: str) -> subprocess.CompletedProcess:
+                return subprocess.run(
+                    ("git", *arguments),
+                    cwd=root,
+                    text=True,
+                    capture_output=True,
+                    check=True,
+                    timeout=20,
+                )
+
+            run_git("init", "-q", os.fspath(repository))
+            run_git(
+                "-C",
+                os.fspath(repository),
+                "config",
+                "user.name",
+                "Worktree Marshal Test",
+            )
+            run_git(
+                "-C",
+                os.fspath(repository),
+                "config",
+                "user.email",
+                "marshal@example.invalid",
+            )
+            tracked = repository / "tracked"
+            tracked.write_text("initial\n", encoding="utf-8")
+            run_git(
+                "-C",
+                os.fspath(repository),
+                "add",
+                "tracked",
+            )
+            run_git(
+                "-C",
+                os.fspath(repository),
+                "commit",
+                "-q",
+                "-m",
+                "initial",
+            )
+            run_git(
+                "-C",
+                os.fspath(repository),
+                "worktree",
+                "add",
+                "-q",
+                "--detach",
+                os.fspath(worker),
+                "HEAD",
+            )
+
+            git_file = worker / ".git"
+            forward = git_file.read_text(encoding="utf-8")
+            self.assertTrue(forward.startswith("gitdir: "))
+            raw_git_dir = forward.removeprefix(
+                "gitdir: "
+            ).removesuffix("\n")
+            git_dir_candidate = Path(raw_git_dir)
+            if not git_dir_candidate.is_absolute():
+                git_dir_candidate = worker / git_dir_candidate
+            git_dir = git_dir_candidate.resolve(strict=True)
+            commondir_file = git_dir / "commondir"
+            commondir_line = commondir_file.read_text(
+                encoding="utf-8"
+            )
+            raw_common = commondir_line.removesuffix("\n")
+            common_candidate = Path(raw_common)
+            if not common_candidate.is_absolute():
+                common_candidate = git_dir / common_candidate
+            common_git_dir = common_candidate.resolve(strict=True)
+            backlink_file = git_dir / "gitdir"
+            backlink_line = backlink_file.read_text(
+                encoding="utf-8"
+            )
+            original_git_file = git_file.read_bytes()
+            original_commondir = commondir_file.read_bytes()
+            original_backlink = backlink_file.read_bytes()
+
+            def restore_real_admin() -> None:
+                git_file.write_bytes(original_git_file)
+                commondir_file.write_bytes(original_commondir)
+                backlink_file.write_bytes(original_backlink)
+
+            default_expected = object()
+
+            def authenticate(
+                path: Path = worker,
+                *,
+                expected: object = default_expected,
+                identities: dict | None = None,
+                owners: dict | None = None,
+            ) -> object:
+                selected_expected = (
+                    common_git_dir
+                    if expected is default_expected
+                    else expected
+                )
+                identity_registry = (
+                    {} if identities is None else identities
+                )
+                owner_registry = (
+                    {} if owners is None else owners
+                )
+                with (
+                    mock.patch.object(
+                        self.engine,
+                        "_LINKED_WORKTREE_IDENTITIES",
+                        identity_registry,
+                    ),
+                    mock.patch.object(
+                        self.engine,
+                        "_LINKED_ADMIN_OWNERS",
+                        owner_registry,
+                    ),
+                ):
+                    return (
+                        self.engine
+                        .authenticate_linked_worktree_path(
+                            path,
+                            expected_common_git_dir=(
+                                selected_expected
+                            ),
+                        )
+                    )
+
+            observed = authenticate()
+            self.assertIsInstance(
+                observed,
+                self.identity.LinkedWorktreeIdentity,
+            )
+            self.assertEqual(observed.worktree, worker)
+            self.assertEqual(observed.git_file, git_file)
+            self.assertEqual(observed.git_dir, git_dir)
+            self.assertEqual(
+                observed.common_git_dir,
+                common_git_dir,
+            )
+
+            git_file.write_text(
+                "gitdir: "
+                + os.path.relpath(git_dir, worker)
+                + "\n",
+                encoding="utf-8",
+            )
+            commondir_file.write_text(
+                os.path.relpath(common_git_dir, git_dir) + "\n",
+                encoding="utf-8",
+            )
+            relative_observed = authenticate()
+            self.assertEqual(relative_observed, observed)
+            restore_real_admin()
+
+            malformed_cases = (
+                (
+                    b"not-a-pointer\n",
+                    "the retained worktree .git file "
+                    "has an invalid pointer",
+                    None,
+                ),
+                (
+                    b"gitdir: \n",
+                    "the retained worktree .git file "
+                    "has an invalid pointer",
+                    None,
+                ),
+                (
+                    b"gitdir: missing-admin\n",
+                    "the retained worktree .git file "
+                    "points to an unavailable path",
+                    OSError,
+                ),
+                (
+                    b"gitdir: missing-newline",
+                    "the retained worktree .git file "
+                    "does not contain one exact line",
+                    None,
+                ),
+            )
+            for data, message, cause_type in malformed_cases:
+                with self.subTest(git_file=data):
+                    git_file.write_bytes(data)
+                    with self.assertRaises(
+                        self.engine.LauncherError
+                    ) as caught:
+                        authenticate()
+                    self.assertEqual(
+                        str(caught.exception),
+                        message,
+                    )
+                    if cause_type is None:
+                        self.assertIsNone(
+                            caught.exception.__cause__
+                        )
+                    else:
+                        self.assertIsInstance(
+                            caught.exception.__cause__,
+                            cause_type,
+                        )
+                    restore_real_admin()
+
+            file_admin = worker / "file-admin"
+            file_admin.write_text("not a directory\n")
+            git_file.write_text(
+                f"gitdir: {file_admin}\n",
+                encoding="utf-8",
+            )
+            with self.assertRaises(
+                self.engine.LauncherError
+            ) as caught:
+                authenticate()
+            self.assertEqual(
+                str(caught.exception),
+                "the retained worktree Git admin directory "
+                "is not an exact real directory",
+            )
+            self.assertIsNone(caught.exception.__cause__)
+            restore_real_admin()
+
+            admin_link = worker / "admin-link"
+            admin_link.symlink_to(
+                git_dir,
+                target_is_directory=True,
+            )
+            git_file.write_text(
+                f"gitdir: {admin_link}\n",
+                encoding="utf-8",
+            )
+            with self.assertRaises(
+                self.engine.LauncherError
+            ) as caught:
+                authenticate()
+            self.assertEqual(
+                str(caught.exception),
+                "the retained worktree .git file "
+                "traverses a symbolic path",
+            )
+            self.assertIsNone(caught.exception.__cause__)
+            restore_real_admin()
+
+            other_common = root / "other-common"
+            other_common.mkdir()
+            with self.assertRaises(
+                self.engine.LauncherError
+            ) as caught:
+                authenticate(expected=other_common)
+            self.assertEqual(
+                str(caught.exception),
+                "the retained worktree has an unexpected "
+                "common Git directory",
+            )
+            self.assertIsNone(caught.exception.__cause__)
+
+            nested_admin = (
+                common_git_dir
+                / "worktrees"
+                / "nested"
+                / "worker"
+            )
+            nested_admin.mkdir(parents=True)
+            (nested_admin / "commondir").write_text(
+                os.path.relpath(
+                    common_git_dir,
+                    nested_admin,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            (nested_admin / "gitdir").write_text(
+                os.fspath(git_file) + "\n",
+                encoding="utf-8",
+            )
+            git_file.write_text(
+                f"gitdir: {nested_admin}\n",
+                encoding="utf-8",
+            )
+            with self.assertRaises(
+                self.engine.LauncherError
+            ) as caught:
+                authenticate()
+            self.assertEqual(
+                str(caught.exception),
+                "the retained worktree Git admin directory "
+                "is not its unique direct child",
+            )
+            self.assertIsNone(caught.exception.__cause__)
+            restore_real_admin()
+
+            other_backlink = root / "other-git-file"
+            other_backlink.write_text("marker\n", encoding="utf-8")
+            backlink_file.write_text(
+                os.fspath(other_backlink) + "\n",
+                encoding="utf-8",
+            )
+            with self.assertRaises(
+                self.engine.LauncherError
+            ) as caught:
+                authenticate()
+            self.assertEqual(
+                str(caught.exception),
+                "the retained worktree Git admin backlink changed",
+            )
+            self.assertIsNone(caught.exception.__cause__)
+            restore_real_admin()
+
+            identity_registry: dict[Path, object] = {}
+            owner_registry: dict[Path, Path] = {}
+            cached = authenticate(
+                identities=identity_registry,
+                owners=owner_registry,
+            )
+            alternate_admin = (
+                common_git_dir / "worktrees" / "alternate"
+            )
+            alternate_admin.mkdir()
+            (alternate_admin / "commondir").write_text(
+                os.path.relpath(
+                    common_git_dir,
+                    alternate_admin,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            (alternate_admin / "gitdir").write_text(
+                os.fspath(git_file) + "\n",
+                encoding="utf-8",
+            )
+            git_file.write_text(
+                f"gitdir: {alternate_admin}\n",
+                encoding="utf-8",
+            )
+            with self.assertRaises(
+                self.engine.LauncherError
+            ) as caught:
+                authenticate(
+                    identities=identity_registry,
+                    owners=owner_registry,
+                )
+            self.assertEqual(
+                str(caught.exception),
+                "the retained worktree Git identity changed",
+            )
+            self.assertIs(
+                identity_registry[worker],
+                cached,
+            )
+            self.assertEqual(
+                owner_registry,
+                {git_dir: worker},
+            )
+            restore_real_admin()
+
+            identity_registry = {}
+            owner_registry = {}
+            original_identity = authenticate(
+                identities=identity_registry,
+                owners=owner_registry,
+            )
+            impostor = root / "impostor"
+            impostor.mkdir()
+            impostor_git_file = impostor / ".git"
+            impostor_git_file.write_text(
+                f"gitdir: {git_dir}\n",
+                encoding="utf-8",
+            )
+            backlink_file.write_text(
+                os.fspath(impostor_git_file) + "\n",
+                encoding="utf-8",
+            )
+            with self.assertRaises(
+                self.engine.LauncherError
+            ) as caught:
+                authenticate(
+                    impostor,
+                    identities=identity_registry,
+                    owners=owner_registry,
+                )
+            self.assertEqual(
+                str(caught.exception),
+                "the retained worktree Git admin directory "
+                "is not unique",
+            )
+            self.assertEqual(
+                identity_registry,
+                {worker: original_identity},
+            )
+            self.assertEqual(
+                owner_registry,
+                {git_dir: worker},
             )
 
     def test_safe_regular_file_kernel_and_wrapper_signatures(self) -> None:
