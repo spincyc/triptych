@@ -85,8 +85,9 @@ Metadata lookup follows symbolic links, and the selected link or file may
 later be replaced. Executable selection does not alter the profile's durable
 identity, discover or migrate retained runs, or grant lifecycle authority.
 The engine continues to bind the profile and own executable-selection timing,
-working-directory authentication and choice, child and resolver environments,
-process creation, and post-exit lifecycle policy.
+working-directory authentication and choice, child, resolver, and pass-through
+environment enrichment, process creation and replacement, and post-exit
+lifecycle policy.
 
 ## Codex argument policy
 
@@ -104,18 +105,45 @@ Codex multi-agent mode, clears additional writable roots and sandbox
 permissions, and supplies `--sandbox workspace-write` when the accepted user
 arguments did not specify a sandbox. These are argument-level controls; the
 engine still authenticates and chooses the working directory, supplies the
-profile-specific lifecycle hint, constructs child and resolver environments
-and role markers, creates or replaces the process, and owns every lifecycle
+profile-specific lifecycle hint, enriches child, resolver, and pass-through
+environments, creates or replaces the process, and owns every lifecycle
 transition.
 
 This static policy is sensitive to Codex CLI version, aliases, parsing, and
 option-precedence changes. It assumes the selected executable honors the
 recognized grammar. It is not a generic `AgentAdapter` or an operating-system
 sandbox, and it does not authenticate executable provenance, close the
-selection/use replacement window, sanitize the inherited environment, or
-constrain filesystem reads, credentials, providers, or network access. Policy
-changes require new parity and enforcement review; this extraction changes no
-durable identity and adds no migration or lifecycle authority.
+selection/use replacement window, or constrain filesystem reads, credentials,
+providers, or network access. Policy changes require new parity and
+enforcement review; this extraction changes no durable identity and adds no
+migration or lifecycle authority.
+
+## Codex base environment
+
+The adapter transforms the Git-sanitized base mapping supplied by the engine.
+It first removes every built-in Triptych and Worktree Marshal role,
+real-Codex, run, profile, and agent marker name, then sets the current
+profile's `WORKTREE_MARSHAL_REAL_CODEX` marker to the selected executable
+spelling. It derives the executable-path entries from that result, prefixes
+the selected executable's lexical parent, removes every prior entry exactly
+equal to that parent string, and preserves the spelling and order of all other
+entries.
+
+The engine retains active-profile capture and transform timing. For ordinary
+workers and resolvers it later adds the appropriate role, run ID, profile ID,
+agent ID, and run-owned `TMPDIR`, `TMP`, and `TEMP` values. Linked-worktree
+pass-through enrichment adds its worker, profile, and agent markers separately
+and does not acquire ordinary retained-run identity or temporary-path state.
+
+This is targeted filtering, not complete environment isolation. Beyond the
+existing Git-sensitive names and explicit launcher control markers, arbitrary
+host variables and credentials remain inherited. Executable-path comparison
+is lexical and exact: it does not canonicalize, authenticate, or remove
+aliases, equivalent spellings, relative or empty entries, or unrelated
+directories. The transform does not constrain reads, subprocesses, providers,
+or network access, repair executable provenance or replacement risks, or
+provide an operating-system sandbox. It introduces no generic `AgentAdapter`,
+durable identity change, migration, or lifecycle authority.
 
 ## Isolation and compatibility
 

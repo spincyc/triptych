@@ -12,9 +12,9 @@ state-path boundary, its state-location and repository-name boundary, the
 immutable runtime-identity record and launcher-entry authentication
 boundaries, its Git-executable discovery and pre-pin validation boundary, the
 exact Git-administration line-format validation boundary, its Codex-executable
-candidate-selection and static argument-policy boundaries, the frozen
-Triptych compatibility adapter, the Python distribution, and the Make
-integration fragment. The repository-local
+candidate-selection, static argument-policy, and sanitized base-environment
+boundaries, the frozen Triptych compatibility adapter, the Python
+distribution, and the Make integration fragment. The repository-local
 [`scripts/triptych-codex`](../../scripts/triptych-codex) command is a thin,
 in-process bootstrap for the co-located package engine.
 
@@ -115,7 +115,7 @@ worktree-removal or ref-transaction failures, receipt recovery, garbage
 collection, or concurrent retirement. Those retirement cases, broader crash
 and race recovery, broader security coverage, the complete installed lifecycle
 matrix, and the supported Python and Git CI matrix remain release gates; the
-first fourteen step-5 seams are protected by direct source tests and artifact
+first fifteen step-5 seams are protected by direct source tests and artifact
 provenance, and the installed abort checkpoint covers archived transaction
 restoration. Each remaining helper boundary still requires its own direct
 parity coverage.
@@ -142,10 +142,11 @@ field inventories and the deterministic in-place transform used to clear or
 archive a transaction and restore its recorded prior state. The existing
 engine wrappers still choose when to apply that transform, acquire the archive
 timestamp afterward, and own validation, persistence, and recovery. Typed run
-records and transition-graph enforcement remain deferred. Codex child and
-resolver environment construction, subprocess creation and command execution,
-repository authentication, effective-configuration probing, ref transactions,
-and lifecycle orchestration also remain together in `engine.py`.
+records and transition-graph enforcement remain deferred. Codex child,
+resolver, and linked-worktree pass-through environment enrichment, subprocess
+creation and command execution, repository authentication,
+effective-configuration probing, ref transactions, and lifecycle orchestration
+also remain together in `engine.py`.
 
 [`identity.py`](src/worktree_marshal/identity.py) owns the three frozen runtime
 records for a discovered repository, an authenticated linked worktree, and the
@@ -205,6 +206,14 @@ when no accepted sandbox option was supplied. Exact-signature engine wrappers
 retain their established names and supply the current policy objects, profile
 reopen hint, error type, and primitive operations lazily.
 
+The dependency-injected `codex_environment` operation now transforms the
+Git-sanitized base mapping supplied by the engine. It removes every built-in
+launcher control marker, sets the captured profile's real-Codex marker to
+the selected executable spelling, derives executable-path entries from that
+mapping, and prefixes the executable's lexical parent. Every entry exactly
+equal to that parent spelling is removed before the prefix is added; all other
+entries retain their order and spelling.
+
 Here “real Codex” means only a candidate that passed those point-in-time
 checks. Selection does not canonicalize the result, authenticate provenance or
 version, distinguish a copy or wrapper, pin a file descriptor or device/inode
@@ -212,16 +221,20 @@ identity, close the stat/access/use replacement window, or establish sandbox
 assurance. Symbolic links are followed while reading metadata, and either the
 link or file may later be replaced. The engine retains profile binding, its
 legacy wrappers and startup ordering, working-directory authentication and
-choice, child and resolver environment construction, process creation, and
-every post-exit and lifecycle decision.
+choice, child, resolver, and pass-through environment enrichment, role and
+temporary-directory markers, process creation and replacement, and every
+post-exit and lifecycle decision.
 
 The static grammar and fixed argv prefix rely on the selected executable
 continuing to honor the recognized Codex CLI grammar and option precedence.
 They do not repair the selector's executable-trust or replacement window,
-sanitize the child environment, constrain reads, credentials, providers, or
-network access, or themselves provide an operating-system sandbox. New Codex
-options, aliases, or subcommands require policy and parity review. No shared
-base-adapter contract has been introduced.
+constrain reads, credentials, providers, or network access, or themselves
+provide an operating-system sandbox. The base-environment transform performs
+targeted Git and launcher-control filtering only: it does not remove arbitrary
+host variables or credentials. Its `PATH` comparison is lexical and exact; it
+does not canonicalize, authenticate, or remove equivalent aliases and other
+entries. New Codex options, aliases, or subcommands require policy and parity
+review. No shared base-adapter contract has been introduced.
 
 [`state.py`](src/worktree_marshal/state.py) owns only the exact run-ID grammar,
 dependency-injected timestamp and random-suffix composition, and lexical

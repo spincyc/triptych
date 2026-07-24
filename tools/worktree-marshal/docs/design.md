@@ -28,9 +28,10 @@ authentication plus exact Git-administration line-format validation,
 `locks.py` now owns lock-descriptor bookkeeping and validation algorithms,
 `process.py` now owns child waiting and exit-status normalization,
 `adapters/codex.py` now owns Codex executable candidate selection and static
-argument policy, and `triptych_compat.py` binds the frozen compatibility
-profile. The rest of the engine will be separated behind these modules only
-after parity tests protect each seam:
+argument policy plus the sanitized Codex base-environment transform, and
+`triptych_compat.py` binds the frozen compatibility profile. The rest of the
+engine will be separated behind these modules only after parity tests protect
+each seam:
 
 ```text
 worktree_marshal/
@@ -47,7 +48,7 @@ worktree_marshal/
   conflicts.py           resolver scope, continuation, and abort
   retirement.py          separately authorized destructive retirement
   adapters/base.py       future agent contract; explicitly not introduced
-  adapters/codex.py      executable selection and argument policy now; environment later
+  adapters/codex.py      selection, arguments, and base environment now; enrichment later
   sandboxes/base.py      enforcement contract independent of an adapter
   resources/             generated integration assets such as the Make fragment
 ```
@@ -65,12 +66,12 @@ potentially reach launcher state, other checkouts, credentials, and the
 network. Post-run auditing detects and contains many mistakes and races but
 cannot prove that hostile code never touched unrelated state.
 
-A future `AgentAdapter` abstraction would own accepted arguments and
-environment construction. No common base-adapter contract exists at this
-boundary. A separate future `SandboxBackend` would own enforceable filesystem,
-process, and network claims. Marshal must not infer sandbox assurance merely
-because an adapter module exists. Any future trusted-command adapter must be
-an explicit opt-in and must state that it is unconfined.
+A future `AgentAdapter` abstraction would own a complete accepted-argument and
+environment contract. No common base-adapter contract exists at this boundary.
+A separate future `SandboxBackend` would own enforceable filesystem, process,
+and network claims. Marshal must not infer sandbox assurance merely because an
+adapter module exists. Any future trusted-command adapter must be an explicit
+opt-in and must state that it is unconfined.
 
 ## Extraction sequence
 
@@ -96,7 +97,7 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with fourteen behavior-preserving boundaries. The original
+has begun step 5 with fifteen behavior-preserving boundaries. The original
 pure Git policy kernel transforms an explicit environment mapping and Git
 argument sequence in `git.py`; `engine.py` retains its optional
 environment-acquisition wrapper, subprocess creation and command execution,
@@ -129,10 +130,10 @@ into `process.py`. The engine wrapper supplies lazy resolvers at the original
 signal-operation, handled-exception, timeout, and negative-status
 absolute-value lookup points. Process creation, command execution, executable
 invocation for Codex, working-directory authentication and choice,
-environments, inherited descriptors, and post-exit lifecycle decisions remain
-in `engine.py`. Direct tests also retain the legacy partial-setup behavior: a
-failure while installing the second handler occurs before the protected wait
-and does not roll back the first installation.
+environment enrichment, inherited descriptors, and post-exit lifecycle
+decisions remain in `engine.py`. Direct tests also retain the legacy
+partial-setup behavior: a failure while installing the second handler occurs
+before the protected wait and does not roll back the first installation.
 The sixth boundary extends `git.py` with deterministic parsing and rejection
 of command-bearing values in the effective-configuration bytes captured by the
 engine. The engine retains working-directory authentication, the exact Git
@@ -254,21 +255,45 @@ multi-agent mode, clears additional writable roots and sandbox permissions,
 and adds `--sandbox workspace-write` only when no accepted sandbox was
 supplied.
 
-The engine retains active-profile binding and lifecycle-hint selection,
+That boundary left active-profile binding and lifecycle-hint selection,
 wrapper call timing and early validation, executable-selection sequencing,
-working-directory authentication and choice, resolver prompt selection, child
-and resolver environment construction and role markers, process creation and
-in-place replacement, inherited descriptors, and every state, audit,
-post-exit, and lifecycle decision. This adapter module is not a generic
-`AgentAdapter` or an operating-system sandbox. Its static allow and deny policy
-is sensitive to Codex CLI version and parsing changes and relies on the
-selected executable honoring the expected argument meanings and precedence.
-It does not repair executable provenance or replacement risks, sanitize the
-environment, constrain reads, credentials, providers, or network access, or
-provide filesystem/process isolation by itself. No common base adapter,
-capability contract, new agent, state migration, durable identity change,
-sandbox backend, or release assurance is introduced by this seam.
-Direct tests freeze all fourteen extracted boundaries, their
+working-directory authentication and choice, resolver prompt selection, base
+and enriched environment construction, process creation and in-place
+replacement, inherited descriptors, and every state, audit, post-exit, and
+lifecycle decision in the engine. Its static allow and deny policy remains
+sensitive to Codex CLI version and parsing changes and relies on the selected
+executable honoring the expected argument meanings and precedence.
+
+The fifteenth boundary moves only the existing `codex_environment` base
+transform into `adapters/codex.py`. Its exact-signature engine wrapper retains
+active-profile capture at the established point and lazily supplies the
+Git-sanitized environment, complete built-in control-marker inventory,
+stringification, executable-path parsing, and path-separator operations. The
+adapter removes every control-marker name from that supplied mapping, sets the
+captured profile's real-Codex marker to the selected executable spelling, and
+derives the current executable-path entries from the resulting environment.
+It prefixes the selected executable's lexical parent and removes every
+existing entry exactly equal to that parent spelling while preserving all
+other entries and their order.
+
+The engine retains child, resolver, and linked-worktree pass-through
+enrichment, including role, run, profile, agent, and run-owned temporary-path
+values as applicable. It also retains profile capture and call timing for
+those consumers, working-directory authentication and choice, process
+creation and `execve` replacement, inherited descriptors, and every state,
+audit, post-exit, and lifecycle decision.
+
+The base transform is targeted filtering, not complete environment isolation:
+it does not remove arbitrary host variables or credentials or constrain reads,
+providers, subprocesses, or network access. Its `PATH` comparison is lexical
+and exact, not canonical or identity-based, so aliases, equivalent spellings,
+relative or empty entries, and all unrelated entries remain. It neither
+strengthens executable provenance or selection/use replacement guarantees nor
+provides an operating-system sandbox. The adapter module is still not a
+generic `AgentAdapter`; no common base adapter, capability contract, new agent,
+state migration, durable identity change, sandbox backend, or release
+assurance is introduced by this seam.
+Direct tests freeze all fifteen extracted boundaries, their
 compatibility surfaces, artifact inclusion, field and operation order,
 partial-failure behavior, and the dynamic restoration of every vocabulary
 value currently accepted in

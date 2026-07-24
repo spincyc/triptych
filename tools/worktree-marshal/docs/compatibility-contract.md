@@ -207,11 +207,22 @@ and sandbox permissions, and defaults to Codex `workspace-write` sandboxing.
 A caller may narrow that to `read-only` but may not request a broader sandbox
 through the launcher. The adapter module now owns executable candidate
 selection, the static option and command sets, scoped option scanning, prompt
-normalization, and this argument-level configuration. The engine retains
-profile binding and lifecycle hints, compatibility wrappers and validation
-timing, working-directory authentication and choice, child and resolver
-environment construction, process creation, and lifecycle policy. No common
+normalization, this argument-level configuration, and the sanitized Codex base
+environment transform. The engine retains profile binding and lifecycle hints,
+compatibility wrappers and validation timing, working-directory authentication
+and choice, child, resolver, and linked-worktree pass-through environment
+enrichment, process creation and replacement, and lifecycle policy. No common
 base-adapter contract exists yet.
+
+The base transform starts from the engine-supplied Git-sanitized mapping. It
+removes all built-in Triptych and Worktree Marshal role, real-Codex, run,
+profile, and agent marker names, then sets `TRIPTYCH_CODEX_REAL` to the
+selected executable spelling. It prefixes that executable's lexical parent to
+the executable path, removing every prior entry with exactly the same string
+while preserving every other entry and its order. The engine later adds only
+the role, run marker, and run-owned temporary-directory values appropriate to
+an ordinary Triptych worker or resolver; linked-worktree pass-through
+enrichment remains separate and narrower.
 
 Selection does not verify executable provenance, signature, version, or actual
 Codex behavior; exclude copies or wrappers; pin a descriptor or device/inode
@@ -220,11 +231,15 @@ assurance. Metadata lookup follows symbolic links, and the selected link or
 file may be replaced later. The static allow and deny policy is
 version-sensitive and assumes that the selected executable continues to honor
 the recognized Codex argument grammar and precedence. Argument construction
-does not sanitize the child environment, constrain reads, credentials,
-providers, or network access, or itself create an operating-system sandbox. A
-generic core must not claim the same containment for another agent unless an
-agent-specific policy and enforcement layer provide and test equivalent
-behavior.
+does not constrain reads, credentials, providers, or network access or itself
+create an operating-system sandbox. The base-environment transform removes
+only Git-sensitive channels through the existing Git sanitizer and the
+explicit launcher control markers above; it does not remove arbitrary host
+variables or credentials. Its executable-path comparison does not
+canonicalize or authenticate entries or remove aliases and equivalent
+spellings. A generic core must not claim the same containment for another
+agent unless an agent-specific policy and enforcement layer provide and test
+equivalent behavior.
 
 ## Threat boundary and platform assumptions
 

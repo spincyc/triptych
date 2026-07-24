@@ -132,6 +132,33 @@ class CodexAdapterTests(unittest.TestCase):
             **dependencies,
         )
 
+    def build_environment(
+        self,
+        real_codex: Path,
+        *,
+        profile: object | None = None,
+        **overrides: object,
+    ) -> dict[str, str]:
+        dependencies = {
+            "sanitized_environment": lambda: lambda: {},
+            "control_environments": lambda: (),
+            "stringifier": lambda: str,
+            "executable_path": lambda: lambda _environment: [],
+            "path_separator": lambda: os.pathsep,
+        }
+        dependencies.update(overrides)
+        return self.adapter.codex_environment(
+            real_codex,
+            profile=(
+                SimpleNamespace(
+                    real_codex_environment=ENVIRONMENT_NAME,
+                )
+                if profile is None
+                else profile
+            ),
+            **dependencies,
+        )
+
     def test_adapter_import_is_cycle_free_and_environment_neutral(self) -> None:
         script = (
             "import os, sys; "
@@ -2478,6 +2505,526 @@ class CodexAdapterTests(unittest.TestCase):
                 ),
                 argv_result,
             )
+
+    def test_environment_kernel_and_engine_wrapper_surfaces_are_exact(
+        self,
+    ) -> None:
+        kernel = inspect.signature(
+            self.adapter.codex_environment
+        ).parameters
+        self.assertEqual(
+            tuple(kernel),
+            (
+                "real_codex",
+                "profile",
+                "sanitized_environment",
+                "control_environments",
+                "stringifier",
+                "executable_path",
+                "path_separator",
+            ),
+        )
+        self.assertIs(
+            kernel["real_codex"].kind,
+            inspect.Parameter.POSITIONAL_OR_KEYWORD,
+        )
+        for name in tuple(kernel)[1:]:
+            self.assertIs(
+                kernel[name].kind,
+                inspect.Parameter.KEYWORD_ONLY,
+            )
+        for parameter in kernel.values():
+            self.assertIs(parameter.default, inspect.Parameter.empty)
+
+        wrapper = inspect.signature(
+            self.engine.codex_environment
+        ).parameters
+        self.assertEqual(tuple(wrapper), ("real_codex",))
+        self.assertIs(
+            wrapper["real_codex"].kind,
+            inspect.Parameter.POSITIONAL_OR_KEYWORD,
+        )
+        self.assertIs(
+            wrapper["real_codex"].default,
+            inspect.Parameter.empty,
+        )
+        self.assertIs(
+            self.engine._codex_environment,
+            self.adapter.codex_environment,
+        )
+
+    def test_environment_transform_mutates_and_returns_the_sanitized_mapping(
+        self,
+    ) -> None:
+        controls = (
+            "INACTIVE_ROLE",
+            ENVIRONMENT_NAME,
+            "INACTIVE_REAL_CODEX",
+        )
+        source = {
+            "KEEP": "value",
+            "PATH": "inherited",
+            "INACTIVE_ROLE": "worker",
+            ENVIRONMENT_NAME: "/attacker/codex",
+            "INACTIVE_REAL_CODEX": "/inactive/codex",
+        }
+        real_codex = Path("/selected/bin/codex")
+        snapshots: list[dict[str, str]] = []
+
+        def executable_path(
+            environment: dict[str, str],
+        ) -> list[str]:
+            self.assertIs(environment, source)
+            snapshots.append(dict(environment))
+            return [
+                "/other",
+                "/selected/bin",
+                "",
+                "/other",
+                "/selected/bin",
+                "/third",
+                "",
+            ]
+
+        observed = self.build_environment(
+            real_codex,
+            sanitized_environment=lambda: lambda: source,
+            control_environments=lambda: controls,
+            executable_path=lambda: executable_path,
+            path_separator=lambda: "<>",
+        )
+
+        self.assertIs(observed, source)
+        self.assertEqual(
+            snapshots,
+            [
+                {
+                    "KEEP": "value",
+                    "PATH": "inherited",
+                    ENVIRONMENT_NAME: str(real_codex),
+                }
+            ],
+        )
+        self.assertEqual(
+            source,
+            {
+                "KEEP": "value",
+                ENVIRONMENT_NAME: str(real_codex),
+                "PATH": (
+                    "/selected/bin<>/other<><>/other<>/third<>"
+                ),
+            },
+        )
+
+        relative = Path("relative/../codex")
+        relative_environment = self.build_environment(
+            relative,
+            sanitized_environment=lambda: lambda: {},
+            executable_path=lambda: (
+                lambda _environment: [
+                    "relative/..",
+                    "",
+                    "/elsewhere",
+                    "relative/..",
+                ]
+            ),
+            path_separator=lambda: "|",
+        )
+        self.assertEqual(
+            relative_environment,
+            {
+                ENVIRONMENT_NAME: "relative/../codex",
+                "PATH": "relative/..||/elsewhere",
+            },
+        )
+
+        generic_profile = self.engine.BUILTIN_PROFILES["generic-v1"]
+        inherited_controls = {
+            name: f"inherited:{name}"
+            for name in self.engine.CONTROL_ENVIRONMENTS
+        }
+        inherited_controls["PATH"] = "inherited-path"
+        actual_controls = self.build_environment(
+            real_codex,
+            profile=generic_profile,
+            sanitized_environment=lambda: lambda: inherited_controls,
+            control_environments=lambda: (
+                self.engine.CONTROL_ENVIRONMENTS
+            ),
+        )
+        self.assertEqual(
+            {
+                name: actual_controls.get(name)
+                for name in self.engine.CONTROL_ENVIRONMENTS
+            },
+            {
+                name: (
+                    str(real_codex)
+                    if name == generic_profile.real_codex_environment
+                    else None
+                )
+                for name in self.engine.CONTROL_ENVIRONMENTS
+            },
+        )
+
+    def test_environment_transform_preserves_exact_evaluation_order(
+        self,
+    ) -> None:
+        events: list[tuple[str, object]] = []
+        real_parent = object()
+
+        class RealCodex:
+            @property
+            def parent(real_self) -> object:
+                events.append(("real-parent", None))
+                return real_parent
+
+        real_codex = RealCodex()
+
+        class Profile:
+            @property
+            def real_codex_environment(profile_self) -> str:
+                events.append(("profile-name", None))
+                return ENVIRONMENT_NAME
+
+        class Environment(dict):
+            def pop(
+                environment_self,
+                name: str,
+                default: object = None,
+            ) -> object:
+                events.append(("pop", name))
+                return super().pop(name, default)
+
+            def __setitem__(
+                environment_self,
+                name: str,
+                value: str,
+            ) -> None:
+                events.append(("set", (name, value)))
+                super().__setitem__(name, value)
+
+        environment = Environment(
+            {
+                "FIRST": "one",
+                ENVIRONMENT_NAME: "old",
+                "PATH": "old-path",
+            }
+        )
+        stringifiers = iter(
+            (
+                lambda value: (
+                    events.append(("stringify-real", value))
+                    or "REAL"
+                ),
+                lambda value: (
+                    events.append(("stringify-parent", value))
+                    or "PARENT"
+                ),
+            )
+        )
+
+        def sanitize() -> dict[str, str]:
+            events.append(("sanitize", None))
+            return environment
+
+        def sanitized_environment() -> object:
+            events.append(("sanitized-environment", None))
+            return sanitize
+
+        def control_environments() -> tuple[str, ...]:
+            events.append(("control-environments", None))
+            return ("FIRST", ENVIRONMENT_NAME)
+
+        def stringifier() -> object:
+            events.append(("stringifier-provider", None))
+            return next(stringifiers)
+
+        class PathEntry(str):
+            def __ne__(entry_self, other: object) -> bool:
+                events.append(("compare-entry", str(entry_self)))
+                return super().__ne__(other)
+
+        def get_exec_path(
+            received: dict[str, str],
+        ) -> list[str]:
+            events.append(("executable-path-call", dict(received)))
+            return [
+                PathEntry("PARENT"),
+                PathEntry(""),
+                PathEntry("tail"),
+            ]
+
+        def executable_path() -> object:
+            events.append(("executable-path-provider", None))
+            return get_exec_path
+
+        def path_separator() -> str:
+            events.append(("path-separator", None))
+            return ":"
+
+        observed = self.build_environment(
+            real_codex,
+            profile=Profile(),
+            sanitized_environment=sanitized_environment,
+            control_environments=control_environments,
+            stringifier=stringifier,
+            executable_path=executable_path,
+            path_separator=path_separator,
+        )
+
+        self.assertIs(observed, environment)
+        self.assertEqual(
+            events,
+            [
+                ("sanitized-environment", None),
+                ("sanitize", None),
+                ("control-environments", None),
+                ("pop", "FIRST"),
+                ("pop", ENVIRONMENT_NAME),
+                ("stringifier-provider", None),
+                ("stringify-real", real_codex),
+                ("profile-name", None),
+                ("set", (ENVIRONMENT_NAME, "REAL")),
+                ("executable-path-provider", None),
+                (
+                    "executable-path-call",
+                    {
+                        "PATH": "old-path",
+                        ENVIRONMENT_NAME: "REAL",
+                    },
+                ),
+                ("stringifier-provider", None),
+                ("real-parent", None),
+                ("stringify-parent", real_parent),
+                ("path-separator", None),
+                ("compare-entry", "PARENT"),
+                ("compare-entry", ""),
+                ("compare-entry", "tail"),
+                ("set", ("PATH", "PARENT::tail")),
+            ],
+        )
+
+    def test_environment_transform_leaves_partial_mutation_on_failures(
+        self,
+    ) -> None:
+        class DependencyFailure(RuntimeError):
+            pass
+
+        sanitize_failure = DependencyFailure("sanitize")
+
+        def broken_sanitizer() -> dict[str, str]:
+            raise sanitize_failure
+
+        with self.assertRaises(DependencyFailure) as caught:
+            self.build_environment(
+                Path("/bin/codex"),
+                sanitized_environment=lambda: broken_sanitizer,
+            )
+        self.assertIs(caught.exception, sanitize_failure)
+        self.assertIsNone(caught.exception.__cause__)
+
+        pop_failure = DependencyFailure("pop")
+
+        class BrokenPopEnvironment(dict):
+            def pop(
+                environment_self,
+                name: str,
+                default: object = None,
+            ) -> object:
+                if name == "SECOND":
+                    raise pop_failure
+                return super().pop(name, default)
+
+        pop_environment = BrokenPopEnvironment(
+            {"FIRST": "one", "SECOND": "two", "PATH": "old"}
+        )
+        with self.assertRaises(DependencyFailure) as caught:
+            self.build_environment(
+                Path("/bin/codex"),
+                sanitized_environment=lambda: lambda: pop_environment,
+                control_environments=lambda: ("FIRST", "SECOND"),
+            )
+        self.assertIs(caught.exception, pop_failure)
+        self.assertIsNone(caught.exception.__cause__)
+        self.assertEqual(
+            pop_environment,
+            {"SECOND": "two", "PATH": "old"},
+        )
+
+        path_failure = DependencyFailure("executable path")
+        path_environment = {
+            "CONTROL": "value",
+            ENVIRONMENT_NAME: "old",
+            "PATH": "old",
+        }
+
+        def broken_executable_path(
+            _environment: dict[str, str],
+        ) -> list[str]:
+            raise path_failure
+
+        with self.assertRaises(DependencyFailure) as caught:
+            self.build_environment(
+                Path("/selected/codex"),
+                sanitized_environment=lambda: lambda: path_environment,
+                control_environments=lambda: (
+                    "CONTROL",
+                    ENVIRONMENT_NAME,
+                ),
+                executable_path=lambda: broken_executable_path,
+            )
+        self.assertIs(caught.exception, path_failure)
+        self.assertIsNone(caught.exception.__cause__)
+        self.assertEqual(
+            path_environment,
+            {
+                ENVIRONMENT_NAME: "/selected/codex",
+                "PATH": "old",
+            },
+        )
+
+        separator_failure = DependencyFailure("separator")
+        separator_environment = {"PATH": "old"}
+
+        def broken_separator() -> str:
+            raise separator_failure
+
+        with self.assertRaises(DependencyFailure) as caught:
+            self.build_environment(
+                Path("/selected/codex"),
+                sanitized_environment=lambda: (
+                    lambda: separator_environment
+                ),
+                executable_path=lambda: lambda _environment: ["/tail"],
+                path_separator=broken_separator,
+            )
+        self.assertIs(caught.exception, separator_failure)
+        self.assertIsNone(caught.exception.__cause__)
+        self.assertEqual(
+            separator_environment,
+            {
+                ENVIRONMENT_NAME: "/selected/codex",
+                "PATH": "old",
+            },
+        )
+
+    def test_environment_engine_wrapper_captures_profile_and_rebinds_lazily(
+        self,
+    ) -> None:
+        profile = object()
+        real_codex = Path("/codex")
+        kernel_result = {"result": "environment"}
+        rebound_environment = {"rebound": "environment"}
+        rebound_controls = object()
+        first_stringifier = object()
+        second_stringifier = object()
+        rebound_executable_path = object()
+        rebound_separator = object()
+
+        def rebound_sanitizer() -> dict[str, str]:
+            return rebound_environment
+
+        def kernel(
+            received_real: Path,
+            **dependencies: object,
+        ) -> dict[str, str]:
+            self.assertIs(received_real, real_codex)
+            self.assertIs(dependencies.pop("profile"), profile)
+            self.engine.active_profile = lambda: self.fail(
+                "active profile must be captured before the kernel"
+            )
+            self.engine.sanitized_git_environment = rebound_sanitizer
+            self.engine.CONTROL_ENVIRONMENTS = rebound_controls
+            self.engine.str = first_stringifier
+            self.engine.os = SimpleNamespace(
+                get_exec_path=rebound_executable_path,
+                pathsep=object(),
+            )
+
+            self.assertIs(
+                dependencies["sanitized_environment"](),
+                rebound_sanitizer,
+            )
+            self.assertIs(rebound_sanitizer(), rebound_environment)
+            self.assertIs(
+                dependencies["control_environments"](),
+                rebound_controls,
+            )
+            self.assertIs(
+                dependencies["stringifier"](),
+                first_stringifier,
+            )
+            self.engine.str = second_stringifier
+            self.assertIs(
+                dependencies["stringifier"](),
+                second_stringifier,
+            )
+            self.assertIs(
+                dependencies["executable_path"](),
+                rebound_executable_path,
+            )
+            self.engine.os = SimpleNamespace(
+                get_exec_path=object(),
+                pathsep=rebound_separator,
+            )
+            self.assertIs(
+                dependencies["path_separator"](),
+                rebound_separator,
+            )
+            self.assertEqual(
+                set(dependencies),
+                {
+                    "sanitized_environment",
+                    "control_environments",
+                    "stringifier",
+                    "executable_path",
+                    "path_separator",
+                },
+            )
+            return kernel_result
+
+        with (
+            mock.patch.object(
+                self.engine,
+                "active_profile",
+                return_value=profile,
+            ) as active_profile,
+            mock.patch.object(
+                self.engine,
+                "_codex_environment",
+                side_effect=kernel,
+            ) as adapter_kernel,
+            mock.patch.object(
+                self.engine,
+                "sanitized_git_environment",
+                return_value={"initial": "environment"},
+            ),
+            mock.patch.object(
+                self.engine,
+                "CONTROL_ENVIRONMENTS",
+                object(),
+            ),
+            mock.patch.object(
+                self.engine,
+                "str",
+                object(),
+                create=True,
+            ),
+            mock.patch.object(
+                self.engine,
+                "os",
+                SimpleNamespace(
+                    get_exec_path=object(),
+                    pathsep=object(),
+                ),
+            ),
+        ):
+            observed = self.engine.codex_environment(real_codex)
+
+        self.assertIs(observed, kernel_result)
+        active_profile.assert_called_once_with()
+        adapter_kernel.assert_called_once()
 
     def test_real_filesystem_override_and_path_behavior(self) -> None:
         class SelectionError(RuntimeError):

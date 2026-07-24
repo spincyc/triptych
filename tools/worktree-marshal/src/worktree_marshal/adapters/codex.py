@@ -1,15 +1,15 @@
-"""Codex executable selection and static argument policy.
+"""Codex executable, argument, and base-environment policy.
 
 This module owns read-only executable selection, the supported Codex CLI
-grammar, prompt delimiting, and fixed argument-level sandbox configuration.
-Profile binding, worktree selection and authentication, environment
-construction, process creation, and lifecycle decisions remain in the
-lifecycle engine.
+grammar, prompt delimiting, fixed argument-level sandbox configuration, and
+the sanitized base environment for Codex. Profile binding, worktree selection
+and authentication, role-specific environment enrichment, process creation,
+and lifecycle decisions remain in the lifecycle engine.
 """
 
 from __future__ import annotations
 
-from collections.abc import Callable, Mapping, Sized
+from collections.abc import Callable, Iterable, Mapping, Sized
 from pathlib import Path
 from typing import Protocol, Sequence
 
@@ -345,3 +345,40 @@ def codex_argv(
     if not supplied_sandbox:
         enforced.extend(("--sandbox", "workspace-write"))
     return [*enforced, *normalized]
+
+
+def codex_environment(
+    real_codex: Path,
+    *,
+    profile: CodexProfile,
+    sanitized_environment: Callable[
+        [],
+        Callable[[], dict[str, str]],
+    ],
+    control_environments: Callable[[], Iterable[str]],
+    stringifier: Callable[[], Callable[[object], str]],
+    executable_path: Callable[
+        [],
+        Callable[[Mapping[str, str]], list[str]],
+    ],
+    path_separator: Callable[[], str],
+) -> dict[str, str]:
+    """Construct the sanitized base environment for a Codex process."""
+
+    environment = sanitized_environment()()
+    for name in control_environments():
+        environment.pop(name, None)
+    environment[profile.real_codex_environment] = stringifier()(real_codex)
+    path_entries = executable_path()(environment)
+    real_parent = stringifier()(real_codex.parent)
+    environment["PATH"] = path_separator().join(
+        [
+            real_parent,
+            *[
+                entry
+                for entry in path_entries
+                if entry != real_parent
+            ],
+        ]
+    )
+    return environment

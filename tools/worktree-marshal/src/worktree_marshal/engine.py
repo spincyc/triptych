@@ -35,6 +35,7 @@ from .adapters.codex import (
     ROOT_FLAG_OPTIONS,
     ROOT_VALUE_OPTIONS,
     codex_argv as _codex_argv,
+    codex_environment as _codex_environment,
     normalize_codex_arguments as _normalize_codex_arguments,
     scan_allowed_options as _scan_allowed_options,
     select_codex_executable as _select_codex_executable,
@@ -1298,16 +1299,15 @@ def resolver_environment(manifest: dict, real_codex: Path) -> dict[str, str]:
 
 def codex_environment(real_codex: Path) -> dict[str, str]:
     profile = active_profile()
-    environment = sanitized_git_environment()
-    for name in CONTROL_ENVIRONMENTS:
-        environment.pop(name, None)
-    environment[profile.real_codex_environment] = str(real_codex)
-    path_entries = os.get_exec_path(environment)
-    real_parent = str(real_codex.parent)
-    environment["PATH"] = os.pathsep.join(
-        [real_parent, *[entry for entry in path_entries if entry != real_parent]]
+    return _codex_environment(
+        real_codex,
+        profile=profile,
+        sanitized_environment=lambda: sanitized_git_environment,
+        control_environments=lambda: CONTROL_ENVIRONMENTS,
+        stringifier=lambda: str,
+        executable_path=lambda: os.get_exec_path,
+        path_separator=lambda: os.pathsep,
     )
-    return environment
 
 
 def wait_for_child(process: subprocess.Popen) -> int:
