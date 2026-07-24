@@ -245,3 +245,39 @@ context = "The complete official English range was checked for the article's bou
 claim_keys = ["conciliar-ecumenical-program"]
 verified_on = "2026-07-24"
 source_fingerprint = "sha256:15440c7fd2bd258ab84e997785fe36c1019b2633bce5c2cabb4329d3195ad405"
+
+[[bindings]]
+source_id = "work.second-vatican-council.nostra-aetate"
+role = "context"
+states = ["cataloged"]
+context = "The work identity supports the article's fourth-session chronology and sixteen-document inventory by title, declaration genre, 28 October 1965 promulgation date, and relation-to-non-Christian-religions subject. It does not by itself establish any numbered doctrinal or moral claim."
+
+[[bindings]]
+source_id = "passage.second-vatican-council.nostra-aetate.english-vatican-web-2026-07-24.2"
+loci = ["2"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official English article was checked for the reader's and authority matrix's bounded account of what is true and holy in other religions, Christ as the fullness of religious life, and dialogue joined to Christian witness. The passage supports neither parallel saving religions nor the claim that mission is unnecessary."
+claim_keys = ["other-religions"]
+verified_on = "2026-07-24"
+source_fingerprint = "sha256:f37774cd5e18726a75764ea5c5be10c9b0dd7ea567f9a28655ba2499986b4bbc"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.nostra-aetate.english-vatican-web-2026-07-24.4"
+loci = ["4"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official English article was checked for the fourth-session summary, inventory, and authority discussion: Christ's Passion cannot be charged against all Jews then without distinction or against Jews today, Jews must not be presented as rejected or accursed by God, and the Church decries anti-Jewish hatred, persecution, and antisemitism."
+claim_keys = ["jewish-collective-guilt", "antisemitism"]
+verified_on = "2026-07-24"
+source_fingerprint = "sha256:26f7b79da520af10951ca8153011f4c7309bc60c0e684e6f9a6a69fa99b4670b"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.nostra-aetate.english-vatican-web-2026-07-24.5"
+loci = ["5"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official English article was checked for the inventory's general claim that the Church rejects discrimination or harassment based on race, color, condition of life, or religion. It is kept distinct from article 4's specifically anti-Jewish teaching and is not represented as a complete account of current civil law."
+claim_keys = ["discrimination"]
+verified_on = "2026-07-24"
+source_fingerprint = "sha256:43d0a69e0d345354fc5798d7dd9115444fd4516e8807145f74b8d7d0cd4513df"

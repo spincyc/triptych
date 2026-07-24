@@ -1,0 +1,11 @@
+schema = 1
+record_type = "work"
+id = "work.second-vatican-council.nostra-aetate"
+title = "Nostra aetate"
+responsible = "Second Vatican Council"
+work_type = "declaration"
+alternate_titles = ["Declaratio de Ecclesiae Habitudine ad Religiones Non-Christianas", "Declaration on the Relation of the Church to Non-Christian Religions"]
+languages = ["la"]
+locus_pattern = '(?:[1-5])(?:-(?:[1-5]))?'
+description = "The Second Vatican Council's Declaration on the Relation of the Church to Non-Christian Religions, solemnly promulgated by Pope Paul VI on 28 October 1965. Its numbered articles 1-5 address humanity's common origin and end, the Church's relation to non-Christian religions, Muslims, the Jewish people, antisemitism, and discrimination."
+relations = ["work.holy-see.acta-apostolicae-sedis"]

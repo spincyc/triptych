@@ -317,4 +317,26 @@ ecclesiastical review the repository might require.
 
 The source and audit records were revised in the corpus-wide omission audit. A settled two-pass build produced this 22-page PDF with SHA-256 `280f76a18b37c34684b8da84f8e6a46f46cbfbede8b06b9d0f335a572dd09cc8`. The final log contained no fatal error, undefined reference, overfull or underfull box, or unresolved rerun or layout warning. Generation metadata, `qpdf` structure, Letter page size, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed. Review rasters were generated through `scripts/pdf-review`; every rendered page was visually inspected for clipping, overlap, accidental blanks, bad breaks, footer and metadata placement, and legibility. The reviewed build was installed at its mirrored `doc/` path and verified byte-identical.
 
-This is internal production review only; it grants no independent editorial, specialist, rights, theological, or ecclesiastical approval. The exact current installed PDF is release-cleared by the 21 July 2026 exact-current-snapshot exception; independent work-specific rights review remains incomplete, and the exception supplies no missing review or approval.
+This is internal production review only; it grants no independent editorial, specialist, rights, theological, or ecclesiastical approval. That exact 21 July 2026 installed snapshot was release-cleared by the dated exact-current-snapshot exception; independent work-specific rights review remained incomplete, and the exception supplied no missing review or approval.
+
+## *Nostra aetate* source-reuse audit — 2026-07-24
+
+The exact official English articles 4 and 5 were checked separately for the
+biography's reception boundary. Article 4 controls the present Catholic
+teaching about the Jewish people, collective guilt, and antisemitism; article
+5 controls the Declaration's broader rejection of discrimination. The
+reader-facing treatment, reference, source audit, and publication bindings
+were corrected so that neither article stands in for the other.
+
+A settled two-pass build produced the 22-page PDF with SHA-256
+`05d1b1b792c5774e0aa10822e9722d3a844e442a09c54e5573bd5913fa2c275a`.
+The final log contained no fatal error, unresolved reference, overflow,
+underflow, rerun, or layout warning. Generation metadata, PDF structure and
+metadata, Letter page size, embedded/subsetted fonts with Unicode maps, and
+nonempty text extraction passed. Review rasters were generated through
+`scripts/pdf-review`; every physical page was visually inspected, with the
+revised reception section, references, dense pages, and terminal metadata
+checked at full size. The reviewed build was installed at its mirrored
+`doc/` path and verified byte-identical. This source audit adds no independent
+specialist, theological, rights, or ecclesiastical review, and no prior
+exact-byte distribution clearance attaches to the changed render.
