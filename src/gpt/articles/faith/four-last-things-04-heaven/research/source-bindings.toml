@@ -1,0 +1,31 @@
+schema = 2
+record_type = "bindings"
+document = "articles/faith/four-last-things-04-heaven"
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["988-1019", "1023-1029", "1042-1053"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The official English Catechism edition controls bodily resurrection, beatific vision, identity in Christ, communion, and new creation. The local audit records direct official-page checks without claiming a retained exact artifact for all loci."
+
+[[bindings]]
+source_id = "passage.second-vatican-council.gaudium-et-spes.english-vatican-web-2026-07-23.1-93"
+loci = ["1-93"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete registered council passage was inspected at paragraph 39 for the unknown mode of transformation, new earth, continuity of charity's fruits, and the refusal of both earthly utopianism and eschatological neglect."
+verified_on = "2026-07-24"
+source_fingerprint = "sha256:ce58ff573c7e333ff5837d9b6088efd8f12b46611421a2d9c402b83e4dbbcf85"
+
+[[bindings]]
+source_id = "edition.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887"
+role = "reception"
+states = ["cataloged"]
+context = "Irenaeus is used as an early witness to resurrection of the flesh and continuity of the saved person. No publication-specific facsimile verification is claimed."
+
+[[bindings]]
+source_id = "edition.augustine.de-civitate-dei.dods-1871"
+role = "reception"
+states = ["cataloged"]
+context = "Book 22 is used for resurrection and final beatitude as a patristic theological witness, not as critical-text control."

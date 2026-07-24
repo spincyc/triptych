@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-07-24"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:a0102cda4a23e8d460ec3f3df2d34381fdc39089b8e21c18989500ac8c968612"
+inventory_snapshot = "sha256:f620900378a65484267c6355c48fd5bb010ea2f68cee12570855dfc7b32cc872"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:2947c8f04bd1936f250fa112de037da4be866b8a78b9c272d295ade2645dfc74"
 canonical_catalog_snapshot = "sha256:05c378fbfa16da898c8e46fdea417b0b54b1d1ef0adde4af3ba5c03fc8421c16"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:17837bcc5df8caa6d75035c5d4c2b821ab7aae8daac97ab16b765a7c8575dc5d"
+snapshot = "sha256:dd7040bf63343dd97c788f8a899b638ed2fccda87e66503a9162df9dd2da51b2"
 
 [[families]]
 id = "family.acta.aas-ass"
@@ -537,22 +537,22 @@ record_paths = ["src/gpt/articles/faith/council-missal-and-crisis/research/sourc
 
 [[review_units]]
 owner_id = "articles/faith/four-last-things-01-death"
-surface_snapshot = "sha256:ad3938fe74c461e86e4efcfe35e90925836d52ec2c76c619cc520d39f95c9ecb"
+surface_snapshot = "sha256:b31480f58f483551fc61a872a178dc094963f0d680c836e5d8556be5db2f00a7"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/four-last-things-02-judgment"
-surface_snapshot = "sha256:7fb227ec7ad4c1815137a17f2f1921b4e578b5538f9b2e56588ba8c6c0b3b4d1"
+surface_snapshot = "sha256:7f2ea080bd39fb45464c725cb07d5dec3412040a51158d60936921b6adb021fc"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/four-last-things-03-hell"
-surface_snapshot = "sha256:4ec838f09f3df7285cdb185df46ade659b6e1676183d0666314da0238e3fee9b"
+surface_snapshot = "sha256:f662d0d0364626b7f98f1f20637b7041626eae1991f15d5d06a2fd5da0ade651"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/four-last-things-04-heaven"
-surface_snapshot = "sha256:76ede538b8b6eae7fe899bd74a22f101b3aad2dcd0769dac6d1ae97cd4e56005"
+surface_snapshot = "sha256:eb87c9b9168b4c1a06c8816967665c51e39b82868c78afaf198f8813b2204604"
 review_state = "pending"
 
 [[review_units]]

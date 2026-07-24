@@ -1,0 +1,25 @@
+schema = 2
+record_type = "bindings"
+document = "articles/faith/four-last-things-01-death"
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["624-635", "988-1014", "1020-1022", "2276-2279"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The official English Catechism edition controls Christ's death, death as separation of soul and body, the intermediate state, resurrection, and end-of-life moral distinctions. The local audit records direct official-page checks without claiming a retained exact artifact for every locus."
+
+[[bindings]]
+source_id = "passage.second-vatican-council.gaudium-et-spes.english-vatican-web-2026-07-23.16-22"
+loci = ["16-22"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The registered complete-context passage was checked for the council's account of the human riddle before death, the seed of eternity, Christ's victory, and the vocation of the whole person."
+verified_on = "2026-07-24"
+source_fingerprint = "sha256:ec8a9a63b695fa783f7407672d00acb2b0f51aab5295d1a11995087c04425943"
+
+[[bindings]]
+source_id = "edition.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887"
+role = "reception"
+states = ["cataloged"]
+context = "Irenaeus is used as a patristic witness to bodily continuity and resurrection, not as sole doctrinal control. No publication-specific facsimile collation is claimed."
