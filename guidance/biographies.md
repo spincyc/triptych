@@ -1,6 +1,6 @@
 # Historical and Hagiographic Biographies
 
-This profile governs source-first lives beneath `src/gpt/biographies/`. They are
+This profile governs source-first lives beneath `src/<provider>/biographies/`. They are
 historical studies of persons and their ecclesial reception, not devotional
 legendaries, critical editions, canonization dossiers, or general articles.
 

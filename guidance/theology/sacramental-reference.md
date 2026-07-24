@@ -1,6 +1,6 @@
 # Sacramental Reference Works
 
-This profile governs the canonical treatise at `src/gpt/theology/sacraments/`,
+This profile governs the canonical treatise at `src/<provider>/theology/sacraments/`,
 its mechanically derived at-a-glance companion, and their shared fragments.
 
 ## Governing priorities

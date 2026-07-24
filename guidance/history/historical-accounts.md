@@ -1,7 +1,7 @@
 # Historical Accounts
 
 This profile governs source-first histories of texts, institutions, practices,
-events, and movements beneath `src/gpt/history/<series>/<numbered-document>/`.
+events, and movements beneath `src/<provider>/history/<series>/<numbered-document>/`.
 Use another profile when doctrine, a liturgical formulary, current law, devotion,
 biography, or an apparition judgment is the governing task. A bounded module in
 one of those fields names and follows its additional profile; historical

@@ -1,7 +1,7 @@
 # Virtues Reference Work
 
 This profile governs the comprehensive reference at
-`src/gpt/theology/virtues/`. It is not a trait catalog, catechism, discursive
+`src/<provider>/theology/virtues/`. It is not a trait catalog, catechism, discursive
 article, or instrument for diagnosing another person.
 
 ## Governing priorities

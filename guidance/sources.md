@@ -24,7 +24,8 @@ Apply these priorities in order:
    consumer without silently rewriting their arguments.
 
 The source library is provider-neutral. External works and artifacts do not
-belong to `src/gpt/` merely because a GPT-assisted publication first used them.
+belong to a provider branch merely because a provider-assisted publication
+first used them.
 
 ## Identity model
 

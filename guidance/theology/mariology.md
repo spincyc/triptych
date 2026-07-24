@@ -1,7 +1,7 @@
 # Mariological Reference Works
 
 This profile governs repeatable Marian-prayer, Rosary, Marian-dogma, and
-apparition-judgment references beneath `src/gpt/theology/mariology/`. It
+apparition-judgment references beneath `src/<provider>/theology/mariology/`. It
 supplies a shared doctrinal core and separate genre addenda; do not merge their
 templates.
 

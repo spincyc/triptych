@@ -1,6 +1,6 @@
 # Novena Pious Exercises
 
-This profile governs numbered novenas beneath `src/gpt/devotions/novenas/` and
+This profile governs numbered novenas beneath `src/<provider>/devotions/novenas/` and
 their mechanically derived daily-prayer companions. A novena is a sustained
 ninefold pious exercise, not automatically liturgy, an approved public text, a
 sacrament or sacramental, private revelation, or a mechanism that compels an
