@@ -143,3 +143,26 @@ checked at full size. The reviewed build was installed at its mirrored
 `doc/` path and verified byte-identical. This source audit adds no independent
 specialist, theological, canonical, rights, or ecclesiastical review, and no
 prior exact-byte distribution clearance attaches to the changed render.
+
+## *Ad gentes* source-reuse audit — 2026-07-24
+
+The exact official English articles 2 and 7 were checked separately against
+the Latin witnesses where the delivered English has defects. Article 2
+controls the claim that the Church is missionary by nature; article 7 keeps
+mission's continuing necessity beside its inculpable-ignorance qualification.
+The authority matrix, source audit, reference, reader-facing discussion, and
+publication bindings were corrected to preserve those distinct loci.
+
+A settled two-pass build produced a 51-page PDF with SHA-256
+`922fab6dd188581ddfa8be7abde244ea13697d503d4d68feea59a26874f7268c`.
+The final log contained no fatal error, unresolved reference, overflow,
+underflow, rerun, or layout warning. Generation metadata, PDF structure and
+metadata, Letter page size, embedded/subsetted fonts with Unicode maps, and
+nonempty text extraction passed. Review rasters were generated through
+`scripts/pdf-review`; every physical page was visually inspected, with the
+revised conciliar claim, references, dense pages, and terminal metadata and
+rights matter checked at full size. The reviewed build was installed at its
+mirrored `doc/` path and verified byte-identical. This source audit adds no
+independent specialist, theological, canonical, rights, or ecclesiastical
+review, and no prior exact-byte distribution clearance attaches to the
+changed render.

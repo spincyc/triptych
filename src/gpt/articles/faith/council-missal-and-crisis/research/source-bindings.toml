@@ -209,6 +209,32 @@ verified_on = "2026-07-23"
 source_fingerprint = "sha256:a882177f9908f44b84f121a3742fb4a94915e85d3e3b9e578d0ab698c353b426"
 
 [[bindings]]
+source_id = "work.second-vatican-council.ad-gentes"
+role = "context"
+states = ["cataloged"]
+context = "The work identity supports the article's fourth-session chronology and sixteen-document inventory by title, decree genre, 7 December 1965 promulgation date, and missionary subject. It claims no inspection of the complete numbered body and does not establish the narrower doctrinal claims."
+
+[[bindings]]
+source_id = "passage.second-vatican-council.ad-gentes.english-vatican-web-2026-07-24.2"
+loci = ["2"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official English article was checked for the reader's and inventory's bounded claim that the pilgrim Church is missionary by nature and originates in the missions of the Son and Holy Spirit according to the Father's plan. The delivered translation defect is controlled by the Latin witnesses, and the source notes are not inherited."
+claim_keys = ["missionary-nature"]
+verified_on = "2026-07-24"
+source_fingerprint = "sha256:06379bee4c65db480aab1fd4c6f7298a291aa8a4a9a9a205315c653e2a48a6be"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.ad-gentes.english-vatican-web-2026-07-24.7"
+loci = ["7"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official English article was checked for the authority discussion's bounded claim that missionary activity remains necessary: it holds together Christ's mediation, God's possible leading of those inculpably ignorant by ways known to him, and the Church's sacred evangelical duty. It does not adjudicate individual salvation."
+claim_keys = ["missionary-necessity"]
+verified_on = "2026-07-24"
+source_fingerprint = "sha256:ccb0f168777942cc9ff76b863b26847f1de2f3e20218b6e2e12b8c8f67d60c31"
+
+[[bindings]]
 source_id = "work.second-vatican-council.presbyterorum-ordinis"
 role = "context"
 states = ["cataloged"]

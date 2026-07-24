@@ -74,4 +74,32 @@ The full ancient Latin hymns are reproduced from the received prayer appendix of
 
 ## Compact-rights-colophon production review — 2026-07-19
 
-The settled 27-page PDF, SHA-256 `e77627738332391562d544fea0f52bbbddc8879fc5514cb26be6b75fb0d97818`, is the exact repository-reviewed build snapshot. The final log was warning-free; generation metadata, `qpdf` structure, PDF title/page metadata, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed their gates. Repository production review inspected every physical page; the compact final-page reuse-and-rights colophon is readable, unclipped, non-overlapping, remains with terminal content, and creates no rights-only spill page. The installed PDF is byte-identical to this reviewed build. This reviewed build supersedes every earlier production snapshot. This exact current snapshot has release-specific distribution clearance under the 20 July 2026 dated rights supplement. That operational decision supplies no independent review or ecclesiastical approval.
+The settled 27-page PDF, SHA-256 `e77627738332391562d544fea0f52bbbddc8879fc5514cb26be6b75fb0d97818`, was the exact repository-reviewed build snapshot. The final log was warning-free; generation metadata, `qpdf` structure, PDF title/page metadata, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed their gates. Repository production review inspected every physical page; the compact final-page reuse-and-rights colophon was readable, unclipped, non-overlapping, remained with terminal content, and created no rights-only spill page. The installed PDF was byte-identical to that reviewed build. That exact 19 July 2026 snapshot received release-specific distribution clearance under the 20 July 2026 dated rights supplement. The operational decision supplied no independent review or ecclesiastical approval and authorizes no changed bytes.
+
+## *Ad gentes* source-reuse audit — 2026-07-24
+
+The exact official English article 4 was checked against the Latin witnesses
+where the delivered English has defects. It controls the guide's bounded
+synthesis of Pentecost's public manifestation of the Church, the Gospel's
+spread among the nations, the Spirit's hierarchical and charismatic gifts,
+ecclesial unity, and missionary impulse. It is not used to establish the
+Spirit's divinity, procession, or the whole doctrine of sanctification. The
+claim audit, direct reader-facing reference, and publication binding were
+corrected accordingly; no canonical prayer fragment changed.
+
+Settled builds produced a 27-page full guide with SHA-256
+`73e11c6ad7f64c16ab813ac095c746f42f0c44ae252e2bd51829b2a3b26fca51`
+and an 11-page daily-prayer companion with SHA-256
+`675ae37d807d9ff0fadf4c1d5951480018f0ed6b56773b56493fd9b9c363c1ce`.
+The final logs contained no fatal error, unresolved reference, overflow,
+underflow, rerun, or layout warning. Generation metadata, PDF structure and
+metadata, Letter page size, embedded/subsetted fonts with Unicode maps, and
+nonempty text extraction passed. The companion remains byte-identical to its
+installed PDF and imports the unchanged canonical prayer fragments. Review
+rasters were generated through `scripts/pdf-review`; every physical page of
+both publications was visually inspected, with the full guide's references
+and terminal metadata and the companion's status page checked at full size.
+The reviewed full guide was installed at its mirrored `doc/` path and verified
+byte-identical. This source audit adds no independent liturgical, theological,
+historical, rights, pastoral, or ecclesiastical review, and no prior exact-byte
+distribution clearance attaches to the changed full guide.
