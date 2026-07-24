@@ -78,6 +78,7 @@ METADATA_CHECKER := scripts/check-generation-metadata
 CURRICULUM_STRUCTURE_CHECKER := scripts/check-curriculum-structure
 PDF_REVIEW_TOOL := scripts/pdf-review
 PUBLIC_ALPHA_TOOL := scripts/public-alpha
+RELEASE_BINDINGS_TOOL := scripts/release-bindings
 override CODEX_LAUNCHER := scripts/triptych-codex
 SOURCE_LIBRARY_TOOL := scripts/source-library
 SOURCE_INVENTORY_TOOL := scripts/source-inventory
@@ -185,6 +186,8 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	public-site public-preview \
 	dependencies-arch install-dependencies-arch \
 	verify-public-site verify-public-preview \
+	check-release-bindings refresh-release-bindings approve-release \
+	add-publication doc review-doc install-doc check check-tests \
 	FORCE_METADATA_VERIFICATION
 .DELETE_ON_ERROR:
 .SECONDARY: $(BUILD_METADATA_STAMPS)
@@ -344,11 +347,15 @@ check-curriculum-structure: \
 
 help:
 	@printf '%s\n' \
+		'Every build, install, review, list, and metadata target honors PROVIDER=<p> (default gpt; claude is the peer branch)' \
 		'make          Build every document with at most $(PDF_JOBS) parallel jobs' \
 		'make pdf      Build incrementally in the current Make jobserver' \
 		'make review-pdfs  Build with at most $(PDF_JOBS) jobs, then raster changed PDFs' \
 		'make review-all-pdfs  Build with at most $(PDF_JOBS) jobs, then raster every PDF' \
 		'make install  Publish built PDFs into the mirrored tracked doc/ tree' \
+		'make doc DOC=<id>  Build one document below src/$$PROVIDER/' \
+		'make review-doc DOC=<id>  Build one document and raster it for page review' \
+		'make install-doc DOC=<id>  Build, gate, and install one document' \
 		'make list     List discovered document IDs' \
 		'make dependencies-arch  List canonical Arch package dependencies' \
 		'make install-dependencies-arch  Run a full Arch upgrade and install canonical packages' \
@@ -379,6 +386,12 @@ help:
 		'make public-site  Build the fail-closed, history-free public artifact' \
 		'make verify-public-preview  Recheck the existing private preview artifact' \
 		'make verify-public-site  Recheck the existing public artifact' \
+		'make check-release-bindings  Report stale exact PDF, site-source, and rights-record bindings' \
+		'make refresh-release-bindings  Mechanically re-derive every exact release binding from current bytes' \
+		'make approve-release NOTE="..."  Record a dated supplement with the operator instruction, then refresh' \
+		'make add-publication ID=<leaf> CATALOG=<page> [PROVIDER=<p>] [STATUS=hold]  Add a manifest entry' \
+		'make check    Run every repository policy check' \
+		'make check-tests  Run the complete script unit-test suite' \
 		'make clean    Remove transient build artifacts only'
 
 check-metadata: check-tools
@@ -401,6 +414,53 @@ verify-public-preview:
 
 verify-public-site:
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) verify
+
+# Mechanical release bookkeeping. `refresh-release-bindings` recomputes every
+# exact PDF, site-source, and rights-record binding from current bytes;
+# `approve-release` records a dated supplement carrying the operator's exact
+# instruction text before refreshing. Approval wording is the operator's act;
+# these targets never invent one.
+check-release-bindings:
+	@$(PYTHON) $(RELEASE_BINDINGS_TOOL) status
+
+refresh-release-bindings:
+	@$(PYTHON) $(RELEASE_BINDINGS_TOOL) refresh
+
+approve-release:
+	@if [ -z '$(NOTE)' ]; then \
+		echo 'approve-release requires NOTE="<operator instruction text>"' >&2; \
+		exit 1; \
+	fi
+	@$(PYTHON) $(RELEASE_BINDINGS_TOOL) approve --note '$(NOTE)'
+
+add-publication:
+	@if [ -z '$(ID)' ] || [ -z '$(CATALOG)' ]; then \
+		echo 'add-publication requires ID=<leaf-id> CATALOG=<library page> [PROVIDER=$(PROVIDER)] [STATUS=hold]' >&2; \
+		exit 1; \
+	fi
+	@$(PYTHON) $(RELEASE_BINDINGS_TOOL) add-publication --provider '$(PROVIDER)' \
+		--id '$(ID)' --catalog '$(CATALOG)' --status '$(or $(STATUS),hold)'
+
+# Single-document convenience wrappers: make doc DOC=<id> [PROVIDER=<p>]
+doc:
+	@if [ -z '$(DOC)' ]; then \
+		echo 'doc requires DOC=<document id below src/$(PROVIDER)/>' >&2; \
+		exit 1; \
+	fi
+	@$(MAKE) --no-print-directory '$(BUILD_ROOT)/$(DOC).pdf'
+
+review-doc: doc
+	@$(PYTHON) $(PDF_REVIEW_TOOL) '$(BUILD_ROOT)/$(DOC).pdf'
+
+install-doc: doc
+	@$(MAKE) --no-print-directory '$(DOC_ROOT)/$(DOC).pdf'
+
+# Aggregate gates: `check` runs every repository policy check; `check-tests`
+# runs the complete script unit-test suite.
+check: check-metadata check-sources check-public-alpha check-release-bindings
+
+check-tests:
+	@$(PYTHON) -m unittest discover -s scripts/tests
 
 # Register only render-capable files owned by a document leaf. Research and
 # retrieval records remain authoritative tracked sources, but changing one does
