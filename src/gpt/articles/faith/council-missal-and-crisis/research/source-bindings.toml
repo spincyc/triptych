@@ -393,3 +393,23 @@ source_id = "work.second-vatican-council.apostolicam-actuositatem"
 role = "context"
 states = ["cataloged"]
 context = "The work identity supports the article's fourth-session chronology and inventory by title, decree genre, 18 November 1965 promulgation date, and lay-apostolate subject. It claims no inspection of the complete body."
+
+[[bindings]]
+source_id = "passage.paul-vi.ecclesiae-sanctae.english-vatican-web-2026-07-24.ii.i.1-19"
+loci = ["II.I.1-19"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official English range was checked for special general chapters, member consultation and participation, revision of constitutions, exclusion of obsolete elements, authorized experiments, changed governance, and continuing renewal under competent authority."
+claim_keys = ["ecclesiae-sanctae-religious-renewal-implementation"]
+verified_on = "2026-07-24"
+source_fingerprint = "sha256:69e078bd1eca1eb53185b500522795368216f85437a339fbe9a6166623f2299f"
+
+[[bindings]]
+source_id = "passage.paul-vi.ecclesiae-sanctae.english-vatican-web-2026-07-24.ii.ii.20-22"
+loci = ["II.II.20-22"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official English range was checked for revision of the Divine Office, mental prayer, and penitential practices while retaining public prayer, spiritual formation, and religious obligations."
+claim_keys = ["ecclesiae-sanctae-prayer-penance-implementation"]
+verified_on = "2026-07-24"
+source_fingerprint = "sha256:35b75835499ff366d0e0d4bc38d45bb1da2a2e68eca5abb228eaa2b09afaef2c"
