@@ -103,10 +103,14 @@ run begins on the next odd page after four complete six-up response sheet
 pairs. Every US-letter portrait sheet places six cards on each face in a
 two-column by three-row grid; each back mirrors every row for long-edge
 printing and has no blank card. The full guide has no embedded card range.
-The final full guide is thirty-one physical pages; the companion is twelve.
-Production review confirmed response fronts on pages 1, 3, 5, and 7, action
-fronts on pages 9 and 11, mirrored backs, border alignment, legibility, and
-installed identity.
+The current full-guide source build is thirty-one physical pages; the
+companion is twelve. The full-guide candidate keeps the complete
+`Present; do not push` movement unit on one page. Production review confirmed
+response fronts on pages 1, 3, 5, and 7, action fronts on pages 9 and 11,
+mirrored backs, border alignment, legibility, and safe containment of the
+R08B continuation note. The current corrected guide and companion are
+uninstalled candidates; the production manifest preserves the distinct
+installed predecessor identities.
 
 The action-card cross-view is anchored to the chronology: SO-A02 fixes the
 boat and thurible endpoints at all four incense stations; SO-A06 records the

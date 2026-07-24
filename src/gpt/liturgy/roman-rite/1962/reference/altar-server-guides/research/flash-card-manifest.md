@@ -20,8 +20,11 @@ eight-page, six-up PDF. Its source, production, installed-hash, and
 exact-snapshot records remain historical evidence about that immutable
 artifact. They do not control or release the new twenty-two-card deck.
 
-The Missa Cantata and Solemn Mass card sources, selections, names, and
-historical production results are unchanged.
+The Missa Cantata and Solemn Mass selections and publication names are
+unchanged. Their installed production results remain historical evidence for
+those exact bytes. The current sources use the established dense answer layout
+for R08B so that its continuation note remains safely inside the cut border;
+the resulting companions are separate uninstalled candidates.
 
 ## Owned card families
 
@@ -170,4 +173,12 @@ release-authorized.
 
 The production manifest's earlier six-up R-deck and action-deck results remain
 historical evidence for their named PDFs. They must not be silently reused as
-verification of the redesigned Low-Mass companion.
+verification of the redesigned Low-Mass companion or the corrected sung-form
+card candidates.
+
+The current uninstalled sung-form companions retain the same twelve-page
+front/back maps, card selections, form markers, and mirrored grid geometry.
+Rendered review confirms that the denser R08B answer preserves every verbal
+field while restoring a safe inset for the continuation note on page 8. The
+electronic pairing, border alignment, and full-size screen checks pass; the
+physical actual-size, duplex, photocopy, and cut tests remain pending.

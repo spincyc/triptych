@@ -1,6 +1,6 @@
 # Presentation research: Low Mass server package
 
-Research cutoff: 2026-07-23 (America/Chicago).
+Research cutoff: 2026-07-24 (America/Chicago).
 
 ## Status and scope
 
@@ -11,16 +11,22 @@ Latin, pronunciation, translation, ceremonial route, sanctuary model, or
 current authorization to use the 1962 books; those claims retain their
 existing owners and review requirements.
 
-The approved contract is implemented in the current TeX sources and supporting
-source and card records. Automated and every-page screen production review is
-complete, and the exact child booklet, trainer manual, and flash-card PDFs are
-installed as an evaluation trio. The maintainer expressly authorized that
-installation after the pending actual-size, physical-duplex,
-photocopy, paired-use, independent, rights, and ecclesiastical-review gates
-were disclosed. The override does not assert that those gates are complete and
-does not grant exact-snapshot release clearance. `production-manifest.md`
-records both the historical six-PDF predecessor snapshot and the exact current
-installed identities.
+The approved contract is implemented in the TeX sources and supporting source
+and card records. The exact child booklet, trainer manual, and flash-card PDFs
+recorded in `production-manifest.md` remain installed as an evaluation trio.
+The current source additionally contains an uninstalled illustration and
+choreography-correction candidate for the child booklet and trainer manual.
+It refines their shared model-sanctuary drawing system and corrects the
+selected two-acolyte sequence for the Gospel-side Missal move, Communion
+plate, ablutions, return of the Missal, and the priest's prepared chalice. It
+does not change the Low-Mass flash cards. Its production and every-page screen
+review status is recorded in `production-manifest.md`; it remains uninstalled
+and has not received renewed actual-size child-and-parent or photocopy
+testing. The maintainer expressly authorized the preceding installation after
+the pending actual-size, physical-duplex, photocopy, paired-use, independent,
+rights, and ecclesiastical-review gates were disclosed. The override does not
+assert that those gates are complete and does not grant exact-snapshot release
+clearance.
 
 ## Evidence classes
 
@@ -272,6 +278,12 @@ labels are literal strings.
 - Use actual front-facing model-sanctuary diagrams where a spatial
   relationship materially helps. Every diagram must label the applicable
   level and make the written action recoverable without the picture.
+- Use one restrained monochrome illustration grammar across all such diagrams:
+  open architectural outlines for the sanctuary and altar; fixed
+  high-contrast role labels; stable numbered level markers; visibly different
+  standing and kneeling silhouettes; recognizable object drawings; and
+  subordinate, uncrossed movement paths. Do not let a route, label, or object
+  obscure an actor, level, or destination.
 - Use exactly three level names: `First Step`, `Second Step`, and `Predella`.
   Use one consistent front-facing orientation throughout.
 - Distinguish standing and kneeling unmistakably in both label and drawing.

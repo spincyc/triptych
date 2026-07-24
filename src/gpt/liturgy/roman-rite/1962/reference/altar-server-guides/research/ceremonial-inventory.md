@@ -3,7 +3,7 @@
 This non-publishable record audits the two-server model governing
 `shared/low-mass-ceremony.tex` and the complete action sequences rendered from
 `shared/missa-cantata-ceremony.tex` and `shared/solemn-ceremony.tex`. The
-Low-Mass inventory was checked on 2026-07-23; the two sung inventories remain
+Low-Mass inventory was checked on 2026-07-24; the two sung inventories remain
 the snapshots checked on 2026-07-22. Clergy and choir appear below only when
 their act is the cue for a lay server or when a rendered action row
 deliberately distinguishes the public singer from the server.
@@ -41,10 +41,13 @@ Source classes are:
   exact PDF page; a subordinate practical manual, not a controlling rubric;
 - `CARMODY`: Charles J. Carmody, *Learning to Serve* (1961), exact printed
   page; a subordinate training manual, not a controlling rubric;
+- `OCO1943`: Laurence J. O'Connell, *The Book of Ceremonies* (1943), exact
+  printed page; a subordinate ceremonial manual, not a controlling rubric;
 - `MODEL`: the guide's original practical route within the declared
-  Fortescue--O'Connell ceremonial family, including the Low-Mass synthesis
-  checked against ACSS and Carmody; its exact controlling project locus is the
-  named action row, and no uncollated 1962-manual page is implied;
+  Fortescue--O'Connell ceremonial family, including the documented Low-Mass
+  synthesis checked against O’Connell 1943, Fortescue 1917, ACSS, and Carmody;
+  its exact controlling project locus is the named action row, and no
+  uncollated 1962-manual page is implied;
 - `LOCAL`: a site, assignment, or permitted-choice decision that must be fixed
   before rehearsal; its exact project locus is the named action row;
 - `SAFETY`: an original safeguarding instruction, not a liturgical rubric.
@@ -64,15 +67,21 @@ Acolyte** in full and **First**, **Second**, or **Both** in the learner action
 labels. Both make every ordinary server response. From a front view First
 begins picture-right, on the priest's right or Epistle side, and Second begins
 picture-left, on the priest's left or Gospel side. First sets the common pace
-and owns wine, towel, bell, optional biretta, and chalice veil. Second owns
-water, bowl, every Missal move, and the Communion plate.
+and owns wine, towel, bell, optional biretta, the Epistle-to-Gospel Missal
+move, and the Communion plate. Second owns water, bowl, and the
+Gospel-to-Epistle Missal return. Neither server transfers the chalice veil or
+chalice in this selected model. At the Offertory the priest places the loose
+veil at the rehearsed altar resting place he will use after the ablutions.
 
-The Communion-plate assignment is intentionally continuous: Second takes,
-carries, and returns the plate. This project choice removes the silent
-First-to-Second transfer implicit in the compared ACSS route. No rail-cloth
-route is part of the core model. Cruet kisses are a terse trainer detail, not
-a child-facing action unit. A pax-instrument route is outside the core and
-requires separate local instruction if appointed.
+The Communion-plate assignment is intentionally continuous: First takes and
+carries the plate, leaves it at the altar for the priest's purification, and
+returns the purified plate to the credence. This selected route follows the
+checked O'Connell allocation and removes the cross-role transfer in the
+compared ACSS route. The priest's paten and prepared chalice remain distinct:
+the priest reassembles, veils, and centers the chalice at the altar and carries
+it out. No rail-cloth route is part of the core model. Cruet kisses are a terse
+trainer detail, not a child-facing action unit. A pax-instrument route is
+outside the core and requires separate local instruction if appointed.
 
 The model uses the floor for the prayers at the foot, the first step for the
 normal kneeling places, the second step for cruets, Lavabo, the Gospel-side
@@ -120,7 +129,7 @@ roster either.
 
 | ID | Stage | Actor | Cue | Start → end | Posture / gesture | Object | Handoff / interaction | Branch | Source class and exact locus | Next state / audit |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| LM-001 | Preparation | Both; trainer | Before Mass | Sac/Altar/Cred → Line | St; inspect; point out levels and safe routes | One Missal/stand at E; wine, water, bowl, towel, bell, conditional plate at Cred; chalice veil with priest's prepared chalice | H: priest/sacristan owns sacred-vessel preparation; C: every pickup, return, doorway, level, and reverence is named before walking | Plate `Comm+`; biretta place if used; all real geometry `LOCAL` | ACSS PDF pp. 4--5; CARMODY p. 134; MODEL, LOCAL, and SAFETY: LM-001 | Missal begins E; objects and six-stage route are accounted; roles frozen; OK |
+| LM-001 | Preparation | Both; trainer | Before Mass | Sac/Altar/Cred → Line | St; inspect; point out levels and safe routes | One Missal/stand at E; wine, water, bowl, towel, bell, conditional Communion plate at Cred; chalice veil with priest's prepared chalice | H: priest/sacristan owns sacred-vessel preparation; C: Communion plate is distinguished from the priest's paten and chalice; priest declares the altar resting place where he will keep and recover the loose veil; every pickup, return, doorway, level, and reverence is named before walking | Plate `Comm+`; biretta and loose-veil places if used; all real geometry `LOCAL` | MR-RS I.1--4, VII.2, X.5; ACSS PDF pp. 4--5; CARMODY p. 134; MODEL, LOCAL, and SAFETY: LM-001 | Missal begins E; priest's prepared chalice and every server object have a complete lifecycle; roles frozen; OK |
 | LM-002 | Foot/Altar | First, Second | Sacristy signal | Line → Nave/Foot | St; Pair; measured shoulder-to-shoulder walk; First E/picture-right, Second G/picture-left | Optional priest's biretta remains with priest | H: none; C: First sets pace and Second matches; pair remains before priest | Doorway and sacristy reverence `LOCAL` | ACSS PDF p. 6; MODEL and LOCAL: LM-002 | Pair reaches Foot on assigned sides without blocking center; OK |
 | LM-003 | Foot/Altar | Both; First if biretta | At Foot / priest prepares altar | Foot → Foot | St; leave center open; make taught `Rev*`; remain standing while priest places chalice, opens Missal, and returns | Optional biretta | H: on biretta branch priest→First→fixed place; C: First returns without crossing Second or priest | `Biretta+`; exact arrival reverence and place `LOCAL`; no genuflection pose rendered | MR-RS II.1, III.1; ACSS PDF p. 6; MODEL and LOCAL: LM-003 | Priest and pair back at Foot; Missal open E; center clear; OK |
 | LM-004 | Foot/Altar | Both | Priest begins *In nomine Patris* | Foot/Floor → same | Kn2 on Floor; SoC together | None | H: priest's complete formula includes *Amen*; C: servers add no second answer | Core | MR-RS III.4; MR-OM p. 216 | Both kneeling and ready for *Introibo*; OK |
@@ -134,13 +143,13 @@ roster either.
 | LM-012 | Readings | Both | Ninefold Kyrie | Step1/Base → same | Kn2; alternate every server position together | None | H: priest and Both alternate the exact 3+3+3 pattern; C: server-opened *Christe* group is not misread as a priest cue | Core | MR-RS IV.1; MR-OM pp. 217--218 | Nine invocations complete; both still at normal places; OK |
 | LM-013 | Readings | Both | Gloria, if appointed | Step1/Base → same | Kn2; gestures taught for the actual church; no short reply | None | H: none; C: no response added to priest's Gloria | `Gloria+`; omit entire row on `Gloria-` | MR-RS IV.3; ACSS PDF p. 7; MODEL and LOCAL: LM-013 | Both remain at normal places for Collect; OK |
 | LM-014 | Readings | Both | Collect greeting and each audible conclusion | Step1/Base → same | Kn2; responses together; taught bows | None | H: greeting→*Et cum spiritu tuo*; each appointed ending→*Amen*; C: multiple Collects remain in printed order | Number of Collects/day branch; site-independent | MR-RS V.1; MR-OM Mass-order Collect loci; ACSS PDF p. 7 | Final Collect completed; both ready for lesson; OK |
-| LM-015 | Readings | Both | End of each appointed Low-Mass lesson | Step1/Base → same, then St | Kn2 through lesson; answer together; rise only after final lesson | None | H: complete lesson ending→Both *Deo gratias* where appointed; C: Second does not move Missal between Ember lessons | Multiple-lesson branch; no response after *Benedictus es, Domine* on Ember Saturday of Advent | MR-GR 466, 473; MR-RS VI.1--3; MR-OM Low-Mass lesson placement; ACSS PDF p. 7 | Final lesson answered; First stays E and Second is free for book route; OK |
-| LM-016 | Readings | Second; First waits | After final *Deo gratias* and priest clears book | Step1/Base G → E/Pred → Foot → G/Altar | Second St; two-hand Hold; descend short way, make taught center `Rev*`, ascend and set book angled toward priest; First St at E normal place | One Missal and stand | H: no transfer; Second alone owns book; C: wait until priest clears, grip stand at sides, keep First's lane clear | Center reverence and short/long mapping `LOCAL`; no genuflection pose rendered | MR-RS VI.1--3; ACSS PDF p. 7; CARMODY pp. 62--64; MODEL, LOCAL, and SAFETY: LM-016 | Missal at G; Second St on Step2 near book; First St at E; OK |
-| LM-017 | Readings | Both; Second returns | Gospel greeting, title, and ending | First E/Step1; Second G/Step2 → respective Base | St; both make three small SoC at title; First angles toward G; Second faces book, then returns by rehearsed route | Missal remains G | H: cues→Both *Et cum*, *Gloria tibi*, and immediate *Laus tibi*; C: response precedes priest's book kiss and Second never crosses First | Proper-text gestures and return lane taught locally | MR-RS VI.4--5; MR-OM p. 219; ACSS PDF p. 7; CARMODY pp. 66--68; MODEL and LOCAL: LM-017 | Both St at normal places after Gospel; book remains G; OK |
+| LM-015 | Readings | Both | End of each appointed Low-Mass lesson | Step1/Base → same, then St | Kn2 through lesson; answer together; rise only after final lesson | None | H: complete lesson ending→Both *Deo gratias* where appointed; C: First does not move the Missal between Ember lessons | Multiple-lesson branch; no response after *Benedictus es, Domine* on Ember Saturday of Advent | MR-GR 466, 473; MR-RS VI.1--3; MR-OM Low-Mass lesson placement | Final lesson answered; Second stays G and First is free for the book route; OK |
+| LM-016 | Readings | First; Second waits | After final *Deo gratias* and priest clears book | Step1/Base E → E/Pred → Foot → G/Altar | First St; two-hand Hold; descend short way, make taught center `Rev*`, ascend and set book angled toward priest; Second St at G normal place and steps back for First's return | One Missal and stand | H: no transfer; First owns this book move; C: wait until priest clears, grip stand at sides, and keep Second's lane clear | Center reverence and short/long mapping `LOCAL`; no genuflection pose rendered | MR-RS VI.1--3; OCO1943 p. 172; MODEL, LOCAL, and SAFETY: LM-016 | Missal at G; First St on Step2 near book; Second St clear at G; OK |
+| LM-017 | Readings | Both; First returns | Gospel greeting, title, and ending | First G/Step2; Second G/Step1 clear → respective Base | St; both make three small SoC at title; First faces the book, then returns by the rehearsed center route; Second steps back to let First pass | Missal remains G | H: cues→Both *Et cum*, *Gloria tibi*, and immediate *Laus tibi*; C: response precedes priest's book kiss and Second keeps First's return lane clear | Proper-text gestures and return lane taught locally | MR-RS VI.4--5; MR-OM p. 219; OCO1943 p. 172; MODEL and LOCAL: LM-017 | Both St at normal places after Gospel; book remains G; OK |
 | LM-018 | Readings | Both | Sermon announced, if given | Base → server seats → Base | Meet at Foot, make taught `Rev*`, Pair to seats; sit; rise and return together | None | H: trainer/priest cue; C: server seats are not sedilia and center stays clear | `Sermon+`; seats and route `LOCAL`; skip otherwise | ACSS PDF p. 7; MODEL and LOCAL: LM-018 | Both return to normal places and kneel; rejoins LM-019 or LM-020; OK |
 | LM-019 | Readings | Both | Creed, if appointed | Step1/Base → same | Kn2 in this Low-Mass model; make taught bows, including at *Et incarnatus*; no genuflection is diagrammed | None | H: none; C: remaining kneeling is not mistaken for a standing sung-form branch | `Credo+`; skip on `Credo-`; exceptional proper gestures require local instruction | MR-GR 518--519; ACSS PDF p. 7; MODEL and LOCAL: LM-019 | Both kneeling at normal places for Offertory; OK |
 | LM-020 | Offertory | Both | Offertory greeting and *Oremus* | Step1/Base → same | Kn2; answer greeting; taught HB at *Oremus* | None | H: *Dominus vobiscum*→Both *Et cum spiritu tuo*; C: no answer follows Offertory *Oremus* | Core | MR-RS VII.1; MR-OM Offertory opening; ACSS PDF p. 8 | Both watch for chalice-veil removal; OK |
-| LM-021 | Offertory | First, Second | Priest removes chalice veil | Step1/Base → Foot → Cred → E/Step2 → Cred | Rise; Pair; taught center `Rev*`; bow before/after; First wine, Second water | Wine and water cruets | H: First→priest→First wine, then Second→priest→Second water; C: fixed order and same-cruet return; trainer alone teaches the prescribed cruet kisses | Core role split; actual center reverence `LOCAL` | MR-RS VII.4; ACSS PDF p. 8; CARMODY pp. 70--72; MODEL and LOCAL: LM-021 | Both cruets reset at Cred; pair ready for Lavabo; OK |
+| LM-021 | Offertory | Priest; First, Second | Priest removes chalice veil | Priest: altar → declared altar resting place; servers: Step1/Base → Foot → Cred → E/Step2 → Cred | Priest uncovers and shifts chalice to E; places loose veil at the rehearsed altar resting place within his reach; servers rise, Pair, make taught center `Rev*`, and bow before/after; First wine, Second water | Priest: chalice and loose veil; servers: wine and water cruets | H: no server receives veil or chalice; First→priest→First wine, then Second→priest→Second water; C: fixed order and same-cruet return; trainer alone teaches the prescribed cruet kisses | Core role split; veil resting place and actual center reverence `LOCAL` | MR-RS VII.2, VII.4, X.5; ACSS PDF p. 8; CARMODY pp. 70--72; MODEL and LOCAL: LM-021 | Loose veil remains at priest's declared altar place; both cruets reset at Cred; pair ready for Lavabo; OK |
 | LM-022 | Offertory | First, Second | Priest reaches Lavabo place | Cred → E/Step2 outside altar edge → Cred | Pair; bow before/after; Second pours controlled stream into bowl; First presents open towel | Second: water and bowl; First: towel | H: First→priest→First towel; C: Second retains water/bowl and First keeps towel clear of stream | Exact outside station `LOCAL` | MR-RS VII.6; ACSS PDF p. 8; CARMODY pp. 71--72; MODEL, LOCAL, and SAFETY: LM-022 | Lavabo articles and loosely stopped cruets at Cred; OK |
 | LM-023 | Offertory | First; Second accompanies | Lavabo articles reset | Cred → Foot → Step1/Base | First safe Hold bell; Pair to Foot; taught `Rev*`; kneel at normal places; First sets bell silently on Step2 | Bell | H: First self-pickup; C: level carry prevents accidental ring and Second never reaches across First | Bell resting point `LOCAL` within declared Step2 model | ACSS PDF p. 8; CARMODY p. 137; MODEL and SAFETY: LM-023 | Both Kn2 at Base; bell in front of First; OK |
 | LM-024 | Offertory | Both | Priest completes *Orate, fratres* and turns back | Step1/Base → same | Kn2; say one complete quiet response together | None | H: complete cue→Both *Suscipiat*; C: wait until priest faces altar and retain *de manibus tuis* | Core | MR-RS VII.7; MR-OM p. 222 | Secret begins; both remain ready for Preface; OK |
@@ -152,17 +161,17 @@ roster either.
 | LM-030 | Communion | Both | Lord's Prayer conclusion | Step1/Base → same | Kn2; answer *Sed libera nos a malo* together; add no following quiet Amen | None | H: *Et ne nos inducas*→Both; C: next quiet Amen belongs to priest | Core | MR-RS IX.1--4; MR-OM Lord's Prayer dialogue | Both remain kneeling for fraction and peace; OK |
 | LM-031 | Communion | Both | *Pax Domini sit semper vobiscum* | Step1/Base → same | Kn2; answer together; remain still | None | H: priest cue→Both *Et cum spiritu tuo*; C: no pax-instrument handoff is implied | Pax-instrument route excluded from core; train separately if appointed | MR-RS X.1--2; MODEL: LM-031 | Both ready for Agnus; OK |
 | LM-032 | Communion | Both | Agnus Dei | Step1/Base → same | Kn2; taught bow; three breast strikes at the three petitions; no spoken server response | None | H: none; C: no response added | Core | MR-RS X.2; ACSS PDF p. 9 | Both remain kneeling and watch for Communion branch; OK |
-| LM-033 | Communion | First | Each priestly *Domine non sum dignus* | Step1/Base/bell place → same | Kn2; one ring after each of the priest's three phrases; set bell down silently | Bell | H: none; C: three rings are warnings only and create no server words | `Comm+` teaching model; omit all three on `Comm-` | ACSS PDF p. 9 as manual lead; MODEL and SAFETY: LM-033 | Bell secure; Second ready for plate on `Comm+`; OK |
-| LM-034 | Communion | Second; First remains | Faithful will receive | Step1/Base G → Cred → priest's right/Communion route | Rise; take plate; Hold level; join priest on his right | Communion plate | H: Second self-pickup; C: Second owns plate continuously, First stays/returns E Base, no bell-to-plate or First-to-Second transfer | `Comm+`; on `Comm-` plate remains Cred and jump to LM-036; rail cloth, second Confiteor/Misereatur/Indulgentiam, and replies to *Domine non sum dignus* or *Ecce Agnus Dei* are excluded | MR-RS X.6; ACSS PDF pp. 10--11 compared but not followed for older additions and silent transfer; MODEL and SAFETY: LM-034 | Second beside priest with level plate; First Kn2 at Base; OK |
-| LM-035 | Communion | Second; First remains | Distribution begins / last communicant | Priest's right/Rail → priest/altar → Cred → Base | Follow after Host; keep plate under each chin and upright; return quietly | Communion plate | H: after last, Second→priest for fragment check/transfer→Second after clearance; Second→Cred covered rest; C: no unattended or lateral plate handoff | `Comm+`; priest's side, rail lane, and communicant order `LOCAL` | MR-RS X.6--7; ACSS PDF p. 10 for priest-right route; MODEL, LOCAL, and SAFETY: LM-035 | Plate upright and covered at Cred; both ready for ablution cue; OK |
-| LM-036 | Communion | First, Second | Tabernacle closes on `Comm+`, or priest offers chalice on `Comm-` | Base → Foot → Cred → E/Step2/Pred → Cred/Foot | Pair to Cred; First briefly Pred for first wine, returns Step2; then both inside altar edges; bow before/after | First wine; Second water; on `Comm+` plate already covered at Cred | H: First pours wine into chalice; at fingers First pours wine then Second water; C: stop at priest's signal, avoid chalice/fingers; plate remains covered at Cred; no cross-role handoff | Two starting cues; exact handoff points `LOCAL` | MR-RS X.5--7; ACSS PDF pp. 10--11; CARMODY pp. 91--93; MODEL, LOCAL, and SAFETY: LM-036 | Cruets safe at Cred; plate remains covered there on `Comm+`; both meet Foot for paired book/veil route; OK |
-| LM-037 | Communion | Second, First | Ablutions complete | Foot → E/G by long way → Foot → opposite Altar sides → Base | Taught center `Rev*`; two-hand Hold; Second crosses first; place objects; descend long way and kneel | Second: Missal/stand; First: chalice veil | H: no receiver; C: Second with higher, bulkier book moves first and routes remain separate | Missal straight at E; veil at G; actual long/short lanes `LOCAL`; no genuflection pose rendered | MR-RS XI.2--3; ACSS PDF p. 11; CARMODY pp. 93--94; MODEL, LOCAL, and SAFETY: LM-037 | Missal returned E, veil available G, both Kn2 at Base; OK |
+| LM-033 | Communion | First | Each priestly *Domine non sum dignus* | Step1/Base/bell place → same | Kn2; one ring after each of the priest's three phrases; set bell down silently | Bell | H: none; C: three rings are warnings only and create no server words | `Comm+` teaching model; omit all three on `Comm-` | ACSS PDF p. 9 as manual lead; MODEL and SAFETY: LM-033 | Bell secure; First ready for the plate on `Comm+`; OK |
+| LM-034 | Communion | First; Second remains | Faithful will receive | Step1/Base E → Cred → priest's right/Communion route | Rise; take plate; Hold level; join priest on his right | Communion plate | H: First self-pickup; C: First owns the plate continuously; Second stays clear at G Base; no bell-to-plate or cross-role handoff | `Comm+`; on `Comm-` plate remains Cred and jump to LM-036; rail cloth, second Confiteor/Misereatur/Indulgentiam, and replies to *Domine non sum dignus* or *Ecce Agnus Dei* are excluded | MR-RS X.6; OCO1943 p. 173, with its older Communion additions rejected; MODEL and SAFETY: LM-034 | First beside priest with level plate; Second Kn2 clear at Base; OK |
+| LM-035 | Communion | First; Second remains | Distribution begins / last communicant | Priest's right/Rail → priest/altar → Base | Follow after Host; keep plate under each chin and upright; return quietly | Communion plate | H: after the last communicant First→priest or the priest's taught altar place for fragment check and purification; C: the plate stays at the altar and no untrained server touches fragments | `Comm+`; priest's side, rail lane, exact altar placement, and communicant order `LOCAL` | MR-RS X.6--7; OCO1943 p. 173, excluding its second Confiteor; MODEL, LOCAL, and SAFETY: LM-035 | Communion plate at altar for priest's purification; both ready for ablution cue; OK |
+| LM-036 | Communion | First, Second | Tabernacle closes on `Comm+`, or priest offers chalice on `Comm-` | Base → Foot → Cred → E/Step2/Pred → Cred → First E/Base and Second Foot/G | Pair to Cred; First briefly Pred for first wine, returns Step2; then both stand inside the altar edges; after the final wine and water each resets his own cruet; Second goes to Foot/G and waits; First takes the cleared plate to Cred when applicable, then returns to E Base | First: wine and conditional purified Communion plate; Second: water | H: First pours wine into chalice; at fingers First pours wine then Second water; each returns his own cruet; after the priest has cleared the plate First returns it to Cred; C: wait for the priest's clearance, stop pouring at his signal, distinguish the Communion plate from his paten and chalice, and leave Second's book route clear | Two starting cues; plate only on `Comm+`; exact handoff points `LOCAL`. The paired wine/water service follows ACSS rather than O’Connell's First-only cruet service | MR-RS X.5--7; OCO1943 pp. 173--174; ACSS PDF pp. 10--11; CARMODY pp. 87, 91--93; MODEL, LOCAL, and SAFETY: LM-036 | Each cruet and the purified Communion plate are safe at Cred; First Kn2 at E Base; Second standing at Foot/G for the book route; priest retains the chalice and can recover the loose veil at the altar; OK |
+| LM-037 | Communion | Second; priest; First waits | Ablutions complete and any Communion plate returned | Second Foot/G → G/Altar → Foot → E/Altar → G/Base; First E/Base; priest Altar → center | First remains Kn2; Second makes the taught center `Rev*`, takes a two-hand Hold of the Missal and stand, returns them straight to E, and kneels at G Base; while the book moves, the priest reassembles the chalice, recovers the loose veil from his declared altar place, covers the chalice, and centers it | Second: Missal/stand; priest: chalice, paten, pall, corporal, burse, and loose veil | H: no server receives a sacred vessel or veil; C: Second carries only the book, waits for a clear lane, and does not touch the chalice or veil | Actual long/short book lane and priest's loose-veil resting place `LOCAL`; no genuflection pose rendered. O’Connell's additional First-carried veil leg and Fortescue's optional Second-carried veil leg are not selected | MR-RS X.5, XI.1; OCO1943 p. 174 for Second's Missal allocation; Fortescue 1917 p. 69 for the contrary convention; MODEL, LOCAL, and SAFETY: LM-037 | Missal returned E; priest's loose veil recovered and covered chalice centered on altar; both servers Kn2 at Base; OK |
 | LM-038 | Ending | Both | Communion/Postcommunion greeting and each conclusion | Step1/Base → same | Kn2 in core model; answer together; appointed head bows | None | H: greeting→*Et cum*; each audible conclusion→*Amen*; C: answer from present place rather than rushing | At appointed Lenten Prayer over People, HB at *Humiliate capita vestra Deo* and answer final *Amen* | MR-GR 504, 521; MR-RS XI.1--2; ACSS PDF p. 11 | Final prayer completed; both ready for dismissal; OK |
 | LM-039 | Ending | Both | Ordinary or Easter-octave *Ite, missa est* | Step1/Base → same | Kn2; answer together | None | H: dismissal→matching *Deo gratias*; C: cue and reply use the same ordinary or double-*alleluia* form | Normal *Ite*; at a Mass of the season within Easter octave, both cue and reply add *alleluia* twice | MR-GR 507(b); MR-RS XI.1; MR-OM p. 323 | Ordinary branch ready for blessing; OK |
 | LM-040 | Ending | Both | *Benedicamus Domino* announces a following liturgical procession | Step1/Base → separately rehearsed procession formation | Rise when locally cued; answer *Deo gratias*; do not wait for blessing or Last Gospel | Only objects assigned by separate procession sheet | H: hand off to separate rite-specific sheet; C: do not mix its formation with LM-041--LM-043 | Procession-following branch replaces LM-041--LM-043; Requiem excluded from this guide | MR-GR 507(a), 508, 510(a); MR-RS XI.1, XII.4--5; LOCAL: LM-040 | Leaves this inventory for checked procession sheet; OK |
 | LM-041 | Ending | Both | Priest turns for blessing | Step1/Base → same, then St | Kn2; HB at *Benedicat vos*; SoC; answer *Amen*; rise immediately | None | H: blessing→Both *Amen*; C: rise only after response | Ordinary branch; omitted wherever MR-GR 508 appoints | MR-GR 508, 520; MR-RS XII.1, XII.7; ACSS PDF p. 11 | Both standing for Last Gospel; OK |
-| LM-042 | Ending | Both | Last Gospel greeting, title, *Et Verbum*, and ending | First E/Base angled to G; Second G/Base facing altar → Foot | St; three small SoC at title; make taught reverence at *Et Verbum*; answer together; meet at Foot after final response | Missal remains E unless a checked proper-Gospel sheet moves it | H: priest cues→Both *Et cum*, *Gloria tibi*, and final *Deo gratias*; C: no exit pickup before Gospel ends | Third Christmas Mass omits Last Gospel; other proper or omitted cases require checked sheet; no genuflection pose rendered | MR-GR 509--510, 522; MR-RS XII.1; MR-OM pp. 326--328; ACSS PDF pp. 11--12 | Normal Gospel complete or correctly omitted; both at Foot leaving priest's center lane clear; OK |
-| LM-043 | Ending | Both; First if biretta | Priest reaches Foot / final reverence | Foot → exit-facing Line → Nave/Sac | Optional First biretta retrieval before line; make taught final `Rev*`; inward turn; Pair shoulder-to-shoulder before priest | Optional biretta | H: on biretta branch First→priest after final reverence; C: First remains E/picture-right and Second G/picture-left; no Leonine-prayer stop is inserted into Mass | Biretta and reserved/unreserved reverence `LOCAL`; Leonine prayers outside Mass; special rites excluded | MR-RS XII.5--7; ACSS PDF p. 12 compared with its after-Mass prayer route excluded; MODEL and LOCAL: LM-043 | Pair and priest clear sanctuary; Mass-order inventory complete; OK |
+| LM-042 | Ending | Both | Last Gospel greeting, title, *Et Verbum*, and ending | First E/Base angled to G; Second G/Base facing altar → Foot | St; three small SoC at title; make taught reverence at *Et Verbum*; answer together; meet at Foot after final response | Missal remains E unless a checked proper-Gospel sheet moves it; priest's covered chalice remains centered | H: priest cues→Both *Et cum*, *Gloria tibi*, and final *Deo gratias*; C: no exit pickup before Gospel ends and no server approaches the chalice | Third Christmas Mass omits Last Gospel; other proper or omitted cases require checked sheet; no genuflection pose rendered | MR-GR 509--510, 522; MR-RS XII.1; MR-OM pp. 326--328; ACSS PDF pp. 11--12 | Normal Gospel complete or correctly omitted; both at Foot leaving the priest's center lane and chalice clear; OK |
+| LM-043 | Ending | Priest; Both; First if biretta | Last Gospel ends / priest takes the chalice / final reverence | Altar/Foot → exit-facing Line → Nave/Sac | Priest takes prepared chalice; optional First biretta retrieval before line; all make taught final `Rev*`; servers inward turn and Pair shoulder-to-shoulder before priest | Priest: prepared chalice; First: optional biretta | H: priest alone carries the prepared chalice; on biretta branch First→priest after final reverence; C: First remains E/picture-right and Second G/picture-left; no server removes the chalice and no Leonine-prayer stop is inserted into Mass | Biretta and reserved/unreserved reverence `LOCAL`; Leonine prayers outside Mass; special rites excluded | MR-RS XII.5--7, especially XII.6; ACSS PDF p. 12 compared with its after-Mass prayer route excluded; MODEL and LOCAL: LM-043 | Servers recess before the priest, who carries the chalice; all clear sanctuary; Mass-order inventory complete; OK |
 
 ## Missa Cantata actions
 
@@ -308,15 +317,19 @@ The following consequential points are settled in the current inventory:
 - LM-001--LM-043 bind one continuous two-server Low-Mass model. First begins
   on the priest's right, the Epistle side (picture-right in the front-view
   diagrams), leads the common pace, and owns wine, towel, bell, optional
-  biretta, and chalice veil. Second begins on the priest's left, the Gospel
-  side (picture-left), and owns water, bowl, every Missal move, and the
-  Communion plate. Both make every ordinary server response.
+  biretta, the Epistle-to-Gospel Missal move, and the continuous
+  Communion-plate route. Second begins on the priest's left, the Gospel side
+  (picture-left), and owns water, bowl, and the Gospel-to-Epistle Missal
+  return. Neither server transfers the chalice veil or chalice. Both make
+  every ordinary server response.
 - LM-001, LM-010, LM-016, LM-021--LM-023, LM-027--LM-029, and LM-036--LM-037
   account for the declared floor/Step1/Step2/predella model and all object
-  transitions. The Missal starts E, moves once to G after the final lesson,
-  and returns straight to E after the ablutions. The level model is mapped to
-  the actual sanctuary before rehearsal and is not represented as a universal
-  stair count.
+  transitions. The Missal starts E, moves to G in First's hands after the
+  final lesson, and returns straight to E in Second's hands after the
+  ablutions and plate clearance. In the selected model the priest keeps the
+  loose veil at a declared altar resting place, then recovers it while he
+  reassembles, covers, and centers the chalice. The level model is mapped to the actual sanctuary
+  before rehearsal and is not represented as a universal stair count.
 - LM-026--LM-029 select three clear Sanctus rings, one warning, and three
   distinct strokes at each elevation. The continuous elevation ring permitted
   by MR-RS VIII.6 remains an alternate to be selected by the priest; the child
@@ -325,10 +338,12 @@ The following consequential points are settled in the current inventory:
 - LM-033--LM-036 exclude the older Communion second *Confiteor*,
   *Misereatur*, and *Indulgentiam*, add no response to the priest's *Domine
   non sum dignus*, omit the rail-cloth route from the core, and keep the plate
-  with Second throughout. The three Communion warning rings are the selected
+  with First throughout. First leaves the plate at the altar for the priest's
+  clearance and returns it to the credence after the final wine and water.
+  The three Communion warning rings are the selected
   `Comm+` teaching model; the `Comm-` route leaves both the warning and plate
-  unused. This continuous Second assignment deliberately resolves the
-  compared manual's otherwise unspoken plate transfer.
+  unused. This continuous First assignment deliberately resolves the
+  compared ACSS route's otherwise unspoken plate transfer.
 - LM-021 retains the cruet kisses as a terse trainer-only detail rather than a
   separate child action. LM-019 retains the kneeling-and-bow Creed model, and
   LM-031 excludes a pax-instrument route from the core. LM-043 keeps the
@@ -370,9 +385,10 @@ The following consequential points are settled in the current inventory:
 Every former actor, object-handoff, and collision warning in the two sung
 ceremony sources remains resolved here. The Low-Mass inventory additionally
 names the complete one-book route, the First/Second cruet division, the
-bell-to-plate separation, Second's plate/fragment-transfer route, the paired
-Missal-and-veil crossing, the optional biretta route, and every step-level
-transition. In the sung forms, the inventory names the complete first-,
+bell-to-plate separation, First's plate/fragment-clearance route, Second's
+post-ablution Missal route, the priest-controlled loose-veil and chalice lifecycle,
+the optional biretta route, and every step-level transition. In the sung
+forms, the inventory names the complete first-,
 Gospel-, and Offertory-incense chains; MC as the elevation-incense loader; the
 adult as entrance-candle lighter and as torch lighter, receiver, and
 extinguisher; the bell-to-plate transitions; the celebrant's Communion-plate
@@ -397,11 +413,16 @@ subdeacon for Solemn Mass (SO-065), while retaining every omission branch. No
 cross-file actor collision remains open.
 
 The 1962 Fortescue--O'Connell edition was identified but not available for
-full page collation; consequently every `MODEL` locus remains honestly marked
-as project synthesis and no manual page has been invented. The Low-Mass ACSS
-sheet and the cited Carmody pages were read directly, but their practical
-directions remain subordinate to the 1962 Missal and are not silently
-promoted into universal rubrics.
+full page collation; consequently no detail is attributed to an unverified
+page in that edition. O’Connell 1943, pp. 170--174, Fortescue 1917, p. 69, the
+Low-Mass ACSS sheet, and the cited Carmody pages were read directly. Their
+disagreement is preserved: the model takes First's Gospel-book and
+Communion-plate assignments and Second's post-ablution book assignment from
+O’Connell, retains ACSS's paired wine/water service, omits both manuals'
+server-carried veil leg under the selected MR-RS X.5 route, and records
+Fortescue's contrary post-Communion book allocation. These practical choices
+remain `MODEL`, subordinate to the 1962 Missal, and are not promoted into
+universal rubrics.
 
 ## Completeness validation
 
@@ -426,8 +447,9 @@ class/exact locus, and next state/audit. The check also confirmed that each ID
 occurs exactly once as a table-row key. The branch audit covers the Low-Mass
 Psalm 42, Gloria, multiple-lesson, sermon, Creed, Communion, Easter dismissal,
 procession, blessing, Last-Gospel, biretta, and local-reverence routes; its
-single Missal, bell, plate, cruet, bowl, towel, and veil lifecycles; and every
-declared level transition. The sung audit continues to cover incense/no
+single Missal, bell, Communion-plate, cruet, bowl, towel, and priest-controlled
+chalice-and-veil lifecycles; and every declared level transition. The sung
+audit continues to cover incense/no
 incense, Psalm 42 and whole-opening omissions, priest/alternate lesson singer,
 Gloria and Creed presence, sermon, torches with and without communicants,
 Communion plate, the optional cross role and required separate incense roles,

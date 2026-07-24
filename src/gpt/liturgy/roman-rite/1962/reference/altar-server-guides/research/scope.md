@@ -22,9 +22,10 @@
   are learning aids, not text supplied by the *Liber*.
 - **Territory:** no particular diocese or parish is made normative. The
   ceremonial routes are declared English-language
-  Fortescue--O'Connell-family teaching models, corrected wherever the 1962
-  Missal controls and qualified wherever local direction is needed.
-- **Research as-of date:** 2026-07-23.
+  Fortescue--O'Connell-family teaching models, including documented syntheses
+  where the manuals disagree, corrected wherever the 1962 Missal controls and
+  qualified wherever local direction is needed.
+- **Research as-of date:** 2026-07-24.
 
 ## Three form-family boundaries
 
@@ -51,19 +52,27 @@ The child and trainer publications integrate the responses, pronunciation
 aids, meanings, positions, movement, objects, bells, and conditional branches
 of one declared model. The First Acolyte begins at the priest's right
 (Epistle side; picture-right in every front view), leads the common response
-pace, and handles the wine, towel, bell, optional biretta, and chalice veil.
+pace, and handles the wine, towel, bell, and optional biretta.
 The Second Acolyte begins at the priest's left (Gospel side; picture-left),
-and handles the water, bowl, Missal, and Communion plate. Both acolytes give
-the ordinary verbal responses together. Second retains the Communion plate
-throughout the selected branch so the model does not depend on an unspoken
-handoff.
+and handles the water, bowl, and return Missal move. First also moves the
+Missal from the Epistle to the Gospel side and carries the Communion plate
+throughout the Communion branch. Both acolytes give the ordinary verbal
+responses together. After Communion, First leaves the plate at the altar for
+the priest's purification and returns it to the credence after the final wine
+and water. This keeps the Communion plate distinct from the priest's paten and
+chalice and does not depend on an unspoken cross-role handoff. Neither server
+transfers the chalice veil or chalice. The priest keeps the loose veil at a
+declared altar resting place and recovers it after the ablutions.
 
 The Missal begins on the Epistle side, moves to the Gospel side after the
-final lesson, and returns to the Epistle side after the ablutions. The model
-uses the sanctuary floor for the prayers at the foot, the first step for the
-normal places, the second step for cruet and Lavabo service, and the predella
-for elevation assistance. These are teaching levels in a model sanctuary, not
-a claim that the rubrics fix every church's number, dimensions, or traffic.
+final lesson in First's hands, and returns to the Epistle side after the
+ablutions in Second's hands. The priest reassembles and veils the chalice at
+the altar's center and carries it out himself after the concluding rites. The
+model uses the sanctuary floor for the prayers at the foot, the first step for
+the normal places, the second step for cruet and Lavabo service, and the
+predella for elevation assistance. These are teaching levels in a model
+sanctuary, not a claim that the rubrics fix every church's number, dimensions,
+or traffic.
 
 ### Missa Cantata
 
@@ -134,8 +143,17 @@ No bell is rung there when the faithful will not receive.
 The Low-Mass books locate the Psalm 42 omission, multiple-lesson caution,
 faithful-Communion branch, Lenten Prayer over the People, Easter-octave
 dismissal, procession-linked *Benedicamus Domino*, and Last-Gospel omission.
-Cruet kisses are retained as a trainer detail. Rail-cloth traffic and an
-optional pax instrument are outside the core route.
+First's continuous Communion-plate route places the used plate at the altar
+for the priest's purification and returns the purified plate to the credence
+before Second returns the Missal. The priest's chalice remains at the altar
+until he takes it for the recession; he keeps and recovers its loose veil at a
+locally declared altar resting place, and no server transfers either object.
+The paired wine/water ablution service is the selected ACSS-derived division,
+while the asymmetric Missal and continuous plate assignments follow the
+checked O’Connell comparison. Fortescue's contrary post-Communion Missal
+allocation remains recorded rather than harmonized. Cruet kisses are retained
+as a trainer detail. Rail-cloth traffic and an optional pax instrument are
+outside the core route.
 
 ## Exclusions
 
@@ -181,11 +199,15 @@ alteration.
 The response, pronunciation, and sung-form ceremonial records retain their
 completed internal audits. The redesigned Low-Mass text and route have been
 reconciled internally with the response bank and the new LM-001--LM-043
-ceremonial inventory. Its source-built exact identities, technical font and
-text checks, and every-page screen review are recorded in the production
-manifest, which also records the exact installed identities. Actual-size card
-legibility, physical duplex and photocopy review, and exact-snapshot release
-state remain pending and must not be inferred from installation.
+ceremonial inventory. The production manifest distinguishes the exact
+installed evaluation identities from the later uninstalled Low-Mass
+illustration and choreography candidates. It records the current candidates'
+exact identities, technical font and text checks, and every-page screen
+review without treating them as installed replacements. That record also
+separates the current uninstalled sung-form layout corrections from their
+installed predecessor bytes. Actual-size card legibility, physical duplex and
+photocopy review, and exact-snapshot release state remain pending and must not
+be inferred from either installation or screen review.
 
 Independent liturgical, ceremonial, Latin-pronunciation, pedagogical, rights,
 and ecclesiastical review remain outstanding. The 23 July 2026 exact-byte

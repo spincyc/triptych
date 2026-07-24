@@ -87,10 +87,12 @@ states the form-specific actor and mode distinction once.
 MC-A01--MC-A12 follow the integrated response run in the companion. The
 companion begins with its first response front on physical page 1; the action
 run begins on the next odd page after four complete six-up response sheet
-pairs. The full guide has no embedded card range. The final full guide is
-twenty-nine physical pages; the companion is twelve. Production review
-confirmed response fronts on pages 1, 3, 5, and 7, action fronts on pages 9
-and 11, mirrored backs, border alignment, legibility, and installed identity.
+pairs. The full guide has no embedded card range. The installed full guide is
+twenty-nine physical pages; the current companion candidate is twelve.
+Production review confirmed response fronts on pages 1, 3, 5, and 7, action
+fronts on pages 9 and 11, mirrored backs, border alignment, and legibility.
+The full guide retains its installed exact identity; the corrected companion
+is an uninstalled source-built candidate.
 
 The action-card cross-view is anchored to the chronology: MC-A01 links the
 adult entrance handoff and MC's complete biretta exit lifecycle through the

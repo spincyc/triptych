@@ -1,6 +1,6 @@
 # Production manifest: 1962 altar-server guides
 
-Audit date: 2026-07-23 (America/Chicago).
+Audit date: 2026-07-24 (America/Chicago).
 
 This record distinguishes the immutable six-PDF predecessor snapshot from the
 seven publications now installed. The redesigned Low-Mass child booklet, new
@@ -185,3 +185,92 @@ their mirrored `doc/` paths. Installation and catalog visibility do not grant
 distribution clearance. No current Low-Mass snapshot has received a new
 exact-byte authorization; the historical exception remains limited to the six
 predecessor hashes listed first.
+
+## Uninstalled corrected source candidates
+
+On 2026-07-24 the current source produced the following review-only
+candidates. They remain under `build/`; they have not been copied to `doc/`,
+installed, cataloged as replacements, or exact-byte authorized. The installed
+identities remain the hashes in the current installed evaluation table above.
+
+| Source publication | Revision UTC | Pages | Bytes | SHA-256 | State |
+| --- | --- | ---: | ---: | --- | --- |
+| `01-low-mass` | `2026-07-24T16:29:47Z` | 33 | 226,102 | `265768f40697564282b16794f404c7918b149910578e063604b0114cdf40b4a8` | uninstalled review candidate |
+| `01-low-mass-trainer-manual` | `2026-07-24T16:29:47Z` | 33 | 240,886 | `5d93d21b684806b2fbc4c3c6a638bee5f8608df5f8d2c067605f6202e63cadce` | uninstalled review candidate |
+| `02-missa-cantata-cue-cards` | `2026-07-24T16:06:15Z` | 12 | 474,936 | `85e652e540494f59b7bccd7717ff11069925f4b9f7f9e90be042b751ddde381b` | uninstalled review candidate |
+| `03-solemn-mass` | `2026-07-24T16:06:15Z` | 31 | 681,159 | `efb37f8356c6695c5a4a89e8ba9a37dc5bbd22ca6bfb6c5d4d0ec0c7fc3d25ab` | uninstalled review candidate |
+| `03-solemn-mass-cue-cards` | `2026-07-24T16:06:15Z` | 12 | 479,186 | `60af9f4f83b9d8508fc5dd29b363682dbf23fda63ca38764726901d2b3ae58c9` | uninstalled review candidate |
+
+The Low-Mass pair refines the shared monochrome vector illustration system:
+altar and three-step architecture, standing and kneeling figures, facing
+direction, role and object labels, Missal and service-object drawings, and
+movement-path hierarchy. It also corrects the selected two-acolyte teaching
+model in words and pictures. First moves the Missal from Epistle to Gospel for
+the Gospel and continuously handles the Communion plate. After the final wine
+and water, each server returns his own cruet; First then returns the
+priest-cleared plate and reaches his normal place before Second returns the
+Missal from Gospel to Epistle. The priest's paten and chalice remain distinct
+from the Communion plate: the priest reassembles, veils, centers, and
+ultimately carries his chalice, using the loose veil kept at his declared
+altar resting place. Neither server transfers the chalice or its veil in this
+selected model.
+
+The final illustration audit separates the waiting Communion plate from the
+Gospel-side Missal, places Second at the Gospel-side foot while First returns
+the plate, keeps all three level markers visible in the completed
+post-ablution scene, and clears the prepared-chalice callout from the
+Last-Gospel role labels. The child and trainer continue to share one main-lane
+source and page order.
+
+The official 1962 Missal controls the celebrant's ablutions, prepared chalice,
+Communion-plate clearance, unnamed post-ablution minister, and chalice
+recession. O'Connell 1943, pp. 170--174, supplies the selected asymmetric
+Missal allocation and First's continuous plate assignment; Carmody 1961,
+p. 87 and pp. 91--94, confirms that the purified plate is removed after the
+second wine and water and before the Missal is replaced. O'Connell's
+additional First-carried veil, his older second Communion Confiteor, and
+Fortescue's contrary post-Communion book allocation are recorded but not
+silently imported. This is a documented teaching-model synthesis, not a claim
+that the manuals prescribe one universal assignment.
+
+The three sung-form candidates make layout-only corrections discovered during
+the required full-series visual review. The Solemn guide now keeps the
+complete `Present; do not push` movement unit on one page. Both sung
+companions use the established dense answer layout for R08B, preserving all
+verbal fields while restoring a safe inset for its continuation note. Their
+page counts, card selections, odd-front parity, mirrored backs, and grid
+geometry remain unchanged.
+
+pdfTeX 1.40.29 rebuilt all seven publications after the final shared-source
+edits. The Low-Mass flash cards and Missa Cantata full guide reproduced their
+exact installed hashes. The repository metadata checker accepts all canonical
+and inherited records; all seven logs are free of fatal errors, undefined
+controls, warnings, overfull or underfull boxes, and rerun notices; and
+`qpdf --check` accepts all seven PDFs. All seven remain 612-by-792-point
+letter-size PDFs. Every font is embedded and subsetted with a ToUnicode map,
+UTF-8 text extraction has no replacement character, and Ghostscript ink
+coverage reports zero cyan, magenta, or yellow on every page.
+
+The bounded repository review tool rastered complete exact baselines for all
+seven publications. Final full-size rasters made with its recorded renderer
+were then compared byte-for-byte with those tool-owned page caches. The first
+comparison isolated Low-Mass pages 28, 29, 32, and 33; Solemn pages 5, 6, and
+31; and each corrected sung companion's pages 8 and 12. After the final
+Communion-branch audit, both Low-Mass books were rebuilt and fully rastered
+again. A second byte-for-byte comparison against their immediately preceding
+inspected candidates isolated pages 27, 28, and 33; every other page retained
+its exact inspected raster. Complete-document contact sheets and the changed
+pages were checked for order, density, navigation, monochrome hierarchy,
+clipping, accidental blanks, split action units, card pairing, cut safety,
+and terminal fit. The substantive corrected pages 27--29 and 32 in both
+Low-Mass books, Solemn pages 5--6, and both sung companions' page 8 passed
+individual full-size inspection; the remaining changed terminal pages carry
+only their new generation timestamp and also fit. The unchanged Low-Mass
+flash cards and Missa Cantata full guide retain their exact reviewed hashes.
+Screen review found no remaining collision, clipping, broken sequence,
+accidental blank, split unit, unsafe diagram ambiguity, cut-border incursion,
+or terminal overflow.
+
+Screen review does not substitute for the pending actual-size, physical
+duplex, photocopy, paired-use, independent, rights, or
+ecclesiastical-suitability gates.
