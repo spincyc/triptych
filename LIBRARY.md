@@ -1,6 +1,7 @@
 # Library
 
-Choose a section, then open a title.
+Choose a section, then open a title. Publications are issued in parallel AI
+editions (GPT and Claude); each catalog row links every available edition.
 
 | Section | Contents |
 | --- | --- |

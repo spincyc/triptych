@@ -15,6 +15,9 @@ against the authorities themselves.
 If something is wrong, unclear, incomplete, or unbalanced, send a short note.
 See [How to Contribute](CONTRIBUTING.md).
 
+Publications are issued in parallel AI editions, one by GPT and one by
+Claude, and each catalog row links every available edition.
+
 Choose a section, open a PDF, and read.
 
 ## Library

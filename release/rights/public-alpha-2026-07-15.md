@@ -821,6 +821,46 @@ Target movement, an unexpected outgoing range, a changed bound byte, or any
 failed release, artifact, exposure, or deployment-target gate requires
 publication to stop.
 
+## Supplemental exact-current-snapshot clearance and Claude provider introduction — 24 July 2026
+
+At `2026-07-24T17:32:57-05:00` in `America/Chicago`, in an interactive
+Claude Code session, the maintainer instituted the multi-provider
+publication program and directed immediate release of the first three
+Claude-provider editions together with an exact-current-snapshot refresh.
+This is recorded as perpetual worldwide exact-current-snapshot
+distribution authorization under the existing represented authority in
+record `perpetual-public-repository-2026`. The sole condition remains
+`no-project-initiated-promotion`.
+
+The approval binds all 119 exact installed PDF snapshots — the 116
+gpt-provider publications and the three new claude-provider editions of
+*Against the Instrumentalists*, *In Support of the Particular*, and the
+Tertullian biography — and all 23 exact recognized artifact-affecting
+reader-site inputs inventoried below. Claude-provider snapshot rows carry
+provider-qualified identifiers; bare identifiers remain reserved for the
+primary gpt provider. The four *Four Last Things* volumes are re-bound at
+their current bytes following their committed deepening revision; this
+refresh is an exact-byte distribution exception and does not represent
+completion of their outstanding work-specific rights reviews. The
+reader-site inputs are re-bound at their current bytes following the
+multi-provider catalog revision, which adds a Claude edition column to
+every publication catalog, edition notes to the reader landing pages, and
+multi-provider rendering, validation, and per-edition link filtering to
+the site generator, and following the contribution-guide revision already
+committed to history.
+
+The three Claude editions are independent works authored by the claude
+provider on the same subjects as their gpt siblings. Their internal
+source, production, and rights audits are recorded in their research
+records; none has received independent philosophical, theological,
+patristic, historical, textual, rights, or ecclesiastical review, and no
+imprimatur, nihil obstat, or ecclesiastical approval is claimed. Every
+limitation in the prior supplements, release README, catalogs, and
+work-specific research records remains operative. This approval does not
+authorize a push, deployment, tag, history rewrite, public release
+attachment, announcement, or promotion; publication operations remain
+governed by their own explicit authorization.
+
 ## Exact approved snapshots
 
 | Publication ID | SHA-256 |
@@ -830,10 +870,10 @@ publication to stop.
 | `articles/faith/against-the-instrumentalists` | `3bb2998cc1bc07d2e9e4d6358f9bb9470399fdf81f3a09294c3a2d47737e9d91` |
 | `articles/faith/at-the-end-of-every-why` | `d68868669c34685118474f74606de33403a215c4f53575d835670e97130508b3` |
 | `articles/faith/council-missal-and-crisis` | `c19f3b6aa75c0ebd394f1e6e6b5d30c6ccbf28da6ac96a9251ea54c43e96aebd` |
-| `articles/faith/four-last-things-01-death` | `dfa66cefe1ed3fbf21c2fd059c6112a0d97f9f6dd9001acba4b5e125cd068bb8` |
-| `articles/faith/four-last-things-02-judgment` | `0ff768fba26437da20f2548ffdf7eb8c46ae845be74d82545b53b8e3cca885f5` |
-| `articles/faith/four-last-things-03-hell` | `4a8ce50e6b2e0e6d71206217012c9c003b2ddabb555f0f45f5bd3a322d0db946` |
-| `articles/faith/four-last-things-04-heaven` | `e2eae421b58bf3a297eae7fe0d3828225e2d74ca8d8145cbf87482a6d44f171b` |
+| `articles/faith/four-last-things-01-death` | `0e263589f268fd861c125ae70e7683aea41018b804bf04df4ae1273883e1dfbd` |
+| `articles/faith/four-last-things-02-judgment` | `4f12ceb0f07e27b3b3de0acbf1c9a759b5a4ef662a0b13cd0701bb330b4a0022` |
+| `articles/faith/four-last-things-03-hell` | `d6c583a2979acc1b3041351c6780024eb73d34b5c4bd1f4a6dc0094540ecdc71` |
+| `articles/faith/four-last-things-04-heaven` | `07aa3d735a52ffb443630c089562e0d9430a15a07606e1dcd50f9b18733882c6` |
 | `articles/faith/freemasonry-and-the-catholic-church` | `50f9743aed3fc17f327beafcff06cdbb9120b2ae8152922ec71db2af8b00edd4` |
 | `articles/faith/in-support-of-the-particular` | `32abf7a48fc4c586b19eb806aeddb458421e94900d238e2962299e75aeb20b21` |
 | `articles/faith/ontological-vertigo` | `f15dfc612873c1bafe3c8f5de7cb38d089f4b6ef65419ae775593a35c623d50b` |
@@ -847,6 +887,9 @@ publication to stop.
 | `biographies/saint-robert-bellarmine` | `cbbb80788cec5e53712183d45e29486e4d45ff5ed6506b93c4a441783958d85a` |
 | `biographies/saint-thomas-aquinas` | `05d1b1b792c5774e0aa10822e9722d3a844e442a09c54e5573bd5913fa2c275a` |
 | `biographies/tertullian` | `5482e549142e226e8a91b51b3fda11751957b2ba0a77d6737a2c79c57132dae6` |
+| `claude:articles/faith/against-the-instrumentalists` | `024b84c9b313e2547229f6b55079698656bb009ea6a5c73e36bd1d9a99a6a304` |
+| `claude:articles/faith/in-support-of-the-particular` | `535994c75dbb7bff0be2e45528050154b31710c7cbe3cf0fd2926b3cab4e77cb` |
+| `claude:biographies/tertullian` | `f6aad19c478b8535f3b3d31d413fb61b0d1ea723db3d0ba3e3221e596f346ba5` |
 | `curriculums/ecclesiastical-latin/00-course-guide` | `79f0202ddaa651194820e46375ea3193c9a442974b1853ac4654eba5b6faf0ec` |
 | `curriculums/ecclesiastical-latin/00-memory-workbook` | `7df692cd8f16049b990b950c2abb0c568d51c5ae243ece832ad11d051c2d2fa7` |
 | `curriculums/ecclesiastical-latin/00-reference-grammar` | `b3c67f86cd487a5d5ccce5620e849740cb7bb61b165bd2d659fcd7d8fd3ec612` |
@@ -946,29 +989,29 @@ publication to stop.
 
 | Repository path | SHA-256 |
 | --- | --- |
-| `CONTRIBUTING.md` | `48d3e3da2927a25b35945053a41a5d19a35a76a7b9abcb1aed10cd5bb59cd2f2` |
-| `LIBRARY.md` | `a3c5bf32a92a7fea870baaa08d6a37b35ae8a913f8f93b4207bf17a193a98dc3` |
+| `CONTRIBUTING.md` | `1bb9ef13c4f754f9a8bede73f0afd95c2266173726bcfbd709017dc342272d5e` |
+| `LIBRARY.md` | `a45aae3359ac20ac3a4cf756007a08df9109d06661d5fc261798daf38ec5b881` |
 | `LICENSE` | `29cb5f2c6d250023542c5e1d88de1ef2b4ae3b4bd41222cbd299b14f4e221aca` |
 | `LICENSES/CC-BY-4.0.txt` | `d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744` |
 | `LICENSES/MIT.txt` | `afd9c125b68a36b60c78cf63656f4cea2613fadce57e95ebabacebff8817ef60` |
-| `README.md` | `2ab9915ccf39a8ac680b1a8d13e1d73a055e586d9568f07e5bbe33b85121afea` |
+| `README.md` | `5007509616e98056d397b315247e07307b7cc0f8b715c49847dcef45dadfcb2b` |
 | `THIRD_PARTY.md` | `965aaaff0e773815213fa8c9aada37213d6cb890eb374ef3d1bb1d1dbf966ec4` |
-| `library/biographies.md` | `450db8c58ecb85891c8b051887274fb81beef92d11241ac0f2e33940a7adf8ec` |
+| `library/biographies.md` | `57ab5f9174da512d328abc4dba31916f9130183c6098f0ea778fbbed595c4fb1` |
 | `library/curriculums.md` | `15f24d06b4911b1cbfe4d85d82c463d7c2eef8635ff25edf2817d5fa6e0fb2bc` |
-| `library/ecclesiastical-latin.md` | `266de80c245bc9c476e33cbef324a2a12d6eb91514bcac95c47274272008dd63` |
-| `library/faith.md` | `7f1ec2c1bfdfd54987602fc01a0e404641a0cccad5784a736bc6bae4554897f9` |
-| `library/heresies.md` | `76c82eac736f231ce15955584a79465af9e36e7cc8eaffc688bdb3fbbe9c9f47` |
-| `library/historical-accounts.md` | `7feed40bad2fbe1ed20c07b7ea6b0417f347b784fc2d1da746e94ef2839811ab` |
-| `library/law-and-church-discipline.md` | `3570188531c8f7121c1842055bc0f0da2fa640a1a4b01d421afe796532e006d6` |
-| `library/mariology.md` | `577de486e7ee428bc9fb2e55c5b027e1c462f5b92c243f1c3e1e4844373de542` |
-| `library/novus-ordo-liturgy.md` | `eef9142903ac2f537c6100b7f6aef276d12918462ddb496780594081c25e42db` |
-| `library/prayer.md` | `7872bbe1e711e16911ecd203415d2f25c6b3a9adebfab9c6d53b8dd07bb96c37` |
-| `library/traditional-latin-mass.md` | `3a502934d3c37d20b5e197dfb8f1dab0e92d2a48b86e13b815711916dce07743` |
+| `library/ecclesiastical-latin.md` | `65a8cb4df29f7044e3d3ed7179d2e4604267e1d52c74a1b810d44e21310e4adc` |
+| `library/faith.md` | `cbd2ec0a9748cef16cbdb580f6c32992e2d2e3bacf144e625658251b0a8da472` |
+| `library/heresies.md` | `e479654e2cee1e193425d8b9696d95d2dbc8a9deba6465f1e93e39b3c0a2670e` |
+| `library/historical-accounts.md` | `82ad950d4053ec4e4f6a43ee433ee25bfa1ab8fd39de681dcb27379bbe09846f` |
+| `library/law-and-church-discipline.md` | `f5b25c16f14e7f9fef084ee021bcf3d7f692eeff91c0ac23fa1c3d220f76bf73` |
+| `library/mariology.md` | `248fd849d7996edb4a2234583d1bfbe34cec4b4445b1f8c290eff9fe65e27fbf` |
+| `library/novus-ordo-liturgy.md` | `99f815db7c1af6df0b4a3d1004e493f6e4de2fe970e6f517ddb0168ffca68d84` |
+| `library/prayer.md` | `c0524270d357f071d3de8b5e352bb217e87ff2ba1f7e61a664f0113b3efda576` |
+| `library/traditional-latin-mass.md` | `480a5fec6f07b878a3fd4507488560e0e4c9c42cfa8b82bfa354b8faf4775180` |
 | `release/public-alpha/404.md` | `551491f5521a5624911d63b398156d2236cbed2f0aa832eeb9c97070dcea568e` |
 | `release/public-alpha/assets/site.css` | `358d86f3587fc03f62a17cd4b5fd0126fb2dc3d952afa48eb33fc3a88fce54e9` |
 | `release/public-alpha/layout.html` | `1add2c3f7e6faed6cde4f71b471b5d275089aa719a779f250ef761b3754bea63` |
 | `requirements-public-alpha.txt` | `c30202fbc2f2eb1da451b8bae46b6867c07915844cec203a243991d14b8d4efc` |
-| `scripts/public-alpha` | `4907c8971c4d3719703cbca715f4e09ad7940c43ac010f10979ce49d83204314` |
+| `scripts/public-alpha` | `e58593af1ae87f4a2ced2fcc5f2fdb95d7c162097197e8219f4e472001485643` |
 
 ## Operational controls
 
@@ -978,9 +1021,9 @@ artifact-affecting site input changes. The generated public site may include
 only `release` PDFs and narrowly scoped generated policy, manifest, checksum,
 HTML, CSS, license, and host-control files. A private preview may include
 `release` and `review` items but never `hold` items. The current manifest
-contains 116 `release` items, no `review` items, and no `hold` items, so a
+contains 119 `release` items, no `review` items, and no `hold` items, so a
 successfully built and independently verified public or private-preview
-artifact includes all 116 exact approved PDFs.
+artifact includes all 119 exact approved PDFs.
 
 GitHub Pages may publish only the independently verified generated site
 artifact from the exact verified result described by the current supplement,
