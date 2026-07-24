@@ -1,0 +1,40 @@
+schema = 1
+record_type = "bindings"
+document = "biographies/origen"
+
+# Claude edition. Bindings are catalog-level: the actual passage checks were
+# performed against live web transcriptions (URLs and dates in
+# research/source-audit.md), not against registered artifact bytes, so no
+# acquisition/inspection/verification state is claimed against the
+# source-library records themselves.
+
+[[bindings]]
+source_id = "edition.ante-nicene-fathers.volume-4.buffalo-1885"
+loci = [
+  "De Principiis, preface 2-7",
+  "De Principiis 1.6.1-2",
+  "Against Celsus, preface 1-6",
+  "Against Celsus 1.1",
+  "Letter to Gregory 1-3",
+]
+role = "translation-control"
+states = ["cataloged"]
+context = "Quotations of Origen's On First Principles (with its transmission read through Rufinus's announced method), Against Celsus, and the Letter to Gregory follow this public-domain 1885 translation as transcribed at New Advent; each locus was read online 2026-07-24 (see research/source-audit.md). No exact artifact of this edition is registered, so this binding records catalog-level use of the edition identity only."
+
+[[bindings]]
+source_id = "edition.ante-nicene-fathers.volume-6.buffalo-1886"
+loci = [
+  "Gregory Thaumaturgus, Oration and Panegyric Addressed to Origen 6",
+  "Gregory Thaumaturgus, Oration and Panegyric Addressed to Origen 15",
+  "Gregory Thaumaturgus, Oration and Panegyric Addressed to Origen 16",
+]
+role = "translation-control"
+states = ["cataloged"]
+context = "Quotations of Gregory Thaumaturgus's farewell panegyric (the one near-contemporary external witness to Origen's teaching) follow this public-domain 1886 translation as transcribed at New Advent; each locus was read online 2026-07-24 (see research/source-audit.md). Catalog-level binding only; the work and edition records were created for this publication on 2026-07-24 and no exact artifact is registered."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["2745", "2847"]
+role = "reception"
+states = ["cataloged"]
+context = "CCC 2745 (footnote citing Origen, De orat. 12) and CCC 2847 (footnote citing Origen, De orat. 29: PG 11, 544CD) document selective Catholic reception of Origen's teaching on prayer; both paragraphs were read at the live Vatican English pages on 2026-07-24. The checks were made against the live site, not against this edition's registered artifact bytes, so only catalog-level use is claimed. Reception of two paragraphs neither rehabilitates Origen's corpus nor bears on the anathema question."
