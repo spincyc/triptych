@@ -1661,6 +1661,270 @@ class StatePolicyTests(unittest.TestCase):
                     ):
                         require_directory(repository, manifest)
 
+    def test_retirement_parameter_kernel_signatures_and_short_circuits(
+        self,
+    ) -> None:
+        expected_signatures = {
+            "retirement_parameters": (
+                "manifest",
+                "retirement_core_fields",
+                "object_id_pattern",
+                "error_type",
+            ),
+            "require_matching_retirement_arguments": (
+                "manifest",
+                "discard_head",
+                "target_contains",
+                "retirement_parameters",
+                "error_type",
+            ),
+            "reject_conflicting_retirement_lifecycle": (
+                "manifest",
+                "error_type",
+            ),
+            "retirement_cleanup_target": (
+                "manifest",
+                "object_id_pattern",
+                "error_type",
+            ),
+        }
+        injected_counts = {
+            "retirement_parameters": 1,
+            "require_matching_retirement_arguments": 3,
+            "reject_conflicting_retirement_lifecycle": 1,
+            "retirement_cleanup_target": 1,
+        }
+        for kernel_name, expected in expected_signatures.items():
+            with self.subTest(kernel=kernel_name):
+                parameters = inspect.signature(
+                    getattr(self.state_policy, kernel_name)
+                ).parameters
+                self.assertEqual(tuple(parameters), expected)
+                data_count = injected_counts[kernel_name]
+                for parameter in tuple(parameters.values())[:data_count]:
+                    self.assertIs(
+                        parameter.kind,
+                        inspect.Parameter.POSITIONAL_OR_KEYWORD,
+                    )
+                for parameter in tuple(parameters.values())[data_count:]:
+                    self.assertIs(
+                        parameter.kind,
+                        inspect.Parameter.KEYWORD_ONLY,
+                    )
+                    self.assertIs(
+                        parameter.default,
+                        inspect.Parameter.empty,
+                    )
+
+        pattern = mock.Mock()
+        for manifest in ({}, {"first": 17}, {"first": None}):
+            with self.subTest(manifest=manifest), self.assertRaisesRegex(
+                self.engine.LauncherError,
+                "^the retained run has an incomplete retirement checkpoint$",
+            ):
+                self.state_policy.retirement_parameters(
+                    manifest,
+                    retirement_core_fields=("first", "second", "third"),
+                    object_id_pattern=pattern,
+                    error_type=self.engine.LauncherError,
+                )
+        pattern.fullmatch.assert_not_called()
+
+        pattern = mock.Mock()
+        pattern.fullmatch.side_effect = lambda value: value == "a" * 40
+        with self.assertRaisesRegex(
+            self.engine.LauncherError,
+            "^the retained run has an incomplete retirement checkpoint$",
+        ):
+            self.state_policy.retirement_parameters(
+                {"first": "a" * 40, "second": "not-an-object", "third": 17},
+                retirement_core_fields=("first", "second", "third"),
+                object_id_pattern=pattern,
+                error_type=self.engine.LauncherError,
+            )
+        self.assertEqual(
+            pattern.fullmatch.call_args_list,
+            [mock.call("a" * 40), mock.call("not-an-object")],
+        )
+
+        recorded = mock.Mock(return_value=("discard", "contains", "target"))
+        for discard_head, target_contains in (
+            ("other-discard", "contains"),
+            ("discard", "other-contains"),
+        ):
+            recorded.reset_mock()
+            with self.subTest(
+                arguments=(discard_head, target_contains)
+            ), self.assertRaisesRegex(
+                self.engine.LauncherError,
+                "^the retirement command's object arguments differ"
+                " from the durable checkpoint$",
+            ):
+                self.state_policy.require_matching_retirement_arguments(
+                    {"manifest": "opaque"},
+                    discard_head,
+                    target_contains,
+                    retirement_parameters=recorded,
+                    error_type=self.engine.LauncherError,
+                )
+            recorded.assert_called_once_with({"manifest": "opaque"})
+
+        conflict_cases = (
+            (
+                {"background_process_active": True},
+                "the quarantined run still records a background worker",
+            ),
+            (
+                {"integrated_head": "a" * 40},
+                "the quarantined run has a conflicting integration transaction",
+            ),
+            (
+                {"integrated_at": "now"},
+                "the quarantined run has a conflicting integration transaction",
+            ),
+            (
+                {"integration_previous_state": "preserved"},
+                "the quarantined run has a conflicting integration transaction",
+            ),
+            (
+                {"cleanup_expected_head": "a" * 40},
+                "the quarantined run has an unrelated cleanup transaction",
+            ),
+            (
+                {"cleanup_warning": "warning"},
+                "the quarantined run has an unrelated cleanup transaction",
+            ),
+            (
+                {"cleaned_at": "now"},
+                "the quarantined run has an unrelated cleanup transaction",
+            ),
+            (
+                {"branch_cleaned_at": "now"},
+                "the quarantined run has an unrelated cleanup transaction",
+            ),
+            (
+                {
+                    "background_process_active": True,
+                    "integrated_head": "a" * 40,
+                    "cleaned_at": "now",
+                },
+                "the quarantined run still records a background worker",
+            ),
+        )
+        for manifest, expected_message in conflict_cases:
+            with self.subTest(manifest=manifest), self.assertRaisesRegex(
+                self.engine.LauncherError,
+                f"^{re.escape(expected_message)}$",
+            ):
+                self.state_policy.reject_conflicting_retirement_lifecycle(
+                    manifest,
+                    error_type=self.engine.LauncherError,
+                )
+
+        pattern = mock.Mock()
+        for manifest in (
+            {},
+            {"retirement_cleanup_target_head": 17},
+            {"retirement_cleanup_target_head": None},
+        ):
+            with self.subTest(manifest=manifest), self.assertRaisesRegex(
+                self.engine.LauncherError,
+                "^the retirement ref cleanup has no exact target checkpoint$",
+            ):
+                self.state_policy.retirement_cleanup_target(
+                    manifest,
+                    object_id_pattern=pattern,
+                    error_type=self.engine.LauncherError,
+                )
+        pattern.fullmatch.assert_not_called()
+
+        for manifest in (
+            {"retirement_cleanup_target_head": "not-an-object"},
+            {"retirement_cleanup_target_head": "a" * 40},
+        ):
+            with self.subTest(manifest=manifest), self.assertRaisesRegex(
+                self.engine.LauncherError,
+                "^the retirement ref cleanup has no exact target checkpoint$",
+            ):
+                self.state_policy.retirement_cleanup_target(
+                    manifest,
+                    object_id_pattern=re.compile(r"^[0-9a-f]{40}$"),
+                    error_type=self.engine.LauncherError,
+                )
+
+    def test_retirement_parameter_kernels_preserve_probe_behavior(
+        self,
+    ) -> None:
+        events: list[tuple[str, object]] = []
+
+        class Pattern:
+            def fullmatch(pattern_self, value: str) -> bool:
+                events.append(("fullmatch", value))
+                return True
+
+        observed = self.state_policy.retirement_parameters(
+            {
+                "first": "discard",
+                "second": "contains",
+                "third": "target",
+                "unrelated": 17,
+            },
+            retirement_core_fields=("first", "second", "third"),
+            object_id_pattern=Pattern(),
+            error_type=self.engine.LauncherError,
+        )
+        self.assertEqual(observed, ("discard", "contains", "target"))
+        self.assertEqual(
+            events,
+            [
+                ("fullmatch", "discard"),
+                ("fullmatch", "contains"),
+                ("fullmatch", "target"),
+            ],
+        )
+
+        recorded = mock.Mock(return_value=("discard", "contains", "target"))
+        self.assertIsNone(
+            self.state_policy.require_matching_retirement_arguments(
+                {"manifest": "opaque"},
+                "discard",
+                "contains",
+                retirement_parameters=recorded,
+                error_type=mock.Mock(
+                    side_effect=AssertionError("raised for exact arguments")
+                ),
+            )
+        )
+        recorded.assert_called_once_with({"manifest": "opaque"})
+
+        self.assertIsNone(
+            self.state_policy.reject_conflicting_retirement_lifecycle(
+                {
+                    "state": "retirement-pending",
+                    "retirement_started_at": "now",
+                    "background_process_active": False,
+                    "integrated_head": None,
+                },
+                error_type=mock.Mock(
+                    side_effect=AssertionError("raised for a clean lifecycle")
+                ),
+            )
+        )
+
+        events.clear()
+        self.assertEqual(
+            self.state_policy.retirement_cleanup_target(
+                {
+                    "retirement_cleanup_target_head": "cleanup-target",
+                    "retirement_ref_cleanup_started_at": "now",
+                },
+                object_id_pattern=Pattern(),
+                error_type=self.engine.LauncherError,
+            ),
+            "cleanup-target",
+        )
+        self.assertEqual(events, [("fullmatch", "cleanup-target")])
+
     def test_engine_preserves_run_identity_and_path_surfaces(self) -> None:
         self.assertIs(self.engine.RUN_ID_RE, self.state_policy.RUN_ID_RE)
         for helper_name in (
@@ -1675,6 +1939,10 @@ class StatePolicyTests(unittest.TestCase):
             "remove_run_tmpdir",
             "require_run_tmp_absent",
             "require_run_tmp_directory",
+            "retirement_parameters",
+            "require_matching_retirement_arguments",
+            "reject_conflicting_retirement_lifecycle",
+            "retirement_cleanup_target",
         ):
             with self.subTest(helper=helper_name):
                 self.assertIsNot(
@@ -1699,6 +1967,14 @@ class StatePolicyTests(unittest.TestCase):
             "remove_run_tmpdir": ("repository", "manifest"),
             "require_run_tmp_absent": ("repository", "manifest"),
             "require_run_tmp_directory": ("repository", "manifest"),
+            "retirement_parameters": ("manifest",),
+            "require_matching_retirement_arguments": (
+                "manifest",
+                "discard_head",
+                "target_contains",
+            ),
+            "reject_conflicting_retirement_lifecycle": ("manifest",),
+            "retirement_cleanup_target": ("manifest",),
         }
         for helper_name, expected in expected_parameters.items():
             with self.subTest(signature=helper_name):

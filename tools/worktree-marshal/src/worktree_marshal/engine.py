@@ -107,12 +107,16 @@ from .state import (
     new_run_id as _new_run_id,
     open_exact_temporary_directory as _open_exact_temporary_directory,
     private_directory as _private_directory,
+    reject_conflicting_retirement_lifecycle as _reject_conflicting_retirement_lifecycle,
     remove_open_temporary_contents as _remove_open_temporary_contents,
     remove_run_tmpdir as _remove_run_tmpdir,
     repo_lock_path as _repo_lock_path,
     repository_slug as _repository_slug,
+    require_matching_retirement_arguments as _require_matching_retirement_arguments,
     require_run_tmp_absent as _require_run_tmp_absent,
     require_run_tmp_directory as _require_run_tmp_directory,
+    retirement_cleanup_target as _retirement_cleanup_target,
+    retirement_parameters as _retirement_parameters,
     run_lock_path as _run_lock_path,
     run_tmp_entry as _run_tmp_entry,
     state_base as _state_base,
@@ -1543,13 +1547,12 @@ def branch_commit(repository: Repository, manifest: dict) -> str | None:
 
 
 def retirement_parameters(manifest: dict) -> tuple[str, str, str]:
-    values: list[str] = []
-    for field in RETIREMENT_CORE_FIELDS:
-        value = manifest.get(field)
-        if not isinstance(value, str) or not OBJECT_ID_RE.fullmatch(value):
-            raise LauncherError("the retained run has an incomplete retirement checkpoint")
-        values.append(value)
-    return values[0], values[1], values[2]
+    return _retirement_parameters(
+        manifest,
+        retirement_core_fields=RETIREMENT_CORE_FIELDS,
+        object_id_pattern=OBJECT_ID_RE,
+        error_type=LauncherError,
+    )
 
 
 def require_matching_retirement_arguments(
@@ -1557,32 +1560,20 @@ def require_matching_retirement_arguments(
     discard_head: str,
     target_contains: str,
 ) -> None:
-    recorded_discard, recorded_contains, _ = retirement_parameters(manifest)
-    if recorded_discard != discard_head or recorded_contains != target_contains:
-        raise LauncherError(
-            "the retirement command's object arguments differ from the durable checkpoint"
-        )
+    _require_matching_retirement_arguments(
+        manifest,
+        discard_head,
+        target_contains,
+        retirement_parameters=retirement_parameters,
+        error_type=LauncherError,
+    )
 
 
 def reject_conflicting_retirement_lifecycle(manifest: dict) -> None:
-    if manifest.get("background_process_active"):
-        raise LauncherError("the quarantined run still records a background worker")
-    if (
-        manifest.get("integrated_head") is not None
-        or "integrated_at" in manifest
-        or any(field.startswith("integration_") for field in manifest)
-    ):
-        raise LauncherError("the quarantined run has a conflicting integration transaction")
-    if any(
-        field in manifest
-        for field in (
-            "cleanup_expected_head",
-            "cleanup_warning",
-            "cleaned_at",
-            "branch_cleaned_at",
-        )
-    ):
-        raise LauncherError("the quarantined run has an unrelated cleanup transaction")
+    _reject_conflicting_retirement_lifecycle(
+        manifest,
+        error_type=LauncherError,
+    )
 
 
 def target_containing_retirement_checkpoint(
@@ -5666,14 +5657,11 @@ def retirement_ref_tuple(
 
 
 def retirement_cleanup_target(manifest: dict) -> str:
-    cleanup_target = manifest.get("retirement_cleanup_target_head")
-    if (
-        not isinstance(cleanup_target, str)
-        or not OBJECT_ID_RE.fullmatch(cleanup_target)
-        or "retirement_ref_cleanup_started_at" not in manifest
-    ):
-        raise LauncherError("the retirement ref cleanup has no exact target checkpoint")
-    return cleanup_target
+    return _retirement_cleanup_target(
+        manifest,
+        object_id_pattern=OBJECT_ID_RE,
+        error_type=LauncherError,
+    )
 
 
 @contextmanager

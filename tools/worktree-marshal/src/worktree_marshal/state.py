@@ -301,6 +301,88 @@ def validate_manifest_target_ref(
         raise error_type("run manifest has an invalid target branch")
 
 
+def retirement_parameters(
+    manifest: Mapping[str, Any],
+    *,
+    retirement_core_fields: Sequence[str],
+    object_id_pattern: Any,
+    error_type: type[BaseException],
+) -> tuple[str, str, str]:
+    """Read the three exact retirement checkpoint object parameters."""
+
+    values: list[str] = []
+    for field in retirement_core_fields:
+        value = manifest.get(field)
+        if not isinstance(value, str) or not object_id_pattern.fullmatch(value):
+            raise error_type("the retained run has an incomplete retirement checkpoint")
+        values.append(value)
+    return values[0], values[1], values[2]
+
+
+def require_matching_retirement_arguments(
+    manifest: Mapping[str, Any],
+    discard_head: str,
+    target_contains: str,
+    *,
+    retirement_parameters: Callable[
+        [Mapping[str, Any]], tuple[str, str, str]
+    ],
+    error_type: type[BaseException],
+) -> None:
+    """Require operator object arguments matching the durable checkpoint."""
+
+    recorded_discard, recorded_contains, _ = retirement_parameters(manifest)
+    if recorded_discard != discard_head or recorded_contains != target_contains:
+        raise error_type(
+            "the retirement command's object arguments differ from the durable checkpoint"
+        )
+
+
+def reject_conflicting_retirement_lifecycle(
+    manifest: Mapping[str, Any],
+    *,
+    error_type: type[BaseException],
+) -> None:
+    """Reject a quarantined run with conflicting lifecycle transactions."""
+
+    if manifest.get("background_process_active"):
+        raise error_type("the quarantined run still records a background worker")
+    if (
+        manifest.get("integrated_head") is not None
+        or "integrated_at" in manifest
+        or any(field.startswith("integration_") for field in manifest)
+    ):
+        raise error_type("the quarantined run has a conflicting integration transaction")
+    if any(
+        field in manifest
+        for field in (
+            "cleanup_expected_head",
+            "cleanup_warning",
+            "cleaned_at",
+            "branch_cleaned_at",
+        )
+    ):
+        raise error_type("the quarantined run has an unrelated cleanup transaction")
+
+
+def retirement_cleanup_target(
+    manifest: Mapping[str, Any],
+    *,
+    object_id_pattern: Any,
+    error_type: type[BaseException],
+) -> str:
+    """Read the exact durable retirement ref-cleanup target checkpoint."""
+
+    cleanup_target = manifest.get("retirement_cleanup_target_head")
+    if (
+        not isinstance(cleanup_target, str)
+        or not object_id_pattern.fullmatch(cleanup_target)
+        or "retirement_ref_cleanup_started_at" not in manifest
+    ):
+        raise error_type("the retirement ref cleanup has no exact target checkpoint")
+    return cleanup_target
+
+
 def validate_exact_run_tmpdir(
     repository: StateRepository,
     manifest: Mapping[str, Any],
