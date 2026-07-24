@@ -5,7 +5,7 @@ audited_on = "2026-07-24"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 116
 source_surface_file_count = 1268
-snapshot = "sha256:f620900378a65484267c6355c48fd5bb010ea2f68cee12570855dfc7b32cc872"
+snapshot = "sha256:1c3354be172feca3ac796836318ecc2a8f4bbbff2fd889b975f5894fbf192fcc"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -51,6 +51,11 @@ roots = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en
 id = "owner.theology.mariology.shared"
 kind = "shared-render-owner"
 roots = ["src/gpt/theology/mariology/shared"]
+
+[[owners]]
+id = "owner.typesetting.common"
+kind = "shared-typesetting-owner"
+roots = ["src/common"]
 
 [[documents]]
 id = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -2056,13 +2061,13 @@ owners = ["articles/faith/council-missal-and-crisis"]
 
 [[files]]
 path = "src/gpt/articles/faith/council-missal-and-crisis/research/source-audit.md"
-sha256 = "52f90f5fe9ecdec4b07f1de279f883becf579bd2c1c7e1da885365219b5de6a3"
+sha256 = "4e9406f2e7b01d53d4e482ec0323bf963e2581f0bc01ca5c46c548808591af6d"
 kind = "legacy-source-audit"
 owners = ["articles/faith/council-missal-and-crisis"]
 
 [[files]]
 path = "src/gpt/articles/faith/council-missal-and-crisis/research/source-bindings.toml"
-sha256 = "adb9e5e7675f654acad85258f970b871ad9225a89b886256087a4b5863743251"
+sha256 = "252efc0bd21240c8cd57d71f90a120bfad40be171c3699d99404c0e7a44a264f"
 kind = "source-binding"
 owners = ["articles/faith/council-missal-and-crisis"]
 
@@ -6610,7 +6615,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/research/source-bindings.toml"
-sha256 = "d5b852ab43b9c8b9ddfed542aa1a094ba4c06423bd1c46118a283641c48e04ca"
+sha256 = "02fbd1174c831c85a6dc58e932036a3efc2a6e9727e2290c403f96672c56c56a"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
