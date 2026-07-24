@@ -110,6 +110,7 @@ from .state import (
     run_lock_path as _run_lock_path,
     state_base as _state_base,
     validate_exact_run_tmpdir as _validate_exact_run_tmpdir,
+    validate_manifest_core_paths as _validate_manifest_core_paths,
     validate_run_id as _validate_run_id,
     write_manifest as _write_manifest,
 )
@@ -714,63 +715,21 @@ def load_manifest(repository: Repository, run_id: str) -> dict:
 
 
 def validate_manifest_paths(repository: Repository, manifest: dict) -> None:
-    state = manifest.get("state")
-    if not is_run_state(state, run_states=RUN_STATES):
-        raise LauncherError("run manifest has an invalid lifecycle state")
-    previous_state = manifest.get("integration_previous_state")
-    if previous_state is not None and not is_run_state(
-        previous_state,
-        run_states=RUN_STATES,
-    ):
-        raise LauncherError("run manifest has an invalid previous lifecycle state")
-    worktrees_root = (repository.state_root / "worktrees").resolve()
-    worktree = Path(str(manifest.get("worktree", "")))
-    if (
-        not worktree.is_absolute()
-        or worktree.parent.resolve() != worktrees_root
-        or worktree.is_symlink()
-    ):
-        raise LauncherError("run manifest has an unsafe worktree path")
-    run_id = manifest.get("run_id")
-    tmp_root = (repository.state_root / "tmp").resolve()
-    temporary = validate_exact_run_tmpdir(repository, manifest)
-    with exact_run_tmp_parent(repository, manifest):
-        pass
-    retirement_temporary = state in RETIREMENT_PENDING_STATES or (
-        state == "cleaned" and "retirement_completed_at" in manifest
+    state = _validate_manifest_core_paths(
+        repository,
+        manifest,
+        run_state_test=lambda value: is_run_state(
+            value,
+            run_states=RUN_STATES,
+        ),
+        retirement_states=RETIREMENT_PENDING_STATES,
+        path_factory=Path,
+        validate_temporary=validate_exact_run_tmpdir,
+        authenticate_temporary_parent=exact_run_tmp_parent,
+        worker_branch_prefix=lambda: active_profile().worker_branch_prefix,
+        object_id_pattern=OBJECT_ID_RE,
+        error_type=LauncherError,
     )
-    unsafe_temporary = not retirement_temporary and (
-        not temporary.is_absolute()
-        or temporary.parent.resolve() != tmp_root
-        or temporary.is_symlink()
-    )
-    if unsafe_temporary:
-        raise LauncherError("run manifest has an unsafe temporary path")
-    if worktree.name != run_id or temporary.name != run_id:
-        raise LauncherError("run manifest paths do not match its run ID")
-    if manifest.get("branch") != f"{active_profile().worker_branch_prefix}{run_id}":
-        raise LauncherError("run manifest has an unexpected worker branch")
-    relative_value = manifest.get("relative_cwd")
-    if not isinstance(relative_value, str) or not relative_value or "\0" in relative_value:
-        raise LauncherError("run manifest has an unsafe relative working directory")
-    if relative_value != "." and (
-        relative_value.startswith("/")
-        or any(part in {"", ".", ".."} for part in relative_value.split("/"))
-        or Path(relative_value).as_posix() != relative_value
-    ):
-        raise LauncherError("run manifest has an unsafe relative working directory")
-    relative_cwd = Path(relative_value)
-    try:
-        child_cwd = (worktree / relative_cwd).resolve()
-        child_cwd.relative_to(worktree.resolve())
-    except (OSError, RuntimeError, ValueError) as exc:
-        raise LauncherError("run manifest working directory escapes its worktree") from exc
-    control_root = Path(str(manifest.get("control_root", "")))
-    if not control_root.is_absolute() or control_root.resolve() != repository.root:
-        raise LauncherError("run manifest has an unexpected primary checkout")
-    base_sha = manifest.get("base_sha")
-    if not isinstance(base_sha, str) or not OBJECT_ID_RE.fullmatch(base_sha):
-        raise LauncherError("run manifest has an invalid base commit")
     for field in (
         "final_head",
         "observed_head",

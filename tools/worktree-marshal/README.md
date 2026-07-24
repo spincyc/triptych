@@ -126,7 +126,7 @@ worktree-removal or ref-transaction failures, receipt recovery, garbage
 collection, or concurrent retirement. Those retirement cases, broader crash
 and race recovery, broader security coverage, the complete installed lifecycle
 matrix, and the supported Python and Git CI matrix remain release gates; the
-first thirty-three step-5 seams are protected by direct source tests and artifact
+first thirty-four step-5 seams are protected by direct source tests and artifact
 provenance, and the installed abort checkpoint covers archived transaction
 restoration. Each remaining helper boundary still requires its own direct
 parity coverage.
@@ -472,7 +472,8 @@ descriptor-authenticated private-directory creation with mode 0700, mandatory
 no-follow and directory flags, pre/open identity comparison, and unconditional
 post-open closure, plus atomic manifest persistence and profile/repository-bound
 manifest loading, plus exact lexical run temporary-path identity. The engine
-retains selection and sequencing of every
+module now also owns core manifest lifecycle and path-containment validation.
+The engine retains selection and sequencing of every
 directory, initialization, locks, persistence, temporary allocation, and
 lifecycle mutation. State-base selection acquires
 the current profile once, and repository normalization captures the current

@@ -16,6 +16,7 @@ class StateProfile(Protocol):
 
 
 class StateRepository(Protocol):
+    root: Path
     state_root: Path
     common_git_dir: Path
 
@@ -34,6 +35,103 @@ def validate_run_id(
 
     if not pattern().fullmatch(run_id):
         raise error_type()(f"invalid {display_name()} run ID")
+
+
+def validate_manifest_core_paths(
+    repository: StateRepository,
+    manifest: Mapping[str, Any],
+    *,
+    run_state_test: Callable[[object], bool],
+    retirement_states: set[str],
+    path_factory: Callable[[str], Path],
+    validate_temporary: Callable[[StateRepository, Mapping[str, Any]], Path],
+    authenticate_temporary_parent: Callable[..., Any],
+    worker_branch_prefix: Callable[[], str],
+    object_id_pattern: Any,
+    error_type: type[BaseException],
+) -> str:
+    """Validate core lifecycle, containment, branch, CWD, and base identity."""
+
+    state = manifest.get("state")
+    if not run_state_test(state):
+        raise error_type("run manifest has an invalid lifecycle state")
+    previous_state = manifest.get("integration_previous_state")
+    if previous_state is not None and not run_state_test(previous_state):
+        raise error_type(
+            "run manifest has an invalid previous lifecycle state"
+        )
+    worktrees_root = (repository.state_root / "worktrees").resolve()
+    worktree = path_factory(str(manifest.get("worktree", "")))
+    if (
+        not worktree.is_absolute()
+        or worktree.parent.resolve() != worktrees_root
+        or worktree.is_symlink()
+    ):
+        raise error_type("run manifest has an unsafe worktree path")
+    run_id = manifest.get("run_id")
+    tmp_root = (repository.state_root / "tmp").resolve()
+    temporary = validate_temporary(repository, manifest)
+    with authenticate_temporary_parent(repository, manifest):
+        pass
+    retirement_temporary = state in retirement_states or (
+        state == "cleaned" and "retirement_completed_at" in manifest
+    )
+    unsafe_temporary = not retirement_temporary and (
+        not temporary.is_absolute()
+        or temporary.parent.resolve() != tmp_root
+        or temporary.is_symlink()
+    )
+    if unsafe_temporary:
+        raise error_type("run manifest has an unsafe temporary path")
+    if worktree.name != run_id or temporary.name != run_id:
+        raise error_type("run manifest paths do not match its run ID")
+    if manifest.get("branch") != f"{worker_branch_prefix()}{run_id}":
+        raise error_type("run manifest has an unexpected worker branch")
+    relative_value = manifest.get("relative_cwd")
+    if (
+        not isinstance(relative_value, str)
+        or not relative_value
+        or "\0" in relative_value
+    ):
+        raise error_type(
+            "run manifest has an unsafe relative working directory"
+        )
+    if relative_value != "." and (
+        relative_value.startswith("/")
+        or any(
+            part in {"", ".", ".."}
+            for part in relative_value.split("/")
+        )
+        or path_factory(relative_value).as_posix() != relative_value
+    ):
+        raise error_type(
+            "run manifest has an unsafe relative working directory"
+        )
+    relative_cwd = path_factory(relative_value)
+    try:
+        child_cwd = (worktree / relative_cwd).resolve()
+        child_cwd.relative_to(worktree.resolve())
+    except (OSError, RuntimeError, ValueError) as exc:
+        raise error_type(
+            "run manifest working directory escapes its worktree"
+        ) from exc
+    control_root = path_factory(
+        str(manifest.get("control_root", ""))
+    )
+    if (
+        not control_root.is_absolute()
+        or control_root.resolve() != repository.root
+    ):
+        raise error_type(
+            "run manifest has an unexpected primary checkout"
+        )
+    base_sha = manifest.get("base_sha")
+    if (
+        not isinstance(base_sha, str)
+        or not object_id_pattern.fullmatch(base_sha)
+    ):
+        raise error_type("run manifest has an invalid base commit")
+    return state
 
 
 def validate_exact_run_tmpdir(
