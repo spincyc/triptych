@@ -18,16 +18,16 @@ arbitrary executable is not equivalent support.
 The current package deliberately keeps lifecycle transition selection,
 validation, persistence, and orchestration in one shared `engine.py`. `cli.py`
 owns the installed grammar, `profiles.py` owns immutable durable profile
-identities, `git.py` now owns only the cycle-free Git policy kernel, `model.py`
-now owns the exact state vocabulary, pure classifier, and I/O-free
-integration-transaction restoration transform, `state.py` now owns run
-identity, state-location selection, repository-name normalization, and lexical
-lock and manifest paths, `identity.py` now owns immutable runtime identity
-records and launcher-entry authentication, `locks.py` now owns lock-descriptor
-bookkeeping and validation algorithms, `process.py` now owns child waiting and
-exit-status normalization, and `triptych_compat.py` binds the frozen adapter.
-The rest of the engine will be separated behind these modules only after
-parity tests protect each seam:
+identities, `git.py` now owns the cycle-free Git policy kernel and
+Git-executable discovery and pre-pin validation, `model.py` now owns the exact
+state vocabulary, pure classifier, and I/O-free integration-transaction
+restoration transform, `state.py` now owns run identity, state-location
+selection, repository-name normalization, and lexical lock and manifest paths,
+`identity.py` now owns immutable runtime identity records and launcher-entry
+authentication, `locks.py` now owns lock-descriptor bookkeeping and validation
+algorithms, `process.py` now owns child waiting and exit-status normalization,
+and `triptych_compat.py` binds the frozen adapter. The rest of the engine will
+be separated behind these modules only after parity tests protect each seam:
 
 ```text
 worktree_marshal/
@@ -35,9 +35,9 @@ worktree_marshal/
   model.py               state vocabulary and transaction restoration now
   state.py               run identity, state-base policy, and lexical paths; writes later
   locks.py               descriptor bookkeeping now; flock acquisition later
-  git.py                 transforms and captured-config policy now; invocation later
+  git.py                 policy, captured config, and executable discovery; invocation later
   process.py             child signal forwarding and exit normalization
-  identity.py            runtime records and launcher authentication now; other authentication later
+  identity.py            records and launcher auth now; repository/worktree auth later
   worktrees.py           allocation, audit, reopen, and cleanup
   integration.py         verification, rebase, landing, and rollback
   conflicts.py           resolver scope, continuation, and abort
@@ -91,12 +91,12 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with ten behavior-preserving boundaries. The pure Git policy
-kernel now transforms an explicit environment mapping and Git argument
+has begun step 5 with eleven behavior-preserving boundaries. The original pure
+Git policy kernel transforms an explicit environment mapping and Git argument
 sequence in `git.py`; `engine.py` retains its optional environment-acquisition
-wrapper and all executable discovery, subprocess creation and command
-execution, lock acquisition, repository authentication, configuration
-probing, ref transactions, and lifecycle orchestration.
+wrapper, subprocess creation and command execution, lock acquisition,
+repository authentication, configuration probing, ref transactions, and
+lifecycle orchestration.
 The second cycle-free boundary places the exact durable state vocabulary, the
 existing retirement-pending and managed-conflict families, and a pure
 classifier in `model.py`. Manifest validation uses that predicate while
@@ -123,16 +123,18 @@ restoration after successful setup, and negative-return-code normalization
 into `process.py`. The engine wrapper supplies lazy resolvers at the original
 signal-operation, handled-exception, timeout, and negative-status
 absolute-value lookup points. Process creation, command execution, executable
-discovery, arguments, environments, inherited descriptors, and post-exit
-lifecycle decisions remain in `engine.py`. Direct tests also retain the legacy
-partial-setup behavior: a failure while installing the second handler occurs
-before the protected wait and does not roll back the first installation.
+discovery for Codex, arguments, environments, inherited descriptors, and
+post-exit lifecycle decisions remain in `engine.py`. Direct tests also retain
+the legacy partial-setup behavior: a failure while installing the second
+handler occurs before the protected wait and does not roll back the first
+installation.
 The sixth boundary extends `git.py` with deterministic parsing and rejection
 of command-bearing values in the effective-configuration bytes captured by the
 engine. The engine retains working-directory authentication, the exact Git
-configuration probe, unsuccessful-probe diagnosis, executable pinning, and
-subprocess execution. Lazy resolvers preserve the engine's existing
-configuration-policy and error lookups at their original decision points.
+configuration probe, unsuccessful-probe diagnosis, process-global executable
+pinning, and subprocess execution. Lazy resolvers preserve the engine's
+existing configuration-policy and error lookups at their original decision
+points.
 The seventh boundary moves the exact run-ID grammar, dependency-injected
 timestamp and random-suffix composition, and lexical repository-lock,
 run-lock, and manifest path construction into `state.py`. Engine wrappers
@@ -169,11 +171,24 @@ diagnostics, and the narrow rule that only resolution or metadata-read
 operating-system errors are translated and chained. The operation
 authenticates a read-only path snapshot; it deliberately does not strengthen
 the existing stat/access race into descriptor-based authentication. Launcher
-sequencing, the public error type, Git executable pinning and discovery,
-repository and linked-worktree authentication, identity caches, all other
-path and file authentication, lifecycle decisions, and every mutation remain
-in `engine.py`.
-Direct tests freeze all ten extracted boundaries, their
+sequencing, the public error type, repository and linked-worktree
+authentication, identity caches, all other path and file authentication,
+lifecycle decisions, and every mutation remain in `engine.py`. Git-executable
+selection is a Git invocation concern, not a future `identity.py`
+responsibility.
+The eleventh boundary extends `git.py` with the existing Git-executable
+discovery and pre-pin validation operation. Its dependency-injected lookup
+selects the literal `git` command from the inherited `PATH`, strictly resolves
+the selected pathname, captures its metadata, and checks that it is a regular
+executable file while preserving the existing diagnostics and exception
+scope. The exact-signature engine wrapper retains the process-global
+resolved-path cache and its cache-hit short circuit, startup ordering,
+`raw_git` argument construction, repository and configuration probing, and all
+subprocess execution. This is pathname selection and caching, not
+device/inode or descriptor authentication: it neither makes the inherited
+`PATH` trustworthy nor closes the existing stat/access/exec replacement
+window. It adds no new sandbox, lifecycle, or release assurance.
+Direct tests freeze all eleven extracted boundaries, their
 compatibility surfaces, artifact inclusion, field and operation order,
 partial-failure behavior, and the dynamic restoration of every vocabulary
 value currently accepted in

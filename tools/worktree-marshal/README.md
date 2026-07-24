@@ -10,8 +10,9 @@ restoration seams, its lock-descriptor bookkeeping boundary, its first generic
 profile, its child-process supervision boundary, its run-identity and lexical
 state-path boundary, its state-location and repository-name boundary, the
 immutable runtime-identity record and launcher-entry authentication
-boundaries, the frozen Triptych compatibility adapter, the Python
-distribution, and the Make integration fragment. The repository-local
+boundaries, its Git-executable discovery and pre-pin validation boundary, the
+frozen Triptych compatibility adapter, the Python distribution, and the Make
+integration fragment. The repository-local
 [`scripts/triptych-codex`](../../scripts/triptych-codex) command is a thin,
 in-process bootstrap for the co-located package engine.
 
@@ -112,18 +113,25 @@ worktree-removal or ref-transaction failures, receipt recovery, garbage
 collection, or concurrent retirement. Those retirement cases, broader crash
 and race recovery, broader security coverage, the complete installed lifecycle
 matrix, and the supported Python and Git CI matrix remain release gates; the
-first ten step-5 seams are protected by direct source tests and artifact
+first eleven step-5 seams are protected by direct source tests and artifact
 provenance, and the installed abort checkpoint covers archived transaction
 restoration. Each remaining helper boundary still requires its own direct
 parity coverage.
 
 Step 5 has begun narrowly: [`git.py`](src/worktree_marshal/git.py) owns only
 the deterministic environment and argument transforms, their fixed policy
-constants, and validation of effective-configuration bytes captured by the
-engine. The engine still authenticates the repository, executes the exact
-configuration probe, and diagnoses probe failure. Direct tests freeze those
-seams, their source-copy behavior, and their wheel and source-distribution
-presence.
+constants, validation of effective-configuration bytes captured by the
+engine, and dependency-injected Git-executable discovery and pre-pin
+validation. That operation selects the literal `git` command from the
+inherited `PATH`, strictly resolves the selected pathname, captures its
+metadata, and checks that it is a regular executable file. The engine still
+owns the process-global resolved-path cache, startup ordering, `raw_git`
+argument construction, repository authentication, the exact configuration
+probe and its failure diagnosis, and all subprocess execution. The cache pins
+only a resolved pathname, not a file descriptor or device/inode identity; it
+does not make an inherited `PATH` entry trusted or close the existing
+stat/access/exec replacement window. Direct tests freeze those seams, their
+source-copy behavior, and their wheel and source-distribution presence.
 
 [`model.py`](src/worktree_marshal/model.py) now owns the exact durable state
 vocabulary, its two existing pending-state families, and the pure predicate
@@ -132,7 +140,7 @@ field inventories and the deterministic in-place transform used to clear or
 archive a transaction and restore its recorded prior state. The existing
 engine wrappers still choose when to apply that transform, acquire the archive
 timestamp afterward, and own validation, persistence, and recovery. Typed run
-records and transition-graph enforcement remain deferred. Executable
+records and transition-graph enforcement remain deferred. Codex executable
 discovery, subprocess creation and command execution, repository
 authentication, effective-configuration probing, ref transactions, and
 lifecycle orchestration also remain together in `engine.py`.
@@ -147,9 +155,12 @@ file and executable checks, and construction of the authenticated snapshot.
 wrapper supplies the error, filesystem-policy, access, executable-mode, and
 identity factory dependencies lazily at their established lookup points. Only
 strict resolution and metadata-read operating-system errors are translated.
-Repository discovery, other path and file authentication, Git executable
-pinning, linked-worktree identity caches, lifecycle sequencing and top-level
-error handling, and every mutation remain in `engine.py`.
+Repository discovery, repository and linked-worktree authentication, other
+path and file authentication, linked-worktree identity caches, lifecycle
+sequencing and top-level error handling, and every mutation remain in
+`engine.py`. Git-executable discovery and pre-pin validation belong to
+`git.py`, while its process-global cache and invocation remain in `engine.py`;
+they are not future responsibilities of `identity.py`.
 
 [`state.py`](src/worktree_marshal/state.py) owns only the exact run-ID grammar,
 dependency-injected timestamp and random-suffix composition, and lexical

@@ -189,8 +189,8 @@ provides and tests equivalent enforcement.
 
 ## Threat boundary and platform assumptions
 
-The launcher hardens its own Git operations: it pins a resolved Git
-executable, removes Git configuration and tracing environment channels,
+The launcher hardens its own Git operations: it pins a resolved Git executable
+pathname, removes Git configuration and tracing environment channels,
 disables replace objects, hooks, signing, editors, pagers, and terminal
 credential prompts, validates relevant effective Git configuration, and uses
 exact ref and object checks for destructive transitions.

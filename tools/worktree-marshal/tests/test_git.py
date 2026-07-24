@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Direct parity tests for the extracted Git policy seam."""
+"""Direct parity tests for Git executable and invocation-policy seams."""
 
 from __future__ import annotations
 
@@ -7,6 +7,8 @@ import importlib
 import inspect
 import os
 import re
+import shutil
+import stat
 import subprocess
 import sys
 import unittest
@@ -167,6 +169,989 @@ class GitPolicyTests(unittest.TestCase):
             self.engine.sanitized_git_environment(source),
             self.policy.sanitized_git_environment(source),
         )
+
+    def test_git_executable_discovery_surface_is_exact(self) -> None:
+        self.assertIs(
+            self.engine._discover_git_executable,
+            self.policy.discover_git_executable,
+        )
+        parameters = inspect.signature(
+            self.policy.discover_git_executable
+        ).parameters
+        self.assertEqual(
+            tuple(parameters),
+            (
+                "executable_locator",
+                "path_factory",
+                "os_error_type",
+                "error_type",
+                "regular_file_test",
+                "access_check",
+                "executable_mode",
+            ),
+        )
+        for parameter in parameters.values():
+            self.assertIs(parameter.kind, inspect.Parameter.KEYWORD_ONLY)
+            self.assertIs(parameter.default, inspect.Parameter.empty)
+        self.assertEqual(
+            tuple(inspect.signature(self.engine.pin_git_executable).parameters),
+            (),
+        )
+
+    def test_git_executable_discovery_success_order_is_exact(self) -> None:
+        events: list[object] = []
+        candidate = ""
+        metadata_mode = object()
+        executable_mode = object()
+
+        class TruthValue:
+            def __init__(truth_self, label: str) -> None:
+                truth_self.label = label
+
+            def __bool__(truth_self) -> bool:
+                events.append(("truth", truth_self.label))
+                return True
+
+        class Metadata:
+            @property
+            def st_mode(metadata_self) -> object:
+                events.append("metadata-mode")
+                return metadata_mode
+
+        class ResolvedPath:
+            @property
+            def stat(path_self) -> object:
+                events.append("stat-attribute")
+
+                def read_metadata() -> Metadata:
+                    events.append("stat-call")
+                    return Metadata()
+
+                return read_metadata
+
+        resolved = ResolvedPath()
+
+        class CandidatePath:
+            @property
+            def resolve(path_self) -> object:
+                events.append("resolve-attribute")
+
+                def resolve_path(*, strict: bool) -> ResolvedPath:
+                    events.append(("resolve-call", strict))
+                    return resolved
+
+                return resolve_path
+
+        def executable_locator() -> object:
+            events.append("locator-provider")
+
+            def locate(name: str) -> str:
+                events.append(("locator-call", name))
+                return candidate
+
+            return locate
+
+        def path_factory() -> object:
+            events.append("path-provider")
+
+            def make_path(value: str) -> CandidatePath:
+                events.append(("path-call", value))
+                return CandidatePath()
+
+            return make_path
+
+        def regular_file_test() -> object:
+            events.append("regular-provider")
+
+            def is_regular(mode: object) -> object:
+                events.append(("regular-call", mode))
+                return TruthValue("regular")
+
+            return is_regular
+
+        def access_check() -> object:
+            events.append("access-provider")
+
+            def is_executable(path: object, mode: object) -> object:
+                events.append(("access-call", path, mode))
+                return TruthValue("executable")
+
+            return is_executable
+
+        def resolve_executable_mode() -> object:
+            events.append("executable-mode-provider")
+            return executable_mode
+
+        blocked_os_error_type = mock.Mock(
+            side_effect=AssertionError("resolved the OS error type on success")
+        )
+        blocked_error_type = mock.Mock(
+            side_effect=AssertionError("resolved the launcher error on success")
+        )
+
+        observed = self.policy.discover_git_executable(
+            executable_locator=executable_locator,
+            path_factory=path_factory,
+            os_error_type=blocked_os_error_type,
+            error_type=blocked_error_type,
+            regular_file_test=regular_file_test,
+            access_check=access_check,
+            executable_mode=resolve_executable_mode,
+        )
+
+        self.assertIs(observed, resolved)
+        self.assertEqual(
+            events,
+            [
+                "locator-provider",
+                ("locator-call", "git"),
+                "path-provider",
+                ("path-call", candidate),
+                "resolve-attribute",
+                ("resolve-call", True),
+                "stat-attribute",
+                "stat-call",
+                "regular-provider",
+                "metadata-mode",
+                ("regular-call", metadata_mode),
+                ("truth", "regular"),
+                "access-provider",
+                "executable-mode-provider",
+                ("access-call", resolved, executable_mode),
+                ("truth", "executable"),
+            ],
+        )
+        blocked_os_error_type.assert_not_called()
+        blocked_error_type.assert_not_called()
+
+    def test_git_executable_locator_boundaries_are_exact(self) -> None:
+        class DiscoveryError(RuntimeError):
+            pass
+
+        path_factory = mock.Mock(
+            side_effect=AssertionError("constructed a path without a candidate")
+        )
+        os_error_type = mock.Mock(
+            side_effect=AssertionError("matched a locator failure")
+        )
+        error_type = mock.Mock(return_value=DiscoveryError)
+        locator = mock.Mock(return_value=None)
+
+        with self.assertRaises(DiscoveryError) as caught:
+            self.policy.discover_git_executable(
+                executable_locator=lambda: locator,
+                path_factory=path_factory,
+                os_error_type=os_error_type,
+                error_type=error_type,
+                regular_file_test=mock.Mock(),
+                access_check=mock.Mock(),
+                executable_mode=mock.Mock(),
+            )
+
+        self.assertEqual(str(caught.exception), "cannot find the Git executable")
+        self.assertIsNone(caught.exception.__cause__)
+        locator.assert_called_once_with("git")
+        path_factory.assert_not_called()
+        os_error_type.assert_not_called()
+        error_type.assert_called_once_with()
+
+        for phase in ("provider", "call"):
+            with self.subTest(locator_failure=phase):
+                failure = OSError(f"locator-{phase}")
+                locator = mock.Mock(side_effect=failure)
+
+                def executable_locator() -> object:
+                    if phase == "provider":
+                        raise failure
+                    return locator
+
+                blocked = mock.Mock(
+                    side_effect=AssertionError("translated a locator failure")
+                )
+                with self.assertRaises(OSError) as locator_caught:
+                    self.policy.discover_git_executable(
+                        executable_locator=executable_locator,
+                        path_factory=blocked,
+                        os_error_type=blocked,
+                        error_type=blocked,
+                        regular_file_test=blocked,
+                        access_check=blocked,
+                        executable_mode=blocked,
+                    )
+
+                self.assertIs(locator_caught.exception, failure)
+                if phase == "provider":
+                    locator.assert_not_called()
+                else:
+                    locator.assert_called_once_with("git")
+
+    def test_git_executable_resolution_catch_scope_and_cause_are_exact(
+        self,
+    ) -> None:
+        class ResolutionOSError(OSError):
+            pass
+
+        class DiscoveryError(RuntimeError):
+            pass
+
+        expected_prefixes = {
+            "path-provider": [
+                "locator-provider",
+                "locator-call",
+                "path-provider",
+            ],
+            "path-call": [
+                "locator-provider",
+                "locator-call",
+                "path-provider",
+                "path-call",
+            ],
+            "resolve-attribute": [
+                "locator-provider",
+                "locator-call",
+                "path-provider",
+                "path-call",
+                "resolve-attribute",
+            ],
+            "resolve-call": [
+                "locator-provider",
+                "locator-call",
+                "path-provider",
+                "path-call",
+                "resolve-attribute",
+                "resolve-call",
+            ],
+            "stat-attribute": [
+                "locator-provider",
+                "locator-call",
+                "path-provider",
+                "path-call",
+                "resolve-attribute",
+                "resolve-call",
+                "stat-attribute",
+            ],
+            "stat-call": [
+                "locator-provider",
+                "locator-call",
+                "path-provider",
+                "path-call",
+                "resolve-attribute",
+                "resolve-call",
+                "stat-attribute",
+                "stat-call",
+            ],
+        }
+
+        for phase, expected_prefix in expected_prefixes.items():
+            with self.subTest(resolution_failure=phase):
+                events: list[str] = []
+                failure = ResolutionOSError(phase)
+
+                def fail_at(observed: str) -> None:
+                    events.append(observed)
+                    if phase == observed:
+                        raise failure
+
+                class ResolvedPath:
+                    @property
+                    def stat(path_self) -> object:
+                        fail_at("stat-attribute")
+
+                        def read_metadata() -> object:
+                            fail_at("stat-call")
+                            return SimpleNamespace(st_mode=0)
+
+                        return read_metadata
+
+                class CandidatePath:
+                    @property
+                    def resolve(path_self) -> object:
+                        fail_at("resolve-attribute")
+
+                        def resolve_path(*, strict: bool) -> ResolvedPath:
+                            self.assertTrue(strict)
+                            fail_at("resolve-call")
+                            return ResolvedPath()
+
+                        return resolve_path
+
+                def executable_locator() -> object:
+                    events.append("locator-provider")
+
+                    def locate(name: str) -> str:
+                        self.assertEqual(name, "git")
+                        events.append("locator-call")
+                        return "candidate"
+
+                    return locate
+
+                def path_factory() -> object:
+                    fail_at("path-provider")
+
+                    def make_path(candidate: str) -> CandidatePath:
+                        self.assertEqual(candidate, "candidate")
+                        fail_at("path-call")
+                        return CandidatePath()
+
+                    return make_path
+
+                def os_error_type() -> type[BaseException]:
+                    events.append("os-error-type")
+                    return ResolutionOSError
+
+                def error_type() -> type[BaseException]:
+                    events.append("error-type")
+                    return DiscoveryError
+
+                blocked = mock.Mock(
+                    side_effect=AssertionError(
+                        "validated a path after resolution failed"
+                    )
+                )
+                with self.assertRaises(DiscoveryError) as caught:
+                    self.policy.discover_git_executable(
+                        executable_locator=executable_locator,
+                        path_factory=path_factory,
+                        os_error_type=os_error_type,
+                        error_type=error_type,
+                        regular_file_test=blocked,
+                        access_check=blocked,
+                        executable_mode=blocked,
+                    )
+
+                self.assertEqual(
+                    str(caught.exception),
+                    "cannot resolve the Git executable",
+                )
+                self.assertIs(caught.exception.__cause__, failure)
+                self.assertIs(caught.exception.__context__, failure)
+                self.assertEqual(
+                    events,
+                    expected_prefix + ["os-error-type", "error-type"],
+                )
+
+    def test_git_executable_resolution_only_catches_the_selected_error(
+        self,
+    ) -> None:
+        class SelectedOSError(OSError):
+            pass
+
+        failure = RuntimeError("not selected")
+        os_error_type = mock.Mock(return_value=SelectedOSError)
+        blocked_error_type = mock.Mock(
+            side_effect=AssertionError("translated a nonmatching error")
+        )
+
+        with self.assertRaises(RuntimeError) as caught:
+            self.policy.discover_git_executable(
+                executable_locator=lambda: lambda name: "candidate",
+                path_factory=lambda: (_ for _ in ()).throw(failure),
+                os_error_type=os_error_type,
+                error_type=blocked_error_type,
+                regular_file_test=mock.Mock(),
+                access_check=mock.Mock(),
+                executable_mode=mock.Mock(),
+            )
+
+        self.assertIs(caught.exception, failure)
+        os_error_type.assert_called_once_with()
+        blocked_error_type.assert_not_called()
+
+        matching_failure = SelectedOSError("original")
+        matcher_failure = LookupError("cannot resolve matcher")
+
+        def broken_os_error_type() -> type[BaseException]:
+            raise matcher_failure
+
+        with self.assertRaises(LookupError) as matcher_caught:
+            self.policy.discover_git_executable(
+                executable_locator=lambda: lambda name: "candidate",
+                path_factory=lambda: (
+                    _ for _ in ()
+                ).throw(matching_failure),
+                os_error_type=broken_os_error_type,
+                error_type=blocked_error_type,
+                regular_file_test=mock.Mock(),
+                access_check=mock.Mock(),
+                executable_mode=mock.Mock(),
+            )
+
+        self.assertIs(matcher_caught.exception, matcher_failure)
+        blocked_error_type.assert_not_called()
+
+    def test_git_executable_validation_short_circuits_with_exact_error(
+        self,
+    ) -> None:
+        class DiscoveryError(RuntimeError):
+            pass
+
+        resolved = SimpleNamespace()
+        candidate_path = SimpleNamespace(
+            resolve=lambda *, strict: resolved,
+        )
+        resolved.stat = lambda: SimpleNamespace(st_mode=17)
+
+        regular_test = mock.Mock(return_value=False)
+        blocked_access = mock.Mock(
+            side_effect=AssertionError("checked access for a non-regular file")
+        )
+        blocked_mode = mock.Mock(
+            side_effect=AssertionError(
+                "resolved executable mode for a non-regular file"
+            )
+        )
+        error_type = mock.Mock(return_value=DiscoveryError)
+        os_error_type = mock.Mock(return_value=OSError)
+
+        with self.assertRaises(DiscoveryError) as nonregular_caught:
+            self.policy.discover_git_executable(
+                executable_locator=lambda: lambda name: "candidate",
+                path_factory=lambda: lambda candidate: candidate_path,
+                os_error_type=os_error_type,
+                error_type=error_type,
+                regular_file_test=lambda: regular_test,
+                access_check=blocked_access,
+                executable_mode=blocked_mode,
+            )
+
+        self.assertEqual(
+            str(nonregular_caught.exception),
+            "the resolved Git executable is not a regular executable file",
+        )
+        self.assertIsNone(nonregular_caught.exception.__cause__)
+        regular_test.assert_called_once_with(17)
+        blocked_access.assert_not_called()
+        blocked_mode.assert_not_called()
+        os_error_type.assert_not_called()
+
+        class ReboundDiscoveryError(RuntimeError):
+            pass
+
+        selected_error: list[type[RuntimeError]] = [DiscoveryError]
+
+        class RebindingFalse:
+            def __bool__(truth_self) -> bool:
+                selected_error[0] = ReboundDiscoveryError
+                return False
+
+        executable_mode = object()
+        regular_test = mock.Mock(return_value=True)
+        access_test = mock.Mock(return_value=RebindingFalse())
+        error_type = mock.Mock(side_effect=lambda: selected_error[0])
+
+        with self.assertRaises(ReboundDiscoveryError) as inaccessible_caught:
+            self.policy.discover_git_executable(
+                executable_locator=lambda: lambda name: "candidate",
+                path_factory=lambda: lambda candidate: candidate_path,
+                os_error_type=os_error_type,
+                error_type=error_type,
+                regular_file_test=lambda: regular_test,
+                access_check=lambda: access_test,
+                executable_mode=lambda: executable_mode,
+            )
+
+        self.assertEqual(
+            str(inaccessible_caught.exception),
+            "the resolved Git executable is not a regular executable file",
+        )
+        self.assertIsNone(inaccessible_caught.exception.__cause__)
+        regular_test.assert_called_once_with(17)
+        access_test.assert_called_once_with(resolved, executable_mode)
+        error_type.assert_called_once_with()
+        os_error_type.assert_not_called()
+
+    def test_git_executable_validation_errors_stay_outside_resolution_catch(
+        self,
+    ) -> None:
+        phases = (
+            "regular-provider",
+            "metadata-mode",
+            "regular-call",
+            "regular-truth",
+            "access-provider",
+            "executable-mode-provider",
+            "access-call",
+            "access-truth",
+        )
+
+        for phase in phases:
+            with self.subTest(validation_failure=phase):
+                failure = OSError(phase)
+
+                class ExplodingTruth:
+                    def __bool__(truth_self) -> bool:
+                        raise failure
+
+                def fail_at(observed: str) -> None:
+                    if phase == observed:
+                        raise failure
+
+                class Metadata:
+                    @property
+                    def st_mode(metadata_self) -> int:
+                        fail_at("metadata-mode")
+                        return 17
+
+                resolved = SimpleNamespace(stat=lambda: Metadata())
+                candidate_path = SimpleNamespace(
+                    resolve=lambda *, strict: resolved,
+                )
+
+                def regular_file_test() -> object:
+                    fail_at("regular-provider")
+
+                    def is_regular(mode: int) -> bool:
+                        fail_at("regular-call")
+                        if phase == "regular-truth":
+                            return ExplodingTruth()
+                        return True
+
+                    return is_regular
+
+                def access_check() -> object:
+                    fail_at("access-provider")
+
+                    def is_executable(path: object, mode: object) -> bool:
+                        fail_at("access-call")
+                        if phase == "access-truth":
+                            return ExplodingTruth()
+                        return True
+
+                    return is_executable
+
+                def executable_mode() -> int:
+                    fail_at("executable-mode-provider")
+                    return 1
+
+                os_error_type = mock.Mock(return_value=OSError)
+                error_type = mock.Mock(
+                    side_effect=AssertionError(
+                        "translated a post-resolution failure"
+                    )
+                )
+
+                with self.assertRaises(OSError) as caught:
+                    self.policy.discover_git_executable(
+                        executable_locator=lambda: lambda name: "candidate",
+                        path_factory=lambda: lambda candidate: candidate_path,
+                        os_error_type=os_error_type,
+                        error_type=error_type,
+                        regular_file_test=regular_file_test,
+                        access_check=access_check,
+                        executable_mode=executable_mode,
+                    )
+
+                self.assertIs(caught.exception, failure)
+                os_error_type.assert_not_called()
+                error_type.assert_not_called()
+
+    def test_engine_git_pin_cache_is_exact_and_reentrant(self) -> None:
+        class FalseyCachedPath:
+            def __bool__(self) -> bool:
+                return False
+
+        falsey_cached = FalseyCachedPath()
+        blocked_discovery = mock.Mock(
+            side_effect=AssertionError("rediscovered a cached executable")
+        )
+        with (
+            mock.patch.object(self.engine, "_PINNED_GIT", falsey_cached),
+            mock.patch.object(
+                self.engine,
+                "_discover_git_executable",
+                blocked_discovery,
+            ),
+        ):
+            self.assertIs(self.engine.pin_git_executable(), falsey_cached)
+            self.assertIs(self.engine._PINNED_GIT, falsey_cached)
+
+        blocked_discovery.assert_not_called()
+
+        reentrant_cached = Path("/reentrant-cache")
+        discovered = Path("/discovered-git")
+
+        def discover(**dependencies: object) -> Path:
+            self.assertIsNone(self.engine._PINNED_GIT)
+            self.engine._PINNED_GIT = reentrant_cached
+            self.assertIs(
+                self.engine.pin_git_executable(),
+                reentrant_cached,
+            )
+            return discovered
+
+        with (
+            mock.patch.object(self.engine, "_PINNED_GIT", None),
+            mock.patch.object(
+                self.engine,
+                "_discover_git_executable",
+                side_effect=discover,
+            ) as discovery,
+        ):
+            self.assertIs(self.engine.pin_git_executable(), discovered)
+            self.assertIs(self.engine._PINNED_GIT, discovered)
+            self.assertIs(self.engine.pin_git_executable(), discovered)
+
+        discovery.assert_called_once()
+
+    def test_engine_git_pin_failure_preserves_cache_mutation_timing(
+        self,
+    ) -> None:
+        failure = RuntimeError("discovery failed")
+
+        with (
+            mock.patch.object(self.engine, "_PINNED_GIT", None),
+            mock.patch.object(
+                self.engine,
+                "_discover_git_executable",
+                side_effect=failure,
+            ),
+        ):
+            with self.assertRaises(RuntimeError) as caught:
+                self.engine.pin_git_executable()
+            self.assertIs(caught.exception, failure)
+            self.assertIsNone(self.engine._PINNED_GIT)
+
+        reentrant_cached = Path("/partial-reentrant-cache")
+
+        def mutate_then_fail(**dependencies: object) -> None:
+            self.engine._PINNED_GIT = reentrant_cached
+            raise failure
+
+        with (
+            mock.patch.object(self.engine, "_PINNED_GIT", None),
+            mock.patch.object(
+                self.engine,
+                "_discover_git_executable",
+                side_effect=mutate_then_fail,
+            ),
+        ):
+            with self.assertRaises(RuntimeError) as caught:
+                self.engine.pin_git_executable()
+            self.assertIs(caught.exception, failure)
+            self.assertIs(self.engine._PINNED_GIT, reentrant_cached)
+
+    def test_engine_git_pin_wrapper_forwards_lazy_globals(self) -> None:
+        class InitialOSError(OSError):
+            pass
+
+        class ReboundOSError(OSError):
+            pass
+
+        class InitialLauncherError(RuntimeError):
+            pass
+
+        class ReboundLauncherError(RuntimeError):
+            pass
+
+        initial_locator = mock.Mock(name="initial-locator")
+        rebound_locator = mock.Mock(name="rebound-locator")
+        initial_path_factory = mock.Mock(name="initial-path-factory")
+        rebound_path_factory = mock.Mock(name="rebound-path-factory")
+        initial_regular_test = mock.Mock(name="initial-regular-test")
+        rebound_regular_test = mock.Mock(name="rebound-regular-test")
+        initial_access = mock.Mock(name="initial-access")
+        rebound_access = mock.Mock(name="rebound-access")
+        initial_mode = object()
+        rebound_mode = object()
+        resolved = Path("/resolved-git")
+
+        def discover(**dependencies: object) -> Path:
+            self.assertEqual(
+                tuple(dependencies),
+                (
+                    "executable_locator",
+                    "path_factory",
+                    "os_error_type",
+                    "error_type",
+                    "regular_file_test",
+                    "access_check",
+                    "executable_mode",
+                ),
+            )
+            self.engine.shutil = SimpleNamespace(which=rebound_locator)
+            self.assertIs(
+                dependencies["executable_locator"](),
+                rebound_locator,
+            )
+            self.engine.Path = rebound_path_factory
+            self.assertIs(
+                dependencies["path_factory"](),
+                rebound_path_factory,
+            )
+            self.engine.OSError = ReboundOSError
+            self.assertIs(
+                dependencies["os_error_type"](),
+                ReboundOSError,
+            )
+            self.engine.LauncherError = ReboundLauncherError
+            self.assertIs(
+                dependencies["error_type"](),
+                ReboundLauncherError,
+            )
+            self.engine.stat = SimpleNamespace(S_ISREG=rebound_regular_test)
+            self.assertIs(
+                dependencies["regular_file_test"](),
+                rebound_regular_test,
+            )
+            self.engine.os = SimpleNamespace(
+                access=rebound_access,
+                X_OK=initial_mode,
+            )
+            self.assertIs(
+                dependencies["access_check"](),
+                rebound_access,
+            )
+            self.engine.os = SimpleNamespace(
+                access=initial_access,
+                X_OK=rebound_mode,
+            )
+            self.assertIs(
+                dependencies["executable_mode"](),
+                rebound_mode,
+            )
+            return resolved
+
+        with (
+            mock.patch.object(self.engine, "_PINNED_GIT", None),
+            mock.patch.object(
+                self.engine,
+                "_discover_git_executable",
+                side_effect=discover,
+            ) as discovery,
+            mock.patch.object(
+                self.engine,
+                "shutil",
+                SimpleNamespace(which=initial_locator),
+            ),
+            mock.patch.object(self.engine, "Path", initial_path_factory),
+            mock.patch.object(
+                self.engine,
+                "OSError",
+                InitialOSError,
+                create=True,
+            ),
+            mock.patch.object(
+                self.engine,
+                "LauncherError",
+                InitialLauncherError,
+            ),
+            mock.patch.object(
+                self.engine,
+                "stat",
+                SimpleNamespace(S_ISREG=initial_regular_test),
+            ),
+            mock.patch.object(
+                self.engine,
+                "os",
+                SimpleNamespace(access=initial_access, X_OK=initial_mode),
+            ),
+        ):
+            self.assertIs(self.engine.pin_git_executable(), resolved)
+            self.assertIs(self.engine._PINNED_GIT, resolved)
+
+        discovery.assert_called_once()
+
+    def test_engine_real_git_discovery_kernel_observes_rebound_globals(
+        self,
+    ) -> None:
+        events: list[object] = []
+        metadata_mode = object()
+        executable_mode = object()
+
+        class Metadata:
+            @property
+            def st_mode(metadata_self) -> object:
+                events.append("metadata-mode")
+                return metadata_mode
+
+        class ResolvedPath:
+            def stat(path_self) -> Metadata:
+                events.append("stat")
+                return Metadata()
+
+        resolved = ResolvedPath()
+
+        class ReboundStat:
+            @property
+            def S_ISREG(stat_self) -> object:
+                events.append("regular-provider")
+
+                def is_regular(mode: object) -> bool:
+                    events.append(("regular", mode))
+                    self.engine.os = AccessNamespace()
+                    return True
+
+                return is_regular
+
+        class ModeNamespace:
+            X_OK = executable_mode
+
+        class AccessNamespace:
+            @property
+            def access(namespace_self) -> object:
+                events.append("access-provider")
+                self.engine.os = ModeNamespace()
+
+                def is_executable(path: object, mode: object) -> bool:
+                    events.append(("access", path, mode))
+                    return True
+
+                return is_executable
+
+        class CandidatePath:
+            def resolve(path_self, *, strict: bool) -> ResolvedPath:
+                events.append(("resolve", strict))
+                self.engine.stat = ReboundStat()
+                return resolved
+
+        def rebound_path_factory(candidate: str) -> CandidatePath:
+            events.append(("path", candidate))
+            return CandidatePath()
+
+        def locate(name: str) -> str:
+            events.append(("locate", name))
+            self.engine.Path = rebound_path_factory
+            return "candidate"
+
+        stale_path_factory = mock.Mock(
+            side_effect=AssertionError("used the Path binding too early")
+        )
+        stale_regular_test = mock.Mock(
+            side_effect=AssertionError("used the stat binding too early")
+        )
+        stale_access = mock.Mock(
+            side_effect=AssertionError("used the os.access binding too early")
+        )
+
+        with (
+            mock.patch.object(self.engine, "_PINNED_GIT", None),
+            mock.patch.object(
+                self.engine,
+                "_discover_git_executable",
+                self.policy.discover_git_executable,
+            ),
+            mock.patch.object(
+                self.engine,
+                "shutil",
+                SimpleNamespace(which=locate),
+            ),
+            mock.patch.object(self.engine, "Path", stale_path_factory),
+            mock.patch.object(
+                self.engine,
+                "stat",
+                SimpleNamespace(S_ISREG=stale_regular_test),
+            ),
+            mock.patch.object(
+                self.engine,
+                "os",
+                SimpleNamespace(access=stale_access, X_OK=object()),
+            ),
+        ):
+            observed = self.engine.pin_git_executable()
+            self.assertIs(observed, resolved)
+            self.assertIs(self.engine._PINNED_GIT, resolved)
+
+        self.assertEqual(
+            events,
+            [
+                ("locate", "git"),
+                ("path", "candidate"),
+                ("resolve", True),
+                "stat",
+                "regular-provider",
+                "metadata-mode",
+                ("regular", metadata_mode),
+                "access-provider",
+                ("access", resolved, executable_mode),
+            ],
+        )
+        stale_path_factory.assert_not_called()
+        stale_regular_test.assert_not_called()
+        stale_access.assert_not_called()
+
+    def test_engine_real_git_discovery_kernel_observes_rebound_error_types(
+        self,
+    ) -> None:
+        class InitialOSError(OSError):
+            pass
+
+        class ReboundOSError(OSError):
+            pass
+
+        class InitialLauncherError(RuntimeError):
+            pass
+
+        class ReboundLauncherError(RuntimeError):
+            pass
+
+        failure = ReboundOSError("rebound failure")
+
+        class FailingPath:
+            def resolve(path_self, *, strict: bool) -> None:
+                self.assertTrue(strict)
+                self.engine.OSError = ReboundOSError
+                self.engine.LauncherError = ReboundLauncherError
+                raise failure
+
+        with (
+            mock.patch.object(self.engine, "_PINNED_GIT", None),
+            mock.patch.object(
+                self.engine,
+                "_discover_git_executable",
+                self.policy.discover_git_executable,
+            ),
+            mock.patch.object(
+                self.engine,
+                "shutil",
+                SimpleNamespace(which=lambda name: "candidate"),
+            ),
+            mock.patch.object(
+                self.engine,
+                "Path",
+                lambda candidate: FailingPath(),
+            ),
+            mock.patch.object(
+                self.engine,
+                "OSError",
+                InitialOSError,
+                create=True,
+            ),
+            mock.patch.object(
+                self.engine,
+                "LauncherError",
+                InitialLauncherError,
+            ),
+        ):
+            with self.assertRaises(ReboundLauncherError) as caught:
+                self.engine.pin_git_executable()
+            self.assertEqual(
+                str(caught.exception),
+                "cannot resolve the Git executable",
+            )
+            self.assertIs(caught.exception.__cause__, failure)
+            self.assertIsNone(self.engine._PINNED_GIT)
+
+    def test_engine_pins_the_portable_real_git_executable(self) -> None:
+        candidate = shutil.which("git")
+        if candidate is None:
+            self.skipTest("Git is not installed")
+        expected = Path(candidate).resolve(strict=True)
+
+        with (
+            mock.patch.object(self.engine, "_PINNED_GIT", None),
+            mock.patch.object(
+                self.engine,
+                "_discover_git_executable",
+                self.policy.discover_git_executable,
+            ),
+        ):
+            observed = self.engine.pin_git_executable()
+            self.assertIs(self.engine._PINNED_GIT, observed)
+            self.assertIs(self.engine.pin_git_executable(), observed)
+
+        self.assertEqual(observed, expected)
+        self.assertTrue(stat.S_ISREG(observed.stat().st_mode))
+        self.assertTrue(os.access(observed, os.X_OK))
 
     def test_engine_wrapper_preserves_rebound_policy_globals(self) -> None:
         source = {

@@ -32,6 +32,7 @@ from .git import (
     GIT_COMMAND_CONFIG_RE,
     GIT_INDEXED_CONFIG_ENV_RE,
     GIT_UNSAFE_ENV,
+    discover_git_executable as _discover_git_executable,
     hardened_git_arguments,
     sanitized_git_environment as _sanitized_git_environment,
     validate_effective_git_configuration as _validate_effective_git_configuration,
@@ -255,16 +256,15 @@ def pin_git_executable() -> Path:
     global _PINNED_GIT
     if _PINNED_GIT is not None:
         return _PINNED_GIT
-    candidate = shutil.which("git")
-    if candidate is None:
-        raise LauncherError("cannot find the Git executable")
-    try:
-        resolved = Path(candidate).resolve(strict=True)
-        metadata = resolved.stat()
-    except OSError as exc:
-        raise LauncherError("cannot resolve the Git executable") from exc
-    if not stat.S_ISREG(metadata.st_mode) or not os.access(resolved, os.X_OK):
-        raise LauncherError("the resolved Git executable is not a regular executable file")
+    resolved = _discover_git_executable(
+        executable_locator=lambda: shutil.which,
+        path_factory=lambda: Path,
+        os_error_type=lambda: OSError,
+        error_type=lambda: LauncherError,
+        regular_file_test=lambda: stat.S_ISREG,
+        access_check=lambda: os.access,
+        executable_mode=lambda: os.X_OK,
+    )
     _PINNED_GIT = resolved
     return resolved
 

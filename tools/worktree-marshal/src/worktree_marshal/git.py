@@ -1,10 +1,10 @@
-"""Pure policy for hardened Git invocation.
+"""Git executable discovery and policy for hardened invocation.
 
-This module owns deterministic environment and argument transformation plus
-validation of captured effective-configuration output. Executable discovery,
-configuration probing, subprocess execution, repository authentication, and
-ref transactions remain in the lifecycle engine until their own parity seams
-are protected.
+This module owns read-only executable discovery and validation, deterministic
+environment and argument transformation, and validation of captured
+effective-configuration output. Executable caching, configuration probing,
+subprocess execution, repository authentication, and ref transactions remain
+in the lifecycle engine until their own parity seams are protected.
 """
 
 from __future__ import annotations
@@ -12,6 +12,7 @@ from __future__ import annotations
 import os
 import re
 from collections.abc import Callable
+from pathlib import Path
 from typing import Collection, Mapping, Sequence
 
 
@@ -88,6 +89,42 @@ GIT_BASE_ARGUMENTS = (
     "-c",
     "sequence.editor=:",
 )
+
+
+def discover_git_executable(
+    *,
+    executable_locator: Callable[
+        [],
+        Callable[[str], str | None],
+    ],
+    path_factory: Callable[
+        [],
+        Callable[[str], Path],
+    ],
+    os_error_type: Callable[[], type[BaseException]],
+    error_type: Callable[[], type[BaseException]],
+    regular_file_test: Callable[[], Callable[[int], bool]],
+    access_check: Callable[[], Callable[[Path, int], bool]],
+    executable_mode: Callable[[], int],
+) -> Path:
+    """Find and validate the Git executable with lazy dependencies."""
+
+    candidate = executable_locator()("git")
+    if candidate is None:
+        raise error_type()("cannot find the Git executable")
+    try:
+        resolved = path_factory()(candidate).resolve(strict=True)
+        metadata = resolved.stat()
+    except os_error_type() as exc:
+        raise error_type()("cannot resolve the Git executable") from exc
+    if (
+        not regular_file_test()(metadata.st_mode)
+        or not access_check()(resolved, executable_mode())
+    ):
+        raise error_type()(
+            "the resolved Git executable is not a regular executable file"
+        )
+    return resolved
 
 
 def sanitized_git_environment(
