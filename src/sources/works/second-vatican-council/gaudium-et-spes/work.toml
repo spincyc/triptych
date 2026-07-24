@@ -1,0 +1,11 @@
+schema = 1
+record_type = "work"
+id = "work.second-vatican-council.gaudium-et-spes"
+title = "Gaudium et spes"
+responsible = "Second Vatican Council"
+work_type = "pastoral-constitution"
+alternate_titles = ["Constitutio pastoralis de Ecclesia in mundo huius temporis", "Pastoral Constitution on the Church in the Modern World"]
+languages = ["la"]
+locus_pattern = '(?:[1-9]|[1-8][0-9]|9[0-3])(?:-(?:[1-9]|[1-8][0-9]|9[0-3]))?'
+description = "The Second Vatican Council's Pastoral Constitution on the Church in the Modern World, solemnly promulgated by Pope Paul VI on 7 December 1965. It comprises numbered articles 1-93; edition records distinguish the Latin Acta witness from dated Vatican web delivery states and translations."
+relations = ["work.holy-see.acta-apostolicae-sedis"]
