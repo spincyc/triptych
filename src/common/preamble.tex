@@ -1,0 +1,295 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage[most]{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,shapes.geometric}
+
+% Semantic color names are retained for compatibility with the weekly files,
+% but every value is pure black or white for monochrome printing.
+\definecolor{rubricred}{gray}{0}
+\definecolor{linkblue}{gray}{0}
+\definecolor{softblue}{gray}{1}
+\definecolor{softgold}{gray}{1}
+\definecolor{softgray}{gray}{1}
+
+\hypersetup{
+  hidelinks,
+  pdfborder={0 0 0}
+}
+
+% PDF timestamps are document source, never build-clock state.  Every
+% publishable leaf supplies a strict UTC timestamp through its tracked
+% generation-metadata.tex.  Suppressing the automatic creation date and
+% trailer ID keeps unchanged source byte-reproducible across rebuilds.
+\pdfinfoomitdate=1
+\pdftrailerid{}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\setlength{\tabcolsep}{3pt}
+\setlist[itemize]{leftmargin=1.25em, itemsep=0.2em}
+\renewcommand{\arraystretch}{1.22}
+
+\newcommand{\weektitle}[3]{
+  \begin{center}
+    {\Large\bfseries #1}\\[0.2em]
+    {\large #2}\\[0.2em]
+    {\small #3}
+  \end{center}
+  \vspace{0.5em}
+}
+
+\newcommand{\properrow}[4]{\textbf{#1} & #2 & #3 & #4\\}
+\newcommand{\properrefs}[1]{\textnormal{(\textit{#1})}}
+\newcommand{\sourceurl}[2]{\href{#1}{#2}}
+\newcommand{\latin}[1]{\textit{#1}}
+\newcommand{\rubric}[1]{\textbf{#1}}
+
+% Generation provenance and the document revision timestamp are stored in each
+% document leaf and rendered through these shared commands.  The first model
+% contribution renders the timestamp in a canonical provenance block.  A
+% mechanically derived companion has no local contribution, so its timestamp
+% is rendered once by the universal final-page colophon instead.
+\newif\ifAIDocumentRevisionRendered
+\def\AIDocumentRevisionTimestampValue{}
+\makeatletter
+\def\AI@revisiontopdf#1-#2-#3T#4:#5:#6Z\@nil{D:#1#2#3#4#5#6Z}
+\newcommand{\AIDocumentRevisionTimestamp}[1]{%
+  \gdef\AIDocumentRevisionTimestampValue{#1}%
+  \edef\AI@pdfrevisiontimestamp{%
+    \expandafter\AI@revisiontopdf#1\@nil}%
+  % Metadata files are imported after the first page in some documents, when
+  % hyperref has frozen its setup keys.  The pdfTeX primitive remains valid at
+  % that point and records the tracked value without consulting the build clock.
+  \pdfinfo{/ModDate (\AI@pdfrevisiontimestamp)}%
+}
+\makeatother
+\newcommand{\AIDisplayDocumentRevisionTimestamp}{%
+  \ifAIDocumentRevisionRendered\else
+    \textbf{Last revised (UTC):} \AIDocumentRevisionTimestampValue\\
+    \global\AIDocumentRevisionRenderedtrue
+  \fi}
+\makeatletter
+\let\AI@lastmodel\relax
+\let\AI@lastqualifiers\relax
+\newif\ifAI@rendermodel
+\newcommand{\AIModelContribution}[3]{%
+  \begingroup
+  \edef\AI@currentmodel{\detokenize{#1}}%
+  \edef\AI@currentqualifiers{\detokenize{#2}}%
+  \AI@rendermodeltrue
+  \ifx\AI@currentmodel\AI@lastmodel
+    \ifx\AI@currentqualifiers\AI@lastqualifiers
+      \AI@rendermodelfalse
+    \fi
+  \fi
+  \global\let\AI@lastmodel\AI@currentmodel
+  \global\let\AI@lastqualifiers\AI@currentqualifiers
+  \par\noindent
+  \begin{minipage}{\linewidth}
+  \exhyphenpenalty=10000
+  \AIDisplayDocumentRevisionTimestamp
+  \ifAI@rendermodel
+    \textbf{Model:} \texttt{#1}; \texttt{#2}\\
+  \fi
+  \textbf{Agent/runtime:} #3\par
+  \end{minipage}\par
+  \endgroup}
+\makeatother
+\newcommand{\AIInheritedGenerationMetadata}[1]{}
+
+% Every detached publication carries the repository's content-license boundary
+% as a compact final-page colophon.  It must remain subordinate to the work's
+% terminal content and must not create a rights-only page.  The license covers
+% only project-created contributions, not incorporated source material whose
+% rights or public-domain status remain independent.
+\newif\ifTriptychRightsNoticeRendered
+\newcommand{\TriptychRightsNotice}{%
+  \ifTriptychRightsNoticeRendered\else
+  \global\TriptychRightsNoticeRenderedtrue
+  \par
+  % Recover the otherwise unused footer area for this terminal colophon.  The
+  % final page number is suppressed, as it was on the former detached notice,
+  % so the compact block cannot collide with running matter.
+  \enlargethispage{0.58in}%
+  \thispagestyle{empty}
+  \vspace{0.35em}%
+  \begingroup
+  \setlength{\parskip}{0pt}%
+  \begin{minipage}{\linewidth}
+  \hrule height 0.35pt
+  \vspace{0.35em}%
+  \fontsize{7}{7.8}\selectfont
+  \AIDisplayDocumentRevisionTimestamp
+  \textbf{Reuse and rights.} To the extent Triptych holds the rights,
+  project-created content and design are licensed under
+  \href{https://creativecommons.org/licenses/by/4.0/}{CC BY 4.0}. Scripture,
+  liturgical or official texts, received prayers or hymns, quotations, fonts,
+  and other third-party material retain their own status; public-domain material
+  remains public domain. Identify changes. Attribution implies neither Triptych
+  nor ecclesiastical approval. See \texttt{LICENSE} and
+  \texttt{THIRD\_PARTY.md} in the source.
+  \end{minipage}
+  \endgroup
+  \fi
+}
+\AtEndDocument{\TriptychRightsNotice}
+
+\newenvironment{properstable}
+{\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.15\linewidth}>{\raggedright\arraybackslash}p{0.25\linewidth}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}}
+\textbf{Proper} & \textbf{TLM text / reference} & \textbf{Scriptural axis} & \textbf{Connection}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
+
+\newenvironment{sensestable}
+{\vspace{-0.35em}\begingroup\footnotesize\renewcommand{\arraystretch}{1.10}%
+\noindent\hspace*{\dimexpr0.04\linewidth-4\tabcolsep\relax}%
+\begin{tabular}{>{\bfseries\raggedright\arraybackslash}p{0.15\linewidth}>{\raggedright\arraybackslash}p{\dimexpr0.77\linewidth+4\tabcolsep\relax}}
+\textbf{Sense} & \textbf{Synthesis}\\
+\midrule}
+{\bottomrule\end{tabular}\par\endgroup}
+
+\newenvironment{connectionstable}
+{\small\begin{longtable}{>{\bfseries\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.74\linewidth}}
+\toprule
+\textbf{Thread} & \textbf{Synthesis}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
+
+\newenvironment{witnessstable}
+{\small\begin{longtable}{>{\raggedright\arraybackslash}p{0.2\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.38\linewidth}}
+\toprule
+\textbf{Witness} & \textbf{Text / source status} & \textbf{Interpretive contribution}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
+
+\newcommand{\witnessrow}[3]{#1 & #2 & #3\\}
+\newcommand{\sectionguard}{\Needspace{7\baselineskip}}
+
+% Keep the opening survey page compact but unchanged; sustained analysis uses
+% a slightly smaller reading size so longer patristic dossiers remain usable.
+\newenvironment{deepstudy}
+  {\begingroup\small}
+  {\par\endgroup}
+
+\newenvironment{threestable}[3]
+{\small\begin{longtable}{>{\bfseries\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.40\linewidth}}
+\toprule
+\textbf{#1} & \textbf{#2} & \textbf{#3}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
+
+\newenvironment{fourstable}[4]
+{\footnotesize\begin{longtable}{>{\bfseries\raggedright\arraybackslash}p{0.15\linewidth}>{\raggedright\arraybackslash}p{0.23\linewidth}>{\raggedright\arraybackslash}p{0.25\linewidth}>{\raggedright\arraybackslash}p{0.27\linewidth}}
+\toprule
+\textbf{#1} & \textbf{#2} & \textbf{#3} & \textbf{#4}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
+
+\newtcolorbox{studybox}[1]{
+  enhanced,
+  breakable,
+  colback=white,
+  colbacktitle=white,
+  coltitle=black,
+  frame hidden,
+  boxrule=0pt,
+  sharp corners,
+  borderline west={1.2pt}{0pt}{black},
+  left=8pt,
+  right=2pt,
+  top=2pt,
+  bottom=2pt,
+  toptitle=0pt,
+  bottomtitle=2pt,
+  before skip=8pt,
+  after skip=8pt,
+  title={#1},
+  fonttitle=\small\bfseries
+}
+
+% Use the titleless form when a surrounding heading and explicit field labels
+% already state the block's function.  The left rule supplies hierarchy without
+% adding a second prose label that merely narrates the typography.
+\newtcolorbox{studyframe}{
+  enhanced,
+  breakable,
+  colback=white,
+  frame hidden,
+  boxrule=0pt,
+  sharp corners,
+  borderline west={1.2pt}{0pt}{black},
+  left=8pt,
+  right=2pt,
+  top=4pt,
+  bottom=4pt,
+  before skip=8pt,
+  after skip=8pt
+}
+
+\newtcolorbox{massbox}[1]{
+  enhanced,
+  breakable,
+  colback=white,
+  colframe=black,
+  colbacktitle=white,
+  coltitle=black,
+  boxrule=0.55pt,
+  sharp corners,
+  left=7pt,
+  right=7pt,
+  top=4pt,
+  bottom=4pt,
+  toptitle=3pt,
+  bottomtitle=3pt,
+  titlerule=0.45pt,
+  before skip=8pt,
+  after skip=8pt,
+  title={#1},
+  fonttitle=\small\bfseries
+}
+
+\newtcolorbox{sourcecard}[1]{
+  enhanced,
+  colback=white,
+  colframe=black,
+  colbacktitle=white,
+  coltitle=black,
+  boxrule=0.4pt,
+  sharp corners,
+  left=5pt,
+  right=5pt,
+  top=4pt,
+  bottom=4pt,
+  toptitle=3pt,
+  bottomtitle=3pt,
+  titlerule=0.4pt,
+  before skip=4pt,
+  after skip=4pt,
+  title={#1},
+  fonttitle=\small\bfseries
+}
+
+\tikzset{
+  guide node/.style={draw=black, fill=white, align=center, inner sep=5pt, font=\small},
+  guide emphasis/.style={draw=black, very thick, fill=white, align=center, inner sep=5pt, font=\small},
+  guide arrow/.style={-{Stealth[length=2mm]}, thick, draw=black}
+}
