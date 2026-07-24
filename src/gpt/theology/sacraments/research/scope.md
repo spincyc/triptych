@@ -21,6 +21,19 @@ Vatican II's *Lumen gentium* is used at distinct levels. No. 10 directly control
 
 Vatican II's *Sacrosanctum Concilium* is likewise used at distinct levels. Nos. 5–7, 10, 26–27, and 59–61 are the exact doctrinal controls for the Paschal and sacramental economy, Christ's liturgical action, the liturgy's place in ecclesial life, the ecclesial and public character of sacramental celebration, and the general nature and effects of sacraments and sacramentals. Nos. 62–82 remain a catalog-only reform range in the reader bibliography; they are not represented here as individually claim-mapped or inspected controls for the treatise's sacramental synthesis. The mechanically composed at-a-glance companion is not a *Sacrosanctum Concilium* evidence consumer: its imported matrix, lexicon, seven summaries, and initiation table ground their published claims in other named controls, including Scripture, the *Catechism*, Trent, Thomas, canon law, *Orientalium Ecclesiarum*, and the applicable Eastern sources. It therefore requires no decorative inherited *Sacrosanctum Concilium* binding.
 
+Vatican II's *Unitatis redintegratio* is used only for Baptism's ecumenical
+consequences. Article 3 controls the treatise's statement that believers in
+Christ who are truly baptized possess real though imperfect communion with
+the Catholic Church. Article 22 controls the sacramental bond of unity created
+by Baptism and expressly preserves Baptism as a beginning ordered toward
+complete profession, incorporation, and Eucharistic communion. CCC 1271 is
+the treatise's proximate synthesis and itself reproduces both conciliar
+claims; this source-of-source relation is recorded without converting every
+source cited by the Decree into a direct treatise dependency. CCC 1272 and CIC
+845, not article 22 by itself, control the indelible character and
+non-repetition rule. The at-a-glance companion directly imports the article-22
+summary but not the treatise's fuller article-3 prose.
+
 Augustine's sign-language was checked principally in *De doctrina christiana* II.1.1, Letter 98.9, and *Tractates on John* 80.3. Aristotle is used for act/potency, substance/accident, hylomorphism, habits, and the four causes; these are analogical analytical tools rather than claims that a sacrament is a natural substance. Hugh of Saint Victor and Peter Lombard form the historical scholastic bridge. Aquinas's completed Part III governs the general doctrine, Baptism, Confirmation, Eucharist, and Penance. Anointing, Orders, and Matrimony use the *Supplementum* with its posthumous editorial status disclosed.
 
 “Sacramental form” and “substantial form” are kept distinct. Sacramental form is the determining word or prayer joined to matter / quasi-matter. In Baptism, Confirmation, Penance, Anointing, Orders, and Matrimony the human subject remains substantially human while receiving grace, character, remission, strength, or a real bond / relation. In the Eucharist, the sacramental words within the integral anaphora effect conversion of the whole substances of bread and wine into Christ's Body and Blood; the substances and their substantial forms no longer remain, while the sensible accidents / species do. The treatise therefore uses Trent's grammar of “whole substance” rather than loosely saying that “the forms” are transubstantiated.
@@ -137,3 +150,28 @@ readable metadata page. The corrected build was rerendered and its terminal
 pages rechecked. Both installed PDFs are byte-identical to the reviewed
 builds. No prior exact-byte release clearance attaches to these changed
 bytes.
+
+## *Unitatis redintegratio* source-family production review — 2026-07-24
+
+The exact English, Latin, and AAS 57 witnesses were normalized. The treatise
+now binds articles 3 and 22 only for their distinct ecumenical claims: real
+though imperfect communion and ecclesial endowments in article 3, and
+Baptism's sacramental bond of unity and orientation toward full incorporation
+in article 22. CCC 1272 and CIC 845 remain the separate controls for
+indelibility and non-repetition. The shared Baptism summary used by both
+publications now gives the compact attribution “Baptism unites Christians
+(UR 22).”
+
+Settled builds produced the 71-page treatise, SHA-256
+`940ea7e631aef87fcfc6ec6338d2d3621cc111c21e304ce495d87130b2ce472e`,
+and the 10-page at-a-glance companion, SHA-256
+`d6ca971dec92aa4355cebdf706b38da71cc60109e0015607b32bbc0680db46d3`.
+The final logs contained no fatal error, unresolved reference, overflow,
+underflow, rerun, or layout warning. PDF structure and metadata,
+embedded/subsetted fonts with Unicode maps, and nonempty text extraction
+passed. Review rasters were generated through `scripts/pdf-review`; every
+physical page of both publications was visually inspected, with the main
+Baptism treatment, shared summary, references, initiation appendix, and
+terminal metadata checked at full size. The reviewed builds were installed at
+their mirrored `doc/` paths and verified byte-identical. No prior exact-byte
+release clearance attaches to these changed bytes.

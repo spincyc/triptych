@@ -44,7 +44,7 @@ role = "official-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The complete Latin Notificationes was checked as the General Secretary's communication at the 123rd General Congregation on 16 November 1964: it answers the qualification question, reproduces a distinct Doctrinal Commission declaration dated 6 March 1964, and introduces the separately titled preliminary note."
 verified_on = "2026-07-24"
-source_fingerprint = "sha256:9fc01a0be04e495e19c85737fc3a79546ebd96bd3c382d08481e5c58e576d393"
+source_fingerprint = "sha256:e0011c46277ec42d31dc4c74678e59aa3fa56fb8150577216a1a119b5535ef4f"
 
 [[bindings]]
 source_id = "passage.second-vatican-council.doctrinal-commission-declaration-1964-03-06.latin-aas-57-1965.complete"
@@ -53,7 +53,7 @@ role = "official-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The exact embedded two-paragraph Doctrinal Commission declaration of 6 March 1964 was checked for the article's rule distinguishing matters openly declared definitive from the Council's remaining teaching, which is to be received according to the Council's manifested mind. Its date and authorship are not conflated with the General Secretary's 16 November Notificationes."
 verified_on = "2026-07-24"
-source_fingerprint = "sha256:f0364f59a896b78dab72a6b86adf4c679c57218923c10b07025a22f47be4720f"
+source_fingerprint = "sha256:83f0b2826bd9b7be7f6ed0c80fa1971f81c4938d1e920bee9ba0c5f4a7e7a1b1"
 
 [[bindings]]
 source_id = "passage.second-vatican-council.nota-explicativa-praevia.latin-aas-57-1965.complete"
@@ -62,7 +62,7 @@ role = "official-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The complete Latin Nota explicativa praevia was checked for its interpretation of Lumen gentium chapter III: the episcopal college is not a body of equals delegating power to a president, exists only with its head, and acts collegially only with the head's consent. It remains a separately titled constituent rather than part of the 6 March declaration."
 verified_on = "2026-07-24"
-source_fingerprint = "sha256:b5099689a5203e98bd8658137f2ce3af4b95d97e6be350440fca9855d1979a36"
+source_fingerprint = "sha256:58356e555af79d326afedfa2e2b0a77b1d87de31531ad7718410a3f1c7726c96"
 
 [[bindings]]
 source_id = "artifact.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.vatican-html-3cfc290b"
@@ -219,3 +219,29 @@ source_id = "work.second-vatican-council.orientalium-ecclesiarum"
 role = "context"
 states = ["cataloged"]
 context = "The work identity supports the article's third-session chronology and sixteen-document inventory by title, decree genre, promulgation date, and Eastern-Catholic subject. This work-level metadata binding claims no inspection of the numbered body and does not close the article's separate all-sixteen-documents negative claim."
+
+[[bindings]]
+source_id = "work.second-vatican-council.unitatis-redintegratio"
+role = "context"
+states = ["cataloged"]
+context = "The work identity supports the article's third-session chronology and sixteen-document inventory by title, decree genre, 21 November 1964 promulgation date, and ecumenical subject. It does not by itself establish numbered doctrinal, pastoral, or implementation claims."
+
+[[bindings]]
+source_id = "passage.second-vatican-council.unitatis-redintegratio.english-vatican-web-2026-07-24.3"
+loci = ["3"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official English article was checked for the reader's and authority matrix's bounded doctrinal claim that those who believe in Christ and have been truly baptized possess real though imperfect communion with the Catholic Church and that ecclesial elements exist beyond her visible boundaries. Lumen gentium 8 and the 2007 CDF Responses separately control subsistit-in identity; this passage supports neither branch theory nor full communion."
+claim_keys = ["imperfect-communion"]
+verified_on = "2026-07-24"
+source_fingerprint = "sha256:d95e2786b7f2653eeff7343d4167c129265628f3712c57c00ec99c9a2aa3bf56"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.unitatis-redintegratio.english-vatican-web-2026-07-24.3-4"
+loci = ["3-4"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official English range was checked for the article's bounded account of the Council's ecumenical program: imperfect communion, truthful and fair representation, competent dialogue, cooperation, prayer where allowed, and Catholic renewal. Later implementing acts remain necessary for concrete postconciliar discipline."
+claim_keys = ["conciliar-ecumenical-program"]
+verified_on = "2026-07-24"
+source_fingerprint = "sha256:15440c7fd2bd258ab84e997785fe36c1019b2633bce5c2cabb4329d3195ad405"

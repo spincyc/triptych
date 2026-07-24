@@ -238,3 +238,23 @@ context = "The complete official English articles were checked against the treat
 claim_keys = ["confirmation-eastern-presbyteral-ministry", "eastern-initiation-discipline"]
 verified_on = "2026-07-24"
 source_fingerprint = "sha256:af14155bed7b34d496ca7a519e61e9d504e56c22973ccae45ed0c4a5ac9e0ddb"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.unitatis-redintegratio.english-vatican-web-2026-07-24.3"
+loci = ["3"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official English article was checked against the Baptism chapter's bounded claim that those who believe in Christ and are truly baptized possess real though imperfect communion with the Catholic Church. It does not determine the validity of an alleged Baptism or supply the non-repetition rule."
+claim_keys = ["baptism-imperfect-communion"]
+verified_on = "2026-07-24"
+source_fingerprint = "sha256:d95e2786b7f2653eeff7343d4167c129265628f3712c57c00ec99c9a2aa3bf56"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.unitatis-redintegratio.english-vatican-web-2026-07-24.22"
+loci = ["22"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official English article was checked against the Baptism chapter and shared Baptism summary for the sacramental bond of unity among those reborn by Baptism and Baptism's orientation toward complete profession, incorporation, and Eucharistic communion. CCC 1271 supplies the proximate synthesis; CCC 1272 and CIC 845, not article 22 alone, control indelibility and non-repetition."
+claim_keys = ["baptism-ecumenical-bond"]
+verified_on = "2026-07-24"
+source_fingerprint = "sha256:ed0fadcfe21b37a19072f51579e2603b94cfbd10d8b52960c10a7ce39b8a52f0"

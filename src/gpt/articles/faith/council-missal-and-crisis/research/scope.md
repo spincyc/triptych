@@ -99,3 +99,24 @@ The settled 51-page PDF, SHA-256 `b00ac18a5d721ea58d416367f9870c9bd9acfb487935d4
 The source and audit records were revised in the corpus-wide omission audit. A settled two-pass build produced this 51-page PDF with SHA-256 `4da0700f412ef6f74bf007754ef56cbfb573b32024108faa605a15c6f11dd18d`. The final log contained no fatal error, undefined reference, overfull or underfull box, or unresolved rerun or layout warning. Generation metadata, `qpdf` structure, Letter page size, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed. Review rasters were generated through `scripts/pdf-review`; every rendered page was visually inspected for clipping, overlap, accidental blanks, bad breaks, footer and metadata placement, and legibility. The reviewed build was installed at its mirrored `doc/` path and verified byte-identical.
 
 This is internal production review only; it grants no independent editorial, specialist, rights, theological, or ecclesiastical approval. The exact current installed PDF is release-cleared by the 21 July 2026 exact-current-snapshot exception; the exception supplies none of the missing review or approval just named and authorizes no changed bytes.
+
+## *Unitatis redintegratio* source-reuse audit — 2026-07-24
+
+The exact official English nos. 3--4 were checked for the article's bounded
+doctrinal and practical claims. The doctrinal account of imperfect communion
+and ecclesial elements in no. 3 is distinguished from the ecumenical
+directions in no. 4; the reader-facing reference, authority matrix, source
+audit, and 21 November 1964 timeline entry were corrected accordingly.
+
+A settled two-pass build produced the 51-page PDF with SHA-256
+`beea7ef1e4ddc44f00ca91a3c246c30db6c6dc1f2c2ba27cf9762437177d5769`.
+The final log contained no fatal error, unresolved reference, overflow,
+underflow, rerun, or layout warning. PDF structure and metadata,
+embedded/subsetted fonts with Unicode maps, and nonempty text extraction
+passed. Review rasters were generated through `scripts/pdf-review`; every
+physical page was visually inspected, with the revised conciliar account,
+timeline, references, and terminal metadata checked at full size. The reviewed
+build was installed at its mirrored `doc/` path and verified byte-identical.
+This source audit adds no independent specialist, theological, canonical,
+rights, or ecclesiastical review, and no prior exact-byte distribution
+clearance attaches to the changed render.

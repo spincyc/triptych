@@ -92,7 +92,7 @@ Evidence grade describes documentary access, not doctrinal seriousness. Ecumenic
 ### Modern official and ecumenical sources
 
 - 1983 Code of Canon Law, especially canons 9, 17–18, 749–754, and 751; the 1990 Eastern Code where Eastern penal terminology materially matters.
-- *Unitatis redintegratio* 3–4 and 11; the 1973 Catholic–Coptic, 1984 Catholic–Syriac, and 1994 Catholic–Assyrian common declarations; and the 1999 Joint Declaration on the Doctrine of Justification and its annex.
+- *Unitatis redintegratio* 3 (non-imputation of original-separation guilt and ecclesial endowments outside visible Catholic boundaries), 4 (truthful and fair representation and dialogue), and 11 (doctrinal integrity, rejection of false irenicism, and the hierarchy of truths); the 1973 Catholic–Coptic, 1984 Catholic–Syriac, and 1994 Catholic–Assyrian common declarations; and the 1999 Joint Declaration on the Doctrine of Justification and its annex.
 - DDF or predecessor documents used for proposition-level modern examples, with the act's actual doctrinal conclusion and procedural genre preserved.
 
 ## Material qualifications and negative results
@@ -126,6 +126,7 @@ The publication is chiefly project-created paraphrase and synthesis. It uses onl
 
 - **Completed for this working publication:** dedicated profile and collection architecture; bounded census rule; chronological dossier structure; proposition/act/aftermath distinction; current-code and ecumenical qualification checks; corpus inventory; source and timeline audits; consolidated references; metadata; and catalog and release-policy accounting.
 - **Completed for the 2026-07-17 structural revision:** removed all rendered definition, method, evidence, and corpus apparatus from before the first dossier; retained that material as one terminal `Scope, Terms, and Qualifications` appendix; ordered the terminal sequence as response timeline, census accounting, scope appendix, references, and metadata; and limited the title notice to a non-authority warning pointing there.
+- **Unitatis redintegratio locus correction completed on 2026-07-24:** rechecked the official English witness at paragraphs 3, 4, and 11 and its promulgation line; assigned descendant guilt and ecclesial endowments to paragraph 3, truthful and fair representation and dialogue to paragraph 4, and doctrinal integrity, false irenicism, and the hierarchy of truths to paragraph 11; and corrected the timeline date from 1965 to 21 November 1964. This focused historical-source check does not advance the publication's general 2026-07-16 currentness boundary.
 - **Superseded phase-three production verification completed on 2026-07-17:** a dependency-complete, settled two-pass build produced an 83-page PDF, SHA-256 `e848533021cf212274c26d26f7c1e2098854c91b049ad9865f75568f92f10e05`. Its final log was warning-free; generation metadata, PDF structure and metadata, embedded/subsetted/Unicode-mapped fonts, and extracted text passed; all 83 physical pages were visually reviewed, with the dense timeline and census apparatus also checked at individual-page scale; and the installed PDF was byte-identical to the reviewed build.
 - **Superseded final clean-build review completed on 2026-07-18:** a dependency-complete, settled two-pass build produced an 82-page PDF, SHA-256 `1f0644fd03183096424607d17679026400caf4d94a1bc8c3e53ef95d4a102854`. Its warning-free final log, generation metadata, PDF structure and metadata, embedded/subsetted/Unicode-mapped fonts, extracted text, every-page visual review, and installed/build byte comparison passed.
 - **Final-typography production review completed on 2026-07-19:** a dependency-complete, settled two-pass build produced the current 82-page PDF, SHA-256 `1f7db5637866f7f7a9269d6ddb4446cb473b18feeca5e3bc0b6e2c0bb8c517ef`. Its warning-free final log, `qpdf`, PDF title and page metadata, embedded/subsetted/Unicode-mapped fonts, and nonempty text extraction passed. All 82 physical pages were visually reviewed, with the dense timeline, census, and catalogue crosswalk pages also checked at individual-page scale; the installed PDF is byte-identical to the reviewed build.
@@ -144,3 +145,24 @@ The settled 81-page PDF, SHA-256 `77d1571e853c8899221ec81b98e236183f75f59e3686fc
 The source and audit records were revised in the corpus-wide omission audit. A settled two-pass build produced this 81-page PDF with SHA-256 `b88beadd66e79b5c1500059ab03da0e55384c43c6cf913d0acd2605f6d24175d`. The final log contained no fatal error, undefined reference, overfull or underfull box, or unresolved rerun or layout warning. Generation metadata, `qpdf` structure, Letter page size, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed. Review rasters were generated through `scripts/pdf-review`; every rendered page was visually inspected for clipping, overlap, accidental blanks, bad breaks, footer and metadata placement, and legibility. The reviewed build was installed at its mirrored `doc/` path and verified byte-identical.
 
 This is internal production review only; it grants no independent editorial, specialist, rights, theological, or ecclesiastical approval. The exact current installed PDF is release-cleared by the 21 July 2026 exact-current-snapshot exception; the exception supplies none of the missing review or approval just named and authorizes no changed bytes.
+
+## *Unitatis redintegratio* source-family production review — 2026-07-24
+
+The exact English, Latin, and AAS 57 witnesses were normalized, and the
+publication now binds only articles 3--4 and 11 for its modern ecumenical
+boundary. The reader-facing account distinguishes non-imputation and ecclesial
+endowments in article 3, truthful and fair representation and dialogue in
+article 4, and doctrinal integrity, false irenicism, and the hierarchy of
+truths in article 11. The response timeline was corrected from 1965 to the
+Decree's 21 November 1964 promulgation.
+
+A settled 81-page build produced SHA-256
+`3d44c837d5dbfff4cba9e1ff2ff07f2b2be973d890214e8e80b45e00059f9c6c`.
+The final log contained no fatal error, unresolved reference, overflow,
+underflow, rerun, or layout warning. PDF structure and metadata,
+embedded/subsetted fonts with Unicode maps, and nonempty text extraction
+passed. Review rasters were generated through `scripts/pdf-review`; every
+physical page was visually inspected, including the revised discussion,
+timeline, references, dense tables, and terminal metadata. The reviewed build
+was installed at its mirrored `doc/` path and verified byte-identical. No prior
+exact-byte release clearance attaches to these changed bytes.

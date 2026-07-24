@@ -1,6 +1,6 @@
 # Conciliar Authority Matrix — Vatican I and Vatican II
 
-Checked 2026-07-13. This record prevents three recurrent conflations: ceremonial solemnity with a new extraordinary definition, document title with one undifferentiated theological note, and later reception with the promulgated act.
+Checked 2026-07-13; the *Unitatis redintegratio* locus and authority calibration were checked 2026-07-24. This record prevents three recurrent conflations: ceremonial solemnity with a new extraordinary definition, document title with one undifferentiated theological note, and later reception with the promulgated act.
 
 ## Governing rules
 
@@ -33,15 +33,15 @@ Checked 2026-07-13. This record prevents three recurrent conflations: ceremonial
 | --- | --- | --- | --- |
 | Reaffirmed revealed dogma | The council clearly repeats a truth already definitively proposed as revealed. | Trinity, Incarnation, Eucharistic sacrifice and Real Presence, papal primacy and infallibility, Marian dogmas. | Theological faith because of the doctrine’s prior or universal definitive status, not because Vatican II newly defined it. |
 | Definitive doctrine already taught by the ordinary and universal magisterium | The proposition is to be held irrevocably, whether revealed or necessarily connected with Revelation. | Core sacramental constitution, apostolic succession, fundamental moral prohibitions. | Firm and definitive assent; the article avoids pretending Vatican II issued a new formula for every example. |
-| Authentic non-definitive doctrine | The council teaches as council without manifest final defining intent. | Much of the synthesis on collegiality, ecclesial communion, ecumenism, religious liberty’s development, and Church–world relations. | Religious submission of mind and will, calibrated by subject, wording, and repetition; not “optional.” |
-| Discipline and authorized reform | The council orders or permits institutional action. | Liturgical revision, restored catechumenate, formation and governance reforms. | Obedience within scope; later competent authority may reform the discipline. |
+| Authentic non-definitive doctrine | The council teaches as council without manifest final defining intent. | Much of the synthesis on collegiality, including *Unitatis redintegratio* 3 on imperfect communion and ecclesial elements, religious liberty’s development, and Church–world relations. | Religious submission of mind and will, calibrated by subject, wording, and repetition; not “optional.” |
+| Discipline and authorized pastoral reform | The council orders, exhorts, or permits institutional action. | Liturgical revision, restored catechumenate, formation and governance reforms, and the practical ecumenical directions of *Unitatis redintegratio* 4. | Response follows the proposition's form: obedience to binding directives and faithful implementation of pastoral direction; later competent authority may reform the discipline or practical program. |
 | Prudential or contingent judgment | The council diagnoses a historical condition or recommends a time-bound application. | Some economic, political, cultural, technological, and strategic passages in *Gaudium et spes* and other texts. | Serious respect and consideration; later evidence or authority can correct application without reversing dogma. |
 
 ## Disputed loci and controlling interpretation
 
 | Locus | Misreading rejected | Controlling evidence | Article’s qualified result |
 | --- | --- | --- | --- |
-| *Lumen gentium* 8, *subsistit in* | Either “the Catholic Church is only one branch” or “nothing ecclesial exists beyond visible Catholic boundaries.” | CDF 2007 Responses; *Unitatis redintegratio*. | The Church of Christ endures concretely in the Catholic Church; real elements of sanctification and truth exist outside her visible structure. |
+| *Lumen gentium* 8, *subsistit in*; *Unitatis redintegratio* 3, imperfect communion and ecclesial elements | Either “the Catholic Church is only one branch” or “nothing ecclesial exists beyond visible Catholic boundaries.” | The two exact conciliar loci; CDF 2007 Responses. | The Church of Christ endures concretely in the Catholic Church; those who believe in Christ and have been truly baptized are in real though imperfect communion with her, and real ecclesial elements exist outside her visible structure. |
 | *Lumen gentium* 22 and Preliminary Note | Either democratic delegation to the pope or a college with no real subjectivity. | Text and note; Vatican I, ch. 3. | The college is subject of supreme power only with and never without its head; bishops receive office through consecration for hierarchical exercise. |
 | *Dignitatis humanae* 1–3 | Religious indifferentism or denial of objective duties toward truth. | The declaration’s express saving clause and coercion analysis. | Civil immunity from coercion is distinct from moral approval of error; development and tension with older applications remain proper historical questions. |
 | *Lumen gentium* 16 / *Nostra aetate* | Parallel saving religions or unnecessary mission. | *Ad gentes*; CDF *Dominus Iesus*. | Grace can save without culpable explicit knowledge; Christ and his Church remain uniquely and universally mediating. |
