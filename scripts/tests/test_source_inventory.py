@@ -41,13 +41,18 @@ class SourceInventoryTests(unittest.TestCase):
         path.write_text(content, encoding="utf-8")
         return path
 
-    def run_tool(self, *arguments: str) -> subprocess.CompletedProcess[str]:
+    def run_tool(
+        self,
+        *arguments: str,
+        env: dict[str, str] | None = None,
+    ) -> subprocess.CompletedProcess[str]:
         return subprocess.run(
             [sys.executable, str(TOOL), "--root", str(self.root), *arguments],
             cwd=ROOT,
             text=True,
             capture_output=True,
             check=False,
+            env=env if env is not None else {**os.environ},
         )
 
     def bootstrap(self) -> None:
@@ -774,6 +779,132 @@ class SourceInventoryTests(unittest.TestCase):
         self.assertEqual(result.returncode, 1)
         self.assertIn("source-bearing file has no explicit owner", result.stderr)
         self.assertFalse((self.root / self.inventory).exists())
+
+    def test_bootstrap_and_check_support_a_second_provider_tree(self) -> None:
+        self.write("src/claude/articles/faith/demo/main.tex", "Demo\n")
+        self.write(
+            "src/claude/articles/faith/demo/research/source-audit.md",
+            "# Legacy audit\n",
+        )
+        claude_inventory = Path(
+            "src/sources/inventories/claude-publications-v1.toml"
+        )
+
+        result = self.run_tool(
+            "bootstrap",
+            claude_inventory.as_posix(),
+            "--audited-on",
+            "2026-07-22",
+            "--provider",
+            "claude",
+        )
+
+        self.assertEqual(result.returncode, 0, result.stderr)
+        inventory = tomllib.loads(
+            (self.root / claude_inventory).read_text(encoding="utf-8")
+        )
+        self.assertEqual(inventory["provider"], "claude")
+        self.assertEqual(inventory["discovery_rule"], "src/claude/**/main.tex")
+        self.assertEqual(
+            inventory["documents"][0]["main"],
+            "src/claude/articles/faith/demo/main.tex",
+        )
+        self.assertEqual(
+            [row["path"] for row in inventory["files"]],
+            [
+                "src/claude/articles/faith/demo/main.tex",
+                "src/claude/articles/faith/demo/research/source-audit.md",
+            ],
+        )
+        checked = self.run_tool("check", claude_inventory.as_posix())
+        self.assertEqual(checked.returncode, 0, checked.stderr)
+
+    def test_environment_variable_selects_the_bootstrap_provider(self) -> None:
+        self.write("src/claude/articles/faith/demo/main.tex", "Demo\n")
+        claude_inventory = Path(
+            "src/sources/inventories/claude-publications-v1.toml"
+        )
+
+        result = self.run_tool(
+            "bootstrap",
+            claude_inventory.as_posix(),
+            "--audited-on",
+            "2026-07-22",
+            env={**os.environ, "PROVIDER": "claude"},
+        )
+
+        self.assertEqual(result.returncode, 0, result.stderr)
+        inventory = tomllib.loads(
+            (self.root / claude_inventory).read_text(encoding="utf-8")
+        )
+        self.assertEqual(inventory["provider"], "claude")
+
+    def test_bootstrap_rejects_a_provider_outside_the_allowlist(self) -> None:
+        result = self.run_tool(
+            "bootstrap",
+            self.inventory.as_posix(),
+            "--audited-on",
+            "2026-07-22",
+            "--provider",
+            "gemini",
+        )
+
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("--provider must be one of", result.stderr)
+        self.assertFalse((self.root / self.inventory).exists())
+
+    def test_check_rejects_a_provider_outside_the_allowlist(self) -> None:
+        self.bootstrap()
+        path = self.root / self.inventory
+        path.write_text(
+            path.read_text(encoding="utf-8").replace(
+                'provider = "gpt"', 'provider = "gemini"', 1
+            ),
+            encoding="utf-8",
+        )
+
+        result = self.run_tool("check", self.inventory.as_posix())
+
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("provider must be one of: claude, gpt", result.stderr)
+
+    def test_check_derives_consistency_from_the_declared_provider(self) -> None:
+        self.bootstrap()
+        path = self.root / self.inventory
+        path.write_text(
+            path.read_text(encoding="utf-8").replace(
+                'provider = "gpt"', 'provider = "claude"', 1
+            ),
+            encoding="utf-8",
+        )
+
+        result = self.run_tool("check", self.inventory.as_posix())
+
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("discovery_rule is not canonical", result.stderr)
+        self.assertIn("path must be below src/claude", result.stderr)
+
+    def test_bootstrap_declares_the_common_typesetting_owner(self) -> None:
+        self.write("src/common/preamble.tex", "% shared preamble\n")
+
+        self.bootstrap()
+
+        inventory = tomllib.loads(
+            (self.root / self.inventory).read_text(encoding="utf-8")
+        )
+        owner = next(
+            row
+            for row in inventory["owners"]
+            if row["id"] == "owner.typesetting.common"
+        )
+        self.assertEqual(owner["kind"], "shared-typesetting-owner")
+        self.assertEqual(owner["roots"], ["src/common"])
+        self.assertNotIn(
+            "src/common/preamble.tex",
+            [row["path"] for row in inventory["files"]],
+        )
+        checked = self.run_tool("check", self.inventory.as_posix())
+        self.assertEqual(checked.returncode, 0, checked.stderr)
 
     def test_bootstrap_owns_shared_altar_server_training_sources(self) -> None:
         document = (

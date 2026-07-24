@@ -74,6 +74,9 @@ FILE_KINDS = {
 }
 EVIDENCE_WORDS = {"acquired", "searched", "inspected", "verified"}
 
+PROVIDERS = {"gpt", "claude"}
+DEFAULT_PROVIDER = "gpt"
+
 CURRICULUM_OWNER = "owner.curriculums.ecclesiastical-latin"
 NOVENA_OWNER = "owner.devotions.novenas.shared"
 POSTCONCILIAR_OWNER = (
@@ -85,67 +88,98 @@ BIBLICAL_HISTORY_OWNER = "owner.history.biblical-translations"
 PARISH_HISTORY_OWNER = "owner.history.catholic-parish-histories"
 INSTITUTE_HISTORY_OWNER = "owner.history.traditional-priestly-institutes"
 SERVER_TRAINING_OWNER = "owner.liturgy.roman-rite.1962.altar-server-guides"
+COMMON_TYPESETTING_OWNER = "owner.typesetting.common"
 
-NONPUBLICATION_OWNERS = (
+# Roots are relative to one provider tree (src/<provider>/) and are
+# materialized per provider by _nonpublication_owners.
+PROVIDER_NONPUBLICATION_OWNERS = (
     {
         "id": BIOGRAPHY_OWNER,
-        "roots": ["src/gpt/biographies/shared"],
+        "roots": ["biographies/shared"],
         "kind": "shared-render-owner",
     },
     {
         "id": CURRICULUM_OWNER,
         "roots": [
-            "src/gpt/curriculums/ecclesiastical-latin/research",
-            "src/gpt/curriculums/ecclesiastical-latin/shared",
+            "curriculums/ecclesiastical-latin/research",
+            "curriculums/ecclesiastical-latin/shared",
         ],
         "kind": "curriculum-source-owner",
     },
     {
         "id": NOVENA_OWNER,
-        "roots": ["src/gpt/devotions/novenas/shared"],
+        "roots": ["devotions/novenas/shared"],
         "kind": "shared-prayer-owner",
     },
     {
         "id": BIBLICAL_HISTORY_OWNER,
-        "roots": ["src/gpt/history/biblical-translations"],
+        "roots": ["history/biblical-translations"],
         "kind": "shared-render-owner",
     },
     {
         "id": PARISH_HISTORY_OWNER,
-        "roots": ["src/gpt/history/catholic-parish-histories"],
+        "roots": ["history/catholic-parish-histories"],
         "kind": "shared-render-owner",
     },
     {
         "id": INSTITUTE_HISTORY_OWNER,
-        "roots": ["src/gpt/history/traditional-priestly-institutes"],
+        "roots": ["history/traditional-priestly-institutes"],
         "kind": "shared-render-owner",
     },
     {
         "id": SERVER_TRAINING_OWNER,
         "roots": [
-            "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research",
-            "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared",
+            "liturgy/roman-rite/1962/reference/altar-server-guides/research",
+            "liturgy/roman-rite/1962/reference/altar-server-guides/shared",
         ],
         "kind": "server-training-source-owner",
     },
     {
         "id": POSTCONCILIAR_OWNER,
         "roots": [
-            "src/gpt/liturgy/roman-rite/postconciliar/"
+            "liturgy/roman-rite/postconciliar/"
             "roman-missal-third-edition-en-us-2011/propers/registry",
-            "src/gpt/liturgy/roman-rite/postconciliar/"
+            "liturgy/roman-rite/postconciliar/"
             "roman-missal-third-edition-en-us-2011/propers/shared",
-            "src/gpt/liturgy/roman-rite/postconciliar/"
+            "liturgy/roman-rite/postconciliar/"
             "roman-missal-third-edition-en-us-2011/propers/temporal/shared",
         ],
         "kind": "edition-proper-owner",
     },
     {
         "id": MARIOLOGY_OWNER,
-        "roots": ["src/gpt/theology/mariology/shared"],
+        "roots": ["theology/mariology/shared"],
         "kind": "shared-render-owner",
     },
 )
+
+# Provider-neutral trees classified outside any provider's source surface.
+# src/common holds typesetting primitives (the shared preamble); typesetting
+# is not source material, so its files are never inventory file rows, but the
+# tree carries an explicit non-publication owner classification.
+SHARED_NONPUBLICATION_OWNERS = (
+    {
+        "id": COMMON_TYPESETTING_OWNER,
+        "roots": ["src/common"],
+        "kind": "shared-typesetting-owner",
+    },
+)
+
+
+def _nonpublication_owners(provider: str) -> tuple[dict[str, Any], ...]:
+    """Materialize explicit non-publication ownership rules for one provider."""
+    owners = [
+        {
+            "id": owner["id"],
+            "kind": owner["kind"],
+            "roots": [f"src/{provider}/{root}" for root in owner["roots"]],
+        }
+        for owner in PROVIDER_NONPUBLICATION_OWNERS
+    ] + [
+        {"id": owner["id"], "kind": owner["kind"], "roots": list(owner["roots"])}
+        for owner in SHARED_NONPUBLICATION_OWNERS
+    ]
+    return tuple(sorted(owners, key=lambda owner: owner["id"]))
 
 
 def _sha256(path: Path) -> str:
@@ -175,8 +209,8 @@ def _safe_repo_path(value: str) -> bool:
     )
 
 
-def _documents(root: Path) -> list[str]:
-    source_root = root / "src/gpt"
+def _documents(root: Path, provider: str) -> list[str]:
+    source_root = root / "src" / provider
     if not source_root.is_dir():
         return []
     return sorted(
@@ -198,8 +232,8 @@ def _is_source_surface(path: Path, source_root: Path) -> bool:
     return path.suffix.lower() in {".md", ".sty", ".tex", ".toml", ".txt"}
 
 
-def _surface_files(root: Path) -> list[str]:
-    source_root = root / "src/gpt"
+def _surface_files(root: Path, provider: str) -> list[str]:
+    source_root = root / "src" / provider
     if not source_root.is_dir():
         return []
     return sorted(
@@ -209,15 +243,15 @@ def _surface_files(root: Path) -> list[str]:
     )
 
 
-def _owner_for_file(relative: str, documents: list[str]) -> str | None:
-    prefix = "src/gpt/"
+def _owner_for_file(relative: str, documents: list[str], provider: str) -> str | None:
+    prefix = f"src/{provider}/"
     if not relative.startswith(prefix):
         return None
     below = relative[len(prefix) :]
     candidates = [document for document in documents if below.startswith(document + "/")]
     if candidates:
         return max(candidates, key=len)
-    for owner in NONPUBLICATION_OWNERS:
+    for owner in _nonpublication_owners(provider):
         if any(relative == root or relative.startswith(root + "/") for root in owner["roots"]):
             return str(owner["id"])
     return None
@@ -530,23 +564,23 @@ def _inventory_classification_errors(
     return sorted(set(errors))
 
 
-def _active_owners(root: Path) -> list[dict[str, Any]]:
+def _active_owners(root: Path, provider: str) -> list[dict[str, Any]]:
     return [
         {"id": owner["id"], "kind": owner["kind"], "roots": list(owner["roots"])}
-        for owner in NONPUBLICATION_OWNERS
+        for owner in _nonpublication_owners(provider)
         if any((root / owner_root).is_dir() for owner_root in owner["roots"])
     ]
 
 
-def _bootstrap_data(root: Path, audited_on: str) -> dict[str, Any]:
-    document_ids = _documents(root)
+def _bootstrap_data(root: Path, audited_on: str, provider: str) -> dict[str, Any]:
+    document_ids = _documents(root, provider)
     documents: list[dict[str, Any]] = []
     for document in document_ids:
         source_mode, record_owners, publication_kind = _document_shape(document)
         documents.append(
             {
                 "id": document,
-                "main": f"src/gpt/{document}/main.tex",
+                "main": f"src/{provider}/{document}/main.tex",
                 "publication_kind": publication_kind,
                 "source_mode": source_mode,
                 "inventory_state": "records-enumerated",
@@ -554,10 +588,10 @@ def _bootstrap_data(root: Path, audited_on: str) -> dict[str, Any]:
                 "record_owners": record_owners,
             }
         )
-    owners = _active_owners(root)
+    owners = _active_owners(root, provider)
     files = []
-    for relative in _surface_files(root):
-        owner = _owner_for_file(relative, document_ids)
+    for relative in _surface_files(root, provider):
+        owner = _owner_for_file(relative, document_ids, provider)
         files.append(
             {
                 "path": relative,
@@ -569,9 +603,9 @@ def _bootstrap_data(root: Path, audited_on: str) -> dict[str, Any]:
     return {
         "inventory_schema": 1,
         "record_type": "publication-source-inventory",
-        "provider": "gpt",
+        "provider": provider,
         "audited_on": audited_on,
-        "discovery_rule": "src/gpt/**/main.tex",
+        "discovery_rule": f"src/{provider}/**/main.tex",
         "publication_count": len(documents),
         "source_surface_file_count": len(files),
         "documents": documents,
@@ -694,8 +728,12 @@ def _validate(
         errors.append(f"{path}: inventory_schema must be integer 1")
     if data.get("record_type") != "publication-source-inventory":
         errors.append(f"{path}: record_type must be publication-source-inventory")
-    if data.get("provider") != "gpt":
-        errors.append(f"{path}: provider must be gpt")
+    provider = data.get("provider")
+    if provider not in PROVIDERS:
+        errors.append(
+            f"{path}: provider must be one of: {', '.join(sorted(PROVIDERS))}"
+        )
+        provider = DEFAULT_PROVIDER
     try:
         audited_on = data.get("audited_on")
         if not isinstance(audited_on, str):
@@ -703,7 +741,7 @@ def _validate(
         dt.date.fromisoformat(audited_on)
     except ValueError:
         errors.append(f"{path}: audited_on must be an ISO date")
-    if data.get("discovery_rule") != "src/gpt/**/main.tex":
+    if data.get("discovery_rule") != f"src/{provider}/**/main.tex":
         errors.append(f"{path}: discovery_rule is not canonical")
 
     owner_rows = data.get("owners")
@@ -744,23 +782,23 @@ def _validate(
                     errors.append(f"{label}.roots path does not exist: {root_value}")
         if allow_source_drift:
             expected_owner = next(
-                (candidate for candidate in NONPUBLICATION_OWNERS if candidate["id"] == owner_id),
+                (
+                    candidate
+                    for candidate in _nonpublication_owners(provider)
+                    if candidate["id"] == owner_id
+                ),
                 None,
             )
-            if expected_owner is None or owner != {
-                "id": expected_owner["id"],
-                "kind": expected_owner["kind"],
-                "roots": list(expected_owner["roots"]),
-            }:
+            if expected_owner is None or owner != expected_owner:
                 errors.append(f"{label} does not match explicit ownership rules")
         owner_ids.append(owner_id)
         normalized_owners.append(owner)
     if owner_ids != sorted(set(owner_ids)):
         errors.append(f"{path}: owner IDs must be unique and sorted")
-    if not allow_source_drift and normalized_owners != _active_owners(root):
+    if not allow_source_drift and normalized_owners != _active_owners(root, provider):
         errors.append(f"{path}: nonpublication owners do not match explicit ownership rules")
 
-    actual_documents = _documents(root)
+    actual_documents = _documents(root, provider)
     recorded_documents = [
         document.get("id")
         for document in document_rows
@@ -793,7 +831,7 @@ def _validate(
             errors.append(f"{label}.id must be a nonempty string")
             continue
         document_ids.append(document_id)
-        if document.get("main") != f"src/gpt/{document_id}/main.tex":
+        if document.get("main") != f"src/{provider}/{document_id}/main.tex":
             errors.append(f"{label}.main does not match its document id")
         mode = document.get("source_mode")
         if not isinstance(mode, str) or mode not in SOURCE_MODES:
@@ -846,7 +884,7 @@ def _validate(
     if data.get("publication_count") != len(document_rows):
         errors.append(f"{path}: publication_count does not match document rows")
 
-    actual_files = [] if allow_source_drift else _surface_files(root)
+    actual_files = [] if allow_source_drift else _surface_files(root, provider)
     file_paths: list[str] = []
     normalized_files: list[dict[str, Any]] = []
     known_owners = set(ownership_documents) | set(owner_ids)
@@ -858,10 +896,10 @@ def _validate(
         relative = item.get("path")
         if (
             not isinstance(relative, str)
-            or not relative.startswith("src/gpt/")
+            or not relative.startswith(f"src/{provider}/")
             or not _safe_repo_path(relative)
         ):
-            errors.append(f"{label}.path must be below src/gpt")
+            errors.append(f"{label}.path must be below src/{provider}")
             continue
         file_paths.append(relative)
         digest = item.get("sha256")
@@ -890,7 +928,7 @@ def _validate(
         if not _string_list(owners, nonempty=True):
             errors.append(f"{label}.owners must be a nonempty string array")
         else:
-            expected_owner = _owner_for_file(relative, ownership_documents)
+            expected_owner = _owner_for_file(relative, ownership_documents, provider)
             if owners != ([expected_owner] if expected_owner else []):
                 errors.append(f"{label}.owners do not match explicit ownership rules")
             unknown_owners = sorted(set(owners) - known_owners)
@@ -978,8 +1016,9 @@ def _refresh_data(
     root: Path,
     audited_on: str,
     prior_documents: list[dict[str, Any]],
+    provider: str,
 ) -> dict[str, Any]:
-    data = _bootstrap_data(root, audited_on)
+    data = _bootstrap_data(root, audited_on, provider)
     prior_by_id = {document["id"]: document for document in prior_documents}
     for document in data["documents"]:
         prior = prior_by_id.get(document["id"])
@@ -1054,6 +1093,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=ROOT)
     subparsers = parser.add_subparsers(dest="command", required=True)
+    provider_default = os.environ.get("PROVIDER", DEFAULT_PROVIDER)
     check = subparsers.add_parser("check")
     check.add_argument("inventory", nargs="?", type=Path, default=DEFAULT_INVENTORY)
     check.add_argument(
@@ -1062,9 +1102,11 @@ def main() -> int:
     bootstrap = subparsers.add_parser("bootstrap")
     bootstrap.add_argument("output", type=Path)
     bootstrap.add_argument("--audited-on", required=True)
+    bootstrap.add_argument("--provider", default=provider_default)
     review_bootstrap = subparsers.add_parser("bootstrap-classification-review")
     review_bootstrap.add_argument("output", type=Path)
     review_bootstrap.add_argument("--audited-on", required=True)
+    review_bootstrap.add_argument("--provider", default=provider_default)
     classify = subparsers.add_parser("classify")
     classify.add_argument("inventory", nargs="?", type=Path, default=DEFAULT_INVENTORY)
     classify.add_argument(
@@ -1078,6 +1120,11 @@ def main() -> int:
     refresh.add_argument("--audited-on", required=True)
     args = parser.parse_args()
     root = args.root.resolve()
+    if args.command in {"bootstrap", "bootstrap-classification-review"}:
+        if args.provider not in PROVIDERS:
+            parser.error(
+                "--provider must be one of: " + ", ".join(sorted(PROVIDERS))
+            )
     if args.command == "bootstrap-classification-review":
         try:
             dt.date.fromisoformat(args.audited_on)
@@ -1098,7 +1145,7 @@ def main() -> int:
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(
             _render_classification_review(
-                _documents(root),
+                _documents(root, args.provider),
                 args.audited_on,
                 seed,
             ),
@@ -1110,7 +1157,7 @@ def main() -> int:
             dt.date.fromisoformat(args.audited_on)
         except ValueError:
             parser.error("--audited-on must be an ISO date")
-        data = _bootstrap_data(root, args.audited_on)
+        data = _bootstrap_data(root, args.audited_on, args.provider)
         unowned = [item["path"] for item in data["files"] if not item["owners"]]
         if unowned:
             for relative in unowned:
@@ -1155,12 +1202,11 @@ def main() -> int:
                 )
         prior_categories: dict[str, list[str]] = {}
         review_audited_on = ""
-        current_documents = _documents(root)
         if not errors and data is not None:
             prior_categories, review_errors = _reviewed_prior_categories(
                 review,
                 data["documents"],
-                current_documents,
+                _documents(root, data["provider"]),
             )
             errors.extend(review_errors)
         if not errors:
@@ -1178,7 +1224,9 @@ def main() -> int:
             for error in sorted(set(errors)):
                 print(f"source-inventory error: {error}", file=sys.stderr)
             return 1
-        refreshed = _refresh_data(root, args.audited_on, data["documents"])
+        refreshed = _refresh_data(
+            root, args.audited_on, data["documents"], data["provider"]
+        )
         unowned = [item["path"] for item in refreshed["files"] if not item["owners"]]
         known_owners = {
             document["id"] for document in refreshed["documents"]
@@ -1213,7 +1261,9 @@ def main() -> int:
             review_audited_on,
             prior_categories,
         )
-        confirmation = _refresh_data(root, args.audited_on, data["documents"])
+        confirmation = _refresh_data(
+            root, args.audited_on, data["documents"], data["provider"]
+        )
         if confirmation["snapshot"] != refreshed["snapshot"]:
             print(
                 "source-inventory error: source tree changed during refresh; retry",
