@@ -2,6 +2,9 @@
 
 Reviewed on 2026-07-24.
 
+This record documents the bounded normalization of the 12 January 1966
+general audience within `family.vatican-ii.papal-acts`.
+
 The official Italian Vatican web delivery is 40,097 bytes with SHA-256
 `fa8a0e440c69bd7c777fa8efeb78eac9037d8b0a3b950a0c0fc32c8d3946f344`.
 It contains the complete audience text and its 12 January 1966 date. The

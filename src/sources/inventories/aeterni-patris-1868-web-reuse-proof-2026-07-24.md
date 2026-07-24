@@ -2,6 +2,9 @@
 
 Reviewed on 2026-07-24.
 
+This record documents the bounded normalization of *Aeterni Patris* (1868)
+within `family.vatican-i.acts`.
+
 The official Latin Vatican web delivery is 46,577 bytes with SHA-256
 `b678804aec5bb4476c2043e96699ee95e84e527f68296d70f64505d298113a72`.
 It contains the title, complete Latin body, formal convocation, date, papal

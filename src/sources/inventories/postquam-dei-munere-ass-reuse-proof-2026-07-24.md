@@ -2,6 +2,10 @@
 
 Reviewed on 2026-07-24.
 
+This record documents the bounded normalization of *Postquam Dei munere*
+within `family.vatican-i.acts` and its reuse of the volume 6 container owned
+by `family.acta.aas-ass`.
+
 The official Vatican delivery of *Acta Sanctae Sedis* 6 (1870-1871) is a
 776-page, 3,679,255-byte PDF with SHA-256
 `7e480931ad07d3a53db391d2c26a69a256ca106719d0e7a6220415d3123eecca`.

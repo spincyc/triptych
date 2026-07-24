@@ -2,6 +2,9 @@
 
 Reviewed on 2026-07-24.
 
+This record documents the bounded normalization of the 7 December 1965
+closing address within `family.vatican-ii.papal-acts`.
+
 The official English Vatican web delivery is 53,237 bytes with SHA-256
 `240553e648c4b2f7356d8f52be825892083a8131b1c331e45ae955ebe03c81bc`.
 It contains the complete address and its 7 December 1965 date. The

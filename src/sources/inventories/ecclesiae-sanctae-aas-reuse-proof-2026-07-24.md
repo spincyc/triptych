@@ -2,6 +2,10 @@
 
 Reviewed on 2026-07-24.
 
+This record documents the bounded normalization of *Ecclesiae Sanctae*
+within `family.vatican-ii.papal-acts` and its reuse of the volume 58
+component of `family.acta.aas-ass`.
+
 This normalization distinguishes Paul VI's motu proprio, its dated English
 and Latin Vatican web deliveries, its AAS 58 constituent, and the gazette
 volume. The restricted web artifacts are 115,188 bytes
