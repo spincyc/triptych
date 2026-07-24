@@ -2,6 +2,9 @@
 
 Reviewed on 2026-07-24.
 
+This record documents the bounded normalization of *Pastor aeternus* within
+`family.vatican-i.acts`.
+
 The official Latin Vatican web delivery is 21,131 bytes with SHA-256
 `032a5f65b6bafe6196f4a0033ea61e1a6e4441c3363aa10157ebf362e509bc86`.
 It contains the proem, four chapters, definitions, anathemas, and

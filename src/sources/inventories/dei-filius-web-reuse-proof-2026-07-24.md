@@ -2,6 +2,9 @@
 
 Reviewed on 2026-07-24.
 
+This record documents the bounded normalization of *Dei Filius* within
+`family.vatican-i.acts`.
+
 The official Latin Vatican web delivery is 29,192 bytes with SHA-256
 `cdb6433e97aaa0fd31cd148d513392324c39779f0137402208ad66d19e8d7016`.
 It contains the proem, four chapters, canons, and promulgation apparatus.

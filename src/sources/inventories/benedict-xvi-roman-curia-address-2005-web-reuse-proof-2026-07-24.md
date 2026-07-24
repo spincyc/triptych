@@ -2,6 +2,9 @@
 
 Reviewed on 2026-07-24.
 
+This record documents the bounded normalization of the 22 December 2005
+Roman Curia address within `family.vatican-ii.papal-acts`.
+
 The official English Vatican web delivery is 70,607 bytes with SHA-256
 `6e992112f2c2e0b736ae2ae050137589cba5943ded68c72ef23e0416fac950fe`.
 It contains the complete address and its 22 December 2005 date. The

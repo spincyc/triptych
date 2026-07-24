@@ -2,6 +2,9 @@
 
 Reviewed on 2026-07-24.
 
+This record documents the bounded normalization of *Gaudet Mater Ecclesia*
+within `family.vatican-ii.papal-acts`.
+
 The official Latin Vatican web delivery is 57,910 bytes with SHA-256
 `219be1920cd0b175ed2320a5534e31b99125504a86a12bd0444c6d13078d9d47`.
 It contains the complete numbered address, sectional headings, the
