@@ -1,0 +1,45 @@
+% Claude biography collection: shared typesetting primitives.
+% This file owns only presentation. Every historical and evidentiary judgment
+% remains in each subject's own leaf.
+
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2.2em}
+
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+% Ancient work titles are set consistently through one semantic command so a
+% later style change never requires editing the prose.
+\newcommand{\work}[1]{\textit{#1}}
+
+% Chronology table for the terminal apparatus: date claim, event, earliest
+% or controlling witness, and the project's confidence status.
+\newenvironment{lifetimeline}
+{\footnotesize
+ \begin{longtable}{>{\bfseries\raggedright\arraybackslash}p{0.14\linewidth}
+                   >{\raggedright\arraybackslash}p{0.36\linewidth}
+                   >{\raggedright\arraybackslash}p{0.26\linewidth}
+                   >{\raggedright\arraybackslash}p{0.16\linewidth}}
+\toprule
+\textbf{Date} & \textbf{Event} & \textbf{Basis} & \textbf{Status}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
+\newcommand{\lifeevent}[4]{#1 & #2 & #3 & #4\\}
+
+% Evidence-class key for the terminal apparatus.
+\newenvironment{evidencekey}
+{\small
+ \begin{longtable}{>{\bfseries\raggedright\arraybackslash}p{0.08\linewidth}
+                   >{\raggedright\arraybackslash}p{0.85\linewidth}}
+\toprule
+\textbf{Class} & \textbf{Meaning}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
+\newcommand{\evidenceclass}[2]{#1 & #2\\}
+
+% Claim-local evidentiary caution, kept beside the claim it governs.
+\newcommand{\witnesslimit}[1]{%
+  \begin{studyframe}\small #1\end{studyframe}}
