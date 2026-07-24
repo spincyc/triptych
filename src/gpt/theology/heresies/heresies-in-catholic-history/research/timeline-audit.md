@@ -30,6 +30,7 @@ An asterisk in the rendered appendix marks an event whose controlling character 
 - Constance's proposition censures, personal sentences, secular executions, and Martin V's later confirmation/interrogation instrument remain distinct.
 - Trent's sessions are identified by session and doctrinal object rather than compressed into a denominational condemnation.
 - Every post-Tridentine proposition list preserves an individual or collective censure as the act actually supplies it.
+- The *Unitatis redintegratio* row is dated to its 21 November 1964 promulgation and maps descendant guilt, truthful and fair representation/dialogue, and doctrinal integrity/false irenicism/hierarchy of truths separately to paragraphs 3, 4, and 11.
 - The 1973, 1984, 1994, 1999, and 2001 rows are later qualifications or agreements, not retroactive cancellations of historical acts.
 - The modern ledger and rendered appendix contain 65 rows and keep the 13 May 2026 DDF warning, 29 June papal letter, and 2 July decree/note responding to the completed 1 July act as three distinct responses.
 - Currentness is stated in the terminal `Scope, Terms, and Qualifications` appendix and source audit rather than inserted as a fictitious response event in the chronology.
