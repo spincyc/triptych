@@ -64,6 +64,7 @@ from .identity import (
     exact_pointer_path as _exact_pointer_path,
     exact_real_directory as _exact_real_directory,
     exact_single_line as _exact_single_line,
+    path_entry_exists as _path_entry_exists,
     safe_regular_file_bytes as _safe_regular_file_bytes,
     validate_linked_worktree_identity_cache as _validate_linked_worktree_identity_cache,
     validate_linked_worktree_path as _validate_linked_worktree_path,
@@ -405,13 +406,13 @@ def exact_real_directory(path: Path, *, label: str) -> Path:
 
 
 def path_entry_exists(path: Path, *, label: str) -> bool:
-    try:
-        path.lstat()
-    except FileNotFoundError:
-        return False
-    except OSError as exc:
-        raise LauncherError(f"cannot inspect {label}") from exc
-    return True
+    return _path_entry_exists(
+        path,
+        label=label,
+        file_not_found_error_type=lambda: FileNotFoundError,
+        os_error_type=lambda: OSError,
+        error_type=lambda: LauncherError,
+    )
 
 
 def authenticate_linked_worktree_path(

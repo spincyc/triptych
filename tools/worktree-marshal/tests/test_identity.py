@@ -11604,6 +11604,98 @@ class IdentityModelTests(unittest.TestCase):
             self.identity.Repository,
         )
 
+    def test_path_entry_kernel_and_wrapper_signatures(self) -> None:
+        self.assertEqual(
+            str(inspect.signature(self.identity.path_entry_exists)),
+            "(path: 'Path', *, label: 'str', file_not_found_error_type: "
+            "'Callable[[], type[BaseException]]', os_error_type: "
+            "'Callable[[], type[BaseException]]', error_type: "
+            "'Callable[[], type[BaseException]]') -> 'bool'",
+        )
+        self.assertEqual(
+            str(inspect.signature(self.engine.path_entry_exists)),
+            "(path: 'Path', *, label: 'str') -> 'bool'",
+        )
+
+    def test_path_entry_kernel_preserves_exception_partition(self) -> None:
+        class MissingError(OSError):
+            pass
+
+        class OtherError(OSError):
+            pass
+
+        class PolicyError(RuntimeError):
+            pass
+
+        for failure, expected in (
+            (None, True),
+            (MissingError("missing"), False),
+        ):
+            with self.subTest(failure=failure):
+                path = mock.Mock()
+                if failure is not None:
+                    path.lstat.side_effect = failure
+                self.assertIs(
+                    self.identity.path_entry_exists(
+                        path,
+                        label="the path",
+                        file_not_found_error_type=lambda: MissingError,
+                        os_error_type=lambda: OSError,
+                        error_type=lambda: PolicyError,
+                    ),
+                    expected,
+                )
+
+        failure = OtherError("blocked")
+        with self.assertRaisesRegex(
+            PolicyError,
+            "^cannot inspect the path$",
+        ) as raised:
+            self.identity.path_entry_exists(
+                mock.Mock(lstat=mock.Mock(side_effect=failure)),
+                label="the path",
+                file_not_found_error_type=lambda: MissingError,
+                os_error_type=lambda: OSError,
+                error_type=lambda: PolicyError,
+            )
+        self.assertIs(raised.exception.__cause__, failure)
+
+    def test_engine_path_entry_wrapper_supplies_lazy_errors(self) -> None:
+        sentinel = object()
+        captured: dict[str, object] = {}
+
+        def kernel(path: object, **dependencies: object) -> object:
+            captured["path"] = path
+            captured.update(dependencies)
+            return sentinel
+
+        path = Path("/retained/worktree")
+        with mock.patch.object(
+            self.engine,
+            "_path_entry_exists",
+            side_effect=kernel,
+        ):
+            observed = self.engine.path_entry_exists(
+                path,
+                label="the retirement worktree path",
+            )
+
+        self.assertIs(observed, sentinel)
+        self.assertIs(captured["path"], path)
+        self.assertEqual(
+            captured["label"],
+            "the retirement worktree path",
+        )
+        self.assertIs(
+            captured["file_not_found_error_type"](),
+            FileNotFoundError,
+        )
+        self.assertIs(captured["os_error_type"](), OSError)
+        self.assertIs(
+            captured["error_type"](),
+            self.engine.LauncherError,
+        )
+
     def test_repository_discovery_kernel_preserves_success_values(self) -> None:
         start = Path("/repository/subdirectory")
         root = Path("/repository")

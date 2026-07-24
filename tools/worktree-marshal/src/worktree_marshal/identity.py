@@ -45,6 +45,25 @@ class RegularFileMetadata(Protocol):
     st_ctime_ns: int
 
 
+def path_entry_exists(
+    path: Path,
+    *,
+    label: str,
+    file_not_found_error_type: Callable[[], type[BaseException]],
+    os_error_type: Callable[[], type[BaseException]],
+    error_type: Callable[[], type[BaseException]],
+) -> bool:
+    """Inspect one directory entry without following its final component."""
+
+    try:
+        path.lstat()
+    except file_not_found_error_type():
+        return False
+    except os_error_type() as exc:
+        raise error_type()(f"cannot inspect {label}") from exc
+    return True
+
+
 def discover_repository(
     cwd: Path | None,
     *,

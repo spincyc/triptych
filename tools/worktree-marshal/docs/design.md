@@ -30,7 +30,8 @@ bounded descriptor-based regular-file reader plus exact pointer-path and
 real-directory validation, read-only linked-worktree path validation, and
 read-only linked-worktree cache-consistency policy plus retained-worktree
 manifest binding and authentication dispatch plus Git-working-directory
-ancestor authentication and read-only repository discovery,
+ancestor authentication, read-only repository discovery, and exact path-entry
+inspection,
 `locks.py` now owns lock-descriptor bookkeeping and validation algorithms,
 `process.py` now owns child waiting and exit-status normalization,
 `adapters/codex.py` now owns Codex executable candidate selection and static
@@ -103,7 +104,7 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with twenty-four behavior-preserving boundaries. The original
+has begun step 5 with twenty-five behavior-preserving boundaries. The original
 pure Git policy kernel transforms an explicit environment mapping and Git
 argument sequence in `git.py`; `engine.py` retains its optional
 environment-acquisition wrapper, subprocess creation and command execution,
@@ -644,7 +645,23 @@ mutation. The returned path is one post-command pathname observation, not a
 pinned administration identity; it may be absent or replaced after resolution.
 This boundary adds no command, state, packaging, workflow, or release change.
 
-Direct tests freeze all twenty-four extracted boundaries, their
+The twenty-fifth boundary moves the existing `path_entry_exists` operation
+into `identity.path_entry_exists`. Its exact engine wrapper remains
+`(path, *, label)` and supplies the current file-not-found, operating-system,
+and launcher error types lazily. The kernel applies `lstat` once, returns
+`False` only for the selected file-not-found type, translates another selected
+operating-system error into the unchanged label-specific diagnostic with an
+explicit cause, and otherwise returns `True`. Matcher, label-formatting, and
+error-construction failures retain their established untranslated behavior.
+
+The engine retains all retirement callers and sequencing, path removal,
+temporary-directory authentication, every state transition and durable write,
+and every mutation. This probe observes only one final path entry at one
+instant; it establishes no type, ownership, containment, stable descriptor
+identity, or protection against later replacement. This boundary adds no
+workflow, state, packaging, or release change.
+
+Direct tests freeze all twenty-five extracted boundaries, their
 compatibility surfaces, artifact inclusion, field and operation order,
 partial-failure behavior, and the dynamic restoration of every vocabulary
 value currently accepted in

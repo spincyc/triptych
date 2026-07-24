@@ -18,6 +18,7 @@ read-only linked-worktree path-validation and cache-consistency boundaries,
 its retained-worktree manifest-binding and authentication-dispatch boundary,
 its Git-working-directory ancestor-authentication boundary,
 its read-only repository-discovery boundary,
+its exact path-entry inspection boundary,
 its Codex-executable candidate-selection, static argument-policy, sanitized
 base-environment, and deterministic marker-enrichment boundaries, the frozen
 Triptych compatibility adapter, the Python distribution, and the Make
@@ -122,7 +123,7 @@ worktree-removal or ref-transaction failures, receipt recovery, garbage
 collection, or concurrent retirement. Those retirement cases, broader crash
 and race recovery, broader security coverage, the complete installed lifecycle
 matrix, and the supported Python and Git CI matrix remain release gates; the
-first twenty-four step-5 seams are protected by direct source tests and artifact
+first twenty-five step-5 seams are protected by direct source tests and artifact
 provenance, and the installed abort checkpoint covers archived transaction
 restoration. Each remaining helper boundary still requires its own direct
 parity coverage.
@@ -366,6 +367,15 @@ lifecycle workflows, and mutation. Discovery remains a sequence of read-only
 observations rather than an atomic repository or state authentication proof;
 the observed checkout, administration paths, or state location may later
 change.
+
+The dependency-injected `path_entry_exists` operation now owns the exact
+retirement path-entry probe. It applies `lstat` once, returns `False` only for
+the selected file-not-found type, translates another selected
+operating-system error with the unchanged explicit cause, and otherwise
+returns `True`. The engine retains every retirement caller, temporary-path
+authentication and removal, lifecycle transition, durable write, and
+mutation. The probe establishes only point-in-time entry presence, not type,
+ownership, containment, or stability.
 
 [`adapters/codex.py`](src/worktree_marshal/adapters/codex.py) owns the
 dependency-injected `select_codex_executable` operation for a usable,
