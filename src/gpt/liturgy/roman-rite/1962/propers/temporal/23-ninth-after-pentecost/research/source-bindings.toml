@@ -44,3 +44,21 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The official Latin Acta pages were checked independently for the same reception claim and its source attribution: article 2 prints the redemption clause and note 1 names the Secret of the Ninth Sunday after Pentecost. The overlap with the dated web passage preserves two materially distinct official witnesses rather than treating either delivery as the other."
 verified_on = "2026-07-23"
 source_fingerprint = "sha256:7a7d1ee1846a2fe0bec2eee1c44b89a06bd6d0e502a504f361b93922d398b71f"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.presbyterorum-ordinis.latin-vatican-web-2026-07-23.13"
+loci = ["13"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete dated official Latin web article and its consolidated source note 105 were checked for the publication's reception claim: article 13 reuses the Secret's clause with continuo inserted for Eucharistic sacrifice in priestly holiness, and the note identifies the Ninth Sunday after Pentecost super oblata. This is documented reuse, not a verbatim repetition or a substitute for direct Missal collation."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:13f208e73531e6166bdce70e9eebf4042b2774f1b5a5bf4b7d6e23e6f44e697e"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.presbyterorum-ordinis.latin-aas-58-1966.13"
+loci = ["13"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official Latin Acta article on printed pp. 1011-1013 and its chapter-local note 14 were checked independently for the same reception claim. The article inserts continuo into the Secret's clause, and note 14 identifies this Sunday's prayer; the different web note number and distinct delivery are preserved rather than conflated."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:abe56c067056f4cfee946e53a7219662b34ce51f112cd5e6dde2dfff5bf13bc2"
