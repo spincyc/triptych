@@ -30,18 +30,30 @@ LEGACY_LABEL_RE = re.compile(
     re.IGNORECASE,
 )
 GENERIC_MODEL_RE = re.compile(
-    r"(?:based runtime|model family|unexposed|unknown|unavailable)|^gpt[- ]?5$",
+    r"(?:based runtime|model family|unexposed|unknown|unavailable)"
+    r"|^gpt[- ]?5$"
+    r"|^claude$"
+    r"|^claude[- ]?[0-9]+(?:\.[0-9]+)?$"
+    r"|^claude[- ](?:opus|sonnet|haiku|fable|mythos)$",
     re.IGNORECASE,
 )
 QUALIFIER_RE = re.compile(r"^[A-Za-z][A-Za-z0-9_-]*=[^;\s]+$")
 REQUIRED_MODEL_QUALIFIERS = {
     "gpt-5.6-sol": {"effort"},
+    # The Claude Code runtime exposes no numeric qualifiers; the empty set
+    # records that decision explicitly and behaves identically to omission.
+    "claude-fable-5": set(),
 }
 REQUIRED_RUNTIME_PATTERNS = {
     "gpt-5.6-sol": (
         re.compile(r"\bOpenAI Codex\b"),
         re.compile(r"\bCodex CLI [0-9]+\.[0-9]+\.[0-9]+\b"),
         re.compile(r"\bAPI workspace\b"),
+        re.compile(r"\bunexposed: server revision\b"),
+    ),
+    "claude-fable-5": (
+        re.compile(r"\bAnthropic Claude Code\b"),
+        re.compile(r"\bClaude Code CLI [0-9]+\.[0-9]+\.[0-9]+\b"),
         re.compile(r"\bunexposed: server revision\b"),
     ),
 }

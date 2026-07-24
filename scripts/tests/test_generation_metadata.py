@@ -35,6 +35,10 @@ SECOND_CONTRIBUTION = (
     r"\AIModelContribution{test-model}{effort=high}"
     r"{OpenAI Codex CLI 1.2.4; API workspace; review role}"
 )
+CLAUDE_RUNTIME = (
+    "Anthropic Claude Code agent; Claude Code CLI 2.1.219; "
+    "unexposed: server revision"
+)
 
 
 class GenerationMetadataParserTests(unittest.TestCase):
@@ -144,6 +148,44 @@ class GenerationMetadataParserTests(unittest.TestCase):
             TIMESTAMP,
         )
 
+    def test_accepts_claude_contribution_with_conforming_runtime(self) -> None:
+        CHECKER.validate_contribution(
+            CHECKER.Contribution(
+                "claude-fable-5", "unexposed: numeric qualifiers", CLAUDE_RUNTIME
+            )
+        )
+
+    def test_rejects_claude_runtime_missing_cli_version(self) -> None:
+        with self.assertRaisesRegex(ValueError, "requires runtime component"):
+            CHECKER.validate_contribution(
+                CHECKER.Contribution(
+                    "claude-fable-5",
+                    "unexposed: numeric qualifiers",
+                    "Anthropic Claude Code agent; unexposed: server revision",
+                )
+            )
+
+    def test_rejects_generic_claude_family_labels(self) -> None:
+        generic = (
+            "claude",
+            "Claude",
+            "claude 4",
+            "claude-4.5",
+            "claude-fable",
+            "claude opus",
+            "Claude Mythos",
+        )
+        for model in generic:
+            with self.subTest(model=model), self.assertRaisesRegex(
+                ValueError, "generic or unavailable"
+            ):
+                CHECKER.validate_contribution(
+                    CHECKER.Contribution(
+                        model, "unexposed: numeric qualifiers", CLAUDE_RUNTIME
+                    )
+                )
+        self.assertIsNone(CHECKER.GENERIC_MODEL_RE.search("claude-fable-5"))
+
     def test_handwritten_revision_label_is_rejected_as_legacy(self) -> None:
         self.assertRegex(r"\textbf{Last revised (UTC):}", CHECKER.LEGACY_LABEL_RE)
 
@@ -214,8 +256,16 @@ class ReproduciblePdfMetadataTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             temporary_path = Path(temporary)
             source = temporary_path / "main.tex"
+            preamble = next(
+                path
+                for path in (
+                    ROOT / "src/common/preamble.tex",
+                    ROOT / "src/gpt/common/preamble.tex",
+                )
+                if path.is_file()
+            )
             source.write_text(
-                rf"\input{{{(ROOT / 'src/gpt/common/preamble.tex').as_posix()}}}"
+                rf"\input{{{preamble.as_posix()}}}"
                 "\n"
                 r"\hypersetup{pdftitle={Reproducibility test},pdfsubject={Metadata test}}"
                 "\n"
