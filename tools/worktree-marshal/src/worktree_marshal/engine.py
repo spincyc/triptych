@@ -108,6 +108,7 @@ from .state import (
     repository_slug as _repository_slug,
     run_lock_path as _run_lock_path,
     state_base as _state_base,
+    write_manifest as _write_manifest,
 )
 
 OBJECT_ID_RE = re.compile(r"^(?:[0-9a-f]{40}|[0-9a-f]{64})$")
@@ -668,39 +669,26 @@ def validate_exact_run_tmpdir(
 
 
 def write_manifest(repository: Repository, manifest: dict) -> None:
-    run_id = manifest.get("run_id")
-    if not isinstance(run_id, str):
-        raise LauncherError("internal manifest has no run ID")
-    validate_run_id(run_id)
-    manifest["updated_at"] = utc_now()
-    target = manifest_path(repository, run_id)
-    private_directory(target.parent)
-    descriptor, temporary_name = tempfile.mkstemp(
-        prefix=f".{run_id}.",
-        suffix=".tmp",
-        dir=target.parent,
-        text=True,
+    _write_manifest(
+        repository,
+        manifest,
+        validate_run_id=lambda: validate_run_id,
+        current_timestamp=lambda: utc_now,
+        manifest_path=lambda: manifest_path,
+        private_directory=lambda: private_directory,
+        make_temporary=lambda: tempfile.mkstemp,
+        path_factory=lambda: Path,
+        descriptor_chmod=lambda: os.fchmod,
+        descriptor_open=lambda: os.fdopen,
+        json_dump=lambda: json.dump,
+        replace_path=lambda: os.replace,
+        directory_open=lambda: os.open,
+        read_only_flag=lambda: os.O_RDONLY,
+        directory_flag=lambda: getattr(os, "O_DIRECTORY", 0),
+        descriptor_sync=lambda: os.fsync,
+        descriptor_close=lambda: os.close,
+        error_type=lambda: LauncherError,
     )
-    temporary = Path(temporary_name)
-    try:
-        os.fchmod(descriptor, 0o600)
-        with os.fdopen(descriptor, "w", encoding="utf-8") as stream:
-            json.dump(manifest, stream, indent=2, sort_keys=True)
-            stream.write("\n")
-            stream.flush()
-            os.fsync(stream.fileno())
-        os.replace(temporary, target)
-        directory_descriptor = os.open(
-            target.parent,
-            os.O_RDONLY | getattr(os, "O_DIRECTORY", 0),
-        )
-        try:
-            os.fsync(directory_descriptor)
-        finally:
-            os.close(directory_descriptor)
-    finally:
-        if temporary.exists():
-            temporary.unlink()
 
 
 def load_manifest(repository: Repository, run_id: str) -> dict:

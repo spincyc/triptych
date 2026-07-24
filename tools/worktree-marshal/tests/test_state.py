@@ -2010,6 +2010,20 @@ class StatePolicyTests(unittest.TestCase):
             "(path: 'Path') -> 'None'",
         )
 
+    def test_manifest_writer_kernel_and_wrapper_surfaces(self) -> None:
+        self.assertEqual(
+            tuple(
+                inspect.signature(
+                    self.state_policy.write_manifest
+                ).parameters
+            )[:2],
+            ("repository", "manifest"),
+        )
+        self.assertEqual(
+            str(inspect.signature(self.engine.write_manifest)),
+            "(repository: 'Repository', manifest: 'dict') -> 'None'",
+        )
+
     def test_private_directory_matches_real_filesystem_behavior(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)

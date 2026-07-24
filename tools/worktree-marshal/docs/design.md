@@ -24,8 +24,8 @@ plus raw and authenticated invocation sequencing,
 `model.py` now owns the exact
 state vocabulary, pure classifier, and I/O-free integration-transaction
 restoration transform, `state.py` now owns run identity, state-location
-selection, repository-name normalization, lexical lock and manifest paths, and
-private state-directory authentication,
+selection, repository-name normalization, lexical lock and manifest paths,
+private state-directory authentication, and atomic manifest persistence,
 `identity.py` now owns immutable runtime identity records and launcher-entry
 authentication plus exact Git-administration line-format validation and the
 bounded descriptor-based regular-file reader plus exact pointer-path and
@@ -108,7 +108,7 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with twenty-nine behavior-preserving boundaries. The original
+has begun step 5 with thirty behavior-preserving boundaries. The original
 pure Git policy kernel transforms an explicit environment mapping and Git
 argument sequence in `git.py`; `engine.py` retains its optional
 environment-acquisition wrapper, subprocess creation and command execution,
@@ -723,7 +723,17 @@ engine retains executable caching, the configuration probe, subprocess
 execution, all ref and lifecycle callers, and every mutation. This boundary
 adds no Git command, state, workflow, packaging, or release change.
 
-Direct tests freeze all twenty-nine extracted boundaries, their
+The thirtieth boundary moves atomic manifest persistence into
+`state.write_manifest`. The exact engine wrapper remains unchanged and supplies
+every validation, clock, path, filesystem, JSON, descriptor, and error
+dependency lazily. The operation preserves run-ID validation, in-place update
+timestamp mutation, private parent setup, mode-0600 temporary creation,
+sorted indented JSON plus terminal newline, file and parent-directory fsync,
+atomic replacement, and best-effort temporary cleanup on every outcome. The
+engine retains manifest loading and validation, transition selection, and all
+write callers. This boundary changes no schema, workflow, or release surface.
+
+Direct tests freeze all thirty extracted boundaries, their
 compatibility surfaces, artifact inclusion, field and operation order,
 partial-failure behavior, and the dynamic restoration of every vocabulary
 value currently accepted in

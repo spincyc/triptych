@@ -6,7 +6,7 @@ import re
 from collections.abc import Callable, Mapping, Sequence
 from datetime import datetime
 from pathlib import Path
-from typing import Protocol
+from typing import Any, Protocol
 
 
 class StateProfile(Protocol):
@@ -15,7 +15,73 @@ class StateProfile(Protocol):
     default_state_parts: Sequence[str]
 
 
+class StateRepository(Protocol):
+    state_root: Path
+
+
 RUN_ID_RE = re.compile(r"^[0-9]{8}t[0-9]{6}z-[0-9a-f]{12}$")
+
+
+def write_manifest(
+    repository: StateRepository,
+    manifest: dict[str, Any],
+    *,
+    validate_run_id: Callable[[], Callable[[str], None]],
+    current_timestamp: Callable[[], Callable[[], str]],
+    manifest_path: Callable[[], Callable[[StateRepository, str], Path]],
+    private_directory: Callable[[], Callable[[Path], None]],
+    make_temporary: Callable[[], Callable[..., tuple[int, str]]],
+    path_factory: Callable[[], Callable[[str], Path]],
+    descriptor_chmod: Callable[[], Callable[[int, int], None]],
+    descriptor_open: Callable[[], Callable[..., Any]],
+    json_dump: Callable[[], Callable[..., None]],
+    replace_path: Callable[[], Callable[[Path, Path], None]],
+    directory_open: Callable[[], Callable[[Path, int], int]],
+    read_only_flag: Callable[[], int],
+    directory_flag: Callable[[], int],
+    descriptor_sync: Callable[[], Callable[[int], None]],
+    descriptor_close: Callable[[], Callable[[int], None]],
+    error_type: Callable[[], type[BaseException]],
+) -> None:
+    """Atomically persist one manifest and synchronize its directory."""
+
+    run_id = manifest.get("run_id")
+    if not isinstance(run_id, str):
+        raise error_type()("internal manifest has no run ID")
+    validate_run_id()(run_id)
+    manifest["updated_at"] = current_timestamp()()
+    target = manifest_path()(repository, run_id)
+    private_directory()(target.parent)
+    descriptor, temporary_name = make_temporary()(
+        prefix=f".{run_id}.",
+        suffix=".tmp",
+        dir=target.parent,
+        text=True,
+    )
+    temporary = path_factory()(temporary_name)
+    try:
+        descriptor_chmod()(descriptor, 0o600)
+        with descriptor_open()(
+            descriptor,
+            "w",
+            encoding="utf-8",
+        ) as stream:
+            json_dump()(manifest, stream, indent=2, sort_keys=True)
+            stream.write("\n")
+            stream.flush()
+            descriptor_sync()(stream.fileno())
+        replace_path()(temporary, target)
+        directory_descriptor = directory_open()(
+            target.parent,
+            read_only_flag() | directory_flag(),
+        )
+        try:
+            descriptor_sync()(directory_descriptor)
+        finally:
+            descriptor_close()(directory_descriptor)
+    finally:
+        if temporary.exists():
+            temporary.unlink()
 
 
 def private_directory(
