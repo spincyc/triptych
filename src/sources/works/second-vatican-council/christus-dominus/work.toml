@@ -1,0 +1,11 @@
+schema = 1
+record_type = "work"
+id = "work.second-vatican-council.christus-dominus"
+title = "Christus Dominus"
+responsible = "Second Vatican Council"
+work_type = "decree"
+alternate_titles = ["Decretum de pastorali Episcoporum munere in Ecclesia", "Decree on Bishops’ Pastoral Office"]
+languages = ["la"]
+locus_pattern = '(?:[1-9]|[1-3][0-9]|4[0-4])(?:-(?:[1-9]|[1-3][0-9]|4[0-4]))?'
+description = "The Second Vatican Council's Decree on Bishops’ Pastoral Office, solemnly promulgated by Pope Paul VI on 28 October 1965. It comprises an unnumbered preface and numbered articles 1-44; edition records distinguish the Latin Acta witness from dated Vatican web delivery states and translations."
+relations = ["work.holy-see.acta-apostolicae-sedis"]
