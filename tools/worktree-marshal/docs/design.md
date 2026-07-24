@@ -25,7 +25,8 @@ plus raw and authenticated invocation sequencing,
 state vocabulary, pure classifier, and I/O-free integration-transaction
 restoration transform, `state.py` now owns run identity, state-location
 selection, repository-name normalization, lexical lock and manifest paths,
-private state-directory authentication, and manifest persistence and loading,
+private state-directory authentication, manifest persistence and loading, and
+exact run temporary-path identity,
 `identity.py` now owns immutable runtime identity records and launcher-entry
 authentication plus exact Git-administration line-format validation and the
 bounded descriptor-based regular-file reader plus exact pointer-path and
@@ -108,7 +109,7 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with thirty-one behavior-preserving boundaries. The original
+has begun step 5 with thirty-two behavior-preserving boundaries. The original
 pure Git policy kernel transforms an explicit environment mapping and Git
 argument sequence in `git.py`; `engine.py` retains its optional
 environment-acquisition wrapper, subprocess creation and command execution,
@@ -741,7 +742,14 @@ literal common-directory comparison, and final dispatch to the existing path
 validator. The engine retains path and lifecycle-state validation and every
 caller. This boundary changes no schema, workflow, or release surface.
 
-Direct tests freeze all thirty-one extracted boundaries, their
+The thirty-second boundary moves exact manifest temporary-path identity into
+`state.validate_exact_run_tmpdir`. It preserves run-ID type and grammar checks,
+the lexical `<state-root>/tmp/<run-id>` construction, exact string comparison,
+diagnostics, lazy dependency lookup, and the returned path. The engine retains
+temporary-directory authentication, containment policy, removal, and every
+lifecycle caller.
+
+Direct tests freeze all thirty-two extracted boundaries, their
 compatibility surfaces, artifact inclusion, field and operation order,
 partial-failure behavior, and the dynamic restoration of every vocabulary
 value currently accepted in

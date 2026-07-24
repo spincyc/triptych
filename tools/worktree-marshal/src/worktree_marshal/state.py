@@ -23,6 +23,34 @@ class StateRepository(Protocol):
 RUN_ID_RE = re.compile(r"^[0-9]{8}t[0-9]{6}z-[0-9a-f]{12}$")
 
 
+def validate_exact_run_tmpdir(
+    repository: StateRepository,
+    manifest: Mapping[str, Any],
+    *,
+    validate_run_id: Callable[[], Callable[[str], None]],
+    stringifier: Callable[[], Callable[[object], str]],
+    error_type: Callable[[], type[BaseException]],
+) -> Path:
+    """Validate the manifest's exact lexical run temporary path."""
+
+    run_id = manifest.get("run_id")
+    if not isinstance(run_id, str):
+        raise error_type()(
+            "the retained run has no valid temporary-path identity"
+        )
+    validate_run_id()(run_id)
+    expected = repository.state_root / "tmp" / run_id
+    temporary_value = manifest.get("tmpdir")
+    if (
+        not isinstance(temporary_value, str)
+        or temporary_value != stringifier()(expected)
+    ):
+        raise error_type()(
+            "the temporary path is not the exact launcher path"
+        )
+    return expected
+
+
 def load_manifest(
     repository: StateRepository,
     run_id: str,

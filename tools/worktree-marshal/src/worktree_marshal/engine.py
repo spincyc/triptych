@@ -109,6 +109,7 @@ from .state import (
     repository_slug as _repository_slug,
     run_lock_path as _run_lock_path,
     state_base as _state_base,
+    validate_exact_run_tmpdir as _validate_exact_run_tmpdir,
     write_manifest as _write_manifest,
 )
 
@@ -658,15 +659,13 @@ def validate_exact_run_tmpdir(
     repository: Repository,
     manifest: dict,
 ) -> Path:
-    run_id = manifest.get("run_id")
-    if not isinstance(run_id, str):
-        raise LauncherError("the retained run has no valid temporary-path identity")
-    validate_run_id(run_id)
-    expected = repository.state_root / "tmp" / run_id
-    temporary_value = manifest.get("tmpdir")
-    if not isinstance(temporary_value, str) or temporary_value != str(expected):
-        raise LauncherError("the temporary path is not the exact launcher path")
-    return expected
+    return _validate_exact_run_tmpdir(
+        repository,
+        manifest,
+        validate_run_id=lambda: validate_run_id,
+        stringifier=lambda: str,
+        error_type=lambda: LauncherError,
+    )
 
 
 def write_manifest(repository: Repository, manifest: dict) -> None:
