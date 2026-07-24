@@ -85,9 +85,8 @@ Metadata lookup follows symbolic links, and the selected link or file may
 later be replaced. Executable selection does not alter the profile's durable
 identity, discover or migrate retained runs, or grant lifecycle authority.
 The engine continues to bind the profile and own executable-selection timing,
-working-directory authentication and choice, child, resolver, and pass-through
-environment enrichment, process creation and replacement, and post-exit
-lifecycle policy.
+working-directory authentication and choice, environment role and manifest
+selection, process creation and replacement, and post-exit lifecycle policy.
 
 ## Codex argument policy
 
@@ -105,9 +104,9 @@ Codex multi-agent mode, clears additional writable roots and sandbox
 permissions, and supplies `--sandbox workspace-write` when the accepted user
 arguments did not specify a sandbox. These are argument-level controls; the
 engine still authenticates and chooses the working directory, supplies the
-profile-specific lifecycle hint, enriches child, resolver, and pass-through
-environments, creates or replaces the process, and owns every lifecycle
-transition.
+profile-specific lifecycle hint, selects the role and manifest inputs for
+child, resolver, and pass-through environments, creates or replaces the
+process, and owns every lifecycle transition.
 
 This static policy is sensitive to Codex CLI version, aliases, parsing, and
 option-precedence changes. It assumes the selected executable honors the
@@ -129,11 +128,15 @@ the selected executable's lexical parent, removes every prior entry exactly
 equal to that parent string, and preserves the spelling and order of all other
 entries.
 
-The engine retains active-profile capture and transform timing. For ordinary
-workers and resolvers it later adds the appropriate role, run ID, profile ID,
-agent ID, and run-owned `TMPDIR`, `TMP`, and `TEMP` values. Linked-worktree
-pass-through enrichment adds its worker, profile, and agent markers separately
-and does not acquire ordinary retained-run identity or temporary-path state.
+The engine retains active-profile capture, supplies the Git-sanitized mapping
+at the established point, selects the worker or resolver role, and decides
+whether the exact launcher-owned manifest is authoritative. One shared adapter
+operation then enriches that mapping deterministically and returns the same
+object. For ordinary workers and resolvers it adds the selected role, run ID,
+profile ID, agent ID, and the manifest's one exact run-owned path as `TMPDIR`,
+`TMP`, and `TEMP`. For linked-worktree pass-through it adds only the worker,
+profile, and agent markers; it receives no retained-run manifest and adds no
+run or temporary-path marker.
 
 This is targeted filtering, not complete environment isolation. Beyond the
 existing Git-sensitive names and explicit launcher control markers, arbitrary
@@ -142,8 +145,10 @@ is lexical and exact: it does not canonicalize, authenticate, or remove
 aliases, equivalent spellings, relative or empty entries, or unrelated
 directories. The transform does not constrain reads, subprocesses, providers,
 or network access, repair executable provenance or replacement risks, or
-provide an operating-system sandbox. It introduces no generic `AgentAdapter`,
-durable identity change, migration, or lifecycle authority.
+provide an operating-system sandbox. Marker enrichment adds coordination
+metadata but does not strengthen that isolation boundary. These operations
+introduce no generic `AgentAdapter`, durable identity change, migration, or
+lifecycle authority.
 
 ## Isolation and compatibility
 

@@ -159,6 +159,32 @@ class CodexAdapterTests(unittest.TestCase):
             **dependencies,
         )
 
+    def enrich_environment(
+        self,
+        environment: dict[str, str],
+        *,
+        profile: object | None = None,
+        role: str = "worker",
+        manifest: object | None = None,
+    ) -> dict[str, str]:
+        return self.adapter.enrich_codex_environment(
+            environment,
+            profile=(
+                SimpleNamespace(
+                    role_environment="ROLE",
+                    run_id_environment="RUN_ID",
+                    profile_environment="PROFILE_ID",
+                    profile_id="generic-v1",
+                    agent_environment="AGENT_ID",
+                    manifest_agent="codex",
+                )
+                if profile is None
+                else profile
+            ),
+            role=role,
+            manifest=manifest,
+        )
+
     def test_adapter_import_is_cycle_free_and_environment_neutral(self) -> None:
         script = (
             "import os, sys; "
@@ -3025,6 +3051,722 @@ class CodexAdapterTests(unittest.TestCase):
         self.assertIs(observed, kernel_result)
         active_profile.assert_called_once_with()
         adapter_kernel.assert_called_once()
+
+    def test_environment_enrichment_kernel_and_call_surfaces_are_exact(
+        self,
+    ) -> None:
+        kernel = inspect.signature(
+            self.adapter.enrich_codex_environment
+        ).parameters
+        self.assertEqual(
+            tuple(kernel),
+            ("environment", "profile", "role", "manifest"),
+        )
+        self.assertIs(
+            kernel["environment"].kind,
+            inspect.Parameter.POSITIONAL_OR_KEYWORD,
+        )
+        for name in ("profile", "role", "manifest"):
+            self.assertIs(
+                kernel[name].kind,
+                inspect.Parameter.KEYWORD_ONLY,
+            )
+        for parameter in kernel.values():
+            self.assertIs(parameter.default, inspect.Parameter.empty)
+        self.assertIs(
+            self.engine._enrich_codex_environment,
+            self.adapter.enrich_codex_environment,
+        )
+
+        surfaces = (
+            (
+                self.engine.child_environment,
+                ("manifest", "real_codex"),
+            ),
+            (
+                self.engine.resolver_environment,
+                ("manifest", "real_codex"),
+            ),
+            (
+                self.engine.pass_through_linked_worktree,
+                ("repository", "real_codex", "arguments"),
+            ),
+        )
+        for function, names in surfaces:
+            with self.subTest(surface=function.__name__):
+                parameters = inspect.signature(function).parameters
+                self.assertEqual(tuple(parameters), names)
+                for parameter in parameters.values():
+                    self.assertIs(
+                        parameter.kind,
+                        inspect.Parameter.POSITIONAL_OR_KEYWORD,
+                    )
+                    self.assertIs(
+                        parameter.default,
+                        inspect.Parameter.empty,
+                    )
+
+    def test_environment_enrichment_covers_profiles_roles_and_pass_through(
+        self,
+    ) -> None:
+        generic = self.engine.BUILTIN_PROFILES["generic-v1"]
+        triptych = self.engine.BUILTIN_PROFILES["triptych"]
+        manifest = {"run_id": "run-1", "tmpdir": "/run/tmp"}
+        cases = (
+            (
+                "generic-worker",
+                generic,
+                "worker",
+                manifest,
+                {
+                    generic.role_environment: "worker",
+                    generic.run_id_environment: "run-1",
+                    generic.profile_environment: generic.profile_id,
+                    generic.agent_environment: generic.manifest_agent,
+                    "TMPDIR": "/run/tmp",
+                    "TMP": "/run/tmp",
+                    "TEMP": "/run/tmp",
+                },
+            ),
+            (
+                "generic-resolver",
+                generic,
+                "resolver",
+                manifest,
+                {
+                    generic.role_environment: "resolver",
+                    generic.run_id_environment: "run-1",
+                    generic.profile_environment: generic.profile_id,
+                    generic.agent_environment: generic.manifest_agent,
+                    "TMPDIR": "/run/tmp",
+                    "TMP": "/run/tmp",
+                    "TEMP": "/run/tmp",
+                },
+            ),
+            (
+                "triptych-worker",
+                triptych,
+                "worker",
+                manifest,
+                {
+                    triptych.role_environment: "worker",
+                    triptych.run_id_environment: "run-1",
+                    "TMPDIR": "/run/tmp",
+                    "TMP": "/run/tmp",
+                    "TEMP": "/run/tmp",
+                },
+            ),
+            (
+                "triptych-resolver",
+                triptych,
+                "resolver",
+                manifest,
+                {
+                    triptych.role_environment: "resolver",
+                    triptych.run_id_environment: "run-1",
+                    "TMPDIR": "/run/tmp",
+                    "TMP": "/run/tmp",
+                    "TEMP": "/run/tmp",
+                },
+            ),
+            (
+                "generic-pass-through",
+                generic,
+                "worker",
+                None,
+                {
+                    generic.role_environment: "worker",
+                    generic.profile_environment: generic.profile_id,
+                    generic.agent_environment: generic.manifest_agent,
+                },
+            ),
+            (
+                "triptych-pass-through",
+                triptych,
+                "worker",
+                None,
+                {triptych.role_environment: "worker"},
+            ),
+        )
+        for name, profile, role, supplied_manifest, expected in cases:
+            environment = {
+                "KEEP": "value",
+                profile.role_environment: "old-role",
+            }
+            with self.subTest(case=name):
+                observed = self.enrich_environment(
+                    environment,
+                    profile=profile,
+                    role=role,
+                    manifest=supplied_manifest,
+                )
+                self.assertIs(observed, environment)
+                self.assertEqual(
+                    environment,
+                    {"KEEP": "value", **expected},
+                )
+
+    def test_environment_enrichment_preserves_exact_access_order(
+        self,
+    ) -> None:
+        events: list[tuple[str, object]] = []
+
+        class Environment(dict):
+            def __setitem__(
+                environment_self,
+                name: str,
+                value: str,
+            ) -> None:
+                events.append(("set", (name, value)))
+                super().__setitem__(name, value)
+
+        class Profile:
+            @property
+            def role_environment(profile_self) -> str:
+                events.append(("profile", "role-environment"))
+                return "ROLE"
+
+            @property
+            def run_id_environment(profile_self) -> str:
+                events.append(("profile", "run-id-environment"))
+                return "RUN_ID"
+
+            @property
+            def profile_environment(profile_self) -> str:
+                events.append(("profile", "profile-environment"))
+                return "PROFILE_ID"
+
+            @property
+            def profile_id(profile_self) -> str:
+                events.append(("profile", "profile-id"))
+                return "generic-v1"
+
+            @property
+            def agent_environment(profile_self) -> str:
+                events.append(("profile", "agent-environment"))
+                return "AGENT_ID"
+
+            @property
+            def manifest_agent(profile_self) -> str:
+                events.append(("profile", "manifest-agent"))
+                return "codex"
+
+        class Manifest(dict):
+            def __getitem__(
+                manifest_self,
+                name: str,
+            ) -> str:
+                events.append(("manifest", name))
+                return super().__getitem__(name)
+
+        environment = Environment()
+        manifest = Manifest(
+            run_id="run-1",
+            tmpdir="/run/tmp",
+        )
+        observed = self.enrich_environment(
+            environment,
+            profile=Profile(),
+            role="resolver",
+            manifest=manifest,
+        )
+
+        self.assertIs(observed, environment)
+        self.assertEqual(
+            events,
+            [
+                ("profile", "role-environment"),
+                ("set", ("ROLE", "resolver")),
+                ("manifest", "run_id"),
+                ("profile", "run-id-environment"),
+                ("set", ("RUN_ID", "run-1")),
+                ("profile", "profile-environment"),
+                ("profile", "profile-id"),
+                ("profile", "profile-environment"),
+                ("set", ("PROFILE_ID", "generic-v1")),
+                ("profile", "agent-environment"),
+                ("profile", "manifest-agent"),
+                ("profile", "manifest-agent"),
+                ("profile", "agent-environment"),
+                ("set", ("AGENT_ID", "codex")),
+                ("manifest", "tmpdir"),
+                ("set", ("TMPDIR", "/run/tmp")),
+                ("manifest", "tmpdir"),
+                ("set", ("TMP", "/run/tmp")),
+                ("manifest", "tmpdir"),
+                ("set", ("TEMP", "/run/tmp")),
+            ],
+        )
+
+    def test_environment_enrichment_preserves_optional_short_circuits(
+        self,
+    ) -> None:
+        events: list[str] = []
+
+        class MinimalProfile:
+            @property
+            def role_environment(profile_self) -> str:
+                events.append("role-environment")
+                return "ROLE"
+
+            @property
+            def run_id_environment(profile_self) -> str:
+                raise AssertionError(
+                    "pass-through must not resolve the run-ID marker"
+                )
+
+            @property
+            def profile_environment(profile_self) -> None:
+                events.append("profile-environment")
+                return None
+
+            @property
+            def profile_id(profile_self) -> str:
+                raise AssertionError(
+                    "absent profile marker must short-circuit profile ID"
+                )
+
+            @property
+            def agent_environment(profile_self) -> None:
+                events.append("agent-environment")
+                return None
+
+            @property
+            def manifest_agent(profile_self) -> str:
+                raise AssertionError(
+                    "absent agent marker must short-circuit agent identity"
+                )
+
+        environment: dict[str, str] = {}
+        self.assertIs(
+            self.enrich_environment(
+                environment,
+                profile=MinimalProfile(),
+                manifest=None,
+            ),
+            environment,
+        )
+        self.assertEqual(environment, {"ROLE": "worker"})
+        self.assertEqual(
+            events,
+            [
+                "role-environment",
+                "profile-environment",
+                "agent-environment",
+            ],
+        )
+
+        class NoAgentProfile(MinimalProfile):
+            @property
+            def agent_environment(profile_self) -> str:
+                events.append("agent-environment-present")
+                return "AGENT_ID"
+
+            @property
+            def manifest_agent(profile_self) -> None:
+                events.append("manifest-agent-none")
+                return None
+
+        events.clear()
+        environment = {}
+        self.enrich_environment(
+            environment,
+            profile=NoAgentProfile(),
+            manifest=None,
+        )
+        self.assertEqual(environment, {"ROLE": "worker"})
+        self.assertEqual(
+            events,
+            [
+                "role-environment",
+                "profile-environment",
+                "agent-environment-present",
+                "manifest-agent-none",
+            ],
+        )
+
+        environment = {}
+        with self.assertRaises(KeyError) as caught:
+            self.enrich_environment(
+                environment,
+                profile=SimpleNamespace(
+                    role_environment="ROLE",
+                    run_id_environment="RUN_ID",
+                    profile_environment=None,
+                    profile_id="unused",
+                    agent_environment=None,
+                    manifest_agent=None,
+                ),
+                manifest={},
+            )
+        self.assertEqual(caught.exception.args, ("run_id",))
+        self.assertEqual(environment, {"ROLE": "worker"})
+
+    def test_environment_enrichment_leaves_partial_mutation_on_failure(
+        self,
+    ) -> None:
+        class DependencyFailure(RuntimeError):
+            pass
+
+        set_failure = DependencyFailure("profile marker")
+
+        class BrokenEnvironment(dict):
+            def __setitem__(
+                environment_self,
+                name: str,
+                value: str,
+            ) -> None:
+                if name == "PROFILE_ID":
+                    raise set_failure
+                super().__setitem__(name, value)
+
+        environment = BrokenEnvironment()
+        with self.assertRaises(DependencyFailure) as caught:
+            self.enrich_environment(
+                environment,
+                manifest={"run_id": "run-1", "tmpdir": "/run/tmp"},
+            )
+        self.assertIs(caught.exception, set_failure)
+        self.assertIsNone(caught.exception.__cause__)
+        self.assertEqual(
+            environment,
+            {"ROLE": "worker", "RUN_ID": "run-1"},
+        )
+
+        tmp_failure = DependencyFailure("second tmpdir read")
+
+        class BrokenManifest(dict):
+            temporary_reads = 0
+
+            def __getitem__(
+                manifest_self,
+                name: str,
+            ) -> str:
+                if name == "tmpdir":
+                    manifest_self.temporary_reads += 1
+                    if manifest_self.temporary_reads == 2:
+                        raise tmp_failure
+                return super().__getitem__(name)
+
+        environment = {}
+        with self.assertRaises(DependencyFailure) as caught:
+            self.enrich_environment(
+                environment,
+                manifest=BrokenManifest(
+                    run_id="run-1",
+                    tmpdir="/run/tmp",
+                ),
+            )
+        self.assertIs(caught.exception, tmp_failure)
+        self.assertIsNone(caught.exception.__cause__)
+        self.assertEqual(
+            environment,
+            {
+                "ROLE": "worker",
+                "RUN_ID": "run-1",
+                "PROFILE_ID": "generic-v1",
+                "AGENT_ID": "codex",
+                "TMPDIR": "/run/tmp",
+            },
+        )
+
+    def test_managed_environment_wrappers_preserve_double_profile_lookup(
+        self,
+    ) -> None:
+        real_codex = Path("/codex")
+        manifest = {"run_id": "run-1", "tmpdir": "/run/tmp"}
+        for wrapper_name, role in (
+            ("child_environment", "worker"),
+            ("resolver_environment", "resolver"),
+        ):
+            events: list[tuple[str, object]] = []
+            outer_profile = object()
+            base_profile = object()
+            profiles = iter(
+                (
+                    ("outer", outer_profile),
+                    ("base", base_profile),
+                )
+            )
+            base_environment = {"base": "environment"}
+            enriched_environment = {"enriched": "environment"}
+
+            def active_profile() -> object:
+                label, profile = next(profiles)
+                events.append(("active-profile", label))
+                return profile
+
+            def enricher(
+                environment: dict[str, str],
+                *,
+                profile: object,
+                role: str,
+                manifest: object,
+            ) -> dict[str, str]:
+                events.append(("enrich", role))
+                self.assertIs(environment, base_environment)
+                self.assertIs(profile, outer_profile)
+                self.assertIs(manifest, manifest_argument)
+                return enriched_environment
+
+            def base_kernel(
+                received_real: Path,
+                **dependencies: object,
+            ) -> dict[str, str]:
+                events.append(("base-kernel", received_real))
+                self.assertIs(
+                    dependencies.pop("profile"),
+                    base_profile,
+                )
+                self.assertEqual(
+                    set(dependencies),
+                    {
+                        "sanitized_environment",
+                        "control_environments",
+                        "stringifier",
+                        "executable_path",
+                        "path_separator",
+                    },
+                )
+                self.engine._enrich_codex_environment = enricher
+                return base_environment
+
+            manifest_argument = manifest
+            with (
+                self.subTest(wrapper=wrapper_name),
+                mock.patch.object(
+                    self.engine,
+                    "active_profile",
+                    side_effect=active_profile,
+                ) as profile_lookup,
+                mock.patch.object(
+                    self.engine,
+                    "_codex_environment",
+                    side_effect=base_kernel,
+                ),
+                mock.patch.object(
+                    self.engine,
+                    "_enrich_codex_environment",
+                    side_effect=AssertionError(
+                        "enricher resolved before base environment"
+                    ),
+                ),
+            ):
+                observed = getattr(
+                    self.engine,
+                    wrapper_name,
+                )(manifest_argument, real_codex)
+
+            self.assertIs(observed, enriched_environment)
+            self.assertEqual(
+                events,
+                [
+                    ("active-profile", "outer"),
+                    ("active-profile", "base"),
+                    ("base-kernel", real_codex),
+                    ("enrich", role),
+                ],
+            )
+            self.assertEqual(profile_lookup.call_count, 2)
+
+    def test_pass_through_enriches_after_checks_argv_and_base_environment(
+        self,
+    ) -> None:
+        class ExecveReached(RuntimeError):
+            pass
+
+        events: list[tuple[str, object]] = []
+        outer_profile = SimpleNamespace(
+            role_environment="ROLE",
+            profile_environment="PROFILE_ID",
+            profile_id="generic-v1",
+            agent_environment="AGENT_ID",
+            manifest_agent="codex",
+        )
+        base_profile = object()
+        profiles = iter(
+            (
+                ("outer", outer_profile),
+                ("base", base_profile),
+            )
+        )
+        repository = SimpleNamespace(
+            root=Path("/repository"),
+            relative_cwd=Path("subdirectory"),
+        )
+        real_codex = Path("/codex")
+        arguments = ("prompt",)
+        argv = ["argv"]
+        base_environment = {"base": "environment"}
+        enriched_environment = {"enriched": "environment"}
+        reached = ExecveReached("execve")
+
+        class Environment(dict):
+            def get(
+                environment_self,
+                name: str,
+                default: object = None,
+            ) -> object:
+                events.append(("environment-get", name))
+                return super().get(name, default)
+
+        inherited = Environment()
+
+        def active_profile() -> object:
+            label, profile = next(profiles)
+            events.append(("active-profile", label))
+            return profile
+
+        def registered_record(
+            received_repository: object,
+            worktree: Path,
+        ) -> None:
+            events.append(("registered-record", worktree))
+            self.assertIs(received_repository, repository)
+            return None
+
+        def git(
+            cwd: Path,
+            *received_arguments: str,
+            **options: object,
+        ) -> object:
+            events.append(("git", (cwd, received_arguments, options)))
+            return SimpleNamespace(stdout="")
+
+        def build_argv(
+            received_real: Path,
+            workdir: Path,
+            received_arguments: Sequence[str],
+        ) -> list[str]:
+            events.append(("argv", workdir))
+            self.assertIs(received_real, real_codex)
+            self.assertIs(received_arguments, arguments)
+            return argv
+
+        def enricher(
+            environment: dict[str, str],
+            *,
+            profile: object,
+            role: str,
+            manifest: object | None,
+        ) -> dict[str, str]:
+            events.append(("enrich", manifest))
+            self.assertIs(environment, base_environment)
+            self.assertIs(profile, outer_profile)
+            self.assertEqual(role, "worker")
+            self.assertIsNone(manifest)
+            return enriched_environment
+
+        def base_kernel(
+            received_real: Path,
+            **dependencies: object,
+        ) -> dict[str, str]:
+            events.append(("base-kernel", received_real))
+            self.assertIs(
+                dependencies.pop("profile"),
+                base_profile,
+            )
+            self.engine._enrich_codex_environment = enricher
+            return base_environment
+
+        def execve(
+            received_real: Path,
+            received_argv: list[str],
+            environment: dict[str, str],
+        ) -> None:
+            events.append(("execve", None))
+            self.assertIs(received_real, real_codex)
+            self.assertIs(received_argv, argv)
+            self.assertIs(environment, enriched_environment)
+            raise reached
+
+        fake_os = SimpleNamespace(
+            environ=inherited,
+            get_exec_path=object(),
+            pathsep=object(),
+            execve=execve,
+        )
+        with (
+            mock.patch.object(
+                self.engine,
+                "active_profile",
+                side_effect=active_profile,
+            ),
+            mock.patch.object(
+                self.engine,
+                "registered_record",
+                side_effect=registered_record,
+            ),
+            mock.patch.object(
+                self.engine,
+                "git",
+                side_effect=git,
+            ),
+            mock.patch.object(
+                self.engine,
+                "codex_argv",
+                side_effect=build_argv,
+            ),
+            mock.patch.object(
+                self.engine,
+                "_codex_environment",
+                side_effect=base_kernel,
+            ),
+            mock.patch.object(
+                self.engine,
+                "_enrich_codex_environment",
+                side_effect=AssertionError(
+                    "enricher resolved before base environment"
+                ),
+            ),
+            mock.patch.object(
+                self.engine,
+                "MANAGED_CONTEXT_ENVIRONMENTS",
+                ("MANAGED_ONE", "MANAGED_TWO"),
+            ),
+            mock.patch.object(self.engine, "os", fake_os),
+        ):
+            with self.assertRaises(ExecveReached) as caught:
+                self.engine.pass_through_linked_worktree(
+                    repository,
+                    real_codex,
+                    arguments,
+                )
+
+        self.assertIs(caught.exception, reached)
+        self.assertEqual(
+            events,
+            [
+                ("active-profile", "outer"),
+                ("environment-get", "ROLE"),
+                ("environment-get", "PROFILE_ID"),
+                ("environment-get", "AGENT_ID"),
+                ("registered-record", repository.root),
+                (
+                    "git",
+                    (
+                        repository.root,
+                        (
+                            "symbolic-ref",
+                            "--quiet",
+                            "--short",
+                            "HEAD",
+                        ),
+                        {"check": False},
+                    ),
+                ),
+                ("environment-get", "MANAGED_ONE"),
+                ("environment-get", "MANAGED_TWO"),
+                (
+                    "argv",
+                    repository.root / repository.relative_cwd,
+                ),
+                ("active-profile", "base"),
+                ("base-kernel", real_codex),
+                ("enrich", None),
+                ("execve", None),
+            ],
+        )
 
     def test_real_filesystem_override_and_path_behavior(self) -> None:
         class SelectionError(RuntimeError):

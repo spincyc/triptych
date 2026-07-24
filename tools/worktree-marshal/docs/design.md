@@ -28,10 +28,10 @@ authentication plus exact Git-administration line-format validation,
 `locks.py` now owns lock-descriptor bookkeeping and validation algorithms,
 `process.py` now owns child waiting and exit-status normalization,
 `adapters/codex.py` now owns Codex executable candidate selection and static
-argument policy plus the sanitized Codex base-environment transform, and
-`triptych_compat.py` binds the frozen compatibility profile. The rest of the
-engine will be separated behind these modules only after parity tests protect
-each seam:
+argument policy plus the sanitized Codex base-environment transform and
+deterministic marker enrichment, and `triptych_compat.py` binds the frozen
+compatibility profile. The rest of the engine will be separated behind these
+modules only after parity tests protect each seam:
 
 ```text
 worktree_marshal/
@@ -48,7 +48,7 @@ worktree_marshal/
   conflicts.py           resolver scope, continuation, and abort
   retirement.py          separately authorized destructive retirement
   adapters/base.py       future agent contract; explicitly not introduced
-  adapters/codex.py      selection, arguments, and base environment now; enrichment later
+  adapters/codex.py      selection, arguments, base environment, and marker enrichment
   sandboxes/base.py      enforcement contract independent of an adapter
   resources/             generated integration assets such as the Make fragment
 ```
@@ -97,7 +97,7 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with fifteen behavior-preserving boundaries. The original
+has begun step 5 with sixteen behavior-preserving boundaries. The original
 pure Git policy kernel transforms an explicit environment mapping and Git
 argument sequence in `git.py`; `engine.py` retains its optional
 environment-acquisition wrapper, subprocess creation and command execution,
@@ -293,7 +293,28 @@ provides an operating-system sandbox. The adapter module is still not a
 generic `AgentAdapter`; no common base adapter, capability contract, new agent,
 state migration, durable identity change, sandbox backend, or release
 assurance is introduced by this seam.
-Direct tests freeze all fifteen extracted boundaries, their
+
+The sixteenth boundary moves the three existing runtime-marker sequences into
+one shared `enrich_codex_environment` operation in `adapters/codex.py`. The
+operation deterministically mutates and returns the engine-supplied base
+mapping. It always adds the supplied role. With an ordinary worker or resolver
+manifest it next adds the run ID, the optional profile and agent IDs, and that
+manifest's one exact temporary path as `TMPDIR`, `TMP`, and `TEMP`. Without a
+manifest, linked-worktree pass-through adds only its worker role and the
+optional profile and agent IDs; it adds no run or temporary-path marker.
+
+The engine retains each consumer's established profile lookup and enrichment
+call timing, chooses the worker or resolver role, decides whether the exact
+launcher-owned manifest is authoritative, and supplies the Git-sanitized base
+mapping. It also retains working-directory selection and authentication, the
+linked-worktree marker, lock, and branch refusal checks, process creation and
+`execve` replacement, inherited descriptors, and every state, audit, post-exit,
+and lifecycle decision. This deterministic marker helper is not a generic
+`AgentAdapter` or complete environment isolation. It adds no new capability
+contract, agent, sandbox backend, credential filtering, durable identity,
+migration, or release assurance.
+
+Direct tests freeze all sixteen extracted boundaries, their
 compatibility surfaces, artifact inclusion, field and operation order,
 partial-failure behavior, and the dynamic restoration of every vocabulary
 value currently accepted in

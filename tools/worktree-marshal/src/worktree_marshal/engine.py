@@ -36,6 +36,7 @@ from .adapters.codex import (
     ROOT_VALUE_OPTIONS,
     codex_argv as _codex_argv,
     codex_environment as _codex_environment,
+    enrich_codex_environment as _enrich_codex_environment,
     normalize_codex_arguments as _normalize_codex_arguments,
     scan_allowed_options as _scan_allowed_options,
     select_codex_executable as _select_codex_executable,
@@ -1272,29 +1273,23 @@ def allocate_run(repository: Repository) -> tuple[dict, TextIO]:
 def child_environment(manifest: dict, real_codex: Path) -> dict[str, str]:
     profile = active_profile()
     environment = codex_environment(real_codex)
-    environment[profile.role_environment] = "worker"
-    environment[profile.run_id_environment] = manifest["run_id"]
-    if profile.profile_environment is not None:
-        environment[profile.profile_environment] = profile.profile_id
-    if profile.agent_environment is not None and profile.manifest_agent is not None:
-        environment[profile.agent_environment] = profile.manifest_agent
-    for name in ("TMPDIR", "TMP", "TEMP"):
-        environment[name] = manifest["tmpdir"]
-    return environment
+    return _enrich_codex_environment(
+        environment,
+        profile=profile,
+        role="worker",
+        manifest=manifest,
+    )
 
 
 def resolver_environment(manifest: dict, real_codex: Path) -> dict[str, str]:
     profile = active_profile()
     environment = codex_environment(real_codex)
-    environment[profile.role_environment] = "resolver"
-    environment[profile.run_id_environment] = manifest["run_id"]
-    if profile.profile_environment is not None:
-        environment[profile.profile_environment] = profile.profile_id
-    if profile.agent_environment is not None and profile.manifest_agent is not None:
-        environment[profile.agent_environment] = profile.manifest_agent
-    for name in ("TMPDIR", "TMP", "TEMP"):
-        environment[name] = manifest["tmpdir"]
-    return environment
+    return _enrich_codex_environment(
+        environment,
+        profile=profile,
+        role="resolver",
+        manifest=manifest,
+    )
 
 
 def codex_environment(real_codex: Path) -> dict[str, str]:
@@ -3405,11 +3400,12 @@ def pass_through_linked_worktree(
     workdir = repository.root / repository.relative_cwd
     argv = codex_argv(real_codex, workdir, arguments)
     environment = codex_environment(real_codex)
-    environment[profile.role_environment] = "worker"
-    if profile.profile_environment is not None:
-        environment[profile.profile_environment] = profile.profile_id
-    if profile.agent_environment is not None and profile.manifest_agent is not None:
-        environment[profile.agent_environment] = profile.manifest_agent
+    environment = _enrich_codex_environment(
+        environment,
+        profile=profile,
+        role="worker",
+        manifest=None,
+    )
     os.execve(real_codex, argv, environment)
     raise AssertionError("unreachable")
 

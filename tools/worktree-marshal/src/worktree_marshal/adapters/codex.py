@@ -2,9 +2,10 @@
 
 This module owns read-only executable selection, the supported Codex CLI
 grammar, prompt delimiting, fixed argument-level sandbox configuration, and
-the sanitized base environment for Codex. Profile binding, worktree selection
-and authentication, role-specific environment enrichment, process creation,
-and lifecycle decisions remain in the lifecycle engine.
+the sanitized base environment and deterministic marker enrichment for Codex.
+Profile binding, worktree selection and authentication, role choice, manifest
+authority, process creation, and lifecycle decisions remain in the lifecycle
+engine.
 """
 
 from __future__ import annotations
@@ -87,6 +88,15 @@ NON_AGENT_CODEX_COMMANDS = {
 
 class CodexProfile(Protocol):
     real_codex_environment: str
+
+
+class CodexEnvironmentProfile(Protocol):
+    role_environment: str
+    run_id_environment: str
+    profile_environment: str | None
+    profile_id: str
+    agent_environment: str | None
+    manifest_agent: str | None
 
 
 class LauncherSnapshot(Protocol):
@@ -381,4 +391,29 @@ def codex_environment(
             ],
         ]
     )
+    return environment
+
+
+def enrich_codex_environment(
+    environment: dict[str, str],
+    *,
+    profile: CodexEnvironmentProfile,
+    role: str,
+    manifest: Mapping[str, str] | None,
+) -> dict[str, str]:
+    """Add profile and optional retained-run markers to a Codex environment."""
+
+    environment[profile.role_environment] = role
+    if manifest is not None:
+        environment[profile.run_id_environment] = manifest["run_id"]
+    if profile.profile_environment is not None:
+        environment[profile.profile_environment] = profile.profile_id
+    if (
+        profile.agent_environment is not None
+        and profile.manifest_agent is not None
+    ):
+        environment[profile.agent_environment] = profile.manifest_agent
+    if manifest is not None:
+        for name in ("TMPDIR", "TMP", "TEMP"):
+            environment[name] = manifest["tmpdir"]
     return environment
