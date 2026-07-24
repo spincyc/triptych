@@ -14,9 +14,9 @@ Apply these priorities in order:
 
 ## Identity, registry, and ownership
 
-Under the present provider, a publishable leaf lives at:
+Under a provider branch, a publishable leaf lives at:
 
-`src/gpt/liturgy/roman-rite/postconciliar/<edition-locale>/propers/<calendar-family>/<full-publication-slug>/`
+`src/<provider>/liturgy/roman-rite/postconciliar/<edition-locale>/propers/<calendar-family>/<full-publication-slug>/`
 
 Use `temporal` for `PC-S` leaves and `general-calendar` for `PC-R` leaves. The stable registry controls the fixed source-owner paths and reserved `PC-W` namespace. Each edition-locale owns a non-publishable `propers/registry/` directory containing:
 

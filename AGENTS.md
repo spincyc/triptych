@@ -91,7 +91,7 @@ When legal rules, current discipline, translations, software, or other mutable f
 
 ## Repository and build discipline
 
-Preserve the provider hierarchy under `src/gpt/`. New and migrated documents follow the collection schema in `guidance/repository.md`; their installed PDFs and transient artifacts mirror the same relative path under `doc/gpt/` and `build/gpt/`.
+Preserve the provider hierarchy under `src/<provider>/`; the present providers are `gpt` and `claude`. New and migrated documents follow the collection schema in `guidance/repository.md`; their installed PDFs and transient artifacts mirror the same relative path under `doc/<provider>/` and `build/<provider>/`.
 
 - Tracked inputs and audit records belong under `src/`.
 - Provider-neutral reusable external-source records and lawful retained

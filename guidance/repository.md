@@ -25,11 +25,11 @@ External source identities and lawful reusable artifacts live under
 remain under `src/<provider>/`. Generated source indexes and reports live under
 ignored `build/sources/` and may always be reconstructed from tracked inputs.
 
-Generated documents retain a provider branch. The present provider is `gpt`; do not flatten it from existing paths. Use this collection hierarchy:
+Generated documents retain a provider branch. The present providers are `gpt` (documents authored by OpenAI ChatGPT/Codex) and `claude` (documents authored by Anthropic Claude); do not flatten a provider from existing paths. Each provider branch uses this collection hierarchy:
 
 ```text
-src/gpt/
-  common/
+src/common/                       provider-neutral typesetting primitives
+src/<provider>/
   curriculums/
     <curriculum>/
       shared/
@@ -61,15 +61,19 @@ src/gpt/
 
 `<edition-locale>` must distinguish the governing books and territory; never use `current`, `novus-ordo`, or a bare language as its sole identity. Postconciliar proper guides also use the stable universal registry in `guidance/liturgy/postconciliar-propers-registry.md`; edition-specific collation, unresolved branches, and instantiated leaves belong under the edition's `propers/registry/` directory rather than in the reusable profile. A curriculum keeps course-wide teaching, practice, reference, and audit sources at its non-publishable owner root and gives each independently printable module or companion its own publishable leaf. Do not duplicate shared lessons or answer sources into module leaves.
 
-Each publishable leaf contains `main.tex`, `generation-metadata.tex` or a profile-authorized inherited declaration, and the profile-required records. Shared directories are non-publishable and have no PDF mirror. Put shared material at the narrowest ancestor that genuinely owns it; keep global typesetting primitives under `src/gpt/common/` and rite-, edition-, collection-, or work-specific material within its subtree.
+Each publishable leaf contains `main.tex`, `generation-metadata.tex` or a profile-authorized inherited declaration, and the profile-required records. Shared directories are non-publishable and have no PDF mirror. Put shared material at the narrowest ancestor that genuinely owns it; keep provider-neutral global typesetting primitives under `src/common/` — both providers import the shared preamble, which the build resolves as `\input{common/preamble}` through `TEXINPUTS` — and rite-, edition-, collection-, or work-specific material within its subtree. Hoist a file to `src/common/` only when it is pure typesetting or format and providers genuinely share it. Content-bearing shared material — lesson content, prayer texts, verified liturgical texts, response references — remains inside its provider branch; a provider's documents must not ride on another provider's authored substance.
 
-`build/gpt/` and `doc/gpt/` mirror a publishable leaf's path below `src/gpt/`; the PDF is named for the leaf. For example:
+`build/<provider>/` and `doc/<provider>/` mirror a publishable leaf's path below `src/<provider>/`; the PDF is named for the leaf. For example, under `gpt`:
 
 ```text
 src/gpt/articles/canon-law/example/main.tex
 build/gpt/articles/canon-law/example.pdf
 doc/gpt/articles/canon-law/example.pdf
 ```
+
+The same mirroring applies to every provider branch.
+
+A document leaf ID such as `articles/faith/ontological-vertigo` may exist under more than one provider. Each provider edition is an independent work on the same scope: it keeps its own research records, its own sections, and its own generation metadata, and reuses no text across providers. Publication identity is provider-qualified — the provider plus the leaf ID.
 
 Use lowercase kebab-case slugs. Stable identifiers are namespaced by their profiles and are not interchangeable across collections or editions. Numbered series use their profile's ordering rules; a number is not a claim of importance.
 
@@ -222,6 +226,14 @@ publication entries; do not repeat their PDF links on the landing page. Keep
 all `library/` pages at the same filesystem level so source and generated links
 remain predictable.
 
+A leaf ID keeps exactly one owning catalog page no matter how many provider
+editions exist. Its one row may carry per-provider links to each provider's
+installed PDF: the title link carries the `gpt` edition, and a `Claude` column
+beside it carries the `claude` edition. A provider edition that does not yet
+exist or is not released renders as an em dash placeholder. Per-provider links
+within the one owning row are not cross-listing; listing a leaf on more than
+one page is.
+
 Do not cross-list. Keep derived companions in their canonical work's entry.
 Link titles directly to installed PDFs and describe each work in terse,
 reader-useful language. Do not link TeX files, research records, audits,
@@ -246,7 +258,7 @@ On the 1962 page list the Ordinary first, assembly and calendar references secon
 
 Repository visibility and reader-site deployment are separate decisions. A public repository exposes tracked content and reachable history; a reader site is a generated, history-free artifact under ignored `build/`. Neither follows automatically from a successful build or commit.
 
-`release/public-alpha.json` must exhaustively account for every discovered source and installed PDF:
+`release/public-alpha.json` must exhaustively account for every discovered source and installed PDF. Accounting is per provider edition: each provider's installed PDF is a distinct entry under its provider-qualified identity, and one provider edition's state never covers another's:
 
 - `hold` excludes the work from public and private-preview artifacts;
 - `review` permits it only in a clearly marked, no-index private preview; and

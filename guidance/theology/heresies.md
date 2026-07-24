@@ -1,7 +1,7 @@
 # Historical Heresy Reference Works
 
 This profile governs source-first histories of condemned propositions, persons,
-schools, movements, and ecclesial responses beneath `src/gpt/theology/heresies/`.
+schools, movements, and ecclesial responses beneath `src/<provider>/theology/heresies/`.
 They are not juridical determinations of a living person's culpability.
 
 ## Governing priorities
