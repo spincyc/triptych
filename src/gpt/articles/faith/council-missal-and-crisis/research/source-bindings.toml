@@ -307,3 +307,59 @@ context = "The complete official English article was checked for the inventory's
 claim_keys = ["discrimination"]
 verified_on = "2026-07-24"
 source_fingerprint = "sha256:43d0a69e0d345354fc5798d7dd9115444fd4516e8807145f74b8d7d0cd4513df"
+
+[[bindings]]
+source_id = "work.second-vatican-council.perfectae-caritatis"
+role = "context"
+states = ["cataloged"]
+context = "The work identity supports the article's fourth-session chronology and sixteen-document inventory by title, decree genre, 28 October 1965 promulgation date, and religious-life-renewal subject. It claims no inspection of the complete numbered body and does not establish the article's narrower institutional or causal claims."
+
+[[bindings]]
+source_id = "passage.second-vatican-council.perfectae-caritatis.english-vatican-web-2026-07-24.2"
+loci = ["2"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official English article was checked for the inventory and religious-life discussion: the Gospel as highest rule; return to founders' spirit, special aims, and sound traditions; adaptation to changed circumstances and present need; and spiritual renewal as the prerequisite without which adaptation is ineffectual. It does not establish later causal outcomes."
+claim_keys = ["religious-life-renewal-principles"]
+verified_on = "2026-07-24"
+source_fingerprint = "sha256:db51874a95970628f137cf4dce6cb6c0806533f56e5a97229de352da71c64eaa"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.perfectae-caritatis.english-vatican-web-2026-07-24.3-4"
+loci = ["3-4"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official English range was checked for the article's bounded claim that the Council authorized broad revision of religious life, prayer, work, governance, constitutions, directories, custom books, prayers, and ceremonies, with member cooperation, competent authority, and prudent experimentation. Later implementing acts, institute decisions, and causal judgments remain distinct."
+claim_keys = ["authorized-religious-life-revision"]
+verified_on = "2026-07-24"
+source_fingerprint = "sha256:b9efcb04c676310d1195e352424b2eb30759c085ea827c6c55b710ea2d4998ac"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.perfectae-caritatis.english-vatican-web-2026-07-24.5-6"
+loci = ["5-6"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official English range was checked for the article's bounded negative claim that conciliar renewal retained religious profession as special consecration and prayer, Scripture, Eucharistic liturgy, and the Church's prayer as foundations of spiritual life."
+claim_keys = ["religious-life-consecration-prayer"]
+verified_on = "2026-07-24"
+source_fingerprint = "sha256:b7f24fe5811fd22a40a6c573411fc01b47c995e64bfdc70f5bb576d2b00702d9"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.perfectae-caritatis.english-vatican-web-2026-07-24.12-15"
+loci = ["12-15"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official English range was checked for the article's bounded account of chastity, poverty, obedience, and common life. Article 14's conjunction of obedience with human dignity and responsible cooperation is retained; the range is not treated as a one-cause explanation of institutional outcomes."
+claim_keys = ["religious-life-counsels-common-life"]
+verified_on = "2026-07-24"
+source_fingerprint = "sha256:7b903a66854f3037b1f89ace06d3808e086266ee64ce64fd06dc8275c86f427a"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.perfectae-caritatis.english-vatican-web-2026-07-24.17"
+loci = ["17"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official English article was checked for both sides of the habit rule: the religious habit is an outward mark of consecration, and habits unsuitable to contemporary conditions must be changed. Neither side is isolated into a universal prescription beyond the article."
+claim_keys = ["religious-habit-rule"]
+verified_on = "2026-07-24"
+source_fingerprint = "sha256:81a8243e4fefc5d1b1b542343fb869c5644cbdfe76768db446379f25cf5d7a7e"
