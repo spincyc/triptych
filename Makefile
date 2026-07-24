@@ -79,6 +79,7 @@ CURRICULUM_STRUCTURE_CHECKER := scripts/check-curriculum-structure
 PDF_REVIEW_TOOL := scripts/pdf-review
 PUBLIC_ALPHA_TOOL := scripts/public-alpha
 RELEASE_BINDINGS_TOOL := scripts/release-bindings
+RESEARCH_STALENESS_TOOL := scripts/research-staleness
 override CODEX_LAUNCHER := scripts/triptych-codex
 SOURCE_LIBRARY_TOOL := scripts/source-library
 SOURCE_INVENTORY_TOOL := scripts/source-inventory
@@ -188,6 +189,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	verify-public-site verify-public-preview \
 	check-release-bindings refresh-release-bindings approve-release \
 	add-publication doc review-doc install-doc check check-tests \
+	check-staleness explain-staleness rebaseline-doc \
 	FORCE_METADATA_VERIFICATION
 .DELETE_ON_ERROR:
 .SECONDARY: $(BUILD_METADATA_STAMPS)
@@ -392,6 +394,9 @@ help:
 		'make add-publication ID=<leaf> CATALOG=<page> [PROVIDER=<p>] [STATUS=hold]  Add a manifest entry' \
 		'make check    Run every repository policy check' \
 		'make check-tests  Run the complete script unit-test suite' \
+		'make check-staleness  Report editions whose research inputs changed (any provider)' \
+		'make explain-staleness DOC=<leaf> [PROVIDER=<p>]  Name the changed research inputs' \
+		'make rebaseline-doc DOC=<leaf> [PROVIDER=<p>]  Clear a staleness flag after re-evaluation' \
 		'make clean    Remove transient build artifacts only'
 
 check-metadata: check-tools
@@ -455,8 +460,27 @@ review-doc: doc
 install-doc: doc
 	@$(MAKE) --no-print-directory '$(DOC_ROOT)/$(DOC).pdf'
 
+# Cross-provider research staleness (policy in guidance/staleness.md).
+check-staleness:
+	@$(PYTHON) $(RESEARCH_STALENESS_TOOL) status
+
+explain-staleness:
+	@if [ -z '$(DOC)' ]; then \
+		echo 'explain-staleness requires DOC=<leaf-id> [PROVIDER=$(PROVIDER)]' >&2; \
+		exit 1; \
+	fi
+	@$(PYTHON) $(RESEARCH_STALENESS_TOOL) explain '$(PROVIDER)' '$(DOC)'
+
+rebaseline-doc:
+	@if [ -z '$(DOC)' ]; then \
+		echo 'rebaseline-doc requires DOC=<leaf-id> [PROVIDER=$(PROVIDER)]' >&2; \
+		exit 1; \
+	fi
+	@$(PYTHON) $(RESEARCH_STALENESS_TOOL) rebaseline --provider '$(PROVIDER)' --id '$(DOC)'
+
 # Aggregate gates: `check` runs every repository policy check; `check-tests`
-# runs the complete script unit-test suite.
+# runs the complete script unit-test suite. Staleness is reported separately —
+# it flags re-evaluation work, not a broken repository.
 check: check-metadata check-sources check-public-alpha check-release-bindings
 
 check-tests:

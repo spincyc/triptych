@@ -1,0 +1,300 @@
+#!/usr/bin/env python3
+"""Cross-provider research staleness ledger.
+
+Policy: when any research input of a paper changes — its own research
+records, the research records of another provider's edition of the same
+leaf, or a reusable source record it binds — every provider's edition of
+that leaf is flagged stale until that provider independently re-evaluates
+its paper. Re-evaluation produces both an in-place modification and a
+complete rewrite, then an honest three-way comparison (old / modified /
+rewritten). If nothing material changed, the marker is cleared by
+rebaselining; a material change is raised to the user for confirmation
+before any replacement. This tool owns only the deterministic half:
+fingerprinting research inputs, reporting staleness with causes, and
+rebaselining. The evaluation itself is provider work recorded elsewhere.
+
+The tracked ledger lives at
+src/sources/inventories/research-staleness-v1.toml and stores one
+baseline fingerprint per (provider, leaf) plus the per-input digests the
+fingerprint was computed from, so `explain` can name exactly which
+inputs moved.
+
+Subcommands:
+  status [--provider P]     list stale editions (exit 1 if any)
+  explain PROVIDER LEAF     show which research inputs changed
+  rebaseline [--provider P] [--id LEAF] [--all]
+                            re-record baselines for the named editions
+  bootstrap                 create the ledger for every discovered edition
+"""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import sys
+import tomllib
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+LEDGER = ROOT / "src" / "sources" / "inventories" / "research-staleness-v1.toml"
+PROVIDERS = ("gpt", "claude")
+SCHEMA = 1
+
+
+class StalenessError(Exception):
+    pass
+
+
+def sha256_file(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def discover_editions() -> dict[tuple[str, str], Path]:
+    editions: dict[tuple[str, str], Path] = {}
+    for provider in PROVIDERS:
+        provider_root = ROOT / "src" / provider
+        if not provider_root.is_dir():
+            continue
+        for main in sorted(provider_root.rglob("main.tex")):
+            leaf = main.parent.relative_to(provider_root).as_posix()
+            editions[(provider, leaf)] = main.parent
+    return editions
+
+
+def research_files(leaf_dir: Path) -> list[Path]:
+    research = leaf_dir / "research"
+    if not research.is_dir():
+        return []
+    return sorted(p for p in research.rglob("*") if p.is_file())
+
+
+def bound_source_records(leaf_dir: Path) -> list[Path]:
+    bindings = leaf_dir / "research" / "source-bindings.toml"
+    if not bindings.is_file():
+        return []
+    try:
+        data = tomllib.loads(bindings.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return []
+    records: set[Path] = set()
+    for binding in data.get("bindings", []):
+        source_id = binding.get("source_id")
+        if not isinstance(source_id, str) or "." not in source_id:
+            continue
+        # source ids look like kind.author.work[.qualifier...]; the record
+        # tree is src/sources/works/<author>/<work>/ — hash every record
+        # file under that work so any record change is visible.
+        parts = source_id.split(".")
+        if len(parts) < 3:
+            continue
+        work_dir = ROOT / "src" / "sources" / "works" / parts[1] / parts[2]
+        if work_dir.is_dir():
+            for path in sorted(work_dir.rglob("*.toml")):
+                records.add(path)
+    return sorted(records)
+
+
+def edition_inputs(
+    editions: dict[tuple[str, str], Path], provider: str, leaf: str
+) -> dict[str, str]:
+    inputs: dict[str, str] = {}
+    own_dir = editions[(provider, leaf)]
+    for path in research_files(own_dir):
+        inputs[path.relative_to(ROOT).as_posix()] = sha256_file(path)
+    for other in PROVIDERS:
+        if other == provider:
+            continue
+        sibling = editions.get((other, leaf))
+        if sibling is not None:
+            for path in research_files(sibling):
+                inputs[path.relative_to(ROOT).as_posix()] = sha256_file(path)
+    for path in bound_source_records(own_dir):
+        inputs[path.relative_to(ROOT).as_posix()] = sha256_file(path)
+    return inputs
+
+
+def fingerprint(inputs: dict[str, str]) -> str:
+    digest = hashlib.sha256()
+    for name in sorted(inputs):
+        digest.update(name.encode())
+        digest.update(b"\0")
+        digest.update(inputs[name].encode())
+        digest.update(b"\n")
+    return digest.hexdigest()
+
+
+def load_ledger() -> dict:
+    if not LEDGER.is_file():
+        raise StalenessError(
+            f"ledger missing: {LEDGER.relative_to(ROOT)} (run bootstrap)"
+        )
+    data = tomllib.loads(LEDGER.read_text(encoding="utf-8"))
+    if data.get("schema") != SCHEMA:
+        raise StalenessError("unsupported ledger schema")
+    return data
+
+
+def toml_escape(value: str) -> str:
+    return value.replace("\\", "\\\\").replace('"', '\\"')
+
+
+def write_ledger(entries: dict[tuple[str, str], dict]) -> None:
+    lines = [
+        f"schema = {SCHEMA}",
+        'record_type = "research-staleness"',
+        "",
+    ]
+    for (provider, leaf) in sorted(entries):
+        entry = entries[(provider, leaf)]
+        lines.append("[[editions]]")
+        lines.append(f'provider = "{toml_escape(provider)}"')
+        lines.append(f'leaf = "{toml_escape(leaf)}"')
+        lines.append(f'fingerprint = "{entry["fingerprint"]}"')
+        lines.append("[editions.inputs]")
+        for name in sorted(entry["inputs"]):
+            lines.append(f'"{toml_escape(name)}" = "{entry["inputs"][name]}"')
+        lines.append("")
+    LEDGER.write_text("\n".join(lines), encoding="utf-8")
+
+
+def ledger_entries(data: dict) -> dict[tuple[str, str], dict]:
+    entries: dict[tuple[str, str], dict] = {}
+    for edition in data.get("editions", []):
+        provider = edition.get("provider")
+        leaf = edition.get("leaf")
+        if provider not in PROVIDERS or not isinstance(leaf, str):
+            raise StalenessError(f"malformed ledger edition: {edition!r}")
+        entries[(provider, leaf)] = {
+            "fingerprint": edition.get("fingerprint", ""),
+            "inputs": dict(edition.get("inputs", {})),
+        }
+    return entries
+
+
+def compute_all() -> dict[tuple[str, str], dict]:
+    editions = discover_editions()
+    computed: dict[tuple[str, str], dict] = {}
+    for (provider, leaf), _ in editions.items():
+        inputs = edition_inputs(editions, provider, leaf)
+        computed[(provider, leaf)] = {
+            "fingerprint": fingerprint(inputs),
+            "inputs": inputs,
+        }
+    return computed
+
+
+def cmd_bootstrap() -> int:
+    if LEDGER.is_file():
+        raise StalenessError("ledger already exists; use rebaseline")
+    write_ledger(compute_all())
+    print(f"bootstrapped {LEDGER.relative_to(ROOT)}")
+    return 0
+
+
+def cmd_status(provider_filter: str | None) -> int:
+    recorded = ledger_entries(load_ledger())
+    current = compute_all()
+    stale = 0
+    for key in sorted(current):
+        provider, leaf = key
+        if provider_filter and provider != provider_filter:
+            continue
+        entry = recorded.get(key)
+        if entry is None:
+            print(f"unbaselined {provider} {leaf}")
+            stale += 1
+        elif entry["fingerprint"] != current[key]["fingerprint"]:
+            print(f"stale {provider} {leaf}")
+            stale += 1
+    for key in sorted(recorded):
+        if key not in current and (not provider_filter or key[0] == provider_filter):
+            print(f"removed {key[0]} {key[1]}")
+            stale += 1
+    print(f"{'stale' if stale else 'fresh'}: {stale} edition(s) need attention")
+    return 1 if stale else 0
+
+
+def cmd_explain(provider: str, leaf: str) -> int:
+    recorded = ledger_entries(load_ledger())
+    current = compute_all()
+    key = (provider, leaf)
+    if key not in current:
+        raise StalenessError(f"no such edition: {provider} {leaf}")
+    entry = recorded.get(key)
+    if entry is None:
+        print(f"unbaselined {provider} {leaf}: every input is new")
+        return 1
+    old_inputs = entry["inputs"]
+    new_inputs = current[key]["inputs"]
+    changed = False
+    for name in sorted(set(old_inputs) | set(new_inputs)):
+        if name not in new_inputs:
+            print(f"removed input {name}")
+            changed = True
+        elif name not in old_inputs:
+            print(f"new input {name}")
+            changed = True
+        elif old_inputs[name] != new_inputs[name]:
+            print(f"changed input {name}")
+            changed = True
+    if not changed:
+        print(f"fresh {provider} {leaf}")
+    return 1 if changed else 0
+
+
+def cmd_rebaseline(provider: str | None, leaf: str | None, everything: bool) -> int:
+    recorded = ledger_entries(load_ledger())
+    current = compute_all()
+    if everything:
+        selected = set(current)
+    else:
+        if not provider:
+            raise StalenessError("rebaseline requires --provider with --id, or --all")
+        if leaf:
+            key = (provider, leaf)
+            if key not in current:
+                raise StalenessError(f"no such edition: {provider} {leaf}")
+            selected = {key}
+        else:
+            selected = {key for key in current if key[0] == provider}
+    for key in selected:
+        recorded[key] = current[key]
+    for key in list(recorded):
+        if key not in current:
+            del recorded[key]
+    write_ledger(recorded)
+    print(f"rebaselined {len(selected)} edition(s)")
+    return 0
+
+
+def main(argv: list[str]) -> int:
+    parser = argparse.ArgumentParser(prog="research-staleness")
+    subparsers = parser.add_subparsers(dest="command", required=True)
+    subparsers.add_parser("bootstrap")
+    status_parser = subparsers.add_parser("status")
+    status_parser.add_argument("--provider", choices=PROVIDERS)
+    explain_parser = subparsers.add_parser("explain")
+    explain_parser.add_argument("provider", choices=PROVIDERS)
+    explain_parser.add_argument("leaf")
+    rebaseline_parser = subparsers.add_parser("rebaseline")
+    rebaseline_parser.add_argument("--provider", choices=PROVIDERS)
+    rebaseline_parser.add_argument("--id", dest="leaf")
+    rebaseline_parser.add_argument("--all", action="store_true")
+    args = parser.parse_args(argv)
+    try:
+        if args.command == "bootstrap":
+            return cmd_bootstrap()
+        if args.command == "status":
+            return cmd_status(args.provider)
+        if args.command == "explain":
+            return cmd_explain(args.provider, args.leaf)
+        if args.command == "rebaseline":
+            return cmd_rebaseline(args.provider, args.leaf, args.all)
+    except StalenessError as exc:
+        print(f"research-staleness error: {exc}", file=sys.stderr)
+        return 1
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))
