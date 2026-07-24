@@ -25,7 +25,7 @@ plus raw and authenticated invocation sequencing,
 state vocabulary, pure classifier, and I/O-free integration-transaction
 restoration transform, `state.py` now owns run identity, state-location
 selection, repository-name normalization, lexical lock and manifest paths,
-private state-directory authentication, and atomic manifest persistence,
+private state-directory authentication, and manifest persistence and loading,
 `identity.py` now owns immutable runtime identity records and launcher-entry
 authentication plus exact Git-administration line-format validation and the
 bounded descriptor-based regular-file reader plus exact pointer-path and
@@ -108,7 +108,7 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with thirty behavior-preserving boundaries. The original
+has begun step 5 with thirty-one behavior-preserving boundaries. The original
 pure Git policy kernel transforms an explicit environment mapping and Git
 argument sequence in `git.py`; `engine.py` retains its optional
 environment-acquisition wrapper, subprocess creation and command execution,
@@ -733,7 +733,15 @@ atomic replacement, and best-effort temporary cleanup on every outcome. The
 engine retains manifest loading and validation, transition selection, and all
 write callers. This boundary changes no schema, workflow, or release surface.
 
-Direct tests freeze all thirty extracted boundaries, their
+The thirty-first boundary moves manifest loading and profile/repository
+identity validation into `state.load_manifest`. It preserves run-ID and path
+selection order, exact missing-versus-unreadable diagnostics and causes,
+single profile capture after decoding, schema/run/profile identity checks,
+literal common-directory comparison, and final dispatch to the existing path
+validator. The engine retains path and lifecycle-state validation and every
+caller. This boundary changes no schema, workflow, or release surface.
+
+Direct tests freeze all thirty-one extracted boundaries, their
 compatibility surfaces, artifact inclusion, field and operation order,
 partial-failure behavior, and the dynamic restoration of every vocabulary
 value currently accepted in

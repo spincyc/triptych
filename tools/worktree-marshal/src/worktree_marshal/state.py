@@ -17,9 +17,56 @@ class StateProfile(Protocol):
 
 class StateRepository(Protocol):
     state_root: Path
+    common_git_dir: Path
 
 
 RUN_ID_RE = re.compile(r"^[0-9]{8}t[0-9]{6}z-[0-9a-f]{12}$")
+
+
+def load_manifest(
+    repository: StateRepository,
+    run_id: str,
+    *,
+    validate_run_id: Callable[[], Callable[[str], None]],
+    manifest_path: Callable[[], Callable[[StateRepository, str], Path]],
+    json_loads: Callable[[], Callable[[str], Any]],
+    file_not_found_error_type: Callable[[], type[BaseException]],
+    os_error_type: Callable[[], type[BaseException]],
+    decode_error_type: Callable[[], type[BaseException]],
+    active_profile: Callable[[], Any],
+    validate_manifest_paths: Callable[
+        [],
+        Callable[[StateRepository, dict[str, Any]], None],
+    ],
+    stringifier: Callable[[], Callable[[object], str]],
+    error_type: Callable[[], type[BaseException]],
+) -> dict[str, Any]:
+    """Load and authenticate one profile-bound repository manifest."""
+
+    validate_run_id()(run_id)
+    path = manifest_path()(repository, run_id)
+    try:
+        manifest = json_loads()(path.read_text(encoding="utf-8"))
+    except file_not_found_error_type() as exc:
+        raise error_type()(
+            f"unknown {active_profile().display_name} run {run_id}"
+        ) from exc
+    except (os_error_type(), decode_error_type()) as exc:
+        raise error_type()(f"cannot read run {run_id}: {exc}") from exc
+    profile = active_profile()
+    if (
+        manifest.get("schema_version") != profile.schema_version
+        or manifest.get("run_id") != run_id
+        or not profile.validate_manifest_identity(manifest)
+    ):
+        raise error_type()(f"run {run_id} has an invalid manifest")
+    expected_common = stringifier()(repository.common_git_dir)
+    if manifest.get("common_git_dir") != expected_common:
+        raise error_type()(
+            f"run {run_id} belongs to a different repository"
+        )
+    validate_manifest_paths()(repository, manifest)
+    return manifest
 
 
 def write_manifest(

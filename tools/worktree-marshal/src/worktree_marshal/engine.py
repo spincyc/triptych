@@ -102,6 +102,7 @@ from .profiles import (
 from .state import (
     RUN_ID_RE,
     manifest_path as _manifest_path,
+    load_manifest as _load_manifest,
     new_run_id as _new_run_id,
     private_directory as _private_directory,
     repo_lock_path as _repo_lock_path,
@@ -692,28 +693,20 @@ def write_manifest(repository: Repository, manifest: dict) -> None:
 
 
 def load_manifest(repository: Repository, run_id: str) -> dict:
-    validate_run_id(run_id)
-    path = manifest_path(repository, run_id)
-    try:
-        manifest = json.loads(path.read_text(encoding="utf-8"))
-    except FileNotFoundError as exc:
-        raise LauncherError(
-            f"unknown {active_profile().display_name} run {run_id}"
-        ) from exc
-    except (OSError, json.JSONDecodeError) as exc:
-        raise LauncherError(f"cannot read run {run_id}: {exc}") from exc
-    profile = active_profile()
-    if (
-        manifest.get("schema_version") != profile.schema_version
-        or manifest.get("run_id") != run_id
-        or not profile.validate_manifest_identity(manifest)
-    ):
-        raise LauncherError(f"run {run_id} has an invalid manifest")
-    expected_common = str(repository.common_git_dir)
-    if manifest.get("common_git_dir") != expected_common:
-        raise LauncherError(f"run {run_id} belongs to a different repository")
-    validate_manifest_paths(repository, manifest)
-    return manifest
+    return _load_manifest(
+        repository,
+        run_id,
+        validate_run_id=lambda: validate_run_id,
+        manifest_path=lambda: manifest_path,
+        json_loads=lambda: json.loads,
+        file_not_found_error_type=lambda: FileNotFoundError,
+        os_error_type=lambda: OSError,
+        decode_error_type=lambda: json.JSONDecodeError,
+        active_profile=lambda: active_profile(),
+        validate_manifest_paths=lambda: validate_manifest_paths,
+        stringifier=lambda: str,
+        error_type=lambda: LauncherError,
+    )
 
 
 def validate_manifest_paths(repository: Repository, manifest: dict) -> None:
