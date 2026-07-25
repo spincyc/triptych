@@ -1,0 +1,78 @@
+schema = 1
+record_type = "bindings"
+document = "theology/mariology/fatima"
+
+# Claude edition. Bindings are catalog-level: the actual passage checks were
+# performed against live web pages and an identified downloaded PDF (loci,
+# URLs, dates, and limits in research/source-audit.md), not against
+# registered artifact bytes, so no acquisition/inspection/verification state
+# is claimed against the source-library records themselves.
+
+[[bindings]]
+source_id = "edition.santuario-de-fatima.dcf-selecao-1917-1930.fatima-2013-web-pdf"
+loci = [
+  "doc. 1",
+  "doc. 3",
+  "doc. 4",
+  "doc. 13, printed pp. 72-78",
+  "doc. 14",
+  "doc. 18",
+  "doc. 21, printed pp. 114-116",
+  "doc. 68",
+  "doc. 120",
+  "doc. 134",
+  "introduction",
+]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Critical witness for the 1917 interrogations, the O Seculo and Ilustracao Portuguesa reports of Avelino de Almeida, the 1922 provisao, the 1930 commission report, and the promulgation account; each locus read 2026-07-25 in the Sanctuary's freely downloaded PDF (SHA-256 in research/source-audit.md). Catalog-level binding; no exact artifact registered."
+
+[[bindings]]
+source_id = "edition.diocese-of-leiria.carta-pastoral-fatima-1930.dcf-selecao-2013"
+loci = ["closing operative clauses at the volume's printed pages 550-551"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The 13 October 1930 worthy-of-belief declaration and permission of cult, quoted exactly in Portuguese in section 1 of the publication; read 2026-07-25 as Doc. 133 of the DCF Selecao PDF. English rendering in the publication is editorial and marked as such. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.holy-see.message-of-fatima.english-vatican-web-2026-07-25"
+loci = [
+  "Introduction (Bertone)",
+  "First and second part of the secret (Third Memoir text with Fourth Memoir annotations, notes 6-7)",
+  "Third part of the secret (Tuy, 3 January 1944)",
+  "Letter of John Paul II to Sister Lucia, 19 April 2000",
+  "Conversation with Sister Maria Lucia, 27 April 2000",
+  "Announcement of Cardinal Sodano, 13 May 2000",
+  "Theological commentary (Ratzinger)",
+]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Controlling dossier for the secret's texts, custody history, 1984 act and 1989 letter, the 1960-date answer, and the theological interpretation; read in full 2026-07-25 at the live Vatican English page. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.holy-see.communique-third-secret-fatima-2016.english-press-vatican-web-2026-07-25"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Benedict XVI's 21 May 2016 denial of the Dollinger claims and confirmation that the publication of the Third Secret is complete; operative sentences quoted exactly; read 2026-07-25. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.holy-see.norms-supernatural-phenomena-2024.english-vatican-web-2026-07-25"
+loci = ["presentation", "nn. 17-23", "art. 22", "art. 27", "final approval formula"]
+role = "official-control"
+states = ["cataloged"]
+context = "Current procedural law: six conclusions, the n. 23 rule, the replacement of the 1978 norms, the effective date, and the presentation's citation of the Fatima 2000 explanation of approval; read 2026-07-25. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.francis.homily-canonization-fatima-2017.english-vatican-web-2026-07-25"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Canonization of Francisco and Jacinta Marto at Fatima, 13 May 2017; homily sentences quoted; read 2026-07-25. The Latin canonization formula of the rite is in the celebration booklet, not this text. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.francis.act-consecration-immaculate-heart-2022.english-vatican-web-2026-07-25"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The 25 March 2022 act's consecration sentence naming Russia and Ukraine, quoted exactly; read 2026-07-25 with the 21 March 2022 Letter to the Bishops (cited in the references without a separate work record). Catalog-level binding."
