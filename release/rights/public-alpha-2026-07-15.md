@@ -1021,6 +1021,26 @@ work-specific research records remains operative. This approval does
 not authorize a push, deployment, tag, history rewrite, public
 release attachment, announcement, or promotion.
 
+## Supplemental exact-current-snapshot clearance — 25 July 2026
+
+At `2026-07-25T05:54:27-05:00` in `America/Chicago`, the maintainer instructed:
+“Release the wave-eight Claude edition of the Saint Robert Bellarmine biography, completing all eight Claude biographies, and re-bind the deepened Tertullian biography and Against the Instrumentalists editions at their expanded exact bytes.” This is recorded as perpetual worldwide
+exact-current-snapshot distribution authorization under the existing
+represented authority in this record. The sole condition remains
+`no-project-initiated-promotion`.
+
+The approval binds all 138 exact installed release
+PDF snapshots and every exact recognized artifact-affecting
+reader-site input inventoried below at their current bytes. It is an
+exact-byte distribution clearance only: it does not represent
+completion of any outstanding work-specific rights, source,
+collation, specialist, or ecclesiastical review, and no imprimatur,
+nihil obstat, or ecclesiastical approval is claimed. Every
+limitation in the prior supplements, release README, catalogs, and
+work-specific research records remains operative. This approval does
+not authorize a push, deployment, tag, history rewrite, public
+release attachment, announcement, or promotion.
+
 ## Exact approved snapshots
 
 | Publication ID | SHA-256 |
@@ -1048,7 +1068,7 @@ release attachment, announcement, or promotion.
 | `biographies/saint-thomas-aquinas` | `05d1b1b792c5774e0aa10822e9722d3a844e442a09c54e5573bd5913fa2c275a` |
 | `biographies/tertullian` | `5482e549142e226e8a91b51b3fda11751957b2ba0a77d6737a2c79c57132dae6` |
 | `claude:articles/canon-law/natural-positive-divine-human-law` | `a44ed9475330e19d245e3488eb0f8d165067f4ecfb4530f203eb1083ad22ae0a` |
-| `claude:articles/faith/against-the-instrumentalists` | `024b84c9b313e2547229f6b55079698656bb009ea6a5c73e36bd1d9a99a6a304` |
+| `claude:articles/faith/against-the-instrumentalists` | `878e0a1cb776b88b45dceba6f8ee6017312583a5ab2873c3229cda65dd411d4d` |
 | `claude:articles/faith/at-the-end-of-every-why` | `a644e1321457d069c0319a4c36f570edef23010e975b019257e14106c51f58b3` |
 | `claude:articles/faith/council-missal-and-crisis` | `36e6da8ebd2f2db866eb9685efa6bff608edfe5938bc460b414990ba2d282ed3` |
 | `claude:articles/faith/freemasonry-and-the-catholic-church` | `4e954e5a483b426b71896ba70d1761bf5ffddb852411ebbb09caf43fe755e87c` |
@@ -1060,8 +1080,9 @@ release attachment, announcement, or promotion.
 | `claude:biographies/saint-jerome` | `22aec5010e1732066d6026a89580a862785e7b730ebd92512e89dfb533ea9b9e` |
 | `claude:biographies/saint-paul` | `5a0cf9bcf574a6ba3066e206f750ac025106107e0fbdaaf4ad5e0bd228f751a5` |
 | `claude:biographies/saint-peter` | `32f20b9355a9ea0d5735521a8c558917d5d85411b89b3ee24873f2bbfcf75e4d` |
+| `claude:biographies/saint-robert-bellarmine` | `b4cde6a9166301c7fe85a60985745889356d0301d525997d3cc08a35fe9d59b8` |
 | `claude:biographies/saint-thomas-aquinas` | `8c1ef40dca6ebd693cb39ea15248878776b43da438d00736cd4c7e9a39ba51c2` |
-| `claude:biographies/tertullian` | `f6aad19c478b8535f3b3d31d413fb61b0d1ea723db3d0ba3e3221e596f346ba5` |
+| `claude:biographies/tertullian` | `65f1ac76cad1c42153b58d024c28f5fd2fc9db925b67229141ec38e50848e7ab` |
 | `claude:history/biblical-translations/01-septuagint` | `6aaa22a66d05bf8e4cbe88a3dda814dd71354e00753bbb43f5ee794a25d161bf` |
 | `claude:history/biblical-translations/02-vulgate` | `6549550fa7d9447e5148e8264779aee6df809f65451919367aad98df7faec699` |
 | `claude:theology/mariology/fatima` | `c8b1e0dd4443eca492c142453696d138cfab3ec4dba51231e0e52a69e5761ef2` |
@@ -1174,7 +1195,7 @@ release attachment, announcement, or promotion.
 | `LICENSES/MIT.txt` | `afd9c125b68a36b60c78cf63656f4cea2613fadce57e95ebabacebff8817ef60` |
 | `README.md` | `5007509616e98056d397b315247e07307b7cc0f8b715c49847dcef45dadfcb2b` |
 | `THIRD_PARTY.md` | `965aaaff0e773815213fa8c9aada37213d6cb890eb374ef3d1bb1d1dbf966ec4` |
-| `library/biographies.md` | `8527411f8880112dc43ad01c2ca2f91e9ccefaa36bc090ccf0dc79e715eebe97` |
+| `library/biographies.md` | `8397d3f01b230e28fbbb0dcca530ee8c5dd5ad75e7f95a64d292034b90afacae` |
 | `library/curriculums.md` | `15f24d06b4911b1cbfe4d85d82c463d7c2eef8635ff25edf2817d5fa6e0fb2bc` |
 | `library/ecclesiastical-latin.md` | `1b985372bc372990f8d748d7667620c76c89a4073a8dae146ecefbca84333c1b` |
 | `library/faith.md` | `90af2c600ca2733e648afdbbb9f47fe5c74b7a7d87a6337daf28500fbb1e7e68` |

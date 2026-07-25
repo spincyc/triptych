@@ -3,9 +3,9 @@ record_type = "publication-source-inventory"
 provider = "claude"
 audited_on = "2026-07-25"
 discovery_rule = "src/claude/**/main.tex"
-publication_count = 21
-source_surface_file_count = 352
-snapshot = "sha256:ec0df496cbf7c6c12afad3a3c148bbf9c4d6d83ef2682c59aa0328db99aca68c"
+publication_count = 22
+source_surface_file_count = 380
+snapshot = "sha256:b5c244d16f25f58d1c62bbf0639d29252669aa061d491740492c444f4e3ba198"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -175,6 +175,20 @@ inventory_state = "records-enumerated"
 source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "biographies/saint-peter"
+relationship = "local"
+[[documents.record_owners]]
+id = "owner.biographies.shared"
+relationship = "render-import"
+
+[[documents]]
+id = "biographies/saint-robert-bellarmine"
+main = "src/claude/biographies/saint-robert-bellarmine/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "biographies/saint-robert-bellarmine"
 relationship = "local"
 [[documents.record_owners]]
 id = "owner.biographies.shared"
@@ -390,73 +404,91 @@ owners = ["articles/canon-law/natural-positive-divine-human-law"]
 
 [[files]]
 path = "src/claude/articles/faith/against-the-instrumentalists/main.tex"
-sha256 = "53c6c37e1fb7feb7e53994ee408d3d03c715ac34c5d36ddb5ee5cc5816083e21"
+sha256 = "d44eac1a8edd47c74a3e057fc219e264fd0761f1ee5f41385f9ac79950cb96b4"
 kind = "publication-main"
 owners = ["articles/faith/against-the-instrumentalists"]
 
 [[files]]
 path = "src/claude/articles/faith/against-the-instrumentalists/research/scope.md"
-sha256 = "af7d0021541190ed6364c6e86f6489b2da9121367f1eec0acac8d0e52450eb73"
+sha256 = "794083ffc3474830a2578759184587e9d7816134056644b00fa8cdabf9ffee7c"
 kind = "research-scope"
 owners = ["articles/faith/against-the-instrumentalists"]
 
 [[files]]
 path = "src/claude/articles/faith/against-the-instrumentalists/research/source-audit.md"
-sha256 = "fb871f2adda6817e79a87dc7f9a4a1c40de05025b9f815ca01cc701a3d975e29"
+sha256 = "4afa803177a15b105a8473b528ef0d5ef3654d0aea7f72d615f9fb256f5ad4bc"
 kind = "legacy-source-audit"
 owners = ["articles/faith/against-the-instrumentalists"]
 
 [[files]]
 path = "src/claude/articles/faith/against-the-instrumentalists/research/source-bindings.toml"
-sha256 = "726dcb73e958dbe2a55fe0c9d2c3e9125c533ed0ec84d7ef458d5a175d8487cc"
+sha256 = "ef5fa8219d511c18f9f1ae191976bf159114b8d330fd3a8a3b7d2a8ccfca9838"
 kind = "source-binding"
 owners = ["articles/faith/against-the-instrumentalists"]
 
 [[files]]
 path = "src/claude/articles/faith/against-the-instrumentalists/sections/00-the-case-for-the-instruments.tex"
-sha256 = "a6d5ec4d6eb7bc806641797452871f59b741cae5bbdddc5918db87be2e74d97a"
+sha256 = "f508b815d6379e00ef25e3b4eb2cb4e4571b52a824e514768785bf833bc6c63e"
+kind = "rendered-content"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/claude/articles/faith/against-the-instrumentalists/sections/05-a-genealogy-of-the-criterion.tex"
+sha256 = "5148182081a98585fdfeb00035df3533766dfa1f871d1a2199ae51ac0b00d32b"
 kind = "rendered-content"
 owners = ["articles/faith/against-the-instrumentalists"]
 
 [[files]]
 path = "src/claude/articles/faith/against-the-instrumentalists/sections/10-the-criterion-meets-itself.tex"
-sha256 = "87705a4a958eb47ce0f3d32e5171f6ac1f22d9ec04d1ffd971c5dee8a4c5f474"
+sha256 = "e20881162965f1c75e29a08845168e19ba8fbfb7e2fc1e4941c3cb5f3b469a93"
 kind = "rendered-content"
 owners = ["articles/faith/against-the-instrumentalists"]
 
 [[files]]
 path = "src/claude/articles/faith/against-the-instrumentalists/sections/20-what-the-laboratory-already-knows.tex"
-sha256 = "baa51e26497e6ca053300cccf50b6d72ab925d6a167c5cba869a935586e96630"
+sha256 = "3ff7980579962d64b425d4c327e953f2a6aed28bb902b5bbf5c1b4065f84540e"
 kind = "rendered-content"
 owners = ["articles/faith/against-the-instrumentalists"]
 
 [[files]]
 path = "src/claude/articles/faith/against-the-instrumentalists/sections/30-from-effects-to-their-ground.tex"
-sha256 = "720f21915ade977c2f39c6f241b2a4125b993a43012e422fd8224866dcb26bf7"
+sha256 = "f39737eeb9d9877f94554a980de172ca4d998ebf20e860082652909015a8fa45"
 kind = "rendered-content"
 owners = ["articles/faith/against-the-instrumentalists"]
 
 [[files]]
 path = "src/claude/articles/faith/against-the-instrumentalists/sections/40-what-the-church-stakes-on-reason.tex"
-sha256 = "13e3a778272ed159512d636883cc0491e47be3a6728c8537f6cfae39427cb5c5"
+sha256 = "31e8b902d1b724d9ce576c84aadbfa459a20fe445bd4b56f2376ff36909ec13d"
+kind = "rendered-content"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/claude/articles/faith/against-the-instrumentalists/sections/45-the-scientistic-residue.tex"
+sha256 = "16d3bae9b11563a0ca16be26ac529fd7504e561f0e41ac3a858011a95c71ddd7"
 kind = "rendered-content"
 owners = ["articles/faith/against-the-instrumentalists"]
 
 [[files]]
 path = "src/claude/articles/faith/against-the-instrumentalists/sections/50-the-sciences-given-back.tex"
-sha256 = "dba8dacba39dafbbfeb8f7eae54393571a17e9d4a93995f19885e18d44bea871"
+sha256 = "1b1663bd71d186807c3271cc80bbf11479f3c546c4eaa2a4e15ebba0ba78e2c6"
+kind = "rendered-content"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/claude/articles/faith/against-the-instrumentalists/sections/85-positions-synopsis.tex"
+sha256 = "f10316ec646f5cac6293accb7e80e30fb840fc7f6f3b78c19b5c8912cef7eee4"
 kind = "rendered-content"
 owners = ["articles/faith/against-the-instrumentalists"]
 
 [[files]]
 path = "src/claude/articles/faith/against-the-instrumentalists/sections/90-scope-method-qualifications.tex"
-sha256 = "3b01fc958b03cbfdb733c59bb2d49614278a36bfb5d9dffce5384adea05e1c4f"
+sha256 = "f6e985e0b2fc817396e7ea718aca608cbd02e6726749dc2e1e1bcdaaf7ab0318"
 kind = "rendered-content"
 owners = ["articles/faith/against-the-instrumentalists"]
 
 [[files]]
 path = "src/claude/articles/faith/against-the-instrumentalists/sections/99-references.tex"
-sha256 = "a4814b4cad186ff1b4ac7d81b900c5746cf3e5abeec7522a70d175711789c896"
+sha256 = "65ee70e3c0da12f2df19f8d8b710f97f4d2f7aadfa8de2316151317ec317c1d8"
 kind = "rendered-content"
 owners = ["articles/faith/against-the-instrumentalists"]
 
@@ -1565,6 +1597,144 @@ kind = "rendered-content"
 owners = ["biographies/saint-peter"]
 
 [[files]]
+path = "src/claude/biographies/saint-robert-bellarmine/main.tex"
+sha256 = "420db1033756948a1e5af3a73bac0b45961b66262c3ac529be0186c0d6c35104"
+kind = "publication-main"
+owners = ["biographies/saint-robert-bellarmine"]
+
+[[files]]
+path = "src/claude/biographies/saint-robert-bellarmine/research/chronology.md"
+sha256 = "ec966027acccf0b63602fb9a628f77b41e422287ab8dc6733ebb8fe152d89c5a"
+kind = "research-record"
+owners = ["biographies/saint-robert-bellarmine"]
+
+[[files]]
+path = "src/claude/biographies/saint-robert-bellarmine/research/scope.md"
+sha256 = "0d0bb70bc643e3f64e47632e840a857a76618ca3ee93d630a0551f43b9eb93ad"
+kind = "research-scope"
+owners = ["biographies/saint-robert-bellarmine"]
+
+[[files]]
+path = "src/claude/biographies/saint-robert-bellarmine/research/source-audit.md"
+sha256 = "ba5f9471f56e3bb3eb7e43207f81ff4747d682ce320b3ad174db37374b57f589"
+kind = "legacy-source-audit"
+owners = ["biographies/saint-robert-bellarmine"]
+
+[[files]]
+path = "src/claude/biographies/saint-robert-bellarmine/research/source-bindings.toml"
+sha256 = "72c9d61e4b930e7ba1fddf8e43697036407ca274f9b67ebb5d809071a591c13b"
+kind = "source-binding"
+owners = ["biographies/saint-robert-bellarmine"]
+
+[[files]]
+path = "src/claude/biographies/saint-robert-bellarmine/research/tradition-audit.md"
+sha256 = "9daa812e598f407a64911e0c3cf89376addec2f70b990867e4c096fae29994cc"
+kind = "research-record"
+owners = ["biographies/saint-robert-bellarmine"]
+
+[[files]]
+path = "src/claude/biographies/saint-robert-bellarmine/sections/00-question.tex"
+sha256 = "5917ebc553132281945d02ddecad259537426d912ecb04ce467bf35edd50a331"
+kind = "rendered-content"
+owners = ["biographies/saint-robert-bellarmine"]
+
+[[files]]
+path = "src/claude/biographies/saint-robert-bellarmine/sections/10-sources.tex"
+sha256 = "02731a62ab09d9d2c6fbd8afe0349094f8efaa8fc5f145a5d80cb0d875f90e7b"
+kind = "rendered-content"
+owners = ["biographies/saint-robert-bellarmine"]
+
+[[files]]
+path = "src/claude/biographies/saint-robert-bellarmine/sections/100-last-years.tex"
+sha256 = "98fb749676b5c778b769049c23dc14848d5f1731d4838d44e114e17d2634e1e9"
+kind = "rendered-content"
+owners = ["biographies/saint-robert-bellarmine"]
+
+[[files]]
+path = "src/claude/biographies/saint-robert-bellarmine/sections/110-cause.tex"
+sha256 = "18cbed00e15cfee610aa7db16a1e54dd4ff2cbc0419b771de723bd49582e15eb"
+kind = "rendered-content"
+owners = ["biographies/saint-robert-bellarmine"]
+
+[[files]]
+path = "src/claude/biographies/saint-robert-bellarmine/sections/120-traditions.tex"
+sha256 = "d8736a5c4aec28b7c71bff6e2f668d00fe96f1b16373910f40c3a17e3910c4dc"
+kind = "rendered-content"
+owners = ["biographies/saint-robert-bellarmine"]
+
+[[files]]
+path = "src/claude/biographies/saint-robert-bellarmine/sections/130-reception.tex"
+sha256 = "60dc1e35d9d7e8e4729d14f5d841208dfd328a4a611848ceb34ce9f0891856f9"
+kind = "rendered-content"
+owners = ["biographies/saint-robert-bellarmine"]
+
+[[files]]
+path = "src/claude/biographies/saint-robert-bellarmine/sections/140-conclusion.tex"
+sha256 = "7a0cc8820c9ecf6f8821fc9268bbd4eec9cfce7d327326ad40035e86f929d407"
+kind = "rendered-content"
+owners = ["biographies/saint-robert-bellarmine"]
+
+[[files]]
+path = "src/claude/biographies/saint-robert-bellarmine/sections/150-scope-chronology-evidence.tex"
+sha256 = "591a9b4ba50da5c783f7edb7baef84d51e1fed3f60467cda895622d7040b04ed"
+kind = "rendered-content"
+owners = ["biographies/saint-robert-bellarmine"]
+
+[[files]]
+path = "src/claude/biographies/saint-robert-bellarmine/sections/160-references.tex"
+sha256 = "92b2cf1fe202024c186837d4312a9e8d35f5a061866ad0cf2c2624422aa3e346"
+kind = "rendered-content"
+owners = ["biographies/saint-robert-bellarmine"]
+
+[[files]]
+path = "src/claude/biographies/saint-robert-bellarmine/sections/20-montepulciano.tex"
+sha256 = "6a55ecba55e2c0482cb47ee4a65a0aae86d7cca78499171d97fdeeda67a39372"
+kind = "rendered-content"
+owners = ["biographies/saint-robert-bellarmine"]
+
+[[files]]
+path = "src/claude/biographies/saint-robert-bellarmine/sections/30-louvain.tex"
+sha256 = "a2472d4e876db7d4b421d689c9fddc5a33afe70197175dd462fbb03d09f06b25"
+kind = "rendered-content"
+owners = ["biographies/saint-robert-bellarmine"]
+
+[[files]]
+path = "src/claude/biographies/saint-robert-bellarmine/sections/40-controversies.tex"
+sha256 = "e802a39e53ed2f0ea8718d2c1a5bc053fe5fe5355fbd5c7c7ee41ed06fd7065b"
+kind = "rendered-content"
+owners = ["biographies/saint-robert-bellarmine"]
+
+[[files]]
+path = "src/claude/biographies/saint-robert-bellarmine/sections/50-legation-vulgate.tex"
+sha256 = "741d82f18664cec59d16d4da771471b7e068eea813099335366aa90460238503"
+kind = "rendered-content"
+owners = ["biographies/saint-robert-bellarmine"]
+
+[[files]]
+path = "src/claude/biographies/saint-robert-bellarmine/sections/60-cardinal.tex"
+sha256 = "5093d8e6d9fa9df62df97b0cba7ec497214acc120b56dc8c663c3aeb4d88371c"
+kind = "rendered-content"
+owners = ["biographies/saint-robert-bellarmine"]
+
+[[files]]
+path = "src/claude/biographies/saint-robert-bellarmine/sections/70-capua.tex"
+sha256 = "a312751f0d9ebcfe8ec722796e873d9133c72b931114d8d31a6c72cd9de7dde2"
+kind = "rendered-content"
+owners = ["biographies/saint-robert-bellarmine"]
+
+[[files]]
+path = "src/claude/biographies/saint-robert-bellarmine/sections/80-pen-wars.tex"
+sha256 = "a58eef6ab376afc371108754b11902c6eda58561954de9c2feb2ffef5834089e"
+kind = "rendered-content"
+owners = ["biographies/saint-robert-bellarmine"]
+
+[[files]]
+path = "src/claude/biographies/saint-robert-bellarmine/sections/90-galileo.tex"
+sha256 = "7838ded3fd645e63358312c95ca64622df65c67617963d50eb9ee7aa2497eaef"
+kind = "rendered-content"
+owners = ["biographies/saint-robert-bellarmine"]
+
+[[files]]
 path = "src/claude/biographies/saint-thomas-aquinas/main.tex"
 sha256 = "24ca4c6cf37c5f1481480289d6ba70bd8aece3c075c4b8ee6d119dce089677a1"
 kind = "publication-main"
@@ -1680,127 +1850,139 @@ owners = ["biographies/saint-thomas-aquinas"]
 
 [[files]]
 path = "src/claude/biographies/shared/biography-format.tex"
-sha256 = "f8d74419ca959ce6a54bfbb7f81b864728ffb385be163eb04c00f1b7a513c71c"
+sha256 = "9d87f6dea1f5e835c0d885ab596abcb74c011ef546d6b961a11cd88de531d677"
 kind = "shared-source-or-render"
 owners = ["owner.biographies.shared"]
 
 [[files]]
 path = "src/claude/biographies/tertullian/main.tex"
-sha256 = "c9281e9c89fdf9bb73fc0037070c67264c2b998a0af46e8d0b5f388a074d4357"
+sha256 = "5791711dda667e84239368b3b28e491ec2b2149d0f9cc3ad980b689d6911f6ee"
 kind = "publication-main"
 owners = ["biographies/tertullian"]
 
 [[files]]
 path = "src/claude/biographies/tertullian/research/chronology.md"
-sha256 = "65604737faf1fe328d3cbcb4ea20df5da89e1ee78f84bb3709ab1e63da721b49"
+sha256 = "58017bd348b4de6f2ae8ac0f4e73887500d84521ad15e31c3b1af79b13a1b6dc"
 kind = "research-record"
 owners = ["biographies/tertullian"]
 
 [[files]]
 path = "src/claude/biographies/tertullian/research/scope.md"
-sha256 = "a0002f9645ecbdb7f7e45262cb47b4d923b75a10e3104134ad0d7f6a20e772ff"
+sha256 = "c0ad7a0883e4034d58995d216e222d573ea91fb57d1abbbf437f6a7f080b9216"
 kind = "research-scope"
 owners = ["biographies/tertullian"]
 
 [[files]]
 path = "src/claude/biographies/tertullian/research/source-audit.md"
-sha256 = "e499aab3ac456b4bd986db5957b2901fca50957d43feb2106061db52f138fa61"
+sha256 = "ab7450059f05765b87c76dd6431c0da2971450f1ae7b0f03a80e4294c384002c"
 kind = "legacy-source-audit"
 owners = ["biographies/tertullian"]
 
 [[files]]
 path = "src/claude/biographies/tertullian/research/source-bindings.toml"
-sha256 = "5713a3ca9e75ee1c8164c0167ca7b0ea9ff5a75db18c4645af022c03b3e33c17"
+sha256 = "59e23c5a014fd7f015f7086e844ac86cfbce2cd45fcfbbbdf78248156e31b937"
 kind = "source-binding"
 owners = ["biographies/tertullian"]
 
 [[files]]
 path = "src/claude/biographies/tertullian/research/tradition-audit.md"
-sha256 = "8ca6b0e3b9bb4596785f25d2553d6ceca8aaae15c4305e6e2823a59dfc779e5a"
+sha256 = "fd981e279b811410db6dfc367c79a96a84e31a2abb1e72652e12d9550ac58657"
 kind = "research-record"
 owners = ["biographies/tertullian"]
 
 [[files]]
 path = "src/claude/biographies/tertullian/sections/00-question.tex"
-sha256 = "8cbe62e1df019ac09211a224065fc8c6ece83c13959a8ef3e89388fb1d304b92"
+sha256 = "a2b818331b7da15adbfd22f511d37024c7152c2d1feb9084da06e9e3fe284686"
 kind = "rendered-content"
 owners = ["biographies/tertullian"]
 
 [[files]]
 path = "src/claude/biographies/tertullian/sections/10-carthage.tex"
-sha256 = "b6817bde3700de05e73e49d1dfd0d163f4e7fb005bb448af9ad7f2578d811ccb"
+sha256 = "742494a3204047e3566fd939e95d7b8a1a62260062aeaede1ae8aaeccccef86f"
 kind = "rendered-content"
 owners = ["biographies/tertullian"]
 
 [[files]]
 path = "src/claude/biographies/tertullian/sections/100-reception.tex"
-sha256 = "853a811a493c2280c3d53765fb0710ff9e462d4e09b4f831fa2060f97855c6d1"
+sha256 = "a7ad9efea5e99e345b4dce68d74d1c6feea705fbfec3c6ed218a1691a0a3c73b"
 kind = "rendered-content"
 owners = ["biographies/tertullian"]
 
 [[files]]
 path = "src/claude/biographies/tertullian/sections/110-conclusion.tex"
-sha256 = "7a2908464bc4f0b93820b74f26b7044fc66764d62e21ea78f6929c411fc1e6ef"
+sha256 = "c6d77974950daad0db1ac13d00b921a7f55a96692b0db661811d8e4506922cb7"
 kind = "rendered-content"
 owners = ["biographies/tertullian"]
 
 [[files]]
 path = "src/claude/biographies/tertullian/sections/120-scope-chronology-evidence.tex"
-sha256 = "452eb3825d746b9fcc00c32ccf4649b4fa54c1301105431cef477d60870bb6bc"
+sha256 = "c6b24639c6304e26d1367cfce3b1be6c084f11655416a86a0023dc786ab31161"
 kind = "rendered-content"
 owners = ["biographies/tertullian"]
 
 [[files]]
 path = "src/claude/biographies/tertullian/sections/130-references.tex"
-sha256 = "5bef208226207f190f4373463dd78e3006bbf06759eae9c0d996f76b9d07cc2a"
+sha256 = "dcd52b011bbdf78afc88c7f65be3eed0d9083a5b6561e8142aaa370148a87306"
 kind = "rendered-content"
 owners = ["biographies/tertullian"]
 
 [[files]]
 path = "src/claude/biographies/tertullian/sections/20-life-evidence.tex"
-sha256 = "590c51a81161e244442a1c4dc60c7d7e26aff068145ce46cf49f599d941f93a5"
+sha256 = "98c6e770ce59c73c38aa6f9966f50124043de65cd4090fb28cf5a453e3fddc92"
+kind = "rendered-content"
+owners = ["biographies/tertullian"]
+
+[[files]]
+path = "src/claude/biographies/tertullian/sections/25-corpus.tex"
+sha256 = "30cbd58c6d066dcdb43c6f02dff32565246f53189ee885b395398d70095c9aa9"
 kind = "rendered-content"
 owners = ["biographies/tertullian"]
 
 [[files]]
 path = "src/claude/biographies/tertullian/sections/30-apologist.tex"
-sha256 = "69fc53f65b2f6291d2bba5f5da79a88aa197db8db1244a2f778829bad8dec958"
+sha256 = "bd435a0e99921ce400216666a91f6256e4286bc9360600d9547a0023ee4f1c56"
 kind = "rendered-content"
 owners = ["biographies/tertullian"]
 
 [[files]]
 path = "src/claude/biographies/tertullian/sections/40-church-practice.tex"
-sha256 = "3c0d185194ed42d1f333a7de967e2128e87e3a8b1a0da1f2ca2f68a242589aaf"
+sha256 = "f0fff6bd5aa629adb6e147e8387cd026a9813c5c15c741b0195e50ccb9f05347"
 kind = "rendered-content"
 owners = ["biographies/tertullian"]
 
 [[files]]
 path = "src/claude/biographies/tertullian/sections/50-boundary.tex"
-sha256 = "96c9ff398e893649a5ccbbf80632c8c3a5fc1a98ff1d100cc2d15095bff25f63"
+sha256 = "9380df752363be05f2345217b3082c90cc47e9ab034f0374a8774b0caac70a09"
 kind = "rendered-content"
 owners = ["biographies/tertullian"]
 
 [[files]]
 path = "src/claude/biographies/tertullian/sections/60-theology.tex"
-sha256 = "f5096ff0385b1f819b4523f1c1c8045d26e6a8612b41b1a5937d9695fd8d4bad"
+sha256 = "f3d73ff7c57d8cbfb90aa545945c425e5117ae6907e644aa4076d412f6bcc5a5"
+kind = "rendered-content"
+owners = ["biographies/tertullian"]
+
+[[files]]
+path = "src/claude/biographies/tertullian/sections/65-latin-father.tex"
+sha256 = "e21f4f42bed5e1ca0c7d4bc0c443b0abbffb4b1a9a099fe53cab39b2600b7e5c"
 kind = "rendered-content"
 owners = ["biographies/tertullian"]
 
 [[files]]
 path = "src/claude/biographies/tertullian/sections/70-new-prophecy.tex"
-sha256 = "21b96bebf649265414ba25d2bc6a3e82533753af468176eee3d222d75aacfb51"
+sha256 = "5404f070bf6dbed25de0392bf5b305f864de30d1097728ffd765e97a4b3670ca"
 kind = "rendered-content"
 owners = ["biographies/tertullian"]
 
 [[files]]
 path = "src/claude/biographies/tertullian/sections/80-schism.tex"
-sha256 = "67572a5f4648afd3597833d8b62bc64abbbc934d90fc07163895559cd5314e2b"
+sha256 = "73d2bf950069032333afc441dd4697dfcbffac922fa41b44a9899930d5cd1df1"
 kind = "rendered-content"
 owners = ["biographies/tertullian"]
 
 [[files]]
 path = "src/claude/biographies/tertullian/sections/90-end.tex"
-sha256 = "24932feee9e390393baa9bb137e00ae141d05ef65a436cc04cfc5fb26fda55ab"
+sha256 = "e0061f31bc6d08e000efcdb4c2d9b0b7df6ec16b7cf0d4bc1501fb0e1b80dad2"
 kind = "rendered-content"
 owners = ["biographies/tertullian"]
 
