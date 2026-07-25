@@ -1,0 +1,285 @@
+% Web-edition macro shim, read by scripts/web-edition and prepended to an
+% assembled document body before pandoc sees it.  It is conversion tooling,
+% not a typesetting source: no PDF build loads it.
+%
+% Pandoc's LaTeX reader deletes an unknown macro and its arguments silently,
+% so every macro and environment the eligible corpus uses is redefined here in
+% terms pandoc understands.  Print furniture becomes a no-op; a distinction the
+% PDF carries only in typography (quoted non-project text, work titles, endnote
+% citations, table headers) becomes an explicit construct Markdown can keep.
+
+% ---------------------------------------------------------------- page furniture
+% Pagination and vertical-space control has no web counterpart.
+\newcommand{\sectionguard}{}
+\newcommand{\Needspace}[1]{}
+\newcommand{\theendnotes}{}
+\newcommand{\AIInheritedGenerationMetadata}[1]{}
+
+\newcommand{\raggedcolumns}{}
+% pandoc drops \fbox with its contents.
+\newcommand{\fbox}[1]{#1}
+% Page orientation, not structure: the content must pass through.
+\newenvironment{landscape}{}{}
+
+% Symbols pandoc drops rather than renders.
+\newcommand{\dag}{†}
+\newcommand{\ddag}{‡}
+\newcommand{\textordmasculine}{º}
+\newcommand{\textordfeminine}{ª}
+
+% ------------------------------------------------------------- semantic inlines
+\newcommand{\sourceurl}[2]{\href{#1}{#2}}
+\newcommand{\latin}[1]{\textit{#1}}
+\newcommand{\Latin}[1]{\textit{#1}}
+\newcommand{\CanonLatin}[1]{\textit{#1}}
+\newcommand{\work}[1]{\textit{#1}}
+% \term is italic in print, where \latin already owns italic; bold separates a
+% defined technical term from a foreign-language phrase once both are Markdown.
+\newcommand{\term}[1]{\textbf{#1}}
+\newcommand{\Term}[1]{\textbf{#1}}
+\newcommand{\rubric}[1]{\textbf{#1}}
+\newcommand{\branchid}[1]{\texttt{#1}}
+\newcommand{\properrefs}[1]{(\textit{#1})}
+\newcommand{\elementref}[1]{\properrefs{#1}}
+\newcommand{\endnote}[1]{\footnote{#1}}
+
+% -------------------------------------------------------------- titles and heads
+\newcommand{\weektitle}[3]{\textbf{#1}\par\textit{#2}\par #3\par}
+\newcommand{\pcweektitle}[3]{\textbf{#1}\par\textit{#2}\par #3\par}
+\newcommand{\pcresolutionappendix}{\section*{Appendix: Liturgical Resolution}}
+\newcommand{\recitationday}[2]{\section{Day #1: #2}}
+\newcommand{\recitationcompaniontitle}[4]{%
+  \textbf{#1}\par\textit{#2}\par Daily Prayer Book\par
+  Condensed recitation companion to \textit{#3}. The full guide governs the
+  calendar, Scripture, meditation, doctrinal limits, translation status, and
+  review state. #4\par}
+
+% ------------------------------------------------------------------------ boxes
+% tcolorbox blocks become block quotes.  studybox/studyframe/sourcecard mark
+% project-authored apparatus; massbox marks text the project does not own, so
+% its title must survive to keep quoted source distinguishable.
+\newenvironment{studybox}[1]{\begin{quote}\textbf{#1}\par}{\end{quote}}
+\newenvironment{studyframe}{\begin{quote}}{\end{quote}}
+\newenvironment{sourcecard}[1]{\begin{quote}\textbf{#1}\par}{\end{quote}}
+\newenvironment{massbox}[1]{\begin{quote}\textbf{#1}\par}{\end{quote}}
+\newenvironment{novenasourcecard}[1]{\begin{quote}\textbf{#1}\par}{\end{quote}}
+\newenvironment{operativetext}[1]{\begin{massbox}{Operative text --- #1}}{\end{massbox}}
+\newenvironment{definedtext}[1]{\begin{massbox}{Defined text --- #1}}{\end{massbox}}
+\newenvironment{receivedtext}[1]{\begin{massbox}{Received text --- #1}}{\end{massbox}}
+\newenvironment{disciplinebox}[1]{\begin{massbox}{Current discipline --- #1}}{\end{massbox}}
+\newenvironment{statusdossier}[1]{\begin{massbox}{#1}}{\end{massbox}}
+\newenvironment{dogmasynopsis}[1]{\begin{sourcecard}{Synopsis --- #1}}{\end{sourcecard}}
+% deepstudy is print sizing only and must not add structure.
+\newenvironment{deepstudy}{}{}
+
+% ------------------------------------------------------------- box-shaped macros
+\newcommand{\witnesslimit}[1]{\begin{studyframe}#1\end{studyframe}}
+\newcommand{\historythesis}[1]{\begin{studybox}{Governing thesis}#1\end{studybox}}
+\newcommand{\studythesis}[1]{\begin{studybox}{Governing thesis}#1\end{studybox}}
+\newcommand{\dogmathesis}[1]{\begin{studybox}{Governing thesis}#1\end{studybox}}
+\newcommand{\rosarythesis}[1]{\begin{studybox}{Governing thesis}#1\end{studybox}}
+\newcommand{\novenaidentity}[1]{\begin{studybox}{Identity and use}#1\end{studybox}}
+\newcommand{\novenaexamination}[1]{\begin{studybox}{Examination and response}#1\end{studybox}}
+\newcommand{\claimcheck}[2]{\begin{studybox}{Claim check: #1}#2\end{studybox}}
+\newcommand{\recitationcompanionnotice}[1]{%
+  \begin{studybox}{Use with the full guide}
+  This booklet contains only the vocal order and complete prayer texts. Read it
+  after the day's Scripture, silence, meditation, examination, and concrete act
+  in \textit{#1}, or use both publications together. No prayer is abridged;
+  recurring prayers are printed once and named in the order below.
+  \end{studybox}}
+\newcommand{\evidenceaxis}[3]{\begin{studyframe}\textbf{Claim:} #1\par\textbf{Witness:} #2\par\textbf{Limit:} #3\end{studyframe}}
+\newcommand{\evidenceframe}[3]{\begin{studyframe}\textbf{Witness:} #1\par\textbf{What it establishes:} #2\par\textbf{Limit:} #3\end{studyframe}}
+\newcommand{\witnessrecord}[3]{\begin{studyframe}\textbf{Witness:} #1\par\textbf{What it establishes:} #2\par\textbf{Limit:} #3\end{studyframe}}
+\newcommand{\statusframe}[3]{\begin{studyframe}\textbf{Act or record:} #1\par\textbf{Historical result:} #2\par\textbf{Boundary:} #3\end{studyframe}}
+\newcommand{\prayeraxis}[3]{\begin{studyframe}\textbf{Textual movement:} #1\par\textbf{Principal loci:} #2\par\textbf{Doctrinal center:} #3\end{studyframe}}
+\newcommand{\dayaxis}[3]{\begin{studyframe}\textbf{Scriptural center:} #1\par\textbf{Grace sought:} #2\par\textbf{Concrete act:} #3\end{studyframe}}
+\newcommand{\dosfield}[2]{\par\textbf{#1:} #2}
+\newcommand{\synfield}[2]{\par\textbf{#1:} #2}
+
+% ---------------------------------------------------------------------- prayers
+% Facing Latin/English minipages become successive labelled blocks; both texts
+% are received witnesses and neither may be dropped.
+\newcommand{\bilingualprayer}[4]{%
+  \begin{massbox}{#1}
+  \textbf{Text and status:} #2\par
+  \textbf{Latin.} \textit{#3}\par
+  \textbf{English.} #4
+  \end{massbox}}
+\newcommand{\VR}[2]{\textbf{V.} #1\par\textbf{R.} #2\par}
+\newcommand{\PrayerRepeat}[1]{\textit{#1}\par}
+\newcommand{\prayerinstruction}[1]{\textbf{Prayer:} #1}
+
+% --------------------------------------------------------------- summary shells
+\newcommand{\sacramentSummaryKicker}{}
+\newcommand{\sacramentSummaryTitlePrefix}{}
+\newcommand{\sacramentSummaryPageHook}[1]{}
+\newcommand{\sacramentSummaryStart}[3]{%
+  \textbf{\sacramentSummaryTitlePrefix#1 at a Glance}\par #2\par\textit{#3}\par}
+\newcommand{\sacramentSummaryEnd}{}
+
+% ----------------------------------------------------------- generation metadata
+% The preamble renders the tracked timestamp once, inside the first model
+% contribution.  Rendering it where it is declared reaches the same visible line
+% without the conditional state pandoc cannot evaluate; scripts/web-edition
+% applies the repeat rule by choosing \AIModelContributionRepeat instead.
+\newcommand{\AIDocumentRevisionTimestamp}[1]{\par\textbf{Last revised (UTC):} #1\par}
+\newcommand{\AIDisplayDocumentRevisionTimestamp}{}
+\newcommand{\AIModelContribution}[3]{%
+  \par\textbf{Model:} \texttt{#1}; \texttt{#2}\par\textbf{Agent/runtime:} #3\par}
+\newcommand{\AIModelContributionRepeat}[3]{\par\textbf{Agent/runtime:} #3\par}
+
+% ------------------------------------------------------------------ rights notice
+% Verbatim content of the final-page colophon in src/common/preamble.tex.
+\newcommand{\TriptychRightsNotice}{%
+  \par\textbf{Reuse and rights.} To the extent Triptych holds the rights,
+  project-created content and design are licensed under
+  \href{https://creativecommons.org/licenses/by/4.0/}{CC BY 4.0}. Scripture,
+  liturgical or official texts, received prayers or hymns, quotations, fonts,
+  and other third-party material retain their own status; public-domain material
+  remains public domain. Identify changes. Attribution implies neither Triptych
+  nor ecclesiastical approval. See \texttt{LICENSE} and
+  \texttt{THIRD\_PARTY.md} in the source.\par}
+
+% ----------------------------------------------------------------------- tables
+% Each named environment carries its header row in its definition, so the row
+% macros stay bare &-separated cells.  Column widths follow the print originals.
+
+\newenvironment{properstable}
+{\begin{longtable}{p{0.15\linewidth}p{0.25\linewidth}p{0.18\linewidth}p{0.34\linewidth}}
+\textbf{Proper} & \textbf{TLM text / reference} & \textbf{Scriptural axis} & \textbf{Connection}\\
+\midrule\endhead}{\end{longtable}}
+\newcommand{\properrow}[4]{\textbf{#1} & #2 & #3 & #4\\}
+
+\newenvironment{sensestable}
+{\begin{longtable}{p{0.15\linewidth}p{0.77\linewidth}}
+\textbf{Sense} & \textbf{Synthesis}\\
+\midrule\endhead}{\end{longtable}}
+
+\newenvironment{connectionstable}
+{\begin{longtable}{p{0.18\linewidth}p{0.74\linewidth}}
+\textbf{Thread} & \textbf{Synthesis}\\
+\midrule\endhead}{\end{longtable}}
+
+\newenvironment{witnessstable}
+{\begin{longtable}{p{0.2\linewidth}p{0.34\linewidth}p{0.38\linewidth}}
+\textbf{Witness} & \textbf{Text / source status} & \textbf{Interpretive contribution}\\
+\midrule\endhead}{\end{longtable}}
+\newcommand{\witnessrow}[3]{#1 & #2 & #3\\}
+
+\newenvironment{threestable}[3]
+{\begin{longtable}{p{0.18\linewidth}p{0.34\linewidth}p{0.40\linewidth}}
+\textbf{#1} & \textbf{#2} & \textbf{#3}\\
+\midrule\endhead}{\end{longtable}}
+
+\newenvironment{fourstable}[4]
+{\begin{longtable}{p{0.15\linewidth}p{0.23\linewidth}p{0.25\linewidth}p{0.27\linewidth}}
+\textbf{#1} & \textbf{#2} & \textbf{#3} & \textbf{#4}\\
+\midrule\endhead}{\end{longtable}}
+
+\newenvironment{lifetimeline}
+{\begin{longtable}{p{0.14\linewidth}p{0.36\linewidth}p{0.26\linewidth}p{0.16\linewidth}}
+\textbf{Date} & \textbf{Event} & \textbf{Basis} & \textbf{Status}\\
+\midrule\endhead}{\end{longtable}}
+\newcommand{\lifeevent}[4]{#1 & #2 & #3 & #4\\}
+
+\newenvironment{evidencekey}
+{\begin{longtable}{p{0.08\linewidth}p{0.85\linewidth}}
+\textbf{Class} & \textbf{Meaning}\\
+\midrule\endhead}{\end{longtable}}
+\newcommand{\evidenceclass}[2]{#1 & #2\\}
+
+\newenvironment{worksinventory}
+{\begin{longtable}{p{0.21\linewidth}p{0.11\linewidth}p{0.30\linewidth}p{0.12\linewidth}p{0.13\linewidth}}
+\textbf{Work} & \textbf{Date} & \textbf{Occasion} & \textbf{Period} & \textbf{Cited at}\\
+\midrule\endhead}{\end{longtable}}
+\newcommand{\workentry}[5]{#1 & #2 & #3 & #4 & #5\\}
+
+\newenvironment{traditionaudit}
+{\begin{longtable}{p{0.22\linewidth}p{0.22\linewidth}p{0.24\linewidth}p{0.20\linewidth}}
+\textbf{Tradition} & \textbf{Earliest witness} & \textbf{Counter-evidence} & \textbf{Treatment}\\
+\midrule\endhead}{\end{longtable}}
+\newcommand{\traditionrow}[4]{#1 & #2 & #3 & #4\\}
+
+\newenvironment{accounttimeline}
+{\begin{longtable}{p{0.15\linewidth}p{0.35\linewidth}p{0.26\linewidth}p{0.15\linewidth}}
+\textbf{Date} & \textbf{Event or act} & \textbf{Witness or edition} & \textbf{Status}\\
+\midrule\endhead}{\end{longtable}}
+\newcommand{\timelineevent}[4]{#1 & #2 & #3 & #4\\}
+
+\newenvironment{biotimeline}
+{\begin{longtable}{p{0.13\linewidth}p{0.20\linewidth}p{0.40\linewidth}p{0.19\linewidth}}
+\textbf{Date} & \textbf{Place} & \textbf{Event and evidence} & \textbf{Status}\\
+\midrule\endhead}{\end{longtable}}
+\newcommand{\biotimelinerow}[4]{#1 & #2 & #3 & #4\\}
+
+\newenvironment{evidencelegend}
+{\begin{longtable}{p{0.10\linewidth}p{0.82\linewidth}}
+\textbf{Code} & \textbf{Meaning}\\
+\midrule\endhead}{\end{longtable}}
+\newcommand{\evidencelegendrow}[2]{#1 & #2\\}
+
+\newenvironment{apparitionstable}
+{\begin{longtable}{p{0.045\linewidth}p{0.155\linewidth}p{0.16\linewidth}p{0.56\linewidth}}
+\textbf{No.} & \textbf{Date (1858)} & \textbf{Presence reported} & \textbf{Received content (Sanctuary chronology; reported register)}\\
+\midrule\endhead}{\end{longtable}}
+
+\newenvironment{curestable}
+{\begin{longtable}{p{0.05\linewidth}p{0.33\linewidth}p{0.24\linewidth}p{0.30\linewidth}}
+\textbf{No.} & \textbf{Person} & \textbf{Origin} & \textbf{Episcopal recognition}\\
+\midrule\endhead}{\end{longtable}}
+
+\newenvironment{definitionstable}
+{\begin{longtable}{p{0.12\linewidth}p{0.22\linewidth}p{0.39\linewidth}p{0.19\linewidth}}
+\textbf{Dogma} & \textbf{Act and date} & \textbf{Operative words (Latin witness)} & \textbf{Level and assent}\\
+\midrule\endhead}{\end{longtable}}
+
+\newenvironment{milestones}
+{\begin{longtable}{p{0.11\linewidth}p{0.55\linewidth}p{0.26\linewidth}}
+\textbf{Date} & \textbf{Milestone} & \textbf{Register}\\
+\midrule\endhead}{\end{longtable}}
+
+\newenvironment{instancestable}
+{\begin{longtable}{p{0.22\linewidth}p{0.70\linewidth}}
+\textbf{Field} & \textbf{Resolved liturgical instance}\\
+\midrule\endhead}{\end{longtable}}
+
+\newenvironment{variabletextstable}
+{\begin{longtable}{p{0.24\linewidth}p{0.68\linewidth}}
+\textbf{Textual unit} & \textbf{Text / citation}\\
+\midrule\endhead}{\end{longtable}}
+\newcommand{\variabletextgroup}[1]{\multicolumn{2}{l}{\textbf{#1}}\\}
+\newcommand{\variabletextrow}[2]{#1 & #2\\}
+
+\newenvironment{branchstable}
+{\begin{longtable}{p{0.13\linewidth}p{0.22\linewidth}p{0.12\linewidth}p{0.25\linewidth}p{0.20\linewidth}}
+\textbf{Branch ID} & \textbf{Authority and trigger} & \textbf{Status} & \textbf{Units affected} & \textbf{Resolution}\\
+\midrule\endhead}{\end{longtable}}
+\newcommand{\branchrow}[5]{#1 & #2 & #3 & #4 & #5\\}
+
+\newenvironment{scripturestable}
+{\begin{longtable}{p{0.17\linewidth}p{0.19\linewidth}p{0.34\linewidth}p{0.20\linewidth}}
+\textbf{Textual unit / alternative} & \textbf{Citation} & \textbf{Location} & \textbf{Date}\\
+\midrule\endhead}{\end{longtable}}
+\newcommand{\scripturerow}[4]{#1 & #2 & #3 & #4\\}
+\newcommand{\scripturenote}[1]{\multicolumn{4}{l}{#1}\\}
+
+\newenvironment{summaryidentity}
+{\begin{longtable}{p{0.145\linewidth}p{0.78\linewidth}}
+\textbf{Identity} & \textbf{Definition and fulfillment}\\
+\midrule\endhead}{\end{longtable}}
+
+\newenvironment{summaryconstitution}
+{\begin{longtable}{p{0.13\linewidth}p{0.265\linewidth}p{0.265\linewidth}p{0.28\linewidth}}
+\textbf{Condition} & \textbf{Metaphysical / ritual fulfillment} & \textbf{Ordinary order} & \textbf{Extraordinary case or limit}\\
+\midrule\endhead}{\end{longtable}}
+
+\newenvironment{summaryeconomy}
+{\begin{longtable}{p{0.12\linewidth}p{0.195\linewidth}p{0.235\linewidth}p{0.235\linewidth}p{0.20\linewidth}}
+\textbf{Axis} & \textbf{Creation / covenant} & \textbf{Christ and Pasch} & \textbf{Church and other sacraments} & \textbf{Last end}\\
+\midrule\endhead}{\end{longtable}}
+
+\newenvironment{summarywitnesses}
+{\begin{longtable}{p{0.13\linewidth}p{0.20\linewidth}p{0.60\linewidth}}
+\textbf{Witness class} & \textbf{Principal loci} & \textbf{Controlling claim}\\
+\midrule\endhead}{\end{longtable}}
