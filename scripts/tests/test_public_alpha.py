@@ -936,6 +936,43 @@ class PublicAlphaTest(unittest.TestCase):
         self.assertIn("[Claude edition](../doc/claude/work.pdf)", filtered)
         self.assertNotIn("—", filtered)
 
+    def read_link_catalog(self) -> str:
+        return (
+            "# Test shelf\n\n"
+            "| Publication | ChatGPT | Claude | Focus |\n"
+            "| --- | --- | --- | --- |\n"
+            "| **Work** | [PDF](../doc/gpt/work.pdf) · [Read](../web/gpt/work.html) | "
+            "[PDF](../doc/claude/work.pdf) · [Read](../web/claude/work.html) | "
+            "Focus text. |\n"
+        )
+
+    def test_excluded_edition_degrades_its_pdf_and_read_links_to_one_dash(self) -> None:
+        filtered = self.tool.filter_catalog(
+            "library/test.md", self.read_link_catalog(), {("gpt", "work")}
+        )
+
+        self.assertIn("[Read](../web/gpt/work.html)", filtered)
+        self.assertNotIn("web/claude", filtered)
+        self.assertNotIn("doc/claude", filtered)
+        self.assertIn("| — |", filtered)
+        self.assertNotIn("— · —", filtered)
+
+    def test_read_links_do_not_change_catalog_occurrence_counting(self) -> None:
+        (self.root / "library/test.md").write_text(
+            self.read_link_catalog(), encoding="utf-8"
+        )
+
+        occurrences, multi_pdf_lines, _, _, _ = self.tool.catalog_occurrences(
+            "gpt", ["gpt", "claude"]
+        )
+
+        self.assertEqual(occurrences[("gpt", "work")], ["library/test.md"])
+        self.assertEqual(occurrences[("claude", "work")], ["library/test.md"])
+        self.assertEqual(len(multi_pdf_lines), 1)
+        self.assertEqual(
+            multi_pdf_lines[0][1], [("gpt", "work"), ("claude", "work")]
+        )
+
     def test_row_with_no_released_edition_is_dropped(self) -> None:
         filtered = self.tool.filter_catalog(
             "library/test.md", self.mixed_provider_catalog(), set()
