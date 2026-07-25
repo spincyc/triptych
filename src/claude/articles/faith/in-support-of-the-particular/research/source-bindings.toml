@@ -18,10 +18,10 @@ context = "Gaudium et spes 22 controls the claim that by his Incarnation the Son
 
 [[bindings]]
 source_id = "edition.thomas-aquinas.summa-theologiae.leonine-v4-1888"
-loci = ["I.3.5.corpus", "I.3.8.corpus", "I.14.11.corpus", "I.22.2.corpus"]
+loci = ["I.3.5.corpus", "I.3.8.corpus", "I.8.1.corpus", "I.14.11.corpus", "I.22.2.corpus", "I.29.1.corpus", "I.29.3.corpus"]
 role = "context"
 states = ["cataloged"]
-context = "The registered Leonine edition (vol. 4, ST I qq. 1-49) identifies the work behind the Prima Pars loci used for God outside every genus, knowledge of singulars, and particular providence. The publication-local checks were made against the public English Dominican translation and, for ST III q.1 a.1 (outside this volume's coverage), the Corpus Thomisticum Latin; no facsimile inspection of the registered artifact is claimed."
+context = "The registered Leonine edition (vol. 4, ST I qq. 1-49) identifies the work behind the Prima Pars loci used for God outside every genus, God innermostly present as giver of being, knowledge of singulars, particular providence, and the person as subsistent individual (the 2026-07-25 deepening added I.8.1 and I.29.1, I.29.3). The publication-local checks were made against the public English Dominican translation and, for loci outside this volume's coverage (ST I q.50 a.4; III q.1 a.1; III qq.60-61, 75-76), the same translation with the Corpus Thomisticum Latin where noted in the audit; no facsimile inspection of the registered artifact is claimed. A second verification pass on 2026-07-25 re-checked every quoted clause at the English Dominican witness; one correction resulted, at I.14.11, and is recorded in the publication's source audit."
 
 [[bindings]]
 source_id = "edition.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887"
@@ -29,3 +29,23 @@ loci = ["3.22.1-2"]
 role = "textual-control"
 states = ["cataloged"]
 context = "The registered ANF edition identifies the translation quoted for Irenaeus on real flesh from Mary and the became-what-we-are exchange formula. The exchange formula stands in the preface to Book V, a locus the registered work record's locus grammar cannot express; it is identified in the publication's source audit instead of a bound locus. The publication-local audit checked the New Advent transcription of this translation on 2026-07-24; no verification against the registered facsimile or OCR artifacts is claimed."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-25"
+loci = ["1145-1152"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The 2026-07-25 deepening added the signs-of-the-covenant material: CCC 1145-1152 controls the three-strata account (signs of the human world, signs of the covenant, signs taken up by Christ, sacramental signs). The paragraphs were read at the vatican.va IntraText English witness on 2026-07-25; no artifact fingerprint was retained, so this binding claims catalog identity only. Re-verified in a second pass on 2026-07-25 against the same witness; all quoted wording matched."
+
+[[bindings]]
+source_id = "edition.holy-see.cdf-declaration-dominus-iesus-2000.english-vatican-web-2026-07-25"
+loci = ["2", "4", "6", "9-10", "13-15", "20-22"]
+role = "textual-control"
+states = ["cataloged"]
+context = "Dominus Iesus supplies the magisterial answer to the contemporary pluralist form of the objection, quoted exactly from the official vatican.va English page on 2026-07-25 (relativistic theories de iure, no. 4; completeness of the revelation of Christ, no. 6; the many-figures thesis stated and rejected, nn. 9-10; unicity and the refusal of vaguer terms, nn. 13-15; the Church, grace beyond her visible bounds, and the Lumen gentium 14 warning, nn. 20-22). Work and edition records were registered at catalog level for this deepening; no artifact fingerprint is claimed, and the AAS Latin governs. Re-verified in a second pass on 2026-07-25: every quoted clause was matched verbatim and located against the document's own paragraph markers, confirming each cited number."
+
+[[bindings]]
+source_id = "edition.ante-nicene-fathers.volume-4.buffalo-1885"
+role = "context"
+states = ["cataloged"]
+context = "The registered ANF volume IV edition identifies the translation (Crombie) quoted for Origen's Contra Celsum throughout the objection genealogy: IV.3-7, IV.14, IV.23, IV.99, V.25-26, V.41-42, VI.78-79. The registered work record is the anthology volume and carries no locus grammar for the ancient work printed within it, so the loci are identified in the publication's source audit rather than bound here. The publication-local audit checked the New Advent transcription of this translation on 2026-07-24 (IV.23) and 2026-07-25 (all remaining chapters); no verification against the registered edition's own artifacts is claimed. Re-verified in a second pass on 2026-07-25: every quoted clause was matched verbatim and located against the transcription's own chapter headings, confirming each cited chapter."
