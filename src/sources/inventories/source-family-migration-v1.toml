@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-07-25"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:1c3354be172feca3ac796836318ecc2a8f4bbbff2fd889b975f5894fbf192fcc"
+inventory_snapshot = "sha256:b28ae439b0f8fffe58d6572b3e9cfbd4b89f91446337b35389aae6f15c6b6b5a"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:2947c8f04bd1936f250fa112de037da4be866b8a78b9c272d295ade2645dfc74"
-canonical_catalog_snapshot = "sha256:ce53f51aa29fe04b514da1e5a3532f4a5d80bf73894313534e9e750330c8de0b"
+canonical_catalog_snapshot = "sha256:5e0912bc2c156f2ffa8e8dfedf9106bc16c9baa07617ec79172d9058eedf7828"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:c0f6b406555156ed41a94e5eee8b984d8c3d0f774b209d21235de782923320c6"
+snapshot = "sha256:a473a78bc2bcc5cb9a78c7378d4622e5f7963c7892b386cf3d66be3003011997"
 
 [[families]]
 id = "family.acta.aas-ass"
@@ -29,6 +29,46 @@ canonical_ids = ["artifact.holy-see.acta-apostolicae-sedis.volume-56-1964.vatica
 trace_patterns = ["Acta Apostolicae Sedis", "Acta Sanctae Sedis", "latin-aas-56-1964", "latin-aas-57-1965", "latin-aas-58-1966", "latin-ass-6-1870-1871"]
 reviewed_on = "2026-07-25"
 notes = "Volumes 56 (1964), 57 (1965), and 58 (1966) now have canonical container editions and exact restricted Holy See PDF artifacts. The series now also owns the Acta Sanctae Sedis work and the volume 6 (1870-1871) container edition with its exact restricted 776-page Holy See OCR PDF artifact, whose Postquam Dei munere constituent is pinned by the separate Vatican I family without absorbing the container. Other cited volumes and acts remain only partially resolved; each promulgated act remains a distinct work, and OCR remains a finding aid until checked against the official pages. The wave-eight registrations add AAS volumes 22 (1930), 23 (1931), and 60 (1968) as catalog-level container editions without exact artifacts, per the volume-6 ASS container precedent: they map the Bellarmine canonization-miracle decree and Pius XI's decretal letter Lux illa, his apostolic letter Providentissimus Deus declaring Bellarmine a Doctor (distinct from Leo XIII's 1893 encyclical of the same incipit), and Paul VI's apostolic letter Roma altera, all of which remain distinct unregistered constituent works; consumers using the vatican.va OCR scans record their access routes and dates locally."
+
+[[families]]
+id = "family.alba-house.trustful-surrender-to-divine-providence"
+label = "Trustful Surrender to Divine Providence (Alba House composite volume)"
+kind = "work"
+source_categories = ["prayer-devotional"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "edition", "relation"]
+artifact_availability = "candidate-partial"
+storage_plan = ["restricted"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "work-only"
+disposition = "canonicalize"
+priority = "p2"
+canonical_ids = ["work.alba-house.trustful-surrender-to-divine-providence"]
+trace_patterns = ["(?:Trustful Surrender to Divine Providence|The Secret of Peace and Happiness|trustful-surrender-to-divine-providence)"]
+reviewed_on = "2026-07-25"
+notes = "The composite English devotional volume first published in 1961 by Alba House as The Secret of Peace and Happiness, reissued by St. Raphael Editions in 1978 and 1980 and from 1983 in cooperation with TAN Books as Trustful Surrender to Divine Providence, owns its catalog-level work at part, chapter, and numbered-head loci. It stays its own family rather than forming one cluster with the sources it is assembled from: Saint-Jure's treatise and Colombiere's sermons are independent seventeenth-century intellectual works with their own authors, language, genres, dates, and transmission, they are cited as direct witnesses in their own right at their own loci, and the recorded relation runs one way only, from the anthology to them, so the contract's independent-intellectual-family test keeps them apart. That also follows the ledger's container precedent, in which family.acta.aas-ass owns the Acta containers while their promulgated constituents keep separate families and family.santuario-de-fatima.dcf-selecao-1917-1930 owns the DCF printing while the Leiria pastoral letter stays with family.fatima.ecclesial-acts: a container neither absorbs its constituents nor is absorbed by them. The 1961 Paul Garvin translation is in copyright and no edition or artifact record is registered, so evidence stops at the work; the authorized witness is the publisher's own posted preview of the 2012 TAN printing (title leaf, copyright page, publisher's note, contents, and opening pages), which is partial, and any exact capture would be stored restricted. The compiler is unnamed in the printed book, the 1961 Alba House first edition was not obtainable, and the volume's attribution of Part II chapter V to Colombiere is contradicted by that chapter's correspondence with Saint-Jure book 3 chapter 8 section 10, so the relation gap stays open."
+
+[[families]]
+id = "family.anglican-roman-catholic-international-commission.mary-grace-and-hope-in-christ"
+label = "ARCIC, Mary: Grace and Hope in Christ (Seattle Statement, 2004)"
+kind = "work"
+source_categories = ["institutional-current"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "edition", "locus"]
+artifact_availability = "candidate-complete"
+storage_plan = ["restricted"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "edition-locus"
+disposition = "canonicalize"
+priority = "p2"
+canonical_ids = ["edition.anglican-roman-catholic-international-commission.mary-grace-and-hope-in-christ.english-vatican-web-2026-07-25", "work.anglican-roman-catholic-international-commission.mary-grace-and-hope-in-christ"]
+trace_patterns = ["(?:Anglican-Roman Catholic International Commission|Seattle Statement|Mary: Grace and Hope in Christ|mary-grace-and-hope-in-christ)"]
+reviewed_on = "2026-07-25"
+notes = "The fifth agreed statement of the second phase of the Anglican-Roman Catholic International Commission, signed at Seattle on 2 February 2004 and published in 2005, owns its catalog-level work in eighty numbered paragraphs and the dated 2026-07-25 delivery state on the Holy See's Christian-unity site. It stays per-work rather than joining a shared non-Catholic-confessional cluster with the 1895 Constantinopolitan encyclical and the Smalcald Articles: those three documents share only the role they play in one consuming publication, family membership records source identity rather than a consumer's use, and the ledger's corpus-plan precedents (family.holy-see.masonic-membership-acts, family.fatima.ecclesial-acts, and family.roman-missal.older-use-discipline-acts) all bind acts of one authority about one object in a chain the manifests' relation fields record, whereas a 1537 Lutheran confession, an 1895 Orthodox synodal reply, and a 2004 bilateral dialogue text have no such relation. The proposed shared label would also misdescribe this document, which is not another communion's own act at all: its own status paragraph states that it is not an authoritative declaration by the Roman Catholic Church or by the Anglican Communion, and presentation on christianunity.va is a presentation, not a magisterial act. That status paragraph is unnumbered and falls outside the paragraph locus system, the 2005 printed edition and any exact artifact remain unregistered, and any capture of the copyrighted Holy See page would be stored restricted, so evidence stops at edition and paragraph loci."
 
 [[families]]
 id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
@@ -151,6 +191,26 @@ reviewed_on = "2026-07-25"
 notes = "Benedict XII's 29 January 1336 apostolic constitution on the beatific vision owns its catalog-level work and the conventional received Latin text as printed in Denzinger (DH 1000-1002). The 1336 act is public domain, but no exact artifact of any printed Denzinger edition is registered, so evidence stops at edition loci and each consumer records the web transcription it actually consulted. The family stays per-work rather than merged with the other papal dogmatic definitions because the acts are independent intellectual works of different popes and centuries with distinct witnesses and rights profiles, matching the ledger's per-work precedent for independent acts; Pius IV's 1564 Trent-confirmation bull of the same incipit is a distinct work outside this family and is not cited by the pinned records."
 
 [[families]]
+id = "family.bernard-of-clairvaux.letters"
+label = "Bernard of Clairvaux, Letters"
+kind = "work"
+source_categories = ["historical-primary"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "edition", "expression", "locus"]
+artifact_availability = "candidate-complete"
+storage_plan = ["remote"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "edition-locus"
+disposition = "canonicalize"
+priority = "p2"
+canonical_ids = ["edition.bernard-of-clairvaux.letters.eales-london-1904", "work.bernard-of-clairvaux.letters"]
+trace_patterns = ["(?:Some Letters of Saint Bernard|bernard-of-clairvaux)"]
+reviewed_on = "2026-07-25"
+notes = "Bernard of Clairvaux's letter collection, transmitted in Jean Mabillon's Benedictine edition (Paris, 1690) and its descendants, owns its catalog-level work and Samuel J. Eales's English selection Some Letters of Saint Bernard (London: John Hodges, 1904), public domain from its 1904 publication and read in the Christian Classics Ethereal Library republication. The family stays per-work per the ledger's norm for independent intellectual works: the letter to the canons of Lyons on the Conception of the Blessed Virgin Mary is cited only as the classic medieval objection with its closing submission to the See of Rome, and Pius IX's definition keeps its own family. Letter numbering is not stable across editions, the letter commonly cited as Ep. 174 being Letter XLV in the Eales selection, and the work carries no edition-independent locus system, so consumers state the edition whose numbering they use. Eales translated a selection rather than the whole collection and no Latin collation was performed; the Mabillon Latin and the modern critical Sancti Bernardi opera remain unregistered and no exact artifact is registered, so evidence stops at edition loci."
+
+[[families]]
 id = "family.catholic-church.catechism"
 label = "Catechism of the Catholic Church"
 kind = "mixed-cluster"
@@ -191,6 +251,26 @@ reviewed_on = "2026-07-25"
 notes = "This series family owns the catalog-level container work and edition records for volumes 1 (1907), 2 (1907), 5 (1909), 7 (1910), 11 (1911), and 13 (1912) of the sixteen-volume Catholic Encyclopedia (New York: Robert Appleton Company, 1907-1912), mirroring the ANF/NPNF container pattern: one reference series maps its constituent volumes rather than spawning per-volume families. The American printings are public domain, but no exact artifact is registered, so members stop at edition-locus support, and publications consulting the New Advent web transcriptions record their access routes and the transcriptions' later-revision risk locally. Signed articles such as Thurston's Rosary entries remain distinct constituent works inside their volume containers and are unregistered, and the remaining volumes join this family as they are registered. Ferdinand Prat's 'St. Paul' article in volume 11 remains, like Thurston's Rosary entries, a distinct unregistered constituent work inside its volume container. Volume 2 (1907, Assizes-Browne) joins on the same catalog-level basis for the wave-eight Bellarmine biography; Sydney Smith's 'St. Robert Francis Romulus Bellarmine' article remains a distinct unregistered constituent work inside its volume container."
 
 [[families]]
+id = "family.claude-de-la-colombiere.sermons"
+label = "Claude de la Colombiere, Sermons"
+kind = "work"
+source_categories = ["historical-primary", "prayer-devotional"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "edition", "work"]
+artifact_availability = "candidate-complete"
+storage_plan = ["remote"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "work-only"
+disposition = "canonicalize"
+priority = "p2"
+canonical_ids = ["work.claude-de-la-colombiere.sermons"]
+trace_patterns = ["(?:de la Colombi[eè]re|claude-de-la-colombiere)"]
+reviewed_on = "2026-07-25"
+notes = "The sermons of the Jesuit Claude de la Colombiere (1641-1682), preached largely in England during his chaplaincy to the Duchess of York and printed after his death with his retreat notes and Reflexions chretiennes, own their catalog-level work at the volume-and-page loci of the 1832 collected Oeuvres, whose public-domain Internet Archive OCR of volume 5, with volumes 1-4 and the 1684 Reflexions chretiennes searched by keyword, is the witness read. The family stays per-work rather than merging with the composite Alba House volume that prints a compilation from these sermons: they are an independent intellectual work with their own author, date, genre, and transmission, and the ledger's container precedent keeps a compilation and its constituents in separate families. Individual sermons are identified by title and printed thesis rather than by number, so the collection's internal work boundaries stay unsettled and loci are edition-bound; no edition or artifact record is registered, so evidence stops at the work, and the transmission history of the posthumously published texts was not investigated. The keyword search of the five volumes found no parallel to Saint-Jure's exercise toward divine providence, but that search ran over OCR and does not exhaust the corpus."
+
+[[families]]
 id = "family.denzinger.enchiridion-symbolorum"
 label = "Denzinger, Enchiridion symbolorum"
 kind = "work"
@@ -211,6 +291,26 @@ reviewed_on = "2026-07-25"
 notes = "Denzinger's repeatedly re-edited compilation of creeds and magisterial definitions owns its catalog-level work and the dated 2026-07-25 patristica.net web states of the Latin text with parallel DB and DS numbering and of Deferrari's 1957 English Sources of Catholic Dogma. Neither web witness identifies the exact print edition transcribed and the Deferrari translation's copyright status is unresolved, so both remain finding aids whose readings consumers corroborate against the underlying public-domain documents, and no exact artifact is registered. The compilation is a witness locator, not a substitute for the documents it excerpts; those documents keep their own families."
 
 [[families]]
+id = "family.ecumenical-patriarchate-of-constantinople.patriarchal-encyclical-1895"
+label = "Ecumenical Patriarchate of Constantinople, Patriarchal and Synodal Encyclical of 1895"
+kind = "work"
+source_categories = ["historical-primary"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "edition", "expression", "language", "locus"]
+artifact_availability = "candidate-complete"
+storage_plan = ["remote"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "edition-locus"
+disposition = "canonicalize"
+priority = "p2"
+canonical_ids = ["edition.ecumenical-patriarchate-of-constantinople.patriarchal-encyclical-1895.english-orthodoxinfo-web-2026-07-25", "work.ecumenical-patriarchate-of-constantinople.patriarchal-encyclical-1895"]
+trace_patterns = ["(?:Patriarchal (?:and Synodal )?Encyclical of 1895|ecumenical-patriarchate-of-constantinople)"]
+reviewed_on = "2026-07-25"
+notes = "The synodal encyclical issued by the Ecumenical Patriarch Anthimus VII and his synod in 1895 in reply to Leo XIII's Praeclara gratulationis, enumerating the innovations the Eastern Orthodox Church charges against Rome and rejecting at article XIII the 1854 definition of the Immaculate Conception as a novel dogma, owns its catalog-level work and a dated 2026-07-25 delivery state of an English translation on a private Orthodox website. It is cited as an act of that communion, never as Catholic authority, and it stays per-work rather than joining a shared non-Catholic-confessional cluster with the Smalcald Articles and the ARCIC Seattle Statement: the three share only their role in one consuming publication, family membership records source identity rather than consumer use, and the ledger's precedent for an independent body's own document is family.united-grand-lodge-of-england.frequently-asked-questions, which stays outside family.holy-see.masonic-membership-acts for exactly that reason. The registered witness is weak and its limits are stated at each point of use: neither the translator nor the underlying Greek edition is identified on the page, no collation against the Greek was performed, the article numbering is that page's, and the work carries no edition-independent locus system. The Greek original remains unregistered, no exact artifact is registered, and the translation's rights are unresolved, so consumers quote it only within ordinary scholarly limits with attribution and evidence stops at edition and article loci."
+
+[[families]]
 id = "family.fatima.ecclesial-acts"
 label = "Ecclesial acts on the Fatima apparitions"
 kind = "corpus-plan"
@@ -229,6 +329,26 @@ canonical_ids = ["edition.diocese-of-leiria.carta-pastoral-fatima-1930.dcf-selec
 trace_patterns = ["(?:Act of Consecration.{0,60}Immaculate Heart|act-consecration-immaculate-heart-2022)", "(?:Carta Pastoral|carta-pastoral-fatima-1930)", "(?:Message of Fatima|Messaggio di Fatima|message-of-fatima)", "(?:Third Secret of Fatima|communique-third-secret-fatima)", "(?:canonization.{0,60}(?:Francisco|Jacinta)|homily-canonization-fatima-2017)"]
 reviewed_on = "2026-07-25"
 notes = "This corpus-plan owns the ecclesial judgment and reception thread on one object, the 1917 apparitions at the Cova da Iria: the Bishop of Leiria's pastoral letter of 13 October 1930 declaring the visions worthy of belief and permitting the cult (its registered edition is the critical printing in the 2013 DCF Selecao, Doc. 133, whose container stays owned by family.santuario-de-fatima.dcf-selecao-1917-1930), the CDF's documentary publication The Message of Fatima of 26 June 2000 with the third part of the secret and Ratzinger's commentary, the Press Office communique of 21 May 2016 confirming the publication complete, Francis's canonization homily for Francisco and Jacinta Marto of 13 May 2017, and his Act of Consecration to the Immaculate Heart of 25 March 2022. The acts form one family rather than per-work families because they are a single judgment-and-reception thread about one apparition event, each later act interpreting, confirming, or answering the earlier ones, matching the family.roman-missal.older-use-discipline-acts and family.vatican-ii.papal-acts precedent for a bounded corpus of coordinated acts. Every member is registered at work and dated edition level only: the known Vatican web deliveries and the restricted DCF printing are complete candidates, but no exact artifact bytes are registered, so evidence stops at edition loci; the 2000 dossier's English web state carries a double-encoding defect and a 1981 date slip recorded on its manifest, and Portuguese and Italian originals and translator identities remain unregistered. The general 2024 apparition norms are not a Fatima act and keep their own family."
+
+[[families]]
+id = "family.francis-de-sales.traite-de-lamour-de-dieu"
+label = "Francis de Sales, Traite de l'amour de Dieu"
+kind = "work"
+source_categories = ["historical-primary", "prayer-devotional"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "edition", "expression"]
+artifact_availability = "candidate-complete"
+storage_plan = ["remote"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "work-only"
+disposition = "canonicalize"
+priority = "p2"
+canonical_ids = ["work.francis-de-sales.traite-de-lamour-de-dieu"]
+trace_patterns = ["(?:Trait[eé] de l'amour de Dieu|Treatise on the Love of God|traite-de-lamour-de-dieu)"]
+reviewed_on = "2026-07-25"
+notes = "Francis de Sales's twelve-book treatise on the love of God, first published at Lyon in 1616 and addressed to Theotimus, owns its catalog-level work at book-and-chapter loci; books 8 and 9 carry the Salesian account of the signified will and the will of good pleasure and the distinction of resignation from holy indifference. It is a separate family from the Alba House composite volume and its two constituents, and from the Caussade treatise, per the ledger's per-work norm for independent intellectual works: nothing relates them beyond a shared subject, and no manifest records a relation. The witness read is Henry Benedict Mackey's complete public-domain English translation at the Christian Classics Ethereal Library, whose chapter divisions govern the loci cited; no collation against the French Annecy edition was performed, and neither that translation nor any French printing is registered as an edition, so evidence stops at the work and no exact artifact is registered. Section and paragraph divisions vary by edition and translation, so consumers cite book and chapter only."
 
 [[families]]
 id = "family.galileo-galilei.opere-edizione-nazionale"
@@ -309,6 +429,26 @@ canonical_ids = []
 trace_patterns = ["Code of Canons of the Eastern Churches", "Codex Canonum Ecclesiarum Orientalium", "\\bCCEO\\b"]
 reviewed_on = "2026-07-22"
 notes = "Canonicalize dated official states and keep CCEO distinct from the Latin codes; translations are aids unless their edition and rights are separately identified."
+
+[[families]]
+id = "family.holy-see.cdf-declaration-dominus-iesus-2000"
+label = "CDF, Declaration Dominus Iesus (2000)"
+kind = "work"
+source_categories = ["magisterial"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "expression", "language"]
+artifact_availability = "candidate-complete"
+storage_plan = ["restricted"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "edition-locus"
+disposition = "canonicalize"
+priority = "p2"
+canonical_ids = ["edition.holy-see.cdf-declaration-dominus-iesus-2000.english-vatican-web-2026-07-25", "work.holy-see.cdf-declaration-dominus-iesus-2000"]
+trace_patterns = ["(?:Dominus Iesus|dominus-iesus)"]
+reviewed_on = "2026-07-25"
+notes = "The Congregation for the Doctrine of the Faith's declaration Dominus Iesus of 6 August 2000 (AAS 92 [2000] 742-765), signed by Cardinal Ratzinger as Prefect and Archbishop Bertone as Secretary, ratified and confirmed by John Paul II at the audience of 16 June 2000 and ordered published, owns its catalog-level work in twenty-three numbered paragraphs and the dated 2026-07-25 Vatican English web state. No existing Holy See family covers doctrinal declarations as a class: family.holy-see.masonic-membership-acts is a bounded corpus of coordinated acts about one object, while family.holy-see.mater-populi-fidelis and family.holy-see.norms-supernatural-phenomena-2024 are both per-work on the ledger's precedent for independent curial acts, which this declaration follows. The Latin text in the Acta governs and remains unregistered together with the other language expressions; no exact artifact is registered and any capture of the copyrighted Vatican page would be stored restricted, so evidence stops at edition and paragraph loci."
 
 [[families]]
 id = "family.holy-see.cic-1917"
@@ -471,6 +611,46 @@ reviewed_on = "2026-07-25"
 notes = "Isidore's twenty-book encyclopedia owns its work, W. M. Lindsay's 1911 Oxford critical edition, volume 1 (books I-X), as the registered fixed edition, the complete remote public-domain Internet Archive OCR discovery text, three tracked public-domain IIIF page images of scan leaves 192, 193, and 196, and four Book V passages (chapters 2, 3, 4, and 21: divine and human law; ius, lex, mores; ius naturale; the qualities of law) verified visually against the retained page images, with the OCR in agreement. All four known exact artifacts carry reviewed United States public-domain bases on their manifests - the mechanical page reproductions add no original authorship and Lindsay died in 1937 - so the tracked page images satisfy the reviewed-rights rule per the CIC-1917 page-image precedent; review completion does not clear any further exemplar, and wording claims rest on the page images, not the uncorrected OCR. No manuscript collation beyond Lindsay's printed apparatus is claimed. Volume 2 (books XI-XX), the other books' chapters, and modern translations such as Barney remain unregistered; the taxonomy's canonical reception stays owned by family.gratian.decretum and its scholastic reception by family.thomas-aquinas.summa-theologiae."
 
 [[families]]
+id = "family.jean-baptiste-saint-jure.de-la-connaissance-et-de-lamour-du-fils-de-dieu"
+label = "Jean-Baptiste Saint-Jure, De la connaissance et de l'amour du Fils de Dieu"
+kind = "work"
+source_categories = ["historical-primary", "prayer-devotional"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "date", "edition"]
+artifact_availability = "candidate-partial"
+storage_plan = ["remote"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "work-only"
+disposition = "canonicalize"
+priority = "p2"
+canonical_ids = ["work.jean-baptiste-saint-jure.de-la-connaissance-et-de-lamour-du-fils-de-dieu"]
+trace_patterns = ["(?:Saint-Jure|jean-baptiste-saint-jure)"]
+reviewed_on = "2026-07-25"
+notes = "The large seventeenth-century French treatise of the Jesuit Jean-Baptiste Saint-Jure (1588-1657) on the knowledge and love of Christ owns its catalog-level work at book, chapter, and section loci; book 3 chapter 8 treats the conformity of the human will to the divine will and closes at section 10 with a particular exercise toward divine providence. The family stays per-work rather than merging with the Alba House composite volume that extracts it: the treatise is an independent intellectual work with its own author, language, date, and transmission, it is cited as a direct witness in its own right, and the ledger's container precedent keeps a compilation and its constituents in separate families. The witness read is the public-domain Internet Archive OCR of volume 2 of the Paris (Perisse freres) 1877 re-edition, whose running heads confirm the divisions cited and which carries only the end of book 2 and book 3 through chapter 10, leaving the treatise's other volumes unexamined; that printing is not registered as an edition, no seventeenth-century printing was consulted, no collation was performed, and the 1630s first-publication date was not verified at a witness, so date, edition, and artifact gaps stand and evidence stops at the work."
+
+[[families]]
+id = "family.jean-pierre-de-caussade.abandon-a-la-providence-divine"
+label = "L'Abandon a la providence divine (Ramiere recension, attributed to Caussade)"
+kind = "work"
+source_categories = ["historical-primary", "prayer-devotional"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "authority", "edition"]
+artifact_availability = "candidate-complete"
+storage_plan = ["remote"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "work-only"
+disposition = "canonicalize"
+priority = "p2"
+canonical_ids = ["work.jean-pierre-de-caussade.abandon-a-la-providence-divine"]
+trace_patterns = ["(?:Caussade|jean-pierre-de-caussade)"]
+reviewed_on = "2026-07-25"
+notes = "The treatise on abandonment to divine providence first published in 1861 by Henri Ramiere, S.J., from a manuscript preserved at Montmirail and traditionally attributed to Jean-Pierre de Caussade (1675-1751) owns its catalog-level work at preface and book-and-chapter loci of the Ramiere recension. It stays its own family per the ledger's per-work norm for independent intellectual works: no manifest records any relation between it and the Alba House anthology or that anthology's constituents, and its only tie to them is a shared subject. The attribution is unsettled and the family therefore records an authority gap and asserts no author: Ramiere supplied the published title, reordered the material, and later added letters of uncertain authorship, and modern editors have doubted whether Caussade wrote the treatise at all. The witnesses read are Ella McMahon's public-domain English translation from the eighth French edition (New York: Benziger, 1887) and, for edition identity only, E. J. Strickland's 1921 translation from the tenth; the Gagey and Olphe-Galliard critical editions were not obtainable, so the attribution history rests at the ceiling of a named 2007 scholarly witness. No edition or artifact record is registered, so evidence stops at the work, and any edition record must distinguish the Ramiere recension from later manuscript-based editions."
+
+[[families]]
 id = "family.john-paul-ii.rosarium-virginis-mariae"
 label = "John Paul II, Rosarium Virginis Mariae"
 kind = "work"
@@ -591,6 +771,26 @@ reviewed_on = "2026-07-25"
 notes = "This corpus-plan owns the ecclesial judgment and reception thread on one object, the 1858 apparitions at the Grotto of Massabielle, mirroring family.fatima.ecclesial-acts: the Bishop of Tarbes's mandement of 18 January 1862 judging that the Immaculate Mary really appeared to Bernadette Soubirous and authorizing the diocesan cult (the competent positive diocesan judgment, retained in its historical formula under the 2024 norms), the Sacred Congregation of Rites' Urbis et Orbis decree of 13 November 1907 extending the feast of the Apparition to the universal Church in its ASS 40 edition, the canonization acts of Bernadette Soubirous of 8 December 1933 (rite, homily, and Litterae decretales) in their AAS 26 edition, and Pius XII's centenary encyclical Le pelerinage de Lourdes of 2 July 1957 in its dated 2026-07-25 Vatican English web state. The four acts, episcopal, dicasterial, and papal, form one family rather than per-work families because they are a single judgment-and-reception thread about one apparition event, each later act receiving and confirming the earlier ones, matching the Fatima and older-use-discipline-acts precedent for a bounded corpus of coordinated acts. The mandement's registered edition is its reproduction at pp. 397-409 of Lasserre's 1870 Notre-Dame de Lourdes - following the DCF-container precedent, this family owns the mandement work and that reproduction edition while the book container stays owned by family.henri-lasserre.notre-dame-de-lourdes - and that reproduction abridges articles 3-4, the 1862 diocesan imprint and Tarbes archive original being unconsulted, so an edition gap remains. Every member is registered at work and dated edition level only, so evidence stops at edition loci: the public-domain Internet Archive scan carrying the mandement is a complete remote candidate, the Holy See's ASS 40 and AAS 26 OCR scans would be stored restricted per the family.acta.aas-ass precedent with their material OCR defects recorded on the edition manifests (the elided garbled year clause of the 1907 decree; the canonization formula's 'exarationem' for 'exaltationem'), and any capture of the copyrighted Vatican web page would be restricted. The Acta container volumes stay owned by family.acta.aas-ass, and the general 2024 apparition norms keep their own family."
 
 [[families]]
+id = "family.martin-luther.smalcald-articles"
+label = "Martin Luther, The Smalcald Articles (1537)"
+kind = "work"
+source_categories = ["historical-primary"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "expression", "language", "locus"]
+artifact_availability = "candidate-complete"
+storage_plan = ["remote"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "edition-locus"
+disposition = "canonicalize"
+priority = "p2"
+canonical_ids = ["edition.martin-luther.smalcald-articles.english-bente-dau-1921", "work.martin-luther.smalcald-articles"]
+trace_patterns = ["(?:Smalcald Articles|Articuli Smalcaldici|smalcald-articles)"]
+reviewed_on = "2026-07-25"
+notes = "The articles drawn up by Martin Luther in 1537 and received among the Lutheran symbolical books own their catalog-level work and the public-domain English translation of F. Bente and W. H. T. Dau in the Triglot Concordia (St. Louis: Concordia Publishing House, 1921, pp. 453-529), read in the Project Wittenberg and Project Gutenberg republications. The document is cited as a document of that communion, never as Catholic authority, for Part I article IV's retention of the divine motherhood and the perpetual virginity among the articles then not in dispute. It stays per-work rather than joining a shared non-Catholic-confessional cluster with the 1895 Constantinopolitan encyclical and the ARCIC Seattle Statement: those documents share only their role in one consuming publication, family membership records source identity rather than a consumer's use, and a 1537 German confession, an 1895 Greek synodal reply, and a 2004 bilateral dialogue text have no author, authority, date, language, genre, or documentary relation in common, so the contract's independent-intellectual-family test keeps them apart. The German and Latin originals and any exact artifact remain unregistered, the work carries no edition-independent locus system so loci follow the Triglot's part and article divisions, and the edition's square brackets marking wording carried by one of the parallel originals are that edition's convention rather than a textual judgment by any consumer."
+
+[[families]]
 id = "family.patristics.anf-npnf-schaff"
 label = "Schaff ANF and NPNF translation series"
 kind = "series"
@@ -605,10 +805,10 @@ freshness_rule = "not-applicable"
 evidence_ceiling = "mixed"
 disposition = "canonicalize"
 priority = "p1"
-canonical_ids = ["edition.ante-nicene-fathers.volume-3.buffalo-1885", "edition.ante-nicene-fathers.volume-4.buffalo-1885", "edition.ante-nicene-fathers.volume-6.buffalo-1886", "edition.nicene-and-post-nicene-fathers.series-1-volume-1.new-york-1886", "edition.nicene-and-post-nicene-fathers.series-2-volume-1.new-york-1890", "edition.nicene-and-post-nicene-fathers.series-2-volume-14.new-york-1900", "edition.nicene-and-post-nicene-fathers.series-2-volume-6.new-york-1893", "work.ante-nicene-fathers.volume-3", "work.ante-nicene-fathers.volume-4", "work.ante-nicene-fathers.volume-6", "work.nicene-and-post-nicene-fathers.series-1-volume-1", "work.nicene-and-post-nicene-fathers.series-2-volume-1", "work.nicene-and-post-nicene-fathers.series-2-volume-14", "work.nicene-and-post-nicene-fathers.series-2-volume-6"]
+canonical_ids = ["edition.ante-nicene-fathers.volume-3.buffalo-1885", "edition.ante-nicene-fathers.volume-4.buffalo-1885", "edition.ante-nicene-fathers.volume-6.buffalo-1886", "edition.nicene-and-post-nicene-fathers.series-1-volume-1.new-york-1886", "edition.nicene-and-post-nicene-fathers.series-2-volume-1.new-york-1890", "edition.nicene-and-post-nicene-fathers.series-2-volume-11.edinburgh-1894", "edition.nicene-and-post-nicene-fathers.series-2-volume-14.new-york-1900", "edition.nicene-and-post-nicene-fathers.series-2-volume-6.new-york-1893", "work.ante-nicene-fathers.volume-3", "work.ante-nicene-fathers.volume-4", "work.ante-nicene-fathers.volume-6", "work.nicene-and-post-nicene-fathers.series-1-volume-1", "work.nicene-and-post-nicene-fathers.series-2-volume-1", "work.nicene-and-post-nicene-fathers.series-2-volume-11", "work.nicene-and-post-nicene-fathers.series-2-volume-14", "work.nicene-and-post-nicene-fathers.series-2-volume-6"]
 trace_patterns = ["Ante-Nicene Fathers", "Nicene and Post-Nicene Fathers", "\\b(?:ANF|NPNF)\\b"]
 reviewed_on = "2026-07-25"
-notes = "Treat ANF and NPNF as identified public-domain translation series and map each constituent work and volume; New Advent and other hosts are delivery routes, not identities. The series now owns catalog-level container work and edition records for ANF volume 3 (Tertullian's apologetic, anti-Marcionite, and ethical works), volume 4 (Tertullian's ascetic and disciplinary works with Minucius Felix, Commodian, and Origen), volume 6 (Gregory Thaumaturgus through Arnobius, Buffalo 1886), NPNF first series volume 1 (Augustine's Confessions and selected letters in the Pilkington and Cunningham translations, New York 1886), NPNF second series volume 6 (Jerome's letters and select works, New York 1893), and NPNF second series volume 14 (Percival's edition of the canons, definitions, and selected acts of the seven ecumenical councils, New York 1900), all registered without exact artifacts, so those members stop at edition-locus support while other legacy series citations differ, leaving the ceiling mixed. ANF volume 1 and its Justin and Irenaeus constituents stay owned by their separate bounded families, and the constituent works and translated editions printed within the registered containers remain unregistered. NPNF second series volume 1 (Eusebius's Church History in McGiffert's annotated translation with Richardson's Constantinian works, New York 1890) now joins the registered containers on the same catalog-level basis without an exact artifact; its Eusebian constituent works and translated editions remain unregistered."
+notes = "Treat ANF and NPNF as identified public-domain translation series and map each constituent work and volume; New Advent and other hosts are delivery routes, not identities. The series now owns catalog-level container work and edition records for ANF volume 3 (Tertullian's apologetic, anti-Marcionite, and ethical works), volume 4 (Tertullian's ascetic and disciplinary works with Minucius Felix, Commodian, and Origen), volume 6 (Gregory Thaumaturgus through Arnobius, Buffalo 1886), NPNF first series volume 1 (Augustine's Confessions and selected letters in the Pilkington and Cunningham translations, New York 1886), NPNF second series volume 6 (Jerome's letters and select works, New York 1893), and NPNF second series volume 14 (Percival's edition of the canons, definitions, and selected acts of the seven ecumenical councils, New York 1900), all registered without exact artifacts, so those members stop at edition-locus support while other legacy series citations differ, leaving the ceiling mixed. ANF volume 1 and its Justin and Irenaeus constituents stay owned by their separate bounded families, and the constituent works and translated editions printed within the registered containers remain unregistered. NPNF second series volume 1 (Eusebius's Church History in McGiffert's annotated translation with Richardson's Constantinian works, New York 1890) now joins the registered containers on the same catalog-level basis without an exact artifact; its Eusebian constituent works and translated editions remain unregistered. NPNF second series volume 11 (Sulpitius Severus, the Commonitory of Vincent of Lerins, and the works of John Cassian, Edinburgh: T. and T. Clark with the Christian Literature Company, New York, 1894) likewise joins the registered containers on the same catalog-level basis without an exact artifact, per the same container precedent; Vincent's Commonitory, Cassian's works, and the Roberts, Heurtley, and Gibson translations printed inside that volume remain unregistered constituent works, and Gibson's editorial introduction is cited as the volume editor's own reported witness."
 
 [[families]]
 id = "family.paul-vi.marialis-cultus"
@@ -689,6 +889,26 @@ canonical_ids = ["edition.pius-v.consueverunt-romani-pontifices.english-papal-en
 trace_patterns = ["(?:Consueverunt Romani|consueverunt-romani)"]
 reviewed_on = "2026-07-25"
 notes = "Pius V's bull of 17 September 1569, describing the Rosary or Psalter of the Blessed Virgin Mary as one hundred and fifty angelic salutations with the Lord's Prayer at each decade and meditation on the whole life of Christ, attributing its propagation to St. Dominic, and confirming indults and indulgences, owns its catalog-level work and the dated 2026-07-25 Papal Encyclicals Online English delivery. That witness is partial: the concluding grant is summarized in an editorial bracket rather than translated, the translator is unnamed with unresolved modern-translation rights, and the text carries a visible corruption, so consumers quote it only in short attributed clauses within ordinary scholarly limits. The public-domain Latin original in the Magnum Bullarium Romanum remains unregistered and the bull has no numbered-paragraph locus system, so consumers record the passage cited; the family stays per-work per the ledger's precedent for independent papal acts."
+
+[[families]]
+id = "family.pius-xii.deiparae-virginis-mariae"
+label = "Pius XII, Deiparae Virginis Mariae"
+kind = "work"
+source_categories = ["magisterial"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "expression", "language"]
+artifact_availability = "candidate-complete"
+storage_plan = ["restricted"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "edition-locus"
+disposition = "canonicalize"
+priority = "p2"
+canonical_ids = ["edition.pius-xii.deiparae-virginis-mariae.english-vatican-web-2026-07-25", "work.pius-xii.deiparae-virginis-mariae"]
+trace_patterns = ["(?:Deiparae Virginis Mariae|deiparae-virginis-mariae)"]
+reviewed_on = "2026-07-25"
+notes = "Pius XII's letter of 1 May 1946 asking the bishops of the world whether the bodily Assumption of the Blessed Virgin Mary could be proposed and defined as a dogma of faith, and whether they and their clergy and people desired it, owns its catalog-level work in five numbered paragraphs and the dated 2026-07-25 Vatican English web state, whose editorial footnote records the letter's reserved circulation and its later publication in the Acta Apostolicae Sedis. The family stays per-work beside family.pius-xii.munificentissimus-deus rather than joining it or any shared Marian-dogma family: the 1946 consultation and the 1950 definition are distinct acts of different genres four years apart, with distinct witnesses and locus systems, and the ledger's other papal Marian families (family.pius-ix.ineffabilis-deus, family.pius-xii.ingruentium-malorum, family.pius-xii.munificentissimus-deus) are all per-work on the precedent that each act is an independent intellectual work with its own witnesses and rights profile. The Latin original, the 1946 Il Monitore Ecclesiastico printing, and the AAS 42 (1950) text remain unregistered, no exact artifact is registered, and any capture of the copyrighted Vatican page would be stored restricted, so evidence stops at edition and paragraph loci."
 
 [[families]]
 id = "family.pius-xii.ingruentium-malorum"
@@ -1072,7 +1292,7 @@ notes = "This corpus-plan owns papal acts announcing, opening, closing, implemen
 
 [[review_units]]
 owner_id = "articles/canon-law/clerical-celibacy-chastity-and-continence"
-surface_snapshot = "sha256:0c9c1a122b15674dfbf65ef34dd7d3a1a32be27f5fb4ebe01edcea468714a6a3"
+surface_snapshot = "sha256:8231161b8b53d3f108b0927c83c9e01bb7a4f02358817e1ff57d6b46637cf5d5"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -1105,7 +1325,7 @@ record_paths = ["src/gpt/articles/canon-law/clerical-celibacy-chastity-and-conti
 
 [[review_units]]
 owner_id = "articles/canon-law/natural-positive-divine-human-law"
-surface_snapshot = "sha256:5783fa99b5d338f8ff66cb18ed555a30002e75584fe4349095a76c259cf2e3a7"
+surface_snapshot = "sha256:d0e6909bf5894cdb2dd5d2e05abc83de4810c30305ad2202237b6194d7a89d43"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -1146,12 +1366,12 @@ record_paths = ["src/gpt/articles/canon-law/natural-positive-divine-human-law/re
 
 [[review_units]]
 owner_id = "articles/faith/against-the-instrumentalists"
-surface_snapshot = "sha256:b0ed41ae3f88c4b270c593ad150046e5410c18c999ba53782baf23d4e6309e27"
+surface_snapshot = "sha256:1785f957a0d2dedf9cd903a4a7094eba3a5b21ad96f25aa10cf69d74046467df"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/at-the-end-of-every-why"
-surface_snapshot = "sha256:a7a6d1bf64ab6ca7de97df7dbbd17c8285df5360277fcbb0916aaf633729a7c5"
+surface_snapshot = "sha256:71bb2e8ea312396d99bceec651ba1a0e12708d9d233544ab8ae7fee1b5fc7633"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
@@ -1172,7 +1392,7 @@ record_paths = ["src/gpt/articles/faith/at-the-end-of-every-why/sections/99-refe
 
 [[review_units]]
 owner_id = "articles/faith/council-missal-and-crisis"
-surface_snapshot = "sha256:61d37324c6c62aad5c338f6574dab932a1d111dd26a8e82e87e5ae52d99d8749"
+surface_snapshot = "sha256:384a897726a0b7a627c587fef474fa3565d2009102e0b66c463fd585509163df"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -1225,27 +1445,27 @@ record_paths = ["src/gpt/articles/faith/council-missal-and-crisis/research/conci
 
 [[review_units]]
 owner_id = "articles/faith/four-last-things-01-death"
-surface_snapshot = "sha256:b31480f58f483551fc61a872a178dc094963f0d680c836e5d8556be5db2f00a7"
+surface_snapshot = "sha256:0655a0d1e42d7a98b16df8157edc09bd1fd949e0c57be5bc56e02c1ab211c211"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/four-last-things-02-judgment"
-surface_snapshot = "sha256:7f2ea080bd39fb45464c725cb07d5dec3412040a51158d60936921b6adb021fc"
+surface_snapshot = "sha256:32b5c4a359cf053e5ae0c084ce9cd40c7d9109b3280b8ffbf7e284bb6a5671c0"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/four-last-things-03-hell"
-surface_snapshot = "sha256:f662d0d0364626b7f98f1f20637b7041626eae1991f15d5d06a2fd5da0ade651"
+surface_snapshot = "sha256:fd9205c837e7b35dd694688f2a6b6bdc033f0d430b094e4687931a2231eb9950"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/four-last-things-04-heaven"
-surface_snapshot = "sha256:eb87c9b9168b4c1a06c8816967665c51e39b82868c78afaf198f8813b2204604"
+surface_snapshot = "sha256:583d2f7bd4d751e2ff3e5a4c5132ff808934c5e8fbd18d0790f6674bab0e4b28"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/freemasonry-and-the-catholic-church"
-surface_snapshot = "sha256:4d1c3c20b6352b8cb07817dadb74067318829e1183be994ca4ddfe2aa4e5d068"
+surface_snapshot = "sha256:999a82280b6f08b6321447162385577eb33ab058b40768370b645ce88e6e4399"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -1282,12 +1502,12 @@ record_paths = ["src/gpt/articles/faith/freemasonry-and-the-catholic-church/rese
 
 [[review_units]]
 owner_id = "articles/faith/in-support-of-the-particular"
-surface_snapshot = "sha256:4a32be5bb1a96dab2cbab985615f885982ebbd1a662cfcee91197e10d9703170"
+surface_snapshot = "sha256:239803cbdca7dab9953ad7dfdc38542d13ddcb8a34cf4dea6b066f80c4efdd95"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "articles/faith/ontological-vertigo"
-surface_snapshot = "sha256:142f8c6671f04d8809a24a97fff7670990c9754b4cc2f4ec4a64811fc41c9ea0"
+surface_snapshot = "sha256:aa7f49fc884fd34cf0f487b67dc303a278176360d5f4cf27e8c8689ac65002ac"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1304,7 +1524,7 @@ record_paths = ["src/gpt/articles/faith/ontological-vertigo/sections/99-referenc
 
 [[review_units]]
 owner_id = "articles/faith/the-due-return"
-surface_snapshot = "sha256:29a454df094afa6e1c1510de8de68854b886fb709df68b403eb06f06fd5d6ba5"
+surface_snapshot = "sha256:40ff7c432f5b74bb5fff435e0899c6a32d7e0cdb966ee4ba2eb34b2043859ede"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
@@ -1349,7 +1569,7 @@ record_paths = ["src/gpt/articles/faith/the-due-return/research/source-audit.md"
 
 [[review_units]]
 owner_id = "articles/faith/trustful-surrender-to-divine-providence"
-surface_snapshot = "sha256:7b22203537b1bba805381da7cfcd64757e9c96c368f9ff5a5afba8ea739bea59"
+surface_snapshot = "sha256:e49e7556d00c75d1a7ca3760e057805a4305d79185eaf10cff70b84346334712"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -1374,7 +1594,7 @@ record_paths = ["src/gpt/articles/faith/trustful-surrender-to-divine-providence/
 
 [[review_units]]
 owner_id = "biographies/origen"
-surface_snapshot = "sha256:c28eb45ec194baf08b97774266572e8eaf4ce0e37ea023dc3b340986c4fbe1a7"
+surface_snapshot = "sha256:14d1ec116079c2ec07ca3ab1337823f4f002c088b0afefe30466a11524b3ea9a"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1387,7 +1607,7 @@ record_paths = ["src/gpt/biographies/origen/research/source-audit.md"]
 
 [[review_units]]
 owner_id = "biographies/saint-augustine-of-hippo"
-surface_snapshot = "sha256:94a8159635644179849a660b90cbf24e08fdb2fca0d5e027d008710572078d1b"
+surface_snapshot = "sha256:18af4677ab316bd2a9f8d235c214b09727ec21479e29d76a9fccdb8feff94771"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -1396,7 +1616,7 @@ record_paths = ["src/gpt/biographies/saint-augustine-of-hippo/research/source-bi
 
 [[review_units]]
 owner_id = "biographies/saint-jerome"
-surface_snapshot = "sha256:cb3cac0965e92e60c7e532b5b9f55be5932467108ba746bcaa95995d6781d31a"
+surface_snapshot = "sha256:9d752d44a0ee28d12117bb6556a0a39ecbee653dc8d2623aecbacab397d8ca4d"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.patristics.anf-npnf-schaff"
@@ -1413,7 +1633,7 @@ record_paths = ["src/gpt/biographies/saint-jerome/research/source-audit.md"]
 
 [[review_units]]
 owner_id = "biographies/saint-paul"
-surface_snapshot = "sha256:318c51654ce4959c479f981bb55b8162ce5ca3b4c4e00374a4f7a4e71f71d4fb"
+surface_snapshot = "sha256:b83ee165d06d74d6129e2a4e375d04626c4c466844264fd59cf526c5d11139bd"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1430,7 +1650,7 @@ record_paths = ["src/gpt/biographies/saint-paul/research/source-audit.md"]
 
 [[review_units]]
 owner_id = "biographies/saint-peter"
-surface_snapshot = "sha256:78ccc1389745d06bd6d2e5710c05656cd852dd8023dc555eecd0fc210934ec27"
+surface_snapshot = "sha256:e7c0f0752350e754c85313a46fd9a9fef63b101436d02a30eb4db3c0246f12c2"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1447,7 +1667,7 @@ record_paths = ["src/gpt/biographies/saint-peter/research/source-audit.md"]
 
 [[review_units]]
 owner_id = "biographies/saint-robert-bellarmine"
-surface_snapshot = "sha256:6458c512c04362c18d021fd2d34b23dea541ea3e3f876a6755b7b97a2f0d5c8b"
+surface_snapshot = "sha256:9f01ebd80789b11a7c685ac4a9542298cc2d1dd05377a469534978c6b48bd904"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -1464,7 +1684,7 @@ record_paths = ["src/gpt/biographies/saint-robert-bellarmine/sections/20-louvain
 
 [[review_units]]
 owner_id = "biographies/saint-thomas-aquinas"
-surface_snapshot = "sha256:d4bfe2a1d06ba03bb9772ae07b98fd1522534ae1d53d1aba9afe38970c2d8471"
+surface_snapshot = "sha256:8ab1b303702f3d8c8b84afb9873659b1d026fe0b742a682a898405605367bfd8"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1485,7 +1705,7 @@ record_paths = ["src/gpt/biographies/saint-thomas-aquinas/research/source-audit.
 
 [[review_units]]
 owner_id = "biographies/tertullian"
-surface_snapshot = "sha256:11ce361aff857324ec0b880990dde74080607a8099716f6066baed45746ce64e"
+surface_snapshot = "sha256:29b8ebbaee5e8e100b72a9e16e0d91a475146e1816a70fd1e027ee9c01b697ea"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1498,7 +1718,7 @@ record_paths = ["src/gpt/biographies/tertullian/research/source-audit.md"]
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/00-course-guide"
-surface_snapshot = "sha256:fa9d02aa95bbdb33be6cd69e891686117ce82bac1e35e34b086ab491bb38f2f3"
+surface_snapshot = "sha256:7eab29937edb559c7af0e1a3aeec820ee945b3df23388ccc777537735a0130b2"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
@@ -1507,7 +1727,7 @@ record_paths = ["src/gpt/curriculums/ecclesiastical-latin/00-course-guide/main.t
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/00-memory-workbook"
-surface_snapshot = "sha256:b091ed677fccfbfac7ad34fa26c155fad6893dbc8ff1d8a472f87a8370c7b71f"
+surface_snapshot = "sha256:839911311d3b70ee89913169139fe3500cc4f1949b67816e3b41db75c4b240cb"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
@@ -1516,47 +1736,47 @@ record_paths = ["src/gpt/curriculums/ecclesiastical-latin/00-memory-workbook/mai
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/00-reference-grammar"
-surface_snapshot = "sha256:e2c8110d9214dcc7dc9b5dbf2a70c8b07ad44208302951871cc0747b31064392"
+surface_snapshot = "sha256:2f898971acf6a01d9c27370c0cdc09d1e4b12deae159f6a82255138ba6e8b86b"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement"
-surface_snapshot = "sha256:5311566edf827fe328aea1bdade54ca51e57ec1d7dd4876233d6912e9763e93f"
+surface_snapshot = "sha256:3534280375361b468d3eabc82302bdea4b1bcdfd0da5949f1d55f424eb22388e"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/01-foundations/02-noun-systems"
-surface_snapshot = "sha256:5369cc4b19275d84599930ec701c6873ee38f9053d5759d82be422d9da0ff293"
+surface_snapshot = "sha256:538021b0ee658abe2dfcaac9c971515b9edc98310ebbce2497cfebf218dd04fd"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/01-foundations/03-nouns-and-adjectives"
-surface_snapshot = "sha256:73a61171c15cc9f41b098352ca87d07c35b5fd7303676c2be7a8c916ad936f55"
+surface_snapshot = "sha256:4b4188647b0070591e57641fc97c914bd7dd5821eb5dfa35a43b1d8991255aba"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/01-foundations/04-being-and-present-action"
-surface_snapshot = "sha256:a001f59f3201c7d328389d6dea827444fdeb7459e83100a5a77a6794c807cb66"
+surface_snapshot = "sha256:f5dfba66d7325b7b8121f4693c23e9a9dbbdeb06a22d0ea732f7ce3da86a2128"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/01-foundations/05-perfect-passive-and-deponents"
-surface_snapshot = "sha256:7817bbc179062baad5c7aba7c6fed15d2d65d15d409fd3017b877c43d7f4b23d"
+surface_snapshot = "sha256:86168bdedafd63e901926828b713a946163a2daa66f29983441599c3d9b7a817"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/01-foundations/06-pronouns-prepositions-and-reading"
-surface_snapshot = "sha256:d69ecb454e1122ff5e21ba3f5aee625243fe0a810b377fc595ec859e20004ba4"
+surface_snapshot = "sha256:d883e5ba70049040b8eb6a0b19aea242357401533845834697565984cf08adee"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/02-core-grammar/07-reference-comparison-and-number"
-surface_snapshot = "sha256:d78126bce655f3cd59c05643fb398caec9e9524e87b13feaf546a28a06cc8682"
+surface_snapshot = "sha256:862018fd65ae8b7dd83a0f609df67c2c8890b623c53e851ccd044176b870af96"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/02-core-grammar/08-infinitives-participles-and-absolutes"
-surface_snapshot = "sha256:52be40de95444cd4af4c9724651d18b35033217b28a78eebd530224e2bdbd5b1"
+surface_snapshot = "sha256:799d74a9851858e2cc364c4b338e4fcbb5fbb620b7552a4a83eaee690690eee7"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.scripture.vulgata-clementina-hetzenauer-1914"
@@ -1565,57 +1785,57 @@ record_paths = ["src/gpt/curriculums/ecclesiastical-latin/02-core-grammar/08-inf
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/02-core-grammar/09-subjunctive-system-purpose-result"
-surface_snapshot = "sha256:c46f5076d7ee87e6402ab58f6daaca0f3e09afe12070326131a85f7e6374c892"
+surface_snapshot = "sha256:5b072e121477a8b57cd7861e5d48803e54ddcc189253b56ea0f8bf98acb7392f"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/02-core-grammar/10-circumstance-conditions-characteristic"
-surface_snapshot = "sha256:0c892dca555354daa3f46226ac569b40235a7e74f8c63abb0193e5df8b919d10"
+surface_snapshot = "sha256:65d94c0dea0a95b31e70fecb53820796c0bd78fad7f691aebb080780af549953"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/02-core-grammar/11-commands-wishes-verbal-nouns"
-surface_snapshot = "sha256:29f8e5e70f73d193672cba68efb1920362aa435af67e3153f1b9847cf8d548ea"
+surface_snapshot = "sha256:23c25efa95c5b14a7d9c5bf6b113e83b596d84016faaf6b9e7ce95d0241ab637"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-compression"
-surface_snapshot = "sha256:6a045b4947ca88c3c173303d367d1db869685730f428f35daa367f749cb90b43"
+surface_snapshot = "sha256:47afa460dc3743df49e9912da0115428895d32fd710aca012e6faded5df52ade"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/03-missal-reading/13-reader-method-and-ordinary"
-surface_snapshot = "sha256:3d7f83ad0cbeb2e30a2f32a46dc0fbe33b153ef07c51c233daff7fafd5b00627"
+surface_snapshot = "sha256:469c3e86f1105aca02325afd64b797023503c9eb67bb2f567c66e74cc9554530"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/03-missal-reading/14-orations-and-petitions"
-surface_snapshot = "sha256:e83bb3fdf31448913a4824686609741490598fc79720cb29bcf50c5fe758e949"
+surface_snapshot = "sha256:dacab9eeb5eb55e1124ab9373bcb1f6028fe9ee6a42fd59c82d5629c21615887"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/03-missal-reading/15-lessons-epistles-and-gospels"
-surface_snapshot = "sha256:fc1aaa299133ad8c62584ba449e13ced4dd1065e64f150a0edb09c7e5023175b"
+surface_snapshot = "sha256:0627a7f0f7cc81ebc217041145ab861bad26993bee103b9a13fba08ad14ba458"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/03-missal-reading/16-chants-prefaces-and-canon"
-surface_snapshot = "sha256:35a859735585ae2456e34f344c8e425e0684f99f7bed4b1a0cedd2d72585bd50"
+surface_snapshot = "sha256:b25e54ddae435096fd5ee577f4858ae3927253b5076f781afce4b6d610a8e81d"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/03-missal-reading/17-temporal-sanctoral-and-commons"
-surface_snapshot = "sha256:e44bdeb03372fe88390b125ee8baee66f61599116363cde6e61b1e92853f9251"
+surface_snapshot = "sha256:5e58a6cf3606ac3e86f2eb4406047057a269d27ea744a421be41bd56434b9da2"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/03-missal-reading/18-holy-week-requiem-and-complete-mass"
-surface_snapshot = "sha256:681ab872d71836da2da1b4e6054625cb08e95ee9e298980edd74caf5703a3575"
+surface_snapshot = "sha256:53a74cf28622aeb97b8ebd010eaa18784d6a82a08a2eacbddc96547205c26365"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-texture"
-surface_snapshot = "sha256:654797d935a7a77fd76337657e7bae6e9eb1c0ae1e497a0007463cb2c80c7d30"
+surface_snapshot = "sha256:628b91679660c1a43fe27c9a1339ab0a6f2ff9a922370550b5f7cc30a6f0c7ef"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
@@ -1632,12 +1852,12 @@ record_paths = ["src/gpt/curriculums/ecclesiastical-latin/04-advanced/19-registe
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/20-allusion-rhetoric-and-periodic-prose"
-surface_snapshot = "sha256:24566fc764b8572b994de491092ef52eda7f99b94f1a7be0fed6351c4e6e8145"
+surface_snapshot = "sha256:aa2c30e748db1b183229fcb2de0e1e022eb79712732b8caab494424409ce04c9"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/21-collation-and-controlled-imitation"
-surface_snapshot = "sha256:271d4c9a169011812fb6f9799b2545fb98b95cfe41ac006e6a721e50c57d0c14"
+surface_snapshot = "sha256:36c69b673600eaa1fdaaeb161370b2edd1f0b537c14422a09600fc68c12415d5"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.thomas-aquinas.summa-theologiae"
@@ -1646,7 +1866,7 @@ record_paths = ["src/gpt/curriculums/ecclesiastical-latin/04-advanced/21-collati
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-and-independent-research"
-surface_snapshot = "sha256:97e651afba832726c64e1f445d1c95bcbdbe6557bac749d2fe78bf14eff9e116"
+surface_snapshot = "sha256:001bfb03f177d9cfbdf9d74131373488abdd870a93702a371ed4d338de93555c"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.scripture.vulgata-clementina-hetzenauer-1914"
@@ -1659,62 +1879,62 @@ record_paths = ["src/gpt/curriculums/ecclesiastical-latin/04-advanced/22-guided-
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/01-textual-prosody"
-surface_snapshot = "sha256:b213d53bbd9f37a1ebaa7e186b2b9b85d8d5eda667045b43a0c7e58f7c77dc3b"
+surface_snapshot = "sha256:c6ba0592837ab07b863432551d605a519a2789353cd7c88f81ea1dd6ff73d76a"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/02-hexameter"
-surface_snapshot = "sha256:d9c634e55ccd8d40550ea0c894f873d934e625238d05d7a8f71c2ba6d45f1ba1"
+surface_snapshot = "sha256:fb142dacfbba3efde5960e920aef2b0d95c4cedd6fde5f4f0f7f8fd55f6e7f75"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/03-elegiac-verse"
-surface_snapshot = "sha256:752065199a5a9228f34f665e05da32ac5d318a8526639e02df7d461a627225c2"
+surface_snapshot = "sha256:cb34a46f182e84ab5792e3f7f95a1c04fa7433215b022c410b69535aea4bd899"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/04-lyric-meters"
-surface_snapshot = "sha256:fb825c275447bf36fa6e9e7032fc034be4518ef66f488b92095a3b4944c2d925"
+surface_snapshot = "sha256:c5d52cfb534319b4548dca4b7af47ed03772476322dd233e4981e2de02890661"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/05-christian-poetics"
-surface_snapshot = "sha256:30136f9e2c5aa3983ae02a2bce2079b799250548d79a661f908eb96131c1499a"
+surface_snapshot = "sha256:21828105955cf1cfcde20f5f17a9800dc7a179933ddb2ae215eba483a302579d"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/06-rhythmic-hymnody-and-sequences"
-surface_snapshot = "sha256:e3a13b23a9a6428628ac8d8e18dcb6a6c669800673eec43e940dce4357b4a8e4"
+surface_snapshot = "sha256:c6a8370dc706a0d71f7ec2b159ae4ad40de68feef97df8aa9a6d8d0430f3618d"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/07-poetic-commentary"
-surface_snapshot = "sha256:ba20dc9eaeeeb311459fdb3c1834543e01b7c646dbdbc71b1ab8bd6d03941537"
+surface_snapshot = "sha256:9f8c32d076cc047f8dd532eb6947fec7e004e452bda080b17a8355f5a0d05db8"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/04-advanced/poetry/08-verse-composition"
-surface_snapshot = "sha256:b817527cc199924885d1bd3bf31243a222497b9f8a2eda0635158140cf76e9e4"
+surface_snapshot = "sha256:5027c2936f5281ae319ccbbd982b0a4be61a0381197227c2390cc3624182076b"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/05-stage-assessments/01-foundations"
-surface_snapshot = "sha256:50e72e644bc4d3d9679586139ea937d36256404b1a7de131bcaa3f8b9e3fd4cf"
+surface_snapshot = "sha256:66cefe0d408f5a595ce34d7eda155f256c3e02628897a8ca7ee950411f5b2479"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/05-stage-assessments/02-core-grammar"
-surface_snapshot = "sha256:5410c6bed4b7d5d12a4b0a188fbf386619a1f67ab760cff6a95ce108ba41fef9"
+surface_snapshot = "sha256:f93d632c17855852e4a2a86163ccc2641df5c4959a3f7599210949056a1c0b65"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/05-stage-assessments/03-missal-reading"
-surface_snapshot = "sha256:a986f8cc276e4d7d5f96de3ffb9aadd28bcf9ff35c99bbc5cd20508339eb52cb"
+surface_snapshot = "sha256:05456f06e30f17764caa72ccaf71ad6fe2eecb332e5830193baa22fdbb64be3e"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced"
-surface_snapshot = "sha256:eecf641cd0c95b3a2ec39c76fe0172276af38400bc1a0555d3bc3c2527c72d81"
+surface_snapshot = "sha256:a50a62d9d4bb50665a60fba2fdb9a4ea55ed0ec2d861a6ff42fd996a6fd67a20"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.scripture.vulgata-clementina-hetzenauer-1914"
@@ -1727,7 +1947,7 @@ record_paths = ["src/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/0
 
 [[review_units]]
 owner_id = "devotions/novenas/00-ascension-to-pentecost"
-surface_snapshot = "sha256:bc644e36da68a6d3edbc6b38bb202b65e0a095fa12ef62b68197924ba845c54b"
+surface_snapshot = "sha256:508ee3b9720acbdadd1c3a2d25193c2d99b90be5956360480a42bf320aa5d8d5"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1752,7 +1972,7 @@ record_paths = ["src/gpt/devotions/novenas/00-ascension-to-pentecost/days/03-mar
 
 [[review_units]]
 owner_id = "devotions/novenas/00-ascension-to-pentecost-daily-prayer"
-surface_snapshot = "sha256:cf6ebc329135b426d7ffc64b424706c1020a3bfe04e7eac51c875a1c6b3a8567"
+surface_snapshot = "sha256:28042df10ee6532a84cb5c684c88ea24ce70f32d96996dc8fbf43e8f1e5e22c9"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
@@ -1761,7 +1981,7 @@ record_paths = ["src/gpt/devotions/novenas/00-ascension-to-pentecost-daily-praye
 
 [[review_units]]
 owner_id = "devotions/novenas/10-our-lady-of-mount-carmel"
-surface_snapshot = "sha256:f50bd2c8ab169408653ff8cddf6970056f7cbb053724b2c84cfa7729d9420053"
+surface_snapshot = "sha256:5c993f29163cbcfd2d126e6419e54e090d43885c8231078b281eba96972d9961"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -1786,7 +2006,7 @@ record_paths = ["src/gpt/devotions/novenas/10-our-lady-of-mount-carmel/research/
 
 [[review_units]]
 owner_id = "devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer"
-surface_snapshot = "sha256:064f8d4fc96ad141dfa8615022e77b00cfa413b831b1b15b29ccd16e9f1df735"
+surface_snapshot = "sha256:26f34060ae3ba5972270a2cf2dfe66851fd90501832541284d23152f011fbddc"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.third-edition-latin-us-english"
@@ -1795,7 +2015,7 @@ record_paths = ["src/gpt/devotions/novenas/10-our-lady-of-mount-carmel-daily-pra
 
 [[review_units]]
 owner_id = "history/biblical-translations/01-septuagint"
-surface_snapshot = "sha256:b8be3f75b97c1936bfa22f745bd85e0031e20afc659875cabe90b63d8d4b5084"
+surface_snapshot = "sha256:cc866b5cb0d56f692dcd05bab3f4f7d35649e1b279cf128c3e39a059437178ac"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -1808,7 +2028,7 @@ record_paths = ["src/gpt/history/biblical-translations/01-septuagint/research/so
 
 [[review_units]]
 owner_id = "history/biblical-translations/02-vulgate"
-surface_snapshot = "sha256:1a64bf8c866d9ac66678fc813f60133a8314557539f74918904c363511667449"
+surface_snapshot = "sha256:5d51cce53eff7d6aadf44333e3c0e66b3fc89ce3fdb002f1459dd1dbdbfde08b"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -1833,7 +2053,7 @@ record_paths = ["src/gpt/history/biblical-translations/02-vulgate/research/sourc
 
 [[review_units]]
 owner_id = "history/catholic-parish-histories/01-st-stanislaus-milwaukee"
-surface_snapshot = "sha256:531e770e752dbdf0de5fa8f10d49c3fc6451348bb6f7586386549de6ba9d686f"
+surface_snapshot = "sha256:c8f76e2532368730e73faebce81b20e97665493ed8ca23563612d343e7bee7e0"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
@@ -1846,12 +2066,12 @@ record_paths = ["src/gpt/history/catholic-parish-histories/01-st-stanislaus-milw
 
 [[review_units]]
 owner_id = "history/catholic-parish-histories/02-st-anthony-willits"
-surface_snapshot = "sha256:5b07e300a7b2fa2d6d15295a8d2344c63d7e56dea974374ae85e4e44cda6089f"
+surface_snapshot = "sha256:3b06e401f08a4e02ab8246eacd314b7f07c3cbae124fa508cf01af4ffc98f195"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "history/traditional-priestly-institutes/01-sspx"
-surface_snapshot = "sha256:9b7fb76baeef0d947bf7f4b963cd02ae3fd45bd745c4d9f1db09fd4e515d48fb"
+surface_snapshot = "sha256:af0996dff11584171181f9b30ce1773c2402da60963c0d90de50e01dbd48c23b"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.holy-see.cic-1917"
@@ -1872,7 +2092,7 @@ record_paths = ["src/gpt/history/traditional-priestly-institutes/01-sspx/researc
 
 [[review_units]]
 owner_id = "history/traditional-priestly-institutes/02-fssp"
-surface_snapshot = "sha256:e440c73066439a905aa4b6606f57ef7cbe260f875c2d065c61a99b8d4cec4b32"
+surface_snapshot = "sha256:4603602bf73e0cfe39c95fc689a04a27d5dee4757872407e77651efc221ba56d"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -1893,7 +2113,7 @@ record_paths = ["src/gpt/history/traditional-priestly-institutes/02-fssp/researc
 
 [[review_units]]
 owner_id = "history/traditional-priestly-institutes/03-icksp"
-surface_snapshot = "sha256:fd36923e092b137e4b9ac1cbd79718e2f9ec2f1e0df853870a153b282c725f61"
+surface_snapshot = "sha256:f73ca4273faedf399d96099529c69bbfd5c4446f14dc2e80e10a2b47d741bc10"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -1914,7 +2134,7 @@ record_paths = ["src/gpt/history/traditional-priestly-institutes/03-icksp/sectio
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"
-surface_snapshot = "sha256:83fee756a11c1938117d76203e7b9842fca3fbd6d2847d902f418cdda3281aec"
+surface_snapshot = "sha256:3d96dd57c7c4e9ee70278e8b27f4dbd49e19a8eeda1888ca29396b6893a65504"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -1963,7 +2183,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mas
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass"
-surface_snapshot = "sha256:9c317f154637f5fc2f8e48797d6d80b80a635c490bcd67e2fab0027002c85972"
+surface_snapshot = "sha256:28d83c7e89c0dec5b04d32f6de023606f847e2653e7ddb77e413ad8ab332c047"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -2004,7 +2224,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday"
-surface_snapshot = "sha256:1690ed5c568f7a957ce368f2c7b87088822d36e4ce38c608be5f16bf09a88a9d"
+surface_snapshot = "sha256:2b8e15958e2804cb37f14a40e890312ede7fac9b24fb6f611c4f27448ce4a26d"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -2021,7 +2241,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/15-trinity-sun
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost"
-surface_snapshot = "sha256:fba9ef3501c22b1a18bac3717d2f2bb9f8e2d35156d11038b3f949638ff925d9"
+surface_snapshot = "sha256:639f1c1ed35f3358e0ed31f22a2acb8d72fc29f3bdab72359b6452f2f5b1953b"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -2042,7 +2262,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/16-second-afte
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost"
-surface_snapshot = "sha256:8d570faf476c53f9f6dae49174126b7fab31fd4693c8fdc3825ec8cbb6499561"
+surface_snapshot = "sha256:0ef603526849b27faeef7c4b2225abff1aea97171fcdbe1448c81142c5eb44d4"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
@@ -2055,7 +2275,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/17-third-after
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost"
-surface_snapshot = "sha256:4275f4f7211f4a0b0602bb55d6f82e3a7426797a30cd6ddaed863dbccfd54996"
+surface_snapshot = "sha256:13ab747c6e5555e7eecc2caff89f0fd6c96e5713cf60d93f0212fb62fb18336d"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -2076,7 +2296,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/18-fourth-afte
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost"
-surface_snapshot = "sha256:186b57c37f8ba1b449fb2ed7ebeabcc0ba8861529b29b4fb9a89d2e906622c76"
+surface_snapshot = "sha256:14370fc2d0ca80400361979dc9d6b082d1ad9a96fbea979622e0b01a6fd51e0b"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -2093,7 +2313,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/19-fifth-after
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost"
-surface_snapshot = "sha256:a2b8dd2f1d5371a37474b45fed8dfa4d204f0aa0f6b2541b748427ac037fffa9"
+surface_snapshot = "sha256:01826865c6ab340c649773492c25ee9a492eb53f3d33ac113369c9864f80cedd"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
@@ -2106,7 +2326,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/20-sixth-after
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost"
-surface_snapshot = "sha256:1f9e55cfe8d799ccc52af5159168adf1313c1ff8d1a9e6729a306878dbe034b3"
+surface_snapshot = "sha256:08cbf0bb226ece880569f307824d3505da07142a360a37d56eee0de7a18b48a7"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -2135,7 +2355,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/21-seventh-aft
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"
-surface_snapshot = "sha256:f1c3705b24d1e034ba4e0a5d16bf8e93e43564c8f19f7f979d96f66ef1056310"
+surface_snapshot = "sha256:4aed8c0122095ced795dcd25fc8f0c0718daab1754ac02a3c33739d578f7428a"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -2164,7 +2384,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/22-eighth-afte
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"
-surface_snapshot = "sha256:83792a342e89518ff8cc34ed9b275148710ff2ea5e243d893a2b16cd2bc8b941"
+surface_snapshot = "sha256:0191de11e7700ec942d12548757f8a1395fd12068ac0bfdc6f5829f7c0a1a63a"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -2193,42 +2413,42 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass"
-surface_snapshot = "sha256:05efc84d9f29012ae3b70bb685e2605ccafbfe4c33bf43023c60e35bdc226b95"
+surface_snapshot = "sha256:d574bfd81f8abd75bef00c14a81807f2619400af41092d1f1b35e04675823b8b"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards"
-surface_snapshot = "sha256:df537143cbab9697d183cf709c3fd3177ba5aa5a96f7de6d0aa7ad270bad430b"
+surface_snapshot = "sha256:565bff29e4a21a2abaf1a18b3ef433b8b82a8e323054cf3725f4edd959818ced"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual"
-surface_snapshot = "sha256:419f29eb56d135f1de4c2591f2252211556bc92fe7b5750ae6c857faf748c9bc"
+surface_snapshot = "sha256:0073ced07138e269b43745a063656b15380698d997aad775abdafb733f287af6"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata"
-surface_snapshot = "sha256:1992e6fa0e6e053fcad9b75f72a03d592cee419a6a9a831cd1554b9069fd0a24"
+surface_snapshot = "sha256:f341b182aa2bf23282a70e72107d04d4c4155b99f3e2009609c8707a914e54df"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards"
-surface_snapshot = "sha256:bec4cb49b6ceb46fddb33d64f32a72747000cb6d7d98eca4abe7f13faf861052"
+surface_snapshot = "sha256:854800465a8601d27191f99166f1e1b521de7eb4eab25c58c34a07b2134d940b"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass"
-surface_snapshot = "sha256:f5a52fc595a5159ae30a9f1a81a3703b13f2024f8d5323bbdf794110a8c80dd6"
+surface_snapshot = "sha256:a90e32f043e1adc0b2881066699a2b107e450241c7d2ede59767799c442561d6"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards"
-surface_snapshot = "sha256:db760fe83d30286e2253f62904eef784012e1acfcdc376eccfb1a09d399c802a"
+surface_snapshot = "sha256:d67a885b293d190be4b1bccce496ff10f0757e140b51e97e25890e57bf76208b"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/assembling-the-mass"
-surface_snapshot = "sha256:e4f63fcf9834549cde31d90654f55fb405afb18df76877301a8d8b7216bd6a28"
+surface_snapshot = "sha256:d6f001c0096b29fd680953eb152e974d88c0883252ea82895e1eebf5e2414466"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -2241,7 +2461,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass/r
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/liturgical-calendar"
-surface_snapshot = "sha256:a502cd53173b937e6c34bf9c04233afbbb8b5925191617ded266b61d42c935cf"
+surface_snapshot = "sha256:bb3e3a2a5260e34fcde47159544d4d9d8abd7bba615d7f83a27853ae66d1b2e8"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -2258,7 +2478,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar/s
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/comparative/two-missals-one-sacrifice"
-surface_snapshot = "sha256:83df10e6b1e22ef03e9362dae6ef83706aa0c1468ff32cf8cea9183448a817f1"
+surface_snapshot = "sha256:4781ef2832e33de74d98bb97d5503d938360d84cf36bf73c1769fb467cba98a5"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -2295,7 +2515,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrific
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"
-surface_snapshot = "sha256:8a9064f9af2d88e17753c475ffac1ef483bdc2436d13cea42698eb8ec0f6e10a"
+surface_snapshot = "sha256:595285485984d546ba374a0abecea8d0e1a4eb19f754ccfb081036e17f8e0ca5"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
@@ -2348,7 +2568,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-eng
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s35-eleventh-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:55e819d7c3068f436117b4d2f5e2d76ac7cc1aae3392f555a6f97ced75bb1256"
+surface_snapshot = "sha256:637aa5b869a2309925164cb85b87105b254664ce681e87f3cb16bc3591dba4a2"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -2377,7 +2597,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s36-twelfth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:8d4c2c57c5c72ab4f121a7a8c3103911f9cb326eb68515cded146437caf39b38"
+surface_snapshot = "sha256:b52e838100a96a8068375de70a62b20e4918a4b4606b5c3bddb1f2acf408c8eb"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -2406,7 +2626,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-thirteenth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:b09521a452bd7bf7d8d36c01a04c3726dc7ef91d46479e60856f729da02ded98"
+surface_snapshot = "sha256:e70e90191765ea8444f2d5e82d08d08a4669ea58932c7f358a31a455cf601a83"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -2435,7 +2655,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-fourteenth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:c9bd5caaf26300e47c553f0b277d3ffc11a99cf56aa31b3caf4f90163bf11750"
+surface_snapshot = "sha256:f1c1d03e3eb2ab48ffde6f2e1212fea4ebd4adf20e84dde0b94c1dec23fc058e"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -2460,7 +2680,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-fifteenth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:9845a30cdbaf9ad9d3b599387218b189aa537290f01c1708365129dcb25641c3"
+surface_snapshot = "sha256:98d460145b9428f3f6ada00f076b4fffbcdf63dfb58367691b589ae17d254014"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -2485,7 +2705,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:2842067dbb9564d2cf403d33db7831c65dd08555107145203f9b27cd28e16bb8"
+surface_snapshot = "sha256:8f5637431abd45f3345f37f260960f31707183478864d81f5894e263f10c459c"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -2514,7 +2734,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:f4320b713f5b53f99e26232ce9573eaa96d7c36ff654f503334b8a85243acbb0"
+surface_snapshot = "sha256:775859e8e836b7e2483d28b6f08b9f59e94b5b8c04cc8d082d14f536eb1f3ad6"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -2543,7 +2763,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a"
-surface_snapshot = "sha256:495377d555378e2b2f6841e83f204139b8d2fb6105b3ef4d07e87cc09f717530"
+surface_snapshot = "sha256:b859b12501cb38d38f492c79ec8db149ea447a93f4a2b6cb2fa3901bf56ffa40"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
@@ -2576,7 +2796,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s59-most-holy-body-and-blood-of-christ-year-a"
-surface_snapshot = "sha256:780309a06b3af4444cf61f72469a92ca8ebc4af86f6d474a26cf68e0040de6e9"
+surface_snapshot = "sha256:28b0565715cdc4afe8a796b85235411e63e9fa70311aaba5c7bfb283bd01db68"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -2601,7 +2821,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edi
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"
-surface_snapshot = "sha256:dbccfcc43615a243977c928899840022df11c32e0c900e254f11f7dbbc93bfe7"
+surface_snapshot = "sha256:1a8f0c8905ff12dfb49d0895b81c49b28bc1ffacf999cc75e7471e05f321d792"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
@@ -2700,7 +2920,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "theology/heresies/heresies-in-catholic-history"
-surface_snapshot = "sha256:407baa274dd19c4f74f0f89e173947f52b1978be3513e6d6f1678ed48c40692b"
+surface_snapshot = "sha256:343a8458a5614b557b68f91b660a12ecb565b0e108a82dd7671cf34ccdf4ca81"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -2737,7 +2957,7 @@ record_paths = ["src/gpt/theology/heresies/heresies-in-catholic-history/research
 
 [[review_units]]
 owner_id = "theology/mariology/angelus"
-surface_snapshot = "sha256:c947bd334e5729ccb5b4f8f08f2a0261b417381f478501cdee5adb11412c12fb"
+surface_snapshot = "sha256:5314f00978adf709159b53afa82f7202d94b6ffc4258f5e8af7e139abd88e858"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -2754,7 +2974,7 @@ record_paths = ["src/gpt/theology/mariology/angelus/research/source-audit.md"]
 
 [[review_units]]
 owner_id = "theology/mariology/apparitions"
-surface_snapshot = "sha256:f7701220d9cb998687284ed63def43b2fb7bd0da8b7e8e6c718508cc2cb2fb8c"
+surface_snapshot = "sha256:6dc68f71abfb0e29d58ac0baef1604abc5db03481a757743eb74d30ac5c04be3"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -2771,7 +2991,7 @@ record_paths = ["src/gpt/theology/mariology/apparitions/research/source-audit.md
 
 [[review_units]]
 owner_id = "theology/mariology/champion"
-surface_snapshot = "sha256:c3e82133d5ba957d7ff439fe22fd6928723e40572865cda9f6fbc575c4a34db1"
+surface_snapshot = "sha256:9dd5cf012248d2ed537bc78e4df57ba12abfc7cba457fc47fef88b81340644ff"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -2788,7 +3008,7 @@ record_paths = ["src/gpt/theology/mariology/champion/research/source-audit.md"]
 
 [[review_units]]
 owner_id = "theology/mariology/fatima"
-surface_snapshot = "sha256:d6ccc8c8e3932441b400b5d4d571a376e1e515cef3e8361553ce8cb80fe86cd1"
+surface_snapshot = "sha256:db158c57b59912c7a8e41cf05516d163d26a5196ea465ec6ba73fb084cf7d32e"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -2801,7 +3021,7 @@ record_paths = ["src/gpt/theology/mariology/fatima/research/source-audit.md"]
 
 [[review_units]]
 owner_id = "theology/mariology/guadalupe"
-surface_snapshot = "sha256:b7f0ac917b8eccc4ce3e2ae65fd5056a17c8320b29eb69509820238e7897e3b2"
+surface_snapshot = "sha256:cd29aa7430a9b66833e76991be29065783f89d83191f6ac990d18ecf9c0a782d"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -2814,7 +3034,7 @@ record_paths = ["src/gpt/theology/mariology/guadalupe/research/source-audit.md"]
 
 [[review_units]]
 owner_id = "theology/mariology/la-salette"
-surface_snapshot = "sha256:f1a526bb8bf7fd82994f373683c855e54aa5ee6a71f45eb12c1af9ec1412a079"
+surface_snapshot = "sha256:cb18c25c0ad841797420e090f3f30f90f7d2e1bf09e3c9be987884268031a022"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -2843,7 +3063,7 @@ record_paths = ["src/gpt/theology/mariology/la-salette/research/source-audit.md"
 
 [[review_units]]
 owner_id = "theology/mariology/lourdes"
-surface_snapshot = "sha256:61183d0cf2c7ea946c1338bb475512831e08c033fc73d1a3104b94910a2bdc59"
+surface_snapshot = "sha256:649e83d93d1d62ab1a67625d6ed146bced0ca42c316c5a723a59f416d43f5b79"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -2856,7 +3076,7 @@ record_paths = ["src/gpt/theology/mariology/lourdes/research/source-audit.md"]
 
 [[review_units]]
 owner_id = "theology/mariology/marian-dogmas"
-surface_snapshot = "sha256:3f5106f6500b571e2cf092f4045e2baff46190e1b2edf19fc67b7fd137fd0c24"
+surface_snapshot = "sha256:0f06051840dcfe154cd14165fa63da82692c93baa7e8973cc5a5bdac4cc5ea82"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -2881,7 +3101,7 @@ record_paths = ["src/gpt/theology/mariology/marian-dogmas/research/source-audit.
 
 [[review_units]]
 owner_id = "theology/mariology/regina-coeli"
-surface_snapshot = "sha256:67f1c7ebc819bf34832318e3775a553328e04bb0a96653fbe6756adbf03c4db3"
+surface_snapshot = "sha256:6eb1543188631950a318ca175cec5b856039cfea452ae75695e5dfb40bd3aac7"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.acta.aas-ass"
@@ -2902,7 +3122,7 @@ record_paths = ["src/gpt/theology/mariology/regina-coeli/research/source-audit.m
 
 [[review_units]]
 owner_id = "theology/mariology/rosary"
-surface_snapshot = "sha256:91d4f321b4a8dc748b040e8ffc54678106807da83d33bfeb26810d4ec3fa29e3"
+surface_snapshot = "sha256:c03c662e45e5194a65a23fc0424302b48a5cef6aecfe720f2eeceb7e1c10daed"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
@@ -2927,7 +3147,7 @@ record_paths = ["src/gpt/theology/mariology/rosary/research/source-audit.md"]
 
 [[review_units]]
 owner_id = "theology/sacraments"
-surface_snapshot = "sha256:ef3aed8862b75af7e8eebbc4b0bc96aa64c9a5cfd21d1fccbdafd63dda46ee3e"
+surface_snapshot = "sha256:c419c43cae75d7c78a5ed8498ddd2433ef578e634cbea98f45b59282ed97b0d2"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
@@ -2976,7 +3196,7 @@ record_paths = ["src/gpt/theology/sacraments/research/scope.md", "src/gpt/theolo
 
 [[review_units]]
 owner_id = "theology/sacraments-at-a-glance"
-surface_snapshot = "sha256:e07528c146b49909724504a6787043d1079d3aa677a2007499e99f0f191528c7"
+surface_snapshot = "sha256:77df8a47d7d25ff1c4c844220ab9c5a98ff65ea3b7678a1f498dc0265b114a9a"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
@@ -2997,7 +3217,7 @@ record_paths = ["src/gpt/theology/sacraments-at-a-glance/research/source-binding
 
 [[review_units]]
 owner_id = "theology/virtues"
-surface_snapshot = "sha256:228c15dc5effb6c3229c0d6256a3d49c2f2a89517e8059b0dcf5f3534eef2cfd"
+surface_snapshot = "sha256:89b8c454488f82758b337a53429157aeb1d4753e9b5b4411c5c220e96013fa70"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.augustine.de-civitate-dei"
