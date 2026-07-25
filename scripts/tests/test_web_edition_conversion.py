@@ -122,10 +122,16 @@ class WebEditionConversionTests(unittest.TestCase):
         self.assertRegex(markdown, r"(?m)^\|(?:[ :]*-{2,}[ :]*\|)+\s*$")
         self.assertRegex(markdown, r"(?m)^\| A +\| Contemporary record +\|$")
 
-    def test_heading_carries_no_attribute_braces(self) -> None:
-        markdown = self.convert("\\subsection*{Unnumbered head}\nProse.\n")
-        self.assertIn("### Unnumbered head\n", markdown)
-        self.assertNotIn("{#", markdown)
+    def test_labelled_heading_keeps_the_anchor_its_references_use(self) -> None:
+        markdown = self.convert(
+            "\\subsection{Method}\\label{sec:method}\n"
+            r"See section~\ref{sec:method} and \ref{sec:missing}."
+            "\n"
+        )
+        self.assertIn("### Method {#sec:method}", markdown)
+        self.assertIn("[1.1](#sec:method)", markdown)
+        # A reference no heading anchors keeps its text and loses its link.
+        self.assertNotIn("(#sec:missing)", markdown)
 
     def test_description_labels_and_spacing_macros_survive(self) -> None:
         markdown = self.convert(
