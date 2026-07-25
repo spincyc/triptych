@@ -1,0 +1,55 @@
+\input{common/preamble}
+\input{biographies/shared/biography-format}
+
+\hypersetup{
+  pdftitle={Saint Thomas Aquinas: The Common Doctor},
+  pdfsubject={A source-first historical biography of Saint Thomas Aquinas}
+}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+  \thispagestyle{empty}
+  \centering
+  \vspace*{0.12\textheight}
+  {\Huge\bfseries Saint Thomas Aquinas\par}
+  \vspace{0.9em}
+  {\Large The Common Doctor\par}
+  \vspace{1.6em}
+  {\large A source-first historical biography\par}
+  \vfill
+  {\small Triptych: AI Driven Studies in Catholic Faith, Worship, and Law\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+\pagenumbering{arabic}
+\hypersetup{pageanchor=true}
+
+\begin{deepstudy}
+\input{biographies/saint-thomas-aquinas/sections/00-question}
+\input{biographies/saint-thomas-aquinas/sections/10-aquino}
+\input{biographies/saint-thomas-aquinas/sections/20-paris-cologne}
+\input{biographies/saint-thomas-aquinas/sections/30-master}
+\input{biographies/saint-thomas-aquinas/sections/40-italy}
+\input{biographies/saint-thomas-aquinas/sections/50-second-paris}
+\input{biographies/saint-thomas-aquinas/sections/60-naples-end}
+\input{biographies/saint-thomas-aquinas/sections/70-aftermath}
+\input{biographies/saint-thomas-aquinas/sections/80-traditions}
+\input{biographies/saint-thomas-aquinas/sections/90-reception}
+\input{biographies/saint-thomas-aquinas/sections/100-conclusion}
+\appendix
+\input{biographies/saint-thomas-aquinas/sections/110-scope-chronology-evidence}
+\input{biographies/saint-thomas-aquinas/sections/120-references}
+\clearpage
+\section{Generation Metadata}
+\input{biographies/saint-thomas-aquinas/generation-metadata}
+\TriptychRightsNotice
+\end{deepstudy}
+
+\end{document}
