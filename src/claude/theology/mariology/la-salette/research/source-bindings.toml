@@ -1,0 +1,136 @@
+schema = 1
+record_type = "bindings"
+document = "theology/mariology/la-salette"
+
+# Claude edition. Bindings are catalog-level: the actual passage checks were
+# performed against live web pages, the Holy See's archive text files, Internet
+# Archive OCR text, and — for the two Louvain imprints of 1881 and 1882 — the
+# page images of those scans (loci, URLs, dates, and limits in
+# research/source-audit.md), not against registered artifact bytes, so no
+# acquisition, search, inspection, or verification state is claimed against the
+# source-library records themselves.
+#
+# 2026-07-25: posture change. Earlier states of this file recorded that the
+# content of the secret was neither quoted nor characterized in the
+# publication. The publication now publishes and analyzes the 1879 text under
+# the disclosure at its section 5.1; the bindings below are revised
+# accordingly, and a new binding for the 1882 Roubaud pamphlet is added.
+
+[[bindings]]
+source_id = "edition.diocese-of-grenoble.mandement-apparition-la-salette-1851.sanctuaire-transcription-web-2026-07-25"
+loci = ["art. 1"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The custodial French transcription of the operative clause quoted in section 1, reproduced with the Sanctuary's own bracketed ellipsis and not filled. Read 2026-07-25. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.diocese-of-grenoble.mandement-apparition-la-salette-1851.ullathorne-1854-english"
+loci = ["art. 1", "arts. 1-5"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The whole of article 1 and the abridged declaration in English, quoted in section 1 and used for the analysis of scope in section 4.5. Nineteenth-century English rendering, not the French original; the ceiling is stated in the publication and in Appendix A. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.diocese-of-grenoble.mandement-apparition-la-salette-1851.rousselot-manuale-1854-italian"
+loci = ["considerations", "arts. 1-8", "date and signature clause"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The eight-article structure and the four considerations, summarized in section 1 and analyzed in section 4.4-4.5; compared against the English witness where the two overlap, with the difference in fullness recorded rather than harmonized. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.diocese-of-grenoble.mandement-missionnaires-la-salette-1852.institute-web-2026-07-25"
+loci = ["founding passage"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The founding passage of the mandement of 1 May 1852 quoted in section 8.1, at the institute's custodial ceiling. Read 2026-07-25. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.william-bernard-ullathorne.holy-mountain-of-la-salette.london-richardson-1854-archive-web"
+loci = [
+  "printed pp. 30-33",
+  "printed pp. 35-43",
+  "printed pp. 44-46",
+  "printed pp. 120-121",
+  "printed pp. 136-140",
+]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Documentary carrier for the 1847 depositions and the superioress's opinion (section 2.4-2.5), the recital stratum of the discourse in parallel French, patois, and English used for the element inventory of section 3, the interrogation answers on the secret (section 5.2), the declaration of the mandement (section 1), and the Ars episode with Maximin's reported answers (section 7.3). Apologetic pilgrimage narrative, used at that ceiling. Read 2026-07-25 in the Internet Archive OCR text. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.melanie-calvat.secret-complet-de-la-salette.louvain-lefever-1881-archive-web"
+loci = [
+  "front matter",
+  "preface",
+  "printed pp. 5-22",
+  "text subscription",
+  "imprimatur formula",
+  "letters of Melanie",
+  "letter of Bishop Zola",
+]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The principal analyzed text of the publication. Documentary use in section 5.3-5.6: the imprint's title-page identification, the anonymous avant-propos, the subscription dated Castellammare 21 November 1878, the Nihil obstat and imprimatur formula of 15 November 1879 with its Lecce curia signature, Melanie's letters of 25 March and 9 May 1880, and Bishop Zola's letter of 24 May 1880 supplying the custody chronology, the account of the 3-4 July 1851 writing at Corenc and Grenoble, and his admission that the 1879 text is not what went to Pius IX. Analytical use in section 6, which publishes the 1879 text at its principal elements, quotes its load-bearing sentences, compares its version of the public discourse element by element with the 1854 printing of the diocesan documents, and reaches a labelled project-synthesis judgment that the 1879 text is not the 1851 text. Every French sentence quoted from this volume in the publication was collated against the scan's page images on 2026-07-25; the volume is not reproduced integrally, and it is quoted neither as true nor as revealed. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.i-roubaud.verite-sur-le-secret-de-melanie.louvain-lefever-1882-archive-web"
+loci = ["printed pp. 3-10"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "A partisan 1882 defence of the secret, bound only for the facts it concedes against its own case and used at that ceiling in sections 5.6, 6.8, and 6.11: the press controversy opened by the communique of 25 June 1882 in the Semaine religieuse d'Amiens; the Congregation of the Index's refusal to condemn the booklet; the Holy Office's taking up of the matter because a revelation was at issue; the letter of Cardinal Prospero Caterini of 14 August 1880 with its 'si la chose est possible', known to the defenders only in translation; the 1882 charge of non-conformity between the Lecce text and the 1851 text; and the report of a private audience of Leo XIII and of the coronation of 20 August 1879. Its arguments and evaluations are attributed to their author and are not adopted; the periodicals it names were not consulted. The pages used were collated against the scan's page images on 2026-07-25. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.holy-see.rescriptum-portus-aloisii-1877.ass-11-1878-vatican-ocr"
+loci = ["dubium II", "ad II", "ad IV", "ad V"]
+role = "official-control"
+states = ["cataloged"]
+context = "The Roman statement that these apparitions were neither approved nor condemned but permitted as piously believable by merely human faith, quoted in section 8.3 and controlling the fides humana boundary of section 10.2; with the refusals of a first-class feast with octave and of special litanies of the apparition. Read 2026-07-25 in the Holy See's archive file. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.holy-see.decretum-secret-de-la-salette-1915.aas-07-1915-vatican-ocr"
+loci = ["complete"]
+role = "official-control"
+states = ["cataloged"]
+context = "The governing act on the secret, quoted entire in Latin in section 5.7 with an editorial English rendering, and analyzed for its standing in section 5.9, with its command, penalties and saving clause set out in the disclosure at section 5.1. Two evident transcription defects in the archive file are bracketed or recorded. Read 2026-07-25. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.holy-see.acta-contra-exegesim-secret-la-salette-1916.aas-08-1916-vatican-ocr"
+loci = ["declaration of 12 April 1916", "index decree of 5 June 1916"]
+role = "official-control"
+states = ["cataloged"]
+context = "The 1915 decree applied to a named two-volume exegesis, reported in section 5.8; the work itself was neither sought nor consulted and nothing about its contents is asserted. Read 2026-07-25. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.holy-see.decretum-damnatur-opusculum-la-salette-1923.aas-15-1923-vatican-ocr"
+loci = ["complete"]
+role = "official-control"
+states = ["cataloged"]
+context = "The condemnation of the 1922 reprint with the recall order, quoted in section 5.8; the archive file's title-year '1845' is recorded and bracketed as 184[6]. Read 2026-07-25. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.pius-xii.epistula-cruveiller-la-salette-1945.aas-38-1946-vatican-ocr"
+loci = ["opening", "centenary paragraph", "date"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The papal characterization of the 1851 act as a diocesan canonical process that proved favourable, and the reported register 'ainsi qu'on le rapporte', quoted in section 9.3. Read 2026-07-25. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.john-paul-ii.epistula-dufaux-la-salette-1996.french-vatican-web-2026-07-25"
+loci = ["tears paragraph", "message paragraph", "missionaries paragraph"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The sesquicentenary reading of the event, quoted in section 9.5; the companion Latin letter of 9 July 1996 with its 'ab Ecclesia Matre perhibetur' is cited from the same edition record's notes. Read 2026-07-25. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.holy-see.norms-supernatural-phenomena-2024.english-vatican-web-2026-07-25"
+loci = ["presentation", "n. 1", "n. 4", "n. 11", "n. 12", "nn. 17-23", "art. 1", "art. 18", "art. 22", "art. 27"]
+role = "official-control"
+states = ["cataloged"]
+context = "Current procedural law and the doctrinal frame: the presentation's citation of the 1851 operative clause (sections 1, 10.2, 11.2), Dei Verbum 4 and CCC 67 as quoted at nn. 1 and 4, the non-obligation of assent at nn. 11-12, the six determinations and n. 23, and the replacement of the 1978 norms at art. 27; Benedict XVI's Verbum Domini n. 14 is quoted through this text's own note 24. Read 2026-07-25. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.holy-see.index-of-prohibited-books-notification-1966.latin-aas-58-1966"
+loci = ["complete"]
+role = "context"
+states = ["cataloged"]
+context = "Cited in section 5.9 for the loss of the Index's force of ecclesiastical law, which bears on the penal apparatus attached to the 1915 decree. Its Acta locus is taken from this existing repository record and was not re-verified in the gazette by this publication; the limit is recorded in Appendix A. Catalog-level binding."
