@@ -82,9 +82,11 @@
   \multicolumn{4}{p{0.94\linewidth}}{\raggedright\scriptsize #1}\\}
 \newcommand{\dossiergap}{\noalign{\vskip 0.1em}}
 
-% Collation table: appointed wording against the Clementine reading.
+% Collation table: appointed wording against the Clementine reading. Set one
+% step down so the complete collation stays on a single opening instead of
+% spilling a single row onto a page of its own.
 \newenvironment{collationtable}
-{\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.13\linewidth}%
+{\scriptsize\begin{longtable}{>{\raggedright\arraybackslash}p{0.13\linewidth}%
                                 >{\raggedright\arraybackslash}p{0.30\linewidth}%
                                 >{\raggedright\arraybackslash}p{0.30\linewidth}%
                                 >{\raggedright\arraybackslash}p{0.19\linewidth}}
