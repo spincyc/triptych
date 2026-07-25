@@ -343,13 +343,16 @@ class ArtifactPathTests(unittest.TestCase):
                     review.validate_output_root(Path("/tmp/unmanaged-review-output"))
 
     def test_unmanaged_invocation_ignores_a_caller_selected_tmpdir(self) -> None:
-        with tempfile.TemporaryDirectory() as temporary, mock.patch.dict(
+        # A literal path outside /tmp and build/: tempfile would honour the
+        # ambient TMPDIR, which may itself sit under /tmp and be allowed.
+        caller_selected = Path("/nonexistent/caller-selected-tmp")
+        with mock.patch.dict(
             os.environ,
-            {"TMPDIR": temporary},
+            {"TMPDIR": str(caller_selected)},
             clear=True,
         ):
             with self.assertRaisesRegex(review.ReviewError, "/tmp"):
-                review.validate_output_root(Path(temporary) / "review")
+                review.validate_output_root(caller_selected / "review")
             output = Path("/tmp/triptych-pdf-review-unmanaged")
             self.assertEqual(review.validate_output_root(output), output.resolve())
 
