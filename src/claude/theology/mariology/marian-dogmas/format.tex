@@ -43,3 +43,30 @@
 \newenvironment{dogmasynopsis}[1]{%
   \begin{sourcecard}{Synopsis --- #1}\small}{\end{sourcecard}}
 \newcommand{\synfield}[2]{\par\textbf{#1:} #2}
+
+% Definitions table: the four dogmas set beside their defining or formulating
+% act, the operative Latin wording as the identified witness prints it, and
+% the level of the act with the assent it calls for.
+\newenvironment{definitionstable}
+{\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.12\linewidth}>{\raggedright\arraybackslash}p{0.22\linewidth}>{\raggedright\arraybackslash}p{0.39\linewidth}>{\raggedright\arraybackslash}p{0.19\linewidth}}
+\toprule
+\textbf{Dogma} & \textbf{Act and date} & \textbf{Operative words (Latin witness)} & \textbf{Level and assent}\\
+\midrule
+\endhead
+\bottomrule
+\endfoot}
+{\end{longtable}}
+
+% Development-milestone table: one per dogma, carrying the date, the event,
+% and the evidentiary register in which the event is claimed. The register
+% column exists so a liturgical, legendary, or scholastic milestone can never
+% be read as a definitional one.
+\newenvironment{milestones}
+{\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.11\linewidth}>{\raggedright\arraybackslash}p{0.55\linewidth}>{\raggedright\arraybackslash}p{0.26\linewidth}}
+\toprule
+\textbf{Date} & \textbf{Milestone} & \textbf{Register}\\
+\midrule
+\endhead
+\bottomrule
+\endfoot}
+{\end{longtable}}
