@@ -749,7 +749,7 @@ The chronology below aligns conceptual developments with the institutions in whi
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>–535</p></td>
+<p>533–535</p></td>
 <td style="text-align: left;">Justinianic compilation and Novel 6</td>
 <td style="text-align: left;">Consolidate heterogeneous Roman law and present imperial and sacerdotal gifts as requiring concord. Justinian’s legislation remains imperial law, not an ecclesiastical code.</td>
 </tr>
@@ -773,7 +773,7 @@ The chronology below aligns conceptual developments with the institutions in whi
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>and after</p></td>
+<p>1234 and after</p></td>
 <td style="text-align: left;"><em>Liber Extra</em>, decretalists, and courts</td>
 <td style="text-align: left;">Papal decretals, learned commentary, and Romano-canonical procedure make source hierarchy, jurisdiction, proof, and remedy operational within the <em>ius commune</em>.</td>
 </tr>
@@ -791,7 +791,7 @@ The chronology below aligns conceptual developments with the institutions in whi
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>–1612</p></td>
+<p>1545–1612</p></td>
 <td style="text-align: left;">Trent and Suárez</td>
 <td style="text-align: left;">Trent distinguishes ecclesiastical competence from its changeable disciplinary specifications. Suárez synthesizes lawgiver, obligation, promulgation, natural and human law, custom, privilege, and revealed law.</td>
 </tr>
@@ -815,57 +815,61 @@ The chronology below aligns conceptual developments with the institutions in whi
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>–1888</p></td>
+<p>1864–1888</p></td>
 <td style="text-align: left;">Pius IX and Leo XIII</td>
 <td style="text-align: left;">Oppose religious indifferentism and state moral autonomy, defend ecclesiastical independence, and articulate concord between distinct powers within a confessional horizon.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>1917</p></td>
 <td style="text-align: left;">First Latin code</td>
 <td style="text-align: left;">Systematizes Latin discipline while preserving unincorporated natural and divine-positive law under c. 6, no. 6. It is superseded by the 1983 CIC.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>1929</p></td>
 <td style="text-align: left;">Lateran Treaty</td>
 <td style="text-align: left;">Recognizes Holy See sovereignty and creates Vatican City State as a territorial guarantee of independence.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>–1948</p></td>
+<p>1937–1948</p></td>
 <td style="text-align: left;">Totalitarian crisis and postwar rights</td>
 <td style="text-align: left;">Papal teaching opposes racial and state absolutism; Radbruch addresses extreme statutory injustice; the Universal Declaration expresses common rights and duties in a positive international instrument that was declaratory rather than a treaty.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>1953</p></td>
 <td style="text-align: left;">Pius XII, <em>Ci riesce</em></td>
 <td style="text-align: left;">Permits non-repression of error for a higher common good; the toleration analysis precedes Vatican II’s dignity-grounded civil right.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>–1965</p></td>
+<p>1963–1965</p></td>
 <td style="text-align: left;"><em>Pacem in terris</em> and Vatican II</td>
 <td style="text-align: left;">Place reciprocal personal rights and duties, public authority, temporal autonomy, Church–political cooperation, and civil religious immunity within one moral and juridical account.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>1983</p></td>
 <td style="text-align: left;">CIC</td>
 <td style="text-align: left;">The current Latin code, as amended, governs subjects, divine-law limits, civil-law reception, authority, procedure, and remedies.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>–1991</p></td>
+<p>1990–1991</p></td>
 <td style="text-align: left;">CCEO</td>
 <td style="text-align: left;">The CCEO provides common law for all and only the Eastern Catholic Churches, preserving distinct sources, institutions, and synodal structures.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>–2009</p></td>
+<p>1993–2009</p></td>
 <td style="text-align: left;"><em>Veritatis splendor</em> and the ITC study</td>
 <td style="text-align: left;">Clarify rational participation, embodiment, moral object, and contemporary natural-law method. The ITC document is expert theology rather than an act of the Magisterium.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>–2026</p></td>
+<p>2022–2026</p></td>
 <td style="text-align: left;">Curial, canonical, and Vatican legislation</td>
 <td style="text-align: left;">Revises curial structure, penal law, tribunal law, competencies, Vatican constitutional law, and Roman particular law. The changes demonstrate why current research requires an amendment overlay beyond base codes.</td>
 </tr>

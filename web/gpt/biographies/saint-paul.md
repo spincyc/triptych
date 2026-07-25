@@ -229,7 +229,7 @@ Broad critical agreement treats seven letters as directly Pauline. Dates and pla
 <tbody>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Thessalonians</p></td>
+<p>1 Thessalonians</p></td>
 <td style="text-align: left;">c. 49–51, probably Corinth</td>
 <td style="text-align: left;">Paul, Silvanus, and Timothy; recent mission, manual labor, persecution, affection, Timothy’s return, hope for deceased believers. Pastoral reassurance, not an itinerary.</td>
 </tr>
@@ -241,13 +241,13 @@ Broad critical agreement treats seven letters as directly Pauline. Dates and pla
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Corinthians</p></td>
+<p>1 Corinthians</p></td>
 <td style="text-align: left;">c. 53–55, Ephesus</td>
 <td style="text-align: left;">Work and apostolic rights, Cephas and Apollos, Chloe’s report, Stephanas, moral and liturgical crises, spiritual gifts, Resurrection, collection, travel plans. Community questions are only partly recoverable.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Corinthians</p></td>
+<p>2 Corinthians</p></td>
 <td style="text-align: left;">c. 55–56, Macedonia; unity debated</td>
 <td style="text-align: left;">Suffering, weakness, visions, thorn, escape from Damascus, painful relations, Titus, rivals, collection. Some scholars propose several letters combined; final-form sequence remains the published witness.</td>
 </tr>
@@ -623,14 +623,14 @@ Acts narrates arrest in Jerusalem, custody under Felix and Festus, appeal to Cae
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>–68</p></td>
-<td style="text-align: left;">Clem. 5; Ignatius, <em>Rom.</em> 4; later Roman witnesses</td>
+<p>64–68</p></td>
+<td style="text-align: left;">1 Clem. 5; Ignatius, <em>Rom.</em> 4; later Roman witnesses</td>
 <td style="text-align: left;">Probable martyrdom in Nero’s Rome. The convergence is stronger for Roman death than for release, Spain, exact year, trial, or manner.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
 <p>Late first–third century, conventional</p></td>
-<td style="text-align: left;">Clement; disputed Pauline letters; Acts; Ignatius; Irenaeus; Gaius; Tertullian; Origen/Eusebius; apocryphal acts</td>
+<td style="text-align: left;">1 Clement; disputed Pauline letters; Acts; Ignatius; Irenaeus; Gaius; Tertullian; Origen/Eusebius; apocryphal acts</td>
 <td style="text-align: left;">A received witness sequence for the Pauline corpus and Roman martyr memory; precise witness dates were not independently audited here.</td>
 </tr>
 <tr>

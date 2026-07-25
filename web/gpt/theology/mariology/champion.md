@@ -845,12 +845,13 @@ This appendix distinguishes reported events, dates of surviving publications, co
 <tbody>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Jan. 1831</p></td>
+<p>30 Jan. 1831</p></td>
 <td style="text-align: left;">Adele Brise born in Belgium</td>
 <td style="text-align: left;">Biographical starting point in current diocesan and shrine presentation; later surname spellings vary.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>1855</p></td>
 <td style="text-align: left;">Brice family emigrates to northeastern Wisconsin</td>
 <td style="text-align: left;">Belgian immigrant, linguistic, economic, and missionary context for Adele’s later work.</td>
 </tr>
@@ -873,12 +874,14 @@ This appendix distinguishes reported events, dates of surviving publications, co
 <td style="text-align: left;">Adele responds through travel, instruction, sacramental preparation, fundraising, and common work with other women. Exact institutional stages depend on later histories.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>1859</p></td>
 <td style="text-align: left;">Region belongs to the Diocese of Milwaukee</td>
 <td style="text-align: left;">Bishop John Martin Henni, not a Bishop of Green Bay, is the local ordinary; no contemporaneous formal inquiry is thereby inferred.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>1868</p></td>
 <td style="text-align: left;">Diocese of Green Bay established from Milwaukee territory</td>
 <td style="text-align: left;">Prevents anachronistic reference to a Green Bay diocesan judgment at the time of the report; later Green Bay bishops become competent local ordinaries.</td>
 </tr>
@@ -889,34 +892,38 @@ This appendix distinguishes reported events, dates of surviving publications, co
 <td style="text-align: left;">Her life overlaps Adele’s until 1896, so contact is possible; no located document proves contact or ties a particular message sentence to Pauline.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>1871</p></td>
 <td style="text-align: left;">Starr publishes the first located printed account</td>
 <td style="text-align: left;">Near-contemporary mediated evidence for three appearances, the catechetical commission, and a free school; chronology differs from the later narrative.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>–9 Oct. 1871</p></td>
+<p>8–9 Oct. 1871</p></td>
 <td style="text-align: left;">Regional Wisconsin fires; Champion enclosure preserved</td>
 <td style="text-align: left;">Early tradition records prayer, procession, survival, charred fence, and surrounding destruction; no separate miracle decree located.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>1874</p></td>
 <td style="text-align: left;">Pernin publishes <em>The Finger of God Is There!</em></td>
 <td style="text-align: left;">Early second apparition narrative and principal early fire account; includes express restraint about miracle and ecclesiastical judgment.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>July 1896</p></td>
+<p>5 July 1896</p></td>
 <td style="text-align: left;">Adele dies</td>
 <td style="text-align: left;">Ends her personal enactment of the mission; later oral transmission and institutional memory require their own source chain.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>1902</p></td>
 <td style="text-align: left;">Shrine timeline places Pauline LaPlante in an assignment at the chapel</td>
 <td style="text-align: left;">An assignment date is not an arrival date and cannot disprove earlier contact; the unresolved oral chain is not used as proof.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>1955</p></td>
 <td style="text-align: left;">M. Dominica’s <em>The Chapel: Our Lady of Good Help, A Shrine of Mary on the Green Bay Peninsula</em> published</td>
 <td style="text-align: left;">Important retrospective local history behind later custodial narration; not independently collated for this study.</td>
 </tr>
@@ -928,13 +935,13 @@ This appendix distinguishes reported events, dates of surviving publications, co
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>–2010</p></td>
+<p>2009–2010</p></td>
 <td style="text-align: left;">Formal diocesan study under Bishop Ricken</td>
 <td style="text-align: left;">Three Marian experts examine extant sources, doctrine, Adele’s character, objections, and fruit.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Dec. 2010</p></td>
+<p>8 Dec. 2010</p></td>
 <td style="text-align: left;">Bishop Ricken issues signed decree</td>
 <td style="text-align: left;">October 1859 object judged to have the substance of supernatural character; apparitions approved as worthy of belief, non-obligatorily.</td>
 </tr>
@@ -946,25 +953,25 @@ This appendix distinguishes reported events, dates of surviving publications, co
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Dec. 2022</p></td>
+<p>15 Dec. 2022</p></td>
 <td style="text-align: left;">Roman liturgical acknowledgment</td>
 <td style="text-align: left;">As recited in the 2023 decree, concerns an individual sanctuary’s proper solemnity, not supernatural classification.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Apr. 2023</p></td>
+<p>20 Apr. 2023</p></td>
 <td style="text-align: left;">Signed solemnity-and-name decree</td>
-<td style="text-align: left;">October solemnity established on shrine grounds; official title becomes Our Lady of Champion.</td>
+<td style="text-align: left;">9 October solemnity established on shrine grounds; official title becomes Our Lady of Champion.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>May 2024</p></td>
+<p>19 May 2024</p></td>
 <td style="text-align: left;">DDF phenomena norms take effect</td>
 <td style="text-align: left;">Six ordinary prudential outcomes govern current cases; the 2010 decree remains a legacy act and is not automatically relabeled.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>June 2024</p></td>
+<p>14 June 2024</p></td>
 <td style="text-align: left;">U.S. bishops affirm advancement of Adele’s proposed cause</td>
 <td style="text-align: left;">Required consultation supports diocesan progression; no judgment of heroic virtue or miracle.</td>
 </tr>
@@ -976,25 +983,25 @@ This appendix distinguishes reported events, dates of surviving publications, co
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Dec. 2025</p></td>
+<p>28 Dec. 2025</p></td>
 <td style="text-align: left;">Diocesan cause edict issued</td>
 <td style="text-align: left;">Publishes the petition and invites relevant information under the 1983 cause norms; does not anticipate the conclusion.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Jan. 2026</p></td>
+<p>30 Jan. 2026</p></td>
 <td style="text-align: left;">Bishop Ricken promulgates decree opening Adele’s cause</td>
 <td style="text-align: left;">Procedural designation Servant of God; apparition, virtue, and miracle questions remain distinct.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Feb. 2026</p></td>
+<p>27 Feb. 2026</p></td>
 <td style="text-align: left;">First session of diocesan inquiry held</td>
 <td style="text-align: left;">Tribunal, historical commission, and officials take oaths and begin their assigned work; not a virtue or miracle judgment.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>July 2026</p></td>
+<p>16 July 2026</p></td>
 <td style="text-align: left;">Currentness and source audit completed</td>
 <td style="text-align: left;">No later DDF act reclassifying Champion, no declared Champion fire miracle, and no cause judgment beyond the opening inquiry located in the official sources checked.</td>
 </tr>

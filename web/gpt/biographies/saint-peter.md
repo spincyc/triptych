@@ -405,14 +405,14 @@ The Neronian persecution after the fire of Rome in July 64 supplies the most pla
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>–68</p></td>
-<td style="text-align: left;">Clem. 5; Tacitus, <em>Ann.</em> 15.44; later Roman witnesses</td>
+<p>64–68</p></td>
+<td style="text-align: left;">1 Clem. 5; Tacitus, <em>Ann.</em> 15.44; later Roman witnesses</td>
 <td style="text-align: left;">A probable martyrdom in Nero’s Rome. The sources converge more strongly on place and martyr status than on date and manner.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
 <p>Late first–third century</p></td>
-<td style="text-align: left;">Peter; Ignatius; Irenaeus; Gaius; Tertullian; Origen as preserved by Eusebius</td>
+<td style="text-align: left;">1 Peter; Ignatius; Irenaeus; Gaius; Tertullian; Origen as preserved by Eusebius</td>
 <td style="text-align: left;">Roman association, the consolidation of apostolic memory, a Vatican memorial, and progressively more detailed accounts of death.</td>
 </tr>
 <tr>

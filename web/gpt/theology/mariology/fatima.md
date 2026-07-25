@@ -706,373 +706,380 @@ This appendix distinguishes event dates, writing dates, judgments, and later rec
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>1910</p></td>
 <td style="text-align: left;">Portuguese monarchy falls; First Republic begins</td>
 <td style="text-align: left;">Secularizing and anticlerical conflict forms the national setting; it neither causes nor proves the later claims.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>May 1911</p></td>
+<p>24 May 1911</p></td>
 <td style="text-align: left;">Pius X issues <em>Iamdudum in Lusitania</em></td>
 <td style="text-align: left;">Papal protest documents the seriousness of measures against the Church.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>–1918</p></td>
+<p>1914–1918</p></td>
 <td style="text-align: left;">First World War</td>
 <td style="text-align: left;">Mass conflict, Portuguese soldiers, scarcity, and family anxiety give concrete urgency to prayer for peace.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>1915</p></td>
 <td style="text-align: left;">Lúcia later reports three cloud-like occurrences</td>
 <td style="text-align: left;">Known from the 1941 Fourth Memoir; no contemporaneous dossier located.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>1916</p></td>
 <td style="text-align: left;">Portugal enters the war; three Angel apparitions later reported</td>
 <td style="text-align: left;">Angel cycle known principally from 1937 and 1941 memoirs; prepares adoration, sacrifice, Eucharist, and peace.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>May 1917</p></td>
+<p>13 May 1917</p></td>
 <td style="text-align: left;">First reported Marian apparition</td>
 <td style="text-align: left;">Return, willing offering, grace as comfort, daily Rosary for peace.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>May 1917</p></td>
+<p>27 May 1917</p></td>
 <td style="text-align: left;">Parish priest’s first surviving questioning</td>
 <td style="text-align: left;">Near-event documentary record begins while the sequence is still underway.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>June 1917</p></td>
+<p>13 June 1917</p></td>
 <td style="text-align: left;">Second reported apparition</td>
 <td style="text-align: left;">Lúcia’s mission and the Immaculate Heart; daily Rosary and learning to read.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>–14 July 1917</p></td>
+<p>13–14 July 1917</p></td>
 <td style="text-align: left;">Third reported apparition and next-day interview</td>
 <td style="text-align: left;">Secret reported but not disclosed; public record verifies secrecy and promised October sign, not later detailed secret wording.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>–15 Aug. 1917</p></td>
+<p>13–15 Aug. 1917</p></td>
 <td style="text-align: left;">Children detained in Ourém</td>
 <td style="text-align: left;">Municipal intervention is historically documented; alleged threats are attributed to Lúcia’s account.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Aug. 1917</p></td>
+<p>19 Aug. 1917</p></td>
 <td style="text-align: left;">Fourth reported apparition at Valinhos</td>
 <td style="text-align: left;">Return, Rosary, chapel, healing petitions, prayer and sacrifice.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Sept. 1917</p></td>
+<p>13 Sept. 1917</p></td>
 <td style="text-align: left;">Fifth reported apparition</td>
 <td style="text-align: left;">October promise; severe penitential practice is restrained.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Oct. 1917</p></td>
+<p>13 Oct. 1917</p></td>
 <td style="text-align: left;">Sixth reported apparition and solar event</td>
 <td style="text-align: left;">Lady of the Rosary, chapel and amendment; large crowd reports varied solar phenomena.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Oct. 1917</p></td>
+<p>15 Oct. 1917</p></td>
 <td style="text-align: left;">Avelino de Almeida report in <em>O Século</em></td>
 <td style="text-align: left;">Major near-event secular press witness; crowd estimate and varied observations enter the public record.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>and 19 Oct. 1917</p></td>
+<p>16 and 19 Oct. 1917</p></td>
 <td style="text-align: left;">Parish and Formigão interviews</td>
 <td style="text-align: left;">Preserve the “war ends today” phrase, continuing-war challenge, and Lúcia’s uncertainty about understanding.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Jan. 1918</p></td>
+<p>17 Jan. 1918</p></td>
 <td style="text-align: left;">Diocese of Leiria re-established</td>
 <td style="text-align: left;">Supplies the local ecclesial structure that will govern inquiry and cult.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Apr. 1919</p></td>
+<p>4 Apr. 1919</p></td>
 <td style="text-align: left;">Francisco dies</td>
 <td style="text-align: left;">Later canonized saint; holiness judgment remains distinct from apparition judgment.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Apr.–15 June 1919</p></td>
+<p>28 Apr.–15 June 1919</p></td>
 <td style="text-align: left;">Chapel of the Apparitions built</td>
 <td style="text-align: left;">Popular response gives the claimed request a stable place before final judgment.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Feb. 1920</p></td>
+<p>20 Feb. 1920</p></td>
 <td style="text-align: left;">Jacinta dies</td>
 <td style="text-align: left;">Later canonized saint; death amid the influenza aftermath enters devotional memory.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>1920</p></td>
 <td style="text-align: left;">José Alves Correia da Silva becomes Bishop of Leiria</td>
 <td style="text-align: left;">Competent local ordinary begins governing the growing movement.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>June 1921</p></td>
+<p>15 June 1921</p></td>
 <td style="text-align: left;">Reported seventh encounter; Lúcia prepares to leave</td>
 <td style="text-align: left;">Later biographical witness connects the charism to obedience to the bishop.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Oct. 1921</p></td>
+<p>13 Oct. 1921</p></td>
 <td style="text-align: left;">First Mass in the chapel</td>
 <td style="text-align: left;">Sacramental worship begins to order the place.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Jan. 1922</p></td>
+<p>5 Jan. 1922</p></td>
 <td style="text-align: left;">Lúcia completes an early written report</td>
 <td style="text-align: left;">Predates the famous memoirs and forms part of the developing record.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Mar. 1922</p></td>
+<p>6 Mar. 1922</p></td>
 <td style="text-align: left;">Chapel partially destroyed by explosives</td>
 <td style="text-align: left;">Opposition intensifies devotion but is not itself proof.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>1922</p></td>
 <td style="text-align: left;">Bishop appoints canonical commission</td>
 <td style="text-align: left;">Formal diocesan investigation begins.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Jan. 1923</p></td>
+<p>13 Jan. 1923</p></td>
 <td style="text-align: left;">Restored chapel reopens</td>
 <td style="text-align: left;">Public cult continues under growing ecclesial supervision.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>July 1924</p></td>
+<p>8 July 1924</p></td>
 <td style="text-align: left;">Lúcia examined by diocesan commission</td>
 <td style="text-align: left;">Formal witness enters the canonical process.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Dec. 1925</p></td>
+<p>10 Dec. 1925</p></td>
 <td style="text-align: left;">Pontevedra apparition reported</td>
 <td style="text-align: left;">Five First Saturdays requested in the wider Fátima cycle.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Feb. 1926</p></td>
+<p>15 Feb. 1926</p></td>
 <td style="text-align: left;">Reported encounter with Child Jesus</td>
 <td style="text-align: left;">Later clarifications of the practice; outside 1930 six-event clause.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Dec. 1927</p></td>
+<p>17 Dec. 1927</p></td>
 <td style="text-align: left;">Lúcia writes about First Saturdays under direction</td>
 <td style="text-align: left;">Early written source for the Pontevedra request.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>June 1929</p></td>
+<p>13 June 1929</p></td>
 <td style="text-align: left;">Tuy Trinitarian vision reported</td>
 <td style="text-align: left;">Request for papal and episcopal consecration of Russia; later papally received.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Oct. 1930</p></td>
+<p>13 Oct. 1930</p></td>
 <td style="text-align: left;">Bishop’s pastoral letter</td>
 <td style="text-align: left;">Six 1917 visions declared worthy of belief; cult officially permitted.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Dec. 1935</p></td>
+<p>25 Dec. 1935</p></td>
 <td style="text-align: left;">First Memoir completed</td>
 <td style="text-align: left;">Biographical focus on Jacinta begins the mature memoir corpus.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Nov. 1937</p></td>
+<p>21 Nov. 1937</p></td>
 <td style="text-align: left;">Second Memoir completed</td>
 <td style="text-align: left;">Fuller childhood and Angel material.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Aug. 1941</p></td>
+<p>31 Aug. 1941</p></td>
 <td style="text-align: left;">Third Memoir completed</td>
 <td style="text-align: left;">First and second secret parts written in detail.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Dec. 1941</p></td>
+<p>8 Dec. 1941</p></td>
 <td style="text-align: left;">Fourth Memoir completed</td>
 <td style="text-align: left;">Expanded apparition narrative and Portugal phrase.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Oct. 1942</p></td>
+<p>31 Oct. 1942</p></td>
 <td style="text-align: left;">Pius XII’s world act</td>
 <td style="text-align: left;">Major papal reception amid the Second World War.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Jan. 1944</p></td>
+<p>3 Jan. 1944</p></td>
 <td style="text-align: left;">Third part written at Tuy</td>
 <td style="text-align: left;">Sole autograph sealed in episcopal custody.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>May 1946</p></td>
+<p>13 May 1946</p></td>
 <td style="text-align: left;">Papal legate crowns shrine image</td>
 <td style="text-align: left;">Strong cultic and papal reception; not a new event decree.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Mar. 1948</p></td>
+<p>25 Mar. 1948</p></td>
 <td style="text-align: left;">Lúcia enters Carmel of Coimbra</td>
 <td style="text-align: left;">Long contemplative phase of her witness begins.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>July 1952</p></td>
+<p>7 July 1952</p></td>
 <td style="text-align: left;">Pius XII issues <em>Sacro vergente anno</em></td>
 <td style="text-align: left;">Peoples of Russia explicitly consecrated to the Immaculate Heart.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Apr. 1957</p></td>
+<p>4 Apr. 1957</p></td>
 <td style="text-align: left;">Third-part envelope transferred to Holy Office</td>
 <td style="text-align: left;">Documented Holy See custody begins.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Aug. 1959</p></td>
+<p>17 Aug. 1959</p></td>
 <td style="text-align: left;">John XXIII reads manuscript</td>
 <td style="text-align: left;">Decides not to publish and returns it to the archive.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>1960</p></td>
 <td style="text-align: left;">Date written on outer envelope arrives</td>
 <td style="text-align: left;">Lúcia later says the date was her intuition, not fixed by Mary.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Mar. 1965</p></td>
+<p>27 Mar. 1965</p></td>
 <td style="text-align: left;">Paul VI reads manuscript</td>
 <td style="text-align: left;">Returns it without publication.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>May 1967</p></td>
+<p>13 May 1967</p></td>
 <td style="text-align: left;">Paul VI visits Fátima</td>
 <td style="text-align: left;">First reigning-papal pilgrimage, framed around prayer and peace.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>May 1981</p></td>
+<p>13 May 1981</p></td>
 <td style="text-align: left;">John Paul II is shot</td>
 <td style="text-align: left;">He survives and later reads the event providentially within the third part.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>1981</p></td>
 <td style="text-align: left;">John Paul II reads third-part manuscript</td>
 <td style="text-align: left;">Papal interpretation and acts of entrustment develop.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>May 1982</p></td>
+<p>13 May 1982</p></td>
 <td style="text-align: left;">John Paul II visits Fátima</td>
 <td style="text-align: left;">Thanksgiving and message reception one year after the attack.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Mar. 1984</p></td>
+<p>25 Mar. 1984</p></td>
 <td style="text-align: left;">John Paul II’s worldwide act with bishops</td>
 <td style="text-align: left;">CDF later publishes Lúcia’s confirmation that the request was fulfilled.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Nov. 1989</p></td>
+<p>8 Nov. 1989</p></td>
 <td style="text-align: left;">Lúcia’s confirmation letter</td>
 <td style="text-align: left;">States that the 1984 act was done as requested; published by CDF in 2000.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>–1991</p></td>
+<p>1989–1991</p></td>
 <td style="text-align: left;">Communist regimes fall; John Paul II returns</td>
 <td style="text-align: left;">Received as consonant with the message, within a complex historical causality.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Apr. 2000</p></td>
+<p>27 Apr. 2000</p></td>
 <td style="text-align: left;">CDF envoys interview Lúcia</td>
 <td style="text-align: left;">She identifies manuscript, affirms symbolic reading and papal figure, and explains 1960.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>May 2000</p></td>
+<p>13 May 2000</p></td>
 <td style="text-align: left;">Francisco and Jacinta beatified; third-part publication announced</td>
 <td style="text-align: left;">Sanctity and documentary disclosure remain distinct but converge pastorally.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>June 2000</p></td>
+<p>26 June 2000</p></td>
 <td style="text-align: left;">CDF publishes <em>The Message of Fatima</em></td>
 <td style="text-align: left;">Complete text, chain of custody, interviews, papal reception, and theological commentary become public.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Feb. 2005</p></td>
+<p>13 Feb. 2005</p></td>
 <td style="text-align: left;">Lúcia dies</td>
 <td style="text-align: left;">Her cause later advances; private-revelation corpus is no longer ongoing through her.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>May 2010</p></td>
+<p>13 May 2010</p></td>
 <td style="text-align: left;">Benedict XVI’s Fátima homily</td>
 <td style="text-align: left;">Continuing prophetic mission interpreted as conversion, solidarity, and universal love.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>May 2016</p></td>
+<p>21 May 2016</p></td>
 <td style="text-align: left;">Holy See completeness communiqué</td>
 <td style="text-align: left;">Benedict denies alleged contrary Dollinger remarks; publication affirmed complete.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>May 2017</p></td>
+<p>13 May 2017</p></td>
 <td style="text-align: left;">Francisco and Jacinta canonized</td>
 <td style="text-align: left;">Church recognizes heroic holiness of the young non-martyrs, not verbal inerrancy.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Mar. 2022</p></td>
+<p>25 Mar. 2022</p></td>
 <td style="text-align: left;">Francis’s act for humanity, Russia, and Ukraine</td>
 <td style="text-align: left;">Renewed collegial prayer amid war; not a judgment that 1984 failed.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>June 2023</p></td>
+<p>22 June 2023</p></td>
 <td style="text-align: left;">Lúcia’s heroic virtues recognized</td>
 <td style="text-align: left;">She becomes Venerable; judgment concerns life and virtue.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>May 2024</p></td>
+<p>19 May 2024</p></td>
 <td style="text-align: left;">New DDF phenomena norms take effect</td>
 <td style="text-align: left;">Governs new cases; legacy 1930 Fátima formula remains historical and controlling.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>July 2026</p></td>
+<p>13 July 2026</p></td>
 <td style="text-align: left;">Currentness and source audit completed</td>
 <td style="text-align: left;">No superseding Fátima status or secret-interpretation act located in DDF index or current official presentation.</td>
 </tr>

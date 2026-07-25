@@ -192,32 +192,32 @@ The following gathers the canons this article verified at the dated Latin and En
 
 | **Canon** | **Latin key phrase (verified)** | **Working gloss** | **Function** |
 |:------|:-----------------------|:-----------------|:----------------|
-| §1 | *Per receptum diaconatum aliquis fit clericus* | one becomes a cleric by receiving the diaconate | fixes who is subject to c. 277 |
-| §1 | *perfectam perpetuamque… continentiam, ideoque ad coelibatum adstringuntur* | perfect and perpetual continence, and therefore celibacy | the obligation itself |
-| §2 | *obligationem ad continentiam servandam in discrimen vocare* | endanger the obligation to observe continence | prudence in conduct |
-| §3 | *normas statuat magis determinatas… iudicium ferat* | more determinate norms; judgment in particular cases | diocesan bishop’s competence |
-|  | *Diaconi permanentes praescriptis cann. 284, 285 §§3–4, 286, 287 §2 non tenentur* | permanent deacons are not bound by cc. 284, 285 §§3–4, 286, 287 §2 | the exemption list — and what it omits |
-|  | *obligationem secumfert continentiae perfectae in caelibatu* | entails the obligation of perfect continence in celibacy | counsel of chastity, for religious |
-|  | *Sacram ordinationem valide recipit solus vir baptizatus* | a baptized male alone validly receives ordination | the only validity condition |
-| §1 | *Ad licite… conferendos requiritur… nulla detineatur irregularitate nulloque impedimento* | for licit conferral: no irregularity, no impediment | liceity conditions |
-|  | *integram habent fidem… integris moribus probatisque virtutibus* | integral faith, integral morals, proven virtues | standard for promotion |
-| §2 | *qui matrimonio coniunctus est, nonnisi post expletum trigesimum quintum… atque de uxoris consensu* | a married candidate at 35, with his wife’s consent | married permanent deacons |
-|  | *se sponte ac libere sacrum ordinem suscepturum* | that he will receive the order freely and of his own accord | handwritten declaration |
-|  | *publice coram Deo et Ecclesia obligationem caelibatus assumpserint* | have publicly assumed the obligation of celibacy | how celibacy is undertaken |
-|  | *sive perpetuo, quod venit nomine irregularitatis, sive simplici* | perpetual (called irregularity) or simple | taxonomy of impediments |
-| 1° | *vir uxorem habens, nisi ad diaconatum permanentem legitime destinetur* | a man having a wife, unless destined to the permanent diaconate | the married man’s impediment |
-| §2 3° | *ab impedimento, de quo in can. 1042, n. 1* | from the impediment of c. 1042 1° | dispensation reserved to Apostolic See |
-| 3° | *testimonia celebrati matrimonii et consensus uxoris* | testimonials of the marriage and of the wife’s consent | documentary proof |
-| §2 1° | *impedimentum ortum ex sacris ordinibus* | the impediment arising from sacred orders | dispensation reserved |
-| §1 | *excepto impedimento orto ex sacro ordine presbyteratus* | except the impediment arising from the order of presbyterate | danger of death: deacons dispensable locally |
-|  | *Invalide matrimonium attentant, qui in sacris ordinibus sunt constituti* | those in sacred orders invalidly attempt marriage | diriment impediment |
-|  | *qui voto publico perpetuo castitatis… adstricti sunt* | those bound by a public perpetual vow of chastity | the parallel, distinct impediment |
-|  | *Sacra ordinatio, semel valide recepta, numquam irrita fit* | once validly received, ordination never becomes invalid | indelibility; three modes of loss |
-|  | *non secumfert dispensationem ab obligatione caelibatus, quae ab uno tantum Romano Pontifice conceditur* | loss of the clerical state does not carry dispensation from celibacy; the Pope alone grants it | the two acts kept apart |
-|  | *nec ullis iam adstringitur obligationibus… firmo praescripto can. 291* | no longer bound by clerical obligations, saving c. 291 | effects of loss |
-| §1 | *matrimonium, etiam civiliter tantum, attentans, in suspensionem latae sententiae incurrit* | attempting marriage, even only civilly: *latae sententiae* suspension | the delict |
-| §1 | *clericus in alio peccato externo contra sextum Decalogi praeceptum cum scandalo permanens* | persisting in another external, scandalous sin against the sixth commandment | conduct delict |
-| §1 | *delictum… contra sextum Decalogi praeceptum cum minore* | offence against the sixth commandment with a minor | classified under offences against the person |
+| 266 §1 | *Per receptum diaconatum aliquis fit clericus* | one becomes a cleric by receiving the diaconate | fixes who is subject to c. 277 |
+| 277 §1 | *perfectam perpetuamque… continentiam, ideoque ad coelibatum adstringuntur* | perfect and perpetual continence, and therefore celibacy | the obligation itself |
+| 277 §2 | *obligationem ad continentiam servandam in discrimen vocare* | endanger the obligation to observe continence | prudence in conduct |
+| 277 §3 | *normas statuat magis determinatas… iudicium ferat* | more determinate norms; judgment in particular cases | diocesan bishop’s competence |
+| 288 | *Diaconi permanentes praescriptis cann. 284, 285 §§3–4, 286, 287 §2 non tenentur* | permanent deacons are not bound by cc. 284, 285 §§3–4, 286, 287 §2 | the exemption list — and what it omits |
+| 599 | *obligationem secumfert continentiae perfectae in caelibatu* | entails the obligation of perfect continence in celibacy | counsel of chastity, for religious |
+| 1024 | *Sacram ordinationem valide recipit solus vir baptizatus* | a baptized male alone validly receives ordination | the only validity condition |
+| 1025 §1 | *Ad licite… conferendos requiritur… nulla detineatur irregularitate nulloque impedimento* | for licit conferral: no irregularity, no impediment | liceity conditions |
+| 1029 | *integram habent fidem… integris moribus probatisque virtutibus* | integral faith, integral morals, proven virtues | standard for promotion |
+| 1031 §2 | *qui matrimonio coniunctus est, nonnisi post expletum trigesimum quintum… atque de uxoris consensu* | a married candidate at 35, with his wife’s consent | married permanent deacons |
+| 1036 | *se sponte ac libere sacrum ordinem suscepturum* | that he will receive the order freely and of his own accord | handwritten declaration |
+| 1037 | *publice coram Deo et Ecclesia obligationem caelibatus assumpserint* | have publicly assumed the obligation of celibacy | how celibacy is undertaken |
+| 1040 | *sive perpetuo, quod venit nomine irregularitatis, sive simplici* | perpetual (called irregularity) or simple | taxonomy of impediments |
+| 1042 1° | *vir uxorem habens, nisi ad diaconatum permanentem legitime destinetur* | a man having a wife, unless destined to the permanent diaconate | the married man’s impediment |
+| 1047 §2 3° | *ab impedimento, de quo in can. 1042, n. 1* | from the impediment of c. 1042 1° | dispensation reserved to Apostolic See |
+| 1050 3° | *testimonia celebrati matrimonii et consensus uxoris* | testimonials of the marriage and of the wife’s consent | documentary proof |
+| 1078 §2 1° | *impedimentum ortum ex sacris ordinibus* | the impediment arising from sacred orders | dispensation reserved |
+| 1079 §1 | *excepto impedimento orto ex sacro ordine presbyteratus* | except the impediment arising from the order of presbyterate | danger of death: deacons dispensable locally |
+| 1087 | *Invalide matrimonium attentant, qui in sacris ordinibus sunt constituti* | those in sacred orders invalidly attempt marriage | diriment impediment |
+| 1088 | *qui voto publico perpetuo castitatis… adstricti sunt* | those bound by a public perpetual vow of chastity | the parallel, distinct impediment |
+| 290 | *Sacra ordinatio, semel valide recepta, numquam irrita fit* | once validly received, ordination never becomes invalid | indelibility; three modes of loss |
+| 291 | *non secumfert dispensationem ab obligatione caelibatus, quae ab uno tantum Romano Pontifice conceditur* | loss of the clerical state does not carry dispensation from celibacy; the Pope alone grants it | the two acts kept apart |
+| 292 | *nec ullis iam adstringitur obligationibus… firmo praescripto can. 291* | no longer bound by clerical obligations, saving c. 291 | effects of loss |
+| 1394 §1 | *matrimonium, etiam civiliter tantum, attentans, in suspensionem latae sententiae incurrit* | attempting marriage, even only civilly: *latae sententiae* suspension | the delict |
+| 1395 §1 | *clericus in alio peccato externo contra sextum Decalogi praeceptum cum scandalo permanens* | persisting in another external, scandalous sin against the sixth commandment | conduct delict |
+| 1398 §1 | *delictum… contra sextum Decalogi praeceptum cum minore* | offence against the sixth commandment with a minor | classified under offences against the person |
 
 Two features of the column of functions deserve saying aloud. The Code never once treats celibacy as a condition of validity: not of ordination, where canon 1024 admits only one condition, and not of anything else. And the Code twice provides its own exception in the same breath as its rule—canon 1042 1°’s *nisi* clause and canon 1079 §1’s *excepto*—which is what a legislator does with a norm he regards as his own to shape.
 
@@ -321,7 +321,7 @@ In the fourth column, <span class="smallcaps">p</span> marks the twenty Eastern 
 
 | **Church *sui iuris*** | **Tradition** | **Juridical rank** | **2014** |
 |:----------------|:--------------|:---------------------|:-------|
-|  |  |  |  |
+| *(continued)* |  |  |  |
 | Coptic | Alexandrian | Patriarchal (CCEO c. 55) | <span class="smallcaps">p</span> |
 | Ethiopian | Alexandrian | Metropolitan *sui iuris* (c. 155) | <span class="smallcaps">p</span> |
 | Eritrean | Alexandrian (Ge’ez) | Metropolitan *sui iuris*, 19 January 2015 | <span class="smallcaps">n</span> |
@@ -506,15 +506,15 @@ Set that beside canon 277 §1 of 1983. The 1917 canon bars clerics in major orde
 | **Date** | **Act** | **What it enacted** | **Witness used, and its limit** |
 |:--------|:----------------|:---------------------|:-----------------|
 | c. 305 | Elvira, c. 33 | Continence of clerics who have wives; removal from the clerical honour for breach. | Mansi II, coll. 11–12 and 245–246. Local Spanish council; three printed readings; broken syntax. |
-|  | Nicaea, c. 3 | No *subintroducta* in a cleric’s house except close kin. | Percival p. 11; Mansi II col. 670. Says nothing about wives or celibacy. |
-|  | The Paphnutius account | Nothing: a proposed law reported as not made. | Socrates I.11 and Sozomen I.23 (NPNF2-2). Authenticity contested since the seventeenth century; unresolved. |
-|  | Siricius, *Directa*, c. VII | Continence *a die ordinationis* for priests and levites, presented as an existing indissoluble law. | PL 13, coll. 1137–1139 (Coustant). Date not verified; “existing or new” is the dispute itself. |
-|  | Trullo, cc. 6, 12, 13, 30, 48 | Married presbyters and deacons keep their wives; no marriage after ordination; bishops separate; continence at the altar. | Percival pp. 364–388, English only. Never received in the West; Percival says so in the same volume. |
-|  | Lateran I, cc. 3, 21 | Marriages of clerics in major orders and monks forbidden; those contracted to be *dissolved*. | Mansi XXI, coll. 282, 286. Dissolution, not nullity. |
-| –1139 | Reims, Pisa, Lateran II c. 7 | Such a union *matrimonium non esse*: no marriage at all. | Mansi XXI, coll. 489–490 and 527–528. The clause stands at Pisa in 1135 and is referred to Reims 1131. |
-|  | Trent, sess. XXIV, cann. 9–10 | Anathema on denying that the impediment invalidates, and on preferring marriage to virginity or celibacy. | Tauchnitz 1887 (Latin); Waterworth (English). Canon 9 names the source as *lex ecclesiastica vel votum*. |
-|  | CIC (1917) c. 132 §1 | Clerics in major orders barred from marriage and bound to observe *chastity*. | Vatican Polyglot 1918, printed p. 31. Superseded in 1983. |
-|  | CIC c. 277 §1 | *Perfect and perpetual continence*, and therefore celibacy. | Holy See Latin delivery. Current law; see the Legal Scope statement. |
+| 325 | Nicaea, c. 3 | No *subintroducta* in a cleric’s house except close kin. | Percival p. 11; Mansi II col. 670. Says nothing about wives or celibacy. |
+| 325 | The Paphnutius account | Nothing: a proposed law reported as not made. | Socrates I.11 and Sozomen I.23 (NPNF2-2). Authenticity contested since the seventeenth century; unresolved. |
+| 385 | Siricius, *Directa*, c. VII | Continence *a die ordinationis* for priests and levites, presented as an existing indissoluble law. | PL 13, coll. 1137–1139 (Coustant). Date not verified; “existing or new” is the dispute itself. |
+| 692 | Trullo, cc. 6, 12, 13, 30, 48 | Married presbyters and deacons keep their wives; no marriage after ordination; bishops separate; continence at the altar. | Percival pp. 364–388, English only. Never received in the West; Percival says so in the same volume. |
+| 1123 | Lateran I, cc. 3, 21 | Marriages of clerics in major orders and monks forbidden; those contracted to be *dissolved*. | Mansi XXI, coll. 282, 286. Dissolution, not nullity. |
+| 1131–1139 | Reims, Pisa, Lateran II c. 7 | Such a union *matrimonium non esse*: no marriage at all. | Mansi XXI, coll. 489–490 and 527–528. The clause stands at Pisa in 1135 and is referred to Reims 1131. |
+| 1563 | Trent, sess. XXIV, cann. 9–10 | Anathema on denying that the impediment invalidates, and on preferring marriage to virginity or celibacy. | Tauchnitz 1887 (Latin); Waterworth (English). Canon 9 names the source as *lex ecclesiastica vel votum*. |
+| 1917 | CIC (1917) c. 132 §1 | Clerics in major orders barred from marriage and bound to observe *chastity*. | Vatican Polyglot 1918, printed p. 31. Superseded in 1983. |
+| 1983 | CIC c. 277 §1 | *Perfect and perpetual continence*, and therefore celibacy. | Holy See Latin delivery. Current law; see the Legal Scope statement. |
 
 ### What the sequence establishes
 
