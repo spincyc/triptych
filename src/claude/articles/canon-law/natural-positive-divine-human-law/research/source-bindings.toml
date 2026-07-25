@@ -1,0 +1,101 @@
+schema = 2
+record_type = "bindings"
+document = "articles/canon-law/natural-positive-divine-human-law"
+
+[[bindings]]
+source_id = "edition.thomas-aquinas.summa-theologiae.latin-corpusthomisticum-web-2026-07-25"
+loci = ["I-II.90.1.corpus", "I-II.90.2.corpus", "I-II.90.3.corpus", "I-II.90.4.corpus", "I-II.90.4.reply-1", "I-II.91.1.corpus", "I-II.91.2.corpus", "I-II.91.3.corpus", "I-II.91.4.corpus", "I-II.91.5.corpus", "I-II.92.1.corpus", "I-II.92.2.corpus", "I-II.93.1.corpus", "I-II.93.3.corpus", "I-II.94.2.corpus", "I-II.94.4.corpus", "I-II.94.5.corpus", "I-II.94.6.corpus", "I-II.95.1.corpus", "I-II.95.2.corpus", "I-II.95.4.corpus", "I-II.96.2.corpus", "I-II.96.3.corpus", "I-II.96.4.corpus", "I-II.96.5.corpus", "I-II.96.6.corpus", "I-II.97.1.corpus", "I-II.97.2.corpus", "I-II.97.3.corpus", "I-II.97.3.reply-1"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The article's sections 3-5 quote the Latin of the treatise on law verbatim at each of these loci from the exact fetched Corpus Thomisticum responses (four question-group pages, hashed 2026-07-25); registered passage records under this edition carry the key wording per locus. The site presents the Leonine text; no collation with the printed Leonine edition is claimed. Publication-local check of the registered exact responses is the ceiling asserted."
+
+[[bindings]]
+source_id = "edition.thomas-aquinas.summa-theologiae.english-newadvent-web-2026-07-25"
+loci = ["I-II.90.1.corpus", "I-II.90.2.corpus", "I-II.90.3.corpus", "I-II.90.4.corpus", "I-II.90.4.reply-1", "I-II.91.1.corpus", "I-II.91.2.corpus", "I-II.91.3.corpus", "I-II.91.4.corpus", "I-II.91.5.corpus", "I-II.92.1.corpus", "I-II.92.2.corpus", "I-II.93.1.corpus", "I-II.93.3.corpus", "I-II.94.2.corpus", "I-II.94.4.corpus", "I-II.94.5.corpus", "I-II.94.6.corpus", "I-II.95.1.corpus", "I-II.95.2.corpus", "I-II.95.4.corpus", "I-II.96.2.corpus", "I-II.96.3.corpus", "I-II.96.4.corpus", "I-II.96.5.corpus", "I-II.96.6.corpus", "I-II.97.1.corpus", "I-II.97.2.corpus", "I-II.97.3.corpus", "I-II.97.3.reply-1"]
+role = "translation-control"
+states = ["cataloged"]
+context = "English renderings quoted in the article at these loci are the Fathers of the English Dominican Province translation as delivered at newadvent.org (eight question pages, hashed 2026-07-25), used as a working aid; the Latin governs. Publication-local check of the registered exact responses is the ceiling asserted."
+
+[[bindings]]
+source_id = "edition.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-codex-2026-07-25"
+loci = ["canon-1", "canon-5", "canon-6", "canon-7", "canon-8", "canon-9", "canon-11", "canon-17", "canon-19", "canon-20", "canon-21", "canon-22", "canon-23", "canon-24", "canon-25", "canon-26", "canon-27", "canon-28", "canon-85", "canon-86", "canon-87", "canon-90", "canon-98", "canon-113", "canon-129", "canon-145", "canon-199", "canon-207", "canon-375", "canon-748", "canon-750", "canon-751", "canon-1008", "canon-1059", "canon-1075", "canon-1078", "canon-1079", "canon-1080", "canon-1084", "canon-1163", "canon-1249", "canon-1290"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The article's canon quotations for Books I-V (sections 1, 7-12) were extracted verbatim from the exact fetched Latin book pages (hashed 2026-07-25); registered passage records carry the key wording for each locus. Two apparent typographic defects of the web delivery are recorded, not repaired (c. 9 'in eisde praeteritis'; c. 20 'ili'). The bounded divine-law vocabulary inventory over all seven Latin book pages is a publication-local literal search recorded in research/source-audit.md. The web deliveries are not the Acta Apostolicae Sedis pages; publication-local check of the registered exact responses is the ceiling asserted."
+
+[[bindings]]
+source_id = "edition.catholic-church.codex-iuris-canonici-1983.english-vatican-web-codex-2026-07-25"
+loci = ["canon-1", "canon-5", "canon-6", "canon-7", "canon-8", "canon-9", "canon-11", "canon-17", "canon-19", "canon-20", "canon-21", "canon-22", "canon-23", "canon-24", "canon-25", "canon-26", "canon-27", "canon-28", "canon-85", "canon-86", "canon-87", "canon-90", "canon-98", "canon-113", "canon-129", "canon-145", "canon-199", "canon-207", "canon-375", "canon-748", "canon-750", "canon-751", "canon-1008", "canon-1059", "canon-1075", "canon-1078", "canon-1079", "canon-1080", "canon-1084", "canon-1163", "canon-1249", "canon-1290", "canon-1315"]
+role = "translation-control"
+states = ["cataloged"]
+context = "English renderings quoted in the article are the Vatican web English deliveries (fifteen canon-range pages, hashed 2026-07-25); no translator is named on the pages and the Latin governs. The c. 11 rendering 'possess the efficient use of reason' (for 'sufficienti rationis usu') is recorded as an apparent defect of the translation delivery. Publication-local check of the registered exact responses is the ceiling asserted."
+
+[[bindings]]
+source_id = "edition.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-2026-07-25"
+loci = ["canon-1315", "canon-1399"]
+role = "textual-control"
+states = ["cataloged"]
+context = "Canons 1315 and 1399 of the revised Book VI are quoted from a 2026-07-25 fetch of the Latin Book VI page that was byte-identical to this edition's registered artifact (sha256 8a85a5ec...). The delivery's 'divinamcongrua' (c. 1315 par. 1) is recorded as a typographic defect of the web delivery. Publication-local check of the registered exact response is the ceiling asserted."
+
+[[bindings]]
+source_id = "edition.catholic-church.codex-iuris-canonici-1983.english-vatican-web-2026-07-25"
+loci = ["canon-1399"]
+role = "translation-control"
+states = ["cataloged"]
+context = "The English of canon 1399 is quoted from a 2026-07-25 fetch of the Book VI Part II English page that was byte-identical to this edition's registered artifact (sha256 94b1139b...). The Latin governs."
+
+[[bindings]]
+source_id = "edition.isidore.etymologiae.lindsay-oxford-1911-vol1"
+loci = ["book-5-chapter-2", "book-5-chapter-3", "book-5-chapter-4", "book-5-chapter-21"]
+role = "textual-control"
+states = ["cataloged"]
+context = "Section 2 quotes Etymologies V.ii, V.iii, V.iv, and V.xxi verbatim from Lindsay's 1911 Oxford edition, read visually at the retained page images of leaves 192, 193, and 196 of the identified scan (tracked artifacts under this edition); the archive OCR text served as discovery aid only and agrees with the visual readings. Chapters V.v-viii are characterized from the same leaf images; V.xx and the parallel II.x are used only as received through Gratian or noted at OCR level, and the article says so. Publication-local visual check of the retained images is the ceiling asserted; no manuscript collation beyond Lindsay's printed apparatus is claimed."
+
+[[bindings]]
+source_id = "edition.gratian.decretum.friedberg-1879-mdz-web-2026-07-25"
+loci = ["d-1-pr", "d-1-c-1", "d-1-c-7", "d-4-pr", "d-4-c-2", "d-4-c-3", "d-8-pr", "d-8-c-1", "d-8-c-9", "d-9-pr", "d-9-c-11"]
+role = "textual-control"
+states = ["cataloged"]
+context = "Section 7 quotes the dicta Gratiani and chapters of Distinctions 1, 4, 8, and 9 verbatim from the exact fetched MDZ chapter pages (hashed 2026-07-25), which transcribe Friedberg's 1879 edition; registered passage records carry the key wording per locus. Friedberg's vulgate text is the witness, not a critical text of the earliest recension; wording differences between Gratian's Isidore and Lindsay's Isidore are reported as transmission history. Publication-local check of the registered exact responses is the ceiling asserted."
+
+[[bindings]]
+source_id = "edition.john-paul-ii.veritatis-splendor.english-vatican-web-2026-07-25"
+loci = ["12", "40-45"]
+role = "textual-control"
+states = ["cataloged"]
+context = "Section 11 quotes Veritatis splendor nn. 12 and 40-45 verbatim from the exact fetched official English delivery (hashed 2026-07-25). The Latin text (AAS 85 [1993] 1133-1228) is authoritative and was not collated. Publication-local check of the registered exact response is the ceiling asserted."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-25"
+loci = ["1954-1960"]
+role = "textual-control"
+states = ["cataloged"]
+context = "Section 11 quotes CCC 1954-1960 from the exact fetched English natural-moral-law page (hashed 2026-07-25). The Latin typical edition governs; the parallel Latin page is separately bound. Publication-local check of the registered exact response is the ceiling asserted."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.latin-vatican-web-2026-07-25"
+loci = ["1950-1953", "1954-1960"]
+role = "textual-control"
+states = ["cataloged"]
+context = "Sections 11 quotes CCC 1950-1953 (the definition of law, the eternal-law grounding, and the 1952 list of the expressions of the moral law) and controls 1954-1960 from the exact fetched Latin article page (hashed 2026-07-25), which carries paragraphs 1950-1986. English glosses of 1950-1953 are the article's own working translations. Publication-local check of the registered exact response is the ceiling asserted."
+
+[[bindings]]
+source_id = "passage.john-paul-ii.sacrae-disciplinae-leges.english-vatican-web-2026-07-25.complete-text"
+loci = ["complete-text"]
+role = "context"
+states = ["cataloged"]
+context = "The article relies on this passage for the 1983 Code's promulgation date (25 January 1983) and entry into force (27 November 1983). A 2026-07-25 refetch of the page was byte-identical to the registered artifact (sha256 e1b87d2b...). Publication-local check is the ceiling asserted."
+
+[[bindings]]
+source_id = "passage.francis.pascite-gregem-dei.english-vatican-web-2026-07-25.complete-text-refetch"
+loci = ["complete-text"]
+role = "context"
+states = ["cataloged"]
+context = "The article relies on this passage for the Book VI revision's dates (given 23 May 2021; in force 8 December 2021). The 2026-07-25 refetch returned different exact bytes from the previously registered same-date response, an observed delivery mutability recorded in the new artifact's notes; the constitution's content dates are unchanged. Publication-local check is the ceiling asserted."
+
+[[bindings]]
+source_id = "passage.second-vatican-council.dignitatis-humanae.english-vatican-web-2026-07-23.1-3"
+loci = ["1-3"]
+role = "textual-control"
+states = ["cataloged"]
+context = "Section 11 quotes Dignitatis humanae n. 3 ('the highest norm of human life is the divine law...') from the official English delivery; a 2026-07-25 refetch of the page was byte-identical to the registered artifact (sha256 0ce2da9b...). DH 3's own note cites ST I-II q. 91 a. 1 and q. 93, a source-of-source relation stated in the article's note. Publication-local check is the ceiling asserted."
