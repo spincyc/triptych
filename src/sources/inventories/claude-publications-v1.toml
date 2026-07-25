@@ -1,0 +1,1031 @@
+inventory_schema = 1
+record_type = "publication-source-inventory"
+provider = "claude"
+audited_on = "2026-07-25"
+discovery_rule = "src/claude/**/main.tex"
+publication_count = 9
+source_surface_file_count = 149
+snapshot = "sha256:1442ee19a8355055f8ae43ca54f4f50bbcb982d14b155516425dc01efd4b8399"
+
+[[owners]]
+id = "owner.biographies.shared"
+kind = "shared-render-owner"
+roots = ["src/claude/biographies/shared"]
+
+[[owners]]
+id = "owner.history.biblical-translations"
+kind = "shared-render-owner"
+roots = ["src/claude/history/biblical-translations"]
+
+[[owners]]
+id = "owner.typesetting.common"
+kind = "shared-typesetting-owner"
+roots = ["src/common"]
+
+[[documents]]
+id = "articles/faith/against-the-instrumentalists"
+main = "src/claude/articles/faith/against-the-instrumentalists/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "articles/faith/against-the-instrumentalists"
+relationship = "local"
+
+[[documents]]
+id = "articles/faith/in-support-of-the-particular"
+main = "src/claude/articles/faith/in-support-of-the-particular/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "articles/faith/in-support-of-the-particular"
+relationship = "local"
+
+[[documents]]
+id = "articles/faith/ontological-vertigo"
+main = "src/claude/articles/faith/ontological-vertigo/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "articles/faith/ontological-vertigo"
+relationship = "local"
+
+[[documents]]
+id = "articles/faith/the-due-return"
+main = "src/claude/articles/faith/the-due-return/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "articles/faith/the-due-return"
+relationship = "local"
+
+[[documents]]
+id = "biographies/origen"
+main = "src/claude/biographies/origen/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "biographies/origen"
+relationship = "local"
+[[documents.record_owners]]
+id = "owner.biographies.shared"
+relationship = "render-import"
+
+[[documents]]
+id = "biographies/saint-jerome"
+main = "src/claude/biographies/saint-jerome/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "biographies/saint-jerome"
+relationship = "local"
+[[documents.record_owners]]
+id = "owner.biographies.shared"
+relationship = "render-import"
+
+[[documents]]
+id = "biographies/tertullian"
+main = "src/claude/biographies/tertullian/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "biographies/tertullian"
+relationship = "local"
+[[documents.record_owners]]
+id = "owner.biographies.shared"
+relationship = "render-import"
+
+[[documents]]
+id = "history/biblical-translations/01-septuagint"
+main = "src/claude/history/biblical-translations/01-septuagint/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "history/biblical-translations/01-septuagint"
+relationship = "local"
+[[documents.record_owners]]
+id = "owner.history.biblical-translations"
+relationship = "render-import"
+
+[[documents]]
+id = "history/biblical-translations/02-vulgate"
+main = "src/claude/history/biblical-translations/02-vulgate/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "history/biblical-translations/02-vulgate"
+relationship = "local"
+[[documents.record_owners]]
+id = "owner.history.biblical-translations"
+relationship = "render-import"
+
+[[files]]
+path = "src/claude/articles/faith/against-the-instrumentalists/main.tex"
+sha256 = "53c6c37e1fb7feb7e53994ee408d3d03c715ac34c5d36ddb5ee5cc5816083e21"
+kind = "publication-main"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/claude/articles/faith/against-the-instrumentalists/research/scope.md"
+sha256 = "af7d0021541190ed6364c6e86f6489b2da9121367f1eec0acac8d0e52450eb73"
+kind = "research-scope"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/claude/articles/faith/against-the-instrumentalists/research/source-audit.md"
+sha256 = "fb871f2adda6817e79a87dc7f9a4a1c40de05025b9f815ca01cc701a3d975e29"
+kind = "legacy-source-audit"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/claude/articles/faith/against-the-instrumentalists/research/source-bindings.toml"
+sha256 = "726dcb73e958dbe2a55fe0c9d2c3e9125c533ed0ec84d7ef458d5a175d8487cc"
+kind = "source-binding"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/claude/articles/faith/against-the-instrumentalists/sections/00-the-case-for-the-instruments.tex"
+sha256 = "a6d5ec4d6eb7bc806641797452871f59b741cae5bbdddc5918db87be2e74d97a"
+kind = "rendered-content"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/claude/articles/faith/against-the-instrumentalists/sections/10-the-criterion-meets-itself.tex"
+sha256 = "87705a4a958eb47ce0f3d32e5171f6ac1f22d9ec04d1ffd971c5dee8a4c5f474"
+kind = "rendered-content"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/claude/articles/faith/against-the-instrumentalists/sections/20-what-the-laboratory-already-knows.tex"
+sha256 = "baa51e26497e6ca053300cccf50b6d72ab925d6a167c5cba869a935586e96630"
+kind = "rendered-content"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/claude/articles/faith/against-the-instrumentalists/sections/30-from-effects-to-their-ground.tex"
+sha256 = "720f21915ade977c2f39c6f241b2a4125b993a43012e422fd8224866dcb26bf7"
+kind = "rendered-content"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/claude/articles/faith/against-the-instrumentalists/sections/40-what-the-church-stakes-on-reason.tex"
+sha256 = "13e3a778272ed159512d636883cc0491e47be3a6728c8537f6cfae39427cb5c5"
+kind = "rendered-content"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/claude/articles/faith/against-the-instrumentalists/sections/50-the-sciences-given-back.tex"
+sha256 = "dba8dacba39dafbbfeb8f7eae54393571a17e9d4a93995f19885e18d44bea871"
+kind = "rendered-content"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/claude/articles/faith/against-the-instrumentalists/sections/90-scope-method-qualifications.tex"
+sha256 = "3b01fc958b03cbfdb733c59bb2d49614278a36bfb5d9dffce5384adea05e1c4f"
+kind = "rendered-content"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/claude/articles/faith/against-the-instrumentalists/sections/99-references.tex"
+sha256 = "a4814b4cad186ff1b4ac7d81b900c5746cf3e5abeec7522a70d175711789c896"
+kind = "rendered-content"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/claude/articles/faith/in-support-of-the-particular/main.tex"
+sha256 = "29a4759befbb0c1225dff88b7a4d66589ad9574065b81e30039e44e895183d26"
+kind = "publication-main"
+owners = ["articles/faith/in-support-of-the-particular"]
+
+[[files]]
+path = "src/claude/articles/faith/in-support-of-the-particular/research/scope.md"
+sha256 = "2203ca2757437aba76807f8b438de639cbe79feeab367d292db1700ab009e5b2"
+kind = "research-scope"
+owners = ["articles/faith/in-support-of-the-particular"]
+
+[[files]]
+path = "src/claude/articles/faith/in-support-of-the-particular/research/source-audit.md"
+sha256 = "2ccfa67e5f7856ca6bbd914809f6e50b9d2f6a70f1bb76e0f35ad3eebc4656cb"
+kind = "legacy-source-audit"
+owners = ["articles/faith/in-support-of-the-particular"]
+
+[[files]]
+path = "src/claude/articles/faith/in-support-of-the-particular/research/source-bindings.toml"
+sha256 = "3d5bfc97b0ff36302cd8473578f9da2900a7d6a2a86a41b1c8ad12b474ee2220"
+kind = "source-binding"
+owners = ["articles/faith/in-support-of-the-particular"]
+
+[[files]]
+path = "src/claude/articles/faith/in-support-of-the-particular/sections/00-the-offense-at-nazareth.tex"
+sha256 = "7999ab36fed3e6f4253782f9482095d5f25d3a3f64d5e541a440175b72cf020f"
+kind = "rendered-content"
+owners = ["articles/faith/in-support-of-the-particular"]
+
+[[files]]
+path = "src/claude/articles/faith/in-support-of-the-particular/sections/10-the-objection-at-full-strength.tex"
+sha256 = "765c8b6ece085a23ab7149810a549cd7cf40fae01deeae9134657259f6bcb6e6"
+kind = "rendered-content"
+owners = ["articles/faith/in-support-of-the-particular"]
+
+[[files]]
+path = "src/claude/articles/faith/in-support-of-the-particular/sections/20-what-actually-exists.tex"
+sha256 = "a2d3a36cc1278fa51a49c9cdba65779a7f22d1f234ba90c5397b9e7f4b410bd8"
+kind = "rendered-content"
+owners = ["articles/faith/in-support-of-the-particular"]
+
+[[files]]
+path = "src/claude/articles/faith/in-support-of-the-particular/sections/30-the-fewest-of-any-people.tex"
+sha256 = "6b17afb6eef8c60edfb7fc2a5127044c43a8e7aaeedb36ba8e719c27519386a9"
+kind = "rendered-content"
+owners = ["articles/faith/in-support-of-the-particular"]
+
+[[files]]
+path = "src/claude/articles/faith/in-support-of-the-particular/sections/40-the-word-in-a-part.tex"
+sha256 = "06a24f3976c27d7005d5f6e36dd4b160f28fff8b11f97e6784a9d95477dfc07f"
+kind = "rendered-content"
+owners = ["articles/faith/in-support-of-the-particular"]
+
+[[files]]
+path = "src/claude/articles/faith/in-support-of-the-particular/sections/50-this-water-this-bread.tex"
+sha256 = "c890cce8074bebfe3842003ae42852498180f5c80d5e09284c50ea3eecf12920"
+kind = "rendered-content"
+owners = ["articles/faith/in-support-of-the-particular"]
+
+[[files]]
+path = "src/claude/articles/faith/in-support-of-the-particular/sections/60-a-name-which-no-man-knoweth.tex"
+sha256 = "a42f22458a7ad3156d91f776576257381d3e775da7b0be2adfdd5cfb158f3760"
+kind = "rendered-content"
+owners = ["articles/faith/in-support-of-the-particular"]
+
+[[files]]
+path = "src/claude/articles/faith/in-support-of-the-particular/sections/90-scope-method-qualifications.tex"
+sha256 = "046595d4ff67ecccf2a7f899753b46416e44c8b3b565bee9189f3c2fec70545b"
+kind = "rendered-content"
+owners = ["articles/faith/in-support-of-the-particular"]
+
+[[files]]
+path = "src/claude/articles/faith/in-support-of-the-particular/sections/99-references.tex"
+sha256 = "5cdc64b4a873586254e03558ee5059533c1bcc28f3014d23c9a794f5a54e8b70"
+kind = "rendered-content"
+owners = ["articles/faith/in-support-of-the-particular"]
+
+[[files]]
+path = "src/claude/articles/faith/ontological-vertigo/main.tex"
+sha256 = "c23906fc5302cdf3c6601dedbbb4c63c0c73e981a0cfa090d2b11b0da6d97467"
+kind = "publication-main"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
+path = "src/claude/articles/faith/ontological-vertigo/research/scope.md"
+sha256 = "2a1cf437c6a38404459535e4b38002cfd51ef691c739b3a4cd9ea09dcc46a418"
+kind = "research-scope"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
+path = "src/claude/articles/faith/ontological-vertigo/research/source-audit.md"
+sha256 = "1edd2e9a2adf421b9c6dec78eaa351a500110e8fc0b5aad38449063e87fdac89"
+kind = "legacy-source-audit"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
+path = "src/claude/articles/faith/ontological-vertigo/research/source-bindings.toml"
+sha256 = "4e98de3947028ddba1101fba5632dd7b848b5cb76c744ae619661e8439a911d6"
+kind = "source-binding"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
+path = "src/claude/articles/faith/ontological-vertigo/sections/00-the-song-and-the-house.tex"
+sha256 = "fe9fb8db420698c2142f020c59230fff16d04aadd63a4490fa40f857bad31f7b"
+kind = "rendered-content"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
+path = "src/claude/articles/faith/ontological-vertigo/sections/10-what-the-greeks-reached.tex"
+sha256 = "b1eefcecc30e885c4c572263bf17c082c18b3124ae7158aaf45e481b671cc142"
+kind = "rendered-content"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
+path = "src/claude/articles/faith/ontological-vertigo/sections/20-what-a-thing-is-and-that-it-is.tex"
+sha256 = "755a24236b34951cd2d8e5522f2899ad44d0ea313b6c154ed83c7ecebdd163ed"
+kind = "rendered-content"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
+path = "src/claude/articles/faith/ontological-vertigo/sections/30-the-present-tense-of-creation.tex"
+sha256 = "2ec46a4e65bdbeae15f2888d5933b09aa45edd2c5fd79d3c5d88770d22ac29b5"
+kind = "rendered-content"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
+path = "src/claude/articles/faith/ontological-vertigo/sections/40-this-is-true-of-me.tex"
+sha256 = "f702983f65d763997c03082c216f57efc141f9da5ff58fae2ac04c7bc443241d"
+kind = "rendered-content"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
+path = "src/claude/articles/faith/ontological-vertigo/sections/50-the-reading-that-recoils.tex"
+sha256 = "6907cd06b3863481832ed78a4c329ee9b15eece34471f786457fd6b762d94bd7"
+kind = "rendered-content"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
+path = "src/claude/articles/faith/ontological-vertigo/sections/60-the-shape-of-the-gift.tex"
+sha256 = "9cadbb246e10d11f6b42e8b298f078f4638a2b323507282a77f0d5259bc493de"
+kind = "rendered-content"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
+path = "src/claude/articles/faith/ontological-vertigo/sections/90-scope-method-qualifications.tex"
+sha256 = "75c8803a26aa6abbcbea620ecfe6a3792847300bb2f02890b3e570ab8921e377"
+kind = "rendered-content"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
+path = "src/claude/articles/faith/ontological-vertigo/sections/99-references.tex"
+sha256 = "798219321d0991f4e4dfc8793f225e07aee0b89ec028dad31129402a579a64e2"
+kind = "rendered-content"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
+path = "src/claude/articles/faith/the-due-return/main.tex"
+sha256 = "e41ee6b0f8769f10bc2022803f00cbc3d5376862d27a353ae94690027cdb3380"
+kind = "publication-main"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/claude/articles/faith/the-due-return/research/scope.md"
+sha256 = "95c98f65673fdf71cc6cf0825b528fb072072790b4f052ff4758f14f396e6160"
+kind = "research-scope"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/claude/articles/faith/the-due-return/research/source-audit.md"
+sha256 = "ee75d6b150b604d78cd61964a52f58b7a4b4210d1d5708b8fa33278916fcbfef"
+kind = "legacy-source-audit"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/claude/articles/faith/the-due-return/research/source-bindings.toml"
+sha256 = "9a57db531a53d2c558f2a85c6fb8e22d0f071ea55f8e217663cb7f3fb86763b9"
+kind = "source-binding"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/claude/articles/faith/the-due-return/sections/00-the-question-the-psalmist-asked.tex"
+sha256 = "bd06cbf5ba87de026c2f2a6d7117340e49dfc6c30516e48103c5dd63ba204937"
+kind = "rendered-content"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/claude/articles/faith/the-due-return/sections/10-a-debt-unlike-the-others.tex"
+sha256 = "ce83ec4dc4618a0fcc78e74ab6f0985222ac705c8497d244f11636278030f3fd"
+kind = "rendered-content"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/claude/articles/faith/the-due-return/sections/20-the-virtue-annexed-to-justice.tex"
+sha256 = "c7f07e44ef4d5cc9bf7ac36da7f581dd4ce2ae297550c4b17021d31f463119f7"
+kind = "rendered-content"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/claude/articles/faith/the-due-return/sections/30-what-the-body-knows.tex"
+sha256 = "865624a995cbd9b2332d81a1a2d8bf3849014eb68c09b2bed2f0b0840bb89e8e"
+kind = "rendered-content"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/claude/articles/faith/the-due-return/sections/40-sacrifice-visible-and-invisible.tex"
+sha256 = "32b19180ae5ab6d85cee698daea059a906778443505d9dd0cd159a192a9c6022"
+kind = "rendered-content"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/claude/articles/faith/the-due-return/sections/50-a-due-that-cannot-be-compelled.tex"
+sha256 = "161a6e250dc3b0d7a24ee5d0b68ad609ee2e63b9fec716d12040ca57438023be"
+kind = "rendered-content"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/claude/articles/faith/the-due-return/sections/60-the-open-account.tex"
+sha256 = "2167a021ca073ff857b43e3975bbb6cd8be4f2401aa7ec0b4902aad05a1b475e"
+kind = "rendered-content"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/claude/articles/faith/the-due-return/sections/90-scope-method-qualifications.tex"
+sha256 = "2c83b04f0133f52436ce713d059448fa5f2bb1fdf5da2e71ba1c48960d577bbe"
+kind = "rendered-content"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/claude/articles/faith/the-due-return/sections/99-references.tex"
+sha256 = "bc133e4fdcc914b98a0817652c4a7cae13e92ddbaeffbb73ad908c7c8685efd6"
+kind = "rendered-content"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/claude/biographies/origen/main.tex"
+sha256 = "ca934a2e462eb75318af4a530fc9ac19326d235f6688be367f4e249882140ca8"
+kind = "publication-main"
+owners = ["biographies/origen"]
+
+[[files]]
+path = "src/claude/biographies/origen/research/chronology.md"
+sha256 = "5b1d230889c64c1eda0a209ba9d6b7953c59140781a6378d519bc5641915b36b"
+kind = "research-record"
+owners = ["biographies/origen"]
+
+[[files]]
+path = "src/claude/biographies/origen/research/scope.md"
+sha256 = "e78722d16627599b67e601c89af6d7e7687456b6b2e883c019c79eabf55d4e4f"
+kind = "research-scope"
+owners = ["biographies/origen"]
+
+[[files]]
+path = "src/claude/biographies/origen/research/source-audit.md"
+sha256 = "fad6cfb1e2e02921d582d691c4d36e63aa93249f03eb07645fc3ddf4142376d7"
+kind = "legacy-source-audit"
+owners = ["biographies/origen"]
+
+[[files]]
+path = "src/claude/biographies/origen/research/source-bindings.toml"
+sha256 = "382edcc92dd4c789d9f4a9d19e74cb3e53463f491245cb9765e2ee138e871874"
+kind = "source-binding"
+owners = ["biographies/origen"]
+
+[[files]]
+path = "src/claude/biographies/origen/research/tradition-audit.md"
+sha256 = "03022a65e02d8d49ff433eb26f97f92fb2968874ec90de6834f0dc09ee3145dc"
+kind = "research-record"
+owners = ["biographies/origen"]
+
+[[files]]
+path = "src/claude/biographies/origen/sections/00-question.tex"
+sha256 = "bb971d1138a8648ee49e9edd07c5acecbf60b1272a0775177262b36cf0a87fff"
+kind = "rendered-content"
+owners = ["biographies/origen"]
+
+[[files]]
+path = "src/claude/biographies/origen/sections/10-alexandria.tex"
+sha256 = "03cdcf34e97363f3d1f89191d7e9206b39788dd628ee549b8dea892b7395df1c"
+kind = "rendered-content"
+owners = ["biographies/origen"]
+
+[[files]]
+path = "src/claude/biographies/origen/sections/100-reception.tex"
+sha256 = "34b1776df03e7383000b4092bf30b2d5d698aa839ad87b94b873261dd98454f4"
+kind = "rendered-content"
+owners = ["biographies/origen"]
+
+[[files]]
+path = "src/claude/biographies/origen/sections/110-conclusion.tex"
+sha256 = "cc0dc0c9d55a5f15ed6d1ca643ec37509aebac5bffa05c84e25ef3ccaec610ee"
+kind = "rendered-content"
+owners = ["biographies/origen"]
+
+[[files]]
+path = "src/claude/biographies/origen/sections/120-scope-chronology-evidence.tex"
+sha256 = "ffab80ba25458a35d43c1056fa953f480651ff7e9b1787bf8f408851ebffbe16"
+kind = "rendered-content"
+owners = ["biographies/origen"]
+
+[[files]]
+path = "src/claude/biographies/origen/sections/130-references.tex"
+sha256 = "4e775cd53f0a65ba19aed0353f9d40a90640f667b7f9413ce19146869be8818c"
+kind = "rendered-content"
+owners = ["biographies/origen"]
+
+[[files]]
+path = "src/claude/biographies/origen/sections/20-martyrs-son.tex"
+sha256 = "4b330c7b930fedcc6ffcdaf9af646ec9f3ae15ad66ddf43453624ba358fd2f38"
+kind = "rendered-content"
+owners = ["biographies/origen"]
+
+[[files]]
+path = "src/claude/biographies/origen/sections/30-catechist.tex"
+sha256 = "613c494d0ea5dfd6e2f453ff00bced955fe5bf1397b0d75fca2031033e782b50"
+kind = "rendered-content"
+owners = ["biographies/origen"]
+
+[[files]]
+path = "src/claude/biographies/origen/sections/40-report.tex"
+sha256 = "ccf0fdf82819b8e2868fbdbb488ecdd5241c6b703e72248800eb47c181cb7d5a"
+kind = "rendered-content"
+owners = ["biographies/origen"]
+
+[[files]]
+path = "src/claude/biographies/origen/sections/50-scholar.tex"
+sha256 = "418788b7fd83b68cedf277adcf53ad5d78bdb10864ab605b052b028daa63fdfd"
+kind = "rendered-content"
+owners = ["biographies/origen"]
+
+[[files]]
+path = "src/claude/biographies/origen/sections/60-rupture.tex"
+sha256 = "e8eb7f0d5bd9204abfd7e29160d6e886fd794d52d2f1a7f57bdeeb2dada57141"
+kind = "rendered-content"
+owners = ["biographies/origen"]
+
+[[files]]
+path = "src/claude/biographies/origen/sections/70-late-works.tex"
+sha256 = "a271ddba384763f48a00e35ce59749dc3799b6bc4227ba8f9af5c2d20ed86276"
+kind = "rendered-content"
+owners = ["biographies/origen"]
+
+[[files]]
+path = "src/claude/biographies/origen/sections/80-decius.tex"
+sha256 = "c48c3ef6dd9d5d793332d5878c835bbe9c9a93f2abee1389fef17ab64745dbd1"
+kind = "rendered-content"
+owners = ["biographies/origen"]
+
+[[files]]
+path = "src/claude/biographies/origen/sections/90-controversies.tex"
+sha256 = "f7abcf1d5acd2554170c777873e15522f2b31ff36e7b9dc6726340faa97e7f85"
+kind = "rendered-content"
+owners = ["biographies/origen"]
+
+[[files]]
+path = "src/claude/biographies/saint-jerome/main.tex"
+sha256 = "9e2716d83ec1ec8efc0288050e75c130d30408f8ea50433513b793e4e01d30a5"
+kind = "publication-main"
+owners = ["biographies/saint-jerome"]
+
+[[files]]
+path = "src/claude/biographies/saint-jerome/research/chronology.md"
+sha256 = "41c51773817336680a89b9dd61e5934178f0c7ffca8620523e83938ccb3180d1"
+kind = "research-record"
+owners = ["biographies/saint-jerome"]
+
+[[files]]
+path = "src/claude/biographies/saint-jerome/research/scope.md"
+sha256 = "177b45f4a4f74efa40d22f1e5b1558dad10db069faf9632402bf8f8568324316"
+kind = "research-scope"
+owners = ["biographies/saint-jerome"]
+
+[[files]]
+path = "src/claude/biographies/saint-jerome/research/source-audit.md"
+sha256 = "011dd509863fda0fb5a5a2683b28196ec57eacda3859a1ad61650512816e8e14"
+kind = "legacy-source-audit"
+owners = ["biographies/saint-jerome"]
+
+[[files]]
+path = "src/claude/biographies/saint-jerome/research/source-bindings.toml"
+sha256 = "9566075f50d97c2714dbdb852633c5cc908768aaca17aa6913e9af999056e738"
+kind = "source-binding"
+owners = ["biographies/saint-jerome"]
+
+[[files]]
+path = "src/claude/biographies/saint-jerome/research/tradition-audit.md"
+sha256 = "f60971633b7a5a0256b19c866d379767d3f66566b1e7d91978dcc32bc569c1c4"
+kind = "research-record"
+owners = ["biographies/saint-jerome"]
+
+[[files]]
+path = "src/claude/biographies/saint-jerome/sections/00-question.tex"
+sha256 = "a14233ed15280d4bde0eb01c90eb6e0b5c3ecc317d2c9fea0ada044fbd00b382"
+kind = "rendered-content"
+owners = ["biographies/saint-jerome"]
+
+[[files]]
+path = "src/claude/biographies/saint-jerome/sections/10-stridon.tex"
+sha256 = "50533ad57e5c72ae2d452c0a7847102f1a18b40566c15b0c225fd58657025b57"
+kind = "rendered-content"
+owners = ["biographies/saint-jerome"]
+
+[[files]]
+path = "src/claude/biographies/saint-jerome/sections/100-conclusion.tex"
+sha256 = "e998df81b7e21be3af536cca45457ce0267ab66581556db364991a9704b940ed"
+kind = "rendered-content"
+owners = ["biographies/saint-jerome"]
+
+[[files]]
+path = "src/claude/biographies/saint-jerome/sections/110-scope-chronology-evidence.tex"
+sha256 = "ca9447cd0ce8fbe8f8c4282e40c3019d329278813ca48f61788d574a46cd4cac"
+kind = "rendered-content"
+owners = ["biographies/saint-jerome"]
+
+[[files]]
+path = "src/claude/biographies/saint-jerome/sections/120-references.tex"
+sha256 = "e74f330a27b309c6e14f8b3dd6e355cb0f1414a6348abca7924ba4828d0c3750"
+kind = "rendered-content"
+owners = ["biographies/saint-jerome"]
+
+[[files]]
+path = "src/claude/biographies/saint-jerome/sections/20-desert.tex"
+sha256 = "601d3e09b1be34afe835769977f7be785ee41694513c05985200cebb25a5b72e"
+kind = "rendered-content"
+owners = ["biographies/saint-jerome"]
+
+[[files]]
+path = "src/claude/biographies/saint-jerome/sections/30-ordination.tex"
+sha256 = "9aebbd41bed9155884545243085eec6b304024987f562f3290998d564d6365da"
+kind = "rendered-content"
+owners = ["biographies/saint-jerome"]
+
+[[files]]
+path = "src/claude/biographies/saint-jerome/sections/40-rome.tex"
+sha256 = "0dd732d6197fcf107c2acbecb94801cccb03022bcc627025049231dca07272eb"
+kind = "rendered-content"
+owners = ["biographies/saint-jerome"]
+
+[[files]]
+path = "src/claude/biographies/saint-jerome/sections/50-bethlehem.tex"
+sha256 = "58ab80b94cff4e5b480e1e2af944494f0a9ae61146470085c68609ea563e81ec"
+kind = "rendered-content"
+owners = ["biographies/saint-jerome"]
+
+[[files]]
+path = "src/claude/biographies/saint-jerome/sections/60-vulgate.tex"
+sha256 = "23968a4b748a37eb72b2acc51b2b585d6e4e2a438ac0043ec35816b9bb2c203c"
+kind = "rendered-content"
+owners = ["biographies/saint-jerome"]
+
+[[files]]
+path = "src/claude/biographies/saint-jerome/sections/70-controversies.tex"
+sha256 = "43ff0da8a3630e2e39f0655c852f923fad6b6deaacfc83b9efbec2c9449cbaa8"
+kind = "rendered-content"
+owners = ["biographies/saint-jerome"]
+
+[[files]]
+path = "src/claude/biographies/saint-jerome/sections/80-pelagians-end.tex"
+sha256 = "c1abaf4e8441b73bfc0e084deaa4c248de1245cc5f58db9d8bef4dbe519931c6"
+kind = "rendered-content"
+owners = ["biographies/saint-jerome"]
+
+[[files]]
+path = "src/claude/biographies/saint-jerome/sections/90-reception.tex"
+sha256 = "a007ef6c0444d97a2fe6586fbb2125bae6d69c1ee72063f530bd6e21a3c3dbff"
+kind = "rendered-content"
+owners = ["biographies/saint-jerome"]
+
+[[files]]
+path = "src/claude/biographies/shared/biography-format.tex"
+sha256 = "f8d74419ca959ce6a54bfbb7f81b864728ffb385be163eb04c00f1b7a513c71c"
+kind = "shared-source-or-render"
+owners = ["owner.biographies.shared"]
+
+[[files]]
+path = "src/claude/biographies/tertullian/main.tex"
+sha256 = "c9281e9c89fdf9bb73fc0037070c67264c2b998a0af46e8d0b5f388a074d4357"
+kind = "publication-main"
+owners = ["biographies/tertullian"]
+
+[[files]]
+path = "src/claude/biographies/tertullian/research/chronology.md"
+sha256 = "65604737faf1fe328d3cbcb4ea20df5da89e1ee78f84bb3709ab1e63da721b49"
+kind = "research-record"
+owners = ["biographies/tertullian"]
+
+[[files]]
+path = "src/claude/biographies/tertullian/research/scope.md"
+sha256 = "a0002f9645ecbdb7f7e45262cb47b4d923b75a10e3104134ad0d7f6a20e772ff"
+kind = "research-scope"
+owners = ["biographies/tertullian"]
+
+[[files]]
+path = "src/claude/biographies/tertullian/research/source-audit.md"
+sha256 = "e499aab3ac456b4bd986db5957b2901fca50957d43feb2106061db52f138fa61"
+kind = "legacy-source-audit"
+owners = ["biographies/tertullian"]
+
+[[files]]
+path = "src/claude/biographies/tertullian/research/source-bindings.toml"
+sha256 = "5713a3ca9e75ee1c8164c0167ca7b0ea9ff5a75db18c4645af022c03b3e33c17"
+kind = "source-binding"
+owners = ["biographies/tertullian"]
+
+[[files]]
+path = "src/claude/biographies/tertullian/research/tradition-audit.md"
+sha256 = "8ca6b0e3b9bb4596785f25d2553d6ceca8aaae15c4305e6e2823a59dfc779e5a"
+kind = "research-record"
+owners = ["biographies/tertullian"]
+
+[[files]]
+path = "src/claude/biographies/tertullian/sections/00-question.tex"
+sha256 = "8cbe62e1df019ac09211a224065fc8c6ece83c13959a8ef3e89388fb1d304b92"
+kind = "rendered-content"
+owners = ["biographies/tertullian"]
+
+[[files]]
+path = "src/claude/biographies/tertullian/sections/10-carthage.tex"
+sha256 = "b6817bde3700de05e73e49d1dfd0d163f4e7fb005bb448af9ad7f2578d811ccb"
+kind = "rendered-content"
+owners = ["biographies/tertullian"]
+
+[[files]]
+path = "src/claude/biographies/tertullian/sections/100-reception.tex"
+sha256 = "853a811a493c2280c3d53765fb0710ff9e462d4e09b4f831fa2060f97855c6d1"
+kind = "rendered-content"
+owners = ["biographies/tertullian"]
+
+[[files]]
+path = "src/claude/biographies/tertullian/sections/110-conclusion.tex"
+sha256 = "7a2908464bc4f0b93820b74f26b7044fc66764d62e21ea78f6929c411fc1e6ef"
+kind = "rendered-content"
+owners = ["biographies/tertullian"]
+
+[[files]]
+path = "src/claude/biographies/tertullian/sections/120-scope-chronology-evidence.tex"
+sha256 = "452eb3825d746b9fcc00c32ccf4649b4fa54c1301105431cef477d60870bb6bc"
+kind = "rendered-content"
+owners = ["biographies/tertullian"]
+
+[[files]]
+path = "src/claude/biographies/tertullian/sections/130-references.tex"
+sha256 = "5bef208226207f190f4373463dd78e3006bbf06759eae9c0d996f76b9d07cc2a"
+kind = "rendered-content"
+owners = ["biographies/tertullian"]
+
+[[files]]
+path = "src/claude/biographies/tertullian/sections/20-life-evidence.tex"
+sha256 = "590c51a81161e244442a1c4dc60c7d7e26aff068145ce46cf49f599d941f93a5"
+kind = "rendered-content"
+owners = ["biographies/tertullian"]
+
+[[files]]
+path = "src/claude/biographies/tertullian/sections/30-apologist.tex"
+sha256 = "69fc53f65b2f6291d2bba5f5da79a88aa197db8db1244a2f778829bad8dec958"
+kind = "rendered-content"
+owners = ["biographies/tertullian"]
+
+[[files]]
+path = "src/claude/biographies/tertullian/sections/40-church-practice.tex"
+sha256 = "3c0d185194ed42d1f333a7de967e2128e87e3a8b1a0da1f2ca2f68a242589aaf"
+kind = "rendered-content"
+owners = ["biographies/tertullian"]
+
+[[files]]
+path = "src/claude/biographies/tertullian/sections/50-boundary.tex"
+sha256 = "96c9ff398e893649a5ccbbf80632c8c3a5fc1a98ff1d100cc2d15095bff25f63"
+kind = "rendered-content"
+owners = ["biographies/tertullian"]
+
+[[files]]
+path = "src/claude/biographies/tertullian/sections/60-theology.tex"
+sha256 = "f5096ff0385b1f819b4523f1c1c8045d26e6a8612b41b1a5937d9695fd8d4bad"
+kind = "rendered-content"
+owners = ["biographies/tertullian"]
+
+[[files]]
+path = "src/claude/biographies/tertullian/sections/70-new-prophecy.tex"
+sha256 = "21b96bebf649265414ba25d2bc6a3e82533753af468176eee3d222d75aacfb51"
+kind = "rendered-content"
+owners = ["biographies/tertullian"]
+
+[[files]]
+path = "src/claude/biographies/tertullian/sections/80-schism.tex"
+sha256 = "67572a5f4648afd3597833d8b62bc64abbbc934d90fc07163895559cd5314e2b"
+kind = "rendered-content"
+owners = ["biographies/tertullian"]
+
+[[files]]
+path = "src/claude/biographies/tertullian/sections/90-end.tex"
+sha256 = "24932feee9e390393baa9bb137e00ae141d05ef65a436cc04cfc5fb26fda55ab"
+kind = "rendered-content"
+owners = ["biographies/tertullian"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/01-septuagint/main.tex"
+sha256 = "f676d86d6378db2faf8d38e2390f7166cca8550df19e682025de0bf795cd8c8c"
+kind = "publication-main"
+owners = ["history/biblical-translations/01-septuagint"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/01-septuagint/research/evidence-map.md"
+sha256 = "c0666b26157d186cc9251d912b25f19e8aea012c38c630888a26b823b79c17b7"
+kind = "research-record"
+owners = ["history/biblical-translations/01-septuagint"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/01-septuagint/research/scope.md"
+sha256 = "da4398ec3c117e83306f29332cec51696ba579af40cb7334e81199cc2fc9a1ae"
+kind = "research-scope"
+owners = ["history/biblical-translations/01-septuagint"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/01-septuagint/research/source-audit.md"
+sha256 = "5ac1b0c208e57ac40783742eb07cf801b055746d531e4dc1218bbb0c9d17f707"
+kind = "legacy-source-audit"
+owners = ["history/biblical-translations/01-septuagint"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/01-septuagint/research/source-bindings.toml"
+sha256 = "43b8ced042de2233c4bf2e243c1af29df8699eae25b6fa068ce3f84a4b32cbcc"
+kind = "source-binding"
+owners = ["history/biblical-translations/01-septuagint"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/01-septuagint/sections/00-question.tex"
+sha256 = "b88a8ee3226d53f01767711ddf7409cdabdbcf34acb622e0bd4998d11c031a8d"
+kind = "rendered-content"
+owners = ["history/biblical-translations/01-septuagint"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/01-septuagint/sections/10-alexandria.tex"
+sha256 = "4962c9f3d1e7ee60fe8627692d0f73a55d5394f97ceeac6cc5212179e188e5d2"
+kind = "rendered-content"
+owners = ["history/biblical-translations/01-septuagint"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/01-septuagint/sections/100-modern.tex"
+sha256 = "556b12b35b99472a4919b261ff54a3dcc59f883cf7252e226d26e9ebf0d509f3"
+kind = "rendered-content"
+owners = ["history/biblical-translations/01-septuagint"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/01-septuagint/sections/110-conclusion.tex"
+sha256 = "8d8a30677ccdd020d2551a5dd509ace9ba2e488f9ec43e2b24fcb4d6e0d75b1c"
+kind = "rendered-content"
+owners = ["history/biblical-translations/01-septuagint"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/01-septuagint/sections/120-scope-method.tex"
+sha256 = "99ef11f6461dad3288dc219744a4492e8780d2d3ac13df2eef12a9084b192f1b"
+kind = "rendered-content"
+owners = ["history/biblical-translations/01-septuagint"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/01-septuagint/sections/130-references.tex"
+sha256 = "fe898a42b727a0df18904b8051ad1568f9412ed15e82f161ad71a7132ca83399"
+kind = "rendered-content"
+owners = ["history/biblical-translations/01-septuagint"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/01-septuagint/sections/20-aristeas.tex"
+sha256 = "1c19a42c5fd2b284e2e1f419657094614eebb6b2ba212ddeaeec18759e7ad83d"
+kind = "rendered-content"
+owners = ["history/biblical-translations/01-septuagint"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/01-septuagint/sections/30-legend.tex"
+sha256 = "26c1f116693ebd09d1149ba0f5ef76545dc92dd45988b8ddaff069296fd61ee6"
+kind = "rendered-content"
+owners = ["history/biblical-translations/01-septuagint"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/01-septuagint/sections/40-beyond-torah.tex"
+sha256 = "2d998cb76ed85aeba04302b5df6362a6619b0df1446035f9a45dda8a588d69cb"
+kind = "rendered-content"
+owners = ["history/biblical-translations/01-septuagint"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/01-septuagint/sections/50-texts.tex"
+sha256 = "e15d1760a1b75d2e1d3d236a66a37072171f9f349774e39e6fc6c676cdd6bdc0"
+kind = "rendered-content"
+owners = ["history/biblical-translations/01-septuagint"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/01-septuagint/sections/60-use.tex"
+sha256 = "30f8172415581f036c5ac1f8c87a3161be8ed8efcdd9e2639dd5f1d678f914cd"
+kind = "rendered-content"
+owners = ["history/biblical-translations/01-septuagint"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/01-septuagint/sections/70-versions.tex"
+sha256 = "609b79c425892abff701a015734e14a9dc790c29b2dc0ebc41e8b44daab97b3a"
+kind = "rendered-content"
+owners = ["history/biblical-translations/01-septuagint"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/01-septuagint/sections/80-hexapla.tex"
+sha256 = "8a8fb61561bb4b7dafd19fac241150b4d9f1d6fb9f72817b02c119b1916cf97b"
+kind = "rendered-content"
+owners = ["history/biblical-translations/01-septuagint"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/01-septuagint/sections/90-christian-bible.tex"
+sha256 = "2de6ff517f72901eb1e7a09954e9c772231564f9ecfeeec408360e624412ab4d"
+kind = "rendered-content"
+owners = ["history/biblical-translations/01-septuagint"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/02-vulgate/main.tex"
+sha256 = "4d26db36432f249233dd3c8d8ad88fd99ab83ecee7ccd01b021c006710235cac"
+kind = "publication-main"
+owners = ["history/biblical-translations/02-vulgate"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/02-vulgate/research/evidence-map.md"
+sha256 = "28d4b5de28c813dbde0489e1c97c6a96e757100e728414187d140173b7342dd4"
+kind = "research-record"
+owners = ["history/biblical-translations/02-vulgate"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/02-vulgate/research/scope.md"
+sha256 = "d4f337b5a2ad3d5bff243ea955f72560043751499a6b971acd032e566c86e3f5"
+kind = "research-scope"
+owners = ["history/biblical-translations/02-vulgate"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/02-vulgate/research/source-audit.md"
+sha256 = "a655dfadeea2b78f873d6aa1fecb8c7af3c0b05400ad3bc44358ea47c74699ec"
+kind = "legacy-source-audit"
+owners = ["history/biblical-translations/02-vulgate"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/02-vulgate/research/source-bindings.toml"
+sha256 = "189faf3b76d1543ab41f463c8e018e931385ea383d2e983e46fa59cc34a1f3e3"
+kind = "source-binding"
+owners = ["history/biblical-translations/02-vulgate"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/02-vulgate/sections/00-question.tex"
+sha256 = "b424be4720b70734dc46840a33ccbd130eac15712c69bcd578a98cfa327cbe21"
+kind = "rendered-content"
+owners = ["history/biblical-translations/02-vulgate"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/02-vulgate/sections/10-old-latin.tex"
+sha256 = "e62cf61af331364c66a251ef17d99dfb7705c382af3a61d364640eba76e34657"
+kind = "rendered-content"
+owners = ["history/biblical-translations/02-vulgate"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/02-vulgate/sections/100-conclusion.tex"
+sha256 = "3e6a3e5acbc31e8c867d13316bc165dac6e5bdda10dc31d2300151949521df7b"
+kind = "rendered-content"
+owners = ["history/biblical-translations/02-vulgate"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/02-vulgate/sections/110-scope-method.tex"
+sha256 = "3e70a48dba31b2d29a364a1b9087107fb4d6c17683fea4c2ff46d8b14cdc5674"
+kind = "rendered-content"
+owners = ["history/biblical-translations/02-vulgate"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/02-vulgate/sections/120-references.tex"
+sha256 = "6d696eb2221061d39627ea318b5b21dcb8a120b922e0d63570ce2752b277c128"
+kind = "rendered-content"
+owners = ["history/biblical-translations/02-vulgate"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/02-vulgate/sections/20-damasus.tex"
+sha256 = "a1e92c9bdf73fec76440ee032877f30fac4fdf1b5b9ee7d72dff553f8db67da7"
+kind = "rendered-content"
+owners = ["history/biblical-translations/02-vulgate"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/02-vulgate/sections/30-psalters.tex"
+sha256 = "5d5427a72398e79c1a06a90eae6d20afdf774fbb3604ab8f1a63563b0d1f7b74"
+kind = "rendered-content"
+owners = ["history/biblical-translations/02-vulgate"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/02-vulgate/sections/40-hebrew-verity.tex"
+sha256 = "dd076202a9c049f44742b0caea49668b2c5fddfa64b16ee9fedff2fcfa775c3c"
+kind = "rendered-content"
+owners = ["history/biblical-translations/02-vulgate"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/02-vulgate/sections/50-resistance.tex"
+sha256 = "32e76308427d2c7821ab3ba59c036c1e446fc3f8e1f8f1a3f18468f932663181"
+kind = "rendered-content"
+owners = ["history/biblical-translations/02-vulgate"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/02-vulgate/sections/60-becoming-vulgate.tex"
+sha256 = "36cec77931e3027bf935af66ee03503c41d3b03fa7398b095c7feb938ba21f0e"
+kind = "rendered-content"
+owners = ["history/biblical-translations/02-vulgate"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/02-vulgate/sections/70-trent.tex"
+sha256 = "b43b64a86e3599ab4b2e360db198ea7204c8040e909f764338669cb066ad2b25"
+kind = "rendered-content"
+owners = ["history/biblical-translations/02-vulgate"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/02-vulgate/sections/80-sixtine-clementine.tex"
+sha256 = "81403eb2ff78c90eba81bd3d563897f855ab9393436313aa9265a529f5693eb9"
+kind = "rendered-content"
+owners = ["history/biblical-translations/02-vulgate"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/02-vulgate/sections/90-modern.tex"
+sha256 = "35652cbad91a94f276f6e483e5f91bba89f7ddc6b81fb80e14c2dc1dcc439014"
+kind = "rendered-content"
+owners = ["history/biblical-translations/02-vulgate"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/account-format.tex"
+sha256 = "5246ae4c398e5edc1a1c3895025e461f2f312e03239a14e3262cd9aab3516777"
+kind = "rendered-content"
+owners = ["owner.history.biblical-translations"]

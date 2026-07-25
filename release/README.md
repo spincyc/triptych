@@ -1,11 +1,11 @@
 # Public Release Boundary
 
-The current release manifest accounts for 119 installed publications: 116
-gpt-provider publications and three claude-provider editions under
-provider-qualified identifiers. All 119 are marked `release`; none is in
-`review` or on `hold`. The later 24 July 2026 exact-current-snapshot and
-Claude-provider-introduction supplement in
-`rights/public-alpha-2026-07-15.md` binds all 119 exact PDF snapshots and 23
+The current release manifest accounts for every installed publication across
+the declared provider branches under provider-qualified identifiers;
+`public-alpha.json` (`expected_counts`) is the sole authoritative count and
+currently records 125 publications (116 gpt, 9 claude), all marked `release`
+with none in `review` or on `hold`. The most recent dated supplement in
+`rights/public-alpha-2026-07-15.md` binds every exact PDF snapshot and all 23
 exact reader-site inputs under record
 `perpetual-public-repository-2026`. Changed PDF, rights-record, or site-input
 bytes require renewed authorization, so public build and verification remain
@@ -103,7 +103,7 @@ and is not an ecclesiastical interpretation, dispensation, canonical opinion,
 imprimatur, nihil obstat, or approval of the secret or this publication. It
 does not supply independent rights, canonical, specialist, liturgical, or
 ecclesiastical review. Apparition and cult approvals remain object-limited and
-do not approve this publication. The manifest retains this PDF among the 116
+do not approve this publication. The manifest retains this PDF among the
 `release` items and binds its exact current hash.
 
 For every fully authorized snapshot the generator will:
@@ -187,9 +187,9 @@ any of them. See the rights record and each publication's linked research
 records for the complete boundaries.
 
 Only when all snapshot, rights-record, and site-source bindings verify may the
-GitHub Pages workflow build and verify `build/public-alpha/site`. The 24 July
-authorization binds the current 116-PDF set and its 23 recognized reader-site
-inputs. It separately authorizes one coherent release-control commit whose
+GitHub Pages workflow build and verify `build/public-alpha/site`. The most
+recent dated authorization binds the current release PDF set and its 23
+recognized reader-site inputs. It separately authorizes one coherent release-control commit whose
 sole parent is exact preapproval tip
 `82fc528c3ee53683ab6d192ffdae703d408b552c`, managed integration, an ordinary
 non-force push of the exact integrated `refs/heads/main`, and publication of
@@ -217,7 +217,7 @@ python scripts/public-alpha verify --deployment-target github-pages
 `prepare-public-alpha` is read-only and deliberately works when old snapshot
 hashes are stale or the old source-binding list lacks newly recognized inputs.
 It validates the exhaustive publication and current artifact-input scope, then
-reports the hashes of the 116 currently installed publication PDFs and all 23
+reports the hashes of every currently installed publication PDF and all 23
 current Markdown, layout, style, license, generator, and dependency-lock inputs
 as a deterministic candidate inventory. The inventory explicitly confers no
 approval, changes no
