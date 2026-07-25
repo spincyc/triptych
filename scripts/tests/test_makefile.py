@@ -297,9 +297,15 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         self.assertEqual(len(self.lines(self.check_log)), 1)
 
     def test_check_sources_invokes_validation_without_building(self) -> None:
+        inventory = self.root / "src/sources/inventories/publications-v1.toml"
+        inventory.parent.mkdir(parents=True, exist_ok=True)
+        inventory.write_text("")
         self.run_make("check-sources")
         self.assertEqual(self.lines(self.source_library_log), ["validate"])
-        self.assertEqual(self.lines(self.source_inventory_log), ["check"])
+        self.assertEqual(
+            self.lines(self.source_inventory_log),
+            ["check src/sources/inventories/publications-v1.toml"],
+        )
         self.assertEqual(self.lines(self.source_family_migration_log), ["check"])
         self.assertEqual(
             self.lines(self.source_gate_order_log),
