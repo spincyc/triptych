@@ -15,11 +15,13 @@ SHIM = Path(__file__).resolve().parent / "web-shim.tex"
 SRC = ROOT / "src"
 OUT = ROOT / "build" / "web"
 # Every disabled extension names a construct the site's Markdown renderer would
-# print as literal punctuation: space-aligned tables, brace heading attributes,
-# `:   ` definitions, trailing-backslash breaks, and `$...$` math.
+# print as literal punctuation: space-aligned tables, `:   ` definitions,
+# trailing-backslash breaks, and `$...$` math.  Heading attributes are kept
+# because the site reads them and a document's own cross-references need them.
 MARKDOWN_DIALECT = (
     "markdown-smart-simple_tables-multiline_tables-grid_tables"
-    "-header_attributes-definition_lists-escaped_line_breaks-tex_math_dollars"
+    "-definition_lists-escaped_line_breaks-tex_math_dollars"
+    "-bracketed_spans-raw_attribute"
 )
 
 # Control sequences pandoc either renders itself or may drop without losing
@@ -86,6 +88,9 @@ LIST_OPTION_RE = re.compile(
     r"(\\begin\s*\{(?:itemize|enumerate|description)\})\s*\[[^\[\]]*\]"
 )
 FENCED_DIV_RE = re.compile(r"^:::", re.MULTILINE)
+ANCHOR_DEFINITION_RE = re.compile(r"\{#([^\s{}]+)[^{}]*\}")
+ANCHOR_LINK_RE = re.compile(r"\[([^\]]+)\]\(#([^)\s]+)\)")
+LINK_ATTRIBUTE_RE = re.compile(r"(\]\([^()\s]+\))\{[^{}]*\}")
 TABLE_ENVIRONMENT_RE = re.compile(r"\\newenvironment\*?\s*\{([A-Za-z@]+)\}")
 TABLE_STARTS = (r"\begin{longtable}", r"\begin{tabularx}", r"\begin{tabular}")
 OUTPUT_TABLE_RE = re.compile(r"^\|(?:[ :]*-{2,}[ :]*\|)+\s*$", re.MULTILINE)
@@ -267,6 +272,17 @@ def undefined_uses(sources: dict[Path, str], defined: set[str]) -> list[str]:
     return failures
 
 
+def resolve_anchors(markdown: str) -> str:
+    """Unlink a cross-reference to a label no heading in the page carries."""
+    # A reference's pandoc attributes restate the label and carry no text.
+    markdown = LINK_ATTRIBUTE_RE.sub(r"\1", markdown)
+    declared = set(ANCHOR_DEFINITION_RE.findall(markdown))
+    return ANCHOR_LINK_RE.sub(
+        lambda match: match.group(0) if match.group(2) in declared else match.group(1),
+        markdown,
+    )
+
+
 def table_count(body: str, definitions: str) -> int:
     """Count table environments the body opens, including named table wrappers."""
     names = {"tabular", "tabularx", "longtable"}
@@ -367,7 +383,7 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
         raise ConversionError(f"pandoc failed:\n{result.stderr.strip()}")
     if MATH_WARNING_RE.search(result.stderr):
         raise ConversionError(f"math left as raw TeX:\n{result.stderr.strip()}")
-    markdown = result.stdout
+    markdown = resolve_anchors(result.stdout)
     failures = audit_output(body, markdown, table_count(body, shim_text + locals_text))
     if failures:
         raise ConversionError("\n".join(failures))

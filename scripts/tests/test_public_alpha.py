@@ -855,6 +855,27 @@ class PublicAlphaTest(unittest.TestCase):
             review_entry["pdf_sha256"], digest(b"review pdf bytes\n")
         )
 
+    def test_url_path_segment_passes_but_a_local_home_path_fails(self) -> None:
+        self.authorize_current_inputs()
+        publications = self.tool.validate_manifest(self.manifest)
+        page = (
+            '<!doctype html><meta name="robots" content="index, follow">'
+            '<title>test</title><a href="https://example.invalid/home/records">x</a>\n'
+        )
+        with mock.patch.object(self.tool, "render_source_page", return_value=page):
+            output = self.tool.build_site(self.manifest, publications, preview=False)
+            self.tool.verify_output(self.manifest, publications, output, preview=False)
+
+        leaked = page.replace("https://example.invalid", "file:///home/someone")
+        with mock.patch.object(self.tool, "render_source_page", return_value=leaked):
+            output = self.tool.build_site(self.manifest, publications, preview=False)
+            with self.assertRaises(self.tool.ReleaseError) as failure:
+                self.tool.verify_output(
+                    self.manifest, publications, output, preview=False
+                )
+
+        self.assertIn("contains home-directory path", str(failure.exception))
+
     def test_build_site_does_not_perform_the_independent_verification(self) -> None:
         publications = self.tool.publication_map(self.manifest)
         with mock.patch.object(
