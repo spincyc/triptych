@@ -89,7 +89,7 @@ LIST_OPTION_RE = re.compile(
 )
 FENCED_DIV_RE = re.compile(r"^:::", re.MULTILINE)
 ANCHOR_DEFINITION_RE = re.compile(r"\{#([^\s{}]+)[^{}]*\}")
-ANCHOR_LINK_RE = re.compile(r"\[([^\]]+)\]\(#([^)\s]+)\)")
+ANCHOR_LINK_RE = re.compile(r"\[((?:[^\[\]\\]|\\.)*)\]\(#([^)\s]+)\)")
 LINK_ATTRIBUTE_RE = re.compile(r"(\]\([^()\s]+\))\{[^{}]*\}")
 TABLE_ENVIRONMENT_RE = re.compile(r"\\newenvironment\*?\s*\{([A-Za-z@]+)\}")
 TABLE_STARTS = (r"\begin{longtable}", r"\begin{tabularx}", r"\begin{tabular}")
