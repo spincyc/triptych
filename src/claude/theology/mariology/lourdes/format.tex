@@ -1,0 +1,70 @@
+% Claude Lourdes apparition study: leaf-local typesetting primitives. This
+% file owns only presentation. Every historical, doctrinal, medical, and
+% evidentiary judgment remains in the section files and research records.
+
+\usepackage{endnotes}
+% Long archival URLs in the references must break freely rather than
+% overflowing the measure.
+\usepackage{xurl}
+
+\setcounter{tocdepth}{2}
+\setlength{\emergencystretch}{2.2em}
+
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+% Work titles and untranslated technical terms are set through semantic
+% commands so a later style change never requires editing the prose.
+\newcommand{\work}[1]{\textit{#1}}
+\newcommand{\term}[1]{\textit{#1}}
+
+% The governing thesis is substantive content and may open the body.
+\newcommand{\studythesis}[1]{%
+  \begin{studybox}{Governing thesis}
+  #1
+  \end{studybox}}
+
+% Operative-text block: the exact wording of a competent ecclesiastical act,
+% with its authority, date, and witness in the frame title. The framed border
+% marks quoted source text that is not project-owned expression.
+\newenvironment{operativetext}[1]{%
+  \begin{massbox}{Operative text --- #1}}{\end{massbox}}
+
+% Endnotes carry citations and subordinate evidence detail; the heading joins
+% the table of contents as an ordinary numbered section.
+\renewcommand{\enoteheading}{\section{Notes}}
+\renewcommand{\enoteformat}{%
+  \noindent\footnotesize\makebox[2.2em][l]{\theenmark.}\hangindent=2.2em}
+
+% Status-dossier card: the controlling-status summary in a titled, framed
+% block. massbox is breakable, so a long dossier keeps closed frame edges
+% wherever it actually ends.
+\newenvironment{statusdossier}[1]{%
+  \begin{massbox}{#1}\small}{\end{massbox}}
+\newcommand{\dosfield}[2]{\par\textbf{#1:} #2}
+
+% Dated-inventory table for the eighteen reported apparitions: number, date,
+% and the received content in the Sanctuary's own chronology, with the
+% evidentiary register carried by the surrounding prose.
+\newenvironment{apparitionstable}
+{\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.045\linewidth}>{\raggedright\arraybackslash}p{0.155\linewidth}>{\raggedright\arraybackslash}p{0.16\linewidth}>{\raggedright\arraybackslash}p{0.56\linewidth}}
+\toprule
+\textbf{No.} & \textbf{Date (1858)} & \textbf{Presence reported} & \textbf{Received content (Sanctuary chronology; reported register)}\\
+\midrule
+\endhead
+\bottomrule
+\endfoot}
+{\end{longtable}}
+
+% Recognized-cures table: name, origin, and competent recognition date from
+% the Sanctuary's own published list, with ceilings in the surrounding prose.
+\newenvironment{curestable}
+{\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.05\linewidth}>{\raggedright\arraybackslash}p{0.33\linewidth}>{\raggedright\arraybackslash}p{0.24\linewidth}>{\raggedright\arraybackslash}p{0.30\linewidth}}
+\toprule
+\textbf{No.} & \textbf{Person} & \textbf{Origin} & \textbf{Episcopal recognition}\\
+\midrule
+\endhead
+\bottomrule
+\endfoot}
+{\end{longtable}}
