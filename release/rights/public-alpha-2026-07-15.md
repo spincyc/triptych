@@ -1041,6 +1041,26 @@ work-specific research records remains operative. This approval does
 not authorize a push, deployment, tag, history rewrite, public
 release attachment, announcement, or promotion.
 
+## Supplemental exact-current-snapshot clearance — 25 July 2026
+
+At `2026-07-25T12:29:26-05:00` in `America/Chicago`, the maintainer instructed:
+“Release the wave-nine Claude edition of Trustful Surrender to Divine Providence and re-bind the deepened In Support of the Particular and Marian Dogmas editions at their expanded exact bytes.” This is recorded as perpetual worldwide
+exact-current-snapshot distribution authorization under the existing
+represented authority in this record. The sole condition remains
+`no-project-initiated-promotion`.
+
+The approval binds all 139 exact installed release
+PDF snapshots and every exact recognized artifact-affecting
+reader-site input inventoried below at their current bytes. It is an
+exact-byte distribution clearance only: it does not represent
+completion of any outstanding work-specific rights, source,
+collation, specialist, or ecclesiastical review, and no imprimatur,
+nihil obstat, or ecclesiastical approval is claimed. Every
+limitation in the prior supplements, release README, catalogs, and
+work-specific research records remains operative. This approval does
+not authorize a push, deployment, tag, history rewrite, public
+release attachment, announcement, or promotion.
+
 ## Exact approved snapshots
 
 | Publication ID | SHA-256 |
@@ -1072,9 +1092,10 @@ release attachment, announcement, or promotion.
 | `claude:articles/faith/at-the-end-of-every-why` | `a644e1321457d069c0319a4c36f570edef23010e975b019257e14106c51f58b3` |
 | `claude:articles/faith/council-missal-and-crisis` | `36e6da8ebd2f2db866eb9685efa6bff608edfe5938bc460b414990ba2d282ed3` |
 | `claude:articles/faith/freemasonry-and-the-catholic-church` | `4e954e5a483b426b71896ba70d1761bf5ffddb852411ebbb09caf43fe755e87c` |
-| `claude:articles/faith/in-support-of-the-particular` | `535994c75dbb7bff0be2e45528050154b31710c7cbe3cf0fd2926b3cab4e77cb` |
+| `claude:articles/faith/in-support-of-the-particular` | `de4904267caa3c9ee024ac9ecc2e7229bae572f553c761dda5780e3f9d50173b` |
 | `claude:articles/faith/ontological-vertigo` | `56ecbfad17c0ce6d6303c62d3e738eb2d2401dee8ddc663f306af9bf4e7d980e` |
 | `claude:articles/faith/the-due-return` | `91ac3a4a15121efd8ea7426cf6a21af3885caa537de0dd1348648e6d47da4490` |
+| `claude:articles/faith/trustful-surrender-to-divine-providence` | `32d59306bd1392b13fc97428bcc6a044d967fe69f525cfad4edf226e1636060a` |
 | `claude:biographies/origen` | `020b3f4452e2d0e89f6458824f6d33e8bf2db079ff80e0a73f42f9a2d6648d35` |
 | `claude:biographies/saint-augustine-of-hippo` | `bdb140a336f9913fb7422c301d9b6f51810717f5376426993a2148afb86fb0bd` |
 | `claude:biographies/saint-jerome` | `22aec5010e1732066d6026a89580a862785e7b730ebd92512e89dfb533ea9b9e` |
@@ -1087,7 +1108,7 @@ release attachment, announcement, or promotion.
 | `claude:history/biblical-translations/02-vulgate` | `6549550fa7d9447e5148e8264779aee6df809f65451919367aad98df7faec699` |
 | `claude:theology/mariology/fatima` | `c8b1e0dd4443eca492c142453696d138cfab3ec4dba51231e0e52a69e5761ef2` |
 | `claude:theology/mariology/lourdes` | `02ba30326155c6e0e4b31ebd997594a63ad735fb320b2eda580f0522204f7e42` |
-| `claude:theology/mariology/marian-dogmas` | `fe650090ac02c9433c053df4f0c44c318a35b10bb473e5c56f931db5b8a9d206` |
+| `claude:theology/mariology/marian-dogmas` | `ab33912de1090951399e6306e706b547f27507b75b33edd620a7b22bb0a0e50c` |
 | `claude:theology/mariology/rosary` | `1124f22017f0aa5b4440e5beebace40c6e16a477de66e3da386b87c2fac53344` |
 | `curriculums/ecclesiastical-latin/00-course-guide` | `79f0202ddaa651194820e46375ea3193c9a442974b1853ac4654eba5b6faf0ec` |
 | `curriculums/ecclesiastical-latin/00-memory-workbook` | `7df692cd8f16049b990b950c2abb0c568d51c5ae243ece832ad11d051c2d2fa7` |
@@ -1198,7 +1219,7 @@ release attachment, announcement, or promotion.
 | `library/biographies.md` | `8397d3f01b230e28fbbb0dcca530ee8c5dd5ad75e7f95a64d292034b90afacae` |
 | `library/curriculums.md` | `15f24d06b4911b1cbfe4d85d82c463d7c2eef8635ff25edf2817d5fa6e0fb2bc` |
 | `library/ecclesiastical-latin.md` | `1b985372bc372990f8d748d7667620c76c89a4073a8dae146ecefbca84333c1b` |
-| `library/faith.md` | `90af2c600ca2733e648afdbbb9f47fe5c74b7a7d87a6337daf28500fbb1e7e68` |
+| `library/faith.md` | `bee761a4909d4ad9b26825e40ec679cb9d02743869ccf5982984c5e33432cc11` |
 | `library/heresies.md` | `8f6f80b79266818a2b7d80db312ad33cd52ba594b329d4604dae53d17060f5df` |
 | `library/historical-accounts.md` | `a4a276ea14cac3c752574fe1435beefccbc089aa1cfd9db9e953479c1f552c4b` |
 | `library/law-and-church-discipline.md` | `9b823f425ba9a2db3f40c1d8fc2951db71794bee21163d8d90727efe1e9cfce1` |

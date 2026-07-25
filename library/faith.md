@@ -6,7 +6,7 @@
 
 | Publication | ChatGPT | Claude | Focus |
 | --- | --- | --- | --- |
-| **Trustful Surrender to Divine Providence** | [PDF](../doc/gpt/articles/faith/trustful-surrender-to-divine-providence.pdf) | — | How confidence in providence differs from passivity, fatalism, presumption, and indifference to evil. |
+| **Trustful Surrender to Divine Providence** | [PDF](../doc/gpt/articles/faith/trustful-surrender-to-divine-providence.pdf) | [PDF](../doc/claude/articles/faith/trustful-surrender-to-divine-providence.pdf) | How confidence in providence differs from passivity, fatalism, presumption, and indifference to evil. |
 
 ## The Creature Before God
 
