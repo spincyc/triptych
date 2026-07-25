@@ -37,26 +37,26 @@ PC-S41-A
 
 | **Textual unit / alternative** | **Citation** | **Location** | **Date** |
 |:----------|:-------------|:------------------------|:-----------|
-| **First Reading** |  Kgs. 3:5, 7–12 | Israel and Judah; final compilation place unknown | Final literary form commonly exilic |
-| *Narrated event* |  Kgs. 3:4–15 | Gibeon, at the principal high place | Early reign of Solomon, conventionally c. 970 BC |
-|  |  |  |  |
+| **First Reading** | 1 Kgs. 3:5, 7–12 | Israel and Judah; final compilation place unknown | Final literary form commonly exilic |
+| *Narrated event* | 1 Kgs. 3:4–15 | Gibeon, at the principal high place | Early reign of Solomon, conventionally c. 970 BC |
+| Kings belongs to the Deuteronomistic History and addresses the divided kingdoms through disputed editorial stages; the final form is commonly placed in the exile. That literary horizon is distinct from the dream scene in which a young king confesses inadequacy before the people entrusted to him (First Kings introduction and 3, *NABRE*). |  |  |  |
 | **Entrance adaptation** | *Cf.* Ps. 67:6–7, 36 (modern 68) | Israelite liturgical tradition; exact place and first audience unknown | Davidic superscription inherited; historical date unknown |
-|  |  |  |  |
+| This complex processional hymn praises God as warrior, defender of the vulnerable, giver of a household, and source of strength. Its superscription belongs to the received text but does not securely date its composition; the Entrance adapts selected clauses rather than relocating the entire Psalm (Psalms introduction and Psalm 68, *NABRE*). |  |  |  |
 | **Communion A** | Ps. 102:2 (modern 103) | Israel; exact composition place and first audience unknown | Davidic superscription inherited; historical date unknown |
-|  |  |  |  |
+| The inherited superscription is not a recoverable event notice. The whole hymn summons the self to bless and remember, then unfolds divine mercy, healing, rescue, compassion, and creaturely frailty (Psalms introduction and Psalm 103, *NABRE*). |  |  |  |
 | **Responsorial Psalm** | Ps. 119:57, 72, 76–77, 97a, 127–130 | Israel’s Torah and wisdom tradition; exact place unknown | Anonymous; date unknown |
-|  |  |  |  |
+| The alphabetic meditation supplies no author, narrated event, or site. These separated stanzas name the Lord as portion, value instruction beyond wealth, ask covenant mercy, love the commands, and welcome the understanding their unfolding gives (Psalm 119, *NABRE*). |  |  |  |
 | **Communion B** | Matt. 5:7–8 | Greek Matthew; probably Syria, with Antioch plausible | Commonly c. AD 80–90 |
 | *Narrated event* | Matt. 5:1–12 | Galilee; mountain site unrecorded | Public ministry, conventionally c. AD 28 |
-|  |  |  |  |
+| Ancient tradition attributes the Gospel to the apostle Matthew; modern study commonly identifies an otherwise unknown Jewish Christian author writing for a mixed Jewish and Gentile community after AD 70. The final Greek Gospel’s setting is distinct from the Galilean sermon it narrates (Matthew introduction and 5, *NABRE*). |  |  |  |
 | **Acclamation source** | *Cf.* Matt. 11:25 | Greek Matthew; probably Syria, with Antioch plausible | Commonly c. AD 80–90 |
 | *Narrated event* | Matt. 11:20–30 | Galilee; exact place unrecorded | Public ministry, conventionally c. AD 28–29 |
-|  |  |  |  |
+| The adaptation draws from Jesus’ thanksgiving after judgment sayings concerning Galilean towns. The Gospel’s traditional attribution and modern compositional judgment remain as above, while the narrated setting belongs to Jesus’ ministry rather than the evangelist’s later audience (Matthew introduction and 11, *NABRE*). |  |  |  |
 | **Gospel: long / short** | Matt. 13:44–52 / 13:44–46 | Greek Matthew; probably Syria, with Antioch plausible | Commonly c. AD 80–90 |
 | *Narrated event* | Matt. 13:36, 44–52 | A house in the Sea-of-Galilee teaching region; town unrecorded | Galilean ministry, conventionally c. AD 28 |
-|  |  |  |  |
+| The short branch proclaims treasure and pearl only. The long branch also proclaims the net, final sorting, the disciples’ response, and the trained householder’s new and old treasures. The Gospel’s compositional audience must not be confused with the house and ministry region inside the narrative (Matthew introduction and 13, *NABRE*). |  |  |  |
 | **Second Reading** | Rom. 8:28–30 | Corinth in Achaia, to established house churches at Rome | c. AD 56–58 |
-|  |  |  |  |
+| Paul writes near the end of his eastern mission to a Roman community he did not found, comprising believers from Jewish and Gentile backgrounds. These verses stand within groaning, Spirit-aided prayer, suffering, and inseparable divine love; the semi-continuous reading is not an explanation of Matthew’s treasure or net (Romans introduction and 8, *NABRE*). |  |  |  |
 
 ## The Propers: Themes and Movement {#the-propers-themes-and-movement .unnumbered}
 

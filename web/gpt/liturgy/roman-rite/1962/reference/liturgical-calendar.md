@@ -122,7 +122,7 @@ The following is the universal fixed calendar printed in the 1962 typical Missal
 | **Date** | **Celebration or observance** | **Class** |
 |:---------|:------------------------------------------------|:-------|
 | **Date** | **Celebration or observance** | **Class** |
-|  |  |  |
+| **January** |  |  |
 | Jan. 1 | *Octava Nativitatis Domini* | I |
 | Jan. 5 | Comm. *S. Telesphori Papae et Martyris* | Comm. |
 | Jan. 6 | *In Epiphania Domini* | I |
@@ -146,7 +146,7 @@ The following is the universal fixed calendar printed in the 1962 typical Missal
 | Jan. 29 | *S. Francisci Salesii Episcopi, Confessoris et Ecclesiae Doctoris* | III |
 | Jan. 30 | *S. Martinae Virginis et Martyris* | III |
 | Jan. 31 | *S. Ioannis Bosco Confessoris* | III |
-|  |  |  |
+| **February** |  |  |
 | Feb. 1 | *S. Ignatii Episcopi et Martyris* | III |
 | Feb. 2 | *In Purificatione Beatae Mariae Virginis* | II |
 | Feb. 3 | Comm. *S. Blasii Episcopi et Martyris* | Comm. |
@@ -166,7 +166,7 @@ The following is the universal fixed calendar printed in the 1962 typical Missal
 | Feb. 23 | *S. Petri Damiani Episcopi, Confessoris et Ecclesiae Doctoris* | III |
 | Feb. 24 | *S. Matthiae Apostoli* | II |
 | Feb. 27 | *S. Gabrielis a Virgine Perdolente, Confessoris* | III |
-|  |  |  |
+| **March** |  |  |
 | Mar. 4 | *S. Casimiri Confessoris*; comm. *S. Lucii I Papae et Martyris* | III |
 | Mar. 6 | *Ss. Perpetuae et Felicitatis Martyrum* | III |
 | Mar. 7 | *S. Thomae de Aquino Confessoris et Ecclesiae Doctoris* | III |
@@ -182,7 +182,7 @@ The following is the universal fixed calendar printed in the 1962 typical Missal
 | Mar. 25 | *Annuntiatio Beatae Mariae Virginis* | I |
 | Mar. 27 | *S. Ioannis Damasceni Confessoris et Ecclesiae Doctoris* | III |
 | Mar. 28 | *S. Ioannis de Capistrano Confessoris* | III |
-|  |  |  |
+| **April** |  |  |
 | Apr. 2 | *S. Francisci de Paula Confessoris* | III |
 | Apr. 4 | *S. Isidori Episcopi, Confessoris et Ecclesiae Doctoris* | III |
 | Apr. 5 | *S. Vincentii Ferrerii Confessoris* | III |
@@ -200,7 +200,7 @@ The following is the universal fixed calendar printed in the 1962 typical Missal
 | Apr. 28 | *S. Pauli a Cruce Confessoris* | III |
 | Apr. 29 | *S. Petri Martyris* | III |
 | Apr. 30 | *S. Catharinae Senensis Virginis* | III |
-|  |  |  |
+| **May** |  |  |
 | May 1 | *S. Ioseph Opificis, Sponsi Beatae Mariae Virginis, Confessoris* | I |
 | May 2 | *S. Athanasii Episcopi, Confessoris et Ecclesiae Doctoris* | III |
 | May 3 | Comm. *Ss. Alexandri, Eventii et Theoduli Martyrum, ac S. Iuvenalis Episcopi et Confessoris* | Comm. |
@@ -226,7 +226,7 @@ The following is the universal fixed calendar printed in the 1962 typical Missal
 | May 29 | *S. Mariae Magdalenae de Pazzis Virginis* | III |
 | May 30 | Comm. *S. Felicis I Papae et Martyris* | Comm. |
 | May 31 | *Beatae Mariae Virginis Reginae*; comm. *S. Petronillae Virginis* | II |
-|  |  |  |
+| **June** |  |  |
 | June 1 | *S. Angelae Mericiae Virginis* | III |
 | June 2 | Comm. *Ss. Marcellini, Petri atque Erasmi Episcopi, Martyrum* | Comm. |
 | June 4 | *S. Francisci Caracciolo Confessoris* | III |
@@ -260,7 +260,7 @@ In a leap year Saint Matthias is celebrated on February 25 and Saint Gabriel on 
 | **Date** | **Celebration or observance** | **Class** |
 |:---------|:------------------------------------------------|:-------|
 | **Date** | **Celebration or observance** | **Class** |
-|  |  |  |
+| **July** |  |  |
 | July 1 | *Pretiosissimi Sanguinis Domini Nostri Iesu Christi* | I |
 | July 2 | *In Visitatione Beatae Mariae Virginis*; comm. *Ss. Processi et Martiniani Martyrum* | II |
 | July 3 | *S. Irenaei Episcopi et Martyris* | III |
@@ -288,7 +288,7 @@ In a leap year Saint Matthias is celebrated on February 25 and Saint Gabriel on 
 | July 29 | *S. Marthae Virginis*; comm. *Ss. Felicis, Simplicii, Faustini et Beatricis Martyrum* | III |
 | July 30 | Comm. *Ss. Abdon et Sennen Martyrum* | Comm. |
 | July 31 | *S. Ignatii Confessoris* | III |
-|  |  |  |
+| **August** |  |  |
 | Aug. 1 | Comm. *Ss. Machabaeorum Martyrum* | Comm. |
 | Aug. 2 | *S. Alfonsi Mariae de Ligorio Episcopi, Confessoris et Ecclesiae Doctoris*; comm. *S. Stephani I Papae et Martyris* | III |
 | Aug. 4 | *S. Dominici Confessoris* | III |
@@ -319,7 +319,7 @@ In a leap year Saint Matthias is celebrated on February 25 and Saint Gabriel on 
 | Aug. 29 | *In Decollatione S. Ioannis Baptistae*; comm. *S. Sabinae Martyris* | III |
 | Aug. 30 | *S. Rosae Limanae Virginis*; comm. *Ss. Felicis et Adaucti Martyrum* | III |
 | Aug. 31 | *S. Raymundi Nonnati Confessoris* | III |
-|  |  |  |
+| **September** |  |  |
 | Sept. 1 | Comm. *S. Aegidii Abbatis*; comm. *Ss. duodecim Fratrum Martyrum* | Comm. |
 | Sept. 2 | *S. Stephani Regis, Confessoris* | III |
 | Sept. 3 | *S. Pii X Papae et Confessoris* | III |
@@ -345,7 +345,7 @@ In a leap year Saint Matthias is celebrated on February 25 and Saint Gabriel on 
 | Sept. 28 | *S. Wenceslai Ducis, Martyris* | III |
 | Sept. 29 | *In Dedicatione S. Michaelis Archangeli* | I |
 | Sept. 30 | *S. Hieronymi Presbyteri, Confessoris et Ecclesiae Doctoris* | III |
-|  |  |  |
+| **October** |  |  |
 | Oct. 1 | Comm. *S. Remigii Episcopi et Confessoris* | Comm. |
 | Oct. 2 | *Ss. Angelorum Custodum* | III |
 | Oct. 3 | *S. Teresiae a Iesu Infante Virginis* | III |
@@ -371,7 +371,7 @@ In a leap year Saint Matthias is celebrated on February 25 and Saint Gabriel on 
 | Oct. 25 | Comm. *Ss. Chrysanthi et Dariae Martyrum* | Comm. |
 | Oct. 26 | Comm. *S. Evaristi Papae et Martyris* | Comm. |
 | Oct. 28 | *Ss. Simonis et Iudae Apostolorum* | II |
-|  |  |  |
+| **November** |  |  |
 | Nov. 1 | *Omnium Sanctorum* | I |
 | Nov. 2 | *In Commemoratione Omnium Fidelium Defunctorum* | I |
 | Nov. 4 | *S. Caroli Episcopi et Confessoris*; comm. *Ss. Vitalis et Agricolae Martyrum* | III |
@@ -396,7 +396,7 @@ In a leap year Saint Matthias is celebrated on February 25 and Saint Gabriel on 
 | Nov. 26 | *S. Silvestri Abbatis*; comm. *S. Petri Alexandrini Episcopi et Martyris* | III |
 | Nov. 29 | Comm. *S. Saturnini Martyris* | Comm. |
 | Nov. 30 | *S. Andreae Apostoli* | II |
-|  |  |  |
+| **December** |  |  |
 | Dec. 2 | *S. Bibianae Virginis et Martyris* | III |
 | Dec. 3 | *S. Francisci Xaverii Confessoris* | III |
 | Dec. 4 | *S. Petri Chrysologi Episcopi, Confessoris et Ecclesiae Doctoris*; comm. *S. Barbarae Virginis et Martyris* | III |

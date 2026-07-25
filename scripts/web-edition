@@ -83,6 +83,13 @@ SAFE_PAYLOAD_RE = re.compile(r"^[A-Za-z0-9 .,()]+$")
 NOTE_MACRO_RE = re.compile(r"\\(?:endnote|footnote)\s*\{")
 CONTRIBUTION_RE = re.compile(r"\\AIModelContribution(?=\s*\{)")
 LAYOUT_MACRO_RE = re.compile(r"\\(?:titleformat|titlespacing)\*?")
+# A >{...} column prefix is replayed into every cell, and pandoc's reader lets
+# \arraybackslash swallow the token after it: a citation like "1 Pet. 5:6"
+# silently loses its book number.  The macro only restores \\ inside a p column.
+ALIGNMENT_FIXUP_RE = re.compile(r"\\arraybackslash\s*")
+# pandoc reads \cmidrule's trim spec and span as cell text and leaks them into
+# the following row.  A partial rule carries no text, so it is dropped whole.
+PARTIAL_RULE_RE = re.compile(r"\\cmidrule\s*(?:\([a-zA-Z]*\))?\s*(?:\{[^{}]*\})?")
 # Register assignments carry no text and are not brace-argument macros.
 REGISTER_ASSIGNMENT_RE = re.compile(r"\\Urlmuskip\s*=[^\\\n]*(?:\\relax)?")
 # pandoc's reader drops an enumitem option list and every \item label with it.
@@ -96,6 +103,8 @@ LINK_ATTRIBUTE_RE = re.compile(r"(\]\([^()\s]+\))\{[^{}]*\}")
 TABLE_ENVIRONMENT_RE = re.compile(r"\\newenvironment\*?\s*\{([A-Za-z@]+)\}")
 TABLE_STARTS = (r"\begin{longtable}", r"\begin{tabularx}", r"\begin{tabular}")
 OUTPUT_TABLE_RE = re.compile(r"^\|(?:[ :]*-{2,}[ :]*\|)+\s*$", re.MULTILINE)
+# A row of nothing but cell separators is a row whose text the reader dropped.
+EMPTY_ROW_RE = re.compile(r"^\|(?:\s*\|)+[ \t]*$", re.MULTILINE)
 MATH_WARNING_RE = re.compile(r"^\[WARNING\] Could not convert TeX math", re.MULTILINE)
 DEFINE_RE = re.compile(r"\\(?:new|renew|provide)command\*?|\\(?:new|renew)environment\*?")
 
@@ -179,6 +188,16 @@ def pdf_metadata(preamble: str) -> tuple[str, str]:
     return values["title"], values.get("subject", "")
 
 
+def skip_gap(text: str, cursor: int) -> int:
+    """Advance past the whitespace and comments between a definition's groups."""
+    while True:
+        cursor += len(text[cursor:]) - len(text[cursor:].lstrip())
+        if text[cursor : cursor + 1] != "%":
+            return cursor
+        newline = text.find("\n", cursor)
+        cursor = len(text) if newline < 0 else newline + 1
+
+
 def local_definitions(preamble: str) -> str:
     """Carry the leaf's own presentation macros through; the shim wins conflicts."""
     kept, index = [], 0
@@ -190,7 +209,7 @@ def local_definitions(preamble: str) -> str:
         cursor, parts, mandatory = match.end(), [], 0
         try:
             while mandatory < wanted:
-                cursor += len(preamble[cursor:]) - len(preamble[cursor:].lstrip())
+                cursor = skip_gap(preamble, cursor)
                 if preamble[cursor : cursor + 1] == "[":
                     close = preamble.index("]", cursor) + 1
                     parts.append(preamble[cursor:close])
@@ -312,6 +331,17 @@ def audit_output(body: str, markdown: str, tables: int = 0) -> list[str]:
     written = len(OUTPUT_TABLE_RE.findall(markdown)) + markdown.count("<table")
     if written < tables:
         failures.append(f"{tables} table environments became {written} tables")
+    # A headerless source table legitimately writes an empty header row, which
+    # is the one immediately above the delimiter; any other is a dropped row.
+    lines = markdown.splitlines()
+    blank = sum(
+        1
+        for index, line in enumerate(lines)
+        if EMPTY_ROW_RE.match(line)
+        and not OUTPUT_TABLE_RE.match(lines[index + 1] if index + 1 < len(lines) else "")
+    )
+    if blank:
+        failures.append(f"{blank} table row(s) written with every cell empty")
     divs = sorted(
         set(re.findall(r"^::: *\{?\.?([A-Za-z@-]+)", markdown, re.MULTILINE))
     )
@@ -359,13 +389,17 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
     title, subtitle = pdf_metadata(preamble)
     body = TITLEPAGE_RE.sub("", body).replace(r"\tableofcontents", "")
     body = REGISTER_ASSIGNMENT_RE.sub("", body)
+    body = PARTIAL_RULE_RE.sub("", body)
+    body = ALIGNMENT_FIXUP_RE.sub("", body)
     body = strip_layout_macros(body)
     body = LIST_OPTION_RE.sub(r"\1", body)
     body = deduplicate_contributions(body)
     if r"\TriptychRightsNotice" not in body:
         body += "\n\\TriptychRightsNotice\n"
-    shim_text = SHIM.read_text(encoding="utf-8")
-    locals_text = LIST_OPTION_RE.sub(r"\1", local_definitions(preamble))
+    shim_text = ALIGNMENT_FIXUP_RE.sub("", SHIM.read_text(encoding="utf-8"))
+    locals_text = ALIGNMENT_FIXUP_RE.sub(
+        "", LIST_OPTION_RE.sub(r"\1", local_definitions(preamble))
+    )
     failures = undefined_uses(sources, defined_names(shim_text + locals_text))
     if failures:
         raise ConversionError("\n".join(failures))

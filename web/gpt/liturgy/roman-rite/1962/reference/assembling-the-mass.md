@@ -166,42 +166,42 @@ Rubrics 4–8 define a liturgical day and divide days into four classes. The lat
 <p>Sunday</p></td>
 <td style="text-align: left;">I, II</td>
 <td style="text-align: left;">Advent, Lent, Passiontide, Easter, Low Sunday, Pentecost are I; others are II.</td>
-<td style="text-align: left;">–20</td>
+<td style="text-align: left;">9–20</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
 <p>Feria</p></td>
 <td style="text-align: left;">I, II, III, IV</td>
 <td style="text-align: left;">Ash Wednesday and Holy Week ferias; December 17–23 and Ember days; ordinary Lenten ferias; ordinary weekdays.</td>
-<td style="text-align: left;">–27</td>
+<td style="text-align: left;">21–27</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
 <p>Vigil</p></td>
 <td style="text-align: left;">I, II, III</td>
 <td style="text-align: left;">Christmas and Pentecost; Ascension, Assumption, St John Baptist, Peter and Paul; St Lawrence.</td>
-<td style="text-align: left;">–34</td>
+<td style="text-align: left;">28–34</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
 <p>Feast</p></td>
 <td style="text-align: left;">I, II, III</td>
 <td style="text-align: left;">Mysteries, Mary, angels, saints, patrons, titles, dedications, and proper feasts according to their calendars.</td>
-<td style="text-align: left;">–63</td>
+<td style="text-align: left;">35–63</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
 <p>Octave</p></td>
 <td style="text-align: left;">I, II</td>
 <td style="text-align: left;">Only Easter and Pentecost octaves are I; Christmas is II, with its octave day I.</td>
-<td style="text-align: left;">–70</td>
+<td style="text-align: left;">64–70</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
 <p>Our Lady on Saturday</p></td>
 <td style="text-align: left;">IV</td>
 <td style="text-align: left;">Replaces an otherwise IV-class Saturday feria as the Office of the day.</td>
-<td style="text-align: left;">–79</td>
+<td style="text-align: left;">78–79</td>
 </tr>
 </tbody>
 </table>
@@ -234,56 +234,56 @@ The class attached to a votive or Requiem Mass describes the strength of a permi
 <p>Votive I</p></td>
 <td style="text-align: left;">All except the specifically excluded precedence positions 1–8, subject to particular exceptions</td>
 <td style="text-align: left;">Dedication during consecration; principal Congress Mass; extraordinary celebration in song.</td>
-<td style="text-align: left;">–340</td>
+<td style="text-align: left;">328–340</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
 <p>Votive II</p></td>
 <td style="text-align: left;">Liturgical days II, III, IV</td>
 <td style="text-align: left;">Rogations; external solemnity; grave public cause; Nuptial Mass, though prohibited on Sundays; specified ritual or public occasions.</td>
-<td style="text-align: left;">–383</td>
+<td style="text-align: left;">341–383</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
 <p>Votive III</p></td>
 <td style="text-align: left;">Liturgical days III, IV</td>
 <td style="text-align: left;">First Thursday or Saturday Eternal High Priest; First Friday Sacred Heart; First Saturday Immaculate Heart; Congress priests.</td>
-<td style="text-align: left;">–386</td>
+<td style="text-align: left;">384–386</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
 <p>Votive IV</p></td>
 <td style="text-align: left;">Liturgical days IV only</td>
 <td style="text-align: left;">Any otherwise permitted votive with a just cause; reduced privileges.</td>
-<td style="text-align: left;">–389</td>
+<td style="text-align: left;">387–389</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
 <p>Requiem I</p></td>
 <td style="text-align: left;">Its proper prohibition list controls</td>
 <td style="text-align: left;">All Souls Masses and one funeral Mass directly joined to the funeral.</td>
-<td style="text-align: left;">–409</td>
+<td style="text-align: left;">402–409</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
 <p>Requiem II</p></td>
 <td style="text-align: left;">No I-class day and no Sunday</td>
 <td style="text-align: left;">Day of death, after notice of death, final burial.</td>
-<td style="text-align: left;">–414</td>
+<td style="text-align: left;">410–414</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
 <p>Requiem III</p></td>
 <td style="text-align: left;">Liturgical days III, IV</td>
 <td style="text-align: left;">Third, seventh, thirtieth day; anniversary; cemetery; within the eight-day period counted inclusively from All Souls.</td>
-<td style="text-align: left;">–422</td>
+<td style="text-align: left;">415–422</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
 <p>Requiem IV</p></td>
 <td style="text-align: left;">IV-class ferias outside Christmas time</td>
 <td style="text-align: left;">Other daily Masses for the dead.</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">423</td>
 </tr>
 </tbody>
 </table>
@@ -876,28 +876,28 @@ All Souls Masses agree with the Office; every other Requiem is outside its order
 <p>I</p></td>
 <td style="text-align: left;">All Souls; one funeral Mass directly connected to a funeral</td>
 <td style="text-align: left;">Subject to 393. All Souls follows its day. Funeral Mass then follows the specific rules in 406–407, not the general votive table.</td>
-<td style="text-align: left;">–409</td>
+<td style="text-align: left;">402–409</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
 <p>II</p></td>
 <td style="text-align: left;">Day of death; after notice; final burial</td>
 <td style="text-align: left;">Subject to 393; must be applied for that deceased; prohibited on every I-class day and every Sunday.</td>
-<td style="text-align: left;">–414</td>
+<td style="text-align: left;">410–414</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
 <p>III</p></td>
 <td style="text-align: left;">Third, seventh, thirtieth day; anniversary; cemetery; within the eight-day period counted inclusively from All Souls</td>
 <td style="text-align: left;">Subject to 393; prohibited on I- and II-class days; each subsection supplies its formularies and transfer possibilities.</td>
-<td style="text-align: left;">–422</td>
+<td style="text-align: left;">415–422</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
 <p>IV</p></td>
 <td style="text-align: left;">Other daily Requiems</td>
 <td style="text-align: left;">Subject to 393; IV-class ferias only, outside Christmas time; should genuinely be applied for the dead.</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">423</td>
 </tr>
 </tbody>
 </table>
@@ -1812,7 +1812,7 @@ Complete this worksheet in order. A blank source field is a reason to stop; it i
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
 <p>Controlling books</p></td>
-<td style="text-align: left;">typical Missal; universal calendar; approved national, diocesan, religious, and church supplement; current Ordo used only for the question it actually answers.</td>
+<td style="text-align: left;">1962 typical Missal; universal calendar; approved national, diocesan, religious, and church supplement; current Ordo used only for the question it actually answers.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>

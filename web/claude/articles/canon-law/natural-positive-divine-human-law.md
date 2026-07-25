@@ -311,30 +311,30 @@ The table gathers the canons this article verified at the dated Latin and Englis
 
 | **Canon** | **Latin key phrase (verified)** | **English (Vatican delivery)** | **Register invoked** | **Function** |
 |:-----|:---------------------|:--------------------|:--------|:---------|
-| §2 | *ratione etiam canonicae traditionis habita* | “assessed also in accord with canonical tradition” | ecclesiastical | interpretive continuity |
-|  | *Legibus mere ecclesiasticis tenentur baptizati…* | “Merely ecclesiastical laws bind those baptized…” | merely ecclesiastical | subjects of church law |
-|  | *quatenus iuri divino non sint contrariae* | “insofar as they are not contrary to divine law” | divine (boundary) | canonization of civil law |
-| §1 | *Nulla consuetudo…quae sit iuri divino contraria* | “No custom which is contrary to divine law…” | divine (boundary) | limit on custom |
-|  | *legis mere ecclesiasticae…relaxatio* | “relaxation of a merely ecclesiastical law” | merely ecclesiastical | object of dispensation |
-| §2 | *lege divina aut iure canonico* | “by divine law or canon law” | divine + ecclesiastical | minors’ exemptions |
-| §1 | *ex ipsa ordinatione divina* | “by divine ordinance itself” | divine institution | Church and Apostolic See as moral person |
-| §1 | *ex divina institutione* | “by divine institution” | divine institution | power of governance |
-| §1 | *ordinatione sive divina sive ecclesiastica* | “by divine or ecclesiastical ordinance” | divine or ecclesiastical | ecclesiastical office |
-| 1° | *legis divinae naturalis aut positivae* | “of the divine natural or positive law” | divine natural and positive | exemption from prescription |
-| §1 | *Ex divina institutione…ministri sacri* | “By divine institution…sacred ministers” | divine institution | clergy/laity distinction |
-| §1 | *ex divina institutione in Apostolorum locum* | “by divine institution succeed to the place of the Apostles” | divine institution | episcopate |
-| §1 | *obligatione vi legis divinae adstringuntur* | “by virtue of divine law are bound” | divine (obligating all) | duty to seek truth |
-| §1 | *Fide divina et catholica…credenda* | “must believe with divine and Catholic faith” | divine positive | object of faith |
-|  | *veritatis divina et catholica credendae denegatio* | “denial…of some truth…believed by divine and Catholic faith” | divine positive | definition of heresy |
-|  | *ex divina institutione…sacri ministri* | “By divine institution…sacred ministers” | divine institution | sacrament of orders |
-|  | *regitur iure non solum divino, sed etiam canonico* | “governed not only by divine law but also by canon law” | divine + ecclesiastical + civil | marriage jurisdictions |
-|  | *authentice declarare…ius divinum / alia impedimenta…constituere* | “declare authentically when divine law…/ establish other impediments” | divine vs. ecclesiastical | declare / constitute boundary |
-| §1 | *matrimonium ex ipsa eius natura dirimit* | “nullifies marriage by its very nature” | natural (by wording) | impotence impediment |
-| §2 | *impedimentum iuris naturalis aut divini positivi* | “impediment of natural law or of divine positive law” | divine natural and positive | limits of sanation |
-|  | *paenitentiam agere ex lege divina tenentur* | “The divine law binds…to do penance” | divine + ecclesiastical determination | penance |
-|  | *nisi iuri divino contraria sint* | “unless the provisions are contrary to divine law” | divine (boundary) | canonization of contract law |
-| §1 | *legem divinam congrua poena munire* | “reinforce a divine law with a fitting penalty” | divine + ecclesiastical penalty | penal legislation |
-|  | *divinae vel canonicae legis externa violatio* | “external violation of divine or canon law” | divine or ecclesiastical | general penal norm |
+| 6 §2 | *ratione etiam canonicae traditionis habita* | “assessed also in accord with canonical tradition” | ecclesiastical | interpretive continuity |
+| 11 | *Legibus mere ecclesiasticis tenentur baptizati…* | “Merely ecclesiastical laws bind those baptized…” | merely ecclesiastical | subjects of church law |
+| 22 | *quatenus iuri divino non sint contrariae* | “insofar as they are not contrary to divine law” | divine (boundary) | canonization of civil law |
+| 24 §1 | *Nulla consuetudo…quae sit iuri divino contraria* | “No custom which is contrary to divine law…” | divine (boundary) | limit on custom |
+| 85 | *legis mere ecclesiasticae…relaxatio* | “relaxation of a merely ecclesiastical law” | merely ecclesiastical | object of dispensation |
+| 98 §2 | *lege divina aut iure canonico* | “by divine law or canon law” | divine + ecclesiastical | minors’ exemptions |
+| 113 §1 | *ex ipsa ordinatione divina* | “by divine ordinance itself” | divine institution | Church and Apostolic See as moral person |
+| 129 §1 | *ex divina institutione* | “by divine institution” | divine institution | power of governance |
+| 145 §1 | *ordinatione sive divina sive ecclesiastica* | “by divine or ecclesiastical ordinance” | divine or ecclesiastical | ecclesiastical office |
+| 199 1° | *legis divinae naturalis aut positivae* | “of the divine natural or positive law” | divine natural and positive | exemption from prescription |
+| 207 §1 | *Ex divina institutione…ministri sacri* | “By divine institution…sacred ministers” | divine institution | clergy/laity distinction |
+| 375 §1 | *ex divina institutione in Apostolorum locum* | “by divine institution succeed to the place of the Apostles” | divine institution | episcopate |
+| 748 §1 | *obligatione vi legis divinae adstringuntur* | “by virtue of divine law are bound” | divine (obligating all) | duty to seek truth |
+| 750 §1 | *Fide divina et catholica…credenda* | “must believe with divine and Catholic faith” | divine positive | object of faith |
+| 751 | *veritatis divina et catholica credendae denegatio* | “denial…of some truth…believed by divine and Catholic faith” | divine positive | definition of heresy |
+| 1008 | *ex divina institutione…sacri ministri* | “By divine institution…sacred ministers” | divine institution | sacrament of orders |
+| 1059 | *regitur iure non solum divino, sed etiam canonico* | “governed not only by divine law but also by canon law” | divine + ecclesiastical + civil | marriage jurisdictions |
+| 1075 | *authentice declarare…ius divinum / alia impedimenta…constituere* | “declare authentically when divine law…/ establish other impediments” | divine vs. ecclesiastical | declare / constitute boundary |
+| 1084 §1 | *matrimonium ex ipsa eius natura dirimit* | “nullifies marriage by its very nature” | natural (by wording) | impotence impediment |
+| 1163 §2 | *impedimentum iuris naturalis aut divini positivi* | “impediment of natural law or of divine positive law” | divine natural and positive | limits of sanation |
+| 1249 | *paenitentiam agere ex lege divina tenentur* | “The divine law binds…to do penance” | divine + ecclesiastical determination | penance |
+| 1290 | *nisi iuri divino contraria sint* | “unless the provisions are contrary to divine law” | divine (boundary) | canonization of contract law |
+| 1315 §1 | *legem divinam congrua poena munire* | “reinforce a divine law with a fitting penalty” | divine + ecclesiastical penalty | penal legislation |
+| 1399 | *divinae vel canonicae legis externa violatio* | “external violation of divine or canon law” | divine or ecclesiastical | general penal norm |
 
 Read down the “function” column and the taxonomy’s canonical career is visible in miniature: it marks who is bound (c. 11), what cannot be received (cc. 22, 1290), what custom and time cannot touch (cc. 24, 199), what the Church received rather than made (cc. 113–1008), what she declares rather than constitutes (c. 1075), what she can heal and what she can only outwait (c. 1163), and what her courts may vindicate (cc. 1315, 1399). Two of its instruments, custom and dispensation, are systematic enough to deserve sections of their own.
 

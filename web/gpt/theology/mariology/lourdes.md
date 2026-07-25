@@ -134,37 +134,43 @@ The controlling number is eighteen. They extend from 11 February to 16 July 1858
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>1</p></td>
 <td style="text-align: left;">Thu 11 Feb</td>
 <td style="text-align: left;">Bernadette goes with her sister Toinette and a companion to gather material near Massabielle. While removing a stocking before the cold channel, she reports a gust-like sound without corresponding movement in the trees, then a small young Lady in white, with white veil, blue sash, golden roses, and a rosary. The Lady signs herself; Bernadette can then make the sign and recites the Rosary.</td>
 <td style="text-align: left;">Bernadette alone reports seeing the figure. Her later first autograph says the Lady passed beads without moving her lips; it does not report an audible Marian Rosary.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>2</p></td>
 <td style="text-align: left;">Sun 14 Feb</td>
 <td style="text-align: left;">After initial family resistance, Bernadette returns with permission. Holy water is thrown toward the figure; the Lady smiles and inclines her head. The Rosary frames the encounter.</td>
 <td style="text-align: left;">Holy water functions in the received story as a human test, not as proof by itself or a newly prescribed ritual.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>3</p></td>
 <td style="text-align: left;">Thu 18 Feb</td>
 <td style="text-align: left;">The Lady speaks for the first time. When writing materials are offered so that she may write her name, she says writing is unnecessary. She courteously asks Bernadette to come for a fortnight and promises happiness not in this world but in the other.</td>
 <td style="text-align: left;">Short received verbal anchors, not an autograph dialogue from that morning. The promise concerns final beatitude, not a demand to cultivate misery.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>4</p></td>
 <td style="text-align: left;">Fri 19 Feb</td>
 <td style="text-align: left;">Bernadette brings a blessed, lighted candle. The Sanctuary traces the grotto’s candle practice to this gesture.</td>
 <td style="text-align: left;">A devotional origin point; no independent doctrine or guarantee is attached to a flame.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>5</p></td>
 <td style="text-align: left;">Sat 20 Feb</td>
 <td style="text-align: left;">The detailed chronology assigns Bernadette a personal prayer and reports deep sadness at the close.</td>
 <td style="text-align: left;">The compressed calendar instead calls the 19–21 Feb encounters wordless. No new combined wording is manufactured.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>6</p></td>
 <td style="text-align: left;">Sun 21 Feb</td>
 <td style="text-align: left;">The encounter is silent in the received account. A growing group observes Bernadette. Commissioner Jacomet questions her afterward; she speaks of <em>Aquerò</em>, “that one.”</td>
 <td style="text-align: left;">Early non-identification and public scrutiny. The crowd witnesses Bernadette, not necessarily the apparition.</td>
@@ -177,19 +183,22 @@ The controlling number is eighteen. They extend from 11 February to 16 July 1858
 <td style="text-align: left;">The invitation for a fortnight does not mean one apparition on each calendar day.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>7</p></td>
 <td style="text-align: left;">Tue 23 Feb</td>
 <td style="text-align: left;">The detailed page says the apparition entrusts a secret “for her alone.” The compressed calendar says that the Lady appears to teach a secret prayer for daily use.</td>
 <td style="text-align: left;">The public corpus contains no secret text. Private prayer and private secret are not silently made one revelation.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>8</p></td>
 <td style="text-align: left;">Wed 24 Feb</td>
 <td style="text-align: left;">The public penitential message becomes explicit: penance, prayer to God for the conversion of sinners, and kissing the ground as penance for sinners.</td>
 <td style="text-align: left;">The bodily gesture is bounded to the narrative. It is not a universal command, payment for grace, or permission for self-injury.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>9</p></td>
 <td style="text-align: left;">Thu 25 Feb</td>
 <td style="text-align: left;">The Lady directs Bernadette to drink and wash at a spring. Bernadette moves from the river toward the indicated place, scrapes in mud, initially brings up dirty water, and drinks after repeated attempts. She eats nearby herb as part of a penitential action.</td>
 <td style="text-align: left;">The spring is brought to light in a limestone/karst site. The narrative does not scientifically prove creation of water from nothing or curative chemistry.</td>
@@ -202,55 +211,64 @@ The controlling number is eighteen. They extend from 11 February to 16 July 1858
 <td style="text-align: left;">Explicit gap in the official calendar.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>10</p></td>
 <td style="text-align: left;">Sat 27 Feb</td>
 <td style="text-align: left;">Silent encounter. Bernadette drinks from the emerging spring and repeats penitential gestures as the crowd grows.</td>
 <td style="text-align: left;">Approximate crowd reports corroborate publicity and behavior, not shared sight of the Lady.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>11</p></td>
 <td style="text-align: left;">Sun 28 Feb</td>
 <td style="text-align: left;">Bernadette prays, kisses the earth, and moves on her knees in the received penitential action. She is later brought before Judge Ribes and threatened with prison.</td>
 <td style="text-align: left;">Civil pressure belongs to the witness dossier. Severe gestures are not proposed as ordinary devotional requirements.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>12</p></td>
 <td style="text-align: left;">Mon 1 Mar</td>
 <td style="text-align: left;">A still larger crowd includes a priest for the first time. Catherine Latapie’s reported cure becomes associated with this date and the spring. The compressed official calendar assigns three secrets to Bernadette before the fortnight ends.</td>
 <td style="text-align: left;">Cure inquiry is distinct from apparition chronology. The detailed page does not repeat the three-secret assignment; no content is reconstructed.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>13</p></td>
 <td style="text-align: left;">Tue 2 Mar</td>
 <td style="text-align: left;">The Lady sends Bernadette to the priests: people are to come in procession and a chapel is to be built. Father Peyramale asks for the Lady’s name and demands the winter flowering of the grotto’s rosebush as a sign.</td>
 <td style="text-align: left;">The message turns toward ecclesial authority and common worship. Peyramale’s demanded sign is his condition, not part of the reported heavenly message.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>14</p></td>
 <td style="text-align: left;">Wed 3 Mar</td>
 <td style="text-align: left;">No apparition occurs at the usual early time before a large waiting crowd. After school, Bernadette returns under an interior attraction and reports the Lady. Asked again for her name, the figure smiles; the chapel request is renewed in the compressed calendar.</td>
 <td style="text-align: left;">One apparition is counted, at the later time. The official summaries differ slightly in the content emphasized.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>15</p></td>
 <td style="text-align: left;">Thu 4 Mar</td>
 <td style="text-align: left;">About eight thousand people gather at the expected close of the fortnight. The apparition is silent; no public spectacle satisfies the crowd’s anticipation. Bernadette then feels no attraction to return for twenty days.</td>
 <td style="text-align: left;">Silence defeats a timetable of demanded signs. Crowd expectation does not define the event’s object.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>16</p></td>
 <td style="text-align: left;">Thu 25 Mar</td>
 <td style="text-align: left;">On the Annunciation, Bernadette asks the name repeatedly. The figure raises her eyes, joins her hands, and answers in local speech: <em>Que soy era immaculada councepciou</em>. Bernadette repeats the unfamiliar sounds on the way to Father Peyramale.</td>
 <td style="text-align: left;">The reported title follows the 1854 definition. The Sanctuary expressly says the rosebush did <em>not</em> bloom. Private revelation does not define dogma.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>17</p></td>
 <td style="text-align: left;">Wed 7 Apr</td>
 <td style="text-align: left;">During a silent apparition Bernadette holds a candle. The received account says the flame surrounds her hand without burning it; Dr Pierre Romain Dozous observes the event.</td>
 <td style="text-align: left;">The Sanctuary calls it the “miracle of the candle.” No separate cure decree, controlled replication, or place among the 72 cure miracles is thereby established.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>18</p></td>
 <td style="text-align: left;">Fri 16 Jul</td>
 <td style="text-align: left;">With the grotto barred, Bernadette kneels across the Gave at dusk and reports a final silent apparition, experienced as though she were near the niche. She later says she had never seen the Virgin so beautiful.</td>
 <td style="text-align: left;">Bounded conclusion. No later public message, secret cycle, or continuing Lourdes apparitions are appended.</td>
@@ -836,317 +854,325 @@ This appendix keeps distinct five kinds of date: the event reported by Bernadett
 <tbody>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>and 9 Jan. 1844</p></td>
+<p>7 and 9 Jan. 1844</p></td>
 <td style="text-align: left;">Bernadette Soubirous is born and baptized in Lourdes</td>
 <td style="text-align: left;">Her life begins within the Church before the extraordinary claims; the later saint cannot be reduced to the visionary of 1858.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Dec. 1854</p></td>
+<p>8 Dec. 1854</p></td>
 <td style="text-align: left;">Pius IX defines the Immaculate Conception in <em>Ineffabilis Deus</em></td>
 <td style="text-align: left;">The dogma precedes Lourdes by less than four years and rests upon the Church’s solemn judgment of public Revelation, not upon the later apparition.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Jan. 1858</p></td>
+<p>21 Jan. 1858</p></td>
 <td style="text-align: left;">Bernadette returns from Bartrès to Lourdes</td>
 <td style="text-align: left;">She returns seeking catechesis and First Communion amid poverty and poor health; biographical context is relevant but is not proof of an apparition.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Feb. 1858</p></td>
+<p>11 Feb. 1858</p></td>
 <td style="text-align: left;">First reported apparition at Massabielle</td>
 <td style="text-align: left;">The Cross and Rosary frame the encounter. Bernadette’s later first autograph says the figure moved her beads without moving her lips; it does not report an audible Marian recitation.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Feb. 1858</p></td>
+<p>14 Feb. 1858</p></td>
 <td style="text-align: left;">Second reported apparition</td>
 <td style="text-align: left;">Family permission, holy water, and the Rosary enter the received account; a human test is not proof by itself.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Feb. 1858</p></td>
+<p>18 Feb. 1858</p></td>
 <td style="text-align: left;">Third reported apparition; first reported speech</td>
 <td style="text-align: left;">Courteous invitation to return for a fortnight and promise of happiness in the other world; the invitation does not entail daily apparitions.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Feb. 1858</p></td>
+<p>19 Feb. 1858</p></td>
 <td style="text-align: left;">Fourth reported apparition</td>
 <td style="text-align: left;">Bernadette brings a blessed candle, later received as the origin of the grotto’s candle practice.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Feb. 1858</p></td>
+<p>20 Feb. 1858</p></td>
 <td style="text-align: left;">Fifth reported apparition</td>
 <td style="text-align: left;">Detailed Sanctuary chronology assigns a personal prayer; its compressed calendar treats 19–21 February as wordless.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Feb. 1858</p></td>
+<p>21 Feb. 1858</p></td>
 <td style="text-align: left;">Sixth reported apparition; Jacomet questions Bernadette</td>
 <td style="text-align: left;">Her early term <em>Aquerò</em>, “that one,” preserves initial non-identification; observers see Bernadette’s behavior, not necessarily the figure.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Feb. 1858</p></td>
+<p>22 Feb. 1858</p></td>
 <td style="text-align: left;">No apparition reported</td>
 <td style="text-align: left;">An explicit gap disciplines the meaning of the “fortnight.”</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Feb. 1858</p></td>
+<p>23 Feb. 1858</p></td>
 <td style="text-align: left;">Seventh reported apparition</td>
 <td style="text-align: left;">Current official summaries differ between a private secret and a secret personal prayer; no public secret text is reconstructed.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Feb. 1858</p></td>
+<p>24 Feb. 1858</p></td>
 <td style="text-align: left;">Eighth reported apparition</td>
 <td style="text-align: left;">Penance and prayer to God for the conversion of sinners become explicit public themes.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Feb. 1858</p></td>
+<p>25 Feb. 1858</p></td>
 <td style="text-align: left;">Ninth reported apparition; spring uncovered</td>
 <td style="text-align: left;">Bernadette scrapes muddy ground, drinks after repeated attempts, and performs penitential gestures. The event account does not prove water created <em>ex nihilo</em> or endowed with curative chemistry.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Feb. 1858</p></td>
+<p>26 Feb. 1858</p></td>
 <td style="text-align: left;">No apparition reported</td>
 <td style="text-align: left;">Second explicit gap within the return period.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Feb. 1858</p></td>
+<p>27 Feb. 1858</p></td>
 <td style="text-align: left;">Tenth reported apparition</td>
 <td style="text-align: left;">Silent prayer and penitential gestures continue as publicity grows.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Feb. 1858</p></td>
+<p>28 Feb. 1858</p></td>
 <td style="text-align: left;">Eleventh reported apparition</td>
 <td style="text-align: left;">Bernadette’s prayer and bodily penance are followed by judicial pressure; the gestures are not universal devotional commands.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Mar. 1858</p></td>
+<p>1 Mar. 1858</p></td>
 <td style="text-align: left;">Twelfth reported apparition; Catherine Latapie cure enters the tradition</td>
 <td style="text-align: left;">Apparition testimony and cure testimony are distinct objects. The compressed calendar assigns three private secrets here; the detailed chronology does not repeat that assignment.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Mar. 1858</p></td>
+<p>2 Mar. 1858</p></td>
 <td style="text-align: left;">Thirteenth reported apparition</td>
 <td style="text-align: left;">Request for priests, procession, and chapel turns the experience toward ecclesial authority and common worship.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Mar. 1858</p></td>
+<p>3 Mar. 1858</p></td>
 <td style="text-align: left;">Fourteenth reported apparition, later in the day</td>
 <td style="text-align: left;">No apparition occurs at the expected early hour; the later encounter counts once, and the figure smiles when asked for her name.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Mar. 1858</p></td>
+<p>4 Mar. 1858</p></td>
 <td style="text-align: left;">Fifteenth reported apparition</td>
 <td style="text-align: left;">A large crowd receives no demanded public spectacle; the reported apparition is silent at the close of the requested fortnight.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Mar. 1858</p></td>
+<p>25 Mar. 1858</p></td>
 <td style="text-align: left;">Sixteenth reported apparition</td>
 <td style="text-align: left;">Bernadette reports <em>Que soy era immaculada councepciou</em>. The rosebush demanded by Father Peyramale does not bloom.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Apr. 1858</p></td>
+<p>7 Apr. 1858</p></td>
 <td style="text-align: left;">Seventeenth reported apparition; candle episode</td>
 <td style="text-align: left;">Dr Dozous is said to observe flame around Bernadette’s hand without injury. The received episode is not a separately located cure decree or a seventy-third cure.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>June 1858</p></td>
+<p>3 June 1858</p></td>
 <td style="text-align: left;">Bernadette receives First Communion</td>
 <td style="text-align: left;">Sacramental initiation, not continued visionary production, gives the durable ecclesial direction of her Christian life.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>July 1858</p></td>
+<p>16 July 1858</p></td>
 <td style="text-align: left;">Eighteenth and final reported apparition</td>
 <td style="text-align: left;">With the grotto barred, Bernadette remains across the Gave and reports silent beauty. The bounded Lourdes apparition cycle ends.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>July 1858</p></td>
+<p>28 July 1858</p></td>
 <td style="text-align: left;">Bishop Laurence constitutes a commission</td>
 <td style="text-align: left;">Formal diocesan investigation gathers facts, examines their character, and precedes judgment.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>1861</p></td>
 <td style="text-align: left;">Diocese acquires the grotto</td>
 <td style="text-align: left;">Institutional custody prepares the site for authorized worship; ownership is not event proof.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Jan. 1862</p></td>
+<p>18 Jan. 1862</p></td>
 <td style="text-align: left;">Bishop Laurence issues his <em>Mandement</em></td>
 <td style="text-align: left;">The exact legacy formula judges that Immaculate Mary truly appeared eighteen times, that the apparition bears all the marks of truth, and that the faithful are warranted in believing it certain; cult is authorized.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Jan. 1862</p></td>
+<p>18 Jan. 1862</p></td>
 <td style="text-align: left;">A separate decree declares seven cures miraculous</td>
 <td style="text-align: left;">Bishop Laurence acts after Professor Henri Vergez’s examinations. Same date does not mean same decree, evidence, or object as the apparition judgment.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Apr. 1864</p></td>
+<p>4 Apr. 1864</p></td>
 <td style="text-align: left;">Fabisch statue inaugurated; first officially organized procession</td>
 <td style="text-align: left;">Strong public and diocesan reception of the site, not a new apparition or dogmatic act.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>July 1866</p></td>
+<p>4 July 1866</p></td>
 <td style="text-align: left;">Bernadette leaves Lourdes for Nevers</td>
 <td style="text-align: left;">Her hidden religious vocation prevents the grotto from becoming her property or a platform for continuing messages.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>1867</p></td>
 <td style="text-align: left;">Bernadette makes religious profession</td>
 <td style="text-align: left;">The saint’s mature vocation is judged across a whole life, not by visionary experience alone.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Apr. 1879</p></td>
+<p>16 Apr. 1879</p></td>
 <td style="text-align: left;">Bernadette dies at Nevers</td>
 <td style="text-align: left;">Her cause will concern holiness; it remains distinct from the event judgment already issued.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>1883</p></td>
 <td style="text-align: left;">Dr Dunot de Saint-Maclou establishes the permanent Medical Bureau</td>
 <td style="text-align: left;">Claimed cures receive organized, contemporaneous, and collegial medical scrutiny.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>1886</p></td>
 <td style="text-align: left;">Leo XIII assents to the Bureau’s rigor</td>
 <td style="text-align: left;">Papal support strengthens the medical institution without turning medicine into a supernatural tribunal.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>1905</p></td>
 <td style="text-align: left;">Holy See confirms use of the Bureau process by the Bishop of Tarbes</td>
 <td style="text-align: left;">Ecclesial governance and medical investigation become more formally coordinated; the bishop still judges miracle as a distinct act.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>June 1925</p></td>
+<p>14 June 1925</p></td>
 <td style="text-align: left;">Bernadette is beatified</td>
 <td style="text-align: left;">Judgment of heroic holiness does not enlarge the 1862 apparition corpus.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Dec. 1933</p></td>
+<p>8 Dec. 1933</p></td>
 <td style="text-align: left;">Pius XI canonizes Bernadette</td>
 <td style="text-align: left;">The universal Church may venerate Saint Bernadette; canonization is not a second apparition decree.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>1947</p></td>
 <td style="text-align: left;">Lourdes Medical Committee is created</td>
 <td style="text-align: left;">Specialist review expands beyond the permanent office.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Sep. 1953</p></td>
+<p>8 Sep. 1953</p></td>
 <td style="text-align: left;">Pius XII issues <em>Fulgens Corona</em></td>
 <td style="text-align: left;">Lourdes is received as a special sign after the centenary of the 1854 definition, not as the definition’s authority.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>1954</p></td>
 <td style="text-align: left;">Medical committee becomes international</td>
 <td style="text-align: left;">The CMIL structure broadens expertise while retaining the limit of a medical, not theological, finding.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>July 1957</p></td>
+<p>2 July 1957</p></td>
 <td style="text-align: left;">Pius XII issues <em>Le Pèlerinage de Lourdes</em></td>
 <td style="text-align: left;">Centenary reception is ordered toward conversion, justice, care for the sick, and suffering united with Christ.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong></strong></td>
+<td style="text-align: left;"><p><strong></strong></p>
+<p>1974</p></td>
 <td style="text-align: left;">Spring is highlighted and water channeled to a reservoir</td>
 <td style="text-align: left;">Current delivery infrastructure is later engineering in an ordinary karstic setting, not the physical state of the grotto in February 1858.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>–15 Aug. 1983</p></td>
+<p>14–15 Aug. 1983</p></td>
 <td style="text-align: left;">John Paul II makes an apostolic pilgrimage to Lourdes</td>
 <td style="text-align: left;">Papal pilgrimage joins Marian prayer, illness, peace, and the Church’s sacramental life; it does not add an event judgment.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>May 1992</p></td>
+<p>13 May 1992</p></td>
 <td style="text-align: left;">John Paul II institutes the World Day of the Sick</td>
 <td style="text-align: left;">The annual observance is assigned to 11 February, the memorial of Our Lady of Lourdes, directing reception toward the whole Church’s ministry to sick persons.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Feb. 1993</p></td>
+<p>11 Feb. 1993</p></td>
 <td style="text-align: left;">First World Day of the Sick is observed</td>
 <td style="text-align: left;">The date becomes a universal pastoral summons, not an annual promise of bodily cure.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>–15 Aug. 2004</p></td>
+<p>14–15 Aug. 2004</p></td>
 <td style="text-align: left;">John Paul II returns to Lourdes</td>
 <td style="text-align: left;">His final foreign pilgrimage receives Lourdes through prayer, illness, women, peace, and hope in Christ.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>–15 Sep. 2008</p></td>
+<p>13–15 Sep. 2008</p></td>
 <td style="text-align: left;">Benedict XVI makes an apostolic pilgrimage to Lourdes</td>
 <td style="text-align: left;">Homilies interpret the message through the Cross, Rosary, penance, conversion, Baptism, Eucharist, light, and solidarity.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Feb. 2018</p></td>
+<p>11 Feb. 2018</p></td>
 <td style="text-align: left;">Sister Bernadette Moriau’s cure is proclaimed number 70</td>
 <td style="text-align: left;">Last recognized miracle before the 2024–2025 update; this study does not independently re-audit her clinical file.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>May 2024</p></td>
+<p>19 May 2024</p></td>
 <td style="text-align: left;">DDF phenomena norms take effect</td>
 <td style="text-align: left;">Current procedure ordinarily uses six prudential conclusions; it does not retroactively rename Laurence’s strong 1862 legacy formula.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Dec. 2024</p></td>
+<p>8 Dec. 2024</p></td>
 <td style="text-align: left;">John “Jack” Traynor’s cure is proclaimed number 71</td>
 <td style="text-align: left;">Archbishop Malcolm McMahon of Liverpool acts after archival-medical reconstruction; a century of devotional reputation had not itself supplied the competent proclamation.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Apr. 2025</p></td>
+<p>16 Apr. 2025</p></td>
 <td style="text-align: left;">Antonia Raco’s cure is proclaimed number 72</td>
 <td style="text-align: left;">Bishop Vincenzo Carmine Orofino acts after Bureau and CMIL review. The English Sanctuary page contains an internal Antonia/Antonietta inconsistency; the competent diocesan act controls the reader-facing name. The medical vote precedes and does not replace episcopal judgment.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Nov. 2025</p></td>
+<p>4 Nov. 2025</p></td>
 <td style="text-align: left;">DDF issues <em>Mater Populi Fidelis</em></td>
 <td style="text-align: left;">Current Marian doctrine reiterates Christ’s unique mediation and the created, dependent, and intercessory character of Mary’s cooperation.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>Feb.; mid-Apr. 2026</p></td>
+<p>17 Feb.; mid-Apr. 2026</p></td>
 <td style="text-align: left;">Dr Giada Monami’s appointment is announced and takes effect</td>
 <td style="text-align: left;">First woman appointed permanent physician of the Bureau; later specific notice supersedes older pages naming her predecessor as current.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><p><strong></strong></p>
-<p>July 2026</p></td>
+<p>16 July 2026</p></td>
 <td style="text-align: left;">Currentness and source audit completed</td>
 <td style="text-align: left;">Seventy-two recognized Lourdes miracles remain the latest located total; no superseding DDF act or official seventy-third proclamation was located. This is a dated search result, not a forecast.</td>
 </tr>

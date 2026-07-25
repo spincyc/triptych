@@ -113,13 +113,13 @@ Dates below are rules, not a 2026 computation. “Sunday” includes its liturgi
 | Advent | First, Second, Third, and Fourth Sundays of Advent | Four Sundays before Christmas; Sundays of Advent have precedence over all solemnities. |
 | Advent | Weekdays before 17 December | Monday after the First Sunday through 16 December, subject to fixed celebrations. |
 | Advent | Weekdays 17–24 December | Privileged late-Advent weekdays with proper daily formularies; memorials may be observed only in the restricted manner allowed by the norms. |
-| Christmas | Nativity of the Lord | December; solemnity, with Vigil, Mass during the Night, Dawn, and Day forms. |
-| Christmas octave | –31 December | Days within the octave. Fixed feasts occur on 26–28 December; the remaining weekdays retain octave status under the precedence table. |
+| Christmas | Nativity of the Lord | 25 December; solemnity, with Vigil, Mass during the Night, Dawn, and Day forms. |
+| Christmas octave | 26–31 December | Days within the octave. Fixed feasts occur on 26–28 December; the remaining weekdays retain octave status under the precedence table. |
 | Christmas | Holy Family of Jesus, Mary, and Joseph | Sunday within the octave of Christmas; if there is no such Sunday, 30 December; feast. |
-| Christmas octave | Mary, the Holy Mother of God | January, octave day of Christmas; solemnity. |
+| Christmas octave | Mary, the Holy Mother of God | 1 January, octave day of Christmas; solemnity. |
 | Christmas | Weekdays 2 January through Epiphany | Recurring ferial series, subject to Epiphany’s territorial date and fixed celebrations. |
 | Christmas | Second Sunday after the Nativity | Sunday occurring after 1 January and before Epiphany where Epiphany remains on 6 January; omitted where the territorial transfer occupies that Sunday. |
-| Christmas | Epiphany of the Lord | January, or the Sunday between 2 and 8 January where lawfully transferred; solemnity, with Vigil and Day forms. |
+| Christmas | Epiphany of the Lord | 6 January, or the Sunday between 2 and 8 January where lawfully transferred; solemnity, with Vigil and Day forms. |
 | Christmas | Weekdays after Epiphany | Weekdays through the Baptism of the Lord. |
 | Christmas | Baptism of the Lord | Sunday after 6 January; where transferred Epiphany occurs on 7 or 8 January, the following Monday; feast. |
 | Ordinary Time I | Weeks I through the beginning of the week containing Ash Wednesday | Begins Monday after the Baptism (Tuesday when Baptism is Monday). Sundays are numbered II onward; the possible Sunday span before Lent depends on Easter’s date. |
@@ -157,220 +157,220 @@ This is the fixed universal inventory current through 17 July 2026. The 2002 La
 
 | Date | Universal celebration | Rank |
 |:---------|:---------------------------------------|:--------------|
-|  |  |  |
-|  | Mary, the Holy Mother of God | <span class="smallcaps">Solemnity</span> |
-|  | Saints Basil the Great and Gregory Nazianzen, Bishops and Doctors of the Church | <span class="smallcaps">Memorial</span> |
-|  | The Most Holy Name of Jesus | <span class="smallcaps">Optional memorial</span> |
-|  | The Epiphany of the Lord | <span class="smallcaps">Solemnity</span> |
-|  | Saint Raymond of Penyafort, Priest | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Hilary, Bishop and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Anthony, Abbot | <span class="smallcaps">Memorial</span> |
-|  | Saint Fabian, Pope and Martyr; Saint Sebastian, Martyr | <span class="smallcaps">Optional memorials</span> |
-|  | Saint Agnes, Virgin and Martyr | <span class="smallcaps">Memorial</span> |
-|  | Saint Vincent, Deacon and Martyr | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Francis de Sales, Bishop and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-|  | The Conversion of Saint Paul the Apostle | <span class="smallcaps">Feast</span> |
-|  | Saints Timothy and Titus, Bishops | <span class="smallcaps">Memorial</span> |
-|  | Saint Angela Merici, Virgin | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Thomas Aquinas, Priest and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-|  | Saint John Bosco, Priest | <span class="smallcaps">Memorial</span> |
-|  |  |  |
-|  | The Presentation of the Lord | <span class="smallcaps">Feast</span> |
-|  | Saint Blaise, Bishop and Martyr; Saint Ansgar, Bishop | <span class="smallcaps">Optional memorials</span> |
-|  | Saint Agatha, Virgin and Martyr | <span class="smallcaps">Memorial</span> |
-|  | Saints Paul Miki and Companions, Martyrs | <span class="smallcaps">Memorial</span> |
-|  | Saint Jerome Emiliani; Saint Josephine Bakhita, Virgin | <span class="smallcaps">Optional memorials</span> |
-|  | Saint Scholastica, Virgin | <span class="smallcaps">Memorial</span> |
-|  | Our Lady of Lourdes | <span class="smallcaps">Optional memorial</span> |
-|  | Saints Cyril, Monk, and Methodius, Bishop | <span class="smallcaps">Memorial</span> |
-|  | The Seven Holy Founders of the Servite Order | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Peter Damian, Bishop and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-|  | The Chair of Saint Peter the Apostle | <span class="smallcaps">Feast</span> |
-|  | Saint Polycarp, Bishop and Martyr | <span class="smallcaps">Memorial</span> |
-|  | Saint Gregory of Narek, Abbot and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-|  |  |  |
-|  | Saint Casimir | <span class="smallcaps">Optional memorial</span> |
-|  | Saints Perpetua and Felicity, Martyrs | <span class="smallcaps">Memorial</span> |
-|  | Saint John of God, Religious | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Frances of Rome, Religious | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Patrick, Bishop | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Cyril of Jerusalem, Bishop and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Joseph, Spouse of the Blessed Virgin Mary | <span class="smallcaps">Solemnity</span> |
-|  | Saint Turibius of Mogrovejo, Bishop | <span class="smallcaps">Optional memorial</span> |
-|  | The Annunciation of the Lord | <span class="smallcaps">Solemnity</span> |
-|  |  |  |
-|  | Saint Francis of Paola, Hermit | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Isidore, Bishop and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Vincent Ferrer, Priest | <span class="smallcaps">Optional memorial</span> |
-|  | Saint John Baptist de la Salle, Priest | <span class="smallcaps">Memorial</span> |
-|  | Saint Stanislaus, Bishop and Martyr | <span class="smallcaps">Memorial</span> |
-|  | Saint Martin I, Pope and Martyr | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Anselm, Bishop and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-|  | Saint George, Martyr; Saint Adalbert, Bishop and Martyr | <span class="smallcaps">Optional memorials</span> |
-|  | Saint Fidelis of Sigmaringen, Priest and Martyr | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Mark, Evangelist | <span class="smallcaps">Feast</span> |
-|  | Saint Peter Chanel, Priest and Martyr; Saint Louis Grignion de Montfort, Priest | <span class="smallcaps">Optional memorials</span> |
-|  | Saint Catherine of Siena, Virgin and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-|  | Saint Pius V, Pope | <span class="smallcaps">Optional memorial</span> |
-|  |  |  |
-|  | Saint Joseph the Worker | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Athanasius, Bishop and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-|  | Saints Philip and James, Apostles | <span class="smallcaps">Feast</span> |
-|  | Saint John of Avila, Priest and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-|  | Saints Nereus and Achilleus, Martyrs; Saint Pancras, Martyr | <span class="smallcaps">Optional memorials</span> |
-|  | Our Lady of Fatima | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Matthias, Apostle | <span class="smallcaps">Feast</span> |
-|  | Saint John I, Pope and Martyr | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Bernardine of Siena, Priest | <span class="smallcaps">Optional memorial</span> |
-|  | Saints Christopher Magallanes, Priest, and Companions, Martyrs | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Rita of Cascia, Religious | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Bede the Venerable, Priest and Doctor of the Church; Saint Gregory VII, Pope; Saint Mary Magdalene de’ Pazzi, Virgin | <span class="smallcaps">Optional memorials</span> |
-|  | Saint Philip Neri, Priest | <span class="smallcaps">Memorial</span> |
-|  | Saint Augustine of Canterbury, Bishop | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Paul VI, Pope | <span class="smallcaps">Optional memorial</span> |
-|  | The Visitation of the Blessed Virgin Mary | <span class="smallcaps">Feast</span> |
-|  |  |  |
-|  | Saint Justin, Martyr | <span class="smallcaps">Memorial</span> |
-|  | Saints Marcellinus and Peter, Martyrs | <span class="smallcaps">Optional memorial</span> |
-|  | Saints Charles Lwanga and Companions, Martyrs | <span class="smallcaps">Memorial</span> |
-|  | Saint Boniface, Bishop and Martyr | <span class="smallcaps">Memorial</span> |
-|  | Saint Norbert, Bishop | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Ephrem, Deacon and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Barnabas, Apostle | <span class="smallcaps">Memorial</span> |
-|  | Saint Anthony of Padua, Priest and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-|  | Saint Romuald, Abbot | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Aloysius Gonzaga, Religious | <span class="smallcaps">Memorial</span> |
-|  | Saint Paulinus of Nola, Bishop; Saints John Fisher, Bishop, and Thomas More, Martyrs | <span class="smallcaps">Optional memorials</span> |
-|  | The Nativity of Saint John the Baptist | <span class="smallcaps">Solemnity</span> |
-|  | Saint Cyril of Alexandria, Bishop and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Irenaeus, Bishop, Martyr, and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-|  | Saints Peter and Paul, Apostles | <span class="smallcaps">Solemnity</span> |
-|  | The First Martyrs of the Holy Roman Church | <span class="smallcaps">Optional memorial</span> |
-|  |  |  |
-|  | Saint Thomas, Apostle | <span class="smallcaps">Feast</span> |
-|  | Saint Elizabeth of Portugal | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Anthony Zaccaria, Priest | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Maria Goretti, Virgin and Martyr | <span class="smallcaps">Optional memorial</span> |
-|  | Saints Augustine Zhao Rong, Priest, and Companions, Martyrs | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Benedict, Abbot | <span class="smallcaps">Memorial</span> |
-|  | Saint Henry | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Camillus de Lellis, Priest | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Bonaventure, Bishop and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-|  | Our Lady of Mount Carmel | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Apollinaris, Bishop and Martyr | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Lawrence of Brindisi, Priest and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Mary Magdalene | <span class="smallcaps">Feast</span> |
-|  | Saint Bridget, Religious | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Sharbel Makhluf, Priest | <span class="smallcaps">Optional memorial</span> |
-|  | Saint James, Apostle | <span class="smallcaps">Feast</span> |
-|  | Saints Joachim and Anne, Parents of the Blessed Virgin Mary | <span class="smallcaps">Memorial</span> |
-|  | Saints Martha, Mary, and Lazarus | <span class="smallcaps">Memorial</span> |
-|  | Saint Peter Chrysologus, Bishop and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Ignatius of Loyola, Priest | <span class="smallcaps">Memorial</span> |
-|  |  |  |
-|  | Saint Alphonsus Liguori, Bishop and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-|  | Saint Eusebius of Vercelli, Bishop; Saint Peter Julian Eymard, Priest | <span class="smallcaps">Optional memorials</span> |
-|  | Saint John Vianney, Priest | <span class="smallcaps">Memorial</span> |
-|  | The Dedication of the Basilica of Saint Mary Major | <span class="smallcaps">Optional memorial</span> |
-|  | The Transfiguration of the Lord | <span class="smallcaps">Feast</span> |
-|  | Saints Sixtus II, Pope, and Companions, Martyrs; Saint Cajetan, Priest | <span class="smallcaps">Optional memorials</span> |
-|  | Saint Dominic, Priest | <span class="smallcaps">Memorial</span> |
-|  | Saint Teresa Benedicta of the Cross, Virgin and Martyr | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Lawrence, Deacon and Martyr | <span class="smallcaps">Feast</span> |
-|  | Saint Clare, Virgin | <span class="smallcaps">Memorial</span> |
-|  | Saint Jane Frances de Chantal, Religious | <span class="smallcaps">Optional memorial</span> |
-|  | Saints Pontian, Pope, and Hippolytus, Priest, Martyrs | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Maximilian Mary Kolbe, Priest and Martyr | <span class="smallcaps">Memorial</span> |
-|  | The Assumption of the Blessed Virgin Mary | <span class="smallcaps">Solemnity</span> |
-|  | Saint Stephen of Hungary | <span class="smallcaps">Optional memorial</span> |
-|  | Saint John Eudes, Priest | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Bernard, Abbot and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-|  | Saint Pius X, Pope | <span class="smallcaps">Memorial</span> |
-|  | The Queenship of the Blessed Virgin Mary | <span class="smallcaps">Memorial</span> |
-|  | Saint Rose of Lima, Virgin | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Bartholomew, Apostle | <span class="smallcaps">Feast</span> |
-|  | Saint Louis; Saint Joseph Calasanz, Priest | <span class="smallcaps">Optional memorials</span> |
-|  | Saint Monica | <span class="smallcaps">Memorial</span> |
-|  | Saint Augustine, Bishop and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-|  | The Passion of Saint John the Baptist | <span class="smallcaps">Memorial</span> |
-|  |  |  |
-|  | Saint Gregory the Great, Pope and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-|  | Saint Teresa of Calcutta, Virgin | <span class="smallcaps">Optional memorial</span> |
-|  | The Nativity of the Blessed Virgin Mary | <span class="smallcaps">Feast</span> |
-|  | Saint Peter Claver, Priest | <span class="smallcaps">Optional memorial</span> |
-|  | The Most Holy Name of Mary | <span class="smallcaps">Optional memorial</span> |
-|  | Saint John Chrysostom, Bishop and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-|  | The Exaltation of the Holy Cross | <span class="smallcaps">Feast</span> |
-|  | Our Lady of Sorrows | <span class="smallcaps">Memorial</span> |
-|  | Saints Cornelius, Pope, and Cyprian, Bishop, Martyrs | <span class="smallcaps">Memorial</span> |
-|  | Saint Robert Bellarmine, Bishop and Doctor of the Church; Saint Hildegard of Bingen, Virgin and Doctor of the Church | <span class="smallcaps">Optional memorials</span> |
-|  | Saint Januarius, Bishop and Martyr | <span class="smallcaps">Optional memorial</span> |
-|  | Saints Andrew Kim Tae-gon, Priest, Paul Chong Ha-sang, and Companions, Martyrs | <span class="smallcaps">Memorial</span> |
-|  | Saint Matthew, Apostle and Evangelist | <span class="smallcaps">Feast</span> |
-|  | Saint Pius of Pietrelcina, Priest | <span class="smallcaps">Memorial</span> |
-|  | Saints Cosmas and Damian, Martyrs | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Vincent de Paul, Priest | <span class="smallcaps">Memorial</span> |
-|  | Saint Wenceslaus, Martyr; Saints Lawrence Ruiz and Companions, Martyrs | <span class="smallcaps">Optional memorials</span> |
-|  | Saints Michael, Gabriel, and Raphael, Archangels | <span class="smallcaps">Feast</span> |
-|  | Saint Jerome, Priest and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-|  |  |  |
-|  | Saint Thérèse of the Child Jesus, Virgin and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-|  | The Holy Guardian Angels | <span class="smallcaps">Memorial</span> |
-|  | Saint Francis of Assisi | <span class="smallcaps">Memorial</span> |
-|  | Saint Faustina Kowalska, Virgin | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Bruno, Priest | <span class="smallcaps">Optional memorial</span> |
-|  | Our Lady of the Rosary | <span class="smallcaps">Memorial</span> |
-|  | Saints Denis, Bishop, and Companions, Martyrs; Saint John Leonardi, Priest; Saint John Henry Newman, Priest and Doctor of the Church | <span class="smallcaps">Optional memorials</span> |
-|  | Saint John XXIII, Pope | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Callistus I, Pope and Martyr | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Teresa of Jesus, Virgin and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-|  | Saint Hedwig, Religious; Saint Margaret Mary Alacoque, Virgin | <span class="smallcaps">Optional memorials</span> |
-|  | Saint Ignatius of Antioch, Bishop and Martyr | <span class="smallcaps">Memorial</span> |
-|  | Saint Luke, Evangelist | <span class="smallcaps">Feast</span> |
-|  | Saints John de Brébeuf and Isaac Jogues, Priests, and Companions, Martyrs; Saint Paul of the Cross, Priest | <span class="smallcaps">Optional memorials</span> |
-|  | Saint John Paul II, Pope | <span class="smallcaps">Optional memorial</span> |
-|  | Saint John of Capistrano, Priest | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Anthony Mary Claret, Bishop | <span class="smallcaps">Optional memorial</span> |
-|  | Saints Simon and Jude, Apostles | <span class="smallcaps">Feast</span> |
-|  |  |  |
-|  | All Saints | <span class="smallcaps">Solemnity</span> |
-|  | The Commemoration of All the Faithful Departed (All Souls) | <span class="smallcaps">All Souls commemoration</span> |
-|  | Saint Martin de Porres, Religious | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Charles Borromeo, Bishop | <span class="smallcaps">Memorial</span> |
-|  | The Dedication of the Lateran Basilica | <span class="smallcaps">Feast</span> |
-|  | Saint Leo the Great, Pope and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-|  | Saint Martin of Tours, Bishop | <span class="smallcaps">Memorial</span> |
-|  | Saint Josaphat, Bishop and Martyr | <span class="smallcaps">Memorial</span> |
-|  | Saint Albert the Great, Bishop and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Margaret of Scotland; Saint Gertrude, Virgin | <span class="smallcaps">Optional memorials</span> |
-|  | Saint Elizabeth of Hungary, Religious | <span class="smallcaps">Memorial</span> |
-|  | The Dedication of the Basilicas of Saints Peter and Paul, Apostles | <span class="smallcaps">Optional memorial</span> |
-|  | The Presentation of the Blessed Virgin Mary | <span class="smallcaps">Memorial</span> |
-|  | Saint Cecilia, Virgin and Martyr | <span class="smallcaps">Memorial</span> |
-|  | Saint Clement I, Pope and Martyr; Saint Columban, Abbot | <span class="smallcaps">Optional memorials</span> |
-|  | Saints Andrew Dung-Lac, Priest, and Companions, Martyrs | <span class="smallcaps">Memorial</span> |
-|  | Saint Catherine of Alexandria, Virgin and Martyr | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Andrew, Apostle | <span class="smallcaps">Feast</span> |
-|  |  |  |
-|  | Saint Francis Xavier, Priest | <span class="smallcaps">Memorial</span> |
-|  | Saint John Damascene, Priest and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Nicholas, Bishop | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Ambrose, Bishop and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-|  | The Immaculate Conception of the Blessed Virgin Mary | <span class="smallcaps">Solemnity</span> |
-|  | Saint Juan Diego Cuauhtlatoatzin | <span class="smallcaps">Optional memorial</span> |
-|  | Our Lady of Loreto | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Damasus I, Pope | <span class="smallcaps">Optional memorial</span> |
-|  | Our Lady of Guadalupe | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Lucy, Virgin and Martyr | <span class="smallcaps">Memorial</span> |
-|  | Saint John of the Cross, Priest and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-|  | Saint Peter Canisius, Priest and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-|  | Saint John of Kanty, Priest | <span class="smallcaps">Optional memorial</span> |
-|  | The Nativity of the Lord | <span class="smallcaps">Solemnity</span> |
-|  | Saint Stephen, the First Martyr | <span class="smallcaps">Feast</span> |
-|  | Saint John, Apostle and Evangelist | <span class="smallcaps">Feast</span> |
-|  | The Holy Innocents, Martyrs | <span class="smallcaps">Feast</span> |
-|  | Saint Thomas Becket, Bishop and Martyr | <span class="smallcaps">Optional memorial</span> |
-|  | Saint Sylvester I, Pope | <span class="smallcaps">Optional memorial</span> |
+| **January** |  |  |
+| 1 | Mary, the Holy Mother of God | <span class="smallcaps">Solemnity</span> |
+| 2 | Saints Basil the Great and Gregory Nazianzen, Bishops and Doctors of the Church | <span class="smallcaps">Memorial</span> |
+| 3 | The Most Holy Name of Jesus | <span class="smallcaps">Optional memorial</span> |
+| 6 | The Epiphany of the Lord | <span class="smallcaps">Solemnity</span> |
+| 7 | Saint Raymond of Penyafort, Priest | <span class="smallcaps">Optional memorial</span> |
+| 13 | Saint Hilary, Bishop and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
+| 17 | Saint Anthony, Abbot | <span class="smallcaps">Memorial</span> |
+| 20 | Saint Fabian, Pope and Martyr; Saint Sebastian, Martyr | <span class="smallcaps">Optional memorials</span> |
+| 21 | Saint Agnes, Virgin and Martyr | <span class="smallcaps">Memorial</span> |
+| 22 | Saint Vincent, Deacon and Martyr | <span class="smallcaps">Optional memorial</span> |
+| 24 | Saint Francis de Sales, Bishop and Doctor of the Church | <span class="smallcaps">Memorial</span> |
+| 25 | The Conversion of Saint Paul the Apostle | <span class="smallcaps">Feast</span> |
+| 26 | Saints Timothy and Titus, Bishops | <span class="smallcaps">Memorial</span> |
+| 27 | Saint Angela Merici, Virgin | <span class="smallcaps">Optional memorial</span> |
+| 28 | Saint Thomas Aquinas, Priest and Doctor of the Church | <span class="smallcaps">Memorial</span> |
+| 31 | Saint John Bosco, Priest | <span class="smallcaps">Memorial</span> |
+| **February** |  |  |
+| 2 | The Presentation of the Lord | <span class="smallcaps">Feast</span> |
+| 3 | Saint Blaise, Bishop and Martyr; Saint Ansgar, Bishop | <span class="smallcaps">Optional memorials</span> |
+| 5 | Saint Agatha, Virgin and Martyr | <span class="smallcaps">Memorial</span> |
+| 6 | Saints Paul Miki and Companions, Martyrs | <span class="smallcaps">Memorial</span> |
+| 8 | Saint Jerome Emiliani; Saint Josephine Bakhita, Virgin | <span class="smallcaps">Optional memorials</span> |
+| 10 | Saint Scholastica, Virgin | <span class="smallcaps">Memorial</span> |
+| 11 | Our Lady of Lourdes | <span class="smallcaps">Optional memorial</span> |
+| 14 | Saints Cyril, Monk, and Methodius, Bishop | <span class="smallcaps">Memorial</span> |
+| 17 | The Seven Holy Founders of the Servite Order | <span class="smallcaps">Optional memorial</span> |
+| 21 | Saint Peter Damian, Bishop and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
+| 22 | The Chair of Saint Peter the Apostle | <span class="smallcaps">Feast</span> |
+| 23 | Saint Polycarp, Bishop and Martyr | <span class="smallcaps">Memorial</span> |
+| 27 | Saint Gregory of Narek, Abbot and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
+| **March** |  |  |
+| 4 | Saint Casimir | <span class="smallcaps">Optional memorial</span> |
+| 7 | Saints Perpetua and Felicity, Martyrs | <span class="smallcaps">Memorial</span> |
+| 8 | Saint John of God, Religious | <span class="smallcaps">Optional memorial</span> |
+| 9 | Saint Frances of Rome, Religious | <span class="smallcaps">Optional memorial</span> |
+| 17 | Saint Patrick, Bishop | <span class="smallcaps">Optional memorial</span> |
+| 18 | Saint Cyril of Jerusalem, Bishop and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
+| 19 | Saint Joseph, Spouse of the Blessed Virgin Mary | <span class="smallcaps">Solemnity</span> |
+| 23 | Saint Turibius of Mogrovejo, Bishop | <span class="smallcaps">Optional memorial</span> |
+| 25 | The Annunciation of the Lord | <span class="smallcaps">Solemnity</span> |
+| **April** |  |  |
+| 2 | Saint Francis of Paola, Hermit | <span class="smallcaps">Optional memorial</span> |
+| 4 | Saint Isidore, Bishop and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
+| 5 | Saint Vincent Ferrer, Priest | <span class="smallcaps">Optional memorial</span> |
+| 7 | Saint John Baptist de la Salle, Priest | <span class="smallcaps">Memorial</span> |
+| 11 | Saint Stanislaus, Bishop and Martyr | <span class="smallcaps">Memorial</span> |
+| 13 | Saint Martin I, Pope and Martyr | <span class="smallcaps">Optional memorial</span> |
+| 21 | Saint Anselm, Bishop and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
+| 23 | Saint George, Martyr; Saint Adalbert, Bishop and Martyr | <span class="smallcaps">Optional memorials</span> |
+| 24 | Saint Fidelis of Sigmaringen, Priest and Martyr | <span class="smallcaps">Optional memorial</span> |
+| 25 | Saint Mark, Evangelist | <span class="smallcaps">Feast</span> |
+| 28 | Saint Peter Chanel, Priest and Martyr; Saint Louis Grignion de Montfort, Priest | <span class="smallcaps">Optional memorials</span> |
+| 29 | Saint Catherine of Siena, Virgin and Doctor of the Church | <span class="smallcaps">Memorial</span> |
+| 30 | Saint Pius V, Pope | <span class="smallcaps">Optional memorial</span> |
+| **May** |  |  |
+| 1 | Saint Joseph the Worker | <span class="smallcaps">Optional memorial</span> |
+| 2 | Saint Athanasius, Bishop and Doctor of the Church | <span class="smallcaps">Memorial</span> |
+| 3 | Saints Philip and James, Apostles | <span class="smallcaps">Feast</span> |
+| 10 | Saint John of Avila, Priest and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
+| 12 | Saints Nereus and Achilleus, Martyrs; Saint Pancras, Martyr | <span class="smallcaps">Optional memorials</span> |
+| 13 | Our Lady of Fatima | <span class="smallcaps">Optional memorial</span> |
+| 14 | Saint Matthias, Apostle | <span class="smallcaps">Feast</span> |
+| 18 | Saint John I, Pope and Martyr | <span class="smallcaps">Optional memorial</span> |
+| 20 | Saint Bernardine of Siena, Priest | <span class="smallcaps">Optional memorial</span> |
+| 21 | Saints Christopher Magallanes, Priest, and Companions, Martyrs | <span class="smallcaps">Optional memorial</span> |
+| 22 | Saint Rita of Cascia, Religious | <span class="smallcaps">Optional memorial</span> |
+| 25 | Saint Bede the Venerable, Priest and Doctor of the Church; Saint Gregory VII, Pope; Saint Mary Magdalene de’ Pazzi, Virgin | <span class="smallcaps">Optional memorials</span> |
+| 26 | Saint Philip Neri, Priest | <span class="smallcaps">Memorial</span> |
+| 27 | Saint Augustine of Canterbury, Bishop | <span class="smallcaps">Optional memorial</span> |
+| 29 | Saint Paul VI, Pope | <span class="smallcaps">Optional memorial</span> |
+| 31 | The Visitation of the Blessed Virgin Mary | <span class="smallcaps">Feast</span> |
+| **June** |  |  |
+| 1 | Saint Justin, Martyr | <span class="smallcaps">Memorial</span> |
+| 2 | Saints Marcellinus and Peter, Martyrs | <span class="smallcaps">Optional memorial</span> |
+| 3 | Saints Charles Lwanga and Companions, Martyrs | <span class="smallcaps">Memorial</span> |
+| 5 | Saint Boniface, Bishop and Martyr | <span class="smallcaps">Memorial</span> |
+| 6 | Saint Norbert, Bishop | <span class="smallcaps">Optional memorial</span> |
+| 9 | Saint Ephrem, Deacon and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
+| 11 | Saint Barnabas, Apostle | <span class="smallcaps">Memorial</span> |
+| 13 | Saint Anthony of Padua, Priest and Doctor of the Church | <span class="smallcaps">Memorial</span> |
+| 19 | Saint Romuald, Abbot | <span class="smallcaps">Optional memorial</span> |
+| 21 | Saint Aloysius Gonzaga, Religious | <span class="smallcaps">Memorial</span> |
+| 22 | Saint Paulinus of Nola, Bishop; Saints John Fisher, Bishop, and Thomas More, Martyrs | <span class="smallcaps">Optional memorials</span> |
+| 24 | The Nativity of Saint John the Baptist | <span class="smallcaps">Solemnity</span> |
+| 27 | Saint Cyril of Alexandria, Bishop and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
+| 28 | Saint Irenaeus, Bishop, Martyr, and Doctor of the Church | <span class="smallcaps">Memorial</span> |
+| 29 | Saints Peter and Paul, Apostles | <span class="smallcaps">Solemnity</span> |
+| 30 | The First Martyrs of the Holy Roman Church | <span class="smallcaps">Optional memorial</span> |
+| **July** |  |  |
+| 3 | Saint Thomas, Apostle | <span class="smallcaps">Feast</span> |
+| 4 | Saint Elizabeth of Portugal | <span class="smallcaps">Optional memorial</span> |
+| 5 | Saint Anthony Zaccaria, Priest | <span class="smallcaps">Optional memorial</span> |
+| 6 | Saint Maria Goretti, Virgin and Martyr | <span class="smallcaps">Optional memorial</span> |
+| 9 | Saints Augustine Zhao Rong, Priest, and Companions, Martyrs | <span class="smallcaps">Optional memorial</span> |
+| 11 | Saint Benedict, Abbot | <span class="smallcaps">Memorial</span> |
+| 13 | Saint Henry | <span class="smallcaps">Optional memorial</span> |
+| 14 | Saint Camillus de Lellis, Priest | <span class="smallcaps">Optional memorial</span> |
+| 15 | Saint Bonaventure, Bishop and Doctor of the Church | <span class="smallcaps">Memorial</span> |
+| 16 | Our Lady of Mount Carmel | <span class="smallcaps">Optional memorial</span> |
+| 20 | Saint Apollinaris, Bishop and Martyr | <span class="smallcaps">Optional memorial</span> |
+| 21 | Saint Lawrence of Brindisi, Priest and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
+| 22 | Saint Mary Magdalene | <span class="smallcaps">Feast</span> |
+| 23 | Saint Bridget, Religious | <span class="smallcaps">Optional memorial</span> |
+| 24 | Saint Sharbel Makhluf, Priest | <span class="smallcaps">Optional memorial</span> |
+| 25 | Saint James, Apostle | <span class="smallcaps">Feast</span> |
+| 26 | Saints Joachim and Anne, Parents of the Blessed Virgin Mary | <span class="smallcaps">Memorial</span> |
+| 29 | Saints Martha, Mary, and Lazarus | <span class="smallcaps">Memorial</span> |
+| 30 | Saint Peter Chrysologus, Bishop and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
+| 31 | Saint Ignatius of Loyola, Priest | <span class="smallcaps">Memorial</span> |
+| **August** |  |  |
+| 1 | Saint Alphonsus Liguori, Bishop and Doctor of the Church | <span class="smallcaps">Memorial</span> |
+| 2 | Saint Eusebius of Vercelli, Bishop; Saint Peter Julian Eymard, Priest | <span class="smallcaps">Optional memorials</span> |
+| 4 | Saint John Vianney, Priest | <span class="smallcaps">Memorial</span> |
+| 5 | The Dedication of the Basilica of Saint Mary Major | <span class="smallcaps">Optional memorial</span> |
+| 6 | The Transfiguration of the Lord | <span class="smallcaps">Feast</span> |
+| 7 | Saints Sixtus II, Pope, and Companions, Martyrs; Saint Cajetan, Priest | <span class="smallcaps">Optional memorials</span> |
+| 8 | Saint Dominic, Priest | <span class="smallcaps">Memorial</span> |
+| 9 | Saint Teresa Benedicta of the Cross, Virgin and Martyr | <span class="smallcaps">Optional memorial</span> |
+| 10 | Saint Lawrence, Deacon and Martyr | <span class="smallcaps">Feast</span> |
+| 11 | Saint Clare, Virgin | <span class="smallcaps">Memorial</span> |
+| 12 | Saint Jane Frances de Chantal, Religious | <span class="smallcaps">Optional memorial</span> |
+| 13 | Saints Pontian, Pope, and Hippolytus, Priest, Martyrs | <span class="smallcaps">Optional memorial</span> |
+| 14 | Saint Maximilian Mary Kolbe, Priest and Martyr | <span class="smallcaps">Memorial</span> |
+| 15 | The Assumption of the Blessed Virgin Mary | <span class="smallcaps">Solemnity</span> |
+| 16 | Saint Stephen of Hungary | <span class="smallcaps">Optional memorial</span> |
+| 19 | Saint John Eudes, Priest | <span class="smallcaps">Optional memorial</span> |
+| 20 | Saint Bernard, Abbot and Doctor of the Church | <span class="smallcaps">Memorial</span> |
+| 21 | Saint Pius X, Pope | <span class="smallcaps">Memorial</span> |
+| 22 | The Queenship of the Blessed Virgin Mary | <span class="smallcaps">Memorial</span> |
+| 23 | Saint Rose of Lima, Virgin | <span class="smallcaps">Optional memorial</span> |
+| 24 | Saint Bartholomew, Apostle | <span class="smallcaps">Feast</span> |
+| 25 | Saint Louis; Saint Joseph Calasanz, Priest | <span class="smallcaps">Optional memorials</span> |
+| 27 | Saint Monica | <span class="smallcaps">Memorial</span> |
+| 28 | Saint Augustine, Bishop and Doctor of the Church | <span class="smallcaps">Memorial</span> |
+| 29 | The Passion of Saint John the Baptist | <span class="smallcaps">Memorial</span> |
+| **September** |  |  |
+| 3 | Saint Gregory the Great, Pope and Doctor of the Church | <span class="smallcaps">Memorial</span> |
+| 5 | Saint Teresa of Calcutta, Virgin | <span class="smallcaps">Optional memorial</span> |
+| 8 | The Nativity of the Blessed Virgin Mary | <span class="smallcaps">Feast</span> |
+| 9 | Saint Peter Claver, Priest | <span class="smallcaps">Optional memorial</span> |
+| 12 | The Most Holy Name of Mary | <span class="smallcaps">Optional memorial</span> |
+| 13 | Saint John Chrysostom, Bishop and Doctor of the Church | <span class="smallcaps">Memorial</span> |
+| 14 | The Exaltation of the Holy Cross | <span class="smallcaps">Feast</span> |
+| 15 | Our Lady of Sorrows | <span class="smallcaps">Memorial</span> |
+| 16 | Saints Cornelius, Pope, and Cyprian, Bishop, Martyrs | <span class="smallcaps">Memorial</span> |
+| 17 | Saint Robert Bellarmine, Bishop and Doctor of the Church; Saint Hildegard of Bingen, Virgin and Doctor of the Church | <span class="smallcaps">Optional memorials</span> |
+| 19 | Saint Januarius, Bishop and Martyr | <span class="smallcaps">Optional memorial</span> |
+| 20 | Saints Andrew Kim Tae-gon, Priest, Paul Chong Ha-sang, and Companions, Martyrs | <span class="smallcaps">Memorial</span> |
+| 21 | Saint Matthew, Apostle and Evangelist | <span class="smallcaps">Feast</span> |
+| 23 | Saint Pius of Pietrelcina, Priest | <span class="smallcaps">Memorial</span> |
+| 26 | Saints Cosmas and Damian, Martyrs | <span class="smallcaps">Optional memorial</span> |
+| 27 | Saint Vincent de Paul, Priest | <span class="smallcaps">Memorial</span> |
+| 28 | Saint Wenceslaus, Martyr; Saints Lawrence Ruiz and Companions, Martyrs | <span class="smallcaps">Optional memorials</span> |
+| 29 | Saints Michael, Gabriel, and Raphael, Archangels | <span class="smallcaps">Feast</span> |
+| 30 | Saint Jerome, Priest and Doctor of the Church | <span class="smallcaps">Memorial</span> |
+| **October** |  |  |
+| 1 | Saint Thérèse of the Child Jesus, Virgin and Doctor of the Church | <span class="smallcaps">Memorial</span> |
+| 2 | The Holy Guardian Angels | <span class="smallcaps">Memorial</span> |
+| 4 | Saint Francis of Assisi | <span class="smallcaps">Memorial</span> |
+| 5 | Saint Faustina Kowalska, Virgin | <span class="smallcaps">Optional memorial</span> |
+| 6 | Saint Bruno, Priest | <span class="smallcaps">Optional memorial</span> |
+| 7 | Our Lady of the Rosary | <span class="smallcaps">Memorial</span> |
+| 9 | Saints Denis, Bishop, and Companions, Martyrs; Saint John Leonardi, Priest; Saint John Henry Newman, Priest and Doctor of the Church | <span class="smallcaps">Optional memorials</span> |
+| 11 | Saint John XXIII, Pope | <span class="smallcaps">Optional memorial</span> |
+| 14 | Saint Callistus I, Pope and Martyr | <span class="smallcaps">Optional memorial</span> |
+| 15 | Saint Teresa of Jesus, Virgin and Doctor of the Church | <span class="smallcaps">Memorial</span> |
+| 16 | Saint Hedwig, Religious; Saint Margaret Mary Alacoque, Virgin | <span class="smallcaps">Optional memorials</span> |
+| 17 | Saint Ignatius of Antioch, Bishop and Martyr | <span class="smallcaps">Memorial</span> |
+| 18 | Saint Luke, Evangelist | <span class="smallcaps">Feast</span> |
+| 19 | Saints John de Brébeuf and Isaac Jogues, Priests, and Companions, Martyrs; Saint Paul of the Cross, Priest | <span class="smallcaps">Optional memorials</span> |
+| 22 | Saint John Paul II, Pope | <span class="smallcaps">Optional memorial</span> |
+| 23 | Saint John of Capistrano, Priest | <span class="smallcaps">Optional memorial</span> |
+| 24 | Saint Anthony Mary Claret, Bishop | <span class="smallcaps">Optional memorial</span> |
+| 28 | Saints Simon and Jude, Apostles | <span class="smallcaps">Feast</span> |
+| **November** |  |  |
+| 1 | All Saints | <span class="smallcaps">Solemnity</span> |
+| 2 | The Commemoration of All the Faithful Departed (All Souls) | <span class="smallcaps">All Souls commemoration</span> |
+| 3 | Saint Martin de Porres, Religious | <span class="smallcaps">Optional memorial</span> |
+| 4 | Saint Charles Borromeo, Bishop | <span class="smallcaps">Memorial</span> |
+| 9 | The Dedication of the Lateran Basilica | <span class="smallcaps">Feast</span> |
+| 10 | Saint Leo the Great, Pope and Doctor of the Church | <span class="smallcaps">Memorial</span> |
+| 11 | Saint Martin of Tours, Bishop | <span class="smallcaps">Memorial</span> |
+| 12 | Saint Josaphat, Bishop and Martyr | <span class="smallcaps">Memorial</span> |
+| 15 | Saint Albert the Great, Bishop and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
+| 16 | Saint Margaret of Scotland; Saint Gertrude, Virgin | <span class="smallcaps">Optional memorials</span> |
+| 17 | Saint Elizabeth of Hungary, Religious | <span class="smallcaps">Memorial</span> |
+| 18 | The Dedication of the Basilicas of Saints Peter and Paul, Apostles | <span class="smallcaps">Optional memorial</span> |
+| 21 | The Presentation of the Blessed Virgin Mary | <span class="smallcaps">Memorial</span> |
+| 22 | Saint Cecilia, Virgin and Martyr | <span class="smallcaps">Memorial</span> |
+| 23 | Saint Clement I, Pope and Martyr; Saint Columban, Abbot | <span class="smallcaps">Optional memorials</span> |
+| 24 | Saints Andrew Dung-Lac, Priest, and Companions, Martyrs | <span class="smallcaps">Memorial</span> |
+| 25 | Saint Catherine of Alexandria, Virgin and Martyr | <span class="smallcaps">Optional memorial</span> |
+| 30 | Saint Andrew, Apostle | <span class="smallcaps">Feast</span> |
+| **December** |  |  |
+| 3 | Saint Francis Xavier, Priest | <span class="smallcaps">Memorial</span> |
+| 4 | Saint John Damascene, Priest and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
+| 6 | Saint Nicholas, Bishop | <span class="smallcaps">Optional memorial</span> |
+| 7 | Saint Ambrose, Bishop and Doctor of the Church | <span class="smallcaps">Memorial</span> |
+| 8 | The Immaculate Conception of the Blessed Virgin Mary | <span class="smallcaps">Solemnity</span> |
+| 9 | Saint Juan Diego Cuauhtlatoatzin | <span class="smallcaps">Optional memorial</span> |
+| 10 | Our Lady of Loreto | <span class="smallcaps">Optional memorial</span> |
+| 11 | Saint Damasus I, Pope | <span class="smallcaps">Optional memorial</span> |
+| 12 | Our Lady of Guadalupe | <span class="smallcaps">Optional memorial</span> |
+| 13 | Saint Lucy, Virgin and Martyr | <span class="smallcaps">Memorial</span> |
+| 14 | Saint John of the Cross, Priest and Doctor of the Church | <span class="smallcaps">Memorial</span> |
+| 21 | Saint Peter Canisius, Priest and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
+| 23 | Saint John of Kanty, Priest | <span class="smallcaps">Optional memorial</span> |
+| 25 | The Nativity of the Lord | <span class="smallcaps">Solemnity</span> |
+| 26 | Saint Stephen, the First Martyr | <span class="smallcaps">Feast</span> |
+| 27 | Saint John, Apostle and Evangelist | <span class="smallcaps">Feast</span> |
+| 28 | The Holy Innocents, Martyrs | <span class="smallcaps">Feast</span> |
+| 29 | Saint Thomas Becket, Bishop and Martyr | <span class="smallcaps">Optional memorial</span> |
+| 31 | Saint Sylvester I, Pope | <span class="smallcaps">Optional memorial</span> |
 
 The 2002 Missal also provides proper Vigil and Day Masses for the Nativity of St John the Baptist (24 June), Sts Peter and Paul (29 June), and the Assumption (15 August). These Vigil forms belong to the same celebration and rank; they are not extra civil-date rows. Vigil and Day forms for Epiphany and the Ascension are accounted for in the Proper of Time.
 
@@ -384,30 +384,30 @@ This table contains the national layer approved for all dioceses of the United S
 
 | Date | United States entry | Rank/status | Effect on universal base |
 |:----------|:-----------------------------|:-------------|:-------------|
-| Jan. | Saint Elizabeth Ann Seton, Religious | <span class="smallcaps">Memorial</span> | National addition. |
-| Jan. | Saint John Neumann, Bishop | <span class="smallcaps">Memorial</span> | National addition. |
-| Jan. | Saint André Bessette, Religious | <span class="smallcaps">Optional memorial</span> | National addition; Epiphany is on Sunday in this territory. |
-| Jan. | Day of Prayer for the Legal Protection of Unborn Children | <span class="smallcaps">Required day of prayer</span> | Replaces the date normally used for St Vincent in the U.S. proper; moved to 23 Jan. when 22 Jan. is Sunday. |
-| Jan. | Saint Vincent, Deacon and Martyr; Saint Marianne Cope, Virgin | <span class="smallcaps">Optional memorials</span> | St Vincent is moved from the universal 22 Jan.; St Marianne is added. |
-| Mar. | Saint Katharine Drexel, Virgin | <span class="smallcaps">Optional memorial</span> | National addition. |
-| May | Saint Damien de Veuster, Priest | <span class="smallcaps">Optional memorial</span> | National addition; St John of Avila, added universally in 2021, is another optional memorial on this date. |
-| May | Saint Isidore | <span class="smallcaps">Optional memorial</span> | National addition; distinct from universal St Isidore of Seville on 4 April. |
-| July | Saint Junípero Serra, Priest | <span class="smallcaps">Optional memorial</span> | National addition. |
-| July | Independence Day | <span class="smallcaps">Optional special day</span> | National civic observance; St Elizabeth of Portugal is moved to 5 July. |
-| July | Saint Elizabeth of Portugal | <span class="smallcaps">Optional memorial</span> | Moved from the universal 4 July; shares the date with universal St Anthony Zaccaria. |
-| July | Saint Kateri Tekakwitha, Virgin | <span class="smallcaps">Memorial</span> | National addition; St Camillus is moved to 18 July. |
-| July | Saint Camillus de Lellis, Priest | <span class="smallcaps">Optional memorial</span> | Moved from the universal 14 July. |
-| Sept. | Saint Peter Claver, Priest | <span class="smallcaps">Memorial</span> | Universal optional memorial raised to an obligatory memorial in the territory. |
-| Oct. | Blessed Francis Xavier Seelos, Priest | <span class="smallcaps">Optional memorial</span> | National addition; St Faustina, added universally in 2020, is another optional memorial on this date. |
-| Oct. | Blessed Marie Rose Durocher, Virgin | <span class="smallcaps">Optional memorial</span> | National addition; shares the date with universal St Bruno. |
-| Oct. | Saints John de Brébeuf and Isaac Jogues, Priests, and Companions, Martyrs | <span class="smallcaps">Memorial</span> | Universal optional memorial raised; St Paul of the Cross is moved to 20 Oct. |
-| Oct. | Saint Paul of the Cross, Priest | <span class="smallcaps">Optional memorial</span> | Moved from the universal 19 Oct. |
-| Nov. | Saint Frances Xavier Cabrini, Virgin | <span class="smallcaps">Memorial</span> | National addition. |
-| Nov. | Saint Rose Philippine Duchesne, Virgin | <span class="smallcaps">Optional memorial</span> | National addition; remains a choice alongside the universal dedication optional memorial. |
-| Nov. | Blessed Miguel Agustín Pro, Priest and Martyr | <span class="smallcaps">Optional memorial</span> | National addition; joins the universal optional memorial choices of St Clement I and St Columban. |
+| 4 Jan. | Saint Elizabeth Ann Seton, Religious | <span class="smallcaps">Memorial</span> | National addition. |
+| 5 Jan. | Saint John Neumann, Bishop | <span class="smallcaps">Memorial</span> | National addition. |
+| 6 Jan. | Saint André Bessette, Religious | <span class="smallcaps">Optional memorial</span> | National addition; Epiphany is on Sunday in this territory. |
+| 22 Jan. | Day of Prayer for the Legal Protection of Unborn Children | <span class="smallcaps">Required day of prayer</span> | Replaces the date normally used for St Vincent in the U.S. proper; moved to 23 Jan. when 22 Jan. is Sunday. |
+| 23 Jan. | Saint Vincent, Deacon and Martyr; Saint Marianne Cope, Virgin | <span class="smallcaps">Optional memorials</span> | St Vincent is moved from the universal 22 Jan.; St Marianne is added. |
+| 3 Mar. | Saint Katharine Drexel, Virgin | <span class="smallcaps">Optional memorial</span> | National addition. |
+| 10 May | Saint Damien de Veuster, Priest | <span class="smallcaps">Optional memorial</span> | National addition; St John of Avila, added universally in 2021, is another optional memorial on this date. |
+| 15 May | Saint Isidore | <span class="smallcaps">Optional memorial</span> | National addition; distinct from universal St Isidore of Seville on 4 April. |
+| 1 July | Saint Junípero Serra, Priest | <span class="smallcaps">Optional memorial</span> | National addition. |
+| 4 July | Independence Day | <span class="smallcaps">Optional special day</span> | National civic observance; St Elizabeth of Portugal is moved to 5 July. |
+| 5 July | Saint Elizabeth of Portugal | <span class="smallcaps">Optional memorial</span> | Moved from the universal 4 July; shares the date with universal St Anthony Zaccaria. |
+| 14 July | Saint Kateri Tekakwitha, Virgin | <span class="smallcaps">Memorial</span> | National addition; St Camillus is moved to 18 July. |
+| 18 July | Saint Camillus de Lellis, Priest | <span class="smallcaps">Optional memorial</span> | Moved from the universal 14 July. |
+| 9 Sept. | Saint Peter Claver, Priest | <span class="smallcaps">Memorial</span> | Universal optional memorial raised to an obligatory memorial in the territory. |
+| 5 Oct. | Blessed Francis Xavier Seelos, Priest | <span class="smallcaps">Optional memorial</span> | National addition; St Faustina, added universally in 2020, is another optional memorial on this date. |
+| 6 Oct. | Blessed Marie Rose Durocher, Virgin | <span class="smallcaps">Optional memorial</span> | National addition; shares the date with universal St Bruno. |
+| 19 Oct. | Saints John de Brébeuf and Isaac Jogues, Priests, and Companions, Martyrs | <span class="smallcaps">Memorial</span> | Universal optional memorial raised; St Paul of the Cross is moved to 20 Oct. |
+| 20 Oct. | Saint Paul of the Cross, Priest | <span class="smallcaps">Optional memorial</span> | Moved from the universal 19 Oct. |
+| 13 Nov. | Saint Frances Xavier Cabrini, Virgin | <span class="smallcaps">Memorial</span> | National addition. |
+| 18 Nov. | Saint Rose Philippine Duchesne, Virgin | <span class="smallcaps">Optional memorial</span> | National addition; remains a choice alongside the universal dedication optional memorial. |
+| 23 Nov. | Blessed Miguel Agustín Pro, Priest and Martyr | <span class="smallcaps">Optional memorial</span> | National addition; joins the universal optional memorial choices of St Clement I and St Columban. |
 | Fourth Thursday in Nov. | Thanksgiving Day | <span class="smallcaps">Optional special day</span> | National civic observance; the rank and permissions of the liturgical day still govern. |
-| Dec. | Immaculate Conception of the Blessed Virgin Mary (Patronal Feastday of the United States of America) | <span class="smallcaps">Solemnity</span> | Universal solemnity with national patronal title; patronal status does not create a second celebration. |
-| Dec. | Our Lady of Guadalupe | <span class="smallcaps">Feast</span> | Universal optional memorial raised to a feast in the territory. |
+| 8 Dec. | Immaculate Conception of the Blessed Virgin Mary (Patronal Feastday of the United States of America) | <span class="smallcaps">Solemnity</span> | Universal solemnity with national patronal title; patronal status does not create a second celebration. |
+| 12 Dec. | Our Lady of Guadalupe | <span class="smallcaps">Feast</span> | Universal optional memorial raised to a feast in the territory. |
 
 ### Territorial placement and transfer rules
 
@@ -483,35 +483,35 @@ This timeline selects changes that altered the architecture, precedence, tempora
 |:---------|:------------------|:-------------------------------------|
 | Early centuries | Sunday, Pascha, and martyrs’ anniversaries | Established the weekly and annual Paschal centers and the local anniversary principle from which the temporal and sanctoral cycles grew. Precise beginnings are not reducible to a single decree. |
 | Fourth–sixth centuries | Nativity–Epiphany and mature Paschal seasons | Consolidated a second temporal center and the preparatory and festal seasons surrounding Christmas and Easter, with continued regional variation. |
-| –1570 | Roman Breviary and Missal after Trent | Codified and widely extended the Roman calendar and its books while preserving qualifying ancient local uses. |
-|  | Pius X, *Divino afflatu* | Reworked the Psalter and precedence so that festal accumulation would no longer displace the ferial cursus in the same way. |
-| –1956 | Pius XII’s Paschal Vigil, Holy Week, and simplification reforms | Restored the principal Holy Week rites to their proper hours, revised their structure, and suppressed many vigils and octaves while simplifying calendar ranks. |
-| –1962 | *Rubricarum instructum* and the 1962 Missal | Introduced the four-class system and the immediate preconciliar calendar against which the later reform is often compared. |
-| Dec. 1963 | Vatican II, *Sacrosanctum Concilium* 102–111 | Required revision of the liturgical year, protection of Sunday and the Proper of Time, Christological ordering of saints’ feasts, and a more selective universal sanctoral. |
-| Feb. 1969 | Paul VI, *Mysterii Paschalis*, and *Calendarium Romanum* | Promulgated the Universal Norms and revised General Roman Calendar, effective 1 January 1970. The new system uses solemnities, feasts, memorials, and optional memorials rather than the 1960 classes. |
-| ; 1975 | First and second typical editions of the Roman Missal | Embodied and then consolidated the reformed calendar in the Missal’s liturgical structure. |
-| ; 1987–1988 | U.S. Guadalupe inscriptions | Added Our Lady of Guadalupe first as an obligatory memorial, then raised the national celebration to a feast. |
-| Jan. 1996; 8 Dec. 1998 | Immaculate Heart rank and collision notifications | Raised the Immaculate Heart from optional to obligatory memorial, then established that when it coincides with another obligatory memorial, both are optional memorials for that year. |
-| Jan.; 5 July 1999 | All-Americas Guadalupe feast; U.S. Ascension norm | Established Guadalupe as a feast in the national calendars of the Americas and allowed U.S. ecclesiastical provinces, under the approved procedure, to transfer the Ascension to the Seventh Sunday of Easter. |
-| Apr. 2000; 2002; 2008 | Third typical edition and emended printing | The third typical edition was issued as typical in 2000, published in 2002, and reprinted with emendations in 2008. It supplies the present Latin base; the emended printing is the immediate Latin control for the 2011 U.S. edition. |
-| May 2000 | Decree *Misericors et miserator* | Added “or of Divine Mercy” to the title of the Second Sunday of Easter while prescribing continued use of the existing Missal and Hours texts. |
-| June 2002 | *Ex uberi terra* | Inscribed St Pius of Pietrelcina as an obligatory memorial on 23 September. |
-| Sept. 2002; 2008 | Guadalupe and St Juan Diego integration | Inscribed the optional memorials of St Juan Diego on 9 December and Our Lady of Guadalupe on 12 December; both were incorporated into the 2008 emended printing. |
-| July 2010; 27 Nov. 2011 | Confirmed U.S. adaptations and proper; English third edition | Three confirmations covered the U.S. adaptations, proper-calendar changes, and proper texts; the English edition came into use on 27 November 2011. Later national additions remain separate amendments. |
-| Oct. 2012; 10 July 2013; 25 July 2014 | U.S. additions after the third edition | Added the U.S. optional memorials of St John Paul II, St Marianne Cope, and Blessed Francis Xavier Seelos. John Paul II’s 2014 universal inscription later superseded the distinct national insertion. |
-| May 2014 | Decree *Pastor aeternus* | Added optional memorials of St John XXIII (11 October) and St John Paul II (22 October). |
-| June 2016 | Decree on St Mary Magdalene | Raised 22 July from obligatory memorial to feast. |
-| Feb.; 24 Mar. 2018 | Decree and notification on Mary, Mother of the Church | Added an obligatory memorial on the Monday after Pentecost and directed that it prevails when coinciding with another memorial of a saint or blessed. |
-| Jan. 2019 | Decree on St Paul VI | Added his optional memorial on 29 May. |
-| Sept. 2019 | Francis, *Aperuit illis* | Designated the existing Third Sunday in Ordinary Time as the Sunday of the Word of God; the act prescribes no replacement rank or lectionary. |
-| Oct. 2019 | Decree on Our Lady of Loreto | Added the optional memorial on 10 December. |
-| May 2020 | Decree on St Faustina Kowalska | Added her optional memorial on 5 October. |
-| Jan. 2021 | Three Doctors decree | Added optional memorials of St Gregory of Narek (27 February), St John of Avila (10 May), and St Hildegard of Bingen (17 September). |
-| Jan. 2021 | Martha, Mary, and Lazarus decree | Replaced the memorial of St Martha alone on 29 July with the obligatory memorial of Saints Martha, Mary, and Lazarus. |
-| Jan. 2022 | St Irenaeus declared Doctor of the Church | Added the title Doctor of the Church to the universal memorial’s identifier without changing its 28 June date or memorial rank. |
-| Dec. 2024; published 11 Feb. 2025 | Decree on St Teresa of Calcutta | Added her optional memorial on 5 September. |
-| Nov. 2025; published 3 Feb. 2026 | Decree on St John Henry Newman | Added his optional memorial on 9 October; official 2026 calendars implement the entry. |
-| July 2026 | Cutoff of this inventory | No later universal or United States amendment is asserted here. |
+| 1568–1570 | Roman Breviary and Missal after Trent | Codified and widely extended the Roman calendar and its books while preserving qualifying ancient local uses. |
+| 1911 | Pius X, *Divino afflatu* | Reworked the Psalter and precedence so that festal accumulation would no longer displace the ferial cursus in the same way. |
+| 1951–1956 | Pius XII’s Paschal Vigil, Holy Week, and simplification reforms | Restored the principal Holy Week rites to their proper hours, revised their structure, and suppressed many vigils and octaves while simplifying calendar ranks. |
+| 1960–1962 | *Rubricarum instructum* and the 1962 Missal | Introduced the four-class system and the immediate preconciliar calendar against which the later reform is often compared. |
+| 4 Dec. 1963 | Vatican II, *Sacrosanctum Concilium* 102–111 | Required revision of the liturgical year, protection of Sunday and the Proper of Time, Christological ordering of saints’ feasts, and a more selective universal sanctoral. |
+| 14 Feb. 1969 | Paul VI, *Mysterii Paschalis*, and *Calendarium Romanum* | Promulgated the Universal Norms and revised General Roman Calendar, effective 1 January 1970. The new system uses solemnities, feasts, memorials, and optional memorials rather than the 1960 classes. |
+| 1970; 1975 | First and second typical editions of the Roman Missal | Embodied and then consolidated the reformed calendar in the Missal’s liturgical structure. |
+| 1971; 1987–1988 | U.S. Guadalupe inscriptions | Added Our Lady of Guadalupe first as an obligatory memorial, then raised the national celebration to a feast. |
+| 1 Jan. 1996; 8 Dec. 1998 | Immaculate Heart rank and collision notifications | Raised the Immaculate Heart from optional to obligatory memorial, then established that when it coincides with another obligatory memorial, both are optional memorials for that year. |
+| 22 Jan.; 5 July 1999 | All-Americas Guadalupe feast; U.S. Ascension norm | Established Guadalupe as a feast in the national calendars of the Americas and allowed U.S. ecclesiastical provinces, under the approved procedure, to transfer the Ascension to the Seventh Sunday of Easter. |
+| 20 Apr. 2000; 2002; 2008 | Third typical edition and emended printing | The third typical edition was issued as typical in 2000, published in 2002, and reprinted with emendations in 2008. It supplies the present Latin base; the emended printing is the immediate Latin control for the 2011 U.S. edition. |
+| 5 May 2000 | Decree *Misericors et miserator* | Added “or of Divine Mercy” to the title of the Second Sunday of Easter while prescribing continued use of the existing Missal and Hours texts. |
+| 26 June 2002 | *Ex uberi terra* | Inscribed St Pius of Pietrelcina as an obligatory memorial on 23 September. |
+| 28 Sept. 2002; 2008 | Guadalupe and St Juan Diego integration | Inscribed the optional memorials of St Juan Diego on 9 December and Our Lady of Guadalupe on 12 December; both were incorporated into the 2008 emended printing. |
+| 24 July 2010; 27 Nov. 2011 | Confirmed U.S. adaptations and proper; English third edition | Three confirmations covered the U.S. adaptations, proper-calendar changes, and proper texts; the English edition came into use on 27 November 2011. Later national additions remain separate amendments. |
+| 12 Oct. 2012; 10 July 2013; 25 July 2014 | U.S. additions after the third edition | Added the U.S. optional memorials of St John Paul II, St Marianne Cope, and Blessed Francis Xavier Seelos. John Paul II’s 2014 universal inscription later superseded the distinct national insertion. |
+| 29 May 2014 | Decree *Pastor aeternus* | Added optional memorials of St John XXIII (11 October) and St John Paul II (22 October). |
+| 3 June 2016 | Decree on St Mary Magdalene | Raised 22 July from obligatory memorial to feast. |
+| 11 Feb.; 24 Mar. 2018 | Decree and notification on Mary, Mother of the Church | Added an obligatory memorial on the Monday after Pentecost and directed that it prevails when coinciding with another memorial of a saint or blessed. |
+| 25 Jan. 2019 | Decree on St Paul VI | Added his optional memorial on 29 May. |
+| 30 Sept. 2019 | Francis, *Aperuit illis* | Designated the existing Third Sunday in Ordinary Time as the Sunday of the Word of God; the act prescribes no replacement rank or lectionary. |
+| 7 Oct. 2019 | Decree on Our Lady of Loreto | Added the optional memorial on 10 December. |
+| 18 May 2020 | Decree on St Faustina Kowalska | Added her optional memorial on 5 October. |
+| 25 Jan. 2021 | Three Doctors decree | Added optional memorials of St Gregory of Narek (27 February), St John of Avila (10 May), and St Hildegard of Bingen (17 September). |
+| 26 Jan. 2021 | Martha, Mary, and Lazarus decree | Replaced the memorial of St Martha alone on 29 July with the obligatory memorial of Saints Martha, Mary, and Lazarus. |
+| 21 Jan. 2022 | St Irenaeus declared Doctor of the Church | Added the title Doctor of the Church to the universal memorial’s identifier without changing its 28 June date or memorial rank. |
+| 24 Dec. 2024; published 11 Feb. 2025 | Decree on St Teresa of Calcutta | Added her optional memorial on 5 September. |
+| 9 Nov. 2025; published 3 Feb. 2026 | Decree on St John Henry Newman | Added his optional memorial on 9 October; official 2026 calendars implement the entry. |
+| 17 July 2026 | Cutoff of this inventory | No later universal or United States amendment is asserted here. |
 
 ## Scope, Edition, and Qualifications
 

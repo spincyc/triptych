@@ -3,6 +3,7 @@ from __future__ import annotations
 import importlib.machinery
 import importlib.util
 import io
+import shutil
 import sys
 import tempfile
 import unittest
@@ -22,6 +23,17 @@ if SPEC is None or SPEC.loader is None:
 CHECKER = importlib.util.module_from_spec(SPEC)
 sys.modules[SPEC.name] = CHECKER
 SPEC.loader.exec_module(CHECKER)
+
+DRIVER_PATH = ROOT / "scripts" / "web-edition"
+DRIVER_LOADER = importlib.machinery.SourceFileLoader(
+    "triptych_web_edition_driver", str(DRIVER_PATH)
+)
+DRIVER_SPEC = importlib.util.spec_from_loader(DRIVER_LOADER.name, DRIVER_LOADER)
+if DRIVER_SPEC is None or DRIVER_SPEC.loader is None:
+    raise RuntimeError(f"cannot load {DRIVER_PATH}")
+DRIVER = importlib.util.module_from_spec(DRIVER_SPEC)
+sys.modules[DRIVER_SPEC.name] = DRIVER
+DRIVER_SPEC.loader.exec_module(DRIVER)
 
 REVIEWED = "2026-07-25"
 
@@ -310,6 +322,64 @@ class WebEditionTreeTests(unittest.TestCase):
         self.assertIsNone(
             CHECKER.resolve_input("/etc/passwd", self.root / "src" / "gpt")
         )
+
+
+class DriverConversionTests(unittest.TestCase):
+    """The converter's silent-loss guards, which no declaration can express."""
+
+    def test_definition_survives_a_comment_between_its_groups(self) -> None:
+        preamble = (
+            "\\newenvironment{dossiertable}\n"
+            "{\\begin{longtable}{ll}\\endhead}\n"
+            "% The closing rule is supplied by the final note.\n"
+            "{\\end{longtable}}\n"
+        )
+        self.assertIn("dossiertable", DRIVER.defined_names(
+            DRIVER.local_definitions(preamble)
+        ))
+
+    def test_a_row_of_empty_cells_fails_the_audit(self) -> None:
+        markdown = (
+            "Reuse and rights. Last revised (UTC): now\n\n"
+            "| A | B |\n|:--|:--|\n| one | two |\n|  |  |\n"
+        )
+        self.assertIn(
+            "1 table row(s) written with every cell empty",
+            DRIVER.audit_output("", markdown),
+        )
+
+    def test_a_ragged_column_keeps_a_cell_leading_digit(self) -> None:
+        if shutil.which("pandoc") is None:
+            self.skipTest("pandoc is not installed")
+        document = (
+            "\\input{common/preamble}\n"
+            "\\hypersetup{pdftitle={T}}\n"
+            "\\begin{document}\n"
+            "\\begin{longtable}"
+            "{>{\\raggedright\\arraybackslash}p{0.4\\linewidth}"
+            ">{\\raggedright\\arraybackslash}p{0.4\\linewidth}}\n"
+            "\\textbf{A} & \\textbf{B}\\\\\n\\midrule\n\\endhead\n"
+            "Epistle & 1~Pet. 5:6--11\\\\\n"
+            "\\end{longtable}\n"
+            "\\AIDocumentRevisionTimestamp{2026-07-25T00:00:00Z}\n"
+            "\\AIModelContribution{m}{q}{r}\n"
+            "\\end{document}\n"
+        )
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            leaf = root / "src" / "provider" / "doc"
+            leaf.mkdir(parents=True)
+            (leaf / "main.tex").write_text(document, encoding="utf-8")
+            with mock.patch.object(DRIVER, "SRC", root / "src"):
+                written = DRIVER.convert("provider", "doc", out=root / "out")
+            self.assertIn("| 1", written.read_text(encoding="utf-8"))
+
+    def test_a_headerless_table_keeps_its_empty_header_row(self) -> None:
+        markdown = (
+            "Reuse and rights. Last revised (UTC): now\n\n"
+            "|  |  |\n|:--|:--|\n| one | two |\n"
+        )
+        self.assertEqual([], DRIVER.audit_output("", markdown))
 
 
 class TrackedWebEditionRecordTests(unittest.TestCase):

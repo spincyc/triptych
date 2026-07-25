@@ -38,6 +38,7 @@
 \newcommand{\guillemotright}{»}
 \newcommand{\textexclamdown}{¡}
 \newcommand{\textquestiondown}{¿}
+\newcommand{\slash}{/}
 
 % ------------------------------------------------------------- semantic inlines
 \newcommand{\sourceurl}[2]{\href{#1}{#2}}
@@ -158,6 +159,11 @@
 % ----------------------------------------------------------------------- tables
 % Each named environment carries its header row in its definition, so the row
 % macros stay bare &-separated cells.  Column widths follow the print originals.
+
+% pandoc's reader discards a \multicolumn cell's contents outright, writing the
+% row empty.  Spanning is not expressible in a pipe table anyway, so the span
+% collapses to its first cell and the text survives.
+\renewcommand{\multicolumn}[3]{#3}
 
 \newenvironment{properstable}
 {\begin{longtable}{p{0.15\linewidth}p{0.25\linewidth}p{0.18\linewidth}p{0.34\linewidth}}

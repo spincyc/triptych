@@ -41,25 +41,25 @@ The acts this study located, in order, with their exact objects.[^2]
 | **Date** | **Authority** | **Act** | **Exact object** |
 |:--------|:---------------|:-------------------|:----------------------|
 |  | City of Mexico (civic and diocesan) | Sworn patronage | Our Lady of Guadalupe taken as patroness of the republic; attested retrospectively by Pius X |
-|  | Benedict XIV | Confirmation of the patronage, with a proper Office and Mass | The patronage confirmed by papal authority; the incipit and the Latin text are discussed at §8.2 with a recorded limit |
-| February 1887 | Leo XIII | Brief conceding the coronation | The canonical coronation of the image (act not located; §8.3) |
-| July 1892 | Sacred Congregation of Rites | Rescript **Mexicana**, on the placing of statues | Permits statues of Zumárraga and of Juan Diego in the collegiate church but not on the altar; describes Juan Diego as one “to whom the Virgin Mother of God **fertur apparuisse**” |
-| March 1894 | Sacred Congregation of Rites | New proper Office and Mass | **Fertur** of the older Office replaced by **antiqua et constans traditio docet** (act not located in *ASS*; §8.3) |
-| October 1895 | Archbishops of Mexico | Canonical coronation | The image crowned in the collegiate church |
-|  | Fifth Mexican Provincial Council | Edict | “the marvellous apparition, without being a dogma of faith, is an ancient, constant and universal tradition in the Mexican nation” |
-| August 1910 | Sacred Congregation of Rites | Item on the agenda of the Ordinary Congregation | “the election and declaration of the B. Virgin Mary called of Guadalupe as Patroness of all Latin America” (the resulting act not located; §8.4) |
-| October 1945 | Pius XII | Radio message | Fiftieth anniversary of the coronation; the tradition narrated **como refiere la tradición** |
-| October 1976 | Paul VI | Apostolic letter **Sacra illa** | The title and dignity of minor basilica transferred in perpetuity from the old church to the new |
-| October 1976 | Paul VI | Message for the dedication | The new shrine dedicated |
-| April 1990 | Congregation for the Causes of Saints | Decree on sanctity of life and immemorial cult | The juridical basis of the beatification |
-| May 1990 | John Paul II | Apostolic letter (above) | Liturgical cult of Blessed Juan Diego granted; memorial 9 December |
-| January 1999 | John Paul II | *Ecclesia in America*, n. 11 | Guadalupe as “Patroness of all America and Star of the first and new evangelization”; the Synod’s proposal of a continental feast welcomed |
-| March 1999 | Congregation for Divine Worship and the Discipline of the Sacraments | Decree, Prot. 803/99/L | The celebration of Our Lady of Guadalupe inscribed in the calendars of the Americas for 12 December **gradu festi** |
-| December 2001 | Congregation for the Causes of Saints | Decree **super miraculo** | One cure recognized as miraculous, for the canonization |
-| July 2002 | John Paul II | Canonization | Juan Diego Cuauhtlatoatzin inscribed in the catalogue of the saints |
-|  | Congregation for Divine Worship | **Variationes et additiones** to the third typical edition | December (St Juan Diego) and 12 December (Our Lady of Guadalupe) added to the General Roman Calendar |
-| December 2025 | Leo XIV | Homily, St Peter’s Basilica | The feast celebrated at Rome |
-| February 2026 | Leo XIV | Message | To a pastoral theological congress on the Guadalupan event, looking to the fifth centenary in 2031 |
+| 1754 | Benedict XIV | Confirmation of the patronage, with a proper Office and Mass | The patronage confirmed by papal authority; the incipit and the Latin text are discussed at §8.2 with a recorded limit |
+| 8 February 1887 | Leo XIII | Brief conceding the coronation | The canonical coronation of the image (act not located; §8.3) |
+| 15 July 1892 | Sacred Congregation of Rites | Rescript **Mexicana**, on the placing of statues | Permits statues of Zumárraga and of Juan Diego in the collegiate church but not on the altar; describes Juan Diego as one “to whom the Virgin Mother of God **fertur apparuisse**” |
+| 6 March 1894 | Sacred Congregation of Rites | New proper Office and Mass | **Fertur** of the older Office replaced by **antiqua et constans traditio docet** (act not located in *ASS*; §8.3) |
+| 12 October 1895 | Archbishops of Mexico | Canonical coronation | The image crowned in the collegiate church |
+| 1896 | Fifth Mexican Provincial Council | Edict | “the marvellous apparition, without being a dogma of faith, is an ancient, constant and universal tradition in the Mexican nation” |
+| 16 August 1910 | Sacred Congregation of Rites | Item on the agenda of the Ordinary Congregation | “the election and declaration of the B. Virgin Mary called of Guadalupe as Patroness of all Latin America” (the resulting act not located; §8.4) |
+| 12 October 1945 | Pius XII | Radio message | Fiftieth anniversary of the coronation; the tradition narrated **como refiere la tradición** |
+| 4 October 1976 | Paul VI | Apostolic letter **Sacra illa** | The title and dignity of minor basilica transferred in perpetuity from the old church to the new |
+| 12 October 1976 | Paul VI | Message for the dedication | The new shrine dedicated |
+| 9 April 1990 | Congregation for the Causes of Saints | Decree on sanctity of life and immemorial cult | The juridical basis of the beatification |
+| 6 May 1990 | John Paul II | Apostolic letter (above) | Liturgical cult of Blessed Juan Diego granted; memorial 9 December |
+| 22 January 1999 | John Paul II | *Ecclesia in America*, n. 11 | Guadalupe as “Patroness of all America and Star of the first and new evangelization”; the Synod’s proposal of a continental feast welcomed |
+| 25 March 1999 | Congregation for Divine Worship and the Discipline of the Sacraments | Decree, Prot. 803/99/L | The celebration of Our Lady of Guadalupe inscribed in the calendars of the Americas for 12 December **gradu festi** |
+| 20 December 2001 | Congregation for the Causes of Saints | Decree **super miraculo** | One cure recognized as miraculous, for the canonization |
+| 31 July 2002 | John Paul II | Canonization | Juan Diego Cuauhtlatoatzin inscribed in the catalogue of the saints |
+| 2008 | Congregation for Divine Worship | **Variationes et additiones** to the third typical edition | 9 December (St Juan Diego) and 12 December (Our Lady of Guadalupe) added to the General Roman Calendar |
+| 12 December 2025 | Leo XIV | Homily, St Peter’s Basilica | The feast celebrated at Rome |
+| 5 February 2026 | Leo XIV | Message | To a pastoral theological congress on the Guadalupan event, looking to the fifth centenary in 2031 |
 
 ### The act that does not exist
 
@@ -115,14 +115,14 @@ The apparitionist case does not rest on the printed books. It rests on the claim
 | *Nican motecpana* | pr. 1649; assigned by the shrine to Fernando de Alva Ixtlilxóchitl, 1590 | Nahuatl miracle list and Juan Diego biography in the same tract | Text verified in the 1649 imprint; the 1590 date and attribution are not adopted |
 | **Códice Escalada** (**Códice 1548**) | claimed 1548; surfaced 1995, published 1997 | Small parchment drawing with glosses, a Sahagún signature, and a Valeriano glyph | Disputed artefact (§4.4); no authentication is asserted here |
 | *Anales de Juan Bautista*; *Anales de Chimalpahin*; various *Anales* | 16th–17th c. compilations | Nahuatl annalistic notices of Tepeyac and of an apparition | Existence and genre reported at the shrine’s level only; no reading of any manuscript is claimed |
-| Testaments (Bartolomé López 1537; Cuauhtitlán 1559; Verdugo Quetzalmamalitzin 1563; and others) | –1577 | Bequests naming the Guadalupe hermitage | Reported at the shrine’s level; these witness *a shrine and its alms*, not the apparition narrative |
-| Cervantes de Salazar, *Tres diálogos latinos* |  | Humanist description of Mexico City | Reported at the shrine’s level; witnesses a sanctuary at Tepeyac |
+| Testaments (Bartolomé López 1537; Cuauhtitlán 1559; Verdugo Quetzalmamalitzin 1563; and others) | 1537–1577 | Bequests naming the Guadalupe hermitage | Reported at the shrine’s level; these witness *a shrine and its alms*, not the apparition narrative |
+| Cervantes de Salazar, *Tres diálogos latinos* | 1554 | Humanist description of Mexico City | Reported at the shrine’s level; witnesses a sanctuary at Tepeyac |
 | *Información* of 1556 | Sept.–Oct. 1556 | Archiepiscopal testimonial inquiry | Read at length in the critical literature (§3.2); its bearing is strongly contested |
 | Mapa de Uppsala | c. 1556–1562 | Pictorial map of the Valley of Mexico | Reported; witnesses a church at Tepeyac |
-| Viceroy Martín Enríquez to the king | Sept. 1575 | Official correspondence | Quoted in the critical literature (§3.2); assigns the cult a mid-1550s origin |
-| Sánchez, *Imagen de la Virgen María* |  | Spanish theological narrative | Verified as to date and character; first printed narrative |
-| Laso de la Vega, *Huei tlamahuiçoltica* |  | Nahuatl tract | Verified in the imprint; controlling text of the narrative |
-| *Informaciones jurídicas* |  | Sworn depositions at 135 years’ remove | Reported at the level of the published edition; not collated |
+| Viceroy Martín Enríquez to the king | 23 Sept. 1575 | Official correspondence | Quoted in the critical literature (§3.2); assigns the cult a mid-1550s origin |
+| Sánchez, *Imagen de la Virgen María* | 1648 | Spanish theological narrative | Verified as to date and character; first printed narrative |
+| Laso de la Vega, *Huei tlamahuiçoltica* | 1649 | Nahuatl tract | Verified in the imprint; controlling text of the narrative |
+| *Informaciones jurídicas* | 1666 | Sworn depositions at 135 years’ remove | Reported at the level of the published edition; not collated |
 
 Three observations about this inventory are load-bearing for everything that follows, and none of them is polemical.
 
@@ -307,15 +307,15 @@ The modern cause is late, and the chronology matters because much of the controv
 | **Date** | **Authority** | **Act** | **Exact object** |
 |:--------|:---------------|:-------------------|:----------------------|
 |  | Chapter of the Guadalupe collegiate church | *Informaciones jurídicas* | Depositions gathered in support of a petition to Rome for a proper Office and Mass |
-| June 1981 | Mexican Episcopal Conference | Formal request | Petition for the canonization of Juan Diego |
-| February 1984 | Archdiocese of Mexico | Diocesan tribunal constituted | The diocesan phase of the cause; 98 sessions |
-| March 1986 | Archdiocese of Mexico | Diocesan phase closed | Documentation transmitted to Rome |
-|  | Postulation | *Positio super fama sanctitatis, virtutibus et cultu ab immemorabili* | The case for immemorial cult and heroic virtue |
-| April 1990 | Congregation for the Causes of Saints | Decree on sanctity of life and immemorial cult | The juridical basis of the beatification (*AAS* 82 (1990), p. 855) |
-| May 1990 | John Paul II, Basilica of Guadalupe | Apostolic letter granting liturgical cult | Memorial of Blessed Juan Diego on 9 December, obligatory in the Archdiocese of Mexico and optional in the other dioceses of Latin America (§1.1) |
-|  | Congregation for the Causes of Saints | Historical commission | Convened to examine the historical objections; reported 28 October 1998 |
-| December 2001 | Congregation for the Causes of Saints | Decree **super miraculo** | One cure recognized as miraculous (*AAS* 94 (2002), pp. 488–489) |
-| July 2002 | John Paul II, Basilica of Guadalupe | Canonization | Juan Diego Cuauhtlatoatzin inscribed in the catalogue of the saints |
+| 15 June 1981 | Mexican Episcopal Conference | Formal request | Petition for the canonization of Juan Diego |
+| 11 February 1984 | Archdiocese of Mexico | Diocesan tribunal constituted | The diocesan phase of the cause; 98 sessions |
+| 23 March 1986 | Archdiocese of Mexico | Diocesan phase closed | Documentation transmitted to Rome |
+| 1989 | Postulation | *Positio super fama sanctitatis, virtutibus et cultu ab immemorabili* | The case for immemorial cult and heroic virtue |
+| 9 April 1990 | Congregation for the Causes of Saints | Decree on sanctity of life and immemorial cult | The juridical basis of the beatification (*AAS* 82 (1990), p. 855) |
+| 6 May 1990 | John Paul II, Basilica of Guadalupe | Apostolic letter granting liturgical cult | Memorial of Blessed Juan Diego on 9 December, obligatory in the Archdiocese of Mexico and optional in the other dioceses of Latin America (§1.1) |
+| 1998 | Congregation for the Causes of Saints | Historical commission | Convened to examine the historical objections; reported 28 October 1998 |
+| 20 December 2001 | Congregation for the Causes of Saints | Decree **super miraculo** | One cure recognized as miraculous (*AAS* 94 (2002), pp. 488–489) |
+| 31 July 2002 | John Paul II, Basilica of Guadalupe | Canonization | Juan Diego Cuauhtlatoatzin inscribed in the catalogue of the saints |
 
 Two features of this chronology are structurally important.
 
