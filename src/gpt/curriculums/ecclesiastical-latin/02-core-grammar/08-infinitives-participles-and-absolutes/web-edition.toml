@@ -1,0 +1,9 @@
+schema = 1
+record_type = "web-edition"
+document = "curriculums/ecclesiastical-latin/02-core-grammar/08-infinitives-participles-and-absolutes"
+
+eligibility = "conditional"
+basis = "answer-key-separation"
+blocking_constructs = ["solutions-enabled", "rule-line"]
+rationale = "The packet's pedagogy depends on the printed barrier between prompt and answer key, which the course shell builds by re-typesetting the same \\Exercise pairs with the solutions toggle set. Both halves are semantically recoverable, so a web edition needs a gated-answer interaction rather than a straight rendering."
+reviewed = "2026-07-25"

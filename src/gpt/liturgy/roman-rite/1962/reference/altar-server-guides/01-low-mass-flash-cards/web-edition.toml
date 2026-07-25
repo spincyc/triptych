@@ -1,0 +1,9 @@
+schema = 1
+record_type = "web-edition"
+document = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards"
+
+eligibility = "ineligible"
+basis = "duplex-cards"
+blocking_constructs = ["overlay-picture", "zero-margin-geometry", "tikzpicture", "multicols"]
+rationale = "The publication is an absolutely positioned eight-up card sheet drawn with zero-margin geometry and overlay TikZ, with backs mirrored for long-edge duplex printing; the layout is the content."
+reviewed = "2026-07-25"

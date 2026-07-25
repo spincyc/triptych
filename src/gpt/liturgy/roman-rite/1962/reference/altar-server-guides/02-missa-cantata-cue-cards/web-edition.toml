@@ -1,0 +1,9 @@
+schema = 1
+record_type = "web-edition"
+document = "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards"
+
+eligibility = "ineligible"
+basis = "duplex-cards"
+blocking_constructs = ["fixed-height-card", "multicols"]
+rationale = "The publication is a sheet of fixed-height cut-out cards whose backs are mirrored within each row for long-edge duplex printing; the layout is the content and does not survive reflow."
+reviewed = "2026-07-25"

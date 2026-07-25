@@ -1,0 +1,9 @@
+schema = 1
+record_type = "web-edition"
+document = "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata"
+
+eligibility = "ineligible"
+basis = "pagination-dependent"
+blocking_constructs = ["multicols"]
+rationale = "The guide is a page-matched course that instructs the server to use one page at a time and carries multi-lane minipage dialogue rigs; its pagination is the instructional design."
+reviewed = "2026-07-25"

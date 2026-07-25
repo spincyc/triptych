@@ -1,0 +1,9 @@
+schema = 1
+record_type = "web-edition"
+document = "articles/faith/freemasonry-and-the-catholic-church"
+
+eligibility = "conditional"
+basis = "diagram-dependent"
+blocking_constructs = ["tikzpicture", "multicols"]
+rationale = "Two TikZ figures carry the documentary corpus and the timeline claim audit, and the reference list is set in multicols; the figures state relations the prose does not restate."
+reviewed = "2026-07-25"
