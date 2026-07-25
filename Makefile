@@ -75,6 +75,7 @@ BUILD_METADATA_STAMPS := $(addprefix $(BUILD_ROOT)/.metadata/,$(addsuffix .ok,$(
 BUILD_METADATA_VERIFICATIONS := $(addprefix $(BUILD_ROOT)/.metadata/,$(addsuffix .verify,$(DOCUMENTS)))
 DOC_PDFS := $(addprefix $(DOC_ROOT)/,$(addsuffix .pdf,$(DOCUMENTS)))
 METADATA_CHECKER := scripts/check-generation-metadata
+WEB_EDITION_CHECKER := scripts/check-web-edition
 CURRICULUM_STRUCTURE_CHECKER := scripts/check-curriculum-structure
 PDF_REVIEW_TOOL := scripts/pdf-review
 PUBLIC_ALPHA_TOOL := scripts/public-alpha
@@ -177,7 +178,8 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	$(if $(_TRIPTYCH_PDF_JOBS_INVALID),$(error PDF_JOBS requires a positive integer),--jobs=$(PDF_JOBS)))
 
 .PHONY: all pdf review-pdfs review-all-pdfs install list help clean \
-	distclean check-tools check-metadata check-sources check-source-library \
+	distclean check-tools check-metadata check-web-editions \
+	check-sources check-source-library \
 	check-source-inventory check-source-inventory-tool \
 	check-source-family-migration check-source-family-migration-tool \
 	check-source-family-screening \
@@ -385,6 +387,7 @@ help:
 		'make check-source-family-screening  Require every migration review unit to be screened' \
 		'make check-curriculum-structure  Build and audit every Ecclesiastical Latin publication hierarchy' \
 		'make check-metadata  Validate structured and inherited AI provenance' \
+		'make check-web-editions  Validate per-leaf web-edition eligibility declarations' \
 		'make check-public-alpha  Validate the exhaustive public-release policy' \
 		'make prepare-public-alpha  Print current candidate hashes; grants no approval' \
 		'make public-preview  Build a private no-index preview with review candidates' \
@@ -404,6 +407,10 @@ help:
 
 check-metadata: check-tools
 	@$(METADATA_CHECKER) --provider $(PROVIDER)
+
+# Absence of a leaf's declaration is an error: nothing defaults to eligible.
+check-web-editions:
+	@$(PYTHON) $(WEB_EDITION_CHECKER) --provider $(PROVIDER)
 
 check-public-alpha:
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) check
@@ -478,7 +485,8 @@ rebaseline-doc:
 	@$(PYTHON) $(RESEARCH_STALENESS_TOOL) rebaseline --provider '$(PROVIDER)' --id '$(DOC)'
 
 # Staleness stays out of `check`: it flags re-evaluation work, not breakage.
-check: check-metadata check-sources check-public-alpha check-release-bindings
+check: check-metadata check-web-editions check-sources check-public-alpha \
+	check-release-bindings
 
 check-tests:
 	@$(PYTHON) -m unittest discover -s scripts/tests
