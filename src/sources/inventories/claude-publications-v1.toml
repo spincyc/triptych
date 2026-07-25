@@ -3,9 +3,9 @@ record_type = "publication-source-inventory"
 provider = "claude"
 audited_on = "2026-07-25"
 discovery_rule = "src/claude/**/main.tex"
-publication_count = 18
-source_surface_file_count = 295
-snapshot = "sha256:adc8bf046d24603f0378a9afeb00ecbfa8e6c5da80920bc7af51d619a2d53fb2"
+publication_count = 21
+source_surface_file_count = 352
+snapshot = "sha256:ec0df496cbf7c6c12afad3a3c148bbf9c4d6d83ef2682c59aa0328db99aca68c"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -21,6 +21,17 @@ roots = ["src/claude/history/biblical-translations"]
 id = "owner.typesetting.common"
 kind = "shared-typesetting-owner"
 roots = ["src/common"]
+
+[[documents]]
+id = "articles/canon-law/natural-positive-divine-human-law"
+main = "src/claude/articles/canon-law/natural-positive-divine-human-law/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "articles/canon-law/natural-positive-divine-human-law"
+relationship = "local"
 
 [[documents]]
 id = "articles/faith/against-the-instrumentalists"
@@ -142,6 +153,20 @@ id = "owner.biographies.shared"
 relationship = "render-import"
 
 [[documents]]
+id = "biographies/saint-paul"
+main = "src/claude/biographies/saint-paul/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "biographies/saint-paul"
+relationship = "local"
+[[documents.record_owners]]
+id = "owner.biographies.shared"
+relationship = "render-import"
+
+[[documents]]
 id = "biographies/saint-peter"
 main = "src/claude/biographies/saint-peter/main.tex"
 publication_kind = "canonical"
@@ -223,6 +248,17 @@ id = "theology/mariology/fatima"
 relationship = "local"
 
 [[documents]]
+id = "theology/mariology/lourdes"
+main = "src/claude/theology/mariology/lourdes/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "theology/mariology/lourdes"
+relationship = "local"
+
+[[documents]]
 id = "theology/mariology/marian-dogmas"
 main = "src/claude/theology/mariology/marian-dogmas/main.tex"
 publication_kind = "canonical"
@@ -243,6 +279,114 @@ source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "theology/mariology/rosary"
 relationship = "local"
+
+[[files]]
+path = "src/claude/articles/canon-law/natural-positive-divine-human-law/main.tex"
+sha256 = "50ec0425096e38d4ede9b1c82db47ab9c85ed37fefa833d23bca984696db6f5e"
+kind = "publication-main"
+owners = ["articles/canon-law/natural-positive-divine-human-law"]
+
+[[files]]
+path = "src/claude/articles/canon-law/natural-positive-divine-human-law/research/scope.md"
+sha256 = "099534e94227ccf93e414384e8a1f278a40b52a4070f17fccc9ea10ae00525da"
+kind = "research-scope"
+owners = ["articles/canon-law/natural-positive-divine-human-law"]
+
+[[files]]
+path = "src/claude/articles/canon-law/natural-positive-divine-human-law/research/source-audit.md"
+sha256 = "875181a7cf81c7561011da693652c21df42c570fd86634e884e6cca030edd5f8"
+kind = "legacy-source-audit"
+owners = ["articles/canon-law/natural-positive-divine-human-law"]
+
+[[files]]
+path = "src/claude/articles/canon-law/natural-positive-divine-human-law/research/source-bindings.toml"
+sha256 = "d7fb695befffc41967b54ee0e3b0ba05787aee00fa2018d87fa2dd1c83ae8e02"
+kind = "source-binding"
+owners = ["articles/canon-law/natural-positive-divine-human-law"]
+
+[[files]]
+path = "src/claude/articles/canon-law/natural-positive-divine-human-law/sections/00-two-canons-and-a-question.tex"
+sha256 = "4c6d20347bdfe2c580fe44408c69b3268a05982004b876c6f28c3e3c496646ab"
+kind = "rendered-content"
+owners = ["articles/canon-law/natural-positive-divine-human-law"]
+
+[[files]]
+path = "src/claude/articles/canon-law/natural-positive-divine-human-law/sections/10-the-inherited-vocabulary.tex"
+sha256 = "15f7d5cca2e76c1a306d06de26126d8f4aca7b202825458bef15f33c747c8092"
+kind = "rendered-content"
+owners = ["articles/canon-law/natural-positive-divine-human-law"]
+
+[[files]]
+path = "src/claude/articles/canon-law/natural-positive-divine-human-law/sections/20-the-treatise-on-law-i.tex"
+sha256 = "1dd4ea9dcb62e792a3b2188ae0ec0a8d30b5796b0678212b00714a68b8909ef8"
+kind = "rendered-content"
+owners = ["articles/canon-law/natural-positive-divine-human-law"]
+
+[[files]]
+path = "src/claude/articles/canon-law/natural-positive-divine-human-law/sections/25-the-treatise-on-law-ii.tex"
+sha256 = "c3618934dd67e7b4a6baf3387db8412049b27c6f600d0f87112df8375ed8f2b5"
+kind = "rendered-content"
+owners = ["articles/canon-law/natural-positive-divine-human-law"]
+
+[[files]]
+path = "src/claude/articles/canon-law/natural-positive-divine-human-law/sections/28-the-treatise-on-law-iii.tex"
+sha256 = "418b8f99bc7bcfd4a169f52c0c26c2a69bea6e52fc90260b2cef148003c16848"
+kind = "rendered-content"
+owners = ["articles/canon-law/natural-positive-divine-human-law"]
+
+[[files]]
+path = "src/claude/articles/canon-law/natural-positive-divine-human-law/sections/30-the-shape-of-the-taxonomy.tex"
+sha256 = "48fcd67e50c44ee4030a8850324f9a2d46929ee07a0caf26b89dbc520fd7ac22"
+kind = "rendered-content"
+owners = ["articles/canon-law/natural-positive-divine-human-law"]
+
+[[files]]
+path = "src/claude/articles/canon-law/natural-positive-divine-human-law/sections/40-gratians-opening-distinctions.tex"
+sha256 = "a7a7d4d15d0c7bae4adf9e33a6a9ddff24338691d500c09ae717a82e83d96c9a"
+kind = "rendered-content"
+owners = ["articles/canon-law/natural-positive-divine-human-law"]
+
+[[files]]
+path = "src/claude/articles/canon-law/natural-positive-divine-human-law/sections/50-the-code.tex"
+sha256 = "00e7797601b2793c887789c795586e2b7631efa186da1205f16d25de90b86a6c"
+kind = "rendered-content"
+owners = ["articles/canon-law/natural-positive-divine-human-law"]
+
+[[files]]
+path = "src/claude/articles/canon-law/natural-positive-divine-human-law/sections/60-custom-in-the-code.tex"
+sha256 = "88ceb88e459e0b5ec91114c2661ebb986d2cb82668e27b6e74cfbce70f1f99d9"
+kind = "rendered-content"
+owners = ["articles/canon-law/natural-positive-divine-human-law"]
+
+[[files]]
+path = "src/claude/articles/canon-law/natural-positive-divine-human-law/sections/70-dispensation-and-its-limits.tex"
+sha256 = "52807f8ce64e57e693cc5ba912435aa441e71d259085469286205391b5e0388d"
+kind = "rendered-content"
+owners = ["articles/canon-law/natural-positive-divine-human-law"]
+
+[[files]]
+path = "src/claude/articles/canon-law/natural-positive-divine-human-law/sections/80-the-magisterial-exposition.tex"
+sha256 = "c332f4965df67f0cb2e87da7e59e4b503009a256fe2ef90a2648de7cd87a98cc"
+kind = "rendered-content"
+owners = ["articles/canon-law/natural-positive-divine-human-law"]
+
+[[files]]
+path = "src/claude/articles/canon-law/natural-positive-divine-human-law/sections/85-boundaries-and-debates.tex"
+sha256 = "3eb1ca047860e431ceac23383d8c41cefce2f49508d460617c5f05d30900a0a2"
+kind = "rendered-content"
+owners = ["articles/canon-law/natural-positive-divine-human-law"]
+
+[[files]]
+path = "src/claude/articles/canon-law/natural-positive-divine-human-law/sections/90-scope-method-qualifications.tex"
+sha256 = "20b4d8b4bcb4de4fb503cd203a4e964733d012a1e4f93e0ebdb92c53a1e225fa"
+kind = "rendered-content"
+owners = ["articles/canon-law/natural-positive-divine-human-law"]
+
+[[files]]
+path = "src/claude/articles/canon-law/natural-positive-divine-human-law/sections/99-references.tex"
+sha256 = "d14f4a0626882f9a4521ad75be4ee3094ea947633b40412e896b89494aa7fd70"
+kind = "rendered-content"
+owners = ["articles/canon-law/natural-positive-divine-human-law"]
 
 [[files]]
 path = "src/claude/articles/faith/against-the-instrumentalists/main.tex"
@@ -1157,6 +1301,138 @@ kind = "rendered-content"
 owners = ["biographies/saint-jerome"]
 
 [[files]]
+path = "src/claude/biographies/saint-paul/main.tex"
+sha256 = "02809c96045fa5d0aa4767c63fff101ee90346d9f988da596c7b9e22b3f6f80c"
+kind = "publication-main"
+owners = ["biographies/saint-paul"]
+
+[[files]]
+path = "src/claude/biographies/saint-paul/research/chronology.md"
+sha256 = "d401346e9d852603745961532078062c2006cac0ef6d1fbcfcf528141145608e"
+kind = "research-record"
+owners = ["biographies/saint-paul"]
+
+[[files]]
+path = "src/claude/biographies/saint-paul/research/scope.md"
+sha256 = "b0dcad22316ebb575b2b7165ea9ca47fddb729fa40061897abf29df5b485f2ea"
+kind = "research-scope"
+owners = ["biographies/saint-paul"]
+
+[[files]]
+path = "src/claude/biographies/saint-paul/research/source-audit.md"
+sha256 = "91586ea86f38d7271124fc7b058cb7817ad7d6d97248ce04779bf40609568fa2"
+kind = "legacy-source-audit"
+owners = ["biographies/saint-paul"]
+
+[[files]]
+path = "src/claude/biographies/saint-paul/research/source-bindings.toml"
+sha256 = "77cf9024b992c4e4276be76123f7a6ab5a417c4db6a3609e671c37491d13d375"
+kind = "source-binding"
+owners = ["biographies/saint-paul"]
+
+[[files]]
+path = "src/claude/biographies/saint-paul/research/tradition-audit.md"
+sha256 = "4c56610e32b0d57bbc02e5c2144a95c893eba3eee93cf275c9a1b34225674c11"
+kind = "research-record"
+owners = ["biographies/saint-paul"]
+
+[[files]]
+path = "src/claude/biographies/saint-paul/sections/00-question.tex"
+sha256 = "485eea2b12e015c4aec3c2cdf479f1fcbacce05bf2851066f68c8c58c4019694"
+kind = "rendered-content"
+owners = ["biographies/saint-paul"]
+
+[[files]]
+path = "src/claude/biographies/saint-paul/sections/10-sources.tex"
+sha256 = "197ffa073d9c83dfbea4e2a15a7d5255dd1972fc2b32fe97a4d251bd379ac22a"
+kind = "rendered-content"
+owners = ["biographies/saint-paul"]
+
+[[files]]
+path = "src/claude/biographies/saint-paul/sections/100-tomb.tex"
+sha256 = "0c29e7015d2c925c97958e25eaf096209473cfbcf98222a632128dcab84d2a04"
+kind = "rendered-content"
+owners = ["biographies/saint-paul"]
+
+[[files]]
+path = "src/claude/biographies/saint-paul/sections/110-legends.tex"
+sha256 = "4103cfbd6d2174c320c94754e14a2223c6d7576013b3f170e1b309e1f31c07df"
+kind = "rendered-content"
+owners = ["biographies/saint-paul"]
+
+[[files]]
+path = "src/claude/biographies/saint-paul/sections/120-reception.tex"
+sha256 = "00068c1f14bb47eb459983a8b4e7d04eb7e717f86471aebb28ab1181db954602"
+kind = "rendered-content"
+owners = ["biographies/saint-paul"]
+
+[[files]]
+path = "src/claude/biographies/saint-paul/sections/130-conclusion.tex"
+sha256 = "1a56ee680708dd99d1dd305680640ea75d2b0da282f637384d7d69dbea50ac9e"
+kind = "rendered-content"
+owners = ["biographies/saint-paul"]
+
+[[files]]
+path = "src/claude/biographies/saint-paul/sections/140-scope-chronology-evidence.tex"
+sha256 = "bbfc76cca635fc1a3059b85bcab19b2d9644f4e935b4870cd553bd69fb1efba3"
+kind = "rendered-content"
+owners = ["biographies/saint-paul"]
+
+[[files]]
+path = "src/claude/biographies/saint-paul/sections/150-references.tex"
+sha256 = "21a66701b2ee2f94ee05aec6c115a541db7ddd38f8337b503d2b1c5cc9a371ff"
+kind = "rendered-content"
+owners = ["biographies/saint-paul"]
+
+[[files]]
+path = "src/claude/biographies/saint-paul/sections/20-pharisee.tex"
+sha256 = "d5a7bf5e7ba38be53fb77de2141a71fede5c4074caa02def0ba9e720b1c45ba2"
+kind = "rendered-content"
+owners = ["biographies/saint-paul"]
+
+[[files]]
+path = "src/claude/biographies/saint-paul/sections/30-damascus.tex"
+sha256 = "ddfbe6654b251c1cb8df4ccab50afd7bf240ed89eba1308ac8bc263b9e563b70"
+kind = "rendered-content"
+owners = ["biographies/saint-paul"]
+
+[[files]]
+path = "src/claude/biographies/saint-paul/sections/40-chronology.tex"
+sha256 = "b50c35bb836a04f3b04cbf6306db421e3f21925f536bc3ad29ab72f9d3b9d870"
+kind = "rendered-content"
+owners = ["biographies/saint-paul"]
+
+[[files]]
+path = "src/claude/biographies/saint-paul/sections/50-journeys.tex"
+sha256 = "8cb2e130aed52e435ace6f50ba8acebc13109f1d6181e2bc9bcff21394cca478"
+kind = "rendered-content"
+owners = ["biographies/saint-paul"]
+
+[[files]]
+path = "src/claude/biographies/saint-paul/sections/60-council.tex"
+sha256 = "b9941ddf8b912c944fe2ed7e19d0e17551daaa9f0d0af544a21eba6ba945acc5"
+kind = "rendered-content"
+owners = ["biographies/saint-paul"]
+
+[[files]]
+path = "src/claude/biographies/saint-paul/sections/70-letters.tex"
+sha256 = "f845c829e3522551f28d4fc1069e559f1fcf327891452016a0d3923f397cf762"
+kind = "rendered-content"
+owners = ["biographies/saint-paul"]
+
+[[files]]
+path = "src/claude/biographies/saint-paul/sections/80-captivity.tex"
+sha256 = "a7709ccf1b1b54e090e33da69908c7abd97dfc46085faad620e08d936909bc35"
+kind = "rendered-content"
+owners = ["biographies/saint-paul"]
+
+[[files]]
+path = "src/claude/biographies/saint-paul/sections/90-end.tex"
+sha256 = "f466c04a45298ec5ee4e6cd807c84bf8962670a2d9ae796a8201d754fc4c20f8"
+kind = "rendered-content"
+owners = ["biographies/saint-paul"]
+
+[[files]]
 path = "src/claude/biographies/saint-peter/main.tex"
 sha256 = "37f449104a678505e05b48279ebb2f4f39a9354c37852c53948f518d1cf0bceb"
 kind = "publication-main"
@@ -1851,6 +2127,108 @@ path = "src/claude/theology/mariology/fatima/sections/99-references.tex"
 sha256 = "266f81ed65c34849a0707a198353433fd6df35172897423fcda035ffc31d71b6"
 kind = "rendered-content"
 owners = ["theology/mariology/fatima"]
+
+[[files]]
+path = "src/claude/theology/mariology/lourdes/format.tex"
+sha256 = "7860ad297ece33a505d1b414ef9aaba1bee5637a491fd1ca361444b38bbf3efb"
+kind = "rendered-content"
+owners = ["theology/mariology/lourdes"]
+
+[[files]]
+path = "src/claude/theology/mariology/lourdes/main.tex"
+sha256 = "a35d2215b5e49581fae1ab9a0a77f8d9fc737981cb3a6efdf9b76715e803b379"
+kind = "publication-main"
+owners = ["theology/mariology/lourdes"]
+
+[[files]]
+path = "src/claude/theology/mariology/lourdes/research/corpus-status.md"
+sha256 = "1910712a4369502a4c9e2f6516e1b8dd4550e17c55af10183c7fe61054e68399"
+kind = "research-record"
+owners = ["theology/mariology/lourdes"]
+
+[[files]]
+path = "src/claude/theology/mariology/lourdes/research/scope.md"
+sha256 = "5475871edab7fe94ec1420d1ac32869ebbd9270f67144ce3b61f569fbe8fdedd"
+kind = "research-scope"
+owners = ["theology/mariology/lourdes"]
+
+[[files]]
+path = "src/claude/theology/mariology/lourdes/research/source-audit.md"
+sha256 = "a44ab28da31bb35f48d04663f618fbe4022b7c6120c07c71224c492bec2e3d08"
+kind = "legacy-source-audit"
+owners = ["theology/mariology/lourdes"]
+
+[[files]]
+path = "src/claude/theology/mariology/lourdes/research/source-bindings.toml"
+sha256 = "3a7cf30909e6f3f2ed74c96a845368a73fcc0653752aaf057f416978345064a4"
+kind = "source-binding"
+owners = ["theology/mariology/lourdes"]
+
+[[files]]
+path = "src/claude/theology/mariology/lourdes/sections/00-judgment-first.tex"
+sha256 = "8ee83158f95e76bf732207e225ed1e85f598bf67e6e5d574fec499160165ebfb"
+kind = "rendered-content"
+owners = ["theology/mariology/lourdes"]
+
+[[files]]
+path = "src/claude/theology/mariology/lourdes/sections/10-events-1858.tex"
+sha256 = "66674c69578eed052463249a5a5823d3c024d6d8c13eaa344f81280328ee4056"
+kind = "rendered-content"
+owners = ["theology/mariology/lourdes"]
+
+[[files]]
+path = "src/claude/theology/mariology/lourdes/sections/20-self-identification.tex"
+sha256 = "0e184e303bcb89ccdbaa4aa27314343c2cfe7f1c7f424a8884c7f290a7303092"
+kind = "rendered-content"
+owners = ["theology/mariology/lourdes"]
+
+[[files]]
+path = "src/claude/theology/mariology/lourdes/sections/30-commission-judgment.tex"
+sha256 = "16aaa8f8f1d822d0e6a1ba6e21521389d3f9ecaae8695a9bd588e1df4af56f95"
+kind = "rendered-content"
+owners = ["theology/mariology/lourdes"]
+
+[[files]]
+path = "src/claude/theology/mariology/lourdes/sections/40-cures-medical.tex"
+sha256 = "62a1dcffb16f2018d4cae5dd2c95058cb6c3436bd860e171d329fd14e4e1b94a"
+kind = "rendered-content"
+owners = ["theology/mariology/lourdes"]
+
+[[files]]
+path = "src/claude/theology/mariology/lourdes/sections/50-bernadette.tex"
+sha256 = "267e22ad7622dbac0f185eb48ac1966bad479d375d78f009ec29e8615bb5b16e"
+kind = "rendered-content"
+owners = ["theology/mariology/lourdes"]
+
+[[files]]
+path = "src/claude/theology/mariology/lourdes/sections/60-reception.tex"
+sha256 = "8474664eecf2259a8187a1ef459f8956f2f7bb6e68a116a33f25e93c4a3cca2c"
+kind = "rendered-content"
+owners = ["theology/mariology/lourdes"]
+
+[[files]]
+path = "src/claude/theology/mariology/lourdes/sections/70-what-approval-obliges.tex"
+sha256 = "4bd1e5a7243115862b8b11319c93227e724e97c86db4bb155b14b371dd07c026"
+kind = "rendered-content"
+owners = ["theology/mariology/lourdes"]
+
+[[files]]
+path = "src/claude/theology/mariology/lourdes/sections/80-current-standing.tex"
+sha256 = "0c2eb258f631b684af54d4705ad724ea59d7ca9072a7cd40847e32e60bfea08e"
+kind = "rendered-content"
+owners = ["theology/mariology/lourdes"]
+
+[[files]]
+path = "src/claude/theology/mariology/lourdes/sections/90-scope-status-qualifications.tex"
+sha256 = "c35ee9577ab0d5af4c63d9ddbec20388450524316eba956a908b2d927790049e"
+kind = "rendered-content"
+owners = ["theology/mariology/lourdes"]
+
+[[files]]
+path = "src/claude/theology/mariology/lourdes/sections/99-references.tex"
+sha256 = "0dd7b0ea9912f8f6c9e1a680ca5f3035717a2c827cf17680246e3ec87e03025e"
+kind = "rendered-content"
+owners = ["theology/mariology/lourdes"]
 
 [[files]]
 path = "src/claude/theology/mariology/marian-dogmas/format.tex"

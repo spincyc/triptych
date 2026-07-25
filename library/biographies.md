@@ -10,7 +10,7 @@ contemporary evidence from later tradition.
 | Biography | ChatGPT | Claude | Focus |
 | --- | --- | --- | --- |
 | **Saint Peter** | [PDF](../doc/gpt/biographies/saint-peter.pdf) | [PDF](../doc/claude/biographies/saint-peter.pdf) | Scriptural witnesses, mission, leadership, Roman memory, martyrdom tradition, and reception. |
-| **Saint Paul** | [PDF](../doc/gpt/biographies/saint-paul.pdf) | — | Jewish and Hellenistic setting, conversion, missions, letters, conflicts, and Roman memory. |
+| **Saint Paul** | [PDF](../doc/gpt/biographies/saint-paul.pdf) | [PDF](../doc/claude/biographies/saint-paul.pdf) | Jewish and Hellenistic setting, conversion, missions, letters, conflicts, and Roman memory. |
 
 ## Church Fathers
 
