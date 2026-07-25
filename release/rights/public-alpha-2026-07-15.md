@@ -941,6 +941,26 @@ work-specific research records remains operative. This approval does
 not authorize a push, deployment, tag, history rewrite, public
 release attachment, announcement, or promotion.
 
+## Supplemental exact-current-snapshot clearance — 25 July 2026
+
+At `2026-07-25T00:16:01-05:00` in `America/Chicago`, the maintainer instructed:
+“Release the wave-four Claude editions of At the End of Every Why, the Saint Augustine of Hippo biography, and the Marian Dogmas reference, completing the Claude edition of The Creature Before God trilogy.” This is recorded as perpetual worldwide
+exact-current-snapshot distribution authorization under the existing
+represented authority in this record. The sole condition remains
+`no-project-initiated-promotion`.
+
+The approval binds all 128 exact installed release
+PDF snapshots and every exact recognized artifact-affecting
+reader-site input inventoried below at their current bytes. It is an
+exact-byte distribution clearance only: it does not represent
+completion of any outstanding work-specific rights, source,
+collation, specialist, or ecclesiastical review, and no imprimatur,
+nihil obstat, or ecclesiastical approval is claimed. Every
+limitation in the prior supplements, release README, catalogs, and
+work-specific research records remains operative. This approval does
+not authorize a push, deployment, tag, history rewrite, public
+release attachment, announcement, or promotion.
+
 ## Exact approved snapshots
 
 | Publication ID | SHA-256 |
@@ -968,14 +988,17 @@ release attachment, announcement, or promotion.
 | `biographies/saint-thomas-aquinas` | `05d1b1b792c5774e0aa10822e9722d3a844e442a09c54e5573bd5913fa2c275a` |
 | `biographies/tertullian` | `5482e549142e226e8a91b51b3fda11751957b2ba0a77d6737a2c79c57132dae6` |
 | `claude:articles/faith/against-the-instrumentalists` | `024b84c9b313e2547229f6b55079698656bb009ea6a5c73e36bd1d9a99a6a304` |
+| `claude:articles/faith/at-the-end-of-every-why` | `a644e1321457d069c0319a4c36f570edef23010e975b019257e14106c51f58b3` |
 | `claude:articles/faith/in-support-of-the-particular` | `535994c75dbb7bff0be2e45528050154b31710c7cbe3cf0fd2926b3cab4e77cb` |
 | `claude:articles/faith/ontological-vertigo` | `56ecbfad17c0ce6d6303c62d3e738eb2d2401dee8ddc663f306af9bf4e7d980e` |
 | `claude:articles/faith/the-due-return` | `91ac3a4a15121efd8ea7426cf6a21af3885caa537de0dd1348648e6d47da4490` |
 | `claude:biographies/origen` | `020b3f4452e2d0e89f6458824f6d33e8bf2db079ff80e0a73f42f9a2d6648d35` |
+| `claude:biographies/saint-augustine-of-hippo` | `bdb140a336f9913fb7422c301d9b6f51810717f5376426993a2148afb86fb0bd` |
 | `claude:biographies/saint-jerome` | `22aec5010e1732066d6026a89580a862785e7b730ebd92512e89dfb533ea9b9e` |
 | `claude:biographies/tertullian` | `f6aad19c478b8535f3b3d31d413fb61b0d1ea723db3d0ba3e3221e596f346ba5` |
 | `claude:history/biblical-translations/01-septuagint` | `6aaa22a66d05bf8e4cbe88a3dda814dd71354e00753bbb43f5ee794a25d161bf` |
 | `claude:history/biblical-translations/02-vulgate` | `6549550fa7d9447e5148e8264779aee6df809f65451919367aad98df7faec699` |
+| `claude:theology/mariology/marian-dogmas` | `fe650090ac02c9433c053df4f0c44c318a35b10bb473e5c56f931db5b8a9d206` |
 | `curriculums/ecclesiastical-latin/00-course-guide` | `79f0202ddaa651194820e46375ea3193c9a442974b1853ac4654eba5b6faf0ec` |
 | `curriculums/ecclesiastical-latin/00-memory-workbook` | `7df692cd8f16049b990b950c2abb0c568d51c5ae243ece832ad11d051c2d2fa7` |
 | `curriculums/ecclesiastical-latin/00-reference-grammar` | `b3c67f86cd487a5d5ccce5620e849740cb7bb61b165bd2d659fcd7d8fd3ec612` |
@@ -1082,14 +1105,14 @@ release attachment, announcement, or promotion.
 | `LICENSES/MIT.txt` | `afd9c125b68a36b60c78cf63656f4cea2613fadce57e95ebabacebff8817ef60` |
 | `README.md` | `5007509616e98056d397b315247e07307b7cc0f8b715c49847dcef45dadfcb2b` |
 | `THIRD_PARTY.md` | `965aaaff0e773815213fa8c9aada37213d6cb890eb374ef3d1bb1d1dbf966ec4` |
-| `library/biographies.md` | `adba7ddc2d255657ff49bc9543a8398d546db477d9e948c6631f6ff891cafde1` |
+| `library/biographies.md` | `f6347de98e2a6684212a9b47ff11842637a7c311ed69fa0eea681fcb4b3a26a7` |
 | `library/curriculums.md` | `15f24d06b4911b1cbfe4d85d82c463d7c2eef8635ff25edf2817d5fa6e0fb2bc` |
 | `library/ecclesiastical-latin.md` | `1b985372bc372990f8d748d7667620c76c89a4073a8dae146ecefbca84333c1b` |
-| `library/faith.md` | `77bb12a6fcc441fe047cf5f830088c5d8cc8fb43edc4b9b38d90971220a6f44d` |
+| `library/faith.md` | `f5c2e8f6c9106011a713163bbf2a77820c865e83b72213f362ea7863c65847c2` |
 | `library/heresies.md` | `8f6f80b79266818a2b7d80db312ad33cd52ba594b329d4604dae53d17060f5df` |
 | `library/historical-accounts.md` | `a4a276ea14cac3c752574fe1435beefccbc089aa1cfd9db9e953479c1f552c4b` |
 | `library/law-and-church-discipline.md` | `f7a9c66895bde0dfa183fa9f93b79005c77c6c625b978ce2163d3566aa7189c4` |
-| `library/mariology.md` | `bc3ffc4dde127750debeede3f968d5541af7a22098d8fe155d01a006aa74d955` |
+| `library/mariology.md` | `cc157bceeb2fae5a4ffab3ec992e1146eae2cc1269aa19ca59048db9245b7be2` |
 | `library/novus-ordo-liturgy.md` | `861aba17f9e1788d852ba072bcdf8bf76a674e357eeadc7aa9030aed066e36fb` |
 | `library/prayer.md` | `f355ee2a34f4f47744cbc6f0fea71c04f2c303882dce1b8ae3adabfc2b2c850d` |
 | `library/traditional-latin-mass.md` | `5e68708e549d45014f4c59d1f1952e0dee427066a0ae559bdac7de030ea85b33` |

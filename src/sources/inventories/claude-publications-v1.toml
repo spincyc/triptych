@@ -3,9 +3,9 @@ record_type = "publication-source-inventory"
 provider = "claude"
 audited_on = "2026-07-25"
 discovery_rule = "src/claude/**/main.tex"
-publication_count = 9
-source_surface_file_count = 149
-snapshot = "sha256:1442ee19a8355055f8ae43ca54f4f50bbcb982d14b155516425dc01efd4b8399"
+publication_count = 12
+source_surface_file_count = 196
+snapshot = "sha256:3ffa6c405343c50ce45a97f5095092db692ac71fd7e96145740394567ccc0a5e"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -31,6 +31,17 @@ inventory_state = "records-enumerated"
 source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "articles/faith/against-the-instrumentalists"
+relationship = "local"
+
+[[documents]]
+id = "articles/faith/at-the-end-of-every-why"
+main = "src/claude/articles/faith/at-the-end-of-every-why/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "articles/faith/at-the-end-of-every-why"
 relationship = "local"
 
 [[documents]]
@@ -75,6 +86,20 @@ inventory_state = "records-enumerated"
 source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "biographies/origen"
+relationship = "local"
+[[documents.record_owners]]
+id = "owner.biographies.shared"
+relationship = "render-import"
+
+[[documents]]
+id = "biographies/saint-augustine-of-hippo"
+main = "src/claude/biographies/saint-augustine-of-hippo/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "biographies/saint-augustine-of-hippo"
 relationship = "local"
 [[documents.record_owners]]
 id = "owner.biographies.shared"
@@ -135,6 +160,17 @@ relationship = "local"
 [[documents.record_owners]]
 id = "owner.history.biblical-translations"
 relationship = "render-import"
+
+[[documents]]
+id = "theology/mariology/marian-dogmas"
+main = "src/claude/theology/mariology/marian-dogmas/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "theology/mariology/marian-dogmas"
+relationship = "local"
 
 [[files]]
 path = "src/claude/articles/faith/against-the-instrumentalists/main.tex"
@@ -207,6 +243,84 @@ path = "src/claude/articles/faith/against-the-instrumentalists/sections/99-refer
 sha256 = "a4814b4cad186ff1b4ac7d81b900c5746cf3e5abeec7522a70d175711789c896"
 kind = "rendered-content"
 owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
+path = "src/claude/articles/faith/at-the-end-of-every-why/main.tex"
+sha256 = "13dd1cc2a8e13b486dbe66f7122ab692b33c0e92a5bf71e6e0b935c95dc5d3fa"
+kind = "publication-main"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/claude/articles/faith/at-the-end-of-every-why/research/scope.md"
+sha256 = "b2b6d6c53cf2637739b3cd3a1e37ddb56135c17a0ff4c09eb3d0718fcd595c6b"
+kind = "research-scope"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/claude/articles/faith/at-the-end-of-every-why/research/source-audit.md"
+sha256 = "8d98233eb22ba1110524f0dabdd20b757540a475b8fc2c338eab110b94172f74"
+kind = "legacy-source-audit"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/claude/articles/faith/at-the-end-of-every-why/research/source-bindings.toml"
+sha256 = "dccaf2fd218736898b26016f0fef82991b407f2888c91aef8aa275df183908ae"
+kind = "source-binding"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/claude/articles/faith/at-the-end-of-every-why/sections/00-the-question-that-survives-its-answers.tex"
+sha256 = "e4ec8ca3b456446455c7f229cef6f953d393d80be826a511f4d1068bbd6f48ea"
+kind = "rendered-content"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/claude/articles/faith/at-the-end-of-every-why/sections/10-what-everyone-wants.tex"
+sha256 = "cafe8767ab3e4f052beed18e1d61e13d6da9c124024785a73099df4c8f9d7c07"
+kind = "rendered-content"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/claude/articles/faith/at-the-end-of-every-why/sections/20-the-ceiling-of-the-ascent.tex"
+sha256 = "9f5bf179e4f3ae7aff18abc7ec448e3996eb46afbf4a9a378a68ef76c660349c"
+kind = "rendered-content"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/claude/articles/faith/at-the-end-of-every-why/sections/30-the-end-that-is-offered.tex"
+sha256 = "8bcb017a1d2b921f5d41807e01b1350d2e59997d7a98e42060ff212c14a15f24"
+kind = "rendered-content"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/claude/articles/faith/at-the-end-of-every-why/sections/40-the-friendship.tex"
+sha256 = "b14a6d081b46ae42c211aea613da408dd393e0aa406a7333bcbfb9d0c45af6e5"
+kind = "rendered-content"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/claude/articles/faith/at-the-end-of-every-why/sections/50-the-meantime.tex"
+sha256 = "d05666fd300a738c12c248dd503bd557f53c561a9229e3c5e4de88cac7230f4f"
+kind = "rendered-content"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/claude/articles/faith/at-the-end-of-every-why/sections/60-the-end-without-end.tex"
+sha256 = "5755155264628f8cd3c1379822df275569db32fcdf634468c18ed0f540592fbe"
+kind = "rendered-content"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/claude/articles/faith/at-the-end-of-every-why/sections/90-scope-method-qualifications.tex"
+sha256 = "8d8eed5a73960944239cba9d10a7efa74839acc436a7b66181b28daf0c515293"
+kind = "rendered-content"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/claude/articles/faith/at-the-end-of-every-why/sections/99-references.tex"
+sha256 = "85585e0a56d2af770f46bf410b340ba01053a4db4f3baba409fd515063f6978d"
+kind = "rendered-content"
+owners = ["articles/faith/at-the-end-of-every-why"]
 
 [[files]]
 path = "src/claude/articles/faith/in-support-of-the-particular/main.tex"
@@ -561,6 +675,126 @@ path = "src/claude/biographies/origen/sections/90-controversies.tex"
 sha256 = "f7abcf1d5acd2554170c777873e15522f2b31ff36e7b9dc6726340faa97e7f85"
 kind = "rendered-content"
 owners = ["biographies/origen"]
+
+[[files]]
+path = "src/claude/biographies/saint-augustine-of-hippo/main.tex"
+sha256 = "16d32de1d7021ed68781d380e14689a7be5cbe10da08be96f88bd09a9758cfad"
+kind = "publication-main"
+owners = ["biographies/saint-augustine-of-hippo"]
+
+[[files]]
+path = "src/claude/biographies/saint-augustine-of-hippo/research/chronology.md"
+sha256 = "2a60149f85685dac13f04cee2dccc1c92873d94a15bc667c7d16cbc9b10fe14c"
+kind = "research-record"
+owners = ["biographies/saint-augustine-of-hippo"]
+
+[[files]]
+path = "src/claude/biographies/saint-augustine-of-hippo/research/scope.md"
+sha256 = "8ff9a3cc9ab1895a1754ecf8f6cb1da5e9d339771751ba990f392611c69ce315"
+kind = "research-scope"
+owners = ["biographies/saint-augustine-of-hippo"]
+
+[[files]]
+path = "src/claude/biographies/saint-augustine-of-hippo/research/source-audit.md"
+sha256 = "2ebf9dd2c3efb5f88074bd7bd23417a61410e62fe1a85f55ce211d230b442ab0"
+kind = "legacy-source-audit"
+owners = ["biographies/saint-augustine-of-hippo"]
+
+[[files]]
+path = "src/claude/biographies/saint-augustine-of-hippo/research/source-bindings.toml"
+sha256 = "031cfa365f8a77a3c1759d20e4b9b693cf7808e169bf1398e119525458fa84ed"
+kind = "source-binding"
+owners = ["biographies/saint-augustine-of-hippo"]
+
+[[files]]
+path = "src/claude/biographies/saint-augustine-of-hippo/research/tradition-audit.md"
+sha256 = "985ef21254a19a9961cc8f0126abc69068594980f285cfa4a74d3a1238a042b2"
+kind = "research-record"
+owners = ["biographies/saint-augustine-of-hippo"]
+
+[[files]]
+path = "src/claude/biographies/saint-augustine-of-hippo/sections/00-question.tex"
+sha256 = "6cfff244bf805c6704ab15c90088f29d0050041e2cc0b9cbb6fc225f7ef98be8"
+kind = "rendered-content"
+owners = ["biographies/saint-augustine-of-hippo"]
+
+[[files]]
+path = "src/claude/biographies/saint-augustine-of-hippo/sections/10-thagaste.tex"
+sha256 = "8e6645e16dbb04203bd6b0864410be310596523b0a7ac168a147e1c86b46f6a5"
+kind = "rendered-content"
+owners = ["biographies/saint-augustine-of-hippo"]
+
+[[files]]
+path = "src/claude/biographies/saint-augustine-of-hippo/sections/100-reception.tex"
+sha256 = "4495ace05cbbbef58d53e5f62afa0b2a5c10f488e9375f48b0a6a3e0e667bb43"
+kind = "rendered-content"
+owners = ["biographies/saint-augustine-of-hippo"]
+
+[[files]]
+path = "src/claude/biographies/saint-augustine-of-hippo/sections/110-conclusion.tex"
+sha256 = "beef72de1b83f2a3db3a093900e29982e678e85500ee6aa1d01a944717d097df"
+kind = "rendered-content"
+owners = ["biographies/saint-augustine-of-hippo"]
+
+[[files]]
+path = "src/claude/biographies/saint-augustine-of-hippo/sections/120-scope-chronology-evidence.tex"
+sha256 = "55fcd28ad4a961ebfa4ed4f0de1ff348ac4f67a918eac5e96d05511d9f409e44"
+kind = "rendered-content"
+owners = ["biographies/saint-augustine-of-hippo"]
+
+[[files]]
+path = "src/claude/biographies/saint-augustine-of-hippo/sections/130-references.tex"
+sha256 = "b9e2583a082547f7b80742a9dfbe4c54f5b1c049a6e73cb238ea913736f03ca5"
+kind = "rendered-content"
+owners = ["biographies/saint-augustine-of-hippo"]
+
+[[files]]
+path = "src/claude/biographies/saint-augustine-of-hippo/sections/20-manichee.tex"
+sha256 = "7f0ee9848f4111c29c2b630eda9ec0ac9ecc0c770ae2f684eddb4cd3f9f1ca96"
+kind = "rendered-content"
+owners = ["biographies/saint-augustine-of-hippo"]
+
+[[files]]
+path = "src/claude/biographies/saint-augustine-of-hippo/sections/30-milan.tex"
+sha256 = "e78442a5e1ccc37a70445cb2b46fce70618c661209fbe2bae0dfa97f4ba15109"
+kind = "rendered-content"
+owners = ["biographies/saint-augustine-of-hippo"]
+
+[[files]]
+path = "src/claude/biographies/saint-augustine-of-hippo/sections/40-cassiciacum.tex"
+sha256 = "56ee54001f5f2c860a85ba8217a5b796a149b93025872512b4669aaf7fef5862"
+kind = "rendered-content"
+owners = ["biographies/saint-augustine-of-hippo"]
+
+[[files]]
+path = "src/claude/biographies/saint-augustine-of-hippo/sections/50-hippo.tex"
+sha256 = "c6760cee04a0ddeae15ff2c148efbb84f44f322d6285c4f0fef6f1584f83bd03"
+kind = "rendered-content"
+owners = ["biographies/saint-augustine-of-hippo"]
+
+[[files]]
+path = "src/claude/biographies/saint-augustine-of-hippo/sections/60-donatists.tex"
+sha256 = "7b72af71b66b0a026786b75398f84f5f4a2dc31e99d92c772c312f4dcbe992a1"
+kind = "rendered-content"
+owners = ["biographies/saint-augustine-of-hippo"]
+
+[[files]]
+path = "src/claude/biographies/saint-augustine-of-hippo/sections/70-writings.tex"
+sha256 = "52c0d381952de2e753d5a8590bb538519388a7bc9840c3bb3bd6d822d4d28abb"
+kind = "rendered-content"
+owners = ["biographies/saint-augustine-of-hippo"]
+
+[[files]]
+path = "src/claude/biographies/saint-augustine-of-hippo/sections/80-pelagians.tex"
+sha256 = "6c17bd579de0ed15fcc5411255cf7b86a1a5e5dcb0b365017580a252ded3a40b"
+kind = "rendered-content"
+owners = ["biographies/saint-augustine-of-hippo"]
+
+[[files]]
+path = "src/claude/biographies/saint-augustine-of-hippo/sections/90-death.tex"
+sha256 = "25c372577185db28403a371cf6a2dba9274de1efaa6bd75487d77cabdab87332"
+kind = "rendered-content"
+owners = ["biographies/saint-augustine-of-hippo"]
 
 [[files]]
 path = "src/claude/biographies/saint-jerome/main.tex"
@@ -1029,3 +1263,87 @@ path = "src/claude/history/biblical-translations/account-format.tex"
 sha256 = "5246ae4c398e5edc1a1c3895025e461f2f312e03239a14e3262cd9aab3516777"
 kind = "rendered-content"
 owners = ["owner.history.biblical-translations"]
+
+[[files]]
+path = "src/claude/theology/mariology/marian-dogmas/format.tex"
+sha256 = "abcbecf8635a78fd55bcfb9ea8388f83c5ed29b7bc141167bb0b133e673d5a18"
+kind = "rendered-content"
+owners = ["theology/mariology/marian-dogmas"]
+
+[[files]]
+path = "src/claude/theology/mariology/marian-dogmas/main.tex"
+sha256 = "cc8e1cf44edb60048b5e5c4d957c21df9034220c3ac3705c9834681a197a6dcc"
+kind = "publication-main"
+owners = ["theology/mariology/marian-dogmas"]
+
+[[files]]
+path = "src/claude/theology/mariology/marian-dogmas/research/scope.md"
+sha256 = "9aae365c8a4c535c267dcc72109fd061b10052558181761c43037648d191ba0f"
+kind = "research-scope"
+owners = ["theology/mariology/marian-dogmas"]
+
+[[files]]
+path = "src/claude/theology/mariology/marian-dogmas/research/source-audit.md"
+sha256 = "a411ce0c8a2505d1fdb1c7086fc0dc77c9df64a94332baa24ba02229bb6a38c6"
+kind = "legacy-source-audit"
+owners = ["theology/mariology/marian-dogmas"]
+
+[[files]]
+path = "src/claude/theology/mariology/marian-dogmas/research/source-bindings.toml"
+sha256 = "0780d64c4399d8e372530bc98837bf4ba4d9d1475a934db6e1bb7057d8fab690"
+kind = "source-binding"
+owners = ["theology/mariology/marian-dogmas"]
+
+[[files]]
+path = "src/claude/theology/mariology/marian-dogmas/sections/00-the-four-dogmas.tex"
+sha256 = "9f346e80c5a32337d8b19ff8e02956c97c0b72d0ab06889e3e2a8dbb3f6ede98"
+kind = "rendered-content"
+owners = ["theology/mariology/marian-dogmas"]
+
+[[files]]
+path = "src/claude/theology/mariology/marian-dogmas/sections/10-divine-motherhood.tex"
+sha256 = "5acea9366a578604b29d287076de84e2bd96fc5c8b34a3a6faa6c3d00c4a1dbf"
+kind = "rendered-content"
+owners = ["theology/mariology/marian-dogmas"]
+
+[[files]]
+path = "src/claude/theology/mariology/marian-dogmas/sections/20-perpetual-virginity.tex"
+sha256 = "753efa3df8d57778e514d1c730eba4a6206b36c2f1ac24983f263b9ee92adb23"
+kind = "rendered-content"
+owners = ["theology/mariology/marian-dogmas"]
+
+[[files]]
+path = "src/claude/theology/mariology/marian-dogmas/sections/30-immaculate-conception.tex"
+sha256 = "37c1c64bed812aec4fe56f3278ca6a9fc9fbe9c4402e0ca7df464c3286e423f5"
+kind = "rendered-content"
+owners = ["theology/mariology/marian-dogmas"]
+
+[[files]]
+path = "src/claude/theology/mariology/marian-dogmas/sections/40-assumption.tex"
+sha256 = "dd228e0d529800ef5da78aace4886f4a24f445788b29e44a18a460b903d689b4"
+kind = "rendered-content"
+owners = ["theology/mariology/marian-dogmas"]
+
+[[files]]
+path = "src/claude/theology/mariology/marian-dogmas/sections/50-titles-and-boundaries.tex"
+sha256 = "0b5411bd2a35572a0d66247610eaa3d347ac6abde0acc754ddeea96663e6bfcd"
+kind = "rendered-content"
+owners = ["theology/mariology/marian-dogmas"]
+
+[[files]]
+path = "src/claude/theology/mariology/marian-dogmas/sections/60-synopses.tex"
+sha256 = "85c744e736659716fe93124ac8fe5087b828c702e6ee3281c9a79c90c6dabb74"
+kind = "rendered-content"
+owners = ["theology/mariology/marian-dogmas"]
+
+[[files]]
+path = "src/claude/theology/mariology/marian-dogmas/sections/90-scope-status-qualifications.tex"
+sha256 = "ffb4f57aa6bc8ce4dbe812eb1a5582ff62f4daadd84b515cf33b4029fcbd92a0"
+kind = "rendered-content"
+owners = ["theology/mariology/marian-dogmas"]
+
+[[files]]
+path = "src/claude/theology/mariology/marian-dogmas/sections/99-references.tex"
+sha256 = "e81e523dac7cd4a2438e0ce5878faca3750455fd1e4a34cf23df8392722d5608"
+kind = "rendered-content"
+owners = ["theology/mariology/marian-dogmas"]
