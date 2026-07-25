@@ -1,39 +1,11 @@
 #!/usr/bin/env python3
-"""Mechanical release-binding bookkeeping for the public-alpha manifest.
+"""Deterministic release-binding bookkeeping for the public-alpha manifest.
 
-This tool performs only the deterministic, local bookkeeping half of the
-release loop: computing exact SHA-256 bindings for installed publication
-PDFs, reader-site inputs, and the rights record, and keeping the manifest
-and the rights record's two terminal inventory tables in exact agreement
-with the repository's current bytes. It never decides what to approve.
-Recording a new authorization supplement remains a deliberate operator
-act; `approve` refuses to run without the operator's instruction text and
-records that text verbatim in the dated supplement it appends.
-
-Subcommands:
-
-  refresh
-      Recompute every release publication's installed-PDF hash, every
-      site-source hash, rewrite the rights record's "Exact approved
-      snapshots" and "Exact approved reader-facing site sources" tables
-      from the manifest, recompute per-provider expected counts, and
-      finalize rights_record_sha256. Fails if an installed PDF or site
-      source is missing.
-
-  approve --note TEXT [--timezone ZONE]
-      Append a dated exact-current-snapshot supplement recording the
-      operator's instruction TEXT, then run refresh so every binding is
-      exact. The supplement includes the standard non-approval
-      disclaimers and touches no prior supplement.
-
-  add-publication --provider P --id LEAF --catalog PAGE [--status S]
-      Insert a manifest publication entry (default status: hold) with
-      the installed PDF's current hash. Provider-qualified ids are
-      derived automatically (bare id for the primary provider).
-
-  status
-      Report which bindings are stale (differences between recorded
-      hashes and current bytes) without changing anything.
+refresh: re-derive every PDF/site-source/rights-record hash from current
+bytes. approve --note TEXT: append a dated supplement recording the
+operator's instruction verbatim, then refresh; never invents approval.
+add-publication: insert a provider-qualified manifest entry. status:
+report stale bindings without changing anything.
 """
 
 from __future__ import annotations
