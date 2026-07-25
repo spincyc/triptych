@@ -25,7 +25,7 @@ confirmed. Pages were rendered at 300 dpi and read column by column.
 | p. XII / 10 | `Rubricæ generales` nn. 10, 11, 12, 14, 16, 17: Sundays are of class I or II; the list of class I Sundays; `Omnes aliæ dominicæ sunt II classis`; impeded Sundays are neither anticipated nor resumed; a class II Sunday is preferred to class II feasts, except that a class I or II feast of the Lord takes its place with no commemoration, and except the Commemoration of All the Faithful Departed | image-collated. Printed page number confirmed by reading the running header of the following leaf (p. XIII) |
 | p. 382 / 463 | the Fourth Sunday after Pentecost's Epistle is `Rom. 8, 18-23` | heading image-collated |
 | p. 467 / 548 | the Purification of the B.V.M., no. 2107: Introit `Suscépimus, Deus, misericórdiam tuam`, reference `Ps. 47, 10-11`, psalm verse `Ps. ibid., 2`, `℣. Glória Patri` — verbatim identical to no. 1512 | image-collated |
-| pp. 384–390 / 465–471 | the epistle sequence of the Sundays after Pentecost VI (Rom 6:3–11), VII (Rom 6:19–23), VIII (Rom 8:12–17), IX (1 Cor 10:6–13) | headings read in the facsimile's text layer and confirmed against the page images for VIII; VI, VII and IX read in the text layer only |
+| pp. 384–390 / 465–471 | the epistle sequence of the Sundays after Pentecost VI (Rom 6:3–11), VII (Rom 6:19–23), VIII (Rom 8:12–17), IX (1 Cor 10:6–13) | headings read in the facsimile's text layer; VIII and IX confirmed against the page images (printed pp. 387-388); VI and VII read in the text layer only |
 
 Limit: the facsimile's own embedded text layer is ABBYY OCR and was used only to
 locate leaves. It is retained unedited in `../propers/retrieved.txt`, SHA-256
