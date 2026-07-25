@@ -3,9 +3,9 @@ record_type = "publication-source-inventory"
 provider = "claude"
 audited_on = "2026-07-25"
 discovery_rule = "src/claude/**/main.tex"
-publication_count = 22
-source_surface_file_count = 380
-snapshot = "sha256:b5c244d16f25f58d1c62bbf0639d29252669aa061d491740492c444f4e3ba198"
+publication_count = 23
+source_surface_file_count = 423
+snapshot = "sha256:06a2eaa91e3842da76a95f5c1d563ff88d78fcb9df4dce3cb2122ffad34746eb"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -108,6 +108,17 @@ inventory_state = "records-enumerated"
 source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "articles/faith/the-due-return"
+relationship = "local"
+
+[[documents]]
+id = "articles/faith/trustful-surrender-to-divine-providence"
+main = "src/claude/articles/faith/trustful-surrender-to-divine-providence/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "articles/faith/trustful-surrender-to-divine-providence"
 relationship = "local"
 
 [[documents]]
@@ -403,6 +414,12 @@ kind = "rendered-content"
 owners = ["articles/canon-law/natural-positive-divine-human-law"]
 
 [[files]]
+path = "src/claude/articles/canon-law/natural-positive-divine-human-law/web-edition.toml"
+sha256 = "fa5d1d9aa9bbf20821b8ba451f206081fedd65a6bb2062cc9ea6c612bd26ad86"
+kind = "rendered-content"
+owners = ["articles/canon-law/natural-positive-divine-human-law"]
+
+[[files]]
 path = "src/claude/articles/faith/against-the-instrumentalists/main.tex"
 sha256 = "d44eac1a8edd47c74a3e057fc219e264fd0761f1ee5f41385f9ac79950cb96b4"
 kind = "publication-main"
@@ -493,6 +510,12 @@ kind = "rendered-content"
 owners = ["articles/faith/against-the-instrumentalists"]
 
 [[files]]
+path = "src/claude/articles/faith/against-the-instrumentalists/web-edition.toml"
+sha256 = "bdbf311ff19d21845cf1cc576b2670e99da3e442f728dd0cc545285383591d1a"
+kind = "rendered-content"
+owners = ["articles/faith/against-the-instrumentalists"]
+
+[[files]]
 path = "src/claude/articles/faith/at-the-end-of-every-why/main.tex"
 sha256 = "13dd1cc2a8e13b486dbe66f7122ab692b33c0e92a5bf71e6e0b935c95dc5d3fa"
 kind = "publication-main"
@@ -567,6 +590,12 @@ owners = ["articles/faith/at-the-end-of-every-why"]
 [[files]]
 path = "src/claude/articles/faith/at-the-end-of-every-why/sections/99-references.tex"
 sha256 = "85585e0a56d2af770f46bf410b340ba01053a4db4f3baba409fd515063f6978d"
+kind = "rendered-content"
+owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/claude/articles/faith/at-the-end-of-every-why/web-edition.toml"
+sha256 = "ad2286438ebf3ff441261974f0dbc97243acf08aa4f615c4b711102a4e0b2fd9"
 kind = "rendered-content"
 owners = ["articles/faith/at-the-end-of-every-why"]
 
@@ -651,6 +680,12 @@ owners = ["articles/faith/council-missal-and-crisis"]
 [[files]]
 path = "src/claude/articles/faith/council-missal-and-crisis/sections/99-references.tex"
 sha256 = "5f9c989a58ed8e810ff1b1f7ab575ece49154c33e89859f36d64ef2dbd682031"
+kind = "rendered-content"
+owners = ["articles/faith/council-missal-and-crisis"]
+
+[[files]]
+path = "src/claude/articles/faith/council-missal-and-crisis/web-edition.toml"
+sha256 = "206c43730f5673be6d4446bd2ab16d61a596c6890bcfb97294e959833452c053"
 kind = "rendered-content"
 owners = ["articles/faith/council-missal-and-crisis"]
 
@@ -745,80 +780,104 @@ kind = "rendered-content"
 owners = ["articles/faith/freemasonry-and-the-catholic-church"]
 
 [[files]]
+path = "src/claude/articles/faith/freemasonry-and-the-catholic-church/web-edition.toml"
+sha256 = "d90a5b785753d30fa6c2837a878f6cf11bdf533faf15862dc704c70459c9fe77"
+kind = "rendered-content"
+owners = ["articles/faith/freemasonry-and-the-catholic-church"]
+
+[[files]]
 path = "src/claude/articles/faith/in-support-of-the-particular/main.tex"
-sha256 = "29a4759befbb0c1225dff88b7a4d66589ad9574065b81e30039e44e895183d26"
+sha256 = "287688ae06f11b2949ced9c859151e35bb850e725bab90d07afea845027bd06b"
 kind = "publication-main"
 owners = ["articles/faith/in-support-of-the-particular"]
 
 [[files]]
 path = "src/claude/articles/faith/in-support-of-the-particular/research/scope.md"
-sha256 = "2203ca2757437aba76807f8b438de639cbe79feeab367d292db1700ab009e5b2"
+sha256 = "b1eaa6a75b0f628725fe916233dd3def6e015f0a2d6331b7d19142db17579390"
 kind = "research-scope"
 owners = ["articles/faith/in-support-of-the-particular"]
 
 [[files]]
 path = "src/claude/articles/faith/in-support-of-the-particular/research/source-audit.md"
-sha256 = "2ccfa67e5f7856ca6bbd914809f6e50b9d2f6a70f1bb76e0f35ad3eebc4656cb"
+sha256 = "d336799f4b6f3b2ec798a15805535d80e20940d7ced6869f5136a577e7990deb"
 kind = "legacy-source-audit"
 owners = ["articles/faith/in-support-of-the-particular"]
 
 [[files]]
 path = "src/claude/articles/faith/in-support-of-the-particular/research/source-bindings.toml"
-sha256 = "3d5bfc97b0ff36302cd8473578f9da2900a7d6a2a86a41b1c8ad12b474ee2220"
+sha256 = "fa32c9de164985eb2e633d3332cf0b07a8425ba7859095c3c4b784998b78d653"
 kind = "source-binding"
 owners = ["articles/faith/in-support-of-the-particular"]
 
 [[files]]
 path = "src/claude/articles/faith/in-support-of-the-particular/sections/00-the-offense-at-nazareth.tex"
-sha256 = "7999ab36fed3e6f4253782f9482095d5f25d3a3f64d5e541a440175b72cf020f"
+sha256 = "ab611e7363feb54b64764cbccad560dcf9f867e5febbf5737704eec59692f1ff"
 kind = "rendered-content"
 owners = ["articles/faith/in-support-of-the-particular"]
 
 [[files]]
 path = "src/claude/articles/faith/in-support-of-the-particular/sections/10-the-objection-at-full-strength.tex"
-sha256 = "765c8b6ece085a23ab7149810a549cd7cf40fae01deeae9134657259f6bcb6e6"
+sha256 = "080e9d3e75cd8c3acd6c78ce923ae6d87ed4037e7755b07b37f1f444ba544e31"
 kind = "rendered-content"
 owners = ["articles/faith/in-support-of-the-particular"]
 
 [[files]]
 path = "src/claude/articles/faith/in-support-of-the-particular/sections/20-what-actually-exists.tex"
-sha256 = "a2d3a36cc1278fa51a49c9cdba65779a7f22d1f234ba90c5397b9e7f4b410bd8"
+sha256 = "9c82c3d95ce94e7c1ce22694bdabd0b8b001706c16ef2e3349ef89029fb1076e"
 kind = "rendered-content"
 owners = ["articles/faith/in-support-of-the-particular"]
 
 [[files]]
 path = "src/claude/articles/faith/in-support-of-the-particular/sections/30-the-fewest-of-any-people.tex"
-sha256 = "6b17afb6eef8c60edfb7fc2a5127044c43a8e7aaeedb36ba8e719c27519386a9"
+sha256 = "032e9511b11385a75f0300905937d223e362fa344b44b0c56972780b245838eb"
 kind = "rendered-content"
 owners = ["articles/faith/in-support-of-the-particular"]
 
 [[files]]
 path = "src/claude/articles/faith/in-support-of-the-particular/sections/40-the-word-in-a-part.tex"
-sha256 = "06a24f3976c27d7005d5f6e36dd4b160f28fff8b11f97e6784a9d95477dfc07f"
+sha256 = "f9832bda9fdc8e94160bbbc73674f3ad6ee659b0b7f2c40df3e689203b8399c7"
 kind = "rendered-content"
 owners = ["articles/faith/in-support-of-the-particular"]
 
 [[files]]
 path = "src/claude/articles/faith/in-support-of-the-particular/sections/50-this-water-this-bread.tex"
-sha256 = "c890cce8074bebfe3842003ae42852498180f5c80d5e09284c50ea3eecf12920"
+sha256 = "37ebf571088bc29ddcd00ae9e3a77c3d1904c64d36ef370576beadb9c37f505b"
+kind = "rendered-content"
+owners = ["articles/faith/in-support-of-the-particular"]
+
+[[files]]
+path = "src/claude/articles/faith/in-support-of-the-particular/sections/55-the-objection-in-its-newest-form.tex"
+sha256 = "938ebfa08f2edb2589ff6ca536d7ce6e425947ca61b6a10b68e80baecb72cde4"
 kind = "rendered-content"
 owners = ["articles/faith/in-support-of-the-particular"]
 
 [[files]]
 path = "src/claude/articles/faith/in-support-of-the-particular/sections/60-a-name-which-no-man-knoweth.tex"
-sha256 = "a42f22458a7ad3156d91f776576257381d3e775da7b0be2adfdd5cfb158f3760"
+sha256 = "de5c16d831765d37aec986e90f6281108e02e65c40e62d77cc012c67727ee242"
+kind = "rendered-content"
+owners = ["articles/faith/in-support-of-the-particular"]
+
+[[files]]
+path = "src/claude/articles/faith/in-support-of-the-particular/sections/85-objections-synopsis.tex"
+sha256 = "82a1ddba548de8830f0be4274a34ce07fb12447328ab6f4459304006d8e0aee1"
 kind = "rendered-content"
 owners = ["articles/faith/in-support-of-the-particular"]
 
 [[files]]
 path = "src/claude/articles/faith/in-support-of-the-particular/sections/90-scope-method-qualifications.tex"
-sha256 = "046595d4ff67ecccf2a7f899753b46416e44c8b3b565bee9189f3c2fec70545b"
+sha256 = "c38f7fc91ac9a060043f8fd019c9c6fe3c681d5be282ed0bc615b8ff601574a9"
 kind = "rendered-content"
 owners = ["articles/faith/in-support-of-the-particular"]
 
 [[files]]
 path = "src/claude/articles/faith/in-support-of-the-particular/sections/99-references.tex"
-sha256 = "5cdc64b4a873586254e03558ee5059533c1bcc28f3014d23c9a794f5a54e8b70"
+sha256 = "7bd767e170f8d29a7f5cce9943635046bff6bdb61f8ead503ca42767ee20e27a"
+kind = "rendered-content"
+owners = ["articles/faith/in-support-of-the-particular"]
+
+[[files]]
+path = "src/claude/articles/faith/in-support-of-the-particular/web-edition.toml"
+sha256 = "d3644337115a7cba4e33034c44da829bb629ded31a1a0d91ff7fd8e20e07cfbb"
 kind = "rendered-content"
 owners = ["articles/faith/in-support-of-the-particular"]
 
@@ -901,6 +960,12 @@ kind = "rendered-content"
 owners = ["articles/faith/ontological-vertigo"]
 
 [[files]]
+path = "src/claude/articles/faith/ontological-vertigo/web-edition.toml"
+sha256 = "e7fb77ebb04ea7fc9278a9572e43035638f5ec9179281085e8d70d04180ac24e"
+kind = "rendered-content"
+owners = ["articles/faith/ontological-vertigo"]
+
+[[files]]
 path = "src/claude/articles/faith/the-due-return/main.tex"
 sha256 = "e41ee6b0f8769f10bc2022803f00cbc3d5376862d27a353ae94690027cdb3380"
 kind = "publication-main"
@@ -977,6 +1042,108 @@ path = "src/claude/articles/faith/the-due-return/sections/99-references.tex"
 sha256 = "bc133e4fdcc914b98a0817652c4a7cae13e92ddbaeffbb73ad908c7c8685efd6"
 kind = "rendered-content"
 owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/claude/articles/faith/the-due-return/web-edition.toml"
+sha256 = "2c9deb8ff11f6164e5aa112ac69785080639e6731318a4e7955818181ecf178f"
+kind = "rendered-content"
+owners = ["articles/faith/the-due-return"]
+
+[[files]]
+path = "src/claude/articles/faith/trustful-surrender-to-divine-providence/main.tex"
+sha256 = "aca446561f87e25c85040c5c7605f330c4f2993a675ba4bd6b070c4a1ad433bf"
+kind = "publication-main"
+owners = ["articles/faith/trustful-surrender-to-divine-providence"]
+
+[[files]]
+path = "src/claude/articles/faith/trustful-surrender-to-divine-providence/research/scope.md"
+sha256 = "1fc26fbed574a05618025728cc4ce3c3bf64b422b8d8d87fd55568753ccf16ed"
+kind = "research-scope"
+owners = ["articles/faith/trustful-surrender-to-divine-providence"]
+
+[[files]]
+path = "src/claude/articles/faith/trustful-surrender-to-divine-providence/research/source-audit.md"
+sha256 = "c571bc2764c4ed3e8ccb18e8bec5cf08942f3e29ef2eca4e5dc78d3abdd3bfb4"
+kind = "legacy-source-audit"
+owners = ["articles/faith/trustful-surrender-to-divine-providence"]
+
+[[files]]
+path = "src/claude/articles/faith/trustful-surrender-to-divine-providence/research/source-bindings.toml"
+sha256 = "5beb2df0b7e955461b35ad55e8a34b9fe4daadae8f2e2e10da712cd9d68019b0"
+kind = "source-binding"
+owners = ["articles/faith/trustful-surrender-to-divine-providence"]
+
+[[files]]
+path = "src/claude/articles/faith/trustful-surrender-to-divine-providence/sections/00-the-counsel-under-pressure.tex"
+sha256 = "a4f09c37b3342b36d1e5947c09146911b719d386faa67485a1efb90fc86bc6eb"
+kind = "rendered-content"
+owners = ["articles/faith/trustful-surrender-to-divine-providence"]
+
+[[files]]
+path = "src/claude/articles/faith/trustful-surrender-to-divine-providence/sections/10-the-book-and-its-title-page.tex"
+sha256 = "86d66f853a67eca6f72ab61c267397c5559fc3dcb246fb3c85aeada9d2a2d9b2"
+kind = "rendered-content"
+owners = ["articles/faith/trustful-surrender-to-divine-providence"]
+
+[[files]]
+path = "src/claude/articles/faith/trustful-surrender-to-divine-providence/sections/20-what-scripture-hands-over.tex"
+sha256 = "fdcde22fbe0bf1953fe2139d69f8ebb92c5e40aae17e8cd48b0a4b335ae37e09"
+kind = "rendered-content"
+owners = ["articles/faith/trustful-surrender-to-divine-providence"]
+
+[[files]]
+path = "src/claude/articles/faith/trustful-surrender-to-divine-providence/sections/30-the-architecture-of-providence.tex"
+sha256 = "b58499d06bf739f0610305ca54c054b3f4598e820ec049962786d130f2a0c6c6"
+kind = "rendered-content"
+owners = ["articles/faith/trustful-surrender-to-divine-providence"]
+
+[[files]]
+path = "src/claude/articles/faith/trustful-surrender-to-divine-providence/sections/40-abandonment-and-its-history.tex"
+sha256 = "7897ecb4a2ce4ba15c3d50028a329cbca7eb6204e5dd3c07cf685e5967c1b9c7"
+kind = "rendered-content"
+owners = ["articles/faith/trustful-surrender-to-divine-providence"]
+
+[[files]]
+path = "src/claude/articles/faith/trustful-surrender-to-divine-providence/sections/50-the-boundaries.tex"
+sha256 = "518138ddb80fc0ed2238454aec0766eaa576ce4d71b69a0059caf7cbfcb5f0e6"
+kind = "rendered-content"
+owners = ["articles/faith/trustful-surrender-to-divine-providence"]
+
+[[files]]
+path = "src/claude/articles/faith/trustful-surrender-to-divine-providence/sections/60-suffering-and-secondary-causes.tex"
+sha256 = "041f4be2ce865a9b4da6e558d7a1a08a58dd3773ea54de6008a07194c1cc4c2e"
+kind = "rendered-content"
+owners = ["articles/faith/trustful-surrender-to-divine-providence"]
+
+[[files]]
+path = "src/claude/articles/faith/trustful-surrender-to-divine-providence/sections/70-what-surrender-is.tex"
+sha256 = "08748470da412ef228a894a75429ddb012cf52d8f3f498558da7e1790b3a2f31"
+kind = "rendered-content"
+owners = ["articles/faith/trustful-surrender-to-divine-providence"]
+
+[[files]]
+path = "src/claude/articles/faith/trustful-surrender-to-divine-providence/sections/85-witnesses-and-editions.tex"
+sha256 = "0b0b0517027bab2f60f7a6eb0d94c5a5f36a7248c6f2e21585110b541d09afb1"
+kind = "rendered-content"
+owners = ["articles/faith/trustful-surrender-to-divine-providence"]
+
+[[files]]
+path = "src/claude/articles/faith/trustful-surrender-to-divine-providence/sections/90-scope-method-qualifications.tex"
+sha256 = "5bb190a8316d9a882f59dbc028d08f5c1dfbdec36547a483820804c6a342ee12"
+kind = "rendered-content"
+owners = ["articles/faith/trustful-surrender-to-divine-providence"]
+
+[[files]]
+path = "src/claude/articles/faith/trustful-surrender-to-divine-providence/sections/99-references.tex"
+sha256 = "be9d77b6b9d05b52300df2b30777cfa3c36096def258204d29e748edd6071473"
+kind = "rendered-content"
+owners = ["articles/faith/trustful-surrender-to-divine-providence"]
+
+[[files]]
+path = "src/claude/articles/faith/trustful-surrender-to-divine-providence/web-edition.toml"
+sha256 = "7ff553c25e873562d552611847f5222541f820b069899243a325190b00591890"
+kind = "rendered-content"
+owners = ["articles/faith/trustful-surrender-to-divine-providence"]
 
 [[files]]
 path = "src/claude/biographies/origen/main.tex"
@@ -1095,6 +1262,12 @@ owners = ["biographies/origen"]
 [[files]]
 path = "src/claude/biographies/origen/sections/90-controversies.tex"
 sha256 = "f7abcf1d5acd2554170c777873e15522f2b31ff36e7b9dc6726340faa97e7f85"
+kind = "rendered-content"
+owners = ["biographies/origen"]
+
+[[files]]
+path = "src/claude/biographies/origen/web-edition.toml"
+sha256 = "58ac92746d395684eff7cc83c326aa8bdd8ade768982c6483d3497456564eff2"
 kind = "rendered-content"
 owners = ["biographies/origen"]
 
@@ -1219,6 +1392,12 @@ kind = "rendered-content"
 owners = ["biographies/saint-augustine-of-hippo"]
 
 [[files]]
+path = "src/claude/biographies/saint-augustine-of-hippo/web-edition.toml"
+sha256 = "a9523688e077df10baa75ddd63a958b92cdbae1892e00bd7bc9684b497282786"
+kind = "rendered-content"
+owners = ["biographies/saint-augustine-of-hippo"]
+
+[[files]]
 path = "src/claude/biographies/saint-jerome/main.tex"
 sha256 = "9e2716d83ec1ec8efc0288050e75c130d30408f8ea50433513b793e4e01d30a5"
 kind = "publication-main"
@@ -1329,6 +1508,12 @@ owners = ["biographies/saint-jerome"]
 [[files]]
 path = "src/claude/biographies/saint-jerome/sections/90-reception.tex"
 sha256 = "a007ef6c0444d97a2fe6586fbb2125bae6d69c1ee72063f530bd6e21a3c3dbff"
+kind = "rendered-content"
+owners = ["biographies/saint-jerome"]
+
+[[files]]
+path = "src/claude/biographies/saint-jerome/web-edition.toml"
+sha256 = "39616f3632c47b2b440e23461cbefe1661169d0bbe0f96cb5941a0ea77057e7d"
 kind = "rendered-content"
 owners = ["biographies/saint-jerome"]
 
@@ -1465,6 +1650,12 @@ kind = "rendered-content"
 owners = ["biographies/saint-paul"]
 
 [[files]]
+path = "src/claude/biographies/saint-paul/web-edition.toml"
+sha256 = "a317bf8370f5738d8be2acbb2c3e4526b2d57700967503d329caf770bbbaf572"
+kind = "rendered-content"
+owners = ["biographies/saint-paul"]
+
+[[files]]
 path = "src/claude/biographies/saint-peter/main.tex"
 sha256 = "37f449104a678505e05b48279ebb2f4f39a9354c37852c53948f518d1cf0bceb"
 kind = "publication-main"
@@ -1593,6 +1784,12 @@ owners = ["biographies/saint-peter"]
 [[files]]
 path = "src/claude/biographies/saint-peter/sections/90-rome.tex"
 sha256 = "e86edbcdf2ce05e6f80567253dfa6dcc5de99f5b8e5af26c9a9756f04ff455ab"
+kind = "rendered-content"
+owners = ["biographies/saint-peter"]
+
+[[files]]
+path = "src/claude/biographies/saint-peter/web-edition.toml"
+sha256 = "ad2da86a95008aee2c035855439dda7fee6215bc484435baff4e52576aa6182b"
 kind = "rendered-content"
 owners = ["biographies/saint-peter"]
 
@@ -1735,6 +1932,12 @@ kind = "rendered-content"
 owners = ["biographies/saint-robert-bellarmine"]
 
 [[files]]
+path = "src/claude/biographies/saint-robert-bellarmine/web-edition.toml"
+sha256 = "2d38912a14ee2c6f9b9c695c488a624b18800496dee73d2b3555743bfad588b1"
+kind = "rendered-content"
+owners = ["biographies/saint-robert-bellarmine"]
+
+[[files]]
 path = "src/claude/biographies/saint-thomas-aquinas/main.tex"
 sha256 = "24ca4c6cf37c5f1481480289d6ba70bd8aece3c075c4b8ee6d119dce089677a1"
 kind = "publication-main"
@@ -1845,6 +2048,12 @@ owners = ["biographies/saint-thomas-aquinas"]
 [[files]]
 path = "src/claude/biographies/saint-thomas-aquinas/sections/90-reception.tex"
 sha256 = "d4050a5ad903c995e599814eacb1d4dfbe7eeb401d2c26e40e121a769371da8c"
+kind = "rendered-content"
+owners = ["biographies/saint-thomas-aquinas"]
+
+[[files]]
+path = "src/claude/biographies/saint-thomas-aquinas/web-edition.toml"
+sha256 = "2e7693a9bd5258738bc8d280f233bf5788d390269281cf9b6774faf3f494fe2e"
 kind = "rendered-content"
 owners = ["biographies/saint-thomas-aquinas"]
 
@@ -1987,6 +2196,12 @@ kind = "rendered-content"
 owners = ["biographies/tertullian"]
 
 [[files]]
+path = "src/claude/biographies/tertullian/web-edition.toml"
+sha256 = "38a26c542dd98a7ce0e945aca8d4988410b5b2644f23f4ab278f7a60fbd0d3c5"
+kind = "rendered-content"
+owners = ["biographies/tertullian"]
+
+[[files]]
 path = "src/claude/history/biblical-translations/01-septuagint/main.tex"
 sha256 = "f676d86d6378db2faf8d38e2390f7166cca8550df19e682025de0bf795cd8c8c"
 kind = "publication-main"
@@ -2101,6 +2316,12 @@ kind = "rendered-content"
 owners = ["history/biblical-translations/01-septuagint"]
 
 [[files]]
+path = "src/claude/history/biblical-translations/01-septuagint/web-edition.toml"
+sha256 = "7bb967a0dd000743dba147045479501e4417dc45f1591e84a669c8bd4a49d3de"
+kind = "rendered-content"
+owners = ["history/biblical-translations/01-septuagint"]
+
+[[files]]
 path = "src/claude/history/biblical-translations/02-vulgate/main.tex"
 sha256 = "4d26db36432f249233dd3c8d8ad88fd99ab83ecee7ccd01b021c006710235cac"
 kind = "publication-main"
@@ -2209,6 +2430,12 @@ kind = "rendered-content"
 owners = ["history/biblical-translations/02-vulgate"]
 
 [[files]]
+path = "src/claude/history/biblical-translations/02-vulgate/web-edition.toml"
+sha256 = "2f68b060830ad9a452fcb4b101f7274237ea9c1421039515b8b0cdc9744e03c4"
+kind = "rendered-content"
+owners = ["history/biblical-translations/02-vulgate"]
+
+[[files]]
 path = "src/claude/history/biblical-translations/account-format.tex"
 sha256 = "5246ae4c398e5edc1a1c3895025e461f2f312e03239a14e3262cd9aab3516777"
 kind = "rendered-content"
@@ -2307,6 +2534,12 @@ owners = ["theology/mariology/fatima"]
 [[files]]
 path = "src/claude/theology/mariology/fatima/sections/99-references.tex"
 sha256 = "266f81ed65c34849a0707a198353433fd6df35172897423fcda035ffc31d71b6"
+kind = "rendered-content"
+owners = ["theology/mariology/fatima"]
+
+[[files]]
+path = "src/claude/theology/mariology/fatima/web-edition.toml"
+sha256 = "ebbd886f616d4beb03293c4d7808e99abd5080455b191c52c320b1a50a63e12d"
 kind = "rendered-content"
 owners = ["theology/mariology/fatima"]
 
@@ -2413,86 +2646,116 @@ kind = "rendered-content"
 owners = ["theology/mariology/lourdes"]
 
 [[files]]
+path = "src/claude/theology/mariology/lourdes/web-edition.toml"
+sha256 = "045474edfb0485956b016e0c82dbebbeffa180686b7931039ae93754eec525af"
+kind = "rendered-content"
+owners = ["theology/mariology/lourdes"]
+
+[[files]]
 path = "src/claude/theology/mariology/marian-dogmas/format.tex"
-sha256 = "abcbecf8635a78fd55bcfb9ea8388f83c5ed29b7bc141167bb0b133e673d5a18"
+sha256 = "89a9617ea87e7c0ad87ccd470ec82722c303eb5d8611c90dcdf254382fc73e82"
 kind = "rendered-content"
 owners = ["theology/mariology/marian-dogmas"]
 
 [[files]]
 path = "src/claude/theology/mariology/marian-dogmas/main.tex"
-sha256 = "cc8e1cf44edb60048b5e5c4d957c21df9034220c3ac3705c9834681a197a6dcc"
+sha256 = "e1e04d3fe7b57c6af4208bf04505a4aa09021924208a9444f143acff5a7d5f9e"
 kind = "publication-main"
 owners = ["theology/mariology/marian-dogmas"]
 
 [[files]]
 path = "src/claude/theology/mariology/marian-dogmas/research/scope.md"
-sha256 = "9aae365c8a4c535c267dcc72109fd061b10052558181761c43037648d191ba0f"
+sha256 = "baba3dcbbca863dc990b45b23c4bf9f23e95ed61a2e3a91131e5f5ac59673a5a"
 kind = "research-scope"
 owners = ["theology/mariology/marian-dogmas"]
 
 [[files]]
 path = "src/claude/theology/mariology/marian-dogmas/research/source-audit.md"
-sha256 = "a411ce0c8a2505d1fdb1c7086fc0dc77c9df64a94332baa24ba02229bb6a38c6"
+sha256 = "0ed96d48d28606585da16df8e8ca8cfda27ed75aad083461cbe7b477b3c57750"
 kind = "legacy-source-audit"
 owners = ["theology/mariology/marian-dogmas"]
 
 [[files]]
 path = "src/claude/theology/mariology/marian-dogmas/research/source-bindings.toml"
-sha256 = "0780d64c4399d8e372530bc98837bf4ba4d9d1475a934db6e1bb7057d8fab690"
+sha256 = "e8b545c8b43469f6d6622ae701e5d36a9de2da6ddb0082614e17b4befda01be3"
 kind = "source-binding"
 owners = ["theology/mariology/marian-dogmas"]
 
 [[files]]
 path = "src/claude/theology/mariology/marian-dogmas/sections/00-the-four-dogmas.tex"
-sha256 = "9f346e80c5a32337d8b19ff8e02956c97c0b72d0ab06889e3e2a8dbb3f6ede98"
+sha256 = "b807b30d3aeee6526d7c72b8e533d6f7cf82414a44b8ad0aaa1a3b990a2d61ce"
+kind = "rendered-content"
+owners = ["theology/mariology/marian-dogmas"]
+
+[[files]]
+path = "src/claude/theology/mariology/marian-dogmas/sections/05-scriptural-foundations.tex"
+sha256 = "2341415c31d1ac2be8d15773cf0043e73a7d0754a42bdddd5bf7208145632c6c"
 kind = "rendered-content"
 owners = ["theology/mariology/marian-dogmas"]
 
 [[files]]
 path = "src/claude/theology/mariology/marian-dogmas/sections/10-divine-motherhood.tex"
-sha256 = "5acea9366a578604b29d287076de84e2bd96fc5c8b34a3a6faa6c3d00c4a1dbf"
+sha256 = "e7fede5e7e79373114eeb11eac0b09840926e4da94fd99b30e84299d46d3f592"
 kind = "rendered-content"
 owners = ["theology/mariology/marian-dogmas"]
 
 [[files]]
 path = "src/claude/theology/mariology/marian-dogmas/sections/20-perpetual-virginity.tex"
-sha256 = "753efa3df8d57778e514d1c730eba4a6206b36c2f1ac24983f263b9ee92adb23"
+sha256 = "10848fe31d149813cb57c55bea9e5592617e009049d7f08c7d782cbfa8958193"
 kind = "rendered-content"
 owners = ["theology/mariology/marian-dogmas"]
 
 [[files]]
 path = "src/claude/theology/mariology/marian-dogmas/sections/30-immaculate-conception.tex"
-sha256 = "37c1c64bed812aec4fe56f3278ca6a9fc9fbe9c4402e0ca7df464c3286e423f5"
+sha256 = "e88195b286764a8f8656c64628371312142c433918805ae37305fb20f59aa91f"
 kind = "rendered-content"
 owners = ["theology/mariology/marian-dogmas"]
 
 [[files]]
 path = "src/claude/theology/mariology/marian-dogmas/sections/40-assumption.tex"
-sha256 = "dd228e0d529800ef5da78aace4886f4a24f445788b29e44a18a460b903d689b4"
+sha256 = "a9af0cb15fdd9031548753e6435b2df02b8cc0c47f5eafc962781d10cd992f07"
+kind = "rendered-content"
+owners = ["theology/mariology/marian-dogmas"]
+
+[[files]]
+path = "src/claude/theology/mariology/marian-dogmas/sections/45-systematic-coherence.tex"
+sha256 = "f9fb9191821edd211d19849bf396ce3a89b9d079ef402335390ca6bbc02f2623"
 kind = "rendered-content"
 owners = ["theology/mariology/marian-dogmas"]
 
 [[files]]
 path = "src/claude/theology/mariology/marian-dogmas/sections/50-titles-and-boundaries.tex"
-sha256 = "0b5411bd2a35572a0d66247610eaa3d347ac6abde0acc754ddeea96663e6bfcd"
+sha256 = "ad9a7227792ab555935e31a69bffd34c10e463128c0426c97c1684481c7812a8"
+kind = "rendered-content"
+owners = ["theology/mariology/marian-dogmas"]
+
+[[files]]
+path = "src/claude/theology/mariology/marian-dogmas/sections/55-reception-and-ecumenism.tex"
+sha256 = "e0f6c9ce72bc059588d0539878789d5a0dd90d4bd6ca4af9b01fd60f4a01b926"
 kind = "rendered-content"
 owners = ["theology/mariology/marian-dogmas"]
 
 [[files]]
 path = "src/claude/theology/mariology/marian-dogmas/sections/60-synopses.tex"
-sha256 = "85c744e736659716fe93124ac8fe5087b828c702e6ee3281c9a79c90c6dabb74"
+sha256 = "0e5885a76646715d2ee425bd4bdc2018ca28c3173cb68b3edc3497b66b256a8d"
 kind = "rendered-content"
 owners = ["theology/mariology/marian-dogmas"]
 
 [[files]]
 path = "src/claude/theology/mariology/marian-dogmas/sections/90-scope-status-qualifications.tex"
-sha256 = "ffb4f57aa6bc8ce4dbe812eb1a5582ff62f4daadd84b515cf33b4029fcbd92a0"
+sha256 = "8cb39cd379d3b30f5429f888729df94c2045cf096ceaa972d74e19c47141a7e1"
 kind = "rendered-content"
 owners = ["theology/mariology/marian-dogmas"]
 
 [[files]]
 path = "src/claude/theology/mariology/marian-dogmas/sections/99-references.tex"
-sha256 = "e81e523dac7cd4a2438e0ce5878faca3750455fd1e4a34cf23df8392722d5608"
+sha256 = "2832a95cf8cd3b7d6f9979076b8f960b18a0aa19e07a3a7670ca91d0038660d2"
+kind = "rendered-content"
+owners = ["theology/mariology/marian-dogmas"]
+
+[[files]]
+path = "src/claude/theology/mariology/marian-dogmas/web-edition.toml"
+sha256 = "3ea598299f91fa06370cdc8aff971ae42d5b7c027164162c2771697ad3209fa4"
 kind = "rendered-content"
 owners = ["theology/mariology/marian-dogmas"]
 
@@ -2571,5 +2834,11 @@ owners = ["theology/mariology/rosary"]
 [[files]]
 path = "src/claude/theology/mariology/rosary/sections/99-references.tex"
 sha256 = "017f6ba41fdd14f2c89f9952c54a71ea5a67c1126e3096fcfd53505dd25b0627"
+kind = "rendered-content"
+owners = ["theology/mariology/rosary"]
+
+[[files]]
+path = "src/claude/theology/mariology/rosary/web-edition.toml"
+sha256 = "c56b2ee2b382a560dd74e779a6f870118604c455656b48e875ed1e704a552d6f"
 kind = "rendered-content"
 owners = ["theology/mariology/rosary"]

@@ -7,12 +7,12 @@
     "claude"
   ],
   "expected_counts": {
-    "publications": 138,
-    "release": 138,
+    "publications": 139,
+    "release": 139,
     "review": 0,
     "hold": 0,
     "providers": {
-      "claude": 22,
+      "claude": 23,
       "gpt": 116
     }
   },
@@ -40,7 +40,7 @@
         "worldwide"
       ],
       "rights_record": "release/rights/public-alpha-2026-07-15.md",
-      "rights_record_sha256": "433de453777770e76c713677df373b637ef388d9c1d92fcd3d964429e16160dc",
+      "rights_record_sha256": "05fec1ff695009c1bfea14ae4fe450d5e878d9c3e7a559e831e3dd98a5a78356",
       "site_sources": {
         "CONTRIBUTING.md": "1bb9ef13c4f754f9a8bede73f0afd95c2266173726bcfbd709017dc342272d5e",
         "LIBRARY.md": "a45aae3359ac20ac3a4cf756007a08df9109d06661d5fc261798daf38ec5b881",
@@ -52,7 +52,7 @@
         "library/biographies.md": "8397d3f01b230e28fbbb0dcca530ee8c5dd5ad75e7f95a64d292034b90afacae",
         "library/curriculums.md": "15f24d06b4911b1cbfe4d85d82c463d7c2eef8635ff25edf2817d5fa6e0fb2bc",
         "library/ecclesiastical-latin.md": "1b985372bc372990f8d748d7667620c76c89a4073a8dae146ecefbca84333c1b",
-        "library/faith.md": "90af2c600ca2733e648afdbbb9f47fe5c74b7a7d87a6337daf28500fbb1e7e68",
+        "library/faith.md": "bee761a4909d4ad9b26825e40ec679cb9d02743869ccf5982984c5e33432cc11",
         "library/heresies.md": "8f6f80b79266818a2b7d80db312ad33cd52ba594b329d4604dae53d17060f5df",
         "library/historical-accounts.md": "a4a276ea14cac3c752574fe1435beefccbc089aa1cfd9db9e953479c1f552c4b",
         "library/law-and-church-discipline.md": "9b823f425ba9a2db3f40c1d8fc2951db71794bee21163d8d90727efe1e9cfce1",
@@ -68,7 +68,7 @@
       },
       "approved_on": "2026-07-25",
       "duration": "perpetual",
-      "effective_at": "2026-07-25T05:54:27-05:00",
+      "effective_at": "2026-07-25T12:29:26-05:00",
       "expires_at": null,
       "timezone": "America/Chicago",
       "conditions": [
@@ -1254,7 +1254,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "535994c75dbb7bff0be2e45528050154b31710c7cbe3cf0fd2926b3cab4e77cb"
+        "pdf_sha256": "de4904267caa3c9ee024ac9ecc2e7229bae572f553c761dda5780e3f9d50173b"
       }
     },
     {
@@ -1354,7 +1354,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "fe650090ac02c9433c053df4f0c44c318a35b10bb473e5c56f931db5b8a9d206"
+        "pdf_sha256": "ab33912de1090951399e6306e706b547f27507b75b33edd620a7b22bb0a0e50c"
       }
     },
     {
@@ -1455,6 +1455,16 @@
       "approval": {
         "authorization": "perpetual-public-repository-2026",
         "pdf_sha256": "b4cde6a9166301c7fe85a60985745889356d0301d525997d3cc08a35fe9d59b8"
+      }
+    },
+    {
+      "id": "claude:articles/faith/trustful-surrender-to-divine-providence",
+      "catalog": "library/faith.md",
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "32d59306bd1392b13fc97428bcc6a044d967fe69f525cfad4edf226e1636060a"
       }
     }
   ]
