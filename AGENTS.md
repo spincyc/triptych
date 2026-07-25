@@ -28,6 +28,7 @@ Select profiles by the document's actual genre and sources, not by superficial s
 - 1962 Roman Rite altar-server response, pronunciation, memorization, and ceremonial training guides for Low Mass, Missa Cantata, and Solemn Mass: `guidance/liturgy/roman-1962-server-training.md`
 - self-paced Ecclesiastical Latin curricula centered on the 1962 Missal, including modular teaching packets, reference, practice, assessments, and keys: `guidance/curriculums/ecclesiastical-latin.md`
 - edition-specific histories and complete normative inventories of Roman calendars: `guidance/liturgy/roman-calendar-references.md`, plus the profile for the identified edition where its rules are used
+- recurring Roman calendar arithmetic used by any liturgical document — movable anchors, the Sunday `A`/`B`/`C` and weekday `I`/`II` Lectionary cycles, postconciliar Ordinary Time week numbering, and the 1962 resumed-Sunday mechanism: `guidance/liturgy/calendar-computation.md`
 - postconciliar Roman Rite proper guides: `guidance/liturgy/postconciliar-propers.md`, with permanent IDs, keys, slugs, counts, and occurrence grammar in `guidance/liturgy/postconciliar-propers-registry.md` and edition dispositions under the selected `<edition-locale>/propers/registry/`
 - expositions of the Ordinary or Order of Mass in either form: `guidance/liturgy/ordinary-expositions.md`
 - the sacramental treatise, at-a-glance companion, or their shared fragments: `guidance/theology/sacramental-reference.md`

@@ -5,7 +5,10 @@ inventories of Roman-rite calendars. The identified typical book, norms,
 territory, language witness, jurisdiction, and cutoff determine the work; never
 project one calendar's terms or rules into another. The historical module also
 follows `guidance/history/historical-accounts.md`, and the inventory module the
-profile for its edition.
+profile for its edition. Recurring movable-date, Lectionary-cycle, Ordinary Time
+week, and resumed-Sunday arithmetic is owned by
+`guidance/liturgy/calendar-computation.md`; a publication states and applies
+those rules but does not establish a divergent one.
 
 ## Governing priorities
 
