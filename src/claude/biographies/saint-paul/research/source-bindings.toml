@@ -1,0 +1,48 @@
+schema = 1
+record_type = "bindings"
+document = "biographies/saint-paul"
+
+# Claude edition. Bindings are catalog-level: every passage check for this
+# publication was performed against live web transcriptions (URLs and dates
+# in research/source-audit.md), not against registered artifact bytes, so
+# no acquisition/inspection/verification state is claimed against the
+# source-library records themselves.
+
+[[bindings]]
+source_id = "edition.ante-nicene-fathers.volume-1.buffalo-1887"
+loci = [
+  "Ignatius, Epistle to the Ephesians 12 (middle/'shorter' recension)",
+  "Ignatius, Epistle to the Romans 4 (middle/'shorter' recension)",
+  "Polycarp, Epistle to the Philippians 3; 9",
+  "Irenaeus, Against Heresies 3.14.1",
+]
+role = "translation-control"
+states = ["cataloged"]
+context = "Quotations of Ignatius, Polycarp, and Irenaeus follow this public-domain 1885/1887 translation volume as transcribed at New Advent; each locus was read online 2026-07-25 (see research/source-audit.md). The checks were made against the live transcriptions, not against registered artifact bytes of this edition, so this binding records catalog-level use of the edition identity only. New Advent attributes its 1 Clement text to ANF vol. 9 (Keith), for which no central record exists; that attribution is recorded in the References."
+
+[[bindings]]
+source_id = "edition.nicene-and-post-nicene-fathers.series-2-volume-1.new-york-1890"
+loci = [
+  "Eusebius, Church History 2.22.1-8",
+  "Eusebius, Church History 2.25.5-8",
+  "Eusebius, Church History 3.1.1",
+  "Eusebius, Church History 3.4.1-7",
+  "Eusebius, Church History 7.18.4",
+]
+role = "translation-control"
+states = ["cataloged"]
+context = "Quotations of Eusebius (McGiffert's translation), preserving Dionysius of Corinth, Gaius, and Origen at the loci listed, follow this public-domain 1890 volume as transcribed at New Advent; each locus was read online 2026-07-25. Catalog-level identity use only; the work and edition records were created for this study with no registered artifact."
+
+[[bindings]]
+source_id = "edition.catholic-encyclopedia.volume-11.new-york-1911"
+loci = ["Ferdinand Prat, 'St. Paul' (feast history; Aquae Salviae/Tre Fontane; Nero-regnal death-year variants; kata ton auton kairon)"]
+role = "reception"
+states = ["cataloged"]
+context = "The 1911 article was read in the New Advent transcription on 2026-07-25 for the publication's cult-history and death-year-variant statements, always cited as a dated (1911) reference. Catalog-level identity use only; the work and edition records were created for this study with no registered artifact."
+
+[[bindings]]
+source_id = "edition.catholic-church.calendarium-romanum-generale.latin-missale-romanum-typica-tertia-2002"
+loci = ["29 June (Ss. Petri et Pauli); 25 January (In conversione S. Pauli); 18 November (dedication of the basilicas of Ss. Peter and Paul)"]
+role = "lead"
+states = ["cataloged"]
+context = "Identity lead for the publication's current-calendar sentences. The controlling Missale artifact is restricted and was not inspected for this publication; the feast statements in the text rest on the checked 1911 Catholic Encyclopedia article for the cult's history and carry the 2026-07-25 mutable-fact cutoff for present observance."
