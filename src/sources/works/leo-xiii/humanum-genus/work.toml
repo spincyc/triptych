@@ -1,0 +1,11 @@
+schema = 1
+record_type = "work"
+id = "work.leo-xiii.humanum-genus"
+title = "Humanum genus"
+responsible = "Pope Leo XIII"
+work_type = "encyclical"
+alternate_titles = ["Encyclical on Freemasonry"]
+languages = ["la"]
+locus_pattern = '(complete-text|paragraph-[0-9]{1,3})'
+description = "Leo XIII's encyclical of 20 April 1884 on the Masonic sect: the two-kingdoms opening after Augustine's two cities, the review of prior papal condemnations, the express restriction of the generic judgment to the sect rather than individual members, the diagnosis that the sect's aim is a state of things drawn from naturalism, the analyses of secrecy and oath, religious indifferentism, and the contested doctrine of God within the lodges, and the closing pastoral program."
+relations = ["work.clement-xii.in-eminenti", "work.benedict-xiv.providas-romanorum"]
