@@ -112,6 +112,34 @@ class WebEditionConversionTests(unittest.TestCase):
         self.assertIn("creativecommons.org/licenses/by/4.0/", markdown)
         self.assertIn("THIRD_PARTY.md", markdown)
 
+    def test_table_becomes_a_pipe_table_the_site_renderer_can_read(self) -> None:
+        markdown = self.convert(
+            "\\begin{evidencekey}\n"
+            r"\evidenceclass{A}{Contemporary record}"
+            "\n\\end{evidencekey}\n"
+        )
+        self.assertRegex(markdown, r"(?m)^\| \*\*Class\*\* +\| \*\*Meaning\*\* +\|$")
+        self.assertRegex(markdown, r"(?m)^\|(?:[ :]*-{2,}[ :]*\|)+\s*$")
+        self.assertRegex(markdown, r"(?m)^\| A +\| Contemporary record +\|$")
+
+    def test_heading_carries_no_attribute_braces(self) -> None:
+        markdown = self.convert("\\subsection*{Unnumbered head}\nProse.\n")
+        self.assertIn("### Unnumbered head\n", markdown)
+        self.assertNotIn("{#", markdown)
+
+    def test_description_labels_and_spacing_macros_survive(self) -> None:
+        markdown = self.convert(
+            "\\begin{description}[style=nextline,leftmargin=1.5em]\n"
+            r"\item[7 November 1831] Born at Corps."
+            "\n\\end{description}\n"
+            r"Need\enspace\properrefs{Int.}"
+            "\n"
+        )
+        self.assertIn("7 November 1831", markdown)
+        self.assertIn("Born at Corps.", markdown)
+        self.assertNotIn(":::", markdown)
+        self.assertIn("Need (*Int.*)", markdown)
+
     def test_unknown_macro_names_its_file_and_writes_nothing(self) -> None:
         with self.assertRaises(DRIVER.ConversionError) as raised:
             self.convert(r"Prose \dubiousclaim{silently deleted evidence}.")
@@ -146,6 +174,30 @@ class WebEditionAuditTests(unittest.TestCase):
         failures = DRIVER.audit_output("Prose.", self.minimal_markdown() + r"\rubric")
         self.assertTrue(
             any(failure.startswith("raw LaTeX left in output") for failure in failures)
+        )
+
+    def test_dropped_table_is_reported(self) -> None:
+        failures = DRIVER.audit_output("Prose.", self.minimal_markdown(), tables=2)
+        self.assertIn("2 table environments became 0 tables", failures)
+
+    def test_split_table_is_not_a_loss(self) -> None:
+        markdown = self.minimal_markdown() + "\n| a | b |\n|:--|:--|\n| 1 | 2 |\n"
+        self.assertEqual(DRIVER.audit_output("Prose.", markdown, tables=1), [])
+
+    def test_unconverted_block_is_reported(self) -> None:
+        failures = DRIVER.audit_output(
+            "Prose.", self.minimal_markdown() + "\n::: dossierframe\nText\n:::\n"
+        )
+        self.assertIn("unconverted block(s) left in output: dossierframe", failures)
+
+    def test_named_table_wrapper_counts_as_a_table(self) -> None:
+        definitions = (
+            r"\newenvironment{historytimeline}{%"
+            "\n  \\begingroup\\scriptsize\n  \\begin{longtable}{ll}}{\\end{longtable}}"
+        )
+        self.assertEqual(
+            DRIVER.table_count(r"\begin{historytimeline}\end{historytimeline}", definitions),
+            1,
         )
 
     def test_faithful_output_passes(self) -> None:

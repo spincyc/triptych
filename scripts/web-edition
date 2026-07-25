@@ -14,6 +14,13 @@ ROOT = Path(__file__).resolve().parents[1]
 SHIM = Path(__file__).resolve().parent / "web-shim.tex"
 SRC = ROOT / "src"
 OUT = ROOT / "build" / "web"
+# Every disabled extension names a construct the site's Markdown renderer would
+# print as literal punctuation: space-aligned tables, brace heading attributes,
+# `:   ` definitions, trailing-backslash breaks, and `$...$` math.
+MARKDOWN_DIALECT = (
+    "markdown-smart-simple_tables-multiline_tables-grid_tables"
+    "-header_attributes-definition_lists-escaped_line_breaks-tex_math_dollars"
+)
 
 # Control sequences pandoc either renders itself or may drop without losing
 # content.  Anything outside this set, the shim, and the document's own
@@ -73,6 +80,16 @@ FOOTNOTE_DEF_RE = re.compile(r"^\[\^[^\]]+\]:", re.MULTILINE)
 SAFE_PAYLOAD_RE = re.compile(r"^[A-Za-z0-9 .,()]+$")
 NOTE_MACRO_RE = re.compile(r"\\(?:endnote|footnote)\s*\{")
 CONTRIBUTION_RE = re.compile(r"\\AIModelContribution(?=\s*\{)")
+LAYOUT_MACRO_RE = re.compile(r"\\(?:titleformat|titlespacing)\*?")
+# pandoc's reader drops an enumitem option list and every \item label with it.
+LIST_OPTION_RE = re.compile(
+    r"(\\begin\s*\{(?:itemize|enumerate|description)\})\s*\[[^\[\]]*\]"
+)
+FENCED_DIV_RE = re.compile(r"^:::", re.MULTILINE)
+TABLE_ENVIRONMENT_RE = re.compile(r"\\newenvironment\*?\s*\{([A-Za-z@]+)\}")
+TABLE_STARTS = (r"\begin{longtable}", r"\begin{tabularx}", r"\begin{tabular}")
+OUTPUT_TABLE_RE = re.compile(r"^\|(?:[ :]*-{2,}[ :]*\|)+\s*$", re.MULTILINE)
+MATH_WARNING_RE = re.compile(r"^\[WARNING\] Could not convert TeX math", re.MULTILINE)
 DEFINE_RE = re.compile(r"\\(?:new|renew|provide)command\*?|\\(?:new|renew)environment\*?")
 
 
@@ -203,6 +220,32 @@ def deduplicate_contributions(body: str) -> str:
     return "".join(out)
 
 
+def strip_layout_macros(body: str) -> str:
+    """Drop in-body heading restyling, which carries no text and stops pandoc."""
+    out, index = [], 0
+    for match in LAYOUT_MACRO_RE.finditer(body):
+        if match.start() < index:
+            continue
+        cursor = match.end()
+        while True:
+            gap = body[cursor:]
+            skipped = len(gap) - len(gap.lstrip())
+            # A blank line ends the call; beyond it a group belongs to the text.
+            if "\n\n" in body[cursor : cursor + skipped]:
+                break
+            probe = cursor + skipped
+            if body[probe : probe + 1] == "{":
+                _, cursor = brace_group(body, probe)
+            elif body[probe : probe + 1] == "[":
+                cursor = body.index("]", probe) + 1
+            else:
+                break
+        out.append(body[index : match.start()])
+        index = cursor
+    out.append(body[index:])
+    return "".join(out)
+
+
 def defined_names(text: str) -> set[str]:
     return {name for match in DEFINITION_RE.finditer(text) for name in match.groups() if name}
 
@@ -224,9 +267,38 @@ def undefined_uses(sources: dict[Path, str], defined: set[str]) -> list[str]:
     return failures
 
 
-def audit_output(body: str, markdown: str) -> list[str]:
+def table_count(body: str, definitions: str) -> int:
+    """Count table environments the body opens, including named table wrappers."""
+    names = {"tabular", "tabularx", "longtable"}
+    for match in TABLE_ENVIRONMENT_RE.finditer(definitions):
+        cursor = match.end()
+        try:
+            while definitions[cursor:].lstrip()[:1] == "[":
+                cursor += definitions[cursor:].index("]") + 1
+            opening, _ = brace_group(definitions, cursor)
+        except (ConversionError, ValueError):
+            continue
+        if any(start in opening for start in TABLE_STARTS):
+            names.add(match.group(1))
+    return sum(
+        len(re.findall(r"\\begin\s*\{" + name + r"\}", body)) for name in sorted(names)
+    )
+
+
+def audit_output(body: str, markdown: str, tables: int = 0) -> list[str]:
     """Compare critical macro payloads in the LaTeX body against the Markdown."""
     failures = []
+    # A table pandoc could not write as a pipe table becomes an HTML table; a
+    # table it dropped becomes neither.  A repeated-header longtable may split
+    # into several tables, so only a shortfall is a loss.
+    written = len(OUTPUT_TABLE_RE.findall(markdown)) + markdown.count("<table")
+    if written < tables:
+        failures.append(f"{tables} table environments became {written} tables")
+    divs = sorted(
+        set(re.findall(r"^::: *\{?\.?([A-Za-z@-]+)", markdown, re.MULTILINE))
+    )
+    if divs:
+        failures.append("unconverted block(s) left in output: " + " ".join(divs))
     # Table cells and escapes reflow the text; flattening lets a payload be
     # searched for as the continuous run of words it is.
     flat = flatten(markdown.replace("|", " "))
@@ -256,7 +328,7 @@ def audit_output(body: str, markdown: str) -> list[str]:
     return failures
 
 
-def convert(provider: str, leaf: str) -> Path:
+def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
     main = SRC / provider / leaf / "main.tex"
     if not main.is_file():
         raise ConversionError(f"no such document: {main}")
@@ -268,11 +340,13 @@ def convert(provider: str, leaf: str) -> Path:
     body = assemble(tail, provider, sources)
     title, subtitle = pdf_metadata(preamble)
     body = TITLEPAGE_RE.sub("", body).replace(r"\tableofcontents", "")
+    body = strip_layout_macros(body)
+    body = LIST_OPTION_RE.sub(r"\1", body)
     body = deduplicate_contributions(body)
     if r"\TriptychRightsNotice" not in body:
         body += "\n\\TriptychRightsNotice\n"
     shim_text = SHIM.read_text(encoding="utf-8")
-    locals_text = local_definitions(preamble)
+    locals_text = LIST_OPTION_RE.sub(r"\1", local_definitions(preamble))
     failures = undefined_uses(sources, defined_names(shim_text + locals_text))
     if failures:
         raise ConversionError("\n".join(failures))
@@ -282,20 +356,25 @@ def convert(provider: str, leaf: str) -> Path:
             f"\\begin{{document}}\n{body}\n\\end{{document}}\n"
         )
         handle.flush()
-        # Source \section becomes H2 so the document title alone holds H1.
-        command = ["pandoc", "-f", "latex", "-t", "markdown", "--wrap=none",
+        # Source \section becomes H2 so the document title alone holds H1. The
+        # output dialect is narrowed to what the site's Markdown renderer reads:
+        # pipe tables only, no header attributes, and literal typography rather
+        # than ASCII stand-ins no downstream renderer would resolve.
+        command = ["pandoc", "-f", "latex", "-t", MARKDOWN_DIALECT, "--wrap=none",
                    "--shift-heading-level-by=1", handle.name]
         result = subprocess.run(command, capture_output=True, text=True)
     if result.returncode != 0:
         raise ConversionError(f"pandoc failed:\n{result.stderr.strip()}")
+    if MATH_WARNING_RE.search(result.stderr):
+        raise ConversionError(f"math left as raw TeX:\n{result.stderr.strip()}")
     markdown = result.stdout
-    failures = audit_output(body, markdown)
+    failures = audit_output(body, markdown, table_count(body, shim_text + locals_text))
     if failures:
         raise ConversionError("\n".join(failures))
     heading = f"# {title}\n"
     if subtitle:
         heading += f"\n*{subtitle}*\n"
-    destination = OUT / provider / f"{leaf}.md"
+    destination = out / provider / f"{leaf}.md"
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(f"{heading}\n{markdown}", encoding="utf-8")
     return destination
@@ -304,20 +383,26 @@ def convert(provider: str, leaf: str) -> Path:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--provider", required=True)
-    parser.add_argument("document", nargs="?")
+    parser.add_argument("documents", nargs="*")
     parser.add_argument("--all", action="store_true")
+    parser.add_argument(
+        "--output",
+        type=Path,
+        default=OUT,
+        help="write below this directory instead of build/web/",
+    )
     arguments = parser.parse_args()
     root = SRC / arguments.provider
     if arguments.all:
         leaves = sorted(str(p.parent.relative_to(root)) for p in root.rglob("main.tex"))
-    elif arguments.document:
-        leaves = [arguments.document.strip("/")]
+    elif arguments.documents:
+        leaves = [document.strip("/") for document in arguments.documents]
     else:
-        parser.error("give a document id or --all")
+        parser.error("give one or more document ids or --all")
     status = 0
     for leaf in leaves:
         try:
-            print(convert(arguments.provider, leaf))
+            print(convert(arguments.provider, leaf, arguments.output))
         except ConversionError as error:
             print(f"web-edition: {arguments.provider}/{leaf}\n{error}", file=sys.stderr)
             status = 1
