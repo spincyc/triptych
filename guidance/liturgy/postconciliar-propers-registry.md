@@ -88,7 +88,23 @@ Let `<proper-root>` mean `src/<provider>/liturgy/roman-rite/postconciliar/<editi
 | A `PC-R` cycle, form, or occurrence guide | `<proper-root>/general-calendar/<full-publication-slug>/` | Publishable leaf with `main.tex` |
 | Canonical `PC-R` Missal formulary owner | `<proper-root>/general-calendar/shared/formularies/<required-slug-stem>/` | Non-publishable shared source |
 
-The shared owner keeps the edition-specific verified Missal record, provenance, rights status, and any reusable source fragment. The publishable leaf owns its resolved liturgical-instance manifest, cycle-specific Lectionary audit, analysis, generation metadata, and PDF; it references or imports the shared owner and must not become a second owner of the formulary. For `PC-S26`–`PC-S57`, the corresponding `weeks/02`–`weeks/33` directory is the shared owner. A conditional Scrutiny leaf remains in the temporal Sunday queue but imports the Ritual Mass owner fixed above. Every import outside a publishable leaf requires an explicit cross-document build dependency, and a shared-source change requires rebuilding every consumer.
+The shared owner keeps the edition-specific verified Missal record, provenance, rights status, and any reusable source fragment. The publishable leaf owns its resolved liturgical-instance manifest, cycle-specific Lectionary audit, analysis, generation metadata, and PDF; it references or imports the shared owner and must not become a second owner of the formulary. A conditional Scrutiny leaf remains in the temporal Sunday queue but imports the Ritual Mass owner fixed above.
+
+Ownership is not optional, and for Ordinary Time it is computable. For `PC-S26`–`PC-S57` the owner is `weeks/NN`, where `NN` is the parent number minus 24 written in two digits: `PC-S26` takes `weeks/02`, `PC-S40` takes `weeks/16`, and `PC-S57` takes `weeks/33`. `PC-S58`, `PC-S59`, and `PC-S60` are Solemnities of the Lord with their own `shared/formularies/<required-slug-stem>/` owners and consume no `weeks/NN`. Create the owner before the first leaf that needs it; a leaf whose owner does not yet exist is not authorized. [Calendar computation](calendar-computation.md) owns this derivation and the annual week arithmetic behind it.
+
+A shared owner is a non-publishable source directory:
+
+```text
+<owner>/
+  propers/
+    verified.md
+```
+
+It has no `main.tex`, `generation-metadata.tex`, `web-edition.toml`, PDF mirror, or catalog entry. Add a focused finding aid such as `propers/retrieved.txt` only where the profile's evidence rules require one. One owner serves every cycle, form, occurrence, and permitted weekday consumer of that formulary; three cycle leaves under one parent share one owner and never three.
+
+The dividing test is the received Missal text and the evidence that fixes it, not the volume of prose. The owner alone carries the printed heading and rank, edition and reprint identity, printed pages and digital locators, checksums, variation audit, element boundaries, rights disposition, and collation date. The leaf carries the resolved instance, the ordered inventory of the actual celebration, Lectionary boundaries and cycle-specific branches, relationship classifications, and its own analysis; it names the owner and cites its result, but does not restate the owner's evidence, provenance, or analytic summaries in its own words. A leaf that would still serve as the collation record for the formulary if its owner were deleted has become a second owner; fail closed and move the record to the owner.
+
+Every import or reference outside a publishable leaf is an explicit cross-document build dependency, and a shared-source change requires rebuilding and re-reviewing every consumer.
 
 ### Formula targets, keys, and fixed order
 
@@ -112,7 +128,7 @@ The explicit registry order controls if these rules could otherwise admit more t
 
 `ABC` is a verified coverage marker, not a fourth Lectionary cycle. The manifest for a dated use still records the actual cycle `A`, `B`, or `C`, or `not applicable` when that celebration's readings are not cycle-governed. Formula keys are permanent, may not be reassigned, and are ordered by their semantic components rather than lexical sorting.
 
-Resolve the actual Sunday cycle from the liturgical year, which turns at the First Sunday of Advent, not from January 1 alone; one civil year normally contains the end of one Sunday cycle and the beginning of the next. Never infer the independent weekday cycle `I` or `II` from the Sunday letter, and never infer the Sunday letter from civil-year parity.
+Resolve the actual Sunday cycle and the independent weekday cycle by [calendar computation](calendar-computation.md), which owns that arithmetic. The cycle turns at the First Sunday of Advent, never at January 1, so one civil year normally contains the end of one Sunday cycle and the beginning of the next. Never infer the weekday cycle `I` or `II` from the Sunday letter, and never infer the Sunday letter from civil-year parity.
 
 The full publication slug is the parent's required stem followed by lowercase suffixes in the same order: `-year-a`, `-year-b`, or `-year-c` for `A`, `B`, or `C`; `-abc` for verified common coverage; then a literal form such as `-vigil`, `-extended-vigil`, `-night`, `-dawn`, or `-day`; then an exact listed occurrence such as `-december-30`, `-monday`, or `-sunday`. Never add a branch suffix, use anonymous `option-1`, use a generic `weekday`, or invent a Vigil suffix for an ordinary anticipated Sunday Mass. A multi-cycle compilation is a derivative publication, not a canonical formula target; it may not replace the separate keys below or use the former `-years-a-b-c` exception.
 
@@ -300,7 +316,7 @@ The fixed `temporal/shared/ordinary-time/weeks/01` through `weeks/34` layer owns
 - Weeks II–XXXIII are owned by the week layer and consumed by `PC-S26`–`PC-S57`. On an Ordinary Time weekday, use of that formulary or of orations from another Sunday is a permitted selection, not an assertion that the Sunday celebration continues unchanged.
 - The ordinary Week XXXIV formulary has no numbered Sunday consumer and is available for ferial use; the Sunday of Week XXXIV is `PC-S60` Christ the King, whose formulary is distinct.
 - The Roman Missal's *Tempus per annum* rubric 3(b) permits selection of any of the 34 Ordinary Time formularies—their antiphons and orations—on an eligible Ordinary Time feria; GIRM 363 separately permits orations from the preceding or another Ordinary Time Sunday. Chronological proximity does not make one of them automatically appointed.
-- The annual calendar determines the week resumed after Pentecost. When only thirty-three weeks occur, the first week that would otherwise resume is omitted so that the final eschatological weeks remain in place. A Sunday displaced by Pentecost, Trinity, Corpus Christi, or another celebration does not erase its numbered weekday week.
+- [Calendar computation](calendar-computation.md) fixes the week resumed after Pentecost, the thirty-three or thirty-four week count, and the week omitted in a thirty-three-week year so that the final eschatological weeks remain in place. An omitted week is not transferred, anticipated, or renumbered, and a Sunday displaced by Pentecost, Trinity, the Body and Blood of Christ, or another celebration does not erase its numbered weekday week. The competent annual calendar still governs the actual result.
 - Weekday readings remain the independent Lectionary cycle `I` or `II`, including their semi-continuous sequence. They are not imported from Sunday `A`, `B`, or `C`; an interruption and any permitted joining of omitted passages must be recorded in the resolved weekday instance.
 - Ferial use of an Ordinary Time formulary does not import Sunday readings, the Gloria, Creed, or Sunday Preface. Apply the Missal's Ordinary Time rubrics 4–6: retain the weekday Lectionary, omit the Gloria and Creed, use the applicable weekday Preface rule, and evaluate the Communion-antiphon option against the actual Gospel.
 - Seasonal weekdays retain their own appointed formularies and reading structures. Do not reuse a Sunday merely by analogy where the Missal provides proper seasonal weekday orations.
