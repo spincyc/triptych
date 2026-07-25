@@ -1,0 +1,108 @@
+schema = 1
+record_type = "bindings"
+document = "theology/mariology/rosary"
+
+# Claude edition. Bindings are catalog-level: the passage checks were
+# performed against live web transcriptions and page images (URLs, dates,
+# and collation records in research/source-audit.md and
+# research/prayer-text-audit.md), not against registered artifact bytes,
+# so no acquisition/inspection/verification state is claimed against the
+# source-library records themselves.
+
+[[bindings]]
+source_id = "edition.john-paul-ii.rosarium-virginis-mariae.english-vatican-web-2026-07-25"
+loci = ["1", "3", "7", "12", "15", "19", "20-23", "25", "28-38", "40-43"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Principal current teaching document: complete text read 2026-07-25; quotations at the listed sections, including the exact 'proposed addition' wording of 19 and the freedom clause of 38. Catalog-level binding; no exact artifact registered."
+
+[[bindings]]
+source_id = "edition.paul-vi.marialis-cultus.english-vatican-web-2026-07-25"
+loci = ["42-55"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Anatomy of the devotion: sections 42-55 read in full 2026-07-25; quotations recorded in source-audit.md. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.pius-v.consueverunt-romani-pontifices.english-papal-encyclicals-web-2026-07-25"
+loci = ["description of the Rosary form (section 1)", "editorial summary of the indult/indulgence grant", "dating clause (17 September 1569)"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Stabilizing act: partial English witness read in full 2026-07-25; short attributed clauses quoted; the witness's partiality, unnamed translator, and one corruption disclosed. Latin original not collated. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.leo-xiii.supremi-apostolatus-officio.english-vatican-web-2026-07-25"
+loci = ["3", "4", "8", "9"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "First Leonine Rosary encyclical: complete text read 2026-07-25; the received Dominic attribution reported as reception; 1883 indulgences reported as superseded history. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.pius-xii.ingruentium-malorum.english-vatican-web-2026-07-25"
+loci = ["8", "12-14"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Family-Rosary encyclical: complete text read 2026-07-25. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.apostolic-penitentiary.enchiridion-indulgentiarum.latin-vatican-web-2026-07-25"
+loci = ["concessio 17 § 1 with its Rosary definition note", "norma 18 § 1", "norma 20 § 1", "praenotanda 6-7"]
+role = "currentness-control"
+states = ["cataloged"]
+context = "Current indulgence discipline as of 2026-07-25: Latin read at the listed loci; provisions editorially summarized (never offered as official translation); Latin definition sentence quoted. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["971", "2678", "2708"]
+role = "official-control"
+states = ["cataloged"]
+context = "Current doctrinal placement of the Rosary; the three paragraphs read 2026-07-25 at the live Vatican IntraText English pages. The check was made against the live site, not the registered edition artifacts, so only catalog-level use is claimed."
+
+[[bindings]]
+source_id = "edition.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23"
+loci = ["59", "60", "66-67"]
+role = "official-control"
+states = ["cataloged"]
+context = "Doctrinal frame for Marian devotion and subordinate cooperation; quoted sentences read 2026-07-25 at the live Vatican English page. Catalog-level use only."
+
+[[bindings]]
+source_id = "edition.pius-xii.munificentissimus-deus.english-vatican-web-2026-07-25"
+loci = ["44"]
+role = "official-control"
+states = ["cataloged"]
+context = "Dogmatic status of the Assumption for the fourth glorious mystery; paragraph 44 read 2026-07-25 at the live Vatican English page. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.catholic-encyclopedia.volume-13.new-york-1912"
+loci = ["The Rosary (Thurston and Shipman)", "Feast of the Holy Rosary (Thurston)"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Principal historical scholarship: both articles read in full 2026-07-25 in the New Advent transcriptions (research/source-audit.md). Used as checked 1912 scholarship; underlying medieval sources and German/Bollandist literature not examined. Catalog-level binding of the container volume."
+
+[[bindings]]
+source_id = "edition.catholic-encyclopedia.volume-7.new-york-1910"
+loci = ["Hail Mary (Thurston)"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Textual history of the Hail Mary: article read in full 2026-07-25 in the New Advent transcription. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.catholic-encyclopedia.volume-5.new-york-1909"
+loci = ["Dominic of Prussia (Mougel)"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Carthusian clausulae: article read in full 2026-07-25 in the New Advent transcription. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.catholic-encyclopedia.volume-1.new-york-1907"
+loci = ["Alanus de Rupe (McNicholas)"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Alan de la Roche's dates, confraternities, and the non-historical character of his Dominic relations: article read in full 2026-07-25 in the New Advent transcription. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.third-plenary-council-of-baltimore.catechism-of-christian-doctrine-no-3.new-york-benziger-1921"
+loci = ["p. 5 (Prayers: Lord's Prayer, Angelical Salutation, Apostles' Creed)", "p. 44 (Q. 204, Doxology)", "pp. 240-241 (Q. 1078-1084, Rosary lesson)", "imprimatur and copyright leaf"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Sole witness for the four printed prayer texts and the recitation lesson: page images of the Internet Archive exemplar catechismofchris00unse collated 2026-07-25 (research/prayer-text-audit.md). Catalog-level binding; the exact scan bytes are not registered as an artifact."

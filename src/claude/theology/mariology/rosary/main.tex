@@ -1,0 +1,53 @@
+\input{common/preamble}
+\input{theology/mariology/rosary/format}
+
+\hypersetup{
+  pdftitle={The Holy Rosary: Form, Mysteries, History, and Teaching},
+  pdfsubject={A source-audited reference on the Rosary of the Blessed Virgin Mary: its prayer form, its twenty mysteries with scriptural anchors, its documented history, and its papal magisterium}
+}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+  \thispagestyle{empty}
+  \centering
+  \vspace*{0.12\textheight}
+  {\Huge\bfseries The Holy Rosary\par}
+  \vspace{0.9em}
+  {\Large Form, Mysteries, History, and Teaching\par}
+  \vspace{1.6em}
+  {\large A source-audited Mariological reference\par}
+  \vfill
+  {\small Triptych: AI Driven Studies in Catholic Faith, Worship, and Law\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+\pagenumbering{arabic}
+\hypersetup{pageanchor=true}
+
+\begin{deepstudy}
+\input{theology/mariology/rosary/sections/00-form-and-prayers}
+\input{theology/mariology/rosary/sections/20-mysteries}
+\input{theology/mariology/rosary/sections/30-history}
+\input{theology/mariology/rosary/sections/40-magisterium}
+\input{theology/mariology/rosary/sections/50-practice-and-discipline}
+\begingroup
+\parindent 0pt
+\theendnotes
+\endgroup
+\appendix
+\input{theology/mariology/rosary/sections/90-scope-status-qualifications}
+\input{theology/mariology/rosary/sections/99-references}
+\sectionguard
+\section{Generation Metadata}
+\input{theology/mariology/rosary/generation-metadata}
+\TriptychRightsNotice
+\end{deepstudy}
+
+\end{document}
