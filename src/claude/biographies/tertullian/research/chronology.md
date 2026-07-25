@@ -1,7 +1,7 @@
 # Tertullian — chronology record
 
-Provider: Anthropic Claude. All web checks 2026-07-24. Evidence classes as in
-the publication appendix (A/N/E/L/M/K/S).
+Provider: Anthropic Claude. Web checks 2026-07-24 and (deepening revision)
+2026-07-25. Evidence classes as in the publication appendix (A/N/E/L/M/K/S).
 
 Dates are claims. This record states, for each event, the source basis
 actually checked, competing views, and the confidence used in the publication.
@@ -99,6 +99,35 @@ actually checked, competing views, and the confidence used in the publication.
 14. **392/393 — Jerome's notice written** (*De viris illustribus*); **428 —
     Augustine's *De haeresibus*;** dates are standard for those works (K) and
     used only to class the witnesses as late.
+
+## Corpus dating policy (deepening revision, 2026-07-25)
+
+The publication's works inventory dates only the four anchored works
+(197 twin apologies; 207/208 Adversus Marcionem III; c. 211 De corona;
+after 14 Aug 212 Ad Scapulam). For all others it reports "undated" with the
+customary period label downgraded to what the text shows at the cited loci
+(New Prophecy signals present/absent/disputed). Basis: the Tertullian
+Project works page, checked 2026-07-25, states "All must date between
+190-220AD, but there is no agreement among scholars about a definitive
+dating or sequence"; its Montanist markers (7 works) were recorded as one
+witness to the customary sorting. A conventional c. 198–206 window for the
+catechetical cluster is entered in the publication table as convention only.
+
+## Transmission events (added 2026-07-25; L/K, per Tertullian Project census)
+
+15. **9th c. — Codex Agobardinus** (Paris BnF lat. 1622) copied; back half
+    since lost (13 of 21 promised works). Checked at
+    tertullian.org/manuscripts/.
+16. **by c. 1600 — Corpus Corbeiense manuscripts all lost** (the works
+    reckoned heretical). Same witness.
+17. **1521 — editio princeps** (Beatus Rhenanus, Basel, Froben), from the
+    Paterniacensis and the now-lost Hirsaugiensis. Checked at
+    tertullian.org/editions/rhenanus_1521.htm.
+18. **1545/1550 — Mesnart and Gelenius print** works whose manuscripts
+    subsequently vanished (incl. De ieiunio, De pudicitia). Checked at
+    tertullian.org/manuscripts/ and editions pages.
+19. **1890–1957 — CSEL critical volumes** (20, 47, 69, 70, 76). Checked at
+    libraryguides.helsinki.fi/tertullian.
 
 ## Competing chronologies preserved
 

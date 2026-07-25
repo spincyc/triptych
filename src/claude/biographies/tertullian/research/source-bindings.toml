@@ -6,41 +6,55 @@ document = "biographies/tertullian"
 # performed against live web transcriptions (URLs and dates in
 # research/source-audit.md), not against registered artifact bytes, so no
 # acquisition/inspection/verification state is claimed against the
-# source-library records themselves.
+# source-library records themselves. Loci checked 2026-07-24 (first edition)
+# and 2026-07-25 (deepening revision).
 
 [[bindings]]
 source_id = "edition.ante-nicene-fathers.volume-3.buffalo-1885"
 loci = [
-  "Apology 17; 37; 39; 50",
+  "Apology 2; 17; 18; 30; 37; 39; 40; 50",
+  "To the Nations 1.1; 1.7; 1.8",
+  "The Testimony of the Soul 1; 2; 5; 6",
+  "To the Martyrs 1-3",
   "To Scapula 2-5",
-  "The Chaplet 1; 3",
-  "On Baptism 1; 15; 17",
+  "An Answer to the Jews 1; 7",
+  "The Chaplet 1; 3; 11",
+  "On Idolatry 1; 14; 19",
+  "The Shows 4; 25; 30",
+  "On Baptism 1; 4; 7; 8; 15; 17; 18",
+  "On Prayer 1; 25; 29",
   "On Repentance 4; 7; 9",
   "Of Patience 1",
-  "Prescription Against Heretics 7; 36",
-  "Against Marcion 1.1; 1.15",
-  "Against Praxeas 1; 2; 27",
-  "On the Soul 9; 55",
-  "On the Resurrection of the Flesh 8",
+  "Prescription Against Heretics 7; 13; 36",
+  "Against Marcion 1.1; 1.15; 3.24; 4.2",
+  "Against Hermogenes 1; 2",
+  "Against the Valentinians 1; 3",
+  "On the Flesh of Christ 1; 5",
+  "Against Praxeas 1; 2; 3; 5; 8; 9; 25; 27",
+  "Scorpiace 1",
+  "A Treatise on the Soul 9; 20; 55; 58",
+  "On the Resurrection of the Flesh 1; 8",
 ]
 role = "translation-control"
 states = ["cataloged"]
-context = "Quotations of Tertullian's apologetic, doctrinal, and polemical works follow this public-domain 1885 translation as transcribed at New Advent and CCEL; each locus was read online 2026-07-24 (see research/source-audit.md). No exact artifact of this edition is registered, so this binding records catalog-level use of the edition identity only."
+context = "Quotations of Tertullian's apologetic, doctrinal, and polemical works follow this public-domain 1885 translation as transcribed at New Advent and CCEL; each locus was read online 2026-07-24 or 2026-07-25 (see research/source-audit.md). No exact artifact of this edition is registered, so this binding records catalog-level use of the edition identity only. At On Idolatry 19 both transcriptions garble one word; the standard printed reading is reported, not quoted."
 
 [[bindings]]
 source_id = "edition.ante-nicene-fathers.volume-4.buffalo-1885"
 loci = [
   "To His Wife 1.1; 2.8",
+  "On the Apparel of Women 1.1; 2.13",
   "On the Veiling of Virgins 1; 17",
   "On Exhortation to Chastity 7",
   "On Monogamy 1; 12",
   "On Fasting 1",
-  "On Modesty 1",
-  "On the Apparel of Women 1.1",
+  "On Modesty 1; 21",
+  "On Flight in Persecution 1; 9; 14",
+  "On the Pallium 1; 6",
 ]
 role = "translation-control"
 states = ["cataloged"]
-context = "Quotations of Tertullian's ascetic and disciplinary works follow this public-domain 1885 translation as transcribed at New Advent; each locus was read online 2026-07-24 (see research/source-audit.md). Catalog-level binding only; no exact artifact registered."
+context = "Quotations of Tertullian's ascetic and disciplinary works follow this public-domain 1885 translation as transcribed at New Advent and CCEL; each locus was read online 2026-07-24 or 2026-07-25 (see research/source-audit.md). Catalog-level binding only; no exact artifact registered."
 
 [[bindings]]
 source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
