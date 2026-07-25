@@ -37,6 +37,6 @@ each Mass.
 | 19 | **Fifth Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost.pdf) | — |
 | 20 | **Sixth Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost.pdf) | — |
 | 21 | **Seventh Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost.pdf) | — |
-| 22 | **Eighth Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.pdf) | — |
-| 23 | **Ninth Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.pdf) | — |
+| 22 | **Eighth Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.pdf) | [PDF](../doc/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.html) |
+| 23 | **Ninth Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.pdf) | [PDF](../doc/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.html) |
 | M01 | **The Nuptial Mass** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass.pdf) | — |
