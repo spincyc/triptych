@@ -20,4 +20,4 @@
 | 1846 · **La Salette: Apparition, Public Message, and Contested Secrets** | [PDF](../doc/gpt/theology/mariology/la-salette.pdf) | — | Apparition, investigations, public message, contested secrets, Roman acts, and reception. |
 | 1858 · **Lourdes: Apparitions, Immaculate Conception, and the Ministry of Healing** | [PDF](../doc/gpt/theology/mariology/lourdes.pdf) | — | Eighteen apparitions, Immaculate Conception, spring and baths, discernment, and cure judgments. |
 | 1859 · **Champion: Apparitions, Catechetical Mission, and Ecclesial Judgment** | [PDF](../doc/gpt/theology/mariology/champion.pdf) | — | Apparitions, Adele Brise's mission, the 1871 fire tradition, the 2010 judgment, and liturgical reception. |
-| 1917 · **Fátima: Event, Message, and Ecclesial Reception** | [PDF](../doc/gpt/theology/mariology/fatima.pdf) | — | Events, message, later devotional cycle, and ecclesial reception. |
+| 1917 · **Fátima: Event, Message, and Ecclesial Reception** | [PDF](../doc/gpt/theology/mariology/fatima.pdf) | [PDF](../doc/claude/theology/mariology/fatima.pdf) | Events, message, later devotional cycle, and ecclesial reception. |
