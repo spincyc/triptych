@@ -1,0 +1,97 @@
+schema = 1
+record_type = "bindings"
+document = "biographies/saint-augustine-of-hippo"
+
+# Claude edition. City of God bindings record real search and inspection
+# events against the exact tracked Dods 1871 artifacts and registered
+# passages. All other passage checks were performed against live web
+# transcriptions (URLs and dates in research/source-audit.md), so those
+# bindings remain catalog-level against the source-library records.
+
+[[bindings]]
+source_id = "edition.augustine.de-civitate-dei.dods-1871"
+loci = ["14.28", "15.22", "19.13", "22.30"]
+role = "translation-control"
+states = ["cataloged"]
+context = "Quotations of The City of God in the publication follow this 1871 Dods translation as retained in the repository's exact tracked artifacts. The edition identity controls the wording; the specific search and inspection events are recorded against the artifact and passage records below."
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45304-body-lf"
+role = "context"
+states = ["cataloged", "acquired", "searched"]
+context = "Direct textual use of the book 1 preface opening quoted in the publication. The work's registered locus grammar covers only numbered book.chapter loci and cannot express the preface, so this binding carries the search receipt under the context role instead of declaring an inexpressible machine locus. A literal raw-line locator search of the exact English volume I artifact found the opening sentence of the work's book 1 preface ('The glorious city of God is my theme in this work...') at physical line 584, and the surrounding preface lines 575-600 were read for context. The preface locus precedes the work's numbered chapter grammar, so no machine locus is declared. The search establishes presence of the quoted line, not any absence claim."
+search_scope = "Exact normalized Dods 1871 volume I artifact, books 1-13 and retained front matter."
+searched_on = "2026-07-25"
+search_mode = "raw-line-literal-casefold-v1"
+query = "The glorious city of God is my theme"
+method = "Replayable scripts/source-library physical-line literal search."
+matching_line_count = 1
+source_fingerprint = "sha256:3b6e07da2d1ed3cedf883f7671a37d82f99427badc4daa23239366798e78d34b"
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45305-body-lf"
+loci = ["14.28"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "searched"]
+context = "A literal raw-line locator search of the exact English volume II artifact found the two-loves sentence at physical line 1854, and the complete chapter body at lines 1851-1880 was read for the quotation's context. The search establishes presence of the quoted line, not any absence claim."
+search_scope = "Exact normalized Dods 1871 volume II artifact, books 14-22 and retained historical matter."
+searched_on = "2026-07-25"
+search_mode = "raw-line-literal-casefold-v1"
+query = "two cities have been formed by two loves"
+method = "Replayable scripts/source-library physical-line literal search."
+matching_line_count = 1
+source_fingerprint = "sha256:6bd16ca34656e4a17b7967a6b8ce070ebb4fdffa9b8c855088ab3e08e30bf996"
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45305-body-lf"
+loci = ["22.30"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "searched"]
+context = "A literal raw-line locator search of the exact English volume II artifact found the closing 'rest and see, see and love' sentence at physical line 21580, and the closing lines 21570-21594 of the work were read for context ('This is what shall be in the end without end'). The search establishes presence of the quoted line, not any absence claim."
+search_scope = "Exact normalized Dods 1871 volume II artifact, books 14-22 and retained historical matter."
+searched_on = "2026-07-25"
+search_mode = "raw-line-literal-casefold-v1"
+query = "rest and see, see and love"
+method = "Replayable scripts/source-library physical-line literal search."
+matching_line_count = 1
+source_fingerprint = "sha256:6bd16ca34656e4a17b7967a6b8ce070ebb4fdffa9b8c855088ab3e08e30bf996"
+
+[[bindings]]
+source_id = "passage.augustine.de-civitate-dei.dods-1871.15.22"
+loci = ["15.22"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The registered passage's full line range (artifact lines 3638-3687) was read on 2026-07-25 for the 'order of love' definition of virtue quoted in the publication's City of God section. The publication quotes the registered checked excerpt wording."
+source_fingerprint = "sha256:7bf1c1311f5340ebaffe612f9f557cb118ea37c2f2089929809a8262ac8d44f9"
+
+[[bindings]]
+source_id = "passage.augustine.de-civitate-dei.dods-1871.19.13"
+loci = ["19.13"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The registered passage's full line range (artifact lines 12863-12946) was read on 2026-07-25 for the 'tranquillity of order' peace analysis quoted in the publication's City of God section. The publication quotes the registered checked excerpt wording."
+source_fingerprint = "sha256:2f4dbc9e35831b62c2e7ad725662fe3ee594bf13b56d46d9be499c577c9786c8"
+
+[[bindings]]
+source_id = "edition.nicene-and-post-nicene-fathers.series-1-volume-1.new-york-1886"
+loci = [
+  "Confessions 1.1.1; 1.11.17; 2.3.5-8; 2.4.9; 3.1.1; 3.4.7; 3.5.9; 3.6.10; 3.11.19-3.12.21; 4.1.1; 4.2.2; 4.6.11; 5.3.3; 5.6.10-5.7.13; 5.8.15; 5.13.23-5.14.24; 6.1.1; 6.2.2; 6.3.3; 6.13.23; 6.15.25; 7.9.13-14; 7.21.27; 8.2.3-8.6.15; 8.7.17; 8.12.28-30; 9.2.2-4; 9.3.5; 9.6.14; 9.10.23-9.12.33; 10.27.38; 10.29.40",
+  "Letters 21; 93.2.5-6; 93.5.17; 133; 213",
+]
+role = "translation-control"
+states = ["cataloged"]
+context = "Quotations of the Confessions (Pilkington) and the letters (Cunningham) follow this public-domain 1886 translation as transcribed at New Advent; each locus was read online 2026-07-24/25 (see research/source-audit.md). The checks were made against the live transcriptions, not against registered artifact bytes of this edition, so this binding records catalog-level use of the edition identity only."
+
+[[bindings]]
+source_id = "edition.possidius.vita-augustini.weiskotten-1919"
+loci = ["pref", "1", "2", "3", "4", "5", "6", "7", "8", "10", "11", "12", "13", "18", "19", "20", "22", "23", "24", "26", "28", "29", "30", "31"]
+role = "translation-control"
+states = ["cataloged"]
+context = "Possidius's Vita Augustini, the principal contemporary external witness for Augustine's clerical life and death, is quoted from this public-domain 1919 Weiskotten translation as transcribed at tertullian.org; each chapter cited was read online 2026-07-24/25 (see research/source-audit.md). The checks were made against the live transcription, not against registered artifact bytes of this edition, so this binding records catalog-level use of the edition identity only."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["30"]
+role = "reception"
+states = ["cataloged"]
+context = "CCC 30, closing with the quotation of Confessions 1.1.1, documents official Catholic reception of Augustine's opening prayer; the paragraph was read at the live Vatican English archive page on 2026-07-24. The check was made against the live site, not against this edition's registered artifact bytes, so only catalog-level use is claimed."
