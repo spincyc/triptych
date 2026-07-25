@@ -8,9 +8,9 @@ These studies concern the books and calendar in force in 1962. They do not estab
 
 | Publication | ChatGPT | Claude | Focus |
 | --- | --- | --- | --- |
-| **The Ordinary and Order of the Mass** | [PDF](../doc/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.pdf) | — | Stable texts, ritual sequence, and theological exposition. |
-| **Assembling the Mass** | [PDF](../doc/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf) | — | Calendar, precedence, Mass classes, formularies, and commemorations. |
-| **The 1962 Roman Calendar** | [PDF](../doc/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.pdf) | — | Construction history and complete recurring universal and United States inventories. |
+| **The Ordinary and Order of the Mass** | [PDF](../doc/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.html) | — | Stable texts, ritual sequence, and theological exposition. |
+| **Assembling the Mass** | [PDF](../doc/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.html) | — | Calendar, precedence, Mass classes, formularies, and commemorations. |
+| **The 1962 Roman Calendar** | [PDF](../doc/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.html) | — | Construction history and complete recurring universal and United States inventories. |
 
 ## Altar Server Guides
 
@@ -32,8 +32,8 @@ each Mass.
 | --- | --- | --- | --- |
 | 15 | **Trinity Sunday** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/15-trinity-sunday.pdf) | — |
 | 16 | **Second Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/16-second-after-pentecost.pdf) | — |
-| 17 | **Third Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost.pdf) | — |
-| 18 | **Fourth Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost.pdf) | — |
+| 17 | **Third Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost.html) | — |
+| 18 | **Fourth Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost.html) | — |
 | 19 | **Fifth Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/19-fifth-after-pentecost.pdf) | — |
 | 20 | **Sixth Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost.pdf) | — |
 | 21 | **Seventh Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost.pdf) | — |

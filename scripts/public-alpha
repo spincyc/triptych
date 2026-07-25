@@ -64,6 +64,9 @@ WEB_PAGE_RE = re.compile(r"web/([a-z0-9-]+)/(.+)\.html")
 # declared provider set is enforced during validation so that a link to an
 # undeclared provider is a hard error rather than silently unmatched text.
 PDF_LINK_RE = re.compile(r"(?:\.\./)?doc/([a-z0-9-]+)/([^)#\s]+)\.pdf(?:#[^)]*)?")
+# Catalog links to a reviewed web edition. Catalog counting rules read only
+# PDF links, so a Read link never adds or moves a publication's one home.
+WEB_LINK_RE = re.compile(r"(?:\.\./)?web/([a-z0-9-]+)/([^)#\s]+)\.html(?:#[^)]*)?")
 CATALOG_PUBLICATION_ID_RE = re.compile(
     r"<!--\s*triptych-publication-id:\s*"
     r"(?:([a-z0-9-]+):)?"
@@ -1178,9 +1181,12 @@ def filter_catalog(
     def degrade_excluded_link(match: re.Match[str]) -> str:
         raw_target = match.group(2).strip()
         target = raw_target.split(maxsplit=1)[0]
-        pdf_match = PDF_LINK_RE.search(target)
-        if pdf_match and (pdf_match.group(1), pdf_match.group(2)) not in included_ids:
-            return "—"
+        # A web edition's Read link degrades with the PDF it accompanies; left
+        # alone it would point at a page this artifact never builds.
+        for pattern in (PDF_LINK_RE, WEB_LINK_RE):
+            edition = pattern.search(target)
+            if edition and (edition.group(1), edition.group(2)) not in included_ids:
+                return "—"
         return match.group(0)
 
     def marker_included(marker: tuple[str, str]) -> bool:
@@ -1205,6 +1211,8 @@ def filter_catalog(
                 # or absent edition's link degrades to an em dash.
                 line = MARKDOWN_LINK_RE.sub(degrade_excluded_link, line)
                 line = line.replace("**—**", "—").replace("*—*", "—")
+                # A degraded cell holding a PDF and its Read link keeps one dash.
+                line = re.sub(r"—(?:\s*·\s*—)+", "—", line)
             any_included = True
         elif markers:
             if not all(marker_included(marker) for marker in markers):
