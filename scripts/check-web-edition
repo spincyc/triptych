@@ -232,6 +232,11 @@ def main() -> int:
         "--document",
         help="audit one provider-relative leaf id instead of every discovered leaf",
     )
+    parser.add_argument(
+        "--list-eligible",
+        action="store_true",
+        help="print each validated eligible leaf id instead of the count summary",
+    )
     args = parser.parse_args()
     source_root = ROOT / "src" / args.provider
 
@@ -262,6 +267,12 @@ def main() -> int:
         for error in errors:
             print(f"web-edition error: {error}", file=sys.stderr)
         return 1
+
+    if args.list_eligible:
+        for record in records:
+            if record.eligibility == "eligible":
+                print(record.document)
+        return 0
 
     counts = {name: 0 for name in ELIGIBILITIES}
     for record in records:
