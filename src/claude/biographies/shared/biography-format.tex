@@ -43,3 +43,40 @@
 % Claim-local evidentiary caution, kept beside the claim it governs.
 \newcommand{\witnesslimit}[1]{%
   \begin{studyframe}\small #1\end{studyframe}}
+
+% Works-inventory table for corpus surveys: work identity, external date
+% anchor (or its absence), occasion or addressee, the customary period label
+% under review, and the loci actually cited in the study.
+\newenvironment{worksinventory}
+{\footnotesize
+ \begin{longtable}{>{\raggedright\arraybackslash}p{0.21\linewidth}
+                   >{\raggedright\arraybackslash}p{0.11\linewidth}
+                   >{\raggedright\arraybackslash}p{0.30\linewidth}
+                   >{\raggedright\arraybackslash}p{0.12\linewidth}
+                   >{\raggedright\arraybackslash}p{0.13\linewidth}}
+\toprule
+\textbf{Work} & \textbf{Date} & \textbf{Occasion} & \textbf{Period} & \textbf{Cited at}\\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot}
+{\end{longtable}}
+\newcommand{\workentry}[5]{#1 & #2 & #3 & #4 & #5\\[2pt]}
+
+% Received-tradition audit table for the terminal apparatus: the tradition,
+% its earliest located witness, the countervailing evidence, and the
+% treatment adopted in the publication.
+\newenvironment{traditionaudit}
+{\footnotesize
+ \begin{longtable}{>{\raggedright\arraybackslash}p{0.22\linewidth}
+                   >{\raggedright\arraybackslash}p{0.22\linewidth}
+                   >{\raggedright\arraybackslash}p{0.24\linewidth}
+                   >{\raggedright\arraybackslash}p{0.20\linewidth}}
+\toprule
+\textbf{Tradition} & \textbf{Earliest witness} & \textbf{Counter-evidence} & \textbf{Treatment}\\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot}
+{\end{longtable}}
+\newcommand{\traditionrow}[4]{#1 & #2 & #3 & #4\\[2pt]}

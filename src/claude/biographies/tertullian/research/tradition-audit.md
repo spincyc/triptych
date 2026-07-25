@@ -1,8 +1,10 @@
 # Tertullian — tradition audit
 
-Provider: Anthropic Claude. Web checks 2026-07-24. This record reviews
-received traditions about Tertullian: earliest located witness, later
-reception, historical status, and the treatment adopted in the publication.
+Provider: Anthropic Claude. Web checks 2026-07-24 and (deepening revision)
+2026-07-25. This record reviews received traditions about Tertullian:
+earliest located witness, later reception, historical status, and the
+treatment adopted in the publication. A summary table of items 1–8 and 10
+now also appears in the publication's terminal appendix.
 
 ## 1. "Presbyter of Carthage"
 
@@ -109,11 +111,13 @@ reception, historical status, and the treatment adopted in the publication.
 
 - "The blood of Christians is seed" (*Apology* 50) — checked; often
   misquoted as "…seed of the Church"; publication quotes ANF wording.
-- "Credo quia absurdum" — **not in Tertullian in that form**; the actual text
-  (*On the Flesh of Christ* 5) reads differently. Not used in the
-  publication; recorded here so its absence is deliberate. (Locus not
-  re-checked online in this research; the tag is therefore simply not
-  quoted at all.)
+- "Credo quia absurdum" — **not in Tertullian in that form**. Updated
+  2026-07-25: the locus was now checked in English (ANF, newadvent
+  0315.htm) and in Latin (thelatinlibrary.com): the text reads "prorsus
+  credibile est, quia ineptum est… certum est, quia impossibile." The
+  publication now quotes the real sentences, gives the Latin, and treats
+  the slogan's career as reception history (a page in the reception
+  section and a row in the appendix audit table).
 - "What has Athens to do with Jerusalem?" (*Prescription* 7) — checked;
   publication warns against reading it as a ban on philosophy.
 - "The flesh is the hinge of salvation" (*caro salutis est cardo*, *De
@@ -122,3 +126,31 @@ reception, historical status, and the treatment adopted in the publication.
   sentence quoted in the body.
 - "You are the devil's gateway" (*On the Apparel of Women* 1.1) — checked;
   treated as contested legacy, neither suppressed nor excused.
+
+## 11. "Tertullian edited the Passion of Perpetua" (added 2026-07-25)
+
+- **Earliest witness:** none ancient. A modern hypothesis (place, time,
+  style), found circulating in current scholarship (searches 2026-07-25);
+  the Passio's redactor is unnamed in the text itself (checked at
+  earlychristianwritings.com/text/perpetua.html).
+- **Status:** attribution without ancient support; widely doubted.
+  Publication reports it as a modern guess and asserts nothing.
+
+## 12. "First Latin Christian writer" vs Minucius Felix (added 2026-07-25)
+
+- **Reception:** the priority question between the *Octavius* and the
+  *Apology* is a standing scholarly dispute; the publication's
+  Latin-father section now raises it explicitly and leaves it open,
+  claiming only that the surviving *theological* corpus in Latin begins
+  with Tertullian.
+- **Status:** unresolved; treated as a limit on the received title.
+
+## 13. Customary "Montanist period" labels for the works (added 2026-07-25)
+
+- **Witness:** handbook convention; one located witness (Tertullian
+  Project works page, 7 works marked Montanist, checked 2026-07-25) plus
+  the texts' own signals at cited loci (Paraclete invoked, psychici
+  attacked).
+- **Status:** convention under review; the publication's inventory reports
+  "early/NP/disputed" only as verified at the loci read, and the dating
+  disclaimer ("no agreement among scholars") is quoted.
