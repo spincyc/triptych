@@ -1,0 +1,62 @@
+schema = 1
+record_type = "bindings"
+document = "articles/faith/the-due-return"
+
+[[bindings]]
+source_id = "work.thomas-aquinas.summa-theologiae"
+loci = [
+  "II-II.58.1.corpus",
+  "II-II.80.1.corpus",
+  "II-II.81.1.corpus",
+  "II-II.81.1.reply-1",
+  "II-II.81.2.corpus",
+  "II-II.81.4.corpus",
+  "II-II.81.5.corpus",
+  "II-II.81.5.reply-1",
+  "II-II.81.6.corpus",
+  "II-II.81.7.corpus",
+  "II-II.82.1.corpus",
+  "II-II.83.2.corpus",
+  "II-II.84.2.corpus",
+  "II-II.84.2.reply-2",
+  "II-II.85.1.sed-contra",
+  "II-II.85.1.corpus",
+  "II-II.85.1.reply-1",
+  "II-II.85.2.corpus",
+  "II-II.106.1.corpus",
+  "II-II.106.6.corpus",
+  "II-II.106.6.reply-1",
+  "II-II.106.6.reply-2",
+  "II-II.106.6.reply-3",
+]
+role = "textual-control"
+states = ["cataloged"]
+context = "These loci govern the article's adopted analysis of justice, the annexed virtues, religion, its elicited acts, sacrifice, and gratitude: the definition of justice (58.1), religion unable to render the equal due (80.1, citing Ps 115:12), religion's relation to God with its elicited and commanded acts (81.1), its status as virtue (81.2), special virtue (81.4), moral rather than theological virtue commanded by the theological virtues (81.5), chief of the moral virtues (81.6), worship profiting the worshipper alone (81.7), devotion (82.1), prayer within providence (83.2), twofold adoration and the profession of prostration (84.2), sacrifice of the natural law with its positive determination (85.1) and its sign-structure (85.2), and the ranked causes of debt with the exceeding, limitless debt of gratitude (106.1, 106.6). The authoring agent checked the English Dominican translation at New Advent for every locus and the Corpus Thomisticum Latin for II-II.58.1, 80.1, 81.7, 82.1, 83.2, and 85.1, all on 2026-07-24 (see research/source-audit.md). The repository's registered Leonine edition record covers only ST I qq. 1-49, so this binding remains at the work level; no collation against a printed edition or registered artifact is claimed, and the publication-local check is the verification ceiling asserted here."
+
+[[bindings]]
+source_id = "edition.augustine.de-civitate-dei.dods-1871"
+loci = ["10.5-6"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The article quotes De civitate Dei X.5 (divine non-need; the fountain and the light; the visible sacrament or sacred sign of an invisible sacrifice) and X.6 (the true-sacrifice definition; the redeemed city offered through the great High Priest; the sacrifice of Christians; the Church offered in the offering she makes) from the Dods 1871 translation. The authoring agent read the quoted wording on 2026-07-24 in this edition's tracked transcription artifact (pg45304-body-lf) at lines 15482-15609, the bounds recorded by the registered passage for locus 10.5-6, whose checked transcription of the true-sacrifice sentence the article's quotation matches exactly; the same wording was cross-checked against the New Advent transcription of the NPNF revision of this translation (see research/source-audit.md). This binding records the edition-level dependence without claiming to have replayed any central artifact fingerprint; the publication-local check is the verification ceiling asserted here."
+
+[[bindings]]
+source_id = "edition.first-vatican-council.dei-filius.latin-vatican-web-2026-07-24"
+loci = ["complete-text"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The article quotes the chapter 3 dependence sentence (Quum homo a Deo tamquam Creatore et Domino suo totus dependeat, et ratio creata increatae Veritati penitus subiecta sit, plenum revelanti Deo intellectus et voluntatis obsequium fide praestare tenemur) and inherits Part I's use of the chapter 1 creation teaching. The authoring agent fetched the same Holy See Latin page publication-locally on 2026-07-24 and extracted the quoted wording verbatim (see research/source-audit.md); the English rendering in the article is a labeled working gloss governed by the Latin. The page's chapter 3 prints 'psius' for 'ipsius' in a clause the article does not quote; this delivery-state defect is recorded in the audit rather than corrected silently. This binding records the edition-level dependence without claiming to have replayed any central artifact fingerprint; the publication-local check is the verification ceiling asserted here."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["2095-2109"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The article quotes CCC 2095 (charity leads us to render to God what we as creatures owe him in all justice; the virtue of religion), 2096-2097 (adoration the first act; the nothingness of the creature; worship setting man free from turning in on himself), 2100 (the one perfect sacrifice of Christ), and 2106 (immunity from coercion), and uses checked readings of 2098-2105 and 2107-2109 (prayer, sacrifice quoting Augustine, promises and vows with the CIC c. 1191 quotation, the social duty of religion, and religious freedom). The authoring agent fetched the official Vatican English page for these paragraphs publication-locally on 2026-07-24; the registered edition is the 2026-07-23 dated web state, and no material difference was observed at the cited loci. No central artifact fingerprint is claimed; the publication-local check is the verification ceiling asserted here."
+
+[[bindings]]
+source_id = "edition.second-vatican-council.dignitatis-humanae.english-vatican-web-2026-07-23"
+loci = ["1-3"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The article quotes Dignitatis humanae n. 1 (the untouched traditional Catholic doctrine on the moral duty toward the true religion; all men bound to seek and hold the truth), n. 2 (the declared right to religious freedom as immunity from coercion, persisting even in those who do not fulfill the obligation to seek the truth), and n. 3 (religious acts as internal, voluntary and free acts that no merely human power can command or prohibit). The authoring agent fetched the same Holy See English page publication-locally on 2026-07-24; the registered edition is the 2026-07-23 dated web state, no translator is named on the page, and the promulgated Latin remains the authoritative text, as the article's note states. No central artifact fingerprint is claimed; the publication-local check is the verification ceiling asserted here."
