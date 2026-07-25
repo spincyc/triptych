@@ -1,0 +1,141 @@
+# Roman Calendar Computation
+
+This file owns the recurring calendar arithmetic used across the liturgy collections: the movable anchors, the Sunday and weekday Lectionary cycles, postconciliar Ordinary Time numbering, and the 1962 Epiphany-and-Pentecost Sunday mechanism. Under the one-authoritative-source rule in [repository rules](../repository.md), every other profile, registry, publication, and tracked record references these rules rather than restating them; a rule that changes changes here first.
+
+It is not a genre profile. [Roman calendar references](roman-calendar-references.md) governs published calendar histories and inventories; [the 1962 proper-guide profile](roman-1962-propers.md), [the 1962 assembly profile](roman-1962-assembly.md), [the postconciliar proper-guide profile](postconciliar-propers.md), and [the postconciliar proper registry](postconciliar-propers-registry.md) govern their own documents. Each must agree with this file, and a published calendar reference that disagrees is corrected here or there, never left divergent.
+
+Computation is a finding aid, never an authority. The competent General, territorial, diocesan, religious, parish, and church calendar, the approved books, and the competent annual Ordo control an actual celebration. Compute, then verify against a dated official witness, record both in the tracked instance record, and fail closed on disagreement: state the divergence and resolve nothing by preference. Never publish a computed date as its own occurrence witness, and never compute a territorial transfer — Epiphany, Ascension, and the Body and Blood of Christ move only by the competent authority's actual decision.
+
+## Fixed anchors
+
+- The liturgical year turns at the **First Sunday of Advent**, which under Universal Norms 40 begins with Evening Prayer I of "the Sunday falling on or closest to 30 November." That Sunday is the fourth before December 25 and falls November 27 through December 3; the two formulations agree in every year. Every cycle, count, and year label below turns on it, not on January 1.
+- Universal Norms 6 permanently assigns four Sundays: the Sunday within the Octave of Christmas to the Holy Family, the Sunday after January 6 to the Baptism of the Lord, the Sunday after Pentecost to the Most Holy Trinity, and the last Sunday in Ordinary Time to Christ the King. Universal Norms 7 assigns the Epiphany, the Ascension, and the Body and Blood of Christ to a Sunday only where they are not observed as holy days of obligation — a decision of the competent authority, never a computation.
+- **Easter** is the Sunday after the first ecclesiastical full moon falling on or after March 21, by the Gregorian computus. Do not approximate it, and do not carry an astronomical full moon into the ecclesiastical rule.
+- Derive the remaining movable anchors from Easter by fixed offsets in days:
+
+| Day | Offset from Easter | Note |
+| --- | ---: | --- |
+| Septuagesima | −63 | Sunday; 1962 only |
+| Ash Wednesday | −46 | Wednesday |
+| Ascension, Thursday form | +39 | The fortieth day of Easter |
+| Ascension, transferred Sunday form | +42 | Only where the competent authority actually transfers it |
+| Pentecost | +49 | Sunday |
+| Trinity Sunday | +56 | Sunday after Pentecost |
+| Body and Blood of Christ, Thursday form | +60 | Thursday after Trinity |
+| Body and Blood of Christ, transferred Sunday form | +63 | Only where the competent authority actually transfers it, as in the United States |
+
+Worked anchors, checked against the Gregorian computus:
+
+| Civil year | Easter | Ash Wednesday | Septuagesima | Pentecost | Trinity | First Sunday of Advent | Sunday before Advent |
+| ---: | --- | --- | --- | --- | --- | --- | --- |
+| 2024 | March 31 | February 14 | January 28 | May 19 | May 26 | December 1 | November 24 |
+| 2025 | April 20 | March 5 | February 16 | June 8 | June 15 | November 30 | November 23 |
+| 2026 | April 5 | February 18 | February 1 | May 24 | May 31 | November 29 | November 22 |
+| 2027 | March 28 | February 10 | January 24 | May 16 | May 23 | November 28 | November 21 |
+| 2028 | April 16 | March 1 | February 13 | June 4 | June 11 | December 3 | November 26 |
+
+## Sunday Lectionary cycle A, B, C
+
+The three-year cycle and its determination are fixed by the General Introduction to the Lectionary at no. 66.2 and its note: "The letter C designates a year whose number is divisible into three equal parts… Obviously each cycle runs in accord with the plan of the liturgical year, that is, it begins with the First Week of Advent, which falls in the preceding year of the civil calendar."
+
+Let `Y` be the civil year in which the liturgical year **ends** — the year of its January through November, which is the year the Introduction numbers, not the year of its Advent. Then:
+
+`Y mod 3 = 1` is Year A; `Y mod 3 = 2` is Year B; `Y mod 3 = 0` is Year C.
+
+Equivalently, the cycle beginning at the First Sunday of Advent of civil year `y` is fixed by `(y + 1) mod 3`. The cycle changes at that Sunday and nowhere else, so one civil year normally carries the end of one cycle and the beginning of the next. Record both the letter and the exact interval it governs. The Introduction's own worked series — 1980 Year C, 1981 Year A, 1982 Year B, 1983 Year C — satisfies the same arithmetic.
+
+| Liturgical year | Interval | `Y` | `Y mod 3` | Sunday cycle |
+| --- | --- | ---: | ---: | --- |
+| Advent 2023 – November 2024 | 2023-12-03 – 2024-11-30 | 2024 | 2 | B |
+| Advent 2024 – November 2025 | 2024-12-01 – 2025-11-29 | 2025 | 0 | C |
+| Advent 2025 – November 2026 | 2025-11-30 – 2026-11-28 | 2026 | 1 | A |
+| Advent 2026 – November 2027 | 2026-11-29 – 2027-11-27 | 2027 | 2 | B |
+
+Never infer the letter from civil-year parity, from the weekday cycle, from a January date, or from a neighbouring document. A celebration whose readings are not cycle-governed records `not applicable`, not a letter.
+
+## Weekday Lectionary cycle I and II
+
+The General Introduction to the Lectionary at no. 69.4 fixes it: "For the thirty-four weeks of Ordinary Time, the gospel readings are arranged in a single cycle, repeated each year. But the first reading is arranged in a two-year cycle and is thus read every other year. Year I is used during odd-numbered years; Year II, during even-numbered years."
+
+The weekday cycle is therefore keyed to the parity of the same `Y`: odd is Cycle I, even is Cycle II. It turns at the First Sunday of Advent together with the Sunday cycle and is otherwise **independent of it**.
+
+The two cycles have periods 3 and 2, so their pairing repeats only every six years and neither ever determines the other. Year A falls with Cycle II in the year ending 2026 and with Cycle I in the year ending 2029:
+
+| `Y` | 2024 | 2025 | 2026 | 2027 | 2028 | 2029 | 2030 | 2031 | 2032 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Sunday | B | C | A | B | C | A | B | C | A |
+| Weekday | II | I | II | I | II | I | II | I | II |
+
+Never derive `I` or `II` from a Sunday letter, never carry a Sunday letter onto a weekday, and never assign a weekday cycle to a Sunday celebration. The weekday cycle governs the Ordinary Time ferial course alone: under the same Introduction at nos. 69.2 and 69.3, Lent has its own principles and the weekdays of Advent, Christmas Time, and Easter Time repeat the same readings each year. A weekday use of a Sunday or week formulary is a separate liturgical instance with its own independently resolved weekday Lectionary path.
+
+## Postconciliar Ordinary Time numbering
+
+Universal Norms 43 states that "thirty-three or thirty-four weeks remain in the yearly cycle," and Universal Norms 44 fixes the boundaries: Ordinary Time "begins on Monday after the Sunday following 6 January and continues until Tuesday before Ash Wednesday inclusive. It begins again on Monday after Pentecost and ends before Evening Prayer I of the First Sunday of Advent." The Missal and Lectionary nevertheless supply thirty-four formularies and thirty-four weekday weeks, so one week's material goes unused in a thirty-three-week year.
+
+Neither norm states which week is unused, because none needs to. Ordinary Time weeks are Sunday-first and are anchored at **both** ends; the omission is a consequence of the two anchors, not a separate rubric. Do not count forward from one anchor alone.
+
+1. **Week I** is the week in which the Baptism of the Lord falls. Its Sunday is the Baptism, and Ordinary Time begins the following Monday; where a Sunday-transferred Epiphany falls on January 7 or 8 the Baptism is celebrated on Monday, week I's Sunday is that Epiphany, and Ordinary Time begins Tuesday. Week I therefore never has a numbered Sunday, and there is no First Sunday in Ordinary Time.
+2. Numbering continues weekly to the week containing Ash Wednesday, which is truncated at the Tuesday before it. Call that last pre-Lenten week `L`.
+3. **Week XXXIV** is the week whose Sunday is Our Lord Jesus Christ, King of the Universe — the Sunday before the First Sunday of Advent — and it ends on the Saturday before Advent.
+4. Ordinary Time resumes on the Monday after Pentecost. The **resumed week** `R` is the week whose Sunday is Pentecost, so that its weekdays are the first to resume:
+
+   `R = 34 − (Sunday before Advent − Pentecost) ÷ 7 weeks`
+
+5. `R = L + 1` gives thirty-four weeks and no omission. `R = L + 2` gives thirty-three: week `L + 1` **never occurs**. Its Missal formulary, its weekday Lectionary passages, and its numbered Sunday are omitted, not transferred, anticipated, or folded into an adjacent week, so that the final eschatological weeks keep their place. Record any permission actually used to join omitted weekday passages; do not assume one.
+6. Solemnities occupy the Sunday of a numbered week without erasing it. The Sunday of week `R` is Pentecost; of `R + 1`, the Most Holy Trinity; of `R + 2`, the Most Holy Body and Blood of Christ where the competent authority transfers it to Sunday, and otherwise the numbered Ordinary Time Sunday; of week XXXIV, Christ the King. The weekdays of those weeks keep their numbers and their ferial Lectionary.
+
+| Civil year | Baptism | `L` | Pentecost | `R` | Weeks | Omitted week | First numbered Sunday after Pentecost, U.S. |
+| ---: | --- | ---: | --- | ---: | ---: | ---: | --- |
+| 2024 | January 8 (Monday) | 6 | May 19 | 7 | 34 | none | June 9, week X |
+| 2025 | January 12 | 8 | June 8 | 10 | 33 | 9 | June 29, week XIII |
+| 2026 | January 11 | 6 | May 24 | 8 | 33 | 7 | June 14, week XI |
+| 2027 | January 10 | 5 | May 16 | 7 | 33 | 6 | June 6, week X |
+| 2028 | January 9 | 8 | June 4 | 9 | 34 | none | June 25, week XII |
+
+The 2026 line is corroborated by the edition's own tracked occurrence record, which resolves Trinity to the Ninth and the Body and Blood of Christ to the Tenth Sunday's date and the Eleventh Sunday to 2026-06-14, and by the United States Conference's published calendar for that year.
+
+### Identity mapping
+
+For `PC-S26` through `PC-S57` the Ordinary Time Sunday number and the shared formulary owner are computable and independently checkable:
+
+`Ordinary Time Sunday = parent number − 24`, and the owner directory is `temporal/shared/ordinary-time/weeks/NN` with `NN` that Sunday number written in two digits.
+
+`PC-S58`, `PC-S59`, and `PC-S60` are Solemnities of the Lord with their own formularies and owners; they consume no `weeks/NN` directory. Weeks 01 and 34 have no numbered Sunday consumer. The parallel Lectionary-number check, target counts, keys, and slugs remain in [the postconciliar proper registry](postconciliar-propers-registry.md).
+
+An identity whose week is omitted in a given year, or whose Sunday is replaced by a higher celebration, keeps its permanent identity and its source work. Absence in one civil year is an occurrence result, never a target disposition and never a renumbering.
+
+## 1962 Sunday computation
+
+The 1962 temporal Sundays are likewise anchored at both ends of the after-Pentecost run.
+
+- **Sundays after Epiphany** run from the Sunday following January 6 to the Sunday before Septuagesima. Their count `E` ranges from one to six. The first always occurs and carries the Feast of the Holy Family, because January 7 through 13 always contains exactly one Sunday.
+- **Sundays after Pentecost** run from Trinity Sunday, which is the first, to the Sunday before the First Sunday of Advent, which is the last. Their count `P` ranges from twenty-three to twenty-eight.
+- The Missal prints twenty-four formularies after Pentecost, and the **last Sunday after Pentecost always uses the twenty-fourth formulary**. Where `P` exceeds twenty-four, `P − 24` formularies of the unused Sundays after Epiphany are resumed between the twenty-third and that last Sunday, as the Missal directs.
+- Because `P − 24` never exceeds four, only the Third through Sixth Sundays after Epiphany are ever resumed. These are the `46R` through `49R` catalog identities in the 1962 proper-guide profile, each a separately sourced variant that joins the Epiphany orations, Epistle, and Gospel to the chants appointed for resumed use.
+- Over 1900–2100 the surplus `(6 − E) − (P − 24)` is always zero or one: the unused Epiphany formularies equal the resumption slots, or exceed them by exactly one. In the latter case one unused formulary is simply not said that year. Which one is dropped, the order in which the resumed Masses are taken, and the disposition of the twenty-third formulary where `P` is twenty-three are settled by the Missal's own rubric and the 1960 general rubrics; read that rubric and cite it rather than inferring the arrangement from the count.
+
+| Civil year | `E` | `P` | Unused after Epiphany | Resumption slots |
+| ---: | ---: | ---: | ---: | ---: |
+| 2024 | 3 | 27 | 3 | 3 |
+| 2025 | 5 | 24 | 1 | 0 |
+| 2026 | 3 | 26 | 3 | 2 |
+| 2027 | 2 | 27 | 4 | 3 |
+| 2028 | 5 | 25 | 1 | 1 |
+
+The 1962 system has no Lectionary cycle: formulary and readings are appointed together and repeat annually. Never import an A/B/C or I/II label into a 1962 record, and never project a postconciliar week number, season boundary, or Ordinary Time term onto the 1962 calendar or the reverse.
+
+## Recording and gates
+
+Every dated instance record states the computed anchors it used, the dated official witness that confirmed them, the resolved Sunday cycle with its exact interval, the independently resolved weekday cycle where applicable, and any unresolved territorial or proper-calendar overlay. Before publishing a dated occurrence, verify that:
+
+- the liturgical-year boundary, not a civil-year boundary, fixed the cycle letter, and the weekday numeral was resolved independently;
+- the Ordinary Time week number agrees with both anchors and any omitted week is recorded as omitted rather than shifted;
+- a territorial transfer is carried by an actual competent decision, not by arithmetic;
+- the computed result agrees with the competent calendar or Ordo, or the disagreement is recorded and publication fails closed; and
+- no other guidance file, registry, or publication restates these rules in a form that can drift from this one.
+
+## Sources and open points
+
+These rules were checked on 25 July 2026 against the bishops' approved English [Universal Norms on the Liturgical Year and the Calendar](https://www.liturgyoffice.org.uk/Resources/GIRM/Documents/GNLY.pdf), especially nos. 6, 7, 37, 38, 40, 43, and 44; the approved [General Introduction to the Lectionary](https://www.liturgyoffice.org.uk/Resources/GIRM/Documents/Lectionary.pdf), especially nos. 66, 67, and 69 with their notes; the Holy See's [General Instruction of the Roman Missal](https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20030317_ordinamento-messale_en.html); and Paul VI's [*Mysterii Paschalis*](https://www.vatican.va/content/paul-vi/la/motu_proprio/documents/hf_p-vi_motu-proprio_19690214_mysterii-paschalis.html). Every worked table above was recomputed from the Gregorian computus and cross-checked against the repository's own tracked calendar references and dated occurrence records.
+
+The following remain unverified against a primary rubric and must be read from the books before a leaf relies on them: the norm putting the Baptism of the Lord on Monday where a Sunday-transferred Epiphany falls on January 7 or 8, and the Ordinary Time week that then begins on Tuesday; the 1962 Missal's own direction on the order in which resumed post-Epiphany Masses are taken and which unused formulary is dropped where the count exceeds the slots; and the disposition of the twenty-third formulary where only twenty-three Sundays after Pentecost occur. State the rubric and its locus in the leaf's records when it is read; do not settle any of them by the arithmetic alone.
