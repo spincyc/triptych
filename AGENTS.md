@@ -97,6 +97,8 @@ Preserve the provider hierarchy under `src/<provider>/`; the present providers a
 - Provider-neutral reusable external-source records and lawful retained
   artifacts belong under `src/sources/` and follow `guidance/sources.md`.
 - Reviewed, publishable PDFs belong under `doc/`.
+- Reviewed, publishable web editions belong under `web/`, generated from the
+  same sources and governed by `guidance/web-editions.md`.
 - LaTeX intermediates, logs, caches, and other reproducible artifacts belong only under ignored `build/`.
 - Shared theological or typesetting text has one authoritative source and is imported by its consumers; do not create drifting copies.
 - Never use `doc/` as a build directory or treat `build/` as an authoritative input.
