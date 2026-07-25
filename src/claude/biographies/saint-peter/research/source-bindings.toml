@@ -1,0 +1,42 @@
+schema = 1
+record_type = "bindings"
+document = "biographies/saint-peter"
+
+# Claude edition. Except for Pastor aeternus (below), bindings are
+# catalog-level: passage checks were performed against live web
+# transcriptions (URLs and dates in research/source-audit.md), not against
+# registered artifact bytes, so no acquisition/inspection/verification
+# state is claimed against those source-library records themselves.
+
+[[bindings]]
+source_id = "passage.first-vatican-council.pastor-aeternus.latin-vatican-web-2026-07-24.complete-text"
+loci = ["complete-text"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete official Latin constitution was re-retrieved from the Holy See's URL on 2026-07-25 and found byte-identical (SHA-256 032a5f65...) to the registered restricted artifact; the proem, chapter 1 (Mt 16:16-19 and Jn 21:15-17 citations, 'Pasce agnos meos: Pasce oves meas'), chapter 2 ('perpetuos successores'), chapter 3, and chapter 4 (the ex cathedra definition, 'irreformabiles') were read for the publication's bounded statement of Petrine doctrine as ecclesial reception (class M). The publication quotes brief Latin phrases and marks its English rendering of the definition as project paraphrase."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:7a35a01851492752ef57647eb311d777b8e1e0262c88e3028411460b4cf80016"
+
+[[bindings]]
+source_id = "edition.ante-nicene-fathers.volume-1.buffalo-1887"
+loci = [
+  "Ignatius, Epistle to the Romans 4 (middle/'shorter' recension)",
+  "Irenaeus, Against Heresies 3.1.1; 3.3.2-3",
+]
+role = "translation-control"
+states = ["cataloged"]
+context = "Quotations of Ignatius and Irenaeus follow this public-domain 1885/1887 translation volume as transcribed at New Advent; each locus was read online 2026-07-25 (see research/source-audit.md). The checks were made against the live transcriptions, not against registered artifact bytes of this edition, so this binding records catalog-level use of the edition identity only. New Advent attributes its 1 Clement text to ANF vol. 9 (Keith), for which no central record exists; that attribution is recorded in the References."
+
+[[bindings]]
+source_id = "edition.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887"
+loci = ["3.1.1", "3.3.2-3"]
+role = "translation-control"
+states = ["cataloged"]
+context = "The Against Heresies loci quoted for the Roman foundation-and-succession tradition were read in the New Advent transcription of this registered edition on 2026-07-25; catalog-level identity use only. The repository's registered passages for this edition cover book 4 and were not used."
+
+[[bindings]]
+source_id = "edition.catholic-church.calendarium-romanum-generale.latin-missale-romanum-typica-tertia-2002"
+loci = ["29 June (Ss. Petri et Pauli); 22 February (Cathedrae S. Petri); 18 November (dedication)"]
+role = "lead"
+states = ["cataloged"]
+context = "Identity lead for the publication's current-calendar sentence. The controlling Missale artifact is restricted and was not inspected for this publication; the feast statements in the text rest on the checked 1908/1912 Catholic Encyclopedia articles for the cult's history and carry the 2026-07-25 mutable-fact cutoff for present observance."

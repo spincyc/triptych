@@ -1,0 +1,58 @@
+\input{common/preamble}
+\input{biographies/shared/biography-format}
+
+\hypersetup{
+  pdftitle={Saint Peter: The Fisherman and the Keys},
+  pdfsubject={A source-first historical biography of Saint Peter the Apostle}
+}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+  \thispagestyle{empty}
+  \centering
+  \vspace*{0.12\textheight}
+  {\Huge\bfseries Saint Peter\par}
+  \vspace{0.9em}
+  {\Large The Fisherman and the Keys\par}
+  \vspace{1.6em}
+  {\large A source-first historical biography\par}
+  \vfill
+  {\small Triptych: AI Driven Studies in Catholic Faith, Worship, and Law\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+\pagenumbering{arabic}
+\hypersetup{pageanchor=true}
+
+\begin{deepstudy}
+\input{biographies/saint-peter/sections/00-question}
+\input{biographies/saint-peter/sections/10-galilee}
+\input{biographies/saint-peter/sections/20-call}
+\input{biographies/saint-peter/sections/30-confession}
+\input{biographies/saint-peter/sections/40-denials}
+\input{biographies/saint-peter/sections/50-easter}
+\input{biographies/saint-peter/sections/60-jerusalem}
+\input{biographies/saint-peter/sections/70-antioch}
+\input{biographies/saint-peter/sections/80-writings}
+\input{biographies/saint-peter/sections/90-rome}
+\input{biographies/saint-peter/sections/100-legends}
+\input{biographies/saint-peter/sections/110-tomb}
+\input{biographies/saint-peter/sections/120-reception}
+\input{biographies/saint-peter/sections/130-conclusion}
+\appendix
+\input{biographies/saint-peter/sections/140-scope-chronology-evidence}
+\input{biographies/saint-peter/sections/150-references}
+\clearpage
+\section{Generation Metadata}
+\input{biographies/saint-peter/generation-metadata}
+\TriptychRightsNotice
+\end{deepstudy}
+
+\end{document}
