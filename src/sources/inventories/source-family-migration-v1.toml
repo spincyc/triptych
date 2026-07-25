@@ -5,10 +5,10 @@ inventory_path = "src/sources/inventories/publications-v1.toml"
 inventory_snapshot = "sha256:1c3354be172feca3ac796836318ecc2a8f4bbbff2fd889b975f5894fbf192fcc"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:2947c8f04bd1936f250fa112de037da4be866b8a78b9c272d295ade2645dfc74"
-canonical_catalog_snapshot = "sha256:7b6f06c672ca1c9abc25a028636ca57443f2cb43d68fa26408d8bff46f48355f"
+canonical_catalog_snapshot = "sha256:3ac2c4cd9890737218eeb5886ae5ccf285904688f9919c24f3488a93055eaa57"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:5446ec44c9a695e77945ae24887750ebb816685abca45ee62090cbb26f15666d"
+snapshot = "sha256:20ef2e5012c568739905e95944dbecb2662a6fe05f58648518b1365b11948087"
 
 [[families]]
 id = "family.acta.aas-ass"
@@ -49,6 +49,26 @@ canonical_ids = ["artifact.ante-nicene-fathers.volume-1.buffalo-1887.ia-djvu-ocr
 trace_patterns = ["(?:Ante-Nicene Fathers|\\bANF\\b).{0,24}vol(?:ume)?\\.?\\s*1(?!\\d)(?:.{0,24}(?:Buffalo|1887))?", "ante-nicene-fathers\\.volume-1\\.buffalo-1887"]
 reviewed_on = "2026-07-25"
 notes = "This exact anthology-volume family owns the shared Buffalo 1887 container and its three digitized artifacts. Constituent works and translated editions remain separate canonical families, so one retained OCR, page map, and remote facsimile can support bounded reuse without collapsing Justin, Irenaeus, or later constituents into the container."
+
+[[families]]
+id = "family.apostolic-penitentiary.enchiridion-indulgentiarum"
+label = "Apostolic Penitentiary, Enchiridion Indulgentiarum"
+kind = "work"
+source_categories = ["canon-law", "magisterial"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "expression", "language"]
+artifact_availability = "candidate-complete"
+storage_plan = ["restricted"]
+rights_review = "partially-reviewed"
+mutability = "serial"
+freshness_rule = "Treat each numbered typical edition as fixed, identify the exact edition behind any delivery state, and recheck the discipline in force before any present-tense indulgence claim."
+evidence_ceiling = "edition-locus"
+disposition = "canonicalize"
+priority = "p2"
+canonical_ids = ["edition.apostolic-penitentiary.enchiridion-indulgentiarum.latin-vatican-web-2026-07-25", "work.apostolic-penitentiary.enchiridion-indulgentiarum"]
+trace_patterns = ["(?:Enchiridion Indulgentiarum|enchiridion-indulgentiarum|Manual of Indulgences)"]
+reviewed_on = "2026-07-25"
+notes = "The Apostolic Penitentiary's official collection of indulgence norms and concessions, first issued in 1968 under Paul VI's constitution Indulgentiarum doctrina and reissued in numbered typical editions, owns its catalog-level work and the dated 2026-07-25 Vatican Latin web state of the fourth edition (decree of 16 July 1999), whose norms N. 1-36 and concessions 1-33 are the locus system and whose Rosary grant is concession 17 § 1. The succession of typical editions makes the work a normative serial: each edition is fixed once issued, but the discipline in force can change, so consumers date their claims to an edition. The web delivery exhibits minor spacing corruptions that belong to the transcription rather than the printed edition, no exact artifact is registered, any capture of the copyrighted Vatican page would be stored restricted, and the English Manual of Indulgences remains an unregistered expression."
 
 [[families]]
 id = "family.aristeas.letter-of-aristeas"
@@ -149,6 +169,26 @@ canonical_ids = ["artifact.catholic-church.catechism.english-usccb-second-2019.f
 trace_patterns = ["Catechism of the Catholic Church", "Catechismus Catholicae Ecclesiae"]
 reviewed_on = "2026-07-25"
 notes = "The 2026-07-23 family review resolves 42 positive owners and identifies an exact bounded 924-entry official USCCB English search representation, distinct fixed and amended Latin states, archived-English and current-English states, the 2018 amendment act, and a restricted-rights boundary. Canonicalize those identities without treating paragraph numbers, delivery hosts, or legacy verification prose as exact evidence; restricted bytes are not ordinary-clone searchable."
+
+[[families]]
+id = "family.catholic-encyclopedia.new-york-1907-1912"
+label = "The Catholic Encyclopedia (New York, 1907-1912)"
+kind = "series"
+source_categories = ["secondary"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "edition", "relation", "work"]
+artifact_availability = "candidate-complete"
+storage_plan = ["remote"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "edition-locus"
+disposition = "canonicalize"
+priority = "p2"
+canonical_ids = ["edition.catholic-encyclopedia.volume-1.new-york-1907", "edition.catholic-encyclopedia.volume-13.new-york-1912", "edition.catholic-encyclopedia.volume-5.new-york-1909", "edition.catholic-encyclopedia.volume-7.new-york-1910", "work.catholic-encyclopedia.volume-1", "work.catholic-encyclopedia.volume-13", "work.catholic-encyclopedia.volume-5", "work.catholic-encyclopedia.volume-7"]
+trace_patterns = ["(?:Catholic Encyclopedia|catholic-encyclopedia)"]
+reviewed_on = "2026-07-25"
+notes = "This series family owns the catalog-level container work and edition records for volumes 1 (1907), 5 (1909), 7 (1910), and 13 (1912) of the sixteen-volume Catholic Encyclopedia (New York: Robert Appleton Company, 1907-1912), mirroring the ANF/NPNF container pattern: one reference series maps its constituent volumes rather than spawning per-volume families. The American printings are public domain, but no exact artifact is registered, so members stop at edition-locus support, and publications consulting the New Advent web transcriptions record their access routes and the transcriptions' later-revision risk locally. Signed articles such as Thurston's Rosary entries remain distinct constituent works inside their volume containers and are unregistered, and the remaining volumes join this family as they are registered."
 
 [[families]]
 id = "family.denzinger.enchiridion-symbolorum"
@@ -291,6 +331,26 @@ reviewed_on = "2026-07-25"
 notes = "This bounded family owns Against Heresies as a constituent work and translated edition of the separately canonicalized ANF volume 1 container. The complete constituent is bounded in retained OCR and a remote facsimile, while paired OCR and facsimile passages govern two reviewed consumers. New Advent is a distinct later revised presentation. The broader ANF/NPNF series remains unresolved."
 
 [[families]]
+id = "family.john-paul-ii.rosarium-virginis-mariae"
+label = "John Paul II, Rosarium Virginis Mariae"
+kind = "work"
+source_categories = ["magisterial"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "expression", "language"]
+artifact_availability = "candidate-complete"
+storage_plan = ["restricted"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "edition-locus"
+disposition = "canonicalize"
+priority = "p2"
+canonical_ids = ["edition.john-paul-ii.rosarium-virginis-mariae.english-vatican-web-2026-07-25", "work.john-paul-ii.rosarium-virginis-mariae"]
+trace_patterns = ["(?:Rosarium Virginis Mariae|rosarium-virginis-mariae)"]
+reviewed_on = "2026-07-25"
+notes = "John Paul II's 16 October 2002 apostolic letter on the Rosary, presenting the devotion as Christocentric contemplation, proposing the five mysteries of light, and proclaiming the Year of the Rosary, owns its catalog-level work in 43 numbered sections and the dated 2026-07-25 Vatican English web state of the official translation, whose translator is unnamed on the page. No exact artifact is registered and any capture of the copyrighted Vatican page would be stored restricted, so evidence stops at edition and section loci; the promulgated original and other language expressions remain unregistered. The family stays per-work beside the other papal Rosary acts because each act is an independent intellectual work of a different pope with its own witnesses and rights profile, matching the ledger's per-work precedent."
+
+[[families]]
 id = "family.josephus.antiquitates-judaicae"
 label = "Josephus, Antiquitates Judaicae"
 kind = "work"
@@ -331,6 +391,26 @@ reviewed_on = "2026-07-25"
 notes = "This bounded family owns Justin's conventionally named First Apology and the Dods-Reith translation as a constituent of the separately canonicalized ANF volume 1 container. Complete OCR and facsimile segments make later whole-work examination possible without asserting it occurred; paired chapter 61 and 65-67 records control the present consumer claims. Coxe's apparatus remains distinct, and New Advent's later presentation is not assumed textually identical without collation."
 
 [[families]]
+id = "family.leo-xiii.supremi-apostolatus-officio"
+label = "Leo XIII, Supremi apostolatus officio"
+kind = "work"
+source_categories = ["magisterial"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "expression", "language"]
+artifact_availability = "candidate-complete"
+storage_plan = ["restricted"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "edition-locus"
+disposition = "canonicalize"
+priority = "p2"
+canonical_ids = ["edition.leo-xiii.supremi-apostolatus-officio.english-vatican-web-2026-07-25", "work.leo-xiii.supremi-apostolatus-officio"]
+trace_patterns = ["(?:Supremi apostolatus officio|supremi-apostolatus-officio)"]
+reviewed_on = "2026-07-25"
+notes = "Leo XIII's encyclical of 1 September 1883, the first of his long series on the Rosary, consecrating October to the Queen of the Rosary, owns its catalog-level work and the dated 2026-07-25 Vatican English web state, whose translator is unnamed and whose paragraphs 2-11 after an unnumbered opening are the locus system. The public-domain Latin original in Acta Leonis XIII 3 (1884) 280-289 remains unregistered, no exact artifact is registered, and any capture of the copyrighted Vatican page would be stored restricted, so evidence stops at edition and paragraph loci. The 1883 indulgence grants recited in paragraph 9 are historical and superseded discipline, now governed by the separately owned Enchiridion Indulgentiarum; the family stays per-work per the ledger's precedent for independent papal acts."
+
+[[families]]
 id = "family.patristics.anf-npnf-schaff"
 label = "Schaff ANF and NPNF translation series"
 kind = "series"
@@ -349,6 +429,26 @@ canonical_ids = ["edition.ante-nicene-fathers.volume-3.buffalo-1885", "edition.a
 trace_patterns = ["Ante-Nicene Fathers", "Nicene and Post-Nicene Fathers", "\\b(?:ANF|NPNF)\\b"]
 reviewed_on = "2026-07-25"
 notes = "Treat ANF and NPNF as identified public-domain translation series and map each constituent work and volume; New Advent and other hosts are delivery routes, not identities. The series now owns catalog-level container work and edition records for ANF volume 3 (Tertullian's apologetic, anti-Marcionite, and ethical works), volume 4 (Tertullian's ascetic and disciplinary works with Minucius Felix, Commodian, and Origen), volume 6 (Gregory Thaumaturgus through Arnobius, Buffalo 1886), NPNF first series volume 1 (Augustine's Confessions and selected letters in the Pilkington and Cunningham translations, New York 1886), NPNF second series volume 6 (Jerome's letters and select works, New York 1893), and NPNF second series volume 14 (Percival's edition of the canons, definitions, and selected acts of the seven ecumenical councils, New York 1900), all registered without exact artifacts, so those members stop at edition-locus support while other legacy series citations differ, leaving the ceiling mixed. ANF volume 1 and its Justin and Irenaeus constituents stay owned by their separate bounded families, and the constituent works and translated editions printed within the registered containers remain unregistered."
+
+[[families]]
+id = "family.paul-vi.marialis-cultus"
+label = "Paul VI, Marialis cultus"
+kind = "work"
+source_categories = ["magisterial"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "expression", "language"]
+artifact_availability = "candidate-complete"
+storage_plan = ["restricted"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "edition-locus"
+disposition = "canonicalize"
+priority = "p2"
+canonical_ids = ["edition.paul-vi.marialis-cultus.english-vatican-web-2026-07-25", "work.paul-vi.marialis-cultus"]
+trace_patterns = ["(?:Marialis cultus|marialis-cultus)"]
+reviewed_on = "2026-07-25"
+notes = "Paul VI's apostolic exhortation of 2 February 1974 on the right ordering and development of Marian devotion after the Second Vatican Council owns its catalog-level work in 58 numbered sections, of which sections 42-55 treat the Rosary, and the dated 2026-07-25 Vatican English web state, whose translator is unnamed and whose delivery text carries minor typographical corruptions (for example 'familiaring' in section 48) that consumers quote around rather than silently correct. No exact artifact is registered and any capture of the copyrighted Vatican page would be stored restricted, so evidence stops at edition and section loci; the promulgated Latin original remains unregistered. The family stays per-work per the ledger's precedent for independent papal acts."
 
 [[families]]
 id = "family.philo.de-vita-mosis"
@@ -389,6 +489,46 @@ canonical_ids = ["edition.pius-ix.ineffabilis-deus.english-papal-encyclicals-web
 trace_patterns = ["Ineffabilis Deus"]
 reviewed_on = "2026-07-25"
 notes = "Pius IX's 8 December 1854 apostolic constitution defining the Immaculate Conception owns its catalog-level work and the dated 2026-07-25 Papal Encyclicals Online delivery of the widely circulated English translation, whose translator and rights remain unidentified, so consumers quote it only within ordinary scholarly limits with attribution. The public-domain Latin original in the Acta of Pius IX and the definition sentence at DS 2803 remain unregistered, and the Vatican English page held only a title shell when checked the same day. The family stays per-work beside the other papal dogmatic definitions because each act is an independent intellectual work with its own witnesses and rights profile."
+
+[[families]]
+id = "family.pius-v.consueverunt-romani-pontifices"
+label = "Pius V, Consueverunt Romani Pontifices"
+kind = "work"
+source_categories = ["magisterial"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "edition", "expression", "language", "locus"]
+artifact_availability = "candidate-partial"
+storage_plan = ["remote"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "edition-locus"
+disposition = "canonicalize"
+priority = "p2"
+canonical_ids = ["edition.pius-v.consueverunt-romani-pontifices.english-papal-encyclicals-web-2026-07-25", "work.pius-v.consueverunt-romani-pontifices"]
+trace_patterns = ["(?:Consueverunt Romani|consueverunt-romani)"]
+reviewed_on = "2026-07-25"
+notes = "Pius V's bull of 17 September 1569, describing the Rosary or Psalter of the Blessed Virgin Mary as one hundred and fifty angelic salutations with the Lord's Prayer at each decade and meditation on the whole life of Christ, attributing its propagation to St. Dominic, and confirming indults and indulgences, owns its catalog-level work and the dated 2026-07-25 Papal Encyclicals Online English delivery. That witness is partial: the concluding grant is summarized in an editorial bracket rather than translated, the translator is unnamed with unresolved modern-translation rights, and the text carries a visible corruption, so consumers quote it only in short attributed clauses within ordinary scholarly limits. The public-domain Latin original in the Magnum Bullarium Romanum remains unregistered and the bull has no numbered-paragraph locus system, so consumers record the passage cited; the family stays per-work per the ledger's precedent for independent papal acts."
+
+[[families]]
+id = "family.pius-xii.ingruentium-malorum"
+label = "Pius XII, Ingruentium malorum"
+kind = "work"
+source_categories = ["magisterial"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "expression", "language"]
+artifact_availability = "candidate-complete"
+storage_plan = ["restricted"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "edition-locus"
+disposition = "canonicalize"
+priority = "p2"
+canonical_ids = ["edition.pius-xii.ingruentium-malorum.english-vatican-web-2026-07-25", "work.pius-xii.ingruentium-malorum"]
+trace_patterns = ["(?:Ingruentium malorum|ingruentium-malorum)"]
+reviewed_on = "2026-07-25"
+notes = "Pius XII's encyclical of 15 September 1951 on reciting the Rosary, urging October recitation and above all the family Rosary, owns its catalog-level work and the dated 2026-07-25 Vatican English web state, whose translator is unnamed and whose paragraphs 2-21 after an unnumbered opening are the locus system. The Latin original in Acta Apostolicae Sedis 43 (1951) 577-582 remains unregistered, no exact artifact is registered, and any capture of the copyrighted Vatican page would be stored restricted, so evidence stops at edition and paragraph loci. The family stays per-work per the ledger's precedent for independent papal acts."
 
 [[families]]
 id = "family.pius-xii.munificentissimus-deus"
@@ -471,6 +611,26 @@ reviewed_on = "2026-07-25"
 notes = "Reuse the canonical work, distinct Vatican typical and Benziger iuxta-typicam editions, and three exact remote artifacts. Artifact-level rights were reviewed but remain unresolved, so no payload is stored; publication loci still require separate binding review."
 
 [[families]]
+id = "family.roman-missal.older-use-discipline-acts"
+label = "Discipline acts on the use of the older Roman Missal"
+kind = "corpus-plan"
+source_categories = ["canon-law", "liturgical", "magisterial"]
+identity_confidence = "confirmed"
+identity_gaps = ["edition", "expression", "language"]
+artifact_availability = "canonicalized"
+storage_plan = ["restricted"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "passage-pin"
+disposition = "canonicalize"
+priority = "p1"
+canonical_ids = ["artifact.benedict-xvi.letter-to-bishops-summorum-pontificum.english-vatican-web-2026-07-25.vatican-html-98d4af74", "artifact.benedict-xvi.summorum-pontificum.english-vatican-web-2026-07-25.vatican-html-7442edfd", "artifact.francis.letter-to-bishops-traditionis-custodes.english-vatican-web-2026-07-25.vatican-html-8157c7b0", "artifact.francis.traditionis-custodes.english-vatican-web-2026-07-25.vatican-html-c7e03ed6", "artifact.holy-see.rescriptum-traditionis-custodes-2023.english-vatican-web-2026-07-25.vatican-html-f64c1c95", "artifact.holy-see.responsa-ad-dubia-traditionis-custodes-2021.english-vatican-web-2026-07-25.vatican-html-136e9510", "artifact.john-paul-ii.ecclesia-dei.english-vatican-web-2026-07-25.vatican-html-d6f0abd4", "edition.benedict-xvi.letter-to-bishops-summorum-pontificum.english-vatican-web-2026-07-25", "edition.benedict-xvi.summorum-pontificum.english-vatican-web-2026-07-25", "edition.francis.letter-to-bishops-traditionis-custodes.english-vatican-web-2026-07-25", "edition.francis.traditionis-custodes.english-vatican-web-2026-07-25", "edition.holy-see.rescriptum-traditionis-custodes-2023.english-vatican-web-2026-07-25", "edition.holy-see.responsa-ad-dubia-traditionis-custodes-2021.english-vatican-web-2026-07-25", "edition.john-paul-ii.ecclesia-dei.english-vatican-web-2026-07-25", "passage.benedict-xvi.letter-to-bishops-summorum-pontificum.english-vatican-web-2026-07-25.complete-text", "passage.benedict-xvi.summorum-pontificum.english-vatican-web-2026-07-25.complete-text", "passage.francis.letter-to-bishops-traditionis-custodes.english-vatican-web-2026-07-25.complete-text", "passage.francis.traditionis-custodes.english-vatican-web-2026-07-25.complete-text", "passage.holy-see.rescriptum-traditionis-custodes-2023.english-vatican-web-2026-07-25.complete-text", "passage.holy-see.responsa-ad-dubia-traditionis-custodes-2021.english-vatican-web-2026-07-25.complete-text", "passage.john-paul-ii.ecclesia-dei.english-vatican-web-2026-07-25.complete-text", "work.benedict-xvi.letter-to-bishops-summorum-pontificum", "work.benedict-xvi.summorum-pontificum", "work.francis.letter-to-bishops-traditionis-custodes", "work.francis.traditionis-custodes", "work.holy-see.rescriptum-traditionis-custodes-2023", "work.holy-see.responsa-ad-dubia-traditionis-custodes-2021", "work.john-paul-ii.ecclesia-dei"]
+trace_patterns = ["(?:Ecclesia Dei(?: adflicta)?|ecclesia-dei)", "(?:Rescriptum ex audientia|rescriptum-traditionis-custodes)", "(?:Responsa ad dubia|responsa-ad-dubia)", "Summorum Pontificum", "Traditionis custodes"]
+reviewed_on = "2026-07-25"
+notes = "This corpus-plan owns the coordinated discipline acts governing use of the Roman liturgy prior to the reform of 1970: John Paul II's motu proprio Ecclesia Dei of 2 July 1988, Benedict XVI's Summorum Pontificum with its accompanying letter to the bishops of 7 July 2007, Francis's Traditionis custodes with its accompanying letter of 16 July 2021, the Congregation's Responsa ad dubia of 4 December 2021, and the Dicastery's Rescriptum ex audientia of 20 February 2023. Each act has a canonical work, dated official English Vatican web edition, exact restricted artifact, and verified complete-text passage. The acts form one family rather than per-work families because they are a single regulatory thread about one object, each later act answering, implementing, or restricting an earlier one, while remaining distinct intellectual works inside the cluster, matching the family.vatican-ii.papal-acts precedent for a bounded corpus of coordinated acts. The authoritative Latin or Italian originals and any Acta printings remain unregistered expressions; the 1962 Missal itself stays owned by family.roman-missal.1962, the reformed Missal line and its promulgation acts by family.roman-missal.third-edition-latin-us-english, and the 1984 indult Quattuor abhinc annos remains an identified but unregistered lead."
+
+[[families]]
 id = "family.roman-missal.third-edition-latin-us-english"
 label = "Roman Missal, third edition, Latin and United States English"
 kind = "mixed-cluster"
@@ -485,10 +645,10 @@ freshness_rule = "Pin the 2008 Latin state, 2011 United States English edition, 
 evidence_ceiling = "edition-locus"
 disposition = "split-then-canonicalize"
 priority = "p0"
-canonical_ids = ["artifact.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.usccb-chapter-vii-html-2026-07-23-7b765649", "artifact.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.usccb-landing-html-2026-07-23-8ec0eb3d", "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944", "artifact.holy-see.notitiae.volume-44-numbers-503-504-2008.official-pdf-74c8d174", "edition.catholic-church.calendarium-romanum-generale.latin-missale-romanum-typica-tertia-2002", "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021", "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002", "edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008", "edition.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-missale-romanum-typica-tertia-2002", "edition.holy-see.decretum-de-editione-typica-tertia-missalis-romani-2000.latin-missale-romanum-typica-tertia-2002", "edition.holy-see.notitiae.volume-44-numbers-503-504-2008", "edition.holy-see.reimpressio-emendata-missalis-romani-notice-2008.italian-notitiae-503-504", "edition.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504", "edition.paul-vi.mysterii-paschalis.latin-missale-romanum-typica-tertia-2002", "passage.catholic-church.calendarium-romanum-generale.latin-missale-romanum-typica-tertia-2002.complete-calendar", "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.363", "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-a", "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-b", "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-c", "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-d", "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.online-edition-notice", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.ascensio-domini-vigilia-et-die", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.assumptio-beatae-mariae-virginis-vigilia-et-die", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xi-per-annum", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xii-per-annum", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xiii-per-annum", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xiv-per-annum", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xv-per-annum", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xvi-per-annum", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xvii-per-annum", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.epiphania-domini-vigilia-et-die", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.nativitas-sancti-ioannis-baptistae-vigilia-et-die", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.sancti-petri-et-pauli-vigilia-et-die", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.sanctissima-trinitas", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.sanctissimum-corpus-et-sanguis-christi", "passage.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-missale-romanum-typica-tertia-2002.complete-text", "passage.holy-see.decretum-de-editione-typica-tertia-missalis-romani-2000.latin-missale-romanum-typica-tertia-2002.complete-decree", "passage.holy-see.reimpressio-emendata-missalis-romani-notice-2008.italian-notitiae-503-504.edition-status", "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.calendarium-romanum-generale", "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.tempus-per-annum", "passage.paul-vi.mysterii-paschalis.latin-missale-romanum-typica-tertia-2002.complete-text", "segment.catholic-church.calendarium-romanum-generale.latin-missale-romanum-typica-tertia-2002.missale-romanum-artifact-pages-71-81", "segment.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-missale-romanum-typica-tertia-2002.missale-romanum-artifact-pages-64-71", "segment.holy-see.decretum-de-editione-typica-tertia-missalis-romani-2000.latin-missale-romanum-typica-tertia-2002.missale-romanum-artifact-pages-2-3", "segment.holy-see.reimpressio-emendata-missalis-romani-notice-2008.italian-notitiae-503-504.notitiae-page-367", "segment.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.notitiae-pages-368-387", "segment.paul-vi.mysterii-paschalis.latin-missale-romanum-typica-tertia-2002.missale-romanum-artifact-pages-61-64", "work.catholic-church.calendarium-romanum-generale", "work.catholic-church.institutio-generalis-missalis-romani", "work.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario", "work.holy-see.decretum-de-editione-typica-tertia-missalis-romani-2000", "work.holy-see.notitiae", "work.holy-see.reimpressio-emendata-missalis-romani-notice-2008", "work.holy-see.variationes-et-additiones-missalis-romani-2008", "work.paul-vi.mysterii-paschalis"]
-trace_patterns = ["(?:Missale Romanum.{0,40}(?:2002|2008)|Roman Missal.{0,60}(?:Third Edition|2011)|General Instruction of the Roman Missal|\\bGIRM\\b|\\bIGMR\\b)"]
+canonical_ids = ["artifact.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.usccb-chapter-vii-html-2026-07-23-7b765649", "artifact.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.usccb-landing-html-2026-07-23-8ec0eb3d", "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944", "artifact.holy-see.notitiae.volume-44-numbers-503-504-2008.official-pdf-74c8d174", "artifact.paul-vi.missale-romanum-constitutio.english-vatican-web-2026-07-25.vatican-html-515c528e", "edition.catholic-church.calendarium-romanum-generale.latin-missale-romanum-typica-tertia-2002", "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021", "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002", "edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008", "edition.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-missale-romanum-typica-tertia-2002", "edition.holy-see.de-editione-typica-altera-missalis-romani-1975.latin-missale-romanum-typica-tertia-2002", "edition.holy-see.decretum-de-editione-typica-missalis-romani-1970.latin-missale-romanum-typica-tertia-2002", "edition.holy-see.decretum-de-editione-typica-tertia-missalis-romani-2000.latin-missale-romanum-typica-tertia-2002", "edition.holy-see.notitiae.volume-44-numbers-503-504-2008", "edition.holy-see.reimpressio-emendata-missalis-romani-notice-2008.italian-notitiae-503-504", "edition.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504", "edition.paul-vi.missale-romanum-constitutio.english-vatican-web-2026-07-25", "edition.paul-vi.missale-romanum-constitutio.latin-missale-romanum-typica-tertia-2002", "edition.paul-vi.mysterii-paschalis.latin-missale-romanum-typica-tertia-2002", "passage.catholic-church.calendarium-romanum-generale.latin-missale-romanum-typica-tertia-2002.complete-calendar", "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.363", "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-a", "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-b", "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-c", "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-d", "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.online-edition-notice", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.ascensio-domini-vigilia-et-die", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.assumptio-beatae-mariae-virginis-vigilia-et-die", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xi-per-annum", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xii-per-annum", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xiii-per-annum", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xiv-per-annum", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xv-per-annum", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xvi-per-annum", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xvii-per-annum", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.epiphania-domini-vigilia-et-die", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.nativitas-sancti-ioannis-baptistae-vigilia-et-die", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.sancti-petri-et-pauli-vigilia-et-die", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.sanctissima-trinitas", "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.sanctissimum-corpus-et-sanguis-christi", "passage.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-missale-romanum-typica-tertia-2002.complete-text", "passage.holy-see.de-editione-typica-altera-missalis-romani-1975.latin-missale-romanum-typica-tertia-2002.complete-decree", "passage.holy-see.decretum-de-editione-typica-missalis-romani-1970.latin-missale-romanum-typica-tertia-2002.complete-decree", "passage.holy-see.decretum-de-editione-typica-tertia-missalis-romani-2000.latin-missale-romanum-typica-tertia-2002.complete-decree", "passage.holy-see.reimpressio-emendata-missalis-romani-notice-2008.italian-notitiae-503-504.edition-status", "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.calendarium-romanum-generale", "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.tempus-per-annum", "passage.paul-vi.missale-romanum-constitutio.english-vatican-web-2026-07-25.complete-text", "passage.paul-vi.missale-romanum-constitutio.latin-missale-romanum-typica-tertia-2002.complete-text", "passage.paul-vi.mysterii-paschalis.latin-missale-romanum-typica-tertia-2002.complete-text", "segment.catholic-church.calendarium-romanum-generale.latin-missale-romanum-typica-tertia-2002.missale-romanum-artifact-pages-71-81", "segment.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-missale-romanum-typica-tertia-2002.missale-romanum-artifact-pages-64-71", "segment.holy-see.de-editione-typica-altera-missalis-romani-1975.latin-missale-romanum-typica-tertia-2002.missale-romanum-artifact-pages-2-2", "segment.holy-see.decretum-de-editione-typica-missalis-romani-1970.latin-missale-romanum-typica-tertia-2002.missale-romanum-artifact-pages-1-1", "segment.holy-see.decretum-de-editione-typica-tertia-missalis-romani-2000.latin-missale-romanum-typica-tertia-2002.missale-romanum-artifact-pages-2-3", "segment.holy-see.reimpressio-emendata-missalis-romani-notice-2008.italian-notitiae-503-504.notitiae-page-367", "segment.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.notitiae-pages-368-387", "segment.paul-vi.missale-romanum-constitutio.latin-missale-romanum-typica-tertia-2002.missale-romanum-artifact-pages-4-7", "segment.paul-vi.mysterii-paschalis.latin-missale-romanum-typica-tertia-2002.missale-romanum-artifact-pages-61-64", "work.catholic-church.calendarium-romanum-generale", "work.catholic-church.institutio-generalis-missalis-romani", "work.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario", "work.holy-see.de-editione-typica-altera-missalis-romani-1975", "work.holy-see.decretum-de-editione-typica-missalis-romani-1970", "work.holy-see.decretum-de-editione-typica-tertia-missalis-romani-2000", "work.holy-see.notitiae", "work.holy-see.reimpressio-emendata-missalis-romani-notice-2008", "work.holy-see.variationes-et-additiones-missalis-romani-2008", "work.paul-vi.missale-romanum-constitutio", "work.paul-vi.mysterii-paschalis"]
+trace_patterns = ["(?:Apostolic Constitution.{0,40}Missale Romanum|Missale Romanum.{0,60}(?:1969|3 April)|missale-romanum-constitutio)", "(?:Missale Romanum.{0,40}(?:2002|2008)|Roman Missal.{0,60}(?:Third Edition|2011)|General Instruction of the Roman Missal|\\bGIRM\\b|\\bIGMR\\b)", "de[ -]editione[ -]typica"]
 reviewed_on = "2026-07-25"
-notes = "The canonical membership covers two bounded slices without conflating them: the current United States GIRM controls already recorded, and a Latin third-edition slice comprising the exact restricted 2002 secondary digital reproduction, genuine Missal formularies and proper headings, separately owned constituent acts and calendar works, the metadata-only 2008 altar-book identity, and the exact official Notitiae container, status notice, and variation-list passages. The variation list is not treated as the complete 2008 altar book. The complete split-HTML GIRM presentation, the 2011 U.S. altar book, direct 2008 reprint-page collation, later variations, and other territorial expressions remain separate migration work."
+notes = "The canonical membership covers two bounded slices without conflating them: the current United States GIRM controls already recorded, and a Latin third-edition slice comprising the exact restricted 2002 secondary digital reproduction, genuine Missal formularies and proper headings, separately owned constituent acts and calendar works, the metadata-only 2008 altar-book identity, and the exact official Notitiae container, status notice, and variation-list passages. The variation list is not treated as the complete 2008 altar book. The complete split-HTML GIRM presentation, the 2011 U.S. altar book, direct 2008 reprint-page collation, later variations, and other territorial expressions remain separate migration work. The Latin slice now also owns the promulgation layer of the postconciliar Missal line reproduced in the same restricted 2002 artifact: Paul VI's apostolic constitution Missale Romanum of 3 April 1969, with its dated official English web state, exact restricted artifact, and verified complete-text passages in both expressions; the 26 March 1970 decree Celebrationis eucharisticae declaring the first typical edition; and the 27 March 1975 act De editione typica altera declaring the second. Each is a separately owned constituent work pinned to physical pages of the reproduction, exactly as Mysterii Paschalis and the 2000 third-edition decree already are, so the constitution joins this family rather than a per-work family: it promulgates the Missal line this family owns and is printed as a constituent of the registered container. The preconciliar Missal it superseded stays owned by family.roman-missal.1962, and the discipline acts on the older Missal's continued use form the separate family.roman-missal.older-use-discipline-acts."
 
 [[families]]
 id = "family.scripture.vulgata-clementina-hetzenauer-1914"
@@ -529,6 +689,26 @@ canonical_ids = []
 trace_patterns = ["(?:\\b(?:Vulgate|Vulgata|Nova Vulgata)\\b|Douay[- ]Rheims)"]
 reviewed_on = "2026-07-22"
 notes = "Do not canonicalize a generic Vulgate: distinguish Clementine and Hetzenauer, Oxford, Benedictine, Weber-Gryson, Vetus Latina, Nova Vulgata, translations, and manuscript witnesses."
+
+[[families]]
+id = "family.third-plenary-council-of-baltimore.catechism-no-3"
+label = "Baltimore Catechism No. 3"
+kind = "work"
+source_categories = ["magisterial", "prayer-devotional"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact"]
+artifact_availability = "candidate-complete"
+storage_plan = ["remote"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "edition-locus"
+disposition = "canonicalize"
+priority = "p2"
+canonical_ids = ["edition.third-plenary-council-of-baltimore.catechism-of-christian-doctrine-no-3.new-york-benziger-1921", "work.third-plenary-council-of-baltimore.catechism-of-christian-doctrine-no-3"]
+trace_patterns = ["(?:Baltimore Catechism|catechism-of-christian-doctrine)"]
+reviewed_on = "2026-07-25"
+notes = "The graded No. 3 catechism of the Baltimore series, descending from the catechism approved by Archbishop Gibbons on 6 April 1885 as ordered by the Third Plenary Council of Baltimore, owns its catalog-level work and the 1921 Benziger Brothers printing, whose opening Prayers section is the received-prayer-text witness for the Lord's Prayer, the Hail Mary, the Apostles' Creed, and other common prayers, cited by printed page and question number. The 1921 United States publication is public domain in the United States, and a complete page-imaged exemplar is publicly delivered by the Internet Archive as item catechismofchris00unse, but no exact artifact bytes are registered, so evidence stops at edition loci and consumers collating prayer texts record the exact leaves they inspected. Other numbers and printings of the Baltimore series remain unregistered, and the universal Catechism stays owned by family.catholic-church.catechism."
 
 [[families]]
 id = "family.thomas-aquinas.summa-theologiae"
