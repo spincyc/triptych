@@ -43,3 +43,32 @@
 \newenvironment{statusdossier}[1]{%
   \begin{massbox}{#1}\small}{\end{massbox}}
 \newcommand{\dosfield}[2]{\par\textbf{#1:} #2}
+
+% Project-synthesis block. This study distinguishes four voices and marks
+% them differently: quoted source text is framed (operativetext); magisterial
+% and authorial readings are attributed in running prose to their authors at
+% their loci; verified fact carries its witness in the notes; and the
+% project's own judgment is set here, behind a left rule and under an
+% explicit label, so that a reader can weigh it as the editorial and AI
+% proposal it is and never mistake it for received teaching.
+\newenvironment{synthesis}[1]{%
+  \begin{studybox}{Project synthesis --- #1}}{\end{studybox}}
+
+% Register of the study's own judgments. The judgment text is the wide
+% column because it is the content; the confidence qualifier is
+% subordinate to it; and the cross-reference needs only a narrow rule.
+% Field names are repeated in the head so the form stays readable when
+% the table breaks across a page.
+\newenvironment{judgmentstable}
+{\small\begin{longtable}{>{\raggedright\arraybackslash}p{0.40\linewidth}>{\raggedright\arraybackslash}p{0.40\linewidth}>{\raggedright\arraybackslash}p{0.10\linewidth}}
+\toprule
+\textbf{Judgment} & \textbf{Confidence} & \textbf{Argued}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
+
+% Named field inside a synthesis block. The repeated field names (judgment,
+% reasons, strongest counterargument, what would change this) are a stable
+% semantic form, not decoration: every published judgment in this study is
+% required to fill them.
+\newcommand{\synthfield}[2]{\par\textbf{#1:} #2}

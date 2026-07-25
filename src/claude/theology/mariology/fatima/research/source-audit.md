@@ -45,6 +45,10 @@ redistributed).
 | Pius XII, radio message 31 Oct 1942 (It.) | consecration of Church and human race; "popoli separati per l'errore o per la discordia" paragraph | vatican.va/content/pius-xii/it/speeches/1942/documents/hf_p-xii_spe_19421031_immaculata.html | Italian; editorial translation |
 | Pius XII, Sacro vergente anno, 7 Jul 1952 (It.) | "consacriamo tutti i popoli della Russia al medesimo Cuore immacolato" | vatican.va/content/pius-xii/it/apost_letters/documents/hf_p-xii_apl_19520707_sacro-vergente-anno.html | ditto |
 | Benedict XVI, homily 13 May 2010 | "We would be mistaken to think that Fatima's prophetic mission is complete" | vatican.va/content/benedict-xvi/en/homilies/2010/documents/hf_ben-xvi_hom_20100513_fatima.html | |
+| Benedict XVI, interview with journalists during the flight to Portugal, 11 May 2010 (retrieved and read in full 2026-07-25) | third answer quoted exactly: an apparition is "a supernatural impulse which does not come purely from a person's imagination but really from the Virgin Mary, from the supernatural"; "such an impulse enters into a subject and is expressed according to the capacities of that subject"; the seer "translates the great supernatural impulse into his or her own capabilities for seeing, imagining, expressing"; "these expressions, shaped by the subject, conceal a content which is greater, which goes deeper, and only in the course of history can we see the full depth"; "beyond this great vision of the suffering of the Pope, which we can in the first place refer to Pope John Paul II, an indication is given of realities involving the future of the Church, which are gradually taking shape and becoming evident"; "the need for a passion of the Church, which naturally is reflected in the person of the Pope, yet the Pope stands for the Church and thus it is sufferings of the Church that are announced"; "the greatest persecution of the Church comes not from her enemies without, but arises from sin within the Church". Father Lombardi's question expressly recalls the June 2000 press presentation and asks whether the message can be extended "beyond the attack on John Paul II" | vatican.va/content/benedict-xvi/en/speeches/2010/may/documents/hf_ben-xvi_spe_20100511_portogallo-interview.html | in-flight interview; ordinary papal teaching, not an extraordinary act. The URL slug was located by direct probing of candidate routes after an initial 404 on a guessed slug; the probe results are recorded under negative results below |
+| DDF, *Mater Populi fidelis* (4 November 2025), n. 2 | "Certain titles and expressions referring to the Virgin Mary are frequently used in connection with such phenomena"; "these titles ... are not always employed precisely"; misuse "can often lead to a mistaken understanding of Mary's role" | vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20251104_mater-populi-fidelis_en.html | the note does not name Fatima; used only for the general safeguard. Checked negative in the same reading: no occurrence of "Fatima" in the English text |
+| Holy Office, *Decretum circa vulgo dictum «Secret de la Salette»*, 21 December 1915 | locus only: the decree is printed at *Acta Apostolicae Sedis* 7 (1915), p. 594, confirmed in the volume's own chronological table ("Dec. 21 — Decretum circa vulgo dictum «Secret de la Salette» — 594") and its index | AAS 7 (1915), 594, in the Vatican AAS volume text | cited in the publication solely as the paradigm of a *restraining* act, to establish by contrast that no such act exists for Fatima. Its subject matter and content are not discussed anywhere in the publication, and no part of that decree's object is treated |
+| Thomas Aquinas, *Summa theologiae* II-II, q. 173 aa. 2 and 4; q. 174 a. 1 (English Dominican Province translation as presented by newadvent.org; read 2026-07-25) | q. 173 a. 2 corpus: "two things have to be considered ... namely the acceptance or representation of things, and the judgment of the things represented"; q. 173 a. 4 corpus: "in prophetic revelation the prophet's mind is moved by the Holy Ghost, as an instrument that is deficient in regard to the principal agent" and "even true prophets know not all that the Holy Ghost means by the things they see, or speak, or even do"; q. 174 a. 1 corpus: the prophecy of "denunciation," "which is not always fulfilled," "foretells the relation of cause to effect, which is sometimes hindered by some other occurrence supervening" | newadvent.org/summa/3173.htm; newadvent.org/summa/3174.htm | translation host, not a critical edition; the Latin was not collated and no Latin is quoted. The host page renders a full stop where the sense requires a comma in the q. 174 a. 1 sentence; the publication quotes the two clauses separately and supplies its own connective rather than reproducing the punctuation. Cited as classical context, never as an authority on Fatima |
 | John Paul II, beatification homily 13 May 2000 | beatification fact (HTTP 200 identity check; not quoted) | vatican.va/content/john-paul-ii/en/homilies/2000/documents/hf_jp-ii_hom_20000513_beatification-fatima.html | not read in full |
 | Francis, Fátima visit 5 Aug 2023 (Rosary with sick young people, Chapel of the Apparitions, during the Lisbon WYD journey) | the "2017 and 2023" pilgrimage clause in §7.1 | vatican.va events route .../vaticanevents/en/2023/8/5/rosario-fatima.html (HTTP 200 identity check; page body is script-delivered) | event identity from the vatican.va calendar route plus common public record; homily/greeting texts not read |
 | Dicastery for the Causes of Saints, decree 22 June 2023 (Pt.) | Lucia's dates; Pontevedra 10-12-1925 (First Saturdays); Tuy 13-6-1929 (consecration request); memoirs 1935–1941 by order of the Bishop of Leiria; part 3 on 3-1-1944; 25-3-1984 "viu realizar-se a Consagração... cumprindo-se o pedido de Nossa Senhora"; Sessão Ordinária 6-6-2023; decree date 22-6-2023 | fatima.pt/files/upload/documentos_do_magisterio/20023-06-22decretosobreasvirtudesheroicasdairmaluciadejesusedoimaculadocoracao.pdf | a heroic-virtues decree certifies virtue, not event authenticity; its historical summary used at that level |
@@ -72,9 +76,17 @@ redistributed).
 
 - DDF documents index (doctrinafidei.va/en/documenti.html, checked
   2026-07-25): the only Fátima entry is "Documents Regarding The
-  Message of Fatima (26 June 2000)". No DDF act under the 2024 norms
-  concerns Fátima in that index; web searches for a post-2024 Fátima
-  act returned none. Bounded: index + English-language search only.
+  Message of Fatima (26 June 2000)", whose eight language links all
+  resolve to the 26 June 2000 dossier. No DDF act under the 2024
+  norms concerns Fátima in that index; web searches for a post-2024
+  Fátima act returned none. The index was current at the check: it
+  carried entries as recent as 2 July 2026 (the SSPX decree and
+  accompanying documents) and several apparition-related letters of
+  2025 (Dozulé, 3 November 2025; Mount S. Onofrio, 25 July 2025;
+  Mount Zvir/Litmanová, 4 July 2025), so the absence of a Fátima act
+  is an absence in a maintained index, not in a stale one. Bounded:
+  index + English-language search only; correctable by better
+  evidence, not a guarantee.
 - vatican.va has no English page for the Pius XII 1942 radio message
   probed at the /pt/ route (404); the Italian page above was used.
 - fatima.pt page routes /en/pages/apparitions and
@@ -84,11 +96,37 @@ redistributed).
   online at source; the publication states the early-1940s
   circulation on the 2000 edition's "already... published" plus
   standard dating, flagged as not re-verified.
+- Benedict XVI's 11 May 2010 in-flight interview was not found at the
+  first guessed route (`.../hf_ben-xvi_spe_20100511_interview-portugal.html`,
+  HTTP 404). Seven candidate slugs were probed directly; the live
+  route is `..._portogallo-interview.html` (HTTP 200 in both English
+  and Italian). Recorded because the negative results are part of how
+  the witness was located.
+- *Mater Populi fidelis* (4 November 2025) was read at the Vatican
+  English page and contains no occurrence of "Fatima"; it is
+  therefore cited only for its general n. 2 safeguard and never as a
+  Fátima act.
+- Bibliographic identification only, at catalogue level (Open
+  Library JSON search, 2026-07-25): Antonio Socci, *Il quarto segreto
+  di Fàtima* (Rizzoli, 2006), ISBN 8817009938, English *The Fourth
+  Secret of Fatima* (Loreto, 2009), ISBN 9781930278776; Tarcisio
+  Bertone with Giuseppe De Carli, *L'ultima veggente di Fatima*
+  (Rizzoli, 2007/2008), English *The Last Secret of Fatima*
+  (Doubleday, 2008), ISBN 9780385525824. **Neither book was
+  obtained or read.** The catalogue is a finding aid for identity
+  only and is not a witness to any wording. No argument, sentence, or
+  position is attributed to either author anywhere in the
+  publication; §9 analyzes only the publicly documented premises such
+  an argument must use, each of which is in the 2000 dossier or the
+  2016 communiqué.
 - Not searched (recorded as limits): the 15-volume Documentação
   Crítica beyond the Seleção; Portuguese newspaper hemerotecas for
-  facsimiles; AAS; Insegnamenti print volumes; the 2017 celebration
-  booklet; archival materials alleged in the consecration
-  controversy.
+  facsimiles; AAS beyond the single 1915 locus check noted above;
+  Insegnamenti print volumes; the autograph of the 12 May 1982
+  letter; the Portuguese autographs of the secret (used only through
+  the published facsimile and translation); the Latin *Summa*; the
+  2017 celebration booklet; archival materials alleged in the
+  consecration controversy.
 
 ## Claim-to-source rule
 
@@ -99,6 +137,48 @@ translation). Editorial translations from Portuguese and Italian are
 marked as such in the prose or notes. DCF locus citations give the
 volume's own document numbers and, where quoted, the printed page
 numbers observed in the PDF.
+
+## Evidence-state rule for the interpretive sections
+
+The publication's interpretive half (§§5, 7–10, 11.3, 13.2, 14)
+keeps four states visibly apart, and this record is the check on
+that separation.
+
+1. **Verified source text.** The three parts of the secret, the two
+   Fourth Memoir annotations, the 2016 communiqué's operative
+   paragraph, and the 1960-date answer are set in the framed
+   `operativetext` environment, quoted exactly from the witnesses
+   listed above.
+2. **Checked quotation and attributed reading.** Every magisterial or
+   authorial interpretation is attributed to its author at its locus
+   in running prose — John Paul II 1994; Sister Lucia 1982 and 2000;
+   Sodano 13 May 2000; Ratzinger 26 June 2000; Benedict XVI 11 and 13
+   May 2010; DDF 2024 and 2025 — and the differences between them are
+   reported rather than harmonized.
+3. **Source-grounded synthesis.** Textual observations the study
+   makes itself (that Sodano's announcement softens "killed" to
+   "falls to the ground, apparently dead" and merges two groups of
+   dead; that note 7 is called at the close of the *second* part;
+   that the third part contains no proper name, date, or number; that
+   the 1982 letter does not mention 1981) are stated as observations
+   with the loci needed to check them, and are marked in the prose as
+   the study's own comparison.
+4. **Editorial and AI proposal.** Every conclusion of the study is
+   confined to a labeled *Project synthesis* block carrying four
+   named fields — judgment, reasons, strongest counterargument (with
+   what it concedes), and what would change this. Six such blocks
+   appear (§7, §8, §9, §10, §11.3, §14.3), and §14.5 tabulates all of
+   them with a confidence level and a pointer to where each is
+   argued. No synthesis block is worded so as to imply magisterial
+   support, and none is cited elsewhere in the publication as though
+   it were established.
+
+No consensus is asserted anywhere. Where the study reaches a
+conclusion contrary to a reading that has official standing — chiefly
+on whether the third part's vision is exhausted by 13 May 1981 — the
+official reading is quoted in full first, the tension with Benedict
+XVI's 2010 answer is stated, and the disagreement is presented as the
+study's own.
 
 ## Production notes (build review)
 
@@ -120,3 +200,43 @@ final build. Fonts embedded, subset,
 and Unicode-mapped (`pdffonts`); nonempty text extraction checked
 (`pdftotext`). No fatal errors, undefined references, overfull
 boxes, or unresolved layout warnings remained at finalization.
+
+## Production notes — interpretive revision, 2026-07-25
+
+The publication grew from 18 to 37 rendered pages. Two `pdflatex`
+passes settled contents and the new `\label`/`\ref` cross-references;
+the final log carried no fatal error, undefined reference, overfull
+or underfull box, or unresolved rerun or layout warning. Gates:
+`scripts/check-generation-metadata --provider claude --pdf
+theology/mariology/fatima` passed against the refreshed
+`\AIDocumentRevisionTimestamp`; `python3 scripts/source-library
+validate` passed with the new Benedict XVI 2010 work and edition
+records and the four added bindings; `scripts/check-web-edition
+--provider claude --document theology/mariology/fatima` passed (the
+leaf remains eligible — the new material adds only prose, framed
+quotation blocks, left-ruled synthesis blocks, and three
+`longtable`-based tables, all of which reflow). Fonts embedded,
+subset, and Unicode-mapped; text extraction nonempty.
+
+`scripts/pdf-review` rasters were generated twice and every page was
+inspected at full size on both passes. Three defects were found and
+fixed between them: a stray hyphen-and-space in "ten-year-old"
+created by a source line break (§5.2); a bold, narrow first column in
+the withheld-text premises table that produced tall ragged cells
+(premise labels shortened); and the judgment register in §14.5, first
+set in the generic three-column form whose narrow bold first column
+pushed the whole table onto a page of its own with a large blank
+above it. A leaf-local `judgmentstable` environment with 0.40/0.40/0.10
+columns and an unbolded first column replaced it; the table now flows
+from the foot of its introducing page and breaks with a repeated
+head. All 37 pages were re-inspected on the final build: no clipping,
+overlap, heading split, sparse spill page, or illegible monochrome
+rendering; the status-dossier card breaks across pages 21--22 with
+closed frame edges; the final-page rights colophon sits with the
+terminal generation-metadata block on page 37, readable, unclipped,
+and creating no rights-only page.
+
+Not done, by instruction of the assignment: the reviewed PDF was not
+installed at the mirrored `doc/` path, so `doc/claude/theology/
+mariology/fatima.pdf` remains the earlier 18-page build until a
+maintainer installs this one.
