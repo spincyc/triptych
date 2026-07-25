@@ -1,0 +1,86 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+\usepackage{endnotes}
+
+\hypersetup{
+  pdftitle={Chastity, Continence, Celibacy},
+  pdfsubject={A discursive canon-law article on the clerical discipline of the Catholic Churches: the three distinct obligations of chastity, continence, and celibacy; the Latin discipline of the 1983 Code (cc. 277, 1031, 1036-1037, 1042, 1078, 1087, 1394, 290-293); the Eastern common law of the 1990 Codex Canonum Ecclesiarum Orientalium (cc. 1-2, 180, 373-375, 758, 762, 804, 394-398) quoted from the Acta Apostolicae Sedis promulgation text; the twenty-four Churches sui iuris; the permanent diaconate; the historical development from Elvira to Trent; convert-clergy and ordinariate provisions; and the modern magisterial file from Presbyterorum ordinis to Querida Amazonia.}
+}
+
+\setcounter{tocdepth}{2}
+\setlength{\emergencystretch}{2em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+\titlespacing*{\section}{0pt}{2.2ex plus .6ex minus .3ex}{1.0ex plus .2ex}
+\titlespacing*{\subsection}{0pt}{2.0ex plus .5ex minus .3ex}{0.6ex plus .2ex}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.13\textheight}
+{\large\scshape A Triptych Article\par}
+\vspace{1.5em}
+{\Huge\bfseries Chastity, Continence,\\[0.18em] Celibacy\par}
+\vspace{0.9em}
+{\Large Three Obligations, Two Codes,\\[0.18em] and Twenty-Four Churches\par}
+\vfill
+{\footnotesize Governing law: the 1983 \emph{Codex Iuris Canonici} for the Latin Church and the 1990 \emph{Codex Canonum Ecclesiarum Orientalium} for the Eastern Catholic Churches, each as amended, stated as of 25 July 2026; see the terminal Scope, Method, and Qualifications appendix. This is a study aid, not canonical advice: no personal case is decided here.\par}
+\vspace{1.2em}
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/sections/00-three-obligations}
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/sections/10-fixing-the-terms}
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/sections/20-canon-277}
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/sections/30-how-it-attaches}
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/sections/40-impediment-and-penalty}
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/sections/50-loss-and-dispensation}
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/sections/60-the-eastern-law}
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/sections/70-twenty-four-churches}
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/sections/80-permanent-diaconate}
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/sections/90-how-it-was-built}
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/sections/100-convert-clergy}
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/sections/110-the-modern-file}
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/sections/120-arguments}
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/sections/130-not-decided}
+\Needspace{10\baselineskip}
+\addcontentsline{toc}{section}{Notes}
+\begingroup
+\footnotesize
+\setlength{\parskip}{0.14em}
+\theendnotes
+\endgroup
+\Needspace{14\baselineskip}
+\appendix
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/sections/140-scope-method-qualifications}
+\input{articles/canon-law/clerical-celibacy-chastity-and-continence/sections/150-references}
+\begingroup
+\setlength{\parskip}{0pt}
+\vspace{-0.6\baselineskip}
+\section{Generation Metadata}
+\vspace{-0.35\baselineskip}
+{\scriptsize\input{articles/canon-law/clerical-celibacy-chastity-and-continence/generation-metadata}}
+\endgroup
+\end{deepstudy}
+
+\end{document}

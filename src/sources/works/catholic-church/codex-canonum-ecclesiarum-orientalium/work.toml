@@ -1,0 +1,11 @@
+schema = 1
+record_type = "work"
+id = "work.catholic-church.codex-canonum-ecclesiarum-orientalium"
+title = "Codex Canonum Ecclesiarum Orientalium (1990)"
+responsible = "Catholic Church; promulgated by John Paul II"
+work_type = "code-of-canon-law"
+alternate_titles = ["Code of Canons of the Eastern Churches", "CCEO"]
+languages = ["la"]
+locus_pattern = 'canon-[0-9]{1,4}'
+description = "The common law of the Eastern Catholic Churches, promulgated by John Paul II by the apostolic constitution Sacri canones of 18 October 1990 and binding from 1 October 1991. Its 1546 canons bind all and only the Eastern Catholic Churches (c. 1) and are to be assessed principally from the ancient law of those Churches which they receive or adapt (c. 2). There is no official translation; the Latin promulgation text in Acta Apostolicae Sedis 82 (1990) 1045-1363 is authentic."
+relations = ["work.catholic-church.codex-iuris-canonici-1983", "work.holy-see.acta-apostolicae-sedis"]

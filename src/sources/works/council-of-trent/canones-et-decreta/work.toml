@@ -1,0 +1,10 @@
+schema = 1
+record_type = "work"
+id = "work.council-of-trent.canones-et-decreta"
+title = "Canones et decreta Concilii Tridentini"
+responsible = "Council of Trent"
+work_type = "conciliar-decrees"
+alternate_titles = ["The Canons and Decrees of the Council of Trent"]
+languages = ["la"]
+locus_pattern = 'sessio-[0-9]{1,2}-(?:canon|decretum)-[0-9]{1,2}(?:-[0-9]{1,2})?'
+description = "The canons and decrees of the ecumenical Council of Trent (1545-1563). Session XXIV of 11 November 1563 contains the canons on the sacrament of matrimony, of which canon 9 anathematizes the assertion that clerics in sacred orders or solemnly professed regulars can validly contract marriage notwithstanding the ecclesiastical law or vow, and canon 10 the assertion that the married state is to be preferred to virginity or celibacy."
