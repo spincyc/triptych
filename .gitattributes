@@ -1,5 +1,14 @@
-# Raw retrieval extracts are byte-preserved source records.
-src/gpt/**/propers/retrieved.txt -whitespace
+# Normalize text line endings so the release pipeline's exact byte hashes
+# cannot be perturbed by a contributor's autocrlf configuration; declare
+# binary formats explicitly rather than relying on the content heuristic.
+* text=auto eol=lf
+*.pdf binary
+*.jpg binary
+*.jpeg binary
+*.png binary
+
+# Raw retrieval extracts are byte-preserved source records (any provider).
+src/*/**/propers/retrieved.txt -whitespace -text
 
 # Reusable source payloads are hashed as exact bytes, without line conversion
 # or cleanup of source-significant whitespace. Manifests remain ordinary text.
