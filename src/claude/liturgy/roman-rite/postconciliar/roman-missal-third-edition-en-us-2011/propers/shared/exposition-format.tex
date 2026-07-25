@@ -1,0 +1,126 @@
+% Presentation primitives for the Claude edition of the U.S.-English
+% postconciliar proper guides.  The file supplies only tabular environments,
+% a compact title block, and two inline cues.  It defines no content, asserts
+% no source, and deliberately avoids landscape, multi-column, and picture
+% environments so that every leaf using it can remain web-eligible.
+
+% Compact identification block: celebration, cycle/formula, governing books.
+\newcommand{\properheading}[3]{%
+  \begin{center}
+    {\Large\bfseries #1}\par
+    \vspace{0.16em}
+    {\large #2}\par
+    \vspace{0.16em}
+    {\small #3}
+  \end{center}
+  \vspace{0.30em}
+}
+
+% Inline cues.  \incipit marks a Latin incipit or short Latin cue; \bid marks
+% a stable semantic branch identifier used identically in the appendix and in
+% the tracked audit records.
+\newcommand{\incipit}[1]{\textit{#1}}
+\newcommand{\bid}[1]{{\ttfamily\hyphenchar\font=45\relax #1}}
+% \work marks the title of a cited work; \term marks a technical term at first
+% use.  Both are typographic only and assert nothing about authority.
+\newcommand{\work}[1]{\textit{#1}}
+\newcommand{\term}[1]{\textit{#1}}
+
+% Page-one inventory of textual variable parts, in actual ritual order.
+\newenvironment{unitstable}
+{\begingroup\scriptsize\renewcommand{\arraystretch}{1.04}%
+\setlength{\LTpre}{0.15em}\setlength{\LTpost}{0pt}%
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.235\linewidth}>{\raggedright\arraybackslash}p{0.695\linewidth}}
+\toprule
+\textbf{Textual unit} & \textbf{Text / citation}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}\endgroup}
+
+\newcommand{\unitphase}[1]{%
+  \addlinespace[0.28em]
+  \multicolumn{2}{@{}l}{\textbf{#1}}\\*[-0.06em]}
+
+\newcommand{\unitrow}[2]{#1 & #2\\}
+
+% Page-one four-senses synthesis.
+\newenvironment{foursenses}
+{\begingroup\footnotesize\renewcommand{\arraystretch}{1.0}%
+\setlength{\LTpre}{0.15em}\setlength{\LTpost}{0pt}%
+\begin{longtable}{>{\bfseries\raggedright\arraybackslash}p{0.135\linewidth}>{\raggedright\arraybackslash}p{0.795\linewidth}}
+\toprule
+\textbf{Sense} & \textbf{Synthesis}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}\endgroup}
+
+% Page-two two-tier scriptural date and location dossiers.  Each dossier is a
+% four-field summary row, an optional italic narrated-event row bounded by
+% partial rules, and one full-width explanatory row closed by a full rule.
+\newenvironment{dossiertable}
+{\begingroup\scriptsize\renewcommand{\arraystretch}{1.02}%
+\setlength{\LTpre}{0.15em}\setlength{\LTpost}{0pt}%
+\begin{longtable}{>{\bfseries\raggedright\arraybackslash}p{0.155\linewidth}>{\raggedright\arraybackslash}p{0.155\linewidth}>{\raggedright\arraybackslash}p{0.345\linewidth}>{\raggedright\arraybackslash}p{0.215\linewidth}}
+\toprule
+\textbf{Textual unit / alternative} & \textbf{Citation} & \textbf{Location} & \textbf{Date}\\
+\midrule
+\endhead}
+% The closing rule is supplied by the final dossier note.
+{\end{longtable}\endgroup}
+
+\newcommand{\dossierrow}[4]{#1 & #2 & #3 & #4\\}
+\newcommand{\dossierevent}[3]{%
+  \cmidrule(lr){2-4}
+  \multicolumn{1}{r}{\textit{Narrated event}} & #1 & #2 & #3\\
+  \cmidrule(lr){2-4}}
+\newcommand{\dossiernote}[1]{%
+  \multicolumn{4}{>{\raggedright\arraybackslash}p{0.92\linewidth}}{#1}\\[0.12em]
+  \midrule}
+
+% Reader-facing branch table used in the liturgical-resolution appendix.
+\newenvironment{branchtable}
+{\begingroup\footnotesize\renewcommand{\arraystretch}{1.04}%
+\setlength{\LTpre}{0.9em}\setlength{\LTpost}{0.6em}%
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.155\linewidth}>{\raggedright\arraybackslash}p{0.215\linewidth}>{\raggedright\arraybackslash}p{0.115\linewidth}>{\raggedright\arraybackslash}p{0.215\linewidth}>{\raggedright\arraybackslash}p{0.185\linewidth}}
+\toprule
+\textbf{Branch ID} & \textbf{Authority and trigger} & \textbf{Status} & \textbf{Units affected} & \textbf{Resolution}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}\endgroup}
+
+\newcommand{\branchrow}[5]{\bid{#1} & #2 & #3 & #4 & #5\\}
+
+% Generic worked tables for the commentary and appendices.
+\newenvironment{twocoltable}[2]
+{\begingroup\footnotesize\renewcommand{\arraystretch}{1.05}%
+\setlength{\LTpre}{0.9em}\setlength{\LTpost}{0.6em}%
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.245\linewidth}>{\raggedright\arraybackslash}p{0.685\linewidth}}
+\toprule
+\textbf{#1} & \textbf{#2}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}\endgroup}
+
+\newenvironment{threecoltable}[3]
+{\begingroup\footnotesize\renewcommand{\arraystretch}{1.05}%
+\setlength{\LTpre}{0.9em}\setlength{\LTpost}{0.6em}%
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.185\linewidth}>{\raggedright\arraybackslash}p{0.335\linewidth}>{\raggedright\arraybackslash}p{0.395\linewidth}}
+\toprule
+\textbf{#1} & \textbf{#2} & \textbf{#3}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}\endgroup}
+
+\newenvironment{fourcoltable}[4]
+{\begingroup\footnotesize\renewcommand{\arraystretch}{1.05}%
+\setlength{\LTpre}{0.9em}\setlength{\LTpost}{0.6em}%
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.155\linewidth}>{\raggedright\arraybackslash}p{0.235\linewidth}>{\raggedright\arraybackslash}p{0.255\linewidth}>{\raggedright\arraybackslash}p{0.265\linewidth}}
+\toprule
+\textbf{#1} & \textbf{#2} & \textbf{#3} & \textbf{#4}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}\endgroup}
+
+\newcommand{\rowtwo}[2]{#1 & #2\\}
+\newcommand{\rowthree}[3]{#1 & #2 & #3\\}
+\newcommand{\rowfour}[4]{#1 & #2 & #3 & #4\\}
