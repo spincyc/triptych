@@ -1,0 +1,150 @@
+schema = 2
+record_type = "bindings"
+document = "articles/faith/council-missal-and-crisis"
+
+[[bindings]]
+source_id = "edition.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23"
+loci = ["4", "14", "21-23", "25", "34", "36-40", "47-58", "116"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The essay's mandate analysis (section 3) quotes and paraphrases articles 4, 14, 21, 22, 23, 25, 34, 36, 48, 50-55, 57, and 116 from this registered official English web state. The authoring agent re-fetched the page publication-locally on 2026-07-25 and obtained bytes identical to the registered artifact hash, then extracted every quoted wording verbatim from that response; the registered passages covering 14, 21-23, 36-40, 47-58, and 112-116 were consulted for their verified contexts. The essay's bounded negative claims (no provision on celebration versus populum, Communion in the hand, or an all-vernacular liturgy) are publication-local searches of this complete English delivery only, recorded in research/source-audit.md. The promulgated Latin (AAS 56) is registered separately and was not collated; no cross-language claim is made. This binding records the edition-level dependence without claiming to have replayed any central artifact fingerprint; the publication-local check is the verification ceiling asserted here."
+
+[[bindings]]
+source_id = "edition.john-xxiii.council-announcement-1959.italian-vatican-web-2026-07-24"
+loci = ["complete-text"]
+role = "context"
+states = ["cataloged"]
+context = "The essay relies on the registered complete-text passage only for the fact, date (25 January 1959), and triple scope of the announcement (Roman synod, ecumenical council, code revision). No wording is quoted. The publication-local check is the verification ceiling asserted here."
+
+[[bindings]]
+source_id = "edition.john-xxiii.gaudet-mater-ecclesia.latin-vatican-web-2026-07-24"
+loci = ["complete-text"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The essay quotes three Latin sentences of the opening address (At Nobis plane dissentiendum ... vaticinatoribus; Est enim aliud ipsum depositum Fidei ... eodem tamen sensu eademque sententia; Ad praesens tempus ... misericordiae medicinam adhibere) with labeled working glosses, and preserves each sentence's immediate context. The authoring agent re-fetched the page publication-locally on 2026-07-25, obtained bytes identical to the registered artifact hash, and extracted the quoted Latin verbatim. The English rendering quoted in section 6 is the Abbott translation as given inside Benedict XVI's 2005 address, not a translation of this witness. Publication-local check is the ceiling asserted."
+
+[[bindings]]
+source_id = "work.second-vatican-council.doctrinal-commission-declaration-1964-03-06"
+loci = ["complete"]
+role = "context"
+states = ["cataloged"]
+context = "The essay cites the declaration of 6 March 1964 (repeated 16 November 1964) for its existence, dates, and rule that the Council proposed as binding de fide only what it openly declared to be such. The claim is carried at the level of the registered AAS-witness records and Paul VI's 12 January 1966 audience, which invokes the declaration by both dates; the authoring agent did not independently re-inspect the AAS pages. Catalog-level reliance is the ceiling asserted."
+
+[[bindings]]
+source_id = "edition.paul-vi.vatican-ii-closing-address-1965-12-07.english-vatican-web-2026-07-24"
+loci = ["complete-text"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The essay quotes the address's statements on the magisterium ('even though not wishing to issue extraordinary dogmatic pronouncements...'), on the religion of the God who became man meeting the religion of man who makes himself God ('There could have been, but there was none'), and the Samaritan sentence, with the 'ever preserving its own authority and force' clause noted. Re-fetched publication-locally 2026-07-25 byte-identical to the registered artifact; quotations extracted verbatim. Publication-local check is the ceiling asserted."
+
+[[bindings]]
+source_id = "edition.paul-vi.general-audience-1966-01-12.italian-vatican-web-2026-07-24"
+loci = ["complete-text"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The essay quotes the audience's Italian on the Council's avoidance of extraordinary dogmatic pronouncements and the authority of the supreme ordinary magisterium, and its warning against detaching the Council's teachings from the Church's doctrinal patrimony, with labeled working glosses. Re-fetched publication-locally 2026-07-25 byte-identical to the registered artifact; Italian extracted verbatim. Publication-local check is the ceiling asserted."
+
+[[bindings]]
+source_id = "passage.paul-vi.missale-romanum-constitutio.english-vatican-web-2026-07-25.complete-text"
+loci = ["complete-text"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The essay quotes the constitution's opening on the 1570 Missal, its account of the conciliar basis, the General Instruction sentence, the three added Canons and common words of consecration, the 'due care being taken to preserve their substance' clause, the lectionary paragraph, the unity-in-diversity-of-languages hope, and the effective date. The record was created for this essay from the exact fetched response (SHA-256 515c528e...), and the quoted wording was extracted verbatim from those bytes. Publication-local check is the ceiling asserted."
+
+[[bindings]]
+source_id = "passage.paul-vi.missale-romanum-constitutio.latin-missale-romanum-typica-tertia-2002.complete-text"
+loci = ["complete-text"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The essay quotes the Latin force clause (Nostra haec autem statuta et praescripta ... firma et efficacia esse et fore volumus) and relies on the Latin constitution's presence at physical pages 4-7 of the registered 2002 reproduction, re-downloaded and hash-verified publication-locally 2026-07-25. The reproduction is a secondary digitally typeset witness; the check is bounded to the inspected pages."
+
+[[bindings]]
+source_id = "passage.holy-see.decretum-de-editione-typica-missalis-romani-1970.latin-missale-romanum-typica-tertia-2002.complete-decree"
+loci = ["complete-decree"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The essay quotes the decree's operative Latin (novam hanc editionem Missalis Romani ad normam decretorum Concilii Vaticani II confectam promulgat et uti typicam declarat) and its date and protocol number, read at physical page 1 of the hash-verified 2002 reproduction on 2026-07-25. Bounded to the inspected page of a secondary witness."
+
+[[bindings]]
+source_id = "passage.holy-see.de-editione-typica-altera-missalis-romani-1975.latin-missale-romanum-typica-tertia-2002.complete-decree"
+loci = ["complete-decree"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The essay's account of the 1975 second typical edition (date, protocol number, catalogued changes including the acolyte/lector substitution and added formularies, papal approval, declaration as typical) was read at physical page 2 of the hash-verified 2002 reproduction on 2026-07-25. Bounded to the inspected page of a secondary witness."
+
+[[bindings]]
+source_id = "passage.holy-see.decretum-de-editione-typica-tertia-missalis-romani-2000.latin-missale-romanum-typica-tertia-2002.complete-decree"
+loci = ["complete-decree"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The essay's dates for the third typical edition (papal approval 10 April 2000; declaration 20 April 2000; publication 2002) rely on this previously registered and verified passage; the authoring agent re-read the decree at physical pages 2-3 of the hash-verified reproduction on 2026-07-25. Publication-local check is the ceiling asserted."
+
+[[bindings]]
+source_id = "passage.holy-see.reimpressio-emendata-missalis-romani-notice-2008.italian-notitiae-503-504.edition-status"
+loci = ["edition-status"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The essay's characterization of the 2008 reimpressio emendata as an emended reprint rather than a new typical edition, with bounded corrections, relies on this centrally verified passage (verified 2026-07-23) and its recorded context; the authoring agent did not re-inspect the Notitiae scan. Reliance on the checked central record is the ceiling asserted, as the essay's note states."
+
+[[bindings]]
+source_id = "edition.catholic-church.missale-romanum.vatican-typica-1962"
+loci = ["complete-text"]
+role = "context"
+states = ["cataloged"]
+context = "Identity reliance only: 'the 1962 Missal' throughout the essay means this registered edition (Missale Romanum, editio typica, Typis Polyglottis Vaticanis, 1962). No content of the edition is quoted or characterized beyond its identity and the discipline instruments' references to it."
+
+[[bindings]]
+source_id = "passage.john-paul-ii.ecclesia-dei.english-vatican-web-2026-07-25.complete-text"
+loci = ["complete-text"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The essay quotes nn. 3-6: the 30 June 1988 ordinations, the schismatic act and excommunications, the incomplete and contradictory notion of Tradition (with the 'possessed by the Bishop of Rome and the Body of Bishops' and 'impossible to remain faithful to the Tradition while breaking the ecclesial bond' clauses), the legitimate-aspirations and wide-and-generous-application directives, the commission's institution, and note 9's identification of Quattuor abhinc annos (3 October 1984, AAS 76, 1088-1089), which is the essay's only route to the 1984 letter. Record created for this essay from the exact fetched response (d6f0abd4...); wording extracted verbatim. Publication-local check is the ceiling asserted."
+
+[[bindings]]
+source_id = "passage.benedict-xvi.summorum-pontificum.english-vatican-web-2026-07-25.complete-text"
+loci = ["complete-text"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The essay quotes article 1 (ordinary and extraordinary expressions; 'never abrogated'; no division in the Church's lex credendi), article 2 (Masses without the people), article 5 s1 (stable groups), and the 14 September 2007 effective date. Record created for this essay from the exact fetched response (7442edfd...); wording extracted verbatim. Publication-local check is the ceiling asserted."
+
+[[bindings]]
+source_id = "passage.benedict-xvi.letter-to-bishops-summorum-pontificum.english-vatican-web-2026-07-25.complete-text"
+loci = ["complete-text"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The essay quotes the two fears, 'never juridically abrogated', the arbitrary-deformations passage, the mutual-enrichment sentence, 'no contradiction ... growth and progress, but no rupture', and 'What earlier generations held as sacred...', and cites the 'external mark of identity' phrase about the Lefebvre movement. Record created for this essay from the exact fetched response (98d4af74...); wording extracted verbatim. Publication-local check is the ceiling asserted."
+
+[[bindings]]
+source_id = "edition.benedict-xvi.roman-curia-address-2005-12-22.english-vatican-web-2026-07-24"
+loci = ["complete-text"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The essay quotes the address's question, the two-hermeneutics passage, the description of the hermeneutic of discontinuity (texts versus spirit), the subject-Church sentence, the combination-of-continuity-and-discontinuity formula, the contingent-matters examples, and its quotation of Gaudet Mater Ecclesia in the Abbott translation. The bounded negative claim that 'hermeneutic of continuity' does not occur is a publication-local search of this complete delivery, re-fetched byte-identical 2026-07-25. Publication-local check is the ceiling asserted."
+
+[[bindings]]
+source_id = "passage.francis.traditionis-custodes.english-vatican-web-2026-07-25.complete-text"
+loci = ["complete-text"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The essay quotes articles 1-4 and 8 and the promulgation clause of the official English translation. Record created for this essay from the exact fetched response (c7e03ed6...); wording extracted verbatim. Publication-local check is the ceiling asserted."
+
+[[bindings]]
+source_id = "passage.francis.letter-to-bishops-traditionis-custodes.english-vatican-web-2026-07-25.complete-text"
+loci = ["complete-text"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The essay quotes the 2020-consultation passage ('preoccupies and saddens me'), the 'exploited to widen the gaps' sentence, the abuses-on-all-sides passage, the to-doubt-the-Council sentence, the Pius V parallel, and 'This unity I intend to re-establish...'. Record created for this essay from the exact fetched response (8157c7b0...); wording extracted verbatim. Publication-local check is the ceiling asserted."
+
+[[bindings]]
+source_id = "passage.holy-see.responsa-ad-dubia-traditionis-custodes-2021.english-vatican-web-2026-07-25.complete-text"
+loci = ["complete-text"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The essay quotes the parish-church condition ('only if it is established that it is impossible to use another church, oratory or chapel'), the restriction of the 1952 Rituale to erected personal parishes with the Pontificale excluded, the concelebration answer with its fraternal-dialogue condition, and the single-and-identical-prayer aim. Record created for this essay from the exact fetched response (136e9510...); wording extracted verbatim. Publication-local check is the ceiling asserted."
+
+[[bindings]]
+source_id = "passage.holy-see.rescriptum-traditionis-custodes-2023.english-vatican-web-2026-07-25.complete-text"
+loci = ["complete-text"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The essay quotes the two dispensations reserved in a special way to the Apostolic See (canon 87 s1), the bishops' reporting obligation, and the confirmation of the 2021 Responsa, and relies on the rescript as the last universal instrument in the currentness check dated 2026-07-25. Record created for this essay from the exact fetched response (f64c1c95...); wording extracted verbatim. Publication-local check is the ceiling asserted."

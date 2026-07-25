@@ -1,0 +1,11 @@
+schema = 1
+record_type = "work"
+id = "work.paul-vi.missale-romanum-constitutio"
+title = "Missale Romanum (Apostolic Constitution)"
+responsible = "Pope Paul VI"
+work_type = "apostolic-constitution"
+alternate_titles = ["Constitutio Apostolica qua Missale Romanum ex decreto Concilii Oecumenici Vaticani II instauratum promulgatur", "Apostolic Constitution on the Roman Missal renewed by decree of the Second Vatican Council"]
+languages = ["la"]
+locus_pattern = 'complete-text'
+description = "Paul VI's apostolic constitution of 3 April 1969 promulgating the Roman Missal renewed by decree of the Second Vatican Council, describing the revised Order of Mass, the three added Eucharistic Prayers, the common words of consecration, and the enlarged lectionary, and ordering its prescriptions into effect from 30 November 1969, the First Sunday of Advent."
+relations = ["work.catholic-church.missale-romanum", "work.second-vatican-council.sacrosanctum-concilium"]

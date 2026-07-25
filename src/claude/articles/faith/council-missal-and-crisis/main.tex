@@ -1,0 +1,78 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+\usepackage{endnotes}
+
+\hypersetup{
+  pdftitle={Council, Missal, and Crisis},
+  pdfsubject={A discursive essay on the Second Vatican Council, the liturgical reform culminating in the Missal of Paul VI, and the postconciliar crisis narrative: what the Council mandated, what was made of it, what the numbers will and will not say, and how the Church has governed the disagreement.}
+}
+
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.14\textheight}
+{\large\scshape A Triptych Article\par}
+\vspace{1.5em}
+{\Huge\bfseries Council, Missal, and Crisis\par}
+\vspace{0.9em}
+{\Large On What Was Mandated, What Was Made, and What the Numbers Will Not Say\par}
+\vfill
+{\footnotesize The discipline governing the older Roman Missal is mutable law, stated here as of 25 July 2026; see the terminal Scope, Method, and Qualifications appendix.\par}
+\vspace{1.2em}
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{articles/faith/council-missal-and-crisis/sections/00-the-coincidence}
+\input{articles/faith/council-missal-and-crisis/sections/10-what-the-council-was-called-to-do}
+\input{articles/faith/council-missal-and-crisis/sections/20-what-the-constitution-says}
+\input{articles/faith/council-missal-and-crisis/sections/30-from-constitution-to-missal}
+\input{articles/faith/council-missal-and-crisis/sections/40-the-crisis-measured}
+\input{articles/faith/council-missal-and-crisis/sections/50-the-hermeneutical-fork}
+\input{articles/faith/council-missal-and-crisis/sections/60-the-critique-and-its-limits}
+\input{articles/faith/council-missal-and-crisis/sections/70-the-discipline-of-memory}
+\clearpage
+\addcontentsline{toc}{section}{Notes}
+\begingroup
+\footnotesize
+\setlength{\parskip}{0.28em}
+\theendnotes
+\endgroup
+\Needspace{14\baselineskip}
+\appendix
+\input{articles/faith/council-missal-and-crisis/sections/90-scope-method-qualifications}
+\input{articles/faith/council-missal-and-crisis/sections/99-references}
+\begingroup
+\setlength{\parskip}{0pt}
+\vspace{-0.6\baselineskip}
+\section{Generation Metadata}
+\vspace{-0.35\baselineskip}
+{\scriptsize\input{articles/faith/council-missal-and-crisis/generation-metadata}}
+\endgroup
+\end{deepstudy}
+
+\end{document}
