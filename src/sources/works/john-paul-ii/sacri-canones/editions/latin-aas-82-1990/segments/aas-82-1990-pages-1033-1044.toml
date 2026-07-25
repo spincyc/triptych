@@ -1,0 +1,12 @@
+schema = 2
+record_type = "segment"
+id = "segment.john-paul-ii.sacri-canones.latin-aas-82-1990.aas-82-1990-pages-1033-1044"
+edition_id = "edition.john-paul-ii.sacri-canones.latin-aas-82-1990"
+artifact_id = "artifact.holy-see.acta-apostolicae-sedis.volume-82-1990.vatican-ocr-pdf-629766ef"
+artifact_sha256 = "629766efc9cf2d528acbcf4bf469781beca974cd0da672ab6d91663e39ea07fb"
+segment_type = "constituent-work"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete constitution from its opening on printed p. 1033 to the papal subscription on p. 1044, including the promulgating clause and the entry-into-force clause on p. 1043."
+artifact_page_ranges = [[1033, 1044]]
+verified_on = "2026-07-25"
+notes = "Page images of pp. 1043 and 1044 were rendered and read visually; the volume's OCR layer drops the entry-into-force clause entirely, so the image governs there."
