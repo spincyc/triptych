@@ -1,0 +1,9 @@
+schema = 1
+record_type = "web-edition"
+document = "articles/faith/council-missal-and-crisis"
+
+eligibility = "conditional"
+basis = "multicol-reference-list"
+blocking_constructs = ["multicols"]
+rationale = "The only column-dependent construct is the terminal reference list, which collapses to a single column without loss; the leaf is otherwise reflowable."
+reviewed = "2026-07-25"
