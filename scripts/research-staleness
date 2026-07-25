@@ -1,30 +1,12 @@
 #!/usr/bin/env python3
-"""Cross-provider research staleness ledger.
+"""Cross-provider research staleness ledger (policy: guidance/staleness.md).
 
-Policy: when any research input of a paper changes — its own research
-records, the research records of another provider's edition of the same
-leaf, or a reusable source record it binds — every provider's edition of
-that leaf is flagged stale until that provider independently re-evaluates
-its paper. Re-evaluation produces both an in-place modification and a
-complete rewrite, then an honest three-way comparison (old / modified /
-rewritten). If nothing material changed, the marker is cleared by
-rebaselining; a material change is raised to the user for confirmation
-before any replacement. This tool owns only the deterministic half:
-fingerprinting research inputs, reporting staleness with causes, and
-rebaselining. The evaluation itself is provider work recorded elsewhere.
-
-The tracked ledger lives at
-src/sources/inventories/research-staleness-v1.toml and stores one
-baseline fingerprint per (provider, leaf) plus the per-input digests the
-fingerprint was computed from, so `explain` can name exactly which
-inputs moved.
-
-Subcommands:
-  status [--provider P]     list stale editions (exit 1 if any)
-  explain PROVIDER LEAF     show which research inputs changed
-  rebaseline [--provider P] [--id LEAF] [--all]
-                            re-record baselines for the named editions
-  bootstrap                 create the ledger for every discovered edition
+A paper's inputs are its own research records, sibling providers'
+records for the same leaf, and the source records it binds; any change
+flags every provider's edition. This tool owns only fingerprints,
+cause reporting, and rebaselining — evaluation is provider work.
+Subcommands: status, explain PROVIDER LEAF, rebaseline, bootstrap.
+Ledger: src/sources/inventories/research-staleness-v1.toml.
 """
 
 from __future__ import annotations

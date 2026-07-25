@@ -1,6 +1,4 @@
-# Normalize text line endings so the release pipeline's exact byte hashes
-# cannot be perturbed by a contributor's autocrlf configuration; declare
-# binary formats explicitly rather than relying on the content heuristic.
+# LF everywhere; release hashes must not depend on contributor autocrlf.
 * text=auto eol=lf
 *.pdf binary
 *.jpg binary

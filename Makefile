@@ -422,11 +422,7 @@ verify-public-preview:
 verify-public-site:
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) verify
 
-# Mechanical release bookkeeping. `refresh-release-bindings` recomputes every
-# exact PDF, site-source, and rights-record binding from current bytes;
-# `approve-release` records a dated supplement carrying the operator's exact
-# instruction text before refreshing. Approval wording is the operator's act;
-# these targets never invent one.
+# Release bookkeeping; approval text is the operator's act, never invented.
 check-release-bindings:
 	@$(PYTHON) $(RELEASE_BINDINGS_TOOL) status
 
@@ -480,9 +476,7 @@ rebaseline-doc:
 	fi
 	@$(PYTHON) $(RESEARCH_STALENESS_TOOL) rebaseline --provider '$(PROVIDER)' --id '$(DOC)'
 
-# Aggregate gates: `check` runs every repository policy check; `check-tests`
-# runs the complete script unit-test suite. Staleness is reported separately —
-# it flags re-evaluation work, not a broken repository.
+# Staleness stays out of `check`: it flags re-evaluation work, not breakage.
 check: check-metadata check-sources check-public-alpha check-release-bindings
 
 check-tests:

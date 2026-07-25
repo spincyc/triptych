@@ -281,6 +281,6 @@ Preserve unrelated changes and stage only a coherent requested result. Editing, 
 
 Before any push to a public ref, review the exact outgoing range and confirm that every newly reachable source, record, PDF, and historical object is authorized. A push to `main` may trigger Pages after the source is already public; a failed workflow does not retract it. Keep uncleared experiments and private-review material off public refs.
 
-Every AI-assisted commit has a concise result-oriented subject and a body headed `AI summary:` recording the material content, records, guidance, build/publication changes, verification performed, and consequential limitations. Do not claim unperformed checks or include private reasoning or machine-local state.
+Every AI-assisted commit has a concise result-oriented subject and a terse body headed `AI summary:` — one or two sentences naming the material change and the verification performed. Do not claim unperformed checks or include private reasoning, narration, or machine-local state. The same terseness governs code comments: state only what the code cannot say itself.
 
 Use new commits for ordinary corrections, source substitutions, renewed verification, and reorganizations. Do not amend, filter, force-update, or otherwise rewrite published history unless the user expressly requests and coordinates that consequence.
