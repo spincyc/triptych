@@ -7,12 +7,12 @@
     "claude"
   ],
   "expected_counts": {
-    "publications": 134,
-    "release": 134,
+    "publications": 137,
+    "release": 137,
     "review": 0,
     "hold": 0,
     "providers": {
-      "claude": 18,
+      "claude": 21,
       "gpt": 116
     }
   },
@@ -40,7 +40,7 @@
         "worldwide"
       ],
       "rights_record": "release/rights/public-alpha-2026-07-15.md",
-      "rights_record_sha256": "aaec5d8ffdd5f53b32639ebe048629a5672dad4947dc062178904ff34e41ac69",
+      "rights_record_sha256": "f106b7c492211ee0c7d66197a3d2f22efb18b3fbe10fd2b319775b5bfe031eda",
       "site_sources": {
         "CONTRIBUTING.md": "1bb9ef13c4f754f9a8bede73f0afd95c2266173726bcfbd709017dc342272d5e",
         "LIBRARY.md": "a45aae3359ac20ac3a4cf756007a08df9109d06661d5fc261798daf38ec5b881",
@@ -49,14 +49,14 @@
         "LICENSES/MIT.txt": "afd9c125b68a36b60c78cf63656f4cea2613fadce57e95ebabacebff8817ef60",
         "README.md": "5007509616e98056d397b315247e07307b7cc0f8b715c49847dcef45dadfcb2b",
         "THIRD_PARTY.md": "965aaaff0e773815213fa8c9aada37213d6cb890eb374ef3d1bb1d1dbf966ec4",
-        "library/biographies.md": "227189d828a1a2022bfbf9a5c339880b4dfcec0f14d77869800418ac98be2ba4",
+        "library/biographies.md": "8527411f8880112dc43ad01c2ca2f91e9ccefaa36bc090ccf0dc79e715eebe97",
         "library/curriculums.md": "15f24d06b4911b1cbfe4d85d82c463d7c2eef8635ff25edf2817d5fa6e0fb2bc",
         "library/ecclesiastical-latin.md": "1b985372bc372990f8d748d7667620c76c89a4073a8dae146ecefbca84333c1b",
         "library/faith.md": "90af2c600ca2733e648afdbbb9f47fe5c74b7a7d87a6337daf28500fbb1e7e68",
         "library/heresies.md": "8f6f80b79266818a2b7d80db312ad33cd52ba594b329d4604dae53d17060f5df",
         "library/historical-accounts.md": "a4a276ea14cac3c752574fe1435beefccbc089aa1cfd9db9e953479c1f552c4b",
-        "library/law-and-church-discipline.md": "f7a9c66895bde0dfa183fa9f93b79005c77c6c625b978ce2163d3566aa7189c4",
-        "library/mariology.md": "d483e818bda6fa288422f04256e9427fbfc65dfb1dcbe85a7c9ff8f3b1f40ab2",
+        "library/law-and-church-discipline.md": "9b823f425ba9a2db3f40c1d8fc2951db71794bee21163d8d90727efe1e9cfce1",
+        "library/mariology.md": "671181462111359329257f3fa7be82e01a87f9861d4e5079f754da5de16712ea",
         "library/novus-ordo-liturgy.md": "861aba17f9e1788d852ba072bcdf8bf76a674e357eeadc7aa9030aed066e36fb",
         "library/prayer.md": "f355ee2a34f4f47744cbc6f0fea71c04f2c303882dce1b8ae3adabfc2b2c850d",
         "library/traditional-latin-mass.md": "5e68708e549d45014f4c59d1f1952e0dee427066a0ae559bdac7de030ea85b33",
@@ -68,7 +68,7 @@
       },
       "approved_on": "2026-07-25",
       "duration": "perpetual",
-      "effective_at": "2026-07-25T02:11:07-05:00",
+      "effective_at": "2026-07-25T04:45:23-05:00",
       "expires_at": null,
       "timezone": "America/Chicago",
       "conditions": [
@@ -1415,6 +1415,36 @@
       "approval": {
         "authorization": "perpetual-public-repository-2026",
         "pdf_sha256": "c8b1e0dd4443eca492c142453696d138cfab3ec4dba51231e0e52a69e5761ef2"
+      }
+    },
+    {
+      "id": "claude:biographies/saint-paul",
+      "catalog": "library/biographies.md",
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "5a0cf9bcf574a6ba3066e206f750ac025106107e0fbdaaf4ad5e0bd228f751a5"
+      }
+    },
+    {
+      "id": "claude:articles/canon-law/natural-positive-divine-human-law",
+      "catalog": "library/law-and-church-discipline.md",
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "a44ed9475330e19d245e3488eb0f8d165067f4ecfb4530f203eb1083ad22ae0a"
+      }
+    },
+    {
+      "id": "claude:theology/mariology/lourdes",
+      "catalog": "library/mariology.md",
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "02ba30326155c6e0e4b31ebd997594a63ad735fb320b2eda580f0522204f7e42"
       }
     }
   ]
