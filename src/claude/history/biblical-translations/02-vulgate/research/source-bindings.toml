@@ -1,0 +1,64 @@
+schema = 1
+record_type = "bindings"
+document = "history/biblical-translations/02-vulgate"
+
+# Claude edition. Most passage checks were performed against live web
+# transcriptions (URLs and dates in research/source-audit.md), so those
+# bindings are catalog-level. Two bindings record genuine events against
+# registered exact bytes: a replayable search of the tracked Dods 1871
+# City of God volume, and a visual inspection of a tracked Hetzenauer
+# 1914 page image.
+
+[[bindings]]
+source_id = "edition.nicene-and-post-nicene-fathers.series-2-volume-6.new-york-1893"
+loci = [
+  "Letter 27 (to Marcella)",
+  "Letter 71.5 (to Lucinius)",
+  "Letter 84.3",
+]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Jerome's 384 defense of the Gospel revision ('two-legged asses'; restoring the Latin 'to the form of the Greek original'), his repetition of the whole-New-Testament claim to Lucinius ('The new testament I have restored to the authoritative form of the Greek original'), and his notice of the Jewish teacher Baraninas; Letters 27 and 84 read 2026-07-24, Letter 71.5 checked 2026-07-25 during re-verification, all at New Advent's presentation of the NPNF2-6 translation. The Vulgate prefaces themselves were quoted from the public-domain Edgecomb translations at tertullian.org (see research/source-audit.md), with NPNF2-6 bound as the governing anthology identity for Jerome's letters. Catalog-level binding; no exact artifact registered."
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45305-body-lf"
+loci = ["18.43"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "searched", "inspected"]
+context = "Augustine's verdict on Jerome ('a man most learned, and skilled in all three languages, who translated these same Scriptures into the Latin speech, not from the Greek, but from the Hebrew') and his retention of the Seventy's authority. The exact 1871 Dods volume II text was located by literal search and the surrounding chapter 18.43 context (lines 10880-10905) was read on 2026-07-24."
+search_scope = "Exact normalized Dods 1871 volume II artifact, books 14-22 and retained historical matter."
+searched_on = "2026-07-24"
+search_mode = "raw-line-literal-casefold-v1"
+query = "skilled in all three languages"
+method = "Replayable scripts/source-library physical-line literal search."
+matching_line_count = 1
+source_fingerprint = "sha256:6bd16ca34656e4a17b7967a6b8ce070ebb4fdffa9b8c855088ab3e08e30bf996"
+
+[[bindings]]
+source_id = "passage.catholic-church.vulgata-clementina.hetzenauer-1914.jon-4.6-11"
+loci = ["Jon.4.6-11"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The received Clementine reading 'hederam'/'hedera' at Jonah 4:6-10, cited in the publication's account of the Oea incident (Augustine, Letter 71.5) and Jerome's ivy defense (Letter 112.22). Verified visually on the tracked page image of numbered scan page 0875 on 2026-07-24, including the 1914 editor's marginal gloss 'et propter ricinum arefactum irascens'."
+verified_on = "2026-07-24"
+source_fingerprint = "sha256:11c32060f77135c5128ad791e5b4c28f06b55f20cf939c1488f8e8754f59b425"
+
+[[bindings]]
+source_id = "edition.catholic-church.vulgata-clementina.hetzenauer-1914"
+role = "context"
+states = ["cataloged"]
+context = "The Sixto-Clementine textual tradition in an identified 1914 critical printing; bound as the edition identity behind the publication's statements about the Clementine Vulgate's three printings (1592, 1593, 1598) and its role as the standard Catholic text until 1979. Edition-level use is catalog-level; the exact-bytes evidence is carried by the Jon.4.6-11 passage binding above."
+
+[[bindings]]
+source_id = "edition.second-vatican-council.dei-verbum.english-vatican-web-2026-07-23"
+loci = ["22"]
+role = "official-control"
+states = ["cataloged"]
+context = "The conciliar sentence honoring 'the Latin translation known as the vulgate' and directing translation especially from the original texts, quoted exactly; read 2026-07-24 at the live Vatican English page, not against the registered edition artifact, so only catalog-level use is claimed. The act establishes its own object only."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["131", "101-141"]
+role = "official-control"
+states = ["cataloged"]
+context = "CCC 131 ('access to Sacred Scripture ought to be open wide to the Christian faithful') quoted; a bounded negative check that the Catechism's article on Scripture (101-141) does not treat the Vulgate by name. Read 2026-07-24 at the live Vatican English site; catalog-level use only."
