@@ -114,6 +114,8 @@ li > ul, li > ol { margin: 0.35rem 0; }
 
 img { max-width: 100%; height: auto; }
 
+.smallcaps { font-variant: small-caps; }
+
 table { width: 100%; margin: 1.4rem 0; border-collapse: collapse; font-family: system-ui, sans-serif; font-size: 0.94rem; }
 th, td { padding: 0.82rem 0.9rem; border: 1px solid var(--line); text-align: left; vertical-align: top; }
 th { color: var(--wine-dark); background: #f1ebe2; }

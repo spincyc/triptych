@@ -1386,9 +1386,10 @@ def render_page(
 
     content = markdown.markdown(
         markdown_text,
-        # Web editions are endnote-heavy, so footnote references and their
-        # back-references must become real anchors rather than literal [^n].
-        extensions=["tables", "sane_lists", "toc", "footnotes"],
+        # Web editions are endnote-heavy and carry their own section anchors,
+        # so footnotes and heading attributes must become real markup rather
+        # than literal [^n] and {#id} text.
+        extensions=["tables", "sane_lists", "toc", "footnotes", "attr_list"],
         output_format="html5",
     )
     template = (TEMPLATE_ROOT / "layout.html").read_text(encoding="utf-8")
@@ -1648,11 +1649,12 @@ def verify_output(
 
     disallowed_ids = set(publications) - set(included)
     privacy_patterns = {
-        "/home/": "home-directory path",
-        "file://": "local file URL",
-        "github_pat_": "GitHub token pattern",
-        "ghp_": "GitHub token pattern",
-        "BEGIN PRIVATE KEY": "private key marker",
+        # A machine-local home path, not a /home/ segment in some host's URL.
+        re.compile(r"(?<![\w.-])/home/[A-Za-z0-9._-]+"): "home-directory path",
+        re.compile(r"file://"): "local file URL",
+        re.compile(r"github_pat_"): "GitHub token pattern",
+        re.compile(r"ghp_"): "GitHub token pattern",
+        re.compile(r"BEGIN PRIVATE KEY"): "private key marker",
     }
     for path in output.rglob("*"):
         if not path.is_file() or path.suffix not in TEXT_SUFFIXES and path.name not in {"robots.txt", "SHA256SUMS", "_headers"}:
@@ -1660,7 +1662,7 @@ def verify_output(
         text = path.read_text(encoding="utf-8", errors="replace")
         relative = path.relative_to(output).as_posix()
         for pattern, label in privacy_patterns.items():
-            if pattern in text:
+            if pattern.search(text):
                 errors.append(f"{relative}: contains {label}")
         if path.suffix == ".html":
             for href in parsed_html(path).links:
