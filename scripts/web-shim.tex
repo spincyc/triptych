@@ -20,6 +20,14 @@
 \newcommand{\fbox}[1]{#1}
 % Page orientation, not structure: the content must pass through.
 \newenvironment{landscape}{}{}
+% pandoc drops these silently, closing up words the print page separates.
+\newcommand{\enspace}{ }
+\newcommand{\thinspace}{ }
+\newcommand{\quad}{ }
+\newcommand{\qquad}{ }
+\newcommand{\hfill}{ }
+% Horizontal centring has no web counterpart, but the block stays a block.
+\renewenvironment{center}{\par}{\par}
 
 % Symbols pandoc drops rather than renders.
 \newcommand{\dag}{†}
@@ -60,6 +68,7 @@
 % its title must survive to keep quoted source distinguishable.
 \newenvironment{studybox}[1]{\begin{quote}\textbf{#1}\par}{\end{quote}}
 \newenvironment{studyframe}{\begin{quote}}{\end{quote}}
+\newenvironment{dossierframe}{\begin{quote}}{\end{quote}}
 \newenvironment{sourcecard}[1]{\begin{quote}\textbf{#1}\par}{\end{quote}}
 \newenvironment{massbox}[1]{\begin{quote}\textbf{#1}\par}{\end{quote}}
 \newenvironment{novenasourcecard}[1]{\begin{quote}\textbf{#1}\par}{\end{quote}}
@@ -99,12 +108,13 @@
 
 % ---------------------------------------------------------------------- prayers
 % Facing Latin/English minipages become successive labelled blocks; both texts
-% are received witnesses and neither may be dropped.
+% are received witnesses and neither may be dropped.  Each text stands in its
+% own paragraph because a prayer argument may contain \par.
 \newcommand{\bilingualprayer}[4]{%
   \begin{massbox}{#1}
   \textbf{Text and status:} #2\par
-  \textbf{Latin.} \textit{#3}\par
-  \textbf{English.} #4
+  \textbf{Latin.}\par #3\par
+  \textbf{English.}\par #4
   \end{massbox}}
 \newcommand{\VR}[2]{\textbf{V.} #1\par\textbf{R.} #2\par}
 \newcommand{\PrayerRepeat}[1]{\textit{#1}\par}
