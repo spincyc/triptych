@@ -49,7 +49,7 @@ KNOWN_COMMANDS = set(
     makeatother expandafter noexpand detokenize csname endcsname hypersetup usepackage
     documentclass input include titleformat titlespacing setlist texorpdfstring widowpenalty
     clubpenalty displaywidowpenalty exhyphenpenalty hyphenchar font char dimexpr hbadness fboxrule
-    fboxsep symbol do UrlBreaks theenmark makeenmark toprule midrule bottomrule cmidrule
+    fboxsep symbol do UrlBreaks Urlmuskip theenmark makeenmark toprule midrule bottomrule cmidrule
     addlinespace multicolumn multirow hline cline tabularnewline endhead endfoot endlastfoot
     endfirsthead
     """.split()
@@ -83,6 +83,8 @@ SAFE_PAYLOAD_RE = re.compile(r"^[A-Za-z0-9 .,()]+$")
 NOTE_MACRO_RE = re.compile(r"\\(?:endnote|footnote)\s*\{")
 CONTRIBUTION_RE = re.compile(r"\\AIModelContribution(?=\s*\{)")
 LAYOUT_MACRO_RE = re.compile(r"\\(?:titleformat|titlespacing)\*?")
+# Register assignments carry no text and are not brace-argument macros.
+REGISTER_ASSIGNMENT_RE = re.compile(r"\\Urlmuskip\s*=[^\\\n]*(?:\\relax)?")
 # pandoc's reader drops an enumitem option list and every \item label with it.
 LIST_OPTION_RE = re.compile(
     r"(\\begin\s*\{(?:itemize|enumerate|description)\})\s*\[[^\[\]]*\]"
@@ -356,6 +358,7 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
     body = assemble(tail, provider, sources)
     title, subtitle = pdf_metadata(preamble)
     body = TITLEPAGE_RE.sub("", body).replace(r"\tableofcontents", "")
+    body = REGISTER_ASSIGNMENT_RE.sub("", body)
     body = strip_layout_macros(body)
     body = LIST_OPTION_RE.sub(r"\1", body)
     body = deduplicate_contributions(body)

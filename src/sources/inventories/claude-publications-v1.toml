@@ -3,9 +3,9 @@ record_type = "publication-source-inventory"
 provider = "claude"
 audited_on = "2026-07-25"
 discovery_rule = "src/claude/**/main.tex"
-publication_count = 23
-source_surface_file_count = 423
-snapshot = "sha256:06a2eaa91e3842da76a95f5c1d563ff88d78fcb9df4dce3cb2122ffad34746eb"
+publication_count = 25
+source_surface_file_count = 462
+snapshot = "sha256:ca98152a70f008202e81ee67d26c6fb75fe91f6496df1c12f3f3241966fbc658"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -21,6 +21,17 @@ roots = ["src/claude/history/biblical-translations"]
 id = "owner.typesetting.common"
 kind = "shared-typesetting-owner"
 roots = ["src/common"]
+
+[[documents]]
+id = "articles/canon-law/clerical-celibacy-chastity-and-continence"
+main = "src/claude/articles/canon-law/clerical-celibacy-chastity-and-continence/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "articles/canon-law/clerical-celibacy-chastity-and-continence"
+relationship = "local"
 
 [[documents]]
 id = "articles/canon-law/natural-positive-divine-human-law"
@@ -273,6 +284,17 @@ id = "theology/mariology/fatima"
 relationship = "local"
 
 [[documents]]
+id = "theology/mariology/guadalupe"
+main = "src/claude/theology/mariology/guadalupe/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "theology/mariology/guadalupe"
+relationship = "local"
+
+[[documents]]
 id = "theology/mariology/lourdes"
 main = "src/claude/theology/mariology/lourdes/main.tex"
 publication_kind = "canonical"
@@ -304,6 +326,132 @@ source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "theology/mariology/rosary"
 relationship = "local"
+
+[[files]]
+path = "src/claude/articles/canon-law/clerical-celibacy-chastity-and-continence/main.tex"
+sha256 = "860ffc6f68ca695c7232a216644331869811b84d55609f02ed794aa748baa6e7"
+kind = "publication-main"
+owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
+
+[[files]]
+path = "src/claude/articles/canon-law/clerical-celibacy-chastity-and-continence/research/scope.md"
+sha256 = "84f27b5a06471b2651f6c2d52906473106b74baf86ab323eb1ae57472c97a9a4"
+kind = "research-scope"
+owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
+
+[[files]]
+path = "src/claude/articles/canon-law/clerical-celibacy-chastity-and-continence/research/source-audit.md"
+sha256 = "cd0017b4a0d800c2f109994800e9d74a78469d5ff5f92a09f9cfad2dab3a1fa6"
+kind = "legacy-source-audit"
+owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
+
+[[files]]
+path = "src/claude/articles/canon-law/clerical-celibacy-chastity-and-continence/research/source-bindings.toml"
+sha256 = "9618865545538234827b26274a633835dbe0d959d6f93002e256bef74ad47b70"
+kind = "source-binding"
+owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
+
+[[files]]
+path = "src/claude/articles/canon-law/clerical-celibacy-chastity-and-continence/sections/00-three-obligations.tex"
+sha256 = "7652d30a63ee6f4adb5ee5009e9f6b778390a2d7705e6294b2777c3f19c5390e"
+kind = "rendered-content"
+owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
+
+[[files]]
+path = "src/claude/articles/canon-law/clerical-celibacy-chastity-and-continence/sections/10-fixing-the-terms.tex"
+sha256 = "ec20e679f55c939fc5ecadc3d39b0329ddcdac30bf1a96f7c31cc00c4e8adbfa"
+kind = "rendered-content"
+owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
+
+[[files]]
+path = "src/claude/articles/canon-law/clerical-celibacy-chastity-and-continence/sections/100-convert-clergy.tex"
+sha256 = "e93d25ee08fd2fc07cc0150b2b7afd9c6436fd74862b30c6167d1f79fdb6ac08"
+kind = "rendered-content"
+owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
+
+[[files]]
+path = "src/claude/articles/canon-law/clerical-celibacy-chastity-and-continence/sections/110-the-modern-file.tex"
+sha256 = "cff38ed54795b3b514c2b60f97ccbf56d55be7736472fb08e9dfc9d09c3d958a"
+kind = "rendered-content"
+owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
+
+[[files]]
+path = "src/claude/articles/canon-law/clerical-celibacy-chastity-and-continence/sections/120-arguments.tex"
+sha256 = "0b5d30a358ef23a86092047dae21039f4605f41f4f8c36a74119d7ed8937cc82"
+kind = "rendered-content"
+owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
+
+[[files]]
+path = "src/claude/articles/canon-law/clerical-celibacy-chastity-and-continence/sections/130-not-decided.tex"
+sha256 = "1e2a375a9ba9a04e8f494b6bdebed746ad7b6c43435427ee5097b836e87a5a58"
+kind = "rendered-content"
+owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
+
+[[files]]
+path = "src/claude/articles/canon-law/clerical-celibacy-chastity-and-continence/sections/140-scope-method-qualifications.tex"
+sha256 = "60b13642e30b6cb8466637675d0e58ac0a1a8017594ff7d4fd2d17358b5c855d"
+kind = "rendered-content"
+owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
+
+[[files]]
+path = "src/claude/articles/canon-law/clerical-celibacy-chastity-and-continence/sections/150-references.tex"
+sha256 = "6d2024c2868e281e06dc1fe7250bc123835cc5226b8734ca716b966a1505a0e0"
+kind = "rendered-content"
+owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
+
+[[files]]
+path = "src/claude/articles/canon-law/clerical-celibacy-chastity-and-continence/sections/20-canon-277.tex"
+sha256 = "dee1dbca6c3a2f801ebc7f9b56299b3c2862fa4b2cacfdc14dbb4d775d11c28e"
+kind = "rendered-content"
+owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
+
+[[files]]
+path = "src/claude/articles/canon-law/clerical-celibacy-chastity-and-continence/sections/30-how-it-attaches.tex"
+sha256 = "1efdad0bbbeb56b9d999b58c971dea8b948666b168fc6a6acd62d33397283a91"
+kind = "rendered-content"
+owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
+
+[[files]]
+path = "src/claude/articles/canon-law/clerical-celibacy-chastity-and-continence/sections/40-impediment-and-penalty.tex"
+sha256 = "88d82067e689511808fceffa142efd0666d7ce9be8986447da89ee05be889c06"
+kind = "rendered-content"
+owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
+
+[[files]]
+path = "src/claude/articles/canon-law/clerical-celibacy-chastity-and-continence/sections/50-loss-and-dispensation.tex"
+sha256 = "432a67850b94bdc7c14c214423d9ce43d33651fbd6424d94ca60599ef24bc9bc"
+kind = "rendered-content"
+owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
+
+[[files]]
+path = "src/claude/articles/canon-law/clerical-celibacy-chastity-and-continence/sections/60-the-eastern-law.tex"
+sha256 = "9df9b69af2881bc80a59d0672a91b52a4757b8777543427f2f8302072a460f45"
+kind = "rendered-content"
+owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
+
+[[files]]
+path = "src/claude/articles/canon-law/clerical-celibacy-chastity-and-continence/sections/70-twenty-four-churches.tex"
+sha256 = "f9ddc432f37e83e6970dd0cf670366e7b9b81f8b3ffab61063fdfc02aa23c4ef"
+kind = "rendered-content"
+owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
+
+[[files]]
+path = "src/claude/articles/canon-law/clerical-celibacy-chastity-and-continence/sections/80-permanent-diaconate.tex"
+sha256 = "45d4ebfdec9f2b300497f7ba151c0006345523d592a39060ac4d355207373e6d"
+kind = "rendered-content"
+owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
+
+[[files]]
+path = "src/claude/articles/canon-law/clerical-celibacy-chastity-and-continence/sections/90-how-it-was-built.tex"
+sha256 = "92403bd3e2840c5df86db9e0c8d93f064cbb428f84e946252867ad80e6d819ac"
+kind = "rendered-content"
+owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
+
+[[files]]
+path = "src/claude/articles/canon-law/clerical-celibacy-chastity-and-continence/web-edition.toml"
+sha256 = "2ab87ee17e121af8e3ea725836eeed427a11d2b33e1c38452a75afee587c55cb"
+kind = "rendered-content"
+owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
 
 [[files]]
 path = "src/claude/articles/canon-law/natural-positive-divine-human-law/main.tex"
@@ -2544,6 +2692,114 @@ kind = "rendered-content"
 owners = ["theology/mariology/fatima"]
 
 [[files]]
+path = "src/claude/theology/mariology/guadalupe/format.tex"
+sha256 = "00dcb3a22f5c67747918d4a447e20f70d5819b858bb14c464c82f29f63e64ccf"
+kind = "rendered-content"
+owners = ["theology/mariology/guadalupe"]
+
+[[files]]
+path = "src/claude/theology/mariology/guadalupe/main.tex"
+sha256 = "f6a4fe54dac845ee1e2589f76dbc371576205bf1a17c2375d248310ddb48eed6"
+kind = "publication-main"
+owners = ["theology/mariology/guadalupe"]
+
+[[files]]
+path = "src/claude/theology/mariology/guadalupe/research/corpus-status.md"
+sha256 = "de35c8d67b7646d41906df3622b11cf8e763972b1f6c4d1288365014fb2ebcad"
+kind = "research-record"
+owners = ["theology/mariology/guadalupe"]
+
+[[files]]
+path = "src/claude/theology/mariology/guadalupe/research/scope.md"
+sha256 = "66560edf17a39a7e5793982dc42bdfbb49b7236269db282cfe17c749a16a2930"
+kind = "research-scope"
+owners = ["theology/mariology/guadalupe"]
+
+[[files]]
+path = "src/claude/theology/mariology/guadalupe/research/source-audit.md"
+sha256 = "63f1a382cefe3dc03dda1ad6efd859a54bed6fb7b004d99effd0db52b08b6ea2"
+kind = "legacy-source-audit"
+owners = ["theology/mariology/guadalupe"]
+
+[[files]]
+path = "src/claude/theology/mariology/guadalupe/research/source-bindings.toml"
+sha256 = "0f5c67312bbbbdb202abc6224a8783396d3599b363ab3a164b4e69027142974d"
+kind = "source-binding"
+owners = ["theology/mariology/guadalupe"]
+
+[[files]]
+path = "src/claude/theology/mariology/guadalupe/sections/00-judgment-first.tex"
+sha256 = "4be1a93704a04b6b709061ca71e0a268ad6cf29427c780aff5d8cfc2ad51aa48"
+kind = "rendered-content"
+owners = ["theology/mariology/guadalupe"]
+
+[[files]]
+path = "src/claude/theology/mariology/guadalupe/sections/10-documentary-strata.tex"
+sha256 = "b47516288d9092423d1bd15d5b2984fb512f714a80b31e90e587d2e248451654"
+kind = "rendered-content"
+owners = ["theology/mariology/guadalupe"]
+
+[[files]]
+path = "src/claude/theology/mariology/guadalupe/sections/20-silence-problem.tex"
+sha256 = "300a571bee50ce2db00d8760f0d43288b93f3a86b64dbea60da2f445b6d66e46"
+kind = "rendered-content"
+owners = ["theology/mariology/guadalupe"]
+
+[[files]]
+path = "src/claude/theology/mariology/guadalupe/sections/30-historicity-dispute.tex"
+sha256 = "4cec9e9d51f0803857470ae409353348b1aaf59ca343eece37c7fef109f0a268"
+kind = "rendered-content"
+owners = ["theology/mariology/guadalupe"]
+
+[[files]]
+path = "src/claude/theology/mariology/guadalupe/sections/40-juan-diego.tex"
+sha256 = "0ae15ecab77475f1fbc8330fc23f7bcf9ad419a812095f3f32bd6601eed9e4e7"
+kind = "rendered-content"
+owners = ["theology/mariology/guadalupe"]
+
+[[files]]
+path = "src/claude/theology/mariology/guadalupe/sections/50-the-image.tex"
+sha256 = "6ef97528fe085580d846042b1f537f13ab05d8bd29c08f847adab44ecf2dc41d"
+kind = "rendered-content"
+owners = ["theology/mariology/guadalupe"]
+
+[[files]]
+path = "src/claude/theology/mariology/guadalupe/sections/60-nahuatl-text.tex"
+sha256 = "ea632c7af2b983e5f9dc663e885022c490bf62aec6ed604ce521e451b7d91fc7"
+kind = "rendered-content"
+owners = ["theology/mariology/guadalupe"]
+
+[[files]]
+path = "src/claude/theology/mariology/guadalupe/sections/70-reception.tex"
+sha256 = "cfd467ae5aaa0bbc034a46323b3836bc1980ba4b708305b5b7e4d0a5eadac6a3"
+kind = "rendered-content"
+owners = ["theology/mariology/guadalupe"]
+
+[[files]]
+path = "src/claude/theology/mariology/guadalupe/sections/80-what-approval-obliges.tex"
+sha256 = "e3cd50b9339ad8a32e2510f99ffd4b1d8267b816b37b15822306a7130f27e5a7"
+kind = "rendered-content"
+owners = ["theology/mariology/guadalupe"]
+
+[[files]]
+path = "src/claude/theology/mariology/guadalupe/sections/90-scope-status-qualifications.tex"
+sha256 = "8536801f664a41488637cb6f01dbafe434a2d4d7addc8771b183705ed1f21205"
+kind = "rendered-content"
+owners = ["theology/mariology/guadalupe"]
+
+[[files]]
+path = "src/claude/theology/mariology/guadalupe/sections/99-references.tex"
+sha256 = "3d1d6f5d5f987714cf61f2dd39203f8ce754c612db7d65e46e97e2579f3c71c5"
+kind = "rendered-content"
+owners = ["theology/mariology/guadalupe"]
+
+[[files]]
+path = "src/claude/theology/mariology/guadalupe/web-edition.toml"
+sha256 = "3a4f0a1887c6dfddfe70ecdeecf9e605c79d3de63c20c2de2f167a5f83491665"
+kind = "rendered-content"
+owners = ["theology/mariology/guadalupe"]
+
+[[files]]
 path = "src/claude/theology/mariology/lourdes/format.tex"
 sha256 = "7860ad297ece33a505d1b414ef9aaba1bee5637a491fd1ca361444b38bbf3efb"
 kind = "rendered-content"
@@ -2773,67 +3029,67 @@ owners = ["theology/mariology/rosary"]
 
 [[files]]
 path = "src/claude/theology/mariology/rosary/research/prayer-text-audit.md"
-sha256 = "f928f5b49e514efec3eecf31d9457f0b0bbf5f90a73d88a79afca6666a03a722"
+sha256 = "6e5d6ed4ca975a8a4c15174f65491d568b1d99760e993b98a8e7ddf3bb4420c1"
 kind = "research-record"
 owners = ["theology/mariology/rosary"]
 
 [[files]]
 path = "src/claude/theology/mariology/rosary/research/scope.md"
-sha256 = "3e15be89b43ab90e04f73000c89454e53551c3fb2f5a49770b4f5bba59c0fa28"
+sha256 = "b49140e007b5e1655015a1e8ffa3becbebcf2a7c6b874ccf85f77d055d6d2062"
 kind = "research-scope"
 owners = ["theology/mariology/rosary"]
 
 [[files]]
 path = "src/claude/theology/mariology/rosary/research/source-audit.md"
-sha256 = "082c51d720b5488d07ab45b207d99be775d792fba7cfec541a1b4c8bdc7c6f3d"
+sha256 = "2133e8390761eb0006c6eb396cbc6d2c4c408f4184683d08e2088723e3790617"
 kind = "legacy-source-audit"
 owners = ["theology/mariology/rosary"]
 
 [[files]]
 path = "src/claude/theology/mariology/rosary/research/source-bindings.toml"
-sha256 = "47d4d3a21309e998fcef54f6877f78d436b4909d942992715b05f0e9ee820559"
+sha256 = "43e8e6def98a7b0743ab6451a139bac80dd756210ff9af4ea9594c4f29de02b2"
 kind = "source-binding"
 owners = ["theology/mariology/rosary"]
 
 [[files]]
 path = "src/claude/theology/mariology/rosary/sections/00-form-and-prayers.tex"
-sha256 = "227e44b33a0c4a39de6c87f0bae39b67d5c586ec0a8a3faade031035c003ee65"
+sha256 = "3ebf6477f88cd723d5bdb77dd118e7bdcc5274648a264ee8b0d9bc29d12f253a"
 kind = "rendered-content"
 owners = ["theology/mariology/rosary"]
 
 [[files]]
 path = "src/claude/theology/mariology/rosary/sections/20-mysteries.tex"
-sha256 = "0d06f40249fdc36ddf4a6ec465686727b39997a08b06838d95e062a9d414a1fc"
+sha256 = "4b90e2ef12f6226a329438be99a0b91d79cf220d3721c7b98a6d9fb074f85cd3"
 kind = "rendered-content"
 owners = ["theology/mariology/rosary"]
 
 [[files]]
 path = "src/claude/theology/mariology/rosary/sections/30-history.tex"
-sha256 = "243e1a3a6be67c870bcb4e9d7552478650c067e7c63ca3a88c17847e1e9f164e"
+sha256 = "c3e7827f76143f522d0c3513d5baabcd1aa2d254647445508013aeb92d164c25"
 kind = "rendered-content"
 owners = ["theology/mariology/rosary"]
 
 [[files]]
 path = "src/claude/theology/mariology/rosary/sections/40-magisterium.tex"
-sha256 = "b749183a1e6b5d7352ca782d49f1dcc1a218e47f0d0b6299b80e1fa672c07638"
+sha256 = "42fd3ce593b515ad6a57f7422d7cd679412c58fcba072bc655d874c751188118"
 kind = "rendered-content"
 owners = ["theology/mariology/rosary"]
 
 [[files]]
 path = "src/claude/theology/mariology/rosary/sections/50-practice-and-discipline.tex"
-sha256 = "a777e23f8ee5fc071620f744b1e7c7572c7c6ec21f0b6fccac546a241348569f"
+sha256 = "9c144be0bc332cd5d5fcb60bc1ee83a9511b64d1a87d256300e8c9ab54950caf"
 kind = "rendered-content"
 owners = ["theology/mariology/rosary"]
 
 [[files]]
 path = "src/claude/theology/mariology/rosary/sections/90-scope-status-qualifications.tex"
-sha256 = "557a09fb07036e7400262256005589105d7be313fab1ea8b81eb2f6a5f06ab44"
+sha256 = "30c9adec37d3297cddba143f9516ef599c9505f497fef3814421284437151fa9"
 kind = "rendered-content"
 owners = ["theology/mariology/rosary"]
 
 [[files]]
 path = "src/claude/theology/mariology/rosary/sections/99-references.tex"
-sha256 = "017f6ba41fdd14f2c89f9952c54a71ea5a67c1126e3096fcfd53505dd25b0627"
+sha256 = "cd3df955c43377327529559f035dd743025f015a20d19758db221d29c994d489"
 kind = "rendered-content"
 owners = ["theology/mariology/rosary"]
 
