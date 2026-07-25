@@ -16,9 +16,10 @@ Apply these rules in order:
 
 - `src/` contains tracked authoring sources, focused evidence and research records, reusable fragments, and the provider-neutral reusable source library governed by `guidance/sources.md`.
 - `doc/` contains tracked PDFs installed from reviewed builds.
+- `web/` contains tracked reader-facing web editions installed from reviewed conversions of the same sources, governed by `guidance/web-editions.md`.
 - `build/` contains only ignored, reproducible intermediates, logs, caches, review rasters, and generated release artifacts.
 
-Anything required to understand, verify, or reproduce a publication belongs under `src/`, never `build/`. `doc/` is not a build directory. Cleaning may remove `build/` but never `src/` or `doc/`.
+Anything required to understand, verify, or reproduce a publication belongs under `src/`, never `build/`. Neither `doc/` nor `web/` is a build directory. Cleaning may remove `build/` but never `src/`, `doc/`, or `web/`.
 
 External source identities and lawful reusable artifacts live under
 `src/sources/`, not under a generated provider branch. Provider publications
@@ -61,14 +62,15 @@ src/<provider>/
 
 `<edition-locale>` must distinguish the governing books and territory; never use `current`, `novus-ordo`, or a bare language as its sole identity. Postconciliar proper guides also use the stable universal registry in `guidance/liturgy/postconciliar-propers-registry.md`; edition-specific collation, unresolved branches, and instantiated leaves belong under the edition's `propers/registry/` directory rather than in the reusable profile. A curriculum keeps course-wide teaching, practice, reference, and audit sources at its non-publishable owner root and gives each independently printable module or companion its own publishable leaf. Do not duplicate shared lessons or answer sources into module leaves.
 
-Each publishable leaf contains `main.tex`, `generation-metadata.tex` or a profile-authorized inherited declaration, and the profile-required records. Shared directories are non-publishable and have no PDF mirror. Put shared material at the narrowest ancestor that genuinely owns it; keep provider-neutral global typesetting primitives under `src/common/` — both providers import the shared preamble, which the build resolves as `\input{common/preamble}` through `TEXINPUTS` — and rite-, edition-, collection-, or work-specific material within its subtree. Hoist a file to `src/common/` only when it is pure typesetting or format and providers genuinely share it. Content-bearing shared material — lesson content, prayer texts, verified liturgical texts, response references — remains inside its provider branch; a provider's documents must not ride on another provider's authored substance.
+Each publishable leaf contains `main.tex`, `generation-metadata.tex` or a profile-authorized inherited declaration, `web-edition.toml` declaring its web-edition eligibility, and the profile-required records. Shared directories are non-publishable and have no PDF mirror. Put shared material at the narrowest ancestor that genuinely owns it; keep provider-neutral global typesetting primitives under `src/common/` — both providers import the shared preamble, which the build resolves as `\input{common/preamble}` through `TEXINPUTS` — and rite-, edition-, collection-, or work-specific material within its subtree. Hoist a file to `src/common/` only when it is pure typesetting or format and providers genuinely share it. Content-bearing shared material — lesson content, prayer texts, verified liturgical texts, response references — remains inside its provider branch; a provider's documents must not ride on another provider's authored substance.
 
-`build/<provider>/` and `doc/<provider>/` mirror a publishable leaf's path below `src/<provider>/`; the PDF is named for the leaf. For example, under `gpt`:
+`build/<provider>/`, `doc/<provider>/`, and `web/<provider>/` mirror a publishable leaf's path below `src/<provider>/`; the PDF and the web edition are named for the leaf. For example, under `gpt`:
 
 ```text
 src/gpt/articles/canon-law/example/main.tex
 build/gpt/articles/canon-law/example.pdf
 doc/gpt/articles/canon-law/example.pdf
+web/gpt/articles/canon-law/example.md
 ```
 
 The same mirroring applies to every provider branch.
