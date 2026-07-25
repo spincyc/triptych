@@ -1,0 +1,60 @@
+schema = 1
+record_type = "bindings"
+document = "articles/faith/at-the-end-of-every-why"
+
+[[bindings]]
+source_id = "work.thomas-aquinas.summa-theologiae"
+loci = [
+  "I-II.1.4.corpus",
+  "I-II.1.6.corpus",
+  "I-II.1.7.corpus",
+  "I-II.2.8.corpus",
+  "I-II.3.8.corpus",
+  "I-II.5.5.corpus",
+  "I-II.5.5.reply-2",
+  "I.12.1.corpus",
+  "I.12.2.corpus",
+  "I.12.4.corpus",
+  "I.12.5.corpus",
+  "II-II.17.1.corpus",
+  "II-II.17.2.corpus",
+  "II-II.23.1.sed-contra",
+  "II-II.23.1.corpus",
+  "II-II.23.1.reply-1",
+  "II-II.23.6.corpus",
+  "II-II.23.8.corpus",
+  "II-II.24.2.sed-contra",
+  "II-II.24.2.corpus",
+  "II-II.106.6.reply-2",
+]
+role = "textual-control"
+states = ["cataloged"]
+context = "These loci govern the article's adopted analysis of the last end, beatitude, the vision of God, hope, and charity as friendship: the necessity of a last end (I-II.1.4) with desire under the aspect of good (1.6) and the formal agreement of all (1.7); no created good constituting happiness, with the universal-good and participation argument (2.8); beatitude as vision of the divine essence (3.8); the incapacity of natural powers with the nobility of assisted capacity (5.5 with ad 2); the natural desire and the blessed seeing God's essence (I.12.1), the light of glory (12.2), grace-union (12.4), and the deiform blessed (12.5, quoting 1 Jn 3:2); hope's object and its leaning on the divine help (II-II.17.1) with nothing less than God Himself as its proper hope (17.2); charity as the friendship of man for God founded on communicated beatitude (23.1 with the Jn 15:15 sed contra and the twofold-life reply), its primacy and form-giving role cited summarily (23.6, 23.8); its infusion as participation of the Holy Spirit (24.2 with the Rom 5:5 sed contra); and the inherited gratitude arrow (106.6 ad 2, quoted in Part II and re-read for this part). The authoring agent checked the English Dominican translation at New Advent for every locus and the Corpus Thomisticum Latin for I-II.1.4, 2.8, 3.8, 5.5, I.12.1-2, I.12.5, II-II.17.2, 23.1, and 24.2, all on 2026-07-25 (see research/source-audit.md). This binding remains at the work level; no collation against a printed edition or registered artifact is claimed, and the publication-local check is the verification ceiling asserted here."
+
+[[bindings]]
+source_id = "edition.augustine.de-civitate-dei.dods-1871"
+loci = ["22.30"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The article quotes De civitate Dei XXII.30 (God Himself the reward, having promised Himself; 'I shall be their satisfaction'; the end of our desires seen without end, loved without cloy, praised without weariness; one thing to be God, another to be a partaker of God; the perfected freedom unable to sin; good works rather His than ours; the redeemed as the seventh day; 'There we shall rest and see, see and love, love and praise. This is what shall be in the end without end.') from the Dods 1871 translation. The authoring agent located the chapter with scripts/source-library search and read the complete chapter on 2026-07-25 in this edition's tracked transcription artifact (pg45305-body-lf) at lines 21430-21588, the bounds recorded by the passage registered for locus 22.30 with this revision, whose checked transcription of the closing sentences the article's quotation matches exactly. A New Advent cross-check fetch returned content truncated before chapter 30 and is recorded as a failed cross-check, not substituted. This binding records the edition-level dependence without claiming to have replayed any central artifact fingerprint; the publication-local check is the verification ceiling asserted here."
+
+[[bindings]]
+source_id = "edition.first-vatican-council.dei-filius.latin-vatican-web-2026-07-24"
+loci = ["complete-text"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The article quotes the chapter 2 supernatural-end sentence (Non hac tamen de causa revelatio absolute necessaria dicenda est, sed quia Deus ex infinita bonitate sua ordinavit hominem ad finem supernaturalem, ad participanda scilicet bona divina, quae humanae mentis intelligentiam omnino superant; siquidem oculus non vidit... 1 Cor. II, 9) and inherits Parts I-II's use of chapters 1 and 3. The authoring agent fetched the same Holy See Latin page publication-locally on 2026-07-25 and extracted the quoted wording verbatim (see research/source-audit.md); the English rendering in the article is a labeled working gloss governed by the Latin, with the internal scriptural clause given in the Douay-Rheims wording of 1 Cor 2:9, separately checked. This binding records the edition-level dependence without claiming to have replayed any central artifact fingerprint; the publication-local check is the verification ceiling asserted here."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["1023-1029", "1718-1729"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The article quotes CCC 1023 (including its quotation of the Benedictus Deus definition), 1024 (heaven as communion of life and love with the Trinity; ultimate end and fulfillment of the deepest human longings), 1028 (the beatific vision; God opening his mystery and giving the capacity), 1029 (the blessed continuing to fulfill God's will), 1718 (the desire of divine origin), 1720 (the Catechism's own rendering of De civ. Dei 22, 30), 1721-1723, and uses checked readings of 1025-1027 and 1725-1729. The authoring agent fetched the official Vatican English archive pages for these paragraphs publication-locally on 2026-07-25; the registered edition is the 2026-07-23 dated web state, and no material difference was observed at the cited loci. IntraText delivery artifacts (lowercased sentence-initial articles; spaced hyphens for dashes) are recorded in the audit and do not affect any quoted wording. No central artifact fingerprint is claimed; the publication-local check is the verification ceiling asserted here."
+
+[[bindings]]
+source_id = "edition.benedict-xii.benedictus-deus.latin-denzinger"
+loci = ["complete-text"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The article quotes the central definition of Benedictus Deus (1336) in Latin (vident divinam essentiam visione intuitiva et etiam faciali, nulla mediante creatura in ratione obiecti visi se habente, sed divina essentia immediate se nude, clare et aperte eis ostendente; sunt vere beatae et habent vitam et requiem aeternam) and in the English given by CCC 1023, with remaining renderings as labeled working glosses. The authoring agent read the Latin phrases on 2026-07-25 at a public bilingual transcription of Denzinger-Hunermann nn. 1000-1002 (ldysinger.com), which cites the Denzinger 43rd edition, and consulted the unattributed English translation at papalencyclicals.net as a finding aid only (see research/source-audit.md). This catalog-level binding records the dependence on the received Denzinger Latin text; no printed edition was collated, no artifact is retained or hashed, and the publication-local check is the verification ceiling asserted here."
