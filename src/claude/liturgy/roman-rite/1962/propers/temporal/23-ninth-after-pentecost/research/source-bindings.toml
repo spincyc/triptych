@@ -1,0 +1,74 @@
+schema = 1
+record_type = "bindings"
+document = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"
+
+# Claude edition. Every bound record's locus grammar was checked against its
+# work record before being written here; the Missale Romanum work record
+# declares no locus_pattern, so its loci are free-form printed-page
+# descriptions. The Vatican II works declare numeric article patterns, and the
+# article numbers below match them.
+#
+# Claim-level detail, exact page and column loci, delivery, and limits are in
+# research/source-audit.md; the complete collated text is in
+# propers/verified.md.
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+loci = [
+  "Dominica IX post Pentecosten, complete formulary, printed pp. 388-389 = artifact PDF pp. 469-470, marginal nos. 1522-1531",
+  "formulary boundaries: Postcommunion of the Eighth Sunday (no. 1521) and the heading DOMINICA DECIMA post Pentecosten (no. 1532)",
+]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact registered facsimile bytes were downloaded and their SHA-256 matched against this artifact record before any reading was taken. Both printed pages were rendered at 300 dpi for the whole-page reading and at 600 dpi for the disputed letters and accents, and all ten appointed elements, their headings, references, accentuation, punctuation, the II classis rank, the Credo rubric, the Trinity Preface rubric and both formulary boundaries were read on those images. This artifact controls every Latin form published in the guide."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:6b4dcd3ee771d6d92734992ecabfe09b289235954e963afcf523fc8f8ee9b12d"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu"
+loci = [
+  "Dominica IX post Pentecosten, complete formulary, printed pp. 382-383 = item leaves n458-n459",
+  "printed p. 384 = leaf n460, read for the following formulary's boundary",
+  "printed p. 424 = leaf n500, read only to establish the leaf-to-printed-page offset",
+]
+role = "direct-witness"
+states = ["cataloged", "inspected"]
+source_fingerprint = "sha256:8f68b01f48faa23fbd6fb830e8e7e5008a5e7aec2289ee37506b617d02cd515a"
+context = "Page images of a second, materially distinct 1962 edition, read to test the Vatican typical readings. Seven differences were found and are published as edition differences rather than as doubtful readings: mila/millia at 1 Cor. 10:8, eicere/eiicere at Lk. 19:45, the printed antiphon-repetition cue in the Introit, the long versus abbreviated conclusions of the Collect, Secret and Postcommunion, the Communion's reference abbreviation, and heading style. Nothing was blended and no Benziger form was substituted. Acquisition of the exact registered DjVu bytes is deliberately not claimed: individual JPEG page images were fetched from the same Internet Archive item, not the hashed DjVu derivative."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu-ocr"
+loci = [
+  "physical lines 58,575-58,733 of the whole file, covering Benziger printed pp. 382-384",
+]
+role = "lead"
+states = ["cataloged", "acquired"]
+context = "The complete OCR file was downloaded and its SHA-256 matched this record before use. It was used only to locate the formulary in the Benziger item; a focused excerpt with its recognition failures intact is kept at propers/retrieved.txt as an unedited finding aid. It controls no published wording, and no inspection or verification state is claimed for it."
+source_fingerprint = "sha256:5c2d162e9079b438862a80692742bb1e85a16c60e9730040aeef4a0275a32144"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.sacrosanctum-concilium.latin-vatican-web-2026-07-23.2"
+loci = ["2"]
+role = "reception"
+states = ["cataloged", "inspected", "verified"]
+context = "The official Latin article and its first source note were read directly for the publication's claim that this Sunday's Secret is the one appointed text of the day the Church has quoted back: article 2 uses « opus nostrae Redemptionis exercetur » and note 1 reads « Missale romanum, oratio super oblata dominicae IX post Pentecosten ». The check was made on the live official Latin page, not against retained artifact bytes, so acquisition is not claimed."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:d75609be5209ac5747154e2274d239fc1839092bba7a3bb93f71db87ad50421b"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.presbyterorum-ordinis.latin-vatican-web-2026-07-23.13"
+loci = ["13"]
+role = "reception"
+states = ["cataloged", "inspected", "verified"]
+context = "The official Latin article was read directly to establish that the Decree reuses the Secret's clause with « continuo » inserted — « opus nostrae redemptionis continuo exercetur » — and that its source note identifies the same Ninth Sunday prayer over the offerings. The guide therefore describes documented reuse with an inserted adverb rather than verbatim repetition. Checked on the live official page; acquisition of retained bytes is not claimed."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:13f208e73531e6166bdce70e9eebf4042b2774f1b5a5bf4b7d6e23e6f44e697e"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.nostra-aetate.english-vatican-web-2026-07-24.4"
+loci = ["4"]
+role = "official-control"
+states = ["cataloged", "inspected", "verified"]
+context = "The official English article was read directly for the finding that governs this guide's handling of the Gospel: the Council itself cites Lk. 19:44 at note 9 for « Jerusalem did not recognize the time of her visitation », and the same article states that the Jews are not to be presented as rejected or accursed by God, refuses to charge the Passion against all Jews then living or against the Jews of today, and decries hatred, persecutions and displays of anti-Semitism. This is a control on the publication's exposition, not a source for the formulary. Checked on the live official page; acquisition is not claimed."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:26f7b79da520af10951ca8153011f4c7309bc60c0e684e6f9a6a69fa99b4670b"

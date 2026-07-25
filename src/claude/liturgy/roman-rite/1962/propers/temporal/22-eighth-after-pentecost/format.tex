@@ -1,0 +1,107 @@
+% Eighth Sunday after Pentecost (Claude edition): leaf-local typesetting
+% primitives. This file owns presentation only. Every textual, historical,
+% and doctrinal judgment lives in the section files and the research records.
+%
+% Web-edition constraint: this leaf declares itself web-eligible, so it uses
+% no landscape environment, no multicols, and no TikZ. Where the guide needs
+% to show a movement or a flow, it uses an ordered list or a ruled table so
+% that a linear reading order carries the same argument.
+
+\usepackage{xurl}
+
+\setlength{\emergencystretch}{2.6em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+% The 1962 book sets "quaesumus" and "saeculi" with an accented ae ligature.
+% T1 composes the accent over the ligature reliably; a bare Unicode U+01FD is
+% not defined by inputenc under this encoding, so the composed form is used.
+\newcommand{\aeacute}{\'{\ae}}
+
+% The versicle sign the missal prints before a verse. U+2123 has no glyph in
+% the T1 Latin Modern fonts, so it is composed here and mapped to the Unicode
+% code point, letting the source files carry the character the book prints.
+\newcommand{\vsign}{%
+  \leavevmode\hbox{V\kern-0.47em\raisebox{0.30ex}{\scriptsize/}\kern0.05em}}
+\DeclareUnicodeCharacter{2123}{\vsign}
+
+% The Maltese cross the missal prints before a Gospel heading. Rendered with
+% the standard dagger-free text cross available in T1 rather than a symbol
+% font, so the leaf stays free of extra font dependencies.
+\DeclareUnicodeCharacter{2720}{\textbf{+}}
+
+% Semantic wrappers so a later style change never edits prose.
+\newcommand{\work}[1]{\textit{#1}}
+\newcommand{\term}[1]{\textit{#1}}
+\newcommand{\propercue}[1]{\textnormal{(\textit{#1})}}
+
+% Appointed Latin, quoted from the controlling facsimile. The frame marks
+% text that is not project-owned expression; the title carries the printed
+% heading, the missal's own marginal number, and the printed reference.
+\newenvironment{appointed}[1]{\begin{massbox}{#1}\itshape}{\end{massbox}}
+
+% An identified historical English witness set beside the Latin. Never a
+% liturgical translation and never offered for recitation.
+\newenvironment{englishwitness}{%
+  \begin{studyframe}\small\textbf{English (1861 witness).}\ \ignorespaces}
+  {\end{studyframe}}
+
+% Compact source card for a single checked patristic or Doctoral witness.
+\newenvironment{witnesscard}[1]{\begin{sourcecard}{#1}\small}{\end{sourcecard}}
+
+% The reading-order form on page 1 and in the thematic section. An ordered
+% list rather than a diagram, so the web edition loses nothing.
+\newenvironment{movementlist}
+  {\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2.1em, itemsep=0.25em,
+     topsep=0.35em]}
+  {\end{enumerate}}
+
+% Two-tier dossier table for the page-2 date-and-location sheet, at the
+% measurements the profile fixes.
+\newenvironment{dossiertable}
+{\footnotesize
+ \setlength{\LTpre}{0.15em}\setlength{\LTpost}{0pt}%
+ \renewcommand{\arraystretch}{0.98}%
+ \begin{longtable}{>{\raggedright\arraybackslash}p{0.14\linewidth}%
+                   >{\raggedright\arraybackslash}p{0.18\linewidth}%
+                   >{\raggedright\arraybackslash}p{0.35\linewidth}%
+                   >{\raggedright\arraybackslash}p{0.16\linewidth}}
+\toprule
+\textbf{Proper} & \textbf{Citation} & \textbf{Location} & \textbf{Date}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
+
+% One full-width explanatory row inside a dossier. The complete seven-passage
+% inventory cannot be held on its single page at one type size once the
+% two-tier hierarchy and all the evidence are preserved, so the subordinate
+% explanatory tier is set one step down from the scannable summary tier. The
+% size difference is the hierarchy made visible; no evidence is dropped.
+\newcommand{\dossierprose}[1]{%
+  \multicolumn{4}{p{0.94\linewidth}}{\raggedright\scriptsize #1}\\}
+\newcommand{\dossiergap}{\noalign{\vskip 0.1em}}
+
+% Collation table: appointed wording against the Clementine reading.
+\newenvironment{collationtable}
+{\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.13\linewidth}%
+                                >{\raggedright\arraybackslash}p{0.30\linewidth}%
+                                >{\raggedright\arraybackslash}p{0.30\linewidth}%
+                                >{\raggedright\arraybackslash}p{0.19\linewidth}}
+\toprule
+\textbf{Proper} & \textbf{As printed in 1962} & \textbf{Clementine Vulgate} & \textbf{Difference}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
+
+% Gallery entry for a documented cultural afterlife.
+\newenvironment{afterlife}[1]{\begin{massbox}{#1}\small}{\end{massbox}}
+\newcommand{\afield}[2]{\par\textbf{#1:} #2}
+
+% The governing thesis is substantive content and may open the body.
+\newcommand{\studythesis}[1]{%
+  \begin{studybox}{Governing thesis}#1\end{studybox}}
+
+% Exploratory proposal. The heading itself carries the claim class, so the
+% body needs no repeated disclaimer.
+\newenvironment{proposal}[1]{\begin{studybox}{#1}\small}{\end{studybox}}
