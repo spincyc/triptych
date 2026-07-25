@@ -1,0 +1,70 @@
+schema = 1
+record_type = "bindings"
+document = "theology/mariology/guadalupe"
+
+# Claude edition. Bindings are catalog-level: the actual passage checks were
+# performed against live web pages, downloaded Holy See OCR scans, rendered
+# page images, and IIIF page images (loci, URLs, dates, and limits in
+# research/source-audit.md), not against registered artifact bytes, so no
+# acquisition/inspection/verification state is claimed against the
+# source-library records themselves.
+
+[[bindings]]
+source_id = "edition.luis-laso-de-la-vega.huei-tlamahuicoltica.mexico-juan-ruiz-1649"
+loci = [
+  "heading of the Nican mopohua",
+  "fol. 1r",
+  "fol. 2r",
+  "fol. 5r",
+  "heading of the Nican motecpana",
+  "Nican tlantica",
+  "closing prayer",
+  "structure of the tract",
+]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The controlling witness of the apparition narrative. The heading and opening sentence (fol. 1r), the self-identification (fol. 2r) and the fourfold cuix amo consolation (fol. 5r) are quoted in sections 2 and 7 of the publication and were collated 2026-07-25 against IIIF page images of the John Carter Brown Library copy at scan leaf indices 13, 15 and 21, including a magnified crop of leaf 21; the Nahuatl passages were further collated against the independent printing in Agustin de la Rosa, Dissertatio historico-theologica (Guadalajara, 1887), which agrees word for word. The section headings and the tract's six movements were read in the same scan's OCR with the first heading collated against its page image. The closing prayer is identified and expressly not reproduced anywhere in the publication, under the received-prayer rule of guidance/editorial.md. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.joaquin-garcia-icazbalceta.carta-origen-imagen-guadalupe.mexico-1896"
+loci = ["§6", "§9-10", "§12", "§13-16", "§32", "§43", "§51", "§53", "§56", "§68"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The classical statement of the argument from silence, quoted at length in section 3 of the publication and used in sections 3, 6 and 8. Quoted 2026-07-25 from the Biblioteca Virtual Miguel de Cervantes transcription and collated the same day against the 1896 imprint in the Harvard copy digitized by Google; the readings agree, and the transcription's silent expansion of the imprint's abbreviations is recorded in the publication. Public domain. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.edmundo-ogorman.destierro-de-sombras.unam-iih-digital-2019"
+loci = [
+  "parte II, cap. 3, pp. 81-92",
+  "apéndice I",
+  "apéndice IV, pp. 227-238",
+  "apéndice VII",
+]
+role = "context"
+states = ["cataloged"]
+context = "The reconstruction of Bustamante's sermon of 8 September 1556 and of the Informacion de 1556, the analysis of that file's procedural irregularities and unofficial character, the exposition and critique of Garibay's dating of the Nican mopohua, and the documented chronology of the file's suppression and nineteenth-century publication together with the 1887 coronation brief, the 1894 Office revision, the 1895 coronation and the 1896 provincial-council edict. Read at first hand 2026-07-25 in the UNAM-IIH open-access PDFs. A strongly anti-apparitionist work, used at that level, with its conclusions attributed to it and its reported acts marked as reported where the Holy See's own organs were searched and did not contain them. The edition's non-lucrative-reproduction condition is observed. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.john-paul-ii.ecclesia-in-america.english-vatican-web-2026-07-25"
+loci = ["11", "signature clause"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The fullest magisterial statement on Guadalupe, quoted in section 8 of the publication, with the closing dateline located on the same page and used to fix the place and date of promulgation against the common claim that the exhortation was signed at the Basilica. Read 2026-07-25 at the live Vatican English page. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.holy-see.norms-supernatural-phenomena-2024.english-vatican-web-2026-07-25"
+loci = [
+  "presentation",
+  "n. 12",
+  "n. 13",
+  "nn. 16-23",
+  "n. 23",
+  "art. 1",
+  "art. 2",
+  "art. 18",
+  "art. 22",
+  "art. 27",
+]
+role = "official-control"
+states = ["cataloged"]
+context = "Current procedural law, governing sections 5 and 9 of the publication: the six determinations of art. 18 with their descriptions at nn. 17-22; the n. 23 rule that as a rule no authority will declare supernatural origin; the art. 22 rule that the faithful are not to take any determination as an approval of supernatural nature; the n. 13 canonization principle applied to the beatification and canonization of Juan Diego; the replacement of the 1978 norms by art. 27; and the presentation's and note 24's statement of what ecclesiastical approval of a private revelation means, quoted from Benedict XVI, Verbum Domini n. 14. The same Dicastery's documents index was retrieved and searched on 2026-07-25 for the recorded negative result that it contains nothing concerning Guadalupe, Tepeyac or Juan Diego. Read 2026-07-25 at the live Vatican English page. Catalog-level binding."

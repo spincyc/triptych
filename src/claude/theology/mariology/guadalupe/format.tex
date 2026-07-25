@@ -1,0 +1,103 @@
+% Claude Guadalupe apparition study: leaf-local typesetting primitives. This
+% file owns only presentation. Every historical, doctrinal, philological, and
+% evidentiary judgment remains in the section files and research records.
+
+\usepackage{endnotes}
+% Long archival and repository URLs in the references must break freely rather
+% than overflowing the measure.
+\usepackage{xurl}
+
+\setcounter{tocdepth}{2}
+\setlength{\emergencystretch}{2.6em}
+
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+% Work titles and untranslated technical terms are set through semantic
+% commands so a later style change never requires editing the prose.
+\newcommand{\work}[1]{\textit{#1}}
+\newcommand{\term}[1]{\textit{#1}}
+% Nahuatl is set in the same italic register as other untranslated technical
+% vocabulary; the command exists so the register can be changed in one place.
+\newcommand{\nah}[1]{\textit{#1}}
+
+% The governing thesis is substantive content and may open the body.
+\newcommand{\studythesis}[1]{%
+  \begin{studybox}{Governing thesis}
+  #1
+  \end{studybox}}
+
+% Operative-text block: the exact wording of a competent ecclesiastical act or
+% of an identified documentary witness, with its authority, date, and witness
+% in the frame title. The framed border marks quoted source text that is not
+% project-owned expression.
+\newenvironment{operativetext}[1]{%
+  \begin{massbox}{Operative text --- #1}}{\end{massbox}}
+
+% Source-witness block: quoted wording from a documentary or scholarly witness
+% that is evidence rather than an act of authority. The distinct frame title
+% keeps the authority boundary visible at a glance.
+\newenvironment{witnesstext}[1]{%
+  \begin{massbox}{Witness text --- #1}}{\end{massbox}}
+
+% Endnotes carry citations and subordinate evidence detail; the heading joins
+% the table of contents as an ordinary numbered section.
+\renewcommand{\enoteheading}{\section{Notes}}
+\renewcommand{\enoteformat}{%
+  \noindent\footnotesize\makebox[2.4em][l]{\theenmark.}\hangindent=2.4em}
+
+% Status-dossier card: the controlling-status summary in a titled, framed
+% block. massbox is breakable, so a long dossier keeps closed frame edges
+% wherever it actually ends.
+\newenvironment{statusdossier}[1]{%
+  \begin{massbox}{#1}\small}{\end{massbox}}
+\newcommand{\dosfield}[2]{\par\textbf{#1:} #2}
+
+% Documentary-strata inventory: witness, date and language, genre, and the
+% evidentiary ceiling this study assigns it.
+\newenvironment{stratatable}
+{\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.20\linewidth}>{\raggedright\arraybackslash}p{0.145\linewidth}>{\raggedright\arraybackslash}p{0.245\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}}
+\toprule
+\textbf{Witness} & \textbf{Date} & \textbf{Kind} & \textbf{Evidentiary ceiling used here}\\
+\midrule
+\endhead
+\bottomrule
+\endfoot}
+{\end{longtable}}
+
+% Claim-traceability inventory for the image: the popular claim, the earliest
+% source this study could actually reach, and the recorded finding.
+\newenvironment{claimtable}
+{\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.28\linewidth}>{\raggedright\arraybackslash}p{0.32\linewidth}>{\raggedright\arraybackslash}p{0.33\linewidth}}
+\toprule
+\textbf{Claim as popularly stated} & \textbf{Nearest source reached} & \textbf{Recorded finding}\\
+\midrule
+\endhead
+\bottomrule
+\endfoot}
+{\end{longtable}}
+
+% Act inventory: authority, date, act, and the exact object judged or granted.
+\newenvironment{actstable}
+{\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.115\linewidth}>{\raggedright\arraybackslash}p{0.215\linewidth}>{\raggedright\arraybackslash}p{0.28\linewidth}>{\raggedright\arraybackslash}p{0.32\linewidth}}
+\toprule
+\textbf{Date} & \textbf{Authority} & \textbf{Act} & \textbf{Exact object}\\
+\midrule
+\endhead
+\bottomrule
+\endfoot}
+{\end{longtable}}
+
+% Position inventory for the historicity dispute: the named position, its
+% principal published statement, and the load-bearing argument, each at the
+% reported ceiling recorded in the surrounding prose.
+\newenvironment{positionstable}
+{\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.24\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.35\linewidth}}
+\toprule
+\textbf{Scholar} & \textbf{Principal published statement} & \textbf{Load-bearing argument}\\
+\midrule
+\endhead
+\bottomrule
+\endfoot}
+{\end{longtable}}
