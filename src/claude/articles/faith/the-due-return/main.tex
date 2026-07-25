@@ -1,0 +1,77 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+\usepackage{endnotes}
+
+\hypersetup{
+  pdftitle={The Due Return},
+  pdfsubject={A discursive essay on the virtue of religion as justice toward God: the unpayable debt of gratitude, worship, adoration, sacrifice, and the freedom of the due return. The Creature Before God, Part II}
+}
+
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.14\textheight}
+{\large\scshape A Triptych Article\par}
+\vspace{1.5em}
+{\Huge\bfseries The Due Return\par}
+\vspace{0.9em}
+{\Large On Rendering What Cannot Be Repaid\par}
+\vspace{1.4em}
+{\normalsize\itshape The Creature Before God --- Part II\par}
+\vfill
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{articles/faith/the-due-return/sections/00-the-question-the-psalmist-asked}
+\input{articles/faith/the-due-return/sections/10-a-debt-unlike-the-others}
+\input{articles/faith/the-due-return/sections/20-the-virtue-annexed-to-justice}
+\input{articles/faith/the-due-return/sections/30-what-the-body-knows}
+\input{articles/faith/the-due-return/sections/40-sacrifice-visible-and-invisible}
+\input{articles/faith/the-due-return/sections/50-a-due-that-cannot-be-compelled}
+\input{articles/faith/the-due-return/sections/60-the-open-account}
+\clearpage
+\addcontentsline{toc}{section}{Notes}
+\begingroup
+\small
+\setlength{\parskip}{0.3em}
+\theendnotes
+\endgroup
+\clearpage
+\appendix
+\input{articles/faith/the-due-return/sections/90-scope-method-qualifications}
+\input{articles/faith/the-due-return/sections/99-references}
+\begingroup
+\setlength{\parskip}{0pt}
+\vspace{-0.6\baselineskip}
+\section{Generation Metadata}
+\vspace{-0.35\baselineskip}
+{\scriptsize\input{articles/faith/the-due-return/generation-metadata}}
+\endgroup
+\end{deepstudy}
+
+\end{document}
