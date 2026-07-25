@@ -1,0 +1,79 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+\usepackage{endnotes}
+
+\hypersetup{
+  pdftitle={Freemasonry and the Catholic Church},
+  pdfsubject={A discursive article on the Catholic Church's relationship to Freemasonry: the condemnation history from In eminenti (1738) through Humanum genus (1884), the penal law of the 1917 and 1983 Codes, the 1983 Declaration on Masonic Associations and its 1985 explanation, the 2023 response of the Dicastery for the Doctrine of the Faith, the theological grounds, the differences among the lodges, and the claims the record does and does not support.}
+}
+
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.14\textheight}
+{\large\scshape A Triptych Article\par}
+\vspace{1.5em}
+{\Huge\bfseries Freemasonry and the\\[0.18em] Catholic Church\par}
+\vspace{0.9em}
+{\Large On What Rome Has Actually Said, from \emph{In eminenti}\\[0.18em] to the Present Discipline\par}
+\vfill
+{\footnotesize The church discipline stated here rests on mutable law and dicasterial acts, stated as of 25 July 2026; see the terminal Scope, Method, and Qualifications appendix. This is a study aid, not canonical advice.\par}
+\vspace{1.2em}
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{articles/faith/freemasonry-and-the-catholic-church/sections/00-a-question-that-keeps-returning}
+\input{articles/faith/freemasonry-and-the-catholic-church/sections/10-the-thing-itself}
+\input{articles/faith/freemasonry-and-the-catholic-church/sections/20-the-first-condemnations}
+\input{articles/faith/freemasonry-and-the-catholic-church/sections/30-humanum-genus}
+\input{articles/faith/freemasonry-and-the-catholic-church/sections/40-the-two-codes}
+\input{articles/faith/freemasonry-and-the-catholic-church/sections/50-the-grounds-stated-plainly}
+\input{articles/faith/freemasonry-and-the-catholic-church/sections/60-the-lodges-that-differ}
+\input{articles/faith/freemasonry-and-the-catholic-church/sections/70-the-2023-answer}
+\input{articles/faith/freemasonry-and-the-catholic-church/sections/80-the-claims-and-the-record}
+\Needspace{10\baselineskip}
+\addcontentsline{toc}{section}{Notes}
+\begingroup
+\footnotesize
+\setlength{\parskip}{0.28em}
+\theendnotes
+\endgroup
+\Needspace{14\baselineskip}
+\appendix
+\input{articles/faith/freemasonry-and-the-catholic-church/sections/90-scope-method-qualifications}
+\input{articles/faith/freemasonry-and-the-catholic-church/sections/99-references}
+\begingroup
+\setlength{\parskip}{0pt}
+\vspace{-0.6\baselineskip}
+\section{Generation Metadata}
+\vspace{-0.35\baselineskip}
+{\scriptsize\input{articles/faith/freemasonry-and-the-catholic-church/generation-metadata}}
+\endgroup
+\end{deepstudy}
+
+\end{document}
