@@ -5,10 +5,10 @@ inventory_path = "src/sources/inventories/publications-v1.toml"
 inventory_snapshot = "sha256:1c3354be172feca3ac796836318ecc2a8f4bbbff2fd889b975f5894fbf192fcc"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:2947c8f04bd1936f250fa112de037da4be866b8a78b9c272d295ade2645dfc74"
-canonical_catalog_snapshot = "sha256:3ac2c4cd9890737218eeb5886ae5ccf285904688f9919c24f3488a93055eaa57"
+canonical_catalog_snapshot = "sha256:96560a7d8a8559d5cc2b3d93f9725282705cb2e21d5800919c6731695f27b4e6"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:20ef2e5012c568739905e95944dbecb2662a6fe05f58648518b1365b11948087"
+snapshot = "sha256:65f0b7f908ebec5123018b9a6dd5e3918c63722736b4e42f85282bc7e859000b"
 
 [[families]]
 id = "family.acta.aas-ass"
@@ -211,6 +211,26 @@ reviewed_on = "2026-07-25"
 notes = "Denzinger's repeatedly re-edited compilation of creeds and magisterial definitions owns its catalog-level work and the dated 2026-07-25 patristica.net web states of the Latin text with parallel DB and DS numbering and of Deferrari's 1957 English Sources of Catholic Dogma. Neither web witness identifies the exact print edition transcribed and the Deferrari translation's copyright status is unresolved, so both remain finding aids whose readings consumers corroborate against the underlying public-domain documents, and no exact artifact is registered. The compilation is a witness locator, not a substitute for the documents it excerpts; those documents keep their own families."
 
 [[families]]
+id = "family.fatima.ecclesial-acts"
+label = "Ecclesial acts on the Fatima apparitions"
+kind = "corpus-plan"
+source_categories = ["historical-primary", "magisterial"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "expression", "language"]
+artifact_availability = "candidate-complete"
+storage_plan = ["restricted"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "edition-locus"
+disposition = "canonicalize"
+priority = "p2"
+canonical_ids = ["edition.diocese-of-leiria.carta-pastoral-fatima-1930.dcf-selecao-2013", "edition.francis.act-consecration-immaculate-heart-2022.english-vatican-web-2026-07-25", "edition.francis.homily-canonization-fatima-2017.english-vatican-web-2026-07-25", "edition.holy-see.communique-third-secret-fatima-2016.english-press-vatican-web-2026-07-25", "edition.holy-see.message-of-fatima.english-vatican-web-2026-07-25", "work.diocese-of-leiria.carta-pastoral-fatima-1930", "work.francis.act-consecration-immaculate-heart-2022", "work.francis.homily-canonization-fatima-2017", "work.holy-see.communique-third-secret-fatima-2016", "work.holy-see.message-of-fatima"]
+trace_patterns = ["(?:Act of Consecration.{0,60}Immaculate Heart|act-consecration-immaculate-heart-2022)", "(?:Carta Pastoral|carta-pastoral-fatima-1930)", "(?:Message of Fatima|Messaggio di Fatima|message-of-fatima)", "(?:Third Secret of Fatima|communique-third-secret-fatima)", "(?:canonization.{0,60}(?:Francisco|Jacinta)|homily-canonization-fatima-2017)"]
+reviewed_on = "2026-07-25"
+notes = "This corpus-plan owns the ecclesial judgment and reception thread on one object, the 1917 apparitions at the Cova da Iria: the Bishop of Leiria's pastoral letter of 13 October 1930 declaring the visions worthy of belief and permitting the cult (its registered edition is the critical printing in the 2013 DCF Selecao, Doc. 133, whose container stays owned by family.santuario-de-fatima.dcf-selecao-1917-1930), the CDF's documentary publication The Message of Fatima of 26 June 2000 with the third part of the secret and Ratzinger's commentary, the Press Office communique of 21 May 2016 confirming the publication complete, Francis's canonization homily for Francisco and Jacinta Marto of 13 May 2017, and his Act of Consecration to the Immaculate Heart of 25 March 2022. The acts form one family rather than per-work families because they are a single judgment-and-reception thread about one apparition event, each later act interpreting, confirming, or answering the earlier ones, matching the family.roman-missal.older-use-discipline-acts and family.vatican-ii.papal-acts precedent for a bounded corpus of coordinated acts. Every member is registered at work and dated edition level only: the known Vatican web deliveries and the restricted DCF printing are complete candidates, but no exact artifact bytes are registered, so evidence stops at edition loci; the 2000 dossier's English web state carries a double-encoding defect and a 1981 date slip recorded on its manifest, and Portuguese and Italian originals and translator identities remain unregistered. The general 2024 apparition norms are not a Fatima act and keep their own family."
+
+[[families]]
 id = "family.holy-see.cceo-1990"
 label = "1990 Code of Canons of the Eastern Churches"
 kind = "work"
@@ -236,39 +256,39 @@ label = "1917 Code of Canon Law"
 kind = "work"
 source_categories = ["canon-law"]
 identity_confidence = "confirmed"
-identity_gaps = ["artifact", "edition", "expression", "language"]
-artifact_availability = "candidate-partial"
-storage_plan = ["remote", "unknown"]
-rights_review = "partially-reviewed"
+identity_gaps = ["expression", "language"]
+artifact_availability = "canonicalized"
+storage_plan = ["remote", "tracked"]
+rights_review = "all-known-artifacts-reviewed"
 mutability = "fixed"
 freshness_rule = "not-applicable"
-evidence_ceiling = "edition-locus"
+evidence_ceiling = "passage-pin"
 disposition = "canonicalize"
 priority = "p1"
-canonical_ids = []
-trace_patterns = ["(?:\\b1917\\b[^\\n]{0,24}\\b(?:CIC|Code|can(?:on)?s?)\\b|\\b(?:CIC|Codex Iuris Canonici|Code of Canon Law)\\b[^\\n]{0,24}\\b1917\\b)"]
-reviewed_on = "2026-07-22"
-notes = "Canonicalize the superseded Latin code and identified translations as fixed historical editions; do not merge its canon loci or legal force with the 1983 CIC."
+canonical_ids = ["artifact.catholic-church.codex-iuris-canonici-1917.vatican-polyglot-1918.archive-ocr-text", "artifact.catholic-church.codex-iuris-canonici-1917.vatican-polyglot-1918.leaf-693-image", "edition.catholic-church.codex-iuris-canonici-1917.vatican-polyglot-1918", "passage.catholic-church.codex-iuris-canonici-1917.vatican-polyglot-1918.canon-2335", "work.catholic-church.codex-iuris-canonici-1917"]
+trace_patterns = ["(?:\\b1917\\b[^\\n]{0,24}\\b(?:CIC|Code|can(?:on)?s?)\\b|\\b(?:CIC|Codex Iuris Canonici|Code of Canon Law)\\b[^\\n]{0,24}\\b1917\\b)", "(?:canon[ -]?2335|codex-iuris-canonici-1917)"]
+reviewed_on = "2026-07-25"
+notes = "The superseded Latin code now owns its canonical work, the 1918 Vatican Polyglot printing with Gasparri's fontes as the registered fixed edition, the complete remote public-domain Internet Archive OCR discovery artifact, the tracked public-domain page image of printed page 635 (scan leaf 693), and the canon 2335 passage verified visually against that page, including footnote 4's In eminenti and Providas citations. Both known exact artifacts had their United States public-domain basis reviewed and recorded on the manifests, so the tracked page image satisfies the reviewed-rights rule; review completion does not clear any further exemplar. Wording claims rest on the page image, not the uncorrected OCR. English translations such as Peters remain unregistered expressions, and the code's canon loci and legal force stay unmerged with the 1983 CIC; the acts condemning Masonic membership that canon 2335 codified are owned by family.holy-see.masonic-membership-acts."
 
 [[families]]
 id = "family.holy-see.cic-1983"
 label = "1983 Code of Canon Law"
-kind = "work"
+kind = "mixed-cluster"
 source_categories = ["canon-law"]
 identity_confidence = "confirmed"
 identity_gaps = ["artifact", "date", "expression", "language"]
-artifact_availability = "candidate-partial"
-storage_plan = ["remote"]
-rights_review = "unreviewed"
+artifact_availability = "mixed"
+storage_plan = ["restricted"]
+rights_review = "partially-reviewed"
 mutability = "officially-mutable"
 freshness_rule = "Record the governing language, consolidated as-of date, amendments, and authentic interpretations for every current-law consumer."
-evidence_ceiling = "edition-locus"
+evidence_ceiling = "passage-pin"
 disposition = "canonicalize"
 priority = "p0"
-canonical_ids = []
-trace_patterns = ["1983 Code of Canon Law", "CIC/1983", "Code of Canon Law", "Codex Iuris Canonici"]
-reviewed_on = "2026-07-22"
-notes = "Canonicalize dated official states and keep the 1917 code and CCEO in separate coordinated family rows rather than merging jurisdictions or versions."
+canonical_ids = ["artifact.catholic-church.codex-iuris-canonici-1983.english-vatican-web-2026-07-25.vatican-html-94b1139b", "artifact.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-2026-07-25.vatican-html-8a85a5ec", "artifact.francis.pascite-gregem-dei.english-vatican-web-2026-07-25.vatican-html-8bee6401", "artifact.john-paul-ii.sacrae-disciplinae-leges.english-vatican-web-2026-07-25.vatican-html-e1b87d2b", "edition.catholic-church.codex-iuris-canonici-1983.english-vatican-web-2026-07-25", "edition.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-2026-07-25", "edition.francis.pascite-gregem-dei.english-vatican-web-2026-07-25", "edition.john-paul-ii.sacrae-disciplinae-leges.english-vatican-web-2026-07-25", "passage.catholic-church.codex-iuris-canonici-1983.english-vatican-web-2026-07-25.canon-1374", "passage.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-2026-07-25.canon-1374", "passage.francis.pascite-gregem-dei.english-vatican-web-2026-07-25.complete-text", "passage.john-paul-ii.sacrae-disciplinae-leges.english-vatican-web-2026-07-25.complete-text", "work.catholic-church.codex-iuris-canonici-1983", "work.francis.pascite-gregem-dei", "work.john-paul-ii.sacrae-disciplinae-leges"]
+trace_patterns = ["(?:canon[ -]?1374|codex-iuris-canonici-1983)", "1983 Code of Canon Law", "CIC/1983", "Code of Canon Law", "Codex Iuris Canonici", "Pascite gregem Dei", "Sacrae disciplinae leges"]
+reviewed_on = "2026-07-25"
+notes = "The current Latin code now owns a canonical Book VI slice and its promulgation layer. The code work and the dated 2026-07-25 Latin and English Vatican web states of revised Book VI, with exact restricted artifacts and verified canon 1374 passages in both expressions, cover the penal law in force since 8 December 2021; canon 1374 names no association, and the English delivery is an unofficial aid. John Paul II's apostolic constitution Sacrae disciplinae leges of 25 January 1983 and Francis's Pascite gregem Dei of 23 May 2021 join this family rather than per-work families because each is a promulgation act of the code line the family owns - the one promulgating the code, the other promulgating its revised Book VI whose canons the registered editions deliver - matching the promulgation-act precedent of family.roman-missal.third-edition-latin-us-english for the Missale Romanum constitution and the amendment-act precedent of family.catholic-church.catechism for the 2267 rescript, while each remains a distinct intellectual work, so the family becomes a mixed-cluster. Each constitution has a work, dated official English Vatican web edition, exact restricted artifact, and verified complete-text passage; their authoritative Latin texts and any Acta printings remain unregistered, as do the code's other books, consolidated states, and translations, so availability stays mixed. The 1917 code and CCEO stay in separate coordinated family rows."
 
 [[families]]
 id = "family.holy-see.index-notification-1966"
@@ -291,6 +311,26 @@ reviewed_on = "2026-07-25"
 notes = "The 14 June 1966 notification is a distinct intellectual work, not the AAS 58 container. Its complete official Latin constituent is pinned to printed page 445 of the shared restricted AAS artifact and was checked against that page image; the official English web expression remains an identified but not yet canonicalized witness."
 
 [[families]]
+id = "family.holy-see.masonic-membership-acts"
+label = "Holy See acts on Masonic membership"
+kind = "corpus-plan"
+source_categories = ["canon-law", "magisterial"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "edition", "expression", "language"]
+artifact_availability = "mixed"
+storage_plan = ["restricted", "unknown"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "mixed"
+disposition = "canonicalize"
+priority = "p1"
+canonical_ids = ["artifact.clement-xii.in-eminenti.english-papalencyclicals-web-2026-07-25.papalencyclicals-html-e73ce771", "artifact.holy-see.cdf-declaration-masonic-1981.english-vatican-web-2026-07-25.vatican-html-c8d69b9f", "artifact.holy-see.cdf-declaration-masonic-1983.english-vatican-web-2026-07-25.vatican-html-be1d19bc", "artifact.holy-see.cdf-declaration-masonic-1983.latin-vatican-web-2026-07-25.vatican-html-688aa29e", "artifact.holy-see.cdf-reflections-masonic-1985.english-vatican-web-2026-07-25.vatican-html-a7e045fc", "artifact.holy-see.ddf-note-freemasonry-2023.english-vatican-web-2026-07-25.vatican-html-0810e540", "artifact.leo-xiii.humanum-genus.english-vatican-web-2026-07-25.vatican-html-e42a7aa1", "artifact.leo-xiii.humanum-genus.latin-vatican-web-2026-07-25.vatican-html-99256ce1", "edition.clement-xii.in-eminenti.english-papalencyclicals-web-2026-07-25", "edition.holy-see.cdf-declaration-masonic-1981.english-vatican-web-2026-07-25", "edition.holy-see.cdf-declaration-masonic-1983.english-vatican-web-2026-07-25", "edition.holy-see.cdf-declaration-masonic-1983.latin-vatican-web-2026-07-25", "edition.holy-see.cdf-reflections-masonic-1985.english-vatican-web-2026-07-25", "edition.holy-see.ddf-note-freemasonry-2023.english-vatican-web-2026-07-25", "edition.leo-xiii.humanum-genus.english-vatican-web-2026-07-25", "edition.leo-xiii.humanum-genus.latin-vatican-web-2026-07-25", "passage.clement-xii.in-eminenti.english-papalencyclicals-web-2026-07-25.complete-text", "passage.holy-see.cdf-declaration-masonic-1981.english-vatican-web-2026-07-25.complete-text", "passage.holy-see.cdf-declaration-masonic-1983.english-vatican-web-2026-07-25.complete-text", "passage.holy-see.cdf-declaration-masonic-1983.latin-vatican-web-2026-07-25.complete-text", "passage.holy-see.cdf-reflections-masonic-1985.english-vatican-web-2026-07-25.complete-text", "passage.holy-see.ddf-note-freemasonry-2023.english-vatican-web-2026-07-25.complete-text", "passage.leo-xiii.humanum-genus.english-vatican-web-2026-07-25.complete-text", "work.benedict-xiv.providas-romanorum", "work.clement-xii.in-eminenti", "work.holy-see.cdf-declaration-masonic-1981", "work.holy-see.cdf-declaration-masonic-1983", "work.holy-see.cdf-reflections-masonic-1985", "work.holy-see.ddf-note-freemasonry-2023", "work.leo-xiii.humanum-genus"]
+trace_patterns = ["(?:Declaration on Masonic Associations|Quaesitum est|cdf-declaration-masonic)", "(?:In eminenti|in-eminenti)", "(?:Note for the audience with the Holy Father|ddf-note-freemasonry)", "(?:Providas(?: Romanorum)?|providas-romanorum)", "(?:Reflections a Year After|Irreconcilability between Christian faith and Freemasonry|cdf-reflections-masonic)", "Humanum[ -]genus"]
+reviewed_on = "2026-07-25"
+notes = "This corpus-plan owns the Holy See's coordinated teaching and discipline acts on Catholic membership in Masonic associations, 1738-2023: Clement XII's In eminenti of 28 April 1738, Benedict XIV's Providas Romanorum of 1751 confirming it, Leo XIII's Humanum genus of 20 April 1884 reviewing the chain of condemnations, the CDF declaration of 17 February 1981 correcting misreadings of the 1974 letter on canon 2335, the declaration Quaesitum est of 26 November 1983 restating the negative judgment under the new Code, the unsigned 1985 L'Osservatore Romano reflections explaining it, and the DDF note of 13 November 2023 applying it for the Diocese of Dumaguete. The seven acts, papal and dicasterial, form one family rather than per-work families because they are a single regulatory thread about one object, each later act confirming, interpreting, explaining, or applying an earlier one - the manifests' relation fields record the chain - matching the family.roman-missal.older-use-discipline-acts precedent for a bounded corpus of coordinated acts; the codified canons themselves stay owned by the 1917 and 1983 code families, and the UGLE self-description is a separate non-ecclesial family. Six acts have exact restricted artifacts and verified complete-text passages (Quaesitum est also in its Latin original; Humanum genus's Latin state is hashed but uncollated and carries no passage). Providas Romanorum is catalog-level only with no registered witness - its papalencyclicals.net page is a text-free stub - and the witnesses preserve day-of-issue disagreements (18 March against 18 May 1751; 28 against 24 April 1738), so availability, storage, and the evidence ceiling stay mixed. The In eminenti English witness is an unattributed papalencyclicals translation whose page carries injected advertising text, recorded as a witness-quality defect; the Latin originals in the Bullarium and the Acta printings of the modern acts remain unregistered."
+
+[[families]]
 id = "family.holy-see.mater-populi-fidelis"
 label = "Mater Populi Fidelis (2025 doctrinal note)"
 kind = "work"
@@ -309,6 +349,26 @@ canonical_ids = ["edition.holy-see.mater-populi-fidelis.english-vatican-web-2026
 trace_patterns = ["Mater Populi Fidelis"]
 reviewed_on = "2026-07-25"
 notes = "The Dicastery for the Doctrine of the Faith's doctrinal note on Marian titles, approved by Leo XIV on 7 October 2025 and published 4 November 2025, owns its catalog-level work at numbered-paragraph loci and the dated 2026-07-25 Vatican English web state. Because the note is recent and no Acta printing is registered, the Vatican site remains the delivery of record and later corrections cannot be excluded, so each web state is pinned by date rather than treated as fixed; the Italian original and other language expressions remain unregistered, and any exact capture of the copyrighted Vatican page would be stored restricted."
+
+[[families]]
+id = "family.holy-see.norms-supernatural-phenomena-2024"
+label = "Norms for discerning alleged supernatural phenomena (2024)"
+kind = "work"
+source_categories = ["canon-law", "magisterial"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "expression", "language"]
+artifact_availability = "candidate-complete"
+storage_plan = ["restricted"]
+rights_review = "partially-reviewed"
+mutability = "officially-mutable"
+freshness_rule = "Pin each dated Vatican web state, check for an Acta printing or later corrections, and recheck the discipline in force before any present-tense procedural claim."
+evidence_ceiling = "edition-locus"
+disposition = "canonicalize"
+priority = "p2"
+canonical_ids = ["edition.holy-see.norms-supernatural-phenomena-2024.english-vatican-web-2026-07-25", "work.holy-see.norms-supernatural-phenomena-2024"]
+trace_patterns = ["(?:Norms for Proceeding in the Discernment|presunti fenomeni soprannaturali|norms-supernatural-phenomena-2024)"]
+reviewed_on = "2026-07-25"
+notes = "The Dicastery for the Doctrine of the Faith's norms of 17 May 2024, approved by Francis on 4 May 2024, effective 19 May 2024, replacing the 1978 norms and restructuring conclusions into six determinations, own their catalog-level work at presentation, paragraph, and article loci and the dated 2026-07-25 Vatican English web state. They stay their own family rather than joining family.fatima.ecclesial-acts because they are general legislation on the discernment of all alleged supernatural phenomena, cited by the Fatima and other apparition studies only as the governing framework, matching the ledger's per-work precedent for independent curial acts. No exact artifact is registered, any capture of the copyrighted Vatican page would be stored restricted, and the Italian original and the superseded 1978 norms remain unregistered; the web state is pinned by date because no Acta printing is registered and later corrections cannot be excluded."
 
 [[families]]
 id = "family.irenaeus.adversus-haereses-anf1-1887"
@@ -651,6 +711,26 @@ reviewed_on = "2026-07-25"
 notes = "The canonical membership covers two bounded slices without conflating them: the current United States GIRM controls already recorded, and a Latin third-edition slice comprising the exact restricted 2002 secondary digital reproduction, genuine Missal formularies and proper headings, separately owned constituent acts and calendar works, the metadata-only 2008 altar-book identity, and the exact official Notitiae container, status notice, and variation-list passages. The variation list is not treated as the complete 2008 altar book. The complete split-HTML GIRM presentation, the 2011 U.S. altar book, direct 2008 reprint-page collation, later variations, and other territorial expressions remain separate migration work. The Latin slice now also owns the promulgation layer of the postconciliar Missal line reproduced in the same restricted 2002 artifact: Paul VI's apostolic constitution Missale Romanum of 3 April 1969, with its dated official English web state, exact restricted artifact, and verified complete-text passages in both expressions; the 26 March 1970 decree Celebrationis eucharisticae declaring the first typical edition; and the 27 March 1975 act De editione typica altera declaring the second. Each is a separately owned constituent work pinned to physical pages of the reproduction, exactly as Mysterii Paschalis and the 2000 third-edition decree already are, so the constitution joins this family rather than a per-work family: it promulgates the Missal line this family owns and is printed as a constituent of the registered container. The preconciliar Missal it superseded stays owned by family.roman-missal.1962, and the discipline acts on the older Missal's continued use form the separate family.roman-missal.older-use-discipline-acts."
 
 [[families]]
+id = "family.santuario-de-fatima.dcf-selecao-1917-1930"
+label = "Documentacao Critica de Fatima, Selecao de documentos (2013)"
+kind = "edition"
+source_categories = ["historical-primary"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact"]
+artifact_availability = "candidate-complete"
+storage_plan = ["restricted"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "edition-locus"
+disposition = "canonicalize"
+priority = "p2"
+canonical_ids = ["edition.santuario-de-fatima.dcf-selecao-1917-1930.fatima-2013-web-pdf", "work.santuario-de-fatima.dcf-selecao-1917-1930"]
+trace_patterns = ["(?:Documenta[cç][aã]o Cr[ií]tica|DCF Sele[cç][aã]o|dcf-selecao)"]
+reviewed_on = "2026-07-25"
+notes = "The Sanctuary of Fatima's one-volume 2013 critical selection of documents from the fifteen-volume Documentacao Critica de Fatima series covering 1917-1930 owns its container work at document-number loci and the Sanctuary's freely downloaded 653-page web PDF edition, mirroring the ANF/NPNF and Acta container precedent: one registered container maps its constituents without absorbing them, so the 1930 pastoral letter's constituent critical printing (Doc. 133) stays owned by family.fatima.ecclesial-acts while the volume identity stays here. The underlying 1917-1930 documents are public domain, but the transcription and apparatus are the edition's and free download is not a redistribution license, so any exact capture would be stored restricted; the consuming publication's research record notes the downloaded PDF's SHA-256 for identity, but no artifact is registered, and evidence stops at edition loci. The parent multi-volume series and the other constituent documents remain unregistered."
+
+[[families]]
 id = "family.scripture.vulgata-clementina-hetzenauer-1914"
 label = "Hetzenauer 1914 Vulgata Clementina"
 kind = "edition"
@@ -749,6 +829,26 @@ canonical_ids = []
 trace_patterns = ["(?:Council of Trent|Concilium Tridentinum|Trent.{0,30}(?:session|decree|canon))"]
 reviewed_on = "2026-07-22"
 notes = "Canonicalize distinct session, chapter, canon, and decree works with original-language and translation editions; Denzinger locators remain separate witnesses."
+
+[[families]]
+id = "family.united-grand-lodge-of-england.frequently-asked-questions"
+label = "United Grand Lodge of England, Frequently Asked Questions"
+kind = "work"
+source_categories = ["institutional-current"]
+identity_confidence = "confirmed"
+identity_gaps = []
+artifact_availability = "canonicalized"
+storage_plan = ["restricted"]
+rights_review = "partially-reviewed"
+mutability = "officially-mutable"
+freshness_rule = "Pin each dated web state of the mutable page and recheck the current page before any present-tense claim about the body's self-description."
+evidence_ceiling = "passage-pin"
+disposition = "canonicalize"
+priority = "p2"
+canonical_ids = ["artifact.united-grand-lodge-of-england.frequently-asked-questions.english-web-2026-07-25.ugle-html-63402225", "edition.united-grand-lodge-of-england.frequently-asked-questions.english-web-2026-07-25", "passage.united-grand-lodge-of-england.frequently-asked-questions.english-web-2026-07-25.complete-text", "work.united-grand-lodge-of-england.frequently-asked-questions"]
+trace_patterns = ["(?:United Grand Lodge of England|\\bUGLE\\b|united-grand-lodge-of-england)"]
+reviewed_on = "2026-07-25"
+notes = "The UGLE's public FAQ page owns its work, the dated 2026-07-25 web state, the exact restricted artifact, and the verified complete-text passage witnessing the Supreme Being affirmation and the no-religious-affiliation self-description. It is a mutable institutional self-description, not an ecclesial act, so it stays its own family outside family.holy-see.masonic-membership-acts; the page witnesses only how the body publicly describes itself at the retrieved date, not its ritual texts, history, or the practice of other Masonic jurisdictions, and each dated state is pinned separately because the page is continuously revisable. The site's content carries no established redistribution license, so the exact bytes are restricted and rights review of other page states remains open."
 
 [[families]]
 id = "family.vatican-i.acts"
