@@ -25,6 +25,8 @@ CODEX ?= /usr/bin/codex
 #     hyperref, tcolorbox, tikz/PGF, pdflscape, ragged2e, titlesec and endnotes
 #   PDF metadata/text/raster and bounded PNG/contact-sheet processing:
 #     poppler (pdfinfo, pdftotext, pdftoppm) and imagemagick (magick 7)
+#   LaTeX-to-Markdown conversion for the tracked web editions:
+#     pandoc
 #   repository/review/isolated-agent workflow:
 #     git github-cli openai-codex ripgrep
 #
@@ -45,9 +47,11 @@ ARCH_TEX_PACKAGES := texlive-bin texlive-basic texlive-latex \
 	texlive-latexrecommended texlive-latexextra texlive-pictures \
 	texlive-fontsrecommended
 ARCH_PDF_PACKAGES := poppler imagemagick
+ARCH_WEB_PACKAGES := pandoc
 ARCH_WORKFLOW_PACKAGES := git github-cli openai-codex ripgrep
 ARCH_DEPENDENCY_PACKAGES := $(ARCH_CORE_PACKAGES) $(ARCH_PYTHON_PACKAGES) \
-	$(ARCH_TEX_PACKAGES) $(ARCH_PDF_PACKAGES) $(ARCH_WORKFLOW_PACKAGES)
+	$(ARCH_TEX_PACKAGES) $(ARCH_PDF_PACKAGES) $(ARCH_WEB_PACKAGES) \
+	$(ARCH_WORKFLOW_PACKAGES)
 ARCH_CANONICAL_COMMANDS := make:/usr/bin/make sh:/usr/bin/sh \
 	env:/usr/bin/env id:/usr/bin/id find:/usr/bin/find sort:/usr/bin/sort \
 	cmp:/usr/bin/cmp \
@@ -56,7 +60,8 @@ ARCH_CANONICAL_COMMANDS := make:/usr/bin/make sh:/usr/bin/sh \
 	sha256sum:/usr/bin/sha256sum python3:/usr/bin/python3 \
 	pdflatex:/usr/bin/pdflatex kpsewhich:/usr/bin/kpsewhich \
 	pdfinfo:/usr/bin/pdfinfo pdftotext:/usr/bin/pdftotext \
-	pdftoppm:/usr/bin/pdftoppm magick:/usr/bin/magick git:/usr/bin/git \
+	pdftoppm:/usr/bin/pdftoppm magick:/usr/bin/magick pandoc:/usr/bin/pandoc \
+	git:/usr/bin/git \
 	gh:/usr/bin/gh codex:/usr/bin/codex rg:/usr/bin/rg
 ARCH_PACMAN ?= /usr/bin/pacman
 ARCH_SUDO ?= /usr/bin/sudo
@@ -67,6 +72,12 @@ ARCH_OS_RELEASE ?= /etc/os-release
 SOURCE_ROOT := src/$(PROVIDER)
 BUILD_ROOT := build/$(PROVIDER)
 DOC_ROOT := doc/$(PROVIDER)
+WEB_BUILD_ROOT := build/web/$(PROVIDER)
+WEB_ROOT := web/$(PROVIDER)
+# The drift gate compares every provider's tracked tree, not only $(PROVIDER).
+WEB_CURRENT_ROOT := build/.web-current
+ALL_MAIN_SOURCES := $(shell find src -mindepth 2 -type f -name main.tex 2>/dev/null | sort)
+PROVIDERS := $(sort $(foreach path,$(ALL_MAIN_SOURCES),$(word 2,$(subst /, ,$(path)))))
 
 MAIN_SOURCES := $(shell find $(SOURCE_ROOT) -type f -name main.tex 2>/dev/null | sort)
 DOCUMENTS := $(patsubst $(SOURCE_ROOT)/%/main.tex,%,$(MAIN_SOURCES))
@@ -76,6 +87,7 @@ BUILD_METADATA_VERIFICATIONS := $(addprefix $(BUILD_ROOT)/.metadata/,$(addsuffix
 DOC_PDFS := $(addprefix $(DOC_ROOT)/,$(addsuffix .pdf,$(DOCUMENTS)))
 METADATA_CHECKER := scripts/check-generation-metadata
 WEB_EDITION_CHECKER := scripts/check-web-edition
+WEB_EDITION_TOOL := scripts/web-edition
 CURRICULUM_STRUCTURE_CHECKER := scripts/check-curriculum-structure
 PDF_REVIEW_TOOL := scripts/pdf-review
 PUBLIC_ALPHA_TOOL := scripts/public-alpha
@@ -179,6 +191,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 
 .PHONY: all pdf review-pdfs review-all-pdfs install list help clean \
 	distclean check-tools check-metadata check-web-editions \
+	web-editions install-web-editions check-web-editions-current \
 	check-sources check-source-library \
 	check-source-inventory check-source-inventory-tool \
 	check-source-family-migration check-source-family-migration-tool \
@@ -388,6 +401,9 @@ help:
 		'make check-curriculum-structure  Build and audit every Ecclesiastical Latin publication hierarchy' \
 		'make check-metadata  Validate structured and inherited AI provenance' \
 		'make check-web-editions  Validate per-leaf web-edition eligibility declarations' \
+		'make web-editions  Generate Markdown for every eligible leaf of $$PROVIDER' \
+		'make install-web-editions  Publish reviewed Markdown into the tracked web/ tree' \
+		'make check-web-editions-current  Prove every tracked web edition matches current sources' \
 		'make check-public-alpha  Validate the exhaustive public-release policy' \
 		'make prepare-public-alpha  Print current candidate hashes; grants no approval' \
 		'make public-preview  Build a private no-index preview with review candidates' \
@@ -411,6 +427,54 @@ check-metadata: check-tools
 # Absence of a leaf's declaration is an error: nothing defaults to eligible.
 check-web-editions:
 	@$(PYTHON) $(WEB_EDITION_CHECKER) --provider $(PROVIDER)
+
+# Generation is tier one: reproducible Markdown for review, never installed here.
+web-editions:
+	@set -eu; \
+		leaves=$$($(PYTHON) $(WEB_EDITION_CHECKER) --provider '$(PROVIDER)' --list-eligible); \
+		[ -n "$$leaves" ] || { echo 'No eligible leaf declares a web edition: $(PROVIDER)' >&2; exit 1; }; \
+		$(PYTHON) $(WEB_EDITION_TOOL) --provider '$(PROVIDER)' $$leaves
+
+# Installation is tier two: the reviewed Markdown becomes the tracked artifact.
+install-web-editions:
+	@set -eu; \
+		for leaf in $$($(PYTHON) $(WEB_EDITION_CHECKER) --provider '$(PROVIDER)' --list-eligible); do \
+			generated='$(WEB_BUILD_ROOT)/'"$$leaf.md"; \
+			destination='$(WEB_ROOT)/'"$$leaf.md"; \
+			[ -f "$$generated" ] || { echo "Missing generated web edition: $$generated" >&2; exit 1; }; \
+			mkdir -p "$${destination%/*}"; \
+			temporary="$$destination.tmp.$$$$"; \
+			trap 'rm -f -- "$$temporary"' 0 1 2 15; \
+			$(INSTALL) -m 0644 "$$generated" "$$temporary"; \
+			mv -f -- "$$temporary" "$$destination"; \
+			trap - 0 1 2 15; \
+		done
+
+# Anti-drift: the tracked artifact must be exactly what current sources produce.
+check-web-editions-current:
+	@set -eu; \
+		rm -rf -- '$(WEB_CURRENT_ROOT)'; \
+		status=0; \
+		for provider in $(PROVIDERS); do \
+			leaves=$$($(PYTHON) $(WEB_EDITION_CHECKER) --provider "$$provider" --list-eligible); \
+			$(PYTHON) $(WEB_EDITION_TOOL) --provider "$$provider" \
+				--output '$(WEB_CURRENT_ROOT)' $$leaves > /dev/null; \
+			for leaf in $$leaves; do \
+				tracked="web/$$provider/$$leaf.md"; \
+				if [ ! -f "$$tracked" ]; then \
+					echo "Missing tracked web edition: $$tracked" >&2; status=1; \
+				elif ! cmp -s -- "$$tracked" '$(WEB_CURRENT_ROOT)'"/$$provider/$$leaf.md"; then \
+					echo "Tracked web edition is stale: $$tracked" >&2; status=1; \
+				fi; \
+			done; \
+		done; \
+		for tracked in $$(find web -type f -name '*.md' 2>/dev/null | sort); do \
+			[ -f '$(WEB_CURRENT_ROOT)/'"$${tracked#web/}" ] || { \
+				echo "Tracked web edition has no eligible source: $$tracked" >&2; status=1; }; \
+		done; \
+		rm -rf -- '$(WEB_CURRENT_ROOT)'; \
+		[ "$$status" -eq 0 ] || exit 1; \
+		echo 'Tracked web editions match current sources.'
 
 check-public-alpha:
 	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) check
@@ -485,8 +549,8 @@ rebaseline-doc:
 	@$(PYTHON) $(RESEARCH_STALENESS_TOOL) rebaseline --provider '$(PROVIDER)' --id '$(DOC)'
 
 # Staleness stays out of `check`: it flags re-evaluation work, not breakage.
-check: check-metadata check-web-editions check-sources check-public-alpha \
-	check-release-bindings
+check: check-metadata check-web-editions check-web-editions-current \
+	check-sources check-public-alpha check-release-bindings
 
 check-tests:
 	@$(PYTHON) -m unittest discover -s scripts/tests
