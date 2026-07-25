@@ -5,10 +5,10 @@ inventory_path = "src/sources/inventories/publications-v1.toml"
 inventory_snapshot = "sha256:1c3354be172feca3ac796836318ecc2a8f4bbbff2fd889b975f5894fbf192fcc"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:2947c8f04bd1936f250fa112de037da4be866b8a78b9c272d295ade2645dfc74"
-canonical_catalog_snapshot = "sha256:6834bb5912a64ac5f1c26a860c2d58290f877e75363164894fd092e6934b2d94"
+canonical_catalog_snapshot = "sha256:60b08ade1bd4e7624d82974e02fdc60a48d2cde31873be67ca1d2c44df5a5af7"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:765792b20ec0aa6effa1028384bd0df0ad22055fbf09ae9471b5fc4efa1b2f61"
+snapshot = "sha256:8e0d0d8e989c0c83a15e484639d3eacde2eb1b883e81c867f11f362b5daef33c"
 
 [[families]]
 id = "family.acta.aas-ass"
@@ -385,10 +385,10 @@ freshness_rule = "not-applicable"
 evidence_ceiling = "passage-pin"
 disposition = "bind-existing"
 priority = "p0"
-canonical_ids = ["artifact.catholic-church.vulgata-clementina.hetzenauer-1914.mt-8.23-27-checked-text-771cbab2", "artifact.catholic-church.vulgata-clementina.hetzenauer-1914.sacredbible-scan-0960-a40b1065", "artifact.catholic-church.vulgata-clementina.hetzenauer-1914.sacredbible-title-page-39fa403a", "edition.catholic-church.vulgata-clementina.hetzenauer-1914", "passage.catholic-church.vulgata-clementina.hetzenauer-1914.mt-8.23-27", "work.catholic-church.vulgata-clementina"]
+canonical_ids = ["artifact.catholic-church.vulgata-clementina.hetzenauer-1914.mt-8.23-27-checked-text-771cbab2", "artifact.catholic-church.vulgata-clementina.hetzenauer-1914.sacredbible-scan-0875-69102f4d", "artifact.catholic-church.vulgata-clementina.hetzenauer-1914.sacredbible-scan-0960-a40b1065", "artifact.catholic-church.vulgata-clementina.hetzenauer-1914.sacredbible-title-page-39fa403a", "edition.catholic-church.vulgata-clementina.hetzenauer-1914", "passage.catholic-church.vulgata-clementina.hetzenauer-1914.jon-4.6-11", "passage.catholic-church.vulgata-clementina.hetzenauer-1914.mt-8.23-27", "work.catholic-church.vulgata-clementina"]
 trace_patterns = ["(?:Hetzenauer 1914|VULG-HETZ1914|vulgata-clementina\\.hetzenauer-1914)"]
 reviewed_on = "2026-07-24"
-notes = "Reuse the canonical fixed edition, exact public-domain title and Matthew page images, checked Matthew 8:23-27 transcription, and verified passage. The complete passage has two reviewed consumers; a third publication binds only a bounded Matthew 8:23 phrase."
+notes = "Reuse the canonical fixed edition, exact public-domain title, Matthew, and Jonah page images, checked Matthew 8:23-27 transcription, and verified Matthew and Jonah passages. The Matthew passage has two reviewed consumers plus a bounded-phrase binder; the Jonah 4:6-11 page and passage witness the hedera-versus-cucurbita rendering for the Vulgate history."
 
 [[families]]
 id = "family.scripture.vulgate-editions"

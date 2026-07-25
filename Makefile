@@ -303,7 +303,9 @@ check-pdf-review:
 
 check-sources:
 	@$(PYTHON) $(SOURCE_LIBRARY_TOOL) validate
-	@$(PYTHON) $(SOURCE_INVENTORY_TOOL) check
+	@set -eu; for inventory in src/sources/inventories/*publications-v1.toml; do \
+		$(PYTHON) $(SOURCE_INVENTORY_TOOL) check "$$inventory"; \
+	done
 	@$(PYTHON) $(SOURCE_FAMILY_MIGRATION_TOOL) check
 
 check-source-library:

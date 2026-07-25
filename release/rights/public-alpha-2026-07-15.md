@@ -921,6 +921,26 @@ work-specific research records remains operative. This approval does
 not authorize a push, deployment, tag, history rewrite, public
 release attachment, announcement, or promotion.
 
+## Supplemental exact-current-snapshot clearance — 24 July 2026
+
+At `2026-07-24T23:22:11-05:00` in `America/Chicago`, the maintainer instructed:
+“Release the wave-three Claude editions of The Due Return, the Saint Jerome biography, and the Vulgate history, and instantiate the Claude publication-source inventory as part of the whole-batch authoring program.” This is recorded as perpetual worldwide
+exact-current-snapshot distribution authorization under the existing
+represented authority in this record. The sole condition remains
+`no-project-initiated-promotion`.
+
+The approval binds all 125 exact installed release
+PDF snapshots and every exact recognized artifact-affecting
+reader-site input inventoried below at their current bytes. It is an
+exact-byte distribution clearance only: it does not represent
+completion of any outstanding work-specific rights, source,
+collation, specialist, or ecclesiastical review, and no imprimatur,
+nihil obstat, or ecclesiastical approval is claimed. Every
+limitation in the prior supplements, release README, catalogs, and
+work-specific research records remains operative. This approval does
+not authorize a push, deployment, tag, history rewrite, public
+release attachment, announcement, or promotion.
+
 ## Exact approved snapshots
 
 | Publication ID | SHA-256 |
@@ -950,9 +970,12 @@ release attachment, announcement, or promotion.
 | `claude:articles/faith/against-the-instrumentalists` | `024b84c9b313e2547229f6b55079698656bb009ea6a5c73e36bd1d9a99a6a304` |
 | `claude:articles/faith/in-support-of-the-particular` | `535994c75dbb7bff0be2e45528050154b31710c7cbe3cf0fd2926b3cab4e77cb` |
 | `claude:articles/faith/ontological-vertigo` | `56ecbfad17c0ce6d6303c62d3e738eb2d2401dee8ddc663f306af9bf4e7d980e` |
+| `claude:articles/faith/the-due-return` | `91ac3a4a15121efd8ea7426cf6a21af3885caa537de0dd1348648e6d47da4490` |
 | `claude:biographies/origen` | `020b3f4452e2d0e89f6458824f6d33e8bf2db079ff80e0a73f42f9a2d6648d35` |
+| `claude:biographies/saint-jerome` | `22aec5010e1732066d6026a89580a862785e7b730ebd92512e89dfb533ea9b9e` |
 | `claude:biographies/tertullian` | `f6aad19c478b8535f3b3d31d413fb61b0d1ea723db3d0ba3e3221e596f346ba5` |
 | `claude:history/biblical-translations/01-septuagint` | `6aaa22a66d05bf8e4cbe88a3dda814dd71354e00753bbb43f5ee794a25d161bf` |
+| `claude:history/biblical-translations/02-vulgate` | `6549550fa7d9447e5148e8264779aee6df809f65451919367aad98df7faec699` |
 | `curriculums/ecclesiastical-latin/00-course-guide` | `79f0202ddaa651194820e46375ea3193c9a442974b1853ac4654eba5b6faf0ec` |
 | `curriculums/ecclesiastical-latin/00-memory-workbook` | `7df692cd8f16049b990b950c2abb0c568d51c5ae243ece832ad11d051c2d2fa7` |
 | `curriculums/ecclesiastical-latin/00-reference-grammar` | `b3c67f86cd487a5d5ccce5620e849740cb7bb61b165bd2d659fcd7d8fd3ec612` |
@@ -1059,12 +1082,12 @@ release attachment, announcement, or promotion.
 | `LICENSES/MIT.txt` | `afd9c125b68a36b60c78cf63656f4cea2613fadce57e95ebabacebff8817ef60` |
 | `README.md` | `5007509616e98056d397b315247e07307b7cc0f8b715c49847dcef45dadfcb2b` |
 | `THIRD_PARTY.md` | `965aaaff0e773815213fa8c9aada37213d6cb890eb374ef3d1bb1d1dbf966ec4` |
-| `library/biographies.md` | `326ee19bffda526e2be205262fa0c44b550d6f1accc7c310f7f648186bf1ebc8` |
+| `library/biographies.md` | `adba7ddc2d255657ff49bc9543a8398d546db477d9e948c6631f6ff891cafde1` |
 | `library/curriculums.md` | `15f24d06b4911b1cbfe4d85d82c463d7c2eef8635ff25edf2817d5fa6e0fb2bc` |
 | `library/ecclesiastical-latin.md` | `1b985372bc372990f8d748d7667620c76c89a4073a8dae146ecefbca84333c1b` |
-| `library/faith.md` | `adfa2f151581cfa967c206d4902273d38bc49d79aa9bab200d464b297ad83e35` |
+| `library/faith.md` | `77bb12a6fcc441fe047cf5f830088c5d8cc8fb43edc4b9b38d90971220a6f44d` |
 | `library/heresies.md` | `8f6f80b79266818a2b7d80db312ad33cd52ba594b329d4604dae53d17060f5df` |
-| `library/historical-accounts.md` | `7adb3b08b05367af0c688fa08be774240da852876698081694018a412c24709e` |
+| `library/historical-accounts.md` | `a4a276ea14cac3c752574fe1435beefccbc089aa1cfd9db9e953479c1f552c4b` |
 | `library/law-and-church-discipline.md` | `f7a9c66895bde0dfa183fa9f93b79005c77c6c625b978ce2163d3566aa7189c4` |
 | `library/mariology.md` | `bc3ffc4dde127750debeede3f968d5541af7a22098d8fe155d01a006aa74d955` |
 | `library/novus-ordo-liturgy.md` | `861aba17f9e1788d852ba072bcdf8bf76a674e357eeadc7aa9030aed066e36fb` |

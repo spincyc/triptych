@@ -8,8 +8,10 @@ searched, inspected, or verified under the source-library contract.
 
 ## Coverage boundary
 
-The publication universe is every `src/gpt/**/main.tex`, exactly as discovered
-by the Makefile. A complete inventory also includes explicit nonpublication
+Each provider branch keeps its own inventory record (`publications-v1.toml`
+for `gpt`, `<provider>-publications-v1.toml` for later providers), and each
+record's publication universe is every `src/<provider>/**/main.tex`, exactly
+as discovered by the Makefile. A complete inventory also includes explicit nonpublication
 research owners and source-bearing records outside publication `research/`
 directories, including proper-verification records, retained locating aids,
 edition registries, shared received texts, and other profile-authorized owner
@@ -21,9 +23,9 @@ mechanically derived theological companions, proper instances, and shared
 render fragments each retain their documented relationship kind. A render
 dependency is not automatically an evidence dependency.
 
-Every textual authoring file below `src/gpt/`, except global `common/`
-typesetting primitives and generated metadata declarations, is part of the
-conservative source-review surface. This deliberate superset prevents a claim,
+Every textual authoring file below a provider branch of `src/`, except
+provider-neutral `src/common/` typesetting primitives and generated metadata
+declarations, is part of the conservative source-review surface. This deliberate superset prevents a claim,
 citation, or audit from evading coverage because its filename was unexpected.
 Each inventoried file records its repository-relative path and SHA-256. The
 inventory checker recomputes the publication and source-review surface and
