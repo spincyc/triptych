@@ -78,3 +78,80 @@ loci = ["18", "22", "27", "67", "69"]
 role = "official-control"
 states = ["cataloged"]
 context = "Current controlling judgment on the disputed cooperation titles; quoted clauses read 2026-07-25 at the live Vatican English page. The note's approval and publication dates and signatories recorded in the work record. Catalog-level binding."
+
+# Deepening pass, 2026-07-25. The additional witnesses below were read live at
+# the URLs recorded in research/source-audit.md; the bindings remain
+# catalog-level for the same reason stated at the head of this file.
+
+[[bindings]]
+source_id = "edition.ante-nicene-fathers.volume-1.buffalo-1887"
+loci = [
+  "Ignatius of Antioch, Epistle to the Ephesians 7, 18-19 (shorter recension)",
+  "Irenaeus, Against Heresies III.22.4",
+  "Irenaeus, Against Heresies V.19.1",
+]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Second-century substance of the divine motherhood (one subject 'both of Mary and of God') and the Eve-Mary recapitulation, including the advocata clause reported at its own date; read 2026-07-25 in the New Advent transcriptions. Catalog-level binding of the container edition; no exact artifact registered."
+
+[[bindings]]
+source_id = "edition.nicene-and-post-nicene-fathers.series-2-volume-6.new-york-1893"
+loci = ["Jerome, The Perpetual Virginity of Blessed Mary (against Helvidius), sections 6, 12, 15-17, 19, 21-23"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The fourth-century arguments quoted in the perpetual-virginity chapter (donec, primogenitus, the four kinds of brethren, Joseph's virginity) and the treatise's own invective on marriage, reported and not endorsed; read 2026-07-25 in the New Advent transcription. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.nicene-and-post-nicene-fathers.series-2-volume-11.edinburgh-1894"
+loci = [
+  "Vincent of Lerins, Commonitory ch. XII, XV, XXIII",
+  "Edgar C. S. Gibson, introduction to John Cassian",
+]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Latin reception of Theotokos c. 434, the rule of development that Ineffabilis Deus restates, and the reported occasion, commission, and date of Cassian's seven books against Nestorius; read 2026-07-25 in the CCEL text. Cassian's own work is used at reported level only and is not quoted. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.pius-xii.deiparae-virginis-mariae.english-vatican-web-2026-07-25"
+loci = ["2", "4"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The 1946 consultation's own text: the gathered petitions of 1849-1940, the Vatican I petitioners, and the two questions put to the bishops; with the page's editorial note on reserved circulation and later AAS publication. Read 2026-07-25. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.bernard-of-clairvaux.letters.eales-london-1904"
+loci = ["Letter XLV (to the canons of Lyons on the Conception of S. Mary), sections 2, 4-6, 8"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The classic medieval objection to the feast of the Conception, quoted in the Immaculate-Conception chapter together with its closing submission to the See of Rome; read 2026-07-25 in the CCEL text. Commonly cited elsewhere as Ep. 174; the edition's own numbering is recorded. No Latin collation. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.anglican-roman-catholic-international-commission.mary-grace-and-hope-in-christ.english-vatican-web-2026-07-25"
+loci = ["9", "58-63"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The ecumenical chapter's account of the agreements and unresolved questions on the 1854 and 1950 definitions, the statement's own unnumbered status paragraph (outside the numbered-paragraph locus system), and its witness to the Sub tuum praesidium text quoted in the divine-motherhood chapter; read 2026-07-25. Cited as a dialogue text, never as a magisterial act. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.ecumenical-patriarchate-of-constantinople.patriarchal-encyclical-1895.english-orthodoxinfo-web-2026-07-25"
+loci = ["art. XIII", "art. IX-X (context)"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The Orthodox objection to the 1854 definition, quoted in full in the ecumenical chapter with the witness's limits (private site, unidentified translator, no Greek collation) stated at the point of use; read 2026-07-25. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.martin-luther.smalcald-articles.english-bente-dau-1921"
+loci = ["Part I, article IV"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The Lutheran confessional retention of the divine motherhood and perpetual virginity among articles then not in dispute; read 2026-07-25 in the Project Gutenberg text of the Triglot Concordia translation. The edition's bracket convention is disclosed at the point of use. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.thomas-aquinas.summa-theologiae.english-newadvent-web-2026-07-25"
+loci = [
+  "III.27.1.corpus", "III.27.2.corpus", "III.27.2.reply-2", "III.27.2.reply-3",
+  "III.28.3.corpus",
+]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The Thomistic limit on the Immaculate Conception quoted exactly (including the argument from a tractate Thomas ascribes to Augustine and his report of Roman practice on the feast at q. 27 a. 2 ad 3), and the four reasons against Helvidius at q. 28 a. 3; read 2026-07-25. ST III q. 35 cited at generality only. Catalog-level binding."
