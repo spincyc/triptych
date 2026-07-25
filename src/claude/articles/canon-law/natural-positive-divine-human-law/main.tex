@@ -1,0 +1,82 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+\usepackage{endnotes}
+
+\hypersetup{
+  pdftitle={Natural and Positive, Divine and Human},
+  pdfsubject={A discursive canon-law article on the classical taxonomy of law and its canonical reception: eternal law, natural law, divine positive law, and human law in Aquinas's treatise on law (ST I-II qq. 90-97), its sources in Isidore of Seville, its reception in Gratian's opening distinctions, the 1983 Code of Canon Law's working uses of the distinctions (divine law, merely ecclesiastical law, custom, dispensation), the Catechism's and Veritatis splendor's natural-law expositions, and the boundaries of what the Church claims to declare rather than constitute.}
+}
+
+\setcounter{tocdepth}{2}
+\setlength{\emergencystretch}{2em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.13\textheight}
+{\large\scshape A Triptych Article\par}
+\vspace{1.5em}
+{\Huge\bfseries Natural and Positive,\\[0.18em] Divine and Human\par}
+\vspace{0.9em}
+{\Large The Classical Taxonomy of Law and Its Reception\\[0.18em] in the Canon Law of the Latin Church\par}
+\vfill
+{\footnotesize Governing law: the 1983 \emph{Codex Iuris Canonici} for the Latin Church, as amended, stated as of 25 July 2026; see the terminal Scope, Method, and Qualifications appendix. This is a study aid, not canonical advice.\par}
+\vspace{1.2em}
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{articles/canon-law/natural-positive-divine-human-law/sections/00-two-canons-and-a-question}
+\input{articles/canon-law/natural-positive-divine-human-law/sections/10-the-inherited-vocabulary}
+\input{articles/canon-law/natural-positive-divine-human-law/sections/20-the-treatise-on-law-i}
+\input{articles/canon-law/natural-positive-divine-human-law/sections/25-the-treatise-on-law-ii}
+\input{articles/canon-law/natural-positive-divine-human-law/sections/28-the-treatise-on-law-iii}
+\input{articles/canon-law/natural-positive-divine-human-law/sections/30-the-shape-of-the-taxonomy}
+\input{articles/canon-law/natural-positive-divine-human-law/sections/40-gratians-opening-distinctions}
+\input{articles/canon-law/natural-positive-divine-human-law/sections/50-the-code}
+\input{articles/canon-law/natural-positive-divine-human-law/sections/60-custom-in-the-code}
+\input{articles/canon-law/natural-positive-divine-human-law/sections/70-dispensation-and-its-limits}
+\input{articles/canon-law/natural-positive-divine-human-law/sections/80-the-magisterial-exposition}
+\input{articles/canon-law/natural-positive-divine-human-law/sections/85-boundaries-and-debates}
+\Needspace{10\baselineskip}
+\addcontentsline{toc}{section}{Notes}
+\begingroup
+\footnotesize
+\setlength{\parskip}{0.28em}
+\theendnotes
+\endgroup
+\Needspace{14\baselineskip}
+\appendix
+\input{articles/canon-law/natural-positive-divine-human-law/sections/90-scope-method-qualifications}
+\input{articles/canon-law/natural-positive-divine-human-law/sections/99-references}
+\begingroup
+\setlength{\parskip}{0pt}
+\vspace{-0.6\baselineskip}
+\section{Generation Metadata}
+\vspace{-0.35\baselineskip}
+{\scriptsize\input{articles/canon-law/natural-positive-divine-human-law/generation-metadata}}
+\endgroup
+\end{deepstudy}
+
+\end{document}
