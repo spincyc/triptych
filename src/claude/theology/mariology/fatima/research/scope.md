@@ -22,13 +22,35 @@ Provider: Anthropic Claude
 ## Reader and governing question
 
 A serious Catholic reader who wants devotion, history, source
-criticism, and ecclesial obedience held together. Governing question:
-what occurred and was reported at Fátima in 1917 on the
-contemporaneous record; what exactly the competent authorities judged
-(acts, dates, wording, objects); how the documentary corpus (memoirs;
-three-part secret) developed; how the Holy See interpreted and
-received it through 2000–2024; and what the judgments do and do not
-oblige.
+criticism, and ecclesial obedience held together. Governing question,
+in two parts. **Documentary:** what occurred and was reported at
+Fátima in 1917 on the contemporaneous record; what exactly the
+competent authorities judged (acts, dates, wording, objects); how the
+documentary corpus (memoirs; three-part secret) developed; how the
+Holy See interpreted and received it through 2000–2025; and what the
+judgments do and do not oblige. **Interpretive:** what the published
+secret means — its mode, its central figure, the withheld-text
+claims, the 1960 date, the consecration record, and the sense of the
+three parts read as one argument.
+
+The interpretive half is the reason this edition exists in its
+current form. It is delivered as argument, never as teaching: every
+conclusion of the study appears inside a labeled *Project synthesis*
+block with four named fields (judgment; reasons; strongest
+counterargument, with what it concedes; what would change this), and
+§14.5 tabulates all six blocks with confidence levels. The warrant
+for interpreting is stated in the publication at §1.1: the Holy See
+published the third part on 26 June 2000 together with Cardinal
+Ratzinger's commentary, which puts the interpretive questions to its
+reader and calls itself "an attempt"; the stated purpose of
+publication was that the faithful "may better receive the message";
+and the DDF documents index carries no act restraining discussion of
+Fátima. Where a competent act *does* restrain discussion of an
+alleged secret — the Holy Office decree of 21 December 1915, AAS 7
+(1915) 594 — this project observes the restraint; that decree is
+cited in the publication solely as the contrasting paradigm of a
+restraining act, and neither its subject matter nor its content is
+discussed anywhere.
 
 ## Thesis
 
@@ -41,6 +63,45 @@ nothing to public Revelation, and its evangelical center is
 conversion, penance, the Rosary, reparation, and the Immaculate
 Heart. Material disagreements in the record (above all the October
 war statement) are preserved, not harmonized.
+
+## Interpretive theses (project synthesis; unreviewed)
+
+Stated here so that the record and the publication agree exactly.
+Each is argued in the publication at the section named, with reasons,
+the strongest counterargument, and the evidence that would overturn
+it. None is magisterial, and none is claimed to be.
+
+1. **Mode (§7).** The third part is typological, not predictive: it
+   asserts the shape of an age (a Church of martyrs, killed at every
+   rank, in a landscape of ruin, joined to the Cross, summoned to
+   penance), not the occurrence of datable events. High confidence.
+2. **The Bishop dressed in White (§8).** The figure is the Roman
+   Pontiff by office — high confidence. The identification of the
+   vision *with* 13 May 1981 is a privileged papal application, true
+   as application and false as decoding — moderate to high; the
+   counter-evidence is Sodano's announcement, quoted in full.
+3. **Withheld text (§9).** No text is being withheld — high
+   confidence; and the hypothesis as usually argued is
+   unfalsifiable. The Fourth Memoir "etc." marks the 1941 permission
+   boundary rather than a suppressed locution — moderate.
+4. **1960 (§10).** The date is Sister Lucia's own prudential judgment
+   about intelligibility and carries no prophetic weight — high
+   confidence, resting on her explicit recorded answer.
+5. **Consecration (§11.3).** The record supports that the
+   consecration asked for was made on 25 March 1984 — high confidence
+   as to the record; no claim whatever about its acceptance by God.
+   The defect claim is self-undermining because it draws its standard
+   from the same witness whose contrary testimony it rejects.
+6. **Meaning (§14).** The three parts are one argument: stake (souls
+   lost), remedy (a heart conformed to God's will) and conditional
+   alternative, and the picture of that alternative unaverted. The
+   third part is the visual expansion of the second part's "if not"
+   clause — the seer's own 1982 reading. Moderate to high.
+
+Explicitly **not** judged: supernaturality; the mechanism of the
+solar phenomenon; whether Russia has been converted; any calendar;
+any identification of the vision's city, soldiers, or arrows with
+historical particulars.
 
 ## Included
 
@@ -70,10 +131,20 @@ war statement) are preserved, not harmonized.
   beatification 13 May 2000, canonization 13 May 2017, Lucia declared
   Venerable 22 June 2023; the 21 May 2016 communiqué on the Dollinger
   claims quoted exactly;
-- current standing under the 2024 DDF norms: six conclusions, n. 23
-  rule, legacy decisions retained in their historical formulas;
-  bounded negative search of the DDF documents index (no Fátima act
-  after 2000).
+- current standing under the 2024 DDF norms: six conclusions, n. 12
+  (phenomena do not become objects of faith) and n. 23 rule, legacy
+  decisions retained in their historical formulas; bounded negative
+  search of the DDF documents index (no Fátima act after 2000, in an
+  index current to 2 July 2026);
+- for the interpretive half: the three parts of the secret and both
+  Fourth Memoir annotations quoted **entire** in the Holy See's
+  English, as the object analyzed; Benedict XVI's in-flight interview
+  of 11 May 2010 (the anthropology of apparition in his own voice;
+  the refusal to confine the vision to 1981); Aquinas, *Summa
+  theologiae* II-II qq. 173–174, as the classical tradition the 2000
+  commentary applies (English Dominican translation via a web host;
+  Latin not collated); DDF *Mater Populi fidelis* (4 November 2025)
+  n. 2 as a current safeguard on apparition-linked Marian language.
 
 ## Excluded or bounded
 
@@ -84,9 +155,14 @@ war statement) are preserved, not harmonized.
   inside the 1930 operative clause;
 - no integral reproduction of memoirs, prayers, or modern
   translations; no prayer text printed for recitation;
-- "fourth secret," date-setting, and automatic-salvation theories
-  only insofar as controlling public sources answer them (2000
-  dossier; 2016 communiqué);
+- the "fourth secret" question is treated (§9) at the level of its
+  publicly documented premises only. The two books in which the
+  controversy has chiefly been argued — Socci 2006 and Bertone 2007 —
+  were identified at catalogue level and **not read**; nothing is
+  quoted, summarized, paraphrased, or attributed to either author;
+- date-setting, decoding, and automatic-salvation theories are
+  excluded as conclusions and addressed only where controlling public
+  sources answer them (2000 dossier; 2016 communiqué);
 - no declaration about the "conversion of Russia," no period-of-peace
   calculation, no political application;
 - archival claims of the 1980s consecration controversy not examined;
@@ -113,6 +189,24 @@ war statement) are preserved, not harmonized.
 - **19 August (Valinhos) day** rests on the memoir stratum; the fact
   of the August apparition is contemporaneous (27 Aug 1917
   interrogation).
+- **Sodano and the manuscript:** the 13 May 2000 announcement renders
+  the third part's "he was killed" as "falls to the ground,
+  apparently dead," and merges the corpses the Bishop passes in the
+  ruined city with the bishops, priests, religious, and laity who in
+  the manuscript die *after* him. Ratzinger's commentary keeps
+  "killed." Both are quoted; the divergence is reported as an
+  observation of this study (§8.1) and is not resolved by
+  paraphrase.
+- **Sodano 2000 and Benedict XVI 2010:** "the events ... now seem
+  part of the past" (13 May 2000) against "beyond this great vision
+  of the suffering of the Pope ... an indication is given of realities
+  involving the future of the Church" (11 May 2010). Both quoted; the
+  tension is stated, not harmonized (§8.3).
+- **Lucia 1982 and Lucia 2000:** the 1982 letter interprets the third
+  part by the second part's "if not" clause and does not mention the
+  1981 attempt; in 2000 she agreed with the interpretation presented
+  to her. Both are printed, together with the observation that the
+  2000 assent was elicited rather than volunteered (§8.2).
 
 ## Rights boundary
 
@@ -121,7 +215,18 @@ underlying 1917–1930 Portuguese documents (Almeida died 1932; official
 acts). © Santuário de Fátima: the 2013 critical transcription and
 apparatus; the memoir translations and institutional pages — quoted
 briefly with citation. Holy See web texts quoted within ordinary
-scholarly limits with citation. No received prayer text is printed for
+scholarly limits with citation — with one qualification recorded
+here and in the publication's rights paragraph: the three parts of
+the secret and the two Fourth Memoir annotations are quoted **entire**
+in the Holy See's English, because they are the object the study
+analyzes and a partial quotation would make the argument
+unverifiable. They are short constituent texts within a much larger
+dossier; the dossier as a whole (introduction, papal letter,
+conversation record, announcement, commentary) is not reproduced, and
+no other complete document is reproduced. Aquinas is quoted from the
+1920 English Dominican Province translation, long out of copyright in
+the United States, through a web host whose own presentation is not
+reproduced. No received prayer text is printed for
 recitation; all English renderings of Portuguese/Italian sources are
 visibly editorial working translations. The DCF selection PDF was
 downloaded for research (SHA-256
@@ -140,11 +245,43 @@ its bytes are not redistributed in the repository.
   full-PDF page-by-page raster review (production notes in
   `source-audit.md`).
 
+## Interpretive revision — 2026-07-25
+
+The publication was extended from eight body sections to fourteen and
+from 18 to 37 rendered pages. Added: §5, the published text of all
+three parts with the Fourth Memoir annotations, quoted entire, with a
+strata table; §7, the mode of the vision (Ratzinger's three forms of
+perception, grounded in Aquinas, and the text's own genre markers);
+§8, the Bishop dressed in White (four official voices kept apart, the
+six objections at full strength, the office/event distinction); §9,
+the withheld-text controversies (the 2016 communiqué, relocated here
+from the reception section, plus an evidence-state table of the
+argument's premises); §10, the 1960 question; §11.3, an assessment of
+the defect claim; §13.2, against fatalism, with the Aquinas anchor,
+the three practical exclusions, and the *Mater Populi fidelis*
+safeguard; and §14, the closing synthesis with a confidence table.
+§1 gained the warrant subsection and a fourteen-section road map;
+cross-references throughout were converted to LaTeX labels. §4's
+paraphrase of parts one and two was replaced by a pointer to §5 to
+avoid printing the same material twice. The scope appendix,
+references, and this record were revised to match. No factual claim
+from the earlier revision was withdrawn.
+
 ## Outstanding review
 
 - independent Mariological, historical, canonical, archival,
   Portuguese-philological, medical/scientific, and textual review;
+- **independent review of the interpretive sections in particular.**
+  The six synthesis blocks are the reasoned judgment of an AI
+  contributor working from the sources listed in `source-audit.md`.
+  They have received no theological, Mariological, or ecclesiastical
+  review of any kind, and none is claimed. A reader should treat them
+  as argument to be tested, not as a finding;
 - collation against the 1930 imprint, diocesan archive, newspaper
-  facsimiles, and the full Documentação Crítica series;
+  facsimiles, and the full Documentação Crítica series; the
+  Portuguese autographs of the secret; the Latin *Summa*;
+- reading of the two books identified but not read (Socci 2006;
+  Bertone 2007), which would be required before any characterization
+  of their arguments;
 - independent rights review; ecclesiastical review or approval (none
   claimed).

@@ -28,6 +28,10 @@ inside the narrative scope but **outside** the judged corpus of the
   the Holy See without a formal supernaturality judgment.
 - *fides humana* — the assent invited by approved private revelation.
 - *reported message* — default register for all attributed words.
+- *project synthesis* — the study's own judgment, confined to labeled
+  blocks in the publication, unreviewed, carrying no authority beyond
+  its argument. It is never a status term and never changes the
+  controlling status recorded below.
 
 ## Event dossier (as of 2026-07-25)
 
@@ -79,10 +83,18 @@ inside the narrative scope but **outside** the judged corpus of the
 - **Current controlling status:** positive legacy diocesan judgment
   of 1930 in force; CDF 2000 interpretation controlling for the
   secret; no DDF act under the 2024 norms concerns Fátima (DDF
-  documents index checked 2026-07-25); no superseding, restricting,
-  or reversing act located. Not established by any act: obligation of
-  faith; supernatural-origin certainty; event-level authentication of
-  every text or claim.
+  documents index checked 2026-07-25, current at that date to 2 July
+  2026, carrying exactly one Fátima entry — the 26 June 2000
+  dossier); no superseding, restricting, or reversing act located.
+  **No act restrains discussion of the Fátima secret**, and the
+  competent dicastery published it with a commentary that invites
+  reflection; the study interprets on that footing. Not established
+  by any act: obligation of faith; supernatural-origin certainty;
+  event-level authentication of every text or claim; and no
+  determination of the vision's literary genre, of the identity of
+  the Bishop dressed in White with any particular pope, or of the
+  meaning of the third part beyond the 2000 commentary's own
+  self-described "attempt."
 - **Reported-message themes checked:** Rosary at every 1917
   apparition (contemp. records); conversion/penance; reparation;
   Immaculate Heart (memoir stratum + 2000 dossier); conditional
@@ -101,3 +113,19 @@ inside the narrative scope but **outside** the judged corpus of the
 
 - 2026-07-25 — record created with the initial publication; status
   as above.
+- 2026-07-25 — interpretive revision. No status term, competent act,
+  object, or controlling status changed. What changed: the
+  publication now prints the three parts of the secret entire and
+  interprets them in six labeled synthesis blocks (mode; the Bishop
+  dressed in White; the withheld-text claims; 1960; the consecration
+  defect claim; the meaning of the whole). Sources added to the
+  dossier: Benedict XVI's in-flight interview of 11 May 2010; DDF
+  *Mater Populi fidelis* n. 2 (4 November 2025); Aquinas *Summa
+  theologiae* II-II qq. 173–174 as classical context; the AAS 7
+  (1915) 594 locus, cited only as the contrasting paradigm of a
+  restraining act. Negative search re-run: DDF documents index, one
+  Fátima entry, index current to 2 July 2026. This record was updated
+  before the narrative revision was finalized, as the profile
+  requires; because no status changed, the dossier fields above are
+  unaltered except for the currentness detail and the explicit note
+  that no act restrains discussion.
