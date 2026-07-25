@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.francis.pascite-gregem-dei.english-vatican-web-2026-07-25.vatican-html-refetch"
+edition_id = "edition.francis.pascite-gregem-dei.english-vatican-web-2026-07-25"
+artifact_type = "official-html"
+media_type = "text/html"
+storage = "restricted"
+rights_status = "restricted"
+rights_basis = "The Vatican portal Legal Notes, reviewed 2026-07-25 at https://www.vatican.va/content/vatican/en/legal-notes.html, did not establish repository redistribution permission."
+source_url = "https://www.vatican.va/content/francesco/en/apost_constitutions/documents/papa-francesco_costituzione-ap_20210523_pascite-gregem-dei.html"
+provenance = "Exact HTML response acquired directly over HTTPS from the Holy See portal on 2026-07-25, later on the same calendar date as the previously registered response."
+retrieved = "2026-07-25"
+sha256 = "ec0209f7e4cfcdf6ed64d10e25a72da977de2a01bdf5732cb8a98c46bea1749b"
+byte_size = 44385
+indexable = false
+notes = "A same-date refetch of the page returned different exact bytes from the previously registered response (sha256 8bee6401...), an observed instance of delivery mutability. The constitution's content dates are unchanged: given 23 May 2021, the revised Book VI entering into force 8 December 2021."
