@@ -3,9 +3,9 @@ record_type = "publication-source-inventory"
 provider = "claude"
 audited_on = "2026-07-25"
 discovery_rule = "src/claude/**/main.tex"
-publication_count = 12
-source_surface_file_count = 196
-snapshot = "sha256:3ffa6c405343c50ce45a97f5095092db692ac71fd7e96145740394567ccc0a5e"
+publication_count = 15
+source_surface_file_count = 242
+snapshot = "sha256:df539a28b17dc2658fab00be64a90babb128dc8a46a6e26bc40d890882e5a3b7"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -42,6 +42,17 @@ inventory_state = "records-enumerated"
 source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "articles/faith/at-the-end-of-every-why"
+relationship = "local"
+
+[[documents]]
+id = "articles/faith/council-missal-and-crisis"
+main = "src/claude/articles/faith/council-missal-and-crisis/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "articles/faith/council-missal-and-crisis"
 relationship = "local"
 
 [[documents]]
@@ -120,6 +131,20 @@ id = "owner.biographies.shared"
 relationship = "render-import"
 
 [[documents]]
+id = "biographies/saint-thomas-aquinas"
+main = "src/claude/biographies/saint-thomas-aquinas/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "biographies/saint-thomas-aquinas"
+relationship = "local"
+[[documents.record_owners]]
+id = "owner.biographies.shared"
+relationship = "render-import"
+
+[[documents]]
 id = "biographies/tertullian"
 main = "src/claude/biographies/tertullian/main.tex"
 publication_kind = "canonical"
@@ -170,6 +195,17 @@ inventory_state = "records-enumerated"
 source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "theology/mariology/marian-dogmas"
+relationship = "local"
+
+[[documents]]
+id = "theology/mariology/rosary"
+main = "src/claude/theology/mariology/rosary/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "theology/mariology/rosary"
 relationship = "local"
 
 [[files]]
@@ -321,6 +357,90 @@ path = "src/claude/articles/faith/at-the-end-of-every-why/sections/99-references
 sha256 = "85585e0a56d2af770f46bf410b340ba01053a4db4f3baba409fd515063f6978d"
 kind = "rendered-content"
 owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/claude/articles/faith/council-missal-and-crisis/main.tex"
+sha256 = "59ecfc7b91813a651fe3e6e2ae68b4593ae17a723ad45539fe6bf2775a850505"
+kind = "publication-main"
+owners = ["articles/faith/council-missal-and-crisis"]
+
+[[files]]
+path = "src/claude/articles/faith/council-missal-and-crisis/research/scope.md"
+sha256 = "a1a7b6428cdabcef8e4b10a51453dc958e172208f9e6e879e249fc9e51462103"
+kind = "research-scope"
+owners = ["articles/faith/council-missal-and-crisis"]
+
+[[files]]
+path = "src/claude/articles/faith/council-missal-and-crisis/research/source-audit.md"
+sha256 = "52708d2c88649acffab7786f516c8a706809ddf5170bb01021a8591d5185bc58"
+kind = "legacy-source-audit"
+owners = ["articles/faith/council-missal-and-crisis"]
+
+[[files]]
+path = "src/claude/articles/faith/council-missal-and-crisis/research/source-bindings.toml"
+sha256 = "ac7acaa722b3abb7d48bbb2d96bda1f25a2796374958a0e04642cb95099da977"
+kind = "source-binding"
+owners = ["articles/faith/council-missal-and-crisis"]
+
+[[files]]
+path = "src/claude/articles/faith/council-missal-and-crisis/sections/00-the-coincidence.tex"
+sha256 = "4ff5c2861436533a8479cfe59f072e2b74a55f13db6148da2d3363910574a4f7"
+kind = "rendered-content"
+owners = ["articles/faith/council-missal-and-crisis"]
+
+[[files]]
+path = "src/claude/articles/faith/council-missal-and-crisis/sections/10-what-the-council-was-called-to-do.tex"
+sha256 = "383d2f9b871af8e63cdb29b2472457ccd048448dc7059492d6ad9058553c4aee"
+kind = "rendered-content"
+owners = ["articles/faith/council-missal-and-crisis"]
+
+[[files]]
+path = "src/claude/articles/faith/council-missal-and-crisis/sections/20-what-the-constitution-says.tex"
+sha256 = "bf4e2e5a30448b93948501038bb21429b2e5d927a1efa6342a4d824bd8b13d99"
+kind = "rendered-content"
+owners = ["articles/faith/council-missal-and-crisis"]
+
+[[files]]
+path = "src/claude/articles/faith/council-missal-and-crisis/sections/30-from-constitution-to-missal.tex"
+sha256 = "4b8840797364de4c872d2f693f7caaf18434a7b45473ae72f2c7fb5def216efe"
+kind = "rendered-content"
+owners = ["articles/faith/council-missal-and-crisis"]
+
+[[files]]
+path = "src/claude/articles/faith/council-missal-and-crisis/sections/40-the-crisis-measured.tex"
+sha256 = "fc418fbe57867b0917bafa1676a7d729e9106cd8b81e55b4f0c305e53b6a4f24"
+kind = "rendered-content"
+owners = ["articles/faith/council-missal-and-crisis"]
+
+[[files]]
+path = "src/claude/articles/faith/council-missal-and-crisis/sections/50-the-hermeneutical-fork.tex"
+sha256 = "047a6564ff16a40852011625ca151bf1fc1469a085511a1aa3fcc566f2efec3a"
+kind = "rendered-content"
+owners = ["articles/faith/council-missal-and-crisis"]
+
+[[files]]
+path = "src/claude/articles/faith/council-missal-and-crisis/sections/60-the-critique-and-its-limits.tex"
+sha256 = "e01538f1998b89b53f5cb1feb155bb188493bb2ff6be4131cb346dc24d42e281"
+kind = "rendered-content"
+owners = ["articles/faith/council-missal-and-crisis"]
+
+[[files]]
+path = "src/claude/articles/faith/council-missal-and-crisis/sections/70-the-discipline-of-memory.tex"
+sha256 = "1fc75001e89c9b16afa50f3e54bc659bab8a045238511c2e365a143540f4d5cb"
+kind = "rendered-content"
+owners = ["articles/faith/council-missal-and-crisis"]
+
+[[files]]
+path = "src/claude/articles/faith/council-missal-and-crisis/sections/90-scope-method-qualifications.tex"
+sha256 = "b7f2fb35e1dfa13dfa97422a8cc46a932614df46c7c788aefc93da2900504f47"
+kind = "rendered-content"
+owners = ["articles/faith/council-missal-and-crisis"]
+
+[[files]]
+path = "src/claude/articles/faith/council-missal-and-crisis/sections/99-references.tex"
+sha256 = "5f9c989a58ed8e810ff1b1f7ab575ece49154c33e89859f36d64ef2dbd682031"
+kind = "rendered-content"
+owners = ["articles/faith/council-missal-and-crisis"]
 
 [[files]]
 path = "src/claude/articles/faith/in-support-of-the-particular/main.tex"
@@ -911,6 +1031,120 @@ kind = "rendered-content"
 owners = ["biographies/saint-jerome"]
 
 [[files]]
+path = "src/claude/biographies/saint-thomas-aquinas/main.tex"
+sha256 = "24ca4c6cf37c5f1481480289d6ba70bd8aece3c075c4b8ee6d119dce089677a1"
+kind = "publication-main"
+owners = ["biographies/saint-thomas-aquinas"]
+
+[[files]]
+path = "src/claude/biographies/saint-thomas-aquinas/research/chronology.md"
+sha256 = "311d3311d0a51aa4fb2da27531c0d56a01811f48fb42cc00d11d4ab7f9e62e81"
+kind = "research-record"
+owners = ["biographies/saint-thomas-aquinas"]
+
+[[files]]
+path = "src/claude/biographies/saint-thomas-aquinas/research/scope.md"
+sha256 = "d17345915995df5960fc8e14375242c0810bfa4f7dbe5a912fdf5919714973c5"
+kind = "research-scope"
+owners = ["biographies/saint-thomas-aquinas"]
+
+[[files]]
+path = "src/claude/biographies/saint-thomas-aquinas/research/source-audit.md"
+sha256 = "c1ed25b2f2a191f053be66541a08f99e7bf9e096542475afa030636498b7c390"
+kind = "legacy-source-audit"
+owners = ["biographies/saint-thomas-aquinas"]
+
+[[files]]
+path = "src/claude/biographies/saint-thomas-aquinas/research/source-bindings.toml"
+sha256 = "d7217ea031ac25afd1ef71ed1ae1315ca09fcf94bbc14a30d7b812baf48c589c"
+kind = "source-binding"
+owners = ["biographies/saint-thomas-aquinas"]
+
+[[files]]
+path = "src/claude/biographies/saint-thomas-aquinas/research/tradition-audit.md"
+sha256 = "a3b4476a81a9d8905328f87e0a5a93e29985f8c7f17ebe4a9f1e357730444212"
+kind = "research-record"
+owners = ["biographies/saint-thomas-aquinas"]
+
+[[files]]
+path = "src/claude/biographies/saint-thomas-aquinas/sections/00-question.tex"
+sha256 = "3fa65e377ef4eebe29f300419cc12d3a177e752db3dabd2e4a52b2e99e484703"
+kind = "rendered-content"
+owners = ["biographies/saint-thomas-aquinas"]
+
+[[files]]
+path = "src/claude/biographies/saint-thomas-aquinas/sections/10-aquino.tex"
+sha256 = "54f02e32c611a29cda538f8e74393148366af8ec2aff2353648cef2650660392"
+kind = "rendered-content"
+owners = ["biographies/saint-thomas-aquinas"]
+
+[[files]]
+path = "src/claude/biographies/saint-thomas-aquinas/sections/100-conclusion.tex"
+sha256 = "ec249d3e2572d48cf59c741d96d590a40a3b9eed374329e8bf158451b1244eb9"
+kind = "rendered-content"
+owners = ["biographies/saint-thomas-aquinas"]
+
+[[files]]
+path = "src/claude/biographies/saint-thomas-aquinas/sections/110-scope-chronology-evidence.tex"
+sha256 = "b8bf72b2787643e1aad30c91533d8128031c59ea034cb691202a5e4b0fe1fb72"
+kind = "rendered-content"
+owners = ["biographies/saint-thomas-aquinas"]
+
+[[files]]
+path = "src/claude/biographies/saint-thomas-aquinas/sections/120-references.tex"
+sha256 = "813e5264cf8d4ef148c197c327271c7a437a813ac8bb5a14255d13a4a9d534ed"
+kind = "rendered-content"
+owners = ["biographies/saint-thomas-aquinas"]
+
+[[files]]
+path = "src/claude/biographies/saint-thomas-aquinas/sections/20-paris-cologne.tex"
+sha256 = "de99b996bb35055e817d6b1f6eb200a96e2069e5bc60587e3ca88a6141d70525"
+kind = "rendered-content"
+owners = ["biographies/saint-thomas-aquinas"]
+
+[[files]]
+path = "src/claude/biographies/saint-thomas-aquinas/sections/30-master.tex"
+sha256 = "907a9c1b9163852b1ab33387b148baddaca16b568b56fcb4423697e2b58b546b"
+kind = "rendered-content"
+owners = ["biographies/saint-thomas-aquinas"]
+
+[[files]]
+path = "src/claude/biographies/saint-thomas-aquinas/sections/40-italy.tex"
+sha256 = "618a5a3fe35e80c71d556171dbcf0c595f823a6296a8a8bab8ee7ec516dd2965"
+kind = "rendered-content"
+owners = ["biographies/saint-thomas-aquinas"]
+
+[[files]]
+path = "src/claude/biographies/saint-thomas-aquinas/sections/50-second-paris.tex"
+sha256 = "7339e57facaaf6b4a52f1d6f8037da22430c155386e4cea6032d89f1c0739913"
+kind = "rendered-content"
+owners = ["biographies/saint-thomas-aquinas"]
+
+[[files]]
+path = "src/claude/biographies/saint-thomas-aquinas/sections/60-naples-end.tex"
+sha256 = "c6c1f90cf41f2500f6d9f66374739d3ab9e8d45a8b7d6c86a331eab236c55426"
+kind = "rendered-content"
+owners = ["biographies/saint-thomas-aquinas"]
+
+[[files]]
+path = "src/claude/biographies/saint-thomas-aquinas/sections/70-aftermath.tex"
+sha256 = "b8a60ceeedef7339ca981e35ededff51a3e01b115600c58ef7b4d3c623d71f3e"
+kind = "rendered-content"
+owners = ["biographies/saint-thomas-aquinas"]
+
+[[files]]
+path = "src/claude/biographies/saint-thomas-aquinas/sections/80-traditions.tex"
+sha256 = "5e8c0927e6512f4a413932a822f7f927b3a19f2ffeae7feaa35b9a75451da3e0"
+kind = "rendered-content"
+owners = ["biographies/saint-thomas-aquinas"]
+
+[[files]]
+path = "src/claude/biographies/saint-thomas-aquinas/sections/90-reception.tex"
+sha256 = "d4050a5ad903c995e599814eacb1d4dfbe7eeb401d2c26e40e121a769371da8c"
+kind = "rendered-content"
+owners = ["biographies/saint-thomas-aquinas"]
+
+[[files]]
 path = "src/claude/biographies/shared/biography-format.tex"
 sha256 = "f8d74419ca959ce6a54bfbb7f81b864728ffb385be163eb04c00f1b7a513c71c"
 kind = "shared-source-or-render"
@@ -1347,3 +1581,81 @@ path = "src/claude/theology/mariology/marian-dogmas/sections/99-references.tex"
 sha256 = "e81e523dac7cd4a2438e0ce5878faca3750455fd1e4a34cf23df8392722d5608"
 kind = "rendered-content"
 owners = ["theology/mariology/marian-dogmas"]
+
+[[files]]
+path = "src/claude/theology/mariology/rosary/format.tex"
+sha256 = "3ab1c1eeffcc99568bb3d37dc0061034fc95cb69966499a55862ccc7b1942e1f"
+kind = "rendered-content"
+owners = ["theology/mariology/rosary"]
+
+[[files]]
+path = "src/claude/theology/mariology/rosary/main.tex"
+sha256 = "f46295298f6128c157aeab0c023f1b6d38068aa8a66bc420eadc16ae15104ef2"
+kind = "publication-main"
+owners = ["theology/mariology/rosary"]
+
+[[files]]
+path = "src/claude/theology/mariology/rosary/research/prayer-text-audit.md"
+sha256 = "f928f5b49e514efec3eecf31d9457f0b0bbf5f90a73d88a79afca6666a03a722"
+kind = "research-record"
+owners = ["theology/mariology/rosary"]
+
+[[files]]
+path = "src/claude/theology/mariology/rosary/research/scope.md"
+sha256 = "3e15be89b43ab90e04f73000c89454e53551c3fb2f5a49770b4f5bba59c0fa28"
+kind = "research-scope"
+owners = ["theology/mariology/rosary"]
+
+[[files]]
+path = "src/claude/theology/mariology/rosary/research/source-audit.md"
+sha256 = "082c51d720b5488d07ab45b207d99be775d792fba7cfec541a1b4c8bdc7c6f3d"
+kind = "legacy-source-audit"
+owners = ["theology/mariology/rosary"]
+
+[[files]]
+path = "src/claude/theology/mariology/rosary/research/source-bindings.toml"
+sha256 = "47d4d3a21309e998fcef54f6877f78d436b4909d942992715b05f0e9ee820559"
+kind = "source-binding"
+owners = ["theology/mariology/rosary"]
+
+[[files]]
+path = "src/claude/theology/mariology/rosary/sections/00-form-and-prayers.tex"
+sha256 = "227e44b33a0c4a39de6c87f0bae39b67d5c586ec0a8a3faade031035c003ee65"
+kind = "rendered-content"
+owners = ["theology/mariology/rosary"]
+
+[[files]]
+path = "src/claude/theology/mariology/rosary/sections/20-mysteries.tex"
+sha256 = "0d06f40249fdc36ddf4a6ec465686727b39997a08b06838d95e062a9d414a1fc"
+kind = "rendered-content"
+owners = ["theology/mariology/rosary"]
+
+[[files]]
+path = "src/claude/theology/mariology/rosary/sections/30-history.tex"
+sha256 = "243e1a3a6be67c870bcb4e9d7552478650c067e7c63ca3a88c17847e1e9f164e"
+kind = "rendered-content"
+owners = ["theology/mariology/rosary"]
+
+[[files]]
+path = "src/claude/theology/mariology/rosary/sections/40-magisterium.tex"
+sha256 = "b749183a1e6b5d7352ca782d49f1dcc1a218e47f0d0b6299b80e1fa672c07638"
+kind = "rendered-content"
+owners = ["theology/mariology/rosary"]
+
+[[files]]
+path = "src/claude/theology/mariology/rosary/sections/50-practice-and-discipline.tex"
+sha256 = "a777e23f8ee5fc071620f744b1e7c7572c7c6ec21f0b6fccac546a241348569f"
+kind = "rendered-content"
+owners = ["theology/mariology/rosary"]
+
+[[files]]
+path = "src/claude/theology/mariology/rosary/sections/90-scope-status-qualifications.tex"
+sha256 = "557a09fb07036e7400262256005589105d7be313fab1ea8b81eb2f6a5f06ab44"
+kind = "rendered-content"
+owners = ["theology/mariology/rosary"]
+
+[[files]]
+path = "src/claude/theology/mariology/rosary/sections/99-references.tex"
+sha256 = "017f6ba41fdd14f2c89f9952c54a71ea5a67c1126e3096fcfd53505dd25b0627"
+kind = "rendered-content"
+owners = ["theology/mariology/rosary"]
