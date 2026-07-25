@@ -1,0 +1,55 @@
+\input{common/preamble}
+\input{biographies/shared/biography-format}
+
+\hypersetup{
+  pdftitle={Saint Jerome: Doctor of the Sacred Page},
+  pdfsubject={A source-first historical biography of Saint Jerome of Stridon}
+}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+  \thispagestyle{empty}
+  \centering
+  \vspace*{0.12\textheight}
+  {\Huge\bfseries Saint Jerome\par}
+  \vspace{0.9em}
+  {\Large Doctor of the Sacred Page\par}
+  \vspace{1.6em}
+  {\large A source-first historical biography\par}
+  \vfill
+  {\small Triptych: AI Driven Studies in Catholic Faith, Worship, and Law\par}
+\end{titlepage}
+
+\pagenumbering{roman}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+\pagenumbering{arabic}
+\hypersetup{pageanchor=true}
+
+\begin{deepstudy}
+\input{biographies/saint-jerome/sections/00-question}
+\input{biographies/saint-jerome/sections/10-stridon}
+\input{biographies/saint-jerome/sections/20-desert}
+\input{biographies/saint-jerome/sections/30-ordination}
+\input{biographies/saint-jerome/sections/40-rome}
+\input{biographies/saint-jerome/sections/50-bethlehem}
+\input{biographies/saint-jerome/sections/60-vulgate}
+\input{biographies/saint-jerome/sections/70-controversies}
+\input{biographies/saint-jerome/sections/80-pelagians-end}
+\input{biographies/saint-jerome/sections/90-reception}
+\input{biographies/saint-jerome/sections/100-conclusion}
+\appendix
+\input{biographies/saint-jerome/sections/110-scope-chronology-evidence}
+\input{biographies/saint-jerome/sections/120-references}
+\clearpage
+\section{Generation Metadata}
+\input{biographies/saint-jerome/generation-metadata}
+\TriptychRightsNotice
+\end{deepstudy}
+
+\end{document}
