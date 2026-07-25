@@ -1,0 +1,78 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+\usepackage{endnotes}
+
+\hypersetup{
+  pdftitle={Trustful Surrender to Divine Providence},
+  pdfsubject={A discursive article on the classic abandonment treatise, its composite textual history, the Thomistic architecture of providence, and the boundaries between surrender, quietism, fatalism, and presumption}
+}
+
+\setcounter{tocdepth}{2}
+\setlength{\emergencystretch}{2em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.14\textheight}
+{\large\scshape A Triptych Article\par}
+\vspace{1.5em}
+{\Huge\bfseries Trustful Surrender to Divine Providence\par}
+\vspace{0.9em}
+{\Large A Composite Text, a Thomistic Architecture,\\and the Boundaries of Abandonment\par}
+\vfill
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\footnotesize
+\linespread{0.96}\selectfont
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{articles/faith/trustful-surrender-to-divine-providence/sections/00-the-counsel-under-pressure}
+\input{articles/faith/trustful-surrender-to-divine-providence/sections/10-the-book-and-its-title-page}
+\input{articles/faith/trustful-surrender-to-divine-providence/sections/20-what-scripture-hands-over}
+\input{articles/faith/trustful-surrender-to-divine-providence/sections/30-the-architecture-of-providence}
+\input{articles/faith/trustful-surrender-to-divine-providence/sections/40-abandonment-and-its-history}
+\input{articles/faith/trustful-surrender-to-divine-providence/sections/50-the-boundaries}
+\input{articles/faith/trustful-surrender-to-divine-providence/sections/60-suffering-and-secondary-causes}
+\input{articles/faith/trustful-surrender-to-divine-providence/sections/70-what-surrender-is}
+\clearpage
+\addcontentsline{toc}{section}{Notes}
+\begingroup
+\small
+\setlength{\parskip}{0.3em}
+\theendnotes
+\endgroup
+\clearpage
+\appendix
+\input{articles/faith/trustful-surrender-to-divine-providence/sections/85-witnesses-and-editions}
+\input{articles/faith/trustful-surrender-to-divine-providence/sections/90-scope-method-qualifications}
+\input{articles/faith/trustful-surrender-to-divine-providence/sections/99-references}
+\begingroup
+\setlength{\parskip}{0pt}
+\vspace{-0.6\baselineskip}
+\section{Generation Metadata}
+\vspace{-0.35\baselineskip}
+{\scriptsize\input{articles/faith/trustful-surrender-to-divine-providence/generation-metadata}}
+\endgroup
+\end{deepstudy}
+
+\end{document}
