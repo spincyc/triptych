@@ -7,12 +7,12 @@
     "claude"
   ],
   "expected_counts": {
-    "publications": 131,
-    "release": 131,
+    "publications": 134,
+    "release": 134,
     "review": 0,
     "hold": 0,
     "providers": {
-      "claude": 15,
+      "claude": 18,
       "gpt": 116
     }
   },
@@ -40,7 +40,7 @@
         "worldwide"
       ],
       "rights_record": "release/rights/public-alpha-2026-07-15.md",
-      "rights_record_sha256": "03ac67aad75d2a5db60273f6c6de519442923b63672e538d0520d35050765797",
+      "rights_record_sha256": "aaec5d8ffdd5f53b32639ebe048629a5672dad4947dc062178904ff34e41ac69",
       "site_sources": {
         "CONTRIBUTING.md": "1bb9ef13c4f754f9a8bede73f0afd95c2266173726bcfbd709017dc342272d5e",
         "LIBRARY.md": "a45aae3359ac20ac3a4cf756007a08df9109d06661d5fc261798daf38ec5b881",
@@ -49,14 +49,14 @@
         "LICENSES/MIT.txt": "afd9c125b68a36b60c78cf63656f4cea2613fadce57e95ebabacebff8817ef60",
         "README.md": "5007509616e98056d397b315247e07307b7cc0f8b715c49847dcef45dadfcb2b",
         "THIRD_PARTY.md": "965aaaff0e773815213fa8c9aada37213d6cb890eb374ef3d1bb1d1dbf966ec4",
-        "library/biographies.md": "347bee34deea4a868200bf6b46eb3137f6f3c5ade594bcb421e6dc5cbd0dd358",
+        "library/biographies.md": "227189d828a1a2022bfbf9a5c339880b4dfcec0f14d77869800418ac98be2ba4",
         "library/curriculums.md": "15f24d06b4911b1cbfe4d85d82c463d7c2eef8635ff25edf2817d5fa6e0fb2bc",
         "library/ecclesiastical-latin.md": "1b985372bc372990f8d748d7667620c76c89a4073a8dae146ecefbca84333c1b",
-        "library/faith.md": "cc28d830b691452aa666f272fe7abd166273daf8a3d8ef136620ebbab442e73f",
+        "library/faith.md": "90af2c600ca2733e648afdbbb9f47fe5c74b7a7d87a6337daf28500fbb1e7e68",
         "library/heresies.md": "8f6f80b79266818a2b7d80db312ad33cd52ba594b329d4604dae53d17060f5df",
         "library/historical-accounts.md": "a4a276ea14cac3c752574fe1435beefccbc089aa1cfd9db9e953479c1f552c4b",
         "library/law-and-church-discipline.md": "f7a9c66895bde0dfa183fa9f93b79005c77c6c625b978ce2163d3566aa7189c4",
-        "library/mariology.md": "f9ef6da2049c7b5f02fcda152ce25347e546443e73a3e4266118b681ace1da3d",
+        "library/mariology.md": "d483e818bda6fa288422f04256e9427fbfc65dfb1dcbe85a7c9ff8f3b1f40ab2",
         "library/novus-ordo-liturgy.md": "861aba17f9e1788d852ba072bcdf8bf76a674e357eeadc7aa9030aed066e36fb",
         "library/prayer.md": "f355ee2a34f4f47744cbc6f0fea71c04f2c303882dce1b8ae3adabfc2b2c850d",
         "library/traditional-latin-mass.md": "5e68708e549d45014f4c59d1f1952e0dee427066a0ae559bdac7de030ea85b33",
@@ -68,7 +68,7 @@
       },
       "approved_on": "2026-07-25",
       "duration": "perpetual",
-      "effective_at": "2026-07-25T01:15:07-05:00",
+      "effective_at": "2026-07-25T02:11:07-05:00",
       "expires_at": null,
       "timezone": "America/Chicago",
       "conditions": [
@@ -1385,6 +1385,36 @@
       "approval": {
         "authorization": "perpetual-public-repository-2026",
         "pdf_sha256": "1124f22017f0aa5b4440e5beebace40c6e16a477de66e3da386b87c2fac53344"
+      }
+    },
+    {
+      "id": "claude:articles/faith/freemasonry-and-the-catholic-church",
+      "catalog": "library/faith.md",
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "4e954e5a483b426b71896ba70d1761bf5ffddb852411ebbb09caf43fe755e87c"
+      }
+    },
+    {
+      "id": "claude:biographies/saint-peter",
+      "catalog": "library/biographies.md",
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "32f20b9355a9ea0d5735521a8c558917d5d85411b89b3ee24873f2bbfcf75e4d"
+      }
+    },
+    {
+      "id": "claude:theology/mariology/fatima",
+      "catalog": "library/mariology.md",
+      "status": "release",
+      "gates": [],
+      "approval": {
+        "authorization": "perpetual-public-repository-2026",
+        "pdf_sha256": "c8b1e0dd4443eca492c142453696d138cfab3ec4dba51231e0e52a69e5761ef2"
       }
     }
   ]

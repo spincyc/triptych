@@ -3,9 +3,9 @@ record_type = "publication-source-inventory"
 provider = "claude"
 audited_on = "2026-07-25"
 discovery_rule = "src/claude/**/main.tex"
-publication_count = 15
-source_surface_file_count = 242
-snapshot = "sha256:df539a28b17dc2658fab00be64a90babb128dc8a46a6e26bc40d890882e5a3b7"
+publication_count = 18
+source_surface_file_count = 295
+snapshot = "sha256:adc8bf046d24603f0378a9afeb00ecbfa8e6c5da80920bc7af51d619a2d53fb2"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -53,6 +53,17 @@ inventory_state = "records-enumerated"
 source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "articles/faith/council-missal-and-crisis"
+relationship = "local"
+
+[[documents]]
+id = "articles/faith/freemasonry-and-the-catholic-church"
+main = "src/claude/articles/faith/freemasonry-and-the-catholic-church/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "articles/faith/freemasonry-and-the-catholic-church"
 relationship = "local"
 
 [[documents]]
@@ -131,6 +142,20 @@ id = "owner.biographies.shared"
 relationship = "render-import"
 
 [[documents]]
+id = "biographies/saint-peter"
+main = "src/claude/biographies/saint-peter/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "biographies/saint-peter"
+relationship = "local"
+[[documents.record_owners]]
+id = "owner.biographies.shared"
+relationship = "render-import"
+
+[[documents]]
 id = "biographies/saint-thomas-aquinas"
 main = "src/claude/biographies/saint-thomas-aquinas/main.tex"
 publication_kind = "canonical"
@@ -185,6 +210,17 @@ relationship = "local"
 [[documents.record_owners]]
 id = "owner.history.biblical-translations"
 relationship = "render-import"
+
+[[documents]]
+id = "theology/mariology/fatima"
+main = "src/claude/theology/mariology/fatima/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "theology/mariology/fatima"
+relationship = "local"
 
 [[documents]]
 id = "theology/mariology/marian-dogmas"
@@ -441,6 +477,96 @@ path = "src/claude/articles/faith/council-missal-and-crisis/sections/99-referenc
 sha256 = "5f9c989a58ed8e810ff1b1f7ab575ece49154c33e89859f36d64ef2dbd682031"
 kind = "rendered-content"
 owners = ["articles/faith/council-missal-and-crisis"]
+
+[[files]]
+path = "src/claude/articles/faith/freemasonry-and-the-catholic-church/main.tex"
+sha256 = "26ad5aabc7c2f37d7788fac0f719579c01679980126425c6e7284677f68e5abe"
+kind = "publication-main"
+owners = ["articles/faith/freemasonry-and-the-catholic-church"]
+
+[[files]]
+path = "src/claude/articles/faith/freemasonry-and-the-catholic-church/research/scope.md"
+sha256 = "b16f087b39d6a2350d495e3904b4bb51670d6b3cea548fe9e4c2a00472c76834"
+kind = "research-scope"
+owners = ["articles/faith/freemasonry-and-the-catholic-church"]
+
+[[files]]
+path = "src/claude/articles/faith/freemasonry-and-the-catholic-church/research/source-audit.md"
+sha256 = "a558ad044d694d7ff8ae4d46429688bc58ec704f632ae3973a8c4aca64877e35"
+kind = "legacy-source-audit"
+owners = ["articles/faith/freemasonry-and-the-catholic-church"]
+
+[[files]]
+path = "src/claude/articles/faith/freemasonry-and-the-catholic-church/research/source-bindings.toml"
+sha256 = "0435a045738d59d398db93ba4d79684bc1e807a4b60ee59a9d2ec162f1411fda"
+kind = "source-binding"
+owners = ["articles/faith/freemasonry-and-the-catholic-church"]
+
+[[files]]
+path = "src/claude/articles/faith/freemasonry-and-the-catholic-church/sections/00-a-question-that-keeps-returning.tex"
+sha256 = "97878ef3ab7620867ad15cf013ee715feff82311e8f3d3e1462bc219da7c4530"
+kind = "rendered-content"
+owners = ["articles/faith/freemasonry-and-the-catholic-church"]
+
+[[files]]
+path = "src/claude/articles/faith/freemasonry-and-the-catholic-church/sections/10-the-thing-itself.tex"
+sha256 = "cbb9b13a02c2dd6d0e4a503180f931b7dfe39c1371ec95c84074eec12713fb08"
+kind = "rendered-content"
+owners = ["articles/faith/freemasonry-and-the-catholic-church"]
+
+[[files]]
+path = "src/claude/articles/faith/freemasonry-and-the-catholic-church/sections/20-the-first-condemnations.tex"
+sha256 = "1eadf874fda38fc45eb9b3d8763df1e8c1a8dfcd591d676ce5191e7a3953186b"
+kind = "rendered-content"
+owners = ["articles/faith/freemasonry-and-the-catholic-church"]
+
+[[files]]
+path = "src/claude/articles/faith/freemasonry-and-the-catholic-church/sections/30-humanum-genus.tex"
+sha256 = "8d2d2a3c8113ea32e04a84c9bdc94ed616c7383b7d872bb95dc91092e89703de"
+kind = "rendered-content"
+owners = ["articles/faith/freemasonry-and-the-catholic-church"]
+
+[[files]]
+path = "src/claude/articles/faith/freemasonry-and-the-catholic-church/sections/40-the-two-codes.tex"
+sha256 = "ddf0c1cdd6e435df6f40f71b48542849ba79f54ec6eda0980213340347dd65f3"
+kind = "rendered-content"
+owners = ["articles/faith/freemasonry-and-the-catholic-church"]
+
+[[files]]
+path = "src/claude/articles/faith/freemasonry-and-the-catholic-church/sections/50-the-grounds-stated-plainly.tex"
+sha256 = "ef9b9c6f888a91f872e75f9cd89276e66c19733f51902e2cf874e01ce7c32937"
+kind = "rendered-content"
+owners = ["articles/faith/freemasonry-and-the-catholic-church"]
+
+[[files]]
+path = "src/claude/articles/faith/freemasonry-and-the-catholic-church/sections/60-the-lodges-that-differ.tex"
+sha256 = "fced6a3700eb7680a92ac9cd7d4a2048ff59114d0778e85b86bfea55e8205681"
+kind = "rendered-content"
+owners = ["articles/faith/freemasonry-and-the-catholic-church"]
+
+[[files]]
+path = "src/claude/articles/faith/freemasonry-and-the-catholic-church/sections/70-the-2023-answer.tex"
+sha256 = "ca0a64d386250ab7ef21194589c2f8987df0f7dfde65e4863e6cba90a437a182"
+kind = "rendered-content"
+owners = ["articles/faith/freemasonry-and-the-catholic-church"]
+
+[[files]]
+path = "src/claude/articles/faith/freemasonry-and-the-catholic-church/sections/80-the-claims-and-the-record.tex"
+sha256 = "abc0154dd7c7566f7eab365f1b1669100f8307d6c03db8fcaa595d97b3d882c2"
+kind = "rendered-content"
+owners = ["articles/faith/freemasonry-and-the-catholic-church"]
+
+[[files]]
+path = "src/claude/articles/faith/freemasonry-and-the-catholic-church/sections/90-scope-method-qualifications.tex"
+sha256 = "a0457a6b8ad91eeccb9f1e464ef706d67c3a3f774d32af1ff78eae59c8db8a91"
+kind = "rendered-content"
+owners = ["articles/faith/freemasonry-and-the-catholic-church"]
+
+[[files]]
+path = "src/claude/articles/faith/freemasonry-and-the-catholic-church/sections/99-references.tex"
+sha256 = "5ec1587094bafcf19a7e43d6fe348856ce7e7f09651e988a978953a512c17fb0"
+kind = "rendered-content"
+owners = ["articles/faith/freemasonry-and-the-catholic-church"]
 
 [[files]]
 path = "src/claude/articles/faith/in-support-of-the-particular/main.tex"
@@ -1031,6 +1157,138 @@ kind = "rendered-content"
 owners = ["biographies/saint-jerome"]
 
 [[files]]
+path = "src/claude/biographies/saint-peter/main.tex"
+sha256 = "37f449104a678505e05b48279ebb2f4f39a9354c37852c53948f518d1cf0bceb"
+kind = "publication-main"
+owners = ["biographies/saint-peter"]
+
+[[files]]
+path = "src/claude/biographies/saint-peter/research/chronology.md"
+sha256 = "4a22bc5a3cf5444f5cbbd79f1175fa9c9dff98d7e3eafb42ca4cb9e0b323c6b5"
+kind = "research-record"
+owners = ["biographies/saint-peter"]
+
+[[files]]
+path = "src/claude/biographies/saint-peter/research/scope.md"
+sha256 = "cefafd3a329686ef7f8d8c48e7fa2fc5a133281be9a5bf34ad7311770e63ac94"
+kind = "research-scope"
+owners = ["biographies/saint-peter"]
+
+[[files]]
+path = "src/claude/biographies/saint-peter/research/source-audit.md"
+sha256 = "75f656992ac6710bbf5a21c3605b02ace3e13e5a760fdc0507252917484f86a2"
+kind = "legacy-source-audit"
+owners = ["biographies/saint-peter"]
+
+[[files]]
+path = "src/claude/biographies/saint-peter/research/source-bindings.toml"
+sha256 = "41d43050d97cd9cec5ce294dc6e19ad013516a9a987dd8865961a210d6aa756b"
+kind = "source-binding"
+owners = ["biographies/saint-peter"]
+
+[[files]]
+path = "src/claude/biographies/saint-peter/research/tradition-audit.md"
+sha256 = "36d846d75034ea1c3dc293eac204022366551de2c9055a10260cc90e04a3e4eb"
+kind = "research-record"
+owners = ["biographies/saint-peter"]
+
+[[files]]
+path = "src/claude/biographies/saint-peter/sections/00-question.tex"
+sha256 = "fc653ac5ac33fbc00e3cc346f0ab308f5786f18ea20f3eea99830372c11fe56b"
+kind = "rendered-content"
+owners = ["biographies/saint-peter"]
+
+[[files]]
+path = "src/claude/biographies/saint-peter/sections/10-galilee.tex"
+sha256 = "903b17baa1523d15348d3ca0b7008232b9123b3a4b5c0e02f775a48a2f2c0251"
+kind = "rendered-content"
+owners = ["biographies/saint-peter"]
+
+[[files]]
+path = "src/claude/biographies/saint-peter/sections/100-legends.tex"
+sha256 = "10cd2c2d3b8931c009c91f84be7b62ae6d2a7db9abf662b86192b75d172496b7"
+kind = "rendered-content"
+owners = ["biographies/saint-peter"]
+
+[[files]]
+path = "src/claude/biographies/saint-peter/sections/110-tomb.tex"
+sha256 = "f535511f0b5efc2d323b9fd12ec113e74076de745592e1f29857db91d4901d9d"
+kind = "rendered-content"
+owners = ["biographies/saint-peter"]
+
+[[files]]
+path = "src/claude/biographies/saint-peter/sections/120-reception.tex"
+sha256 = "c23a02e6554f37635fae3a81443c98abdaa118cad08991edf48b79ded9adc50b"
+kind = "rendered-content"
+owners = ["biographies/saint-peter"]
+
+[[files]]
+path = "src/claude/biographies/saint-peter/sections/130-conclusion.tex"
+sha256 = "1dc35a71242479c50fadcee8e7ec7406093dc78c0a4968f8013589c7c5e1253f"
+kind = "rendered-content"
+owners = ["biographies/saint-peter"]
+
+[[files]]
+path = "src/claude/biographies/saint-peter/sections/140-scope-chronology-evidence.tex"
+sha256 = "d2dae9fee58354fc6271fb195ac622e834d519f8a65b584cb5a9e870cdfc23f2"
+kind = "rendered-content"
+owners = ["biographies/saint-peter"]
+
+[[files]]
+path = "src/claude/biographies/saint-peter/sections/150-references.tex"
+sha256 = "9014303fb2efb8d1e79a123324e029b79ac98f1f1aa3e292dfbaa8ac801ceb52"
+kind = "rendered-content"
+owners = ["biographies/saint-peter"]
+
+[[files]]
+path = "src/claude/biographies/saint-peter/sections/20-call.tex"
+sha256 = "4929fa2a13b1c447d2937aa69257f5eaf11c81ce1f1125baac125785cf3e99ab"
+kind = "rendered-content"
+owners = ["biographies/saint-peter"]
+
+[[files]]
+path = "src/claude/biographies/saint-peter/sections/30-confession.tex"
+sha256 = "7209aa2995f42b7991990b12435e16e8a9b53d3d730a47d030a062912d0dcc84"
+kind = "rendered-content"
+owners = ["biographies/saint-peter"]
+
+[[files]]
+path = "src/claude/biographies/saint-peter/sections/40-denials.tex"
+sha256 = "43eb4fab81b98df8bd993ff84351588aaa3f4d7fc17fc58aa7502d53d6436fa7"
+kind = "rendered-content"
+owners = ["biographies/saint-peter"]
+
+[[files]]
+path = "src/claude/biographies/saint-peter/sections/50-easter.tex"
+sha256 = "59e19bac2542f70e1bc3d11be82ec252e590665d3afb18e578397fb85a667c40"
+kind = "rendered-content"
+owners = ["biographies/saint-peter"]
+
+[[files]]
+path = "src/claude/biographies/saint-peter/sections/60-jerusalem.tex"
+sha256 = "7af169947bae78d0553f9d7e6f7f8bd07d1f3c37cc4ce4d1cd7927c3655220b2"
+kind = "rendered-content"
+owners = ["biographies/saint-peter"]
+
+[[files]]
+path = "src/claude/biographies/saint-peter/sections/70-antioch.tex"
+sha256 = "7e51dec1f450e23d5a966a23d8f5f7845f1b678a83a6356dcf869c46c9c3a346"
+kind = "rendered-content"
+owners = ["biographies/saint-peter"]
+
+[[files]]
+path = "src/claude/biographies/saint-peter/sections/80-writings.tex"
+sha256 = "b5852b2b90222901efeec9bb06bb7ba42d407d4e722e4f393685174da504aee0"
+kind = "rendered-content"
+owners = ["biographies/saint-peter"]
+
+[[files]]
+path = "src/claude/biographies/saint-peter/sections/90-rome.tex"
+sha256 = "e86edbcdf2ce05e6f80567253dfa6dcc5de99f5b8e5af26c9a9756f04ff455ab"
+kind = "rendered-content"
+owners = ["biographies/saint-peter"]
+
+[[files]]
 path = "src/claude/biographies/saint-thomas-aquinas/main.tex"
 sha256 = "24ca4c6cf37c5f1481480289d6ba70bd8aece3c075c4b8ee6d119dce089677a1"
 kind = "publication-main"
@@ -1497,6 +1755,102 @@ path = "src/claude/history/biblical-translations/account-format.tex"
 sha256 = "5246ae4c398e5edc1a1c3895025e461f2f312e03239a14e3262cd9aab3516777"
 kind = "rendered-content"
 owners = ["owner.history.biblical-translations"]
+
+[[files]]
+path = "src/claude/theology/mariology/fatima/format.tex"
+sha256 = "da955ca257805ae7e604e37de0fe0bb45a0764455b1b84aac8e3fad5e939cf00"
+kind = "rendered-content"
+owners = ["theology/mariology/fatima"]
+
+[[files]]
+path = "src/claude/theology/mariology/fatima/main.tex"
+sha256 = "bb17ce526bb60fdb05e5a83e6cbda7caf39ca271afc78a9ec9c3b72e0d0e2044"
+kind = "publication-main"
+owners = ["theology/mariology/fatima"]
+
+[[files]]
+path = "src/claude/theology/mariology/fatima/research/corpus-status.md"
+sha256 = "e4b9f66f1395c919777d22b4b1ef0464edfb8834e01b4789e6d31fdd473f1755"
+kind = "research-record"
+owners = ["theology/mariology/fatima"]
+
+[[files]]
+path = "src/claude/theology/mariology/fatima/research/scope.md"
+sha256 = "baf477c58b24dfd6b4bc8b4a38e6c11acf6a6b309bf1aa5534b0ada6240cd8c0"
+kind = "research-scope"
+owners = ["theology/mariology/fatima"]
+
+[[files]]
+path = "src/claude/theology/mariology/fatima/research/source-audit.md"
+sha256 = "db05ec51954d68a66d50894f2502a265a2ade17a9ecef53a5e20bda13f5fc80d"
+kind = "legacy-source-audit"
+owners = ["theology/mariology/fatima"]
+
+[[files]]
+path = "src/claude/theology/mariology/fatima/research/source-bindings.toml"
+sha256 = "e0272e441fc6251a9f03ca4af619c3ed0b90e3a9b433fba623035f64cc948987"
+kind = "source-binding"
+owners = ["theology/mariology/fatima"]
+
+[[files]]
+path = "src/claude/theology/mariology/fatima/sections/00-judgment-first.tex"
+sha256 = "7c16827a33abe8a62b4827f577ad4bc75a2a4c2189527cb34114cb2e57ba2ea7"
+kind = "rendered-content"
+owners = ["theology/mariology/fatima"]
+
+[[files]]
+path = "src/claude/theology/mariology/fatima/sections/10-events-1917.tex"
+sha256 = "4fbf4cd266dafa84665696160cffd5dcaa2a321ad16cb48c6fa2d0b06ff6ac2e"
+kind = "rendered-content"
+owners = ["theology/mariology/fatima"]
+
+[[files]]
+path = "src/claude/theology/mariology/fatima/sections/20-diocesan-judgment.tex"
+sha256 = "ee369db28f5d48399167c85e9b3344113c340146d5fc11d7430c2dfdf5b96b28"
+kind = "rendered-content"
+owners = ["theology/mariology/fatima"]
+
+[[files]]
+path = "src/claude/theology/mariology/fatima/sections/30-memoirs-and-secret.tex"
+sha256 = "b0f9f57dfd06ca92a4255b31007d121ad7bccdb1c135c9c40706e9656f5443eb"
+kind = "rendered-content"
+owners = ["theology/mariology/fatima"]
+
+[[files]]
+path = "src/claude/theology/mariology/fatima/sections/40-interpretation-2000.tex"
+sha256 = "d37c384ceb1779796d46f774ad70dd8d420baa3cf2f51eec0fb7b04504374ca9"
+kind = "rendered-content"
+owners = ["theology/mariology/fatima"]
+
+[[files]]
+path = "src/claude/theology/mariology/fatima/sections/50-consecration.tex"
+sha256 = "c21702b6a20483659ee9bf6519d1027d41fbabf0145234004384f43ffae02503"
+kind = "rendered-content"
+owners = ["theology/mariology/fatima"]
+
+[[files]]
+path = "src/claude/theology/mariology/fatima/sections/60-reception-standing.tex"
+sha256 = "d89ef8c70838ef6b30d44a56a540d74cba60483d73cdc1b22a365ff2fdcba0fc"
+kind = "rendered-content"
+owners = ["theology/mariology/fatima"]
+
+[[files]]
+path = "src/claude/theology/mariology/fatima/sections/70-what-approval-obliges.tex"
+sha256 = "7d27f5828837e0e2694d7be1d86ea308b1bee805394b5247dea7e47bddcac547"
+kind = "rendered-content"
+owners = ["theology/mariology/fatima"]
+
+[[files]]
+path = "src/claude/theology/mariology/fatima/sections/90-scope-status-qualifications.tex"
+sha256 = "9941a2a6276902df6ac0f78d69c1a83efad567ee2d4b28298e191bfa9e56877f"
+kind = "rendered-content"
+owners = ["theology/mariology/fatima"]
+
+[[files]]
+path = "src/claude/theology/mariology/fatima/sections/99-references.tex"
+sha256 = "266f81ed65c34849a0707a198353433fd6df35172897423fcda035ffc31d71b6"
+kind = "rendered-content"
+owners = ["theology/mariology/fatima"]
 
 [[files]]
 path = "src/claude/theology/mariology/marian-dogmas/format.tex"
