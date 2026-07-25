@@ -76,3 +76,16 @@ substitution of a described equivalent for a purely decorative rule or
 frame. Any material omission — a dropped appendix, matrix, diagram, or
 apparatus — is declared in the record's rationale and visibly in the web
 edition itself. An undeclared omission is a defect.
+
+The converter's job is to make omission impossible to miss, because the
+reader deletes silently and exits zero. Known deletions, all now handled
+in `scripts/web-shim.tex` or `scripts/web-edition`: a `\multicolumn`
+cell loses its contents; a `>{...\arraybackslash}` column prefix
+swallows the token opening every cell in that column, so dates and book
+numbers vanish from a citation; `\cmidrule` leaks its span into the
+following row; `\endnote` disappears with its citations; an `enumitem`
+option list takes every `\item` label with it; a comment between a
+`\newenvironment`'s groups hides the definition from the audit. When you
+meet a new one, add the audit that catches it, not just the fix. A macro
+the shim does not define and the audit does not know stops the
+conversion by design — extend the shim rather than dropping the leaf.
