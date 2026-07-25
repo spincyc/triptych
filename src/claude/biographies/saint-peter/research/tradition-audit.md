@@ -1,0 +1,32 @@
+# Saint Peter — tradition audit
+
+Provider: Anthropic Claude. Each memorable tradition is recorded with its
+earliest located witness, later reception, historical status, and the
+responsible significance assigned in the publication. "Earliest located"
+means earliest found in the witnesses checked for this study on
+2026-07-25; it is a bounded, correctable claim, not a completeness claim.
+
+| Tradition | Earliest located witness | Later reception | Historical status | Responsible significance |
+|---|---|---|---|---|
+| Martyrdom (unspecified manner) | 1 Clement 5 (c. 95–96): "when he had at length suffered martyrdom" | Universal | Early, within living memory, from the Roman church; no place/manner stated | Core of the death tradition; the study's anchor witness |
+| Death at Rome | Implied web: 1 Pt 5:13 "Babylon"; Ignatius Rom 4; explicit in Dionysius of Corinth (c. 170) and Gaius (c. 200) via Eusebius HE 2.25 | Universal; no rival claim by any other church | Early and convergent; probable to moral certainty | Affirmed as historical judgment (S on E), not as scriptural statement |
+| Death by crucifixion | Jn 21:18–19 read as crucifixion prophecy; first explicit: Tertullian, Prescription 36 and Scorpiace 15 (c. 200) | Universal | Early tradition, not contemporary testimony | Reported as early and credible; not asserted as documented fact |
+| Head-downward crucifixion | Acts of Peter 37–38 (apocryphal, ≤ 200), with mystical motive; Origen (c. 230) via HE 3.1.2 | Jerome (392) adds humility motive; universal iconography | Late second/third-century; motive shifts between witnesses | Labeled legend-stratum; iconographic significance acknowledged |
+| Quo vadis scene | Acts of Peter 35 (M. R. James trans.) | Church of Domine Quo Vadis; fiction and film | Apocryphal romance, ≤ 200, author ignorant of Rome per James | Quoted, labeled, not used as biography |
+| Contest with Simon Magus at Rome; the flight | Acts of Peter (grown from Acts 8:9–24); cf. Justin/Irenaeus Simon traditions | Golden Legend etc. | Legend cycle on a canonical seed | Mentioned as legend; Acts 8 kept distinct |
+| 25-year Roman episcopate | Third-century notice; transmitted by Jerome, De viris 1; origin untraceable per CE 1912 | Liber Pontificalis; older Catholic chronology | Constructed; collides with documented Jerusalem presence to c. 48–49 | Rejected as chronology; reported as tradition |
+| Arrival at Rome in the second year of Claudius (42) | Eusebian chronicle tradition; Jerome, De viris 1 | Older chronologies | Rides on the Simon Magus legend | Rejected as chronology; reported as tradition |
+| Bishop of Antioch | Jerome, De viris 1 (392); implied by the later Antiochene chair feast; Gal 2:11 attests presence only | Feast of the Chair at Antioch (22 Feb tradition) | Presence at Antioch secure (N); episcopate as office is later construction | Presence affirmed; episcopate reported as tradition |
+| "Babylon" = Rome (1 Pt 5:13) | Clement of Alexandria and Papias as reported by Eusebius, HE 2.15.2 | Standard patristic and much modern reading | Early interpretation of a canonical text | Used as corroborating reading, flagged as interpretation |
+| Mark's Gospel as Peter's preaching | Papias ("the presbyter") via HE 3.39.15; Irenaeus AH 3.1.1 | Universal ancient attribution | Early tradition; modern assessment divided | Reported; not used to harmonize the Gospels |
+| 29 June as death date | None ancient as death date; 258 as cult date ad Catacumbas (Depositio via CE 1912) | Solemnity of Peter and Paul | Feast date, not documented anniversary | Stated as cult history |
+| Same-day martyrdom with Paul | Dionysius of Corinth via HE 2.25.8 ("suffered martyrdom at the same time") | Joint feast; iconographic pairing | c. 170 report, kata ton auton kairon possibly "about the same time"; not calendar data | Reported with its ceiling |
+| Translation of remains ad Catacumbas (258) | Depositio/Catacombs notice via CE 1912 | Later relic itineraries | Disputed among scholars; not adjudicated here | Mentioned as cult history only |
+| Tomb under the Vatican high altar | Gaius's tropaion (c. 200) via HE 2.25.7; aedicula c. 160 (1951 report via Smothers 1966) | Constantinian and modern basilicas; official shrine claim | Mid-2nd-century memorial archaeologically secure; grave identity received, not provable | Affirmed at its archaeological ceiling |
+| Identification of Peter's bones (Wall g) | Guarducci, Le reliquie di Pietro (1965); Paul VI announcement (26 June 1968) | 2013 public exposition; ongoing shrine presentation | Contested (Ferrua; custody gap 1942–1953; mixed earlier bone groups); Smothers: "positive, serious probability," "prudent reserve" | Reported as contested; no authentication asserted |
+| "Petros eni" graffito reading | Ferrua's first reading; Guarducci's restudy (via Smothers 1966) | Popular literature | Reading plausible (Smothers: "thoroughly justified"); referent debated | Reported with attribution |
+| Guarducci's "mystical cryptography" | Guarducci, I graffiti (1958), via Smothers 1966 | Little scholarly assent | Speculative per the checked review literature | Reported as criticized |
+| Mamertine imprisonment; miraculous spring | Later Roman legend (medieval passio tradition; site tradition) | San Pietro in Carcere | Late; no early witness located | Named as late legend only |
+| Petronilla as Peter's daughter | Later Roman legend on a catacomb name | Cult of St. Petronilla | Late reinterpretation; rejected as biography | Named as late legend only |
+| Cathedra Petri relic chair | CE 1912 "Chair of Peter" description (plain oak core) | Bernini's enshrinement (1666) | Relic of cult; antiquity of the physical chair not established here | Named as cult object only |
+| Peter's wife's martyrdom; "Remember the Lord" | Clement of Alexandria via later transmission — NOT checked for this study | — | Not used | Omitted (bounded negative: not among checked witnesses) |
