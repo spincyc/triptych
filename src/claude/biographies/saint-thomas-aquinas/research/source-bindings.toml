@@ -1,0 +1,29 @@
+schema = 1
+record_type = "bindings"
+document = "biographies/saint-thomas-aquinas"
+
+# Claude edition. Bindings are catalog-level: the live-web checks behind the
+# publication are recorded with URLs and dates in research/source-audit.md.
+# No acquisition/inspection/verification state is claimed here against
+# registered artifact bytes, so no fingerprint pinning is required.
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.summa-theologiae.leonine-v4-1888.i-q1-a1-corpus-opening"
+loci = ["I.1.1.corpus-opening"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The publication quotes the Leonine opening sentence of Summa theologiae I q.1 a.1 in Latin. The wording follows this passage record's checked transcription, whose verification event (2026-07-23, against Leonine vol. 4 p. 6) belongs to the source library; this edition read the record and independently compared the wording with the Corpus Thomisticum web presentation on 2026-07-25 (identical). The binding itself is catalog-level: no new inspection of the controlling artifact bytes is claimed by this publication."
+
+[[bindings]]
+source_id = "edition.thomas-aquinas.summa-theologiae.leonine-v4-1888"
+loci = ["I.1.1.corpus-opening"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The Leonine 1888 volume 4 identifies the Latin text quoted at I.1.1; the English rendering quoted beside it is the public-domain 1920 English Dominican translation read at New Advent (see research/source-audit.md), which is not a registered edition of this work in the source library."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["460", "1381", "2763"]
+role = "reception"
+states = ["cataloged"]
+context = "CCC 460 (quoting Thomas, Opusc. 57, 1-4), 1381 (quoting STh III,75,1 and Adoro te devote marked '(attr.)'), and 2763 (quoting STh II-II,83,9) document official Catholic reception of Thomas's teaching. The paragraphs were read at the live Vatican English archive pages (ENG0015 __P1J, __P41, __P9X) on 2026-07-25. The checks were made against the live site, not against this edition's registered artifact bytes, so only catalog-level use is claimed. Reception of these loci does not authenticate any biographical tradition audited in the publication."
