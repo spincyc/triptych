@@ -625,6 +625,7 @@ exec /usr/bin/id "$@"
             "texlive-fontsrecommended",
             "poppler",
             "imagemagick",
+            "pandoc",
             "git",
             "github-cli",
             "openai-codex",
