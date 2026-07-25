@@ -1,0 +1,234 @@
+schema = 2
+record_type = "bindings"
+document = "history/traditional-priestly-institutes/01-sspx"
+
+# Claude edition. Every binding below records a real event of this research on
+# 2026-07-25: exact bytes acquired over HTTPS and hashed, then read. The
+# Acta Apostolicae Sedis volumes and fascicles were read through the rendered
+# text of their own text layers at the cited pages; the HTML acts were read in
+# full. Bindings whose state list goes beyond "cataloged" carry the canonical
+# source fingerprint of the bound record and its evidence ancestors.
+
+# --- Acta Apostolicae Sedis: the printed official acts -----------------------
+
+[[bindings]]
+source_id = "artifact.holy-see.acta-apostolicae-sedis.volume-39-1947.vatican-ocr-pdf-4e1647f4"
+loci = ["639"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Propaganda Fide provision of 12 June 1947 naming Marcel Lefebvre, of the Congregation of the Holy Spirit, titular bishop of Anthedon and Vicar Apostolic of Dakar. Supports the account's statement that the founder's African career was a series of papal appointments."
+source_fingerprint = "sha256:dd31ca8b1bf808189d9e081c0d3ecdf456828fb5f026e60b5e7526db1e212263"
+
+[[bindings]]
+source_id = "artifact.holy-see.acta-apostolicae-sedis.volume-40-1948.vatican-ocr-pdf-a96d339e"
+loci = ["560-561"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Propaganda Fide provision of 22 September 1948 promoting Lefebvre to the titular archiepiscopal see of Arcadiopolis and appointing him Apostolic Delegate for Dakar. The printed page number is given as a range because the running head of the preceding page is the nearest page marker in the volume's text layer."
+source_fingerprint = "sha256:5ac7fa74af8ea88d2df42776972f7e56f956f3f30eb06e22a7cbc1a8c1a975c6"
+
+[[bindings]]
+source_id = "artifact.holy-see.acta-apostolicae-sedis.volume-54-1962.vatican-ocr-pdf-fb64f5f9"
+loci = ["107", "301", "735"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Consistorial provision of 23 January 1962 transferring Lefebvre from Dakar to Tulle with retention of the archiepiscopal title ad personam (p. 107); his appointment as consultor of Propaganda Fide on 4 April 1962 (p. 301); and his transfer to the titular see of Synnada in Phrygia on 7 August 1962 (p. 735), the provision consistent with his election to the Spiritan generalate."
+source_fingerprint = "sha256:3f096671d462bec9ad9fb28cf517d23df40331b1891d4e5712f41c33f209b955"
+
+[[bindings]]
+source_id = "artifact.holy-see.acta-apostolicae-sedis.volume-66-1974.vatican-ocr-pdf-5d388ad9"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Bounded negative result: the complete 1974 volume was searched in the rendered text of its own optical layer for the name Lefebvre, with no occurrence. Supports the account's statement that the 1974 apostolic visitation of Econe left no trace in the official gazette. This is a literal check of an optical text layer, not a registered raw-line search of an indexable artifact, and it cannot exclude an act published under other wording."
+source_fingerprint = "sha256:894c26deb4dc9a4a454a2790f47f5703ff90de84141a3e7b470dfbc4b693d2fd"
+
+[[bindings]]
+source_id = "artifact.holy-see.acta-apostolicae-sedis.volume-67-1975.vatican-ocr-pdf-5050bea5"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Bounded negative result: the complete 1975 volume was searched in the rendered text of its own optical layer for the name Lefebvre; the only occurrences belong to a different person (Gerald M. Lefebvre, p. 752). Supports the account's statement that the suppression of the Society and the judgment of the Cardinals' Commission were never printed in the official gazette. Same methodological limits as the 1974 binding."
+source_fingerprint = "sha256:7897cd0f440c4191d2eaf5b56069c8fa59724f86d72c49e2ee446bac03af1017"
+
+[[bindings]]
+source_id = "artifact.holy-see.acta-apostolicae-sedis.volume-68-1976.vatican-ocr-pdf-b0101e98"
+loci = ["369-378", "373"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Paul VI's allocution in the secret consistory of 24 May 1976, with the passage naming Archbishop Marcel Lefebvre as leading the opposition to the Council at p. 373 and the paragraphs on the reformed Ordo Missae and the 1971 instruction following it. The volume was also searched for other occurrences of the name, with none outside this allocution."
+source_fingerprint = "sha256:38eaf135966c711f86f55d2cf840f64e9e27527dd0fb20caf0c54d07b90e7680"
+
+[[bindings]]
+source_id = "artifact.holy-see.acta-apostolicae-sedis.volume-76-1984.vatican-ocr-pdf-2c0318ad"
+loci = ["1088-1089"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The Congregation for Divine Worship's letter of 3 October 1984 on the use of the Roman Missal of 1962 (Quattuor abhinc annos), read in full: the 1980 consultation of the bishops, the grant of the indult faculty, and conditions a) to e), including the requirement that beneficiaries have no part with those who question the legitimacy and doctrinal rectitude of the Missal promulgated in 1970."
+source_fingerprint = "sha256:4b0324d04e5a47b394bbd93d23ddbedfb3b0331235624830b421ce491fae4659"
+
+[[bindings]]
+source_id = "artifact.holy-see.acta-apostolicae-sedis.volume-80-1988.vatican-ocr-pdf-796d9f2f"
+loci = ["1121-1125", "1495-1498"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "John Paul II's letter to Cardinal Ratzinger of 8 April 1988, attesting the canonical visitation made by Cardinal Gagnon as the latest of the Holy See's efforts (pp. 1124-1125); and the Latin text of the motu proprio Ecclesia Dei of 2 July 1988 with its footnotes, including the citation of canon 751 for the schismatic act, canon 1382 for the excommunication, canon 1364 for formal adherence, the 16 June 1988 information note in L'Osservatore Romano, and the protocol signed on 5 May by Cardinal Ratzinger and Archbishop Lefebvre. A search of the volume shows these are its only Lefebvre entries, so the declaratory decree of 1 July 1988 is not printed there."
+source_fingerprint = "sha256:59ebd2951facf1b35c09b276c8a04dea54bb4ed55fe543baf82bd369f9d8153b"
+
+[[bindings]]
+source_id = "artifact.holy-see.acta-apostolicae-sedis.volume-101-2009-fascicle-2.vatican-fascicle-pdf-3ce38fa1"
+loci = ["145-146", "150-151"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The Secretariat of State's note of 4 February 2009 (the remission did not change the juridical situation of the Society, which enjoys no canonical recognition; the four bishops have no canonical function and do not lawfully exercise a ministry; conditions for future recognition; the Williamson requirement); and the Congregation for Bishops' decree of 21 January 2009, quoting Bishop Fellay's letter of 15 December 2008 and remitting the censure while declaring the 1988 decree devoid of juridical effects."
+source_fingerprint = "sha256:baf2ff72681012ff79ce1724b1e1e29928c310a6c2a0c186cefcb29f66b60268"
+
+[[bindings]]
+source_id = "artifact.holy-see.acta-apostolicae-sedis.volume-101-2009-fascicle-4.vatican-fascicle-pdf-f0803576"
+loci = ["270-276"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Benedict XVI's letter to the bishops of 10 March 2009 in its Italian Acta text, including the passage distinguishing individuals from institutions and the disciplinary from the doctrinal level, and stating that until the doctrinal questions are clarified the Society has no canonical status and its ministers exercise no legitimate ministry. The publication quotes the Holy See's own English version of the same passage."
+source_fingerprint = "sha256:1ac4252e5df890dafcada6d88926d3f07ce442e7cbdce62fd5f9ff11a396ca8b"
+
+[[bindings]]
+source_id = "artifact.holy-see.acta-apostolicae-sedis.volume-101-2009-fascicle-8.vatican-fascicle-pdf-750d78f1"
+loci = ["710-711"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The apostolic letter motu proprio Ecclesiae unitatem of 2 July 2009, including n. 2 quoting the Ecclesia Dei clause on the protocol of 5 May 1988, n. 4 restating that the doctrinal questions remain and the Society has no canonical status, and nn. 5-6 restructuring the Commission under the Prefect of the Congregation for the Doctrine of the Faith."
+source_fingerprint = "sha256:45a76d88867ae45abcbf895c8cd74abd6bb75a5732653cf35f2f3a7ed6117a9f"
+
+[[bindings]]
+source_id = "artifact.holy-see.acta-apostolicae-sedis.volume-107-2015-fascicle-9.vatican-fascicle-pdf-7f21c25f"
+loci = ["974-976"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Francis's letter of 1 September 2015 to Archbishop Fisichella, whose final consideration concerns the faithful who attend churches officiated by priests of the Society and establishes that those approaching them for the Sacrament of Reconciliation during the Holy Year will validly and licitly receive absolution."
+source_fingerprint = "sha256:814e6a18fc353084d3ae83f75daccc06b6b2df1b0afd3cb00a99472512111638"
+
+[[bindings]]
+source_id = "artifact.holy-see.acta-apostolicae-sedis.volume-108-2016-fascicle-12.vatican-fascicle-pdf-aad43a02"
+loci = ["1319-1320"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Misericordia et misera n. 12 in its Latin Acta text, extending beyond the Jubilee, until further provision, the faculty by which the faithful attending churches where the Society's priests celebrate may validly and licitly receive sacramental absolution."
+source_fingerprint = "sha256:6943cf02f2a32f8e740b2ca30c396b30723ff7e01000d185443a7f715f5315db"
+
+[[bindings]]
+source_id = "artifact.holy-see.acta-apostolicae-sedis.volume-109-2017-fascicle-4.vatican-fascicle-pdf-31d81a63"
+loci = ["426-427"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The Pontifical Commission Ecclesia Dei's letter of 27 March 2017 on the licence for marriages of faithful of the Society: the premise of the persisting canonical irregularity, the preference for delegating a diocesan priest to receive consent, the subsidiary faculty for a Society priest, the documentation duty, and the approval by Francis in the audience of 24 March 2017."
+source_fingerprint = "sha256:c8a86d2e9f8757a61cd8402c97cad78882fc08a939996c8c5fda722cdb7a0389"
+
+# --- Papal, curial and dicasterial acts published on the web -----------------
+
+[[bindings]]
+source_id = "passage.paul-vi.letter-to-lefebvre-1976-08-15.french-vatican-web-2026-07-25.complete-text"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Paul VI's letter of 15 August 1976, used for the appeal to weigh the untenable irregularity of the addressee's position and for the closing appeal to humility and courage. Quoted phrases are given in French and paraphrased in English; no project translation is offered."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:4f9d0c68eff94a7132c58277c6617699aa170ec897ba51f229cfe4c88b093a89"
+
+[[bindings]]
+source_id = "passage.paul-vi.letter-to-lefebvre-1976-10-11.latin-vatican-web-2026-07-25.complete-text"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The single most load-bearing witness in this publication. Used for: the audience of 11 September 1976 and Lefebvre's letter of 16 September; the quotation of the 1974 declaration's phrase about a Rome inclined to neo-modernism and neo-Protestantism; the ordinations without dimissorial letters against an express prohibition; the suspension a divinis as already incurred; the six requirements of the demanded declaration of adherence; the refusal to revoke the juridical suppression of the Society; the judgment of the Commission of Cardinals of 6 May 1975 and its ratification; the demand to hand over the works and seminaries; and the reference to canons 985, 7 and 2374 of the 1917 Code."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:d963876c9aeffacbea279e20bfc1c93138a8190205c4d51e2bae16a7aa0a42bc"
+
+[[bindings]]
+source_id = "passage.holy-see.pclt-note-lefebvre-schism-1996.italian-vatican-web-2026-07-25.complete-text"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The 1996 note on formal adherence: its own statement that no authentic interpretation was required and that it offers considerations and suggestions; the naming of the decree Dominus Marcellus Lefebvre of 1 July 1988 and of the excommunication concerning Lefebvre, the four bishops he ordained, and Bishop emeritus Antonio de Castro; the view that the whole movement is schismatic; the validity of the excommunications and the treatment of the alleged state of necessity; and the two-element test for formal adherence with its qualifications for lay faithful."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:3fa9d6015f564ff6857815d24437fd58f6c71efdd0a1cf45d89d87a652665122"
+
+[[bindings]]
+source_id = "passage.leo-xiv.letter-to-superior-general-fsspx-2026.french-vatican-web-2026-07-25.complete-text"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The original-language text of Leo XIV's letter of 29 June 2026, bound as the governing witness behind the English quotations used in the publication."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:8f8f74e91747e19d6db65505f35e90b91c98a23c675299aa50a5fa49c2e19a5a"
+
+[[bindings]]
+source_id = "passage.leo-xiv.letter-to-superior-general-fsspx-2026.english-vatican-web-2026-07-25.complete-text"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The Holy See's own English version of the letter of 29 June 2026, from which the publication quotes the appeal to turn back, the warning about the licit and in some cases valid reception of the sacraments, and the request to desist made by the authority received from Christ."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:6d9694a2d9122e8a6296fdbf4fa07b672bbbf9698ef1511445ca37ec03a8cedb"
+
+[[bindings]]
+source_id = "passage.holy-see.ddf-decree-fsspx-2026.italian-press-bulletin-2026-07-25.complete-text"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The penal decree of 2 July 2026, protocol N. 99/2009: the six named persons, the canons applied (1387 and 1364 s. 1 of the Code as revised in 2021), the distinct ground for the co-consecrator, the general admonition to clerics and lay faithful, and the three signatures. The publication paraphrases the Italian clause by clause and offers no project translation."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:62d43369e3f44ff3b9f0cd463e1fd9a3d2e7e00c5cd0e284ae2d339cea8a6dfa"
+
+[[bindings]]
+source_id = "passage.holy-see.ddf-explanatory-note-fsspx-2026.italian-press-bulletin-2026-07-25.complete-text"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The explanatory note of 2 July 2026: the recital of failed attempts from Paul VI to the most recent conversations; the four operative statements on sacred ministers, formally adhering laity, the illicit administration of the sacraments with penance and marriage declared invalid, and the nuncios' procedures; the adoption of the 1996 note of the Pontifical Council for Legislative Texts; and the exhortation to abstain from the Society's celebrations and activities."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:4f3347738dd792f9c1dfab4f27657f8a9e6ac836eb7185f6d3adace7f89cc7bc"
+
+# --- Canon law --------------------------------------------------------------
+
+[[bindings]]
+source_id = "artifact.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-2026-07-25.vatican-html-8a85a5ec"
+loci = ["canon-1353", "canon-1364", "canon-1387"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Latin text of Book VI as revised in 2021, read for canon 1353 (suspensive effect of appeal or recourse from sentences and decrees imposing or declaring a penalty), canon 1364 s. 1 (latae sententiae excommunication for apostasy, heresy or schism) and canon 1387 (excommunication reserved to the Apostolic See for consecrating and being consecrated without a pontifical mandate). The exact bytes registered in this repository were re-fetched and their hash matched before reading."
+source_fingerprint = "sha256:46b52f01f0dac3bc036bdc545380734bb4a2bf6ca2d7a91ade8f02ff81f920c4"
+
+[[bindings]]
+source_id = "artifact.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-codex-2026-07-25.vatican-liber7-html"
+loci = ["canon-1734", "canon-1737", "canon-1739"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Latin text of Book VII, read for canon 1734 (the preliminary petition to the author of a decree, which is understood to include a request for suspension of execution, within ten useful days), canon 1737 (hierarchical recourse within fifteen useful days, and the superior's power to suspend execution for a grave cause) and canon 1739 (the superior's options). Used to state exactly what the Society's recourse of 11 July 2026 invoked, without deciding its effect."
+source_fingerprint = "sha256:cf35c35554183f5a29d482d8cc8020cad79a7ddf6da020896abe2743eeb8727a"
+
+[[bindings]]
+source_id = "artifact.catholic-church.codex-iuris-canonici-1917.vatican-polyglot-1918.archive-ocr-text"
+loci = ["canon-985", "canon-2374"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Discovery-aid reading of the registered uncorrected optical transcription of the 1918 Vatican Polyglot printing, used only to identify the subject-matter of the two canons Paul VI cites in his letter of 11 October 1976: canon 985 on irregularities arising from delict (the seventh concerning those who exercise an act of an order reserved to clerics in sacred orders while lacking it or forbidden its exercise by penalty) and canon 2374 on suspension incurred by one who approaches orders without or with false dimissorial letters. No wording is quoted from the transcription in the publication, and the page images of these canons were not inspected; the account states this limit in its own note."
+source_fingerprint = "sha256:692f1c02fedd107269e444032be066083b744baa8bcd4b70fc8c2290c797d598"
+
+[[bindings]]
+source_id = "work.francis.pascite-gregem-dei"
+role = "official-control"
+states = ["cataloged"]
+context = "The apostolic constitution of 23 May 2021 by which Book VI of the 1983 Code was integrally revised, effective 8 December 2021; bound as the identity behind the publication's renumbering rule (the 1988 offence under the then canon 1382, the 2026 decree under canon 1387). Catalog-level: the constitution's own text was not re-read for this publication."
+
+# --- Earlier acts read in the Holy See's live web presentation ---------------
+
+[[bindings]]
+source_id = "edition.john-paul-ii.ecclesia-dei.english-vatican-web-2026-07-25"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The Holy See's English version of Ecclesia Dei, from which the publication quotes the schismatic-act sentence, the doctrinal diagnosis, the formal-adherence warning and the commission clause. Read at the live Holy See page on 2026-07-25 rather than against the registered exact bytes, so only catalog-level use is claimed; the Latin Acta text of the same motu proprio is bound above with its exact artifact."
+
+[[bindings]]
+source_id = "work.benedict-xvi.summorum-pontificum"
+role = "context"
+states = ["cataloged"]
+context = "Cited once, as Ecclesiae unitatem n. 3 describes it and with the Acta locus that act supplies (AAS 99 [2007] 777-781). The motu proprio's own text was deliberately not analyzed: this publication is a history of an institution, not of liturgical law."
