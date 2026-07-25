@@ -1,6 +1,6 @@
 # Postconciliar Proper Guides
 
-This delta profile governs source-first guides to the textual variable parts of an identified postconciliar Roman-rite celebration. Follow [the universal editorial standard](../editorial.md) and [repository rules](../repository.md) first. Use [the stable proper registry](postconciliar-propers-registry.md) for permanent identities, keys, slugs, ordering, counts, owners, and occurrence grammar; use the selected edition-locale's `propers/registry/` records for adoption, dispositions, and dated occurrence results. The Missal, Lectionary, ritual books, calendar, and approved chant sources identified by the manifest control the actual target.
+This delta profile governs source-first guides to the textual variable parts of an identified postconciliar Roman-rite celebration. Follow [the universal editorial standard](../editorial.md) and [repository rules](../repository.md) first. Use [the stable proper registry](postconciliar-propers-registry.md) for permanent identities, keys, slugs, ordering, counts, owners, and occurrence grammar; use the selected edition-locale's `propers/registry/` records for adoption, dispositions, and dated occurrence results; use [calendar computation](calendar-computation.md) for every cycle letter, weekday numeral, Ordinary Time week number, and movable date. The Missal, Lectionary, ritual books, calendar, and approved chant sources identified by the manifest control the actual target.
 
 ## Governing priorities
 
@@ -26,7 +26,9 @@ Use `temporal` for `PC-S` leaves and `general-calendar` for `PC-R` leaves. The s
 
 An edition record may add only a directly collated, expressly documented edition delta. If an `ABC` target proves materially cycle-dependent, or another approved adaptation changes the target shape, stop publication until the edition record lists the exact replacement keys, slugs, positions, and adjusted counts. An unresolved edition expansion contributes no invented key or count.
 
-The shared owner keeps the reusable edition-specific Missal or Ritual Mass audit, provenance, rights status, and any lawful fragment. The leaf keeps the formula composition, Lectionary and branch audit, research, generation metadata, and PDF. It references or imports exactly one canonical formulary owner and must not duplicate protected owner wording. Every external owner, shared fragment, and edition registry record that controls a build is an explicit dependency; rebuild every consumer after it changes.
+The shared owner keeps the reusable edition-specific Missal or Ritual Mass audit, provenance, rights status, and any lawful fragment. The leaf keeps the formula composition, Lectionary and branch audit, research, generation metadata, and PDF. It references or imports exactly one canonical formulary owner, names that owner in the manifest and in its own audit, and never becomes a second owner: it must not duplicate protected owner wording, and it must not restate the owner's edition evidence, locators, checksums, variation audit, element boundaries, or analytic summaries in its own words. The stable registry fixes the owner path for every parent and makes the Ordinary Time owner computable from the parent number; create the owner before the leaf that consumes it, and let all three cycle leaves under one parent share it.
+
+Every external owner, shared fragment, and edition registry record that controls a build is an explicit dependency; rebuild and re-review every consumer after it changes. Declare each edge in the Makefile beside the collection's existing shared edges, following the established `SACRAMENT_SHARED` and `POSTCONCILIAR_US_FORMAT` pattern: collection-wide shared material is declared once against the collection's build PDFs, while a per-parent or per-week formulary owner is declared as a prerequisite of each consuming leaf's PDF target. An undeclared owner is a build defect even where the leaf reads correctly.
 
 ## Required tracked records
 
@@ -43,6 +45,16 @@ Every publishable leaf contains:
   research/
     scope.md
 ```
+
+Each shared owner named by the registry is a non-publishable source directory:
+
+```text
+<owner>/
+  propers/
+    verified.md
+```
+
+Add a focused finding aid beside it only where the evidence rules require one. An owner has no `main.tex`, `generation-metadata.tex`, `web-edition.toml`, PDF mirror, or catalog entry, and no reader-facing apparatus; it is a source of record, not a publication.
 
 `instance/manifest.md` is the authoritative identity and resolution record. It names the stable and edition registries, permanent parent and formula key when assigned, full slug, canonical owner, editions, language, territory, calendars, as-of date, rank, cycle, form, occurrence, ritual context, branch universe, resolved selections, and unresolved choices.
 
@@ -180,15 +192,15 @@ This table creates no key. The registries and selected books decide whether mate
 
 For each new or substantially revised guide:
 
-1. complete the manifest and edition-registry disposition;
-2. collate the owner and target, including every branch and rights-safe locator;
+1. confirm or create the registry-fixed shared owner, then complete the manifest and edition-registry disposition;
+2. collate the owner and target, including every branch and rights-safe locator, and declare the owner's build edge;
 3. study Scripture, reception, liturgical function, and material negative results;
 4. classify relationships and claims;
 5. draft detailed commentary before compressing the synthesis and four senses;
 6. assemble the page-2 date/location sheet and terminal apparatus and refresh structured metadata; and
 7. build, inspect every page and branch table, and install only the reviewed PDF.
 
-A guide is profile-final only when its registry identity, slug, path, owner, edition disposition, and occurrence are resolved; its owner and leaf audits are complete; all authorized branches and textual units are accounted for; its claims and relationships are classified; its passage-by-passage matrix documents bounded searches of the major relevant Greek and Latin patristic and later saintly corpora, checked loci, witness roles, and negative results; its detailed commentary proves breadth and depth for every appointed passage; its notable-and-quotable section has three to five source- and locus-identified, non-obvious cultural, humorous, ironic, idiomatic, literary, political, institutional, visual, scientific, commercial, or comparable reuses of wording from the scriptural propers, with every verbal relation, contextual turn, branch, right, payoff, limit, and material negative result audited and no patristic excerpt or bare title, motto, artwork, or musical setting used as padding; its interpretive section contains four to six non-recapitulatory, multi-element proposals and its research scope records each proposal's anchors, mechanism, targeted precedent result, fruit, and strongest limit without claiming universal novelty; page 2 contains only the complete one-page date/location sheet, pages 3--4 contain the thematic movement, detailed commentary begins on page 5, and every later boundary conforms; work-wide qualifications appear only in the terminal scope appendix; rights and source records conform; every shared dependency is explicit and rebuilt; and build, metadata, log, and visual checks pass.
+A guide is profile-final only when its registry identity, slug, path, owner, edition disposition, and occurrence are resolved; its shared owner exists at the registry-fixed path, alone carries the formulary evidence, and is declared as an explicit build edge, while the leaf restates none of it; its cycle letter and any weekday numeral were resolved independently under [calendar computation](calendar-computation.md) and confirmed against a dated official witness; its owner and leaf audits are complete; all authorized branches and textual units are accounted for; its claims and relationships are classified; its passage-by-passage matrix documents bounded searches of the major relevant Greek and Latin patristic and later saintly corpora, checked loci, witness roles, and negative results; its detailed commentary proves breadth and depth for every appointed passage; its notable-and-quotable section has three to five source- and locus-identified, non-obvious cultural, humorous, ironic, idiomatic, literary, political, institutional, visual, scientific, commercial, or comparable reuses of wording from the scriptural propers, with every verbal relation, contextual turn, branch, right, payoff, limit, and material negative result audited and no patristic excerpt or bare title, motto, artwork, or musical setting used as padding; its interpretive section contains four to six non-recapitulatory, multi-element proposals and its research scope records each proposal's anchors, mechanism, targeted precedent result, fruit, and strongest limit without claiming universal novelty; page 2 contains only the complete one-page date/location sheet, pages 3--4 contain the thematic movement, detailed commentary begins on page 5, and every later boundary conforms; work-wide qualifications appear only in the terminal scope appendix; rights and source records conform; every shared dependency is explicit and rebuilt; and build, metadata, log, and visual checks pass.
 
 Do not call an edition-locale collection complete until every stable-registry target has a sourced disposition, all edition splits and conditional targets are evaluated, all weekday fallbacks are evaluated, and the replacement and local-overlay matrix is resolved. Absence in one civil year is an occurrence result, not a target disposition.
 
