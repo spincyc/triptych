@@ -1,0 +1,80 @@
+schema = 1
+record_type = "bindings"
+document = "theology/mariology/marian-dogmas"
+
+# Claude edition. Bindings are catalog-level: the actual passage checks were
+# performed against live web transcriptions (URLs and dates in
+# research/source-audit.md), not against registered artifact bytes, so no
+# acquisition/inspection/verification state is claimed against the
+# source-library records themselves.
+
+[[bindings]]
+source_id = "edition.nicene-and-post-nicene-fathers.series-2-volume-14.new-york-1900"
+loci = [
+  "Council of Ephesus: extracts from the acts and the second letter of Cyril to Nestorius",
+  "Council of Chalcedon: Definition of Faith",
+  "Second Council of Constantinople: anathemas 2 and 6",
+]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Definition-text and reception witness for the divine motherhood and aeiparthenos; each locus read 2026-07-25 in the New Advent transcriptions of Percival's NPNF 2/14 (see research/source-audit.md). Catalog-level binding of the container edition; no exact artifact registered."
+
+[[bindings]]
+source_id = "edition.pius-ix.ineffabilis-deus.english-papal-encyclicals-web-2026-07-25"
+loci = [
+  "definition and sanction (DS 2803-2804)",
+  "historical survey: Trent Sess. V, Sixtus IV constitutions, Alexander VII 1661, 1849 consultation",
+  "interpreters-of-Scripture sections on Gen 3:15 and Lk 1:28",
+]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Definition text quoted exactly; the constitution's own historical survey used as witness to its cited acts; read 2026-07-25. Translator unidentified on the witness. Catalog-level binding; no exact artifact registered."
+
+[[bindings]]
+source_id = "edition.pius-xii.munificentissimus-deus.english-vatican-web-2026-07-25"
+loci = ["3-4", "11-12", "17-21", "25-33", "36", "38-41", "44-45"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Definition text (44) and sanction (45) quoted exactly; consultation, liturgical, patristic, and scholastic survey paragraphs used as the constitution's own historical argument; read 2026-07-25 at the live Vatican English page. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.pius-xii.munificentissimus-deus.latin-vatican-web-2026-07-25"
+loci = ["44"]
+role = "textual-control"
+states = ["cataloged"]
+context = "Latin definition sentence (expleto terrestris vitae cursu clause) quoted in the publication's endnote; read 2026-07-25 at the live Vatican Latin page, which prints continuous text; the locus follows the parallel English paragraph numbering. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.denzinger.enchiridion-symbolorum.latin-patristica-web-2026-07-25"
+loci = ["503", "2803", "2804"]
+role = "textual-control"
+states = ["cataloged"]
+context = "Latin wording of Lateran 649 canon 3 and of the 1854 definition and sanction; read 2026-07-25. The witness's print-edition identity is unknown; its '(eum?)' query at 503 and stray period at 2803 are disclosed in the audit. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.denzinger.enchiridion-symbolorum.english-deferrari-patristica-web-2026-07-25"
+loci = ["256"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Deferrari's English of Lateran 649 canon 3 (older numbering), quoted in short attributed clauses only because the 1957 translation's rights are unresolved; read 2026-07-25. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["484-511", "963-975"]
+role = "official-control"
+states = ["cataloged"]
+context = "Current catechetical framing of all four dogmas; quotations and the DS concordance (notes 135, 145, 154, 506) read 2026-07-25 at the live Vatican IntraText English pages. The check was made against the live site, not the registered edition artifacts, so only catalog-level use is claimed."
+
+[[bindings]]
+source_id = "edition.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23"
+loci = ["53", "57", "59", "60-62", "66"]
+role = "official-control"
+states = ["cataloged"]
+context = "Conciliar synthesis and cooperation-language control (ch. 8); quoted sentences read 2026-07-25 at the live Vatican English page. Catalog-level use only."
+
+[[bindings]]
+source_id = "edition.holy-see.mater-populi-fidelis.english-vatican-web-2026-07-25"
+loci = ["18", "22", "27", "67", "69"]
+role = "official-control"
+states = ["cataloged"]
+context = "Current controlling judgment on the disputed cooperation titles; quoted clauses read 2026-07-25 at the live Vatican English page. The note's approval and publication dates and signatories recorded in the work record. Catalog-level binding."
