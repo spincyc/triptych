@@ -1,0 +1,83 @@
+% Claude historical-accounts collection (traditional priestly institutes):
+% shared typesetting primitives. This file owns presentation only. Every
+% historical, canonical, and evidentiary judgment stays in each account's leaf.
+% Nothing here is a diagram, landscape block, or multi-column environment, so
+% every leaf in the collection can remain web-edition eligible.
+
+\usepackage{endnotes}
+% Long official URLs (vatican.va, press.vatican.va, AAS fascicles) must break
+% freely rather than overflowing the measure.
+\usepackage{xurl}
+
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2.4em}
+
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+% Document and work titles are set through one semantic command.
+\newcommand{\work}[1]{\textit{#1}}
+
+% The governing thesis is substantive content and may open the body.
+\newcommand{\historythesis}[1]{%
+  \begin{studybox}{Governing thesis}
+  #1
+  \end{studybox}}
+
+% Act record: the identified act or witness, what it establishes on its own
+% terms, and the limit that must travel with it. In this collection most
+% consequential claims rest on a dated act, so the field names say so.
+\newcommand{\actrecord}[3]{%
+  \begin{studyframe}
+  \textbf{Act or witness:} #1\par
+  \textbf{What it establishes:} #2\par
+  \textbf{Limit:} #3
+  \end{studyframe}}
+
+% Endnotes carry citations and subordinate documentary detail; the heading
+% joins the table of contents as an ordinary numbered section.
+\renewcommand{\enoteheading}{\section{Notes}}
+\renewcommand{\enoteformat}{%
+  \noindent\footnotesize\makebox[1.8em][l]{\theenmark.}\hangindent=1.8em}
+
+% Evidence-class key for the terminal apparatus.
+\newenvironment{evidencekey}
+{\small
+ \begin{longtable}{>{\bfseries\raggedright\arraybackslash}p{0.08\linewidth}
+                   >{\raggedright\arraybackslash}p{0.85\linewidth}}
+\toprule
+\textbf{Class} & \textbf{Meaning}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
+\newcommand{\evidenceclass}[2]{#1 & #2\\}
+
+% Dated orientation timeline: each row separates the act from the witness that
+% carries it and from this account's status judgment.
+\newenvironment{accounttimeline}
+{\footnotesize
+ \begin{longtable}{>{\bfseries\raggedright\arraybackslash}p{0.13\linewidth}
+                   >{\raggedright\arraybackslash}p{0.37\linewidth}
+                   >{\raggedright\arraybackslash}p{0.26\linewidth}
+                   >{\raggedright\arraybackslash}p{0.15\linewidth}}
+\toprule
+\textbf{Date} & \textbf{Act or event} & \textbf{Witness used} & \textbf{Status}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
+\newcommand{\timelineevent}[4]{#1 & #2 & #3 & #4\\}
+
+% Document inventory: what a period's paper trail contains, where this account
+% read it, and what evidentiary weight it can bear.
+\newenvironment{documentinventory}
+{\footnotesize
+ \begin{longtable}{>{\raggedright\arraybackslash}p{0.28\linewidth}
+                   >{\raggedright\arraybackslash}p{0.30\linewidth}
+                   >{\raggedright\arraybackslash}p{0.34\linewidth}}
+\toprule
+\textbf{Document} & \textbf{Witness consulted} & \textbf{Evidentiary reach}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
+\newcommand{\inventoryrow}[3]{#1 & #2 & #3\\}
