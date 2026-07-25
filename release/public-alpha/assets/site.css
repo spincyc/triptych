@@ -86,11 +86,33 @@ nav a { color: var(--ink); text-decoration: none; }
   box-shadow: var(--shadow);
 }
 
-h1, h2, h3 { line-height: 1.2; text-wrap: balance; }
+/* A catalog is scanned across its full width; a document is read down a
+   column, so its page takes a measure of roughly 70 characters. */
+.page-shell.reading { max-width: 46rem; }
+.page-shell.reading table { display: block; width: max-content; max-width: 100%; overflow-x: auto; }
+
+h1, h2, h3, h4, h5, h6 { line-height: 1.2; text-wrap: balance; }
 h1 { margin-top: 0; font-size: clamp(2.1rem, 7vw, 4.2rem); font-weight: 500; letter-spacing: -0.025em; }
 h2 { margin-top: 2.4rem; padding-top: 0.25rem; font-size: clamp(1.45rem, 4vw, 2rem); color: var(--wine-dark); }
 h3 { font-size: 1.25rem; }
+h4 { margin-top: 1.9rem; margin-bottom: 0.4rem; font-size: 1.08rem; color: var(--wine-dark); }
+h5 { margin-top: 1.6rem; margin-bottom: 0.35rem; font-size: 1rem; font-style: italic; }
+h6 {
+  margin-top: 1.4rem;
+  margin-bottom: 0.3rem;
+  color: var(--muted);
+  font-family: system-ui, sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
 h1 + p > em { color: var(--muted); font-size: 1.18rem; }
+
+ul, ol { margin: 1rem 0; padding-left: 1.6rem; }
+li + li { margin-top: 0.35rem; }
+li > ul, li > ol { margin: 0.35rem 0; }
+
+img { max-width: 100%; height: auto; }
 
 table { width: 100%; margin: 1.4rem 0; border-collapse: collapse; font-family: system-ui, sans-serif; font-size: 0.94rem; }
 th, td { padding: 0.82rem 0.9rem; border: 1px solid var(--line); text-align: left; vertical-align: top; }
@@ -104,6 +126,18 @@ pre code { padding: 0; background: transparent; }
 blockquote { margin-left: 0; padding-left: 1rem; border-left: 0.25rem solid var(--gold); color: var(--muted); }
 
 .empty-shelf { padding: 1rem 1.2rem; border-left: 0.3rem solid var(--gold); background: #f5efe6; }
+
+/* Endnotes carry much of a document's scholarship: the marker stays small and
+   unobtrusive, the apparatus reads as a closing section, and a followed
+   reference is marked where the reader lands. */
+sup { line-height: 0; }
+a.footnote-ref { padding: 0 0.08em; text-decoration: none; }
+a.footnote-ref:hover { text-decoration: underline; }
+.footnote { margin-top: 2.8rem; color: var(--muted); font-size: 0.95rem; }
+.footnote hr { margin-bottom: 1.1rem; border: 0; border-top: 1px solid var(--line); }
+.footnote li { margin-bottom: 0.65rem; }
+.footnote li:target { background: #f5efe6; }
+a.footnote-backref { text-decoration: none; }
 
 .site-footer {
   max-width: 68rem;
@@ -122,6 +156,34 @@ blockquote { margin-left: 0; padding-left: 1rem; border-left: 0.25rem solid var(
   nav { grid-column: 1 / -1; flex-wrap: wrap; padding-top: 0.35rem; border-top: 1px solid var(--line); }
   .page-shell { margin-top: 0; border-left: 0; border-right: 0; border-radius: 0; box-shadow: none; }
   table { display: block; overflow-x: auto; }
+}
+
+/* Long-form reading at night: the palette inverts, the few hard-coded surfaces
+   follow it, and nothing else about the layout changes. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --ink: #e9e3d9;
+    --muted: #a89b8b;
+    --paper: #16130f;
+    --surface: #1e1a15;
+    --line: #3b332a;
+    --wine: #e3a6b0;
+    --wine-dark: #f0c4cb;
+    --gold: #cfa055;
+    --blue: #4c7684;
+    --shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  }
+  body {
+    background:
+      radial-gradient(circle at top left, rgba(207, 160, 85, 0.10), transparent 28rem),
+      var(--paper);
+  }
+  th { background: #2a241d; }
+  tbody tr:nth-child(even) { background: #221e18; }
+  code { background: #2a241d; }
+  pre { background: #100e0b; color: var(--ink); }
+  .empty-shelf, .footnote li:target { background: #24201a; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -13,6 +13,7 @@ import posixpath
 import re
 import shutil
 import sys
+import tomllib
 from collections import Counter, defaultdict
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path, PurePosixPath
@@ -56,6 +57,8 @@ LICENSE_SOURCE_PATHS = {
     if path.is_file()
 }
 SITE_SOURCE_PATHS = set(PAGE_MAP) | FIXED_ARTIFACT_INPUT_PATHS | LICENSE_SOURCE_PATHS
+WEB_EDITION_RECORD = "web-edition.toml"
+WEB_PAGE_RE = re.compile(r"web/([a-z0-9-]+)/(.+)\.html")
 
 # Matches any provider edition link; provider membership in the manifest's
 # declared provider set is enforced during validation so that a link to an
@@ -99,6 +102,53 @@ class ReleaseError(RuntimeError):
 
 def requires_unadvertised_controls(authorization: dict) -> bool:
     return "unadvertised-public-hosting" in set(authorization.get("conditions", []))
+
+
+def eligible_document_ids() -> set[tuple[str, str]]:
+    """Return every leaf whose own record declares a publishable web edition."""
+    source_root = ROOT / "src"
+    eligible: set[tuple[str, str]] = set()
+    for record_path in sorted(source_root.glob(f"*/**/{WEB_EDITION_RECORD}")):
+        try:
+            record = tomllib.loads(record_path.read_text(encoding="utf-8"))
+        except (OSError, tomllib.TOMLDecodeError) as exc:
+            raise ReleaseError(
+                f"cannot read {record_path.relative_to(ROOT)}: {exc}"
+            ) from exc
+        if record.get("eligibility") != "eligible":
+            continue
+        relative = record_path.parent.relative_to(source_root)
+        eligible.add((relative.parts[0], PurePosixPath(*relative.parts[1:]).as_posix()))
+    return eligible
+
+
+def document_pages(keys: set[tuple[str, str]] | None = None) -> dict[str, str]:
+    """Map each reviewed web edition's tracked Markdown to its rendered page.
+
+    Computed at use time so a caller that narrows the key set — or a test that
+    replaces the fixed page map — sees exactly the pages it asked for.
+    """
+    if keys is None:
+        keys = eligible_document_ids()
+    return {
+        f"web/{provider}/{leaf}.md": f"web/{provider}/{leaf}.html"
+        for provider, leaf in sorted(keys)
+    }
+
+
+def included_document_pages(included_ids: set[tuple[str, str]]) -> dict[str, str]:
+    """Return the document pages this artifact actually renders."""
+    return document_pages(eligible_document_ids() & set(included_ids))
+
+
+def site_pages() -> dict[str, str]:
+    """Every source page the site renders, fixed and per-document alike."""
+    return {**PAGE_MAP, **document_pages()}
+
+
+def site_source_paths() -> set[str]:
+    """Every repository input the artifact's approval binds."""
+    return set(SITE_SOURCE_PATHS) | set(document_pages())
 
 
 def artifact_license_source_paths() -> list[str]:
@@ -325,11 +375,12 @@ def validate_authorizations(
             errors.append(f"{label} site_sources must be an object of path-to-SHA-256 entries")
         else:
             actual_source_paths = set(site_sources)
-            if verify_approval_bindings and actual_source_paths != SITE_SOURCE_PATHS:
+            expected_source_paths = site_source_paths()
+            if verify_approval_bindings and actual_source_paths != expected_source_paths:
                 errors.append(
                     f"{label} site_sources mismatch: "
-                    f"missing={sorted(SITE_SOURCE_PATHS - actual_source_paths)!r}, "
-                    f"extra={sorted(actual_source_paths - SITE_SOURCE_PATHS)!r}"
+                    f"missing={sorted(expected_source_paths - actual_source_paths)!r}, "
+                    f"extra={sorted(actual_source_paths - expected_source_paths)!r}"
                 )
             for source_path_value, approved_hash in site_sources.items():
                 if not isinstance(source_path_value, str):
@@ -860,7 +911,7 @@ def candidate_inventory_data(
         )
 
     site_sources = []
-    for source_relative in sorted(SITE_SOURCE_PATHS):
+    for source_relative in sorted(site_source_paths()):
         try:
             source_path = safe_relative_path(source_relative, "candidate site source")
         except ReleaseError as exc:
@@ -1011,6 +1062,7 @@ def expected_artifact_files(
     authorization: dict,
 ) -> set[str]:
     expected = set(PAGE_MAP.values())
+    expected.update(included_document_pages(set(included)).values())
     expected.update(f"doc/{provider}/{leaf}.pdf" for provider, leaf in included)
     expected.update(
         artifact_license_source_paths()
@@ -1176,7 +1228,10 @@ def filter_catalog(
 
 
 def source_to_output(
-    source_relative: str, target: str, included_ids: set[tuple[str, str]]
+    source_relative: str,
+    output_relative: str,
+    target: str,
+    included_ids: set[tuple[str, str]],
 ) -> str | None:
     target_parts = urlsplit(target)
     if target_parts.scheme or target_parts.netloc or target.startswith("//"):
@@ -1201,10 +1256,15 @@ def source_to_output(
         if pdf_match and (pdf_match.group(1), pdf_match.group(2)) in included_ids:
             destination = resolved_text
     if destination is None:
+        # A web edition's page exists only for an included publication, so the
+        # link resolves against inclusion rather than against a bare path match.
+        page_match = WEB_PAGE_RE.fullmatch(resolved_text)
+        if page_match and (page_match.group(1), page_match.group(2)) in included_ids:
+            destination = resolved_text
+    if destination is None:
         return None
 
-    current_output = PurePosixPath(PAGE_MAP[source_relative])
-    start = current_output.parent.as_posix()
+    start = PurePosixPath(output_relative).parent.as_posix()
     relative = posixpath.relpath(destination, start if start != "." else ".")
     if target_parts.query:
         relative += "?" + target_parts.query
@@ -1214,7 +1274,10 @@ def source_to_output(
 
 
 def rewrite_links(
-    source_relative: str, markdown_text: str, included_ids: set[tuple[str, str]]
+    source_relative: str,
+    output_relative: str,
+    markdown_text: str,
+    included_ids: set[tuple[str, str]],
 ) -> str:
     output_lines: list[str] = []
     for line in markdown_text.splitlines():
@@ -1228,7 +1291,9 @@ def rewrite_links(
             target = raw_target.split(maxsplit=1)[0]
             if target.startswith("#") or EXTERNAL_RE.match(target) or target.startswith("//"):
                 return match.group(0)
-            rewritten = source_to_output(source_relative, target, included_ids)
+            rewritten = source_to_output(
+                source_relative, output_relative, target, included_ids
+            )
             if rewritten is None:
                 restricted_record = re.match(r"^(?:\.\./)*(?:src|guidance)/", target) is not None
                 return "" if catalog_entry and restricted_record else label
@@ -1313,7 +1378,9 @@ def render_page(
 
     content = markdown.markdown(
         markdown_text,
-        extensions=["tables", "sane_lists", "toc"],
+        # Web editions are endnote-heavy, so footnote references and their
+        # back-references must become real anchors rather than literal [^n].
+        extensions=["tables", "sane_lists", "toc", "footnotes"],
         output_format="html5",
     )
     template = (TEMPLATE_ROOT / "layout.html").read_text(encoding="utf-8")
@@ -1348,6 +1415,11 @@ def render_page(
             " Working studies; follow citations and verify important claims.</div>"
         )
     replacements = {
+        # A document page is read start to finish and takes a reading measure;
+        # every other page keeps the catalog shell.
+        "{{PAGE_CLASS}}": "page-shell reading"
+        if output_relative.startswith("web/")
+        else "page-shell",
         "{{TITLE}}": html.escape(page_title(markdown_text)),
         "{{ROBOTS}}": robots,
         "{{ASSET_PATH}}": relative_link(output_relative, "assets/site.css"),
@@ -1377,7 +1449,9 @@ def render_source_page(
     markdown_text = (ROOT / source_relative).read_text(encoding="utf-8")
     if source_relative.startswith("library/"):
         markdown_text = filter_catalog(source_relative, markdown_text, included_ids)
-    markdown_text = rewrite_links(source_relative, markdown_text, included_ids)
+    markdown_text = rewrite_links(
+        source_relative, output_relative, markdown_text, included_ids
+    )
     if source_relative.startswith("library/"):
         markdown_text = remove_private_catalog_columns(markdown_text)
     return render_page(
@@ -1533,7 +1607,8 @@ def verify_output(
                 )
 
     included_ids = set(included)
-    for source_relative, output_relative in PAGE_MAP.items():
+    rendered_pages = {**PAGE_MAP, **included_document_pages(included_ids)}
+    for source_relative, output_relative in rendered_pages.items():
         html_path = output / output_relative
         if html_path.is_file() and html_path.read_text(
             encoding="utf-8", errors="replace"
@@ -1583,7 +1658,13 @@ def verify_output(
             for href in parsed_html(path).links:
                 for excluded_key in disallowed_ids:
                     excluded_provider, excluded_leaf = excluded_key
-                    if f"doc/{excluded_provider}/{excluded_leaf}.pdf" in unquote(href):
+                    # Every surface an excluded publication could reach the
+                    # reader through: its PDF and its web edition alike.
+                    excluded_targets = (
+                        f"doc/{excluded_provider}/{excluded_leaf}.pdf",
+                        f"web/{excluded_provider}/{excluded_leaf}.html",
+                    )
+                    if any(target in unquote(href) for target in excluded_targets):
                         errors.append(
                             f"{relative}: links to excluded publication "
                             f"{publication_label(excluded_key, primary)}"
@@ -1679,7 +1760,8 @@ def build_site(
         shutil.copyfile(source, destination)
 
     included_ids = set(included)
-    for source_relative, output_relative in PAGE_MAP.items():
+    rendered_pages = {**PAGE_MAP, **included_document_pages(included_ids)}
+    for source_relative, output_relative in rendered_pages.items():
         destination = output / output_relative
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_text(
