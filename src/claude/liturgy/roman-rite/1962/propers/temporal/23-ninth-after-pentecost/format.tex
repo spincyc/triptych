@@ -1,0 +1,99 @@
+% Claude 1962 proper guide, Ninth Sunday after Pentecost: leaf-local
+% typesetting primitives. This file owns presentation only. Every textual,
+% historical, exegetical, and rights judgment lives in the section files and
+% the leaf's research records.
+%
+% Web-edition constraint: this leaf declares itself web-eligible, so it uses
+% no landscape environment, no multicols, and no TikZ. Any ordering that a
+% diagram might have carried is expressed as an ordered list or a table.
+
+\usepackage{xurl}
+
+\setlength{\emergencystretch}{2.4em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\newcommand{\work}[1]{\textit{#1}}
+\newcommand{\term}[1]{\textit{#1}}
+
+% The missal's versicle and response signs are not in the T1 encoding. They
+% are reproduced as a slashed V and R so that the appointed text can be
+% transcribed as printed rather than silently normalised to "V." and "R.".
+\usepackage{graphicx}
+\newcommand{\Vsign}{\leavevmode\hbox{\rlap{\kern0.16em\raisebox{0.12ex}{\scalebox{0.85}[1.0]{/}}}V}}
+\newcommand{\Rsign}{\leavevmode\hbox{\rlap{\kern0.16em\raisebox{0.12ex}{\scalebox{0.85}[1.0]{/}}}R}}
+\DeclareUnicodeCharacter{2123}{\Vsign}
+\DeclareUnicodeCharacter{211F}{\Rsign}
+% The Gospel heading's Maltese cross, likewise outside T1.
+\newcommand{\gospelcross}{\ensuremath{\boldsymbol{+}}}
+\usepackage{amsmath,amsbsy}
+\DeclareUnicodeCharacter{2720}{\gospelcross}
+
+% Quiet parenthetical proper cues, in liturgical order, for later headings and
+% cross-references. Defined once so the abbreviations stay uniform.
+\newcommand{\cue}[1]{\textnormal{(\textit{#1})}}
+
+% The appointed Latin exactly as the controlling facsimile prints it. The
+% frame marks received liturgical text that is not project-owned expression;
+% the frame title carries the printed heading, the reference, and the marginal
+% number so a reader can find it in the book.
+\newenvironment{appointedlatin}[1]{%
+  \begin{massbox}{#1}\itshape}{\end{massbox}}
+
+% An identified public-domain human translation, never a project translation.
+% The title always names the translator and the printed page.
+\newenvironment{namedtranslation}[1]{%
+  \begin{sourcecard}{#1}\small}{\end{sourcecard}}
+
+% A witness dossier inside the detailed commentary: who, at what exact locus,
+% arguing what. The left rule keeps it distinct from surrounding synthesis
+% without implying doctrinal weight.
+\newenvironment{witnessnote}{\begin{studyframe}\small}{\end{studyframe}}
+\newcommand{\wlocus}[1]{\textbf{#1}\quad}
+
+% Governing thesis for the thematic movement. Substantive content, permitted
+% to open the body of its own section.
+\newcommand{\movementthesis}[1]{%
+  \begin{studybox}{Governing thesis}#1\end{studybox}}
+
+% The exploratory-proposal notice and the proposals themselves. Every proposal
+% renders its anchors, mechanism, fruit, and controlling limit as labelled
+% fields so no reader can mistake a proposal for a sourced finding.
+\newenvironment{proposal}[1]{%
+  \begin{massbox}{Editorial proposal --- #1}\small}{\end{massbox}}
+\newcommand{\pfield}[2]{\par\textbf{#1:} #2}
+
+% Notable-and-quotable gallery entry: appointed phrase, later user, locus,
+% and the turn in register. Breakable, so a long entry splits rather than
+% jumping whole to the next page and leaving a sparse one behind.
+\newenvironment{afterlife}[1]{%
+  \begin{massbox}{#1}\small}{\end{massbox}}
+
+% Two-tier page-2 dossier table, at the measurements the profile fixes.
+\newenvironment{dossiertable}
+{\footnotesize
+ \renewcommand{\arraystretch}{1.02}%
+ \setlength{\LTpre}{0.15em}\setlength{\LTpost}{0pt}%
+ \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.14\linewidth}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.35\linewidth}>{\raggedright\arraybackslash}p{0.16\linewidth}@{}}
+ \toprule
+ \textbf{Proper} & \textbf{Citation} & \textbf{Location} & \textbf{Date}\\
+ \midrule
+ \endhead}
+{\bottomrule\end{longtable}}
+
+% Full-width explanatory row inside a dossier.
+\newcommand{\dossierprose}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash}p{0.92\linewidth}@{}}{#1}\\[0.1em]}
+\newcommand{\dossierevent}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash}p{0.92\linewidth}@{}}{\textit{#1}}\\}
+
+% Reception matrix and comparison tables used in the detailed commentary.
+\newenvironment{receptiontable}[3]
+{\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.20\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.38\linewidth}}
+\toprule
+\textbf{#1} & \textbf{#2} & \textbf{#3}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
+
+% \sectionguard and the deepstudy reading size come from the shared preamble
+% and are deliberately not redefined here.
