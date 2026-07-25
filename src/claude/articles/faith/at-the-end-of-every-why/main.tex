@@ -1,0 +1,77 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+\usepackage{endnotes}
+
+\hypersetup{
+  pdftitle={At the End of Every Why},
+  pdfsubject={A discursive essay on the last end of the creature: beatitude, the vision of God, charity as friendship with God, hope in the meantime, and the everlasting sabbath. The Creature Before God, Part III}
+}
+
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.14\textheight}
+{\large\scshape A Triptych Article\par}
+\vspace{1.5em}
+{\Huge\bfseries At the End of Every Why\par}
+\vspace{0.9em}
+{\Large On the End for Which the Creature Was Made\par}
+\vspace{1.4em}
+{\normalsize\itshape The Creature Before God --- Part III\par}
+\vfill
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{articles/faith/at-the-end-of-every-why/sections/00-the-question-that-survives-its-answers}
+\input{articles/faith/at-the-end-of-every-why/sections/10-what-everyone-wants}
+\input{articles/faith/at-the-end-of-every-why/sections/20-the-ceiling-of-the-ascent}
+\input{articles/faith/at-the-end-of-every-why/sections/30-the-end-that-is-offered}
+\input{articles/faith/at-the-end-of-every-why/sections/40-the-friendship}
+\input{articles/faith/at-the-end-of-every-why/sections/50-the-meantime}
+\input{articles/faith/at-the-end-of-every-why/sections/60-the-end-without-end}
+\clearpage
+\addcontentsline{toc}{section}{Notes}
+\begingroup
+\small
+\setlength{\parskip}{0.3em}
+\theendnotes
+\endgroup
+\clearpage
+\appendix
+\input{articles/faith/at-the-end-of-every-why/sections/90-scope-method-qualifications}
+\input{articles/faith/at-the-end-of-every-why/sections/99-references}
+\begingroup
+\setlength{\parskip}{0pt}
+\vspace{-0.6\baselineskip}
+\section{Generation Metadata}
+\vspace{-0.35\baselineskip}
+{\scriptsize\input{articles/faith/at-the-end-of-every-why/generation-metadata}}
+\endgroup
+\end{deepstudy}
+
+\end{document}
