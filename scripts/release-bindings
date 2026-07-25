@@ -2,8 +2,10 @@
 """Deterministic release-binding bookkeeping for the public-alpha manifest.
 
 refresh: re-derive every PDF/site-source/rights-record hash from current
-bytes. approve --note TEXT: append a dated supplement recording the
-operator's instruction verbatim, then refresh; never invents approval.
+bytes; --adopt-new-site-sources also reconciles the recorded inputs with the
+renderer's recognized set. approve --note TEXT: append a dated supplement
+recording the operator's instruction verbatim, then refresh; never invents
+approval.
 add-publication: insert a provider-qualified manifest entry. status:
 report stale bindings without changing anything.
 """
@@ -13,6 +15,8 @@ from __future__ import annotations
 import argparse
 import datetime
 import hashlib
+import importlib.machinery
+import importlib.util
 import json
 import re
 import sys
@@ -21,6 +25,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 MANIFEST = ROOT / "release" / "public-alpha.json"
+PUBLIC_ALPHA = ROOT / "scripts" / "public-alpha"
 
 SNAPSHOT_HEADER = "## Exact approved snapshots"
 SITE_HEADER = "## Exact approved reader-facing site sources"
@@ -100,12 +105,30 @@ def compute_publication_hashes(manifest: dict) -> dict[str, str]:
     return hashes
 
 
-def compute_site_hashes(authorization: dict) -> dict[str, str]:
+def recognized_site_sources() -> set[str]:
+    """Ask the renderer which repository inputs can change the artifact."""
+    loader = importlib.machinery.SourceFileLoader("triptych_public_alpha", str(PUBLIC_ALPHA))
+    spec = importlib.util.spec_from_loader(loader.name, loader)
+    if spec is None or spec.loader is None:
+        raise BindingError(f"cannot load {PUBLIC_ALPHA.relative_to(ROOT)}")
+    module = importlib.util.module_from_spec(spec)
+    try:
+        spec.loader.exec_module(module)
+        module.ROOT = ROOT
+        return set(module.site_source_paths())
+    except Exception as exc:  # the renderer owns the input set; report it verbatim
+        raise BindingError(f"cannot read the recognized site-source set: {exc}")
+
+
+def compute_site_hashes(authorization: dict, adopt: bool = False) -> dict[str, str]:
     site_sources = authorization.get("site_sources")
     if not isinstance(site_sources, dict) or not site_sources:
         raise BindingError("authorization site_sources must be a non-empty object")
+    # Refresh re-derives the recorded inputs only; adoption reconciles the
+    # record with the set the renderer currently recognizes.
+    sources = recognized_site_sources() if adopt else set(site_sources)
     hashes: dict[str, str] = {}
-    for source in site_sources:
+    for source in sorted(sources):
         path = ROOT / source
         if not path.is_file():
             raise BindingError(f"site source missing: {source}")
@@ -127,7 +150,7 @@ def rewrite_table(text: str, header: str, label: str, rows: list[tuple[str, str]
     return pattern.sub(lambda _: replacement, text, count=1)
 
 
-def refresh(manifest: dict) -> list[str]:
+def refresh(manifest: dict, adopt: bool = False) -> list[str]:
     changes: list[str] = []
     authorization = single_authorization(manifest)
     record_path = rights_record_path(authorization)
@@ -144,11 +167,16 @@ def refresh(manifest: dict) -> list[str]:
             approval["pdf_sha256"] = current
             changes.append(f"pdf {publication['id']}")
 
-    site_hashes = compute_site_hashes(authorization)
+    site_hashes = compute_site_hashes(authorization, adopt)
+    recorded = authorization["site_sources"]
+    for source in sorted(set(site_hashes) - set(recorded)):
+        changes.append(f"adopted site {source}")
+    for source in sorted(set(recorded) - set(site_hashes)):
+        changes.append(f"retired site {source}")
     for source, current in site_hashes.items():
-        if authorization["site_sources"][source] != current:
-            authorization["site_sources"][source] = current
+        if source in recorded and recorded[source] != current:
             changes.append(f"site {source}")
+    authorization["site_sources"] = dict(sorted(site_hashes.items()))
 
     counts = {"release": 0, "review": 0, "hold": 0}
     provider_counts: dict[str, int] = {}
@@ -230,6 +258,8 @@ def approve(manifest: dict, note: str, timezone_name: str) -> None:
     authorization["approved_on"] = now.date().isoformat()
     authorization["effective_at"] = now.isoformat()
     save_manifest(manifest)
+    # Approval re-derives the recorded inventory; widening it stays the
+    # separate, explicit adoption step.
     refresh(load_manifest())
 
 
@@ -280,6 +310,7 @@ def report_status(manifest: dict) -> int:
         if publication.get("approval", {}).get("pdf_sha256") != sha256_file(path):
             print(f"stale pdf {publication['id']}")
             stale += 1
+    # Scope belongs to the renderer's policy check; this reports recorded bytes.
     for source, recorded in authorization.get("site_sources", {}).items():
         path = ROOT / source
         if not path.is_file():
@@ -299,7 +330,13 @@ def report_status(manifest: dict) -> int:
 def main(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(prog="release-bindings")
     subparsers = parser.add_subparsers(dest="command", required=True)
-    subparsers.add_parser("refresh")
+    refresh_parser = subparsers.add_parser("refresh")
+    refresh_parser.add_argument(
+        "--adopt-new-site-sources",
+        dest="adopt",
+        action="store_true",
+        help="reconcile the recorded inputs with the renderer's recognized set",
+    )
     subparsers.add_parser("status")
     approve_parser = subparsers.add_parser("approve")
     approve_parser.add_argument("--note", required=True)
@@ -313,7 +350,7 @@ def main(argv: list[str]) -> int:
     try:
         manifest = load_manifest()
         if args.command == "refresh":
-            changes = refresh(manifest)
+            changes = refresh(manifest, args.adopt)
             for change in changes:
                 print(f"refreshed {change}")
             print(f"release bindings exact: {len(changes)} change(s)")
