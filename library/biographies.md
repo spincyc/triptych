@@ -17,7 +17,7 @@ contemporary evidence from later tradition.
 | Biography | ChatGPT | Claude | Focus |
 | --- | --- | --- | --- |
 | **Saint Jerome** | [PDF](../doc/gpt/biographies/saint-jerome.pdf) | [PDF](../doc/claude/biographies/saint-jerome.pdf) | Ascetic life, scholarship, translations, controversies, Bethlehem, cult, and iconography. |
-| **Saint Augustine of Hippo** | [PDF](../doc/gpt/biographies/saint-augustine-of-hippo.pdf) | — | Self-witness, episcopate, controversies, intellectual development, cult, and contested legacy. |
+| **Saint Augustine of Hippo** | [PDF](../doc/gpt/biographies/saint-augustine-of-hippo.pdf) | [PDF](../doc/claude/biographies/saint-augustine-of-hippo.pdf) | Self-witness, episcopate, controversies, intellectual development, cult, and contested legacy. |
 
 ## Doctors of the Church
 

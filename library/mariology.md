@@ -7,7 +7,7 @@
 | Publication | ChatGPT | Claude | Focus |
 | --- | --- | --- | --- |
 | **The Angelus: Incarnation Remembered Through the Day** | [PDF](../doc/gpt/theology/mariology/angelus.pdf) | — | The received Latin and historical English prayer, its scriptural and doctrinal structure, composite history, daily rhythm, and current discipline. |
-| **The Marian Dogmas: Mother of God, Ever-Virgin, Immaculate, Assumed** | [PDF](../doc/gpt/theology/mariology/marian-dogmas.pdf) | — | The four dogmas and their biblical, patristic, Thomistic, historical, liturgical, and magisterial boundaries. |
+| **The Marian Dogmas: Mother of God, Ever-Virgin, Immaculate, Assumed** | [PDF](../doc/gpt/theology/mariology/marian-dogmas.pdf) | [PDF](../doc/claude/theology/mariology/marian-dogmas.pdf) | The four dogmas and their biblical, patristic, Thomistic, historical, liturgical, and magisterial boundaries. |
 | **The Regina Coeli: Easter Joy with the Mother of the Risen Lord** | [PDF](../doc/gpt/theology/mariology/regina-coeli.pdf) | — | The received Latin and historical English prayer, medieval antiphon, Easter theology, seasonal practice, and current discipline. |
 | **The Holy Rosary: The Gospel Contemplated with Mary** | [PDF](../doc/gpt/theology/mariology/rosary.pdf) | — | Biblical, doctrinal, patristic, historical, and spiritual exposition of the Rosary's twenty mysteries. |
 
