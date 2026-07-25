@@ -5,10 +5,10 @@ inventory_path = "src/sources/inventories/publications-v1.toml"
 inventory_snapshot = "sha256:1c3354be172feca3ac796836318ecc2a8f4bbbff2fd889b975f5894fbf192fcc"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:2947c8f04bd1936f250fa112de037da4be866b8a78b9c272d295ade2645dfc74"
-canonical_catalog_snapshot = "sha256:425e2fa6696c6bfe191438a0f214658022229f56613df7936d2be79474544c06"
+canonical_catalog_snapshot = "sha256:ce53f51aa29fe04b514da1e5a3532f4a5d80bf73894313534e9e750330c8de0b"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:ddc82d945ca89b10b5e6af3d87a852a92b4214ebc82b339dc53ac8cafc478f4d"
+snapshot = "sha256:c0f6b406555156ed41a94e5eee8b984d8c3d0f774b209d21235de782923320c6"
 
 [[families]]
 id = "family.acta.aas-ass"
@@ -25,10 +25,10 @@ freshness_rule = "Treat published volumes as fixed and review newly cited volume
 evidence_ceiling = "artifact-pin"
 disposition = "canonicalize"
 priority = "p1"
-canonical_ids = ["artifact.holy-see.acta-apostolicae-sedis.volume-56-1964.vatican-ocr-pdf-e1f8b49d", "artifact.holy-see.acta-apostolicae-sedis.volume-57-1965.vatican-ocr-pdf-bd6d813d", "artifact.holy-see.acta-apostolicae-sedis.volume-58-1966.vatican-ocr-pdf-69c27224", "artifact.holy-see.acta-sanctae-sedis.volume-6-1870-1871.vatican-ocr-pdf-7e480931", "edition.holy-see.acta-apostolicae-sedis.volume-56-1964", "edition.holy-see.acta-apostolicae-sedis.volume-57-1965", "edition.holy-see.acta-apostolicae-sedis.volume-58-1966", "edition.holy-see.acta-sanctae-sedis.volume-6-1870-1871", "work.holy-see.acta-apostolicae-sedis", "work.holy-see.acta-sanctae-sedis"]
+canonical_ids = ["artifact.holy-see.acta-apostolicae-sedis.volume-56-1964.vatican-ocr-pdf-e1f8b49d", "artifact.holy-see.acta-apostolicae-sedis.volume-57-1965.vatican-ocr-pdf-bd6d813d", "artifact.holy-see.acta-apostolicae-sedis.volume-58-1966.vatican-ocr-pdf-69c27224", "artifact.holy-see.acta-sanctae-sedis.volume-6-1870-1871.vatican-ocr-pdf-7e480931", "edition.holy-see.acta-apostolicae-sedis.volume-22-1930", "edition.holy-see.acta-apostolicae-sedis.volume-23-1931", "edition.holy-see.acta-apostolicae-sedis.volume-56-1964", "edition.holy-see.acta-apostolicae-sedis.volume-57-1965", "edition.holy-see.acta-apostolicae-sedis.volume-58-1966", "edition.holy-see.acta-apostolicae-sedis.volume-60-1968", "edition.holy-see.acta-sanctae-sedis.volume-6-1870-1871", "work.holy-see.acta-apostolicae-sedis", "work.holy-see.acta-sanctae-sedis"]
 trace_patterns = ["Acta Apostolicae Sedis", "Acta Sanctae Sedis", "latin-aas-56-1964", "latin-aas-57-1965", "latin-aas-58-1966", "latin-ass-6-1870-1871"]
 reviewed_on = "2026-07-25"
-notes = "Volumes 56 (1964), 57 (1965), and 58 (1966) now have canonical container editions and exact restricted Holy See PDF artifacts. The series now also owns the Acta Sanctae Sedis work and the volume 6 (1870-1871) container edition with its exact restricted 776-page Holy See OCR PDF artifact, whose Postquam Dei munere constituent is pinned by the separate Vatican I family without absorbing the container. Other cited volumes and acts remain only partially resolved; each promulgated act remains a distinct work, and OCR remains a finding aid until checked against the official pages."
+notes = "Volumes 56 (1964), 57 (1965), and 58 (1966) now have canonical container editions and exact restricted Holy See PDF artifacts. The series now also owns the Acta Sanctae Sedis work and the volume 6 (1870-1871) container edition with its exact restricted 776-page Holy See OCR PDF artifact, whose Postquam Dei munere constituent is pinned by the separate Vatican I family without absorbing the container. Other cited volumes and acts remain only partially resolved; each promulgated act remains a distinct work, and OCR remains a finding aid until checked against the official pages. The wave-eight registrations add AAS volumes 22 (1930), 23 (1931), and 60 (1968) as catalog-level container editions without exact artifacts, per the volume-6 ASS container precedent: they map the Bellarmine canonization-miracle decree and Pius XI's decretal letter Lux illa, his apostolic letter Providentissimus Deus declaring Bellarmine a Doctor (distinct from Leo XIII's 1893 encyclical of the same incipit), and Paul VI's apostolic letter Roma altera, all of which remain distinct unregistered constituent works; consumers using the vatican.va OCR scans record their access routes and dates locally."
 
 [[families]]
 id = "family.ante-nicene-fathers.volume-1-buffalo-1887"
@@ -185,10 +185,10 @@ freshness_rule = "not-applicable"
 evidence_ceiling = "edition-locus"
 disposition = "canonicalize"
 priority = "p2"
-canonical_ids = ["edition.catholic-encyclopedia.volume-1.new-york-1907", "edition.catholic-encyclopedia.volume-11.new-york-1911", "edition.catholic-encyclopedia.volume-13.new-york-1912", "edition.catholic-encyclopedia.volume-5.new-york-1909", "edition.catholic-encyclopedia.volume-7.new-york-1910", "work.catholic-encyclopedia.volume-1", "work.catholic-encyclopedia.volume-11", "work.catholic-encyclopedia.volume-13", "work.catholic-encyclopedia.volume-5", "work.catholic-encyclopedia.volume-7"]
+canonical_ids = ["edition.catholic-encyclopedia.volume-1.new-york-1907", "edition.catholic-encyclopedia.volume-11.new-york-1911", "edition.catholic-encyclopedia.volume-13.new-york-1912", "edition.catholic-encyclopedia.volume-2.new-york-1907", "edition.catholic-encyclopedia.volume-5.new-york-1909", "edition.catholic-encyclopedia.volume-7.new-york-1910", "work.catholic-encyclopedia.volume-1", "work.catholic-encyclopedia.volume-11", "work.catholic-encyclopedia.volume-13", "work.catholic-encyclopedia.volume-2", "work.catholic-encyclopedia.volume-5", "work.catholic-encyclopedia.volume-7"]
 trace_patterns = ["(?:Catholic Encyclopedia|catholic-encyclopedia)"]
 reviewed_on = "2026-07-25"
-notes = "This series family owns the catalog-level container work and edition records for volumes 1 (1907), 5 (1909), 7 (1910), 11 (1911), and 13 (1912) of the sixteen-volume Catholic Encyclopedia (New York: Robert Appleton Company, 1907-1912), mirroring the ANF/NPNF container pattern: one reference series maps its constituent volumes rather than spawning per-volume families. The American printings are public domain, but no exact artifact is registered, so members stop at edition-locus support, and publications consulting the New Advent web transcriptions record their access routes and the transcriptions' later-revision risk locally. Signed articles such as Thurston's Rosary entries remain distinct constituent works inside their volume containers and are unregistered, and the remaining volumes join this family as they are registered. Ferdinand Prat's 'St. Paul' article in volume 11 remains, like Thurston's Rosary entries, a distinct unregistered constituent work inside its volume container."
+notes = "This series family owns the catalog-level container work and edition records for volumes 1 (1907), 2 (1907), 5 (1909), 7 (1910), 11 (1911), and 13 (1912) of the sixteen-volume Catholic Encyclopedia (New York: Robert Appleton Company, 1907-1912), mirroring the ANF/NPNF container pattern: one reference series maps its constituent volumes rather than spawning per-volume families. The American printings are public domain, but no exact artifact is registered, so members stop at edition-locus support, and publications consulting the New Advent web transcriptions record their access routes and the transcriptions' later-revision risk locally. Signed articles such as Thurston's Rosary entries remain distinct constituent works inside their volume containers and are unregistered, and the remaining volumes join this family as they are registered. Ferdinand Prat's 'St. Paul' article in volume 11 remains, like Thurston's Rosary entries, a distinct unregistered constituent work inside its volume container. Volume 2 (1907, Assizes-Browne) joins on the same catalog-level basis for the wave-eight Bellarmine biography; Sydney Smith's 'St. Robert Francis Romulus Bellarmine' article remains a distinct unregistered constituent work inside its volume container."
 
 [[families]]
 id = "family.denzinger.enchiridion-symbolorum"
@@ -229,6 +229,26 @@ canonical_ids = ["edition.diocese-of-leiria.carta-pastoral-fatima-1930.dcf-selec
 trace_patterns = ["(?:Act of Consecration.{0,60}Immaculate Heart|act-consecration-immaculate-heart-2022)", "(?:Carta Pastoral|carta-pastoral-fatima-1930)", "(?:Message of Fatima|Messaggio di Fatima|message-of-fatima)", "(?:Third Secret of Fatima|communique-third-secret-fatima)", "(?:canonization.{0,60}(?:Francisco|Jacinta)|homily-canonization-fatima-2017)"]
 reviewed_on = "2026-07-25"
 notes = "This corpus-plan owns the ecclesial judgment and reception thread on one object, the 1917 apparitions at the Cova da Iria: the Bishop of Leiria's pastoral letter of 13 October 1930 declaring the visions worthy of belief and permitting the cult (its registered edition is the critical printing in the 2013 DCF Selecao, Doc. 133, whose container stays owned by family.santuario-de-fatima.dcf-selecao-1917-1930), the CDF's documentary publication The Message of Fatima of 26 June 2000 with the third part of the secret and Ratzinger's commentary, the Press Office communique of 21 May 2016 confirming the publication complete, Francis's canonization homily for Francisco and Jacinta Marto of 13 May 2017, and his Act of Consecration to the Immaculate Heart of 25 March 2022. The acts form one family rather than per-work families because they are a single judgment-and-reception thread about one apparition event, each later act interpreting, confirming, or answering the earlier ones, matching the family.roman-missal.older-use-discipline-acts and family.vatican-ii.papal-acts precedent for a bounded corpus of coordinated acts. Every member is registered at work and dated edition level only: the known Vatican web deliveries and the restricted DCF printing are complete candidates, but no exact artifact bytes are registered, so evidence stops at edition loci; the 2000 dossier's English web state carries a double-encoding defect and a 1981 date slip recorded on its manifest, and Portuguese and Italian originals and translator identities remain unregistered. The general 2024 apparition norms are not a Fatima act and keep their own family."
+
+[[families]]
+id = "family.galileo-galilei.opere-edizione-nazionale"
+label = "Le Opere di Galileo Galilei, Edizione Nazionale (Favaro)"
+kind = "series"
+source_categories = ["historical-primary"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "date"]
+artifact_availability = "candidate-complete"
+storage_plan = ["remote"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "edition-locus"
+disposition = "canonicalize"
+priority = "p2"
+canonical_ids = ["edition.galileo-galilei.opere-edizione-nazionale.volume-11", "edition.galileo-galilei.opere-edizione-nazionale.volume-12", "edition.galileo-galilei.opere-edizione-nazionale.volume-19", "work.galileo-galilei.opere-edizione-nazionale"]
+trace_patterns = ["(?:Edizione Nazionale|Favaro|Le Opere di Galileo|opere-edizione-nazionale)"]
+reviewed_on = "2026-07-25"
+notes = "The twenty-volume national edition of Galileo's works and correspondence (Florence: Barbera, 1890-1909), edited by Antonio Favaro, forms one container family for the whole critical edition, mirroring the ANF/NPNF and Catholic Encyclopedia series-container precedent: one registered container maps its constituent volume editions rather than spawning per-volume families, and the edition, not Galileo's individual works, is the registered identity because it is the controlling documentary witness for the Bellarmine-Galileo thread - the 1611 Roman College letters (vol. XI, nos. 515, 520, 709), the 12 April 1615 letter to Foscarini (vol. XII, no. 1110, pp. 171-172, printed from the Lincei contemporary copy), and the Vatican trial dossier in volume XIX including the qualifiers' censure, the February-March 1616 minutes and Index decree, and Bellarmine's 26 May 1616 certificate in its two dossier witnesses (autograph p. 348; Galileo's copy p. 342). Volumes 11, 12, and 19 were read in public Internet Archive scans (Gallica/BnF digitizations for the two correspondence volumes; the umich scan of volume 19, whose title page verifies the 1907 imprint), but the correspondence volumes' individual imprint years were not verified and carry the series range instead, keeping a date gap. The 1890-1909 Barbera printings are public domain, but no exact artifact is registered, so evidence stops at edition and printed-page loci; the underlying manuscripts, the remaining seventeen volumes, and the constituent documents and letters inside the registered volumes remain unregistered, and Bellarmine's own works keep their separate per-work families."
 
 [[families]]
 id = "family.gratian.decretum"
@@ -729,6 +749,46 @@ canonical_ids = ["edition.possidius.vita-augustini.weiskotten-1919", "work.possi
 trace_patterns = ["(?:Possidius|Vita Augustini|vita-augustini)"]
 reviewed_on = "2026-07-25"
 notes = "Possidius of Calama's contemporary Life of Augustine, written within the decade after Augustine's death, owns its catalog-level work at chapter loci and Weiskotten's 1919 Princeton edition, whose English translation is public domain from its 1919 United States publication. The tertullian.org transcription is a known complete candidate artifact, but no exact artifact is registered, so evidence stops at edition and chapter loci and publications record the web access routes they actually used. Augustine's own works, including De civitate Dei, remain separate families."
+
+[[families]]
+id = "family.robert-bellarmine.disputationes-de-controversiis"
+label = "Robert Bellarmine, Disputationes de controversiis"
+kind = "work"
+source_categories = ["historical-primary", "scholastic"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "edition"]
+artifact_availability = "candidate-complete"
+storage_plan = ["remote"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "edition-locus"
+disposition = "canonicalize"
+priority = "p2"
+canonical_ids = ["edition.robert-bellarmine.disputationes-de-controversiis.venice-1599", "edition.robert-bellarmine.disputationes-de-controversiis.venice-1721-tomus-1", "work.robert-bellarmine.disputationes-de-controversiis"]
+trace_patterns = ["(?:De controversiis|Disputationes de controversiis|disputationes-de-controversiis)"]
+reviewed_on = "2026-07-25"
+notes = "Bellarmine's systematic controversial theology, grown from his Roman College lectures and first published at Ingolstadt in three tomes (1586, 1588, 1593), owns its catalog-level work and two registered printings: the four-tome Venice 1599 edition whose title page claims authorial revision, and the first tome of the Venice 1721 Malachinus printing. It keeps its own per-work family rather than sharing an author-corpus family with the 1613 autobiography, per the ledger's per-work norm for independent intellectual works: the controversial corpus and the memoir have distinct genres, dates, and transmission histories, and a single author-corpus family has no precedent here. Editions differ materially in arrangement and revision, so edition identity must be stated for any exact locus, the 1599 title page's authorial-revision claim is unverified against the Ingolstadt printings, and the Ingolstadt and later printings remain unregistered, keeping an edition gap. Both registered printings were read in public Internet Archive scans at tome-contents and book-division level, but no exact artifact is registered, so evidence stops at edition loci."
+
+[[families]]
+id = "family.robert-bellarmine.vita-ab-ipso-conscripta"
+label = "Robert Bellarmine, Vita ab ipso conscripta (1613)"
+kind = "work"
+source_categories = ["historical-primary"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "edition"]
+artifact_availability = "candidate-complete"
+storage_plan = ["remote"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "edition-locus"
+disposition = "canonicalize"
+priority = "p2"
+canonical_ids = ["edition.robert-bellarmine.vita-ab-ipso-conscripta.dollinger-reusch-1887", "work.robert-bellarmine.vita-ab-ipso-conscripta"]
+trace_patterns = ["(?:Selbstbiographie|Vita ab ipso conscripta|vita-ab-ipso-conscripta)"]
+reviewed_on = "2026-07-25"
+notes = "Bellarmine's third-person memoir, written in June 1613 at the request of fellow Jesuits and first published among the acta of the beatification process (1675 per the 1907 Catholic Encyclopedia), owns its catalog-level work and the 1887 Bonn edition of Doellinger and Reusch, which prints the Latin text with a German translation and an extensive critical commentary whose Old Catholic standpoint is characterized wherever the commentary carries claims. It keeps its own per-work family separate from the Disputationes per the per-work norm: the retrospective, edifying autobiography is an independent intellectual work with its own transmission, including a 1762 printing with variant readings recorded by the 1887 edition. The Bonn edition was read in the public Internet Archive scan, but no exact artifact is registered and the 1675 and 1762 printings remain unregistered, so evidence stops at edition loci with artifact and edition gaps."
 
 [[families]]
 id = "family.roman-lectionary.olm-us-lectionary"
