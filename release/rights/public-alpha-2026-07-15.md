@@ -1081,6 +1081,26 @@ work-specific research records remains operative. This approval does
 not authorize a push, deployment, tag, history rewrite, public
 release attachment, announcement, or promotion.
 
+## Supplemental exact-current-snapshot clearance — 25 July 2026
+
+At `2026-07-25T15:24:30-05:00` in `America/Chicago`, the maintainer instructed:
+“Release the wave-ten Claude editions of Guadalupe and Clerical Celibacy, Chastity, and Continence, re-bind the deepened Rosary edition, and publish web editions for the newly eligible publications.” This is recorded as perpetual worldwide
+exact-current-snapshot distribution authorization under the existing
+represented authority in this record. The sole condition remains
+`no-project-initiated-promotion`.
+
+The approval binds all 141 exact installed release
+PDF snapshots and every exact recognized artifact-affecting
+reader-site input inventoried below at their current bytes. It is an
+exact-byte distribution clearance only: it does not represent
+completion of any outstanding work-specific rights, source,
+collation, specialist, or ecclesiastical review, and no imprimatur,
+nihil obstat, or ecclesiastical approval is claimed. Every
+limitation in the prior supplements, release README, catalogs, and
+work-specific research records remains operative. This approval does
+not authorize a push, deployment, tag, history rewrite, public
+release attachment, announcement, or promotion.
+
 ## Exact approved snapshots
 
 | Publication ID | SHA-256 |
@@ -1107,6 +1127,7 @@ release attachment, announcement, or promotion.
 | `biographies/saint-robert-bellarmine` | `cbbb80788cec5e53712183d45e29486e4d45ff5ed6506b93c4a441783958d85a` |
 | `biographies/saint-thomas-aquinas` | `05d1b1b792c5774e0aa10822e9722d3a844e442a09c54e5573bd5913fa2c275a` |
 | `biographies/tertullian` | `5482e549142e226e8a91b51b3fda11751957b2ba0a77d6737a2c79c57132dae6` |
+| `claude:articles/canon-law/clerical-celibacy-chastity-and-continence` | `3ad33125d92a3205a53fab2d015148cf610b773ad741d7a1009e20abbf46e37e` |
 | `claude:articles/canon-law/natural-positive-divine-human-law` | `a44ed9475330e19d245e3488eb0f8d165067f4ecfb4530f203eb1083ad22ae0a` |
 | `claude:articles/faith/against-the-instrumentalists` | `878e0a1cb776b88b45dceba6f8ee6017312583a5ab2873c3229cda65dd411d4d` |
 | `claude:articles/faith/at-the-end-of-every-why` | `a644e1321457d069c0319a4c36f570edef23010e975b019257e14106c51f58b3` |
@@ -1127,9 +1148,10 @@ release attachment, announcement, or promotion.
 | `claude:history/biblical-translations/01-septuagint` | `6aaa22a66d05bf8e4cbe88a3dda814dd71354e00753bbb43f5ee794a25d161bf` |
 | `claude:history/biblical-translations/02-vulgate` | `6549550fa7d9447e5148e8264779aee6df809f65451919367aad98df7faec699` |
 | `claude:theology/mariology/fatima` | `c8b1e0dd4443eca492c142453696d138cfab3ec4dba51231e0e52a69e5761ef2` |
+| `claude:theology/mariology/guadalupe` | `789d72a6e275bddddb7cdc3cd37a56c19126d6e1a723c70113ffcd31e15dcb04` |
 | `claude:theology/mariology/lourdes` | `02ba30326155c6e0e4b31ebd997594a63ad735fb320b2eda580f0522204f7e42` |
 | `claude:theology/mariology/marian-dogmas` | `ab33912de1090951399e6306e706b547f27507b75b33edd620a7b22bb0a0e50c` |
-| `claude:theology/mariology/rosary` | `1124f22017f0aa5b4440e5beebace40c6e16a477de66e3da386b87c2fac53344` |
+| `claude:theology/mariology/rosary` | `e143841cacca16dfb8d87539e5713b1ddf993b72a4234daafa4753d154777638` |
 | `curriculums/ecclesiastical-latin/00-course-guide` | `79f0202ddaa651194820e46375ea3193c9a442974b1853ac4654eba5b6faf0ec` |
 | `curriculums/ecclesiastical-latin/00-memory-workbook` | `7df692cd8f16049b990b950c2abb0c568d51c5ae243ece832ad11d051c2d2fa7` |
 | `curriculums/ecclesiastical-latin/00-reference-grammar` | `b3c67f86cd487a5d5ccce5620e849740cb7bb61b165bd2d659fcd7d8fd3ec612` |
@@ -1242,8 +1264,8 @@ release attachment, announcement, or promotion.
 | `library/faith.md` | `0ebc99e193a0f5091fd9548212a49b6f62f09bf778aa4c1bf45dc87eed3920cf` |
 | `library/heresies.md` | `2f8cbb8b910281e3d6ace3b232d724b6e08866a459344268fe611a6652229feb` |
 | `library/historical-accounts.md` | `0c9c458dd59f15b47469b29cb218ce7821774cb525c5cea77b6fa5b910d96811` |
-| `library/law-and-church-discipline.md` | `f31c9787dd3a6398ef47dc17b81ef60fca2222e7a8801a85dc29c72cb2c3253e` |
-| `library/mariology.md` | `544d3f263382f56bf5c2b388eedd4c8676c5dbe88a330da683f6c164d682839f` |
+| `library/law-and-church-discipline.md` | `2f909b26e55bb143ade3c326ffea0cc5ceed1d239f99036376f1a4eed98af240` |
+| `library/mariology.md` | `c32c2616e29ee566a85409103f46af58e7293ca7fc69eac7b438c061f391c50c` |
 | `library/novus-ordo-liturgy.md` | `b4bdd55062a457787a6a73ab68abdcf5de0455bcb802840e41f5516336ccf96c` |
 | `library/prayer.md` | `f355ee2a34f4f47744cbc6f0fea71c04f2c303882dce1b8ae3adabfc2b2c850d` |
 | `library/traditional-latin-mass.md` | `91ca84e770fca60852d6037b28d5660824593387302edd10b840cfbe7ee119d8` |
@@ -1252,6 +1274,7 @@ release attachment, announcement, or promotion.
 | `release/public-alpha/layout.html` | `2013d7f66dfb776b2c5df81656f7fe286bdbf60b016f88ea612f942af50249b9` |
 | `requirements-public-alpha.txt` | `c30202fbc2f2eb1da451b8bae46b6867c07915844cec203a243991d14b8d4efc` |
 | `scripts/public-alpha` | `c607a11f189d070698c9b6b2a558ea3c8a1872fb931d793ff5b0816bc44ecadc` |
+| `web/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.md` | `8f31ed319e5d1474bf48f6096091519fc75f199e10920b7d95b8a8646b39d83c` |
 | `web/claude/articles/canon-law/natural-positive-divine-human-law.md` | `02c856ef077eb004176c74a1d9bc7830ef917ce5964703377598bf121139b0d5` |
 | `web/claude/articles/faith/against-the-instrumentalists.md` | `fa5bc3e918f1c662f4b1dc5fcf1ae06ec9fff533eadadd80d69020136fc02ee4` |
 | `web/claude/articles/faith/at-the-end-of-every-why.md` | `2791a7f5abe31e820f77c8187148c0e91297eb9a2c1f9fd8f2e52c6906206d1a` |
@@ -1272,9 +1295,10 @@ release attachment, announcement, or promotion.
 | `web/claude/history/biblical-translations/01-septuagint.md` | `49c060e74fd45eaa30c15f084137f4cbf5ceee06ac92e566682f39d703509dd4` |
 | `web/claude/history/biblical-translations/02-vulgate.md` | `3da99c71009a67127ce332f849cc1894e62288f1a0d7aae75666a76ca48f4a08` |
 | `web/claude/theology/mariology/fatima.md` | `9e696485403ed053018b50806ad4c749984c7334b3830a11a8445a95c8f30bea` |
+| `web/claude/theology/mariology/guadalupe.md` | `e22a900e9bbc871cb0222dfce3d0513edd21662134d85190409e2ad2865928b5` |
 | `web/claude/theology/mariology/lourdes.md` | `9cac98753be77a260baf78461c0e38bc810fd62dd5fadf14c73b1295356c3331` |
 | `web/claude/theology/mariology/marian-dogmas.md` | `6f4193f73791cfa60a647941b6ec960f1f09284614157eeb9c8232d991bca83a` |
-| `web/claude/theology/mariology/rosary.md` | `185b4da921a491ebdaf71f830522975d4949dd139b6a5f545a178a367dcae8e3` |
+| `web/claude/theology/mariology/rosary.md` | `37681c98ea41ab8e436b570a318c28bba9e2007fa0349c16d8c1f43fa701288f` |
 | `web/gpt/articles/canon-law/natural-positive-divine-human-law.md` | `e816fbc172e2b98c2ece5c10bd130f96630b14dfcbf61980ec67b914be6fe064` |
 | `web/gpt/articles/faith/against-the-instrumentalists.md` | `5d5b3d561bd7b143f2cd70256647765f47d05b7f0bdec38f12f5aab2d07f9fca` |
 | `web/gpt/articles/faith/at-the-end-of-every-why.md` | `8d82bb12cae1f459d8b64cc5e4a7cb31ecf5b8acbc583f3e80b5c2be2df96117` |
