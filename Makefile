@@ -411,7 +411,7 @@ help:
 		'make verify-public-preview  Recheck the existing private preview artifact' \
 		'make verify-public-site  Recheck the existing public artifact' \
 		'make check-release-bindings  Report stale exact PDF, site-source, and rights-record bindings' \
-		'make refresh-release-bindings  Mechanically re-derive every exact release binding from current bytes' \
+		'make refresh-release-bindings [ADOPT=1]  Mechanically re-derive every exact release binding from current bytes' \
 		'make approve-release NOTE="..."  Record a dated supplement with the operator instruction, then refresh' \
 		'make add-publication ID=<leaf> CATALOG=<page> [PROVIDER=<p>] [STATUS=hold]  Add a manifest entry' \
 		'make check    Run every repository policy check' \
@@ -499,7 +499,8 @@ check-release-bindings:
 	@$(PYTHON) $(RELEASE_BINDINGS_TOOL) status
 
 refresh-release-bindings:
-	@$(PYTHON) $(RELEASE_BINDINGS_TOOL) refresh
+	@$(PYTHON) $(RELEASE_BINDINGS_TOOL) refresh \
+		$(if $(ADOPT),--adopt-new-site-sources,)
 
 approve-release:
 	@if [ -z '$(NOTE)' ]; then \

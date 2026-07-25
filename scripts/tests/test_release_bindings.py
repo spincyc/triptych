@@ -159,6 +159,29 @@ class ReleaseBindingsTests(unittest.TestCase):
         self.assertEqual(2, expected["publications"])
         self.assertEqual({"claude": 1, "gpt": 1}, expected["providers"])
 
+    def test_refresh_adopts_and_retires_recognized_site_sources(self):
+        page = self.root / "web/gpt/articles/example.md"
+        page.parent.mkdir(parents=True)
+        page.write_bytes(b"web edition v1")
+        self.tool.recognized_site_sources = lambda: {"web/gpt/articles/example.md"}
+
+        changes = self.tool.refresh(self.tool.load_manifest(), adopt=True)
+
+        self.assertIn("adopted site web/gpt/articles/example.md", changes)
+        self.assertIn("retired site README.md", changes)
+        recorded = self.read_manifest()["authorizations"]["auth-1"]["site_sources"]
+        self.assertEqual({"web/gpt/articles/example.md": sha(b"web edition v1")}, recorded)
+        self.assertIn("web/gpt/articles/example.md", self.record.read_text())
+        self.assertEqual(0, self.tool.report_status(self.tool.load_manifest()))
+
+    def test_refresh_without_adoption_keeps_the_recorded_input_set(self):
+        self.tool.recognized_site_sources = lambda: {"web/gpt/articles/example.md"}
+
+        self.tool.refresh(self.tool.load_manifest())
+
+        recorded = self.read_manifest()["authorizations"]["auth-1"]["site_sources"]
+        self.assertEqual({"README.md"}, set(recorded))
+
     def test_refresh_fails_closed_on_missing_pdf(self):
         self.gpt_pdf.unlink()
         with self.assertRaises(self.tool.BindingError):
