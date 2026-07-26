@@ -146,6 +146,11 @@ reproduced from a modern copyrighted version.
 
 ## Review and production state
 
+Staleness review (2026-07-26): old, minimally modified, and research-first
+treatments were compared against changed Catechism and LG records. Prayer text,
+discipline, doctrine, translation, and rights boundaries remain unchanged. No
+material change.
+
 Completed before production: profile routing; source-family identification;
 page-image collation of the reproduced 1925 prayer and same-witness resolution
 of its three Hail Mary abbreviations;
