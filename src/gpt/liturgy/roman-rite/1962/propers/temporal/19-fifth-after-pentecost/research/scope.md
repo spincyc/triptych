@@ -129,3 +129,9 @@ The settled 13-page PDF, SHA-256 `3e7b2e88192513b3e810f97555e5e78c07d63ad352a38b
 The final 14-page PDF, SHA-256 `00afac054ee97628042d28152f72253ed3dea6223ab2c3facd5d3f0f08dc0b7a`, is the exact clean-build snapshot for this revision. Its rebuilt Notable and Quotable gallery contains only source- and locus-audited, non-obvious cultural, humorous, ironic, idiomatic, literary, political, institutional, visual, scientific, commercial, or comparable afterlives of wording from appointed Scripture; the audit above records verbal strength, context, semantic turn, rights, limits, and rejected leads.
 
 Generation metadata is singular and terminal. The warning-free clean build passed metadata, `qpdf`, title and subject, embedded and subsetted Unicode fonts, extraction, the page-2-only dossier boundary, and terminal-colophon gates; every rendered page was inspected at full size with no clipping, overlap, bad split, artificial padding, sparse spill, or rights-only page. The installed PDF is byte-identical to this reviewed build. This record supersedes earlier production snapshots; the exact current snapshot has release-specific distribution clearance under the 20 July 2026 dated rights supplement. That operational decision supplies no independent review or ecclesiastical approval.
+
+## Research-staleness verdict — 2026-07-26
+
+The current source and both candidates were compared claim by claim against
+the changed Missal inputs. No material correction was found; this exact study
+edition is ready for rebaselining.
