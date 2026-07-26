@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.book-index-a7271aac"
+edition_id = "edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581"
+artifact_type = "reference-table"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych-created reference table. It records the identity, numbering, and naming of public-domain biblical books and verses and contains no third-party text; Triptych places it under the repository licence and claims no exclusive right in the underlying facts."
+provenance = "Compiled by Triptych on 2026-07-25 from the exact verse-text artifacts of this edition and from the controls named in the notes."
+retrieved = "2026-07-25"
+sha256 = "a7271aacb6ca5cd0096a778f574af6765fc091ce34c26d76c5255ec99ae6b51e"
+byte_size = 8433
+path = "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/book-index-a7271aac/book-index.tsv"
+indexable = true
+encoding = "utf-8"
+notes = "Triptych-compiled index of the 73 books of this edition. Each row gives the ordinal, the canonical locus token used in the verse files and in passage loci, the verse file that holds the book, the testament, the Douay-Rheims title, the ordinary modern English name, the abbreviation the 1962 Missal and Breviary use, other accepted spellings, the chapter and verse counts as extracted, and a note recording the traps. Chapter and verse counts were computed from the exact verse files; the names, abbreviations, and notes are Triptych editorial matter."

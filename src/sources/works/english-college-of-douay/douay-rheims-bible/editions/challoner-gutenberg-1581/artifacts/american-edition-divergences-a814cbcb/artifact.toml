@@ -1,0 +1,18 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.american-edition-divergences-a814cbcb"
+edition_id = "edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581"
+artifact_type = "collation"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Both columns are public-domain Douay-Rheims text. The vendored reading is taken from the Project Gutenberg artifact of this edition; the American-edition reading is taken from eBible.org's engDRA, which eBible.org publishes as public domain, and was required to agree with drbo.org before a row was kept. The Challoner translation is out of copyright by age; the collation itself is Triptych editorial work placed under the repository licence."
+rights_jurisdiction = "United States"
+provenance = "Produced by Triptych on 2026-07-25 by comparing every one of the 35804 extracted verses with the corresponding verse at drbo.org and with eBible.org engDRA, after normalizing curly quotation marks, dashes, and the ae ligature and collapsing whitespace. 24106 verses were identical to drbo.org and a further 9744 differed only in punctuation or capitalization. Of the 1954 that differed in wording, the 1859 where drbo.org and engDRA agree against the vendored text are recorded here; the 95 where the two American-edition witnesses disagree with each other were dropped because no stable reading could be established."
+retrieved = "2026-07-25"
+sha256 = "a814cbcb3cb274e145947bffb40a9a74abdaeda64185de1ba219cad573b2eaf3"
+byte_size = 569094
+path = "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/american-edition-divergences-a814cbcb/american-edition-divergences.tsv"
+indexable = true
+encoding = "utf-8"
+notes = "One row per divergent verse: canonical locus, the reading in this edition's verse files, and the reading of the 1899 American edition. The divergences are overwhelmingly small - word order, \"exceeding\" against \"exceedingly\", presence of the definite article, \"unto\" against \"into\", proper-name spelling - and the vendored readings are consistently the older Challoner ones. Ten were checked against the 1914 John Murphy printing, which agreed with the American-edition column in every case that its OCR could resolve. A guide that must match a reader's printed Douay-Rheims should check its loci against this table before quoting. A locus absent from the table is one where the two traditions agree."

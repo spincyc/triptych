@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.gutenberg-text-7d10da78"
+edition_id = "edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581"
+artifact_type = "electronic-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The underlying text is in the public domain by age everywhere: the Douay and Rheims translation was published in 1582, 1609, and 1610, and Bishop Challoner (died 1781) made his revision in 1749-1752. Project Gutenberg states that this eBook is in the public domain in the United States and that it \"is for the use of anyone anywhere in the United States and most other parts of the world at no cost and with almost no restrictions whatsoever\", to be copied, given away, or re-used under the Project Gutenberg License included in the file. The exact bytes are retained here with that header, licence, and trademark notice intact, so the file is redistributed on the terms Project Gutenberg attaches to it. The derived verse files registered in this edition contain none of that Project Gutenberg matter and rest on the public-domain text alone."
+rights_jurisdiction = "United States"
+source_url = "https://www.gutenberg.org/ebooks/1581.txt.utf-8"
+provenance = "Downloaded from Project Gutenberg on 2026-07-25. The file is the UTF-8 plain-text form of eBook 1581, credited to Dennis McCarthy and Tad Book, most recently updated 23 September 2023."
+retrieved = "2026-07-25"
+sha256 = "7d10da78d8ec97db53b4e2bd8719cc01e16106b44937a673ba34aa534a04c007"
+byte_size = 5880580
+path = "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/gutenberg-text-7d10da78/pg1581.txt"
+indexable = true
+encoding = "utf-8"
+notes = "Exact acquired bytes, CRLF terminated, 144123 LF-delimited physical lines. Lines 1 to 24 and 143773 to the end are Project Gutenberg header, licence, and trademark matter and are not part of the Bible text. Verse text is set as wrapped paragraphs opened by a \"chapter:verse.\" marker, with Challoner's notes, chapter arguments, Latin incipits, and book prologues as unmarked paragraphs between them, so a raw literal search over this artifact can match annotation as well as scripture. Search the per-book verse files instead when the distinction matters."
