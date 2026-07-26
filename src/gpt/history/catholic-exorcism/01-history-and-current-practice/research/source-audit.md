@@ -36,8 +36,8 @@ The study makes no clinical claim that ecclesiastical discernment can diagnose a
 - No official global count of exorcists, cases, or successful major exorcisms was found; numerical claims in press reports are omitted.
 - No checked primary source supports a universal medieval practice or a simple story in which modern psychiatry “replaced” exorcism.
 - Popular exorcist memoirs, films, podcasts, alleged recordings, and named case narratives were excluded: they are not needed to establish doctrine, law, ritual history, or safe practice.
-- The reader-supplied Gene Wolfe recollection was searched in repository holdings and publicly indexed web material. The 1996 Orb edition and exact page were unavailable. No wording is attributed to Wolfe.
-- The familiar “first rule” sentence is an editorial adaptation, not a quotation or historical claim.
+- Gene Wolfe, *The Devil in a Forest* (Orb, 1996), p. 207. On 26 July 2026 a reader transcribed the exact wording from a personal copy and identified the Abbé as speaker. Earlier repository and indexed-web searches had not located the passage. The project did not independently collate the protected edition; the publication identifies the reader-transcription boundary. The focused excerpt is used for criticism and theological discussion, not as evidence that curses work or as a source of Catholic teaching.
+- The familiar “first rule” sentence is displayed as an anonymous epigraphic adaptation, not as a historical claim or as wording attributed to a known author.
 
 ## Publication audit
 
