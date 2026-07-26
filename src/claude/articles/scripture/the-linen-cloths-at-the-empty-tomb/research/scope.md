@@ -110,3 +110,13 @@ negative result to Migne's arrangement only.
 - `research/source-audit.md` — witness-by-witness account of what was read,
   where, at what ceiling, and what was not reached.
 - `research/source-bindings.toml` — 49 bindings, every one fingerprinted.
+
+## Review and publication state
+
+The internal source audit and page review are complete; the independent
+exegetical, patristic, rabbinic, text-critical, and ecclesiastical reviews
+listed in `research/source-audit.md` remain outstanding. The reviewed PDF is
+installed at its mirrored `doc/` path. Its exact installed SHA-256 is
+`b8a10bf0727001adbe1cf8c8e161ce29e19819d1d84bb71e5759cacb20c09cf9`;
+the release manifest binds that snapshot under the project's perpetual
+public-repository authorization.
