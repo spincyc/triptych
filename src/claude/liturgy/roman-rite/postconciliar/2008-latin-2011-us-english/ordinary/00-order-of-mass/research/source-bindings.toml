@@ -1,0 +1,150 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.ordo-missae"
+loci = ["Ordo Missae, nn. 1-146, printed pp. 503-620"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The controlling Latin text of every movement expounded in the publication. The artifact was re-downloaded publication-locally on 2026-07-25 and hashed identically to the registered record, and the Order of Mass was read at artifact pages 290-348. Latin quoted in the publication at nn. 1-9, 10-20, 21-30, 31-32, 83-98, 99-106, 107-123, 124-139, and 140-146 was extracted from those bytes. The artifact is a secondary digitally typeset reproduction of the 2002 edition with visible typesetting defects; wording claims are made only where the reading is unambiguous, and the 2008 state is controlled separately. Publication-local reading is the verification ceiling asserted here."
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xvii-per-annum"
+loci = ["Dominica XVII per annum, printed pp. 466-467"]
+role = "context"
+states = ["cataloged"]
+context = "Identity reliance only. This previously verified passage establishes that the registered reproduction was already used and checked in this repository for the same edition; the publication makes no claim about any Sunday formulary and quotes none."
+
+[[bindings]]
+source_id = "passage.paul-vi.missale-romanum-constitutio.latin-missale-romanum-typica-tertia-2002.complete-text"
+loci = ["complete-text"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The publication quotes the constitution's Latin for the decree adding three new Canons, the imposition of one and the same dominical words in every Canon formula with the exact common words over bread and chalice, the repositioning of Mysterium fidei as the opening of the people's acclamation, the simplification of the Order of Mass with its named examples, the restoration of homily, universal prayer, and penitential act, the enrichment of the prefaces, and the three-year Sunday Lectionary. Read publication-locally 2026-07-25 in the hash-verified reproduction. Publication-local reading is the ceiling asserted."
+
+[[bindings]]
+source_id = "passage.holy-see.reimpressio-emendata-missalis-romani-notice-2008.italian-notitiae-503-504.edition-status"
+loci = ["edition-status"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The publication's characterization of the 2008 book as an emended reprint rather than a new typical edition, the reasons given, the three matters approved under Decree N. 652/08/L of 8 June 2008, and the pagination statement rest on this passage. The authoring agent re-downloaded the controlling Notitiae artifact publication-locally on 2026-07-25, obtained bytes identical to the registered hash, and read the notice at artifact page 49. Publication-local reading is the ceiling asserted."
+
+[[bindings]]
+source_id = "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.ordo-missae"
+loci = ["ordo-missae"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Every claim in the publication about what the 2008 reprint changed in the Order of Mass rests on this passage: the six Ordo Missae entries at Missal pp. 513, 530, 581, 605, and 616, the five Appendix entries, and the Supplementum text of the three added dismissals. The record was created for this publication from the hash-verified official Dicastery PDF, read at artifact pages 53-54 and 66-67 on 2026-07-25. The list is not a complete collation of the 2002 and 2008 books; the publication states that bound and treats silence in the list as bounded negative evidence."
+
+[[bindings]]
+source_id = "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.tempus-per-annum"
+loci = ["tempus-per-annum"]
+role = "context"
+states = ["cataloged"]
+context = "Context only: this previously verified passage establishes the bounded, itemized character of the same published variation list on which the publication's Ordo Missae claims rest. No Ordinary Time formulary is discussed in the publication."
+
+[[bindings]]
+source_id = "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.litterae-circulares-pro-multis-2006.italian-notitiae-481-482.complete-text"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The publication's account of why the 2011 English says 'for many' rests entirely on this letter: the 9 July 2005 consultation it recites, the protocol number and date, the statement that a text corresponding to pro multis has been the Latin Roman formula since the first centuries, the affirmation of the validity of Masses using an equivalent of 'for all' and of the dogma that Christ died for all, the six arguments for a more precise rendering, and the directive to prepare the faithful by catechesis. Records created for this publication from the exact official Dicastery PDF (SHA-256 942aacc0...); the letter was read at artifact pages 57-59 on 2026-07-25 and short phrases were rendered from that Italian. The 1974 CDF declaration cited inside the letter was not independently examined and is cited in the publication only as the letter cites it."
+
+[[bindings]]
+source_id = "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.liturgiam-authenticam-2001.english-vatican-web-2026-07-25.complete-text"
+loci = ["complete-text"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The publication quotes n. 20 in full as the governing principle of the 2011 translation, and cites nn. 8, 25, 27, 43, 51, 53, 56, 57, 64, 74, 131, and 133 at their own numbers for the replacement of previous norms, the standard of intelligibility, the sacred-vernacular expectation, concrete biblical imagery, lexical variety, difficult terms including consubstantialis, the named formulas Et cum spiritu tuo and mea culpa, the concise Roman manner, the stability of memorized texts, and the all-at-once manner of revision with catechesis. Record created for this publication from the exact fetched response (SHA-256 01c63c12...); wording extracted verbatim from those bytes. The promulgated Latin in AAS 93 (2001) 685-726 was not consulted, and the publication makes no claim about the instruction's present force after later instruments."
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.28"
+loci = ["28"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The publication's governing structural claim - that the Mass is one act of worship in two closely connected parts with opening and concluding rites - is stated from the Latin of this number and cross-checked in this United States English state, read at the official USCCB presentation of Chapter II on 2026-07-25."
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.43"
+loci = ["43"]
+role = "context"
+states = ["cataloged"]
+context = "Read for the United States adaptation on postures. The publication does not set out the posture norms, because the parallel numbers governing the manner of receiving Communion (nn. 160, 281-287) fall in chapters this study could not obtain; the gap is declared in the Communion Rite section rather than filled by inference."
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.79"
+loci = ["79"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The publication's table of the eight elements of the Eucharistic Prayer paraphrases the eight lettered paragraphs closely; the Latin of paragraph (f) on the faithful's offering is quoted exactly in the accompanying note. Read at the official USCCB presentation of Chapter II on 2026-07-25 and cross-checked against the Latin of the registered 2002 reproduction."
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.90"
+loci = ["90"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The publication's account of the Concluding Rites and its reading of the dismissal as a sending rest on the four lettered elements of this number, including the purpose clause quoted in Latin in the note. Read at the official USCCB presentation of Chapter II on 2026-07-25."
+
+[[bindings]]
+source_id = "edition.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23"
+loci = ["7", "14", "47", "50-53"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The publication quotes article 7 for the distinct modes of Christ's presence, with the qualifier maxime sub speciebus eucharisticis noted, and cites articles 14, 47, and 50-53 as the mandate behind the movements the reform describes as restored. The authoring agent re-fetched the registered English delivery on 2026-07-25 and obtained bytes identical to the registered artifact hash. The promulgated Latin in AAS 56 (1964) 97-138 is authoritative and was not collated; no cross-language claim is made."
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-consecratio"
+loci = ["Canon Missae, Qui pridie through Haec quotiescumque, artifact PDF pp. 387-388 (printed pp. 306-307), marginal nn. 1101-1105"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The publication's comparison of the 1962 and postconciliar forms of consecration - the presence of mysterium fidei inside the 1962 form of the chalice, the concluding command Haec quotiescumque feceritis, and the absence of quod pro vobis tradetur from the 1962 form over the bread - rests on this passage. The authoring agent downloaded the hash-verified facsimile publication-locally on 2026-07-25 and read the chalice narrative and both forms at a rendered image of artifact page 388 rather than at the OCR, independently of the concurrently registered record."
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-te-igitur"
+loci = ["Canon Missae, Te igitur through catholicae et apostolicae fidei cultoribus, artifact PDF p. 382, beginning at marginal no. 1088"]
+role = "context"
+states = ["cataloged"]
+context = "Context only: this previously verified passage supports the publication's statement that the Canon's opening section stands substantially unchanged between the two books, including the naming of the Pope and the local bishop. No 1962 wording beyond the separately bound consecration passage is quoted."
+
+[[bindings]]
+source_id = "passage.migne.patrologia-latina-16.paris-1880.coll-462"
+loci = ["coll-462"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The publication quotes De sacramentis IV, 5, 21 in full beside the Roman Canon's Quam oblationem, as evidence that the Canon's characteristic vocabulary was in Latin liturgical use before 400. Records created for this publication; read at the page image on 2026-07-25, not at OCR. The Maurist note on the restored reading ratam is reported in the publication's own note. The publication states expressly that the Milanese prayer is not the Roman Canon."
+
+[[bindings]]
+source_id = "passage.migne.patrologia-latina-16.paris-1880.coll-463-464"
+loci = ["coll-463-464"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The publication quotes De sacramentis IV, 6, 27 in full beside Unde et memores, Supra quae, and Supplices, and reports the Maurist apparatus on the readings et discipulis suis and pro multis confringetur. Records created for this publication; read at the page image on 2026-07-25."
+
+[[bindings]]
+source_id = "passage.edmund-hauler.didascaliae-apostolorum-fragmenta-veronensia-latina.leipzig-teubner-1900.p-106"
+loci = ["p-106"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The publication's clause-by-clause table of the dependence of Eucharistic Prayer II on the Verona Latin anaphora quotes from this page the eucharistic dialogue and the opening of the anaphora as far as et infernum. Records created for this publication; read at the page image on 2026-07-25. Hauler's apparatus reading extendis for extendit is reported in the publication's note. The publication makes no attribution of the underlying church order to Hippolytus and states that its authorship, date, place, and unity are disputed."
+
+[[bindings]]
+source_id = "passage.edmund-hauler.didascaliae-apostolorum-fragmenta-veronensia-latina.leipzig-teubner-1900.p-107"
+loci = ["p-107"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The same table quotes from this page the anamnesis and oblation Memores igitur mortis et resurrectionis eius and the epiclesis Et petimus, ut mittas spiritum tuum sanctum. The publication also relies on this page for the bounded observation that the anaphora as printed has no Sanctus and no intercessions, which is the basis of its account of what Prayer II added. Read at the page image on 2026-07-25."
+
+[[bindings]]
+source_id = "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.67.ocr"
+loci = ["67"]
+role = "context"
+states = ["cataloged"]
+context = "The publication cites chapter 67 for the shape of the second-century Roman Sunday assembly - readings, the president's exhortation, common prayer standing, then the bringing of bread and wine and water - in support of the claim that a prayer of the faithful in that place is ancient in type. The existing repository records for this chapter, in both the raw OCR and the paired facsimile, are relied on as they stand; the authoring agent did not re-inspect the facsimile. The publication uses the passage as evidence for a second-century assembly, not as a description of the postconciliar rite."
+
+[[bindings]]
+source_id = "passage.justin-martyr.first-apology.dods-reith-coxe-anf1-1887.67.facsimile"
+loci = ["67"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The paired facsimile witness controls the wording, page identity, and attribution of the chapter cited above. Reliance on the existing verified repository record is the ceiling asserted here."
