@@ -43,6 +43,7 @@ REQUIRED_MODEL_QUALIFIERS = {
     # The Claude Code runtime exposes no numeric qualifiers; the empty set
     # records that decision explicitly and behaves identically to omission.
     "claude-fable-5": set(),
+    "claude-opus-5[1m]": set(),
 }
 REQUIRED_RUNTIME_PATTERNS = {
     "gpt-5.6-sol": (
@@ -52,6 +53,11 @@ REQUIRED_RUNTIME_PATTERNS = {
         re.compile(r"\bunexposed: server revision\b"),
     ),
     "claude-fable-5": (
+        re.compile(r"\bAnthropic Claude Code\b"),
+        re.compile(r"\bClaude Code CLI [0-9]+\.[0-9]+\.[0-9]+\b"),
+        re.compile(r"\bunexposed: server revision\b"),
+    ),
+    "claude-opus-5[1m]": (
         re.compile(r"\bAnthropic Claude Code\b"),
         re.compile(r"\bClaude Code CLI [0-9]+\.[0-9]+\.[0-9]+\b"),
         re.compile(r"\bunexposed: server revision\b"),

@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.priestly-fraternity-of-saint-peter.constitutions.excerpt-part-i-english-fssp-web-2026-07-26.fssp-html"
+edition_id = "edition.priestly-fraternity-of-saint-peter.constitutions.excerpt-part-i-english-fssp-web-2026-07-26"
+artifact_type = "official-html"
+media_type = "text/html"
+storage = "restricted"
+rights_status = "restricted"
+rights_basis = "The site fssp.org carries a general copyright line for the Priestly Fraternity of Saint Peter and its legal-notices page, reviewed 2026-07-26, establishes no redistribution permission. No repository redistribution permission was established."
+source_url = "https://www.fssp.org/en/excerpt-of-the-constitutions-of-the-priestly-fraternity-of-saint-peter/"
+provenance = "Exact HTML response acquired directly over HTTPS from the Priestly Fraternity of Saint Peter's international site."
+retrieved = "2026-07-26"
+sha256 = "a9c95c24609beb60658774fb71407d5791653273e49f091d169d1556851faf62"
+byte_size = 109390
+indexable = false
+notes = "Restricted bytes not retained. The page carries the marker '[Original: French]' and a headnote on the 1999 Holy See review and the 2000 chapter revision. The fssp.org theme emits a fresh random element identifier in its search widget on every request, so a later fetch of the same page will not reproduce this digest; the record identifies the exact response acquired on the retrieval date, and the document text it carries is stable."
