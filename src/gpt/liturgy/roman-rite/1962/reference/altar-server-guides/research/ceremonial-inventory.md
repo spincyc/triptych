@@ -322,6 +322,12 @@ The following consequential points are settled in the current inventory:
   (picture-left), and owns water, bowl, and the Gospel-to-Epistle Missal
   return. Neither server transfers the chalice veil or chalice. Both make
   every ordinary server response.
+- The child lane identifies that roster as `OUR REHEARSED MODEL` before the
+  chronology begins. The affected pages repeat the qualification for the
+  Epistle-to-Gospel book move, Creed posture, bell plan, Communion warning and
+  plate bearer, paired ablutions, and Gospel-to-Epistle book return. This
+  prevents a selected manual allocation from being represented as a universal
+  prescription of the Missal.
 - LM-001, LM-010, LM-016, LM-021--LM-023, LM-027--LM-029, and LM-036--LM-037
   account for the declared floor/Step1/Step2/predella model and all object
   transitions. The Missal starts E, moves to G in First's hands after the
@@ -344,6 +350,16 @@ The following consequential points are settled in the current inventory:
   `Comm+` teaching model; the `Comm-` route leaves both the warning and plate
   unused. This continuous First assignment deliberately resolves the
   compared ACSS route's otherwise unspoken plate transfer.
+- LM-034--LM-035 no longer turn the model picture into a universal approach
+  side. The child instruction says to join the priest on the side marked by
+  the trainer; the picture identifies priest's right/picture-left only as the
+  model shown. This agrees with the inventory's existing `LOCAL` status for
+  side, rail lane, altar placement, and communicant order.
+- LM-036 is pictured as two numbered moments rather than one composite pose:
+  First's initial wine purification at the marked predella point, followed by
+  First with wine and Second with water at the marked finger-washing points.
+  Plate return remains explicit in the action text without crowding either
+  service diagram.
 - LM-021 retains the cruet kisses as a terse trainer-only detail rather than a
   separate child action. LM-019 retains the kneeling-and-bow Creed model, and
   LM-031 excludes a pax-instrument route from the core. LM-043 keeps the

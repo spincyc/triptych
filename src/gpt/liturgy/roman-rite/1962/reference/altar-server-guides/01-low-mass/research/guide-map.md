@@ -1,10 +1,10 @@
-# Guide map: Serving Low Mass child booklet
+# Guide map: Serving Low Mass child field guide
 
 - Stable publication ID:
   `liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass`
 - Form: ordinary two-server Low Mass according to the 1962 Roman Missal
 - Primary reader: a child approximately eight to ten years old, using the
-  booklet with a trainer
+  field guide with a trainer
 - Model roles: First Acolyte and Second Acolyte
 - Imported verbal owner: A1--A22 from `shared/response-reference.tex`
 - Imported ceremonial owner: LM-001--LM-043 as rendered from
@@ -18,30 +18,33 @@
 
 1. Page 1: title and immediate use boundary.
 2. Page 2: role and one-page-at-a-time practice key.
-3. Page 3: front-facing model-sanctuary key with a first step, second step,
-   and predella; the opening Missal is on the Epistle side.
-4. Pages 4--13, `Foot/Altar`: arrive and kneel before beginning the prayers;
+3. Page 3: real-church mapping worksheet plus front-facing model-sanctuary
+   key; the trainer records the centre reverence, Communion side, and bell
+   pattern before rehearsal.
+4. Pages 4--12, `Foot/Altar`: arrive and kneel before beginning the prayers;
    Psalm 42; the priest's and servers' Confiteors; absolution prayers; and the
    final foot-prayer versicles.
-5. Pages 14--19, `Readings`: move to the normal places; Kyrie; Collect and
+5. Pages 13--16, `Readings`: move to the normal places; Kyrie; Collect and
    Epistle; move the Missal; answer at the Gospel; then the sermon and Creed
    states.
-6. Pages 20--22, `Offertory`: greeting and cruets; Lavabo and bell pickup;
+6. Pages 17--19, `Offertory`: greeting and cruets; Lavabo and bell pickup;
    then the complete *Orate, fratres* cue and *Suscipiat* response.
-7. Pages 23--25, `Canon`: Preface dialogue, bell plan, and elevations.
-8. Pages 26--29, `Communion`: responses, faithful-Communion branch,
+7. Pages 20--22, `Canon`: Preface dialogue, bell plan, and elevations.
+8. Pages 23--26, `Communion`: responses, faithful-Communion branch,
    Communion-plate purification and return, ablutions, and the
    Second Acolyte's Missal return while the priest prepares the chalice.
-9. Pages 30--32, `Ending`: Postcommunion and dismissal, blessing and Last
+9. Pages 27--29, `Ending`: Postcommunion and dismissal, blessing and Last
    Gospel, then the final route and recessional.
-10. Page 33: six-stage quick route, scope and sources, and generation
+10. Page 30: six-stage quick route, scope and sources, and generation
     provenance.
 
 Numbered priest-to-server dialogue lanes stay in chronological order.
-Pronunciation and meaning appear only when a response first occurs; repeats
-retain the complete cue and canonical response without duplicating the aids.
-Pages 9--11 give the servers' complete Confiteor a three-page, full-width
-phrase ladder. Original front-view sanctuary diagrams appear only where
+The child sees the canonical response and a pronunciation aid when a response
+first occurs; repeats retain the complete cue and response. Meanings and
+correction detail remain in the page-aligned trainer layer instead of competing
+with the child's immediate speaking and movement task.
+Pages 9--10 give the servers' complete Confiteor as three full-width
+phrase-ladder sections. Original front-view sanctuary diagrams appear only where
 positions, step levels, objects, or role traffic materially change.
 
 ## Declared two-server model
@@ -88,8 +91,10 @@ sanctuary before rehearsal.
 
 ## Presentation boundary
 
-The child pages contain no trainer-only source discussion, IPA, assessment,
-mastery record, or written exercise. Atkinson Hyperlegible Next 2.001 supplies
+The child pages contain no trainer-only source discussion, IPA, quiz, written
+exercise, or mastery record. Short rehearsal checks occur at stage boundaries,
+and page 3 contains the trainer-completed local-route fields needed before
+practice. Atkinson Hyperlegible Next 2.001 supplies
 distinct capital forms; pages are monochrome US letter. No progression table
 compresses the order. Dialogue, action, and diagram blocks use stable
 placement and consistent type sizes.

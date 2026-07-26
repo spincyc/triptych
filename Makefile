@@ -20,9 +20,11 @@ CODEX ?= /usr/bin/codex
 #   pdflatex, kpsewhich/kpathsea and every directly loaded class/package/font:
 #     texlive-bin texlive-basic texlive-latex texlive-latexrecommended
 #     texlive-latexextra texlive-pictures texlive-fontsrecommended
+#     texlive-fontsextra
 #     article, geometry, fontenc, inputenc, lmodern, microtype, array,
 #     booktabs, longtable, tabularx, enumitem, needspace, multicol, xcolor,
-#     hyperref, tcolorbox, tikz/PGF, pdflscape, ragged2e, titlesec and endnotes
+#     hyperref, tcolorbox, tikz/PGF, pdflscape, ragged2e, titlesec, endnotes,
+#     and Atkinson Hyperlegible (atkinson.sty)
 #   PDF metadata/text/raster and bounded PNG/contact-sheet processing:
 #     poppler (pdfinfo, pdftotext, pdftoppm) and imagemagick (magick 7)
 #   LaTeX-to-Markdown conversion for the tracked web editions:
@@ -49,7 +51,7 @@ ARCH_CORE_PACKAGES := make bash findutils coreutils diffutils
 ARCH_PYTHON_PACKAGES := python tzdata python-markdown
 ARCH_TEX_PACKAGES := texlive-bin texlive-basic texlive-latex \
 	texlive-latexrecommended texlive-latexextra texlive-pictures \
-	texlive-fontsrecommended
+	texlive-fontsrecommended texlive-fontsextra
 ARCH_PDF_PACKAGES := poppler imagemagick
 ARCH_WEB_PACKAGES := pandoc
 ARCH_WORKFLOW_PACKAGES := git github-cli openai-codex ripgrep

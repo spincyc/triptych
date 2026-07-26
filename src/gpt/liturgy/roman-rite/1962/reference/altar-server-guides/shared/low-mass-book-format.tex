@@ -1,6 +1,6 @@
-% Shared page and teaching format for the Low-Mass child booklet and its
-% page-matched trainer manual. Both publications import the same ceremonial
-% sequence; only the trainer's narrow left rail and type scale differ.
+% Shared page and teaching format for the Low-Mass child field guide and its
+% page-aligned trainer manual. Both import one ceremonial sequence. The child
+% lane stays action-first; the trainer may retain meanings and correction data.
 
 \usepackage[sfdefault]{atkinson}
 \usepackage{ragged2e}
@@ -14,6 +14,9 @@
 \setlength{\emergencystretch}{2em}
 \hyphenpenalty=8000
 \exhyphenpenalty=10000
+
+\newif\ifLMSuppressTrainerMeaning
+\LMSuppressTrainerMeaningfalse
 
 \newcommand{\LMStageHeader}[2]{%
   \noindent\makebox[\textwidth][s]{%
@@ -57,6 +60,28 @@
       \vspace{0pt}
   \fi}
 
+\newcommand{\ContinueLMPage}[3]{%
+  \vspace{14pt}
+  \hrule height 1.2pt
+  \vspace{6pt}
+  {\fontsize{8.5}{10}\selectfont\bfseries #1\par}
+  \vspace{2pt}
+  {\fontsize{18}{21}\selectfont\bfseries #2\par}
+  \vspace{6pt}
+  \ifTrainerManualGuide
+    \noindent
+    \begin{minipage}[t]{0.205\textwidth}
+      \vspace{0pt}
+      \LMTrainerRailTitle
+      #3
+    \end{minipage}
+    \hfill
+    \vrule width 0.7pt
+    \hfill
+    \begin{minipage}[t]{0.745\textwidth}
+      \vspace{0pt}
+  \fi}
+
 \newcommand{\EndLMPage}{%
   \ifTrainerManualGuide
     \end{minipage}
@@ -70,6 +95,14 @@
     {\fontsize{12}{15}\selectfont\RaggedRight #1\par}
   \fi
   \vspace{8pt}}
+
+\newcommand{\LMRehearsalCheck}[1]{%
+  \vspace{8pt}
+  \noindent
+  \fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+    {\fontsize{9}{10.8}\selectfont\bfseries REHEARSAL CHECK\par}
+    \vspace{2pt}
+    {\fontsize{11.5}{14}\selectfont\RaggedRight #1\par}}}}
 
 \newcommand{\LMLaneLabel}[1]{%
   {\fontsize{9}{10.8}\selectfont\bfseries\MakeUppercase{#1}\par}}
@@ -108,11 +141,13 @@
       \vspace{2pt}
       {\fontsize{12}{14.5}\selectfont\RaggedRight
         \ServerSoundData{#3}\par}
-      \vspace{5pt}
-      {\fontsize{9}{10.8}\selectfont\bfseries MEANING\par}
-      \vspace{2pt}
-      {\fontsize{12}{14.5}\selectfont\RaggedRight
-        \ServerMeaningData{#3}\par}
+      \ifLMSuppressTrainerMeaning\else
+        \vspace{5pt}
+        {\fontsize{9}{10.8}\selectfont\bfseries MEANING\par}
+        \vspace{2pt}
+        {\fontsize{12}{14.5}\selectfont\RaggedRight
+          \ServerMeaningData{#3}\par}
+      \fi
     \end{minipage}
     \par\vspace{8pt}\hrule height 0.5pt
   \else
@@ -137,11 +172,6 @@
       \vspace{2pt}
       {\fontsize{12}{14.5}\selectfont\RaggedRight
         \ServerSoundData{#3}\par}
-      \vspace{7pt}
-      {\fontsize{9}{10.8}\selectfont\bfseries MEANING\par}
-      \vspace{2pt}
-      {\fontsize{12}{14.5}\selectfont\RaggedRight
-        \ServerMeaningData{#3}\par}
     \end{minipage}
     \par\vspace{11pt}\hrule height 0.55pt
   \fi}
@@ -239,20 +269,43 @@
   \hspace{0.8em}\vrule width 0.8pt\hspace{0.8em}%
   \begin{minipage}[t]{\dimexpr0.89\linewidth-1.6em-0.8pt\relax}
     \ifTrainerManualGuide
-      {\fontsize{9}{10.8}\selectfont\bfseries\MakeUppercase{#2}\par}
+      {\fontsize{9}{10.8}\selectfont\bfseries WHO\quad\MakeUppercase{#2}\par}
       \vspace{2pt}
-      {\fontsize{12.5}{15}\selectfont\bfseries\RaggedRight #3\par}
+      {\fontsize{12.5}{15}\selectfont\bfseries\RaggedRight DO:\ #3\par}
       \vspace{3pt}
-      {\fontsize{12}{15}\selectfont\RaggedRight #4\par}
+      {\fontsize{12}{15}\selectfont\RaggedRight
+        \textbf{HOW / FINISH:} #4\par}
     \else
-      {\fontsize{9}{10.8}\selectfont\bfseries\MakeUppercase{#2}\par}
+      {\fontsize{9}{10.8}\selectfont\bfseries WHO\quad\MakeUppercase{#2}\par}
       \vspace{2pt}
-      {\fontsize{14}{16.8}\selectfont\bfseries\RaggedRight #3\par}
+      {\fontsize{14}{16.8}\selectfont\bfseries\RaggedRight DO:\ #3\par}
       \vspace{4pt}
-      {\fontsize{12}{15}\selectfont\RaggedRight #4\par}
+      {\fontsize{12}{15}\selectfont\RaggedRight
+        \textbf{HOW / FINISH:} #4\par}
     \fi
   \end{minipage}
   \par\vspace{7pt}\hrule height 0.45pt}
+
+\newcommand{\LMCompactTrainerAction}[4]{%
+  \ifTrainerManualGuide
+    \vspace{4pt}
+    \noindent
+    \begin{minipage}[t]{0.07\linewidth}
+      {\fontsize{11.5}{13}\selectfont\bfseries #1\par}
+    \end{minipage}%
+    \hspace{0.65em}\vrule width 0.8pt\hspace{0.65em}%
+    \begin{minipage}[t]{\dimexpr0.89\linewidth-1.3em-0.8pt\relax}
+      {\fontsize{8}{9.4}\selectfont\bfseries WHO\quad\MakeUppercase{#2}\par}
+      \vspace{1pt}
+      {\fontsize{11.5}{13.5}\selectfont\bfseries\RaggedRight DO:\ #3\par}
+      \vspace{1pt}
+      {\fontsize{11}{13.2}\selectfont\RaggedRight
+        \textbf{HOW / FINISH:} #4\par}
+    \end{minipage}
+    \par\vspace{3pt}\hrule height 0.45pt
+  \else
+    \LMAction{#1}{#2}{#3}{#4}%
+  \fi}
 
 \newcommand{\LMBranch}[2]{%
   \vspace{8pt}
@@ -284,9 +337,6 @@
     \vspace{6pt}
     {\fontsize{9}{10.8}\selectfont\bfseries SAY IT\par}
     {\fontsize{12}{14.5}\selectfont\RaggedRight #4\par}
-    \vspace{5pt}
-    {\fontsize{9}{10.8}\selectfont\bfseries MEANING\par}
-    {\fontsize{12}{14.5}\selectfont\RaggedRight #5\par}
   \fi
   \vspace{8pt}\hrule height 0.5pt}
 
@@ -309,9 +359,10 @@
     \ifTrainerManualGuide
       {\fontsize{22}{25}\selectfont\bfseries TRAINER MANUAL\par}
       \vspace{12pt}
-      {\fontsize{14}{18}\selectfont A page-matched guide to the child booklet\par}
+      {\fontsize{14}{18}\selectfont
+        Page-aligned coaching for the child field guide\par}
     \else
-      {\fontsize{22}{25}\selectfont\bfseries CHILD BOOKLET\par}
+      {\fontsize{22}{25}\selectfont\bfseries CHILD FIELD GUIDE\par}
       \vspace{12pt}
       {\fontsize{14}{18}\selectfont First Acolyte and Second Acolyte\par}
     \fi
