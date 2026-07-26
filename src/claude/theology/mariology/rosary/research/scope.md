@@ -194,6 +194,9 @@ images reproduced in the publication.
 
 ## Outstanding review
 
+## Staleness review — 2026-07-26
+Both candidates found new delivery and Augustine records unrelated to the prayer and mystery audit. **No material change.** See `src/sources/inventories/fatima-dogmas-rosary-staleness-review-2026-07-26.md`.
+
 - independent Mariological, historical, patristic, liturgical,
   canonical, and textual review; collation against print editions (including the Latin
   originals of Consueverunt, the Leonine corpus, and the printed
