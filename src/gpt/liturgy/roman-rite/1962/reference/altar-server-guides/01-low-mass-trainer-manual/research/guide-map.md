@@ -4,7 +4,7 @@
   `liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual`
 - Form: ordinary two-server Low Mass according to the 1962 Roman Missal
 - Primary reader: a parent or trainer with moderate liturgical formation
-- Child text owner and exact page match:
+- Child field-guide owner and exact page alignment:
   `liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass`
 - Imported verbal owner: A1--A22 from `shared/response-reference.tex`
 - Imported ceremonial owner: LM-001--LM-043 as rendered from
@@ -14,25 +14,27 @@
 
 ## Page-matching contract
 
-The trainer manual has the same thirty-three-page physical sequence as the
-child booklet. Page 1 is an edition-specific cover; pages 2--33 reproduce the
-child's main-lane words in the same order and with the same hard page
-boundaries. A narrow trainer-only rail remains on the left of every
-instructional page. The rail may add only terse preparation, branch,
-correction, source-hierarchy, safety, or observation notes relevant to that
-page; it does not replace or paraphrase the child text.
+The trainer manual has the same thirty-page physical sequence as the
+child field guide. Page 1 is an edition-specific cover; pages 2--30 preserve
+the same lesson order, action identity, diagrams, and hard page boundaries.
+The adult lane retains meanings and correction detail that are intentionally
+absent from the action-first child lane. A narrow trainer-only rail remains on
+the left of every instructional page and adds preparation, branch,
+source-hierarchy, safety, and observation notes relevant to that page.
 
 The cover identifies the trainer edition. Every later page prints
 `MATCHES CHILD PAGE n` in the left rail. The trainer edition uses a smaller
-but fixed main-lane scale so the narrower lane remains page matched. It does
-not alternate the rail, add worksheets, or add a mastery record.
+but fixed main-lane scale so the narrower lane remains page aligned. It does
+not alternate the rail or add a separate mastery record. Page 3 mirrors the
+local-route fields and the stage-boundary pages mirror the short rehearsal
+checks used with the child.
 
 The physical sequence is identical to the child map: page 4 is `ARRIVE AND
-KNEEL`, page 5 is `BEGIN THE PRAYERS`, page 17 is `MOVE THE MISSAL`, page 18
-is `ANSWER AT THE GOSPEL`, page 19 is `AFTER THE GOSPEL`, page 20 is `ANSWER
-AND SERVE THE CRUETS`, page 21 is `SERVE THE LAVABO`, and page 22 is `ANSWER
+KNEEL`, page 5 is `BEGIN THE PRAYERS`, page 15 is `MOVE THE MISSAL`, page 16
+contains `ANSWER AT THE GOSPEL` and `AFTER THE GOSPEL`, page 17 is `ANSWER
+AND SERVE THE CRUETS`, page 18 is `SERVE THE LAVABO`, and page 19 is `ANSWER
 ORATE, FRATRES`. Every following unit remains aligned through the quick route
-on page 33. The page-33 rail also supplies the terse flash-card print and use
+on page 30. The page-30 rail also supplies the terse flash-card print and use
 key: letter paper, 100 percent scale, long-edge duplex, one-sheet verification
 before cutting, and Priest-cue/Both-response practice.
 

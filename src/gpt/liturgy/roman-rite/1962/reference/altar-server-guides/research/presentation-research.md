@@ -1,6 +1,31 @@
 # Presentation research: Low Mass server package
 
-Research cutoff: 2026-07-24 (America/Chicago).
+Research cutoff: 2026-07-25 (America/Chicago).
+
+## 2026-07-26 action-first reconciliation
+
+The child publication now presents each stage as a field guide: identify the
+actor, perform the action, then check the manner of execution. Short movement
+rehearsals and a local-sanctuary mapping sheet make model assignments and
+local choices explicit. The trainer remains page-aligned with the child
+publication but adds meanings, correction points, and adult preparation
+notes instead of duplicating the child's prose word for word.
+
+This is an evidence-informed editorial application of the hierarchy,
+connected-media, and rehearsal principles recorded below. It has passed
+internal source and screen review only; it has not received new intended-reader
+testing, independent pedagogical review, or physical-use testing.
+
+## 2026-07-25 density correction
+
+The forced one-lesson-per-sheet rule produced several pages whose content
+occupied only about one third of the printable height. The child and trainer
+now use one physical page for two adjacent short sections when both complete
+units fit at the established type sizes and the trainer rail remains aligned:
+Confiteor parts 2 and 3, normal places and Kyrie, and Gospel response and
+post-Gospel branches. Trial pairings that created an orphaned continuation
+were rejected after raster review. The final pair is 30 rather than 33 pages,
+with no type reduction and with identical child/trainer physical pagination.
 
 ## Status and scope
 
@@ -14,9 +39,9 @@ existing owners and review requirements.
 The approved contract is implemented in the TeX sources and supporting source
 and card records. The exact child booklet, trainer manual, and flash-card PDFs
 recorded in `production-manifest.md` remain installed as an evaluation trio.
-The current source additionally contains an uninstalled illustration and
-choreography-correction candidate for the child booklet and trainer manual.
-It refines their shared model-sanctuary drawing system and corrects the
+The installed child booklet and trainer manual include the illustration,
+choreography, and density corrections. The shared model-sanctuary drawing
+system and selected two-acolyte sequence now correctly identify the
 selected two-acolyte sequence for the Gospel-side Missal move, Communion
 plate, ablutions, return of the Missal, and the priest's prepared chalice. It
 does not change the Low-Mass flash cards. Its production and every-page screen

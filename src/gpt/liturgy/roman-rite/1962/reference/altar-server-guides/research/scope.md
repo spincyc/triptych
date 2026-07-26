@@ -33,10 +33,12 @@
 
 The Low-Mass family now has three independently printable publications:
 
-1. `01-low-mass`, a child booklet for the complete ordinary two-server route;
-2. `01-low-mass-trainer-manual`, a page-matched adult edition whose main lane
-   repeats the child text word-for-word and whose narrow trainer-only rail
-   remains on the left; and
+1. `01-low-mass`, an action-first child field guide for the complete ordinary
+   two-server route;
+2. `01-low-mass-trainer-manual`, a page-aligned adult edition that preserves
+   the child's lesson order, action identity, diagrams, and page boundaries
+   while retaining meanings, correction cues, sources, and local-choice
+   rationale in its trainer layer; and
 3. `01-low-mass-flash-cards`, a twenty-two-card verbal-retrieval companion.
 
 This is a deliberate replacement of the former response-only Low-Mass guide

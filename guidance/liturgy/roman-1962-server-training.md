@@ -395,11 +395,15 @@ flash-card face may use a full-width phrase ladder. The child booklet contains
 no trainer-only source discussion, IPA, quiz, written exercise, or mastery
 record.
 
-The Low Mass trainer manual reproduces the child's main-lane words, order, and
-hard page boundaries exactly. A narrow trainer-only rail remains on the left of
-every instructional page; it may add terse preparation, correction, branch,
-source-hierarchy, safety, or observation notes but may not paraphrase the child
-text, displace it to a different page, or become required prose for the child.
+The Low Mass trainer manual preserves the child's lesson order, action identity,
+diagrams, and hard page boundaries, but need not reproduce every explanatory
+word. The child lane is a field guide: cue, actor, observable action, finish
+state, and short rehearsal check. Pronunciation meanings, source hierarchy,
+manual disagreements, correction cues, preparation, and local-choice rationale
+belong in the trainer layer unless a child must know them to act safely or
+correctly. A narrow trainer-only rail remains on the left of every instructional
+page. The trainer page must still be usable beside the matching child page
+without a cross-reference search.
 The child and trainer pages are monochrome letter-size publications with stable
 type sizes and a typeface whose capital `I`, `J`, and `L` remain clearly
 distinguishable.
@@ -413,6 +417,10 @@ markers, and make standing and kneeling recognizable from the figure
 silhouette as well as the adjacent words. Object moves and walking routes must
 remain visually secondary to the final positions they explain, and crossing
 paths or labels may not obscure an actor, object, level, or destination.
+When one action contains materially different moments, use numbered
+before/after or state-change frames rather than one composite pose. A route
+frame names its cue, moving actor, carried object, stopping point, and finish
+state. Do not add a figure merely to show both ends of one actor's movement.
 
 After a compact title and contents, each sung full guide retains a one-page
 trainer start sheet. It tells the trainer which publication to print, what the

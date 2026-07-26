@@ -1,7 +1,7 @@
 % Original monochrome front-view diagrams for the Low-Mass child booklet and
-% trainer manual. They show a declared three-level model sanctuary. Required
-% genuflections are stated in the accompanying prose but are deliberately not
-% drawn: the tested prototype did not distinguish that pose reliably.
+% trainer manual. They show a declared three-level model sanctuary. Stable
+% positions and object-safe routes are pictured; the exact centre reverence is
+% selected and demonstrated at the actual altar before these diagrams are used.
 
 \tikzset{
   lm architecture/.style={
@@ -484,6 +484,13 @@
   \textperiodcentered\quad 2 SECOND STEP\quad
   \textperiodcentered\quad 3 PREDELLA\par}}
 
+\newcommand{\LMModelChoice}[1]{%
+  \vspace{2pt}
+  \noindent
+  \fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+    {\fontsize{9.5}{11.5}\selectfont\RaggedRight
+    \textbf{OUR REHEARSED MODEL:} #1\par}}}}
+
 \newcommand{\LMDiagramNote}[1]{%
   \vspace{2pt}
   \fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
@@ -626,20 +633,35 @@
   \LMEndScene}
 
 \newcommand{\LMSceneAblutions}{%
-  \LMBeginScene
-    \LMAltarBackdrop
-    \LMMissalGospel
+  \LMBeginStripScene
+    \begin{scope}
+      \clip (0.20,-0.40) rectangle (23.80,5.52);
+      \LMAltarBackdrop
+    \end{scope}
+    \LMLevelMarkersLeft
+    \LMStandingPriestAt{12.4}{2.04}
+    \LMStandingServerAt{15.7}{2.04}{}
+    \LMCruet{15.7}{3.57}{W}
+    \node[lm role tag,anchor=south] at (17.8,4.64) {1\quad FIRST:\\WINE INTO CHALICE};
+    \draw[lm detail] (16.75,4.45) -- (16.05,4.08);
+  \LMEndScene}
+
+\newcommand{\LMSceneFingerWashing}{%
+  \LMBeginStripScene
+    \begin{scope}
+      \clip (0.20,-0.40) rectangle (23.80,5.52);
+      \LMAltarBackdrop
+    \end{scope}
     \LMLevelMarkersLeft
     \LMStandingPriestAt{12.8}{2.04}
     \LMStandingServerAt{15.7}{1.38}{}
     \LMStandingServerAt{18.55}{1.38}{}
     \LMCruet{15.7}{2.91}{W}
     \LMCruet{18.55}{2.91}{A}
-    \node[lm role tag,anchor=south] at (15.7,4.82) {FIRST\\WINE};
+    \node[lm role tag,anchor=south] at (15.7,4.82)
+      {2\quad FIRST\\WINE};
     \node[lm role tag,anchor=south] at (18.55,4.82)
       {SECOND\\WATER};
-    \LMRestingPlate{5.90}{5.68}
-    \node[lm object tag,anchor=south] at (5.90,6.14) {PLATE IF USED};
   \LMEndScene}
 
 \newcommand{\LMScenePlateReturn}{%
@@ -669,8 +691,9 @@
     \LMStandingServerAt{8.0}{1.38}{SECOND}
     \LMCarriedMissal{8.0}{2.52}
     \LMKneelingServerAt{18.7}{0.73}{FIRST}
-    % First has already cleared the plate. Only Second now crosses with the
-    % Missal; the priest's prepared chalice remains at the altar centre.
+    \LMStandingPriestAt[0.82]{12}{2.04}
+    % First has already cleared the plate. Only Second crosses with the
+    % Missal while the priest prepares the chalice at the altar.
     \draw[lm route]
       (8.55,1.63) .. controls (9.65,0.82) and (10.85,0.46) ..
       (12,0.42) .. controls (13.15,0.46) and (14.45,0.82) ..

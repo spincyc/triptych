@@ -623,6 +623,7 @@ exec /usr/bin/id "$@"
             "texlive-latexextra",
             "texlive-pictures",
             "texlive-fontsrecommended",
+            "texlive-fontsextra",
             "poppler",
             "imagemagick",
             "pandoc",

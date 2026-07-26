@@ -171,7 +171,7 @@ The source, response, pronunciation, ceremonial, and pedagogical checks above
 remain the audit basis for the series. The prior integrated R-card companions
 and full-guide catalog pointers received the historical build and production
 review recorded in `production-manifest.md`. The redesigned Low-Mass child
-booklet, page-matched trainer manual, and twenty-two-card flash deck now have
+field guide, page-aligned trainer manual, and twenty-two-card flash deck now have
 source-built exact identities, clean build and text checks, a completed
 technical font audit, every-page screen review, and exact installed identities
 recorded there. The same production record separately identifies the later

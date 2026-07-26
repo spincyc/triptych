@@ -51,15 +51,15 @@ reproduced the exact flash-card and four sung-form hashes below.
 
 | Source publication | Revision UTC | Pages | Physical cards | Bytes | SHA-256 | State |
 | --- | --- | ---: | ---: | ---: | --- | --- |
-| `01-low-mass` | `2026-07-24T03:20:06Z` | 33 | 0 | 203,660 | `25e61efa29745f5e69ac24ddcabc94bcba3ba4424a61261c71dbb7089473335b` | installed evaluation snapshot; not release-authorized |
-| `01-low-mass-trainer-manual` | `2026-07-24T03:20:06Z` | 33 | 0 | 219,207 | `c507df839af9b96ee273e0d4317a54109779d8bd155b955298c2f6d1ef207c56` | installed evaluation snapshot; not release-authorized |
+| `01-low-mass` | `2026-07-26T10:27:32Z` | 30 | 0 | 222,382 | `820b5aef1d1c39aa498955d87a9911c1a6f51f3d5db43611963340cc2e2914d4` | installed action-first evaluation snapshot; not release-authorized |
+| `01-low-mass-trainer-manual` | `2026-07-26T10:27:32Z` | 30 | 0 | 238,060 | `5899cb40a25802c047cdae1593154f884cd1e0f521f10cf2f727ccce70bbc64a` | installed page-aligned evaluation snapshot; not release-authorized |
 | `01-low-mass-flash-cards` | `2026-07-23T21:26:03Z` | 6 | 22 | 73,254 | `d361503e0bd46c873d07411ce3cce2fe184fb690bb3c7cb66aaa48e45ab7dc35` | installed evaluation snapshot; not release-authorized |
 | `02-missa-cantata` | `2026-07-23T02:31:26Z` | 29 | 0 | 668,985 | `09c14200921ff31fe72aff9ee7de20370241f104de3d59c00c641fadd71eeaff` | unchanged; installed exact match |
 | `02-missa-cantata-cue-cards` | `2026-07-23T02:31:26Z` | 12 | 36 | 474,866 | `29dcbd0390872b3474f26b5096907730bb856ddfb360dbd1f5cb3a43b0a488b2` | unchanged; installed exact match |
 | `03-solemn-mass` | `2026-07-23T02:31:26Z` | 31 | 0 | 681,161 | `c00ddb2319aa14b703c24655f28d36de4e36434e6c98fde651d65c1e65e4ec63` | unchanged; installed exact match |
 | `03-solemn-mass-cue-cards` | `2026-07-23T02:31:26Z` | 12 | 36 | 479,127 | `725b02f8f11dbcc2dd350c95cea8ea82a2626f48d7249efd07786886fb26fed7` | unchanged; installed exact match |
 
-The current source set is 156 pages: 126 guide or manual pages and 30 card
+The current source set is 150 pages: 120 guide or manual pages and 30 card
 pages. It contains 94 physical cards: 22 Low-Mass cards, 36 Missa-Cantata
 cards, and 36 Solemn-Mass cards. It has 70 distinct card IDs: 22 LM-F
 selections, 24 shared R responses, 12 MC actions, and 12 SO actions. The shared
@@ -77,7 +77,7 @@ R deck is physically repeated in both sung companions.
 - All seven logs contain no fatal error, undefined reference, LaTeX or package
   warning, overfull box, underfull box, or unresolved rerun notice.
 - `qpdf --check` reports no syntax or stream-encoding error in any PDF.
-  `pdfinfo` confirms page counts of 33/33/6/29/12/31/12 and 612 by 792 point
+  `pdfinfo` confirms page counts of 30/30/6/29/12/31/12 and 612 by 792 point
   US-letter geometry.
 - Every listed font is embedded and subsetted and has a ToUnicode map. UTF-8
   text extraction succeeds in all three Low-Mass PDFs with no replacement
@@ -130,7 +130,7 @@ Cantata and Solemn Mass companions retain their previously reviewed fronts on
 pages 1, 3, 5, 7, 9, and 11 and mirrored backs on pages 2, 4, 6, 8, 10, and
 12.
 
-## Every-page screen review
+## Historical 2026-07-24 every-page screen review
 
 The bounded repository review tool rastered all 72 pages in the Low-Mass
 evaluation trio.
@@ -151,7 +151,7 @@ clipped.
 The final screen review found no clipping, collision, broken sequence,
 accidental blank, split unit, or terminal overflow. In particular:
 
-- the child and trainer share the same 33-page order and main-lane source;
+- the child and trainer shared the same 33-page order and main-lane source;
 - the Lavabo and ablution figures stand on the named second step and remain on
   the stated side of the altar edge;
 - the Communion scene prints the complete `PRIEST` label, distinguishes the
@@ -274,3 +274,61 @@ or terminal overflow.
 Screen review does not substitute for the pending actual-size, physical
 duplex, photocopy, paired-use, independent, rights, or
 ecclesiastical-suitability gates.
+
+## 2026-07-25 Low-Mass corrective installation
+
+The child booklet and trainer manual were rebuilt from the corrected
+two-acolyte source and installed as the exact 30-page evaluation snapshots in
+the current table. The installed pair now assigns the Epistle-to-Gospel Missal
+move to First and the Gospel-to-Epistle return to Second in both words and
+pictures. Every diagram contains at most the two declared acolyte figures;
+where the celebrant is needed as a cue or handoff partner, his distinct
+chasuble silhouette and `PRIEST` capsule remain explicit.
+
+Three short sequences now share sheets without reducing any established
+teaching type size: Confiteor parts 2 and 3 on page 10, the normal-place move
+and Kyrie on page 13, and the Gospel responses and post-Gospel branches on
+page 16. The pair therefore falls from 33 to 30 pages. The child and trainer
+retain the same physical page boundaries and identical main-lane order; every
+trainer rail still names the matching child page.
+
+pdfTeX 1.40.29 rebuilt both publications for two passes with the temporary
+Atkinson package tree used only for this run. Both final logs contain no fatal
+error, undefined reference, LaTeX or package warning, overfull or underfull
+box, or unresolved rerun notice. The bounded repository review tool rastered
+all 60 final pages. Complete contact sheets were checked for order, density,
+split units, clipping, collisions, actor count, Missal ownership and route,
+and terminal fit; the three consolidated pages and the Missal-move page were
+also checked at full size. No orphaned continuation, accidental blank, third
+acolyte, clipped label, or unsafe Missal-route ambiguity remains.
+
+Ghostscript decoded both complete PDFs through its null-page device without
+error, and `pdfinfo` accepts their structures. They remain 612-by-792-point
+US-letter documents; all fonts are embedded, subsetted, and carry ToUnicode
+maps; UTF-8 text extraction contains no replacement character; and
+Ghostscript reports zero cyan, magenta, or yellow ink on every page. `qpdf`
+was not available in this build environment, so no new `qpdf --check` result
+is claimed for these exact bytes. This corrective installation does not
+satisfy the pending physical, intended-reader, independent, rights-review, or
+ecclesiastical-suitability gates and does not release-authorize either exact
+snapshot.
+
+## 2026-07-26 action-first reconciliation
+
+The two retained Low-Mass revisions were reconciled into the installed
+30-page pair. The child publication is now an action-first field guide; the
+trainer remains physically page-aligned while reserving meanings, correction
+points, and adult preparation notes for its trainer rail. The pair also makes
+the selected two-acolyte model and local choices explicit, separates the two
+ablution moments, and keeps the Communion-plate return ahead of the Missal
+return.
+
+The complete seven-publication family rebuilt with the declared Arch
+dependencies. The five non-Low-Mass outputs reproduced the source candidates
+or installed identities already recorded above. The repository review tool
+rastered every page of all seven PDFs. Complete contact sheets for the
+60-page Low-Mass pair and the retained exact review records for the other
+five publications show no clipping, collision, accidental blank, broken
+sequence, or role ambiguity. Both installed Low-Mass PDFs remain on hold for
+renewed exact-snapshot authorization; this reconciliation adds no physical,
+intended-reader, independent, rights, or ecclesiastical approval.
