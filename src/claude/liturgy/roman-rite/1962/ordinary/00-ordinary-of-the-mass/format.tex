@@ -1,0 +1,116 @@
+% Ordinary of the Mass, 1962 Roman Rite (Claude edition): leaf-local
+% typesetting primitives. Presentation only; every textual, rubrical,
+% historical and doctrinal judgment lives in the section files and the
+% research records.
+%
+% Web-edition constraint: this leaf declares itself web-eligible, so it uses
+% no landscape environment, no multicols, no TikZ and no page-position
+% overlays. Sequence and structure are carried by ordered lists and ruled
+% tables, which linearise without loss.
+
+\usepackage{xurl}
+
+\setlength{\emergencystretch}{3.2em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+% The missal prints ae and oe as ligatures and marks the tonic accent. This
+% edition prints the digraphs and omits the accents, a normalisation declared
+% at first use and in the terminal appendix; no macro is therefore needed for
+% an accented ligature.
+
+% The versicle sign the missal prints before a verse. U+2123 has no glyph in
+% the T1 Latin Modern fonts, so it is composed here and mapped to the code
+% point, letting the source carry the character the book prints.
+\newcommand{\vsign}{%
+  \leavevmode\hbox{V\kern-0.47em\raisebox{0.30ex}{\scriptsize/}\kern0.05em}}
+\DeclareUnicodeCharacter{2123}{\vsign}
+
+% The cross the missal prints inside a prayer at the point of a signing.
+\newcommand{\misscross}{\textbf{+}}
+\DeclareUnicodeCharacter{2720}{\misscross}
+
+% Semantic wrappers so a later style change never edits prose.
+\newcommand{\work}[1]{\textit{#1}}
+\newcommand{\term}[1]{\textit{#1}}
+\newcommand{\latincue}[1]{\textit{#1}}
+
+% The appointed Latin, collated against the controlling facsimile. The frame
+% marks text that is not project-owned expression; the title carries the
+% received name and the edition's own marginal number.
+\newenvironment{appointed}[1]{\begin{massbox}{#1}\itshape}{\end{massbox}}
+
+% A rubric of the 1962 books, reported rather than reproduced as prayer.
+\newenvironment{rubricnote}[1]{\begin{sourcecard}{#1}\small}{\end{sourcecard}}
+
+% An identified public-domain English witness set beside the Latin. It is a
+% historical witness, never a liturgical translation and never offered for
+% recitation.
+\newenvironment{englishwitness}[1]{%
+  \begin{studyframe}\small\textbf{English witness (Cummiskey 1861, p.~#1).}\ %
+  \ignorespaces}
+  {\end{studyframe}}
+
+% A short checked quotation from an identified historical or doctrinal source.
+\newenvironment{witnesscard}[1]{\begin{sourcecard}{#1}\small}{\end{sourcecard}}
+
+% The governing thesis is substantive content and may open the body.
+\newcommand{\studythesis}[1]{%
+  \begin{studybox}{Governing thesis}#1\end{studybox}}
+
+% A labelled editorial block. The heading carries the claim class, so the
+% body needs no repeated disclaimer.
+\newenvironment{proposal}[1]{\begin{studybox}{#1}\small}{\end{studybox}}
+
+% The reading map on the opening page: an ordered list rather than a diagram,
+% so the web edition loses nothing.
+\newenvironment{movementlist}
+  {\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2.2em, itemsep=0.2em,
+     topsep=0.35em]}
+  {\end{enumerate}}
+
+% Two-column inventory of received units against the edition's own locators.
+\newenvironment{unittable}
+{\footnotesize
+ \setlength{\LTpre}{0.2em}\setlength{\LTpost}{0.2em}%
+ \renewcommand{\arraystretch}{1.05}%
+ \begin{longtable}{>{\raggedright\arraybackslash}p{0.24\linewidth}%
+                   >{\raggedright\arraybackslash}p{0.11\linewidth}%
+                   >{\raggedright\arraybackslash}p{0.55\linewidth}}
+\toprule
+\textbf{Received unit} & \textbf{No.} & \textbf{Voice, gesture, condition}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
+
+\newcommand{\unitrow}[3]{#1 & #2 & #3\\}
+
+% Collation table: 1962 wording against an earlier printed witness.
+\newenvironment{collationtable}
+{\footnotesize
+ \setlength{\LTpre}{0.2em}\setlength{\LTpost}{0.2em}%
+ \renewcommand{\arraystretch}{1.05}%
+ \begin{longtable}{>{\raggedright\arraybackslash}p{0.18\linewidth}%
+                   >{\raggedright\arraybackslash}p{0.24\linewidth}%
+                   >{\raggedright\arraybackslash}p{0.24\linewidth}%
+                   >{\raggedright\arraybackslash}p{0.24\linewidth}}
+\toprule
+\textbf{Place} & \textbf{1962 typical edition} & \textbf{1861 hand missal} & \textbf{Character}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
+
+% Dated chronology for the terminal development table.
+\newenvironment{chronotable}
+{\footnotesize
+ \setlength{\LTpre}{0.2em}\setlength{\LTpost}{0.2em}%
+ \renewcommand{\arraystretch}{1.05}%
+ \begin{longtable}{>{\raggedright\arraybackslash}p{0.14\linewidth}%
+                   >{\raggedright\arraybackslash}p{0.28\linewidth}%
+                   >{\raggedright\arraybackslash}p{0.50\linewidth}}
+\toprule
+\textbf{Date} & \textbf{Act or witness} & \textbf{Bearing on the Ordinary}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
