@@ -1,0 +1,400 @@
+schema = 2
+record_type = "bindings"
+document = "articles/faith/four-last-things-03-hell"
+
+# Schema version 2 is required because this file binds a version 2 passage
+# (the Irenaeus OCR passage, which is controlled by a segment). Raising the
+# binding schema does not reinterpret the version 1 records bound below.
+
+# ---------------------------------------------------------------------------
+# Scripture: English, tracked Douay-Rheims (Challoner) verse-text derivatives
+# ---------------------------------------------------------------------------
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-47-matthew-dd0ba183"
+loci = ["Matt.5.22", "Matt.5.29-30", "Matt.7.13-14", "Matt.10.28", "Matt.13.41-42", "Matt.13.49-50", "Matt.18.8-9", "Matt.25.31-46", "Matt.26.24"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The article's English quotations of the sentence of the sheep and the goats (25:31-46, read whole), the everlasting fire prepared for the devil and his angels (25:41), the correlative destinies (25:46), the narrow gate (7:13-14), the fear of him who can destroy soul and body in hell (10:28), the Gehenna sayings (5:22, 5:29-30, 18:8-9), the furnace of fire (13:41-42, 49-50), and the woe on the betrayer (26:24). Each locus was read in the tracked TSV on 2026-07-25 at its exact book/chapter/verse line."
+source_fingerprint = "sha256:ed47ecb092ecb6256fb84450e8ad39d0debf2efe6c65442199a76a7fb1a8b98b"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-48-mark-69b4cb75"
+loci = ["Mark.9.42-49"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The cutting-off sayings and the threefold refrain 'Where their worm dieth not, and the fire is not extinguished' in the Vulgate verse numbering the Douay-Rheims follows (9:42-47 here, 9:43-48 in Greek editions). The article uses this witness to show both what Augustine had in front of him and where the Vulgate numbering diverges. Read whole on 2026-07-25."
+source_fingerprint = "sha256:2b4848908df9163a705b6532d1b80e55d35bc75bf2826f2ba03cb69b9f7ff025"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-49-luke-d8269c33"
+loci = ["Luke.13.23-28", "Luke.16.19-31"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The refused census question ('Lord, are they few that are saved?') with the imperative answer, on which the article builds its observation about grammatical person; and the parable of the rich man and Lazarus, read whole. Read 2026-07-25."
+source_fingerprint = "sha256:b6acab91674d3bbe04726da30c835175a133104d3db53fcf3f8e45b1d5b4ba6e"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-50-john-27b8f3ed"
+loci = ["John.17.12"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "'None of them is lost, but the son of perdition', one of the three severe texts about a named individual that the article discusses in the section on the census. Read 2026-07-25. The Greek of this verse was not reached in a registered edition and the article says so."
+source_fingerprint = "sha256:4498ea55e49e3577649969ed0bcf456423b8aec2f9edda55586c37190dfe77a4"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-51-acts-73f7a420"
+loci = ["Acts.1.25", "Acts.3.19-21"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Judas going 'to his own place', and the restitution of all things, the latter being one of the universalist texts stated at full strength in the section on eternity. Read 2026-07-25."
+source_fingerprint = "sha256:dd87be0f13bd98112feedd55e3532a9a4dcbbfe28dee45371197dbc842acd2da"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-52-romans-4d45c497"
+loci = ["Rom.5.18-19", "Rom.11.32"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Two of the universalist texts stated at full strength before the reply: justification of life unto all men, and God concluding all in unbelief that he may have mercy on all. Read 2026-07-25."
+source_fingerprint = "sha256:1b6036a02c7bcc743d143f4f4e17bb6927cb1f4d8dfff9115aeb3250cf287c64"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-53-1-corinthians-ffc4f260"
+loci = ["1Cor.15.22-28"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "'That God may be all in all', read in its full context of subjection because the article's reply turns on the difference between being subjected and being reconciled. This is the passage on which Origen builds in De principiis I.6. Read 2026-07-25."
+source_fingerprint = "sha256:86aa4aafa5cb1a66218d81b3f7735715d33eac0a1b62c9c471499728c0838a11"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-58-colossians-d17592ce"
+loci = ["Col.1.19-20"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Reconciliation of all things through the blood of the cross, one of the universalist texts. Read 2026-07-25."
+source_fingerprint = "sha256:5cf6c513d39ffc83a9faab86e624dd181f93dfa845f96437b40365ff711ed0ca"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-60-2-thessalonians-cbd2bd34"
+loci = ["2Thess.1.6-10"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "'Eternal punishment in destruction, from the face of the Lord', the text on which the annihilationist objection rests and on which the article's reply turns (the prepositional phrase names a relation). Read whole 2026-07-25."
+source_fingerprint = "sha256:05246c5fcdc8f95a61d788b2f28470e2688291a2d141cda35c639f6a915d39c8"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-61-1-timothy-1f76a59e"
+loci = ["1Tim.2.1-6"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The universal salvific will, read with the two preceding verses on prayer for all men because the article notes that the practice grounds the doctrine in Paul's own sequence. Read 2026-07-25."
+source_fingerprint = "sha256:6a1bc30255ec2edfbeffa18aff78ca993fa666cb5b4b61f17a4efd0f9c2d0018"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-72-jude-5b3006ca"
+loci = ["Jude.1.6-7", "Jude.1.13"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The everlasting chains of the angels and the punishment of eternal fire suffered by the cities of the plain, which carry the sharpest lexical objection to the eternity of punishment. Read 2026-07-25 with the Greek of the same verses."
+source_fingerprint = "sha256:4dae0a0b2601b6d3e3a2dcf3f209f3439dcf0037c0de5bf08128c20d30e5a468"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-73-apocalypse-9ae5c352"
+loci = ["Apoc.14.9-11", "Apoc.20.9-15", "Apoc.21.8"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The smoke of their torments ascending for ever, the torment of the devil, the beast and the false prophet, the pool of fire and the second death. Read 2026-07-25. The article records that the Douay-Rheims divides 20:9-10 differently from the Greek."
+source_fingerprint = "sha256:b28bde358a8ffc3aa2486baeeeda9bb23021b0bab1a8dccd447d33b2f7225cdb"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-27-isaias-7c9a1228"
+loci = ["Is.66.24"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The carcasses whose worm shall not die and whose fire shall not be quenched, the Old Testament source of the Marcan refrain. The article concedes that the imagery is of corpses and that this objection is correct as far as it goes. Read 2026-07-25; the Vulgate wording behind 'carcasses' was not separately collated."
+source_fingerprint = "sha256:41639d5457be3a0a6446fe59d3c59c7561aacfef7bc43089f650a7353452bbf8"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-31-ezechiel-ebd50fae"
+loci = ["Ezech.18.23", "Ezech.18.32", "Ezech.33.11"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "'I desire not the death of the wicked', the strongest Old Testament statement of the salvific will. Read 2026-07-25 with 33:7-16 in context."
+source_fingerprint = "sha256:bf636e7dc7d87b38d2c2a63c40d54e608eab2141e569a934008f295e2059fed2"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-25-wisdom-2fe4073b"
+loci = ["Wis.11.24-27"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "'Thou hast mercy upon all... thou sparest all: because they are thine, O Lord, who lovest souls', which is also the objection Aquinas answers in Supplementum q. 99 a. 2. Read 2026-07-25."
+source_fingerprint = "sha256:ba6486854e8c3bfd51466a3a0992b72fe10788c371c5839b92799410b5cd21f7"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-68-2-peter-287fb5f6"
+loci = ["2Pet.3.9"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "'Not willing that any should perish', the verse the Catechism quotes at CCC 1037 immediately after saying that God predestines no one to hell. Read 2026-07-25."
+source_fingerprint = "sha256:190803ef266149b42b448f7f407a0274df8f7bf48b6aca256e0bf56b8db598ab"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-69-1-john-109bfb9f"
+loci = ["1John.4.18"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "'Fear hath pain', used only to show that the noun rendered by the Vulgate as poena is used in the New Testament where nothing corrective is in view. The Greek of 1 John is not in this library's registered Greek corpus, so the article states the point only as far as the Latin and English witnesses carry it and declines to rest its conclusion on it. Read 2026-07-25."
+source_fingerprint = "sha256:49cb9b0f5c004489d8ca8d01109560c49c03b9b6ef95aa7d441c06fb1d9bc9b1"
+
+# ---------------------------------------------------------------------------
+# Scripture: Greek, tracked Robinson-Pierpont Byzantine Textform CSVs
+# ---------------------------------------------------------------------------
+
+[[bindings]]
+source_id = "artifact.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.ccat-csv-mat-1f31b338"
+loci = ["7:13-14", "10:28", "25:41", "25:46"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "The Greek of the sentence on which the whole eternity argument turns: kolasin aionion set against zoen aionion under one adjective at 25:46, the fire prepared for the devil and his angels at 25:41, apolesai at 10:28 for the annihilationist objection, and the narrow gate at 7:13-14. Read 2026-07-25 in the tracked CSV; quoted only in transliteration. The inline apparatus braces are a divergence note and not a critical apparatus."
+source_fingerprint = "sha256:323fd6cf817d2e412c365eafe1f2c2b2b3937369be45c3e40c16803be6247e38"
+
+[[bindings]]
+source_id = "artifact.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.ccat-csv-mar-b58af87a"
+loci = ["9:43-49"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Registered with this revision. The article reports that verses 44 and 46 each carry an inline brace recording their omission by the Nestle-Aland text while verse 48 carries none, and concedes that Augustine's argument from the threefold repetition in De civitate Dei XXI.9 is weakened accordingly. The article expressly declines to adjudicate the text. Read 2026-07-25."
+source_fingerprint = "sha256:a8cbde064a15eeafe5098b60e3125c00580c978d4d604fae5264eeccc6384871"
+
+[[bindings]]
+source_id = "artifact.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.ccat-csv-luk-82225821"
+loci = ["13:23-24", "16:23-26"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "The Greek behind the article's observation about grammatical person in the refused census question: a singular questioner, an answer addressed pros autous, and a second-person plural imperative agonizesthe. Also the Hades and the fixed chasm of the parable. Read 2026-07-25; quoted only in transliteration."
+source_fingerprint = "sha256:0dcb9cf834727b00d8e1796afb84d1fb28f251444982dd5cbc9b56cbdad7de86"
+
+[[bindings]]
+source_id = "artifact.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.ccat-csv-2th-232a58b8"
+loci = ["1:8-9"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Registered with this revision. The Greek of olethron aionion apo prosopou tou kyriou, on which both the annihilationist objection and the article's reply turn. Read 2026-07-25; quoted only in transliteration."
+source_fingerprint = "sha256:4c6a815240a37748da5bd7d6a11f143c420774916be873eaf73d82f86aba2b99"
+
+[[bindings]]
+source_id = "artifact.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.ccat-csv-jud-ae708604"
+loci = ["1:6", "1:7"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "The one place where desmois aidiois and pyros aioniou stand one verse apart in the same author, which carries the sharpest lexical objection to the eternity of punishment. The article states the objection at full strength before replying from prokeintai deigma. Read 2026-07-25; quoted only in transliteration."
+source_fingerprint = "sha256:0a604e22c29a4bd03a0a5ba68f9aa0b09869648dceb414f8c44a7e6d6272cd1a"
+
+[[bindings]]
+source_id = "artifact.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.ccat-csv-rev-ddfbc25d"
+loci = ["14:10-11", "20:10", "20:14-15"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Registered with this revision. The Greek behind the objection that eternity attaches to the smoke rather than the sufferers, and behind the article's reply from the personal subjects at 14:11b and 20:10. Also the source of the versification caution about the Douay-Rheims division of 20:9-10. Read 2026-07-25; quoted only in transliteration."
+source_fingerprint = "sha256:dcb8eb144a219c1bef1bf3a81c2a8dbdc0a26028a78ab737e566ca9db704fbe5"
+
+# ---------------------------------------------------------------------------
+# Patristic witnesses
+# ---------------------------------------------------------------------------
+
+[[bindings]]
+source_id = "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.5.27.2.ocr"
+loci = ["5.27.2"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Registered with this revision. The article's long quotation of the earliest sustained patristic account of hell as self-chosen separation, with the blindness-in-a-flood-of-light comparison and the inference that the loss of eternal goods is itself eternal. The complete numbered section was read in the tracked OCR on 2026-07-25 and the same wording was independently checked at New Advent's revised presentation of the same translation. The OCR is a locator aid, not textual control; the printed facsimile was not inspected for this passage."
+source_fingerprint = "sha256:b089422f64711dddc0fbf5bcec17b79d2027c194493e4b14ce0d3bc3e82a7178"
+
+[[bindings]]
+source_id = "passage.augustine.de-civitate-dei.dods-1871.21.9"
+loci = ["21.9"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Registered with this revision. The article quotes Augustine's explicit release of the reader on the nature of the worm and the fire ('Let each man, then, choose which he will'), which is its principal evidence that the mode of the pain of sense has never been determined. The complete chapter was read on 2026-07-25 in the tracked 1871 transcription at artifact lines 17321-17392."
+source_fingerprint = "sha256:8ccc8b876e989c09abb5c3a443d544e60f647732b9f83b31ab2197864c9eaec2"
+
+[[bindings]]
+source_id = "passage.augustine.de-civitate-dei.dods-1871.21.11"
+loci = ["21.11"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Registered with this revision. The chapter on whether a penalty may last longer than the offence, which Aquinas cites twice by this number (Summa theologiae I-II q. 87 a. 3 ad 1 and Supplementum q. 99 a. 1) and which the article uses as a reception witness as well as a source. Read whole on 2026-07-25 at artifact lines 17451-17508."
+source_fingerprint = "sha256:5037f4eff5d09c664e46e8e1ca3d606ada6b0127e8463b89a6adc8657f705da7"
+
+[[bindings]]
+source_id = "passage.augustine.de-civitate-dei.dods-1871.21.12"
+loci = ["21.12"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Registered with this revision. The article quotes 'many more are left under punishment than are delivered from it' and states plainly that this is Augustine's own inference, is in no magisterial act, and has never been adopted by the Church. Read whole on 2026-07-25 at artifact lines 17511-17538."
+source_fingerprint = "sha256:ce034a2eff8046531f5d9620ecf82dd96e6c04b7f47ab0b1a52aef4816f6ba25"
+
+[[bindings]]
+source_id = "passage.augustine.de-civitate-dei.dods-1871.21.17"
+loci = ["21.17"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Registered with this revision. The article quotes the opening of the 'amicable controversy' with the tender-hearted Christians as evidence that the merciful reading was widespread inside the fifth-century Church rather than confined to Origenists. Augustine's summary of what 'the Church' condemned in Origen is reported in the article as his own words and not as a citation of a conciliar act. Read whole on 2026-07-25 at artifact lines 17748-17782."
+source_fingerprint = "sha256:fcb40035d7e1b96dd943983419da9b6072890745edc740f9cad3361390f06bd8"
+
+[[bindings]]
+source_id = "passage.augustine.de-civitate-dei.dods-1871.21.23"
+loci = ["21.23"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Registered with this revision. The correlativity argument from Matthew 25:46, quoted at length as the strongest argument the tradition has for the eternity of punishment and the one the article judges to survive the lexical objections. Read whole on 2026-07-25 at artifact lines 17958-18013."
+source_fingerprint = "sha256:53f1925087447da2288ee366b35aacc8dbed1917fddfa31f14a98b3bd4ec43f5"
+
+[[bindings]]
+source_id = "edition.justin-martyr.second-apology.dods-reith-anf1-newadvent-web-2026-07-25"
+loci = ["7", "8", "9"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Registered with this revision. The article quotes Justin on eternal fire and on the objection that Christian assertions about it are 'big words and bugbears' -- the earliest evidence that the doctrine and the charge of scaremongering arrived together. The authoring agent read chapters 7-9 at the New Advent delivery on 2026-07-25 and cross-read the same wording in this library's tracked OCR of the Buffalo printing; no artifact fingerprint is claimed, and the chapter numbering varies between editions."
+
+[[bindings]]
+source_id = "edition.origen.de-principiis.crombie-anf4-newadvent-web-2026-07-25"
+loci = ["1.6", "2.10"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Registered with this revision. The article quotes Origen's own disclaimer of genre at the head of I.6.1, the recall of all creatures to one end at I.6.1-2, and the conscience-fire and medicinal readings at II.10.4-6. Both chapters were read whole at the New Advent delivery on 2026-07-25. This is a catalog-level binding: no artifact was retained or hashed. The treatise survives complete only in Rufinus's Latin, and the article attributes nothing to Origen's Greek."
+
+[[bindings]]
+source_id = "edition.origen.de-principiis.crombie-anf4-ccel-web-2026-07-25"
+loci = ["1.6"]
+role = "textual-control"
+states = ["cataloged"]
+context = "Registered with this revision solely because the CCEL delivery of the same translation reproduces the printed volume's front matter, including Rufinus's own Prologue at printed page 237, which the New Advent delivery omits. The article's account of the transmission problem rests on that Prologue -- the translator's statement that he omitted what he judged corrupt and supplied from elsewhere what he judged obscure -- and without this witness the claim would have been unsourced. Read whole on 2026-07-25; no artifact retained or hashed."
+
+[[bindings]]
+source_id = "edition.gregory-of-nyssa.oratio-catechetica-magna.moore-wilson-npnf2-5-ccel-web-2026-07-25"
+loci = ["26"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Registered with this revision. The article quotes the restoration of those now lying in sin and the healing of the introducer of evil himself, as evidence that a canonized Father held, before the question was settled, the proposition that canon 9 of 543 anathematizes. The complete chapter with the editors' footnotes was read on 2026-07-25. The marginal note in a Krabinger manuscript ('This must be read with caution: it seems to savour of Origen's opinion') is reported at second hand from the editors' footnote and the manuscript was not inspected. The Greek was not consulted; chapter numbering is that of this edition."
+
+[[bindings]]
+source_id = "edition.john-chrysostom.homiliae-in-matthaeum.prevost-riddle-npnf1-10-newadvent-web-2026-07-25"
+loci = ["23.9"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Registered with this revision. The article quotes Chrysostom's explicit statement that a single judgment contains two punishments and his ranking of them ('though one suppose ten thousand hells, he will utter nothing like what it will be to fail of that blessed glory'). Sections 7-10 of the homily were read on 2026-07-25. Section divisions are editorial and the Greek was not consulted; no artifact retained or hashed."
+
+# ---------------------------------------------------------------------------
+# Magisterial acts
+# ---------------------------------------------------------------------------
+
+[[bindings]]
+source_id = "edition.denzinger.enchiridion-symbolorum.latin-patristica-web-2026-07-25"
+loci = ["76", "397", "403-411", "433", "801", "858", "926", "1000-1002", "1304-1306", "1351", "1541", "1567", "1575", "1705", "1997"]
+role = "textual-control"
+states = ["cataloged"]
+context = "Every pre-modern conciliar and papal act quoted in the article was read in Latin at this dated web transcription on 2026-07-25, each in its surrounding context: the Quicumque's closing verses; Orange II's anathema on predestination to evil; the nine canons against Origen, which this witness heads as published in the Synod of Constantinople in 543 and places under Vigilius rather than under Constantinople II; canon 11 of Constantinople II, which names Origen without specifying a proposition; Lateran IV's Firmiter; the Lyons II profession and its Florentine and Avignon recensions; Benedictus Deus, where the hell clause carries no word for eternity while the vision clause four lines earlier reads usque in sempiternum; Cantate Domino; Trent session 6 chapter 13 and canons 17 and 25; Trent session 14 canon 5 on attrition; and Paul V's 1607 formula ending the disputations de auxiliis. The article states in the body and in its references that this compilation is a finding aid to its underlying documents and not a substitute witness: no printed Denzinger, no conciliar critical edition, no Mansi volume, and no papal register was collated, and the delivery does not identify its printed exemplar. That is the verification ceiling asserted here."
+
+[[bindings]]
+source_id = "edition.denzinger.enchiridion-symbolorum.english-deferrari-patristica-web-2026-07-25"
+loci = ["203-211", "223", "429"]
+role = "context"
+states = ["cataloged"]
+context = "The Deferrari English of the older numbering was read on 2026-07-25 as a cross-check on the Latin for the canons against Origen (DB 203-211 = DS 403-411), canon 11 of Constantinople II (DB 223 = DS 433), and the closing clause of Firmiter (DB 429 = DS 801). It is a working aid; the Latin governs every wording-critical claim."
+
+[[bindings]]
+source_id = "edition.benedict-xii.benedictus-deus.latin-denzinger"
+loci = ["complete-text"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The article quotes the constitution's hell clause (Diffinimus insuper, quod secundum Dei ordinationem communem animae decedentium in actuali peccato mortali mox post mortem suam ad inferna descendunt, ubi poenis infernalibus cruciantur) and compares it with the clause on the beatific vision four lines earlier, which reads usque ad finale iudicium et ex tunc usque in sempiternum. Both were read in the received Denzinger Latin at DS 1000-1002 on 2026-07-25. No printed edition was collated and no artifact is retained or hashed."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-25"
+loci = ["1030-1032", "1033-1037", "1051-1060", "1261", "1854-1864"]
+role = "official-control"
+states = ["cataloged"]
+context = "The Catechism supplies the article's organizing document: paragraph 1035 with its note 615, whose eight references the whole audit follows. Also quoted: 1033 (definitive self-exclusion), 1034, 1036 (the narrow gate as a call to conversion), 1037 (God predestines no one; the Roman Canon petition), 1056-1058 (the warning and the prayer that no one be lost), 1261 (children who die without baptism), and 1857-1861 (the three conditions of mortal sin and the direction to entrust judgment of persons to God). The pages were read at the official Vatican English archive on 2026-07-25; no artifact fingerprint is retained, so this binding claims catalog identity only, and the Latin typical edition was not collated."
+
+[[bindings]]
+source_id = "edition.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23"
+loci = ["14", "16"]
+role = "official-control"
+states = ["cataloged"]
+context = "The article uses these paragraphs as the Church's own authoritative interpretation of the condition in Cantate Domino: the culpability clause at 14 ('knowing that the Catholic Church was made necessary by Christ, would refuse to enter or to remain in it') and the invincible-ignorance clause at 16, together with 16's own closing warning that some living and dying without God are exposed to final despair. Both paragraphs were read whole at the official Vatican English text on 2026-07-25. The Latin and the Acta Apostolicae Sedis text were not consulted."
+
+[[bindings]]
+source_id = "edition.paul-vi.solemni-hac-liturgia.english-vatican-web-2026-07-25"
+loci = ["12"]
+role = "official-control"
+states = ["cataloged"]
+context = "Registered with this revision. The article quotes the twelfth paragraph of the Credo of the People of God -- 'those who have refused them to the end going to the fire that is not extinguished' -- as the most recent solemn profession in the Catechism's dossier, noting that it makes the finality condition explicit and describes hell only in scriptural language. The complete document was read on 2026-07-25; the Acta Apostolicae Sedis Latin was not consulted and no claim turns on the Latin wording."
+
+[[bindings]]
+source_id = "edition.john-paul-ii.general-audience-1999-07-28.english-vatican-web-2026-07-25"
+loci = ["1", "2", "3", "4"]
+role = "official-control"
+states = ["cataloged"]
+context = "Registered with this revision. This address is the article's principal warrant for two claims: that the images of hell are imagery to be correctly interpreted and that hell indicates a state rather than a place; and that it is not granted to us, without special divine revelation, to know which human beings are effectively involved in damnation. The article also uses n. 4 for the contrasting indicative statement about the fallen angels. The complete address was read at the official Vatican English text on 2026-07-25. Weight is stated in the article: a general audience is ordinary papal magisterium in its least solemn form and defines nothing. Delivered in Italian; the Italian was not collated."
+
+[[bindings]]
+source_id = "edition.benedict-xvi.spe-salvi.english-vatican-web-2026-07-25"
+loci = ["45", "46", "47", "48"]
+role = "official-control"
+states = ["cataloged"]
+context = "Registered with this revision. The article quotes n. 47 on judgment as hope because it is both justice and grace, as the most useful modern statement of the residue the tradition has not dissolved, and reports n. 45's description of a life in which the destruction of good would be irrevocable. Read whole on 2026-07-25 at the official Vatican English text; the Acta Apostolicae Sedis Latin was not consulted."
+
+# ---------------------------------------------------------------------------
+# Thomistic and philosophical sources
+# ---------------------------------------------------------------------------
+
+[[bindings]]
+source_id = "work.thomas-aquinas.summa-theologiae"
+loci = [
+  "I.19.6.corpus",
+  "I.19.6.reply-1",
+  "I.23.3.corpus",
+  "I.23.3.reply-2",
+  "I.23.3.reply-3",
+  "I.64.2.corpus",
+  "I-II.87.3.corpus",
+  "I-II.87.3.reply-1",
+  "I-II.87.3.reply-2",
+  "I-II.87.4.corpus",
+  "I-II.87.4.sed-contra",
+  "Supplementum.94.3.corpus",
+  "Supplementum.97.1.corpus",
+  "Supplementum.97.1.reply-2",
+  "Supplementum.97.5.corpus",
+  "Supplementum.98.2.corpus",
+  "Supplementum.98.2.reply-1",
+  "Supplementum.98.5.corpus",
+  "Supplementum.99.1.corpus",
+  "Supplementum.99.2.reply-1",
+  "Supplementum.99.2.reply-3",
+]
+role = "textual-control"
+states = ["cataloged"]
+context = "These loci govern the article's account of the Thomistic treatment: the three readings of 1 Tim 2:4 and the antecedent and consequent will (I.19.6 ad 1); reprobation and its causality, with the concession that reprobation does not cause sin (I.23.3 with replies); the obstinacy of the demons and its dependence on what beatitude would have to be (I.64.2); the mature argument for eternity from the irreparability of a disorder that destroys the principle of the order, with the two replies on proportionality and on medicinal punishment (I-II.87.3); the assignment of an infinite pain of loss and a finite pain of sense, with the sed contra on the inequality of punishments (I-II.87.4); the direct and indirect senses in which the blessed rejoice (Suppl. 94.3); the denial that the damned are tormented by fire alone and the remark that the name of fire is given to any intense torment (Suppl. 97.1), and the survey of opinions about the fire (Suppl. 97.5); the direct and indirect repentance of the damned and their hatred of God as met in his effects (Suppl. 98.2, 98.5); and the eternity of punishment with the two replies on mercy in hell and on Anselm's principle (Suppl. 99.1-2). Every question listed was read whole in the public-domain English Dominican translation at New Advent on 2026-07-25. This binding remains at the work level: no Latin of the Summa and no printed or Leonine edition was collated for this article, and the publication-local check is the verification ceiling asserted here."
+
+[[bindings]]
+source_id = "edition.thomas-aquinas.scriptum-super-sententiis.latin-corpusthomisticum-web-dd45-46-2026-07-25"
+loci = ["lib-4-d-46-q-1-a-3-tit", "lib-4-d-46-q-1-a-3-co", "lib-4-d-46-q-1-a-3-ad-6", "lib-4-d-46-q-2-a-1-qc-1-co"]
+role = "textual-control"
+states = ["cataloged"]
+context = "Registered with this revision. This is the article's evidence that the Supplement to the Tertia Pars is a posthumous compilation from Aquinas's much earlier Sentences commentary rather than a text he wrote for the Summa. The Latin of IV d. 46 q. 1 a. 3 (Utrum ex divina justitia inferatur peccatoribus poena aeterna) was read at the Corpus Thomisticum page snp4045, paragraphs 21988-22004, on 2026-07-25 and compared article by article with Supplementum q. 99 a. 1: the same title question, the same six objections, the same three sed contra arguments, the same corpus with one principal reason and four rationes a sanctis assignatae, and the same six replies, in the same order. The comparison was made on structure and content; the Latin of the Supplement was not consulted, so no collation is claimed. Question 2 of the same distinction, on divine mercy, was read for context. No artifact retained or hashed."
+
+[[bindings]]
+source_id = "edition.aristotle.rhetorica.greek-ross-1959-perseus-web-2026-07-25"
+loci = ["1.10.17"]
+role = "textual-control"
+states = ["cataloged"]
+context = "Registered with this revision. The Greek of the distinction between timoria and kolasis (diapherei de timoria kai kolasis: he men gar kolasis tou paschontos heneka estin, he de timoria tou poiountos, hina plerothei), read at Perseus on 2026-07-25 so that the standard lexical objection to Matthew 25:46 could be met at its own locus rather than through a secondary report. No printed edition collated."
+
+[[bindings]]
+source_id = "edition.aristotle.rhetorica.english-freese-1926-perseus-web-2026-07-25"
+loci = ["1.10.17"]
+role = "context"
+states = ["cataloged"]
+context = "Registered with this revision. Freese's 1926 English of the same section is quoted in the article beside the Greek, with an explicit note that his rendering of kolasis as 'punishment' and timoria as 'revenge' is a translator's choice and does not settle the Greek. Read at Perseus on 2026-07-25; the translation is out of United States copyright by publication date, and Perseus states that its markup is licensed CC BY-SA 3.0 United States."
