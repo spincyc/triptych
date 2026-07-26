@@ -89,6 +89,10 @@ treatments were compared against Claude paired records and changed Catechism
 and LG records. The 1851 judgment, message and secret strata, later discipline,
 corpus, canonical predicates, and rights remain unchanged. No material change.
 
+Ripple follow-up (2026-07-26): Claude's later paired-review note was compared
+through modified and research-first candidates. It is review metadata only and
+changes no prior claim or boundary. No material change.
+
 Completed: source retrieval and comparison; exact-object and exact-formula analysis; complete public-message and secret-content mapping; current-status check through 2026-07-16; claim-level source audit; and internal historical, theological, canonical, and editorial review of the source files. Superseded production snapshot completed 2026-07-16: the clean two-pass 34-page US-letter PDF, SHA-256 `382b5b4d7ac8225090144b0af4a40e069a00ac9f0a2ea9847d699d46fb59ff29`, passed metadata, structure, embedded-font, nonempty-extraction, every-page visual, and installed/build identity checks. Final clean-build review completed 2026-07-18: the current 34-page PDF, SHA-256 `d0d41d42a80a1a156c347b2e7070835dedcc440c9419ea745e237c95bfbf8abd`, passed the same production checks and is byte-identical to the installed publication. Independent human review by the Diocese of Grenoble–Vienne, DDF, Missionaries of La Salette, a mariologist, theologian, canonist, French or Italian historian, archivist, patois specialist, textual critic, psychologist, or physician is not claimed. Catalog language must remain “source-audited working monograph,” not “official history,” “critical edition,” or “definitive adjudication.”
 
 ## Compact-rights-colophon production review — 2026-07-19
