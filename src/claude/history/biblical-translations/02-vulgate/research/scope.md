@@ -155,6 +155,12 @@ treated as a reuse license.
 
 ## Outstanding review
 
+## Staleness review — 2026-07-26
+
+Both candidates found new Clementine artifacts and other new loci unrelated to
+the controlling Vulgate claims and Jonah evidence. **No material change.** See
+`src/sources/inventories/biblical-translations-staleness-review-2026-07-26.md`.
+
 - independent patristic, Latin-biblical, medieval-manuscript,
   early-modern, and text-critical review;
 - collation of quoted passages against critical editions (Stuttgart;

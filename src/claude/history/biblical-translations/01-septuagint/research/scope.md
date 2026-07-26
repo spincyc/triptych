@@ -116,6 +116,12 @@ images. Online access is not treated as a reuse license.
 
 ## Outstanding review
 
+## Staleness review — 2026-07-26
+
+Both candidates found new Augustine, Catechism, and Irenaeus loci unrelated to
+the controlling translation-history claims. **No material change.** See
+`src/sources/inventories/biblical-translations-staleness-review-2026-07-26.md`.
+
 - independent Septuagint-specialist, papyrological, rabbinics, patristic,
   and text-critical review;
 - collation of quoted passages against critical editions (Göttingen,
