@@ -39,4 +39,5 @@ each Mass.
 | 21 | **Seventh Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost.pdf) | — |
 | 22 | **Eighth Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.pdf) | [PDF](../doc/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.html) |
 | 23 | **Ninth Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.pdf) | [PDF](../doc/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.html) · [Full text](../doc/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text.pdf) |
+<!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text -->
 | M01 | **The Nuptial Mass** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass.pdf) | — |

@@ -1,0 +1,86 @@
+schema = 1
+record_type = "bindings"
+document = "articles/scripture/abraham-and-the-daylight-stars"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-01-genesis-4f9a0975"
+loci = ["Gen.15.1-21", "Gen.13.16", "Gen.22.17", "Gen.26.4"]
+role = "direct-witness"
+states = ["acquired", "inspected"]
+source_fingerprint = "sha256:aba8e34331af3fc19e272bdef11140f842ca4e75fb2d097f1c8211b637d4fe94"
+context = "GPT independently read the chapter and recurrence loci from the registered verse table; it controls every English scriptural quotation."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.hetzenauer-1914.sacredbible-scan-0012-b9a1cb6a"
+loci = ["Gen.15.1-21"]
+role = "direct-witness"
+states = ["acquired", "inspected", "verified"]
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:0c3846492342097195e946445d968615880a5e6876f6a13ab0e582f220daca2d"
+context = "GPT checked the vision, going-out, look-up, setting, set, darkness, and in-that-day clauses against the registered page-image identity."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.hetzenauer-1914.gen-15-checked-text-9729b5c4"
+loci = ["Gen.15.1-21"]
+role = "textual-control"
+states = ["acquired", "inspected", "verified"]
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:9890c3d8a35d0d4e7f5371d9842f3c6079fce534db8f9f3c9fe8c14c0c9c3569"
+context = "Reusable checked transcription used to replay the Latin comparisons after image inspection."
+
+[[bindings]]
+source_id = "artifact.swete.old-testament-in-greek.cambridge-vol-1-1909.gen-15-checked-text-a7b4f38b"
+loci = ["Gen.15.1-21"]
+role = "direct-witness"
+states = ["acquired", "inspected"]
+source_fingerprint = "sha256:85eb69f1c730e41a50f192493c77ab12b5a17283eb7f049025d17e410b40e064"
+context = "GPT inspected the registered chapter transcription for the look-up command and the distinct readings at verses 11, 12, 17, and 18; the page-image and critical-edition limits remain explicit."
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-2-tei"
+loci = ["16.23", "16.24"]
+role = "direct-witness"
+states = ["acquired", "inspected"]
+source_fingerprint = "sha256:c8c46915ec1d5dd7bf34a4332481bd214a4c8c42aadf62da985ec3fd29224b9a"
+context = "GPT inspected Augustine's countability discussion, vision judgment, and Old Latin Genesis 15 readings used to bound the Greek claim."
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45305-body-lf"
+loci = ["16.23", "16.24"]
+role = "context"
+states = ["acquired", "inspected"]
+source_fingerprint = "sha256:6bd16ca34656e4a17b7967a6b8ce070ebb4fdffa9b8c855088ab3e08e30bf996"
+context = "Public-domain English read alongside the registered CSEL Latin."
+
+[[bindings]]
+source_id = "artifact.isaac-abarbanel.perush-al-ha-torah.warsaw-1862.gen-15-question-7-checked-text-718b7f8c"
+loci = ["Gen.15"]
+role = "direct-witness"
+states = ["acquired", "inspected", "verified"]
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:f06e6f16dd1fd50b50ef1ccde86ee085862bcd4d6f7b6358530fd102b96c0f84"
+context = "GPT independently inspected the registered checked passage for Abarbanel's explicit daylight/night dilemma and retained the non-page-image limitation."
+
+[[bindings]]
+source_id = "artifact.cornelius-a-lapide.commentaria-in-pentateuchum.antwerp-1700.gen-15-notes-checked-text-ea514bf7"
+loci = ["Gen.15.1", "Gen.15.5", "Gen.15.12", "Gen.15.17"]
+role = "direct-witness"
+states = ["acquired", "inspected"]
+source_fingerprint = "sha256:cfc2ea35443b82da6222e58b23d23f4b94a9d4c36134f3e5dd1eedfa8c77478a"
+context = "GPT inspected the registered notes for waking vision, a nocturnal star scene, daytime labor, and visionary qualification; OCR remains the evidence ceiling."
+
+[[bindings]]
+source_id = "artifact.george-leo-haydock.douay-rheims-with-haydock-commentary.ia-scan-undated.ia-djvu-ocr-7c3d4a79"
+loci = ["Gen.15.1", "Gen.15.5", "Gen.15.12", "Gen.15.13"]
+role = "direct-witness"
+states = ["acquired", "inspected"]
+source_fingerprint = "sha256:3736e84327ee8cbede252cd238c94f3ed6822dbf98c4a1a30d3df0ecaa20f713"
+context = "GPT inspected the waking-vision note and the bounded absence of a note at verse 5."
+
+[[bindings]]
+source_id = "artifact.philo.quis-rerum-divinarum-heres-sit.yonge-1854.ia-djvu-ocr-f60262d0"
+loci = ["16-17", "20", "51-53"]
+role = "direct-witness"
+states = ["acquired", "inspected"]
+source_fingerprint = "sha256:1959e40f6d8d05511d556db682e44e69ca075eacec2e4617df539414d336452f"
+context = "GPT inspected the going-out, Chaldean astral-fatalism, and sunset-allegory loci; Philo's use of Genesis 15:7 remains distinct from later use of verse 5."

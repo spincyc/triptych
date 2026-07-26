@@ -1,5 +1,7 @@
 # Historical Accounts
 
+<!-- triptych-publication-id: history/catholic-exorcism/01-history-and-current-practice -->
+
 [Return to the Library](../LIBRARY.md)
 
 ## Biblical Translation Histories

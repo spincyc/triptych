@@ -28,8 +28,21 @@ The article paraphrases external sources and uses only brief conventional phrase
 
 Completed: profile routing; direct review of the identified scriptural loci; exact-locus review of the named conciliar, catechetical, papal, patristic, anaphoral, and scholastic claims; claim-level doctrine/model and authority audit; settled 11-page, 5,105-word build; clean fatal-error, undefined-reference, and overflow scans; metadata and extracted-text checks; and one bounded contact-sheet review of all pages.
 
-`draft.tex` is intentionally not a publishable `main.tex`. The source remains
-held. Outstanding: individual full-size inspection of every page;
+`main.tex` is now the canonical held source. Internal full-size page inspection
+and web-fidelity review are recorded in the first-baseline review. Outstanding:
 independent patristic, sacramental-theological, liturgical, and ecclesiastical
-review; web conversion review; installation; cataloging; and exact-snapshot
-release authorization.
+review; installation; cataloging; and exact-snapshot release authorization.
+
+## Production and first-baseline verdict
+
+On 2026-07-26 the canonical held source rendered as an eleven-page,
+warning-free Letter PDF. Every page was inspected at useful resolution for
+clipping, overlap, malformed text, bad breaks, table legibility, and metadata
+placement. The generated Markdown was reviewed for heading, table, reference,
+metadata, and rights-colophon fidelity.
+
+Both initial-baseline candidates and the consequential-claim comparison are
+recorded in `research/staleness-review-2026-07-26.md`. They agree in substance;
+the full `main.tex` is preferred. The shared ledger remains untouched for
+integrating-root review. These production results close no independent
+specialist gate.

@@ -1,8 +1,8 @@
 classification_schema = 1
 record_type = "publication-source-classification-review"
-audited_on = "2026-07-22"
-publication_snapshot = "sha256:8c00874cd546b3b873e3f116f3e3de194d981297053ba80be51dcbf359c4b24c"
-classification_snapshot = "sha256:024950d81db6ac66fd47555a800e596f53bee230f983d2427573904ab2a8e361"
+audited_on = "2026-07-26"
+publication_snapshot = "sha256:d3963d6224dbd16f15862f7e03a07e8734927643b574dc058ff116c2d537dcd1"
+classification_snapshot = "sha256:3bf02f757d5f809975235df534f2ad7c2d2be4af93af81f4eaa3faebd56ae1ed"
 
 [[classifications]]
 document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -49,6 +49,10 @@ document = "articles/faith/in-defense-of-the-particular"
 source_categories = ["liturgical", "magisterial", "scholastic", "scripture"]
 
 [[classifications]]
+document = "articles/faith/last-supper-calvary-and-the-mass"
+source_categories = ["historical-primary", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
+
+[[classifications]]
 document = "articles/faith/ontological-vertigo"
 source_categories = ["classical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
 
@@ -59,6 +63,18 @@ source_categories = ["canon-law", "finding-aid", "magisterial", "patristic", "sc
 [[classifications]]
 document = "articles/faith/trustful-surrender-to-divine-providence"
 source_categories = ["finding-aid", "historical-primary", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture", "secondary"]
+
+[[classifications]]
+document = "articles/scripture/abraham-and-the-daylight-stars"
+source_categories = ["classical", "historical-primary", "patristic", "scripture", "secondary"]
+
+[[classifications]]
+document = "articles/scripture/john-6-bread-from-heaven"
+source_categories = ["historical-primary", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
+
+[[classifications]]
+document = "articles/scripture/the-linen-cloths-at-the-empty-tomb"
+source_categories = ["classical", "historical-primary", "patristic", "scripture", "secondary"]
 
 [[classifications]]
 document = "biographies/origen"
@@ -265,6 +281,10 @@ document = "history/biblical-translations/02-vulgate"
 source_categories = ["archival-material", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scripture", "secondary"]
 
 [[classifications]]
+document = "history/catholic-exorcism/01-history-and-current-practice"
+source_categories = ["canon-law", "classical", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scripture", "secondary"]
+
+[[classifications]]
 document = "history/catholic-parish-histories/01-st-stanislaus-milwaukee"
 source_categories = ["archival-material", "dataset-survey", "finding-aid", "historical-primary", "institutional-current", "secondary"]
 
@@ -327,6 +347,10 @@ source_categories = ["finding-aid", "historical-primary", "liturgical", "magiste
 [[classifications]]
 document = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"
 source_categories = ["finding-aid", "historical-primary", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text"
+source_categories = ["historical-primary", "liturgical", "scripture"]
 
 [[classifications]]
 document = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass"

@@ -1,5 +1,7 @@
 # Faith
 
+<!-- triptych-publication-id: articles/faith/last-supper-calvary-and-the-mass -->
+
 [Return to the Library](../LIBRARY.md)
 
 ## Trustful Surrender
