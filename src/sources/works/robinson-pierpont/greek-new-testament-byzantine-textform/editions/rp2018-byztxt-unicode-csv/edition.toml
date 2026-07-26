@@ -1,0 +1,10 @@
+schema = 1
+record_type = "edition"
+id = "edition.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv"
+work_id = "work.robinson-pierpont.greek-new-testament-byzantine-textform"
+title = "RP2018 Byzantine Textform, byztxt Unicode CSV form of Robinson's CCAT files, with variant apparatus"
+language = "grc"
+publication = "Maintained electronic edition, byztxt/byzantine-majority-text repository, repository state 27a45ff1b7be6c17ccbfeac414f3f55732ae8e28 (2024-12-31)"
+date = "2018"
+editors = ["Maurice A. Robinson", "William G. Pierpont"]
+notes = "The repository distributes Robinson's official BETA-code CCAT and Strong's files together with Unicode CSV forms generated from them by the repository's own conversion scripts; the repository states that Robinson's files remain the source of truth and that all code and text in it are in the public domain. The registered artifacts are the CSV form, not Robinson's official files, and their conversion input has not been separately acquired or hashed here. In-line braces mark apparatus notes: {NA x > y} records a Nestle-Aland divergence and {Byz x > y} an internal Byzantine variant. The apparatus is a divergence note, not a full critical apparatus."

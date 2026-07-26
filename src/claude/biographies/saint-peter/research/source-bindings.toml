@@ -2,11 +2,14 @@ schema = 1
 record_type = "bindings"
 document = "biographies/saint-peter"
 
-# Claude edition. Except for Pastor aeternus (below), bindings are
-# catalog-level: passage checks were performed against live web
-# transcriptions (URLs and dates in research/source-audit.md), not against
-# registered artifact bytes, so no acquisition/inspection/verification
-# state is claimed against those source-library records themselves.
+# Claude edition. Two kinds of binding appear here. The Pastor aeternus
+# passage and the Robinson-Pierpont Greek artifacts were checked against
+# exact registered bytes and carry evidence states beyond "cataloged" with
+# pinned fingerprints. Every other binding is catalog-level: the passage
+# checks were performed against live web transcriptions (URLs and dates in
+# research/source-audit.md), not against registered artifact bytes, so no
+# acquisition, inspection, or verification state is claimed against those
+# source-library records themselves.
 
 [[bindings]]
 source_id = "passage.first-vatican-council.pastor-aeternus.latin-vatican-web-2026-07-24.complete-text"
@@ -40,3 +43,151 @@ loci = ["29 June (Ss. Petri et Pauli); 22 February (Cathedrae S. Petri); 18 Nove
 role = "lead"
 states = ["cataloged"]
 context = "Identity lead for the publication's current-calendar sentence. The controlling Missale artifact is restricted and was not inspected for this publication; the feast statements in the text rest on the checked 1908/1912 Catholic Encyclopedia articles for the cult's history and carry the 2026-07-25 mutable-fact cutoff for present observance."
+
+[[bindings]]
+source_id = "artifact.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.ccat-csv-mat-1f31b338"
+loci = ["Mt 16:16-19 (Petros/petra, the demonstrative, the keys); Mt 16:17 (Bariona); Mt 18:18 (plural binding and loosing)"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Exact tracked bytes of the Matthew file were downloaded at the pinned repository state on 2026-07-25, hashed, and read at the listed loci for the publication's Greek-language claims, which are given in transliteration. The edition is the Byzantine Textform with an inline divergence apparatus; every Nestle-Aland divergence the apparatus records at a locus used is reported in the publication. No collation against manuscripts or against a critical edition was performed, so no verification state is claimed."
+source_fingerprint = "sha256:323fd6cf817d2e412c365eafe1f2c2b2b3937369be45c3e40c16803be6247e38"
+
+[[bindings]]
+source_id = "artifact.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.ccat-csv-luk-82225821"
+loci = ["Lk 5:10 (koinonoi); Lk 22:31-32 (plural hymas against singular sou, pistis sou, sterison)"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Exact tracked bytes of the Luke file were downloaded at the pinned repository state on 2026-07-25, hashed, and read at the listed loci for the publication's Greek-language claims, which are given in transliteration. The edition is the Byzantine Textform with an inline divergence apparatus; every Nestle-Aland divergence the apparatus records at a locus used is reported in the publication. No collation against manuscripts or against a critical edition was performed, so no verification state is claimed."
+source_fingerprint = "sha256:0dcb9cf834727b00d8e1796afb84d1fb28f251444982dd5cbc9b56cbdad7de86"
+
+[[bindings]]
+source_id = "artifact.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.ccat-csv-joh-1e4f4305"
+loci = ["Jn 1:42 (Kephas, Iona/Ioannou apparatus); Jn 3:35 and 5:20, 11:3 and 11:5, 13:23 and 20:2 (agapao/phileo interchange); Jn 18:18 and 21:9 (anthrakia); Jn 21:15-19 (agapas/phileis, boske/poimaine, arnia/probata, oida/ginosko)"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Exact tracked bytes of the John file were downloaded at the pinned repository state on 2026-07-25, hashed, and read at the listed loci for the publication's Greek-language claims, which are given in transliteration. The edition is the Byzantine Textform with an inline divergence apparatus; every Nestle-Aland divergence the apparatus records at a locus used is reported in the publication. No collation against manuscripts or against a critical edition was performed, so no verification state is claimed."
+source_fingerprint = "sha256:29b2daef412b8cead0025d8070cd43a52e7faa0d183c110da45e01d3c83ee0aa"
+
+[[bindings]]
+source_id = "artifact.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.ccat-csv-act-4f355f70"
+loci = ["Acts 4:13 (agrammatoi, idiotai, parrhesia); Acts 12:17; Acts 15:7 and 15:14 (Symeon)"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Exact tracked bytes of the Acts file were downloaded at the pinned repository state on 2026-07-25, hashed, and read at the listed loci for the publication's Greek-language claims, which are given in transliteration. The edition is the Byzantine Textform with an inline divergence apparatus; every Nestle-Aland divergence the apparatus records at a locus used is reported in the publication. No collation against manuscripts or against a critical edition was performed, so no verification state is claimed."
+source_fingerprint = "sha256:8478960f8a452c583fd7664a825aa83c4cdffeff3d55133ba2b7eeff1c349476"
+
+[[bindings]]
+source_id = "artifact.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.ccat-csv-gal-69a5ca3f"
+loci = ["Gal 1:18 (historesai; Petros/Kephas apparatus); Gal 2:6-9 (Petros at 2:7-8, Kephas at 2:9); Gal 2:11-14 (hypokrisis; Petros/Kephas apparatus)"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Exact tracked bytes of the Galatians file were downloaded at the pinned repository state on 2026-07-25, hashed, and read at the listed loci for the publication's Greek-language claims, which are given in transliteration. The edition is the Byzantine Textform with an inline divergence apparatus; every Nestle-Aland divergence the apparatus records at a locus used is reported in the publication. No collation against manuscripts or against a critical edition was performed, so no verification state is claimed."
+source_fingerprint = "sha256:ffc631b534871e5687e67389768fe4f331cda205f22a6ea3ea7ee9e9a7bc3344"
+
+[[bindings]]
+source_id = "artifact.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.ccat-csv-1pe-29fd83a2"
+loci = ["1 Pt 1:1 (the five provinces); 5:1-2 (sympresbyteros, martys, poimanate, episkopountes); 5:12 (dia Silouanou ... egrapsa); 5:13 (Babylon, Mark)"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Exact tracked bytes of the 1 Peter file were downloaded at the pinned repository state on 2026-07-25, hashed, and read at the listed loci for the publication's Greek-language claims, which are given in transliteration. The edition is the Byzantine Textform with an inline divergence apparatus; every Nestle-Aland divergence the apparatus records at a locus used is reported in the publication. No collation against manuscripts or against a critical edition was performed, so no verification state is claimed."
+source_fingerprint = "sha256:e7e43295e5b7920cf7122f0d5dde58125efa661236c0321a5b982088d7c68cf1"
+
+[[bindings]]
+source_id = "artifact.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.ccat-csv-2pe-c77fbc32"
+loci = ["2 Pt 1:1 (Symeon Petros); 1:14, 1:16-18; 2:4, 2:6, 2:17 (the shared clause and its eis aiona apparatus)"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Exact tracked bytes of the 2 Peter file were downloaded at the pinned repository state on 2026-07-25, hashed, and read at the listed loci for the publication's Greek-language claims, which are given in transliteration. The edition is the Byzantine Textform with an inline divergence apparatus; every Nestle-Aland divergence the apparatus records at a locus used is reported in the publication. No collation against manuscripts or against a critical edition was performed, so no verification state is claimed."
+source_fingerprint = "sha256:7653cfdb6329d392e58b73d136a204955f17f1f3b097b51461772691875334ed"
+
+[[bindings]]
+source_id = "artifact.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.ccat-csv-jud-ae708604"
+loci = ["Jude 6, 7, 12-13 (the parallels with 2 Pt 2 and the shared closing clause)"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Exact tracked bytes of the Jude file were downloaded at the pinned repository state on 2026-07-25, hashed, and read at the listed loci for the publication's Greek-language claims, which are given in transliteration. The edition is the Byzantine Textform with an inline divergence apparatus; every Nestle-Aland divergence the apparatus records at a locus used is reported in the publication. No collation against manuscripts or against a critical edition was performed, so no verification state is claimed."
+source_fingerprint = "sha256:0a604e22c29a4bd03a0a5ba68f9aa0b09869648dceb414f8c44a7e6d6272cd1a"
+
+[[bindings]]
+source_id = "edition.ante-nicene-fathers.volume-5.buffalo-1886"
+loci = ["Cyprian, On the Unity of the Catholic Church 4-5"]
+role = "translation-control"
+states = ["cataloged"]
+context = "Cyprian's treatise was read in Wallis's ANF translation as transcribed at New Advent on 2026-07-25. The New Advent transcription prints one recension of chapter 4 and omits the volume's footnotes; the alternative recension and the account of its attestation were taken from the 1912 Catholic Encyclopedia article on Cyprian, bound separately. Catalog-level identity use only."
+
+[[bindings]]
+source_id = "edition.ante-nicene-fathers.volume-9.buffalo-1896"
+loci = ["Clement of Rome, First Epistle to the Corinthians 4-6 (Keith)", "Origen, Commentary on Matthew 12.10-14 (Patrick)"]
+role = "translation-control"
+states = ["cataloged"]
+context = "1 Clement and Origen's Commentary on Matthew were read in this volume's translations as transcribed at New Advent on 2026-07-25; New Advent identifies both texts as ANF vol. 9. Catalog-level identity use only; no registered artifact bytes of the volume were checked."
+
+[[bindings]]
+source_id = "edition.ante-nicene-fathers.volume-3.buffalo-1885"
+loci = ["Tertullian, Prescription Against Heretics 36 (Holmes)", "Tertullian, Scorpiace 15 (Thelwall)"]
+role = "translation-control"
+states = ["cataloged"]
+context = "The two Tertullian loci for the manner of Peter's death were read in the New Advent transcription of this edition on 2026-07-25. Catalog-level identity use only."
+
+[[bindings]]
+source_id = "edition.nicene-and-post-nicene-fathers.series-2-volume-1.new-york-1890"
+loci = ["Eusebius, Church History 1.12; 2.15; 2.25; 3.1; 3.3; 3.39; 6.20"]
+role = "translation-control"
+states = ["cataloged"]
+context = "Eusebius was read in McGiffert's translation as transcribed at New Advent and CCEL on 2026-07-25, for the Clement of Alexandria namesake report, the Babylon reading, the Nero chapter with Gaius and Dionysius, the head-downward notice from Origen, the canon notice on 1-2 Peter, the Papias fragment on Mark, and the dating of the Gaius-Proclus dialogue. Catalog-level identity use only."
+
+[[bindings]]
+source_id = "edition.nicene-and-post-nicene-fathers.series-2-volume-3.new-york-1892"
+loci = ["Jerome, On Illustrious Men 1"]
+role = "translation-control"
+states = ["cataloged"]
+context = "Jerome's notice on Peter was read in Richardson's translation as transcribed at New Advent on 2026-07-25. Catalog-level identity use only."
+
+[[bindings]]
+source_id = "edition.nicene-and-post-nicene-fathers.series-1-volume-1.new-york-1886"
+loci = ["Augustine, Letter 28", "Augustine, Letter 40", "Augustine, Letter 75 (= Jerome, Letter 112)", "Augustine, Letter 82"]
+role = "translation-control"
+states = ["cataloged"]
+context = "The four surviving pieces of the Jerome-Augustine exchange on Galatians 2:11-14 were read in full in Cunningham's translation as transcribed at New Advent on 2026-07-25; New Advent gives the volume's imprint as Buffalo 1887 while this record identifies the New York 1886 printing, a difference of reprint identity that does not affect the translation quoted. Catalog-level identity use only."
+
+[[bindings]]
+source_id = "edition.nicene-and-post-nicene-fathers.series-2-volume-6.new-york-1893"
+loci = ["Jerome, Letter 112", "Jerome, Letter 120 (abstract only)"]
+role = "translation-control"
+states = ["cataloged"]
+context = "Jerome's Letter 112 was checked in this series's presentation of his own letter numbering, and Letter 120 was consulted there and found to be printed only as an abstract of its twelve questions, so the remark about Peter's interpreters that is sometimes cited from it could not be verified and is not used. Catalog-level identity use only."
+
+[[bindings]]
+source_id = "edition.nicene-and-post-nicene-fathers.series-1-volume-7.new-york-1888"
+loci = ["Augustine, Tractates on the Gospel of John 124.5"]
+role = "translation-control"
+states = ["cataloged"]
+context = "Augustine's mature reading of Matthew 16:18-19, with the petra/Peter etymology and the representative reading of the keys, was read in this volume's translation as transcribed at New Advent on 2026-07-25. Catalog-level identity use only."
+
+[[bindings]]
+source_id = "edition.john-calvin.institutio-christianae-religionis.beveridge-english-1845"
+loci = ["4.6.3", "4.6.4", "4.6.5", "4.6.6", "4.6.7"]
+role = "context"
+states = ["cataloged"]
+context = "Calvin's chapter against the Roman primacy was read in full in Beveridge's translation as transcribed at CCEL on 2026-07-25, and is quoted in the publication as the strongest Reformation statement of the case against the Catholic reading of Matthew 16 and John 21. Catalog-level identity use only; the transcription's own pagination markers and footnotes were not collated against a printed copy."
+
+[[bindings]]
+source_id = "edition.josephus.antiquitates-judaicae.whiston-1737"
+loci = ["19.8.2"]
+role = "context"
+states = ["cataloged"]
+context = "Whiston's translation was read in the Project Gutenberg text on 2026-07-25 at Antiquities 19.8.2 in his book-chapter-section numbering, for Josephus's account of Agrippa I's death in the seventh year of his reign, which supplies the only external anchor near the arrest of Acts 12. The publication states that the conversion of that regnal count to A.D. 44 is conventional. Catalog-level identity use only."
+
+[[bindings]]
+source_id = "edition.catholic-encyclopedia.volume-4.new-york-1908"
+loci = ["St. Cyprian of Carthage"]
+role = "reception"
+states = ["cataloged"]
+context = "Chapman's article was read on 2026-07-25 for the two recensions of De unitate 4, which it prints in full, for its judgment that the conflated form is spurious and the alternative form probably Cyprian's own revision, and for its statement that the 'one chair' in Cyprian is the episcopal chair. Reported as that article's conclusion; the critical editions of Cyprian were not consulted. Catalog-level identity use only."
+
+[[bindings]]
+source_id = "edition.catholic-encyclopedia.volume-3.new-york-1908"
+loci = ["Chair of Peter"]
+role = "reception"
+states = ["cataloged"]
+context = "Read on 2026-07-25 for the chair feasts and the description of the relic chair's plain oak core. Catalog-level identity use only."
