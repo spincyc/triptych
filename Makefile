@@ -29,6 +29,10 @@ CODEX ?= /usr/bin/codex
 #     pandoc
 #   repository/review/isolated-agent workflow:
 #     git github-cli openai-codex ripgrep
+#   the worktree-marshal installed-lifecycle suite, which builds and installs a
+#   wheel rebuilt from its own source distribution and is the release gate for
+#   that tool; without these its packaging tests error rather than skip:
+#     python-setuptools python-build python-wheel
 #
 # pacman supplies the native shared-library closure and TeX package
 # transitives. poppler-data is optional for non-Latin CMaps and is not needed
@@ -49,9 +53,10 @@ ARCH_TEX_PACKAGES := texlive-bin texlive-basic texlive-latex \
 ARCH_PDF_PACKAGES := poppler imagemagick
 ARCH_WEB_PACKAGES := pandoc
 ARCH_WORKFLOW_PACKAGES := git github-cli openai-codex ripgrep
+ARCH_PACKAGING_PACKAGES := python-setuptools python-build python-wheel
 ARCH_DEPENDENCY_PACKAGES := $(ARCH_CORE_PACKAGES) $(ARCH_PYTHON_PACKAGES) \
 	$(ARCH_TEX_PACKAGES) $(ARCH_PDF_PACKAGES) $(ARCH_WEB_PACKAGES) \
-	$(ARCH_WORKFLOW_PACKAGES)
+	$(ARCH_WORKFLOW_PACKAGES) $(ARCH_PACKAGING_PACKAGES)
 ARCH_CANONICAL_COMMANDS := make:/usr/bin/make sh:/usr/bin/sh \
 	env:/usr/bin/env id:/usr/bin/id find:/usr/bin/find sort:/usr/bin/sort \
 	cmp:/usr/bin/cmp \
