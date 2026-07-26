@@ -200,6 +200,12 @@ depends on, apart from removing a `locus_pattern` this study had introduced.
 
 ## Review state
 
+Initial staleness/baseline review (2026-07-26): the complete authoring state,
+minimal candidate, and research-first rewrite were compared against changed
+Missal, GIRM, and paired records. Textual comparison, editions, current
+permission, collation, translation, and rights ceilings agree in substance. No
+material change.
+
 Completed: claim-driven research with same-day acquisition and hash verification
 of every witness; visual collation of load-bearing Latin at rendered page
 images; a complete movement inventory of both Orders of Mass; enumeration of the

@@ -118,6 +118,11 @@ repository's public-domain Douay–Rheims was not needed.
 
 ## Review record
 
+Initial staleness/baseline review (2026-07-26): the complete authoring state,
+minimal candidate, and research-first rewrite were compared against changed
+Missal, GIRM, and paired records. Sequence, rubrics, roles, options, editions,
+collation, permission, and rights limits agree in substance. No material change.
+
 ### Initial production review — 2026-07-26
 
 Sources were acquired and read on 25 July 2026 (UTC dates of the working session; the document
