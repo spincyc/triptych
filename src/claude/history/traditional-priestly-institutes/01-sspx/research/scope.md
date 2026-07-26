@@ -175,3 +175,10 @@ Public web availability is not treated as a reuse licence.
   Fribourg and of Sion, and in *L'Osservatore Romano* for 17 June 1988;
 - independent rights review; ecclesiastical review or approval (none
   claimed).
+
+## Research-staleness verdict — 2026-07-26
+
+Comparison with both candidates found that newly registered Code and Acta
+records strengthen exact provenance without changing any consequential claim,
+source gap, or cutoff qualification. This exact edition is ready for
+rebaselining.
