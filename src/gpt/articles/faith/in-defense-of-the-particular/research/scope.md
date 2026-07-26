@@ -94,3 +94,10 @@ Official English conciliar, catechetical, doctrinal, and papal pages are linked 
   rights record, and this non-rendered audit record. No imprimatur, nihil
   obstat, other ecclesiastical approval, broader reuse permission, or
   completion of independent review is claimed.
+
+## Research-staleness verdict — 2026-07-26
+
+Both candidates and all changed paired inputs were compared. New source records
+strengthen provenance without changing a consequential claim or either recorded
+residue. The retitled identity *In Defense of the Particular* remains exact.
+This edition is ready for rebaselining.
