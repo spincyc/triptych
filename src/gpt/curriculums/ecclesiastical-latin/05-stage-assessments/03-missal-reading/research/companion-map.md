@@ -8,3 +8,9 @@
 
 Course-wide answer, passage, source, and rights decisions remain in the
 owner root's `research/` records.
+
+## Research-staleness verdict — 2026-07-26
+
+Comparison of the current companion and both candidates against changed inputs
+found no material formulary, prompt, transfer, or answer correction. This
+exact assessment is ready for rebaselining.
