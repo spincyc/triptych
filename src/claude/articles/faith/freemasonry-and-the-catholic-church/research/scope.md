@@ -49,6 +49,12 @@ Official Holy See texts are quoted briefly with attribution from registered rest
 
 ## Review state
 
+Staleness review (2026-07-26): old, minimally modified, and research-first
+treatments were compared against paired research and changed CIC and Catechism
+records. No later reversing act or legal amendment appears; the 2026-07-25
+as-of date, Latin jurisdiction, source ceilings, and non-advice limits remain.
+No material change.
+
 Completed: claim-driven research with same-day (2026-07-25) fetching, hashing, and reading of every quoted witness (see `research/source-audit.md` and `research/source-bindings.toml`); creation and validation of new source-library records (In eminenti, Providas catalog record, Humanum genus, the 1917 and 1983 Codes with canon-level passages, Sacrae disciplinae leges, Pascite gregem Dei, the 1981/1983/1985/2023 Roman acts, the UGLE FAQ) with `scripts/source-library validate` passing; epistemic-order and equal-altitude voice review; preservation-of-disagreement review (the lodge-difference question left where the Church left it); rights review; canon-law currentness check dated 2026-07-25; multipass build with clean fatal-error, reference, overflow, and layout scans; generation-metadata gate; page-by-page raster review.
 
 Outstanding: independent historical, theological, and canonical review; review by persons with first-hand knowledge of Masonic jurisdictions; ecclesiastical review. No imprimatur, nihil obstat, or ecclesiastical approval is claimed. Publication language: **source-audited working article**. Internal checking is not independent review.
