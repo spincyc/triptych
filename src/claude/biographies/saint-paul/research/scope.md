@@ -180,6 +180,12 @@ is claimed.
 
 ## Production verification
 
+## Staleness review — 2026-07-26
+
+Both candidates found the paired GPT dated review note adds no Pauline evidence
+or changed claim. **No material change.** See
+`src/sources/inventories/peter-paul-staleness-review-2026-07-26.md`.
+
 See the production notes in `source-audit.md`; the build, validation, and
 page-review record for this revision is kept there and must be updated
 with any rebuild.
