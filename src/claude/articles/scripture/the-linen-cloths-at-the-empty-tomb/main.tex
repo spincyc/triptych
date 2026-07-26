@@ -1,0 +1,82 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+\usepackage{endnotes}
+
+\hypersetup{
+  pdftitle={The Linen Cloths at the Empty Tomb},
+  pdfsubject={A close exegetical study of John 20:3-10 with Luke 24:12: the burial cloths, who is said to have believed, and two explanations of why the arrangement mattered}
+}
+
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\renewcommand{\makeenmark}{\hbox{\textsuperscript{\normalfont\theenmark}}}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.14\textheight}
+{\large\scshape Scripture\par}
+\vspace{0.35em}
+{\small A Study of One Passage\par}
+\vspace{1.5em}
+{\Huge\bfseries The Linen Cloths at the Empty Tomb\par}
+\vspace{0.9em}
+{\large John 20:3--10, and What Peter Is Said to Have Known\par}
+\vfill
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{articles/scripture/the-linen-cloths-at-the-empty-tomb/sections/00-the-claim-under-test}
+\input{articles/scripture/the-linen-cloths-at-the-empty-tomb/sections/10-the-passage}
+\input{articles/scripture/the-linen-cloths-at-the-empty-tomb/sections/20-the-vocabulary}
+\input{articles/scripture/the-linen-cloths-at-the-empty-tomb/sections/30-who-believed}
+\input{articles/scripture/the-linen-cloths-at-the-empty-tomb/sections/40-the-harmonizations}
+\input{articles/scripture/the-linen-cloths-at-the-empty-tomb/sections/50-the-argument-from-arrangement}
+\input{articles/scripture/the-linen-cloths-at-the-empty-tomb/sections/55-the-reception}
+\input{articles/scripture/the-linen-cloths-at-the-empty-tomb/sections/60-the-folded-napkin}
+\input{articles/scripture/the-linen-cloths-at-the-empty-tomb/sections/70-project-synthesis}
+\input{articles/scripture/the-linen-cloths-at-the-empty-tomb/sections/80-boundaries}
+\clearpage
+\addcontentsline{toc}{section}{Notes}
+\begingroup
+\small
+\setlength{\parskip}{0.45em}
+\theendnotes
+\endgroup
+\clearpage
+\appendix
+\input{articles/scripture/the-linen-cloths-at-the-empty-tomb/sections/90-scope-method-qualifications}
+\input{articles/scripture/the-linen-cloths-at-the-empty-tomb/sections/99-references}
+\begingroup
+\setlength{\parskip}{0pt}
+\vspace{-0.6\baselineskip}
+\section{Generation Metadata}
+\vspace{-0.35\baselineskip}
+{\scriptsize\input{articles/scripture/the-linen-cloths-at-the-empty-tomb/generation-metadata}}
+\endgroup
+\end{deepstudy}
+
+\end{document}

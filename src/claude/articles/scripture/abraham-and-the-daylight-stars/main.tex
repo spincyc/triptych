@@ -1,0 +1,86 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+\usepackage{endnotes}
+
+\hypersetup{
+  pdftitle={Abraham and the Daylight Stars},
+  pdfsubject={A close exegetical study of Genesis 15:5 and the hour at which the star-promise was given}
+}
+
+\setcounter{tocdepth}{2}
+\setlength{\emergencystretch}{2.5em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\renewcommand{\makeenmark}{\hbox{\textsuperscript{\normalfont\theenmark}}}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.14\textheight}
+{\large\scshape Scripture\par}
+\vspace{0.35em}
+{\small A Single-Passage Study\par}
+\vspace{1.5em}
+{\Huge\bfseries Abraham and the Daylight Stars\par}
+\vspace{0.9em}
+{\large Genesis 15:5 and the Hour of the Promise\par}
+\vfill
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{articles/scripture/abraham-and-the-daylight-stars/sections/00-the-hour-nobody-asks-about}
+\input{articles/scripture/abraham-and-the-daylight-stars/sections/10-the-chapters-own-clock}
+\input{articles/scripture/abraham-and-the-daylight-stars/sections/20-what-the-hebrew-does}
+\input{articles/scripture/abraham-and-the-daylight-stars/sections/30-the-vision-at-the-head}
+\input{articles/scripture/abraham-and-the-daylight-stars/sections/40-the-greek-and-the-latin}
+\input{articles/scripture/abraham-and-the-daylight-stars/sections/45-the-count-that-fails}
+\input{articles/scripture/abraham-and-the-daylight-stars/sections/50-abarbanels-seventh-question}
+\input{articles/scripture/abraham-and-the-daylight-stars/sections/55-five-answers-kept-apart}
+\input{articles/scripture/abraham-and-the-daylight-stars/sections/60-brought-out-from-where}
+\input{articles/scripture/abraham-and-the-daylight-stars/sections/70-the-fathers-did-not-ask}
+\input{articles/scripture/abraham-and-the-daylight-stars/sections/80-where-the-promise-recurs}
+\input{articles/scripture/abraham-and-the-daylight-stars/sections/85-paul-and-the-hour}
+\input{articles/scripture/abraham-and-the-daylight-stars/sections/90-project-synthesis}
+\clearpage
+\addcontentsline{toc}{section}{Notes}
+\begingroup
+\small
+\setlength{\parskip}{0.45em}
+\theendnotes
+\endgroup
+\clearpage
+\appendix
+\input{articles/scripture/abraham-and-the-daylight-stars/sections/92-witness-register}
+\input{articles/scripture/abraham-and-the-daylight-stars/sections/95-scope-method-qualifications}
+\input{articles/scripture/abraham-and-the-daylight-stars/sections/99-references}
+\begingroup
+\setlength{\parskip}{0pt}
+\vspace{-0.6\baselineskip}
+\section{Generation Metadata}
+\vspace{-0.35\baselineskip}
+{\scriptsize\input{articles/scripture/abraham-and-the-daylight-stars/generation-metadata}}
+\endgroup
+\end{deepstudy}
+
+\end{document}
