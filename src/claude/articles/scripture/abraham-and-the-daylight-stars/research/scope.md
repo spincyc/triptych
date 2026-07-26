@@ -196,3 +196,15 @@ edition record.
   `14c5ca420e55a8a7576b339f8ffa8c994e4bdfb8e3ef391a113f3a91f09ff9ae`;
   the release manifest binds that snapshot under the project's perpetual
   public-repository authorization.
+
+## First-baseline staleness review — 2026-07-26
+
+Every research input was treated as new. A minimally modified candidate and an
+independent research-first rewrite were compared with the current complete
+authoring state claim by claim. All three preserve the conditional daylight
+result, Hebrew/Greek/Latin and vision limits, Abarbanel's bounded priority, five
+non-equivalent answer families, enumerated patristic negative, Pauline
+boundary, rights, and outstanding specialist gates. No input adds, removes,
+strengthens, weakens, or contradicts a consequential claim. **No material
+change; this exact edition is fit for first baseline.** See
+`src/sources/inventories/claude-abraham-daylight-stars-first-baseline-review-2026-07-26.md`.
