@@ -72,7 +72,44 @@ the letters), S (project synthesis, never attributed to a source).
   passage record and re-verified byte-identical (SHA-256 032a5f65…) on
   2026-07-25.
 - Catholic Encyclopedia (1908–1912) articles "St. Peter, Prince of the
-  Apostles," "Chair of Peter," "Pope St. Clement I" for reception history.
+  Apostles," "Chair of Peter," "Pope St. Clement I" for reception history,
+  and "St. Cyprian of Carthage" (vol. 4, Chapman) for the two recensions of
+  De unitate 4, which that article prints in full.
+
+Added in the 2026-07-25 deepening revision:
+
+- The Greek New Testament read directly at the loci where a claim turns on
+  the Greek: the Robinson–Pierpont Byzantine Textform (RP2018) in the
+  byztxt Unicode CSV form of Robinson's CCAT files, with its inline
+  NA/Byz divergence apparatus. Eight book files (Mt, Lk, Jn, Acts, Gal,
+  1–2 Pt, Jude) were downloaded at a pinned repository state, hashed, and
+  registered as tracked artifacts under
+  `src/sources/works/robinson-pierpont/`; bindings record acquisition and
+  inspection with pinned fingerprints. This is one textual tradition with a
+  divergence apparatus, not a critical edition; no manuscript or collation
+  work was done.
+- The Clementine Vulgate of John 21 as presented at drbo.org, for the
+  diligis/amas and pasce renderings.
+- Origen, Commentary on Matthew 12.10–14 (ANF 9, Patrick) — the fullest
+  ancient statement of the "every confessor is a Peter" reading.
+- Cyprian, On the Unity of the Catholic Church 4–5 (ANF 5, Wallis).
+- Augustine, Tractates on John 124.5 (NPNF1-7) — the petra/Peter etymology.
+- The Jerome–Augustine correspondence on Gal 2:11–14, read in full:
+  Augustine, Letters 28, 40, 82; Jerome's reply (Aug. Letter 75 = Jerome
+  Letter 112), NPNF1-1 (Cunningham), with Jerome's own numbering checked at
+  NPNF2-6.
+- Eusebius, HE 1.12 (Clement of Alexandria's namesake theory) and 6.20
+  (the Gaius–Proclus dialogue under Zephyrinus).
+- Ignatius, Smyrnaeans 3 (ANF 1).
+- The Muratorian Fragment in Metzger's translation, for the deliberate
+  omission of Peter's martyrdom from Acts and for the absence of the
+  Petrine epistles from the earliest canon list.
+- Josephus, Antiquities 19.8.2 (Whiston) for Agrippa I's death.
+- Calvin, Institutes 4.6.3–7 (Beveridge, CCEL), read in full as the
+  strongest Reformation statement of the case against.
+- Lumen gentium 22 and Ut unum sint 88–97 (official English, vatican.va).
+- Smothers 1966 re-read in full for the von Gerkan/Kirschbaum/Prandi/Magi
+  stratigraphic dispute, the three bone groups, and the coin objection.
 
 ## Required coverage delivered
 
@@ -88,6 +125,40 @@ Guarducci controversy reported with ceilings; Petrine doctrine bounded to
 Pastor aeternus as reception; feasts and iconography; chronology with
 per-event bases; tradition audit; terminal apparatus.
 
+Added in the 2026-07-25 deepening revision (16 pp. to 38 pp.):
+
+- A dedicated section on Mt 16:18–19 reading the Greek and the Aramaic
+  substrate, setting out the four historic readings of "this rock," quoting
+  Origen and Calvin at their strongest, giving the two recensions of
+  Cyprian's De unitate 4 with the textual controversy named, giving
+  Augustine's petra/Peter etymology, and closing with a labelled Project
+  synthesis on what the wording carries.
+- Luke 22:31–32 treated as the second primacy text, with the Greek
+  plural/singular pivot, the fact that Luke places it immediately before the
+  denial, and Pastor aeternus ch. 4's use of it together with the council's
+  own limiting clause on new doctrine.
+- John 21:15–17 treated with the agapao/phileo and boske/poimaine
+  variations, the Johannine interchange of the two love-verbs elsewhere, the
+  Vulgate and Douay renderings, and 1 Pt 5:1–2 as the text that universalizes
+  the charge in Peter's own name.
+- Antioch expanded into the three ancient escape routes (Clement's namesake
+  theory, refuted from Gal 2:7–9; Origen–Jerome's staged rebuke; Augustine's
+  plain reading) and the Jerome–Augustine exchange read at the letters, with
+  a Project synthesis whose stated counterargument is Jerome's tu quoque.
+- Rome argued by first stating the four silences at full strength (Rom 16,
+  the captivity letters, Acts, the first century as a whole), conceding what
+  they refute (the 25-year episcopate), then weighing 1 Clement in its
+  context of chs. 4–6 against Tacitus, Ignatius, Dionysius, Irenaeus, and
+  Gaius, with a Project synthesis whose counterargument is single-tradition
+  propagation.
+- The letters graded with the 2 Peter/Jude shared clause read in Greek, the
+  Muratorian silence, the Symeon datum, and a Project synthesis.
+- The tomb section rebuilt around the actual stratigraphic dispute and the
+  three bone groups, with a stated inability to date the grave itself to the
+  first century.
+- Reception extended to Lumen gentium 22 and Ut unum sint.
+- A rendered tradition-and-status table in the terminal appendix.
+
 ## Controlling conclusions
 
 - The first-century core (fisherman, call, primacy among the Twelve,
@@ -102,7 +173,13 @@ per-event bases; tradition audit; terminal apparatus.
   identification is reported as contested, with the chain-of-custody and
   Ferrua–Guarducci dispute stated.
 - Doctrine (Pastor aeternus) is reported accurately as M-class reception,
-  not converted into first-century data.
+  not converted into first-century data, and is set beside Lumen gentium 22
+  and Ut unum sint.
+- Four labelled Project synthesis judgments are reached, each with reasons,
+  the strongest counterargument in its holders' own terms, and a named
+  defeater: (i) on the wording of Mt 16:18–19; (ii) on what Antioch shows
+  and does not show; (iii) on the letters' usability as historical evidence;
+  (iv) on the Roman death and the rejected long episcopate.
 
 ## Exclusions and restraint
 
@@ -123,14 +200,25 @@ per-event bases; tradition audit; terminal apparatus.
 - Year and manner of the martyrdom within 64–68.
 - Identity of the Wall-g bones; custody 1942–1953; the standing of
   Guarducci's readings beyond *Petros eni*.
+- Whether the earth grave beneath the aedicula is first-century at all
+  (von Gerkan's objection against Kirschbaum's reply; Prandi's judgment that
+  no Campo P burial is first-century, from which he declined to draw the
+  conclusion).
+- Direction of dependence between 2 Peter and Jude.
+- Whether the alternative recension of Cyprian, De unitate 4 is the author's
+  own revision (the 1912 CE account's conclusion, not confirmed here).
 
 ## Rights and publication maturity
 
 Project prose is original; quotations follow identified public-domain
-translations (Douay–Rheims Challoner; ANF/NPNF; Church–Brodribb; M. R.
-James 1924); brief Latin from the Holy See's web text and brief scholarly
-quotations from Smothers 1966 are attributed; NABRE and other modern
-translations are not used. Internal editorial and production checking
+translations (Douay–Rheims Challoner and the Clementine Vulgate; ANF/NPNF;
+Beveridge's Calvin 1845; Church–Brodribb; Whiston's Josephus; M. R.
+James 1924) and the Robinson–Pierpont Greek text, which its distributors
+place in the public domain; brief Latin from the Holy See's web text, brief
+English from Lumen gentium and Ut unum sint, brief scholarly quotations from
+Smothers 1966, and one clause of Metzger's translation of the Muratorian
+Fragment are attributed; NABRE and other modern Scripture translations are
+not used. Internal editorial and production checking
 only; no independent specialist, theological, archaeological, rights, or
 ecclesiastical review is claimed.
 

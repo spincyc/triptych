@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.ccat-csv-gal-69a5ca3f"
+edition_id = "edition.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv"
+artifact_type = "structured-text"
+media_type = "text/csv; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The byztxt/byzantine-majority-text repository states that all of the code and text it contains is in the public domain. The underlying Byzantine textform is an edition of an ancient Greek text; the repository's declaration covers the electronic files distributed there, including this generated CSV form."
+rights_jurisdiction = "United States"
+source_url = "https://raw.githubusercontent.com/byztxt/byzantine-majority-text/27a45ff1b7be6c17ccbfeac414f3f55732ae8e28/csv-unicode/ccat/with-variants/GAL.csv"
+provenance = "Downloaded from the byztxt/byzantine-majority-text repository at the pinned commit 27a45ff1b7be6c17ccbfeac414f3f55732ae8e28. The file is the repository's Unicode CSV conversion of Professor Robinson's official CCAT BETA-code file for Galatians, with the inline variant apparatus retained. The CCAT input file was not separately acquired or hashed."
+retrieved = "2026-07-25"
+sha256 = "69a5ca3f68c4c1af4c72c5f594936b65e663ed1cd942e932a747eca28728aa4b"
+byte_size = 32358
+path = "src/sources/works/robinson-pierpont/greek-new-testament-byzantine-textform/editions/rp2018-byztxt-unicode-csv/artifacts/ccat-csv-gal-69a5ca3f/GAL.csv"
+indexable = false
+encoding = "utf-8"
+notes = "One LF-delimited header line followed by one physical line per verse in chapter,verse,text form, except where a quoted verse text itself contains a newline; verse text carries accents, breathings, and inline {NA ...} or {Byz ...} apparatus braces. Because the apparatus braces sit inside the verse text, a raw literal search over this artifact can match apparatus wording as well as edition wording; the artifact is registered as a citable exact witness rather than as a search representation."
