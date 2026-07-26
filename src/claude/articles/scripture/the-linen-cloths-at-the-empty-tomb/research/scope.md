@@ -120,3 +120,17 @@ installed at its mirrored `doc/` path. Its exact installed SHA-256 is
 `b8a10bf0727001adbe1cf8c8e161ce29e19819d1d84bb71e5759cacb20c09cf9`;
 the release manifest binds that snapshot under the project's perpetual
 public-repository authorization.
+
+## First-baseline staleness review — 2026-07-26
+
+Every research input was treated as new. A minimally modified candidate and an
+independent research-first rewrite were compared with the complete authoring
+state claim by claim. All three preserve Peter's observation, the other
+disciple's singular belief, Luke's wondering Peter, the unresolved content of
+belief, the full patristic counterargument, the bounded anti-theft conclusion,
+the unattested folded-napkin result and its dated search limits, the 2006
+provenance correction, rights, open questions, and outstanding independent
+reviews. No input adds, removes, strengthens, weakens, or contradicts a
+consequential claim. **No material change; this exact edition is fit for first
+baseline.** See
+`src/sources/inventories/claude-linen-cloths-first-baseline-review-2026-07-26.md`.
