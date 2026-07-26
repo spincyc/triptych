@@ -64,6 +64,45 @@ The owner's `propers/verified.md` verifies the reusable formulary, rubrics, elem
 
 ## Published text and English
 
+### Component architecture
+
+The component architecture here supersedes the older two-leaf packaging
+language below while existing pilots are migrated. New and substantially
+revised guides use one canonical leaf and provider-neutral
+`proper-components.toml`. The bare ID produces the complete research PDF and
+sole full HTML edition. A mechanical `-synthesis` PDF companion uses the same
+source and owns no prose, audit record, or web declaration.
+
+The manifest assigns stable lowercase kebab-case keys to every textual unit
+and records ordered components, mode membership, dependencies, element
+bindings, and component-scoped references. Each synthesis relation joins at
+least two element keys and declares controlled evidence classes. No component
+included in one mode may depend on a component omitted from that mode.
+
+The research edition contains the existing pages 1 and 2; every lawfully
+reproducible appointed text; `Each Proper in Full` with the bounded reception
+sweep; exactly two pages of `The Propers: Themes and Movement`; unbounded
+`Source-Grounded Synthesis Across the Propers`; unbounded `Interpretive
+Possibilities Across the Propers`; notable quotations; and
+terminal apparatus. The synthesis companion retains pages 1 and 2, brief
+synthesis, the complete source-grounded synthesis, the complete exploratory
+synthesis, notable quotations, and terminal apparatus. It omits both the
+appointed-text component and the per-element sweep. It remains subject to the
+copyright limits below.
+
+Because rights prevent this canonical edition from reproducing every
+controlling appointed text in full, its catalog label is `Research PDF`;
+the companion is `Synthesis PDF`. `Full PDF` is reserved for a canonical
+edition whose texts are actually complete.
+
+Mark the brief synthesis with
+`triptych:brief-synthesis:start`,
+`triptych:brief-synthesis:end`, and
+`triptych:brief-synthesis:next`. After the build settles,
+`scripts/check-proper-components --aux` must find those markers on pages N,
+N+1, and N+2. Page breaks without that validation do not meet the exact
+two-page requirement.
+
 Each proper is published as two editions from one body of research: a
 **study edition** at the leaf's bare id, and a **full-text edition** at
 the same id with a `-full-text` suffix, in its own leaf directory,

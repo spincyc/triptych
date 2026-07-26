@@ -87,12 +87,17 @@ ALL_MAIN_SOURCES := $(shell find src -mindepth 2 -type f -name main.tex 2>/dev/n
 PROVIDERS := $(sort $(foreach path,$(ALL_MAIN_SOURCES),$(word 2,$(subst /, ,$(path)))))
 
 MAIN_SOURCES := $(shell find $(SOURCE_ROOT) -type f -name main.tex 2>/dev/null | sort)
-DOCUMENTS := $(patsubst $(SOURCE_ROOT)/%/main.tex,%,$(MAIN_SOURCES))
+CANONICAL_DOCUMENTS := $(patsubst $(SOURCE_ROOT)/%/main.tex,%,$(MAIN_SOURCES))
+PROPER_SYNTHESIS_DOCUMENTS := $(shell \
+	$(PYTHON) scripts/check-proper-components --provider $(PROVIDER) \
+		--list-synthesis 2>/dev/null)
+DOCUMENTS := $(CANONICAL_DOCUMENTS) $(PROPER_SYNTHESIS_DOCUMENTS)
 BUILD_PDFS := $(addprefix $(BUILD_ROOT)/,$(addsuffix .pdf,$(DOCUMENTS)))
 BUILD_METADATA_STAMPS := $(addprefix $(BUILD_ROOT)/.metadata/,$(addsuffix .ok,$(DOCUMENTS)))
 BUILD_METADATA_VERIFICATIONS := $(addprefix $(BUILD_ROOT)/.metadata/,$(addsuffix .verify,$(DOCUMENTS)))
 DOC_PDFS := $(addprefix $(DOC_ROOT)/,$(addsuffix .pdf,$(DOCUMENTS)))
 METADATA_CHECKER := scripts/check-generation-metadata
+PROPER_COMPONENT_CHECKER := scripts/check-proper-components
 WEB_EDITION_CHECKER := scripts/check-web-edition
 WEB_EDITION_TOOL := scripts/web-edition
 CURRICULUM_STRUCTURE_CHECKER := scripts/check-curriculum-structure
@@ -202,6 +207,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 
 .PHONY: all pdf review-pdfs review-all-pdfs install list help clean \
 	distclean check-tools check-metadata check-web-editions \
+	check-proper-components \
 	web-editions install-web-editions check-web-editions-current \
 	check-sources check-source-library \
 	check-source-inventory check-source-inventory-tool \
@@ -439,6 +445,9 @@ check-metadata: check-tools
 check-web-editions:
 	@$(PYTHON) $(WEB_EDITION_CHECKER) --provider $(PROVIDER)
 
+check-proper-components:
+	@$(PYTHON) $(PROPER_COMPONENT_CHECKER) --provider $(PROVIDER)
+
 # Generation is tier one: reproducible Markdown for review, never installed here.
 web-editions:
 	@set -eu; \
@@ -562,6 +571,7 @@ rebaseline-doc:
 
 # Staleness stays out of `check`: it flags re-evaluation work, not breakage.
 check: check-metadata check-web-editions check-web-editions-current \
+	check-proper-components \
 	check-sources check-public-alpha check-release-bindings
 
 check-tests:
@@ -578,6 +588,36 @@ $(BUILD_ROOT)/$(1).pdf: $(shell find $(SOURCE_ROOT)/$(1) -type f \( \
 	-name '*.pdf' -o -name '*.eps' \) | sort)
 endef
 $(foreach document,$(DOCUMENTS),$(eval $(call REGISTER_DOCUMENT_SOURCES,$(document))))
+
+define REGISTER_PROPER_SYNTHESIS_SOURCES
+$(BUILD_ROOT)/$(1).pdf: $(shell find $(SOURCE_ROOT)/$(patsubst %-synthesis,%,$(1)) \
+	-type f \( -name '*.tex' -o -name '*.toml' -o -name '*.sty' -o -name '*.bib' \) \
+	2>/dev/null | sort)
+endef
+$(foreach document,$(PROPER_SYNTHESIS_DOCUMENTS),\
+	$(eval $(call REGISTER_PROPER_SYNTHESIS_SOURCES,$(document))))
+
+$(foreach document,$(PROPER_SYNTHESIS_DOCUMENTS),\
+	$(eval $(BUILD_ROOT)/$(document).pdf: \
+		$(SOURCE_ROOT)/$(patsubst %-synthesis,%,$(document))/synthesis.tex))
+
+$(BUILD_ROOT)/%-synthesis.pdf:
+	@mkdir -p $(@D) '$(BUILD_ROOT)/.metadata/$(dir $*)'
+	@rm -f -- '$(BUILD_ROOT)/.metadata/$*-synthesis.ok'
+	cd $(SOURCE_ROOT) && TEXINPUTS=..: $(PDFLATEX) -interaction=nonstopmode -halt-on-error \
+		-jobname=$(notdir $*)-synthesis -output-directory=$(abspath $(@D)) $*/synthesis.tex
+	cd $(SOURCE_ROOT) && TEXINPUTS=..: $(PDFLATEX) -interaction=nonstopmode -halt-on-error \
+		-jobname=$(notdir $*)-synthesis -output-directory=$(abspath $(@D)) $*/synthesis.tex
+	@$(PROPER_COMPONENT_CHECKER) --provider '$(PROVIDER)' --document '$*' \
+		--aux '$(BUILD_ROOT)/$*-synthesis.aux'
+	@$(METADATA_CHECKER) --provider '$(PROVIDER)' --pdf '$*' '$@'
+	@set -eu; \
+		pdf_line=$$($(SHA256) -- '$@'); pdf_hash=$${pdf_line%% *}; \
+		validator_line=$$($(SHA256) -- '$(METADATA_CHECKER)'); \
+		validator_hash=$${validator_line%% *}; \
+		printf 'schema=1\nprovider=%s\ndocument=%s\npdf_sha256=%s\nvalidator_sha256=%s\n' \
+			'$(PROVIDER)' '$*-synthesis' "$$pdf_hash" "$$validator_hash" \
+			> '$(BUILD_ROOT)/.metadata/$*-synthesis.ok'
 
 $(BUILD_ROOT)/%.pdf: $(SOURCE_ROOT)/%/main.tex $(COMMON_SOURCES) | check-metadata
 	@mkdir -p $(@D)

@@ -83,6 +83,15 @@ Generation provenance, source audit, specialist review, theological or canonical
 
 Typography serves navigation and meaning. Remove wrapper labels already supplied by the surrounding heading, but retain labels that convey authority, attribution, safety, contrast, accessibility, or stable semantic fields. Give repeated multi-field forms consistent visible field names. Do not use typography to imply doctrinal or juridical force.
 
+Where a profile separates source-grounded and exploratory synthesis, that
+boundary is structural. A relation record names at least two stable
+source-element keys and one or more evidence classes. Textual observation,
+documented historical orientation, documented reception, and source-grounded
+synthesis may support the source-grounded component. Exploratory proposal
+belongs only in the expressly exploratory component. “Authoritative
+synthesis” must not imply that project-created analysis has magisterial
+authority.
+
 Before installing a publication:
 
 - verify the reader-first order, terminal apparatus, every material claim and citation, source/proposal boundaries, and absence of unused references or padding;

@@ -89,3 +89,18 @@ option list takes every `\item` label with it; a comment between a
 meet a new one, add the audit that catches it, not just the fix. A macro
 the shim does not define and the audit does not know stops the
 conversion by design — extend the shim rather than dropping the leaf.
+
+## Componentized proper guides
+
+When a proper profile authorizes `proper-components.toml`, the canonical
+research mode is the publication represented on the web. The converter reads
+the canonical entrypoint and every `research` component. The `-synthesis` PDF
+is a bounded mechanical companion and receives no separate web leaf; canonical
+HTML is its accessible superset. This is not an `ineligible` classification
+and must not be represented by a fabricated blocking construct.
+
+Component boundaries become semantic headings, stable element keys become
+durable anchors, and relation evidence classes remain readable text rather
+than styling alone. Component-scoped references accompany exactly the
+components that use them. Preflight rejects a component included in one mode
+when it depends on a component omitted from that mode.

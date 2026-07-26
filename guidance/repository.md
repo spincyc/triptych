@@ -64,6 +64,17 @@ src/<provider>/
 
 Each publishable leaf contains `main.tex`, `generation-metadata.tex` or a profile-authorized inherited declaration, `web-edition.toml` declaring its web-edition eligibility, and the profile-required records. Shared directories are non-publishable and have no PDF mirror. Put shared material at the narrowest ancestor that genuinely owns it; keep provider-neutral global typesetting primitives under `src/common/` — both providers import the shared preamble, which the build resolves as `\input{common/preamble}` through `TEXINPUTS` — and rite-, edition-, collection-, or work-specific material within its subtree. Hoist a file to `src/common/` only when it is pure typesetting or format and providers genuinely share it. Content-bearing shared material — lesson content, prayer texts, verified liturgical texts, response references — remains inside its provider branch; a provider's documents must not ride on another provider's authored substance.
 
+A proper-guide profile may authorize one canonical leaf to produce two PDFs
+through a provider-neutral `proper-components.toml` manifest. The bare leaf ID
+is the canonical research edition and the same source is its sole web edition.
+The mechanical `-synthesis` PDF is a derived companion, not a second editable
+leaf: it has no `main.tex`, source records, generation record, web declaration,
+or independently authored prose. It is compiled through the manifest's
+`synthesis_entrypoint`, inherits canonical provenance, and may include only
+components whose manifest mode is `synthesis`. Both outputs are independently
+reviewed, installed, cataloged in the canonical row, and bound to their own
+exact release hashes.
+
 `build/<provider>/`, `doc/<provider>/`, and `web/<provider>/` mirror a publishable leaf's path below `src/<provider>/`; the PDF and the web edition are named for the leaf. For example, under `gpt`:
 
 ```text
@@ -82,6 +93,13 @@ Use lowercase kebab-case slugs. Stable identifiers are namespaced by their profi
 ## Shared sources and records
 
 One text has one authoritative owner. Import it into every consumer and declare build dependencies that rebuild all consumers after it changes. Do not create editable copies for convenience. Derived companions must identify their canonical owner and may inherit provenance only when their profile permits it.
+
+For componentized proper guides, the manifest is the ordered dependency graph.
+Every component and its component-scoped reference file belongs to the
+canonical leaf. A component included in an output may not depend on a
+component omitted from that output. Stable element keys and synthesis-relation
+keys are publication data and must not be derived from headings or display
+order.
 
 Keep records with the owning leaf or a clearly owned shared source. They must identify the exact editions, witnesses, translations, jurisdictions, dates, source roles, checked loci, unresolved discrepancies, rights basis, and completed review required by the profile. Focused third-party extracts may be tracked when necessary and distributable; complete scans, bulk OCR, private caches, and machine-specific corpora do not belong in publication leaves.
 
@@ -238,6 +256,15 @@ companions `·`-joined in the same cell under short distinguishing labels. A
 provider edition that does not yet exist or is not released renders as an em
 dash placeholder. Per-provider links within the one owning row are not
 cross-listing; listing a leaf on more than one page is.
+
+A componentized proper guide remains one catalog identity. Its provider cell
+links `Full PDF`, `Synthesis PDF`, and `Read` in that order when the canonical
+edition lawfully gives every appointed text in full. Where rights prevent
+that completeness, it truthfully links `Research PDF`, `Synthesis PDF`, and
+`Read`. The companion receives no separate row or HTML link.
+The component manifest records `appointed_text_completeness` as `complete` or
+`rights-limited`; its canonical label must correspond, and its synthesis label
+is always `Synthesis PDF`.
 
 A curriculum section landing follows that provider-column rule at course
 level: each available provider link opens the corresponding provider section

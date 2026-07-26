@@ -1,0 +1,287 @@
+#!/usr/bin/env python3
+"""Validate the provider-neutral component manifest used by proper guides."""
+
+from __future__ import annotations
+
+import argparse
+import re
+import sys
+import tomllib
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+MANIFEST = "proper-components.toml"
+KEY_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
+KINDS = {
+    "front-matter",
+    "appointed-text",
+    "proper-treatment",
+    "brief-synthesis",
+    "source-grounded-synthesis",
+    "exploratory-synthesis",
+    "notable-quotable",
+    "terminal-apparatus",
+}
+MODES = {"research", "synthesis"}
+EVIDENCE = {
+    "textual-observation",
+    "documented-historical-orientation",
+    "documented-reception",
+    "source-grounded-synthesis",
+    "exploratory-proposal",
+}
+LABELS = (
+    "triptych:brief-synthesis:start",
+    "triptych:brief-synthesis:end",
+    "triptych:brief-synthesis:next",
+)
+
+
+def safe_file(leaf: Path, value: object, field: str) -> Path:
+    if not isinstance(value, str) or not value:
+        raise ValueError(f"{field} must be a nonempty relative path")
+    path = Path(value)
+    if path.is_absolute() or ".." in path.parts:
+        raise ValueError(f"{field} must remain inside the canonical leaf")
+    resolved = leaf / path
+    if not resolved.is_file():
+        raise ValueError(f"{field} names a missing file: {value}")
+    return resolved
+
+
+def string_list(value: object, field: str, *, nonempty: bool = False) -> list[str]:
+    if not isinstance(value, list) or not all(
+        isinstance(item, str) and item for item in value
+    ):
+        raise ValueError(f"{field} must be a list of nonempty strings")
+    if nonempty and not value:
+        raise ValueError(f"{field} must not be empty")
+    return value
+
+
+def parse_manifest(path: Path) -> dict:
+    data = tomllib.loads(path.read_text(encoding="utf-8"))
+    if data.get("schema") != 1 or data.get("record_type") != "proper-components":
+        raise ValueError("manifest requires schema = 1 and record_type = 'proper-components'")
+    document = data.get("document")
+    if not isinstance(document, str) or not document:
+        raise ValueError("document must be a provider-relative canonical leaf id")
+    if document.endswith("-synthesis"):
+        raise ValueError("document must name the canonical research edition")
+    outputs = data.get("outputs")
+    if not isinstance(outputs, dict):
+        raise ValueError("[outputs] is required")
+    if outputs.get("research") != document:
+        raise ValueError("outputs.research must equal document")
+    if outputs.get("synthesis") != f"{document}-synthesis":
+        raise ValueError("outputs.synthesis must equal document plus '-synthesis'")
+    if outputs.get("web") != document:
+        raise ValueError("outputs.web must name only the canonical research edition")
+    completeness = data.get("appointed_text_completeness")
+    if completeness not in {"complete", "rights-limited"}:
+        raise ValueError(
+            "appointed_text_completeness must be 'complete' or 'rights-limited'"
+        )
+    expected_label = "Full PDF" if completeness == "complete" else "Research PDF"
+    if outputs.get("canonical_label") != expected_label:
+        raise ValueError(
+            f"outputs.canonical_label must be {expected_label!r} for "
+            f"{completeness!r} appointed text"
+        )
+    if outputs.get("synthesis_label") != "Synthesis PDF":
+        raise ValueError("outputs.synthesis_label must be 'Synthesis PDF'")
+    return data
+
+
+def audit_manifest(path: Path, provider_root: Path) -> None:
+    data = parse_manifest(path)
+    leaf = path.parent
+    relative = str(leaf.relative_to(provider_root))
+    if data["document"] != relative:
+        raise ValueError(f"document must match canonical leaf id {relative!r}")
+    safe_file(leaf, data.get("entrypoint"), "entrypoint")
+    safe_file(leaf, data.get("synthesis_entrypoint"), "synthesis_entrypoint")
+
+    element_keys = string_list(data.get("element_keys"), "element_keys", nonempty=True)
+    if len(element_keys) != len(set(element_keys)):
+        raise ValueError("element_keys contains a duplicate")
+    if any(not KEY_RE.fullmatch(key) for key in element_keys):
+        raise ValueError("element_keys must use stable lowercase kebab-case keys")
+
+    components = data.get("components")
+    if not isinstance(components, list) or not components:
+        raise ValueError("[[components]] must declare the ordered component graph")
+    keys: set[str] = set()
+    records: dict[str, dict] = {}
+    for index, component in enumerate(components):
+        if not isinstance(component, dict):
+            raise ValueError(f"components[{index}] must be a table")
+        key = component.get("key")
+        if not isinstance(key, str) or not KEY_RE.fullmatch(key):
+            raise ValueError(f"components[{index}].key must be lowercase kebab-case")
+        if key in keys:
+            raise ValueError(f"duplicate component key {key!r}")
+        keys.add(key)
+        records[key] = component
+        if component.get("kind") not in KINDS:
+            raise ValueError(f"component {key!r} has an invalid kind")
+        safe_file(leaf, component.get("path"), f"component {key!r} path")
+        modes = string_list(component.get("modes"), f"component {key!r} modes", nonempty=True)
+        if set(modes) - MODES or len(modes) != len(set(modes)):
+            raise ValueError(f"component {key!r} has invalid or duplicate modes")
+        string_list(component.get("depends_on", []), f"component {key!r} depends_on")
+        references = string_list(
+            component.get("references", []), f"component {key!r} references"
+        )
+        for reference in references:
+            safe_file(leaf, reference, f"component {key!r} reference")
+        bound = string_list(
+            component.get("element_keys", []), f"component {key!r} element_keys"
+        )
+        if set(bound) - set(element_keys):
+            raise ValueError(f"component {key!r} uses an undeclared element key")
+
+    for key, component in records.items():
+        dependencies = component.get("depends_on", [])
+        if set(dependencies) - keys:
+            raise ValueError(f"component {key!r} has an unknown dependency")
+        for mode in component["modes"]:
+            omitted = [
+                dependency
+                for dependency in dependencies
+                if mode not in records[dependency]["modes"]
+            ]
+            if omitted:
+                raise ValueError(
+                    f"component {key!r} in {mode} depends on omitted component(s): "
+                    + ", ".join(omitted)
+                )
+
+    kinds = [component["kind"] for component in components]
+    required_once = {
+        "appointed-text",
+        "proper-treatment",
+        "brief-synthesis",
+        "source-grounded-synthesis",
+        "exploratory-synthesis",
+        "notable-quotable",
+        "terminal-apparatus",
+    }
+    for kind in required_once:
+        if kinds.count(kind) != 1:
+            raise ValueError(f"exactly one {kind} component is required")
+    by_kind = {
+        component["kind"]: component for component in components
+        if component["kind"] in required_once
+    }
+    research_only = {"appointed-text", "proper-treatment"}
+    for kind in research_only:
+        if set(by_kind[kind]["modes"]) != {"research"}:
+            raise ValueError(f"{kind} must occur only in research mode")
+    synthesis_required = {
+        "brief-synthesis",
+        "source-grounded-synthesis",
+        "exploratory-synthesis",
+        "notable-quotable",
+        "terminal-apparatus",
+    }
+    for kind in synthesis_required:
+        if set(by_kind[kind]["modes"]) != MODES:
+            raise ValueError(f"{kind} must occur in both research and synthesis modes")
+    ordered = [
+        "brief-synthesis",
+        "source-grounded-synthesis",
+        "exploratory-synthesis",
+        "notable-quotable",
+    ]
+    positions = [kinds.index(kind) for kind in ordered]
+    if positions != sorted(positions):
+        raise ValueError(
+            "component order must be brief synthesis, source-grounded synthesis, "
+            "exploratory synthesis, then notable and quotable"
+        )
+
+    relations = data.get("relations")
+    if not isinstance(relations, list):
+        raise ValueError("[[relations]] must declare synthesis relations")
+    relation_keys: set[str] = set()
+    for index, relation in enumerate(relations):
+        if not isinstance(relation, dict):
+            raise ValueError(f"relations[{index}] must be a table")
+        key = relation.get("key")
+        if not isinstance(key, str) or not KEY_RE.fullmatch(key) or key in relation_keys:
+            raise ValueError(f"relations[{index}].key must be unique lowercase kebab-case")
+        relation_keys.add(key)
+        anchors = string_list(
+            relation.get("element_keys"), f"relation {key!r} element_keys", nonempty=True
+        )
+        if len(set(anchors)) < 2 or set(anchors) - set(element_keys):
+            raise ValueError(f"relation {key!r} must join at least two declared elements")
+        evidence = string_list(
+            relation.get("evidence"), f"relation {key!r} evidence", nonempty=True
+        )
+        if set(evidence) - EVIDENCE:
+            raise ValueError(f"relation {key!r} has an invalid evidence class")
+
+
+def aux_page(text: str, label: str) -> int:
+    match = re.search(
+        rf"\\newlabel\{{{re.escape(label)}\}}\{{\{{[^}}]*\}}\{{([0-9]+)\}}", text
+    )
+    if not match:
+        raise ValueError(f"aux file lacks page marker {label!r}")
+    return int(match.group(1))
+
+
+def validate_brief_pages(aux: Path) -> None:
+    text = aux.read_text(encoding="utf-8", errors="replace")
+    start, end, following = (aux_page(text, label) for label in LABELS)
+    if end != start + 1 or following != start + 2:
+        raise ValueError(
+            "brief synthesis must occupy exactly two physical pages: "
+            f"start={start}, end={end}, next={following}"
+        )
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--provider", default="gpt")
+    parser.add_argument("--document")
+    parser.add_argument("--aux", type=Path)
+    parser.add_argument("--list-synthesis", action="store_true")
+    args = parser.parse_args()
+    provider_root = ROOT / "src" / args.provider
+    paths = (
+        [provider_root / args.document / MANIFEST]
+        if args.document
+        else sorted(provider_root.rglob(MANIFEST))
+    )
+    errors = []
+    for path in paths:
+        try:
+            if not path.is_file():
+                raise ValueError(f"missing manifest {path}")
+            audit_manifest(path, provider_root)
+        except (OSError, ValueError, tomllib.TOMLDecodeError) as exc:
+            errors.append(f"{path}: {exc}")
+    if args.aux:
+        try:
+            validate_brief_pages(args.aux)
+        except (OSError, ValueError) as exc:
+            errors.append(str(exc))
+    if errors:
+        for error in errors:
+            print(f"proper-component error: {error}", file=sys.stderr)
+        return 1
+    if args.list_synthesis:
+        for path in paths:
+            data = parse_manifest(path)
+            print(data["outputs"]["synthesis"])
+        return 0
+    print(f"Proper component manifests valid: {len(paths)}.")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
