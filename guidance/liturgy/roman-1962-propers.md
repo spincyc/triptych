@@ -40,6 +40,51 @@ For every new or substantially revised guide, maintain a passage-by-passage rece
 
 “Broad” means that every appointed passage receives a documented search across the major reasonably accessible patristic and saintly corpora relevant to it; “deep” means that the guide explains and, where useful, compares the reasoning of checked witnesses rather than stacking names or aphorisms. Retain at least one direct witness for a passage when one is located and more than one where they materially differ or develop the reading. When no responsible direct witness is found, say which corpora were checked and use any illuminating reuse only under that label. Never claim to have found all witnesses everywhere; state the bounded search and preserve a discoverable omission for later research.
 
+## Published Text and English
+
+Each proper is published as two editions from one body of research. The
+**study edition** carries the leaf's bare id and is the default a reader
+meets. The **full-text edition** carries the same id with a `-full-text`
+suffix, lives in its own leaf directory, and imports the study edition's
+sections rather than restating them; it exists to give the complete
+appointed text to a reader who wants it. Both are separate publications
+with their own manifest entry, catalog link, and web edition, and both
+carry the same collation findings. A catalog row links both from the one
+provider cell.
+
+The study edition does not reproduce the appointed Latin in full. Each
+element is identified by its Latin incipit and reference, its text is
+given in English, and Latin is quoted only where an argument turns on
+the wording — a collation divergence from the Clementine, a Father's
+lemma differing from the missal's, a grammatical claim. This is a
+presentation rule, not a research rule: every published form is still
+collated against the controlling facsimile exactly as before, and the
+divergences found are still published. The full-text edition prints the
+complete Latin with its English.
+
+English is never composed, translated, adapted, or paraphrased by the
+guide. It is quoted from a registered public-domain witness and
+attributed at first use and in the references:
+
+- Scriptural elements — introit, gradual, alleluia, tract, offertory,
+  communion, epistle, gospel — take the Douay–Rheims (Challoner), which
+  is the English of the Vulgate the missal prints. Resolve the psalm
+  locus in the missal's Vulgate numbering, not the modern one; a guide
+  that silently crosses the two numbering systems has published the
+  wrong verses.
+- Orations — collect, secret, postcommunion, and any other non-scriptural
+  proper text — take a registered public-domain hand missal, cited by
+  formulary rather than by page. Where a missal's Sunday numbering or
+  formulary boundaries differ from the 1962 books, resolve the mismatch
+  and disclose it; do not assume correspondence.
+
+Where no public-domain English exists for an element, say so and give
+the Latin incipit with a description of what the prayer asks. Do not
+supply a rendering of the project's own. Translations under copyright —
+the ICEL Missal, the Knox Bible, the Jerusalem and New Jerusalem Bibles,
+the RSV and NRSV, the NABRE, the Grail psalms — are never reproduced,
+at any length that would substitute for the book.
+
 ## Evidence and Claim Discipline
 
 Research is claim-driven, not quota-driven. Prefer primary, official, edition-identified, and direct sources. For each retained witness, identify the author, work, exact locus, edition or stable link, and source role. Distinguish direct exegesis of an appointed passage from doctrinal illumination. A catena, anthology, search result, OCR transcription, or secondary citation is only a lead until the underlying source and attribution are checked. Preserve material disagreement and uncertainty rather than manufacturing consensus.
