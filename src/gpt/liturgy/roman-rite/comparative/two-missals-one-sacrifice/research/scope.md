@@ -81,6 +81,13 @@ The historical revision first produced a reviewed 46-page snapshot, SHA-256 `399
 
 Final-typography production review completed on 2026-07-19: a settled two-pass build produced the current 47-page PDF, SHA-256 `72f216ac78c6dcd82ae7f8f038d55d6ac596e74afe242c3603233f79204f595d`. The warning-free final log, `qpdf`, PDF title and page metadata, embedded/subsetted/Unicode-mapped fonts, and nonempty text extraction passed. Every rendered page was visually reviewed, and the installed PDF is byte-identical to the reviewed build. Independent liturgical-history, sacramental-theology, canon-law, corporate-census, and physical-book review remain outstanding.
 
+## Staleness review — 2026-07-26
+
+Old, minimally modified, and research-first treatments were compared against
+changed Missal, GIRM, and paired records. Edition separation, direct comparison,
+authorization, territorial permission, collation, translation, and rights
+limits remain unchanged. No material change.
+
 ## Compact-rights-colophon production review — 2026-07-19
 
 The settled 46-page PDF, SHA-256 `18ee674353dbfed84e48551b860d05e371457f0fe182c8e7ef6488514ca6270d`, is the exact repository-reviewed build snapshot. Its Generation Metadata displays each model/configuration once per contiguous group while retaining every distinct Agent/runtime record. The final log was warning-free; generation metadata, `qpdf` structure, PDF title/page metadata, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed their gates. Repository production review inspected every physical page; the compact final-page reuse-and-rights colophon is readable, unclipped, non-overlapping, remains with terminal content, and creates no rights-only spill page. The installed PDF was byte-identical to this reviewed build. This reviewed build superseded every earlier production snapshot and received release-specific distribution clearance under the 20 July 2026 dated rights supplement. That operational decision supplied no independent review or ecclesiastical approval, and its exact-byte clearance does not attach to the revision below.
