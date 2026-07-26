@@ -60,6 +60,41 @@ qualification control. Patristic breadth can show reception but is not a
 mechanical authority count. Do not turn one theologian's view into “the Church
 teaches,” or attribute exploratory synthesis to a source.
 
+## Scriptural studies
+
+A study under `articles/scripture/` takes one passage, or one claim about
+one passage, and works it to the bottom. It is not a commentary on a book
+and not a survey of a theme: its unit is small enough that every witness
+bearing on it can actually be read, and the study is finished when they
+have been.
+
+Such a study usually exists because something is claimed about the
+passage that is not obvious from an English reading — an internal
+chronology that resists the received picture, a word doing more work than
+a translation shows, an inference everyone repeats whose source nobody
+has checked. Name that claim in the opening and treat it as the thing
+under test. A study that sets out to defend a claim has already stopped
+being one.
+
+Work the original language, the Septuagint and the Vulgate where they
+bear, and the reception in both the Jewish and the Christian traditions
+where both are relevant — reading each witness at its own locus, never
+through a quotation in a later author. Preserve disagreement among them
+instead of harmonizing it. Report material negative results as findings:
+that the Fathers did not notice a difficulty, or that a widely repeated
+claim has no source behind it, is worth more to a reader than another
+paragraph of agreement.
+
+Where a popular claim about the passage turns out to be unattested, say
+so plainly, show what was searched, and trace where the claim appears to
+have come from. Retiring a false reading is a service; doing it without
+evidence is merely a different error.
+
+Quote English scripture from a registered public-domain witness, never
+from a translation under copyright and never from one composed for the
+occasion. A gloss on a Hebrew or Greek word is labelled a gloss, not a
+translation.
+
 ## Canon law
 
 The controlling text is the official law, not a commentary, FAQ, practice note,
