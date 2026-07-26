@@ -43,6 +43,12 @@
 | **The Seven Sacraments** | [Treatise](../doc/gpt/theology/sacraments.pdf) · [At a Glance](../doc/gpt/theology/sacraments-at-a-glance.pdf) | — | Patristic and Thomistic account of the sacraments, with a compact companion. |
 | **The Virtues** | [PDF](../doc/gpt/theology/virtues.pdf) | — | Theological, cardinal, intellectual, and allied virtues in Aristotelian, Augustinian, and Thomistic thought. |
 
+## Doctrine and Authority
+
+| Publication | ChatGPT | Claude | Focus |
+| --- | --- | --- | --- |
+| **How the Catholic Church Teaches** | [PDF](../doc/gpt/articles/faith/catholic-doctrinal-authority.pdf) · [Read](../web/gpt/articles/faith/catholic-doctrinal-authority.html) | — | Dogma, definitive doctrine, authentic teaching, discipline, theological opinion, their historical development, and the response proper to each. |
+
 ## Church, Liturgy, and Modern Controversies
 
 | Publication | ChatGPT | Claude | Focus |
