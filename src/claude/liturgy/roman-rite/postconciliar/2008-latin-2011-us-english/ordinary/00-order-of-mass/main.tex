@@ -1,0 +1,86 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+\usepackage{endnotes}
+
+\hypersetup{
+  pdftitle={The Order of Mass},
+  pdfsubject={A sequential exposition of the Roman Order of Mass as printed in the 2008 Latin editio typica tertia emendata and translated for the dioceses of the United States in 2011: what each movement prints, what the General Instruction requires of it, where it came from, and what it means.}
+}
+
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.13\textheight}
+{\large\scshape A Triptych Study of the Roman Rite\par}
+\vspace{1.5em}
+{\Huge\bfseries The Order of Mass\par}
+\vspace{0.9em}
+{\Large \latin{Missale Romanum}, editio typica tertia emendata (2008)\\[0.3em]
+and the English translation for the United States (2011)\par}
+\vfill
+{\footnotesize This is a study of the received rite, not an altar book, a ritual text, or a book for
+recitation. The approved English of the Order of Mass is under copyright and is not reproduced
+here; see the terminal Scope, Edition, and Qualifications appendix.\par}
+\vspace{1.2em}
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/00-shape-of-the-action}
+\input{liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/10-introductory-rites}
+\input{liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/20-liturgy-of-the-word}
+\input{liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/30-creed-and-universal-prayer}
+\input{liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/40-preparation-of-the-gifts}
+\input{liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/50-eucharistic-prayer}
+\input{liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/55-roman-canon}
+\input{liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/60-prayers-two-three-four}
+\input{liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/70-communion-rite}
+\input{liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/80-concluding-rites}
+\input{liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/85-english-of-2011}
+\input{liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/90-synthesis}
+\clearpage
+\addcontentsline{toc}{section}{Notes}
+\begingroup
+\footnotesize
+\setlength{\parskip}{0.28em}
+\theendnotes
+\endgroup
+\Needspace{14\baselineskip}
+\appendix
+\input{liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/92-scope-edition-qualifications}
+\input{liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/94-development-timeline}
+\input{liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/99-references}
+\begingroup
+\setlength{\parskip}{0pt}
+\vspace{-0.6\baselineskip}
+\section{Generation Metadata}
+\vspace{-0.35\baselineskip}
+{\scriptsize\input{liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/generation-metadata}}
+\endgroup
+\end{deepstudy}
+
+\end{document}
