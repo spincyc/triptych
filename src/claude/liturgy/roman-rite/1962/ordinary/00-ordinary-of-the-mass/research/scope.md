@@ -67,3 +67,12 @@ The study does not date the sections of the Canon severally, assign an author
 to any of them, adjudicate the epiclesis question, identify the `sanctus
 Angelus tuus` of `Supplices`, or explain Andrew's presence in `Libera nos`. The
 last two are recorded as unresolved rather than filled by inference.
+
+## Review and production state
+
+The source audit was completed internally on 26 July 2026. No independent
+specialist, historical, liturgical, theological, rubrical, or canonical review
+has taken place. The document builds, but its required page review has not been
+performed and no reviewed PDF has been installed. The publication therefore
+remains on `hold` under the independent Ordinary-exposition review gate and
+must not enter a public build or private preview.

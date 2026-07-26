@@ -191,5 +191,8 @@ edition record.
   rabbinics scholar, a patristics scholar, and a Catholic exegete. The
   text-critical limitations above are not closed. No imprimatur, nihil obstat, or
   other ecclesiastical approval is claimed.
-- Production state: not installed to `doc/`; not listed in any `library/` page
-  by this work; build outputs remain under ignored `build/`.
+- Production state: the reviewed PDF is installed at its mirrored `doc/` path
+  and listed on `library/scripture.md`. Its exact installed SHA-256 is
+  `14c5ca420e55a8a7576b339f8ffa8c994e4bdfb8e3ef391a113f3a91f09ff9ae`;
+  the release manifest binds that snapshot under the project's perpetual
+  public-repository authorization.
