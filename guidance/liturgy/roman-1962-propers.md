@@ -62,6 +62,29 @@ collated against the controlling facsimile exactly as before, and the
 divergences found are still published. The full-text edition prints the
 complete Latin with its English.
 
+The full-text edition's appointed-text sheet comes early, immediately
+after the page-2 date-and-location sheet, so that a reader who came for
+the texts reaches them before the exposition. It is the one place where
+the two editions' pagination diverges: the fixed page anchors below —
+thematic movement on page 3, detailed commentary on page 5 — govern the
+study edition, and in the full-text edition both shift by the length of
+that sheet. Everything after it stays in the same fixed order.
+
+The full-text edition inherits rather than duplicates. It keeps no
+`propers/retrieved.txt`, `propers/verified.md`, or `research/scope.md`
+of its own — those live once, in the study edition, and cover both. The
+Source Records requirements above and the profile gate below are
+satisfied for the pair by the study edition's records; a full-text leaf
+that carries its own copies is a defect, because two copies of an audit
+record drift. Its generation metadata is inherited by
+`\AIInheritedGenerationMetadata` for the same reason: the research it
+would otherwise narrate was done in the study leaf.
+
+Neither may the full-text edition restate the study edition's prose. It
+imports the shared body and adds the appointed-text sheet; a `main.tex`
+that lists its twin's sections by hand will silently fall out of step
+the first time a section is added or renamed, with nothing to catch it.
+
 English is never composed, translated, adapted, or paraphrased by the
 guide. It is quoted from a registered public-domain witness and
 attributed at first use and in the references:
