@@ -1,0 +1,11 @@
+schema = 1
+record_type = "work"
+id = "work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.liturgiam-authenticam-2001"
+title = "Liturgiam authenticam"
+responsible = "Congregation for Divine Worship and the Discipline of the Sacraments"
+work_type = "instruction"
+alternate_titles = ["Fifth Instruction on the correct implementation of the Constitution on the Sacred Liturgy", "Instruction on the use of vernacular languages in the publication of the books of the Roman Liturgy"]
+languages = ["la", "en"]
+locus_pattern = '(?:[1-9][0-9]{0,2}[a-f]?|complete-text)'
+description = "The fifth instruction for the right implementation of Sacrosanctum Concilium, dated 28 March 2001 and published 7 May 2001, governing vernacular translation of the Roman liturgical books. Numbered 1-133 with appendices. It is the stated norm under which the third typical edition of the Roman Missal was translated into English."
+relations = ["work.catholic-church.missale-romanum", "work.second-vatican-council.sacrosanctum-concilium"]

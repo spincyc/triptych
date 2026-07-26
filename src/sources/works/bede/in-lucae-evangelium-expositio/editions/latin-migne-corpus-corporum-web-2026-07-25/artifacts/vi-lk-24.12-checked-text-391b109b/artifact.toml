@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.vi-lk-24.12-checked-text-391b109b"
+edition_id = "edition.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of Bede's ancient Latin, which is in the public domain. It contains no markup, apparatus, or editorial matter belonging to the site from which the text was retrieved."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription from the hashed retrieval of the la.wikisource.org raw wikitext, 2026-07-25."
+retrieved = "2026-07-25"
+sha256 = "391b109bff9dc01bab87473106f1ead348fd1bcb70f496a027dc15db41d45008"
+byte_size = 675
+path = "src/sources/works/bede/in-lucae-evangelium-expositio/editions/latin-migne-corpus-corporum-web-2026-07-25/artifacts/vi-lk-24.12-checked-text-391b109b/beda-in-lucam-24-12.txt"
+derived_from = "artifact.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.wikisource-in-lucam-116db0ca"
+transformation = "Transcribe the quoted sentences from the retrieved file with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator; preserve the source's wording, capitalization, and punctuation; omit the delivery's inline scriptural cross references, column markers, section numbers, and markup."
+indexable = true
+encoding = "utf-8"

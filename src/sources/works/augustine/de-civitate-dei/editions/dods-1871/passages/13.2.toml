@@ -1,0 +1,21 @@
+schema = 1
+record_type = "passage"
+id = "passage.augustine.de-civitate-dei.dods-1871.13.2"
+edition_id = "edition.augustine.de-civitate-dei.dods-1871"
+artifact_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45304-body-lf"
+artifact_sha256 = "5aa1e8ef6d07980146bdbe11426095da959cd9e217c7b76f0fcbda6c95cea349"
+locus = "13.2"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete chapter body was inspected at artifact lines 20768-20812, under the heading 'Of that death which can affect an immortal soul, and of that to which the body is subject': the soul called immortal because it does not cease to live and feel, the body called mortal because it can be forsaken of all life; the death of the soul when God forsakes it and the death of the body when the soul forsakes it; the death of the whole man as the compound of the two; the second death that follows; the appeal to Matthew 10:28; and the closing judgment that the first and bodily death is 'to the good it is good, and evil to the evil' while the second can be good for none. The chapter is the tradition's most careful early statement of what the word death is being used to name."
+physical_line_ranges = [[20768, 20812]]
+text = "of all life, and cannot by itself live at all. The death, then, of the soul takes place when God forsakes it, as the death of the body when the soul forsakes it. Therefore the death of both--that is, of the whole man--occurs when the soul, forsaken by God, forsakes the body. For, in this case, neither is God the life of the soul, nor the soul the life of the body. And this death of the whole man is"
+transcription_segments = [
+  { line = 20776, text = "of all life, and cannot by itself live at all. The death, then, of" },
+  { line = 20777, text = "the soul takes place when God forsakes it, as the death of the body" },
+  { line = 20778, text = "when the soul forsakes it. Therefore the death of both--that is, of" },
+  { line = 20779, text = "the whole man--occurs when the soul, forsaken by God, forsakes the" },
+  { line = 20780, text = "body. For, in this case, neither is God the life of the soul, nor" },
+  { line = 20781, text = "the soul the life of the body. And this death of the whole man is" },
+]
+notes = "The chapter heading occupies artifact lines 20768-20769 and the body begins at 20771. The recorded text is the exact whitespace join of complete artifact lines 20776-20781 and therefore opens and closes mid-sentence; the sentence a consumer usually wants runs from 'The death, then, of the soul takes place' to 'nor the soul the life of the body.' Book XIII of this printing is Dods 1871 volume I; the volume II artifact registered for this edition does not contain it. This 1871 witness is distinct from the later NPNF and New Advent working English."
+verified_on = "2026-07-26"

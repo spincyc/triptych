@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.mishnah.berakhot.hebrew-torat-emet-sefaria-web-2026-07-25.sefaria-api-mishnah-berakhot-8-5e499e8f"
+edition_id = "edition.mishnah.berakhot.hebrew-torat-emet-sefaria-web-2026-07-25"
+artifact_type = "structured-text"
+media_type = "application/json"
+storage = "remote"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Sefaria records the licence of the Torat Emet 357 Hebrew text as public domain. The underlying Mishnah is ancient. The retrieved response bytes are not redistributed from this repository; only the transcription of one ruling is retained."
+source_url = "https://www.sefaria.org/api/v3/texts/Mishnah_Berakhot.8?version=hebrew%7CTorat%20Emet%20357"
+provenance = "Single application programming interface response containing the eight mishnayot of chapter 8, retrieved and hashed for this study."
+retrieved = "2026-07-25"
+sha256 = "5e499e8fcf3b614319b3aee7176f5523d165d45b401d2d31d735eb8fac555252"
+byte_size = 14507
+indexable = false
+notes = "JavaScript Object Notation, not a facsimile. The Hebrew is unpointed except for the vowel pointing carried by the Torat Emet text."

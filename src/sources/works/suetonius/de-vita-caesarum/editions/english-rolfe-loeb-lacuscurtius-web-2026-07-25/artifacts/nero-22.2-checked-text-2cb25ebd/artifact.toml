@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.suetonius.de-vita-caesarum.english-rolfe-loeb-lacuscurtius-web-2026-07-25.nero-22.2-checked-text-2cb25ebd"
+edition_id = "edition.suetonius.de-vita-caesarum.english-rolfe-loeb-lacuscurtius-web-2026-07-25"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This single sentence of Rolfe's translation is in the United States public domain by date of publication. It contains no markup belonging to the site from which the text was retrieved."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription from the hashed retrieval of the LacusCurtius page, 2026-07-25."
+retrieved = "2026-07-25"
+sha256 = "2cb25ebdac3893b9dbcf63c159f710aa8a08f40e59b0d46500e3730b3b261e9c"
+byte_size = 168
+path = "src/sources/works/suetonius/de-vita-caesarum/editions/english-rolfe-loeb-lacuscurtius-web-2026-07-25/artifacts/nero-22.2-checked-text-2cb25ebd/suetonius-nero-22-2.txt"
+derived_from = "artifact.suetonius.de-vita-caesarum.english-rolfe-loeb-lacuscurtius-web-2026-07-25.lacuscurtius-nero-a78b881a"
+transformation = "Transcribe the quoted sentences from the retrieved response with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator; preserve wording, spelling and punctuation; omit the delivery's markup, navigation, footnote links and editorial apparatus."
+indexable = true
+encoding = "utf-8"

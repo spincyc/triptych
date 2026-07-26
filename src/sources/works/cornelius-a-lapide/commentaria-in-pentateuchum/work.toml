@@ -1,0 +1,10 @@
+schema = 1
+record_type = "work"
+id = "work.cornelius-a-lapide.commentaria-in-pentateuchum"
+title = "Commentaria in Pentateuchum Mosis"
+responsible = "Cornelius Cornelii a Lapide, S.J."
+work_type = "biblical-commentary"
+alternate_titles = ["Commentary on the Pentateuch", "Commentarius in Genesim"]
+languages = ["la"]
+locus_pattern = '[1-5]?[A-Z][A-Za-z]*\.[1-9][0-9]*(?:\.[1-9][0-9]*)?(?:-[1-9][0-9]*)?'
+description = "The Flemish Jesuit Cornelius a Lapide's Latin commentary on the five books of Moses, first published in 1616 and reprinted throughout the seventeenth and eighteenth centuries. It is a compilation as much as a commentary: a Lapide collects Fathers, scholastics, rabbis, and contemporary Catholic exegetes on each lemma, frequently at second hand through Pererius, and his reports of those authorities are evidence about him rather than about them. A locus is BookToken.chapter.verse."

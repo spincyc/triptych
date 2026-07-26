@@ -1,0 +1,18 @@
+schema = 1
+record_type = "passage"
+id = "passage.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.vi-lk-24.12"
+edition_id = "edition.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25"
+artifact_id = "artifact.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.vi-lk-24.12-checked-text-391b109b"
+artifact_sha256 = "391b109bff9dc01bab87473106f1ead348fd1bcb70f496a027dc15db41d45008"
+locus = "Lc.24.12"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Bede's harmonizing note on Luke 24:12, read in the retrieved file at the embedded Migne column markers 0625A and 0625B, with the preceding remark on the disciples' slowness to believe and the following note on Emmaus in view. Registered as the earliest witness located that notices the Luke and John difference at this point and works at it, and as a material negative: Bede reconciles the seeing and says nothing of the believing or of theft."
+physical_line_ranges = [[1, 3]]
+text = "Lucas breviter de cursu Petri commemorat; sed hoc quomodo gestum sit plenius exsequitur Joannes, dicens etiam illum discipulum quem diligebat Jesus, cucurrisse cum Petro, se videlicet insinuans. Unde quaeritur quomodo Lucas de Petro dicat: Et procumbens vidit linteamina sola posita, cum Joannes se potius hoc fecisse significet, Petrum vero introeuntem in monumentum vidisse non solum linteamina, sed et sudarium quod fuerat super caput ejus. Sed intelligendum est Petrum primo procumbentem vidisse quod Lucas commemorat, Joannes tacet; post autem ingressum, ut diligentius interiora dignosceret, ingressum, tamen antequam Joannes intraret."
+transcription_segments = [
+  { line = 1, text = "Lucas breviter de cursu Petri commemorat; sed hoc quomodo gestum sit plenius exsequitur Joannes, dicens etiam illum discipulum quem diligebat Jesus, cucurrisse cum Petro, se videlicet insinuans." },
+  { line = 2, text = "Unde quaeritur quomodo Lucas de Petro dicat: Et procumbens vidit linteamina sola posita, cum Joannes se potius hoc fecisse significet, Petrum vero introeuntem in monumentum vidisse non solum linteamina, sed et sudarium quod fuerat super caput ejus." },
+  { line = 3, text = "Sed intelligendum est Petrum primo procumbentem vidisse quod Lucas commemorat, Joannes tacet; post autem ingressum, ut diligentius interiora dignosceret, ingressum, tamen antequam Joannes intraret." },
+]
+verified_on = "2026-07-25"
+notes = "The transcription's parenthetical reference (Luc. XXIV) and the column marker (0625B), both of which fall inside this passage in the delivered file, are apparatus of the transcription and of Migne and are omitted. The repeated word ingressum in the last line stands in the delivered text and is reproduced as delivered."

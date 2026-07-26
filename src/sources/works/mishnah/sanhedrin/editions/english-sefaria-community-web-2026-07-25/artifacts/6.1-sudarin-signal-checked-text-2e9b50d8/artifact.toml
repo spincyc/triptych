@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.mishnah.sanhedrin.english-sefaria-community-web-2026-07-25.6.1-sudarin-signal-checked-text-2e9b50d8"
+edition_id = "edition.mishnah.sanhedrin.english-sefaria-community-web-2026-07-25"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Sefaria records this English version's licence as CC0, a public-domain dedication. The underlying Mishnah is ancient."
+provenance = "Triptych extraction from the hashed Sefaria application programming interface response, 2026-07-25."
+retrieved = "2026-07-25"
+sha256 = "2e9b50d8fc97c91bd552b589cc6ecd758a50a7e8e96ff78075d1d42cf01d6f8f"
+byte_size = 292
+path = "src/sources/works/mishnah/sanhedrin/editions/english-sefaria-community-web-2026-07-25/artifacts/6.1-sudarin-signal-checked-text-2e9b50d8/mishnah-sanhedrin-6-1.txt"
+derived_from = "artifact.mishnah.sanhedrin.english-sefaria-community-web-2026-07-25.sefaria-api-mishnah-sanhedrin-6-1-1eb360bc"
+transformation = "Extract the quoted text from the hashed application programming interface response with one unit per LF-terminated UTF-8 line, each prefixed by a braced locator; strip the response's JavaScript Object Notation structure and any inline markup tags; preserve wording, bracketed translator's supplements, and punctuation."
+indexable = true
+encoding = "utf-8"

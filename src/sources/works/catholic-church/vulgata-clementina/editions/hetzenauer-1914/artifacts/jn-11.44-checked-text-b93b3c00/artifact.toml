@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.vulgata-clementina.hetzenauer-1914.jn-11.44-checked-text-b93b3c00"
+edition_id = "edition.catholic-church.vulgata-clementina.hetzenauer-1914"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces Latin Bible verses from the public-domain 1914 Hetzenauer edition and is derived only from a SacredBible page image whose technical record expressly permits redistribution. It contains no SacredBible HTML, modern translation, or third-party annotation, and Triptych claims no exclusive right in the source wording."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription visually collated against exact SacredBible scan page 1054 on 2026-07-25."
+retrieved = "2026-07-25"
+sha256 = "b93b3c00d31faa6e5e93a78131eb13a7a80f8e6408abf84b58fa3d15c256a4b6"
+byte_size = 165
+path = "src/sources/works/catholic-church/vulgata-clementina/editions/hetzenauer-1914/artifacts/jn-11.44-checked-text-b93b3c00/ioannes-11.44.txt"
+derived_from = "artifact.catholic-church.vulgata-clementina.hetzenauer-1914.sacredbible-scan-1054-0b65e7a0"
+transformation = "Transcribe the named verses exactly from the numbered scan page with one verse per LF-terminated UTF-8 line; prefix each line with a braced chapter-and-verse locator; preserve source wording, capitalization, spelling, and punctuation, rendering the printed ae digraph as the two letters ae; omit printed superscript verse numbers, cross-reference letters, marginal summaries, section headings, running heads, the foot-of-page apparatus, and surrounding verses."
+indexable = true
+encoding = "utf-8"

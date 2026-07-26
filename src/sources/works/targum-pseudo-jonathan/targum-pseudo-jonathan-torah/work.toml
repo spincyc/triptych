@@ -1,0 +1,10 @@
+schema = 1
+record_type = "work"
+id = "work.targum-pseudo-jonathan.targum-pseudo-jonathan-torah"
+title = "Targum Pseudo-Jonathan"
+responsible = "Anonymous; traditionally ascribed to Jonathan ben Uzziel"
+work_type = "targum"
+alternate_titles = ["Targum Yerushalmi I", "Pseudo-Jonathan"]
+languages = ["arc"]
+locus_pattern = '[1-5]?[A-Z][A-Za-z]*\.[1-9][0-9]*(?:\.[1-9][0-9]*)?(?:-[1-9][0-9]*)?'
+description = "An expansive Palestinian Aramaic targum of the Pentateuch, transmitted under a mistaken ascription to Jonathan ben Uzziel and reaching its present form late. Unlike Onkelos it inserts narrative and homiletic material freely; its expansions at Genesis 15:12 and 15:17 introduce the four kingdoms and Gehinnom. Its willingness to expand makes its silences evidential in the same way as Onkelos's fidelity. A locus is BookToken.chapter.verse."

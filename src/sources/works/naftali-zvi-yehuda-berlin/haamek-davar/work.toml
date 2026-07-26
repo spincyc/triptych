@@ -1,0 +1,10 @@
+schema = 1
+record_type = "work"
+id = "work.naftali-zvi-yehuda-berlin.haamek-davar"
+title = "Haamek Davar"
+responsible = "Naftali Zvi Yehuda Berlin (Netziv)"
+work_type = "biblical-commentary"
+alternate_titles = ["Ha'amek Davar", "Netziv on the Torah"]
+languages = ["he"]
+locus_pattern = '[1-5]?[A-Z][A-Za-z]*\.[1-9][0-9]*(?:\.[1-9][0-9]*)?(?:-[1-9][0-9]*)?'
+description = "The Netziv's commentary on the Pentateuch, delivered as lectures at the Volozhin yeshiva and printed in the nineteenth century. A locus is BookToken.chapter.verse."

@@ -1,0 +1,19 @@
+schema = 2
+record_type = "passage"
+id = "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.5.27.2.ocr"
+edition_id = "edition.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887"
+segment_id = "segment.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.ia-djvu-ocr-12cdc519"
+artifact_sha256 = "12cdc519c642b446cb4c6c3ba0bad9a2288687937975df6ca4c8b42aa6d92d84"
+locus = "5.27.2"
+states = ["cataloged", "acquired", "inspected"]
+context = "The complete numbered section was inspected in the exact raw OCR at artifact lines 72024-72062, under the chapter heading CHAP. XXVII at line 71974. It states that God grants communion to those who continue in love towards him and inflicts on those who depart the separation they have themselves chosen; that separation from God is death and consists in the loss of all the benefits he has in store; that God does not punish them immediately of himself, the punishment falling upon them because they are destitute of all that is good; and that because the good things are eternal, the loss of them is eternal. The blindness-in-a-flood-of-light comparison follows in the same section."
+physical_line_ranges = [[72024, 72062]]
+text = "But separation from God is death, and separation from light is darkness ; and separation from God consists in the loss of all the benefits which He has in store."
+transcription_segments = [
+  { line = 72044, text = "But" },
+  { line = 72045, text = "separation  from  God  is  death,  and  separation" },
+  { line = 72046, text = "from  light  is  darkness  ;  and  separation  from  God" },
+  { line = 72047, text = "consists  in  the  loss  of  all  the  benefits  which" },
+  { line = 72048, text = "He  has  in  store." },
+]
+notes = "The quoted sentence begins with the last word of artifact line 72044 and ends with the fourth word of line 72048, so the first and last transcription segments reproduce only the part of those physical lines that belongs to the sentence. The checked excerpt preserves OCR wording and spacing under the schema's whitespace-joining rule; it is a locator aid, not a corrected quotation or an independent witness. The same wording was read on 2026-07-25 in New Advent's revised presentation of the same Roberts-Rambaut translation, which is a distinct delivery witness."

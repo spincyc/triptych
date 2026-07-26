@@ -1,0 +1,11 @@
+schema = 1
+record_type = "work"
+id = "work.george-leo-haydock.douay-rheims-with-haydock-commentary"
+title = "The Douay-Rheims Bible with a Comprehensive Catholic Commentary"
+responsible = "George Leo Haydock, compiler"
+work_type = "biblical-commentary"
+alternate_titles = ["Haydock Bible", "Haydock's Catholic Bible Commentary"]
+languages = ["en"]
+locus_pattern = '[1-5]?[A-Z][A-Za-z]*\.[1-9][0-9]*(?:\.[1-9][0-9]*)?(?:-[1-9][0-9]*)?'
+relations = ["work.english-college-of-douay.douay-rheims-bible"]
+description = "Haydock's annotated Douay-Rheims, first issued in parts from 1811 and reprinted through the nineteenth century. The commentary is a compilation of Catholic exegetes with initialled attributions: C. for Calmet, H. for Haydock, M. for Menochius, W. for Worthington, and others, expanded in the edition's own key. The scriptural text it prints is Challoner's revision; the notes are the work registered here. A locus is BookToken.chapter.verse."

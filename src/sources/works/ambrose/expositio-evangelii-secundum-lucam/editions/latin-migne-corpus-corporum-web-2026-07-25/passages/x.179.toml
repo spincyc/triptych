@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.ambrose.expositio-evangelii-secundum-lucam.latin-migne-corpus-corporum-web-2026-07-25.x.179"
+edition_id = "edition.ambrose.expositio-evangelii-secundum-lucam.latin-migne-corpus-corporum-web-2026-07-25"
+artifact_id = "artifact.ambrose.expositio-evangelii-secundum-lucam.latin-migne-corpus-corporum-web-2026-07-25.x.179-checked-text-d176ce42"
+artifact_sha256 = "d176ce42f5bc09459d7aa77657be65b30b6ad237451febfd856ceea669896713"
+locus = "10.179"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Ambrose's statement that Peter could not have doubted and that John believed on seeing the tomb empty of the body, read in the retrieved file under its lemma on Luke 24:37 and 45, with sections 178 and 180 in view. Registered together with the material negative established over the same bytes: book X has no lemma on Luke 24:12, its verse headings running 23:49, 23:50, 23:53, 23:55 and then jumping to 24:25, and the word-stems linteam-, sudari- and cucurr- do not occur in the book at all."
+physical_line_ranges = [[1, 2]]
+text = "Tot igitur adducti virtutis exemplis Petrum credimus non potuisse dubitare. Joannem quoque credidisse manifestum est, cum Salvatorem videret: qui jam tunc credidit, posteaquam vacuum corporis vidit sepulcrum."
+transcription_segments = [
+  { line = 1, text = "Tot igitur adducti virtutis exemplis Petrum credimus non potuisse dubitare." },
+  { line = 2, text = "Joannem quoque credidisse manifestum est, cum Salvatorem videret: qui jam tunc credidit, posteaquam vacuum corporis vidit sepulcrum." },
+]
+verified_on = "2026-07-25"
+notes = "The parenthetical reference (Joan. XX, 8) inside the second sentence is Migne's apparatus and is omitted. The stem counts are counts over a transcription, not over page images, and an editorial or transcription omission cannot be excluded; consuming publications state the negative with that limit."

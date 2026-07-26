@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.thomas-aquinas.super-evangelium-ioannis-lectura.latin-corpusthomisticum-web-2026-07-25.20.1-credidit-checked-text-a358b1b9"
+edition_id = "edition.thomas-aquinas.super-evangelium-ioannis-lectura.latin-corpusthomisticum-web-2026-07-25"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "This focused transcription reproduces a few sentences of Aquinas's medieval Latin, which is in the public domain. It contains no markup or editorial matter belonging to the site from which the text was retrieved."
+provenance = "Triptych manual transcription from the hashed retrieval of the corpusthomisticum.org page, 2026-07-25."
+retrieved = "2026-07-25"
+sha256 = "a358b1b9a3a91ae7b5f7b099324ccb1d5498b1dada3751861e3aae606fd2bbf6"
+byte_size = 902
+path = "src/sources/works/thomas-aquinas/super-evangelium-ioannis-lectura/editions/latin-corpusthomisticum-web-2026-07-25/artifacts/20.1-credidit-checked-text-a358b1b9/aquinas-super-ioannem-20-1-credidit.txt"
+derived_from = "artifact.thomas-aquinas.super-evangelium-ioannis-lectura.latin-corpusthomisticum-web-2026-07-25.corpusthomisticum-cih20-689e7cd9"
+transformation = "Transcribe the quoted sentences from the retrieved page with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced chapter-and-lecture locator; preserve wording and punctuation; omit the electronic text's section markers, its inline scriptural cross references, and its markup."
+indexable = true
+encoding = "utf-8"

@@ -1,0 +1,18 @@
+schema = 1
+record_type = "passage"
+id = "passage.thomas-aquinas.super-evangelium-ioannis-lectura.latin-corpusthomisticum-web-2026-07-25.20.1-anti-theft"
+edition_id = "edition.thomas-aquinas.super-evangelium-ioannis-lectura.latin-corpusthomisticum-web-2026-07-25"
+artifact_id = "artifact.thomas-aquinas.super-evangelium-ioannis-lectura.latin-corpusthomisticum-web-2026-07-25.20.1-anti-theft-checked-text-da6a95cc"
+artifact_sha256 = "da6a95cceec25f600877af790bed228d9ca97f95019aaa86cd31aa89d3e325ad"
+locus = "20.1"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Aquinas's endorsement of the anti-theft argument on Chrysostom's authority, read in the retrieved page within section 87552, with the preceding allegory of the sudarium and the following exposition of the other disciple's entry in view."
+physical_line_ranges = [[1, 3]]
+text = "Sed quare Evangelista sic diligenter omnia narrat? Ad quod dicendum, secundum Chrysostomum, ut excluderet falsam opinionem a Iudaeis divulgatam, quod corpus Christi furtim sublatum esset. Nam si hoc modo aliqui transtulissent illud: non utique eum denudassent, praecipue cum oportuisset eos festinanter hoc facere propter praesentiam custodum: neque etiam fuissent ita solliciti ut levarent sudarium, et involverent, et seorsum in unum locum ponerent, sed ea simpliciter ut contigisset, suscepto corpore, dimisissent. Huius etiam rei causa permisit quod sepultus fuit cum myrrha et aloe quae conglutinant corpori linteamina, ita quod non potuissent tam cito a corpore separari."
+transcription_segments = [
+  { line = 1, text = "Sed quare Evangelista sic diligenter omnia narrat? Ad quod dicendum, secundum Chrysostomum, ut excluderet falsam opinionem a Iudaeis divulgatam, quod corpus Christi furtim sublatum esset." },
+  { line = 2, text = "Nam si hoc modo aliqui transtulissent illud: non utique eum denudassent, praecipue cum oportuisset eos festinanter hoc facere propter praesentiam custodum: neque etiam fuissent ita solliciti ut levarent sudarium, et involverent, et seorsum in unum locum ponerent, sed ea simpliciter ut contigisset, suscepto corpore, dimisissent." },
+  { line = 3, text = "Huius etiam rei causa permisit quod sepultus fuit cum myrrha et aloe quae conglutinant corpori linteamina, ita quod non potuissent tam cito a corpore separari." },
+]
+verified_on = "2026-07-25"
+notes = "The reference ut habetur Matth. ult., 13, which stands in the delivered text at the end of the first sentence, is omitted from the transcription. The clause praecipue cum oportuisset eos festinanter hoc facere propter praesentiam custodum is not in the Nicene and Post-Nicene Fathers text of Chrysostom's homily; the corresponding detail about the guards stands in Theophylact's comment on Luke 24:12."

@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.swete.old-testament-in-greek.cambridge-vol-1-1909.gen-15-checked-text-a7b4f38b"
+edition_id = "edition.swete.old-testament-in-greek.cambridge-vol-1-1909"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "One chapter of a Greek biblical text from a public-domain 1909 edition whose editor died in 1917. Triptych claims no exclusive right in the source wording; the header block and the bracketed verse numbers are Triptych editorial description."
+rights_jurisdiction = "United States"
+provenance = "Assembled by Triptych on 2026-07-26 from the exact Internet Archive text layer of Swete volume I named as its parent, read against the printed page as that layer renders it, and corrected against an independently compiled word database of the same Swete text. Not collated against a page image."
+retrieved = "2026-07-26"
+sha256 = "a7b4f38ba27cbb3b8205309b0e2a6b9ff64c1669a667c1f87177664399c2a4e3"
+byte_size = 4993
+path = "src/sources/works/swete/old-testament-in-greek/editions/cambridge-vol-1-1909/artifacts/gen-15-checked-text/genesis-15-greek.txt"
+derived_from = "artifact.swete.old-testament-in-greek.cambridge-vol-1-1909.ia-djvu-ocr-66071dff"
+transformation = "Extract Genesis 15:1-21 from the parent text layer; restore accents, breathings, capitalization, and punctuation corrupted by optical character recognition using an independently compiled word database of the same edition; omit Swete's editorial sigla keying the foot apparatus; write one verse per LF-terminated UTF-8 line prefixed with a bracketed verse number; prefix the file with a Triptych header naming the edition and the normalizations applied."
+indexable = true
+encoding = "utf-8"
+notes = "Retained because the Greek of Genesis 15 diverges from the Hebrew and the Vulgate at verses 11, 12, 17, and 18 in ways that carry a chronological argument, and because the base text is Codex Vaticanus rather than a reconstructed critical text. Swete's apparatus on this chapter records variants at verses 1, 7, 10, and 13 only; those readings are not reproduced here and a consumer needing them must return to the edition."

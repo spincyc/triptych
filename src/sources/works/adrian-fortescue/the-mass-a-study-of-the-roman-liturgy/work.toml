@@ -1,0 +1,10 @@
+schema = 1
+record_type = "work"
+id = "work.adrian-fortescue.the-mass-a-study-of-the-roman-liturgy"
+title = "The Mass: A Study of the Roman Liturgy"
+responsible = "Adrian Fortescue (1874-1923)"
+work_type = "liturgical-history"
+languages = ["en"]
+locus_pattern = 'p-[0-9]{1,3}(?:-[0-9]{1,3})?'
+description = "Adrian Fortescue's historical study of the Roman Mass, first published in 1912. It reconstructs the development of the Roman rite from the earliest witnesses to the Missal of Pius V and then walks the Order of Mass unit by unit, naming its sources, its earliest secure attestations, and the points at which the evidence is disputed. It is an identified early twentieth-century scholarly reconstruction, not a magisterial or official source, and its conclusions are cited here as such. Loci are printed page numbers."
+relations = ["work.catholic-church.missale-romanum"]

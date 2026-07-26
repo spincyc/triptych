@@ -1,0 +1,10 @@
+schema = 1
+record_type = "work"
+id = "work.targum-onkelos.targum-onkelos-torah"
+title = "Targum Onkelos"
+responsible = "Attributed to Onkelos the proselyte"
+work_type = "targum"
+alternate_titles = ["Targum Onqelos", "Onkelos"]
+languages = ["arc"]
+locus_pattern = '[1-5]?[A-Z][A-Za-z]*\.[1-9][0-9]*(?:\.[1-9][0-9]*)?(?:-[1-9][0-9]*)?'
+description = "The standard Jewish Aramaic translation of the Pentateuch, produced in late antiquity and printed beside the Hebrew in most rabbinic Bibles. It renders closely and reserves its few expansions for anthropomorphism and for a handful of theologically sensitive verses. Its closeness makes its silences evidential: where Onkelos inserts nothing, the Hebrew gave him nothing to insert. A locus is BookToken.chapter.verse."

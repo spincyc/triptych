@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.vulgata-clementina.hetzenauer-1914.gen-15-checked-text-9729b5c4"
+edition_id = "edition.catholic-church.vulgata-clementina.hetzenauer-1914"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces one Latin Bible chapter from the public-domain 1914 Hetzenauer edition and is derived only from a SacredBible page image whose technical record expressly permits redistribution. It contains no SacredBible HTML, modern translation, or third-party annotation, and Triptych claims no exclusive right in the source wording."
+rights_jurisdiction = "United States"
+provenance = "Triptych transcription read directly from the exact SacredBible scan page 0012 on 2026-07-26."
+retrieved = "2026-07-26"
+sha256 = "9729b5c46ee2c8d0da1e3100f3b0825674d4fd81419cf91059e61948972f78df"
+byte_size = 2993
+path = "src/sources/works/catholic-church/vulgata-clementina/editions/hetzenauer-1914/artifacts/gen-15-checked-text/genesis-15.txt"
+derived_from = "artifact.catholic-church.vulgata-clementina.hetzenauer-1914.sacredbible-scan-0012-b9a1cb6a"
+transformation = "Transcribe Genesis 15:1-21 from scan page 0012 with one verse per LF-terminated UTF-8 line, each prefixed by a bracketed verse number; write out the printing's accented capitals and ae/oe ligatures as ae and oe; preserve wording, capitalization, spelling, and punctuation otherwise; record the three marginal side-notes and the foot cross-reference apparatus after the verses; omit printed superscript verse numbers and apparatus letters from the verse lines."
+indexable = true
+encoding = "utf-8"
+notes = "Retained because Genesis 15 is a heavily consulted chapter whose Clementine wording differs at several points that matter from the Septuagint and from later Latin printings, and because the verse-5, verse-12, and verse-17 readings carry a chronological argument. The header block and the apparatus lines are Triptych editorial description and are marked as such in the file."

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "passage"
+id = "passage.westcott-and-hort.the-new-testament-in-the-original-greek.introduction-and-appendix-1882.appendix-p71-lk-24.12"
+edition_id = "edition.westcott-and-hort.the-new-testament-in-the-original-greek.introduction-and-appendix-1882"
+artifact_id = "artifact.westcott-and-hort.the-new-testament-in-the-original-greek.introduction-and-appendix-1882.appendix-p71-lk-24.12-checked-text-45e0adce"
+artifact_sha256 = "45e0adceda6a10e7180542b0553fb77eaa843eb5bc169c2069db66140add35fe"
+locus = "Appendix, Notes on Select Readings, Luke xxiv 12"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The editors' note excluding Luke 24:12, read on Appendix page 71 rendered from the hashed facsimile at 400 dots per inch, with the notes on Luke xxiv 6 and xxiv 13 above and below it so that the passage boundary is explicit."
+physical_line_ranges = [[1, 4]]
+text = "xxiv 12 [Ho de Petros ... gegonos.] < Western (Gr. Lat.), D a b e rhe Eus.Can; not c ff syr.vt Eus.Mar (distinctly). Omitted likewise at the beginning of one lection (first hand) in syr.hr, and in the harmonistic narrative of fu; but probably in both cases by accident. Text from Jo xx 3-10 (except anastas and thaumazon to gegonos), condensed and simplified, with omission of all that relates to the other disciple. A Western non-interpolation."
+transcription_segments = [
+  { line = 1, text = "xxiv 12 [Ho de Petros ... gegonos.] < Western (Gr. Lat.), D a b e rhe Eus.Can; not c ff syr.vt Eus.Mar (distinctly)." },
+  { line = 2, text = "Omitted likewise at the beginning of one lection (first hand) in syr.hr, and in the harmonistic narrative of fu; but probably in both cases by accident." },
+  { line = 3, text = "Text from Jo xx 3-10 (except anastas and thaumazon to gegonos), condensed and simplified, with omission of all that relates to the other disciple." },
+  { line = 4, text = "A Western non-interpolation." },
+]
+verified_on = "2026-07-25"
+notes = "The bracketed Greek lemma and the two Greek words in the third line are set in Greek type in the printing and are given here in transliteration; the transliteration is not a translation. The sigla are the editors' own and are reproduced as printed. Their citations of Marcion and Eusebius are reported, not independently checked."

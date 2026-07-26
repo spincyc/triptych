@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.westcott-and-hort.the-new-testament-in-the-original-greek.introduction-and-appendix-1882.appendix-p71-lk-24.12-checked-text-45e0adce"
+edition_id = "edition.westcott-and-hort.the-new-testament-in-the-original-greek.introduction-and-appendix-1882"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of a printed work in the United States public domain by date of publication. It is derived from page images rendered from the hashed Internet Archive facsimile of that printing and contains no Internet Archive markup."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription collated against Appendix page 71, rendered as a page image from the hashed Internet Archive facsimile, on 2026-07-25."
+retrieved = "2026-07-25"
+sha256 = "45e0adceda6a10e7180542b0553fb77eaa843eb5bc169c2069db66140add35fe"
+byte_size = 470
+path = "src/sources/works/westcott-and-hort/the-new-testament-in-the-original-greek/editions/introduction-and-appendix-1882/artifacts/appendix-p71-lk-24.12-checked-text-45e0adce/westcott-hort-appendix-p71.txt"
+derived_from = "artifact.westcott-and-hort.the-new-testament-in-the-original-greek.introduction-and-appendix-1882.ia-facsimile-pdf-ffe74e10"
+transformation = "Read the named printed pages as images rendered from the hashed facsimile, and transcribe the quoted sentences with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced printed-page locator; preserve the printing's wording, spelling, and punctuation; transliterate any Greek set in Greek type and say so in the passage notes; omit running heads, footnote markers, and marginal matter."
+indexable = true
+encoding = "utf-8"

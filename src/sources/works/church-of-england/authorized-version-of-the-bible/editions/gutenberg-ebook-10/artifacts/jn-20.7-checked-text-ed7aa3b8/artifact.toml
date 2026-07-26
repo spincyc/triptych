@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.church-of-england.authorized-version-of-the-bible.gutenberg-ebook-10.jn-20.7-checked-text-ed7aa3b8"
+edition_id = "edition.church-of-england.authorized-version-of-the-bible.gutenberg-ebook-10"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This single verse of the 1611 Authorized Version is in the public domain."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription from the hashed retrieval of the Project Gutenberg text, 2026-07-25."
+retrieved = "2026-07-25"
+sha256 = "ed7aa3b840ed191e9030ef01b97e68adf317b6685163483b576418022e4d5552"
+byte_size = 128
+path = "src/sources/works/church-of-england/authorized-version-of-the-bible/editions/gutenberg-ebook-10/artifacts/jn-20.7-checked-text-ed7aa3b8/kjv-john-20-7.txt"
+derived_from = "artifact.church-of-england.authorized-version-of-the-bible.gutenberg-ebook-10.gutenberg-pg10-0204adae"
+transformation = "Transcribe the quoted sentences from the retrieved response with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator; preserve wording, spelling and punctuation; omit the delivery's markup, navigation, footnote links and editorial apparatus."
+indexable = true
+encoding = "utf-8"

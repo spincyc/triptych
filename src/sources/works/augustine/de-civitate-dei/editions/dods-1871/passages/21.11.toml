@@ -1,0 +1,20 @@
+schema = 1
+record_type = "passage"
+id = "passage.augustine.de-civitate-dei.dods-1871.21.11"
+edition_id = "edition.augustine.de-civitate-dei.dods-1871"
+artifact_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45305-body-lf"
+artifact_sha256 = "9cb737d9d8e33d67335d4f5585cf3318f40d2b120ca7212beae8aa26cb9a473a"
+locus = "21.11"
+states = ["cataloged", "acquired", "inspected"]
+context = "The complete chapter body was inspected at artifact lines 17451-17508: the objection that eternal punishment is unjust for sins committed in a brief span, Cicero's eight kinds of legal penalty, the argument that no human law measures penalty by the duration of the offence, the parallel between the first death cutting a man off from the mortal city and the second death cutting him off from the immortal city, and the reply on 'with the same measure'."
+physical_line_ranges = [[17451, 17508]]
+text = "Nor is there any one who would suppose that the pains of punishment should occupy as short a time as the offence; or that murder, adultery, sacrilege, or any other crime, should be measured, not by the enormity of the injury or wickedness, but by the length of time spent in its perpetration."
+transcription_segments = [
+  { line = 17482, text = "Nor is" },
+  { line = 17483, text = "there any one who would suppose that the pains of punishment should" },
+  { line = 17484, text = "occupy as short a time as the offence; or that murder, adultery," },
+  { line = 17485, text = "sacrilege, or any other crime, should be measured, not by the" },
+  { line = 17486, text = "enormity of the injury or wickedness, but by the length of time spent" },
+  { line = 17487, text = "in its perpetration." },
+]
+notes = "The chapter heading is at artifact lines 17451-17452. Thomas Aquinas cites this chapter by this number at Summa theologiae I-II, q. 87, a. 3, ad 1, and again in the Supplement, q. 99, a. 1, so the locus is a reception witness as well as a source."

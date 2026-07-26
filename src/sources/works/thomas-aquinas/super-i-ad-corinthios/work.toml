@@ -1,0 +1,11 @@
+schema = 1
+record_type = "work"
+id = "work.thomas-aquinas.super-i-ad-corinthios"
+title = "Super I Epistolam B. Pauli ad Corinthios lectura"
+responsible = "Thomas Aquinas"
+work_type = "biblical-commentary"
+alternate_titles = ["Commentary on the First Letter to the Corinthians", "In I ad Corinthios"]
+languages = ["la"]
+locus_pattern = '(?:pr|[1-9][0-9]?)(?:\.l[1-9][0-9]?)?'
+description = "Aquinas's lectura on 1 Corinthians, transmitted in materially different states that must be kept apart. Chapters 1 to 7 verse 10 survive in a text taken from Thomas's own hand; chapters 11 to 13 verse 11 in a reportatio of Reginald of Piperno; chapters 11 to 16 in a separate reportatio vulgata; and chapters 7 to 10 are supplied in printed editions from the abbreviated commentary of Peter of Tarentaise. A claim about chapters 14 to 16, including the much-quoted sentence anima mea non est ego at chapter 15, rests on a reported text and not on wording written by Thomas. A locus is a chapter, optionally with a lectio."
+relations = ["work.thomas-aquinas.summa-theologiae"]

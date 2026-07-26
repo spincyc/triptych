@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.augustine.de-civitate-dei.dods-1871.21.12"
+edition_id = "edition.augustine.de-civitate-dei.dods-1871"
+artifact_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45305-body-lf"
+artifact_sha256 = "9cb737d9d8e33d67335d4f5585cf3318f40d2b120ca7212beae8aa26cb9a473a"
+locus = "21.12"
+states = ["cataloged", "acquired", "inspected"]
+context = "The complete chapter body was inspected at artifact lines 17511-17538: the claim that eternal punishment seems hard only because the gravity of the first transgression is not perceived, the maxim that he who destroyed in himself a good which might have been eternal became worthy of eternal evil, and the conclusion that many more are left under punishment than are delivered from it."
+physical_line_ranges = [[17511, 17538]]
+text = "But many more are left under punishment than are delivered from it, in order that it may thus be shown what was due to all."
+transcription_segments = [
+  { line = 17532, text = "But many more are" },
+  { line = 17533, text = "left under punishment than are delivered from it, in order that it" },
+  { line = 17534, text = "may thus be shown what was due to all." },
+]
+notes = "The chapter heading is at artifact lines 17511-17513. The proportion claim in this chapter is Augustine's own theological judgment and was never received as a definition of the Church; it is registered so that consumers can quote it exactly rather than paraphrase it."

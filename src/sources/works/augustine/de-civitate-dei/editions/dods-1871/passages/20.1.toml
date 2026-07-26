@@ -1,0 +1,18 @@
+schema = 1
+record_type = "passage"
+id = "passage.augustine.de-civitate-dei.dods-1871.20.1"
+edition_id = "edition.augustine.de-civitate-dei.dods-1871"
+artifact_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45305-body-lf"
+artifact_sha256 = "9cb737d9d8e33d67335d4f5585cf3318f40d2b120ca7212beae8aa26cb9a473a"
+locus = "20.1"
+states = ["cataloged", "acquired", "inspected"]
+context = "The opening chapter of book XX was inspected at artifact lines 13879-13938: the creed's confession that Christ shall come to judge quick and dead; the caution that 'day' in Scripture is customarily used for 'time', so the length of the last judgment is not known; the enumeration of the judgments God exercises now, from the expulsion from paradise onward; and the closing statement of what makes the last day properly the day of judgment. The chapter heading is at artifact lines 13879-13881."
+physical_line_ranges = [[13879, 13938]]
+text = "For that day is properly called the day of judgment, because in it there shall be no room left for the ignorant questioning why this wicked person is happy and that righteous man unhappy."
+transcription_segments = [
+  { line = 13933, text = "For that day is properly called the day of" },
+  { line = 13934, text = "judgment, because in it there shall be no room left for the ignorant" },
+  { line = 13935, text = "questioning why this wicked person is happy and that righteous man" },
+  { line = 13936, text = "unhappy." },
+]
+notes = "The book heading and argument are at artifact lines 13870-13876. The chapter's footnotes [673]-[675] are detached elsewhere in the artifact and were not inspected for this record. This 1871 witness is distinct from the later NPNF working English used by some publication audits."

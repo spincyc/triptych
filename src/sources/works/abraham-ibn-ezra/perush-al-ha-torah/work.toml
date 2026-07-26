@@ -1,0 +1,10 @@
+schema = 1
+record_type = "work"
+id = "work.abraham-ibn-ezra.perush-al-ha-torah"
+title = "Perush al ha-Torah"
+responsible = "Abraham ibn Ezra"
+work_type = "biblical-commentary"
+alternate_titles = ["Ibn Ezra on the Torah", "Ibn Ezra on Genesis"]
+languages = ["he"]
+locus_pattern = '[1-5]?[A-Z][A-Za-z]*\.[1-9][0-9]*(?:\.[1-9][0-9]*)?(?:-[1-9][0-9]*)?'
+description = "Ibn Ezra's commentary on the Pentateuch, written in the twelfth century in a terse, grammatically driven style that keeps close to the plain sense and frequently draws chronological inferences from the form of a verb. Two recensions of his Genesis commentary circulate, a shorter and a longer; printings differ in which they carry and in how far they run. A locus is BookToken.chapter.verse."
