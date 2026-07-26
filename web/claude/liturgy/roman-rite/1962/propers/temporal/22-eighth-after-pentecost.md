@@ -611,9 +611,9 @@ Only sources actually used for a published claim are listed. Loci are given at t
 
 ## Generation Metadata
 
-**Last revised (UTC):** 2026-07-25T23:20:37Z
+**Last revised (UTC):** 2026-07-26T02:03:00Z
 
-**Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
+**Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
 **Agent/runtime:** Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision
 

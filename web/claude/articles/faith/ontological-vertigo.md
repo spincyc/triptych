@@ -467,9 +467,9 @@ Online witnesses were checked on 2026-07-24 (first edition) and on 2026-07-25 (t
 
 ## Generation Metadata
 
-**Last revised (UTC):** 2026-07-25T21:32:17Z
+**Last revised (UTC):** 2026-07-26T02:03:00Z
 
-**Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
+**Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
 **Agent/runtime:** Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision
 

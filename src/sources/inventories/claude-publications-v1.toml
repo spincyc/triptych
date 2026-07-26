@@ -3,9 +3,9 @@ record_type = "publication-source-inventory"
 provider = "claude"
 audited_on = "2026-07-25"
 discovery_rule = "src/claude/**/main.tex"
-publication_count = 31
-source_surface_file_count = 588
-snapshot = "sha256:2c1fe14406d9ddeb795603eaf01ae75a2f0b3120263b9cc2dbfa738d0117c215"
+publication_count = 33
+source_surface_file_count = 632
+snapshot = "sha256:746780073adb4cd5d816b888f24e4fadcf3e7666580efc487b5c8e4a8783fe01"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -297,6 +297,20 @@ id = "owner.history.traditional-priestly-institutes"
 relationship = "render-import"
 
 [[documents]]
+id = "history/traditional-priestly-institutes/02-fssp"
+main = "src/claude/history/traditional-priestly-institutes/02-fssp/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "history/traditional-priestly-institutes/02-fssp"
+relationship = "local"
+[[documents.record_owners]]
+id = "owner.history.traditional-priestly-institutes"
+relationship = "render-import"
+
+[[documents]]
 id = "liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"
 main = "src/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/main.tex"
 publication_kind = "canonical"
@@ -345,6 +359,17 @@ relationship = "local"
 [[documents.record_owners]]
 id = "owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en-us-2011-propers"
 relationship = "source-owner"
+
+[[documents]]
+id = "theology/mariology/champion"
+main = "src/claude/theology/mariology/champion/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "theology/mariology/champion"
+relationship = "local"
 
 [[documents]]
 id = "theology/mariology/fatima"
@@ -1902,133 +1927,139 @@ owners = ["biographies/saint-paul"]
 
 [[files]]
 path = "src/claude/biographies/saint-peter/main.tex"
-sha256 = "37f449104a678505e05b48279ebb2f4f39a9354c37852c53948f518d1cf0bceb"
+sha256 = "d9890000cee03c685aa569682ad454b2f54307514c907c7edb34f834e6f9fb15"
 kind = "publication-main"
 owners = ["biographies/saint-peter"]
 
 [[files]]
 path = "src/claude/biographies/saint-peter/research/chronology.md"
-sha256 = "4a22bc5a3cf5444f5cbbd79f1175fa9c9dff98d7e3eafb42ca4cb9e0b323c6b5"
+sha256 = "2337e2dd82f920a8264990c2f2f571d346b71da360ede4235b622097549ec5c3"
 kind = "research-record"
 owners = ["biographies/saint-peter"]
 
 [[files]]
 path = "src/claude/biographies/saint-peter/research/scope.md"
-sha256 = "cefafd3a329686ef7f8d8c48e7fa2fc5a133281be9a5bf34ad7311770e63ac94"
+sha256 = "ec43d4cdaa390c27f80874be914804b3e8dff41aaaefbb03285839f0213338d1"
 kind = "research-scope"
 owners = ["biographies/saint-peter"]
 
 [[files]]
 path = "src/claude/biographies/saint-peter/research/source-audit.md"
-sha256 = "75f656992ac6710bbf5a21c3605b02ace3e13e5a760fdc0507252917484f86a2"
+sha256 = "6677cdcabf1f8e454a56c31f4aadead31e8912b5f09d36d49b640ab134d1c273"
 kind = "legacy-source-audit"
 owners = ["biographies/saint-peter"]
 
 [[files]]
 path = "src/claude/biographies/saint-peter/research/source-bindings.toml"
-sha256 = "41d43050d97cd9cec5ce294dc6e19ad013516a9a987dd8865961a210d6aa756b"
+sha256 = "84e67da7a6c562b9d7330f53d7f1de6daa0aab3e168ee5f040a11bbcad41a0b4"
 kind = "source-binding"
 owners = ["biographies/saint-peter"]
 
 [[files]]
 path = "src/claude/biographies/saint-peter/research/tradition-audit.md"
-sha256 = "36d846d75034ea1c3dc293eac204022366551de2c9055a10260cc90e04a3e4eb"
+sha256 = "5bc62971d421560af1f1850795125f88ede2e87add59b673c762b2051f7325fd"
 kind = "research-record"
 owners = ["biographies/saint-peter"]
 
 [[files]]
 path = "src/claude/biographies/saint-peter/sections/00-question.tex"
-sha256 = "fc653ac5ac33fbc00e3cc346f0ab308f5786f18ea20f3eea99830372c11fe56b"
+sha256 = "20ecb113721647a1c1ee9bae81e520a48b6117a5a25d0278e34084daa0079d55"
 kind = "rendered-content"
 owners = ["biographies/saint-peter"]
 
 [[files]]
 path = "src/claude/biographies/saint-peter/sections/10-galilee.tex"
-sha256 = "903b17baa1523d15348d3ca0b7008232b9123b3a4b5c0e02f775a48a2f2c0251"
+sha256 = "2f6fb1f91cc47cc9d7b2a39322e3a299fb3f55879db435d05445ffd280923e70"
 kind = "rendered-content"
 owners = ["biographies/saint-peter"]
 
 [[files]]
 path = "src/claude/biographies/saint-peter/sections/100-legends.tex"
-sha256 = "10cd2c2d3b8931c009c91f84be7b62ae6d2a7db9abf662b86192b75d172496b7"
+sha256 = "4bd331098546ada13b526ce69e49d3caedd675a1cb3a3c277dc6f72958377053"
 kind = "rendered-content"
 owners = ["biographies/saint-peter"]
 
 [[files]]
 path = "src/claude/biographies/saint-peter/sections/110-tomb.tex"
-sha256 = "f535511f0b5efc2d323b9fd12ec113e74076de745592e1f29857db91d4901d9d"
+sha256 = "033c8793d049f43b39267a4a39d2192adc83cb3ab7e2f73c5882630c66cf25c5"
 kind = "rendered-content"
 owners = ["biographies/saint-peter"]
 
 [[files]]
 path = "src/claude/biographies/saint-peter/sections/120-reception.tex"
-sha256 = "c23a02e6554f37635fae3a81443c98abdaa118cad08991edf48b79ded9adc50b"
+sha256 = "d36ffd54bf8b3f6d34db66e1a109920af3f6833bb286721b00622bdfc5b1341f"
 kind = "rendered-content"
 owners = ["biographies/saint-peter"]
 
 [[files]]
 path = "src/claude/biographies/saint-peter/sections/130-conclusion.tex"
-sha256 = "1dc35a71242479c50fadcee8e7ec7406093dc78c0a4968f8013589c7c5e1253f"
+sha256 = "8e8e55ac6ee09997097bba3b82e86f5ea2036f1ca320116aba1ac8478231669e"
 kind = "rendered-content"
 owners = ["biographies/saint-peter"]
 
 [[files]]
 path = "src/claude/biographies/saint-peter/sections/140-scope-chronology-evidence.tex"
-sha256 = "d2dae9fee58354fc6271fb195ac622e834d519f8a65b584cb5a9e870cdfc23f2"
+sha256 = "013eba1f124a6288e9874a62962253e0e1b09a6c19355ca11c11c9f761883029"
 kind = "rendered-content"
 owners = ["biographies/saint-peter"]
 
 [[files]]
 path = "src/claude/biographies/saint-peter/sections/150-references.tex"
-sha256 = "9014303fb2efb8d1e79a123324e029b79ac98f1f1aa3e292dfbaa8ac801ceb52"
+sha256 = "ea2aab3750311b9d199833eba2704f486e4bd619a66cb3c19a805c489f8c44b8"
 kind = "rendered-content"
 owners = ["biographies/saint-peter"]
 
 [[files]]
 path = "src/claude/biographies/saint-peter/sections/20-call.tex"
-sha256 = "4929fa2a13b1c447d2937aa69257f5eaf11c81ce1f1125baac125785cf3e99ab"
+sha256 = "7f1ac2954f2cbc68ce015a204cad2245130398285864224d785f7265d3a1476f"
 kind = "rendered-content"
 owners = ["biographies/saint-peter"]
 
 [[files]]
 path = "src/claude/biographies/saint-peter/sections/30-confession.tex"
-sha256 = "7209aa2995f42b7991990b12435e16e8a9b53d3d730a47d030a062912d0dcc84"
+sha256 = "e6a13a6050646af1fa9259fc99901b004619378197a731aee478c4db4d5a0ffd"
+kind = "rendered-content"
+owners = ["biographies/saint-peter"]
+
+[[files]]
+path = "src/claude/biographies/saint-peter/sections/35-rock.tex"
+sha256 = "b9e44c41a10968c41fed6165dff8258afce6001cd896db3c878a87ad433b1f0e"
 kind = "rendered-content"
 owners = ["biographies/saint-peter"]
 
 [[files]]
 path = "src/claude/biographies/saint-peter/sections/40-denials.tex"
-sha256 = "43eb4fab81b98df8bd993ff84351588aaa3f4d7fc17fc58aa7502d53d6436fa7"
+sha256 = "48534500c82e86b9289574825a632d19534827073d9127d071b2a17a06a367d7"
 kind = "rendered-content"
 owners = ["biographies/saint-peter"]
 
 [[files]]
 path = "src/claude/biographies/saint-peter/sections/50-easter.tex"
-sha256 = "59e19bac2542f70e1bc3d11be82ec252e590665d3afb18e578397fb85a667c40"
+sha256 = "a69850ef22ac8fdfba082220da526e13247984c16886dae980c58cd068f99b3f"
 kind = "rendered-content"
 owners = ["biographies/saint-peter"]
 
 [[files]]
 path = "src/claude/biographies/saint-peter/sections/60-jerusalem.tex"
-sha256 = "7af169947bae78d0553f9d7e6f7f8bd07d1f3c37cc4ce4d1cd7927c3655220b2"
+sha256 = "1e93c9191fb655c344eaa8b1fd15153dd958546d59c5f1966a6fda1cf4f9bdaf"
 kind = "rendered-content"
 owners = ["biographies/saint-peter"]
 
 [[files]]
 path = "src/claude/biographies/saint-peter/sections/70-antioch.tex"
-sha256 = "7e51dec1f450e23d5a966a23d8f5f7845f1b678a83a6356dcf869c46c9c3a346"
+sha256 = "4f307ea52fe6cfc935b49b3cff69a2c12a6abeba9b737f729a7ec954a855d86e"
 kind = "rendered-content"
 owners = ["biographies/saint-peter"]
 
 [[files]]
 path = "src/claude/biographies/saint-peter/sections/80-writings.tex"
-sha256 = "b5852b2b90222901efeec9bb06bb7ba42d407d4e722e4f393685174da504aee0"
+sha256 = "9bb54785c2ce149e71da6389ddba904980054e9a67d760b08d7818a6c67ba98d"
 kind = "rendered-content"
 owners = ["biographies/saint-peter"]
 
 [[files]]
 path = "src/claude/biographies/saint-peter/sections/90-rome.tex"
-sha256 = "e86edbcdf2ce05e6f80567253dfa6dcc5de99f5b8e5af26c9a9756f04ff455ab"
+sha256 = "3a6a934c9a4bd8c18a29579576514349b5a19877ca698c8a85c6bba75047d9b5"
 kind = "rendered-content"
 owners = ["biographies/saint-peter"]
 
@@ -2825,6 +2856,156 @@ kind = "rendered-content"
 owners = ["history/traditional-priestly-institutes/01-sspx"]
 
 [[files]]
+path = "src/claude/history/traditional-priestly-institutes/02-fssp/main.tex"
+sha256 = "ca7938e23277a8061d16a12f0e8fff5c5d8242f7f1de3dc2532d1d8457a6e2c7"
+kind = "publication-main"
+owners = ["history/traditional-priestly-institutes/02-fssp"]
+
+[[files]]
+path = "src/claude/history/traditional-priestly-institutes/02-fssp/research/evidence-map.md"
+sha256 = "c9e03e243e7ca71ce5f8ea37a268b4df6e3e3420db68887bf72b1aea00817559"
+kind = "research-record"
+owners = ["history/traditional-priestly-institutes/02-fssp"]
+
+[[files]]
+path = "src/claude/history/traditional-priestly-institutes/02-fssp/research/scope.md"
+sha256 = "5aa605f68d75868071c652c984c3fe0820ea480a77b92c31b456e4a870b09c5c"
+kind = "research-scope"
+owners = ["history/traditional-priestly-institutes/02-fssp"]
+
+[[files]]
+path = "src/claude/history/traditional-priestly-institutes/02-fssp/research/source-audit.md"
+sha256 = "cd83f39b1a026c7e3502912f5ef51f0de5458832776e226aaf9a0728db91e6a0"
+kind = "legacy-source-audit"
+owners = ["history/traditional-priestly-institutes/02-fssp"]
+
+[[files]]
+path = "src/claude/history/traditional-priestly-institutes/02-fssp/research/source-bindings.toml"
+sha256 = "e27fa1de8def5f25ac9108a3709494b513d717ab0a3975f0a8e31f3b3127368d"
+kind = "source-binding"
+owners = ["history/traditional-priestly-institutes/02-fssp"]
+
+[[files]]
+path = "src/claude/history/traditional-priestly-institutes/02-fssp/sections/00-question.tex"
+sha256 = "bd5c8c6df6b1cadc4106f47b80a12faa11139d4cdf6fbfc7a20dd4454c5a4101"
+kind = "rendered-content"
+owners = ["history/traditional-priestly-institutes/02-fssp"]
+
+[[files]]
+path = "src/claude/history/traditional-priestly-institutes/02-fssp/sections/10-branch-point.tex"
+sha256 = "005b070f78eb90d12196448d5ddf06cc37c7916c874e823fda7993a393f6cf26"
+kind = "rendered-content"
+owners = ["history/traditional-priestly-institutes/02-fssp"]
+
+[[files]]
+path = "src/claude/history/traditional-priestly-institutes/02-fssp/sections/100-summorum.tex"
+sha256 = "9a43c92137c12ecf7be6a50a2d410bde82c11b31830f3328518487e19cbcf2f8"
+kind = "rendered-content"
+owners = ["history/traditional-priestly-institutes/02-fssp"]
+
+[[files]]
+path = "src/claude/history/traditional-priestly-institutes/02-fssp/sections/110-traditionis.tex"
+sha256 = "88e556a465d82a13ed081135f89ee22ff6f066b98285204069fe5f6539d66747"
+kind = "rendered-content"
+owners = ["history/traditional-priestly-institutes/02-fssp"]
+
+[[files]]
+path = "src/claude/history/traditional-priestly-institutes/02-fssp/sections/120-decree-2022.tex"
+sha256 = "74ed00030ee74088dff89f1aefde5de28ff3f264627cc9ec1b3d3e2879f04bbb"
+kind = "rendered-content"
+owners = ["history/traditional-priestly-institutes/02-fssp"]
+
+[[files]]
+path = "src/claude/history/traditional-priestly-institutes/02-fssp/sections/130-visitation.tex"
+sha256 = "4156fa010006321070fc7bc966f0b657a20db973e9e8135093bfe963886be88b"
+kind = "rendered-content"
+owners = ["history/traditional-priestly-institutes/02-fssp"]
+
+[[files]]
+path = "src/claude/history/traditional-priestly-institutes/02-fssp/sections/140-synthesis.tex"
+sha256 = "fffda2373b21f92ce364041b7848e399052b5c9cef4609b663e336286bdcf6ae"
+kind = "rendered-content"
+owners = ["history/traditional-priestly-institutes/02-fssp"]
+
+[[files]]
+path = "src/claude/history/traditional-priestly-institutes/02-fssp/sections/150-status.tex"
+sha256 = "33bed481d347a25c65c43a5e2a175f16f963a80a6604539cadd676f11e4fb776"
+kind = "rendered-content"
+owners = ["history/traditional-priestly-institutes/02-fssp"]
+
+[[files]]
+path = "src/claude/history/traditional-priestly-institutes/02-fssp/sections/160-conclusion.tex"
+sha256 = "370b3427ff65471ea310d9343ecd12b6f3b50be0ef34b133cdfc8670cc8f851b"
+kind = "rendered-content"
+owners = ["history/traditional-priestly-institutes/02-fssp"]
+
+[[files]]
+path = "src/claude/history/traditional-priestly-institutes/02-fssp/sections/170-scope-method.tex"
+sha256 = "7102e116d462e53d7564aa5906c477c71cf8745c0f316e3196b36b4131f392dc"
+kind = "rendered-content"
+owners = ["history/traditional-priestly-institutes/02-fssp"]
+
+[[files]]
+path = "src/claude/history/traditional-priestly-institutes/02-fssp/sections/180-references.tex"
+sha256 = "5ba476a2c5b2479446604129b5ee5f1f4adb10757eee1ddd17a6fabcea5bc803"
+kind = "rendered-content"
+owners = ["history/traditional-priestly-institutes/02-fssp"]
+
+[[files]]
+path = "src/claude/history/traditional-priestly-institutes/02-fssp/sections/20-hauterive.tex"
+sha256 = "fc9e14eb7aea63ae25b5d0a5896d80d9a7bea12bde4eabc0b036085e72117cad"
+kind = "rendered-content"
+owners = ["history/traditional-priestly-institutes/02-fssp"]
+
+[[files]]
+path = "src/claude/history/traditional-priestly-institutes/02-fssp/sections/30-faculties.tex"
+sha256 = "abd639685821a7b449ca027c710a5f836cfb2305a55e083423673c610d86c8e7"
+kind = "rendered-content"
+owners = ["history/traditional-priestly-institutes/02-fssp"]
+
+[[files]]
+path = "src/claude/history/traditional-priestly-institutes/02-fssp/sections/40-erection.tex"
+sha256 = "5bb2ed01859f9fca69e2e4852f592c8f3dfa95b0d7e3c5c407389d113db1f016"
+kind = "rendered-content"
+owners = ["history/traditional-priestly-institutes/02-fssp"]
+
+[[files]]
+path = "src/claude/history/traditional-priestly-institutes/02-fssp/sections/50-institution.tex"
+sha256 = "9a0102ae173d6bec152aca4bab41d4a3531a1b64ec96095c829f3fc6a57c61f4"
+kind = "rendered-content"
+owners = ["history/traditional-priestly-institutes/02-fssp"]
+
+[[files]]
+path = "src/claude/history/traditional-priestly-institutes/02-fssp/sections/60-tenth-anniversary.tex"
+sha256 = "ee124d9eed2cd725065dc55801cff62362b54f2bb86643a7001c3ec6528fa213"
+kind = "rendered-content"
+owners = ["history/traditional-priestly-institutes/02-fssp"]
+
+[[files]]
+path = "src/claude/history/traditional-priestly-institutes/02-fssp/sections/70-1999.tex"
+sha256 = "c2ce6b92a076afd9be85be1d1fcac3c63361ef70c75ef7d20da8d33983a35ee9"
+kind = "rendered-content"
+owners = ["history/traditional-priestly-institutes/02-fssp"]
+
+[[files]]
+path = "src/claude/history/traditional-priestly-institutes/02-fssp/sections/80-2000.tex"
+sha256 = "6e26111e81a301d42cd8546290ffb67feaff870574a4ddd714d7b8f13f40c0d7"
+kind = "rendered-content"
+owners = ["history/traditional-priestly-institutes/02-fssp"]
+
+[[files]]
+path = "src/claude/history/traditional-priestly-institutes/02-fssp/sections/90-constitutions.tex"
+sha256 = "55b616dde319758b474c89118ccbf8edf68cb36290c222c155b9ffb819ea40e5"
+kind = "rendered-content"
+owners = ["history/traditional-priestly-institutes/02-fssp"]
+
+[[files]]
+path = "src/claude/history/traditional-priestly-institutes/02-fssp/web-edition.toml"
+sha256 = "9b30895b75daa151bcad43e35176c087c1e2be922974a9c5f103bf99bbf74dca"
+kind = "rendered-content"
+owners = ["history/traditional-priestly-institutes/02-fssp"]
+
+[[files]]
 path = "src/claude/history/traditional-priestly-institutes/institution-format.tex"
 sha256 = "9b7b4c888382edc4d59d0c95fe4f8830fee17ba7d557d6d1f16d131e9100df97"
 kind = "rendered-content"
@@ -3273,6 +3454,114 @@ path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-e
 sha256 = "2eb6894789acecd1ecedce78022877436652ff9c429dc406df9a2c7101a1760a"
 kind = "proper-verification"
 owners = ["owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en-us-2011-propers"]
+
+[[files]]
+path = "src/claude/theology/mariology/champion/format.tex"
+sha256 = "2f9fc97877899d1688446156bf112803b43c4c8e42062ad196d9c78677c5487b"
+kind = "rendered-content"
+owners = ["theology/mariology/champion"]
+
+[[files]]
+path = "src/claude/theology/mariology/champion/main.tex"
+sha256 = "3a7abbe7aa744fec8ad79d16601e4fae338964d40435dbd5793cc635e0073c21"
+kind = "publication-main"
+owners = ["theology/mariology/champion"]
+
+[[files]]
+path = "src/claude/theology/mariology/champion/research/corpus-status.md"
+sha256 = "483925290a093220bd1e2c4ba8ec26844163c7d3d4a287aaa4a56417a292091b"
+kind = "research-record"
+owners = ["theology/mariology/champion"]
+
+[[files]]
+path = "src/claude/theology/mariology/champion/research/scope.md"
+sha256 = "de77cd9a86865aefc5114824d597c13400cb71aa5ef182490da8b48027e1b97c"
+kind = "research-scope"
+owners = ["theology/mariology/champion"]
+
+[[files]]
+path = "src/claude/theology/mariology/champion/research/source-audit.md"
+sha256 = "59609ae1ff2326dd24992e31b579d7cff0bb2bc39558cceb8736a14a1cc18c34"
+kind = "legacy-source-audit"
+owners = ["theology/mariology/champion"]
+
+[[files]]
+path = "src/claude/theology/mariology/champion/research/source-bindings.toml"
+sha256 = "4efeff12dff9e95bcf8e90b9737c9af5dfd6d64c649b96dbc34b2897265f0c56"
+kind = "source-binding"
+owners = ["theology/mariology/champion"]
+
+[[files]]
+path = "src/claude/theology/mariology/champion/sections/00-decree-first.tex"
+sha256 = "f44157721cfe7ae933e1baf6cd76ebd07899d23eb3162b4060ba9a0b6f405c8f"
+kind = "rendered-content"
+owners = ["theology/mariology/champion"]
+
+[[files]]
+path = "src/claude/theology/mariology/champion/sections/10-documentary-situation.tex"
+sha256 = "eae1449864b77a91d9a2b195068f16fcc24ce30f1518e528d9c52ab7e3a82fe3"
+kind = "rendered-content"
+owners = ["theology/mariology/champion"]
+
+[[files]]
+path = "src/claude/theology/mariology/champion/sections/20-starr-1871.tex"
+sha256 = "2f195a60e3082126305ffab6a1dcef91841c1498d6805d03a7e8f61c4409ba49"
+kind = "rendered-content"
+owners = ["theology/mariology/champion"]
+
+[[files]]
+path = "src/claude/theology/mariology/champion/sections/30-pernin-1874.tex"
+sha256 = "6c92795a27a9518cd820f9e36b077761a5bd2e84b54bdbff86b81debca662560"
+kind = "rendered-content"
+owners = ["theology/mariology/champion"]
+
+[[files]]
+path = "src/claude/theology/mariology/champion/sections/40-collation.tex"
+sha256 = "2df8b6211316802b2c3132e1a8d13a58a1772b08cc589eacddabd9dd83403a2f"
+kind = "rendered-content"
+owners = ["theology/mariology/champion"]
+
+[[files]]
+path = "src/claude/theology/mariology/champion/sections/50-fire.tex"
+sha256 = "358ebed3d9d484929cd7a67c5f5b14b5b4f13c1c36a4318c41dcb556ed3d09f0"
+kind = "rendered-content"
+owners = ["theology/mariology/champion"]
+
+[[files]]
+path = "src/claude/theology/mariology/champion/sections/60-inquiry-and-decree.tex"
+sha256 = "15d10c6ef2d57ddea3516a8453194dd1ec0ea41d0a81b0809129b00490db27c9"
+kind = "rendered-content"
+owners = ["theology/mariology/champion"]
+
+[[files]]
+path = "src/claude/theology/mariology/champion/sections/70-after-2010.tex"
+sha256 = "8c93c6a4a69311a786cb6c08dfe18819779e90f14ecc0be486ef6841671f080c"
+kind = "rendered-content"
+owners = ["theology/mariology/champion"]
+
+[[files]]
+path = "src/claude/theology/mariology/champion/sections/80-synthesis.tex"
+sha256 = "63bc3a946a61e977b2a6aa8761f170600f39858bd581d1c0aaebc69bd0d3ca9d"
+kind = "rendered-content"
+owners = ["theology/mariology/champion"]
+
+[[files]]
+path = "src/claude/theology/mariology/champion/sections/90-scope-status-qualifications.tex"
+sha256 = "bac993f6b924d00c3ce2b86e0c08e20509f59e4d14f786d24ba8cddbcc3d54b9"
+kind = "rendered-content"
+owners = ["theology/mariology/champion"]
+
+[[files]]
+path = "src/claude/theology/mariology/champion/sections/99-references.tex"
+sha256 = "16b241605514fcac130809b66884d3ab4f3948e19432997e0e4630935e66d7ad"
+kind = "rendered-content"
+owners = ["theology/mariology/champion"]
+
+[[files]]
+path = "src/claude/theology/mariology/champion/web-edition.toml"
+sha256 = "9e3e06339900ca23f016d7c211c1c06d624c31ebbbc7b442adc55219be3e4760"
+kind = "rendered-content"
+owners = ["theology/mariology/champion"]
 
 [[files]]
 path = "src/claude/theology/mariology/fatima/format.tex"
