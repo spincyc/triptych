@@ -74,3 +74,9 @@ Rubric statements in the publication are original close English paraphrases of t
 ## Compact-rights-colophon production review — 2026-07-19
 
 The settled 40-page PDF, SHA-256 `792f76897a31cf9f4eb6d23eacee370c2078f3f9235c79831c7b03bf1dfd8727`, is the exact repository-reviewed build snapshot. The final log was warning-free; generation metadata, `qpdf` structure, PDF title/page metadata, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed their gates. Repository production review inspected every physical page; the compact final-page reuse-and-rights colophon is readable, unclipped, non-overlapping, remains with terminal content, and creates no rights-only spill page. The installed PDF is byte-identical to this reviewed build. This reviewed build supersedes every earlier production snapshot. This exact current snapshot has release-specific distribution clearance under the 20 July 2026 dated rights supplement. That operational decision supplies no independent review or ecclesiastical approval.
+
+## Research-staleness verdict — 2026-07-26
+
+Both candidates, paired research, and changed Missal inputs were compared. No
+decision rule, worked case, slot, or edition boundary requires correction. This
+exact edition is ready for rebaselining.

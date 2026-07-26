@@ -122,3 +122,9 @@ transcription is reproduced in the publication.
   `source-audit.md`.
 - This is an internal source audit. It is not independent specialist, theological, canonical
   or liturgical review, not an Ordo, and not an ecclesiastical approval.
+
+## Research-staleness verdict — 2026-07-26
+
+The complete unbaselined input set and both candidates were compared. No rule,
+case, slot, contested reading, or source boundary requires correction. This
+exact edition is ready for its first baseline.
