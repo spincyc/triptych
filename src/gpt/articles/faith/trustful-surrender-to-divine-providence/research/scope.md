@@ -103,3 +103,10 @@ terminal metadata/rights page. The reviewed build was installed and verified
 byte-identical. `qpdf` structure checking was unavailable because `qpdf` is not
 installed. Internal production review supplies no independent theological or
 ecclesiastical review and no renewed exact-snapshot distribution authorization.
+
+## Research-staleness verdict — 2026-07-26
+
+Both candidates and the paired, City of God, Catechism, and Aquinas inputs were
+compared. They reinforce Providence, agency, and moral boundaries without
+changing any consequential claim or attribution limit. This edition is ready
+for rebaselining.

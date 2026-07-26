@@ -97,3 +97,9 @@ The Lewis claim is a focused paraphrase of *Mere Christianity*, III.8; no Lewis 
   exception supplies no missing review or ecclesiastical approval and does not
   alter the immutable artifact.
 - Outstanding external review: independent philosophical, patristic, Thomistic, mystical-theological, dogmatic, literary, and ecclesiastical review. No imprimatur, nihil obstat, or ecclesiastical approval is claimed.
+
+## Research-staleness verdict — 2026-07-26
+
+Both candidates and all paired and Catechism inputs were compared. They deepen
+context and provenance without changing the metaphysical thesis, natural-reason
+boundary, or authority classification. This edition is ready for rebaselining.

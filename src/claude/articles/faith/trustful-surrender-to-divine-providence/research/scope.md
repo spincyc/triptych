@@ -76,3 +76,9 @@ Public domain: the Douay–Rheims (Challoner); Mackey's translation of the *Trea
 Completed (2026-07-25 edition): claim-driven source research with same-day verification of every quoted witness; the three textual identifications with their searches and negative results; rights review of each witness class; doctrinal-boundary review against the two condemnations, CCC 302–314, and the Thomistic loci; internal argumentative and source-consistency review; two settled `pdflatex` passes with a log free of fatal errors, undefined references, and overfull or underfull boxes; generation-metadata gate; source-library validation; and page-by-page raster review of the rendered 33-page document, which found and corrected a table-cell collision in the witnesses appendix and a bracketed reference entry that LaTeX had parsed as an item label.
 
 Outstanding: independent theological, patristic, historical, textual-critical, and ecclesiastical review. No imprimatur, nihil obstat, or ecclesiastical approval is claimed. Internal checking is not independent review, and the publication language must remain "source-audited working article."
+
+## Research-staleness verdict — 2026-07-26
+
+Both candidates and the changed Catechism, Denzinger, and Aquinas records were
+compared. They strengthen provenance without changing the doctrinal boundary,
+textual findings, or pastoral limits. This edition is ready for rebaselining.
