@@ -1,0 +1,538 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"
+
+# Controlling liturgical text. Every appointed Latin block and every rubric
+# reported in the publication is bound here. The verification ceiling asserted
+# for each is visual reading of the identified page images of the exact CMAA
+# facsimile artifact, which the authoring agent re-downloaded publication-locally
+# and hashed identically to the registered record before use.
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.rubricae-generales-missalis"
+loci = ["Rubricae generales Missalis romani, nn. 424-432 and 466-510, printed pp. XXX-XXXV, artifact PDF pp. 28-33"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The rubric blocks in sections 2, 3, 4, 6, 8 and 9 of the publication report nn. 424-425 (the psalm and confession, and the six Masses from which the whole block is removed), 427-430 (introit, Gloria Patri, Kyrie novies), 431-432 (when the Gloria is said and omitted), 466-474 (lessons, Gospel dialogue, homily), 475-476 (the Creed), 480-482 (secret and preface), 487-499 (the sixteen prefaces), 500-503 (Canon secreto, proper Communicantes and Hanc igitur, Communion of the faithful) and 507-510 (dismissal, blessing, last Gospel). Each was read at the page image during this revision; the earlier statement of nn. 424-425 was re-checked against the image and against the Ordo Missae rubric at n. 1016 before publication."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:6348a34973df3badd7907d55691d4bb4ad8633ca4b7887d2b86afeeea8d8217a"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.rubricae-generales-clara-voce-et-secreto"
+loci = ["Rubricae generales Missalis romani, nn. 511-514, printed p. XXXV, artifact PDF p. 33"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The publication's claim that between the Sanctus and the end of the Canon the list of things said aloud contains exactly one item, verba Nobis quoque peccatoribus, and its quotation of n. 512's definition of secreto (ita pronuntiet, ut ipsemet se audiat, et a circumstantibus non audiatur), rest on this passage. Read at the page image."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:fc42294d58b0b39a2313b3fd9a19cafc6166bac4b8232f7098e77968591528ca"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.rubricae-generales-communio-fidelium"
+loci = ["Rubricae generales Missalis romani, n. 503, printed p. XXXIV, artifact PDF p. 32"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The publication's account of the Communion of the faithful, and in particular its statement that the confession and absolution are omitted while Ecce Agnus Dei and the threefold Domine non sum dignus are said, rests on this passage, read at the page image together with n. 502 on the same page."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:a86769087e1573672a50afde02487bb8102713405f57337af8d339cbff27c8d0"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum"
+loci = ["Ordo Missae, marginal nn. 1013-1023, artifact PDF pp. 297-298 (printed pp. 216-217)"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Section 2 prints the appointed Latin of nn. 1013-1023 in four blocks and reports the rubric printed between nn. 1016 and 1017. Read at the page images."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:af555bc605f8e4937e6a5a618d603b338585d665112bcca7d7f74e518f12c0c0"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-kyrie-gloria"
+loci = ["Ordo Missae, marginal nn. 1024-1025, artifact PDF pp. 298-300 (printed pp. 217-219)"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Section 3 prints the Kyrie and the Gloria and reports the accompanying rubric on inclinations and the sign of the cross. The editorial note on the full stop after Iesu Christe in Tu solus Altissimus, Iesu Christe. Cum Sancto Spiritu was checked at the page image of artifact p. 300 during this revision."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:4fc443091bdfaf67c994bbf0d74be13cb7b19b83a177e70335e91a796c339509"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-credo"
+loci = ["Ordo Missae, marginal nn. 1026-1029, artifact PDF pp. 300-301 (printed pp. 219-220)"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Section 4 prints Munda cor meum in both forms and the Creed, and reports the genuflection at Et incarnatus est and the sign of the cross at Et vitam venturi saeculi. The spelling exspecto was checked at the page image."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:e24a15a4ad2f51baa29105f134c51c44ac981110afbb35fcb0b1ba07d7ff1ece"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium"
+loci = ["Ordo Missae, marginal nn. 1030-1042, artifact PDF pp. 301-303 (printed pp. 220-222)"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Section 5 prints nn. 1030-1034 and 1039-1042, describes nn. 1035-1038, and reports the rubrics on the blessing of the water, its omission at Requiems, and the omission of Gloria Patri at the Lavabo. The spelling neglegentiis was checked at the page image."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:c0341b1840766079c155cd9c36aa8badf5ee689e2e2ed9d699766a4fc34a36ea"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.praefationes"
+loci = ["Praefationes, printed pp. 223-298, artifact PDF pp. 304-379"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The publication's count of sixteen prefaces, its statement that they are printed first with chant across printed pp. 223-283 and then without music at pp. 284-298, and its identification of the seasonal use of the prefaces of the Holy Cross and of the Trinity rest on this passage together with nn. 482-499 of the general rubrics. The boundary between the chanted and unchanted series was checked at the page images of artifact pp. 364-365."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:b303d73a0b676900341fdf0ef617f8bd6aa0ba17a34b000e0e21ca5065ebed20"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.praefationes-sine-cantu"
+loci = ["Praefationes sine cantu, Praefatio communis, artifact PDF p. 378 (printed p. 297), with the preface dialogue at marginal n. 1086"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Section 6 prints the preface dialogue and the common preface from this page and identifies the marginal number 1086 as their locator. Read at the page image."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:4674d8a407e009a59a4fcf6561c8954d5ffede0c098e3afd3711e17ca68aa1d9"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-te-igitur"
+loci = ["Canon Missae, Te igitur through catholicae et apostolicae fidei cultoribus, artifact PDF p. 382, beginning at marginal no. 1088"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Section 7 prints the complete Te igitur sentence with its interleaved rubrics and analyses its word order, its three signs of the cross, and its intercession."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:3c281ce4834eadccf164d4535fd0eb97146a72d1db7513c7050a21b2d7c3afbf"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-communicantes"
+loci = ["Canon Missae, Communicantes and its proper forms, artifact PDF pp. 383-386 (printed pp. 302-305), marginal nn. 1090 and 1093-1100"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Section 7 prints the ordinary Communicantes, counts its twenty-six names, and reports the five proper forms at nn. 1093-1097. During this revision the page image of artifact p. 386 was read to correct an earlier statement that nn. 1098-1099 were both proper forms of Hanc igitur: n. 1098 reprints the ordinary form, n. 1099 is the one proper form, and n. 1100 reprints Quam oblationem. The same page carries the shared continuation with the clause on Saint Joseph."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:8f1c684e67b6c8f014d6a8b6434947bac82a9431331a09c682a3ba967d77ec85"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-consecratio"
+loci = ["Canon Missae, Qui pridie through Haec quotiescumque, artifact PDF pp. 387-388 (printed pp. 306-307), marginal nn. 1101-1105"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Section 7 prints the institution narrative and both consecratory forms as the book displays them, and the terminal synthesis quotes the chalice form and Haec quotiescumque as the 1962 witness against which the postconciliar alteration of the dominical words is measured."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:ebd4c9da08da22a14ae0f090ea5129d6e7cd11c5d46fa329896490419e74dfa0"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-anamnesis"
+loci = ["Canon Missae, Unde et memores through Per ipsum, artifact PDF pp. 389-392 (printed pp. 308-311), marginal nn. 1106-1112"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Section 7 prints nn. 1106-1112 with their interleaved rubrics, counts the fifteen names of Nobis quoque, and describes the five crosses and one elevation of Per ipsum."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:49aa16232b72710fbc9710422d68378d2a4de1ae4f880e0c20a58e4375914084"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio"
+loci = ["Ordo Missae, Pater noster through Corpus tuum, artifact PDF pp. 393-403 (printed pp. 312-322), marginal nn. 1113-1131"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Section 8 prints the Lord's Prayer with its introduction, Libera nos with the fraction, Pax Domini, Haec commixtio, the Agnus Dei with its Requiem variant, the three preparatory prayers, the reception formulas, Quid retribuam and the two ablution prayers. The marginal number of Perceptio Corporis tui (1124) and the absence of any scriptural reference at n. 1128 were confirmed at the page images of artifact pp. 400 and 402."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:93635f06e6e74b402a8974ece354f5016133e656d754b8c179baba125433290f"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ritus-communionis"
+loci = ["Ordo Missae, marginal nn. 1113-1131, printed pp. 312-322, artifact PDF pp. 393-403"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "A second, independently created record of the same span, read in the artifact's embedded text layer. It is bound here as a control on the page-image reading and is not an independent witness."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:23b3c552703836f32450b7bcd4e36099b5f37a3b449d296c6897daac09fb91af"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-conclusio"
+loci = ["Ordo Missae, Ite missa est through the last Gospel, artifact PDF pp. 403-409 (printed pp. 322-328), marginal nn. 1132-1139"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Section 9 prints the three dismissal formulas, Placeat, the blessing and the last Gospel. The count of eight chant settings of Ite, missa est under n. 1134 was made at the page images of artifact pp. 404-405."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:0bacc58f089f6637a766b548b20d54914cd7b3997fe33ecc8b6b7abc463cb1bb"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-canon"
+loci = ["Ritus servandus in celebratione Missae, section VIII De Canone Missae, artifact PDF p. 62 (printed p. LX)"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Consulted for the ceremonial of the Canon. The publication does not quote it; its statements about the manner of the consecration and the joined fingers are consistent with it and rest primarily on the Ordo Missae's own interleaved rubrics."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:88c88048945ea0bd6c4833c427b8ec69c4351b1206ccad014289751ba76cb352"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-lectiones-et-offertorium"
+loci = ["Ritus servandus in celebratione Missae, V-VII, printed pp. LVII-LIX, artifact PDF pp. 59-61"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The rubric note in section 5 that Orate, fratres is said voce aliquantulum elata and the remainder continued secretly rests on section VII of this passage."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:46d68704125a8ffefa194e6f871424a4e5ebe12dfdff18cf02ef36a63bf54768"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.de-defectibus-formae"
+loci = ["De defectibus in celebratione Missae occurrentibus, V, printed p. LXVII, artifact PDF p. 69"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Consulted as the book's own identification of the two consecratory forms. The publication does not quote it and makes no sacramental-theology claim from it; it is recorded because it independently confirms the wording of the chalice form printed at n. 1104."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:4d257e5d2cb7e454b610aaec1d3e7910644a4159d85cc22f4ecd1f8c93b1fedd"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.quo-primum-1570"
+loci = ["Bulla Quo primum of Pius V, 14 July 1570, front matter, artifact PDF pp. 3-4"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The chronology's entry for 1570 and the publication's statements that the last Gospel and the medieval offertory and Communion prayers were fixed by the reformed Missal rest on this act's identity and date. The publication makes no claim about the bull's continuing juridical effect."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:bcfb1021298c9f4474b8c29502c642248904e2b909f543f0a2192ea3cd26c2f6"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.breve-clementis-viii-1604"
+loci = ["Breve Clementis Pp. VIII, Cum sanctissimum Eucharistiae Sacramentum, 7 July 1604, front matter, artifact PDF pp. 4-5"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Chronology entry only, for the fact and date of the 1604 restoration and for Clement VIII's own statement that Pius V had forbidden addition or subtraction."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:e61349b0f04786f186253d4f7de6ee05029df4f470b23b31a10bdd9f44d75899"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.breve-urbani-viii-1634"
+loci = ["Breve Urbani Pp. VIII, Si quid est in rebus humanis, 2 September 1634, front matter, artifact PDF pp. 5-6"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Chronology entry only, for the fact and date of the 1634 correction of the rubrics."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:a103a6b0831ab17843b34051df7cb1f7c7e4c085af5d7cc3856fb004fb3de371"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.decretum-generale-rubricarum-1960"
+loci = ["Sacred Congregation of Rites, general decree promulgating the new code of rubrics of the Roman Breviary and Missal, 26 July 1960, front matter, artifact PDF p. 9"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The publication's statement that the rubrics it quotes are the code of 1960, promulgated two years before the book that prints them and binding from 1 January 1961, rests on this decree, as does the record of the internal date discrepancy about Rubricarum instructum."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:e9f99dd74c8ecc14feec5f6a83ac2748077ec57e1a6a5581be9c9dd12b79ef6c"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.decretum-sacrae-rituum-congregationis-1962"
+loci = ["Decretum of the Sacred Congregation of Rites, 23 June 1962, front matter, artifact PDF p. 2"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The publication's dating of the volume's own promulgation to 23 June 1962, which bounds the claim that this impression carries the Saint Joseph clause, rests on this decree; the internal disagreement about the date of Rubricarum instructum is reported in the scope appendix and the chronology and is not resolved."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:aad5d1427da443641caa41f96f765c79aa1db4bf58502c97ea192c5c1103e2f0"
+
+# The identified public-domain English witness. Every framed English wording in
+# the publication is quoted from one of these five spans, each read at the
+# Internet Archive page renditions of the exact hashed scan.
+
+[[bindings]]
+source_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio"
+loci = ["ordinarium-praeparatio"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Source of the English witness blocks for the Confiteor, Aufer a nobis, Oramus te and the Gloria, and of the observation that the 1861 book prints the servers' Confiteor in full and abbreviates the priest's."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:703a5a4c1039acf11279e37ac1cfe633e030bcf709e1651c4d53b0efa8cb744a"
+
+[[bindings]]
+source_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio"
+loci = ["ordinarium-oblatio"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Source of the English witness blocks for the Creed and Suscipe sancte Pater, of the note that the 1861 Latin Creed reads expecto, and of the footnote on kneeling at Et homo factus est."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:1f6e9ef05afc4382718f6455e31c93061e5e8826eb45f7783c921850da1742b1"
+
+[[bindings]]
+source_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefatio-communis"
+loci = ["praefatio-communis"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Source of the English witness block for the common preface and the Sanctus."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:4d1bed6a60d67cdf2952d138f2d8e55ecac8ccf66f9efb1f9b3620536bb7c55e"
+
+[[bindings]]
+source_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae"
+loci = ["canon-missae"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Source of the English witness blocks for Te igitur, the two consecratory forms as the 1861 book displays them, the Lord's Prayer, Libera nos, Pax Domini and the commingling, the two preparatory prayers, Domine non sum dignus and the reception formulas, and of the decisive collation result that this printing's Communicantes contains no mention of Saint Joseph and that its Pater noster reads quotidianum. Pages 50-53 of the scan were re-rendered and read during this revision."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:309dee2bd800d47f9a5b95587e3d63623f97831de99787cd6e4008bf64dd31a8"
+
+[[bindings]]
+source_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio"
+loci = ["ordinarium-conclusio"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Source of the English witness blocks for Corpus tuum Domine, Ite missa est ('Go, you are dismissed'), Requiescant in pace, Placeat, the blessing and the last Gospel, and of the observation that the Ordinary closes with a printer's rule at p. xlvi. Pages 54-57 of the scan were re-rendered and read during this revision."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:e3210f643389cbf114e2f8f401a856522e6b609ea8b28d5b6f7918438b4ff0b0"
+
+# Scripture. The publication quotes the Douay-Rheims only for the biblical loci
+# the Ordinary uses. Each binding names the exact tracked verse-text artifact
+# read.
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+loci = ["Ps.17.4", "Ps.25.6", "Ps.42.4", "Ps.115.12-13", "Ps.117.26"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "English of the psalm verses quoted at the antiphon Introibo, the Lavabo, Quid retribuam and the Sanctus. Psalm numbering is Vulgate throughout, as the Missal prints it; the composite character of n. 1128, which joins Ps 115:12-13 to Ps 17:4, was established from these verses."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-47-matthew-dd0ba183"
+loci = ["Matt.6.11", "Matt.8.8", "Matt.21.9", "Matt.26.26-28"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "English of the supersubstantial bread of Matthew against the daily bread of Luke; of the centurion's words behind Domine non sum dignus; of the Benedictus qui venit; and of the Matthaean institution account against which the Canon's consecratory forms are compared."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:ed47ecb092ecb6256fb84450e8ad39d0debf2efe6c65442199a76a7fb1a8b98b"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-49-luke-d8269c33"
+loci = ["Luke.1.11", "Luke.2.14", "Luke.11.3"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "English of the angel standing on the right side of the altar of incense, which the offertory blessing transfers to Michael; of the angels' words opening the Gloria; and of the Lucan form of the bread petition."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:b6acab91674d3bbe04726da30c835175a133104d3db53fcf3f8e45b1d5b4ba6e"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-50-john-27b8f3ed"
+loci = ["John.1.14", "John.1.29", "John.14.27"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "English of the Baptist's greeting behind the Agnus Dei, whose singular peccatum the liturgical form makes plural; of Pacem relinquo vobis quoted inside the first preparatory prayer; and of the last Gospel's closing verse."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:4498ea55e49e3577649969ed0bcf456423b8aec2f9edda55586c37190dfe77a4"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-27-isaias-7c9a1228"
+loci = ["Is.6.3", "Is.6.6-7"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "English of the seraphim's cry behind the Sanctus and of the live coal behind Munda cor meum."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:41639d5457be3a0a6446fe59d3c59c7561aacfef7bc43089f650a7353452bbf8"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-32-daniel-8954f60d"
+loci = ["Dan.3.39-40"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "English of the prayer of Azarias, from which In spiritu humilitatis is drawn."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:d0b3ef2c7944402acdaed457d921aff389826a39dc2ec7ada6adc53ff9feadac"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-01-genesis-4f9a0975"
+loci = ["Gen.4.4", "Gen.14.18"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "English of what Abel and Melchisedech offered, against which Supra quae names them."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:aba8e34331af3fc19e272bdef11140f842ca4e75fb2d097f1c8211b637d4fe94"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-52-romans-4d45c497"
+loci = ["Rom.12.1"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "English of the reasonable service to which the Canon's rationabilem is referred."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:1b6036a02c7bcc743d143f4f4e17bb6927cb1f4d8dfff9115aeb3250cf287c64"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-53-1-corinthians-ffc4f260"
+loci = ["1Cor.11.25", "1Cor.11.29"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "English of the Pauline chalice formula compared with the Canon's, and of eating unworthily, which Perceptio Corporis tui turns into a petition."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:86aa4aafa5cb1a66218d81b3f7735715d33eac0a1b62c9c471499728c0838a11"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-73-apocalypse-9ae5c352"
+loci = ["Apoc.8.3"]
+role = "lead"
+states = ["cataloged", "acquired", "inspected"]
+context = "Consulted and rejected. An earlier draft attributed the offertory blessing Per intercessionem beati Michaelis Archangeli, stantis a dextris altaris incensi to this verse. The verse has an angel with a golden censer before the altar but no angel standing at its right; the phrase the prayer borrows is that of Luke 1:11. The correction is recorded here so the rejected identification is not silently reintroduced."
+
+# Conciliar, patristic, papal and scholarly witnesses.
+source_fingerprint = "sha256:b28bde358a8ffc3aa2486baeeeda9bb23021b0bab1a8dccd447d33b2f7225cdb"
+
+[[bindings]]
+source_id = "passage.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.sessio-22-decretum-3"
+loci = ["sessio-22-decretum-3"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Section 5's claim that the closing clause of Suscipe, sancta Trinitas reappears almost verbatim in chapter III rests on this passage. The record was created for this publication after the page image was read; the council's verb is facimus where the Missal has agimus, and the Tauchnitz stereotype prints coelis."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:35199daa8841735545c74483814d498599d91b56edcbd3302cb0d4f2ea0461f9"
+
+[[bindings]]
+source_id = "passage.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.sessio-22-decretum-4"
+loci = ["sessio-22-decretum-4"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Section 7 quotes chapter IV on the Canon and chapter V on the low and louder voice, and reads chapter IV exactly as saying three things and not a fourth."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:59a761679fcaff3e89184c6010819ebe2c3e37af9e6c123f03044694c8ea9ae1"
+
+[[bindings]]
+source_id = "passage.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.sessio-22-canon-1-2"
+loci = ["sessio-22-canon-1-2"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Section 5 quotes the end of chapter VII on the water mixed in the chalice from the page image controlled by this passage record. The record's own context describes the page rather than that chapter's text; the quotation was read directly at the image during this revision."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:e8693552a8437c8c280738da6c13893d5435d23d22f689bcbc18016b821189ed"
+
+[[bindings]]
+source_id = "passage.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.sessio-22-canon-3-9"
+loci = ["sessio-22-canon-3-9"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Section 7 quotes canon VI in Latin and reports canon IX on the low-voiced Canon."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:b1854ec42ff05ba7e01e83cdb07b0020a65f8b0fdc113e8ca60e9f7dc60ebcb1"
+
+[[bindings]]
+source_id = "passage.council-of-trent.canones-et-decreta.english-waterworth.sessio-22-decretum-4"
+loci = ["sessio-22-decretum-4"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Waterworth's English of chapter IV is quoted beside the Latin in section 7. It is an identified nineteenth-century translation, not an official version, and is presented as a witness."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:921dd659fcfad2015d5619555fc1d9cb2c1cf49a6ea80baf9e4ad0f23606cb50"
+
+[[bindings]]
+source_id = "passage.council-of-trent.canones-et-decreta.english-waterworth.sessio-22-canon-6-9"
+loci = ["sessio-22-canon-6-9"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Waterworth's English of canon IX is quoted in section 7."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:8786d22f8d0fcd204e6852015eb9b5eca1d8f135bcb4a7ee29b5968ed41e66f6"
+
+[[bindings]]
+source_id = "passage.migne.patrologia-latina-16.paris-1880.coll-462"
+loci = ["coll-462"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Section 7 quotes the four adjectives ascriptam, ratam, rationabilem, acceptabilem and reports the Maurist note that ratam is a text-critical restoration."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:f8a01e198a6bbc9762684951b754a6e1be1b731e7c8f0bcf1f93e8f3a717c523"
+
+[[bindings]]
+source_id = "passage.migne.patrologia-latina-16.paris-1880.coll-463-464"
+loci = ["coll-463-464"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Section 7 quotes the Milanese institution narrative with pro multis confringetur and the Maurist note on the Roman edition's correction, and quotes IV, 6, 27 entire beside Unde et memores, Supra quae and Supplices. The attribution of De sacramentis to Ambrose is disputed and the publication takes no position on it."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:65a0d6c73944fafe92eefb874c1f2e01409d743908a2da1c192f1eb999631ad1"
+
+[[bindings]]
+source_id = "passage.holy-see.acta-apostolicae-sedis.volume-54-1962.p-873"
+loci = ["p-873"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The decree De S. Ioseph nomine Canoni Missae inserendo, its date of 13 November 1962, its announcement to the Council fathers the same day, and its effect from 8 December 1962. This is the documentary half of the publication's central collation result."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:7e56d7ba78bc744492cfd85815e7638edcaeb4eaf97e05bc08820bffe6bb18e2"
+
+[[bindings]]
+source_id = "segment.john-xxiii.rubricarum-instructum.latin-aas-52-1960.aas-52-1960-pages-593-595"
+loci = ["AAS 52 (1960), pp. 593-595"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Cited in the references and chronology for the motu proprio's identity and date only. The segment was read in the volume's optical text layer and not collated at the page images; the publication's dating rests primarily on the 1962 Missal's own front matter, and the disagreement between 23 and 25 July 1960 is reported rather than resolved."
+source_fingerprint = "sha256:fdec7dc092ace0b98401388cce8037b40ce95edbae2e6034b65f3b28bb018ba2"
+
+[[bindings]]
+source_id = "segment.holy-see.novum-rubricarum-decretum-1960.latin-aas-52-1960.aas-52-1960-page-596"
+loci = ["AAS 52 (1960), p. 596"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Cited in the references and chronology for the general decree's identity and date only, on the same optical-text ceiling as the preceding segment."
+source_fingerprint = "sha256:33baade21472d44f11e133c0224fa3802b43f67a93590760ea0c827106b5df52"
+
+[[bindings]]
+source_id = "passage.adrian-fortescue.the-mass-a-study-of-the-roman-liturgy.longmans-1922.p-172"
+loci = ["p-172"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Reported as Fortescue's: the constant tradition that Gregory was the last to touch the Canon, Benedict XIV's dictum, and Gregory's transfer of the Lord's Prayer. The publication sets the 1962 insertion of Saint Joseph's name against the strongest form of that tradition."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:07379bf425cd56740571331d4efa4a33daeaf683b379428ec7f7ac6301cd8f39"
+
+[[bindings]]
+source_id = "passage.adrian-fortescue.the-mass-a-study-of-the-roman-liturgy.longmans-1922.p-227"
+loci = ["p-227"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Reported as Fortescue's: that the prayers at the foot of the altar are preparation rather than part of the Mass, the medieval uses that differed there, and the papal chapel's aptness for sancta sanctorum and quorum reliquiae hic sunt. The medieval variants are used in the synthesis as evidence that the variable stratum is the youngest one."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:53fcef3615ad96f880386edb8cee4e15e1e830873465d317e8513e59fd495b8c"
+
+[[bindings]]
+source_id = "passage.adrian-fortescue.the-mass-a-study-of-the-roman-liturgy.longmans-1922.p-232"
+loci = ["p-232"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Reported as Fortescue's: the fourth-century first certain appearance of the Kyrie, Etheria's Jerusalem witness, and the Antiochene litany in which the Kyrie answers each clause. Record created for this publication."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:7e370c8b2193908233d308ddbc85b36ff088a9581bb0f4121d5333272a9476a0"
+
+[[bindings]]
+source_id = "passage.adrian-fortescue.the-mass-a-study-of-the-roman-liturgy.longmans-1922.p-234-235"
+loci = ["p-234-235"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Reported as Fortescue's: Gregory's letter to John of Syracuse quoted directly, Christe eleison as the Roman speciality, the ninth-century survival of a litany at this place on days without the Gloria, and the litany still standing at the Easter and Pentecost vigils and at ordinations. Record created for this publication after an earlier draft cited these pages without one."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:31603732cf8091ee1fc6e7d0d77d61a9065973d47ac091f10b119600b186cea8"
+
+[[bindings]]
+source_id = "passage.adrian-fortescue.the-mass-a-study-of-the-roman-liturgy.longmans-1922.p-288"
+loci = ["p-288"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Reported as Fortescue's: Berno's report of 1014 and the dissenting authorities named in his footnotes, which the publication reproduces because a bare date would misrepresent the state of the evidence."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:b22dc305981654b79dbf8eb0800cdb2f374733e7aeec75f351176b0b3ccf6456"
+
+[[bindings]]
+source_id = "passage.adrian-fortescue.the-mass-a-study-of-the-roman-liturgy.longmans-1922.p-305"
+loci = ["p-305"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Reported as Fortescue's: the medieval date of the offertory prayers, their adoption from the fourteenth Roman Ordo, Suscipe sancte Pater in the prayerbook of Charles the Bald, immaculatam hostiam as an anticipation of the consecration, and the antiquity of the mixed chalice. The terminal synthesis names this dating as the load-bearing external claim on which its conclusion depends."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:b9211cbd8a1b1b838d3bffe4b5f71d9de9219d60c82dbb64b9e3f6ad3c67d65b"
+
+[[bindings]]
+source_id = "passage.adrian-fortescue.the-mass-a-study-of-the-roman-liturgy.longmans-1922.p-387"
+loci = ["p-387"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Reported as Fortescue's: the Agnus Dei added to fill the time of the fraction, Sergius I, and the change of the third invocation, against which the publication reads the surviving Requiem form."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:8077e56f2d2b211cff268834e49670a19973e0bab6b057dd23f9879d5f22970c"
+
+[[bindings]]
+source_id = "passage.adrian-fortescue.the-mass-a-study-of-the-roman-liturgy.longmans-1922.p-394"
+loci = ["p-394"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Reported as Fortescue's: the last Gospel as the priest's thanksgiving until Pius V admitted it as part of the Mass in 1570, with the three marks of its anomalous status that the 1962 book still shows."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:7a41570822f72bfd9c600f4e5a01f735f604e38999be9e9ad592346a5b8ee3f6"
