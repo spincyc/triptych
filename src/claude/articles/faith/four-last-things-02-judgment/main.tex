@@ -1,0 +1,83 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+\usepackage{endnotes}
+
+\hypersetup{
+  pdftitle={The Four Last Things: What Death Does Not Finish},
+  pdfsubject={Judgment: a Catholic study of the particular and the general judgment, their relation, the resurrection of the body as the general judgment's precondition, the judgment scenes read at their own loci, and purgatory's place relative to the first sentence}
+}
+
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\renewcommand{\makeenmark}{\hbox{\textsuperscript{\normalfont\theenmark}}}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.14\textheight}
+{\large\scshape The Four Last Things\par}
+\vspace{0.35em}
+{\small A Discursive Article\par}
+\vspace{1.5em}
+{\Huge\bfseries What Death Does Not Finish\par}
+\vspace{0.9em}
+{\large On the Particular and the General Judgment\par}
+\vspace{1.4em}
+{\normalsize\itshape Volume Two --- Judgment\par}
+\vfill
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{articles/faith/four-last-things-02-judgment/sections/00-the-same-man-sentenced-twice}
+\input{articles/faith/four-last-things-02-judgment/sections/10-what-has-actually-been-defined}
+\input{articles/faith/four-last-things-02-judgment/sections/20-the-scene-in-matthew}
+\input{articles/faith/four-last-things-02-judgment/sections/30-the-other-witnesses}
+\input{articles/faith/four-last-things-02-judgment/sections/40-the-body-that-has-to-come-back}
+\input{articles/faith/four-last-things-02-judgment/sections/50-not-a-second-trial}
+\input{articles/faith/four-last-things-02-judgment/sections/60-purgatory-on-the-far-side}
+\input{articles/faith/four-last-things-02-judgment/sections/70-according-to-his-works}
+\clearpage
+\addcontentsline{toc}{section}{Notes}
+\begingroup
+\small
+\setlength{\parskip}{0.45em}
+\theendnotes
+\endgroup
+\clearpage
+\appendix
+\input{articles/faith/four-last-things-02-judgment/sections/85-weights-synopsis}
+\input{articles/faith/four-last-things-02-judgment/sections/90-scope-method-qualifications}
+\input{articles/faith/four-last-things-02-judgment/sections/99-references}
+\begingroup
+\setlength{\parskip}{0pt}
+\vspace{-0.6\baselineskip}
+\section{Generation Metadata}
+\vspace{-0.35\baselineskip}
+{\scriptsize\input{articles/faith/four-last-things-02-judgment/generation-metadata}}
+\endgroup
+\end{deepstudy}
+
+\end{document}
