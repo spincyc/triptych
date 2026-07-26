@@ -47,6 +47,11 @@ Douay–Rheims (Challoner), the Clementine Vulgate text, the English Dominican S
 
 ## Review state
 
+Staleness review (2026-07-26): the old, minimally modified, and research-first
+rewritten treatments were compared against new Augustine, Catechism, and
+Aquinas records. Religion and sacrifice records reinforce the article;
+judgment, chastity, and general law records do not alter it. No material change.
+
 Completed: claim-driven source research with same-day (2026-07-24) verification of every quoted witness (see `research/source-audit.md`); verification of the City of God quotations against the source library's tracked 1871 artifact at the registered passage bounds; epistemic-order review (received teaching labeled at every appearance; the ascent/confession seam marked at Augustine X.6 and in section 6); boundary review against series parity constraints (no canon-law claims; no Trinity or Eucharistic theology from natural reason); rights review; internal argumentative, source-consistency, and quotation review; multipass build with clean fatal-error, undefined-reference, and layout scans; generation-metadata gate; and page-by-page raster review.
 
 Outstanding: independent scriptural, patristic, Thomistic, theological, liturgical, literary, and ecclesiastical review; Part III of the series. No imprimatur, nihil obstat, ecclesiastical approval, or completion of independent review is claimed. Internal checking is not independent review.

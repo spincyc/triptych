@@ -52,6 +52,11 @@ Hume, Comte–Martineau, the 1929 German manifesto text (in the United States), 
 
 ## Review state
 
+Staleness review (2026-07-26): the old, minimally modified, and research-first
+rewritten treatments were compared against new Catechism and Aquinas records.
+Natural-theology loci strengthen provenance; unrelated law records do not bear
+on the thesis. No material change.
+
 Completed (2026-07-24 edition): claim-driven source research with same-day verification of every quoted witness; distinction audit for the coined term; self-application and collapse narrative checked against primary Ayer text and a named encyclopedic witness; theological boundary review against Dei Filius, CCC 31–39, and Fides et ratio; exegetical boundary note for Romans 1; rights review; internal argumentative and source-consistency review; multipass build with clean fatal-error, undefined-reference, and layout scans; generation-metadata gate; and page-by-page raster review.
 
 Completed (2026-07-25 deepening): the deepening added the genealogy section, the three-formulation self-application analysis, the laboratory section's theory-ladenness passage, the praeambula fidei and I.2.3 subsections, the Dei Filius canons and ch. 4 expansions, the scientistic-residue section, the synopsis appendix, and expanded notes and references. All newly quoted witnesses were verified on 2026-07-25 as logged in `research/source-audit.md`; previously quoted Aquinas q. 2 and Dei Filius witnesses were re-fetched; the Quine citation was upgraded from bibliographic record to checked transcription wording; negative results (restricted Popper and Hempel holdings; unreachable Guardian/Atlantic/archive hosts) were logged rather than filled by inference. Internal argumentative, source-consistency, quotation, rights, and production review repeated for the deepened text; multipass build with clean fatal-error, undefined-reference, and layout scans; generation-metadata gate; and page-by-page raster review of the deepened rendering.

@@ -52,6 +52,11 @@ No Lewis wording is reproduced. His argument and revision are paraphrased from t
 
 ## Review state
 
+Staleness review (2026-07-26): the old, minimally modified, and research-first
+rewritten treatments were compared against changed Claude research. Its broader
+genealogy and Thomistic checks do not alter this edition's claims or bounds. No
+material change.
+
 Completed: claim-driven source review; distinction audit for instrumentalism, scientism, verificationism, operationalism, naturalism, empiricism, and methodological naturalism; technical checking of indication, measurement result, and calibration; theological boundary review against *Gaudium et spes*, *Fides et ratio*, and the adopted Thomistic loci; Lewis–Anscombe qualification; rights review; and internal argumentative and source-consistency review.
 
 Production completed: settled multipass build; clean fatal-error, undefined-reference, overflow, underflow, and layout-warning scans; extracted-text, metadata, pagination, PDF-structure, and embedded-font checks; bounded raster and contact-sheet review; and individual visual inspection of all 9 pages. A forced rebuild reproduced the reviewed bytes exactly. The installed PDF at `doc/gpt/articles/faith/against-the-instrumentalists.pdf` has SHA-256 `3bb2998cc1bc07d2e9e4d6358f9bb9470399fdf81f3a09294c3a2d47737e9d91`.
