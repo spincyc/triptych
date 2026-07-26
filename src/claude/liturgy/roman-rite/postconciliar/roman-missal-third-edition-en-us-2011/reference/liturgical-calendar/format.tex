@@ -1,0 +1,87 @@
+% Local formatting for the postconciliar calendar reference.  Everything here is
+% reflowable: no landscape, no multicolumn text, no diagrams, no overlays.
+
+\titleformat{\section}{\large\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.6em}{}
+\titleformat{\subsubsection}{\normalsize\itshape}{\thesubsubsection}{0.6em}{}
+\titlespacing*{\section}{0pt}{1.1em}{0.4em}
+\titlespacing*{\subsection}{0pt}{0.9em}{0.25em}
+\titlespacing*{\subsubsection}{0pt}{0.7em}{0.2em}
+
+\setlength{\emergencystretch}{3em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+% A block of normative Latin with its locus named in a visible field.  The label
+% is the authority; the text is the source.  Both stay legible in monochrome.
+\newenvironment{normtext}[1]
+  {\begin{studyframe}\small\textbf{Locus:} #1\par\vspace{0.15em}\itshape\ignorespaces}
+  {\end{studyframe}}
+
+% An editorial rendering placed beside quoted Latin.  Labelled so a reader never
+% mistakes a project translation for an approved liturgical translation.
+\newenvironment{workingrendering}
+  {\par\vspace{-0.25em}\begingroup\small\textbf{Working rendering (project, not an approved translation).}\ \ignorespaces}
+  {\par\endgroup}
+
+\newenvironment{synthesis}[1]
+  {\begin{studybox}{Project synthesis: #1}\small}
+  {\end{studybox}}
+
+\newcommand{\calhead}[3]{%
+  \begin{center}
+    {\LARGE\bfseries #1}\\[0.45em]
+    {\large #2}\\[0.4em]
+    {\small #3}
+  \end{center}
+  \vspace{0.6em}}
+
+% Fixed-width reference tables.  Column heads are bold in the cell rather than in
+% a column prefix, so no cell-opening token can be swallowed on conversion.
+\newenvironment{ruletable}
+  {\small\begin{longtable}{>{\raggedright\arraybackslash}p{0.30\linewidth}>{\raggedright\arraybackslash}p{0.64\linewidth}}
+   \toprule
+   \textbf{Provision} & \textbf{Content}\\
+   \midrule
+   \endhead}
+  {\bottomrule\end{longtable}}
+
+% The precedence table sets long Latin beside a gloss, so its two columns are
+% nearer to equal than the general provision table's.
+\newenvironment{latintable}
+  {\small\begin{longtable}{>{\raggedright\arraybackslash}p{0.44\linewidth}>{\raggedright\arraybackslash}p{0.50\linewidth}}
+   \toprule
+   \textbf{Place, in the Latin of the typical edition} & \textbf{Editorial gloss}\\
+   \midrule
+   \endhead}
+  {\bottomrule\end{longtable}}
+
+% A dated list of governing acts; the field names are the ones the reader needs.
+\newenvironment{actstable}
+  {\small\begin{longtable}{>{\raggedright\arraybackslash}p{0.20\linewidth}>{\raggedright\arraybackslash}p{0.74\linewidth}}
+   \toprule
+   \textbf{Date} & \textbf{Act, and whether its own text was read}\\
+   \midrule
+   \endhead}
+  {\bottomrule\end{longtable}}
+
+% Three worked years compared on one result at a time.
+\newenvironment{comparetable}
+  {\small\begin{longtable}{>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.60\linewidth}}
+   \toprule
+   \textbf{Result} & \textbf{2026 / 2027 / 2028}\\
+   \midrule
+   \endhead}
+  {\bottomrule\end{longtable}}
+
+\newenvironment{yeartable}
+  {\footnotesize\begin{longtable}{llllllrrrrll}
+   \toprule
+   \textbf{Year} & \textbf{Baptism} & \textbf{Ash Wed.} & \textbf{Easter} & \textbf{Pentecost} & \textbf{Advent I} &
+   \textbf{$L$} & \textbf{$R$} & \textbf{Weeks} & \textbf{Omitted} & \textbf{Sun.} & \textbf{Wkdy}\\
+   \midrule
+   \endhead}
+  {\bottomrule\end{longtable}}
+
+\newcommand{\loc}[1]{{\normalfont\scshape #1}}
