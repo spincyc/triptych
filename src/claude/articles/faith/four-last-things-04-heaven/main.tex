@@ -1,0 +1,82 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+\usepackage{endnotes}
+
+\hypersetup{
+  pdftitle={Then Face to Face},
+  pdfsubject={A discursive theological article on heaven: the beatific vision as defined in Benedictus Deus, the Thomistic light of glory, the Eastern essence-and-energies alternative, the resurrection of the body, degrees of beatitude, the communion of saints, and the boundary between defined doctrine and theological speculation. The Four Last Things, Part IV}
+}
+
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\renewcommand{\makeenmark}{\hbox{\textsuperscript{\normalfont\theenmark}}}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.14\textheight}
+{\large\scshape A Triptych Article\par}
+\vspace{1.5em}
+{\Huge\bfseries Then Face to Face\par}
+\vspace{0.9em}
+{\Large On Heaven, and on Telling What Has Been Defined\\from What Has Been Guessed\par}
+\vspace{1.4em}
+{\normalsize\itshape The Four Last Things --- Part IV\par}
+\vfill
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{articles/faith/four-last-things-04-heaven/sections/00-the-postcard-and-the-definition}
+\input{articles/faith/four-last-things-04-heaven/sections/10-what-was-defined-in-1336}
+\input{articles/faith/four-last-things-04-heaven/sections/20-can-a-creature-see-god}
+\input{articles/faith/four-last-things-04-heaven/sections/30-the-eastern-answer}
+\input{articles/faith/four-last-things-04-heaven/sections/40-the-body-that-rises}
+\input{articles/faith/four-last-things-04-heaven/sections/50-star-differeth-from-star}
+\input{articles/faith/four-last-things-04-heaven/sections/60-no-one-is-blessed-alone}
+\input{articles/faith/four-last-things-04-heaven/sections/70-what-scripture-says}
+\input{articles/faith/four-last-things-04-heaven/sections/80-the-end-of-the-four}
+\input{articles/faith/four-last-things-04-heaven/sections/85-weights-synopsis}
+\clearpage
+\addcontentsline{toc}{section}{Notes}
+\begingroup
+\small
+\setlength{\parskip}{0.3em}
+\theendnotes
+\endgroup
+\clearpage
+\appendix
+\input{articles/faith/four-last-things-04-heaven/sections/90-scope-method-qualifications}
+\input{articles/faith/four-last-things-04-heaven/sections/99-references}
+\begingroup
+\setlength{\parskip}{0pt}
+\vspace{-0.6\baselineskip}
+\section{Generation Metadata}
+\vspace{-0.35\baselineskip}
+{\scriptsize\input{articles/faith/four-last-things-04-heaven/generation-metadata}}
+\endgroup
+\end{deepstudy}
+
+\end{document}
