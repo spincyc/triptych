@@ -453,3 +453,11 @@ work-specific `liturgical-text-permission` question recorded for this leaf
 family remains **open**; nothing in this record weakens or redescribes it. Any
 exact-snapshot distribution clearance attaches to specific PDF bytes and to
 nothing else.
+
+## Research-staleness verdict — 2026-07-26
+
+Modified and independent-rewrite candidates were compared claim by claim
+against the exact Missal and paired-provider inputs. The existing `continuo`
+correction remains exact and no further material correction was found; the
+study edition may be exactly rebaselined. The full-text edition was outside
+this review.

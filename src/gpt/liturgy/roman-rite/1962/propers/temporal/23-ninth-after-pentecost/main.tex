@@ -1,5 +1,10 @@
 \input{common/preamble}
-\hypersetup{pdftitle={Ninth Sunday after Pentecost},pdfsubject={Source-audited preparation guide to the 1962 Roman Missal propers}}
+\ifdefined\TriptychFullTextEdition
+  \input{liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text/format}
+  \hypersetup{pdftitle={Ninth Sunday after Pentecost (Full-Text Edition)},pdfsubject={Full-text source-audited companion to the 1962 Roman Missal propers}}
+\else
+  \hypersetup{pdftitle={Ninth Sunday after Pentecost},pdfsubject={Source-audited preparation guide to the 1962 Roman Missal propers}}
+\fi
 \begin{document}
 
 \weektitle{Ninth Sunday after Pentecost}{DOMINICA NONA post Pentecosten}{TLM propers: received help, chastened standing, visitation through tears, and Eucharistic abiding in one body}
@@ -74,6 +79,11 @@ Anagogical & Rescue from evil, the reckoning of visitation, redemption enacted i
 }
 
 \clearpage
+
+\ifdefined\TriptychFullTextEdition
+\input{liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text/sections/05-appointed-text}
+\clearpage
+\fi
 
 \section*{The Propers: Themes and Movement}
 
@@ -306,7 +316,11 @@ Later Roman reception makes the Postcommunion's two petitions mutually interpret
 \vspace{0pt}
 {\fontsize{6.9}{7.3}\selectfont
 \setlength{\parskip}{0pt}
+\ifdefined\TriptychFullTextEdition
+\FullTextGenerationMetadata
+\else
 \input{liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/generation-metadata}
+\fi
 }
 
 \end{deepstudy}
