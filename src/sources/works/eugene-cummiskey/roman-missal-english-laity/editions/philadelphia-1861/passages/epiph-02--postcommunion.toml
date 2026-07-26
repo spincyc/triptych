@@ -1,0 +1,16 @@
+schema = 1
+record_type = "passage"
+id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.epiph-02.postcommunion"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+artifact_sha256 = "13c2ad6d4a2cc7b579fa3c9bdd56719ba3933db7a9ae87728d63e0f1ddf389c9"
+locus = "epiph-02/postcommunion"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-07-25"
+context = "The postcommunion of the epiph-02 formulary as printed on leaf n107 (printed page 97) of Internet Archive item romanmissaltran00churgoog, read as a page image at 1300-1400 px width."
+physical_line_ranges = [[40, 40]]
+text = "May the efficacy of thy power, O Lord, be increased in us, that being fed with thy divine sacraments, we may, thro’ thy bounty, be prepared to receive what they promise. Thro’."
+transcription_segments = [
+  { line = 40, text = "May the efficacy of thy power, O Lord, be increased in us, that being fed with thy divine sacraments, we may, thro’ thy bounty, be prepared to receive what they promise. Thro’." },
+]
+notes = "Wording collated character by character against the 1861 page image on 2026-07-25, and the formulary correspondence checked against the Latin `Augeatur in nobis, quaesumus, Domine, tuae virtutis operatio` at marginal number 305 of the 1962 Vatican typical edition in the CMAA facsimile, SHA-256 648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a. The 1861 English is a free devotional rendering, not a word-for-word translation, and is quoted as an identified historical English witness only."

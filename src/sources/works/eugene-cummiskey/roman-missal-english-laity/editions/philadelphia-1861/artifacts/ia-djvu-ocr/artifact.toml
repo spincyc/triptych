@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-djvu-ocr"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "The underlying 1861 printing is in the public domain in the United States by publication date. The exact bytes registered here are a Google-produced OCR derivative redistributed by the Internet Archive; the file opens with Google's own front matter and usage guidelines, and the audit established no distribution grant for that Google-authored material or for the OCR derivative itself. Triptych therefore records the exact remote bytes, retains no payload, and vendors only a separately manifested transcription of the 1861 book's own printed English."
+source_url = "https://archive.org/download/romanmissaltran00churgoog/romanmissaltran00churgoog_djvu.txt"
+provenance = "Internet Archive DjVuTXT derivative of item romanmissaltran00churgoog, a Google digitisation of the 1861 Cummiskey printing. Downloaded 2026-07-25 and hashed before use."
+retrieved = "2026-07-25"
+sha256 = "4e9d1aa6dc17bf6a6ac6cd3ddf5c4a34cfb5757efb3aa3fa208f1ddce735d349"
+byte_size = 1358135
+encoding = "utf-8"
+indexable = false
+notes = "45,915 LF-delimited physical lines. Uncorrected OCR of a small-type nineteenth-century duodecimo; it was used only to locate formularies and to draft the transcription registered as the sibling temporal-orations-en artifact. It does not control wording. Page images for the same item are addressable as https://archive.org/download/romanmissaltran00churgoog/page/nNNN_w1400.jpg, where NNN is the zero-based leaf index recorded in the transcription's ia_leaf column."

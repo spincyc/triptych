@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The 1861 Philadelphia printing was published long before 1929 and is in the public domain in the United States. This file contains only that printing's own English wording, transcribed by this project; a faithful transcription of a public-domain text originates no new copyright, and no Google or Internet Archive front matter, markup, annotation, or page-image material is reproduced."
+rights_jurisdiction = "United States"
+derived_from = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-djvu-ocr"
+transformation = "Project transcription. For each temporal formulary listed below, the oration blocks were located in the parent OCR, the OCR's element label and Latin incipit were separated from the English, line-break hyphenation was closed up, and scanning errors were corrected. Corrections were made from the OCR context and, where the OCR left a genuine textual gap or an unreadable word, from the item's own page images (leaves n86, n88, n106, n107, n114, n121, n136, n400, n436, n437, n456, n457 were read at 1300-1400 px width). Wording, nineteenth-century spelling, capitalisation, and the printing's abbreviated conclusions (Thro'., Who livest., &c.) are reproduced as printed and were not modernised, expanded, or corrected against the Latin. Latin incipits are given in the normalised classical spelling of the printed abbreviation; where the missal prints no incipit for an oration the field is empty."
+retrieved = "2026-07-25"
+sha256 = "13c2ad6d4a2cc7b579fa3c9bdd56719ba3933db7a9ae87728d63e0f1ddf389c9"
+byte_size = 38950
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/temporal-orations-en/temporal-orations-en.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "One header line and 183 data lines; one physical line per oration, so a raw-line literal search over `<formulary>\\t<oration>` returns exactly one line. Columns: formulary, oration, latin_incipit, printed_page, ia_leaf, english. `formulary` is the addressing key defined by the work's locus_pattern and names the 1962 Missale Romanum formulary, not the 1861 heading; `oration` is collect, secret, or postcommunion. Coverage: the Sundays and principal feasts of the temporal cycle only - Advent 1-4; the Vigil of Christmas and the three Christmas Masses; the Sunday within the octave; the octave day of Christmas (printed as The Circumcision); the Epiphany and Sundays 1-6 after it; Septuagesima, Sexagesima, Quinquagesima; Ash Wednesday; Lent 1-4; Passion Sunday; Easter Sunday; Low Sunday; Sundays 2-5 after Easter; the Ascension; the Sunday after the Ascension; Pentecost; Trinity Sunday; Corpus Christi; and Sundays 1-23 and the last Sunday after Pentecost. Ferias, Ember days, Rogation days, vigils, octave days other than those listed, Palm Sunday, the rest of Holy Week, and the whole sanctoral cycle are deliberately excluded. Only the oration of the day is transcribed: the 1861 printing's seasonal second and third collects, secrets, and postcommunions, and its commemorations of other Masses, are not part of the 1962 formulary and are omitted. printed_page is the page number carried by the 1861 printing at the place where the oration begins; ia_leaf is the zero-based Internet Archive leaf index of the same place. Both were computed from the item's own hOCR page index and page-number map and were confirmed against page images at leaves n86, n136, n400, n437, and n457; an oration that runs over a page break is filed at the page where it begins."
