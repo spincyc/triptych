@@ -1,0 +1,445 @@
+schema = 1
+record_type = "bindings"
+document = "articles/scripture/the-linen-cloths-at-the-empty-tomb"
+
+# Claude edition. Every binding below names a source this study actually
+# read, and every one that records acquisition, inspection or verification
+# pins the schema-defined source fingerprint. Bindings whose evidence stops
+# at inspection say so: the Theophylact passages are read in an optical
+# character recognition of Migne's Latin column, the Lightfoot binding is a
+# search of an optical character recognition text, and the four modern
+# folded-napkin pages are present-day copyrighted publications registered
+# without transcriptions.
+
+[[bindings]]
+source_id = "passage.catholic-church.vulgata-clementina.hetzenauer-1914.jn-20.3-10"
+loci = ["Jn.20.3-10"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The Latin of the passage under study, printed in full in section 2 and quoted at every point where the study turns on a Latin word. Read on the registered page image and transcribed for the repository; the study's philological argument that involutum is the same verb the Vulgate uses of swathing the corpse rests on this passage together with the Luke 23:53 passage."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:0e5e98d52aed5952c3f8c256af4b3c5db0870ddbfe36e4abd28a0eba54d71d5d"
+
+[[bindings]]
+source_id = "passage.catholic-church.vulgata-clementina.hetzenauer-1914.lk-24.12"
+loci = ["Lk.24.12"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The Latin of Peter's visit and his wondering, printed in section 2 and used throughout as the second canonical witness to Peter's state of mind at the tomb."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:55bc252948347541473a6223d7120308a9e25de90eec43ebf2eb00ed705f3d3a"
+
+[[bindings]]
+source_id = "passage.catholic-church.vulgata-clementina.hetzenauer-1914.lk-23.53"
+loci = ["Lk.23.53"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the study's claim that the Vulgate chose for the face-cloth in the empty tomb the same verb it had used of Joseph wrapping the body: involvit sindone here, involutum at John 20:7."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:2cc5d2b6eb2d7a861cbc4edfa90e1c84abeaaf2ff3ed829ae62cca660c6a5f45"
+
+[[bindings]]
+source_id = "passage.catholic-church.vulgata-clementina.hetzenauer-1914.jn-11.44"
+loci = ["Jn.11.44"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the study's treatment of soudarium as a cloth bound about the head of a dead man, and the contrast drawn in section 3 between Lazarus coming out still wearing his grave-clothes and the wrappings left behind in chapter 20."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:26e9ec364667bf022ead709a5bb509fd40db3d6352ec8c29416d5fb319f006ed"
+
+[[bindings]]
+source_id = "passage.catholic-church.vulgata-clementina.hetzenauer-1914.jn-19.39-40"
+loci = ["Jn.19.39-40"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls two claims: the hundred pounds' weight of myrrh and aloes on which Chrysostom's second step depends, and the study's observation in section 3 that the Vulgate renders the Greek othonia by linteis here and by linteamina five verses later while the Greek does not vary."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:86a519aa8f2ceff434c60ea67c81878d7cebb908a53153b63d51ad3393d0bd86"
+
+[[bindings]]
+source_id = "artifact.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.ccat-csv-joh-1e4f4305"
+loci = ["Jn.11.44", "Jn.19.38-42", "Jn.20.1-18"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The Greek of the passage under study and of its Johannine controls, read in the registered CSV artifact. Every transliterated Greek form in sections 2 and 3 was taken from this artifact, including keimena, entetyligmenon, choris and eis hena topon at John 20:5-7, soudario periededeto at 11:44, and othoniois at 19:40. The artifact's inline apparatus braces were read and are reported where a Nestle-Aland divergence bears on a claim."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:29b2daef412b8cead0025d8070cd43a52e7faa0d183c110da45e01d3c83ee0aa"
+
+[[bindings]]
+source_id = "artifact.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.ccat-csv-luk-82225821"
+loci = ["Lk.19.20", "Lk.23.53", "Lk.24.1-14", "Lk.24.41"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The Greek of Luke 24:12 and of the study's Lucan controls: the soudarion of the parable of the pounds at 19:20, enetylixen at 23:53, and the pairing of apistounton with thaumazonton at 24:41 on which the study's reading of thaumazon at 24:12 rests. The apparatus note at 24:12 recording that Nestle-Aland lacks keimena is the basis for the study's bounded statement that the modern eclectic text prints the verse."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:0dcb9cf834727b00d8e1796afb84d1fb28f251444982dd5cbc9b56cbdad7de86"
+
+[[bindings]]
+source_id = "artifact.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.ccat-csv-mat-1f31b338"
+loci = ["Mt.27.59-60"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the study's claim that entylisso has exactly three New Testament occurrences and that two of them describe Joseph wrapping the body in the sindon."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:323fd6cf817d2e412c365eafe1f2c2b2b3937369be45c3e40c16803be6247e38"
+
+[[bindings]]
+source_id = "artifact.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.ccat-csv-act-4f355f70"
+loci = ["Act.10.11", "Act.11.5", "Act.19.12"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the study's inventory of soudarion and othone in the New Testament: the great linen sheet of Peter's vision and the sweat-cloths carried from Paul's body."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:8478960f8a452c583fd7664a825aa83c4cdffeff3d55133ba2b7eeff1c349476"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-50-john-27b8f3ed"
+loci = ["John.20.1-18", "John.19.38-42", "John.11.44", "John.2.22", "John.12.16", "John.20.25-31"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Every English clause of John quoted in the study was taken from this registered verse-text artifact rather than from a web transcription, including the whole of John 20:3-10 printed in section 2."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:4498ea55e49e3577649969ed0bcf456423b8aec2f9edda55586c37190dfe77a4"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-49-luke-d8269c33"
+loci = ["Luke.24.1-14", "Luke.24.21-24", "Luke.24.34", "Luke.24.41", "Luke.19.20", "Luke.23.53", "Luke.1.21", "Luke.4.22", "Luke.8.25"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The English of Luke 24:12 and of the Lukan controls for thaumazo, taken from the registered verse-text artifact."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:b6acab91674d3bbe04726da30c835175a133104d3db53fcf3f8e45b1d5b4ba6e"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-47-matthew-dd0ba183"
+loci = ["Matt.27.59-66", "Matt.28.11-15"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The English of the guard at the tomb and of the theft story that Matthew reports as current, which is the scriptural anchor for section 6's account of what Chrysostom's argument is answering."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:ed47ecb092ecb6256fb84450e8ad39d0debf2efe6c65442199a76a7fb1a8b98b"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-48-mark-69b4cb75"
+loci = ["Mark.16.1-8"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Read for the Marcan empty-tomb narrative while establishing that no Synoptic account mentions the face-cloth. Not quoted in the study."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:2b4848908df9163a705b6532d1b80e55d35bc75bf2826f2ba03cb69b9f7ff025"
+
+[[bindings]]
+source_id = "passage.church-of-england.authorized-version-of-the-bible.gutenberg-ebook-10.jn-20.7"
+loci = ["John.20.7"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls one narrow claim in sections 3 and 8: that the version supplying the English word napkin renders the participle wrapped together, not folded, so that the modern claim requires a noun from one English version and a verb from another."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:da8a99e6ca61e5175b73a1bca039f0b3115dcfcfc40e7da21ddc536532d0fc46"
+
+[[bindings]]
+source_id = "passage.joseph-henry-thayer.greek-english-lexicon-of-the-new-testament.american-book-company-corrected.sv-entylisso"
+loci = ["entylisso"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The lexical basis for the study's central philological claim, quoted whole in section 3: that the sense of the participle at John 20:7 is to roll up, wrap together. Read at printed page 219 in the registered facsimile."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:6417e7d0e4dbe1188e76b4ae860cdef36e55678e20cc8aa1d82a53852fda3a4f"
+
+[[bindings]]
+source_id = "passage.joseph-henry-thayer.greek-english-lexicon-of-the-new-testament.american-book-company-corrected.sv-othonion"
+loci = ["othonion"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The lexical basis for the treatment of othonia in section 3, including the observation that the word's whole New Testament usage is five verses."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:ab0658c0e6d143cf409969e865a59d341a6b1ab5368f3ce7ec2c94453da3d85c"
+
+[[bindings]]
+source_id = "passage.joseph-henry-thayer.greek-english-lexicon-of-the-new-testament.american-book-company-corrected.sv-soudarion"
+loci = ["soudarion"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The lexical basis for the treatment of soudarion in section 3: the Latin derivation from sudor and the two uses, a cloth for wiping the face and a cloth used in swathing the head of a corpse. This entry, with the four New Testament occurrences, carries the study's finding that no New Testament soudarion is a table napkin."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:0ba919b8b025aafc9b57b60ef45f5fc2cc2d142133a323fd1036947a7cd36d20"
+
+[[bindings]]
+source_id = "passage.westcott-and-hort.the-new-testament-in-the-original-greek.introduction-and-appendix-1882.appendix-p71-lk-24.12"
+loci = ["Appendix, Notes on Select Readings, Luke xxiv 12", "Luke.24.12"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Quoted whole in section 2 and weighed as the fourth harmonization in section 5. The editors' judgment that Luke 24:12 is drawn from John 20:3-10 with omission of all that relates to the other disciple is the basis for the study's argument that deleting the verse supplies a better witness against the claim than it removes."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:4c1e60e750b60781234737f1549770e47231837928a5441df44aec6dde6bbc31"
+
+[[bindings]]
+source_id = "passage.nicene-and-post-nicene-fathers.series-1-volume-14.new-york-1889.chrysostom-in-io-hom-85.4"
+loci = ["Chrysostom, In Ioannem, Homily LXXXV.4", "Chrysostom, In Ioannem 85.4"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The fullest ancient statement of the argument that the arrangement of the cloths tells against theft, quoted at length in section 6 and analysed there into three steps. The same passage carries Chrysostom's plural they believed in the Resurrection, which is the strongest patristic support for the claim under test and is weighed in sections 5 and 9."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:8ee55755b1a3bf3dbb30d115763f744a29de9e181e7b3ec0a8cf589deb22c11e"
+
+[[bindings]]
+source_id = "passage.nicene-and-post-nicene-fathers.series-1-volume-14.new-york-1889.chrysostom-in-io-hom-86.1"
+loci = ["Chrysostom, In Ioannem, Homily LXXXVI.1", "Chrysostom, In Ioannem 86.1"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Confirms that Chrysostom's collective reading of John 20:8 is deliberate and not a slip: he repeats it in the next homily, of both disciples, against Mary Magdalene weeping outside."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:a93032bf0d8ef0fa002db682754b24caf5bd8a553f6b2f8c0e24f17c29b2e5ac"
+
+[[bindings]]
+source_id = "passage.nicene-and-post-nicene-fathers.series-1-volume-14.new-york-1889.chrysostom-in-io-hom-87"
+loci = ["Chrysostom, In Ioannem, Homily LXXXVII", "Chrysostom, In Ioannem 87"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Chrysostom generalizing the reading into an account of apostolic faith, quoted in section 5."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:450f7b8286789256db016f3077f55893cad31251fdfada9867b94ff29defc85f"
+
+[[bindings]]
+source_id = "passage.nicene-and-post-nicene-fathers.series-1-volume-7.new-york-1888.augustine-tract-in-io-120.9"
+loci = ["Augustine, In Iohannis Evangelium Tractatus CXX.9", "Augustine, In Iohannem 120.9"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Augustine's refutation of the resurrection-faith reading of John 20:8, quoted whole in section 4 and treated as the third harmonization in section 5. This passage carries the study's finding that the one man to whom Scripture attributes belief at the tomb is held by Augustine to have believed something much smaller."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:e541050862163683245ca2f24f464f6c2e84d302ddfab2e2804f3ee41a8316c4"
+
+[[bindings]]
+source_id = "passage.augustine.in-iohannis-evangelium-tractatus.latin-augustinus-it-web-2026-07-25.120.9"
+loci = ["120.9"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The Latin control for the preceding English passage, quoted in the study's note at section 4 so that the reader can see Augustine's nonnulli parum attendentes and credidit quod dixerat mulier in his own words."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:5272b282624e5b0c63138dd44b49b4219b48690592a04dd06ad4bbfc776045a9"
+
+[[bindings]]
+source_id = "passage.cyril-of-alexandria.commentary-on-john.english-pusey-randell-lfc-1874-1885.book-12-jn-20.1-9"
+loci = ["12"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Quoted in section 7 and given full weight in the synthesis at section 9 as the single strongest patristic support the claim under test has: Cyril says the two disciples infer the Resurrection from the linen clothes. The study's two qualifications, that Cyril never mentions the face-cloth and that he passes John 20:9, were both checked against this passage and its surrounding lemma."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:3304febba024ec9b6025540cd9064af89a228350f0313ce1c33b7ee1fde93607"
+
+[[bindings]]
+source_id = "passage.gregory-the-great.homiliae-in-evangelia.latin-migne-corpus-corporum-web-2026-07-25.22.5"
+loci = ["22.5"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Gregory following Augustine on what the beloved disciple believed, and adding the reason that it was still dark at the tomb. Quoted in section 7 in a labelled working translation."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:674b363ed83f5c70bdb2e872d16849bd114cd33f61cb59cd6eb1997acd522166"
+
+[[bindings]]
+source_id = "passage.gregory-the-great.homiliae-in-evangelia.latin-migne-corpus-corporum-web-2026-07-25.22.3-4"
+loci = ["22.3-4"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Gregory's allegorical exposition of the head-cloth, quoted in section 7. It carries a material negative reported there: preaching on this exact pericope in the Lateran on the Saturday after Easter, with the whole homily available to him, Gregory expounds the arrangement at length and never mentions theft."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:b2eadc2721a6b840e2a6416d266360a415ef7641b2e3b7399a61442a242ea091"
+
+[[bindings]]
+source_id = "passage.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.vi-lk-24.12"
+loci = ["Lc.24.12"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Bede's harmonizing note, quoted in sections 5 and 7 in a labelled working translation. Registered for the study's finding that the earliest witness located to notice the Luke and John difference reconciles the seeing and says nothing about the believing."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:58f5a2d77bf7fc40268ac14422a066705da5f99f4aee6cad3aa57e0bfc4b6f55"
+
+[[bindings]]
+source_id = "passage.ambrose.expositio-evangelii-secundum-lucam.latin-migne-corpus-corporum-web-2026-07-25.x.179"
+loci = ["10.179"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Ambrose's assertion that Peter could not have doubted and that the beloved disciple believed on seeing the tomb empty, quoted in section 7 in a labelled working translation, together with the material negative established over the same registered bytes: book X has no lemma on Luke 24:12 and never mentions the burial cloths at the empty tomb."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:0034a506b9082ee10eb7707d61aa7fe770dddad41c7aac9b378d1a9341944253"
+
+[[bindings]]
+source_id = "passage.theophylact-of-ohrid.enarratio-in-evangelium-ioannis.migne-pg-124-latin-column-1864.in-io-20-anti-theft"
+loci = ["20"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Theophylact reproducing Chrysostom's anti-theft argument, quoted in section 7 at an explicitly stated optical-character-recognition ceiling. Registered as reception rather than direct witness because the study reads Migne's Latin column, not Theophylact's Greek."
+source_fingerprint = "sha256:e55a74960fec89f98359a1aebc2817e3d1fe5b4f451ac8ae9d34b7c1b7a5ec69"
+
+[[bindings]]
+source_id = "passage.theophylact-of-ohrid.enarratio-in-evangelium-ioannis.migne-pg-124-latin-column-1864.in-io-20-credidit"
+loci = ["20"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Theophylact reading he saw and believed as belief that the body had been stolen, quoted in section 7 at the same stated ceiling. This passage carries the study's most useful distinction: that the evidential value of the cloths and the disciples' recognition of that value are two different questions, which Theophylact separates and almost nobody since has."
+source_fingerprint = "sha256:6629cd43a424893d5ab60a248f5c100f9d112e0aab86b44bbaa903f80e0236af"
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.super-evangelium-ioannis-lectura.latin-corpusthomisticum-web-2026-07-25.20.1-anti-theft"
+loci = ["20.1"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Aquinas endorsing the anti-theft argument on Chrysostom's authority and adding the guards, quoted in section 7 in a labelled working translation."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:d2082cc16e18ba1972e28ee5537b5ebd48b0fa693a670ec5f44c448291cb8f6a"
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.super-evangelium-ioannis-lectura.latin-corpusthomisticum-web-2026-07-25.20.1-credidit"
+loci = ["20.1"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Aquinas giving Augustine's reading as the resolution and Chrysostom's as an alternative, quoted in section 7 and used in section 9 to establish that the tradition leaves the question open."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:52f0a904c6a5c3029979b229185a4eef69c1bf8d4557c15f907cc3027b3d70f1"
+
+[[bindings]]
+source_id = "passage.jerome.de-viris-illustribus.english-richardson-npnf2-3.ch-2-gospel-of-the-hebrews"
+loci = ["2"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Quoted in section 7 as a second-century tradition that knew the wrappings had been left behind and accounted for them narratively rather than evidentially."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:1b823b2becb913b5f1da6e4a6a539a84d0f040401499194e8ac7c9ee47ec69b7"
+
+[[bindings]]
+source_id = "passage.brooke-foss-westcott.the-gospel-according-to-st-john.john-murray-1908-vol-2.vol2-p340-jn-20.7-note"
+loci = ["20"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Westcott's notes on the phrase and on believed, quoted in sections 3, 5 and 6. His hedge that it was scarcely less clear that the body had not been taken away by friends is where the study locates the real limit of the argument from arrangement."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:ee5ba9ca78a5b0e5d21a1a622b0b63c95b6527b63fbef356f9d4d272cc4bfc18"
+
+[[bindings]]
+source_id = "passage.brooke-foss-westcott.the-gospel-according-to-st-john.john-murray-1908-vol-2.vol2-p339-editorial-notes"
+loci = ["20"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Westcott on the seeing verbs, quoted in section 4 as part of the strongest case for the claim under test, and Arthur Westcott's editorial footnotes recording his father's later marginal notes and the private letter about Latham, quoted in section 6 and attributed there to the son's editorial matter."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:0016df8432b8ee1fedc564656a340d999c681779874a162b0d9a2f6cb599955d"
+
+[[bindings]]
+source_id = "passage.henry-latham.the-risen-master.deighton-bell-1905.p43-entetyligmenon"
+loci = ["3"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Quoted in section 3 as a concession against interest: the author of the modern collapsed-cloths reading states twice that the Greek participle does not mean folded."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:da9db4c57c6bd508e900c563c5817491a3a72d82b903567ad805f36d678e3cf5"
+
+[[bindings]]
+source_id = "passage.henry-latham.the-risen-master.deighton-bell-1905.p34-collapsed-cloths"
+loci = ["2"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Latham's reconstruction of what the apostles saw, quoted in section 6 and assessed there as an inference from what the text does not say, dressed as a description."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:44afb23aeed70a0385dadc1b1f6fbcba1f67cd5f8e8bfae606243816485babca"
+
+[[bindings]]
+source_id = "passage.john-lightfoot.horae-hebraicae-et-talmudicae.gandell-oxford-1859.vol-3-john-20-no-note-on-verse-7"
+loci = ["3"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "A material negative reported in section 8. The four volumes of Gandell's edition were searched on 25 July 2026 for the string napkin, which occurs twice in the whole work, both in the note on John 11:44; and the chapter of exercitations on John 20 was read for its sequence of verse lemmata, which contains no note on verse 7. The search was over an optical character recognition text and a recognition miss cannot be excluded; the study states the negative with that limit. This binding is recorded as a research finding rather than as a replayed literal search receipt, because the registered artifacts are remote and are not tracked search representations."
+source_fingerprint = "sha256:0b8f969218914a771aaae77cf59beb8207f876104cabe5fe993497af82baf590"
+
+[[bindings]]
+source_id = "passage.william-smith.dictionary-of-greek-and-roman-antiquities.1875-lacuscurtius-web-2026-07-25.sv-mantele"
+loci = ["Mantele"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Quoted in section 8 for the Roman mappa that guests brought with them to the table and for the servant who held the towel, and reported there as a material negative: the article covers the napkins of classical dining exhaustively and records no signalling function."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:ade17e264dc86aeea363d91beedbe15457a3d48eac6a71a5a02f78bc14d48068"
+
+[[bindings]]
+source_id = "passage.suetonius.de-vita-caesarum.english-rolfe-loeb-lacuscurtius-web-2026-07-25.nero-22.2"
+loci = ["Nero.22.2"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Quoted in section 8 as the one well-attested napkin signal of classical antiquity, whose sense is begin rather than I am returning."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:d7587377236516dd70272a6b2b216e63fab88010dd883ba0f1da2b34e5748824"
+
+[[bindings]]
+source_id = "passage.mishnah.berakhot.hebrew-torat-emet-sefaria-web-2026-07-25.8.3"
+loci = ["8.3"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The only ancient rabbinic ruling about a cloth used at table, given in transliteration in section 8. The study's finding that the ancient Jewish law of the table napkin is a ritual-purity question rests on this mishnah with the Talmudic discussion of it."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:1429c4f96d454a8b643a2d53fe4fa852697727565c7e2955789658403c6f064e"
+
+[[bindings]]
+source_id = "passage.babylonian-talmud.berakhot.english-cohen-1921-sefaria-web-2026-07-25.52b"
+loci = ["52b"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The Talmud's discussion of that mishnah, quoted in section 8 from A. Cohen's public-domain translation. It carries the finding that the dispute has no servant, no folding and no signal, and that the cloth is laid down during the meal rather than at its end."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:42e0160e79b3df839191d9a429d445e916e9a9574126e5a0126fa9b6af68cfc2"
+
+[[bindings]]
+source_id = "passage.babylonian-talmud.berakhot.english-cohen-1921-sefaria-web-2026-07-25.42a"
+loci = ["42a"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The decisive negative for the modern claim, quoted in section 8: the exact question the alleged custom would answer is answered here, in a household with servants, by the removal of the table."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:c86154b170e5d16eacf53e9654b3c32736b16b5a0f9e0ceb5e9a6b1f58a0d3f8"
+
+[[bindings]]
+source_id = "passage.mishnah.sanhedrin.english-sefaria-community-web-2026-07-25.6.1-sudarin-signal"
+loci = ["6.1"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The sudarin waved to halt an execution, quoted in section 8. Registered as a positive control on the negative: the corpus does record a sudar used as a deliberate signal, which shows that a search capable of finding this would have found a dining signal had one existed."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:413fbef814f44ae4061a753ca5d645e95fca21bc629763fd64a58c4a4c3d418f"
+
+[[bindings]]
+source_id = "passage.jerusalem-perspective.christs-linen-napkin.web-2006-10-07-wayback-2013-03-07.readers-question"
+loci = ["readers question"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The earliest dated appearance located of the folded-napkin claim, quoted at the head of section 8 as the text under examination. The site's own publication date of 7 October 2006 and the six-year gap before the earliest capture are both recorded in the study."
+source_fingerprint = "sha256:addba49d6b90e34a3b07a65dddc84ebc55adfa549ffb2c9edb80a17fee637f27"
+
+[[bindings]]
+source_id = "passage.jerusalem-perspective.christs-linen-napkin.web-2006-10-07-wayback-2013-03-07.bivin-response"
+loci = ["David Bivin's response", "Bivin response"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "The earliest expert refutation located, quoted in short attributed clauses in section 8 for its statement that no version of the claim cites a biblical or rabbinic source, its four conditions, and its conjecture that the story was triggered by the archaic King James word napkin. Bivin's lexical claims were checked independently against the registered Thayer entries rather than taken on trust."
+source_fingerprint = "sha256:2090f8ac9a22747e861aa3c4b9338fe4622d9d0d4321ccd1059feee3f7c963de"
+
+[[bindings]]
+source_id = "passage.mail-archive.recipesandmore-folded-napkin-forward.mail-archive-msg14227-2007-05-21.message-body"
+loci = ["message body"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The earliest independently archived instance located, cited in section 8 as a dated lower bound on circulation. Its own scriptural quotation, from a modern version reading folded up, is described rather than reproduced."
+source_fingerprint = "sha256:c37c266835a54b689fe1f51c69809e6fb133087cc7a4a6a06c88a150062a738b"
+
+[[bindings]]
+source_id = "passage.truthorfiction.the-meaning-of-the-folded-napkin-in-jesus-tomb.web-2015-03-17-consulted-2026-07-25.assessment"
+loci = ["assessment"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Quoted in section 8 as the source of the widely copied estimate that the claim originated in 2007, which the study corrects by reference to the dated 2006 appearance, and cited for its report that a lifelong Orthodox Jewish scholar had never heard of the custom."
+source_fingerprint = "sha256:c46f20d564ecb8581fa1ddeba3fe8dbd98753ce5e23337791fb9d854a44d0423"
+
+[[bindings]]
+source_id = "passage.gotquestions.significance-of-the-folded-napkin.web-consulted-2026-07-25.answer"
+loci = ["answer"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Quoted in section 8 to show that the 2007 estimate travelled from TruthOrFiction into wider apologetic writing nearly verbatim. Treated as a witness to transmission, not as independent evidence."
+source_fingerprint = "sha256:7cc62c2f1c19fa7d0ac6c37ce0b53ce76b318f4709e52b629a889e5990a2ec9f"
