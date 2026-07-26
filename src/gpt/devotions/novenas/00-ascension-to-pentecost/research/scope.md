@@ -103,3 +103,9 @@ The reviewed full guide was installed at its mirrored `doc/` path and verified
 byte-identical. This source audit adds no independent liturgical, theological,
 historical, rights, pastoral, or ecclesiastical review, and no prior exact-byte
 distribution clearance attaches to the changed full guide.
+
+## Research-staleness verdict — 2026-07-26
+
+Comparison with both candidates found no material doctrinal, calendar, prayer,
+translation, approval, or indulgence correction. This exact guide is ready for
+rebaselining.

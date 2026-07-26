@@ -78,3 +78,9 @@ The received Latin prayer texts are reproduced in focused devotional form. The n
 ## Compact-rights-colophon production review — 2026-07-19
 
 The settled 29-page PDF, SHA-256 `639d93c67a5ba7f94729730d8c021543e0d3d2f6e596ddf735aceeda97157eb9`, is the exact repository-reviewed build snapshot. The final log was warning-free; generation metadata, `qpdf` structure, PDF title/page metadata, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed their gates. Repository production review inspected every physical page; the compact final-page reuse-and-rights colophon is readable, unclipped, non-overlapping, remains with terminal content, and creates no rights-only spill page. The installed PDF is byte-identical to this reviewed build. This reviewed build supersedes every earlier production snapshot. This exact current snapshot has release-specific distribution clearance under the 20 July 2026 dated rights supplement. That operational decision supplies no independent review or ecclesiastical approval.
+
+## Research-staleness verdict — 2026-07-26
+
+Comparison of the current guide and both candidates found strengthened chastity
+context but no material doctrine, prayer, tradition-status, approval, promise,
+or indulgence correction. This exact guide is ready for rebaselining.
