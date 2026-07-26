@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "claude"
-audited_on = "2026-07-25"
+audited_on = "2026-07-26"
 discovery_rule = "src/claude/**/main.tex"
-publication_count = 33
-source_surface_file_count = 632
-snapshot = "sha256:746780073adb4cd5d816b888f24e4fadcf3e7666580efc487b5c8e4a8783fe01"
+publication_count = 46
+source_surface_file_count = 872
+snapshot = "sha256:71f9505d564ec1bf73312fedb676ecc072de81a5cd2375c7bb3b6ef841a33218"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -88,6 +88,50 @@ id = "articles/faith/council-missal-and-crisis"
 relationship = "local"
 
 [[documents]]
+id = "articles/faith/four-last-things-01-death"
+main = "src/claude/articles/faith/four-last-things-01-death/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "articles/faith/four-last-things-01-death"
+relationship = "local"
+
+[[documents]]
+id = "articles/faith/four-last-things-02-judgment"
+main = "src/claude/articles/faith/four-last-things-02-judgment/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "articles/faith/four-last-things-02-judgment"
+relationship = "local"
+
+[[documents]]
+id = "articles/faith/four-last-things-03-hell"
+main = "src/claude/articles/faith/four-last-things-03-hell/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "articles/faith/four-last-things-03-hell"
+relationship = "local"
+
+[[documents]]
+id = "articles/faith/four-last-things-04-heaven"
+main = "src/claude/articles/faith/four-last-things-04-heaven/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "articles/faith/four-last-things-04-heaven"
+relationship = "local"
+
+[[documents]]
 id = "articles/faith/freemasonry-and-the-catholic-church"
 main = "src/claude/articles/faith/freemasonry-and-the-catholic-church/main.tex"
 publication_kind = "canonical"
@@ -99,14 +143,14 @@ id = "articles/faith/freemasonry-and-the-catholic-church"
 relationship = "local"
 
 [[documents]]
-id = "articles/faith/in-support-of-the-particular"
-main = "src/claude/articles/faith/in-support-of-the-particular/main.tex"
+id = "articles/faith/in-defense-of-the-particular"
+main = "src/claude/articles/faith/in-defense-of-the-particular/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
 inventory_state = "records-enumerated"
 source_categories = ["unresolved"]
 [[documents.record_owners]]
-id = "articles/faith/in-support-of-the-particular"
+id = "articles/faith/in-defense-of-the-particular"
 relationship = "local"
 
 [[documents]]
@@ -140,6 +184,28 @@ inventory_state = "records-enumerated"
 source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "articles/faith/trustful-surrender-to-divine-providence"
+relationship = "local"
+
+[[documents]]
+id = "articles/scripture/abraham-and-the-daylight-stars"
+main = "src/claude/articles/scripture/abraham-and-the-daylight-stars/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "articles/scripture/abraham-and-the-daylight-stars"
+relationship = "local"
+
+[[documents]]
+id = "articles/scripture/the-linen-cloths-at-the-empty-tomb"
+main = "src/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "articles/scripture/the-linen-cloths-at-the-empty-tomb"
 relationship = "local"
 
 [[documents]]
@@ -311,6 +377,17 @@ id = "owner.history.traditional-priestly-institutes"
 relationship = "render-import"
 
 [[documents]]
+id = "liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"
+main = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"
+relationship = "local"
+
+[[documents]]
 id = "liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"
 main = "src/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/main.tex"
 publication_kind = "canonical"
@@ -330,6 +407,61 @@ inventory_state = "records-enumerated"
 source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"
+relationship = "local"
+
+[[documents]]
+id = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text"
+main = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text"
+relationship = "local"
+
+[[documents]]
+id = "liturgy/roman-rite/1962/reference/assembling-the-mass"
+main = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "liturgy/roman-rite/1962/reference/assembling-the-mass"
+relationship = "local"
+
+[[documents]]
+id = "liturgy/roman-rite/1962/reference/liturgical-calendar"
+main = "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "liturgy/roman-rite/1962/reference/liturgical-calendar"
+relationship = "local"
+
+[[documents]]
+id = "liturgy/roman-rite/comparative/two-missals-one-sacrifice"
+main = "src/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "liturgy/roman-rite/comparative/two-missals-one-sacrifice"
+relationship = "local"
+
+[[documents]]
+id = "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"
+main = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"
 relationship = "local"
 
 [[documents]]
@@ -359,6 +491,17 @@ relationship = "local"
 [[documents.record_owners]]
 id = "owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en-us-2011-propers"
 relationship = "source-owner"
+
+[[documents]]
+id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"
+main = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "records-enumerated"
+source_categories = ["unresolved"]
+[[documents.record_owners]]
+id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"
+relationship = "local"
 
 [[documents]]
 id = "theology/mariology/champion"
@@ -948,6 +1091,402 @@ kind = "rendered-content"
 owners = ["articles/faith/council-missal-and-crisis"]
 
 [[files]]
+path = "src/claude/articles/faith/four-last-things-01-death/main.tex"
+sha256 = "d1ca2b5571d4bebe25553e7995a68fcffdf933901de6a66aa6dc1690bfc854c4"
+kind = "publication-main"
+owners = ["articles/faith/four-last-things-01-death"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-01-death/research/scope.md"
+sha256 = "28c5b3c30b1b524fc1a7f2848dc172ed2c6be2f2a6235cb78f5b67181ec97b7c"
+kind = "research-scope"
+owners = ["articles/faith/four-last-things-01-death"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-01-death/research/source-audit.md"
+sha256 = "63c7bc120813335a967382dc2e9f0312b6eeadc6664fdc33474e47734edb46db"
+kind = "legacy-source-audit"
+owners = ["articles/faith/four-last-things-01-death"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-01-death/research/source-bindings.toml"
+sha256 = "b1529c337da19c2ef1b06e72ce255d605fc760bc38fcbdaa665f1a25362a03bd"
+kind = "source-binding"
+owners = ["articles/faith/four-last-things-01-death"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-01-death/sections/00-the-verse-that-named-them.tex"
+sha256 = "dc22bb308ca7544f0cb22932a877f7a0372d5b8cf7fa0a73394b58279cebe814"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-01-death"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-01-death/sections/10-what-comes-apart.tex"
+sha256 = "460187be28563bc5fcb2df8bba667e470921c2d628b0efe27cd21a45f57c8547"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-01-death"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-01-death/sections/20-the-moment-no-one-occupies.tex"
+sha256 = "cac7b4124e58b177b2ba093028dd5909a3ff0901141347259238e3a564d116b9"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-01-death"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-01-death/sections/30-two-questions.tex"
+sha256 = "eb117fe7029ccec099de1e065cc6cc1e4f44071fa66c3306fd56152c4a70dde4"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-01-death"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-01-death/sections/40-the-wage-and-the-enemy.tex"
+sha256 = "4659c18dc3bf8fb4079c1144ac2e0199aa7b135638a56a94fa6ee7026ed2ce4d"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-01-death"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-01-death/sections/50-what-the-soul-is-doing.tex"
+sha256 = "f8378c8dae4c06b2d1ed89cd21f4dc2a7188f65cc89cdbe7a2d2f924da44164b"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-01-death"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-01-death/sections/60-judgment-at-the-door.tex"
+sha256 = "b5dd3ea41b97d31b191f6b59b9530204f29d25f5075dbc533b9d34f41c68e2b4"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-01-death"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-01-death/sections/70-the-craft.tex"
+sha256 = "6a3f0a5c9feea611c2fe72b0320bafd0044404676e9c68c08e28742b052a9338"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-01-death"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-01-death/sections/80-what-the-church-does.tex"
+sha256 = "3cd65f901f6dccb6575846e79765ab7409b76d994b4b6118adebd3278537f732"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-01-death"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-01-death/sections/85-weights-synopsis.tex"
+sha256 = "8be4b110ac2942014feb2a3d04cb56270fb9bdcd90e16ccf0eed93945029a70e"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-01-death"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-01-death/sections/90-scope-method-qualifications.tex"
+sha256 = "b42a838fce3bec8166cef3b233f63dfebefefdc69599e5993067ee055c9c479d"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-01-death"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-01-death/sections/99-references.tex"
+sha256 = "65d627aa7dcf2312c4aadf6c7dde62e5646b769dc69a1e3e008584fbe2568419"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-01-death"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-01-death/web-edition.toml"
+sha256 = "81e5428a9a79a05c71e7873bfb64446704a272e06c666687a78c9bd7b8c3987e"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-01-death"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-02-judgment/main.tex"
+sha256 = "fbcbe2d7ef1a848a3ed322ac1e22a14de17de719d174bbe75f618beb7bac7396"
+kind = "publication-main"
+owners = ["articles/faith/four-last-things-02-judgment"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-02-judgment/research/scope.md"
+sha256 = "6932f06f05ee9671e6702e2b6146a4f8c20c1ef7ee1495568e77c836f0214f44"
+kind = "research-scope"
+owners = ["articles/faith/four-last-things-02-judgment"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-02-judgment/research/source-audit.md"
+sha256 = "3392b8ac8098d15b40f8c90990d6f76885609855367165c971b6cd53b9a478cb"
+kind = "legacy-source-audit"
+owners = ["articles/faith/four-last-things-02-judgment"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-02-judgment/research/source-bindings.toml"
+sha256 = "187a486f420d666a4fdea51ef2e5b67ad4f09b8bfd72a9a3c8cdaeaa4913bc47"
+kind = "source-binding"
+owners = ["articles/faith/four-last-things-02-judgment"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-02-judgment/sections/00-the-same-man-sentenced-twice.tex"
+sha256 = "0151d04f2a527f14a07358a32e53cf138f553bd6322f196321fc35c51b4f9a39"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-02-judgment"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-02-judgment/sections/10-what-has-actually-been-defined.tex"
+sha256 = "27c8024d883fd0eae3b5e7e87a54051f84f843e21c647f0d3eb828c21d8c8a93"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-02-judgment"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-02-judgment/sections/20-the-scene-in-matthew.tex"
+sha256 = "262307e3c852163919b3e035bc272419fdad02cf9bb7609de8e1088b6d64f466"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-02-judgment"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-02-judgment/sections/30-the-other-witnesses.tex"
+sha256 = "e9e93aad57d36bfb3aed9325a04401b3c3bc3641bbfc643605792d3c3cad3c92"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-02-judgment"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-02-judgment/sections/40-the-body-that-has-to-come-back.tex"
+sha256 = "fd0afe359e4fe595ed08be45f498561043b6a524597ddbfba475e481b015fc49"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-02-judgment"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-02-judgment/sections/50-not-a-second-trial.tex"
+sha256 = "11676341c15a19285b7bc9972107bd74c160235e70eeb40cb7058dfdd7d86035"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-02-judgment"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-02-judgment/sections/60-purgatory-on-the-far-side.tex"
+sha256 = "45dba9effd3a5821b475b0cf7b40b7760cfe474d9f01da24409a790bd27c9706"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-02-judgment"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-02-judgment/sections/70-according-to-his-works.tex"
+sha256 = "7a23acae06c03f80f20a18187fee72a2723d7d3b7df6bde83a11783c4f368531"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-02-judgment"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-02-judgment/sections/85-weights-synopsis.tex"
+sha256 = "ebaed2ae2615f433253b0ca240d511d7d1dce41526f37c42eca4bf8a8ded73a0"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-02-judgment"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-02-judgment/sections/90-scope-method-qualifications.tex"
+sha256 = "7daec6acb7304bce58f496a2ac0e2cf43e1153af68972781e2808c9972338330"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-02-judgment"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-02-judgment/sections/99-references.tex"
+sha256 = "f680a2a1a74fe313d658e67ba1787e45daafea4442dde2cf70d78af066283d47"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-02-judgment"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-02-judgment/web-edition.toml"
+sha256 = "45133de5df71e543802caf5d8b00a013cb1e75522c4c580a175fb933a6eb411e"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-02-judgment"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-03-hell/main.tex"
+sha256 = "6d556170acbb456a24ab92f96882e1c60c94476a875d9073c5c7561cd611175d"
+kind = "publication-main"
+owners = ["articles/faith/four-last-things-03-hell"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-03-hell/research/scope.md"
+sha256 = "ab12323ca85e1af60c403083235675716bac7070603f67e36c94d81e4fd0bb79"
+kind = "research-scope"
+owners = ["articles/faith/four-last-things-03-hell"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-03-hell/research/source-audit.md"
+sha256 = "56e1c92a929c6307702c7f04360778581b6969876ae4254e0d3cb22e4d85e44d"
+kind = "legacy-source-audit"
+owners = ["articles/faith/four-last-things-03-hell"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-03-hell/research/source-bindings.toml"
+sha256 = "e069b4093b66a0ac5f03f6566545dab05b317dbbaba59db5118288ab2909b703"
+kind = "source-binding"
+owners = ["articles/faith/four-last-things-03-hell"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-03-hell/sections/00-a-short-file.tex"
+sha256 = "9ddbd0a9ef678a61868b45f80d59d9e0424e2994d1140f68e93e5058e2baf208"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-03-hell"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-03-hell/sections/10-what-the-acts-say.tex"
+sha256 = "26b77c0a6f57ad03964c9b1551afe88f6284a364eb766e91ed3cebad567e38e9"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-03-hell"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-03-hell/sections/20-two-punishments.tex"
+sha256 = "1df7e04f561adc1cc3f62995c9ace86e9008a115c31b4864eb43da564a27d8bf"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-03-hell"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-03-hell/sections/30-the-longest-word.tex"
+sha256 = "60621f114033988ce89a7daf034032d7e0a52b2b55f0b45b3d287442e3d3d5bd"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-03-hell"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-03-hell/sections/40-the-fathers-named-accurately.tex"
+sha256 = "82da0970d32c61b103f18ea9812d82541dff7038715089ccd861acb121fa1108"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-03-hell"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-03-hell/sections/50-reading-thomas-directly.tex"
+sha256 = "e0941fac47f3bc9a5ac7b3642c88ba4d8080191144cfaa52b5494e407a861b4b"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-03-hell"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-03-hell/sections/60-the-census-nobody-has.tex"
+sha256 = "d9488d5390f9fa151190f89804a37a100099880e045c38ffbea6b92d2747482d"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-03-hell"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-03-hell/sections/70-the-will-that-wants-all-saved.tex"
+sha256 = "16d487d9cf1a800b57aeb8cb6574d1ebc4f9da930dba1f379b385969ea96978b"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-03-hell"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-03-hell/sections/80-what-may-be-hoped.tex"
+sha256 = "f9c0cbc825f96639c2f873eb85b829568489576cbbdd18a533b0c6286a0bbc40"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-03-hell"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-03-hell/sections/90-scope-method-qualifications.tex"
+sha256 = "47455c00cb185dc0cd995f0738b3d375496dff779852fba70db0a66f7c81ecfd"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-03-hell"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-03-hell/sections/99-references.tex"
+sha256 = "925b0e29e154953a93eba7bf0a6c8c5a8527fa6446b19832a6addf9b7394cf87"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-03-hell"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-03-hell/web-edition.toml"
+sha256 = "fa6996add5d8945d1dc8a0a29cfbb413adad9f1805d52c4cf5b0d964b360dc08"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-03-hell"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-04-heaven/main.tex"
+sha256 = "ae5a9ba3c37edbe95fd369a3be010bb530bf092d1d428d8ca7c83614705e8442"
+kind = "publication-main"
+owners = ["articles/faith/four-last-things-04-heaven"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-04-heaven/research/scope.md"
+sha256 = "07279b63cada877702b055aee312a48e6570e3b58b2bda7b96c4977aebb968aa"
+kind = "research-scope"
+owners = ["articles/faith/four-last-things-04-heaven"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-04-heaven/research/source-audit.md"
+sha256 = "0c362e4de036721211172ffde172096ace910a131bdd79d53253d193a7d84c47"
+kind = "legacy-source-audit"
+owners = ["articles/faith/four-last-things-04-heaven"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-04-heaven/research/source-bindings.toml"
+sha256 = "729e449df8d8f6e9ac6ffcbb864a4a604daef8302b83855b78df2e6fe51d73b9"
+kind = "source-binding"
+owners = ["articles/faith/four-last-things-04-heaven"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-04-heaven/sections/00-the-postcard-and-the-definition.tex"
+sha256 = "8d9521a50e5990d7e211bee608dc004ae06469b10a7319123f57dfb9e276b4f1"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-04-heaven"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-04-heaven/sections/10-what-was-defined-in-1336.tex"
+sha256 = "1c07aec5e7225764adfeb23f7f19d586d20c909af3a8ea74e8a17a3e5e601253"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-04-heaven"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-04-heaven/sections/20-can-a-creature-see-god.tex"
+sha256 = "20cb26e6fc2d739cf3f1af50a99d3fdf870e6c86b0b3659d607c1f976ca3c089"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-04-heaven"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-04-heaven/sections/30-the-eastern-answer.tex"
+sha256 = "103c49de24cde3cb7b7a4776cefcd49f785858d66dff3225efa8781b39bb503d"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-04-heaven"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-04-heaven/sections/40-the-body-that-rises.tex"
+sha256 = "697f9b6733859d70f69c9da95dad87a3e407e2fa93a01285973e3c2eb26bde48"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-04-heaven"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-04-heaven/sections/50-star-differeth-from-star.tex"
+sha256 = "735df4ef0570a9e0e718ea25d202e477167f62f75fcba16585790ec9e2aaba9e"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-04-heaven"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-04-heaven/sections/60-no-one-is-blessed-alone.tex"
+sha256 = "a8ef5fa44fb620423e8974a967aa7f461b5814afaf9c5611298cedbbdf31eb7c"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-04-heaven"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-04-heaven/sections/70-what-scripture-says.tex"
+sha256 = "110380fc86a54fa5dad7d2fccb75867a4a9470f4a7ff930478f7d80b1df1ce7d"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-04-heaven"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-04-heaven/sections/80-the-end-of-the-four.tex"
+sha256 = "ff9a525b26e0887384080648bfafa3649d7fa9345b68a2fcadd46b802123dee9"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-04-heaven"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-04-heaven/sections/85-weights-synopsis.tex"
+sha256 = "21f77dc45f08390fa5a8219c794195b413710d228c1ca698615c517a10b2291d"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-04-heaven"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-04-heaven/sections/90-scope-method-qualifications.tex"
+sha256 = "ca9f71b665939e32cf2ab8683d2ea5a6ddb72546db97d6d6cc62edebff1c95e6"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-04-heaven"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-04-heaven/sections/99-references.tex"
+sha256 = "ca76e64a6c140f4983f5a5d36cb8aad4e022380542da4d8dce1552dbd6103038"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-04-heaven"]
+
+[[files]]
+path = "src/claude/articles/faith/four-last-things-04-heaven/web-edition.toml"
+sha256 = "79afeea65fb52b25ba643b28636971277eab5da684bcf7e3713e00eaebde0b34"
+kind = "rendered-content"
+owners = ["articles/faith/four-last-things-04-heaven"]
+
+[[files]]
 path = "src/claude/articles/faith/freemasonry-and-the-catholic-church/main.tex"
 sha256 = "26ad5aabc7c2f37d7788fac0f719579c01679980126425c6e7284677f68e5abe"
 kind = "publication-main"
@@ -1044,100 +1583,112 @@ kind = "rendered-content"
 owners = ["articles/faith/freemasonry-and-the-catholic-church"]
 
 [[files]]
-path = "src/claude/articles/faith/in-support-of-the-particular/main.tex"
-sha256 = "287688ae06f11b2949ced9c859151e35bb850e725bab90d07afea845027bd06b"
+path = "src/claude/articles/faith/in-defense-of-the-particular/main.tex"
+sha256 = "7154fa1a1b73549be9b878b872bc3b9c1ffff460d8fc93251fa59d4c108436fc"
 kind = "publication-main"
-owners = ["articles/faith/in-support-of-the-particular"]
+owners = ["articles/faith/in-defense-of-the-particular"]
 
 [[files]]
-path = "src/claude/articles/faith/in-support-of-the-particular/research/scope.md"
-sha256 = "b1eaa6a75b0f628725fe916233dd3def6e015f0a2d6331b7d19142db17579390"
+path = "src/claude/articles/faith/in-defense-of-the-particular/research/scope.md"
+sha256 = "3156250c80ed9af230fac22780a453071e3611cd20b69fa0b72365c6d6cdf948"
 kind = "research-scope"
-owners = ["articles/faith/in-support-of-the-particular"]
+owners = ["articles/faith/in-defense-of-the-particular"]
 
 [[files]]
-path = "src/claude/articles/faith/in-support-of-the-particular/research/source-audit.md"
-sha256 = "d336799f4b6f3b2ec798a15805535d80e20940d7ced6869f5136a577e7990deb"
+path = "src/claude/articles/faith/in-defense-of-the-particular/research/source-audit.md"
+sha256 = "cb4704ed532958280208302437352dfdfaf4a40f0239b4f2754d5c2e277abf8c"
 kind = "legacy-source-audit"
-owners = ["articles/faith/in-support-of-the-particular"]
+owners = ["articles/faith/in-defense-of-the-particular"]
 
 [[files]]
-path = "src/claude/articles/faith/in-support-of-the-particular/research/source-bindings.toml"
-sha256 = "fa32c9de164985eb2e633d3332cf0b07a8425ba7859095c3c4b784998b78d653"
+path = "src/claude/articles/faith/in-defense-of-the-particular/research/source-bindings.toml"
+sha256 = "e174fa1a1d035c0c94b89216b2117239d1525ff9c3acdc14410e1115b966d5b2"
 kind = "source-binding"
-owners = ["articles/faith/in-support-of-the-particular"]
+owners = ["articles/faith/in-defense-of-the-particular"]
 
 [[files]]
-path = "src/claude/articles/faith/in-support-of-the-particular/sections/00-the-offense-at-nazareth.tex"
-sha256 = "ab611e7363feb54b64764cbccad560dcf9f867e5febbf5737704eec59692f1ff"
+path = "src/claude/articles/faith/in-defense-of-the-particular/sections/00-the-offense-at-nazareth.tex"
+sha256 = "7d8b79bae607bf70ac409a9bc6f90a26a5055678b78ec70f116b9cffb6b305cd"
 kind = "rendered-content"
-owners = ["articles/faith/in-support-of-the-particular"]
+owners = ["articles/faith/in-defense-of-the-particular"]
 
 [[files]]
-path = "src/claude/articles/faith/in-support-of-the-particular/sections/10-the-objection-at-full-strength.tex"
+path = "src/claude/articles/faith/in-defense-of-the-particular/sections/10-the-objection-at-full-strength.tex"
 sha256 = "080e9d3e75cd8c3acd6c78ce923ae6d87ed4037e7755b07b37f1f444ba544e31"
 kind = "rendered-content"
-owners = ["articles/faith/in-support-of-the-particular"]
+owners = ["articles/faith/in-defense-of-the-particular"]
 
 [[files]]
-path = "src/claude/articles/faith/in-support-of-the-particular/sections/20-what-actually-exists.tex"
-sha256 = "9c82c3d95ce94e7c1ce22694bdabd0b8b001706c16ef2e3349ef89029fb1076e"
+path = "src/claude/articles/faith/in-defense-of-the-particular/sections/20-what-actually-exists.tex"
+sha256 = "e2c2cb0aac74da4d29989c42c77e4952ce763f09acfef2fdb06017e61033f1b2"
 kind = "rendered-content"
-owners = ["articles/faith/in-support-of-the-particular"]
+owners = ["articles/faith/in-defense-of-the-particular"]
 
 [[files]]
-path = "src/claude/articles/faith/in-support-of-the-particular/sections/30-the-fewest-of-any-people.tex"
-sha256 = "032e9511b11385a75f0300905937d223e362fa344b44b0c56972780b245838eb"
+path = "src/claude/articles/faith/in-defense-of-the-particular/sections/30-the-fewest-of-any-people.tex"
+sha256 = "fc897a693b6abfd83075118577a38ee4a334bf0e82d09fd9d2d700ce23141d29"
 kind = "rendered-content"
-owners = ["articles/faith/in-support-of-the-particular"]
+owners = ["articles/faith/in-defense-of-the-particular"]
 
 [[files]]
-path = "src/claude/articles/faith/in-support-of-the-particular/sections/40-the-word-in-a-part.tex"
+path = "src/claude/articles/faith/in-defense-of-the-particular/sections/40-the-word-in-a-part.tex"
 sha256 = "f9832bda9fdc8e94160bbbc73674f3ad6ee659b0b7f2c40df3e689203b8399c7"
 kind = "rendered-content"
-owners = ["articles/faith/in-support-of-the-particular"]
+owners = ["articles/faith/in-defense-of-the-particular"]
 
 [[files]]
-path = "src/claude/articles/faith/in-support-of-the-particular/sections/50-this-water-this-bread.tex"
-sha256 = "37ebf571088bc29ddcd00ae9e3a77c3d1904c64d36ef370576beadb9c37f505b"
+path = "src/claude/articles/faith/in-defense-of-the-particular/sections/50-this-water-this-bread.tex"
+sha256 = "46c0cd0b4d3f649685a14cacb933675bda12868ab9f227e359b9d474eb2d88be"
 kind = "rendered-content"
-owners = ["articles/faith/in-support-of-the-particular"]
+owners = ["articles/faith/in-defense-of-the-particular"]
 
 [[files]]
-path = "src/claude/articles/faith/in-support-of-the-particular/sections/55-the-objection-in-its-newest-form.tex"
-sha256 = "938ebfa08f2edb2589ff6ca536d7ce6e425947ca61b6a10b68e80baecb72cde4"
+path = "src/claude/articles/faith/in-defense-of-the-particular/sections/52-the-ugly-broad-ditch.tex"
+sha256 = "919f6a0bfdfeb118315deee0be306f45b5d69f6cf24dd3f73929896b25f00fa0"
 kind = "rendered-content"
-owners = ["articles/faith/in-support-of-the-particular"]
+owners = ["articles/faith/in-defense-of-the-particular"]
 
 [[files]]
-path = "src/claude/articles/faith/in-support-of-the-particular/sections/60-a-name-which-no-man-knoweth.tex"
-sha256 = "de5c16d831765d37aec986e90f6281108e02e65c40e62d77cc012c67727ee242"
+path = "src/claude/articles/faith/in-defense-of-the-particular/sections/55-the-objection-in-its-newest-form.tex"
+sha256 = "b5b6ea3ad0ce5543fcb0feef44ef68888f318988cdc37c29719ab9f30c6da4b7"
 kind = "rendered-content"
-owners = ["articles/faith/in-support-of-the-particular"]
+owners = ["articles/faith/in-defense-of-the-particular"]
 
 [[files]]
-path = "src/claude/articles/faith/in-support-of-the-particular/sections/85-objections-synopsis.tex"
-sha256 = "82a1ddba548de8830f0be4274a34ce07fb12447328ab6f4459304006d8e0aee1"
+path = "src/claude/articles/faith/in-defense-of-the-particular/sections/57-the-size-of-the-sky.tex"
+sha256 = "89b8cbfe0d2192c8de91f64f15fbcd34c493e1b8d8c31697b34e4cd5dc23452e"
 kind = "rendered-content"
-owners = ["articles/faith/in-support-of-the-particular"]
+owners = ["articles/faith/in-defense-of-the-particular"]
 
 [[files]]
-path = "src/claude/articles/faith/in-support-of-the-particular/sections/90-scope-method-qualifications.tex"
-sha256 = "c38f7fc91ac9a060043f8fd019c9c6fe3c681d5be282ed0bc615b8ff601574a9"
+path = "src/claude/articles/faith/in-defense-of-the-particular/sections/60-a-name-which-no-man-knoweth.tex"
+sha256 = "569833e434f1ff306ed6a839137479815cd0a3796596f81ec5a08715b647dd50"
 kind = "rendered-content"
-owners = ["articles/faith/in-support-of-the-particular"]
+owners = ["articles/faith/in-defense-of-the-particular"]
 
 [[files]]
-path = "src/claude/articles/faith/in-support-of-the-particular/sections/99-references.tex"
-sha256 = "7bd767e170f8d29a7f5cce9943635046bff6bdb61f8ead503ca42767ee20e27a"
+path = "src/claude/articles/faith/in-defense-of-the-particular/sections/85-objections-synopsis.tex"
+sha256 = "517177209b7d41545e05cd7aa38b9a1002e059e003ae727877e283235563a134"
 kind = "rendered-content"
-owners = ["articles/faith/in-support-of-the-particular"]
+owners = ["articles/faith/in-defense-of-the-particular"]
 
 [[files]]
-path = "src/claude/articles/faith/in-support-of-the-particular/web-edition.toml"
-sha256 = "d3644337115a7cba4e33034c44da829bb629ded31a1a0d91ff7fd8e20e07cfbb"
+path = "src/claude/articles/faith/in-defense-of-the-particular/sections/90-scope-method-qualifications.tex"
+sha256 = "d2050894e48a2c80d0cc5c8a28b02216ee29c66d591370bcf7e78f58bfd1ad54"
 kind = "rendered-content"
-owners = ["articles/faith/in-support-of-the-particular"]
+owners = ["articles/faith/in-defense-of-the-particular"]
+
+[[files]]
+path = "src/claude/articles/faith/in-defense-of-the-particular/sections/99-references.tex"
+sha256 = "9006375ea51a3bb216d7031e9e3589a2a00255676f25a359dc8c8ac421e4928d"
+kind = "rendered-content"
+owners = ["articles/faith/in-defense-of-the-particular"]
+
+[[files]]
+path = "src/claude/articles/faith/in-defense-of-the-particular/web-edition.toml"
+sha256 = "7847f6c97e3c107ca094b5998944ff702c0287cb99618fc8a26fc65f5a5bcd85"
+kind = "rendered-content"
+owners = ["articles/faith/in-defense-of-the-particular"]
 
 [[files]]
 path = "src/claude/articles/faith/ontological-vertigo/main.tex"
@@ -1414,6 +1965,234 @@ path = "src/claude/articles/faith/trustful-surrender-to-divine-providence/web-ed
 sha256 = "7ff553c25e873562d552611847f5222541f820b069899243a325190b00591890"
 kind = "rendered-content"
 owners = ["articles/faith/trustful-surrender-to-divine-providence"]
+
+[[files]]
+path = "src/claude/articles/scripture/abraham-and-the-daylight-stars/main.tex"
+sha256 = "b1114e6abac78300991d11eb31d4ed4fa3eb7a71bc0e96c83d171f80d733facc"
+kind = "publication-main"
+owners = ["articles/scripture/abraham-and-the-daylight-stars"]
+
+[[files]]
+path = "src/claude/articles/scripture/abraham-and-the-daylight-stars/research/scope.md"
+sha256 = "c987621c22276c2fe941ef8b1481f03588744f5af0774d6920fa79218103d147"
+kind = "research-scope"
+owners = ["articles/scripture/abraham-and-the-daylight-stars"]
+
+[[files]]
+path = "src/claude/articles/scripture/abraham-and-the-daylight-stars/research/source-audit.md"
+sha256 = "c7c7df7ffef83bee3595a5b36f2c0b1a851bb0b17f469f7d22bfd095a9290aa1"
+kind = "legacy-source-audit"
+owners = ["articles/scripture/abraham-and-the-daylight-stars"]
+
+[[files]]
+path = "src/claude/articles/scripture/abraham-and-the-daylight-stars/research/source-bindings.toml"
+sha256 = "05fb53c67eef57faa26d749f8444e8be2714f6272b58b99205daa8c59400c25c"
+kind = "source-binding"
+owners = ["articles/scripture/abraham-and-the-daylight-stars"]
+
+[[files]]
+path = "src/claude/articles/scripture/abraham-and-the-daylight-stars/sections/00-the-hour-nobody-asks-about.tex"
+sha256 = "4dcbe4ace1e155ab73e9c51eea7c6ce92617011efc8f3b6978ff89d9d0eef6b5"
+kind = "rendered-content"
+owners = ["articles/scripture/abraham-and-the-daylight-stars"]
+
+[[files]]
+path = "src/claude/articles/scripture/abraham-and-the-daylight-stars/sections/10-the-chapters-own-clock.tex"
+sha256 = "3fb66b61fc26e65b8334208554e8a238d120f8ee2224ebf8f0691d86fbb61692"
+kind = "rendered-content"
+owners = ["articles/scripture/abraham-and-the-daylight-stars"]
+
+[[files]]
+path = "src/claude/articles/scripture/abraham-and-the-daylight-stars/sections/20-what-the-hebrew-does.tex"
+sha256 = "8589757aedab9d4d17c5e0c29f840c33e7825e8e5c64be85b890266fc9237ba2"
+kind = "rendered-content"
+owners = ["articles/scripture/abraham-and-the-daylight-stars"]
+
+[[files]]
+path = "src/claude/articles/scripture/abraham-and-the-daylight-stars/sections/30-the-vision-at-the-head.tex"
+sha256 = "4179d00184946d16045f35c73d9811e29b2963dc86a198873801624356530029"
+kind = "rendered-content"
+owners = ["articles/scripture/abraham-and-the-daylight-stars"]
+
+[[files]]
+path = "src/claude/articles/scripture/abraham-and-the-daylight-stars/sections/40-the-greek-and-the-latin.tex"
+sha256 = "1694735d9044828c82d7d371a6c73ee05c20de4933ebd77096bada17a7ceeefa"
+kind = "rendered-content"
+owners = ["articles/scripture/abraham-and-the-daylight-stars"]
+
+[[files]]
+path = "src/claude/articles/scripture/abraham-and-the-daylight-stars/sections/45-the-count-that-fails.tex"
+sha256 = "076af1469762499ffe9b96ca364568951a28a0f8e598ec71f2e168b52d31100c"
+kind = "rendered-content"
+owners = ["articles/scripture/abraham-and-the-daylight-stars"]
+
+[[files]]
+path = "src/claude/articles/scripture/abraham-and-the-daylight-stars/sections/50-abarbanels-seventh-question.tex"
+sha256 = "9a57cd93a3518d0aca410ca82d9f21ffb07a6d4e8297e5d2606de1d782c582a4"
+kind = "rendered-content"
+owners = ["articles/scripture/abraham-and-the-daylight-stars"]
+
+[[files]]
+path = "src/claude/articles/scripture/abraham-and-the-daylight-stars/sections/55-five-answers-kept-apart.tex"
+sha256 = "5009eb3822614fa60748e834ca4d572147340c55f210b973860f4aa594272430"
+kind = "rendered-content"
+owners = ["articles/scripture/abraham-and-the-daylight-stars"]
+
+[[files]]
+path = "src/claude/articles/scripture/abraham-and-the-daylight-stars/sections/60-brought-out-from-where.tex"
+sha256 = "3fbf1fdb6887b2b697521577e2f561a6d5216b5e808c3e1b7e99a02d1cea3570"
+kind = "rendered-content"
+owners = ["articles/scripture/abraham-and-the-daylight-stars"]
+
+[[files]]
+path = "src/claude/articles/scripture/abraham-and-the-daylight-stars/sections/70-the-fathers-did-not-ask.tex"
+sha256 = "805f5e906a82f643fe026f4ee803c14d4eabcdc0e44f7e94a908b6ba8eefe26a"
+kind = "rendered-content"
+owners = ["articles/scripture/abraham-and-the-daylight-stars"]
+
+[[files]]
+path = "src/claude/articles/scripture/abraham-and-the-daylight-stars/sections/80-where-the-promise-recurs.tex"
+sha256 = "e9e4f0535959bd3d50a2cbdd281f604e3d0b3c2da3a3146e1add275b49de960b"
+kind = "rendered-content"
+owners = ["articles/scripture/abraham-and-the-daylight-stars"]
+
+[[files]]
+path = "src/claude/articles/scripture/abraham-and-the-daylight-stars/sections/85-paul-and-the-hour.tex"
+sha256 = "d321e4b407652573ebc138dc01d2af6bbad87e6b89cb3e65feff4d1d3da2b1b3"
+kind = "rendered-content"
+owners = ["articles/scripture/abraham-and-the-daylight-stars"]
+
+[[files]]
+path = "src/claude/articles/scripture/abraham-and-the-daylight-stars/sections/90-project-synthesis.tex"
+sha256 = "f4040f94f03d14775d432d8b8f0ea56760b8f6249e27017db88581ae8592707d"
+kind = "rendered-content"
+owners = ["articles/scripture/abraham-and-the-daylight-stars"]
+
+[[files]]
+path = "src/claude/articles/scripture/abraham-and-the-daylight-stars/sections/92-witness-register.tex"
+sha256 = "58f19dec6218f2ec00c106c9ffbd955ad3e51a2fdaa6bfc8ac65786bb0d33755"
+kind = "rendered-content"
+owners = ["articles/scripture/abraham-and-the-daylight-stars"]
+
+[[files]]
+path = "src/claude/articles/scripture/abraham-and-the-daylight-stars/sections/95-scope-method-qualifications.tex"
+sha256 = "c3645ff7fb931b09178e90c1169f64bf6eebc41db40ccd243afb6f4143ae7b31"
+kind = "rendered-content"
+owners = ["articles/scripture/abraham-and-the-daylight-stars"]
+
+[[files]]
+path = "src/claude/articles/scripture/abraham-and-the-daylight-stars/sections/99-references.tex"
+sha256 = "2bea9770a208c0c52c8ef1070f926c29069680f8a9a8a2628f3b67d997ed7015"
+kind = "rendered-content"
+owners = ["articles/scripture/abraham-and-the-daylight-stars"]
+
+[[files]]
+path = "src/claude/articles/scripture/abraham-and-the-daylight-stars/web-edition.toml"
+sha256 = "2b9e16d2255e3e2118c929cd1d349281a16e9360d8a28a52b45699d1ae665f44"
+kind = "rendered-content"
+owners = ["articles/scripture/abraham-and-the-daylight-stars"]
+
+[[files]]
+path = "src/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb/main.tex"
+sha256 = "6bdcb3820da74c466602c51c81698f83d269e639a5366bc4dc145ec3dfe17499"
+kind = "publication-main"
+owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
+
+[[files]]
+path = "src/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb/research/scope.md"
+sha256 = "3e39c954a735b3516c23828ec7d21182a4b6de08003fc7f0eab1b20c32e602a6"
+kind = "research-scope"
+owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
+
+[[files]]
+path = "src/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb/research/source-audit.md"
+sha256 = "718b3832914cfed334117b515d5800376985f5a097efc8c638f99d371b448546"
+kind = "legacy-source-audit"
+owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
+
+[[files]]
+path = "src/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb/research/source-bindings.toml"
+sha256 = "43c764959ad0cea5e063d5cd43826bf574ae6c6e38ebeb733b63295c99cfc038"
+kind = "source-binding"
+owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
+
+[[files]]
+path = "src/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb/sections/00-the-claim-under-test.tex"
+sha256 = "35b3c37a63e018601f3a070b2b0043fbd6ca48a5537ca628e20f7e5279c9bae1"
+kind = "rendered-content"
+owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
+
+[[files]]
+path = "src/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb/sections/10-the-passage.tex"
+sha256 = "6cb29a75c537413d2d1e1e8a4f611ce02480e87a36d470dc8dfe4ca9e5e3e6e9"
+kind = "rendered-content"
+owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
+
+[[files]]
+path = "src/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb/sections/20-the-vocabulary.tex"
+sha256 = "e09325476166bde2b80c6c5603073da2b27cb3b003ee7bf3028ec85584e6adbc"
+kind = "rendered-content"
+owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
+
+[[files]]
+path = "src/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb/sections/30-who-believed.tex"
+sha256 = "426ab398114f0108751077de1096c5743403f59089a118969d9221f0dc647ad8"
+kind = "rendered-content"
+owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
+
+[[files]]
+path = "src/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb/sections/40-the-harmonizations.tex"
+sha256 = "ea4a074ed868b5db6e5da98754e2d2a85bfd45d9f824ba125c9b2962ee45339d"
+kind = "rendered-content"
+owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
+
+[[files]]
+path = "src/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb/sections/50-the-argument-from-arrangement.tex"
+sha256 = "9cc0134b00bc2031308594f0254b64b252466e44d3289d6e769a39e5b4f27c0d"
+kind = "rendered-content"
+owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
+
+[[files]]
+path = "src/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb/sections/55-the-reception.tex"
+sha256 = "e78268d6387d3a0afb7a7fd50a1de525734d24b997d77b67ccba15fdda009db7"
+kind = "rendered-content"
+owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
+
+[[files]]
+path = "src/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb/sections/60-the-folded-napkin.tex"
+sha256 = "0b4d34a9fa90e96a8cd44b498c0476b9857bd012e84fd6a7861ff388ef699029"
+kind = "rendered-content"
+owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
+
+[[files]]
+path = "src/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb/sections/70-project-synthesis.tex"
+sha256 = "72ea0a60e5db287fb8e7db2fdc75ba6a0630a23e6313a685fe11bda5ec29a469"
+kind = "rendered-content"
+owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
+
+[[files]]
+path = "src/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb/sections/80-boundaries.tex"
+sha256 = "f1b639b3e72bd4f32ea6d0f914a4b4fb29b2ad05a1750d4fd0e0ab4ce5921a4d"
+kind = "rendered-content"
+owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
+
+[[files]]
+path = "src/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb/sections/90-scope-method-qualifications.tex"
+sha256 = "d9b1aa94fe6c02bd541a730cd61d40b1ad59f48f3f51e9163ce7207a5c6274d1"
+kind = "rendered-content"
+owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
+
+[[files]]
+path = "src/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb/sections/99-references.tex"
+sha256 = "aac9c332a22aebd3457720f51e9e229f7b5e055261c82d96643a1068a84f16f8"
+kind = "rendered-content"
+owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
+
+[[files]]
+path = "src/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb/web-edition.toml"
+sha256 = "c067049e171577288bddd1cdc52c4dcb3ba93f0c64201b41110f9dad2a101cb8"
+kind = "rendered-content"
+owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
 
 [[files]]
 path = "src/claude/biographies/origen/main.tex"
@@ -3012,6 +3791,132 @@ kind = "rendered-content"
 owners = ["owner.history.traditional-priestly-institutes"]
 
 [[files]]
+path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/format.tex"
+sha256 = "36cca6ab32b3e5396e8bfbc1c6bc252219083a19f11d136edf196948c7733a35"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/main.tex"
+sha256 = "1ea777070b4c6f4c4d9c5536f954c9f81111673951d3f941cd6d5adccaac5433"
+kind = "publication-main"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/edition-manifest.md"
+sha256 = "a27a8c42da65b565e95c7bb10aa0ee0387e701a2fbf6719ec9f55b0b9a1dae1e"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/scope.md"
+sha256 = "c6319d703f68bcfcb13fdb930d11574b457773c75ac2e43ec9977b9bb6834319"
+kind = "research-scope"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/sequence-inventory.md"
+sha256 = "d54e97e4ffadf1e4baa571e5cf4884b4a4636fc70b2b415f84e3416c47f57e8f"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/source-audit.md"
+sha256 = "597e16de696e23c4b8f2abce991b914e9b78f26f92c738611bfe2e7b764545a4"
+kind = "legacy-source-audit"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/source-bindings.toml"
+sha256 = "e65da458ea32f8e171cebe0118116658e39c5ced72c2a1be8b8577424c922f65"
+kind = "source-binding"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/00-map.tex"
+sha256 = "e8429fd7c7f376d24f2b05986c8a263180439209d3cdeb25d8e6613340bc26cd"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/10-ad-gradum.tex"
+sha256 = "b92486d4345b5194166ccff9a64c7e1078e7a0fbe65a3714aaea450f9d4e0036"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/20-kyrie-gloria.tex"
+sha256 = "e2706c57a269d226123d61e10b58d4177ed705cf5595f0f973af1e8635095e65"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/30-verbum.tex"
+sha256 = "1cd9cd61b7ccaf6ccaf4e09c226f3c0d41b626f8899c0c532c0364b5262eea95"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/40-offertorium.tex"
+sha256 = "059d3baeda51cfdefbe5ea830dc20ebad21cd8545faa3e1256a45770f5deef90"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/50-praefatio.tex"
+sha256 = "2d776ec4427eaa45d812d63e3dfe83e4d8b5104da4b8447201734118c76a1a24"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/60-canon.tex"
+sha256 = "ca5d4f523d5c9c1cfdaa6e4bdaf93d5fe3af777b1d7b588a40d25c758c1b6b9a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/70-communio.tex"
+sha256 = "8a3117413eb18d8a1b2d6d6b75fd0d8533f88f718c65a71b91e261c86cca72ba"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/80-conclusio.tex"
+sha256 = "7f6e9b278b28bd89c7a0754de0616cb417abf207eafe172e57de9ce37dd4c97a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/85-synthesis.tex"
+sha256 = "3a7f824bdaa34c44710b2da8965c894feab394625316bfcfbd2816ca042b082d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/90-scope.tex"
+sha256 = "8da9837f2136b72d4cae9e04045b3b7ed8426bed9d8c2d78660787a3a53615ab"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/92-development.tex"
+sha256 = "33b81da64002809ff5b118c96524a141497cb056d36ee7c6d4572e2a57c8805c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/99-references.tex"
+sha256 = "9f98dd2901b96099f7523ac6eb0263f50196af3e57fb1eb476d672cfc7bc8a4b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/web-edition.toml"
+sha256 = "8d342a0fda8734fad664b2eb9d40590b2d68477fbe322bfa7a32890a20b18412"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/format.tex"
 sha256 = "d6eed1d8f1d83eb7b956a02490c28cc1d61f5290b096e380998f726d36b5d127"
 kind = "rendered-content"
@@ -3108,14 +4013,38 @@ kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
 
 [[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text/format.tex"
+sha256 = "294daa2f84ded628208ae9fb9ea8ad35be5292f5accc223eb46d2c573f4027ac"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text/main.tex"
+sha256 = "805b6ab4e7d0483af2dca3b6d6c7396bd0768a4a517005347846a9562d58152f"
+kind = "publication-main"
+owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text/sections/05-appointed-text.tex"
+sha256 = "dc1bf610a01f54f7ee4da1b090cb2811878e9be77e91612fad110c4bc8b1992c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text/web-edition.toml"
+sha256 = "6c41b545db2163f36ee1e740de7fdbf398b37263c9bc32fcffc6b76056440763"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text"]
+
+[[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/format.tex"
-sha256 = "b392ea2bc5f8662ca95e630c670e24dc3707dd07b620bce6ecf82c16fd6e624d"
+sha256 = "fabcfb18751a47d586b7255d409218128518e3b15a838607102ec17a0ab81ffe"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/main.tex"
-sha256 = "1ca20188b2be006918a4b567ba9a2e92dcebfca246453e182143a6feec5cf191"
+sha256 = "10310796d87472f85dcc5131beda5649d9e00f458491e8816515b301aceff579"
 kind = "publication-main"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
@@ -3127,25 +4056,25 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/propers/verified.md"
-sha256 = "a504aad297b5e9eaa7783b996de80a4560abb93451a336004bba93fd4901feb1"
+sha256 = "73db6656aaf46792173dc34455b006247e82bd93fa82ce3b9bf7c47ff7f23f95"
 kind = "proper-verification"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/research/scope.md"
-sha256 = "40efde90ba7235b202c483d8fa055c48c18ce551e03adaa6a8af93f79d82781a"
+sha256 = "19c4f15e9b99c52f2930735d465fe63ed8b15c781d0b14ab1a05b872bbc30200"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/research/source-audit.md"
-sha256 = "9ac74f48929da11f37d13641d81bafe225ea6634a1c993182c58ed71f02e4fae"
+sha256 = "a5ff019d1c673bef9ce92d814e49853ea05e34dfad07c5360e15f6f5fe520f4e"
 kind = "legacy-source-audit"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/research/source-bindings.toml"
-sha256 = "e895b0c7d412c716778a288db47657a05f74f5fe94154ed30b7c28e661ed5f38"
+sha256 = "43c38b292e57514b5c88fe71b9966aa25c99cd5c6d5f4b424bcd929f9a1b86c4"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
@@ -3157,43 +4086,43 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/sections/10-date-location.tex"
-sha256 = "36ead3a712930ed55f46081a2bdf1c9d39bbb5c56e6337a55c129fb47d705fe9"
+sha256 = "be82fda01948e90a130f216c96983c0fd7e05dc867f1625079e24e7082eaa362"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/sections/20-themes.tex"
-sha256 = "1bfa1d894fdf14c6db4a7ec6b0cdefb5c31028e827174f44aec10303ee496645"
+sha256 = "848e9b2609a462b3900f77360c37548b0f4517784f85d514c7c2ba50fe88e721"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/sections/30-commentary.tex"
-sha256 = "09c75a9f61c3b9f5664a4b01678f16a59635bf6d4e7c0e191159c1f385506146"
+sha256 = "7a7be4b270a6ca258f0b9ab643759184787442d192deedffdb86b0fd03672b45"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/sections/40-notable.tex"
-sha256 = "0a7d1033deb3f19a914b95fbb6406a9856d811a41adf32b674b7234a3450c9f1"
+sha256 = "02e330c0f843dac02c4aaf605404d5b3ab63a0fd5ef65e1c5b15c3717be64545"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/sections/50-interpretive.tex"
-sha256 = "a7c824f122e166d3bf62f142fdab976ec38ab108ed4b2c511c1f44c8546f44d8"
+sha256 = "53d21291f38b6a1c1c17cc98050d06f57d9d890afcccbc1a0dbdb55214675ab5"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/sections/90-scope.tex"
-sha256 = "9b660b2cc7180bc546ac27a48bcea901b56ca335906a4638fc3fa8c830f2a767"
+sha256 = "22d98e120aa3cb259b6f6106386fcf607054f899f8542bcdfe10a17a59d75965"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/sections/99-references.tex"
-sha256 = "790d27e7e1b99d56b132167a406ab2256273d53ffc7d2201ccd7306db1fa8503"
+sha256 = "8968856b47e5dc4fe62d5d1caec771132a3b07fcdeeb3f83dd1548c537d36017"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
@@ -3202,6 +4131,528 @@ path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pente
 sha256 = "652a2bedc9562a84387088713348bdfbe3abe6d93c9ee34a6535ab42a33be0ba"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/format.tex"
+sha256 = "f6ab26451effc48df8474ee46fb7a5c479479190dadb36637ca08d04687ef4d8"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/main.tex"
+sha256 = "8954b7a9cdac796c5c83ddb40dfb85842847acfa7b65646dac9d171082242192"
+kind = "publication-main"
+owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/research/edition-manifest.md"
+sha256 = "bbbd7d26e42afd0a4c319abe1abf76863a238116d72655dac5b92154e314d804"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/research/rubric-index.md"
+sha256 = "1bf389200bd0e6ac3f3c4a72fa20b2a931b1bd3fd989344969c03188e97b5630"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/research/scope.md"
+sha256 = "285b27e030ee4939224262fa5dbad14ed79394f58285870eb666db9cd38bee04"
+kind = "research-scope"
+owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/research/source-audit.md"
+sha256 = "8fdbe0c7e6f40a912dd8bbdd6610a4ff633baa58f62cb8084ae7ed936b9436e8"
+kind = "legacy-source-audit"
+owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/research/source-bindings.toml"
+sha256 = "650333cb9b7546eeb1254cbc3253fde5ee83192bf027ace70a7d561f59a593a1"
+kind = "source-binding"
+owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/research/worked-cases.md"
+sha256 = "2a1259bf7d1da233f98ca81c6a95e78487a661ba3f8dd708cfb5524cb43624aa"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/sections/00-five-decisions.tex"
+sha256 = "0f25378f324baef3d517c6c913c1265ee9672f6173935d7b31d1109632145e9a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/sections/10-the-day.tex"
+sha256 = "3f8565e7c86aa1476c96033749cf080be9836879a6fb294438bbe4ba700c78e2"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/sections/20-precedence.tex"
+sha256 = "69c3c3702d737a4d19438d67cc8dabbc8ed13e9287864834801174620a8b0a31"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/sections/30-impediment.tex"
+sha256 = "023a512d3908a159860bd38b428ecb169c895cce37bfb20fde9ee353f85cbf9f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/sections/40-mass-category.tex"
+sha256 = "3c231eb596fe0812546a034db93d0e56c811f16f2434a9fa72bf875a5f45ba61"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/sections/50-assembly-map.tex"
+sha256 = "779dc1f257dbe81ed86b312d04c769080a1b8ac6956fa3c84caeb558baade9e5"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/sections/55-preface-last-gospel.tex"
+sha256 = "680045f5a0d502680728c7f659d3fd377f6cf332ad9851bdcfe669b66803ac95"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/sections/60-worked-cases-a.tex"
+sha256 = "636ee7d588aaa459c0b7f45a4292d6fac31b86fc991bf7660d1a131a157f4373"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/sections/65-worked-cases-b.tex"
+sha256 = "6b6424186d4975557e83a9e5e8a38039b810d80f7bfce1b34e6e29491d1a0b6b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/sections/80-contested.tex"
+sha256 = "f6aff44051d215ab9fd21cb01166e7b1b4009c8abbc9ecbf86d89945897b63aa"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/sections/85-worksheet.tex"
+sha256 = "690d7c0a32001ecd2284ce0cc7eb816635f978b6464953ecc1c1290338dca4b0"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/sections/90-scope.tex"
+sha256 = "c22fb7c88c1cb16497dae94bd803b3b3256c3e2b56aade5e1d7556d57c3eca29"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/sections/95-concordance.tex"
+sha256 = "e9d96bf99359581a730a21f0cadeba47d15ab78a42dd9af074f783c4f4ce495b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/sections/99-references.tex"
+sha256 = "fb3dda5903c85d6b4233a8fcdc1d893ddc98cc3444d57e814c5cb5fca19ca41d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/web-edition.toml"
+sha256 = "0e90907339bd8f3c7bb52c8c59f979afefdd608b70c605b6e5e4c37cc667a4d8"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/assembling-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/main.tex"
+sha256 = "bc5c57cad48ccb61c917720548534ffb80499ea1909ddbea70b9bc1577fdb3b9"
+kind = "publication-main"
+owners = ["liturgy/roman-rite/1962/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/research/calendar-inventory.md"
+sha256 = "8837d701d2272f95aca4aef2afa9b981a7a8d9a9a8e94f71e2e12e50fdf38005"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/research/edition-manifest.md"
+sha256 = "fe4c55db30fb44fa82cf06bade254184d016b021e7fea71edb0be7dcb3142eee"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/research/evidence-map.md"
+sha256 = "fb2a3b5d9bf9329db7522092d0063787ec035d15b65ae86af601e474f369d6e1"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/research/scope.md"
+sha256 = "b9ec725e44eae27fb59e66ae2686147eaf2f83f7fc9bf87f8ac768ae193d580a"
+kind = "research-scope"
+owners = ["liturgy/roman-rite/1962/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/research/source-audit.md"
+sha256 = "de0f1b48aaf13cc30c64312e2fb9bc9e4d3e353d9cda06117c12fa794ae35a8c"
+kind = "legacy-source-audit"
+owners = ["liturgy/roman-rite/1962/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/00-promulgation.tex"
+sha256 = "c17866d8e2028bcd4b66665d02d31c91ac240d61645e250f3bfc0d6e90504c7f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/10-grammar-of-the-day.tex"
+sha256 = "35feb7c487ad61653f890bff4ea4b243359b23310f660a02cf8b03e84d2ecaa7"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/20-temporal-cycle.tex"
+sha256 = "399b39fe83d7820df73a48aab79263103dab998e9a2ea9ff7dc9f3d129d3c218"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/30-vigils-octaves-ember-rogation.tex"
+sha256 = "f07d354b96eb28e6ff733341f5ba3e322df4a9b5fd14b36eda79b831d3295e0e"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/40-movable-computation.tex"
+sha256 = "618c4a5e8842fef8db076205232ddfa7cc9c9ff7c654d640b08add1a5f02d7d8"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/50-resumed-sundays.tex"
+sha256 = "b71038d9e52d6bf71cf5a4ec44e4b39eb164d6798a89a8536bfcb2894d119b69"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/60-sanctoral.tex"
+sha256 = "d6025370971ca96fc84bb9a4fa8be9c1d756eb5d802c4d67fd876fd36ece5f01"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/70-precedence-and-occurrence.tex"
+sha256 = "669f84e85ad6a1913afb4e9f6ef6197aa548566749eec7120493dac331889fb2"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/80-commemorations.tex"
+sha256 = "de0078b02c50c00494c23f4c83a87a33387b3b364e9a018715bbc13ba140b989"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/85-worked-years.tex"
+sha256 = "fe428cfa81b39f6dc760af1a15e6717a721e8f897d56aa45f6e338ce81108386"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/88-synthesis.tex"
+sha256 = "32239fbe3cf767dff60727a9c0c3763024e64cf6f10e7d30d6eadbebe0e870a5"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/90-collation.tex"
+sha256 = "ad58081c5d8db1de312b4a515a572ea000048adb8ea2013ecd8b946831944668"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/92-timeline.tex"
+sha256 = "93c459da8e9e5d2fc89abe4712502f95ab6877c8675270edb45ac41ee2c52bd7"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/95-scope.tex"
+sha256 = "00aae08036aa11efdb55a75dfbfc2eb682e359e3b0bee8f79e8d73d5714e3c9c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/sections/99-references.tex"
+sha256 = "666dff61d62810d1ee8de814e83976ef318963ea1f060175524ae4e73a382292"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/web-edition.toml"
+sha256 = "c6c4586ecf66630b2a4ea9c37b2c1f510bbc33e0e1f83484655e5106bb4d0bf0"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice/format.tex"
+sha256 = "90457f08beff0fcf2ef1e2ec491666f04a2db6d3d706f72e1dcabe74cf54ccb9"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice/main.tex"
+sha256 = "581ae4c905821f7b1917fbcb26bd0e2543a9af56d209112abaec5d4be4e1fd35"
+kind = "publication-main"
+owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice/research/edition-manifest.md"
+sha256 = "ee241786fad1675f63206ee365a3c9bd623a58f8fbef54554e6b950359961b1f"
+kind = "research-record"
+owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice/research/scope.md"
+sha256 = "354e71be60f1415618431871fe234ddce31db8f606b711d1c3186b8aa1901a94"
+kind = "research-scope"
+owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice/research/sequence-inventory.md"
+sha256 = "86ccbadcd29110a666db8693b164057fd6a0ff6c821e8bdb0443f5e678034a2b"
+kind = "research-record"
+owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice/research/source-audit.md"
+sha256 = "dd12cadc6534dc63eb97f4b96001c4bd4299fe66baf2f4ecae167b8487be52a0"
+kind = "legacy-source-audit"
+owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice/research/source-bindings.toml"
+sha256 = "9385f86d8831056bbfbbdab443900ca2f8130c77d8b8bc653e00f06f90976f97"
+kind = "source-binding"
+owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/00-two-books.tex"
+sha256 = "6c07031308e9b0a00eb9a8f8c6060ebdbf9fc5a47d1155b8815c4802991a06c4"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/10-the-acts.tex"
+sha256 = "175ab8d12a5c64aa39b956b370ede7128888849583d0ca1cea185b0972ed4546"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/20-ordinary.tex"
+sha256 = "72339d263f831b34512677977721aa629699ea3c68768effd3f9e838c6033727"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/30-offertory.tex"
+sha256 = "1deffd97332dc5117c8383267aa096b01f5e14e2dbb100b7b55976c2d066e0ec"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/40-canon.tex"
+sha256 = "b1b62436cf92ace2c98ef38f9fa148aee03ec021c484381e5e7c8aec2a409123"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/50-lectionary.tex"
+sha256 = "d591b7f61af67af03d577ad908dd4b1a10a54b66f86ea2ae5b270cba05d69ff2"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/60-calendar.tex"
+sha256 = "2d7739a15e993a2b6690eefd3270256ec43e66e52185218f8c90f83c08a72fb6"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/70-priest.tex"
+sha256 = "ad8575072ca785839ae8ed5728525be571a59a7e2b2a0ffe9efc9e1bf7b2ea38"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/80-language.tex"
+sha256 = "4b6230e6295f991b300fe73efa001ca421f49dc4b3254d2dbeca3516fa19763d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/90-synthesis.tex"
+sha256 = "70bebfce267c54639ec9ba5585935e36f4cecd51dc884860174ee867337a978f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/95-scope.tex"
+sha256 = "7c3641a1508e9ba46e1a7c373422082fe9df90d411a3ac24a9779c9312d8be89"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/99-references.tex"
+sha256 = "8720dc1640f5437632925d894f8fb8cf19699d5dd4c56a3d07768fa26dd5ed6a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice/web-edition.toml"
+sha256 = "53cc2ff15bd447bc8f5b8da46c6cece25259c56f26b79688bc9b0a8c6e84232c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/main.tex"
+sha256 = "dbf0db519f7efa99a8ba5fe726892a8eb0923d3e72db7e652ec56c291723eb7e"
+kind = "publication-main"
+owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/research/edition-manifest.md"
+sha256 = "0f41dd6c09b6383f421bd2d75b110b1ae1b1232565f47c1485b19b702233ea46"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/research/scope.md"
+sha256 = "24bd29f527547d558dbed4e7851b482d871ae9f1994c7e36ceef869fd7b6fd64"
+kind = "research-scope"
+owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/research/sequence-inventory.md"
+sha256 = "b6afedbd7c52899f3a38d15544497e2f6e7ca0a4c717df2afbb3cee87342be71"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/research/source-audit.md"
+sha256 = "a766d042125b53b0487041b9c28857835b1c75b17a8ede893845f5f1c472ed47"
+kind = "legacy-source-audit"
+owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/research/source-bindings.toml"
+sha256 = "cfc8f512549ac263cbffbd8f505ae469d23ffebcffa5a8ec8fb595101265394f"
+kind = "source-binding"
+owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/00-shape-of-the-action.tex"
+sha256 = "2b8b42cf0671599db28fdbd8c16b25a926cf4357a38662d405cfed3396aa5e9f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/10-introductory-rites.tex"
+sha256 = "8231d30d7a39434312adbdd7eaab4f8990e95c370d15376e11cb8c053661546d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/20-liturgy-of-the-word.tex"
+sha256 = "58b49cfebc9fbe1d992f6e507efc75281dd1ff112356ce1b81e6b6c183fb076c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/30-creed-and-universal-prayer.tex"
+sha256 = "77cb2e8e04d470d568242f5b04ca9200d2a1307adf2a4eb9c4cf6024a21c7ec4"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/40-preparation-of-the-gifts.tex"
+sha256 = "d9580f09e2d9eb4d39b7571b93c0bf30e7c59e93ebd2b82d9e7579e4499a30a9"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/50-eucharistic-prayer.tex"
+sha256 = "1c121b9bd3b0cf47d5eb9ff716bfced58da4bca7ed5b0739fd353fc570940c0d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/55-roman-canon.tex"
+sha256 = "75762897d1c9f3a5ccd39d5ce9e8ae3c8938ebb5c740f8d3a6b3e6f363a95673"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/60-prayers-two-three-four.tex"
+sha256 = "9dc86e536980d0ef18c761add3534d9752dd4a6fed2fdcdcd1749af1f3cf353d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/70-communion-rite.tex"
+sha256 = "cdf354f11d0380b6fa935806fb172ad4eabca4a1cf2b15727f0691f3c15d32b1"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/80-concluding-rites.tex"
+sha256 = "7af6eca75ff53438a2bec4431f0dbadd56cf8ae744bf6e242b6ff8cfffd7cc42"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/85-english-of-2011.tex"
+sha256 = "c36d15222f9fe6d159be4957b5dcab04ac1bb7b2a376a8d9fa561135718f07e5"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/90-synthesis.tex"
+sha256 = "5aaa2a52ac90c519b4ca5038263ee13c9bbee7cffbccdce7661d863f87aafc07"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/92-scope-edition-qualifications.tex"
+sha256 = "75a61544b015b888205fbc24888acf8fe763e73e0c9f6ef0a1ef476afece9400"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/94-development-timeline.tex"
+sha256 = "d6899f7b14a14e3141fb2baa9e23bd937580971a62ecde1f33ae1056fcf55c04"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/sections/99-references.tex"
+sha256 = "6aab8109be9076e3123d5072ba6dc8af4de102e213947e72b5c9322837443c7e"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/web-edition.toml"
+sha256 = "86b681d3e5ccad2b7d8c1eaba939e9fd256226623fcc1962a3a9b8a33d8b1f76"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/README.md"
@@ -3454,6 +4905,138 @@ path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-e
 sha256 = "2eb6894789acecd1ecedce78022877436652ff9c429dc406df9a2c7101a1760a"
 kind = "proper-verification"
 owners = ["owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en-us-2011-propers"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/format.tex"
+sha256 = "f80f90598b07853e9a4ba4334499b8a0584a478973d7262c90684f8976a3b230"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/main.tex"
+sha256 = "f4d36737ff71d30eaceaedbad67e534822b2d591175a547bb529c68c91b6e6c9"
+kind = "publication-main"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/research/calendar-inventory.md"
+sha256 = "a723beb4888b9103583919fcc7ec384135a15f99dc939dbc614398a0d20cb6ce"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/research/edition-manifest.md"
+sha256 = "18883d16d2124e1d9ad3d68288d378d0adae1882e43ced79ba325cb5c884ed7e"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/research/evidence-map.md"
+sha256 = "c30dff61a298263b04486acd7ca2da55b441ebf364ec53e4a8ee871f3cb1c59d"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/research/scope.md"
+sha256 = "3299e0f6a580009840af6732a2ec91abc3b9761fbce663bc864bb8015dfd4741"
+kind = "research-scope"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/research/source-audit.md"
+sha256 = "3ae426f8522dd1576d43057754d589d335745c473ef1a197201ebd239932fdda"
+kind = "legacy-source-audit"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/00-front.tex"
+sha256 = "dd569f9723c34d0d251668a9b9dc12312ac6a58d101ab0f209ece94146324aa9"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/10-year.tex"
+sha256 = "2b91a9b42ac8e3a8e62bf9700b06805f17d0f3b13a66a438e68a43c9152832ad"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/20-ranks.tex"
+sha256 = "03770141c911ef2807788108f6d7678f6235ab58ac0a42f6fabcd4de7ca682c5"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/30-table.tex"
+sha256 = "e8206ed60031136fe1f31710ff0f1b1aa6699ce7717428c8f4df324c8ff550af"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/40-occurrence.tex"
+sha256 = "e9a0fc4fd983bc1b7f754ffc31877f19993a6a04dae8d16b1ed76f6aafb8bc41"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/50-movable.tex"
+sha256 = "d1c86cd39a288448f825b3d64a634b9bdfb0d37c50884c507cc233f0623f7539"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/60-ordinary-time.tex"
+sha256 = "29e188924ac6ecb0e3ee1f9557a0198ca526df2174b072caead9242e48bd2a0c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/70-cycles.tex"
+sha256 = "56ea176186906852c5b22cf9730115ddbabcb10501f948f01a6dab4a377bea63"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/80-particular.tex"
+sha256 = "28c187257d7feb87fb2f2377caea93b14b21808661dfb7b71f9df6524668a23a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/85-worked-years.tex"
+sha256 = "9dad9e8c689e9e33f97094b9c9e0eeaa16de05cd19a4b30c9f2a5f391e05ee01"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/88-synthesis.tex"
+sha256 = "efe99914c9fb4372c2e2f8489fa3ccedb195e237fdb12bf9eb362bd17ca84ec9"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/90-timeline.tex"
+sha256 = "c2a72cd65804255e34ca62d0a4725ee109d3cf507513e44ae8cf2ac1eceef984"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/95-scope.tex"
+sha256 = "f21ed07ef2accc3fdc3f23832202db0edd267c0a2816d4192e081f66657f1bc7"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/99-references.tex"
+sha256 = "0f7a2963b244cbdf1b05f50aa8ba18e81467308a31a3dba33e415343790c8585"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/web-edition.toml"
+sha256 = "2c660fc441dc13bc0a6a454d7a9e179febe75910a121dfcb3143538272480190"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
 
 [[files]]
 path = "src/claude/theology/mariology/champion/format.tex"
