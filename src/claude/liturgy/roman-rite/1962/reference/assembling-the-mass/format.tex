@@ -1,0 +1,141 @@
+% Assembling the Mass (Claude edition): leaf-local typesetting primitives.
+% Presentation only. Every rubrical judgment lives in the section files and
+% the research records.
+%
+% Web-edition constraint: this leaf declares itself web-eligible, so it uses
+% no landscape environment, no multicols, no TikZ, and no page-matched
+% layout. Every decision procedure is an ordered list or a ruled table, so a
+% linear reading order carries the same instruction.
+
+\usepackage{xurl}
+
+\setlength{\emergencystretch}{3.0em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+% Locus shorthands. The 1960 code has three parts, numbered continuously from
+% 1 to 530; the Missal reprints the first and third. One shorthand per part,
+% so a number is never cited under the wrong part's name. The expansion is
+% stated in prose at first use and again in the concordance, so the reader
+% never has to cross a key to reach the work.
+\newcommand{\rg}[1]{\mbox{RG~#1}}      % part one, nn. 1-137
+\newcommand{\rgb}[1]{\mbox{RGBR~#1}}   % part two, nn. 138-268 (Breviary only)
+\newcommand{\rgm}[1]{\mbox{RGMR~#1}}   % part three, nn. 269-530
+
+% Semantic wrappers so a later style change never edits prose.
+\newcommand{\work}[1]{\textit{#1}}
+\newcommand{\term}[1]{\textit{#1}}
+
+% A rule quoted in the promulgated Latin, titled with its own locus. The
+% frame marks text that is not project-owned expression.
+\newenvironment{rulebox}[1]{\begin{massbox}{#1}\itshape}{\end{massbox}}
+
+% An identified historical English witness set beside Latin. Never a
+% liturgical translation, never offered for recitation.
+\newenvironment{witnesstext}[1]{%
+  \begin{studyframe}\small\textbf{#1}\ \ignorespaces}
+  {\end{studyframe}}
+
+% A worked case. The title carries the case number and the day in question.
+% tcolorbox zeroes \parskip, which butts consecutive paragraphs inside the
+% box against one another; restore a smaller separation than the page uses.
+\newenvironment{casebox}[1]
+  {\begin{massbox}{#1}\setlength{\parskip}{0.4em}}
+  {\end{massbox}}
+
+% The step ladder inside a worked case, and the decision ladders in the
+% instructional sections.
+\newenvironment{steps}
+  {\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2.0em, itemsep=0.3em,
+     topsep=0.35em]}
+  {\end{enumerate}}
+\newenvironment{substeps}
+  {\begin{enumerate}[label=(\alph*), leftmargin=1.9em, itemsep=0.15em,
+     topsep=0.2em]}
+  {\end{enumerate}}
+
+% A labelled field inside a case answer or a slot description.
+\newcommand{\afield}[2]{\par\textbf{#1:} #2}
+
+% The project's own conclusions, marked as such by their heading. tcolorbox
+% zeroes \parskip inside the box, which runs the labelled parts of a long
+% argument together; restore it so each part reads as its own paragraph.
+\newenvironment{synthesis}[1]
+  {\begin{studybox}{Project synthesis: #1}\setlength{\parskip}{0.5em}}
+  {\end{studybox}}
+\newenvironment{contested}[1]
+  {\begin{studybox}{Contested: #1}\setlength{\parskip}{0.5em}}
+  {\end{studybox}}
+\newenvironment{caution}[1]
+  {\begin{studybox}{#1}\setlength{\parskip}{0.5em}}
+  {\end{studybox}}
+
+% Three- and two-column reference tables sized for this leaf's material. The
+% wider column separation keeps a first column that fills its measure from
+% touching the second.
+\newenvironment{tablerule}[3]
+{\small\setlength{\tabcolsep}{6pt}%
+ \renewcommand{\arraystretch}{1.0}%
+ \begin{longtable}{>{\raggedright\arraybackslash}p{0.28\linewidth}%
+                         >{\raggedright\arraybackslash}p{0.44\linewidth}%
+                         >{\raggedright\arraybackslash}p{0.15\linewidth}}
+\toprule
+\textbf{#1} & \textbf{#2} & \textbf{#3}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
+
+\newenvironment{tabletwo}[2]
+{\small\setlength{\tabcolsep}{6pt}%
+ \renewcommand{\arraystretch}{1.0}%
+ \begin{longtable}{>{\raggedright\arraybackslash}p{0.30\linewidth}%
+                         >{\raggedright\arraybackslash}p{0.60\linewidth}}
+\toprule
+\textbf{#1} & \textbf{#2}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
+
+% The sixteen prefaces, their proper assignment, and the seasonal fallback.
+% Both right-hand columns carry sentences, so they are set equal; the narrow
+% third column of the general reference table cannot hold this material.
+\newenvironment{prefacetable}
+{\footnotesize\setlength{\tabcolsep}{6pt}%
+ \renewcommand{\arraystretch}{1.04}%
+ \begin{longtable}{>{\raggedright\arraybackslash}p{0.17\linewidth}%
+                   >{\raggedright\arraybackslash}p{0.36\linewidth}%
+                   >{\raggedright\arraybackslash}p{0.36\linewidth}}
+\toprule
+\textbf{Preface} & \textbf{Proper to} & \textbf{As the seasonal fallback}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
+
+% The precedence table itself: a numbered row, its content, and its class
+% band. Set one step down so all twenty-eight rows stay legible together.
+\newenvironment{precedencetable}
+{\footnotesize
+ \renewcommand{\arraystretch}{1.04}%
+ \begin{longtable}{>{\raggedright\arraybackslash}p{0.045\linewidth}%
+                   >{\raggedright\arraybackslash}p{0.60\linewidth}%
+                   >{\raggedright\arraybackslash}p{0.28\linewidth}}
+\toprule
+\textbf{Row} & \textbf{Liturgical day} & \textbf{Note}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
+
+% The slot map from the ministers' entrance to the last Gospel.
+\newenvironment{slottable}
+{\footnotesize
+ \renewcommand{\arraystretch}{1.04}%
+ \setlength{\tabcolsep}{6pt}%
+ \begin{longtable}{>{\raggedright\arraybackslash}p{0.19\linewidth}%
+                   >{\raggedright\arraybackslash}p{0.19\linewidth}%
+                   >{\raggedright\arraybackslash}p{0.51\linewidth}}
+\toprule
+\textbf{Slot} & \textbf{Comes from} & \textbf{Rule and locus}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
