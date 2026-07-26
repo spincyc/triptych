@@ -156,6 +156,11 @@ received prayer text is printed for recitation.
 
 ## Review completed (internal only)
 
+Paired-provider staleness review (2026-07-26): old, minimally modified, and
+research-first treatments were compared against GPT's dated review-state
+change. Chronology, judgment, testimony, cure distinctions, corpus,
+jurisdiction, and rights remain unchanged. No material change.
+
 - guidance (editorial, mariology profile, sources) read in full
   2026-07-25;
 - every quotation checked against the witness listed in
