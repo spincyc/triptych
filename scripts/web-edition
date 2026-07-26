@@ -102,7 +102,12 @@ ANCHOR_LINK_RE = re.compile(r"\[((?:[^\[\]\\]|\\.)*)\]\(#([^)\s]+)\)")
 LINK_ATTRIBUTE_RE = re.compile(r"(\]\([^()\s]+\))\{[^{}]*\}")
 TABLE_ENVIRONMENT_RE = re.compile(r"\\newenvironment\*?\s*\{([A-Za-z@]+)\}")
 TABLE_STARTS = (r"\begin{longtable}", r"\begin{tabularx}", r"\begin{tabular}")
-OUTPUT_TABLE_RE = re.compile(r"^\|(?:[ :]*-{2,}[ :]*\|)+\s*$", re.MULTILINE)
+# Pandoc sizes each delimiter cell to its column's widest content, so a column
+# whose every cell is one character wide is written "-:" or ":-". Requiring two
+# dashes therefore missed whole tables that were present, and reported them as
+# dropped. A dropped table emits no delimiter row at all, so accepting a single
+# dash removes the false positive without weakening the shortfall check.
+OUTPUT_TABLE_RE = re.compile(r"^\|(?:[ :]*-+[ :]*\|)+\s*$", re.MULTILINE)
 # A row of nothing but cell separators is a row whose text the reader dropped.
 EMPTY_ROW_RE = re.compile(r"^\|(?:\s*\|)+[ \t]*$", re.MULTILINE)
 MATH_WARNING_RE = re.compile(r"^\[WARNING\] Could not convert TeX math", re.MULTILINE)

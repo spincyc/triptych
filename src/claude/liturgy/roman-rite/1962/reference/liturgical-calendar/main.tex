@@ -1,0 +1,86 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+
+\hypersetup{
+  pdftitle={The 1962 Roman Calendar: Rules, Ranks, and Reckoning},
+  pdfsubject={An edition-specific reference to the calendar of the 1962 Missale Romanum under the 1960 Rubricae generales: the temporal cycle and its seasons, the I-IV class system that replaced the double and semidouble grades, occurrence and concurrence, commemorations, the movable computation from Easter, the resumed Epiphany Sundays, Ember and Rogation days, vigils and octaves, the sanctoral structure, and the table of precedence.}
+}
+
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2.4em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+\titleformat{\subsubsection}
+  {\bfseries}{\thesubsubsection}{0.5em}{}
+
+\newcommand{\rn}[1]{n.~#1}
+\newcommand{\rnn}[1]{nn.~#1}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.13\textheight}
+{\large\scshape A Triptych Calendar Reference\par}
+\vspace{1.5em}
+{\Huge\bfseries The 1962 Roman Calendar\par}
+\vspace{0.7em}
+{\Large Rules, Ranks, and Reckoning\par}
+\vspace{2.2em}
+{\large \textit{Missale Romanum}, editio typica, 23 June 1962\\[0.35em]
+under the \textit{Rubricae Breviarii et Missalis Romani} of 26 July 1960\par}
+\vfill
+{\footnotesize This reference states recurring law and arithmetic, not the celebration of a
+particular day in a particular place. A competent calendar, an approved proper, and the
+current annual Ordo govern an actual Mass; see the terminal
+\textit{Scope, Edition, and Qualifications} appendix.\par}
+\vspace{1.2em}
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{liturgy/roman-rite/1962/reference/liturgical-calendar/sections/00-promulgation}
+\input{liturgy/roman-rite/1962/reference/liturgical-calendar/sections/10-grammar-of-the-day}
+\input{liturgy/roman-rite/1962/reference/liturgical-calendar/sections/20-temporal-cycle}
+\input{liturgy/roman-rite/1962/reference/liturgical-calendar/sections/30-vigils-octaves-ember-rogation}
+\input{liturgy/roman-rite/1962/reference/liturgical-calendar/sections/40-movable-computation}
+\input{liturgy/roman-rite/1962/reference/liturgical-calendar/sections/50-resumed-sundays}
+\input{liturgy/roman-rite/1962/reference/liturgical-calendar/sections/60-sanctoral}
+\input{liturgy/roman-rite/1962/reference/liturgical-calendar/sections/70-precedence-and-occurrence}
+\input{liturgy/roman-rite/1962/reference/liturgical-calendar/sections/80-commemorations}
+\input{liturgy/roman-rite/1962/reference/liturgical-calendar/sections/85-worked-years}
+\input{liturgy/roman-rite/1962/reference/liturgical-calendar/sections/88-synthesis}
+\input{liturgy/roman-rite/1962/reference/liturgical-calendar/sections/90-collation}
+\input{liturgy/roman-rite/1962/reference/liturgical-calendar/sections/92-timeline}
+\Needspace{10\baselineskip}
+\appendix
+\input{liturgy/roman-rite/1962/reference/liturgical-calendar/sections/95-scope}
+\input{liturgy/roman-rite/1962/reference/liturgical-calendar/sections/99-references}
+\begingroup
+\setlength{\parskip}{0pt}
+\vspace{-0.6\baselineskip}
+\section{Generation Metadata}
+\vspace{-0.35\baselineskip}
+{\scriptsize\input{liturgy/roman-rite/1962/reference/liturgical-calendar/generation-metadata}}
+\endgroup
+\end{deepstudy}
+
+\end{document}

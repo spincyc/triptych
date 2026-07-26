@@ -1,0 +1,177 @@
+\section{The Movable Cycle and Its Computation}
+\label{sec:movable}
+
+\subsection{What the books supply and what they do not}
+
+The 1962 Missal does not state the paschal rule as a rule. It supplies, in its front matter,
+three instruments: a discursive account of the year and of the Gregorian correction; a
+perpetual \latin{Tabula paschalis antiqua reformata} indexed by golden number, epact, and
+dominical letter; and a \latin{Tabella temporaria festorum mobilium} listing, year by year from
+1960 to the twenty-first century, the dominical letter, golden number, epact, Septuagesima, Ash
+Wednesday, Easter, the Ascension, Pentecost, Corpus Christi, the Roman indiction, the number of
+Sundays after Pentecost, and the First Sunday of Advent.
+
+That last column is the one this reference cares about most, because it is the book's own
+statement of the quantity on which the resumption mechanism of \rn{18} turns. It is also the
+column that contains the one demonstrable misprint reported in Section~\ref{sec:collation}.
+
+No ecclesiastical statement of the paschal computus was located for this edition. The rule used
+here is the standard Gregorian ecclesiastical rule — Easter is the Sunday after the first
+ecclesiastical full moon falling on or after 21 March, computed by the tabular epact and not by
+an astronomical full moon — and it is verified in this document not by asserting an authority
+for it but by checking every year it produces against the Missal's own printed table.
+
+\subsection{Anchors and offsets}
+
+Once Easter is fixed, the movable temporal anchors of the 1962 calendar follow by constant
+offsets in days. The two ends of the year, however, are fixed independently: the First Sunday of
+Advent by \rn{20}, and the Sundays after the Epiphany by the interval between the Epiphany and
+Septuagesima.
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.34\linewidth} r >{\raggedright\arraybackslash}p{0.44\linewidth}@{}}
+\toprule
+\textbf{Day} & \textbf{Offset from Easter} & \textbf{Note} \\
+\midrule
+Septuagesima Sunday & $-63$ & Opens \latin{tempus Septuagesimae} (\rn{73}) \\
+Ash Wednesday & $-46$ & I class feria (\rn{23}\,a); opens Lent (\rn{74}) \\
+First Sunday of the Passion & $-14$ & Opens Passiontide (\rn{74}\,b) \\
+Second Sunday of the Passion, Palm Sunday & $-7$ & Opens Holy Week (\rn{75}) \\
+Easter Sunday & $0$ & I class Sunday and I class feast with octave (\rn{11}) \\
+Low Sunday, \latin{dominica in albis} & $+7$ & I class Sunday; octave day of Easter \\
+Rogation Monday & $+36$ & Of itself; transferable by the local Ordinary (\rn{87}) \\
+Vigil of the Ascension & $+38$ & II class vigil (\rn{31}\,a) \\
+Ascension of the Lord & $+39$ & I class feast; opens \latin{tempus Ascensionis} (\rn{76}\,b) \\
+Vigil of Pentecost & $+48$ & I class vigil (\rn{30}\,b); opens the octave (\rn{76}\,c) \\
+Pentecost & $+49$ & I class Sunday and I class feast with octave (\rn{11}) \\
+Ember Wednesday of Pentecost & $+52$ & Day within the octave, therefore I class (\rn{66}) \\
+Most Holy Trinity & $+56$ & First Sunday after Pentecost (\rn{17}\,c) \\
+Corpus Christi & $+60$ & Thursday after Trinity \\
+Most Sacred Heart of Jesus & $+68$ & Friday after the Second Sunday after Pentecost \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The 25 April assignment of the greater Litanies (\rn{80}) is the one movable--fixed hybrid: a
+fixed date that is displaced by a movable one, being transferred to the following Tuesday when
+Easter Sunday or Easter Monday falls on 25 April.
+
+\subsection{Two counts, and their ranges}
+
+Two integers describe the shape of any 1962 year, and the rest of the temporal arithmetic
+follows from them.
+
+\begin{studybox}{The two counts}
+\textbf{$E$, the number of Sundays after the Epiphany that actually occur.} The Sundays after
+the Epiphany run from the Sunday following 6 January to the Sunday before Septuagesima. The
+first always occurs, because the seven days from 7 to 13 January always contain exactly one
+Sunday; it carries the feast of the Holy Family by \rn{17}\,b. $E$ ranges from 1 to 6.\\[0.4em]
+\textbf{$P$, the number of Sundays after Pentecost.} These run from Trinity Sunday, which is the
+first, to the Sunday before the First Sunday of Advent, which is the last. Hence $P$ is the
+number of days from Pentecost to the First Sunday of Advent, divided by seven, less one.
+$P$ ranges from 23 to 28.
+\end{studybox}
+
+The range of $P$ is not a modern inference. The Missal's own perpetual \latin{Tabula paschalis
+antiqua reformata} prints the number of Sundays after Pentecost for every combination of epact
+and dominical letter, and its column runs from 28 at the earliest Easters down to 23 at the two
+latest. The rows for Easter on 24 and 25 April both print 23; the rows for Easter from 22 to
+26 March print 28. The \latin{Tabella temporaria} confirms both extremes in dated form: 2008,
+with Easter on 23 March, prints 28; 2011, with Easter on 24 April, prints 23.
+
+The relation between the two counts is the whole substance of \rn{18}. There are six printed
+Sunday formularies after the Epiphany. If only $E$ of them are used before Septuagesima, then
+$6 - E$ remain unused. The Missal prints twenty-four formularies after Pentecost. If $P$
+Sundays occur, then $P - 24$ places must be filled from the unused Epiphany formularies —
+provided $P$ exceeds 24. The two quantities do not in general match, and the surplus
+$S = (6 - E) - (P - 24)$
+counts the printed formularies for which no place is found. Recomputed over the two hundred and
+one years from 1900 to 2100, $S$ is always $0$ or $1$: never negative, never greater than one,
+and equal to one in 137 of those years. That is why at most one formulary is ever dropped, and
+why \rn{18}'s closing clause speaks of omitting \latin{ceteris, si opus sit} — the rest, if need
+be — in the plural but in practice at most singly.
+
+The formula is signed, and the sign matters. When $P$ exceeds 24, the term $P - 24$ is positive
+and $S$ counts an unused \emph{Epiphany} formulary that finds no resumption slot. When $P$ is
+23, the term is $-1$, and in every such year $E$ is 6, so that $6 - E$ is zero and $S = 1$
+arises entirely on the other side: there is one formulary too many in the printed
+after-Pentecost series itself. Which of the two — the twenty-third or the twenty-fourth — gives
+way is precisely the question the rubric does not answer, and Section~\ref{sec:resumed} treats
+it as contested rather than settling it.
+
+\subsection{Verification against the Missal's own table}
+
+Every anchor and count used in this reference was recomputed from the Gregorian computus and
+compared, row by row, against the \latin{Tabella temporaria festorum mobilium} printed in the
+1962 typical edition for the fifty-two years 1960 through 2011 that the table's first page
+carries. All fifty-two rows agree in the Septuagesima, Ash Wednesday, Easter, Ascension,
+Pentecost, Corpus Christi, and First Sunday of Advent columns, and in the Sundays-after-Pentecost
+column for fifty-one of the fifty-two. The single divergence is 1996, treated in
+Section~\ref{sec:collation}.
+
+The following extract shows the years used elsewhere in this reference together with the printed
+values, so the reader can check the method rather than take the result on trust.
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{@{}r l l l l l r r l@{}}
+\toprule
+\textbf{Year} & \textbf{Septuag.} & \textbf{Ash Wed.} & \textbf{Easter} & \textbf{Ascension} & \textbf{Pentecost} & $E$ & $P$ & \textbf{Advent I} \\
+\midrule
+1960 & 14 Feb & 2 Mar  & 17 Apr & 26 May & 5 Jun  & 5 & 24 & 27 Nov \\
+1962 & 18 Feb & 7 Mar  & 22 Apr & 31 May & 10 Jun & 6 & 24 & 2 Dec \\
+1967 & 22 Jan & 8 Feb  & 26 Mar & 4 May  & 14 May & 2 & 28 & 3 Dec \\
+1996 & 4 Feb  & 21 Feb & 7 Apr  & 16 May & 26 May & 4 & 26$^{\ast}$ & 1 Dec \\
+2008 & 20 Jan & 6 Feb  & 23 Mar & 1 May  & 11 May & 1 & 28 & 30 Nov \\
+2011 & 20 Feb & 9 Mar  & 24 Apr & 2 Jun  & 12 Jun & 6 & 23 & 27 Nov \\
+2026 & 1 Feb  & 18 Feb & 5 Apr  & 14 May & 24 May & 3 & 26 & 29 Nov \\
+2027 & 24 Jan & 10 Feb & 28 Mar & 6 May  & 16 May & 2 & 27 & 28 Nov \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The dated rows for 1960, 1962, 1967, 1996, 2008, and 2011 are printed in the Missal's table and
+were read from a 450~dpi rendering of the page; the $E$ column is not printed there and is
+computed. The starred 1996 value is the corrected one: the Missal's table prints 16 in that
+cell, which Section~\ref{sec:collation} shows to be a misprint. The 2026 and 2027 rows fall beyond the extract read and are computed throughout; they
+are given because Section~\ref{sec:years} works them end to end and because they can be checked
+against the Missal's perpetual table by their epact and dominical letter.
+
+\subsection{Why the count of Sundays after Pentecost is anchored at both ends}
+
+A frequent error is to compute $P$ forward from Pentecost by counting weeks until Advent
+``looks right''. The count is fixed at both ends and admits no discretion: its first member is
+Trinity Sunday, at Easter $+56$, and its last member is the Sunday before the First Sunday of
+Advent, which \rn{20} fixes to 30 November or the nearest Sunday. Both ends move
+independently — the one with Easter, the other with the weekday of 30 November — and it is
+their independence that makes $P$ vary over a range of six values while $E$ varies over a range
+of six as well. Neither count determines the other, and neither can be inferred from the civil
+year.
+
+The same independence is why the surplus $S$ is not always zero. In a year in which Easter is
+early, Septuagesima is early, few Sundays after the Epiphany occur, and many Sundays after
+Pentecost occur: both the supply of unused formularies and the demand for resumption slots are
+large. In a year in which Easter is late, both are small. But the two do not move in lockstep,
+because the Advent anchor is not a function of Easter, and one formulary is left over in about
+two thirds of years. The distribution over 1900--2100 is as follows.
+
+\begin{center}
+\small
+\begin{tabular}{@{}l r r r r r r@{}}
+\toprule
+$E$ & 1 & 2 & 3 & 4 & 5 & 6 \\
+years & 2 & 42 & 44 & 47 & 52 & 14 \\
+\midrule
+$P$ & 23 & 24 & 25 & 26 & 27 & 28 \\
+years & 4 & 44 & 51 & 46 & 44 & 12 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The extremes are rare and worth naming, because they are the cases in which a reference that
+reasons only from typical years goes wrong. Between 1900 and 2100 there are exactly two years
+in which only one Sunday after the Epiphany occurs — 1913 and 2008 — and exactly four in which
+only twenty-three Sundays after Pentecost occur: 1943, 2011, 2038, and 2095.
