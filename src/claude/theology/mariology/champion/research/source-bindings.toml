@@ -1,0 +1,150 @@
+schema = 1
+record_type = "bindings"
+document = "theology/mariology/champion"
+
+# Claude edition. Bindings are catalog-level: the actual passage checks were
+# performed against downloaded OCR scans, rendered page images, and live web
+# pages (loci, URLs, resolutions, methods, and limits in
+# research/source-audit.md), not against registered artifact bytes, so no
+# acquisition, search, inspection, or verification state is claimed against the
+# source-library records themselves.
+
+[[bindings]]
+source_id = "edition.diocese-of-green-bay.decree-apparitions-1859-2010.english-shrine-web-2026-07-25"
+loci = [
+  "p. 4 (operative clause, date clause, signatures, chancellor's attestation)",
+  "p. 1 (title; the October 1859 recital; the quoted message with its ellipses)",
+  "pp. 1-2 (the healings recital and the 'none of these favors have been officially declared a miracle' sentence)",
+  "p. 2 (the 1871 fire recital)",
+  "p. 3 (three Marian experts; doctrinal finding; character finding; 'documents ... are not abundant'; the expert's coherence sentence)",
+  "p. 4 (the predecessor-bishops recital)",
+]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The controlling act, quoted at its operative clause in section 1 and analyzed in section 7. Page 4 has no text layer and was read entirely from a 150 dpi rendering; pages 1-3 were read in the text layer and spot-checked against 130 dpi renderings. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.holy-see.cdf-norms-apparitions-1978.english-vatican-web-2026-07-25"
+loci = [
+  "Preliminary Note, a)-c) (the three-step path and the pro nunc nihil obstare formula)",
+  "I.A (positive criteria) and the closing 'indicative ... cumulative' clause",
+  "I.B (negative criteria a-e)",
+  "II.2 (permission of cult is not approval of supernatural nature)",
+  "III.1 (the Ordinary of the place)",
+  "IV.1-2 (intervention and review by the Congregation)",
+]
+role = "official-control"
+states = ["cataloged"]
+context = "The procedural regime in force when the 2010 decree issued; collated with the decree's findings in section 7.2, applied to the decree's silences in section 7.3, and used for the competence question in section 7.5. Read 2026-07-25 at the live Vatican English page. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.holy-see.norms-supernatural-phenomena-2024.english-vatican-web-2026-07-25"
+loci = [
+  "presentation",
+  "n. 11",
+  "n. 13",
+  "nn. 16-23",
+  "art. 1",
+  "art. 2",
+  "art. 22",
+  "art. 27",
+]
+role = "official-control"
+states = ["cataloged"]
+context = "Current procedural law, used in sections 1, 7.5, and 8.4-8.5. The presentation supplies the pre-2024 practice by which bishops who sought the Dicastery's prior authorization were asked not to mention it, which is what makes the 2010 decree's silence about Rome uninformative, and its Gap 2007 and Gikongoro 2001 examples. n. 11 and nn. 16-23 supply the six conclusions and the rule that positive recognition of divine origin is not foreseen; n. 13 the canonization principle; arts. 1-2 the submission to and approval by the Dicastery; art. 22 the nihil obstat regime and its cautions; art. 27 the entire replacement of the 1978 Norms. The full text of Verbum Domini 14, quoted in sections 1 and 9.5, was read at note 24 of this same response. Read 2026-07-25 at the live Vatican English page. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.catholic-church.codex-iuris-canonici-1983.english-vatican-web-book-iv-1205-1243-2026-07-25"
+loci = ["canon-1230", "canon-1231", "canon-1232", "canon-1234"]
+role = "official-control"
+states = ["cataloged"]
+context = "The legal category of shrine and national shrine, used in section 8.1 to show that a conference's approval under can. 1231 governs the title of the place and cannot constitute an apparition judgment. Read 2026-07-25 at the live Vatican English page. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23"
+loci = ["60", "62"]
+role = "official-control"
+states = ["cataloged"]
+context = "The doctrinal boundary within which the reported message's 'Queen of Heaven who prays for the conversion of sinners' and the warning of punishment are read in section 9.4: the unique mediation of Christ, and the subordinate, wholly dependent character of Mary's maternal intercession. The registered edition is a Vatican English web state of 2026-07-23; this publication read the same Holy See English page on 2026-07-25 and observed no divergence at the cited paragraphs. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.eliza-allen-starr.patron-saints.baltimore-piet-1883-archive-scan"
+loci = [
+  "front matter (imprimatur; copyright entry of 1871; dedication dated All Saints 1869)",
+  "chapter 'St. Lioba', printed pp. 297-298 (the framing thesis and the Chicago parlour visit)",
+  "printed pp. 298-300 (the apparition narrative and the reported dialogue)",
+  "printed pp. 300-301 (the free school, the begging journey, and the annual Assumption procession)",
+]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The earliest published narrative located; quoted at length in section 3, used as the base text of the message stratigraphy in section 5.3, as the sole early witness to the 15 August commemoration in section 5.4, and for the institutional consequence in section 2.5. Front matter and printed pp. 298-301 read at 150 dpi; the 1871 copyright year was read on the page image because the OCR garbles it. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.eliza-allen-starr.patron-saints.chicago-1896-first-series-archive-scan"
+loci = [
+  "front matter ('PATRON SAINTS FIRST SERIES'; copyright 1881; imprimatur of the Archbishop of Chicago)",
+  "chapter 'St. Lioba', printed pp. 297-301",
+]
+role = "textual-control"
+states = ["cataloged"]
+context = "Independent printing used to control the 1883 text of the Adele Brise passage; the two OCR texts were compared line by line and no substantive variant was located. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.peter-pernin.finger-of-god-is-there.english-montreal-lovell-1874-cihm-scan"
+loci = [
+  "title page and the printed approbation of the Bishop of Montreal",
+  "printed p. 93 (Peshtigo as 'a modern Sodom in the sense that it can serve as an example to all')",
+  "Appendix, printed pp. 94-95 (the declared abridgement; the Belgian colony; Adele Brise; 'ten or twelve years ago'; the walk of seven miles and a-half)",
+  "printed pp. 95-97 (the three encounters and the reported dialogue)",
+  "printed pp. 97-99 (the school, the chapel on the spot, the tree, the six acres conveyed to the Bishop of Green Bay, the two annual processions, the five or six young women)",
+  "printed pp. 99-101 (the night of 8 October 1871 and the state of the enclosure at morning)",
+  "printed p. 101 ('Important consideration': no intention of pronouncing it a miracle; ecclesiastical authority has not yet spoken)",
+  "printed pp. 101-102 (the only pilgrimage of its kind in the United States)",
+]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The second earliest published narrative and the only early witness to the 1871 preservation; quoted in sections 4 and 6, used in the collation of section 5.2, for the 'Go, and fear nothing' stratum in section 5.3, for the institutional detail in section 2.5, and for the east-shore/west-shore distinction in section 6.1. Also the control against which the paragraph attributed to Pernin on the shrine's site is shown, in section 6.3, not to be his text. One damaged OCR line at p. 99 is expressly marked in the publication as a reconstruction from the French. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.peter-pernin.finger-of-god-is-there.french-montreal-senecal-1874-cihm-scan"
+loci = [
+  "title page (approbation of the Bishop of Montreal; Marinette fundraising statement)",
+  "Appendice, printed pp. 91-101 (collated clause by clause against the English printing)",
+  "printed p. 92 ('Il y a 10 ou 12 ans'; 'deux lieues et demi')",
+  "printed pp. 94-95 (the reported dialogue in French)",
+  "printed pp. 97-99 (the fire passage, including 'elle nous laissera bruler avec les autres' and 'Le matin venu, on constata')",
+  "printed pp. 99-100 ('Reflexion importante')",
+]
+role = "textual-control"
+states = ["cataloged"]
+context = "The French original of the same year, collated clause by clause against the English printing throughout the Appendix in sections 4 and 6; used to restore one damaged English line and to confirm that the French likewise contains no rain, no refugee crowd, no livestock, no well, and no convent. Recorded divergences are in research/source-audit.md. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.frank-tilton.sketch-of-the-great-fires-in-wisconsin.modern-reset-reproduction-archive-scan"
+loci = [
+  "Preface (the night of October 8th, 1871; more than a thousand dead; about four thousand homeless)",
+  "Map of the Burnt District of Wisconsin 1871 (Robinsonville within the shaded area on the east shore)",
+  "chapter XIV (the east-shore track; 'the largest settlements destroyed in this track of fire' including Robinsonville; the distinctness of the two firestorms; 'If a building escaped it was an exception to the general rule'; the Door County figures)",
+  "chapter XIV (the printed reading 'On the night of October 3d')",
+]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The contemporary compilation against which the Champion preservation tradition is tested in section 6.1, and the source of the bounded negative result reported in section 2.3. Read at 150 dpi. The artifact is a modern reset reproduction, not the 1871 imprint, and the publication carries that ceiling at every use, including for the 'October 3d' crux. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.western-historical-company.history-of-northern-wisconsin.chicago-1881-archive-ocr"
+loci = ["whole-volume OCR text", "Brown County biographical sketches, sketch of Silas L. Doyne"]
+role = "lead"
+states = ["cataloged"]
+context = "Bounded negative-search corpus for section 2.3: a literal, case-insensitive, single-physical-line search of the Internet Archive OCR text returned no hit for Brise, Brisse, Good Help, or Bon Secours, and exactly one hit for Robinsonville, in an unrelated biographical sketch. No search receipt is claimed against the source library, because the search was run over a downloaded OCR file rather than a registered indexable artifact; the method and its limits are recorded in research/source-audit.md and stated in the publication. Catalog-level binding."
+
+[[bindings]]
+source_id = "edition.national-shrine-of-our-lady-of-champion.apparition-narrative-and-timeline.english-web-2026-07-25"
+loci = [
+  "'Our Story': The Seer; The Apparition (the three encounters and the full received message); The Mission; The Fire (including the paragraph attributed to Fr Peter Pernin); The Declaration; the closing note on how the account was developed",
+  "'Shrine Historical Timeline': entries for 1831, 1855, 1859, 1861, 1864, 1869, 1871, 1880, 1885, 1890, 1896, 1902, 1929, 2010, 2016, 2023",
+  "'Solemnity of Our Lady of Champion': the 2023 word from the Dicastery for Divine Worship; the inaugural solemnity of 9 October 2023; the 8 October vigil; the title 'Servant of God Adele Brice'",
+]
+role = "reception"
+states = ["cataloged"]
+context = "The current custodial narrative, used at institutional-self-description ceilings throughout sections 5, 6, and 8, and collated in section 6.3 against the 1874 Pernin printings to show that the paragraph attributed to him is not his text. Read 2026-07-25. Catalog-level binding."
