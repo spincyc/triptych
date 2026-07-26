@@ -145,6 +145,12 @@ wording is taken from the page images rather than reconstructed.
 
 ## Review state
 
+Initial staleness/baseline review (2026-07-26): the complete authoring state,
+minimal-treatment candidate, and research-first rewrite were compared against
+GPT paired records and changed Catechism and LG records. The decree-first
+judgment, documentary strata, fire limit, private-Revelation boundary,
+jurisdiction, and rights qualifications agree in substance. No material change.
+
 Completed by this provider: retrieval and reading of the decree
 (including page-image reading of its unextractable operative page); full
 reading and collation of the Starr passage in two printings against

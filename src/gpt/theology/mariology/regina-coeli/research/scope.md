@@ -152,6 +152,11 @@ project translations or normalizations.
 
 ## Review and production state
 
+Staleness review (2026-07-26): old, minimally modified, and research-first
+treatments were compared against changed Catechism and LG records. Prayer text,
+seasonal handoff, discipline, translation, and rights remain unchanged. No
+material change.
+
 Completed before production: profile routing; source-family identification;
 page-image collation of the 1925 prayer; comparison with current official Latin
 and modern official English forms; current-discipline and seasonal-boundary
