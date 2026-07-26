@@ -142,6 +142,10 @@ ALTAR_SERVER_GUIDES_SHARED := $(shell find $(ALTAR_SERVER_GUIDES_ROOT)/shared -t
 	-name '*.pdf' -o -name '*.eps' \) 2>/dev/null | sort)
 ALTAR_SERVER_GUIDES_BUILD_PDFS := $(filter \
 	$(BUILD_ROOT)/liturgy/roman-rite/1962/reference/altar-server-guides/%,$(BUILD_PDFS))
+# 1962 proper full-text editions: each imports its study edition's sections and
+# format from the sibling leaf at the same id without the -full-text suffix.
+ROMAN_1962_FULL_TEXT_DOCUMENTS := $(filter \
+	liturgy/roman-rite/1962/propers/%-full-text,$(DOCUMENTS))
 SACRAMENT_ROOT := $(SOURCE_ROOT)/theology/sacraments
 SACRAMENT_SHARED := \
 	$(SACRAMENT_ROOT)/summary-preamble.tex \
@@ -679,6 +683,21 @@ $(ECCLESIASTICAL_LATIN_BUILD_PDFS): \
 	$(ECCLESIASTICAL_LATIN_SHARED) \
 	$(CURRICULUM_STRUCTURE_CHECKER) | check-curriculum-sources
 $(ALTAR_SERVER_GUIDES_BUILD_PDFS): $(ALTAR_SERVER_GUIDES_SHARED)
+# A 1962 proper is published as a study edition at the bare leaf id and a
+# full-text edition at the same id with a -full-text suffix. The full-text leaf
+# owns only its own main.tex, format.tex, generation metadata and appointed-text
+# sheet; every other section and the shared format come from the study leaf by
+# \input. REGISTER_DOCUMENT_SOURCES sees only the files inside one leaf, so the
+# cross-leaf import is declared here: editing a study-edition section must
+# rebuild both PDFs.
+define REGISTER_ROMAN_1962_FULL_TEXT_SOURCES
+$(BUILD_ROOT)/$(1).pdf: $(shell find $(SOURCE_ROOT)/$(patsubst %-full-text,%,$(1)) -type f \( \
+	-name '*.tex' -o -name '*.sty' -o -name '*.cls' -o -name '*.bib' -o \
+	-name '*.bst' -o -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' -o \
+	-name '*.pdf' -o -name '*.eps' \) 2>/dev/null | sort)
+endef
+$(foreach document,$(ROMAN_1962_FULL_TEXT_DOCUMENTS),\
+	$(eval $(call REGISTER_ROMAN_1962_FULL_TEXT_SOURCES,$(document))))
 $(BUILD_ROOT)/theology/sacraments-at-a-glance.pdf: $(SACRAMENT_SHARED) $(SACRAMENT_INITIATION_TABLE)
 $(BUILD_ROOT)/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass.pdf: \
 	$(SACRAMENT_ROOT)/summary-preamble.tex \
