@@ -1,0 +1,185 @@
+schema = 1
+record_type = "bindings"
+document = "articles/faith/four-last-things-01-death"
+
+[[bindings]]
+source_id = "edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581"
+loci = [
+  "Gen.2.16-17",
+  "Gen.3.17-19",
+  "Job.14.1-14",
+  "Ps.6.6",
+  "Ps.33.22",
+  "Ps.115.15",
+  "Eccles.7.2",
+  "Eccles.12.1-7",
+  "Wis.1.12-16",
+  "Wis.2.23-24",
+  "Wis.3.1-3",
+  "Wis.4.7",
+  "Ecclus.7.37-40",
+  "Ecclus.41.1-6",
+  "Matt.10.28",
+  "Luke.16.22-26",
+  "Luke.23.42-46",
+  "John.11.21-36",
+  "Rom.5.12",
+  "Rom.6.23",
+  "1Cor.15.21-26",
+  "1Cor.15.53-57",
+  "2Cor.5.1-10",
+  "Phil.1.21-24",
+  "1Thess.4.12-14",
+  "2Tim.1.9-10",
+  "Heb.2.14-15",
+  "Heb.9.27-28",
+  "James.5.14-16",
+  "Apoc.6.9-11",
+  "Apoc.14.13",
+]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Every scriptural quotation in the article comes from this registered electronic state of the Challoner Douay-Rheims and no other English Bible was used. On 2026-07-26 the authoring agent read each locus directly in the edition's tracked per-book verse-text artifacts (Genesis, Job, Psalms, Ecclesiastes, Wisdom, Ecclesiasticus, Matthew, Luke, John, Romans, 1 Corinthians, 2 Corinthians, Philippians, 1 Thessalonians, 2 Timothy, Hebrews, James, Apocalypse) and copied the wording verbatim. Chapter and verse are Vulgate numbering throughout, which the article states and which matters at Psalms, Ecclesiasticus, and 1 Thessalonians. Each quoted verse was also checked against this edition's registered american-edition-divergences table and none of them diverges from the American 1899 reading, a negative result the article's appendix records. The loci carry the article's scriptural argument at every level: the name of the last things and its setting among works of mercy (Ecclus 7.37-40); the threat and the sentence (Gen 2.16-17, 3.17-19); God made not death and man created incorruptible (Wis 1.13, 2.23-24); sin and death entering together and the wages of sin (Rom 5.12, 6.23); the Old Testament's reticence and its late development (Job 14, Ps 6.6, Eccles 12.7, Wis 3.1-3); the intermediate-state texts (Luke 16.22-26, 23.43, 2 Cor 5.1-10, Phil 1.21-24, Apoc 6.9-11); the two tenses about death (2 Tim 1.10, Heb 2.14-15, 1 Cor 15.21-26); the judgment clause and its argument (Heb 9.27-28); and the apostolic warrant for the anointing of the sick (James 5.14-15). The publication-local reading of the tracked artifacts is the verification ceiling asserted here: no Greek or Hebrew witness was examined at any locus, and the article says so."
+
+[[bindings]]
+source_id = "edition.catholic-church.vulgata-clementina.latin-sacredbible-web-2026-07-26"
+loci = ["Ecclus.7.40", "Ecclus.41.1-6"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The article quotes the Latin of Ecclesiasticus 7:40 (In omnibus operibus tuis memorare novissima tua, et in aeternum non peccabis) because the plural novissima is the source of the phrase 'the last things' and the English 'thy last end' obscures it. The authoring agent read the verse, and the adjacent 7:37-39 and 41:1-6, in this transcribed web state on 2026-07-26. The edition is registered separately from the hetzenauer-1914 printing precisely because the site's transcribed HTML is not that printing, as the printing's own edition record directs. No photographed page was collated for this locus; the publication-local reading of the transcription is the verification ceiling asserted here, and the article relies on the Latin only for the single word novissima and the wording of the one verse."
+
+[[bindings]]
+source_id = "edition.augustine.de-civitate-dei.dods-1871"
+loci = ["13.1", "13.2", "13.3", "13.4", "13.5", "13.6", "13.7", "13.8", "13.9", "13.10", "13.11"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Book XIII of the City of God is the article's principal patristic source and supplies four distinct arguments: the analysis of the death of the soul, the death of the body, and the death of the whole man (13.2); the insistence that bodily death is good to no one while it is being endured, and that the wrenching apart of soul and body jars horridly on nature (13.6); the account of why the baptized still die, with the martyr's inversion 'Die, that thou sin not' and the refusal to call death good in itself (13.4-13.5, 13.7); and the aporia about the moment of death, with life as a race toward death (13.9-13.11). On 2026-07-26 the authoring agent read the whole of chapters 1 to 11 in this edition's tracked transcription of the 1871 printing, volume I (artifact pg45304-body-lf), at artifact lines 20744 to 21195, and every quotation in the article was copied from those lines. Passage records registered with this revision fix the bounds and the checked wording for 13.2 and 13.11. No collation against the Latin or against the later NPNF English was performed, and the article identifies the Dods translation wherever it quotes. This binding records the edition-level dependence without claiming to have replayed any central artifact fingerprint."
+
+[[bindings]]
+source_id = "passage.augustine.de-civitate-dei.dods-1871.13.2"
+loci = ["13.2"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The article quotes Augustine's definition of the three deaths ('The death, then, of the soul takes place when God forsakes it, as the death of the body when the soul forsakes it. Therefore the death of both---that is, of the whole man---occurs when the soul, forsaken by God, forsakes the body') from this passage, whose bounds and checked wording were registered with this revision from artifact lines 20776-20781 inside the chapter body at 20768-20812. The quotation is the article's warrant for treating death as a relational term throughout, and for the claim that Augustine can describe bodily death without reference to sin and then treat its penal character as a further question. The binding is recorded at the cataloged state and pins no source fingerprint: the shared library's fingerprint query was unavailable while unrelated in-flight records elsewhere in the tree failed validation, so the publication-local reading of the tracked artifact at the registered bounds is the verification ceiling asserted here."
+
+[[bindings]]
+source_id = "passage.augustine.de-civitate-dei.dods-1871.13.11"
+loci = ["13.11"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The article quotes the aporia about the moment of death ('Between these two states the dying condition finds no place; for if a man yet lives, death has not arrived; if he has ceased to live, death is past. Never, then, is he dying') from this passage, registered with this revision from artifact lines 21128-21133 inside the chapter body at 21111-21195. The essay's synthesis about canon 1005 rests on this chapter and on the fact that Augustine leaves the aporia unresolved, keeping the customary usage on the warrant of Psalm 6:6. The binding is recorded at the cataloged state and pins no source fingerprint, for the reason given in the binding for 13.2; the publication-local reading of the tracked artifact at the registered bounds is the verification ceiling asserted here."
+
+[[bindings]]
+source_id = "edition.ante-nicene-fathers.volume-5.buffalo-1886"
+loci = ["de-mortalitate.1-10"]
+role = "context"
+states = ["cataloged"]
+context = "The article quotes Cyprian's De mortalitate 8 ('it disturbs some that this mortality is common to us with others'; the famine, the captivity, the shipwreck) and 9 (that the Christian 'must suffer more than others in the world') as a pastoral witness that the Christian claim about death alters the meaning and not the facts. The authoring agent read sections 1 to 10 on 2026-07-26 in New Advent's web transcription of this volume, at its Treatise 7 page, and did not obtain or hash the printed volume. The Latin was not consulted and no collation is claimed; the article identifies the translator (Wallis) and the volume. This is the article's weaker patristic witness by evidentiary route and is used only for the pastoral point, never for a doctrinal claim."
+
+[[bindings]]
+source_id = "edition.thomas-aquinas.summa-theologiae.english-newadvent-web-2026-07-25"
+loci = [
+  "I.75.4.corpus",
+  "I.75.6.corpus",
+  "I.89.1.corpus",
+  "I-II.85.5.corpus",
+  "I-II.85.5.reply-1",
+  "I-II.85.6.corpus",
+  "II-II.164.1.reply-1",
+  "III.50.2.corpus",
+  "III.50.3.corpus",
+]
+role = "textual-control"
+states = ["cataloged"]
+context = "These loci govern the article's adopted analysis of the composite, its dissolution, and the separated soul: that man is not a soul only (I.75.4) and that the human soul is incorruptible (I.75.6); that the separated soul understands in a changed mode and that to be separated from the body is not in accordance with its nature (I.89.1); that sin causes death only accidentally, by removing the obstacle of original justice, with the pillar-and-stone image and the reply explaining why the baptized still die (I-II.85.5 with ad 1); that man is naturally corruptible as regards his matter left to itself but not as regards his form, with the knife-and-rust comparison and the gift of original justice supplying the defect of nature (I-II.85.6); the compressed formula that death is both natural on account of a condition attaching to matter and penal on account of the loss of the divine favour (II-II.164.1 ad 1); and that in Christ's death the Godhead was separated neither from the flesh nor from the soul (III.50.2-3). The authoring agent read every locus in this registered English web state on 2026-07-26 and quoted from it verbatim. The article labels this material common or school theology at every appearance and never as defined doctrine. This binding remains at the edition level; no printed edition was collated and no artifact is retained, and the publication-local reading is the verification ceiling asserted here."
+
+[[bindings]]
+source_id = "edition.thomas-aquinas.summa-theologiae.latin-corpusthomisticum-web-2026-07-25"
+loci = ["I-II.85.6.corpus"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The article quotes the Latin of the natural/penal resolution (homo est naturaliter corruptibilis secundum naturam materiae sibi relictae, sed non secundum naturam formae; and Deus ... in ipsa institutione hominis supplevit defectum naturae, et dono iustitiae originalis dedit corpori incorruptibilitatem quandam ... Et secundum hoc dicitur quod Deus mortem non fecit, et quod mors est poena peccati), because the essay's synthesis turns on the words defectum and dono. The authoring agent read the Latin of I-II q. 85 in this registered web state on 2026-07-26. Only this locus was checked in Latin; the remaining Summa loci in the article were read in English alone, and the article's appendix says so."
+
+[[bindings]]
+source_id = "edition.thomas-aquinas.super-i-ad-corinthios.latin-corpusthomisticum-web-2026-07-26"
+loci = ["15.l2"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The article quotes, in Latin with labelled working glosses, the argument that the immortality of the soul cannot repair a denial of the bodily resurrection: that the soul is naturally united to the body and separated from it against its nature and per accidens, so that the soul stripped of the body is imperfect (anima ... separatur autem ab eo contra suam naturam, et per accidens; unde anima exuta a corpore, quamdiu est sine corpore, est imperfecta); the sentence anima mea non est ego with its context (anima autem cum sit pars corporis hominis, non est totus homo); and the premise that in the other life there are no meritorious works (in alia vita nulla sunt opera meritoria). The authoring agent read the passage on 2026-07-26 on the site page carrying chapters 11 to 16, which that site labels reportatio vulgata. The article states this transmission caveat wherever it quotes the passage and classifies the sentence as school theology whose fame exceeds its textual security. No printed edition was collated and no artifact is retained; the publication-local reading is the verification ceiling asserted here."
+
+[[bindings]]
+source_id = "edition.denzinger.enchiridion-symbolorum.latin-patristica-web-2026-07-25"
+loci = ["902", "990-991", "1000-1002", "1440-1441"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The article quotes four magisterial acts in Latin through this dated web presentation of the Latin Enchiridion: the Council of Vienne's definition that the rational or intellective soul is per se and essentially the form of the human body, with the note of heresy (DS 902); John XXII's declaration Ne super his of 3 December 1334 that the purified souls separated from their bodies see God and the divine essence face to face clearly, in so far as the state and condition of a separated soul allows (DS 990-991); Benedict XII's Benedictus Deus of 29 January 1336 defining that they see the divine essence with an intuitive and facial vision, no creature mediating, immediately after death and before the resumption of their bodies and the general judgment, and that those dying in actual mortal sin descend immediately to hell (DS 1000-1002); and the Fifth Lateran Council's Apostolici regiminis condemning the assertion that the intellective soul is mortal or one in all men and stating that it is immortal and individually multiplied (DS 1440-1441). The authoring agent fetched and read the page on 2026-07-26, one day after the date the registered edition records, and observed no material difference at these loci. The presentation does not name the printed edition it transcribes; it is used as a finding aid and a convenient Latin witness to acts that are themselves the article's cited authorities. No printed Denzinger was collated, and every English rendering of these loci in the article is a labelled working gloss except the central Benedictus Deus clause, which is quoted in the official English of CCC 1023. The publication-local reading is the verification ceiling asserted here."
+
+[[bindings]]
+source_id = "edition.council-of-trent.canones-et-decreta.english-waterworth"
+loci = ["sessio-5-canon-1", "sessio-5-canon-2", "sessio-13-canon-7"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The article quotes Trent's first canon on original sin (that Adam incurred, through the offence of that prevarication, the wrath and indignation of God, and consequently death, and that the entire Adam was changed in body and soul for the worse), the second canon's presupposition that bodily death was transmitted, the doctrine and four canons on extreme unction, and the chapter and canon on reserving the Eucharist and carrying it to the sick. The load-bearing locus is session XIV chapter III: 'this unction is to be applied to the sick, but to those especially who lie in such danger as to seem to be about to depart this life: whence also it is called the sacrament of the departing,' which the article uses to show that the restriction of the sacrament to the dying was custom rather than the council's teaching. On 2026-07-26 the authoring agent acquired the whole-volume OCR text of this printing from the Internet Archive item registered with this revision as a remote artifact, and read each locus in it. The promulgated text alone was read: the conciliar acts, schemata, and debates were not examined, which bounds the article's claim that canon 1 does not define the constitution of Adam's body."
+
+[[bindings]]
+source_id = "edition.council-of-trent.canones-et-decreta.latin-tauchnitz-1887"
+loci = ["sessio-5-canon-1"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The article quotes the Latin of Trent session V canon 1 (Si quis non confitetur, primum hominem Adam ... incurrisseque per offensam praevaricationis huiusmodi iram et indignationem Dei, atque ideo mortem, quam antea illi comminatus fuerat Deus ... anathema sit) and of session XIV chapter III on the time of anointing (esse hanc unctionem infirmis adhibendam, illis vero praesertim, qui tam periculose decumbunt, ut in exitu vitae constituti videantur, unde et sacramentum exeuntium nuncupatur), because the article's reading turns on the Latin construction infirmis ... illis vero praesertim being a preference within a class rather than a restriction of it. On 2026-07-26 the authoring agent acquired the whole-volume OCR text of this printing from the Internet Archive item registered with this revision as a remote artifact and read those loci in it. The OCR is damaged in places and the article corrects no reading silently; the quoted Latin was read in context and reported as it stands in that printing."
+
+[[bindings]]
+source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
+loci = ["362-368", "992-993", "1005-1019", "1020-1022", "1023", "1514-1532"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The article quotes the Catechism for the anthropology (365, the union of soul and body forming a single nature, citing Vienne; 366, the soul created immediately by God and immortal), the progressive revelation of the resurrection (992), the definition of death and its natural and penal aspects (1005, 1006, 1007, 1008), the transformation of Christian death (1009-1011), the end of the earthly pilgrimage and the exclusion of reincarnation (1013), the encouragement to prepare for the hour of death with the litany's petition against sudden death (1014), the In Brief paragraphs (1016, 1018), the commendation of the dying with the Prayer of Commendation from the Order of Christian Funerals (1020), the particular judgment (1021-1022 with its footnoted authorities), the Benedictus Deus definition in official English (1023), and the anointing of the sick and viaticum (1517, 1520-1525, 1528-1529). It also uses the arrangement of Articles 11 and 12 as evidence that the Catechism files death under the resurrection of the body rather than under life everlasting. The authoring agent fetched the relevant Vatican archive content pages publication-locally on 2026-07-26 and extracted the quoted paragraphs verbatim; the registered edition is the 2026-07-23 dated web state and no material difference was observed at the cited loci. IntraText delivery artifacts, including lowercased sentence-initial articles and spaced hyphens for dashes, are recorded in the audit and do not affect any quoted wording. No central artifact fingerprint is claimed; the publication-local check is the verification ceiling asserted here."
+
+[[bindings]]
+source_id = "edition.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23"
+loci = ["48", "49", "50"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The article uses Lumen gentium 48 for 'the single course of our earthly life' as quoted by CCC 1013, and 49-50 for the threefold state of the Church (exiles on earth, the dead being purified, and those in glory beholding clearly God himself triune and one, as he is) and for the Church's suffrages for the dead. The authoring agent fetched the Holy See English page publication-locally on 2026-07-26 and read the quoted wording verbatim; the registered edition is the 2026-07-23 dated web state and no material difference was observed at the cited loci."
+
+[[bindings]]
+source_id = "edition.second-vatican-council.gaudium-et-spes.english-vatican-web-2026-07-23"
+loci = ["14", "18"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The article quotes Gaudium et spes 14 ('Though made of body and soul, man is one') for the conciliar statement of the anthropology, and 18 for 'It is in the face of death that the riddle a human existence grows most acute' and for the phrase the Catechism cites, 'that bodily death from which man would have been immune had he not sinned.' The authoring agent fetched the Holy See English page publication-locally on 2026-07-26 and read the quoted wording verbatim; the registered edition is the 2026-07-23 dated web state and no material difference was observed at the cited loci. The English page prints 'the riddle a human existence' where the sense requires 'of'; the article quotes the sentence as printed."
+
+[[bindings]]
+source_id = "edition.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23"
+loci = ["73", "74"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The article quotes Sacrosanctum concilium 73 ('Extreme unction, which may also and more fittingly be called anointing of the sick, is not a sacrament for those only who are at the point of death') as the restoration of the wider rule that Trent had already stated, and 74 for the continuous rite that fixes the order confession, anointing, viaticum. The authoring agent fetched the Holy See English page publication-locally on 2026-07-26 and read the quoted wording verbatim; the registered edition is the 2026-07-23 dated web state and no material difference was observed at the cited loci."
+
+[[bindings]]
+source_id = "edition.congregation-for-the-doctrine-of-the-faith.recentiores-episcoporum-synodi.english-vatican-web-2026-07-26"
+loci = ["3", "4", "5"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The article quotes point 3 (the Church affirms that a spiritual element survives and subsists after death, endowed with consciousness and will, so that the human self subsists, and uses the word soul for it), point 4 (that the Church's prayers, funeral rites, and religious acts for the dead are in their substance loci theologici), and point 5 (that the glorious manifestation of the Lord is distinct and deferred with respect to the situation of people immediately after death), together with the letter's caution against arbitrary imaginative representations. These are the article's evidence that the magisterium has bounded, without condemning by name, the proposal that the resurrection occurs for each person at death. The authoring agent fetched the Holy See English page and read the whole letter on 2026-07-26; the edition registered with this revision is that dated web state. The article classifies the letter as authoritative non-definitive teaching and says expressly that it recalls rather than defines."
+
+[[bindings]]
+source_id = "edition.catholic-church.codex-iuris-canonici-1983.english-vatican-web-cann879-1007-2026-07-26"
+loci = ["canon-921", "canon-922", "canon-923", "canon-1004", "canon-1005", "canon-1006", "canon-1007"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The article quotes canon 1004 §§1-2 on the time and repetition of anointing, canon 1005 on administering the sacrament in a case of doubt whether the sick person is dead, and canons 921-922 on Viaticum and on not delaying it, urging that the sick be nourished while fully conscious. Canon 1005 carries the article's synthesis about law at a boundary that cannot be located. The authoring agent fetched the two Holy See English canon-range pages on 2026-07-26 and read the canons verbatim; the edition registered with this revision is that dated web state. The governing law is that of the Latin Church, in force since 27 November 1983, and the article states its as-of date, notes that the Latin text remains the law, and records that the Eastern code was not examined. The drafting history of canon 1005 was not examined, a limitation the article's synthesis block states as the finding that would defeat it."
+
+[[bindings]]
+source_id = "artifact.frances-m-m-comper.book-of-the-craft-of-dying.longmans-1917.ia-bookofcraftofdyi00caxtiala-djvu-text"
+loci = ["p3-4", "p5-8", "p9-20", "p22-23", "p27-28", "p32-33", "p48-51", "p55-91"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The article's treatment of the ars moriendi rests entirely on this tracked OCR text of Comper's 1917 edition, acquired and read on 2026-07-26. It quotes the prologue's address to laymen and its list of six chapters; chapter 1's commendation of death, including the Platonizing catalogue of death as 'a going out of prison ... a discharging of an heavy burden, that is the body ... paying of the debt of natural duty,' which supplies the article's title and its diagnosis of a drift away from the conciliar anthropology; chapter 2's five temptations, with the observation that men then rarely died of old age and that spiritual complacence besets the devout; chapter 3's seven interrogations attributed to Anselm; chapter 4's five acts of Christ on the cross; chapter 5's complaint about physicians, false comfort, and the Chancellor of Paris; the provision that the dying be exhorted 'by a priest, or for need by another'; and Comper's editorial note on authorship, transmission, and the block-books. The evidentiary limits are recorded in the article and in the artifact manifest: the bytes are uncorrected optical character recognition, the printed text is Comper's modernized spelling of Bodleian MS 423, and that text is itself an English translation of a lost anonymous Latin original. No manuscript and no Latin witness was consulted, so the article asserts nothing about the Latin wording. The tract's own attributions to Anselm, Scotus, Isidore, and an unnamed decretal are reported as the tract's claims and were not verified against those authors, another limit the article states. The article classifies the whole tradition as devotional literature of no doctrinal authority. The binding is recorded at the cataloged state and pins no source fingerprint: the shared library's fingerprint query was unavailable while unrelated in-flight records elsewhere in the tree failed validation. The artifact's exact SHA-256 and byte size are recorded in its own manifest and the payload is tracked, so the reading is reproducible from the repository."
+
+[[bindings]]
+source_id = "edition.catholic-encyclopedia.volume-4.new-york-1908"
+loci = ["denys-the-carthusian"]
+role = "lead"
+states = ["cataloged"]
+context = "The article cites this encyclopedia article for one bibliographic fact only: that among Denys the Carthusian's theological treatises is De quatuor novissimis, the title from which the fourfold enumeration of the last things takes its familiar shape. The authoring agent read the article on 2026-07-26 in New Advent's web transcription of the volume. The encyclopedia is a dated reference work and not a doctrinal authority; the article says so and makes no claim that Denys originated the enumeration. The printed page prints the title as 'De quatuor Novissimus', evidently for Novissimis, and the article records the discrepancy rather than silently correcting it. This is a lead-grade citation: no primary witness to Denys's treatise was examined."

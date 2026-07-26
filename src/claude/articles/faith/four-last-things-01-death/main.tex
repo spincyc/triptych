@@ -1,0 +1,80 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+\usepackage{endnotes}
+
+\hypersetup{
+  pdftitle={The Debt of Nature},
+  pdfsubject={A discursive essay on human death: the separation of soul and body, death as natural term and as the wage of sin, the state of the separated soul, the particular judgment, the ars moriendi, and the Church's practice for the dying. The Four Last Things, Volume One}
+}
+
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.14\textheight}
+{\large\scshape A Triptych Article\par}
+\vspace{1.5em}
+{\Huge\bfseries The Debt of Nature\par}
+\vspace{0.9em}
+{\Large On Human Death, and Why the Tradition Counts It First\par}
+\vspace{1.4em}
+{\normalsize\itshape The Four Last Things --- Volume One\par}
+\vfill
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{articles/faith/four-last-things-01-death/sections/00-the-verse-that-named-them}
+\input{articles/faith/four-last-things-01-death/sections/10-what-comes-apart}
+\input{articles/faith/four-last-things-01-death/sections/20-the-moment-no-one-occupies}
+\input{articles/faith/four-last-things-01-death/sections/30-two-questions}
+\input{articles/faith/four-last-things-01-death/sections/40-the-wage-and-the-enemy}
+\input{articles/faith/four-last-things-01-death/sections/50-what-the-soul-is-doing}
+\input{articles/faith/four-last-things-01-death/sections/60-judgment-at-the-door}
+\input{articles/faith/four-last-things-01-death/sections/70-the-craft}
+\input{articles/faith/four-last-things-01-death/sections/80-what-the-church-does}
+\clearpage
+\addcontentsline{toc}{section}{Notes}
+\begingroup
+\small
+\setlength{\parskip}{0.3em}
+\theendnotes
+\endgroup
+\clearpage
+\appendix
+\input{articles/faith/four-last-things-01-death/sections/85-weights-synopsis}
+\input{articles/faith/four-last-things-01-death/sections/90-scope-method-qualifications}
+\input{articles/faith/four-last-things-01-death/sections/99-references}
+\begingroup
+\setlength{\parskip}{0pt}
+\vspace{-0.6\baselineskip}
+\section{Generation Metadata}
+\vspace{-0.35\baselineskip}
+{\scriptsize\input{articles/faith/four-last-things-01-death/generation-metadata}}
+\endgroup
+\end{deepstudy}
+
+\end{document}
