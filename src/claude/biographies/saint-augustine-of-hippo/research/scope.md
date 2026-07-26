@@ -167,6 +167,12 @@ treated as a reuse license.
 
 ## Outstanding review
 
+## Staleness review — 2026-07-26
+
+Both candidates found 22.30 strengthens replayability while other new records
+change no claim. **No material change.** See
+`src/sources/inventories/augustine-jerome-staleness-review-2026-07-26.md`.
+
 - independent patristic/Augustine-specialist review;
 - independent theological review (grace, sacraments, ecclesiology,
   predestination, coercion);

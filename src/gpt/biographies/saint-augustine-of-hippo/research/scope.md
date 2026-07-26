@@ -186,4 +186,9 @@ Final-typography production review completed on 2026-07-19: a settled two-pass b
 
 ## Compact-rights-colophon production review — 2026-07-19
 
+## Staleness review — 2026-07-26
+
+Both candidates found no used locus or conclusion changed. **No material
+change.** See `src/sources/inventories/augustine-jerome-staleness-review-2026-07-26.md`.
+
 The settled 19-page PDF, SHA-256 `8d6f4a35bc4d23480008d518d4f91784fb554e5b41c1dc2aed70645f6059830f`, is the exact repository-reviewed build snapshot. The final log was warning-free; generation metadata, `qpdf` structure, PDF title/page metadata, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed their gates. Repository production review inspected every physical page; the compact final-page reuse-and-rights colophon is readable, unclipped, non-overlapping, remains with terminal content, and creates no rights-only spill page. The installed PDF is byte-identical to this reviewed build. This reviewed build supersedes every earlier production snapshot. This exact current snapshot has release-specific distribution clearance under the 20 July 2026 dated rights supplement. That operational decision supplies no independent review or ecclesiastical approval.

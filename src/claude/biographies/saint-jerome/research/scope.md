@@ -165,6 +165,12 @@ reuse license.
 
 ## Outstanding review
 
+## Staleness review — 2026-07-26
+
+Both candidates found new Catechism records do not bear CCC 133. **No material
+change.** See
+`src/sources/inventories/augustine-jerome-staleness-review-2026-07-26.md`.
+
 - independent patristic/Jerome-specialist review;
 - independent theological review (Mariology, asceticism, canon,
   grace/Pelagianism, veneration of saints);
