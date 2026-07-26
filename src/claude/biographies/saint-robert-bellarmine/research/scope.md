@@ -203,3 +203,10 @@ treated as a republication license.
 
 Internal checking does not constitute independent specialist, rights,
 or ecclesiastical review.
+
+## Research-staleness verdict — 2026-07-26
+
+Both candidates and the newly registered Acta inputs were compared. They
+strengthen official-act provenance without changing chronology, tradition
+status, source ceilings, or the mutable memorial boundary. This exact edition
+is ready for rebaselining.
