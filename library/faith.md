@@ -45,6 +45,6 @@
 
 | Publication | ChatGPT | Claude | Focus |
 | --- | --- | --- | --- |
-| **Two Missals, One Sacrifice** | [PDF](../doc/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice.pdf) | — | Comparison of the 1962 and postconciliar Roman Missals, their shared sacrificial center, and their differences. |
+| **Two Missals, One Sacrifice** | [PDF](../doc/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice.pdf) | [PDF](../doc/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice.pdf) · [Read](../web/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice.html) | Comparison of the 1962 and postconciliar Roman Missals, their shared sacrificial center, and their differences. |
 | **Council, Missal, and Crisis** | [PDF](../doc/gpt/articles/faith/council-missal-and-crisis.pdf) | [PDF](../doc/claude/articles/faith/council-missal-and-crisis.pdf) · [Read](../web/claude/articles/faith/council-missal-and-crisis.html) | Vatican I and II, Missal reform, institutional contraction, belief, and the SSPX rupture. |
 | **Freemasonry and the Catholic Church** | [PDF](../doc/gpt/articles/faith/freemasonry-and-the-catholic-church.pdf) | [PDF](../doc/claude/articles/faith/freemasonry-and-the-catholic-church.pdf) · [Read](../web/claude/articles/faith/freemasonry-and-the-catholic-church.html) | Masonic principles, Catholic teaching, spiritual claims, and current Church discipline. |
