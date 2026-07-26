@@ -1,7 +1,8 @@
 # Ninth Sunday after Pentecost — source audit
 
-Provider: Anthropic Claude. Every check recorded here was performed on
-**2026-07-25** against the named witness — a page image, a downloaded file, or
+Provider: Anthropic Claude. This record covers **both editions** of the guide;
+the full-text edition keeps no records of its own. Every check recorded here
+was performed on **2026-07-25** against the named witness — a page image, a downloaded file, or
 a live web text — unless a different date is stated. "Read as image" means a
 rendered page was looked at; "read as text" means a transcription or HTML text
 was read and no image was consulted. Nothing is recorded that did not happen,
@@ -23,20 +24,59 @@ tria mília` were re-read at 600 dpi because they are the points at which the
 two editions were expected to differ. The complete collation and the
 discrepancy table are in `../propers/verified.md`.
 
-## 2. The English translation — image collation
+## 2. The English of the appointed text — registered corpora
+
+Every English rendering of an appointed text comes from one of two records in
+the repository's reusable source library. Both are bound in
+`source-bindings.toml` with exact fingerprints; what follows is the delivery
+and the hazards actually met.
 
 | Witness | Delivery | Loci read | Role |
 | --- | --- | --- | --- |
-| Guéranger, *The Liturgical Year … Time after Pentecost*, vol. II, 2nd ed., tr. Laurence Shepherd (Stanbrook Abbey / Burns & Oates, 1909) | Internet Archive item `V11TheLiturgicalYear`; whole OCR downloaded for location, then **page images read** for every page actually cited; leaf-to-page offset established by reading leaf `n250` (printed p. 230) | Title page (leaf `n3`, imprint and translator verified); pp. 224, 229–230, 249, 250 read as images; pp. 225–226 read as text | **The only source of English for any appointed text** |
+| Douay-Rheims (Challoner), edition `…challoner-gutenberg-1581` | Exact tracked per-book TSV verse files, read as text; the book index, psalm-numbering concordance, verse-alias table and American-edition collation read first | Ps. 8:2; 18:9–12; 53:3, 6–7; 58:2 (Psalms file); Lk. 19:41–48; Jn. 6:51–59 and the chapter's 72-verse length; 1 Cor. 10:1–14 | **Source of English for every scriptural proper** |
+| Cummiskey, *The Roman Missal … for the use of the laity*, Philadelphia 1861, edition `…philadelphia-1861` | The registered project transcription `temporal-orations-en`, read as text; the parent OCR and page images were not re-opened | `post-pentecosten-09` collect, secret, postcommunion; `post-pentecosten-08` and `post-pentecosten-10` read to test the filing | **Source of English for all three orations** |
 
-The same volume's own commentary at pp. 224, 227 and 230 — "Israel had made
-himself the enemy of the Church", "the Jewish deicides", "the apostate nation"
-— was read on the images of pp. 224, 230 and as text at p. 227, and is quoted
-in the guide so that the translation source is not laundered.
+**Hazards met, and how each was handled.**
+
+1. The record's own warning is that the 1861 running head names the Sunday
+   beginning lower on the page and is off by one for the Secret and
+   Postcommunion. The transcription is therefore addressed by 1962 formulary,
+   not by that heading, and this guide verified by **printed Latin incipit**:
+   `Pateant` for the Collect and `Tui nobis` for the Postcommunion.
+2. **The Secret has no printed incipit**, so its `latin_incipit` field is
+   empty and it could not be verified the same way. It was verified instead by
+   matching its English clause for clause against the appointed Latin, and by
+   reading the six orations of the eighth and tenth Sundays to prove the filing
+   does not slip. All three orations occur exactly once in the whole file, so
+   no competing rendering of the same Latin under another formulary could have
+   been quoted by mistake.
+3. **Douay 1–2 Kings are modern 1–2 Samuel.** The guide's psalm-title
+   references cite both spellings and were checked against the book index.
+4. **Psalm numbering.** Vulgate numbers resolve directly, but the earlier state
+   of this guide labelled some psalm loci with the Hebrew number and others
+   with the English-convention number and called both "modern". The registered
+   concordance corrected all four. The page-2 sheet now prints the Vulgate
+   number with the English-convention equivalent, and the scope appendix
+   supplies the Masoretic series for the same four psalms.
+5. **The American-edition collation was consulted for every verse quoted.**
+   None of the eight loci is listed; two nearby inscription rows are, and both
+   are disclosed.
+6. **Four places where the registered English does not answer the Latin** were
+   found and are declared in the guide rather than filled: Ps. 53 has no
+   `protéctor meus, Dómine`; the Douay reads "judge me" where the Introit sings
+   `líbera me`; Jn. 6:57 has no `dicit Dóminus`; and the Offertory antiphon is
+   a centonisation with no continuous English counterpart. The 1861 Collect's
+   "that they may succeed in their desires" also shifts the subject of the
+   Latin's granting clause, and that is published at the point of use.
+
+| Retained as a reception witness only | Delivery | Loci read | Role |
+| --- | --- | --- | --- |
+| Guéranger, *The Liturgical Year … Time after Pentecost*, vol. II, 2nd ed., tr. Laurence Shepherd (Stanbrook Abbey / Burns & Oates, 1909) | Internet Archive item `V11TheLiturgicalYear`; whole OCR downloaded for location, then **page images read** for every page cited; leaf-to-page offset established by reading leaf `n250` (printed p. 230) | Title page (leaf `n3`, imprint and translator verified); pp. 224 and 230 read as images, p. 227 as text | **Supplies no English printed in this guide.** Cited only for its own commentary — "Israel had made himself the enemy of the Church", "the Jewish deicides", "the apostate nation" — as evidence of the devotional reception this guide reports and rejects |
 
 ## 3. Scripture — text checks
 
-All at drbo.org unless stated. Read as text.
+All at drbo.org unless stated; the English of the appointed passages comes from
+the registered Douay-Rheims corpus in §2, not from this table. Read as text.
 
 | Locus | Claim served |
 | --- | --- |

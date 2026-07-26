@@ -1,7 +1,8 @@
 % Claude 1962 proper guide, Ninth Sunday after Pentecost: leaf-local
-% typesetting primitives. This file owns presentation only. Every textual,
-% historical, exegetical, and rights judgment lives in the section files and
-% the leaf's research records.
+% typesetting primitives, shared by the study edition that owns this file and
+% by the sibling full-text edition, which inputs it. This file owns
+% presentation only. Every textual, historical, exegetical, and rights
+% judgment lives in the section files and the leaf's research records.
 %
 % Web-edition constraint: this leaf declares itself web-eligible, so it uses
 % no landscape environment, no multicols, and no TikZ. Any ordering that a
@@ -34,17 +35,48 @@
 % cross-references. Defined once so the abbreviations stay uniform.
 \newcommand{\cue}[1]{\textnormal{(\textit{#1})}}
 
-% The appointed Latin exactly as the controlling facsimile prints it. The
-% frame marks received liturgical text that is not project-owned expression;
-% the frame title carries the printed heading, the reference, and the marginal
-% number so a reader can find it in the book.
-\newenvironment{appointedlatin}[1]{%
-  \begin{massbox}{#1}\itshape}{\end{massbox}}
+% Keeps an element's heading, identification line and English block together.
+% A bare \sectionguard is not enough: the identification line and the framed
+% English are part of the same unit as the heading.
+\newcommand{\elementguard}{\Needspace{12\baselineskip}}
 
-% An identified public-domain human translation, never a project translation.
-% The title always names the translator and the printed page.
+% Element identification line. The study edition names every appointed element
+% by its Latin incipit, its printed heading and reference, and the missal's
+% marginal number, and then gives the text in English; it does not reproduce
+% the appointed Latin in full. The full-text edition prints the Latin inside
+% its own environment, which is defined in that leaf's format file.
+\newcommand{\elementid}[3]{%
+  \par{\small\latin{#1} \textperiodcentered{} #2 \textperiodcentered{} marginal no.~#3}\par}
+
+% An identified public-domain English witness, never a project translation.
+% The title always names the witness and the exact locus it was taken from.
 \newenvironment{namedtranslation}[1]{%
   \begin{sourcecard}{#1}\small}{\end{sourcecard}}
+
+% A place where the registered public-domain English does not answer the
+% appointed Latin. The gap is stated, never filled.
+\newcommand{\englishgap}[1]{\par\textbf{Where the registered English does not
+answer the Latin.} #1\par}
+
+% The two editions share every section file below. These two passages are the
+% only reader-facing text that differs between them, so each edition's format
+% file owns its own wording and the sections stay identical. The study edition
+% defines them here; the full-text edition redefines them in its own format
+% file.
+\newcommand{\latinpolicynote}{The complete appointed Latin, set beside the
+same English, is the business of the companion full-text edition of this
+guide, and the complete collated text is in \texttt{propers/verified.md}
+beside this document's source.}
+\newcommand{\editionnote}{\textbf{Which edition this is.} This is the
+\textit{study edition}. It names every appointed element by its Latin incipit,
+printed heading, reference and marginal number, gives its text in English from
+an identified public-domain witness, and quotes the appointed Latin only where
+an argument turns on the wording. It does not reproduce the appointed Latin in
+full. The companion \textit{full-text edition} of this guide, published at the
+same identity with a \texttt{-full-text} suffix, prints the complete appointed
+Latin with the same English and imports these sections unchanged. The two
+editions rest on one body of research, carry the same collation findings, and
+share one set of source records; nothing in either is a separate study.}
 
 % A witness dossier inside the detailed commentary: who, at what exact locus,
 % arguing what. The left rule keeps it distinct from surrounding synthesis
@@ -85,6 +117,16 @@
 % Full-width explanatory row inside a dossier.
 \newcommand{\dossierprose}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash}p{0.92\linewidth}@{}}{#1}\\[0.1em]}
 \newcommand{\dossierevent}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash}p{0.92\linewidth}@{}}{\textit{#1}}\\}
+
+% The corrected-attribution table. Its third column carries one word per row,
+% so it is narrow and the evidence column takes the width instead.
+\newenvironment{correctionstable}
+{\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.26\linewidth}>{\raggedright\arraybackslash}p{0.52\linewidth}>{\raggedright\arraybackslash}p{0.13\linewidth}}
+\toprule
+\textbf{The claim as usually made} & \textbf{What the sources actually show} & \textbf{Argued at}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
 
 % Reception matrix and comparison tables used in the detailed commentary.
 \newenvironment{receptiontable}[3]

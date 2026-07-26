@@ -1,8 +1,12 @@
 # Ninth Sunday after Pentecost — Verified Propers
 
 Facsimile-collated appointed text in liturgical order. This record is the text
-control for the guide. Reader-facing prose quotes only what an argument needs;
-this file carries the complete collated element.
+control for **both editions** of the guide: the study edition at
+`liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost`, which
+names each element by incipit and reference and gives its text in English, and
+the full-text edition at the same id with a `-full-text` suffix, which prints
+the complete Latin below beside that English. Nothing here changed when the
+presentation did.
 
 ## Provenance
 
@@ -314,6 +318,34 @@ are in the public domain; the project claims no rights in them and has not
 composed, translated, modernised, conflated, or adapted any of them. Both
 digitisations used above are third-party artifacts whose own rights status the
 source library records as **unresolved**; neither is redistributed here, and
-only focused extracts and citations are kept. Any English appearing in the
-guide is either an identified public-domain human translation, named at the
-point of use, or explicitly marked as close paraphrase for study.
+only focused extracts and citations are kept.
+
+Every English rendering of an appointed text in either edition comes from one
+of two registered public-domain witnesses, named at the point of use:
+
+- **Scriptural elements** — the Douay-Rheims as revised by Bishop Challoner
+  (1749–1752), edition
+  `edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581`,
+  which is the English of the Clementine Vulgate this missal prints. Loci
+  quoted: Ps. 8:2; 18:9–12; 53:3, 6–7; 58:2; Lk. 19:41–47; Jn. 6:57; 1 Cor.
+  10:6–13.
+- **Orations** — the anonymous English of the 1861 Philadelphia Cummiskey
+  *Roman Missal … for the use of the laity*, edition
+  `edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861`,
+  filed by 1962 formulary as `post-pentecosten-09` and confirmed on the
+  printed Latin incipits rather than on the 1861 book's own heading.
+
+**Four places where the registered English does not answer the Latin above.**
+They are declared in the guide and are not filled in by the project.
+
+1. The Introit's closing `protéctor meus, Dómine` has no counterpart in Ps. 53
+   and none in the Douay.
+2. The Introit's psalm verse sings `líbera me`; the Clementine, and therefore
+   the Douay, reads `judica me`, "judge me."
+3. The Communion's `dicit Dóminus` is not part of Jn. 6:57.
+4. The Offertory is a centonisation of four separated verse-parts, so the four
+   Douay verses are printed whole with the fragments marked rather than joined
+   into a continuous English sentence the project would itself have composed.
+
+The liturgical incipits `Fratres:` and `In illo témpore: Cum appropinquáret
+Iesus Ierúsalem` are the missal's own and are likewise not translated.
