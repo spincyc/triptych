@@ -1,4 +1,4 @@
-# In Support of the Particular
+# In Defense of the Particular
 
 *A companion essay in The Creature Before God*
 
@@ -192,7 +192,7 @@ The identified online witnesses were checked through 23 July 2026. No mutable ca
 
 ## Generation Metadata
 
-**Last revised (UTC):** 2026-07-23T13:23:48Z
+**Last revised (UTC):** 2026-07-26T03:15:03Z
 
 **Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 
