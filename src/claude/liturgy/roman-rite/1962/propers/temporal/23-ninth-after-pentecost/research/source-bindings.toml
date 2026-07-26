@@ -11,6 +11,12 @@ document = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"
 # Claim-level detail, exact page and column loci, delivery, and limits are in
 # research/source-audit.md; the complete collated text is in
 # propers/verified.md.
+#
+# This file covers both editions of this guide. The study edition at
+# liturgy/.../23-ninth-after-pentecost and the full-text edition at the same id
+# with a -full-text suffix are two publications drawn from one body of
+# research; the full-text edition imports the study edition's sections and
+# keeps no separate records, so its source use is bound here.
 
 [[bindings]]
 source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
@@ -72,3 +78,127 @@ states = ["cataloged", "inspected", "verified"]
 context = "The official English article was read directly for the finding that governs this guide's handling of the Gospel: the Council itself cites Lk. 19:44 at note 9 for « Jerusalem did not recognize the time of her visitation », and the same article states that the Jews are not to be presented as rejected or accursed by God, refuses to charge the Passion against all Jews then living or against the Jews of today, and decries hatred, persecutions and displays of anti-Semitism. This is a control on the publication's exposition, not a source for the formulary. Checked on the live official page; acquisition is not claimed."
 verified_on = "2026-07-25"
 source_fingerprint = "sha256:26f7b79da520af10951ca8153011f4c7309bc60c0e684e6f9a6a69fa99b4670b"
+
+
+# --- English of the appointed text -------------------------------------------
+# Under the profile's published-text-and-English rule the guide composes,
+# translates and paraphrases nothing. Scriptural propers take the
+# Douay-Rheims (Challoner), which is the English of the Clementine Vulgate the
+# missal prints; the orations take a registered public-domain hand missal,
+# addressed by 1962 formulary rather than by the missal's own heading.
+#
+# Both works declare a locus_pattern, so every locus below is a bare token in
+# that grammar. Loci are omitted for the three reference tables, whose rows are
+# not verse loci; what was read in them is stated in their context.
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+loci = ["Ps.8.2", "Ps.18.9-12", "Ps.53.3", "Ps.53.6-7", "Ps.58.2"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
+context = "Source of the published English of the four psalm chants: Ps. 8:2 is the whole Gradual, Ps. 18:9-12 the verses the Offertory centonises, Ps. 53:6-7 the Introit antiphon with Ps. 53:3 its psalm verse, and Ps. 58:2 the Alleluia verse. Every locus was read in the exact tracked verse file with its surrounding verses, and each Missal locus resolves directly because this edition's psalm numbers are the Vulgate/Septuagint numbers the Missal cites. Three findings are published from it. Ps. 8:2 carries both halves of the Gradual in a single verse, which independently confirms that the chant is one biblical verse divided at its own caesura. Ps. 53:3 reads 'and judge me in thy strength' - the Clementine's judica me - where the Introit sings libera me, so the Douay cannot be quoted for the missal's verb and the guide declares the gap instead of filling it. Ps. 53:6-7 has no counterpart to the antiphon's closing protector meus, Domine, which is likewise declared and left in Latin. The Offertory is not quoted continuously from this file: because the antiphon is a centonisation of vv. 9a, 10c, 11b and 12a, the four verses are printed whole with the fragments marked, so that no English sentence in either edition is a project-made join."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-49-luke-d8269c33"
+loci = ["Luke.19.41-47", "Luke.19.48"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:b6acab91674d3bbe04726da30c835175a133104d3db53fcf3f8e45b1d5b4ba6e"
+context = "Source of the published English of the Gospel; v. 48 was read for the boundary. The appointed pericope ends at v. 47a, and this edition's v. 47 continues into the chief priests' plot, so the English printed in the guide stops at the sentence 'And he was teaching daily in the temple.' and the remainder of the verse is described rather than printed. The file also witnesses collation divergence 6: the Douay begins v. 41 'And when he drew near', with no subject and no city, so the missal's liturgical incipit In illo tempore: Cum appropinquaret Iesus Ierusalem supplies words the evangelist does not have at this verse. Luke's short form of the Temple saying, without the 'for all nations' Mark keeps from Isaias, is visible in the same verses."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-50-john-27b8f3ed"
+loci = ["John.6.57", "John.6.51-59"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:4498ea55e49e3577649969ed0bcf456423b8aec2f9edda55586c37190dfe77a4"
+context = "Source of the published English of the Communion antiphon; vv. 51-59 were read for context and the chapter's length was counted. This edition's John 6 has 72 verses, the Clementine's count, so the Missal's reference Io. 6, 57 resolves to the file's own 6:57 without conversion and the guide's demonstration of the one-verse offset against the modern critical numbering is confirmed on the English side as well as the Latin. The verse carries no counterpart to the antiphon's dicit Dominus formula, which is therefore declared as a gap and left in Latin."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-53-1-corinthians-ffc4f260"
+loci = ["1Cor.10.6-13", "1Cor.10.1-5", "1Cor.10.14"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:86aa4aafa5cb1a66218d81b3f7735715d33eac0a1b62c9c471499728c0838a11"
+context = "Source of the published English of the Epistle; vv. 1-5 and 14 were read for the pericope's boundaries. The New Testament chapter and verse numbers of this edition agree with the modern ones here, so no conversion applies. The file witnesses collation divergence 4: v. 6 opens 'Now these things were done in a figure of us' - the Clementine's Haec autem in figura facta sunt nostri - which is exactly what the missal's liturgical Fratres: displaces, so the lesson begins mid-verse. The guide prints the English from that point with the displaced clause shown, and does not translate Fratres:."
+
+[[bindings]]
+source_id = "passage.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.ps-53.6-7"
+loci = ["Ps.53.6-7"]
+role = "translation-control"
+states = ["cataloged", "inspected", "verified"]
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:fff51c27ba897102b9d09c27a6d85eaa8f8bcec66bb3351704ab9c5f4363b0bd"
+context = "The registered passage record for the Introit antiphon's verses. Its transcription was compared line by line with the verse file bound above and agrees. Its context note supplies the three-series numbering the guide now publishes - the Vulgate and English-convention numbers on the page-2 dossier sheet, the Masoretic series in the scope appendix: Vulgate 53:6-7 is Hebrew 54:6-7 and English-convention 54:4-5, because the inscription occupies Vulgate vv. 1-2."
+
+[[bindings]]
+source_id = "passage.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.1cor-10.6-13"
+loci = ["1Cor.10.6-13"]
+role = "translation-control"
+states = ["cataloged", "inspected", "verified"]
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:69226f8d31bfd4219ffaa34e7ca9d9381a21e1c8573555c326c20d29b324ad8d"
+context = "The registered passage record for the Epistle. Its transcription was compared verse by verse with the verse file bound above and agrees. It is the record that fixes the pericope's English for both editions of this guide."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.psalm-numbering-ee3c7757"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:35b3e0cfee89512384b04367dd44575eed1f74943c9bef33b6470a044d00f18e"
+context = "The rows for Vulgate Psalms 8, 18, 53 and 58 were read to fix the psalm citations on the page-2 dossier sheet. They corrected an inconsistency carried by the earlier state of this guide, which labelled some psalm loci with the Hebrew number and others with the English-convention number and called both 'modern'. The guide now publishes all three series, the first two on the dossier sheet and the Masoretic one in the scope appendix: Ps. 8:2 Vulg. = Heb. 8:2 = Eng. 8:1; Ps. 18:9-12 = Heb. 19:9-12 = Eng. 19:8-11; Ps. 53:3, 6-7 = Heb. 54:3, 6-7 = Eng. 54:1, 4-5; Ps. 58:2 = Heb. 59:2 = Eng. 59:1. All four psalms are marked english_offset_uniform = yes, so the offsets hold from the head of each psalm."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.book-index-a7271aac"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:da9e5e9f9e1cf2c72dfc65a0405dd3897912f471a484c7f34933ccaf9d369f47"
+context = "The rows for Ps, Luke, John and 1Cor were read to resolve each Missal abbreviation to the right verse file before any English was quoted, and the rows for 1Kings and 2Kings were read for the naming trap. That trap bears on this guide: the commentary refers the Introit's psalm title to 1 Kings (1 Samuel) 23 and the Alleluia's to 1 Samuel 19:11, and the dossier sheet cites 1 Sam. 23:19, 26:1 and 19:11. The index confirms that Douay 1-2 Kings are modern 1-2 Samuel, so those citations point at the same narratives under two naming systems and the guide keeps both spellings visible."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-aliases-fef3f2ed"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:012886622a701436750b0a29c5909617731c6d2a83a40ee7ca0bd0b63c6e9df7"
+context = "The complete seven-row table was read before quoting, to establish that none of this formulary's loci is one of the places where this edition merges a verse the Clementine numbers separately. None of Ps. 8:2, Ps. 18:9-12, Ps. 53:3, Ps. 53:6-7, Ps. 58:2, Luke 19:41-47, John 6:57 or 1 Cor. 10:6-13 appears in it, so every Missal locus of this Mass resolves directly. The table's own limit is recorded with it and is not overstated here: it is complete against the engDRA comparison, not a proof that no further divergence exists."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.american-edition-divergences-a814cbcb"
+loci = [
+  "Ps.8.2", "Ps.18.9-12", "Ps.53.3", "Ps.53.6-7", "Ps.58.2",
+  "Luke.19.41-47", "John.6.57", "1Cor.10.6-13",
+  "Ps.8.1", "Ps.8.10", "Ps.18.6", "Ps.53.2", "Ps.58.1",
+  "Luke.19.1", "1Cor.10.27", "1Cor.10.32", "1Cor.10.33",
+]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:aa7e3d0c2f9121d818e1c4bc123ade5bbd1b5ac049dc18480aa4cf125e7aab36"
+context = "Consulted for every verse this guide quotes, as the artifact's own note requires of a consumer that must match a reader's printed Bible. Result: not one of the eight quoted loci is listed, so the 1899 American edition that most printed Douay-Rheims Bibles and drbo.org reproduce agrees word for word with the text published here at all of them, and the guide says so in its references. The nine further loci above are the rows the table does carry within the books this guide quotes; two of them are disclosed in the guide because it cites those verses. Ps. 53:2, the psalm inscription naming the Ziphites, carries a bracketed cross-reference in the vendored text that the American edition omits, and Ps. 58:1, the inscription naming Saul's watch, reads 'an inscription of It title' in the American witness against the vendored 'an inscription of a title'. Neither inscription is an appointed text; both are quoted only in the historical dossiers and the Alleluia's reception table."
+
+[[bindings]]
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+loci = [
+  "post-pentecosten-09/collect",
+  "post-pentecosten-09/secret",
+  "post-pentecosten-09/postcommunion",
+  "post-pentecosten-08",
+  "post-pentecosten-10",
+]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:cce6b5473906365bb5f402f0f1aa8403a135408cc439a43ff50c5a36ffc05d21"
+context = "Source of the published English of the Collect (printed p. 414), Secret and Postcommunion (both printed p. 415). The transcription is addressed by 1962 formulary rather than by the 1861 book's own heading, and the identification was confirmed on the printed Latin incipits, not on that heading: the collect row's incipit 'Pateant' answers Pateant aures misericordiae tuae and the postcommunion row's 'Tui nobis' answers Tui nobis, quaesumus, Domine. The Secret's incipit field is empty, because the 1861 book prints no incipit for it, so that one oration could not be confirmed by incipit; it was confirmed instead by matching its English clause for clause against the appointed Latin - frequently and worthily to celebrate these mysteries against haec digne frequentare mysteria, as many times as ... so often against quoties ... exercetur - and the six orations of the eighth and tenth Sundays were read to prove that the filing does not slip by one. All three orations occur once and only once in the whole file, so no competing rendering of the same Latin under another formulary could have been quoted by mistake. One divergence between the English and the Latin is published at the point of use in both editions: the Collect's 'that they may succeed in their desires' makes the petitioners the subject where ut petentibus desiderata concedas makes God the one who grants, so the guide conducts the grammatical argument on the Latin. The printing's abbreviated conclusion Thro'. is reproduced as printed and not expanded."
+
+[[bindings]]
+source_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.post-pentecosten-09"
+loci = ["post-pentecosten-09"]
+role = "translation-control"
+states = ["cataloged", "inspected", "verified"]
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:24e6aa02fe4139e704d5dccf884aa8cc8a78e6c760c9f9baace975362bac68a0"
+context = "The registered passage record for this formulary's three orations. Its three physical lines were read and agree with the artifact rows bound above. Its own note records that the correspondence to the 1962 formulary was established against the CMAA facsimile's embedded text layer rather than by page-image collation, and this guide does not upgrade that state: the English is quoted as a hand-missal witness, while the Latin it stands beside is controlled by the image collation recorded in propers/verified.md."

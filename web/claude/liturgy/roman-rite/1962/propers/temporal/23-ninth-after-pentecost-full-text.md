@@ -1,6 +1,6 @@
-# Ninth Sunday after Pentecost: 1962 Roman Missal Proper Guide (Study Edition)
+# Ninth Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full-Text Edition)
 
-*The study edition of a source-first companion to the temporal formulary DOMINICA NONA post Pentecosten, II classis, in the 1962 editio typica of the Missale Romanum. Each appointed element is named by its Latin incipit, printed heading, reference and marginal number, and given in English from the Douay-Rheims (Challoner) for the scriptural propers and the 1861 Cummiskey hand missal for the orations; the appointed Latin is quoted only where an argument turns on the wording, and is printed in full in the companion full-text edition. Carries the collation against the Vatican typical facsimile and a second 1962 edition, the ten divergences from the Clementine Vulgate, the scriptural and historical coordinates of every directly appointed passage, the movement of the assembled formulary, patristic and Thomistic reception at exact loci with four corrected attributions, the cultural afterlife of the appointed wording, and bounded editorial proposals*
+*The full-text edition of a source-first companion to the temporal formulary DOMINICA NONA post Pentecosten, II classis, in the 1962 editio typica of the Missale Romanum. It prints the complete appointed formulary early - the collated Latin of the Vatican typical edition beside the English of the Douay-Rheims (Challoner) for the scriptural propers and the 1861 Cummiskey hand missal for the orations, with every place the registered English does not answer the Latin marked and left open - and then carries the study edition's map, historical dossiers, thematic movement, detailed commentary, cultural gallery, editorial proposals, scope appendix and references by importing those files unchanged. Both editions rest on one body of research and carry the same ten divergences from the Clementine Vulgate and the same four corrected attributions*
 
 **Ninth Sunday after Pentecost**
 
@@ -55,6 +55,134 @@ Seven passages are directly appointed. Each has one dossier: a four-field summar
 | Epistle | 1 Cor. 10:6–13 | From Ephesus (1 Cor. 16:8), near present-day Selçuk, Türkiye, to Corinth in Greece | Third missionary journey, mid-AD 50s |
 | Pauline authorship is both traditional and the mainstream modern judgment, and *permanebo autem Ephesi* supplies the writing place. Paul writes into a church he had founded, mixed Jewish and Gentile, divided over food associated with idols. At 10:1 he calls the wilderness generation *patres nostri*: writer, recipients and narrated desert are three different places. |  |  |  |
 
+## The Appointed Formulary in Full {#the-appointed-formulary-in-full .unnumbered}
+
+Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prints it: the Latin of the Vatican *editio typica* exactly as the controlling facsimile has it, each element under its own printed heading, scriptural reference and marginal number, and beneath it the English of an identified public-domain witness. This is what the full-text edition exists for; a reader who came for the texts has them here.
+
+**Formulary.** *DOMINICA NONA post Pentecosten*, *II classis*, printed pp. 388–389, marginal nos. 1522–1531. Green follows the general rubrics for Sundays after Pentecost and is not printed on those pages. The formulary begins immediately after the Postcommunion of the Eighth Sunday (no. 1521) and ends immediately before the heading *DOMINICA DECIMA post Pentecosten* (no. 1532). Nothing between those boundaries is omitted here. It appoints no Tract, Sequence, second oration, blessing or ritual text, and no second Collect, Secret or Postcommunion.
+
+**The Latin.** Received liturgical text of the Roman Rite, in the public domain; the project claims no rights in it and has not composed, translated, modernised, conflated or adapted any of it. Every form below was visually collated at 300 and 600 dpi against the CMAA facsimile of the Vatican typical edition, and independently against page images of the 1962 Benziger *editio iuxta typicam*. Where the two editions differ, the Vatican typical reading is what appears here and the difference is tabulated in the detailed commentary.
+
+**The English.** Scriptural elements are the Douay–Rheims as revised by Bishop Challoner (1749–1752) — the English of the Clementine Vulgate the missal prints — in the Project Gutenberg e-text of that revision. The three orations are the anonymous English of *The Roman Missal translated into the English language for the use of the laity*, first revised edition (Philadelphia: Eugene Cummiskey, 1861), from the three lines that book supplies for this formulary, reproduced with its own nineteenth-century spelling and its abbreviated conclusion “Thro’.” Both are public domain in the United States. Neither is an official liturgical translation, and neither is the text of the 1962 books: this is a study companion, not an altar book or a hand missal. The project has translated nothing. Where the registered English does not answer the missal’s Latin — and it fails to at four points in this formulary — the gap is marked at the element and left open.
+
+### 1. Introit <span class="nodecor">(*Int.*)</span> {#introit-int. .unnumbered}
+
+> ***Ant. ad Introitum* — Ps. 53, 6-7 — marginal no. 1522**
+>
+> *Ecce Deus ádiuvat me, et Dóminus suscéptor est ánimæ meæ: avérte mala inimícis meis, et in veritáte tua dispérde illos, protéctor meus, Dómine. <span class="nodecor">Ps. ibid., 3</span> Deus, in nómine tuo salvum me fac: et in virtúte tua líbera me. ℣. Glória Patri.*
+
+> **English: Douay–Rheims (Challoner), Ps. 53:6–7 and 53:3**
+>
+> For behold God is my helper: and the Lord is the protector of my soul. Turn back the evils upon my enemies; and cut them off in thy truth. *Ps.* Save me, O God, by thy name, and judge me in thy strength. ℣. *Glória Patri.*
+
+**Where the registered English does not answer the Latin.** Three clauses of the antiphon are not answered by that English, and none of them is filled in here. The antiphon’s closing vocative *protéctor meus, Dómine* has no counterpart anywhere in Psalm 53, so the Douay has none either. The psalm verse sings *líbera me* where the Clementine, and therefore the Douay, reads *judica me*: the English above says “judge me,” the missal does not. And the Douay’s opening “For” renders the *enim* that the antiphon drops at v. 6. The doxology cue *Glória Patri* belongs to the Ordinary rather than to this formulary and is a scriptureless liturgical formula; no English is supplied for it here.
+
+### 2. Collect <span class="nodecor">(*Coll.*)</span> {#collect-coll. .unnumbered}
+
+> ***Oratio* — marginal no. 1523**
+>
+> *Páteant aures misericórdiæ tuæ, Dómine, précibus supplicántium: et, ut peténtibus desideráta concédas; fac eos, quæ tibi sunt plácita, postuláre. Per Dóminum nostrum.*
+
+> **English: Cummiskey (Philadelphia, 1861), Collect of this formulary, printed p. 414**
+>
+> May the ears of thy mercy, O Lord, be open to the prayers of thy suppliants: and, that they may succeed in their desires, make them ask those things that are agreeable to thee. Thro’.
+
+**Where the registered English does not answer the Latin.** Not a missing clause but a shifted subject, and it matters enough to flag beside the text. *Ut peténtibus desideráta concédas* makes God the one who grants — that *thou* mayst grant to those who ask the things they desire. The 1861 English makes the petitioners the ones who succeed. The rendering is quoted because it is the registered public-domain witness for this formulary; the argument built on the prayer’s grammar is conducted on the Latin, in the detailed commentary.
+
+### 3. Epistle <span class="nodecor">(*Ep.*)</span> {#epistle-ep. .unnumbered}
+
+> ***Léctio Epístolæ beáti Pauli Apóstoli ad Corínthios* — 1 Cor. 10, 6-13 — marginal no. 1524**
+>
+> *Fratres: Non simus concupiscéntes malórum, sicut et illi concupiérunt. Neque idolólatræ efficiámini, sicut quidam ex ipsis: quemádmodum scriptum est: Sedit pópulus manducáre et bíbere, et surrexérunt lúdere. Neque fornicémur, sicut quidam ex ipsis fornicáti sunt, et cecidérunt una die vigínti tria mília. Neque tentémus Christum, sicut quidam eórum tentavérunt, et a serpéntibus periérunt. Neque murmuravéritis, sicut quidam eórum murmuravérunt, et periérunt ab exterminatóre. Hæc autem ómnia in figúra contingébant illis: scripta sunt autem ad correptiónem nostram, in quos fines sæculórum devenérunt. Itaque qui se exístimat stare, vídeat ne cadat. Tentátio vos non apprehéndat, nisi humána: fidélis autem Deus est, qui non patiétur vos tentári supra id quod potéstis, sed fáciet étiam cum tentatióne provéntum, ut possítis sustinére.*
+
+> **English: Douay–Rheims (Challoner), 1 Cor. 10:6–13, from the point at which the lesson begins**
+>
+> … that we should not covet evil things, as they also coveted. Neither become ye idolaters, as some of them, as it is written: The people sat down to eat and drink and rose up to play. Neither let us commit fornication, as some of them committed fornication: and there fell in one day three and twenty thousand. Neither let us tempt Christ, as some of them tempted and perished by the serpents. Neither do you murmur, as some of them murmured and were destroyed by the destroyer. Now all these things happened to them in figure: and they are written for our correction, upon whom the ends of the world are come. Wherefore, he that thinketh himself to stand, let him take heed lest he fall. Let no temptation take hold on you, but such as is human. And God is faithful, who will not suffer you to be tempted above that which you are able: but will make also with temptation issue, that you may be able to bear it.
+
+**Where the registered English does not answer the Latin.** The lesson opens mid-verse. Where the missal prints its own liturgical address *Fratres:*, the Clementine has *Hæc autem in figúra facta sunt nostri* and the Douay has “Now these things were done in a figure of us” — the words displaced above by the ellipsis. *Fratres:* is the missal’s own and is not translated here.
+
+### 4. Gradual <span class="nodecor">(*Grad.*)</span> {#gradual-grad. .unnumbered}
+
+> ***Graduale* — Ps. 8, 2 — marginal no. 1525**
+>
+> *Dómine Dóminus noster, quam admirábile est nomen tuum in univérsa terra! ℣. Quóniam eleváta est magnificéntia tua super cælos.*
+
+> **English: Douay–Rheims (Challoner), Ps. 8:2**
+>
+> O Lord, our Lord, how admirable is thy name in the whole earth! ℣. For thy magnificence is elevated above the heavens.
+
+### 5. Alleluia <span class="nodecor">(*All.*)</span> {#alleluia-all. .unnumbered}
+
+> **Alleluia, no separate heading — Ps. 58, 2 — marginal no. 1526**
+>
+> *Allelúia, allelúia. ℣. <span class="nodecor">Ps. 58, 2</span> Eripe me de inimícis meis, Deus meus: et ab insurgéntibus in me líbera me. Allelúia.*
+
+> **English: Douay–Rheims (Challoner), Ps. 58:2, between the chant’s own acclamations**
+>
+> Alleluia, alleluia. ℣. Deliver me from my enemies, O my God; and defend me from them that rise up against me. Alleluia.
+
+### 6. Gospel <span class="nodecor">(*Gosp.*)</span> {#gospel-gosp. .unnumbered}
+
+> ***✠ Sequéntia sancti Evangélii secúndum Lucam* — Luc. 19, 41-47 — marginal no. 1527**
+>
+> *In illo témpore: Cum appropinquáret Iesus Ierúsalem, videns civitátem, flevit super illam, dicens: Quia si cognovísses et tu, et quidem in hac die tua, quæ ad pacem tibi, nunc autem abscóndita sunt ab óculis tuis. Quia vénient dies in te: et circúmdabunt te inimíci tui vallo, et circúmdabunt te: et coangustábunt te úndique: et ad terram prostérnent te, et fílios tuos, qui in te sunt, et non relínquent in te lápidem super lápidem: eo quod non cognóveris tempus visitatiónis tuæ. Et ingréssus in templum, cœpit eícere vendéntes in illo, et eméntes, dicens illis: Scriptum est: Quia domus mea domus oratiónis est. Vos autem fecístis illam spelúncam latrónum. Et erat docens cotídie in templo.*
+
+> **English: Douay–Rheims (Challoner), Lk. 19:41–47a**
+>
+> And when he drew near, seeing the city, he wept over it, saying: If thou also hadst known, and that in this thy day, the things that are to thy peace: but now they are hidden from thy eyes. For the days shall come upon thee: and thy enemies shall cast a trench about thee and compass thee round and straiten thee on every side, And beat thee flat to the ground, and thy children who are in thee. And they shall not leave in thee a stone upon a stone: because thou hast not known the time of thy visitation. And entering into the temple, he began to cast out them that sold therein and them that bought. Saying to them: It is written: My house is the house of prayer. But you have made it a den of thieves. And he was teaching daily in the temple.
+
+**Where the registered English does not answer the Latin.** The missal’s *In illo témpore: Cum appropinquáret Iesus Ierúsalem* names a subject and a city that Luke does not name at v. 41; the Clementine reads *Et ut appropinquávit* and the Douay accordingly begins “And when he drew near.” The liturgical incipit is the missal’s own and is not translated here. The reading stops at v. 47a: the Douay’s v. 47 continues “And the chief priests and the scribes and the rulers of the people sought to destroy him,” and the missal cuts before it.
+
+**Rubric as printed:** *Credo.* Printed on its own line immediately after the Gospel. A direction, not a text: the Creed itself is in the Ordinary.
+
+### 7. Offertory <span class="nodecor">(*Off.*)</span> {#offertory-off. .unnumbered}
+
+> ***Antiphona ad Offertorium* — Ps. 18, 9, 10, 11 et 12 — marginal no. 1528**
+>
+> *Iustítiæ Dómini rectæ, lætificántes corda, et iudícia eius dulcióra super mel et favum: nam et servus tuus custódit ea.*
+
+> **English: Douay–Rheims (Challoner), Ps. 18:9–12 in full, with the four fragments the antiphon takes in bold**
+>
+> **v. 9** **The justices of the Lord are right, rejoicing hearts:** the commandment of the Lord is lightsome, enlightening the eyes. **v. 10** The fear of the Lord is holy, enduring for ever and ever: **the judgments of the Lord** are true, justified in themselves. **v. 11** More to be desired than gold and many precious stones: and **sweeter than honey and the honeycomb.** **v. 12** **For thy servant keepeth them,** and in keeping them there is a great reward.
+
+**Where the registered English does not answer the Latin.** This antiphon is not a quotation but a centonisation, which is why the missal prints four verse numbers instead of a range: it takes v. 9a, the subject *iudicia* from v. 10c, the honey comparison from v. 11b, and v. 12a. The four Douay verses are therefore printed whole with the fragments marked, rather than stitched into a seamless English paragraph that the project would itself have composed. Read in the antiphon’s own order the fragments say: the justices of the Lord are right, rejoicing hearts, and the judgments of the Lord sweeter than honey and the honeycomb; for thy servant keepeth them. One further difference is invisible in English: the missal writes *nam et* where the psalm has *Etenim*, and the Douay reads “For” either way.
+
+### 8. Secret <span class="nodecor">(*Sec.*)</span> {#secret-sec. .unnumbered}
+
+> ***Secreta* — marginal no. 1529**
+>
+> *Concéde nobis, quæsumus, Dómine, hæc digne frequentáre mystéria: quia, quóties huius hóstiæ commemorátio celebrátur, opus nostræ redemptiónis exercétur. Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte.*
+
+> **English: Cummiskey (Philadelphia, 1861), Secret of this formulary, printed p. 415**
+>
+> Grant us, O Lord, we beseech thee, frequently and worthily to celebrate these mysteries: for as many times as this commemorative sacrifice is celebrated, so often is the work of our redemption performed. Thro’.
+
+The typical edition prints the long conclusion here, breaking off at *in unitáte* for the celebrant to complete from the Ordinary; Benziger prints only *Per Dóminum*, and the 1861 hand missal only “Thro’.” The 1861 rendering splits the single verb *frequentáre* and the adverb *digne* into “frequently and worthily to celebrate.”
+
+**Rubric as printed:** *Præfatio de Ssma Trinitate.* Printed immediately after the Secret, with *Ssma* under a tilde abbreviation for *Sanctissima*: the Preface of the Most Holy Trinity, which is in the Ordinary. Expanded here from the same book’s own abbreviation practice.
+
+### 9. Communion <span class="nodecor">(*Comm.*)</span> {#communion-comm. .unnumbered}
+
+> ***Ant. ad Communionem* — Io. 6, 57 — marginal no. 1530**
+>
+> *Qui mandúcat meam carnem, et bibit meum sánguinem, in me manet, et ego in eo, dicit Dóminus.*
+
+> **English: Douay–Rheims (Challoner), Jn. 6:57**
+>
+> He that eateth my flesh and drinketh my blood abideth in me: and I in him.
+
+**Where the registered English does not answer the Latin.** The antiphon’s closing *dicit Dóminus* is the liturgy’s own attribution formula, not part of John 6:57, and therefore not in the Douay. The antiphon also reads *et ego in eo* where the Clementine has *et ego in illo*; the English is “and I in him” either way. The reference *Io. 6, 57* is the Clementine’s verse number, which the Douay–Rheims shares; most current editions number the same clause 6:56.
+
+### 10. Postcommunion <span class="nodecor">(*Postcomm.*)</span> {#postcommunion-postcomm. .unnumbered}
+
+> ***Postcommunio* — marginal no. 1531**
+>
+> *Tui nobis, quæsumus, Dómine, commúnio sacraménti, et purificatiónem cónferat, et tríbuat unitátem. Per Dóminum nostrum.*
+
+> **English: Cummiskey (Philadelphia, 1861), Postcommunion of this formulary, printed p. 415**
+>
+> May the participation of this thy sacrament, O Lord, we beseech thee, both purify us, and unite us. Thro’.
+
 ## The Propers: Themes and Movement {#the-propers-themes-and-movement .unnumbered}
 
 > **Governing thesis**
@@ -105,7 +233,7 @@ The Communion says how that work reaches one person: by eating and drinking, in 
 
 ## The Propers: Detailed Commentary {#the-propers-detailed-commentary .unnumbered}
 
-Each appointed element is named by its Latin incipit, its printed heading and reference, and the missal’s marginal number; its text is then given in English, quoted from an identified public-domain witness; and the evidence follows. Latin is quoted only where an argument turns on the wording. The complete appointed Latin, set beside the same English, is the business of the companion full-text edition of this guide, and the complete collated text is in `propers/verified.md` beside this document’s source.
+Each appointed element is named by its Latin incipit, its printed heading and reference, and the missal’s marginal number; its text is then given in English, quoted from an identified public-domain witness; and the evidence follows. Latin is quoted only where an argument turns on the wording. This is the full-text edition, so the complete appointed Latin has already been printed above, in liturgical order and beside the same English; the commentary quotes it again only where an argument turns on the wording.
 
 **Where the English comes from, and what it is not.** Scriptural elements — Introit, Gradual, Alleluia, Epistle, Gospel, Offertory, Communion — are given in the Douay–Rheims as revised by Bishop Challoner (1749–1752), which is the English of the Clementine Vulgate the missal prints, in the Project Gutenberg e-text of that revision. The orations — Collect, Secret, Postcommunion — are given in the anonymous English of *The Roman Missal translated into the English language for the use of the laity*, first revised edition (Philadelphia: Eugene Cummiskey, 1861), quoted from the three lines that book supplies for this formulary. Both are in the public domain in the United States. Neither is an official liturgical translation, and this guide has composed, translated, adapted and paraphrased nothing: where the registered English does not answer the missal’s Latin, the gap is stated and left open.
 
@@ -154,7 +282,7 @@ Each of these is a claim a reasonable guide could make from the standard deliver
 | “Augustine cites the one bread of 1 Cor. 10:17 in Tractates 26 and 27” | The citation is in Tractate 26 only. Tractate 27 turns the clause into a test of reception and does not quote it | Communion |
 | “Bede’s exposition of this pericope …” | Bede’s Lucan exposition of Lk. 19:41–47 is substantially Gregory’s Homily 39, close enough that whole clauses recur verbatim. What is Bede’s own is the Exodus 12 typology at the end | Gospel |
 
-### Introit <span class="nodecor">(*Int.*)</span> {#introit-int. .unnumbered}
+### Introit <span class="nodecor">(*Int.*)</span> {#introit-int.-1 .unnumbered}
 
 *Ecce Deus ádiuvat me* *Ant. ad Introitum* — Ps. 53, 6-7, with *Ps. ibid.,* 3 marginal no. 1522
 
@@ -178,7 +306,7 @@ That English is the English of the psalm, and at three points it is not the Engl
 
 > **Theodoret of Cyrus, *Interpretatio in Psalmos* 53 (PG 80, cols. 1265–1268) — Greek-tradition sample** Theodoret sets the psalm historically among the Ziphites who “feigned friendship” and betrayed David’s hiding place, then makes it deliberately general: David offered it as instruction so that anyone under unjust attack might pray it. He reads the opening clause as confidence in help coming before long. Alone among the four witnesses here he reads *in veritáte tua* — the Introit’s own text — and takes it, strikingly, as addressed to the Holy Spirit. *Source limit:* Theodoret was consulted in Robert Hill’s modern English translation, which is in copyright; he is therefore summarised and not quoted, and the PG column numbers above are those printed inline in that translation, not read off a Migne scan.
 
-### Collect <span class="nodecor">(*Coll.*)</span> {#collect-coll. .unnumbered}
+### Collect <span class="nodecor">(*Coll.*)</span> {#collect-coll.-1 .unnumbered}
 
 *Páteant aures misericórdiæ tuæ* *Oratio*, composed oration marginal no. 1523
 
@@ -196,7 +324,7 @@ That is why this Collect belongs in front of this Epistle. The wilderness genera
 
 *Source boundary.* No patristic or medieval commentary on this oration’s wording was located; composed Roman collects of this type carry no ancient commentary tradition comparable to that on the Scriptures. The analysis above rests on the printed Latin, its punctuation, and its juxtaposition, and is offered as source-grounded synthesis rather than documented reception.
 
-### Epistle <span class="nodecor">(*Ep.*)</span> {#epistle-ep. .unnumbered}
+### Epistle <span class="nodecor">(*Ep.*)</span> {#epistle-ep.-1 .unnumbered}
 
 *Fratres: Non simus concupiscéntes malórum* *Léctio Epístolæ beáti Pauli Apóstoli ad Corínthios* — 1 Cor. 10, 6-13 marginal no. 1524
 
@@ -228,7 +356,7 @@ That is why this Collect belongs in front of this Epistle. The wilderness genera
 
 **The verse the twentieth century mislearned.** Verse 13 says four things, and popular usage keeps only a garbled third. It says that the testing which has taken hold of the Corinthians is *humána* — on human scale, the common lot. It says the ground of confidence is God’s fidelity, not the hearer’s capacity: *fidélis autem Deus est*. It says God will not permit a testing *supra id quod potéstis* — and *potéstis* is plural throughout, addressed to a community, not to an isolated sufferer, a fact the Douay’s “you” cannot show and the modern reader’s “you” actively hides. And it says that God *makes* something with the testing, a *provéntum*: an outcome, an issue, a way through, which is supplied rather than found. The Douay renders it “issue.” What the verse does not say is that every affliction has been measured to what one person can privately bear.
 
-### Gradual <span class="nodecor">(*Grad.*)</span> {#gradual-grad. .unnumbered}
+### Gradual <span class="nodecor">(*Grad.*)</span> {#gradual-grad.-1 .unnumbered}
 
 *Dómine Dóminus noster* *Graduale* — Ps. 8, 2 marginal no. 1525
 
@@ -246,7 +374,7 @@ Here the chant and the Vulgate agree exactly, and the Douay silently proves the 
 
 **Why this psalm answers this Epistle.** Psalm 8 is the psalm of human smallness under a sky, and its continuation — “What is man, that thou art mindful of him?” — is quoted verbatim in Hebrews 2:6–8, where the argument turns on the fact that we do not yet see all things subject to him. The Gradual quotes only v. 2 and this guide claims no more than v. 2 for the liturgy. But the appointed verse comes from a poem whose next move is exactly the move the Epistle has just demanded: stop estimating your own standing.
 
-### Alleluia <span class="nodecor">(*All.*)</span> {#alleluia-all. .unnumbered}
+### Alleluia <span class="nodecor">(*All.*)</span> {#alleluia-all.-1 .unnumbered}
 
 *Eripe me de inimícis meis* Alleluia, no separate heading — Ps. 58, 2 marginal no. 1526
 
@@ -268,7 +396,7 @@ Two things follow. The reading is not one author’s idiosyncrasy: a Greek Antio
 
 *Negative result.* Aquinas wrote no commentary on this psalm. His *Super Psalmos* breaks off at Psalm 54 with *Deo gratias*, and the appointed Alleluia therefore has no Thomistic exposition to compare. Bellarmine is the later Doctoral witness in its place.
 
-### Gospel <span class="nodecor">(*Gosp.*)</span> {#gospel-gosp. .unnumbered}
+### Gospel <span class="nodecor">(*Gosp.*)</span> {#gospel-gosp.-1 .unnumbered}
 
 *Cum appropinquáret Iesus Ierúsalem* *✠ Sequéntia sancti Evangélii secúndum Lucam* — Luc. 19, 41-47 marginal no. 1527
 
@@ -351,7 +479,7 @@ The point is not that the Fathers must be edited. It is that the pericope’s ow
 
 *Et erat docens cotídie in templo*, “And he was teaching daily in the temple.” The imperfect periphrastic is durative: not “he taught” but “he was teaching, daily,” and the Douay’s English happens to preserve it exactly. Gregory reads it as grace following discipline, and glosses it in the moral pass as *quotidie Veritas in templo docet* — when Truth patiently instructs the mind of the faithful to avoid evil, Truth is teaching daily in the temple. The missal’s decision to end the reading here, rather than four words later where the plot begins, means the assembly’s last impression of the day’s Gospel is of a teacher who did not leave.
 
-### Offertory <span class="nodecor">(*Off.*)</span> {#offertory-off. .unnumbered}
+### Offertory <span class="nodecor">(*Off.*)</span> {#offertory-off.-1 .unnumbered}
 
 *Iustítiæ Dómini rectæ* *Antiphona ad Offertorium* — Ps. 18, 9, 10, 11 et 12 marginal no. 1528
 
@@ -377,7 +505,7 @@ Read in the antiphon’s order the four fragments say: the justices of the Lord 
 
 **A variant that changes the mood.** Dom Dominic Johner, comparing the Missal with Dom Pothier’s *Liber Gradualis* of 1883 and 1895, observes that the older chant books close this Offertory in the sixth mode and require *custodiet* — “he *will* keep them,” a resolve — whereas the Missal prints the indicative *custódit*. On the older reading, he says, the melody’s close on the half tone “is far removed from victorious certainty. It sounds like a fervent petition.” Of this Sunday specifically he writes only that, after the threatened destruction of the city in the Gospel, the piece is to be sung “in a somewhat more subdued fashion.” *Rights note:* Johner’s book was published in the United States in 1940; a search of the standard renewal record found no renewal, which points to but does not establish public-domain status, so he is paraphrased and quoted only in short compass.
 
-### Secret <span class="nodecor">(*Sec.*)</span> {#secret-sec. .unnumbered}
+### Secret <span class="nodecor">(*Sec.*)</span> {#secret-sec.-1 .unnumbered}
 
 *Concéde nobis, quæsumus, Dómine* *Secreta*, composed oration marginal no. 1529
 
@@ -393,7 +521,7 @@ The typical edition prints the long conclusion here — *Per Dóminum nostrum Ie
 
 The rubric *Præfatio de Ssma Trinitate* — the Preface of the Most Holy Trinity — is printed immediately after this prayer, with *Ssma* under a tilde abbreviation for *Sanctissima*.
 
-### Communion <span class="nodecor">(*Comm.*)</span> {#communion-comm. .unnumbered}
+### Communion <span class="nodecor">(*Comm.*)</span> {#communion-comm.-1 .unnumbered}
 
 *Qui mandúcat meam carnem* *Ant. ad Communionem* — Io. 6, 57 (Clementine; 6:56 in the modern critical numbering) marginal no. 1530
 
@@ -419,7 +547,7 @@ The antiphon also reads *et ego in eo* where the Clementine Vulgate reads *et eg
 
 Johner hears the same structure in the melody, and the observation is worth recording because it is arrived at independently of the exegesis: the descending fourth at *in me manet* is answered by a rising fourth at *ego in eo*, “thus both thoughts are placed in strong relief: Thou in me and I in Thee.”
 
-### Postcommunion <span class="nodecor">(*Postcomm.*)</span> {#postcommunion-postcomm. .unnumbered}
+### Postcommunion <span class="nodecor">(*Postcomm.*)</span> {#postcommunion-postcomm.-1 .unnumbered}
 
 *Tui nobis, quæsumus, Dómine* *Postcommunio*, composed oration marginal no. 1531
 
@@ -535,7 +663,7 @@ Three verified afterlives of wording from the scriptural propers, each one a use
 
 **As of 25 July 2026.** Everything below states the boundaries of this guide as at that date. Retrieval mechanics, checksums, query detail, discarded leads, and the full reception and proposal audits are in `propers/verified.md` and `research/scope.md` beside this document’s source; they are not repeated here.
 
-**Which edition this is.** This is the *study edition*. It names every appointed element by its Latin incipit, printed heading, reference and marginal number, gives its text in English from an identified public-domain witness, and quotes the appointed Latin only where an argument turns on the wording. It does not reproduce the appointed Latin in full. The companion *full-text edition* of this guide, published at the same identity with a `-full-text` suffix, prints the complete appointed Latin with the same English and imports these sections unchanged. The two editions rest on one body of research, carry the same collation findings, and share one set of source records; nothing in either is a separate study.
+**Which edition this is.** This is the *full-text edition*. It prints the complete appointed formulary — the Latin of the 1962 Vatican *editio typica* with the English of the registered public-domain witnesses — as its own third section, and then carries the study edition’s map, dossiers, commentary and apparatus unchanged, by importing those files rather than restating them. The *study edition*, at the same identity without the `-full-text` suffix, is identical except that it does not print the appointed Latin in full. Both rest on one body of research, carry the same collation findings, and share one set of source records, which are kept with the study edition.
 
 **Edition and formulary identity.** The work is the temporal formulary printed *DOMINICA NONA post Pentecosten*, *II classis*, on pp. 388–389 of the 1962 *editio typica* of the *Missale Romanum* (Vatican City: Typis Polyglottis Vaticanis), with marginal numbers 1522–1531. Green follows the general rubrics for Sundays after Pentecost and is not printed on those pages. The formulary appoints the *Credo* and the Preface of the Most Holy Trinity, and appoints no Tract, Sequence, second oration, blessing or ritual text.
 
@@ -645,10 +773,10 @@ Only sources actually used above, with loci sufficient to check the claims made 
 
 **Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
 
-**Agent/runtime:** Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision
+**Agent/runtime:** Anthropic Claude Code agent (research, collation, drafting and typesetting of the imported study-edition sections); Claude Code CLI 2.1.219; unexposed: server revision
 
 **Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
-**Agent/runtime:** Anthropic Claude Code agent (rebuild under the published-text-and-English policy: English sourced from the registered Douay-Rheims and Cummiskey corpora, appointed Latin withdrawn from the page except where an argument turns on it, collation and attribution findings consolidated, typesetting; audit of every English quotation against the registered Douay-Rheims and Cummiskey records, psalm-numbering and American-edition corrections, cross-leaf build-dependency registration, and page-by-page review); Claude Code CLI 2.1.219; unexposed: server revision
+**Agent/runtime:** Anthropic Claude Code agent (creation of this full-text edition: appointed-text sheet with the collated Latin and the registered public-domain English, declared English gaps, rebuild of the imported sections under the published-text-and-English policy, typesetting; audit of every English quotation against the registered Douay-Rheims and Cummiskey records, cross-leaf build-dependency registration, and page-by-page review); Claude Code CLI 2.1.219; unexposed: server revision
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

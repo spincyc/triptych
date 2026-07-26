@@ -8,7 +8,40 @@ roles, competing judgments, negative results, and operational qualifications
 that the PDF compresses or omits. The complete collated Latin, its witnesses,
 and the edition-difference table live in
 [`../propers/verified.md`](../propers/verified.md); the raw finding aid is
-[`../propers/retrieved.txt`](../propers/retrieved.txt).
+[`../propers/retrieved.txt`](../propers/retrieved.txt); the publication-local
+source bindings, including the two English corpora, are in
+[`source-bindings.toml`](source-bindings.toml).
+
+## 0. Two publications, one study
+
+This record covers both editions of the guide. The **study edition** is the
+leaf that owns these records; the **full-text edition** is the sibling leaf at
+the same id with a `-full-text` suffix. The full-text edition owns exactly four
+build files and one section file — its `main.tex`, `format.tex`,
+`generation-metadata.tex`, `web-edition.toml`, and the appointed-text sheet
+that prints the complete Latin beside its English — and imports every other
+section from the study edition rather than restating it. It keeps no research
+records of its own; these are its records.
+
+The two editions differ in exactly three things: whether the appointed Latin is
+printed in full, and the wording of two passages (the scope appendix's
+"Which edition this is" and the commentary's note on where the full Latin
+lives), which are macros defined in each leaf's own format file so that the
+shared section files stay byte-identical.
+
+**What changed at this revision, and what did not.** The revision is a change
+of presentation and of English sourcing, not of research. The collation against
+the CMAA facsimile and the Benziger second edition, the ten divergences from
+the Clementine, the reception matrix, the negative results, the
+notable-and-quotable gallery and the interpretive proposals all stand as
+recorded below and were carried forward unchanged. What changed: the appointed
+Latin was withdrawn from the study edition's page except where an argument
+turns on the wording; every English rendering of an appointed text was
+re-sourced from the two registered corpora in §6, replacing Dom Laurence
+Shepherd's; the divergences from the Clementine and the corrected attributions
+were consolidated into two tables so that they survive the presentation change
+visibly; and the page-2 psalm citations were corrected against the registered
+psalm-numbering concordance.
 
 ## 1. Formulary identity and text control
 
@@ -52,23 +85,62 @@ and the edition-difference table live in
 No reading in either witness was unclear enough to need a third witness, and
 nothing was blended.
 
-### Chant text against the Bible text
+### Appointed text against the Bible text: the ten divergences
 
-Three divergences between the appointed chants and the Clementine Vulgate were
-verified directly and are published as textual observations:
+Ten places where the appointed text is not the Clementine's text were verified
+directly and are published in both editions as a single table of textual
+observations. They are the reason the guide still quotes Latin at all: an
+argument about wording cannot be conducted in translation.
 
-1. Introit antiphon omits `enim` at Ps. 53:6 (`Ecce Deus` vs `Ecce enim Deus`).
-2. Introit psalm verse reads `líbera me` at Ps. 53:3 where the Clementine
-   reads `judica me`.
-3. Communion reads `et ego in eo` where the Clementine John 6:57 reads
-   `et ego in illo`.
+| # | Proper and locus | Appointed | Clementine |
+| --- | --- | --- | --- |
+| 1 | Int., Ps. 53:6 | `Ecce Deus ádiuvat me` | `Ecce enim Deus adjuvat me` (drops `enim`) |
+| 2 | Int., Ps. 53:3 | `líbera me` | `judica me` |
+| 3 | Int., Ps. 53:7 | closing `protéctor meus, Dómine` | no counterpart in Ps. 53:6–9 |
+| 4 | Ep., 1 Cor. 10:6 | `Fratres:` | `Hæc autem in figúra facta sunt nostri`; the lesson begins mid-verse |
+| 5 | Ep., 1 Cor. 10:8 | `mília` | `millia` (orthographic) |
+| 6 | Gosp., Lk. 19:41 | `In illo témpore: Cum appropinquáret Iesus Ierúsalem` | `Et ut appropinquávit`; the incipit supplies a subject and an object |
+| 7 | Gosp., Lk. 19:45 | `cœpit eícere` | `cœpit ejicere` (orthographic) |
+| 8 | Off., Ps. 18:9–12 | one continuous antiphon | a centonisation of vv. 9a, 10c, 11b, 12a |
+| 9 | Off., Ps. 18:12 | `nam et servus tuus` | `Etenim servus tuus` |
+| 10 | Comm., Jn. 6:57 | `et ego in eo, dicit Dóminus` | `et ego in illo`; `dicit Dóminus` absent |
 
-The Introit's closing `protéctor meus, Dómine` has **no counterpart** anywhere
-in Clementine Ps. 53:6–9. The natural explanation of all four facts is that the
-chant preserves an older Latin psalter; the *Catholic Encyclopedia* article
-"Revision of the Vulgate" is cited only for the existence of Jerome's Roman and
-Gallican recensions and the Roman one's continued liturgical use. **No
-*Psalterium Romanum* witness was collated**, so the derivation is not asserted.
+Numbers 4 and 6 were confirmed on the English side as well: the Douay-Rheims,
+being the English of the Clementine, carries "Now these things were done in a
+figure of us" at 1 Cor. 10:6 and begins Lk. 19:41 "And when he drew near," with
+no subject and no city. Numbers 5 and 7 are the same two places at which the
+Vatican typical and Benziger editions differ, so they are recorded twice, once
+as an edition difference and once against the Bible.
+
+**Two negative results belong with the table.** The Gradual (Ps. 8:2) and the
+Alleluia verse (Ps. 58:2) match the Clementine word for word; they are the only
+appointed scriptural texts of the day of which that is true without
+qualification.
+
+The natural explanation of the psalm divergences is that the chant preserves an
+older Latin psalter; the *Catholic Encyclopedia* article "Revision of the
+Vulgate" is cited only for the existence of Jerome's Roman and Gallican
+recensions and the Roman one's continued liturgical use. **No *Psalterium
+Romanum* witness was collated**, so the derivation is not asserted.
+
+### The four corrected attributions
+
+Consolidated into one table in the commentary of both editions so that they
+remain findable, with the evidence for each kept at the proper it belongs to.
+
+1. The exposition of 1 Corinthians 10 in the Thomistic corpus is **Peter of
+   Tarantaise's**, not Aquinas's (Epistle).
+2. Its maxim `propter Christum pati humana tentatio est`, printed there under
+   Augustine's name, is verbatim **Ambrosiaster** (Epistle).
+3. Augustine cites 1 Cor. 10:17 in **Tractate 26 only**, not in Tractate 27
+   (Communion).
+4. Bede's exposition of Lk. 19:41–47 is substantially **Gregory's Homily 39**;
+   Bede's own contribution is the Exodus 12 typology at PL 92, 573C–574B
+   (Gospel).
+
+A fifth correction is kept in place rather than in the table because it is a
+locus rather than an attribution: Ambrose's Temple passage is *Exp. Lc.*
+**IX.16–22**, not Book X, and its lemmas are Matthew and John, not Luke.
 
 **Consequence recorded in the guide:** Augustine, the Angelic Doctor and
 Bellarmine all read and expound `iúdica me` at Ps. 53:3, and Augustine's lemma
@@ -224,16 +296,52 @@ These are published in the guide, not buried here.
 - The 1962 Latin propers are received liturgical text in the public domain;
   the project has composed, translated, paraphrased, modernised, conflated and
   adapted nothing.
-- Every English rendering of an appointed text in the guide is **Dom Laurence
-  Shepherd's**, from *The Liturgical Year … Time after Pentecost*, vol. II,
-  2nd ed. (Stanbrook Abbey: Burns & Oates, 1909) — title page verified in the
-  scan — at pp. 224, 225–226, 229, 229–230, 249 and 250, each named at the
-  point of use. Published 1909, US public domain.
-- **The same volume carries the reading the guide rejects.** Its commentary
-  speaks of "the Jewish deicides" and "the apostate nation" (pp. 227, 230) and
-  opens the Mass with "Israel had made himself the enemy of the Church"
-  (p. 224). These pages were read in the page images, not only the OCR. The
-  guide quotes them so that its own translation source is not laundered.
+- Every English rendering of an appointed text in either edition comes from one
+  of two registered public-domain corpora, named at the point of use and bound
+  in `source-bindings.toml`.
+  - **Scripture:** the Douay-Rheims (Challoner), edition
+    `edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581`,
+    read in the exact tracked per-book verse files. Loci: Ps. 8:2; 18:9–12;
+    53:3, 6–7; 58:2; Lk. 19:41–47; Jn. 6:57; 1 Cor. 10:6–13. The text is stored
+    in Vulgate numbering, so each Missal locus resolved directly; the book
+    index, psalm-numbering concordance and verse-alias table were read first,
+    and the alias table confirms that none of this formulary's loci is one of
+    the merged verses.
+  - **Orations:** the 1861 Philadelphia Cummiskey *Roman Missal … for the use
+    of the laity*, edition
+    `edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861`,
+    addressed by 1962 formulary as `post-pentecosten-09`.
+- **The American-edition check was run for every verse quoted.** The registered
+  collation between the vendored Challoner text and the 1899 American edition
+  lists none of the eight quoted loci, so a reader's printed Douay-Rheims
+  agrees word for word at all of them, and the guide says so. Two rows *are*
+  listed within the passages the guide cites, and both are disclosed: the Ps.
+  53:2 inscription, where the vendored text carries a bracketed cross-reference
+  the American edition omits, and Ps. 58:1, where the American witness reads
+  "an inscription of It title" against the vendored "an inscription of a
+  title." Neither inscription is an appointed text.
+- **Four declared English gaps.** The registered English does not answer the
+  Latin at the Introit's `protéctor meus, Dómine` (no counterpart in the
+  psalm), the Introit's `líbera me` (the Douay renders the Clementine's
+  `judica me`), the Communion's `dicit Dóminus` (not part of Jn. 6:57), and the
+  Offertory (a centonisation, so the four Douay verses are printed whole with
+  the fragments marked rather than joined). The liturgical incipits `Fratres:`
+  and `In illo témpore: Cum appropinquáret Iesus Ierúsalem` are likewise not
+  translated. In no case did the project supply a rendering of its own.
+- **One divergence between a registered English and its Latin is published.**
+  The 1861 Collect's "that they may succeed in their desires" makes the
+  petitioners the subject where `ut peténtibus desideráta concédas` makes God
+  the one who grants. The rendering is quoted because it is the registered
+  witness; the grammatical argument is conducted on the Latin.
+- **Shepherd is retained as a reception witness only.** *The Liturgical Year …
+  Time after Pentecost*, vol. II, 2nd ed. (Stanbrook Abbey: Burns & Oates,
+  1909) supplied the English of every appointed text in the previous state of
+  this guide and now supplies none. It is cited only at pp. 224, 227 and 230,
+  where its commentary speaks of "the Jewish deicides" and "the apostate
+  nation" and opens the Mass with "Israel had made himself the enemy of the
+  Church." Those pages were read in the page images, not only the OCR. The
+  guide quotes them as evidence of what the devotional reception of this
+  formulary actually said in living memory.
 - Public-domain and quoted: Payne Smith 1859 (Cyril on Luke), Pusey (Cyril on
   John), NPNF (Augustine, Chrysostom), Newman's *Catena aurea* (1843),
   O'Sullivan 1866 (Bellarmine), Bierce 1911, Page 1908, Blomefield.
@@ -303,23 +411,40 @@ only and are correctable; nothing is claimed to be unprecedented anywhere.
 
 ## 9. Production and review boundary
 
-The settled source was compiled twice under the deterministic build path,
-producing a **25-page** PDF with SHA-256
-`b597e9bc4932c1ad98dae764db9323c8c0ad89edf518bb19411b569237922676`. The final
-log contains no fatal error, undefined reference, overfull or underfull box, or
-unresolved rerun or layout warning. Review rasters were produced with
-`scripts/pdf-review` and **every rendered page was inspected at full size** for
+Both editions were compiled twice each under the deterministic build path. The
+final logs contain no fatal error, undefined reference, overfull or underfull
+box, or unresolved rerun or layout warning. Review rasters were produced with
+`scripts/pdf-review` and **every rendered page of both PDFs was inspected** for
 clipping, density, heading and table breaks, artificial whitespace, and the
-terminal rights colophon; three whitespace defects found in review (a spilled
-page-2 dossier row, an orphaned gallery entry, and a half-empty section-end
-page) were fixed and the document rebuilt. Generation metadata validated;
-Letter page size, embedded and subsetted fonts with Unicode maps, and nonempty
-text extraction (15,475 words) were checked. `qpdf` is not installed in this
-environment, so the structural check by that tool was **not** performed. The
-reviewed build was installed at its mirrored `doc/` path and verified
-byte-identical. The document was **not** added to any `library/` catalog page,
-because concurrent work was in progress there; that listing remains
-outstanding.
+terminal rights colophon. One defect was found and fixed: the forced page break
+at the end of `The Propers: Interpretive Possibilities` left a page four-fifths
+empty in both editions once the section files had been rebuilt, and it was
+removed, the scope appendix's own `\sectionguard` being sufficient. The
+reviewed pair is **27 pages** (study) and **32 pages** (full-text). Both
+convert without error through
+`scripts/web-edition`, and `scripts/source-library validate` passes with the
+twelve new English bindings. `qpdf` is not installed in this environment, so
+the structural check by that tool was **not** performed.
+
+An earlier state of this leaf, before the published-text-and-English revision,
+produced a 25-page PDF with SHA-256
+`b597e9bc4932c1ad98dae764db9323c8c0ad89edf518bb19411b569237922676`; that
+snapshot is superseded and its distribution binding does not carry over. Page
+counts and hashes for the current pair are recorded with the release
+bookkeeping rather than here.
+
+**Outstanding, and deliberately so.** Neither edition was installed to `doc/`,
+neither is listed on any `library/` catalog page, and no release manifest entry
+was created or amended for either.
+
+**One build edge was found and closed.** The Makefile's per-document dependency
+discovery registers only the files inside a single leaf, so the full-text
+edition's dependency on the study edition's `sections/` and `format.tex` was
+not declared: editing a study-edition section did not rebuild the full-text
+PDF. A `REGISTER_ROMAN_1962_FULL_TEXT_SOURCES` rule now declares the cross-leaf
+import for every `liturgy/roman-rite/1962/propers/…-full-text` document, so the
+edge is covered for this pair and for every pair added later. It was verified
+by touching a study-edition section and confirming that both PDFs then rebuild.
 
 This is **internal production review only**. It is not independent editorial,
 liturgical, theological, specialist, rights or ecclesiastical review, and it is
