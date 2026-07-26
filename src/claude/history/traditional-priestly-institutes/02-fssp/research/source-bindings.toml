@@ -1,0 +1,204 @@
+schema = 2
+record_type = "bindings"
+document = "history/traditional-priestly-institutes/02-fssp"
+
+# Claude edition. Every binding below records a real event of this research on
+# 2026-07-25 and 2026-07-26: exact bytes acquired over HTTP or HTTPS and hashed,
+# then read. Bindings whose state list goes beyond "cataloged" carry the
+# canonical source fingerprint of the bound record and its evidence ancestors.
+# Sources reached only in unofficial renderings hosted by interested third
+# parties are marked in their context lines; the publication states the same
+# limit at every point of use.
+
+# --- The act printed in the official gazette -------------------------------
+
+[[bindings]]
+source_id = "artifact.holy-see.acta-apostolicae-sedis.volume-82-1990.vatican-ocr-pdf-629766ef"
+loci = ["533-534"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The rescript from the audience of 18 October 1988, Quia peculiare munus, by which John Paul II granted the Cardinal President of the Pontifical Commission Ecclesia Dei six faculties transcending the customary order of law: n. 1 the 1962 Missal to all petitioners; n. 2 dispensation from the irregularities of canon 1044 s. 1 nn. 1-2 and sanatio in radice of marriages null for want of the form of canon 1108; n. 3 a) the erection of the Fraternitas Sacerdotalis Sancti Petri as a clerical society of apostolic life of pontifical right with the notae peculiares of Ecclesia Dei n. 6 a and approval of its constitutions, and 3 b) the erection of its seminary at Wigratzbad in the diocese of Augsburg with the diocesan bishop's prior consent; nn. 4-5 the erection of further communities and associations; and n. 6 the exercise of the authority of the Holy See over the same societies and associations, donec aliter provideatur. Also the closing formula recording the audience of 18 October 1988, the signature of Augustinus card. Mayer, and the archive number 283/88. This is the constitutional centre of the publication."
+source_fingerprint = "sha256:e45776ca340891686ef08b5dea7ed1d59015cfe87aa6cdeeb40864eb7615ab78"
+
+# --- Roman acts of 1988 and 2022, published by the beneficiary ---------------
+
+[[bindings]]
+source_id = "passage.holy-see.pced-declaration-fssp-1988.english-fssp-web-2026-07-26.complete-text"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The Commission's letter of 22 July 1988: the acknowledgement of twelve priests as founders at Hauterive on 18 July, the declared readiness to erect the body as a society of apostolic life under cann. 731-746, the promise of the status of pontifical right after review and recognition of statutes ad experimentum, and the recognition as valid of the founders' election of a superior. Party-hosted English translation of a German original; the German is quoted in the bound canonical article."
+source_fingerprint = "sha256:e85275b372ed5a102da06874d7421cfba3801110b7525e86535e60fad326ed62"
+
+[[bindings]]
+source_id = "passage.holy-see.pced-decree-liturgical-books-fssp-1988.english-fssp-web-2026-07-26.complete-text"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The decree of 10 September 1988 conceding the faculty of the four 1962 books, its territorial clause, and its description of the Fraternity as already declared of pontifical right five weeks before the express erection. Party-hosted English translation of a Latin original quoted pro manuscripto in the bound canonical article."
+source_fingerprint = "sha256:2997901a1cb296d96db46d2b9195b3687b1afc2d5d900999e332606f71c15686"
+
+[[bindings]]
+source_id = "passage.holy-see.pced-decree-erection-fssp-1988.english-fssp-web-2026-07-26.complete-text"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The decree of erection of 18 October 1988, Prot. N. 234/88: the erection as a clerical society of apostolic life of pontifical right in exercise of the special faculties, the stated object including the observance of the liturgical and disciplinary traditions of Ecclesia Dei, the canon 611 rights, the concession of the 1962 books to members and to guests and ministers in the Fraternity's churches, the reference to cann. 679-683 and canon 535, the three-year approval of the constitutions and appointment of Father Bisig, and the donec aliter provideatur clause. Party-hosted English translation; the operative Latin is quoted in the bound canonical article from Archiv fuer katholisches Kirchenrecht 157, which was not reached."
+source_fingerprint = "sha256:859307e1913c91afe6e92e98f2ee4a2961085c065a728ffb230ddaad184ad56b"
+
+[[bindings]]
+source_id = "passage.francis.decree-fssp-liturgical-books-2022.latin-fssp-web-2026-07-26.complete-text"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The Latin of the papal decree of 11 February 2022, read word by word by the publication: the grant omnibus et singulis sodalibus, the four named books, the territorial clause reproducing the decree of 10 September 1988, the hortatory clause 'Quibus rite servatis, Sanctus Pater etiam suadet ut sedulo cogitetur, quantum fieri potest, de statutis in litteris apostolicis motu proprio datis Traditionis Custodes', and the misdescription of the beneficiary as an institute of consecrated life named Fraternitas Sancti Petri. No publication of this decree by the Holy See was located."
+source_fingerprint = "sha256:a290a411ff985bc6da3f5f710681487a7ef95bd8339086d84978e5d82e22417c"
+
+# --- Acts of the founders and the fundamental code ---------------------------
+
+[[bindings]]
+source_id = "passage.priestly-fraternity-of-saint-peter.declaration-of-founders-1988.english-fssp-web-2026-07-26.complete-text"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The declaration of 2 July 1988 with its fifteen signatures, used for the founders' pars sanior claim, their reliance on the protocol of 5 May 1988, their petition for canonical erection with the immemorial liturgy, and the bounded negative that eight signatories carry no clerical style."
+source_fingerprint = "sha256:5996b59c46b446704b333e54dba3ad14f8c1647a2fe81a5b75a65b2fdedc35d6"
+
+[[bindings]]
+source_id = "passage.priestly-fraternity-of-saint-peter.act-of-foundation-1988.english-fssp-web-2026-07-26.complete-text"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The act of 18 July 1988, used for the founders' own choice of canonical figure by canon number, their reliance on the protocol and on Ecclesia Dei adflicta, the derivation of the constitutions from the approved statutes of the Society of Saint Pius X, and the signature arithmetic explained by the Fraternity's two editorial footnotes."
+source_fingerprint = "sha256:6e0db9f3551d807359b01e8528ea0689de9ea240d3f151597e7c7ada7913ded7"
+
+[[bindings]]
+source_id = "passage.priestly-fraternity-of-saint-peter.constitutions.excerpt-part-i-english-fssp-web-2026-07-26.complete-text"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Articles 1-15 of the constitutions definitively approved on 29 June 2003, used for the canonical figure (art. 1), the profession of fidelity to the Roman Pontiff with canon 590 s. 2 (art. 6), the object (art. 7), the particular aim of faithful observance of the liturgical and disciplinary traditions according to the dispositions of Ecclesia Dei (art. 8), the Thomistic formation (art. 10), the dependence of parochial ministry on a bishop's request and agreement (art. 13), and the citation of canon 738 s. 2 (art. 15). The publication's observation that the word 'exclusive' does not occur rests on this text; only Part I is public."
+source_fingerprint = "sha256:e5c4bab2479e44f80d767848e15d1360aae913f8852cfa3d384703c90bf5b4ed"
+
+# --- Roman acts of 1999-2000, read in unofficial third-party renderings ------
+
+[[bindings]]
+source_id = "passage.holy-see.responsa-officialia-post-liturgicam-1999.french-amdg-web-2026-07-26.complete-text"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The responses of 3 July 1999, Prot. 1411/99, used for their indult premise and their three answers on celebration with the Missal of Paul VI, the inability of superiors to forbid it, and concelebration including at the chrism Mass. Read only in an unofficial French rendering hosted by a French traditionalist lay association; the Latin printed in Notitiae 35 (1999) 307-309 was not obtained. The publication states this ceiling at every point of use."
+source_fingerprint = "sha256:18686794f0161132f1b8b060219ba5a5adc0a9f4c377f21548bbe6c00164851e"
+
+[[bindings]]
+source_id = "passage.holy-see.pced-letter-fssp-general-chapter-2000.german-unavox-web-2026-07-26.complete-text"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The letter of 29 June 2000, Prot. N. 748/2000, the pivot of the publication's account of the constitutional settlement: the refusal to approve the February 2000 compromise as a special law, the reasoning that no superior below the Supreme Pontiff may prevent a priest from following the general law and that such a limitation can never become the general rule in an institute or be imposed on seminarians, the two-term limit, the direct appointment of Father Devillers, and the requirement of new seminary rectors. Read in the German original hosted on an Italian traditionalist site, with the Italian and French renderings on the same page; the same page and German text are cited in the bound canonical article."
+source_fingerprint = "sha256:ac020800450047cba447a22753ca8010220e284eefb615adc076090f30a29b4a"
+
+[[bindings]]
+source_id = "passage.holy-see.pced-decree-fssp-recourse-2000.french-amdg-web-2026-07-26.complete-text"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The decree of 12 October 2000, Prot. 823/2000, answering the chapter's recourse: rejection of points 1-3 with the reasons drawn from canon 624, canon 631 s. 1, canon 593 and canon 148, and acceptance of points 4-5. Read only in a French text hosted by a French traditionalist lay association and corroborated by no other witness located; no conclusion of the publication rests on this act alone."
+source_fingerprint = "sha256:de6e9df3673f923f707df88dfeeb92314ac9ad484dd478df4e3ca62722430713"
+
+# --- Later Roman acts on vatican.va -----------------------------------------
+
+[[bindings]]
+source_id = "passage.john-paul-ii.ecclesia-dei.english-vatican-web-2026-07-25.complete-text"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Ecclesia Dei nn. 5 c) and 6 a)-c), used for the frame within which the Fraternity was founded: the institution of the Commission with the task of facilitating full ecclesial communion while preserving spiritual and liturgical traditions in the light of the protocol of 5 May 1988, and the direction that respect be shown for those attached to the Latin liturgical tradition by a wide and generous application of the earlier directives on the 1962 Missal. The exact bytes registered in this repository were re-fetched on 2026-07-25 and their hash matched before reading."
+source_fingerprint = "sha256:ff39fadd0db53bd936960e6b6071dc107d3ac328cfea3c7dd8e9655b9d05d535"
+
+[[bindings]]
+source_id = "passage.benedict-xvi.summorum-pontificum.english-vatican-web-2026-07-25.complete-text"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Summorum Pontificum arts. 1-3, used for the two-usages doctrine and, in particular, for art. 3 assigning to major superiors the decision about frequent, habitual or permanent community use of the 1962 Missal in the oratories of institutes and societies. The exact bytes registered in this repository were re-fetched on 2026-07-25 and their hash matched before reading."
+source_fingerprint = "sha256:1b1caede94e0b9e4d7f271421c599e868fe085851c1b1e6da0d6ce0acfbd2c99"
+
+[[bindings]]
+source_id = "artifact.holy-see.universae-ecclesiae.english-vatican-web-2026-07-26.vatican-html"
+role = "context"
+states = ["cataloged", "acquired"]
+context = "The instruction of 30 April 2011 is cited by the publication for its existence and its Acta locus and is expressly not analysed. The exact bytes were acquired and hashed; the text was not read through for any claim."
+source_fingerprint = "sha256:66ac86e48f5d903ed1b5f60e1280f1a0ba53af7767fcc6ee682ee41eca1b6a89"
+
+[[bindings]]
+source_id = "passage.francis.motu-proprio-ecclesia-dei-2019.english-vatican-web-2026-07-26.complete-text"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The motu proprio of 17 January 2019, load-bearing for the publication's central argument: the decommission of the Commission, the transfer of its tasks to the Congregation for the Doctrine of the Faith, the stated grounds, and above all footnote [2], which identifies the title under which the Commission had exercised the authority of the Holy See as 'Rescriptum ex Audientia Sanctissimi, 18 Oct. 1988, AAS, LXXXII (1990), 5 (3 Maii 1990), 533-534, 6'."
+source_fingerprint = "sha256:fbd48d4619e019a6a03fa394f87e7ef80e4fa492e8c8b48f7d3ee15d849f5d67"
+
+[[bindings]]
+source_id = "passage.francis.traditionis-custodes.english-vatican-web-2026-07-25.complete-text"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "Traditionis custodes arts. 1, 2, 6 and 8, used for the unique-expression clause, the diocesan bishop's exclusive competence, the transfer of institutes and societies erected by the Commission to the dicastery for consecrated life, and the abrogation of previous non-conforming norms, instructions, permissions and customs. The exact bytes registered in this repository were re-fetched on 2026-07-25 and their hash matched before reading."
+source_fingerprint = "sha256:6ab5a1c82ac32fa65235465d1ec6e3da3973f1f3c714181621fd8f00b6acad6c"
+
+[[bindings]]
+source_id = "passage.holy-see.responsa-ad-dubia-traditionis-custodes-2021.english-vatican-web-2026-07-25.complete-text"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The Responsa of 4 December 2021, used for the dispensation regime on parish churches and for the negative answer on the pre-conciliar Pontifical and the restriction of the 1952 Ritual to canonically erected personal parishes, set beside the Fraternity's own grant of the Pontifical in 1988. The exact bytes registered in this repository were re-fetched on 2026-07-25 and their hash matched before reading."
+source_fingerprint = "sha256:42240774a87310fb8239206beec91055860fabcecb164390f01e71b8572745c1"
+
+[[bindings]]
+source_id = "passage.holy-see.rescriptum-traditionis-custodes-2023.english-vatican-web-2026-07-25.complete-text"
+loci = ["complete-text"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The rescript from the audience of 20 February 2023, used for the two dispensations reserved in a special way to the Apostolic See under canon 87 s. 1, the bishops' duty to inform the Dicastery, and the confirmation of the 2021 Responsa. The exact bytes registered in this repository were re-fetched on 2026-07-25 and their hash matched before reading."
+source_fingerprint = "sha256:77ee62de0292dc458b48a9fd08812e15c80407dc0e951d2874f38cbcfc4303d9"
+
+[[bindings]]
+source_id = "passage.holy-see.ddf-decree-fsspx-2026.italian-press-bulletin-2026-07-25.complete-text"
+role = "context"
+states = ["cataloged"]
+context = "The penal decree of 2 July 2026 concerning the Society of Saint Pius X is cited by this publication only to record that the consecrations of 1 July 2026 occurred and were answered; its analysis belongs to TPI-01 in the same series. Catalog-level use only."
+
+[[bindings]]
+source_id = "passage.holy-see.ddf-explanatory-note-fsspx-2026.italian-press-bulletin-2026-07-25.complete-text"
+role = "context"
+states = ["cataloged"]
+context = "The explanatory note of 2 July 2026 is cited on the same footing and for the same limited purpose as the decree. Catalog-level use only."
+
+# --- Canon law ---------------------------------------------------------------
+
+[[bindings]]
+source_id = "artifact.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-codex-2026-07-25.vatican-liber2-html"
+loci = ["canon-586", "canon-587", "canon-590", "canon-593", "canon-611", "canon-624", "canon-631", "canon-678", "canon-679", "canon-680", "canon-681", "canon-683", "canon-731", "canon-732", "canon-733", "canon-734", "canon-736", "canon-737", "canon-738", "canon-739"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Latin text of Book II, read for the canons on which the publication's canonical statements rest: the just autonomy of an institute's life and the ordinaries' duty to preserve it (586); the fundamental code (587); obedience to the Supreme Pontiff as highest superior (590 s. 2); the immediate and exclusive subjection of bodies of pontifical right to the Apostolic See in internal governance and discipline (593); the rights following a diocesan bishop's consent to a house (611); the term of superiors (624); the general chapter (631); the relations of members with the diocesan bishop (678-683); and the law of societies of apostolic life (731-739), including the definition in 731 s. 1, the extension of cann. 578-597 by 732, the previous written consent required for a house by 733 s. 1, the governance rule of 734, and incardination in the society under 736 s. 1. The exact bytes registered in this repository were re-fetched on 2026-07-25 and their hash matched before reading."
+source_fingerprint = "sha256:78ca48a12ee5dec0f47e0327c436a34702a95233ee4e30ba6c78fa21d58d69df"
+
+[[bindings]]
+source_id = "artifact.catholic-church.codex-iuris-canonici-1983.english-vatican-web-codex-2026-07-25.vatican-cann731-746-html"
+loci = ["canon-731", "canon-732", "canon-733", "canon-734", "canon-736", "canon-738", "canon-739"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "The Holy See's English page for cann. 731-746, acquired and read as a reading aid alongside the Latin. The publication's English renderings of these canons follow this page; the Latin remains the law and is the bound control."
+source_fingerprint = "sha256:5da17bcb8b452eda9fe47e1ac5a2296c9e97222e53d43b923374ac7197a271bc"
+
+# --- Canonical scholarship ---------------------------------------------------
+
+[[bindings]]
+source_id = "passage.dawid-pietras.rightful-autonomy-fssp-part-i.prawo-kanoniczne-69-1-2026.complete-text"
+loci = ["complete-text"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "A peer-reviewed canon-law article used for three things and no others: the original-language texts of the founding acts and of the letter of 29 June 2000, which it quotes in its footnotes; printed loci this research could not reach (Notitiae 35 [1999] 307-309; Archiv fuer katholisches Kirchenrecht 157 [1988] 467-468; L'Osservatore Romano for the address of 26 October 1998; the 1996 rescript Prot. N. 64/96; the rescript approving the constitutions, Prot. N. 108/2003; the 2024 Ordo administrativus figures); and its own analysis, always with the author's position as a priest of the subject institute stated at the point of use. The publication never treats it as an independent adjudicator."
+source_fingerprint = "sha256:afac97382a9789c888cc5901cd8ee609a81e7df62e11d729fdc151ca2696724c"
