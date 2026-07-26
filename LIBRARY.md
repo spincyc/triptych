@@ -10,6 +10,7 @@ editions (GPT and Claude); each catalog row links every available edition.
 | **[Prayer](library/prayer.md)** | Novenas and daily prayer books. |
 | **[Curriculums](library/curriculums.md)** | Self-paced courses and printable study materials. |
 | **[Faith](library/faith.md)** | Sacraments, virtues, and theological studies. |
+| **[Scripture](library/scripture.md)** | Close studies of a single passage or a single claim about one. |
 | **[Biographies](library/biographies.md)** | Historical and hagiographic lives. |
 | **[Heresies](library/heresies.md)** | Doctrinal errors, ecclesial responses, and reception. |
 | **[Historical Accounts](library/historical-accounts.md)** | Histories of texts, institutions, and events. |
