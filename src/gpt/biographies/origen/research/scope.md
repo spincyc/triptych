@@ -291,3 +291,10 @@ not independent specialist, rights, historical, patristic, theological,
 textual, or ecclesiastical review or approval. The work-specific internal
 rights review above and exact-snapshot distribution clearance do not alter
 those limits.
+
+## Catechism staleness review — 2026-07-26
+
+Modified and research-first rewritten candidates confirmed that the new
+natural-law and chastity records do not affect this edition's distinct
+anthropology, resurrection, and hell loci. **No material change.** See
+`src/sources/inventories/origen-tertullian-catechism-staleness-review-2026-07-26.md`.
