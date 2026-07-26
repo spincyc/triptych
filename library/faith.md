@@ -23,7 +23,7 @@
 | Publication | ChatGPT | Claude | Focus |
 | --- | --- | --- | --- |
 | **Against the Instrumentalists** | [PDF](../doc/gpt/articles/faith/against-the-instrumentalists.pdf) · [Read](../web/gpt/articles/faith/against-the-instrumentalists.html) | [PDF](../doc/claude/articles/faith/against-the-instrumentalists.pdf) · [Read](../web/claude/articles/faith/against-the-instrumentalists.html) | Why measurement alone cannot settle what is real or rationally knowable. |
-| **In Support of the Particular** | [PDF](../doc/gpt/articles/faith/in-support-of-the-particular.pdf) · [Read](../web/gpt/articles/faith/in-support-of-the-particular.html) | [PDF](../doc/claude/articles/faith/in-support-of-the-particular.pdf) · [Read](../web/claude/articles/faith/in-support-of-the-particular.html) | How God's universal causality acts through concrete election, Incarnation, providence, sacraments, and neighbor. |
+| **In Defense of the Particular** | [PDF](../doc/gpt/articles/faith/in-defense-of-the-particular.pdf) · [Read](../web/gpt/articles/faith/in-defense-of-the-particular.html) | [PDF](../doc/claude/articles/faith/in-defense-of-the-particular.pdf) · [Read](../web/claude/articles/faith/in-defense-of-the-particular.html) | How God's universal causality acts through concrete election, Incarnation, providence, sacraments, and neighbor. |
 
 ## The Four Last Things
 

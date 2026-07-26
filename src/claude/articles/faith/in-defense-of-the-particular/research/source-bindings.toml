@@ -1,6 +1,6 @@
 schema = 1
 record_type = "bindings"
-document = "articles/faith/in-support-of-the-particular"
+document = "articles/faith/in-defense-of-the-particular"
 
 [[bindings]]
 source_id = "edition.catholic-church.catechism.english-vatican-web-2026-07-23"
@@ -49,3 +49,10 @@ source_id = "edition.ante-nicene-fathers.volume-4.buffalo-1885"
 role = "context"
 states = ["cataloged"]
 context = "The registered ANF volume IV edition identifies the translation (Crombie) quoted for Origen's Contra Celsum throughout the objection genealogy: IV.3-7, IV.14, IV.23, IV.99, V.25-26, V.41-42, VI.78-79. The registered work record is the anthology volume and carries no locus grammar for the ancient work printed within it, so the loci are identified in the publication's source audit rather than bound here. The publication-local audit checked the New Advent transcription of this translation on 2026-07-24 (IV.23) and 2026-07-25 (all remaining chapters); no verification against the registered edition's own artifacts is claimed. Re-verified in a second pass on 2026-07-25: every quoted clause was matched verbatim and located against the transcription's own chapter headings, confirming each cited chapter."
+
+[[bindings]]
+source_id = "edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581"
+loci = ["Gen.12.1-3", "Gen.17.4-7", "Gen.25.23", "Gen.28.13-14", "Deut.7.6-8", "Deut.10.14-19", "Is.49.1-7", "Amos.9.7-8", "Matt.1.1-16", "Matt.13.55-57", "Mark.6.3-5", "Luke.2.1-2", "Luke.3.1-2", "Luke.3.23-38", "John.1.14", "John.1.45-46", "John.21.9-15", "Gal.4.4-5", "Eph.4.4-6", "1Cor.1.22-25", "Apoc.2.17"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The registered Douay-Rheims (Challoner) verse text controls every scriptural quotation in the article. On 2026-07-26 each cited verse was read directly from the edition's tracked verse-per-line artifacts on disk and matched against the rendered article. All matched except Gen.12.3, where this edition preserves the older Challoner reading 'all the kindreds of the earth' against the 1899/1914 American reading 'all the kindred of the earth' that the article had carried from drbo.org; the article was corrected to this edition's reading and the divergence is reported at its locus from the edition's registered american-edition-divergences table. Chapter and verse numbers are the Vulgate ones. This binding claims catalog identity at the edition level; the exact tracked verse-text artifacts read on that date, and the divergence correction, are recorded in the publication's source audit rather than pinned here."

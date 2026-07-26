@@ -1,4 +1,4 @@
-# Source Audit — In Support of the Particular
+# Source Audit — In Defense of the Particular
 
 The identified online witnesses were checked through 2026-07-23. Official English is used for conciliar, catechetical, doctrinal, and papal texts. Brief Scriptural phrases are working-English renderings checked at the cited loci; no claim is made that one modern English edition governs every phrase. The credal phrases use the current official U.S.-English Nicene Creed published by the United States Conference of Catholic Bishops. Thomistic claims are governed by work, question, article, and reply, with Latin checked through Corpus Thomisticum and New Advent used as a public working-English aid.
 

@@ -1,8 +1,8 @@
-# In Support of the Particular — Research Scope and Qualification Record
+# In Defense of the Particular — Research Scope and Qualification Record
 
 ## Governing question and document identity
 
-This record supports `src/gpt/articles/faith/in-support-of-the-particular/main.tex`.
+This record supports `src/gpt/articles/faith/in-defense-of-the-particular/main.tex`.
 
 - **Provider and collection:** GPT; faith and theology articles.
 - **Genre and profile:** discursive philosophical- and dogmatic-theological article; `guidance/articles.md` governs.
@@ -85,7 +85,7 @@ Official English conciliar, catechetical, doctrinal, and papal pages are linked 
 
 - Completed for the source draft: profile routing; claim-driven selection of Scripture, conciliar, catechetical, doctrinal, papal, and Thomistic sources; exact-locus checks; internal metaphysical, Christological, Israel/Church, interreligious, sacramental, rights, and source-record consistency review; and verification that the main argument remains complete without the endnotes.
 - Outstanding: independent philosophical, biblical, Jewish–Christian, dogmatic, Christological, sacramental, interreligious, literary, pastoral, and ecclesiastical review.
-- Production state: the source received a settled multipass build; clean fatal-error, undefined-reference, overflow, underflow, and layout-warning scans; extracted-text, metadata, pagination, PDF-structure, and embedded-font checks; bounded raster and contact-sheet review; and individual visual inspection of all 12 pages. A forced rebuild reproduced the reviewed bytes exactly. The installed PDF at `doc/gpt/articles/faith/in-support-of-the-particular.pdf` has SHA-256 `32abf7a48fc4c586b19eb806aeddb458421e94900d238e2962299e75aeb20b21`.
+- Production state: the source received a settled multipass build; clean fatal-error, undefined-reference, overflow, underflow, and layout-warning scans; extracted-text, metadata, pagination, PDF-structure, and embedded-font checks; bounded raster and contact-sheet review; and individual visual inspection of all 12 pages. A forced rebuild reproduced the reviewed bytes exactly. The installed PDF at `doc/gpt/articles/faith/in-defense-of-the-particular.pdf` has SHA-256 `32abf7a48fc4c586b19eb806aeddb458421e94900d238e2962299e75aeb20b21`.
 - Publication state: the exact installed snapshot is cataloged and
   release-cleared under the 23 July 2026 exact-byte exception. Its immutable
   rendered Scope appendix necessarily retains the conservative hold and
