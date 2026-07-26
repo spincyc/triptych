@@ -10,3 +10,6 @@
 - **Authority:** Scripture, councils, and the Catechism govern. Aquinas provides a theological articulation of mercy, justice, and merit. Applications are project synthesis.
 - **As of:** Catechism 1021–1022 and 1038–1041 checked at the Holy See site on 2026-07-24.
 - **Review:** no independent dogmatic, Thomistic, pastoral, psychological, or ecclesiastical review.
+
+## Staleness review — 2026-07-26
+Both candidates preserved particular/final judgment and the qualified Augustine purification result. **No material change.** See `src/sources/inventories/four-last-things-staleness-review-2026-07-26.md`.

@@ -12,3 +12,6 @@
 - **As of:** official online Catechism loci were checked on 2026-07-24. No mutable canonical discipline governs.
 - **Rights:** only brief scriptural phrases appear; third-party translations, official texts, and liturgical wording retain their own status. No bulk source text is reproduced.
 - **Review:** internal source, doctrinal-boundary, rhetoric, and production review only. Independent medical, theological, pastoral, or ecclesiastical review remains outstanding.
+
+## Staleness review — 2026-07-26
+Both candidates found exact patristic inputs strengthen auditability without changing the death synthesis. **No material change.** See `src/sources/inventories/four-last-things-staleness-review-2026-07-26.md`.

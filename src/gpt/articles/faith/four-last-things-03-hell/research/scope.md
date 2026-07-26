@@ -10,3 +10,6 @@
 - **Authority boundary:** existence and eternity are definitive. The principal punishment is loss of God. Thomistic accounts of fixed will and punishment explain without becoming new definitions. Population and detailed mode remain unrevealed.
 - **As of:** official Catechism hell loci checked on 2026-07-24.
 - **Review:** no independent dogmatic, patristic, Thomistic, pastoral, psychological, or ecclesiastical review.
+
+## Staleness review — 2026-07-26
+Both candidates preserved defined eternity, undetermined mode/population, and pastoral limits. **No material change.** See `src/sources/inventories/four-last-things-staleness-review-2026-07-26.md`.
