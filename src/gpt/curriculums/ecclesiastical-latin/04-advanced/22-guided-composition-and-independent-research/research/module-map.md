@@ -15,3 +15,9 @@ remain in the owner's `research/` records.  The shared teaching, memory,
 reader, packet-practice, and exercise sources are authoritative for their
 respective prompts and models.  No elapsed-time estimate, numerical score, or
 page-completion rule controls progression.
+
+## Research-staleness verdict — 2026-07-26
+
+Comparison of the current packet and both candidates against changed inputs
+found no material composition, dossier, source-window, or answer correction.
+This exact packet is ready for rebaselining.

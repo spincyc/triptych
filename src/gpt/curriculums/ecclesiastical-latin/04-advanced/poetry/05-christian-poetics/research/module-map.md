@@ -13,3 +13,9 @@ The owner's authentic-source ladder, passage inventory, edition manifest, and
 poetry-branch map control received text, attribution, normalization, rights,
 and verification.  Project scansion, gloss, translation, and composition are
 identified as project work.  No spoken-pronunciation system is supplied.
+
+## Research-staleness verdict — 2026-07-26
+
+Comparison of the current packet and both candidates against changed inputs
+found no material text, attribution, allusion, analysis, or answer correction.
+This exact packet is ready for rebaselining.
