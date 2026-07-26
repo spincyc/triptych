@@ -124,6 +124,11 @@ The publication is chiefly project-created paraphrase and synthesis. It uses onl
 
 ## Review state
 
+- **Staleness review (2026-07-26):** old, minimally modified, and
+  research-first treatments were compared against new Catechism records. No
+  formal act, target proposition, census item, censure, current-law change, or
+  personal-status conclusion was added or altered. No material change.
+
 - **Completed for this working publication:** dedicated profile and collection architecture; bounded census rule; chronological dossier structure; proposition/act/aftermath distinction; current-code and ecumenical qualification checks; corpus inventory; source and timeline audits; consolidated references; metadata; and catalog and release-policy accounting.
 - **Completed for the 2026-07-17 structural revision:** removed all rendered definition, method, evidence, and corpus apparatus from before the first dossier; retained that material as one terminal `Scope, Terms, and Qualifications` appendix; ordered the terminal sequence as response timeline, census accounting, scope appendix, references, and metadata; and limited the title notice to a non-authority warning pointing there.
 - **Unitatis redintegratio locus correction completed on 2026-07-24:** rechecked the official English witness at paragraphs 3, 4, and 11 and its promulgation line; assigned descendant guilt and ecclesial endowments to paragraph 3, truthful and fair representation and dialogue to paragraph 4, and doctrinal integrity, false irenicism, and the hierarchy of truths to paragraph 11; and corrected the timeline date from 1965 to 21 November 1964. This focused historical-source check does not advance the publication's general 2026-07-16 currentness boundary.

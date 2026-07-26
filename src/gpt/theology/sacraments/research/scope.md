@@ -109,6 +109,15 @@ Final-typography production review completed on 2026-07-19: settled two-pass bui
 - The initiation table cannot represent every eparchy, diaspora parish, restored-order Latin diocese, or pastoral exception on one page. It gives the competent Church's normative family and flags material variations.
 - Public-domain English patristic translations are working aids; exact doctrinal claims are anchored by work and locus rather than a claim that the linked translation is critical. For Justin, the checked Buffalo 1887 artifact is distinct from New Advent's later Kevin Knight--revised web presentation.
 
+## Staleness review — 2026-07-26
+
+Old, minimally modified, and research-first treatments were compared against
+changed Catechism, Missal, LG 29, and PO 16 records. No sacrament-specific
+matrix field, shared fragment, initiation rule, or work-specific qualification
+changed. The mechanical at-a-glance companion was separately compared and
+requires no independent prose or source change. No material change in either
+edition; no shared-fragment consumer rebuild is warranted.
+
 ## Compact-rights-colophon production review — 2026-07-19
 
 The predecessor treatise was 70 pages, SHA-256 `ab03cd28d936b35752abc31dfb6b8f66dc512ae22890b3a6cd107b20ba87fb55`, and the unchanged at-a-glance companion is 10 pages, SHA-256 `f1d73a9cc797c1dedec42851276062a1cebfca6ce632a30b8685be318005abb9`; both were exact repository-reviewed build snapshots. Both final logs were warning-free; generation metadata, `qpdf` structure, PDF title/page metadata, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed their gates. Repository production review inspected all 80 physical pages; each compact final-page reuse-and-rights colophon was readable, unclipped, non-overlapping, remained with terminal content, and created no rights-only spill page. Both installed PDFs were byte-identical to those reviewed builds. Those reviewed builds superseded every earlier production snapshot and received release-specific distribution clearance under the 20 July 2026 dated rights supplement. That operational decision supplied no independent review or ecclesiastical approval. The predecessor treatise's exact-byte clearance does not attach to the revision below; the unchanged companion retains its binding as recorded below.

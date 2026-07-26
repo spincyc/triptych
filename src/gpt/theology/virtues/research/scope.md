@@ -104,6 +104,12 @@ The Holy See's official English *Catechism* is official ecclesiastical text and 
 
 ## Review state and unresolved limits
 
+Staleness review (2026-07-26): old, minimally modified, and research-first
+treatments were compared against new City of God and Catechism records. They
+add no source-defined habit or opposition; natural law remains distinct from
+virtue, and chastity, continence, and virginity retain their existing taxonomic
+limits. No material change.
+
 The source loci and taxonomy were internally audited during generation. Independent philosophical, Augustinian, Thomistic, moral-theological, pastoral, and clinical review has not occurred and is not claimed. The virtue names are historical terms whose English connotations can shift; the dossiers define rather than assume their sense.
 
 The controlling inventory records the principal unresolved boundary questions. In particular, Aristotle's *nemesis* is an unstable praiseworthy mean passion rather than a secure coordinate virtue; continence is virtue only in a broad or qualified sense; friendship “is or involves” virtue; and Aquinas sometimes reports earlier enumerations that he subsequently reduces to another principal or annexed virtue. Those cases remain visible rather than being used to inflate the headline count.
