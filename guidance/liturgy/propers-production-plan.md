@@ -6,6 +6,28 @@ Authority stays where it already lives. The postconciliar identities, formula ke
 
 Reader-facing catalogs under `library/` list published works only. This plan is the maintainer view and is deliberately not mirrored there.
 
+## Scope boundary
+
+The propers collections are **bounded at the set already published**. The
+maintainer closed them on 2026-07-25. Each provider brings its published
+propers to the current profile — English, two editions apiece — and
+authors no further calendar targets. The reference works, ordinaries,
+and the comparative study are outside this boundary and continue.
+
+This changes what the tables below mean. They remain the complete fixed
+inventory of permanent identities, because identities may never be
+reassigned and a future maintainer must be able to place any guide that
+does get written. They are **not** a queue, and the "remaining" columns
+are not debt. An identity with no guide is the normal state of this
+collection, not an unmet target.
+
+The reasoning is worth keeping, because the pressure to resume will
+recur. The fixed inventory runs to roughly five hundred targets, which
+the two-edition rule doubles; at the depth these guides are authored to,
+that is not a backlog but an asymptote, and the marginal value of the
+four-hundredth Sunday guide is a small fraction of the first. A library
+that can be finished is worth more than one that cannot.
+
 ## Totals
 
 Status observed on the working tree at the time of writing.
