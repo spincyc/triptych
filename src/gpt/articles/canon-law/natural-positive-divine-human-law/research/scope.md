@@ -71,6 +71,12 @@ Concurrent human orders are neither one appellate hierarchy nor morally autonomo
 
 ## Rights and review
 
+Staleness review (2026-07-26): old, minimally modified, and research-first
+treatments were compared against paired research and changed CIC, CCEO, and
+Catechism records. The taxonomy, current-law distinctions, jurisdictional
+limits, and advice boundary remain unchanged. The article retains its
+2026-07-16 cutoff. No material change.
+
 Scripture, official texts, ancient works, translations, scholarship, and linked documents retain their independent status under `LICENSE` and `THIRD_PARTY.md`. The article uses project-created synthesis and brief, claim-focused inherited phrases. No complete third-party work is installed.
 
 Status: source-audited working article. Independent philosophical, classical, Roman-law, scriptural, patristic, historical, medieval-canonical, moral-theological, Latin-canonical, Eastern-canonical, public-law, civil-liberties, and ecclesiastical review remain outstanding. The PDF snapshot installed before the 2026-07-19 final-typography revision had release-specific distribution authorization under the user-attested perpetual public-repository record. That historical operational clearance did not supply any of the outstanding independent review or raise the article's editorial or ecclesiastical maturity. The current installed bytes have release-specific distribution clearance under the 20 July 2026 dated rights supplement; that operational decision supplies none of the outstanding review or approval.

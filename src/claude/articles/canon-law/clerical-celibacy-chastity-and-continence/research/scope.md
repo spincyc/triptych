@@ -60,6 +60,11 @@ Official Holy See texts are quoted briefly with attribution from registered date
 
 ## Review state
 
+Staleness review (2026-07-26): old, minimally modified, and research-first
+treatments were compared against changed CIC, CCEO, Catechism, and paired
+records. No canon, jurisdictional application, or unresolved-question status
+changed. The 2026-07-25 as-of and non-advice limits remain. No material change.
+
 Completed: claim-driven research with same-day (2026-07-25) fetching, hashing, and reading of every quoted witness; creation and validation of new source-library records (the CCEO work with its *Acta* segment and nineteen canon passages; *Sacri canones*; the 2014 and 2015 *Acta* acts with their fascicle artifacts; *Sacerdotalis caelibatus*, *Anglicanorum coetibus* and its Complementary Norms, *Pastores dabo vobis*, *Querida Amazonia*, the Amazon *Documento final*, the 1998 deacon documents, the authentic-interpretations collection, and the 2010 press sheet; Mansi tomi II and XXI, Percival NPNF2-14, NPNF2-2, PL 13, and the two Trent editions; new CIC 1983 canon passages and the retained 1917 leaf image) with `scripts/source-library validate` passing; a correction to the `optatam-totius` locus pattern, which had excluded articles 10–19; epistemic-order and equal-altitude voice review; canon-law currentness check dated 2026-07-25; two-pass builds with zero overfull or underfull boxes; the generation-metadata gate; the web-edition gate; and page-by-page raster review.
 
 Outstanding: independent canonical, Eastern-canonical, historical, and theological review; ecclesiastical review. No imprimatur, nihil obstat, or ecclesiastical approval is claimed. Publication language: **source-audited working article**. Internal checking is not independent review.

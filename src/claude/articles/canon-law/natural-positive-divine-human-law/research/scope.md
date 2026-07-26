@@ -49,6 +49,12 @@ Official Holy See texts, the Corpus Thomisticum and New Advent presentations, an
 
 ## Review state
 
+Staleness review (2026-07-26): old, minimally modified, and research-first
+treatments were compared against changed CIC, Catechism, and paired records.
+New canon registrations do not alter the taxonomy or cited legal effects.
+Latin-CIC scope, the 2026-07-25 as-of date, CCEO exclusion, and non-advice
+limits remain. No material change.
+
 Completed: claim-driven research with same-day (2026-07-25) fetching, hashing, and reading of every quoted witness (see `research/source-audit.md` and `research/source-bindings.toml`); creation and validation of new source-library records (Summa Latin and English dated editions with 30 locus passages each; CIC Latin and English codex editions with 41 canon passages each plus Book VI passages under the existing editions; Isidore work/edition with three tracked page images and four chapter passages; Gratian work/edition with 11 chapter artifacts and passages; Veritatis splendor work/edition/passages; Catechism dated editions and passages; Pascite gregem Dei refetch artifact) with `scripts/source-library validate` passing; epistemic-order and equal-altitude voice review; canon-law currentness check dated 2026-07-25; two-pass builds with zero overfull/underfull boxes; generation-metadata gate; page-by-page raster review.
 
 Outstanding: independent philosophical, historical, theological, and canonical review; ecclesiastical review. No imprimatur, nihil obstat, or ecclesiastical approval is claimed. Publication language: **source-audited working article**. Internal checking is not independent review.

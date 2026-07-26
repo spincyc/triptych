@@ -67,6 +67,12 @@ Catholic discipline is coherent but not uniform. Chastity binds all according to
 
 ## Rights and review
 
+Staleness review (2026-07-26): old, minimally modified, and research-first
+treatments were compared against paired research and changed CIC, CCEO,
+Catechism, LG 29, and PO 16 records. No governing rule or unresolved-question
+status changed. The article remains bounded to its 2026-07-15 cutoff,
+jurisdictions, and non-advice limits. No material change.
+
 Official texts, Scripture, patristic translations, scholarship, and linked Church documents retain their independent status under LICENSE and THIRD_PARTY.md. The article uses claim-focused paraphrase and only very short inherited phrases. No complete third-party work is installed.
 
 Status: source-audited working article. Independent patristic, historical, theological, Latin-canonical, Eastern-canonical, spousal/family, safeguarding, rights, and ecclesiastical review remain outstanding. The PDF snapshot installed before the 2026-07-19 final-typography revision had distribution authorization in the release manifest and dated rights record. That historical snapshot-specific decision was not independent rights or specialist review, ecclesiastical approval, a canonical opinion, or legal advice. The current installed bytes have release-specific distribution clearance under the 20 July 2026 dated rights supplement; that operational decision supplies none of the outstanding review or approval.
