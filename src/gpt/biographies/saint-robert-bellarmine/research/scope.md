@@ -294,3 +294,10 @@ rights, medical, scientific, or ecclesiastical review.
 The source and audit records were revised in the corpus-wide omission audit. A settled two-pass build produced this 23-page PDF with SHA-256 `cbbb80788cec5e53712183d45e29486e4d45ff5ed6506b93c4a441783958d85a`. The final log contained no fatal error, undefined reference, overfull or underfull box, or unresolved rerun or layout warning. Generation metadata, `qpdf` structure, Letter page size, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed. Review rasters were generated through `scripts/pdf-review`; every rendered page was visually inspected for clipping, overlap, accidental blanks, bad breaks, footer and metadata placement, and legibility. The reviewed build was installed at its mirrored `doc/` path and verified byte-identical.
 
 This is internal production review only; it grants no independent editorial, specialist, rights, theological, or ecclesiastical approval. The exact current installed PDF is release-cleared by the 21 July 2026 exact-current-snapshot exception; independent work-specific rights review remains incomplete, and the exception supplies no missing review or approval.
+
+## Research-staleness verdict — 2026-07-26
+
+Both candidates and the paired Claude chronology, tradition, scope, audit, and
+binding records were compared. They deepen documentary control without changing
+a consequential date, episode, attribution, tradition status, or current
+memorial claim. This exact edition is ready for rebaselining.
