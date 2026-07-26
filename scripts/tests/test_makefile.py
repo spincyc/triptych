@@ -630,6 +630,9 @@ exec /usr/bin/id "$@"
             "github-cli",
             "openai-codex",
             "ripgrep",
+            "python-setuptools",
+            "python-build",
+            "python-wheel",
         ]
 
         self.assertEqual(arguments[:2], ["-Syu", "--needed"])
