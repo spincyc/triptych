@@ -1,0 +1,78 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/1962/reference/assembling-the-mass"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+loci = ["10-34", "56-67", "203-204", "221-222", "299-303", "364-378", "393-409", "499-500", "511", "545", "569", "576-577", "583", "695-696", "786-790", "857"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The controlling witness for every rule this publication cites as RG n or RGMR n and for every formulary direction it reports. Loci are artifact pages of the 1,088-page facsimile; the offset to the Missal's own printed folios is +2, established by reading the running heads on artifact pages 12-18 and 34 as images. Artifact pages 10-34 carry the code (Rubricae generales nn. 1-137 and Rubricae generales Missalis Romani nn. 269-530) and the Missal's own 'Hic omittuntur' in place of part two; the remaining loci are the Ritus servandus, the Feria IV post dominicam I Passionis Mass, Palm Sunday's proper last Gospel, the Ordo Missae, the sixteen prefaces, the resumed Sundays after Epiphany, St Francis Xavier, the Purification rubric 'habetur tamquam festum Domini', St Patrick, the Annunciation, St Francis of Paola, the Transfiguration, All Souls with its three Masses, and the weekly votive Masses. Every rule quoted in Latin in the publication was read as a 260 dpi page image; the balance was read in the artifact's optical text layer with the two-column layout preserved."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:6b4dcd3ee771d6d92734992ecabfe09b289235954e963afcf523fc8f8ee9b12d"
+
+[[bindings]]
+source_id = "edition.catholic-church.rubricae-breviarii-et-missalis-romani.latin-missale-romanum-vatican-typica-1962"
+loci = ["1-137", "269-530"]
+role = "bibliographic"
+states = ["cataloged"]
+context = "The intellectual identity of the constituent read in the facsimile artifact above. This edition carried no segment record when the binding was written, so the exact extent actually read is pinned on the artifact binding rather than here. Two details of the edition record differ from what this publication established by reading the pages: the code as the Missal prints it ends at n. 530, not at a higher number, and it occupies artifact pages 10-34, that is printed pp. XII-XXXVI."
+
+[[bindings]]
+source_id = "segment.catholic-church.rubricae-breviarii-et-missalis-romani.latin-aas-52-1960.aas-52-1960-pages-597-740"
+loci = ["1-8", "237-239", "269", "525-530"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The promulgated text, used to control the Missal's reprint and to supply RG 237-238, the Te Deum rule on which RGMR 431 a depends and which the Missal does not print. The segment also carries the Variationes; cap. II n. 13 (abolition of the Suffragium de omnibus Sanctis and the commemoratio de Cruce) and cap. IV n. 18 (abolition of the orationes pro diversitate Temporum), on printed pp. 708-709, are the only parts of the Variationes used and are outside the code's own numbering, so they are named here rather than in the loci. RG 237-239 and those two Variationes rubrics were read as 200 dpi page images; nn. 1-8, 269 and 525-530 were compared against the Missal's reprint in the optical text layer and agree. The Acta's Tabella occurrentiae, Tabella concurrentiae and Notanda were inspected only to establish that the Missal omits them. No word-for-word collation of the whole code across the two witnesses is claimed."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:c40ff5823bf507bb1b1c3da6c3462cd41308ad1a1ddff3b85831e607901f2e18"
+
+[[bindings]]
+source_id = "segment.john-xxiii.rubricarum-instructum.latin-aas-52-1960.aas-52-1960-pages-593-595"
+loci = ["complete"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "The approving act, cited in the publication's opening for its date of 25 July 1960, for the three-part division of the code and the direction that the Missal receive parts one and three, and for the 1 January 1961 effective date. Read in the artifact's optical text layer."
+source_fingerprint = "sha256:fdec7dc092ace0b98401388cce8037b40ce95edbae2e6034b65f3b28bb018ba2"
+
+[[bindings]]
+source_id = "segment.holy-see.novum-rubricarum-decretum-1960.latin-aas-52-1960.aas-52-1960-page-596"
+loci = ["complete"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "The promulgating decree, quoted in the publication's opening footnote for the words that bind the code from 1 January 1961. Read in the artifact's optical text layer."
+source_fingerprint = "sha256:33baade21472d44f11e133c0224fa3802b43f67a93590760ea0c827106b5df52"
+
+[[bindings]]
+source_id = "segment.holy-see.novus-index-dierum-festorum-1960.latin-aas-52-1960.aas-52-1960-pages-985-986"
+loci = ["complete"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Cited once, in the publication's contested reading of RGMR 406 b, for the fact that in contemporaneous official Roman usage the term festa de praecepto opened with 'Dominicae I et II Classis'. The publication states expressly that this decree defines that term for the obligation of applying the Mass pro populo under cann. 339 §1 and 466 §1 of the 1917 Code and is neither a rubrical definition nor a list of the days on which the faithful are bound to hear Mass. Read in the artifact's optical text layer; the enumerated feast lists were not collated against a page image."
+source_fingerprint = "sha256:ed0761cbaf4445a59920b61ccc488f930307876cac89eb819ec4d5e6e0d701dd"
+
+[[bindings]]
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+loci = ["epiph-05/collect"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The single English witness quoted in Case 5, to show what the collect retained by a resumed Sunday after Epiphany says. Quoted exactly as the tracked transcription carries it, including the printing's abbreviated conclusion. The publication states at the quotation that the 1861 book is a pre-1955 witness whose rubrics, seasonal second and third orations and Holy Week are not those of 1962, and that none of that material is used."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:cce6b5473906365bb5f402f0f1aa8403a135408cc439a43ff50c5a36ffc05d21"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-50-john-27b8f3ed"
+loci = ["John.1.1-3", "John.1.14"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The English of the Last Gospel, quoted once in Section 7 as an identified historical translation of the Vulgate and expressly not as a liturgical translation or for recitation. The verses were read in the tracked per-book transcription."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:4498ea55e49e3577649969ed0bcf456423b8aec2f9edda55586c37190dfe77a4"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu-ocr"
+loci = ["front matter"]
+role = "lead"
+states = ["cataloged", "acquired"]
+context = "Downloaded and hashed against the registered artifact, then used only to locate the front-matter rubrics before the Vatican typical edition's facsimile was read. It is a distinct edition, its optical text is uncorrected, and it controls no wording in the publication. No payload was retained."
+source_fingerprint = "sha256:5c2d162e9079b438862a80692742bb1e85a16c60e9730040aeef4a0275a32144"
