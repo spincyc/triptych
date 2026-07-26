@@ -1,0 +1,79 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+\usepackage{endnotes}
+
+\hypersetup{
+  pdftitle={Nothing Said of Anyone},
+  pdfsubject={A discursive theological article on hell: what has actually been defined and by which acts, the pain of loss and the pain of sense, the eternity of punishment and the texts it rests on, the patristic range, the Thomistic treatment read at its own loci, the question of who is in fact damned, and the universal salvific will. The Four Last Things, Part III}
+}
+
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.14\textheight}
+{\large\scshape A Triptych Article\par}
+\vspace{1.5em}
+{\Huge\bfseries Nothing Said of Anyone\par}
+\vspace{0.9em}
+{\Large On Hell, and the Shape of What Has Been Defined\par}
+\vspace{1.4em}
+{\normalsize\itshape The Four Last Things --- Part III\par}
+\vfill
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{articles/faith/four-last-things-03-hell/sections/00-a-short-file}
+\input{articles/faith/four-last-things-03-hell/sections/10-what-the-acts-say}
+\input{articles/faith/four-last-things-03-hell/sections/20-two-punishments}
+\input{articles/faith/four-last-things-03-hell/sections/30-the-longest-word}
+\input{articles/faith/four-last-things-03-hell/sections/40-the-fathers-named-accurately}
+\input{articles/faith/four-last-things-03-hell/sections/50-reading-thomas-directly}
+\input{articles/faith/four-last-things-03-hell/sections/60-the-census-nobody-has}
+\input{articles/faith/four-last-things-03-hell/sections/70-the-will-that-wants-all-saved}
+\input{articles/faith/four-last-things-03-hell/sections/80-what-may-be-hoped}
+\clearpage
+\addcontentsline{toc}{section}{Notes}
+\begingroup
+\small
+\setlength{\parskip}{0.3em}
+\theendnotes
+\endgroup
+\clearpage
+\appendix
+\input{articles/faith/four-last-things-03-hell/sections/90-scope-method-qualifications}
+\input{articles/faith/four-last-things-03-hell/sections/99-references}
+\begingroup
+\setlength{\parskip}{0pt}
+\vspace{-0.6\baselineskip}
+\section{Generation Metadata}
+\vspace{-0.35\baselineskip}
+{\scriptsize\input{articles/faith/four-last-things-03-hell/generation-metadata}}
+\endgroup
+\end{deepstudy}
+
+\end{document}
