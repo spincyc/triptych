@@ -21,7 +21,7 @@ The work does not diagnose a person, reproduce the rite, list alleged diagnostic
 
 ## Voice, opening, and quotation control
 
-“The first rule of exorcist club” is expressly an editorial adaptation used to turn attention away from spectacle and toward the afflicted person's dignity. It is not attributed as a quotation. A reader recalled a Gene Wolfe thought approximately as “he is powerful, but he does not work the way you think”; the reader owns the 1996 Orb edition but supplied no exact wording or page. Repository and web searches did not verify it. The study therefore identifies it only as a reader-supplied paraphrase and does not quote or attribute words to Wolfe.
+The work opens with two terse epigraphs. The first quotes the Abbé's distinction between the efficacy of the powers addressed by curses and the efficiency of the words spoken in Gene Wolfe's *The Devil in a Forest*. The display attributes the fictional speaker and work without bibliographic apparatus; the audit retains the Orb edition and page. A reader supplied the exact wording, speaker, edition, and page from a personal copy on 26 July 2026. The project did not independently collate the protected edition, so the research record preserves the reader-transcription boundary rather than describing it as an independent project verification. The passage is a literary point of departure, not doctrinal, historical, or empirical evidence about curses. “The first rule of exorcist club” follows as an anonymous adaptation used to turn attention away from spectacle and toward the afflicted person's dignity; no historical author is asserted.
 
 ## Evidence and rights
 
