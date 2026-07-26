@@ -269,6 +269,9 @@ from the earlier revision was withdrawn.
 
 ## Outstanding review
 
+## Staleness review — 2026-07-26
+Both candidates found new Aquinas edition identities add no apparition evidence or doctrinal correction. **No material change.** See `src/sources/inventories/fatima-dogmas-rosary-staleness-review-2026-07-26.md`.
+
 - independent Mariological, historical, canonical, archival,
   Portuguese-philological, medical/scientific, and textual review;
 - **independent review of the interpretive sections in particular.**

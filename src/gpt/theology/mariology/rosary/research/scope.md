@@ -68,4 +68,7 @@ This is internal production review only; it grants no independent editorial, spe
 
 ## Justin First Apology source-family production review — 2026-07-23
 
+## Staleness review — 2026-07-26
+Both candidates found paired prayer research and new unrelated loci change no Rosary claim. **No material change.** See `src/sources/inventories/fatima-dogmas-rosary-staleness-review-2026-07-26.md`.
+
 The exact Dods--Reith Buffalo 1887 witnesses for *First Apology* 65--67 were normalized and rebound after claim-level review. Repeated settled and forced deterministic builds produced the current 28-page PDF, SHA-256 `13b681d49a80f54b25fd9e48c5a727681e06884308a7705460425135c3062548`. The final log, PDF structure and metadata, embedded/subsetted/Unicode-mapped fonts, nonempty text extraction, and build/install byte identity passed. Bounded review rasters were generated through `scripts/pdf-review`; every rendered page was visually inspected, with the changed reference and final provenance pages checked at full-page scale. No release clearance attaches to these changed bytes.

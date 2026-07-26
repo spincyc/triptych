@@ -168,6 +168,9 @@ translation offered as source text; no images.
 
 ## Outstanding review
 
+## Staleness review — 2026-07-26
+Both candidates found clerical-discipline and general chastity records unrelated to Marian definitions. **No material change.** See `src/sources/inventories/fatima-dogmas-rosary-staleness-review-2026-07-26.md`.
+
 - independent Mariological, dogmatic, patristic, conciliar-historical,
   medieval, and textual-critical review;
 - collation of conciliar and Denzinger quotations against critical print
