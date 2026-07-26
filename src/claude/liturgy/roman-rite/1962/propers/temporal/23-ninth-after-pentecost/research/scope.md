@@ -461,3 +461,14 @@ against the exact Missal and paired-provider inputs. The existing `continuo`
 correction remains exact and no further material correction was found; the
 study edition may be exactly rebaselined. The full-text edition was outside
 this review.
+
+## Full-text first-baseline staleness verdict — 2026-07-26
+
+The unbaselined full-text edition's complete input set was compared through
+modified and independent-rewrite candidates against the paired study records,
+verified Missal text, and registered English witnesses. No material correction
+was found; its exact source state is ready for a first baseline.
+
+This verdict neither clears nor weakens the open
+`liturgical-text-permission` question or any outstanding independent
+liturgical, theological, specialist, rights, or ecclesiastical review gate.
