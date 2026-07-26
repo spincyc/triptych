@@ -29,6 +29,18 @@
 % Horizontal centring has no web counterpart, but the block stays a block.
 \renewenvironment{center}{\par}{\par}
 
+% ------------------------------------------------------- list counter formats
+% An enumitem label such as label=\alph*) names the counter representation.
+% The converter drops the option list, but the representation macro is still
+% read; pandoc does not know it and would delete the following token, which in
+% an option list is the counter reference itself.  Absorbing the argument keeps
+% the deletion inside the option list where it belongs.
+\newcommand{\alph}[1]{}
+\newcommand{\Alph}[1]{}
+\newcommand{\arabic}[1]{}
+\newcommand{\roman}[1]{}
+\newcommand{\Roman}[1]{}
+
 % Symbols pandoc drops rather than renders.
 \newcommand{\dag}{†}
 \newcommand{\ddag}{‡}
