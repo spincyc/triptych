@@ -47,6 +47,11 @@ Official Holy See texts (conciliar, papal, dicasterial) are quoted briefly with 
 
 ## Review state
 
+Staleness review (2026-07-26): old, minimally modified, and research-first
+treatments were compared against changed council, Acta, Missal, CIC, Catechism,
+and paired records. No historical, liturgical, statistical, canonical, or
+source-ceiling claim changed. No material change.
+
 Completed: claim-driven research with same-day (2026-07-24/25) verification of every quoted witness (see `research/source-audit.md` and `research/source-bindings.toml`); creation and validation of new source-library records for the 1969 constitution, 1970 decree, 1975 act, Summorum Pontificum and letter, Ecclesia Dei, Traditionis custodes and letter, Responsa 2021, and rescript 2023 (`scripts/source-library validate` passing); epistemic-order and equal-altitude voice review; preservation-of-disagreement review (no adjudication of what the Church has not adjudicated); rights review; canon-law currentness check dated 2026-07-25; multipass build with clean fatal-error, reference, overflow, and layout scans; generation-metadata gate; page-by-page raster review.
 
 Outstanding: independent historical, liturgical, theological, canonical, statistical, and ecclesiastical review; no imprimatur, nihil obstat, or ecclesiastical approval is claimed. Publication language: **source-audited working article**. Internal checking is not independent review.

@@ -99,6 +99,12 @@ The article does not reproduce full modern Holy See, Masonic, prayer-book, or sc
 
 ## Review state
 
+Staleness review (2026-07-26): old, minimally modified, and research-first
+treatments were compared against paired research and changed CIC and Catechism
+records. Historical acts, institutional limits, current doctrine and law,
+jurisdiction, currentness, and case-referral boundaries remain unchanged. No
+material change.
+
 - Completed before first build: article-profile review; current-law scope definition; primary Roman-source verification; representative Masonic-constitution verification; professional-history source selection; internal source and attribution audit; consequential negative-result record.
 - Completed for the prior installation: structured generation-metadata validation; settled build; clean fatal-error, reference, overflow, and layout-warning scan; extracted-text, embedded-font, and PDF-structure checks; and visual inspection of all 48 pages. That installed PDF was byte-identical to its reviewed build, SHA-256 `7bba57e090b9ffaa68be83d8e37504451ced4cfae802b80d04d47e741473c94d`.
 - Structural revision and production review completed on 17 July 2026: the documentary corpus and timeline/claim audit now precede the terminal `Scope, Corpus, and Qualifications` appendix, and the title warning points to that apparatus. Two settled `pdflatex` passes produced a 48-page PDF; the final log is warning-free, and metadata, PDF structure, embedded and subset fonts, and extracted text passed inspection. Every rendered page was visually reviewed, and the installed PDF was byte-identical to the reviewed build, SHA-256 `669e3e49bd1507baa494502f3af77946ff64d62248e0fb0909dcd26f3deea82c`. That snapshot is superseded.
