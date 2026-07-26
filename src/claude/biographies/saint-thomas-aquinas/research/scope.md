@@ -199,3 +199,11 @@ a distribution-rights review.
   specialist review; relic and iconography item-level work;
 - independent rights review of the built artifact; ecclesiastical review or
   approval (none claimed).
+
+## Catechism staleness review — 2026-07-26
+
+The new Catechism records reached this edition through paired GPT research.
+This edition makes no paragraph 2267, capital-punishment, or coercion claim.
+Both candidates found that insertion would enlarge rather than correct scope.
+**No material change**; no prose, citation, or PDF revision. See
+`src/sources/inventories/aquinas-catechism-staleness-review-2026-07-26.md`.

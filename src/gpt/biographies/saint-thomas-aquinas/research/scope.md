@@ -340,3 +340,11 @@ checked at full size. The reviewed build was installed at its mirrored
 `doc/` path and verified byte-identical. This source audit adds no independent
 specialist, theological, rights, or ecclesiastical review, and no prior
 exact-byte distribution clearance attaches to the changed render.
+
+## Catechism staleness review — 2026-07-26
+
+The new Catechism records were compared with the exact 2018 paragraph 2267
+control. Modified and research-first rewritten candidates agreed that Thomas's
+lethal conclusion and the later “inadmissible” judgment are already accurately
+distinguished. **No material change**; no prose, citation, or PDF revision.
+See `src/sources/inventories/aquinas-catechism-staleness-review-2026-07-26.md`.
