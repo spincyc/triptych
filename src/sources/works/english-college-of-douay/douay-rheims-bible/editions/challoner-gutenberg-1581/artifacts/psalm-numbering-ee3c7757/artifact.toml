@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.psalm-numbering-ee3c7757"
+edition_id = "edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581"
+artifact_type = "reference-table"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych-created reference table. It records the identity, numbering, and naming of public-domain biblical books and verses and contains no third-party text; Triptych places it under the repository licence and claims no exclusive right in the underlying facts."
+provenance = "Compiled by Triptych on 2026-07-25 from the exact verse-text artifacts of this edition and from the controls named in the notes."
+retrieved = "2026-07-25"
+sha256 = "ee3c7757cc1a971e9914cbb1c05cf8cc177ef9c4e9dffe6adb2adec59d96fc06"
+byte_size = 13200
+path = "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/psalm-numbering-ee3c7757/psalm-numbering.tsv"
+indexable = true
+encoding = "utf-8"
+notes = "Triptych-compiled concordance between the Vulgate/Septuagint psalm numbering used throughout this edition and in the 1962 Missal, the Hebrew/Masoretic numbering used by the Nova Vulgata and by the New American Bible, and the English convention of the King James, Revised Standard, and most other modern English versions, which leaves the psalm inscription unnumbered. Rows are verse ranges, so the four places where one system joins or divides what the other keeps whole are exact. english_offset is the number of leading Vulgate verses occupied by the inscription; english_offset_uniform is \"no\" for the fifteen psalms where the two systems also divide the body differently, so that the offset holds only from the head of the psalm. The chapter correspondences and the four split points were checked against the Clementine Latin and against the printed 1914 John Murphy edition; the offsets were computed from the extracted verse counts against a King James Version consulted online and not retained, and every psalm inscription was read."

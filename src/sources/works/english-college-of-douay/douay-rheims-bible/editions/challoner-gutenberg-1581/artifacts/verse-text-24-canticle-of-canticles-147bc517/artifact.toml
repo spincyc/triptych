@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-24-canticle-of-canticles-147bc517"
+edition_id = "edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The verse text is the public-domain Douay-Rheims translation as revised by Bishop Challoner (died 1781); it was first published in 1582, 1609, and 1610 and revised in 1749-1752, so it is out of copyright everywhere by age. This derivative contains only that scripture text with a mechanical reference column. It contains no Project Gutenberg header, licence, trademark, or other added matter, and no third-party annotation."
+rights_jurisdiction = "United States"
+retrieved = "2026-07-25"
+sha256 = "147bc517d5d69f39b1ae9c14231c567bc136f7877fa3fbb930c781eec518f453"
+byte_size = 14717
+path = "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-text-24-canticle-of-canticles-147bc517/24-canticle-of-canticles.tsv"
+derived_from = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.gutenberg-text-7d10da78"
+transformation = "Extract one verse per line from the exact Project Gutenberg bytes. Take the body between the Project Gutenberg START and END markers and stop at the \"APPENDICES\" line, so the 73 canonical books alone are read. Open a chapter at each line matching \"<Book> Chapter <n>\". Within a chapter treat every blank-line-delimited paragraph whose first line matches \"<chapter>:<verse>. \" as that verse and join its wrapped lines with single spaces; discard every other paragraph (Challoner's notes, chapter arguments, Latin incipits, book prologues, and the unnumbered \"Alleluia\" headings). Collapse runs of whitespace to one space and strip the ends. Emit \"book<TAB>chapter<TAB>verse<TAB>text\" with a header line, LF terminated, in canonical order. Three numbering corrections restore the continuous Clementine Vulgate numbering the 1962 Missal cites, each checked against the Clementine Latin and against drbo.org: Psalm 9 verses printed with the \"9a:\" prefix under the running head \"Psalm 10 according to the Hebrews\" become Psalm 9 verses 22 to 39, as the printed edition's own note on verse 21 states; the second series of Psalm 113, which the printed edition restarts at 1, becomes verses 9 to 26; and the first of two consecutive paragraphs numbered \"12:12\" in Proverbs 12 is appended to verse 11, which the Clementine gives as a two-clause verse. Nothing else is renumbered: the Douay-Rheims's own versification, including Psalm 115 numbered 10 to 19, Psalm 147 numbered 12 to 20, and the verses it merges with their neighbours, is preserved."
+indexable = true
+encoding = "utf-8"
+notes = "Solomon’s Canticle of Canticles: 8 chapters and 116 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Cant<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation."

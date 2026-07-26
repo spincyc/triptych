@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-aliases-fef3f2ed"
+edition_id = "edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581"
+artifact_type = "reference-table"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych-created reference table. It records the identity, numbering, and naming of public-domain biblical books and verses and contains no third-party text; Triptych places it under the repository licence and claims no exclusive right in the underlying facts."
+provenance = "Compiled by Triptych on 2026-07-25 from the exact verse-text artifacts of this edition and from the controls named in the notes."
+retrieved = "2026-07-25"
+sha256 = "fef3f2edb0c175497fedc1f265d2d3776acf08b39d52822fc423a2b08d5c5229"
+byte_size = 790
+path = "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581/artifacts/verse-aliases-fef3f2ed/verse-aliases.tsv"
+indexable = true
+encoding = "utf-8"
+notes = "Triptych-compiled table of loci that carry a verse number in the Clementine Vulgate and in most modern versions but none in the Douay-Rheims, with the Douay-Rheims verse that holds their text. The list is the complete set of such places found by comparing all 35804 extracted verses with eBible.org's public-domain engDRA edition, which restores the standard Vulgate versification. Every entry was then confirmed on the Douay-Rheims side against drbo.org, which likewise has no such verse; Genesis 5:32, 2 Kings 13:39, Amos 9:15, Psalm 28:11, and John 11:57 were further confirmed in the 1914 John Murphy printing, whose OCR could not resolve the other two. The Clementine side rests on engDRA and on the ordinary Vulgate versification, not on a collation with a Clementine text: drbo.org's parallel Latin is aligned to its Douay-Rheims and merges the same verses, so it cannot witness the Clementine division. Treat the list as complete against engDRA, not as a proof that no further divergence exists."
