@@ -76,3 +76,9 @@ has taken place. The document builds, but its required page review has not been
 performed and no reviewed PDF has been installed. The publication therefore
 remains on `hold` under the independent Ordinary-exposition review gate and
 must not enter a public build or private preview.
+
+## Research-staleness verdict — 2026-07-26
+
+The complete unbaselined input set and both candidates were compared. No source
+correction was found. This does not satisfy the unperformed page review or the
+independent Ordinary-exposition review gate; the edition remains on `hold`.

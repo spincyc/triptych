@@ -74,3 +74,9 @@ This is internal production review only; it grants no independent editorial, spe
 ## Justin First Apology source-family production review — 2026-07-23
 
 The exact Dods--Reith Buffalo 1887 witnesses for *First Apology* 65 and 67 were normalized and rebound after claim-level review. Repeated settled and forced deterministic builds produced the current 42-page PDF, SHA-256 `5f813ba5c135b8171305081780308d10d39f5c9127d5375c404f5f8ff253ee9d`. The final log, PDF structure and metadata, embedded/subsetted/Unicode-mapped fonts, nonempty text extraction, and build/install byte identity passed. Bounded review rasters were generated through `scripts/pdf-review`; every rendered page was visually inspected, with changed claims, references, tables, callouts, and terminal provenance checked at full-page scale where needed. No release clearance attaches to these changed bytes.
+
+## Research-staleness verdict — 2026-07-26
+
+Both candidates, paired research, and changed Missal inputs were compared. They
+strengthen provenance without changing sequence, rubric, theology, or edition
+boundaries. This exact edition is ready for rebaselining.
