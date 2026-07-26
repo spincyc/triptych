@@ -29,6 +29,7 @@ Choose a section, open a PDF, and read.
 | **[Prayer](library/prayer.md)** | Novenas and condensed daily prayer books. |
 | **[Curriculums](library/curriculums.md)** | Self-paced courses and printable study materials. |
 | **[Faith](library/faith.md)** | Doctrine, sacraments, and theological studies. |
+| **[Scripture](library/scripture.md)** | Close studies of biblical passages and claims about them. |
 | **[Biographies](library/biographies.md)** | Historical and hagiographic lives. |
 | **[Heresies](library/heresies.md)** | Historical studies of condemned propositions, ecclesial responses, and their aftermaths. |
 | **[Historical Accounts](library/historical-accounts.md)** | Histories of texts, institutions, and events. |

@@ -214,6 +214,7 @@ owning catalog under `library/`. The section landing pages are:
 - `library/prayer.md`
 - `library/curriculums.md`
 - `library/faith.md`
+- `library/scripture.md`
 - `library/biographies.md`
 - `library/heresies.md`
 - `library/historical-accounts.md`
@@ -237,6 +238,14 @@ companions `·`-joined in the same cell under short distinguishing labels. A
 provider edition that does not yet exist or is not released renders as an em
 dash placeholder. Per-provider links within the one owning row are not
 cross-listing; listing a leaf on more than one page is.
+
+A curriculum section landing follows that provider-column rule at course
+level: each available provider link opens the corresponding provider section
+of the curriculum's child catalog. Within that provider section, list the
+course publications in reader order with one plain `PDF` column; do not repeat
+the AI-provider name on every packet or companion row. Every PDF still keeps
+its single owning catalog link, and a later provider edition receives its own
+parallel section rather than being mixed packet by packet.
 
 Do not cross-list. Keep derived companions in their canonical work's entry.
 Link installed PDFs from the provider columns and describe each work in terse,
