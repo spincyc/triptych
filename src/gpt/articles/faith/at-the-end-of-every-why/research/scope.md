@@ -67,6 +67,11 @@ Scripture, official texts, patristic and mystical wording, and third-party trans
 
 ## Review state
 
+Staleness review (2026-07-26): the old, minimally modified, and research-first
+rewritten treatments were compared against paired research and new Catechism
+and Irenaeus records. Final end, charity, grace-enabled return, and pastoral
+bounds remain unchanged. No material change.
+
 - Completed for this source revision: profile routing; source selection; exact-locus checks for the new prayer, Eucharist, Gethsemane, dryness, Thérèse, suffering, and merit-within-grace claims; retention and rechecking of the established charity, friendship, filial-fear, Bernard, and John-of-the-Cross claims; exact Buffalo 1887 ANF facsimile and OCR checks for Irenaeus IV.13.1–4 and IV.14.1; Scripture-quotation audit; private-revelation exclusion audit; severe-asceticism prudential-boundary audit; doctrinal-boundary, argument-chain, rhetorical, endnote, rights, and source-record consistency review.
 - Current artifact record: the revised source received a settled multipass build; clean fatal-error, undefined-reference, overflow, underflow, and layout-warning scans; extracted-text, metadata, pagination, PDF-structure, and embedded-font checks; bounded raster and contact-sheet review; and individual visual inspection of all 14 pages. A forced rebuild reproduced the reviewed bytes exactly. The installed PDF at `doc/gpt/articles/faith/at-the-end-of-every-why.pdf` has SHA-256 `d68868669c34685118474f74606de33403a215c4f53575d835670e97130508b3`.
 - Publication state: the rebuilt installed snapshot differs from the exact bytes

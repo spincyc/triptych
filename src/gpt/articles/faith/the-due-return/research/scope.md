@@ -163,6 +163,12 @@ The article uses only brief, claim-driven source phrases. Scripture, official te
 
 ## Review state
 
+Staleness review (2026-07-26): the old, minimally modified, and research-first
+rewritten treatments were compared against paired research and new Augustine,
+Catechism, Irenaeus, and Lumen gentium records. Religion, sacrifice, law,
+freedom, grace, and neighbor-directed return remain unchanged. No material
+change.
+
 - Completed for the current source: profile routing; exact-locus Scripture, patristic, mystical, monastic, Alphonsian, Thomistic, catechetical, conciliar, Christological, sacramental, and universal Latin current-law audit; exact Buffalo 1887 ANF facsimile and OCR checks for Irenaeus IV.14.1–3, IV.17.1, and IV.18.1–6 and Justin's *First Apology* 67, including correction of the former “turn from idols” citation mismatch; the International OCD Foundation clinical-boundary check; jurisdiction, authority, act/virtue/merit, satisfaction, suffering, culpability, ascetical-safety, and negative-claim boundary drafting; rights review; and trilogy-wide rhetorical and series-coherence review. The complete translated Justin constituent is available for later bounded work-wide examination, but this article did not search or inspect the whole apology.
 - Prior artifact record only: the preceding source snapshot received repeated settled builds and full production review. Its 14-page installed PDF had SHA-256 `8e16272509e6dc9e92eef4f26665077a46025fd5230977394787f03e06a9a314`. It predates the present revision and is not a reviewed representation of the current source.
 - Current artifact record: the revised source received a settled multipass build; clean fatal-error, undefined-reference, overflow, underflow, and layout-warning scans; extracted-text, metadata, pagination, PDF-structure, and embedded-font checks; bounded raster and contact-sheet review; and individual visual inspection of all 18 pages. A forced rebuild reproduced the reviewed bytes exactly. The installed PDF at `doc/gpt/articles/faith/the-due-return.pdf` has SHA-256 `c135449a5c03012587cc363580cf83db7cde83fb5bb13150d51f3b6c7c40fdf1`.
