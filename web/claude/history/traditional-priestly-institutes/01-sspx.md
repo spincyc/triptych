@@ -751,9 +751,9 @@ All sources were read on 2026-07-25. *Acta Apostolicae Sedis* volumes and fascic
 
 ## Generation Metadata
 
-**Last revised (UTC):** 2026-07-25T21:45:53Z
+**Last revised (UTC):** 2026-07-26T02:03:00Z
 
-**Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
+**Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
 **Agent/runtime:** Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision
 

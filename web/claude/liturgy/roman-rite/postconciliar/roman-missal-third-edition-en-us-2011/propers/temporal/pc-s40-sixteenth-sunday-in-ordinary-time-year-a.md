@@ -681,9 +681,9 @@ Completed: source research and same-day verification of every witness quoted; cl
 
 ## Generation Metadata {#generation-metadata .unnumbered}
 
-**Last revised (UTC):** 2026-07-25T22:38:16Z
+**Last revised (UTC):** 2026-07-26T02:03:00Z
 
-**Model:** `claude-fable-5`; `unexposed: reasoning-effort and sampling configuration`
+**Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 
 **Agent/runtime:** Anthropic Claude Code agent (research, drafting, typesetting, review); Claude Code CLI 2.1.219; unexposed: server revision
 

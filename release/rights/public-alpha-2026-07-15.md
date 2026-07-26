@@ -1121,6 +1121,26 @@ work-specific research records remains operative. This approval does
 not authorize a push, deployment, tag, history rewrite, public
 release attachment, announcement, or promotion.
 
+## Supplemental exact-current-snapshot clearance — 25 July 2026
+
+At `2026-07-25T21:03:46-05:00` in `America/Chicago`, the maintainer instructed:
+“Correct the model identifier on the nine wave-eleven Claude editions authored this session to the model that actually produced them, and re-bind them at their corrected exact bytes.” This is recorded as perpetual worldwide
+exact-current-snapshot distribution authorization under the existing
+represented authority in this record. The sole condition remains
+`no-project-initiated-promotion`.
+
+The approval binds all 147 exact installed release
+PDF snapshots and every exact recognized artifact-affecting
+reader-site input inventoried below at their current bytes. It is an
+exact-byte distribution clearance only: it does not represent
+completion of any outstanding work-specific rights, source,
+collation, specialist, or ecclesiastical review, and no imprimatur,
+nihil obstat, or ecclesiastical approval is claimed. Every
+limitation in the prior supplements, release README, catalogs, and
+work-specific research records remains operative. This approval does
+not authorize a push, deployment, tag, history rewrite, public
+release attachment, announcement, or promotion.
+
 ## Exact approved snapshots
 
 | Publication ID | SHA-256 |
@@ -1154,27 +1174,29 @@ release attachment, announcement, or promotion.
 | `claude:articles/faith/council-missal-and-crisis` | `36e6da8ebd2f2db866eb9685efa6bff608edfe5938bc460b414990ba2d282ed3` |
 | `claude:articles/faith/freemasonry-and-the-catholic-church` | `4e954e5a483b426b71896ba70d1761bf5ffddb852411ebbb09caf43fe755e87c` |
 | `claude:articles/faith/in-support-of-the-particular` | `de4904267caa3c9ee024ac9ecc2e7229bae572f553c761dda5780e3f9d50173b` |
-| `claude:articles/faith/ontological-vertigo` | `56ecbfad17c0ce6d6303c62d3e738eb2d2401dee8ddc663f306af9bf4e7d980e` |
+| `claude:articles/faith/ontological-vertigo` | `116d2e290f70a4fe1fb5d228b8e9d280ed77de49f70867063208ad9be1610aac` |
 | `claude:articles/faith/the-due-return` | `91ac3a4a15121efd8ea7426cf6a21af3885caa537de0dd1348648e6d47da4490` |
 | `claude:articles/faith/trustful-surrender-to-divine-providence` | `32d59306bd1392b13fc97428bcc6a044d967fe69f525cfad4edf226e1636060a` |
 | `claude:biographies/origen` | `020b3f4452e2d0e89f6458824f6d33e8bf2db079ff80e0a73f42f9a2d6648d35` |
 | `claude:biographies/saint-augustine-of-hippo` | `bdb140a336f9913fb7422c301d9b6f51810717f5376426993a2148afb86fb0bd` |
 | `claude:biographies/saint-jerome` | `22aec5010e1732066d6026a89580a862785e7b730ebd92512e89dfb533ea9b9e` |
 | `claude:biographies/saint-paul` | `5a0cf9bcf574a6ba3066e206f750ac025106107e0fbdaaf4ad5e0bd228f751a5` |
-| `claude:biographies/saint-peter` | `32f20b9355a9ea0d5735521a8c558917d5d85411b89b3ee24873f2bbfcf75e4d` |
+| `claude:biographies/saint-peter` | `fc7c894ce7c88a8756909abf4f9de7f4a5ad1a9d842428ef5e3b1115f3b5eb75` |
 | `claude:biographies/saint-robert-bellarmine` | `b4cde6a9166301c7fe85a60985745889356d0301d525997d3cc08a35fe9d59b8` |
 | `claude:biographies/saint-thomas-aquinas` | `8c1ef40dca6ebd693cb39ea15248878776b43da438d00736cd4c7e9a39ba51c2` |
 | `claude:biographies/tertullian` | `65f1ac76cad1c42153b58d024c28f5fd2fc9db925b67229141ec38e50848e7ab` |
 | `claude:history/biblical-translations/01-septuagint` | `6aaa22a66d05bf8e4cbe88a3dda814dd71354e00753bbb43f5ee794a25d161bf` |
 | `claude:history/biblical-translations/02-vulgate` | `6549550fa7d9447e5148e8264779aee6df809f65451919367aad98df7faec699` |
-| `claude:history/traditional-priestly-institutes/01-sspx` | `0f2f08a768bbe60b467957a94d11493ddfa1fb158a967289b783b2205006e5e9` |
-| `claude:liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost` | `f6de420673e7746d5538cbd05e619d9397135bc6109e575b2e6d877ceafaa2f3` |
+| `claude:history/traditional-priestly-institutes/01-sspx` | `6100ca3f30954e40f1ca03cba8ddc616ef06832fc272c4c87fb3f4c163335df5` |
+| `claude:history/traditional-priestly-institutes/02-fssp` | `8551f6268cef0ca369e042ab2007f7496d9c2e7f9621005abd2a3a5fa9eb0754` |
+| `claude:liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost` | `3f7599051a759ba33c298b89e1bf06130bf58fc603cd2e2ba1dac20b532a2ea4` |
 | `claude:liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost` | `b597e9bc4932c1ad98dae764db9323c8c0ad89edf518bb19411b569237922676` |
-| `claude:liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a` | `ac4555fa14ce24caa8674ae949e571a86e6193bdbd8d40512f620acaedc9117c` |
-| `claude:liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a` | `9f62d3bfdefa6fa3ddb138a71ed879a65848280d3b3baadc5afeb4536d6b787d` |
-| `claude:theology/mariology/fatima` | `c8b1e0dd4443eca492c142453696d138cfab3ec4dba51231e0e52a69e5761ef2` |
+| `claude:liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a` | `9717cc22af66cee15fac48e77e4d5f5c6a335c2429787807b5054d9e7ed07086` |
+| `claude:liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a` | `891b2cc4b2714a7f6b6043cbfa35ceca2dcd5f713e901a38bf4ae6d3afc53dbb` |
+| `claude:theology/mariology/champion` | `72eb973fc935966449752f8c0d2c7e64521a0d874f16a766d7917605a5a46135` |
+| `claude:theology/mariology/fatima` | `572abbed26b4e67d46991f691ddc64e9d3c8f200fc41ee551c9722eba9f2b92c` |
 | `claude:theology/mariology/guadalupe` | `789d72a6e275bddddb7cdc3cd37a56c19126d6e1a723c70113ffcd31e15dcb04` |
-| `claude:theology/mariology/la-salette` | `46d93d21ad5128701327cce191a9cb852f4c46a98ee107c4380fdaa58e844b10` |
+| `claude:theology/mariology/la-salette` | `553f912e9d71bf39ce141ccf3a2dcf84479b7b56f099656f668443057adcf4a7` |
 | `claude:theology/mariology/lourdes` | `02ba30326155c6e0e4b31ebd997594a63ad735fb320b2eda580f0522204f7e42` |
 | `claude:theology/mariology/marian-dogmas` | `ab33912de1090951399e6306e706b547f27507b75b33edd620a7b22bb0a0e50c` |
 | `claude:theology/mariology/rosary` | `e143841cacca16dfb8d87539e5713b1ddf993b72a4234daafa4753d154777638` |
@@ -1289,9 +1311,9 @@ release attachment, announcement, or promotion.
 | `library/ecclesiastical-latin.md` | `1b985372bc372990f8d748d7667620c76c89a4073a8dae146ecefbca84333c1b` |
 | `library/faith.md` | `0ebc99e193a0f5091fd9548212a49b6f62f09bf778aa4c1bf45dc87eed3920cf` |
 | `library/heresies.md` | `2f8cbb8b910281e3d6ace3b232d724b6e08866a459344268fe611a6652229feb` |
-| `library/historical-accounts.md` | `e0380922f2e64098adb0fc93cc1968d4408279e2d370943d88589f57ee837361` |
+| `library/historical-accounts.md` | `85598895a87d9d7aedae8d661295c79f1d5e3b6cef6d543763c4ca6bbb8f606e` |
 | `library/law-and-church-discipline.md` | `2f909b26e55bb143ade3c326ffea0cc5ceed1d239f99036376f1a4eed98af240` |
-| `library/mariology.md` | `b54fbadae898dd2314fefd56ddc0f5b6e95ccf79c329eb012b55e2d1d96453b7` |
+| `library/mariology.md` | `7debbf1348dc23564e1063edacd4dcd65f8901c9d9bcb834556e1d67af160f84` |
 | `library/novus-ordo-liturgy.md` | `aa5ebc1cb28a23ca191ad5d6ee7a234a7fe52394b0d72c435ab78a0c8452f9d9` |
 | `library/prayer.md` | `f355ee2a34f4f47744cbc6f0fea71c04f2c303882dce1b8ae3adabfc2b2c850d` |
 | `library/traditional-latin-mass.md` | `7c6df7fd58c23c395ca845fbe9ed6f7fe603eb3ced80e6c731c776c0a712b92b` |
@@ -1307,27 +1329,29 @@ release attachment, announcement, or promotion.
 | `web/claude/articles/faith/council-missal-and-crisis.md` | `4868ed0329a2f4d32c9c469caf268383cd31df277e3bf4e192163186cf5a392e` |
 | `web/claude/articles/faith/freemasonry-and-the-catholic-church.md` | `eba2284da5f30f60e24cea2392e9c339db9e2875bbd4e9eb65c93f9eaa70aaa8` |
 | `web/claude/articles/faith/in-support-of-the-particular.md` | `af6a94dcbe2ae01327053c571779ce6ff36a6a9f525dc88ef7fed3267bb89f76` |
-| `web/claude/articles/faith/ontological-vertigo.md` | `15e3966fd76757aedf30e1f858c97c49e904a2a1cae909766008062efad22f45` |
+| `web/claude/articles/faith/ontological-vertigo.md` | `8520c2ae95c9f442038690fa682f3c7944b37c6db996d432fcdd727178a8a266` |
 | `web/claude/articles/faith/the-due-return.md` | `b2f984f554c310dbcaf1db7a03b24c9e25f18d7c24bac62ce15f593a8cd534bf` |
 | `web/claude/articles/faith/trustful-surrender-to-divine-providence.md` | `cfc064128f920152d895e278312ed0487b20ea74cc81b1d670bd5b33b7ead2f1` |
 | `web/claude/biographies/origen.md` | `b4baa746f1e2c189e744d3bccabb0346e4e57dc2b3fb02ebef07ca681ddfce37` |
 | `web/claude/biographies/saint-augustine-of-hippo.md` | `d679c64deb2697ed18d55e40f167302e88ad2e7a7ab13b326383c84bbe6bb476` |
 | `web/claude/biographies/saint-jerome.md` | `0e21a803044275f0e4425b20b0c236594997cfd1741e338594e7b304677a3127` |
 | `web/claude/biographies/saint-paul.md` | `50094cbd6b2fff6a747708fa1833a6508b055e4e25e04beb8824e1cb5d5a0227` |
-| `web/claude/biographies/saint-peter.md` | `ad5384be68f132f1e44747439516901216a89c9b7b77ad6d81f85efd3647661c` |
+| `web/claude/biographies/saint-peter.md` | `4f1ded7e73f74643c1b527f21b7c462695454564ca06b7542da3d4d588875b89` |
 | `web/claude/biographies/saint-robert-bellarmine.md` | `2977f3f5bbef9d39130bf0f32c5c33b749e8ab2d2c0ffdc8b6814da761a202ec` |
 | `web/claude/biographies/saint-thomas-aquinas.md` | `1d968dd2a1798fae293189f4a8fb10b1e92e1f4a305bcde3799331ebe6d51eac` |
 | `web/claude/biographies/tertullian.md` | `72131c23448a6f558092cae2c98f82afd75fb2a8910c5d389a47141efa3bb5da` |
 | `web/claude/history/biblical-translations/01-septuagint.md` | `49c060e74fd45eaa30c15f084137f4cbf5ceee06ac92e566682f39d703509dd4` |
 | `web/claude/history/biblical-translations/02-vulgate.md` | `3da99c71009a67127ce332f849cc1894e62288f1a0d7aae75666a76ca48f4a08` |
-| `web/claude/history/traditional-priestly-institutes/01-sspx.md` | `71c59f5612482b52a2d31443c7d45dfa21dd4803f6b87379e2ce2a86a0f01155` |
-| `web/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.md` | `8ca42e48005c6fafb98e88e61414b2bcc411b94858655e2f5e0c7b736db477da` |
+| `web/claude/history/traditional-priestly-institutes/01-sspx.md` | `975c34f7b9236566a6fb5e53f6c0551c3a02bb1889e6f9cef4d152e238afc209` |
+| `web/claude/history/traditional-priestly-institutes/02-fssp.md` | `cb0913d4be0ede5355921f5ecd8aacb065ea5c8a7b0587ec5a637b81c1196c9f` |
+| `web/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.md` | `0b308d6d56d32f982abac846e397f50563c969e331a88318393686d5e87f0d6a` |
 | `web/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.md` | `dbfaba7f69322862871d31df59bbd7779b665487694ea4a82f879488e46f53ba` |
-| `web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a.md` | `ab2469bfcd2461f0823f9b7f63eab31a18d2126d054b56919429b902010c124e` |
-| `web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a.md` | `4dedaee7226cf8124270a4f97633220b0b1943e95b5f3c0b8bd1afa4bb67a208` |
-| `web/claude/theology/mariology/fatima.md` | `d33f919a9daaf1686caeccab2cd3c2862c272e2a1c4d87f0ab78ad89120c1194` |
+| `web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a.md` | `2b28b3e4f3cb43bc96f2496736fb4a92aa804904e9178153b3b201f4a9b888fc` |
+| `web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a.md` | `5377f00c95dbb13aa2dc7ff11e20bc40cd9e78cc40cf5b1d2ddbb53459412172` |
+| `web/claude/theology/mariology/champion.md` | `73f90abfc80997f9585c2cc957d150678929d470affa1e911e3429308136613e` |
+| `web/claude/theology/mariology/fatima.md` | `5f1f3d4b76a587854d1ae9b8c4dcf6964563d56a01d5d04bde8d1d52bd6ee991` |
 | `web/claude/theology/mariology/guadalupe.md` | `00231a3783e6c7560433414328ede96a3a54f56994733a1b226563032a5e776c` |
-| `web/claude/theology/mariology/la-salette.md` | `10b2d6d8ef7b7ead6c2bdca8f9ab1d4b79bae5893afb5cedabd147050a72a35d` |
+| `web/claude/theology/mariology/la-salette.md` | `d7afffd2db8132057ae41b33a9379f18f6f666d7a3c01debbc49dc6955abc091` |
 | `web/claude/theology/mariology/lourdes.md` | `9cac98753be77a260baf78461c0e38bc810fd62dd5fadf14c73b1295356c3331` |
 | `web/claude/theology/mariology/marian-dogmas.md` | `6f4193f73791cfa60a647941b6ec960f1f09284614157eeb9c8232d991bca83a` |
 | `web/claude/theology/mariology/rosary.md` | `37681c98ea41ab8e436b570a318c28bba9e2007fa0349c16d8c1f43fa701288f` |
