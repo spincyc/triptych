@@ -158,6 +158,48 @@ State the convention on the library page, preserve uncertainty rather than
 inventing a sorting date, and omit or mark an empty group without disturbing
 the sequence.
 
+## Maintainer production ledger
+
+`guidance/biography-production-plan.md` is the non-reader-facing inventory of
+persons encountered as sources or material authorities who are plausible
+subjects for this collection. A ledger row is a research obligation, not a
+publication, assignment, promise, catalog entry, or finding that the person was
+correct. Do not create publication leaves or reader links for pending rows.
+
+Include a named person when the repository uses that person as a source or
+material authority and the person is an Apostle, saint, blessed, pope, Father
+or Doctor of the Church, major theologian or exegete, religious founder, or a
+comparably consequential ecclesial or religious-historical authority. Include
+non-Catholic and non-Christian authorities when their religious teaching or
+ecclesial-historical action is the reason they are used. Do not include a
+person merely mentioned in narrative, a translator or modern scholar used only
+for reference assistance, an anonymous or corporate author, a living local
+officeholder cited only for routine administration, or a secular witness whose
+religious or ecclesial significance is incidental. Borderline exclusions stay
+visible in the ledger.
+
+Deduplicate by historical person, not title, name form, office, source
+namespace, or provider. Prefer the ordinary English name used by the future
+biography; record aliases and every canonical `work_id` namespace that caused
+inclusion. One row may therefore cover several pontifical names or source works,
+but never two persons. Use only these statuses:
+
+- `published`: at least one complete biography publication exists;
+- `pending`: the person is eligible and no complete biography exists; and
+- `excluded`: the encountered person was reviewed against this rule and is out
+  of scope, with a short reason.
+
+Audit after source-bearing changes by listing distinct owners beneath
+`src/sources/works/`, comparing them with the ledger's canonical identities,
+then searching the exhaustive publication source surfaces recorded in
+`src/sources/inventories/publications-v1.toml` and
+`claude-publications-v1.toml` for named personal authorities not yet
+canonicalized. Review matches manually: honorific searches are discovery aids,
+not proof of identity or eligibility. Update the ledger's audit date, snapshot
+references, additions, and limitations. A clean comparison proves coverage of
+the recorded identities and reviewed name matches, not semantic discovery of
+every unnamed allusion.
+
 ## Profile gate
 
 Every consequential episode must have an earliest located witness or an
