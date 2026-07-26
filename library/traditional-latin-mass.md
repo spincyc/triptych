@@ -9,8 +9,8 @@ These studies concern the books and calendar in force in 1962. They do not estab
 | Publication | ChatGPT | Claude | Focus |
 | --- | --- | --- | --- |
 | **The Ordinary and Order of the Mass** | [PDF](../doc/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.html) | — | Stable texts, ritual sequence, and theological exposition. |
-| **Assembling the Mass** | [PDF](../doc/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.html) | — | Calendar, precedence, Mass classes, formularies, and commemorations. |
-| **The 1962 Roman Calendar** | [PDF](../doc/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.html) | — | Construction history and complete recurring universal and United States inventories. |
+| **Assembling the Mass** | [PDF](../doc/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.html) | [PDF](../doc/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.html) | Calendar, precedence, Mass classes, formularies, and commemorations. |
+| **The 1962 Roman Calendar** | [PDF](../doc/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.html) | [PDF](../doc/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.html) | Construction history and complete recurring universal and United States inventories. |
 
 ## Altar Server Guides
 
@@ -38,5 +38,5 @@ each Mass.
 | 20 | **Sixth Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/20-sixth-after-pentecost.pdf) | — |
 | 21 | **Seventh Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/21-seventh-after-pentecost.pdf) | — |
 | 22 | **Eighth Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.pdf) | [PDF](../doc/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.html) |
-| 23 | **Ninth Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.pdf) | [PDF](../doc/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.html) |
+| 23 | **Ninth Sunday after Pentecost** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.pdf) | [PDF](../doc/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.html) · [Full text](../doc/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text.pdf) |
 | M01 | **The Nuptial Mass** | [PDF](../doc/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass.pdf) | — |
