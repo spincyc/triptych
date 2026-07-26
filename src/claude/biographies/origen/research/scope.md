@@ -181,3 +181,10 @@ not treated as a reuse license.
 - inspection of Commentary on Matthew 15, Epiphanius *Panarion* 64,
   Diekamp, Price, and McGuckin at first hand;
 - independent rights review; ecclesiastical approval (none claimed).
+
+## Catechism staleness review — 2026-07-26
+
+Both candidates confirmed that new natural-law and chastity records do not
+affect CCC 2745 or 2847 and their selective reception of *On Prayer*. **No
+material change.** See
+`src/sources/inventories/origen-tertullian-catechism-staleness-review-2026-07-26.md`.

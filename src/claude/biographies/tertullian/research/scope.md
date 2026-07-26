@@ -196,3 +196,9 @@ finalization on 2026-07-25.
 - Latin-text verification of quoted passages against critical editions
   (CCSL/CSEL), manuscript and edition history audit;
 - independent rights review; ecclesiastical approval (none claimed).
+
+## Catechism staleness review — 2026-07-26
+
+Both candidates confirmed that new chastity records do not affect CCC 2761's
+selective reception of *On Prayer*. **No material change.** See
+`src/sources/inventories/origen-tertullian-catechism-staleness-review-2026-07-26.md`.

@@ -298,3 +298,10 @@ This internal production review supplies no independent rights, specialist,
 historical, patristic, theological, textual, or ecclesiastical review or
 approval. The work-specific internal rights review above and exact-snapshot
 distribution clearance do not alter those limits.
+
+## Catechism staleness review — 2026-07-26
+
+Both candidates preserved the edition's exact list of selective Catechism
+citations. New natural-law and chastity records neither add nor contradict a
+claim. **No material change.** See
+`src/sources/inventories/origen-tertullian-catechism-staleness-review-2026-07-26.md`.
