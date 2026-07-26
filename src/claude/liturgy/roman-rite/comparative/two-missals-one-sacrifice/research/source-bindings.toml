@@ -1,0 +1,304 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/comparative/two-missals-one-sacrifice"
+
+# Every binding states its own publication-local evidence ceiling in `context`,
+# and the ceiling governs the states claimed.  Two ceilings recur.
+#
+# `verified` is claimed only where the witness is either an authoritative
+# delivery whose exact bytes were re-fetched and compared, or a page image that
+# was rendered and read visually.  The 1962 Missal, Trent, the Latin Ordo
+# lectionum and the Holy See portal acts meet that condition.
+#
+# `inspected` without `verified` is claimed for everything reached only through
+# the registered secondary digital reproduction of the 2002 third typical
+# edition.  That reproduction is not a page-image facsimile of the printed
+# altar book, and this study does not certify that its wording agrees with the
+# printed editio typica; the same ceiling is stated in the publication's scope
+# appendix and controls the 2002 Missal, the Latin Institutio generalis, and
+# every act read only as reprinted in that volume.
+#
+# Each artifact was acquired and its SHA-256 compared with the registered
+# record on 2026-07-25 or 2026-07-26 as the context states.  Fingerprints were
+# computed on 2026-07-26 against a validating source library.
+
+[[bindings]]
+source_id = "edition.catholic-church.missale-romanum.vatican-typica-1962"
+loci = [
+  "Bulla Quo primum, artifact pp. 3-4",
+  "Breve Clementis Pp. VIII, artifact pp. 4-5",
+  "Breve Urbani Pp. VIII, artifact pp. 5-6",
+  "Decretum of 23 June 1962, artifact p. 2",
+  "Sacred Congregation of Rites, general decree of 26 July 1960, artifact p. 9",
+  "Rubricae generales nn. 9-18, 63-70, 84-85, 503, 511-514, 523",
+  "Ritus servandus I, III, V-VII",
+  "De defectibus V",
+  "Ordo Missae, printed pp. 216-328",
+  "Praefationes, printed pp. 223-299",
+]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The older of the study's two comparison witnesses. The registered CMAA facsimile was downloaded publication-locally on 2026-07-25 and its SHA-256 matched the registered artifact exactly. Loci quoted in Latin were collated at rendered page images where the quotation is load-bearing (artifact pp. 2, 3, 4, 15, 33, 69, 297, 301, 302, 387, 388); the remainder were read at the artifact's embedded optical-character-recognition text layer, and every endnote in the publication says which. Where the text layer alone was used the reading is reliable for substance and provisional for orthography, and that limit is stated in the scope appendix. The passages registered for these loci carry the collation detail."
+
+[[bindings]]
+source_id = "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+loci = [
+  "Ordo Missae nn. 1-30, artifact pp. 303-310",
+  "Praefationes, artifact pp. 311-346",
+  "Prex eucharistica I, nn. 83-98, artifact pp. 347-354",
+  "Preces eucharisticae II-IV, nn. 99-123, artifact pp. 354-366",
+  "Ritus communionis et conclusionis, nn. 124-146, artifact pp. 366-370",
+  "Front matter and promulgating decrees, artifact pp. 1-3",
+]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The newer of the study's two comparison witnesses. The registered secondary digital reproduction was downloaded publication-locally on 2026-07-25 and its SHA-256 matched the registered artifact exactly; two acquisitions in the source record were likewise byte-identical. Every Latin quotation from the 2002 book in this study was extracted from those bytes at the artifact pages named. The witness is a digitally typeset reproduction, not a page-image facsimile of the printed altar book, and the study states that ceiling in its scope appendix; no claim is made that every word of the reproduction agrees with the printed editio typica. `verified` is therefore not claimed, and collation against a printed altar book or page-image facsimile remains a recorded review obligation."
+
+[[bindings]]
+source_id = "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002"
+loci = ["2", "4", "6", "7", "11", "12", "27", "30", "31", "32", "33", "41", "91", "93", "107", "199", "254", "299", "361", "365", "389", "392", "394", "398", "399"]
+role = "official-control"
+states = ["cataloged"]
+context = "The General Instruction controls this study's claims about the postconciliar Missal's own doctrine of the Mass and of the priest (Proœmium nn. 2, 4; nn. 27, 30-33, 91, 93), its account of the reform's relation to Quo primum and to Trent (Proœmium nn. 6, 7, 11, 12), its rules on the Eucharistic Prayers (n. 365), on ministries and lay deputation (n. 107), on concelebration (n. 199), on celebration without a minister (n. 254), on the altar (n. 299), on lectionary options (n. 361), and on language, translation, calendars and the limits on innovation (nn. 41, 389, 392, 394, 398, 399). Each article was read in the registered reproduction at the artifact page recorded in its passage; the reproduction ceiling stated for the 2002 Missal governs here too, so `verified` is not claimed. The Latin edition record and its segment were created for this study; several sibling passages under the same edition were created independently by another agent and are not relied on here."
+
+[[bindings]]
+source_id = "edition.council-of-trent.canones-et-decreta.latin-tauchnitz-1887"
+loci = ["sessio-22-canon-1-2", "sessio-22-canon-3-9"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Trent controls the study's claims about the language question and about the Canon and the sacrifice. Three Internet Archive page images were acquired and hashed publication-locally on 2026-07-25 and read visually: leaf n115 (printed p. 108) for session XXI chapter II on the Church's power in the dispensation of the sacraments, salva illorum substantia; leaf n127 (printed p. 120) for session XXII chapter VIII on the vernacular and canons I-II; and leaf n128 (printed p. 121) for canons III-IX, including canon VI on the Canon of the Mass and canon IX on the low-voiced canon and the vernacular. The work record's locus grammar admits canon and decree numbers only, so the doctrinal chapters are recorded within the passages that share their pages; the session XXI chapter is bound at the artifact level through its registered page-image record."
+
+[[bindings]]
+source_id = "artifact.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.leaf-115-image"
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Registered for this study. The page image was acquired, hashed and read visually on 2026-07-25 for the sentence Praeterea declarat, hanc potestatem perpetuo in ecclesia fuisse, ut in sacramentorum dispensatione, salva illorum substantia, ea statueret vel mutaret, quae suscipientium utilitati magis expedire iudicaret, quoted in section 5. No passage record exists for it because the work's locus grammar admits canons and decrees only."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:48aa6175aaee10cd85aa5e12bc9817108c8bc183530bf61bb334831e122da7fd"
+
+[[bindings]]
+source_id = "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981"
+loci = ["praenotanda-65", "praenotanda-66", "praenotanda-69", "praenotanda-76", "praenotanda-77"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The Latin typical edition of the Order of Readings controls every lectionary claim in section 6. The registered scan was acquired publication-locally on 2026-07-26 and its SHA-256 matched the registered artifact exactly. Printed page XXXV was rendered at 200 dpi and read visually for nn. 76 and 77, which are registered as new passages and are the source of every Latin quotation in section 6; `verified` is claimed for those two articles only. Numbers 65, 66 and 69 were read in the same file at printed pp. XXXII-XXXIV and are already registered by another agent; they are inspected, not separately collated. The English renderings printed in the study are labelled working glosses. Only the pages named were inspected, and the study's lectionary claims are bounded to them."
+
+[[bindings]]
+source_id = "edition.catholic-church.ordo-lectionum-missae.english-liturgy-office-web-2026-07-25"
+loci = ["praenotanda-65-69", "praenotanda-74-77"]
+role = "translation-control"
+states = ["cataloged"]
+context = "Registered for this study. The approved English translation was acquired and hashed publication-locally on 2026-07-25 and used to locate the relevant articles and to check the sense of the Latin. Its copyrighted English is not quoted in the publication, so no wording of this edition received a publication check and `verified` is not claimed. The edition record makes clear that the Latin typical edition is authoritative."
+
+[[bindings]]
+source_id = "passage.paul-vi.missale-romanum-constitutio.latin-missale-romanum-typica-tertia-2002.complete-text"
+loci = ["complete-text"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "The study relies on the constitution for the revision of the Order of Mass, the addition of three Eucharistic Prayers, the identity of the words of consecration across them, the enlarged lectionary, and the effective date of 30 November 1969. The Latin at artifact pp. 4-7 of the registered 2002 reproduction was read publication-locally on 2026-07-25; the reproduction ceiling applies, so `verified` is not claimed for this witness and the official English delivery bound below carries the wording check."
+source_fingerprint = "sha256:49bb3e38f3572bd1520d9e9784c845c2605d9775f3e3e39f1e777d919cc12993"
+
+[[bindings]]
+source_id = "passage.paul-vi.missale-romanum-constitutio.english-vatican-web-2026-07-25.complete-text"
+loci = ["complete-text"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The official English delivery was re-fetched publication-locally on 2026-07-25 and proved byte-identical to the registered artifact; it was used to check the sense of the Latin constitution. The study quotes the constitution's substance rather than extended English wording."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:3a5fbb30755d313d18bd4ec18a5827711c7f60e71c22c51a0bd657ddcc930672"
+
+[[bindings]]
+source_id = "edition.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23"
+loci = ["23", "36", "47", "104", "111"]
+role = "official-control"
+states = ["cataloged"]
+context = "The constitution controls the study's account of the language question (n. 36, quoted from this delivery in section 9) and of the limit on innovation (n. 23, which the study reaches through its restatement at Institutio generalis n. 398). Numbers 47, 104 and 111 are relied on as cited within the postconciliar books themselves. The delivery was re-fetched publication-locally on 2026-07-25 and proved byte-identical to the registered artifact; the promulgated Latin in AAS 56 is registered separately and was not collated, and no cross-language claim is made."
+
+[[bindings]]
+source_id = "passage.benedict-xvi.summorum-pontificum.english-vatican-web-2026-07-25.complete-text"
+loci = ["complete-text"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The study cites the preamble's list of popes who updated the liturgical books, article 1 on the two usages of the one Roman Rite and the never-abrogated 1962 typical edition, articles 2-5 on the deregulated use, and article 6 on vernacular readings. The delivery was re-fetched publication-locally on 2026-07-25 and proved byte-identical to the registered artifact; all quoted wording was extracted from those bytes."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:1b1caede94e0b9e4d7f271421c599e868fe085851c1b1e6da0d6ce0acfbd2c99"
+
+[[bindings]]
+source_id = "passage.benedict-xvi.letter-to-bishops-summorum-pontificum.english-vatican-web-2026-07-25.complete-text"
+loci = ["complete-text"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The study quotes the letter's concessions about deformations of the liturgy and its principle that what earlier generations held as sacred remains sacred and great, in the section that states the critical case at its strongest. Re-fetched publication-locally on 2026-07-25, byte-identical to the registered artifact."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:96c6531b57aed34d5fbed4138b10e76b327812375ed0ab2ab85aafcfbda95988"
+
+[[bindings]]
+source_id = "passage.holy-see.universae-ecclesiae.english-vatican-web-2026-07-26.complete-text"
+loci = ["complete-text"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Registered for this study. The study cites nn. 24-26 and 28 for the requirement that the 1962 books be used as they are, the direction that new saints and certain new prefaces be inserted into the 1962 Missal, the three permitted arrangements for the readings, and the derogating character of Summorum Pontificum as special law. The delivery was acquired and hashed publication-locally on 2026-07-26 and matched the registered artifact exactly."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:11998121053e66b217ac4b1c0f4528a32d7b9bbaa19b4ece24bcd8e39033b6ff"
+
+[[bindings]]
+source_id = "passage.francis.traditionis-custodes.english-vatican-web-2026-07-25.complete-text"
+loci = ["complete-text"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The study quotes articles 1-8, and relies especially on article 1 (unique expression of the lex orandi), article 3 §3 (readings in the vernacular from conference-approved translations) and article 8 (abrogation of contrary norms, instructions, permissions and customs). Re-fetched publication-locally on 2026-07-25, byte-identical to the registered artifact."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:6ab5a1c82ac32fa65235465d1ec6e3da3973f1f3c714181621fd8f00b6acad6c"
+
+[[bindings]]
+source_id = "passage.francis.letter-to-bishops-traditionis-custodes.english-vatican-web-2026-07-25.complete-text"
+loci = ["complete-text"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Read publication-locally on 2026-07-25, byte-identical to the registered artifact, for the framework within which the motu proprio's articles are to be read. No wording is quoted and no claim rests on this letter, so `verified` is not claimed; the study confines itself to the operative articles."
+source_fingerprint = "sha256:2c093fd746bf6b47d4558203068e675fd7304fc7d1116f94536d39cb534ac0ba"
+
+[[bindings]]
+source_id = "passage.holy-see.responsa-ad-dubia-traditionis-custodes-2021.english-vatican-web-2026-07-25.complete-text"
+loci = ["complete-text"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The study quotes the response and explanatory note on the use of the full biblical text for the readings, including the direction that one must resort to a conference-approved translation and that no vernacular lectionaries reproducing the older cycle may be published, and the note's observation that the Lectionary overcame the plenary form of the 1962 Missal. It also reports the responses on the pre-conciliar Pontifical and Ritual and on bination. Re-fetched publication-locally on 2026-07-25, byte-identical to the registered artifact."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:42240774a87310fb8239206beec91055860fabcecb164390f01e71b8572745c1"
+
+[[bindings]]
+source_id = "passage.holy-see.rescriptum-traditionis-custodes-2023.english-vatican-web-2026-07-25.complete-text"
+loci = ["complete-text"]
+role = "currentness-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The rescript fixes the study's as-of position: the two reserved dispensations and the confirmation of the Responsa with the papal assent of 18 November 2021. Re-fetched publication-locally on 2026-07-25, byte-identical to the registered artifact. The dicastery's own document archive was checked the same day and lists no later item; that bounded currentness check is recorded in the scope appendix."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:77ee62de0292dc458b48a9fd08812e15c80407dc0e951d2874f38cbcfc4303d9"
+
+[[bindings]]
+source_id = "passage.paul-vi.mysterii-paschalis.latin-missale-romanum-typica-tertia-2002.complete-text"
+loci = ["complete-text"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "The study cites the motu proprio for the reasons given for the calendar revision, its citation of Sacrosanctum Concilium nn. 104 and 111, and its approval of the universal norms and the general Roman calendar with effect from 1 January 1970. Read publication-locally at artifact pp. 61-63 of the registered 2002 reproduction on 2026-07-25; the reproduction ceiling applies and `verified` is not claimed."
+source_fingerprint = "sha256:8f47eff408a0cfbb60b0eef540bc0c1b122227c5716076f005c801466e57083e"
+
+[[bindings]]
+source_id = "passage.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-missale-romanum-typica-tertia-2002.complete-text"
+loci = ["complete-text"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "The universal norms control the study's account of the postconciliar rank system in section 7: nn. 3-7 on the liturgical day and Sunday's precedence, nn. 10-15 on solemnity, feast and memory, nn. 16 on ferias, nn. 18-19 on the paschal Triduum, nn. 22-24 on Eastertide and the octave of Easter, nn. 27-35 on Lent and Christmas, and the table of liturgical days. Read publication-locally at artifact pp. 64-71 of the registered 2002 reproduction on 2026-07-25; the reproduction ceiling applies and `verified` is not claimed."
+source_fingerprint = "sha256:28462ed005480e0805d39996c9a2eb315a79b1da8c25d91e930a32e7978b5fa4"
+
+[[bindings]]
+source_id = "passage.holy-see.decretum-de-editione-typica-missalis-romani-1970.latin-missale-romanum-typica-tertia-2002.complete-decree"
+loci = ["complete-decree"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Cited for the promulgation of the first typical edition, Prot. n. 166/70, dated 26 March 1970. Read publication-locally at artifact p. 1 of the registered 2002 reproduction on 2026-07-25; the reproduction ceiling applies and `verified` is not claimed."
+source_fingerprint = "sha256:8f1f04486278b985baa324280fd895e40bf28908235ec82cc4ac58c4bc9c0849"
+
+[[bindings]]
+source_id = "passage.holy-see.de-editione-typica-altera-missalis-romani-1975.latin-missale-romanum-typica-tertia-2002.complete-decree"
+loci = ["complete-decree"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Cited for the second typical edition, Prot. N. 1970/74, dated 27 March 1975. Read publication-locally at artifact p. 2 of the registered 2002 reproduction on 2026-07-25; the reproduction ceiling applies and `verified` is not claimed."
+source_fingerprint = "sha256:4749fade7f2964304b683b020fe9f591f2b1871a2f87b3cbb4b6e5635b776efb"
+
+[[bindings]]
+source_id = "passage.holy-see.decretum-de-editione-typica-tertia-missalis-romani-2000.latin-missale-romanum-typica-tertia-2002.complete-decree"
+loci = ["complete-decree"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Cited for the third typical edition, Prot. N. 143/00/L, approved by John Paul II on 10 April 2000 and declared typical on 20 April 2000, and for its statement that the appendix to the Order of Mass contains the Eucharistic Prayer for Reconciliation and a particular Eucharistic Prayer for various needs. Read publication-locally at artifact p. 3 of the registered 2002 reproduction on 2026-07-25; the reproduction ceiling applies and `verified` is not claimed."
+source_fingerprint = "sha256:7838301958b8a5e17c903ac2cbd10fc20891c775127be5092c4a3f976df24b1b"
+
+# Exact witnesses.  The edition-level bindings above record catalog-level
+# reliance on an edition identity; the reviewed states belong on the exact
+# hashed artifacts and segment actually acquired and read, and are recorded
+# here with their canonical fingerprints.  The ceilings stated above govern:
+# `verified` where a page image was rendered and read visually or an
+# authoritative delivery was re-fetched and compared byte for byte,
+# `inspected` where the only witness is the secondary digital reproduction of
+# the 2002 third typical edition.
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+loci = [
+  "artifact pp. 2-6 (Decretum of 23 June 1962; Quo primum; briefs of Clement VIII and Urban VIII)",
+  "artifact pp. 10, 13-14, 32-34 (Rubricae generales 9-18, 63-70, 84-85, 503, 511-514, 523)",
+  "artifact pp. 56-67 (Ritus servandus I, III, V-VII)",
+  "artifact p. 69 (De defectibus V)",
+  "artifact pp. 297-409 (Ordo Missae, Praefationes, Canon Missae)",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The exact page-image facsimile behind every 1962 claim in the study. Downloaded publication-locally on 2026-07-25; its SHA-256 matched the registered record exactly. Artifact pp. 2, 3, 4, 15, 33, 69, 297, 301, 302, 387 and 388 were rendered at 190-200 dpi and read visually, and `verified` is claimed for the load-bearing Latin at those pages. The remaining loci were read at the artifact's embedded optical-character-recognition text layer and are inspected but not image-collated; every endnote in the publication says which, and the scope appendix states that a text-layer reading is reliable for substance and provisional for orthography."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:6b4dcd3ee771d6d92734992ecabfe09b289235954e963afcf523fc8f8ee9b12d"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+loci = [
+  "artifact pp. 1-7 (promulgating decrees and the constitution Missale Romanum)",
+  "artifact pp. 8-60 (Institutio Generalis Missalis Romani)",
+  "artifact pp. 61-71 (Mysterii paschalis and the Normae universales)",
+  "artifact pp. 303-370 (Ordo Missae, Praefationes and the four Eucharistic Prayers)",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+context = "The exact bytes behind every 2002 quotation in the study. Downloaded publication-locally on 2026-07-25; its SHA-256 matched the registered record exactly, and two acquisitions recorded on the artifact were likewise byte-identical. The witness is a digitally typeset reproduction hosted by a non-ecclesiastical third party, not a page-image facsimile of the printed altar book, so `verified` is deliberately not claimed: the study cannot certify that the reproduction's wording agrees with the printed editio typica, states that ceiling in its scope appendix, and records collation against a printed altar book or facsimile as an outstanding review obligation. The artifact is restricted and no payload is retained."
+source_fingerprint = "sha256:ad2776806b4cd5618c059051d9d0d232d9534f29b3b99542bb206786c503942a"
+
+[[bindings]]
+source_id = "segment.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.missale-romanum-artifact-pages-8-61"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "The bounded extent of the 2002 reproduction that witnesses the Latin Institutio generalis, created by another agent and adopted here in place of a duplicate. Every Institutio article cited in the study was read within these pages on 2026-07-25. The controlling artifact's reproduction ceiling applies, so `verified` is not claimed."
+source_fingerprint = "sha256:42421417adcddc247ee5c1a68ec0d97d582f80d5ca236960e519f3e02c3693c1"
+
+[[bindings]]
+source_id = "artifact.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.leaf-127-image"
+loci = ["sessio-22-canon-1-2"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "This is printed p. 120, which carries session XXII chapter VIII as well as canons I-II; the work's locus grammar admits canons and decrees only, so the chapter is reached through the canons that share the page. Acquired and hashed publication-locally on 2026-07-25 and read visually for the wording of chapter VIII on the vernacular, quoted in section 9: `Etsi missa magnam contineat populi fidelis eruditionem, non tamen expedire visum est Patribus, ut vulgari passim lingua celebraretur.`"
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:1797ca4e23fa302db77a222fcb7bdf768712b0cbb274e363627448bad2f46866"
+
+[[bindings]]
+source_id = "artifact.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.leaf-128-image"
+loci = ["sessio-22-canon-3-9"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "This is printed p. 121, carrying session XXII canons III-IX. Acquired and hashed publication-locally on 2026-07-25 and read visually for canon VI on the Canon of the Mass, quoted in section 5, and canon IX on the low-voiced canon and the vernacular, quoted in section 9."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:1e80a0e1bc0e2371486154a5b120e6e81c4848c4243a114c30ba2dc090693efb"
+
+[[bindings]]
+source_id = "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
+loci = ["printed pp. XXXII-XXXV (Praenotanda 65-69 and 74-77)"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Acquired publication-locally on 2026-07-26; its SHA-256 matched the registered record exactly. Printed p. XXXV was rendered at 200 dpi and read visually for Praenotanda 76 and 77, the source of every Latin quotation in section 6, and `verified` is claimed for those two articles only; the scan's misprint `bilici` for `biblici` at n. 76 is recorded and not silently corrected. Praenotanda 65, 66 and 69 were read in the same file at printed pp. XXXII-XXXIV and are inspected, not separately collated. The artifact is restricted and no payload is retained; only the pages named were inspected."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:2296f2ff27bc0f11a41b7dcd2fdc09291f317bb57991d7e0dad0c08f7e7d206e"
+
+[[bindings]]
+source_id = "artifact.catholic-church.ordo-lectionum-missae.english-liturgy-office-web-2026-07-25.liturgy-office-pdf-d286cb13"
+loci = ["General Introduction, the approved English of Praenotanda 65-69 and 74-77"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Acquired and hashed publication-locally on 2026-07-25 and used only to locate the Latin articles and to check the sense of the Latin. Its copyrighted English is nowhere quoted in the publication, so no wording of this witness received a publication check and `verified` is not claimed."
+source_fingerprint = "sha256:f37a9f8853ebb30cd1051d3009f1c38237e68dc3ba812ef71d2dfdca982ff815"
+
+[[bindings]]
+source_id = "artifact.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.vatican-html-3cfc290b"
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The official English delivery was re-fetched publication-locally on 2026-07-25 and proved byte-identical to this registered artifact; n. 36 is quoted from these bytes in section 9 and n. 23 in section 10. The promulgated Latin in AAS 56 is registered separately, was not collated, and no cross-language claim is made."
+verified_on = "2026-07-25"
+source_fingerprint = "sha256:3b0d4cba029db66743d963a8cfa6fb87006b14e9d1550f789cf034265b96f0d8"

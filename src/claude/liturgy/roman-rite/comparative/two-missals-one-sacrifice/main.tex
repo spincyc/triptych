@@ -1,0 +1,81 @@
+\input{common/preamble}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+\usepackage{endnotes}
+\input{liturgy/roman-rite/comparative/two-missals-one-sacrifice/format}
+
+\hypersetup{
+  pdftitle={Two Missals, One Sacrifice},
+  pdfsubject={A locus-by-locus comparison of the 1962 Missale Romanum and the postconciliar Roman Missal: what the promulgating acts legislate, what the Order of Mass retains, drops and newly composes, the offertory and its replacement, the Roman Canon in each book and the three added Eucharistic Prayers, the lectionary and calendar provision, the rubrics on the priest, and the language question as the books themselves legislate it.}
+}
+
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\titleformat{\section}
+  {\Large\bfseries}{\thesection}{0.55em}{}
+\titleformat{\subsection}
+  {\large\bfseries}{\thesubsection}{0.55em}{}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\centering
+\vspace*{0.14\textheight}
+{\large\scshape A Triptych Comparative Study\par}
+\vspace{1.5em}
+{\Huge\bfseries Two Missals, One Sacrifice\par}
+\vspace{0.9em}
+{\Large Reading the 1962 and Postconciliar Roman Missals at Their Own Loci\par}
+\vfill
+{\footnotesize The discipline governing the 1962 Missal is mutable law, stated here as of 25 July 2026; see the terminal Scope, Method, and Qualifications appendix.\par}
+\vspace{1.2em}
+\end{titlepage}
+
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\pagenumbering{arabic}
+\begin{deepstudy}
+\input{liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/00-two-books}
+\input{liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/10-the-acts}
+\input{liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/20-ordinary}
+\input{liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/30-offertory}
+\input{liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/40-canon}
+\input{liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/50-lectionary}
+\input{liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/60-calendar}
+\input{liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/70-priest}
+\input{liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/80-language}
+\input{liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/90-synthesis}
+\clearpage
+\addcontentsline{toc}{section}{Notes}
+\begingroup
+\footnotesize
+\setlength{\parskip}{0.28em}
+\theendnotes
+\endgroup
+\Needspace{14\baselineskip}
+\appendix
+\input{liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/95-scope}
+\input{liturgy/roman-rite/comparative/two-missals-one-sacrifice/sections/99-references}
+\begingroup
+\setlength{\parskip}{0pt}
+\vspace{-0.6\baselineskip}
+\section{Generation Metadata}
+\vspace{-0.35\baselineskip}
+{\scriptsize\input{liturgy/roman-rite/comparative/two-missals-one-sacrifice/generation-metadata}}
+\endgroup
+\end{deepstudy}
+
+\end{document}

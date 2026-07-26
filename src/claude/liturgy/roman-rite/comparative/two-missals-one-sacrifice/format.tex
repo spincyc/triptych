@@ -1,0 +1,18 @@
+% Local typesetting for the comparative study.  Two shapes recur often enough
+% to deserve names: a three-column locus comparison and a two-column ledger.
+
+\newenvironment{comparetable}[3]
+{\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.26\linewidth}>{\raggedright\arraybackslash}p{0.30\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}}
+\toprule
+\textbf{#1} & \textbf{#2} & \textbf{#3}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
+
+\newenvironment{ledgertable}[2]
+{\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.30\linewidth}>{\raggedright\arraybackslash}p{0.62\linewidth}}
+\toprule
+\textbf{#1} & \textbf{#2}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
