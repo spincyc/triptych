@@ -1141,6 +1141,46 @@ work-specific research records remains operative. This approval does
 not authorize a push, deployment, tag, history rewrite, public
 release attachment, announcement, or promotion.
 
+## Supplemental exact-current-snapshot clearance — 26 July 2026
+
+At `2026-07-26T05:47:28-05:00` in `America/Chicago`, the maintainer instructed:
+“Release the wave-twelve Claude editions: both Ordinaries except the unreviewed 1962 one, both liturgical calendars, assembling the Mass, the comparative missals study, the complete Four Last Things series, the two studies opening the scripture collection, and the Ninth Sunday study and full-text pair.” This is recorded as perpetual worldwide
+exact-current-snapshot distribution authorization under the existing
+represented authority in this record. The sole condition remains
+`no-project-initiated-promotion`.
+
+The approval binds all 161 exact installed release
+PDF snapshots and every exact recognized artifact-affecting
+reader-site input inventoried below at their current bytes. It is an
+exact-byte distribution clearance only: it does not represent
+completion of any outstanding work-specific rights, source,
+collation, specialist, or ecclesiastical review, and no imprimatur,
+nihil obstat, or ecclesiastical approval is claimed. Every
+limitation in the prior supplements, release README, catalogs, and
+work-specific research records remains operative. This approval does
+not authorize a push, deployment, tag, history rewrite, public
+release attachment, announcement, or promotion.
+
+## Supplemental exact-current-snapshot clearance — 26 July 2026
+
+At `2026-07-26T05:48:25-05:00` in `America/Chicago`, the maintainer instructed:
+“Release the wave-twelve Claude editions: the postconciliar Order of Mass, both liturgical calendars, assembling the Mass, the comparative missals study, the complete Four Last Things series, the two studies opening the scripture collection, and the Ninth Sunday study and full-text pair; and retarget the renamed defense of the particular in both providers.” This is recorded as perpetual worldwide
+exact-current-snapshot distribution authorization under the existing
+represented authority in this record. The sole condition remains
+`no-project-initiated-promotion`.
+
+The approval binds all 161 exact installed release
+PDF snapshots and every exact recognized artifact-affecting
+reader-site input inventoried below at their current bytes. It is an
+exact-byte distribution clearance only: it does not represent
+completion of any outstanding work-specific rights, source,
+collation, specialist, or ecclesiastical review, and no imprimatur,
+nihil obstat, or ecclesiastical approval is claimed. Every
+limitation in the prior supplements, release README, catalogs, and
+work-specific research records remains operative. This approval does
+not authorize a push, deployment, tag, history rewrite, public
+release attachment, announcement, or promotion.
+
 ## Exact approved snapshots
 
 | Publication ID | SHA-256 |
@@ -1155,7 +1195,7 @@ release attachment, announcement, or promotion.
 | `articles/faith/four-last-things-03-hell` | `d6c583a2979acc1b3041351c6780024eb73d34b5c4bd1f4a6dc0094540ecdc71` |
 | `articles/faith/four-last-things-04-heaven` | `07aa3d735a52ffb443630c089562e0d9430a15a07606e1dcd50f9b18733882c6` |
 | `articles/faith/freemasonry-and-the-catholic-church` | `50f9743aed3fc17f327beafcff06cdbb9120b2ae8152922ec71db2af8b00edd4` |
-| `articles/faith/in-support-of-the-particular` | `32abf7a48fc4c586b19eb806aeddb458421e94900d238e2962299e75aeb20b21` |
+| `articles/faith/in-defense-of-the-particular` | `bd1f3b94fd3f99bbb3d27767491588bb2529e8d8ec4b33a5321e81c6c2319144` |
 | `articles/faith/ontological-vertigo` | `f15dfc612873c1bafe3c8f5de7cb38d089f4b6ef65419ae775593a35c623d50b` |
 | `articles/faith/the-due-return` | `c135449a5c03012587cc363580cf83db7cde83fb5bb13150d51f3b6c7c40fdf1` |
 | `articles/faith/trustful-surrender-to-divine-providence` | `01f09c1214d22efd5998fd65304c1356a8dfcb2f0f75894cfeb5e0d0da397fd6` |
@@ -1172,11 +1212,17 @@ release attachment, announcement, or promotion.
 | `claude:articles/faith/against-the-instrumentalists` | `878e0a1cb776b88b45dceba6f8ee6017312583a5ab2873c3229cda65dd411d4d` |
 | `claude:articles/faith/at-the-end-of-every-why` | `a644e1321457d069c0319a4c36f570edef23010e975b019257e14106c51f58b3` |
 | `claude:articles/faith/council-missal-and-crisis` | `36e6da8ebd2f2db866eb9685efa6bff608edfe5938bc460b414990ba2d282ed3` |
+| `claude:articles/faith/four-last-things-01-death` | `a7d825854e75dbf78454051063802aebab582d05865c0961c76838398d394506` |
+| `claude:articles/faith/four-last-things-02-judgment` | `76bd05d8e18e2ab236e7df326992c33bd6294bcff8f16609513d22d064a8adb3` |
+| `claude:articles/faith/four-last-things-03-hell` | `83e8795daab559aef210cda8ff718f367fabbd55ba0c049dd06a3ba1ae98668f` |
+| `claude:articles/faith/four-last-things-04-heaven` | `295a10f296e2abdb7cf99153ecec8d0a238a7860a4e0f4bb1af7e9ba560bff67` |
 | `claude:articles/faith/freemasonry-and-the-catholic-church` | `4e954e5a483b426b71896ba70d1761bf5ffddb852411ebbb09caf43fe755e87c` |
-| `claude:articles/faith/in-support-of-the-particular` | `de4904267caa3c9ee024ac9ecc2e7229bae572f553c761dda5780e3f9d50173b` |
+| `claude:articles/faith/in-defense-of-the-particular` | `0142c935d06c1d498c60bd9acd2fe66e173f4afc2b11b1b52fd728ae5fe9175a` |
 | `claude:articles/faith/ontological-vertigo` | `116d2e290f70a4fe1fb5d228b8e9d280ed77de49f70867063208ad9be1610aac` |
 | `claude:articles/faith/the-due-return` | `91ac3a4a15121efd8ea7426cf6a21af3885caa537de0dd1348648e6d47da4490` |
 | `claude:articles/faith/trustful-surrender-to-divine-providence` | `32d59306bd1392b13fc97428bcc6a044d967fe69f525cfad4edf226e1636060a` |
+| `claude:articles/scripture/abraham-and-the-daylight-stars` | `14c5ca420e55a8a7576b339f8ffa8c994e4bdfb8e3ef391a113f3a91f09ff9ae` |
+| `claude:articles/scripture/the-linen-cloths-at-the-empty-tomb` | `b8a10bf0727001adbe1cf8c8e161ce29e19819d1d84bb71e5759cacb20c09cf9` |
 | `claude:biographies/origen` | `020b3f4452e2d0e89f6458824f6d33e8bf2db079ff80e0a73f42f9a2d6648d35` |
 | `claude:biographies/saint-augustine-of-hippo` | `bdb140a336f9913fb7422c301d9b6f51810717f5376426993a2148afb86fb0bd` |
 | `claude:biographies/saint-jerome` | `22aec5010e1732066d6026a89580a862785e7b730ebd92512e89dfb533ea9b9e` |
@@ -1190,9 +1236,15 @@ release attachment, announcement, or promotion.
 | `claude:history/traditional-priestly-institutes/01-sspx` | `6100ca3f30954e40f1ca03cba8ddc616ef06832fc272c4c87fb3f4c163335df5` |
 | `claude:history/traditional-priestly-institutes/02-fssp` | `8551f6268cef0ca369e042ab2007f7496d9c2e7f9621005abd2a3a5fa9eb0754` |
 | `claude:liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost` | `3f7599051a759ba33c298b89e1bf06130bf58fc603cd2e2ba1dac20b532a2ea4` |
-| `claude:liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost` | `b597e9bc4932c1ad98dae764db9323c8c0ad89edf518bb19411b569237922676` |
+| `claude:liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost` | `3c644a0a8e945019ffb5e16b2958a0d146457091c551e51411e8a457825742fd` |
+| `claude:liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text` | `5bb109d68f8b69d3f548736f8f68ceae54fe46b5d1d59c0ad13a4c7204a2c235` |
+| `claude:liturgy/roman-rite/1962/reference/assembling-the-mass` | `79359c27cba1345e9d3e401f0bb104c6f104d18637e2bf855314e0a4bc5f4e58` |
+| `claude:liturgy/roman-rite/1962/reference/liturgical-calendar` | `8308c88f48ed9d273edad8bc328ece13315ef2c93a473c5d6386eacb6e27baec` |
+| `claude:liturgy/roman-rite/comparative/two-missals-one-sacrifice` | `1b493899b3238a823b8f267da53582543bd5f5a723fac6d235b23b4276d40bcc` |
+| `claude:liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass` | `4a22e7bcc1f6f886cb4af5ed488a166394c7e75d42e36020a3b7e7d274027618` |
 | `claude:liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a` | `9717cc22af66cee15fac48e77e4d5f5c6a335c2429787807b5054d9e7ed07086` |
 | `claude:liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a` | `891b2cc4b2714a7f6b6043cbfa35ceca2dcd5f713e901a38bf4ae6d3afc53dbb` |
+| `claude:liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar` | `2f7952a847d3fa5e4dff5378f621221f514f06e9f4d92a1dfafe7cef2fc39d52` |
 | `claude:theology/mariology/champion` | `72eb973fc935966449752f8c0d2c7e64521a0d874f16a766d7917605a5a46135` |
 | `claude:theology/mariology/fatima` | `572abbed26b4e67d46991f691ddc64e9d3c8f200fc41ee551c9722eba9f2b92c` |
 | `claude:theology/mariology/guadalupe` | `789d72a6e275bddddb7cdc3cd37a56c19126d6e1a723c70113ffcd31e15dcb04` |
@@ -1300,7 +1352,7 @@ release attachment, announcement, or promotion.
 | Repository path | SHA-256 |
 | --- | --- |
 | `CONTRIBUTING.md` | `1bb9ef13c4f754f9a8bede73f0afd95c2266173726bcfbd709017dc342272d5e` |
-| `LIBRARY.md` | `a45aae3359ac20ac3a4cf756007a08df9109d06661d5fc261798daf38ec5b881` |
+| `LIBRARY.md` | `9667baf568e29971d449858bf72ea7aeac9383e059ccf24c0199aa6eb2ebbf7b` |
 | `LICENSE` | `5ac6501c8ad1ead4885d7691d97f2240e94934ba19ac548c259718e85f3e2cad` |
 | `LICENSES/CC-BY-4.0.txt` | `d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744` |
 | `LICENSES/MIT.txt` | `afd9c125b68a36b60c78cf63656f4cea2613fadce57e95ebabacebff8817ef60` |
@@ -1309,14 +1361,14 @@ release attachment, announcement, or promotion.
 | `library/biographies.md` | `d4cfdf9ae2f1e55f2c4bc997cccce4d92a40a9b64b5189fc7e8217c45d415427` |
 | `library/curriculums.md` | `15f24d06b4911b1cbfe4d85d82c463d7c2eef8635ff25edf2817d5fa6e0fb2bc` |
 | `library/ecclesiastical-latin.md` | `1b985372bc372990f8d748d7667620c76c89a4073a8dae146ecefbca84333c1b` |
-| `library/faith.md` | `0ebc99e193a0f5091fd9548212a49b6f62f09bf778aa4c1bf45dc87eed3920cf` |
+| `library/faith.md` | `42383303c0b499d4546057c3b081ef6a721a0d731021558811a4b75c467364a5` |
 | `library/heresies.md` | `2f8cbb8b910281e3d6ace3b232d724b6e08866a459344268fe611a6652229feb` |
 | `library/historical-accounts.md` | `85598895a87d9d7aedae8d661295c79f1d5e3b6cef6d543763c4ca6bbb8f606e` |
 | `library/law-and-church-discipline.md` | `2f909b26e55bb143ade3c326ffea0cc5ceed1d239f99036376f1a4eed98af240` |
 | `library/mariology.md` | `7debbf1348dc23564e1063edacd4dcd65f8901c9d9bcb834556e1d67af160f84` |
-| `library/novus-ordo-liturgy.md` | `aa5ebc1cb28a23ca191ad5d6ee7a234a7fe52394b0d72c435ab78a0c8452f9d9` |
+| `library/novus-ordo-liturgy.md` | `c1f564543578b5405327b408fd871df6eec55af7206fd70919e9a0b9f88812fb` |
 | `library/prayer.md` | `f355ee2a34f4f47744cbc6f0fea71c04f2c303882dce1b8ae3adabfc2b2c850d` |
-| `library/traditional-latin-mass.md` | `7c6df7fd58c23c395ca845fbe9ed6f7fe603eb3ced80e6c731c776c0a712b92b` |
+| `library/traditional-latin-mass.md` | `1f3f2b86489d80314e077d2de4ee2647988785f7f3cd332193302c796d489d91` |
 | `release/public-alpha/404.md` | `551491f5521a5624911d63b398156d2236cbed2f0aa832eeb9c97070dcea568e` |
 | `release/public-alpha/assets/site.css` | `d173c27681f3742a64f99d7aab9cf1855935029dc035eca0699305a86ceeee62` |
 | `release/public-alpha/layout.html` | `2013d7f66dfb776b2c5df81656f7fe286bdbf60b016f88ea612f942af50249b9` |
@@ -1327,11 +1379,17 @@ release attachment, announcement, or promotion.
 | `web/claude/articles/faith/against-the-instrumentalists.md` | `fa5bc3e918f1c662f4b1dc5fcf1ae06ec9fff533eadadd80d69020136fc02ee4` |
 | `web/claude/articles/faith/at-the-end-of-every-why.md` | `2791a7f5abe31e820f77c8187148c0e91297eb9a2c1f9fd8f2e52c6906206d1a` |
 | `web/claude/articles/faith/council-missal-and-crisis.md` | `4868ed0329a2f4d32c9c469caf268383cd31df277e3bf4e192163186cf5a392e` |
+| `web/claude/articles/faith/four-last-things-01-death.md` | `6c7b8ebf7daa3307780cb6e718692637fc04176a685bf781367fbba80b3ce740` |
+| `web/claude/articles/faith/four-last-things-02-judgment.md` | `eefa8e0692c8b97cb28200f69ec9d1cebcaf19e5cb171df10e8eb9e0a0ede1e2` |
+| `web/claude/articles/faith/four-last-things-03-hell.md` | `ee9fbb25d388d2199d7abc38e11b4fbbff06e34dd01d32c2072f786b05bcf6ca` |
+| `web/claude/articles/faith/four-last-things-04-heaven.md` | `a5ae1cb9ec586bc4dd6400bcac26e50166534ab5277b61edb5b984becc4c4a6c` |
 | `web/claude/articles/faith/freemasonry-and-the-catholic-church.md` | `eba2284da5f30f60e24cea2392e9c339db9e2875bbd4e9eb65c93f9eaa70aaa8` |
-| `web/claude/articles/faith/in-support-of-the-particular.md` | `af6a94dcbe2ae01327053c571779ce6ff36a6a9f525dc88ef7fed3267bb89f76` |
+| `web/claude/articles/faith/in-defense-of-the-particular.md` | `428ef41685dc35ab1ea497f2b5e4958fd5dd002e51f88f9925ab06d8241383b6` |
 | `web/claude/articles/faith/ontological-vertigo.md` | `8520c2ae95c9f442038690fa682f3c7944b37c6db996d432fcdd727178a8a266` |
 | `web/claude/articles/faith/the-due-return.md` | `b2f984f554c310dbcaf1db7a03b24c9e25f18d7c24bac62ce15f593a8cd534bf` |
 | `web/claude/articles/faith/trustful-surrender-to-divine-providence.md` | `cfc064128f920152d895e278312ed0487b20ea74cc81b1d670bd5b33b7ead2f1` |
+| `web/claude/articles/scripture/abraham-and-the-daylight-stars.md` | `38a5d437fbb30e78f44062e938e20b96d9ecb974e3a6861d6353cf551ad1ce07` |
+| `web/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb.md` | `ee3f19a710f7f5310e029d784f75753e5b7368e628cda99e9944b13fcc822e34` |
 | `web/claude/biographies/origen.md` | `b4baa746f1e2c189e744d3bccabb0346e4e57dc2b3fb02ebef07ca681ddfce37` |
 | `web/claude/biographies/saint-augustine-of-hippo.md` | `d679c64deb2697ed18d55e40f167302e88ad2e7a7ab13b326383c84bbe6bb476` |
 | `web/claude/biographies/saint-jerome.md` | `0e21a803044275f0e4425b20b0c236594997cfd1741e338594e7b304677a3127` |
@@ -1344,10 +1402,17 @@ release attachment, announcement, or promotion.
 | `web/claude/history/biblical-translations/02-vulgate.md` | `3da99c71009a67127ce332f849cc1894e62288f1a0d7aae75666a76ca48f4a08` |
 | `web/claude/history/traditional-priestly-institutes/01-sspx.md` | `975c34f7b9236566a6fb5e53f6c0551c3a02bb1889e6f9cef4d152e238afc209` |
 | `web/claude/history/traditional-priestly-institutes/02-fssp.md` | `cb0913d4be0ede5355921f5ecd8aacb065ea5c8a7b0587ec5a637b81c1196c9f` |
+| `web/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.md` | `a5caf253d8a13c08b9c87768de907308a12afee4ec3c3d6ef26d4a092fc26a07` |
 | `web/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.md` | `0b308d6d56d32f982abac846e397f50563c969e331a88318393686d5e87f0d6a` |
-| `web/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.md` | `dbfaba7f69322862871d31df59bbd7779b665487694ea4a82f879488e46f53ba` |
+| `web/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text.md` | `a8034783e32e9fbf54a5b9e6949c9505f1018832e520925f33cebc437b6f59b8` |
+| `web/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.md` | `dbabf0bb6847ff26d4a32ebf5e1138bd01f6d3322a1e2125ea7ad092f864271f` |
+| `web/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.md` | `95dcefea93705a038a3d7949f094e5261fb5d24d2f62e2faa7ba37b19a6f0cc9` |
+| `web/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.md` | `86bdb1aa9d16ec4c661700a3b4573a1f32b24dd3106a1d589ddabcdb82628ac0` |
+| `web/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice.md` | `54670c29bbb9742f7bd4e224e5c4ea59e262e5c1658e4f7142c433f038c0d36f` |
+| `web/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass.md` | `5c93965c4240343b48efe1af92b6381f9cec604ecaca2da941eb4c404ee41466` |
 | `web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a.md` | `2b28b3e4f3cb43bc96f2496736fb4a92aa804904e9178153b3b201f4a9b888fc` |
 | `web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a.md` | `5377f00c95dbb13aa2dc7ff11e20bc40cd9e78cc40cf5b1d2ddbb53459412172` |
+| `web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.md` | `8e37e7521a0631df12b3f828c010a62dfc2acc2952b41a0e138bc3055b50f577` |
 | `web/claude/theology/mariology/champion.md` | `73f90abfc80997f9585c2cc957d150678929d470affa1e911e3429308136613e` |
 | `web/claude/theology/mariology/fatima.md` | `5f1f3d4b76a587854d1ae9b8c4dcf6964563d56a01d5d04bde8d1d52bd6ee991` |
 | `web/claude/theology/mariology/guadalupe.md` | `00231a3783e6c7560433414328ede96a3a54f56994733a1b226563032a5e776c` |
@@ -1362,7 +1427,7 @@ release attachment, announcement, or promotion.
 | `web/gpt/articles/faith/four-last-things-02-judgment.md` | `609e342d1760fb5e3a03f9f6d71c0106685d25695895fe89ce811b58ad4c6636` |
 | `web/gpt/articles/faith/four-last-things-03-hell.md` | `fed75853aa9288b021d8e4f12442ac400e96415b43e163fd1a015dabfccd11bf` |
 | `web/gpt/articles/faith/four-last-things-04-heaven.md` | `eafcecf403f30385466b277dab8d94c54a4207c495cd500daff868c1f3540bb7` |
-| `web/gpt/articles/faith/in-support-of-the-particular.md` | `106696122584dc425c92c8efb3317d0a8dcb010007d0ed08cafdde869a986ed4` |
+| `web/gpt/articles/faith/in-defense-of-the-particular.md` | `ebac819fa24042450eeddee937a8e81d3de605bb4be48df0928491023a519dfa` |
 | `web/gpt/articles/faith/ontological-vertigo.md` | `1b429932394e9d2d42285acacfdea5e182c172b289bb8e47eb93b261aaf30391` |
 | `web/gpt/articles/faith/the-due-return.md` | `760e6e6e626c6bfc734a5d0c8f3f49c3014e2a135213f9c53deb14836b00aaa9` |
 | `web/gpt/biographies/origen.md` | `43a54fb1afe0ce68ea8fc419e33ebe466814f5d74e4ed939759afca5522ef22d` |
