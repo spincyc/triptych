@@ -62,6 +62,44 @@ The owner's `propers/verified.md` verifies the reusable formulary, rubrics, elem
 
 `research/scope.md` preserves the operational scholarship audit displaced from the publication: biblical and liturgical contexts, historical judgments, direct and illuminating reception, languages and corpora searched, material disagreement, negative results, material rejected and unresolved leads, claim and branch limits, source roles, rights boundaries, and review performed or outstanding. It is not a diary or chain-of-thought record.
 
+## Published text and English
+
+Each proper is published as two editions from one body of research: a
+**study edition** at the leaf's bare id, and a **full-text edition** at
+the same id with a `-full-text` suffix, in its own leaf directory,
+importing the study edition's sections rather than restating them. Both
+are separate publications with their own manifest entry, catalog link,
+and web edition, and a catalog row links both from the one provider
+cell. The study edition identifies each element by incipit and locus and
+does not print the formulary in full; the full-text edition prints what
+the rights position permits and no more.
+
+The rights position here is narrower than it is for the 1962 books, and
+it governs both editions. The ICEL English of the Roman Missal and the
+Lectionary text are under copyright and are never reproduced. Neither is
+any Bible translation under copyright — the Knox, Jerusalem and New
+Jerusalem, RSV and NRSV, NABRE, and the Grail psalms are all excluded.
+A guide may cite a locus, describe what a text says, and quote the short
+phrase an argument actually turns on; it may not stand in for the book.
+
+Within that bound:
+
+- Scriptural pericopes and antiphons are given in the Douay–Rheims
+  (Challoner), which is public domain. Because the reader will hear a
+  different translation at Mass, every leaf carries a standing notice —
+  in the terminal scope appendix and again where scripture first appears
+  — stating plainly that the English printed is a public-domain study
+  translation and is **not** the text proclaimed in the celebration, and
+  naming the Lectionary as the controlling English.
+- Orations get their Latin incipit from the *editio typica* and a
+  description of what the prayer asks. Do not supply a rendering of the
+  project's own, and do not paraphrase the ICEL text closely enough to
+  reconstruct it.
+
+Where this leaves an element without English, say so in that element's
+own place rather than in a general disclaimer. An honest gap is a
+finding; a quiet substitution is a defect.
+
 ## Research and claim discipline
 
 Read every selected passage in its complete literary context. Distinguish composition, first audience, and narrated event; preserve traditional attribution, modern judgment, disagreement, and uncertainty without silent harmonization. Seek direct patristic or saintly exegesis before later doctrinal or liturgical illumination, and record material negative results rather than inventing a witness.

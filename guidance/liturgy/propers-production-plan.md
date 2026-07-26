@@ -488,6 +488,25 @@ Each is a separately sourced formulary variant under its shared ordinal, combini
 
 A ritual Mass celebrated with or for a non-Eucharistic sacrament additionally requires the canonical sacramental summary imported from `src/<provider>/theology/sacraments/summaries/`.
 
+## Two editions per target
+
+Every target in this plan is now two publications, not one: a study
+edition at the bare id and a full-text edition at the same id with a
+`-full-text` suffix, defined by [the 1962 profile](roman-1962-propers.md)
+and [the postconciliar profile](postconciliar-propers.md). The counts in
+this file remain counts of **targets**, not of publications; multiply by
+two for the publication figure. The pair shares one identity, one owner,
+one research trail, and one set of source bindings, so a target is not
+half-done when only one edition exists — but a target is not finished
+until both do.
+
+The English requirement is retrospective. Every proper published before
+this revision was authored under the previous rule, which printed the
+appointed Latin in full and supplied no English. Those leaves are
+superseded in form, not in research: their collation findings, reception
+matrices, and commentary stand, and a rebuild carries them forward
+rather than repeating the work. Each provider reissues its own leaves.
+
 ## Maintenance
 
 Refresh this file when a leaf is created, released, or withdrawn, when a provider gains an edition-locale, or when the registry or either profile revises an identity, key, order, path, or count. A registry revision controls; correct this plan to match it and never the reverse. Do not resolve a count fork here that the registry leaves open, and do not promote a branch, an optional reading path, or an unregistered edition difference into a row.
