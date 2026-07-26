@@ -505,11 +505,29 @@ def publication_map(
 
 def discover_source_ids(provider: str) -> set[str]:
     root = ROOT / "src" / provider
-    return {
+    ids = {
         path.parent.relative_to(root).as_posix()
         for path in root.rglob("main.tex")
         if path.is_file()
     }
+    for path in root.rglob("proper-components.toml"):
+        try:
+            data = tomllib.loads(path.read_text(encoding="utf-8"))
+            synthesis = data.get("outputs", {}).get("synthesis")
+        except (OSError, tomllib.TOMLDecodeError):
+            continue
+        if isinstance(synthesis, str):
+            ids.add(synthesis)
+    return ids
+
+
+def publication_source_path(provider: str, leaf: str) -> Path:
+    direct = ROOT / "src" / provider / leaf / "main.tex"
+    if direct.is_file() or not leaf.endswith("-synthesis"):
+        return direct
+    canonical = ROOT / "src" / provider / leaf.removesuffix("-synthesis")
+    manifest = canonical / "proper-components.toml"
+    return manifest if manifest.is_file() else direct
 
 
 def discover_pdf_ids(provider: str) -> set[str]:
@@ -894,7 +912,7 @@ def candidate_inventory_data(
     pdfs = []
     for key in sorted(publications):
         provider, leaf = key
-        source_path = ROOT / "src" / provider / leaf / "main.tex"
+        source_path = publication_source_path(provider, leaf)
         pdf_path = ROOT / "doc" / provider / f"{leaf}.pdf"
         if source_path.is_symlink() or not source_path.is_file():
             errors.append(f"unsafe or missing publication source: {source_path.relative_to(ROOT)}")

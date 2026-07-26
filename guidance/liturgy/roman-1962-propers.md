@@ -42,6 +42,45 @@ For every new or substantially revised guide, maintain a passage-by-passage rece
 
 ## Published Text and English
 
+### Component architecture
+
+The component architecture in this subsection supersedes the older
+study-leaf/full-text-leaf packaging language below while that first pilot is
+migrated. New and substantially revised guides are authored once in a
+canonical leaf with `proper-components.toml`. The bare ID produces the
+complete research PDF and the sole complete HTML edition. A mechanical
+`-synthesis` PDF companion is compiled from the same source; it is not another
+leaf and owns no prose, audit record, or web declaration.
+
+The manifest gives every appointed element a stable lowercase kebab-case key
+and every ordered component a path, output modes, dependencies, bound element
+keys, and component-scoped reference files. Every cross-element synthesis
+relation names at least two element keys and one or more controlled evidence
+classes. An included component may never depend on an omitted component.
+
+The full research sequence is: the existing pages 1 and 2; lawful complete
+appointed text; `Each Proper in Full`, including the bounded patristic and
+saintly reception sweep for each element; an exactly two-page `The Propers:
+Themes and Movement`; unbounded `Source-Grounded Synthesis Across the
+Propers`; unbounded `Interpretive Possibilities Across the Propers`; `The
+Propers: Notable and Quotable`; and terminal apparatus. The synthesis
+companion retains pages 1 and 2, the two-page brief synthesis, the complete
+source-grounded synthesis, the complete exploratory synthesis, notable
+quotations, and terminal apparatus. It omits both complete appointed texts and
+the element-by-element sweep. Retained prose, citations, transitions, and
+references must remain complete without either omission.
+
+Because the 1962 canonical edition supplies the complete appointed texts under
+the recorded rights basis, its catalog label is `Full PDF`; the companion is
+`Synthesis PDF`.
+
+The brief synthesis marks its first page, second page, and the first following
+page with `triptych:brief-synthesis:start`,
+`triptych:brief-synthesis:end`, and `triptych:brief-synthesis:next`.
+After references settle, `scripts/check-proper-components --aux` must prove
+that these occupy pages N, N+1, and N+2. Forced breaks alone do not satisfy the
+exact-two-page gate.
+
 Each proper is published as two editions from one body of research. The
 **study edition** carries the leaf's bare id and is the default a reader
 meets. The **full-text edition** carries the same id with a `-full-text`
