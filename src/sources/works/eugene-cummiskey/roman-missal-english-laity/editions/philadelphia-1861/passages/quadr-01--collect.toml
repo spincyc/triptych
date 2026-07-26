@@ -1,0 +1,16 @@
+schema = 1
+record_type = "passage"
+id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.quadr-01.collect"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+artifact_sha256 = "13c2ad6d4a2cc7b579fa3c9bdd56719ba3933db7a9ae87728d63e0f1ddf389c9"
+locus = "quadr-01/collect"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-07-25"
+context = "The collect of the quadr-01 formulary as printed on leaf n136 (printed page 126) of Internet Archive item romanmissaltran00churgoog, read as a page image at 1300-1400 px width."
+physical_line_ranges = [[65, 65]]
+text = "O God, who purifiest thy Church by the yearly observation of Lent: grant, that what thy children endeavour to obtain of thee by abstinence, they may put in execution by good works. Thro’."
+transcription_segments = [
+  { line = 65, text = "O God, who purifiest thy Church by the yearly observation of Lent: grant, that what thy children endeavour to obtain of thee by abstinence, they may put in execution by good works. Thro’." },
+]
+notes = "Wording collated character by character against the 1861 page image on 2026-07-25, and the formulary correspondence checked against the Latin `Deus, qui Ecclesiam tuam annua quadragesimali observatione purificas` at marginal number 646 of the 1962 Vatican typical edition in the CMAA facsimile, SHA-256 648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a. The 1861 English is a free devotional rendering, not a word-for-word translation, and is quoted as an identified historical English witness only."
