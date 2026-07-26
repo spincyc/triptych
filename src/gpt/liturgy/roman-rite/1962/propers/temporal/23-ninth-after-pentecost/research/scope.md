@@ -1,5 +1,23 @@
 # Ninth Sunday after Pentecost — Research Scope
 
+## Paired editions
+
+This record governs the GPT study publication and held full-text candidate at
+the same proper identity: the study edition at `23-ninth-after-pentecost` and
+the draft full-text edition at
+`23-ninth-after-pentecost-full-text`. The latter owns only its wrapper,
+presentation helpers, inherited generation record, and appointed-text sheet.
+Its `draft.tex` imports the study source as one body and keeps no duplicate
+retrieval, collation, scope, or binding records. It is intentionally not a
+publishable `main.tex` until its recorded gates close.
+
+The full-text sheet reproduces the complete facsimile-collated Latin from
+`propers/verified.md`, beside the registered public-domain
+Douay–Rheims/Challoner and 1861 Cummiskey witnesses. Every place where those
+English witnesses do not answer the appointed Latin is marked locally. The
+study edition was rebuilt after the conditional import refactor and reproduced
+its installed PDF byte for byte.
+
 **Last updated:** 2026-07-21
 
 This record preserves research scope, source roles, material disagreements, negative results, and operational qualifications compressed in the reader-facing guide. Complete appointed texts, checksums, facsimile locations, and collation results remain in [the verified propers](../propers/verified.md).
@@ -181,3 +199,11 @@ The official Latin web and *Acta Apostolicae Sedis* witnesses show that *Presbyt
 The settled source was compiled twice under the deterministic build path and produced a 10-page PDF with SHA-256 `e912d945ea1cdd3e6c50b9de3b626ab01f38563c1aaa1976a77df9404723da5e`. The final log contains no fatal error, undefined reference, overfull or underfull box, or unresolved rerun or layout warning. Generation metadata, `qpdf` structure, Letter page size, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed. Review rasters were generated through `scripts/pdf-review`; every rendered page was inspected at full size for clipping, overlap, accidental blanks, bad breaks, table alignment, footer and metadata placement, and legibility. The reviewed build was installed at its mirrored `doc/` path and verified byte-identical.
 
 This internal source and production review supersedes the artifact described in the preceding 21 July record. No earlier exact-byte authorization attaches to these changed bytes, so renewed exact-snapshot distribution clearance remains outstanding together with the existing `liturgical-text-permission`, independent specialist, theological, liturgical, rights, and ecclesiastical review limits.
+
+## Research-staleness verdict — 2026-07-26
+
+Modified and independent-rewrite candidates were compared claim by claim
+against the exact Missal and paired-provider inputs. The existing `continuo`
+correction remains exact and no further material correction was found; the
+study edition may be exactly rebaselined. The held full-text candidate was
+outside this review.

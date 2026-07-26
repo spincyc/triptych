@@ -384,3 +384,10 @@ claimed. Outstanding review items: the psalter attribution of the
 `nimis`/`valde` split; collation of the Ambrose, Jerome and Bede Latin against a
 critical edition; the Ambrosiaster witness; the *Catena*'s "Origen"; a sourced
 account of the Rom 8:17 pericope boundary.
+
+## Research-staleness verdict — 2026-07-26
+
+Modified and independent-rewrite candidates were compared claim by claim
+against the exact Missal and paired-provider inputs. No material correction was
+found; the study edition may be exactly rebaselined. Full-text candidates were
+outside this review.
