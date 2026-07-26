@@ -104,3 +104,9 @@ No independent liturgical, rubrical, historical, or canonical review has been pe
 publication is a study aid, not an official liturgical book, a critical edition, an Ordo, a
 canonical opinion, or a substitute for the competent authority, and it says so in its terminal
 appendix.
+
+## Research-staleness verdict — 2026-07-26
+
+The complete unbaselined input set and both candidates were compared. No
+inventory, chronology, amendment, territory, or permission correction was
+found. This exact edition is ready for its first baseline.

@@ -102,3 +102,9 @@ placement and consistent type sizes.
 Series-wide source, response, pronunciation, presentation, ceremonial,
 flash-card, rights, and production records are owned by the non-publishable
 altar-server-guides research directory.
+
+## Research-staleness verdict — 2026-07-26
+
+Both candidates were compared with the changed guide map and shared owner
+records. No rendered response, action, diagram, branch, dependency, page-match,
+or permission correction was found. This exact guide is ready for rebaselining.
