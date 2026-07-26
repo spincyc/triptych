@@ -47,4 +47,7 @@ Definitive: existence, immediacy at death, inequality of punishments, eternity, 
 
 ## Review
 
+## First-baseline review — 2026-07-26
+Both candidates agreed on eternity, undetermined mode/population, culpability, and pastoral restraint. The authoring state is fit for baseline. See `src/sources/inventories/four-last-things-staleness-review-2026-07-26.md`.
+
 Internal argumentative, source-consistency, quotation, rights, and production review by the authoring agent only. No independent scriptural, patristic, Thomistic, dogmatic, theological, or ecclesiastical review. No imprimatur, nihil obstat, or ecclesiastical approval is claimed.

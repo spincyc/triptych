@@ -10,3 +10,6 @@
 - **Authority:** *Benedictus Deus* and conciliar/catechetical teaching govern dogmatic claims. Aquinas supplies school theology on happiness, vision, and degrees. Rhetorical analogies are project synthesis.
 - **As of:** Holy See text of *Benedictus Deus* and Catechism 1023–1029 checked on 2026-07-24.
 - **Review:** no independent dogmatic, patristic, Thomistic, liturgical, philosophical, or ecclesiastical review.
+
+## Staleness review — 2026-07-26
+Both candidates preserved beatific vision, bodily resurrection, communion, and epistemic limits. **No material change.** See `src/sources/inventories/four-last-things-staleness-review-2026-07-26.md`.

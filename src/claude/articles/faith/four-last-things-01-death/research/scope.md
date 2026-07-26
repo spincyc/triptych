@@ -61,6 +61,9 @@ Fully stated in the terminal appendix. In summary: no Greek or Hebrew was examin
 
 ## Review state
 
+## First-baseline review — 2026-07-26
+Modified and research-first rewritten candidates agreed on every consequential claim and source boundary. The authoring state is fit for baseline. See `src/sources/inventories/four-last-things-staleness-review-2026-07-26.md`.
+
 **Completed:** claim-driven source research with same-day (2026-07-26) reading of every quoted witness, recorded in `research/source-audit.md`; registration of six new source records and two Augustine passage records, with `scripts/source-library validate` passing for every record and binding owned by this leaf; weight classification of every consequential claim, restated in a terminal synopsis table; boundary review against series parity constraints; rights review; internal argumentative, source-consistency, and quotation review; a two-pass build with zero warnings, undefined references, or layout complaints; the generation-metadata gate; conversion of the web edition; and page-by-page raster review of all 36 pages.
 
 **Outstanding:** independent scriptural, patristic, Thomistic, dogmatic, canonical, theological, literary, and ecclesiastical review. No imprimatur, nihil obstat, ecclesiastical approval, or completion of independent review is claimed; internal checking is not independent review. Canonical fingerprint pinning of the exact-witness bindings was not performed, because the shared library's fingerprint query validates the whole tree and was blocked by unrelated in-flight records elsewhere in the repository; the bindings are recorded at the cataloged state with the publication-local reading stated as the ceiling.
