@@ -220,3 +220,10 @@ repository. Public web availability is not treated as a reuse licence.
   (1988) and the Fraternity's *Vademecum*;
 - independent rights review; ecclesiastical review or approval (none
   claimed).
+
+## Research-staleness verdict — 2026-07-26
+
+The complete unbaselined input set was compared with both candidates. No
+material correction, unsupported closure of a source gap, or change to the
+cutoff-bound canonical position was found. This exact edition is ready for its
+first baseline.

@@ -106,3 +106,10 @@ This module is a study aid, not legal advice. Independent canon-law review remai
 ## Compact-rights-colophon production review — 2026-07-19
 
 The settled 22-page PDF, SHA-256 `e8fde596cfcd3bd79e8392e81eaafebf59723a11a15b8c96773fabfe6f67713c`, is the exact repository-reviewed build snapshot. The final log was warning-free; generation metadata, `qpdf` structure, PDF title/page metadata, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed their gates. Repository production review inspected every physical page; the compact final-page reuse-and-rights colophon is readable, unclipped, non-overlapping, remains with terminal content, and creates no rights-only spill page. The installed PDF is byte-identical to this reviewed build. This reviewed build supersedes every earlier production snapshot. This exact current snapshot has release-specific distribution clearance under the 20 July 2026 dated rights supplement. That operational decision supplies no independent review or ecclesiastical approval.
+
+## Research-staleness verdict — 2026-07-26
+
+Comparison with both candidates and the paired Claude audit found stronger
+provenance and a later cutoff-bound recourse search, but no material historical,
+canonical, sacramental, or current-status correction. This exact edition is
+ready for rebaselining.
