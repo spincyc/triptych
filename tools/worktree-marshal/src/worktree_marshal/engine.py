@@ -79,14 +79,30 @@ from .locks import (
     unregister_lock_descriptor as _unregister_lock_descriptor,
 )
 from .model import (
+    ABORTABLE_INTEGRATION_STATES,
     ABORTED_INTEGRATION_ARCHIVE_FIELDS as _ABORTED_INTEGRATION_ARCHIVE_FIELDS,
+    ACTIVE_RUN_STATES,
+    CANDIDATE_ABORT_STATES,
+    CLEANED_STATES,
+    CONDITIONAL_ABORT_STATES,
+    INTEGRATED_CLEANUP_STATES,
     INTEGRATION_TRANSACTION_FIELDS,
+    INTERRUPTED_CLEANUP_STATES,
+    LANDING_CHECKPOINT_STATES,
     MANAGED_CONFLICT_STATES,
     MANUAL_LANDING_CHECKPOINT_FIELDS,
+    REBASE_TRANSACTION_STATES,
+    RESOLVABLE_CONFLICT_STATES,
+    RESTORATION_CHECKPOINT_STATES,
+    RETAINED_REF_CLEANUP_STATES,
     RETIREMENT_PENDING_STATES,
     RUN_STATES,
+    RUN_TRANSITIONS,
     is_run_state,
+    is_run_transition,
     restore_integration_transaction as _restore_integration_transaction,
+    run_transition_targets,
+    validate_run_transition,
 )
 from .process import (
     command as _command,
@@ -2448,10 +2464,7 @@ def finish_restored_integration(
     *,
     archive: bool,
 ) -> None:
-    if manifest.get("state") not in {
-        "integration-abort-pending",
-        "integration-rebase-rollback-pending",
-    }:
+    if manifest.get("state") not in RESTORATION_CHECKPOINT_STATES:
         raise LauncherError(
             "the exact restoration lacks a durable launcher-owned checkpoint"
         )
@@ -3713,10 +3726,7 @@ def resolve_conflict_run(
     with file_lock(repo_lock_path(repository)):
         manifest = load_manifest(repository, run_id)
         reconcile_stale_run(repository, manifest)
-        if manifest.get("state") not in {
-            "integration-conflict",
-            "integration-continue-pending",
-        }:
+        if manifest.get("state") not in RESOLVABLE_CONFLICT_STATES:
             raise LauncherError(f"run {run_id} has no managed conflict to resolve")
         run_lock_stream = acquire_existing_run_lock(repository, run_id)
         try:
@@ -3773,10 +3783,7 @@ def continue_conflict_run(repository: Repository, run_id: str) -> int:
     with file_lock(repo_lock_path(repository)):
         manifest = load_manifest(repository, run_id)
         reconcile_stale_run(repository, manifest)
-        if manifest.get("state") not in {
-            "integration-conflict",
-            "integration-continue-pending",
-        }:
+        if manifest.get("state") not in RESOLVABLE_CONFLICT_STATES:
             raise LauncherError(f"run {run_id} has no managed conflict to continue")
         run_lock_stream = acquire_existing_run_lock(repository, run_id)
         try:
@@ -3988,7 +3995,7 @@ def abort_conflict_run(repository: Repository, run_id: str) -> int:
         reconcile_stale_run(repository, manifest)
         state = manifest.get("state")
         pre_landing_manual_candidate = False
-        if state == "integration-verification-failed":
+        if state in CONDITIONAL_ABORT_STATES:
             if manifest.get("integration_manual_resolution") is not True:
                 raise LauncherError(
                     f"run {run_id} has no manually resolved integration to abort"
@@ -4001,15 +4008,7 @@ def abort_conflict_run(repository: Repository, run_id: str) -> int:
                     "refused because its live target may already have changed"
                 )
             pre_landing_manual_candidate = True
-        if state not in {
-            "integration-conflict",
-            "integration-continue-pending",
-            "integration-review-pending",
-            "integration-merge-pending",
-            "integration-abort-pending",
-            "integration-rebase-pending",
-            "integration-rebase-recovery-failed",
-        } and not pre_landing_manual_candidate:
+        if state not in ABORTABLE_INTEGRATION_STATES and not pre_landing_manual_candidate:
             raise LauncherError(f"run {run_id} has no managed integration to abort")
         run_lock_stream = acquire_existing_run_lock(repository, run_id)
         try:
@@ -4099,10 +4098,7 @@ def abort_conflict_run(repository: Repository, run_id: str) -> int:
                 ) from exc
 
             mode = manifest.get("integration_abort_mode")
-            if state in {
-                "integration-review-pending",
-                "integration-merge-pending",
-            } or pre_landing_manual_candidate or mode == "candidate":
+            if state in CANDIDATE_ABORT_STATES or pre_landing_manual_candidate or mode == "candidate":
                 candidate_head = recorded_commit(
                     repository,
                     manifest,
@@ -4278,11 +4274,7 @@ def reopen_run(
     normalize_codex_arguments(arguments)
     with file_lock(repo_lock_path(repository)):
         manifest = load_manifest(repository, run_id)
-        if manifest.get("state") in {
-            "cleaned",
-            "cleaned-branch-retained",
-            "cleaned-ref-retained",
-        }:
+        if manifest.get("state") in CLEANED_STATES:
             raise LauncherError(f"run {run_id} has already been cleaned")
         if manifest.get("state") in RETIREMENT_PENDING_STATES:
             raise LauncherError(
@@ -4298,10 +4290,7 @@ def reopen_run(
         audit = audit_run(repository, manifest)
         if not audit.registered or not audit.locked:
             raise LauncherError(f"run {run_id} is not an intact locked worktree")
-        if manifest.get("state") in {
-            "integration-conflict",
-            "integration-continue-pending",
-        }:
+        if manifest.get("state") in RESOLVABLE_CONFLICT_STATES:
             raise LauncherError(
                 f"run {run_id} has a managed integration conflict; open its "
                 "staging-only resolver with "
@@ -4768,7 +4757,7 @@ def integrate_run(repository: Repository, run_id: str) -> int:
             )
         if manifest.get("state") == "cleaned":
             return confirm_cleaned_integration(repository, manifest)
-        if manifest.get("state") in {"cleaned-branch-retained", "cleaned-ref-retained"}:
+        if manifest.get("state") in RETAINED_REF_CLEANUP_STATES:
             diagnostic(
                 f"run {run_id} worktree was removed, but a private lifecycle ref remains; "
                 f"retry {active_profile().lifecycle_command('clean', run_id)}"
@@ -4783,13 +4772,7 @@ def integrate_run(repository: Repository, run_id: str) -> int:
                 raise LauncherError("the retained worktree is missing or unlocked")
 
             if (
-                manifest.get("state")
-                in {
-                    "integration-merge-pending",
-                    "integration-manual-landing-pending",
-                    "integration-verification-pending",
-                    "integration-verification-failed",
-                }
+                manifest.get("state") in LANDING_CHECKPOINT_STATES
                 and manifest.get("integration_landing_expected_head") is not None
                 and manifest.get("integration_landing_candidate_head") is not None
             ):
@@ -4870,10 +4853,7 @@ def integrate_run(repository: Repository, run_id: str) -> int:
                 recover_interrupted_continue(repository, manifest, audit)
                 transaction_state = manifest.get("state")
                 audit = audit_run(repository, manifest)
-            if transaction_state in {
-                "integration-conflict",
-                "integration-continue-pending",
-            }:
+            if transaction_state in RESOLVABLE_CONFLICT_STATES:
                 try:
                     paths = validate_managed_conflict(repository, manifest, audit)
                 except ManagedConflictScopeError as exc:
@@ -4904,12 +4884,7 @@ def integrate_run(repository: Repository, run_id: str) -> int:
                     f"run {run_id} has an interrupted managed abort; retry "
                     f"{active_profile().lifecycle_command('abort', run_id)}"
                 )
-            if transaction_state in {
-                "integration-rebase-pending",
-                "integration-rebase-rollback-pending",
-                "integration-rebase-recovery-failed",
-                "integration-rebase-rollback-failed",
-            }:
+            if transaction_state in REBASE_TRANSACTION_STATES:
                 if transaction_state == "integration-rebase-pending":
                     outcome = recover_interrupted_initial_rebase(
                         repository,
@@ -6122,27 +6097,19 @@ def clean_run(repository: Repository, run_id: str) -> int:
                     "the quarantined run has no retirement checkpoint; "
                     f"{active_profile().lifecycle_hint('clean')} cannot discard it"
                 )
-            elif state in {
-                "integrated-pending-cleanup",
-                "integration-cleanup-pending",
-                "integration-cleanup-failed",
-            } and registered_record(repository, worktree) is None and not worktree.exists():
+            elif state in INTEGRATED_CLEANUP_STATES and registered_record(
+                repository,
+                worktree,
+            ) is None and not worktree.exists():
                 branch_removed = recover_removed_worktree_cleanup(repository, manifest)
-            elif state in {
-                "integration-cleanup-pending",
-                "integration-cleanup-failed",
-            } and manifest.get("integration_cleanup_started_at") is not None:
+            elif state in INTERRUPTED_CLEANUP_STATES and manifest.get(
+                "integration_cleanup_started_at"
+            ) is not None:
                 branch_removed = recover_unlocked_worktree_cleanup(repository, manifest)
-            elif state in {
-                "cleaned-branch-retained",
-                "cleaned-ref-retained",
-            }:
+            elif state in RETAINED_REF_CLEANUP_STATES:
                 branch_removed = retry_retained_ref_cleanup(repository, manifest)
             else:
-                if manifest.get("state") in {
-                    "integration-conflict",
-                    "integration-continue-pending",
-                }:
+                if manifest.get("state") in RESOLVABLE_CONFLICT_STATES:
                     raise LauncherError(
                         "the retained run has an active managed conflict; continue it with "
                         f"{active_profile().lifecycle_hint('continue')} {run_id} or "
@@ -6248,7 +6215,7 @@ def reconcile_stale_run(repository: Repository, manifest: dict) -> bool:
         manifest.pop("background_process_active")
         write_manifest(repository, manifest)
         return True
-    if manifest.get("state") not in {"allocating", "ready", "running"}:
+    if manifest.get("state") not in ACTIVE_RUN_STATES:
         return False
     if run_is_active(repository, manifest["run_id"]):
         return False

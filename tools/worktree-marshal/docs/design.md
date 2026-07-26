@@ -22,7 +22,8 @@ identities, `git.py` now owns the cycle-free Git policy kernel,
 Git-executable discovery and pre-pin validation, and absolute path selection,
 plus raw and authenticated invocation sequencing,
 `model.py` now owns the exact
-state vocabulary, pure classifier, and I/O-free integration-transaction
+state vocabulary, pure classifier, declarative durable transition graph and its
+admission families, and I/O-free integration-transaction
 restoration transform, `state.py` now owns run identity, state-location
 selection, repository-name normalization, lexical lock and manifest paths,
 private state-directory authentication, manifest persistence and loading, and
@@ -48,7 +49,7 @@ modules only after parity tests protect each seam:
 ```text
 worktree_marshal/
   cli.py                 command parsing and stable exit behavior
-  model.py               state vocabulary and transaction restoration now
+  model.py               state vocabulary, transition graph, and restoration now
   state.py               identity, location, lexical paths, and private directories
   locks.py               advisory acquisition and descriptor bookkeeping
   git.py                 policy, discovery, paths, and invocation sequencing
@@ -109,7 +110,9 @@ command migration. A new installation never implies permission to migrate,
 integrate, clean, retire, push, or deploy a run.
 
 The repository currently implements steps 1 through 4 as pre-release seams and
-has begun step 5 with forty behavior-preserving boundaries. The original
+has begun step 5 with forty-one behavior-preserving boundaries; the durable
+state transitions are now encoded and enforced in `model.py`, so separating
+integration and recovery logic is no longer blocked. The original
 pure Git policy kernel transforms an explicit environment mapping and Git
 argument sequence in `git.py`; `engine.py` retains its optional
 environment-acquisition wrapper, subprocess creation and command execution,
@@ -803,11 +806,76 @@ target checkpoint — into `state.retirement_parameters`,
 inventory and object pattern at the established lookup point and retains
 retirement authorization, Git probing, and lifecycle sequencing.
 
-Direct tests freeze all forty extracted boundaries, their
+The forty-first boundary encodes the durable lifecycle transition graph in
+`model.py`. `RUN_TRANSITIONS` is an ordered tuple of records; each record names
+one durable state writer in `engine.py`, the exact frozen family of states that
+writer may be entered from, and the exact family of states it may record. The
+derived `RUN_TRANSITION_EDGES`, `RUN_TRANSITION_TARGETS`, and
+`RUN_TRANSITION_OPERATIONS`, the pure `run_transition_targets` and
+`is_run_transition` operations, and the dependency-injected
+`validate_run_transition` rejection complete the seam. `INITIAL_RUN_STATE`
+names the one creation record, and `UNREACHABLE_RUN_STATES` names the accepted
+vocabulary the graph cannot reach.
+
+The graph is derived from the state guards the engine already enforced, and
+those guards are now the table's own source families. `reconcile_stale_run`
+tests `ACTIVE_RUN_STATES`; `reopen_run` refuses `CLEANED_STATES` and
+`RESOLVABLE_CONFLICT_STATES`; `resolve_conflict_run`, `continue_conflict_run`,
+`integrate_run`, and `clean_run` test `RESOLVABLE_CONFLICT_STATES`;
+`finish_restored_integration` requires `RESTORATION_CHECKPOINT_STATES`;
+`abort_conflict_run` admits `ABORTABLE_INTEGRATION_STATES`, separates
+`CONDITIONAL_ABORT_STATES`, and selects candidate mode with
+`CANDIDATE_ABORT_STATES`; `integrate_run` resumes `LANDING_CHECKPOINT_STATES`,
+recovers `REBASE_TRANSACTION_STATES`, and reports
+`RETAINED_REF_CLEANUP_STATES`; and `clean_run` dispatches on
+`INTEGRATED_CLEANUP_STATES`, `INTERRUPTED_CLEANUP_STATES`, and
+`RETAINED_REF_CLEANUP_STATES`. `REOPENABLE_STATES`, `INTEGRATION_ENTRY_STATES`,
+`CLEANABLE_STATES`, and `RESTORED_PREVIOUS_STATES` are computed from those
+exclusions rather than restated.
+
+That boundary changes no diagnostic, state file, ref, environment name, lock,
+or command result, and removes no guard. The engine retains transition
+selection, ordering, validation, durable persistence, Git execution, lock
+ownership, and every recovery choice; the table constrains durable state only.
+A member of a source family may still be refused at run time by a field, audit,
+lock, worktree, or ref condition that is not part of the state vocabulary, so
+the graph bounds the reachable durable states rather than the complete
+precondition of an operation. `restore_integration_transaction` keeps its
+frozen behavior of restoring any recorded string, and `RESTORED_PREVIOUS_STATES`
+describes only the values `integrate_run` captures and manifest loading
+accepts. A runtime rejection of an unlisted edge is deliberately not installed,
+because a new refusal would not be behavior-preserving; direct tests enforce the
+correspondence instead by parsing every durable state write in `engine.py` and
+requiring each one to be a declared target.
+
+Two recorded edges look accidental rather than intended and were kept rather
+than silently excluded. `allocate_run` may record `allocation-failed` over an
+in-memory `ready` value when the ready write itself fails, so the failed
+allocation is reached from two states rather than one. `launch_child` may
+record `running` from every state `reopen_run` does not divert, including
+`quarantined`, `allocation-failed`, and the landing and cleanup checkpoints
+that reopen excludes only by an `integrated_head` or `integration_source_head`
+field test rather than by state. `integration-merge-failed` also remains
+accepted schema-1 vocabulary with no writer and no reader; it is declared in
+`UNREACHABLE_RUN_STATES` and retained because removing it would be a state
+migration.
+
+This is a durable-state graph, not a proof of lifecycle safety. It does not
+authenticate a manifest or its path, order concurrent Marshal processes,
+establish that a recorded state matches the worktree, branch, index, ref, or
+temporary path it describes, or make an interrupted operation atomic. It
+introduces no schema, migration, command, packaging, sandbox, or release
+change, and integration, conflict, and retirement workflows remain together in
+`engine.py`.
+
+Direct tests freeze all forty-one extracted boundaries, their
 compatibility surfaces, artifact inclusion, field and operation order,
-partial-failure behavior, and the dynamic restoration of every vocabulary
+partial-failure behavior, the dynamic restoration of every vocabulary
 value currently accepted in
-`integration_previous_state` before any graph is introduced. The Make API and
+`integration_previous_state`, and the declared lifecycle graph: every durable
+state write in `engine.py` is a declared target, every declared edge is
+reachable from allocation apart from the one unreachable accepted state, and an
+undeclared transition is rejected. The Make API and
 legacy contract are frozen; the shared engine is
 co-located behind the thin `scripts/triptych-codex` bootstrap; wheel and source
 artifacts are built, a wheel is rebuilt from the extracted source artifact,
