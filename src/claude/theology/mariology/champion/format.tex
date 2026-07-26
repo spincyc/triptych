@@ -1,0 +1,125 @@
+% Claude Champion apparition study: leaf-local typesetting primitives. This
+% file owns only presentation. Every historical, doctrinal, juridic, and
+% evidentiary judgment remains in the section files and research records.
+
+\usepackage{endnotes}
+% Long archival URLs in the references must break freely rather than
+% overflowing the measure.
+\usepackage{xurl}
+
+\setcounter{tocdepth}{2}
+\setlength{\emergencystretch}{2.6em}
+
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+% Work titles and untranslated technical terms are set through semantic
+% commands so a later style change never requires editing the prose.
+\newcommand{\work}[1]{\textit{#1}}
+\newcommand{\term}[1]{\textit{#1}}
+
+% The contents fit one page only if the inter-section gaps are tightened;
+% without this the final line spills to an otherwise empty second page.
+\newcommand{\CompactContents}{%
+  \begingroup
+  \footnotesize
+  \setlength{\parskip}{0pt}%
+  \let\ChampionSavedAddvspace\addvspace
+  \renewcommand{\addvspace}[1]{\ChampionSavedAddvspace{0.42em}}%
+  \tableofcontents
+  \endgroup}
+
+% The governing thesis is substantive content and may open the body.
+\newcommand{\studythesis}[1]{%
+  \begin{studybox}{Governing thesis}
+  #1
+  \end{studybox}}
+
+% Labelled project-synthesis block: this study's own judgment, set apart from
+% quoted witness text and given its own visible field name at each use, so that
+% no synthesis can be mistaken for a source or for received teaching.
+% A judgment block states its judgment, then its counterargument, then its
+% falsifier; the paragraph break between those movements must be visible, so
+% the block restores paragraph spacing that the frame otherwise suppresses.
+\newenvironment{judgmentbox}[1]{%
+  \begin{studybox}{#1}}{\end{studybox}}
+% Separator between the movements of a judgment block. The frame suppresses
+% ordinary paragraph spacing, so the break is set explicitly.
+\newcommand{\jsep}{\par\vspace{0.55em}}
+
+% Operative-text block: the exact wording of a competent ecclesiastical act,
+% with its authority, date, and witness in the frame title. The framed border
+% marks quoted source text that is not project-owned expression.
+\newenvironment{operativetext}[1]{%
+  \begin{massbox}{Operative text --- #1}}{\end{massbox}}
+
+% Quoted witness text that is documentary but not an operative act: a printed
+% nineteenth-century narrative, a custodial web presentation, a compiler's
+% report. The open left rule keeps it visibly distinct from project prose
+% without claiming juridic force.
+\newenvironment{witnesstext}[1]{%
+  \begin{studybox}{#1}\small}{\end{studybox}}
+
+% Endnotes carry citations and subordinate evidence detail; the heading joins
+% the table of contents as an ordinary numbered section.
+\renewcommand{\enoteheading}{\section{Notes}}
+\renewcommand{\enoteformat}{%
+  \noindent\footnotesize\makebox[2.2em][l]{\theenmark.}\hangindent=2.2em}
+
+% Status-dossier card: the controlling-status summary in a titled, framed
+% block. massbox is breakable, so a long dossier keeps closed frame edges
+% wherever it actually ends.
+\newenvironment{statusdossier}[1]{%
+  \begin{massbox}{#1}\small}{\end{massbox}}
+\newcommand{\dosfield}[2]{\par\textbf{#1:} #2}
+
+% Three-witness collation table: the narrative element as the 1871 Starr
+% account, the 1874 Pernin account, and the current custodial narrative
+% severally have it. The evidentiary remark stays in the surrounding prose.
+\newenvironment{collationtable}
+{\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.155\linewidth}>{\raggedright\arraybackslash}p{0.26\linewidth}>{\raggedright\arraybackslash}p{0.26\linewidth}>{\raggedright\arraybackslash}p{0.26\linewidth}}
+\toprule
+\textbf{Element} & \textbf{Starr (copyright 1871)} & \textbf{Pernin (1874)} & \textbf{Current custodial narrative}\\
+\midrule
+\endhead
+\bottomrule
+\endfoot}
+{\end{longtable}}
+
+% Act inventory: date, authority and act, object established, and the exact
+% witness in which this study read it.
+\newenvironment{actstable}
+{\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.115\linewidth}>{\raggedright\arraybackslash}p{0.245\linewidth}>{\raggedright\arraybackslash}p{0.36\linewidth}>{\raggedright\arraybackslash}p{0.19\linewidth}}
+\toprule
+\textbf{Date} & \textbf{Authority and act} & \textbf{Object established} & \textbf{Witness used}\\
+\midrule
+\endhead
+\bottomrule
+\endfoot}
+{\end{longtable}}
+
+% Two-column boundary table used where a claim's reach must be separated from
+% what it leaves untouched. The two column names are given at each use, because
+% what is being bounded differs from section to section.
+\newenvironment{boundarytable}[2]
+{\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.46\linewidth}>{\raggedright\arraybackslash}p{0.46\linewidth}}
+\toprule
+\textbf{#1} & \textbf{#2}\\
+\midrule
+\endhead
+\bottomrule
+\endfoot}
+{\end{longtable}}
+
+% Stratum table for the reported words: the element, the earliest witness that
+% carries it, and the evidentiary remark.
+\newenvironment{stratatable}
+{\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.27\linewidth}>{\raggedright\arraybackslash}p{0.30\linewidth}>{\raggedright\arraybackslash}p{0.37\linewidth}}
+\toprule
+\textbf{Element of the reported message} & \textbf{Earliest witness located} & \textbf{Evidentiary remark}\\
+\midrule
+\endhead
+\bottomrule
+\endfoot}
+{\end{longtable}}
