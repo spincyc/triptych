@@ -1,0 +1,31 @@
+schema = 1
+record_type = "bindings"
+document = "history/catholic-exorcism/01-history-and-current-practice"
+
+[[bindings]]
+source_id = "work.catholic-church.codex-iuris-canonici-1983"
+loci = ["canon-1172"]
+role = "official-control"
+states = ["cataloged"]
+context = "Universal Latin law governing sacramentals and major exorcism; canon 1172 was checked in the Holy See Latin and English presentations through 2026-07-26."
+
+[[bindings]]
+source_id = "work.catholic-church.codex-iuris-canonici-1917"
+loci = ["canon-1151", "canon-1152", "canon-1153"]
+role = "official-control"
+states = ["cataloged"]
+context = "Historical Latin canonical discipline used only for comparison with the 1983 code."
+
+[[bindings]]
+source_id = "work.catholic-church.catechism"
+loci = ["391-395", "550", "1237", "1673", "2850-2854"]
+role = "official-control"
+states = ["cataloged"]
+context = "Doctrinal and liturgical distinctions checked in the Holy See English edition; no long translated passage is reproduced."
+
+[[bindings]]
+source_id = "work.justin-martyr.second-apology"
+loci = ["6"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Second-century apologetic testimony used as evidence of Christian claims and rhetoric, not as a clinical case report."

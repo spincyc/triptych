@@ -1,0 +1,22 @@
+# Evidence map: Catholic Exorcism
+
+| Principal claim | Layer | Exact witness | Confidence and qualification |
+|---|---|---|---|
+| Jesus' exorcisms signify the arrival of God's reign | canonical / theological | Mark 1:21–28; 3:22–27; Luke 11:14–22; Matthew 12:28 | High for the texts' claim; not a modern diagnostic taxonomy |
+| The earliest Church distinguished initiatory exorcisms from extraordinary care of afflicted persons | ancient liturgy / practice | *Apostolic Tradition* 20–21; Cyril of Jerusalem, *Procatechesis* 9; *Mystagogical Catechesis* 2.3 | High for the rites described; attribution and dating of *Apostolic Tradition* remain disputed |
+| Early apologists presented expulsion in Jesus' name as public Christian evidence | ancient apologetic | Justin, *Second Apology* 6; Tertullian, *Apology* 23; Origen, *Contra Celsum* 1.6, 1.25, 7.4 | High for literary claims; frequency and outcomes are not independently measured |
+| The 1614 Roman Ritual consolidated a cautious Roman major-exorcism formulary | official liturgy / historical synthesis | *Rituale Romanum* (1614), title XI, ch. 1–3; later editions title XII | High; it did not invent Christian exorcism |
+| Current Latin law reserves licit exorcism over the possessed to an expressly authorized priest | current universal law | 1983 CIC c. 1172 | High, Latin Church, through 2026-07-26 |
+| Current law is more concise than the 1917 code | comparative law | 1917 CIC cc. 1151–1153; 1983 CIC c. 1172 | High; changes in wording do not erase liturgical law |
+| Unauthorized assemblies may not use exorcism formulas or interrogate demons | current discipline | CDF letter to ordinaries, 29 Sept. 1985 | High within its scope |
+| Healing services and exorcism remain distinct and under the diocesan bishop | current discipline | CDF, *Instruction on Prayers for Healing*, art. 8 (2000) | High |
+| The U.S. English ERS took effect 29 June 2017 | U.S. official implementation | USCCB, “Exorcism” FAQ; Holy See confirmation December 2016 | High for the Latin dioceses of the United States |
+| Medical and mental-health evaluation is a required prudential safeguard in U.S. practice | U.S. official pastoral guidance | USCCB, “Exorcism,” questions on moral certitude and evaluation | High as official conference guidance; not itself universal legislation |
+| Major exorcism is rare and is not a substitute for sacraments or treatment | doctrinal / pastoral | CCC 1673; USCCB FAQ | High for the distinction; “rare” is not a prevalence estimate |
+| New Testament expressions do not form one later diagnostic taxonomy | canonical text / philology | Mk 1:23–27; 5:1–20; Mt 8:28–34; 26:63; Lk 8:26–39; Acts 19:13 | High for lexical and narrative difference; no retrospective clinical diagnosis |
+| Initiatory exorcism signifies conversion and baptismal liberation, not possession of every candidate | ancient liturgy / catechesis | *Apostolic Tradition* 20–21; Cyril, *Procatechesis* 9 and *Mystagogical Catechesis* 2.3 | High for the texts; date, unity, and attribution of *Apostolic Tradition* qualified |
+| The minor order of exorcist and exercise of major exorcism were not coextensive | institutional history | Eusebius, *HE* 6.43; Western ordinals; Paul VI, *Ministeria quaedam* (1972) | Medium-high; local practice varied |
+| The 1614 title embeds commands within ministerial, diagnostic, moral, and procedural cautions | official liturgy / history | *Rituale Romanum* (1614), title XI, ch. 1–3 | High for textual architecture; not evidence of frequency or outcome |
+| Translation and implementation of the revised rite are territorial, while canon 1172 is universal Latin law | liturgy / current law | DESQ 1998/2004; CIC c. 1172; USCCB implementation record | High; older-book use requires its own legal showing |
+| Religious labeling can create safeguarding harms even where sincere | pastoral / clinical synthesis | USCCB evaluation and consent guidance; ordinary safeguarding and differential-assessment principles | High as risk analysis; no diagnosis or prevalence claim |
+| The Wolfe formulation is unverified | rights / attribution | reader report; negative repository and web search, 26 July 2026 | High that no checked locus supports quotation; omit attribution |

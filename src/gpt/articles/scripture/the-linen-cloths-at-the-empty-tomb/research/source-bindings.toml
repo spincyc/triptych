@@ -1,0 +1,141 @@
+schema = 1
+record_type = "bindings"
+document = "articles/scripture/the-linen-cloths-at-the-empty-tomb"
+
+# GPT-local judgments. Exact central records are shared; no Claude review state
+# or publication decision is inherited.
+
+[[bindings]]
+source_id = "artifact.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.ccat-csv-joh-1e4f4305"
+loci = ["Jn.11.44", "Jn.19.38-42", "Jn.20.1-18"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the GPT draft's Greek vocabulary, subject sequence, Lazarus comparison, and burial context."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:29b2daef412b8cead0025d8070cd43a52e7faa0d183c110da45e01d3c83ee0aa"
+
+[[bindings]]
+source_id = "artifact.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.ccat-csv-luk-82225821"
+loci = ["Lk.23.53", "Lk.24.1-14", "Lk.24.41"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls Peter's wondering and the Lukan uses that bound wonder as an unsettled response."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:0dcb9cf834727b00d8e1796afb84d1fb28f251444982dd5cbc9b56cbdad7de86"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-50-john-27b8f3ed"
+loci = ["John.11.44", "John.19.38-42", "John.20.1-18"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls every English Johannine clause paraphrased or quoted by the GPT draft."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:4498ea55e49e3577649969ed0bcf456423b8aec2f9edda55586c37190dfe77a4"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-49-luke-d8269c33"
+loci = ["Luke.23.53", "Luke.24.1-14", "Luke.24.41"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the GPT draft's English account of Peter's visit and the immediate Lukan context."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:b6acab91674d3bbe04726da30c835175a133104d3db53fcf3f8e45b1d5b4ba6e"
+
+[[bindings]]
+source_id = "passage.joseph-henry-thayer.greek-english-lexicon-of-the-new-testament.american-book-company-corrected.sv-entylisso"
+loci = ["entylisso"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the bounded gloss wrapped or rolled and the rejection of a mandatory deliberate-fold sense."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:6417e7d0e4dbe1188e76b4ae860cdef36e55678e20cc8aa1d82a53852fda3a4f"
+
+[[bindings]]
+source_id = "passage.joseph-henry-thayer.greek-english-lexicon-of-the-new-testament.american-book-company-corrected.sv-othonion"
+loci = ["othonion"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the linen-cloth range without supplying a physical reconstruction."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:ab0658c0e6d143cf409969e865a59d341a6b1ab5368f3ce7ec2c94453da3d85c"
+
+[[bindings]]
+source_id = "passage.joseph-henry-thayer.greek-english-lexicon-of-the-new-testament.american-book-company-corrected.sv-soudarion"
+loci = ["soudarion"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls face/head-cloth usage and the finding that the New Testament noun does not establish a dining napkin."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:0ba919b8b025aafc9b57b60ef45f5fc2cc2d142133a323fd1036947a7cd36d20"
+
+[[bindings]]
+source_id = "passage.nicene-and-post-nicene-fathers.series-1-volume-14.new-york-1889.chrysostom-in-io-hom-85.4"
+loci = ["Chrysostom, In Ioannem, Homily LXXXV.4"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Direct ancient anti-theft argument weighed as probabilistic reception, not lexical meaning."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:8ee55755b1a3bf3dbb30d115763f744a29de9e181e7b3ec0a8cf589deb22c11e"
+
+[[bindings]]
+source_id = "passage.nicene-and-post-nicene-fathers.series-1-volume-7.new-york-1888.augustine-tract-in-io-120.9"
+loci = ["Augustine, In Iohannis Evangelium Tractatus CXX.9"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the grammatical attribution of belief and the ancient uncertainty about its immediate content."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:e541050862163683245ca2f24f464f6c2e84d302ddfab2e2804f3ee41a8316c4"
+
+[[bindings]]
+source_id = "passage.mishnah.berakhot.hebrew-torat-emet-sefaria-web-2026-07-25.8.3"
+loci = ["8.3"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The directly relevant Jewish meal-cloth rule concerns ritual-purity placement, with no master, fold, servant signal, or return."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:1429c4f96d454a8b643a2d53fe4fa852697727565c7e2955789658403c6f064e"
+
+[[bindings]]
+source_id = "passage.babylonian-talmud.berakhot.english-cohen-1921-sefaria-web-2026-07-25.52b"
+loci = ["52b"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Explains the Mishnah dispute through impurity transfer and supplies none of the alleged signal's actors or meanings."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:42e0160e79b3df839191d9a429d445e916e9a9574126e5a0126fa9b6af68cfc2"
+
+[[bindings]]
+source_id = "passage.mishnah.sanhedrin.english-sefaria-community-web-2026-07-25.6.1-sudarin-signal"
+loci = ["6.1"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the contrast with an actual explicit cloth signal, used to stop an execution rather than mark a meal or return."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:413fbef814f44ae4061a753ca5d645e95fca21bc629763fd64a58c4a4c3d418f"
+
+[[bindings]]
+source_id = "passage.william-smith.dictionary-of-greek-and-roman-antiquities.1875-lacuscurtius-web-2026-07-25.sv-mantele"
+loci = ["Mantele"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls Roman dining-cloth functions and the absence of the alleged finished/returning code in this antiquities treatment."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:ade17e264dc86aeea363d91beedbe15457a3d48eac6a71a5a02f78bc14d48068"
+
+[[bindings]]
+source_id = "passage.jerusalem-perspective.christs-linen-napkin.web-2006-10-07-wayback-2013-03-07.readers-question"
+loci = ["readers question"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Earliest dated online presentation located; establishes a lower bound on circulation, not origin."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:addba49d6b90e34a3b07a65dddc84ebc55adfa549ffb2c9edb80a17fee637f27"
+
+[[bindings]]
+source_id = "passage.jerusalem-perspective.christs-linen-napkin.web-2006-10-07-wayback-2013-03-07.bivin-response"
+loci = ["David Bivin's response"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Earliest located expert challenge; its lexical suggestions are independently controlled by the bound Greek and Thayer records."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:2090f8ac9a22747e861aa3c4b9338fe4622d9d0d4321ccd1059feee3f7c963de"

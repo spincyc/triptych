@@ -5,9 +5,9 @@
 - **Provider and collection:** OpenAI GPT; `articles/scripture/`.
 - **Genre and profile:** single-claim scriptural reception study governed by
   `guidance/articles.md`, especially “Scriptural studies.”
-- **Draft state:** `draft.tex` is intentionally not `main.tex`. This directory
-  is not a canonical publication leaf and must not enter catalogs, manifests,
-  installed PDFs, or web editions.
+- **Publication state:** `main.tex` is the canonical held source. It must not
+  enter catalogs, manifests, installed PDFs, or tracked web editions until its
+  independent specialist gates are closed and release is separately authorized.
 - **Reader:** a Catholic reader testing the familiar conjunction of John 6 with
   Bethlehem, the manger, and the swaddled child.
 - **Question:** how early and how directly does Christian reception join John
@@ -74,6 +74,19 @@ before quotation. The draft mostly paraphrases.
   on work-level synthesis.
 - Complete reusable source records and publication-local bindings.
 - Obtain independent patristic and theological review.
-- Convert `draft.tex` into profile-compliant `main.tex`, build, inspect every
-  page, generate/review a web edition, install exact snapshots, and only then
-  consider catalog/manifest inclusion.
+- Obtain independent patristic, exegetical, theological, and rights review;
+  complete exact source bindings and the outstanding collations; then consider
+  installation and catalog/manifest inclusion only under separate authority.
+
+## Production and first-baseline verdict
+
+On 2026-07-26 the canonical held source rendered as an eleven-page,
+warning-free Letter PDF. Every page was inspected at useful resolution for
+clipping, overlap, malformed text, bad breaks, and metadata placement. The
+generated Markdown was reviewed for heading, list, reference, metadata,
+rights-colophon, and endnote fidelity.
+
+Both initial-baseline candidates and the consequential-claim comparison are
+recorded in `research/staleness-review-2026-07-26.md`. They agree in substance;
+the full `main.tex` is preferred. The shared ledger remains untouched for
+integrating-root review. These production results close no specialist gate.

@@ -1,0 +1,9 @@
+schema = 1
+record_type = "web-edition"
+document = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text"
+
+eligibility = "conditional"
+basis = "tikz-sequence-map"
+blocking_constructs = ["tikzpicture"]
+rationale = "The imported study begins with a TikZ sequence map. Its information is recoverable, but a reviewed semantic web replacement is required before Markdown installation."
+reviewed = "2026-07-26"
