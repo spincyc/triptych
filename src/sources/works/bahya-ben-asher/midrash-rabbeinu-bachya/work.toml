@@ -1,0 +1,10 @@
+schema = 1
+record_type = "work"
+id = "work.bahya-ben-asher.midrash-rabbeinu-bachya"
+title = "Midrash Rabbeinu Bachya al ha-Torah"
+responsible = "Bahya ben Asher ibn Halawa"
+work_type = "biblical-commentary"
+alternate_titles = ["Rabbeinu Bahya on the Torah", "Bachya ben Asher"]
+languages = ["he"]
+locus_pattern = '[1-5]?[A-Z][A-Za-z]*\.[1-9][0-9]*(?:\.[1-9][0-9]*)?(?:-[1-9][0-9]*)?'
+description = "A late thirteenth-century Spanish commentary on the Pentateuch that expounds each passage on four levels, plain, homiletic, rational, and kabbalistic, and marks the transitions. A locus is BookToken.chapter.verse."

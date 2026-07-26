@@ -1,0 +1,10 @@
+schema = 1
+record_type = "work"
+id = "work.jacob-ben-asher.tur-ha-arokh"
+title = "Tur ha-Arokh"
+responsible = "Jacob ben Asher"
+work_type = "biblical-commentary"
+alternate_titles = ["Tur on the Torah", "Perush al ha-Torah le-Ba'al ha-Turim"]
+languages = ["he"]
+locus_pattern = '[1-5]?[A-Z][A-Za-z]*\.[1-9][0-9]*(?:\.[1-9][0-9]*)?(?:-[1-9][0-9]*)?'
+description = "The longer of Jacob ben Asher's two commentaries on the Pentateuch, written in the fourteenth century, distinct from his legal code the Arba'ah Turim. A locus is BookToken.chapter.verse."

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.brooke-foss-westcott.the-gospel-according-to-st-john.john-murray-1908-vol-2.vol2-p340-jn-20.7-note-checked-text-41aa92f4"
+edition_id = "edition.brooke-foss-westcott.the-gospel-according-to-st-john.john-murray-1908-vol-2"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of a printed work in the United States public domain by date of publication. It is derived from page images rendered from the hashed Internet Archive facsimile of that printing and contains no Internet Archive markup."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription collated against printed page 340, rendered as a page image from the hashed Internet Archive facsimile, on 2026-07-25."
+retrieved = "2026-07-25"
+sha256 = "41aa92f4f3db2b36ec1119ba6b927cea8755c5f17c4c1b56aa409e07a20622fe"
+byte_size = 869
+path = "src/sources/works/brooke-foss-westcott/the-gospel-according-to-st-john/editions/john-murray-1908-vol-2/artifacts/vol2-p340-jn-20.7-note-checked-text-41aa92f4/westcott-vol2-p340.txt"
+derived_from = "artifact.brooke-foss-westcott.the-gospel-according-to-st-john.john-murray-1908-vol-2.ia-facsimile-pdf-704ec3cf"
+transformation = "Read the named printed pages as images rendered from the hashed facsimile, and transcribe the quoted sentences with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced printed-page locator; preserve the printing's wording, spelling, and punctuation; transliterate any Greek set in Greek type and say so in the passage notes; omit running heads, footnote markers, and marginal matter."
+indexable = true
+encoding = "utf-8"

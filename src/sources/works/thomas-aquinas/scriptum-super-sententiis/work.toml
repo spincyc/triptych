@@ -1,0 +1,11 @@
+schema = 1
+record_type = "work"
+id = "work.thomas-aquinas.scriptum-super-sententiis"
+title = "Scriptum super libros Sententiarum"
+responsible = "Thomas Aquinas"
+work_type = "scholastic-commentary"
+alternate_titles = ["Commentum in quatuor libros Sententiarum", "Commentary on the Sentences of Peter Lombard", "In IV Sententiarum"]
+languages = ["la"]
+locus_pattern = 'lib-[1-4]-d-[1-9][0-9]{0,1}-q-[1-9]-a-[1-9](?:-qc-[1-9])?-(?:tit|arg-[1-9]|sc-[1-9]|co|ad-[1-9])'
+relations = ["work.thomas-aquinas.summa-theologiae"]
+description = "Aquinas's commentary on the four books of Peter Lombard's Sentences, delivered at Paris in the 1250s and the earliest of his large systematic works. It is addressed by book, distinction, question, article, and quaestiuncula, then by the article division. Book IV, distinctions 43-50 treat the resurrection, the general judgment, and the final states; the Supplementum printed after the unfinished Tertia Pars of the Summa theologiae is a later transcription from this book and is registered as a separate work, not as part of the Summa. Not every article of the Scriptum is divided into quaestiunculae -- book IV, distinction 46, question 1, article 3 is not -- so the quaestiuncula segment of the locus grammar is optional, and the article division may also be the article title."

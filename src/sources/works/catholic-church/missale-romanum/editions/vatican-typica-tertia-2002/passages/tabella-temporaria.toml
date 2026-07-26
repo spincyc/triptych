@@ -1,0 +1,12 @@
+schema = 2
+record_type = "passage"
+id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.tabella-temporaria"
+edition_id = "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+artifact_id = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+artifact_sha256 = "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7"
+locus = "tabella-temporaria"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The Tabella temporaria praecipuarum celebrationum anni liturgici, printed between the General Roman Calendar and the Proper of Time. Its columns give, for each civil year from 2000 to 2023, the dominical letters, the Sunday Lectionary cycles carried by that civil year, Ash Wednesday, Easter, the Ascension, Pentecost, the last day and the number of the last week of Ordinary Time before Lent, the first day and the number of the first week of Ordinary Time resumed after Easter Time, and the First Sunday of Advent."
+artifact_page_ranges = [[81, 82]]
+verified_on = "2026-07-25"
+notes = "In this exact artifact the printed table is rendered as running lines rather than ruled columns, so field order is recoverable only from the surviving header. Every row was read and recomputed. Nineteen of the twenty-four rows agree with the Gregorian computus and with the norms in every field. The five rows for 2004, 2008, 2012, 2016 and 2020 - the leap years of the range whose Ash Wednesday falls in February - give both February dates one day earlier than the norms require, for Ash Wednesday and for the last Ordinary Time day before Lent, while their week numbers and every other column agree; in each the printed Ash Wednesday is a Tuesday. The sixth leap year in the range, 2000, whose Ash Wednesday falls on 8 March, agrees in every field. Whether that discrepancy stands in the printed altar book or arises in this digital reproduction was not determined."

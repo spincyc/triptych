@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-14.new-york-1889.chrysostom-in-io-hom-86.1-checked-text-7a7621e0"
+edition_id = "edition.nicene-and-post-nicene-fathers.series-1-volume-14.new-york-1889"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of the Nicene and Post-Nicene Fathers English translation, which is in the United States public domain by date of publication. It is derived from page images rendered from the hashed Internet Archive facsimile of that printing and contains no Internet Archive markup."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription collated against printed page 323, rendered as a page image from the hashed Internet Archive facsimile, on 2026-07-25."
+retrieved = "2026-07-25"
+sha256 = "7a7621e0c905bd62bad83d0d13a7396a872b25625e0939ecac187c5beeefca30"
+byte_size = 349
+path = "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-14/editions/new-york-1889/artifacts/chrysostom-in-io-hom-86.1-checked-text-7a7621e0/chrysostom-in-ioannem-86-1.txt"
+derived_from = "artifact.nicene-and-post-nicene-fathers.series-1-volume-14.new-york-1889.ia-facsimile-pdf-a09a5d18"
+transformation = "Read the named printed pages as images rendered at 220 dots per inch from the hashed facsimile, and transcribe the quoted sentences with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced homily-and-section or tractate-and-section locator; preserve the volume's wording, archaic second person, spelling, and punctuation; omit the volume's quotation marks and italics around scriptural lemmas, its footnote markers, running heads, and column rules."
+indexable = true
+encoding = "utf-8"

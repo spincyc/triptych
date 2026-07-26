@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.joseph-henry-thayer.greek-english-lexicon-of-the-new-testament.american-book-company-corrected.sv-soudarion-checked-text-646fb441"
+edition_id = "edition.joseph-henry-thayer.greek-english-lexicon-of-the-new-testament.american-book-company-corrected"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of a printed work in the United States public domain by date of publication. It is derived from page images rendered from the hashed Internet Archive facsimile of that printing and contains no Internet Archive markup."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription collated against printed page 581, rendered as a page image from the hashed Internet Archive facsimile, on 2026-07-25."
+retrieved = "2026-07-25"
+sha256 = "646fb44194044362bbfea44738a8f4e4b804dfc4d76c016914fa85e46a85508f"
+byte_size = 272
+path = "src/sources/works/joseph-henry-thayer/greek-english-lexicon-of-the-new-testament/editions/american-book-company-corrected/artifacts/sv-soudarion-checked-text-646fb441/thayer-sv-soudarion.txt"
+derived_from = "artifact.joseph-henry-thayer.greek-english-lexicon-of-the-new-testament.american-book-company-corrected.ia-facsimile-pdf-4ef0c764"
+transformation = "Read the named printed pages as images rendered from the hashed facsimile, and transcribe the quoted entries with one entry per LF-terminated UTF-8 line, each prefixed by a braced printed-page locator; preserve wording, abbreviation, and punctuation; transliterate Greek set in Greek type and say so in the passage notes; omit running heads and column rules."
+indexable = true
+encoding = "utf-8"

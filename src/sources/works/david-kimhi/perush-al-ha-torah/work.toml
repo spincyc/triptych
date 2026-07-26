@@ -1,0 +1,10 @@
+schema = 1
+record_type = "work"
+id = "work.david-kimhi.perush-al-ha-torah"
+title = "Perush al ha-Torah"
+responsible = "David Kimhi (Radak)"
+work_type = "biblical-commentary"
+alternate_titles = ["Radak on the Torah", "Kimhi on Genesis"]
+languages = ["he"]
+locus_pattern = '[1-5]?[A-Z][A-Za-z]*\.[1-9][0-9]*(?:\.[1-9][0-9]*)?(?:-[1-9][0-9]*)?'
+description = "Radak's commentary on the Torah, written in Provence around the turn of the thirteenth century. Radak works from grammar and plain sense, reports midrash as midrash, and is unusually willing to say that a scriptural comparison is hyperbole. A locus is BookToken.chapter.verse."

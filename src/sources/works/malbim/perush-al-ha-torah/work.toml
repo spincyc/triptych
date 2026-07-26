@@ -1,0 +1,10 @@
+schema = 1
+record_type = "work"
+id = "work.malbim.perush-al-ha-torah"
+title = "Ha-Torah ve-ha-Mitzvah"
+responsible = "Meir Leibush ben Yehiel Michel Wisser (Malbim)"
+work_type = "biblical-commentary"
+alternate_titles = ["Malbim on the Torah", "Malbim on Genesis"]
+languages = ["he"]
+locus_pattern = '[1-5]?[A-Z][A-Za-z]*\.[1-9][0-9]*(?:\.[1-9][0-9]*)?(?:-[1-9][0-9]*)?'
+description = "Malbim's nineteenth-century commentary on the Pentateuch, built on the premise that biblical Hebrew has no true synonyms and that every apparent repetition carries a distinct sense. He engages contemporary science and philosophy directly. A locus is BookToken.chapter.verse."

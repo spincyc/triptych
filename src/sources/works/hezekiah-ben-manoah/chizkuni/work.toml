@@ -1,0 +1,10 @@
+schema = 1
+record_type = "work"
+id = "work.hezekiah-ben-manoah.chizkuni"
+title = "Chizkuni"
+responsible = "Hezekiah ben Manoah"
+work_type = "biblical-commentary"
+alternate_titles = ["Hizkuni", "Chizkuni on the Torah"]
+languages = ["he"]
+locus_pattern = '[1-5]?[A-Z][A-Za-z]*\.[1-9][0-9]*(?:\.[1-9][0-9]*)?(?:-[1-9][0-9]*)?'
+description = "A thirteenth-century French commentary on the Pentateuch, compiled from earlier northern French exegesis and characteristically brief. A locus is BookToken.chapter.verse."

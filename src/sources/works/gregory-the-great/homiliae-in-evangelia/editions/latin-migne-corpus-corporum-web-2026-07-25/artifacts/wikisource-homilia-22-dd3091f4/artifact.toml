@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.gregory-the-great.homiliae-in-evangelia.latin-migne-corpus-corporum-web-2026-07-25.wikisource-homilia-22-dd3091f4"
+edition_id = "edition.gregory-the-great.homiliae-in-evangelia.latin-migne-corpus-corporum-web-2026-07-25"
+artifact_type = "normalized-text"
+media_type = "text/plain"
+storage = "remote"
+rights_status = "public-domain"
+rights_basis = "The Latin of Gregory is ancient and in the public domain, and Migne's Patrologia Latina 76 is in the United States public domain by date of publication. The Corpus Corporum transcription reproduced at la.wikisource.org is published there under that site's free-content terms. Only short clauses are quoted by consuming publications, and the retrieved bytes are not redistributed from this repository."
+rights_jurisdiction = "United States"
+source_url = "https://la.wikisource.org/w/index.php?title=Homiliarum_in_Evangelia/XXII&action=raw"
+provenance = "Raw wikitext of the homily retrieved and hashed for this study."
+retrieved = "2026-07-25"
+sha256 = "dd3091f4d619a89a2ae6913509cf0548983e47a1f9b288a21cbd47bb8b1a50b6"
+byte_size = 19463
+indexable = false
+notes = "Wikitext, not a facsimile; the file opens with a template block before the homily rubric. Checked for the automated Italian spelling corruption affecting other files on the same site: zero occurrences of the marker strings."

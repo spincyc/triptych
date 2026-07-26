@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.babylonian-talmud.berakhot.english-cohen-1921-sefaria-web-2026-07-25.42a-checked-text-5b7f80c0"
+edition_id = "edition.babylonian-talmud.berakhot.english-cohen-1921-sefaria-web-2026-07-25"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "This focused transcription reproduces a few sentences of A. Cohen's 1921 Cambridge translation, which Sefaria records as public domain and which is in the United States public domain by date of publication."
+provenance = "Triptych extraction from the hashed Sefaria application programming interface response, 2026-07-25."
+retrieved = "2026-07-25"
+sha256 = "5b7f80c00733981b5391d71a8bf1a39d0a0ec9ed14631eaf153cee865a0c4e73"
+byte_size = 615
+path = "src/sources/works/babylonian-talmud/berakhot/editions/english-cohen-1921-sefaria-web-2026-07-25/artifacts/42a-checked-text-5b7f80c0/bavli-berakhot-42a.txt"
+derived_from = "artifact.babylonian-talmud.berakhot.english-cohen-1921-sefaria-web-2026-07-25.sefaria-api-berakhot-42a-038760df"
+transformation = "Extract the quoted text from the hashed application programming interface response with one unit per LF-terminated UTF-8 line, each prefixed by a braced locator; strip the response's JavaScript Object Notation structure and any inline markup tags; preserve wording, bracketed translator's supplements, and punctuation."
+indexable = true
+encoding = "utf-8"

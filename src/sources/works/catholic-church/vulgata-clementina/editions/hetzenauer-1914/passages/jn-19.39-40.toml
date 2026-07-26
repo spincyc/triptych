@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.catholic-church.vulgata-clementina.hetzenauer-1914.jn-19.39-40"
+edition_id = "edition.catholic-church.vulgata-clementina.hetzenauer-1914"
+artifact_id = "artifact.catholic-church.vulgata-clementina.hetzenauer-1914.jn-19.39-40-checked-text-4ef35dfa"
+artifact_sha256 = "4ef35dfa72f11b2da13835b1f4248305973f67af7f07dab2c0143f6b6b41dbd3"
+locus = "Jn.19.39-40"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Read on numbered scan page 1062 with John 19:38 and 19:41-42 in view, for the quantity of spices and for the Latin rendering of the burial cloths as linteis, which differs from the linteamina this same edition prints five verses later."
+physical_line_ranges = [[1, 2]]
+text = "Venit autem et Nicodemus, qui venerat ad Iesum nocte primum, ferens mixturam myrrhae, et aloes, quasi libras centum. Acceperunt ergo corpus Iesu, et ligaverunt illud linteis cum aromatibus, sicut mos est Iudaeis sepelire."
+transcription_segments = [
+  { line = 1, text = "Venit autem et Nicodemus, qui venerat ad Iesum nocte primum, ferens mixturam myrrhae, et aloes, quasi libras centum." },
+  { line = 2, text = "Acceperunt ergo corpus Iesu, et ligaverunt illud linteis cum aromatibus, sicut mos est Iudaeis sepelire." },
+]
+verified_on = "2026-07-25"
+notes = "The printed myrrhae and Iudaeis carry the ae digraph, transcribed here as the two letters ae. The superscript cross-reference letter before qui venerat is editorial apparatus."

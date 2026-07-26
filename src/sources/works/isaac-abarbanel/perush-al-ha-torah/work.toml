@@ -1,0 +1,10 @@
+schema = 1
+record_type = "work"
+id = "work.isaac-abarbanel.perush-al-ha-torah"
+title = "Perush al ha-Torah"
+responsible = "Isaac ben Judah Abarbanel"
+work_type = "biblical-commentary"
+alternate_titles = ["Abravanel on the Torah", "Commentary on the Pentateuch"]
+languages = ["he"]
+locus_pattern = '[1-5]?[A-Z][A-Za-z]*\.[1-9][0-9]*(?:\.[1-9][0-9]*)?(?:-[1-9][0-9]*)?'
+description = "Don Isaac Abarbanel's commentary on the Pentateuch, composed after his expulsion from Spain in 1492 and first printed in the sixteenth century. Its distinctive method is to preface each unit with a numbered list of difficulties and then to expound the verses so that the difficulties are resolved; the question lists are therefore a primary record of what a fifteenth-century reader found hard in a passage. A locus is BookToken.chapter or BookToken.chapter.verse; prefatory questions are cited by chapter with the question number stated in prose."

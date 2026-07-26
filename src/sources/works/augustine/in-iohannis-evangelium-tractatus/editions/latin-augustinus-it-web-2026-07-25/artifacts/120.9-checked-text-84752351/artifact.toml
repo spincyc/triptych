@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.augustine.in-iohannis-evangelium-tractatus.latin-augustinus-it-web-2026-07-25.120.9-checked-text-84752351"
+edition_id = "edition.augustine.in-iohannis-evangelium-tractatus.latin-augustinus-it-web-2026-07-25"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "This focused transcription reproduces a few sentences of Augustine's ancient Latin, which is in the public domain. It contains no markup, apparatus, or editorial matter belonging to the site from which the text was retrieved."
+provenance = "Triptych manual transcription from the hashed retrieval of the augustinus.it page, 2026-07-25."
+retrieved = "2026-07-25"
+sha256 = "847523515351b4044de81d2e29ea10033ce2d636d5e1c89af45a41f8ef87e39c"
+byte_size = 660
+path = "src/sources/works/augustine/in-iohannis-evangelium-tractatus/editions/latin-augustinus-it-web-2026-07-25/artifacts/120.9-checked-text-84752351/augustinus-tractatus-120-9.txt"
+derived_from = "artifact.augustine.in-iohannis-evangelium-tractatus.latin-augustinus-it-web-2026-07-25.augustinus-it-omelia-120-f479c788"
+transformation = "Transcribe the quoted sentences from the retrieved file with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator; preserve the source's wording, capitalization, and punctuation; omit the delivery's inline scriptural cross references, column markers, section numbers, and markup."
+indexable = true
+encoding = "utf-8"

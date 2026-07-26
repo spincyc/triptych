@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.theophylact-of-ohrid.enarratio-in-evangelium-ioannis.migne-pg-124-latin-column-1864.in-io-20-credidit"
+edition_id = "edition.theophylact-of-ohrid.enarratio-in-evangelium-ioannis.migne-pg-124-latin-column-1864"
+artifact_id = "artifact.theophylact-of-ohrid.enarratio-in-evangelium-ioannis.migne-pg-124-latin-column-1864.in-io-20-credidit-checked-text-6a55059a"
+artifact_sha256 = "6a55059a5a94c76ec38ee33224958f7224673390449066c578e7ff607645c03c"
+locus = "20"
+states = ["cataloged", "acquired", "inspected"]
+context = "Theophylact on he saw and believed, read in the retrieved optical character recognition at Migne's columns 291 and 292. Registered at an inspection ceiling for the same reasons as the companion passage under this edition."
+physical_line_ranges = [[1, 3]]
+text = "Vide hic quam alienus a fastu sit evangelista, quomodo testetur diligentiam Petri in scrutando. Vidit sepulcralia separatim posita, ac credidit: non quod surrexisset Dominus, sed quod furto ablatus esset. Credidit enim Mariae dicenti, Sustulerunt Dominum. Quare autem credidit Mariae et non cogitavit quod surrexisset? Nondum enim sciverant Scripturam, quod oportebat eum a mortuis resurgere, et propterea crediderunt Mariae, suspicanturque furtum et ablationem."
+transcription_segments = [
+  { line = 1, text = "Vide hic quam alienus a fastu sit evangelista, quomodo testetur diligentiam Petri in scrutando." },
+  { line = 2, text = "Vidit sepulcralia separatim posita, ac credidit: non quod surrexisset Dominus, sed quod furto ablatus esset. Credidit enim Mariae dicenti, Sustulerunt Dominum." },
+  { line = 3, text = "Quare autem credidit Mariae et non cogitavit quod surrexisset? Nondum enim sciverant Scripturam, quod oportebat eum a mortuis resurgere, et propterea crediderunt Mariae, suspicanturque furtum et ablationem." },
+]
+notes = "Repairs: Mariae twice for the file's Marie, and dicenti for icenti. Migne's quotation marks around the scriptural lemmas are omitted. This is Migne's Latin translation, not Theophylact's Greek."

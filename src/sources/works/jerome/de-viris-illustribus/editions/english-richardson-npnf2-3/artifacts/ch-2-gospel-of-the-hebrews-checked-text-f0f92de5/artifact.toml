@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.jerome.de-viris-illustribus.english-richardson-npnf2-3.ch-2-gospel-of-the-hebrews-checked-text-f0f92de5"
+edition_id = "edition.jerome.de-viris-illustribus.english-richardson-npnf2-3"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces one sentence of Richardson's 1892 translation, which is in the United States public domain by date of publication. It contains no markup belonging to the site from which the text was retrieved."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription from the hashed retrieval of the New Advent page, 2026-07-25."
+retrieved = "2026-07-25"
+sha256 = "f0f92de50e715484b7f2b04057765a37d55aa6f8bd0514fbd672fa7fe0c8842d"
+byte_size = 331
+path = "src/sources/works/jerome/de-viris-illustribus/editions/english-richardson-npnf2-3/artifacts/ch-2-gospel-of-the-hebrews-checked-text-f0f92de5/jerome-de-viris-2.txt"
+derived_from = "artifact.jerome.de-viris-illustribus.english-richardson-npnf2-3.newadvent-2708-85587778"
+transformation = "Transcribe the quoted sentences from the retrieved response with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator; preserve wording, spelling and punctuation; omit the delivery's markup, navigation, footnote links and editorial apparatus."
+indexable = true
+encoding = "utf-8"

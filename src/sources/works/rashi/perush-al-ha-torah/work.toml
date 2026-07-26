@@ -1,0 +1,10 @@
+schema = 1
+record_type = "work"
+id = "work.rashi.perush-al-ha-torah"
+title = "Perush Rashi al ha-Torah"
+responsible = "Solomon ben Isaac of Troyes (Rashi)"
+work_type = "biblical-commentary"
+alternate_titles = ["Rashi on the Torah", "Rashi on Genesis"]
+languages = ["he"]
+locus_pattern = '[1-5]?[A-Z][A-Za-z]*\.[1-9][0-9]*(?:\.[1-9][0-9]*)?(?:-[1-9][0-9]*)?'
+description = "Rashi's commentary on the Pentateuch, written in the late eleventh century and the most widely printed Jewish commentary on the Torah. Rashi habitually distinguishes the plain sense of a verse from its midrashic sense and prints them in that order; a reader who takes a midrashic sense reported by Rashi as his own plain-sense judgment has misread him. A locus is BookToken.chapter.verse."

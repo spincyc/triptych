@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.theophylact-of-ohrid.enarratio-in-evangelium-ioannis.migne-pg-124-latin-column-1864.in-io-20-anti-theft-checked-text-bdc9929f"
+edition_id = "edition.theophylact-of-ohrid.enarratio-in-evangelium-ioannis.migne-pg-124-latin-column-1864"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of Migne's 1864 Latin translation, which is in the United States public domain by date of publication. It repairs evident character-level recognition damage and contains no Internet Archive markup."
+rights_jurisdiction = "United States"
+provenance = "Triptych transcription from the hashed Internet Archive optical character recognition of Patrologia Graeca 124, with evident recognition damage repaired, 2026-07-25."
+retrieved = "2026-07-25"
+sha256 = "bdc9929f30ec7e9cc729bdec3fe9546bb24452280f232c5817ffc1cb3edf00ee"
+byte_size = 696
+path = "src/sources/works/theophylact-of-ohrid/enarratio-in-evangelium-ioannis/editions/migne-pg-124-latin-column-1864/artifacts/in-io-20-anti-theft-checked-text-bdc9929f/theophylactus-in-ioannem-20-anti-theft.txt"
+derived_from = "artifact.theophylact-of-ohrid.enarratio-in-evangelium-ioannis.migne-pg-124-latin-column-1864.ia-djvu-ocr-9a1fc730"
+transformation = "Transcribe the quoted Latin sentences from the hashed optical character recognition text with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced Migne column locator; repair only evident character-level recognition damage and record each repair in the passage notes; omit Migne's quotation marks around scriptural lemmas, his column numbers, and the interleaved Greek column."
+indexable = true
+encoding = "utf-8"

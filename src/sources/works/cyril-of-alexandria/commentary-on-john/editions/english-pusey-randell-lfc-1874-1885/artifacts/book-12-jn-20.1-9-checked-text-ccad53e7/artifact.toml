@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.cyril-of-alexandria.commentary-on-john.english-pusey-randell-lfc-1874-1885.book-12-jn-20.1-9-checked-text-ccad53e7"
+edition_id = "edition.cyril-of-alexandria.commentary-on-john.english-pusey-randell-lfc-1874-1885"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of the 1874 and 1885 Library of Fathers English translation, which is in the United States public domain by date of publication. It contains no markup or editorial matter belonging to the site from which the text was retrieved."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription from the hashed retrieval of the tertullian.org page, 2026-07-25."
+retrieved = "2026-07-25"
+sha256 = "ccad53e79519ec9f2ae511265e1b9a15aa378fa7202acb3689230001188ab217"
+byte_size = 1121
+path = "src/sources/works/cyril-of-alexandria/commentary-on-john/editions/english-pusey-randell-lfc-1874-1885/artifacts/book-12-jn-20.1-9-checked-text-ccad53e7/cyril-book-12-john-20.txt"
+derived_from = "artifact.cyril-of-alexandria.commentary-on-john.english-pusey-randell-lfc-1874-1885.tertullian-org-book12-ec1fa9b7"
+transformation = "Transcribe the quoted sentences from the retrieved transcription with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced book-and-printed-page locator; preserve wording, spelling, and punctuation; omit the transcription's embedded page markers and markup."
+indexable = true
+encoding = "utf-8"

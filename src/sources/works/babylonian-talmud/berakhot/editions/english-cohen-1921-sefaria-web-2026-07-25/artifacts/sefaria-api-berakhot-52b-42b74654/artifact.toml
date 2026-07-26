@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.babylonian-talmud.berakhot.english-cohen-1921-sefaria-web-2026-07-25.sefaria-api-berakhot-52b-42b74654"
+edition_id = "edition.babylonian-talmud.berakhot.english-cohen-1921-sefaria-web-2026-07-25"
+artifact_type = "structured-text"
+media_type = "application/json"
+storage = "remote"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Sefaria records the licence of A. Cohen's 1921 Cambridge translation as public domain, and the 1921 printing is in the United States public domain by date. The retrieved response bytes are not redistributed from this repository; only the transcription of the quoted passages is retained."
+source_url = "https://www.sefaria.org/api/v3/texts/Berakhot.52b?version=english%7CTractate%20Berakot%20by%20A.%20Cohen%2C%20Cambridge%20University%20Press%2C%201921"
+provenance = "Single application programming interface response containing the whole folio, retrieved and hashed for this study."
+retrieved = "2026-07-25"
+sha256 = "42b746547faf1bcf431c5a0b492547c733c90bdef2ef9a187cc41bfbc5c32f52"
+byte_size = 17215
+indexable = false
+notes = "JavaScript Object Notation, not a facsimile. The translation's bracketed supplements are Cohen's own."

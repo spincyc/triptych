@@ -1,0 +1,11 @@
+schema = 1
+record_type = "work"
+id = "work.swete.old-testament-in-greek"
+title = "The Old Testament in Greek according to the Septuagint"
+responsible = "Henry Barclay Swete, editor"
+work_type = "critical-edition"
+alternate_titles = ["Swete's Septuagint", "The Old Testament in Greek"]
+languages = ["grc"]
+locus_pattern = '[1-5]?[A-Z][A-Za-z]*\.[1-9][0-9]*(?:\.[1-9][0-9]*)?(?:-[1-9][0-9]*)?'
+relations = ["work.catholic-church.vulgata-clementina"]
+description = "Swete's three-volume Cambridge manual edition of the Greek Old Testament, printing Codex Vaticanus where it survives with a foot apparatus of readings from Alexandrinus, Sinaiticus, and other identified uncials. Volume I covers Genesis through 4 Kings. It is a diplomatic manual edition, not a fully reconstructed critical text; consumers must not treat its readings as the judgment of the Gottingen Septuaginta. A locus is BookToken.chapter.verse in the Greek versification, which differs from the Hebrew in several books."

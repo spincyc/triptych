@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.gregory-the-great.homiliae-in-evangelia.latin-migne-corpus-corporum-web-2026-07-25.22.3-4-checked-text-06d5c96f"
+edition_id = "edition.gregory-the-great.homiliae-in-evangelia.latin-migne-corpus-corporum-web-2026-07-25"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of Gregory's ancient Latin, which is in the public domain. It contains no markup, apparatus, or editorial matter belonging to the site from which the text was retrieved."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription from the hashed retrieval of the la.wikisource.org raw wikitext, 2026-07-25."
+retrieved = "2026-07-25"
+sha256 = "06d5c96f8e3ac61065d1503abdef20a620b9d074fa17e2b0eab7d004082ec70e"
+byte_size = 993
+path = "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/latin-migne-corpus-corporum-web-2026-07-25/artifacts/22.3-4-checked-text-06d5c96f/gregorius-homilia-22-3-4.txt"
+derived_from = "artifact.gregory-the-great.homiliae-in-evangelia.latin-migne-corpus-corporum-web-2026-07-25.wikisource-homilia-22-dd3091f4"
+transformation = "Transcribe the quoted sentences from the retrieved file with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator; preserve the source's wording, capitalization, and punctuation; omit the delivery's inline scriptural cross references, column markers, section numbers, and markup."
+indexable = true
+encoding = "utf-8"

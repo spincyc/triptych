@@ -1,0 +1,10 @@
+schema = 1
+record_type = "work"
+id = "work.nachmanides.perush-al-ha-torah"
+title = "Perush al ha-Torah"
+responsible = "Moses ben Nahman (Nahmanides, Ramban)"
+work_type = "biblical-commentary"
+alternate_titles = ["Ramban on the Torah", "Nachmanides on Genesis"]
+languages = ["he"]
+locus_pattern = '[1-5]?[A-Z][A-Za-z]*\.[1-9][0-9]*(?:\.[1-9][0-9]*)?(?:-[1-9][0-9]*)?'
+description = "Nahmanides' commentary on the Pentateuch, completed in the Land of Israel in the thirteenth century. It regularly quotes Rashi and Ibn Ezra by name in order to correct them, and it carries a stratum of kabbalistic remarks flagged by formulas such as 'the enlightened will understand'. A locus is BookToken.chapter.verse."

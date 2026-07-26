@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.theophylact-of-ohrid.enarratio-in-evangelium-ioannis.migne-pg-124-latin-column-1864.in-io-20-anti-theft"
+edition_id = "edition.theophylact-of-ohrid.enarratio-in-evangelium-ioannis.migne-pg-124-latin-column-1864"
+artifact_id = "artifact.theophylact-of-ohrid.enarratio-in-evangelium-ioannis.migne-pg-124-latin-column-1864.in-io-20-anti-theft-checked-text-bdc9929f"
+artifact_sha256 = "bdc9929f30ec7e9cc729bdec3fe9546bb24452280f232c5817ffc1cb3edf00ee"
+locus = "20"
+states = ["cataloged", "acquired", "inspected"]
+context = "Theophylact's reproduction of Chrysostom's anti-theft argument, read in the retrieved optical character recognition at Migne's columns 289 and 290. Registered at an inspection ceiling rather than as verified: the transcription repairs obvious character-level recognition damage in the Latin column and has not been checked against a page image or against the Greek."
+physical_line_ranges = [[1, 3]]
+text = "Neque enim si transtulissent quidam corpus, nudassent illud: neque si furati essent, curam habuissent deponendi sudarii, involvendi et ponendi seorsim in unum locum, sed simpliciter sicut potuissent, accepissent corpus. Propter hoc etiam evangelista prius dixit quod cum multa myrrha sepultum fuerit, quae non minus bitumine lintea corpori adhaerere facit: ut cum audierimus quod sudaria seorsim illic fuerint posita, ne credamus dicentibus quod furtim sit ablatus. Neque enim ita insipiens fuisset fur, quod in rem supervacuam tantam insumpsisset curam et tempus, et non fuisset suspicatus, quod dum in his esset occupatus, fortasse in furto deprehenderetur."
+transcription_segments = [
+  { line = 1, text = "Neque enim si transtulissent quidam corpus, nudassent illud: neque si furati essent, curam habuissent deponendi sudarii, involvendi et ponendi seorsim in unum locum, sed simpliciter sicut potuissent, accepissent corpus." },
+  { line = 2, text = "Propter hoc etiam evangelista prius dixit quod cum multa myrrha sepultum fuerit, quae non minus bitumine lintea corpori adhaerere facit: ut cum audierimus quod sudaria seorsim illic fuerint posita, ne credamus dicentibus quod furtim sit ablatus." },
+  { line = 3, text = "Neque enim ita insipiens fuisset fur, quod in rem supervacuam tantam insumpsisset curam et tempus, et non fuisset suspicatus, quod dum in his esset occupatus, fortasse in furto deprehenderetur." },
+]
+notes = "Four readings repair evident recognition damage in the source file: habuissent for hahuissent, deponendi for depanendj, bitumine for bilu:nine, and insumpsisset for a mangled string. Migne's quotation marks around the scriptural lemmas are omitted. This is Migne's Latin translation, not Theophylact's Greek."

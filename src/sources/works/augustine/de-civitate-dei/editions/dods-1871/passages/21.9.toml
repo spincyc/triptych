@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.augustine.de-civitate-dei.dods-1871.21.9"
+edition_id = "edition.augustine.de-civitate-dei.dods-1871"
+artifact_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45305-body-lf"
+artifact_sha256 = "9cb737d9d8e33d67335d4f5585cf3318f40d2b120ca7212beae8aa26cb9a473a"
+locus = "21.9"
+states = ["cataloged", "acquired", "inspected"]
+context = "The complete chapter body was inspected at artifact lines 17321-17392: the prophetic worm and unquenched fire, the Lord's threefold repetition in the Marcan cutting-off sayings, the two rival readings of worm and fire (spiritual anguish only, or body burned while the soul is gnawed), Augustine's own preference for referring both to the body, and his explicit release of the reader to choose."
+physical_line_ranges = [[17321, 17392]]
+text = "all. Let each man, then, choose which he will, whether he thinks that the worm is real and pertains to the body, or that spiritual things are meant by bodily representations, and that it belongs to the soul."
+transcription_segments = [
+  { line = 17382, text = "all. Let each man, then, choose which he will, whether he thinks that" },
+  { line = 17383, text = "the worm is real and pertains to the body, or that spiritual things" },
+  { line = 17384, text = "are meant by bodily representations, and that it belongs to the soul." },
+]
+notes = "The chapter heading is at artifact line 17321. The recorded extent begins at artifact line 17382, whose first word 'all.' closes the preceding sentence and is retained so that the transcription segments reproduce whole physical lines; the sentence quoted by consumers begins at 'Let each man'. Chapter 10 begins at artifact line 17395."

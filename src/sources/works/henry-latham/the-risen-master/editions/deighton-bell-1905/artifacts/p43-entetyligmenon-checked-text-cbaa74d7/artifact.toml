@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.henry-latham.the-risen-master.deighton-bell-1905.p43-entetyligmenon-checked-text-cbaa74d7"
+edition_id = "edition.henry-latham.the-risen-master.deighton-bell-1905"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces a few sentences of a printed work in the United States public domain by date of publication. It is derived from page images rendered from the hashed Internet Archive facsimile of that printing and contains no Internet Archive markup."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription collated against printed page 43, rendered as a page image from the hashed Internet Archive facsimile, on 2026-07-25."
+retrieved = "2026-07-25"
+sha256 = "cbaa74d78e0f56cb5fcbd33139b45b1b0fd41b1829cff36adaff8bea1ac6ba53"
+byte_size = 706
+path = "src/sources/works/henry-latham/the-risen-master/editions/deighton-bell-1905/artifacts/p43-entetyligmenon-checked-text-cbaa74d7/latham-p43.txt"
+derived_from = "artifact.henry-latham.the-risen-master.deighton-bell-1905.ia-facsimile-pdf-992bb9f2"
+transformation = "Read the named printed pages as images rendered from the hashed facsimile, and transcribe the quoted sentences with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced printed-page locator; preserve the printing's wording, spelling, and punctuation; transliterate any Greek set in Greek type and say so in the passage notes; omit running heads, footnote markers, and marginal matter."
+indexable = true
+encoding = "utf-8"

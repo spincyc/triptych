@@ -1,0 +1,17 @@
+schema = 1
+record_type = "passage"
+id = "passage.mishnah.sanhedrin.english-sefaria-community-web-2026-07-25.6.1-sudarin-signal"
+edition_id = "edition.mishnah.sanhedrin.english-sefaria-community-web-2026-07-25"
+artifact_id = "artifact.mishnah.sanhedrin.english-sefaria-community-web-2026-07-25.6.1-sudarin-signal-checked-text-2e9b50d8"
+artifact_sha256 = "2e9b50d8fc97c91bd552b589cc6ecd758a50a7e8e96ff78075d1d42cf01d6f8f"
+locus = "6.1"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The sudarin signal, read in the retrieved response for the whole mishnah, with the public-domain Torat Emet Hebrew of the same mishnah read alongside it. Registered as a positive control on the negative search reported by consuming publications: the rabbinic corpus does record a sudar used as a deliberate signal, and its sense is judicial, not domestic."
+physical_line_ranges = [[1, 2]]
+text = "One would stand before the entrance to the courthouse, his scarf in his hand; and another would ride on a horse before them at a distance, in order to see him. [If] one says, I have an argument for acquittal, then he waves the scarf, and the horse runs to stop him."
+transcription_segments = [
+  { line = 1, text = "One would stand before the entrance to the courthouse, his scarf in his hand; and another would ride on a horse before them at a distance, in order to see him." },
+  { line = 2, text = "[If] one says, I have an argument for acquittal, then he waves the scarf, and the horse runs to stop him." },
+]
+verified_on = "2026-07-25"
+notes = "The word rendered scarf is ha-sudarin, the same word Greek borrowed as soudarion and Latin as sudarium. The Hebrew of the clause reads, in transliteration, ehad omed al petah beth din veha-sudarin beyado, and hallaz meniph ba-sudarin veha-sus rats u-ma'amido. The bracketed supplement is the translator's."

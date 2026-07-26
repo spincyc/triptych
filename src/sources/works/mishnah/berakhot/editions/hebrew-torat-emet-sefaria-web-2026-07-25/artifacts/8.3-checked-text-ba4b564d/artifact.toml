@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.mishnah.berakhot.hebrew-torat-emet-sefaria-web-2026-07-25.8.3-checked-text-ba4b564d"
+edition_id = "edition.mishnah.berakhot.hebrew-torat-emet-sefaria-web-2026-07-25"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "This single mishnah of the ancient Hebrew text is in the public domain, and Sefaria records the licence of the Torat Emet version delivering it as public domain."
+provenance = "Triptych extraction from the hashed Sefaria application programming interface response, 2026-07-25."
+retrieved = "2026-07-25"
+sha256 = "ba4b564d922bb5e1a6602e6846ea7cf34577cae3e845e37c18f63ba53c944d96"
+byte_size = 240
+path = "src/sources/works/mishnah/berakhot/editions/hebrew-torat-emet-sefaria-web-2026-07-25/artifacts/8.3-checked-text-ba4b564d/mishnah-berakhot-8-3.txt"
+derived_from = "artifact.mishnah.berakhot.hebrew-torat-emet-sefaria-web-2026-07-25.sefaria-api-mishnah-berakhot-8-5e499e8f"
+transformation = "Extract the quoted text from the hashed application programming interface response with one unit per LF-terminated UTF-8 line, each prefixed by a braced locator; strip the response's JavaScript Object Notation structure and any inline markup tags; preserve wording, bracketed translator's supplements, and punctuation."
+indexable = true
+encoding = "utf-8"

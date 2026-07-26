@@ -1,0 +1,11 @@
+schema = 1
+record_type = "work"
+id = "work.catholic-church.rubricae-breviarii-et-missalis-romani"
+title = "Rubricae Breviarii et Missalis Romani"
+responsible = "Catholic Church"
+work_type = "liturgical-norms"
+alternate_titles = ["Codex rubricarum", "Code of Rubrics", "Rubricae generales"]
+languages = ["la"]
+description = "The 1960 code of rubrics for the Roman Breviary and Missal, approved by John XXIII on 25 July 1960 and promulgated by the Sacred Congregation of Rites on 26 July 1960. It is arranged in three parts: Rubricae generales (nn. 1-137), Rubricae generales Breviarii Romani (nn. 138-268), and Rubricae generales Missalis Romani (nn. 269-530). Part one governs the liturgical day, its four classes, Sundays, ferias, vigils, feasts and calendars, octaves, seasons, the Litanies, the table of precedence, occurrence, concurrence, commemorations, and colours."
+locus_pattern = '(?:[1-9]|[1-9][0-9]|[1-4][0-9]{2}|5[0-2][0-9]|530)(?:-(?:[1-9]|[1-9][0-9]|[1-4][0-9]{2}|5[0-2][0-9]|530))?'
+relations = ["work.holy-see.acta-apostolicae-sedis", "work.john-xxiii.rubricarum-instructum", "work.holy-see.novum-rubricarum-decretum-1960", "work.catholic-church.missale-romanum"]

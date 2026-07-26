@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.william-smith.dictionary-of-greek-and-roman-antiquities.1875-lacuscurtius-web-2026-07-25.sv-mantele-checked-text-591b04f4"
+edition_id = "edition.william-smith.dictionary-of-greek-and-roman-antiquities.1875-lacuscurtius-web-2026-07-25"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This focused transcription reproduces three sentences of the 1875 edition, which is in the United States public domain by date of publication. It contains no markup belonging to the site from which the text was retrieved."
+rights_jurisdiction = "United States"
+provenance = "Triptych manual transcription from the hashed retrieval of the LacusCurtius page, 2026-07-25."
+retrieved = "2026-07-25"
+sha256 = "591b04f4eef31dc26dbe21b58771326bbbbbb8d3823e1823bb4655856a586b3e"
+byte_size = 614
+path = "src/sources/works/william-smith/dictionary-of-greek-and-roman-antiquities/editions/1875-lacuscurtius-web-2026-07-25/artifacts/sv-mantele-checked-text-591b04f4/smith-sv-mantele.txt"
+derived_from = "artifact.william-smith.dictionary-of-greek-and-roman-antiquities.1875-lacuscurtius-web-2026-07-25.lacuscurtius-mantele-5fecd505"
+transformation = "Transcribe the quoted sentences from the retrieved response with one sense unit per LF-terminated UTF-8 line, each prefixed by a braced locator; preserve wording, spelling and punctuation; omit the delivery's markup, navigation, footnote links and editorial apparatus."
+indexable = true
+encoding = "utf-8"

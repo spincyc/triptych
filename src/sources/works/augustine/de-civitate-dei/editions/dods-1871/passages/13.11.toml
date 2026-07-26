@@ -1,0 +1,21 @@
+schema = 1
+record_type = "passage"
+id = "passage.augustine.de-civitate-dei.dods-1871.13.11"
+edition_id = "edition.augustine.de-civitate-dei.dods-1871"
+artifact_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45304-body-lf"
+artifact_sha256 = "5aa1e8ef6d07980146bdbe11426095da959cd9e217c7b76f0fcbda6c95cea349"
+locus = "13.11"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The complete chapter body was inspected at artifact lines 21111-21195, under the heading 'Whether one can both be living and dead at the same time': the three times and three corresponding states; the argument that a man is never in death because before death he lives and after it he is dead; the comparison with the unlocatable present instant of time; the question whether it follows that there is no death of the body at all; Augustine's refusal to draw that conclusion; his decision to keep speaking in the customary way on the warrant of scriptural usage, quoting Psalm 6:6; and the closing remark about the damned as endlessly dying. The chapter is the classical statement of the aporia about the moment of death, and Augustine leaves it unresolved."
+physical_line_ranges = [[21111, 21195]]
+text = "thus, before death, he cannot be said to be in death; but when, on the other hand, the soul has departed, and all bodily sensation is extinct, death is past, and the man is dead. Between these two states the dying condition finds no place; for if a man yet lives, death has not arrived; if he has ceased to live, death is past. Never, then, is he dying, that is, comprehended in the state of death. So also"
+transcription_segments = [
+  { line = 21128, text = "thus, before death, he cannot be said to be in death; but when, on" },
+  { line = 21129, text = "the other hand, the soul has departed, and all bodily sensation is" },
+  { line = 21130, text = "extinct, death is past, and the man is dead. Between these two states" },
+  { line = 21131, text = "the dying condition finds no place; for if a man yet lives, death has" },
+  { line = 21132, text = "not arrived; if he has ceased to live, death is past. Never, then," },
+  { line = 21133, text = "is he dying, that is, comprehended in the state of death. So also" },
+]
+notes = "The chapter heading is at artifact line 21111 and the body begins at 21113. The recorded text is the exact whitespace join of complete artifact lines 21128-21133 and therefore opens and closes mid-sentence; the sentence a consumer usually wants begins 'And thus, before death' at the tail of line 21127 and ends at 'comprehended in the state of death.' inside line 21133. The related chapters are 13.9 (whether the moment of death belongs to the dying or the dead) and 13.10 (life as a race toward death), immediately preceding in the same artifact. Book XIII of this printing is Dods 1871 volume I."
+verified_on = "2026-07-26"
