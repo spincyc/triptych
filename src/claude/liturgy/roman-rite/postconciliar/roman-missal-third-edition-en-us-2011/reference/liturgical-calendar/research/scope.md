@@ -134,3 +134,9 @@ agent's in-flight leaf during this session, so both were run scoped to this leaf
 Independent liturgical, canonical, territorial-law, Latin-philological and specialist review remain
 outstanding, as does work-specific rights review. No ecclesiastical approval of any kind is claimed
 or implied. No distribution authorization has been requested or granted for this leaf.
+
+## Research-staleness verdict — 2026-07-26
+
+The current source and both candidates were compared claim by claim against
+changed Missal and paired-provider calendar inputs. No material inventory or
+rule correction was found; this exact reference is ready for rebaselining.
