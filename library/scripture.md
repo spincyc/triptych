@@ -6,3 +6,4 @@ Each study takes one passage, or one claim about one passage, and works it to th
 
 | Publication | ChatGPT | Claude | Focus |
 | --- | --- | --- | --- |
+| **Abraham and the Daylight Stars** (Genesis 15:5) | — | [PDF](../doc/claude/articles/scripture/abraham-and-the-daylight-stars.pdf) · [Read](../web/claude/articles/scripture/abraham-and-the-daylight-stars.html) | The chapter's own clock, the vision frame, the Greek and Latin witnesses, and why no Father asks the question Abarbanel asks. |

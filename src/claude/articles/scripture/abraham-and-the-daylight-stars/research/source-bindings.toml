@@ -1,0 +1,214 @@
+schema = 1
+record_type = "bindings"
+document = "articles/scripture/abraham-and-the-daylight-stars"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-01-genesis-4f9a0975"
+loci = ["Gen.15.1-21", "Gen.13.16", "Gen.22.17", "Gen.26.4"]
+role = "direct-witness"
+states = ["acquired", "inspected"]
+source_fingerprint = "sha256:aba8e34331af3fc19e272bdef11140f842ca4e75fb2d097f1c8211b637d4fe94"
+context = "Every English quotation of Genesis in this study is taken from this tracked verse table of the registered Challoner witness, in the Vulgate numbering it uses. The whole of Genesis 15 was read from it, together with the recurrence verses at 13:16, 22:17, and 26:4."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.american-edition-divergences-a814cbcb"
+loci = ["Gen.15.1-21", "Gen.13.16", "Gen.22.17", "Gen.26.4", "Ex.32.13", "Deut.1.10", "Deut.10.22", "Deut.28.62", "2Esd.9.23", "Rom.4.3", "Rom.4.18-20", "Gal.3.6", "Heb.11.12"]
+role = "textual-control"
+states = ["acquired", "inspected"]
+source_fingerprint = "sha256:aa7e3d0c2f9121d818e1c4bc123ade5bbd1b5ac049dc18480aa4cf125e7aab36"
+context = "Consulted so that no English verse quoted in this study is one where the vendored Challoner text departs from the 1899 American edition a reader is likely to hold. The table was checked for every locus quoted; Genesis 15 contributes no row to it, and neither do Romans 4:18-20, Hebrews 11:12, Exodus 32:13, Deuteronomy 1:10, 10:22, and 28:62, or 2 Esdras 9:23."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.hetzenauer-1914.sacredbible-scan-0012-b9a1cb6a"
+loci = ["Gen.15.1-21"]
+role = "direct-witness"
+states = ["acquired", "inspected", "verified"]
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:0c3846492342097195e946445d968615880a5e6876f6a13ab0e582f220daca2d"
+context = "The Latin of Genesis 15 was read directly from this page image rather than from any transcription, and the reading was verified against the image for every clause quoted in the study: per visionem at verse 1, eduxitque eum foras and Suspice caelum at verse 5, the occumberet and occubuisset tense contrast at verses 12 and 17, caligo tenebrosa at 17, and in illo die at 18. The marginal section heading, the three side-notes, and the foot cross-reference apparatus were read from the same image."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.hetzenauer-1914.gen-15-checked-text-9729b5c4"
+loci = ["Gen.15.1-21"]
+role = "direct-witness"
+states = ["acquired", "inspected", "verified"]
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:9890c3d8a35d0d4e7f5371d9842f3c6079fce534db8f9f3c9fe8c14c0c9c3569"
+context = "Registered by this publication as the reusable transcription of the chapter made from the page image above. It is the artifact a later consumer should use for textual comparison; this study's own quotations were taken from the image."
+
+[[bindings]]
+source_id = "artifact.swete.old-testament-in-greek.cambridge-vol-1-1909.gen-15-checked-text-a7b4f38b"
+loci = ["Gen.15.1-21"]
+role = "direct-witness"
+states = ["acquired", "inspected"]
+source_fingerprint = "sha256:85eb69f1c730e41a50f192493c77ab12b5a17283eb7f049025d17e410b40e064"
+context = "Registered by this publication. It carries the Septuagint readings on which the study's text-critical section depends: anablepson at 15:5, sunekathisen autois at 15:11, ekstasis at 15:12, phlox egeneto with no equivalent of alatah at 15:17, and ekei at 15:18. The state is inspected and not verified because the transcription rests on a text layer corrected against a word database and has not been collated against a page image; the study says so in its scope appendix. Swete's foot apparatus for chapter XV was read in the same text layer and records variants at verses 1, 7, 10, and 13 only."
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-2-tei"
+loci = ["16.23", "16.24"]
+role = "direct-witness"
+states = ["acquired", "inspected"]
+source_fingerprint = "sha256:c8c46915ec1d5dd7bf34a4332481bd214a4c8c42aadf62da985ec3fd29224b9a"
+context = "The Latin of De civitate dei XVI.23-24 was read in this registered CSEL text for the countability passage (nec omnes eas uideri posse credendum est; the Aratus and Eudoxus sentence), for Augustine's Old Latin quotation of Genesis 15:7-21, and for Haec omnia in uisu facta diuinitus adque dicta sunt. The Old Latin readings et consedit illis Abram at 15:11, flamma facta est without any darkness at 15:17, and In die illa at 15:18 are the study's bound for its Septuagint claims."
+
+[[bindings]]
+source_id = "artifact.augustine.de-civitate-dei.dods-1871.pg45305-body-lf"
+loci = ["16.23", "16.24"]
+role = "direct-witness"
+states = ["acquired", "inspected"]
+source_fingerprint = "sha256:6bd16ca34656e4a17b7967a6b8ce070ebb4fdffa9b8c855088ab3e08e30bf996"
+context = "Dods' public-domain English of the same two chapters, used for every English clause of Augustine quoted in the study and read against the CSEL Latin at each point."
+
+[[bindings]]
+source_id = "artifact.isaac-abarbanel.perush-al-ha-torah.warsaw-1862.gen-15-question-7-checked-text-718b7f8c"
+loci = ["Gen.15"]
+role = "direct-witness"
+states = ["acquired", "inspected", "verified"]
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:f06e6f16dd1fd50b50ef1ccde86ee085862bcd4d6f7b6358530fd102b96c0f84"
+context = "Registered by this publication. Abarbanel's seventh prefatory question on Genesis 15 is the study's central historical finding: the daylight difficulty stated as a dilemma, with the impossibility of the day grounded on the invisibility of the stars and the impossibility of the night on the sunset at 15:12. The verification is a collation of two independent digital transcriptions of the Warsaw 1862 printing, which agree word for word across this extent; it is not a collation against a page image, and the study records that limit."
+
+[[bindings]]
+source_id = "artifact.cornelius-a-lapide.commentaria-in-pentateuchum.antwerp-1700.gen-15-notes-checked-text-ea514bf7"
+loci = ["Gen.15.1", "Gen.15.5", "Gen.15.11", "Gen.15.12", "Gen.15.17"]
+role = "direct-witness"
+states = ["acquired", "inspected"]
+source_fingerprint = "sha256:cfc2ea35443b82da6222e58b23d23f4b94a9d4c36134f3e5dd1eedfa8c77478a"
+context = "Registered by this publication. These notes carry the decisive Catholic evidence on the hour: Abram vigil at verse 1, Erat ergo tunc nox at verse 5, the vocalization explanation of the Septuagint at verse 11, ex nimio labore diurno at verse 12, and the ecstasy at verse 17. The state is inspected and not verified because the transcription comes from an optical-character text layer and has not been collated against a page image."
+
+[[bindings]]
+source_id = "artifact.george-leo-haydock.douay-rheims-with-haydock-commentary.ia-scan-undated.ia-djvu-ocr-7c3d4a79"
+loci = ["Gen.15.1", "Gen.15.12", "Gen.15.13"]
+role = "direct-witness"
+states = ["acquired", "inspected"]
+source_fingerprint = "sha256:3736e84327ee8cbede252cd238c94f3ed6822dbf98c4a1a30d3df0ecaa20f713"
+context = "Haydock's note on Genesis 15:1 ('Abram was not asleep, but saw a vision of exterior objects. v. 5.') is the English Catholic witness for the waking reading, and the absence of any note at verse 5 is a negative result the study reports. The whole of his apparatus on Genesis 15 was read to establish which verses he annotates."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.douay-1609-old-testament-first-tome.ia-djvu-ocr-1c0612dd"
+loci = ["Gen.15.1-21"]
+role = "direct-witness"
+states = ["acquired", "inspected"]
+source_fingerprint = "sha256:6eaa1718efcfbe08732b54dc6aa57b59ca9ab8c631a33bc16a4c4c82750e4c67"
+context = "The pre-Challoner English of Genesis 15 with its marginal notes and the annotations printed after the chapter. Used for the wording of 15:5, for the presence of notes at verses 9 and 13 and an annotation at verse 6, and for the negative result that nothing is annotated at verse 5. Registered as a new edition of the Douay-Rheims work because the first tome of 1609 is a distinct volume from the 1610 second tome already registered."
+
+[[bindings]]
+source_id = "artifact.philo.quis-rerum-divinarum-heres-sit.yonge-1854.ia-djvu-ocr-f60262d0"
+loci = ["16-17", "20", "51-53"]
+role = "direct-witness"
+states = ["acquired", "inspected"]
+source_fingerprint = "sha256:1959e40f6d8d05511d556db682e44e69ca075eacec2e4617df539414d336452f"
+context = "Philo on Genesis 15 is the study's earliest witness for two things: the reading of the bringing-out as an exit from body, senses, and self-sufficiency (chapter XVI), and the identification of Chaldean star-fatalism as what Abram was brought out of, attached to Genesis 15:7 rather than 15:5 (chapter XX). Chapters LI to LIII supply the allegorization of the setting sun as the setting of the human intellect, which is the study's explanation of the ancient silence about the hour. Loci are the chapter numbers of Yonge's translation, not the modern section numbering."
+
+[[bindings]]
+source_id = "edition.josephus.antiquitates-judaicae.whiston-1737"
+loci = ["1.7.2", "1.8.2"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Josephus's paraphrase of Genesis 15 at I.7.2 deletes the command to look, the counting, and every temporal marker in the chapter, which is one of the study's material negative results; I.8.2 carries his claim that Abram taught arithmetic and astronomy to the Egyptians. Both were read on 2026-07-26 in the University of Chicago transcription of Whiston's public-domain translation; no exact artifact was retained, so this binding claims catalog identity only. Loci follow Whiston's book-chapter-section numbering, as the edition record requires."
+
+[[bindings]]
+source_id = "edition.babylonian-talmud.shabbat.william-davidson-sefaria"
+loci = ["156a"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The derivation of 'Israel has no constellation' from 'and He brought him outside' at Genesis 15:5. Read on 2026-07-26 in the vocalized Aramaic of this delivery, with the facing English consulted only as a control on the study's own gloss; the CC BY-NC English is not reproduced anywhere in the publication. No exact artifact was retained."
+
+[[bindings]]
+source_id = "edition.babylonian-talmud.pesachim.william-davidson-sefaria"
+loci = ["6b"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The principle that there is no earlier and later in the Torah, with Rav Pappa's limitation of it to two separate matters. This is the study's strongest internal support for reading Genesis 15 in sequence, and the study labels the extension of Rav Pappa's rule from halakhic derivation to narrative chronology as its own. Read on 2026-07-26 in the vocalized Aramaic; the CC BY-NC English is not reproduced."
+
+[[bindings]]
+source_id = "edition.midrash-rabbah.bereshit-rabbah.sefaria-midrash-rabbah-2022"
+loci = ["44:10", "44:12"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Three readings of 'he brought him outside' preserved side by side at 44:12 - the streets of the heavens, above the vault of the firmament, and 'you are a prophet, not an astrologer' - together with R. Levi's sandal proverb; and Abram's complaint at 44:10 that his constellation presses him. Read on 2026-07-26. The CC BY English is quoted briefly with attribution; the Hebrew served alongside it belongs to a separate electronic text whose rights the delivery does not state and is used only as a control."
+
+[[bindings]]
+source_id = "edition.maimonides.moreh-nevukhim.friedlander-1903"
+loci = ["2.46"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "The rule that everything narrated inside an account introduced as a vision belongs to the vision, stated with Genesis 15:5 as an example and closed by the clause that internal coherence of time, persons, and place does not establish waking sequence. That clause is the strongest objection to the study's syntactic argument and is quoted at full strength. Read on 2026-07-26 in Friedlander's public-domain English; his parenthetical reference to 'ver. 6' at the second quotation is a misnumbering of verse 5 and is reported as his."
+
+[[bindings]]
+source_id = "edition.rashi.perush-al-ha-torah.rosenbaum-silbermann-1929"
+loci = ["Gen.15.1", "Gen.15.5", "Gen.15.11", "Gen.15.12"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Rashi on 'after these things' as immediately after; his three senses of 'he brought him outside' with the plain sense (out of the tent, to see the stars) placed first and the astrological sense second; and the above-the-stars reading with its argument from habbet. Read on 2026-07-26 in the public-domain Rosenbaum and Silbermann Hebrew and English."
+
+[[bindings]]
+source_id = "edition.abraham-ibn-ezra.perush-al-ha-torah.piotrkow-1907"
+loci = ["Gen.15.1", "Gen.15.12"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Ibn Ezra's inference at 15:12 that the animals were taken by day, after Abram had awoken from the prophetic vision, which is the earliest attestation of the intervening-day reading and the strongest counterargument to this study's judgment. Read on 2026-07-26 in the public-domain Piotrkow Hebrew. His comment on 15:17, that the sun had not yet set at 15:12, falls outside the extent this printing carries and was read only in the CC BY-NC Strickman and Silver English, which is not reproduced; the publication reports that comment in paraphrase and records the limit."
+
+[[bindings]]
+source_id = "edition.nachmanides.perush-al-ha-torah.chavel-1971"
+loci = ["Gen.15.1", "Gen.15.5", "Gen.15.12", "Gen.15.17"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Nahmanides at 15:1 that the mahazeh is a daytime vision, in contrast to Abraham's earlier nocturnal ones - the single datum on which this study's claim that the vision frame does not remove the daylight most depends. Also his plain sense of 'outside' as the tent and his objection from Ishmael to the astrological reading. Read on 2026-07-26 in the vocalized Hebrew with Chavel's CC BY English, which is quoted briefly with attribution."
+
+[[bindings]]
+source_id = "edition.david-kimhi.perush-al-ha-torah.munk-hachut-hameshulash"
+loci = ["Gen.15.5"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Radak that the prophecy came in the tent and that Abram felt himself taken outside within the vision, with Ezekiel 8:3 as the parallel; and that both the dust and the star comparisons are hyperbole. Read on 2026-07-26 in the Hebrew with Munk's CC BY English, which is quoted briefly with attribution."
+
+[[bindings]]
+source_id = "edition.hezekiah-ben-manoah.chizkuni.sefaria-hebrew-with-munk-english"
+loci = ["Gen.15.5"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Chizkuni's five-word comment that it appeared to Abram in the dream as though He had brought him outside. Read on 2026-07-26 in the public-domain Hebrew; the study notes that Chizkuni says dream where the verse says vision."
+
+[[bindings]]
+source_id = "edition.bahya-ben-asher.midrash-rabbeinu-bachya.warsaw-1878"
+loci = ["Gen.15.5"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Rabbeinu Bahya's argument from the sense of habbet to the above-the-firmament reading, and his distinction between the nation and the individual in the matter of mazzal. Read on 2026-07-26 in the public-domain Warsaw 1878 Hebrew."
+
+[[bindings]]
+source_id = "edition.jacob-ben-asher.tur-ha-arokh.hanover-1838"
+loci = ["Gen.15.5"]
+role = "context"
+states = ["cataloged"]
+context = "The Tur's reading of the dust and the stars as Esau and Jacob, cited in the section on the recurrences to show that the dust-to-stars progression was interpreted without reference to the hour. Read on 2026-07-26 in the public-domain Hanover 1838 Hebrew."
+
+[[bindings]]
+source_id = "edition.malbim.perush-al-ha-torah.wikisource-hebrew"
+loci = ["Gen.15.5"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Malbim's statement of the astrological reading in the language of stellar regimes, his linguistic argument distinguishing habbatah from re'iyah, and his enlarged-sight reading with its reference to the telescope and to the ancient figure of 1,022 stars. Read on 2026-07-26 in the public-domain Hebrew Wikisource text."
+
+[[bindings]]
+source_id = "edition.naftali-zvi-yehuda-berlin.haamek-davar.vilna-1879"
+loci = ["Gen.15.5"]
+role = "lead"
+states = ["cataloged"]
+context = "Consulted to see whether the Netziv addresses the hour. He does not: his comment turns on eminence rather than number, since dust had already supplied the number. Recorded as a checked negative result and listed in the publication's witness register as consulted and not bearing."
+
+[[bindings]]
+source_id = "edition.targum-onkelos.targum-onkelos-torah.sefaria-aramaic"
+loci = ["Gen.15.5", "Gen.15.12", "Gen.15.17"]
+role = "textual-control"
+states = ["cataloged"]
+context = "Read on 2026-07-26 to establish whether the standard Aramaic version supplies any temporal interval between the star-promise and the covenant rite. It does not: it renders the three markers closely and inserts nothing. This is a bounded negative result about three verses read at their own loci, not a machine search, and it does not exclude an expansion elsewhere in the chapter."
+
+[[bindings]]
+source_id = "edition.targum-pseudo-jonathan.targum-pseudo-jonathan-torah.etheridge-1862"
+loci = ["Gen.15.5", "Gen.15.12", "Gen.15.17"]
+role = "textual-control"
+states = ["cataloged"]
+context = "The same question put to the expansive targum, which is the more probative witness because it inserts freely: at 15:12 it introduces the four kingdoms and at 15:17 Gehinnom, and yet it supplies no interval at 15:5 and no daybreak after 15:6. Read on 2026-07-26 in the Aramaic and in Etheridge's public-domain English. Bounded in the same way as the Onkelos binding."
