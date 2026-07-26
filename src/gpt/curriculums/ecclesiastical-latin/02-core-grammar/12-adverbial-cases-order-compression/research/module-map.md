@@ -15,3 +15,9 @@ remain in the owner's `research/` records.  The shared teaching, memory,
 reader, packet-practice, and exercise sources are authoritative for their
 respective prompts and models.  No elapsed-time estimate, numerical score, or
 page-completion rule controls progression.
+
+## Research-staleness verdict — 2026-07-26
+
+The current packet and both candidates were compared claim by claim against
+changed corpus inputs. New Canon records strengthen provenance but require no
+teaching or answer correction; this exact packet is ready for rebaselining.
