@@ -110,3 +110,10 @@ The publication reproduces no protected Lectionary or ICEL Missal wording, in wh
 Performed: claim-driven research with same-day verification of every witness quoted (see [`source-audit.md`](source-audit.md)); classification of every cross-element relation; the branch matrix; the bounded reception and precedent searches recorded above; a settled two-pass build with a warning-free final log; the generation-metadata gate; the source-library validation; the web-edition eligibility gate; and page-by-page visual review of every rendered page.
 
 Outstanding: collation of a named United States English altar book; inspection of the 2008 emended reprint's own pages; a wider patristic search for Revelation 3:20 and for Wisdom 12 in later Latin authors; independent scriptural, patristic, Thomistic, liturgical, theological, and ecclesiastical review. No imprimatur, nihil obstat, or ecclesiastical approval is claimed, and internal checking is not independent review.
+
+## Research-staleness verdict — 2026-07-26
+
+The current source and both candidates were compared claim by claim against
+changed general and paired-provider inputs. No material correction was found;
+the outstanding altar-book and review limits remain open, and this exact study
+is ready for rebaselining.

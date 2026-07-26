@@ -117,3 +117,9 @@ The following remain **outstanding ceilings** and are stated in the guide's term
 ## Production state
 
 A two-pass `pdflatex` build produced a 27-page PDF with no fatal error, undefined reference, overfull or underfull box, or unresolved layout warning. Every rendered page was inspected in review rasters for clipping, overlap, accidental blanks, bad breaks, table legibility, and the placement of the metadata block and rights colophon. Page 1 carries the title, the complete unit inventory and the four-senses table; page 2 carries the date-and-location sheet alone; pages 3–4 carry the thematic movement; the detailed commentary begins on page 5. This is internal production review only.
+
+## Research-staleness verdict — 2026-07-26
+
+The current source and both candidates were compared claim by claim against
+changed general and paired-provider inputs. No material correction was found;
+this exact study is ready for rebaselining.

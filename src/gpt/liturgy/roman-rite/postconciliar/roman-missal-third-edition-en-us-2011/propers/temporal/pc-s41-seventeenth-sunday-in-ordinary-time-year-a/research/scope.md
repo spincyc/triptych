@@ -149,3 +149,9 @@ Catena attributions that were not independently checked remain leads and are not
 The target-side structural and source expansion and the corpus-wide omission audit have been reconciled in one render source. A settled two-pass build produced the 11-page PDF with SHA-256 `251086891e686802750ce5804b4272d1d69a9546c7e7cc89f3b0134338d99af2`. The final log contained no fatal error, undefined reference, overfull or underfull box, or unresolved rerun or layout warning. Generation metadata, `qpdf` structure, Letter page size, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed. Review rasters were generated through `scripts/pdf-review`; every rendered page was visually inspected for clipping, overlap, accidental blanks, bad breaks, footer and metadata placement, and legibility. The reviewed build was installed at its mirrored `doc/` path and verified byte-identical.
 
 This is internal production review only; it grants no independent editorial, specialist, rights, theological, or ecclesiastical approval. The exact current installed PDF is release-cleared by the 21 July 2026 exact-current-snapshot exception; the five substantive limits recorded above remain incomplete, and the exception supplies no missing review, permission, collation, or approval.
+
+## Research-staleness verdict — 2026-07-26
+
+The current source and both candidates were compared claim by claim against
+changed general and paired-provider inputs. No material correction was found;
+this exact study is ready for rebaselining.
