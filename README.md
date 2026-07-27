@@ -35,7 +35,7 @@ Choose a section, open a PDF, and read.
 | **[Biographies](library/biographies.md)** | Historical and hagiographic lives. |
 | **[Heresies](library/heresies.md)** | Historical studies of condemned propositions, ecclesial responses, and their aftermaths. |
 | **[Historical Accounts](library/historical-accounts.md)** | Histories of texts, institutions, and events. |
-| **[Public-alpha review: Catholic Exorcism](library/catholic-exorcism.md)** | Direct reading links, safety boundaries, and navigation for the interim 20-page paper and planned 100+ page reference. |
+| **[Public-alpha review: Catholic Exorcism](library/catholic-exorcism.md)** | Direct reading links, safety boundaries, and navigation for the interim 29-page paper and planned 100+ page reference. |
 | **[Released study: The Linen Cloths at the Empty Tomb](library/scripture.md#linen-cloths-at-the-empty-tomb)** | Released GPT and Claude editions of the source-first study of John 20:6–7. |
 | **[Mariology](library/mariology.md)** | Marian doctrine, prayer, history, and ecclesial judgment. |
 | **[Law](library/law-and-church-discipline.md)** | Canon law and Church discipline. |
