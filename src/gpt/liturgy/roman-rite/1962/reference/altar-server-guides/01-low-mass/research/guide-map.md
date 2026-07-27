@@ -48,6 +48,14 @@ Pages 8--9 give the servers' complete Confiteor as three full-width
 phrase-ladder sections. Original front-view sanctuary diagrams appear only where
 positions, step levels, objects, or role traffic materially change.
 
+The continuous route consumes pencil assets `ASG-ART-001`, `ASG-ART-002`,
+`ASG-ART-005`, `ASG-ART-006`, and `ASG-ART-011`--`ASG-ART-021`. The latter
+eleven scenes cover the normal places, Gospel stations, Offertory cruets, bell
+station, elevations, Communion-plate route, two ablution states, Missal
+return, Last Gospel, and recession. TeX retains all semantic role, object,
+level, and route overlays. The series artwork manifest owns the assets'
+provenance, normalized identities, rights, consumers, and review state.
+
 ## Declared two-server model
 
 First begins on the priest's right, the Epistle side and picture-right in the

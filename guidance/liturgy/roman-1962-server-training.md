@@ -385,8 +385,15 @@ copying the controlling inventories.
 
 ## Reader order and terminal apparatus
 
-The Low Mass child booklet begins with a compact role and practice key and a
-front-facing model-sanctuary key, then follows one continuous Mass-order route.
+After a compact title, each teaching guide begins with usable guidance. A
+front contents page is optional. Preparation and mastery checklists, global
+qualifications, source keys, trainer policy, and publication apparatus belong
+in terminal appendices. A warning or branch that changes the next action
+remains beside that action.
+
+The Low Mass child booklet begins with only the minimum actionable role,
+sanctuary, and movement orientation needed to follow the route, then follows
+one continuous sacristy-to-sacristy Mass-order route.
 Stable stage labels, dialogue lanes, action blocks, and actual sanctuary
 diagrams replace progression tables. Pronunciation and meaning appear with a
 response's first occurrence; later occurrences keep the complete cue and
@@ -395,9 +402,12 @@ flash-card face may use a full-width phrase ladder. The child booklet contains
 no trainer-only source discussion, IPA, quiz, written exercise, or mastery
 record.
 
-The Low Mass trainer manual preserves the child's lesson order, action identity,
-diagrams, and hard page boundaries, but need not reproduce every explanatory
-word. The child lane is a field guide: cue, actor, observable action, finish
+The Low Mass trainer manual preserves the child's lesson order, action
+identity, diagrams, and main-route page boundaries, but need not reproduce
+every explanatory word. Two naturally consecutive actions or scenes may
+share one page. Later identical movements may use a short explicit recall
+only where cue, actor, destination, object, and finish state remain
+unambiguous. The child lane is a field guide: cue, actor, observable action, finish
 state, and short rehearsal check. Pronunciation meanings, source hierarchy,
 manual disagreements, correction cues, preparation, and local-choice rationale
 belong in the trainer layer unless a child must know them to act safely or
@@ -408,9 +418,10 @@ The child and trainer pages are monochrome letter-size publications with stable
 type sizes and a typeface whose capital `I`, `J`, and `L` remain clearly
 distinguishable.
 
-Their shared sanctuary diagrams use a restrained monochrome instructional
-illustration language rather than rough schematic marks or decorative
-imagery. Altar architecture, steps, figures, carried objects, and movement
+Every publication-facing instructional scene uses a consistent monochrome
+graphite or pencil illustration language on white rather than mixed schematic
+and raster styles. Generated art contains no text, arrows, numerals, or
+semantic labels; TeX owns those overlays. Altar architecture, steps, figures, carried objects, and movement
 paths have distinct and consistent line treatments. Keep role labels in fixed
 high-contrast capsules, identify the three levels with stable numbered
 markers, and make standing and kneeling recognizable from the figure
@@ -422,23 +433,22 @@ before/after or state-change frames rather than one composite pose. A route
 frame names its cue, moving actor, carried object, stopping point, and finish
 state. Do not add a figure merely to show both ends of one actor's movement.
 
-After a compact title and contents, each sung full guide retains a one-page
-trainer start sheet. It tells the trainer which publication to print, what the
-server should learn first, how to run a short practice, and where an assigned
-role or lesson begins. Labels such as “For the Trainer,” “For the Server,” and
-“MC / Trainer Reference” keep instructions, learner text, and technical audit
-material visibly distinct. No main learning route requires a trainer or server
-to decode an inventory table before beginning practice.
-
-Each sung guide begins with its model roster, today's local-route choices, and
-a short scene map. Standalone role-by-role learner sheets come before the full
-chronological inventory so a server can first find and rehearse one assigned
-job. The complete chronological walkthrough follows as MC/trainer reference, then
-cumulative rehearsal and mastery checks, verbal-response practice, quick
-reference, and a linked cards-only companion. Role sheets and the chronology
+Each sung guide begins after its title with the minimum actionable roster and
+sanctuary orientation and a direct `Choose your role` path. Standalone
+role-by-role learner sheets are the main guidance. Whole-team rehearsal
+follows. The complete chronology, response and pronunciation reference,
+preparation and mastery checklists, card-printing controls, expanded safety
+notes, and global branch rationale belong in appendices. Role sheets and the chronology
 remain derived from the same inventory; reader order does not change
 evidentiary priority. Put optional and local branches beside the affected
 action rather than in an unconnected miscellany.
+
+The main-body design targets are 16--18 pages for Low Mass, 20--22 pages for
+Missa Cantata, and 20--24 pages for Solemn Mass. These are design controls,
+not authority to omit a cue, action, handoff, or branch or to use unreadable
+type. Child action text normally begins near 11.5--12 points; Latin responses
+or immediate commands may be larger. Cards retain their existing fixed type
+contract.
 
 Each substantive teaching publication ends with `Scope, Edition, and
 Qualifications`, references, and `Generation Metadata` as the final content

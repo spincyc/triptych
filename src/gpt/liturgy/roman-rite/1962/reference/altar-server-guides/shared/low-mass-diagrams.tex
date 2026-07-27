@@ -500,6 +500,17 @@
       {\fontsize{12}{15}\selectfont\RaggedRight #1\par}
     \fi}}}
 
+% Pencil plates occupy the same compact vertical lane as the diagrams they
+% replace.  Height-driven sizing prevents portrait source canvases from
+% expanding a lesson while `keepaspectratio` preserves the drawings.
+\ifTrainerManualGuide
+  \newcommand{\LMPencilSceneHeight}{2.20cm}
+  \newcommand{\LMPencilPairHeight}{1.80cm}
+\else
+  \newcommand{\LMPencilSceneHeight}{3.55cm}
+  \newcommand{\LMPencilPairHeight}{2.70cm}
+\fi
+
 \newcommand{\LMSceneStart}{%
   \ifTrainerManualGuide
     \def\LMOpeningArtWidth{0.85\linewidth}%
@@ -553,14 +564,13 @@
   \end{center}}
 
 \newcommand{\LMSceneNormalPlaces}{%
-  \LMBeginScene
-    \LMAltarBackdrop
-    \LMMissalEpistle
-    \LMLevelMarkers
-    \LMKneelingServerAt{4.9}{0.73}{SECOND ACOLYTE}
-    \LMStandingPriestAt{12}{2.04}
-    \LMKneelingServerAt{19.1}{0.73}{FIRST ACOLYTE}
-  \LMEndScene}
+  \begin{center}\begin{tikzpicture}
+    \node[inner sep=0pt] (art) {\includegraphics[height=\LMPencilSceneHeight,keepaspectratio]{%
+      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-011-lm-normal-places.png}};
+    \node[lm role tag,anchor=south] at ($(art.south west)!.18!(art.south east)+(0,2mm)$) {SECOND ACOLYTE};
+    \node[lm role tag,anchor=south] at ($(art.south west)!.50!(art.south east)+(0,2mm)$) {PRIEST};
+    \node[lm role tag,anchor=south] at ($(art.south west)!.82!(art.south east)+(0,2mm)$) {FIRST ACOLYTE};
+  \end{tikzpicture}\end{center}}
 
 \newcommand{\LMSceneMissalMove}{%
   \ifTrainerManualGuide
@@ -587,28 +597,22 @@
   \end{center}}
 
 \newcommand{\LMSceneGospel}{%
-  \LMBeginScene
-    \LMAltarBackdrop
-    \LMMissalGospel
-    \LMLevelMarkers
-    \LMStandingServerAt{7.8}{1.38}{FIRST}
-    \LMStandingPriestAt[1.10]{10.2}{2.04}
-    \LMStandingServerAt{4.6}{0.73}{SECOND\\STANDS CLEAR}
-  \LMEndScene}
+  \begin{center}\begin{tikzpicture}
+    \node[inner sep=0pt] (art) {\includegraphics[height=\LMPencilSceneHeight,keepaspectratio]{%
+      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-012-lm-gospel-stations.png}};
+    \node[lm role tag,anchor=south] at ($(art.south west)!.19!(art.south east)+(0,2mm)$) {SECOND\\STANDS CLEAR};
+    \node[lm role tag,anchor=south] at ($(art.south west)!.40!(art.south east)+(0,2mm)$) {FIRST};
+    \node[lm role tag,anchor=south] at ($(art.south west)!.55!(art.south east)+(0,2mm)$) {PRIEST};
+  \end{tikzpicture}\end{center}}
 
 \newcommand{\LMSceneCruetService}{%
-  \LMBeginScene
-    \LMAltarBackdrop
-    \LMMissalGospel
-    \LMLevelMarkers
-    \LMStandingPriestAt{12.8}{2.04}
-    \LMStandingServerAt{15.7}{1.38}{}
-    \LMStandingServerAt{18.55}{1.38}{}
-    \LMCruet{15.7}{2.91}{W}
-    \LMCruet{18.55}{2.91}{A}
-    \node[lm role tag,anchor=south] at (15.7,4.82) {FIRST\\WINE};
-    \node[lm role tag,anchor=south] at (18.55,4.82) {SECOND\\WATER};
-  \LMEndScene}
+  \begin{center}\begin{tikzpicture}
+    \node[inner sep=0pt] (art) {\includegraphics[height=\LMPencilSceneHeight,keepaspectratio]{%
+      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-013-lm-offertory-cruets.png}};
+    \node[lm role tag] at ($(art.south west)!.52!(art.south east)+(0,24mm)$) {PRIEST};
+    \node[lm role tag] at ($(art.south west)!.69!(art.south east)+(0,19mm)$) {FIRST\\WINE};
+    \node[lm role tag] at ($(art.south west)!.84!(art.south east)+(0,19mm)$) {SECOND\\WATER};
+  \end{tikzpicture}\end{center}}
 
 \newcommand{\LMSceneCruets}{\LMSceneCruetService}
 
@@ -633,77 +637,53 @@
   \end{center}}
 
 \newcommand{\LMSceneBell}{%
-  \LMBeginScene
-    \LMAltarBackdrop
-    \LMMissalGospel
-    \LMLevelMarkers
-    \LMKneelingServerAt{4.9}{0.73}{SECOND ACOLYTE}
-    \LMStandingPriestAt{12}{2.04}
-    \LMKneelingServerAt{19.1}{0.73}{FIRST ACOLYTE}
-    \LMBell{17.55}{1.48}
-    \draw[lm detail] (17.55,2.70) -- (17.20,3.02);
-    \node[lm object tag,anchor=east] at (17.18,3.02) {BELL};
-  \LMEndScene}
+  \begin{center}\begin{tikzpicture}
+    \node[inner sep=0pt] (art) {\includegraphics[height=\LMPencilSceneHeight,keepaspectratio]{%
+      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-014-lm-bell-station.png}};
+    \node[lm role tag] at ($(art.south west)!.18!(art.south east)+(0,10mm)$) {SECOND ACOLYTE};
+    \node[lm role tag] at ($(art.south west)!.50!(art.south east)+(0,25mm)$) {PRIEST};
+    \node[lm role tag] at ($(art.south west)!.82!(art.south east)+(0,10mm)$) {FIRST ACOLYTE};
+    \node[lm object tag] at ($(art.south west)!.75!(art.south east)+(0,5mm)$) {BELL};
+  \end{tikzpicture}\end{center}}
 
 \newcommand{\LMSceneElevation}{%
-  \LMBeginScene
-    \LMAltarBackdrop
-    \LMMissalGospel
-    \LMLevelMarkers
-    \LMKneelingServerAt{9.25}{2.04}{SECOND}
-    \LMStandingPriestAt{12}{2.04}
-    \LMKneelingServerAt{14.75}{2.04}{FIRST}
-    \LMBell{15.85}{2.54}
-    \draw[line width=1.0pt] (9.95,3.05) -- (11.18,3.45);
-    \draw[line width=1.0pt] (14.05,3.05) -- (12.82,3.45);
-    \fill (11.18,3.45) circle (0.055);
-    \fill (12.82,3.45) circle (0.055);
-  \LMEndScene}
+  \begin{center}\begin{tikzpicture}
+    \node[inner sep=0pt] (art) {\includegraphics[height=\LMPencilSceneHeight,keepaspectratio]{%
+      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-015-lm-elevation-stations.png}};
+    \node[lm role tag] at ($(art.south west)!.33!(art.south east)+(0,10mm)$) {SECOND};
+    \node[lm role tag] at ($(art.south west)!.50!(art.south east)+(0,25mm)$) {PRIEST};
+    \node[lm role tag] at ($(art.south west)!.67!(art.south east)+(0,10mm)$) {FIRST};
+    \draw[lm sightline] ($(art.south west)!.36!(art.south east)+(0,12mm)$) -- ($(art.south west)!.46!(art.south east)+(0,25mm)$);
+    \draw[lm sightline] ($(art.south west)!.64!(art.south east)+(0,12mm)$) -- ($(art.south west)!.54!(art.south east)+(0,25mm)$);
+  \end{tikzpicture}\end{center}}
 
 \newcommand{\LMScenePlate}{%
-  \LMBeginRouteScene
-    \LMAltarBackdrop
-    \LMMissalGospel
-    \LMCredence
-    \LMKneelingServerAt{4.6}{0.73}{SECOND}
-    \LMStandingServerAt{9.0}{0.18}{FIRST\\WITH PLATE}
-    \LMPlate{9.0}{1.42}
-    \path[lm architecture] (8.43,1.54) circle (0.11);
-    \path[lm architecture] (9.57,1.54) circle (0.11);
-    \LMStandingPriestAt[0.90]{11.5}{0.18}
-  \LMEndScene}
+  \begin{center}\begin{tikzpicture}
+    \node[inner sep=0pt] (art) {\includegraphics[height=\LMPencilSceneHeight,keepaspectratio]{%
+      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-016-lm-communion-plate.png}};
+    \node[lm role tag] at ($(art.south west)!.20!(art.south east)+(0,9mm)$) {SECOND};
+    \node[lm role tag] at ($(art.south west)!.43!(art.south east)+(0,15mm)$) {FIRST\\WITH PLATE};
+    \node[lm role tag] at ($(art.south west)!.57!(art.south east)+(0,22mm)$) {PRIEST};
+    \draw[lm route] ($(art.south west)!.42!(art.south east)+(0,5mm)$) -- ($(art.south west)!.50!(art.south east)+(0,5mm)$);
+  \end{tikzpicture}\end{center}}
 
 \newcommand{\LMSceneAblutions}{%
-  \LMBeginStripScene
-    \begin{scope}
-      \clip (0.20,-0.40) rectangle (23.80,5.52);
-      \LMAltarBackdrop
-    \end{scope}
-    \LMLevelMarkersLeft
-    \LMStandingPriestAt{12.4}{2.04}
-    \LMStandingServerAt{15.7}{2.04}{}
-    \LMCruet{15.7}{3.57}{W}
-    \node[lm role tag,anchor=south] at (17.8,4.64) {1\quad FIRST:\\WINE INTO CHALICE};
-    \draw[lm detail] (16.75,4.45) -- (16.05,4.08);
-  \LMEndScene}
+  \begin{center}\begin{tikzpicture}
+    \node[inner sep=0pt] (art) {\includegraphics[height=\LMPencilPairHeight,keepaspectratio]{%
+      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-017-lm-ablution-wine.png}};
+    \node[lm role tag] at ($(art.south west)!.51!(art.south east)+(0,24mm)$) {PRIEST};
+    \node[lm role tag] at ($(art.south west)!.70!(art.south east)+(0,18mm)$) {1\quad FIRST:\\WINE INTO CHALICE};
+  \end{tikzpicture}\end{center}}
 
 \newcommand{\LMSceneFingerWashing}{%
-  \LMBeginStripScene
-    \begin{scope}
-      \clip (0.20,-0.40) rectangle (23.80,5.52);
-      \LMAltarBackdrop
-    \end{scope}
-    \LMLevelMarkersLeft
-    \LMStandingPriestAt{12.8}{2.04}
-    \LMStandingServerAt{15.7}{1.38}{}
-    \LMStandingServerAt{18.55}{1.38}{}
-    \LMCruet{15.7}{2.91}{W}
-    \LMCruet{18.55}{2.91}{A}
-    \node[lm role tag,anchor=south] at (15.7,4.82)
-      {2\quad FIRST\\WINE};
-    \node[lm role tag,anchor=south] at (18.55,4.82)
-      {SECOND\\WATER};
-  \LMEndScene}
+  \ifTrainerManualGuide\def\LMFingerArtWidth{.52\linewidth}\else\def\LMFingerArtWidth{.80\linewidth}\fi
+  \begin{center}\begin{tikzpicture}
+    \node[inner sep=0pt] (art) {\includegraphics[height=\LMPencilPairHeight,keepaspectratio]{%
+      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-018-lm-ablution-fingers.png}};
+    \node[lm role tag] at ($(art.south west)!.51!(art.south east)+(0,24mm)$) {PRIEST};
+    \node[lm role tag] at ($(art.south west)!.69!(art.south east)+(0,18mm)$) {2\quad FIRST\\WINE};
+    \node[lm role tag] at ($(art.south west)!.84!(art.south east)+(0,15mm)$) {SECOND\\WATER};
+  \end{tikzpicture}\end{center}}
 
 \newcommand{\LMScenePlateReturn}{%
   \LMBeginStripScene
@@ -724,23 +704,18 @@
   \LMEndScene}
 
 \newcommand{\LMSceneBookReturn}{%
-  \LMBeginRouteScene
-    \LMAltarBackdrop
-    \LMLevelMarkersLeft
-    \LMCredence
-    \LMRestingPlate{21.45}{1.76}
-    \LMStandingServerAt{8.0}{1.38}{SECOND}
-    \LMCarriedMissal{8.0}{2.52}
-    \LMKneelingServerAt{18.7}{0.73}{FIRST}
-    \LMStandingPriestAt[0.82]{12}{2.04}
-    % First has already cleared the plate. Only Second crosses with the
-    % Missal while the priest prepares the chalice at the altar.
-    \draw[lm route]
-      (8.55,1.63) .. controls (9.65,0.82) and (10.85,0.46) ..
-      (12,0.42) .. controls (13.15,0.46) and (14.45,0.82) ..
-      (15.75,1.60);
-    \node[lm object tag,anchor=south] at (15.88,1.92) {TO EPISTLE};
-  \LMEndScene}
+  \begin{center}\begin{tikzpicture}
+    \node[inner sep=0pt] (art) {\includegraphics[height=\LMPencilSceneHeight,keepaspectratio]{%
+      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-019-lm-missal-return.png}};
+    \node[lm role tag] at ($(art.south west)!.18!(art.south east)+(0,15mm)$) {SECOND\\WITH MISSAL};
+    \node[lm role tag] at ($(art.south west)!.50!(art.south east)+(0,26mm)$) {PRIEST};
+    \node[lm role tag] at ($(art.south west)!.84!(art.south east)+(0,9mm)$) {FIRST};
+    \draw[lm route] ($(art.south west)!.20!(art.south east)+(0,5mm)$)
+      .. controls ($(art.south west)!.36!(art.south east)+(0,1mm)$)
+      and ($(art.south west)!.58!(art.south east)+(0,1mm)$) ..
+      ($(art.south west)!.72!(art.south east)+(0,5mm)$);
+    \node[lm object tag,anchor=south] at ($(art.south west)!.54!(art.south east)+(0,1mm)$) {TO EPISTLE};
+  \end{tikzpicture}\end{center}}
 
 \newcommand{\LMSceneBookReturnComplete}{%
   \LMBeginScene
@@ -756,29 +731,29 @@
   \LMEndScene}
 
 \newcommand{\LMSceneLastGospel}{%
-  \LMBeginScene
-    \LMAltarBackdrop
-    \LMMissalEpistle
-    \LMPreparedChalice{12}{5.51}
-    \LMPreparedChaliceCallout
-    \LMLevelMarkers
-    \LMStandingPriestAt{9.3}{2.04}
-    \LMStandingServerBackAt{6.8}{0.73}{SECOND\\FACES ALTAR}
-    \LMStandingServerFacingLeftAt{17.6}{0.73}{FIRST\\FACES PRIEST}
-  \LMEndScene}
+  \begin{center}\begin{tikzpicture}
+    \node[inner sep=0pt] (art) {\includegraphics[height=\LMPencilSceneHeight,keepaspectratio]{%
+      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-020-lm-last-gospel.png}};
+    \node[lm role tag] at ($(art.south west)!.23!(art.south east)+(0,10mm)$) {SECOND\\FACES ALTAR};
+    \node[lm role tag] at ($(art.south west)!.42!(art.south east)+(0,23mm)$) {PRIEST};
+    \node[lm role tag] at ($(art.south west)!.79!(art.south east)+(0,10mm)$) {FIRST\\FACES PRIEST};
+  \end{tikzpicture}\end{center}}
 
 \newcommand{\LMSceneExit}{%
-  \LMBeginRouteScene
-    \LMAltarBackdrop
-    \LMMissalEpistle
-    \LMLevelMarkers
-    % The pair is already one stride toward the nave. The priest follows
-    % behind them with the prepared chalice held at chest height.
-    \LMStandingServerAt{10.25}{-0.20}{SECOND}
-    \LMStandingServerAt{13.75}{-0.20}{FIRST}
-    \LMStandingPriestAt{12}{0.58}
-    \LMHeldPreparedChalice{12}{1.83}
-    \draw[lm route] (10.25,-0.28) -- (10.25,-0.78);
-    \draw[lm route] (13.75,-0.28) -- (13.75,-0.78);
-    \draw[lm route] (12.0,0.46) -- (12.0,-0.08);
-  \LMEndScene}
+  \begin{center}\begin{tikzpicture}
+    \node[inner sep=0pt] (art) {\includegraphics[height=\LMPencilSceneHeight,keepaspectratio]{%
+      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-021-lm-recession.png}};
+    \node[lm role tag] at ($(art.south west)!.38!(art.south east)+(0,10mm)$) {SECOND};
+    \node[lm role tag] at ($(art.south west)!.50!(art.south east)+(0,20mm)$) {PRIEST};
+    \node[lm role tag] at ($(art.south west)!.62!(art.south east)+(0,10mm)$) {FIRST};
+    \draw[lm route] ($(art.south west)!.38!(art.south east)+(0,5mm)$) -- ($(art.south west)!.38!(art.south east)+(0,0mm)$);
+    \draw[lm route] ($(art.south west)!.50!(art.south east)+(0,8mm)$) -- ($(art.south west)!.50!(art.south east)+(0,1mm)$);
+    \draw[lm route] ($(art.south west)!.62!(art.south east)+(0,5mm)$) -- ($(art.south west)!.62!(art.south east)+(0,0mm)$);
+  \end{tikzpicture}\end{center}%
+  % The shared ceremony historically inserts a trainer-only null page before
+  % the appendices.  With compact matched plates that spacer is no longer
+  % needed; consume only that immediately following \null, then restore it.
+  \ifTrainerManualGuide
+    \global\let\LMSavedNull\null
+    \gdef\null{\global\let\null\LMSavedNull}%
+  \fi}

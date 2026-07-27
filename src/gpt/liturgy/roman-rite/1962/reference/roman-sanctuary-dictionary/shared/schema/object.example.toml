@@ -1,0 +1,65 @@
+# Syntax fixture only. No statement in this file is verified or publishable.
+schema_version = 1
+id = "obj-example"
+workflow_state = "lead"
+preferred_english_name = "Example object"
+latin_headword = "exemplum"
+alternate_english_names = []
+alternate_latin_names = []
+sort_name = "Example object"
+categories = ["service-objects"]
+periods = ["roman-1962-horizon"]
+statuses = ["unresolved"]
+ceremonies = ["low-mass"]
+confusable_with = []
+related_objects = []
+component_objects = []
+
+[presence]
+locations = ["Placeholder location; not evidence."]
+contexts = ["Placeholder context; not evidence."]
+composition_ids = []
+local_variability = "possible"
+
+[handling]
+ordinary_handlers = ["other"]
+server_relation = "recognizes-only"
+prepares = []
+presents = []
+receives = []
+stores = []
+warnings = []
+
+[audience_relevance]
+altar_server = "useful"
+sacristan = "exclude"
+mc_trainer = "exclude"
+general_reader = "exclude"
+pontifical = "exclude"
+
+[[claims]]
+id = "clm-example-identity"
+kind = "identity"
+text = "Placeholder identity text; not evidence."
+evidence_state = "unverified-lead"
+source_ids = ["src-example"]
+
+[[sources]]
+id = "src-example"
+binding = "placeholder-source-binding"
+locus = "Placeholder locus"
+role = "lead-only"
+verification_state = "unlocated"
+
+[[artwork]]
+id = "art-example-isolated"
+view = "isolated"
+asset = "assets/placeholder-not-present.png"
+review_state = "prompted"
+depicts = ["obj-example"]
+scale_mode = "not-applicable"
+
+[[audience_note]]
+audience = "altar-server"
+text = "Placeholder audience note; not evidence."
+claim_ids = ["clm-example-identity"]

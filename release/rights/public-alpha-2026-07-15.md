@@ -1381,6 +1381,26 @@ work-specific research records remains operative. This approval does
 not authorize a push, deployment, tag, history rewrite, public
 release attachment, announcement, or promotion.
 
+## Supplemental exact-current-snapshot clearance — 27 July 2026
+
+At `2026-07-27T11:35:01-05:00` in `America/Chicago`, the maintainer instructed:
+“User authorized approval and preparation for full publication on 2026-07-27; dictionary scaffolds remain explicitly held pending complete source and artwork review.” This is recorded as perpetual worldwide
+exact-current-snapshot distribution authorization under the existing
+represented authority in this record. The sole condition remains
+`no-project-initiated-promotion`.
+
+The approval binds all 172 exact installed release
+PDF snapshots and every exact recognized artifact-affecting
+reader-site input inventoried below at their current bytes. It is an
+exact-byte distribution clearance only: it does not represent
+completion of any outstanding work-specific rights, source,
+collation, specialist, or ecclesiastical review, and no imprimatur,
+nihil obstat, or ecclesiastical approval is claimed. Every
+limitation in the prior supplements, release README, catalogs, and
+work-specific research records remains operative. This approval does
+not authorize a push, deployment, tag, history rewrite, public
+release attachment, announcement, or promotion.
+
 ## Exact approved snapshots
 
 | Publication ID | SHA-256 |
@@ -1520,12 +1540,12 @@ release attachment, announcement, or promotion.
 | `liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost` | `57946a3046ec1b0f624d7499395a36d3f3a31ad5a11b83a6902dce1f5ebb58a9` |
 | `liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost` | `9178744a047a7eb27595b0fa152392f7892cf5fdfad89b28df5d7f64816bce46` |
 | `liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-synthesis` | `226d98a637fc53f02a34981e8d955b3ab75786782790406a265a6c82705c767c` |
-| `liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass` | `22c4347dc08391522337f3dfbb361f53b1abff1362d95b3c19241e324630fc8a` |
+| `liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass` | `46e08968dae26a31379f92fdf513af40e1df041e607a990063d258133988cf1c` |
 | `liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards` | `d44edc7cabdac325fbccd6a31fd5c12e8d1d8293bea65023f8286f4cf219ba34` |
-| `liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual` | `9dbe85499388d82e53c083af4af147fe344dd12d5bd546e0f26c9f7c5db7dbe1` |
-| `liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata` | `9ad9057fd479d6e2fac42e76dc793a4cfb93e0d11c439424f897a595db59cc6a` |
+| `liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual` | `abf1da8057a70097c8200fe8ad6ca5ac063b13ffa631aaf605e941b149e103ec` |
+| `liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata` | `a647c706bf56cc2c4b16209859e4d4dd1abc7013e2e7a82ca59556ff429a4475` |
 | `liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards` | `f04351517aff67db1fe56b7baff607850d658f5f3676cdf17089119a595cd862` |
-| `liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass` | `aec986be76303cb9226d41fcec6f471fc8c6596a6afdae1343318248c4bf5a6b` |
+| `liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass` | `86188a4fe819c24ba8db997c35b3979dbea9138ce0eaa984712c685378d4dad7` |
 | `liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards` | `332f2cbb64ce3ea28dd468aab565447b5d890db26ef8563445cbe54d584109e5` |
 | `liturgy/roman-rite/1962/reference/assembling-the-mass` | `792f76897a31cf9f4eb6d23eacee370c2078f3f9235c79831c7b03bf1dfd8727` |
 | `liturgy/roman-rite/1962/reference/liturgical-calendar` | `001efbe713c7fdaf696cf6f0e85fd5b100ab0bc97ca893b55b003caff6add0e1` |

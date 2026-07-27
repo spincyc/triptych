@@ -1,0 +1,83 @@
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{titlesec}
+
+\geometry{letterpaper,portrait,margin=0.55in}
+\setlength{\columnsep}{0.22in}
+\setlength{\parskip}{0.35em}
+\titleformat{\section}{\Large\bfseries}{}{0pt}{}
+\titleformat{\subsection}{\large\bfseries}{}{0pt}{}
+
+\newcommand{\DictionaryTitle}[3]{%
+  \hypersetup{pageanchor=false}%
+  \begin{titlepage}
+    \centering
+    \vspace*{0.65in}
+    {\fontsize{27}{31}\selectfont\bfseries #1\par}
+    \vspace{0.2in}
+    {\Large #2\par}
+    \vfill
+    {\large #3\par}
+    \vspace{0.35in}
+    {\small Monochrome portrait reference edition\par}
+    \vfill
+    {\footnotesize
+      This production scaffold contains labelled plate positions only.
+      Entries become reference content only after source and artwork review.\par}
+  \end{titlepage}
+  \hypersetup{pageanchor=true}%
+}
+
+\newcommand{\PlatePlaceholder}[2]{%
+  \begin{minipage}[t]{\linewidth}
+    \centering
+    \fbox{%
+      \begin{minipage}[c][1.32in][c]{0.91\linewidth}
+        \centering\small\bfseries #1\\[0.3em]
+        \normalfont\footnotesize #2
+      \end{minipage}}
+  \end{minipage}
+}
+
+\newcommand{\EntryPlaceholder}[2]{%
+  \begin{minipage}[t]{0.48\linewidth}
+    \raggedright
+    \PlatePlaceholder{#1}{Pencil figure pending reviewed artwork.}
+    \par\smallskip
+    {\small\textbf{Entry ID:} #2\par}
+    {\footnotesize English and Latin headwords, identification, use,
+    handling boundary, substantive variants, and brief sourced symbolism
+    will render here after audit.\par}
+  \end{minipage}
+}
+
+\newcommand{\PlaceholderPair}[4]{%
+  \noindent\EntryPlaceholder{#1}{#2}\hfill
+  \EntryPlaceholder{#3}{#4}\par\medskip
+}
+
+\newcommand{\DictionarySectionPlaceholder}[2]{%
+  \begingroup
+  \hbadness=10000
+  \section{#1}
+  \PlatePlaceholder{Section plate pending}{#2}
+  \par\medskip
+  \PlaceholderPair{Reviewed object figure}{#1-001}
+                  {Reviewed comparison or context figure}{#1-002}
+  \endgroup
+}
+
+\newcommand{\DictionaryTerminalMatter}{%
+  \appendix
+  \section{Pronunciation Reference}
+  Commonly spoken Latin headwords will be selected only after the inventory
+  and terminology audit are complete.
+  \section{English--Latin and Latin--English Indexes}
+  Index entries will be generated from the canonical reviewed inventory.
+  \section{Variant and Terminology Notes}
+  Source-qualified notes will distinguish universal Roman use, authorized or
+  regional variants, religious-community use, and historical examples.
+  \section{Source Notes and Qualifications}
+  Numbered source notes, the declared completeness boundary, rights status,
+  and review qualifications will be inserted after claim-level verification.
+}

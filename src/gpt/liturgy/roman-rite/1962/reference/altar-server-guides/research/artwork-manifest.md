@@ -303,6 +303,317 @@ than page numbers because pagination may change.
 Normalization is a loss-minimizing repository-size measure: embedded color
 profiles and unused color channels are removed while retaining 8-bit tonal
 detail. Normalized files, not received binaries, are the publication inputs.
+Assets `ASG-ART-011`--`ASG-ART-021` were deterministically normalized after
+generation with ImageMagick: proportional resize to exactly 500 pixels high,
+conversion to grayscale, and metadata stripping. The dimensions, byte sizes,
+color modes, and hashes below describe those tracked publication inputs, not
+the larger received rasters.
+
+## ASG-ART-011
+
+- Logical ID: `ASG-ART-011`
+- File: `shared/artwork/pencil/ASG-ART-011-lm-normal-places.png`
+- Purpose and depicted state: Low Mass normal places; priest centered at the
+  altar, with First and Second Acolytes kneeling at the outer stations
+- Production: AI-generated monochrome graphite illustration from a
+  project-created structured scene brief
+- Known prompt summary: match the established Low Mass graphite language;
+  show the priest at the altar and exactly two acolytes kneeling at the outer
+  normal stations; omit labels and diagram overlays. This is a summary of the
+  generation request, not a preserved verbatim prompt.
+- Generator and date: built-in OpenAI image generation (model and version not
+  exposed), 2026-07-27
+- Normalized dimensions, mode, and size: 1200 by 500; 8-bit grayscale PNG;
+  208,624 bytes
+- SHA-256:
+  `3890ce1db72703c0a9efaaa4cfc59a78417b977a13694554f251c1ea30da4e47`
+- Baked-in text, arrows, or numerals: none observed
+- Consumers: `01-low-mass`, `01-low-mass-trainer-manual`
+- Rights state: project-created AI illustration; no known third-party source
+  asset was incorporated; distributed under repository terms only to the
+  extent applicable rights exist
+- Review state: generating agent's visual inspection completed 2026-07-27;
+  integrated every-page, paired-use, print-size, photocopy, and independent
+  ceremonial review remain pending
+
+## ASG-ART-012
+
+- Logical ID: `ASG-ART-012`
+- File: `shared/artwork/pencil/ASG-ART-012-lm-gospel-stations.png`
+- Purpose and depicted state: Low Mass Gospel stations; priest at the
+  picture-left Gospel-side Missal, First kneeling near the book, and Second
+  kneeling farther outward at picture-right
+- Production: AI-generated monochrome graphite illustration using
+  project-created `ASG-ART-001` as the style reference
+- Known prompt summary: retain the established frontal altar and graphite
+  grammar; put the priest at the picture-left Gospel-side book, First kneeling
+  near him, and Second at the outer right station; include no text. This is a
+  summary of the generation request, not a preserved verbatim prompt.
+- Generator and date: built-in OpenAI image generation (model and version not
+  exposed), 2026-07-27
+- Normalized dimensions, mode, and size: 1110 by 500; 8-bit grayscale PNG;
+  187,056 bytes
+- SHA-256:
+  `0696513f5ad8349f00c65ef2faafd18debb5b24bd51bb209311e812f1f309941`
+- Baked-in text, arrows, or numerals: none observed
+- Consumers: `01-low-mass`, `01-low-mass-trainer-manual`
+- Rights state: project-created AI illustration; the only supplied reference
+  was project-created `ASG-ART-001`; distributed under repository terms only
+  to the extent applicable rights exist
+- Review state: generating agent's visual inspection completed 2026-07-27;
+  integrated every-page, paired-use, print-size, photocopy, and independent
+  ceremonial review remain pending
+
+## ASG-ART-013
+
+- Logical ID: `ASG-ART-013`
+- File: `shared/artwork/pencil/ASG-ART-013-lm-offertory-cruets.png`
+- Purpose and depicted state: Low Mass Offertory cruets; priest at the
+  Epistle side, First presenting upright wine and Second presenting distinct
+  upright water, with neither server pouring
+- Production: AI-generated monochrome graphite illustration from a
+  project-created structured scene brief
+- Known prompt summary: show exactly two servers presenting visibly distinct
+  wine and water cruets to the priest at the Epistle side, both upright and
+  with no pouring, text, or extraneous object. This is a summary of the
+  generation request, not a preserved verbatim prompt.
+- Generator and date: built-in OpenAI image generation (model and version not
+  exposed), 2026-07-27
+- Normalized dimensions, mode, and size: 1250 by 500; 8-bit grayscale PNG;
+  266,684 bytes
+- SHA-256:
+  `d0fce5b72f305d3628146fc839fdad9361d9d8f43fcf4ac90055c05c7d8012a0`
+- Baked-in text, arrows, or numerals: none observed
+- Consumers: `01-low-mass`, `01-low-mass-trainer-manual`
+- Rights state: project-created AI illustration; no known third-party source
+  asset was incorporated; distributed under repository terms only to the
+  extent applicable rights exist
+- Review state: generating agent's visual inspection completed 2026-07-27;
+  integrated every-page, paired-use, print-size, photocopy, and independent
+  ceremonial review remain pending
+
+## ASG-ART-014
+
+- Logical ID: `ASG-ART-014`
+- File: `shared/artwork/pencil/ASG-ART-014-lm-bell-station.png`
+- Purpose and depicted state: Low Mass bell station; priest centered at the
+  altar, both acolytes kneeling at their normal places, and one bell cluster
+  before First at picture-right
+- Production: AI-generated monochrome graphite illustration from a
+  project-created structured scene brief
+- Known prompt summary: show the priest at the altar and two servers kneeling
+  at their normal places, with a single accessible bell before First on
+  picture-right; omit lettering, arrows, watermarks, and extra figures. This
+  is a summary of the generation request, not a preserved verbatim prompt.
+- Generator and date: built-in OpenAI image generation (model and version not
+  exposed), 2026-07-27
+- Normalized dimensions, mode, and size: 750 by 500; 8-bit grayscale PNG;
+  142,195 bytes
+- SHA-256:
+  `4ebd18bc3d0e8dc39cca0219013c5d840fa733b6b5956262d26c4f883361c1b5`
+- Baked-in text, arrows, or numerals: generated lettering was removed before
+  the tracked file; none remains
+- Consumers: `01-low-mass`, `01-low-mass-trainer-manual`
+- Rights state: project-created AI illustration; no known third-party source
+  asset was incorporated; distributed under repository terms only to the
+  extent applicable rights exist
+- Review state: generating agent's visual inspection and text-removal check
+  completed 2026-07-27; integrated every-page, paired-use, print-size,
+  photocopy, and independent ceremonial review remain pending
+
+## ASG-ART-015
+
+- Logical ID: `ASG-ART-015`
+- File: `shared/artwork/pencil/ASG-ART-015-lm-elevation-stations.png`
+- Purpose and depicted state: Low Mass elevation; priest elevating the Host,
+  both kneeling acolytes holding the lower chasuble edges, and First's bell
+  accessible
+- Production: AI-generated monochrome graphite illustration from a
+  project-created structured scene brief
+- Known prompt summary: show the priest elevating the Host while exactly two
+  kneeling servers support the lower chasuble edges, with First's bell visible
+  and accessible; leave all labels out of the raster. This is a summary of the
+  generation request, not a preserved verbatim prompt.
+- Generator and date: built-in OpenAI image generation (model and version not
+  exposed), 2026-07-27
+- Normalized dimensions, mode, and size: 750 by 500; 8-bit grayscale PNG;
+  193,200 bytes
+- SHA-256:
+  `09e63eece56ca8a0959e2b29fc717f777223cb1cf3f616f1b7d9834186423dc7`
+- Baked-in text, arrows, or numerals: none observed
+- Consumers: `01-low-mass`, `01-low-mass-trainer-manual`
+- Rights state: project-created AI illustration; no known third-party source
+  asset was incorporated; distributed under repository terms only to the
+  extent applicable rights exist
+- Review state: generating agent's visual inspection completed 2026-07-27;
+  integrated every-page, paired-use, print-size, photocopy, and independent
+  ceremonial review remain pending
+
+## ASG-ART-016
+
+- Logical ID: `ASG-ART-016`
+- File: `shared/artwork/pencil/ASG-ART-016-lm-communion-plate.png`
+- Purpose and depicted state: Low Mass faithful-Communion route; First
+  follows the priest at the rail with the Communion plate while Second remains
+  at his altar station
+- Production: AI-generated monochrome graphite illustration from a
+  project-created structured scene brief
+- Known prompt summary: show First following the priest at the rail with the
+  Communion plate while Second remains in place; keep the scene monochrome and
+  free of text and diagram overlays. This is a summary of the generation
+  request, not a preserved verbatim prompt.
+- Generator and date: built-in OpenAI image generation (model and version not
+  exposed), 2026-07-27
+- Normalized dimensions, mode, and size: 750 by 500; 8-bit grayscale PNG;
+  202,026 bytes
+- SHA-256:
+  `2874dc9b3b671ecbeb1c2d058a9c1f3f1d905713818271f400e647ef7a8ef852`
+- Baked-in text, arrows, or numerals: none observed
+- Consumers: `01-low-mass`, `01-low-mass-trainer-manual`
+- Rights state: project-created AI illustration; no known third-party source
+  asset was incorporated; distributed under repository terms only to the
+  extent applicable rights exist
+- Review state: generating agent's visual inspection completed 2026-07-27;
+  integrated every-page, paired-use, print-size, photocopy, and independent
+  ceremonial review remain pending
+
+## ASG-ART-017
+
+- Logical ID: `ASG-ART-017`
+- File: `shared/artwork/pencil/ASG-ART-017-lm-ablution-wine.png`
+- Purpose and depicted state: first Low Mass ablution; First pours wine into
+  the priest-held chalice while Second waits with the separate water cruet
+- Production: AI-generated monochrome graphite illustration from a
+  project-created structured scene brief
+- Known prompt summary: show First pouring wine into the chalice held by the
+  priest while Second waits with a visibly separate water cruet; include
+  exactly two servers and no text or overlays. This is a summary of the
+  generation request, not a preserved verbatim prompt.
+- Generator and date: built-in OpenAI image generation (model and version not
+  exposed), 2026-07-27
+- Normalized dimensions, mode, and size: 870 by 500; 8-bit grayscale PNG;
+  235,308 bytes
+- SHA-256:
+  `913096628a7947bffc2d94ed6b789909a3bc449aa8cd40f47309298f6753a509`
+- Baked-in text, arrows, or numerals: none observed
+- Consumers: `01-low-mass`, `01-low-mass-trainer-manual`
+- Rights state: project-created AI illustration; no known third-party source
+  asset was incorporated; distributed under repository terms only to the
+  extent applicable rights exist
+- Review state: generating agent's visual inspection completed 2026-07-27;
+  integrated every-page, paired-use, print-size, photocopy, and independent
+  ceremonial review remain pending
+
+## ASG-ART-018
+
+- Logical ID: `ASG-ART-018`
+- File: `shared/artwork/pencil/ASG-ART-018-lm-ablution-fingers.png`
+- Purpose and depicted state: Low Mass finger ablution; First and Second
+  provide the distinct wine and water service while the priest holds his
+  fingers over the chalice
+- Production: AI-generated monochrome graphite illustration from a
+  project-created structured scene brief
+- Known prompt summary: distinguish the successive wine and water finger
+  service at the chalice, with the priest's fingers placed for the ablution,
+  exactly two servers, and no embedded text or overlays. This is a summary of
+  the generation request, not a preserved verbatim prompt.
+- Generator and date: built-in OpenAI image generation (model and version not
+  exposed), 2026-07-27
+- Normalized dimensions, mode, and size: 816 by 500; 8-bit grayscale PNG;
+  214,225 bytes
+- SHA-256:
+  `160db548de52216c03c719c809087f0b3ca087cc1646c8d7d71d18391dd8d58e`
+- Baked-in text, arrows, or numerals: none observed
+- Consumers: `01-low-mass`, `01-low-mass-trainer-manual`
+- Rights state: project-created AI illustration; no known third-party source
+  asset was incorporated; distributed under repository terms only to the
+  extent applicable rights exist
+- Review state: generating agent's visual inspection completed 2026-07-27;
+  integrated every-page, paired-use, print-size, photocopy, and independent
+  ceremonial review remain pending
+
+## ASG-ART-019
+
+- Logical ID: `ASG-ART-019`
+- File: `shared/artwork/pencil/ASG-ART-019-lm-missal-return.png`
+- Purpose and depicted state: Low Mass Missal return; Second carries the
+  Missal and stand from picture-left toward picture-right, First remains
+  kneeling clear, and the priest faces the altar
+- Production: AI-generated monochrome graphite illustration from a
+  project-created structured scene brief
+- Known prompt summary: show Second carrying the Missal together with its
+  stand from Gospel to Epistle side while First kneels clear and the priest
+  remains at the altar; omit text and movement overlays. This is a summary of
+  the generation request, not a preserved verbatim prompt.
+- Generator and date: built-in OpenAI image generation (model and version not
+  exposed), 2026-07-27
+- Normalized dimensions, mode, and size: 750 by 500; 8-bit grayscale PNG;
+  157,709 bytes
+- SHA-256:
+  `73ce5ee7b6cc94ad0b77ae61e58be00ad7695c566b117b3fb6c8f2044fe5e046`
+- Baked-in text, arrows, or numerals: none observed
+- Consumers: `01-low-mass`, `01-low-mass-trainer-manual`
+- Rights state: project-created AI illustration; no known third-party source
+  asset was incorporated; distributed under repository terms only to the
+  extent applicable rights exist
+- Review state: generating agent's visual inspection completed 2026-07-27;
+  integrated every-page, paired-use, print-size, photocopy, and independent
+  ceremonial review remain pending
+
+## ASG-ART-020
+
+- Logical ID: `ASG-ART-020`
+- File: `shared/artwork/pencil/ASG-ART-020-lm-last-gospel.png`
+- Purpose and depicted state: Low Mass Last Gospel; priest and Missal at
+  picture-left, First facing the priest, Second facing the altar, and the
+  covered chalice centered
+- Production: AI-generated monochrome graphite illustration from a
+  project-created structured scene brief
+- Known prompt summary: place the priest at the picture-left Last-Gospel
+  Missal, First oriented toward him, Second toward the altar, and the covered
+  chalice centered; retain monochrome graphite and omit text. This is a
+  summary of the generation request, not a preserved verbatim prompt.
+- Generator and date: built-in OpenAI image generation (model and version not
+  exposed), 2026-07-27
+- Normalized dimensions, mode, and size: 750 by 500; 8-bit grayscale PNG;
+  169,803 bytes
+- SHA-256:
+  `956fb1cddbade9b3cbea321c2db23e5313b09b6085e900c99d3760ddb8d55a8d`
+- Baked-in text, arrows, or numerals: none observed
+- Consumers: `01-low-mass`, `01-low-mass-trainer-manual`
+- Rights state: project-created AI illustration; no known third-party source
+  asset was incorporated; distributed under repository terms only to the
+  extent applicable rights exist
+- Review state: generating agent's visual inspection completed 2026-07-27;
+  integrated every-page, paired-use, print-size, photocopy, and independent
+  ceremonial review remain pending
+
+## ASG-ART-021
+
+- Logical ID: `ASG-ART-021`
+- File: `shared/artwork/pencil/ASG-ART-021-lm-recession.png`
+- Purpose and depicted state: Low Mass recessional; two acolytes lead down
+  the nave while the priest follows carrying the covered chalice
+- Production: AI-generated monochrome graphite illustration from a
+  project-created structured scene brief
+- Known prompt summary: show exactly two servers leading the recession down
+  the nave with the priest behind them carrying the covered chalice, in
+  monochrome graphite and without text. This is a summary of the generation
+  request, not a preserved verbatim prompt.
+- Generator and date: built-in OpenAI image generation (model and version not
+  exposed), 2026-07-27
+- Normalized dimensions, mode, and size: 750 by 500; 8-bit grayscale PNG;
+  224,521 bytes
+- SHA-256:
+  `57575d059c58231cac93af2478f4ebdfc494878c3156298400fa10f2dbeb26c5`
+- Baked-in text, arrows, or numerals: none observed
+- Consumers: `01-low-mass`, `01-low-mass-trainer-manual`
+- Rights state: project-created AI illustration; no known third-party source
+  asset was incorporated; distributed under repository terms only to the
+  extent applicable rights exist
+- Review state: generating agent's visual inspection completed 2026-07-27;
+  integrated every-page, paired-use, print-size, photocopy, and independent
+  ceremonial review remain pending
 
 ## Size audit
 
