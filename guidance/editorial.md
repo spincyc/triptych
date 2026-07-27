@@ -53,6 +53,20 @@ the publication's claim-level judgment.
 
 Research is claim-driven, not quota-driven. Search broadly enough to test the governing claims, serious alternatives, and gaps; stop collecting sources that merely repeat a point. Preserve consequential negative results and disclose unresolved records rather than filling them by inference.
 
+Missing, incomplete, or unbound evidence is a research signal, not by itself a
+reason to narrow or remove a material claim. Before materially narrowing,
+removing, or recasting a claim because support has not been found, perform and
+record a second research pass directed at the expected primary, official,
+critical-edition, catalog, and specialist source families for that claim.
+Recheck likely variant terminology, languages, edition numbering, and
+transmission or jurisdictional boundaries. The audit record must name the
+families and loci pursued, distinguish unavailable or unchecked evidence from a
+bounded negative result, and state what the second pass changed. Rights,
+privacy, safety, relevance, and demonstrated falsity may independently require
+removal; record that distinct reason rather than describing it as absent
+evidence. After a proportionate second pass, narrow or remove a claim that
+remains unsupported rather than preserving it by speculation.
+
 Do not introduce a weak, prejudicial, sensational, conspiratorial, or otherwise extraneous claim merely to reject it. If an argument is not needed to understand the work's subject, a retained source, or a material reception history, omit it from reader-facing prose and audit records instead of creating a corrective callout, disclaimer, or rejected-lead inventory. When an error or harmful reception is materially within scope, explain its evidentiary role and analyze it directly and proportionately.
 
 Liturgical claims identify the rite, use or form, typical edition, calendar, language, translation, territory, and other variables needed to know what is appointed. Canon-law claims identify the body of law, jurisdiction, promulgating authority, effective or as-of date, amendments, authentic interpretations, and material particular law. Mutable discipline is never presented as timeless.
