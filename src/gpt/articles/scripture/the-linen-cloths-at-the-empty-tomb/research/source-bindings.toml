@@ -42,6 +42,51 @@ verified_on = "2026-07-26"
 source_fingerprint = "sha256:b6acab91674d3bbe04726da30c835175a133104d3db53fcf3f8e45b1d5b4ba6e"
 
 [[bindings]]
+source_id = "passage.catholic-church.vulgata-clementina.hetzenauer-1914.jn-11.44"
+loci = ["Jn.11.44"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the Latin Lazarus comparison: the dead man's face is bound with a sudarium, without making that cloth a dining napkin."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:26e9ec364667bf022ead709a5bb509fd40db3d6352ec8c29416d5fb319f006ed"
+
+[[bindings]]
+source_id = "passage.catholic-church.vulgata-clementina.hetzenauer-1914.jn-19.39-40"
+loci = ["Jn.19.39-40"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the Latin burial wording linteis cum aromatibus and its distinction from the empty-tomb linteamina."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:86a519aa8f2ceff434c60ea67c81878d7cebb908a53153b63d51ad3393d0bd86"
+
+[[bindings]]
+source_id = "passage.catholic-church.vulgata-clementina.hetzenauer-1914.jn-20.3-10"
+loci = ["Jn.20.3-10"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the Latin subject sequence and the wording linteamina, sudarium, and separatim involutum in unum locum; it supplies no folded-table signal or precise geometry."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:0e5e98d52aed5952c3f8c256af4b3c5db0870ddbfe36e4abd28a0eba54d71d5d"
+
+[[bindings]]
+source_id = "passage.catholic-church.vulgata-clementina.hetzenauer-1914.lk-23.53"
+loci = ["Lk.23.53"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the Latin burial verb involvit, the same word family used for involutum at John 20:7."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:2cc5d2b6eb2d7a861cbc4edfa90e1c84abeaaf2ff3ed829ae62cca660c6a5f45"
+
+[[bindings]]
+source_id = "passage.catholic-church.vulgata-clementina.hetzenauer-1914.lk-24.12"
+loci = ["Lk.24.12"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the Latin received verse's linteamina sola posita and its attribution of wonder, mirans, to Peter."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:55bc252948347541473a6223d7120308a9e25de90eec43ebf2eb00ed705f3d3a"
+
+[[bindings]]
 source_id = "passage.joseph-henry-thayer.greek-english-lexicon-of-the-new-testament.american-book-company-corrected.sv-entylisso"
 loci = ["entylisso"]
 role = "textual-control"
@@ -55,7 +100,7 @@ source_id = "passage.joseph-henry-thayer.greek-english-lexicon-of-the-new-testam
 loci = ["othonion"]
 role = "textual-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
-context = "Controls the linen-cloth range without supplying a physical reconstruction."
+context = "Controls the linen-cloth range without supplying a physical reconstruction. Its identified Septuagint use at Judges 14:13 is retained only as a lexical notice, not as a direct Septuagint collation or a burial-custom witness."
 verified_on = "2026-07-26"
 source_fingerprint = "sha256:ab0658c0e6d143cf409969e865a59d341a6b1ab5368f3ce7ec2c94453da3d85c"
 

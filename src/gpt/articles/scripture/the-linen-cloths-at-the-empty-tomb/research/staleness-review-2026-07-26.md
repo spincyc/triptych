@@ -2,6 +2,11 @@
 
 Date: 2026-07-26
 
+Historical-state notice: this record describes the held snapshot and open
+gates as they stood on its date. The completion pass recorded in
+`source-audit.md` on 2026-07-27 superseded those operational state statements;
+the claim comparison remains the audit purpose of this retained record.
+
 Edition:
 `gpt:articles/scripture/the-linen-cloths-at-the-empty-tomb`
 

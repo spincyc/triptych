@@ -2,9 +2,13 @@
 
 ## Completed evidence pass
 
-The canonical Greek and registered Douay–Rheims artifacts were inspected for
-the governing sequence. The 2026-07-27 completion pass independently inspected
-and bound every material canonical, lexical, patristic, medieval,
+The canonical Greek, Clementine Vulgate, and registered Douay–Rheims artifacts
+were inspected for the governing sequence. The five exact Vulgate passages
+control the Latin cloth vocabulary, the subject sequence, and Peter's wonder.
+The Septuagint bears only through the registered Thayer entry's identified
+Judges 14:13 lexical use; no direct Septuagint passage is claimed as inspected.
+The 2026-07-27 completion pass inspected and bound every material canonical,
+lexical, patristic, medieval,
 textual-critical, rabbinic, Greco-Roman, and modern-provenance witness used in
 the prose. No review event from the Claude edition is inherited.
 
@@ -34,12 +38,13 @@ prerequisite for its narrower conclusion.
 
 ## Re-evaluation verdict
 
-The bound Greek and English witnesses support the central distinctions: Peter
-is the observer to whom Luke assigns wonder; John assigns belief to the other
-disciple without defining its complete object at that moment; and the cloth
-arrangement makes hurried removal less natural without yielding a unique
-physical reconstruction. The lexical controls do not support a mandatory
-“folded napkin” rendering or a dining-signal custom.
+The bound Greek, Latin, and English witnesses support the central distinctions:
+Peter is the observer to whom Luke assigns wonder; John assigns belief to the
+other disciple without defining its complete object at that moment; and the
+cloth arrangement makes hurried removal less natural without yielding a unique
+physical reconstruction. The Vulgate's *separatim involutum in unum locum* and
+Luke's *mirans* preserve those limits. The lexical controls do not support a
+mandatory “folded napkin” rendering or a dining-signal custom.
 
 Cyril's collective inference is preserved rather than harmonized away.
 Augustine, Gregory, Theophylact, Aquinas, and Westcott keep the content of
@@ -78,23 +83,20 @@ desiccation, while the article itself cautions against a single uniform
 procedure. John's linen and aromatics do not warrant importing that process.
 
 Deborah Green's specialist chapter, ``Sweet Spices in the Tomb,'' pp. 161--173,
-was inspected through a remotely accessible full-text presentation. It
-distinguishes early evidence associating aromatics with honor from later
-Babylonian odor-control explanations and warns against assigning all tomb
-vessels or uses one function. Because no exact redistributable or authenticated
-publisher artifact was acquired, Green remains a precisely located contextual
-source rather than a new central verified passage binding. The prose therefore
-uses her only to preserve a range of possible functions and does not claim
-embalming, preservation, or a precise wrapping method.
+was inspected only through a remotely accessible presentation. Because no
+exact authenticated artifact or canonical binding was acquired, it remains a
+research lead and supplies no reader claim in this revision.
 
-The revised source built cleanly in two passes as an eleven-page letter PDF,
-SHA-256
-`1b936d3a7f621400085bab931ee52c8aa53fd4938e14ee7dc7848b6a1eeb99a8`.
-The log contains no fatal error, undefined reference, overfull or underfull box,
-or unresolved warning. Review rasters were generated through
-`make review-doc`; all eleven pages were inspected, including the restored
-material-culture section and revised references. No clipping, overlap,
-accidental blank page, or footer collision was found. This build was reviewed
-and installed; the installed PDF has the same hash. The canonical web edition
-was regenerated and checked for the restored paragraphs, notes, and reference
-entries.
+The installed eleven-page PDF with SHA-256
+`1b936d3a7f621400085bab931ee52c8aa53fd4938e14ee7dc7848b6a1eeb99a8`
+is the previously reviewed 2026-07-27 snapshot. The present source repair adds
+the explicit ancient-version controls and reconciles the review language. It
+built cleanly in two passes as an eleven-page letter PDF with SHA-256
+`1920b2d0549bc0cba2eb9544cf14c2c9df0138f23167465ebc006e97f172cd26`;
+the settled log has no fatal error, undefined reference, overflow, or layout
+warning. All eleven review rasters were inspected with no clipping, overlap,
+blank page, or footer collision. The regenerated web candidate, SHA-256
+`794f7c954d09eadafe9acc1bf0bcaee4da0b094adf38fc6bea5392482cbef210`,
+was checked for the Vulgate and Septuagint-boundary text, terminal review
+language, generation metadata, and rights notice. Neither candidate has been
+installed or release-bound; those publication actions remain pending.
