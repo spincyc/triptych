@@ -1,5 +1,17 @@
 # Seventeenth Sunday in Ordinary Time, Year A — Research Scope
 
+## Component publication review — 2026-07-27
+
+The canonical leaf now owns a rights-limited research PDF, the sole complete
+web edition, and a mechanically derived synthesis PDF. The companion omits the
+appointed-text sheet and `Each Proper in Full`; it retains pages 1 and 2, the
+exact two-page brief synthesis, both complete cross-proper syntheses, notable
+material, and terminal apparatus. The appointed-text sheet was checked against
+the verified composition record and paraphrases rather than reproduces the
+protected U.S. Missal and Lectionary English. Stable component, textual-unit,
+and relation keys are recorded in `proper-components.toml`. No independent
+specialist review is newly claimed.
+
 **Formula:** `PC-S41-A`
 **Occurrence:** 2026-07-26
 **Last updated:** 2026-07-21

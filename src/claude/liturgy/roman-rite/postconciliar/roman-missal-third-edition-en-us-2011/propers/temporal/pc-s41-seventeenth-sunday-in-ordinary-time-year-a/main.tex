@@ -1,10 +1,11 @@
 \input{common/preamble}
 \usepackage{titlesec}
 
-\hypersetup{
-  pdftitle={Seventeenth Sunday in Ordinary Time, Year A},
-  pdfsubject={Source-first guide to the textual variable parts of PC-S41-A in the Roman Missal, Third Edition, for the dioceses of the United States of America, with Lectionary 109, its reception history, and the rights limits of the record}
-}
+\ifdefined\TriptychSynthesisEdition
+  \hypersetup{pdftitle={Seventeenth Sunday in Ordinary Time, Year A (Synthesis Edition)},pdfsubject={Synthesis companion to the source-first guide to PC-S41-A}}
+\else
+  \hypersetup{pdftitle={Seventeenth Sunday in Ordinary Time, Year A (Research Edition)},pdfsubject={Source-first guide to the textual variable parts of PC-S41-A in the Roman Missal, Third Edition, for the dioceses of the United States of America, with Lectionary 109, its reception history, and the rights limits of the record}}
+\fi
 
 \input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/shared/exposition-format}
 
@@ -25,7 +26,8 @@
 \clearpage
 \input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/10-date-and-location}
 \clearpage
-\input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/20-themes-and-movement}
+\ifdefined\TriptychSynthesisEdition\else
+\input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/05-appointed-text}
 \clearpage
 \begin{deepstudy}
 \input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/30-commentary-entrance-collect}
@@ -33,8 +35,14 @@
 \input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/32-commentary-apostle}
 \input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/33-commentary-gospel}
 \input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/34-commentary-eucharist}
-\input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/40-notable-and-quotable}
+\end{deepstudy}
+\fi
+\clearpage
+\input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/20-themes-and-movement}
+\begin{deepstudy}
+\input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/35-source-grounded-synthesis}
 \input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/50-interpretive-possibilities}
+\input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/40-notable-and-quotable}
 \clearpage
 \input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/80-liturgical-resolution}
 \input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/90-scope-and-qualifications}

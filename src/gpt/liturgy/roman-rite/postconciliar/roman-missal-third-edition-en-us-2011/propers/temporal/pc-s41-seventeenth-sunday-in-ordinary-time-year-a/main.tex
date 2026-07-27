@@ -1,6 +1,10 @@
 \input{common/preamble}
 \input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/shared/exposition-format}
-\hypersetup{pdftitle={Seventeenth Sunday in Ordinary Time: Year A},pdfsubject={Source-audited proper exposition, PC-S41-A}}
+\ifdefined\TriptychSynthesisEdition
+  \hypersetup{pdftitle={Seventeenth Sunday in Ordinary Time: Year A (Synthesis Edition)},pdfsubject={Synthesis companion to the source-audited proper exposition, PC-S41-A}}
+\else
+  \hypersetup{pdftitle={Seventeenth Sunday in Ordinary Time: Year A (Research Edition)},pdfsubject={Source-audited proper exposition, PC-S41-A}}
+\fi
 \begin{document}
 
 \pcweektitle{Seventeenth Sunday in Ordinary Time}{Year A}{PC-S41-A}
@@ -89,8 +93,14 @@ Anagogical & Eternal goods, the final sorting of the long-form net, conformity t
 \endgroup
 
 \clearpage
+\ifdefined\TriptychSynthesisEdition\else
+\input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/05-appointed-text}
+\clearpage
+\fi
 
+\newcommand{\TriptychBriefSynthesis}{%
 \section*{The Propers: Themes and Movement}
+\label{triptych:brief-synthesis:start}
 
 \begin{massbox}{Governing account}
 This formulary does not reduce to one slogan. Its correlated strand joins Solomon's listening heart, the Psalm's valuation of divine instruction, and Jesus' treasure and pearl: wisdom learns what is worth choosing. Romans contributes a semi-continuous word about God's purpose amid suffering, not a hidden key to the parables. The proper chants and prayers gather the assembly, order passing goods, return received bounty, and ask that sacramental memory become saving love.
@@ -147,8 +157,11 @@ Filial purpose & Rom.~8; acclamation & Providence works amid groaning toward con
 Sacramental fruit & Offerings; Communion A/B; final prayer & Received bounty returns as offering, gratitude or mercy, and memorial. & Branches stay distinct; fruit is not mechanical.\\
 \end{fourstable}
 
+\label{triptych:brief-synthesis:end}
 \clearpage
-\section*{The Propers: Detailed Commentary}
+}
+\ifdefined\TriptychSynthesisEdition\else
+\section*{Each Proper in Full}
 
 \subsection*{Solomon asks to hear before he judges\enspace\elementref{First Reading; Collect}}
 
@@ -234,6 +247,11 @@ Communion B joins two adjacent beatitudes without making them one merit formula.
 
 The alternatives remain distinct. Either can illuminate the final prayer's confession of the perpetual memorial of the Son's Passion and its petition that divine love advance salvation. Its fruit is gift calling for lived response, neither mechanical nor self-achieved.
 
+\fi
+\TriptychBriefSynthesis
+\input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/35-source-grounded-synthesis}
+
+\newcommand{\TriptychNotableAndQuotable}{%
 \sectionguard
 \section*{The Propers: Notable and Quotable}
 
@@ -247,9 +265,10 @@ The alternatives remain distinct. Either can illuminate the final prayer's confe
 
 \end{itemize}
 }
+}
 
 \sectionguard
-\section*{The Propers: Interpretive Possibilities}
+\section*{Interpretive Possibilities Across the Propers}
 
 \noindent\emph{These exploratory proposals arose in an AI-assisted editorial process. They are attributed to none of the cited authorities and claim no historical compositional intent. Each states its anchors and limits.}
 
@@ -280,6 +299,7 @@ A united dwelling, the firstborn among many siblings, a net of every kind, and m
 The summons not to forget benefits, the return of received bounty, the Gospel's selling, and the Passion memorial suggest a movement from gratitude through stewardship toward self-gift. The checked witnesses illuminate the separate motions without establishing this single liturgical chain. Its fruit is grateful use rather than anxious possession or forgetful consumption. Communion A remains unresolved, and the proposal condemns neither property, contracts, saving, nor provision for dependents.
 \endgroup
 
+\TriptychNotableAndQuotable
 \clearpage
 \pcresolutionappendix
 
