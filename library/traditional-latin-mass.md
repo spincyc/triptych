@@ -29,10 +29,12 @@ celebrant's directions govern.
 ## Sanctuary Pictorial Dictionaries — Priestly Review Copies
 
 These compact monochrome-pencil editions are intentionally incomplete review
-packets, not authoritative dictionaries or training manuals. They currently
-show 14 admitted object records and identify 24 omitted records so that a
-priest can correct the project's factual, ceremonial, visual, and scope
-deficiencies before a fuller release.
+packets, not authoritative dictionaries or training manuals. Each installed
+snapshot shows six admitted object records and identifies 32 records omitted
+from the 38-record inventory current when it was built. The canonical
+structured inventory now contains 43 records, but these PDFs have not been
+rebuilt; they remain exact earlier review snapshots through which a priest can
+correct the project's factual, ceremonial, visual, and scope deficiencies.
 
 | Edition | Review PDF | Review focus |
 | --- | --- | --- |

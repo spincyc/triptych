@@ -5,9 +5,11 @@ Reconciled: 2026-07-27
 
 ## Selection rule
 
-This register reconciles all 38 canonical object records presently under
-`shared/objects/` against the internally audited two-server Low-Mass chronology
-in `research/low-mass-chronology-audit.md`.
+This snapshot register reconciles the 38 canonical object records that existed
+when the installed review PDF was generated against the internally audited
+two-server Low-Mass chronology in `research/low-mass-chronology-audit.md`.
+Five later historical `identified` records bring the current structured
+inventory to 43; they are not retroactively part of this dated reconciliation.
 
 `Select` means that the record belongs in the altar-server edition's Low-Mass
 queue. It enters a priestly-review snapshot only after explicit review
@@ -23,7 +25,7 @@ pontifical, related-ceremony, or other use outside this slice. It may still
 belong elsewhere in the comprehensive altar-server edition. No record is
 excluded from that edition by this register.
 
-## Exact 38-record reconciliation
+## Exact installed-snapshot 38-record reconciliation
 
 | Canonical ID | Current state | Low-Mass review disposition | Reason and chronology relation |
 | --- | --- | --- | --- |
@@ -72,7 +74,7 @@ excluded from that edition by this register.
 | --- | ---: |
 | Selected for Low-Mass review | 21 |
 | Omitted from Low-Mass review | 17 |
-| Total reconciled canonical records | 38 |
+| Total reconciled records in this snapshot | 38 |
 | Admitted to the current priestly-review snapshot | 6 |
 | Currently eligible to render under `ed-altar-server` | 0 |
 
@@ -84,13 +86,15 @@ records; that is a different boundary from the 17 records omitted from the
 Low-Mass slice.
 
 The zero authoritative render count follows from the edition contract's
-`include_workflow_states = ["publication-ready"]`; none of the 38 records has
-that state.
+`include_workflow_states = ["publication-ready"]`; none of the 38 records in
+this snapshot has that state. The five later records are also not
+`publication-ready`.
 
-## Chronology candidates absent from the 38-record core
+## Chronology candidates absent from the installed-snapshot 38-record core
 
-These are omissions from the current canonical core, not permission to invent
-records or captions.
+These were omissions from the canonical core at the installed snapshot, not
+permission to invent records or captions. The later historical additions do
+not fill these Low-Mass gaps.
 
 | Missing candidate or record boundary | Low-Mass need | Required handling relation |
 | --- | --- | --- |

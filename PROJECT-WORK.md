@@ -167,6 +167,11 @@ Five evidence-supported historical object identities now have canonical
 notices. The remaining notices are two sub-300-DPI historical assets, one
 unresolved broad-stole identity, and seven unsupported Communion/reservation
 depicted-object cases.
+The canonical structured inventory consequently contains 43 records. The six
+installed six-page PDFs remain the earlier exact 38-record build snapshot,
+with 6 admitted entries and 32 listed omissions; they have not been rebuilt
+after the five historical records were added. A fresh render from current
+sources would retain the same 6 admitted entries and list 37 omissions.
 The sequenced inventory, artwork, edition, and publication checklist is
 `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/delivery-work-plan-2026-07-27.md`.
 

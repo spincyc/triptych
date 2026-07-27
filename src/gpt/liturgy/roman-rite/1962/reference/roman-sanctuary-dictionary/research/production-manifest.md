@@ -66,6 +66,13 @@ review gate and print a 32-record omission register. This is an honest
 review corpus, not the promised complete dictionary or a claim that the
 audience editions have reached their final differentiated scope.
 
+Those exact installed snapshots predate five subsequently added historical
+`identified` records. The canonical structured inventory now contains 43
+records. With the admission set unchanged, fresh generator output would retain
+the six admitted records and list 37 omissions. This ledger records no such
+regeneration or rebuild; the hashes above remain identities of the installed
+six-plus-32 snapshots.
+
 The project convention now makes every installed review paper publicly
 discoverable in the public alpha. That distribution rule does not promote a
 record, close an open gate, authorize operational reliance, or authorize an

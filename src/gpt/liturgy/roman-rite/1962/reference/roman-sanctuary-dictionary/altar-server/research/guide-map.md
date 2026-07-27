@@ -28,7 +28,8 @@ must remain visibly distinct from a universal Roman provision.
 
 The present `main.tex` is a priestly-review shell that consumes only the
 explicitly admitted `ed-altar-server` review selection under `build/`. The
-current generated review manifest admits six records and omits 32:
+generated manifest used by the installed snapshot admits six records and
+omits 32 from the then-current 38-record inventory:
 `obj-altar-bells`, `obj-altar-candle`, `obj-altar-candlestick`, `obj-chalice`,
 `obj-paten`, and `obj-sanctuary-lamp`. These records form a bounded review
 sample, not a complete server dictionary. Their admission exposes exact
@@ -66,8 +67,11 @@ ritual, Holy Week, pontifical, and related ceremonies.
 
 ## Visible omissions in the review edition
 
-The generated 32-record omission register accounts only for existing
-canonical records excluded from this review snapshot. It is not the
+The installed 32-record omission register accounts only for canonical records
+that existed and were excluded from that exact review snapshot. Five later
+historical `identified` records bring the current structured inventory to 43;
+with the admission set unchanged, a fresh register would contain 37
+omissions. No such rebuild is recorded here. Neither register is the
 completeness register. The review edition must also name omitted Mass forms,
 special ceremonies, sanctuary regions, ministers, object families, and
 unreviewed handling relationships. In particular, the Low-Mass candidate

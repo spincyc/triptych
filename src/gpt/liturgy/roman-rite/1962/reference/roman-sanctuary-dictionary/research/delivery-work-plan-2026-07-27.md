@@ -12,12 +12,15 @@ or ecclesiastical review.
 
 - Six six-page PDFs are installed as conspicuously labelled priestly-review
   copies.
-- Each presently renders the same six admitted records and a 37-record
-  omission register; this is not a complete inventory or differentiated final
-  family.
+- Each installed snapshot renders the same six admitted records and a
+  32-record omission register from the then-current 38-record inventory. The
+  canonical structured inventory now contains 43 records; a fresh render with
+  the unchanged review admission would omit 37. No such rebuild is recorded
+  here. Neither state is a complete inventory or differentiated final family.
 - Every row of `completeness-matrix.md` remains open.
-- The artwork validator reports 15 held notices: two effective-resolution
-  notices and thirteen unidentified depicted-object links.
+- The artwork validator reports 10 held notices: two effective-resolution
+  notices, one unresolved broad-stole identity, and seven unsupported
+  Communion/reservation depicted-object links.
 - Authoritative release requires closed corpus, inventory, source, variant,
   artwork, rights, derived-selection, physical, production, and exact-snapshot
   gates. Review-copy distribution closes none of them.
@@ -31,7 +34,7 @@ or ecclesiastical review.
 - [ ] Preserve review-copy evidence as snapshot-specific; do not carry its
   installation or distribution state into an authoritative-release candidate.
 
-## Work unit D2 — resolve the 15 held artwork notices
+## Work unit D2 — resolve the 10 held artwork notices
 
 - [ ] For each low-resolution historical asset, either replace it with a
   rights-controlled, source-controlled asset that passes effective-resolution

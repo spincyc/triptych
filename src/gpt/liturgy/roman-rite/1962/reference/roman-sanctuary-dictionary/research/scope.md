@@ -62,7 +62,7 @@ canonical records but may not copy or enlarge them independently.
 
 No completeness claim is authorized. The official source corpus has not been
 closed; the material-culture corpus has not been defined; the canonical
-inventory contains 38 records but no publication-ready record; and the
+inventory contains 43 records but no publication-ready record; and the
 completeness matrix has open rows in every category. Seven records are
 labelled `source-audited`, seven `art-reviewed`, and seven
 `priestly-review-ready`, but those intermediate workflow labels neither close

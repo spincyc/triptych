@@ -1,6 +1,6 @@
 # Object inventory
 
-Status: **38 canonical records populated; zero publication-ready objects**
+Status: **43 canonical records populated; zero publication-ready objects**
 Audit date: 2026-07-27
 
 The authoritative format is the structured contract under `shared/schema/`.
@@ -14,7 +14,7 @@ authorization to render an entry.
 | State | Count |
 | --- | ---: |
 | Lead | 3 canonical records |
-| Identified | 14 |
+| Identified | 19 |
 | Source-audited | 7 |
 | Art-reviewed | 7 |
 | Priestly-review-ready | 7 |
@@ -28,7 +28,7 @@ eligibility. In particular, `source-audited`, `art-reviewed`, and
 edition, and a priestly-review packet must still satisfy the profile's
 claim-level evidence and disclosure rules.
 
-The structured inventory validator accepts all 38 records as conforming to
+The structured inventory validator accepts all 43 records as conforming to
 the current TOML contract. That is a structural result only: it does not close
 the source corpus, the completeness matrix, variants, artwork review, rights,
 or any publication gate.
