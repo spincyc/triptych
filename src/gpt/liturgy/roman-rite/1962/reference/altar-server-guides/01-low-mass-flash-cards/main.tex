@@ -42,6 +42,9 @@
     at (#1+1.975,#2+1.79)
     {{\fontsize{11.5}{13.5}\selectfont #5}};}
 
+\newcommand{\LowMassQualifiedCue}[2]{%
+  {\bfseries\MakeUppercase{#1}}\par\medskip #2}
+
 \newcommand{\LowMassBackCard}[5]{%
   \LowMassFlashFrame{#1}{#2}{#3 \textperiodcentered\ BOTH}{#4}%
   \node[anchor=north,align=center,text width=3.59in,inner sep=0pt]
@@ -80,26 +83,32 @@
     \LowMassFrontCard{0.25}{8.28}{01}{FOOT/ALTAR}%
       {Introibo ad altare Dei.}
     \LowMassFrontCard{4.30}{8.28}{02}{FOOT/ALTAR}%
-      {Iudica me, Deus, et discerne causam meam de gente non sancta:
-       ab homine iniquo, et doloso erue me.}
+      {\LowMassQualifiedCue{Use unless Psalm 42 is omitted.}%
+       {Iudica me, Deus, et discerne causam meam de gente non sancta:
+        ab homine iniquo, et doloso erue me.}}
 
     \LowMassFrontCard{0.25}{5.76}{03}{FOOT/ALTAR}%
-      {Emitte lucem tuam, et veritatem tuam: ipsa me deduxerunt, et
-       adduxerunt in montem sanctum tuum, et in tabernacula tua.}
+      {\LowMassQualifiedCue{Use unless Psalm 42 is omitted.}%
+       {Emitte lucem tuam, et veritatem tuam: ipsa me deduxerunt, et
+        adduxerunt in montem sanctum tuum, et in tabernacula tua.}}
     \LowMassFrontCard{4.30}{5.76}{04}{FOOT/ALTAR}%
-      {Confitebor tibi in cithara, Deus, Deus meus: quare tristis es,
-       anima mea, et quare conturbas me?}
+      {\LowMassQualifiedCue{Use unless Psalm 42 is omitted.}%
+       {Confitebor tibi in cithara, Deus, Deus meus: quare tristis es,
+        anima mea, et quare conturbas me?}}
 
     \LowMassFrontCard{0.25}{3.24}{05}{FOOT/ALTAR}%
-      {Gloria Patri, et Filio, et Spiritui Sancto.}
+      {\LowMassQualifiedCue{Use unless Psalm 42 is omitted.}%
+       {Gloria Patri, et Filio, et Spiritui Sancto.}}
     \LowMassFrontCard{4.30}{3.24}{06}{FOOT/ALTAR}%
-      {Adiutorium nostrum in nomine Domini.}
+      {\LowMassQualifiedCue{Opening prayers only.}%
+       {Adiutorium nostrum in nomine Domini.}}
 
     \LowMassFrontCard{0.25}{0.72}{07}{FOOT/ALTAR}%
-      {Ideo precor beatam Mariam semper Virginem, beatum Michaelem
-       Archangelum, beatum Ioannem Baptistam, sanctos Apostolos Petrum et
-       Paulum, omnes Sanctos, et vos, fratres, orare pro me ad Dominum Deum
-       nostrum.}
+      {\LowMassQualifiedCue{Opening prayers only.}%
+       {Ideo precor beatam Mariam semper Virginem, beatum Michaelem
+        Archangelum, beatum Ioannem Baptistam, sanctos Apostolos Petrum et
+        Paulum, omnes Sanctos, et vos, fratres, orare pro me ad Dominum Deum
+        nostrum.}}
     \LowMassFrontCard{4.30}{0.72}{08}{FOOT/ALTAR}%
       {Misereatur vestri omnipotens Deus, et, dimissis peccatis vestris,
        perducat vos ad vitam aeternam.}
@@ -131,12 +140,15 @@
 \begin{tikzpicture}[remember picture,overlay,x=1in,y=1in]
   \begin{scope}[shift={(current page.south west)}]
     \LowMassFrontCard{0.25}{8.28}{09}{FOOT/ALTAR}%
-      {Deus, tu conversus vivificabis nos.}
+      {\LowMassQualifiedCue{Opening prayers only.}%
+       {Deus, tu conversus vivificabis nos.}}
     \LowMassFrontCard{4.30}{8.28}{10}{FOOT/ALTAR}%
-      {Ostende nobis, Domine, misericordiam tuam.}
+      {\LowMassQualifiedCue{Opening prayers only.}%
+       {Ostende nobis, Domine, misericordiam tuam.}}
 
     \LowMassFrontCard{0.25}{5.76}{11}{FOOT/ALTAR}%
-      {Domine, exaudi orationem meam.}
+      {\LowMassQualifiedCue{Opening prayers only.}%
+       {Domine, exaudi orationem meam.}}
     \LowMassFrontCard{4.30}{5.76}{12}{FOOT/ALTAR}%
       {Dominus vobiscum.}
 
@@ -146,9 +158,11 @@
       {\LowMassChristeResponse}
 
     \LowMassFrontCard{0.25}{0.72}{15}{READINGS}%
-      {Dominum autem Christum sanctificate in cordibus vestris.}
+      {\LowMassQualifiedCue{Example: Fifth Sunday after Pentecost Epistle.}%
+       {Dominum autem Christum sanctificate in cordibus vestris.}}
     \LowMassFrontCard{4.30}{0.72}{16}{READINGS}%
-      {Sequentia sancti Evangelii secundum Matthaeum.}
+      {\LowMassQualifiedCue{Example: Matthew Gospel title.}%
+       {Sequentia sancti Evangelii secundum Matthaeum.}}
     \LowMassSheetFooter{FRONTS \textperiodcentered\ PRINT AT 100\%}
   \end{scope}
 \end{tikzpicture}
@@ -177,8 +191,9 @@
 \begin{tikzpicture}[remember picture,overlay,x=1in,y=1in]
   \begin{scope}[shift={(current page.south west)}]
     \LowMassFrontCard{0.25}{8.28}{17}{READINGS}%
-      {Relinque ibi munus tuum ante altare, et vade prius reconciliari
-       fratri tuo: et tunc veniens offeres munus tuum.}
+      {\LowMassQualifiedCue{Example: Fifth Sunday after Pentecost Gospel.}%
+       {Relinque ibi munus tuum ante altare, et vade prius reconciliari
+        fratri tuo: et tunc veniens offeres munus tuum.}}
     \LowMassFrontCard{4.30}{8.28}{18}{OFFERTORY}%
       {Orate, fratres: ut meum ac vestrum sacrificium acceptabile fiat
        apud Deum Patrem omnipotentem.}
@@ -191,7 +206,8 @@
     \LowMassFrontCard{0.25}{3.24}{21}{COMMUNION}%
       {Et ne nos inducas in tentationem.}
     \LowMassFrontCard{4.30}{3.24}{22}{ENDING}%
-      {Ite, missa est, alleluia, alleluia.}
+      {\LowMassQualifiedCue{Use only at a Mass of the season in the Easter octave.}%
+       {Ite, missa est, alleluia, alleluia.}}
     \LowMassSheetFooter{FRONTS \textperiodcentered\ PRINT AT 100\%}
   \end{scope}
 \end{tikzpicture}

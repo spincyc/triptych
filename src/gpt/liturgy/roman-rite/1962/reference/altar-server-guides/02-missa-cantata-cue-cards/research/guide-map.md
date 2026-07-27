@@ -29,10 +29,22 @@ The current source-built companion is twelve physical pages. Response fronts
 are pages 1, 3, 5, and 7; their mirrored backs are pages 2, 4, 6, and 8.
 Action fronts are pages 9 and 11; their mirrored backs are pages 10 and 12.
 Print US letter, portrait, two-sided, actual size, flipped on the long edge,
-and cut on the box borders. Final rendered-screen review confirmed page parity,
-border alignment, legibility, and safe containment of the R08B continuation
-note. This corrected PDF is the installed and reviewed identity recorded in
-the production manifest.
+and cut on the box borders. Rendered-screen review confirmed page parity,
+electronic border alignment, screen legibility, and safe containment of the
+R08B continuation note. Physical actual-size, long-edge-duplex, photocopy, and
+cut review remain pending. The installed exact identity is a public alpha
+review copy, not a release-complete or independently approved publication.
+
+Only the final back may use the margin below the cut grid, for the required
+revision timestamp and compact rights notice. All other card sheets use an
+empty page style: no running page numeral, header, instruction, or other
+apparatus appears outside the selected card faces.
+
+The 2026-07-27 uninstalled review candidate has SHA-256
+`b681d846c125e417f034f109f700ed34beb2e7179ead34aaa653644d3837318e`.
+Its final build log is clean, and PDF text extraction and full-page inspection
+confirm the footer correction. This candidate has not replaced the installed
+public-review identity recorded in the production manifest.
 
 This leaf is not a self-contained trainer. Use it with the paired full guide's
 keys; conditions that affect an individual response or action remain on the

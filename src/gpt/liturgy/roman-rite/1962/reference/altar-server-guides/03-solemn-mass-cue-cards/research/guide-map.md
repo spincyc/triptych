@@ -25,17 +25,54 @@ back. The full guide owns the printing, actor, roster, branch, and safety keys
 and points to the paired downloads in the same catalog row; it does not embed
 these faces.
 
-The current source-built companion is twelve physical pages. Response fronts
+The installed predecessor is twelve physical pages. Response fronts
 are pages 1, 3, 5, and 7; their mirrored backs are pages 2, 4, 6, and 8.
 Action fronts are pages 9 and 11; their mirrored backs are pages 10 and 12.
 Print US letter, portrait, two-sided, actual size, flipped on the long edge,
-and cut on the box borders. Final rendered-screen review confirmed page parity,
+and cut on the box borders. Its rendered-screen review confirmed page parity,
 border alignment, legibility, and safe containment of the R08B continuation
-note. This corrected PDF is the installed and reviewed identity recorded in
-the production manifest.
+note. The present source revision is an uninstalled candidate until it is
+rebuilt and receives the same complete screen checks. Actual-size reader
+legibility, physical long-edge duplex alignment, photocopy and cut safety,
+intended-reader use, and independent liturgical, ceremonial, pronunciation,
+pedagogical, rights, and ecclesiastical review remain pending.
 
 This leaf is not a self-contained trainer. Use it with the paired full guide's
 keys; conditions that affect an individual response or action remain on the
 affected card. It inherits generation provenance from the full guide and
 remains governed by the series-wide source, response, pronunciation,
 ceremonial, flash-card, production, rights, and review records.
+
+## Solemn action-card audit
+
+The action faces are editorial cross-views of the controlling SO chronology;
+they do not create new ceremonial actions. This table records each pair's
+authoritative inputs and the recovery-policy exception explicitly.
+
+| Card | Controlling chronology or policy |
+|---|---|
+| SO-A01 | SO-001, 007, 013--017, 024, 044, 067 |
+| SO-A02 | SO-010--011, 018--025, 035--040, 044--048, 067 |
+| SO-A03 | SO-003, 008, 020--024, 030, 032, 039, 043, 045--047, 050--051, 055--058, 066--067, 070 |
+| SO-A04 | SO-003, 008, 020--024, 030, 033, 037--039, 053, 059--060, 066--067, 070 |
+| SO-A05 | SO-019, 021--025 |
+| SO-A06 | SO-029--040 |
+| SO-A07 | SO-041, 043, 045--048, 057 |
+| SO-A08 | SO-061--070, including the SO-063 separate-sheet boundary and SO-070 sacristy accounting rejoin |
+| SO-A09 | SO-001--070 in the seven scene ranges printed on the card |
+| SO-A10 | SO-005, 061--063, 068 |
+| SO-A11 | SO-050--051, 053, 055--060 |
+| SO-A12 | The four-pass recovery rule in `shared/solemn-role-sheets.tex`, plus the handoff and safe-finish controls in SO-001--070 |
+
+SO-A12 deliberately cites the guide's governing recovery policy rather than
+misidentifying SO-070 as the source of a missed-cue rule. Every card remains
+subject to card-by-card rendered collation after a source change.
+
+The candidate built on 27 July 2026 remains 12 pages with SHA-256
+`3c46449cd8125c0ac834bcf2d1b77c4ec2491184be1b3483bd1627a1f2dbab8a`.
+Two pdfTeX passes settled the build, and the final log has no fatal error,
+undefined reference, box warning, or rerun request. Bounded every-page screen
+review confirmed the six-up sequence, odd-page fronts, mirrored backs, safe
+card borders, R08B containment, and final-notice fit. This technical screen
+review does not complete the pending actual-size, physical, reader, or
+independent checks.

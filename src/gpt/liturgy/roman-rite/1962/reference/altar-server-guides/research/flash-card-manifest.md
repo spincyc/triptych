@@ -22,9 +22,11 @@ artifact. They do not control or release the new twenty-two-card deck.
 
 The Missa Cantata and Solemn Mass selections and publication names are
 unchanged. Their installed production results remain historical evidence for
-those exact bytes. The current sources use the established dense answer layout
-for R08B so that its continuation note remains safely inside the cut border;
-the resulting companions are separate uninstalled candidates.
+those exact bytes. The active Missa Cantata source uses the established dense
+answer layout for R08B so that its continuation note remains safely inside the
+cut border and suppresses running page numerals on every card sheet. Its
+2026-07-27 review candidate is not installed. The current Solemn Mass state is
+recorded separately in its guide map and the production manifest.
 
 ## Owned card families
 
@@ -44,33 +46,35 @@ ID plus visible number uniquely identifies the physical pair.
 Every Low-Mass card contains exactly one priest cue and the response that Both
 acolytes give. The front uses the full fixed formula where possible. When a
 proper reading varies, it uses one complete, facsimile-checked exemplar and
-the books explain that it is an exemplar rather than the universal text. A
-response class that recurs has one selected cue rather than duplicate cards.
+identifies that exemplar on its face rather than presenting it as universal
+text. A short face qualification also marks every opening-prayer, Psalm-42, or
+Easter-octave condition needed to prevent a false response. A response class
+that recurs has one selected cue rather than duplicate cards.
 
 | Audit / visible ID | Stage | Response bank | Front cue |
 | --- | --- | --- | --- |
 | LM-F01 / 01 | `FOOT/ALTAR` | A1 | *Introibo ad altare Dei.* |
-| LM-F02 / 02 | `FOOT/ALTAR` | A2 | Complete *Iudica me, Deus … erue me* verse |
-| LM-F03 / 03 | `FOOT/ALTAR` | A3 | Complete *Emitte lucem tuam … tabernacula tua* verse |
-| LM-F04 / 04 | `FOOT/ALTAR` | A4 | Complete *Confitebor tibi … conturbas me* verse |
-| LM-F05 / 05 | `FOOT/ALTAR` | A5 | *Gloria Patri, et Filio, et Spiritui Sancto.* |
-| LM-F06 / 06 | `FOOT/ALTAR` | A6 | *Adiutorium nostrum in nomine Domini.* |
-| LM-F07 / 07 | `FOOT/ALTAR` | A7 | Complete final *Ideo precor … Dominum Deum nostrum* sentence of the priest's *Confiteor* |
+| LM-F02 / 02 | `FOOT/ALTAR` | A2 | Psalm-42 condition; complete *Iudica me, Deus … erue me* verse |
+| LM-F03 / 03 | `FOOT/ALTAR` | A3 | Psalm-42 condition; complete *Emitte lucem tuam … tabernacula tua* verse |
+| LM-F04 / 04 | `FOOT/ALTAR` | A4 | Psalm-42 condition; complete *Confitebor tibi … conturbas me* verse |
+| LM-F05 / 05 | `FOOT/ALTAR` | A5 | Psalm-42 condition; *Gloria Patri, et Filio, et Spiritui Sancto.* |
+| LM-F06 / 06 | `FOOT/ALTAR` | A6 | Opening-prayers condition; *Adiutorium nostrum in nomine Domini.* |
+| LM-F07 / 07 | `FOOT/ALTAR` | A7 | Opening-prayers condition; complete final *Ideo precor … Dominum Deum nostrum* sentence of the priest's *Confiteor* |
 | LM-F08 / 08 | `FOOT/ALTAR` | A9 | First *Misereatur vestri … vitam aeternam* occurrence |
-| LM-F09 / 09 | `FOOT/ALTAR` | A10 | *Deus, tu conversus vivificabis nos.* |
-| LM-F10 / 10 | `FOOT/ALTAR` | A11 | *Ostende nobis, Domine, misericordiam tuam.* |
-| LM-F11 / 11 | `FOOT/ALTAR` | A12 | *Domine, exaudi orationem meam.* |
+| LM-F09 / 09 | `FOOT/ALTAR` | A10 | Opening-prayers condition; *Deus, tu conversus vivificabis nos.* |
+| LM-F10 / 10 | `FOOT/ALTAR` | A11 | Opening-prayers condition; *Ostende nobis, Domine, misericordiam tuam.* |
+| LM-F11 / 11 | `FOOT/ALTAR` | A12 | Opening-prayers condition; *Domine, exaudi orationem meam.* |
 | LM-F12 / 12 | `FOOT/ALTAR` | A13 | *Dominus vobiscum.* |
 | LM-F13 / 13 | `READINGS` | A14 | *Kyrie, eleison.* |
 | LM-F14 / 14 | `READINGS` | A14 | *Christe, eleison.* |
-| LM-F15 / 15 | `READINGS` | A15 | Complete final sentence of the Fifth Sunday after Pentecost Epistle |
-| LM-F16 / 16 | `READINGS` | A16 | *Sequentia sancti Evangelii secundum Matthaeum.* |
-| LM-F17 / 17 | `READINGS` | A17 | Complete final verse of the Fifth Sunday after Pentecost Gospel |
+| LM-F15 / 15 | `READINGS` | A15 | Face-labelled example: complete final sentence of the Fifth Sunday after Pentecost Epistle |
+| LM-F16 / 16 | `READINGS` | A16 | Face-labelled example: *Sequentia sancti Evangelii secundum Matthaeum.* |
+| LM-F17 / 17 | `READINGS` | A17 | Face-labelled example: complete final verse of the Fifth Sunday after Pentecost Gospel |
 | LM-F18 / 18 | `OFFERTORY` | A18 | Complete *Orate, fratres … Deum Patrem omnipotentem* formula |
 | LM-F19 / 19 | `CANON` | A19 | *Sursum corda.* |
 | LM-F20 / 20 | `CANON` | A20 | *Gratias agamus Domino Deo nostro.* |
 | LM-F21 / 21 | `COMMUNION` | A21 | *Et ne nos inducas in tentationem.* |
-| LM-F22 / 22 | `ENDING` | A22 | *Ite, missa est, alleluia, alleluia.* |
+| LM-F22 / 22 | `ENDING` | A22 | Mass-of-the-season/Easter-octave condition; *Ite, missa est, alleluia, alleluia.* |
 
 LM-F08 is the selected exemplar for the repeated A9 *Amen* class; LM-F12 for
 the repeated A13 class; and LM-F15 for the A15 *Deo gratias* class. LM-F13 and
@@ -94,7 +98,8 @@ way.
 All pages are US-letter portrait, black ink on white paper, printed two-sided
 at actual size and flipped on the long edge. Each face uses a two-column by
 four-row grid. Body type is fixed at 11.5-point Libertinus and may not shrink.
-Cues are regular, responses bold, and both are top-aligned.
+Cues are regular, face qualifications and responses are bold, and all are
+top-aligned.
 
 The three header zones are:
 
@@ -175,9 +180,14 @@ historical evidence for their named PDFs. They must not be silently reused as
 verification of the redesigned Low-Mass companion or the corrected sung-form
 card candidates.
 
-The current uninstalled sung-form companions retain the same twelve-page
-front/back maps, card selections, form markers, and mirrored grid geometry.
+The current uninstalled Missa Cantata companion retains the same twelve-page
+front/back map, card selection, form markers, and mirrored grid geometry. The
+review build has SHA-256
+`b681d846c125e417f034f109f700ed34beb2e7179ead34aaa653644d3837318e`.
 Rendered review confirms that the denser R08B answer preserves every verbal
-field while restoring a safe inset for the continuation note on page 8. The
-electronic pairing, border alignment, and full-size screen checks pass; the
-physical actual-size, duplex, photocopy, and cut tests remain pending.
+field while restoring a safe inset for the continuation note on page 8.
+Text extraction and full-page inspection also confirm that pages 1--11 contain
+no running page numeral and page 12 uses the otherwise unused margin only for
+the required revision and rights notice. Electronic pairing, border alignment,
+and full-size screen checks pass; physical actual-size, duplex, photocopy, and
+cut tests remain pending.
