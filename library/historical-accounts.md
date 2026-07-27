@@ -4,6 +4,12 @@
 
 [Return to the Library](../LIBRARY.md)
 
+## Catholic Exorcism
+
+| Publication | ChatGPT | Claude | Coverage |
+| --- | --- | --- | --- |
+| **Catholic Exorcism: History and Current Practice** | [PDF](../doc/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf) · [Read](../web/gpt/history/catholic-exorcism/01-history-and-current-practice.html) | — | Biblical, patristic, ritual, canonical, theological, clinical, and safeguarding history through 27 July 2026. |
+
 ## Biblical Translation Histories
 
 | Publication | ChatGPT | Claude | Coverage |

@@ -4,8 +4,8 @@ provider = "claude"
 audited_on = "2026-07-27"
 discovery_rule = "src/claude/**/main.tex"
 publication_count = 45
-source_surface_file_count = 886
-snapshot = "sha256:5ed3e42f68af649d6cd93ff77c784e5c69be1e30835fa57c36b16ecee65d1262"
+source_surface_file_count = 895
+snapshot = "sha256:75b9fe1770d284517b7bc0312d5e8cbd9032cf32697b80c55fd881f2ee4c2cce"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -3834,110 +3834,164 @@ kind = "research-record"
 owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
 [[files]]
+path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/final-five-claims-second-pass-2026-07-27.md"
+sha256 = "5ea405417f211f946e3441d14158c470f60185b8cc79ecb991a6efe76d287608"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/independent-exact-snapshot-review-2026-07-27.md"
+sha256 = "03b92f436d517cdf7266375f2072deca3df4bb1485060a6eb46590fd1dbfbfb9"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/kyrie-preface-creed-second-pass-2026-07-27.md"
+sha256 = "505652e42ef8dd7d96a60c5e8ba984dc91ead21d85934a55544f578ad8ed36e5"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/offertory-participation-second-pass-2026-07-27.md"
+sha256 = "11ceacc456e161d6cb6adde94aa8c4883c680bf4e845a2214cd5a58b9ab0c1f3"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/rights-audit-2026-07-27.md"
+sha256 = "27ad03b77af91b24c4a2b23743da48a46e67aa61ba201111a27bd4f557d6312c"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/rituale-communion-resolution-2026-07-27.md"
+sha256 = "0823e26b96c3b3fa3e005b0e188997f54c5f74cc932c0b7698efc2569ff6549d"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/roman-canon-second-pass-2026-07-27.md"
+sha256 = "febf6406234dcc0b1d5d292120ab6c16466c6c2647d3b205de54639663b524db"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
 path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/scope.md"
-sha256 = "cbb9d0a6b57e674d2fcde05e84f4b50bd4e38f3ccd79ea458e4a83be273b229d"
+sha256 = "2a6de645f35c8f389cde58e8bbd5ad059d5f38ea5996d92dc355b11ef9d77965"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
 [[files]]
+path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/second-pass-2026-07-27.md"
+sha256 = "a2e8edff54c4b8245a15ee41a7a6d02c2537be3aa995dcca8227c3afc8bdcafd"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/second-pass-book-history-review-2026-07-27.md"
+sha256 = "11be66249a1490138c9eeef297a35de7b91631d95de76040eabfac7439ad3f77"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
+
+[[files]]
 path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/sequence-inventory.md"
-sha256 = "d54e97e4ffadf1e4baa571e5cf4884b4a4636fc70b2b415f84e3416c47f57e8f"
+sha256 = "2fe0a919b46a9af0e0c54ea8591e4663cc704b8048069e45b33374fd2d845339"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/source-audit.md"
-sha256 = "597e16de696e23c4b8f2abce991b914e9b78f26f92c738611bfe2e7b764545a4"
+sha256 = "27c32884279330ae12541858aa7bcff6afa2c088dc2f18c41000a1b40df2cb79"
 kind = "legacy-source-audit"
 owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/source-bindings.toml"
-sha256 = "e65da458ea32f8e171cebe0118116658e39c5ced72c2a1be8b8577424c922f65"
+sha256 = "69059b2e07b9395206d3d219fe0393094aa6f1413992a24c1eaf13596874c25d"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/00-map.tex"
-sha256 = "e8429fd7c7f376d24f2b05986c8a263180439209d3cdeb25d8e6613340bc26cd"
+sha256 = "917d5e5f7fccc09ea24b06307735065a991fd48bba27a6654b76f7ebdf61dada"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/10-ad-gradum.tex"
-sha256 = "b92486d4345b5194166ccff9a64c7e1078e7a0fbe65a3714aaea450f9d4e0036"
+sha256 = "59fe149a08fc13e9213a9a2beb6c784f83cad631f03b241c8e7bb2f2f809a90d"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/20-kyrie-gloria.tex"
-sha256 = "e2706c57a269d226123d61e10b58d4177ed705cf5595f0f973af1e8635095e65"
+sha256 = "eaf4fc191842f4716880c001a795c4f4f6bd35ed1d9c596f60b2b02d48687290"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/30-verbum.tex"
-sha256 = "1cd9cd61b7ccaf6ccaf4e09c226f3c0d41b626f8899c0c532c0364b5262eea95"
+sha256 = "193e58e36f54511f50c5a4fe62f2014593d4c778302d8dc862a1b5887cfdbb50"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/40-offertorium.tex"
-sha256 = "059d3baeda51cfdefbe5ea830dc20ebad21cd8545faa3e1256a45770f5deef90"
+sha256 = "800e8299f8168f5ef1b6f20ffd688e11ddab0c032a5681a0d18a103580ced434"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/50-praefatio.tex"
-sha256 = "2d776ec4427eaa45d812d63e3dfe83e4d8b5104da4b8447201734118c76a1a24"
+sha256 = "62292d3b9d3b4ab78a02c588eb6a49018e3c8df55479456bddfd72dfc902d738"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/60-canon.tex"
-sha256 = "ca5d4f523d5c9c1cfdaa6e4bdaf93d5fe3af777b1d7b588a40d25c758c1b6b9a"
+sha256 = "3d28daf51197a8c294d4a60f4181e60d421b04c0496fc27b44d47c0805580d46"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/70-communio.tex"
-sha256 = "8a3117413eb18d8a1b2d6d6b75fd0d8533f88f718c65a71b91e261c86cca72ba"
+sha256 = "12a4552e22abae1cfcd7bf5f6ef1ae0e25040611eab27553c63afc263ea8e7e7"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/80-conclusio.tex"
-sha256 = "7f6e9b278b28bd89c7a0754de0616cb417abf207eafe172e57de9ce37dd4c97a"
+sha256 = "64ccb2267104a305c9c01134eba387738bce35d9a8b5065c5d2d6460d5b8a288"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/85-synthesis.tex"
-sha256 = "3a7f824bdaa34c44710b2da8965c894feab394625316bfcfbd2816ca042b082d"
+sha256 = "8b843e99133d8703936ffda77ae06344f75125e82d37e7aebab0835723530a4a"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/90-scope.tex"
-sha256 = "8da9837f2136b72d4cae9e04045b3b7ed8426bed9d8c2d78660787a3a53615ab"
+sha256 = "6d616e14dd6003fa7f976f64a2891a9eb49a5d8e5c1bece5647441fc956abab7"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/92-development.tex"
-sha256 = "33b81da64002809ff5b118c96524a141497cb056d36ee7c6d4572e2a57c8805c"
+sha256 = "2a640b43d4dd8a978415dd10121fe391c1f5e1f625139c41620b25d548f96940"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/sections/99-references.tex"
-sha256 = "9f98dd2901b96099f7523ac6eb0263f50196af3e57fb1eb476d672cfc7bc8a4b"
+sha256 = "cf976d063e4af7ecdd1df173d53dc19c153b3598a117f639ceed436935fabeb3"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/web-edition.toml"
-sha256 = "8d342a0fda8734fad664b2eb9d40590b2d68477fbe322bfa7a32890a20b18412"
+sha256 = "beaa6a3702a392dbe9370dd19fe00208bcaed27a0f807338cc8bcbb19c59caed"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 

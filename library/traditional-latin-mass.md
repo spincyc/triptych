@@ -8,7 +8,7 @@ These studies concern the books and calendar in force in 1962. They do not estab
 
 | Publication | ChatGPT | Claude | Focus |
 | --- | --- | --- | --- |
-| **The Ordinary and Order of the Mass** | [PDF](../doc/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.html) | — | Stable texts, ritual sequence, and theological exposition. |
+| **The Ordinary and Order of the Mass** | [PDF](../doc/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.html) | [PDF](../doc/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.html) | Stable texts, ritual sequence, and theological exposition. |
 | **Assembling the Mass** | [PDF](../doc/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.html) | [PDF](../doc/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.html) | Calendar, precedence, Mass classes, formularies, and commemorations. |
 | **The 1962 Roman Calendar** | [PDF](../doc/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.html) | [PDF](../doc/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.html) | Construction history and complete recurring universal and United States inventories. |
 
