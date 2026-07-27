@@ -18,11 +18,8 @@ object prose or artwork. The authoritative-release selection remains empty
 because there are no `publication-ready` canonical objects. The separately
 held priestly-review selection currently admits six source-audited objects:
 altar bells, altar candle, altar candlestick, chalice, paten, and sanctuary
-lamp. Its generated omission register names the other 32 canonical records
-from the then-current 38-record inventory and the reason each was
-excluded. Five later historical `identified` records bring the current
-structured inventory to 43; with the admission set unchanged, a fresh
-register would contain 37 omissions. No such rebuild is recorded here.
+lamp. Its generated omission register names the other 37 records in the
+current 43-record inventory and the reason each was excluded.
 
 The six admitted records are a bounded evidence-review sample, not a
 representative sacristy inventory and not a preparation sequence. In

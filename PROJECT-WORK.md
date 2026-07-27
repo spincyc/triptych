@@ -168,15 +168,15 @@ Commits `0b1f79ae`, `7a05f79e`, `50794fc6`, and `8533fcd9` created, exposed,
 and repaired six priestly-review PDFs. Complete object inventories, exact
 source collation, independent priestly review, and artwork review remain open.
 Five evidence-supported historical object identities now have canonical
-`identified` records, reducing the artwork validator backlog from 15 to 10
-notices. The remaining notices are two sub-300-DPI historical assets, one
-unresolved broad-stole identity, and seven unsupported Communion/reservation
-depicted-object cases.
+`identified` records. The ten artwork-validator notices are now reconciled
+without inventing identities: stale historical placement metadata was
+corrected, unsupported Communion/reservation eligibility links were removed
+while their assets remain held, and the unsupported broad-stole composite was
+removed from the rendered priestly-review slice. The validator reports zero
+notices. Independent human artwork and priestly review remain open.
 The canonical structured inventory consequently contains 43 records. The six
-installed six-page PDFs remain the earlier exact 38-record build snapshot,
-with 6 admitted entries and 32 listed omissions; they have not been rebuilt
-after the five historical records were added. A fresh render from current
-sources would retain the same 6 admitted entries and list 37 omissions.
+installed six-page PDFs have been rebuilt and visually inspected against the
+current source: they retain 6 admitted entries and list 37 omissions.
 The sequenced inventory, artwork, edition, and publication checklist is
 `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/delivery-work-plan-2026-07-27.md`.
 
@@ -237,7 +237,7 @@ The 2026-07-27 audit establishes the following actionable backlog:
 | `AUD-STALE-001` | Rendered publications disagree with current inputs or records | 92 recovered baseline editions; 93 in this checkpoint because the exorcism source audit and delivery plan now correctly make that edition stale pending its later rebuild | `make check-staleness` passes |
 | `AUD-SOURCES-001` | Reusable-source family screening | 140 of 140 review units screened across 229 source families; 806 reviewed owner-family presences; atomic citation coverage remains false | `make check-source-family-screening` passes |
 | `AUD-REVIEW-001` | Public review copies retain unclosed completion gates | 14 publications | each work-specific review record closes against its exact snapshot |
-| `AUD-ART-001` | Dictionary artwork has held identification/resolution notices | 10 notices | artwork validator and human review records close every notice |
+| `AUD-ART-001` | Dictionary artwork identification/resolution notices | 0 validator notices; held unsupported assets and deferred human review remain explicit | artwork validator passes; human artwork review remains a separate open gate |
 | `AUD-MEMORY-001` | Conversation outcomes were not exhaustively represented in tracked work records | prior ledger had 8 broad items | every known agreement is represented here and in the ledger when criteria are known |
 
 The audit findings promoted to acceptance-criterion work are tracked below.

@@ -392,7 +392,7 @@ technical = { width_px = 1426, height_px = 1103, bit_depth = 8, color_mode = "gr
 [[asset_files]]
 id = "file-rsd-hist-002"
 path = "shared/artwork/pencil/RSD-HIST-002-pre-1955-objects.png"
-state = "accepted-for-priestly-review"
+state = "held"
 audit_record = "research/historical-artwork-manifest.md"
 technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale", bytes = 611323, sha256 = "3263d01430d30c57209f1e4ecbcf1e7279771aceb0d96c4a819566bd3b7b8916" }
 
@@ -822,7 +822,7 @@ asset = "shared/artwork/pencil/RSD-HIST-001-early-medieval-objects.png"
 reference_ids = []
 precursor_ids = []
 corrections = ["An impossible pedestal beneath the suspended dove was removed before the tracked review candidate."]
-baked_content_audit = ["No semantic lettering is claimed.", "The tracked grayscale file remains below 300 effective dpi at its review placement."]
+baked_content_audit = ["No semantic lettering is claimed.", "At the TeX-owned 3.55-inch height limit, keepaspectratio yields a 4.5896-inch width and 310.7 effective dpi."]
 tex_overlays = ["English and Latin names, chronology, status, scale notice, and source notes are TeX-owned."]
 consumer_plate_ids = ["plt-historical-early-medieval"]
 consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
@@ -842,156 +842,9 @@ bit_depth = 8
 color_mode = "grayscale"
 bytes = 704175
 sha256 = "613ee9f2fbba6f64c0386bce82d53bda02205cf1a97540d94f53b30244957b69"
-max_placement_width_in = 7.34
+max_placement_width_in = 4.5896
 max_placement_height_in = 3.55
-effective_dpi = 194.2779
-[artworks.reviews]
-factual = "pending"
-visual = "passed"
-print = "pending"
-rights = "pending"
-consumer = "pending"
-release = "pending"
-
-[[artworks]]
-id = "art-rsd-hist-002"
-object_ids = ["obj-hist-folded-chasuble", "obj-hist-broad-stole", "obj-hist-triple-candle"]
-variant_ids = []
-view = "comparison"
-workflow_state = "visual-review-passed"
-purpose = "Priestly-review comparison of three forms absent from the revised Holy Week rites."
-depicted_state = "Isolated folded chasuble, broad stole, and reed bearing exactly three candles; not to common scale."
-source_controlled_features = ["The three candles and the two distinct vestural silhouettes remain visually separate."]
-deliberate_omissions = ["No claim that these forms remain in the revised 1962 Holy Week rites is baked into the raster."]
-brief = "Monochrome graphite comparison of folded chasuble, broad stole, and triple candle on reed on white."
-exact_prompt = "Exact generation prompt was not durably preserved. The surviving project brief is recorded in research/historical-artwork-manifest.md; no verbatim reconstruction is claimed."
-generator = "OpenAI built-in image generation tool; exact model identifier and runtime not exposed."
-generated_on = "2026-07-27"
-asset = "shared/artwork/pencil/RSD-HIST-002-pre-1955-objects.png"
-reference_ids = []
-precursor_ids = []
-corrections = []
-baked_content_audit = ["Exactly three candles are visible.", "The tracked grayscale file remains below 300 effective dpi at its review placement."]
-tex_overlays = ["English and Latin names, reform chronology, status, scale notice, and source notes are TeX-owned."]
-consumer_plate_ids = ["plt-historical-pre-1955"]
-consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
-rights = "Project-generated reconstruction; source, rights, and release review remain pending."
-[artworks.received]
-width_px = 1024
-height_px = 1536
-bit_depth = 8
-color_mode = "rgb"
-bytes = 1888324
-sha256 = "b6f1a57295026a9b88ca0cfd78bcc3fede748405c1aaf4aaa66bbf962e4f65da"
-[artworks.normalized]
-path = "shared/artwork/pencil/RSD-HIST-002-pre-1955-objects.png"
-width_px = 1024
-height_px = 1536
-bit_depth = 8
-color_mode = "grayscale"
-bytes = 611323
-sha256 = "3263d01430d30c57209f1e4ecbcf1e7279771aceb0d96c4a819566bd3b7b8916"
-max_placement_width_in = 7.34
-max_placement_height_in = 4.85
-effective_dpi = 139.5095
-[artworks.reviews]
-factual = "pending"
-visual = "passed"
-print = "pending"
-rights = "pending"
-consumer = "pending"
-release = "pending"
-
-[[artworks]]
-id = "art-dic-cr-003"
-object_ids = ["obj-ciborium", "obj-portable-pyx", "obj-paten", "obj-chalice", "obj-communion-plate"]
-variant_ids = []
-view = "comparison"
-workflow_state = "generated"
-purpose = "Held corrected lead for distinguishing Communion vessels and showing the Communion plate in use."
-depicted_state = "Five isolated specimens plus a cropped administration context; relative scales are not established."
-source_controlled_features = ["Circular portable pyx partly enclosed in a textile carrier.", "Handled Communion plate held beneath the communicant's chin."]
-deliberate_omissions = ["No labels, arrows, color, watermark, extra full figures, or universal scale claim."]
-brief = "Dense monochrome graphite plate of ciborium, portable pyx and carrier, paten, chalice, Communion plate, and a cropped administration context."
-exact_prompt = "The exact generation prompt was not durably preserved. The prompt summary and correction rationale are recorded in research/slices/communion-reservation.md; no verbatim reconstruction is claimed."
-generator = "OpenAI built-in image generation tool; exact model identifier and runtime not exposed."
-generated_on = "2026-07-27"
-asset = "shared/artwork/pencil/DIC-ART-CR-003-communion-vessels-tools-corrected.png"
-reference_ids = []
-precursor_ids = []
-corrections = ["Corrects rejected file-dic-art-cr-001: the trinket-like case is replaced by a circular portable pyx partly enclosed in a textile carrier.", "No separate pre-normalization binary was retained; the received table repeats the earliest retained tracked identity."]
-baked_content_audit = ["Five specimens remain visually distinct.", "Carrier construction and wearing arrangement, hand and plate morphology, and relative scale remain unverified.", "The placement dimensions below are a review limit, not evidence of completed print review."]
-tex_overlays = ["All names, qualifications, scale notices, and source notes remain TeX-owned."]
-consumer_plate_ids = []
-consumer_edition_ids = []
-rights = "Project-generated raster; no third-party reference image was supplied. Rights and release review remain pending."
-[artworks.received]
-width_px = 1024
-height_px = 1536
-bit_depth = 8
-color_mode = "grayscale"
-bytes = 735595
-sha256 = "b3c72ca91d3b6848e4051c091cf40c1a3000781cac5811ba7d60b9bbb5cb15c4"
-[artworks.normalized]
-path = "shared/artwork/pencil/DIC-ART-CR-003-communion-vessels-tools-corrected.png"
-width_px = 1024
-height_px = 1536
-bit_depth = 8
-color_mode = "grayscale"
-bytes = 735595
-sha256 = "b3c72ca91d3b6848e4051c091cf40c1a3000781cac5811ba7d60b9bbb5cb15c4"
-max_placement_width_in = 3.2
-max_placement_height_in = 4.8
-effective_dpi = 320.0
-[artworks.reviews]
-factual = "pending"
-visual = "passed"
-print = "pending"
-rights = "pending"
-consumer = "pending"
-release = "pending"
-
-[[artworks]]
-id = "art-dic-cr-004"
-object_ids = ["obj-tabernacle", "obj-tabernacle-veil", "obj-sanctuary-lamp", "obj-monstrance", "obj-lunette"]
-variant_ids = []
-view = "comparison"
-workflow_state = "generated"
-purpose = "Held corrected lead for reservation and exposition objects and the Host-lunette relationship."
-depicted_state = "Isolated tabernacle, veil, sanctuary lamp, monstrance with Host supported by a lunette, and enlarged empty lunette; not to common scale."
-source_controlled_features = ["Single Host supported by a visible lunette in one sunburst monstrance.", "Separate enlarged empty lunette with upward tips and lower fitting.", "Three-chain sanctuary lamp."]
-deliberate_omissions = ["No arrows, prose captions, color, watermark, duplicate supports, or universal morphology claim."]
-brief = "Dense monochrome graphite plate of tabernacle, veil, sanctuary lamp, monstrance with Host and lunette, and an enlarged empty lunette."
-exact_prompt = "The exact generation prompt was not durably preserved. The prompt summary and correction rationale are recorded in research/slices/communion-reservation.md; no verbatim reconstruction is claimed."
-generator = "OpenAI built-in image generation tool; exact model identifier and runtime not exposed."
-generated_on = "2026-07-27"
-asset = "shared/artwork/pencil/DIC-ART-CR-004-reservation-exposition-corrected.png"
-reference_ids = []
-precursor_ids = []
-corrections = ["Corrects rejected file-dic-art-cr-002: the redundant empty circular inset is removed and the Host-lunette relationship is made visible.", "No separate pre-normalization binary was retained; the received table repeats the earliest retained tracked identity."]
-baked_content_audit = ["The tabernacle's Chi-Rho-like mark and veil's fleur-de-lis are decorative generated devices, not evidence of universal form.", "Veil, Host, lunette, lamp, scale, and all object morphology remain subject to source-based independent review.", "The placement dimensions below are a review limit, not evidence of completed print review."]
-tex_overlays = ["All names, qualifications, scale notices, and source notes remain TeX-owned."]
-consumer_plate_ids = []
-consumer_edition_ids = []
-rights = "Project-generated raster; no third-party reference image was supplied. Rights and release review remain pending."
-[artworks.received]
-width_px = 1024
-height_px = 1536
-bit_depth = 8
-color_mode = "grayscale"
-bytes = 718041
-sha256 = "c42132799aaeeeff4f2a1a543d135708b158065eed4e16f9253893f47792eeda"
-[artworks.normalized]
-path = "shared/artwork/pencil/DIC-ART-CR-004-reservation-exposition-corrected.png"
-width_px = 1024
-height_px = 1536
-bit_depth = 8
-color_mode = "grayscale"
-bytes = 718041
-sha256 = "c42132799aaeeeff4f2a1a543d135708b158065eed4e16f9253893f47792eeda"
-max_placement_width_in = 3.2
-max_placement_height_in = 4.8
-effective_dpi = 320.0
+effective_dpi = 310.7025
 [artworks.reviews]
 factual = "pending"
 visual = "passed"

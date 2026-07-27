@@ -14,10 +14,12 @@ historical section. It does not yet contain verified dictionary entries.
 ## Current generated selection
 
 The present `main.tex` is a publication-capable shell that consumes only the
-generator-admitted `ed-comprehensive` selection under `build/`. That
-generated selection is empty because there are no publication-ready
-canonical objects. The shell therefore renders a held notice, not object
-records, verified captions, an exhaustive inventory, or approved plates.
+generator-admitted `ed-comprehensive` selection under `build/`. The
+authoritative selection is empty because there are no publication-ready
+canonical objects. The separately manifested priestly-review selection admits
+six source-audited object records and visibly omits the other 37 records in
+the current 43-record inventory. It is a bounded review sample, not an
+exhaustive inventory or a set of approved plates.
 
 When populated, `ed-comprehensive` selects every `publication-ready` canonical
 record admitted by `shared/schema/edition-selections.toml`: the declared Roman

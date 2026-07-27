@@ -14,10 +14,12 @@ explain layering, rank-dependent use, placement, or transfer.
 ## Current generated selection
 
 The present `main.tex` is a publication-capable shell that consumes only the
-generator-admitted `ed-pontifical` selection under `build/`. That generated
-selection is empty because there are no publication-ready canonical objects,
-and the shell makes no rubrical or rank distinction. It therefore renders a
-held notice, not a verified inventory or ceremonial sequence.
+generator-admitted `ed-pontifical` selection under `build/`. The authoritative
+selection is empty because there are no publication-ready canonical objects.
+The separately manifested priestly-review selection admits six ordinary
+supporting-object records and visibly omits the other 37 records in the current
+43-record inventory. It makes no verified rubrical or rank distinction and is
+not a ceremonial sequence.
 
 When populated, `ed-pontifical` selects only `publication-ready` records. It
 includes the `pontifical-and-prelatial` category in union with records whose

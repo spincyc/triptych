@@ -186,6 +186,12 @@ the object claims in this slice.
 
 ## Merge gate
 
+The corrected rasters remain exhaustive held asset-file records, but they have
+no aggregate `artworks` eligibility records. Their unsupported depicted-object
+links were removed rather than converted into canonical identities. This
+preserves the negative result while the source and morphology gates below
+remain open.
+
 Do not copy these leads into canonical TOML or select any artwork asset for
 publication until:
 

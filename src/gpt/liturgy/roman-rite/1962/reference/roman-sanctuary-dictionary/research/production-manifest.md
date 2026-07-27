@@ -46,32 +46,28 @@ authoritative-release approval.
 ## Artifact ledger
 
 The six installed priestly-review snapshots were regenerated and rebuilt
-after the review-admission gate was tightened. Each is six portrait pages and
+after the artwork-hold and review-admission records were reconciled. Each is six portrait pages and
 renders six admitted records with candidate artwork conspicuously marked
 `ARTWORK UNDER REVIEW`. Automated PDF inspection finds six embedded images in
-each copy and no image below 300 effective dpi. Full-size visual, physical
-print, and monochrome-photocopy review of these exact snapshots remains open.
+each copy and no image below 300 effective dpi. A bounded every-page visual
+screen found no clipping, overlap, spill page, or obvious monochrome
+legibility defect. Full-size figure review, physical print, and
+monochrome-photocopy review of these exact snapshots remains open.
 
 | Leaf | Installed PDF SHA-256 |
 | --- | --- |
-| comprehensive | `517d5c3d517cbf9395fef165c817b8751bd879bae28f6a1b42bb932a1379b1d6` |
-| altar-server | `02be3ff41f7fffe88d023012473de6efc0fe38f64190dc7714239b944dd486cc` |
-| sacristan | `b2dd757c495941dc82cdef981aac394ab746305777fd5c029a117e41957bb406` |
-| mc-trainer | `7d1373a6cc522cddc5795fff10a63dd8454b86ee5924a2a10fcb2d88006f54f1` |
-| general-reader | `c831b1e852b6378f0600f9366543ca046f8964db0a77c6bd393f69bbe18004c7` |
-| pontifical-ceremonies | `aebfc52d1aec0b04cf761760f0a55f8db36806bd7c1c17eec1d1ed08a0445c1e` |
+| comprehensive | `d57f6297b85aa1097752c97a0d8061fe34aab47afbc7e3d1004ef345afa2e902` |
+| altar-server | `e1c3f17a610e75bfa7e3d58b9a50e1cc7c5f9aa748497281bc06c5c3c6270804` |
+| sacristan | `3bb8c5670e84e81c4b57ffcf59fc286f7bf514191762bd1cfb3bdb3d962d046e` |
+| mc-trainer | `ebc1b408a7065564018240a95d60de430651d4f28fd3fc5b7fc8e5323964f94d` |
+| general-reader | `8a88485e6920195f8327c35a9d658808ef5ab277e0f2611ca98413c81612cd78` |
+| pontifical-ceremonies | `b1ab32dedc937cd8c40276ebd486f12472bd985698b9ddcb38f53a4e16739cb2` |
 
 All six snapshots admit the same six records presently capable of the bounded
-review gate and print a 32-record omission register. This is an honest
+review gate and print a 37-record omission register from the current 43-record
+inventory. This is an honest
 review corpus, not the promised complete dictionary or a claim that the
 audience editions have reached their final differentiated scope.
-
-Those exact installed snapshots predate five subsequently added historical
-`identified` records. The canonical structured inventory now contains 43
-records. With the admission set unchanged, fresh generator output would retain
-the six admitted records and list 37 omissions. This ledger records no such
-regeneration or rebuild; the hashes above remain identities of the installed
-six-plus-32 snapshots.
 
 The project convention now makes every installed review paper publicly
 discoverable in the public alpha. That distribution rule does not promote a

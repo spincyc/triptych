@@ -19,7 +19,8 @@ The authoritative `ed-mc-trainer` selection is empty because there are no
 publication-ready canonical objects or verified ceremonial sequences. The
 present `main.tex` instead consumes the separately manifested priestly-review
 selection under `build/`. The recorded review snapshot dated 2026-07-27
-contains these six object records:
+contains these six object records and a 37-record omission register for the
+current 43-record inventory:
 
 - altar bells, altar candle, and altar candlestick;
 - chalice and paten; and

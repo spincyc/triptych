@@ -38,6 +38,12 @@ missing object-level link. The sacristy-preparation comparison remains held
 at `generated` because of its recorded unsupported ornaments and uncontrolled
 cabinet morphology.
 
+The Communion/reservation corrected leads and the pre-1955 composite remain
+only as held `asset_files`. Their former artwork-link records were removed
+because source-controlled canonical identities do not exist for every object
+they depict. The negative findings remain in the owning slice and historical
+inventory; technical custody must not be mistaken for eligibility.
+
 ## Required audit per asset
 
 Record prompt or brief; exact creator/model/runtime disclosure where exposed;

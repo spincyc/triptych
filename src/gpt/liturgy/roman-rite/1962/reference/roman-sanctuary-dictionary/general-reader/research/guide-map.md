@@ -17,8 +17,8 @@ The present `main.tex` consumes the generator-admitted priestly-review view of
 `ed-general-reader`. At this audit it contains six source-audited canonical
 records with artwork admitted for bounded review: altar bells, altar candle,
 altar candlestick, chalice, paten, and sanctuary lamp. The generated
-record-level omission register excludes every other structured record and
-states the blocking reason. The leaf-owned audience apparatus additionally
+record-level omission register excludes the other 37 records in the current
+43-record inventory and states the blocking reason. The leaf-owned audience apparatus additionally
 discloses missing categories and general-reader functions.
 
 This is an eligibility sample, not yet a representative survey. In
