@@ -41,6 +41,14 @@ identity, morphology, scale, arrangement, ceremonial use, historical state, or
 an actor's liturgical action. AI creation supplies no human artwork,
 liturgical, ceremonial, or ecclesiastical review.
 
+No external human-review cycle will be available for some time. Human,
+priestly, specialist, intended-reader, physical-use, and ecclesiastical review
+therefore remain honestly recorded as deferred gates, but they do not pause or
+block continued research, revision, artwork production, mechanical and
+AI-assisted audit, building, installation, public-alpha binding, integration,
+push, or deployment. Do not repeatedly request unavailable review and never
+convert internal or AI checking into a claim that human review occurred.
+
 ## Current integration and publication state
 
 The repaired public-alpha snapshot is integrated on `main` through commit
@@ -245,6 +253,10 @@ the same substantive edit.
   the sanctuary pictorial dictionaries and altar-server guides, subject to
   exact provenance, rights, source-control, consumer, and review records and
   without treating generated output as human factual or artistic review.
+- 2026-07-27: Recorded that no external human-review cycle will be established
+  for some time. Human and ecclesiastical gates remain explicit and deferred,
+  but no longer pause the continuing public-alpha production and deployment
+  workflow.
 - Earlier conversation history is not itself a durable repository source.
   Any additional remembered agreement must be added here immediately and
   reconciled against the repository rather than inferred away.

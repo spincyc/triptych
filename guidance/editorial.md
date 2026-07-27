@@ -14,6 +14,14 @@ A genre profile may add stricter requirements but may not weaken this standard. 
 
 These publications aid study, prayerful understanding, and responsible research. They are not official liturgical books, critical editions, catechisms, magisterial acts, canonical opinions, or substitutes for competent pastoral or legal advice.
 
+When an external human-review cycle is not presently available, retain every
+applicable human, clerical, specialist, intended-reader, physical-use, and
+ecclesiastical gate as deferred and conspicuous, but do not suspend otherwise
+authorized public-alpha work merely to wait for that review. Continue all
+source, content, internal audit, production, installation, and publication
+steps that can be completed honestly. Internal, agent, or AI-assisted review
+never becomes human or independent review by relabeling.
+
 ## Reader-first structure
 
 After a title page and table of contents, if used, begin with substantive content. Do not make readers cross an evidence key, scope statement, chronology, terminology boundary, legal-assumptions block, or review disclaimer to reach the work.

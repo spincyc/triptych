@@ -356,6 +356,13 @@ review links current. It does not authorize a `release` promotion and must
 never be recorded as human, priestly, specialist, ecclesiastical, rights,
 physical-print, intended-reader, or final editorial review.
 
+An unavailable external human-review cycle does not force an otherwise
+qualified alpha snapshot into `hold` and does not pause later alpha revisions.
+Keep each unavailable human or ecclesiastical gate explicit and deferred on
+the `review` entry and in the owning records while continuing the authorized
+publication workflow. Never promote deferred review to passed, independent,
+human-reviewed, authoritative, or final status.
+
 An explicit user deliverable—such as promised scope, minimum extent, named
 sections, formats, or publication surfaces—must be recorded in the owning
 research scope before work is represented as complete. If the installed paper
