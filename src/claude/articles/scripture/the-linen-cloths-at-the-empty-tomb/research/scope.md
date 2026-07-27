@@ -119,7 +119,10 @@ listed in `research/source-audit.md` remain outstanding. The reviewed PDF is
 installed at its mirrored `doc/` path. Its exact installed SHA-256 is
 `b8a10bf0727001adbe1cf8c8e161ce29e19819d1d84bb71e5759cacb20c09cf9`;
 the release manifest binds that snapshot under the project's perpetual
-public-repository authorization.
+public-repository authorization. That exact-byte authorization is distribution
+clearance only. It does not close or replace the outstanding independent
+exegetical, patristic, rabbinic, text-critical, or ecclesiastical reviews, and
+this edition must not be described as having passed any of those gates.
 
 ## First-baseline staleness review — 2026-07-26
 

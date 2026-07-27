@@ -87,16 +87,28 @@ was inspected only through a remotely accessible presentation. Because no
 exact authenticated artifact or canonical binding was acquired, it remains a
 research lead and supplies no reader claim in this revision.
 
-The installed eleven-page PDF with SHA-256
+The eleven-page PDF with SHA-256
 `1b936d3a7f621400085bab931ee52c8aa53fd4938e14ee7dc7848b6a1eeb99a8`
-is the previously reviewed 2026-07-27 snapshot. The present source repair adds
-the explicit ancient-version controls and reconciles the review language. It
-built cleanly in two passes as an eleven-page letter PDF with SHA-256
+was the previously reviewed 2026-07-27 snapshot. The subsequent source repair
+added the explicit ancient-version controls and reconciled the review
+language. Its candidate built cleanly in two passes as an eleven-page letter
+PDF with SHA-256
 `1920b2d0549bc0cba2eb9544cf14c2c9df0138f23167465ebc006e97f172cd26`;
 the settled log has no fatal error, undefined reference, overflow, or layout
 warning. All eleven review rasters were inspected with no clipping, overlap,
 blank page, or footer collision. The regenerated web candidate, SHA-256
 `794f7c954d09eadafe9acc1bf0bcaee4da0b094adf38fc6bea5392482cbef210`,
 was checked for the Vulgate and Septuagint-boundary text, terminal review
-language, generation metadata, and rights notice. Neither candidate has been
-installed or release-bound; those publication actions remain pending.
+language, generation metadata, and rights notice.
+
+The current installed and release-bound PDF is SHA-256
+`df2ea733358c3b4e0733eaf0f52f2b7bcf3cca62101065fd7d5406bf7db596b9`,
+and the current installed web edition is SHA-256
+`3c17f912035d7d3ae7cb71f10aeb43e1370e0b56aef5f6d5a77a5594ddc11754`.
+Those identities are established by the installed artifacts and exact release
+records; they are not the reviewed candidate hashes above. No tracked record
+currently proves that the every-page review was performed against the exact
+current PDF bytes or that the candidate web review was repeated against the
+exact current web bytes. Exact-current-snapshot PDF, web, and every-page hard
+review therefore remain open. Release binding records distribution clearance
+for the exact bytes; it does not supply or replace that production review.

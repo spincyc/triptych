@@ -140,7 +140,12 @@ substantive expansion, and exact-snapshot every-page review remain open.
 Commit `242aa461` restored bounded burial-practice and material context in the
 GPT paper and rebuilt its artifacts. Current source, PDF, web, audit, and
 every-page evidence still require one exact-snapshot reconciliation. The
-Claude edition is independently stale.
+Claude edition is independently stale. Publication-local records now identify
+the exact installed GPT PDF and web bytes separately from the earlier reviewed
+candidates and retain the exact-current every-page gate as open. Claude's
+record likewise states explicitly that exact-byte distribution clearance does
+not close its deferred independent exegetical, patristic, rabbinic,
+text-critical, or ecclesiastical reviews.
 
 ### Altar-server guide series
 

@@ -4,8 +4,9 @@
 - **Identity:** provider counterpart to
   `claude:articles/scripture/the-linen-cloths-at-the-empty-tomb`; independent
   prose and publication-local judgments.
-- **State:** source-audited GPT publication prepared for installed PDF,
-  canonical web edition, catalog exposure, and exact-snapshot release.
+- **State:** source-audited GPT publication with installed PDF and web
+  editions and exact-byte release distribution clearance; exact-current
+  production and every-page hard review remain open.
 - **Question:** what do John 20:3–10 and Luke 24:12 attribute to Peter and the
   other disciple, what can the cloth arrangement support, and is the
   folded-napkin return signal historically attested?
@@ -46,3 +47,21 @@ The historical first-baseline comparison is recorded in
 statements describe the snapshot reviewed that day and were superseded by the
 documented 2026-07-27 completion pass; they are not current release-state
 claims.
+
+## Exact publication identity and remaining review
+
+The current installed and release-bound PDF is the eleven-page artifact at
+SHA-256
+`df2ea733358c3b4e0733eaf0f52f2b7bcf3cca62101065fd7d5406bf7db596b9`.
+The current installed web edition is SHA-256
+`3c17f912035d7d3ae7cb71f10aeb43e1370e0b56aef5f6d5a77a5594ddc11754`.
+The release binding is exact-byte distribution clearance, not evidence of
+independent, ecclesiastical, or exact-current-snapshot production review.
+
+The production evidence retained in `research/source-audit.md` identifies
+earlier reviewed candidate hashes rather than these exact current bytes. Until
+the exact current PDF and web artifacts receive and record the required
+comparison and every-page review, the promised exact-snapshot hard-review gate
+remains open. The completed internal source, quotation, and
+theological-boundary review is not promoted to independent or ecclesiastical
+review.

@@ -275,3 +275,5 @@ in modern copyrighted commentaries.
 
 Internally source-audited. **No independent exegetical, patristic, rabbinic,
 text-critical or ecclesiastical review.** No ecclesiastical approval claimed.
+The exact installed PDF's release binding is distribution clearance only and
+does not alter these deferred review gates.
