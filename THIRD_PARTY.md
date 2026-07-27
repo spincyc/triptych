@@ -119,25 +119,14 @@ Their course-wide provenance and rights boundary are recorded in the adjacent
 
 ## Fonts and External Software
 
-Published PDFs embed Latin Modern font programs. The Low Mass child booklet
-and trainer manual embed Atkinson Hyperlegible Next 2.001 Regular, Bold,
-Regular Italic, and Bold Italic, plus Atkinson Hyperlegible Mono 2.001 Regular
-for compact terminal file-name references. The Low Mass flash cards embed
-Atkinson Hyperlegible Next 2.001 Regular and Bold, plus Atkinson Hyperlegible
-Mono 2.001 Regular for the same limited purpose.
-
-Those fonts are supplied by Braille Institute of America and are not relicensed
-under CC BY 4.0. The current Braille Institute distribution links an EULA file
-identified as SIL Open Font License 1.1, and Google Fonts distributes its
-version under SIL Open Font License 1.1. The embedded local 2.001 font metadata
-separately permits free commercial and noncommercial use without derivatives
-or alteration and reports editable embedding. This record preserves those
-statements without treating either as a silent reconciliation of the other or
-as a broader rights conclusion. The PDFs embed subsetted font programs. The
-`atkinson` TeX support files are supplied separately under the LaTeX Project
-Public License. TeX packages and other build dependencies are external software
-governed by their own licenses; they are not vendored merely because the build
-invokes them.
+Published PDFs embed Latin Modern font programs. The altar-server guides embed
+Libertinus Serif, Sans, and Mono font programs as used. Libertinus is supplied
+by the Libertinus Project and is not relicensed under CC BY 4.0. The installed
+font metadata identifies SIL Open Font License 1.1; the `libertinus` TeX
+support files are supplied separately under the LaTeX Project Public License.
+The PDFs embed subsetted font programs. TeX packages and other build
+dependencies are external software governed by their own licenses; they are
+not vendored merely because the build invokes them.
 
 ## Reuse and Contributions
 

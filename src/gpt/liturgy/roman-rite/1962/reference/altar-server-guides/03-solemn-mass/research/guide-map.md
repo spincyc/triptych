@@ -53,6 +53,15 @@ A1/A2 with each named recipient's bows; after the people he completes the
 turning genuflection, closes the thurible, and leads the torch party to its
 reset while the boat stays at its sanctuary station.
 
+The Gospel-station drawing uses corrected pencil asset `ASG-ART-010` for
+SO-021--SO-023. Its TeX-owned labels identify A1 and A2 flanking the book, SD
+supporting it for D, MC attending, and Th waiting outward with the closed
+thurible; Bb is correctly absent after returning to base. It is a schematic
+role-and-formation aid, not a scale plan: the parish's marked distances, exact
+stations, and traffic route remain local rehearsal data. The series artwork
+manifest owns the asset's provenance, identity, rights, consumers, and review
+state.
+
 The adult lights, gives, receives, and extinguishes the four torches. The
 ordinary torch branch leaves after the chalice elevation; the faithful-
 Communion and fast-day branches remain through the first wine ablution at

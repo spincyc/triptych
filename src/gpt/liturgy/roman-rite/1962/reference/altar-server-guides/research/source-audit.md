@@ -152,18 +152,19 @@ illustration was copied.
 Canonical Latin was independently collated from the identified Missal.
 Displayed ae and oe typography, syllable breaks, stress marks, capitalization
 used to show stress, broad IPA, young-server-readable sound lines, brief meanings,
-movement prose, original sanctuary diagrams, and card design are editorial
-layers. They are not represented as text printed in the Missal or Liber.
+movement prose, original sanctuary diagrams, card design, and the selection of
+Libertinus typography are editorial layers. They are not represented as text
+printed in the Missal or Liber.
 
 Only response-sized Latin is reproduced. No third-party diagram, chant page,
 manual table, or extended prose is copied. Scans, official texts, liturgical
 texts, chant, and manuals retain their own rights status and are not installed
-in this repository. Atkinson Hyperlegible Next 2.001 is an external font
-program and is not relicensed as project-created content. The current upstream
-OFL record and the installed font metadata's separate no-derivatives wording
-are both retained in the edition manifest. The selected pdfTeX route and
-weights are recorded there; final embedded-font, glyph, and fallback results
-belong to the production record.
+in this repository. Libertinus is an external font family and is not
+relicensed as project-created content. Its installed font metadata identifies
+SIL Open Font License 1.1, while the TeX support files retain the LaTeX Project
+Public License. The selected pdfTeX route and faces are recorded in the edition
+manifest; final embedded-font, glyph, and fallback results belong to the
+production record.
 
 ## Outstanding independent checks
 

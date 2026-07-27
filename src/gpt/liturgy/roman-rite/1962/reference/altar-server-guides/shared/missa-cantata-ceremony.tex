@@ -47,7 +47,6 @@ catalog row. Its integrated response deck is on physical pages 1--8 and its
 action deck is on pages 9--12; each complete range begins on an odd page.
 \end{coachbox}
 
-\Needspace{30\baselineskip}
 \subsection{Today's Mass}
 
 Fill this in with the priest or MC before anyone vests. A blank is an unanswered
@@ -122,7 +121,6 @@ of answering:
   those only when the director has assigned him to do so.
 \end{itemize}
 
-\Needspace{8\baselineskip}
 \begin{watchbox}{Three source labels}
 \textsc{Missal} marks a rule stated in the 1962 Missal. \textsc{Model} marks
 the ordinary ceremonial pattern used by this guide, based on the contemporary
@@ -133,6 +131,10 @@ choice into a surprise during Mass.
 
 \subsection{The model roster}
 
+\begingroup
+\renewcommand{\rolecard}[2]{\item[\textbf{#1}] #2}
+\begin{description}[leftmargin=0pt,labelindent=0pt,labelwidth=0pt,labelsep=0pt,style=nextline,
+  topsep=0.2em,itemsep=0.25em]
 \rolecard{MC --- master of ceremonies}{Knows the complete route, cues the
 team quietly, assists the priest when assigned, and fixes problems without
 drawing attention to them. In this model MC handles the biretta, serves the
@@ -157,6 +159,8 @@ upright and steady. Some ordinary entrances have no cross-bearer; this is a
 \rolecard{L --- assigned lesson singer, alternate branch}{The priest sings the
 Epistle in the default model. If another qualified minister is assigned, L
 uses MC-020 and is added to the roster before vesting.}
+\end{description}
+\endgroup
 
 \begin{watchbox}{Why ``Today's Mass'' must be completed}
 General Rubric 426 permits incense at a sung Mass but does not require it at a
@@ -398,6 +402,8 @@ MC-028.}{Skip
 if there is no Credo.}
 \end{actiontable}
 
+\MCGospelFormationDiagram
+
 \actionsection{Offertory}
 
 \begin{actiontable}
@@ -561,7 +567,6 @@ ablutions. This model binds the task to MC.}
 % This last chronology heading needs room for its repeated table head and the
 % opening row; the ordinary action-section reserve is too short at this exact
 % page boundary.
-\Needspace{16\baselineskip}
 \actionsection{Postcommunion, Last Gospel, and recession}
 
 \begin{actiontable}

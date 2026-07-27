@@ -501,24 +501,56 @@
     \fi}}}
 
 \newcommand{\LMSceneStart}{%
-  \LMBeginScene
-    \LMAltarBackdrop
-    \LMMissalEpistle
-    \LMLevelMarkers
-    \LMStandingServerAt{7.0}{0.18}{SECOND ACOLYTE}
-    \LMStandingPriestAt{12}{0.18}
-    \LMStandingServerAt{17.0}{0.18}{FIRST ACOLYTE}
-  \LMEndScene}
+  \ifTrainerManualGuide
+    \def\LMOpeningArtWidth{0.85\linewidth}%
+  \else
+    \def\LMOpeningArtWidth{0.633\linewidth}%
+  \fi
+  \begin{center}
+  \begin{tikzpicture}
+    \node[inner sep=0pt] (art) {%
+      \includegraphics[width=\LMOpeningArtWidth]{%
+        liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-001-lm-start.png}};
+    \node[lm role tag,anchor=south] at ($(art.south west)!0.275!(art.south east)+(0,1.5mm)$)
+      {SECOND ACOLYTE};
+    \node[lm role tag,anchor=south] at ($(art.south west)!0.500!(art.south east)+(0,1.5mm)$)
+      {PRIEST};
+    \node[lm role tag,anchor=south] at ($(art.south west)!0.715!(art.south east)+(0,1.5mm)$)
+      {FIRST ACOLYTE};
+    \node[lm role tag,anchor=east] at ($(art.south west)!0.22!(art.south east)+(0,3mm)$)
+      {1 FIRST STEP};
+    \node[lm role tag,anchor=east] at ($(art.south west)!0.22!(art.south east)+(0,7mm)$)
+      {2 SECOND STEP};
+    \node[lm role tag,anchor=east] at ($(art.south west)!0.22!(art.south east)+(0,11mm)$)
+      {3 PREDELLA};
+  \end{tikzpicture}
+  \end{center}}
 
 \newcommand{\LMSceneFootKneel}{%
-  \LMBeginScene
-    \LMAltarBackdrop
-    \LMMissalEpistle
-    \LMLevelMarkers
-    \LMKneelingServerAt{7.0}{0.18}{SECOND ACOLYTE}
-    \LMStandingPriestAt{12}{0.18}
-    \LMKneelingServerAt{17.0}{0.18}{FIRST ACOLYTE}
-  \LMEndScene}
+  \ifTrainerManualGuide
+    \def\LMFootArtWidth{0.85\linewidth}%
+  \else
+    \def\LMFootArtWidth{0.633\linewidth}%
+  \fi
+  \begin{center}
+  \begin{tikzpicture}
+    \node[inner sep=0pt] (art) {%
+      \includegraphics[width=\LMFootArtWidth]{%
+        liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-002-lm-foot-kneel.png}};
+    \node[lm role tag,anchor=south] at ($(art.south west)!0.305!(art.south east)+(0,1.5mm)$)
+      {SECOND ACOLYTE};
+    \node[lm role tag,anchor=south] at ($(art.south west)!0.500!(art.south east)+(0,1.5mm)$)
+      {PRIEST};
+    \node[lm role tag,anchor=south] at ($(art.south west)!0.700!(art.south east)+(0,1.5mm)$)
+      {FIRST ACOLYTE};
+    \node[lm role tag,anchor=east] at ($(art.south west)!0.22!(art.south east)+(0,3mm)$)
+      {1 FIRST STEP};
+    \node[lm role tag,anchor=east] at ($(art.south west)!0.22!(art.south east)+(0,7mm)$)
+      {2 SECOND STEP};
+    \node[lm role tag,anchor=east] at ($(art.south west)!0.22!(art.south east)+(0,11mm)$)
+      {3 PREDELLA};
+  \end{tikzpicture}
+  \end{center}}
 
 \newcommand{\LMSceneNormalPlaces}{%
   \LMBeginScene
@@ -531,19 +563,28 @@
   \LMEndScene}
 
 \newcommand{\LMSceneMissalMove}{%
-  \LMBeginScene
-    \LMAltarBackdrop
-    \LMLevelMarkers
-    \LMStandingServerAt{15.8}{2.05}{FIRST}
-    \LMCarriedMissal{15.8}{3.18}
-    \LMStandingServerAt{4.7}{0.73}{SECOND\\STANDS CLEAR}
-    % First carries one book by the actual down-centre-up route. The following
-    % scene shows the completed placement at the Gospel corner.
-    \draw[lm route]
-      (15.35,2.58) .. controls (14.45,1.15) and (13.05,0.52) ..
-      (12,0.42) .. controls (10.85,0.52) and (9.20,0.95) .. (8.15,1.55);
-    \node[lm object tag,anchor=south] at (8.05,1.90) {TO GOSPEL};
-  \LMEndScene}
+  \ifTrainerManualGuide
+    \def\LMMissalArtWidth{0.85\linewidth}%
+  \else
+    \def\LMMissalArtWidth{0.633\linewidth}%
+  \fi
+  \begin{center}
+  \begin{tikzpicture}
+    \node[inner sep=0pt] (art) {%
+      \includegraphics[width=\LMMissalArtWidth]{%
+        liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-005-lm-missal-move-corrected.png}};
+    \node[lm role tag] at ($(art.south west)!0.270!(art.south east)+(0,22mm)$)
+      {SECOND STANDS CLEAR};
+    \node[lm role tag] at ($(art.south west)!0.745!(art.south east)+(0,22mm)$)
+      {FIRST WITH MISSAL};
+    \draw[lm route] ($(art.south west)!0.73!(art.south east)+(0,5mm)$)
+      .. controls ($(art.south west)!0.62!(art.south east)+(0,-1mm)$)
+      and ($(art.south west)!0.42!(art.south east)+(0,-1mm)$) ..
+      ($(art.south west)!0.31!(art.south east)+(0,7mm)$);
+    \node[lm object tag,anchor=south] at ($(art.south west)!0.50!(art.south east)+(0,1mm)$)
+      {TO GOSPEL SIDE};
+  \end{tikzpicture}
+  \end{center}}
 
 \newcommand{\LMSceneGospel}{%
   \LMBeginScene
@@ -572,24 +613,24 @@
 \newcommand{\LMSceneCruets}{\LMSceneCruetService}
 
 \newcommand{\LMSceneLavabo}{%
-  \LMBeginScene
-    \LMAltarBackdrop
-    \LMMissalGospel
-    \LMLevelMarkersLeft
-    \LMStandingPriestAt{14.2}{2.04}
-    \LMStandingServerAt{19.40}{1.38}{}
-    \LMStandingServerAt{21.70}{1.38}{}
-    \LMTowel{19.40}{3.00}
-    \LMBowl{22.02}{3.04}
-    \begin{scope}[rotate around={-24:(21.15,3.52)}]
-      \LMCruet{21.15}{3.35}{A}
-    \end{scope}
-    \node[lm role tag,anchor=south] at (17.25,4.92)
-      {FIRST\\TOWEL};
-    \draw[lm detail] (18.25,4.82) -- (19.16,4.55);
-    \node[lm role tag,anchor=south] at (21.55,4.92)
+  \ifTrainerManualGuide
+    \def\LMLavaboArtWidth{0.85\linewidth}%
+  \else
+    \def\LMLavaboArtWidth{0.633\linewidth}%
+  \fi
+  \begin{center}
+  \begin{tikzpicture}
+    \node[inner sep=0pt] (art) {%
+      \includegraphics[width=\LMLavaboArtWidth]{%
+        liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-006-lm-lavabo-corrected.png}};
+    \node[lm role tag] at ($(art.south west)!0.600!(art.south east)+(0,28mm)$)
+      {PRIEST};
+    \node[lm role tag] at ($(art.south west)!0.755!(art.south east)+(0,23mm)$)
       {SECOND\\WATER + BOWL};
-  \LMEndScene}
+    \node[lm role tag] at ($(art.south west)!0.875!(art.south east)+(0,14mm)$)
+      {FIRST\\TOWEL};
+  \end{tikzpicture}
+  \end{center}}
 
 \newcommand{\LMSceneBell}{%
   \LMBeginScene

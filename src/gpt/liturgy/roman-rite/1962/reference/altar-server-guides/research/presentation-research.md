@@ -153,11 +153,11 @@ the typeface designer's authoritative account, not independent proof that the
 font improves comprehension, recall, reading speed, or performance for
 children ages eight to ten.
 
-The approved implementation is Atkinson Hyperlegible Next 2.001, deliberately
-selected after visual comparison of the capital `I`, `J`, and `L`. The local
-pdfTeX route embeds Type 1 regular, bold, regular italic, and bold italic;
-Atkinson Hyperlegible Mono 2.001 regular is confined to compact file-name or
-URL text in terminal apparatus. The Google Fonts
+An earlier implementation selected Atkinson Hyperlegible Next 2.001 after
+visual comparison of the capital `I`, `J`, and `L`. Its local pdfTeX route
+embedded Type 1 regular, bold, regular italic, and bold italic; Atkinson
+Hyperlegible Mono 2.001 regular was confined to compact file-name or URL text
+in terminal apparatus. The Google Fonts
 [license record](https://github.com/google/fonts/blob/main/ofl/atkinsonhyperlegiblenext/OFL.txt)
 identifies SIL Open Font License 1.1. The installed 2.001 font's own name-table
 notice separately permits free commercial and noncommercial use without
@@ -166,7 +166,14 @@ The discrepancy is recorded without treating either wording as if it were the
 other. The PDFs embed subsetted font programs; that technical observation
 does not reconcile the license evidence or characterize subsetting as a
 permitted alteration. The TeX support files retain the LaTeX Project Public
-License.
+License. This evaluation is retained as superseded design history.
+
+The current implementation uses Libertinus, whose traditional book forms give
+the guides a more reverent character while retaining clear differentiation,
+open counters, full Latin coverage, and regular, bold, and italic hierarchy.
+The local pdfTeX route embeds the Type 1 Libertinus faces actually used.
+Installed Libertinus font metadata identifies SIL Open Font License 1.1; the
+`libertinus` TeX support files identify the LaTeX Project Public License.
 
 The selected family must still be tested in the actual document, at actual
 size, on the intended printer and paper. Production must confirm every Latin
@@ -200,9 +207,9 @@ Passing the numeric floor is not proof of readability.
 The approved 11.5-point flash-card body is a deliberate exception below the
 12-point clear-print benchmark. No source reviewed here validates that
 exception. It must never shrink further, and it requires successful
-actual-size testing. The project must not claim that 11.5-point Atkinson
-Hyperlegible is equivalent to 12 point in another face without measuring the
-rendered type and testing it with readers.
+actual-size testing. The project must not claim that 11.5-point Libertinus is
+equivalent to 12 point in another face without measuring the rendered type and
+testing it with readers.
 
 ### Guided retrieval for primary-school learners
 
@@ -266,9 +273,9 @@ labels are literal strings.
 - Use US Letter portrait pages and black ink on white paper. Meaning, role,
   posture, sequence, and warnings must remain clear in monochrome photocopies;
   color may not carry information.
-- Use the approved Atkinson Hyperlegible Next 2.001 family consistently,
-  subject to the glyph, embedding, and fallback checks above. Use regular and
-  bold deliberately; do not introduce competing display faces.
+- Use the approved Libertinus family consistently, subject to the glyph,
+  embedding, and fallback checks above. Use regular and bold deliberately; do
+  not introduce competing display faces.
 - In the child booklet and trainer manual, continuous child-facing and trainer
   main-lane instructional prose is at least 12 point, with 14 point preferred
   where the actual-size prototype permits. Compact functional labels,
@@ -413,7 +420,7 @@ smaller type.
 The flash-card test must include:
 
 - an automated count of twenty-two fronts and twenty-two matched backs;
-- actual-size inspection of the 11.5-point Atkinson Hyperlegible Next body;
+- actual-size inspection of the 11.5-point Libertinus body;
 - a check that all headers, stages, regular cues, and bold responses are
   consistent;
 - a content check for one cue-to-response pair per card and no Confiteor,

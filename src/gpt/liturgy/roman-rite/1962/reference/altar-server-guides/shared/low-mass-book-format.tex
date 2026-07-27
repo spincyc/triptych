@@ -2,7 +2,6 @@
 % page-aligned trainer manual. Both import one ceremonial sequence. The child
 % lane stays action-first; the trainer may retain meanings and correction data.
 
-\usepackage[sfdefault]{atkinson}
 \usepackage{ragged2e}
 \geometry{letterpaper,margin=0.62in}
 \setlength{\RaggedRightRightskip}{0pt plus 1fil}
@@ -376,6 +375,10 @@
     {\fontsize{8.5}{10.5}\selectfont
       Follow the priest and the customs taught for your church. This is not an
       official liturgical book.\par}
+    \ifdefined\LMTitleApparatus
+      \vspace{10pt}
+      \LMTitleApparatus
+    \fi
   \end{titlepage}
   \setcounter{page}{2}}
 

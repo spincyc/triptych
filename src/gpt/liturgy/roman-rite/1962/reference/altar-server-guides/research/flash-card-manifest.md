@@ -93,9 +93,8 @@ way.
 
 All pages are US-letter portrait, black ink on white paper, printed two-sided
 at actual size and flipped on the long edge. Each face uses a two-column by
-four-row grid. Body type is fixed at 11.5-point Atkinson Hyperlegible Next
-2.001 and may not shrink. Cues are regular, responses bold, and both are
-top-aligned.
+four-row grid. Body type is fixed at 11.5-point Libertinus and may not shrink.
+Cues are regular, responses bold, and both are top-aligned.
 
 The three header zones are:
 

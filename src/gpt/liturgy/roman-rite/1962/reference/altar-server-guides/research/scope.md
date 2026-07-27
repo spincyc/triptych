@@ -110,7 +110,7 @@ servers' *Confiteor* is taught across three full-width phrase-ladder pages.
 There is no quiz, written exercise, self-score, or mastery record.
 
 The child and trainer books use US-letter portrait pages, black ink on white
-paper, and Atkinson Hyperlegible Next 2.001. The trainer edition imports the same
+paper, and Libertinus typography. The trainer edition imports the same
 thirty-three authored page units with the same hard page boundaries. Its
 left-hand rail adds only terse preparation, correction, branch, safety, or
 source-hierarchy notes. Genuflections are stated where needed but are not
@@ -190,13 +190,11 @@ liturgical text, official rubrics, chant, scans, fonts, and third-party
 manuals retain their own status. Availability of a scan is not permission to
 redistribute it. The guides quote only the Latin needed for response training,
 paraphrase pronunciation and ceremonial sources, and reproduce no third-party
-diagram or extended manual prose. Atkinson Hyperlegible Next remains an
-external font. Current upstream records identify SIL Open Font License 1.1,
-while the installed 2.001 font metadata retains separate no-derivatives
-wording. The PDFs embed subsetted font programs; that technical observation
-does not bring the font program under the project content license, reconcile
-the documentary difference, or characterize subsetting as a permitted
-alteration.
+diagram or extended manual prose. Libertinus remains an external font family.
+Installed font metadata identifies SIL Open Font License 1.1, while the TeX
+support files retain the LaTeX Project Public License. The PDFs embed subsetted
+font programs; that technical observation does not bring the font programs
+under the project content license.
 
 The response, pronunciation, and sung-form ceremonial records retain their
 completed internal audits. The redesigned Low-Mass text and route have been
