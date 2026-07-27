@@ -9,7 +9,7 @@ Matthew 4:24 and 12:22–45; Mark 1:21–28, 3:22–27, 5:1–20, and 9:14–29;
 4:31–37, 10:17–20, and 11:14–26; Acts 8:7, 16:16–18, and 19:11–20; Justin,
 *Second Apology* 6; Tertullian, *Apology* 23; Origen, *Against Celsus* 1.6,
 1.25, and 7.4; *Apostolic Tradition* 20–21; Cyril of Jerusalem,
-*Procatechesis* 9 and *Mystagogical Catechesis* 2.3; and Laodicea canon 26.
+*Procatechesis* 9 and *Mystagogical Catecheses* 1.4–9; and Laodicea canon 26.
 
 Material qualifications:
 
@@ -47,14 +47,15 @@ patristic, biblical, liturgical, and theological review.
 - Josephus's exact Whiston VIII.2.5 web witness is normalized, acquired, and
   inspected. Niese 8.45–49 is retained only as a cross-reference; no Niese
   Greek witness has been registered.
-- Justin's *Second Apology* and a dated public-domain ANF translation state are
-  normalized; chapter 6 still needs a bounded exact passage record.
+- Justin's *Second Apology* 6 is now controlled by a bounded exact passage in
+  the retained public-domain ANF volume 1 OCR. It establishes Justin's
+  apologetic claim, not its outcomes, frequency, or original Greek wording.
 
 Exact records remain necessary for Tobit's Greek recensions, Genesis
-Apocryphon 1Q20 XX, Qumran apotropaic texts, Tertullian
-23, Origen's three loci, the *Apostolic Tradition*, Cyril, and Laodicea 26.
-Prose concerning them remains narrow and does not claim original-language
-verification.
+Apocryphon 1Q20 XX, Qumran apotropaic texts, the *Apostolic Tradition*, and
+Laodicea 26. Exact dated English passage records now control the bounded
+Tertullian, Origen, Jerusalem, and Eusebius claims; none supplies
+original-language verification.
 
 ## Bounded reception matrix
 
@@ -70,8 +71,8 @@ verification.
 | Acts | 8:7; 16:16–18; 19:11–20 | Mission in Jesus' name and rejection of magical appropriation | A claim that the name works as a technique |
 | Greek apology | Justin, *Second Apology* 6; Origen, *Against Celsus* 1.6, 1.25, 7.4 | Christian apologetic claims about the name of Jesus and simplicity of prayer | Neutral case reports or rates of success |
 | Latin apology | Tertullian, *Apology* 23 | A public forensic challenge in Christian rhetoric | A transcript of a Roman proceeding |
-| Church-order tradition | *Apostolic Tradition* 20–21 | Scrutiny and pre-baptismal commands in a transmitted church-order complex | Secure unitary authorship by Hippolytus or a universal Roman rule ca. 215 |
-| Jerusalem catechesis | Cyril, *Procatechesis* 9; *Mystagogical Catechesis* 2.3 | Exorcism, renunciation, orientation, and confession within initiation | Identity with the later major exorcism |
+| Church-order tradition | *Apostolic Tradition* 20–21 | Uncontrolled research lead concerning scrutiny and pre-baptismal commands | No publication claim until the consulted textual form and translation are registered |
+| Jerusalem catechesis | Cyril, *Procatechesis* 9; *Mystagogical Catecheses* 1.4–9 | Exorcism, renunciation, orientation, and confession within initiation | Identity with the later major exorcism |
 | Conciliar discipline | Laodicea 26 | Local/conciliar restriction of exorcistic action to episcopally appointed persons | A universal apostolic office or the date of every later ordination form |
 
 ## Patristic reception matrix
@@ -84,13 +85,13 @@ support a quotation or a negative result.
 | Date / region | Witness and genre | Locus | Function | Finding and limit | State |
 | --- | --- | --- | --- | --- | --- |
 | c. 180, Gaul / Asia Minor reception | Irenaeus, doctrinal-polemical treatise | *Against Heresies* 1.10.1–3 | theology / method | One received rule of faith across languages; it does not enumerate a rite and is used to prevent local practice from being mistaken for dogma | exact OCR passage inspected |
-| mid-second century, Rome-facing Greek apology | Justin, apology | *Second Apology* 6 | extraordinary affliction / apologetic claim | Invocation of Jesus' name is offered as public Christian evidence; no neutral case record | edition inspected; bounded passage still desirable |
-| c. 197, Latin North Africa | Tertullian, forensic apology | *Apology* 23 | extraordinary affliction / apologetic claim | A courtroom challenge dramatizes Christian claims over beings worshipped as gods; not a transcript | exact reusable passage outstanding |
-| third century, Alexandria / Caesarea | Origen, learned apologetic reply | *Against Celsus* 1.6, 1.25, 7.4 | theology / apologetic claim | 1.6 and 7.4 contrast Christian means with magical apparatus; 1.25 advances a broader theory of efficacious names and must not be compressed into the same claim | exact public-domain edition and loci identified; reusable passages outstanding |
+| mid-second century, Rome-facing Greek apology | Justin, apology | *Second Apology* 6 | extraordinary affliction / apologetic claim | Invocation of Jesus' name is offered as public Christian evidence; no neutral case record | exact bounded ANF OCR passage inspected |
+| c. 197, Latin North Africa | Tertullian, forensic apology | *Apology* 23 | extraordinary affliction / apologetic claim | A courtroom challenge dramatizes Christian claims over beings worshipped as gods; not a transcript | exact dated Thelwall English passage inspected |
+| third century, Alexandria / Caesarea | Origen, learned apologetic reply | *Against Celsus* 1.6, 1.25, 7.4 | theology / apologetic claim | 1.6 and 7.4 contrast Christian means with magical apparatus; 1.25 advances a broader theory of efficacious names and must not be compressed into the same claim | exact dated Crombie English passages inspected |
 | composite, eastern and western church-order transmission | church-order complex conventionally called *Apostolic Tradition* | 20–21 | initiation | Scrutiny and pre-baptismal commands; authorship, unity, date, and Roman provenance disputed | critical-edition control outstanding |
-| fourth century, Jerusalem | Cyril and the Jerusalem mystagogical tradition, catechetical lectures | *Procatechesis* 9; *Mystagogical Catecheses* 2.3 | initiation / theology | Exorcism, renunciation, west/east orientation, and confession belong to incorporation; authorship of the latter work is disputed | exact public-domain edition identified; reusable passages outstanding |
+| fourth century, Jerusalem | Cyril and the Jerusalem mystagogical tradition, catechetical lectures | *Procatechesis* 9; *Mystagogical Catecheses* 1.4–9 | initiation / theology | Exorcism, renunciation, west/east orientation, and confession belong to incorporation; authorship of the latter work is disputed | exact dated Gifford English passages inspected |
 | fourth century, Asia Minor conciliar reception | Laodicea, disciplinary canon | canon 26 | ministerial discipline | Restricts action by persons not promoted by the bishop in churches or private houses; local/conciliar scope and date require qualification | exact public-domain edition and locus identified |
-| c. 251 letter preserved in fourth-century history | Cornelius of Rome quoted by Eusebius | *Church History* 6.43.11 | office / institutional reception | Lists exorcists with readers and door-keepers under one combined total of fifty-two; no separate exorcist count and no proof of functional identity with later major exorcism | exact public-domain edition and locus identified |
+| c. 251 letter preserved in fourth-century history | Cornelius of Rome quoted by Eusebius | *Church History* 6.43.11 | office / institutional reception | Lists exorcists with readers and door-keepers under one combined total of fifty-two; no separate exorcist count and no proof of functional identity with later major exorcism | exact dated McGiffert English passage inspected |
 | fourth century, Antioch / Constantinople | John Chrysostom, Gospel homilies | *Homilies on Matthew*, including homily 23 | biblical reception | Sustained Gospel exposition bears Christological and moral interpretation; a homily is not a ritual rubric | dated edition cataloged; exact relevant passages outstanding |
 | fourth century, Egypt | Athanasius, ascetical narrative and doctrinal works | relevant Antony and Incarnation loci | ascetic reception / theology | Candidate for testing how victory over demons functions in ascetical narrative rather than institutional law | lead only |
 | fourth century, Cappadocia | Basil, Gregory Nazianzen, Gregory of Nyssa, catechetical/doctrinal works | relevant baptismal and anti-magical loci | initiation / theology | Candidate family; authors and genres must not be collapsed into one “Cappadocian rite” | lead only |

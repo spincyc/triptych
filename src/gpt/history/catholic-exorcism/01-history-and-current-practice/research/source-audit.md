@@ -15,17 +15,19 @@ sources.
 - Congregation for Divine Worship and the Discipline of the Sacraments, *De Exorcismis et Supplicationibus Quibusdam*: promulgation decree dated 22 November 1998; Latin typical edition issued 1999; emended reprint 2004. The 2004 state is an amended or emended version, not a second typical edition. The proprietary rite was consulted only through official descriptions and exact loci quoted in official conference guidance; its formulas are not reproduced.
 - Congregation for Divine Worship and the Discipline of the Sacraments, official presentation of the new rite, 26 January 1999. Used for the public-presentation date and the dicastery's stated theological and prudential rationale, not as the act of promulgation.
 - Congregation for Divine Worship and the Discipline of the Sacraments, decree implementing amended CIC c. 838, 22 October 2021, section *In De Exorcismis et Supplicationibus Quibusdam*, praenotanda 37. Current official control for episcopal-conference translations and adaptations.
-- *Catechism of the Catholic Church*, 391–395, 550, 1237, 1667, 1670, 1673, 1700–1706, 1734–1735, 1857, 1859, 2111, 2116–2117, 2846–2854. Holy See English text. Doctrinal, anthropological, moral, and sacramental distinctions. No. 1673 does not itself grant canonical faculty; its ascertainment warning is not rewritten as a clinical test or as the technical procedural formula “moral certitude.”
-- Fourth Lateran Council, constitution 1, *Firmiter credimus* (1215), DS 800. Controls the created-good and self-made-evil propositions. The reusable source record remains catalog-level rather than an exact retained artifact.
+- *Catechism of the Catholic Church*, 391–395, 550, 1237, 1667, 1670, 1673, 1700–1706, 1734–1735, 1857, 1859, 2111, 2116–2117, 2846–2854. Holy See English text. Doctrinal, anthropological, moral, and sacramental distinctions. No. 1673 does not itself grant the particular and express permission required by canon 1172; its ascertainment warning is not rewritten as a clinical test or as the technical procedural formula “moral certitude.”
+- Fourth Lateran Council, constitution 1, *Firmiter credimus* (1215), DS 800. The second acquisition pass obtained and verified the exact Holy See delivery of the CDF-commissioned 1975 study *Christian Faith and Demonology*, which directly quotes and attributes the created-good and self-made-evil clause and identifies DS 800 and the *Conciliorum Oecumenicorum Decreta* locus. This is an official reception-and-quotation control, not a facsimile or critical edition of the 1215 act; it supports restoration of the direct conciliar attribution alongside CCC 391–395.
 - Thomas Aquinas, *Summa theologiae* I, q. 57, a. 4; q. 111, aa. 2–4; q. 114, aa. 2–3. Controls only the explicitly Thomistic account of secret thoughts, will, persuasion, passion, imagination, and sense. Exact reusable artifacts for these loci remain to be normalized.
 - United States Conference of Catholic Bishops, “Exorcism,” Secretariat of Divine Worship FAQ, <https://www.usccb.org/prayer-and-worship/sacraments-and-sacramentals/sacramentals-blessings/exorcism>, accessed 2026-07-26. Establishes U.S. English approval/confirmation/implementation, moral-certitude framing, medical and psychiatric consultation, consent, privacy, and ritual distinctions. It is not generalized into universal law.
-- Fourth Lateran Council, constitution 1, *Firmiter credimus*, official Latin
-  locus for the claim that the devil and other demons were created good and
-  became evil by their own act. Used with CCC 391–395; later demonological
-  taxonomies are not promoted to doctrine.
+- Lateran IV constitution 1 is controlled for the created-good and
+  self-made-evil clause through the exact Holy See reception-and-quotation
+  witness in *Christian Faith and Demonology*, with CCC 391–395 supplying an
+  additional exact catechetical control. Later demonological taxonomies are
+  not promoted to doctrine.
 - 1983 CIC c. 1166 and CCC 1667–1673 control the bounded definition and
   ecclesial character of sacramentals. Neither source turns a sacramental into
-  an automatic mechanism or grants the faculty reserved by c. 1172.
+  an automatic mechanism or grants the particular and express permission
+  required by c. 1172.
 
 ## Scripture and early witnesses
 
@@ -37,6 +39,24 @@ sources.
 - Cyril of Jerusalem, *Procatechesis* 9, and the Jerusalem *Mystagogical Catecheses* 1.4–9, in Edwin Hamilton Gifford's translation, *Nicene and Post-Nicene Fathers*, second series, vol. 7 (1894). The latter is transmitted under Cyril's name, but its authorship, including attribution to John of Jerusalem, is disputed.
 - Council of Laodicea, canon 26, in Henry R. Percival, *The Seven Ecumenical Councils*, *NPNF* second series, vol. 14 (1900); Cornelius's clergy list as quoted by Eusebius, *Church History* 6.43.11, trans. Arthur Cushman McGiffert, *NPNF* second series, vol. 1 (1890). Laodicea is one conciliar disciplinary setting; Eusebius gives only a combined total for exorcists, readers, and door-keepers.
 
+Justin 6 is controlled by an inspected, bounded passage in the retained ANF
+volume 1 OCR. Exact dated English artifacts and passages also control the
+bounded Tertullian 23, Origen 1.6, 1.25, and 7.4, *Procatechesis* 9,
+*Mystagogical Catecheses* 1.4–9, and Eusebius 6.43.11 claims. These are
+translation controls, not original-language or critical-edition controls.
+The *Apostolic Tradition* 20–21 and Laodicea 26 remain bibliography and
+research leads rather than publication evidence.
+
+A second pass on 2026-07-27 searched public-domain primary translations,
+original-language or critical-edition controls, and specialist
+textual-historical studies for every one of those loci. It acquired and bound
+the exact dated English witnesses used for the narrow Tertullian, Origen,
+Jerusalem, and Eusebius descriptions. The *Apostolic Tradition* search instead
+reinforced the need to name the reconstruction, versional basis, and chapter
+numbering; Laodicea remained unnecessary to the bounded reader thesis. Exact
+routes, findings, and limits are recorded in
+`patristic-second-pass-2026-07-27.md`.
+
 ## Ritual and historical controls
 
 - H. A. Wilson, ed., *The Gelasian Sacramentary* (1894), pp. 45–50, exact
@@ -47,7 +67,13 @@ sources.
   exact ordines, pages, and manuscript correspondence remain open. No
   representative medieval ordinal or cross-genre corpus presently supports
   stronger claims about officeholders' practice, medicine, magic, trials, or
-  learned demonology.
+  learned demonology. A second pass on 2026-07-27 located specialist references
+  to exorcist-ordination material in PRG ordo XV (reported at Vogel–Elze I,
+  17, XV.17–19), the reconstructed *Statuta ecclesiae antiqua* in Munier,
+  CCSL 148, pp. 166–185, and related manuscript families. No exact critical
+  page or selected manuscript folio was acquired and collated, so these remain
+  leads and the publication continues to make no positive formulary, duty,
+  circulation, or local-practice claim from them.
 - Thomas Aquinas, *Summa theologiae* III, q. 71, especially aa. 2–4, Fathers of
   the English Dominican Province translation, exact New Advent page state
   acquired, hashed, and inspected 2026-07-26. Controls Aquinas's distinction
@@ -88,7 +114,6 @@ mental-health input; it is not itself a professional clinical protocol.
 - No checked primary source supports a universal medieval practice or a simple story in which modern psychiatry “replaced” exorcism.
 - No Orthodox Church's law or liturgical book was inspected for a publication claim. The study therefore makes no claim about present Orthodox authorization or practice.
 - Popular exorcist memoirs, films, podcasts, alleged recordings, and named case narratives were excluded: they are not needed to establish doctrine, law, ritual history, or safe practice.
-- Gene Wolfe, *The Devil in a Forest* (Orb, 1996), p. 207. On 26 July 2026 a reader transcribed the exact wording from a personal copy and identified the Abbé as speaker. Earlier repository and indexed-web searches had not located the passage. The project did not independently collate the protected edition; the publication identifies the reader-transcription boundary. The focused excerpt is used for criticism and theological discussion, not as evidence that curses work or as a source of Catholic teaching.
 - The familiar “first rule” sentence is displayed as an anonymous epigraphic adaptation, not as a historical claim or as wording attributed to a known author.
 
 ## Publication audit

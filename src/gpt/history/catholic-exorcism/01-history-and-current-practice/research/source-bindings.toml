@@ -3,10 +3,75 @@ record_type = "bindings"
 document = "history/catholic-exorcism/01-history-and-current-practice"
 
 [[bindings]]
+source_id = "passage.tertullian.apologeticum.english-thelwall-anf3-newadvent-web-2026-07-27.23"
+loci = ["23"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:45ee576ea932c4f5d84a0c0ca5aa850b110576e7a5bdc0e15660692cdf489b4f"
+verified_on = "2026-07-27"
+context = "Exact dated Thelwall English witness for Tertullian's forensic apologetic challenge; not an actual tribunal transcript."
+
+[[bindings]]
+source_id = "passage.origen.contra-celsum.english-crombie-anf4-newadvent-web-2026-07-27.1.6"
+loci = ["1.6"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:ef0debbf8c4ae0f514bb09fb7f85844185c0ab4a5047410f4c7dcb7acb9167c8"
+verified_on = "2026-07-27"
+context = "Exact dated Crombie English witness for Origen's contrast with magical apparatus."
+
+[[bindings]]
+source_id = "passage.origen.contra-celsum.english-crombie-anf4-newadvent-web-2026-07-27.1.25"
+loci = ["1.25"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:0c0ab88e4d44f9142933ec6628fca264c3ace38815fd8f1179904df08eb791bf"
+verified_on = "2026-07-27"
+context = "Exact dated Crombie English witness for Origen's distinct broader theory of efficacious names."
+
+[[bindings]]
+source_id = "passage.origen.contra-celsum.english-crombie-anf4-newadvent-web-2026-07-27.7.4"
+loci = ["7.4"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:05b55e50b17c83871c00aebaa0a66d632fea2d5446fab23c3542c2d73ca81f70"
+verified_on = "2026-07-27"
+context = "Exact dated Crombie English witness for prayer and simple adjuration contrasted with magical arts."
+
+[[bindings]]
+source_id = "passage.cyril-of-jerusalem.catechetical-lectures.english-gifford-npnf2-7-newadvent-web-2026-07-27.procatechesis.9"
+loci = ["Procatechesis.9"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:7116316fdd9f74913180bac6346ce8d50b6aed319187ab5f52792631f7f8f235"
+verified_on = "2026-07-27"
+context = "Exact dated Gifford English witness for candidate exorcisms and refining imagery."
+
+[[bindings]]
+source_id = "passage.cyril-of-jerusalem.catechetical-lectures.english-gifford-npnf2-7-newadvent-web-2026-07-27.mystagogical-1.4-9"
+loci = ["Mystagogical-1.4-9"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:dc8c543158ac2582b7248370ab68083d2e2bedc7c7de27b152c3f04456993547"
+verified_on = "2026-07-27"
+context = "Exact dated Gifford English witness for westward renunciation and eastward turn; authorship remains disputed."
+
+[[bindings]]
+source_id = "passage.eusebius.ecclesiastical-history.english-mcgiffert-npnf2-1-newadvent-web-2026-07-27.6.43.11"
+loci = ["6.43.11"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:6afe12461c6fd55b6dd7dd2cd46931d55fa575128ed4de574b79c7544daef155"
+verified_on = "2026-07-27"
+context = "Exact dated McGiffert English witness for the combined total of fifty-two exorcists, readers, and door-keepers."
+
+[[bindings]]
 source_id = "passage.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-codex-2026-07-25.canon-1172"
 loci = ["canon-1172"]
 role = "official-control"
-states = ["cataloged"]
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:1b673f533f2cc6c1f86f61b108a0cbb1ad3bd6ace0406b286ca39334622909b1"
+verified_on = "2026-07-27"
 context = "Exact authentic-Latin witness for universal Latin law governing exorcisms over the possessed. The Holy See English page is used only as a translation aid."
 
 [[bindings]]
@@ -52,32 +117,157 @@ states = ["cataloged"]
 context = "Official 22 October 2021 currentness control for the revised translation and adaptation norm in the exorcism book's praenotanda."
 
 [[bindings]]
-source_id = "work.catholic-church.catechism"
-loci = ["391-395", "550", "1237", "1667", "1670", "1673", "1700-1706", "1734-1735", "1857", "1859", "2111", "2116-2117", "2846-2854"]
+source_id = "passage.catholic-church.catechism.english-usccb-second-2019.391-395"
+loci = ["391-395"]
 role = "official-control"
-states = ["cataloged"]
-context = "Doctrinal and liturgical distinctions checked in the Holy See English edition; no long translated passage is reproduced."
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:10f7b912689689d709e83e0ee04b418af3dab4f71aaf8ad1d1fadb5bfafb1440"
+verified_on = "2026-07-27"
+context = "Exact official USCCB English-edition control for fallen angels, their free and irrevocable rejection, creaturely finitude, and providential permission."
 
 [[bindings]]
-source_id = "work.fourth-lateran-council.firmiter-credimus"
-loci = ["complete-text"]
+source_id = "passage.congregation-for-the-doctrine-of-the-faith.christian-faith-and-demonology-1975.italian-vatican-web-2026-07-27.lateran-iv-created-good"
+loci = ["section-il-concilio-lateranense-iv"]
 role = "official-control"
-states = ["cataloged"]
-context = "Conciliar control for the anti-dualist confession that the devil and other demons were created good by God and became evil by their own doing."
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:8dc44368b4c68de7ba6c06899b2580b6b6e2f0d7ea2d6034f192446a50bf6273"
+verified_on = "2026-07-27"
+context = "Exact Holy See reception-and-quotation witness for Lateran IV constitution 1's created-good and self-made-evil clause; not represented as a facsimile or critical edition of the 1215 act."
 
 [[bindings]]
-source_id = "work.catholic-church.codex-iuris-canonici-1983"
+source_id = "passage.catholic-church.catechism.english-usccb-second-2019.550"
+loci = ["550"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:6c10919887fcdb0bf6e2a8d27de3a6b3433a418f9de265080039c9134194b505"
+verified_on = "2026-07-27"
+context = "Exact official USCCB English-edition control for the Christological meaning of exorcisms."
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-usccb-second-2019.1667-1673"
+loci = ["1667-1673"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:1340daa28363d7a64eb043611ec281f7854905a0a4221900ff9866e98699fc69"
+verified_on = "2026-07-27"
+context = "Exact official USCCB English-edition control for sacramentals and the Catechism's bounded exorcism distinctions."
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-usccb-second-2019.1700-1706"
+loci = ["1700-1706"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:93135db39d87f4a8621402fdf67bc23bc1449b8b14a42f9d57d4cb3a58b8359e"
+verified_on = "2026-07-27"
+context = "Exact official USCCB English-edition control for human dignity, freedom, conscience, and responsibility."
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-usccb-second-2019.1734-1735"
+loci = ["1734-1735"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:640a8a79ee510960bf00428e4bd3095b0e3414033f19067240498d007e863b5e"
+verified_on = "2026-07-27"
+context = "Exact official USCCB English-edition control for imputability and factors that diminish or nullify responsibility."
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-usccb-second-2019.1857-1859"
+loci = ["1857-1859"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:dee57d92947e9fbd5c0f22f36f292c2f1db58c271467e112f55101db7d412c3e"
+verified_on = "2026-07-27"
+context = "Exact official USCCB English-edition control for the conditions of mortal sin."
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-usccb-second-2019.2111"
+loci = ["2111"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:b3ddea78fcf54ec7df784a7646872bae791182e35210865e887f7bee9c210ab1"
+verified_on = "2026-07-27"
+context = "Exact official USCCB English-edition control for superstition and merely external performance."
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-usccb-second-2019.2116-2117"
+loci = ["2116-2117"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:cf40966d8c8357822ff386f1092243bbbc0ca9536ea52f2fc5744f03b209fe68"
+verified_on = "2026-07-27"
+context = "Exact official USCCB English-edition control for divination, magic, and attempted occult domination."
+
+[[bindings]]
+source_id = "passage.catholic-church.catechism.english-usccb-second-2019.2846-2854"
+loci = ["2846-2854"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:ac803243432accb23059796822464ee694154cc4655e037a11d293982483e403"
+verified_on = "2026-07-27"
+context = "Exact official USCCB English-edition control for temptation, consent, vigilance, and deliverance from the Evil One."
+
+[[bindings]]
+source_id = "passage.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-codex-2026-07-25.canon-1166"
 loci = ["canon-1166"]
 role = "official-control"
-states = ["cataloged"]
-context = "Universal Latin definition of sacramentals. Exact reusable passage normalization remains outstanding."
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:6b292302c49f808e65109a74cd93e7720860c12e177a53243d9f327ec8c5cfa5"
+verified_on = "2026-07-27"
+context = "Exact authentic-Latin witness for the universal Latin definition of sacramentals."
 
 [[bindings]]
-source_id = "work.thomas-aquinas.summa-theologiae"
-loci = ["I.57.4.corpus", "I.111.2.corpus", "I.111.3.corpus", "I.111.4.corpus", "I.114.2.corpus", "I.114.3.corpus"]
+source_id = "passage.thomas-aquinas.summa-theologiae.english-newadvent-web-prima-57-111-114-2026-07-27.i-57-4-corpus"
+loci = ["I.57.4.corpus"]
 role = "context"
-states = ["cataloged"]
-context = "Exact scholastic loci identifying limits on angelic knowledge and action. The publication presents this as Thomistic analysis, not defined doctrine, clinical mechanism, or case attribution; exact reusable artifacts remain to be normalized."
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:135b3c248cb9b64cf54e26dab99eead6b1c4dc0e346c8897ddc75d1a882b3564"
+verified_on = "2026-07-27"
+context = "Exact English witness for Aquinas's bounded scholastic account of secret thoughts; not defined doctrine or clinical mechanism."
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.summa-theologiae.english-newadvent-web-prima-57-111-114-2026-07-27.i-111-2-corpus"
+loci = ["I.111.2.corpus"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:175d810556511ea0697e40d37143c8e100d263fa1c484eaea42f16c7853ac497"
+verified_on = "2026-07-27"
+context = "Exact English witness for Aquinas's bounded scholastic account of persuasion, passion, and freedom."
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.summa-theologiae.english-newadvent-web-prima-57-111-114-2026-07-27.i-111-3-corpus"
+loci = ["I.111.3.corpus"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:6a4b50e02826695ddf5d99d525ee44fd37caeb0501e1118297be037337bc4f5c"
+verified_on = "2026-07-27"
+context = "Exact English witness for Aquinas's bounded scholastic account of imagination."
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.summa-theologiae.english-newadvent-web-prima-57-111-114-2026-07-27.i-111-4-corpus"
+loci = ["I.111.4.corpus"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:a3134b1451283322e6c7193f0204e4c319d4c526cb02dc7dd2dd203fd9cd565d"
+verified_on = "2026-07-27"
+context = "Exact English witness for Aquinas's bounded scholastic account of sense."
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.summa-theologiae.english-newadvent-web-prima-57-111-114-2026-07-27.i-114-2-corpus"
+loci = ["I.114.2.corpus"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:e8260334adee277eb432358ffc83422b9b6e3ee254798c2eff6d15e4f452e9d6"
+verified_on = "2026-07-27"
+context = "Exact English witness for Aquinas's bounded scholastic account of temptation."
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.summa-theologiae.english-newadvent-web-prima-57-111-114-2026-07-27.i-114-3-corpus"
+loci = ["I.114.3.corpus"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:9b96cbcf3c1384e2107e396649cf5854ffd6875399bb909fa1ea355238adfa89"
+verified_on = "2026-07-27"
+context = "Exact English witness for Aquinas's denial that every sin is directly caused by demonic instigation."
 
 [[bindings]]
 source_id = "passage.catholic-church.codex-canonum-ecclesiarum-orientalium.latin-aas-82-1990.canon-1"
@@ -98,13 +288,6 @@ verified_on = "2026-07-25"
 context = "Authentic Latin canon 2 controls the interpretive priority of the ancient law of the Eastern Churches. It supplies no major-exorcism procedure."
 
 [[bindings]]
-source_id = "work.justin-martyr.second-apology"
-loci = ["6"]
-role = "direct-witness"
-states = ["cataloged"]
-context = "Second-century apologetic testimony used as evidence of Christian claims and rhetoric, not as a clinical case report."
-
-[[bindings]]
 source_id = "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.1.10.1-3.ocr"
 loci = ["1.10.1-3"]
 role = "context"
@@ -120,11 +303,12 @@ states = ["cataloged"]
 context = "Dated public-domain English edition identity retained to distinguish Gospel homily from ritual evidence. No quotation, negative search, or exact exorcism claim depends on it until a bounded passage is registered."
 
 [[bindings]]
-source_id = "edition.justin-martyr.second-apology.dods-reith-anf1-newadvent-web-2026-07-25"
+source_id = "passage.justin-martyr.second-apology.dods-reith-anf1-1887.6.ocr"
 loci = ["6"]
-role = "translation-control"
-states = ["cataloged"]
-context = "Identified public-domain ANF translation in a dated host delivery state; chapter 6 awaits a bounded exact passage record."
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:aa2d3de60e2be90c66c91892d46e403be23060bbc49c43095b7aa1bc30112112"
+context = "Exact bounded ANF volume 1 OCR passage inspected for Justin's apologetic appeal to Christian expulsion of demons in Jesus Christ's name and his contrast with other exorcists, incantations, and drugs. It controls Justin's literary claim, not its outcomes, frequency, original Greek wording, or a clinical case."
 
 [[bindings]]
 source_id = "passage.book-of-jubilees.english-charles-oxford-1913-ccel-web-2026-07-27.chapter-10-1-11"
@@ -259,6 +443,14 @@ loci = ["introduction", "minister", "discernment", "preparation", "celebration",
 role = "official-control"
 states = ["cataloged"]
 context = "Exact dated USCCB page state controls United States approval, confirmation, implementation, and public pastoral guidance. It is not universal law or a professional clinical protocol."
+
+[[bindings]]
+source_id = "artifact.world-health-organization.icd-11-clinical-descriptions-and-diagnostic-requirements.english-who-2024.who-iris-pdf"
+loci = ["printed-page-365", "printed-pages-377-382"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:cff68a01e48e4847d1ad64fdf32d4c1c7546b1e9557ea9fc43938c5ddc1e5969"
+context = "Exact official WHO PDF inspected at the possession-trance-disorder description and differential-diagnosis loci. It controls only the bounded clinical differential domains stated in sections 100 and 120; it neither proves nor disproves a preternatural cause, supplies no ritual criterion, and does not displace individual assessment by appropriately qualified professionals."
 
 [[bindings]]
 source_id = "artifact.united-kingdom-department-for-education.national-action-plan-child-abuse-faith-belief.english-govuk-web-2026-07-26.govuk-html"

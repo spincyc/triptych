@@ -74,3 +74,32 @@ passage controls are exact and validated, and the evidence map and audits no
 longer describe unresolved leads as fully controlled evidence. No broader
 patristic census or original-language claim is required for the draft's
 presently bounded thesis.
+
+## Resolution, 2026-07-27
+
+The Jerusalem locus was corrected throughout to *Mystagogical Catecheses*
+1.4–9. An exact bounded passage was registered and inspected for Justin,
+*Second Apology* 6, using the retained public-domain ANF volume 1 OCR, and the
+publication binding now pins its canonical fingerprint.
+
+At the first-pass checkpoint, no exact retained artifacts were available for
+the identified Tertullian, Origen, *Apostolic Tradition*, Jerusalem,
+Laodicea, or Eusebius edition records. The first-pass reader text therefore
+did not rely on them, and the *Apostolic Tradition* description was removed
+rather than published from an unidentified textual state. The later
+second-pass resolution below supersedes that temporary evidence state.
+
+On that reduced, exact-witness thesis, the ancient/patristic gate passes. This
+does not close the broader research program represented by the lead matrix or
+authorize reinstatement of the removed claims without exact passage controls.
+
+A required second research pass then checked public-domain primary
+translations, critical-edition families, and specialist scholarship for every
+removed locus. Its routes and bounded results are recorded in
+`patristic-second-pass-2026-07-27.md`. It acquired, hashed, inspected, and bound
+exact dated English passages for Tertullian, Origen, the Jerusalem
+catecheses, and Eusebius; their narrowly qualified reader claims were
+therefore restored. The *Apostolic Tradition* remains excluded because its
+reconstruction and versional control are unresolved, and Laodicea remains an
+unused lead. This later resolution supersedes the narrower first-pass state
+above.
