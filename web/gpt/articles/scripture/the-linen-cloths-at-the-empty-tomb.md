@@ -116,6 +116,10 @@ John names Joseph, Nicodemus, about a hundred pounds of myrrh and aloes, linen c
 
 John’s account does not say that the aromatics formed a hardened casing or that the burial followed Egyptian mummification. Those reconstructions require independent material evidence and cannot be smuggled into the nouns for cloth, face-cloth, spices, or tomb.
 
+The archaeological context is narrower than a generic “Jewish burial” picture. Magness’s Cambridge summary describes first-century Jerusalem’s rock-cut tombs as costly, multigenerational family tombs available to the upper classes, while poorer burials in trench or cist graves left fewer traces. It also distinguishes the initial individual inhumation—the body wrapped in a shroud and sometimes placed in a coffin—from later collection of bones in some tombs.[^1] Joseph’s rock-cut tomb therefore belongs to a particular Jerusalem setting and should not be made a template for every contemporary Jewish burial.
+
+Egyptian mummification is a poor positive control for this scene. Its reconstructed classic procedure includes organ removal and prolonged natron desiccation before final linen wrapping; John specifies none of those features.[^2] The myrrh and aloes establish aromatic care because John names them. They do not establish preservation, a hardened shell, or a bandage-by-bandage geometry. Specialist study of Jewish perfume evidence associates aromatics with several stages and purposes, including honor; later evidence also mentions odor control. That range is a warning against assigning John’s mixture one unspoken function.
+
 The plural cloths, face-cloth, and Synoptic *sindōn* need not conflict. A larger sheet can coexist with smaller bindings and a head cloth. Neither should they be harmonized into a precise kit whose every fold is known. Material culture clarifies possible objects; it cannot recover this arrangement.
 
 ### Modern physical reconstructions
@@ -250,6 +254,8 @@ The final PDF and generated web edition received independent source, quotation, 
 
 -   B. F. Westcott, *The Gospel according to St John*, vol. 2, pp. 339–341; B. F. Westcott and F. J. A. Hort, *Introduction and Appendix*, p. 71 on Lk 24:12.
 
+-   Jodi Magness, “Ancient Jewish Tombs and Burial Customs (to 70 C.E.),” in *The Archaeology of the Holy Land* (Cambridge University Press, 2012), pp. 230–255; Deborah A. Green, “Sweet Spices in the Tomb,” in *Commemorating the Dead* (De Gruyter, 2008), pp. 145–176; Salima Ikram, “Mummification,” *UCLA Encyclopedia of Egyptology* (2010).
+
 -   Mishnah Berakhot 8:3 and Sanhedrin 6:1; Babylonian Talmud Berakhot 42a and 52b; William Smith, *Dictionary of Greek and Roman Antiquities*, s.v. “Mantele”; Suetonius, *Nero* 22.2.
 
 -   Henry Latham, *The Risen Master*, pp. 34, 43; the dated *Jerusalem Perspective* reader question and response (7 October 2006); the archived *Recipes and More* forward (21 May 2007); and the later TruthOrFiction and GotQuestions assessments, used only as modern reception.
@@ -263,3 +269,7 @@ The final PDF and generated web edition received independent source, quotation, 
 **Agent/runtime:** OpenAI Codex agent (independent research synthesis, source audit, drafting, and production review); Codex CLI 0.145.0; API workspace; unexposed: server revision
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
+
+[^1]: Jodi Magness, “Ancient Jewish Tombs and Burial Customs (to 70 C.E.),” in *The Archaeology of the Holy Land* (Cambridge: Cambridge University Press, 2012), pp. 230–255, publisher summary, items 1–6.
+
+[^2]: Salima Ikram, “Mummification,” *UCLA Encyclopedia of Egyptology* (2010), pp. 2–4. Ikram also cautions that Egyptian evidence does not yield one uniform procedure.

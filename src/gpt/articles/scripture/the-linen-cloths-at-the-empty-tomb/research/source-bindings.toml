@@ -313,3 +313,21 @@ role = "reception"
 states = ["cataloged", "acquired", "inspected"]
 context = "Controls the later apologetic transmission of the fact-check's 2007 estimate; it is not counted as independent ancient or Jewish evidence."
 source_fingerprint = "sha256:7cc62c2f1c19fa7d0ac6c37ce0b53ce76b318f4709e52b629a889e5990a2ec9f"
+
+[[bindings]]
+source_id = "passage.jodi-magness.ancient-jewish-tombs-and-burial-customs.cambridge-2012.summary-items-1-6"
+loci = ["publisher summary, numbered items 1-6"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the restored, Jerusalem-specific distinction between costly upper-class rock-cut family tombs and poorer trench or cist graves, and between initial individual inhumation and possible later bone collection. It does not establish a universal Jewish burial sequence."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:6a29b6448a5014e388a2b05937d31c30d3ae5ddcdfdb8f074271d0b9da9d2353"
+
+[[bindings]]
+source_id = "passage.salima-ikram.mummification.uee-2010.process-pp2-4"
+loci = ["article pp. 2-4; artifact PDF pp. 3-5"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls only the contrast between John's sparse description and reconstructed classic Egyptian mummification involving organ removal and prolonged natron desiccation. It supplies no claim about Jewish practice, and its own warning against one uniform Egyptian procedure is retained."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:a7b97c10fc155875a8c87dc53152458d9cb27f119190131e77d68997fcef8f59"

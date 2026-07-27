@@ -61,3 +61,40 @@ boundary.
 The source, quotation, theological-boundary, and specialist review gates are
 complete as of 2026-07-27. This is editorial review, not ecclesiastical
 approval.
+
+## Archaeology recovery — 2026-07-27
+
+A focused second pass recovered a bounded material-culture context that an
+earlier evidence review had removed. Magness's exact Cambridge publisher
+summary supports the socioeconomic distinction between costly Jerusalem
+rock-cut family tombs and less archaeologically visible trench or cist graves,
+and it distinguishes initial individual inhumation from later bone collection
+in some tombs. It does not support a uniform practice across Roman-period
+Judaism, so the restored prose remains Jerusalem-specific.
+
+Ikram's exact UCLA article supplies a contrast, not a Jewish-burial source:
+classic Egyptian mummification involved organ removal and prolonged natron
+desiccation, while the article itself cautions against a single uniform
+procedure. John's linen and aromatics do not warrant importing that process.
+
+Deborah Green's specialist chapter, ``Sweet Spices in the Tomb,'' pp. 161--173,
+was inspected through a remotely accessible full-text presentation. It
+distinguishes early evidence associating aromatics with honor from later
+Babylonian odor-control explanations and warns against assigning all tomb
+vessels or uses one function. Because no exact redistributable or authenticated
+publisher artifact was acquired, Green remains a precisely located contextual
+source rather than a new central verified passage binding. The prose therefore
+uses her only to preserve a range of possible functions and does not claim
+embalming, preservation, or a precise wrapping method.
+
+The revised source built cleanly in two passes as an eleven-page letter PDF,
+SHA-256
+`1b936d3a7f621400085bab931ee52c8aa53fd4938e14ee7dc7848b6a1eeb99a8`.
+The log contains no fatal error, undefined reference, overfull or underfull box,
+or unresolved warning. Review rasters were generated through
+`make review-doc`; all eleven pages were inspected, including the restored
+material-culture section and revised references. No clipping, overlap,
+accidental blank page, or footer collision was found. This build was reviewed
+and installed; the installed PDF has the same hash. The canonical web edition
+was regenerated and checked for the restored paragraphs, notes, and reference
+entries.
