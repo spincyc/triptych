@@ -102,3 +102,30 @@ counterevidence relevant to any claim in this publication. The current
 edition should remain installed unchanged. The staleness flag may be
 cleared by a separately authorized rebaseline; this review does not
 change the baseline or ledger.
+
+## Second exact-trigger review — 2026-07-27
+
+The current explanation reports CIC 1983 canon 1166 and the edition, artifact,
+and passage records for AAS 49 (1957), pp. 91–95. Canon 1166 defines
+sacramentals; the AAS passage gives Sacred Congregation of Rites provisions
+for restored Holy Week.
+
+The ignored modified candidate is an exact pre-note snapshot. The ignored
+research-first rewrite independently treats foundation, juridic identity,
+constitutional development, governance, formation, apostolates, liturgical
+acts, and currentness from the research records.
+
+| Claim family | Old | Modified | Rewritten | Effect |
+|---|---|---|---|---|
+| 1988 foundation and pontifical-right identity | Retained | Identical | Retained | None. |
+| Constitutional purpose and governance history | Retained | Identical | Retained | None. |
+| Formation, apostolates, leadership, and growth | Retained | Identical | Retained | None. |
+| Roman liturgical acts through the 2022 decree | Retained | Identical | Retained | None; 1957 Holy Week provisions do not govern the Fraternity's institutional rights. |
+| Canonical, evidentiary, and currentness limits | Retained | Identical | Retained | None; canon 1166 does not alter the governing canons. |
+
+No input adds, removes, strengthens, weakens, or contradicts a consequential
+claim. Candidate differences are rhetorical only.
+
+**Second-review verdict: no material change.** The records are unrelated
+whole-work collateral. No publication, PDF, web edition, binding, catalog,
+release, currentness, or review-state revision is warranted.
