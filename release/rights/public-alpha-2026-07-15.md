@@ -1261,6 +1261,46 @@ work-specific research records remains operative. This approval does
 not authorize a push, deployment, tag, history rewrite, public
 release attachment, announcement, or promotion.
 
+## Supplemental exact-current-snapshot clearance — 27 July 2026
+
+At `2026-07-27T07:07:12-05:00` in `America/Chicago`, the maintainer instructed:
+“Approve the paired GPT and Claude componentized Seventeenth Sunday in Ordinary Time Year A research PDFs, synthesis companions, canonical web editions, and catalog links after source, rights, component, build, exact-two-page, metadata, and every-page production review.” This is recorded as perpetual worldwide
+exact-current-snapshot distribution authorization under the existing
+represented authority in this record. The sole condition remains
+`no-project-initiated-promotion`.
+
+The approval binds all 167 exact installed release
+PDF snapshots and every exact recognized artifact-affecting
+reader-site input inventoried below at their current bytes. It is an
+exact-byte distribution clearance only: it does not represent
+completion of any outstanding work-specific rights, source,
+collation, specialist, or ecclesiastical review, and no imprimatur,
+nihil obstat, or ecclesiastical approval is claimed. Every
+limitation in the prior supplements, release README, catalogs, and
+work-specific research records remains operative. This approval does
+not authorize a push, deployment, tag, history rewrite, public
+release attachment, announcement, or promotion.
+
+## Supplemental exact-current-snapshot clearance — 27 July 2026
+
+At `2026-07-27T07:11:13-05:00` in `America/Chicago`, the maintainer instructed:
+“Reconfirm the exact final reviewed Seventeenth Sunday in Ordinary Time Year A Claude research PDF, synthesis companion, and canonical web edition after final line-break normalization.” This is recorded as perpetual worldwide
+exact-current-snapshot distribution authorization under the existing
+represented authority in this record. The sole condition remains
+`no-project-initiated-promotion`.
+
+The approval binds all 167 exact installed release
+PDF snapshots and every exact recognized artifact-affecting
+reader-site input inventoried below at their current bytes. It is an
+exact-byte distribution clearance only: it does not represent
+completion of any outstanding work-specific rights, source,
+collation, specialist, or ecclesiastical review, and no imprimatur,
+nihil obstat, or ecclesiastical approval is claimed. Every
+limitation in the prior supplements, release README, catalogs, and
+work-specific research records remains operative. This approval does
+not authorize a push, deployment, tag, history rewrite, public
+release attachment, announcement, or promotion.
+
 ## Exact approved snapshots
 
 | Publication ID | SHA-256 |
@@ -1325,7 +1365,8 @@ release attachment, announcement, or promotion.
 | `claude:liturgy/roman-rite/comparative/two-missals-one-sacrifice` | `1b493899b3238a823b8f267da53582543bd5f5a723fac6d235b23b4276d40bcc` |
 | `claude:liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass` | `4a22e7bcc1f6f886cb4af5ed488a166394c7e75d42e36020a3b7e7d274027618` |
 | `claude:liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a` | `9717cc22af66cee15fac48e77e4d5f5c6a335c2429787807b5054d9e7ed07086` |
-| `claude:liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a` | `891b2cc4b2714a7f6b6043cbfa35ceca2dcd5f713e901a38bf4ae6d3afc53dbb` |
+| `claude:liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a` | `4a722a96a1afe71eb11829c2be3e00942bc256ff60503a91df45d5fde825c1a8` |
+| `claude:liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a-synthesis` | `b3155864c9674a59db43844511ff592f28fe910ea577f9ba77a17af9859a65d9` |
 | `claude:liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar` | `2f7952a847d3fa5e4dff5378f621221f514f06e9f4d92a1dfafe7cef2fc39d52` |
 | `claude:theology/mariology/champion` | `72eb973fc935966449752f8c0d2c7e64521a0d874f16a766d7917605a5a46135` |
 | `claude:theology/mariology/fatima` | `572abbed26b4e67d46991f691ddc64e9d3c8f200fc41ee551c9722eba9f2b92c` |
@@ -1411,7 +1452,8 @@ release attachment, announcement, or promotion.
 | `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-fourteenth-sunday-in-ordinary-time-year-a` | `ad04675908c5c4b0d6f3b78952599b20c0503ca4609134ac4b0d694a246f7b9b` |
 | `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-fifteenth-sunday-in-ordinary-time-year-a` | `92186671dc5e3ea6bd4bdba7426458e845caf79ddde2e9927099d0a927251202` |
 | `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a` | `cfb0b8f3ffc1dfd4daf89c9f9d78eb3983a0e1a84283d9c75a02eb392a5474cb` |
-| `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a` | `251086891e686802750ce5804b4272d1d69a9546c7e7cc89f3b0134338d99af2` |
+| `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a` | `86345f020f74874b6b270381754ae7a0e8d99cca2af6ed6d4f12de77d4f1c9a8` |
+| `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a-synthesis` | `3a2063a430b8f02595a7c58f383e6241b1fe9f2693be1ccc001a4643b90150b7` |
 | `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-most-holy-trinity-year-a` | `5405b50dacc9ea92a2e4264afc722fa8ef3b172ddd3ff09782fcf2ee8a2d71b0` |
 | `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s59-most-holy-body-and-blood-of-christ-year-a` | `57fc1b3a7ab8e1e990c9dbce9df28e576fec3004603555e99447298099cff649` |
 | `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar` | `8a0918732c672ea76d2c95e0176e7985fa639057a4a8f4e12df511b8efb19bcd` |
@@ -1450,7 +1492,7 @@ release attachment, announcement, or promotion.
 | `library/historical-accounts.md` | `5a9c6f94c6b322441046f29582fbcb2b2c494a3892a78396b34abe96312e3001` |
 | `library/law-and-church-discipline.md` | `2f909b26e55bb143ade3c326ffea0cc5ceed1d239f99036376f1a4eed98af240` |
 | `library/mariology.md` | `e46b57edc3d906984fc669ccbdf2fdaab68a15a049d8d420c8f9885c5b2092a2` |
-| `library/novus-ordo-liturgy.md` | `c1f564543578b5405327b408fd871df6eec55af7206fd70919e9a0b9f88812fb` |
+| `library/novus-ordo-liturgy.md` | `0682fa65c92fd183efb38c237f5eccd8785d10814fb92b17443a28a4c52b2017` |
 | `library/prayer.md` | `f355ee2a34f4f47744cbc6f0fea71c04f2c303882dce1b8ae3adabfc2b2c850d` |
 | `library/scripture.md` | `ea3d7018adaee284be37d7cfbe42f8acdf4513735a137ed6f239e2b111ae9ade` |
 | `library/traditional-latin-mass.md` | `8c58bd86bb495d39089512b7e9eb9de4a2bec5ed2becb67bb6bdda37a74093f1` |
@@ -1495,7 +1537,7 @@ release attachment, announcement, or promotion.
 | `web/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice.md` | `54670c29bbb9742f7bd4e224e5c4ea59e262e5c1658e4f7142c433f038c0d36f` |
 | `web/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass.md` | `5c93965c4240343b48efe1af92b6381f9cec604ecaca2da941eb4c404ee41466` |
 | `web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a.md` | `2b28b3e4f3cb43bc96f2496736fb4a92aa804904e9178153b3b201f4a9b888fc` |
-| `web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a.md` | `5377f00c95dbb13aa2dc7ff11e20bc40cd9e78cc40cf5b1d2ddbb53459412172` |
+| `web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a.md` | `650d783e4ad7f5c685e5e0fad315e24f1a07df41de246bb5baa30597cef9bbbe` |
 | `web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.md` | `8e37e7521a0631df12b3f828c010a62dfc2acc2952b41a0e138bc3055b50f577` |
 | `web/claude/theology/mariology/champion.md` | `73f90abfc80997f9585c2cc957d150678929d470affa1e911e3429308136613e` |
 | `web/claude/theology/mariology/fatima.md` | `5f1f3d4b76a587854d1ae9b8c4dcf6964563d56a01d5d04bde8d1d52bd6ee991` |
@@ -1546,7 +1588,7 @@ release attachment, announcement, or promotion.
 | `web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-fourteenth-sunday-in-ordinary-time-year-a.md` | `700b245fc5f927178a0b094caad0700f14c6a37679c8a7fb4f9af02567e23c83` |
 | `web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-fifteenth-sunday-in-ordinary-time-year-a.md` | `4860438845ceef139f9fc529437a5431d1f307a247d9837d551ecfcb404965c7` |
 | `web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a.md` | `cde34e0a662f45dcf031d7f787fd0f8cdc8a87f579d417c349d52f2b8fb11f9b` |
-| `web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a.md` | `4ceec0b0a25ee4c6c5bd00d82eebe3b14bc28e6dbeb7f9029431a180d141d62a` |
+| `web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a.md` | `08bec9c15333adddc4095104fa69873d13967f79d5b2996ac784c3003cc7464b` |
 | `web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.md` | `10ace668187fb9f4380b4249873ccd6b6138bb346d43b98e9b1f76063630e7bb` |
 | `web/gpt/theology/heresies/heresies-in-catholic-history.md` | `544ef5410981972a904b7d664adcf059a05667a2f146a43748dba5a3bd663470` |
 | `web/gpt/theology/mariology/angelus.md` | `a7ff0e8cbf28fb5bf5290d0cb103b48cf2d753e45635f79e8d3459af592fc424` |
