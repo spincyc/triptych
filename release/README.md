@@ -3,17 +3,16 @@
 The current release manifest accounts for every installed publication across
 the declared provider branches under provider-qualified identifiers;
 `public-alpha.json` (`expected_counts`) is the sole authoritative count and
-currently records 168 publications (122 gpt, 46 claude): 161 marked `release`,
-none in `review`, and seven on `hold`. The most recent dated supplement in
+currently records 172 publications (125 gpt, 47 claude): 168 marked `release`,
+none in `review`, and four on `hold`. The most recent dated supplement in
 `rights/public-alpha-2026-07-15.md` binds every exact PDF snapshot and all 23
 exact reader-site inputs under record
 `perpetual-public-repository-2026`. Changed PDF, rights-record, or site-input
 bytes require renewed authorization, so public build and verification remain
 fail-closed after any bound byte changes.
 
-The seven holds are the Claude 1962 Ordinary and six new GPT works: the
-exorcism history, the Abraham and linen-cloths counterparts, the John 6 study,
-the Last Supper and Calvary study, and the Ninth Sunday full-text edition.
+The four holds are the Claude 1962 Ordinary and three GPT works: the
+exorcism history, the Abraham study, and the Last Supper and Calvary study.
 They remain source-only catalog identities until their manifest-listed source,
 rights, collation, web, and independent-review gates are completed.
 
