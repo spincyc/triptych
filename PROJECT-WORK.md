@@ -24,6 +24,13 @@ Every unresolved work-specific gate remains explicit in the research records,
 release inventory, catalogs, and this register. A publication remains
 conspicuously provisional until those gates are genuinely closed.
 
+Research for the promised work is limited to publicly reachable sources. Do
+not purchase an edition, use a paid subscription, request credentials, or ask
+the maintainer to fund source access. When a necessary witness cannot be
+reached publicly, pursue proportionate public primary, official, library, and
+critical-edition alternatives, then record the access boundary and resulting
+open evidence gate without inventing verification.
+
 ## Current integration and publication state
 
 The repaired public-alpha snapshot is integrated on `main` through commit
@@ -220,6 +227,10 @@ the same substantive edit.
   exact-snapshot binding, commit, integration, push, and deployment workflow
   without repeated alpha approvals, but supplies no human or ecclesiastical
   review and closes no substantive completion gate.
+- 2026-07-27: Limited all continued research to publicly reachable sources.
+  Paid editions, subscriptions, credentials, and maintainer-funded acquisition
+  are outside scope; inaccessible necessary witnesses remain explicit evidence
+  gaps after proportionate public-source alternatives are pursued.
 - Earlier conversation history is not itself a durable repository source.
   Any additional remembered agreement must be added here immediately and
   reconciled against the repository rather than inferred away.

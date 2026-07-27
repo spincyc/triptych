@@ -127,6 +127,15 @@ future research is an artifact under `src/sources/`, not a build cache.
 
 ## Repository-first acquisition and storage
 
+Project research uses only publicly reachable sources. Do not purchase an
+edition, use a paid subscription, request or store access credentials, or ask
+the maintainer to fund source access. Public reachability does not establish
+rights, authority, edition identity, reliability, or verification: apply every
+ordinary source and artifact gate below. If a necessary witness is not
+publicly reachable, pursue proportionate public primary, official, library,
+catalog, and critical-edition alternatives and record the unresolved access
+and evidence boundary rather than inventing a check.
+
 Use these storage dispositions:
 
 - **tracked** — the exact artifact is lawful to distribute from the repository,
