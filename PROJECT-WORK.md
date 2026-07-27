@@ -13,9 +13,15 @@ On 27 July 2026 the maintainer approved every Triptych document for
 conspicuously labeled public-alpha distribution so that priests and other
 qualified readers can review it from stable public links. This is a standing
 workflow authorization: changed source may be researched, built, inspected,
-installed, bound as an exact current public-review snapshot, committed,
-integrated, pushed, and deployed without requesting a new document-by-document
-alpha approval.
+installed, bound as an exact current public-review snapshot, validated, and
+committed in the isolated worker without requesting a new
+document-by-document alpha approval.
+
+The worker must not merge or integrate into `main`, push any ref, or represent
+an undeployed worker snapshot as live. The maintainer retains the final
+integration into `main` and push. Complete every safe predecessor step and
+leave a clean, coherent committed worker result ready for that final action;
+do not pause earlier work merely because integration and push remain reserved.
 
 Public-alpha approval is distribution authority only. It never records or
 implies human, priestly, specialist, ecclesiastical, rights, intended-reader,
@@ -242,9 +248,10 @@ the same substantive edit.
 - 2026-07-27: Recorded the maintainer's standing authority to publish every
   document as a conspicuously provisional public-alpha snapshot for priestly
   and qualified-reader review. This authorizes the ordinary build, install,
-  exact-snapshot binding, commit, integration, push, and deployment workflow
-  without repeated alpha approvals, but supplies no human or ecclesiastical
-  review and closes no substantive completion gate.
+  exact-snapshot binding, validation, and worker-commit workflow without
+  repeated alpha approvals, but supplies no human or ecclesiastical review and
+  closes no substantive completion gate. Final integration into `main` and
+  push are reserved to the maintainer.
 - 2026-07-27: Limited all continued research to publicly reachable sources.
   Paid editions, subscriptions, credentials, and maintainer-funded acquisition
   are outside scope; inaccessible necessary witnesses remain explicit evidence
@@ -255,8 +262,12 @@ the same substantive edit.
   without treating generated output as human factual or artistic review.
 - 2026-07-27: Recorded that no external human-review cycle will be established
   for some time. Human and ecclesiastical gates remain explicit and deferred,
-  but no longer pause the continuing public-alpha production and deployment
-  workflow.
+  but no longer pause the continuing public-alpha production and publication-
+  preparation workflow.
+- 2026-07-27: Replaced the worker's earlier integration, push, and deployment
+  authority with the maintainer's final boundary: complete and commit every
+  predecessor step in the isolated worker, but leave integration into `main`
+  and every push to the maintainer.
 - Earlier conversation history is not itself a durable repository source.
   Any additional remembered agreement must be added here immediately and
   reconciled against the repository rather than inferred away.

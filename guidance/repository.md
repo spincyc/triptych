@@ -351,9 +351,11 @@ new document-by-document approval request, provided that the snapshot is
 conspicuously labeled provisional, its exact installed PDF and web inputs are
 bound in the release records, and every unresolved work-specific gate remains
 visible. This standing decision authorizes the ordinary build, installation,
-binding, commit, integration, push, and deployment steps needed to keep public
-review links current. It does not authorize a `release` promotion and must
-never be recorded as human, priestly, specialist, ecclesiastical, rights,
+binding, validation, and isolated-worker commit steps needed to prepare current
+public-review links. It does not authorize the worker to merge or integrate
+into `main`, push any ref, or claim deployment; the maintainer retains those
+final actions. It does not authorize a `release` promotion and must never be
+recorded as human, priestly, specialist, ecclesiastical, rights,
 physical-print, intended-reader, or final editorial review.
 
 An unavailable external human-review cycle does not force an otherwise
