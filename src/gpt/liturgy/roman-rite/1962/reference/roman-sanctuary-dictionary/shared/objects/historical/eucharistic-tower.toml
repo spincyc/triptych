@@ -1,0 +1,63 @@
+schema_version = 1
+id = "obj-hist-eucharistic-tower"
+workflow_state = "identified"
+preferred_english_name = "Eucharistic tower"
+latin_headword = "turris eucharistica"
+categories = ["sacred-vessels", "historical"]
+periods = ["medieval"]
+statuses = ["historical-discontinued-before-1962"]
+ceremonies = ["historical-only"]
+
+[presence]
+locations = ["Historically associated with the altar, including suspended examples."]
+contexts = ["Historical Eucharistic reservation represented in the selective pre-1962 comparison."]
+local_variability = "possible"
+
+[handling]
+ordinary_handlers = ["cleric", "other"]
+server_relation = "not-normally-present"
+
+[audience_relevance]
+altar_server = "useful"
+sacristan = "useful"
+mc_trainer = "useful"
+general_reader = "required"
+pontifical = "useful"
+
+[[claims]]
+id = "clm-hist-eucharistic-tower-identity"
+kind = "identity"
+text = "A Eucharistic tower was a tower-form vessel used historically for Eucharistic reservation."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-hist-eucharistic-tower-braun"]
+
+[[claims]]
+id = "clm-hist-eucharistic-tower-chronology"
+kind = "chronology"
+text = "The checked historical account describes medieval tower reservation and a suspended thirteenth-century example from Arras."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-hist-eucharistic-tower-braun"]
+
+[[claims]]
+id = "clm-hist-eucharistic-tower-appearance"
+kind = "appearance"
+text = "The comparison artwork uses a Gothic tower-shaped receptacle as a representative reconstruction, not as a facsimile of the Arras example."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-hist-eucharistic-tower-braun"]
+
+[[sources]]
+id = "src-hist-eucharistic-tower-braun"
+binding = "historical-pre-1962-inventory"
+locus = "Checked source 3: Joseph Braun, “History of the Christian Altar,” Catholic Encyclopedia 1 (1907); tower reservation and the suspended thirteenth-century Arras example."
+role = "specialist-secondary"
+verification_state = "claim-verified"
+checked_on = 2026-07-27
+
+[[artwork]]
+id = "art-rsd-hist-001"
+view = "comparison"
+asset = "shared/artwork/pencil/RSD-HIST-001-early-medieval-objects.png"
+review_state = "identity-checked"
+depicts = ["obj-hist-flabellum", "obj-hist-eucharistic-dove", "obj-hist-eucharistic-tower"]
+scale_mode = "not-to-common-scale"
+review_note = "Internally checked for a distinct tower-form silhouette; exact-artifact, ceremonial, and print review remain pending."

@@ -160,8 +160,11 @@ deliverables without conflating their remaining gates.
 Commits `0b1f79ae`, `7a05f79e`, `50794fc6`, and `8533fcd9` created, exposed,
 and repaired six priestly-review PDFs. Complete object inventories, exact
 source collation, independent priestly review, and artwork review remain open.
-The artwork audit also retains 15 held notices: two sub-300-DPI historical
-assets and thirteen unidentified depicted-object cases.
+Five evidence-supported historical object identities now have canonical
+`identified` records, reducing the artwork validator backlog from 15 to 10
+notices. The remaining notices are two sub-300-DPI historical assets, one
+unresolved broad-stole identity, and seven unsupported Communion/reservation
+depicted-object cases.
 The sequenced inventory, artwork, edition, and publication checklist is
 `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/delivery-work-plan-2026-07-27.md`.
 

@@ -1,0 +1,66 @@
+schema_version = 1
+id = "obj-hist-triple-candle"
+workflow_state = "identified"
+preferred_english_name = "Triple candle"
+latin_headword = "arundo cum tribus candelis"
+alternate_english_names = ["reed with three candles"]
+categories = ["service-objects", "holy-week", "historical"]
+periods = ["tridentine-and-early-modern", "twentieth-century-pre-1962"]
+statuses = ["historical-discontinued-before-1962"]
+ceremonies = ["historical-only"]
+artwork = []
+
+[presence]
+locations = ["Historically prepared for the older Easter Vigil entrance."]
+contexts = ["Historical implement superseded by the reformed Paschal-candle entrance."]
+local_variability = "possible"
+
+[handling]
+ordinary_handlers = ["deacon", "cleric", "other-server", "sacristan"]
+server_relation = "not-normally-present"
+prepares = ["sacristan"]
+stores = ["sacristan"]
+
+[audience_relevance]
+altar_server = "useful"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "useful"
+
+[[claims]]
+id = "clm-hist-triple-candle-identity"
+kind = "identity"
+text = "The older Easter Vigil rubric names a reed bearing three candles."
+evidence_state = "verified-source-text"
+source_ids = ["src-hist-triple-candle-rubric"]
+
+[[claims]]
+id = "clm-hist-triple-candle-chronology"
+kind = "chronology"
+text = "The revised Easter Vigil replaced that route with the reformed Paschal-candle entrance, placing the triple candle outside the 1962 route."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-hist-triple-candle-mcmanus"]
+
+[[claims]]
+id = "clm-hist-triple-candle-appearance"
+kind = "appearance"
+text = "The comparison artwork shows one reed topped by exactly three candles as a representative reconstruction."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-hist-triple-candle-rubric"]
+
+[[sources]]
+id = "src-hist-triple-candle-rubric"
+binding = "historical-pre-1962-inventory"
+locus = "Checked source 6: “Liturgical Use of Fire,” Catholic Encyclopedia 15, preserving the older rubric “Praeparetur arundo cum tribus candelis in summitate positis.”"
+role = "historical-primary"
+verification_state = "claim-verified"
+checked_on = 2026-07-27
+
+[[sources]]
+id = "src-hist-triple-candle-mcmanus"
+binding = "historical-pre-1962-inventory"
+locus = "Checked source 5: Frederick R. McManus, The Rites of Holy Week (1956); account of the reformed Paschal-candle entrance."
+role = "manual"
+verification_state = "claim-verified"
+checked_on = 2026-07-27

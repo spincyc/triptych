@@ -1,0 +1,65 @@
+schema_version = 1
+id = "obj-hist-folded-chasuble"
+workflow_state = "identified"
+preferred_english_name = "Folded chasuble"
+latin_headword = "planeta plicata"
+categories = ["deacon-and-subdeacon", "holy-week", "historical"]
+periods = ["tridentine-and-early-modern", "twentieth-century-pre-1962"]
+statuses = ["historical-discontinued-before-1962"]
+ceremonies = ["historical-only"]
+artwork = []
+
+[presence]
+locations = ["Historically worn by sacred ministers in the older penitential ceremonial."]
+contexts = ["Historical vestural arrangement excluded from the revised Holy Week rites represented by the 1962 horizon."]
+local_variability = "possible"
+
+[handling]
+ordinary_handlers = ["deacon", "subdeacon", "sacristan"]
+server_relation = "not-normally-present"
+prepares = ["sacristan"]
+stores = ["sacristan"]
+
+[audience_relevance]
+altar_server = "useful"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "useful"
+
+[[claims]]
+id = "clm-hist-folded-chasuble-identity"
+kind = "identity"
+text = "The folded chasuble was a chasuble arranged for the sacred ministers in the older penitential ceremonial."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-hist-folded-chasuble-thurston"]
+
+[[claims]]
+id = "clm-hist-folded-chasuble-chronology"
+kind = "chronology"
+text = "The revised Holy Week rites expressly omitted folded chasubles, placing this use outside the dictionary's 1962 Holy Week route."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-hist-folded-chasuble-mcmanus"]
+
+[[claims]]
+id = "clm-hist-folded-chasuble-appearance"
+kind = "appearance"
+text = "The comparison artwork presents a full-body representative silhouette of a sacred minister wearing a folded chasuble."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-hist-folded-chasuble-thurston"]
+
+[[sources]]
+id = "src-hist-folded-chasuble-thurston"
+binding = "historical-pre-1962-inventory"
+locus = "Checked source 4: Herbert Thurston, “Chasuble,” Catholic Encyclopedia 3 (1908); folded-chasuble identity and older use."
+role = "specialist-secondary"
+verification_state = "claim-verified"
+checked_on = 2026-07-27
+
+[[sources]]
+id = "src-hist-folded-chasuble-mcmanus"
+binding = "historical-pre-1962-inventory"
+locus = "Checked source 5: Frederick R. McManus, The Rites of Holy Week (1956); explicit statement that folded chasubles are not worn in the revised rites."
+role = "manual"
+verification_state = "claim-verified"
+checked_on = 2026-07-27

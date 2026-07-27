@@ -35,7 +35,7 @@ class DictionaryGeneratorTests(unittest.TestCase):
             self.assertIn('status = "priestly-review"', sidecar)
             self.assertIn('distribution_state = "public-alpha"', sidecar)
             self.assertIn("admitted_object_count = 6", sidecar)
-            self.assertIn("omitted_object_count = 32", sidecar)
+            self.assertIn("omitted_object_count = 37", sidecar)
             self.assertIn("obj-chalice", review)
             self.assertNotIn("obj-altar-cruet", review)
             self.assertIn(

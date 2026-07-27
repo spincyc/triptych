@@ -1,0 +1,63 @@
+schema_version = 1
+id = "obj-hist-eucharistic-dove"
+workflow_state = "identified"
+preferred_english_name = "Eucharistic dove"
+latin_headword = "columba eucharistica"
+categories = ["sacred-vessels", "historical"]
+periods = ["medieval"]
+statuses = ["historical-discontinued-before-1962"]
+ceremonies = ["historical-only"]
+
+[presence]
+locations = ["Historically suspended above the altar."]
+contexts = ["Historical Eucharistic reservation represented in the selective pre-1962 comparison."]
+local_variability = "possible"
+
+[handling]
+ordinary_handlers = ["cleric", "other"]
+server_relation = "not-normally-present"
+
+[audience_relevance]
+altar_server = "useful"
+sacristan = "useful"
+mc_trainer = "useful"
+general_reader = "required"
+pontifical = "useful"
+
+[[claims]]
+id = "clm-hist-eucharistic-dove-identity"
+kind = "identity"
+text = "A Eucharistic dove was a dove-shaped reservation vessel, either serving as the immediate vessel or enclosing a pyx."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-hist-eucharistic-dove-braun"]
+
+[[claims]]
+id = "clm-hist-eucharistic-dove-placement"
+kind = "placement"
+text = "The checked historical account records suspension of the vessel above the altar."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-hist-eucharistic-dove-braun"]
+
+[[claims]]
+id = "clm-hist-eucharistic-dove-appearance"
+kind = "appearance"
+text = "The comparison artwork shows a chain-suspended dove-shaped vessel without a pedestal as a representative reconstruction."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-hist-eucharistic-dove-braun"]
+
+[[sources]]
+id = "src-hist-eucharistic-dove-braun"
+binding = "historical-pre-1962-inventory"
+locus = "Checked source 2: Joseph Braun, “Dove,” Catholic Encyclopedia 5 (1909); immediate vessel and pyx-enclosing forms and suspension above the altar."
+role = "specialist-secondary"
+verification_state = "claim-verified"
+checked_on = 2026-07-27
+
+[[artwork]]
+id = "art-rsd-hist-001"
+view = "comparison"
+asset = "shared/artwork/pencil/RSD-HIST-001-early-medieval-objects.png"
+review_state = "identity-checked"
+depicts = ["obj-hist-flabellum", "obj-hist-eucharistic-dove", "obj-hist-eucharistic-tower"]
+scale_mode = "not-to-common-scale"
+review_note = "Internally checked after removal of an incompatible pedestal; competent ceremonial and print review remain pending."

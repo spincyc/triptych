@@ -12,7 +12,7 @@ or ecclesiastical review.
 
 - Six six-page PDFs are installed as conspicuously labelled priestly-review
   copies.
-- Each presently renders the same six admitted records and a 32-record
+- Each presently renders the same six admitted records and a 37-record
   omission register; this is not a complete inventory or differentiated final
   family.
 - Every row of `completeness-matrix.md` remains open.

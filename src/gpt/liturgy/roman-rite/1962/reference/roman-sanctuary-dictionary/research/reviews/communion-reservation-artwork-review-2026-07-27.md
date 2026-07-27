@@ -142,10 +142,9 @@ The slice may return for publication review only after:
 1. the exact governing editions and claim-level loci are bound;
 2. lexical and stable-ID conflicts are resolved;
 3. at least one competent, dated source supports each depicted morphology;
-4. corrected artwork is compared directly with those sources;
-5. use-context insets prevent the pyx, Communion plate, and lunette from being
+4. use-context insets prevent the pyx, Communion plate, and lunette from being
    mistaken for ordinary objects or loose decorative components;
-6. an artwork record supplies scale treatment, exact hash, grayscale state,
+5. an artwork record supplies scale treatment, exact hash, grayscale state,
    effective resolution, consumers, and independent full-size review; and
-7. the canonical object, variant, artwork, plate, completeness, rights, and
+6. the canonical object, variant, artwork, plate, completeness, rights, and
    source records agree.

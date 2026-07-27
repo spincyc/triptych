@@ -1,6 +1,6 @@
 # Historical pre-1962 inventory
 
-Status: **source-audited selective slice; not a complete historical inventory**
+Status: **selective identified slice; not a complete historical inventory**
 Audit date: 2026-07-27
 
 The historical section is ordered chronologically and then by functional type.
@@ -8,14 +8,14 @@ An item enters this slice only when a checked source establishes a materially
 distinct object, reservation form, vestural arrangement, or ceremonial
 implement. Decorative variation alone is excluded.
 
-| Period | Type | Stable ID | Headword | Evidence and historical boundary | Artwork |
-| --- | --- | --- | --- | --- | --- |
-| Early Christian to fourteenth century | Service object | `obj-hist-flabellum` | flabellum | Braun (1909) describes materials, practical use near the species, early witness, and Western continuation to about the fourteenth century. | `RSD-HIST-001`, left |
-| Early medieval onward | Reservation vessel | `obj-hist-eucharistic-dove` | columba eucharistica | Braun (1909) distinguishes a dove used as immediate Eucharistic vessel from a dove enclosing a pyx and records suspension above the altar. | `RSD-HIST-001`, center |
-| Medieval | Reservation vessel | `obj-hist-eucharistic-tower` | turris eucharistica | Braun (1907) describes tower reservation and the thirteenth-century suspended Arras example. | `RSD-HIST-001`, right |
-| Penitential ceremonial before reform | Vestment | `obj-hist-folded-chasuble` | planeta plicata | Thurston (1908) identifies the folded-chasuble use; McManus (1956) states that folded chasubles are not worn in the revised Holy Week. | `RSD-HIST-002`, left |
-| Same ceremonial complex | Vestment | `obj-hist-broad-stole` | stola latior | Recorded as part of the older folded-chasuble route; retained only as a historical comparison to the revised Holy Week. | `RSD-HIST-002`, center |
-| Easter Vigil before the 1955 reform | Service object | `obj-hist-triple-candle` | arundo cum tribus candelis | The older rubric names the reed with three candles; McManus (1956) documents the reformed Paschal-candle entrance. | `RSD-HIST-002`, right |
+| Period | Type | Stable ID | Headword | Evidence and historical boundary | Record state | Artwork |
+| --- | --- | --- | --- | --- | --- | --- |
+| Early Christian to fourteenth century | Service object | `obj-hist-flabellum` | flabellum | Braun (1909) describes materials, practical use near the species, early witness, and Western continuation to about the fourteenth century. | Canonical `identified` record | `RSD-HIST-001`, left |
+| Early medieval onward | Reservation vessel | `obj-hist-eucharistic-dove` | columba eucharistica | Braun (1909) distinguishes a dove used as immediate Eucharistic vessel from a dove enclosing a pyx and records suspension above the altar. | Canonical `identified` record | `RSD-HIST-001`, center |
+| Medieval | Reservation vessel | `obj-hist-eucharistic-tower` | turris eucharistica | Braun (1907) describes tower reservation and the thirteenth-century suspended Arras example. | Canonical `identified` record | `RSD-HIST-001`, right |
+| Penitential ceremonial before reform | Vestment | `obj-hist-folded-chasuble` | planeta plicata | Thurston (1908) identifies the folded-chasuble use; McManus (1956) states that folded chasubles are not worn in the revised Holy Week. | Canonical `identified` record; composite-art link held with broad stole | `RSD-HIST-002`, left |
+| Same ceremonial complex | Vestment | `obj-hist-broad-stole` | stola latior | Recorded as part of the older folded-chasuble route; retained only as a historical comparison to the revised Holy Week. | Held; no canonical record pending an exact older rubric locus | `RSD-HIST-002`, center |
+| Easter Vigil before the 1955 reform | Service object | `obj-hist-triple-candle` | arundo cum tribus candelis | The older rubric names the reed with three candles; McManus (1956) documents the reformed Paschal-candle entrance. | Canonical `identified` record; composite-art link held with broad stole | `RSD-HIST-002`, right |
 
 ## Checked sources
 
@@ -48,5 +48,9 @@ implement. Decorative variation alone is excluded.
 - The broad stole entry is held to the replaced ceremonial complex; a later
   pass must add an exact older rubric locus before promoting it into a
   comprehensive structured record.
+- The folded-chasuble and triple-candle records do not claim their shared
+  comparison artwork while that raster also depicts the unresolved broad
+  stole. This preserves schema-valid canonical facts without laundering the
+  held identification through a multi-object artwork link.
 - No symbolism is assigned to the folded chasuble, broad stole, triple candle,
   or Eucharistic tower.

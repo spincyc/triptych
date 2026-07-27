@@ -1,0 +1,57 @@
+schema_version = 1
+id = "obj-hist-flabellum"
+workflow_state = "identified"
+preferred_english_name = "Flabellum"
+latin_headword = "flabellum"
+alternate_english_names = ["liturgical fan"]
+categories = ["service-objects", "historical"]
+periods = ["early-roman-and-late-antique", "medieval"]
+statuses = ["historical-discontinued-before-1962"]
+ceremonies = ["historical-only"]
+
+[presence]
+locations = ["Historically near the altar and the Eucharistic species."]
+contexts = ["Historical Western use represented in the selective pre-1962 comparison."]
+local_variability = "possible"
+
+[handling]
+ordinary_handlers = ["cleric", "other"]
+server_relation = "not-normally-present"
+
+[audience_relevance]
+altar_server = "useful"
+sacristan = "useful"
+mc_trainer = "useful"
+general_reader = "required"
+pontifical = "useful"
+
+[[claims]]
+id = "clm-hist-flabellum-identity-chronology"
+kind = "chronology"
+text = "The flabellum was a liturgical fan used in the West near the Eucharistic species, with Western use continuing to about the fourteenth century."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-hist-flabellum-braun"]
+
+[[claims]]
+id = "clm-hist-flabellum-appearance"
+kind = "appearance"
+text = "The comparison artwork uses a circular hand-held fan as a representative historical reconstruction, not as a facsimile or universal morphology."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-hist-flabellum-braun"]
+
+[[sources]]
+id = "src-hist-flabellum-braun"
+binding = "historical-pre-1962-inventory"
+locus = "Checked source 1: Joseph Braun, “Flabellum,” Catholic Encyclopedia 6 (1909); materials, practical use, early witness, and Western continuation."
+role = "specialist-secondary"
+verification_state = "claim-verified"
+checked_on = 2026-07-27
+
+[[artwork]]
+id = "art-rsd-hist-001"
+view = "comparison"
+asset = "shared/artwork/pencil/RSD-HIST-001-early-medieval-objects.png"
+review_state = "identity-checked"
+depicts = ["obj-hist-flabellum", "obj-hist-eucharistic-dove", "obj-hist-eucharistic-tower"]
+scale_mode = "not-to-common-scale"
+review_note = "Internally checked for the intended circular hand-held silhouette; competent ceremonial and print review remain pending."
