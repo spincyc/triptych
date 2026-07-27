@@ -67,6 +67,12 @@ or veil. The Missal's Epistle--Gospel--Epistle movement, three-level model
 sanctuary, core branches, mandatory no-second-Confiteor correction, diagram
 policy, and exclusions are identical to the child guide map.
 
+The trainer renders the same pencil asset set and semantic TeX overlays as the
+page-matched child route: `ASG-ART-001`, `ASG-ART-002`, `ASG-ART-005`,
+`ASG-ART-006`, and `ASG-ART-011`--`ASG-ART-021`. The series artwork manifest
+owns each asset's provenance, normalized identity, rights, consumers, and
+review state.
+
 Series-wide source, response, pronunciation, presentation, ceremonial,
 flash-card, rights, and production records are owned by the non-publishable
 altar-server-guides research directory.

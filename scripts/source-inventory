@@ -88,6 +88,9 @@ BIBLICAL_HISTORY_OWNER = "owner.history.biblical-translations"
 PARISH_HISTORY_OWNER = "owner.history.catholic-parish-histories"
 INSTITUTE_HISTORY_OWNER = "owner.history.traditional-priestly-institutes"
 SERVER_TRAINING_OWNER = "owner.liturgy.roman-rite.1962.altar-server-guides"
+SANCTUARY_DICTIONARY_OWNER = (
+    "owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"
+)
 COMMON_TYPESETTING_OWNER = "owner.typesetting.common"
 
 # Roots are relative to one provider tree (src/<provider>/) and are
@@ -133,6 +136,13 @@ PROVIDER_NONPUBLICATION_OWNERS = (
             "liturgy/roman-rite/1962/reference/altar-server-guides/shared",
         ],
         "kind": "server-training-source-owner",
+    },
+    {
+        "id": SANCTUARY_DICTIONARY_OWNER,
+        "roots": [
+            "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary",
+        ],
+        "kind": "shared-render-owner",
     },
     {
         "id": POSTCONCILIAR_OWNER,
@@ -355,6 +365,12 @@ def _document_shape(document: str) -> tuple[str, list[dict[str, str]], str]:
         "liturgy/roman-rite/1962/reference/altar-server-guides/"
     ):
         edges.append({"id": SERVER_TRAINING_OWNER, "relationship": "source-owner"})
+    if document.startswith(
+        "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/"
+    ):
+        edges.append(
+            {"id": SANCTUARY_DICTIONARY_OWNER, "relationship": "source-owner"}
+        )
     if document == "liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass":
         edges.append({"id": "theology/sacraments", "relationship": "render-import"})
     if document == "theology/mariology/angelus":

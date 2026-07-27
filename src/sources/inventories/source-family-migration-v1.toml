@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-07-27"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:cdfdf20c570296e186c6972ece1216de06c776b097e09ddd4e82b4ec66328809"
+inventory_snapshot = "sha256:2af533a0d14f976942fcaffa29075a6fa8cef3a305011f90fdc5435cece5d6b2"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:96ce76990fd5fa8a2d709c14791d2c2d96e63ed25706124ef37e77208bec5ae1"
 canonical_catalog_snapshot = "sha256:ba3fe75f7a8f80c104f55e33cb20186648de7a3e8a41649ed0bce0084aa5d799"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:b4a2f0a39ef207b6bdbd8f15c8265443e4ec35e5ae0ddf05d33bbe06c19ae9b7"
+snapshot = "sha256:2b593321e20df650f0e49111d79d21293fbd921696910128b8f9600dbc89d4cb"
 
 [[families]]
 id = "family.abraham-ibn-ezra.perush-al-ha-torah"
@@ -6191,7 +6191,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass"
-surface_snapshot = "sha256:8771536a86cdf34b7d80a7a8db1c4d4474c12a119506eed10248c7c5ad5eb02f"
+surface_snapshot = "sha256:28f014ebb8352410aa75f7163c5cd2c4701a1ddeb5ac5cf3bf5fbf9e767e2245"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
@@ -6205,7 +6205,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual"
-surface_snapshot = "sha256:144a32d5c8bcc9995938850b3913b023a6437ce8d10715b27b20992befe9e324"
+surface_snapshot = "sha256:dddc430dfae545ef156ae54b8b83b05b48185cd8dd08ebbbfbd15bf237ef80ad"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.roman-missal.1962"
@@ -6214,7 +6214,7 @@ record_paths = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/0
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata"
-surface_snapshot = "sha256:46d1fcdd7c8248938b0c8c3435ec1bee1f3d5ef72a5547b9cb19e2175ae0c6a2"
+surface_snapshot = "sha256:02b600731ec8a48deb2ccf6b3f3218a96780fc062cd0e420a09e70b2c9ad3d45"
 review_state = "pending"
 
 [[review_units]]
@@ -6224,7 +6224,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass"
-surface_snapshot = "sha256:e69ddc8eae7481cef873634c76ab320baca1d1bd7a64307ca68b649de56b60f0"
+surface_snapshot = "sha256:988d3e15fbe488d1bc66ad04092c853dc993d87b9d5b497df4bb1da203396f1f"
 review_state = "pending"
 
 [[review_units]]
@@ -6758,7 +6758,12 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "owner.liturgy.roman-rite.1962.altar-server-guides"
-surface_snapshot = "sha256:861dc7b211e770a3a679768ccc8ae1f3b9126aab8b6a3f08e9de2c058320a1bb"
+surface_snapshot = "sha256:412ff7a6730e7cf17524d432f3ecc734dc1a09f012282355b58aadd899e8a1c3"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"
+surface_snapshot = "sha256:41c8f6166f4e518074a37eea7b7fa8ef15de1b8231e5f9eca8b94a483851e2d3"
 review_state = "pending"
 
 [[review_units]]

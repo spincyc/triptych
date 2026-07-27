@@ -411,3 +411,31 @@ The installed PDFs reproduce these exact reviewed bytes. Physical actual-size,
 duplex, photocopy, intended-reader, independent, rights, and
 ecclesiastical-suitability maturity reviews remain pending; the maintainer's
 release authorization does not represent those reviews as complete.
+
+## Reader-first and complete-pencil review — 2026-07-27
+
+The four guide editions were rebuilt after moving qualifications, checklists,
+trainer matter, and source apparatus behind the serving routes. The Low Mass
+pair now uses pencil artwork in every rendered ceremonial scene; the eleven
+new assets are `ASG-ART-011` through `ASG-ART-021`, with identity, prompt
+brief, consumer, dimensions, and exact hash recorded in the artwork manifest.
+The Missa Cantata and Solemn Mass guides likewise begin with role selection and
+actionable routes rather than front-loaded reference matter.
+
+| Publication | Pages | Bytes | SHA-256 |
+|---|---:|---:|---|
+| `01-low-mass` | 29 | 4,974,862 | `46e08968dae26a31379f92fdf513af40e1df041e607a990063d258133988cf1c` |
+| `01-low-mass-trainer-manual` | 29 | 4,988,421 | `abf1da8057a70097c8200fe8ad6ca5ac063b13ffa631aaf605e941b149e103ec` |
+| `02-missa-cantata` | 27 | 1,258,453 | `a647c706bf56cc2c4b16209859e4d4dd1abc7013e2e7a82ca59556ff429a4475` |
+| `03-solemn-mass` | 27 | 1,301,995 | `86188a4fe819c24ba8db997c35b3979dbea9138ce0eaa984712c685378d4dad7` |
+
+The bounded review tool rastered every page of all four PDFs. Both contact
+sheets for each edition were inspected for order, legibility, pencil-image
+placement, clipping, collisions, accidental blanks, broken routes, and
+terminal fit. The child and trainer editions remain page-aligned. Their
+29-page extent is one page greater than the immediately preceding 28-page
+snapshot, so no page-count reduction is claimed for that pair. Missa Cantata
+remains at 27 pages; Solemn Mass falls from 28 to 27 pages. The four installed
+PDFs reproduce the exact hashes above. The previously recorded physical,
+duplex, intended-reader, independent, rights, and ecclesiastical-suitability
+maturity reviews remain pending.

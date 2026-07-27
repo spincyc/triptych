@@ -1,0 +1,438 @@
+schema_id = "triptych-roman-sanctuary-inventory"
+schema_version = 1
+record_encoding = "UTF-8"
+unknown_fields = "reject"
+id_pattern = "^(obj|var|clm|src|art|plt|ed)-[a-z0-9]+(?:-[a-z0-9]+)*$"
+
+[record]
+required = [
+  "schema_version",
+  "id",
+  "workflow_state",
+  "preferred_english_name",
+  "latin_headword",
+  "categories",
+  "periods",
+  "statuses",
+  "ceremonies",
+  "presence",
+  "handling",
+  "claims",
+  "artwork",
+  "audience_relevance",
+]
+optional = [
+  "alternate_english_names",
+  "alternate_latin_names",
+  "sort_name",
+  "parent_object",
+  "component_objects",
+  "confusable_with",
+  "related_objects",
+  "variants",
+  "audience_note",
+  "pronunciation_key",
+  "editorial_note",
+]
+
+[fields.schema_version]
+type = "integer"
+constant = 1
+
+[fields.id]
+type = "string"
+pattern = "^obj-[a-z0-9]+(?:-[a-z0-9]+)*$"
+unique = true
+
+[fields.workflow_state]
+type = "enum"
+values = ["lead", "identified", "source-audited", "art-reviewed", "publication-ready", "held"]
+
+[fields.preferred_english_name]
+type = "string"
+nonempty = true
+
+[fields.latin_headword]
+type = "string"
+nonempty = true
+
+[fields.alternate_english_names]
+type = "array[string]"
+default = []
+
+[fields.alternate_latin_names]
+type = "array[string]"
+default = []
+
+[fields.sort_name]
+type = "string"
+default_from = "preferred_english_name"
+
+[fields.categories]
+type = "array[enum]"
+min_items = 1
+values = [
+  "church-and-sanctuary",
+  "altar-and-appointments",
+  "sacred-vessels",
+  "linens-and-textiles",
+  "books-and-printed-objects",
+  "service-objects",
+  "incense",
+  "priestly-vestments",
+  "deacon-and-subdeacon",
+  "pontifical-and-prelatial",
+  "servers-ministers-and-choir",
+  "requiem",
+  "nuptial-and-ritual",
+  "holy-week",
+  "related-ceremonies",
+  "historical",
+]
+
+[fields.periods]
+type = "array[enum]"
+min_items = 1
+values = [
+  "early-roman-and-late-antique",
+  "medieval",
+  "tridentine-and-early-modern",
+  "nineteenth-century",
+  "twentieth-century-pre-1962",
+  "roman-1962-horizon",
+]
+
+[fields.statuses]
+type = "array[enum]"
+min_items = 1
+values = [
+  "universal-roman",
+  "authorized-regional",
+  "religious-order",
+  "institutional",
+  "historical-discontinued-before-1962",
+  "unresolved",
+]
+
+[fields.ceremonies]
+type = "array[enum]"
+min_items = 1
+values = [
+  "low-mass",
+  "missa-cantata",
+  "solemn-mass",
+  "pontifical-mass",
+  "requiem-mass",
+  "nuptial-mass",
+  "ritual-mass",
+  "palm-sunday",
+  "holy-thursday",
+  "good-friday",
+  "easter-vigil",
+  "asperges",
+  "benediction",
+  "exposition-and-reposition",
+  "procession",
+  "ceremony-surrounding-mass",
+  "historical-only",
+]
+
+[fields.parent_object]
+type = "id"
+prefix = "obj-"
+
+[fields.component_objects]
+type = "array[id]"
+prefix = "obj-"
+default = []
+
+[fields.confusable_with]
+type = "array[id]"
+prefix = "obj-"
+default = []
+
+[fields.related_objects]
+type = "array[id]"
+prefix = "obj-"
+default = []
+
+[presence]
+required = ["locations", "contexts"]
+optional = ["composition_ids", "local_variability"]
+
+[presence.locations]
+type = "array[string]"
+min_items = 1
+
+[presence.contexts]
+type = "array[string]"
+min_items = 1
+
+[presence.composition_ids]
+type = "array[id]"
+prefix = "plt-"
+default = []
+
+[presence.local_variability]
+type = "enum"
+values = ["none-recorded", "possible", "common", "defining"]
+default = "none-recorded"
+
+[handling]
+required = ["ordinary_handlers", "server_relation"]
+optional = ["prepares", "presents", "receives", "stores", "warnings"]
+
+[handling.ordinary_handlers]
+type = "array[enum]"
+min_items = 1
+values = [
+  "bishop",
+  "priest",
+  "deacon",
+  "subdeacon",
+  "master-of-ceremonies",
+  "acolyte",
+  "thurifer",
+  "boat-bearer",
+  "torchbearer",
+  "crossbearer",
+  "other-server",
+  "sacristan",
+  "cleric",
+  "choir-member",
+  "lay-assistant",
+  "other",
+]
+
+[handling.server_relation]
+type = "enum"
+values = [
+  "handles",
+  "carries",
+  "presents",
+  "prepares",
+  "moves-only-by-direction",
+  "recognizes-only",
+  "must-not-handle",
+  "not-normally-present",
+  "varies-by-ceremony",
+]
+
+[handling.prepares]
+type = "array[enum]"
+values_from = "handling.ordinary_handlers"
+default = []
+
+[handling.presents]
+type = "array[enum]"
+values_from = "handling.ordinary_handlers"
+default = []
+
+[handling.receives]
+type = "array[enum]"
+values_from = "handling.ordinary_handlers"
+default = []
+
+[handling.stores]
+type = "array[enum]"
+values_from = "handling.ordinary_handlers"
+default = []
+
+[handling.warnings]
+type = "array[string]"
+default = []
+
+[claim]
+table = "claims"
+array = true
+required = ["id", "kind", "text", "evidence_state", "source_ids"]
+optional = ["applies_to_variants", "jurisdiction", "as_of", "rights_note", "publication_note"]
+
+[claim.id]
+type = "id"
+prefix = "clm-"
+unique_within_record = true
+
+[claim.kind]
+type = "enum"
+values = [
+  "identity",
+  "appearance",
+  "dimensions",
+  "construction",
+  "placement",
+  "liturgical-use",
+  "handler",
+  "handling-boundary",
+  "ceremonial-presence",
+  "terminology",
+  "chronology",
+  "symbolism",
+  "variation",
+  "safety",
+]
+
+[claim.evidence_state]
+type = "enum"
+values = [
+  "verified-source-text",
+  "checked-paraphrase",
+  "source-grounded-synthesis",
+  "editorial-proposal",
+  "unverified-lead",
+]
+
+[claim.source_ids]
+type = "array[id]"
+prefix = "src-"
+min_items_unless = "evidence_state == editorial-proposal"
+
+[claim.applies_to_variants]
+type = "array[id]"
+prefix = "var-"
+default = []
+
+[claim.as_of]
+type = "date"
+
+[variant]
+table = "variants"
+array = true
+required = ["id", "preferred_name", "distinguishing_features", "status", "source_ids", "artwork_ids"]
+optional = ["latin_name", "periods", "regions", "communities", "ceremonies", "dimensions", "note"]
+
+[variant.id]
+type = "id"
+prefix = "var-"
+globally_unique = true
+
+[variant.status]
+type = "enum"
+values_from = "fields.statuses"
+
+[source]
+table = "sources"
+array = true
+required = ["id", "binding", "locus", "role", "verification_state"]
+optional = ["checked_on", "note"]
+
+[source.id]
+type = "id"
+prefix = "src-"
+unique_within_record = true
+
+[source.binding]
+type = "string"
+description = "Canonical source or publication-local source-binding ID; never a bare URL."
+
+[source.role]
+type = "enum"
+values = [
+  "governing-liturgical-book",
+  "official-interpretation",
+  "ceremonial-book",
+  "historical-primary",
+  "catalog-or-museum-record",
+  "specialist-secondary",
+  "manual",
+  "rights",
+  "lead-only",
+]
+
+[source.verification_state]
+type = "enum"
+values = ["unlocated", "located", "inspected", "claim-verified", "rejected"]
+
+[artwork]
+table = "artwork"
+array = true
+required = ["id", "view", "asset", "review_state", "depicts"]
+optional = ["variant_id", "scale_mode", "context_object_ids", "review_note"]
+
+[artwork.id]
+type = "id"
+prefix = "art-"
+globally_unique = true
+
+[artwork.view]
+type = "enum"
+values = [
+  "isolated",
+  "front",
+  "back",
+  "side",
+  "top",
+  "folded",
+  "unfolded",
+  "open",
+  "closed",
+  "worn",
+  "in-use",
+  "context-inset",
+  "detail",
+  "comparison",
+  "composition",
+]
+
+[artwork.asset]
+type = "string"
+description = "Repository-relative stable asset path; no machine-local path."
+
+[artwork.review_state]
+type = "enum"
+values = ["prompted", "generated", "identity-checked", "liturgically-checked", "print-checked", "approved", "rejected"]
+
+[artwork.depicts]
+type = "array[id]"
+prefix = "obj-"
+min_items = 1
+
+[artwork.scale_mode]
+type = "enum"
+values = ["common-scale", "scale-bar", "not-to-common-scale", "not-applicable"]
+default = "not-applicable"
+
+[audience_relevance]
+required = ["altar_server", "sacristan", "mc_trainer", "general_reader", "pontifical"]
+
+[audience_relevance.altar_server]
+type = "enum"
+values = ["required", "useful", "exclude"]
+
+[audience_relevance.sacristan]
+type = "enum"
+values = ["required", "useful", "exclude"]
+
+[audience_relevance.mc_trainer]
+type = "enum"
+values = ["required", "useful", "exclude"]
+
+[audience_relevance.general_reader]
+type = "enum"
+values = ["required", "useful", "exclude"]
+
+[audience_relevance.pontifical]
+type = "enum"
+values = ["required", "useful", "exclude"]
+
+[audience_note]
+table = "audience_note"
+array = true
+required = ["audience", "text", "claim_ids"]
+
+[audience_note.audience]
+type = "enum"
+values = ["altar-server", "sacristan", "mc-trainer", "general-reader", "pontifical"]
+
+[pronunciation_key]
+type = "string"
+description = "Optional reference to a pronunciation-appendix record; pronunciation is not repeated on visual plates."
+
+[publication_gate]
+selectable_workflow_states = ["publication-ready"]
+allowed_claim_states = ["verified-source-text", "checked-paraphrase", "source-grounded-synthesis"]
+allowed_artwork_states = ["approved"]
+required_claim_kinds = ["identity", "appearance", "liturgical-use", "ceremonial-presence"]
+symbolism_rule = "optional; when present it requires a source and must be brief"
+historical_rule = "historical objects require a verified chronology claim and period"
+variant_rule = "substantive included variants require distinguishing features, source binding, and approved artwork"

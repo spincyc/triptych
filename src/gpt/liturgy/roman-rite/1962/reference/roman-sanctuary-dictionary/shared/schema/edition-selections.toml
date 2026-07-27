@@ -1,0 +1,106 @@
+schema_version = 1
+inventory_schema = "inventory-schema.toml"
+selection_semantics = "include when all include rules pass; then apply exclusions; explicit object exclusions win"
+
+[[editions]]
+id = "ed-comprehensive"
+label = "The Illustrated Dictionary of the Roman Sanctuary"
+kind = "comprehensive"
+audience = "adult-general"
+include_workflow_states = ["publication-ready"]
+include_statuses = [
+  "universal-roman",
+  "authorized-regional",
+  "religious-order",
+  "institutional",
+  "historical-discontinued-before-1962",
+]
+include_periods = [
+  "early-roman-and-late-antique",
+  "medieval",
+  "tridentine-and-early-modern",
+  "nineteenth-century",
+  "twentieth-century-pre-1962",
+  "roman-1962-horizon",
+]
+historical_order = [
+  "early-roman-and-late-antique",
+  "medieval",
+  "tridentine-and-early-modern",
+  "nineteenth-century",
+  "twentieth-century-pre-1962",
+]
+historical_secondary_order = "category"
+include_relevance = []
+exclude_statuses = ["unresolved"]
+explicit_exclusions = []
+
+[[editions]]
+id = "ed-altar-server"
+label = "The Altar Server's Visual Dictionary"
+kind = "derived-use"
+audience = "altar-server"
+include_workflow_states = ["publication-ready"]
+include_relevance = ["required", "useful"]
+relevance_field = "audience_relevance.altar_server"
+presence_rule = "include every object documented as possibly present around a server, even when server_relation is recognizes-only or must-not-handle"
+exclude_statuses = ["unresolved"]
+explicit_exclusions = []
+
+[[editions]]
+id = "ed-sacristan"
+label = "The Sacristan's Visual Dictionary"
+kind = "derived-use"
+audience = "sacristan"
+include_workflow_states = ["publication-ready"]
+include_relevance = ["required", "useful"]
+relevance_field = "audience_relevance.sacristan"
+exclude_statuses = ["unresolved"]
+explicit_exclusions = []
+
+[[editions]]
+id = "ed-mc-trainer"
+label = "The MC and Trainer's Visual Dictionary"
+kind = "derived-use"
+audience = "mc-trainer"
+include_workflow_states = ["publication-ready"]
+include_relevance = ["required", "useful"]
+relevance_field = "audience_relevance.mc_trainer"
+exclude_statuses = ["unresolved"]
+explicit_exclusions = []
+
+[[editions]]
+id = "ed-general-reader"
+label = "The General Reader's Visual Dictionary"
+kind = "derived-use"
+audience = "general-reader"
+include_workflow_states = ["publication-ready"]
+include_relevance = ["required"]
+relevance_field = "audience_relevance.general_reader"
+exclude_statuses = ["unresolved"]
+explicit_exclusions = []
+
+[[editions]]
+id = "ed-pontifical"
+label = "Pontifical Ceremonies Visual Reference"
+kind = "derived-use"
+audience = "pontifical"
+include_workflow_states = ["publication-ready"]
+include_relevance = ["required", "useful"]
+relevance_field = "audience_relevance.pontifical"
+include_categories = ["pontifical-and-prelatial"]
+include_categories_semantics = "union with relevance selection, so ordinary supporting objects may be included"
+exclude_statuses = ["unresolved"]
+explicit_exclusions = []
+
+[rendering]
+page_format = "US Letter portrait"
+color_mode = "monochrome"
+primary_mode = "image-dominant visual plates"
+ordinary_images_per_page_min = 4
+ordinary_images_per_page_target_max = 10
+pronunciation_location = "terminal appendix for commonly spoken terms"
+citations_location = "numbered endnotes keyed to entries"
+symbolism = "brief and source-bound"
+generated_lettering_in_artwork = false
+typeset_labels = true

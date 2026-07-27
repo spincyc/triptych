@@ -1,0 +1,81 @@
+% Generated-record API for the Roman Sanctuary Dictionary.
+% This file stores data only. Page design belongs to the dictionary format.
+\makeatletter
+
+\newcommand{\RSDClearObjectRecord}{%
+  \def\RSDObjectID{}%
+  \def\RSDPreferredEnglishName{}%
+  \def\RSDLatinHeadword{}%
+  \def\RSDAlternateEnglishNames{}%
+  \def\RSDAlternateLatinNames{}%
+  \def\RSDCategories{}%
+  \def\RSDPeriods{}%
+  \def\RSDStatuses{}%
+  \def\RSDCeremonies{}%
+  \def\RSDPresenceLocations{}%
+  \def\RSDPresenceContexts{}%
+  \def\RSDOrdinaryHandlers{}%
+  \def\RSDServerRelation{}%
+  \def\RSDConfusableWith{}%
+  \def\RSDRelatedObjects{}%
+  \def\RSDPronunciationKey{}%
+}
+
+\newcommand{\RSDObjectRecord}[3]{%
+  \RSDClearObjectRecord
+  \def\RSDObjectID{#1}%
+  \def\RSDPreferredEnglishName{#2}%
+  \def\RSDLatinHeadword{#3}%
+}
+\newcommand{\RSDObjectAliases}[2]{%
+  \def\RSDAlternateEnglishNames{#1}%
+  \def\RSDAlternateLatinNames{#2}%
+}
+\newcommand{\RSDObjectClassification}[4]{%
+  \def\RSDCategories{#1}%
+  \def\RSDPeriods{#2}%
+  \def\RSDStatuses{#3}%
+  \def\RSDCeremonies{#4}%
+}
+\newcommand{\RSDObjectPresence}[2]{%
+  \def\RSDPresenceLocations{#1}%
+  \def\RSDPresenceContexts{#2}%
+}
+\newcommand{\RSDObjectHandling}[2]{%
+  \def\RSDOrdinaryHandlers{#1}%
+  \def\RSDServerRelation{#2}%
+}
+\newcommand{\RSDObjectRelations}[2]{%
+  \def\RSDConfusableWith{#1}%
+  \def\RSDRelatedObjects{#2}%
+}
+\newcommand{\RSDObjectPronunciationKey}[1]{%
+  \def\RSDPronunciationKey{#1}%
+}
+
+% Consumers redefine these append hooks. The generator calls them in declared
+% record order. Arguments remain explicit so records can be validated against
+% their TOML source without parsing prose inside TeX.
+\providecommand{\RSDClaim}[6]{}
+% #1 claim ID, #2 kind, #3 text, #4 evidence state,
+% #5 comma-separated source IDs, #6 comma-separated applicable variant IDs
+
+\providecommand{\RSDVariant}[7]{}
+% #1 variant ID, #2 English name, #3 Latin name, #4 distinguishing features,
+% #5 status, #6 source IDs, #7 artwork IDs
+
+\providecommand{\RSDSourceBinding}[6]{}
+% #1 local source ID, #2 canonical binding, #3 locus, #4 role,
+% #5 verification state, #6 checked-on date or empty
+
+\providecommand{\RSDArtwork}[7]{}
+% #1 artwork ID, #2 view, #3 asset path, #4 review state,
+% #5 depicted object IDs, #6 variant ID or empty, #7 scale mode
+
+\providecommand{\RSDAudienceNote}[4]{}
+% #1 audience, #2 note text, #3 supporting claim IDs, #4 object ID
+
+\providecommand{\RSDEndObjectRecord}{}
+
+\RSDClearObjectRecord
+\makeatother
