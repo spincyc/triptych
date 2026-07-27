@@ -2,6 +2,31 @@
 % manual. Both preserve one action sequence and the same hard page boundaries;
 % trainer-only meanings and correction detail belong in the adult layer.
 
+\newcommand{\LMTitleApparatus}{%
+  \begingroup
+  \fontsize{6.4}{7.6}\selectfont
+  \textbf{Scope, edition, and qualifications.} Ordinary two-server Low Mass
+  under the 1962 \emph{Missale Romanum}. The three-level sanctuary and
+  practical route are non-normative teaching models. Follow the priest and
+  the rehearsed customs of the actual church. Special rites require separate
+  guides.
+
+  \par\vspace{2pt}
+  \textbf{References.} \emph{Missale Romanum} (1962), especially
+  \emph{Ritus servandus} II--XII and General Rubrics 424--425 and 503--510;
+  Archconfraternity of Saint Stephen,
+  \emph{Serving Low Mass with 2 Servers (Ac1 \& Ac2)}; Charles
+  J. Carmody, \emph{Learning to Serve} (1961); Laurence J. O'Connell,
+  \emph{The Book of Ceremonies} (1943), pp. 170--174; and the 1961
+  \emph{Liber Usualis} pronunciation rules. The named First/Second division is
+  this guide's documented teaching model, not a universal rubric. Received
+  liturgical text and embedded fonts retain their external status; see
+  \texttt{THIRD\_PARTY.md}.
+
+  \par\vspace{2pt}
+  \LMRenderGenerationMetadata
+  \par\endgroup}
+
 \LMTitlePage
 
 % ---------------------------------------------------------------------------
@@ -37,6 +62,11 @@ the priest or trainer maps them to the actual church.}
 \LMBranch{Practise}
 {Trainer reads the priest's side. Both acolytes answer from the server side.
 Cover the response and try it again. Stop before the words become rushed.}
+\LMBranch{Quick route}
+{Foot/Altar: arrive and answer. Readings: First moves the Missal.
+Offertory: serve cruets and Lavabo. Canon: ring and assist. Communion:
+follow the branch, plate, and ablutions. Ending: answer, face the Last Gospel,
+and recess.}
 \EndLMPage
 
 % ---------------------------------------------------------------------------
@@ -101,6 +131,7 @@ without objects. Both finish together and the centre remains open.}
 % ---------------------------------------------------------------------------
 % PAGE 5 — LM-004 and first part of LM-005
 % ---------------------------------------------------------------------------
+\ifTrainerManualGuide\LMSuppressTrainerMeaningtrue\fi
 \BeginLMPage{FOOT/ALTAR}{BEGIN THE PRAYERS}{%
   \LMTrainerNote{Pace}{First sets a moderate pace. Second begins and finishes
     with First; neither races the other.}
@@ -121,48 +152,32 @@ Read across each numbered row.}
   homine iniquo, et doloso erue me.}}
   {A2}
 
+\LMDialogueFirst{03}
+  {\emph{Emitte lucem tuam, et veritatem tuam: ipsa me deduxerunt, et
+  adduxerunt in montem sanctum tuum, et in tabernacula tua.}}
+  {A3}
+
 \LMReadingKey
 \EndLMPage
 
 % ---------------------------------------------------------------------------
-% PAGE 6 — rest of Psalm 42, LM-005
+% PAGE 6 — finish Psalm 42, LM-005 and LM-006
 % ---------------------------------------------------------------------------
-\BeginLMPage{FOOT/ALTAR}{CONTINUE PSALM 42}{%
+\BeginLMPage{FOOT/ALTAR}{FINISH PSALM 42}{%
   \LMTrainerNote{Meaning}{Use the short meanings to keep the verse chain from
     becoming unconnected sounds. They are not translations to recite.}
-  \LMTrainerNote{Bow}{Both make a simple head bow with the priest at
-    \emph{Gloria Patri} on the next page.}
+  \LMTrainerNote{Gesture}{Bow at the priest's \emph{Gloria Patri}. Sign
+    together at \emph{Adiutorium nostrum}.}
   \LMTrainerNote{Omission}{When Psalm 42 is omitted, turn directly from 01 to
     06; do not use 02--05 or the repeated 01.}}
 \LMPageIntro{The priest speaks one complete verse. Both answer with the next
 complete verse.}
 \LMLaneHeadings
 
-\LMDialogueFirst{03}
-  {\emph{Emitte lucem tuam, et veritatem tuam: ipsa me deduxerunt, et
-  adduxerunt in montem sanctum tuum, et in tabernacula tua.}}
-  {A3}
-
 \LMDialogueFirst{04}
   {\emph{Confitebor tibi in cithara, Deus, Deus meus: quare tristis es,
   anima mea, et quare conturbas me?}}
   {A4}
-
-\LMReadingKey
-\EndLMPage
-
-% ---------------------------------------------------------------------------
-% PAGE 7 — end Psalm, LM-005 and LM-006
-% ---------------------------------------------------------------------------
-\BeginLMPage{FOOT/ALTAR}{FINISH THE PSALM}{%
-  \LMTrainerNote{Gesture}{Simple bow at the priest's \emph{Gloria Patri}.
-    Sign together at \emph{Adiutorium nostrum}.}
-  \LMTrainerNote{Repeat}{The second 01 is a true repeat, so pronunciation and
-    meaning are not printed again.}
-  \LMTrainerNote{Next cue}{After 06 the priest begins his Confiteor. Keep both
-    acolytes still and listening.}}
-\LMPageIntro{Stay kneeling on the floor. Keep the ends of the responses clear.}
-\LMLaneHeadings
 
 \LMDialogueFirst{05}
   {\emph{Gloria Patri, et Filio, et Spiritui Sancto.}}
@@ -176,6 +191,7 @@ complete verse.}
   {\emph{Adiutorium nostrum in nomine Domini.}}
   {A6}
 \EndLMPage
+\ifTrainerManualGuide\LMSuppressTrainerMeaningfalse\fi
 
 % ---------------------------------------------------------------------------
 % PAGE 8 — LM-007
@@ -897,60 +913,4 @@ recess shoulder to shoulder before the priest, who carries the chalice:
 First picture-right, Second picture-left.}
 \LMRehearsalCheck{Run dismissal, blessing, Last Gospel, final reverence, and
 recession. Repeat the no-Last-Gospel branch separately.}
-\EndLMPage
-
-% ---------------------------------------------------------------------------
-% PAGE 33 — concise route and apparatus
-% ---------------------------------------------------------------------------
-\BeginLMPage{QUICK ROUTE}{KEEP THE SIX STAGES TOGETHER}{%
-  \LMTrainerNote{Use}{This page is a route reminder, not a mastery record or
-    authorization to serve without live rehearsal.}
-  \LMTrainerNote{Branches}{Fix Psalm 42, Communion, dismissal, Last Gospel,
-    doorway, and reverence branches before the child runs the whole Mass.}
-  \LMTrainerNote{Flash cards}{Print at 100 percent on letter paper, long-edge
-    duplex. Verify one sheet before cutting. Use Priest as the cue and Both as
-    the response.}
-  \LMTrainerNote{Review}{Independent liturgical, ceremonial, pronunciation,
-    pedagogical, rights, and ecclesiastical review remain outstanding.}}
-\LMPageIntro{Say the stage names in order. Then name the one movement that
-changes the sanctuary picture in each stage.}
-
-\LMAction{1}{Foot/Altar}{Arrive, kneel on the floor, and answer.}{Finish the
-opening prayers, then move to the normal places on the first step.}
-\LMAction{2}{Readings}{Remain at the normal places.}{After the final Epistle,
-First moves the Missal to the Gospel side.}
-\LMAction{3}{Offertory}{Serve cruets and Lavabo.}{First returns with the bell;
-both kneel at the normal places.}
-\LMAction{4}{Canon}{Ring and assist at the elevations.}{Both return from the
-predella to the normal places.}
-\LMAction{5}{Communion}{Follow the correct Communion branch.}{Serve the
-Communion plate and ablutions. First returns the plate; Second returns the
-Missal to the Epistle side.}
-\LMAction{6}{Ending}{Answer, receive the blessing, and face the Last Gospel.}
-{Meet at the foot. The priest takes the chalice; the servers recess before
-him.}
-
-\vspace{10pt}
-\begingroup
-\fontsize{7.2}{8.6}\selectfont
-\textbf{Scope, edition, and qualifications.} Ordinary two-server Low Mass
-under the 1962 \emph{Missale Romanum}. The three-level sanctuary and practical
-route are non-normative teaching models. Follow the priest and the rehearsed
-customs of the actual church. Special rites require separate guides.
-
-\par\vspace{3pt}
-\textbf{References.} \emph{Missale Romanum} (1962), especially
-\emph{Ritus servandus} II--XII and General Rubrics 424--425 and 503--510;
-Archconfraternity of Saint Stephen,
-\emph{Serving Low Mass with 2 Servers (Ac1 \& Ac2)}; Charles
-J. Carmody, \emph{Learning to Serve} (1961); Laurence J. O'Connell,
-\emph{The Book of Ceremonies} (1943), pp. 170--174; and the 1961
-\emph{Liber Usualis} pronunciation rules. The named First/Second division is
-this guide's documented teaching model, not a universal rubric. Received
-liturgical text and embedded Atkinson Hyperlegible Next fonts retain their
-external status; see \texttt{THIRD\_PARTY.md}.
-
-\par\vspace{5pt}
-\LMRenderGenerationMetadata
-\par\endgroup
 \EndLMPage

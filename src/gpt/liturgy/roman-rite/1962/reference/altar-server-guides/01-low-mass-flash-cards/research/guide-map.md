@@ -63,9 +63,9 @@ duplex printing. The last sheet contains cards 17--22; its final two grid
 positions are unbordered and do not create filler cards or blank backs.
 
 Print US letter, portrait, two-sided, at actual size, flipped on the long edge,
-and cut on the card borders. Each face uses fixed 11.5-point Atkinson
-Hyperlegible body text. Front cues are regular weight and back responses are
-bold; both remain top-aligned. The three header zones read
+and cut on the card borders. Each face uses fixed 11.5-point Libertinus Serif
+body text. Front cues are regular weight and back responses are bold; both
+remain top-aligned. The three header zones read
 `NUMBER · PRIEST / LOW MASS / STAGE` on fronts and
 `NUMBER · BOTH / LOW MASS / STAGE` on backs. Print hints stay outside the card
 borders. The compact inherited revision and rights notice occupies unused

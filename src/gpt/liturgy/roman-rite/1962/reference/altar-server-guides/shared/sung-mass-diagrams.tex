@@ -1,0 +1,50 @@
+% Pencil scenes are illustrative teaching aids. TeX owns the role labels.
+
+\tikzset{
+  sung role tag/.style={
+    draw=black,fill=white,line width=0.5pt,rounded corners=1.3pt,
+    inner xsep=2.5pt,inner ysep=1.2pt,
+    font=\fontsize{7.8}{9}\selectfont\bfseries}}
+
+\newcommand{\SungRoleTag}[4]{%
+  \node[sung role tag,anchor=south]
+    at ($(#1.south west)!#2!(#1.south east)+(0,#3)$) {#4};}
+
+\newcommand{\MCGospelFormationDiagram}{%
+  \begin{center}
+  \begin{tikzpicture}
+    \node[inner sep=0pt] (scene)
+      {\includegraphics[width=.82\linewidth]{%
+        liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-009-mc-gospel-formation-corrected.png}};
+    \SungRoleTag{scene}{.232}{43mm}{A1}
+    \SungRoleTag{scene}{.391}{48mm}{P}
+    \SungRoleTag{scene}{.477}{43mm}{MC}
+    \SungRoleTag{scene}{.570}{43mm}{A2}
+    \SungRoleTag{scene}{.766}{41mm}{TH}
+  \end{tikzpicture}
+
+  \parbox{.82\linewidth}{\small\textbf{Gospel-side stations.} At the parish
+  cue, A1 and A2 take the assigned places flanking the altar book; P chants at
+  the book, MC attends, and TH waits outward with the closed thurible. The
+  drawing identifies roles; use the parish's marked distances.}
+  \end{center}}
+
+\newcommand{\SolemnGospelStationDiagram}{%
+  \begin{center}
+  \begin{tikzpicture}
+    \node[inner sep=0pt] (scene)
+      {\includegraphics[width=.82\linewidth]{%
+        liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-010-so-gospel-station-corrected.png}};
+    \SungRoleTag{scene}{.105}{43mm}{A1}
+    \SungRoleTag{scene}{.255}{44mm}{SD}
+    \SungRoleTag{scene}{.370}{47mm}{D}
+    \SungRoleTag{scene}{.496}{43mm}{MC}
+    \SungRoleTag{scene}{.676}{42mm}{A2}
+    \SungRoleTag{scene}{.806}{40mm}{TH}
+  \end{tikzpicture}
+
+  \parbox{.82\linewidth}{\small\textbf{Solemn Gospel stations.} At the parish
+  cue, A1 and A2 take the assigned places flanking the book; SD supports it
+  for D, MC attends, and TH waits outward with the closed thurible. The
+  drawing identifies roles; use the parish's marked distances.}
+  \end{center}}

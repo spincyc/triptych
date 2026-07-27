@@ -1,6 +1,6 @@
 # Production manifest: 1962 altar-server guides
 
-Audit date: 2026-07-24 (America/Chicago).
+Audit record updated through 2026-07-27 (America/Chicago).
 
 This record distinguishes the immutable six-PDF predecessor snapshot from the
 seven publications now installed. The redesigned Low-Mass child booklet, new
@@ -85,9 +85,11 @@ R deck is physically repeated in both sung companions.
 - The four sung PDFs reproduce the exact reviewed and installed hashes above.
   The redesign therefore changed no sung-form rendered byte.
 
-### Production font audit
+### Historical Atkinson production font audit
 
-pdfLaTeX embeds Type 1 conversions of Atkinson Hyperlegible Next 2.001:
+The installed evaluation snapshots identified above predate the current
+Libertinus candidate. In those historical snapshots, pdfLaTeX embeds Type 1
+conversions of Atkinson Hyperlegible Next 2.001:
 Regular, Bold, Regular Italic, and Bold Italic as used. Atkinson Hyperlegible
 Mono 2.001 Regular appears only in compact terminal file-name references.
 The flash cards use Next Regular and Bold plus that terminal Mono face.
@@ -201,7 +203,8 @@ identities remain the hashes in the current installed evaluation table above.
 | `03-solemn-mass` | `2026-07-24T16:06:15Z` | 31 | 681,159 | `efb37f8356c6695c5a4a89e8ba9a37dc5bbd22ca6bfb6c5d4d0ec0c7fc3d25ab` | uninstalled review candidate |
 | `03-solemn-mass-cue-cards` | `2026-07-24T16:06:15Z` | 12 | 479,186 | `60af9f4f83b9d8508fc5dd29b363682dbf23fda63ca38764726901d2b3ae58c9` | uninstalled review candidate |
 
-The Low-Mass pair refines the shared monochrome vector illustration system:
+The 24 July Low-Mass predecessor pair refined the then-current shared
+monochrome vector illustration system:
 altar and three-step architecture, standing and kneeling figures, facing
 direction, role and object labels, Missal and service-object drawings, and
 movement-path hierarchy. It also corrects the selected two-acolyte teaching
@@ -292,15 +295,16 @@ page 16. The pair therefore falls from 33 to 30 pages. The child and trainer
 retain the same physical page boundaries and identical main-lane order; every
 trainer rail still names the matching child page.
 
-pdfTeX 1.40.29 rebuilt both publications for two passes with the temporary
-Atkinson package tree used only for this run. Both final logs contain no fatal
-error, undefined reference, LaTeX or package warning, overfull or underfull
-box, or unresolved rerun notice. The bounded repository review tool rastered
-all 60 final pages. Complete contact sheets were checked for order, density,
-split units, clipping, collisions, actor count, Missal ownership and route,
-and terminal fit; the three consolidated pages and the Missal-move page were
-also checked at full size. No orphaned continuation, accidental blank, third
-acolyte, clipped label, or unsafe Missal-route ambiguity remains.
+pdfTeX 1.40.29 rebuilt both historical publications for two passes with the
+temporary Atkinson package tree used only for that run. Both final logs
+contain no fatal error, undefined reference, LaTeX or package warning,
+overfull or underfull box, or unresolved rerun notice. The bounded repository
+review tool rastered all 60 final pages. Complete contact sheets were checked
+for order, density, split units, clipping, collisions, actor count, Missal
+ownership and route, and terminal fit; the three consolidated pages and the
+Missal-move page were also checked at full size. No orphaned continuation,
+accidental blank, third acolyte, clipped label, or unsafe Missal-route
+ambiguity remains.
 
 Ghostscript decoded both complete PDFs through its null-page device without
 error, and `pdfinfo` accepts their structures. They remain 612-by-792-point
@@ -332,3 +336,77 @@ five publications show no clipping, collision, accidental blank, broken
 sequence, or role ambiguity. Both installed Low-Mass PDFs remain on hold for
 renewed exact-snapshot authorization; this reconciliation adds no physical,
 intended-reader, independent, rights, or ecclesiastical approval.
+
+## 2026-07-27 Libertinus and pencil-art candidate
+
+The current source candidate supersedes Atkinson as the active production
+typeface with Libertinus. The traditional Serif family carries the principal
+reading and display hierarchy, with the corresponding Sans and Mono families
+used only where the shared format requires them. This is a new candidate:
+the historical Atkinson embedding, glyph, fallback, and exact-byte results
+above do not verify its fonts. Final inspection must confirm the exact
+Libertinus faces used, embedded/subset state, ToUnicode maps, Latin glyph
+coverage, fallback behavior, and actual-size legibility.
+
+The Low-Mass child and trainer books now place four project-created
+pencil-style raster drawings within the existing TeX-owned instructional
+diagram system:
+
+- `ASG-ART-001` for the opening altar formation;
+- `ASG-ART-002` for kneeling at the foot;
+- corrected `ASG-ART-005` for the Epistle-to-Gospel Missal move; and
+- corrected `ASG-ART-006` for the Lavabo.
+
+The Missa Cantata and Solemn guides use corrected project-created pencil-style
+formation drawings `ASG-ART-009` and `ASG-ART-010`, respectively. TeX retains
+the role labels and other functional overlays so that wording and diagram
+semantics remain reviewable source text. The artwork manifest owns each
+asset's exact identity, generation and correction history, rights basis,
+consumer list, and review state. Rejected precursors remain provenance
+records and have no publication consumer.
+
+The candidate also compacts the two sung full guides and revises their
+ceremonial and role-sheet presentation. The Low-Mass child and trainer remain
+page-aligned at their current authored extent; no claim is made here that a
+shorter target was achieved safely. Flash-card sheet geometry, duplex
+pairing, and fixed 11.5-point body requirement remain unchanged even though
+the active typeface is now Libertinus.
+
+All seven generation records carry candidate revision timestamp
+`2026-07-27T13:37:35Z`. Two final pdfTeX passes produced these exact
+uninstalled candidates:
+
+| Publication | Pages | Bytes | SHA-256 |
+|---|---:|---:|---|
+| `01-low-mass` | 28 | 2,823,078 | `b75c333d5356a4f9c60aa041113c5d01a4409cb8dab15cc62ed2e9031a54e97f` |
+| `01-low-mass-trainer-manual` | 28 | 2,836,608 | `2d2d3c46446e68d2d8b581daf0faa1f4e172ba36d620ebce89fa2699fe07eee7` |
+| `01-low-mass-flash-cards` | 6 | 249,562 | `d44edc7cabdac325fbccd6a31fd5c12e8d1d8293bea65023f8286f4cf219ba34` |
+| `02-missa-cantata` | 27 | 1,259,750 | `9ad9057fd479d6e2fac42e76dc793a4cfb93e0d11c439424f897a595db59cc6a` |
+| `02-missa-cantata-cue-cards` | 12 | 621,907 | `f04351517aff67db1fe56b7baff607850d658f5f3676cdf17089119a595cd862` |
+| `03-solemn-mass` | 28 | 1,304,241 | `aec986be76303cb9226d41fcec6f471fc8c6596a6afdae1343318248c4bf5a6b` |
+| `03-solemn-mass-cue-cards` | 12 | 627,387 | `332f2cbb64ce3ea28dd468aab565447b5d890db26ef8563445cbe54d584109e5` |
+
+The seven final logs contain no fatal error, undefined reference, LaTeX or
+package warning, overfull or underfull box, infinite-glue notice, or unresolved
+rerun request. `pdfinfo` accepts every file. Every listed font is embedded,
+subsetted, and mapped to Unicode; the active inventory is Libertinus Serif,
+Sans, and Mono, with TeX TIPA and Latin Modern math-symbol fallbacks only where
+the pronunciation and symbol material requires them. UTF-8 extraction is
+nonempty for every publication. Ghostscript reports no cyan, magenta, or
+yellow ink on any page. `qpdf` was not available, so no `qpdf --check` result
+is claimed.
+
+The bounded review tool rastered all 141 pages. Complete contact sheets were
+inspected for every page, including paired Low-Mass child/trainer boundaries,
+all flash- and cue-card faces, and both sung Gospel drawings. Full-size
+inspection confirmed the corrected role labels and captions on
+`ASG-ART-009` and `ASG-ART-010`; the six published pencil drawings remain
+schematic aids whose functional labels and local-distance qualifications are
+owned by TeX. No clipping, collision, accidental blank, broken sequence,
+orphaned trainer rail, card-border incursion, or unsafe diagram claim was
+found.
+
+These are uninstalled review candidates. Physical actual-size, duplex,
+photocopy, intended-reader, independent, rights, and
+ecclesiastical-suitability gates remain pending; no release authorization or
+installed-byte identity is claimed.

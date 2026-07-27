@@ -58,6 +58,14 @@ every other free-handed server face the altar and genuflect with the priest;
 TH also genuflects while holding the closed thurible, while A1/A2 remain
 upright with the candles.
 
+The Gospel-side formation drawing uses corrected pencil asset `ASG-ART-009`
+for MC-023--MC-025. Its TeX-owned labels identify A1 and A2 flanking the altar
+book, the priest at the book, MC attending, and TH waiting outward with the
+closed thurible. It is a schematic role-and-formation aid, not a scale plan:
+the parish's marked distances, exact stations, and traffic route remain local
+rehearsal data. The series artwork manifest owns the asset's provenance,
+identity, rights, consumers, and review state.
+
 On the alternate lesson branch, L chants from the pre-positioned book and
 returns empty-handed. The book remains on its lectern until the named adult
 recovers it after the concluding sacristy reverence and L confirms it is
