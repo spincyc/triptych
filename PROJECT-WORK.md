@@ -10,12 +10,58 @@ Last reconciled: 2026-07-27.
 ## Current integration and publication state
 
 The repaired public-alpha snapshot is committed and pushed through commit
-`5909c483`. Pull request 1 is open and mergeable against `main`. The repair
+`f6e9d2e2`. Pull request 1 is open and mergeable against `main`. The repair
 branch has not been integrated into `main`, and GitHub Pages has therefore not
 deployed these repairs. The stable review landing page for the exorcism paper is
 `library/catholic-exorcism.md`; its branch artifact links the PDF and web
 edition. Production discoverability remains blocked on integration and the
 Pages workflow.
+
+## Clean-agent restart
+
+After this work is merged, start a clean isolated agent from current `main` and
+give it this instruction:
+
+> Read `AGENTS.md`, `PROJECT-WORK.md`, `promised-deliverables.toml`,
+> `guidance/promised-deliverables.md`, and the guidance and research records
+> applicable to the first selected workstream. Reconcile the register against
+> current `main` and production Pages before editing. Continue the highest
+> actionable open requirement; do not infer completion from a commit, PDF,
+> catalog link, push, or deployment. Update the register and ledger before each
+> checkpoint commit.
+
+The restarting agent must then:
+
+1. Run `git status`, confirm isolation, and preserve unrelated changes.
+2. Confirm that `f6e9d2e2` is contained by `main`. If it is not, stop content
+   work and report that integration remains open.
+3. Run `scripts/check-promised-deliverables`, `make check`, `make
+   check-staleness`, and `make check-source-family-screening`. The latter two
+   are expected to fail until their recorded backlogs are actually closed;
+   record changed counts rather than concealing the failures.
+4. Build and verify the public artifact with `scripts/public-alpha check`,
+   `scripts/public-alpha build`, and `scripts/public-alpha verify
+   --deployment-target github-pages`; separately verify the live production
+   routes after Pages completes.
+5. Resume in this order unless the maintainer gives a new priority:
+   `project-integrate-and-deploy`; `task-2-exorcism-100-pages`;
+   `project-recent-paper-hard-review`; `task-1-altar-server-guides`;
+   `task-4-missa-cantata`; `task-5-solemn-mass`;
+   `task-3-sanctuary-dictionaries`; `task-6-linen-restoration`; then the
+   repository-wide staleness, source-family, public-review, and artwork queues.
+6. For the exorcism work, begin with its tracked comprehensive expansion plan,
+   scope, source audit, and final exact-snapshot review record. Acquire and
+   verify research before drafting; preserve the 100 substantive-page
+   requirement and the source, safety, law, PDF, web, and every-page gates.
+7. Reconcile this file after each independently reviewable work unit. Keep
+   completed facts, current evidence, open criteria, blockers, and superseded
+   decisions distinct. Commit and push coherent checkpoints when authority
+   remains current, but never call the underlying deliverable complete unless
+   its ledger gate passes.
+
+Integration, target-branch updates, deployment, and any history rewriting
+remain separately authorized operations. The restart instructions do not
+grant those authorities.
 
 ## Promised work
 
@@ -131,6 +177,9 @@ the same substantive edit.
 - 2026-07-27: Ran the repository-wide staleness, source-family, public-review,
   artwork, and integration audit. Recorded unresolved counts without promoting
   them to completion.
+- 2026-07-27: Added the clean-agent post-merge restart sequence, priority
+  queue, exact verification commands, exorcism re-entry point, and authority
+  boundary.
 - Earlier conversation history is not itself a durable repository source.
   Any additional remembered agreement must be added here immediately and
   reconciled against the repository rather than inferred away.
