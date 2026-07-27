@@ -1614,12 +1614,12 @@ release attachment, announcement, or promotion.
 
 | Repository path | SHA-256 |
 | --- | --- |
-| `CONTRIBUTING.md` | `1bb9ef13c4f754f9a8bede73f0afd95c2266173726bcfbd709017dc342272d5e` |
-| `LIBRARY.md` | `288e1be6a9528f2c045aa8cb23b2ac261a26ebafa516c1eaf1d4e875cc7360f8` |
+| `CONTRIBUTING.md` | `c8c3869c44636793bdc9c94b02e50dbea88740329e99e14dec528a5a996421d1` |
+| `LIBRARY.md` | `8c57281cdb2186a79852ca2b678f1f244ac89e6ee9dff0e35136eae6843dacae` |
 | `LICENSE` | `5ac6501c8ad1ead4885d7691d97f2240e94934ba19ac548c259718e85f3e2cad` |
 | `LICENSES/CC-BY-4.0.txt` | `d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744` |
 | `LICENSES/MIT.txt` | `afd9c125b68a36b60c78cf63656f4cea2613fadce57e95ebabacebff8817ef60` |
-| `README.md` | `77fab129045b324ac8d21961cc766b763cf13a84458da457fbea5a6c769ff1d1` |
+| `README.md` | `ae99f438d5444a4fecc7dda5a2ad6e3f6bd90818a3f690af9ed14691a069ee56` |
 | `THIRD_PARTY.md` | `9b0b1a2bd4034035688cecf50e9943556dea120fd349809a813d3c16d2870fa2` |
 | `library/biographies.md` | `d4cfdf9ae2f1e55f2c4bc997cccce4d92a40a9b64b5189fc7e8217c45d415427` |
 | `library/catholic-exorcism.md` | `b92c13bd882ec79645b4b214794d403e5164572d401b24d5f66a97417c94c8ac` |
