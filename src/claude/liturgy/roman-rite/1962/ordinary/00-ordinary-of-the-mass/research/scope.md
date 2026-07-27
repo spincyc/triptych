@@ -70,12 +70,14 @@ last two are recorded as unresolved rather than filled by inference.
 
 ## Review and production state
 
-The source audit was completed internally on 26 July 2026. No independent
-specialist, historical, liturgical, theological, rubrical, or canonical review
-has taken place. The document builds, but its required page review has not been
-performed and no reviewed PDF has been installed. The publication therefore
-remains on `hold` under the independent Ordinary-exposition review gate and
-must not enter a public build or private preview.
+The source audit was completed internally on 26 July 2026. Independent
+liturgical, historical, theological, source and layout review on 27 July found
+material blockers; the source was revised in response. An installed PDF and
+tracked web edition exist as held review artifacts, and all 41 pages of the
+pre-correction PDF were independently inspected. The publication remains on
+`hold` under the independent Ordinary-exposition review gate until a fresh
+review of the corrected source and rebuilt artifacts passes. It must not be
+cataloged or released before that gate and exact-snapshot authorization.
 
 ## Research-staleness verdict — 2026-07-26
 

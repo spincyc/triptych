@@ -2,6 +2,15 @@ schema = 2
 record_type = "bindings"
 document = "liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"
 
+[[bindings]]
+source_id = "passage.second-vatican-council.lumen-gentium.english-vatican-web-2026-07-23.10-11"
+loci = ["10-11"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The registered official English passage controls the exposition of meum ac vestrum sacrificium: common and ministerial priesthood are ordered to one another while differing in essence and not only degree, and the faithful exercise their priesthood in Eucharistic participation. This publication reuses the exact centrally verified passage and does not extend its evidence ceiling."
+verified_on = "2026-07-23"
+source_fingerprint = "sha256:a1530ed1e2c173aa46a742fd2676bca27194a7dc568a2962026c62d46d382fab"
+
 # Controlling liturgical text. Every appointed Latin block and every rubric
 # reported in the publication is bound here. The verification ceiling asserted
 # for each is visual reading of the identified page images of the exact CMAA
@@ -34,6 +43,15 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 context = "The publication's account of the Communion of the faithful, and in particular its statement that the confession and absolution are omitted while Ecce Agnus Dei and the threefold Domine non sum dignus are said, rests on this passage, read at the page image together with n. 502 on the same page."
 verified_on = "2026-07-26"
 source_fingerprint = "sha256:a86769087e1573672a50afde02487bb8102713405f57337af8d339cbff27c8d0"
+
+[[bindings]]
+source_id = "passage.catholic-church.rituale-romanum.latin-typical-1925.title-4.chapter-2"
+loci = ["title-4.chapter-2"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The passage establishes the 1925 procedure behind the Missal's later Rituale cross-reference: n. 3 prints Ecce Agnus Dei and the threefold Domine non sum dignus; n. 12 retains the Confiteor and Misereatur vestri when Communion is distributed within Mass; n. 13 applies the outside-Mass manner immediately before or after a private Mass. It is used only to distinguish inherited procedure from the controlling 1962 Missal nn. 502-503, not as a witness to the exact 1952 edition."
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:89bf6479362d5d26bbb23db0c6ce342e1a40d9b081ab786ebc60fa6f5a05d20d"
 
 [[bindings]]
 source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum"
@@ -479,7 +497,7 @@ source_id = "passage.adrian-fortescue.the-mass-a-study-of-the-roman-liturgy.long
 loci = ["p-227"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected", "verified"]
-context = "Reported as Fortescue's: that the prayers at the foot of the altar are preparation rather than part of the Mass, the medieval uses that differed there, and the papal chapel's aptness for sancta sanctorum and quorum reliquiae hic sunt. The medieval variants are used in the synthesis as evidence that the variable stratum is the youngest one."
+context = "Reported as Fortescue's: that the prayers at the foot of the altar are preparation rather than part of the Mass, the medieval uses that differed there, and the papal chapel's aptness for sancta sanctorum and quorum reliquiae hic sunt. The medieval variants are retained as attributed historical evidence, not as proof of a universal youngest stratum."
 verified_on = "2026-07-26"
 source_fingerprint = "sha256:53fcef3615ad96f880386edb8cee4e15e1e830873465d317e8513e59fd495b8c"
 
