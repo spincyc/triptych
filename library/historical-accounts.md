@@ -1,14 +1,12 @@
 # Historical Accounts
 
-<!-- triptych-publication-id: history/catholic-exorcism/01-history-and-current-practice -->
-
 [Return to the Library](../LIBRARY.md)
 
-## Catholic Exorcism
+## Catholic Exorcism — Public-Alpha Review
 
-| Publication | ChatGPT | Claude | Coverage |
-| --- | --- | --- | --- |
-| **Catholic Exorcism: History and Current Practice** | [PDF](../doc/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf) · [Read](../web/gpt/history/catholic-exorcism/01-history-and-current-practice.html) | — | Biblical, patristic, ritual, canonical, theological, clinical, and safeguarding history through 27 July 2026. |
+**[Open the Catholic Exorcism study](catholic-exorcism.md)** for direct review
+PDF and web links, the safety boundary, completion status, and
+section-by-section navigation.
 
 ## Biblical Translation Histories
 

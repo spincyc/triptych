@@ -103,3 +103,32 @@ therefore restored. The *Apostolic Tradition* remains excluded because its
 reconstruction and versional control are unresolved, and Laodicea remains an
 unused lead. This later resolution supersedes the narrower first-pass state
 above.
+
+## Bounded section expansion
+
+Section 30 was subsequently expanded without enlarging its source corpus. The
+revision uses the already registered Justin, Tertullian, Origen, Jerusalem,
+Irenaeus, and Eusebius controls to distinguish three historical settings:
+apologetic claims concerning extraordinary affliction, exorcistic and
+renunciatory acts within initiation, and the naming of exorcists among Roman
+church personnel.
+
+The expansion adds no reconstructed formula, event claim, prevalence claim, or
+new translation. Its comparative synthesis remains below the evidence ceilings
+already recorded for each passage:
+
+- the apologetic texts establish distinguishable literary claims rather than
+  neutral case histories, measured outcomes, or one common technique;
+- the Jerusalem witnesses establish a qualified local initiatory sequence
+  rather than universal fourth-century practice or a finding that every
+  catechumen was extraordinarily possessed; and
+- Eusebius preserves one combined total for exorcists, readers, and
+  door-keepers, not a separate exorcist count or a complete duty description.
+
+Laodicea 26 and the church-order complex conventionally called the *Apostolic
+Tradition* remain visibly excluded from the section's positive evidence. The
+former still lacks an exact registered passage and controlled reception scope.
+The latter still lacks an acceptable edition-specific resolution of its
+versional basis, unity, attribution, date, provenance, and chapter
+equivalences. They remain comparison questions, not steps in a continuous
+apostolic-to-1614 narrative.
