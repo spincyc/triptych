@@ -304,7 +304,11 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         self.assertEqual(self.lines(self.source_library_log), ["validate"])
         self.assertEqual(
             self.lines(self.source_inventory_log),
-            ["check src/sources/inventories/publications-v1.toml"],
+            [
+                "check --review "
+                "src/sources/inventories/classification-review-v1.toml "
+                "src/sources/inventories/publications-v1.toml"
+            ],
         )
         self.assertEqual(self.lines(self.source_family_migration_log), ["check"])
         self.assertEqual(
