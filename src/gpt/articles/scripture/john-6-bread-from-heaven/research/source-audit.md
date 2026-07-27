@@ -1,12 +1,21 @@
-# Bread from Heaven — Preliminary Source Audit
+# Bread from Heaven — Source Audit
 
 Checks were performed 2026-07-26. “Checked” below means the identified online
 or repository witness was read at the stated locus; it does not imply critical
 edition collation.
 
+The publication-local `source-bindings.toml` pins the exact registered Greek
+John and Douay--Rheims John and Luke artifacts used for the controlling
+scriptural argument, Trent XIII, and *Sacrosanctum Concilium* 47--48. This pass
+also authenticated and normalized exact restricted Vatican delivery artifacts
+for *Mysterium fidei*, *Ecclesia de Eucharistia*, and *Sacramentum caritatis*.
+Patristic witnesses remain identified by exact work and locus in this audit;
+their mostly paraphrased use is not represented as a critical-language
+collation.
+
 | Claim | Witness and locus | State and route | Limit |
 | --- | --- | --- | --- |
-| John 6 moves from feeding sign and faith to flesh given, eating/drinking, abiding, and resurrection | John 6:1–71 | Principal loci checked in the repository's registered Douay–Rheims John artifact; Greek artifact identity located | From modern verse 51 onward the Douay–Rheims/Vulgate numbering used by the artifact is one higher; complete Greek, Latin, and English collation remains |
+| John 6 moves from feeding sign and faith to flesh given, eating/drinking, abiding, and resurrection | John 6:1–71 | Registered Douay–Rheims and RP 2018 Greek John artifacts inspected and bound | From modern verse 51 onward the Douay–Rheims/Vulgate numbering used by the artifact is one higher; Latin and an independent modern critical Greek edition remain uncollated |
 | Luke twice makes the swaddled child in the manger the shepherds' sign | Luke 2:7, 12, 16 | Checked in registered Douay–Rheims Luke artifact | Luke supplies no explicit Eucharistic interpretation |
 | Ignatius identifies Eucharist and the flesh that suffered and rose | *Smyrnaeans* 7 | ANF public-domain translation located | Not a direct John 6 commentary; Greek not collated |
 | Created bread/wine and nourished flesh belong to Eucharist and resurrection | Irenaeus, *Against Heresies* IV.18.5; V.2.2–3 | ANF translation located; repository Irenaeus work exists | Greek/Latin fragments and exact printed pages not yet collated |
@@ -26,8 +35,26 @@ edition collation.
 | John 6:55 differs between Byzantine adverbs and NA adjectives | Registered RP inline apparatus | Directly read | The registered apparatus reports NA; a Nestle–Aland edition was not independently collated |
 | John 6:69 has a material confession variant | Registered RP inline apparatus | Directly read | Byzantine “Christ, Son of living God”; apparatus reports NA “Holy One of God” |
 | Aquinas coordinates John 6 with sacramental presence and effect | *Super Evangelium Ioannis* 6; ST III qq. 73–83 | Work identities located; prior repository sacramental research inspected | Exact passages and critical text remain outstanding |
-| Trent teaches true, real, substantial presence and transubstantiation | Council of Trent, Session XIII | Official conciliar source required; claim agrees with established repository sacramental synthesis | Exact Latin/translation binding outstanding; not evidence about patristic chronology |
-| Modern magisterium integrates sacrifice, presence, communion, and eschatological pledge | *Sacrosanctum Concilium* 47; CCC 1322–1419; *Mysterium fidei*; *Ecclesia de Eucharistia*; *Sacramentum caritatis* | Official identities and repository sacramental synthesis located | Exact paragraphs used by final prose require direct official verification |
+| Trent teaches true, real, substantial presence and transubstantiation | Council of Trent, Session XIII, decree chs. I–V and canons I–XI | Exact hashed Tauchnitz 1887 Latin OCR artifact inspected and publication passages bound; the Latin is not quoted and remains a locating witness rather than a critical edition | Exact Latin doctrinal substance now bound; an identified English translation and critical Latin collation remain desirable, and Trent is not evidence about patristic chronology |
+| Vatican II identifies memorial, sacrifice, sacrament of love, sign of unity, bond of charity, and paschal banquet | *Sacrosanctum Concilium* 47–48 | Official English passage inspected and bound | Doctrinal reception, not evidence about patristic chronology |
+| Modern magisterium integrates presence, communion, and eschatological pledge | *Mysterium fidei* 38–49; *Ecclesia de Eucharistia* 1–26; *Sacramentum caritatis* 6–11, 70–71 | Exact official English Vatican artifacts acquired, hashed, inspected, and normalized as restricted remote evidence | Official English translations control the bounded synthesis; promulgated Latin was not collated |
+
+## Re-evaluation verdict
+
+The three exact scriptural controls support the draft's central distinctions:
+John 6 itself supplies a sustained bread/flesh/eating discourse; Luke supplies
+the manger and swaddling-cloth sign without making its own Eucharistic
+interpretation; and the lexical shift to *trogein* cannot alone bear the
+Catholic doctrinal conclusion. No correction to those claims is required.
+
+The reception claims remain dependent on patristic witnesses whose exact
+editions and loci are identified but have not all been normalized into reusable
+records or collated in their original languages. The published prose makes no
+wording-critical conclusion from them and states the principal attribution,
+lexical, and compositional limits. Under the user's express publication
+authorization, this is an accurately disclosed limitation rather than an
+undisclosed evidentiary promotion. External patristic, exegetical,
+theological, and rights review remains outstanding.
 
 ## Consequential negative results
 
@@ -67,3 +94,9 @@ edition collation.
   <https://www.newadvent.org/fathers/3405.htm>
 - Pseudo-Gregory Thaumaturgus, first of the *Four Homilies*:
   <https://www.newadvent.org/fathers/06091.htm>
+- Paul VI, *Mysterium fidei*:
+  <https://www.vatican.va/content/paul-vi/en/encyclicals/documents/hf_p-vi_enc_03091965_mysterium.html>
+- John Paul II, *Ecclesia de Eucharistia*:
+  <https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_20030417_eccl-de-euch.html>
+- Benedict XVI, *Sacramentum caritatis*:
+  <https://www.vatican.va/content/benedict-xvi/en/apost_exhortations/documents/hf_ben-xvi_exh_20070222_sacramentum-caritatis.html>

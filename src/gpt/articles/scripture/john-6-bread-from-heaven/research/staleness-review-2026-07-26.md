@@ -38,3 +38,20 @@ record. The shared ledger was not edited here. A baseline records fingerprints
 only; it does not close the outstanding Greek, Latin, patristic-attribution,
 exegetical, theological, rights, or independent-review gates and does not
 authorize installation or release.
+
+## Publication re-evaluation
+
+After the first-baseline comparison, the controlling Greek and
+Douay--Rheims artifacts, Trent XIII, and *Sacrosanctum Concilium* 47--48 were
+bound, and exact official Vatican delivery artifacts were authenticated for
+*Mysterium fidei* 38--49, *Ecclesia de Eucharistia* 1--26, and
+*Sacramentum caritatis* 6--11 and 70--71. The prose was then re-read against
+the evidence map and source audit. No consequential conclusion changed.
+
+The final source discloses its uncollated original-language and external-review
+limits and makes no wording-critical conclusion from those witnesses. On that
+basis, and under the user's express authorization to publish with external
+review accurately outstanding, the internal content, source, production,
+visual, and web-fidelity gates are approved on 2026-07-26. The integrating root
+still owns the shared catalog, release ledger, inventory refresh, and public
+installation transaction.

@@ -1,7 +1,8 @@
 # Ninth Sunday after Pentecost — source audit
 
-Provider: Anthropic Claude. This record covers **both editions** of the guide;
-the full-text edition keeps no records of its own. Every check recorded here
+Provider: Anthropic Claude. This record covers both outputs from the canonical
+leaf: the complete research edition and its mechanical synthesis companion.
+The synthesis companion keeps no records of its own. Every check recorded here
 was performed on **2026-07-25** against the named witness — a page image, a downloaded file, or
 a live web text — unless a different date is stated. "Read as image" means a
 rendered page was looked at; "read as text" means a transcription or HTML text

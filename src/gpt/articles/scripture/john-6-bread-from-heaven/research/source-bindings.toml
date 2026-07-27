@@ -1,0 +1,95 @@
+schema = 2
+record_type = "bindings"
+document = "articles/scripture/john-6-bread-from-heaven"
+
+# These are GPT-local uses of provider-neutral evidence. They establish the
+# scriptural controls actually inspected for this edition; they do not transfer
+# another provider's interpretation, sufficiency judgment, or review event.
+
+[[bindings]]
+source_id = "artifact.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.ccat-csv-joh-1e4f4305"
+loci = ["Jn.6.1-71", "Jn.13.18"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the discourse sequence, the phagein/trogein comparison, the inline textual notes at John 6:55 and 6:69, and the ordinary use of trogein at John 13:18. The registered artifact is a Byzantine-text witness with inline comparison notes, not an independently collated Nestle-Aland edition."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:29b2daef412b8cead0025d8070cd43a52e7faa0d183c110da45e01d3c83ee0aa"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-50-john-27b8f3ed"
+loci = ["John.1.1-18", "John.6.1-71", "John.13.18"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the English Johannine clauses quoted or paraphrased and the edition's explicit notice that Douay-Rheims/Vulgate numbering after modern John 6:51 differs by one."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:4498ea55e49e3577649969ed0bcf456423b8aec2f9edda55586c37190dfe77a4"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-49-luke-d8269c33"
+loci = ["Luke.2.1-20"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the infancy details used in the claim under test: the child wrapped in swaddling clothes, laid in the manger, and given as the shepherds' sign. Luke supplies no explicit Eucharistic interpretation."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:b6acab91674d3bbe04726da30c835175a133104d3db53fcf3f8e45b1d5b4ba6e"
+
+[[bindings]]
+source_id = "passage.second-vatican-council.sacrosanctum-concilium.english-vatican-web-2026-07-23.47-48"
+loci = ["47-48"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the bounded claim that Sacrosanctum Concilium 47 presents the Eucharistic sacrifice as memorial, sacrament of love, sign of unity, bond of charity, and paschal banquet. It is doctrinal reception, not evidence for the chronology of patristic interpretation."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:bec78a52c6e85b054a8fcf84eb15815f8880bf0ea87300aac9bbe17074ce0a43"
+
+[[bindings]]
+source_id = "passage.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.sessio-13-decretum-1-5"
+loci = ["sessio-13-decretum-1-5"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Controls the bounded doctrinal-reception claim that Trent teaches true, real, and substantial presence, a sacramental mode of presence, and the conversion aptly called transubstantiation. It is not used to date patristic exegesis."
+source_fingerprint = "sha256:7f1fb9559c258dedd289b4a1976ca0132b8cb172e023fb18f695b495382030e4"
+
+[[bindings]]
+source_id = "passage.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.sessio-13-canon-1-11"
+loci = ["sessio-13-canon-1-11"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Controls the corresponding canonical exclusions, especially canons I-II, while preserving the complete eleven-canon context. No Latin wording is quoted."
+source_fingerprint = "sha256:b027cd50297e32aca5a60b83128db8b30c2c0b59cd19c0f929b3471c8a2b8cea"
+
+[[bindings]]
+source_id = "passage.paul-vi.mysterium-fidei.english-vatican-web-2026-07-26.38-49"
+loci = ["38-49"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the bounded account of Paul VI's defense of substantial Eucharistic presence and his refusal to oppose sacramental signification to ontological conversion."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:fb522dc90e69d33a71c2509657df94805801aed246f807463518856a7fb1bfa0"
+
+[[bindings]]
+source_id = "passage.john-paul-ii.ecclesia-de-eucharistia.english-vatican-web-2026-07-26.1-26"
+loci = ["1-26"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the bounded synthesis of sacrifice, saving presence, communion, ecclesial life, and eschatological hope in Ecclesia de Eucharistia."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:9ef40be8ad7fea3b7ea6f49bc3cc8eee83911e29ced18e6a002cc9f95b240501"
+
+[[bindings]]
+source_id = "passage.benedict-xvi.sacramentum-caritatis.english-vatican-web-2026-07-26.6-11"
+loci = ["6-11"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the statement that Sacramentum caritatis presents the Eucharist first as a mystery believed and coordinates institution with Christ's one Paschal sacrifice."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:b73a76f062a688ee5fe33ff20a3c85572217942e98a1997e2c2028c2b5601e65"
+
+[[bindings]]
+source_id = "passage.benedict-xvi.sacramentum-caritatis.english-vatican-web-2026-07-26.70-71"
+loci = ["70-71"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Controls the statement that Eucharistic worship extends into the whole form of Christian life rather than ending with ritual reception."
+verified_on = "2026-07-26"
+source_fingerprint = "sha256:82eea9d8424bb5f26ee8a3654c56332c0ec05c93959cae62d9e52aabe8c8409e"

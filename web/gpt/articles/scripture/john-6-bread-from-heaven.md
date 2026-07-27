@@ -1,6 +1,6 @@
 # Bread from Heaven
 
-*A held source-first study of John 6 and the patristic reception of the Bread of Life discourse*
+*A source-first study of John 6 and the patristic reception of the Bread of Life discourse*
 
 ## The Claim under Test
 
@@ -8,7 +8,7 @@ A familiar Christian reading joins three details. Jesus is born in Bethlehem, wh
 
 The pieces are not equally established. Luke supplies the swaddling cloths and the manger, but does not explain them as Eucharistic. John supplies bread from heaven, flesh, eating, drinking, abiding, and resurrection, but does not mention Bethlehem, the manger, or the cloths. The Hebrew place-name genuinely permits the ordinary gloss “house of bread,” but an available lexical meaning is not proof that the name was coined as prophecy. The question is therefore not whether the conjunction is theologically fruitful. It is: *how early, how directly, and with what limits did Christian readers make it?*
 
-The answer presently supported by the checked record is layered. The Eucharistic reading of John 6 is early, broad, and explicit. A direct Bethlehem–John 6 conjunction is securely visible in late-fourth-century Latin reception. A manger-as-food image also occurs in ancient Christian preaching, but one especially vivid text commonly assigned to the third century belongs to a collection transmitted as doubtful or spurious. The swaddling cloths add the Incarnation’s poverty, visibility, and passibility; no controlled early witness consulted for this draft turns the cloths themselves into Eucharistic wrappings.
+The answer presently supported by the checked record is layered. The Eucharistic reading of John 6 is early, broad, and explicit. A direct Bethlehem–John 6 conjunction is securely visible in late-fourth-century Latin reception. A manger-as-food image also occurs in ancient Christian preaching, but one especially vivid text commonly assigned to the third century belongs to a collection transmitted as doubtful or spurious. The swaddling cloths add the Incarnation’s poverty, visibility, and passibility; no controlled early witness consulted for this study turns the cloths themselves into Eucharistic wrappings.
 
 ## What John 6 Actually Does
 
@@ -90,7 +90,7 @@ The Douay–Rheims/Vulgate tradition divides John 6 differently from most modern
 
 The registered Greek apparatus also records variants that matter to exposition without overturning it. At 6:39 it reports differences around the pronoun and preposition in the resurrection clause. At 6:55 it reports the adverb/adjective difference just noted. At 6:63 it reports present versus perfect speech (“words I speak” / “have spoken”). At 6:69 the Byzantine confession “Christ, the Son of the living God” differs from the shorter “Holy One of God” reported for Nestle–Aland. None changes the chapter’s Eucharistic vocabulary, but 6:69 must not be quoted as textually uniform.
 
-One larger compositional question remains debated: some modern interpreters have treated 6:51c–58 as a later Eucharistic expansion because its flesh-and- blood diction seems to sharpen the preceding bread-and-faith discourse. This draft does not adjudicate redaction history. In the received canonical form, the verses stand in one discourse and the repeated descent, life, eating, and resurrection language supplies real continuity. Historical hypotheses must not be presented as excisions already established by the manuscript record.
+One larger compositional question remains debated: some modern interpreters have treated 6:51c–58 as a later Eucharistic expansion because its flesh-and- blood diction seems to sharpen the preceding bread-and-faith discourse. This study does not adjudicate redaction history. In the received canonical form, the verses stand in one discourse and the repeated descent, life, eating, and resurrection language supplies real continuity. Historical hypotheses must not be presented as excisions already established by the manuscript record.
 
 ## The Fathers Do Not Speak with One Flat Voice
 
@@ -124,7 +124,7 @@ For Augustine, the sign and the reality belong together but are not mechanically
 
 Cyril of Alexandria reads John 6 through the Incarnation. The flesh is life-giving not as an isolated material substance but because it is the flesh of the Word, personally united to the giver of life. Eating and drinking join the believer to Christ; the Eucharistic gift communicates life because the one received is the incarnate Son. This logic guards both sides of the chapter: divinity does not bypass flesh, and flesh is not treated apart from the Word.
 
-The available English Pusey–Randell witness is a nineteenth-century translation and was not collated here against Pusey’s Greek edition. This held draft therefore paraphrases Cyril and records the collation as outstanding.
+The available English Pusey–Randell witness is a nineteenth-century translation and was not collated here against Pusey’s Greek edition. This study therefore paraphrases Cyril and does not make a wording-critical claim from that translation.
 
 ### East and West: convergence without uniformity
 
@@ -212,7 +212,7 @@ Chrysostom supplies a safer ancient bridge: the body lying in the manger and ado
 
 **It must retain John 6’s moral pressure.** The chapter is not a puzzle whose reward is discovering Christmas symbols. Bread from heaven draws the believer into Christ’s self-gift, communion, abiding, resurrection, and the unity of his Body. Chrysostom and Augustine alike refuse a reception that ends at possession of a sacred object while leaving the communicant unchanged.
 
-## Provisional Conclusion
+## Conclusion
 
 John 6 supports a robust Eucharistic reading because its own language moves from sign and faith to flesh given, true food and drink, mutual abiding, and resurrection; early liturgical, homiletic, and doctrinal witnesses receive it that way. The same tradition refuses crude physicalism by locating the gift in the incarnate and life-giving Word and by insisting on spiritual, faithful, ecclesial reception.
 
@@ -222,13 +222,13 @@ That distinction does not impoverish the image. It keeps the image from asking h
 
 ## Scope, Method, and Qualifications
 
-This held source-first study tests one reception claim about John 6: whether the Bread of Life discourse was anciently joined to Bethlehem, the manger, and the swaddled child. It is not a verse-by-verse commentary on the whole chapter, a complete history of Eucharistic doctrine, or an adjudication of modern Johannine composition theories.
+This source-first study tests one reception claim about John 6: whether the Bread of Life discourse was anciently joined to Bethlehem, the manger, and the swaddled child. It is not a verse-by-verse commentary on the whole chapter, a complete history of Eucharistic doctrine, or an adjudication of modern Johannine composition theories.
 
-English Scripture quotations have been checked at their principal loci against the repository’s registered public-domain Douay–Rheims, whose John 6 numbering from modern verse 51 onward runs one verse higher. A complete verse-level collation remains required before publication. Greek vocabulary, the Vulgate, Pusey’s Greek Cyril, the Latin of Augustine and Jerome, the Greek of Chrysostom, and the manuscript/critical status of pseudo-Gregory remain to be collated at the exact loci recorded in the audit. This draft uses brief paraphrase except where the source audit records an identified public-domain translation.
+English Scripture quotations have been checked at their principal loci against the repository’s registered public-domain Douay–Rheims, whose John 6 numbering from modern verse 51 onward runs one verse higher. Greek observations are bounded to the identified Robinson–Pierpont witness and its inline apparatus. The Vulgate, Pusey’s Greek Cyril, the Latin of Augustine and Jerome, the Greek of Chrysostom, and the manuscript history of pseudo-Gregory have not been critically collated. Accordingly, the study uses brief paraphrase and makes no wording-critical conclusion from those witnesses.
 
-The authority classes are distinct: Scripture is the governing text; patristic witnesses show reception and theological reasoning; later ecclesiastical teaching may clarify doctrine but is not retrojected into an earlier author’s intention; the final typological synthesis is project synthesis. Internal production and web-fidelity review have occurred, but no independent exegetical, patristic, theological, or rights review has occurred. The canonical source is `main.tex`; the edition remains held, has no installed PDF or web edition, and must not be cataloged or released until the outstanding specialist audit is completed.
+The authority classes are distinct: Scripture is the governing text; patristic witnesses show reception and theological reasoning; later ecclesiastical teaching may clarify doctrine but is not retrojected into an earlier author’s intention; the final typological synthesis is project synthesis. Internal source, production, visual, and web-fidelity review are recorded in the adjacent research files. Independent exegetical, patristic, theological, and rights review remains welcome and has not occurred; its absence is a disclosed review limitation rather than a claim of ecclesiastical approval.
 
-## Working References
+## References
 
 -   Holy Scripture: Luke 2:1–20; Micah 5:2–4; John 1:1–18; John 6:1–71; 1 Corinthians 10:16–17; 11:23–29. English publication text to use only from the registered public-domain Douay–Rheims witness.
 
@@ -250,11 +250,21 @@ The authority classes are distinct: Scripture is the governing text; patristic w
 
 -   St. Jerome, Letter 108.10.
 
--   Pseudo-Gregory Thaumaturgus, first of the *Four Homilies*, transmitted among doubtful or spurious works; authorship unresolved in this draft.
+-   Pseudo-Gregory Thaumaturgus, first of the *Four Homilies*, transmitted among doubtful or spurious works; authorship unresolved in this study.
+
+-   Second Vatican Council, *Sacrosanctum Concilium* 47–48.
+
+-   Council of Trent, Session XIII, decree chs. 1–5 and canons 1–11.
+
+-   Paul VI, *Mysterium fidei* 38–49.
+
+-   John Paul II, *Ecclesia de Eucharistia* 1–26.
+
+-   Benedict XVI, *Sacramentum caritatis* 6–11, 70–71.
 
 ## Generation Metadata
 
-**Last revised (UTC):** 2026-07-26T17:10:00Z
+**Last revised (UTC):** 2026-07-26T23:30:00Z
 
 **Model:** `GPT-5-based Codex agent`; `unexposed: configuration`
 

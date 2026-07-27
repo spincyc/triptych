@@ -3,9 +3,9 @@ record_type = "publication-source-inventory"
 provider = "gpt"
 audited_on = "2026-07-26"
 discovery_rule = "src/gpt/**/main.tex"
-publication_count = 122
-source_surface_file_count = 1422
-snapshot = "sha256:677d4feb71ba333832cf7f2ff36f90b9f7664b3ecae722ee95fa31c595ba963e"
+publication_count = 123
+source_surface_file_count = 1433
+snapshot = "sha256:7dec1a2b1a27e0cfe184cd2f4fe8cca51da644bd13cba290d534b9d63a0f27d5"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -99,6 +99,17 @@ inventory_state = "sources-categorized"
 source_categories = ["magisterial", "patristic", "prayer-devotional", "scholastic", "scripture"]
 [[documents.record_owners]]
 id = "articles/faith/at-the-end-of-every-why"
+relationship = "local"
+
+[[documents]]
+id = "articles/faith/catholic-doctrinal-authority"
+main = "src/gpt/articles/faith/catholic-doctrinal-authority/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["canon-law", "historical-primary", "magisterial", "patristic", "scholastic", "scripture"]
+[[documents.record_owners]]
+id = "articles/faith/catholic-doctrinal-authority"
 relationship = "local"
 
 [[documents]]
@@ -1181,17 +1192,6 @@ id = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"
 relationship = "local"
 
 [[documents]]
-id = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text"
-main = "src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text/main.tex"
-publication_kind = "canonical"
-source_mode = "local"
-inventory_state = "sources-categorized"
-source_categories = ["historical-primary", "liturgical", "scripture"]
-[[documents.record_owners]]
-id = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text"
-relationship = "local"
-
-[[documents]]
 id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass"
 main = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass/main.tex"
 publication_kind = "canonical"
@@ -1518,6 +1518,17 @@ inventory_state = "sources-categorized"
 source_categories = ["archival-material", "canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "prayer-devotional", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "theology/mariology/champion"
+relationship = "local"
+
+[[documents]]
+id = "theology/mariology/doctrinal-authority"
+main = "src/gpt/theology/mariology/doctrinal-authority/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scholastic", "scripture"]
+[[documents.record_owners]]
+id = "theology/mariology/doctrinal-authority"
 relationship = "local"
 
 [[documents]]
@@ -2118,6 +2129,36 @@ path = "src/gpt/articles/faith/at-the-end-of-every-why/web-edition.toml"
 sha256 = "ad2286438ebf3ff441261974f0dbc97243acf08aa4f615c4b711102a4e0b2fd9"
 kind = "rendered-content"
 owners = ["articles/faith/at-the-end-of-every-why"]
+
+[[files]]
+path = "src/gpt/articles/faith/catholic-doctrinal-authority/main.tex"
+sha256 = "5e626259bcb5eb2d08d6bbb7f28c7a54dc104f113a66836970878446dd9af6ab"
+kind = "publication-main"
+owners = ["articles/faith/catholic-doctrinal-authority"]
+
+[[files]]
+path = "src/gpt/articles/faith/catholic-doctrinal-authority/research/scope.md"
+sha256 = "1d138fbc84c2d080da154fd38376d2163b71e7b5cf2328f18322370f52a9050e"
+kind = "research-scope"
+owners = ["articles/faith/catholic-doctrinal-authority"]
+
+[[files]]
+path = "src/gpt/articles/faith/catholic-doctrinal-authority/research/source-audit.md"
+sha256 = "6062532a06a9c46fd09aa57a5797dbcc9d8e2ef96ba5b95cb5d26f203f87fa37"
+kind = "legacy-source-audit"
+owners = ["articles/faith/catholic-doctrinal-authority"]
+
+[[files]]
+path = "src/gpt/articles/faith/catholic-doctrinal-authority/research/source-bindings.toml"
+sha256 = "7a133f81c8d94f47faae12ef0747fd13297162b5e14c250739fef53185fd3774"
+kind = "source-binding"
+owners = ["articles/faith/catholic-doctrinal-authority"]
+
+[[files]]
+path = "src/gpt/articles/faith/catholic-doctrinal-authority/web-edition.toml"
+sha256 = "65604c2813f1edbeb6e6d299efdc283674b6668746e2f594604dde745bee103d"
+kind = "rendered-content"
+owners = ["articles/faith/catholic-doctrinal-authority"]
 
 [[files]]
 path = "src/gpt/articles/faith/council-missal-and-crisis/main.tex"
@@ -6111,19 +6152,19 @@ owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
 [[files]]
 path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/evidence-map.md"
-sha256 = "36cbb4bfbb35c0ffc3a54f0d44723987204eb9d2cf5ac91b420dbd88b5308772"
+sha256 = "e4d9a0fce514efc6e112cb9332e0f887ad2202ccebf8feb5b3fc26669da205d5"
 kind = "research-record"
 owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
 [[files]]
 path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/scope.md"
-sha256 = "18c8666ef84f4a08675be3ec04e788d4680cb416f5e5f58684cefb7280328f3e"
+sha256 = "34c085e917ba56117337347a639bde109dc56edddc29cb66df602aa882ca7eae"
 kind = "research-scope"
 owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
 [[files]]
 path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/source-audit.md"
-sha256 = "91cfefeccb2fa6e68bb15d9a0c80b25df6acb3aa1b5c0619bf59c2c94cf5bd50"
+sha256 = "887dddda266cc399ed53148e360fa4236b1df079b26da1cf44e1a701b07ec801"
 kind = "legacy-source-audit"
 owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
@@ -6135,7 +6176,7 @@ owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
 [[files]]
 path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/sections/all.tex"
-sha256 = "0cc4aa707e860f75262145985c6744aef517cd43258aff757ce79eea001416d2"
+sha256 = "b0340a27c3eac7f7a38d2c0f0230fbe443f0b3153dc28a264742c6c5b560fc6c"
 kind = "rendered-content"
 owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
@@ -7328,45 +7369,21 @@ kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
 
 [[files]]
-path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text/format.tex"
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/format.tex"
 sha256 = "57d0b369e3fcbec6d984de6fe7641db06869fce7b1b2759c090cb3acfc62a329"
 kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text"]
-
-[[files]]
-path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text/main.tex"
-sha256 = "968200cf4bb73637d759b825744d636a4bd463edcaa8ec1282f9cd11772eaecd"
-kind = "publication-main"
-owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text"]
-
-[[files]]
-path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text/research/first-baseline-review.md"
-sha256 = "faf9ec3b5eff2ff33d8027e0c8c6de1ed1c71c8b3465b5467414015ba08f443c"
-kind = "research-record"
-owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text"]
-
-[[files]]
-path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text/research/scope.md"
-sha256 = "ec447b796f55e6d2c9f224957c486633e4516eb82c49bcbdae1fc63ae69672e7"
-kind = "research-scope"
-owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text"]
-
-[[files]]
-path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text/sections/05-appointed-text.tex"
-sha256 = "f9011839105a7fe8eb01a030594c41a0fd28efaa6ac74c6fb5a90ebb42805a16"
-kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text"]
-
-[[files]]
-path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text/web-edition.toml"
-sha256 = "f6e45965d97ac9d20da23d2147a6325c522dec16d58ac3378e5affd57cb51b0e"
-kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text"]
+owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/main.tex"
-sha256 = "103f95e803e803854277bf466d48b5f0429fb17b99e47b5dbb94c2b294a893c9"
+sha256 = "58955907870fdf21a911d47cd5aeb977b0fcb69aeaf1147f95dad4f4c2a0ac57"
 kind = "publication-main"
+owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/proper-components.toml"
+sha256 = "6c808cd48508c7483b26b6b32f25874b0b658ea2c62bac9457d54846a9115d3a"
+kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
@@ -7383,7 +7400,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/research/scope.md"
-sha256 = "62bf5d84d6bda74b016fc886272d577e61565f7fb36ebc0450f2c67a9eed22f3"
+sha256 = "4a523b3c0d3bff930fcec338d89522637b951b4a4006874f1679ad0f0e53a948"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
@@ -7394,8 +7411,32 @@ kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/sections/05-appointed-text.tex"
+sha256 = "f9011839105a7fe8eb01a030594c41a0fd28efaa6ac74c6fb5a90ebb42805a16"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/sections/35-source-grounded-synthesis.tex"
+sha256 = "dc5bbcc94455cfe38ef6a235ef4c9c222fd6563cd82ee541f517daaab7e39a31"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/sections/40-notable.tex"
+sha256 = "a11772dde63b01a89c48581d6cc36b37cc913e4cabefb9c207b0f72e0a1e65e5"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/synthesis.tex"
+sha256 = "9754f2d24a933b22a0315cc6dd8fe17a7df5a0cefea6e5d139db4202b280476c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/web-edition.toml"
-sha256 = "543957deca64886ab832833bc4bc497d5df62970173e96c603934f76b04c55fa"
+sha256 = "ccc03ac20e0f123e341fe47334411359a279e60af963f537e2e87f6fe2a7c7f8"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
@@ -9108,6 +9149,42 @@ path = "src/gpt/theology/mariology/champion/web-edition.toml"
 sha256 = "9e3e06339900ca23f016d7c211c1c06d624c31ebbbc7b442adc55219be3e4760"
 kind = "rendered-content"
 owners = ["theology/mariology/champion"]
+
+[[files]]
+path = "src/gpt/theology/mariology/doctrinal-authority/main.tex"
+sha256 = "a0376e5b23e36e3caf6a86f981d9bbe3de1d4ca809aac86263277425e76e57d2"
+kind = "publication-main"
+owners = ["theology/mariology/doctrinal-authority"]
+
+[[files]]
+path = "src/gpt/theology/mariology/doctrinal-authority/research/authority-inventory.md"
+sha256 = "3f3566ebb06d1a0938f3bc2d38e247eda4c179217e289ba7c70963c700f28153"
+kind = "research-record"
+owners = ["theology/mariology/doctrinal-authority"]
+
+[[files]]
+path = "src/gpt/theology/mariology/doctrinal-authority/research/scope.md"
+sha256 = "5909531d9e3fd6412bb25e940a1637485f72604cae946c21de0e4dcb071bfd56"
+kind = "research-scope"
+owners = ["theology/mariology/doctrinal-authority"]
+
+[[files]]
+path = "src/gpt/theology/mariology/doctrinal-authority/research/source-audit.md"
+sha256 = "23afc8a162a1bc61390ee50303531ad2e565c9e0c44736f7532593181c8630b3"
+kind = "legacy-source-audit"
+owners = ["theology/mariology/doctrinal-authority"]
+
+[[files]]
+path = "src/gpt/theology/mariology/doctrinal-authority/research/source-bindings.toml"
+sha256 = "1a1e781aeb5e38ce87cfa7c050bb9a7ec592253595c0fb8c542d705cb65a298c"
+kind = "source-binding"
+owners = ["theology/mariology/doctrinal-authority"]
+
+[[files]]
+path = "src/gpt/theology/mariology/doctrinal-authority/web-edition.toml"
+sha256 = "467be92732e77de9b122e9dd53a3b5fcbf7986b9f3341984561f28206e7235c9"
+kind = "rendered-content"
+owners = ["theology/mariology/doctrinal-authority"]
 
 [[files]]
 path = "src/gpt/theology/mariology/fatima/main.tex"

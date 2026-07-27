@@ -1,12 +1,12 @@
 # Ninth Sunday after Pentecost — Verified Propers
 
 Facsimile-collated appointed text in liturgical order. This record is the text
-control for **both editions** of the guide: the study edition at
-`liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost`, which
-names each element by incipit and reference and gives its text in English, and
-the full-text edition at the same id with a `-full-text` suffix, which prints
-the complete Latin below beside that English. Nothing here changed when the
-presentation did.
+control for the canonical full research edition at
+`liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost` and its
+mechanical `-synthesis` PDF companion. The canonical edition prints the
+complete Latin below beside the identified English; the synthesis companion
+omits the appointed-text component. Nothing here changed when the publication
+packaging did.
 
 ## Provenance
 

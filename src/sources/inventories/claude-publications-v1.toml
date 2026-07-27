@@ -3,9 +3,9 @@ record_type = "publication-source-inventory"
 provider = "claude"
 audited_on = "2026-07-26"
 discovery_rule = "src/claude/**/main.tex"
-publication_count = 46
+publication_count = 45
 source_surface_file_count = 872
-snapshot = "sha256:ed05b575dc989c6f6c85362536a1ab1db38289c0241468ff4c927535bcabdbe4"
+snapshot = "sha256:75cbe6573caf7f5d614266528697cf5b970844b7ebed15aa6e3ddbc86e9dde6c"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -407,17 +407,6 @@ inventory_state = "records-enumerated"
 source_categories = ["unresolved"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"
-relationship = "local"
-
-[[documents]]
-id = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text"
-main = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text/main.tex"
-publication_kind = "canonical"
-source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
-[[documents.record_owners]]
-id = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text"
 relationship = "local"
 
 [[documents]]
@@ -4013,39 +4002,21 @@ kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"]
 
 [[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text/format.tex"
-sha256 = "294daa2f84ded628208ae9fb9ea8ad35be5292f5accc223eb46d2c573f4027ac"
-kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text"]
-
-[[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text/main.tex"
-sha256 = "805b6ab4e7d0483af2dca3b6d6c7396bd0768a4a517005347846a9562d58152f"
-kind = "publication-main"
-owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text"]
-
-[[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text/sections/05-appointed-text.tex"
-sha256 = "dc1bf610a01f54f7ee4da1b090cb2811878e9be77e91612fad110c4bc8b1992c"
-kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text"]
-
-[[files]]
-path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text/web-edition.toml"
-sha256 = "6c41b545db2163f36ee1e740de7fdbf398b37263c9bc32fcffc6b76056440763"
-kind = "rendered-content"
-owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text"]
-
-[[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/format.tex"
-sha256 = "fabcfb18751a47d586b7255d409218128518e3b15a838607102ec17a0ab81ffe"
+sha256 = "a3ad438ef61f074c954971170a447596e98d98f89150f2a4bdc5db5f5aca6a65"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/main.tex"
-sha256 = "10310796d87472f85dcc5131beda5649d9e00f458491e8816515b301aceff579"
+sha256 = "84113ff1f1e9b48e709455b09679b792bbe1a9b64d803bd2ad693f58afe9e164"
 kind = "publication-main"
+owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/proper-components.toml"
+sha256 = "bdf4b5d5b1def074648919dcd739819c6f684fbd063d0e05741538b0a5af0700"
+kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
@@ -4056,31 +4027,37 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/propers/verified.md"
-sha256 = "73db6656aaf46792173dc34455b006247e82bd93fa82ce3b9bf7c47ff7f23f95"
+sha256 = "f34d8dc0348dcba01397d018486e87f4cf5e9b8ba62c5c6881c9192961263b99"
 kind = "proper-verification"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/research/scope.md"
-sha256 = "15e4db852006517c414fa69e7de626666bbf888df2bba720ac671224cb41c7a0"
+sha256 = "9176493d679a8fa639ee50c8506dd86bb835da06f2d5adfd53b9744fd4744e55"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/research/source-audit.md"
-sha256 = "a5ff019d1c673bef9ce92d814e49853ea05e34dfad07c5360e15f6f5fe520f4e"
+sha256 = "fa5c9d6b9071ebb66c0dbfb44cdbae84a82cc0409c71ed16e9a5db96f88fc46b"
 kind = "legacy-source-audit"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/research/source-bindings.toml"
-sha256 = "43c38b292e57514b5c88fe71b9966aa25c99cd5c6d5f4b424bcd929f9a1b86c4"
+sha256 = "e7596d7241ac49081b9d9b6f6d4f5aff5447389148d1cf9ba6c63da05032c53a"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/sections/00-map.tex"
 sha256 = "d63998e28b6ac8b6d262d499a93cfcae9d33a808bb716b491cbb6d98ade20919"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/sections/05-appointed-text.tex"
+sha256 = "8cc73f23987dc210781bf30129fdda395578b086ea5f8397e62e3b42d10071f5"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
@@ -4092,13 +4069,19 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/sections/20-themes.tex"
-sha256 = "848e9b2609a462b3900f77360c37548b0f4517784f85d514c7c2ba50fe88e721"
+sha256 = "3f1513d4640e5dac7fe7ca818c3fee8e0c4a2d3906621e88d1942ab31839cc3f"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/sections/30-commentary.tex"
 sha256 = "7a7be4b270a6ca258f0b9ab643759184787442d192deedffdb86b0fd03672b45"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/sections/35-source-grounded-synthesis.tex"
+sha256 = "16d22bd8a7e0dcb93040706664c6725cb73089b57cac0fdfd2f52d92140fa817"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
@@ -4116,13 +4099,19 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/sections/90-scope.tex"
-sha256 = "22d98e120aa3cb259b6f6106386fcf607054f899f8542bcdfe10a17a59d75965"
+sha256 = "45991e019a5d3cf1814cdc2cd65ab8fbbb9020545db07ad7c42991c5bb571252"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/sections/99-references.tex"
 sha256 = "8968856b47e5dc4fe62d5d1caec771132a3b07fcdeeb3f83dd1548c537d36017"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/synthesis.tex"
+sha256 = "5e21ef58aa8566da1b3b7da8858d6403033b7af2a74bc015b1f2ae36dde942f0"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"]
 

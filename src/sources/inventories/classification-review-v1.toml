@@ -1,8 +1,8 @@
 classification_schema = 1
 record_type = "publication-source-classification-review"
 audited_on = "2026-07-26"
-publication_snapshot = "sha256:d3963d6224dbd16f15862f7e03a07e8734927643b574dc058ff116c2d537dcd1"
-classification_snapshot = "sha256:3bf02f757d5f809975235df534f2ad7c2d2be4af93af81f4eaa3faebd56ae1ed"
+publication_snapshot = "sha256:182bdd9b58a23d887e5600a9a6b155fb232cc51efef6230f8932e70841e50410"
+classification_snapshot = "sha256:96ce76990fd5fa8a2d709c14791d2c2d96e63ed25706124ef37e77208bec5ae1"
 
 [[classifications]]
 document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -19,6 +19,10 @@ source_categories = ["institutional-current", "magisterial", "scholastic", "seco
 [[classifications]]
 document = "articles/faith/at-the-end-of-every-why"
 source_categories = ["magisterial", "patristic", "prayer-devotional", "scholastic", "scripture"]
+
+[[classifications]]
+document = "articles/faith/catholic-doctrinal-authority"
+source_categories = ["canon-law", "historical-primary", "magisterial", "patristic", "scholastic", "scripture"]
 
 [[classifications]]
 document = "articles/faith/council-missal-and-crisis"
@@ -349,10 +353,6 @@ document = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"
 source_categories = ["finding-aid", "historical-primary", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
 
 [[classifications]]
-document = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost-full-text"
-source_categories = ["historical-primary", "liturgical", "scripture"]
-
-[[classifications]]
 document = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass"
 source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "secondary"]
 
@@ -451,6 +451,10 @@ source_categories = ["archival-material", "canon-law", "dataset-survey", "findin
 [[classifications]]
 document = "theology/mariology/champion"
 source_categories = ["archival-material", "canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "prayer-devotional", "scripture", "secondary"]
+
+[[classifications]]
+document = "theology/mariology/doctrinal-authority"
+source_categories = ["historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scholastic", "scripture"]
 
 [[classifications]]
 document = "theology/mariology/fatima"
