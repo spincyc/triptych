@@ -8,9 +8,9 @@
   ],
   "expected_counts": {
     "publications": 172,
-    "release": 168,
+    "release": 169,
     "review": 0,
-    "hold": 4,
+    "hold": 3,
     "providers": {
       "claude": 47,
       "gpt": 125
@@ -56,7 +56,7 @@
         "worldwide"
       ],
       "rights_record": "release/rights/public-alpha-2026-07-15.md",
-      "rights_record_sha256": "2dfe9d4456b304acebfb20c6f2d23ed1b276be7af0fa52173f4b9e7630f56811",
+      "rights_record_sha256": "96a3e516714c8e4990b408c646a1b1d865a9010ddb87e467c806de9d7f8d4f53",
       "site_sources": {
         "CONTRIBUTING.md": "1bb9ef13c4f754f9a8bede73f0afd95c2266173726bcfbd709017dc342272d5e",
         "LIBRARY.md": "9667baf568e29971d449858bf72ea7aeac9383e059ccf24c0199aa6eb2ebbf7b",
@@ -64,11 +64,11 @@
         "LICENSES/CC-BY-4.0.txt": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744",
         "LICENSES/MIT.txt": "afd9c125b68a36b60c78cf63656f4cea2613fadce57e95ebabacebff8817ef60",
         "README.md": "92c6dc1ee2199d5e242737b7195e57753aac71892b584cc72b187807c07a46aa",
-        "THIRD_PARTY.md": "965aaaff0e773815213fa8c9aada37213d6cb890eb374ef3d1bb1d1dbf966ec4",
+        "THIRD_PARTY.md": "9b0b1a2bd4034035688cecf50e9943556dea120fd349809a813d3c16d2870fa2",
         "library/biographies.md": "d4cfdf9ae2f1e55f2c4bc997cccce4d92a40a9b64b5189fc7e8217c45d415427",
         "library/curriculums.md": "326b9f08c7274ffd4ba76fa3a475a839993323dff49e54517fe131cf05275916",
         "library/ecclesiastical-latin.md": "02055f76bdd8ebd5618607194256ee6298947f30391bcafffacd4dbe1af319eb",
-        "library/faith.md": "8518158ceb64169fb10645b1d3c518daaa772913bba9e4ae266b082480f72e35",
+        "library/faith.md": "b1305daf1d9a824856fe9552542795037b0d835da1b4ca8109fb3842a8f0aa16",
         "library/heresies.md": "2f8cbb8b910281e3d6ace3b232d724b6e08866a459344268fe611a6652229feb",
         "library/historical-accounts.md": "5a9c6f94c6b322441046f29582fbcb2b2c494a3892a78396b34abe96312e3001",
         "library/law-and-church-discipline.md": "2f909b26e55bb143ade3c326ffea0cc5ceed1d239f99036376f1a4eed98af240",
@@ -82,94 +82,94 @@
         "release/public-alpha/layout.html": "2013d7f66dfb776b2c5df81656f7fe286bdbf60b016f88ea612f942af50249b9",
         "requirements-public-alpha.txt": "c30202fbc2f2eb1da451b8bae46b6867c07915844cec203a243991d14b8d4efc",
         "scripts/public-alpha": "c58a1279deed2e621277a1f2385a2de92bbf83e0c4340337638230cafc1361c1",
-        "web/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.md": "b5778b78d02c884a5edc38a85cc9aef75e7f88bf9f412a482dd97f667bef4268",
-        "web/claude/articles/canon-law/natural-positive-divine-human-law.md": "42681f72b3390e9191c9f927670d0b4961c6dde91eb3db08b1c9b70dd430b70e",
-        "web/claude/articles/faith/against-the-instrumentalists.md": "fa5bc3e918f1c662f4b1dc5fcf1ae06ec9fff533eadadd80d69020136fc02ee4",
-        "web/claude/articles/faith/at-the-end-of-every-why.md": "2791a7f5abe31e820f77c8187148c0e91297eb9a2c1f9fd8f2e52c6906206d1a",
-        "web/claude/articles/faith/council-missal-and-crisis.md": "4868ed0329a2f4d32c9c469caf268383cd31df277e3bf4e192163186cf5a392e",
-        "web/claude/articles/faith/four-last-things-01-death.md": "6c7b8ebf7daa3307780cb6e718692637fc04176a685bf781367fbba80b3ce740",
-        "web/claude/articles/faith/four-last-things-02-judgment.md": "eefa8e0692c8b97cb28200f69ec9d1cebcaf19e5cb171df10e8eb9e0a0ede1e2",
-        "web/claude/articles/faith/four-last-things-03-hell.md": "ee9fbb25d388d2199d7abc38e11b4fbbff06e34dd01d32c2072f786b05bcf6ca",
-        "web/claude/articles/faith/four-last-things-04-heaven.md": "a5ae1cb9ec586bc4dd6400bcac26e50166534ab5277b61edb5b984becc4c4a6c",
-        "web/claude/articles/faith/freemasonry-and-the-catholic-church.md": "eba2284da5f30f60e24cea2392e9c339db9e2875bbd4e9eb65c93f9eaa70aaa8",
-        "web/claude/articles/faith/in-defense-of-the-particular.md": "428ef41685dc35ab1ea497f2b5e4958fd5dd002e51f88f9925ab06d8241383b6",
-        "web/claude/articles/faith/ontological-vertigo.md": "8520c2ae95c9f442038690fa682f3c7944b37c6db996d432fcdd727178a8a266",
-        "web/claude/articles/faith/the-due-return.md": "b2f984f554c310dbcaf1db7a03b24c9e25f18d7c24bac62ce15f593a8cd534bf",
-        "web/claude/articles/faith/trustful-surrender-to-divine-providence.md": "cfc064128f920152d895e278312ed0487b20ea74cc81b1d670bd5b33b7ead2f1",
+        "web/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.md": "8dc32fd08198c306fd07290e719cd5cffcbba2a72788482222b9b0ccd36849f4",
+        "web/claude/articles/canon-law/natural-positive-divine-human-law.md": "251149eb060fd3c2da5f7d1c478512f05a381b6742d98221e8ae808b72c2e1d7",
+        "web/claude/articles/faith/against-the-instrumentalists.md": "9345b357b5fedca30856d2a409e42263c500ac87eaf8459a917e04355536628b",
+        "web/claude/articles/faith/at-the-end-of-every-why.md": "8ac5ab58bffcea2e8586a8020b9ac20d13de48a9cd4085e7f0fbd244e721a7fb",
+        "web/claude/articles/faith/council-missal-and-crisis.md": "bf819e71bd7c30e27c78bf131674c00b2c946fefdd576944543177978dffbf0c",
+        "web/claude/articles/faith/four-last-things-01-death.md": "8a4b089509e80566f4207e59efba1db4dc0da21f3e6dbe809ac299c7e5415030",
+        "web/claude/articles/faith/four-last-things-02-judgment.md": "4a0861b166351b1063478420a7ba6d7e0c39aa2a86ebeb717c823847aa36a8bf",
+        "web/claude/articles/faith/four-last-things-03-hell.md": "5174a53e89ebbf812d11abc5b0c27655755a898ec4a4d36d3c78d843cb46a026",
+        "web/claude/articles/faith/four-last-things-04-heaven.md": "b704b1b2bd389afb461887effe44c47fa49d27407a7613779e98667e4304546a",
+        "web/claude/articles/faith/freemasonry-and-the-catholic-church.md": "3f79c9ec5aa3dde5dfd35bf16fdb2ea2c716e1c2089b47fd346666f44cf81980",
+        "web/claude/articles/faith/in-defense-of-the-particular.md": "49a6d10e26cf4566f7c6a095b4a9636d766c75cd6b0006dcc7144471a7cf30d2",
+        "web/claude/articles/faith/ontological-vertigo.md": "5c74143750ea60f734af9fa5d607b84ec4a7f9e71f6c52ffde15508aa4a7eb2f",
+        "web/claude/articles/faith/the-due-return.md": "ffcf68f934cdf83c50439dd0abee6be0162bc095e7adcf17736cc896bb0a7c26",
+        "web/claude/articles/faith/trustful-surrender-to-divine-providence.md": "ed6c8c15c51fabf761a8fb9c00a0d924b880e95af74e4917eb0503036bd6350a",
         "web/claude/articles/scripture/abraham-and-the-daylight-stars.md": "38a5d437fbb30e78f44062e938e20b96d9ecb974e3a6861d6353cf551ad1ce07",
-        "web/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb.md": "ee3f19a710f7f5310e029d784f75753e5b7368e628cda99e9944b13fcc822e34",
-        "web/claude/biographies/origen.md": "b4baa746f1e2c189e744d3bccabb0346e4e57dc2b3fb02ebef07ca681ddfce37",
-        "web/claude/biographies/saint-augustine-of-hippo.md": "d679c64deb2697ed18d55e40f167302e88ad2e7a7ab13b326383c84bbe6bb476",
-        "web/claude/biographies/saint-jerome.md": "0e21a803044275f0e4425b20b0c236594997cfd1741e338594e7b304677a3127",
-        "web/claude/biographies/saint-paul.md": "50094cbd6b2fff6a747708fa1833a6508b055e4e25e04beb8824e1cb5d5a0227",
-        "web/claude/biographies/saint-peter.md": "4f1ded7e73f74643c1b527f21b7c462695454564ca06b7542da3d4d588875b89",
-        "web/claude/biographies/saint-robert-bellarmine.md": "2977f3f5bbef9d39130bf0f32c5c33b749e8ab2d2c0ffdc8b6814da761a202ec",
-        "web/claude/biographies/saint-thomas-aquinas.md": "1d968dd2a1798fae293189f4a8fb10b1e92e1f4a305bcde3799331ebe6d51eac",
-        "web/claude/biographies/tertullian.md": "72131c23448a6f558092cae2c98f82afd75fb2a8910c5d389a47141efa3bb5da",
-        "web/claude/history/biblical-translations/01-septuagint.md": "49c060e74fd45eaa30c15f084137f4cbf5ceee06ac92e566682f39d703509dd4",
-        "web/claude/history/biblical-translations/02-vulgate.md": "3da99c71009a67127ce332f849cc1894e62288f1a0d7aae75666a76ca48f4a08",
-        "web/claude/history/traditional-priestly-institutes/01-sspx.md": "975c34f7b9236566a6fb5e53f6c0551c3a02bb1889e6f9cef4d152e238afc209",
-        "web/claude/history/traditional-priestly-institutes/02-fssp.md": "cb0913d4be0ede5355921f5ecd8aacb065ea5c8a7b0587ec5a637b81c1196c9f",
-        "web/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.md": "a5caf253d8a13c08b9c87768de907308a12afee4ec3c3d6ef26d4a092fc26a07",
-        "web/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.md": "0b308d6d56d32f982abac846e397f50563c969e331a88318393686d5e87f0d6a",
-        "web/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.md": "7e70a3cb5aa7ef89485b47d18eb43eca2013f6cc42a4e219be4234dccf79082d",
-        "web/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.md": "95dcefea93705a038a3d7949f094e5261fb5d24d2f62e2faa7ba37b19a6f0cc9",
+        "web/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb.md": "8080242225f85c378f70567f58d04c237a97c2f64159aff2540ab5c01deedea1",
+        "web/claude/biographies/origen.md": "29b54f5f031e4c042b6029fac398dab71dc438dcbe1105cef3b56c89c5cdd939",
+        "web/claude/biographies/saint-augustine-of-hippo.md": "981e8b0eda70011b0a0550d72a9f0af0ee0b82ce6c44202852a836c0eac0b9fe",
+        "web/claude/biographies/saint-jerome.md": "9d1f98ecdb9ea1169ec5205b46026449743d573ee90ab82173df1b0d2a6079f1",
+        "web/claude/biographies/saint-paul.md": "4934cb24bb494c8d81a2f44b0dbee7f265438930b7132c8f58f1c897cc17f318",
+        "web/claude/biographies/saint-peter.md": "676ea37504505d171ac9ffa4cc588fb00df7d4ad0dd7b96ac6c1ee16424ac966",
+        "web/claude/biographies/saint-robert-bellarmine.md": "a1586289461299eee418c02fbbc621efb5030d39b5230609af416474592410e5",
+        "web/claude/biographies/saint-thomas-aquinas.md": "ba94ebe9ed6f2fd3ec626c0327f2b4f7ee0f6149183183739668855baef67e32",
+        "web/claude/biographies/tertullian.md": "d9162a0715d237b6c9b6d4c9ffba61589f0c0e4645e2a5db4a91813466d0acfb",
+        "web/claude/history/biblical-translations/01-septuagint.md": "2625cfac25f3fb8a86357cb9dba83cae4d407ff294fe2723fb2884c5fa01328e",
+        "web/claude/history/biblical-translations/02-vulgate.md": "99749363ef8ac1851854af0e445fddb2b9c7c8efd18c052dd7f8c9fbe40390bf",
+        "web/claude/history/traditional-priestly-institutes/01-sspx.md": "900da5fd1dc4536bb88bff13fae0bdd13c51fe1e0f509fe8fe916fbf33b92b2e",
+        "web/claude/history/traditional-priestly-institutes/02-fssp.md": "1b1387b390a013479d5e94d0505fa42875c542c2020835481698a3e1a9cc72ce",
+        "web/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.md": "6522bdb4583d7c60e869819ab0f9080016073eb3e7477adb7c58df263b600859",
+        "web/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost.md": "f97ad30c97194c6fd34925d4ebb9714d94d7577f6dbbfd6e29d3f6a5494c8fd8",
+        "web/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.md": "73898b77190688cecf33d9cfd9f44f5475c57b3a97961bd9c11133d939738c1c",
+        "web/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.md": "79a301e7a52b4964518dc1929ed68034a073e47fdb43634926bb195f214b7493",
         "web/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.md": "86bdb1aa9d16ec4c661700a3b4573a1f32b24dd3106a1d589ddabcdb82628ac0",
-        "web/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice.md": "54670c29bbb9742f7bd4e224e5c4ea59e262e5c1658e4f7142c433f038c0d36f",
-        "web/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass.md": "5c93965c4240343b48efe1af92b6381f9cec604ecaca2da941eb4c404ee41466",
-        "web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a.md": "2b28b3e4f3cb43bc96f2496736fb4a92aa804904e9178153b3b201f4a9b888fc",
-        "web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a.md": "650d783e4ad7f5c685e5e0fad315e24f1a07df41de246bb5baa30597cef9bbbe",
-        "web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.md": "8e37e7521a0631df12b3f828c010a62dfc2acc2952b41a0e138bc3055b50f577",
-        "web/claude/theology/mariology/champion.md": "73f90abfc80997f9585c2cc957d150678929d470affa1e911e3429308136613e",
-        "web/claude/theology/mariology/fatima.md": "5f1f3d4b76a587854d1ae9b8c4dcf6964563d56a01d5d04bde8d1d52bd6ee991",
-        "web/claude/theology/mariology/guadalupe.md": "00231a3783e6c7560433414328ede96a3a54f56994733a1b226563032a5e776c",
-        "web/claude/theology/mariology/la-salette.md": "c7b98190304fee23646485a69ba94897b326836210399dfb6eae9ee42e2d02c2",
-        "web/claude/theology/mariology/lourdes.md": "9cac98753be77a260baf78461c0e38bc810fd62dd5fadf14c73b1295356c3331",
-        "web/claude/theology/mariology/marian-dogmas.md": "6f4193f73791cfa60a647941b6ec960f1f09284614157eeb9c8232d991bca83a",
-        "web/claude/theology/mariology/rosary.md": "37681c98ea41ab8e436b570a318c28bba9e2007fa0349c16d8c1f43fa701288f",
+        "web/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice.md": "ebe5a2fb61d2d58a36ed41e7ae05680d08d3a10e52c59ac0a1968fa5a7a6784d",
+        "web/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass.md": "2471e96029548557955d6cef2ae40107bcccebfe35a2b512a993a87f4fb2c92c",
+        "web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a.md": "15305475f4947d347a27b3fb32fcc99240ac8dfcadfb8d91f0b3fea34e00032f",
+        "web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a.md": "2fa334612d68ed5a8cc1ffd3c45c89a15ca9b0630dfa534e1846866b283cb9c9",
+        "web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.md": "f5f25d7a0aa40ceff1f281f2bad0b688838442e802c9d23ee2456a34133769e9",
+        "web/claude/theology/mariology/champion.md": "ad2ca756c656b4945e19e4eb29102d171b0dd560e639c3774bca31b19dd5ac54",
+        "web/claude/theology/mariology/fatima.md": "a5b40c54510bf7cc2ca0f1886b7aae439f6e072b956e7cbb271ecd644e798f6e",
+        "web/claude/theology/mariology/guadalupe.md": "54d3daedd3bd719a0eeaf2f582259a5a838ad1791782cac31d54075ebcc401c5",
+        "web/claude/theology/mariology/la-salette.md": "80f88d4fef378903d45e971f37b1deefab7c3902ad3850e8b3f758dcd2e6a4c3",
+        "web/claude/theology/mariology/lourdes.md": "1bed5e3a3ff6a5af0485fb8b83edfd0c0259f2fd1895db91f3a421cd9aba5ee7",
+        "web/claude/theology/mariology/marian-dogmas.md": "c941b2c551633b0fd4516cea343132052f1f8c422c66f527b6f29e10aab74abe",
+        "web/claude/theology/mariology/rosary.md": "7b4e1cb2c382c0b9389ba543a97576ece5c2ea96e37575e63a143fac9cbde20b",
         "web/gpt/articles/canon-law/natural-positive-divine-human-law.md": "f4a79f1edd4bc422a55131c6c608374d006ffa8acfe97e6723e7cf4d6b3553e5",
-        "web/gpt/articles/faith/against-the-instrumentalists.md": "5d5b3d561bd7b143f2cd70256647765f47d05b7f0bdec38f12f5aab2d07f9fca",
-        "web/gpt/articles/faith/at-the-end-of-every-why.md": "8d82bb12cae1f459d8b64cc5e4a7cb31ecf5b8acbc583f3e80b5c2be2df96117",
+        "web/gpt/articles/faith/against-the-instrumentalists.md": "f9914830272457ae646571f915687a2146a70d413b2e7f8bd39fc5d69a518f28",
+        "web/gpt/articles/faith/at-the-end-of-every-why.md": "abe59cf997b9aad0ec827b5e89530a69805037ddd0f61dfc4257c2cc15f59b41",
         "web/gpt/articles/faith/catholic-doctrinal-authority.md": "667b171b4c46b98b4305e1734513c7231657611ce143a49972f6ec463613f8d3",
         "web/gpt/articles/faith/four-last-things-01-death.md": "324ef1568274512b1b498a5e12b3700849450095fac6d1aca2ae8e7d639f0997",
         "web/gpt/articles/faith/four-last-things-02-judgment.md": "609e342d1760fb5e3a03f9f6d71c0106685d25695895fe89ce811b58ad4c6636",
         "web/gpt/articles/faith/four-last-things-03-hell.md": "fed75853aa9288b021d8e4f12442ac400e96415b43e163fd1a015dabfccd11bf",
         "web/gpt/articles/faith/four-last-things-04-heaven.md": "eafcecf403f30385466b277dab8d94c54a4207c495cd500daff868c1f3540bb7",
-        "web/gpt/articles/faith/in-defense-of-the-particular.md": "ebac819fa24042450eeddee937a8e81d3de605bb4be48df0928491023a519dfa",
-        "web/gpt/articles/faith/last-supper-calvary-and-the-mass.md": "8feb0b55b4b4860d8160032be5e17f7299f2b9144471b847d9aa53588a9eebd0",
-        "web/gpt/articles/faith/ontological-vertigo.md": "1b429932394e9d2d42285acacfdea5e182c172b289bb8e47eb93b261aaf30391",
-        "web/gpt/articles/faith/the-due-return.md": "760e6e6e626c6bfc734a5d0c8f3f49c3014e2a135213f9c53deb14836b00aaa9",
+        "web/gpt/articles/faith/in-defense-of-the-particular.md": "9cd8cc67264d48d267a55d85ebbce46b9a72adbb2c274cb77b4da0dff44064d6",
+        "web/gpt/articles/faith/last-supper-calvary-and-the-mass.md": "846539c3061a662c49f028949bc4fa474bc0a03b22dbc496c73f9f4456b43813",
+        "web/gpt/articles/faith/ontological-vertigo.md": "bf74e96b6be245e9ed71e866469994955cb4075aa187436766713465bd2548be",
+        "web/gpt/articles/faith/the-due-return.md": "5afa70a06ceb5857683ddccb55e031813b9e53303b077aec6a28637ace9c2aca",
         "web/gpt/articles/scripture/abraham-and-the-daylight-stars.md": "cf3f5bef93079d227dd96417c4fd4e80cd721a062063fe4a0d21c5f4984b0e4c",
-        "web/gpt/articles/scripture/john-6-bread-from-heaven.md": "536154be85c09a7c2822abcd95cb801635cd1d0d86876b9c5cc75b47d7a67f7b",
+        "web/gpt/articles/scripture/john-6-bread-from-heaven.md": "cecb867caff7b7e96d88cfa5d8d273c2dad142ce656dd372a6090948ff10d3df",
         "web/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb.md": "2f2411991b7906ee7fa2932a17f062f3dd0a90d5b0ca97b2dff470c7429b245f",
         "web/gpt/biographies/origen.md": "43a54fb1afe0ce68ea8fc419e33ebe466814f5d74e4ed939759afca5522ef22d",
         "web/gpt/biographies/saint-augustine-of-hippo.md": "58b4725f8783455c2f50e84732baccb326762f3a63d6d5e0acdcb30e8a16eb79",
         "web/gpt/biographies/saint-jerome.md": "082002eeba63699936e1b797ac299e847e41582087a8c5b62134687d260f7429",
         "web/gpt/biographies/saint-paul.md": "b71eaec42b82dd94f59342492fce9b58c66230c41e0c88aa42740904111751a5",
         "web/gpt/biographies/saint-peter.md": "c77f054b8508726d8df2f77d70aacedc7fac18969d023a8cc92e926382cafede",
-        "web/gpt/biographies/saint-robert-bellarmine.md": "714ec3ecfefea73b23ea1f1ba084b05eb0efc20328ebbedde6db736e5af23a24",
-        "web/gpt/biographies/saint-thomas-aquinas.md": "eeda6ec417c72759faef5c1e264b3919ebae9b7596e5f9dbd535428ffce38411",
+        "web/gpt/biographies/saint-robert-bellarmine.md": "9741f1edb2e4b0818b2768226701338e3cbc056f15f36dd8ce6f2363c0430537",
+        "web/gpt/biographies/saint-thomas-aquinas.md": "8e16a32ed18b3fc4724946caddca58927ff4015015090a193522388cdb270061",
         "web/gpt/biographies/tertullian.md": "1f4f75840fbc6e778f77acbe50228b43c1b951cbc97f2ae8fad294253050c8fd",
         "web/gpt/history/biblical-translations/02-vulgate.md": "e82710833956922a92baba759b796d2182b89ab5a26e80e2b9eb87f7b3e683c1",
-        "web/gpt/history/catholic-exorcism/01-history-and-current-practice.md": "13190825ecfe7bd841ac2fa7e3019008ff5c9d72250884ae916b243c46f4c749",
+        "web/gpt/history/catholic-exorcism/01-history-and-current-practice.md": "ffbf52ab55312f0b6bb58ef0bf0e99e44bfbfc06189b94f58f512303e6e32933",
         "web/gpt/history/catholic-parish-histories/01-st-stanislaus-milwaukee.md": "19a23782bc342c595e1463dab25e81619892c4bad481e9768d1f9b7a756c5ecf",
         "web/gpt/history/catholic-parish-histories/02-st-anthony-willits.md": "c79e484f5b78e882d3df09882c9948e578c9674f769d4f02f77ced258ed294bc",
         "web/gpt/history/traditional-priestly-institutes/02-fssp.md": "0adb692a9e419ac8889fcf9e8a1f90d7417c4feff43f7e4d02478c20e7db89b8",
         "web/gpt/history/traditional-priestly-institutes/03-icksp.md": "98b59bc8d5f7b3cab86bf95e34a84fd559506e73b377459ff8c94fbc89e8e238",
-        "web/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.md": "aa90719a3fce71c808ab452f5ed5021d16193c9596a90c0448a9feff9171e775",
-        "web/gpt/liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost.md": "431e69f4173b70ecc4a6fbc2bf5285c1bbeff9d43dcb15af8a3c07e82679bb9b",
-        "web/gpt/liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost.md": "71c4233e9e02a4911fb340117f6cb50bfb88e6e807755885d33b32ac524815fd",
-        "web/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.md": "2a884c999434f9e428c24582c09d7b9dcfac09bb42eb3249ce60a4c01c45abaf",
+        "web/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.md": "ce0f03d8726b32c5ac4e361adad228a4530830657864d0ecfdfd6e09505398ad",
+        "web/gpt/liturgy/roman-rite/1962/propers/temporal/17-third-after-pentecost.md": "786ce4256829c67c5817483fc73cecb4131630def41912c5d7595bc4d0f5407b",
+        "web/gpt/liturgy/roman-rite/1962/propers/temporal/18-fourth-after-pentecost.md": "4033ac8e82568efe3c2671a9265a14961421a4fac0d9ee6843d6430d5f83ee13",
+        "web/gpt/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost.md": "44c945d5ae4d91da5dc31f6f948c0861754273fff2da8f924eff92f9b79c30bd",
         "web/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.md": "382492cbd6f31fa69a500d14337b54099ec835c5cecf8336ec4c67baf2c821fc",
         "web/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.md": "854834793ddf8f0e64eb8e07be6b32161cf44289de6d5899bcd290822712f72d",
-        "web/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass.md": "eb5ccc438bf0b98c5130ca4f1c9feec1936bdd33bbb02a4a15b40236ee3e75b2",
-        "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s35-eleventh-sunday-in-ordinary-time-year-a.md": "77d39388f3fc5d46c2a1c40be709ba9f12b7bce1c2def53dcfb667ba46a45a2c",
-        "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s36-twelfth-sunday-in-ordinary-time-year-a.md": "ed44e32dea33b197bb23792fe68976565c2b9984bc0fdd694279314b9d63949b",
-        "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-thirteenth-sunday-in-ordinary-time-year-a.md": "befa016de8b02403bf9111dbc1d655ac13f0454111a5724c0e96d49b9315bd96",
-        "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-fourteenth-sunday-in-ordinary-time-year-a.md": "700b245fc5f927178a0b094caad0700f14c6a37679c8a7fb4f9af02567e23c83",
-        "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-fifteenth-sunday-in-ordinary-time-year-a.md": "4860438845ceef139f9fc529437a5431d1f307a247d9837d551ecfcb404965c7",
-        "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a.md": "cde34e0a662f45dcf031d7f787fd0f8cdc8a87f579d417c349d52f2b8fb11f9b",
-        "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a.md": "08bec9c15333adddc4095104fa69873d13967f79d5b2996ac784c3003cc7464b",
+        "web/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass.md": "2a7643614077af895533e1f9db8a887912a5d8f6db1d5f3139c9be18c22c67ce",
+        "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s35-eleventh-sunday-in-ordinary-time-year-a.md": "83f7cf2f02893fd0c2b7c9ca18940ce95caccb902b57104771841a5182e25d45",
+        "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s36-twelfth-sunday-in-ordinary-time-year-a.md": "7747b07381529423dc8f5ad5088de6931f39296d402932df2a0cf07767b92eca",
+        "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-thirteenth-sunday-in-ordinary-time-year-a.md": "6d75986e8a86cf6a59f478ae656b8454e9207c90a7fba671d977707f47d83000",
+        "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-fourteenth-sunday-in-ordinary-time-year-a.md": "1b99ce2bcf6f0851869f6abe7ced77a5234c1fa11e124871bdcd20bfede9f3d3",
+        "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-fifteenth-sunday-in-ordinary-time-year-a.md": "45b335e765da01f4f8e43f1450d150e4688602c5c102519ecc151b1950c53d5b",
+        "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a.md": "3eb4b5912a428cdeff9b6a1f802fef544c222ade8bf12f948e665304beeb8546",
+        "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a.md": "6aec51ab889f853bede3a01ce3c3b8707c5c7273ae4b84737dc98837e7d6b126",
         "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.md": "10ace668187fb9f4380b4249873ccd6b6138bb346d43b98e9b1f76063630e7bb",
         "web/gpt/theology/heresies/heresies-in-catholic-history.md": "544ef5410981972a904b7d664adcf059a05667a2f146a43748dba5a3bd663470",
         "web/gpt/theology/mariology/angelus.md": "a7ff0e8cbf28fb5bf5290d0cb103b48cf2d753e45635f79e8d3459af592fc424",
@@ -180,13 +180,13 @@
         "web/gpt/theology/mariology/guadalupe.md": "6288f71fda973e78da4614b50504fa822aecd119f0d6156d5cc031386858b4dd",
         "web/gpt/theology/mariology/la-salette.md": "4c012283b073143e2bd35e4519a0ed209a3736b67ae7314852300259c5fd80d8",
         "web/gpt/theology/mariology/lourdes.md": "084f2bc8d5fe256012e36097ae9eec217b76a5484e50add546f17e7799890745",
-        "web/gpt/theology/mariology/marian-dogmas.md": "10b1b82d52c65eb5d333aec30a9975c2d572a6b013407e0875185128eae192c4",
+        "web/gpt/theology/mariology/marian-dogmas.md": "94392643916facc7ba58486371f1dcfbf084b7c0d50bbce7fedd7dde9ef19f01",
         "web/gpt/theology/mariology/regina-coeli.md": "95064daaf0e166aa0fcfc8e81b697dbdc62c914d585725325cb438aad45e35e0",
         "web/gpt/theology/mariology/rosary.md": "57e3b4bd4f54aaee22052c825ead00c648c94ed20e1dc84cc6c0d9875086bdfb"
       },
       "approved_on": "2026-07-27",
       "duration": "perpetual",
-      "effective_at": "2026-07-27T07:17:55-05:00",
+      "effective_at": "2026-07-27T09:32:58-05:00",
       "expires_at": null,
       "timezone": "America/Chicago",
       "conditions": [
@@ -1022,7 +1022,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "820b5aef1d1c39aa498955d87a9911c1a6f51f3d5db43611963340cc2e2914d4"
+        "pdf_sha256": "22c4347dc08391522337f3dfbb361f53b1abff1362d95b3c19241e324630fc8a"
       }
     },
     {
@@ -1032,7 +1032,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "d361503e0bd46c873d07411ce3cce2fe184fb690bb3c7cb66aaa48e45ab7dc35"
+        "pdf_sha256": "d44edc7cabdac325fbccd6a31fd5c12e8d1d8293bea65023f8286f4cf219ba34"
       }
     },
     {
@@ -1042,7 +1042,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "5899cb40a25802c047cdae1593154f884cd1e0f521f10cf2f727ccce70bbc64a"
+        "pdf_sha256": "9dbe85499388d82e53c083af4af147fe344dd12d5bd546e0f26c9f7c5db7dbe1"
       }
     },
     {
@@ -1052,7 +1052,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "09c14200921ff31fe72aff9ee7de20370241f104de3d59c00c641fadd71eeaff"
+        "pdf_sha256": "9ad9057fd479d6e2fac42e76dc793a4cfb93e0d11c439424f897a595db59cc6a"
       }
     },
     {
@@ -1062,7 +1062,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "85e652e540494f59b7bccd7717ff11069925f4b9f7f9e90be042b751ddde381b"
+        "pdf_sha256": "f04351517aff67db1fe56b7baff607850d658f5f3676cdf17089119a595cd862"
       }
     },
     {
@@ -1072,7 +1072,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "efb37f8356c6695c5a4a89e8ba9a37dc5bbd22ca6bfb6c5d4d0ec0c7fc3d25ab"
+        "pdf_sha256": "aec986be76303cb9226d41fcec6f471fc8c6596a6afdae1343318248c4bf5a6b"
       }
     },
     {
@@ -1082,7 +1082,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "60af9f4f83b9d8508fc5dd29b363682dbf23fda63ca38764726901d2b3ae58c9"
+        "pdf_sha256": "332f2cbb64ce3ea28dd468aab565447b5d890db26ef8563445cbe54d584109e5"
       }
     },
     {
@@ -1862,7 +1862,7 @@
       "gates": [],
       "approval": {
         "authorization": "perpetual-public-repository-2026",
-        "pdf_sha256": "073d386f7381633dcb7eb97300f8170b6364cb5037b28bc103ac759996ef6af0"
+        "pdf_sha256": "df5a416fc5ec583ef8623cf41e622bed594a1fd0c9b93cf3fc7e9d703a29b4a0"
       }
     },
     {
