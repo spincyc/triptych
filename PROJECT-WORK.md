@@ -123,8 +123,9 @@ Commit `bc479596` expanded and published that interim edition and added a
 dedicated landing page, but did not fulfill the extent or hard-review promise.
 The next source-grounded tranche expands the patristic chapter from 1,225 to
 3,076 words using only seven already verified passage bindings in Tertullian,
-Origen, the Jerusalem catecheses, and Eusebius; its uninstalled build candidate
-is 32 physical pages. Justin, Irenaeus, Laodicea, and the church-order complex
+Origen, the Jerusalem catecheses, and Eusebius. The combined patristic,
+current-law, and safeguarding revision is installed and alpha-bound at 32
+physical pages. Justin, Irenaeus, Laodicea, and the church-order complex
 remain excluded from positive claims until their required controls are closed.
 The sequenced implementation and exact-snapshot checklist is
 `research/delivery-work-plan-2026-07-27.md` beside the publication.
@@ -193,7 +194,9 @@ review state. Branch validation found 164 release publications, 14 review
 publications, and no held publication in the generated public-alpha artifact.
 Production-site route and review-label validation passed for the deployed
 artifact. Exact catalog-text reconciliation remains open because the exorcism
-landing page understates the deployed PDF as 20 rather than 29 pages.
+landing page and 32-page snapshot are prepared and committed only in this
+worker; production remains on the preceding snapshot until the maintainer's
+reserved integration and push.
 The standing 27 July 2026 public-alpha authority permits future exact-current
 review snapshots to be installed and deployed without repeated
 document-by-document approval while preserving every unresolved review gate.
@@ -256,6 +259,12 @@ the same substantive edit.
   already verified patristic bindings. The changed source builds to an
   uninstalled 32-page candidate; web regeneration, every-page review,
   installation, and all final completion gates remain open.
+- 2026-07-27: Combined that tranche with bounded canon-law and safeguarding
+  repairs, built and inspected all 32 pages, installed byte-identical PDF and
+  web artifacts, corrected the landing-page extent, and bound the exact alpha
+  snapshot. The promised 100 substantive pages and deferred external reviews
+  remain open; production will not change until maintainer integration and
+  push.
 - 2026-07-27: Recorded the maintainer's standing authority to publish every
   document as a conspicuously provisional public-alpha snapshot for priestly
   and qualified-reader review. This authorizes the ordinary build, install,

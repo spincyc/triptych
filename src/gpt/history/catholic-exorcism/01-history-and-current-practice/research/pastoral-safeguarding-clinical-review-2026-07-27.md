@@ -2,8 +2,8 @@
 
 ## Review identity and scope
 
-- **Reviewer:** independent GPT-5-based Codex review agent, separate from the
-  drafting agent.
+- **Reviewer:** internal GPT-5-based Codex review agent, separate from the
+  drafting agent; this is not an independent professional review.
 - **Review date:** 2026-07-27.
 - **Gate:** pastoral safety, safeguarding, consent and capacity, emergency and
   continuing care, and the boundary between clinical and ecclesial judgments.

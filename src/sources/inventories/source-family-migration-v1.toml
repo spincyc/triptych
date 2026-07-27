@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-07-27"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:ce00439f2913b53535046a724887b4451eeb4feaa6b93d2869b14622886e27c8"
+inventory_snapshot = "sha256:61b4d72d9e044e86f98d45a73c5fb5bb337da33349ab3f5821046f3c6f295169"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:168d6ba79848f1c86a34613a3495d9acc72945007e80f4fafad20477da686ed0"
-canonical_catalog_snapshot = "sha256:7dc2ac042393d40b5ec0e5bab5c7b3beb6caa39e1e55ae632ff20ce243ad8fbb"
+canonical_catalog_snapshot = "sha256:31e4a89507772874096a78890c18fecdc696440ceb4799fac2efe3bfb20e850f"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:5f56374cd32126b4efafd8271c125c86f6686ffda7862439726c10c3bb2ed5bb"
+snapshot = "sha256:a2ff74f1917715096dcfb9c54b7aca2a25219adacf487bbd4553a1dac6e93ac9"
 
 [[families]]
 id = "family.abraham-ibn-ezra.perush-al-ha-torah"
@@ -1229,6 +1229,26 @@ canonical_ids = ["edition.council-of-vienne.ad-nostrum-qui.latin-denzinger", "wo
 trace_patterns = ["council-of-vienne\\.ad-nostrum-qui"]
 reviewed_on = "2026-07-27"
 notes = "Reviewed as an independent intellectual work. Its registered editions, artifacts, segments, and passages remain members of this family without absorbing related works or containers."
+
+[[families]]
+id = "family.crown-prosecution-service.spiritual-abuse-honour-based-abuse-guidance-update"
+label = "CPS spiritual-abuse guidance update"
+kind = "work"
+source_categories = ["institutional-current"]
+identity_confidence = "confirmed"
+identity_gaps = ["locus"]
+artifact_availability = "canonicalized"
+storage_plan = ["remote"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "officially-mutable"
+freshness_rule = "Re-pin the dated CPS web state and date every current-guidance claim."
+evidence_ceiling = "artifact-pin"
+disposition = "bind-existing"
+priority = "p1"
+canonical_ids = ["artifact.crown-prosecution-service.spiritual-abuse-honour-based-abuse-guidance-update.english-cps-web-2026-07-27.cps-html", "edition.crown-prosecution-service.spiritual-abuse-honour-based-abuse-guidance-update.english-cps-web-2026-07-27", "work.crown-prosecution-service.spiritual-abuse-honour-based-abuse-guidance-update"]
+trace_patterns = ["(?:Crown Prosecution Service|CPS spiritual-abuse guidance|spiritual-abuse-honour-based-abuse-guidance-update)"]
+reviewed_on = "2026-07-27"
+notes = "The official February 2026 CPS announcement owns its work, dated web edition, and exact remote artifact identity. It supports only the announcement's description of prosecution guidance for England and Wales and the stated categories of spiritual or ritual abuse; it does not establish prevalence, adjudicate religious claims, or supply a universal safeguarding standard."
 
 [[families]]
 id = "family.cyprian.de-dominica-oratione"
@@ -4331,6 +4351,26 @@ reviewed_on = "2026-07-27"
 notes = "The England-specific government publication page supports its stated scope and safeguarding concern, not individual cases or prevalence."
 
 [[families]]
+id = "family.united-kingdom-home-office.domestic-abuse-statutory-guidance"
+label = "Domestic Abuse statutory guidance"
+kind = "work"
+source_categories = ["institutional-current"]
+identity_confidence = "confirmed"
+identity_gaps = ["locus"]
+artifact_availability = "canonicalized"
+storage_plan = ["remote"]
+rights_review = "all-known-artifacts-reviewed"
+mutability = "officially-mutable"
+freshness_rule = "Re-pin the dated GOV.UK page and date every current-law or policy claim."
+evidence_ceiling = "artifact-pin"
+disposition = "bind-existing"
+priority = "p1"
+canonical_ids = ["artifact.united-kingdom-home-office.domestic-abuse-statutory-guidance.english-govuk-web-2026-07-27.govuk-html", "edition.united-kingdom-home-office.domestic-abuse-statutory-guidance.english-govuk-web-2026-07-27", "work.united-kingdom-home-office.domestic-abuse-statutory-guidance"]
+trace_patterns = ["(?:Domestic Abuse statutory guidance|United Kingdom Home Office|domestic-abuse-statutory-guidance)"]
+reviewed_on = "2026-07-27"
+notes = "The official accessible GOV.UK delivery owns its work, dated edition, and exact remote artifact identity. The exorcism publication inspected paragraphs 77-78 for the England-and-Wales statutory examples concerning abuse relating to faith; the family does not generalize those examples or their jurisdiction."
+
+[[families]]
 id = "family.united-states-conference-of-catholic-bishops.exorcism-faq"
 label = "USCCB Exorcism FAQ"
 kind = "work"
@@ -5782,7 +5822,7 @@ record_paths = ["src/gpt/history/biblical-translations/02-vulgate/research/sourc
 
 [[review_units]]
 owner_id = "history/catholic-exorcism/01-history-and-current-practice"
-surface_snapshot = "sha256:fb0b744790f8ea30d69862f8ea3100400e8651d004fb2fe66b2a8692a52dfe9a"
+surface_snapshot = "sha256:6858768e540f3ebdd415770dbc858635d2e3adb0f4375c361a416ec0ed581339"
 review_state = "pending"
 [[review_units.family_presence]]
 family_id = "family.catholic-church.catechism"
@@ -6888,12 +6928,12 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "owner.liturgy.roman-rite.1962.altar-server-guides"
-surface_snapshot = "sha256:ca4a7efca3afc84bd93567b2be520b3010b15d6a7ea1daf215094b69a431f09c"
+surface_snapshot = "sha256:72fdb23c8eae1a134f46b7212766c44dd55a8a5ba5edbd836a330f9a0931a7f7"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"
-surface_snapshot = "sha256:f83f7446ad1bb8e4bcd447dd39c7edf2308d52973fee1de23171db92196c96e0"
+surface_snapshot = "sha256:78fe17301305d0606522d0ed354a70620f4ca23d863c751b586d9be420671495"
 review_state = "pending"
 
 [[review_units]]

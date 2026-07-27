@@ -2,7 +2,7 @@
 
 ## Scope and exact snapshot
 
-This independent review covers publication-local source bindings and claims,
+This internal AI-agent review covers publication-local source bindings and claims,
 historical and patristic limits, theological and canonical currentness,
 clinical and safeguarding boundaries, rights, PDF and web production, and
 exact-snapshot distribution state. It is not ecclesiastical approval.
@@ -185,3 +185,66 @@ replace the release manifest's `hold`, open gate list, `approval: null`, stale
 web authorization hash, and absent PDF hash with a separately authorized exact
 snapshot disposition. Until those actions occur, this review grants no
 installation or distribution authority and no ecclesiastical approval.
+
+## Current 32-page public-alpha checkpoint
+
+This checkpoint supersedes the operational-state and current-byte statements
+above while preserving their historical findings about the snapshots they
+identify. It records an internal source and production audit, not independent
+human, clinical, canonical, priestly, or ecclesiastical review.
+
+The current exact controls are:
+
+- `main.tex`:
+  `sha256:139a2f4372502ced03abbbfe3213474e004e07ebfce4ff643b0cede4f58d8a2d`
+- patristic chapter:
+  `sha256:830538882b98a56811616961e69f58c2fb8cdd53684d995febd667d6abe4152f`
+- modern-law chapter:
+  `sha256:35d4877f7ff6d9ccf72786fd823216b64cfdb58e734ff352f5bb5cda06a44894`
+- safeguarding chapter:
+  `sha256:219389975a546bf9f2ed7701c1b37bc4550ef102c07ee223824a5cbc00ea6e0c`
+- terminal scope appendix:
+  `sha256:239936e6f514cdcc9a701c91f37517072cd02b8471393d37838af12b3f1c6ea4`
+- source bindings:
+  `sha256:61d19c61623ace3e65ec2951af02014901fb43bab9a31d17044d21f09492a521`
+- source audit:
+  `sha256:84c92fb19d9a068511138d886adc94e35153d728a826411a386dc08d20338391`
+- installed PDF:
+  `sha256:655264bafd4d2ba937d6448a2f0c30b9e8767dc27424aa013ca5b6f592f11f16`
+- tracked web edition:
+  `sha256:597f6458e10824fef854837f7233d1194dd569414d97304a29c7c2f14e5363d9`
+
+Two pdfTeX passes produced a 32-page, 400,570-byte US-letter PDF. The final log
+contains no fatal error, undefined reference, overfull or underfull box,
+package warning, or unresolved rerun request. Every font reported by
+`pdffonts` is embedded, subsetted, and carries a Unicode map; text extraction
+is nonempty and contains no replacement character. The reviewed build and
+installed PDF are byte-identical. The generated and tracked web Markdown are
+byte-identical.
+
+Repository review tooling rasterized the installed PDF. Inspection of all 32
+pages, including full-sheet comparison and full-size checks where needed,
+found no clipping, collision, broken table, isolated heading, unintended blank
+page, or illegible final apparatus. The title and terminal qualification
+conspicuously identify this as a 32-page interim public-alpha paper toward the
+promised 100-plus substantive-page reference.
+
+The changed patristic chapter uses only the verified Tertullian, Origen,
+Jerusalem, and Eusebius bindings and keeps Justin, Irenaeus, Laodicea, and the
+church-order complex outside the positive chain. The changed law chapter now
+binds canon 1 and the Code's promulgation and effective date, while describing
+the amendment/currentness check at its actual bounded ceiling. The changed
+safeguarding chapter corrects the WHO fingerprint, removes false independent-
+review language, narrows competence and capacity claims, and binds the
+territorial CPS and Home Office controls without universalizing them.
+
+**Internal source verdict: pass for the bounded current claims. Production
+verdict: pass for the exact installed PDF and tracked web edition above.
+Public-alpha distribution verdict: authorized and bound as a provisional
+review snapshot.**
+
+The promised 100 substantive pages, remaining source families, and every
+unperformed external human, professional, rights, specialist, priestly, and
+ecclesiastical review remain open and deferred. This checkpoint is neither the
+promised completed reference nor evidence that any human or ecclesiastical
+authority reviewed or approved it.

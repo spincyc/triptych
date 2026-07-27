@@ -7,7 +7,7 @@ sources.
 
 ## Current official sources
 
-- Catholic Church, *Codex Iuris Canonici* (1983), cc. 1166, 1172; official Holy See Latin controls, with the official English page used only as a translation aid. Controlling universal Latin law. The Dicastery for Legislative Texts' published authentic-interpretations compilation was checked through 2026-07-26; it contains no entry for c. 1172, and no material amendment to the canon was located in the official legal sources checked.
+- Catholic Church, *Codex Iuris Canonici* (1983), cc. 1, 1166, 1172; official Holy See Latin controls, with the official English page used only as a translation aid. Canon 1 establishes the Code's Latin-Church scope. John Paul II, *Sacrae disciplinae leges* (25 January 1983), promulgated the Code and ordered it to have force of law from the first day of Advent 1983 (27 November). The official Latin web text checked through 2026-07-26 retains c. 1172's quoted wording, and the Dicastery for Legislative Texts' published authentic-interpretations compilation contains no entry for c. 1172. These are bounded text-and-register checks, not a comprehensive amendment-or-repeal inventory.
 - Catholic Church, *Codex Canonum Ecclesiarum Orientalium* (1990), cc. 1–2, authentic Latin in *AAS* 82 (1990), p. 1061. Used only to establish the Code's Eastern Catholic scope and its ancient-law interpretive context. No Eastern particular law or liturgical book was inspected for this publication, so the study states no Eastern major-exorcism rule and makes no whole-Code negative claim.
 - Catholic Church, *Codex Iuris Canonici* (1917), cc. 1151–1153, Vatican Polyglot 1918 edition, p. 328. Historical comparison only. Canon 1151 contains the particular-permission, priestly-qualification, and prudent-investigation rules; c. 1152 concerns the persons over whom legitimate ministers could use exorcisms; c. 1153 identifies the ministers of exorcisms embedded in baptism, consecrations, and blessings by reference to those rites. The separately paginated official promulgation witness is *AAS* 9, part II (1917), p. 225; that page number must not be assigned to the 1918 book edition.
 - Congregation for the Doctrine of the Faith, letter to ordinaries on exorcism, 29 September 1985, *AAS* 77 (1985), 1169–1170, official Latin Holy See text. The delivery URL contains `19850924`, and some vernacular presentation metadata gives 24 September; the official Latin heading and *AAS* citation control the date used here. The letter requires observance of c. 1172, forbids the faithful's use of the Leonine formula against Satan and the apostate angels, and governs unauthorized assemblies that directly address demons and seek their identities.
@@ -106,6 +106,18 @@ routes, findings, and limits are recorded in
   state acquired, hashed, normalized, and inspected 2026-07-26. It establishes
   an England-specific safeguarding concern; it does not establish Catholic
   prevalence, a worldwide rate, or universal law.
+- Crown Prosecution Service, “Spiritual and immigration abuse included in CPS
+  ‘honour’-based abuse guidance for first time” (26 February 2026), official
+  page acquired, hashed, and inspected 2026-07-27 at “Tackling
+  spiritual-related abuse.” It identifies children, adults, and vulnerable
+  adults and enumerates forms of harm in an England-and-Wales prosecution
+  context; it establishes neither prevalence nor Catholic discipline.
+- United Kingdom Home Office, *Domestic Abuse: statutory guidance*, accessible
+  GOV.UK delivery, paragraphs 77–78, acquired, hashed, and inspected
+  2026-07-27. It controls the bounded England-and-Wales statement that
+  faith-related domestic abuse can include religious manipulation, coercion,
+  secrecy, and harm, isolation, or neglect intended to remove an alleged evil
+  force or spirit. It is not generalized into universal civil law.
 - The American Psychiatric Association's public DSM-5-TR assessment-measures
   page remains an authenticated web lead because exact acquisition failed. It
   supports no quotation or publication claim. The Cultural Formulation
@@ -163,17 +175,17 @@ cumulative extent before publication.
 
 The earlier fifteen-page candidate, build, web conversion, and page review are
 superseded for publication-review purposes by the expanded modular draft. They
-do not establish the current render's production quality. Source-library and
-binding validation must be rerun after all source lanes settle.
+do not establish the current render's production quality.
 
 The expanded source received internal source-role, currentness, architecture,
 and claim-level reconciliation. On 27 July 2026 its two-pass build, log audit,
 web conversion, review rasters, every-page visual inspection, and PDF
-structure, font, metadata, and extracted-text checks passed for the bounded
-twenty-page snapshot. That snapshot is installed and publicly discoverable
-only as an interim public-alpha review paper. It does not satisfy the promised
-100+ page comprehensive deliverable. The expansion's incomplete source
-families and renewed historical, patristic, liturgical, canonical,
-clinical-safeguarding, pastoral, theological, rights, production, and
-ecclesiastical review remain open. Public review distribution is not completion,
-release approval, or ecclesiastical approval.
+structure, font, metadata, and extracted-text checks passed for the current
+32-page snapshot; source-library and binding validation also passed. The
+snapshot is installed and bound for public-alpha review in this worker but
+will not be live until maintainer integration and push. It does not satisfy
+the promised 100+ page comprehensive deliverable. The expansion's incomplete
+source families and deferred independent human, professional, specialist,
+physical-use, and ecclesiastical reviews remain open. Public review
+distribution is not completion, final release approval, or ecclesiastical
+approval.

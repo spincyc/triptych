@@ -77,4 +77,12 @@ Named traditions are internally diverse. The matrix groups arguments rather than
 
 Official law, Catechism, conference material, and liturgical descriptions are tightly paraphrased. Proprietary ritual text is not reproduced. Orthodox liturgical wording is not quoted. No medical manual or modern case narrative is reproduced.
 
-Internal theological-category, jurisdiction, non-operational safety, objection-fairness, and safeguarding review was completed at source stage on 2026-07-26. Independent theological, canonical, patristic, historical-liturgical, clinical-safeguarding, pastoral, rights, and production reviews dated 2026-07-27 govern their stated and deliberately bounded lanes. Orthodox law and practice remain outside scope. None of these reviews constitutes clinical validation, professional medical advice, or ecclesiastical approval; exact-snapshot installation and distribution authorization remain separate gates.
+Internal theological-category, jurisdiction, non-operational safety,
+objection-fairness, and safeguarding review was completed at source stage on
+2026-07-26. AI-assisted internal theological, canonical, patristic,
+historical-liturgical, clinical-safeguarding, pastoral, rights, and production
+reviews dated 2026-07-27 record bounded checks of their reviewed snapshots;
+they are not independent professional reviews. Orthodox law and practice
+remain outside scope. None of these reviews constitutes clinical validation,
+professional medical advice, or ecclesiastical approval; exact-snapshot
+installation and distribution authorization remain separate gates.

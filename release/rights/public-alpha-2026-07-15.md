@@ -1427,6 +1427,31 @@ work-specific research records remains operative. This approval does
 not authorize a push, deployment, tag, history rewrite, public
 release attachment, announcement, or promotion.
 
+## Standing public-alpha clearance — 27 July 2026
+
+The maintainer directed: “do everything except claim a human has reviewed it ;
+i don't want to have to keep telling you the docs are approved ; they are all
+approved in their alpha state so that priests can review them from public
+links.” The maintainer later fixed the execution boundary: “you should do
+everything except merge to main ; you can leave that final merge + push to me ;
+do everything else ; do not wait.”
+
+This is recorded as standing perpetual worldwide authorization for every
+current exact Triptych document snapshot to be prepared and bound for
+conspicuously labeled public-alpha review distribution without a repeated
+document-by-document approval. It covers the ordinary source, PDF, web,
+catalog, and reader-site bytes required for that alpha snapshot. It does not
+promote any snapshot to authoritative release and supplies no human, priestly,
+specialist, intended-reader, physical-print, rights, ecclesiastical, or final
+editorial review. Every such unavailable or incomplete gate remains visible
+and deferred.
+
+The worker may complete research, build, inspection, installation,
+exact-snapshot binding, validation, and coherent commits. Integration into
+`main` and every push remain reserved to the maintainer; this clearance must
+not be represented as authority for the worker to perform or claim those final
+actions.
+
 ## Exact approved snapshots
 
 | Publication ID | SHA-256 |
@@ -1548,7 +1573,7 @@ release attachment, announcement, or promotion.
 | `devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer` | `d6eaf8220ff47fe26618c9dc4d3b0ae3e18e9770585514b9a55874f3c2d91c2c` |
 | `history/biblical-translations/01-septuagint` | `0fb0ff3415fcd85773dc69c0e266857476070cec85fc6f16f9783317d8f95299` |
 | `history/biblical-translations/02-vulgate` | `ed7bcba53f7ab9c60c426a95cfea1a82f42f42ca6d53ddeea8275dd03c4c4e51` |
-| `history/catholic-exorcism/01-history-and-current-practice` | `67f5f2aae5acd48e0fde5579ae6c490383855471af1f87efa9185f2a2e480a61` |
+| `history/catholic-exorcism/01-history-and-current-practice` | `655264bafd4d2ba937d6448a2f0c30b9e8767dc27424aa013ca5b6f592f11f16` |
 | `history/catholic-parish-histories/01-st-stanislaus-milwaukee` | `41f99d1acc1655f8a8e452f94230620daabf4e14b8a43435587da8f9d7e723d3` |
 | `history/catholic-parish-histories/02-st-anthony-willits` | `8cf0c0e1f758fa96862a4af9ed70ffd921a20a43b223b6a910f5d7f33585ae0e` |
 | `history/traditional-priestly-institutes/01-sspx` | `e8fde596cfcd3bd79e8392e81eaafebf59723a11a15b8c96773fabfe6f67713c` |
@@ -1622,7 +1647,7 @@ release attachment, announcement, or promotion.
 | `README.md` | `ae99f438d5444a4fecc7dda5a2ad6e3f6bd90818a3f690af9ed14691a069ee56` |
 | `THIRD_PARTY.md` | `9b0b1a2bd4034035688cecf50e9943556dea120fd349809a813d3c16d2870fa2` |
 | `library/biographies.md` | `d4cfdf9ae2f1e55f2c4bc997cccce4d92a40a9b64b5189fc7e8217c45d415427` |
-| `library/catholic-exorcism.md` | `b92c13bd882ec79645b4b214794d403e5164572d401b24d5f66a97417c94c8ac` |
+| `library/catholic-exorcism.md` | `8e9b8cb037574d4c2a7d408264152460842c85fd05b729b0ebb58e9c959246d4` |
 | `library/curriculums.md` | `326b9f08c7274ffd4ba76fa3a475a839993323dff49e54517fe131cf05275916` |
 | `library/ecclesiastical-latin.md` | `02055f76bdd8ebd5618607194256ee6298947f30391bcafffacd4dbe1af319eb` |
 | `library/faith.md` | `b1305daf1d9a824856fe9552542795037b0d835da1b4ca8109fb3842a8f0aa16` |
@@ -1708,7 +1733,7 @@ release attachment, announcement, or promotion.
 | `web/gpt/biographies/saint-thomas-aquinas.md` | `8e16a32ed18b3fc4724946caddca58927ff4015015090a193522388cdb270061` |
 | `web/gpt/biographies/tertullian.md` | `1f4f75840fbc6e778f77acbe50228b43c1b951cbc97f2ae8fad294253050c8fd` |
 | `web/gpt/history/biblical-translations/02-vulgate.md` | `e82710833956922a92baba759b796d2182b89ab5a26e80e2b9eb87f7b3e683c1` |
-| `web/gpt/history/catholic-exorcism/01-history-and-current-practice.md` | `c5a2cc0d42a3c0a185566862cd97ee9f7d42794b43c5246e7eec7e7b23d0f427` |
+| `web/gpt/history/catholic-exorcism/01-history-and-current-practice.md` | `597f6458e10824fef854837f7233d1194dd569414d97304a29c7c2f14e5363d9` |
 | `web/gpt/history/catholic-parish-histories/01-st-stanislaus-milwaukee.md` | `19a23782bc342c595e1463dab25e81619892c4bad481e9768d1f9b7a756c5ecf` |
 | `web/gpt/history/catholic-parish-histories/02-st-anthony-willits.md` | `c79e484f5b78e882d3df09882c9948e578c9674f769d4f02f77ced258ed294bc` |
 | `web/gpt/history/traditional-priestly-institutes/02-fssp.md` | `0adb692a9e419ac8889fcf9e8a1f90d7417c4feff43f7e4d02478c20e7db89b8` |

@@ -1,9 +1,10 @@
-# Independent Theological, Canonical, and Ecclesial-Content Review — 2026-07-27
+# Internal Theological, Canonical, and Ecclesial-Content Review — 2026-07-27
 
 ## Identity and scope
 
-- **Reviewer:** independent GPT-5-based Codex review agent, separate from the
-  drafting and source-normalization agents.
+- **Reviewer:** internal GPT-5-based Codex review agent, separate from the
+  drafting and source-normalization agents; this is not an independent
+  professional or ecclesiastical review.
 - **Review date:** 2026-07-27.
 - **Scope:** sections 80–130, their focused audit, source audit, and reusable
   bindings; Latin universal law, the stated Eastern boundary, authority levels,
@@ -12,7 +13,7 @@
   psychiatric validity, safeguarding implementation, rights, production, or
   exact-snapshot release.
 
-This is an independent review of ecclesial content, not an ecclesiastical act.
+This is an internal AI-agent review of ecclesial content, not an ecclesiastical act.
 The reviewer holds no canonical office and grants no imprimatur, nihil obstat,
 faculty, permission, or diocesan approval.
 

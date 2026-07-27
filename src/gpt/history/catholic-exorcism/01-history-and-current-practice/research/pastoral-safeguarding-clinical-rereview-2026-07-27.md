@@ -2,8 +2,8 @@
 
 ## Review identity and boundary
 
-- **Reviewer:** independent GPT-5-based Codex review agent, separate from the
-  drafting agent.
+- **Reviewer:** internal GPT-5-based Codex review agent, separate from the
+  drafting agent; this is not an independent professional review.
 - **Review date:** 2026-07-27.
 - **Gate:** pastoral safety; safeguarding; consent and capacity; emergency and
   continuing care; jurisdiction and competence; and the boundary between
@@ -71,10 +71,11 @@ parish, diocesan, or eparchial authority. It does not provide ritual words,
 alleged diagnostic signs, interview scripts, or instructions for coercive
 action.
 
-## Verdict
+## Supersession notice
 
-**Pass, with no remaining reservation within this bounded gate.** The reviewed
-snapshot preserves safeguarding, consent, clinical competence, jurisdiction,
-and pastoral-accountability boundaries without claiming that a professional
-body has clinically validated the publication. This pass does not close any
-other editorial, scholarly, ecclesiastical, production, or release gate.
+This internal re-review passed only the hashes recorded above. Later changes to
+the safeguarding prose, source audit, evidence map, and bindings superseded
+that snapshot. The record therefore supplies historical review evidence but no
+current pass. A new internal source check and a genuinely independent
+professional clinical-safeguarding review remain open for the settled expanded
+snapshot.

@@ -75,6 +75,24 @@ verified_on = "2026-07-27"
 context = "Exact authentic-Latin witness for universal Latin law governing exorcisms over the possessed. The Holy See English page is used only as a translation aid."
 
 [[bindings]]
+source_id = "passage.catholic-church.codex-iuris-canonici-1983.latin-vatican-web-codex-2026-07-25.canon-1"
+loci = ["canon-1"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:5af9d0d838f3a0cfb5bb193cbae8f1071e14c4d45547eea55a86af0d2a71d393"
+verified_on = "2026-07-25"
+context = "Exact authentic-Latin witness limiting the 1983 Code's scope to the Latin Church."
+
+[[bindings]]
+source_id = "passage.john-paul-ii.sacrae-disciplinae-leges.english-vatican-web-2026-07-25.complete-text"
+loci = ["complete-text"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:a903c0b95386832bc5015cbf9a7cbfc7e2a8ead15746405dc3db179186409d35"
+verified_on = "2026-07-25"
+context = "Exact official English delivery controls John Paul II's promulgation of the Code on 25 January 1983 and its force-of-law clause beginning on the first day of Advent 1983, 27 November."
+
+[[bindings]]
 source_id = "passage.catholic-church.codex-iuris-canonici-1917.vatican-polyglot-1918.canon-1151"
 loci = ["canon-1151"]
 role = "official-control"
@@ -458,6 +476,24 @@ loci = ["overview", "details"]
 role = "context"
 states = ["cataloged"]
 context = "England-specific official safeguarding control for the existence and forms of child abuse linked to accusations of witchcraft or spirit possession. It is not evidence about Catholic prevalence, historical named cases, or universal law."
+
+[[bindings]]
+source_id = "artifact.crown-prosecution-service.spiritual-abuse-honour-based-abuse-guidance-update.english-cps-web-2026-07-27.cps-html"
+loci = ["announcement", "tackling-spiritual-related-abuse"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:e5ea925944d8642863050d04ce50a7502de57fad83e8bab6c6c1f43095e6d78f"
+verified_on = "2026-07-27"
+context = "England-and-Wales prosecution context identifying children, adults, and vulnerable adults and financial, physical, emotional, sexual, neglect, and homicide harms linked to spiritual or ritual abuse. It supplies neither prevalence nor a Catholic-practice norm."
+
+[[bindings]]
+source_id = "artifact.united-kingdom-home-office.domestic-abuse-statutory-guidance.english-govuk-web-2026-07-27.govuk-html"
+loci = ["paragraph-77", "paragraph-78", "abuse-relating-to-faith"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:cde0bbb2c2935af8062ba28bc43ff93d09b40552f3689b394f250719fc7f548d"
+verified_on = "2026-07-27"
+context = "England-and-Wales statutory-guidance context for domestic abuse involving religious manipulation, secrecy, coercion, or harm, isolation, and neglect intended to remove an alleged evil force or spirit. It is not universal civil law."
 
 [[bindings]]
 source_id = "artifact.anonymous.gelasian-sacramentary.wilson-clarendon-1894.internet-archive-google-books-pdf"

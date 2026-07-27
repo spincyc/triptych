@@ -6,14 +6,14 @@
 
 ## Public-alpha review edition
 
-The available twenty-page paper is an interim review edition, not the promised
-final reference of at least 100 typeset pages. It is published so readers can
+The available 32-page paper is an interim review edition, not the promised
+final reference of at least 100 substantive pages. It is published so readers can
 examine its evidence, scope, safeguarding boundaries, and direction while the
 remaining source and specialist-review work continues.
 
 | Publication | ChatGPT | Claude | Status |
 | --- | --- | --- | --- |
-| CE-01 · **Catholic Exorcism: History, Discipline, and Pastoral Practice** | [Review PDF — 20 pages](../doc/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf) · [Read review edition](../web/gpt/history/catholic-exorcism/01-history-and-current-practice.html) | — | Public-alpha review; current Latin discipline and identified U.S. practice checked through 26 July 2026. |
+| CE-01 · **Catholic Exorcism: History, Discipline, and Pastoral Practice** | [Review PDF — 32 pages](../doc/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf) · [Read review edition](../web/gpt/history/catholic-exorcism/01-history-and-current-practice.html) | — | Public-alpha review; current Latin discipline and identified U.S. practice checked through 26 July 2026. |
 
 This is a historical, theological, canonical, clinical-boundary, and
 safeguarding study. It is not a diagnostic guide or ritual manual. It does not
