@@ -224,12 +224,12 @@ state = "in_progress"
 id = "project-source-family-screening"
 owner = "src/sources/inventories/source-family-migration-v1.toml"
 promise = "Complete the provider-neutral reusable-source family screening backlog."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "screening-complete"
   criterion = "Every exact source-family review unit is family-screened."
-  status = "open"
+  status = "pass"
   evidence = ["src/sources/inventories/source-family-migration-v1.toml", "guidance/sources.md"]
 
 [[deliverables]]

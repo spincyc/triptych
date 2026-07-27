@@ -4,8 +4,8 @@ provider = "claude"
 audited_on = "2026-07-27"
 discovery_rule = "src/claude/**/main.tex"
 publication_count = 45
-source_surface_file_count = 895
-snapshot = "sha256:75b9fe1770d284517b7bc0312d5e8cbd9032cf32697b80c55fd881f2ee4c2cce"
+source_surface_file_count = 896
+snapshot = "sha256:20ce85aeaa92612dc16fa275bf774afaf6fb363ae4b5bab9bd7b77f82097b013"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -1974,6 +1974,12 @@ kind = "publication-main"
 owners = ["articles/scripture/abraham-and-the-daylight-stars"]
 
 [[files]]
+path = "src/claude/articles/scripture/abraham-and-the-daylight-stars/research/current-guidance-audit-2026-07-27.md"
+sha256 = "793b4891cd4f79b1fbca0e9275a6d8c985bf387dbd6b16f869d2e0e7ab1de6ff"
+kind = "research-record"
+owners = ["articles/scripture/abraham-and-the-daylight-stars"]
+
+[[files]]
 path = "src/claude/articles/scripture/abraham-and-the-daylight-stars/research/scope.md"
 sha256 = "5bf8fd660131e24f00b0382d349f9fa7dbdcaed0bc122e0ffc4135ae1ce5ac73"
 kind = "research-scope"
@@ -2101,13 +2107,13 @@ owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
 
 [[files]]
 path = "src/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb/research/scope.md"
-sha256 = "cd88352ebf087fc909e97e604fcd8f99b7628f75bb7fc15ac792e251046fce01"
+sha256 = "6c3f79ec99c592fa7bc08a60154d7e9929ebd6be76bb11869e1e1c0044478600"
 kind = "research-scope"
 owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
 
 [[files]]
 path = "src/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb/research/source-audit.md"
-sha256 = "718b3832914cfed334117b515d5800376985f5a097efc8c638f99d371b448546"
+sha256 = "6651c6ae1897f55b9036b3508751433c609ba85e5e2ec88a4aa96ab421177018"
 kind = "legacy-source-audit"
 owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
 

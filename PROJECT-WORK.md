@@ -235,7 +235,7 @@ The 2026-07-27 audit establishes the following actionable backlog:
 | --- | --- | ---: | --- |
 | `AUD-INTEGRATE-001` | Repair integration and Pages deployment | Integrated through `b93e64b4`; Pages run `30296605957` succeeded | passed; exact catalog-text discrepancy retained under the affected work |
 | `AUD-STALE-001` | Rendered publications disagree with current inputs or records | 92 recovered baseline editions; 93 in this checkpoint because the exorcism source audit and delivery plan now correctly make that edition stale pending its later rebuild | `make check-staleness` passes |
-| `AUD-SOURCES-001` | Reusable-source family screening is incomplete | 140 of 140 review units pending across 229 source families | `make check-source-family-screening` passes |
+| `AUD-SOURCES-001` | Reusable-source family screening | 140 of 140 review units screened across 229 source families; 806 reviewed owner-family presences; atomic citation coverage remains false | `make check-source-family-screening` passes |
 | `AUD-REVIEW-001` | Public review copies retain unclosed completion gates | 14 publications | each work-specific review record closes against its exact snapshot |
 | `AUD-ART-001` | Dictionary artwork has held identification/resolution notices | 10 notices | artwork validator and human review records close every notice |
 | `AUD-MEMORY-001` | Conversation outcomes were not exhaustively represented in tracked work records | prior ledger had 8 broad items | every known agreement is represented here and in the ledger when criteria are known |
@@ -257,6 +257,13 @@ stale papers are named above; the authoritative reproducible inventory,
 including the current provider split, is the output of `make
 check-staleness`. Staleness is a work queue, not proof that every edition needs
 the same substantive edit.
+
+The source-family screening backlog is closed at the family level. Complete
+semantic review of all 140 exact owner surfaces added 242 missing presences,
+removed 13 false-positive or redundant presences, and retained 806 reviewed
+owner-family relationships in total. This does not assert atomic citation
+coverage, which remains explicitly false, and unsupported catalog-expansion
+leads remain outside the ledger until their own family records are justified.
 
 ## Reconciliation history
 

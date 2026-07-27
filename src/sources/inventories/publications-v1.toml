@@ -4,8 +4,8 @@ provider = "gpt"
 audited_on = "2026-07-27"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 129
-source_surface_file_count = 1629
-snapshot = "sha256:1113d2a1f0c8081c86479cfc05c5dcaa8fed949027edaa8a829f12d2b5e81a61"
+source_surface_file_count = 1632
+snapshot = "sha256:bba9f95770f3b8e4ef345883ca19607b166c47df58972981303a07e326ef63f7"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -2778,6 +2778,12 @@ kind = "publication-main"
 owners = ["articles/faith/last-supper-calvary-and-the-mass"]
 
 [[files]]
+path = "src/gpt/articles/faith/last-supper-calvary-and-the-mass/research/current-guidance-audit-2026-07-27.md"
+sha256 = "9205395752daf07622cb3452483302cfe4e4bbb7f57d18990be08b279120a6c9"
+kind = "research-record"
+owners = ["articles/faith/last-supper-calvary-and-the-mass"]
+
+[[files]]
 path = "src/gpt/articles/faith/last-supper-calvary-and-the-mass/research/patristic-sacramental-review-2026-07-27.md"
 sha256 = "6b8ff88ed1cee36d3d6ab1e48cbd2e9bec49525b56f54038a32b2fdcac612b2a"
 kind = "research-record"
@@ -2785,13 +2791,13 @@ owners = ["articles/faith/last-supper-calvary-and-the-mass"]
 
 [[files]]
 path = "src/gpt/articles/faith/last-supper-calvary-and-the-mass/research/scope.md"
-sha256 = "b4c94c9e592153641ca89c72dab6cd7fea09f18eb34683220c555c1d655f3501"
+sha256 = "d016852bcd28f587b21db2e0607e14fc6aa411f96edc90665e3e931c44d81ec8"
 kind = "research-scope"
 owners = ["articles/faith/last-supper-calvary-and-the-mass"]
 
 [[files]]
 path = "src/gpt/articles/faith/last-supper-calvary-and-the-mass/research/source-audit.md"
-sha256 = "e3d147c9e1051605fb4c425dc82f4a2b113e66c00eeb09d99715a91a6366ff47"
+sha256 = "7d0008568f96d6bc0e6434fdd89e39a279acb089083fb95df135c2742a48fe07"
 kind = "legacy-source-audit"
 owners = ["articles/faith/last-supper-calvary-and-the-mass"]
 
@@ -3114,6 +3120,12 @@ kind = "publication-main"
 owners = ["articles/scripture/abraham-and-the-daylight-stars"]
 
 [[files]]
+path = "src/gpt/articles/scripture/abraham-and-the-daylight-stars/research/current-guidance-audit-2026-07-27.md"
+sha256 = "321b7d4d5b50ffb870e7bcb681d06b47de8faead997d7130437b8d0b0c82e4d0"
+kind = "research-record"
+owners = ["articles/scripture/abraham-and-the-daylight-stars"]
+
+[[files]]
 path = "src/gpt/articles/scripture/abraham-and-the-daylight-stars/research/evidence-map.md"
 sha256 = "55e44f6bbd8ee16101dd70733ccfb2e6388ee6b9cca84dd0a91a7ce056d00b1c"
 kind = "research-record"
@@ -3175,13 +3187,13 @@ owners = ["articles/scripture/abraham-and-the-daylight-stars"]
 
 [[files]]
 path = "src/gpt/articles/scripture/abraham-and-the-daylight-stars/research/scope.md"
-sha256 = "53eeeacf4f9a87b4e7c0194d93d8a79ecfa7878a23c6e1ff4529f2b7c4bea202"
+sha256 = "d9d0e5238ab5a585e9aadcfb6f7384e9f7f1750ce7ce356294d23356098eb373"
 kind = "research-scope"
 owners = ["articles/scripture/abraham-and-the-daylight-stars"]
 
 [[files]]
 path = "src/gpt/articles/scripture/abraham-and-the-daylight-stars/research/source-audit.md"
-sha256 = "5a06bb9fb47643ebcd6265c8d04eb9113a4707de7774c0ef6c8993961ebb6530"
+sha256 = "57c38a1205ec29463646ad5f38d4650f3c5232256741daa5a27f135a7e87b489"
 kind = "legacy-source-audit"
 owners = ["articles/scripture/abraham-and-the-daylight-stars"]
 
@@ -3216,6 +3228,12 @@ kind = "publication-main"
 owners = ["articles/scripture/john-6-bread-from-heaven"]
 
 [[files]]
+path = "src/gpt/articles/scripture/john-6-bread-from-heaven/research/current-guidance-audit-2026-07-27.md"
+sha256 = "cff0a7e9525d7075fc2d07aa6dcb61f39407ce97251f1f65bbfbfc5af7309c3a"
+kind = "research-record"
+owners = ["articles/scripture/john-6-bread-from-heaven"]
+
+[[files]]
 path = "src/gpt/articles/scripture/john-6-bread-from-heaven/research/evidence-map.md"
 sha256 = "0fdac4dcf25d4cd1d197e0f7c5a7f390e0fef81067a6aeaef177aac3199084c2"
 kind = "research-record"
@@ -3229,7 +3247,7 @@ owners = ["articles/scripture/john-6-bread-from-heaven"]
 
 [[files]]
 path = "src/gpt/articles/scripture/john-6-bread-from-heaven/research/scope.md"
-sha256 = "c92864c3b22882aca2a17272c5022da133213dc3a888219fce9ffbd1263e3c63"
+sha256 = "39e66cd4dae4d9afdddc9ea66fce7db02e3ade53785e6bf95251e47a2e14bc50"
 kind = "research-scope"
 owners = ["articles/scripture/john-6-bread-from-heaven"]
 
@@ -3277,13 +3295,13 @@ owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
 
 [[files]]
 path = "src/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb/research/scope.md"
-sha256 = "f84b2d0de00cd7b5d37d3f0ac9a2f29c3c247d35855d7d2655348dc7418d7741"
+sha256 = "11694bdf45f51074cacc6d773f411934a2bdf32bd1813556c3c120950df9e45d"
 kind = "research-scope"
 owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
 
 [[files]]
 path = "src/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb/research/source-audit.md"
-sha256 = "eee0b322fe9c6da3b815d6008718788ed13d5bffd21ee5019d40f9dff3062f01"
+sha256 = "f9307322930126975e85bda3af8d187eb34452b0b14d995a89e530407f4c27df"
 kind = "legacy-source-audit"
 owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
 
@@ -8353,13 +8371,13 @@ owners = ["liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-se
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server/research/guide-map.md"
-sha256 = "9f4fb7102a03fb9d9a0cc2670e46b51aff49e897df6865b93332923f52307637"
+sha256 = "d7a544a80a9a0512c7cda9abe1dbcb73ade6843d0879451592a9d1268df9953d"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server/research/low-mass-core-selection-register.md"
-sha256 = "da2e833e74d0ff94a77960a80c925025f1e4dc6e18d75989a7ad7d50feb9b8ec"
+sha256 = "433630365be0788e267c109d3919e22a158fed21c04d0462d4f418827e03a852"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server"]
 
@@ -8533,7 +8551,7 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/delivery-work-plan-2026-07-27.md"
-sha256 = "5534ab25c49a290ada351725fa38044b5c0f64dad4d73c6ad703f513785a1a23"
+sha256 = "d5dd7797a7b0a37a1fb1dbe497fce6c68685def54ec5648877c435e993ad5d04"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -8581,7 +8599,7 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/object-inventory.md"
-sha256 = "70ffe3c0c53bbb36675fb757aff415a4e006cd1fcdf8b902eac340042d97ea0c"
+sha256 = "ea3adbd8e99d3d3760059cabc79cc657befdd408b27cd96d2aba151b5ea95df4"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -8611,7 +8629,7 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/production-manifest.md"
-sha256 = "875b583da55746f37eaf154507f4cddcbaa6682c40b811c32d93bfd440876024"
+sha256 = "4974c0efd3ff808846d0b58a0b9cf467043e22a6d878d5774737cffe8aa9ce18"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -8653,7 +8671,7 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/scope.md"
-sha256 = "3bcbf5041ed3a6fbe904e2903d06f6fb0f8b9488e8e6ec2b0b376d6ee6f20e5c"
+sha256 = "a7e1bc332ba183278818df538ba0b390f1a582bc2405ccb1f69f72d3c5c96b77"
 kind = "research-scope"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -8731,7 +8749,7 @@ owners = ["liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacrista
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan/research/guide-map.md"
-sha256 = "a8e23ab462c7708c681eaa61fffffe609417a224729df53f8e9fee42da762287"
+sha256 = "77320ccbc68f79a6f51b736c1ee73f29a82b8fcf053fb38caa60104373aaf9d7"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan"]
 
