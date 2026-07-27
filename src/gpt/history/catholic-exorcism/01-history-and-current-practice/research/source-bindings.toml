@@ -324,9 +324,10 @@ context = "Dated public-domain English edition identity retained to distinguish 
 source_id = "passage.justin-martyr.second-apology.dods-reith-anf1-1887.6.ocr"
 loci = ["6"]
 role = "direct-witness"
-states = ["cataloged", "acquired", "inspected"]
-source_fingerprint = "sha256:aa2d3de60e2be90c66c91892d46e403be23060bbc49c43095b7aa1bc30112112"
-context = "Exact bounded ANF volume 1 OCR passage inspected for Justin's apologetic appeal to Christian expulsion of demons in Jesus Christ's name and his contrast with other exorcists, incantations, and drugs. It controls Justin's literary claim, not its outcomes, frequency, original Greek wording, or a clinical case."
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:874db7155720695712df217413bd392e72ad2fa37a1523b3a72fe4568b280e3b"
+verified_on = "2026-07-27"
+context = "Exact bounded ANF volume 1 OCR passage inspected and collated against the exact facsimile at printed p. 190 for Justin's apologetic appeal to Christian expulsion of demons in Jesus Christ's name and his contrast with other exorcists, incantations, and drugs. It controls Justin's literary claim, not its outcomes, frequency, original Greek wording, or a clinical case."
 
 [[bindings]]
 source_id = "passage.book-of-jubilees.english-charles-oxford-1913-ccel-web-2026-07-27.chapter-10-1-11"

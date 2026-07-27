@@ -40,16 +40,18 @@ sources.
   Origen 1.6 and 7.4 control the contrast with magical arts; 1.25 instead
   supplies a qualified ancient theory of efficacious names. Justin Martyr,
   *Second Apology* 6, Dods--Reith, *Ante-Nicene Fathers* 1 (Buffalo, 1887),
-  p. 190, remains an inspected lead rather than publication evidence because
-  its binding has not received verified state.
+  printed p. 190, is controlled by the exact bounded OCR passage collated on
+  2026-07-27 against the exact 628-page facsimile
+  (`b50e358eebf85f06794c4dba16777eb6d27a35688a6c7a828b46c9d2190be8cc`).
+  This verifies Justin's literary appeal and contrast, not its outcomes,
+  frequency, original Greek wording, or a ritual formulary.
 - The church-order complex conventionally called *Apostolic Tradition* 20–21. Initiatory practice only; its unity, attribution to Hippolytus, date, and Roman provenance remain disputed.
 - Cyril of Jerusalem, *Procatechesis* 9, and the Jerusalem *Mystagogical Catecheses* 1.4–9, in Edwin Hamilton Gifford's translation, *Nicene and Post-Nicene Fathers*, second series, vol. 7 (1894). The latter is transmitted under Cyril's name, but its authorship, including attribution to John of Jerusalem, is disputed.
 - Council of Laodicea, canon 26, in Henry R. Percival, *The Seven Ecumenical Councils*, *NPNF* second series, vol. 14 (1900); Cornelius's clergy list as quoted by Eusebius, *Church History* 6.43.11, trans. Arthur Cushman McGiffert, *NPNF* second series, vol. 1 (1890). Laodicea is one conciliar disciplinary setting; Eusebius gives only a combined total for exorcists, readers, and door-keepers.
 
-Justin 6 is controlled for research by an inspected, bounded passage in the
-retained ANF volume 1 OCR, but it does not control a reader-facing claim until
-its publication binding is verified. Irenaeus, *Against Heresies* 1.10.1--3,
-is held at the same inspected-but-unverified ceiling. Exact dated English
+Justin 6 now controls its bounded reader-facing apologetic claim through a
+verified passage and facsimile collation. Irenaeus, *Against Heresies*
+1.10.1--3, remains at the inspected-but-unverified ceiling. Exact dated English
 artifacts and passages control the
 bounded Tertullian 23, Origen 1.6, 1.25, and 7.4, *Procatechesis* 9,
 *Mystagogical Catecheses* 1.4–9, and Eusebius 6.43.11 claims. These are

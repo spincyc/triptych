@@ -48,8 +48,9 @@ patristic, biblical, liturgical, and theological review.
   inspected. Niese 8.45–49 is retained only as a cross-reference; no Niese
   Greek witness has been registered.
 - Justin's *Second Apology* 6 is now controlled by a bounded exact passage in
-  the retained public-domain ANF volume 1 OCR. It establishes Justin's
-  apologetic claim, not its outcomes, frequency, or original Greek wording.
+  the retained public-domain ANF volume 1 OCR, collated against the exact
+  facsimile at printed page 190. It establishes Justin's apologetic claim, not
+  its outcomes, frequency, formulary, or original Greek wording.
 
 Exact records remain necessary for Tobit's Greek recensions, Genesis
 Apocryphon 1Q20 XX, Qumran apotropaic texts, the *Apostolic Tradition*, and
@@ -85,7 +86,7 @@ support a quotation or a negative result.
 | Date / region | Witness and genre | Locus | Function | Finding and limit | State |
 | --- | --- | --- | --- | --- | --- |
 | c. 180, Gaul / Asia Minor reception | Irenaeus, doctrinal-polemical treatise | *Against Heresies* 1.10.1–3 | theology / method | One received rule of faith across languages; it does not enumerate a rite and is used to prevent local practice from being mistaken for dogma | exact OCR passage inspected |
-| mid-second century, Rome-facing Greek apology | Justin, apology | *Second Apology* 6 | extraordinary affliction / apologetic claim | Invocation of Jesus' name is offered as public Christian evidence; no neutral case record | exact bounded ANF OCR passage inspected |
+| mid-second century, Rome-facing Greek apology | Justin, apology | *Second Apology* 6 | extraordinary affliction / apologetic claim | Invocation of Jesus' name is offered as public Christian evidence and contrasted with other exorcists, incantations, and drugs; no neutral case record | exact bounded ANF OCR passage verified against printed p. 190 of the exact facsimile |
 | c. 197, Latin North Africa | Tertullian, forensic apology | *Apology* 23 | extraordinary affliction / apologetic claim | A courtroom challenge dramatizes Christian claims over beings worshipped as gods; not a transcript | exact dated Thelwall English passage inspected |
 | third century, Alexandria / Caesarea | Origen, learned apologetic reply | *Against Celsus* 1.6, 1.25, 7.4 | theology / apologetic claim | 1.6 and 7.4 contrast Christian means with magical apparatus; 1.25 advances a broader theory of efficacious names and must not be compressed into the same claim | exact dated Crombie English passages inspected |
 | composite, eastern and western church-order transmission | church-order complex conventionally called *Apostolic Tradition* | 20–21 | initiation | Scrutiny and pre-baptismal commands; authorship, unity, date, and Roman provenance disputed | critical-edition control outstanding |
