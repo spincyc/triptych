@@ -70,7 +70,7 @@ source binding under `src/sources/` in accordance with `guidance/sources.md`.
   steps, and particular baldachin design are editorial exemplars, not
   verified universal forms.
 
-## Pencil composition plate
+## Pencil review figures
 
 ### `DIC-ART-SA-001`
 
@@ -91,19 +91,89 @@ source binding under `src/sources/` in accordance with `guidance/sources.md`.
   three steps and predella, beneath a fixed four-column baldachin; with
   tabernacle/gradine and side-composition insets; no people, color, writing,
   labels, arrows, or watermark.
-- Intended consumer: `plt-sanctuary-orientation` and
-  `plt-altar-composition`, after object-level audit and TeX labelling.
+- Intended consumer: none. This first dense composition was retained as a
+  rejected study aid after review; it must not enter a publication plate.
 - Personal visual review: passed at full raster size for monochrome finish,
   portrait density, six-candle count, one central crucifix and tabernacle,
   three blank cards, sanctuary lamp, steps/predella, useful insets, absence of
   people and readable text, and absence of obvious duplicate or impossible
   structural parts.
-- Factual review: **held**. The image accurately satisfies its editorial
-  brief, but its particular morphology and whole composition have not been
-  verified against a material-culture corpus. It is not approved for a
-  publication plate.
+- Factual and consumer review: **rejected**. Although useful for scoping, it
+  combines too many unaudited architectural and ornamental choices, offers
+  insufficient label lanes, and can falsely suggest that the entire
+  composition is a universal arrangement. Its particular morphology and
+  whole composition have not been verified against a material-culture
+  corpus.
 - Rights: newly generated project asset; no external visual reference was
   supplied. Repository licensing and release review remain pending.
+
+### `DIC-ART-SA-002`
+
+- File:
+  `shared/artwork/pencil/DIC-ART-SA-002-tabernacle-cards-frontal.png`
+- Received generator output: 1536 by 1024 pixels, 8-bit sRGB PNG,
+  1,932,061 bytes; SHA-256
+  `baf602a225dc7a10589174ee923bec7d4c4e5356e82dda34c69ee5723ad4d500`.
+- Repository normalization: stripped 8-bit grayscale PNG, 1536 by 1024
+  pixels, 594,412 bytes; SHA-256
+  `94646fb1f7bc5f87618b376cbe48e0b1a252595f665a7068be36efe357b7c859`.
+- Generator: built-in OpenAI image-generation interface; no model or version
+  was exposed. Generated and corrected 2026-07-27. No reference image was
+  supplied.
+- Prompt summary: a large, straight-on graphite center group with one closed
+  tabernacle, low gradines, one crucifix, exactly three blank framed altar
+  cards on the altar tabletop, and two partial contextual candlesticks;
+  generous blank side and lower lanes were reserved for TeX labels.
+- Correction: the first generated candidate contained tiny letter-like marks
+  on the crucifix plaque. A targeted image edit removed only those marks and
+  left the plaque blank. Only the corrected output was normalized.
+- Exemplar qualification: the design of the tabernacle, crucifix, gradines,
+  frames, and candlesticks is representative artwork, not a claim that this
+  morphology is prescribed or universal. The image may support object
+  recognition only after its labels and claims are independently audited.
+- Personal visual review: **passed** at full raster size for one tabernacle,
+  one crucifix, three unmistakable blank cards, two partial candlesticks,
+  frontal symmetry, open label lanes, monochrome reproduction, and absence
+  of lettering, pseudo-writing, labels, arrows, and watermark.
+- Factual review: **qualified/held**. The checked 1962 Missal loci support the
+  altar relationship of the cross with crucifix and the collective presence
+  of three *tabellae secretarum*, and *Ritus servandus* supports the
+  tabernacle relationship. The depicted construction, ornament, exact
+  placement, proportions, and gradines remain unaudited.
+- Print, rights, consumer, and release review: **pending**. Not approved for
+  publication.
+
+### `DIC-ART-SA-003`
+
+- File:
+  `shared/artwork/pencil/DIC-ART-SA-003-altar-baldachin-exemplars.png`
+- Received generator output: 1643 by 957 pixels, 8-bit sRGB PNG,
+  1,492,921 bytes; SHA-256
+  `855615745ad912855ba1f9975aaf9bf4b07ef825cc787e0f11ea91292a318144`.
+- Repository normalization: stripped 8-bit grayscale PNG, 1643 by 957
+  pixels, 543,826 bytes; SHA-256
+  `b51e4c987c1cde3eefcd75de91669dd86a8ec3b4b5a528d849a7e01c9cd382d9`.
+- Generator: built-in OpenAI image-generation interface; no model or version
+  was exposed. Generated 2026-07-27. No reference image was supplied.
+- Prompt summary: two isolated, straight-on graphite architectural
+  exemplars separated by white space: a bare altar block/table with cloth,
+  predella, and three steps; and a rigid four-column fixed baldachin with an
+  empty opening. The prompt prohibited altar appointments, hanging fabric,
+  people, lettering, and pseudo-writing and required blank label lanes.
+- Exemplar qualification: both figures deliberately show generic,
+  non-universal forms. They cannot establish required step count, cloth
+  construction, altar construction, canopy terminology, privilege, period,
+  or permitted use.
+- Personal visual review: **passed** at full raster size for clean separation,
+  readable frontal silhouettes, coherent structural geometry, usable label
+  lanes, rigid-versus-portable-canopy distinction, monochrome reproduction,
+  and absence of objects, people, letters, labels, arrows, and watermark.
+- Factual review: **qualified/held**. The altar relationship is supported
+  only at the evidence ceiling stated above. The baldachin and the exact
+  architectural forms remain unverified leads pending the architectural and
+  ceremonial source pass.
+- Print, rights, consumer, and release review: **pending**. Not approved for
+  publication.
 
 ## Next source work
 

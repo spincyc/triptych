@@ -103,6 +103,13 @@ publication-ready record. Every reader-facing factual field is represented by
 one or more claim records with exact source bindings. A source-wide citation
 does not make every field verified.
 
+`priestly-review-ready` is a separate, nonpublication workflow state. It may
+contain expressly unresolved claims and artwork so that a priest can review
+them, but the record must include a `review_readiness` table with a visible
+qualification, a targeted disclosure for every unresolved claim or artwork
+state, and at least one concrete review prompt linked to every disclosed gap.
+It neither satisfies nor weakens `publication-ready`.
+
 Artwork IDs are shared identities, not object-local IDs. A comparison or
 composition may therefore repeat the same artwork ID in each object record
 listed by its `depicts` field. The validator requires the core artwork

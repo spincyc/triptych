@@ -28,21 +28,56 @@ The category and relevance branches form a union; the publication-ready and
 unresolved-status gates apply to the resulting set. This does not imply that
 every ordinary object is a pontifical supporting object.
 
+## Priestly-review selection boundary
+
+The priestly-review edition may expose only explicitly manifested canonical
+records proposed by the pontifical category/relevance union, with workflow and
+evidence state visible. Proposed distinctions of rank, privilege, bearer,
+layering, station, and transfer remain questions until independently accepted.
+Ordinary supporting objects enter only through recorded pontifical relevance;
+visual proximity in a composition is insufficient.
+
+## Visible omissions in the review edition
+
+The review edition must list omitted ranks, privileges, ministers, Mass
+forms, stations, vesture layers, insignia, furnishings, books, transfers, and
+historical forms. It must state when a composition lacks evidence for a full
+ceremonial relationship and must never make a partial roster appear complete.
+
 ## Reader order
 
-1. Compact title and status/relationship key.
-2. Pontifical vesture in laid-flat, layered, and worn views.
-3. Insignia, with substantive forms and verified status distinctions.
-4. Furnishings and books in relational compositions.
-5. Ministers and source-verified object transfers.
-6. Terminal indexes, qualifications, keyed source notes, generation metadata,
-   and rights matter.
+1. Compact title with a conspicuous priestly-review/hold notice.
+2. Visible omissions and review-state key.
+3. Status and relationship key.
+4. Pontifical vesture in laid-flat, layered, and worn views.
+5. Insignia, with substantive forms and verified status distinctions.
+6. Furnishings and books in relational compositions.
+7. Ministers and source-verified object transfers.
+8. Priestly-review questions and correction instructions.
+9. Selective pronunciation, English--Latin and Latin--English indexes, visual
+   index, variant and terminology notes, scope and qualifications, numbered
+   source notes and references, generation metadata, and rights colophon.
 
 Vesture proceeds from foundational layers to outer vesture and then
 rank- or use-dependent forms. Insignia are grouped by verified bearer, status,
 and use. Furnishings and books are arranged by composition and station;
 minister and transfer plates follow verified ceremony sequence. The plate
 manifest preserves intentional order within each section.
+
+## Questions for priestly review
+
+1. Are bearer, rank, privilege, occasion, and 1962 status correctly stated for
+   every vestment and insignium?
+2. Are foundational layers, outer vesture, and rank- or use-dependent forms
+   shown in a possible and intelligible order?
+3. Are throne, faldstool, station, book, and furnishing relationships correct
+   for the named composition?
+4. Are ministers and object transfers complete enough for the plate's stated
+   purpose and distinguished from nearby but unrelated actions?
+5. Do the drawings invent, omit, or conflate any diagnostic part, form, or
+   manner of wearing?
+6. Which claim requires narrower qualification by celebrant, place,
+   privilege, or ceremony before another review?
 
 ## Canonical dependency
 
@@ -55,9 +90,7 @@ relationship but may not contradict or enlarge the verified base record.
 
 ## Hold and nonpublication state
 
-There are currently zero publication-ready canonical records, and no
-pontifical object, rank distinction, layered vesture study, composition, or
-transfer sequence has passed the required source and artwork audits. This
-leaf remains on hold. Its generated held notice must not be used as
-ceremonial guidance, and any scaffold PDF is a production test only.
+There are currently zero publication-ready canonical records and no approved
+public pontifical selection. This leaf remains on hold. A priestly-review PDF
+must not be used as ceremonial guidance; it solicits correction only.
 Plate-manifest order remains a publication blocker.

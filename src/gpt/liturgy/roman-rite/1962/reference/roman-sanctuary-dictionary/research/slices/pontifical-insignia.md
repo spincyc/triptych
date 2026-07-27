@@ -10,6 +10,10 @@ commonly called vimpae. It does not alter the canonical aggregate. Promotion
 requires schema migration, independent ceremonial review, a morphology
 source, and actual-size monochrome print review.
 
+The focused questions and requested priestly dispositions are in
+`pontifical-insignia-priest-review.md`. Preparing that packet is not itself a
+review outcome.
+
 ## Source inspected
 
 `Cæremoniale Episcoporum`, editio typica, 1948 printing of the

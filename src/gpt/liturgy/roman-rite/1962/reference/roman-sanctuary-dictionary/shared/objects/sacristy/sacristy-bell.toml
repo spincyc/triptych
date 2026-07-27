@@ -1,6 +1,6 @@
 schema_version = 1
 id = "obj-sacristy-bell"
-workflow_state = "source-audited"
+workflow_state = "priestly-review-ready"
 preferred_english_name = "Sacristy door bell"
 latin_headword = "campanula sacristiae"
 alternate_english_names = ["procession signal bell"]
@@ -72,9 +72,19 @@ verification_state = "claim-verified"
 checked_on = 2026-07-27
 
 [[artwork]]
-id = "art-sacristy-bell-isolated"
-view = "isolated"
+id = "art-sacristy-preparation-plate"
+view = "comparison"
 asset = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RSD-ART-001-sacristy-preparation.png"
 review_state = "generated"
-depicts = ["obj-sacristy-bell"]
-scale_mode = "not-applicable"
+depicts = ["obj-sacristy", "obj-vesting-table", "obj-vestment-case", "obj-sacristy-cross", "obj-sacristy-lavatory", "obj-piscina-sacrarium", "obj-sacristy-bell"]
+scale_mode = "not-to-common-scale"
+
+[review_readiness]
+qualification = "The sources describe the departure bell as customary or usual in many churches, not as a universal 1962 requirement; mechanism and operator vary locally."
+disclosed_gaps = [
+  { id = "gap-sacristy-bell-custom", kind = "scope", target_ids = ["obj-sacristy-bell", "art-sacristy-preparation-plate"], summary = "The proposed entry needs review of whether its local variability and handling language are sufficiently explicit." },
+  { id = "gap-sacristy-bell-art", kind = "artwork", target_ids = ["art-sacristy-preparation-plate"], summary = "The wall-mounted pull bell is only one generated representative form." },
+]
+review_prompts = [
+  { id = "prq-sacristy-bell-custom", question = "Should a server-facing dictionary include this customary bell, does the generated wall form help recognition, and what concise qualification best prevents a local departure signal from being mistaken for a universal rubric?", gap_ids = ["gap-sacristy-bell-custom", "gap-sacristy-bell-art"], target_ids = ["obj-sacristy-bell", "art-sacristy-preparation-plate"] },
+]

@@ -32,30 +32,56 @@ source bindings. Presence of `main.tex`, generation metadata, or
    warnings, automatic PDF dates, and nondeterministic trailer IDs.
 7. Use only the repository review helpers for rasters/contact sheets; inspect
    every page and every ambiguous figure at full size.
-8. Print and monochrome-photocopy representative dense, linen, vestment, and
+8. Assemble review packets, collect role-specific answers through
+   `artwork-review-workflow.md`, and resolve every critical and major issue
+   through an individually verified correction, redraw, TeX-only change, or
+   evidence hold.
+9. Print and monochrome-photocopy representative dense, linen, vestment, and
    composition plates.
-9. Verify PDF structure, embedded fonts, metadata, extracted text, web reading
+10. Verify PDF structure, embedded fonts, metadata, extracted text, web reading
    order, and reviewed-build/installed byte identity.
-10. Record independent source, factual-artwork, production, and distribution
+11. Record independent source, factual-artwork, production, and distribution
     approvals separately.
 
 ## Artifact ledger
 
-No dictionary PDF identity, page count, installed byte hash, raster
-normalization result, print-test result, or approved web snapshot is recorded
-as complete in this manifest.
+The six installed priestly-review snapshots were rebuilt for two passes,
+metadata-checked, rasterized, and visually inspected on every page on
+2026-07-27. Build and installed bytes are identical. Each is seven portrait
+pages:
+
+| Leaf | Installed PDF SHA-256 |
+| --- | --- |
+| comprehensive | `54af355b7ea622cff00f8fc702c8b031a8a7a7f80d4edc889cb8f101dbba22dd` |
+| altar-server | `7ed33097ef754b004c46d953d1822fecfb7aa065ae31824bb9eb097b915fa365` |
+| sacristan | `5a0a58a910f2e0cb169c18f0f9663bb8bc4360df4bf218750bd4f944cdf65dcb` |
+| mc-trainer | `dee24bc6d4b357345151ec474b30b59ef684406df83307e87e50659530b9d4c5` |
+| general-reader | `50900f6b50973e693a58575acd6397523c838d9863ea1d392f8564d00cb7fd14` |
+| pontifical-ceremonies | `140e9f0c915c2d26f64380bfbe53bcf31a8897306e8ab5e26fd9d75acecd699d` |
+
+All six snapshots admit the same 14 records presently capable of the bounded
+review gate and print a 24-record omission register. This is an honest
+review corpus, not the promised complete dictionary or a claim that the
+audience editions have reached their final differentiated scope.
+
+User authorization for this review distribution is the exact session
+instruction: “yes”, answering the question whether all six should be prepared
+as explicitly labeled priestly-review editions, publishable for expert
+evaluation but incomplete and not authoritative. This authorization is
+snapshot-specific and does not authorize an authoritative release.
 
 ## Full-publish readiness
 
-**Not ready.** The present source tree is a structural prototype prepared for
-future production. It must not be described as complete, source-audited,
-independently reviewed, ecclesiastically approved, or distribution-approved.
+**Not ready.** The installed files are distributable only as conspicuously
+labeled priestly-review copies. They must not be described as complete,
+authoritative, independently reviewed, ecclesiastically approved, suitable for
+instruction, or approved for ordinary public reliance.
 
 ## Publication-control handoff
 
-The following controls are intentionally deferred until all six leaves have
-passed the profile gate. Performing them against scaffold sources would create
-broken catalog links or imply a publication state that does not yet exist.
+The six review leaves now have `main.tex`, installed PDFs, catalog links, and
+`status = review` publication records with null approvals. Their authoritative
+release controls remain deferred until the recorded gates close.
 
 ### Stable leaf IDs
 
@@ -68,10 +94,9 @@ liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader
 liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies
 ```
 
-For each leaf, replace `scaffold.tex` with the reviewed `main.tex` entry point
-and replace `web-edition.plan.toml` with a final `web-edition.toml`. The final
-web record must describe the actual reviewed publication. It must not retain a
-`source-hold` rationale after the source and artwork gates have closed.
+Each `web-edition.plan.toml` remains ineligible because this distribution is
+PDF-only review. A future final web record must describe the actual reviewed
+publication and must not inherit the review snapshot's status.
 
 ### Build, review, and installation
 
@@ -132,23 +157,11 @@ new source-family presence rather than mechanically marking it screened.
 
 ### Release manifest and exact-byte approval
 
-After catalog and installed PDFs exist, add each stable ID to the exhaustive
-manifest in a nonpublic state:
-
-```sh
-make add-publication \
-  ID=<stable-leaf-id> \
-  CATALOG=library/traditional-latin-mass.md \
-  STATUS=hold
-```
-
-Run `make check-release-bindings` and `make prepare-public-alpha`. Promotion
-from `hold` and exact-PDF authorization occur only after the six installed
-hashes and all outstanding gates have been reviewed. The user's instruction
-to approve and prepare for full publication authorizes that later release
-operation, but it does not make scaffold or unreviewed bytes approvable.
-Record the exact operator instruction in the dated release supplement through
-the repository approval command; do not invent a broader approval note.
+The six stable IDs are registered at `status = review`, retain four unresolved
+dictionary gates, and have `approval = null`. They are eligible only for the
+private no-index review preview and direct reviewer distribution. Promotion to
+ordinary release and exact-PDF authorization require fresh non-review builds
+after the gates close; no review hash or authorization carries forward.
 
 The terminal public gates are:
 

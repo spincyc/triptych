@@ -23,6 +23,23 @@ practice. Local custom and the celebrant's directions govern.
 | **Serving Missa Cantata** | [Booklet](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata.pdf) · [Cue cards](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards.pdf) | — | Ages 8–14; role-first practice, an eight-scene map, and a complete trainer chronology. |
 | **Serving Solemn Mass** | [Booklet](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass.pdf) · [Cue cards](../doc/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards.pdf) | — | Ages 8–14; role-first practice, a seven-scene map, and a complete trainer chronology. |
 
+## Sanctuary Pictorial Dictionaries — Priestly Review Copies
+
+These compact monochrome-pencil editions are intentionally incomplete review
+packets, not authoritative dictionaries or training manuals. They currently
+show 14 admitted object records and identify 24 omitted records so that a
+priest can correct the project's factual, ceremonial, visual, and scope
+deficiencies before a fuller release.
+
+| Edition | Review PDF | Review focus |
+| --- | --- | --- |
+| **Comprehensive dictionary** | [Priestly review PDF](../doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive.pdf) | The shared 1962 Roman Rite inventory and its historical boundary. |
+| **Altar server** | [Priestly review PDF](../doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server.pdf) | Recognition, proximity, and handling boundaries. |
+| **Sacristan** | [Priestly review PDF](../doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan.pdf) | Preparation, placement, storage, and local variation. |
+| **MC and trainer** | [Priestly review PDF](../doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer.pdf) | Roles, handoffs, branches, and ceremonial relationships. |
+| **General reader** | [Priestly review PDF](../doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader.pdf) | Clear identity, brief symbolism, status, and period. |
+| **Pontifical ceremonies** | [Priestly review PDF](../doc/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies.pdf) | Vesture, insignia, furnishings, ministers, and privileges. |
+
 ## Mass Propers
 
 Appointed texts, biblical context, doctrine, and spiritual interpretation for

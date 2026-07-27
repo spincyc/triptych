@@ -3,6 +3,9 @@
 Status: **lead inventory only; no entry below is source-audited or renderable**
 Audit date: 2026-07-27
 
+The companion `pontifical-priest-review.md` turns this discovery queue into
+object-by-object transfer questions for competent external review.
+
 ## Purpose and boundary
 
 This file tests whether the pontifical candidate queue extends beyond personal

@@ -3,9 +3,12 @@
 Status: **provisional; source acquisition and locus audit pending**
 Audit date: 2026-07-27
 
-No source below is recorded as acquired, inspected, or verified by this
-manifest. Titles are source-family requirements or leads to be resolved to
-exact editions, artifacts, rights dispositions, and loci before use.
+The table distinguishes governing editions from supporting artifacts. Several
+supporting artifacts have now been acquired and inspected at bounded loci, as
+recorded below; no complete 1961--1962 Pontifical volume has been acquired or
+verified. Unresolved titles remain source-family requirements or leads to be
+resolved to exact editions, artifacts, rights dispositions, and loci before
+use.
 
 | Key | Required source family | Intended control | Present state | Hold condition |
 | --- | --- | --- | --- | --- |
@@ -66,6 +69,62 @@ inspected in their full official witnesses.
   nineteen libraries. Catalog inspected 2026-07-27.
 - These catalog records corroborate identity and holdings only. They are not
   textual witnesses.
+
+## Acquired contemporary survey
+
+Pierre Jounel, “La nouvelle édition du Pontifical romain,” *La
+Maison-Dieu* 75 (1963), 155--158, four-page PDF supplied through
+ressources-liturgiques.fr:
+<https://www.ressources-liturgiques.fr/liturgie/formation-et-regulation-liturgiques/livres-liturgiques/livres-lmd-075-la-nouvelle-edition-du-pontifical.pdf>.
+
+- Retrieved and inspected 2026-07-27.
+- Exact acquired PDF: 958,254 bytes; 4 pages; SHA-256
+  `439e7422c9892fa5ebd26b0f89d8c436ec0497d336e46040685adb1019076655`.
+- Storage disposition: remote; exact bytes were kept only in the run-owned
+  temporary directory.
+- Evidence ceiling: near-contemporary scholarly survey. Jounel identifies the
+  contents and principal changes of all three books, reports the Vatican
+  typical edition as three volumes of 168, 134, and 216 pages, and cites the
+  one-volume 356-page Marietti 1962 edition *iuxta typicam*. The article is
+  substantial corroboration and a guide to exact loci, but it is not a
+  replacement for the typical-edition rubrics.
+- Checked loci: pp. 155--158 in full.
+
+## Acquired official extract
+
+Paul VI, apostolic letter *Inter eximia* (11 May 1978), official Vatican Latin
+HTML:
+<https://www.vatican.va/content/paul-vi/la/apost_letters/documents/hf_p-vi_apl_19780511_inter-eximia.html>.
+
+- Retrieved and inspected 2026-07-27.
+- Exact acquired HTML: 36,895 bytes; SHA-256
+  `90fb719e6a1d7cb547e4d2a0f5d65b12452b9d84a459f3c1201e5bc32702cbd0`.
+- Storage disposition: remote; bytes were not tracked.
+- Relevant locus: opening paragraph, which calls the pallium one of the
+  insignia of episcopal office and directly cites *Pontificale Romanum*, pars
+  prima, editio typica, Rome 1962, p. 92.
+- Evidence ceiling: official later corroboration of the pallium's identity
+  class and an exact backward citation. The 1978 norms and scope are not
+  imported into the 1962 inventory.
+
+## Second-sweep availability result
+
+- An Internet Archive exact-title/year query for 1961 or 1962 returned no
+  matching scan; a broader “Pontificale Romanum” query returned earlier
+  editions and later reformed books but no complete 1961--1962 witness.
+- Open Library's exact 1962 Vatican record remains catalog-only and has no
+  attached digital scan.
+- The 1961 Pars secunda is cataloged separately as 140 pages by the Seminary
+  of Tournai; this is a holdings record, not a scan.
+- A 1999 CLV reprint of the 1962 *iuxta typicam* edition is cataloged by the
+  New York Public Library as xxvii + 591 pages and onsite-only.
+- Google Books catalogs a 1962 355-page printing, but no defensible full-text
+  access was found in this sweep.
+
+This was a real second acquisition pass across exact-year and broad scan
+repositories, library catalogs, previews, contemporary scholarship, and
+official Vatican material. It found no openly accessible full typical-edition
+scan. The full-volume hold therefore remains.
 
 ## Required edition audit fields
 

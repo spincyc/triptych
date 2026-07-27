@@ -1,8 +1,8 @@
 classification_schema = 1
 record_type = "publication-source-classification-review"
-audited_on = "2026-07-26"
-publication_snapshot = "sha256:182bdd9b58a23d887e5600a9a6b155fb232cc51efef6230f8932e70841e50410"
-classification_snapshot = "sha256:96ce76990fd5fa8a2d709c14791d2c2d96e63ed25706124ef37e77208bec5ae1"
+audited_on = "2026-07-27"
+publication_snapshot = "sha256:3c02118112a16551b38c7ff072811c655b923cc8184c59a1ca39f026cebd1f8f"
+classification_snapshot = "sha256:168d6ba79848f1c86a34613a3495d9acc72945007e80f4fafad20477da686ed0"
 
 [[classifications]]
 document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -387,6 +387,30 @@ source_categories = ["canon-law", "finding-aid", "historical-primary", "liturgic
 [[classifications]]
 document = "liturgy/roman-rite/1962/reference/liturgical-calendar"
 source_categories = ["canon-law", "finding-aid", "historical-primary", "liturgical", "magisterial", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "secondary"]
 
 [[classifications]]
 document = "liturgy/roman-rite/comparative/two-missals-one-sacrifice"

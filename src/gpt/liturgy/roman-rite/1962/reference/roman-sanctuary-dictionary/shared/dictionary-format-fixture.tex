@@ -2,6 +2,7 @@
 % liturgical or historical claims.
 \input{common/preamble}
 \input{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/dictionary-format}
+\DictionaryReviewEditiontrue
 
 \newcommand{\FixtureObject}[1]{%
   \fbox{\parbox[c][2.57in][c]{0.88\linewidth}{%
@@ -9,6 +10,9 @@
 \newcommand{\FixtureCompactObject}[1]{%
   \fbox{\parbox[c][1.15in][c]{0.84\linewidth}{%
     \centering\fontsize{20}{22}\selectfont #1}}}
+\newcommand{\FixtureReviewObject}[1]{%
+  \fbox{\parbox[c][2.17in][c]{0.84\linewidth}{%
+    \centering\fontsize{22}{24}\selectfont #1}}}
 \newcommand{\FixtureInset}[1]{%
   \fbox{\parbox[c][0.52in][c]{0.86\linewidth}{%
     \centering\scriptsize #1}}}
@@ -80,5 +84,41 @@
 \DictionaryEndnote{FIX-101}{Ambiguous forms may receive specimen and context views.}
 \DictionaryEndnote{FIX-102}{Printed keys remain usable when hyperlinks are unavailable.}
 \DictionaryEndnote{FIX-201}{Variant strips collect materially different forms under one headword.}
+
+\clearpage
+\DictionaryPlateHeader
+  {Review fixture}
+  {Image-dominant review plate}
+  {\DictionaryReviewHeld\quad\DictionaryScaleNotice}
+
+\DictionaryThreeCellRow
+  {\DictionaryCell{FIX-301}{Held Figure}{figura retenta}
+    {\DictionaryReviewArt{2.48in}{\DictionaryReviewHeld}
+      {\FixtureReviewObject{A}}}
+    {Status is visible at the art edge without consuming the image field.}
+    {REVIEW COPY}
+    {}}
+  {\DictionaryCell{FIX-302}{Uncertain Figure}{figura incerta}
+    {\DictionaryReviewArt{2.48in}{\DictionaryReviewUncertain}
+      {\FixtureReviewObject{B}}}
+    {A compact mark identifies unresolved morphology or attribution.}
+    {REVIEW COPY}
+    {}}
+  {\DictionaryCell{FIX-303}{Reviewed Figure}{figura recognita}
+    {\DictionaryReviewArt{2.48in}{\DictionaryReviewVerified}
+      {\FixtureReviewObject{C}}}
+    {A reviewed mark records visual review, not factual publication approval.}
+    {REVIEW COPY}
+    {}}
+
+\DictionaryReviewerQuestion{Q-01}
+  {Do the outline and context view distinguish the intended object at actual-size print?}
+\DictionaryUncertaintyCallout{U-01}
+  {The fixture tests placement only; no factual claim or release status is implied.}
+\DictionaryReviewAnnotationSpace{PLATE-FIX-REVIEW}{1.18in}
+
+\DictionaryEndnote{FIX-301}{Review-only example; not a canonical object record.}
+\DictionaryEndnote{FIX-302}{Review-only example; not a canonical object record.}
+\DictionaryEndnote{FIX-303}{Review-only example; not a canonical object record.}
 
 \end{document}

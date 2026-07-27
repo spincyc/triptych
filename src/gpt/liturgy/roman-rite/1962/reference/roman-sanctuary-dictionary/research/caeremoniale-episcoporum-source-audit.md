@@ -52,12 +52,24 @@ Accordingly:
   against the 1960-1962 rubrical corpus.
 
 A library catalogue identifies the 1957 *Ritus Pontificalis* as an editio
-typica of 55 pages, but no exact artifact was acquired in this audit. It
-therefore remains a named acquisition gap, not a source represented as read.
+typica of 55 pages. Its work and edition identity are now registered, but no
+exact artifact was located or inspected. It therefore remains a named
+acquisition gap, not a source represented as read.
+
+The official *Acta Apostolicae Sedis* volume 49 has now been acquired and
+registered as an exact restricted artifact. Its printed pp. 91-95 contain the
+Sacred Congregation of Rites' *Ordinationes et declarationes circa Ordinem
+hebdomadae sanctae instauratum*, dated 1 February 1957. The act incorporates
+the declaration of 15 March 1956, preserves the 16 November 1955 decree and
+instruction except where the new act innovates, and supplies twenty-two
+numbered provisions. This official amendment witness must accompany the
+restored Order in any 1962 Holy Week source stack. It does not substitute for
+the missing object-by-object pontifical ceremonial.
 
 ## Verification state and next checks
 
-The title and approval identity are verified. The mapped chapters are
+The title and approval identity and the official 1957 amendment act are
+verified. The mapped *Caeremoniale* chapters are
 inspected source ranges, not blanket-verified transcriptions. Before an object
 record cites this book, the editor must:
 
