@@ -51,7 +51,8 @@ sources.
 
 Justin 6 now controls its bounded reader-facing apologetic claim through a
 verified passage and facsimile collation. Irenaeus, *Against Heresies*
-1.10.1--3, remains at the inspected-but-unverified ceiling. Exact dated English
+1.10.1--3, is likewise verified in the exact ANF English facsimile at printed
+pp. 330--332 for its bounded methodological claim. Exact dated English
 artifacts and passages control the
 bounded Tertullian 23, Origen 1.6, 1.25, and 7.4, *Procatechesis* 9,
 *Mystagogical Catecheses* 1.4–9, and Eusebius 6.43.11 claims. These are
