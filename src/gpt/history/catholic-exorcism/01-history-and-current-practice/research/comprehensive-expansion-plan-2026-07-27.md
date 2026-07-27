@@ -3,7 +3,7 @@
 ## Deliverable
 
 The promised completed work is an evidence-controlled Catholic Exorcism study
-of at least 100 typeset pages. The installed twenty-page paper is the public
+of at least 100 typeset pages. The installed twenty-nine-page paper is the public
 alpha baseline, not completion. A reasonable planning range is 54,000–58,000
 reader-facing words, producing approximately 108–116 substantive pages at the
 current design density. Title matter, references, metadata, sparse spill,

@@ -126,6 +126,8 @@ The next source-grounded tranche expands the patristic chapter from 1,225 to
 Origen, the Jerusalem catecheses, and Eusebius; its uninstalled build candidate
 is 32 physical pages. Justin, Irenaeus, Laodicea, and the church-order complex
 remain excluded from positive claims until their required controls are closed.
+The sequenced implementation and exact-snapshot checklist is
+`research/delivery-work-plan-2026-07-27.md` beside the publication.
 Research acquisition, claim-level source work, safety and canon-law review,
 substantive expansion, and exact-snapshot every-page review remain open.
 
@@ -146,6 +148,10 @@ Commit `be940904` repaired the seven guide/card PDFs and replaced the four
 retained old Low Mass images. All are publicly discoverable review copies on
 the branch. Independent server-guide, rights, liturgical-text permission, and
 applicable renewed-snapshot reviews remain open; a build is not those reviews.
+The series-wide sequenced checklist is
+`src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/delivery-work-plan-2026-07-27.md`;
+it governs the shared Low Mass work and the Missa Cantata and Solemn Mass
+deliverables without conflating their remaining gates.
 
 ### Sanctuary pictorial dictionaries
 
@@ -156,6 +162,8 @@ and repaired six priestly-review PDFs. Complete object inventories, exact
 source collation, independent priestly review, and artwork review remain open.
 The artwork audit also retains 15 held notices: two sub-300-DPI historical
 assets and thirteen unidentified depicted-object cases.
+The sequenced inventory, artwork, edition, and publication checklist is
+`src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/delivery-work-plan-2026-07-27.md`.
 
 ### Missa Cantata guide and cards
 
