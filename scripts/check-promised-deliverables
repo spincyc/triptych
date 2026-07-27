@@ -12,6 +12,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_LEDGER = ROOT / "promised-deliverables.toml"
+WORK_REGISTER = ROOT / "PROJECT-WORK.md"
 DELIVERABLE_STATES = {"planned", "in_progress", "blocked", "candidate", "complete"}
 REQUIREMENT_STATES = {"open", "blocked", "pass", "waived"}
 CHECKS = {"path_exists", "contains", "pdf_min_pages"}
@@ -151,6 +152,20 @@ def validate(ledger: Path, required: set[str]) -> list[str]:
             errors.append(f"{deliverable_id}: completion required but state is {state!r}")
     for deliverable_id in sorted(required - seen_deliverables):
         errors.append(f"{deliverable_id}: required deliverable is absent")
+    if ledger == DEFAULT_LEDGER.resolve():
+        try:
+            register = WORK_REGISTER.read_text(encoding="utf-8")
+        except OSError as exc:
+            errors.append(f"{WORK_REGISTER}: {exc}")
+        else:
+            for deliverable_id in sorted(seen_deliverables):
+                marker = f"<!-- promised-deliverable: {deliverable_id} -->"
+                count = register.count(marker)
+                if count != 1:
+                    errors.append(
+                        f"{deliverable_id}: expected exactly one work-register "
+                        f"marker, found {count}"
+                    )
     return errors
 
 

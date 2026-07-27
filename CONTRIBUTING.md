@@ -24,6 +24,9 @@ Git keeps the project’s files and history. An AI coding agent can edit, check,
 1. Clone the repository using the address shown by its hosting site. If you already have a copy, run `git pull` to update it.
 2. From the repository’s top-level folder, start Codex with `make codex` (or use `scripts/triptych-codex` when passing supported agent options). You may start several sessions; each receives an isolated task checkout automatically. Do not create, move, delete, or reuse those task directories yourself.
 3. Give the agent an ordinary request, including any sources, concerns, emphases, or limits that matter.
+   The agent must first read `PROJECT-WORK.md` and
+   `promised-deliverables.toml`, record any new promised outcome there, and
+   reconcile both records before reporting completion.
 4. Ask it to show the changes and verification results before authorizing a commit or integration. A local commit or merge does not authorize a push.
 5. Read the revised PDF as well as the line-by-line view of what changed.
 6. After reviewing the committed result, expressly authorize its integration and any resulting update to its recorded local target, including local `main` when `main` was the dispatch branch. Return to that target’s clean primary checkout and run `make integrate RUN=<run-id>` (or `scripts/triptych-codex --triptych-integrate <run-id>` directly). A result already contained by the target is confirmed and cleaned; one already based on the current target is landed without rewriting its commits. If target and worker both advanced, the launcher rebases the audited linear worker commits onto the captured target. A conflict-free rebase remains a one-step integration. Landing uses an exact expected-old ref transaction rather than a merge commit, never rewrites existing target history, and leaves a raced unrelated checked-out ref unchanged.
@@ -101,6 +104,8 @@ Submit only material you created or have authority to provide. Identify quotatio
 ## Technical Starting Points
 
 - [Repository instructions](AGENTS.md)
+- [Durable project work register](PROJECT-WORK.md)
+- [Promised-deliverable contract](guidance/promised-deliverables.md)
 - [Editorial and evidence standard](guidance/editorial.md)
 - [Repository and publication contract](guidance/repository.md)
 - [Reusable source library contract](guidance/sources.md)

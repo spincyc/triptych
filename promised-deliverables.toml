@@ -180,3 +180,69 @@ state = "in_progress"
   criterion = "Each paper's scope, audit, web artifact, installed PDF, catalog state, and completion claims agree."
   status = "open"
   evidence = ["promised-deliverables.toml"]
+
+[[deliverables]]
+id = "project-integrate-and-deploy"
+owner = ".github/workflows/pages.yml"
+promise = "Integrate the pushed repair series and verify the resulting production Pages deployment."
+state = "blocked"
+
+  [[deliverables.requirements]]
+  id = "integrated"
+  criterion = "The repair commits are contained by main through an authorized integration."
+  status = "blocked"
+  evidence = ["PROJECT-WORK.md", ".github/workflows/pages.yml"]
+
+  [[deliverables.requirements]]
+  id = "production-verified"
+  criterion = "The deployed production artifact resolves the repaired landing pages, web editions, and PDFs."
+  status = "blocked"
+  evidence = ["PROJECT-WORK.md", "scripts/public-alpha"]
+
+[[deliverables]]
+id = "project-stale-editions"
+owner = "scripts/research-staleness"
+promise = "Reconcile every publication edition reported stale by the repository-wide audit."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "staleness-zero"
+  criterion = "The exhaustive staleness audit passes with no stale edition."
+  status = "open"
+  evidence = ["scripts/research-staleness", "PROJECT-WORK.md"]
+
+[[deliverables]]
+id = "project-source-family-screening"
+owner = "src/sources/inventories/source-family-migration-v1.toml"
+promise = "Complete the provider-neutral reusable-source family screening backlog."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "screening-complete"
+  criterion = "Every exact source-family review unit is family-screened."
+  status = "open"
+  evidence = ["src/sources/inventories/source-family-migration-v1.toml", "guidance/sources.md"]
+
+[[deliverables]]
+id = "project-public-review-gates"
+owner = "release/public-alpha.json"
+promise = "Close or accurately retain every work-specific completion gate for all public review publications."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "work-specific-gates"
+  criterion = "Every review publication has exact-snapshot evidence for each required source, rights, specialist, ecclesiastical, artwork, and production review."
+  status = "open"
+  evidence = ["release/public-alpha.json", "PROJECT-WORK.md"]
+
+[[deliverables]]
+id = "project-dictionary-artwork-holds"
+owner = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary"
+promise = "Resolve every held dictionary-artwork identification and resolution notice."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "artwork-notices-closed"
+  criterion = "Artwork validation and human review records close every held notice without inventing object identities."
+  status = "open"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary", "PROJECT-WORK.md"]
