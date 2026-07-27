@@ -315,11 +315,13 @@ verified_on = "2026-07-27"
 context = "Exact bounded facsimile passage verified for Irenaeus's account of one received faith confessed across churches and languages. It controls the methodological distinction between the rule of faith and local practice; it supplies no exorcistic formulary."
 
 [[bindings]]
-source_id = "edition.john-chrysostom.homiliae-in-matthaeum.prevost-riddle-npnf1-10-newadvent-web-2026-07-25"
+source_id = "passage.john-chrysostom.homiliae-in-matthaeum.prevost-riddle-npnf1-10-newadvent-web-2026-07-25.23"
 loci = ["23"]
-role = "lead"
-states = ["cataloged"]
-context = "Dated public-domain English edition identity retained to distinguish Gospel homily from ritual evidence. No quotation, negative search, or exact exorcism claim depends on it until a bounded passage is registered."
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+source_fingerprint = "sha256:e33dba9819e4ee12313189ed7442f285718e0b9afcbd36e039cf7d9cac248e2b"
+verified_on = "2026-07-27"
+context = "Exact dated English homily-level witness used only to distinguish sustained Gospel and moral exposition from ritual evidence. It supplies no exorcistic rubric, ministerial reservation, case record, or operational procedure."
 
 [[bindings]]
 source_id = "passage.justin-martyr.second-apology.dods-reith-anf1-1887.6.ocr"
