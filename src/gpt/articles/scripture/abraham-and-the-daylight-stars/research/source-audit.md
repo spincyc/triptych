@@ -30,3 +30,19 @@ Genesis Apocryphon. Their omission must remain visible.
 
 No Claude review event, search receipt, production receipt, or publication
 approval applies to this GPT edition.
+
+## Re-evaluation verdict
+
+The bound witnesses continue to support the study's deliberately conditional
+result. Genesis 15 narrates the star command before its explicit sunset under a
+continuous reading, while neither Hebrew verbal sequence nor the ancient
+versions proves the absence of a vision or omitted interval. Abarbanel proves
+that the chronological difficulty is historical; the bounded patristic set
+does not show that the Fathers formulated that exact difficulty. No
+consequential claim needs correction on the evidence presently bound.
+
+The unresolved Syriac, Samaritan, targumic, Second Temple, and additional
+patristic witnesses prevent promotion of the bounded negative result into a
+tradition-wide absence claim. Independent philological, rabbinic, patristic,
+astronomical, and theological review remains outstanding, so the held state is
+retained.

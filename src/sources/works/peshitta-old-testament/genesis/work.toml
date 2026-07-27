@@ -1,0 +1,10 @@
+schema = 1
+record_type = "work"
+id = "work.peshitta-old-testament.genesis"
+title = "Genesis according to the Peshitta"
+responsible = "Anonymous Syriac translators"
+work_type = "biblical-version"
+alternate_titles = ["Peshitta Genesis", "Syriac Genesis"]
+languages = ["syr"]
+locus_pattern = '(?:[1-9]|[1-4][0-9]|50)(?:\.(?:[1-9]|[1-5][0-9]|60)(?:-[1-9][0-9]?)?(?:, (?:[1-9]|[1-4][0-9]|50)\.(?:[1-9]|[1-5][0-9]|60)(?:-[1-9][0-9]?)?)*)?'
+description = "The Syriac Peshitta version of Genesis. Individual editions and digital deliveries must identify their own textual base; the work identity does not imply that every online Syriac presentation represents a critical Peshitta edition."
