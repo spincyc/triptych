@@ -21,6 +21,12 @@ alone do not create a substantive variant.
 | Processional crosses and candlesticks | Which forms affect handling or identification? | Functional and dated object evidence | Unreviewed lead |
 | Thuribles | Which forms change safe handling or component recognition? | Contemporary ceremonial plus provenanced objects | Unreviewed lead |
 | Altar configurations | Which compositions represent universal, conditional, pontifical, regional, or merely architectural differences? | Governing books and documented plans | Unreviewed lead |
+| Pontifical stations | Which throne and faldstool compositions differ by office, place, privilege, or ceremony rather than architectural taste? | Operative ceremonial loci, amendments, and documented plans | Candidate families inventoried; unresolved |
+| Pontifical book supports and hand candle | When are cushion, small stand, floor lectern, and the *bugia* materially and ceremonially distinct? | Exact book/support loci plus dated morphological evidence | 1948 witness partially inspected; 1962 horizon unresolved |
+| Pontifical service textiles | Which constructions and uses distinguish vimpa, gremial, humeral veil, and hand towel? | Operative ceremonial loci plus textile evidence | Candidate families inventoried; unresolved |
+| Pontifical hand-washing sets | Does a pontifical ewer/basin/towel set differ materially from the ordinary Lavabo set, or only by handlers and sequence? | Ceremonial relationship evidence plus provenanced objects | 1948 witness partially inspected; morphology unresolved |
+| Pontifical insignia supports | Which trays, cushions, under-caps, and stands are independently specified objects rather than practical local supports? | Object-specific ceremonial and material evidence | Candidate families inventoried; unresolved |
+| Pontifical altar and processional articles | Which seventh-candle, cross, and canopy forms are conditioned by rank, jurisdiction, Mass type, or adjoining procession? | Operative ceremonial loci, privileges, and dated morphology | 1948 seventh-candle witness inspected; remaining branches unresolved |
 | Regional/religious-community articles | Which articles meet all inclusion criteria? | Identifiable competent source and a material distinction | No candidates admitted |
 
 ## Required record fields

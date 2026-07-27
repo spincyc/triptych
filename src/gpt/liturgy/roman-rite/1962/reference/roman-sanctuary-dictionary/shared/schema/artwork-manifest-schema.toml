@@ -1,0 +1,145 @@
+schema_id = "triptych-roman-sanctuary-artwork-manifest"
+schema_version = 1
+record_encoding = "UTF-8"
+unknown_fields = "reject"
+artwork_id_pattern = "^art-[a-z0-9]+(?:-[a-z0-9]+)*$"
+object_id_pattern = "^obj-[a-z0-9]+(?:-[a-z0-9]+)*$"
+variant_id_pattern = "^var-[a-z0-9]+(?:-[a-z0-9]+)*$"
+plate_id_pattern = "^plt-[a-z0-9]+(?:-[a-z0-9]+)*$"
+edition_id_pattern = "^ed-[a-z0-9]+(?:-[a-z0-9]+)*$"
+
+[manifest]
+required = [
+  "schema_version",
+  "manifest_id",
+  "owner",
+  "asset_root",
+  "status",
+  "asset_files",
+  "artwork_links",
+  "artworks",
+]
+
+[asset_file]
+required = ["id", "path", "state", "audit_record", "technical"]
+id_pattern = "^file-[a-z0-9]+(?:-[a-z0-9]+)*$"
+states = ["held", "rejected", "consumer-eligible"]
+description = "One row for every tracked dictionary PNG, including held and rejected research leads."
+
+[asset_file.technical]
+required = ["width_px", "height_px", "bit_depth", "color_mode", "bytes", "sha256"]
+
+[artwork_link]
+required = ["id", "asset_file_id", "object_ids", "variant_ids", "view", "workflow_state"]
+description = "Object-level identity for one subject or view within a shared comparison asset."
+
+[artwork]
+required = [
+  "id",
+  "object_ids",
+  "variant_ids",
+  "view",
+  "workflow_state",
+  "purpose",
+  "depicted_state",
+  "source_controlled_features",
+  "deliberate_omissions",
+  "brief",
+  "exact_prompt",
+  "generator",
+  "generated_on",
+  "asset",
+  "received",
+  "normalized",
+  "reference_ids",
+  "precursor_ids",
+  "corrections",
+  "baked_content_audit",
+  "tex_overlays",
+  "consumer_plate_ids",
+  "consumer_edition_ids",
+  "rights",
+  "reviews",
+]
+
+[artwork.workflow]
+values = [
+  "generated",
+  "factual-review-passed",
+  "visual-review-passed",
+  "plate-review-passed",
+  "consumer-review-passed",
+  "rejected",
+]
+consumer_eligible = ["consumer-review-passed"]
+
+[artwork.view]
+values = [
+  "isolated",
+  "front",
+  "back",
+  "side",
+  "top",
+  "folded",
+  "unfolded",
+  "open",
+  "closed",
+  "worn",
+  "in-use",
+  "context-inset",
+  "detail",
+  "comparison",
+  "composition",
+]
+
+[artwork.normalized]
+required = [
+  "path",
+  "width_px",
+  "height_px",
+  "bit_depth",
+  "color_mode",
+  "bytes",
+  "sha256",
+  "max_placement_width_in",
+  "max_placement_height_in",
+  "effective_dpi",
+]
+publication_color_mode = "grayscale"
+publication_bit_depth = 8
+publication_format = "PNG"
+minimum_effective_dpi = 300
+
+[artwork.received]
+required = [
+  "width_px",
+  "height_px",
+  "bit_depth",
+  "color_mode",
+  "bytes",
+  "sha256",
+]
+description = "Technical identity of the selected generator output before repository normalization."
+
+[artwork.references]
+id_prefixes = ["art-", "src-"]
+description = "Project artwork or canonical source-artifact identities actually supplied to generation."
+
+[artwork.consumers]
+plate_id_prefix = "plt-"
+edition_id_prefix = "ed-"
+description = "Planned or actual consumers; page numbers are never identities."
+
+[artwork.reviews]
+required = ["factual", "visual", "print", "rights", "consumer", "release"]
+values = ["pending", "passed", "failed", "not-applicable"]
+release_separate_from_artwork_approval = true
+
+[coverage]
+object_records = "shared/objects/**/*.toml"
+fixture_exclusions = ["shared/schema/object.example.toml"]
+bidirectional_object_artwork_links = true
+publication_ready_requires_consumer_reviewed_artwork = true
+substantive_variant_requires_consumer_reviewed_artwork = true
+unknown_object_ids = "reject"
+orphan_artwork = "reject"

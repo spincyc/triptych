@@ -1,0 +1,81 @@
+schema_version = 1
+id = "obj-sacristy-lavatory"
+workflow_state = "source-audited"
+preferred_english_name = "Sacristy handwashing place"
+latin_headword = "locus ad lavandas manus"
+alternate_english_names = ["sacristy lavatory", "handwashing basin"]
+categories = ["church-and-sanctuary"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass"]
+confusable_with = ["obj-piscina-sacrarium"]
+
+[presence]
+locations = ["Sacristy or another place prepared for the celebrant's pre-Mass handwashing."]
+contexts = ["Used before vesting or departure for Mass."]
+composition_ids = ["plt-sacristy-preparation"]
+local_variability = "common"
+
+[handling]
+ordinary_handlers = ["priest", "bishop", "cleric", "sacristan"]
+server_relation = "recognizes-only"
+warnings = ["Do not confuse the ordinary handwashing fixture with a piscina or sacrarium merely because both have a basin or drain."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "useful"
+pontifical = "useful"
+
+[[claims]]
+id = "clm-sacristy-lavatory-identity"
+kind = "identity"
+text = "The handwashing place is the facility prepared for the celebrant to wash his hands before vesting."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-sacristy-lavatory-missal"]
+
+[[claims]]
+id = "clm-sacristy-lavatory-appearance"
+kind = "appearance"
+text = "The governing rubric fixes the action, not the basin, plumbing, or furniture form."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-sacristy-lavatory-missal", "src-sacristy-lavatory-ce"]
+
+[[claims]]
+id = "clm-sacristy-lavatory-use"
+kind = "liturgical-use"
+text = "It serves the priest's handwashing before he arranges the chalice and vests."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-sacristy-lavatory-missal"]
+
+[[claims]]
+id = "clm-sacristy-lavatory-presence"
+kind = "ceremonial-presence"
+text = "It belongs to pre-Mass preparation and is not the portable lavabo set used during the Offertory."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-sacristy-lavatory-missal"]
+
+[[sources]]
+id = "src-sacristy-lavatory-missal"
+binding = "rsd-mr1962-rs-i-ii"
+locus = "Ritus servandus I.1"
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-27
+
+[[sources]]
+id = "src-sacristy-lavatory-ce"
+binding = "rsd-catholic-encyclopedia-sacristy"
+locus = "line 69"
+role = "specialist-secondary"
+verification_state = "claim-verified"
+checked_on = 2026-07-27
+
+[[artwork]]
+id = "art-sacristy-lavatory-isolated"
+view = "isolated"
+asset = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RSD-ART-001-sacristy-preparation.png"
+review_state = "generated"
+depicts = ["obj-sacristy-lavatory"]
+scale_mode = "not-to-common-scale"

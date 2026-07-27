@@ -1,0 +1,59 @@
+schema_version = 1
+id = "obj-ombrellino"
+workflow_state = "art-reviewed"
+preferred_english_name = "Ombrellino"
+latin_headword = "umbraculum"
+alternate_english_names = ["ceremonial umbrella"]
+categories = ["related-ceremonies"]
+periods = ["roman-1962-horizon"]
+statuses = ["unresolved"]
+ceremonies = ["procession", "ceremony-surrounding-mass"]
+
+[presence]
+locations = ["Institutional or processional staging area when legitimately used."]
+contexts = ["Candidate related-ceremony record; scope and status are deliberately unresolved."]
+local_variability = "defining"
+
+[handling]
+ordinary_handlers = ["other-server", "cleric"]
+server_relation = "recognizes-only"
+prepares = ["sacristan"]
+stores = ["sacristan"]
+warnings = ["Confirm ceremonial authority and overhead clearance before use."]
+
+[audience_relevance]
+altar_server = "useful"
+sacristan = "useful"
+mc_trainer = "useful"
+general_reader = "required"
+pontifical = "useful"
+
+[[claims]]
+id = "clm-ombrellino-candidate"
+kind = "identity"
+text = "Candidate inventory identity only; Roman 1962 scope, institutional status, terminology, and ceremonies require a dedicated source audit before publication."
+evidence_state = "editorial-proposal"
+source_ids = []
+
+[[claims]]
+id = "clm-ombrellino-appearance"
+kind = "appearance"
+text = "The candidate artwork shows one open textile canopy with alternating graphite panels, fringe, ribs, central pole, and grip; it makes no color, heraldic, or universal-use claim."
+evidence_state = "editorial-proposal"
+source_ids = []
+
+[[sources]]
+id = "src-ombrellino-fortescue-lead"
+binding = "edition.adrian-fortescue.ceremonies-of-the-roman-rite-described.twelfth-revised-1962"
+locus = "Relevant ombrellino or umbraculum passages not yet located."
+role = "lead-only"
+verification_state = "unlocated"
+
+[[artwork]]
+id = "art-related-ceremonies-0003-open-ombrellino"
+view = "open"
+asset = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0003-open-ombrellino.png"
+review_state = "identity-checked"
+depicts = ["obj-ombrellino"]
+scale_mode = "not-applicable"
+review_note = "Screen-checked for one coherent canopy, ribs, pole, and grip, grayscale ground, crop safety, absent lettering/heraldry/color, and no duplicated structure; source, scope, and print review remain pending."

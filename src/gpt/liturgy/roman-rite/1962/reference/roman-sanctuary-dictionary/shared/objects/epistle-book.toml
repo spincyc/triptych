@@ -1,0 +1,74 @@
+schema_version = 1
+id = "obj-epistle-book"
+workflow_state = "identified"
+preferred_english_name = "Epistle book"
+latin_headword = "liber Epistolarum"
+alternate_english_names = ["Epistolary"]
+alternate_latin_names = []
+sort_name = "Epistle book"
+categories = ["books-and-printed-objects"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass"]
+confusable_with = ["obj-gospel-book"]
+related_objects = ["obj-gospel-book"]
+component_objects = []
+artwork = []
+
+[presence]
+locations = ["Carried by the subdeacon for the sung Epistle in the Solemn-Mass rite."]
+contexts = ["A separate book containing the Epistle text used in the solemn ceremonial."]
+composition_ids = ["plt-books"]
+local_variability = "possible"
+
+[handling]
+ordinary_handlers = ["subdeacon", "master-of-ceremonies", "sacristan", "cleric"]
+server_relation = "recognizes-only"
+prepares = ["sacristan", "cleric"]
+presents = []
+receives = []
+stores = ["sacristan"]
+warnings = ["Do not identify a book by representative binding ornament alone."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-epistle-book-identity"
+kind = "identity"
+text = "The 1962 Ritus names the separate liber Epistolarum used by the subdeacon at Solemn Mass."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-epistle-book-1962"]
+
+[[claims]]
+id = "clm-epistle-book-appearance"
+kind = "appearance"
+text = "No universal binding morphology has yet been established for the planned figure."
+evidence_state = "editorial-proposal"
+source_ids = []
+
+[[claims]]
+id = "clm-epistle-book-use"
+kind = "liturgical-use"
+text = "The subdeacon carries it in both hands against his breast and sings the Epistle from it."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-epistle-book-1962"]
+
+[[claims]]
+id = "clm-epistle-book-presence"
+kind = "ceremonial-presence"
+text = "It is present as a distinct book in the Solemn-Mass Epistle ceremonial."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-epistle-book-1962"]
+
+[[sources]]
+id = "src-epistle-book-1962"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Ritus servandus VI.4, printed LVII-LVIII/artifact PDF 59-60"
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-27

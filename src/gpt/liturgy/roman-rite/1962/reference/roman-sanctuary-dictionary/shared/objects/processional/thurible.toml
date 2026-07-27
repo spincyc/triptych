@@ -1,0 +1,60 @@
+schema_version = 1
+id = "obj-thurible"
+workflow_state = "art-reviewed"
+preferred_english_name = "Thurible"
+latin_headword = "thuribulum"
+alternate_english_names = ["censer"]
+categories = ["incense"]
+periods = ["roman-1962-horizon"]
+statuses = ["unresolved"]
+ceremonies = ["missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "asperges", "benediction", "procession"]
+related_objects = ["obj-incense-boat-set"]
+
+[presence]
+locations = ["Prepared at the credence or other appointed service place."]
+contexts = ["Candidate record for the vessel in which incense is burned."]
+local_variability = "common"
+
+[handling]
+ordinary_handlers = ["thurifer"]
+server_relation = "carries"
+prepares = ["thurifer", "sacristan"]
+stores = ["sacristan"]
+warnings = ["Treat the bowl, lid, charcoal, and chains as hot; keep the vessel controlled and ventilated."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-thurible-candidate"
+kind = "identity"
+text = "Candidate inventory identity and representative thurible morphology; governing source loci remain to be audited."
+evidence_state = "editorial-proposal"
+source_ids = []
+
+[[claims]]
+id = "clm-thurible-appearance"
+kind = "appearance"
+text = "The candidate artwork shows a pierced lidded fire bowl, foot, suspension chains, lifting chain, and upper ring as one representative construction."
+evidence_state = "editorial-proposal"
+source_ids = []
+
+[[sources]]
+id = "src-thurible-fortescue-lead"
+binding = "edition.adrian-fortescue.ceremonies-of-the-roman-rite-described.twelfth-revised-1962"
+locus = "Relevant thurible passages not yet located."
+role = "lead-only"
+verification_state = "unlocated"
+
+[[artwork]]
+id = "art-incense-0001-closed-thurible"
+view = "closed"
+asset = "shared/artwork/pencil/processional-objects/RPD-FIG-incense-0001-closed-thurible.png"
+review_state = "identity-checked"
+depicts = ["obj-thurible"]
+scale_mode = "not-applicable"
+review_note = "Screen-checked for one bowl and lid, connected chains, grayscale ground, crop safety, absent lettering, smoke, and duplicated parts; source, hot-state, and print review remain pending."

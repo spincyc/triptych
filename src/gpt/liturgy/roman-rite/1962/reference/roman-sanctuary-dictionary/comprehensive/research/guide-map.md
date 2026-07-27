@@ -11,18 +11,21 @@ intended to identify and compare the material objects of the Roman Rite at the
 1962 horizon, with documented earlier Roman practice segregated in a
 historical section. It does not yet contain verified dictionary entries.
 
-## Current placeholder selection
+## Current generated selection
 
-The present `main.tex` renders only a title, a short explanation of the future
-plate system, the section placeholders in `shared/comprehensive-sections.tex`,
-and terminal placeholder matter. The placeholders name the intended coverage;
-they are not object records, verified captions, exhaustive inventories, or
-approved plates.
+The present `main.tex` is a publication-capable shell that consumes only the
+generator-admitted `ed-comprehensive` selection under `build/`. That
+generated selection is empty because there are no publication-ready
+canonical objects. The shell therefore renders a held notice, not object
+records, verified captions, an exhaustive inventory, or approved plates.
 
 When populated, `ed-comprehensive` selects every `publication-ready` canonical
 record admitted by `shared/schema/edition-selections.toml`: the declared Roman
 1962 corpus and reviewed regional, religious-community, institutional, and
 pre-1962 historical supplements. Records with unresolved status are excluded.
+Selection does not make every documented variant a separate entry:
+substantive variants remain attached to their canonical object record and are
+shown only when their reviewed plate plan calls for them.
 
 ## Reader order
 
@@ -50,6 +53,11 @@ pre-1962 historical supplements. Records with unresolved status are excluded.
     notes, scope and qualifications, numbered source notes, references,
     generation metadata, and rights colophon.
 
+Roman-1962-horizon records follow this functional order. Historical records
+follow the five periods declared in `historical_order`, earliest first, and
+then the same functional categories within each period. The plate manifest,
+not alphabetical sorting, controls intentional order within a section.
+
 ## Canonical dependency
 
 This leaf owns no publication-local object facts. Its entries must be
@@ -68,4 +76,4 @@ completeness matrix remain open, and no reviewed artwork or plate is approved.
 This leaf therefore remains on hold. A successful TeX build would demonstrate
 only that the scaffold compiles; it would not authorize installation,
 cataloging as a completed dictionary, web publication, or a completeness
-claim.
+claim. Plate-manifest order remains a publication blocker.

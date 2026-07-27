@@ -1,0 +1,75 @@
+schema_version = 1
+id = "obj-sanctuary-lamp"
+workflow_state = "source-audited"
+preferred_english_name = "Sanctuary lamp"
+latin_headword = "lampas"
+alternate_english_names = ["reservation lamp"]
+alternate_latin_names = ["lampas sanctuarii", "lampades"]
+categories = ["altar-and-appointments", "church-and-sanctuary"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass", "benediction", "exposition-and-reposition", "ceremony-surrounding-mass"]
+confusable_with = []
+related_objects = ["obj-altar-candle"]
+component_objects = []
+
+[presence]
+locations = ["Before the altar or place where the Blessed Sacrament is reserved."]
+contexts = ["A continually burning reservation light; additional lamps may form larger hanging arrangements."]
+composition_ids = []
+local_variability = "common"
+
+[handling]
+ordinary_handlers = ["sacristan", "cleric"]
+server_relation = "recognizes-only"
+prepares = ["sacristan"]
+presents = []
+receives = []
+stores = ["sacristan"]
+warnings = ["Do not touch, lower, refill, or relight a hanging lamp unless specifically trained and directed."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "useful"
+general_reader = "required"
+pontifical = "useful"
+
+[[claims]]
+id = "clm-sanctuary-lamp-placement"
+kind = "placement"
+text = "The Ceremonial places burning lamps especially before the altar or place where the Blessed Sacrament is reserved and describes hanging lamp stands that may support several lamps."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-sanctuary-lamp-ceremonial"]
+
+[[claims]]
+id = "clm-sanctuary-lamp-burning"
+kind = "liturgical-use"
+text = "The Ceremonial directs that lamps around the place of reservation burn perpetually."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-sanctuary-lamp-ceremonial"]
+
+[[claims]]
+id = "clm-sanctuary-lamp-form"
+kind = "appearance"
+text = "The candidate artwork shows one common suspended single-vessel form with three chains; the source also recognizes multi-lamp hanging arrangements."
+evidence_state = "editorial-proposal"
+source_ids = []
+publication_note = "Do not present the three-chain single-vessel form as the exclusive Roman form."
+
+[[sources]]
+id = "src-sanctuary-lamp-ceremonial"
+binding = "artifact.catholic-church.caeremoniale-episcoporum.typis-polyglottis-vaticanis-1948"
+locus = "Book I, chapter VI, no. 2; chapter XII, no. 17"
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-27
+
+[[artwork]]
+id = "art-altar-appointments-0102-iso-sanctuary-lamp"
+view = "isolated"
+asset = "shared/artwork/pencil/RPD-FIG-altar-appointments-0102-iso-sanctuary-lamp.png"
+review_state = "identity-checked"
+depicts = ["obj-sanctuary-lamp"]
+scale_mode = "not-applicable"
+review_note = "Visually checked for one vessel, one visible flame, three plausible suspension chains converging to one ring, balanced structure, grayscale, and absent lettering."

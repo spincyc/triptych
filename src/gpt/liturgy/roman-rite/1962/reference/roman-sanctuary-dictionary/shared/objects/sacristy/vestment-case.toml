@@ -1,0 +1,72 @@
+schema_version = 1
+id = "obj-vestment-case"
+workflow_state = "source-audited"
+preferred_english_name = "Vestment case"
+latin_headword = "armarium paramentorum"
+alternate_english_names = ["vestment cabinet", "vestment press"]
+categories = ["church-and-sanctuary"]
+periods = ["roman-1962-horizon"]
+statuses = ["institutional"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass", "ceremony-surrounding-mass"]
+
+[presence]
+locations = ["Sacristy."]
+contexts = ["Storage of vestments, commonly separated and labelled by liturgical color."]
+composition_ids = ["plt-sacristy-preparation"]
+local_variability = "defining"
+
+[handling]
+ordinary_handlers = ["sacristan", "priest", "cleric"]
+server_relation = "recognizes-only"
+stores = ["sacristan"]
+
+[audience_relevance]
+altar_server = "useful"
+sacristan = "required"
+mc_trainer = "useful"
+general_reader = "useful"
+pontifical = "useful"
+
+[[claims]]
+id = "clm-vestment-case-identity"
+kind = "identity"
+text = "A vestment case is sacristy furniture for keeping liturgical vestments."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-vestment-case-ce"]
+
+[[claims]]
+id = "clm-vestment-case-appearance"
+kind = "appearance"
+text = "Cases may use drawers or hanging space; no one construction is established as universal by the cited witness."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-vestment-case-ce"]
+
+[[claims]]
+id = "clm-vestment-case-use"
+kind = "liturgical-use"
+text = "Properly labelled cases keep vestments of the several liturgical colors ready for selection and preparation."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-vestment-case-ce"]
+
+[[claims]]
+id = "clm-vestment-case-presence"
+kind = "ceremonial-presence"
+text = "It is preparation and storage furniture, not an object carried into Mass."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-vestment-case-ce"]
+
+[[sources]]
+id = "src-vestment-case-ce"
+binding = "rsd-catholic-encyclopedia-sacristy"
+locus = "line 69"
+role = "specialist-secondary"
+verification_state = "claim-verified"
+checked_on = 2026-07-27
+
+[[artwork]]
+id = "art-vestment-case-isolated"
+view = "comparison"
+asset = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RSD-ART-001-sacristy-preparation.png"
+review_state = "generated"
+depicts = ["obj-vestment-case"]
+scale_mode = "not-to-common-scale"

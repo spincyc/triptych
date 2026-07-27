@@ -1,0 +1,10 @@
+schema = 1
+record_type = "work"
+id = "work.catholic-church.caeremoniale-episcoporum"
+title = "Caeremoniale Episcoporum"
+responsible = "Catholic Church"
+work_type = "liturgical-book"
+alternate_titles = ["Ceremonial of Bishops"]
+languages = ["la"]
+locus_pattern = '(?:front-matter|book-[1-3]\.chapter-(?:[1-9]|[1-3][0-9])|book-[1-3]\.chapters-(?:[1-9]|[1-3][0-9])-(?:[1-9]|[1-3][0-9]))'
+description = "The Roman ceremonial book governing episcopal and related solemn functions. Edition records must distinguish the successive revisions and reprints and must be read with later books and decrees that replaced or modified particular chapters."

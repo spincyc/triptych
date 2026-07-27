@@ -1,6 +1,7 @@
 schema_version = 1
 inventory_schema = "inventory-schema.toml"
 selection_semantics = "include when all include rules pass; then apply exclusions; explicit object exclusions win"
+canonical_corpus = "records admitted by the owner scope and completeness audit; edition rules never create object presence, status, or relevance"
 
 [[editions]]
 id = "ed-comprehensive"
@@ -34,6 +35,27 @@ historical_secondary_order = "category"
 include_relevance = []
 exclude_statuses = ["unresolved"]
 explicit_exclusions = []
+section_order = [
+  "church-and-sanctuary",
+  "altar-and-appointments",
+  "sacred-vessels",
+  "linens-and-textiles",
+  "books-and-printed-objects",
+  "service-objects",
+  "incense",
+  "priestly-vestments",
+  "deacon-and-subdeacon",
+  "pontifical-and-prelatial",
+  "servers-ministers-and-choir",
+  "requiem",
+  "nuptial-and-ritual",
+  "holy-week",
+  "pontifical-mass-compositions",
+  "related-ceremonies",
+  "historical",
+  "terminal-apparatus",
+]
+ordering_semantics = "Roman-1962-horizon records follow section_order; historical records follow historical_order and then category; plate manifests preserve intentional within-section order"
 
 [[editions]]
 id = "ed-altar-server"
@@ -46,6 +68,21 @@ relevance_field = "audience_relevance.altar_server"
 presence_rule = "include every object documented as possibly present around a server, even when server_relation is recognizes-only or must-not-handle"
 exclude_statuses = ["unresolved"]
 explicit_exclusions = []
+section_order = [
+  "recognition-and-handling-key",
+  "sanctuary-orientation",
+  "objects-around-the-server",
+  "vestments-ministers-and-insignia",
+  "special-masses-and-related-ceremonies",
+  "terminal-apparatus",
+]
+section_rules = [
+  "sanctuary-orientation: selected compositions and their selected component records, ordered from general working-place orientation to local detail",
+  "objects-around-the-server: selected non-vesture records, grouped by documented encounter location and then ceremony; handling relation remains visible",
+  "vestments-ministers-and-insignia: selected wearable, minister-identifying, and insignia records, grouped by minister",
+  "special-masses-and-related-ceremonies: selected records whose presence is limited to or materially changed in Requiem, Nuptial or ritual Masses, Holy Week, pontifical Mass, or related ceremonies",
+]
+ordering_semantics = "section_order controls the reader route; plate manifests control intentional within-section order and may cross-reference rather than duplicate a record"
 
 [[editions]]
 id = "ed-sacristan"
@@ -57,6 +94,21 @@ include_relevance = ["required", "useful"]
 relevance_field = "audience_relevance.sacristan"
 exclude_statuses = ["unresolved"]
 explicit_exclusions = []
+section_order = [
+  "status-and-handling-key",
+  "sanctuary-and-altar-preparation",
+  "vessels-linens-and-books",
+  "vestments-and-insignia",
+  "special-ceremony-equipment",
+  "terminal-apparatus",
+]
+section_rules = [
+  "sanctuary-and-altar-preparation: selected church, sanctuary, altar, appointment, service, and composition records with preparation or placement relevance",
+  "vessels-linens-and-books: selected vessel, textile, book, incense, and service records grouped by preparation relationship rather than alphabetically",
+  "vestments-and-insignia: selected wearable and insignia records grouped by minister and verified preparation relationship",
+  "special-ceremony-equipment: selected records whose preparation changes by special Mass, Holy Week, pontifical Mass, or related ceremony",
+]
+ordering_semantics = "section_order controls the reader route; canonical placement and preparation relationships plus plate manifests control within-section order"
 
 [[editions]]
 id = "ed-mc-trainer"
@@ -68,6 +120,21 @@ include_relevance = ["required", "useful"]
 relevance_field = "audience_relevance.mc_trainer"
 exclude_statuses = ["unresolved"]
 explicit_exclusions = []
+section_order = [
+  "relational-symbol-key",
+  "people-roles-and-stations",
+  "objects-and-handoffs",
+  "branches-and-special-ceremonies",
+  "training-comparisons",
+  "terminal-apparatus",
+]
+section_rules = [
+  "people-roles-and-stations: selected minister-identifying records and compositions ordered from ordinary stations to branch-specific stations",
+  "objects-and-handoffs: selected records with verified giver, receiver, destination, cue, or handling relationships, grouped by ceremony sequence",
+  "branches-and-special-ceremonies: selected branch-dependent records grouped by Mass or ceremony and then by sequence",
+  "training-comparisons: selected confusable records and handling-boundary comparisons; comparison membership never creates a factual claim",
+]
+ordering_semantics = "section_order controls the reader route; verified ceremony sequence and plate manifests control within-section order"
 
 [[editions]]
 id = "ed-general-reader"
@@ -79,6 +146,21 @@ include_relevance = ["required"]
 relevance_field = "audience_relevance.general_reader"
 exclude_statuses = ["unresolved"]
 explicit_exclusions = []
+section_order = [
+  "visual-and-status-key",
+  "sanctuary",
+  "objects-and-linens",
+  "vestments-and-insignia",
+  "historical-perspective",
+  "terminal-apparatus",
+]
+section_rules = [
+  "sanctuary: selected orientation compositions followed by selected sanctuary, altar, and furnishing records",
+  "objects-and-linens: selected vessels, textiles, books, service, and incense records arranged as high-density functional comparisons",
+  "vestments-and-insignia: selected vesture and insignia records grouped by minister and substantive form",
+  "historical-perspective: selected pre-1962 historical records ordered chronologically and then by category",
+]
+ordering_semantics = "section_order controls the concise survey; historical_order from the comprehensive contract applies to historical selections; plate manifests control within-section order"
 
 [[editions]]
 id = "ed-pontifical"
@@ -92,6 +174,21 @@ include_categories = ["pontifical-and-prelatial"]
 include_categories_semantics = "union with relevance selection, so ordinary supporting objects may be included"
 exclude_statuses = ["unresolved"]
 explicit_exclusions = []
+section_order = [
+  "status-and-relationship-key",
+  "pontifical-vesture",
+  "insignia",
+  "furnishings-and-books",
+  "ministers-and-object-transfers",
+  "terminal-apparatus",
+]
+section_rules = [
+  "pontifical-vesture: selected wearable records ordered from foundational layers to outer vesture and then rank- or use-dependent forms",
+  "insignia: selected insignia grouped by verified bearer, status, and use",
+  "furnishings-and-books: selected pontifical and ordinary supporting records arranged by composition and station",
+  "ministers-and-object-transfers: selected minister-identifying and supporting records with verified transfer relationships, ordered by ceremony sequence",
+]
+ordering_semantics = "category inclusion and pontifical relevance form a union, after which workflow and unresolved-status exclusions apply; section_order controls the reader route and plate manifests control within-section order"
 
 [rendering]
 page_format = "US Letter portrait"

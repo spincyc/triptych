@@ -1,0 +1,51 @@
+schema_version = 1
+id = "obj-faldstool"
+workflow_state = "identified"
+preferred_english_name = "Faldstool"
+latin_headword = "faldistorium"
+categories = ["church-and-sanctuary", "pontifical-and-prelatial"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["pontifical-mass", "ceremony-surrounding-mass"]
+
+[presence]
+locations = ["Before the altar or at the appointed pontifical station, according to the ceremony."]
+contexts = ["A portable episcopal seat or kneeling support used when the bishop does not occupy his proper throne, with use determined by the ceremony."]
+composition_ids = ["plt-pontifical-seating", "plt-pontifical-composition"]
+local_variability = "common"
+
+[handling]
+ordinary_handlers = ["bishop", "cleric", "sacristan"]
+server_relation = "recognizes-only"
+prepares = ["sacristan", "cleric"]
+stores = ["sacristan"]
+
+[audience_relevance]
+altar_server = "useful"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-faldstool-identity"
+kind = "liturgical-use"
+text = "The Ceremonial distinguishes the bishop's use of a faldistorium from his use of the proper pontifical seat or episcopal throne."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-faldstool-ce"]
+
+[[sources]]
+id = "src-faldstool-ce"
+binding = "ed-ce-1948-working-witness"
+locus = "Caeremoniale Episcoporum (1948), lib. I, cap. II, VII, and VIII; inspected OCR lines 650-668, 1219-1236, and 1343-1356."
+role = "ceremonial-book"
+verification_state = "inspected"
+checked_on = 2026-07-27
+
+[[artwork]]
+id = "art-faldstool-comparison"
+view = "comparison"
+asset = "shared/artwork/pencil/RSD-ART-002-pontifical-seating.png"
+review_state = "identity-checked"
+depicts = ["obj-faldstool", "obj-episcopal-throne", "obj-bishops-chair", "obj-episcopal-kneeler"]
+scale_mode = "not-to-common-scale"

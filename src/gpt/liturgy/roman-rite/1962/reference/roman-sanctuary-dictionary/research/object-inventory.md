@@ -1,6 +1,6 @@
 # Object inventory
 
-Status: **scaffold only; zero source-audited or publication-ready objects**
+Status: **initial canonical records populated; zero source-audited or publication-ready objects**
 Audit date: 2026-07-27
 
 The authoritative target format is the structured contract under
@@ -13,8 +13,8 @@ authorization to render an entry.
 
 | State | Count |
 | --- | ---: |
-| Lead | 0 canonical records |
-| Identified | 0 |
+| Lead | 2 canonical records |
+| Identified | 7 |
 | Source-audited | 0 |
 | Art-reviewed | 0 |
 | Publication-ready | 0 |
@@ -36,7 +36,7 @@ all counts.
 | Incense | thurible, boat, spoon, stand, container | Components, safe disposition, and substantive forms |
 | Priestly vestments | amice, alb, cincture, maniple, stole, chasuble, cope, biretta | Construction forms, privileges, colors, and decorative variation |
 | Deacon and subdeacon | dalmatic, tunicle, stole arrangement, maniple, folded chasuble, broad stole, humeral veil | Ceremony and reform horizon; worn arrangement |
-| Pontifical and prelatial | stockings, sandals, gloves, ring, pectoral cross, under-vestments, pallium, mitres, crosier, gremial, rationale, choir dress | Rank, privilege, function, and use-specific status |
+| Pontifical and prelatial | stockings, sandals, gloves, ring, pectoral cross, under-vestments, pallium, mitres, crosier, gremial, rationale, choir dress; throne/faldstool compositions, books and supports, hand candle, hand-washing articles, vimpae, insignia supports, additional credences, conditional altar and processional articles | Rank, privilege, function, use-specific status, and the complete preparation-transfer-disposition chain; see `pontifical-ceremony-candidate-audit.md` |
 | Servers, ministers, choir | cassock, surplice, cotta, rochet, apparelled forms, role-specific carried objects | Vesture by rank, region, institution, and religious community |
 | Requiem | bier, catafalque, funeral pall, candles, absolution equipment | Mass versus absolution; universal versus local arrangement |
 | Nuptial and ritual | nuptial cloth/veil, kneelers, stools, ceremony-specific books and vessels | Universal provision versus regional custom |
@@ -56,6 +56,29 @@ Before a candidate receives an `obj-...` ID, record at minimum:
 6. claim-level source IDs, exact loci, evidence states, rights, and limits;
 7. artwork requirements and audience relevance;
 8. unresolved contradictions and publication hold state.
+
+## Focused Pontificale discovery evidence
+
+The comparative contents printed on pp. IX--XII of Sodi and Toniolo's
+publicly hosted introduction to the 2008 Vatican facsimile was inspected on
+2026-07-27. It supports only the bounded statement that the 1961--1962
+Pontifical includes rites or blessings bearing the following object-relevant
+titles. It does **not** verify an object's form, component parts, dimensions,
+ordinary presence at Mass, handler, or the full contents of the rite.
+
+| Part and facsimile-introduction locus | Named rite/blessing that opens an inventory lead | Candidate inventory implications | State |
+| --- | --- | --- | --- |
+| Pars prima; introduction p. IX | *De pallio* | pallium; its relationship to patriarchal/archiepiscopal use | Identified source lead; full rite uninspected |
+| Pars secunda; introduction pp. IX--X | rites for the first stone, church dedication, altar consecration, portable altar, bell, cemetery, chalice and paten, antimension | foundation stone; altar and altar sepulchre/relic context; portable altar; bell; chalice; paten; antimension | Identified source leads; full rites uninspected |
+| Pars secunda; introduction p. X | general blessing of sacred vessels and church/altar ornaments; blessing of tabernacle, pyx, ostensorium, and *theca* | tabernacle; pyx; monstrance/ostensorium; *theca*; unresolved class of sacred vessels and ornaments | Identified source leads; terminology and scope unresolved |
+| Pars secunda; introduction p. X | blessings of altar cloths, corporal, pall, purificator, and priestly vestments | altar cloths; corporal; chalice pall; purificator; priestly-vestment class | Identified source leads; material, fold, marking, and handling unverified |
+| Pars secunda; introduction p. X | blessings of a new cross, pectoral cross, images, reliquary cases, holy water, incense, and altar/church furnishings | altar/processional/other cross types unresolved; pectoral cross; images; reliquary cases; holy-water and incense equipment | Identified source leads; object boundaries unverified |
+| Pars tertia; introduction pp. X--XI | Holy Thursday office in which oils are blessed and chrism is confected | vessels for oils, balsam, and chrism; related episcopal composition | Identified source leads; actual vessel names and forms require the full rite |
+| Appendix; introduction p. XII | pontifical rites for Baptism and Matrimony and pontifical blessing within Solemn Mass | ceremony-specific vessels, books, furnishings, and insignia to test against full rubrics | Category lead only; no object inferred |
+
+This evidence adds search targets but does not change the workflow counts
+above: there remain zero canonical source-audited or publication-ready object
+records.
 
 ## Publication prohibition
 

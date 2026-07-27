@@ -22,24 +22,25 @@ in terminal apparatus, not on the plates.
 Artwork IDs are semantic inventory identities, never page numbers:
 
 ```text
-RPD-FIG-<category>-<four digits>-<view>
-RPD-PLT-<section>-<three digits>
-RPD-SCN-<ceremony>-<three digits>-<state>
+art-<object-key>-<view-or-state>
+art-<composition-key>-composition
+plt-<section-key>-<comparison-key>
 ```
 
-- `RPD-FIG` identifies one object or inseparable object set in one stable
-  view. Allowed view suffixes begin with `iso`, `front`, `back`, `side`,
-  `top`, `open`, `folded`, `worn`, `placed`, `detail`, or `in-use`; add a
-  lowercase kebab-case qualifier only when needed.
-- `RPD-PLT` identifies a composed, TeX-labelled comparison plate. A plate
+- `art-...` identifies one object, inseparable object set, or contextual
+  composition in one stable view or state. Its `object_ids` field, rather than
+  a filename inference, is the authoritative link to the canonical inventory.
+  Allowed view values are controlled by
+  `shared/schema/artwork-manifest-schema.toml`.
+- `plt-...` identifies a composed, TeX-labelled comparison plate. A plate
   consumes approved figures and ordinarily introduces no new generated
   pixels.
-- `RPD-SCN` identifies a contextual composition whose spatial relationships
+- An artwork record with view `composition` identifies a contextual scene
+  whose spatial relationships
   are themselves the subject: a sanctuary, vested minister, ceremony-specific
   arrangement, or object-transfer state.
-- Category and section keys are stable lowercase kebab case, for example
-  `linens`, `sacred-vessels`, `pontifical-insignia`, `holy-week`, and
-  `historical-medieval`.
+- All IDs follow the repository-wide lowercase kebab-case namespace contract
+  in `shared/schema/inventory-schema.toml`.
 - A correction receives a new complete ID. The rejected precursor remains in
   the manifest as a non-consumed provenance object. Do not add `corrected`,
   `final`, `new`, a date, or a page number to an ID.
@@ -56,6 +57,15 @@ generator interface, date, received and normalized technical properties,
 hash, baked-in-content audit, TeX overlays, consumers, rights state, and review
 state. Exact prompts must be preserved verbatim for future assets; a normalized
 prompt summary does not replace them.
+
+The canonical entry format is
+`shared/schema/artwork-manifest-schema.toml`; production records live only in
+`research/artwork-manifest.toml`. The exact prompt is preserved as a multiline
+TOML string. If an interface does not expose a model or version, say so in the
+generator field; do not infer it. Record every supplied project-artwork or
+canonical source-artifact ID and its role in the brief. A plate assembled
+entirely in TeX from approved figures belongs in the plate manifest and names
+those dependencies; it is not a generated artwork record.
 
 ## Figure and plate grouping
 
@@ -146,10 +156,51 @@ silhouette, construction, viewpoint, scale, lighting, graphite treatment,
 crop, and all already approved details>.
 ```
 
+For a cutaway or construction detail, append:
+
+```text
+Cutaway purpose: reveal <verified interior construction or layer relationship>.
+Cut plane and retained shell: <exact plane; what remains intact>.
+Visible interior: <only the verified layers, seams, stiffening, cavity,
+fastening, lining, support, or contents>.
+Graphic treatment: use a clean graphite sectional edge and slightly lighter
+interior tones; no color coding, exploded parts, invented mechanism, or
+engineering-style labels.
+Pairing: match <approved exterior figure ID> in orientation, proportions,
+scale, crop, lighting, and ornament.
+```
+
+A cutaway is permitted only when hidden construction materially aids
+identification or correct handling and the interior is source-supported.
+Where evidence supports layers but not exact concealed construction, use an
+opened, unfolded, or displaced-layer view instead and state the limit. Never
+let a visually plausible invented interior become evidence.
+
 For a contextual scene, state every actor, object, orientation, support,
 contact, and spatial relationship. Do not ask the model to infer a rubric from
 the ceremony name. TeX continues to own role names, movement routes, level
 numbers, and explanatory callouts.
+
+Use this sanctuary-composition supplement:
+
+```text
+Scene identity: <exact ceremony and state, edition horizon, universal or
+qualified local model>.
+Viewer and orientation: nave-facing / overhead / oblique; explicitly map
+picture-left and picture-right to liturgical Gospel and Epistle sides.
+Architecture: <verified altar type, number of levels, predella, rail, throne,
+credence, sedilia, doors, and only other required features>.
+Appointments: <complete enumerated object list with exact placement and count>.
+People: <complete enumerated ministers, posture, facing, vesture, carried
+objects, support/contact relationships, and relative station>.
+Empty zones: preserve clear label lanes and crop safety at <locations>.
+Do not infer: omit every architectural feature, person, object, flame, book,
+textile, or ornament not enumerated above.
+```
+
+Generate frontal and overhead members of a pair separately from the same
+verified composition record. Do not ask the model to create a multi-panel
+labelled diagram. TeX assembles panels and owns correspondence marks.
 
 Prompts must not request imitation of a named living artist. They must not
 name an unverified ceremonial fact, silently merge variants, or use a museum
@@ -239,3 +290,55 @@ selected outputs must be copied into the authoritative workspace artwork path
 and entered in the artwork manifest. Rejected alternatives need not be kept
 unless they are used as correction inputs; retained precursors are manifest
 records and may never be rendered by a publication consumer.
+
+## Asset-manifest workflow
+
+1. **Inventory lock.** Assign the object, variant, period, status, ceremony,
+   and handling data; cite sources controlling depicted construction and use.
+   Artwork does not begin while a visual invariant is an unverified lead.
+2. **Figure plan.** Assign the semantic figure ID and view/state. Name its
+   comparison family, intended plate, print placements, scale policy, and
+   whether ambiguity requires another view, context inset, or cutaway.
+3. **Prompt record.** Save the exact prompt before generation, with every
+   input image and role. Generate one distinct asset or variant per call
+   through the built-in interface unless the user explicitly authorizes the
+   documented CLI fallback.
+4. **Received candidate.** Inspect at full size before copying it into the
+   workspace. If selected, record dimensions, mode, and exposed interface
+   metadata. Do not overwrite an existing asset.
+5. **Factual gate.** Compare pixels against the locked invariants. Reject with
+   a concrete defect or advance; do not repair an evidentiary error only in
+   caption text.
+6. **Correction.** Give a correction a new ID, preserve its exact edit prompt,
+   name the precursor, and list all invariants to preserve. A retained rejected
+   precursor has no consumers.
+7. **Normalization.** Copy the selected asset to the authoritative artwork
+   path; create a loss-minimizing 8-bit grayscale PNG; record before/after
+   bytes, mode, dimensions, transformed hash, comparison metric, and full-size
+   comparison. Never normalize acquired evidence artifacts.
+8. **Plate assembly.** Compose approved figures with TeX-owned names, Latin
+   headwords, scale treatment, status and handling marks, note keys, and
+   callouts. Record every figure dependency in the plate entry.
+9. **Plate and consumer gates.** Review the portrait page at actual size and
+   under photocopy conditions, then build and inspect every comprehensive and
+   derived consumer. Record each gate independently.
+10. **Installation and release.** Only normalized, consumer-reviewed assets
+    may enter reviewed PDFs. Artwork approval, PDF installation, release
+    approval, public push, and deployment remain distinct authorizations.
+
+The dependency graph is:
+
+```text
+verified inventory record
+  -> exact prompt record
+  -> received candidate
+  -> approved normalized RPD-FIG or RPD-SCN
+  -> TeX-composed RPD-PLT
+  -> comprehensive dictionary
+  -> one or more use-based extracts
+```
+
+A change to a source-controlled feature invalidates the figure's factual gate
+and every downstream plate and consumer review. A caption-only, label-only, or
+selection-only change invalidates only the affected plate and consumers unless
+it reveals that the pixels themselves are wrong.

@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-07-27"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:2af533a0d14f976942fcaffa29075a6fa8cef3a305011f90fdc5435cece5d6b2"
+inventory_snapshot = "sha256:5da0fdd32f73be02d8e2ba64bc571bcd5d5d1e464a79f8077d17fe226eaaaf59"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:96ce76990fd5fa8a2d709c14791d2c2d96e63ed25706124ef37e77208bec5ae1"
-canonical_catalog_snapshot = "sha256:ba3fe75f7a8f80c104f55e33cb20186648de7a3e8a41649ed0bce0084aa5d799"
+canonical_catalog_snapshot = "sha256:9ab0387cc18ab47967a086fa57aedaadd57bfacddca96f3b512c44690f000b50"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:2b593321e20df650f0e49111d79d21293fbd921696910128b8f9600dbc89d4cb"
+snapshot = "sha256:ff265299fc4c89285a9e58bd0e82cd6263c73351876ae9d4ea1d2ab5b0af4da6"
 
 [[families]]
 id = "family.abraham-ibn-ezra.perush-al-ha-torah"
@@ -49,6 +49,26 @@ canonical_ids = ["artifact.holy-see.acta-apostolicae-sedis.volume-101-2009-fasci
 trace_patterns = ["Acta Apostolicae Sedis", "Acta Sanctae Sedis", "italian-aas-106-2014", "latin-aas-107-2015", "latin-aas-56-1964", "latin-aas-57-1965", "latin-aas-58-1966", "latin-aas-59-1967", "latin-aas-82-1990", "latin-ass-6-1870-1871"]
 reviewed_on = "2026-07-27"
 notes = "Volumes 56 (1964), 57 (1965), and 58 (1966) now have canonical container editions and exact restricted Holy See PDF artifacts. The series now also owns the Acta Sanctae Sedis work and the volume 6 (1870-1871) container edition with its exact restricted 776-page Holy See OCR PDF artifact, whose Postquam Dei munere constituent is pinned by the separate Vatican I family without absorbing the container. Other cited volumes and acts remain only partially resolved; each promulgated act remains a distinct work, and OCR remains a finding aid until checked against the official pages. The wave-eight registrations add AAS volumes 22 (1930), 23 (1931), and 60 (1968) as catalog-level container editions without exact artifacts, per the volume-6 ASS container precedent: they map the Bellarmine canonization-miracle decree and Pius XI's decretal letter Lux illa, his apostolic letter Providentissimus Deus declaring Bellarmine a Doctor (distinct from Leo XIII's 1893 encyclical of the same incipit), and Paul VI's apostolic letter Roma altera, all of which remain distinct unregistered constituent works; consumers using the vatican.va OCR scans record their access routes and dates locally. The wave-ten registrations add five more container editions with exact restricted Holy See artifacts: the complete 1967 and 1990 volumes as OCR PDFs, carrying Sacerdotalis caelibatus at pp. 657-697 and the promulgation of the Eastern Code with Sacri canones at pp. 1033-1363, and three monthly fascicles, 106 (2014) fascicle 6, 107 (2015) fascicle 3, and 107 (2015) fascicle 10, which are born-digital text-layer PDFs rather than scans because from 2003 the Holy See's archive serves monthly fascicles instead of whole-volume scans. Their constituent acts keep their own families and reach these bytes through bounded segments, as the Pontificia Praecepta, In Erythraea nova constituitur, Sacri canones, Eastern Code, and Sacerdotalis caelibatus rows now do. The volume 82 rasters render and were read visually for the cited canons; the volume 59 rasters could not be rendered by the tools available, so readings from it are text-layer readings corroborated elsewhere, and its OCR layer remains a finding aid in either case. The wave-eleven registrations add fourteen further container editions with exact restricted Holy See artifacts, acquired for the Society of Saint Pius X history: eight whole-volume OCR scans, 39 (1947), 40 (1948), 54 (1962), 66 (1974), 67 (1975), 68 (1976), 76 (1984), and 80 (1988), and six born-digital monthly fascicles, 101 (2009) fascicles 2, 4, and 8, 107 (2015) fascicle 9, 108 (2016) fascicle 12, and 109 (2017) fascicle 4, the fascicle form again following the Holy See's practice from 2003. They carry the Propaganda Fide and consistorial provisions on Marcel Lefebvre's appointments, Paul VI's consistorial allocution of 24 May 1976, Quattuor abhinc annos, John Paul II's letter of 8 April 1988 and Ecclesia Dei, the 2009 note, remission decree, papal letter, and Ecclesiae unitatem, and the 2015-2017 concessions of confession and marriage faculties. Volumes 66 (1974) and 67 (1975) were acquired and read for a negative result and carry no cited act; that is a bounded absence in those volumes' text layers, not a claim about the Acta as a whole. As before, the constituent acts remain distinct unregistered works read at the cited pages through each volume's own text layer, which stays a finding aid; the separately registered acts on Lefebvre and the Society keep their own family. No container edition is registered for the volumes carrying the separately registered La Salette acts (ASS 11 (1878) and AAS 7 (1915), 8 (1916), 15 (1923), and 38 (1946)); if one is registered later it belongs here, and their act-level editions stay with family.la-salette.ecclesial-acts."
+
+[[families]]
+id = "family.adrian-fortescue.ceremonies-of-the-roman-rite-described"
+label = "The Ceremonies of the Roman Rite Described"
+kind = "work"
+source_categories = ["liturgical"]
+identity_confidence = "confirmed"
+identity_gaps = ["artifact", "locus"]
+artifact_availability = "candidate-partial"
+storage_plan = ["remote"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "edition-locus"
+disposition = "canonicalize"
+priority = "p1"
+canonical_ids = ["artifact.adrian-fortescue.ceremonies-of-the-roman-rite-described.twelfth-revised-1962.google-books-catalog", "edition.adrian-fortescue.ceremonies-of-the-roman-rite-described.twelfth-revised-1962", "work.adrian-fortescue.ceremonies-of-the-roman-rite-described"]
+trace_patterns = ["adrian-fortescue\\.ceremonies-of-the-roman-rite-described"]
+reviewed_on = "2026-07-27"
+notes = "The exact twelfth revised 1962 edition is bibliographically identified through a restricted Google Books catalog record. No protected page text is retained or treated as inspected; exact object claims require later lawful page access."
 
 [[families]]
 id = "family.adrian-fortescue.the-mass-a-study-of-the-roman-liturgy"
@@ -629,6 +649,26 @@ canonical_ids = ["artifact.brooke-foss-westcott.the-gospel-according-to-st-john.
 trace_patterns = ["brooke-foss-westcott\\.the-gospel-according-to-st-john"]
 reviewed_on = "2026-07-27"
 notes = "Reviewed as an independent intellectual work. Its registered editions, artifacts, segments, and passages remain members of this family without absorbing related works or containers."
+
+[[families]]
+id = "family.catholic-church.caeremoniale-episcoporum"
+label = "Caeremoniale Episcoporum"
+kind = "work"
+source_categories = ["liturgical"]
+identity_confidence = "confirmed"
+identity_gaps = ["date", "relation"]
+artifact_availability = "canonicalized"
+storage_plan = ["remote"]
+rights_review = "partially-reviewed"
+mutability = "fixed"
+freshness_rule = "not-applicable"
+evidence_ceiling = "passage-pin"
+disposition = "bind-existing"
+priority = "p1"
+canonical_ids = ["artifact.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.libri-nostri-scan-pdf-af65e16a", "edition.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948", "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-1.chapters-11-12", "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-1.chapters-16-17", "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.book-2.chapter-8", "passage.catholic-church.caeremoniale-episcoporum.marietti-third-after-typical-1948.title-and-approval", "work.catholic-church.caeremoniale-episcoporum"]
+trace_patterns = ["Caeremoniale Episcoporum", "catholic-church\\.caeremoniale-episcoporum"]
+reviewed_on = "2026-07-27"
+notes = "The 1948 Marietti third-after-typical edition and bounded passages are registered from an exact scan. It controls only where later competent books or decrees did not modify it; its Holy Week chapters cannot establish restored-1955/1962 practice."
 
 [[families]]
 id = "family.catholic-church.catechism"
@@ -6763,7 +6803,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"
-surface_snapshot = "sha256:41c8f6166f4e518074a37eea7b7fa8ef15de1b8231e5f9eca8b94a483851e2d3"
+surface_snapshot = "sha256:b43175d9498fdcb4bb1761fff3cc41e05acd22bd4de9d683652a309f64729108"
 review_state = "pending"
 
 [[review_units]]

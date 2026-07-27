@@ -1,0 +1,82 @@
+schema_version = 1
+id = "obj-missal-stand"
+workflow_state = "identified"
+preferred_english_name = "Missal stand"
+latin_headword = "legile"
+alternate_english_names = ["altar bookstand"]
+alternate_latin_names = []
+sort_name = "Stand, Missal"
+categories = ["books-and-printed-objects", "altar-and-appointments"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass"]
+confusable_with = ["obj-lectern", "obj-missal-cushion"]
+related_objects = ["obj-altar-missal"]
+component_objects = []
+
+[presence]
+locations = ["On the altar beneath the Missal when this alternative is used."]
+contexts = ["A low support for the altar Missal."]
+composition_ids = ["plt-books"]
+local_variability = "common"
+
+[handling]
+ordinary_handlers = ["priest", "deacon", "subdeacon", "master-of-ceremonies", "acolyte", "sacristan"]
+server_relation = "moves-only-by-direction"
+prepares = ["sacristan"]
+presents = []
+receives = []
+stores = ["sacristan"]
+warnings = ["Keep the book and support stable when moving them together."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "useful"
+pontifical = "useful"
+
+[[claims]]
+id = "clm-missal-stand-identity"
+kind = "identity"
+text = "The 1962 Missal names the legile as the stand alternative beneath the Missal."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-missal-stand-1962"]
+
+[[claims]]
+id = "clm-missal-stand-appearance"
+kind = "appearance"
+text = "The figure's folding wooden construction is representative only; the governing locus prescribes no morphology or material."
+evidence_state = "editorial-proposal"
+source_ids = []
+
+[[claims]]
+id = "clm-missal-stand-use"
+kind = "liturgical-use"
+text = "The stand supports the altar Missal as an alternative to a cushion."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-missal-stand-1962"]
+
+[[claims]]
+id = "clm-missal-stand-presence"
+kind = "ceremonial-presence"
+text = "A cushion or stand is placed beneath the Missal."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-missal-stand-1962"]
+
+[[sources]]
+id = "src-missal-stand-1962"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "General Rubrics 527, printed XXXVI/artifact PDF 34: cussinus, seu legile, Missali supponendum"
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-27
+
+[[artwork]]
+id = "art-altar-missal-on-stand"
+view = "in-use"
+asset = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/books/RPD-FIG-books-0001-in-use-missal-on-stand.png"
+review_state = "identity-checked"
+depicts = ["obj-altar-missal", "obj-missal-stand", "obj-book-marker"]
+scale_mode = "not-applicable"
+review_note = "Representative morphology remains held pending a material-culture witness."

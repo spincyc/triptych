@@ -1,0 +1,80 @@
+schema_version = 1
+id = "obj-sacristy"
+workflow_state = "source-audited"
+preferred_english_name = "Sacristy"
+latin_headword = "sacristia"
+alternate_english_names = ["vestry"]
+alternate_latin_names = ["sacrarium"]
+categories = ["church-and-sanctuary"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass", "ceremony-surrounding-mass"]
+
+[presence]
+locations = ["A room in or attached to the church, commonly near the sanctuary."]
+contexts = ["Clergy and ministers assemble, prepare, vest, and return here; vestments and church furnishings are kept here."]
+composition_ids = ["plt-sacristy-preparation"]
+local_variability = "common"
+
+[handling]
+ordinary_handlers = ["priest", "deacon", "subdeacon", "master-of-ceremonies", "acolyte", "sacristan", "other-server"]
+server_relation = "recognizes-only"
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "useful"
+
+[[claims]]
+id = "clm-sacristy-identity"
+kind = "identity"
+text = "The sacristy is the church room in which vestments and furnishings are kept and clergy assemble and vest."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-sacristy-ce"]
+
+[[claims]]
+id = "clm-sacristy-appearance"
+kind = "appearance"
+text = "Its plan and furniture are locally variable; the record identifies a room by function, not by one architectural form."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-sacristy-ce"]
+
+[[claims]]
+id = "clm-sacristy-use"
+kind = "liturgical-use"
+text = "The 1962 preparation and departure rites presuppose the sacristy as the place of washing, vesting, prayer, and procession formation."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-sacristy-missal"]
+
+[[claims]]
+id = "clm-sacristy-presence"
+kind = "ceremonial-presence"
+text = "Servers ordinarily encounter the sacristy immediately before and after Mass."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-sacristy-missal"]
+
+[[sources]]
+id = "src-sacristy-ce"
+binding = "rsd-catholic-encyclopedia-sacristy"
+locus = "lines 68--71"
+role = "specialist-secondary"
+verification_state = "claim-verified"
+checked_on = 2026-07-27
+
+[[sources]]
+id = "src-sacristy-missal"
+binding = "rsd-mr1962-rs-i-ii"
+locus = "Ritus servandus I.1; II.1"
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-27
+
+[[artwork]]
+id = "art-sacristy-composition"
+view = "composition"
+asset = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RSD-ART-001-sacristy-preparation.png"
+review_state = "generated"
+depicts = ["obj-sacristy"]
+scale_mode = "not-to-common-scale"

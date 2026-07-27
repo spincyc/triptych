@@ -1,0 +1,60 @@
+schema_version = 1
+id = "obj-credence-table"
+workflow_state = "identified"
+preferred_english_name = "Credence table"
+latin_headword = "abacus"
+alternate_english_names = ["credence"]
+alternate_latin_names = ["credentia"]
+categories = ["church-and-sanctuary", "service-objects"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass"]
+
+[presence]
+locations = ["Sanctuary, at a locally appointed side position."]
+contexts = ["Preparation and temporary placement of vessels, books, linens, and service objects required by the selected ceremony."]
+composition_ids = ["plt-sanctuary-seating", "plt-altar-composition"]
+local_variability = "common"
+
+[handling]
+ordinary_handlers = ["sacristan", "master-of-ceremonies", "acolyte", "cleric"]
+server_relation = "varies-by-ceremony"
+prepares = ["sacristan", "master-of-ceremonies"]
+stores = ["sacristan"]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-credence-table-identity"
+kind = "liturgical-use"
+text = "The credence is the appointed sanctuary furnishing on which objects needed for the ceremony are prepared or temporarily placed; its construction and exact location are not fixed by this representative drawing."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-credence-ce", "src-credence-guide-audit"]
+
+[[sources]]
+id = "src-credence-ce"
+binding = "ed-ce-1948-working-witness"
+locus = "Caeremoniale Episcoporum (1948), lib. I, cap. V and cap. VIII; inspected OCR lines 938-943 and 1632-1638."
+role = "ceremonial-book"
+verification_state = "inspected"
+checked_on = 2026-07-27
+
+[[sources]]
+id = "src-credence-guide-audit"
+binding = "altar-server-guides-source-audit"
+locus = "research/source-audit.md, Missale Romanum General Rubrics 528 and Ritus servandus XI.3 bindings."
+role = "governing-liturgical-book"
+verification_state = "located"
+
+[[artwork]]
+id = "art-credence-table-comparison"
+view = "comparison"
+asset = "shared/artwork/pencil/RSD-ART-001-sanctuary-furnishings.png"
+review_state = "identity-checked"
+depicts = ["obj-sedilia", "obj-sanctuary-stool", "obj-credence-table", "obj-communion-rail", "obj-prie-dieu"]
+scale_mode = "not-to-common-scale"

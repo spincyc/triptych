@@ -1,0 +1,74 @@
+schema_version = 1
+id = "obj-gospel-book"
+workflow_state = "identified"
+preferred_english_name = "Gospel book"
+latin_headword = "liber Evangeliorum"
+alternate_english_names = ["Evangeliary"]
+alternate_latin_names = []
+sort_name = "Gospel book"
+categories = ["books-and-printed-objects"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass"]
+confusable_with = ["obj-epistle-book"]
+related_objects = ["obj-epistle-book"]
+component_objects = []
+artwork = []
+
+[presence]
+locations = ["At the altar and then in the Gospel formation as the rite directs."]
+contexts = ["A separate book containing the Gospel text used in the solemn ceremonial."]
+composition_ids = ["plt-books"]
+local_variability = "possible"
+
+[handling]
+ordinary_handlers = ["deacon", "subdeacon", "master-of-ceremonies", "sacristan", "cleric"]
+server_relation = "recognizes-only"
+prepares = ["sacristan", "cleric"]
+presents = []
+receives = []
+stores = ["sacristan"]
+warnings = ["At ordinary Solemn Mass the source describes the subdeacon holding the open book; do not insert a freestanding lectern into that formation."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-gospel-book-identity"
+kind = "identity"
+text = "The 1962 Ritus names the separate liber Evangeliorum used by the deacon and subdeacon at Solemn Mass."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-gospel-book-1962"]
+
+[[claims]]
+id = "clm-gospel-book-appearance"
+kind = "appearance"
+text = "No universal binding morphology has yet been established for the planned figure."
+evidence_state = "editorial-proposal"
+source_ids = []
+
+[[claims]]
+id = "clm-gospel-book-use"
+kind = "liturgical-use"
+text = "The deacon places and takes the book at the altar; the subdeacon holds it while the Gospel is sung."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-gospel-book-1962"]
+
+[[claims]]
+id = "clm-gospel-book-presence"
+kind = "ceremonial-presence"
+text = "It is present as a distinct book in the Solemn-Mass Gospel ceremonial."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-gospel-book-1962"]
+
+[[sources]]
+id = "src-gospel-book-1962"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Ritus servandus VI.5, printed LVIII/artifact PDF 60"
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-27

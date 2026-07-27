@@ -1,0 +1,52 @@
+schema_version = 1
+id = "obj-sanctuary-stool"
+workflow_state = "identified"
+preferred_english_name = "Sanctuary stool"
+latin_headword = "scabellum"
+alternate_english_names = ["assistant's stool"]
+categories = ["church-and-sanctuary"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["pontifical-mass"]
+
+[presence]
+locations = ["Near the bishop or other assigned seat, according to the ceremony and local arrangement."]
+contexts = ["A subordinate seat for an assistant or minister."]
+composition_ids = ["plt-sanctuary-seating", "plt-pontifical-composition"]
+local_variability = "common"
+
+[handling]
+ordinary_handlers = ["cleric", "sacristan"]
+server_relation = "recognizes-only"
+prepares = ["sacristan"]
+stores = ["sacristan"]
+
+[audience_relevance]
+altar_server = "useful"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "useful"
+pontifical = "required"
+
+[[claims]]
+id = "clm-sanctuary-stool-identity"
+kind = "identity"
+text = "The Ceremonial uses scabellum for a subordinate seat placed near the bishop for an assistant."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-sanctuary-stool-ce"]
+
+[[sources]]
+id = "src-sanctuary-stool-ce"
+binding = "ed-ce-1948-working-witness"
+locus = "Caeremoniale Episcoporum (1948), lib. I, cap. VII; inspected OCR lines 1149-1155, 1219-1236, and 1299-1305."
+role = "ceremonial-book"
+verification_state = "inspected"
+checked_on = 2026-07-27
+
+[[artwork]]
+id = "art-sanctuary-stool-comparison"
+view = "comparison"
+asset = "shared/artwork/pencil/RSD-ART-001-sanctuary-furnishings.png"
+review_state = "identity-checked"
+depicts = ["obj-sedilia", "obj-sanctuary-stool", "obj-credence-table", "obj-communion-rail", "obj-prie-dieu"]
+scale_mode = "not-to-common-scale"

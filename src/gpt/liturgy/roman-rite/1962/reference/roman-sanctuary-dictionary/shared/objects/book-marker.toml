@@ -1,0 +1,92 @@
+schema_version = 1
+id = "obj-book-marker"
+workflow_state = "identified"
+preferred_english_name = "Book marker"
+latin_headword = "signaculum"
+alternate_english_names = ["Missal marker", "ribbon marker"]
+alternate_latin_names = ["signacula"]
+sort_name = "Marker, Book"
+categories = ["books-and-printed-objects"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass", "palm-sunday", "holy-thursday", "good-friday", "easter-vigil"]
+parent_object = "obj-altar-missal"
+confusable_with = []
+related_objects = ["obj-altar-missal"]
+component_objects = []
+
+[presence]
+locations = ["Within the prepared Missal."]
+contexts = ["Marks the places selected for the Mass."]
+composition_ids = ["plt-books"]
+local_variability = "common"
+
+[handling]
+ordinary_handlers = ["priest", "master-of-ceremonies", "sacristan", "cleric"]
+server_relation = "recognizes-only"
+prepares = ["priest", "master-of-ceremonies", "sacristan", "cleric"]
+presents = []
+receives = []
+stores = []
+warnings = ["Do not rearrange a prepared book's markers without direction."]
+
+[audience_relevance]
+altar_server = "useful"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "useful"
+pontifical = "required"
+
+[[claims]]
+id = "clm-book-marker-identity"
+kind = "identity"
+text = "The 1962 Ritus calls the Missal's place markers signacula."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-book-marker-1962"]
+
+[[claims]]
+id = "clm-book-marker-appearance"
+kind = "appearance"
+text = "The detail figure uses six ribbons as a representative physical proposal; the source prescribes neither ribbon construction nor count."
+evidence_state = "editorial-proposal"
+source_ids = []
+
+[[claims]]
+id = "clm-book-marker-use"
+kind = "liturgical-use"
+text = "Before vesting, the celebrant arranges the markers at the places he will say."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-book-marker-1962"]
+
+[[claims]]
+id = "clm-book-marker-presence"
+kind = "ceremonial-presence"
+text = "Markers are prepared in the Missal for the Mass."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-book-marker-1962"]
+
+[[sources]]
+id = "src-book-marker-1962"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Ritus servandus I.1, printed LIV/artifact PDF 56"
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-27
+
+[[artwork]]
+id = "art-book-marker-ribbons-detail"
+view = "detail"
+asset = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/books/RPD-FIG-books-0004-detail-marker-ribbons.png"
+review_state = "identity-checked"
+depicts = ["obj-book-marker", "obj-altar-missal"]
+scale_mode = "not-applicable"
+review_note = "Checked six separate ribbons, binding contact, grayscale mode, crop, and absence of text. Count and ribbon construction are illustrative."
+
+[[artwork]]
+id = "art-altar-missal-on-stand"
+view = "in-use"
+asset = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/books/RPD-FIG-books-0001-in-use-missal-on-stand.png"
+review_state = "identity-checked"
+depicts = ["obj-altar-missal", "obj-missal-stand", "obj-book-marker"]
+scale_mode = "not-applicable"
+review_note = "The marker ribbons appear in practical relation to the open Missal; count and construction are illustrative."

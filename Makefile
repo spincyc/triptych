@@ -157,8 +157,8 @@ ALTAR_SERVER_GUIDES_BUILD_PDFS := $(filter \
 ROMAN_SANCTUARY_DICTIONARY_ROOT := $(SOURCE_ROOT)/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary
 ROMAN_SANCTUARY_DICTIONARY_SHARED := $(shell find $(ROMAN_SANCTUARY_DICTIONARY_ROOT)/shared -type f \( \
 	-name '*.tex' -o -name '*.sty' -o -name '*.cls' -o -name '*.bib' -o \
-	-name '*.bst' -o -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' -o \
-	-name '*.pdf' -o -name '*.eps' \) 2>/dev/null | sort)
+	-name '*.bst' -o -name '*.toml' -o -name '*.png' -o -name '*.jpg' -o \
+	-name '*.jpeg' -o -name '*.pdf' -o -name '*.eps' \) 2>/dev/null | sort)
 ROMAN_SANCTUARY_DICTIONARY_BUILD_PDFS := $(filter \
 	$(BUILD_ROOT)/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/%,$(BUILD_PDFS))
 # 1962 proper full-text editions: each imports its study edition's sections and
@@ -370,6 +370,9 @@ check-source-family-migration-tool:
 
 check-source-family-screening:
 	@$(PYTHON) $(SOURCE_FAMILY_MIGRATION_TOOL) check --require-family-screened
+
+check-roman-sanctuary-artwork:
+	@$(PYTHON) scripts/check-roman-sanctuary-artwork
 
 check-curriculum-sources: check-tools
 	@$(PYTHON) $(CURRICULUM_STRUCTURE_CHECKER) \
@@ -584,7 +587,7 @@ rebaseline-doc:
 # Staleness stays out of `check`: it flags re-evaluation work, not breakage.
 check: check-metadata check-web-editions check-web-editions-current \
 	check-proper-components \
-	check-sources check-public-alpha check-release-bindings
+	check-sources check-roman-sanctuary-artwork check-public-alpha check-release-bindings
 
 check-tests:
 	@$(PYTHON) -m unittest discover -s scripts/tests

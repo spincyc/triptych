@@ -1,0 +1,82 @@
+schema_version = 1
+id = "obj-lectern"
+workflow_state = "identified"
+preferred_english_name = "Lectern"
+latin_headword = "legile"
+alternate_english_names = ["reading stand", "book lectern"]
+alternate_latin_names = ["legilia"]
+sort_name = "Lectern"
+categories = ["church-and-sanctuary", "books-and-printed-objects"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["palm-sunday", "good-friday", "easter-vigil"]
+confusable_with = ["obj-missal-stand"]
+related_objects = []
+component_objects = []
+
+[presence]
+locations = ["At the reading position appointed by the particular ceremony."]
+contexts = ["A freestanding support for a book; it may be bare or covered as the ceremony directs."]
+composition_ids = ["plt-books"]
+local_variability = "defining"
+
+[handling]
+ordinary_handlers = ["master-of-ceremonies", "acolyte", "other-server", "sacristan", "cleric"]
+server_relation = "varies-by-ceremony"
+prepares = ["sacristan", "master-of-ceremonies"]
+presents = []
+receives = []
+stores = ["sacristan"]
+warnings = ["Do not confuse a freestanding lectern with the low altar Missal stand."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-lectern-identity"
+kind = "identity"
+text = "The 1962 Holy Week rites use freestanding legilia for readings, Passions, and the Paschal proclamation."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-lectern-1962"]
+
+[[claims]]
+id = "clm-lectern-appearance"
+kind = "appearance"
+text = "The wooden pedestal figure is representative only; the governing loci do not prescribe one construction."
+evidence_state = "editorial-proposal"
+source_ids = []
+
+[[claims]]
+id = "clm-lectern-use"
+kind = "liturgical-use"
+text = "A lectern supports a book at the appointed reading position."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-lectern-1962"]
+
+[[claims]]
+id = "clm-lectern-presence"
+kind = "ceremonial-presence"
+text = "Palm Sunday and Good Friday specify bare lecterns; the Easter Vigil specifies a lectern covered with a white cloth."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-lectern-1962"]
+
+[[sources]]
+id = "src-lectern-1962"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Palm Sunday 8 (printed 129/PDF 217); Good Friday 7, 9, 10 (printed 162-164/PDF 243-244); Easter Vigil 13, 13a (printed 184/PDF 265-266)"
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-27
+
+[[artwork]]
+id = "art-lectern-isolated"
+view = "isolated"
+asset = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/books/RPD-FIG-books-0003-iso-lectern.png"
+review_state = "identity-checked"
+depicts = ["obj-lectern"]
+scale_mode = "not-to-common-scale"
+review_note = "Checked one freestanding support, full silhouette, grayscale mode, crop, and absence of text. Morphology remains held."

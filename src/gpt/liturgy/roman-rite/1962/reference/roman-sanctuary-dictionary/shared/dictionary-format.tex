@@ -1,12 +1,35 @@
+% Portrait, image-first plate system shared by the comprehensive dictionary
+% and its use-based derived editions. Artwork remains free of lettering:
+% names, note keys, and context labels are always typeset here.
+
 \usepackage{graphicx}
 \usepackage{multicol}
 \usepackage{titlesec}
 
-\geometry{letterpaper,portrait,margin=0.55in}
+\geometry{
+  letterpaper,
+  portrait,
+  inner=0.64in,
+  outer=0.52in,
+  top=0.48in,
+  bottom=0.55in
+}
 \setlength{\columnsep}{0.22in}
-\setlength{\parskip}{0.35em}
-\titleformat{\section}{\Large\bfseries}{}{0pt}{}
-\titleformat{\subsection}{\large\bfseries}{}{0pt}{}
+\setlength{\parskip}{0.30em}
+\setlength{\tabcolsep}{0pt}
+\titleformat{\section}{\fontsize{18}{20}\selectfont\bfseries}{}{0pt}{}
+\titleformat{\subsection}{\fontsize{13}{15}\selectfont\bfseries}{}{0pt}{}
+\titlespacing*{\section}{0pt}{0.65em}{0.35em}
+\titlespacing*{\subsection}{0pt}{0.55em}{0.25em}
+
+\newlength{\DictionaryPlateGap}
+\setlength{\DictionaryPlateGap}{0.11in}
+\newlength{\DictionaryThreeCellWidth}
+\setlength{\DictionaryThreeCellWidth}{%
+  \dimexpr(\textwidth-2\DictionaryPlateGap)/3\relax}
+\newlength{\DictionaryTwoCellWidth}
+\setlength{\DictionaryTwoCellWidth}{%
+  \dimexpr(\textwidth-\DictionaryPlateGap)/2\relax}
 
 \newcommand{\DictionaryTitle}[3]{%
   \hypersetup{pageanchor=false}%
@@ -22,22 +45,126 @@
     {\small Monochrome portrait reference edition\par}
     \vfill
     {\footnotesize
-      This production scaffold contains labelled plate positions only.
-      Entries become reference content only after source and artwork review.\par}
+      Entries render only from generator-admitted canonical records.
+      An empty selection remains a held production proof, not a completed
+      dictionary.\par}
   \end{titlepage}
   \hypersetup{pageanchor=true}%
 }
 
-\newcommand{\PlatePlaceholder}[2]{%
-  \begin{minipage}[t]{\linewidth}
-    \centering
-    \fbox{%
-      \begin{minipage}[c][1.32in][c]{0.91\linewidth}
-        \centering\small\bfseries #1\\[0.3em]
-        \normalfont\footnotesize #2
-      \end{minipage}}
+% The printed stable ID is authoritative. Hyperlinks are a convenience and
+% may disappear in a paper copy without weakening the source-note mapping.
+\newcommand{\DictionaryNoteKey}[1]{%
+  \hyperlink{dictionary-note-#1}{%
+    \mbox{\fontsize{6.8}{7.5}\selectfont\texttt{[#1]}}}}
+\newcommand{\DictionaryEntryAnchor}[1]{%
+  \hypertarget{dictionary-entry-#1}{}}
+\newcommand{\DictionaryEndnote}[2]{%
+  \par\noindent
+  \hypertarget{dictionary-note-#1}{%
+    \hyperlink{dictionary-entry-#1}{%
+      \mbox{\fontsize{7.4}{8.5}\selectfont\bfseries\texttt{#1}}}}%
+  \enspace{\fontsize{8}{9.5}\selectfont #2\par}}
+
+\newcommand{\DictionaryPlateHeader}[3]{%
+  \Needspace{4\baselineskip}%
+  \noindent
+  \begin{minipage}{\linewidth}
+    {\fontsize{8}{9}\selectfont\bfseries\MakeUppercase{#1}\hfill #3\par}
+    \vspace{1.5pt}\hrule height 0.65pt
+    \vspace{3pt}
+    {\fontsize{17}{19}\selectfont\bfseries #2\par}
   \end{minipage}
-}
+  \vspace{5pt}}
+
+% Art helpers. The first takes arbitrary content and is useful for fixtures or
+% TikZ compositions; the second is the ordinary production raster hook.
+\newcommand{\DictionaryArt}[2]{%
+  \begin{minipage}[c][#1][c]{\linewidth}
+    \centering #2
+  \end{minipage}}
+\newcommand{\DictionaryGraphic}[3][]{%
+  \includegraphics[width=\linewidth,height=#2,keepaspectratio,#1]{#3}}
+\newcommand{\DictionaryContextInset}[2]{%
+  \begin{minipage}[t]{0.28\linewidth}
+    \centering
+    {\fontsize{6.5}{7.2}\selectfont\bfseries\MakeUppercase{#1}\par}
+    \vspace{1pt}#2
+  \end{minipage}}
+\newcommand{\DictionaryArtWithInset}[4]{%
+  \begin{minipage}[c][#1][c]{\linewidth}
+    \centering
+    \begin{minipage}[c]{0.68\linewidth}\centering #2\end{minipage}\hfill
+    \DictionaryContextInset{#3}{#4}
+  \end{minipage}}
+
+% A single atlas cell. #1 stable ID; #2 English; #3 Latin; #4 art;
+% #5 one-line purpose; #6 status/handling line; #7 optional symbolism.
+\newcommand{\DictionaryCell}[7]{%
+  \DictionaryEntryAnchor{#1}%
+  \begin{minipage}[t]{\linewidth}
+    \centering #4\par
+    \vspace{2pt}
+    \raggedright
+    \noindent{\fontsize{8.8}{9.8}\selectfont\bfseries #2\hfill
+      \DictionaryNoteKey{#1}\par}
+    {\fontsize{7.8}{8.8}\selectfont\itshape #3\par}
+    \vspace{1pt}
+    {\fontsize{7.8}{9.2}\selectfont #5\par}
+    \if\relax\detokenize{#6}\relax\else
+      {\fontsize{6.9}{8.2}\selectfont\bfseries #6\par}%
+    \fi
+    \if\relax\detokenize{#7}\relax\else
+      {\fontsize{7.1}{8.4}\selectfont
+        \(\diamond\)\,\textit{#7}\par}%
+    \fi
+  \end{minipage}}
+
+% Row primitives keep all cells in one row at the same top edge. Authors use
+% two three-cell rows for a standard six-up plate and three for a nine-up
+% plate; two-cell rows support four- and eight-up ambiguity plates.
+\newcommand{\DictionaryThreeCellRow}[3]{%
+  \noindent
+  \begin{minipage}[t]{\DictionaryThreeCellWidth}#1\end{minipage}\hfill
+  \begin{minipage}[t]{\DictionaryThreeCellWidth}#2\end{minipage}\hfill
+  \begin{minipage}[t]{\DictionaryThreeCellWidth}#3\end{minipage}\par}
+\newcommand{\DictionaryTwoCellRow}[2]{%
+  \noindent
+  \begin{minipage}[t]{\DictionaryTwoCellWidth}#1\end{minipage}\hfill
+  \begin{minipage}[t]{\DictionaryTwoCellWidth}#2\end{minipage}\par}
+\newcommand{\DictionaryGridGap}{\par\vspace{\DictionaryPlateGap}}
+
+% One headword with substantively different forms. #4 is a row of two to five
+% same-scale figures; #5 is the concise comparison; #6 is the handling/status
+% line; #7 optional symbolism.
+\newcommand{\DictionaryVariantStrip}[7]{%
+  \DictionaryEntryAnchor{#1}%
+  \begin{minipage}{\linewidth}
+    \noindent{\fontsize{9.2}{10.2}\selectfont\bfseries #2\hfill
+      \DictionaryNoteKey{#1}\par}
+    {\fontsize{8}{9}\selectfont\itshape #3\par}
+    \vspace{3pt}
+    \centering #4\par
+    \vspace{2pt}
+    \raggedright{\fontsize{7.8}{9.2}\selectfont #5\par}
+    {\fontsize{6.9}{8.2}\selectfont\bfseries #6\par}
+    \if\relax\detokenize{#7}\relax\else
+      {\fontsize{7.1}{8.4}\selectfont
+        \(\diamond\)\,\textit{#7}\par}%
+    \fi
+  \end{minipage}}
+
+\newcommand{\DictionaryScaleNotice}{%
+  {\fontsize{7}{8}\selectfont\bfseries NOT TO COMMON SCALE}}
+\newcommand{\DictionarySameScaleNotice}{%
+  {\fontsize{7}{8}\selectfont\bfseries SHOWN AT COMMON SCALE}}
+
+% Compatibility placeholders used by the held publication scaffolds.
+\newcommand{\PlatePlaceholder}[2]{%
+  \DictionaryArt{1.32in}{%
+    \fbox{\parbox[c][1.15in][c]{0.88\linewidth}{%
+      \centering\small\bfseries #1\\[0.3em]
+      \normalfont\footnotesize #2}}}}
 
 \newcommand{\EntryPlaceholder}[2]{%
   \begin{minipage}[t]{0.48\linewidth}
@@ -48,13 +175,11 @@
     {\footnotesize English and Latin headwords, identification, use,
     handling boundary, substantive variants, and brief sourced symbolism
     will render here after audit.\par}
-  \end{minipage}
-}
+  \end{minipage}}
 
 \newcommand{\PlaceholderPair}[4]{%
   \noindent\EntryPlaceholder{#1}{#2}\hfill
-  \EntryPlaceholder{#3}{#4}\par\medskip
-}
+  \EntryPlaceholder{#3}{#4}\par\medskip}
 
 \newcommand{\DictionarySectionPlaceholder}[2]{%
   \begingroup
@@ -64,8 +189,7 @@
   \par\medskip
   \PlaceholderPair{Reviewed object figure}{#1-001}
                   {Reviewed comparison or context figure}{#1-002}
-  \endgroup
-}
+  \endgroup}
 
 \newcommand{\DictionaryTerminalMatter}{%
   \appendix
@@ -74,10 +198,16 @@
   and terminology audit are complete.
   \section{English--Latin and Latin--English Indexes}
   Index entries will be generated from the canonical reviewed inventory.
+  \section{Visual Index}
+  Plate and figure references will be generated from the reviewed plate
+  manifest.
   \section{Variant and Terminology Notes}
   Source-qualified notes will distinguish universal Roman use, authorized or
   regional variants, religious-community use, and historical examples.
-  \section{Source Notes and Qualifications}
-  Numbered source notes, the declared completeness boundary, rights status,
-  and review qualifications will be inserted after claim-level verification.
+  \section{Scope and Qualifications}
+  The declared completeness boundary, rights state, and review qualifications
+  will remain explicit until every production gate closes.
+  \section{Numbered Source Notes and References}
+  Entry-keyed source notes and the reviewed reference list will be generated
+  from canonical bindings after claim-level verification.
 }

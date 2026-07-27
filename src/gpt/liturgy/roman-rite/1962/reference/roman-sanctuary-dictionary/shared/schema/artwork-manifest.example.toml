@@ -1,0 +1,18 @@
+# Syntax fixture only. The production owner is research/artwork-manifest.toml.
+# No artwork, source, review, or rights event is asserted here.
+schema_version = 1
+manifest_id = "roman-sanctuary-dictionary-artwork"
+owner = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary"
+asset_root = "shared/artwork"
+status = "held-no-assets"
+asset_files = []
+artwork_links = []
+artworks = []
+
+[coverage]
+object_record_glob = "shared/objects/**/*.toml"
+exclude_paths = ["shared/schema/object.example.toml"]
+publication_ready_workflow_state = "publication-ready"
+required_artwork_workflow_state = "consumer-review-passed"
+require_bidirectional_links = true
+require_variant_coverage = true
