@@ -528,3 +528,40 @@ Solemn Mass identities, as recorded in the current ledger. The previously
 recorded physical,
 duplex, intended-reader, independent, rights, and ecclesiastical-suitability
 maturity reviews remain pending.
+
+## Liturgical exchange marks and display hierarchy — 2026-07-27
+
+All seven generation records carry revision timestamp
+`2026-07-27T23:43:04Z`. The shared render layer now composes traditional
+slashed versicle and response signs through semantic macros and applies them
+only to genuine verbal exchanges. Actor, mode, form, `Cue`, and `Answer`
+controls remain visible; nonverbal action cards and movement cues are
+unchanged. Libertinus remains the body family, while a restrained small-cap
+display layer supplies the missal-inflected heading hierarchy.
+
+Two final pdfTeX passes produced the following reviewed candidates:
+
+| Publication | Pages | Bytes | SHA-256 |
+|---|---:|---:|---|
+| `01-low-mass` | 29 | 7,861,287 | `462db30bb4e5ea90f633032e640f85201ce7c760d1c325857100cc66b9927464` |
+| `01-low-mass-trainer-manual` | 29 | 7,873,843 | `4cc5ed512d7aba0d5f17c695297d2ddfbfbb8a1901930904941f2ed16ab9ccab` |
+| `01-low-mass-flash-cards` | 6 | 252,272 | `b752986b9d78a68dc5c7703b1745aa8004137be70072cc33a2c40547e4afb8ee` |
+| `02-missa-cantata` | 27 | 1,271,088 | `5137d9fc66e0b165e4fc80848ade1981e5b5ec573a4f260283e972b868966e7d` |
+| `02-missa-cantata-cue-cards` | 12 | 626,203 | `397ef142853522c31d56ccd50a752664282474985a3418d81109d036c7e045c1` |
+| `03-solemn-mass` | 28 | 1,317,142 | `1de3e412950dc26cc9873f2ef28b089e3333cde4b9c9170011c6958957ce96b8` |
+| `03-solemn-mass-cue-cards` | 12 | 631,468 | `211cefb5ed6711b6930c8e35139e9119c65dd3d1a3ee86707c66c5715914328d` |
+
+The seven final logs contain no fatal error, undefined reference, LaTeX or
+package warning, overfull or underfull box, or unresolved rerun request.
+`pdfinfo` accepts every file. The bounded review tool rastered all 143 pages.
+Every page was inspected through the complete contact-sheet sequence; the
+Low-Mass response-card front was additionally inspected at full size to
+confirm the composed mark, fixed 11.5-point body, and cut-safe fit. The review
+also incorporated the committed Low-Mass overlay/inset repairs and Solemn
+cue-card inset repairs. No clipping, collision, accidental blank, broken
+sequence, card-border incursion, orphaned trainer rail, or terminal overflow
+was found.
+
+This exact-snapshot review does not satisfy the pending actual-size physical
+duplex, photocopy, intended-reader, paired-use, independent, rights, or
+ecclesiastical-suitability gates.

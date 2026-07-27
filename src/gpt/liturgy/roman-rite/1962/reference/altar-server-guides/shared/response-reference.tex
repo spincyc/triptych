@@ -195,9 +195,10 @@ Evangelii secundum N.}}
   \begin{learnerbox}{\ServerTitleData{#1}}
   \small
   {\scriptsize\bfseries YOUR JOB}\quad \ServerJobData{#1}\par
-  {\scriptsize\bfseries HEAR}\quad \ServerCueData{#1}\par
+  {\scriptsize\bfseries HEAR}\quad
+  \SpokenCue{\ServerCueData{#1}}\par
   {\scriptsize\bfseries RESPONSE}\quad
-  {\large\CanonLatin{\ServerLatinData{#1}}}\par
+  {\large\CanonLatin{\SpokenResponse{\ServerLatinData{#1}}}}\par
   {\scriptsize\bfseries LATIN CHUNKS}\quad
   {\footnotesize\ServerLearnerLine{\ServerLearnerData{#1}}}\par
   {\scriptsize\bfseries SAY IT LIKE}\quad
@@ -661,9 +662,10 @@ Father, to pray for me.}
 \newcommand{\PrintAightAnswer}{%
   \begin{learnerbox}{\ServerTitleData{A8}}
   {\scriptsize\bfseries YOUR JOB}\quad \ServerJobData{A8}\par
-  {\scriptsize\bfseries HEAR}\quad \ServerCueData{A8}\par
+  {\scriptsize\bfseries HEAR}\quad
+  \SpokenCue{\ServerCueData{A8}}\par
   {\scriptsize\bfseries COMPLETE RESPONSE}\quad
-  {\footnotesize\CanonLatin{\ServerLatinData{A8}}}\par
+  {\footnotesize\CanonLatin{\SpokenResponse{\ServerLatinData{A8}}}}\par
   \smallskip
   {\scriptsize\bfseries LEARN IT IN THREE PARTS}\par
   \textbf{1. I confess.}\quad
@@ -1033,7 +1035,7 @@ glosses, staging, and card design are teaching aids.\par}
   boxrule=0.5pt,left=9pt,right=9pt,top=8pt,bottom=5pt]
   \flashheader{\ResponseCardID{#1}}{Cue}
   \centering
-  {\normalsize #3\par}\vfill
+  {\normalsize\SpokenCue{#3}\par}\vfill
   \end{tcolorbox}%
 }
 
@@ -1043,7 +1045,7 @@ glosses, staging, and card design are teaching aids.\par}
   \flashheader{\ResponseCardID{#1}}{Answer}
   \centering
   {\scriptsize\bfseries RESPONSE}\par
-  {\small\itshape #2\par}\vspace{0.18em}
+  {\small\itshape\SpokenResponse{#2}\par}\vspace{0.18em}
   {\scriptsize\bfseries LATIN CHUNKS}\par
   {\scriptsize\ServerLearnerLine{#3}\par}\vspace{0.18em}
   {\scriptsize\bfseries SAY IT LIKE}\par
@@ -1058,7 +1060,7 @@ glosses, staging, and card design are teaching aids.\par}
   boxrule=0.5pt,left=9pt,right=9pt,top=8pt,bottom=5pt]
   \flashheader{\ResponseCardID{#1}}{Answer}
   \centering
-  {\scriptsize\itshape #2\par}\vspace{0.12em}
+  {\scriptsize\itshape\SpokenResponse{#2}\par}\vspace{0.12em}
   {\scriptsize\bfseries LATIN CHUNKS}\par
   {\scriptsize\ServerLearnerLine{#3}\par}\vspace{0.12em}
   {\scriptsize\bfseries SAY IT LIKE}\par

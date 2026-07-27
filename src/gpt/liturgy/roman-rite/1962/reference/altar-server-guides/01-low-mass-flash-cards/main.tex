@@ -40,7 +40,7 @@
   \LowMassFlashFrame{#1}{#2}{#3 \textperiodcentered\ PRIEST}{#4}%
   \node[anchor=north,align=center,text width=3.59in,inner sep=0pt]
     at (#1+1.975,#2+1.79)
-    {{\fontsize{11.5}{13.5}\selectfont #5}};}
+    {{\fontsize{11.5}{13.5}\selectfont\SpokenCue{#5}}};}
 
 \newcommand{\LowMassQualifiedCue}[2]{%
   {\bfseries\MakeUppercase{#1}}\par\medskip #2}
@@ -49,7 +49,8 @@
   \LowMassFlashFrame{#1}{#2}{#3 \textperiodcentered\ BOTH}{#4}%
   \node[anchor=north,align=center,text width=3.59in,inner sep=0pt]
     at (#1+1.975,#2+1.79)
-    {{\fontsize{11.5}{13.5}\selectfont\bfseries #5}};}
+    {{\fontsize{11.5}{13.5}\selectfont\bfseries
+      \SpokenResponse{#5}}};}
 
 \newcommand{\LowMassSheetFooter}[1]{%
   \node[anchor=center,font=\fontsize{7.5}{9}\selectfont\bfseries]

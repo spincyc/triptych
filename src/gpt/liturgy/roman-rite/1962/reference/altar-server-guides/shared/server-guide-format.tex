@@ -3,6 +3,24 @@
 \usepackage{tipa}
 \usepackage{libertinus}
 
+% The training series keeps Libertinus as its readable working face.  A
+% restrained missal-inflected hierarchy is supplied semantically so headings
+% may use traditional small capitals without turning instructions, IPA, or
+% card-control text into ornament.  The received versicle and response signs
+% are composed because U+2123/U+211F are outside the T1 text encoding.
+\newcommand{\MissalDisplay}[1]{{\rmfamily\mdseries\scshape #1}}
+\newcommand{\MissalSeparator}{{\normalfont\textperiodcentered}}
+\newcommand{\VersicleMark}{%
+  \leavevmode\hbox{\rlap{\kern0.16em\raisebox{0.12ex}{%
+    \scalebox{0.85}[1.0]{/}}}V}}
+\newcommand{\ResponseMark}{%
+  \leavevmode\hbox{\rlap{\kern0.16em\raisebox{0.12ex}{%
+    \scalebox{0.85}[1.0]{/}}}R}}
+\newcommand{\SpokenCue}[1]{\VersicleMark.\nobreak\enspace #1}
+\newcommand{\SpokenResponse}[1]{\ResponseMark.\nobreak\enspace #1}
+\DeclareUnicodeCharacter{2123}{\VersicleMark}
+\DeclareUnicodeCharacter{211F}{\ResponseMark}
+
 % Each independently printable guide turns on exactly one of these switches
 % after loading this shared format file.  Shared lessons and detached cards can
 % then name only the voices that matter in the guide being printed.
@@ -62,8 +80,8 @@
   {Could not patch second longtable tail}{Update the longtable compatibility patch.}}
 \makeatother
 \setlength{\parskip}{0.34em plus 0.06em minus 0.03em}
-\titleformat{\section}{\Large\bfseries}{\thesection}{0.55em}{}
-\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.55em}{}
+\titleformat{\section}{\Large\mdseries\scshape}{\thesection}{0.55em}{}
+\titleformat{\subsection}{\large\mdseries\scshape}{\thesubsection}{0.55em}{}
 \titlespacing*{\section}{0pt}{1.05ex plus 0.25ex minus 0.15ex}{0.45ex}
 \titlespacing*{\subsection}{0pt}{0.85ex plus 0.2ex minus 0.1ex}{0.32ex}
 \setlist{topsep=0.35em,itemsep=0.12em,parsep=0pt,partopsep=0pt}
@@ -74,7 +92,7 @@
   \thispagestyle{empty}
   \centering
   \vspace*{0.10\textheight}
-  {\Huge\bfseries #1\par}
+  {\Huge\bfseries\MissalDisplay{#1}\par}
   \vspace{0.5em}
   {\Large\itshape #2\par}
   \vspace{0.75em}

@@ -443,6 +443,29 @@ renewed child-and-trainer testing remain pending. The installed Low-Mass child
 PDF has changed, and the trainer and flash-card identities are newly installed;
 none of those three snapshots is release-authorized.
 
+## Liturgical exchange and display hierarchy — 2026-07-27
+
+The seven-publication series retains Libertinus Serif as its readable body
+face, with Libertinus Sans, Mono, TIPA, and Latin Modern math symbols confined
+to their existing functional jobs. A restrained missal-inflected hierarchy now
+uses Libertinus small capitals for major display headings; it does not impose
+an ornamental face on instructions, pronunciation, tables, card controls, or
+metadata.
+
+Semantic source macros compose the traditional slashed versicle and response
+signs because those Unicode signs are outside the T1 text encoding. They appear
+only beside genuine spoken or sung cue-and-response material: Low-Mass
+dialogue lanes and response cards, and the shared response lessons and
+integrated response cards used by Missa Cantata and Solemn Mass. Existing
+`Priest`, `Both`, `Cue`, `Answer`, actor, mode, form, condition, and lesson
+labels remain in place. Action-card prompts, movement cues, object handoffs,
+and other nonverbal triggers do not receive a versicle sign.
+
+The resulting marks and hierarchy were checked in all seven complete review
+sets and at full size on representative Low-Mass and sung-form response-card
+faces. They remain subordinate to actor and mode information and do not imply
+that a lay server says a choir or sacred-minister response.
+
 ## Sources consulted
 
 All web sources were accessed 2026-07-23.

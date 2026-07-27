@@ -25,7 +25,7 @@
   \par
   \vspace{3pt}\hrule height 1.2pt
   \vspace{8pt}
-  {\fontsize{18}{21}\selectfont\bfseries #2\par}}
+  {\fontsize{18}{21}\selectfont\bfseries\MissalDisplay{#2}\par}}
 
 \newcommand{\LMTrainerRailTitle}{%
   {\fontsize{7.8}{9.3}\selectfont\bfseries
@@ -127,14 +127,15 @@
     \begin{minipage}[t]{0.39\linewidth}
       \LMLaneLabel{Priest}
       \vspace{4pt}
-      {\fontsize{11}{13.5}\selectfont\RaggedRight #2\par}
+      {\fontsize{11}{13.5}\selectfont\RaggedRight
+        \SpokenCue{#2}\par}
     \end{minipage}%
     \hfill\vrule width 0.6pt\hfill
     \begin{minipage}[t]{0.46\linewidth}
       \LMLaneLabel{Both}
       \vspace{4pt}
       {\fontsize{12}{14.5}\selectfont\bfseries\RaggedRight
-        \ServerLatinData{#3}\par}
+        \SpokenResponse{\ServerLatinData{#3}}\par}
       \vspace{6pt}
       {\fontsize{9}{10.8}\selectfont\bfseries SAY IT\par}
       \vspace{2pt}
@@ -151,14 +152,15 @@
     \begin{minipage}[t]{0.405\linewidth}
       \LMLaneLabel{Priest}
       \vspace{5pt}
-      {\fontsize{11.5}{14}\selectfont\RaggedRight #2\par}
+      {\fontsize{11.5}{14}\selectfont\RaggedRight
+        \SpokenCue{#2}\par}
     \end{minipage}%
     \hfill\vrule width 0.65pt\hfill
     \begin{minipage}[t]{0.455\linewidth}
       \LMLaneLabel{Both}
       \vspace{5pt}
       {\fontsize{12.5}{15}\selectfont\bfseries\RaggedRight
-        \ServerLatinData{#3}\par}
+        \SpokenResponse{\ServerLatinData{#3}}\par}
       \vspace{8pt}
       {\fontsize{9}{10.8}\selectfont\bfseries SAY IT\par}
       \vspace{2pt}
@@ -178,14 +180,15 @@
     \begin{minipage}[t]{0.39\linewidth}
       \LMLaneLabel{Priest}
       \vspace{4pt}
-      {\fontsize{11}{13.5}\selectfont\RaggedRight #2\par}
+      {\fontsize{11}{13.5}\selectfont\RaggedRight
+        \SpokenCue{#2}\par}
     \end{minipage}%
     \hfill\vrule width 0.6pt\hfill
     \begin{minipage}[t]{0.46\linewidth}
       \LMLaneLabel{Both}
       \vspace{4pt}
       {\fontsize{12}{14.5}\selectfont\bfseries\RaggedRight
-        \ServerLatinData{#3}\par}
+        \SpokenResponse{\ServerLatinData{#3}}\par}
     \end{minipage}
     \par\vspace{8pt}\hrule height 0.5pt
   \else
@@ -197,14 +200,15 @@
     \begin{minipage}[t]{0.405\linewidth}
       \LMLaneLabel{Priest}
       \vspace{5pt}
-      {\fontsize{11.5}{14}\selectfont\RaggedRight #2\par}
+      {\fontsize{11.5}{14}\selectfont\RaggedRight
+        \SpokenCue{#2}\par}
     \end{minipage}%
     \hfill\vrule width 0.65pt\hfill
     \begin{minipage}[t]{0.455\linewidth}
       \LMLaneLabel{Both}
       \vspace{5pt}
       {\fontsize{12.5}{15}\selectfont\bfseries\RaggedRight
-        \ServerLatinData{#3}\par}
+        \SpokenResponse{\ServerLatinData{#3}}\par}
     \end{minipage}
     \par\vspace{11pt}\hrule height 0.55pt
   \fi}
@@ -219,13 +223,15 @@
     \begin{minipage}[t]{0.39\linewidth}
       \LMLaneLabel{#2}
       \vspace{4pt}
-      {\fontsize{11}{13.5}\selectfont\RaggedRight #3\par}
+      {\fontsize{11}{13.5}\selectfont\RaggedRight
+        \SpokenCue{#3}\par}
     \end{minipage}%
     \hfill\vrule width 0.6pt\hfill
     \begin{minipage}[t]{0.46\linewidth}
       \LMLaneLabel{Both}
       \vspace{4pt}
-      {\fontsize{12}{14.5}\selectfont\bfseries\RaggedRight #4\par}
+      {\fontsize{12}{14.5}\selectfont\bfseries\RaggedRight
+        \SpokenResponse{#4}\par}
     \end{minipage}
     \par\vspace{8pt}\hrule height 0.5pt
   \else
@@ -237,13 +243,15 @@
     \begin{minipage}[t]{0.405\linewidth}
       \LMLaneLabel{#2}
       \vspace{5pt}
-      {\fontsize{11.5}{14}\selectfont\RaggedRight #3\par}
+      {\fontsize{11.5}{14}\selectfont\RaggedRight
+        \SpokenCue{#3}\par}
     \end{minipage}%
     \hfill\vrule width 0.65pt\hfill
     \begin{minipage}[t]{0.455\linewidth}
       \LMLaneLabel{Both}
       \vspace{5pt}
-      {\fontsize{12.5}{15}\selectfont\bfseries\RaggedRight #4\par}
+      {\fontsize{12.5}{15}\selectfont\bfseries\RaggedRight
+        \SpokenResponse{#4}\par}
     \end{minipage}
     \par\vspace{11pt}\hrule height 0.55pt
   \fi}
@@ -341,9 +349,10 @@
     \thispagestyle{empty}
     \centering
     \vspace*{0.09\textheight}
-    {\fontsize{12}{15}\selectfont\bfseries SERVING THE 1962 ROMAN MISSAL\par}
+    {\fontsize{12}{15}\selectfont\bfseries
+      \MissalDisplay{Serving the 1962 Roman Missal}\par}
     \vspace{14pt}
-    {\fontsize{26}{30}\selectfont\bfseries LOW MASS\par}
+    {\fontsize{26}{30}\selectfont\bfseries\MissalDisplay{Low Mass}\par}
     \vspace{8pt}
     \ifTrainerManualGuide
       {\fontsize{18}{21}\selectfont\bfseries TRAINER MANUAL\par}
