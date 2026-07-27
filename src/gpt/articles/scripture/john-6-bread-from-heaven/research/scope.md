@@ -5,20 +5,21 @@
 - **Provider and collection:** OpenAI GPT; `articles/scripture/`.
 - **Genre and profile:** single-claim scriptural reception study governed by
   `guidance/articles.md`, especially “Scriptural studies.”
-- **Publication state:** internally approved for publication on 2026-07-26
+- **Publication state:** internally re-reviewed for publication on 2026-07-27
   under express authorization to publish while accurately disclosing that
   independent specialist review remains outstanding.
 - **Reader:** a Catholic reader testing the familiar conjunction of John 6 with
   Bethlehem, the manger, and the swaddled child.
 - **Question:** how early and how directly does Christian reception join John
   6's Bread from heaven to the infancy details in Luke 2?
-- **As-of date:** 2026-07-26. No mutable discipline or jurisdiction governs.
+- **As-of date:** 2026-07-27. No mutable discipline or jurisdiction governs.
 
 ## Result presently supported
 
-1. John 6's Eucharistic reception is explicit and early: Cyprian, Cyril of
-   Jerusalem, Chrysostom, Augustine, Cyril of Alexandria, and Ambrose supply
-   distinct direct witnesses.
+1. John 6's Eucharistic reception is explicit and early: Chrysostom,
+   Augustine, Cyril of Alexandria, and Ambrose supply distinct direct
+   witnesses, while Ignatius and Irenaeus supply closely related early
+   Eucharistic reception without commenting directly on John 6.
 2. Jerome, Letter 108.10, reports Paula greeting Bethlehem as the house of
    bread in which the Bread from heaven was born, explicitly joining the
    infancy scene to John 6:51. Ambrose Letter 70 supplies a related
@@ -38,13 +39,19 @@
 Included: John 6 as the controlling passage; Luke 2:1–20, Micah 5:2–4, John
 1:1–18, and 1 Corinthians 10–11 as direct controls; early and late-antique
 reception material needed to test the claim; representative medieval
-synthesis; Trent and modern Catholic doctrinal reception; serious
-non-Eucharistic and exclusively metaphorical readings.
+synthesis; Trent and modern Catholic doctrinal reception; and the
+reader-facing interpretive objections answered from the exact publication
+evidence.
 
 Excluded: a full commentary on John 6; a complete history of Eucharistic
-doctrine; modern authorship/source theories for John; devotional elaborations
-without an exact source; the claim that lexical meaning proves authorial intent;
-the claim that a manger is an altar in Luke's own wording.
+doctrine; a general survey of modern authorship/source theories beyond the one
+bounded redactional objection; devotional elaborations without an exact source;
+the claim that lexical meaning proves authorial intent; the claim that a manger
+is an altar in Luke's own wording. Calvin's Reformed
+spiritual-participation reading, Warren's nonsacramental christological
+reading, and the later-sacramental-redactor hypothesis were evaluated as
+research leads but remain excluded from the publication because this revision
+did not normalize and bind exact reusable witnesses for them.
 
 ## Authority and rights boundary
 
@@ -52,10 +59,11 @@ Scripture governs the textual claims. Fathers are reception and theological
 witnesses, not a vote count. The Bethlehem/manger synthesis is classified by
 its exact witness; the final canonical conjunction remains project synthesis.
 
-Publication must quote English Scripture only from the registered public-domain
-Douay–Rheims. Patristic English now consulted is in public-domain ANF/NPNF or
-Library of Fathers translations, but exact editions and rights must be recorded
-before quotation. The study mostly paraphrases.
+Publication quotes English Scripture only from the registered public-domain
+Douay–Rheims. Every patristic witness retained in the publication now has an
+edition-identified artifact, rights record, exact locus, and publication
+binding. The study nevertheless relies chiefly on bounded paraphrase rather
+than extended quotation.
 
 ## Disclosed limitations and future improvements
 
@@ -67,24 +75,24 @@ before quotation. The study mostly paraphrases.
 - Collate Cyril of Alexandria against Pusey's Greek edition.
 - Establish the modern critical attribution and date range of the
   pseudo-Gregorian Nativity homily.
-- Bind the exact Catechism paragraphs if the Catechism synthesis is expanded
-  beyond the present descriptive overview.
-- Bind Aquinas's exact John 6 lectures and ST III articles rather than relying
-  on work-level synthesis.
-- Complete reusable source records for the patristic witnesses now identified
-  by exact work and locus in the local audit.
+- Extend the exact Catechism bindings beyond paragraphs 1322--1323 if the
+  broader 1322--1419 overview becomes wording-critical.
+- Complete reusable source records before restoring the presently omitted
+  Cyprian and Cyril of Jerusalem witnesses.
 - Obtain independent patristic, exegetical, theological, and rights review.
   Publication does not imply that those reviews occurred.
 
 ## Production and first-baseline verdict
 
-On 2026-07-26 the canonical source rendered as an eleven-page,
+On 2026-07-27 the revised canonical source rendered as an eleven-page,
 warning-free Letter PDF. Every page was inspected at useful resolution for
 clipping, overlap, malformed text, bad breaks, and metadata placement. The
 generated Markdown was reviewed for heading, list, reference, metadata,
 rights-colophon, and endnote fidelity.
 
 Both initial-baseline candidates and the consequential-claim comparison are
-recorded in `research/staleness-review-2026-07-26.md`. They agree in substance;
-the full `main.tex` is preferred. The shared release ledger and catalogs remain
-for integrating-root publication work.
+recorded in `research/staleness-review-2026-07-26.md`; the forward revision is
+recorded in `research/staleness-review-2026-07-27.md`. The publication is
+installed and cataloged. Its revised PDF and web edition were rebuilt,
+installed, and reviewed on 2026-07-27; exact public-release binding refresh
+remains a separate integrating-root transaction.
