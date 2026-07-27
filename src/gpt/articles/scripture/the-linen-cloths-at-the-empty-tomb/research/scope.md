@@ -25,6 +25,14 @@ public-domain witnesses. The review preserved the translation and OCR ceilings
 for Cyril, Theophylact, and Lightfoot and retained the unresolved range of John
 20:8 interpretations.
 
+A focused archaeology pass on 2026-07-27 adds only Jerusalem-specific burial
+context supported by Magness's exact publisher summary and an exact
+Egyptological contrast from Ikram. Green's specialist perfume study is used at
+a remote, precisely located contextual ceiling. The study does not generalize
+one elite rock-cut tomb into universal Jewish practice, assign the aromatics
+one unspoken purpose, import Egyptian mummification, or reconstruct exact
+wrapping geometry.
+
 The failed mutable-site whole-corpus replay is not publication evidence or a
 release gate. The negative conclusion is intentionally narrowed to the exact
 enumerated witnesses and dated provenance routes bound here.
