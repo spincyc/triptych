@@ -21,3 +21,16 @@ page-completion rule controls progression.
 The current packet and both candidates were compared claim by claim against
 changed corpus inputs. No material register, source-window, translation, or
 answer correction was found; this exact packet is ready for rebaselining.
+
+## Research-staleness verdict — 2026-07-27
+
+The only later inputs are new records elsewhere in the already-bound
+*Summa theologiae* work: English III, qq. 71 and 73–83 and Latin web
+artifacts for III, qq. 73–80. The packet's controlling passage remains the
+unchanged Leonine I, q. 1, a. 1 opening. A minimal candidate retained the
+packet; an independent rewrite reconstructed its register exercise from the
+packet map and that exact passage. Claim-by-claim comparison found no change
+to the printed text, register analysis, source window, prompt, or answer.
+The sacramental questions are outside this packet's scope. No material change
+is warranted; both candidates were discarded and this edition may be
+rebaselined.

@@ -247,3 +247,20 @@ change.** See `src/sources/inventories/peter-paul-staleness-review-2026-07-26.md
 The source and audit records were revised in the corpus-wide omission audit. A settled two-pass build produced this 22-page PDF with SHA-256 `ea3cd3f7057b7518465cffead078e185b039ffc6800ec51abd35905491cc1c71`. The final log contained no fatal error, undefined reference, overfull or underfull box, or unresolved rerun or layout warning. Generation metadata, `qpdf` structure, Letter page size, embedded and subsetted fonts with Unicode maps, and nonempty text extraction passed. Review rasters were generated through `scripts/pdf-review`; every rendered page was visually inspected for clipping, overlap, accidental blanks, bad breaks, footer and metadata placement, and legibility. The reviewed build was installed at its mirrored `doc/` path and verified byte-identical.
 
 This is internal production review only; it grants no independent editorial, specialist, rights, theological, or ecclesiastical approval. The exact current installed PDF is release-cleared by the 21 July 2026 exact-current-snapshot exception; the exception supplies none of the missing review or approval just named and authorizes no changed bytes.
+## Staleness review — 2026-07-27
+
+- **Changed input:** newly normalized Catechism 1322–1323 passage and its
+  inspected official artifact.
+- **Candidates:** both required treatments are under
+  `build/staleness/gpt/biographies/saint-peter/`: `modified/` is an in-place
+  no-op candidate, and `rewritten/candidate.md` was drafted from the research
+  records and changed passage before comparison with the current prose.
+- **Three-way comparison:** the passage adds a general Eucharistic synthesis
+  but removes, weakens, and contradicts no current claim. It adds no evidence
+  about Peter's call, canonical portraits, Jerusalem leadership, Gentile
+  inclusion, Antioch conflict, writings, Roman martyrdom, Vatican memorial,
+  relics, Petrine office, cult, or patronage. Candidate disagreement is limited
+  to compression and arrangement.
+- **Verdict:** **no material change**. Catechism 1322–1323 bears no
+  subject-specific biographical claim for Peter. Rebaseline is intentionally
+  left to the ledger-owning task.

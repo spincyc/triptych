@@ -226,3 +226,9 @@ independent liturgical, historical, canonical and theological review. Publicatio
 language: **source-audited working study**. No imprimatur, nihil obstat or
 ecclesiastical approval is claimed, and internal checking is not independent
 review.
+
+## Research-staleness verdict — 2026-07-27
+
+The new Trent Session XIII records do not alter the comparison's operative
+Session XXI--XXII evidence or any consequential claim. Both candidates support
+no material change.

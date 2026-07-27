@@ -56,3 +56,10 @@ Both candidates agreed on vision, resurrection, communion, new creation, and spe
 Completed: claim-driven source research with same-day (2026-07-26) reading of every quoted witness (see `research/source-audit.md`); registration of eleven new work and edition records under `src/sources/works/` for the acts, the NPNF volumes, the *Catholic Encyclopedia* volumes, and the Palamas translation, with `scripts/source-library validate` clean for every record owned by this publication; register-labelling review at every consequential claim, with the weights table as the terminal audit; boundary review against series parity constraints; rights review; internal argumentative, source-consistency, and quotation review; a multipass build with clean fatal-error, undefined-reference, and layout scans; the generation-metadata gate; page-by-page raster review; and a web-edition conversion checked for fidelity of the tables, the labelled synthesis blocks, the notes, and the rights and provenance blocks.
 
 Outstanding: independent scriptural, patristic, Thomistic, Byzantine, dogmatic, theological, and ecclesiastical review. No imprimatur, nihil obstat, ecclesiastical approval, or completion of independent review is claimed. Internal checking is not independent review. The largest identified research gap — the unread acts of the Byzantine councils of 1341, 1347, and 1351 — is recorded as a specific, actionable follow-up that would bear directly on one of the article's two labelled syntheses.
+
+## Research-staleness verdict — 2026-07-27
+
+The three treatments were compared against new Eucharistic loci in the
+Catechism, Trent, and Aquinas. They add nothing that changes vision,
+resurrection, communion, or new creation. No consequential claim changes; no
+material change.

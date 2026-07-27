@@ -185,3 +185,21 @@ change no claim. **No material change.** See
 - art-historical, cult, shrine, and relic review (Pavia, Sant'Agostino in
   Rome);
 - independent rights review; ecclesiastical approval (none claimed).
+
+## Catechism staleness review — 2026-07-27
+
+Changed inputs: the new exact restricted artifact for the Catechism's
+Eucharist page and its verified CCC 1322–1323 passage record. The old paper
+uses the bound edition only at CCC 30 for reception of *Confessions* 1.1.1.
+
+Three-way comparison: the modified candidate leaves the old paper unchanged.
+The independent rewrite agrees with its consequential claims about the
+autobiographical witness limit, conversion and baptism, Hippo ministry,
+Donatist coercion, Pelagian controversy, death during the Vandal siege, and
+later reception. CCC 1322–1323 adds, removes, strengthens, weakens, and
+contradicts none of those claims; it does not alter CCC 30. Candidate
+disagreement is compression and organization only, not substance. **No
+material change.**
+
+Candidates:
+`build/staleness/claude/biographies/saint-augustine-of-hippo/{modified,rewritten}/`.

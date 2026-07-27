@@ -67,6 +67,14 @@ Catholic discipline is coherent but not uniform. Chastity binds all according to
 
 ## Rights and review
 
+Staleness review (2026-07-27): the exact trigger was a new official Catechism
+artifact and passage for paragraphs 1322--1323 on the Eucharist. This article
+binds that edition only at paragraphs 2337--2350 and 1577--1580. Old, minimally
+modified, and research-first treatments were compared claim by claim; the new
+passage adds, removes, strengthens, weakens, or contradicts no consequential
+claim. No material change. See `staleness-review-2026-07-27.md`. The shared
+ledger was not rebaselined.
+
 Staleness review (2026-07-26): old, minimally modified, and research-first
 treatments were compared against paired research and changed CIC, CCEO,
 Catechism, LG 29, and PO 16 records. No governing rule or unresolved-question

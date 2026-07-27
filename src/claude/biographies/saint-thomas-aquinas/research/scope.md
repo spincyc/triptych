@@ -207,3 +207,30 @@ This edition makes no paragraph 2267, capital-punishment, or coercion claim.
 Both candidates found that insertion would enlarge rather than correct scope.
 **No material change**; no prose, citation, or PDF revision. See
 `src/sources/inventories/aquinas-catechism-staleness-review-2026-07-26.md`.
+
+## Centralized sacramental-source staleness review — 2026-07-27
+
+Changed inputs were the newly registered exact witnesses for CCC 1322–1323
+and *Summa theologiae* III.71.2–4, III.73.4, III.75.1–2, III.76.5,
+III.79.1, III.80.1 and 4, and III.83.1. Both required candidates were
+created under the ignored `build/staleness/` tree: a minimal modification
+of the present edition and an independent rewrite drafted from the research
+records and changed sources before the current prose was consulted.
+
+Three-way comparison:
+
+| Consequential claim | Present edition | Modified candidate | Rewritten candidate | Effect |
+|---|---|---|---|---|
+| Thomas wrote the Third Part on Christ and the sacraments through the Eucharist and into penance | Already stated | Adds an exact doctrinal inventory from III.73–83 | Makes the same inventory central to its works-led narrative | Strengthened textual control; no biographical event added, removed, weakened, or contradicted |
+| Thomas's Eucharistic teaching is received by the Catechism | Already established through CCC 1381 and III.75.1 | Adds CCC 1322–1323 and its correspondence with III.73.4, 79.1, and 83.1 | Adds the same bounded reception synthesis | Strengthened reception detail; no change to the object or force of official reception |
+| Thomas treated baptismal exorcisms in III.71.2–4 | Outside the present life’s consequential argument | No insertion | No insertion | New source availability only; inserting the topic would enlarge scope without clarifying a life event |
+| Official reception does not authenticate anecdotes or every opinion | Expressly stated | Preserved and repeated beside the new loci | Preserved as the controlling boundary | Unchanged |
+| Chronology, sanctity traditions, 1277 controversy, and relic history | Existing qualified account | Unchanged | Substantively agrees, with shorter retelling | No source adds, removes, weakens, or contradicts a claim |
+
+The candidates disagree with the present edition chiefly in emphasis and
+length, not substance: the modification would add a dense doctrinal excursus
+to a historical life, while the rewrite organizes more of the life around
+the works. Neither treatment corrects an error or resolves a recorded
+uncertainty. **Verdict: no material change.** Keep the installed edition;
+the candidates are comparison artifacts only. Rebaseline is ledger work and
+is intentionally left to the coordinating audit.

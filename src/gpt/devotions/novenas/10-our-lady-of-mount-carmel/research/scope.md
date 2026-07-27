@@ -84,3 +84,9 @@ The settled 29-page PDF, SHA-256 `639d93c67a5ba7f94729730d8c021543e0d3d2f6e596dd
 Comparison of the current guide and both candidates found strengthened chastity
 context but no material doctrine, prayer, tradition-status, approval, promise,
 or indulgence correction. This exact guide is ready for rebaselining.
+
+## Research-staleness verdict — 2026-07-27
+
+The central-source expansion received both required candidate treatments and
+a claim-by-claim comparison. **No material change.** See
+`research/staleness-review-2026-07-27.md`.

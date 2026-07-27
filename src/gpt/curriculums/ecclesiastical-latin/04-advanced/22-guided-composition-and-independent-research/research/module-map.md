@@ -21,3 +21,16 @@ page-completion rule controls progression.
 Comparison of the current packet and both candidates against changed inputs
 found no material composition, dossier, source-window, or answer correction.
 This exact packet is ready for rebaselining.
+
+## Research-staleness verdict — 2026-07-27
+
+The only later inputs are new records elsewhere in the already-bound
+*Summa theologiae* work: English III, qq. 71 and 73–83 and Latin web
+artifacts for III, qq. 73–80. The packet's Thomas window remains the unchanged
+Leonine I, q. 1, a. 1 opening. A minimal candidate retained the packet; an
+independent rewrite reconstructed the capstone from its map and its exact
+Missal, Gospel, and Thomas controls. Claim-by-claim comparison found no change
+to a composition frame, dossier requirement, source window, prompt, model, or
+answer. The new sacramental questions are outside the packet's project.
+No material change is warranted; both candidates were discarded and this
+edition may be rebaselined.

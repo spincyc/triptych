@@ -13,3 +13,11 @@
 
 ## Staleness review — 2026-07-26
 Both candidates preserved particular/final judgment and the qualified Augustine purification result. **No material change.** See `src/sources/inventories/four-last-things-staleness-review-2026-07-26.md`.
+
+## Staleness review — 2026-07-27
+
+The old, minimal, and research-first treatments were compared after the bound
+Catechism work gained paragraphs 1322–1323 and its acquisition record. Those
+paragraphs concern Eucharistic initiation, not particular or final judgment,
+grace-enabled works, disclosure, mercy, or justice. The candidates agree with
+the old article on every consequential claim and limit. **No material change.**

@@ -298,3 +298,21 @@ Modified and research-first rewritten candidates confirmed that the new
 natural-law and chastity records do not affect this edition's distinct
 anthropology, resurrection, and hell loci. **No material change.** See
 `src/sources/inventories/origen-tertullian-catechism-staleness-review-2026-07-26.md`.
+## Staleness review — 2026-07-27
+
+- **Changed input:** newly normalized Catechism 1322–1323 passage and its
+  inspected official artifact.
+- **Candidates:** both required treatments are under
+  `build/staleness/gpt/biographies/origen/`: `modified/` is an in-place no-op
+  candidate, and `rewritten/candidate.md` was drafted from the research records
+  and changed passage before comparison with the current prose.
+- **Three-way comparison:** the changed passage adds a general synthesis of
+  Eucharistic initiation, sacrifice, memorial, communion, charity, grace, and
+  eschatological hope. It removes, weakens, and contradicts no claim in the
+  current life. Neither candidate changes consequential claims about Origen's
+  chronology, school, writings, ordination and rupture, torture, death,
+  transmission, doctrinal controversies, or ecclesial reception. The rewritten
+  candidate differs in compression and arrangement only.
+- **Verdict:** **no material change**. Catechism 1322–1323 supplies no
+  subject-specific biographical or reception evidence for this publication.
+  Rebaseline is intentionally left to the ledger-owning task.

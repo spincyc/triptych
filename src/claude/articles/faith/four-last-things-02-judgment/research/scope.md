@@ -60,3 +60,10 @@ Both candidates agreed on judgment, purification, and Augustine's qualified poss
 Completed: claim-driven research with same-day reading of every quoted witness (2026-07-25, with one recorded search on 2026-07-26); direct inspection of six printed page images of Trent and two of the Leonine volume; registration of the new work, edition, artifact, and passage records enumerated in `source-bindings.toml`, with `scripts/source-library validate` clean; classification of every consequential claim by weight, with the synopsis table as the terminal audit; boundary review against the three companion volumes; rights review; internal argumentative, source-consistency, and quotation review; a multipass build with clean fatal-error, undefined-reference, and layout scans; the generation-metadata gate; the web-edition eligibility gate and a checked conversion; and page-by-page raster review of the built PDF.
 
 Outstanding: independent scriptural, patristic, Thomistic, dogmatic, theological, and ecclesiastical review. No imprimatur, nihil obstat, ecclesiastical approval, or completion of independent review is claimed, and internal checking is not independent review. The provenance finding about the *Supplementum* deserves the attention of someone able to read the Leonine apparatus properly and with access to the manuscript scholarship this article did not consult. The three findings that would change the article's central synthesis are named in the synthesis block itself and are the most actionable follow-ups.
+
+## Research-staleness verdict — 2026-07-27
+
+The three treatments were compared against new Eucharistic loci in the
+Catechism, Trent, and Aquinas. They do not change particular or general
+judgment, purgatory, or resurrection. No consequential claim changes; no
+material change.

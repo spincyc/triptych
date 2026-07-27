@@ -25,6 +25,28 @@ GPT edition; per the independence rule, the only file consulted under
 `src/gpt/biographies/saint-peter/` was `research/scope.md`, for topic parity
 only. No GPT sections, chronology, tradition audit, or prose were read.
 
+## Staleness review — 2026-07-27
+
+Changed inputs: newly registered exact-OCR passage records for Irenaeus,
+*Against Heresies* 1.10.1–3, 3.3.1–4, 3.22.4, and 5.2.2–3; and a new
+Penelope web edition and exact passage record for Josephus, *Antiquities*
+8.2.5. Both required candidates are preserved under
+`build/staleness/claude/biographies/saint-peter/`.
+
+| Consequential claim | Old publication | Minimal candidate | Research-first rewrite | Effect |
+|---|---|---|---|---|
+| Irenaeus's Roman witness and succession in *AH* 3.3.2–3 | Uses it as second-century reception for Roman apostolic ordering and the Linus succession, not as eyewitness proof or a continuous episcopate from the 40s | Retains the prose; notes that the exact OCR now controls the existing bounded substance | Reaches the same judgment from the records: public apostolic tradition, Rome and Smyrna, and succession, with the same second-century ceiling | **Strengthens source control only**; adds, removes, weakens, and contradicts no claim |
+| Irenaeus's newly recorded 1.10.1–3, 3.22.4, and 5.2.2–3 | Makes no claim from these loci | Excludes them as unrelated | Excludes them as rule-of-faith, Marian-recapitulation, and Eucharistic-resurrection material rather than Petrine biography | **No effect** |
+| Agrippa I and the conventional A.D. 44 anchor | Uses Josephus, *Antiquities* 19.8.2, with the conversion and source limit stated | Retains the claim unchanged | Reconstructs the same bounded chronology | **No effect**; new 8.2.5 concerns Solomon, Eleazar, and demons |
+| Overall life, Roman martyrdom, and tradition judgments | Distinguishes canonical portrait, early reception, later legend, and project synthesis | Preserves all judgments | Independently reproduces the same architecture and conclusions from the research records | **No substantive disagreement** |
+
+**Verdict: no material change.** The changed research improves the provenance
+available for one already bounded Irenaeus claim but requires no publication
+wording, chronology, tradition, or conclusion change. A future maintenance
+revision may upgrade the Irenaeus binding from catalog-level live-web use to
+the inspected OCR record while preserving its OCR and non-critical-edition
+limits. The Josephus 8.2.5 material must not be imported into this biography.
+
 ## Controlling question
 
 What does the earliest controlled evidence establish about Simon of

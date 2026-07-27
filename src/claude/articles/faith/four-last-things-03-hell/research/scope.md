@@ -51,3 +51,10 @@ Definitive: existence, immediacy at death, inequality of punishments, eternity, 
 Both candidates agreed on eternity, undetermined mode/population, culpability, and pastoral restraint. The authoring state is fit for baseline. See `src/sources/inventories/four-last-things-staleness-review-2026-07-26.md`.
 
 Internal argumentative, source-consistency, quotation, rights, and production review by the authoring agent only. No independent scriptural, patristic, Thomistic, dogmatic, theological, or ecclesiastical review. No imprimatur, nihil obstat, or ecclesiastical approval is claimed.
+
+## Research-staleness verdict — 2026-07-27
+
+The three treatments were compared against new Catechism and Aquinas
+Eucharistic loci and Irenaeus loci on faith, succession, Mary, and
+resurrection. None alters hell, culpability, or hope. No consequential claim
+changes; no material change.

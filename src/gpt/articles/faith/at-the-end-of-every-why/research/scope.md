@@ -79,3 +79,13 @@ bounds remain unchanged. No material change.
   release manifest remains outside this conflict resolution and still binds
   only the predecessor bytes; renewed exact-snapshot authorization is required.
 - Outstanding: independent patristic, dogmatic, moral-theological, Thomistic, mystical-theological, sacramental, pastoral, literary, and ecclesiastical review. No imprimatur, nihil obstat, or ecclesiastical approval is claimed.
+
+## Research-staleness verdict — 2026-07-27
+
+The old article, minimal candidate, and research-first candidate were compared
+after the bound Catechism and Irenaeus works gained new records. Catechism
+1322–1323 and Irenaeus I.10.1–3, III.3.1–4, III.22.4, and V.2.2–3 do not alter
+the article's consequential claims about charity, prayer, suffering within
+grace, merit, sacramental reception, or final end. Neither candidate adds,
+removes, strengthens, weakens, or contradicts those claims; both preserve the
+same authority and pastoral limits. **No material change.**

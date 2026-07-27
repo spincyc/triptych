@@ -53,3 +53,9 @@ vision, charity, hope, or the ascent/revelation seam. No material change.
 Completed: claim-driven source research with same-day (2026-07-25) verification of every quoted witness (see `research/source-audit.md`); verification of the City of God XXII.30 quotations against the source library's tracked 1871 artifact at the newly registered passage bounds; registration of that passage record and of catalog-level work/edition records for Benedictus Deus, with `scripts/source-library validate` passing; epistemic-order review (received teaching labeled at every appearance; the ascent/revelation seam expressly marked at the end of the ceiling section); boundary review against series parity constraints (no Eucharistic, mystical, or pastoral coverage duplicating the GPT edition's spine; no canon-law claims); rights review; internal argumentative, source-consistency, and quotation review; multipass build with clean fatal-error, undefined-reference, and layout scans; generation-metadata gate; and page-by-page raster review.
 
 Outstanding: independent scriptural, patristic, Thomistic, dogmatic, theological, literary, and ecclesiastical review. No imprimatur, nihil obstat, ecclesiastical approval, or completion of independent review is claimed. Internal checking is not independent review. The trilogy is complete with this part; no further series installment is planned.
+
+## Research-staleness verdict — 2026-07-27
+
+The three treatments were compared against the new Catechism Eucharist and
+Aquinas sacramental loci. They do not alter final end, vision, charity, or
+hope. No consequential claim changes; no material change.

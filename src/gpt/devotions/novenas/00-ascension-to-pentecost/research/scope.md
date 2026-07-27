@@ -109,3 +109,9 @@ distribution clearance attaches to the changed full guide.
 Comparison with both candidates found no material doctrinal, calendar, prayer,
 translation, approval, or indulgence correction. This exact guide is ready for
 rebaselining.
+
+## Research-staleness verdict — 2026-07-27
+
+The central-source expansion received both required candidate treatments and
+a claim-by-claim comparison. **No material change.** See
+`research/staleness-review-2026-07-27.md`.

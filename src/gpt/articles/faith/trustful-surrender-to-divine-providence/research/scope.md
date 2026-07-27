@@ -110,3 +110,12 @@ Both candidates and the paired, City of God, Catechism, and Aquinas inputs were
 compared. They reinforce Providence, agency, and moral boundaries without
 changing any consequential claim or attribution limit. This edition is ready
 for rebaselining.
+
+## Research-staleness verdict — 2026-07-27
+
+The old article, minimal candidate, and research-first candidate were compared
+after the bound Catechism work gained paragraphs 1322–1323 and its acquisition
+record. That Eucharistic introduction has no bearing on Providence, secondary
+causes, creaturely freedom, culpability, permission of evil, resistance to
+harm, prayer, agency, or Christological surrender. Both candidates preserve
+every consequential claim and pastoral boundary. **No material change.**

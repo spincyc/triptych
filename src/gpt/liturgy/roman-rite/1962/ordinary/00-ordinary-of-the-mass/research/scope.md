@@ -80,3 +80,8 @@ The exact Dods--Reith Buffalo 1887 witnesses for *First Apology* 65 and 67 were 
 Both candidates, paired research, and changed Missal inputs were compared. They
 strengthen provenance without changing sequence, rubric, theology, or edition
 boundaries. This exact edition is ready for rebaselining.
+
+## Research-staleness verdict — 2026-07-27
+
+The new Catechism 1322--1323 records add no leaf-specific evidence and change
+no consequential claim. Both candidates support no material change.

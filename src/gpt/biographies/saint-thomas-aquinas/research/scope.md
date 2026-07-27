@@ -348,3 +348,21 @@ control. Modified and research-first rewritten candidates agreed that Thomas's
 lethal conclusion and the later “inadmissible” judgment are already accurately
 distinguished. **No material change**; no prose, citation, or PDF revision.
 See `src/sources/inventories/aquinas-catechism-staleness-review-2026-07-26.md`.
+## Staleness review — 2026-07-27
+
+- **Changed input:** newly normalized Catechism 1322–1323 passage and its
+  inspected official artifact.
+- **Candidates:** both required treatments are under
+  `build/staleness/gpt/biographies/saint-thomas-aquinas/`: `modified/` is an
+  in-place no-op candidate, and `rewritten/candidate.md` was drafted from the
+  research records and changed passage before comparison with the current
+  prose.
+- **Three-way comparison:** the passage strengthens no attribution to Thomas
+  and adds no event. It removes, weakens, and contradicts no claim concerning
+  his chronology, writings, Eucharistic office, cessation of composition,
+  death, canonization, Doctor declaration, relic history, calendar, or current
+  patronage. Its Eucharistic synthesis is doctrinally consonant with material
+  already treated, not new evidence about Thomas. The rewritten candidate
+  differs only in compression and arrangement.
+- **Verdict:** **no material change**. Rebaseline is intentionally left to the
+  ledger-owning task.

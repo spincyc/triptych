@@ -67,3 +67,10 @@ Modified and research-first rewritten candidates agreed on every consequential c
 **Completed:** claim-driven source research with same-day (2026-07-26) reading of every quoted witness, recorded in `research/source-audit.md`; registration of six new source records and two Augustine passage records, with `scripts/source-library validate` passing for every record and binding owned by this leaf; weight classification of every consequential claim, restated in a terminal synopsis table; boundary review against series parity constraints; rights review; internal argumentative, source-consistency, and quotation review; a two-pass build with zero warnings, undefined references, or layout complaints; the generation-metadata gate; conversion of the web edition; and page-by-page raster review of all 36 pages.
 
 **Outstanding:** independent scriptural, patristic, Thomistic, dogmatic, canonical, theological, literary, and ecclesiastical review. No imprimatur, nihil obstat, ecclesiastical approval, or completion of independent review is claimed; internal checking is not independent review. Canonical fingerprint pinning of the exact-witness bindings was not performed, because the shared library's fingerprint query validates the whole tree and was blocked by unrelated in-flight records elsewhere in the repository; the bindings are recorded at the cataloged state with the publication-local reading stated as the ceiling.
+
+## Research-staleness verdict — 2026-07-27
+
+The three treatments were compared against new Eucharistic, exorcism-law, and
+sacramental loci in the bound central works. None bears on death, the
+intermediate state, or care of the dying. No consequential claim changes; no
+material change.
