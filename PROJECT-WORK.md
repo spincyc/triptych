@@ -31,6 +31,16 @@ reached publicly, pursue proportionate public primary, official, library, and
 critical-edition alternatives, then record the access boundary and resulting
 open evidence gate without inventing verification.
 
+The maintainer authorizes creation and revision of project-owned AI artwork
+for the sanctuary pictorial dictionaries and altar-server guide series. Each
+asset must remain grounded in publicly reachable, source-controlled evidence;
+carry its exact generation or edit provenance, references, hash, rights,
+corrections, consumers, and review state; and remain visibly provisional where
+review is open. Artwork may not invent or silently resolve an object's
+identity, morphology, scale, arrangement, ceremonial use, historical state, or
+an actor's liturgical action. AI creation supplies no human artwork,
+liturgical, ceremonial, or ecclesiastical review.
+
 ## Current integration and publication state
 
 The repaired public-alpha snapshot is integrated on `main` through commit
@@ -231,6 +241,10 @@ the same substantive edit.
   Paid editions, subscriptions, credentials, and maintainer-funded acquisition
   are outside scope; inaccessible necessary witnesses remain explicit evidence
   gaps after proportionate public-source alternatives are pursued.
+- 2026-07-27: Authorized project-owned AI artwork creation and revision for
+  the sanctuary pictorial dictionaries and altar-server guides, subject to
+  exact provenance, rights, source-control, consumer, and review records and
+  without treating generated output as human factual or artistic review.
 - Earlier conversation history is not itself a durable repository source.
   Any additional remembered agreement must be added here immediately and
   reconciled against the repository rather than inferred away.

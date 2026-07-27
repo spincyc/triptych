@@ -103,6 +103,14 @@ drawing on white. Generated artwork contains no words, letters, arrows,
 numbers, borders, or semantic marks. TeX owns headwords, labels, status marks,
 scale notices, movement paths, and callouts.
 
+Project-owned AI generation and revision are permitted for these
+illustrations. Generation is a production method, not evidence: the depicted
+identity, morphology, scale, arrangement, ceremonial use, and historical state
+must remain controlled by publicly reachable checked sources and the canonical
+object record. Do not prompt a model to fill an unresolved factual field or
+treat visual plausibility as identification. Generated output supplies no
+human artwork, priestly, liturgical, ceremonial, or ecclesiastical review.
+
 An ambiguous object receives an isolated view and a compact folded,
 unfolded, worn, placed, or in-use inset. Use common scale where diagnostic.
 Otherwise provide sourced dimensions, a scale bar, or a clear `not to common

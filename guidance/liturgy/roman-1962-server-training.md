@@ -433,6 +433,15 @@ before/after or state-change frames rather than one composite pose. A route
 frame names its cue, moving actor, carried object, stopping point, and finish
 state. Do not add a figure merely to show both ends of one actor's movement.
 
+Project-owned AI generation and revision are permitted for these instructional
+scenes. Generation is a production method, not ceremonial evidence: every
+actor, object, posture, route, destination, handoff, and finish state must be
+controlled by the applicable publicly reachable source and canonical
+inventory. Do not ask a model to resolve an open liturgical or ceremonial
+question through visual plausibility. Generated output supplies no human
+artwork, intended-reader, liturgical, ceremonial, pedagogical, or
+ecclesiastical review.
+
 Each sung guide begins after its title with the minimum actionable roster and
 sanctuary orientation and a direct `Choose your role` path. Standalone
 role-by-role learner sheets are the main guidance. Whole-team rehearsal
