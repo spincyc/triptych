@@ -41,7 +41,7 @@ empty page style: no running page numeral, header, instruction, or other
 apparatus appears outside the selected card faces.
 
 The installed 2026-07-27 public-review snapshot has SHA-256
-`b681d846c125e417f034f109f700ed34beb2e7179ead34aaa653644d3837318e`.
+`172eadb08a796a64dcc990eb49157b3f69c0ae6e01c927c29b7cff141e6160ed`.
 Its final build log is clean, and PDF text extraction and full-page inspection
 confirm the footer correction. This hash is the installed public-review
 identity recorded in the release inventory.

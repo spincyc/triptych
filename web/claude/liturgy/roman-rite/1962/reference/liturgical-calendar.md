@@ -454,6 +454,8 @@ The mechanism has three loci, and they are not redundant: one states the arrange
 
 5.  **The resumed Sunday keeps its own orations, Epistle, and Gospel, and borrows its chants.** That is why the Missal prints four separate formularies — *Dominica tertia*, *quarta*, *quinta*, and *sexta quae superfuit post Epiphaniam*, each headed *II classis* — rather than instructing the celebrant to turn back to the Epiphany section. Each printed resumed Mass already has the Twenty-third Sunday’s Introit *Dicit Dominus: Ego cogito cogitationes pacis*, Gradual *Liberasti nos, Domine*, Alleluia and Offertory *De profundis*, and Communion *Amen dico vobis* joined to its own Epiphany orations and readings.
 
+6.  **The enumeration fixes nominal slots before occurrence is resolved.** The phrases *dominica XXIV erit*, *XXV, quae inscribitur*, and *XXVI, quae inscribitur* assign each formulary to a numbered place. If a feast wins occurrence in one place, n. 14 leaves that nominal Sunday impeded; the later assignments do not slide backward. Computation must therefore record the nominal formulary first and the occurring winner second.
+
 Point 3 needs one refinement that a purely arithmetical reading misses. In 2008, *E* was 1: only the First Sunday after the Epiphany occurred, so the Second through the Sixth were all unused, five formularies in all. *P* was 28, giving four resumption slots, which case *d* fills with the Third, Fourth, Fifth, and Sixth. The Second Sunday after the Epiphany therefore occurred nowhere in 2008 — neither in January nor in November. It is dropped by the rule’s own top-down order, exactly as n. 18’s closing clause contemplates, and it is dropped precisely because it is the lowest unused ordinal. Case *d* does reach the Third; it is the *Second* that no case ever reaches.
 
 ### Why an arithmetical ordinal cannot identify the last Sunday
@@ -890,7 +892,7 @@ The Second Sunday after the Epiphany occurred nowhere in 2008. It was impeded in
 
 -   **2 November** was a Sunday, so the Commemoration of All the Faithful Departed, which at line 8 of the table expressly *locum cedit dominicae occurrenti*, yielded and was transferred by n. 96 b, *tamquam in sedem propriam*, to Monday 3 November. The Fourth Sunday left over after the Epiphany was celebrated on 2 November.
 
-**9 November, a case this reference does not settle.** The twenty-sixth place fell on the Dedication of the Archbasilica of the Most Holy Saviour, a feast of the II class in the universal calendar. If that feast is reckoned among the *festa Domini*, it stands at line 14, above Sundays of the II class at line 15, and by n. 16 a it would take the Sunday’s place with no commemoration of the Sunday. If it is not, it stands at line 16, below the Sunday, and by n. 111 b the Sunday admits its commemoration. The 1962 calendar page does not mark feasts of the Lord as such, and this reference did not establish the classification from a controlling text; the competent Ordo states it. The point is recorded here rather than resolved, because a reference that guesses at it will mislead a reader in every year in which the collision recurs.
+**9 November: the Missal’s own index resolves the category.** The twenty-sixth place nominally carried the Fifth Sunday left over after the Epiphany. The date was also the Dedication of the Archbasilica of the Most Holy Saviour, a feast of the II class. The final alphabetical index of the 1962 typical Missal expressly lists that dedication under *Festa Domini*. It therefore stands at line 14, above Sundays of the II class at line 15, and by n. 16 a takes the Sunday’s place without its commemoration. The Fifth is impeded; the Sixth remains at its independently assigned twenty-seventh place on 16 November. This is occurrence applied after the nominal slot map, not a compression of the resumed sequence.
 
 ### 2026: *E* = 3, *P* = 26, two resumed and one dropped
 
@@ -1080,7 +1082,7 @@ Finally, this reference did not locate the act that changed the September Ember 
 
 1.  **The year of twenty-three Sundays after Pentecost.** Neither the code nor the Missal legislates the case. Section [6](#sec:resumed) gives both readings, their textual support, and the witness that would settle the question. Unresolved.
 
-2.  **Which II class feasts are *festa Domini*.** The distinction is operative at lines 14 and 16 of the table of precedence and at n. 16 a, and it decides whether a II class feast absorbs a II class Sunday or is commemorated by it. The 1962 calendar pages do not mark the category, and this reference did not establish a controlling list. The concrete instance of 9 November 2008 is left open in Section [10](#sec:years). Unresolved.
+2.  **The Lateran dedication as a *festum Domini*.** The calendar page does not mark the category, but the final alphabetical index of the same 1962 typical Missal expressly lists the 9 November dedication under *Festa Domini*. That controlling internal index resolves the 2008 occurrence: line 14 and n. 16 a put the feast above the II-class Sunday, without commemoration of the Sunday.
 
 3.  **The date instrument for the September Ember Days.** Observed as changed; the act that changed it is not identified here. Unresolved.
 
@@ -1235,7 +1237,7 @@ Sources are grouped by the role they play. Only sources actually read for this e
 
 ## Generation Metadata
 
-**Last revised (UTC):** 2026-07-26T10:13:06Z
+**Last revised (UTC):** 2026-07-27T23:02:25Z
 
 **Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 

@@ -27,8 +27,8 @@ The cover identifies the trainer edition. Instructional route pages print
 `MATCHES CHILD PAGE n` in the left rail. The trainer edition uses a smaller
 but fixed main-lane scale so the narrower lane remains page aligned. It does
 not alternate the rail or add a separate mastery record. Page 27 mirrors the
-local-route fields and page 28 mirrors the cumulative rehearsal checklist. The
-terminal page 29 currently has no trainer rail.
+local-route fields and page 28 mirrors the cumulative rehearsal checklist.
+Terminal page 29 retains its trainer rail and detachable-card instructions.
 
 The physical sequence is identical to the child map: page 2 is `ARRIVE AND
 KNEEL`, page 3 is `BEGIN THE PRAYERS`, page 12 is `MOVE THE MISSAL`, page 13

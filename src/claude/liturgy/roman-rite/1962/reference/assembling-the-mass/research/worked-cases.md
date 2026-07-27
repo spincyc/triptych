@@ -183,11 +183,11 @@ resumed; 2036 branch (a), one resumed.
   Alleluia come from the 23rd Sunday after Pentecost; the orations, Epistle and Gospel are the
   Epiphany Sunday's own. The Missal prints the composite formulary in full (artifact pp.
   499–500), which is the independent check.
-- **The 2035 variant.** 28 Sundays after Pentecost, so RG 18 d resumes four at slots XXIV–XXVII.
-  Slot XXIV is 28 October 2035, the last Sunday of October, hence Christ the King (RG 17 d).
-  One of the four cannot be said. Reading one (slot assignment) loses the Third after Epiphany;
-  reading two (sequence, using the closing `omissis, si opus sit, ceteris` clause) loses the
-  Sixth. **Contested; no answer asserted.**
+- **The 2035 variant.** 28 Sundays after Pentecost, so RG 18 d fixes four nominal assignments
+  at slots XXIV–XXVII. Slot XXIV is 28 October 2035, the last Sunday of October, hence Christ
+  the King (RG 17 d). Occurrence displaces the Third after Epiphany in that slot; the Fourth,
+  Fifth, and Sixth remain at XXV–XXVII. The sequence does not compress. This is a normative
+  rule application, not dated-Ordo verification.
 - **English witness.** The collect of the Fifth Sunday after Epiphany is quoted from the 1861
   Cummiskey hand missal, row `epiph-05 / collect`, as a witness only.
 

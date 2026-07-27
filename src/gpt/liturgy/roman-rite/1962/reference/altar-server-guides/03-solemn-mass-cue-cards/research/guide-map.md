@@ -68,7 +68,7 @@ misidentifying SO-070 as the source of a missed-cue rule. Every card remains
 subject to card-by-card rendered collation after a source change.
 
 The installed public-review snapshot built on 27 July 2026 remains 12 pages with SHA-256
-`3c46449cd8125c0ac834bcf2d1b77c4ec2491184be1b3483bd1627a1f2dbab8a`.
+`328005a08b9212eabaada8067c3c5dce999bc0e6b3f6b446efba0bfe114e79c6`.
 Two pdfTeX passes settled the build, and the final log has no fatal error,
 undefined reference, box warning, or rerun request. Bounded every-page screen
 review confirmed the six-up sequence, odd-page fronts, mirrored backs, safe

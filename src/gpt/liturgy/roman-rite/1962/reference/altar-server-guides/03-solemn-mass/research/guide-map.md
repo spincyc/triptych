@@ -115,7 +115,7 @@ run begins on the next odd page after four complete six-up response sheet
 pairs. Every US-letter portrait sheet places six cards on each face in a
 two-column by three-row grid; each back mirrors every row for long-edge
 printing and has no blank card. The full guide has no embedded card range.
-The current installed full guide is twenty-seven physical pages; the installed
+The current installed full guide is twenty-eight physical pages; the installed
 companion is twelve. The full guide keeps the complete
 `Present; do not push` movement unit on one page. Production review confirmed
 response fronts on pages 1, 3, 5, and 7, action fronts on pages 9 and 11,
@@ -128,7 +128,7 @@ performance, intended-reader testing, and independent liturgical, ceremonial,
 pronunciation, pedagogical, rights, and ecclesiastical review remain pending.
 
 The installed public-review snapshot built on 27 July 2026 is 28 pages with SHA-256
-`8318be36fd284e7a57399ab9b3ee0e317d711c60158adb1e5565d457d41971c8`.
+`ad4a45de902147495fc22a96c42b4010d14dc8611243accd6755831aa78cce19`.
 Two pdfTeX passes settled its references, and the final log has no fatal error,
 undefined reference, box warning, or rerun request. A bounded every-page
 contact-sheet review found no clipping, collision, accidental blank, broken

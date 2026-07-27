@@ -81,9 +81,10 @@ Latin entry titles are given as the calendar prints them.
 
 1. The year of twenty-three Sundays after Pentecost is unlegislated. Two readings are set out at
    full strength, an editorial assessment is labelled as such, and the case is left unresolved.
-2. Which II class feasts are *festa Domini* is operative at lines 14 and 16 of the table and at
-   n. 16 a, and no controlling list was established. The concrete instance of 9 November 2008 is
-   left open.
+2. The final alphabetical index of the controlling 1962 typical Missal supplies the previously
+   missing list for the concrete case: it places the 9 November Lateran dedication under *Festa
+   Domini*. Accordingly line 14 and n. 16 a displace the nominal Fifth Sunday left over after
+   Epiphany in 2008. No broader unprinted classification is inferred from this exact entry.
 3. The act that changed the September Ember dating from the Exaltation of the Holy Cross to the
    third Sunday of September is not identified.
 4. Whether the pre-1960 Breviary rubrics carried an equivalent exclusivity clause is untested; the

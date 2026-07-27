@@ -246,10 +246,11 @@ the two Sunday-assigned entries, the Most Holy Name of Jesus and the Holy Family
 Thirty-seven entries: three vigils, six days within the octave of the Nativity (three of them
 simultaneously feasts), two Sunday-assigned, and the rest fixed feasts. All read as page images.
 
-**Unresolved:** the calendar pages do not mark which of these are *festa Domini*. The distinction is
-operative at lines 14 and 16 of the table and at 16 a, and decides whether such a feast absorbs a II
-class Sunday or is commemorated by it. The concrete case of the Dedication of the Archbasilica on
-9 November 2008 is left open in the publication.
+The calendar pages do not mark which entries are *festa Domini*, but the final alphabetical index
+of the same controlling 1962 typical Missal supplies the exact classification needed here: under
+*Festa Domini* it expressly lists the Dedication of the Archbasilica on 9 November. At lines 14
+and 15 of the table and under n. 16 a, that II-class feast therefore absorbs the nominal II-class
+Sunday on 9 November 2008 without commemoration.
 
 ## III class and commemorative layers
 
@@ -288,7 +289,8 @@ table alone (7, 91).
 ## Unresolved issues, collected
 
 1. The year of twenty-three Sundays after Pentecost — unlegislated; two readings published.
-2. Which II class feasts are *festa Domini* — no controlling list established.
+2. No general classification beyond printed evidence is inferred, but the controlling Missal's
+   *Festa Domini* index resolves the 9 November Lateran dedication exactly.
 3. The instrument and date of the September Ember change — not identified.
 4. Whether the pre-1960 Breviary rubrics carried an exclusivity clause — the Missal side of the test
    was run and found none; the Breviary side is untested.

@@ -193,7 +193,7 @@ card candidates.
 The current uninstalled Missa Cantata companion retains the same twelve-page
 front/back map, card selection, form markers, and mirrored grid geometry. The
 review build has SHA-256
-`b681d846c125e417f034f109f700ed34beb2e7179ead34aaa653644d3837318e`.
+`172eadb08a796a64dcc990eb49157b3f69c0ae6e01c927c29b7cff141e6160ed`.
 Rendered review confirms that the denser R08B answer preserves every verbal
 field while restoring a safe inset for the continuation note on page 8.
 Text extraction and full-page inspection also confirm that pages 1--11 contain

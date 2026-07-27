@@ -109,7 +109,9 @@ Sundays are class II except the class-I feasts assigned to Sunday. Ordinary week
 
 On an otherwise unimpeded class-IV Saturday, the Office and Mass of the Blessed Virgin Mary on Saturday supply the recurring observance prescribed by General Rubrics nn. 78–79. Its seasonal forms do not turn it into a fourth class of feast.
 
-When Easter is early or late, not all Sundays printed after Epiphany are used in their first position. The omitted post-Epiphany formularies are resumed between the twenty-third and the final Sunday after Pentecost as the Missal directs; the final Sunday remains the twenty-fourth. This device completes the Sunday cycle without pretending that every year has the same number of calendar weeks.
+When Easter is early or late, not all Sundays printed after Epiphany are used in their first position. General Rubric 18 fixes a nominal slot map between the twenty-third and final Sunday after Pentecost: for twenty-five Sundays slot XXIV is the Sixth after Epiphany; for twenty-six, XXIV–XXV are Fifth–Sixth; for twenty-seven, XXIV–XXVI are Fourth–Sixth; and for twenty-eight, XXIV–XXVII are Third–Sixth. The final Sunday uses the Twenty-fourth-and-Last formulary.
+
+Resolve occurrence only after constructing that map. If a feast wins one slot, its nominal Sunday is impeded and the later formularies do not slide backward. In 2008 Christ the King displaced the nominal Third after Epiphany on October 26; the Fourth remained on November 2. The 1962 Missal’s alphabetical index places the November 9 Lateran dedication under *Festa Domini*, so it displaced the nominal Fifth under Rubric 16(a); the Sixth remained on November 16 and the Twenty-fourth-and-Last on November 23. These are source-grounded nominal and universal-calendar results, not a claim that a competent dated Ordo was checked. Apply every proper-calendar overlay separately, and fail closed for the unlegislated twenty-three-Sunday shortfall.
 
 ### Fixed seasonal observances not to overlook
 
@@ -607,7 +609,7 @@ The United States section is deliberately separate. A national calendar, diocesa
 
 ## Generation Metadata
 
-**Last revised (UTC):** 2026-07-19T12:50:42Z
+**Last revised (UTC):** 2026-07-27T23:02:25Z
 
 **Model:** `GPT-5-based Codex agent`; `unexposed: exact model identifier and model qualifiers`
 

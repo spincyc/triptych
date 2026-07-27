@@ -841,13 +841,7 @@ One rule is needed before the first case and is not printed in the Missal at all
 >
 > That is quoted as an identified nineteenth-century lay hand missal’s English, to show what the retained collect says; the 1861 book is a pre-1955 witness and its rubrics, second and third collects, and Holy Week are not those of 1962. The 1962 formulary keeps only the Sunday’s own collect.
 >
-> **The harder variant, and where it runs out.** In 2035, Easter falls on 25 March — the same year as Case 2 — and there are twenty-eight Sundays after Pentecost, so RG 18 d resumes four Epiphany Sundays at slots XXIV to XXVII. Slot XXIV is 28 October 2035, which is the last Sunday of October and therefore the feast of Christ the King, a first-class feast which by RG 17 d takes the place of the occurring Sunday with no commemoration of it. One of the four resumed Sundays consequently has nowhere to go.
->
-> 1.  *Reading one.* RG 18 assigns each resumed Sunday to a numbered slot. Slot XXIV is occupied by Christ the King, so the Sunday assigned to it — the Third after Epiphany — is impeded, and RG 14 forbids anticipating or resuming an impeded Sunday. The Third after Epiphany is lost; the Fourth, Fifth and Sixth are kept at slots XXV, XXVI and XXVII.
->
-> 2.  *Reading two.* RG 18’s “hoc ordine” states a sequence rather than a slot assignment, and its closing clause — “omissis, si opus sit, ceteris, quae aliquando locum habere non possunt” — is designed for exactly this shortage. The Sundays are taken in order over the Sundays actually available after the Twenty-third, so the Third, Fourth and Fifth after Epiphany are said on 4, 11 and 18 November and the Sixth is dropped.
->
-> The two readings put a different Mass on three consecutive Sundays. We do not think the general rubrics settle it, and we do not assert an answer: a competent Ordo for 2035 does. What the rubrics do settle is that one of the four is lost and that the Twenty-fourth and last Sunday after Pentecost is said on 25 November whichever reading is taken.
+> **The harder variant, resolved in two layers.** In 2035, Easter falls on 25 March — the same year as Case 2 — and there are twenty-eight Sundays after Pentecost, so RG 18 d resumes four Epiphany Sundays at slots XXIV to XXVII. Slot XXIV is 28 October 2035, which is the last Sunday of October and therefore the feast of Christ the King, a first-class feast which by RG 17 d takes the place of the occurring Sunday with no commemoration of it. One of the four resumed Sundays consequently has nowhere to go. The two operations must not be merged. First, RG 18 fixes the nominal map: Third, Fourth, Fifth and Sixth after Epiphany at slots XXIV, XXV, XXVI and XXVII. Its repeated *dominica XXIV erit*, followed by express XXV, XXVI and XXVII assignments, does not authorize compression over available Sundays. Second, occurrence is resolved. Christ the King takes slot XXIV, so the Third after Epiphany is impeded; RG 14 forbids anticipating or resuming it. The Fourth, Fifth and Sixth remain on 4, 11 and 18 November, and the Twenty-fourth and last Sunday after Pentecost remains on 25 November. A dated Ordo is still required to verify the civil-year result in practice; it is not required to invent a second nominal sequence.
 
 ### Case 6: a funeral on All Souls
 
@@ -907,7 +901,7 @@ Two further open questions are argued at the place where a reader meets them, an
 
 -   **Whether the Preface of the Trinity reaches a Mass that is not of the Sunday** — RGMR 494 b’s “in dominicis II classis” against the neighbouring rubrics’ “in Missis quae celebrantur eodem tempore.” Section 7.
 
--   **Which resumed Sunday after Epiphany is lost when Christ the King occupies its slot** — RG 18’s numbered assignment against its closing “omissis, si opus sit, ceteris.” Case 5.
+-   **The year with only twenty-three Sundays after Pentecost** — RG 18 does not expressly legislate that shortfall. The calendar computation profile requires a fail-closed result pending a competent dated Ordo.
 
 ### Closed by evidence: the Purification is a feast of the Lord
 
@@ -1033,7 +1027,7 @@ This table lists the decisions this book teaches and the exact rubric that answe
 | An impeded Sunday is not anticipated or resumed | RG 14 | D |
 | Feasts perpetually assignable to a Sunday: the closed list of five | RG 17 | D |
 | Sundays after Epiphany resumed after the 23rd after Pentecost | RG 18; their assembly RGMR 298 | D |
-| Which resumed Sunday is lost when Christ the King takes its slot | RG 18 with RG 14 and RG 17 d | C (Case 5) |
+| Fixed nominal resumed slots, then displacement by Christ the King | RG 18 with RG 14 and RG 17 d | I (Case 5) |
 | Ferias: four classes, and the Lent/Advent reversal | RG 23–RG 26, especially RG 25 a against RG 25 b | D |
 | Ferial Mass formulary: proper, or the preceding Sunday’s | RGMR 299 | D |
 | Vigils: classes, and when a vigil is dropped entirely | RG 30–RG 33 | D |
@@ -1131,7 +1125,7 @@ No manual, commentary, Ordo or rubrical handbook is cited, and none was used to 
 
 ## Generation Metadata
 
-**Last revised (UTC):** 2026-07-26T09:51:47Z
+**Last revised (UTC):** 2026-07-27T23:02:25Z
 
 **Model:** `claude-opus-5[1m]`; `unexposed: reasoning-effort and sampling configuration`
 

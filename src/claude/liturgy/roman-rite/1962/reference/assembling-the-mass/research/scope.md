@@ -91,8 +91,10 @@ Three claim classes are used and are visible in the rendered text and in
   Sunday; the contemporaneous *festa de praecepto* list of the Sacred Congregation of the
   Council (3 December 1960) gives the contrary reading its footing. No answer is asserted.
 - **RGMR 494 b and a Mass that is not of the Sunday.** Both readings are given. Unresolved.
-- **RG 18 when Christ the King occupies a resumed Sunday's slot.** Both readings are given.
-  Unresolved; a competent Ordo decides.
+- **RG 18 when Christ the King occupies a resumed Sunday's slot.** The nominal fixed-slot map
+  is resolved from the rule's express XXIV–XXVII assignments; occurrence then displaces only
+  the Sunday assigned to the occupied slot. A dated Ordo remains necessary to verify an actual
+  civil-year result, not to compress the nominal sequence.
 - **RGMR 271 and the sung/read boundary** when a choir sings and the celebrant reads. The
   literal test is preferred and the residual doubt is recorded.
 - **RGMR 422's octave when All Souls has been transferred.** Marked as a necessary inference

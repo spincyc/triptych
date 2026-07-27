@@ -94,8 +94,10 @@ reported and not resolved by preference.
 
 ## Rejected leads and things not done
 
-- No dated Ordo under the 1960 rubrics was located or read, for any year. This is why the
-  twenty-three-Sunday case and the classification of the Dedication of the Archbasilica remain open.
+- No dated Ordo under the 1960 rubrics was located or read, for any year. The
+  twenty-three-Sunday case therefore remains open, and computed civil-year examples are not
+  represented as dated-Ordo verification. The Lateran classification no longer depends on an
+  Ordo: the 1962 typical Missal's final *Festa Domini* index expressly supplies it.
 - A machine tally of the Acta's own *Calendarium* was run and was not reliable enough to publish; no
   count of III class entries or commemorations is asserted anywhere.
 - No second exemplar of either controlling printing was consulted, so a defect peculiar to the copy

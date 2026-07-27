@@ -13,13 +13,13 @@ not control the current installed files.
 
 | Publication | Revision UTC | Pages | Physical cards | Bytes | SHA-256 | Current review state |
 |---|---|---:|---:|---:|---|---|
-| `01-low-mass` | `2026-07-27T18:33:00Z` | 29 | 0 | 7,847,547 | `48eb5d740711637337a68fcb60d8d7848a8b58270f4cf3ebf677a74021a6e207` | public alpha review; four replacement scenes received generating-agent inspection; integrated every-page and paired-use review pending |
-| `01-low-mass-trainer-manual` | `2026-07-27T18:33:00Z` | 29 | 0 | 7,860,317 | `80972c0e8578950fadbb41aaa2f75bedf5ae26d0bbc15e6983f68df52ebbb9f8` | public alpha review; page-aligned replacement-art build; integrated every-page and paired-use review pending |
-| `01-low-mass-flash-cards` | `2026-07-27T18:33:00Z` | 6 | 22 | 250,568 | `c88594e4509ae98fac12429c3b23f6960ab0f89edae811e375b930d1a56332b4` | public alpha review; electronic pairing reviewed; physical actual-size, duplex, photocopy, and cut review pending |
-| `02-missa-cantata` | `2026-07-27T18:30:38Z` | 27 | 0 | 1,258,883 | `bbaad39b0ab61b5348d259a37623aeccb10aec7b83bdd4420802b0a2fd960de7` | public alpha review; physical, intended-reader, independent, rights, and ecclesiastical review pending |
-| `02-missa-cantata-cue-cards` | `2026-07-27T18:30:38Z` | 12 | 36 | 621,559 | `b681d846c125e417f034f109f700ed34beb2e7179ead34aaa653644d3837318e` | public alpha review; electronic pairing reviewed; physical actual-size, duplex, photocopy, and cut review pending |
-| `03-solemn-mass` | `2026-07-27T18:31:29Z` | 28 | 0 | 1,304,972 | `8318be36fd284e7a57399ab9b3ee0e317d711c60158adb1e5565d457d41971c8` | public alpha review; physical, intended-reader, independent, rights, and ecclesiastical review pending |
-| `03-solemn-mass-cue-cards` | `2026-07-27T18:31:29Z` | 12 | 36 | 627,446 | `3c46449cd8125c0ac834bcf2d1b77c4ec2491184be1b3483bd1627a1f2dbab8a` | public alpha review; electronic pairing reviewed; physical actual-size, duplex, photocopy, and cut review pending |
+| `01-low-mass` | `2026-07-27T22:48:48Z` | 29 | 0 | 7,852,561 | `1bfa2ac95ace57b06f0fd7b286206876cecb4ead0b38aa7a53eea244fca6e7e7` | public alpha review; every page now carries the provisional edge label; physical, paired-use, intended-reader, independent, rights, and ecclesiastical review pending |
+| `01-low-mass-trainer-manual` | `2026-07-27T22:48:48Z` | 29 | 0 | 7,865,245 | `c82554be8f966900db30c5e86f1f781afada5f6f5be25251f05eaa1e6f2330d4` | public alpha review; page-aligned build with provisional edge label; physical, paired-use, intended-reader, independent, rights, and ecclesiastical review pending |
+| `01-low-mass-flash-cards` | `2026-07-27T22:48:48Z` | 6 | 22 | 250,916 | `6a5d1363faab813ad51b0e2d0d68a601e3970e077ae9bf45c3cb78242b3cf460` | public alpha review; electronic pairing reviewed; physical actual-size, duplex, photocopy, and cut review pending |
+| `02-missa-cantata` | `2026-07-27T22:48:48Z` | 27 | 0 | 1,264,704 | `07a16ac90e30836c4c8aa8bebb3a788caad74ede3fd2985bcaa9b420917ed3cd` | public alpha review; every page now carries the provisional edge label; physical, intended-reader, independent, rights, and ecclesiastical review pending |
+| `02-missa-cantata-cue-cards` | `2026-07-27T22:48:48Z` | 12 | 36 | 624,375 | `172eadb08a796a64dcc990eb49157b3f69c0ae6e01c927c29b7cff141e6160ed` | public alpha review; electronic pairing reviewed; physical actual-size, duplex, photocopy, and cut review pending |
+| `03-solemn-mass` | `2026-07-27T22:48:48Z` | 28 | 0 | 1,311,099 | `ad4a45de902147495fc22a96c42b4010d14dc8611243accd6755831aa78cce19` | public alpha review; every page now carries the provisional edge label; physical, intended-reader, independent, rights, and ecclesiastical review pending |
+| `03-solemn-mass-cue-cards` | `2026-07-27T22:48:48Z` | 12 | 36 | 629,684 | `328005a08b9212eabaada8067c3c5dce999bc0e6b3f6b446efba0bfe114e79c6` | public alpha review; electronic pairing reviewed; physical actual-size, duplex, photocopy, and cut review pending |
 
 The current family totals 143 pages: 113 guide or manual pages and 30 card
 pages. It contains 94 physical cards: 22 Low-Mass cards, 36 Missa-Cantata
@@ -32,6 +32,15 @@ identities.
 The sections below preserve the development and review history. A historical
 authorization or completed screen review applies only to the exact bytes named
 in its section.
+
+The 27 July 2026 publication-label pass rebuilt, rastered, and installed all
+143 pages. The shared outer-edge strip reads `PUBLIC-ALPHA REVIEW COPY ·
+PROVISIONAL · NOT AN OFFICIAL LITURGICAL BOOK` on every page and remains
+outside the instructional lanes and card cut boxes. Contact-sheet and
+page-raster inspection found the label present without clipping instructional
+matter, changing page order, or changing the declared card pairing. This
+screen review does not complete any deferred physical, human, specialist,
+rights, or ecclesiastical review gate.
 
 ## Historical reviewed predecessor snapshot
 

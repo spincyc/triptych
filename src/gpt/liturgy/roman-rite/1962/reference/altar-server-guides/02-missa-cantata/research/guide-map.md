@@ -106,7 +106,7 @@ rights, liturgical-text-permission, or ecclesiastical approval.
 
 The 2026-07-27 navigation repair produced the installed twenty-seven-page
 public-review full guide with SHA-256
-`bbaad39b0ab61b5348d259a37623aeccb10aec7b83bdd4420802b0a2fd960de7`.
+`07a16ac90e30836c4c8aa8bebb3a788caad74ede3fd2985bcaa9b420917ed3cd`.
 Its direct role-page pointers resolved after two builds, and its final log is
 free of fatal errors, warnings, undefined references, overfull or underfull
 boxes, and unresolved rerun requests. This hash is the installed

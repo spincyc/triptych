@@ -41,6 +41,7 @@ which it was left. `read` means the identified passage was rendered and examined
 | Formularies of the First Sunday after the Epiphany, the Holy Family, and the Commemoration of the Baptism of the Lord, with their occurrence rubrics | 1962 typical edition | read |
 | Ember Wednesday of Pentecost and of September | 1962 typical edition | read |
 | Twenty-third Sunday after Pentecost with the resumption rubric printed at its end; the Third and Fourth Sundays left over after the Epiphany; the Twenty-fourth and last Sunday after Pentecost | 1962 typical edition | read; the Fifth and Sixth resumed Sundays were located but not collated |
+| Final *Index alphabeticus*, heading *Festa Domini*, including *Dedicatio Archibasilicae Ssmi Salvatoris, 9 novembris* | 1962 typical edition | read; controls the Lateran dedication's category for n. 16 a |
 
 ## Comparative witnesses
 

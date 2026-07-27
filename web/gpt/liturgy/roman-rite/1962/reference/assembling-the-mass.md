@@ -745,7 +745,7 @@ When Septuagesima prevents the Third through Sixth Sundays after Epiphany, rubri
 
 -   Collect, Epistle, Gospel, Secret, and Postcommunion from the resumed Epiphany Sunday.
 
-The Mass keeps its proper resumed-Sunday identity. The Twenty-fourth and Last Sunday after Pentecost always remains last. A hand missal that simply points to “the preceding Sunday” cannot replace this explicit composite.
+The Mass keeps its proper resumed-Sunday identity. Rubric 18 first fixes each nominal resumed formulary in its numbered slot; occurrence is a separate operation. A feast that wins one slot impedes that slot’s Sunday under Rubrics 14 and 16, but does not pull later resumed formularies backward. In a twenty-eight-Sunday year, therefore, XXIV–XXVII remain Third–Sixth after Epiphany even when Christ the King displaces the Third at XXIV. The Twenty-fourth and Last Sunday after Pentecost always remains last. A hand missal that simply points to “the preceding Sunday” cannot replace this explicit composite. A dated Ordo must still verify an actual civil year and its proper-calendar overlays; the twenty-three-Sunday shortfall remains fail-closed.
 
 ### Low, sung, and Solemn execution
 
@@ -2183,7 +2183,7 @@ Rubrical code
 Typical Missal  
 *Missale Romanum ex decreto Sacrosancti Concilii Tridentini restitutum, Summorum Pontificum cura recognitum*, editio typica, Typis Polyglottis Vaticanis, 1962. The checked public facsimile is hosted by the Church Music Association of America: <https://media.churchmusicassociation.org/pdf/missale62.pdf>. Its *Rubricae generales Missalis Romani*, *Ritus servandus in celebratione Missae*, *Ordo Missae*, Canon, temporal and sanctoral formularies, Commons, votives, Requiems, and ritual formularies control assembly at the altar.
 
-**Last revised (UTC):** 2026-07-19T03:44:17Z
+**Last revised (UTC):** 2026-07-27T23:02:25Z
 
 **Model:** `gpt-5.6-sol`; `effort=ultra`
 

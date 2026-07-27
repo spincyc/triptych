@@ -14,6 +14,18 @@
 \newif\ifChildBookletGuide
 \newif\ifTrainerManualGuide
 
+% Every page in this provisional family must identify itself even when a page
+% is printed or detached without its cover.  The outer-edge strip remains
+% outside the instructional lanes and all card cut boxes.
+\AddToHook{shipout/foreground}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[rotate=90,anchor=center,inner sep=0pt]
+      at ([xshift=9pt]current page.west)
+      {\fontsize{6.5}{7.5}\selectfont\bfseries
+        PUBLIC-ALPHA REVIEW COPY \textperiodcentered\ PROVISIONAL
+        \textperiodcentered\ NOT AN OFFICIAL LITURGICAL BOOK};
+  \end{tikzpicture}}
+
 % A cards-only companion supplies this hook so its inherited revision record
 % and compact rights notice can occupy the unused margin below the final back
 % sheet.  Full guides leave it empty and render their ordinary terminal matter.
