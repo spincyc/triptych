@@ -4,8 +4,8 @@ provider = "gpt"
 audited_on = "2026-07-27"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 123
-source_surface_file_count = 1434
-snapshot = "sha256:a517cd57d2daf0df7a934f7c546496a2e69841a6bc365a072bf479cc38a81bfc"
+source_surface_file_count = 1438
+snapshot = "sha256:c66886311faaee2dc4e235e751b264be66a7090d04e849322ae8df1480997b51"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -3080,37 +3080,37 @@ owners = ["articles/scripture/john-6-bread-from-heaven"]
 
 [[files]]
 path = "src/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb/main.tex"
-sha256 = "ff06f26b3ae612a2b1837870dab4f5623e163de701b215d494d16fec07df8962"
+sha256 = "6c3c4eac7a5dc2849b2a24613c800b002aa5d4fc8f9efb1d2d706f89cda03274"
 kind = "publication-main"
 owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
 
 [[files]]
 path = "src/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb/research/evidence-map.md"
-sha256 = "44cb1cd7ae95a103e6292324efebf2586e38768d017dedb75c829b7b4eb98956"
+sha256 = "0dd2e3bb77b242177a411955dd9ccee81c3a7e0e05ef75d5023c9389584feb82"
 kind = "research-record"
 owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
 
 [[files]]
 path = "src/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb/research/scope.md"
-sha256 = "c8d434af4ab772d584caf285e9b9111bab9c5ee5fc29d63c24a649801c02561a"
+sha256 = "b6bf74c49c7dd1a46d7717a7aa918d402dc21d3f9a5d5b155d2a3d0f20867ffb"
 kind = "research-scope"
 owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
 
 [[files]]
 path = "src/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb/research/source-audit.md"
-sha256 = "d0f7f32f591527a8e69a90b3aa947499953f82225c70e6917e0d5ddfed10bcae"
+sha256 = "f68386f6f6ac18d68cd45bb14b25dad19f25169f1eeeb4104e456c05bc10ae14"
 kind = "legacy-source-audit"
 owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
 
 [[files]]
 path = "src/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb/research/source-bindings.toml"
-sha256 = "1cf515a2b69f1938d2043dd4fe43db95a6d2967df9dd1bab3ff45b5bb17b3328"
+sha256 = "cd28e3e3b09dc7315303b1d110b68ba68afe577cf9d4a18ca3ca05e215eeb4c1"
 kind = "source-binding"
 owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
 
 [[files]]
 path = "src/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb/research/staleness-review-2026-07-26.md"
-sha256 = "4ad6fed8a8c72206a9d3a4cd4a9b3b8b915e25d43364944d27e17be030b05277"
+sha256 = "2960c622577abf2f8f5f618344a9fd87dfd9d1250c0b482813b8a537566741e3"
 kind = "research-record"
 owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
 
@@ -8444,8 +8444,14 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/main.tex"
-sha256 = "e6be3c254ca00f733c5ded23e848ded0f3e19560030d1ff6a77cbeee282eca03"
+sha256 = "92e49d635b431d986ea2c3bf4e8130e40e18dd459afe2c6682ea8b7ebfde7d16"
 kind = "publication-main"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/proper-components.toml"
+sha256 = "e306ac9ce952dc1499d1735d16294ef876d53dbff20231f4041d1ac909ef1e31"
+kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
@@ -8456,7 +8462,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/research/scope.md"
-sha256 = "5481d62028762e9c01771a41eac49e790f587d2515550671d0f0ab8c65c0bdca"
+sha256 = "0505d26397836fa506b06af4b8ba69958a8ef829fa35211447815fc25be05f31"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
 
@@ -8464,6 +8470,24 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/research/source-bindings.toml"
 sha256 = "b1015602450569d36262686504924a4c6f3a2a8d54f714dc1e466eb877b375da"
 kind = "source-binding"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/05-appointed-text.tex"
+sha256 = "b39520603c0c77fbd0dd437bb8b8e8e3a515e6b9ffc806531f769d51ef104f2c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/35-source-grounded-synthesis.tex"
+sha256 = "e1ba605f11f7bfc01e880ec964eb16c63ca4c05e63e848484dc7b8f13f974fed"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/synthesis.tex"
+sha256 = "2c08d66e9049f5db88335a2494fe07148d72561ab72a5ac299dafc70d6fdca8c"
+kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
