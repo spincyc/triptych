@@ -1,32 +1,25 @@
-# Staleness review — 2026-07-27
+# Exact-trigger Staleness Review — 2026-07-27
 
-## Trigger and candidates
+Immediately before review, the exact explanation reported nine USCCB-2019
+Catechism passages: 391–395, 550, 1667–1673, 1700–1706, 1734–1735,
+1857–1859, 2111, 2116–2117, and 2846–2854.
 
-The reported central expansion is the exact official-English record for CCC
-1322–1323. Both treatments were produced under
-`build/staleness/gpt/devotions/novenas/00-ascension-to-pentecost/`. The
-modified candidate retains the present guide. A reconstruction from the new
-passage alone yields only a general Eucharistic synthesis and cannot supply
-the novena's Pentecostal, calendar, prayer-text, Marian, or indulgence
-controls.
+The ignored modified candidate is an exact pre-note source snapshot. The
+ignored rewrite is a complete research-first devotional treatment drafted from
+research records without consulting current guide prose. It composes no prayer.
 
-## Consequential-claim comparison
-
-| Claim family | Old | Modified | Rewritten from changed input | Effect |
+| Claim or component | Old | Modified | Rewritten | Effect |
 |---|---|---|---|---|
-| Acts 1–2 archetype and nine-day calendar | Retained | Retained | No evidence | None |
-| Trinity, Spirit, gifts, fruits, charisms | Retained | Retained | No evidence | None |
-| Mary in the apostolic company | Retained | Retained | No evidence | None |
-| Liturgical priority and current discipline | Retained | Retained | No evidence | None |
-| Received hymns and nine collects | Retained | Retained | No evidence | None |
-| Sacramental and ecclesial setting | Retained | Retained | CCC 1322–1323 confirms the Eucharist's place in initiation and ecclesial unity, already presupposed, but does not alter a claim | Context only |
+| Acts 1–2 as archetype without anachronistic form claim | Retained | Identical | Retained | None. |
+| Thursday/transferred-Sunday calendar branches | Retained | Identical | Retained | None. |
+| Trinitarian, Christological, ecclesial, Marian, moral, and missionary teaching | Retained | Identical | Retained | None. |
+| Nine-day developmental sequence | Retained | Identical | Retained | None. |
+| Exact received bilingual collects and hymns | Retained | Identical | Retained | None. |
+| Indulgence, authority, territory, and currentness controls | Retained | Identical | Retained | None. |
 
-The new passage adds contextual exactness to the central library but does not
-add, remove, strengthen, weaken, or contradict a consequential publication
-claim.
+No source, prayer, chronology, meditation, practical instruction, or
+consequential claim changes.
 
-## Verdict
-
-**No material change.** No prayer, prose, calendar instruction, approval
-boundary, rendered edition, or installed PDF should change. Rebaseline only
-through the coordinated ledger work.
+**Verdict: no material change.** The nine passages are different-locus
+whole-work collateral. No publication, PDF, web edition, binding, catalog,
+release, or review-state revision is warranted.
