@@ -579,33 +579,33 @@ This study has tried to fail in neither direction, and it will certainly have fa
 
 ## Scope, Status, and Qualifications
 
-### Question and thesis boundary {#question-and-thesis-boundary .unnumbered}
+### Question and thesis boundary
 
 This study answers one question in two parts. The first part is documentary: what occurred and was reported at Fátima in 1917 on the contemporaneous record; what the competent ecclesiastical authorities have judged, in exactly which acts, words, and objects; how the documentary corpus—above all the memoirs and the three-part secret—actually developed; and what those judgments oblige and leave open. The second part is interpretive: what the published secret means. It is a source-audited study instrument, ecclesial-judgment-first in method: not a devotional narrative, a critical edition, a magisterial act, a scientific investigation of the solar phenomenon, or a complete history of Fátima devotion.
 
 It proposes no judgment of its own on supernaturality, and it does propose judgments of its own on meaning, mode, identification, textual completeness, and the consecration record. Those judgments are confined to labeled *Project synthesis* blocks, each of which states the judgment, its reasons, the strongest argument against it, and the evidence that would overturn it; they are editorial and AI proposals in the sense of the repository’s editorial standard, and are never presented as teaching, as consensus, or as the sense of any authority quoted nearby. §[14](#sec:synthesis) gathers them with their confidence levels. The warrant for interpreting at all is stated at §[1](#sec:judgment): the Holy See published the text with a commentary that puts the interpretive questions to its reader, and no act restrains discussion of it. Where a competent act does restrain discussion of an alleged secret, this project observes the restraint and treats no such material.
 
-### Corpus and exclusions {#corpus-and-exclusions .unnumbered}
+### Corpus and exclusions
 
 Included: the six 1917 apparitions and the 13 October solar phenomenon in the 1917–1930 documentary record as critically edited in the Sanctuary’s *Seleção de documentos*; the diocesan process (1922 provision, 1924 interrogation, 1930 commission report) and the 13 October 1930 pastoral letter; Lucia’s memoirs and the secret’s composition, custody, and publication through the CDF’s *Message of Fatima* (26 June 2000), read in full; the consecration acts of 1942, 1952, 1981/1982/1984, and 2022 with the 1989 letter; the 2016 press-office communiqué; the seers’ causes and the 2017 canonizations; and the 2024 DDF norms as they bear on current standing. Included for the interpretive part: the three parts of the secret quoted entire in the Holy See’s English with the two Fourth Memoir annotations; the Sodano announcement and the Ratzinger commentary at their exact wording; Benedict XVI’s remarks of 11 and 13 May 2010; the classical account of prophetic vision and of the prophecy of denunciation in Aquinas, *Summa theologiae* II-II, qq. 173–174, used as the tradition the 2000 commentary applies; and the DDF’s *Mater Populi fidelis* (2025) as a current safeguard on apparition-linked Marian language. Excluded or bounded: any certification of a physical mechanism or adjudication of individual solar-phenomenon testimony; the 1915 reports, 1916 angel cycle, 1921 experience, and Pontevedra/Tuy events except as reported and received (never placed inside the 1930 clause); complete reproduction of the memoirs or of any modern translation; “fourth secret,” date-setting, and automatic-salvation theories beyond the controlling public answers (§[9](#sec:withheld)); every papal Fátima reference, political appropriation, and polemical controversy; and any declaration about the present “conversion of Russia.”
 
-### Geography, chronology, and currentness {#geography-chronology-and-currentness .unnumbered}
+### Geography, chronology, and currentness
 
 Subject geography: the parish of Fátima (Cova da Iria, Aljustrel, Valinhos), the diocese of Leiria (Leiria-Fátima), Porto, Pontevedra and Tuy (Spain), Rome. Subject range: 1917 to the DDF norms of 2024 and the causes’ state in 2023. As-of date: all mutable claims— current controlling status, the DDF documents index, sanctuary pages—were checked on 2026-07-25; no later act superseding the 1930 judgment or the 2000 interpretation was located. Stable historical facts are not given artificial currentness. Negative results are bounded searches (recorded in the Notes and the tracked research records), correctable by better evidence, never guarantees.
 
-### Taxonomy and terminology {#taxonomy-and-terminology .unnumbered}
+### Taxonomy and terminology
 
 Kept distinct throughout: *contemporaneous record* (1917 interrogations, press, letters); *sworn process testimony* (1924); *retrospective memoir* (1935–1941, 1944); *competent judgment* (the 1930 diocesan act); *papal act of piety* (consecrations, entrustments); *authoritative interpretation* (the 2000 commentary); *reception* (feasts, pilgrimages, canonizations, shrine development), which establishes only its own form of approval; *classical theological doctrine* (Aquinas on prophecy), which is context for the Church’s own categories and not an authority on this event; and *project synthesis*, the study’s own judgment, which appears only inside labeled blocks and carries no authority but its argument. “Reported message” is the default register for all words attributed to the apparition. “Worthy of belief” (**digna de crédito**) is the 1930 act’s own formula and is not translated into the 2024 taxonomy. **Fides humana** names the prudent human assent invited by approved private revelation.
 
-### Source hierarchy and method {#source-hierarchy-and-method .unnumbered}
+### Source hierarchy and method
 
 Priority: the exact operative and documentary texts in identified witnesses (the Sanctuary’s critical selection for 1917–1930; the Holy See’s own web texts for 2000–2024); then competent summaries in Holy See acts (the 2023 heroic-virtues decree); then the Sanctuary’s institutional pages for scaffolding; then scholarship, used here only through the controlling documents. Quotations are exact from the named witness; Portuguese and Italian sources are quoted in the original where wording is operative, with editorial translations visibly editorial. No project or AI rendering is offered as a received translation, and no prayer text is printed for recitation in this study.
 
-### Qualifications and unresolved items {#qualifications-and-unresolved-items .unnumbered}
+### Qualifications and unresolved items
 
 (1) The 1930 act is quoted from the Sanctuary’s 2013 critical selection; the 1930 imprint and the diocesan original were not consulted. (2) The fifteen-volume *Documentação Crítica* was used only through the one-volume selection; unselected documents were not searched. (3) The 1942 first publications of the secret’s first two parts were not verified in their original imprints; the dating rests on standard accounts and the 2000 edition’s “already… published.” (4) *O Século* was read in the critical transcription, not in newspaper facsimile. (5) The August 1917 apparition’s day (19 August) rests on the memoir stratum. (6) Lucia’s memoirs were used through the 2000 dossier, the 2023 decree, and the Sanctuary’s excerpts, not read integrally in a critical edition. (7) The English of the Vatican pages quoted is the Holy See’s own; its translators are unnamed, and the 2000 introduction contains an internal 7 May/7 June 1981 slip reproduced as found. (8) Archival claims underlying the 1980s consecration controversy were not examined; the study reports the position of record. (9) The books in which the unpublished-further-text controversy has chiefly been argued—Socci’s of 2006 and Cardinal Bertone’s reply of 2007—were identified only at catalogue level and were not read; their arguments are therefore neither quoted, summarized, nor attributed anywhere in this study, and §[9](#sec:withheld) analyzes only the publicly documented premises such an argument must use. (10) Aquinas is quoted from the English Dominican Province translation as presented by a web host; the Latin was not collated and no Latin wording is quoted. (11) The *Insegnamenti* volumes cited by the 2000 dossier, and the autograph of Sister Lucia’s letter of 12 May 1982, were not consulted; both are used as the dossier prints them. (12) The interpretive judgments of this study are its own, are unreviewed by any competent authority, and are offered as argument; they are not a Mariological, theological, or canonical opinion in any professional sense. (13) No independent Mariological, historical, canonical, Portuguese-philological, medical, or scientific review has occurred; no ecclesiastical review or approval is claimed or implied.
 
-### Rights {#rights .unnumbered}
+### Rights
 
 Project prose is original and intended for CC BY 4.0. Quotations remain under their own status: the underlying 1917–1930 Portuguese documents (newspaper reports of the deceased-in-1932 Avelino de Almeida, official diocesan acts, interrogations) are public domain, but the Sanctuary’s 2013 critical transcription and apparatus are © Santuário de Fátima and are quoted briefly with citation; Holy See web texts (the 2000 dossier, homilies and interviews, the 2024 norms, the 2025 doctrinal note, the 2022 act) are quoted within ordinary scholarly limits with citation; the Sanctuary’s English memoir excerpts likewise. Aquinas is quoted from a translation published in 1920 and long out of copyright in the United States, through a web host whose own presentation is not reproduced. Online availability is not treated as a reuse license. One qualification to the earlier form of this notice is required by §[5](#sec:text): the three parts of the secret and the two Fourth Memoir annotations are quoted *entire* in the Holy See’s English, because they are the object this study analyzes and a partial quotation would make its argument unverifiable. They are short constituent texts within a much larger dossier; the dossier itself—introduction, papal letter, conversation record, announcement, and commentary—is not reproduced, and no other complete document is reproduced anywhere in this study.
 
@@ -613,13 +613,13 @@ Project prose is original and intended for CC BY 4.0. Quotations remain under 
 
 Witnesses are listed with role and rights notes; access date for all web loci is 2026-07-25 unless stated. Stable source identities for the starred entries are registered in the repository source library; this publication’s bindings are in `research/source-bindings.toml`.
 
-### Primary documentary corpus, 1917–1930 {#primary-documentary-corpus-19171930 .unnumbered}
+### Primary documentary corpus, 1917–1930
 
 -   \**Documentação Crítica de Fátima: Seleção de documentos (1917–1930)* (Fátima: Santuário de Fátima, 2013; ISBN 978-972-8213-91-6; © Santuário de Fátima; scientific sponsorship of the Centro de Estudos de História Religiosa, Universidade Católica Portuguesa), distributed without charge by the Sanctuary as a 653-page PDF: <https://www.fatima.pt/files/upload/fontes/F001_DCF_selecao.pdf> (documentation page <https://www.fatima.pt/en/documentacao/f001-documentacao-critica-de-fatima-selecao-de-documentos-1917-1930>). Role: critical witness for the 1917 interrogations (Docs. 1, 3, 14, 18), the press dossier (Docs. 4, 13, 21), the process acts (Docs. 68, 120), and the 1930 pastoral letter (Doc. 133) with its promulgation account (Doc. 134). The underlying 1917–1930 documents are public domain; the edition’s transcription and apparatus remain the Sanctuary’s, quoted briefly with citation.
 
 -   \*José Alves Correia da Silva, Bishop of Leiria, *Carta Pastoral sobre o culto de Nossa Senhora de Fátima*, 13 October 1930, as printed in the above selection, Doc. 133 (published earlier as DCF II, Doc. 11). Role: the operative approval act, quoted exactly in §[1](#sec:judgment). Ceilings recorded in §[3](#sec:diocesan).3.
 
-### Holy See acts and documents {#holy-see-acts-and-documents .unnumbered}
+### Holy See acts and documents
 
 -   \*Congregation for the Doctrine of the Faith, *The Message of Fatima* (26 June 2000), English text, read in full: <https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20000626_message-fatima_en.html>. Role: controlling dossier and interpretation—Bertone introduction (custody history, the 1981 envelopes, the 1984 act, the 1989 letter, the letter of 12 May 1982), the secret’s three parts in translation with facsimiles and the Fourth Memoir annotations at its notes 6–7, all quoted entire in §[5](#sec:text); John Paul II’s letter of 19 April 2000; the 27 April 2000 conversation record (the 1960-date answer and the author’s authentication of the manuscript); the Sodano announcement of 13 May 2000; and Cardinal Ratzinger’s theological commentary, quoted at its exact wording. The edition’s translation policy is its own note 8.
 
@@ -645,15 +645,15 @@ Witnesses are listed with role and rights notes; access date for all web loci is
 
 -   Dicastery for the Causes of Saints, Decree on the heroic virtues of the Servant of God Maria Lucia of Jesus and of the Immaculate Heart, 22 June 2023, Portuguese text distributed by the Sanctuary: <https://www.fatima.pt/files/upload/documentos_do_magisterio/20023-06-22decretosobreasvirtudesheroicasdairmaluciadejesusedoimaculadocoracao.pdf>. Role: competent summary of Lucia’s life, Pontevedra and Tuy, the memoirs’ dating, and the 1984 fulfillment sentence.
 
-### Sanctuary of Fátima institutional pages {#sanctuary-of-fátima-institutional-pages .unnumbered}
+### Sanctuary of Fátima institutional pages
 
 -   “Narrative of the Apparitions” (<https://www.fatima.pt/en/pages/narrative-of-the-apparitions->) and “Chronology of the Three Seers” (<https://www.fatima.pt/en/pages/chronology-of-the-three-seers>). Role: factual scaffolding (memoir dates, seer biography, Valinhos account with its source note) and the Sanctuary’s English memoir excerpts, quoted briefly. Ceiling: institutional presentation, cited as the Sanctuary’s own account, not as critical edition.
 
-### Theological tradition cited for context {#theological-tradition-cited-for-context .unnumbered}
+### Theological tradition cited for context
 
 -   \*Thomas Aquinas, *Summa theologiae* II-II, q. 173, aa. 2 and 4, and q. 174, a. 1, English Dominican Province translation (1920) as presented at <https://www.newadvent.org/summa/3173.htm> and <https://www.newadvent.org/summa/3174.htm>. Role: the classical distinction between the reception of a prophetic representation and the judgment upon it; the prophet’s mind as a deficient instrument (“even true prophets know not all that the Holy Ghost means by the things they see”); and the prophecy of denunciation, which “is not always fulfilled.” Ceiling: cited as the tradition the 2000 commentary applies, never as an authority on Fátima; the Latin was not collated and no Latin wording is quoted; the host’s own presentation is a delivery route, not a critical edition.
 
-### Identified but not read {#identified-but-not-read .unnumbered}
+### Identified but not read
 
 -   Antonio Socci, *Il quarto segreto di Fàtima* (Milan: Rizzoli, 2006), ISBN 88-17-00993-8; English, *The Fourth Secret of Fatima* (Loreto, 2009), ISBN 978-1-930278-77-6.
 
@@ -661,7 +661,7 @@ Witnesses are listed with role and rights notes; access date for all web loci is
 
 Both are named here because §[9](#sec:withheld) concerns a controversy argued chiefly in them, and a reader is entitled to know what the study did not read. Identities were checked at catalogue level only (Open Library, 2026-07-25). Neither is quoted, summarized, paraphrased, or characterized anywhere in this study, and no position is attributed to either author.
 
-### Not consulted at first hand (recorded ceilings) {#not-consulted-at-first-hand-recorded-ceilings .unnumbered}
+### Not consulted at first hand (recorded ceilings)
 
 The 1930 União Gráfica imprint; the Leiria diocesan archive; the fifteen-volume *Documentação Crítica* beyond the selection; *O Século* and *Ilustração Portuguesa* in facsimile; the 1942 first imprints of the secret’s first two parts; Lucia’s memoirs in integral critical edition; *Insegnamenti* volumes cited by the 2000 dossier; the autograph of the letter of 12 May 1982; the Portuguese autographs of the secret’s three parts, used only through the published facsimile and translation; the Latin of the *Summa theologiae*; the celebration booklet with the 2017 canonization formula; archival materials alleged in the consecration controversy; and the two books named above.
 

@@ -207,7 +207,7 @@ Dates before the common era are approximate unless a witness supplies them; “c
 
 All web sources were accessed and checked on 2026-07-24. Citations in the text use conventional English titles with the numbering of the translations listed here. Sources are grouped by function.
 
-### Primary narrative and documentary witnesses {#primary-narrative-and-documentary-witnesses .unnumbered}
+### Primary narrative and documentary witnesses
 
 -   *Letter of Aristeas*, English translation from R. H. Charles (ed.), *The Apocrypha and Pseudepigrapha of the Old Testament*, vol. 2 (Oxford: Clarendon Press, 1913; the printed translation is credited to H. T. Andrews), read in the transcription at attalus.org (<https://www.attalus.org/translate/aristeas1.html> and <https://www.attalus.org/translate/aristeas2.html>); sections 9–11, 28–51, 301–322 checked. Public domain.
 
@@ -217,7 +217,7 @@ All web sources were accessed and checked on 2026-07-24. Citations in the text u
 
 -   Josephus, *Antiquities of the Jews* 12.2, William Whiston translation (1737), at the University of Chicago Penelope transcription (<https://penelope.uchicago.edu/josephus/ant-12.html>). Public domain.
 
-### Patristic and later Christian witnesses {#patristic-and-later-christian-witnesses .unnumbered}
+### Patristic and later Christian witnesses
 
 -   Justin Martyr, *First Apology* 31 and *Dialogue with Trypho* 71–73, ANF vol. 1 (Buffalo, 1887), at New Advent (<https://www.newadvent.org/fathers/0126.htm>, <https://www.newadvent.org/fathers/01286.htm>).
 
@@ -239,7 +239,7 @@ All web sources were accessed and checked on 2026-07-24. Citations in the text u
 
 -   Augustine, *City of God* 18.42–43, Marcus Dods translation (1871; NPNF series 1, vol. 2), at CCEL (<https://ccel.org/ccel/schaff/npnf102.iv.XVIII.42.html> and …XVIII.43.html).
 
-### Jewish tradition {#jewish-tradition .unnumbered}
+### Jewish tradition
 
 -   Babylonian Talmud, *Megillah* 9a–9b, William Davidson (Steinsaltz) English at Sefaria (<https://www.sefaria.org/Megillah.9a>); licensed CC BY-NC; paraphrased only.
 
@@ -249,7 +249,7 @@ All web sources were accessed and checked on 2026-07-24. Citations in the text u
 
 -   Justinian, Novella 146 *De Hebraeis* (553), F. H. Blume translation at the University of Wyoming (<https://www.uwyo.edu/lawlib/blume-justinian/>); consulted for its core provisions.
 
-### Official ecclesial acts {#official-ecclesial-acts .unnumbered}
+### Official ecclesial acts
 
 -   Council of Trent, Session IV (8 April 1546), Decree concerning the canonical Scriptures, at papalencyclicals.net (<https://www.papalencyclicals.net/councils/trent/fourth-session.htm>).
 
@@ -257,7 +257,7 @@ All web sources were accessed and checked on 2026-07-24. Citations in the text u
 
 -   *Catechism of the Catholic Church* 120–123, Vatican website English text (<https://www.vatican.va/content/catechism/en/part_one/section_one/chapter_two/article_3/iv_the_canon_of_scripture.html>).
 
-### Modern scholarship, editions, and finding aids {#modern-scholarship-editions-and-finding-aids .unnumbered}
+### Modern scholarship, editions, and finding aids
 
 -   “Aristeas, Letter of,” *The Jewish Encyclopedia* (1906), at jewishencyclopedia.com (<https://www.jewishencyclopedia.com/articles/1765-aristeas-letter-of>); used for the history of criticism (Hody 1685; dating proposals).
 

@@ -281,7 +281,7 @@ The faithful stand from the beginning of the Entrance Chant, or while the Priest
 
 *Controlling locus:* GIRM 44, 46–48, 120–122
 
-#### A People Gathered on the Way {#a-people-gathered-on-the-way .unnumbered}
+#### A People Gathered on the Way
 
 The Mass begins after a prior human fact has already become an ecclesial one: people have left separate occupations and gathered in one place. The Entrance gives that fact ritual form. The Priest, Deacon when present, and other ministers move toward the sanctuary in an ordered procession. Incense may precede the cross; candles flank it; a reader may carry the Book of the Gospels, though not the Lectionary; the Deacon carrying that book walks before the Priest (GIRM 120). Their common destination is the altar. The procession therefore has agents, order, objects, direction, and end. It is not merely the clergy’s practical route to their seats.
 
@@ -299,7 +299,7 @@ The postconciliar Order places the chant back upon the movement it accompanies a
 
 *Controlling locus:* GIRM 49, 123; cf. 273–274, 276–277, 296
 
-#### The Altar Greeted before the Assembly {#the-altar-greeted-before-the-assembly .unnumbered}
+#### The Altar Greeted before the Assembly
 
 On reaching the sanctuary, Priest, Deacon, and ministers make the reverence prescribed for the actual arrangement. Ordinarily they make a profound bow to the altar. If the tabernacle containing the Blessed Sacrament is in the sanctuary, the Priest, Deacon, and ministers genuflect on arrival; ministers carrying the processional cross or candles bow their heads instead (GIRM 274). The Priest and Deacon then kiss the altar; if incense is used, the Priest incenses the cross and altar (GIRM 49, 123). The greeting of the people waits until this veneration is complete and the Priest has gone to the chair. That order can appear strange only if the altar is treated as furniture. The altar is the place upon which the sacrifice of the Cross is made present under sacramental signs, the Lord’s table to which his people are summoned, and the center of the Eucharistic thanksgiving (GIRM 296). It is greeted first because the assembly does not create its own sacrificial center.
 
@@ -315,7 +315,7 @@ Incense, when used, adds a different grammar. Psalm 141:2 compares prayer with 
 
 *Controlling locus:* GIRM 50, 124; cf. 27, 31, 310
 
-#### The Baptismal Name and the Ministerial Exchange {#the-baptismal-name-and-the-ministerial-exchange .unnumbered}
+#### The Baptismal Name and the Ministerial Exchange
 
 At the chair, Priest and people together trace the sign of the Cross while the Priest names Father, Son, and Holy Spirit. He then extends one of the received greetings, and the people answer. The exchange manifests what GIRM 50 calls the mystery of the Church gathered together and signifies the Lord’s presence in the assembled community. Only after it may the Priest, Deacon, or a lay minister introduce the Mass of the day very briefly. The sequence matters: the assembly is constituted under God’s Name and by a liturgical relation before anyone supplies explanation.
 
@@ -333,7 +333,7 @@ Here *Sacrosanctum Concilium* 7 supplies a necessary balance. Christ is present 
 
 *Controlling locus:* GIRM 45, 51, 125; *Ordo Missae*
 
-#### One Mercy, Three Received Grammars {#one-mercy-three-received-grammars .unnumbered}
+#### One Mercy, Three Received Grammars
 
 The Priest invites the whole community to acknowledge sin, and a brief silence follows before one of three forms is used. The silence is not dead air. GIRM 45 assigns recollection to this exact place: persons who have entered as one body must still stand truthfully before God as responsible sinners. The Priest concludes the act with a deprecatory absolution whose liturgical force is real but which GIRM 51 explicitly distinguishes from the Sacrament of Penance.
 
@@ -357,7 +357,7 @@ The concluding absolution must therefore be heard accurately. It asks God to lea
 
 *Controlling locus:* GIRM 51; Roman Missal, Appendix II
 
-#### The Paschal Threshold Enacted in Water {#the-paschal-threshold-enacted-in-water .unnumbered}
+#### The Paschal Threshold Enacted in Water
 
 On Sundays, especially during Easter Time, the blessing and sprinkling of water may from time to time replace the customary Penitential Act (GIRM 51). The Priest blesses water according to the appointed form and sprinkles himself, the ministers, and the people while an appropriate chant accompanies the action. The rite then returns to the ordinary sequence at the point established by its own rubrics. It is not an additional purification inserted between confession and Kyrie, and it is not a weekly re-enactment required for every Sunday Mass.
 
@@ -375,7 +375,7 @@ This branch also reveals why penitence and baptismal joy are not opposites. The 
 
 *Controlling locus:* GIRM 52, 125
 
-#### Acclamation at the Edge of Need {#acclamation-at-the-edge-of-need .unnumbered}
+#### Acclamation at the Edge of Need
 
 When it has not already formed part of Penitential Form C, the Kyrie begins after the Penitential Act. Priest, cantor or choir, and people execute it together; each acclamation is normally said twice, though the character of a language, the music, or other circumstances may justify more repetitions (GIRM 52). The Greek words remain within the Latin Roman rite. Their survival is not an exotic archaism but the compact force of a biblical and early Christian cry that translation has never exhausted.
 
@@ -391,7 +391,7 @@ Because Form C integrates tropes with the acclamations, the same text can carry
 
 *Controlling locus:* GIRM 37a, 53, 126
 
-#### The Angelic Beginning and the Church’s Full Praise {#the-angelic-beginning-and-the-churchs-full-praise .unnumbered}
+#### The Angelic Beginning and the Church’s Full Praise
 
 The Gloria is an independent rite or act, not music accompanying something else (GIRM 37a). When appointed, it is intoned by the Priest or, if appropriate, by a cantor or choir; it is then sung by all together, alternately, or by the choir alone as GIRM 53 provides. If it is not sung, all recite it together or in two responding groups. Its text may not be replaced. It is used on Sundays outside Advent and Lent, on solemnities and feasts, and at particular celebrations of a more solemn character. Omission in the penitential seasons is a temporal discipline, not a judgment that the Incarnation or divine glory has ceased to govern those seasons.
 
@@ -411,7 +411,7 @@ Its present placement brings the Introductory Rites to a crest. Repentance has n
 
 *Controlling locus:* GIRM 30, 32, 45, 54, 127
 
-#### Many Silent Petitions Given One Ecclesial Voice {#many-silent-petitions-given-one-ecclesial-voice .unnumbered}
+#### Many Silent Petitions Given One Ecclesial Voice
 
 The Priest invites the people with the single incipit *Oremus*. All keep a brief silence, becoming aware of God’s presence and calling their intentions to mind; then the Priest, with hands extended at the chair, proclaims the one appointed Collect. The people ratify it with Amen (GIRM 54, 127). During this presidential prayer no other prayer, singing, or instrumental music competes with his voice (GIRM 32). The silence, proper oration, Trinitarian conclusion, and acclamation form one movement.
 
@@ -441,7 +441,7 @@ Posture gives this sequence a bodily syntax. The faithful sit for the readings b
 
 *Controlling locus:* GIRM 29, 55–60, 128, 357; *Ordo Lectionum Missae*
 
-#### A Received Pericope Becomes Present Address {#a-received-pericope-becomes-present-address .unnumbered}
+#### A Received Pericope Becomes Present Address
 
 A reader goes to the ambo and proclaims the appointed passage from the Lectionary; all sit and listen. At the conclusion the reader gives the received acclamation, and the people answer. The function is ministerial rather than presidential: a reader normally proclaims the first reading, while the Priest takes it only when no suitable reader is present (GIRM 58–59, 128). Book, ambo, reader, assembly, and answer make proclamation a public ecclesial action. Quietly following the text may assist hearing, but it is not the ritual act that the printed book assigns to the congregation.
 
@@ -461,7 +461,7 @@ The people’s concluding answer receives the reading as gift before every obscu
 
 *Controlling locus:* GIRM 37a, 61, 129; *Ordo Lectionum Missae*
 
-#### The Word Heard Becomes the Church’s Answer {#the-word-heard-becomes-the-churchs-answer .unnumbered}
+#### The Word Heard Becomes the Church’s Answer
 
 The Psalm is not music between readings. GIRM 61 calls it an integral part of the Liturgy of the Word with great liturgical and pastoral importance because it fosters meditation upon the Word. The psalmist sings the verses from the ambo or another suitable place; the assembly ordinarily remains seated, listens, and returns the response. Singing at least the response is preferred. If singing is impossible, recitation must still serve meditation rather than haste.
 
@@ -479,7 +479,7 @@ Responsorial psalmody is ancient, while its concrete Roman history is layered. E
 
 *Controlling locus:* GIRM 57–59, 130, 357; *Ordo Lectionum Missae*, Introduction 66–68
 
-#### The Apostolic Witness in Its Own Voice {#the-apostolic-witness-in-its-own-voice .unnumbered}
+#### The Apostolic Witness in Its Own Voice
 
 Where three readings are appointed, a reader proclaims the second from the ambo and the people receive it with the same concluding acclamation. On Sundays and solemnities it normally comes from an Apostle—a New Testament letter or, according to the season, Revelation—between the Old Testament reading and the Gospel (GIRM 357; *Ordo Lectionum Missae*, Introduction 66). “Second” denotes ritual order, not secondary authority.
 
@@ -495,7 +495,7 @@ The current Sunday Lectionary uses a three-year cycle and several principles of 
 
 *Controlling locus:* GIRM 37a, 62–64, 131; *Ordo Lectionum Missae*
 
-#### Poetry and Acclamation before the Lord Who Speaks {#poetry-and-acclamation-before-the-lord-who-speaks .unnumbered}
+#### Poetry and Acclamation before the Lord Who Speaks
 
 Two distinct forms may stand here and must not be collapsed. A Sequence, where appointed, is sung before the Alleluia. It is obligatory on Easter Sunday and Pentecost and optional on the other days for which the Missal supplies one (GIRM 64). The Gospel acclamation then begins as an act in itself. All stand; choir or cantor leads, the people sing the acclamation, and the proper verse is given its ministerial voice (GIRM 62). Poetry unfolds a feast; acclamation welcomes the Lord about to speak.
 
@@ -517,7 +517,7 @@ The few Sequences retained in the Roman Missal demonstrate that each requires it
 
 *Controlling locus:* GIRM 60, 131–133, 175
 
-#### Purified Speech, Received Mission, and a Book in Motion {#purified-speech-received-mission-and-a-book-in-motion .unnumbered}
+#### Purified Speech, Received Mission, and a Book in Motion
 
 If a Deacon proclaims the Gospel, he bows before the Priest and asks a blessing; the Priest invokes the Lord’s aid over his heart and lips. The Deacon then takes the Book of the Gospels from the altar and processes to the ambo, preceded by incense and candles when they are used. If no Deacon is present, the Priest who will proclaim bows before the altar and says the quiet prayer beginning *Munda cor meum*; he does not bless himself as though commissioning another minister. When the Book of the Gospels is on the altar, he then takes it and goes to the ambo with the ministers preceding him as provided (GIRM 131–133, 175). Preparation is interior, hierarchical, and spatial at once.
 
@@ -537,7 +537,7 @@ Ignatius calls Deacons ministers of the mysteries of Jesus Christ and servants o
 
 *Controlling locus:* GIRM 29, 58–60, 134, 175
 
-#### Christ Speaks through a Ministerial Voice {#christ-speaks-through-a-ministerial-voice .unnumbered}
+#### Christ Speaks through a Ministerial Voice
 
 At the ambo the Deacon or Priest greets the people, announces the Gospel, signs the book and then forehead, mouth, and breast; the people make the three small signs upon themselves. If incense is used, the book is incensed. All stand and listen. The proclamation ends in a dialogical acclamation; the minister kisses the book while saying the appointed quiet formula. When a Bishop presides, the book may be carried to him to be kissed, and he may bless the people with it according to the ceremonial (GIRM 134, 175).
 
@@ -557,7 +557,7 @@ The concluding kiss has a penitential edge because its quiet prayer asks that th
 
 *Controlling locus:* GIRM 29, 45, 55–56, 65–66, 136; CIC 767; *Sacrosanctum Concilium* 35, 52
 
-#### The Proclaimed Mystery Opened toward Faith and Life {#the-proclaimed-mystery-opened-toward-faith-and-life .unnumbered}
+#### The Proclaimed Mystery Opened toward Faith and Life
 
 The Homily is part of the liturgical action. It ordinarily belongs to the Priest celebrant, though he may entrust it to a concelebrating Priest or, when appropriate, to the Deacon; in particular cases a Bishop or Priest present but unable to concelebrate may preach. It is never assigned to a lay person at Mass (GIRM 66; CIC 767). That boundary does not deny the baptismal vocation to witness or teach. It locates this act of preaching within ordained presidency and the sacramental assembly.
 
@@ -577,7 +577,7 @@ Silence after the Homily completes rather than competes with it (GIRM 56, 66). T
 
 *Controlling locus:* GIRM 67–68, 137; *Ordo Missae*
 
-#### The Many Speak the Church’s One Faith {#the-many-speak-the-churchs-one-faith .unnumbered}
+#### The Many Speak the Church’s One Faith
 
 On Sundays and solemnities, and at other celebrations of a more solemn character when provided, Priest and people sing or say the Creed together (GIRM 68). The Niceno-Constantinopolitan Creed is the normal form. The Roman baptismal symbol called the Apostles’ Creed may be used instead, especially during Lent and Easter Time; where a rite appoints renewal of baptismal promises, that renewal replaces the Creed. These alternatives are received and conditional. They are not raw material for an abbreviated or privately revised profession.
 
@@ -599,7 +599,7 @@ All stand. At the words confessing the Incarnation, all make a profound bow; on 
 
 *Controlling locus:* GIRM 69–71, 138; *Sacrosanctum Concilium* 53
 
-#### A Baptismal Priesthood Intercedes for the World {#a-baptismal-priesthood-intercedes-for-the-world .unnumbered}
+#### A Baptismal Priesthood Intercedes for the World
 
 Having heard and professed the Word, the people exercise their baptismal priesthood by interceding for the salvation of all (GIRM 69). The Priest directs the prayer from the chair, introducing it and concluding with an oration. A Deacon normally announces the intentions when present; otherwise a cantor, reader, or another lay member of the faithful may do so from the ambo or another suitable place. The people stand and answer each intention with a common invocation or pray in silence (GIRM 71, 138). The prayer is therefore presidential, ministerial, and congregational in distinguishable ways.
 
@@ -625,7 +625,7 @@ The movement is sometimes obscured in opposite ways. It can be treated as an int
 
 *Controlling locus:* GIRM 44, 72–74, 139–140
 
-#### Creation and Charity Moving toward the Altar {#creation-and-charity-moving-toward-the-altar .unnumbered}
+#### Creation and Charity Moving toward the Altar
 
 After the Prayer of the Faithful, ministers prepare the altar. The corporal, purificator, chalice, pall if used, and Missal are arranged there as required; other vessels may be brought according to need. Bread and wine for the Eucharist are then presented. It is praiseworthy for members of the faithful to bring them, and the Priest or Deacon receives them at a suitable place before they are carried to the altar (GIRM 73, 139–140). Money or other gifts for the poor or the Church may accompany this presentation, but they are placed somewhere suitable away from the Eucharistic table. That separation is theological as well as practical: alms are true gifts of ecclesial charity, while only the appointed bread and wine are the matter to be consecrated.
 
@@ -649,7 +649,7 @@ The chant accompanies the procession and may continue at least until the gifts h
 
 *Controlling locus:* GIRM 75, 141; *Ordo Missae*
 
-#### A Creature Received for Its Sacramental End {#a-creature-received-for-its-sacramental-end .unnumbered}
+#### A Creature Received for Its Sacramental End
 
 Standing at the altar, the Priest takes the paten with the bread, holds it slightly raised above the altar, and says the appointed formula quietly. He then places the paten upon the corporal. If no Offertory chant is being sung, the Missal permits him to say the formula aloud, after which the people may make the appointed acclamation (GIRM 141). The small lift is a presentation, not the elevation after the institution narrative, and the bread remains unconsecrated. Action, text, and sacramental state must be allowed to say different things.
 
@@ -667,7 +667,7 @@ The formula’s final horizon is therefore prospective. It does not merely thank
 
 *Controlling locus:* GIRM 75, 142; *Ordo Missae*
 
-#### Communion Written into the Cup {#communion-written-into-the-cup .unnumbered}
+#### Communion Written into the Cup
 
 At the side of the altar, the Deacon, or the Priest when there is no Deacon, pours wine and a little water into the chalice while saying the appointed quiet prayer. The chalice is then presented at the altar with a formula parallel to the blessing over bread, held slightly raised, and placed upon the corporal; it may be covered with a pall. As with the bread, the formula can be audible with the people’s response when no chant is sung (GIRM 142). The rite thus contains two related but nonidentical units: the mixture with its private Christological petition, and the presentation of the prepared chalice with its blessing of the Creator.
 
@@ -685,7 +685,7 @@ The chalice formula beginning *Benedictus es, Domine* is, like its bread counter
 
 *Controlling locus:* GIRM 75, 143–144
 
-#### Contrition and Fragrant Honor around One Offering {#contrition-and-fragrant-honor-around-one-offering .unnumbered}
+#### Contrition and Fragrant Honor around One Offering
 
 After setting down the chalice, the Priest bows profoundly and says the quiet prayer beginning *In spiritu humilitatis*. If incense is used, he then places it in the thurible and incenses the gifts, cross, and altar; the Deacon or another minister incenses the Priest and people (GIRM 143–144). The bow is fixed, the incensation optional. The two actions share the same threshold but should not be fused: one is the Priest’s humble self-commendation before God; the other extends ordered signs of offering, prayer, and honor through the sanctuary and assembly.
 
@@ -703,7 +703,7 @@ Optionality matters. When incense is present, the sensory cloud can reveal an of
 
 *Controlling locus:* GIRM 76, 145
 
-#### A Practical Gesture Turned toward Interior Cleansing {#a-practical-gesture-turned-toward-interior-cleansing .unnumbered}
+#### A Practical Gesture Turned toward Interior Cleansing
 
 The Priest goes to the side of the altar, where a minister pours water over his hands, and he quietly says the short prayer beginning *Lava me, Domine* (GIRM 145). The action is ministerial and local: it is not a washing of every participant, a second Penitential Act, or a purification of the gifts. GIRM 76 states its present meaning as the Priest’s desire for interior cleansing. That authoritative interpretation governs the movement even though its physical ancestry was more practical.
 
@@ -719,7 +719,7 @@ The wash also clarifies ministerial symbolism. The Priest who presides remains a
 
 *Controlling locus:* GIRM 77, 146
 
-#### Distinct Ministries within the One Sacrifice {#distinct-ministries-within-the-one-sacrifice .unnumbered}
+#### Distinct Ministries within the One Sacrifice
 
 Returning to the middle of the altar, the Priest faces the people and invites them with the formula beginning *Orate, fratres*; the people stand and make the appointed response (GIRM 146 and the United States adaptation at GIRM 43). The Prayer over the Offerings follows. This is not a casual request for encouragement. It is the public hinge at which quiet preparation becomes explicit ecclesial consent to the sacrificial prayer about to begin.
 
@@ -737,7 +737,7 @@ The response must be allowed to remain a response. It does not consecrate, subst
 
 *Controlling locus:* GIRM 30, 32, 77, 146
 
-#### The Proper Petition That Seals Preparation {#the-proper-petition-that-seals-preparation .unnumbered}
+#### The Proper Petition That Seals Preparation
 
 With hands extended, the Priest says the one appointed Prayer over the Offerings; the people answer Amen. Unlike the quiet preparatory formulas, this is a presidential prayer spoken aloud in the name of the holy people (GIRM 30, 32). No other prayer, song, or instrumental sound should compete with it. Its short conclusion and the people’s ratification bring the preparation to completion and open directly into the Preface dialogue.
 
@@ -759,7 +759,7 @@ The preparation of altar and gifts ends in a prayer over what has been set apart
 
 *Controlling locus:* GIRM 78–79a, 147–148, 364–365; *Ordo Missae*
 
-#### Hearts Raised into Particular Thanksgiving {#hearts-raised-into-particular-thanksgiving .unnumbered}
+#### Hearts Raised into Particular Thanksgiving
 
 Standing, the Priest and people exchange the Preface dialogue. The greeting renews their liturgical relation; the summons concerning the heart names prayer’s direction; the final exchange acknowledges thanksgiving as right. The Priest then continues with hands extended. A proper, seasonal, common, or prayer-specific Preface gives the thanksgiving its received content. The dialogue is therefore stable while the cause for praise is often variable. Selection is not thematic decoration: the calendar, Mass formulary, and Eucharistic Prayer determine which Preface may govern the prayer.
 
@@ -785,7 +785,7 @@ Roman Prefaces accumulated, contracted, and were restored across many centuries.
 
 *Controlling locus:* GIRM 79b, 148; *Ordo Missae*
 
-#### The Earthly Church Enters the Heavenly Hymn {#the-earthly-church-enters-the-heavenly-hymn .unnumbered}
+#### The Earthly Church Enters the Heavenly Hymn
 
 The Preface does not report that angels praise and then leave the assembly as audience. Its conclusion invites earthly voices into their hymn. Priest and people together sing or say the complete acclamation; it is not an ordinary presidential sentence with a short response. Yet it remains inside the one Eucharistic Prayer. Its final cry does not conclude the thanksgiving as though a second prayer must begin afterward.
 
@@ -807,7 +807,7 @@ Because the whole people acclaim, musical settings should serve intelligible cor
 
 *Controlling locus:* GIRM 30–34, 78, 147, 216–236; *Redemptionis Sacramentum* 51–54
 
-#### One Body Participates through Differentiated Voices {#one-body-participates-through-differentiated-voices .unnumbered}
+#### One Body Participates through Differentiated Voices
 
 The Priest addresses the Father in the name of the whole holy people. At a concelebration the missal distributes particular passages among ordained concelebrants and supplies the manner of their common utterance. No rubric thereby gives the prayer to the congregation for collective recitation. Conversely, priestly presidency does not make the people external to it. GIRM 78 says that the entire congregation joins itself with Christ in praise and offering; GIRM 147 names reverent silence and the appointed acclamations as modes of that union.
 
@@ -829,7 +829,7 @@ The rubrical discipline protects both sides. A Priest may not hand his president
 
 *Controlling locus:* GIRM 79c; each approved Eucharistic Prayer; CCC 1105, 1353
 
-#### The Father Is Asked to Sanctify Gift and People by the Spirit {#the-father-is-asked-to-sanctify-gift-and-people-by-the-spirit .unnumbered}
+#### The Father Is Asked to Sanctify Gift and People by the Spirit
 
 GIRM calls epiclesis the Church’s special invocation by which she implores the Father’s power so that human gifts become Christ’s Body and Blood and that the spotless Victim received in Communion may bring salvation. The definition embraces a double horizon: sanctification of the gifts and fruitful incorporation of those who receive. Later Roman prayers normally make this twofold action visible in an explicit invocation of the Holy Spirit before the institution narrative and a communion petition afterward. The Roman Canon realizes the same anaphoral necessities through a different verbal architecture.
 
@@ -851,7 +851,7 @@ The difference teaches a methodological rule. “Epiclesis” identifies an anap
 
 *Controlling locus:* GIRM 79d, 150–151; *Ordo Missae*; each approved Eucharistic Prayer
 
-#### The Lord’s Command Effects the Sacramental Memorial {#the-lords-command-effects-the-sacramental-memorial .unnumbered}
+#### The Lord’s Command Effects the Sacramental Memorial
 
 Within the prayer addressed to the Father, the Priest narrates what Christ did and pronounces the Lord’s words over bread and chalice. He shows each consecrated species to the people and genuflects in adoration. A bell may signal the epiclesis and each showing; incense may honor the Host and chalice. These actions manifest and adore what Christ effects. They neither cause the conversion nor interrupt the one address so that a self-contained devotional “elevation rite” replaces it.
 
@@ -875,7 +875,7 @@ The Mass consequently neither repeats Calvary nor supplies another victim. Chris
 
 *Controlling locus:* *Ordo Missae*; GIRM 34, 151
 
-#### The Consecrated Assembly Proclaims the Paschal Mystery {#the-consecrated-assembly-proclaims-the-paschal-mystery .unnumbered}
+#### The Consecrated Assembly Proclaims the Paschal Mystery
 
 After the chalice showing and genuflection the Priest introduces the acclamation. The people then proclaim Christ’s death, Resurrection, and future coming according to one of the approved forms. The acclamation is directed to Christ or proclaims him; it is not addressed to the consecrated species and should not be altered into an act of direct Eucharistic adoration. Adoration is already bodily present in the genuflections and the assembly’s faith, but the received verbal action at this point is Paschal proclamation.
 
@@ -893,7 +893,7 @@ The alternation of voices matters. The Priest has pronounced Christ’s words wi
 
 *Controlling locus:* GIRM 79e–f; each approved Eucharistic Prayer
 
-#### The Command to Remember Becomes Ecclesial Oblation {#the-command-to-remember-becomes-ecclesial-oblation .unnumbered}
+#### The Command to Remember Becomes Ecclesial Oblation
 
 After the institution command, the Church remembers Christ’s saving Passion, Resurrection, Ascension, and, according to the prayer, his descent among the dead and future coming. In that obedient memorial she offers the Father the spotless Victim. The sequence is not first a mental recollection and then an unrelated gift. Christ commanded a memorial action in which his self-offering becomes the form and content of the Church’s thanksgiving.
 
@@ -917,7 +917,7 @@ The approved prayers articulate this unity differently. The Roman Canon surround
 
 *Controlling locus:* GIRM 79c, 79g; each approved Eucharistic Prayer; *Paternas vices* (2013)
 
-#### The One Sacrifice Gathers a Communion across Space and Death {#the-one-sacrifice-gathers-a-communion-across-space-and-death .unnumbered}
+#### The One Sacrifice Gathers a Communion across Space and Death
 
 The prayer asks that those who share Christ’s Body and Blood be gathered in the Spirit, then displays the breadth of that communion: the Church throughout the world, pope and local bishop, ordained ministers and faithful, living needs, the dead, Mary, Joseph, apostles, martyrs, saints, and the final heavenly inheritance. The order and detail vary. Eucharistic Prayer I places substantial intercession before and after the institution narrative; later prayers generally concentrate it after anamnesis and offering. Structural location does not determine whether an intercession is essential or merely decorative.
 
@@ -945,7 +945,7 @@ Intercession thus reveals the social range of consecration. The gifts are change
 
 *Controlling locus:* GIRM 79h, 151; *Ordo Missae*
 
-#### Creation and Church Return to the Father through the Son {#creation-and-church-return-to-the-father-through-the-son .unnumbered}
+#### Creation and Church Return to the Father through the Son
 
 The Priest voices the Trinitarian doxology while elevating the paten with the Host. When a Deacon is present, he elevates the chalice beside the Priest; without a Deacon, the Priest elevates both paten and chalice. Concelebrants join the doxology as the Missal directs. The people answer Amen. The elevation is not a third showing or another consecration. It makes visible that the Victim, gifts, Church, and all glory return to the Father through Christ in the Spirit.
 
@@ -973,7 +973,7 @@ The 2008 Missal does not print four interchangeable lengths of one composition. 
 
 *Controlling locus:* GIRM 365a; *Ordo Missae*, Eucharistic Prayer I
 
-#### The Received Roman Canon: Concrete Names around the One Victim {#the-received-roman-canon-concrete-names-around-the-one-victim .unnumbered}
+#### The Received Roman Canon: Concrete Names around the One Victim
 
 After the selected Preface and common Sanctus, *Te igitur* opens a succession of petitions linked more by sustained address and sacrificial reference than by narrative transitions. Gifts are commended; the Church is remembered in visible communion; living persons and the assembly are placed before God; Mary, Joseph, apostles, martyrs, and all the saints are named; the household’s offering is commended; and God is asked to act upon the oblation. The institution narrative forms the center. Anamnesis and offering then lead through the accepted offerings of Abel, Abraham, and Melchizedek to the heavenly-altar petition, remembrance of the dead, the sinners’ hope of fellowship with the saints, blessing of creation through Christ, and the Trinitarian doxology.
 
@@ -1015,7 +1015,7 @@ The second *Memento* crosses death in resurrection hope; *Nobis quoque peccatori
 
 *Controlling locus:* GIRM 365b; *Ordo Missae*, Eucharistic Prayer II
 
-#### Ancient Anaphoral Material Freely Recast in a Concise Roman Prayer {#ancient-anaphoral-material-freely-recast-in-a-concise-roman-prayer .unnumbered}
+#### Ancient Anaphoral Material Freely Recast in a Concise Roman Prayer
 
 Eucharistic Prayer II is the shortest principal prayer, but brevity is not theological emptiness. Its own Preface gives the compact anaphora a christological and Paschal horizon. After the Sanctus, divine holiness, explicit pneumatic consecratory language, received institution, ministerial thanksgiving, ecclesial communion, intercession, and eschatological hope are held within a notably linear design. These are formal and theological coordinates, not a substitute version of the prayer; the common anaphoral actions themselves were analyzed in the preceding chapter.
 
@@ -1049,7 +1049,7 @@ The short intercessions then make visible what the prayer’s center already imp
 
 *Controlling locus:* GIRM 365c; *Ordo Missae*, Eucharistic Prayer III
 
-#### The Spirit Gathers a Worldwide Offering into Christ {#the-spirit-gathers-a-worldwide-offering-into-christ .unnumbered}
+#### The Spirit Gathers a Worldwide Offering into Christ
 
 Eucharistic Prayer III was composed for the reformed Missal rather than recovered as a complete ancient text. Cipriano Vagaggini prepared the foundational draft; Coetus X significantly revised it, and Paul VI reviewed the new prayers. Its idiom is Roman and biblical, while its broad sequence and pneumatology converse with Eastern anaphoral traditions. Vagaggini’s formative draft thus passed through collective revision and papal review.
 
@@ -1083,7 +1083,7 @@ Its intercession does not turn the Kingdom into a vague happy ending. Mary, Jose
 
 *Controlling locus:* GIRM 365d; *Ordo Missae*, Eucharistic Prayer IV
 
-#### Creation and Covenant Carried through Christ into the New Creation {#creation-and-covenant-carried-through-christ-into-the-new-creation .unnumbered}
+#### Creation and Covenant Carried through Christ into the New Creation
 
 Eucharistic Prayer IV is the principal prayer whose Preface cannot be exchanged. Preface, Sanctus, and post-Sanctus form one continuous history of salvation. It is therefore available when the Mass has no Preface of its own and particularly on Sundays in Ordinary Time, not as a way to displace a required seasonal or proper thanksgiving. Its extended structure also explains why the Missal does not supply the special formula for a particular deceased person admitted in II and III.
 
@@ -1129,7 +1129,7 @@ The following prayers are complete anaphoras authorized under narrower condition
 
 *Controlling locus:* Missal appendix, Eucharistic Prayer for Reconciliation I; *Postquam de precibus*; 1983 norms
 
-#### The Father Rebuilds Covenant through the Cross {#the-father-rebuilds-covenant-through-the-cross .unnumbered}
+#### The Father Rebuilds Covenant through the Cross
 
 Reconciliation I is governed by a covenantal account of reconciliation: divine initiative precedes human repair, the Cross discloses the covenant’s cost and permanence, and the Spirit makes received peace ecclesial. The complete Eucharistic grammar is not displaced by this theme. Rather, consecration, memorial, offering, Communion, and intercession locate reconciliation within Christ’s Pasch and order its fruit toward a Church made responsible for unity and renewed creation.
 
@@ -1159,7 +1159,7 @@ The prayer was first composed institutionally for the Holy Year of 1975, approve
 
 *Controlling locus:* Missal appendix, Eucharistic Prayer for Reconciliation II; *Postquam de precibus*; 1983 norms
 
-#### Enemies Are Taught to Speak and Peoples to Meet {#enemies-are-taught-to-speak-and-peoples-to-meet .unnumbered}
+#### Enemies Are Taught to Speak and Peoples to Meet
 
 Reconciliation II places visible human discord in the foreground and reads movements toward speech, encounter, pardon, and peace as graces rather than autonomous achievements. Its Christology and pneumatology keep social reconciliation within the Father’s saving initiative: the Son’s sacrifice is the source, the Spirit forms ecclesial communion, and the Church receives a vocation to become a credible sign of the peace she celebrates. The prayer’s eschatological breadth prevents temporary agreement from being mistaken for the Kingdom’s completion.
 
@@ -1185,7 +1185,7 @@ The eschatological banquet guards peacemaking from two failures. It prevents des
 
 *Controlling locus:* Missal appendix, Eucharistic Prayer for Various Needs I; 1991 *Praenotanda*
 
-#### The Pilgrim Church as a Prophetic Sign of Unity {#the-pilgrim-church-as-a-prophetic-sign-of-unity .unnumbered}
+#### The Pilgrim Church as a Prophetic Sign of Unity
 
 The four forms for Various Needs share one anaphoral body whose governing imagery is Paschal pilgrimage in the company of the risen Christ. Word and breaking of bread, pneumatic sanctification, sacrificial memorial, ecclesial membership, remembrance, and eschatological journey remain a single architecture. Each form receives its distinctive pastoral accent only through the matched Preface and intercession supplied for it; that matching, rather than any reconstructed wording here, explains how one prayer has four configurations.
 
@@ -1205,7 +1205,7 @@ Its suggested formularies include those for the Church, pope, bishop, election o
 
 *Controlling locus:* Missal appendix, Eucharistic Prayer for Various Needs II; 1991 *Praenotanda*
 
-#### The God Who Does Not Abandon His People Leads Them through Time {#the-god-who-does-not-abandon-his-people-leads-them-through-time .unnumbered}
+#### The God Who Does Not Abandon His People Leads Them through Time
 
 Form II places the common pilgrimage under the theology of divine guidance. Exodus, providence, ecclesial vocation, and hope keep the road from becoming a metaphor for self-directed progress. Its matched intercession draws states of life, family and friendship, thanksgiving, and charity into this horizon: each vocation is received, judged, and sustained within the Church’s journey toward salvation.
 
@@ -1221,7 +1221,7 @@ Vocation belongs inside this pilgrimage. The Spirit gathers different states and
 
 *Controlling locus:* Missal appendix, Eucharistic Prayer for Various Needs III; 1991 *Praenotanda*
 
-#### Christ’s Paschal Way Orders Evangelization and the Common Good {#christs-paschal-way-orders-evangelization-and-the-common-good .unnumbered}
+#### Christ’s Paschal Way Orders Evangelization and the Common Good
 
 Form III orders the common pilgrimage explicitly through Christ toward the Father in the Spirit. That filial and Paschal structure governs its public concerns: evangelization, persecuted Christians, country and civil authority, relations among nations, human development, and the passage of civil time. None becomes an independent sacred cause; each is brought under the Son’s way and the common good it judges.
 
@@ -1239,7 +1239,7 @@ Persecuted Christians disclose the cost of the way. Acts 4:23–31 answers thre
 
 *Controlling locus:* Missal appendix, Eucharistic Prayer for Various Needs IV; 1991 *Praenotanda*
 
-#### The Compassion of Christ Becomes Eucharistic Service {#the-compassion-of-christ-becomes-eucharistic-service .unnumbered}
+#### The Compassion of Christ Becomes Eucharistic Service
 
 Form IV receives Peter’s summary that Jesus went about doing good and healing those oppressed (Acts 10:34–43) as its controlling christological field. Divine compassion is therefore concrete, embodied, and ordered to service rather than sentiment. The typical norms associate the matched form with hunger and famine, refugees and exiles, captives and prisoners, the sick and dying, grave need, those who afflict the worshippers, and the grace of a good death; the range places justice, mercy, enemy-love, and mortality beneath one Paschal horizon.
 
@@ -1261,7 +1261,7 @@ The prayer’s eschatological aim prevents works of mercy from becoming a progra
 
 *Controlling locus:* U.S. supplement (2011); *Postquam de precibus*; Directory for Masses with Children
 
-#### The Whole Mystery in a Direct Catechetical Arc {#the-whole-mystery-in-a-direct-catechetical-arc .unnumbered}
+#### The Whole Mystery in a Direct Catechetical Arc
 
 The prayers for children occupy a distinct textual and juridical horizon. The 1973 Directory sought participation suited to children’s capacity without allowing celebrants to rewrite the principal prayers clause by clause. Three complete prayers were approved *ad experimentum* for the United States in 1975, extended in 1977, and granted indefinite use in 1980. They appeared in the 2002 Latin third typical edition but were omitted from its 2008 emended reprint pending separate revision. Roman authorization in 2011 permitted continued U.S. use with conformed institution wording and responses; the USCCB publishes them in a separate 2011 supplement and continues to list that supplement among current liturgical books.
 
@@ -1279,7 +1279,7 @@ The direct syntax should serve mystagogy rather than condescension. Deuteronomy�
 
 *Controlling locus:* U.S. supplement (2011), Eucharistic Prayer for Masses with Children II
 
-#### Repeated Acclamation Makes Thanksgiving Dialogical {#repeated-acclamation-makes-thanksgiving-dialogical .unnumbered}
+#### Repeated Acclamation Makes Thanksgiving Dialogical
 
 Prayer II is the most visibly dialogical of the three. Its authorized recurring acclamations give a child-majority assembly more frequent modes of assent than the common anaphoral pattern. The prayer’s own response scheme governs the memorial position and is not combined with a separate standard acclamation. Dialogical density does not distribute consecration among the speakers: the Priest voices the presidential prayer, and the children answer within an authorized score.
 
@@ -1297,7 +1297,7 @@ The familial language also needs doctrinal discipline. The Church is God’s hou
 
 *Controlling locus:* U.S. supplement (2011), Eucharistic Prayer for Masses with Children III
 
-#### Shared Joy and Sorrow Open toward the Kingdom {#shared-joy-and-sorrow-open-toward-the-kingdom .unnumbered}
+#### Shared Joy and Sorrow Open toward the Kingdom
 
 Prayer III gives particular weight to relation and eschatological hope: creaturely dependence, solidarity in joy and sorrow, Christological fraternity, Eucharistic gathering, Pasch, and renewed creation interpret one another. Like Prayer II, its own authorized response pattern governs the memorial position instead of a separate standard acclamation. Seasonal variants, especially in Easter Time, allow the received prayer to bear the calendar without private rewriting.
 
@@ -1327,7 +1327,7 @@ The sequence has a deliberate narrowing and expansion. All address the Father in
 
 *Controlling locus:* GIRM 80–81, 152
 
-#### The Son’s Prayer at the Threshold of the Banquet {#the-sons-prayer-at-the-threshold-of-the-banquet .unnumbered}
+#### The Son’s Prayer at the Threshold of the Banquet
 
 After the Amen that concludes the Eucharistic Prayer, the Priest, with hands joined, introduces the Lord’s Prayer by one of the received formulas. He then extends his hands, and all the faithful pray the *Pater noster* with him (GIRM 81, 152). The introduction belongs to the Priest; the dominical prayer belongs audibly to the entire assembly. No posture or tone should turn the congregation into hearers of a presidential text, and no private expansion should displace the prayer Christ entrusted to his disciples.
 
@@ -1347,7 +1347,7 @@ The Lord’s Prayer also opens the eschatological horizon of Communion. The king
 
 *Controlling locus:* GIRM 81, 153
 
-#### Deliverance Widened toward the Blessed Hope {#deliverance-widened-toward-the-blessed-hope .unnumbered}
+#### Deliverance Widened toward the Blessed Hope
 
 The Priest alone continues the last petition in the embolism beginning *Libera nos*; he prays with hands extended, and the people conclude with the appointed doxology (GIRM 153). An embolism is an expansion, not a rival prayer. It unfolds the terse plea for deliverance into peace, freedom from sin and distress, divine mercy, and expectation of Christ’s coming. The people’s acclamation then returns the whole movement to God’s kingdom, power, and glory.
 
@@ -1363,7 +1363,7 @@ Theologically, the embolism prevents “evil” from remaining an abstraction. S
 
 *Controlling locus:* GIRM 82, 154; *Redemptionis Sacramentum* 71–72
 
-#### The Risen Christ’s Gift before Ecclesial Reception {#the-risen-christs-gift-before-ecclesial-reception .unnumbered}
+#### The Risen Christ’s Gift before Ecclesial Reception
 
 The Priest addresses the risen Lord in the appointed prayer for the Church’s peace and unity, then extends and joins his hands in the greeting of peace. The people answer. If appropriate, the Deacon or Priest invites those present to exchange a sign, and each offers it soberly only to those nearby according to the manner established for the territory (GIRM 82, 154). The prayer and dialogue are fixed; the invitation and exchange are conditional. Their omission does not imply a Church without peace, and their use does not create permission for an extended social interval.
 
@@ -1381,7 +1381,7 @@ Its sobriety protects its scale. The Priest ordinarily remains within the sanctu
 
 *Controlling locus:* GIRM 80, 83, 155
 
-#### One Bread Broken, the Living Christ Invoked {#one-bread-broken-the-living-christ-invoked .unnumbered}
+#### One Bread Broken, the Living Christ Invoked
 
 The Priest breaks the consecrated Host over the paten and places a small particle in the chalice while saying the appointed quiet prayer. Meanwhile the choir or cantor begins the *Agnus Dei*, with the people responding; the invocation may repeat for as long as the fraction requires, and its final petition asks for peace. If it is not sung, it is recited (GIRM 83, 155). These actions are related but distinct. Fraction prepares one consecrated Bread for distribution. Commingling joins a particle of the Host to the Precious Blood as a sign. The litany accompanies the fraction by addressing Christ.
 
@@ -1405,7 +1405,7 @@ The *Liber pontificalis* attributes introduction of the chant to Pope Sergius I
 
 *Controlling locus:* GIRM 33, 84, 156
 
-#### Ministerial Office beneath Personal Judgment {#ministerial-office-beneath-personal-judgment .unnumbered}
+#### Ministerial Office beneath Personal Judgment
 
 With hands joined, the Priest quietly says one of the two appointed prayers, beginning either *Domine Iesu Christe, Fili Dei vivi* or *Perceptio Corporis et Sanguinis*; the faithful pray in silence (GIRM 84, 156). These are alternatives, not cumulative devotions. They belong to the Priest’s private preparation and are spoken in the singular. They neither invite a congregational answer nor compete with the common act of humility that follows.
 
@@ -1421,7 +1421,7 @@ The faithful’s silence is equally active. Each prepares to receive the same Lo
 
 *Controlling locus:* GIRM 84, 157
 
-#### The Lamb Shown to Guests of the Wedding Supper {#the-lamb-shown-to-guests-of-the-wedding-supper .unnumbered}
+#### The Lamb Shown to Guests of the Wedding Supper
 
 The Priest genuflects, takes the Host, and, holding it slightly raised above the paten or chalice, faces the people. He gives the invitation beginning *Ecce Agnus Dei*; then Priest and faithful together make the one appointed act of humility (GIRM 84, 157). Showing, invitation, and response form a single threshold. The Host is already consecrated. This display does not effect a second consecration, and its purpose is not a detached interval of ocular devotion: the Lamb is shown in order to invite his people to Communion.
 
@@ -1439,7 +1439,7 @@ The common voice prevents two distortions. The Priest too is an unworthy recipie
 
 *Controlling locus:* GIRM 85, 158, 237–249
 
-#### Ministers Receiving from the Sacrifice They Serve {#ministers-receiving-from-the-sacrifice-they-serve .unnumbered}
+#### Ministers Receiving from the Sacrifice They Serve
 
 The Priest receives the consecrated Body and Blood with the appointed quiet formulas. A Deacon receives from the Priest; concelebrants communicate according to one of the forms supplied in GIRM 237–249, under both species. The order distinguishes presidency, diaconal service, and concelebration without dividing Christ’s gift. Ministers do not constitute a separate Communion rite. Their reception begins the distribution of the one sacrament celebrated by the whole Church.
 
@@ -1455,7 +1455,7 @@ The Deacon especially manifests reception as gift. Though he ministers the chali
 
 *Controlling locus:* GIRM 85, 160–162, 281–287; CIC 910, 915–919
 
-#### The Whole Christ Given in the Fullest Available Sign {#the-whole-christ-given-in-the-fullest-available-sign .unnumbered}
+#### The Whole Christ Given in the Fullest Available Sign
 
 The faithful approach in procession and receive from an ordinary or duly authorized extraordinary minister. Each act is a personal ecclesial dialogue: the minister names the sacramental gift with the brief formula *Corpus Christi* or *Sanguis Christi*, and the communicant answers Amen before receiving. In the United States the norm is reception standing, with a bow of the head before the sacrament; communicants may receive the Host on the tongue or, where permitted, in the hand, and a person who kneels is not to be denied on that account (GIRM 160 and its United States adaptation; *Redemptionis Sacramentum* 90–92). These disciplines order reverence without making one permitted posture a measure of another communicant’s faith.
 
@@ -1483,7 +1483,7 @@ Reception reaches beyond the instant of eating and drinking. John 6 joins Chris
 
 *Controlling locus:* GIRM 44, 86–87, 159
 
-#### Pilgrims Becoming One Body on the Way {#pilgrims-becoming-one-body-on-the-way .unnumbered}
+#### Pilgrims Becoming One Body on the Way
 
 The Communion chant begins while the Priest receives the sacrament and continues as the faithful approach (GIRM 86). Its purpose is to express spiritual union through the unity of voices, manifest joy of heart, and make the procession’s communitarian character more evident. In the United States, GIRM 87 specifies the approved sources from which the proper or another suitable chant may be taken. The chant is not a meditative interlude laid over many unrelated private Communions. It gives one sound to a Body moving toward one gift.
 
@@ -1499,7 +1499,7 @@ The chant’s text must serve the rite rather than force attention away from it.
 
 *Controlling locus:* GIRM 163, 278–280; *Redemptionis Sacramentum* 107
 
-#### Reverence after Distribution Confessing an Enduring Presence {#reverence-after-distribution-confessing-an-enduring-presence .unnumbered}
+#### Reverence after Distribution Confessing an Enduring Presence
 
 When distribution is complete, the remaining Precious Blood is consumed as the law directs; remaining consecrated Hosts are consumed or carried to the place of reservation. Sacred vessels are purified by the Priest, Deacon, or instituted acolyte, either at the altar or credence table and either then or after Mass according to the permitted options (GIRM 163, 279). Water used in purification is consumed. These are liturgical acts of custody, not backstage cleanup, even when some occur after the people’s attention has shifted.
 
@@ -1519,7 +1519,7 @@ No elaborate allegory is needed. Consuming, gathering, carrying, covering, rinsi
 
 *Controlling locus:* GIRM 45, 88, 164
 
-#### The Gift Becoming Interior Thanksgiving {#the-gift-becoming-interior-thanksgiving .unnumbered}
+#### The Gift Becoming Interior Thanksgiving
 
 After Communion, the Priest and faithful may spend some time in silent prayer. The entire assembly may also sing a psalm, other canticle of praise, or hymn; the Priest may return to the chair (GIRM 88, 164). These received modes need not be accumulated automatically. A song can make thanksgiving corporate; silence can allow the sacramental encounter to become inward attention. Neither is a pause waiting for the next official text.
 
@@ -1535,7 +1535,7 @@ Pastoral proportion matters. Hurried transition can make reception seem consumpt
 
 *Controlling locus:* GIRM 30, 32, 89, 165
 
-#### The Mystery Asking to Bear Fruit in the Church {#the-mystery-asking-to-bear-fruit-in-the-church .unnumbered}
+#### The Mystery Asking to Bear Fruit in the Church
 
 Standing at the chair or altar, the Priest invites the people to prayer. If sacred silence has not already occurred, all pray silently for a time; then he extends his hands and proclaims the one appointed Prayer after Communion. The people answer Amen (GIRM 89, 165). The prayer is presidential and proper, and nothing competes with it. It brings the Communion Rite to completion but does not yet dismiss the assembly.
 
@@ -1561,7 +1561,7 @@ Ancient Christian orders often include thanksgiving, blessing, and a diaconal co
 
 *Controlling locus:* GIRM 90a, 166
 
-#### Time admitted but bounded {#time-admitted-but-bounded .unnumbered}
+#### Time admitted but bounded
 
 Announcements are the rare movement whose prosaic purpose is its best interpretation. The Order permits brief announcements after the Prayer after Communion when they are necessary. Their location protects both sides of a real relation. A worshipping community has temporal obligations: the sick require care, the dead commemoration, the poor assistance, and common works coordination. Yet the Eucharistic action is not a meeting whose agenda resumes when the sacred portion has ended. Necessary information may enter, but it enters after the prayer has completed Communion and before the liturgical greeting, blessing, and dismissal.
 
@@ -1577,7 +1577,7 @@ This boundary also clarifies what does not belong after dismissal. Once the Deac
 
 *Controlling locus:* GIRM 90b, 167; *Ordo Missae*
 
-#### Grace descending upon the incorporated body {#grace-descending-upon-the-incorporated-body .unnumbered}
+#### Grace descending upon the incorporated body
 
 The exchange of greeting reopens the dialogical form heard near the beginning and at the Preface. It does not restart the Mass. At the opening, the greeting manifested the assembled Church and the Lord’s presence to it; before blessing, it gathers attention so the ecclesial body receives a gift for departure. The same response acknowledges that the ordained minister’s act belongs to an office within the Church rather than to private goodwill.
 
@@ -1599,7 +1599,7 @@ The movement relates backward and forward at once. Backward, it asks that sacram
 
 *Controlling locus:* GIRM 90c, 168; 2008 *Ordo Missae*
 
-#### A real ending received as a sending {#a-real-ending-received-as-a-sending .unnumbered}
+#### A real ending received as a sending
 
 The dismissal is a genuine liturgical act. A Deacon, when present, gives it; otherwise the Priest does. The people answer. The exchange brings this liturgical assembly to its ritual close and releases the people to depart. It is not a transition cue for a hymn leader and not an informal report that the event has naturally run out.
 
@@ -1619,7 +1619,7 @@ The people’s response is as necessary to the movement’s logic as the ministe
 
 *Controlling locus:* GIRM 90d, 169; cf. 274
 
-#### The action ends where its ministers first converged {#the-action-ends-where-its-ministers-first-converged .unnumbered}
+#### The action ends where its ministers first converged
 
 After dismissal the Priest and Deacon kiss the altar; with the other ministers they make the prescribed reverence and depart. Ordinarily that reverence is a profound bow to the altar. When the tabernacle containing the Blessed Sacrament is in the sanctuary, the Priest, Deacon, and ministers genuflect on departure, while cross and candle bearers bow their heads instead (GIRM 274). The assembly has already been released. These actions are therefore neither another public devotion nor an additional conclusion requiring a congregational answer. They complete the ministers’ relation to the place around which the Eucharistic action was ordered.
 

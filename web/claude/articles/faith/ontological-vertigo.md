@@ -425,7 +425,7 @@ Online witnesses were checked on 2026-07-24 (first edition) and on 2026-07-25 (t
 
 ## References
 
-### Ancient philosophy {#ancient-philosophy .unnumbered}
+### Ancient philosophy
 
 -   Aristotle, *Metaphysics* II (*α*), ch. 2 (994a, no infinite series of causes); IX (*Θ*), ch. 8 (1049b–1050b, act from act; the priority of actuality); XII (*Λ*), chs. 6–7 (1071b–1072b, the principle whose essence is actuality; the unmoved mover; motion by being loved; “on such a principle depend the heavens and the world of nature”); trans. W. D. Ross, *The Works of Aristotle Translated into English*, vol. VIII: *Metaphysica* (Oxford: Clarendon Press, 1908); public domain; wording checked 2026-07-24 and again 2026-07-25 in the [Internet Archive scan](https://archive.org/details/worksofaristotle0008unse) of the 1908 printing, whose text was re-downloaded on the later date and found byte-identical.
 
@@ -435,7 +435,7 @@ Online witnesses were checked on 2026-07-24 (first edition) and on 2026-07-25 (t
 
 -   Plato, *Timaeus* 28a–30a (what is created has a cause; the maker past finding out; the ungrudging craftsman; order brought out of disorder); trans. Jowett; public domain; checked 2026-07-25 at [Project Gutenberg](https://www.gutenberg.org/ebooks/1572) (ebook no. 1572).
 
-### Patristic witnesses {#patristic-witnesses .unnumbered}
+### Patristic witnesses
 
 -   Irenaeus of Lyons, *Adversus haereses* II.34.3–4 (creatures continue according to the will of God; life bestowed, not our own) and IV.39.2 (“you did not make God, but God you”; creation the attribute of God’s goodness, to be created that of human nature); trans. Alexander Roberts and W. H. Rambaut, *Ante-Nicene Fathers*, vol. 1 (Buffalo: Christian Literature Publishing, 1885); public domain; checked 2026-07-25 at [New Advent (II.34)](https://www.newadvent.org/fathers/0103234.htm) and [New Advent (IV.39)](https://www.newadvent.org/fathers/0103439.htm).
 
@@ -445,19 +445,19 @@ Online witnesses were checked on 2026-07-24 (first edition) and on 2026-07-25 (t
 
 -   Pseudo-Dionysius the Areopagite, *Mystical Theology* chs. 1–2 and 5 (ascent above essence and knowledge; the statue and the cutting away; the concluding denials); trans. John Parker, *The Works of Dionysius the Areopagite* (London: James Parker, 1897); public domain; checked 2026-07-25 at [CCEL](https://ccel.org/ccel/dionysius/works.all.html). *Divine Names* IV.1 is quoted only as Aquinas quotes it at ST I, q. 20, a. 2, ad 1.
 
-### Thomistic framework {#thomistic-framework .unnumbered}
+### Thomistic framework
 
 -   Thomas Aquinas, *De ente et essentia*, ch. 4 in the Leonine division (= ch. 3 of the text consulted): essence understood without existence (the phoenix); the light in the air from the sun; existence not caused by the nature; the one thing that is existence alone. Latin from the Baur–Koch text presented in the [Corpus Thomisticum](https://www.corpusthomisticum.org/oee.html) online corpus, checked 2026-07-25; English renderings in this essay are labeled project working glosses governed by the Latin.
 
 -   Thomas Aquinas, *Summa theologiae* I, q. 2, a. 3 (the First Way); q. 3, a. 4 (essence and existence identical in God alone), with a. 7, q. 7, a. 1, and q. 11, a. 3 identified for the deferred identification; q. 8, a. 1 (God innermost in all things); q. 13, a. 7 with ad 5 (the one-sided real relation; God really Lord); q. 13, a. 11 (“He Who Is”; present existence); q. 19, a. 3 (willing things other than himself not absolutely necessary); q. 20, a. 2 with ad 1 (God loves all existing things; the Dionysian gloss); q. 32, a. 1 (Trinity beyond natural reason); q. 44, a. 1 (beings by participation); q. 44, a. 2 (primary matter created; the history of causes); q. 45, a. 3 (creation a relation in the creature); q. 46, a. 2 with ad 7 (no demonstration of a temporal beginning; *per se* and accidental series); q. 104, a. 1 (conservation; builder, house, sun, and air); q. 105, a. 5 with ad 1–2 (God works in every agent; primary and secondary causes); II-II, q. 84, a. 1 (adoration); q. 129, a. 1 and a. 3, ad 4 (magnanimity; the great and the defective in man); q. 161, aa. 1–3 (humility, its object, and its content). English from the public-domain translation of the Fathers of the English Dominican Province via [New Advent](https://www.newadvent.org/summa/); Latin checked in the [Corpus Thomisticum](https://www.corpusthomisticum.org/iopera.html) online corpus. All loci checked 2026-07-25; work, question, article, and division govern over either site’s presentation.
 
-### Authoritative Catholic witnesses {#authoritative-catholic-witnesses .unnumbered}
+### Authoritative Catholic witnesses
 
 -   First Vatican Council, dogmatic constitution *Dei Filius* (24 April 1870), ch. 1 on God the creator (*in se et ex se beatissimus*; *non ad augendam suam beatitudinem*; *liberrimo consilio… de nihilo*; *providentia sua tuetur atque gubernat*) with canon 5 *De Deo rerum omnium creatore* (*voluntate ab omni necessitate libera*); Holy See Latin text, [vatican.va](https://www.vatican.va/content/pius-ix/la/documents/constitutio-dogmatica-dei-filius-24-aprilis-1870.html), checked 2026-07-24 and again 2026-07-25. English renderings in this essay are labeled working glosses governed by the Latin.
 
 -   *Catechism of the Catholic Church* 300–301 (transcendence and intimate presence, quoting Augustine; God upholds and sustains creation at every moment; the joy of recognizing dependence; Wisdom 11:24–26), official Vatican English web text, [vatican.va](https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_one/article_1/paragraph_4_the_creator.html), checked 2026-07-24 and again 2026-07-25.
 
-### Secondary witnesses at stated reported ceilings {#secondary-witnesses-at-stated-reported-ceilings .unnumbered}
+### Secondary witnesses at stated reported ceilings
 
 -   John F. Wippel, “Godfrey of Fontaines,” *Stanford Encyclopedia of Philosophy*, §6 (essence and existence: Giles of Rome, Henry of Ghent, Godfrey); substantive revision 23 October 2018; read 2026-07-25 at [plato.stanford.edu](https://plato.stanford.edu/entries/godfrey/). Used only for the reported state of the thirteenth-century dispute; no text of those authors was collated.
 

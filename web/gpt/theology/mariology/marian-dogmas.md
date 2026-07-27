@@ -635,7 +635,7 @@ Mary’s excellence neither fills a divine lack nor negotiates a compromise betw
 
 These sheets are retrieval aids, not substitutes for the preceding argument or the cited primary texts. Each preserves the difference between dogmatic object, evidence, theological explanation, historical development, and an open question.
 
-### I. Divine Motherhood: Mary is truly *Theotokos* {#i.-divine-motherhood-mary-is-truly-theotokos .unnumbered}
+### I. Divine Motherhood: Mary is truly *Theotokos*
 
 |  |  |
 |:---|:---|
@@ -652,7 +652,7 @@ These sheets are retrieval aids, not substitutes for the preceding argument or t
 >
 > Mary’s maternity reaches a person; the person born from her is God the Word incarnate, according to his humanity.
 
-### II. Perpetual Virginity: before, in, and after the birth {#ii.-perpetual-virginity-before-in-and-after-the-birth .unnumbered}
+### II. Perpetual Virginity: before, in, and after the birth
 
 |  |  |
 |:---|:---|
@@ -669,7 +669,7 @@ These sheets are retrieval aids, not substitutes for the preceding argument or t
 >
 > One undivided confession: conceived virginally, truly born without loss of virginal integrity, and no later marital consummation or children.
 
-### III. Immaculate Conception: preservative redemption {#iii.-immaculate-conception-preservative-redemption .unnumbered}
+### III. Immaculate Conception: preservative redemption
 
 |  |  |
 |:---|:---|
@@ -686,7 +686,7 @@ These sheets are retrieval aids, not substitutes for the preceding argument or t
 >
 > The one Savior redeems Mary not after contraction of original sin but by preventing it from the first instant through his foreseen merits.
 
-### IV. Assumption: body and soul in heavenly glory {#iv.-assumption-body-and-soul-in-heavenly-glory .unnumbered}
+### IV. Assumption: body and soul in heavenly glory
 
 |  |  |
 |:---|:---|

@@ -332,13 +332,13 @@ The legal currentness audit was refreshed through 23 July 2026. The added script
 
 ## References
 
-### Sacred Scripture {#sacred-scripture .unnumbered}
+### Sacred Scripture
 
 -   Exod 19:3–6 and 20:1–17; Deut 5:1–22; Psalm 116:1–19, especially vv. 12–19; Matt 21:28–31 and 22:34–40; Luke 22:39–46; John 14:15; Rom 11:33–12:5 and 13:8–10; Jas 1:22–27; 1 John 4:19–21 and 5:3. Short English wording is used as a working rendering; Scripture and translations retain their own status.
 
 -   Holy See-hosted New American Bible working witnesses: [Exodus 20](https://www.vatican.va/archive/ENG0839/_P21.HTM), [Psalm 116](https://www.vatican.va/archive/ENG0839/_PJ0.HTM), [Romans 11](https://www.vatican.va/archive/ENG0839/_PYZ.HTM), and [Romans 12](https://www.vatican.va/archive/ENG0839/_PZ0.HTM).
 
-### Authoritative Catholic witnesses {#authoritative-catholic-witnesses .unnumbered}
+### Authoritative Catholic witnesses
 
 -   Second Vatican Council, constitution *Sacrosanctum Concilium* (4 December 1963), nos. 7, 10–12, 14, 47–48, and 106, on Christ’s sacrifice, the faithful’s self-offering with the divine Victim, liturgical participation, and the Lord’s Day; [official English](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html).
 
@@ -356,7 +356,7 @@ The legal currentness audit was refreshed through 23 July 2026. The added script
 
 -   Benedict XVI, general audience (1 February 2012), on Christ’s prayer in Gethsemane, his real human anguish, the human will’s unreserved adherence to the divine will, and true freedom; [official English](https://www.vatican.va/content/benedict-xvi/en/audiences/2012/documents/hf_ben-xvi_aud_20120201.html).
 
-### Patristic witnesses {#patristic-witnesses .unnumbered}
+### Patristic witnesses
 
 -   St. Irenaeus of Lyons, *Against Heresies* IV.14.1–3, on divine non-need, service for the creature’s good, fellowship with God, and instruction away from idols; IV.17.1 and 18.1–6, on sacrifice, justice, and offerings that do not supply a divine need. The Roberts–Rambaut English as printed in ANF volume 1 (Buffalo, 1887) was checked in the exact facsimile; New Advent supplies a distinct revised web presentation: [IV.14](https://www.newadvent.org/fathers/0103414.htm), [IV.17](https://www.newadvent.org/fathers/0103417.htm), and [IV.18](https://www.newadvent.org/fathers/0103418.htm).
 
@@ -368,7 +368,7 @@ The legal currentness audit was refreshed through 23 July 2026. The added script
 
 -   St. John Chrysostom, *Homilies on Matthew* 50.3–4, on honoring Christ’s Eucharistic body without neglecting Christ in the poor and on almsgiving alongside liturgical splendor; public-domain NPNF working English, [online witness](https://www.newadvent.org/fathers/200150.htm).
 
-### Monastic and mystical witnesses {#monastic-and-mystical-witnesses .unnumbered}
+### Monastic and mystical witnesses
 
 -   St. Teresa of Jesus, *Interior Castle* V.3.11–12 and VII.4, on works of charity as the test and fruit of union and on contemplation issuing in service. The article paraphrases the argument; [Holy See-hosted excerpt](https://press.vatican.va/spirit/documents/spirit_20001013_teresa_en.html) and [Benedict XVI’s authoritative catechesis](https://www.vatican.va/content/benedict-xvi/en/audiences/2011/documents/hf_ben-xvi_aud_20110202.html).
 
@@ -378,11 +378,11 @@ The legal currentness audit was refreshed through 23 July 2026. The added script
 
 -   St. Alphonsus Maria de Liguori, *The True Spouse of Jesus Christ*, ch. 18, sec. 2, “On Scruples,” especially “Obedience to the Director Is the Great Remedy Against Scruples,” pp. 545–563, in *The Complete Ascetical Works*, vols. X–XI, Eugene Grimm, trans. and ed. (New York: Benziger Brothers, 1929 combined edition); ascetical witness addressed in a religious context, not a clinical protocol or statement of current universal law; [public-domain working scan](https://archive.org/details/truespouseofjesu1011stal).
 
-### Pastoral and clinical boundary {#pastoral-and-clinical-boundary .unnumbered}
+### Pastoral and clinical boundary
 
 -   International OCD Foundation, [Faith and OCD Resource Center](https://iocdf.org/faith-ocd/), [“What Is OCD & Scrupulosity?”](https://iocdf.org/faith-ocd/what-is-ocd-scrupulosity/), and [“For Faith Leaders”](https://iocdf.org/faith-ocd/for-faith-leaders/) (accessed 23 July 2026), on scrupulosity as an OCD presentation, compulsive reassurance and confession, and the distinct, potentially collaborative roles of faith leaders and qualified clinicians. These current clinical-education pages are neither Catholic doctrinal authority nor an individual diagnosis; the article paraphrases them without adopting their broader theological or moral language.
 
-### Thomistic framework {#thomistic-framework .unnumbered}
+### Thomistic framework
 
 -   St. Thomas Aquinas, *Summa theologiae* I, q. 21, a. 1, especially ad 2–3, and a. 4, ad 4, on divine justice, derivative created dues, and God’s owing no debt to creatures; q. 44, a. 4, on God as final cause.
 
@@ -392,7 +392,7 @@ The legal currentness audit was refreshed through 23 July 2026. The added script
 
 -   Governing Latin loci checked through the [Corpus Thomisticum](https://www.corpusthomisticum.org/iopera.html) Leonine-text corpus. The [New Advent Summa](https://www.newadvent.org/summa/) served as a working public English index; particularly relevant English aids include [justice](https://www.newadvent.org/summa/3058.htm), [religion](https://www.newadvent.org/summa/3081.htm), [devotion](https://www.newadvent.org/summa/3082.htm), [the Decalogue](https://www.newadvent.org/summa/2100.htm), and [the New Law](https://www.newadvent.org/summa/2106.htm). Work and exact locus take precedence over either site’s wording.
 
-### Current Latin canon law {#current-latin-canon-law .unnumbered}
+### Current Latin canon law
 
 -   John Paul II, apostolic constitution *Sacrae disciplinae leges* (25 January 1983) and the 1983 *Codex Iuris Canonici* as amended. CIC c. 1 (Latin jurisdiction); cc. 7–22, especially 11–18 (promulgation, persons bound, territory, doubt, interpretation); cc. 85–93 (dispensations); cc. 912–923 (Eucharistic reception); and cc. 1244–1248 (sacred times, feast days, obligation, satisfaction, impossibility, dispensation, and commutation).
 

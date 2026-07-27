@@ -245,7 +245,7 @@ Project prose is original. Quotations follow: the public-domain 1912 Catholic En
 
 All web sources were accessed and checked on 2026-07-25. Citations in the text use conventional titles and standard internal divisions.
 
-### Primary sources: Thomas Aquinas {#primary-sources-thomas-aquinas .unnumbered}
+### Primary sources: Thomas Aquinas
 
 -   *Summa theologiae* I.1.1, corpus opening, Latin: *Sancti Thomae Aquinatis Opera omnia*, tomus quartus (Leonine edition; Rome: Typographia Polyglotta, 1888), p. 6; wording as centrally verified in this repository’s source library (`passage.thomas-aquinas.summa-theologiae.leonine-v4-1888.i-q1-a1-corpus-opening`, verified 2026-07-23) and re-read in the Corpus Thomisticum web presentation of the Leonine text (<https://www.corpusthomisticum.org/sth1001.html>; database presentation © 2019 Fundación Tomás de Aquino).
 
@@ -257,7 +257,7 @@ All web sources were accessed and checked on 2026-07-25. Citations in the text u
 
 -   Works cited by title only (*Scriptum super Sententiis*, *De ente et essentia*, *Contra impugnantes*, *De veritate*, *Catena aurea*, *Contra errores Graecorum*, *De unitate intellectus*, *De malo*, *De virtutibus*, *De perfectione spiritualis vitae*, *Contra retrahentes*): identified through the reference literature below; no locus-level claim rests on an uninspected text.
 
-### Early biographical witnesses (identified; not inspected) {#early-biographical-witnesses-identified-not-inspected .unnumbered}
+### Early biographical witnesses (identified; not inspected)
 
 -   *Fontes vitae S. Thomae Aquinatis, notis historicis et criticis illustrati*, ed. D. Prümmer and M.-H. Laurent (Toulouse / Revue Thomiste, 1911–1937): the canonization processes (Naples 1319; Fossanova 1321) and the Lives of William of Tocco, Bernard Gui, and Peter Calo. Scan located at the Internet Archive (<https://archive.org/details/prummerfontesvitaestho>; <https://archive.org/details/fontesvitaesthom00pr>); catalog-level identification only; not page-inspected.
 
@@ -265,7 +265,7 @@ All web sources were accessed and checked on 2026-07-25. Citations in the text u
 
 -   Kenelm Foster, O.P. (ed., trans.), *The Life of Saint Thomas Aquinas: Biographical Documents* (London: Longmans, Green; Baltimore: Helicon, 1959). In copyright; identified through publisher and review records (<https://openlibrary.org/books/OL6269895M/The_life_of_Saint_Thomas_Aquinas>); not quoted.
 
-### Reception-era reference (public domain; checked) {#reception-era-reference-public-domain-checked .unnumbered}
+### Reception-era reference (public domain; checked)
 
 -   D. J. Kennedy, “St. Thomas Aquinas,” *The Catholic Encyclopedia*, vol. 14 (New York, 1912), at New Advent (<https://www.newadvent.org/cathen/14663b.htm>); principal biographical frame and the quoted renderings of the canonization-era traditions.
 
@@ -273,7 +273,7 @@ All web sources were accessed and checked on 2026-07-25. Citations in the text u
 
 -   “Corpus Christi, Feast of,” *The Catholic Encyclopedia*, vol. 4 (New York, 1912), at New Advent (<https://www.newadvent.org/cathen/04390b.htm>); Juliana of Liège, *Transiturus*, 1912-era attribution of the office.
 
-### Modern scholarship and reference {#modern-scholarship-and-reference .unnumbered}
+### Modern scholarship and reference
 
 -   “Thomas Aquinas,” *Stanford Encyclopedia of Philosophy* (first published 7 December 2022), checked at <https://plato.stanford.edu/entries/aquinas/>; chronology and the 1277 relation.
 
@@ -291,7 +291,7 @@ All web sources were accessed and checked on 2026-07-25. Citations in the text u
 
 -   “The Relics of the Angelic Doctor,” Prime Matters (University of Mary), checked at <https://primematters.com/foundations/enrichment/relics-angelic-doctor>; reported level for the Revolution-era transfer, 1974 return, and Naples relic claims.
 
-### Ecclesial reception (checked at the Holy See’s site except as noted) {#ecclesial-reception-checked-at-the-holy-sees-site-except-as-noted .unnumbered}
+### Ecclesial reception (checked at the Holy See’s site except as noted)
 
 -   Leo XIII, encyclical *Aeterni Patris* (4 August 1879), English text (<https://www.vatican.va/content/leo-xiii/en/encyclicals/documents/hf_l-xiii_enc_04081879_aeterni-patris.html>); quoted briefly. Distinct from Pius IX’s 1868 bull *Aeterni Patris* convoking the First Vatican Council, which is not used here.
 

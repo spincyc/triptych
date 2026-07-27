@@ -28,7 +28,7 @@ TLM propers: received help, chastened standing, visitation through tears, and Eu
 | Moral | Receive the warning as addressed to the baptized Church: ask rightly, recognize visitation, accept correction, keep God’s judgments, and seek communion rather than private mastery. |
 | Anagogical | Rescue from evil, the reckoning of visitation, redemption enacted in mystery, mutual abiding, purification, and unity orient the temporal assembly toward perfected communion in God. |
 
-## Scriptural Date and Location {#scriptural-date-and-location .unnumbered}
+## Scriptural Date and Location
 
 *Canonical order governs; proper rows give inherited composition data under Location and Date, narrated-event rows locate the episode, spanning rows distinguish tradition from historical judgment, and Psalm numbers follow the Vulgate with modern numbers in parentheses.*
 
@@ -51,11 +51,11 @@ TLM propers: received help, chastened standing, visitation through tears, and Eu
 | **Epistle** | 1 Cor. 10:6–13 | Ephesus (present-day Türkiye) | c. AD 56 |
 | St. Paul writes during his third missionary journey to the mixed Jewish and Gentile church he founded at Corinth. Within the idol-meal dispute of chapters 8–10, he calls the wilderness generation “our fathers,” applies their history to the baptized, and proceeds from warning to the Eucharistic cup, bread, and one body (1 Corinthians introduction and 8–10, *NABRE*). |  |  |  |
 
-## The Appointed Formulary in Full {#the-appointed-formulary-in-full .unnumbered}
+## The Appointed Formulary in Full
 
 This sheet prints the complete proper of *DOMINICA NONA post Pentecosten*, *II classis*, from the 1962 Vatican typical Missal, printed pp. 388–389. Latin was collated in the study leaf’s `propers/verified.md`. Scriptural English is the public-domain Douay–Rheims revised by Challoner; the orations use the anonymous public-domain 1861 Cummiskey hand missal. Neither English witness is an official translation of the 1962 book. A mismatch is identified rather than silently repaired.
 
-### 1. Introit {#introit .unnumbered}
+### 1. Introit
 
 > ***Antiphona ad Introitum* — Ps. 53, 6–7; 3**
 >
@@ -67,7 +67,7 @@ This sheet prints the complete proper of *DOMINICA NONA post Pentecosten*, *II c
 
 **Witness boundary.** The missal adds *protéctor meus, Dómine*; sings *líbera me* where the Clementine and Douay have “judge me”; and omits the psalm’s opening causal particle. The doxology belongs to the Ordinary and is not rendered here.
 
-### 2. Collect {#collect .unnumbered}
+### 2. Collect
 
 > ***Oratio***
 >
@@ -79,7 +79,7 @@ This sheet prints the complete proper of *DOMINICA NONA post Pentecosten*, *II c
 
 **Witness boundary.** The Latin asks that God grant desired things to petitioners; the English shifts the subject and says that petitioners “succeed.” The Latin therefore controls the grammatical argument in the commentary.
 
-### 3. Epistle {#epistle .unnumbered}
+### 3. Epistle
 
 > ***Léctio Epístolæ beáti Pauli Apóstoli ad Corínthios* — 1 Cor. 10, 6–13**
 >
@@ -91,7 +91,7 @@ This sheet prints the complete proper of *DOMINICA NONA post Pentecosten*, *II c
 
 **Witness boundary.** The missal replaces the opening words of verse 6 with the liturgical address *Fratres*; the ellipsis marks the displaced Douay words rather than translating the missal’s addition.
 
-### 4. Gradual {#gradual .unnumbered}
+### 4. Gradual
 
 > ***Graduale* — Ps. 8, 2**
 >
@@ -101,7 +101,7 @@ This sheet prints the complete proper of *DOMINICA NONA post Pentecosten*, *II c
 >
 > O Lord, our Lord, how admirable is thy name in the whole earth! ℣. For thy magnificence is elevated above the heavens.
 
-### 5. Alleluia {#alleluia .unnumbered}
+### 5. Alleluia
 
 > **Ps. 58, 2**
 >
@@ -111,7 +111,7 @@ This sheet prints the complete proper of *DOMINICA NONA post Pentecosten*, *II c
 >
 > Alleluia, alleluia. ℣. Deliver me from my enemies, O my God; and defend me from them that rise up against me. Alleluia.
 
-### 6. Gospel {#gospel .unnumbered}
+### 6. Gospel
 
 > ***✠ Sequéntia sancti Evangélii secúndum Lucam* — Luc. 19, 41–47**
 >
@@ -123,7 +123,7 @@ This sheet prints the complete proper of *DOMINICA NONA post Pentecosten*, *II c
 
 **Witness boundary.** The missal supplies *In illo témpore* and names Jesus and Jerusalem where the biblical verse begins simply “And when he drew near.” It also ends midway through verse 47 before the opponents’ response. The printed rubric following the lesson is *Credo*; the Creed belongs to the Ordinary.
 
-### 7. Offertory {#offertory .unnumbered}
+### 7. Offertory
 
 > ***Antiphona ad Offertorium* — Ps. 18, 9–12**
 >
@@ -135,7 +135,7 @@ This sheet prints the complete proper of *DOMINICA NONA post Pentecosten*, *II c
 
 **Witness boundary.** The Latin antiphon is a cento assembled from four fragments, not one continuous biblical sentence. Complete English verses are shown so the project does not manufacture its own stitched translation.
 
-### 8. Secret {#secret .unnumbered}
+### 8. Secret
 
 > ***Secreta***
 >
@@ -147,7 +147,7 @@ This sheet prints the complete proper of *DOMINICA NONA post Pentecosten*, *II c
 
 **Witness boundary.** Both witnesses abbreviate the conclusion. The following rubric appoints the Preface of the Most Holy Trinity, whose text belongs to the Ordinary.
 
-### 9. Communion {#communion .unnumbered}
+### 9. Communion
 
 > ***Antiphona ad Communionem* — Io. 6, 57**
 >
@@ -159,7 +159,7 @@ This sheet prints the complete proper of *DOMINICA NONA post Pentecosten*, *II c
 
 **Witness boundary.** *Dicit Dóminus* is the liturgy’s attribution, not part of the biblical verse. The missal and Douay use the Clementine number 57; many current Bibles number the same sentence 56.
 
-### 10. Postcommunion {#postcommunion .unnumbered}
+### 10. Postcommunion
 
 > ***Postcommunio***
 >
@@ -169,9 +169,9 @@ This sheet prints the complete proper of *DOMINICA NONA post Pentecosten*, *II c
 >
 > May the participation of this thy sacrament, O Lord, we beseech thee, both purify us, and unite us. Thro’.
 
-## The Propers: Detailed Commentary {#the-propers-detailed-commentary .unnumbered}
+## The Propers: Detailed Commentary
 
-### Help that reforms the one who asks (*Int., Coll., All.*) {#help-that-reforms-the-one-who-asks-int.-coll.-all. .unnumbered}
+### Help that reforms the one who asks (*Int., Coll., All.*)
 
 Psalm 53 (54) begins with threatened prayer, not retrospective calm. Its title places David within the Ziphite reports to Saul, but that inherited horizon is not a recovered composition scene. The appointed antiphon moves from plea to recognition: God helps and sustains while danger remains, and rescue and truthful judgment are still entrusted to him. Theodoret reads that turn as foreknowledge of help soon to come and the resulting praise as a willing sacrifice. Augustine reads divine help as interior cooperation rather than replacement of the servant’s willing action (*Exposition on Psalm 54*, 4–5, 8). Hilary emphasizes confidence under persecution, while Bellarmine makes the antiphon’s “behold” a turn toward present assurance and willing praise. Their shared point is active dependence.
 
@@ -185,7 +185,7 @@ Psalm 58 (59) returns the same dependence before the Gospel. Its title recalls S
 | **God forms desire** | Mercy orders the petitioner before granting the petition. | Intensity and sincerity do not make every object good. |
 | **God delivers** | Real danger and spiritual temptation are entrusted to divine judgment. | Protection and judgment remain entrusted to God. |
 
-### Sacramental privilege under judgment (*Ep., Grad.*) {#sacramental-privilege-under-judgment-ep.-grad. .unnumbered}
+### Sacramental privilege under judgment (*Ep., Grad.*)
 
 The lesson begins in the middle of Paul’s answer about idol-associated meals. In 1 Corinthians 10:1–5 the sea and cloud, spiritual food and drink, and Christ the rock make Israel’s history urgently relevant to baptized Christians. Verses 6–10 then move through craving (Num. 11), the idol feast (Exod. 32:6), sexual sin (Num. 25), testing and serpents (Num. 21), and murmuring with the destroyer. The missal prints Paul’s twenty-three thousand at verse 8; Numbers 25:9 gives twenty-four thousand. Aquinas discusses the inherited difference, but neither the guide nor the liturgy needs to manufacture a harmonization.
 
@@ -199,7 +199,7 @@ Paul’s next word is “therefore”: flee idolatry (10:14). He then interprets
 
 Psalm 8 places the warned assembly beneath the Lord’s admirable name and majesty. Its full context joins creaturely smallness to received dignity, and Hebrews 2 later reads its human vocation christologically. In the Greek tradition Theodoret takes “how admirable” intensively: God’s name is acclaimed everywhere as that of heaven and earth’s creator, while his providence reaches fragile humanity. Augustine develops the christological ascent; Aquinas emphasizes divine excellence manifested throughout earth and above heaven; Bellarmine moves from created beauty to a magnificence creation cannot contain. The Gradual therefore answers presumed standing with wonder, not self-contempt.
 
-### The visitation recognized through tears (*Gosp.*) {#the-visitation-recognized-through-tears-gosp. .unnumbered}
+### The visitation recognized through tears (*Gosp.*)
 
 Luke’s sequence controls the interpretation. The royal approach has just acclaimed the king and “peace in heaven” (19:38). Jesus then sees Jerusalem, weeps, laments the things of peace now hidden, and foretells enemies enclosing the city because its visitation was not recognized. He next enters the Temple, corrects it, and remains there teaching daily. The tears, siege oracle, Temple action, and continued teaching form one narrated movement of compassion, judgment, reform, and instruction.
 
@@ -215,7 +215,7 @@ After expounding Luke 19:41–48 verse by verse, Bede adds a Paschal synthesis. 
 
 The Pontifical Biblical Commission, *The Jewish People and Their Sacred Scriptures in the Christian Bible*, no. 74, reads Luke’s tears together with 23:28–31: Jesus’ attention rests on the coming suffering of Jerusalem’s women and children even as his own Passion approaches. Jesus, his disciples, Jerusalem, and the Temple all stand within Israel. Within this horizon, the Christian assembly receives the warning as a summons to recognize peace, protect the vulnerable, reform worship, and remain teachable.
 
-### The word that delights, warns, and is kept (*Off.*) {#the-word-that-delights-warns-and-is-kept-off. .unnumbered}
+### The word that delights, warns, and is kept (*Off.*)
 
 Psalm 18 (19) has already moved from the heavens’ wordless witness to the Lord’s instruction before the Offertory begins. The appointed span keeps together right precepts that gladden, a command that enlightens, filial fear that endures, true judgments, value beyond gold, sweetness beyond honey, warning, and the servant’s keeping. The selected antiphon is therefore neither pleasant mood nor praise of judgment abstracted from obedience.
 
@@ -223,7 +223,7 @@ Theodoret keeps the Greek terms distinct: precepts gladden by showing the cause 
 
 Heard after Luke, the Offertory prevents two reductions. Judgment cannot mean destruction alone, because the servant delights in and keeps it. Sweetness cannot mean reassurance alone, because the same word warns and searches. The juxtaposition supports reform of worship, religious commerce, and treatment of the vulnerable while remaining a liturgical synthesis rather than a prediction of the Temple scene.
 
-### From the memorial to abiding in one body (*Sec., Comm., Postcomm.*) {#from-the-memorial-to-abiding-in-one-body-sec.-comm.-postcomm. .unnumbered}
+### From the memorial to abiding in one body (*Sec., Comm., Postcomm.*)
 
 The Secret’s syntax is causal. The Church asks worthily to frequent the mysteries *because*, whenever the memorial of this sacrifice is celebrated, the work of redemption is enacted. Its strongest reception is direct and traceable. In *Summa theologiae* III, q. 83, a. 2, objection 5 quotes this Sunday’s opening clause; Thomas’s answer rejects the objection’s inference that frequency means many celebrations by one priest in a day and instead explains daily celebration by the daily need for the once-for-all Passion’s fruit and perpetual memorial. The event in Christ the head occurred once; its fruit reaches the faithful sacramentally.
 
@@ -252,7 +252,7 @@ Later Roman reception makes the Postcommunion’s two petitions mutually interpr
 | **Postcommunion** | Sacramental communion acts in the recipients. | Purification and unity. | Neither emotion nor sociology exhausts the fruit. |
 | **Trinity Preface** | The appointed preface directs praise to the triune God. | Doxological worship. | It is liturgical context, not an eleventh proper. |
 
-## The Propers: Themes and Movement {#triptych:brief-synthesis:start .unnumbered}
+## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
 > **Governing thesis: presumed standing yields to received abiding**
 >
@@ -268,13 +268,13 @@ Later Roman reception makes the Postcommunion’s two petitions mutually interpr
 
 *Reading order.* The stages follow the appointed sequence. Their architecture is this guide’s source-grounded synthesis; no cited author is presented as the designer of the complete formulary.
 
-### Help reaches the petitioner by reforming desire (*Int., Coll., All.*) {#help-reaches-the-petitioner-by-reforming-desire-int.-coll.-all. .unnumbered}
+### Help reaches the petitioner by reforming desire (*Int., Coll., All.*)
 
 Psalm 53’s threatened speaker discovers God already helping and sustaining, yet continues to ask rescue. The Collect carries that dependence inward: before desired things are granted, God must teach the petitioners to seek what pleases him. The Alleluia again entrusts deliverance to God. Mercy neither ratifies every impulse nor removes responsible action; it reforms the one who asks.
 
 The three appointed texts keep distinct moments of dependence together. The Introit’s “behold” recognizes a present helper while danger remains; the Collect submits the petitioner’s own desiring to formation; the Alleluia returns to an urgent imperative for rescue. Confidence therefore neither pretends that the threat has vanished nor waits passively. Johner’s chant commentary hears the Introit move from firm confidence through unrest and back to confidence, while the Alleluia’s plea remains enclosed by praise.
 
-### Privilege becomes warning to those who think they stand (*Ep., Grad.*) {#privilege-becomes-warning-to-those-who-think-they-stand-ep.-grad. .unnumbered}
+### Privilege becomes warning to those who think they stand (*Ep., Grad.*)
 
 Paul first recalls sea, cloud, food, and drink in sacramental language, then makes Israel’s wilderness failures correction for the Corinthian baptized. Craving, idolatry, sexual sin, testing, murmuring, and the claim to stand expose sacramental presumption. Psalm 8 answers with creaturely praise beneath God’s world-filling name: dignity is received, not self-secured. God’s fidelity supplies endurance within temptation.
 
@@ -284,13 +284,13 @@ Ambrosiaster sharpens the social force of “thinks he stands.” He applies it 
 >
 > The missal stops at 1 Corinthians 10:13, but Paul’s argument does not. “Therefore” leads to flight from idolatry, then to the Eucharistic cup and bread and the conclusion that the many are one body because they share one bread (10:14–17). The Sunday later sets the self-estimate *qui se existimat stare* beside Communion’s received relation *in me manet, et ego in eo*. That contrast and the movement to unity are consonant with Paul’s argument, though they remain a Roman arrangement read synthetically, not a recovered compiler’s explanation.
 
-### Visitation arrives as tears, correction, and teaching (*Gosp., Off.*) {#visitation-arrives-as-tears-correction-and-teaching-gosp.-off. .unnumbered}
+### Visitation arrives as tears, correction, and teaching (*Gosp., Off.*)
 
 Luke’s royal approach proclaims peace; Jesus then weeps over peace unrecognized, foretells the city’s enclosure, enters the Temple, and teaches there daily. Isaiah’s “house of prayer” opens worship to all peoples; Jeremiah’s “den of robbers” condemns trust in sanctuary without justice toward neighbor, alien, orphan, and widow. The action is Jewish prophetic correction ordered to prayer and teaching. In the appointed Psalm 18 span, right precepts gladden, the command enlightens, true judgments are desired, and the servant is warned and keeps them. Together the Gospel and Offertory direct judgment toward prayer, teaching, delight in truth, warning, and obedient keeping.
 
 Origen’s *Homily 38 on Luke* sees Christ’s tears enact the beatitude of mourning and then directs the warning toward Christians who have received Gospel teaching and the sacraments. The Pontifical Biblical Commission likewise places the tears beside Luke 23:28–31, where Jesus attends to Jerusalem’s women and children rather than his own suffering. Ambrose turns the Temple action toward Christian ministry: holiness is not merchandise, Scripture is a divine coin to be discerned, and grace received through the Spirit is not sold. These applications call Christian ministry to examination while Christ’s tears keep Jerusalem’s suffering in view.
 
-### The memorial gives abiding and tests it by unity (*Sec., Comm., Postcomm.*) {#the-memorial-gives-abiding-and-tests-it-by-unity-sec.-comm.-postcomm. .unnumbered}
+### The memorial gives abiding and tests it by unity (*Sec., Comm., Postcomm.*)
 
 The Secret says that whenever the sacrifice’s memorial is celebrated, redemption’s work is enacted. Thomas directly quotes this Secret while distinguishing the once-for-all Passion from daily participation in its fruit; Vatican II twice identifies the prayer as its source. *Lumen gentium* immediately joins that action to Eucharistic unity in 1 Corinthians 10:17. John names the gift as mutual abiding; the Postcommunion asks its fruit as purification and unity.
 
@@ -307,7 +307,7 @@ Origen ends the same Gospel homily by summoning hearers to the Savior’s banque
 
 <span id="triptych:brief-synthesis:next" label="triptych:brief-synthesis:next"></span>
 
-## Source-Grounded Synthesis Across the Propers {#source-grounded-synthesis-across-the-propers .unnumbered}
+## Source-Grounded Synthesis Across the Propers
 
 Across the ten appointed texts, the decisive contrast is not between danger and safety but between presumed standing and received abiding. Psalm 53 confesses a helper while peril remains. The Collect asks God to form the very desires brought to him. Paul then addresses sacramentally privileged Christians through Israel’s failures and turns confidence in standing into watchfulness. John finally names the opposite of self-secured possession: the communicant abides in Christ and Christ in the communicant.
 
@@ -317,7 +317,7 @@ The sacrificial and ecclesial conclusion is unusually well controlled. The Secre
 
 The complete source-grounded movement is therefore: help received, desire reformed, privilege chastened, visitation recognized, worship corrected, redemption sacramentally enacted, and abiding tested by purification and unity. No one stage cancels another. Warning without the memorial would leave the assembly with diagnosis alone; sacramental confidence without warning would reproduce the presumption Paul condemns; unity without purification would contradict the final prayer. The appointed Trinity Preface makes the whole movement praise rather than self-analysis.
 
-## The Propers: Interpretive Possibilities {#the-propers-interpretive-possibilities .unnumbered}
+## The Propers: Interpretive Possibilities
 
 *These exploratory proposals arose in an AI-assisted editorial process. They are attributed to none of the cited authorities and claim no historical compositional intent. Each identifies its anchors and limit.*
 
@@ -331,7 +331,7 @@ The complete source-grounded movement is therefore: help received, desire reform
 
 **The way of escape can be ecclesial. (*Ep., Comm., Postcomm.*)** *Classification: near analogue located.* Paul promises endurance in the plural; John describes mutual abiding; the final prayer asks unity. Their liturgical relation resists the solitary slogan that a sufferer must handle everything alone: God may supply endurance through a body whose members bear one another. Its fruit is help-seeking and shared responsibility. The texts do not guarantee that every community responds faithfully, and unity never requires concealing abuse.
 
-## The Propers: Notable and Quotable {#the-propers-notable-and-quotable .unnumbered}
+## The Propers: Notable and Quotable
 
 -   **Gospel, Luke 19:42 — Constance Holme, *The Things Which Belong—* (1925).** Holme’s title lifts the unfinished cadence of “the things which belong unto thy peace.” Within the novel, domestic and marital conflict eventually turns the phrase toward what truly belongs to one woman’s peace. The biblical lament becomes a literary test of costly recognition rather than a decorative title.
 
@@ -339,11 +339,11 @@ The complete source-grounded movement is therefore: help received, desire reform
 
 -   **Gospel, Luke 19:46 — Harry Graham, *The Mother of Parliaments* (1910).** Graham recounts Judge David Jenkins calling the House of Commons a “den of thieves” during seventeenth-century political conflict. A prophetic Temple accusation becomes a dangerous parliamentary insult; the anecdote is political afterlife, not an endorsement of Jenkins’s cause.
 
-## Appendix: Scope and Qualifications {#appendix-scope-and-qualifications .unnumbered}
+## Appendix: Scope and Qualifications
 
 > **Scope.** This companion studies the recurring *Dominica Nona post Pentecosten*, II class, in the 1962 typical Missal. Its formulary and rubrics were facsimile-collated, and its appointed texts were read in canonical context against a bounded public corpus of ancient, medieval, and later reception. It is not a civil-date assembly sheet or exhaustive corpus survey. External liturgical wording retains its own rights status. The guide is internally source-audited and its exact published snapshots have distribution authorization under the release record; independent specialist, liturgical, theological, rights, and ecclesiastical review remain outstanding, and no imprimatur or ecclesiastical approval is claimed. **Full records.** `propers/verified.md`; `research/scope.md`.
 
-## References {#references .unnumbered}
+## References
 
 **Sources**
 

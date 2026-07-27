@@ -363,7 +363,7 @@ This appendix records the exact witnesses behind the textual and doctrinal claim
 | *Catechism of the Catholic Church* | Official English web text of the Holy See, *Paragraph 4. The Creator* | Official text, quoted briefly with attribution | Direct witness for CCC 302–314 and 321–324 as cited. Paragraph numbering follows the typical edition; the web state is dated by the date of reading. |
 | Sacred Scripture | Douay–Rheims (Challoner), chapter texts at `drbo.org` | Public domain | Direct witness for the verses quoted. Verse divisions are the Douay–Rheims’s own and differ occasionally from modern critical editions. |
 
-### Consequential negative results {#consequential-negative-results .unnumbered}
+### Consequential negative results
 
 The following were sought and not obtained, and the article’s claims are bounded accordingly.
 
@@ -441,11 +441,11 @@ All online witnesses were checked on 2026-07-25; no mutable law or discipline is
 
 ## References
 
-### Sacred Scripture {#sacred-scripture .unnumbered}
+### Sacred Scripture
 
 -   Genesis 50:19–20; Job 2:10; Proverbs 16:9; Wisdom 11:21–26; Lamentations 3:37–38; Matthew 6:25–34 and 10:29–31; Acts 2:23; Romans 8:28; James 4:13–15; 1 Peter 5:6–7. Quoted from the Douay–Rheims (Challoner revision; public domain); chapter texts checked 2026-07-25 at [drbo.org](https://drbo.org/).
 
-### Authoritative Catholic teaching and condemned propositions {#authoritative-catholic-teaching-and-condemned-propositions .unnumbered}
+### Authoritative Catholic teaching and condemned propositions
 
 -   *Catechism of the Catholic Church* 302–314 (divine providence; providence and secondary causes; providence and the scandal of evil) and 321–324 (in brief); official English text checked 2026-07-25 at [vatican.va](https://www.vatican.va/archive/ENG0015/__P19.HTM), Part One, Section Two, Chapter One, Article 1, Paragraph 4 (“The Creator”).
 
@@ -453,11 +453,11 @@ All online witnesses were checked on 2026-07-25; no mutable law or discipline is
 
 -   Innocent XII, brief *Cum alias ad apostolatus* (12 March 1699), condemning twenty-three propositions of François de Fénelon on the love of God; Denzinger DS 2351–2374 (DB 1327–1349), with the censure at DS 2374. Latin checked 2026-07-25 at [patristica.net](https://www.patristica.net/denzinger/). The censure lists the propositions as rash, scandalous, ill-sounding, offensive to pious ears, pernicious in practice, and erroneous, respectively; it does not include a charge of heresy.
 
-### Thomistic framework {#thomistic-framework .unnumbered}
+### Thomistic framework
 
 -   Thomas Aquinas, *Summa theologiae* I, q. 19, aa. 6 and 9 (the antecedent and consequent will; whether God wills evils); q. 22, aa. 1–4 (providence as the plan of things ordered to an end; its universal extension; immediacy of design and mediated execution; contingency preserved); q. 103, aa. 5–8 (the universality of divine government; government through intermediaries; nothing outside or resisting the order of government); q. 105, aa. 4–5 (God moves the created will without coercing it; God works in every agent without displacing it); q. 116, aa. 1–4 (fate); II-II, q. 21, a. 1 (presumption); II-II, q. 136, aa. 1–5 (patience). English from the public-domain translation of the Fathers of the English Dominican Province, checked 2026-07-25 at [newadvent.org](https://www.newadvent.org/summa/); Latin checked the same day at [corpusthomisticum.org](https://www.corpusthomisticum.org/iopera.html). Where the witnesses differ, the Latin governs.
 
-### The classic text and its sources {#the-classic-text-and-its-sources .unnumbered}
+### The classic text and its sources
 
 -   *Trustful Surrender to Divine Providence: The Secret of Peace and Happiness*, by Fr. Jean Baptiste Saint-Jure, S.J., and St. Claude de la Colombière, S.J., trans. Paul Garvin (Charlotte, N.C.: TAN Books, 2012 printing; nihil obstat John P. Sullivan, imprimatur Francis Cardinal Spellman, 8 November 1961; first published 1961 by Alba House as *The Secret of Peace and Happiness*; reissued by St. Raphael Editions 1978, 1980, and 1983 with TAN; copyright 1980 St. Raphael Editions). In copyright. Front matter, publisher’s note, table of contents, and opening pages checked 2026-07-25 in the publisher’s own preview file at [tanbooks.com](https://tanbooks.com/content/Preview_TrustfulSurrender.pdf).
 
@@ -465,7 +465,7 @@ All online witnesses were checked on 2026-07-25; no mutable law or discipline is
 
 -   *Œuvres du R. P. Claude de la Colombière, de la Compagnie de Jésus*, vol. 5 (1832): sermons *Sur la soumission à la volonté de Dieu* (p. 65), *Sur la confiance en Dieu* (p. 85), *Sur la prière* (p. 102), *Sur les adversités* (p. 218). Public domain; checked 2026-07-25 at the [Internet Archive](https://archive.org/details/uvresdurpclauded05laco). Volumes 1–4 and the 1684 *Réflexions chrétiennes* were also searched.
 
-### The tradition of abandonment {#the-tradition-of-abandonment .unnumbered}
+### The tradition of abandonment
 
 -   Francis de Sales, *Treatise on the Love of God* (1616), Books VIII (chs. I–III) and IX (chs. I, IV–VI, VIII, XIV), in the public-domain English translation of Henry Benedict Mackey, O.S.B.; text checked 2026-07-25 at the [Christian Classics Ethereal Library](https://ccel.org/ccel/desales/love.all.html).
 
@@ -475,7 +475,7 @@ All online witnesses were checked on 2026-07-25; no mutable law or discipline is
 
 -   Dominique Salin, S.J., “The Treatise on Abandonment to Divine Providence,” *The Way* 46/2 (April 2007): 21–36. In copyright; quoted briefly. Checked 2026-07-25 at the journal’s posted PDF, [theway.org.uk](https://www.theway.org.uk/back/462Salin.pdf). Reports the manuscript history, Ramière’s editorial interventions, and the scholarship of Michel Olphe-Galliard, S.J., and Jacques Gagey (*L’Abandon à la providence divine d’une dame de Lorraine au XVIIIe siècle*, Grenoble: Jérôme Million, 2001), neither of which was consulted directly.
 
-### Historical background {#historical-background .unnumbered}
+### Historical background
 
 -   “Miguel de Molinos,” *The Catholic Encyclopedia*, vol. 10 (New York: Robert Appleton Company, 1911); public domain; checked 2026-07-25 at [newadvent.org](https://www.newadvent.org/cathen/10441a.htm). Used as a reported witness for Molinos’s biography, the publication and approbations of *La Guía espiritual*, the 1685 arrest, and the September 1687 sentence.
 

@@ -64,7 +64,7 @@ RGMR 278 then overrides the freedom: whatever calendar a priest might otherwise
 
 ### The building blocks, with their classes
 
-#### Sundays {#sundays .unnumbered}
+#### Sundays
 
 Sundays are of the first or second class (RG 10). First-class Sundays are exactly six kinds: the four of Advent, the four of Lent, the two of Passiontide, Easter, Low Sunday and Pentecost (RG 11); Easter and Pentecost are also first-class feasts with octaves. *Every other Sunday is second class* (RG 12). The Sunday Office begins at First Vespers on the preceding Saturday (RG 13).
 
@@ -80,7 +80,7 @@ Two rules about Sundays do a great deal of work later:
 
 An impeded Sunday is simply gone that year — it is not moved forward, back, or into the following week. And no feast may be perpetually assigned to a Sunday except the five the rubric itself names: the Holy Name, the Holy Family, Trinity Sunday, Christ the King, and those first-class feasts of the Lord already assigned to a second-class Sunday in a particular calendar. Those five “locum tenent dominicae occurrentis cum omnibus iuribus et privilegiis; de dominica, proinde, nulla fit commemoratio” (RG 17).
 
-#### Ferias {#ferias .unnumbered}
+#### Ferias
 
 A feria is any weekday other than Sunday (RG 21), and ferias run through all four classes. This is where most collisions with saints’ days are actually decided, and where the code most sharply departs from the habits of an older missal.
 
@@ -94,11 +94,11 @@ A feria is any weekday other than Sunday (RG 21), and ferias run through all fo
 
 The two third-class rows are printed as adjacent clauses of a single rubric and they say opposite things. A third-class saint on a Lenten weekday loses and is commemorated; the same saint on an Advent weekday before 17 December wins and the feria is commemorated. Nothing in the class numbers predicts this; only RG 25 does.
 
-#### Vigils {#vigils .unnumbered}
+#### Vigils
 
 A vigil is a liturgical day preceding a feast and preparing for it (RG 28); the Easter Vigil is excepted, “cum non sit dies liturgicus,” and is celebrated in its own manner. First-class vigils are two: Christmas, which takes the place of the Fourth Sunday of Advent with no commemoration of it, and Pentecost; they yield to nothing and admit no commemoration (RG 30). Second-class vigils are four: the Ascension, the Assumption, the Nativity of St John the Baptist, and Ss. Peter and Paul; they outrank third- and fourth-class days and are commemorated if impeded (RG 31). The one third-class vigil is that of St Lawrence (RG 32). And a second- or third-class vigil is dropped altogether — “penitus omittitur” — if it falls on any Sunday or on a first-class feast, or if the feast it precedes is itself transferred or reduced to a commemoration (RG 33).
 
-#### Octaves {#octaves .unnumbered}
+#### Octaves
 
 > **RG 64**
 >
@@ -106,7 +106,7 @@ A vigil is a liturgical day preceding a feast and preparing for it (RG 28); the
 
 Three, and no more, anywhere. The octaves of Easter and Pentecost are first class and their days are first-class days; the octave of Christmas is second class, its days second class, its octave day first class (RG 66–RG 67). The Christmas octave is then arranged by name, day by day, in RG 68: St Stephen, St John, the Holy Innocents (all second-class feasts), a commemoration of St Thomas of Canterbury on 29 December, a commemoration of St Sylvester on 31 December, and from particular calendars only first-class feasts of saints inscribed in the universal calendar on those same days, the rest being transferred past the octave.
 
-#### Feasts, and where a feast comes from {#feasts-and-where-a-feast-comes-from .unnumbered}
+#### Feasts, and where a feast comes from
 
 Feasts are of the first, second or third class (RG 36), and are either universal — inscribed by the Holy See in the calendar of the universal Church, and to be celebrated by everyone of the Roman rite (RG 39) — or particular, that is proper or indulted (RG 38). The proper feasts a particular calendar must carry are enumerated exhaustively in RG 42–RG 46, and their classes are fixed there, not chosen locally:
 
@@ -120,7 +120,7 @@ Feasts are of the first, second or third class (RG 36), and are either universa
 
 Only first-class feasts have a right of transfer when accidentally impeded (RG 95); everything else in this table is either commemorated or dropped for the year. That is worth noticing now, because it means a diocesan second-class Patron is materially weaker than the number “II” suggests.
 
-#### Our Lady on Saturday {#our-lady-on-saturday .unnumbered}
+#### Our Lady on Saturday
 
 On Saturdays carrying a fourth-class feria, the Office is of Our Lady on Saturday (RG 78). It is the twenty-seventh of the twenty-eight rows of the precedence table — a fourth-class *Office*, not a feast — and it begins at Matins and ends after None (RG 79). Its Mass therefore exists and may be sung with the solemn tone (RGMR 515 b), but it is displaced by any occurring feast whatever.
 
@@ -241,7 +241,7 @@ A neat trap sits in RG 94: “Commemoratio die fixo statuta non transfertur vel
 
 The commemoration apparatus is the part of the older system that the 1960 code most drastically reduced, and it did so not by abolishing commemorations but by capping their number and excluding whole categories.
 
-#### Two kinds {#two-kinds .unnumbered}
+#### Two kinds
 
 > **RG 107–RG 108**
 >
@@ -257,7 +257,7 @@ The privileged commemorations are a closed list of six:
 
 Everything else — every saint, every vigil except as it is a first-class day, every second-class feast, every octave day of Christmas taken as a feast — is ordinary.
 
-#### How many are admitted {#how-many-are-admitted .unnumbered}
+#### How many are admitted
 
 > **RG 111**
 >
@@ -265,7 +265,7 @@ Everything else — every saint, every vigil except as it is a first-class day, 
 
 So the ceiling is: one privileged only on a first-class day; on a second-class Sunday one commemoration and it must be of a second-class feast, displaced by any privileged commemoration that is due; on other second-class days exactly one of either kind; on third- and fourth-class days two. RG 114 disposes of the surplus without ceremony: “Quaelibet commemoratio, quae numerum pro singulis diebus liturgicis statutum superet, omittitur.”
 
-#### Exclusions by identity, not by number {#exclusions-by-identity-not-by-number .unnumbered}
+#### Exclusions by identity, not by number
 
 RG 112 then removes commemorations that would otherwise fit:
 
@@ -278,7 +278,7 @@ RG 112 then removes commemorations that would otherwise fit:
 
 One commemoration cannot be excluded at all. RG 110 makes the mutual commemoration of Ss. Peter and Paul *inseparabilis*: in the Office or Mass of either, the other’s prayer is added under a single conclusion, and “duae orationes adeo in unam coalescere censentur ut, in numero orationum computando, pro unica habeantur.” Two prayers counting as one.
 
-#### Order {#order .unnumbered}
+#### Order
 
 RG 113: “Commemoratio de Tempore fit primo loco. In admittendis et ordinandis aliis commemorationibus, servetur ordo tabellae praecedentiae.” The season first, then the table order — and the Peter-and-Paul prayer, when added *ad modum commemorationis*, immediately after its partner and before all others (RG 110 c).
 
@@ -341,7 +341,7 @@ Two prohibitions cut across all four classes:
 >
 > *Quaevis Missa votiva prohibetur in ecclesiis unam tantum Missam habentibus: a) quoties urgeat onus Missae conventualis, cui per alium sacerdotem satisfieri nequeat, exceptis Missis votivis, quae certis diebus pro Missa conventuali dici possunt (n. 289) aut debent (nn. 290–294); b) die 2 februarii, si fiat benedictio candelarum; c) in Litaniis maioribus et minoribus, si dicenda sit Missa de Rogationibus (n. 346).*
 
-#### The devotional votives that people actually ask for {#the-devotional-votives-that-people-actually-ask-for .unnumbered}
+#### The devotional votives that people actually ask for
 
 RGMR 385 is the rubric behind First Fridays and First Saturdays, and its conditions are exact:
 
@@ -353,7 +353,7 @@ RGMR 385 is the rubric behind First Fridays and First Saturdays, and its condit
 
 All three are votives of the third class, so all three require a third- or fourth-class day, and all three require that the devotional exercises actually be performed in that church on that day. The permission is not personal to the priest and not portable. RGMR 386 d adds the corollary: when they are forbidden, “non commemorantur in Missa diei” — there is no consolation commemoration.
 
-#### External solemnity {#external-solemnity .unnumbered}
+#### External solemnity
 
 > **RGMR 356**
 >
@@ -1101,7 +1101,7 @@ This table lists the decisions this book teaches and the exact rubric that answe
 
 ## References
 
-### Controlling liturgical books and norms {#controlling-liturgical-books-and-norms .unnumbered}
+### Controlling liturgical books and norms
 
 -   *Missale Romanum ex decreto Sacrosancti Concilii Tridentini restitutum, Summorum Pontificum cura recognitum*, editio typica. Vatican City: Typis Polyglottis Vaticanis, 1962. Front matter: *Rubricae generales* (nn. 1–137, printed pp. XII–XX); *Rubricae generales Missalis Romani* (nn. 269–530, pp. XXI–XXXVI); *Ritus servandus in celebratione Missae*; *De defectibus*. Body: *Ordo Missae*; *Proprium de Tempore*; *Proprium Sanctorum*; *Commune Sanctorum*; *Missae votivae*; *Missae defunctorum*; *Praefationes*. Read in the Church Music Association of America facsimile of that edition. *Controlling witness.*
 
@@ -1115,17 +1115,17 @@ This table lists the decisions this book teaches and the exact rubric that answe
 
 -   Sacred Congregation of the Council, *Decretum: Novus index statuitur dierum festorum, quibus inest obligatio litandi Sacrum pro populo*, 3 December 1960. *Acta Apostolicae Sedis* 52 (1960) 985–986. *Cited once, for the contemporaneous official list of *festa de praecepto* for the *pro populo* obligation under cann. 339 §1 and 466 §1 of the 1917 Code. Not a rubrical definition.*
 
-### Identified English witnesses {#identified-english-witnesses .unnumbered}
+### Identified English witnesses
 
 -   *The Roman Missal translated into the English language for the use of the laity*, first revised edition. Philadelphia: Eugene Cummiskey, 1861. Published with the approbation of the Bishop of Philadelphia; the translator is not named. *Quoted once, for the collect of the Fifth Sunday after Epiphany. A pre-1955 witness: its rubrics, seasonal second and third orations and Holy Week are not those of the 1962 book, and none of them is used here.*
 
 -   *The Holy Bible*, Douay-Rheims, in Bishop Richard Challoner’s revision. *Quoted once, for John 1, 1–3 and 14. An identified historical English translation of the Vulgate, offered as a witness to the sense of the Latin the celebrant reads, not as a liturgical translation and not for recitation.*
 
-### Non-controlling aids {#non-controlling-aids .unnumbered}
+### Non-controlling aids
 
 -   *Missale Romanum … editio iuxta typicam*. New York: Benziger Brothers, 1962. Consulted only as an uncorrected optical transcription for locating passages in the front matter. It controls no wording here and is a distinct edition from the Vatican typical edition.
 
-### Note on what is not cited {#note-on-what-is-not-cited .unnumbered}
+### Note on what is not cited
 
 No manual, commentary, Ordo or rubrical handbook is cited, and none was used to reach a result in this book. That is a deliberate limitation and a real one: a competent commentator would resolve some of the questions left open in Section 10 from a tradition of authorised responses that this study has not examined, and the reader who needs a settled answer should seek it there and from the Ordo binding his own church.
 

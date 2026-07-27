@@ -534,7 +534,7 @@ The boundaries, gathered: the Rosary is not liturgy and not sacramental anamnesi
 
 Witnesses are listed with role and rights notes; the access date for all web loci is 2026-07-25. Stable source identities for the starred entries are registered in the repository source library; this publication’s bindings are in `research/source-bindings.toml`.
 
-### Magisterial and normative sources {#magisterial-and-normative-sources .unnumbered}
+### Magisterial and normative sources
 
 -   \*John Paul II, *Rosarium Virginis Mariae* (16 October 2002), Vatican English web text (43 numbered sections; translator unnamed): <https://www.vatican.va/content/john-paul-ii/en/apost_letters/2002/documents/hf_jp-ii_apl_20021016_rosarium-virginis-mariae.html>. Role: principal current teaching document; mysteries of light; the per-cycle and per-mystery readings; method.
 
@@ -562,7 +562,7 @@ Witnesses are listed with role and rights notes; the access date for all web loc
 
 -   United States Conference of Catholic Bishops, *Liturgical Calendar for the Dioceses of the United States of America, 2026*: <https://www.usccb.org/resources/2026cal.pdf>. Role: the sole checked witness for the current rank, title, and colour of the 7 October memorial. Territorial, not universal; used because no Holy See page consulted publishes the General Roman Calendar table.
 
-### Historical scholarship (public domain) {#historical-scholarship-public-domain .unnumbered}
+### Historical scholarship (public domain)
 
 -   \*Herbert Thurston and Andrew Shipman, “The Rosary,” *The Catholic Encyclopedia*, vol. 13 (New York: Robert Appleton, 1912), New Advent transcription: <https://www.newadvent.org/cathen/13184b.htm>. Role: principal witness for the documented development, the Eastern prayer-rope section, and the critique of the attribution legend.
 
@@ -576,7 +576,7 @@ Witnesses are listed with role and rights notes; the access date for all web loc
 
 The 1907–1912 printings are public domain; New Advent’s transcriptions are a later web presentation whose wording was used as delivered.
 
-### Patristic witnesses (identified public-domain translations) {#patristic-witnesses-identified-public-domain-translations .unnumbered}
+### Patristic witnesses (identified public-domain translations)
 
 Quoted at the individual mysteries as early readings of the same scriptural events, never as evidence of Rosary practice.
 
@@ -594,7 +594,7 @@ Quoted at the individual mysteries as early readings of the same scriptural even
 
 -   John Damascene, first sermon on the Assumption, trans. Mary H. Allies, *St. John Damascene on Holy Images … Followed by Three Sermons on the Assumption* (London: Thomas Baker, 1898), Project Gutenberg transcription: <https://www.gutenberg.org/ebooks/49917>. The translation carries no section numbering; cited by sermon.
 
-### Scripture and prayer-text witnesses {#scripture-and-prayer-text-witnesses .unnumbered}
+### Scripture and prayer-text witnesses
 
 -   Douay-Rheims Bible (Challoner revision; public domain), drbo.org chapter pages (e.g. <https://drbo.org/chapter/49001.htm> for Lk 1; <https://drbo.org/chapter/48009.htm> for the Douay versification of Mk 9). Role: every English Scripture quotation and every mystery locus.
 

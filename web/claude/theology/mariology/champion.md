@@ -569,33 +569,33 @@ That is the part of the record that is not in doubt, and it is exactly the part 
 
 ## Scope, Status, and Qualifications
 
-### Question and thesis boundary {#question-and-thesis-boundary .unnumbered}
+### Question and thesis boundary
 
 This study answers one question: what can be established, from sources this study actually read, about the events reported at Robinsonville (now Champion), Wisconsin, in or about October 1859; how the two earliest published narratives relate to each other and to the narrative now received; what the record of the night of 8 October 1871 supports; what exactly Bishop David L. Ricken judged on 8 December 2010, in which words and with what object; and what that judgment obliges and leaves open. It is a source-audited study instrument: not a devotional narrative, a shrine history, a critical edition, a magisterial act, a canonical opinion, a position paper in the cause of Adele Brise, or a history of the Wisconsin fires of 1871. It proposes no judgment of its own on supernaturality and does not second-guess the competent authority’s act.
 
-### Corpus and exclusions {#corpus-and-exclusions .unnumbered}
+### Corpus and exclusions
 
 Included: the reported October 1859 events at the strata named in §§3–5; Eliza Allen Starr’s account, read in the 1883 Baltimore reissue of the volume copyright-entered in 1871 and collated against the 1896 Chicago printing of the first series; Peter Pernin’s account, read in both the English and the French printings of 1874; the current custodial narrative published by the National Shrine; Frank Tilton’s 1871 compilation on the fires, read in a modern reset reproduction; the 1881 *History of Northern Wisconsin* as a negative-search corpus only; the signed four-page decree of 8 December 2010; the CDF Norms of 25 February 1978 and the DDF Norms of 17 May 2024; cann. 1230–1234 of the 1983 Code; *Lumen gentium* 60–62; and the shrine’s own statements about the national-shrine designation, the 2023 change of title and solemnity, and the cause of Adele Brise.
 
 Excluded or bounded: any reconstruction of a Walloon or French original of the reported words; any determination of the day of the month or the number of appearances; any assertion about the mechanism of perception; any authentication of a healing, favour, crutch, relic, or pilgrimage story; any adjudication of casualty totals, acreage, fire mechanics, or meteorology in 1871; any claim that the 1859 message foretold the 1871 fires; any superlative about American apparition sites; and every claim of the “all approved apparitions” type — this is a single-event study and asserts no registry.
 
-### Geography, chronology, and currentness {#geography-chronology-and-currentness .unnumbered}
+### Geography, chronology, and currentness
 
 Subject geography: Robinsonville / Champion and the Belgian settlements of Brown, Kewaunee, and Door counties, Wisconsin; Green Bay; Peshtigo and Marinette; Chicago and Montreal as places of publication. Subject range: 1859 to the acts current at the as-of date. As-of date: all mutable claims — current controlling status, the shrine’s pages, the Vatican texts of the 1978 and 2024 Norms and of *Lumen gentium*, the diocesan list of bishops — were checked on 2026-07-25. No act of the Dicastery for the Doctrine of the Faith concerning Champion, before or after 2010, was located, and no inference of unchanged status is drawn from that silence beyond the bounded statement that nothing was found. Stable historical facts are not given artificial currentness. Negative results are bounded searches, correctable by better evidence.
 
-### Taxonomy and terminology {#taxonomy-and-terminology .unnumbered}
+### Taxonomy and terminology
 
 Kept distinct throughout: *reported events* (everything attributed to the apparition, whose default register is “reported”); *period published narrative* (Starr 1871; Pernin 1874); *contemporary compilation* (Tilton 1871); *received custodial narrative* (the shrine’s current pages and timeline); *competent judgment* (the 2010 decree); *procedural law* (the 1978 and 2024 Norms; the 1983 Code); *institutional or liturgical reception* (national-shrine title, solemnity, change of devotional title); *cause of canonization* (a separate proceeding with a separate object); and *project synthesis* (this study’s own judgments, which appear only inside blocks labelled “Project synthesis”). “Do exhibit the substance of supernatural character” is the 2010 act’s own formula and is deliberately not translated into the 2024 taxonomy. “Servant of God” means that a cause has been introduced, nothing more.
 
-### Source hierarchy and method {#source-hierarchy-and-method .unnumbered}
+### Source hierarchy and method
 
 Priority: the exact operative and documentary texts in identified witnesses (the decree in its signed four-page PDF, its operative page read as an image because that page carries no text layer; the Vatican texts of the Norms, the Code, and *Lumen gentium*); then the nineteenth-century published narratives, read in digitized scans with the passages quoted checked against page images where the reading is consequential, and with the English and French Pernin printings collated against each other; then the contemporary fire compilation, at the reduced ceiling its modern reset transmission imposes; then the shrine’s institutional pages, always at institutional-self-description ceilings. Optical-character-recognition text was used for searching and reading; where it is damaged, the damage is stated and the wording is taken from the page images rather than supplied by conjecture.
 
-### Qualifications and unresolved items {#qualifications-and-unresolved-items .unnumbered}
+### Qualifications and unresolved items
 
 (1) No 1859–1870 source of any kind was located; the event stratum rests entirely on retrospective narrative. (2) The 1871 first-series imprint of Starr’s *Patron Saints* was not located; the text was read in the 1883 Baltimore reissue, whose copyright entry is 1871, and collated against the 1896 Chicago printing. Whether the Adele passage was composed before or after the fire of 8 October 1871 cannot be determined from the volume, and no argument here depends on it. (3) Pernin’s implied date, “ten or twelve years” before 1874, is incompatible with October 1859 and is left unreconciled. (4) Tilton’s *Sketch* was read in a modern reset reproduction, not the 1871 Green Bay imprint; that copy prints “October 3d” for the east-shore firestorm, contradicting its own preface and map, and the error cannot be assigned to a compositor. (5) The 1881 *History of Northern Wisconsin* was searched literally, line by line, in optical-character-recognition text; the negative result cannot exclude variant spellings, hyphenation, or damaged recognition. (6) The source of the paragraph attributed to “Fr. Peter Pernin” on the shrine’s site was not identified; the finding is only that it is not the 1874 text in either language. (7) Sister M. Dominica’s shrine history of 1955, the archives of the Diocese of Green Bay and of the National Shrine, nineteenth-century Green Bay newspaper files, parish registers, and the reports of the three Marian experts were not reached; no clause in this study depends on them. (8) The diocesan original of the 2010 decree, its protocol number, and any register entry were not consulted; the instrument constituting the 2009 commission was not located. (9) Whether the Holy See authorized or reviewed the 2010 decree cannot be determined, for the reason given in §7.5; neither involvement nor its absence is asserted. (10) The USCCB act designating the national shrine was not reached (the conference’s pages returned HTTP 403); the date of 19 March 2016 is the shrine’s. (11) The diocesan decree and any Roman instrument behind the 2023 change of title and the annual solemnity were not reached; only the shrine’s description is reported. (12) The dated acts of the cause of Adele Brise were not reached and no date is asserted. (13) Biographical dates for Adele Brise are the shrine’s custodial statements. (14) The jurisdiction competent over the site in 1859 was not verified and is not named. (15) No independent Mariological, historical, canonical, archival, liturgical, Walloon-language, wildfire-history, meteorological, or Belgian-American review has occurred; no ecclesiastical review or approval is claimed or implied, and no catalogue entry may claim any.
 
-### Rights {#rights .unnumbered}
+### Rights
 
 Project prose is original and intended for CC BY 4.0. Quotations remain under their own status. Starr’s *Patron Saints* (copyright-entered 1871; author died 1901) and Pernin’s *The Finger of God Is There!* and *Le doigt de Dieu est là!* (both 1874; author died 1909) are public domain in the United States and are quoted with citation; the digitized scans consulted are third-party artifacts and are not redistributed. Tilton’s *Sketch* (1871) is public domain in text; the modern reset reproduction consulted is a third-party artifact, quoted briefly with citation. The 2010 decree is an ecclesiastical act of the Diocese of Green Bay, published by the National Shrine; its rights status was not resolved, and it is quoted only so far as identifying its object and effect requires. Holy See texts — *Lumen gentium*, the 1978 and 2024 Norms, the 1983 Code — are quoted within ordinary scholarly limits with citation. National Shrine of Our Lady of Champion and Diocese of Green Bay web pages are © their publishers and are quoted briefly with citation. Online availability is not treated as a reuse licence; no complete document is reproduced; and no prayer text is printed here for recitation.
 
@@ -603,7 +603,7 @@ Project prose is original and intended for CC BY 4.0. Quotations remain under 
 
 Witnesses are listed with role and rights notes; the access date for all web loci is 2026-07-25 unless stated otherwise. Stable source identities for the starred entries are registered in the repository source library; this publication’s bindings are in `research/source-bindings.toml`.
 
-### The controlling act and the procedural law {#the-controlling-act-and-the-procedural-law .unnumbered}
+### The controlling act and the procedural law
 
 -   \*David L. Ricken, Bishop of Green Bay, *Decree on the Authenticity of the Apparitions of 1859 at the Shrine of Our Lady of Good Help, Diocese of Green Bay*, 8 December 2010, four pages. Role: the operative approval act, quoted at its operative clause in §1 and analyzed in §7. Witness: the signed PDF published by the National Shrine, <https://championshrine.org/wp-content/uploads/2022/06/Shrine-of-Our-Lady-of-Good-Help-Declaration.pdf> (SHA-256 of the file as retrieved `b10ad96f0821fef8072164d6f83d3f33d9e008e1aa510d1c5706bbe53bbd664e`; pp. 1–3 have a text layer, p. 4 is an image and was read at 150 dpi). Rights status unresolved; quoted only so far as identifying the act’s object and effect requires.
 
@@ -615,7 +615,7 @@ Witnesses are listed with role and rights notes; the access date for all web loc
 
 -   \*Second Vatican Council, *Lumen gentium*, 21 November 1964, nn. 60–62. Role: the doctrinal boundary within which the reported message is read in §9.4. Witness: the Holy See’s English text, <https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_en.html>.
 
-### The nineteenth-century published narratives {#the-nineteenth-century-published-narratives .unnumbered}
+### The nineteenth-century published narratives
 
 -   \*Eliza Allen Starr, *Patron Saints* (Baltimore: John B. Piet & Co., 1883), chapter “St. Lioba,” pp. 297–301; copyright entered 1871. Role: the earliest published narrative of the events located by this study; quoted at length in §3 and used as the base text of the stratigraphy in §5. Witness: the Internet Archive scan of the New York Public Library copy, <https://archive.org/details/patronsaints00star> (optical-character-recognition text for reading and searching; front matter and pp. 298–301 read at 150 dpi). Collated against the Chicago 1896 printing of the first series, <https://archive.org/details/PatronSaints1st2ndSeries>, which reproduces the same setting at the same page numbers. Public domain (author died 1901).
 
@@ -623,13 +623,13 @@ Witnesses are listed with role and rights notes; the access date for all web loc
 
 -   \*Peter Pernin, *Le doigt de Dieu est là! ou Épisode émouvant d’un évènement étrange raconté par un témoin oculaire* (Montreal: Eusèbe Sénécal, 1874), Appendice, pp. 91–101. Role: textual control on the English printing; collated clause by clause in §§4 and 6. Witness: <https://archive.org/details/cihm_23982>. Public domain.
 
-### The 1871 fires {#the-1871-fires .unnumbered}
+### The 1871 fires
 
 -   \*Frank Tilton, *Sketch of the Great Fires in Wisconsin at Peshtigo, the Sugar Bush, Menekaune, Williamsonville, and Generally on the Shores of Green Bay* (Green Bay: Robinson & Kustermann, 1871), Preface and ch. XIV, with the *Map of the Burnt District of Wisconsin 1871*. Role: the contemporary compilation against which the Champion preservation tradition is tested in §6.1; it names Robinsonville among the settlements destroyed and records no exception there. Witness: *a modern reset reproduction* digitized on the Internet Archive, <https://archive.org/details/sketch-of-the-great-fires-in-wisconsin>, read at 150 dpi; the 1871 imprint was not reached, and that copy prints “October 3d” where the volume’s own preface and map give 8 October 1871. Public domain in text.
 
 -   *History of Northern Wisconsin* (Chicago: Western Historical Company, 1881). Role: negative-search corpus only, for the absence of any mention of Adele Brise or the chapel; the single occurrence of “Robinsonville” is in an unrelated biographical sketch. Witness: the Internet Archive optical-character-recognition text, <https://archive.org/details/wi-northern-wi-1881-western-historical-co>. Public domain. Searched literally and line by line; the limits of that search are stated in §2.3 and Appendix A.
 
-### Custodial and diocesan presentations {#custodial-and-diocesan-presentations .unnumbered}
+### Custodial and diocesan presentations
 
 -   \*National Shrine of Our Lady of Champion, “Our Story” (<https://championshrine.org/our-story/>), “Shrine Historical Timeline” (<https://championshrine.org/timeline/>), and “Solemnity of Our Lady of Champion” (<https://championshrine.org/oloc-solemnity/>), all read 2026-07-25. Role: the current custodial narrative of the events, the fire, the dated frame, the national-shrine designation, the 2023 change of title and solemnity, and the paragraph attributed to Pernin that §6.3 shows is not his text. Used at institutional-self-description ceilings throughout. © the publisher; quoted briefly with citation.
 
@@ -637,7 +637,7 @@ Witnesses are listed with role and rights notes; the access date for all web loc
 
 -   <https://adelebrice.org/adele-brice-path-to-sainthood/>, read 2026-07-25. Role: the existence and presentation of the cause of canonization; it supplied no dated act, and none is asserted. © the publisher.
 
-### Not reached {#not-reached .unnumbered}
+### Not reached
 
 Listed here because their absence bounds this study: Sister M. Dominica, *The Chapel: Our Lady of Good Help* (1955); the archives of the Diocese of Green Bay and of the National Shrine; nineteenth-century Green Bay newspaper files; the sacramental registers of the parish Adele walked to; the 1871 Green Bay imprint of Tilton; the 1871 first-series imprint of Starr; the reports of the three Marian experts named in the 2010 decree; the diocesan original of that decree; the act of the United States Conference of Catholic Bishops designating the national shrine; and the diocesan and Roman instruments behind the 2023 change of title and annual solemnity.
 

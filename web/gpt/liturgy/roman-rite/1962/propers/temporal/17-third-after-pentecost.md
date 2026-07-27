@@ -28,7 +28,7 @@ TLM propers: the endangered sinner sought, strengthened, and welcomed into joy
 | Moral | Grace takes the initiative, yet the hearer is summoned to repent, humble himself, cast his cares on God, resist the devil, and exchange contempt at another’s return for shared joy. |
 | Anagogical | The angels’ joy and the Postcommunion’s everlasting mercy direct present repentance toward the restored heavenly communion of angels and redeemed humanity. |
 
-## Scriptural Date and Location {#scriptural-date-and-location .unnumbered}
+## Scriptural Date and Location
 
 *Canonical order governs; proper rows give traditional composition data under Location and Date, Luke’s additional row gives the narrated setting, spanning rows distinguish inherited attribution from historical judgment, and Psalm numbers follow the Vulgate with common modern numbers in parentheses.*
 
@@ -48,7 +48,7 @@ TLM propers: the endangered sinner sought, strengthened, and welcomed into joy
 | **Epistle** | 1 Pet. 5:6–11 | Rome (present-day Italy) | c. AD 63–64 |
 | Tradition identifies St. Peter writing through Silvanus from Rome, called Babylon in 5:13, near the end of his apostolic life and before Nero’s persecution and Peter’s martyrdom. He addresses largely Gentile churches across five provinces of Asia Minor, joining humility, God’s care, vigilance, worldwide solidarity in suffering, and promised glory. Modern proposals range from Petrine authorship to a Roman Petrine disciple or circle c. AD 70–90 (1 Peter introduction and 5, *NABRE*; *Catholic Encyclopedia*, “Epistles of Saint Peter”). |  |  |  |
 
-## The Propers: Themes and Movement {#the-propers-themes-and-movement .unnumbered}
+## The Propers: Themes and Movement
 
 > **Governing thesis: mercy finds, forms, and gathers**
 >
@@ -59,7 +59,7 @@ TLM propers: the endangered sinner sought, strengthened, and welcomed into joy
 
 *Reading order.* This four-stage sequence is a source-grounded synopsis of the appointed wording and the identified reception below; no cited witness is presented as author of the complete Roman formulary.
 
-### Merciful regard receives truthful need (*Int., Coll.*) {#merciful-regard-receives-truthful-need-int.-coll. .unnumbered}
+### Merciful regard receives truthful need (*Int., Coll.*)
 
 | **Appointed claim** | **Decisive witness** | **Boundary** |
 |:-------------|:------------------------|:----------------------------|
@@ -67,7 +67,7 @@ TLM propers: the endangered sinner sought, strengthened, and welcomed into joy
 | **Dependence becomes pilgrimage** | The Collect confesses that nothing is strong or holy without God and asks his rule and guidance through temporal goods toward eternal goods. | Temporal creation is traversed under grace, not despised as though it were evil. |
 | **Compassion tests justice** | Cyril calls Christ the saving physician; Gregory contrasts true justice, which pities, with false justice, which disdains. | Welcome has a medicinal end. Neither Father treats mercy as approval of sin or repentance as unnecessary. |
 
-### Entrusted care becomes sober resistance (*Ep., Grad., All.*) {#entrusted-care-becomes-sober-resistance-ep.-grad.-all. .unnumbered}
+### Entrusted care becomes sober resistance (*Ep., Grad., All.*)
 
 | **Movement** | **Textual ground** | **Inherited clarification** | **Error excluded** |
 |:-----------|:----------------|:-----------------|:-------------------|
@@ -76,7 +76,7 @@ TLM propers: the endangered sinner sought, strengthened, and welcomed into joy
 | Watch and resist | A real adversary seeks prey; resistance is steadfast in faith and shared with a suffering brotherhood. | God’s final verbs are restore, strengthen, and establish. | Vigilance is neither isolated heroism nor anxious control. |
 | Hear patience actively | The Alleluia names the Judge just, strong, and patient. | Tertullian’s use of Luke 15 makes divine patience pursuit that seeks and bears the one. | Patience does not make judgment absent or mercy inert. |
 
-### Search restores without bypassing repentance (*Gosp.*) {#search-restores-without-bypassing-repentance-gosp. .unnumbered}
+### Search restores without bypassing repentance (*Gosp.*)
 
 | **Witness** | **Searcher and lost** | **Saving movement** | **Control** |
 |:-----------|:----------------|:-----------------|:-------------------|
@@ -89,7 +89,7 @@ TLM propers: the endangered sinner sought, strengthened, and welcomed into joy
 >
 > The sheep prevents salvation from becoming autonomous introspection: the Shepherd comes from beyond the wanderer’s resources and bears it home. The coin prevents *lost* from meaning *worthless*: the sovereign image grounds the search even while cleansing remains necessary. Both end in convoked joy, and Luke explicitly names repentance.
 
-### Recovered life enters common offering and joy (*Off., Sec., Comm., Postcomm.*) {#recovered-life-enters-common-offering-and-joy-off.-sec.-comm.-postcomm. .unnumbered}
+### Recovered life enters common offering and joy (*Off., Sec., Comm., Postcomm.*)
 
 | **Liturgical moment** | **Established movement** | **Source-grounded control** |
 |:-------------|:------------------------|:----------------------------|
@@ -108,9 +108,9 @@ TLM propers: the endangered sinner sought, strengthened, and welcomed into joy
 >
 > -   **Reception is not automatic.** Secret and Postcommunion remain petitions.
 
-## The Propers: Detailed Commentary {#the-propers-detailed-commentary .unnumbered}
+## The Propers: Detailed Commentary
 
-### The Gospel’s controversy: mercy and false justice (*Gosp., Comm.*) {#the-gospels-controversy-mercy-and-false-justice-gosp.-comm. .unnumbered}
+### The Gospel’s controversy: mercy and false justice (*Gosp., Comm.*)
 
 Luke first names the conflict: publicans and sinners draw near to hear Jesus, while Pharisees and scribes murmur because he receives and eats with them. The parables answer an accusation about Christ’s table-fellowship. They therefore reveal both the seeker’s character and the hearer’s possible resistance.
 
@@ -128,7 +128,7 @@ Luke first names the conflict: publicans and sinners draw near to hear Jesus, wh
 >
 > The Gospel does not oppose justice to indifference. The Shepherd finds; the sinner repents; heaven rejoices. Mercy’s initiative makes conversion possible, and conversion discloses rather than purchases mercy. The Pharisaic error is not zeal for holiness as such, but refusal of the holy joy proper to a sinner’s restoration.
 
-### The Shepherd, the shoulders, and the home (*Gosp., Comm.*) {#the-shepherd-the-shoulders-and-the-home-gosp.-comm. .unnumbered}
+### The Shepherd, the shoulders, and the home (*Gosp., Comm.*)
 
 The first parable is deliberately disproportionate: one is missing, and the seeker refuses to treat that loss as negligible. Patristic interpretation enlarges the one without erasing Luke’s direct appeal to each sinner.
 
@@ -143,7 +143,7 @@ The first parable is deliberately disproportionate: one is missing, and the seek
 >
 > The Fathers’ hundred and ninety-nine are theological figures of fullness and angelic communion, not a census of saved and lost persons. Nor does one sinner make salvation private: Luke’s singular protects the irreducible value of the person, while Gregory and Ambrose show the one human nature borne home in Christ. Ambrose’s larger reading of the sheep, coin, and son as a threefold remedy associates carrying, searching, and receiving with one saving work rather than three rival agents.
 
-### The drachma: three searches within the house (*Gosp., Comm.*) {#the-drachma-three-searches-within-the-house-gosp.-comm. .unnumbered}
+### The drachma: three searches within the house (*Gosp., Comm.*)
 
 The second parable repeats the sequence—loss, initiative, finding, convoked joy—but changes the field. The coin is not roaming outside; it is hidden within a house and bears an image whose value remains even when obscured. Gregory, Ambrose, and Gregory of Nyssa use those features differently.
 
@@ -159,7 +159,7 @@ The second parable repeats the sequence—loss, initiative, finding, convoked jo
 >
 > The sheep prevents repentance from becoming mere introspection: the Shepherd comes from beyond the wanderer’s resources. The drachma prevents lost from meaning worthless: the King’s likeness remains the ground of the search. Together they describe rescue as pursuit, illumination, cleansing, and restored communion.
 
-### Repentance and the enlargement of joy (*Gosp., Off., Comm.*) {#repentance-and-the-enlargement-of-joy-gosp.-off.-comm. .unnumbered}
+### Repentance and the enlargement of joy (*Gosp., Off., Comm.*)
 
 | **Movement** | **Patristic precision** | **Liturgical placement** |
 |:-------------|:------------------------|:----------------------------|
@@ -172,7 +172,7 @@ The second parable repeats the sequence—loss, initiative, finding, convoked jo
 >
 > The seeker acts first and until the lost is found. Yet Luke names repentance, Peter commands humility and resistance, and the altar asks for sanctification. Augustine’s Victorinus episode makes one recovered life a good shared by the Church while expressly denying that fame makes that soul more valuable. Patristic praise of prevenient mercy does not make the recovered person inert; moral exhortation does not make the sinner his own shepherd.
 
-### Entrusted care and sober resistance (*Ep., Grad., All.*) {#entrusted-care-and-sober-resistance-ep.-grad.-all. .unnumbered}
+### Entrusted care and sober resistance (*Ep., Grad., All.*)
 
 First Peter 5:6–11 contains a tightly ordered sequence. Humility places the Christian under God’s mighty hand; care is cast upon him because he cares; sobriety recognizes a real adversary; resistance is made in faith and in solidarity with the suffering brotherhood; God himself restores, strengthens, and establishes.
 
@@ -200,7 +200,7 @@ Anthony of Padua later preached the same Gospel and Epistle as one three-part co
 >
 > The devil seeks in order to consume; Christ seeks in order to carry home. Vigilance is urgent because danger is real, but hope is rational because the God of all grace has promised the last verbs: restore, strengthen, and establish.
 
-### Under a ruler and guide: temporal goods without temporal captivity (*Coll., Off., Sec., Postcomm.*) {#under-a-ruler-and-guide-temporal-goods-without-temporal-captivity-coll.-off.-sec.-postcomm. .unnumbered}
+### Under a ruler and guide: temporal goods without temporal captivity (*Coll., Off., Sec., Postcomm.*)
 
 The Collect is not a generic request for protection. Its clauses distinguish the source of strength and holiness, the government of the journey, the goods traversed, and the end that must not be lost.
 
@@ -216,7 +216,7 @@ The Collect is not a generic request for protection. Its clauses distinguish the
 >
 > The Collect calls temporal things good, excluding contempt for creation; because they are traversed under God’s rule toward eternal goods, it also excludes captivity to them. Linking this itinerary to later gifts and holy things is an intra-formulary reading, not a compositional claim.
 
-### Gifts looked upon, believers sanctified (*Int., Coll., Sec., Postcomm.*) {#gifts-looked-upon-believers-sanctified-int.-coll.-sec.-postcomm. .unnumbered}
+### Gifts looked upon, believers sanctified (*Int., Coll., Sec., Postcomm.*)
 
 > **Textual control**
 >
@@ -248,7 +248,7 @@ The Collect is not a generic request for protection. Its clauses distinguish the
 >
 > -   *sumenda* becomes *sumpta*: petition before reception becomes thanksgiving and a new petition for vivification afterward.
 
-### Sacramental completion: joy, life, and everlasting mercy (*Int., Gosp., Off., Sec., Comm., Postcomm.*) {#sacramental-completion-joy-life-and-everlasting-mercy-int.-gosp.-off.-sec.-comm.-postcomm. .unnumbered}
+### Sacramental completion: joy, life, and everlasting mercy (*Int., Gosp., Off., Sec., Comm., Postcomm.*)
 
 The Communion repeats Luke 15:10 rather than choosing an unrelated sacramental verse. The assembly receives while singing heaven’s joy over repentance. The Postcommunion then refuses to let joy remain a momentary emotion: the holy things received are asked to vivify, purify, and prepare the faithful for mercy without end.
 
@@ -261,7 +261,7 @@ The Communion repeats Luke 15:10 rather than choosing an unrelated sacramental v
 | Communion | The Church sings the angels’ joy over one sinner repenting. | The murmurer’s gaze is replaced by a received, heavenly pattern of desire. |
 | Postcommunion | The Church speaks as those who have received holy things. | The gift is asked to give life now and prepare the purified for everlasting mercy. |
 
-## The Propers: Notable and Quotable {#the-propers-notable-and-quotable .unnumbered}
+## The Propers: Notable and Quotable
 
 -   **“Publicans and sinners” — *Punch*, 27 Oct. 1877, p. 182.** In an argument about public houses, the magazine exploits *publican*’s newer sense, joking about “publicans and sinners, and sinners whom publicans give occasion to sin.” Luke’s formula for tax collectors and moral outsiders becomes a temperance pun linking tavern keepers to the drinkers they tempt.
 
@@ -269,7 +269,7 @@ The Communion repeats Luke 15:10 rather than choosing an unrelated sacramental v
 
 -   **“Be sober, be vigilant” — *The Temperance Text-Book*, p. 93 (1836).** Under “Testimony of Scripture,” the manual prints Peter’s phrase among warnings against drunkenness. Spiritual alertness before a prowling adversary is narrowed, with deliberate literal force, into an anti-alcohol proof text; the manual’s placement does not exhaust the Epistle’s devil-and-resistance context.
 
-## The Propers: Interpretive Possibilities {#the-propers-interpretive-possibilities .unnumbered}
+## The Propers: Interpretive Possibilities
 
 *These are bounded AI-assisted editorial discovery proposals, attributed to none of the cited authorities. Each joins precisely named appointed elements by a stated mechanism; none claims historical selection intent, universal novelty, or doctrinal authority.*
 
@@ -283,11 +283,11 @@ The Communion repeats Luke 15:10 rather than choosing an unrelated sacramental v
 
 **The recovered object becomes an ecclesial subject. (*Gosp., Off., Sec.*)** In the Gospel, sheep and coin are sought objects; the Offertory gives those who know God’s Name verbs of their own—trust, seek, praise, and remember the poor; the Secret gathers gifts into a common oblation for believers’ salvation. The mechanism is a reversal of agency across the liturgy: one found by mercy is restored not to passive display but to worship, offering, and concern for other sufferers. Read separately, the parables can leave the recovered person permanently objectified and the later prayers generically communal. The fruit is a pastoral model of reintegration that restores responsibility and voice rather than patronizing the penitent. Luke’s parables do not narrate the recovered sinner’s later conduct, repentance remains necessary, and the sequence is not evidence of historical selection intent.
 
-## Appendix: Scope and Qualifications {#appendix-scope-and-qualifications .unnumbered}
+## Appendix: Scope and Qualifications
 
 > **Text.** All ten propers were collated with the 1962 typical-edition facsimile, pp. 380–382. **Historical orientation.** Six distinct direct biblical passages appear in canonical order; traditional composition metadata, Luke’s narrated setting, and historical alternatives are distinguished. **Direct reception.** All four appointed psalms and Luke 15; Anthony supplies partial direct medieval reception of 1 Peter 5 while no complete patristic line-by-line commentary on all appointed verses was retained. **Related illumination.** Ascetical reuse, oblation, sanctification, Eucharistic reception, and ecclesial joy. **Material limits.** Psalm origins and sites, Luke’s exact event and composition locations, and 1 Peter’s authorship and date remain disputed; no exhaustive manuscript, untranslated, subscription, or cultural-reception survey is claimed. **Full records.** `propers/verified.md`; `research/scope.md`.
 
-## References {#references .unnumbered}
+## References
 
 **Primary and inherited sources**
 

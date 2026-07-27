@@ -867,7 +867,7 @@ Dates marked “(P)” rest on a document published by the Fraternity; “(Q)”
 
 All sources were read on 2026-07-25; the exact bytes registered in this repository’s source library for the documents published by the Fraternity and for the Roman acts of 1999–2000 were re-fetched and hashed on 2026-07-26. *Acta Apostolicae Sedis* was read in the Holy See’s own scanned archive at <https://www.vatican.va/archive/aas/index_sp.htm>; the volume used here is <https://www.vatican.va/archive/aas/documents/AAS-82-1990-ocr.pdf>. Sources are grouped by function.
 
-### Acts printed in *Acta Apostolicae Sedis* {#acts-printed-in-acta-apostolicae-sedis .unnumbered}
+### Acts printed in *Acta Apostolicae Sedis*
 
 -   Pontifical Commission *Ecclesia Dei*, *Rescriptum ex audientia Ss.mi quo Cardinali Praesidi Pontificiae Commissionis “Ecclesia Dei” speciales tribuuntur facultates, foras datur*, incipit *Quia peculiare munus*, audience of 18 October 1988, AAS 82 (1990) 533–534 (fascicle 5, 3 May 1990); Prot. N. 283/88; signed Augustinus card. Mayer, president. Read in the scanned volume.
 
@@ -875,7 +875,7 @@ All sources were read on 2026-07-25; the exact bytes registered in this reposito
 
 -   A lead not pursued: the canonical literature gives the decree *Dominus Marcellus Lefebvre* of 1 July 1988, which was never printed in the gazette, a locus in the canonical periodical *Apollinaris* 61, 550–551. That periodical was not reached, and this account asserts nothing about the decree.
 
-### Official Holy See texts on vatican.va and in the press bulletin {#official-holy-see-texts-on-vatican.va-and-in-the-press-bulletin .unnumbered}
+### Official Holy See texts on vatican.va and in the press bulletin
 
 -   John Paul II, motu proprio *Ecclesia Dei*, 2 July 1988 (English), <https://www.vatican.va/content/john-paul-ii/en/motu_proprio/documents/hf_jp-ii_motu-proprio_02071988_ecclesia-dei.html>.
 
@@ -893,11 +893,11 @@ All sources were read on 2026-07-25; the exact bytes registered in this reposito
 
 -   Dicastery for the Doctrine of the Faith, *Decreto* and *Nota Esplicativa*, Prot. N. 99/2009, 2 July 2026, Holy See Press Office bulletin B0568, <https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2026/07/02/0568/01077.html> and <https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2026/07/02/0568/01078.html>.
 
-### Canonical texts {#canonical-texts .unnumbered}
+### Canonical texts
 
 -   *Codex Iuris Canonici* (1983), Book II, Latin: <https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberII_la.html>; English page for cann. 731–746: <https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann731-746_en.html>. Registered in this repository’s source library as `work.catholic-church.codex-iuris-canonici-1983`.
 
-### Documents published by the Priestly Fraternity of Saint Peter (interested party) {#documents-published-by-the-priestly-fraternity-of-saint-peter-interested-party .unnumbered}
+### Documents published by the Priestly Fraternity of Saint Peter (interested party)
 
 -   “Declaration of intention by the founders,” 2 July 1988, <https://www.fssp.org/en/declaration-of-intention-by-the-founders/>; “Act of Foundation,” 18 July 1988, <https://www.fssp.org/en/act-of-foundation/>; “Declaration of the Ecclesia Dei Commission,” 22 July 1988, <https://www.fssp.org/en/declaration-of-the-ecclesia-dei-commission/>; “Decree of the Ecclesia Dei Commission concerning the liturgical books of 1962,” 10 September 1988, <https://www.fssp.org/en/decree-of-the-ecclesia-dei-commission-on-the-liturgical-books-of-1962/>; “Decree erecting the Priestly Fraternity of Saint Peter,” 18 October 1988, <https://www.fssp.org/en/decree-erecting-the-priestly-fraternity-of-saint-peter/>.
 
@@ -915,7 +915,7 @@ All sources were read on 2026-07-25; the exact bytes registered in this reposito
 
 -   Josef Bisig, “Les origines de la Fraternité Saint-Pierre: le témoignage d’un fondateur,” *Tu es Petrus* 33 (2022) 36–43, reproduced at <https://claves.org/les-origines-de-la-fraternite-saint-pierre/>.
 
-### Roman acts of 1999–2000 read in unofficial renderings hosted by interested third parties {#roman-acts-of-19992000-read-in-unofficial-renderings-hosted-by-interested-third-parties .unnumbered}
+### Roman acts of 1999–2000 read in unofficial renderings hosted by interested third parties
 
 -   Archive of the Association A.M.D.G., “Situation à la Fraternité Saint Pierre 1999–2001,” <http://www.amdg.asso.fr/archives/situation_fssp.htm>, with its constituent documents: “Données sur la crise” (<http://www.amdg.asso.fr/archives/donnees_crise.htm>); the recourse of sixteen priests of 29 June 1999 (<http://www.amdg.asso.fr/archives/recours_16.htm>); the responses Prot. 1411/99 of 3 July 1999 (<http://www.amdg.asso.fr/archives/protocole_1411.htm>); the “Éclaircissements” attributed to Monsignor Perl, November 1999 (<http://www.amdg.asso.fr/archives/eclaircissements.htm>); the Fraternity’s communiqué of 12 February 2000 (<http://www.amdg.asso.fr/archives/com_fssp_1302.htm>); the letter of Cardinal Castrillón Hoyos of 29 June 2000 in unofficial French (<http://www.amdg.asso.fr/archives/lettre_cardinal_castrillon.htm>); the chapter declaration of 14 July 2000 (<http://www.amdg.asso.fr/archives/com_chapitre_1407.htm>); the chapter’s recourse (<http://www.amdg.asso.fr/archives/recours_chap.htm>); and the decree 823/2000 of 12 October 2000 (<http://www.amdg.asso.fr/archives/rep_recours_chap.htm>).
 
@@ -923,15 +923,15 @@ All sources were read on 2026-07-25; the exact bytes registered in this reposito
 
 -   District of France of the Society of Saint Pius X, “Lettre de l’abbé Bisig aux membres de la Fraternité Saint-Pierre—30 août 1999,” <https://laportelatine.org/formation/crise-eglise/rapports-rome-fsspx/lettre-de-labbe-bisig-aux-membres-de-la-fraternite-saint-pierre-30-aout-1999>.
 
-### Canonical scholarship {#canonical-scholarship .unnumbered}
+### Canonical scholarship
 
 -   Dawid Pietras, FSSP, “The Rightful Autonomy of the Priestly Fraternity of Saint Peter (can. 586, 732 CIC/83) (Part I),” *Prawo Kanoniczne* 69/1 (2026) 165–186, DOI 10.21697/pk.2026.69.1.07, open access under CC BY-ND 4.0, <https://czasopisma.uksw.edu.pl/pk/article/view/15902>. The author is a priest of the Fraternity and an official of the ecclesiastical court of Gorzów Wielkopolski; his institutional position is stated wherever he is used. A second part of the study, on the period of *Summorum Pontificum* and *Traditionis custodes*, is announced in the article and had not appeared when this account was written.
 
-### Reporting used at one remove {#reporting-used-at-one-remove .unnumbered}
+### Reporting used at one remove
 
 -   “Vatican announces apostolic visit to Priestly Fraternity of St. Peter,” Catholic News Agency, carried by the *National Catholic Register*, 1 October 2024, <https://www.ncregister.com/cna/vatican-announces-apostolic-visit-to-priestly-fraternity-of-st-peter>, used only for its quotations of the dicastery’s statement of 30 September 2024, which was not located in any Holy See channel.
 
-### Consequential negative results {#consequential-negative-results .unnumbered}
+### Consequential negative results
 
 -   No text of the protocol of 5 May 1988, of the decree of 10 September 1988, of the decree of erection of 18 October 1988, of the constitutions of 1988 or 2003 beyond the published excerpt, of the rescript of 24 March 1996, of the responses of 3 July 1999, of the Commission’s letter of 13 July 1999, of the letter of 29 June 2000, of the decree of 12 October 2000, or of the papal decree of 11 February 2022 was located in *Acta Apostolicae Sedis*, on vatican.va, or in the Holy See Press Office bulletin.
 

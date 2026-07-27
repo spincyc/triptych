@@ -671,7 +671,7 @@ Project prose is original. Quotations follow public-domain translations: Challon
 
 All web sources were accessed and checked on 2026-07-25. Ancient-work citations in the text use conventional titles and loci with the translations listed here.
 
-### Scripture {#scripture .unnumbered}
+### Scripture
 
 -   The Holy Bible, Douay–Rheims version, Challoner revision, as transcribed at drbo.org (public domain). Chapters checked verbatim for this study: Mt 4, 10, 14, 16, 17, 26; Mk 1, 3, 8, 14; Lk 5, 22, 24; Jn 1, 6, 13, 18, 20, 21; Acts 1–5, 8, 10, 12, 15; Rom 15–16; 1 Cor 1, 3, 9, 10, 15; Gal 1–2; Eph 2; Col 4; 2 Tim 4; Philemon; 1 Pt 1, 4, 5; 2 Pt 1–3; Jude; Apoc 21; Isa 22 (chapter pages under <https://drbo.org/chapter/47016.htm> and the same numbering pattern, e.g. `50021` for John 21, `55002` for Galatians 2).
 
@@ -679,7 +679,7 @@ All web sources were accessed and checked on 2026-07-25. Ancient-work citations 
 
 -   *The New Testament in the Original Greek: Byzantine Textform*, ed. Maurice A. Robinson and William G. Pierpont (RP2018), in the Unicode CSV form of Robinson’s CCAT files with inline variant apparatus distributed by the `byztxt/byzantine-majority-text` repository, which states that all code and text it contains is in the public domain. Files for Matthew, Luke, John, Acts, Galatians, 1–2 Peter, and Jude were retrieved at the pinned repository state `27a45ff1` and registered with exact SHA-256 hashes in the repository’s source library (`src/sources/works/robinson-pierpont/`); they are bound in `research/source-bindings.toml`. Loci read in Greek: Mt 16:16–19; Mt 18:18; Lk 22:31–32; Jn 1:42; 3:35; 5:20; 11:3, 5; 13:23; 18:18; 20:2; 21:9, 15–19; Acts 4:13; 12:17; 15:7, 14; Gal 1:18; 2:6–14; 1 Cor 9:5; 15:5; 1 Pt 1:1; 5:1–2, 12–13; 2 Pt 1:1, 14, 16–18; 2:4–6, 11, 17; Jude 6–7, 9, 12–13.
 
-### Ancient witnesses {#ancient-witnesses .unnumbered}
+### Ancient witnesses
 
 -   Clement of Rome (attributed), *First Epistle to the Corinthians* 4–6, in the translation presented at New Advent and there attributed to John Keith, *Ante-Nicene Fathers*, vol. 9 (Buffalo, 1896), ed. Allan Menzies (<https://www.newadvent.org/fathers/1010.htm>). Conventional dating c. 95–96 as reported in the 1912 Catholic Encyclopedia, “Pope St. Clement I” (<https://www.newadvent.org/cathen/04012c.htm>).
 
@@ -703,7 +703,7 @@ All web sources were accessed and checked on 2026-07-25. Ancient-work citations 
 
 -   Flavius Josephus, *Antiquities of the Jews* 19 (Agrippa I’s death at Caesarea, “in the seventh year of his reign”), trans. William Whiston, Project Gutenberg text 2848 (<https://www.gutenberg.org/cache/epub/2848/pg2848.txt>). A catalog-level source-library record of the Whiston edition exists in the repository and is bound in `research/source-bindings.toml`.
 
-### The Jerome–Augustine correspondence on Galatians 2 {#the-jeromeaugustine-correspondence-on-galatians-2 .unnumbered}
+### The Jerome–Augustine correspondence on Galatians 2
 
 -   Augustine, *Letter* 28 (to Jerome, 394 or 395), *Letter* 40, and *Letter* 82 (405), trans. J. G. Cunningham, NPNF series 1, vol. 1, at New Advent (<https://www.newadvent.org/fathers/1102028.htm>; <https://www.newadvent.org/fathers/1102040.htm>; <https://www.newadvent.org/fathers/1102082.htm>). All three read in full for this study.
 
@@ -713,7 +713,7 @@ All web sources were accessed and checked on 2026-07-25. Ancient-work citations 
 
 -   Jerome, *Letter* 120 (to Hedibia): NPNF series 2, vol. 6 gives only an abstract of its twelve questions (<https://www.newadvent.org/fathers/3001120.htm>). The letter’s remark about Peter’s use of different interpreters, sometimes cited in discussions of 1–2 Peter, could not be verified in a reachable edition and is therefore not used in this study.
 
-### Apocrypha and later tradition {#apocrypha-and-later-tradition .unnumbered}
+### Apocrypha and later tradition
 
 -   *The Acts of Peter* (apocryphal; Greek, Asia Minor, “not later than A.D. 200” per the translator’s headnote), chs. 26, 33–38 for the wonder-contest, the concubines, the *Quo vadis*, and the martyrdom, in M. R. James, *The Apocryphal New Testament* (Oxford: Clarendon, 1924), as transcribed at Early Christian Writings (<https://www.earlychristianwritings.com/text/actspeter.html>).
 
@@ -721,11 +721,11 @@ All web sources were accessed and checked on 2026-07-25. Ancient-work citations 
 
 -   “Chair of Peter,” *The Catholic Encyclopedia*, vol. 3 (New York, 1908), at New Advent (<https://www.newadvent.org/cathen/03551e.htm>); the chair feasts and the relic-chair description.
 
-### Reformation reading {#reformation-reading .unnumbered}
+### Reformation reading
 
 -   John Calvin, *Institutes of the Christian Religion* 4.6 (“Of the primacy of the Romish see”), sections 3–7, trans. Henry Beveridge (Edinburgh: Calvin Translation Society, 1845), as transcribed at CCEL (<https://ccel.org/ccel/calvin/institutes.vi.vii.html>). Read in full for this study; a catalog-level source-library record of the work and translation was created and is bound in `research/source-bindings.toml`.
 
-### Archaeology of the tomb {#archaeology-of-the-tomb .unnumbered}
+### Archaeology of the tomb
 
 -   E. R. Smothers, S.J., “The Bones of St. Peter,” *Theological Studies* 27 (1966) 79–88, read in full in the publisher’s open PDF (<https://theologicalstudies.net/wp-content/uploads/2022/08/27.1.4.pdf>); the principal checked scholarly control for the excavation report (Apollonj Ghetti–Ferrua–Josi–Kirschbaum, *Esplorazioni*, 1951), von Gerkan’s stratigraphic objection and Kirschbaum’s reply, Prandi’s re-excavation of the Red Wall foundation, Magi’s 1957 Vatican parking-area necropolis, Guarducci’s graffiti volumes and *Le reliquie di Pietro* (1965), the Kaas–Segoni removal, and Correnti’s anthropology—none of which was inspected directly.
 
@@ -735,7 +735,7 @@ All web sources were accessed and checked on 2026-07-25. Ancient-work citations 
 
 -   “The Necropolis,” official presentation, St. Peter’s Basilica website (<https://www.basilicasanpietro.va/en/products/the-necropolis>); the current official shrine claim, cited as such.
 
-### Ecclesial reception {#ecclesial-reception .unnumbered}
+### Ecclesial reception
 
 -   First Vatican Council, dogmatic constitution *Pastor aeternus* (18 July 1870), official Latin text, Vatican website (<https://www.vatican.va/archive/hist_councils/i-vatican-council/documents/vat-i_const_18700718_pastor-aeternus_la.html>); verified byte-identical to the repository source-library artifact (SHA-256 `032a5f65…`) on 2026-07-25 and bound in `research/source-bindings.toml`. Chapters 1–4 read, including the Luke 22:32 citation and the limiting clause on the promise to Peter’s successors.
 

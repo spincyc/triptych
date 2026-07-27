@@ -786,7 +786,7 @@ This is an internally source-audited working study produced by an AI-assisted pr
 
 ## References
 
-### Scripture {#scripture .unnumbered}
+### Scripture
 
 -   **Greek.** *The New Testament in the Original Greek: Byzantine Textform*, ed. Maurice A. Robinson and William G. Pierpont (2018), in the byztxt Unicode CSV form of Robinson’s CCAT files with variant apparatus, repository state 27a45ff1b7be6c17ccbfeac414f3f55732ae8e28. Verses used: Jn 11:44; 19:38–42; 20:1–18; Lk 19:20; 23:53; 24:1–14, 41; Mt 27:59–60; Acts 10:11; 11:5; 19:12. Registered in the repository source library; artifacts for John, Luke, Matthew and Acts consulted directly.
 
@@ -796,15 +796,15 @@ This is an internally source-audited working study produced by an AI-assisted pr
 
 -   **Authorized Version**, quoted only at Jn 20:7 to establish the English wording “wrapped together in a place by itself”; Project Gutenberg eBook 10, consulted 25 July 2026.
 
-### Lexical authority {#lexical-authority .unnumbered}
+### Lexical authority
 
 -   Joseph Henry Thayer, *A Greek-English Lexicon of the New Testament, being Grimm’s Wilke’s Clavis Novi Testamenti*, corrected edition (New York, Cincinnati, Chicago: American Book Company; title page undated, Internet Archive record dated 1889), s.v. *entylissō* (p. 219), *othonion* (p. 439), *soudarion* (p. 581). Read at those pages in the Internet Archive facsimile of the copy digitized as `greekenglishlex00grim`.
 
-### Textual criticism {#textual-criticism .unnumbered}
+### Textual criticism
 
 -   B. F. Westcott and F. J. A. Hort, *The New Testament in the Original Greek: Introduction, Appendix* (Cambridge and London: Macmillan, 1882), Appendix, “Notes on Select Readings,” p. 71, on Luke xxiv 12. Read in the Internet Archive facsimile `newtestamentinor82west`.
 
-### Patristic and medieval witnesses {#patristic-and-medieval-witnesses .unnumbered}
+### Patristic and medieval witnesses
 
 -   St. John Chrysostom, *Homilies on the Gospel of St. John*, Homily LXXXV.4 (the argument against theft, and “from this they believed in the Resurrection”), Homily LXXXVI.1 (p. 323), Homily LXXXVII (p. 327); English by Charles Marriott in *A Select Library of the Nicene and Post-Nicene Fathers*, first series, vol. 14 (New York: Christian Literature Co.), pp. 320–321, 323, 327. Read in the Internet Archive facsimile `selectlibraryofn14auguuoft`. The Greek of PG 59 was not reached.
 
@@ -826,7 +826,7 @@ This is an internally source-audited working study produced by an AI-assisted pr
 
 -   *Gospel of Peter*, Akhmim fragment, VI.24 and XIII.55–57; M. R. James’s public-domain 1924 translation, read at earlychristianwritings.com. A delegated reading, reported at that ceiling; no Greek was collated.
 
-### Rabbinic and Second Temple sources {#rabbinic-and-second-temple-sources .unnumbered}
+### Rabbinic and Second Temple sources
 
 -   Mishnah Berakhot 8:1–8, Hebrew, Torat Emet 357 text, licence recorded as public domain; retrieved through the Sefaria text API, 25 July 2026.
 
@@ -838,19 +838,19 @@ This is an internally source-audited working study produced by an AI-assisted pr
 
 -   John Lightfoot, *Horae Hebraicae et Talmudicae: Hebrew and Talmudical Exercitations upon the Gospels*, ed. Robert Gandell (Oxford: University Press, 1859), 4 vols.; full text of all four volumes retrieved from the Internet Archive and searched 25 July 2026. Two occurrences of “napkin” in the whole work, both at Jn 11:44; no note on Jn 20:7.
 
-### Greco-Roman dining {#greco-roman-dining .unnumbered}
+### Greco-Roman dining
 
 -   William Smith, ed., *A Dictionary of Greek and Roman Antiquities* (1875), s.v. “Mantele”; read 25 July 2026 at the LacusCurtius transcription, `penelope.uchicago.edu`.
 
 -   Suetonius, *Nero* 22.2; J. C. Rolfe’s public-domain Loeb translation, read 25 July 2026 at the LacusCurtius transcription.
 
-### Modern discussion of the passage {#modern-discussion-of-the-passage .unnumbered}
+### Modern discussion of the passage
 
 -   B. F. Westcott, *The Gospel according to St. John: The Greek Text with Introduction and Notes*, 2 vols. (London: John Murray, 1908), vol. 2, pp. 339–341, with the editorial footnotes of Arthur Westcott recording his father’s marginal notes and a private letter. Read in the Internet Archive facsimile `gospelaccordingt02west`.
 
 -   Henry Latham, *The Risen Master: A Sequel to Pastor Pastorum*, sixth thousand (Cambridge: Deighton Bell and Co.; London: George Bell and Sons, 1905), ch. 2–3, especially pp. 34–38 and 43–45. Latham credits the central idea to a pamphlet by the Rev. Arthur Beard of St John’s College, Cambridge, which was not located. Read in the Internet Archive facsimile `risenmaster01lath`.
 
-### The modern folded-napkin claim: dated witnesses {#the-modern-folded-napkin-claim-dated-witnesses .unnumbered}
+### The modern folded-napkin claim: dated witnesses
 
 -   “Christ’s Linen Napkin (John 20:7)…”, *JerusalemPerspective.com*, site metadata date 7 October 2006, with the reader’s question quoting the claim and David Bivin’s response. Read 25 July 2026 in the Internet Archive capture of 7 March 2013; the live page was unreachable.
 
@@ -862,7 +862,7 @@ This is an internally source-audited working study produced by an AI-assisted pr
 
 These four are cited as dated evidence of what the claim says and when it circulated. They are under their own rights and are quoted only in short attributed clauses.
 
-### Not reached {#not-reached .unnumbered}
+### Not reached
 
 -   The Greek of Chrysostom’s homilies in Patrologia Graeca 59.
 

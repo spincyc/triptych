@@ -66,31 +66,31 @@ Seven passages are directly appointed; the composed orations quote none of Scrip
 
 4.  **Administered.** <span class="nodecor">(*Off., Sec., Comm., Postcomm.*)</span> What was received goes back up in the one posture the steward never reached, and returns as something tasted.
 
-### 1. The opening act is a receipt, not a request <span class="nodecor">(*Int., Coll.*)</span> {#the-opening-act-is-a-receipt-not-a-request-int.-coll. .unnumbered}
+### 1. The opening act is a receipt, not a request <span class="nodecor">(*Int., Coll.*)</span>
 
 The Introit’s verb governs the day. *Suscépimus* is perfect and plural: the congregation reports a completed reception before it petitions. What was received is *misericórdiam tuam*, and the place of reception is *in médio templi tui*. The antiphon then does something unusual for an entrance chant: instead of asking, it measures — *secúndum nomen tuum, Deus, ita et laus tua in fines terræ* — so that the praise owed is calibrated to the name possessed, and the reach of the praise is the whole earth. The identical antiphon, with the identical psalm verse, opens the Purification on 2 February (printed p. 467), where the “midst of thy temple” is the literal Jerusalem sanctuary into which the Child is carried. On this Sunday the same words are sung with no narrative to anchor them, and the temple becomes the place where the Mass is being said.
 
 Only after that receipt does the Collect ask, and what it asks for is a habit rather than an outcome: *semper spíritum cogitándi quæ recta sunt … et agéndi*. Two gerunds, one *spíritum*, and the adverb *propítius* planted between them. The petition’s ground is a confession: *qui sine te esse non póssumus* — we cannot so much as *be* without you. The Collect therefore concedes at the outset the point the Gospel’s steward will discover under audit, that nothing in hand is self-supplied.
 
-### 2. The Epistle names the debt and confers the status <span class="nodecor">(*Ep.*)</span> {#the-epistle-names-the-debt-and-confers-the-status-ep. .unnumbered}
+### 2. The Epistle names the debt and confers the status <span class="nodecor">(*Ep.*)</span>
 
 Paul’s opening is a negation with a missing positive: *Debitóres sumus non carni*. He says what the debt is not, and does not say what it is. Chrysostom, preaching on exactly these verses, supplies it in one stroke — “we are debtors to the Spirit” — and draws the reason from the direction of the transaction: what God has done for us “is not matter of debt, but of mere grace,” but “after this, what we do is no longer matter of free-will offering, but of debt.”[^1] The Mass has just sung a receipt; the Epistle turns the receipt into an obligation.
 
 The obligation, however, is not laid on a servant. The passage moves deliberately from leading (*spíritu Dei agúntur*) to sonship (*fílii Dei*) to the negative contrast (*non … spíritum servitútis*) to the cry *Abba (Pater)* and finally to inheritance: *herédes quidem Dei, coherédes autem Christi*. Two features of the printed lection are worth noticing at once, because the rest of the Mass depends on them. First, the appointed text stops *inside* verse 17, at *coherédes autem Christi*, so the condition Paul immediately attaches — “if so be that we suffer with him” — is not read. Second, the inheritance named here is not a thing but a person: Aquinas, expounding this very verse, defines an heir as one who receives the principal goods, and then observes that “the principal good by which God is rich is God himself.”[^2] The Offertory will ask, three chants later, “who is God besides thee, O Lord?”
 
-### 3. The chants hold the interval open <span class="nodecor">(*Grad., All.*)</span> {#the-chants-hold-the-interval-open-grad.-all. .unnumbered}
+### 3. The chants hold the interval open <span class="nodecor">(*Grad., All.*)</span>
 
 Between the conferring of the inheritance and the reading of the audit, the Mass places two chants that refuse to move forward. The Gradual asks for a protector and a place of refuge; its verse asks not to be confounded *in ætérnum*. The two psalms it draws on, 30 and 70, are near duplicates of one another at exactly these verses — Psalm 70:1–3 repeats Psalm 30:2–4 almost word for word — so the Gradual is not moving from one witness to a second but saying the same thing twice, more slowly.
 
 The Alleluia then returns to the Introit’s psalm and to its city. Structurally this is the Mass’s one full return: the congregation is put back where it began, in *civitáte Dei nostri*, but now under the Alleluia and with the greatness of God rather than the mercy received as the object. The formulary’s shape at this point is a circle, not a line, and the Gospel breaks it.
 
-### 4. The audit, and the scandal the book leaves standing <span class="nodecor">(*Gosp.*)</span> {#the-audit-and-the-scandal-the-book-leaves-standing-gosp. .unnumbered}
+### 4. The audit, and the scandal the book leaves standing <span class="nodecor">(*Gosp.*)</span>
 
 Luke 16:1–9 is the hardest text in the temporal cycle to preach and the Mass does nothing to soften it. A steward is denounced, told to produce his accounts, and dismissed in advance; he cannot dig and will not beg; he discounts his master’s debtors’ bills to buy their hospitality; and *laudávit dóminus víllicum iniquitátis, quia prudénter fecísset*. The lection then closes on the sentence that has divided commentators since the second century: make friends of the *mammóna iniquitátis*, so that when you fail they may receive you into everlasting dwellings. Immediately after that sentence the book prints **Credo**.
 
 Two boundaries do interpretive work here, and both are the missal’s, not the evangelist’s. The pericope begins at verse 1, so the parable arrives detached from the three parables of the lost that precede it in Luke 15 and from the crowd of publicans and sinners drawn there. And it ends at verse 9, so the qualifying sayings of verses 10–13 — fidelity in little, the unjust mammon, and finally *non potéstis Deo servíre et mammonæ* — are not read. What the congregation hears is the commendation and the counsel, without the warning that follows them. The detailed commentary takes up what the tradition has made of that, and where it has failed to agree.
 
-### 5. The return: humility, offering, and a tasted end <span class="nodecor">(*Off., Sec., Comm., Postcomm.*)</span> {#the-return-humility-offering-and-a-tasted-end-off.-sec.-comm.-postcomm. .unnumbered}
+### 5. The return: humility, offering, and a tasted end <span class="nodecor">(*Off., Sec., Comm., Postcomm.*)</span>
 
 The Offertory answers the Gospel directly, and by contrast. The steward’s whole problem was that he could not accept a lower place — *fódere non váleo, mendicáre erubésco* — and the Offertory sings that God saves *pópulum húmilem* and brings down *óculos superbórum*. It then ends on a question, *quóniam quis Deus præter te, Dómine?*, which is the Epistle’s inheritance turned back into an interrogative. Augustine, on this verse, answers it in terms the Epistle would recognise: God is the one “whom after good service we sons shall possess as the hoped-for inheritance.”[^3]
 
@@ -104,13 +104,13 @@ Two limits govern all of this. The synthesis above reads an *arrangement* whose 
 
 ### The formulary as the book prints it
 
-#### Identity, rank, and boundaries {#identity-rank-and-boundaries .unnumbered}
+#### Identity, rank, and boundaries
 
 The heading is *DOMINICA OCTAVA post Pentecosten*; beneath it the book prints *II classis*. The formulary occupies printed pages 387–388 of the 1962 Vatican typical edition and carries the missal’s own marginal numbers 1512 to 1521. It begins immediately below the Postcommunion of the Seventh Sunday (no. 1511) and ends immediately above the heading *DOMINICA NONA post Pentecosten*. Ten elements are appointed, together with two directions — **Credo** after the Gospel, **Præfatio de Ssma Trinitate** after the Secret — and nothing else: no Tract, no sequence, no commemoration, no second oration, no seasonal substitution, no alternate conclusion.
 
 The rank is not an inference from the formulary. The missal’s own *Rubricæ generales*, printed at page XII of the front matter, state at n. 10 that Sundays are of the first or second class, list the first-class Sundays at n. 11 (Advent, Lent, Passiontide, Easter, Low Sunday, Pentecost), and conclude at n. 12: *Omnes aliæ dominicæ sunt II classis*. Number 16 then fixes what that rank does in occurrence — a second-class Sunday is preferred to second-class feasts — with two stated exceptions: a first- or second-class feast *of the Lord* falling on a second-class Sunday takes the Sunday’s place with all its rights and privileges and no commemoration of the Sunday is made; and a second-class Sunday is preferred to the Commemoration of All the Faithful Departed. Number 14 adds that the Office and Mass of an impeded Sunday are neither anticipated nor resumed. This Sunday is therefore ordinarily celebrated, and when a feast of the Lord displaces it, the whole formulary is simply lost for that year.
 
-#### Where it stands in the temporal cycle {#where-it-stands-in-the-temporal-cycle .unnumbered}
+#### Where it stands in the temporal cycle
 
 The Sundays after Pentecost read Romans semi-continuously and then leave it. In the 1962 book the Sixth Sunday has Rom 6:3–11, the Seventh Rom 6:19–23, the Eighth Rom 8:12–17, and the Ninth turns to 1 Cor 10:6–13. The Eighth Sunday is thus the last Roman epistle of the series.
 
@@ -134,7 +134,7 @@ Second, the measure. *Secúndum nomen tuum, Deus, ita et laus tua in fines terr�
 
 Third, the place. *In médio templi tui*. The identical antiphon, with the identical psalm verse and the same reference, is printed at no. 2107 for the Purification of the Blessed Virgin Mary on 2 February (printed p. 467), where the words have a literal referent — the child carried into the Jerusalem sanctuary. On the Eighth Sunday the same words are sung with no narrative attached, and the only temple available is the building the congregation is standing in.
 
-#### A caution about citing Augustine here {#a-caution-about-citing-augustine-here .unnumbered}
+#### A caution about citing Augustine here
 
 Augustine’s exposition of Psalm 47:10 cannot be quoted as commentary on the Introit *as sung*, because his Latin text is different. His lemma reads *in medio populi tui* — “in the midst of thy *people*” — and his whole exegesis depends on it: he asks how a people can receive mercy in the midst of itself, answers that not all who carry the sacraments belong to the mercy, and develops the threshing-floor on which wheat and chaff both belong to the floor but not both to the barn.[^5] None of that transfers to *templi*. What does transfer, because it does not depend on the variant, is where the section ends: “He came unto His own, and His own received Him not, yet, in the midst of them, as many as received Him, to them gave He power to become the sons of God.” Augustine closes his comment on the Introit’s psalm verse on John 1:12 — and the Epistle that follows the Introit is about becoming sons of God. That convergence is real; its textual warrant is the psalm, not the antiphon.
 
@@ -162,23 +162,23 @@ Two claim-boundaries should be marked here. The word *spíritum* is not demonstr
 
 > **English (1861 witness).**  “Brethren: We are debtors, not to the flesh, to live according to the flesh. … For whosoever are led by the Spirit of God, they are the Sons of God. For you have not received the spirit of bondage again in fear: but you have received the spirit of adoption of sons, whereby we cry: Abba, (Father.) For the Spirit himself giveth testimony to our spirit, that we are the sons of God. And if sons, heirs also: heirs indeed of God, and joint heirs with Christ.”
 
-#### The complete context {#the-complete-context .unnumbered}
+#### The complete context
 
 Romans 8 opens with “no condemnation” for those in Christ and closes with the declaration that nothing can separate us from the love of God. Between them Paul argues that the Spirit who raised Christ dwells in the believer and will quicken his mortal body (8:9–11); the appointed verses draw the consequence. The chapter is the answer to chapter 7, where the will that approves the good does not perform it. Verse 18 onward — read on the Fourth Sunday — turns to the sufferings of the present time and the groaning of creation.
 
-#### A debt with the creditor unnamed {#a-debt-with-the-creditor-unnamed .unnumbered}
+#### A debt with the creditor unnamed
 
 *Debitóres sumus non carni.* Paul says whose debtors we are *not*, and does not say whose we are. Chrysostom, preaching on exactly these verses, treats the omission as deliberate and supplies the missing term: “But this is not what he says, for he words it in a much more striking and powerful way, thus, we are debtors to the Spirit. For saying, we are debtors not to the flesh, indicates this.” He then states the reason the debt runs only one way: “what God has done for us is not matter of debt, but of mere grace. But after this, what we do is no longer matter of free-will offering, but of debt.”[^8] He also guards the flesh itself against a Manichaean reading: what Paul abrogates is not the body’s service but living *according to* it — “it must be the follower, not the leader.”
 
 Aquinas reaches the same conclusion by a different route, drawing it as a corollary from the preceding verses: *ergo debitores sumus spiritui sancto propter beneficia ab eo recepta, ut vivamus secundum spiritum et non secundum carnem*.[^9] Both readings turn on the same observation: a Mass that begins *suscépimus* has already fixed the direction of the transaction.
 
-#### Adoption, and a word said twice {#adoption-and-a-word-said-twice .unnumbered}
+#### Adoption, and a word said twice
 
 Paul’s contrast is not bondage against freedom but bondage against *sonship*. Chrysostom notices the substitution: “not staying to mention that which stands in contradistinction to bondage, that is, the spirit of freedom, he has named what is far greater, that of adoption, through which he at the same time brings in the other.” What the “spirit of bondage” was he answers historically — the letter of the Law, since the people of the Jews “did not receive the Spirit” — and he identifies the cry *Abba* as Hebrew and as the initiate’s word: “how great this is, the initiated know, being with good reason bidden to use this word first in the Prayer of the initiated.” For Chrysostom the verse is a liturgical fact before it is a doctrine: it is the Our Father in the mouth of the newly baptized.
 
 Why the word is given twice, in two languages, has a long and stable answer. Augustine: “God’s children, however, exclaim, Abba, Father, — one of which words they of the circumcision utter; the other, they of the uncircumcision, — the Jew first, and then the Greek; since there is one God, which justifies the circumcision by faith, and the uncircumcision through faith.”[^10] Aquinas repeats the move almost verbatim eight centuries later: *et ideo duo ponit idem significantia, scilicet abba, quod est Hebraeum, et pater, quod est Latinum vel Graecum, ut ostendat hoc ad utrumque populum pertinere*.[^11] He adds an observation about the verb: *clamámus* is not loudness but intensity — *hoc autem dicimus non tantum sono vocis, quantum intentione cordis* — and cites the Lord’s word to a silent Moses, “Why criest thou to me?”
 
-#### Heirs of a Father who does not die {#heirs-of-a-father-who-does-not-die .unnumbered}
+#### Heirs of a Father who does not die
 
 *Herédes quidem Dei.* Aquinas begins from the Roman-law sense: an heir is one who receives the *principal* goods, not one given a few presents, and he illustrates the difference from Genesis 25:5, where Abraham gave all he had to Isaac and mere gifts to the sons of the concubines. Then the identification: *bonum autem principale quo Deus dives est, est ipsemet* — the principal good by which God is rich is God himself; therefore *ipsum Deum adipiscuntur filii Dei pro haereditate*.
 
@@ -186,7 +186,7 @@ He then raises the difficulty the term itself creates. An heir inherits only whe
 
 What *co*-heir adds is the last word of the appointed lection and the reason the lection can stop there: *cohaeredes autem Christi, quia ipse cum sit principalis filius a quo nos filiationem participamus, ita est principalis haeres, cui in haereditate coniungimur*. The inheritance is not divided with Christ; it is entered through him.
 
-#### The clause the lection does not read {#the-clause-the-lection-does-not-read .unnumbered}
+#### The clause the lection does not read
 
 Immediately after *coherédes autem Christi*, Paul writes *si tamen compatimur, ut et conglorificemur*. The 1962 lection stops before it. Aquinas, who did not stop there, makes the clause the explanation of why glory is delayed at all: Christ, the principal heir, came to the inheritance of glory through his passion, *non autem nos faciliori modo debemus haereditatem adipisci* — and we ought not to obtain the inheritance by an easier route. The congregation at this Mass hears the inheritance conferred and not the terms. That is an observation about the printed boundary, not a complaint about it; and the Fourth Sunday after Pentecost, which begins at verse 18, supplies the sequel from the same book.
 
@@ -202,11 +202,11 @@ Immediately after *coherédes autem Christi*, Paul writes *si tamen compatimur, 
 
 > **English (1861 witness).**  Gradual: “Be thou unto me a God, a protector, and a place of refuge to save me. *V.* O God, on thee have I relied ; let me never, O Lord, be put to shame.” Alleluia: “*V.* Great is the Lord, and exceedingly to be praised in the city of our God, on his holy mountain. Alleluia. Alleluia.”
 
-#### Two psalms that are one psalm twice {#two-psalms-that-are-one-psalm-twice .unnumbered}
+#### Two psalms that are one psalm twice
 
 The Gradual’s responsory is referenced to Ps 30:3 and its verse to Ps 70:1. These are not two independent witnesses. Psalm 70:1–3 repeats Psalm 30:2–4 almost word for word: both open *in te, Domine, speravi; non confundar in aeternum*, both continue *inclina ad me aurem tuam*, and both then say *esto mihi in Deum protectorem … ut salvum me facias*. The Gradual therefore does something formally odd and pastorally exact: it says the same prayer twice, out of two psalms, at the moment when the congregation has just been told it is an heir and has not yet been told it is under audit.
 
-#### A chant reading that belongs to neither psalm {#a-chant-reading-that-belongs-to-neither-psalm .unnumbered}
+#### A chant reading that belongs to neither psalm
 
 The responsory, printed under the reference Ps 30:3, reads *et in locum refúgii*. The Clementine Psalm 30:3 reads *in domum refugii*; the Clementine Psalm 70:3 reads *in locum munitum*. The chant has the noun of the one and the genitive of the other. Nothing is emended here: the missal’s reading is printed as printed and the divergence recorded.
 
@@ -216,7 +216,7 @@ Two sections later, on Ps 70:3, he turns the very noun the Gradual half-borrowed
 
 On Psalm 30 itself Augustine assigns the speech: “first the Mediator Himself speaks: then the People redeemed by His Blood gives thanks”; and at verse 3 he glosses *esto mihi in Deum protectorem* by splitting it — “Be unto Me God, and Protector” — and reads the house of refuge as a house “wherein taking refuge I may be saved.”[^14] His text, again, is not the chant’s.
 
-#### One verse, two Latin forms, in one Mass {#one-verse-two-latin-forms-in-one-mass .unnumbered}
+#### One verse, two Latin forms, in one Mass
 
 The Alleluia verse and the Introit’s psalm verse are both Psalm 47:2, and both carry that reference in the printed book. They do not agree. The Introit reads *laudábilis nimis*; the Alleluia reads *laudábilis valde*. The Clementine reading is *nimis*. The 1962 book prints both without a note, and the same split appears in the 1861 hand missal (printed p. 412), so the divergence is transmitted rather than a setting error in this edition. What this guide does *not* do is assign the two forms to named Latin psalters: that would require collation against psalter witnesses which was not undertaken here, and the question is left open in the research record.
 
@@ -228,15 +228,15 @@ Functionally, the effect is that the Mass returns to its own opening psalm at th
 >
 > *In illo témpore: Dixit Iesus discípulis suis parábolam hanc: Homo quidam erat dives, qui habébat víllicum: et hic diffamátus est apud illum, quasi dissipásset bona ipsíus. Et vocávit illum, et ait illi: Quid hoc áudio de te? redde ratiónem villicatiónis tuæ: iam enim non póteris villicáre. Ait autem víllicus intra se: Quid fáciam, quia dóminus meus aufert a me villicatiónem? fódere non váleo, mendicáre erubésco. Scio quid fáciam, ut, cum amótus fúero a villicatióne, recípiant me in domos suas. Convocátis ítaque síngulis debitóribus dómini sui, dicébat primo: Quantum debes dómino meo? At ille dixit: Centum cados ólei. Dixítque illi: Accipe cautiónem tuam: et sede cito, scribe quinquagínta. Deínde álii dixit: Tu vero quantum debes? Qui ait: Centum coros trítici. Ait illi: Accipe lítteras tuas, et scribe octogínta. Et laudávit dóminus víllicum iniquitátis, quia prudénter fecísset: quia fílii huius sǽculi prudentióres fíliis lucis in generatióne sua sunt. Et ego vobis dico: fácite vobis amícos de mammóna iniquitátis: ut, cum defecéritis, recípiant vos in ætérna tabernácula.*
 
-#### What the story says before anyone interprets it {#what-the-story-says-before-anyone-interprets-it .unnumbered}
+#### What the story says before anyone interprets it
 
 A *víllicus* — Jerome notes that the Greek is *oikonomos*, a household manager, and that *villicus* properly means the man who runs a *villa* and takes his name from it — is denounced to his employer for squandering the estate. He is not tried. He is told to produce the accounts and informed that he is already finished: *iam enim non póteris villicáre*. His soliloquy admits two disqualifications, one physical and one social: *fódere non váleo, mendicáre erubésco*. He then summons the debtors individually, has each rewrite his own bond in his own hand — *accipe cautiónem tuam … scribe quinquagínta* — and reduces one debt by a half and the other by a fifth. The amounts are large: a hundred *cadi* of oil and a hundred *cori* of wheat are estate-scale obligations, not household loans. The haste is written into the text (*sede cito*), and so is the fact that the debtors, not the steward, do the writing. Then comes the sentence everything turns on: *et laudávit dóminus víllicum iniquitátis, quia prudénter fecísset*.
 
-#### Crux 1: who is the *dóminus* who commends? {#crux-1-who-is-the-dóminus-who-commends .unnumbered}
+#### Crux 1: who is the *dóminus* who commends?
 
 The Latin *dóminus* in verse 8 is the same word used for the employer throughout. Augustine reads it as the employer and treats the praise as a datum, not an endorsement: the parable works *e contrario*, exactly like the unjust judge who is compared to God though “in no respect” comparable — *si laudari potuit ille a domino qui fraudem faciebat, quanto amplius placeant Deo qui secundum eius praeceptum opera illa faciunt*.[^15] Jerome sharpens the same reading by pressing who suffered the loss: *et passus dispendia Dominus, laudat dispensatoris prudentiam* — the master who praises is the master who was defrauded.[^16] On this reading the *a fortiori* is the whole point: if a cheated employer could admire foresight, how much more will Christ, “who can suffer no loss and is inclined to clemency,” commend disciples who are merciful.
 
-#### Crux 2: was the fraud commended? {#crux-2-was-the-fraud-commended .unnumbered}
+#### Crux 2: was the fraud commended?
 
 Here the tradition does not agree, and the disagreement is not a matter of emphasis.
 
@@ -252,7 +252,7 @@ Jerome takes a third position, neither Ambrose’s nor exactly Augustine’s: he
 
 A fourth position is preserved in the *Catena aurea* under the name of Origen, and it deflates the commendation altogether: *dominus laudavit villicum, quia prudenter egisset; hoc est callide et perperam. Et forsitan quod dixit laudavit, non secundum veram commendationem, sed abusive dictum est* — “the lord praised the steward because he had acted prudently, that is, cunningly and wrongly; and perhaps the word ‘praised’ was said not in the sense of true commendation but loosely.” The attribution needs care. Jerome, writing about this very parable, records that he searched for Origen’s and Didymus’s explanations of it and could not find them — *Origenis et Didymi in hanc parabolam explanationem invenire non potui* — and could not tell whether the works had perished or had never been written. The passage is therefore cited here as the *Catena*’s Origen, and not as Origen.
 
-#### Crux 3: what makes the mammon “of iniquity”? {#crux-3-what-makes-the-mammon-of-iniquity .unnumbered}
+#### Crux 3: what makes the mammon “of iniquity”?
 
 At least five answers are on record, and Aquinas, remarkably, stacks four of them in a single reply without choosing among them.
 
@@ -268,7 +268,7 @@ At least five answers are on record, and Aquinas, remarkably, stacks four of the
 
 The practical question underneath — may alms be given out of ill-gotten goods? — Aquinas answers in the body of the same article with a threefold distinction. If what was wrongly acquired is owed back to the person it came from (robbery, theft, usury), restitution is due and no alms can be made of it. If it may not be kept but is not owed back, because both giving and taking were against divine law (simony), it *must* be given away in alms. If the acquisition itself was not unlawful and only its source was disgraceful — his example is *turpe lucrum*, a prostitute’s fee — it may be kept, and alms may be made of it. His *sed contra* is Augustine’s sermon: *de iustis laboribus facite eleemosynas*.
 
-#### Crux 4: who receives, and into whose dwellings? {#crux-4-who-receives-and-into-whose-dwellings .unnumbered}
+#### Crux 4: who receives, and into whose dwellings?
 
 *Recípiant vos in ætérna tabernácula.* The Latin does not say *whose* dwellings, and the tradition divides on the omission.
 
@@ -284,11 +284,11 @@ Jerome adds a restriction that sits badly with Augustine’s practice. He conclu
 
 Aquinas neither harmonises nor adjudicates. He offers three modes in which the poor may be said to receive anyone into eternal dwellings: by impetration, obtaining pardon through prayer; by congruous merit through their other good works; or “materially speaking,” in that the works of mercy done to them merit the giver’s own reception. The third is Chrysostom’s position kept alive inside a scheme that also keeps the first two.
 
-#### Crux 5: *cum defecéritis* — who or what fails? {#crux-5-cum-defecéritis-who-or-what-fails .unnumbered}
+#### Crux 5: *cum defecéritis* — who or what fails?
 
 The Vulgate’s *cum defecéritis* is second person plural: when *you* fail. Augustine glosses it accordingly — *cum deficere coeperitis*, when you begin to fail — and Bede reads it of the end of this life. But Cyril of Alexandria’s text reads otherwise. In the Syriac version translated by Payne Smith his lemma runs: “Make for yourselves friends of the unrighteous mammon: that *when it has failed*, they may receive you into eternal tabernacles,” and he expounds it of the money: “that when their earthly wealth fails them, they may gain a place in their tabernacles.”[^21] The difference is not decorative: on one reading the parable is about your death, on the other about your money’s exhaustion, and the urgency lands in a different place.
 
-#### Method: allegory refused, allegory offered {#method-allegory-refused-allegory-offered .unnumbered}
+#### Method: allegory refused, allegory offered
 
 Two of the tradition’s most careful readers here refuse to allegorise. Jerome states the rule before applying it: he has quoted the parable entire *ut non nobis intelligentiam aliunde quaeramus, et in parabola certas nitamur invenire personas; sed interpretemur eam quasi parabolam, hoc est similitudinem* — so that we do not look elsewhere for the sense, nor strain to find definite persons in the parable, but interpret it as a parable, that is, a likeness. Cyril is firmer still: “we are not to search into all the parts of the parable in a subtil and prying way,” since asking who the rich man is, who the accuser is, who the debtors are, and why one owed oil and the other wheat will make the discourse “at once obscure and redundant.”
 
@@ -298,13 +298,13 @@ Cyril’s own alternative is not allegory but compression: the steward simply *i
 
 Bede also supplies the most economical limitation of the commendation in verse 8. The children of this world are not called wise; they are called *prudentiores … in generatione sua*, prudent *in their own generation*, and Bede glosses that against Isaiah’s woe on those wise in their own eyes. He then turns the epithet into a rule of naming: *cuius enim quisque agit opera, eius cognominatur et filius* — whose works a man does, of him he is called a son.
 
-#### What the missal’s boundary does {#what-the-missals-boundary-does .unnumbered}
+#### What the missal’s boundary does
 
 Two decisions of the printed book shape what a congregation actually hears. The lection begins at verse 1, so the parable arrives detached from Luke 15, where the murmuring of Pharisees and scribes at Jesus receiving sinners provoked three parables of the lost; Jerome, who read the passage continuously, found the change of audience at 16:1 decisive and concluded that the parable exhorts the disciples to *clemency in remitting debts* — an exegesis harder to reach once the seam is cut. And the lection ends at verse 9, so the sayings that follow — fidelity in what is least, the unjust mammon, and *non potéstis Deo servíre et mammonæ* — go unread. What remains is the commendation and the counsel, with the closing prohibition removed.
 
 The one control the book does supply is placement. It sets this Gospel between an Epistle about being an heir and an Offertory about being humbled, and prints **Credo** immediately after *ætérna tabernácula*. Whether that placement was intended as an answer to the parable’s difficulty cannot be shown from any source consulted here, and no such intention is claimed.
 
-#### What remains genuinely unsettled {#what-remains-genuinely-unsettled .unnumbered}
+#### What remains genuinely unsettled
 
 It is worth stating plainly what this section has *not* resolved, because a guide that manufactured a consensus here would misrepresent its sources. Whether the steward’s act is left uncensured (Ambrose) or expressly excluded from imitation (Augustine) is a real disagreement between two Doctors. Whether “mammon of iniquity” describes provenance, allurement, valuation, inheritance, or maldistribution has five answers, four of which Aquinas holds together in one reply. Whether the friends receive us, or only our works do, is argued grammatically by Chrysostom against the plain sense assumed by Ambrose and Gregory. And whether it is you or your money that fails turns on a variant that a Latin missal cannot register. A reader who wants a single meaning for Luke 16:9 will have to choose among Fathers, and ought to know that this is what he is doing.
 
@@ -553,17 +553,17 @@ One philological note governs the whole gallery. The English phrases that entere
 
 Only sources actually used for a published claim are listed. Loci are given at the precision needed to verify the claim they support. Dates are the dates on which the source was read for this guide.
 
-### Liturgical books {#liturgical-books .unnumbered}
+### Liturgical books
 
 -   *Missale Romanum ex decreto Sacrosancti Concilii Tridentini restitutum, Summorum Pontificum cura recognitum*, editio typica (Vatican City: Typis Polyglottis Vaticanis, 1962). *Controlling witness for every appointed Latin form.* Formulary at printed pp. 387–388 (nos. 1512–1521); *Rubricæ generales* nn. 10–18 at printed p. XII; Fourth Sunday after Pentecost at printed p. 382; Purification of the B.V.M. at printed p. 467 (no. 2107). Read as 300-dpi page images of the CMAA facsimile, <https://media.churchmusicassociation.org/pdf/missale62.pdf>, SHA-256 `648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a`, 2026-07-25.
 
 -   *The Roman Missal translated into the English language for the use of the laity* (Philadelphia: Eugene Cummiskey, 1861). *Identified public-domain English witness for every appointed text quoted in English.* Printed pp. 411–413 = scan leaves 419–421, read as page images at <https://archive.org/details/romanmissaltran00churgoog>, 2026-07-25.
 
-### Scripture {#scripture .unnumbered}
+### Scripture
 
 -   Clementine Vulgate and Douay–Rheims (Challoner), as presented at <https://www.drbo.org/>. *Canonical-context control and the standard of comparison for every collation.* Ps 17; Ps 30; Ps 33; Ps 47; Ps 70; Luke 16; Romans 8; 1 Kings (1 Samuel) 21:10–15; 2 Kings (2 Samuel) 22:1. Read 2026-07-25.
 
-### Patristic and medieval witnesses {#patristic-and-medieval-witnesses .unnumbered}
+### Patristic and medieval witnesses
 
 -   Ambrose, *Expositio Evangelii secundum Lucam*, lib. VII, §245 (PL 15, col. 1764). Latin read in the *Patrologia Latina* text at Corpus Corporum, <https://mlat.uzh.ch/>, 2026-07-25. *The steward is not censured; the allurement reading of *mammona iniquitatis*; angels and saints as the receivers.*
 
@@ -591,7 +591,7 @@ Only sources actually used for a published claim are listed. Loci are given at t
 
 -   Cyril of Alexandria, *Commentary on the Gospel of St Luke*, Sermon 108, tr. R. Payne Smith (Oxford), pp. 507–510, read in the Internet Archive scan `p2commentaryupon00cyriuoft`, 2026-07-25. *The refusal to allegorise; the rich man as the steward; “when it has failed”; the translator’s note on the tense.*
 
-### Thomas Aquinas {#thomas-aquinas .unnumbered}
+### Thomas Aquinas
 
 -   *Super Epistolam ad Romanos*, cap. 8, lect. 2 (on *ergo debitores*) and lect. 3 (on vv. 14–17), Corpus Thomisticum, <https://www.corpusthomisticum.org/cro05.html>, 2026-07-25. *Debtors to the Holy Spirit; the Spirit’s leading and free will with Phil 2:13; *abba* and *pater* as the two peoples; *clamamus* as intensity of heart; God himself as the principal good inherited; the objection from the father’s death; *cohaeredes*; the necessity of *si tamen compatimur*.*
 
@@ -599,7 +599,7 @@ Only sources actually used for a published claim are listed. Loci are given at t
 
 -   *Catena aurea in Lucam*, cap. 16, lect. 1–2, Corpus Thomisticum, <https://www.corpusthomisticum.org/clc14.html>, 2026-07-25. *Used as the checked Latin transmission of Augustine, Ambrose, Gregory, Chrysostom, Basil, Theophylact, and “Origen” on this pericope; each retained witness is identified as transmitted, and the underlying work is named where it was separately verified.*
 
-### Documented later uses (Notable and Quotable) {#documented-later-uses-notable-and-quotable .unnumbered}
+### Documented later uses (Notable and Quotable)
 
 -   Anthony Trollope, *The Way We Live Now* (1875), ch. LXXXI; and *Barchester Towers* (1857), ch. XXXIX. Project Gutenberg ebooks 5231 and 3409, read 2026-07-25.
 

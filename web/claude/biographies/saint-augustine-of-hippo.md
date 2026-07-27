@@ -298,7 +298,7 @@ Project prose is original; quotations of ancient authors follow the public-domai
 
 All web sources were accessed and checked on 2026-07-24/25. Ancient-work citations in the text use conventional titles and loci with the numbering of the translations listed here.
 
-### Primary sources: Augustine {#primary-sources-augustine .unnumbered}
+### Primary sources: Augustine
 
 -   Augustine, *Confessions*, trans. J. G. Pilkington, in *A Select Library of Nicene and Post-Nicene Fathers*, series 1, vol. 1, ed. P. Schaff (New York: Christian Literature Company, 1886). Quotations follow the transcriptions at New Advent, books 1–10 (<https://www.newadvent.org/fathers/110101.htm> through `110110.htm`). The translation is public domain; the underlying Latin is ancient and public domain. A catalog-level source-library record for this volume is bound in `research/source-bindings.toml`.
 
@@ -308,19 +308,19 @@ All web sources were accessed and checked on 2026-07-24/25. Ancient-work citatio
 
 -   Augustine, *The City of God*, trans. M. Dods, G. Wilson, and J. J. Smith (Edinburgh: T. & T. Clark, 1871), 2 vols. Quotations (1 preface; 14.28; 15.22; 19.13; 22.30) were verified against the exact tracked text artifacts of Project Gutenberg eBooks 45304–45305 registered in this repository’s source library (`src/sources/works/augustine/de-civitate-dei/editions/dods-1871/`), including the registered passage records for 15.22 and 19.13.
 
-### Primary sources: other ancient witnesses {#primary-sources-other-ancient-witnesses .unnumbered}
+### Primary sources: other ancient witnesses
 
 -   Possidius of Calama, *Life of Saint Augustine*, trans. H. T. Weiskotten, *Sancti Augustini Vita Scripta a Possidio Episcopo* (Princeton: Princeton University Press, 1919), public-domain transcription at the Tertullian Project (<https://www.tertullian.org/fathers/possidius_life_of_augustine_02_text.htm>; introduction at `..._01_intro.htm`, source of the c. 432 dating). Cited by chapter. A catalog-level source-library record for this edition is bound in `research/source-bindings.toml`.
 
 -   Paul the Deacon, *History of the Langobards* 6.48, trans. W. D. Foulke (New York, 1907), at elfinspell.com (<https://elfinspell.com/MedievalMatter/PaultheDeacon-PaulusDiaconus/HistoryOfTheLangobards/PaulTheDeacon-Book6.html>); the eighth-century witness to both relic translations.
 
-### Later tradition {#later-tradition .unnumbered}
+### Later tradition
 
 -   *The Golden Legend* (Jacobus de Voragine, 13th c.), Life of S. Austin, in Caxton’s English version (1483), Temple Classics text at the Internet Medieval Sourcebook, Fordham University (<https://sourcebooks.fordham.edu/basis/goldenlegend/GoldenLegend-Volume5.asp>); source of the seashore-child addition (with Caxton’s own disclaimer), the *Te Deum* legend, and the elaborated relic-translation narrative.
 
 -   “The Te Deum,” *The Catholic Encyclopedia*, vol. 14 (New York, 1912), at New Advent (<https://www.newadvent.org/cathen/14468c.htm>); hymnological status of the alternating-composition legend.
 
-### Ecclesial reception {#ecclesial-reception .unnumbered}
+### Ecclesial reception
 
 -   *Catechism of the Catholic Church* 30, English text, Vatican website archive (<https://www.vatican.va/archive/ENG0015/__P9.HTM>); quoting *Confessions* 1.1.1.
 
@@ -332,7 +332,7 @@ All web sources were accessed and checked on 2026-07-24/25. Ancient-work citatio
 
 -   “Doctors of the Church,” *The Catholic Encyclopedia*, vol. 5 (New York, 1912), at New Advent (<https://www.newadvent.org/cathen/05075a.htm>); source for Boniface VIII’s 1298 decretal.
 
-### Modern scholarship and reference {#modern-scholarship-and-reference .unnumbered}
+### Modern scholarship and reference
 
 -   J. J. O’Donnell, *Augustine: Confessions. Text and Commentary* (Oxford, 1992), online electronic edition at Georgetown University (<https://faculty.georgetown.edu/jod/conf/>; commentary on books 8–9 at `comm8.html` and `comm9.html`). Source of the garden-scene historicity discussion (Courcelle, Sizoo) and the *Monnica* manuscript spelling; quoted in brief attributed snippets.
 

@@ -280,13 +280,13 @@ The online witnesses and claim-to-source record were checked through 23 July 202
 
 ## References
 
-### Sacred Scripture {#sacred-scripture .unnumbered}
+### Sacred Scripture
 
 -   Deut 6:4–5; Job 1–2 and 42:7–9; Ps 27:4; Jer 31:31–34; Ezek 36:26–27; Matt 6:9–13, 21:28–32, and 22:37–40; Mark 14:32–42; Luke 10:25–37; John 6:53–57, 9:1–3, and 15:9–17; Rom 5:5, 8:14–17, and 13:8–10; Gal 4:4–7; Col 1:24; 1 Tim 2:1–4; Jas 5:16; 2 Pet 1:4; and 1 John 4:7–21.
 
 -   The confession “God is love” occurs at 1 John 4:8 and 4:16, not in the Gospel of John. It is read within the complete unit’s account of the Father’s initiative, the Son’s mission, the Spirit, the Cross, prior divine love, the commandment, and the visible neighbor; [working English witness](https://www.vatican.va/archive/ENG0839/_P12E.HTM).
 
-### Authoritative Catholic witnesses {#authoritative-catholic-witnesses .unnumbered}
+### Authoritative Catholic witnesses
 
 -   *Catechism of the Catholic Church* 1812–1829 (theological virtues, infused charity, friendship, commandment, form of the virtues, and spiritual freedom), [official English](https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_one/article_7/ii_the_theological_virtues.html); 1965–1974 (the inward New Law), [official English](https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_three/article_1/iii_the_new_law_or_the_law_of_the_gospel.html); 1992 (justification), [official English](https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_three/article_2/i_justification.html); 1996–2005 (grace and participation), [official English](https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_three/article_2/ii_grace.html); 2006–2011 (merit within grace), [official English](https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_three/article_2/iii_merit.html); and 2095–2097 (charity informing religion and adoration), [official English](https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_one/article_1/ii_him_only_shall_you_serve.html).
 
@@ -304,7 +304,7 @@ The online witnesses and claim-to-source record were checked through 23 July 202
 
 -   Francis, apostolic exhortation *C’est la confiance* (15 October 2023), especially nos. 18–27, on Thérèse’s trust, Eucharistic desire, and faith within darkness; [official English](https://www.vatican.va/content/francesco/en/apost_exhortations/documents/20231015-santateresa-delbambinogesu.html).
 
-### Patristic witnesses {#patristic-witnesses .unnumbered}
+### Patristic witnesses
 
 -   St. Irenaeus of Lyons, *Against Heresies* IV.13.1–4, on fulfillment of the natural precepts, the greater obedience of liberty, and servants made friends; IV.14.1, on service benefiting the creature rather than the God who needs nothing. The Roberts–Rambaut English as printed in ANF volume 1 (Buffalo, 1887) was checked in the exact facsimile; New Advent supplies a distinct revised web presentation: [IV.13](https://www.newadvent.org/fathers/0103413.htm) and [IV.14](https://www.newadvent.org/fathers/0103414.htm).
 
@@ -312,7 +312,7 @@ The online witnesses and claim-to-source record were checked through 23 July 202
 
 -   Augustine, *Homilies on the First Epistle of John* VII.8–9, on correction, mercy, and acts proceeding from charity, [working English](https://www.newadvent.org/fathers/170207.htm); IX.4–6, on fear of punishment and chaste fear within love, [working English](https://www.newadvent.org/fathers/170209.htm).
 
-### Thomistic framework {#thomistic-framework .unnumbered}
+### Thomistic framework
 
 -   St. Thomas Aquinas, *Summa theologiae* I–II, q. 10, a. 4 (divine motion according to the voluntary mode); q. 106, a. 1 (the New Law chiefly as grace); q. 109, a. 6 (gratuitous motion in the free turning toward grace).
 
@@ -324,7 +324,7 @@ The online witnesses and claim-to-source record were checked through 23 July 202
 
 -   Latin loci checked in the [Corpus Thomisticum](https://www.corpusthomisticum.org/iopera.html) Leonine-text corpus; the [New Advent Summa](https://www.newadvent.org/summa/) was used as a working public English index. Work, question, article, and reply take precedence over either site’s wording.
 
-### Monastic and mystical witnesses {#monastic-and-mystical-witnesses .unnumbered}
+### Monastic and mystical witnesses
 
 -   St. Teresa of Jesus, *The Book of Her Life* 8.5, on prayer as close sharing with the One who loves us, used through the Church’s reception in CCC 2709.
 

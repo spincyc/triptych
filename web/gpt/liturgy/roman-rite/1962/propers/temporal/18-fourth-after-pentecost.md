@@ -28,7 +28,7 @@ TLM propers: light, travail, Christ’s word, and the merciful compelling of reb
 | Moral | The disciple tells the truth about failure, obeys Christ’s word before seeing a result, confesses sin amid abundance, and asks for illuminated sight and the merciful compelling of a rebellious will toward God. |
 | Anagogical | Creation’s travail tends toward freedom from corruption, the body toward glory, and the present mixed catch toward the final communion Augustine sees figured by John 21. |
 
-## Scriptural Date and Location {#scriptural-date-and-location .unnumbered}
+## Scriptural Date and Location
 
 *Canonical order governs; proper rows give traditional composition data under Location and Date, Luke’s additional row gives the narrated setting, spanning rows distinguish inherited attribution from historical judgment, and Psalm numbers follow the Vulgate with common modern numbers in parentheses.*
 
@@ -50,7 +50,7 @@ TLM propers: light, travail, Christ’s word, and the merciful compelling of reb
 | **Epistle** | Rom. 8:18–23 | Corinth, Achaia (present-day Greece) | c. AD 57 |
 | Tradition and scholarship identify St. Paul, with Tertius as scribe, writing to Jewish and Gentile house churches in Rome he had not visited. His eastern mission was nearly complete and the Jerusalem collection came next; Spain lay beyond Rome. Creation’s travail places Israel, Church, body, and cosmos within hoped-for liberation and resurrection (Romans introduction; Rom. 15–16, *NABRE*). |  |  |  |
 
-## The Propers: Themes and Movement {#the-propers-themes-and-movement .unnumbered}
+## The Propers: Themes and Movement
 
 > **Governing thesis: divine action restores creaturely action**
 >
@@ -59,7 +59,7 @@ TLM propers: light, travail, Christ’s word, and the merciful compelling of reb
 **1. Light & order** → **2. Groan, ask & obey** → **3. Sight & conversion** → **4. Refuge & effect**  
 *Introit–Collect* *Epistle–Gospel* *Offertory–Secret* *Communion–Postcommunion*
 
-### Illumined life moves under received order (*Int., Coll., Ep.*) {#illumined-life-moves-under-received-order-int.-coll.-ep. .unnumbered}
+### Illumined life moves under received order (*Int., Coll., Ep.*)
 
 | **Appointed claim** | **Decisive witness** | **Visible boundary** |
 |:-------------|:------------------------|:----------------------------|
@@ -67,7 +67,7 @@ TLM propers: light, travail, Christ’s word, and the merciful compelling of reb
 | **A course directed** | The Collect’s subject is *mundi cursus*, a world in motion; God’s order is the requested source of peace. Augustine, *City of God* XIX.13, calls the peace of all things the tranquility of order. | His definition illuminates the prayer but is not direct commentary on it; peace is not simply comfort or political quiet. |
 | **Travail under hope** | Chrysostom, *Romans* 14, reads creation’s groaning as travail tending toward newness and the body’s irreversible freedom from corruption. | Travail is not yet birth; firstfruits are not final possession. |
 
-### Mercy, judgment, and command meet truthful need (*Grad., All., Gosp.*) {#mercy-judgment-and-command-meet-truthful-need-grad.-all.-gosp. .unnumbered}
+### Mercy, judgment, and command meet truthful need (*Grad., All., Gosp.*)
 
 | **Movement** | **Text and inherited witness** | **Control** |
 |:-------------|:------------------------|:----------------------------|
@@ -75,7 +75,7 @@ TLM propers: light, travail, Christ’s word, and the merciful compelling of reb
 | Judgment shelters | The Alleluia names God as equitable Judge and refuge for the poor. Augustine, *Psalm 9*, 6 and 10, distinguishes God’s knowledge of hearts from human judgment and locates refuge in him. | Refuge does not cancel judgment; judgment does not make refuge unsafe. |
 | The word gives and calls | Teaching precedes command; truthful failure and obedience precede the catch; confession, “fear not,” vocation, and following come after. Cyril keeps the result Christ’s; Ambrose joins doctrine, humility, and office. | No promise makes every faithful undertaking measurably successful; abundance certifies Christ’s power, not Peter’s perfection. |
 
-### Illumined eyes and rebellious wills are brought to God (*Off., Sec.*) {#illumined-eyes-and-rebellious-wills-are-brought-to-god-off.-sec. .unnumbered}
+### Illumined eyes and rebellious wills are brought to God (*Off., Sec.*)
 
 | **Textual hinge** | **What is established** | **Source and boundary** |
 |:-------------|:------------------------|:----------------------------|
@@ -84,7 +84,7 @@ TLM propers: light, travail, Christ’s word, and the merciful compelling of reb
 | *ad te ... voluntates* | The wills are the object of *compelle*, and God himself is their personal end. | Conversion is more than improved performance; the syntax does not identify these wills with the oblations. |
 | *etiam rebelles compelle propitius* | Resistance is real, efficacious action is requested, and *propitius* governs its merciful mode. | Augustine, *Grace and Free Will* 31–33, and Chrysostom on Phil. 2:12–13 preserve gifted and real willing; the prayer warrants no human coercion. |
 
-### The receiver rests in another’s strength and still needs effect (*Comm., Postcomm.*) {#the-receiver-rests-in-anothers-strength-and-still-needs-effect-comm.-postcomm. .unnumbered}
+### The receiver rests in another’s strength and still needs effect (*Comm., Postcomm.*)
 
 | **Proper** | **Dependence named** | **Decisive control** |
 |:-------------|:------------------------|:----------------------------|
@@ -105,9 +105,9 @@ TLM propers: light, travail, Christ’s word, and the merciful compelling of reb
 >
 > The world’s *cursus* is asked to be *directed* by God’s order; rebellious wills are the object of his merciful *compelling*; the received mysteries are the subject of *purifying* and *protecting*. Governance, conversion, and sacramental effect are therefore related divine works, not interchangeable descriptions. The boat and net may illuminate their conjunction only as bounded proposals; neither image translates the orations.
 
-## The Propers: Detailed Commentary {#the-propers-detailed-commentary .unnumbered}
+## The Propers: Detailed Commentary
 
-### Four opening voices: confidence, petition, lament, acclamation (*Int., Coll., Grad., All.*) {#four-opening-voices-confidence-petition-lament-acclamation-int.-coll.-grad.-all. .unnumbered}
+### Four opening voices: confidence, petition, lament, acclamation (*Int., Coll., Grad., All.*)
 
 These four texts do not repeat one mood. The Introit makes confession through assertions and questions; the Collect asks through coordinated clauses; the Gradual rearranges a communal lament into plea and versicle; the Alleluia acclaims judgment and refuge before the Gospel. Their formal differences keep the Sunday’s dependence upon God from becoming a generic theme.
 
@@ -120,7 +120,7 @@ These four texts do not repeat one mood. The Introit makes confession through as
 
 The sequence consequently deepens rather than cancels its opening confidence. Those who name God as light still ask that the world be directed; those who ask pardon still acclaim the Judge; those who acclaim judgment approach that Judge as refuge.
 
-### Romans 8: travail tends toward bodily glory (*Ep.*) {#romans-8-travail-tends-toward-bodily-glory-ep. .unnumbered}
+### Romans 8: travail tends toward bodily glory (*Ep.*)
 
 Romans 8:18–23 is not a general maxim that pain eventually pays. Paul compares present sufferings with glory to be revealed, then gives creation a voice: it was subjected to vanity in hope, groans in travail, and awaits the revelation of God’s children. Believers possess the firstfruits of the Spirit while still groaning for adoption’s completion, “the redemption of our body.” Possession and waiting, gift and ache, remain simultaneous.
 
@@ -134,7 +134,7 @@ Romans 8:18–23 is not a general maxim that pain eventually pays. Paul compares
 >
 > *Against Heresies* V.7.1–2 appeals to Romans 8:11: the mortal body that dies is the body the Spirit vivifies. “Spiritual body” therefore names this body raised through the Spirit for enduring life, not a replacement for discarded matter. Irenaeus comments on a closely related Pauline verse, not directly on Romans 8:18–23.
 
-### Luke 5: Christ teaches, commands, gives, and calls (*Gosp.*) {#luke-5-christ-teaches-commands-gives-and-calls-gosp. .unnumbered}
+### Luke 5: Christ teaches, commands, gives, and calls (*Gosp.*)
 
 Luke’s narrative order prevents the catch from becoming a free-standing success story. The crowd first presses to hear God’s word; Jesus teaches from Simon’s boat; only then does he command another cast. Simon reports expert failure without disguise and obeys before the result. The catch exceeds private capacity, Peter confesses sin, Christ answers fear, and the fishermen leave the abundance to follow its giver.
 
@@ -146,7 +146,7 @@ Luke’s narrative order prevents the catch from becoming a free-standing succes
 | Partners and boats | Later pastors cooperate in a work whose efficacy remains Christ’s. | Ambrose permits several ecclesial readings of the two boats or peoples. | Cooperation is real; no one symbolic identification exhausts the scene. |
 | Confession and call | Peter’s fear is reverence before Christ’s purity and power. | Empty presumption yields to humility, confession, gift, and vocation. | Grace answers guilt without pretending Peter is already complete. |
 
-### Luke’s burdened catch and John’s completed shore (*Gosp.*) {#lukes-burdened-catch-and-johns-completed-shore-gosp. .unnumbered}
+### Luke’s burdened catch and John’s completed shore (*Gosp.*)
 
 Augustine reads Luke 5 beside John 21 without denying either event’s literal history. In *Tractate 122 on John*, 7, the differences form an ecclesiological contrast: Luke’s catch signifies the Church in the present age, while John’s post-Resurrection catch signifies her final condition.
 
@@ -161,7 +161,7 @@ The contrast guards both directions: abundance cannot certify every person or st
 
 St. Anthony of Padua’s sermon for the Fifth Sunday after Pentecost supplies a later medieval reception of the same catch. He repeatedly returns to Peter’s *in verbo tuo*: nets cast on the preacher’s own word catch nothing or only the praise-seeking croak of a frog, while fruit received on Christ’s word must be attributed to grace. At Peter’s knees he holds fear over sin together with hope in the Redeemer’s mercy, then treats leaving all as freedom for following. Cyril emphasizes the Lord’s continuing gift, Ambrose the apostolic and ecclesial depths of the boat, and Anthony the preacher’s temptation to appropriate the catch; together they give abundance an ascetical as well as ecclesial test.
 
-### The offered petition is for wakeful interior sight (*Off.*) {#the-offered-petition-is-for-wakeful-interior-sight-off. .unnumbered}
+### The offered petition is for wakeful interior sight (*Off.*)
 
 Psalm 12 moves from delay and sorrow through a plea for illuminated eyes to trust in mercy. The Offertory appoints the petition, not a boast about achieved clarity.
 
@@ -171,7 +171,7 @@ Psalm 12 moves from delay and sorrow through a plea for illuminated eyes to trus
 
 At Offertory the gift-bearer still asks to see, remain awake, and escape the enemy’s claim. The Introit’s indicative—the Lord is my light—and this imperative—illuminate my eyes—remain distinct forms of dependence.
 
-### The Secret asks acceptance and merciful compulsion (*Sec.*) {#the-secret-asks-acceptance-and-merciful-compulsion-sec. .unnumbered}
+### The Secret asks acceptance and merciful compulsion (*Sec.*)
 
 Only decisive clauses appear here; the complete prayer remains in the hand missal and repository record.
 
@@ -187,7 +187,7 @@ Only decisive clauses appear here; the complete prayer remains in the hand missa
 
 Augustine’s *Confessions* VIII.5 and 8–12 narrates a will divided through entrenched habit without dividing the person into alien substances. *Grace and Free Will* 31–33 says that God gives what he commands by helping the commanded person obey; grace initiates willing and cooperates in action. Chrysostom, on Philippians 2:12–13, likewise joins God’s working of willing and action to exhortation, effort, and obedience. These sources illuminate the doctrine at stake; none is direct commentary on this Secret.
 
-### Refuge received, purification still requested (*Comm., Postcomm.*) {#refuge-received-purification-still-requested-comm.-postcomm. .unnumbered}
+### Refuge received, purification still requested (*Comm., Postcomm.*)
 
 Psalm 17 is David’s song of deliverance, and Augustine reads its speaking subject as whole Christ, head and body. In sections 2–3, “my strength” means the Lord by whom the speaker is strong; refuge follows divine deliverance; hope rests on the help of God’s prior call; the defender prevents proud reliance upon self. Communion therefore gives the Church a voice of received strength rather than acquired invulnerability.
 
@@ -197,7 +197,7 @@ The Postcommunion preserves the same dependence after reception. The mysteries a
 >
 > *Against Heresies* V.2.2–3 argues that Eucharistic bread and cup nourish the flesh with Christ’s body and blood; that same flesh is capable of God’s gift and will rise incorruptibly. This related doctrinal witness closes the distance between Romans’ bodily redemption and sacramental reception without pretending that Irenaeus comments on this Communion antiphon or Postcommunion.
 
-## The Propers: Notable and Quotable {#the-propers-notable-and-quotable .unnumbered}
+## The Propers: Notable and Quotable
 
 -   ***Dominus illuminatio mea* — University of Oxford motto and a Vice-Chancellor’s pun.** The Introit’s “Lord is my light” has served on Oxford’s arms since at least the later sixteenth century, shifting psalmic trust into institutional claims about learning. In the 2023 Oration, Irene Tracey deliberately dropped letters to make *Domus illuminat nos*—“our home enlightens us”—and redirected divine illumination toward collegiate community. The joke is her update, not a translation of the psalm.
 
@@ -205,7 +205,7 @@ The Postcommunion preserves the same dependence after reception. The mysteries a
 
 -   **“The whole creation groaneth” — William Lyon Phelps, *Reading the Bible* (1919), pp. 8–9.** Phelps remembered picturing everyone in the world suffering green-apple indigestion at the same instant and drawing them in a circle. Yale president Arthur Hadley later supplied the punchline: unauthorized apple-eating really did make creation groan. Paul’s cosmic travail becomes gastrointestinal slapstick and an Eden pun, not an alternative exegesis.
 
-## The Propers: Interpretive Possibilities {#the-propers-interpretive-possibilities .unnumbered}
+## The Propers: Interpretive Possibilities
 
 *The following exploratory proposals were developed in an AI-assisted editorial process. They are attributed to none of the cited authorities and claim no historical compositional intent. Each states its anchors and limits.*
 
@@ -219,11 +219,11 @@ The Postcommunion preserves the same dependence after reception. The mysteries a
 
 **A visible result still awaits a true word. (*Gosp., Off., Comm.*)** The Offertory imagines the enemy naming a fall as victory, *Praevalui adversus eum*; Peter names an overwhelming success by confessing, *homo peccator sum*; Christ then says *Noli timere* and names a future vocation; Communion finally names the Lord as strength and refuge. The mechanism is a contest of interpretations around visible outcomes, resolved neither by the enemy’s verdict nor by the recipient’s self-assessment alone. Element-by-element reading misses how danger and abundance can both be misread until judgment is received from a trustworthy speaker. The fruit is a communal discipline of refusing to identify success, failure, fear, or self-condemnation with God’s final word. The disconfirming condition is that these speakers do not address one event: the proposal is a liturgical comparison of speech acts, not a concealed narrative parallel or a denial of prudent empirical judgment.
 
-## Appendix: Scope and Qualifications {#appendix-scope-and-qualifications .unnumbered}
+## Appendix: Scope and Qualifications
 
 > **Text.** Ten propers collated with the 1962 typical-edition facsimile, pp. 382–383. **History.** Seven direct passages in canonical order; tradition, narrated setting, and historical judgment distinguished. **Reception.** Direct exposition of all five psalm chants, Romans 8, and Luke 5; Greek, Latin, and Antonian witnesses illuminate order, resurrection, John 21, grace, and Eucharistic reception. **Limits.** Psalm origins and Luke’s setting remain disputed; the public survey is not exhaustive. **Full records.** `propers/verified.md`; `research/scope.md`.
 
-## References {#references .unnumbered}
+## References
 
 **Primary and inherited sources**
 
@@ -259,7 +259,7 @@ The Postcommunion preserves the same dependence after reception. The mysteries a
 
 -   Traditional orientation: New Advent Bible titles for Psalms [9](https://www.newadvent.org/bible/psa009.htm), [12](https://www.newadvent.org/bible/psa012.htm), [17](https://www.newadvent.org/bible/psa017.htm), [26](https://www.newadvent.org/bible/psa026.htm), [78](https://www.newadvent.org/bible/psa078.htm); *Catholic Encyclopedia*, [“Psalms”](https://www.newadvent.org/cathen/12533a.htm), [“King David”](https://www.newadvent.org/cathen/04642b.htm), [“Luke”](https://www.newadvent.org/cathen/09420a.htm), [“Chronology of Jesus”](https://www.newadvent.org/cathen/08377a.htm), [“Genesareth”](https://www.newadvent.org/cathen/06413a.htm); accessed 2026-07-10.
 
-## Generation Metadata {#generation-metadata .unnumbered}
+## Generation Metadata
 
 **Last revised (UTC):** 2026-07-19T17:00:22Z
 

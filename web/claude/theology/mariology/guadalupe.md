@@ -214,7 +214,7 @@ This section therefore does three things. It states each position as its stronge
 
 ### The two positions, stated at their strongest
 
-#### The case for a late origin {#the-case-for-a-late-origin .unnumbered}
+#### The case for a late origin
 
 The strongest form of the sceptical case is not that anyone lied. It is that a devotion of genuine sixteenth-century antiquity acquired, in the seventeenth century, an origin narrative of a familiar and well-attested literary kind, and that the narrative was received with such rapidity and such joy that its recent composition was forgotten within two generations.
 
@@ -222,7 +222,7 @@ On this account the sequence runs: a hermitage of Our Lady is established at Tep
 
 The load-bearing evidence is the silence of §3.1, the 1556 file of §3.2, the viceroy’s letter of 1575, and the absence of any dated sixteenth-century manuscript of the narrative. The load-bearing argument is that the coincidence of all four is not the kind of thing that accident produces.
 
-#### The case for the tradition {#the-case-for-the-tradition .unnumbered}
+#### The case for the tradition
 
 The strongest form of the apparitionist case is likewise not what its opponents sometimes describe. It is not an appeal to piety against evidence. It is a claim about *which* evidence a historian of sixteenth-century Mexico is entitled to privilege.
 
@@ -254,25 +254,25 @@ Two facts about this table deserve saying aloud, because the dispute is often na
 
 Four cruxes carry almost the whole weight.
 
-#### Crux 1: the date of the *Nican mopohua* {#crux-1-the-date-of-the-nican-mopohua .unnumbered}
+#### Crux 1: the date of the *Nican mopohua*
 
 Everything turns on this, and it is a philological question. If the Nahuatl narrative is a sixteenth-century composition, the case for a seventeenth-century invention collapses, whatever remains to be said about the events themselves. If it depends on Sánchez’s 1648 Spanish book, the case for antiquity loses its principal support.
 
 The remarkable feature of the modern literature is that the philological question does not track the theological one. Garibay, who dated the text to Sahagún’s Tlatelolco circle between 1564 and 1570, was arguing *for* the tradition. O’Gorman, who accepts that Antonio Valeriano wrote it, uses that conclusion against the tradition: on his reading Valeriano composed it about 1556 precisely as a work of persuasion addressed to Indians, and its literary quality is evidence of authorship, not of testimony. The Sousa–Poole–Lockhart edition argues for dependence on Sánchez and a date after 1648. A reader who wants to know whether the text is early must therefore follow an argument about Nahuatl style, vocabulary, and textual parallels—not about piety.[^23]
 
-#### Crux 2: the **Códice Escalada** {#crux-2-the-códice-escalada .unnumbered}
+#### Crux 2: the **Códice Escalada**
 
 In 1995 the Jesuit Xavier Escalada announced, and in 1997 published, a small piece of treated animal skin bearing a drawing of an apparition scene and a kneeling Indian, glosses in Nahuatl including the name Juan Diego and a death date, the year 1548, what is presented as the signature of Bernardino de Sahagún, and a glyph read as that of Antonio Valeriano. If genuine it is a sixteenth-century witness to Juan Diego’s existence and death, and it would be decisive.
 
 Its authenticity is disputed. The reported grounds of dispute include the character of the drawing and of the Valeriano glyph, the syntax of the glosses, the presence of two inks, and—most consequentially for method—the conditions under which it was examined: the reported tests of 1997 are said to have been non-destructive and partly conducted on photographic reproductions at the owner’s request, and one of the participating scientists is reported to have publicly qualified the certainty of the findings in 2002. This study reached no primary publication of any examination and reports the whole matter at that ceiling.[^24]
 
-#### Crux 3: what counts as a source {#crux-3-what-counts-as-a-source .unnumbered}
+#### Crux 3: what counts as a source
 
 The two schools weight source-types differently in a way that is methodological rather than evidential. One holds that a narrative first attested in print in 1648 must be treated as a 1648 text until an earlier witness is produced, and that oral transmission recorded in 1666 by an interested tribunal cannot bear the weight of a 1531 event. The other holds that a documentary standard calibrated to European archives systematically erases Indigenous memory, and that requiring a dated alphabetic Nahuatl manuscript from the 1530s is requiring evidence that the conditions of the period made almost impossible.
 
 Both propositions are true of something. The dispute is about which is true of this case.
 
-#### Crux 4: the argument from silence {#crux-4-the-argument-from-silence .unnumbered}
+#### Crux 4: the argument from silence
 
 Its force is proportional to how confident one is that a given writer *would* have mentioned the event. That confidence is highest for Zumárraga, who is made the narrative’s second protagonist, and lowest for writers with no occasion to touch the matter. The sceptical case is strong exactly to the degree that it concentrates on Zumárraga and on the 1556 file, and weaker as it lengthens into a list. The apparitionist case is strong exactly to the degree that it supplies positive early evidence, and weaker as it relies on explaining silences away.
 
@@ -365,29 +365,29 @@ Two prior points bound the whole discussion. First, the image is a venerated obj
 
 ### The documented examinations
 
-#### 1666: the painters, and the reverse {#the-painters-and-the-reverse .unnumbered}
+#### 1666: the painters, and the reverse
 
 The 1666 *Informaciones jurídicas* (§2.2) included opinions of painters, taken with the glass case opened. On that occasion the back of the cloth was seen—one of only three occasions on which this is known to have happened. Francisco de Florencia, S.J., who became the tradition’s great seventeenth-century expositor, later recorded what he and the canon Francisco de Siles saw there: not a shadow image showing through the thin cloth, but blotches of colour that seemed to them like the pressed juice of various flowers and leaves—dark green of lily leaf, snowy white, purple of iris, pink of rose, blue of violet, yellow of broom—distinct and unconfused, at which they marvelled for some time.[^32]
 
 That testimony is doubly instructive. It is an apparitionist eyewitness saying that the reverse shows coloured staining that had soaked through, and it is the origin of the durable belief that the image was imprinted by the juice of flowers.
 
-#### 1751–1756: Miguel Cabrera and six colleagues {#miguel-cabrera-and-six-colleagues .unnumbered}
+#### 1751–1756: Miguel Cabrera and six colleagues
 
 On 30 April 1751 the painter Miguel Cabrera, with six colleagues, examined the image at length with the glass removed, confirmed its measurements, made colour tests (**templas**) directly on the paint, and studied the technique and materials. He published his opinion five years later as *Maravilla americana* (1756), and it was the report sent to Rome in support of the petition for a proper Office and Mass. Its practical consequence is documented and unambiguous: after 1751 the colouring of the copies produced by Cabrera and his contemporaries changed markedly, in flesh tones and in dress, because the painters had at last seen the original closely.[^33]
 
 Cabrera also reported a feature that became famous: what he took to be a numeral eight near the right foot, which he read as pointing either to the octave of the Immaculate Conception or to the image as the eighth wonder of the world.
 
-#### 1787: Bartolache and the Academy painters {#bartolache-and-the-academy-painters .unnumbered}
+#### 1787: Bartolache and the Academy painters
 
 In 1787 the physician and mathematician José Ignacio Bartolache conducted the most methodologically ambitious examination before the twentieth century. With the abbot’s permission he made three inspections with the case open, accompanied by a notary and by five qualified painters connected with the Real Academia de San Carlos. He addressed the question of the support material, arguing that the cloth was not maguey (**ixtle**) but the fibre of a palm (**iczotl**); he had ayates woven under his own supervision by Indigenous weavers and had copies painted on them between 6 February and 14 March 1787 as a controlled comparison; and he had his painters examine Cabrera’s “eight,” who reported in a notarial act of 1 March 1787 that it was nothing special and copied it identically. He published the results posthumously in 1790.[^34]
 
-#### 1887–1895: the crown {#the-crown .unnumbered}
+#### 1887–1895: the crown
 
 The image’s material history includes one episode of change that is documented beyond dispute and is worth recording precisely because it is so seldom mentioned. The image had long borne a painted crown. In January 1887, while photographs were being taken with the glass open in preparation for the canonical coronation, it was noticed that the crown was gone. Accusations flew in the Mexican press and among the clergy; the promoter of the coronation swore that neither he nor the archbishop had had any part in it; others argued publicly that its disappearance was itself a miracle by which the Virgin signified her willingness to be crowned anew. On 30 September 1895, when the image was returned to the collegiate church for the coronation, an instrument was drawn up before many witnesses recording that no crown existed on it and there was no trace that one ever had.[^35]
 
 Nothing follows from this about the image’s origin. What follows is methodological: the object now venerated is not, in every visible detail, identical to the object venerated in 1750, and any argument that treats the present surface as untouched since 1531 must reckon with that.
 
-#### 1982: the conservation examination {#the-conservation-examination .unnumbered}
+#### 1982: the conservation examination
 
 On the night of 27 September 1982 the restorer José Sol Rosales carried out a consolidation and surface cleaning at the initiative of Jorge Guadarrama, conservator of the image and director of the Basilica museum, in the presence of the then abbot Guillermo Schulenburg and his archpriest, working through the night so that the image need not be withdrawn from cult. The counter-frame, the acrylic case of 1976, and nearly fifty studded nails tensioning the cloth were removed; a consolidant was applied; and the reverse of the painting was seen for the third time in its documented history.
 
@@ -527,11 +527,11 @@ Two things about that formula deserve notice. It is exact: it denies that the ap
 
 ### The twentieth and twenty-first centuries
 
-#### Patronage of Latin America, and a recorded gap {#patronage-of-latin-america-and-a-recorded-gap .unnumbered}
+#### Patronage of Latin America, and a recorded gap
 
 On 16 August 1910 the Ordinary Congregation of Sacred Rites met in the Apostolic Vatican Palace with, as the fifth item of its agenda, “the election and declaration of the B. Virgin Mary called of Guadalupe as Patroness of all Latin America.” The resulting act was not located.[^53]
 
-#### Pius XII, 1945 {#pius-xii-1945 .unnumbered}
+#### Pius XII, 1945
 
 For the fiftieth anniversary of the coronation Pius XII addressed a radio message to the Mexican faithful on 12 October 1945. Its register is worth attending to: the Pope narrates the tradition, and marks that he is narrating it.
 
@@ -541,11 +541,11 @@ For the fiftieth anniversary of the coronation Pius XII addressed a radio messa
 >
 > «¡Viva la Virgen de Guadalupe, Emperatriz de América y Reina de Méjico!»[^54]
 
-#### The Basilica, 1976 {#the-basilica-1976 .unnumbered}
+#### The Basilica, 1976
 
 Two acts of Paul VI belong to the modern shrine. By the apostolic letter **Sacra illa** of 4 October 1976 the title and dignity of minor basilica were transferred in perpetuity from the old church to the newly built one; on 12 October 1976 the new temple was dedicated.[^55]
 
-#### John Paul II: pilgrimage, teaching, feast, canonization {#john-paul-ii-pilgrimage-teaching-feast-canonization .unnumbered}
+#### John Paul II: pilgrimage, teaching, feast, canonization
 
 John Paul II came to the shrine in 1979, 1990, 1999 and 2002; the last three visits carried the beatification, the promulgation of *Ecclesia in America*, and the canonization. The exhortation was given at Mexico City on 22 January 1999, and its paragraph 11 is the fullest magisterial statement on Guadalupe.
 
@@ -567,11 +567,11 @@ The implementing act followed two months later, and it is exact.
 
 On 31 July 2002, in the Basilica, John Paul II canonized Juan Diego Cuauhtlatoatzin (§5). The homily’s register is again worth notice: it calls the Guadalupe writings “the accounts of Guadalupe, sensitively written and steeped in tenderness”; it quotes the Mexican episcopate’s statement of 14 May 2002 that the “Guadalupe Event” meant a beginning of evangelization “with a vitality that surpassed all expectations”; it describes Juan Diego as having “facilitated the fruitful meeting of two worlds”; and it turns at once to a present-tense obligation: “it is necessary today to support the indigenous peoples in their legitimate aspirations, respecting and defending the authentic values of each ethnic group.”[^58]
 
-#### The General Roman Calendar, 2002 and 2008 {#the-general-roman-calendar-2002-and-2008 .unnumbered}
+#### The General Roman Calendar, 2002 and 2008
 
 One liturgical fact is regularly misstated and is worth fixing. The third typical edition of the *Missale Romanum* (2002) did not carry Our Lady of Guadalupe or St Juan Diego in the General Roman Calendar. Both were added in the emended reprint of 2008, whose official list of variations records, under **Calendarium Romanum Generale**, the addition of **S. Ioannis Didaci Cuauhtlatoatzin** at 9 December and of **B. Mariae Virginis de Guadalupe** at 12 December.[^59]
 
-#### Continuing reception {#continuing-reception .unnumbered}
+#### Continuing reception
 
 Papal celebration of the feast at Rome has continued: Francis celebrated Masses of Our Lady of Guadalupe in St Peter’s Basilica on 12 December in several years and went on pilgrimage to the Basilica in Mexico City on 13 February 2016; Leo XIV preached at the Mass of Our Lady of Guadalupe in St Peter’s on 12 December 2025 and, on 5 February 2026, addressed a message to a pastoral-theological congress on the Guadalupan event, looking toward the fifth centenary of the apparition in 2031.[^60]
 
@@ -655,11 +655,11 @@ That is the whole of the obligation, and it is enough.
 
 ## Scope, Status, and Qualifications
 
-### Question and thesis boundary {#question-and-thesis-boundary .unnumbered}
+### Question and thesis boundary
 
 This study answers one question: what competent ecclesiastical authority has actually done about Guadalupe, in what words and with what object; what the surviving documentary record will and will not carry; how the historicity dispute stands among the scholars who conduct it; what the beatification and canonization of Juan Diego establish; what the documented examinations of the image do and do not show; how the Nahuatl narrative reads as Nahuatl; and what all of it obliges. It is a source-audited study instrument, ecclesial-judgment-first in method: not a devotional narrative, a critical edition, a magisterial act, a materials-science report, a Nahuatl philological study, or a history of Mexico. *It offers no judgment of its own on whether the events of December 1531 occurred*, and its refusal to do so is a finding about the state of the evidence and about this study’s own competence, not a verdict against either side.
 
-### Corpus and exclusions {#corpus-and-exclusions .unnumbered}
+### Corpus and exclusions
 
 *Included.* The acts of competent authority located and listed at §1.2, each at its own object; the printed witnesses of 1648 and 1649, with the 1649 imprint read and collated at the page-image level for the passages quoted; the seventeenth- and eighteenth-century apologetic sequence at the level of the 1785 compilation; the 1666 depositions at the level of the published descriptions; the shrine’s own published inventory of sixteenth-century documents, reproduced at the shrine’s level with ceilings assigned; the silence problem as García Icazbalceta’s 1883 letter states it, read in full; the *Información* of 1556 through O’Gorman’s analysis and appendices, read at length; the named modern positions in the historicity dispute at the levels recorded in §4.3; the cause of Juan Diego from the 1981 petition to the 2002 canonization; the documented examinations of the image in 1666, 1751, 1787 and 1982, and the crown episode of 1887–1895; a traceability audit of seven widely circulated claims about the image; the Nahuatl text’s rhetoric read directly in the 1649 imprint; the reception chain from 1555 to Leo XIV’s message of 5 February 2026; and the doctrinal and procedural frame, including the 2024 DDF norms.
 
@@ -667,15 +667,15 @@ This study answers one question: what competent ecclesiastical authority has act
 
 *Not consulted.* Sánchez 1648; Becerra Tanco; Florencia; the *Informaciones jurídicas* of 1666 in any edition; the *Información* of 1556 in manuscript or in any of its three printed editions; Sahagún’s *Historia general* in the Florentine Codex or any critical edition; Motolinía, Mendieta, Las Casas, the Garcés letter, and the 1569–1570 *Descripción del Arzobispado*; Cabrera 1756 and Bartolache 1790 beyond their catalogue records; the Sol Rosales and Guadarrama conservation reports as printed in 2005; Callahan 1981; the **Códice Escalada** and every publication about it; the books of Poole, Sousa–Poole–Lockhart, Brading, Burkhart, von Wobeser, González Fernández and Chávez; the acts of the Fifth Mexican Provincial Council; the Roman acta of the 1890–1894 Office cause; the 1894 Roman printing of the new Office; and *Verbum Domini*.
 
-### Geography, chronology, and currentness {#geography-chronology-and-currentness .unnumbered}
+### Geography, chronology, and currentness
 
 Subject geography: Tepeyac and Mexico City; Cuauhtitlán; the Archdiocese of Mexico; Rome. Subject range: 1531 (the events as narrated) and 1555–1556 (the earliest securely documented cult) to the acts current at the as-of date. *As-of date: 2026-07-25.* All mutable claims—the Dicastery for the Doctrine of the Faith’s documents index, the Holy See’s document trees, the shrine’s own published pages, and the most recent papal reception—were checked on that date. No act determining the supernatural origin of the events was located, and no later act superseding any of the acts inventoried was located. Stable historical facts are not given artificial currentness. Every negative result in this study is a bounded search, correctable by better evidence, never a guarantee.
 
-### Taxonomy and terminology {#taxonomy-and-terminology .unnumbered}
+### Taxonomy and terminology
 
 Kept distinct throughout: *received narrative* (the content of the 1649 tract and its descendants); *documentary witness* (a dated text, at the level at which it was read); *competent act* (a papal, dicasterial, conciliar or diocesan act, at its own object); *liturgical concession* (Office, Mass, feast, calendar inscription); *honour* (coronation, basilica dignity, patronage); *papal teaching and piety* (exhortation, homily, message, pilgrimage); *hagiographical presentation* (the Holy See’s biography of a saint, in its own genre); *scholarly position* (reported at the level recorded at §4.3); *material finding* (what an examination reported, at the level of the publication reached); and *editorial synthesis*. “Reported” is the default register for the events of 1531 and for everything attributed to the apparition. **Fides humana** names the prudent human assent invited by approved private revelation. The six determinations of the 2024 DDF norms are current categories and are applied to no legacy act.
 
-### Source hierarchy and method {#source-hierarchy-and-method .unnumbered}
+### Source hierarchy and method
 
 Priority: operative texts in identified official witnesses—*Acta Apostolicae Sedis*, *Acta Sanctae Sedis*, *Notitiae*, and the Holy See’s web texts, with the *AAS*/*ASS* pages located and read at first hand in the Holy See’s own scans and the 1999 *Notitiae* decree read from rendered page images; then the 1649 imprint, read in the John Carter Brown Library digitization with the quoted passages collated against page images and, for the Nahuatl passages, against the independent 1887 printing by Agustín de la Rosa; then open-access peer-reviewed and university-press scholarship (O’Gorman; Cuadriello) at its own level; then public-domain nineteenth- and eighteenth-century printed sources at their own level; then institutional self-description (the shrine’s document page) marked as such; then reported accounts (press, reference works, postulation-side accounts), always marked as reported.
 
@@ -683,11 +683,11 @@ Quotations are exact from the named witness. Latin, Spanish and Nahuatl are quot
 
 *Assisted verification, recorded.* Two research passes—on the Holy See’s acts and on the textual witnesses of the *Nican mopohua*—were performed by assisting agents of the same AI contributor working under instructions to report only what they had actually retrieved. Every load-bearing result of those passes that is used in the publication was then independently re-retrieved and read by the author of this study, with two exceptions, which are marked in place: the two *Notitiae* loci for the 2002 and 2008 states of the General Roman Calendar (§8.4), and the enumeration of continuing papal celebrations (§8.4).
 
-### Qualifications and unresolved items {#qualifications-and-unresolved-items .unnumbered}
+### Qualifications and unresolved items
 
 (1) The Latin text of Benedict XIV’s 1754 act was not reached in any edition; the incipit *Non est equidem* is attested only in the 1785 Guadalupan compilation, and an index anomaly in the available Mechelen *Bullarium* volume is recorded at §8.2. Nothing about the brief’s wording is asserted. (2) Leo XIII’s brief of 8 February 1887, the Sacred Congregation of Rites decree of 6 March 1894, and any contemporary Roman notice of the 1895 coronation were not found in the *Acta Sanctae Sedis* volumes searched; they are reported from O’Gorman. (3) No act declaring Our Lady of Guadalupe patroness of Latin America was found in *AAS* 1910 or 1911, and no Guadalupan act of Pius XII was found in *AAS* 1946. (4) No Latin canonization formula for Juan Diego was located in *AAS* 94 (2002); the consistorial decree there printed assigns his canonization to 30 July 2002, against the volume’s own index and the dated homily. (5) The rank of the 9 and 12 December celebrations in the General Roman Calendar is not asserted; the 1999 decree’s **gradu festi** governs the calendars of the Americas. (6) The *Nican mopohua*’s date and authorship are unresolved and are not adjudicated. (7) The **Códice Escalada** is reported only as a disputed object; no primary publication of any examination was reached. (8) The 1990s objections are reported from press and reference accounts; no letter was read, and two attempted retrievals returned HTTP 403. (9) Callahan 1981 and the 1982 conservation reports were not read; the latter are used at Cuadriello’s level. (10) Seven popular claims about the image could not be traced to a reachable source and are recorded as such at §6.3; “not traced” means this study could not reach a source, not that none exists. (11) The identity of whoever removed the painted crown between 1887 and 1895 is not established and is not asserted. (12) Miguel León-Portilla’s *Tonantzin Guadalupe* (2000) was verified as to bibliographic identity through a Library of Congress record but was not read, and his position is not summarized in this study. (13) No independent Mariological, historical, canonical, archival, Nahuatl-philological, liturgical, art-historical, conservation, or materials-science review has occurred; no ecclesiastical review or approval is claimed or implied.
 
-### Rights {#rights .unnumbered}
+### Rights
 
 Project prose is original and intended for CC BY 4.0. Quotations remain under their own status. Public domain in text: the 1649 *Huei tlamahuiçoltica*; the 1785 *Colección de obras y opusculos*; Cabrera 1756; Bartolache 1790; Agustín de la Rosa 1887; García Icazbalceta’s *Carta* in its 1896 printing and in the Biblioteca Virtual Miguel de Cervantes transcription; the sixteenth-century testimony transcribed within O’Gorman’s edition. The John Carter Brown Library states that its digital-collection images are made available under CC BY 4.0 with the credit line “Courtesy of the John Carter Brown Library”; the Library of Congress states that it is unaware of copyright or other restrictions in its World Digital Library copy of the same 1649 work. Scan images from those and other repositories were consulted for collation and are not redistributed here. *Acta Apostolicae Sedis*, *Acta Sanctae Sedis*, *Notitiae*, and Holy See web texts are quoted within ordinary scholarly limits with citation. Edmundo O’Gorman, *Destierro de sombras*, is © Universidad Nacional Autónoma de México, Instituto de Investigaciones Históricas, whose digital edition authorizes non-lucrative reproduction provided the work is not mutilated and the full source and its electronic address are cited; both conditions are observed. Jaime Cuadriello’s article in *Anales del Instituto de Investigaciones Estéticas* is open access at SciELO México and is quoted briefly with citation. The Basílica de Santa María de Guadalupe’s institutional pages are © their publisher and are used, briefly and with citation, as institutional self-description. Sousa, Poole and Lockhart’s *The Story of Guadalupe* (Stanford University Press and UCLA Latin American Center Publications, 1998) is in copyright, was not read for this study, and is cited by identity only; no part of its translation is reproduced. Online availability is not treated as a reuse licence; no complete document is reproduced; and no received prayer text is printed anywhere in this study.
 
@@ -695,7 +695,7 @@ Project prose is original and intended for CC BY 4.0. Quotations remain under 
 
 Witnesses are listed with role and rights notes; the access date for all web loci is 2026-07-25 unless stated. Stable source identities for the starred entries are registered in the repository source library; this publication’s bindings are in `research/source-bindings.toml`.
 
-### Primary witnesses read in the original {#primary-witnesses-read-in-the-original .unnumbered}
+### Primary witnesses read in the original
 
 -   \*Luis Laso de la Vega, *Huei tlamahuiçoltica omonexiti in ilhuicac tlatóca Çihuapilli Santa Maria Totlaçònantzin Guadalupe in nican huei altepenahuac Mexico itocayocan tepeyacac* (Mexico: Juan Ruiz, 1649). Role: the controlling witness of the *Nican mopohua* and *Nican motecpana*; quoted in §2.1 and §7 and collated at the page-image level. Copy used: John Carter Brown Library, digitized at <https://archive.org/details/hueitlamahuiolti00lass>. The 1649 text is public domain; the JCB states that its digital-collection images are licensed CC BY 4.0 with the credit line “Courtesy of the John Carter Brown Library.” A second digitized copy, from the Center for the Study of the History of Mexico CARSO, is at the Library of Congress, <https://www.loc.gov/item/2021666123/>, whose rights statement reads: “The Library of Congress is unaware of any copyright or other restrictions in the World Digital Library Collection.” Note: the JCB volume is a composite binding and contains a later bound-with sermon which is not part of the 1649 tract (§2.1).
 
@@ -705,7 +705,7 @@ Witnesses are listed with role and rights notes; the access date for all web loc
 
 -   \*Joaquín García Icazbalceta, *Carta acerca del origen de la imagen de Nuestra Señora de Guadalupe de México* (written October 1883; first printed 1896). Role: the classical statement of the argument from silence, quoted in §3.1 and used in §3.2, §6.3 and §8.2. Quoted from the Biblioteca Virtual Miguel de Cervantes transcription (<https://www.cervantesvirtual.com/obra-visor/carta-acerca-del-origen-de-la-imagen-de-nuestra-senora-de-guadalupe-de-mexico--0/html/b28296be-844c-4ebe-a169-2732231ce572_2.html>), collated against the 1896 imprint in the Harvard copy digitized by Google, <https://archive.org/details/cartaacercadelo00icazgoog> (`NOT_IN_COPYRIGHT`). Public domain; author d. 1894.
 
-### Holy See acts and official texts {#holy-see-acts-and-official-texts .unnumbered}
+### Holy See acts and official texts
 
 -   \*Sacred Congregation of Rites, rescript **Mexicana**, “Dubium quoad collocationem statuarum in Ecclesia,” 15 July 1892: *Acta Sanctae Sedis* 25 (1892–93), pp. 116–117, read in the Holy See’s scan, <https://www.vatican.va/archive/ass/documents/ASS-25-1892-93-ocr.pdf>. Role: the **fertur apparuisse** register (§8.3).
 
@@ -737,7 +737,7 @@ Witnesses are listed with role and rights notes; the access date for all web loc
 
 -   Leo XIV, homily for the Mass of the Blessed Virgin Mary of Guadalupe, St Peter’s Basilica, 12 December 2025 (<https://www.vatican.va/content/leo-xiv/en/homilies/2025/documents/20251212-messa-guadalupe.html>); message to the pastoral theological congress on the Guadalupan event, 5 February 2026 (<https://www.vatican.va/content/leo-xiv/en/messages/pont-messages/2026/documents/20260205-messaggio-congresso-guadalupe.html>); Francis, homily at the Basilica of Our Lady of Guadalupe, 13 February 2016 (<https://www.vatican.va/content/francesco/en/homilies/2016/documents/papa-francesco_20160213_omelia-messico-guadalupe.html>). Role: continuing reception (§8.4). *Reported at the level of assisted verification.*
 
-### Scholarship used at its own level {#scholarship-used-at-its-own-level .unnumbered}
+### Scholarship used at its own level
 
 -   \*Edmundo O’Gorman, *Destierro de sombras. Luz en el origen de la imagen y culto de Nuestra Señora de Guadalupe del Tepeyac*, 2nd ed. (Mexico: UNAM, Instituto de Investigaciones Históricas, Serie Historia Novohispana 36; digital edition 2019). Chapters and appendices read: part II ch. 3 (pp. 81–92); Appendix I; Appendix IV (pp. 227–238); Appendix VII. Open access at <http://www.historicas.unam.mx/publicaciones/publicadigital/libros/222c/destierro_sombras.html>; © UNAM-IIH, reproduction for non-lucrative purposes authorized on the conditions observed at §10 (Rights). Role: §3.2, §3.4, §4.3–4.4, §6.2, §8.3. Strongly anti-apparitionist; used at that level, with its own conclusions attributed to it.
 
@@ -745,7 +745,7 @@ Witnesses are listed with role and rights notes; the access date for all web loc
 
 -   Fidel González Fernández, “Juan Diego Cuauhtlatoatzin: procesos de beatificación y de canonización,” *Diccionario de Historia Cultural de la Iglesia en América Latina*, <https://www.dhial.org/>. Role: procedural chronology of the cause (§5.2). Postulation-side account, used at that level.
 
-### Positions cited by identity only {#positions-cited-by-identity-only .unnumbered}
+### Positions cited by identity only
 
 The following were verified as to bibliographic identity through Open Library, Library of Congress and Internet Archive catalogue records and *were not read*; their positions are reported at the levels recorded at §4.3.
 
@@ -765,7 +765,7 @@ The following were verified as to bibliographic identity through Open Library, L
 
 -   Philip Serna Callahan, *The Tilma under Infra-Red Radiation*, CARA Studies on Popular Devotion II, Guadalupan Studies 3 (Washington, D.C., 1981). Identified from secondary literature only; not verified against a library record and not read (§6.3).
 
-### Institutional self-description {#institutional-self-description .unnumbered}
+### Institutional self-description
 
 -   Insigne y Nacional Basílica de Santa María de Guadalupe, *Documentos Históricos*, <https://virgendeguadalupe.org.mx/documentos-historicos/>. Role: the shrine’s own inventory of documents, reproduced at the shrine’s level in §2.3 with ceilings assigned. © the publisher; used briefly with citation.
 

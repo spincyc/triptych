@@ -146,21 +146,21 @@ All online witnesses were checked on 2026-07-25; no mutable law or discipline is
 
 ## References
 
-### Scripture {#scripture .unnumbered}
+### Scripture
 
 -   John 15:9–16 (the friends discourse); 1 Corinthians 2:9 (as quoted by *Dei Filius*); 1 Corinthians 13:8, 12–13 (the mirror; the remaining three); 1 John 3:1–2 (sons now; we shall see him as he is); Romans 5:5 (charity poured forth); Psalm 26:8 (Vulgate numbering; the sought face). Quoted from the public-domain Douay–Rheims translation (Challoner revision), wording checked 2026-07-25 at the [online Douay–Rheims text](https://drbo.org/). The translation is an identified working witness, not a critical edition.
 
-### Patristic witnesses {#patristic-witnesses .unnumbered}
+### Patristic witnesses
 
 -   Augustine of Hippo, *Confessions* I.1.1 (*fecisti nos ad te et inquietum est cor nostrum donec requiescat in te*); trans. J. G. Pilkington, *Nicene and Post-Nicene Fathers*, 1st series, vol. 1 (1887); public domain; checked 2026-07-25 at [New Advent](https://www.newadvent.org/fathers/110101.htm); Latin checked at [The Latin Library](https://www.thelatinlibrary.com/augustine/conf1.shtml).
 
 -   Augustine of Hippo, *De civitate Dei* XXII.30 (God Himself the reward, having promised Himself; the end of our desires seen without end, loved without cloy, praised without weariness; partakers of God; the perfected freedom; the everlasting sabbath; “There we shall rest and see, see and love, love and praise”); trans. Marcus Dods, *The City of God*, vol. II, in *The Works of Aurelius Augustine, A New Translation* (Edinburgh: T. & T. Clark, 1871); public domain; wording checked 2026-07-25 in the source library’s tracked transcription of the 1871 printing (registered passage for XXII.30, artifact lines 21430–21588). Book X of the same edition was quoted in Part II.
 
-### Thomistic framework {#thomistic-framework .unnumbered}
+### Thomistic framework
 
 -   Thomas Aquinas, *Summa theologiae* I-II, q. 1, a. 4 (a last end necessary), a. 6 (under the aspect of good), a. 7 (all agree in the last end’s ratio); q. 2, aa. 1–7 (the audit of created goods) and a. 8 (no created good; the universal good; God alone); q. 3, a. 8 (beatitude the vision of the divine essence); q. 5, a. 5 with ad 2 (no natural attainment; the nobility of assisted capacity); I, q. 12, a. 1 (the natural desire; the blessed see God’s essence), a. 2 (*lumen gloriae*), a. 4 (only by grace), a. 5 (the created light; “deiform,” quoting 1 Jn 3:2); II-II, q. 17, a. 1 (hope leaning on the divine help) and a. 2 (nothing less than Himself); q. 23, a. 1 with *sed contra* and ad 1 (charity the friendship of man for God, founded on communicated beatitude; imperfect here, perfected in heaven), a. 6 and a. 8 (most excellent; form of the virtues, cited summarily); q. 24, a. 2 (charity by infusion; created charity a participation of the Holy Ghost). Inherited from Parts I–II: I, q. 13, a. 7; q. 20, a. 2; q. 44, a. 1; q. 104, a. 1; II-II, q. 81, a. 5, ad 1; q. 84; q. 106, a. 6. English from the public-domain translation of the Fathers of the English Dominican Province via [New Advent](https://www.newadvent.org/summa/); Latin checked in the [Corpus Thomisticum](https://www.corpusthomisticum.org/iopera.html) online corpus for I-II.1.4, 2.8, 3.8, 5.5; I.12.1–2, 12.5; II-II.17.2, 23.1, 24.2. All loci checked 2026-07-25; work, question, article, and division govern over either site’s presentation.
 
-### Authoritative Catholic witnesses {#authoritative-catholic-witnesses .unnumbered}
+### Authoritative Catholic witnesses
 
 -   First Vatican Council, dogmatic constitution *Dei Filius* (24 April 1870), ch. 2 (*Deus ex infinita bonitate sua ordinavit hominem ad finem supernaturalem*, quoting 1 Cor 2:9); Holy See Latin text, [vatican.va](https://www.vatican.va/content/pius-ix/la/documents/constitutio-dogmatica-dei-filius-24-aprilis-1870.html), checked 2026-07-25. English renderings are labeled working glosses governed by the Latin, with the scriptural clause in the Douay–Rheims wording. Chapters 1 and 3 were quoted in Parts I–II.
 

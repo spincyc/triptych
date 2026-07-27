@@ -499,13 +499,13 @@ The most durable thing the two books have in common is not a prayer but a phrase
 
 ## Scope, Method, and Qualifications
 
-### Reader, question, and claim boundary {#reader-question-and-claim-boundary .unnumbered}
+### Reader, question, and claim boundary
 
 This study is written for a reader who wants to know what the two Roman Missals actually contain and what the acts governing them actually legislate, and who is willing to be told that several familiar claims on both sides do not survive contact with the books. Its governing question is textual and juridical: at the loci where each matter is settled, what does each book say, and what follows? Its one evaluative judgement is confined to the block labelled *Project synthesis* in section 10 and is stated there with its strongest counterargument and a falsifying test.
 
 It is not a merit verdict, a ceremonial manual, a parallel Missal, a history of the reform’s execution, or an authorisation to celebrate with either book. It does not treat the postconciliar statistical record, the causal arguments built on it, or the history of the Consilium; those belong to a different inquiry.[^81] It does not adjudicate the disagreement between the 2007 and 2021 frameworks, which is a prudential disagreement between papal acts that the Church has governed without resolving.
 
-### Editions and witnesses {#editions-and-witnesses .unnumbered}
+### Editions and witnesses
 
 The older witness is the *Missale Romanum, editio typica* (Vatican City: Typis Polyglottis Vaticanis, 1962), consulted in the Church Music Association of America facsimile PDF of 1,088 pages, SHA-256 recorded in the source library and re-verified on acquisition, 25 July 2026. The newer witness is the *Missale Romanum, editio typica tertia* (Vatican City: Typis Vaticanis, 2002), consulted in a registered secondary digital reproduction of 828 pages whose exact bytes were re-acquired and hash-verified on 25 July 2026. Both are cited by artifact page as well as by printed page or article number, because the two paginations diverge.
 
@@ -517,13 +517,13 @@ Second, the 1962 witness is a page-image facsimile with an embedded optical-char
 
 Trent is cited from the *Canones et decreta sacrosancti œcumenici Concilii Tridentini*, editio stereotypa undecima (Leipzig: Tauchnitz, 1887), at page images acquired from the Internet Archive and verified visually. The conciliar and papal acts are cited from the official Holy See web delivery, each response acquired and hashed on 25 July 2026; every one proved byte-identical to the record already registered in the source library, which is recorded as an independent re-verification rather than a new acquisition. The Lectionary’s *Prænotanda* are cited from a registered page-image scan of the Latin *editio typica altera* of 1981, acquired and hash-verified on 26 July 2026, with printed page XXXV read in a rendered image; the approved English *General Introduction to the Lectionary* published by the Liturgy Office of England and Wales was acquired and hashed on 25 July 2026 and consulted to locate the articles, but its copyrighted English is not quoted. The scan of the Latin edition is restricted and no payload is retained; only the pages named were inspected, and the study’s lectionary claims are bounded to them.
 
-### Rights and quotation {#rights-and-quotation .unnumbered}
+### Rights and quotation
 
 The Latin *editiones typicae* are quoted, briefly and at the loci the argument requires. The approved English translation of the Roman Missal and the text of the Lectionary pericopes are under copyright and are nowhere reproduced; they are cited by locus and described. The Lectionary’s *Prænotanda* are quoted in Latin from the typical edition, and the copyrighted approved English translation of them is not quoted. Official Holy See texts are quoted briefly with attribution; the Vatican portal’s restrictive legal notes are recorded in the registered artifact records, and no official text is reproduced in bulk. The 2002 Missal reproduction is restricted and is not retained. Where an English rendering of a 1962 text is given, it is either a description in the third person or a translation of a phrase, labelled as a working gloss; no text is offered here for vocal prayer or recitation, and this study composes no liturgical translation.
 
 Public-domain English for the 1962 formularies exists and is registered in the source library; it was not required in this study, whose comparisons are made in Latin. Official texts and third-party material remain outside the project’s outbound licence.
 
-### Method {#method .unnumbered}
+### Method
 
 Research was claim-driven. For each comparison, the governing locus in each book was identified first, the two texts were set beside one another, and the difference was classified before it was described. Claims were sorted into four states and the states were kept apart in the writing: verified text (checked at an identified witness and locus); checked description (a summary of what a locus says, verifiable at the locus); source-grounded synthesis (a conclusion demonstrably supported by checked evidence); and project judgement (labelled as such and confined to the synthesis block and to the passages that explicitly announce a judgement).
 
@@ -531,7 +531,7 @@ Comparative counts—signs of the cross, retained and dropped prayers—were mad
 
 Bounded negative results are stated as bounded. Where this study says that a proposition has no locus in a book, it means that the loci examined do not contain it and names those loci; it does not claim a universal negation, and it invites correction.
 
-### Legal scope and currentness {#legal-scope-and-currentness .unnumbered}
+### Legal scope and currentness
 
 **Governing law.** The universal liturgical law of the Latin Church: *Sacrosanctum Concilium*; the apostolic constitution *Missale Romanum* (1969) with the promulgating decrees of 26 March 1970, 27 March 1975 and 20 April 2000; the *Institutio Generalis Missalis Romani* in its 2002 typical text; and the *Normæ universales de anno liturgico et de calendario* approved by *Mysterii paschalis* (1969). The 1962 books are governed by *Rubricarum instructum* (1960) and the Sacred Congregation of Rites’ decrees printed in the 1962 Missal. The 2023 rescript invokes can. 87 §1 of the 1983 *Codex Iuris Canonici* in reserving its two dispensations; no other canon of the Code is relied on here.
 
@@ -545,7 +545,7 @@ Bounded negative results are stated as bounded. Where this study says that a pro
 
 **Not advice.** This is a study aid. Concrete questions about permissions, faculties, dispensations, or the lawfulness of a particular celebration are for the competent authority—the diocesan bishop, and in the cases reserved by the 2023 rescript the Apostolic See—or for a canonist with the complete facts.
 
-### Unresolved and outstanding {#unresolved-and-outstanding .unnumbered}
+### Unresolved and outstanding
 
 The 1962 Missal prints two different dates for John XXIII’s motu proprio *Rubricarum instructum*, 23 July 1960 in the 1962 decree and 25 July 1960 in the Congregation’s general decree of 26 July 1960; the discrepancy is recorded in `research/edition-manifest.md` and is not resolved here. The 1969 first edition of the *Institutio generalis* and the revision of its article 7 in 1970 are named nowhere in this study because no primary witness to the 1969 text was examined; the comparison uses the 2002 text throughout and says so. The principal non-official critical literature on the reform—works by identified authors rather than acts of authority—was not examined in an identified edition, and the critical case is therefore presented in its official and papal formulations only; that is a real limitation on section 10 and is recorded as such.
 
@@ -553,13 +553,13 @@ Independent liturgical, historical, canonical and theological review remains out
 
 ## References
 
-### The two Missals {#the-two-missals .unnumbered}
+### The two Missals
 
 -   *Missale Romanum ex decreto Sacrosancti Concilii Tridentini restitutum, Summorum Pontificum cura recognitum*, editio typica (Vatican City: Typis Polyglottis Vaticanis, 1962). Consulted in the Church Music Association of America facsimile PDF, 1,088 pages, [media.churchmusicassociation.org](https://media.churchmusicassociation.org/pdf/missale62.pdf), acquired and hash-verified 25 July 2026 against the registered source-library artifact. Loci used: front matter (*Decretum* of 23 June 1962; *Quo primum*; briefs of Clement VIII and Urban VIII; the Sacred Congregation of Rites’ general decree of 26 July 1960); *Rubricæ generales Missalis romani* nn. 9–18, 63–70, 84–85, 503, 511–514, 523; *Ritus servandus in celebratione Missæ* I–VII; *De defectibus* V; *Ordo Missæ* and *Canon Missæ*, printed pp. 216–328 (artifact pp. 297–409).
 
 -   *Missale Romanum ex decreto sacrosancti Œcumenici Concilii Vaticani II instauratum, auctoritate Pauli Pp. VI promulgatum, Ioannis Pauli Pp. II cura recognitum*, editio typica tertia (Vatican City: Typis Vaticanis, 2002). Consulted in the registered secondary digital reproduction, 828 pages, acquired and hash-verified 25 July 2026; restricted, not retained, and not a facsimile of the printed altar book. Loci used: front matter and promulgating decrees, artifact pp. 1–7; *Institutio Generalis Missalis Romani*, artifact pp. 8–60; *Mysterii paschalis* and the *Normæ universales de anno liturgico et de calendario*, artifact pp. 61–71; *Ordo Missæ* and the four Eucharistic Prayers, artifact pp. 303–372.
 
-### Conciliar and papal acts {#conciliar-and-papal-acts .unnumbered}
+### Conciliar and papal acts
 
 -   Council of Trent, session XXI (16 July 1562), chapter II, and session XXII (17 September 1562), *Doctrina de sanctissimo missæ sacrificio* chapters VIII–IX and canons I–IX, in *Canones et decreta sacrosancti œcumenici Concilii Tridentini*, editio stereotypa undecima (Leipzig: Tauchnitz, 1887), printed pp. 108, 120–121. Read at Internet Archive page images of item `canonesetdecreta00coun_0`, leaves n115, n127 and n128, acquired and hashed 25 July 2026; verified visually.
 
@@ -575,7 +575,7 @@ Independent liturgical, historical, canonical and theological review remains out
 
 -   Sacred Congregation for Divine Worship, decree *De editione typica Missalis Romani*, Prot. n. 166/70 (26 March 1970); *De editione typica altera*, Prot. N. 1970/74 (27 March 1975); Congregation for Divine Worship and the Discipline of the Sacraments, *De editione typica tertia*, Prot. N. 143/00/L (20 April 2000). All three as printed in the third typical edition, artifact pp. 1–3.
 
-### The discipline of the 1962 Missal {#the-discipline-of-the-1962-missal .unnumbered}
+### The discipline of the 1962 Missal
 
 -   Benedict XVI, apostolic letter given motu proprio *Summorum Pontificum* (7 July 2007), and letter to the bishops on the occasion of its publication. Official English texts, [vatican.va](https://www.vatican.va/content/benedict-xvi/en/motu_proprio/documents/hf_ben-xvi_motu-proprio_20070707_summorum-pontificum.html) and [vatican.va](https://www.vatican.va/content/benedict-xvi/en/letters/2007/documents/hf_ben-xvi_let_20070707_lettera-vescovi.html), acquired and hashed 25 July 2026, byte-identical to the registered artifacts.
 
@@ -587,7 +587,7 @@ Independent liturgical, historical, canonical and theological review remains out
 
 -   *Rescriptum ex Audientia Ss.mi* (20 February 2023). Official English text, [vatican.va](https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20230220_rescriptum-traditioniscustodes_en.html), acquired and hashed 25 July 2026, byte-identical to the registered artifact. The dicastery’s own document archive, checked the same day, lists no later item.
 
-### The Lectionary {#the-lectionary .unnumbered}
+### The Lectionary
 
 -   *Ordo lectionum Missæ*, editio typica altera (Vatican City: Libreria Editrice Vaticana, 1981), *Prænotanda* nn. 65–69 and 74–77, printed pp. XXXII–XXXV. Consulted in the registered page-image scan of the Latin typical edition (restricted; SHA-256 recorded; acquired and hash-verified 26 July 2026); printed p. XXXV was read in a rendered page image and is the source of every Latin quotation in section 6. English renderings of these articles are labelled working glosses.
 

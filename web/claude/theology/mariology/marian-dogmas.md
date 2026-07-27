@@ -16,7 +16,7 @@ The two ancient dogmas were fixed in the Christological crisis of the fifth to s
 
 Method, throughout: the exact defined text is quoted from an identified witness and set off typographically; the doctrinal history is traced to the definition, not read backwards from it; scriptural and patristic evidence is weighted honestly, with translation cares stated; and the boundary between dogma, authoritative teaching, and theological opinion is kept explicit, above all for the disputed cooperation titles treated in the final chapters. Work-wide bounds, terminology, and qualifications are gathered in the terminal appendix.
 
-### The four definitions at a glance {#the-four-definitions-at-a-glance .unnumbered}
+### The four definitions at a glance
 
 The table states, for each dogma, the act that carries it, the operative Latin as the identified witness prints it, and the level of the act. The chapters and their notes control; the table condenses and cannot qualify them.
 
@@ -33,7 +33,7 @@ Two features of the table are doctrinally load-bearing. First, the operative wor
 
 Four scriptural loci do most of the work in the Marian dogmas, and each of them is regularly asked to carry more than it can. This chapter treats them once, at their own linguistic and canonical scale, so that the chapters on the individual dogmas can cite rather than repeat them. The governing rule is the one the Church herself follows in these texts: Scripture is read within the rule of faith, and what Scripture supplies is the reality the later formula protects, not the formula itself.
 
-### The greeting: **kecharitomene** (Lk 1:28) {#the-greeting-kecharitomene-lk-128 .unnumbered}
+### The greeting: **kecharitomene** (Lk 1:28)
 
 Gabriel does not address Mary by her name. The Douay-Rheims renders the greeting: “Hail, full of grace, the Lord is with thee: blessed art thou among women.”[^3] The word behind “full of grace,” transliterated **kecharitomene**, is a perfect passive participle of the verb **charitoo**, “to grace,” “to favor”—so that the greeting, in its grammar, says something like “you who have been and remain graced.” Three observations are exact, and a fourth is not.
 
@@ -41,31 +41,31 @@ Exact: the participle is passive, so the grace is received, never self-generated
 
 Not exact: the inference from the participle alone to the 1854 definition. Grammar establishes a prior and abiding gracing; it does not establish the instant at which the gracing began, and the first instant of conception is precisely what 1854 defines. *Ineffabilis Deus* does not argue otherwise. Its section on the Annunciation reports what the Fathers and ecclesiastical writers concluded when they “meditated on the fact that the most Blessed Virgin was, in the name and by order of God himself, proclaimed full of grace by the Angel Gabriel”—a patristic reading reported as such, inside a cumulative argument from liturgy, papal teaching, and tradition.[^4] The Catechism follows the same order: it quotes the greeting, then the definition, and presents the second as the Church’s reading of what the first implies once the whole of Revelation is in view—not as a translation of the participle.
 
-### The Woman and her seed (Gen 3:15) {#the-woman-and-her-seed-gen-315 .unnumbered}
+### The Woman and her seed (Gen 3:15)
 
 God’s word to the serpent after the fall is quoted in the Douay-Rheims: “I will put enmities between thee and the woman, and thy seed and her seed: she shall crush thy head, and thou shalt lie in wait for her heel.”[^5] Here the translation care is not optional, and this reference states it plainly. The Vulgate tradition that the Douay renders reads **ipsa conteret**, “*she* shall crush”; the Hebrew subject is masculine and refers to the seed, hence “he” or “it shall crush.” The Douay-Rheims prints the divergence in its own annotation: “**Ipsa**, the woman; so divers of the fathers read this place, conformably to the Latin: others read it **ipsum**, viz., the seed. The sense is the same: for it is by her seed, Jesus Christ, that the woman crushes the serpent’s head.”[^6]
 
 The doctrinal argument does not depend on the pronoun. What the tradition and both modern constitutions actually take from the verse is the *enmity*—a hostility between the serpent and the woman, and between their seeds, that God himself establishes and that ends in victory. *Ineffabilis Deus* reads the verse this way: the Fathers “taught that by this divine prophecy the merciful Redeemer of mankind, Jesus Christ, the only begotten Son of God, was clearly foretold: that his most Blessed Mother, the Virgin Mary, was prophetically indicated; and, at the same time, the very enmity of both against the evil one was significantly expressed.”[^7] *Munificentissimus Deus* takes the same verse for the Assumption, adding the second Pauline term: the struggle foretold in the protoevangelium “would finally result in that most complete victory over the sin and death which are always mentioned together in the writings of the Apostle of the Gentiles” (§39, citing 1 Cor 15:54).[^8] One verse, therefore, grounds two different dogmas by two different routes—preservation from sin in 1854, victory over death in 1950—and in both the route runs through the woman’s association with her seed, never around him.
 
-### The Woman clothed with the sun (Rev 12) {#the-woman-clothed-with-the-sun-rev-12 .unnumbered}
+### The Woman clothed with the sun (Rev 12)
 
 “And a great sign appeared in heaven: A woman clothed with the sun, and the moon under her feet, and on her head a crown of twelve stars.”[^9] The image is genuinely polyvalent, and honesty requires saying so before saying anything else. Within the book, the woman who bears the male child and is then persecuted in the wilderness carries Israel, from whom the Messiah comes, and the Church, persecuted after him; the Marian reading is a third sense that the tradition has read with the other two, not a replacement for them. Her crown of twelve stars fits Israel’s tribes and the apostolic Church at least as naturally as it fits a Marian coronation.
 
 *Munificentissimus Deus* is careful with this text in a way that deserves imitation. It does not cite Revelation 12 as a narrative proof of the Assumption. It reports that “the scholastic Doctors have recognized the Assumption of the Virgin Mother of God as something signified, not only in various figures of the Old Testament, but also in that woman clothed with the sun whom John the Apostle contemplated on the Island of Patmos” (§27)—a report of how theologians read a figure, inside a survey of the tradition’s reasoning.[^10] The same paragraph’s neighbors report the theologians’ use of Psalm 132 (“Arise, O Lord, into your resting place: you and the ark, which you have sanctified”) and of the Canticle—also as the figures theologians employed, and also without conversion into proof.
 
-### Cana and the Cross (Jn 2:1–11; 19:25–27) {#cana-and-the-cross-jn-2111-192527 .unnumbered}
+### Cana and the Cross (Jn 2:1–11; 19:25–27)
 
 The Fourth Gospel gives Mary two scenes and no name: she is “the mother of Jesus,” and in both scenes her Son addresses her as “Woman.” At Cana she states the need—“They have no wine”—and receives the reply, “Woman, what is that to me and to thee? my hour is not yet come”; she then tells the servants, “Whatsoever he shall say to you, do ye.”[^11] At the cross: “When Jesus therefore had seen his mother and the disciple standing whom he loved, he saith to his mother: Woman, behold thy son. After that, he saith to the disciple: Behold thy mother. And from that hour, the disciple took her to his own.”[^12]
 
 Neither scene defines a dogma, and neither is treated here as though it did. What they supply is the shape within which the dogmas are read: a mother whose petition is answered on the Son’s terms and whose last recorded word points away from herself to him; and a maternity that the dying Christ extends beyond nature to a disciple. The Church’s authoritative teaching draws exactly that consequence and no more—the Catechism reads Mary’s motherhood as extending “to all men whom indeed he came to save” (CCC 501), and *Lumen gentium* 58 sets her faithful standing at the cross inside her Son’s saving work.[^13]
 
-### What Scripture does and does not settle {#what-scripture-does-and-does-not-settle .unnumbered}
+### What Scripture does and does not settle
 
 Directly attested: the virginal conception (Mt 1:18–25; Lk 1:26–35); that the one born of Mary is the Lord (Lk 1:43) and God’s own Son sent “made of a woman” (Gal 4:4; Jn 1:14); that she is greeted as already graced (Lk 1:28); that she consents (Lk 1:38) and stands at the cross (Jn 19:25). Not narrated anywhere: her conception by her parents, the manner of Christ’s birth, her later life, her death, her assumption. Three of the four dogmas therefore rest on a canonical horizon rather than a narrative text, and the Church says so in her own documents—most plainly in *MD* §38, which claims for the Fathers’ and theologians’ proofs only that they are “based upon the Sacred Writings as their ultimate foundation.”[^14] A reference that pretended otherwise would be doing the dogmas no service; the Church’s own case is stronger than the proof-texts sometimes offered for it.
 
 ## Mother of God: the Divine Motherhood
 
-### The defined object and its authority {#the-defined-object-and-its-authority .unnumbered}
+### The defined object and its authority
 
 The dogma: Mary is truly Mother of God, because the Son she conceived and bore according to the flesh is the eternal Word of God in person. The controlling act is the Council of Ephesus (431), which did not issue a new creed but judged Cyril of Alexandria’s second letter to Nestorius to be the faith of Nicaea. The conciliar acts record that after the letters of Cyril to Nestorius were read, “the Holy Synod approved” them “as being orthodox and without fault,” in no point disagreeing with Scripture or with the faith of Nicaea.[^15] The letter’s decisive sentence, in the same public-domain translation:
 
@@ -75,7 +75,7 @@ The dogma: Mary is truly Mother of God, because the Son she conceived and bore a
 
 The Council of Chalcedon (451) made the title part of its Definition of Faith—the Son is “born \[into the world\] of the Virgin Mary, the Mother of God according to his manhood”—and the Second Council of Constantinople (553) anathematized whoever calls her Mother of God only “in a false acceptation” or “in a relative sense.”[^17] The dogma is thus conciliar, defined within Christology: what was at stake at Ephesus was not a privilege of Mary but the unity of Christ.
 
-### Before the controversy: the second and third centuries {#before-the-controversy-the-second-and-third-centuries .unnumbered}
+### Before the controversy: the second and third centuries
 
 The title was neither invented at Ephesus nor smuggled in from devotion—but neither is it found, in its later form, in the earliest witnesses, and this reference does not project it backwards. What the early witnesses supply is the substance the word would later protect.
 
@@ -85,7 +85,7 @@ Irenaeus, near the end of the second century, supplies the other element: Mary r
 
 Devotional address to Mary appears in the same centuries, but its earliest surviving instance is exactly the kind of evidence that must be dated before it is used. The prayer known as *Sub tuum praesidium* is preserved in a Greek papyrus (P. Ryl. III 470, Manchester) long dated to the third or fourth century—the dating on which the prayer’s fame as the oldest Marian prayer rests—but recent palaeographic work has argued for a substantially later date, “the 6th/7th or even 8th/9th century,” which would make a Vienna transcription the oldest attestation.[^20] This study therefore uses the prayer as evidence that direct invocation of the **Theotokos** existed in the Greek-speaking Church before the medieval liturgical books, and not as a dated third-century proof. The dogma does not need it, and the honesty is worth more than the early date.
 
-### The controversy, 428–433 {#the-controversy-428433 .unnumbered}
+### The controversy, 428–433
 
 The dispute began not with a treatise but with a sermon. Nestorius became bishop of Constantinople in 428; the immediate occasion, as the nineteenth-century editor of the relevant NPNF volume reports, was a sermon by his chaplain Anastasius inveighing against the title **Theotokos**, which Nestorius then defended and developed.[^21] The objection had a serious motive. If “God-bearer” meant that the Godhead took its origin from Mary, it was blasphemy; if it meant that a divine nature was born, it was incoherent. **Christotokos**, “Mother of Christ,” seemed to Nestorius the safe term.
 
@@ -101,7 +101,7 @@ The logic is worth marking: the anathema does not begin with Mary. It begins wit
 
 The status of the twelve is a genuine historical complication, and this reference states it rather than smoothing it. Nestorius answered with twelve counter-anathemas, which the same volume prints alongside; the Antiochenes suspected Cyril’s twelve of Apollinarian tendency; and the surviving extracts of the Ephesine acts break off just where the discussion of them should stand—Percival’s own bracketed note reads: “It seems almost certain that something has dropped out here, most probably the whole discussion of Cyril’s XII. Anathematisms.”[^24] The council proceeded to sentence: “compelled thereto by the canons and by the letter … of our most holy father and fellow-servant Cœlestine, the Roman bishop, we have come, with many tears, to this sorrowful sentence against him, namely, that our Lord Jesus Christ, whom he has blasphemed, decrees by the holy Synod that Nestorius be excluded from the episcopal dignity, and from all priestly communion.”[^25]
 
-### The Formula of Reunion (433): the settlement that held {#the-formula-of-reunion-433-the-settlement-that-held .unnumbered}
+### The Formula of Reunion (433): the settlement that held
 
 The council did not end the schism; a negotiated confession did. In 433 Cyril accepted a formula drawn up by the Antiochenes and sent it back to John of Antioch in the letter beginning “Let the heavens rejoice”—the document later read aloud at Chalcedon and often called the Ephesine Creed. Its Marian sentence is the settled form of the dogma:
 
@@ -113,15 +113,15 @@ Two things follow. First, the dogma survived a real theological negotiation and 
 
 Reception in the Latin West is visible within a decade. Vincent of Lérins, writing about 434, insists that Mary “is to be confessed most truly and most blessedly—The mother of God ‘Theotocos,’” and then excludes the wrong reason for saying it: not as one may call a woman the mother of a priest or a bishop, because she bore someone who *afterwards became* such, but because in her womb the union of person was wrought.[^27]
 
-### Scripture, honestly weighted {#scripture-honestly-weighted .unnumbered}
+### Scripture, honestly weighted
 
 Scripture never uses the word **Theotokos**; it supplies the reality the word protects. Elizabeth greets Mary as “the mother of my Lord” (Lk 1:43); Paul writes that “God sent his Son, made of a woman” (Gal 4:4); John, that “the Word was made flesh” (Jn 1:14).[^28] The inference is short and ancient: if the one born of Mary is God the Son, then Mary is the mother of God the Son—mother of a person, not manufacturer of a nature. Motherhood terminates in the person born, and the person born of Mary is the eternal Word. Cyril’s third letter makes the same move from the same texts, and adds the reason the Word submitted to birth at all: that “he might bless the beginning of our existence.”[^29]
 
-### What the dogma does and does not assert {#what-the-dogma-does-and-does-not-assert .unnumbered}
+### What the dogma does and does not assert
 
 It asserts: the child of Mary is God the Son in person; his conception and birth from her are truly the conception and birth, according to the flesh, of the Word. It does not assert: that Mary is the origin of the divine nature; that she existed before God or is mother of the Trinity; that anything divine “began” in her. The common misunderstanding runs in both directions—Nestorius’s fear that the title deifies Mary, and the converse modern reading that “Mother of God” claims too much for her. Both dissolve on the same distinction: mothers bear persons, not natures. The Catechism gives the current catechetical form: the one Mary conceived “was none other than the Father’s eternal Son” and the Church confesses her as truly Mother of God (CCC 495, citing DS 251; cf. CCC 484–487).[^30] *Lumen gentium* opens its Marian chapter from the same point: Mary is honored “as being truly the Mother of God and of the redeemer” (LG 53, quoted at CCC 963).[^31] The divine motherhood is the ground of every other Marian dogma: the remaining three state what God’s grace made of the woman whose Son is God.
 
-### Development milestones {#development-milestones .unnumbered}
+### Development milestones
 
 | **Date** | **Milestone** | **Register** |
 |:--------|:--------------------------------------|:------------------|
@@ -138,7 +138,7 @@ It asserts: the child of Mary is God the Son in person; his conception and birth
 
 ## Ever-Virgin: the Perpetual Virginity
 
-### The defined object and its authority {#the-defined-object-and-its-authority-1 .unnumbered}
+### The defined object and its authority
 
 The dogma: Mary was and remained a virgin—in conceiving her Son (**ante partum**), in giving him birth (**in partu**), and ever after (**post partum**); she is **aeiparthenos**, “ever-virgin.” Unlike the other three dogmas, this one rests on no single defining act. It is ancient dogma taught by the Church’s universal tradition, confessed in the creeds (“born of the Virgin Mary”), asserted by the Second Council of Constantinople (553), which twice calls Mary Mother of God “and always a virgin” in its anathemas (DS 427), and given its most exact conciliar formulation by the Lateran Council of 649 under Pope Martin I—not an ecumenical council, but a papally confirmed synod whose third canon the Church has received as a standard statement of the dogma.[^32]
 
@@ -148,17 +148,17 @@ The dogma: Mary was and remained a virgin—in conceiving her Son (**ante partum
 
 The canon binds together all three moments: conception without seed by the Holy Spirit; incorrupt birth; virginity indissolubly permanent after birth. Note the canon’s own word **immaculatam**—an early witness to the language, though not to the 1854 definition’s object.
 
-### Why a Marian canon stands in a synod about wills {#why-a-marian-canon-stands-in-a-synod-about-wills .unnumbered}
+### Why a Marian canon stands in a synod about wills
 
 The setting of that canon is regularly forgotten, and it explains the canon’s form. The Lateran Synod met from 5 to 31 October 649 under Martin I, and its business was Monothelitism: the imperial attempt, through the *Ecthesis* and the *Typos*, to settle the Christological question by conceding one will in Christ. The canons run in sequence through the Trinity (can. 1), the incarnation of the Word “of the Holy Spirit and Mary ever virgin” (can. 2), the divine motherhood and perpetual virginity (can. 3), the two nativities of the one Lord (can. 4), and onward to the two wills and two operations that were the synod’s actual object.[^34] The Marian canon is therefore not a Marian decree; it is one clause of a complete Christological confession, drafted so that no Monothelite reading could shelter in an incomplete statement of who was born of the Virgin. The most exact formulation the tradition possesses was produced as collateral precision in somebody else’s argument—which is how much of Marian doctrine was in fact fixed.
 
 The same is true of the West’s classic sentence on the birth itself. Leo the Great’s Tome to Flavian (449), received at Chalcedon and cited in the Catechism’s chain at DS 291, says of the Virgin that “she brought him forth with her virginity preserved, just as with her virginity preserved she conceived him”—a Christological letter written to refute Eutyches, in which the **in partu** clause appears as a premise, not a thesis.[^35]
 
-### Scripture, honestly weighted {#scripture-honestly-weighted-1 .unnumbered}
+### Scripture, honestly weighted
 
 Scripture directly teaches the virginal conception: Matthew 1:18–25 and Luke 1:26–35 assert it in narrative, and Mary’s own question—“How shall this be done, because I know not man?” (Lk 1:34)—presupposes it.[^36] The full threefold confession is received through Tradition; Scripture neither states nor denies virginity in and after birth. The standing objections are old and must be answered at their own linguistic scale, not with knock-down certainty: the “brothers and sisters” of Jesus (Mk 6:3 etc.) use kinship terms whose range in the Semitic background is wider than sibling, and the Church has always understood these passages as not referring to other children of Mary—the Catechism notes that James and Joseph, “brothers of Jesus,” are elsewhere the sons of another Mary (CCC 500); Matthew’s “till she brought forth her firstborn son” (Mt 1:25) asserts what was true up to the birth without asserting a change after it, a normal Semitic usage; “firstborn” is a legal status of the child that opens the womb, not a count of siblings.[^37]
 
-### The fourth-century controversies: Helvidius and Jovinian {#the-fourth-century-controversies-helvidius-and-jovinian .unnumbered}
+### The fourth-century controversies: Helvidius and Jovinian
 
 The doctrine was tested twice within twenty years at Rome, and by adversaries whose real target was not Mary. Helvidius argued from Matthew’s “before they came together” and “knew her not till she had brought forth,” and from the “brothers,” that Mary bore other children—and his conclusion, as Jerome’s reply makes explicit, served a thesis about the equal dignity of marriage and virginity. Jovinian, on trial at Rome soon after, pressed the same equality further. The tradition’s answer therefore had to do two things at once: defend the perpetual virginity, and avoid saying that marriage is impure. Jerome managed the first magnificently and the second badly, and a reference that admires his exegesis should say so.
 
@@ -174,7 +174,7 @@ Jerome’s *On the Perpetual Virginity of the Blessed Mary* (383) argues on four
 
 Two honesties are owed. First, Jerome knew his case was an argument from tradition as much as from text: “Might I not array against you the whole series of ancient writers? Ignatius, Polycarp, Irenæus, Justin Martyr, and many other apostolic and eloquent men”—while dismissing the contrary witness of Tertullian with the remark that “he did not belong to the Church.”[^42] Second, the treatise’s closing comparison of virginity and marriage (§§20–23) is a piece of fourth-century invective—the married woman at her mirror, “the prattling of infants, the noisy household”—which the Church’s own later teaching does not endorse. *Lumen gentium* and the Catechism read Mary’s virginity as the sign of God’s absolute initiative and of her undivided self-gift, not as a verdict on ordinary motherhood; the dogma Jerome defended stands, and his rhetoric about marriage does not.
 
-### The three ancient solutions to the “brothers” {#the-three-ancient-solutions-to-the-brothers .unnumbered}
+### The three ancient solutions to the “brothers”
 
 The kinship question admits exactly three historic answers, and the Church has defined none of them. Naming their patrons keeps the categories straight.
 
@@ -186,15 +186,15 @@ The kinship question admits exactly three historic answers, and the Church has d
 
 Between the first two, nothing is defined, and this reference settles nothing. Thomas Aquinas, writing seven centuries later, states the Western position with the same structure Jerome used but a different emphasis: “Without any hesitation we must abhor the error of Helvidius,” because it is derogatory to Christ’s perfection as his mother’s only son, an insult to the Holy Ghost whose “shrine” the virginal womb was, and derogatory to the dignity and holiness of God’s Mother—who would otherwise have forfeited, of her own accord, a virginity miraculously preserved.[^44]
 
-### From confession to standing doctrine {#from-confession-to-standing-doctrine .unnumbered}
+### From confession to standing doctrine
 
 The virginal conception is confessed from the earliest creeds and by Ignatius of Antioch (CCC 496–497). The *Protevangelium of James* already narrates virginity preserved in birth—apocryphal, worthless as biography, but weighty as evidence of what second-century Christians believed. From the fifth century **aeiparthenos** is standard; Leo’s Tome fixes the **in partu** clause in the West; Constantinople II and Lateran 649 fix the whole in conciliar and synodal language. The chain the Catechism cites reaches into the sixteenth century, where Paul IV’s constitution *Cum quorumdam hominum* (1555; DS 1880) condemns those who deny that Christ was conceived “in the womb of the most blessed and ever Virgin Mary of the Holy Spirit” and hold instead that he was born “like other men, of the seed of Joseph.”[^45] The ordinary universal magisterium has taught the dogma continuously since.
 
-### What the dogma does and does not assert {#what-the-dogma-does-and-does-not-assert-1 .unnumbered}
+### What the dogma does and does not assert
 
 It asserts a real, bodily, lifelong virginity, integral in the act of birth itself: the Second Vatican Council repeats the tradition that Christ’s birth “did not diminish His mother’s virginal integrity but sanctified it” (LG 57), and the Church celebrates Mary as **Aeiparthenos** (CCC 499).[^46] It does not assert any anatomical or obstetric theory: the Church has never defined the physiology of the birth, and the dogma is not a medical claim. It does not assert that marriage or childbirth is impure—the tradition reads Mary’s virginity as the sign of her undivided gift of self and of God’s absolute initiative in the Incarnation (CCC 502–506), not as a judgment on ordinary motherhood. And it does not depend on contempt for the “brothers of the Lord,” who remain real kinsmen of Jesus in the Church’s reading. The common misunderstanding—that the dogma stands or falls with a single proof-text—mistakes its mode: it is Tradition’s dogma, formulated conciliarly, in which Scripture is read within the Church’s rule of faith.
 
-### Development milestones {#development-milestones-1 .unnumbered}
+### Development milestones
 
 The medieval professions of faith carry the formula forward without argument, which is itself the evidence: the Second Council of Lyons (1274) has the emperor Michael profess the Son “temporally born of the Holy Spirit and Mary ever Virgin,” and the Council of Florence’s decree for the Jacobites (1442) confesses that he took human nature “from the immaculate womb of the Virgin Mary.”[^47]
 
@@ -212,7 +212,7 @@ The medieval professions of faith carry the formula forward without argument, wh
 
 ## Conceived Without Sin: the Immaculate Conception
 
-### The defined text and its authority {#the-defined-text-and-its-authority .unnumbered}
+### The defined text and its authority
 
 On 8 December 1854, in the apostolic constitution *Ineffabilis Deus*, Pius IX defined:
 
@@ -222,19 +222,19 @@ On 8 December 1854, in the apostolic constitution *Ineffabilis Deus*, Pius IX de
 
 The constitution continues with a formal sanction: whoever “shall dare—which God forbid!—to think otherwise than as has been defined by us” is “condemned by his own judgment,” has “suffered shipwreck in the faith,” has “separated from the unity of the Church,” and incurs the penalties of law if he expresses the error outwardly (DS 2804).[^49] The level is the highest: a solemn papal definition of divinely revealed doctrine, binding the whole Church.
 
-### Reading the definition’s clauses {#reading-the-definitions-clauses .unnumbered}
+### Reading the definition’s clauses
 
 Every phrase is load-bearing. “In the first instance of her conception”: the grace touches Mary’s origin itself, not a later cleansing. “Singular grace and privilege”: unique to her; the definition creates no general class. “In view of the merits of Jesus Christ” (**intuitu meritorum**): the decisive clause—Mary is not exempt from redemption but is its most perfect case, redeemed by anticipation, preserved rather than rescued. “Preserved free from all stain of original sin”: the object is original sin only; Mary’s lifelong freedom from personal sin is a closely related but distinct teaching, not the thing defined here (CCC 493).[^50] And “is a doctrine revealed by God”: the definition claims not to add to revelation but to declare what the deposit contains—the claim on which the ecumenical difficulty chiefly turns (Chapter 9).
 
-### Scripture, honestly weighted {#scripture-honestly-weighted-2 .unnumbered}
+### Scripture, honestly weighted
 
 The definition names no proof-text in its defining sentence; the constitution’s own survey reads two loci within Tradition, both treated at length in Chapter 2 above. Genesis 3:15, the enmity God sets “between thee and the woman, and thy seed and her seed,” is read by the Fathers and by the constitution as foretelling the Redeemer and prophetically indicating his Mother, joined without compromise to the serpent’s defeat—the argument resting on the enmity, not on the disputed **ipsa** of the Vulgate.[^51] Luke 1:28, Gabriel’s greeting, transliterated **kecharitomene**, is a perfect passive participle of **charitoo**: the greeting names Mary as one already graced. The word alone does not state the 1854 dogma; the Church reads it cumulatively, as the Catechism does (CCC 490–491), within the tradition of Mary’s singular holiness.[^52] The constitution itself adds a long catena of figures—the ark that survived the flood, Jacob’s ladder, the burning bush, the tower of David, the enclosed garden, the city of God—and presents them for what they are: the way the Fathers taught that Mary’s dignity “had been prophesied in a wonderful manner,” not a set of demonstrations.
 
-### The patristic matrix, and what it does not contain {#the-patristic-matrix-and-what-it-does-not-contain .unnumbered}
+### The patristic matrix, and what it does not contain
 
 The patristic centuries supply a matrix, not the formula: the New Eve parallel from Justin and Irenaeus onward, the East’s praise of Mary as all-holy (**Panagia**), the language of Lateran 649 (**immaculatam**), the Eastern feast of Mary’s conception. No pre-Nicene Father states the first-instant formula. Augustine’s famous exemption of Mary—“out of honor to the Lord” he would raise no question of sin about her—concerns personal sin, not the conception, and *Ineffabilis Deus* itself cites the passage only in the section on the Fathers’ praise of her sanctity.[^53] What the Fathers give the later Church is a habit of speech—“immaculate in every respect; innocent, and verily most innocent; spotless, and entirely spotless”—which the constitution itself describes as “a singular and truly marvelous style of speech” that “passed almost spontaneously into the books of the most holy liturgy.” A style of speech is real evidence about belief and is not a definition; the constitution’s argument is that the Church would not have prayed that way about a soul once subject to sin.
 
-### The medieval debate, on its own terms {#the-medieval-debate-on-its-own-terms .unnumbered}
+### The medieval debate, on its own terms
 
 Between the twelfth and the fifteenth centuries the doctrine was genuinely contested by saints on both sides, and the contest was not about Mary’s holiness—all parties affirmed that—but about how a sinless origin could be squared with the universality of redemption. The Church defined only after the difficulty had been answered, and the record of the difficulty belongs to the dogma’s history.
 
@@ -244,7 +244,7 @@ Between the twelfth and the fifteenth centuries the doctrine was genuinely conte
 
 *John Duns Scotus* supplied the resolution the definition received. Preservation is the more perfect mode of redemption: Christ, the most perfect Mediator, could preserve his Mother from contracting original sin, and preserving grace is a greater debt to his merits than liberating grace. The tag **potuit, decuit, fecit**—“he could, it was fitting, he did it”—summarizes the argument but is a later schoolroom formula, not a checked verbatim quotation of Scotus.[^58] The schools then divided for two centuries, Franciscans generally for and Dominicans generally against; *Ineffabilis Deus* alludes to the settlement of that dispute only in the summary form that the doctrine came to be “handed down, proposed and defended by the most outstanding religious orders, by the more celebrated theological academies, and by very eminent doctors.”[^59]
 
-### Rome steers the question, 1476–1854 {#rome-steers-the-question-14761854 .unnumbered}
+### Rome steers the question, 1476–1854
 
 The papacy’s role before 1854 was not to define but to keep the dispute from tearing the Church, and the sequence is instructive.
 
@@ -256,19 +256,19 @@ The papacy’s role before 1854 was not to define but to keep the dispute from t
 
 *Pius IX* then consulted the episcopate. On 2 February 1849, from Gaeta, he sent *Ubi primum* asking the bishops what the piety and devotion of their faithful was, “what the bishops themselves thought about defining this doctrine and what their wishes were in regard to making known with all possible solemnity our supreme judgment.” The replies, the constitution says, asked “with one voice” for the definition.[^63]
 
-### How the constitution argues {#how-the-constitution-argues .unnumbered}
+### How the constitution argues
 
 Read whole, *Ineffabilis Deus* is not a proof-text argument at all. Its order is: the divine maternity as the supreme reason for the privilege; the liturgical argument (the Church would not celebrate the feast of a conception unless that conception were holy); the ordinary teaching and the acts of the Roman pontiffs; the testimony of the Catholic world and of Trent; the testimonies of Tradition; then the Fathers as interpreters of Scripture (Gen 3:15, Lk 1:28, the figures); then the preparation, the consultation, and the definition. The argument is cumulative and ecclesial, and it is explicit about the principle of development that licenses it—in words taken, without attribution, from Vincent of Lérins: the Church “never changes anything, never diminishes anything, never adds anything,” but explains the ancient documents so that the dogmas “will grow only within their own genus— that is, within the same dogma, in the same sense and the same meaning.”[^64] That sentence is the hinge of the whole question—whether a Church can define in 1854 what no Father stated in 451—and the constitution answers it in the only way a Catholic answer can be given: not by producing an early formula, but by claiming that the formula makes explicit what the Church always believed.
 
-### Four years later: Lourdes {#four-years-later-lourdes .unnumbered}
+### Four years later: Lourdes
 
 On 25 March 1858 at Lourdes, in the sixteenth of the reported apparitions, the girl Bernadette Soubirous reported that the figure she saw named herself in Gascon with words she did not understand, and which her parish priest and the subsequent record rendered “I am the Immaculate Conception.” The Catholic reading of that sentence—that the dogma of 1854 was confirmed from heaven—is not part of the dogma and cannot be: the definition rests on the deposit of faith, not on a private revelation later than the apostolic age, and the local judgment of 1862 established the apparitions’ credibility, not the dogma. The proper order runs the other way: the definition of 1854 is the standard by which the reported sentence of 1858 was itself judged intelligible.[^65]
 
-### What the dogma does and does not assert {#what-the-dogma-does-and-does-not-assert-2 .unnumbered}
+### What the dogma does and does not assert
 
 It asserts Mary’s preservation from original sin from the first instant, by grace, through Christ’s merits. It does not assert that Mary needed no redeemer—it asserts the opposite, in terms. It does not concern the virginal conception of Jesus, with which it is perennially confused: the Immaculate Conception is Mary’s own conception by her parents in the ordinary way, immaculate in grace, not in manner. It does not define Mary’s freedom from concupiscence’s effects in detail, her exemption from bodily death, or any physiological claim. And it does not make the medieval doctors’ hesitation retroactively heretical: the Church defined after the development, and the honest record of Bernard’s and Thomas’s difficulty is part of the dogma’s history, preserved in this reference as the profile requires. Current catechesis: CCC 490–493, 508; LG 56, 59.
 
-### Development milestones {#development-milestones-2 .unnumbered}
+### Development milestones
 
 | **Date** | **Milestone** | **Register** |
 |:--------|:--------------------------------------|:------------------|
@@ -289,7 +289,7 @@ It asserts Mary’s preservation from original sin from the first instant, by gr
 
 ## Assumed into Glory: the Assumption
 
-### The defined text and its authority {#the-defined-text-and-its-authority-1 .unnumbered}
+### The defined text and its authority
 
 On 1 November 1950, in the apostolic constitution *Munificentissimus Deus*, Pius XII defined:
 
@@ -301,13 +301,13 @@ The sanction follows immediately: anyone who “should dare willfully to deny or
 
 Note also the definition’s opening words: it defines something about “the Immaculate Mother of God, the ever Virgin Mary.” The subject of the 1950 sentence is the woman of the other three dogmas, and the constitution says outright why: “these two privileges are most closely bound to one another,” since she who “completely overcame sin by her Immaculate Conception” was “not subject to the law of remaining in the corruption of the grave” (§§4–5). The last dogma defined is the one that presupposes the rest.[^68]
 
-### The 1946 consultation {#the-1946-consultation .unnumbered}
+### The 1946 consultation
 
 The definition rests on a formal consultation of the whole episcopate, and the document that opened it is short enough to characterize exactly. On 1 May 1946 Pius XII sent the bishops of the world the letter *Deiparae Virginis Mariae*. It recounts that petitions for the definition had reached the Holy See over a century—“those received from 1849 to 1940 have been gathered in two volumes”—and that “almost two hundred fathers in the Vatican Council” had asked for it. Then it puts two questions, and only two: whether the bishops, “with your learning and prudence, consider that the bodily Assumption of the Immaculate Blessed Virgin can be proposed and defined as a dogma of faith,” and “whether in addition to your own wishes this is desired by your clergy and people.”[^69]
 
 The two questions are distinct, and the distinction is doctrinal: the first asks whether the doctrine belongs to the deposit and is definable, the second whether it is believed and desired. *MD* §12 reports an “almost unanimous affirmative response to both,” and then reasons from it in a way that repays attention: the agreement of the bishops with their faithful “shows us the concordant teaching of the Church’s ordinary doctrinal authority and the concordant faith of the Christian people,” and therefore “by itself and in an entirely certain and infallible way, manifests this privilege as a truth revealed by God.”[^70] The solemn definition, on this account, does not create the certainty; it declares a certainty already constituted by the ordinary universal magisterium—which is why the 1950 act is the textbook case of a papal definition of something the whole Church already believed.
 
-### The dormition traditions, honestly {#the-dormition-traditions-honestly .unnumbered}
+### The dormition traditions, honestly
 
 There is no apostolic narrative of Mary’s end. What exists from late antiquity is a family of apocryphal narratives—the *Transitus Mariae* literature, surviving in Greek, Latin, Syriac, Coptic, and other versions, of which the best known circulates under the name of John the Theologian and tells of the apostles gathered miraculously from their missions to her deathbed. These texts are evidence of what believers in their milieu held; they are not evidence of what happened, and this reference does not use them as history.[^71]
 
@@ -315,33 +315,33 @@ The Church’s own judgment on them is on record and is unflattering. The Roman 
 
 This is exactly the structure *Munificentissimus Deus* adopts. Its historical argument runs through liturgy and teaching, not narrative, and the constitution’s English text nowhere cites the *Transitus* literature at all—a checked absence.[^73]
 
-### The liturgical argument {#the-liturgical-argument .unnumbered}
+### The liturgical argument
 
 The feast is the load-bearing evidence, and the constitution assembles it carefully. In the East the day is the **Koimesis**, the falling asleep; in the West the Assumption; the constitution treats the two names as naming one belief and quotes both traditions. From the sacramentary that Adrian I sent to Charlemagne: “Venerable to us, O Lord, is the festivity of this day on which the holy Mother of God suffered temporal death, but still could not be kept down by the bonds of death.” From the Gallican books: the privilege is “an ineffable mystery all the more worthy of praise as the Virgin’s Assumption is something unique among men.” From the Byzantine liturgy: “As he kept you a virgin in childbirth, thus he has kept your body incorrupt in the tomb and has glorified it by his divine act of transferring it from the tomb.”[^74] To this it adds the feast’s rise in Roman practice—Sergius I prescribing the stational procession on four Marian feasts including the Dormition, Leo IV adding a vigil and an octave, Nicholas I attesting the preceding fast—and the ordinary argument that the Apostolic See would not have solemnized what the Church did not believe.[^75]
 
 The eighth-century preachers then state the belief explicitly, above all John Damascene: “It was fitting that she, who had kept her virginity intact in childbirth, should keep her own body free from all corruption even after death.”[^76]
 
-### The scholastic argument and the Thomistic limit {#the-scholastic-argument-and-the-thomistic-limit .unnumbered}
+### The scholastic argument and the Thomistic limit
 
 The medieval theologians argued from fittingness, and the constitution reports their reasoning in that register: Amadeus of Lausanne on the flesh that “remained incorrupt”; Anthony of Padua, Albert the Great, Bonaventure, Bernardine of Siena; and, later, Robert Bellarmine and Francis de Sales, the latter arguing from the commandment to honor one’s parents—“What son would not bring his mother back to life?”—which is a rhetorical question, not a demonstration.[^77]
 
 On Thomas the constitution is exact and modest: he “never dealt directly with this question,” yet whenever he touched it held with the Church that Mary’s body was assumed with her soul (§31). This reference claims no more—and notes, from the other side, that Thomas’s own treatment of the Immaculate Conception argues by analogy from a tractate on the Assumption which he ascribes to Augustine, so that the Assumption functioned for him as the securer of a less certain belief rather than as a conclusion needing support.[^78]
 
-### Scripture, honestly weighted {#scripture-honestly-weighted-3 .unnumbered}
+### Scripture, honestly weighted
 
 There is no Assumption narrative in the New Testament, and the constitution claims none. Its stated position is that the proofs of the Fathers and theologians are “based upon the Sacred Writings as their ultimate foundation”: Scripture sets the Mother inseparably beside her Son and his lot (§38); from the second century she is the new Eve, associated with the new Adam in the struggle foretold in the protoevangelium (Gen 3:15), a struggle ending in victory over sin *and death*, as Paul’s resurrection texts announce (§39; cf. 1 Cor 15:54–57). Psalm 132, the Canticle, Revelation 12, and the other loci the tradition uses appear in the constitution as the theologians’ figures, reported as such (§§26–27; Chapter 2 above). The scriptural case is thus a canonical and Christological horizon within which Tradition’s testimony is read—not a chain of narrative proof-texts, and the constitution is candid about that structure.[^79]
 
-### What was deliberately left open {#what-was-deliberately-left-open .unnumbered}
+### What was deliberately left open
 
 The definition says “having completed the course of her earthly life” (**expleto terrestris vitae cursu**)—and stops. It does not define whether Mary died. The constitution freely reports the tradition of her death: the liturgical books treat “the dormition or the Assumption”; the Roman prayer it quotes says she “suffered temporal death”; the faithful, it says, found it “not difficult … to admit that the great Mother of God, like her only begotten Son, had actually passed from this life,” while holding that her body never saw corruption; and John Damascene, its chief witness, speaks of incorruption “even after death.”[^80] Yet the defining sentence was drawn so as to leave the question open, and theologians on both sides have since argued it legitimately: one position holds that she truly died and was raised—the reading the liturgy and the Fathers cited by the constitution presuppose—while the other holds that she passed to glory without death. Both are theological opinions compatible with the definition, and this reference settles neither.
 
 The dogma likewise does not state where or when the Assumption occurred, does not canonize any *Transitus* narrative, does not locate or authenticate any tomb, and does not assert that Mary’s glorification bypassed the common human end—only that, however her earthly course was completed, she was taken up body and soul.
 
-### What the dogma does and does not assert {#what-the-dogma-does-and-does-not-assert-3 .unnumbered}
+### What the dogma does and does not assert
 
 It asserts that Mary, body and soul, already shares the glory of her Son’s Resurrection. It does not assert an ascension: Christ ascended by his own power; Mary was *assumed*, taken up by God’s act—the passive is doctrinal. It is not an apotheosis: she remains a creature, glorified wholly by grace. It does not add a fifth article about her death, her final illness, or a tomb. Its doctrinal fruit is eschatological and ecclesial: the Assumption is “a singular participation in her Son’s Resurrection” and an anticipation of the resurrection promised to all members of his Body (CCC 966, quoting LG 59; CCC 974); in Mary the Church contemplates what she herself will be (CCC 972). The constitution’s own closing hope is the same: “belief in Mary’s bodily Assumption into heaven will make our belief in our own resurrection stronger.”[^81]
 
-### Development milestones {#development-milestones-3 .unnumbered}
+### Development milestones
 
 | **Date** | **Milestone** | **Register** |
 |:--------|:--------------------------------------|:------------------|
@@ -361,7 +361,7 @@ It asserts that Mary, body and soul, already shares the glory of her Son’s Res
 
 Four dogmas defined across fifteen centuries, in three different modes, by councils and popes answering unrelated crises, might have been four unrelated facts. They are not, and the coherence is not a devotional impression but a structure the Church’s own documents state. This chapter sets it out: first the Christological rule that governs every Marian dogma; then the order in which the four stand to one another; then the ecclesial and eschatological meaning that *Lumen gentium* draws from the whole.
 
-### The Christological rule {#the-christological-rule .unnumbered}
+### The Christological rule
 
 Every one of the four was defined, or formulated, inside an argument about Christ—not beside one.
 
@@ -369,7 +369,7 @@ The divine motherhood was defined at Ephesus to protect the unity of the one Chr
 
 From this a working rule follows, and it is the rule this reference has applied throughout: *no Marian dogma states anything about Mary that is not first a statement about Christ or about the effect of his grace.* Cyril’s first anathema exhibits the rule in its grammar—“the Emmanuel is very God, and *therefore* the Holy Virgin is the Mother of God”—and the Second Vatican Council restates it as a norm for teaching: the Council “does not, however, have it in mind to give a complete doctrine on Mary,” and it exhorts theologians and preachers “to abstain zealously both from all gross exaggerations as well as from petty narrow-mindedness in considering the singular dignity of the Mother of God,” and to illustrate her duties and privileges in a way that “always look\[s\] to Christ, the source of all truth, sanctity and piety.”[^82]
 
-### The order among the four {#the-order-among-the-four .unnumbered}
+### The order among the four
 
 The four are not four parallel privileges but one sequence with a single principle—and the sequence runs in two directions at once.
 
@@ -379,7 +379,7 @@ The four are not four parallel privileges but one sequence with a single princip
 
 There is a further, harder unity. In all four, what is affirmed of Mary is *received*. She is Mother of God by God’s choice and the Spirit’s overshadowing; virgin by grace; immaculate by a preserving grace granted in view of another’s merits; assumed by God’s act, not her own ascent. The passive voice runs through every operative formula in this reference’s definitions table, and it is the strongest single argument against every construction of Marian doctrine that would make her an independent source (Chapter 8).
 
-### Mary as the eschatological icon of the Church {#mary-as-the-eschatological-icon-of-the-church .unnumbered}
+### Mary as the eschatological icon of the Church
 
 The Second Vatican Council’s Marian chapter ends by drawing out what the four dogmas mean for everyone else, and this is where the coherence becomes pastoral rather than merely architectural.
 
@@ -389,7 +389,7 @@ LG 65 then states the difference that keeps the analogy from becoming flattery: 
 
 Read through that lens, each dogma has an ecclesial translation which is not a demotion of its Marian sense but its purpose. The divine motherhood grounds the Church’s confession of the one Christ. The perpetual virginity images the Church’s undivided fidelity to her Spouse. The Immaculate Conception shows what grace can do, and does, at the root of a creature—the Church’s own destiny of holiness, realized already in one member. The Assumption shows the body’s share in that destiny, and therefore what the resurrection of the flesh will mean for the rest.
 
-### What the coherence does not license {#what-the-coherence-does-not-license .unnumbered}
+### What the coherence does not license
 
 Three cautions belong to any synthesis of this kind, and they follow from the same documents.
 
@@ -401,17 +401,17 @@ And the analogy runs one way. The Church is like Mary because Mary received Chri
 
 ## The Boundary of the Defined: Titles, Doctrines, Opinions
 
-### Authoritative teaching that is not a fifth dogma {#authoritative-teaching-that-is-not-a-fifth-dogma .unnumbered}
+### Authoritative teaching that is not a fifth dogma
 
 Several firm Marian teachings stand near the four dogmas without being among them, and a reference must keep the categories visible. Mary’s freedom from personal sin throughout her life is constant authoritative teaching (CCC 493: “By the grace of God Mary remained free of every personal sin her whole life long”) but is not the object of the 1854 definition. Her spiritual motherhood of the faithful and the title Mother of the Church (proclaimed by Paul VI in 1964, echoed at CCC 963, 975) are authoritative teaching. Her Queenship is taught by the Assumption definition’s own horizon and by LG 59 (“exalted by the Lord as Queen of the universe”), yet no separate coronation dogma exists. Each of these binds in its own mode; none carries the four dogmas’ definitional form.[^87]
 
-### Cooperation, mediation, and the disputed titles {#cooperation-mediation-and-the-disputed-titles .unnumbered}
+### Cooperation, mediation, and the disputed titles
 
 Mary’s cooperation in the work of salvation is real and conciliar doctrine: she “cooperated by her obedience, faith, hope, and burning charity in the Savior’s work,” and is “a mother to us in the order of grace” (LG 61, quoted at CCC 968). But the Council fenced the language on every side. There is “but one Mediator” (1 Tim 2:5; LG 60), and Mary’s maternal role “in no wise obscures or diminishes this unique mediation of Christ, but rather shows His power”; her influence “flows forth from the superabundance of the merits of Christ, rests on His mediation, depends entirely on it and draws all its power from it” (LG 60). The Church does invoke her “under the titles of Advocate, Auxiliatrix, Adjutrix, and Mediatrix,” yet “this, however, is to be so understood that it neither takes away from nor adds anything to the dignity and efficaciousness of Christ the one Mediator” (LG 62).[^88]
 
 The proposal to define a fifth Marian dogma—Mary as Co-redemptrix, Mediatrix of All Graces, and Advocate—has circulated in petition movements since the twentieth century. It stands *outside* the four dogmas, and the Holy See has now judged its central title directly. The Dicastery for the Doctrine of the Faith’s doctrinal note *Mater Populi Fidelis*, approved by Pope Leo XIV on 7 October 2025 and published 4 November 2025, concludes that “it is always inappropriate to use the title ‘Co-redemptrix’ to define Mary’s cooperation,” because the title “risks obscuring Christ’s unique salvific mediation” (§22). On mediation it teaches that the Council deliberately preferred the language of cooperation and maternal assistance (§27); on “Mediatrix of All Graces” it observes that Mary, “the first redeemed, could not have been the mediatrix of the grace that she herself received” (§67), while allowing that her intercession may implore the “actual graces” that prepare and accompany conversion (§69).[^89] **Advocate**, retained by LG 62, means Mary’s maternal intercession within Christ’s mediation—never protection from a merciless Father or a reluctant Christ.
 
-### Why the four are four {#why-the-four-are-four .unnumbered}
+### Why the four are four
 
 It is worth stating plainly why this reference treats exactly four, since the count is sometimes taken for an arbitrary convention. A dogma, by the criterion of *Dei Filius* quoted in Chapter 1, is a truth contained in revelation and *proposed as divinely revealed* by the Church, whether solemnly or through the ordinary and universal magisterium. Each of the four meets both halves of that test: the content is proposed as revealed, and there is an act or an established universal teaching that so proposes it. The teachings surveyed just above fail the second half, not the first—the Church teaches them, and teaches them authoritatively, without proposing them in that mode. That is the whole of the difference, and it is a difference in the mode of proposal, not a ranking of Mary’s dignities.
 
@@ -423,7 +423,7 @@ The doctrinal test that governs every Marian title follows from the four dogmas 
 
 Two of the four dogmas are held, in substance, by Christians who are not in communion with Rome; two are contested, and contested for reasons that are not primarily about Mary. A reference that states the Catholic doctrine owes its reader an accurate map of where the disagreement actually lies. This chapter draws it from the other communions’ own documents wherever such documents could be identified, and marks the level of each.
 
-### The Orthodox East {#the-orthodox-east .unnumbered}
+### The Orthodox East
 
 The Christological dogmas are common ground, and the shared inheritance is not a modern convergence but the same councils. The Orthodox Churches confess the **Theotokos** of Ephesus and Chalcedon, keep the **aeiparthenos** of Constantinople II, celebrate the Dormition (**Koimesis**) on 15 August, and honor Mary in a liturgical register at least as rich as the Latin one. *Lumen gentium* 69 registers the fact with evident relief: the Council rejoices that among the separated brethren “especially among the Orientals,” many “with devout mind and fervent impulse give honor to the Mother of God, ever virgin.”[^90]
 
@@ -437,13 +437,13 @@ Three things in that sentence deserve notice, because each is a precise datum ra
 
 Behind the historical objection lies a difference in the doctrine of original sin itself. The Greek tradition’s account of what is inherited from Adam—mortality and corruption, with sin as its consequence—does not pose the question to which “preserved from the stain of original sin at the first instant” is the answer, so that the definition can appear to Orthodox theologians both unnecessary and distorting. This reference states that difference at the level of a widely reported theological characterization and does not attempt to adjudicate it.[^92] On the Assumption the disagreement is of a different kind: the content—the Dormition and the glorification of the **Theotokos**—is held in the East’s liturgy, and *MD* itself quotes the Byzantine liturgy in evidence; what is rejected is the mode, a dogma defined by the Bishop of Rome alone.
 
-### The Reformation traditions {#the-reformation-traditions .unnumbered}
+### The Reformation traditions
 
 The Reformers did not begin as Marian minimalists, and the sixteenth century’s confessional documents show it. The *Smalcald Articles* of 1537, Luther’s own, place among the articles “concerning which there is no contention or dispute, since we on both sides confess them” the statement that the Son “was conceived, without the cooperation of man, by the Holy Ghost, and was born of the pure, holy \[and always\] Virgin Mary.”[^93] Both the divine motherhood (the article is a Christological one) and the perpetual virginity thus stand inside a foundational Lutheran confession, listed among the points not in dispute with Rome.
 
 The objection that developed is structural rather than Marian, and it falls on the two modern definitions. It has two parts, and the Anglican–Roman Catholic International Commission states both with unusual clarity. The first is the sufficiency of Scripture, in the words of Article VI of the Thirty-Nine Articles, which ARCIC quotes: “Holy Scripture containeth all things necessary to salvation: so that whatsoever is not read therein, nor may be proved thereby, is not to be required of any man, that it should be believed as an article of the Faith.” The question this raises, as ARCIC puts it, is “whether these doctrines concerning Mary are revealed by God in a way which must be held by believers as a matter of faith.” The second is authority: the doctrines were defined by the Bishop of Rome “independent of a Council.”[^94]
 
-### ARCIC’s Seattle Statement (2005) {#arcics-seattle-statement-2005 .unnumbered}
+### ARCIC’s Seattle Statement (2005)
 
 The most developed ecumenical treatment of the two modern dogmas is the Seattle Statement, and its structure is worth reporting exactly, because it is easy to over- or under-read.
 
@@ -453,11 +453,11 @@ What it does not resolve. “Consonant with Scripture” is not the same as “r
 
 What it is. The document says so itself, in a paragraph headed “The Status of the Document”: it “is a joint statement of the Commission,” whose publication the appointing authorities “have allowed … so that it may be widely discussed,” and it “is not an authoritative declaration by the Roman Catholic Church or by the Anglican Communion, who will study and evaluate the document in due course.” This reference cites it accordingly: the most careful available statement of where the difficulty lies, published on the Holy See’s own Christian-unity site, carrying exactly the authority of a dialogue text and no more.[^97]
 
-### Where the disagreement actually lies {#where-the-disagreement-actually-lies .unnumbered}
+### Where the disagreement actually lies
 
 Gathering the evidence: the divine motherhood is not in dispute among the communions treated here; the perpetual virginity is confessed by the Orthodox and by the classical Lutheran confession, and is widely, though not universally, held in the wider Reformation inheritance today; the Immaculate Conception is rejected by the Ecumenical Patriarchate’s 1895 encyclical as an innovation and questioned by Anglicans as to its required assent; the Assumption’s content is largely shared and its definitional mode contested. The fault line, in short, is not Mariology but the theology of development and the locus of teaching authority—which is why LG 67 warns preachers to “keep away from whatever, either by word or deed, could lead separated brethren or any other into error regarding the true doctrine of the Church,” and why the Church’s current discipline on Marian titles (Chapter 8) is framed with the same care.[^98]
 
-### Currentness {#currentness .unnumbered}
+### Currentness
 
 The one mutable element in this reference is the Holy See’s present judgment on Marian cooperation titles. As of the verification date, the controlling document is the doctrinal note *Mater Populi Fidelis* of the Dicastery for the Doctrine of the Faith, approved by Pope Leo XIV on 7 October 2025 and published 4 November 2025, treated in Chapter 8. Its text, approval, publication date, and signatories were re-verified on the Holy See’s own page on the verification date, and a search for a later Holy See act on Marian titles returned none; a reader consulting this reference later should recheck, since silence is not evidence of continuance.[^99]
 
@@ -563,31 +563,31 @@ Each synopsis condenses the corresponding chapter without erasing its historical
 
 ## Scope, Status, and Qualifications
 
-### Question and thesis boundary {#question-and-thesis-boundary .unnumbered}
+### Question and thesis boundary
 
 This reference answers one question: what exactly the Catholic Church has defined in the four commonly identified Marian dogmas—divine motherhood, perpetual virginity, Immaculate Conception, and bodily Assumption—with each definition’s text, authority, history, biblical and patristic roots, exclusions, and current catechetical framing; how the four cohere as one economy; where other Christian communions agree and disagree; and with the boundary between these dogmas and other Marian teaching kept explicit. It is a source-audited Catholic study instrument: not a critical edition, a magisterial act, a devotional manual, or an apparition study, and it proposes no new definition.
 
-### Corpus and exclusions {#corpus-and-exclusions .unnumbered}
+### Corpus and exclusions
 
 Included: the four dogmas; the defining or formulating acts (Ephesus 431 with Cyril’s second letter; Chalcedon 451 and Constantinople II 553 in reception; Lateran 649 canon 3; *Ineffabilis Deus* 1854; *Munificentissimus Deus* 1950, with *Deiparae Virginis Mariae* 1946); the patristic and scholastic witnesses named in the References (Ignatius, Irenaeus, Jerome, Leo’s Tome, Vincent of Lérins, Bernard, Thomas); the papal and conciliar acts of the Immaculate-Conception controversy from Sixtus IV to Alexander VII; the catechetical loci CCC 484–511 and 963–975 and *Lumen gentium* ch. 8; the identified non-Catholic documents used in Chapter 9 (the 1895 Constantinopolitan encyclical, the *Smalcald Articles*, the ARCIC Seattle Statement); and the current DDF judgment on cooperation titles (*Mater Populi Fidelis*, 2025). Excluded: Marian feasts, prayers, devotions, iconography, and apparitions as such—the Lourdes events are mentioned once, and only to place them outside the dogma; critical-text questions in the conciliar acts; the internal history of the *Transitus* literature; the conciliar debates behind *Lumen gentium* ch. 8; and every question the Church has left open, which is reported as open rather than settled.
 
-### Chronological range and currentness {#chronological-range-and-currentness .unnumbered}
+### Chronological range and currentness
 
 Subject range: from the New Testament to the DDF note of 4 November 2025. Online verification date: sources were checked 2026-07-25; stable ancient doctrine is not given artificial currentness, and the one mutable judgment used (on Marian titles) was re-verified in the official 2025 English text on that date, together with a negative search for any later Holy See act on the same subject.
 
-### Taxonomy and terminology {#taxonomy-and-terminology .unnumbered}
+### Taxonomy and terminology
 
 The reference distinguishes throughout: *dogma* (revealed truth proposed as such, owed divine and Catholic faith); *authoritative doctrine* (for example Mary’s personal sinlessness, Queenship, Mother of the Church); *conciliar synthesis* (*Lumen gentium*’s ordering of cooperation language and its Mary–Church typology); *administrative doctrinal judgment* (the 2025 note’s rule on titles); *theological opinion* (death versus dormition; cousins versus prior-marriage kinsmen); *typology* (Rev 12, Ps 132, new Eve as figure); *apocryphal reception* (*Protevangelium*, *Transitus*); *devotional witness* (*Sub tuum praesidium*); and *ecumenical dialogue text* (ARCIC), which is not an act of either communion’s magisterium. Transliterations (**Theotokos**, **aeiparthenos**, **kecharitomene**, **Panagia**, **Koimesis**) stand for Greek originals not reproduced here; no Greek script is set in this publication.
 
-### Source hierarchy and method {#source-hierarchy-and-method .unnumbered}
+### Source hierarchy and method
 
 Priority: defined texts in identified witnesses; then conciliar and papal acts; then the Catechism and *Lumen gentium* as current framing; then patristic and scholastic witnesses at their own dates; then scholarship; then documents of other communions, cited as their own communions’ acts and never as Catholic authority. Definition texts are quoted exactly from the witnesses named in the Notes and References; historical claims inside the two papal constitutions are reported on the constitutions’ authority as witnesses to their cited acts, not re-verified in the primary archives. Latin is quoted where the defining wording matters; no project or AI translation is offered as source text—English renderings of defined formulas come only from the identified translation witnesses, and where this reference renders a Latin clause itself (Leo’s Tome at DS 291, Trent at DS 1516, Paul IV at DS 1880, the Lyons and Florence professions) the rendering is marked in its note as commentary rather than as a translation witness.
 
-### Qualifications and unresolved items {#qualifications-and-unresolved-items .unnumbered}
+### Qualifications and unresolved items
 
 \(1\) The English of *Ineffabilis Deus* used here has no identified translator; its wording is the common web text, quoted with that caution, and the Vatican English page is a checked title-only shell. (2) The online Latin Denzinger witness does not identify its print edition; its readings were corroborated against parallel witnesses where quoted; its query mark at DS 503, its stray period at DS 2803, and its running heading “Pie IV” at DS 1880 are disclosed at the points of use. (3) Percival’s 1900 translations are dated though public domain; no collation against modern critical editions (Schwartz, Riedinger, Tanner) was performed, and the same holds for the NPNF 2/6 Jerome, the NPNF 2/11 Vincent of Lérins, the ANF Ignatius and Irenaeus, and Eales’s 1904 Bernard. (4) The Ignatian recension question, the date and dependence of the *Transitus* literature, the date and authorship of the *Decretum Gelasianum*, and the palaeographic date of P. Ryl. III 470 are all live scholarly disputes; each is reported as disputed and none is adjudicated. (5) Scotus’s *Ordinatio* III, d. 3, q. 1 is cited by standard reference without critical-edition collation, and **potuit, decuit, fecit** is not attributed to him verbatim. (6) Specific academic acts often reported in the Immaculate-Conception literature (for example a Paris faculty requirement of 1497) were not verified and are not asserted. (7) The characterization of the Greek doctrine of ancestral sin in Chapter 9 is reported at the level of a widely held theological description, with no Orthodox synodal act read for it; the 1895 encyclical is quoted from a private site’s unattributed English translation, uncollated against the Greek. (8) DS numbers follow the revised numbering as used by the Catechism’s apparatus; where only the older numbering could be checked online, both are recorded in the research records. (9) The identification of DS 291 with Leo’s Tome, and of the CCC 499 chain’s remaining members, rests on the online witness’s own sequence and headings rather than on a critical edition. (10) No independent Mariological, patristic, conciliar-historical, medieval, textual-critical, or ecclesiastical review has occurred, and no ecclesiastical approval is claimed or implied.
 
-### Rights {#rights .unnumbered}
+### Rights
 
 Project prose is original and intended for CC BY 4.0. Quotations remain under their own status: Percival (1900), the NPNF 2/6 and 2/11 translations, the Ante-Nicene Fathers (1885–1887), Eales’s Bernard (1904), the Bente–Dau *Triglot Concordia* (1921), the Dominican Fathers’ *Summa* (1920), the Douay-Rheims, and the underlying Latin acts are public domain; Vatican web texts (CCC, *Lumen gentium*, *Munificentissimus Deus*, *Deiparae Virginis Mariae*, *Mater Populi Fidelis*, the ARCIC Seattle Statement as published on the Holy See’s Christian-unity site) and the unattributed *Ineffabilis Deus* English are quoted within ordinary scholarly limits with citation; Deferrari’s Denzinger is used in short attributed clauses only; the 1895 encyclical’s English and the von Dobschütz-based translation of the *Decretum Gelasianum* are quoted in short attributed extracts. Online availability is not treated as a reuse license.
 
@@ -595,7 +595,7 @@ Project prose is original and intended for CC BY 4.0. Quotations remain under 
 
 Witnesses are listed with role and rights notes; access date for all web loci is 2026-07-25 unless stated. Stable source identities for the starred entries are registered in the repository source library; this publication’s bindings are in `research/source-bindings.toml`.
 
-### Defining and formulating acts {#defining-and-formulating-acts .unnumbered}
+### Defining and formulating acts
 
 -   \*Council of Ephesus (431), extracts from the acts with Cyril’s second letter to Nestorius, the third letter with the twelve anathemas and Nestorius’s counter-anathemas, and the decree of deposition; the Formula of Reunion in Cyril’s letter to John of Antioch (433) among the Chalcedonian documents; Chalcedon (451) and Constantinople II (553), in *The Seven Ecumenical Councils*, tr. Henry R. Percival, NPNF series 2, vol. 14 (New York: Charles Scribner’s Sons, 1900; public domain), New Advent transcriptions: <https://www.newadvent.org/fathers/3810.htm>, <https://www.newadvent.org/fathers/3811.htm>, <https://www.newadvent.org/fathers/3812.htm>. Role: definition-text and reception witness (divine motherhood; **aeiparthenos**), with the editor’s bracketed note on the lacuna at the anathemas disclosed in the Notes.
 
@@ -609,7 +609,7 @@ Witnesses are listed with role and rights notes; access date for all web loci is
 
 -   \*Pius XII, *Deiparae Virginis Mariae* (1 May 1946), Vatican English: <https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_01051946_deiparae-virginis-mariae.html>. Role: the consultation document itself (§§2, 4) and, in the page’s own editorial note, its reserved circulation and later publication in AAS.
 
-### Current teaching and framing {#current-teaching-and-framing .unnumbered}
+### Current teaching and framing
 
 -   \**Catechism of the Catholic Church*, English, Holy See web (IntraText) pages for §§484–511 and 963–975: <https://www.vatican.va/archive/ENG0015/__P1K.HTM>, <https://www.vatican.va/archive/ENG0015/__P2C.HTM>. Role: current catechetical framing; its apparatus supplied the checked DS loci (251, 427 chain, 503, 2803, 3903).
 
@@ -619,11 +619,11 @@ Witnesses are listed with role and rights notes; access date for all web loci is
 
 -   First Vatican Council, *Dei Filius* (1870), ch. 3 (DS 3011), English presentation at <https://www.papalencyclicals.net/councils/ecum20.htm> (translation identity not stated on the witness; paraphrased, not quoted). Role: criterion of dogma.
 
-### Scripture {#scripture .unnumbered}
+### Scripture
 
 -   Douay-Rheims Bible (Challoner revision; public domain), drbo.org: <https://drbo.org/chapter/49001.htm> (Lk 1), <https://drbo.org/chapter/01003.htm> (Gen 3, with its annotation on **ipsa conteret**), <https://drbo.org/chapter/50002.htm> (Jn 2, with its annotation at v. 4), <https://drbo.org/chapter/50019.htm> (Jn 19), <https://drbo.org/chapter/73012.htm> (Apoc 12). Role: English Scripture quotations.
 
-### Patristic, scholastic, and medieval witnesses {#patristic-scholastic-and-medieval-witnesses .unnumbered}
+### Patristic, scholastic, and medieval witnesses
 
 -   \*Ignatius of Antioch, *Epistle to the Ephesians* 7, 18–19, and Irenaeus, *Against Heresies* III.22.4 and V.19.1, in the Ante-Nicene Fathers (Roberts–Donaldson–Coxe; public domain), New Advent: <https://www.newadvent.org/fathers/0104.htm>, <https://www.newadvent.org/fathers/0103322.htm>, <https://www.newadvent.org/fathers/0103519.htm>. Role: second-century substance of the divine motherhood and the Eve–Mary parallel. The Ignatian page presents the shorter recension.
 
@@ -637,7 +637,7 @@ Witnesses are listed with role and rights notes; access date for all web loci is
 
 -   John Duns Scotus, *Ordinatio* III, d. 3, q. 1: standard scholarly reference for preservative redemption; no online witness checked, and no quotation made.
 
-### Apocrypha, lists, and dating scholarship {#apocrypha-lists-and-dating-scholarship .unnumbered}
+### Apocrypha, lists, and dating scholarship
 
 -   “Apocryphal Works on the Assumption of Mary” (the *Transitus* literature, including the account ascribed to John the Theologian), Ante-Nicene Fathers translation at <https://www.newadvent.org/fathers/0832.htm>. Role: reception evidence only; no historical value claimed.
 
@@ -647,7 +647,7 @@ Witnesses are listed with role and rights notes; access date for all web loci is
 
 -   *Protevangelium of James*: cited as apocryphal reception evidence for the Epiphanian solution and for virginity in birth; no witness quoted.
 
-### Documents of other communions (cited as their own acts) {#documents-of-other-communions-cited-as-their-own-acts .unnumbered}
+### Documents of other communions (cited as their own acts)
 
 -   Patriarchal and Synodal Encyclical of Constantinople (Anthimus VII, 1895), art. XIII, English text at <http://orthodoxinfo.com/ecumenism/encyc_1895.aspx>. Role: the Orthodox objection to the 1854 definition. Private site; translator and Greek edition unidentified; uncollated.
 

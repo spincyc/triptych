@@ -405,13 +405,13 @@ Project prose is original; ancient quotations follow the public-domain Ante-Nice
 
 All web sources were accessed and checked on 2026-07-24 or 2026-07-25. Ancient-work citations in the text use conventional English titles with the chapter numbering of the translations listed here.
 
-### Primary sources: Tertullian {#primary-sources-tertullian .unnumbered}
+### Primary sources: Tertullian
 
 -   Tertullian, works in English translation: *The Ante-Nicene Fathers*, vols. 3–4, ed. A. Roberts, J. Donaldson, A. C. Coxe (Buffalo: Christian Literature Publishing Co., 1885). Quotations follow the transcriptions at New Advent (<https://www.newadvent.org/fathers/>) and CCEL (<https://www.ccel.org/ccel/schaff/anf03.html> and <https://www.ccel.org/ccel/schaff/anf04.html>). Works quoted: *Apology* 2, 17, 18, 30, 37, 39, 40, 50; *To the Nations* 1.1, 1.7, 1.8; *The Testimony of the Soul* 1, 2, 5, 6; *To the Martyrs* 1, 2, 3; *To Scapula* 2, 3, 4, 5; *An Answer to the Jews* 1, 7; *The Chaplet* 1, 3, 11; *On Baptism* 1, 4, 7, 8, 15, 17, 18; *On Prayer* 1, 25, 29; *On Repentance* 4, 7, 9; *Of Patience* 1; *To His Wife* 1.1, 2.8; *Prescription Against Heretics* 7, 13, 36; *Against Marcion* 1.1, 1.15, 3.24, 4.2; *Against Hermogenes* 1, 2; *Against the Valentinians* 1, 3; *On the Flesh of Christ* 1, 5; *Against Praxeas* 1, 2, 3, 5, 8, 9, 25, 27; *Scorpiace* 1; *A Treatise on the Soul* 9, 20, 55, 58; *On the Resurrection of the Flesh* 1, 8; *On the Veiling of Virgins* 1, 17; *On Exhortation to Chastity* 7; *On Monogamy* 1, 12; *On Fasting* 1; *On Modesty* 1, 21; *On the Apparel of Women* 1.1, 2.13; *On Idolatry* 1, 14, 19; *The Shows* 4, 25, 30; *On Flight in Persecution* 1, 9, 14; *On the Pallium* 1, 6. The translation is public domain; underlying Latin is ancient and public domain.
 
 -   Latin control texts for the tags quoted in Latin: *Adversus Praxean* 2 and 27 at the Tertullian Project (<https://www.tertullian.org/latin/adversus_praxean.htm>); *De carne Christi* 5 and *Apologeticum* 17 at The Latin Library (<https://www.thelatinlibrary.com/tertullian/tertullian.carne.shtml>; <https://www.thelatinlibrary.com/tertullian/tertullian.apol.shtml>); *De resurrectione carnis* 8 at the Tertullian Project (<https://www.tertullian.org/latin/de_resurrectione_carnis.htm>). The Latin of *semen est sanguis Christianorum* is quoted as the famous transmitted tag; the ANF English at *Apology* 50 was verified.
 
-### Primary sources: other ancient witnesses {#primary-sources-other-ancient-witnesses .unnumbered}
+### Primary sources: other ancient witnesses
 
 -   *Acts of the Scillitan Martyrs*, public-domain English translation at Early Christian Writings (<https://www.earlychristianwritings.com/text/scillitan.html>).
 
@@ -435,7 +435,7 @@ All web sources were accessed and checked on 2026-07-24 or 2026-07-25. Ancient-w
 
 -   *Decretum Gelasianum* (pseudo-Gelasian, 6th c.), English translation at the Tertullian Project (<https://www.tertullian.org/decretum_eng.htm>).
 
-### Ecclesial reception {#ecclesial-reception .unnumbered}
+### Ecclesial reception
 
 -   *Catechism of the Catholic Church* 2761, English text, Vatican website archive (<https://www.vatican.va/archive/ENG0015/_INDEX.HTM>); cited for its quotation of Tertullian, *De oratione* 1.
 
@@ -443,13 +443,13 @@ All web sources were accessed and checked on 2026-07-24 or 2026-07-25. Ancient-w
 
 -   J. Chapman, “Tertullian,” *The Catholic Encyclopedia*, vol. 14 (New York, 1912), at New Advent (<https://www.newadvent.org/cathen/14520c.htm>); cited as reception history and quoted briefly on the Latin Bible, the theological idiom, and the debt to Irenaeus.
 
-### Transmission, editions, and finding aids {#transmission-editions-and-finding-aids .unnumbered}
+### Transmission, editions, and finding aids
 
 -   The Tertullian Project (ed. R. Pearse): orientation and works pages (<https://www.tertullian.org/>; <https://www.tertullian.org/works.htm>, quoted for the “no agreement among scholars” dating summary); lost-works census (<https://www.tertullian.org/works_lost.htm>); manuscripts census (<https://www.tertullian.org/manuscripts/>); early editions pages (<https://www.tertullian.org/editions/editions.htm>; <https://www.tertullian.org/editions/rhenanus_1521.htm>). Used as a specialist finding aid, not as a critical edition.
 
 -   University of Helsinki research guide, “The Works of Tertullian” (<https://libraryguides.helsinki.fi/tertullian>); consulted for the CSEL critical-edition volumes (CSEL 20, 1890; 47, 1906; 69, 1939; 70, 1942; 76, 1957).
 
-### Modern scholarship {#modern-scholarship .unnumbered}
+### Modern scholarship
 
 -   T. D. Barnes, *Tertullian: A Historical and Literary Study* (Oxford: Clarendon Press, 1971; reissued with postscript 1985). Consulted through the contemporary reviews reproduced at the Tertullian Project, principally W. H. C. Frend, *Classical Review* 24 (1974): 72–76 (<https://www.tertullian.org/articles/frend_on_barnes.htm>); Barnes’s conclusions are cited as reported there.
 

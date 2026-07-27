@@ -562,13 +562,13 @@ Nothing here is pastoral counsel. A reader troubled about his own state or anoth
 
 ## References
 
-### Scripture {#scripture .unnumbered}
+### Scripture
 
 -   Ecclesiasticus 7:40. 2 Machabees 12:43–46. Matthew 5:25–26; 7:21–23; 11:22–24; 12:36–37; 13:36–43, 47–50; 16:27; 24:29–36; 25:1–46. Luke 12:2–5; 16:19–31; 23:42–43. John 3:17–21; 5:22–30; 11:24–26; 12:47–50. Acts 17:30–31. Romans 2:5–16; 14:10–12. 1 Corinthians 3:11–17; 4:3–5; 15:20–28, 51–55. 2 Corinthians 5:1–10. Philippians 1:21–24. 1 Thessalonians 4:13–17. 2 Timothy 4:1, 6–8. Hebrews 9:27–28. Apocalypse 14:13; 20:11–15.
 
 -   All quoted from the public-domain Douay–Rheims translation in Bishop Challoner’s revision, in the tracked per-book verse text of Project Gutenberg eBook 1581 registered in this repository’s reusable source library; wording checked 2026-07-25, except Ecclesiasticus 7:40, located and checked 2026-07-26. Chapter and verse follow the Douay–Rheims’s own numbering, which follows the Clementine Vulgate. The registered divergence table for that text marks Matthew 24:36 and John 5:22 as differing from the settled American edition of 1899; both divergences are stated where the verses are quoted. No translation was composed for this article and no other English version is quoted in it.
 
-### Patristic witness {#patristic-witness .unnumbered}
+### Patristic witness
 
 -   Augustine of Hippo, *De civitate Dei* XX.1 (why the last day is properly the day of judgment; “day” used for “time”), XX.2 (the hiddenness of God’s present judgments), XX.14 (the books of Apocalypse 20; the book of life as a divine power recalling every man’s works), XXI.13 (against those who make all punishment after death purgatorial), XXI.26 (1 Corinthians 3 read of the fire of tribulation in this life; the concession about a purgative fire in the interval). English: trans. Marcus Dods, *The City of God*, vol. II, in *The Works of Aurelius Augustine, A New Translation* (Edinburgh: T. & T. Clark, 1871); public domain; wording checked 2026-07-25 in this repository’s tracked transcription of the 1871 printing, with passages registered for XX.1 (artifact lines 13879–13938), XX.14 (14884–14951), and XXI.26 (18318–18475).
 
@@ -576,7 +576,7 @@ Nothing here is pastoral counsel. A reader troubled about his own state or anoth
 
 -   Augustine, *Sermo* 18, 4 (PL 38, 130–131), on the least brethren as Christ’s members, cited only as quoted at *Catechism of the Catholic Church* 1039; the sermon was not read at its own locus.
 
-### Thomistic framework {#thomistic-framework .unnumbered}
+### Thomistic framework
 
 -   Thomas Aquinas, *Summa theologiae* III, q. 59, aa. 1–6, especially a. 5 with its three replies (whether a general judgment remains after the judgment that takes place in the present time; the five ways a finished life continues; the unchangeable state of the separated soul; the changeable body). English from the public-domain translation of the Fathers of the English Dominican Province at [New Advent](https://www.newadvent.org/summa/4059.htm); Latin at [Corpus Thomisticum](https://www.corpusthomisticum.org/sth4053.html); both checked 2026-07-25 and registered as exact artifacts of those dated web states.
 
@@ -584,7 +584,7 @@ Nothing here is pastoral counsel. A reader troubled about his own state or anoth
 
 -   *Supplementum Tertiae Partis Summae theologiae* q. 69, aa. 1–2 (the places that receive souls; immediate conveyance unless held by a debt); q. 87, aa. 1–3 (each man’s conscience as the book; the manifestation of merits to all; the rapidity of the survey); q. 88, aa. 1–4 (the general judgment; the mental conduct of the debate; the reserved time; the place); Appendix I, q. 2, aa. 1–6 (the pains of purgatory); Appendix II, q. 1, aa. 1–2 (whether there is a purgatory; where it is). The Supplement is not a work of Aquinas’s composition: the Leonine editors state that it was transcribed about the middle of the fourteenth century from a codex of the commentary on the fourth book of the Sentences and is to be held a second witness to that commentary. English at [New Advent](https://www.newadvent.org/summa/5088.htm) (with the pages for qq. 69 and 87 and the two appendices); Latin at the Internet Archive page images of *Sancti Thomae Aquinatis Opera omnia*, tomus duodecimus (Rome: Typographia Polyglotta, 1906), leaf 412 (the *Praefatio in Supplementum*) and leaf 664 (printed p. 205, q. 88 aa. 1–3), with the volume’s uncorrected machine transcription used only as a finding aid; all checked 2026-07-25 and registered.
 
-### Defined and authoritative Catholic teaching {#defined-and-authoritative-catholic-teaching .unnumbered}
+### Defined and authoritative Catholic teaching
 
 -   Fourth Lateran Council (1215), constitution 1 *Firmiter credimus*, at DS 801 (the coming at the end of the age; rising *cum suis propriis corporibus, quae nunc gestant*). Second Council of Lyons (1274), profession of faith of Michael Palaeologus, at DS 856–859 (purgatorial punishments and suffrages; *mox* to heaven and to hell; *nihilominus in die iudicii*). John XXII, *Ne super his* (3 December 1334), at DS 990–991. Benedict XII, *Benedictus Deus* (29 January 1336), at DS 1000–1002 (the intuitive and facial vision before the resumption of bodies and the general judgment; immediate descent for those dying in actual mortal sin; the retained day of judgment, quoting 2 Corinthians 5:10). Council of Florence, *Laetentur caeli* (6 July 1439), at DS 1304–1306. Latin of all five read 2026-07-25 in the dated web presentation of the Latin *Enchiridion symbolorum* at [patristica.net](https://patristica.net/denzinger/enchiridion-symbolorum.html), registered as an exact artifact of that state. The Enchiridion is a compilation and a finding aid to its underlying documents; no printed Denzinger edition and no conciliar manuscript was collated. English renderings in this article are working glosses except where the Catechism’s own English is quoted.
 

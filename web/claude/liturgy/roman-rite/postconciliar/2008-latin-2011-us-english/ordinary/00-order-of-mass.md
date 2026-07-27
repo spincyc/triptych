@@ -10,11 +10,11 @@ The book in question is exact. It is the *Missale Romanum*, third typical editio
 
 That precision is not pedantry. “The Novus Ordo,” “the new Mass,” “the vernacular liturgy” are not books and have no rubrics. Claims about what the Mass says or requires can be checked only against an identified edition, and a surprising number of familiar claims do not survive the check. The 2008 Latin, for instance, still prints the Roman Canon first among the Eucharistic Prayers and still directs that the faithful be able to sing the Ordinary in Latin in a rite whose Latin text remains the typical one; the 2011 English says “for many” at the consecration of the chalice because a circular letter of 2006 required it of every future translation, not because ICEL preferred it.
 
-### The governing claim {#the-governing-claim .unnumbered}
+### The governing claim
 
 The thesis this study defends, and against which its evidence should be read, is this. The postconciliar Order of Mass is a single act with two constitutive parts joined by a hinge and framed at both ends. The General Instruction says so in as many words: the Mass consists in some sense of two parts, the Liturgy of the Word and the Liturgy of the Eucharist, so closely connected that they form one single act of worship, and to these are added rites which open and conclude the celebration.[^3] Everything in the sequence can be read as serving that joint: the Introductory Rites constitute the assembly that is to hear and to offer; the Liturgy of the Word forms it by God’s own speech and turns it outward in petition; the Preparation of the Gifts moves it from hearing to offering by the plainest possible means; the Eucharistic Prayer is the act itself, in which the Church’s thanksgiving carries Christ’s own words and deed; the Communion Rite gives what has been made; the Concluding Rites send. Read this way, several long-running disputes about the reform become questions of proportion rather than of substance, and several genuinely substantive changes — the removal of *mysterium fidei* from the consecratory form, the composition of three new anaphoras, the reduction of the offertory — come into clearer focus precisely because they are not diffused across a general complaint.
 
-### A map of the received action {#a-map-of-the-received-action .unnumbered}
+### A map of the received action
 
 The following is a working guide to the 2008 Latin Order of Mass by its own numbering. Elements marked *fixed* occur at every celebration of this Order; *conditional* elements occur when the day, rank, or rubric prescribes; *optional* elements depend on a choice the Missal itself grants.
 
@@ -76,7 +76,7 @@ The following is a working guide to the 2008 Latin Order of Mass by its own numb
 
 Two features of that table are worth noticing before the exposition begins. First, the numbering runs 1–30, then jumps to 31 for the Eucharistic Prayer dialogue, and then to 83 for the Roman Canon, because the prefaces occupy nn. 33–82 in between: the book is arranged for use at the altar, not for reading, and the Order of Mass literally has the prefaces bound into its middle. Second, the “fixed” column is thinner than the reputation of the older rite would suggest and thicker than the reputation of the newer one: the great majority of the sequence admits no choice at all, and where choice exists the Missal names the alternatives.
 
-### How the movements are read here {#how-the-movements-are-read-here .unnumbered}
+### How the movements are read here
 
 Each movement receives the treatment its own form requires rather than a uniform dossier. A procession is read through its agents, direction, and destination; a dialogue through its speakers and what the answer concedes; a psalm through its mode of use; an oration through its address, its silence, and its mediation; the Eucharistic Prayer through anaphoral grammar rather than a checklist. Where a movement’s history is secure it is given; where the record supports only a terminus or a family resemblance, that is said in place. Patristic witnesses are used to show what was already there, not to make a fourth-century preacher a commentator on a twentieth-century rubric.
 
@@ -646,13 +646,13 @@ It does not decide whether the reform should have been undertaken, whether its e
 
 ## Scope, Edition, and Qualifications
 
-### The object {#the-object .unnumbered}
+### The object
 
 This study treats the *Order of Mass* — the *Ordo Missae*, nn. 1–146 — of the Roman Rite, together with the General Instruction that governs it and the Appendix to the Order of Mass so far as the 2008 emendations touch it. “Order of Mass” here means the whole ordered sequence of the Mass with a congregation, not the sung Ordinary (*Kyrie, Gloria, Credo, Sanctus, Agnus Dei*) and not the complete Missal. Stable does not mean invariant: the study distinguishes throughout between elements that occur at every celebration, elements conditioned by day or rank, elements the Missal offers as alternatives, and elements determined by territorial adaptation.
 
 Excluded: the temporal and sanctoral Propers; the Lectionary and its text; the Eucharistic Prayers for Reconciliation and for Various Needs beyond the 2008 corrections that touch them; the Eucharistic Prayers for Masses with Children beyond the fact of their removal from the 2008 Latin Missal; concelebration, Masses without a congregation, Masses with the Bishop, ritual and votive Masses; the Order of Mass of the 1962 Missal except as a comparand at named points; and every question of the present canonical discipline governing the older Missal.
 
-### The editions {#the-editions .unnumbered}
+### The editions
 
 -   **Controlling Latin rite:** *Missale Romanum*, *editio typica tertia*, *reimpressio emendata* (Vatican City, 2008). No exact artifact of the 2008 altar book was obtained or is registered. The study therefore works from two controls in combination: the registered secondary digital reproduction of the 2002 third typical edition, and the official published list of the 2008 variations. Every statement about the 2008 state is either supported by the variation list or is a statement that the variation list records no change at that place; the latter is bounded negative evidence, since the 2008 notice states that further corrections of accent, punctuation, colour, and typography were made without being listed.
 
@@ -662,11 +662,11 @@ Excluded: the temporal and sanctoral Propers; the Lectionary and its text; the E
 
 -   **Comparand:** *Missale Romanum*, *editio typica* (Vatican City, 1962), in the registered facsimile, used at the Canon and at named points of comparison only.
 
-### Territory and date {#territory-and-date .unnumbered}
+### Territory and date
 
 All statements about territorial adaptation are for the dioceses of the United States of America and are stated as of 25 July 2026. The 2011 English is the state in use since the First Sunday of Advent 2011; the General Instruction state is that carrying the 2021 emendations. This study did not inspect the confirmation decrees themselves and cites their dates from the registered official record of the United States General Instruction.
 
-### Rights and the treatment of texts {#rights-and-the-treatment-of-texts .unnumbered}
+### Rights and the treatment of texts
 
 The Latin *editio typica* is quoted where the argument requires it, and the Latin quotations in this study are evidence, not texts offered for recitation. The approved English translation of the Order of Mass — the people’s parts, the orations, and the Eucharistic Prayers — is under copyright and is *not* reproduced here in any form. Where the argument turns on a short English phrase whose exact wording is the point at issue (“and with your spirit,” “consubstantial with the Father,” “for many,” “under my roof”), that phrase is quoted and no more. Nowhere is the approved English paraphrased closely enough to reconstruct it.
 
@@ -674,7 +674,7 @@ That constraint has consequences, and they are stated where they bite rather tha
 
 Patristic and historical Latin quoted in this study — Ambrose’s *De sacramentis* from *Patrologia Latina* XVI (1880), and the Verona palimpsest text from Hauler’s Teubner edition of 1900 — is public domain in the United States by age of publication; the page images consulted are faithful photographic reproductions adding no original authorship.
 
-### Evidence classes and their limits {#evidence-classes-and-their-limits .unnumbered}
+### Evidence classes and their limits
 
 Claims in this study fall into four classes and are distinguishable in the notes.
 
@@ -702,7 +702,7 @@ Specific limitations that a reader should carry away:
 
 -   Reception history, celebration practice, music, architecture, and the sociology of the reform are outside the study’s scope entirely.
 
-### Review state {#review-state .unnumbered}
+### Review state
 
 This study has received internal source and production review only. It has not received independent review by a liturgical historian, a patristics specialist, a Latinist, or a sacramental theologian; it carries no imprimatur, nihil obstat, or ecclesiastical approval; and it is not an altar book, a ritual text, a critical edition, or a substitute for the liturgical books themselves.
 
@@ -733,7 +733,7 @@ Two absences from this table are deliberate. The working history of the Consiliu
 
 ## References
 
-### Liturgical books {#liturgical-books .unnumbered}
+### Liturgical books
 
 -   *Missale Romanum*, editio typica tertia (Civitas Vaticana: Typis Vaticanis, 2002), consulted in the registered secondary digital reproduction (restricted; SHA-256 `0b458944…`; 828 pages). Re-acquired publication-locally on 2026-07-25 and found byte-identical to the registered artifact. Pages inspected for this study: the front matter carrying the Latin constitution *Missale Romanum* and the decrees; the *Institutio Generalis* entire; and the *Ordo Missae* nn. 1–146 with the following solemn blessings. Not the printed altar book; claims are bounded to the inspected pages and to unambiguous readings.
 
@@ -749,7 +749,7 @@ Two absences from this table are deliberate. The working history of the Consiliu
 
 -   *Ordo lectionum Missae*, editio typica altera (1981). Identified as the Missal’s own authority at *IGMR* 56, 57, and 61; not examined for this study, and its text is nowhere reproduced.
 
-### Acts governing the rite and its translation {#acts-governing-the-rite-and-its-translation .unnumbered}
+### Acts governing the rite and its translation
 
 -   Second Vatican Council, *Sacrosanctum Concilium* (4 December 1963), official English web text, [vatican.va](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_en.html), re-fetched 2026-07-25 byte-identical to the registered artifact; arts. 7, 14, 47, 50–53 consulted. The promulgated Latin (AAS 56 \[1964\] 97–138) is authoritative and was not collated.
 
@@ -765,7 +765,7 @@ Two absences from this table are deliberate. The working history of the Consiliu
 
 -   Decree N. 652/08/L (8 June 2008) approving the three changes for the emended reprint. Cited as recited in the 2008 *Notitiae* notice; the decree itself, published in the previous issue at pp. 175–176, was not examined.
 
-### Ancient and patristic witnesses {#ancient-and-patristic-witnesses .unnumbered}
+### Ancient and patristic witnesses
 
 -   Justin Martyr, *First Apology* 65–67, in *The Ante-Nicene Fathers*, vol. 1 (Buffalo: Christian Literature Publishing, 1887), Dods–Reith translation; registered edition with facsimile and OCR witnesses. Chapter 67 used for the second-century Roman sequence.
 
@@ -773,7 +773,7 @@ Two absences from this table are deliberate. The working history of the Consiliu
 
 -   Ambrose of Milan (or the author of *De sacramentis*), *De sacramentis* IV, 5, 21–23 and IV, 6, 26–27, in *Patrologiae cursus completus, series Latina*, tomus XVI (Parisiis: apud Garnier Fratres et J.-P. Migne successores, 1880), coll. 462–464; page images read 2026-07-25 (new source records: work, edition, two artifacts, two verified passages). The Maurist apparatus on those columns records the variant readings noted in this study.
 
-### Cited but not examined {#cited-but-not-examined .unnumbered}
+### Cited but not examined
 
 -   John Paul II, *Vicesimus quintus annus* (4 December 1988) n. 13, AAS 81 (1989) 910; cited only as *IGMR* 57 cites it.
 

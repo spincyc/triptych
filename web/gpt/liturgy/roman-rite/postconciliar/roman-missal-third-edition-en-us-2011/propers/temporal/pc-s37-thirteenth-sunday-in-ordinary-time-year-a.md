@@ -31,7 +31,7 @@ PC-S37-A
 | Moral | Prefer Christ without despising creaturely duties; carry the cross without seeking harm; practice prudent hospitality even in a cup of water; live the baptismal death to sin. |
 | Anagogical | Those dead with Christ hope to live with him; mercy is sung forever, faithful service receives its reward, and Communion gives life ordered to lasting union in charity. |
 
-## Scriptural Date and Location {#scriptural-date-and-location .unnumbered}
+## Scriptural Date and Location
 
 *Canonical order governs; composition and narrated event remain distinct, and inherited and modern judgments remain separate where the evidence is uncertain.*
 
@@ -57,7 +57,7 @@ PC-S37-A
 | Acclamation | 1 Pet. 2:9 | From “Babylon” (received as Rome) to Christians in Asia Minor | Traditional Petrine setting in AD 60s; authorship and date disputed |
 | Audience: Pontus, Galatia, Cappadocia, Asia, and Bithynia. Royal-priestly and holy-nation language receives Exodus in Christological ecclesial identity; the clause calls from darkness to light and to proclamation of God’s mighty acts. |  |  |  |
 
-## The Propers: Themes and Movement {#the-propers-themes-and-movement .unnumbered}
+## The Propers: Themes and Movement
 
 > **Governing account: receive Christ, lose the false life, live from his gift**
 >
@@ -65,19 +65,19 @@ PC-S37-A
 
 **Called into light → Christ preferred → messenger received → life renewed**
 
-### 1. Gift establishes the household (*Entrance, Collect, Acclamation*) {#gift-establishes-the-household-entrance-collect-acclamation .unnumbered}
+### 1. Gift establishes the household (*Entrance, Collect, Acclamation*)
 
 The universal acclamation of Psalm 47 opens into the Collect’s adoption by grace. The assembly does not generate light but is made children of light and asked to adhere to truth. First Peter gives this identity a vocation: those called from darkness proclaim God’s mighty acts. Belonging becomes testimony.
 
-### 2. Hospitality receives more than it controls (*First Reading, Psalm, Gospel*) {#hospitality-receives-more-than-it-controls-first-reading-psalm-gospel .unnumbered}
+### 2. Hospitality receives more than it controls (*First Reading, Psalm, Gospel*)
 
 The Shunammite recognizes Elisha, makes space, and receives a promise she did not manipulate. Matthew explicitly correlates receiving a prophet, righteous person, or little one with receiving Christ and the One who sent him. Psalm 89 answers in covenant mercy and blessed worship. Hospitality is receptive participation, never a transaction for guaranteed reward.
 
-### 3. The cross orders every love (*Gospel, Romans*) {#the-cross-orders-every-love-gospel-romans .unnumbered}
+### 3. The cross orders every love (*Gospel, Romans*)
 
 Jesus’ priority does not abolish family love; it judges and orders every creaturely attachment under love of God. Taking the cross and losing life are costly fidelity, not self-harm. Romans independently names the sacramental foundation of Christian death and life: Baptism joins believers to Christ’s once-for-all Pasch and summons continuing death to sin.
 
-### 4. God effects and Communion gives life (*Prayer over Offerings, Communion, Prayer after Communion*) {#god-effects-and-communion-gives-life-prayer-over-offerings-communion-prayer-after-communion .unnumbered}
+### 4. God effects and Communion gives life (*Prayer over Offerings, Communion, Prayer after Communion*)
 
 The offering prayer attributes the mysteries’ effect to God while asking that servants celebrate worthily. Communion may remember divine benefits or voice Christ’s prayer for unity. The final prayer names the offered and received victim as life-giving and orders union toward lasting charity. This sacramental movement can illuminate Romans, but its Week XIII texts are shared across all cycles.
 
@@ -85,7 +85,7 @@ The offering prayer attributes the mysteries’ effect to God while asking that 
 >
 > Christ’s priority never licenses neglect of children, spouse, parents, dependents, safeguarding, or lawful duties. The cross is not avoidable injury sought for itself. Hospitality does not suspend prudence or make access to vulnerable persons a religious entitlement. Baptismal identity grounds conversion; it does not make future sin impossible.
 
-### Theological and Spiritual Synthesis {#theological-and-spiritual-synthesis .unnumbered}
+### Theological and Spiritual Synthesis
 
 The variable texts describe Christian life as received participation in Christ. The Shunammite welcomes God’s messenger and receives a promise; Jesus orders every bond under allegiance to himself and identifies reception of his messengers with reception of him; Paul recalls Baptism into Christ’s death and risen life. The Collect and acclamation place this movement within adoption by grace and vocation from darkness into light.
 
@@ -98,9 +98,9 @@ Such participation orders rather than destroys creaturely love: Christ is prefer
 | Sacramental | Rom. 6:3–4, 8–11; Prayer over Offerings; Prayer after Communion | Baptism joins believers to Christ’s Pasch; God effects the mysteries, and Eucharistic reception gives life ordered to lasting charity. | Baptismal identity requires continuing conversion, and the shared Week XIII orations do not prove a cycle-specific compositional plan. |
 | Moral and eschatological | 2 Kgs. 4:8–11, 14–16a; Ps. 89; Gospel; Communion A | Prudent hospitality, rightly ordered love, small acts of service, remembered benefits, and mercy sung forever tend toward reward and life with Christ. | Communion A is unselected; hospitality is not a transaction for miracles, allegiance does not erase lawful duties, and the cross never commends self-harm or avoidable danger. |
 
-## The Propers: Detailed Commentary {#the-propers-detailed-commentary .unnumbered}
+## The Propers: Detailed Commentary
 
-### Kingship, adoption, light, and truth (*Entrance, Collect, Acclamation*) {#kingship-adoption-light-and-truth-entrance-collect-acclamation .unnumbered}
+### Kingship, adoption, light, and truth (*Entrance, Collect, Acclamation*)
 
 Psalm 47’s worldwide summons gives the Entrance a public horizon: the God acclaimed by all peoples is king over all the earth. The Collect narrows that grandeur to filial gift. Adoption is by grace, so “children of light” names received identity rather than spiritual pedigree. The petition to avoid error and adhere to truth also prevents light language from becoming mere inward feeling.
 
@@ -112,7 +112,7 @@ The history of reception broadens that point. Clement of Alexandria’s survivin
 
 The witnesses also keep distinct what later Christian speech can too easily collapse. “Chosen” names divine initiative, “royal” derives from belonging to Christ, “priestly” orders prayer and witness, and proclamation names the end for which the people are gathered. Clement’s sequence gives no basis for treating every baptized person as holding the same ecclesial office; neither does it permit reducing baptismal priesthood to a decorative title. Gregory’s pastoral application makes privilege answerable to conduct: nobility of regeneration increases the obligation to govern oneself in virtue. Thus the acclamation prepares the Gospel not by declaring the hearers superior to those outside, but by reminding them why received light must become public praise and service.
 
-### A room, a promise, and a received messenger (*First Reading, Psalm, Gospel*) {#a-room-a-promise-and-a-received-messenger-first-reading-psalm-gospel .unnumbered}
+### A room, a promise, and a received messenger (*First Reading, Psalm, Gospel*)
 
 The Shunammite’s hospitality is concrete and sustained: food, recognition, household consultation, and a small furnished room. The appointed omissions move from her welcome to Elisha’s question about recompense and the servant’s observation that she has no son. The promise is gift, not payment produced by a technique. The larger narrative, in which the son later dies and is restored, intensifies the story’s dependence on God beyond the selected verses.
 
@@ -140,13 +140,13 @@ Two Latin receptions refine the act’s end. Augustine’s *Exposition on Psalm 
 
 This does not confer unlimited access or make every claimant a trustworthy messenger. Ecclesial authority, discernment, safeguarding, and prudence remain necessary. Nor is reward commercial payment. The cup matters because it is given in the name of discipleship; grace dignifies the person and act beyond their visible scale.
 
-### Christ before family and the cross without self-harm (*Gospel*) {#christ-before-family-and-the-cross-without-self-harm-gospel .unnumbered}
+### Christ before family and the cross without self-harm (*Gospel*)
 
 Jesus’ comparative saying demands supreme allegiance. Chrysostom interprets it as preferring the Creator when creaturely attachment conflicts with discipleship, not hating parents as such. Elsewhere Matthew condemns evasion of duties to father and mother. The hard saying therefore orders loves: family is loved truthfully under God, never made an absolute rival and never discarded as though grace opposed nature.
 
 Taking one’s cross is readiness for faithful suffering in union with Christ. It does not sacralize abuse, disable self-protection, or turn preventable injury into a spiritual achievement. Losing life for Christ can include martyrial fidelity and daily self-gift, but cannot be invoked to command another person’s silence or exposure.
 
-### Baptized into death and life (*Second Reading*) {#baptized-into-death-and-life-second-reading .unnumbered}
+### Baptized into death and life (*Second Reading*)
 
 Romans 6 begins from sacramental fact. Baptism joins believers to Christ’s death and burial so that their life may correspond to his resurrection. Paul is not describing a private symbol chosen after conversion; he appeals to a common ecclesial initiation that changes the believer’s relation to sin and to Christ.
 
@@ -158,11 +158,11 @@ The appointed boundary requires care. Verses 5–7, with further explanation of 
 
 Romans remains semi-continuous. A cross–Baptism connection with Matthew is theologically plausible and canonically grounded, but the Lectionary’s Ordinary Time principles do not establish that the second reading was selected to comment on this Gospel. The guide therefore reserves claims of one designed sequence.
 
-### Mysteries effected by God (*Prayer over Offerings*) {#mysteries-effected-by-god-prayer-over-offerings .unnumbered}
+### Mysteries effected by God (*Prayer over Offerings*)
 
 The Prayer over the Offerings assigns sacramental effect to God and asks that the Church’s service accord with the mysteries. Divine efficacy and human disposition are related without competition: God acts first and truly; worshippers are genuinely called to worthy service.
 
-### Remembered benefits, unity, life, and charity (*Communion, Prayer after Communion*) {#remembered-benefits-unity-life-and-charity-communion-prayer-after-communion .unnumbered}
+### Remembered benefits, unity, life, and charity (*Communion, Prayer after Communion*)
 
 Communion option A begins Psalm 103’s self-address: the whole person blesses God and refuses forgetfulness of his benefits. Option B carries Christ’s prayer that later believers be one so the world may believe. Both are appointed textual alternatives.
 
@@ -172,7 +172,7 @@ Option B has unusually close direct Johannine reception. Augustine’s *Tractate
 
 The Prayer after Communion names the Eucharistic gift as the offered and received divine victim, asking life and lasting charity. Option B sharpens ecclesial unity; option A, grateful memory. The prayer governs both.
 
-## The Propers: Notable and Quotable {#the-propers-notable-and-quotable .unnumbered}
+## The Propers: Notable and Quotable
 
 -   **“Take up his cross” — from discipleship to lawn-mowing. (*Gospel*)** The English idiom “a cross to bear” now names any stubborn burden or trial. It can remain grave, but dictionaries also illustrate deliberately light uses. A saying about allegiance unto suffering has become elastic enough to dignify an oversized weekly lawn.
 
@@ -180,7 +180,7 @@ The Prayer after Communion names the Eucharistic gift as the offered and receive
 
 -   **“A cup of cold water” — Edith Wharton’s title without the water. (*Gospel*)** Wharton’s 1899 story gives the phrase to a compromised bank clerk who interrupts a stranger’s suicide, pays her lodging and train fare, and then abandons his own flight to face those he has defrauded. No literal cup appears. The tiny Gospel gift becomes a title for one mercy that redirects two lives, while the giver’s guilt keeps the moral reversal sharply ironic.
 
-## The Propers: Interpretive Possibilities {#the-propers-interpretive-possibilities .unnumbered}
+## The Propers: Interpretive Possibilities
 
 *The following exploratory proposals were developed in an AI-assisted editorial process. They are attributed to none of the cited authorities and claim no historical compositional intent. Each states its anchors and limits.*
 
@@ -194,9 +194,9 @@ The Prayer after Communion names the Eucharistic gift as the offered and receive
 
 **The Communion branches give hospitality two sources. (*Gospel; Communion A; Communion B; Prayer after Communion*)** The Gospel asks disciples to receive Christ in another; Communion A, if selected, grounds that act in remembered benefits; B, if selected, in Christ’s prayer for unity; the final prayer asks lasting charity from the received gift. Compared without conflation, gratitude checks patronage while communion checks isolated transaction. Separate reading misses these different engines of durable welcome. Augustine’s Psalm 103 account is an unusually close precedent; John 17 reception supplies unity’s control. The fruit is hospitality without ownership or status display. The branches remain unresolved; unity never requires unsafe access or silence about wrong, and gratitude creates no debt to the giver.
 
-## Appendix: Liturgical Resolution {#appendix-liturgical-resolution .unnumbered}
+## Appendix: Liturgical Resolution
 
-### Liturgical Instance {#liturgical-instance .unnumbered}
+### Liturgical Instance
 
 | **Field** | **Resolved liturgical instance** |
 |:----------------|:-------------------------------------------------|
@@ -205,18 +205,18 @@ The Prayer after Communion names the Eucharistic gift as the offered and receive
 | Calendar and cycle | U.S. implementation of the General Roman Calendar; Sunday Year A. |
 | Formulary and textual scope | Ordinary Time Week XIII. Its shared audit owns the Missal formulary; this leaf owns the dated Year A composition and its two Communion-antiphon alternatives. |
 
-### Branch Resolution {#branch-resolution .unnumbered}
+### Branch Resolution
 
 | **Branch ID** | **Authority and trigger** | **Status** | **Units affected** | **Resolution** |
 |:---------|:---------------|:--------|:-----------------|:--------------|
 | `communion-antiphon-psalm-103` | Week XIII formulary | Appointed alternative | Psalm 103 option | Documented, not selected |
 | `communion-antiphon-john-17` | Week XIII formulary | Appointed alternative | John 17 option | Documented, not selected |
 
-## Appendix: Scope and Qualifications {#appendix-scope-and-qualifications .unnumbered}
+## Appendix: Scope and Qualifications
 
 > **Instance:** `instance/manifest.md`. **Leaf composition audit:** `propers/verified.md`. **Canonical formulary owner:** `../shared/ordinary-time/weeks/13/propers/verified.md`. **Research audit:** `research/scope.md`. **Coverage:** the complete formula and branches, every appointed scriptural unit, immediate contexts, and a passage-by-passage reception search were studied. Direct and illuminating witnesses retained include Origen, Jerome, pseudo-Clement, Clement of Alexandria, Chrysostom, Augustine, Aquinas, Cyprian, Cassian, and Gregory the Great, with roles distinguished in the audit. **Negative result:** direct early reuse of the Shunammite’s room and support was retained, but no sustained verse-by-verse patristic or medieval exposition of the complete 2 Kings 4:8–11, 14–16a unit was found in the accessible corpora checked. **Limits:** no exhaustive manuscript, untranslated-corpus, subscription-database, or proper-calendar survey is claimed. Complete U.S. English altar-book oration collation and independent theological review remain outstanding.
 
-## References {#references .unnumbered}
+## References
 
 -   USCCB, [Thirteenth Sunday in Ordinary Time, 28 June 2026](https://bible.usccb.org/bible/readings/062826.cfm), U.S. Lectionary 97; and [2026 Liturgical Calendar](https://www.usccb.org/resources/2026cal.pdf), accessed 2026-07-15.
 
@@ -248,7 +248,7 @@ The Prayer after Communion names the Eucharistic gift as the offered and receive
 
 -   Edith Wharton, [“A Cup of Cold Water”](https://www.gutenberg.org/cache/epub/9190/pg9190-images.html), in *The Greater Inclination* (New York: Charles Scribner’s Sons, 1899), Project Gutenberg eBook 9190; story and U.S. public-domain status checked 2026-07-19.
 
-## Generation Metadata {#generation-metadata .unnumbered}
+## Generation Metadata
 
 **Last revised (UTC):** 2026-07-21T15:25:48Z
 

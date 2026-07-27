@@ -637,11 +637,11 @@ All online witnesses were checked on 2026-07-26; no mutable law or discipline is
 
 ## References
 
-### Scripture {#scripture .unnumbered}
+### Scripture
 
 -   Exodus 33:18–23; Job 19:25–27; Psalm 115:10 (Vulgate numbering); Wisdom 9:14 (as quoted by Augustine); Daniel 12:2–3; Matthew 5:8; 8:11; 13:43; 16:19; 22:29–32; 23:37; Luke 13:34; 16:19–31; 20:34–38; John 1:18; 14:2–3; 17:24; Romans 8:18–23; 1 Corinthians 2:9; 13:9–12; 15:35–58; 2 Corinthians 12:2–4; Philippians 3:20–21; Colossians 3:3–4; 1 Thessalonians 4:13–17 (Vulgate numbering); 1 Timothy 6:15–16; 2 Timothy 4:8; Hebrews 12:22–24; James 1:12; 1 Peter 5:4; 2 Peter 1:4; 3:13; 1 John 3:1–2; Apocalypse 2:10; 4:8; 5:8; 7:9–17; 9:9; 11:12; 12:14; 14:2–3; 15:2; 21:1–27; 22:1–5. Quoted from the public-domain Douay–Rheims translation (Challoner revision) in the source library’s tracked per-verse text of the Project Gutenberg electronic edition (eBook 1581), read 2026-07-26. Chapter and verse are the edition’s own, which follow the Clementine Vulgate; the edition’s registered divergence table against the 1899 American edition was consulted for every verse quoted.
 
-### Defining and magisterial acts {#defining-and-magisterial-acts .unnumbered}
+### Defining and magisterial acts
 
 -   Fourth Lateran Council (1215), constitution 1, *Firmiter credimus* (*cum suis propriis resurgent corporibus, quae nunc gestant*); Denzinger n. 801.
 
@@ -657,7 +657,7 @@ All online witnesses were checked on 2026-07-26; no mutable law or discipline is
 
 -   All six read 2026-07-26 in the Latin of the *Enchiridion symbolorum* at the [patristica.net web presentation of the Latin text with dual numbering](https://www.patristica.net/denzinger/enchiridion-symbolorum.html), the edition registered in the source library for this witness. The presentation does not identify the printed edition it transcribes; that is the stated verification ceiling. English renderings in the article are labelled working glosses governed by the Latin. The acts themselves are public domain; printed editions of Denzinger retain their own editorial rights.
 
-### Catechetical and conciliar teaching {#catechetical-and-conciliar-teaching .unnumbered}
+### Catechetical and conciliar teaching
 
 -   *Catechism of the Catholic Church* 992–1004 (the resurrection of the body), 1023–1029 (heaven, the beatific vision, identity, communion), 1042–1050 (the new heaven and the new earth), official Vatican English web text, [vatican.va (1023–1029)](https://www.vatican.va/archive/ENG0015/__P2M.HTM) with the adjacent pages for 992–1004 and 1042–1050, all read 2026-07-26. Brief excerpts of a copyrighted official text, quoted with attribution. The IntraText delivery renders typographic dashes as spaced hyphens and lowercases some sentence-initial words; quotations restore standard punctuation only where the quoted words are unaffected.
 
@@ -665,7 +665,7 @@ All online witnesses were checked on 2026-07-26; no mutable law or discipline is
 
 -   Second Vatican Council, decree *Unitatis redintegratio* (21 November 1964), n. 17 (Eastern and Western theological expressions “often as mutually complementary rather than conflicting”), official English text, [vatican.va](https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decree_19641121_unitatis-redintegratio_en.html), read 2026-07-26.
 
-### Patristic and Eastern witnesses {#patristic-and-eastern-witnesses .unnumbered}
+### Patristic and Eastern witnesses
 
 -   Basil of Caesarea, Letter 234 (“His operations come down to us, but His essence remains beyond our reach”); trans. Blomfield Jackson, *Nicene and Post-Nicene Fathers*, 2nd series, vol. 8 (1895); public domain; read 2026-07-26 at [New Advent](https://www.newadvent.org/fathers/3202234.htm).
 
@@ -679,13 +679,13 @@ All online witnesses were checked on 2026-07-26; no mutable law or discipline is
 
 -   Gregory Palamas, *Triads* III.i.29, 33–34; III.ii.5, 8–10; III.iii.9; in *Gregory Palamas: The Triads*, ed. John Meyendorff, trans. Nicholas Gendle, Classics of Western Spirituality (New York: Paulist Press, 1983); a copyrighted selection and translation, quoted here in short clauses with attribution. Read 2026-07-26 in an optical-character transcription of a scanned copy at the [Internet Archive](https://archive.org/details/gregory-palamas-the-triads). The Greek was not consulted and no printed copy was collated; the transcription contains visible uncorrected scanning errors elsewhere. Meyendorff’s introduction to the same volume is the article’s sole witness for the reception history of 1341, 1347, and 1351; the conciliar acts themselves were not reached.
 
-### Latin school theology {#latin-school-theology .unnumbered}
+### Latin school theology
 
 -   Thomas Aquinas, *Summa theologiae* I, q. 12, aa. 1–8 (whether the created intellect can see God’s essence; not by a created likeness; not by the bodily eye; not by natural power; the *lumen gloriae*; degrees; non-comprehension; not all that God can do); I-II, q. 4, aa. 5–6 and 8 (the body and happiness; the fellowship of friends); II-II, q. 26, a. 13 (the order of charity in heaven). English from the public-domain translation of the Fathers of the English Dominican Province via [New Advent](https://www.newadvent.org/summa/); Latin of I, q. 12 checked in the [Corpus Thomisticum](https://www.corpusthomisticum.org/sth1003.html) online corpus. All loci read 2026-07-26; part, question, article, and division govern over either site’s presentation.
 
 -   *Summa theologiae*, Supplement, qq. 82–85 (impassibility, subtlety, agility, clarity of the glorified body) and q. 96 (the aureoles); same translation and site, read 2026-07-26. The Supplement was assembled after Aquinas’s death from his commentary on the *Sentences* and is identified as such at every use.
 
-### Reference works {#reference-works .unnumbered}
+### Reference works
 
 -   *The Catholic Encyclopedia* (New York: Robert Appleton Company), art. “Pope John XXII” (vol. 8, 1910), art. “Benedict XII” (vol. 2, 1907), art. “Summa Theologiae” (vol. 14, 1912); public domain; read 2026-07-26 at [New Advent (John XXII)](https://www.newadvent.org/cathen/08431a.htm), [New Advent (Benedict XII)](https://www.newadvent.org/cathen/02430a.htm), and [New Advent (Summa Theologiae)](https://www.newadvent.org/cathen/14663b.htm). Used for chronology, the preparation of the constitution, and the compilation of the Supplement; never for doctrinal authority, and its probability judgments are reproduced as probabilities.
 

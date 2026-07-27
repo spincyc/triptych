@@ -767,7 +767,7 @@ This revision received internal argumentative, source-consistency, quotation, ri
 
 Every web source below was fetched over HTTPS, hashed (SHA-256), and read on 2026-07-25; the exact response hashes and the retained artifacts are recorded in the repository’s source library and in this leaf’s `research/` records. Official texts remain under their own rights.
 
-### Law {#law .unnumbered}
+### Law
 
 -   *Codex Iuris Canonici* (1983). Latin: Holy See web deliveries, one page per book, <https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberI_la.html> through `cic_liberVII_la.html` (Books I, II, IV, VI used). English: Holy See web deliveries by canon range under <https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/>. Canons quoted: 18, 32, 33, 194, 266, 273, 277, 285, 288, 290–293, 599, 691–693, 976, 1024, 1025, 1029, 1031, 1036, 1037, 1040, 1042, 1047, 1050, 1055, 1078–1080, 1087, 1088, 1135, 1191, 1196–1197, 1394, 1395, 1398.
 
@@ -787,7 +787,7 @@ Every web source below was fetched over HTTPS, hashed (SHA-256), and read on 202
 
 -   Congregation for Catholic Education and Congregation for the Clergy, *Basic Norms for the Formation of Permanent Deacons* and *Directory for the Ministry and Life of Permanent Deacons* (22 February 1998): <https://www.vatican.va/roman_curia/congregations/cclergy/documents/rc_con_ccatheduc_doc_19980331_directorium-diaconi_en.html>.
 
-### Councils and magisterial teaching {#councils-and-magisterial-teaching .unnumbered}
+### Councils and magisterial teaching
 
 -   Second Vatican Council: *Lumen gentium* 29; *Orientalium Ecclesiarum* 5–6; *Optatam totius* 10; *Presbyterorum ordinis* 16. Latin and English at <https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/>.
 
@@ -803,7 +803,7 @@ Every web source below was fetched over HTTPS, hashed (SHA-256), and read on 202
 
 -   Holy See Press Office, bulletin B0602 of 7 October 2010, *Scheda informativa sulle Chiese cattoliche orientali* and the companion sheet on particular law: <https://press.vatican.va/content/salastampa/it/bollettino/pubblico/2010/10/07/0602/01352.html>.
 
-### Historical acts, at their witnesses {#historical-acts-at-their-witnesses .unnumbered}
+### Historical acts, at their witnesses
 
 -   J. D. Mansi, *Sacrorum conciliorum nova et amplissima collectio*, tomus II (Florence 1759; Welter reprint, Paris 1901), coll. 11–12, 245–246, 669–670: Elvira c. 33 and Nicaea c. 3. Internet Archive item `sacrorumconcilio0002phil`, leaves 21, 138, 350.
 
@@ -817,7 +817,7 @@ Every web source below was fetched over HTTPS, hashed (SHA-256), and read on 202
 
 -   *Canones et decreta sacrosancti oecumenici Concilii Tridentini*, editio stereotypa undecima (Leipzig: Tauchnitz, 1887), p. 147; and *The Canons and Decrees of the Sacred and Œcumenical Council of Trent*, trans. J. Waterworth (London: Burns and Oates, Ld.), p. 195. Internet Archive items `canonesetdecreta00coun_0` and `cu31924029369760`.
 
-### Reported literature (not consulted at source) {#reported-literature-not-consulted-at-source .unnumbered}
+### Reported literature (not consulted at source)
 
 -   C. Cochini, *Origines apostoliques du célibat sacerdotal* (Paris: Lethielleux, 1981); A. M. Stickler, *The Case for Clerical Celibacy* (San Francisco: Ignatius, 1995); R. Cholij, *Clerical Celibacy in East and West* (Leominster: Fowler Wright, 1988); S. Heid, *Zölibat in der frühen Kirche* (Paderborn: Schöningh, 1997); R. Gryson, *Les origines du célibat ecclésiastique du premier au septième siècle* (Gembloux: Duculot, 1970). Cited only as the named positions in the reported historiographic dispute of sections 10 and 13.
 
