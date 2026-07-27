@@ -150,6 +150,23 @@ Compile each affected publication for enough passes to settle references and con
 
 Use only `make review-pdfs`, `make review-all-pdfs`, or `scripts/pdf-review` to prepare page rasters and bounded contact sheets. The helper owns concurrency and memory controls; do not replace it with raw parallel ImageMagick or equivalent whole-document commands. A cache hit or contact sheet is not review. Inspect every rendered page, opening full-size rasters where scale matters, then verify PDF structure, fonts, metadata, extracted text, and byte identity between reviewed build and installed mirror.
 
+Audit publication size after rendered content settles. Investigate, rather
+than automatically rewrite, a PDF above 1 MiB or 75 KiB per page. Investigate
+a publishing raster above 1 MiB, above two megapixels without a placement
+need, above 450 effective dpi at its largest placement, or stored as RGB when
+the work declares it monochrome. Monochrome publishing art should ordinarily
+be stripped 8-bit grayscale PNG at no less than 300 effective dpi. Record the
+dimensions, mode, before-and-after bytes, transformed hash, comparison metric,
+and full-size visual comparison in the owning production or artwork record.
+Rebuild and review every consumer after normalization. These thresholds are
+review triggers, not quotas.
+
+Exact acquired evidence artifacts are preservation inputs. Do not recompress,
+re-encode, or otherwise optimize their bytes merely to reduce repository size;
+any deliberate artifact migration must follow `guidance/sources.md` and update
+every dependent record. Never optimize an installed PDF independently of its
+authoritative source and reviewed build.
+
 Research records that cannot affect rendered bytes need not force recompilation. Evidence dependencies on reusable external sources must nevertheless be queryable for freshness and impact under `guidance/sources.md`. Adding a publication may use deterministic controlled discovery; exceptional shared render dependencies must be explicit.
 
 Before finalizing a source-bearing change, run `make check-sources`. It
