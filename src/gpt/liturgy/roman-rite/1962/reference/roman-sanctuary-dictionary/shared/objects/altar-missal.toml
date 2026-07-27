@@ -1,0 +1,97 @@
+schema_version = 1
+id = "obj-altar-missal"
+workflow_state = "identified"
+preferred_english_name = "Altar Missal"
+latin_headword = "Missale Romanum"
+alternate_english_names = ["Roman Missal", "Missal"]
+alternate_latin_names = []
+sort_name = "Missal, Altar"
+categories = ["books-and-printed-objects"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass", "palm-sunday", "holy-thursday", "easter-vigil"]
+confusable_with = []
+related_objects = ["obj-missal-stand", "obj-missal-cushion", "obj-book-marker"]
+component_objects = ["obj-book-marker"]
+
+[presence]
+locations = ["At the altar in the positions appointed by the rite."]
+contexts = ["The celebrant's liturgical book for Mass."]
+composition_ids = ["plt-books"]
+local_variability = "possible"
+
+[handling]
+ordinary_handlers = ["priest", "deacon", "subdeacon", "master-of-ceremonies", "acolyte", "sacristan"]
+server_relation = "moves-only-by-direction"
+prepares = ["sacristan"]
+presents = []
+receives = []
+stores = ["sacristan"]
+warnings = ["Move the Missal only on the assigned route and keep its support secure."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-altar-missal-identity"
+kind = "identity"
+text = "The Missale Romanum is the altar book required for Mass at the 1962 Roman horizon."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-altar-missal-1962"]
+
+[[claims]]
+id = "clm-altar-missal-appearance"
+kind = "appearance"
+text = "The figure uses a large, thick, ribbon-marked bound volume as a representative form; binding, ornament, dimensions, and marker count are not universal identifiers."
+evidence_state = "editorial-proposal"
+source_ids = []
+
+[[claims]]
+id = "clm-altar-missal-use"
+kind = "liturgical-use"
+text = "The book supplies the texts and rubrics used by the celebrant at Mass."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-altar-missal-1962"]
+
+[[claims]]
+id = "clm-altar-missal-presence"
+kind = "ceremonial-presence"
+text = "The 1962 rubrics require the Missal and direct its preparation, placement, and movement."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-altar-missal-1962"]
+
+[[sources]]
+id = "src-altar-missal-1962"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "General Rubrics 527 (printed XXXVI/PDF 34); Ritus servandus I.1, I.4 (printed LIV/PDF 56); De defectibus X.1 (printed LXVIII/PDF 70)"
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-27
+note = "Supports identity and ritual use, not representative binding morphology."
+
+[[artwork]]
+id = "art-altar-missal-on-stand"
+view = "in-use"
+asset = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/books/RPD-FIG-books-0001-in-use-missal-on-stand.png"
+review_state = "identity-checked"
+depicts = ["obj-altar-missal", "obj-missal-stand", "obj-book-marker"]
+scale_mode = "not-applicable"
+review_note = "Checked for one book/support, plausible contact, separated markers, monochrome mode, crop, and absence of baked-in text. Morphology is held."
+
+[[artwork]]
+id = "art-book-marker-ribbons-detail"
+view = "detail"
+asset = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/books/RPD-FIG-books-0004-detail-marker-ribbons.png"
+review_state = "identity-checked"
+depicts = ["obj-book-marker", "obj-altar-missal"]
+scale_mode = "not-applicable"
+review_note = "The book fragment supplies context for the separately represented markers; binding morphology is illustrative."
+
+[[audience_note]]
+audience = "altar-server"
+text = "Recognize the Missal and move it with its support only when assigned."
+claim_ids = ["clm-altar-missal-presence"]

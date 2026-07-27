@@ -1,0 +1,52 @@
+schema_version = 1
+id = "obj-prie-dieu"
+workflow_state = "identified"
+preferred_english_name = "Prie-dieu"
+latin_headword = "genuflexorium"
+alternate_english_names = ["kneeling desk", "kneeler"]
+categories = ["church-and-sanctuary", "pontifical-and-prelatial"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["pontifical-mass", "ceremony-surrounding-mass"]
+
+[presence]
+locations = ["Before the altar or at another appointed place when the ceremony provides it."]
+contexts = ["A furnishing prepared for kneeling prayer, often used with a cushion in pontifical ceremonial."]
+composition_ids = ["plt-sanctuary-seating", "plt-pontifical-composition"]
+local_variability = "common"
+
+[handling]
+ordinary_handlers = ["bishop", "sacristan", "cleric"]
+server_relation = "recognizes-only"
+prepares = ["sacristan", "cleric"]
+stores = ["sacristan"]
+
+[audience_relevance]
+altar_server = "useful"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "useful"
+pontifical = "required"
+
+[[claims]]
+id = "clm-prie-dieu-identity"
+kind = "identity"
+text = "The Ceremonial calls for a genuflexorium, with a cushion, at appointed places for the bishop's kneeling prayer."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-prie-dieu-ce"]
+
+[[sources]]
+id = "src-prie-dieu-ce"
+binding = "ed-ce-1948-working-witness"
+locus = "Caeremoniale Episcoporum (1948), lib. I, cap. II; inspected OCR lines 650-668."
+role = "ceremonial-book"
+verification_state = "inspected"
+checked_on = 2026-07-27
+
+[[artwork]]
+id = "art-prie-dieu-comparison"
+view = "comparison"
+asset = "shared/artwork/pencil/RSD-ART-001-sanctuary-furnishings.png"
+review_state = "identity-checked"
+depicts = ["obj-sedilia", "obj-sanctuary-stool", "obj-credence-table", "obj-communion-rail", "obj-prie-dieu"]
+scale_mode = "not-to-common-scale"

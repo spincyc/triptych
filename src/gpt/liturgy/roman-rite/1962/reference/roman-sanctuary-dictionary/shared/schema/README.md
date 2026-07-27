@@ -9,12 +9,37 @@ claim-level evidence and artwork review states permit that use.
 
 - `inventory-schema.toml` is the normative field and controlled-vocabulary
   contract.
+- `artwork-manifest-schema.toml` defines canonical artwork provenance,
+  technical identity, object/variant linkage, consumers, rights, and review
+  states.
+- `artwork-manifest.example.toml` is a non-evidentiary empty-manifest syntax
+  fixture.
 - `edition-selections.toml` defines the comprehensive volume and the smaller
   use-based editions as derived views of one inventory.
 - `object.example.toml` is a non-evidentiary syntax fixture. Its prose is
   deliberately marked as placeholder text and must never be published.
 - `object-record-api.tex` defines the TeX-side record interface expected from a
   generator. It contains presentation-neutral data setters, not page design.
+- `validate_inventory.py` validates records, cross-record references,
+  publication gates, and derived-edition selection.
+- `test_validate_inventory.py` exercises the validator without adding
+  dictionary entries.
+
+## Validation
+
+Keep canonical records one object per file under `shared/objects/`. From this
+directory, validate them with:
+
+```sh
+python3 validate_inventory.py ../objects
+python3 validate_inventory.py ../objects --list-edition ed-altar-server
+python3 test_validate_inventory.py
+```
+
+The first command reports all structural, reference, and publication-gate
+errors. The second prints the stable object IDs selected for one derived
+edition after successful validation. An empty derived edition is valid while
+the inventory is being developed; it is not evidence of completeness.
 
 ## Ownership and generated output
 
@@ -35,6 +60,21 @@ The generator must:
 6. escape all TeX-special characters; and
 7. emit one `\RSDObjectRecord` block per selected object, followed by its
    names, claims, variants, sources, artwork, and cross-references.
+
+Before generation, `scripts/check-roman-sanctuary-artwork` reconciles the
+canonical `research/artwork-manifest.toml` against every populated record
+under `shared/objects/`. The check is deliberately valid with an empty held
+manifest and no object records. Once records exist, it rejects one-way links,
+unknown objects or variants, missing normalized files, mismatched PNG
+dimensions, mode, byte count, or hash, and incomplete publication-ready
+object or substantive-variant coverage.
+
+The manifest's `asset_files` table is exhaustive technical custody: every
+tracked dictionary PNG, including a rejected or otherwise held lead, must
+appear exactly once with its current byte identity and audit record.
+Unreconciled artwork links on non-publication-ready object records are printed
+as held notices so prototype development remains checkable; the same gap on a
+publication-ready object is a validation error.
 
 Selection controls inclusion, not wording. Audience-specific wording may be
 stored only in the `audience_note` table of the same canonical object record.
@@ -62,6 +102,14 @@ distinguishes a lead, an identified record, a source-audited record, and a
 publication-ready record. Every reader-facing factual field is represented by
 one or more claim records with exact source bindings. A source-wide citation
 does not make every field verified.
+
+Artwork IDs are shared identities, not object-local IDs. A comparison or
+composition may therefore repeat the same artwork ID in each object record
+listed by its `depicts` field. The validator requires the core artwork
+definition to agree across those repetitions and requires each linking object
+to appear in `depicts`; an object-local review note may differ. An empty
+`artwork` array is valid while a record is not publication-ready.
+Publication-ready records still require approved artwork.
 
 The comprehensive edition selects every publication-ready object within the
 declared universal Roman 1962 corpus plus reviewed regional, religious-order,

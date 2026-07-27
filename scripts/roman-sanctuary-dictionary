@@ -1,0 +1,266 @@
+#!/usr/bin/env python3
+"""Validate canonical dictionary fixtures and render deterministic TeX views.
+
+This is production plumbing, not a completeness claim.  Only records that pass
+the publication gate in the schema are emitted.
+"""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import importlib.util
+import re
+import sys
+import tomllib
+from pathlib import Path
+
+OBJECT_KEYS = {
+    "schema_version", "id", "workflow_state", "preferred_english_name",
+    "latin_headword", "alternate_english_names", "alternate_latin_names",
+    "sort_name", "categories", "periods", "statuses", "ceremonies",
+    "parent_object", "component_objects", "confusable_with", "related_objects",
+    "presence", "handling", "claims", "sources", "artwork", "variants",
+    "audience_relevance", "audience_note", "pronunciation_key", "editorial_note",
+}
+NESTED_KEYS = {
+    "presence": {"locations", "contexts", "composition_ids", "local_variability"},
+    "handling": {"ordinary_handlers", "server_relation", "prepares", "presents", "receives", "stores", "warnings"},
+    "audience_relevance": {"altar_server", "sacristan", "mc_trainer", "general_reader", "pontifical"},
+    "claims": {"id", "kind", "text", "evidence_state", "source_ids", "applies_to_variants",
+               "jurisdiction", "as_of", "rights_note", "publication_note"},
+    "sources": {"id", "binding", "locus", "role", "verification_state", "checked_on", "note"},
+    "artwork": {"id", "view", "asset", "review_state", "depicts", "variant_id",
+                "scale_mode", "context_object_ids", "review_note"},
+    "variants": {"id", "preferred_name", "distinguishing_features", "status", "source_ids",
+                 "artwork_ids", "latin_name", "periods", "regions", "communities",
+                 "ceremonies", "dimensions", "note"},
+    "audience_note": {"audience", "text", "claim_ids"},
+}
+ID = re.compile(r"^(obj|var|clm|src|art|plt|ed)-[a-z0-9]+(?:-[a-z0-9]+)*$")
+TEX_ESCAPE = str.maketrans({
+    "\\": r"\textbackslash{}", "{": r"\{", "}": r"\}", "#": r"\#",
+    "$": r"\$", "%": r"\%", "&": r"\&", "_": r"\_", "^": r"\^{}",
+    "~": r"\~{}",
+})
+
+REPOSITORY_ROOT = Path(__file__).resolve().parent.parent
+DICTIONARY_PREFIX = (
+    "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/"
+)
+VALIDATOR_PATH = (
+    REPOSITORY_ROOT
+    / "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary"
+    / "shared/schema/validate_inventory.py"
+)
+
+
+def load_canonical_validator():
+    spec = importlib.util.spec_from_file_location("rsd_validate_inventory", VALIDATOR_PATH)
+    if spec is None or spec.loader is None:
+        raise ContractError(f"cannot load canonical validator: {VALIDATOR_PATH}")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+class ContractError(ValueError):
+    pass
+
+
+def load(path: Path) -> dict:
+    with path.open("rb") as stream:
+        return tomllib.load(stream)
+
+
+def tex(value: object) -> str:
+    if value is None:
+        return ""
+    if isinstance(value, list):
+        value = ", ".join(str(item) for item in value)
+    return str(value).translate(TEX_ESCAPE)
+
+
+def canonical_asset_path(value: str) -> str:
+    """Return the manifest/TeX path relative to the dictionary root."""
+    return value[len(DICTIONARY_PREFIX):] if value.startswith(DICTIONARY_PREFIX) else value
+
+
+def require(condition: bool, message: str) -> None:
+    if not condition:
+        raise ContractError(message)
+
+
+def validate_record(record: dict, filename: Path, schema: dict) -> None:
+    unknown = set(record) - OBJECT_KEYS
+    require(not unknown, f"{filename}: unknown fields: {', '.join(sorted(unknown))}")
+    for table, allowed in NESTED_KEYS.items():
+        values = record.get(table, [])
+        if isinstance(values, dict):
+            values = [values]
+        for value in values:
+            nested_unknown = set(value) - allowed
+            require(not nested_unknown,
+                    f"{filename}: unknown {table} fields: {', '.join(sorted(nested_unknown))}")
+    for key in schema["record"]["required"]:
+        require(key in record, f"{filename}: missing required field {key}")
+    require(record["schema_version"] == 1, f"{filename}: unsupported schema version")
+    require(bool(ID.fullmatch(record["id"])) and record["id"].startswith("obj-"),
+            f"{filename}: invalid object id")
+    sources = {item["id"] for item in record.get("sources", [])}
+    art = {item["id"] for item in record.get("artwork", [])}
+    require(len(sources) == len(record.get("sources", [])), f"{filename}: duplicate source id")
+    require(len(art) == len(record.get("artwork", [])), f"{filename}: duplicate artwork id")
+    for claim in record["claims"]:
+        require(all(source in sources for source in claim.get("source_ids", [])),
+                f"{filename}: claim {claim['id']} references an unknown source")
+    for variant in record.get("variants", []):
+        require(all(source in sources for source in variant["source_ids"]),
+                f"{filename}: variant {variant['id']} references an unknown source")
+        require(all(item in art for item in variant["artwork_ids"]),
+                f"{filename}: variant {variant['id']} references unknown artwork")
+
+
+def publication_ready(record: dict, schema: dict, manifest_assets: set[str]) -> bool:
+    gate = schema["publication_gate"]
+    if record["workflow_state"] not in gate["selectable_workflow_states"]:
+        return False
+    claim_states = set(gate["allowed_claim_states"])
+    claims = record["claims"]
+    if any(claim["evidence_state"] not in claim_states for claim in claims):
+        return False
+    kinds = {claim["kind"] for claim in claims}
+    if not set(gate["required_claim_kinds"]).issubset(kinds):
+        return False
+    if any(item["review_state"] not in gate["allowed_artwork_states"]
+           or item["asset"] not in manifest_assets for item in record["artwork"]):
+        return False
+    return True
+
+
+def selected(record: dict, edition: dict) -> bool:
+    if record["id"] in edition.get("explicit_exclusions", []):
+        return False
+    if set(record["statuses"]) & set(edition.get("exclude_statuses", [])):
+        return False
+    if record["workflow_state"] not in edition["include_workflow_states"]:
+        return False
+    if edition["kind"] == "comprehensive":
+        return bool(set(record["statuses"]) & set(edition.get("include_statuses", []))) \
+            and bool(set(record["periods"]) & set(edition.get("include_periods", [])))
+    field = edition["relevance_field"].split(".")[-1]
+    by_relevance = record["audience_relevance"][field] in edition["include_relevance"]
+    by_category = bool(set(record["categories"]) & set(edition.get("include_categories", [])))
+    return by_relevance or by_category
+
+
+def record_tex(record: dict) -> str:
+    lines = [
+        f"\\RSDObjectRecord{{{tex(record['id'])}}}"
+        f"{{{tex(record['preferred_english_name'])}}}{{{tex(record['latin_headword'])}}}",
+        f"\\RSDObjectAliases{{{tex(record.get('alternate_english_names', []))}}}"
+        f"{{{tex(record.get('alternate_latin_names', []))}}}",
+        f"\\RSDObjectClassification{{{tex(record['categories'])}}}{{{tex(record['periods'])}}}"
+        f"{{{tex(record['statuses'])}}}{{{tex(record['ceremonies'])}}}",
+        f"\\RSDObjectPresence{{{tex(record['presence']['locations'])}}}"
+        f"{{{tex(record['presence']['contexts'])}}}",
+        f"\\RSDObjectHandling{{{tex(record['handling']['ordinary_handlers'])}}}"
+        f"{{{tex(record['handling']['server_relation'])}}}",
+        f"\\RSDObjectRelations{{{tex(record.get('confusable_with', []))}}}"
+        f"{{{tex(record.get('related_objects', []))}}}",
+    ]
+    if record.get("pronunciation_key"):
+        lines.append(f"\\RSDObjectPronunciationKey{{{tex(record['pronunciation_key'])}}}")
+    for claim in record["claims"]:
+        lines.append("\\RSDClaim"
+                     f"{{{tex(claim['id'])}}}{{{tex(claim['kind'])}}}{{{tex(claim['text'])}}}"
+                     f"{{{tex(claim['evidence_state'])}}}{{{tex(claim['source_ids'])}}}"
+                     f"{{{tex(claim.get('applies_to_variants', []))}}}")
+    for variant in record.get("variants", []):
+        lines.append("\\RSDVariant"
+                     f"{{{tex(variant['id'])}}}{{{tex(variant['preferred_name'])}}}"
+                     f"{{{tex(variant.get('latin_name', ''))}}}"
+                     f"{{{tex(variant['distinguishing_features'])}}}{{{tex(variant['status'])}}}"
+                     f"{{{tex(variant['source_ids'])}}}{{{tex(variant['artwork_ids'])}}}")
+    for source in record.get("sources", []):
+        lines.append("\\RSDSourceBinding"
+                     f"{{{tex(source['id'])}}}{{{tex(source['binding'])}}}{{{tex(source['locus'])}}}"
+                     f"{{{tex(source['role'])}}}{{{tex(source['verification_state'])}}}"
+                     f"{{{tex(source.get('checked_on', ''))}}}")
+    for artwork in record["artwork"]:
+        lines.append("\\RSDArtwork"
+                     f"{{{tex(artwork['id'])}}}{{{tex(artwork['view'])}}}"
+                     f"{{{tex(canonical_asset_path(artwork['asset']))}}}"
+                     f"{{{tex(artwork['review_state'])}}}{{{tex(artwork['depicts'])}}}"
+                     f"{{{tex(artwork.get('variant_id', ''))}}}{{{tex(artwork.get('scale_mode', 'not-applicable'))}}}")
+    for note in record.get("audience_note", []):
+        lines.append("\\RSDAudienceNote"
+                     f"{{{tex(note['audience'])}}}{{{tex(note['text'])}}}"
+                     f"{{{tex(note['claim_ids'])}}}{{{tex(record['id'])}}}")
+    lines.append("\\RSDEndObjectRecord")
+    return "\n".join(lines)
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--schema", type=Path, required=True)
+    parser.add_argument("--selections", type=Path, required=True)
+    parser.add_argument("--artwork-manifest", type=Path, required=True)
+    parser.add_argument("--records", type=Path, required=True)
+    parser.add_argument("--output", type=Path, required=True)
+    args = parser.parse_args()
+    try:
+        schema, selections, manifest = load(args.schema), load(args.selections), load(args.artwork_manifest)
+        # Production manifests use ``asset_files``; the small schema fixture
+        # retains ``asset``.  Both carry the same dictionary-relative path.
+        manifest_assets = {
+            canonical_asset_path(item["path"])
+            for table in ("asset_files", "asset")
+            for item in manifest.get(table, [])
+        }
+        canonical = load_canonical_validator()
+        validator = canonical.Validator(schema, selections)
+        record_paths = canonical.discover([args.records])
+        require(bool(record_paths), f"{args.records}: no object TOML files found")
+        validator.validate(record_paths)
+        if validator.problems:
+            detail = "\n".join(
+                str(problem)
+                for problem in sorted(
+                    validator.problems,
+                    key=lambda problem: (str(problem.path), problem.field, problem.message),
+                )
+            )
+            raise ContractError("canonical inventory validation failed:\n" + detail)
+        records = {object_id: data for object_id, (_, data) in validator.records.items()}
+        for object_id, record in records.items():
+            for index, artwork in enumerate(record["artwork"]):
+                require(
+                    canonical_asset_path(artwork["asset"]) in manifest_assets,
+                    f"{object_id}: artwork[{index}] asset is absent from canonical artwork manifest: "
+                    f"{artwork['asset']}",
+                )
+        args.output.mkdir(parents=True, exist_ok=True)
+        for edition in selections["editions"]:
+            # Preserve the canonical validator's exact selection and ordering
+            # semantics; the renderer must not silently define a second view.
+            chosen = [records[object_id] for object_id in validator.selected(edition)]
+            body = [
+                "% Generated deterministically; do not edit.",
+                "% Fixture output demonstrates the pipeline and makes no inventory-completeness claim.",
+                f"% edition: {edition['id']}",
+            ]
+            body.extend(record_tex(record) for record in chosen)
+            data = ("\n\n".join(body) + "\n").encode()
+            (args.output / f"{edition['id']}.tex").write_bytes(data)
+        digest = hashlib.sha256(args.selections.read_bytes()).hexdigest()
+        (args.output / "selection-input.sha256").write_text(digest + "\n", encoding="ascii")
+    except (OSError, tomllib.TOMLDecodeError, ContractError, KeyError, TypeError) as error:
+        print(f"dictionary generation error: {error}", file=sys.stderr)
+        return 1
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -1,0 +1,52 @@
+schema_version = 1
+id = "obj-bishops-chair"
+workflow_state = "lead"
+preferred_english_name = "Bishop's fixed chair"
+latin_headword = "cathedra"
+alternate_english_names = ["bishop's chair"]
+categories = ["church-and-sanctuary", "pontifical-and-prelatial"]
+periods = ["roman-1962-horizon"]
+statuses = ["unresolved"]
+ceremonies = ["pontifical-mass", "ceremony-surrounding-mass"]
+related_objects = ["obj-episcopal-throne", "obj-faldstool"]
+
+[presence]
+locations = ["Cathedral sanctuary or choir, with arrangement dependent on the building and ceremonial use."]
+contexts = ["A fixed episcopal chair; its precise relation to the Ceremonial's sedes pontificalis and solium requires further terminology and material-form audit."]
+composition_ids = ["plt-pontifical-seating"]
+local_variability = "defining"
+
+[handling]
+ordinary_handlers = ["bishop", "sacristan"]
+server_relation = "recognizes-only"
+prepares = ["sacristan"]
+stores = ["sacristan"]
+
+[audience_relevance]
+altar_server = "useful"
+sacristan = "useful"
+mc_trainer = "useful"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-bishops-chair-lead"
+kind = "terminology"
+text = "Candidate record for a fixed bishop's chair shown as a material-form comparison; exact 1962 terminology and its distinction from the pontifical throne remain held."
+evidence_state = "unverified-lead"
+source_ids = ["src-bishops-chair-lead"]
+
+[[sources]]
+id = "src-bishops-chair-lead"
+binding = "corpus-roman-1962-pontifical-seating-unclosed"
+locus = "Terminology and material-form witnesses not yet closed."
+role = "lead-only"
+verification_state = "unlocated"
+
+[[artwork]]
+id = "art-bishops-chair-comparison"
+view = "comparison"
+asset = "shared/artwork/pencil/RSD-ART-002-pontifical-seating.png"
+review_state = "identity-checked"
+depicts = ["obj-faldstool", "obj-episcopal-throne", "obj-bishops-chair", "obj-episcopal-kneeler"]
+scale_mode = "not-to-common-scale"

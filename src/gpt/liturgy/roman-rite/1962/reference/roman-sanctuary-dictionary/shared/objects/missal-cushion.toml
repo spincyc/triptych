@@ -1,0 +1,82 @@
+schema_version = 1
+id = "obj-missal-cushion"
+workflow_state = "identified"
+preferred_english_name = "Missal cushion"
+latin_headword = "cussinus"
+alternate_english_names = ["altar-book cushion"]
+alternate_latin_names = []
+sort_name = "Cushion, Missal"
+categories = ["books-and-printed-objects", "altar-and-appointments"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass"]
+confusable_with = ["obj-missal-stand"]
+related_objects = ["obj-altar-missal"]
+component_objects = []
+
+[presence]
+locations = ["On the altar beneath the Missal when this alternative is used."]
+contexts = ["A padded support for the altar Missal."]
+composition_ids = ["plt-books"]
+local_variability = "common"
+
+[handling]
+ordinary_handlers = ["priest", "deacon", "subdeacon", "master-of-ceremonies", "acolyte", "sacristan"]
+server_relation = "moves-only-by-direction"
+prepares = ["sacristan"]
+presents = []
+receives = []
+stores = ["sacristan"]
+warnings = ["Keep the Missal centered and stable; follow the rehearsed local handling."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "useful"
+pontifical = "useful"
+
+[[claims]]
+id = "clm-missal-cushion-identity"
+kind = "identity"
+text = "The 1962 Missal names the cussinus as a support beneath the Missal."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-missal-cushion-1962"]
+
+[[claims]]
+id = "clm-missal-cushion-appearance"
+kind = "appearance"
+text = "The wedge-shaped textile figure is representative only; the governing loci do not prescribe slope, stuffing, fabric, ornament, or color."
+evidence_state = "editorial-proposal"
+source_ids = []
+
+[[claims]]
+id = "clm-missal-cushion-use"
+kind = "liturgical-use"
+text = "The cushion supports the altar Missal as an alternative to a stand."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-missal-cushion-1962"]
+
+[[claims]]
+id = "clm-missal-cushion-presence"
+kind = "ceremonial-presence"
+text = "At Low Mass the Missal is opened on its cushion; the general rubric also permits a stand instead."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-missal-cushion-1962"]
+
+[[sources]]
+id = "src-missal-cushion-1962"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "General Rubrics 527 (printed XXXVI/PDF 34); Ritus servandus I.4 (printed LIV/PDF 56)"
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-27
+
+[[artwork]]
+id = "art-missal-cushion-isolated"
+view = "isolated"
+asset = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/books/RPD-FIG-books-0002-iso-missal-cushion.png"
+review_state = "identity-checked"
+depicts = ["obj-missal-cushion"]
+scale_mode = "not-to-common-scale"
+review_note = "Checked single-object silhouette, seams, grayscale mode, crop, and absence of text; morphology remains held."

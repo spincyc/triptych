@@ -1,0 +1,75 @@
+schema_version = 1
+id = "obj-altar-candlestick"
+workflow_state = "source-audited"
+preferred_english_name = "Altar candlestick"
+latin_headword = "candelabrum"
+alternate_english_names = []
+alternate_latin_names = ["candelabra"]
+categories = ["altar-and-appointments", "service-objects"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass", "procession"]
+confusable_with = []
+related_objects = ["obj-altar-candle"]
+component_objects = []
+
+[presence]
+locations = ["On the altar; at the credence or in procession where the ceremony appoints carried lights."]
+contexts = ["Supports an altar candle or a candle carried by an acolyte."]
+composition_ids = []
+local_variability = "common"
+
+[handling]
+ordinary_handlers = ["acolyte", "sacristan"]
+server_relation = "carries"
+prepares = ["sacristan"]
+presents = []
+receives = []
+stores = ["sacristan"]
+warnings = ["Keep a carried candlestick upright and support it with both hands according to the appointed method."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-altar-candlestick-presence"
+kind = "ceremonial-presence"
+text = "The Ceremonial names candlesticks and wax candles among objects prepared for episcopal ceremonies and describes two acolytes carrying them."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-candlestick-ceremonial"]
+
+[[claims]]
+id = "clm-altar-candlestick-handling"
+kind = "handler"
+text = "The two candle-bearing acolytes carry their candlesticks level with one hand at the foot and the other at the central knop."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-candlestick-ceremonial"]
+
+[[claims]]
+id = "clm-altar-candlestick-form"
+kind = "appearance"
+text = "The candidate artwork uses a representative turned-metal form with foot, stem, knop, and wax-catching socket; ornament and exact proportions vary."
+evidence_state = "editorial-proposal"
+source_ids = []
+publication_note = "Candidate morphology requires material-culture corroboration before approval."
+
+[[sources]]
+id = "src-candlestick-ceremonial"
+binding = "artifact.catholic-church.caeremoniale-episcoporum.typis-polyglottis-vaticanis-1948"
+locus = "Book I, chapter XI, nos. 1 and 8; OCR locating lines 1752-1755 and 1833-1840 checked against the page image"
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-27
+
+[[artwork]]
+id = "art-altar-appointments-0101-iso-candlestick"
+view = "isolated"
+asset = "shared/artwork/pencil/RPD-FIG-altar-appointments-0101-iso-candlestick.png"
+review_state = "identity-checked"
+depicts = ["obj-altar-candlestick", "obj-altar-candle"]
+scale_mode = "not-applicable"
+review_note = "Visually checked for one stable foot, one centered stem and knop, one socket, one unlit candle, plausible balance, grayscale, and no lettering."

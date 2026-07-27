@@ -1,0 +1,74 @@
+schema_version = 1
+id = "obj-piscina-sacrarium"
+workflow_state = "source-audited"
+preferred_english_name = "Piscina or sacrarium"
+latin_headword = "piscina"
+alternate_english_names = ["sacrarium"]
+alternate_latin_names = ["sacrarium", "thalassicon", "fenestella"]
+categories = ["church-and-sanctuary"]
+periods = ["roman-1962-horizon"]
+statuses = ["institutional"]
+ceremonies = ["ceremony-surrounding-mass"]
+confusable_with = ["obj-sacristy-lavatory"]
+
+[presence]
+locations = ["Near the altar, in a sanctuary wall, in the sacristy, or in another suitable place."]
+contexts = ["Reverent disposal of specified rinsings and remains from sacred use."]
+composition_ids = ["plt-sacristy-preparation"]
+local_variability = "defining"
+
+[handling]
+ordinary_handlers = ["priest", "sacristan", "cleric"]
+server_relation = "must-not-handle"
+warnings = ["Its purpose and outlet must be learned locally; appearance alone does not distinguish it safely from an ordinary sink."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "useful"
+general_reader = "required"
+pontifical = "useful"
+
+[[claims]]
+id = "clm-piscina-identity"
+kind = "identity"
+text = "Piscina and sacrarium are names used for a fitting that receives specified rinsings and remains from sacred use."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-piscina-ce"]
+
+[[claims]]
+id = "clm-piscina-appearance"
+kind = "appearance"
+text = "Documented forms include a covered ground cavity, a small column, or a niche of stone or metal."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-piscina-ce"]
+
+[[claims]]
+id = "clm-piscina-use"
+kind = "liturgical-use"
+text = "The cited witness associates it with water from handwashing and linen washing and with the reverent disposal of certain crumbs, unction materials, and ashes."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-piscina-ce"]
+
+[[claims]]
+id = "clm-piscina-presence"
+kind = "ceremonial-presence"
+text = "Its location is variable and the cited evidence does not establish one in every 1962 sacristy."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-piscina-ce"]
+
+[[sources]]
+id = "src-piscina-ce"
+binding = "rsd-catholic-encyclopedia-piscina"
+locus = "lines 12--17"
+role = "specialist-secondary"
+verification_state = "claim-verified"
+checked_on = 2026-07-27
+
+[[artwork]]
+id = "art-piscina-comparison"
+view = "comparison"
+asset = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RSD-ART-001-sacristy-preparation.png"
+review_state = "generated"
+depicts = ["obj-piscina-sacrarium"]
+scale_mode = "not-to-common-scale"

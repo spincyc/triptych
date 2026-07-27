@@ -1,0 +1,80 @@
+schema_version = 1
+id = "obj-sacristy-bell"
+workflow_state = "source-audited"
+preferred_english_name = "Sacristy door bell"
+latin_headword = "campanula sacristiae"
+alternate_english_names = ["procession signal bell"]
+categories = ["service-objects"]
+periods = ["roman-1962-horizon"]
+statuses = ["institutional"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass"]
+
+[presence]
+locations = ["Customarily near the sacristy door leading toward the sanctuary."]
+contexts = ["Signals the congregation that the clergy and ministers are about to enter."]
+composition_ids = ["plt-sacristy-preparation"]
+local_variability = "defining"
+
+[handling]
+ordinary_handlers = ["sacristan", "other-server"]
+server_relation = "varies-by-ceremony"
+warnings = ["Use only according to local direction; the custom is not universal."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "useful"
+pontifical = "useful"
+
+[[claims]]
+id = "clm-sacristy-bell-identity"
+kind = "identity"
+text = "The sacristy door bell is a small signal bell associated with the ministers' departure."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-sacristy-bell-ce", "src-sacristy-bell-fortescue"]
+
+[[claims]]
+id = "clm-sacristy-bell-appearance"
+kind = "appearance"
+text = "The witnesses establish a bell but not one mechanism or visual form."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-sacristy-bell-ce", "src-sacristy-bell-fortescue"]
+
+[[claims]]
+id = "clm-sacristy-bell-use"
+kind = "liturgical-use"
+text = "It warns the congregation of the clergy's approach from the sacristy."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-sacristy-bell-ce"]
+
+[[claims]]
+id = "clm-sacristy-bell-presence"
+kind = "ceremonial-presence"
+text = "It is customary in many churches, not a universal requirement established by these sources."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-sacristy-bell-ce", "src-sacristy-bell-fortescue"]
+
+[[sources]]
+id = "src-sacristy-bell-ce"
+binding = "rsd-catholic-encyclopedia-sacristy"
+locus = "line 70"
+role = "specialist-secondary"
+verification_state = "claim-verified"
+checked_on = 2026-07-27
+
+[[sources]]
+id = "src-sacristy-bell-fortescue"
+binding = "rsd-fortescue-oconnell-reid-1962-sacristy"
+locus = "chapter VI, section 1; scan p. 68"
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-27
+
+[[artwork]]
+id = "art-sacristy-bell-isolated"
+view = "isolated"
+asset = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RSD-ART-001-sacristy-preparation.png"
+review_state = "generated"
+depicts = ["obj-sacristy-bell"]
+scale_mode = "not-applicable"

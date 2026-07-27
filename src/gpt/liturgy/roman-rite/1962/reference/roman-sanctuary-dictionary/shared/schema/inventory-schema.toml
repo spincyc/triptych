@@ -18,6 +18,7 @@ required = [
   "presence",
   "handling",
   "claims",
+  "sources",
   "artwork",
   "audience_relevance",
 ]
@@ -251,7 +252,7 @@ optional = ["applies_to_variants", "jurisdiction", "as_of", "rights_note", "publ
 [claim.id]
 type = "id"
 prefix = "clm-"
-unique_within_record = true
+globally_unique = true
 
 [claim.kind]
 type = "enum"
@@ -352,7 +353,8 @@ optional = ["variant_id", "scale_mode", "context_object_ids", "review_note"]
 [artwork.id]
 type = "id"
 prefix = "art-"
-globally_unique = true
+shared_identity = true
+repeat_rule = "The same ID may appear in every depicted object's record; view, asset, review state, depicted IDs, variant, scale mode, and context IDs must agree."
 
 [artwork.view]
 type = "enum"
@@ -436,3 +438,4 @@ required_claim_kinds = ["identity", "appearance", "liturgical-use", "ceremonial-
 symbolism_rule = "optional; when present it requires a source and must be brief"
 historical_rule = "historical objects require a verified chronology claim and period"
 variant_rule = "substantive included variants require distinguishing features, source binding, and approved artwork"
+artwork_rule = "Non-publication-ready records may use an empty artwork array; publication-ready records require at least one approved artwork link."

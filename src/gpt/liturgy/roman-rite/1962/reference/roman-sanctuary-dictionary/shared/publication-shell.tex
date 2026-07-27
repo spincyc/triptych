@@ -1,0 +1,17 @@
+\input{common/preamble}
+\input{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/dictionary-format}
+\input{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/generated-record-renderer}
+
+\newcommand{\RSDPublicationBody}{%
+  \begin{document}
+  \DictionaryTitle{\RSDTitle}{\RSDSubtitle}{\RSDEditionLine}
+  \section*{\RSDOpeningTitle}
+  \RSDOpeningText
+  \RSDRenderGeneratedEdition{\RSDGeneratedFile}
+  \ifnum\RSDRenderedRecordCount=0
+    \RSDHeldCoverageNotice
+  \fi
+  \DictionaryTerminalMatter
+  \section{Generation Metadata}
+  {\scriptsize\input{\DictionaryLeafRoot/generation-metadata}}
+  \end{document}}

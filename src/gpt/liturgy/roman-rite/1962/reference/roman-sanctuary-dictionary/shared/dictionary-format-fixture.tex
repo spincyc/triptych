@@ -1,0 +1,84 @@
+% Build-only design fixture. This is not a publication leaf and makes no
+% liturgical or historical claims.
+\input{common/preamble}
+\input{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/dictionary-format}
+
+\newcommand{\FixtureObject}[1]{%
+  \fbox{\parbox[c][2.57in][c]{0.88\linewidth}{%
+    \centering\fontsize{24}{26}\selectfont #1}}}
+\newcommand{\FixtureCompactObject}[1]{%
+  \fbox{\parbox[c][1.15in][c]{0.84\linewidth}{%
+    \centering\fontsize{20}{22}\selectfont #1}}}
+\newcommand{\FixtureInset}[1]{%
+  \fbox{\parbox[c][0.52in][c]{0.86\linewidth}{%
+    \centering\scriptsize #1}}}
+\newcommand{\FixtureCell}[4]{%
+  \DictionaryCell{#1}{#2}{#3}
+    {\DictionaryArt{2.72in}{\FixtureObject{#4}}}
+    {Concise identification and purpose remain subordinate to the figure.}
+    {STATUS \(\cdot\) HANDLING BOUNDARY}
+    {Brief sourced symbolism when appropriate.}}
+
+\hypersetup{pdftitle={Dictionary Portrait Plate System Fixture}}
+\begin{document}
+\pagestyle{empty}
+
+\DictionaryPlateHeader
+  {Design fixture}
+  {Standard six-up object plate}
+  {\DictionaryScaleNotice}
+
+\DictionaryThreeCellRow
+  {\FixtureCell{FIX-001}{Object One}{res prima}{I}}
+  {\FixtureCell{FIX-002}{Object Two}{res secunda}{II}}
+  {\FixtureCell{FIX-003}{Object Three}{res tertia}{III}}
+\DictionaryGridGap
+\DictionaryThreeCellRow
+  {\FixtureCell{FIX-004}{Object Four}{res quarta}{IV}}
+  {\FixtureCell{FIX-005}{Object Five}{res quinta}{V}}
+  {\FixtureCell{FIX-006}{Object Six}{res sexta}{VI}}
+
+\clearpage
+\DictionaryPlateHeader
+  {Design fixture}
+  {Ambiguous forms with context insets}
+  {\DictionarySameScaleNotice}
+
+\DictionaryTwoCellRow
+  {\DictionaryCell{FIX-101}{Ambiguous Form A}{forma prima}
+    {\DictionaryArtWithInset{2.52in}
+      {\FixtureCompactObject{A}}
+      {In use}{\FixtureInset{context}}}
+    {The specimen and context views share one compact identification cell.}
+    {COMPARE \(\cdot\) RECOGNIZE}
+    {}}
+  {\DictionaryCell{FIX-102}{Ambiguous Form B}{forma secunda}
+    {\DictionaryArtWithInset{2.52in}
+      {\FixtureCompactObject{B}}
+      {Unfolded}{\FixtureInset{context}}}
+    {Proportion, outline, and placement distinguish similar monochrome forms.}
+    {COMPARE \(\cdot\) RECOGNIZE}
+    {}}
+\DictionaryGridGap
+\DictionaryVariantStrip{FIX-201}{Substantive Variants}{formae}
+  {\begin{minipage}{0.23\linewidth}\FixtureCompactObject{1}\end{minipage}\hfill
+   \begin{minipage}{0.23\linewidth}\FixtureCompactObject{2}\end{minipage}\hfill
+   \begin{minipage}{0.23\linewidth}\FixtureCompactObject{3}\end{minipage}\hfill
+   \begin{minipage}{0.23\linewidth}\FixtureCompactObject{4}\end{minipage}}
+  {A shared comparison line explains only the visually substantive differences.}
+  {VARIANT SET \(\cdot\) COMMON SCALE}
+  {}
+
+\clearpage
+\section*{Fixture endnote hooks}
+\DictionaryEndnote{FIX-001}{Stable IDs link a plate entry to its source note.}
+\DictionaryEndnote{FIX-002}{Derived editions retain the same stable key even when reordered.}
+\DictionaryEndnote{FIX-003}{The fixture supplies a note target for every displayed key.}
+\DictionaryEndnote{FIX-004}{Production notes will cite exact sources and loci.}
+\DictionaryEndnote{FIX-005}{Entry order does not determine the stable identifier.}
+\DictionaryEndnote{FIX-006}{Print readers can resolve this key without a live link.}
+\DictionaryEndnote{FIX-101}{Ambiguous forms may receive specimen and context views.}
+\DictionaryEndnote{FIX-102}{Printed keys remain usable when hyperlinks are unavailable.}
+\DictionaryEndnote{FIX-201}{Variant strips collect materially different forms under one headword.}
+
+\end{document}

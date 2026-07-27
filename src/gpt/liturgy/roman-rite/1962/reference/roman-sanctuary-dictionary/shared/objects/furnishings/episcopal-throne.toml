@@ -1,0 +1,53 @@
+schema_version = 1
+id = "obj-episcopal-throne"
+workflow_state = "identified"
+preferred_english_name = "Episcopal throne"
+latin_headword = "solium episcopale"
+alternate_english_names = ["pontifical throne"]
+alternate_latin_names = ["sedes pontificalis"]
+categories = ["church-and-sanctuary", "pontifical-and-prelatial"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["pontifical-mass", "ceremony-surrounding-mass"]
+
+[presence]
+locations = ["The bishop's proper appointed sanctuary station."]
+contexts = ["The proper pontifical seat, distinguished in the Ceremonial from the faldstool."]
+composition_ids = ["plt-pontifical-seating", "plt-pontifical-composition"]
+local_variability = "defining"
+
+[handling]
+ordinary_handlers = ["bishop", "cleric", "sacristan"]
+server_relation = "recognizes-only"
+prepares = ["sacristan", "cleric"]
+stores = ["sacristan"]
+
+[audience_relevance]
+altar_server = "useful"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-episcopal-throne-identity"
+kind = "identity"
+text = "The Ceremonial names the bishop's proper pontifical seat or episcopal throne and distinguishes it from a faldstool."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-episcopal-throne-ce"]
+
+[[sources]]
+id = "src-episcopal-throne-ce"
+binding = "ed-ce-1948-working-witness"
+locus = "Caeremoniale Episcoporum (1948), lib. I, cap. II, VII, and VIII; inspected OCR lines 666-669, 1219-1236, and 1343-1353."
+role = "ceremonial-book"
+verification_state = "inspected"
+checked_on = 2026-07-27
+
+[[artwork]]
+id = "art-episcopal-throne-comparison"
+view = "comparison"
+asset = "shared/artwork/pencil/RSD-ART-002-pontifical-seating.png"
+review_state = "identity-checked"
+depicts = ["obj-faldstool", "obj-episcopal-throne", "obj-bishops-chair", "obj-episcopal-kneeler"]
+scale_mode = "not-to-common-scale"

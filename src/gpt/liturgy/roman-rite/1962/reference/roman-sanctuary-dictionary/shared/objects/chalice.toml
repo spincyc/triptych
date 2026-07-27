@@ -1,0 +1,67 @@
+schema_version = 1
+id = "obj-chalice"
+workflow_state = "source-audited"
+preferred_english_name = "Chalice"
+latin_headword = "calix"
+alternate_english_names = []
+alternate_latin_names = []
+sort_name = "Chalice"
+categories = ["sacred-vessels"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass", "holy-thursday"]
+confusable_with = []
+related_objects = ["obj-paten"]
+component_objects = []
+
+[presence]
+locations = ["On the altar during the celebration of Mass."]
+contexts = ["Used for the wine and water offered and consecrated at Mass."]
+composition_ids = []
+local_variability = "none-recorded"
+
+[handling]
+ordinary_handlers = ["bishop", "priest", "deacon", "subdeacon", "sacristan"]
+server_relation = "must-not-handle"
+prepares = ["sacristan"]
+presents = []
+receives = []
+stores = ["sacristan"]
+warnings = ["The server recognizes the chalice but does not treat it as the Communion plate or an altar cruet."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-chalice-identity-use"
+kind = "liturgical-use"
+text = "The 1962 Missal names the calix throughout the Offertory, Canon, Communion, ablutions, and concluding removal from the altar."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-missale-1962-ritus-vii-xii"]
+as_of = 1962-01-01
+
+[[sources]]
+id = "src-missale-1962-ritus-vii-xii"
+binding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-lectiones-et-offertorium"
+locus = "Ritus servandus VII; see also VIII-XII in the same 1962 typical edition"
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-27
+note = "This binding verifies identity and liturgical use, not the generated figure's particular ornamental morphology."
+
+[[artwork]]
+id = "art-chalice-isolated"
+view = "isolated"
+asset = "shared/artwork/pencil/RPD-FIG-sacred-vessels-0001-iso-chalice.png"
+review_state = "identity-checked"
+depicts = ["obj-chalice"]
+scale_mode = "not-to-common-scale"
+
+[[audience_note]]
+audience = "altar-server"
+text = "Recognize this as the priest's sacred vessel; do not confuse it with the Communion plate."
+claim_ids = ["clm-chalice-identity-use"]

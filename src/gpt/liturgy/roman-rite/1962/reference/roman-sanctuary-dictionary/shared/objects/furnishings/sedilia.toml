@@ -1,0 +1,52 @@
+schema_version = 1
+id = "obj-sedilia"
+workflow_state = "identified"
+preferred_english_name = "Sedilia"
+latin_headword = "sedilia"
+alternate_english_names = ["seats for the sacred ministers"]
+categories = ["church-and-sanctuary"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["solemn-mass", "pontifical-mass"]
+
+[presence]
+locations = ["Sanctuary, customarily on the Epistle side in the selected teaching model."]
+contexts = ["Seating for the celebrant and sacred ministers when the ceremony calls for them to sit."]
+composition_ids = ["plt-sanctuary-seating"]
+local_variability = "common"
+
+[handling]
+ordinary_handlers = ["priest", "deacon", "subdeacon", "sacristan"]
+server_relation = "recognizes-only"
+prepares = ["sacristan"]
+stores = ["sacristan"]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "useful"
+pontifical = "useful"
+
+[[claims]]
+id = "clm-sedilia-identity"
+kind = "identity"
+text = "Sedilia are the sanctuary seats assigned to the celebrant and sacred ministers; their construction and exact placement vary."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-sedilia-ce"]
+
+[[sources]]
+id = "src-sedilia-ce"
+binding = "ed-ce-1948-working-witness"
+locus = "Caeremoniale Episcoporum (1948), lib. I, cap. V and cap. VIII; inspected OCR lines 938-943 and 1343-1353."
+role = "ceremonial-book"
+verification_state = "inspected"
+checked_on = 2026-07-27
+
+[[artwork]]
+id = "art-sedilia-comparison"
+view = "comparison"
+asset = "shared/artwork/pencil/RSD-ART-001-sanctuary-furnishings.png"
+review_state = "identity-checked"
+depicts = ["obj-sedilia", "obj-sanctuary-stool", "obj-credence-table", "obj-communion-rail", "obj-prie-dieu"]
+scale_mode = "not-to-common-scale"

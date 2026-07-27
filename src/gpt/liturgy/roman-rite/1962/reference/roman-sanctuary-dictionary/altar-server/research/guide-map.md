@@ -12,12 +12,12 @@ the server merely recognizes or must not handle. Its eventual audience layer
 emphasizes location, ordinary handler, the server's handling boundary,
 handoffs, common confusions, and immediate safety.
 
-## Current placeholder selection
+## Current generated selection
 
-The present `main.tex` contains no selected canonical objects. It offers four
-placeholders only: Sanctuary Orientation; Objects Around the Server;
-Vestments and Ministers; and Special Masses and Related Ceremonies. Those
-headings are a proposed reader route, not verified object presence or a claim
+The present `main.tex` is a publication-capable shell that consumes only the
+generator-admitted `ed-altar-server` selection under `build/`. That generated
+selection is empty because there are no publication-ready canonical objects.
+It therefore renders a held notice, not verified object presence or a claim
 that coverage is complete.
 
 When populated, `ed-altar-server` selects only `publication-ready` canonical
@@ -25,6 +25,9 @@ records whose `audience_relevance.altar_server` value is `required` or
 `useful`. The presence rule deliberately includes an object documented as
 possibly near a server even when `handling.server_relation` is
 `recognizes-only` or `must-not-handle`. Unresolved records are excluded.
+Neither familiarity nor appearance is enough: possible presence must be a
+verified canonical claim, and the relevance field must be assigned in that
+same record.
 
 ## Reader order
 
@@ -36,6 +39,14 @@ possibly near a server even when `handling.server_relation` is
    comprehensive volume's declared boundary.
 6. Selective first-use pronunciation only where helpful, followed by the
    shared terminal apparatus required for the leaf.
+
+Orientation proceeds from working-place compositions to local detail.
+Non-vesture objects are grouped by encounter location and then ceremony;
+vesture and insignia are grouped by minister. Objects limited to or materially
+changed in special Masses, Holy Week, pontifical Mass, or related ceremonies
+follow in their own section. Cross-references replace unnecessary duplicate
+entries, and the plate manifest preserves intentional order within each
+section.
 
 ## Canonical dependency
 
@@ -50,7 +61,8 @@ the verified base claims.
 ## Hold and nonpublication state
 
 There are currently zero publication-ready canonical records and no approved
-server selection or artwork. The placeholders must not be treated as
+server selection or artwork. The generated held notice must not be treated as
 instructions, handling permission, or evidence that an object may be present.
 This leaf remains on hold and must not be installed or published. A scaffold
-PDF, if built, is a production test only.
+PDF, if built, is a production test only. Plate-manifest order remains a
+publication blocker.

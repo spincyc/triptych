@@ -1,0 +1,60 @@
+schema_version = 1
+id = "obj-holy-water-vessel"
+workflow_state = "art-reviewed"
+preferred_english_name = "Portable holy-water vessel"
+latin_headword = "vas aquae benedictae"
+alternate_english_names = ["holy-water bucket"]
+categories = ["related-ceremonies"]
+periods = ["roman-1962-horizon"]
+statuses = ["unresolved"]
+ceremonies = ["asperges", "ceremony-surrounding-mass", "procession"]
+related_objects = ["obj-aspergillum"]
+
+[presence]
+locations = ["Prepared at the appointed service place."]
+contexts = ["Candidate record for portable holy water used with a sprinkler."]
+local_variability = "common"
+
+[handling]
+ordinary_handlers = ["acolyte", "other-server", "cleric"]
+server_relation = "varies-by-ceremony"
+prepares = ["sacristan"]
+stores = ["sacristan"]
+warnings = ["Carry level and avoid spills on steps, textiles, books, and electrical fittings."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-holy-water-vessel-candidate"
+kind = "identity"
+text = "Candidate inventory identity and representative portable-vessel morphology; governing source loci remain to be audited."
+evidence_state = "editorial-proposal"
+source_ids = []
+
+[[claims]]
+id = "clm-holy-water-vessel-appearance"
+kind = "appearance"
+text = "The candidate artwork shows an open metal vessel with stable base, water line, and one pivoting handle."
+evidence_state = "editorial-proposal"
+source_ids = []
+
+[[sources]]
+id = "src-holy-water-vessel-fortescue-lead"
+binding = "edition.adrian-fortescue.ceremonies-of-the-roman-rite-described.twelfth-revised-1962"
+locus = "Relevant holy-water-vessel passages not yet located."
+role = "lead-only"
+verification_state = "unlocated"
+
+[[artwork]]
+id = "art-related-ceremonies-0001-iso-holy-water-vessel"
+view = "isolated"
+asset = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0001-iso-holy-water-vessel.png"
+review_state = "identity-checked"
+depicts = ["obj-holy-water-vessel"]
+scale_mode = "not-applicable"
+review_note = "Screen-checked for one open vessel, coherent handle and pivots, stable base, grayscale ground, crop safety, and absent lettering; source and print review remain pending."

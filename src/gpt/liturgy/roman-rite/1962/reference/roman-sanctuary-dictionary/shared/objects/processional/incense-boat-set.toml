@@ -1,0 +1,59 @@
+schema_version = 1
+id = "obj-incense-boat-set"
+workflow_state = "art-reviewed"
+preferred_english_name = "Incense boat, spoon, and incense"
+latin_headword = "navicula cum cochleari et thure"
+categories = ["incense"]
+periods = ["roman-1962-horizon"]
+statuses = ["unresolved"]
+ceremonies = ["missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "benediction", "procession"]
+related_objects = ["obj-thurible"]
+
+[presence]
+locations = ["Prepared with the thurible at the appointed service place."]
+contexts = ["Candidate grouped record for the incense container, its spoon, and granular incense."]
+local_variability = "common"
+
+[handling]
+ordinary_handlers = ["boat-bearer", "thurifer", "master-of-ceremonies", "cleric"]
+server_relation = "varies-by-ceremony"
+prepares = ["sacristan"]
+stores = ["sacristan"]
+warnings = ["Keep loose incense dry and the spoon secure; do not place it against the hot thurible."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-incense-boat-set-candidate"
+kind = "identity"
+text = "Candidate grouped inventory identity; governing source loci and whether the components require separate publication records remain to be audited."
+evidence_state = "editorial-proposal"
+source_ids = []
+
+[[claims]]
+id = "clm-incense-boat-set-appearance"
+kind = "appearance"
+text = "The candidate artwork shows an open boat-form container on a foot, loose resin grains, and one separate spoon."
+evidence_state = "editorial-proposal"
+source_ids = []
+
+[[sources]]
+id = "src-incense-boat-set-fortescue-lead"
+binding = "edition.adrian-fortescue.ceremonies-of-the-roman-rite-described.twelfth-revised-1962"
+locus = "Relevant incense-boat, spoon, and incense passages not yet located."
+role = "lead-only"
+verification_state = "unlocated"
+
+[[artwork]]
+id = "art-incense-0002-open-boat-spoon"
+view = "open"
+asset = "shared/artwork/pencil/processional-objects/RPD-FIG-incense-0002-open-boat-spoon.png"
+review_state = "identity-checked"
+depicts = ["obj-incense-boat-set"]
+scale_mode = "not-applicable"
+review_note = "Screen-checked for one open vessel, one coherent lid and hinge, one spoon, granular contents, grayscale ground, crop safety, and absent lettering; source and print review remain pending."

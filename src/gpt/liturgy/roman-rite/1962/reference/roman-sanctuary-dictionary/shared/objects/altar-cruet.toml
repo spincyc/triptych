@@ -1,0 +1,82 @@
+schema_version = 1
+id = "obj-altar-cruet"
+workflow_state = "source-audited"
+preferred_english_name = "Altar cruet"
+latin_headword = "ampulla"
+alternate_english_names = ["Cruet"]
+alternate_latin_names = ["urceolus"]
+sort_name = "Cruet, altar"
+categories = ["service-objects"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass", "holy-thursday"]
+confusable_with = []
+related_objects = ["obj-chalice"]
+component_objects = []
+
+[presence]
+locations = ["Prepared near the altar, ordinarily at the credence."]
+contexts = ["A pair supplies wine and water at the Offertory and the required liquids at the ablutions."]
+composition_ids = []
+local_variability = "possible"
+
+[handling]
+ordinary_handlers = ["acolyte", "other-server", "sacristan", "priest", "deacon", "subdeacon"]
+server_relation = "presents"
+prepares = ["sacristan"]
+presents = ["acolyte", "other-server"]
+receives = ["acolyte", "other-server"]
+stores = ["sacristan"]
+warnings = ["Identify which cruet contains wine and which contains water before presentation; markings and vessel forms vary locally."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "useful"
+
+[[claims]]
+id = "clm-altar-cruet-presence-use"
+kind = "liturgical-use"
+text = "The 1962 Offertory and ablution rites require wine and water to be supplied to the celebrant; contemporary server arrangements use two altar cruets for that service."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-missale-1962-ritus-vii-x", "src-asg-source-audit-cruets"]
+as_of = 1962-01-01
+
+[[claims]]
+id = "clm-altar-cruet-terminology-hold"
+kind = "terminology"
+text = "Ampulla and urceolus remain terminology leads pending a dedicated lexical source audit."
+evidence_state = "unverified-lead"
+source_ids = ["src-asg-source-audit-cruets"]
+
+[[sources]]
+id = "src-missale-1962-ritus-vii-x"
+binding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-lectiones-et-offertorium"
+locus = "Ritus servandus VII and X in the 1962 typical edition"
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-27
+
+[[sources]]
+id = "src-asg-source-audit-cruets"
+binding = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/source-audit.md"
+locus = "Selected Low-Mass model and lines discussing First's wine, Second's water, and the paired cruet service"
+role = "manual"
+verification_state = "claim-verified"
+checked_on = 2026-07-27
+note = "Supports the server-facing two-cruet service model, not a universal vessel shape or Latin headword."
+
+[[artwork]]
+id = "art-altar-cruet-isolated"
+view = "isolated"
+asset = "shared/artwork/pencil/RPD-FIG-service-objects-0001-iso-cruet.png"
+review_state = "identity-checked"
+depicts = ["obj-altar-cruet"]
+scale_mode = "not-to-common-scale"
+
+[[audience_note]]
+audience = "altar-server"
+text = "The same basic vessel form may contain wine or water; identify the contents from the church's rehearsed markings and arrangement."
+claim_ids = ["clm-altar-cruet-presence-use"]

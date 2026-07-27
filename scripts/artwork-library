@@ -1,0 +1,243 @@
+#!/usr/bin/env python3
+"""Normalize and validate repository-owned monochrome publishing artwork."""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import shutil
+import struct
+import subprocess
+import sys
+import tempfile
+import tomllib
+import zlib
+from dataclasses import dataclass
+from pathlib import Path
+
+PNG_SIGNATURE = b"\x89PNG\r\n\x1a\n"
+ALLOWED_COLOR_TYPES = {0: "grayscale"}
+
+
+class ArtworkError(ValueError):
+    pass
+
+
+@dataclass(frozen=True)
+class PngInfo:
+    width: int
+    height: int
+    depth: int
+    color_type: int
+    has_alpha: bool
+    has_color_profile: bool
+
+    @property
+    def mode(self) -> str:
+        return ALLOWED_COLOR_TYPES.get(self.color_type, "non-grayscale")
+
+
+def sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for block in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def inspect_png(path: Path) -> PngInfo:
+    data = path.read_bytes()
+    if not data.startswith(PNG_SIGNATURE):
+        raise ArtworkError(f"{path}: not a PNG")
+    offset = len(PNG_SIGNATURE)
+    width = height = depth = color_type = None
+    has_alpha = False
+    has_color_profile = False
+    while offset + 12 <= len(data):
+        length = struct.unpack(">I", data[offset : offset + 4])[0]
+        kind = data[offset + 4 : offset + 8]
+        payload = data[offset + 8 : offset + 8 + length]
+        crc_at = offset + 8 + length
+        if crc_at + 4 > len(data):
+            raise ArtworkError(f"{path}: truncated PNG chunk")
+        expected = struct.unpack(">I", data[crc_at : crc_at + 4])[0]
+        actual = zlib.crc32(kind + payload) & 0xFFFFFFFF
+        if expected != actual:
+            raise ArtworkError(f"{path}: corrupt PNG chunk {kind!r}")
+        if kind == b"IHDR":
+            if length != 13:
+                raise ArtworkError(f"{path}: invalid IHDR")
+            width, height, depth, color_type, compression, filtering, interlace = (
+                struct.unpack(">IIBBBBB", payload)
+            )
+            if compression != 0 or filtering != 0 or interlace not in (0, 1):
+                raise ArtworkError(f"{path}: unsupported PNG encoding")
+            has_alpha = color_type in (4, 6)
+        elif kind in (b"iCCP", b"sRGB", b"cHRM"):
+            has_color_profile = True
+        elif kind == b"tRNS":
+            has_alpha = True
+        elif kind == b"IEND":
+            break
+        offset = crc_at + 4
+    if None in (width, height, depth, color_type):
+        raise ArtworkError(f"{path}: missing IHDR")
+    return PngInfo(
+        width=width,
+        height=height,
+        depth=depth,
+        color_type=color_type,
+        has_alpha=has_alpha,
+        has_color_profile=has_color_profile,
+    )
+
+
+def load_manifest(path: Path) -> list[dict]:
+    try:
+        document = tomllib.loads(path.read_text(encoding="utf-8"))
+    except (OSError, tomllib.TOMLDecodeError) as exc:
+        raise ArtworkError(f"{path}: cannot read manifest: {exc}") from exc
+    assets = document.get("asset")
+    if not isinstance(assets, list):
+        raise ArtworkError(f"{path}: expected one or more [[asset]] tables")
+    return assets
+
+
+def validate_manifest(path: Path) -> list[str]:
+    errors: list[str] = []
+    seen_ids: set[str] = set()
+    seen_paths: set[Path] = set()
+    root = path.parent
+    for number, asset in enumerate(load_manifest(path), start=1):
+        label = str(asset.get("id", f"asset #{number}"))
+        required = ("id", "path", "sha256", "width", "height", "depth", "mode")
+        missing = [key for key in required if key not in asset]
+        if missing:
+            errors.append(f"{label}: missing {', '.join(missing)}")
+            continue
+        if label in seen_ids:
+            errors.append(f"{label}: duplicate artwork ID")
+        seen_ids.add(label)
+        relative = Path(str(asset["path"]))
+        if relative.is_absolute() or ".." in relative.parts:
+            errors.append(f"{label}: path must remain below the manifest directory")
+            continue
+        artwork = root / relative
+        if artwork in seen_paths:
+            errors.append(f"{label}: duplicate asset path {relative}")
+        seen_paths.add(artwork)
+        if not artwork.is_file():
+            errors.append(f"{label}: missing asset {relative}")
+            continue
+        try:
+            info = inspect_png(artwork)
+        except ArtworkError as exc:
+            errors.append(str(exc))
+            continue
+        expected = {
+            "sha256": sha256(artwork),
+            "width": info.width,
+            "height": info.height,
+            "depth": info.depth,
+            "mode": info.mode,
+        }
+        for key, actual in expected.items():
+            if asset[key] != actual:
+                errors.append(
+                    f"{label}: manifest {key}={asset[key]!r}, actual {actual!r}"
+                )
+        if info.depth != 8:
+            errors.append(f"{label}: publishing PNG must be 8-bit")
+        if info.color_type != 0:
+            errors.append(f"{label}: publishing PNG must be grayscale color type 0")
+        if info.has_alpha:
+            errors.append(f"{label}: publishing PNG must not have alpha/transparency")
+        if info.has_color_profile:
+            errors.append(f"{label}: publishing PNG must not embed a color profile")
+        placement = asset.get("largest_placement_inches")
+        if placement is not None:
+            if not isinstance(placement, (int, float)) or placement <= 0:
+                errors.append(f"{label}: largest_placement_inches must be positive")
+            elif info.width / placement < 300:
+                errors.append(
+                    f"{label}: {info.width / placement:.1f} effective dpi is below 300"
+                )
+    return errors
+
+
+def normalize(source: Path, destination: Path) -> None:
+    executable = shutil.which("magick")
+    if executable is None:
+        raise ArtworkError("ImageMagick `magick` is required for normalization")
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.NamedTemporaryFile(
+        prefix=f".{destination.name}.", suffix=".png", dir=destination.parent, delete=False
+    ) as stream:
+        temporary = Path(stream.name)
+    try:
+        command = [
+            executable,
+            str(source),
+            "-colorspace",
+            "Gray",
+            "-alpha",
+            "off",
+            "-strip",
+            "-depth",
+            "8",
+            "-define",
+            "png:color-type=0",
+            str(temporary),
+        ]
+        completed = subprocess.run(command, text=True, capture_output=True)
+        if completed.returncode:
+            raise ArtworkError(completed.stderr.strip() or "normalization failed")
+        info = inspect_png(temporary)
+        if info.depth != 8 or info.color_type != 0 or info.has_alpha:
+            raise ArtworkError("normalizer did not produce stripped 8-bit grayscale")
+        temporary.replace(destination)
+    finally:
+        temporary.unlink(missing_ok=True)
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    commands = parser.add_subparsers(dest="command", required=True)
+    check = commands.add_parser("check", help="validate assets against a TOML manifest")
+    check.add_argument("manifest", type=Path)
+    normal = commands.add_parser("normalize", help="write a normalized publishing PNG")
+    normal.add_argument("source", type=Path)
+    normal.add_argument("destination", type=Path)
+    identify = commands.add_parser("identify", help="print manifest-ready PNG fields")
+    identify.add_argument("asset", type=Path)
+    args = parser.parse_args()
+    try:
+        if args.command == "check":
+            errors = validate_manifest(args.manifest)
+            if errors:
+                for error in errors:
+                    print(f"ERROR: {error}", file=sys.stderr)
+                return 1
+            print(f"artwork manifest valid: {args.manifest}")
+        elif args.command == "normalize":
+            normalize(args.source, args.destination)
+            info = inspect_png(args.destination)
+            print(
+                f"{args.destination}: {info.width}x{info.height}, "
+                f"{info.depth}-bit {info.mode}, sha256={sha256(args.destination)}"
+            )
+        else:
+            info = inspect_png(args.asset)
+            print(f'sha256 = "{sha256(args.asset)}"')
+            print(f"width = {info.width}")
+            print(f"height = {info.height}")
+            print(f"depth = {info.depth}")
+            print(f'mode = "{info.mode}"')
+    except ArtworkError as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        return 1
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -15,7 +15,7 @@ images, museum photography, third-party drawings, fonts, or reference works.
 
 | Material | Present disposition | Required action |
 | --- | --- | --- |
-| Official liturgical and ceremonial texts | Not yet bound | Record artifact-level status; quote only what is necessary |
+| Official liturgical and ceremonial texts | Full 1961--1962 Pontifical not acquired or bound; publicly hosted 2008 facsimile introduction inspected remotely | Record artifact-level status; quote only what is necessary; do not track facsimile bytes without an affirmative distribution basis |
 | Historic manuals and specialist studies | Not yet selected | Establish edition and artifact rights before tracking or quoting |
 | Museum/archive/catalog photographs | None registered | Review photographer, object-image, host, database, and reuse rights separately |
 | Manufacturer/catalog illustrations | None registered | Obtain a license, establish public-domain status, or use only as an untracked restricted reference where lawful |
@@ -38,3 +38,8 @@ No plate may be installed until every depicted asset and reproduced text has a
 recorded rights disposition, the final-page colophon is present without a
 spill page, and the installed PDF's local notices accurately distinguish
 project-created material from exclusions.
+
+The acquired 10-page 2008 introduction remains remote. Its availability on a
+publisher-associated site does not establish repository redistribution
+permission. No bytes or images from it are tracked, and its comparative
+contents are used only as research evidence.

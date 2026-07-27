@@ -45,3 +45,9 @@ evidence, excluded candidates have reasons, variants and confusables are
 reconciled, artwork and rights are audited, and derived-edition selection is
 tested. A blank or apparently short inventory is never evidence of
 completeness.
+
+The initial beyond-insignia discovery pass is recorded in
+`pontifical-ceremony-candidate-audit.md`. It expands the search surface and
+records a bounded inspection of one 1948 witness, but does not change either
+pontifical row from `Not started`: no operative 1962 corpus or claim-level
+inventory has yet been closed.

@@ -1,0 +1,67 @@
+schema_version = 1
+id = "obj-paten"
+workflow_state = "source-audited"
+preferred_english_name = "Paten"
+latin_headword = "patena"
+alternate_english_names = []
+alternate_latin_names = []
+sort_name = "Paten"
+categories = ["sacred-vessels"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass", "holy-thursday"]
+confusable_with = []
+related_objects = ["obj-chalice"]
+component_objects = []
+
+[presence]
+locations = ["With the chalice and on the altar during the celebration of Mass."]
+contexts = ["Used by the celebrant in the Offertory and Communion rites."]
+composition_ids = []
+local_variability = "none-recorded"
+
+[handling]
+ordinary_handlers = ["bishop", "priest", "deacon", "subdeacon", "sacristan"]
+server_relation = "must-not-handle"
+prepares = ["sacristan"]
+presents = []
+receives = []
+stores = ["sacristan"]
+warnings = ["The priest's paten is not the Communion plate held beneath a communicant's chin."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-paten-identity-use"
+kind = "liturgical-use"
+text = "The 1962 Missal distinguishes the patena used by the celebrant from the plate held beneath communicants' chins."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-missale-1962-ritus-vii-x"]
+as_of = 1962-01-01
+
+[[sources]]
+id = "src-missale-1962-ritus-vii-x"
+binding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-lectiones-et-offertorium"
+locus = "Ritus servandus VII and X in the 1962 typical edition; cross-checked in the altar-server-guide source audit at Missal artifact pp. 60-65"
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-07-27
+note = "This binding verifies identity, distinction, and liturgical use, not the generated figure's exact dimensions."
+
+[[artwork]]
+id = "art-paten-isolated"
+view = "isolated"
+asset = "shared/artwork/pencil/RPD-FIG-sacred-vessels-0002-iso-paten.png"
+review_state = "identity-checked"
+depicts = ["obj-paten"]
+scale_mode = "not-to-common-scale"
+
+[[audience_note]]
+audience = "altar-server"
+text = "Recognize the priest's shallow sacred vessel and keep it distinct from the Communion plate."
+claim_ids = ["clm-paten-identity-use"]

@@ -1,0 +1,52 @@
+schema_version = 1
+id = "obj-communion-rail"
+workflow_state = "lead"
+preferred_english_name = "Communion rail"
+latin_headword = "cancelli"
+alternate_english_names = ["altar rail"]
+categories = ["church-and-sanctuary"]
+periods = ["roman-1962-horizon"]
+statuses = ["unresolved"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass"]
+
+[presence]
+locations = ["At the boundary of the sanctuary in many, but not all, church arrangements."]
+contexts = ["Architectural boundary and, where arranged for it, a place at which communicants kneel."]
+composition_ids = ["plt-sanctuary-seating"]
+local_variability = "defining"
+
+[handling]
+ordinary_handlers = ["sacristan", "lay-assistant"]
+server_relation = "recognizes-only"
+prepares = ["sacristan", "lay-assistant"]
+stores = ["sacristan"]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "useful"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "useful"
+
+[[claims]]
+id = "clm-communion-rail-lead"
+kind = "identity"
+text = "Candidate identification record for the sanctuary or Communion rail; terminology, universal status, and cloth arrangement still require exact source audit."
+evidence_state = "unverified-lead"
+source_ids = ["src-communion-rail-lead"]
+
+[[sources]]
+id = "src-communion-rail-lead"
+binding = "corpus-roman-1962-furnishings-unclosed"
+locus = "Exact Rituale, Caeremoniale, architectural, and material-culture loci not yet closed."
+role = "lead-only"
+verification_state = "unlocated"
+
+[[artwork]]
+id = "art-communion-rail-comparison"
+view = "comparison"
+asset = "shared/artwork/pencil/RSD-ART-001-sanctuary-furnishings.png"
+review_state = "identity-checked"
+depicts = ["obj-sedilia", "obj-sanctuary-stool", "obj-credence-table", "obj-communion-rail", "obj-prie-dieu"]
+scale_mode = "not-to-common-scale"
+review_note = "Representative rail segment only; the depicted cloth arrangement is held from publication pending source audit."

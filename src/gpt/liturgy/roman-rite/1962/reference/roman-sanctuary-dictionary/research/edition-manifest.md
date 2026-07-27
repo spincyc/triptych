@@ -12,8 +12,8 @@ exact editions, artifacts, rights dispositions, and loci before use.
 | `ED-MR-1962` | 1962 typical edition of the *Missale Romanum* | Ordinary Mass, ritual Masses, Requiem, relevant altar, vessel, vestment, and ministerial relationships | edition lead only | Bind exact artifact and inspect every relied-on locus |
 | `ED-RG-1960` | 1960 *Rubricae generales* and *Ritus servandus* as incorporated at the 1962 horizon | Rubrical status and ceremonial branches | edition lead only | Resolve incorporated versus separately promulgated witnesses and exact loci |
 | `ED-OHS-1962` | Holy Week texts and rubrics operative at the 1962 horizon | Palm Sunday, Holy Thursday, Good Friday, Easter Vigil object presence and compositions | corpus unresolved | Identify every governing edition and amendment; avoid silently using pre-1955 or post-1962 practice |
-| `ED-CE` | *Caeremoniale Episcoporum* edition(s) operative at the horizon | Pontifical Mass, episcopal vesture, insignia, furnishings, ministers, and compositions | edition unresolved | Establish controlling edition, later amendments, and exact scope |
-| `ED-PR` | *Pontificale Romanum* volume(s) operative at the horizon | Pontifical functions and objects not controlled by the Missal | edition unresolved | Identify volumes, editions, functions, and exact loci |
+| `ED-CE` | *Caeremoniale Episcoporum* edition(s) operative at the horizon | Pontifical Mass, episcopal vesture, insignia, furnishings, ministers, and compositions | Marietti 1948 third edition after the typical acquired and partially inspected at I.XI--XII and XXI; local retrieval/hash record in `pontifical-ceremony-candidate-audit.md` | Establish whether this edition controls at the 1962 horizon, identify later amendments, bind a canonical source record, and inspect every relied-on locus |
+| `ED-PR-1961-62` | *Pontificale Romanum*, editio typica 1961--1962, three parts: Pars secunda, editio typica emendata (Typis Polyglottis Vaticanis, 1961); Pars prima and Pars tertia et Appendix (Typis Polyglottis Vaticanis, 1962) | Pontifical functions, blessings, consecrations, and objects not controlled by the Missal | Edition identity and three-part structure checked in the publicly hosted introduction to the 2008 Vatican facsimile; full liturgical volumes not acquired or inspected | Acquire or consult exact full facsimile; inspect the decree, rubric, and rite locus for every object claim |
 | `ED-RR` | *Rituale Romanum* edition(s) operative at the horizon | Related ceremonies, Communion outside Mass, processions, blessings, and ritual objects | edition unresolved | Establish edition, supplements, territory, and applicable loci |
 | `ED-MC` | Official chant and music books used by named ceremonies | Book identities, stands, processional use, and choir objects | source family unresolved | Separate official books from practical choir compilations |
 | `ED-AAS` | Promulgating decrees and official acts | Effective dates, reforms, privileges, and material amendments | source family unresolved | Bind exact acts and loci rather than inferring currentness from book dates |
@@ -27,6 +27,45 @@ exact editions, artifacts, rights dispositions, and loci before use.
 | `ED-HIST-C20` | Primary and specialist evidence for pre-1962 twentieth-century reforms | Historical section | corpus unresolved | Record exact cessation or transition evidence |
 | `ED-LEX` | Latin liturgical dictionaries and indices tied to governing books | Latin headwords and aliases | corpus unresolved | Verify form, gender where displayed, variant terminology, and period |
 | `ED-SYMB` | Competent, dated symbolic commentaries | Optional brief symbolism | corpus unresolved | Label traditional associations and omit unsupported universalizing claims |
+
+## Acquired finding aid for `ED-PR-1961-62`
+
+Manlio Sodi and Alessandro Toniolo, introduction to *Pontificale Romanum:
+Editio typica 1961--1962*, Monumenta Liturgica Piana 3 (Libreria Editrice
+Vaticana, 2008), publicly hosted PDF:
+<https://www.latinitas.it/trento_pub/MLP3.pdf>.
+
+- Retrieved and inspected 2026-07-27.
+- Exact acquired PDF: 265,483 bytes; 10 pages; SHA-256
+  `1b030e8907c340912db4d7e85023b20756937b985f5ac003c6729b9f9c0fcab8`.
+- Storage disposition: remote. The bytes were used only in the run-owned
+  temporary directory and are not tracked.
+- Evidence ceiling: bibliographic and structural finding aid. It authenticates
+  the facsimile project, identifies the three parts and their decrees, and
+  prints a comparative contents table. It does not substitute for inspection
+  of the full typical edition and does not establish the morphology,
+  dimensions, handling, or complete ritual use of any named object.
+- Checked loci: introduction pp. VII--VIII (volume structure, decrees, and
+  facsimile pagination), pp. IX--XII (comparative contents), and p. XIII
+  (anastatic reproduction statement and 1,669-paragraph numbering).
+
+The introduction reports: Pars secunda was approved by the Sacred
+Congregation of Rites decree *Pontificale romanum* of 13 April 1961; Pars
+prima and Pars tertia open with the decree *Exhaustis plane* of 28 February
+1962. It also reports a 2 January 1962 declaration concerning the obligatory
+force of the emended typical edition. Those decree texts have not yet been
+inspected in their full official witnesses.
+
+## Corroborating catalog records
+
+- Open Library `OL18251746M` catalogs a Vatican City 1962 editio typica in
+  three volumes, printed by Typis Polyglottis Vaticanis. Catalog inspected
+  2026-07-27; no scan is attached to that edition.
+- BeWeB (the Italian ecclesiastical cultural-heritage portal) catalogs the
+  Catholic Church's *Pontificale romanum*, editio typica 1961--1962, in
+  nineteen libraries. Catalog inspected 2026-07-27.
+- These catalog records corroborate identity and holdings only. They are not
+  textual witnesses.
 
 ## Required edition audit fields
 

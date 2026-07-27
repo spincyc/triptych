@@ -11,17 +11,19 @@ eventual audience layer emphasizes verified roles, giver and receiver,
 destination, branches, preparation and checking points, common confusions,
 safe handling boundaries, and recovery.
 
-## Current placeholder selection
+## Current generated selection
 
-The present `main.tex` contains no selected canonical objects or verified
-ceremonial sequences. It offers four placeholders only: People, Roles, and
-Stations; Objects and Handoffs; Branches and Special Ceremonies; and Training
-Comparisons. They are proposed relational groupings, not role assignments,
-rubrical claims, or permission to teach a sequence.
+The present `main.tex` is a publication-capable shell that consumes only the
+generator-admitted `ed-mc-trainer` selection under `build/`. That generated
+selection is empty because there are no publication-ready canonical objects
+or verified ceremonial sequences. The shell therefore renders a held notice,
+not role assignments, rubrical claims, or permission to teach a sequence.
 
 When populated, `ed-mc-trainer` selects only `publication-ready` canonical
 records whose `audience_relevance.mc_trainer` value is `required` or `useful`.
 Records with unresolved status are excluded.
+Selection requires recorded MC/trainer relevance; a proposed comparison or
+training convenience cannot itself create inclusion.
 
 ## Reader order
 
@@ -34,6 +36,12 @@ Records with unresolved status are excluded.
    and recovery.
 6. Terminal indexes, qualifications, keyed source notes, generation metadata,
    and rights matter.
+
+Stations proceed from ordinary to branch-specific compositions. Handoffs are
+grouped by verified ceremony sequence; branch-dependent records are grouped
+by Mass or ceremony and then sequence. Training comparisons may group
+confusable objects or handling boundaries but do not create factual
+relationships. The plate manifest preserves intentional within-section order.
 
 ## Canonical dependency
 
@@ -49,6 +57,7 @@ enlarge verified base claims.
 
 There are currently zero publication-ready canonical records and no audited
 relational composition, transfer sequence, or training comparison. This leaf
-remains on hold. Its placeholders must not be represented as ceremonial
-guidance, and any scaffold PDF is a production test only, not an installed or
-publishable reference.
+remains on hold. The generated held notice must not be represented as
+ceremonial guidance, and any scaffold PDF is a production test only, not an
+installed or publishable reference. Plate-manifest order is still a
+publication blocker.

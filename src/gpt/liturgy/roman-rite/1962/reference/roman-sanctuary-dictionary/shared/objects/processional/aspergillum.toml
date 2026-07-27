@@ -1,0 +1,60 @@
+schema_version = 1
+id = "obj-aspergillum"
+workflow_state = "art-reviewed"
+preferred_english_name = "Aspergillum"
+latin_headword = "aspergillum"
+alternate_english_names = ["holy-water sprinkler"]
+categories = ["related-ceremonies"]
+periods = ["roman-1962-horizon"]
+statuses = ["unresolved"]
+ceremonies = ["asperges", "ceremony-surrounding-mass", "procession"]
+related_objects = ["obj-holy-water-vessel"]
+
+[presence]
+locations = ["Prepared with the portable holy-water vessel."]
+contexts = ["Candidate record for the implement used to sprinkle holy water."]
+local_variability = "common"
+
+[handling]
+ordinary_handlers = ["priest", "deacon", "cleric", "other-server"]
+server_relation = "varies-by-ceremony"
+prepares = ["sacristan"]
+stores = ["sacristan"]
+warnings = ["Present the handle securely and keep the wet head controlled."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-aspergillum-candidate"
+kind = "identity"
+text = "Candidate inventory identity and representative sprinkler morphology; governing source loci remain to be audited."
+evidence_state = "editorial-proposal"
+source_ids = []
+
+[[claims]]
+id = "clm-aspergillum-appearance"
+kind = "appearance"
+text = "The candidate artwork shows a straight metal handle and perforated spherical sprinkler head as one representative form."
+evidence_state = "editorial-proposal"
+source_ids = []
+
+[[sources]]
+id = "src-aspergillum-fortescue-lead"
+binding = "edition.adrian-fortescue.ceremonies-of-the-roman-rite-described.twelfth-revised-1962"
+locus = "Relevant aspergillum passages not yet located."
+role = "lead-only"
+verification_state = "unlocated"
+
+[[artwork]]
+id = "art-related-ceremonies-0002-iso-aspergillum"
+view = "isolated"
+asset = "shared/artwork/pencil/processional-objects/RPD-FIG-related-ceremonies-0002-iso-aspergillum.png"
+review_state = "identity-checked"
+depicts = ["obj-aspergillum"]
+scale_mode = "not-applicable"
+review_note = "Screen-checked for one handle and perforated head, coherent connection, grayscale ground, crop safety, absent lettering, and no droplets; source, variant, and print review remain pending."

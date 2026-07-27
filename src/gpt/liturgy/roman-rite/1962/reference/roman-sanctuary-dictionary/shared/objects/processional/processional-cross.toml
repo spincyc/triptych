@@ -1,0 +1,58 @@
+schema_version = 1
+id = "obj-processional-cross"
+workflow_state = "art-reviewed"
+preferred_english_name = "Processional cross"
+latin_headword = "crux processionalis"
+categories = ["service-objects"]
+periods = ["roman-1962-horizon"]
+statuses = ["unresolved"]
+ceremonies = ["missa-cantata", "solemn-mass", "pontifical-mass", "procession"]
+
+[presence]
+locations = ["Processional staging area or appointed stand."]
+contexts = ["Candidate record for Roman processions and entrances."]
+local_variability = "common"
+
+[handling]
+ordinary_handlers = ["crossbearer"]
+server_relation = "carries"
+prepares = ["sacristan"]
+stores = ["sacristan"]
+warnings = ["Maintain overhead and doorway clearance; use the appointed stand."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-processional-cross-candidate"
+kind = "identity"
+text = "Candidate inventory identity and representative carrying-cross morphology; governing source loci remain to be audited."
+evidence_state = "editorial-proposal"
+source_ids = []
+
+[[claims]]
+id = "clm-processional-cross-appearance"
+kind = "appearance"
+text = "The candidate artwork shows a crucifix mounted on one tall carrying staff; it does not establish one ornamental form as universal."
+evidence_state = "editorial-proposal"
+source_ids = []
+
+[[sources]]
+id = "src-processional-cross-fortescue-lead"
+binding = "edition.adrian-fortescue.ceremonies-of-the-roman-rite-described.twelfth-revised-1962"
+locus = "Relevant processional-cross passages not yet located."
+role = "lead-only"
+verification_state = "unlocated"
+
+[[artwork]]
+id = "art-processional-objects-0001-iso-processional-cross"
+view = "isolated"
+asset = "shared/artwork/pencil/processional-objects/RPD-FIG-processional-objects-0001-iso-processional-cross.png"
+review_state = "identity-checked"
+depicts = ["obj-processional-cross"]
+scale_mode = "not-applicable"
+review_note = "Screen-checked for one coherent staff and crucifix, grayscale ground, crop safety, absent lettering, and no duplicated structural parts; source and print review remain pending."

@@ -1,0 +1,67 @@
+% Render only generator-admitted canonical records. The generator has already
+% enforced evidence, artwork, and edition-selection gates before these calls
+% reach TeX.
+\input{liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/schema/object-record-api}
+
+\newcount\RSDRenderedRecordCount
+\RSDRenderedRecordCount=0
+\newcount\RSDRenderedRowCount
+\RSDRenderedRowCount=0
+\newif\ifRSDArtworkAvailable
+
+\renewcommand{\RSDObjectRecord}[3]{%
+  \RSDClearObjectRecord
+  \def\RSDObjectID{#1}%
+  \def\RSDPreferredEnglishName{#2}%
+  \def\RSDLatinHeadword{#3}%
+  \def\RSDIdentityText{}%
+  \def\RSDUseText{}%
+  \def\RSDSymbolismText{}%
+  \def\RSDArtworkPath{}%
+  \RSDArtworkAvailablefalse}
+
+\renewcommand{\RSDClaim}[6]{%
+  \ifstrequal{#2}{identity}{\def\RSDIdentityText{#3}}{}%
+  \ifstrequal{#2}{liturgical-use}{\def\RSDUseText{#3}}{}%
+  \ifstrequal{#2}{symbolism}{\def\RSDSymbolismText{#3}}{}}
+
+\renewcommand{\RSDArtwork}[7]{%
+  \ifRSDArtworkAvailable\else
+    \def\RSDArtworkPath{#3}%
+    \RSDArtworkAvailabletrue
+  \fi}
+
+\renewcommand{\RSDEndObjectRecord}{%
+  \global\advance\RSDRenderedRecordCount by 1
+  \global\advance\RSDRenderedRowCount by 1
+  \par\noindent
+  \begin{minipage}[t]{0.31\textwidth}
+    \ifRSDArtworkAvailable
+      \DictionaryCell{\RSDObjectID}{\RSDPreferredEnglishName}
+        {\RSDLatinHeadword}
+        {\DictionaryGraphic{1.42in}{\RSDArtworkPath}}
+        {\RSDIdentityText\ifx\RSDUseText\empty\else\space\RSDUseText\fi}
+        {\RSDStatuses;\ \RSDServerRelation}
+        {\RSDSymbolismText}
+    \fi
+  \end{minipage}\hfill
+  \ifnum\RSDRenderedRowCount=3
+    \par\DictionaryGridGap
+    \global\RSDRenderedRowCount=0
+  \fi}
+
+\newcommand{\RSDRenderGeneratedEdition}[1]{%
+  \InputIfFileExists{#1}{%
+    \ifnum\RSDRenderedRowCount>0\par\fi
+  }{%
+    \PackageError{roman-sanctuary-dictionary}
+      {Generated edition data not found: #1}
+      {Run scripts/roman-sanctuary-dictionary before compiling this leaf.}}}
+
+\newcommand{\RSDHeldCoverageNotice}{%
+  \begin{studybox}{Held production state}
+  No canonical object record currently passes every publication gate for this
+  edition. The generated selection is therefore empty. This PDF proves the
+  publication pipeline and page architecture only; it is not an object
+  dictionary, a completeness claim, or a distribution approval.
+  \end{studybox}}
