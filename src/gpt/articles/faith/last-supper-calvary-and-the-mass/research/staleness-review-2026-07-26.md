@@ -34,7 +34,7 @@ because it preserves the fuller audit surface and objection set. This is a
 material conversion from committed draft to owned held publication source,
 not replacement of an accepted edition.
 
-The integrating root may create the first ledger baseline after reviewing this
-record. The shared ledger was not edited here. Baseline creation would not
-close the independent patristic, sacramental-theological, liturgical, or
-ecclesiastical gates and would not authorize installation or release.
+A first ledger baseline was subsequently recorded. That baseline does not
+close the independent patristic and sacramental review or the independent
+liturgical and ecclesiastical review, and it does not authorize installation
+or release.
