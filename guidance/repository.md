@@ -345,6 +345,17 @@ collation, specialist review, an imprimatur, a nihil obstat, or ecclesiastical
 approval. A changed PDF is a new snapshot and loses its old approval until a
 new exact binding is recorded.
 
+The maintainer's standing public-alpha decision of 27 July 2026 authorizes
+every current and later exact document snapshot to enter `review` without a
+new document-by-document approval request, provided that the snapshot is
+conspicuously labeled provisional, its exact installed PDF and web inputs are
+bound in the release records, and every unresolved work-specific gate remains
+visible. This standing decision authorizes the ordinary build, installation,
+binding, commit, integration, push, and deployment steps needed to keep public
+review links current. It does not authorize a `release` promotion and must
+never be recorded as human, priestly, specialist, ecclesiastical, rights,
+physical-print, intended-reader, or final editorial review.
+
 An explicit user deliverable—such as promised scope, minimum extent, named
 sections, formats, or publication surfaces—must be recorded in the owning
 research scope before work is represented as complete. If the installed paper

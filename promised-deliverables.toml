@@ -158,6 +158,15 @@ state = "candidate"
   evidence = ["guidance/repository.md"]
 
   [[deliverables.requirements]]
+  id = "standing-alpha-authority"
+  criterion = "A standing maintainer decision permits exact-current public-alpha snapshots without repeated document-by-document approval while preserving all open completion gates."
+  status = "pass"
+  check = "contains"
+  path = "guidance/repository.md"
+  needle = "standing public-alpha decision of 27 July 2026"
+  evidence = ["guidance/repository.md", "PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
   id = "site-check"
   criterion = "Production-site validation proves every review publication has a resolving catalog route and visible review label."
   status = "open"

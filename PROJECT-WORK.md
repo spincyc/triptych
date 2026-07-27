@@ -7,6 +7,23 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-07-27.
 
+## Standing public-alpha authority
+
+On 27 July 2026 the maintainer approved every Triptych document for
+conspicuously labeled public-alpha distribution so that priests and other
+qualified readers can review it from stable public links. This is a standing
+workflow authorization: changed source may be researched, built, inspected,
+installed, bound as an exact current public-review snapshot, committed,
+integrated, pushed, and deployed without requesting a new document-by-document
+alpha approval.
+
+Public-alpha approval is distribution authority only. It never records or
+implies human, priestly, specialist, ecclesiastical, rights, intended-reader,
+physical-print, or final editorial review that has not actually occurred.
+Every unresolved work-specific gate remains explicit in the research records,
+release inventory, catalogs, and this register. A publication remains
+conspicuously provisional until those gates are genuinely closed.
+
 ## Current integration and publication state
 
 The repaired public-alpha snapshot is integrated on `main` through commit
@@ -135,6 +152,9 @@ publications, and no held publication in the generated public-alpha artifact.
 Production-site route and review-label validation passed for the deployed
 artifact. Exact catalog-text reconciliation remains open because the exorcism
 landing page understates the deployed PDF as 20 rather than 29 pages.
+The standing 27 July 2026 public-alpha authority permits future exact-current
+review snapshots to be installed and deployed without repeated
+document-by-document approval while preserving every unresolved review gate.
 
 ### Recently discussed paper hard review
 
@@ -194,6 +214,12 @@ the same substantive edit.
   already verified patristic bindings. The changed source builds to an
   uninstalled 32-page candidate; web regeneration, every-page review,
   installation, and all final completion gates remain open.
+- 2026-07-27: Recorded the maintainer's standing authority to publish every
+  document as a conspicuously provisional public-alpha snapshot for priestly
+  and qualified-reader review. This authorizes the ordinary build, install,
+  exact-snapshot binding, commit, integration, push, and deployment workflow
+  without repeated alpha approvals, but supplies no human or ecclesiastical
+  review and closes no substantive completion gate.
 - Earlier conversation history is not itself a durable repository source.
   Any additional remembered agreement must be added here immediately and
   reconciled against the repository rather than inferred away.
