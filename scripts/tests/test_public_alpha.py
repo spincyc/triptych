@@ -830,7 +830,7 @@ class PublicAlphaTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
         self.assertIn("# Catholic Exorcism", catalog)
         self.assertIn("not the promised", catalog)
-        self.assertIn("at least 100 typeset pages", catalog)
+        self.assertIn("at least 100 substantive pages", catalog)
         self.assertIn("Public-alpha review", catalog)
         self.assertIn(
             "../doc/gpt/history/catholic-exorcism/"
