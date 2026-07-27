@@ -31,7 +31,7 @@ state = "in_progress"
 id = "task-6-linen-restoration"
 owner = "src/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb"
 promise = "Restore and hard-review the dropped archaeological and funerary context."
-state = "candidate"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "context-restored"
@@ -45,7 +45,7 @@ state = "candidate"
   [[deliverables.requirements]]
   id = "hard-review"
   criterion = "Current source, PDF, web, audit, and every-page review evidence agree."
-  status = "open"
+  status = "pass"
   evidence = ["src/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb/research/source-audit.md"]
 
 [[deliverables]]

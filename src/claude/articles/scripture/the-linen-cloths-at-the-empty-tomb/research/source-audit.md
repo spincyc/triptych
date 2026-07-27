@@ -277,3 +277,15 @@ Internally source-audited. **No independent exegetical, patristic, rabbinic,
 text-critical or ecclesiastical review.** No ecclesiastical approval claimed.
 The exact installed PDF's release binding is distribution clearance only and
 does not alter these deferred review gates.
+
+On 2026-07-27 a fresh two-pass build reproduced the exact installed 35-page PDF
+at SHA-256
+`b8a10bf0727001adbe1cf8c8e161ce29e19819d1d84bb71e5759cacb20c09cf9`.
+A fresh web conversion reproduced the exact installed Markdown at SHA-256
+`8080242225f85c378f70567f58d04c237a97c2f64159aff2540ab5c01deedea1`.
+The settled log contains no fatal error, undefined reference, overflow,
+underfull box, or layout warning. All thirty-five pages of the immutable review
+snapshot were inspected; no clipping, overlap, blank-page defect, footer
+collision, broken table or apparatus, or other layout defect was found.
+Exact-current PDF, web, source, audit, and every-page production review are
+complete; the deferred independent and ecclesiastical gates above remain open.

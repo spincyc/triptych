@@ -124,6 +124,16 @@ clearance only. It does not close or replace the outstanding independent
 exegetical, patristic, rabbinic, text-critical, or ecclesiastical reviews, and
 this edition must not be described as having passed any of those gates.
 
+On 2026-07-27 a fresh two-pass build reproduced that exact installed PDF, and a
+fresh web conversion reproduced the installed Markdown at SHA-256
+`8080242225f85c378f70567f58d04c237a97c2f64159aff2540ab5c01deedea1`.
+All thirty-five PDF pages were inspected from the immutable review snapshot;
+no clipping, overlap, blank-page defect, footer collision, broken table or
+apparatus, or other layout defect was found. The settled log contains no fatal
+error, undefined reference, overflow, underfull box, or layout warning.
+Exact-current PDF, web, source, audit, and every-page production review are
+complete independently of the GPT edition.
+
 ## First-baseline staleness review — 2026-07-26
 
 Every research input was treated as new. A minimally modified candidate and an

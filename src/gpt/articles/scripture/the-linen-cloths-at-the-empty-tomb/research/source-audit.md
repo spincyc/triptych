@@ -105,10 +105,14 @@ The current installed and release-bound PDF is SHA-256
 `df2ea733358c3b4e0733eaf0f52f2b7bcf3cca62101065fd7d5406bf7db596b9`,
 and the current installed web edition is SHA-256
 `3c17f912035d7d3ae7cb71f10aeb43e1370e0b56aef5f6d5a77a5594ddc11754`.
-Those identities are established by the installed artifacts and exact release
-records; they are not the reviewed candidate hashes above. No tracked record
-currently proves that the every-page review was performed against the exact
-current PDF bytes or that the candidate web review was repeated against the
-exact current web bytes. Exact-current-snapshot PDF, web, and every-page hard
-review therefore remain open. Release binding records distribution clearance
-for the exact bytes; it does not supply or replace that production review.
+On 2026-07-27 a fresh two-pass build reproduced the exact installed PDF bytes,
+and a fresh conversion reproduced the exact installed web bytes. The settled
+log contains no fatal error, undefined reference, overflow, underfull box, or
+layout warning. All eleven pages of the immutable review snapshot were
+inspected; no clipping, overlap, blank-page defect, footer collision, broken
+apparatus, or other layout defect was found. The generated web edition was
+byte-compared with the installed Markdown and therefore carries the same
+source-derived text, rights notice, and generation metadata. Exact-current PDF,
+web, source, audit, and every-page review are complete. Release binding remains
+distribution clearance only and does not supply or replace independent or
+ecclesiastical review.

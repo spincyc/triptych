@@ -138,14 +138,12 @@ substantive expansion, and exact-snapshot every-page review remain open.
 <!-- promised-deliverable: task-6-linen-restoration -->
 
 Commit `242aa461` restored bounded burial-practice and material context in the
-GPT paper and rebuilt its artifacts. Current source, PDF, web, audit, and
-every-page evidence still require one exact-snapshot reconciliation. The
-Claude edition is independently stale. Publication-local records now identify
-the exact installed GPT PDF and web bytes separately from the earlier reviewed
-candidates and retain the exact-current every-page gate as open. Claude's
-record likewise states explicitly that exact-byte distribution clearance does
-not close its deferred independent exegetical, patristic, rabbinic,
-text-critical, or ecclesiastical reviews.
+GPT paper and rebuilt its artifacts. Both provider editions now have one
+reproduced exact-current snapshot: the GPT and Claude PDFs rebuild
+byte-for-byte to the installed artifacts, their web conversions likewise
+match, and all 46 pages have current visual-review evidence. Exact-byte
+distribution clearance does not close either edition's deferred independent
+exegetical, patristic, rabbinic, text-critical, or ecclesiastical reviews.
 
 ### Altar-server guide series
 
@@ -153,8 +151,11 @@ text-critical, or ecclesiastical reviews.
 
 Commit `be940904` repaired the seven guide/card PDFs and replaced the four
 retained old Low Mass images. All are publicly discoverable review copies on
-the branch. Independent server-guide, rights, liturgical-text permission, and
-applicable renewed-snapshot reviews remain open; a build is not those reviews.
+the branch. The exact-current PDFs carry a conspicuous provisional
+public-alpha strip on all 143 pages; page counts, card counts, maps, hashes,
+and production records agree, and every page has been visually reviewed.
+Independent server-guide, rights, liturgical-text permission, physical,
+intended-reader, and ecclesiastical reviews remain open.
 The series-wide sequenced checklist is
 `src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/delivery-work-plan-2026-07-27.md`;
 it governs the shared Low Mass work and the Missa Cantata and Solemn Mass
@@ -177,6 +178,9 @@ notices. Independent human artwork and priestly review remain open.
 The canonical structured inventory consequently contains 43 records. The six
 installed six-page PDFs have been rebuilt and visually inspected against the
 current source: they retain 6 admitted entries and list 37 omissions.
+Fourteen evidence-rich existing records—seven source-audited and seven
+priestly-review-ready—also received a bounded record-level evidence and gap
+audit without workflow promotion or creation of unsupported objects.
 The sequenced inventory, artwork, edition, and publication checklist is
 `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/delivery-work-plan-2026-07-27.md`.
 

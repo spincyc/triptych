@@ -5,8 +5,8 @@
   `claude:articles/scripture/the-linen-cloths-at-the-empty-tomb`; independent
   prose and publication-local judgments.
 - **State:** source-audited GPT publication with installed PDF and web
-  editions and exact-byte release distribution clearance; exact-current
-  production and every-page hard review remain open.
+  editions, exact-byte release distribution clearance, and completed
+  exact-current production and every-page hard review.
 - **Question:** what do John 20:3–10 and Luke 24:12 attribute to Peter and the
   other disciple, what can the cloth arrangement support, and is the
   folded-napkin return signal historically attested?
@@ -56,12 +56,14 @@ SHA-256
 The current installed web edition is SHA-256
 `3c17f912035d7d3ae7cb71f10aeb43e1370e0b56aef5f6d5a77a5594ddc11754`.
 The release binding is exact-byte distribution clearance, not evidence of
-independent, ecclesiastical, or exact-current-snapshot production review.
+independent or ecclesiastical review.
 
-The production evidence retained in `research/source-audit.md` identifies
-earlier reviewed candidate hashes rather than these exact current bytes. Until
-the exact current PDF and web artifacts receive and record the required
-comparison and every-page review, the promised exact-snapshot hard-review gate
-remains open. The completed internal source, quotation, and
-theological-boundary review is not promoted to independent or ecclesiastical
-review.
+On 2026-07-27 a fresh two-pass build reproduced the exact installed PDF bytes,
+and a fresh web conversion reproduced the exact installed Markdown bytes. All
+eleven PDF pages were inspected from the immutable review snapshot; no clipping,
+overlap, blank-page defect, footer collision, broken apparatus, or other layout
+defect was found. The settled log contains no fatal error, undefined reference,
+overflow, underfull box, or layout warning. The exact-current PDF, web, and
+every-page hard-review gate is therefore complete. The completed internal
+source, quotation, theological-boundary, and production review is not promoted
+to independent or ecclesiastical review.
