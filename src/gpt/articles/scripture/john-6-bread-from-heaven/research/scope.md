@@ -99,5 +99,7 @@ Both initial-baseline candidates and the consequential-claim comparison are
 recorded in `research/staleness-review-2026-07-26.md`; the forward revision is
 recorded in `research/staleness-review-2026-07-27.md`. The publication is
 installed and cataloged. Its revised PDF and web edition were rebuilt,
-installed, and reviewed on 2026-07-27; exact public-release binding refresh
-remains a separate integrating-root transaction.
+installed, and reviewed on 2026-07-27; the exact public-release binding was
+subsequently completed in `release/public-alpha.json` under the standing
+public-repository authorization. This publication state does not imply that
+the deferred independent reviews occurred.

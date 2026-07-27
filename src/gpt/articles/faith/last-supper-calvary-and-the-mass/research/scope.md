@@ -31,13 +31,15 @@ claim-level doctrine/model and authority audit; clean baseline fatal-error,
 undefined-reference, and overflow scans; metadata and extracted-text checks;
 and one bounded contact-sheet review of all baseline pages.
 
-`main.tex` is the canonical held source. The tracked web conversion does not
-authorize release. Outstanding after the current source revision: PDF
-installation, reader-facing cataloging, and exact-snapshot release
-authorization. The 2026-07-27 revision has received a clean ten-page build,
-regenerated tracked web edition with fidelity review, contact-sheet review,
-full-size review of every page, and passing independent patristic,
-sacramental, liturgical, and ecclesiastical review.
+`main.tex` is the canonical source. The reviewed ten-page PDF is installed,
+the tracked web edition is present, the publication is listed in
+`library/faith.md`, and the public-alpha manifest binds the installed PDF under
+the standing public-repository authorization. The 2026-07-27 revision received
+a clean build, regenerated tracked web edition with fidelity review,
+contact-sheet review, and full-size review of every page. The patristic,
+sacramental, liturgical, and ecclesiastical checks recorded in this tree were
+AI-assisted internal reviews, not human, professional, ecclesiastical, or
+independent specialist review.
 Exact reusable bindings now control the four retained patristic witnesses,
 the Aquinas loci, the Roman Canon, GIRM 79, the cited Scripture, the Catechism
 ranges including CCC 1390, Trent session XXII chapters 1--2 and canon 3, and

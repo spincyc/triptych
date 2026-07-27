@@ -46,7 +46,7 @@ literally move backward. This is an inspection finding over the enumerated
 loci, not a computational, full-text, author-wide, or universal negative
 search.
 
-## Independent liturgical and ecclesiastical review — 2026-07-27
+## AI-assisted internal liturgical and ecclesiastical review — 2026-07-27
 
 The article's controlling distinctions are sound: the historical Supper,
 Calvary, Resurrection, and later celebrations remain distinct; Calvary is the
@@ -56,10 +56,10 @@ as a qualified theological model rather than received doctrine. The account of
 the Roman Canon is properly bounded to the 2002 typical edition and does not
 generalize one prayer into a universal anaphoral theory.
 
-This gate **passes**. Exact bindings now control GIRM 79, concomitance at CCC
+This internal gate **passes**. Exact bindings now control GIRM 79, concomitance at CCC
 1390, Aquinas's bounded q. 79 effect claim, and the relation between the
 separate species and the Passion at III, q. 76, a. 2. These additions close the
-independent review's reproducibility reservations without broadening the
+internal review's reproducibility reservations without broadening the
 article's claims.
 
 ## Rights and review
@@ -70,6 +70,8 @@ is complete. Source mapping is complete for the witnesses listed in
 `source-bindings.toml`, including the cited Scripture, Catechism ranges, and
 Trent session XXII chapters 1--2 and canon 3. The 2026-07-27 revision has a
 clean ten-page build, extracted-text and log checks, a bounded contact-sheet
-review, full-size inspection of every page, and passing independent patristic,
-sacramental, liturgical, and ecclesiastical reviews. Exact-snapshot release
-approval remains outstanding.
+review, full-size inspection of every page, and passing AI-assisted internal
+patristic, sacramental, liturgical, and ecclesiastical reviews. These checks
+are not human, professional, ecclesiastical, or independent specialist review.
+The installed PDF is bound in the public-alpha manifest under the standing
+public-repository authorization.

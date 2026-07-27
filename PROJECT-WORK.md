@@ -220,8 +220,12 @@ document-by-document approval while preserving every unresolved review gate.
 The required set is Catholic Exorcism, Last Supper, Abraham and the Daylight
 Stars, John 6, and Linen Cloths. The exorcism and GPT linen work received
 substantive repair, but the set has not passed one complete current-guidance
-audit. Staleness currently reports Last Supper, GPT and Claude Abraham, GPT
-John 6, and Claude Linen; this promise remains open.
+audit. Publication-local internal current-guidance audits now identify and
+reconcile the exact installed, web, catalog, and release states for Last
+Supper, both Abraham editions, and GPT John 6 while preserving all disclosed
+evidence ceilings and deferred external reviews. Exorcism and both Linen
+editions remain separate exact-snapshot boundaries, and the set-level promise
+remains open.
 
 ## Full repository discrepancy audit
 

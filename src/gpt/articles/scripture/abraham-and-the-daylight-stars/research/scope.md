@@ -1,10 +1,10 @@
-# Abraham and the Daylight Stars — GPT Held-Draft Scope
+# Abraham and the Daylight Stars — GPT Scope
 
 - **Provider / collection:** GPT; `articles/scripture/`.
 - **Identity:** provider counterpart to
   `claude:articles/scripture/abraham-and-the-daylight-stars`; independent prose
   and publication-local judgments.
-- **State:** complete held publication candidate; specialist review remains
+- **State:** installed and release-bound publication; specialist review remains
   outstanding.
 - **Question:** does Genesis 15's narrated sequence place the star command
   before sunset, and how did historical readers handle the resulting problem?
@@ -32,7 +32,8 @@ unchecked. No tradition-wide silence or controversy claim is made.
 Outstanding: independent review by a Hebraist, Septuagint specialist, rabbinics
 scholar, patristics scholar, astronomer, philosopher of religion, pastoral
 reviewer, and Catholic exegete. No imprimatur, nihil obstat, or ecclesiastical
-approval is claimed. The edition remains held.
+approval is claimed. Publication under the standing public-repository
+authorization does not close any of these deferred gates.
 
 ## Production review
 
@@ -51,7 +52,9 @@ The 2026-07-26 first-baseline review produced both required candidates and
 compared every consequential claim in
 `research/staleness-review-2026-07-26.md`. The candidates agree in substance;
 the expanded `main.tex` is preferred for its fuller audit surface. Because no
-accepted GPT baseline existed, this is a material authoring expansion rather
-than a conflict with an installed edition. The shared staleness ledger remains
-untouched for integrating-root review. Baseline creation, if authorized, would
-not alter the held state or close any specialist gate.
+accepted GPT baseline existed, this was a material authoring expansion rather
+than a conflict with an earlier accepted GPT edition. The reviewed eight-page
+PDF is now installed, the tracked web edition is present, the publication is
+cataloged in `library/scripture.md`, and the public-alpha manifest binds the
+installed PDF under the standing public-repository authorization. None of
+those publication operations closes a specialist gate.

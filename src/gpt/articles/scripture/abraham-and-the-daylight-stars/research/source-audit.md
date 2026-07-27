@@ -69,4 +69,5 @@ The unresolved Samaritan, targumic, Second Temple, and additional patristic
 witnesses prevent promotion of the bounded result into a tradition-wide
 absence claim. Exact publication-local evidence for the omitted Jewish
 reception claims and independent rabbinic, patristic, astronomical, and
-theological review remain outstanding, so the held state is retained.
+theological review remain outstanding. The installed and release-bound state
+does not imply that those reviews occurred.
