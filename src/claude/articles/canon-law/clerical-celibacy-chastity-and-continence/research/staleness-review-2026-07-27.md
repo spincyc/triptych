@@ -61,3 +61,59 @@ or contradicts a claim in this leaf.
 new sibling source records outside the article's bound loci. No publication
 replacement is warranted. Rebaseline and ledger changes are intentionally left
 to the coordinating agent; this audit makes neither.
+
+## Second exact-trigger review — 2026-07-27
+
+After the earlier review, the exact explanation changed. Immediately before
+this second comparison,
+
+```text
+scripts/research-staleness explain claude \
+  articles/canon-law/clerical-celibacy-chastity-and-continence
+```
+
+reported exactly ten new inputs:
+
+- Catechism, English USCCB second edition (2019): passages 391–395, 550,
+  1667–1673, 1700–1706, 1734–1735, 1857–1859, 2111, 2116–2117, and
+  2846–2854; and
+- CIC 1983, Latin Vatican web codex state dated 2026-07-25: canon 1166.
+
+The ignored modified candidate is an exact copy of the current publication
+source at
+`build/staleness/claude/articles/canon-law/clerical-celibacy-chastity-and-continence/modified/`.
+Minimal incorporation therefore makes no source or rendered change. The
+ignored research-first candidate at the corresponding
+`rewritten/treatment.md` was drafted from the research scope, audits, and
+identified authorities without consulting the current article prose. It
+independently treats the three-term distinction; Latin clerics and permanent
+deacons; Eastern discipline; historical development; convert clergy and
+dispensation; theological rationale; current controversies; authority and
+case limits; and the effect of this exact ten-record trigger.
+
+| Consequential claim family | Old publication | Modified candidate | Research-first candidate | Effect of the ten changed inputs |
+|---|---|---|---|---|
+| Chastity, continence, and celibacy are distinct | Retained | Identical | Retained | None. The nine Catechism passages concern demonology, sacramentals, freedom and imputability, mortal sin, occult practices, and temptation, not the bound chastity loci at CCC 2337 and 2348–2350. |
+| CIC 277 governs Latin clerical continence and celibacy | Retained | Identical | Retained | None. Canon 1166 defines sacramentals and does not modify canon 277. |
+| Admission, impediment, penalty, loss of state, and dispensation are separate juridic questions | Retained | Identical | Retained | None. No changed input alters a canon used for these questions. |
+| Married permanent-deacon discipline and its unresolved continence dispute require exact legal controls | Retained | Identical | Retained | None. Neither canon 1166 nor the new Catechism loci supplies an authentic interpretation or changes the governing canons. |
+| Eastern common law preserves married and celibate clergy while forbidding marriage after ordination | Retained | Identical | Retained | None. No CCEO or proper-law input changed. |
+| Western discipline has a staged historical development | Retained | Identical | Retained | None. No historical witness changed. |
+| Convert-clergy provisions and dispensations are controlled juridic exceptions | Retained | Identical | Retained | None. No governing provision changed. |
+| Modern teaching praises celibacy without making it intrinsic to priesthood | Retained | Identical | Retained | None. No cited magisterial locus changed. |
+| Consultative proposals, papal teaching, and enacted law have distinct juridic force | Retained | Identical | Retained | None. No synodal, papal, or legislative input relevant to that comparison changed. |
+| Concrete cases require competent authority and current applicable law | Retained | Identical | Retained | None. The new records neither expand nor narrow this limit. |
+
+The changed research adds, removes, strengthens, weakens, or contradicts no
+consequential claim in the old publication. The modified treatment is
+identical. The research-first treatment differs in organization and
+compression, but reaches the same legal, historical, theological, and
+prudential conclusions. Its disagreement with the old paper is rhetorical,
+not substantive.
+
+**Second-review verdict: no material change.** The ten additions enter the
+fingerprint through whole-work hashing: this leaf binds other Catechism
+editions and loci and other loci in the same CIC edition. None is an exact
+bound locus used by the publication. No prose, source binding, PDF, web
+edition, catalog, release, jurisdiction, currentness, or review-state change
+is warranted.
