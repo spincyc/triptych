@@ -1,46 +1,117 @@
 # Research scope: Catholic Exorcism
 
-## Identity and governing profiles
+## Identity and governing question
 
 - **Provider:** GPT
 - **Collection / key:** Historical Accounts / Catholic Exorcism / CE-01
-- **Genre:** one source-first history with bounded theological, liturgical, canonical, and pastoral modules
-- **Jurisdiction:** current practice begins with the Latin Church in the United States, then distinguishes universal Latin law from local implementation
-- **As-of date:** 2026-07-26
-- **Profiles:** `guidance/history/historical-accounts.md` governs the narrative; `guidance/articles.md` governs theological authority and the current-law module
+- **Genre:** one source-first history with bounded theological, liturgical, canonical, clinical-safeguarding, and pastoral modules
+- **Primary profile:** `guidance/history/historical-accounts.md`
+- **Additional profile:** `guidance/articles.md` applies only to the bounded theological-authority and current-law claims
+- **Legal center:** universal law of the Latin Church, with U.S. territorial implementation distinguished and a bounded Eastern jurisdictional comparison
+- **Current-law as-of date:** 2026-07-26
+- **Additional historical-source inspection:** 2026-07-27
 
-The study asks how diverse biblical, initiatory, pastoral, and ritual practices became the modern Latin Church's carefully restricted major exorcism, and what present rules do—and do not—authorize.
+The study asks how diverse biblical, initiatory, pastoral, and ritual practices
+became the modern Latin Church's restricted major exorcism, and what the
+resulting history and present discipline do—and do not—authorize. Its governing
+thesis is that continuity is real but not identity: Gospel narrative,
+apologetic claim, baptismal exorcism, clerical office, medieval ritual family,
+the 1614 Roman book, and current major exorcism overlap without becoming one
+unchanged rite. Authorization and safeguards are internal to this history.
 
 ## Included
 
-Scriptural foundations; early Christian apologetic and initiatory evidence; the distinction between catechumenal and major exorcism; medieval ritual growth without a folklore-to-law shortcut; the 1614 *Rituale Romanum* and twentieth-century revision; the 1917 and 1983 codes; the 1985 CDF letter, 1998/2004 rite, 2000 healing-prayer instruction, Catechism, and official USCCB account of the U.S. English rite implemented in 2017; medical and psychiatric differential assessment as a pastoral safeguard; consent, privacy, authority, and ordinary pastoral care.
+Selected Israelite and Second Temple contexts; New Testament narrative;
+early-Christian apology and initiation; the distinction between initiatory
+exorcism, offices, blessings, and prayer over afflicted persons; representative
+late-antique and medieval Western evidence; the 1614 *Rituale Romanum* and later
+edition history; the 1917 and 1983 Latin codes; the 1985 CDF letter, the
+1998/1999/2004 ritual-book states, the 2000 healing-prayer instruction, the
+2021 implementation of amended canon 838, the Catechism, and official USCCB
+implementation and pastoral guidance; Catholic demonology with authority levels
+kept distinct; clinical differential assessment, consent, privacy, abuse risk,
+and ordinary continuing care; a bounded CCEO jurisdictional contrast; and
+reception objections needed to test the synthesis.
 
-## Excluded
+## Excluded and incomplete
 
-The work does not diagnose a person, reproduce the rite, list alleged diagnostic signs as a self-test, name demons, teach adjurations, recommend “deliverance ministry,” adjudicate sensational cases, or replace a pastor, diocesan office, physician, mental-health professional, emergency service, or canonist. Eastern Catholic law and rites are not surveyed; Latin rules are not projected onto them. Claims about paranormal events are not treated as clinical or historical facts merely because a witness believed them.
+The work does not diagnose a person, reproduce or operationally summarize the
+rite, publish alleged signs as a self-test, name demons, teach adjurations,
+recommend an unauthorized ministry, adjudicate sensational cases, or replace a
+pastor, diocese, physician, mental-health professional, emergency service, or
+canonist. Named cases remain excluded because the case audit did not recover a
+sufficient chain of contemporary, official, medical, and reception evidence;
+this is not a claim that no adequate archive exists.
+
+The study does not survey Eastern Catholic particular law or ritual books,
+Orthodox law or practice, every local Western ritual, the frequency or outcomes
+of major exorcism, or every historical demonology. Latin canon 1172 is not
+projected onto Eastern Catholics. Remaining edition-level gaps include the
+composition and exact edition control of the church-order complex conventionally
+called *Apostolic Tradition*, some patristic loci, exact PRG ordines and pages,
+and a representative ordinal/formula comparison. These ceilings restrict the
+published claims.
+
+## Language, editions, and terminology
+
+Biblical controls include the Douay–Rheims/Challoner English reception text and
+Robinson–Pierpont Byzantine Greek at the recorded loci. The selected ancient
+context uses Charles's 1913 English *Jubilees* and Whiston's Josephus; no
+original-language collation was completed for those passages. No Hebrew or
+Syriac wording supports a publication claim. Patristic, conciliar, ritual,
+canonical, and clinical witnesses are edition-specific in the source audit.
+
+“Exorcism” is a historical family of uses, not one unchanged ceremony. “Major
+exorcism” means the solemn Latin liturgical act governed by canon 1172 and the
+applicable ritual book. “Minor exorcism” refers chiefly to authorized initiatory
+prayers and does not imply possession. “Deliverance” creates neither a canonical
+category nor permission. Doctrine, school theology, historical witness,
+universal law, territorial implementation, clinical judgment, and project
+synthesis remain distinct.
 
 ## Voice, opening, and quotation control
 
-The work opens with two terse epigraphs. The first quotes the Abbé's distinction between the efficacy of the powers addressed by curses and the efficiency of the words spoken in Gene Wolfe's *The Devil in a Forest*. The display attributes the fictional speaker and work without bibliographic apparatus; the audit retains the Orb edition and page. A reader supplied the exact wording, speaker, edition, and page from a personal copy on 26 July 2026. The project did not independently collate the protected edition, so the research record preserves the reader-transcription boundary rather than describing it as an independent project verification. The passage is a literary point of departure, not doctrinal, historical, or empirical evidence about curses. “The first rule of exorcist club” follows as an anonymous adaptation used to turn attention away from spectacle and toward the afflicted person's dignity; no historical author is asserted.
+The opening begins with two terse epigraphs before the governing thesis. The
+first is the Abbé's distinction between the efficacy of powers addressed by
+curses and the efficiency of the words spoken in Gene Wolfe's *The Devil in a
+Forest*. A reader supplied the exact wording, fictional speaker, Orb 1996
+edition, and page 207 from a personal copy on 26 July 2026. The project did not
+independently collate the protected edition. The focused passage is a literary
+point of departure used for criticism and discussion, not doctrinal,
+historical, or empirical evidence, and it remains excluded from the project's
+license. “The first rule of exorcist club” is an anonymous adaptation directing
+attention away from spectacle; it asserts no historical authorship.
 
-## Evidence and rights
+## Evidence, rights, and method
 
-Official law and liturgical documents control current discipline. Official conference material establishes U.S. implementation, not universal law. Patristic and ritual witnesses establish what their texts say at their dates, not the frequency or clinical nature of possession. Modern historical and clinical scholarship supplies reconstruction or safeguards, not ecclesiastical authority. Protected modern texts are paraphrased; the proprietary ritual is neither copied nor operationally summarized.
+Official law and liturgical acts control their own juridical and ritual claims;
+conference material establishes U.S. implementation and guidance, not universal
+law. Ancient and medieval witnesses establish their texts and receptions, not
+frequency, hidden cause, or modern diagnosis. Modern scholarship reconstructs
+history without acquiring ecclesiastical authority. Clinical and safeguarding
+sources control claims within their professional scope and do not adjudicate a
+theological cause. Protected modern works are paraphrased or quoted only in
+focused excerpts. The proprietary current ritual is neither copied nor reduced
+to an operational sequence.
 
-## Review state
+The reader order is modular: substantive opening and periodized account;
+theological, jurisdictional, safeguarding, reception, and pastoral synthesis;
+then `Scope, Method, and Historical Coordinates`, a dated orientation that
+distinguishes events from surviving witnesses and later editions, references by
+source function, and generation metadata.
 
-First-baseline review (2026-07-26): the complete authoring state, a minimally
-modified candidate, and a research-first rewrite were compared claim by claim.
-They agree in substance. The settled fifteen-page PDF and held web conversion
-passed internal production review, including full-page visual inspection.
-No material change. The work remains held pending independent multidisciplinary
-and ecclesiastical review.
+## Review and hold state
 
-The `main.tex` source remains an unpublished held publication. Source-first
-draft complete through 2026-07-26. Internal source-role and legal-currentness review
-is recorded in the source audit and evidence map. The settled fifteen-page
-draft built without document warnings; repository review rasters were generated
-on 2026-07-26. Independent historical, liturgical, canonical, psychiatric,
-safeguarding, pastoral, and final page review is outstanding. Reusable source
-registration is incomplete and no PDF is installed. The work must remain held
-and unlisted until those gates close.
+The earlier fifteen-page candidate and its 26 July production review are
+superseded for publication-review purposes by this expanded modular draft.
+Those historical review events do not validate the new render. The expanded
+source received internal source-role, currentness, architecture, and
+claim-level reconciliation. On 27 July 2026 its two-pass build, warning audit,
+web conversion, review rasters, every-page visual review, and PDF metadata,
+extracted-text, and embedded-font checks passed. Exact installed-snapshot
+review remains open.
+
+Independent historical, patristic, liturgical, theological, canonical,
+psychiatric, safeguarding, pastoral, rights, and ecclesiastical review remains
+outstanding. No PDF is authorized for installation, catalog listing, or
+distribution from this expanded source until the applicable gates close.
