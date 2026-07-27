@@ -16,8 +16,9 @@
 
 ## Result presently supported
 
-1. John 6's Eucharistic reception is explicit and early: Chrysostom,
-   Augustine, Cyril of Alexandria, and Ambrose supply distinct direct
+1. John 6's Eucharistic reception is explicit and early: Cyprian, the Jerusalem
+   mystagogical catechesis, Chrysostom, Augustine, Cyril of Alexandria, and
+   Ambrose supply distinct direct
    witnesses, while Ignatius and Irenaeus supply closely related early
    Eucharistic reception without commenting directly on John 6.
 2. Jerome, Letter 108.10, reports Paula greeting Bethlehem as the house of
@@ -77,18 +78,18 @@ than extended quotation.
 - Read Augustine's Latin Tractates 25–27 and Chrysostom's Greek or a critical
   edition at the exact loci.
 - Collate Cyril of Alexandria against Pusey's Greek edition.
+- Collate Cyprian's Latin and the Jerusalem catechesis's Greek; preserve the
+  disputed authorship of the mystagogical lectures.
 - Establish the modern critical attribution and date range of the
   pseudo-Gregorian Nativity homily.
 - Extend the exact Catechism bindings beyond paragraphs 1322--1323 if the
   broader 1322--1419 overview becomes wording-critical.
-- Complete reusable source records before restoring the presently omitted
-  Cyprian and Cyril of Jerusalem witnesses.
 - Obtain independent patristic, exegetical, theological, and rights review.
   Publication does not imply that those reviews occurred.
 
 ## Production and first-baseline verdict
 
-On 2026-07-27 the revised canonical source rendered as an eleven-page,
+On 2026-07-27 the revised canonical source rendered as a twelve-page,
 warning-free Letter PDF. Every page was inspected at useful resolution for
 clipping, overlap, malformed text, bad breaks, and metadata placement. The
 generated Markdown was reviewed for heading, list, reference, metadata,

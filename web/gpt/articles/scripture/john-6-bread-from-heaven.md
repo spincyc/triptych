@@ -52,7 +52,7 @@ The repeated future resurrection formula—“I will raise him up on the last da
 
 ### Murmuring and narrative diagnosis
 
-John uses *gongyzō*, “murmur,” for the objections at 6:41 and again for the disciples’ reaction at 6:61. The narrative nevertheless distinguishes questions. The crowd asks how Jesus can have come down from heaven when his parents are known (6:42), then how he can give his flesh to eat (6:52). The disciples call the saying hard (6:60). The text does not say that every questioner understood an identical claim. A responsible reading follows each objection in sequence and does not use “murmuring” as permission to caricature all difficulty as bad faith.
+John uses *gongyzō*, “murmur,” for the objections at 6:41 and again for the disciples’ reaction at 6:61. The same Greek word-family recurs densely in the Septuagint’s manna narrative (Ex 16:2, 7–12), so John’s wording can evoke Israel’s wilderness complaints. That echo does not erase the differences among the questions. The crowd asks how Jesus can have come down from heaven when his parents are known (6:42), then how he can give his flesh to eat (6:52). The disciples call the saying hard (6:60). The text does not say that every questioner understood an identical claim. A responsible reading follows each objection in sequence and does not use “murmuring” as permission to caricature all difficulty as bad faith.
 
 ## Greek Words That Control the Argument
 
@@ -98,6 +98,12 @@ Ignatius of Antioch does not furnish a commentary on John 6, but his *Letter to 
 
 Irenaeus develops the same anti-docetic and anti-gnostic pressure. In *Against Heresies* IV.18.5, bread and wine from creation become the Eucharist and nourish human flesh; in V.2.2–3, bodies nourished from Christ’s body and blood are destined for resurrection. The logic closely matches John 6’s conjunction of flesh, eating, and resurrection, while remaining Irenaeus’s own argument against those who deny the Creator’s salvation of embodied creatures. Patristic convergence is not proof of a quotation.
 
+### Cyprian and the Jerusalem mystagogical catechesis
+
+Cyprian’s *On the Lord’s Prayer* 18 places John 6 inside an explicitly Eucharistic account of daily bread. He names Christ as the bread of life, describes daily reception as food of salvation, cites the flesh given for the world and the command to eat and drink, and connects exclusion from communion with separation from Christ’s body.
+
+The fourth Jerusalem mystagogical catechesis begins from the institution narrative, cites John 6:53, rejects a carnal construal, and directs the newly initiated to judge the Eucharistic gift by Christ’s declaration rather than taste. The traditional attribution is to Cyril of Jerusalem, but authorship of the mystagogical lectures remains disputed; the checked witness establishes Jerusalem catechesis and direct Eucharistic reception without resolving that question.
+
 ### Chrysostom: faith, flesh, mystery, and union
 
 Chrysostom’s Homilies 45–47 on John preserve the discourse’s movement rather than forcing one sense on every occurrence of “bread.” At 6:35, he relates the bread of life first to Christ’s divinity; at 6:51, he marks the transition to the flesh Christ will give. He allows that “bread” can signify saving teaching and faith or Christ’s own body, because the context governs.
@@ -120,9 +126,9 @@ The available English Pusey–Randell witness is a nineteenth-century translatio
 
 ### East and West: convergence without uniformity
 
-The representative Eastern witnesses emphasize distinct things. Ignatius binds Eucharist to the flesh that suffered and rose; Irenaeus binds creation, Eucharist, and bodily resurrection; Chrysostom coordinates faith, mystery, union, and moral transformation; Cyril of Alexandria explains life-giving flesh from the hypostatic union of flesh and Word. They do not repeat one formula.
+The representative Eastern witnesses emphasize distinct things. Ignatius binds Eucharist to the flesh that suffered and rose; Irenaeus binds creation, Eucharist, and bodily resurrection; the Jerusalem catechesis instructs initiates; Chrysostom coordinates faith, mystery, union, and moral transformation; Cyril of Alexandria explains life-giving flesh from the hypostatic union of flesh and Word. They do not repeat one formula.
 
-The representative Latin witnesses are likewise diverse. Ambrose uses John 6 to contrast manna’s mortality with the living Bread received as Christ’s Body. Augustine stresses faith, sacrament, ecclesial unity, abiding, and fruitful reception. Their diversity is evidence of a living reception, not an embarrassment to be flattened. The common center is the incarnate Christ as life-giving food; the conceptual routes and pastoral pressures differ.
+The representative Latin witnesses are likewise diverse. Cyprian places John 6 within daily bread, communion, and discipline. Ambrose contrasts manna’s mortality with the living Bread received as Christ’s Body. Augustine stresses faith, sacrament, ecclesial unity, abiding, and fruitful reception. Their diversity is evidence of a living reception, not an embarrassment to be flattened. The common center is the incarnate Christ as life-giving food; the conceptual routes and pastoral pressures differ.
 
 ## Medieval Synthesis and a Doctrinal Boundary
 
@@ -176,7 +182,7 @@ No finite anthology proves that every Father held one interpretation. This study
 
 ### What the names and narratives establish
 
-Jerome and Ambrose receive *Bethlehem* as “house of bread.” Their traditional gloss does not establish the historical origin of the place-name, nor does it turn every later bread reference into authorial wordplay. Matthew and Luke locate Jesus’s birth in Bethlehem to identify the Davidic city and the scriptural horizon of Micah 5. John 6 never names the city.
+In Biblical Hebrew, *leḥem* means bread and can denote food; the ordinary synchronic gloss of *Beth Lehem* is therefore “house of bread.” Jerome and Ambrose receive the name in that sense. The lexical gloss does not settle the historical origin of the place-name, nor does it turn every later bread reference into authorial wordplay. Matthew and Luke locate Jesus’s birth in Bethlehem to identify the Davidic city and the scriptural horizon of Micah 5. John 6 never names the city.
 
 Luke twice emphasizes the sign: the child is wrapped in swaddling cloths and lying in a manger (Lk 2:7, 12), and the shepherds find him so (2:16). The manger is a feeding place; Luke’s noun does not itself say “altar” or “Eucharist.” The cloths present an actual newborn received into material poverty and care. A Eucharistic reading can proceed canonically from Luke to John, but it should be named as reception or synthesis, not smuggled into Luke’s vocabulary.
 
@@ -228,6 +234,10 @@ The authority classes are distinct: Scripture is the governing text; patristic w
 
 -   St. Irenaeus of Lyons, *Against Heresies* IV.18.5; V.2.2–3.
 
+-   St. Cyprian of Carthage, *On the Lord’s Prayer* 18.
+
+-   Jerusalem mystagogical catechesis IV.1–6, traditionally attributed to St. Cyril of Jerusalem.
+
 -   St. John Chrysostom, *Homilies on John* 45–47; *Homily 24 on First Corinthians*.
 
 -   St. Augustine, *Tractates on John* 25–27.
@@ -254,9 +264,13 @@ The authority classes are distinct: Scripture is the governing text; patristic w
 
 -   Benedict XVI, *Sacramentum caritatis* 6–11, 70–71.
 
+-   H. B. Swete, ed., *The Old Testament in Greek*, vol. I, fourth edition (1909), Ex 16:2, 7–12.
+
+-   University of Iowa Bible and Archaeology, “RTL Words: LEHEM,” dated web state, 27 July 2026.
+
 ## Generation Metadata
 
-**Last revised (UTC):** 2026-07-27T16:30:00Z
+**Last revised (UTC):** 2026-07-27T16:31:00Z
 
 **Model:** `GPT-5-based Codex agent`; `unexposed: configuration`
 
