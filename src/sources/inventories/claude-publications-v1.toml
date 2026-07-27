@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "claude"
-audited_on = "2026-07-26"
+audited_on = "2026-07-27"
 discovery_rule = "src/claude/**/main.tex"
 publication_count = 45
-source_surface_file_count = 872
-snapshot = "sha256:75cbe6573caf7f5d614266528697cf5b970844b7ebed15aa6e3ddbc86e9dde6c"
+source_surface_file_count = 886
+snapshot = "sha256:afc0edeb035997489f1a8f72b9aefb8d1c3e1bc1aa0dda4d6bb17c9ff4885a05"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -37,8 +37,8 @@ id = "articles/canon-law/clerical-celibacy-chastity-and-continence"
 main = "src/claude/articles/canon-law/clerical-celibacy-chastity-and-continence/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "magisterial", "patristic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "articles/canon-law/clerical-celibacy-chastity-and-continence"
 relationship = "local"
@@ -48,8 +48,8 @@ id = "articles/canon-law/natural-positive-divine-human-law"
 main = "src/claude/articles/canon-law/natural-positive-divine-human-law/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["canon-law", "classical", "finding-aid", "historical-primary", "institutional-current", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "articles/canon-law/natural-positive-divine-human-law"
 relationship = "local"
@@ -59,8 +59,8 @@ id = "articles/faith/against-the-instrumentalists"
 main = "src/claude/articles/faith/against-the-instrumentalists/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["institutional-current", "magisterial", "scholastic", "secondary"]
 [[documents.record_owners]]
 id = "articles/faith/against-the-instrumentalists"
 relationship = "local"
@@ -70,8 +70,8 @@ id = "articles/faith/at-the-end-of-every-why"
 main = "src/claude/articles/faith/at-the-end-of-every-why/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["magisterial", "patristic", "prayer-devotional", "scholastic", "scripture"]
 [[documents.record_owners]]
 id = "articles/faith/at-the-end-of-every-why"
 relationship = "local"
@@ -81,8 +81,8 @@ id = "articles/faith/council-missal-and-crisis"
 main = "src/claude/articles/faith/council-missal-and-crisis/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["canon-law", "dataset-survey", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "articles/faith/council-missal-and-crisis"
 relationship = "local"
@@ -92,8 +92,8 @@ id = "articles/faith/four-last-things-01-death"
 main = "src/claude/articles/faith/four-last-things-01-death/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["liturgical", "magisterial", "scholastic", "scripture"]
 [[documents.record_owners]]
 id = "articles/faith/four-last-things-01-death"
 relationship = "local"
@@ -103,8 +103,8 @@ id = "articles/faith/four-last-things-02-judgment"
 main = "src/claude/articles/faith/four-last-things-02-judgment/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["magisterial", "scholastic", "scripture"]
 [[documents.record_owners]]
 id = "articles/faith/four-last-things-02-judgment"
 relationship = "local"
@@ -114,8 +114,8 @@ id = "articles/faith/four-last-things-03-hell"
 main = "src/claude/articles/faith/four-last-things-03-hell/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["magisterial", "scholastic", "scripture"]
 [[documents.record_owners]]
 id = "articles/faith/four-last-things-03-hell"
 relationship = "local"
@@ -125,8 +125,8 @@ id = "articles/faith/four-last-things-04-heaven"
 main = "src/claude/articles/faith/four-last-things-04-heaven/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["magisterial", "scholastic", "scripture"]
 [[documents.record_owners]]
 id = "articles/faith/four-last-things-04-heaven"
 relationship = "local"
@@ -136,8 +136,8 @@ id = "articles/faith/freemasonry-and-the-catholic-church"
 main = "src/claude/articles/faith/freemasonry-and-the-catholic-church/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["archival-material", "canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "articles/faith/freemasonry-and-the-catholic-church"
 relationship = "local"
@@ -147,8 +147,8 @@ id = "articles/faith/in-defense-of-the-particular"
 main = "src/claude/articles/faith/in-defense-of-the-particular/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["liturgical", "magisterial", "scholastic", "scripture"]
 [[documents.record_owners]]
 id = "articles/faith/in-defense-of-the-particular"
 relationship = "local"
@@ -158,8 +158,8 @@ id = "articles/faith/ontological-vertigo"
 main = "src/claude/articles/faith/ontological-vertigo/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["classical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "articles/faith/ontological-vertigo"
 relationship = "local"
@@ -169,8 +169,8 @@ id = "articles/faith/the-due-return"
 main = "src/claude/articles/faith/the-due-return/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["canon-law", "finding-aid", "magisterial", "patristic", "scholastic", "scripture"]
 [[documents.record_owners]]
 id = "articles/faith/the-due-return"
 relationship = "local"
@@ -180,8 +180,8 @@ id = "articles/faith/trustful-surrender-to-divine-providence"
 main = "src/claude/articles/faith/trustful-surrender-to-divine-providence/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["finding-aid", "historical-primary", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "articles/faith/trustful-surrender-to-divine-providence"
 relationship = "local"
@@ -191,8 +191,8 @@ id = "articles/scripture/abraham-and-the-daylight-stars"
 main = "src/claude/articles/scripture/abraham-and-the-daylight-stars/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["classical", "historical-primary", "patristic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "articles/scripture/abraham-and-the-daylight-stars"
 relationship = "local"
@@ -202,8 +202,8 @@ id = "articles/scripture/the-linen-cloths-at-the-empty-tomb"
 main = "src/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["classical", "historical-primary", "patristic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "articles/scripture/the-linen-cloths-at-the-empty-tomb"
 relationship = "local"
@@ -213,8 +213,8 @@ id = "biographies/origen"
 main = "src/claude/biographies/origen/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["archival-material", "classical", "finding-aid", "historical-primary", "magisterial", "patristic", "prayer-devotional", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "biographies/origen"
 relationship = "local"
@@ -227,8 +227,8 @@ id = "biographies/saint-augustine-of-hippo"
 main = "src/claude/biographies/saint-augustine-of-hippo/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["archival-material", "finding-aid", "historical-primary", "magisterial", "patristic", "prayer-devotional", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "biographies/saint-augustine-of-hippo"
 relationship = "local"
@@ -241,8 +241,8 @@ id = "biographies/saint-jerome"
 main = "src/claude/biographies/saint-jerome/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["finding-aid", "historical-primary", "magisterial", "patristic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "biographies/saint-jerome"
 relationship = "local"
@@ -255,8 +255,8 @@ id = "biographies/saint-paul"
 main = "src/claude/biographies/saint-paul/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["classical", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "biographies/saint-paul"
 relationship = "local"
@@ -269,8 +269,8 @@ id = "biographies/saint-peter"
 main = "src/claude/biographies/saint-peter/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["classical", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "biographies/saint-peter"
 relationship = "local"
@@ -283,8 +283,8 @@ id = "biographies/saint-robert-bellarmine"
 main = "src/claude/biographies/saint-robert-bellarmine/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["archival-material", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "prayer-devotional", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "biographies/saint-robert-bellarmine"
 relationship = "local"
@@ -297,8 +297,8 @@ id = "biographies/saint-thomas-aquinas"
 main = "src/claude/biographies/saint-thomas-aquinas/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["archival-material", "classical", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "prayer-devotional", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "biographies/saint-thomas-aquinas"
 relationship = "local"
@@ -311,8 +311,8 @@ id = "biographies/tertullian"
 main = "src/claude/biographies/tertullian/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["archival-material", "finding-aid", "historical-primary", "magisterial", "patristic", "prayer-devotional", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "biographies/tertullian"
 relationship = "local"
@@ -325,8 +325,8 @@ id = "history/biblical-translations/01-septuagint"
 main = "src/claude/history/biblical-translations/01-septuagint/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["archival-material", "classical", "finding-aid", "historical-primary", "institutional-current", "patristic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "history/biblical-translations/01-septuagint"
 relationship = "local"
@@ -339,8 +339,8 @@ id = "history/biblical-translations/02-vulgate"
 main = "src/claude/history/biblical-translations/02-vulgate/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["archival-material", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "history/biblical-translations/02-vulgate"
 relationship = "local"
@@ -353,8 +353,8 @@ id = "history/traditional-priestly-institutes/01-sspx"
 main = "src/claude/history/traditional-priestly-institutes/01-sspx/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["canon-law", "dataset-survey", "finding-aid", "historical-primary", "institutional-current", "magisterial", "secondary"]
 [[documents.record_owners]]
 id = "history/traditional-priestly-institutes/01-sspx"
 relationship = "local"
@@ -367,8 +367,8 @@ id = "history/traditional-priestly-institutes/02-fssp"
 main = "src/claude/history/traditional-priestly-institutes/02-fssp/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["canon-law", "dataset-survey", "historical-primary", "institutional-current", "magisterial", "secondary"]
 [[documents.record_owners]]
 id = "history/traditional-priestly-institutes/02-fssp"
 relationship = "local"
@@ -381,8 +381,8 @@ id = "liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"
 main = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["canon-law", "finding-aid", "historical-primary", "liturgical", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"
 relationship = "local"
@@ -392,8 +392,8 @@ id = "liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"
 main = "src/claude/liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["finding-aid", "historical-primary", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/propers/temporal/22-eighth-after-pentecost"
 relationship = "local"
@@ -403,8 +403,8 @@ id = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"
 main = "src/claude/liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["finding-aid", "historical-primary", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/propers/temporal/23-ninth-after-pentecost"
 relationship = "local"
@@ -414,8 +414,8 @@ id = "liturgy/roman-rite/1962/reference/assembling-the-mass"
 main = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["canon-law", "finding-aid", "historical-primary", "liturgical", "magisterial", "repository-internal"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/reference/assembling-the-mass"
 relationship = "local"
@@ -425,8 +425,8 @@ id = "liturgy/roman-rite/1962/reference/liturgical-calendar"
 main = "src/claude/liturgy/roman-rite/1962/reference/liturgical-calendar/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["canon-law", "finding-aid", "historical-primary", "liturgical", "magisterial", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/reference/liturgical-calendar"
 relationship = "local"
@@ -436,8 +436,8 @@ id = "liturgy/roman-rite/comparative/two-missals-one-sacrifice"
 main = "src/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["canon-law", "dataset-survey", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/comparative/two-missals-one-sacrifice"
 relationship = "local"
@@ -447,8 +447,8 @@ id = "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-or
 main = "src/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass"
 relationship = "local"
@@ -458,8 +458,8 @@ id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/pro
 main = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/main.tex"
 publication_kind = "proper-instance"
 source_mode = "mixed"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a"
 relationship = "local"
@@ -472,8 +472,8 @@ id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/pro
 main = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/main.tex"
 publication_kind = "proper-instance"
 source_mode = "mixed"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"
 relationship = "local"
@@ -486,8 +486,8 @@ id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/ref
 main = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"
 relationship = "local"
@@ -497,8 +497,8 @@ id = "theology/mariology/champion"
 main = "src/claude/theology/mariology/champion/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["archival-material", "canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "prayer-devotional", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "theology/mariology/champion"
 relationship = "local"
@@ -508,8 +508,8 @@ id = "theology/mariology/fatima"
 main = "src/claude/theology/mariology/fatima/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["archival-material", "canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "prayer-devotional", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "theology/mariology/fatima"
 relationship = "local"
@@ -519,8 +519,8 @@ id = "theology/mariology/guadalupe"
 main = "src/claude/theology/mariology/guadalupe/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["archival-material", "canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "prayer-devotional", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "theology/mariology/guadalupe"
 relationship = "local"
@@ -530,8 +530,8 @@ id = "theology/mariology/la-salette"
 main = "src/claude/theology/mariology/la-salette/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["archival-material", "canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "prayer-devotional", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "theology/mariology/la-salette"
 relationship = "local"
@@ -541,8 +541,8 @@ id = "theology/mariology/lourdes"
 main = "src/claude/theology/mariology/lourdes/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["archival-material", "canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "prayer-devotional", "scripture"]
 [[documents.record_owners]]
 id = "theology/mariology/lourdes"
 relationship = "local"
@@ -552,8 +552,8 @@ id = "theology/mariology/marian-dogmas"
 main = "src/claude/theology/mariology/marian-dogmas/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "theology/mariology/marian-dogmas"
 relationship = "local"
@@ -563,8 +563,8 @@ id = "theology/mariology/rosary"
 main = "src/claude/theology/mariology/rosary/main.tex"
 publication_kind = "canonical"
 source_mode = "local"
-inventory_state = "records-enumerated"
-source_categories = ["unresolved"]
+inventory_state = "sources-categorized"
+source_categories = ["canon-law", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "theology/mariology/rosary"
 relationship = "local"
@@ -591,6 +591,12 @@ owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
 path = "src/claude/articles/canon-law/clerical-celibacy-chastity-and-continence/research/source-bindings.toml"
 sha256 = "9618865545538234827b26274a633835dbe0d959d6f93002e256bef74ad47b70"
 kind = "source-binding"
+owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
+
+[[files]]
+path = "src/claude/articles/canon-law/clerical-celibacy-chastity-and-continence/research/staleness-review-2026-07-27.md"
+sha256 = "eadc9df88521ef00ff97b9e6363b3402fafeacc3717f6c4e9b60b6f47a2ac440"
+kind = "research-record"
 owners = ["articles/canon-law/clerical-celibacy-chastity-and-continence"]
 
 [[files]]
@@ -720,6 +726,12 @@ kind = "source-binding"
 owners = ["articles/canon-law/natural-positive-divine-human-law"]
 
 [[files]]
+path = "src/claude/articles/canon-law/natural-positive-divine-human-law/research/staleness-review-2026-07-27.md"
+sha256 = "ace0a24b8a59c7c684e53f7872805cc782e085114443d1011692e03ccac28cd8"
+kind = "research-record"
+owners = ["articles/canon-law/natural-positive-divine-human-law"]
+
+[[files]]
 path = "src/claude/articles/canon-law/natural-positive-divine-human-law/sections/00-two-canons-and-a-question.tex"
 sha256 = "4c6d20347bdfe2c580fe44408c69b3268a05982004b876c6f28c3e3c496646ab"
 kind = "rendered-content"
@@ -817,7 +829,7 @@ owners = ["articles/faith/against-the-instrumentalists"]
 
 [[files]]
 path = "src/claude/articles/faith/against-the-instrumentalists/research/scope.md"
-sha256 = "e1f6b9e47fbab887844671929dd5ae1b6cf4ef5b66e55b930ed6a21035963787"
+sha256 = "2fe56be9cde95f0644789cb73c3760b4980e26293016051e19f20b9be2e3d5c7"
 kind = "research-scope"
 owners = ["articles/faith/against-the-instrumentalists"]
 
@@ -913,7 +925,7 @@ owners = ["articles/faith/at-the-end-of-every-why"]
 
 [[files]]
 path = "src/claude/articles/faith/at-the-end-of-every-why/research/scope.md"
-sha256 = "328d663fadf359c73b11ec30b668523ac2c7d6ddd0093f4731febda101e8bb68"
+sha256 = "f0b7cc6b22f3691ba21f16906d850e580538fcc717befe253f78e4042004afab"
 kind = "research-scope"
 owners = ["articles/faith/at-the-end-of-every-why"]
 
@@ -1087,7 +1099,7 @@ owners = ["articles/faith/four-last-things-01-death"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-01-death/research/scope.md"
-sha256 = "eb0569b5cb29d3ad662761d134219f0b9ddb78a1a36c979057d062bb7b7a6006"
+sha256 = "9c0e121b8ab7a74a4a33a2daaa8e9d1c876c3623e2685f855a67f3ec0c0fb8cd"
 kind = "research-scope"
 owners = ["articles/faith/four-last-things-01-death"]
 
@@ -1189,7 +1201,7 @@ owners = ["articles/faith/four-last-things-02-judgment"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-02-judgment/research/scope.md"
-sha256 = "3297a72f06dce593631b99b8b47262fded5276c7fe05f1529f4e3351aedf5a01"
+sha256 = "2c713219751d6dab5b8ad0e2590d0fae208d008872fd6e13ca60680741f7652c"
 kind = "research-scope"
 owners = ["articles/faith/four-last-things-02-judgment"]
 
@@ -1285,7 +1297,7 @@ owners = ["articles/faith/four-last-things-03-hell"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-03-hell/research/scope.md"
-sha256 = "185752b1afa59608cf4f551be1b2089040444d232e1893fa850dccc610e42b97"
+sha256 = "6474840b117652463c9156cbe1b1ba09105dce2602d6855ce265a965ef011d8e"
 kind = "research-scope"
 owners = ["articles/faith/four-last-things-03-hell"]
 
@@ -1381,7 +1393,7 @@ owners = ["articles/faith/four-last-things-04-heaven"]
 
 [[files]]
 path = "src/claude/articles/faith/four-last-things-04-heaven/research/scope.md"
-sha256 = "0d7dd48852b7b08db251260878513f1eeb674b84feea659c8dbe266c5c2d3024"
+sha256 = "140b17f232221c66ebfda6562ff0a8e736329116f90b91490135ce8a9fc5fc82"
 kind = "research-scope"
 owners = ["articles/faith/four-last-things-04-heaven"]
 
@@ -1483,7 +1495,7 @@ owners = ["articles/faith/freemasonry-and-the-catholic-church"]
 
 [[files]]
 path = "src/claude/articles/faith/freemasonry-and-the-catholic-church/research/scope.md"
-sha256 = "424f5923529aa495b52edc21cc4db0523c28d38ed3861741897cbd98da9531d0"
+sha256 = "326465c8261ce85153c3540c677587878f44ef9cf0428d1b5d1d4d7a7c2dd1bd"
 kind = "research-scope"
 owners = ["articles/faith/freemasonry-and-the-catholic-church"]
 
@@ -1579,7 +1591,7 @@ owners = ["articles/faith/in-defense-of-the-particular"]
 
 [[files]]
 path = "src/claude/articles/faith/in-defense-of-the-particular/research/scope.md"
-sha256 = "191651f2f079eae31a6480fd69b845f46063937d2a04788654eea614149df8ad"
+sha256 = "bfd3d73ecdb2e307298d4cf3b7c438e5ed3624781f67de67a689163fc501be65"
 kind = "research-scope"
 owners = ["articles/faith/in-defense-of-the-particular"]
 
@@ -1687,7 +1699,7 @@ owners = ["articles/faith/ontological-vertigo"]
 
 [[files]]
 path = "src/claude/articles/faith/ontological-vertigo/research/scope.md"
-sha256 = "ad7bb253df687ee764fbcc295e9e6ab296188461812d5469a42a6e65456e063d"
+sha256 = "985321ed6289b4945cc554ff097dcc42ee39fb44ccf9928432f41b8f807c4e21"
 kind = "research-scope"
 owners = ["articles/faith/ontological-vertigo"]
 
@@ -1783,7 +1795,7 @@ owners = ["articles/faith/the-due-return"]
 
 [[files]]
 path = "src/claude/articles/faith/the-due-return/research/scope.md"
-sha256 = "dfd48de90011ba1aa8cf163c63c7ef8b5e3f53d78fe4ffcc61ddc2ddb6bc6bcd"
+sha256 = "c4cdd53c8cd9f319a095c1943d6fb68dc38794c43ef6a7e9d6d86efe36019f23"
 kind = "research-scope"
 owners = ["articles/faith/the-due-return"]
 
@@ -1867,7 +1879,7 @@ owners = ["articles/faith/trustful-surrender-to-divine-providence"]
 
 [[files]]
 path = "src/claude/articles/faith/trustful-surrender-to-divine-providence/research/scope.md"
-sha256 = "e6a7378e3451af804759e82e367e9903c8f2d1e7a04baaa12ea3bf165b8b4336"
+sha256 = "75700d0c7f97920a5f059c298eea8ab36487f0a92c763d046bc9baaeb877b929"
 kind = "research-scope"
 owners = ["articles/faith/trustful-surrender-to-divine-providence"]
 
@@ -2101,7 +2113,7 @@ owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
 
 [[files]]
 path = "src/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb/research/source-bindings.toml"
-sha256 = "43c764959ad0cea5e063d5cd43826bf574ae6c6e38ebeb733b63295c99cfc038"
+sha256 = "a92cadeb984f340f81273c8e6ebf061f7e1e3127bb4ec81fe23a58862fe5c99f"
 kind = "source-binding"
 owners = ["articles/scripture/the-linen-cloths-at-the-empty-tomb"]
 
@@ -2197,7 +2209,7 @@ owners = ["biographies/origen"]
 
 [[files]]
 path = "src/claude/biographies/origen/research/scope.md"
-sha256 = "b9e712d5cc2e8d095d61cbf4d2640d6b6f1fbedc9228fb2b8e4420adb1c90da8"
+sha256 = "053d397b059ad26b4df7084c7699a0e52a952e337cbb2974dc74eae881b07055"
 kind = "research-scope"
 owners = ["biographies/origen"]
 
@@ -2323,7 +2335,7 @@ owners = ["biographies/saint-augustine-of-hippo"]
 
 [[files]]
 path = "src/claude/biographies/saint-augustine-of-hippo/research/scope.md"
-sha256 = "98d53339ec2407c8194f4b9ef93787ec8ffbcb24eab251970b0874ea64dc11ec"
+sha256 = "20c39872aa2ca20f2ed42c49efcbb11c43e3e24a7200bccee636bb76805ab637"
 kind = "research-scope"
 owners = ["biographies/saint-augustine-of-hippo"]
 
@@ -2449,7 +2461,7 @@ owners = ["biographies/saint-jerome"]
 
 [[files]]
 path = "src/claude/biographies/saint-jerome/research/scope.md"
-sha256 = "053ecee30776866ae57d742e294b6c6ffd9248ab629270ca85dced9674a9d1c3"
+sha256 = "dd4ae04ed9b07e6a9652146acf79116fa12961e1cb896487d73f66aa3650f88b"
 kind = "research-scope"
 owners = ["biographies/saint-jerome"]
 
@@ -2707,7 +2719,7 @@ owners = ["biographies/saint-peter"]
 
 [[files]]
 path = "src/claude/biographies/saint-peter/research/scope.md"
-sha256 = "43af252748e805d41563eca6ec052df0f7e88649683df9d271f99867cc0b6040"
+sha256 = "254056aa8a76d51a6e64b56fed26df4fe76db0716034766cd360b598365b1ff2"
 kind = "research-scope"
 owners = ["biographies/saint-peter"]
 
@@ -2995,7 +3007,7 @@ owners = ["biographies/saint-thomas-aquinas"]
 
 [[files]]
 path = "src/claude/biographies/saint-thomas-aquinas/research/scope.md"
-sha256 = "eee259bf235e8f261a9c4af11af8478255a1820a4e41f30d479c3729f418fc01"
+sha256 = "9b061cf0241d2cb7fef56f5775a971a757b1c02e26cb97a4ebabf72f56dd3ea5"
 kind = "research-scope"
 owners = ["biographies/saint-thomas-aquinas"]
 
@@ -3121,7 +3133,7 @@ owners = ["biographies/tertullian"]
 
 [[files]]
 path = "src/claude/biographies/tertullian/research/scope.md"
-sha256 = "477c40a0b6a9c8e861084ae30b361825975b4632aee416eec0d4cae8a3c855f2"
+sha256 = "7c2049a518c8297407a20aadf6bcae00dc67407fc898fb2f6bb6d46029dce408"
 kind = "research-scope"
 owners = ["biographies/tertullian"]
 
@@ -3259,7 +3271,7 @@ owners = ["history/biblical-translations/01-septuagint"]
 
 [[files]]
 path = "src/claude/history/biblical-translations/01-septuagint/research/scope.md"
-sha256 = "e7d10502603c7351cb880a00412addc821eac0a2c788427bd726ac767fa077d0"
+sha256 = "312412df84082dde37af2c3fe4547de3589d02c937671c2f4553790888150658"
 kind = "research-scope"
 owners = ["history/biblical-translations/01-septuagint"]
 
@@ -3273,6 +3285,12 @@ owners = ["history/biblical-translations/01-septuagint"]
 path = "src/claude/history/biblical-translations/01-septuagint/research/source-bindings.toml"
 sha256 = "43b8ced042de2233c4bf2e243c1af29df8699eae25b6fa068ce3f84a4b32cbcc"
 kind = "source-binding"
+owners = ["history/biblical-translations/01-septuagint"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/01-septuagint/research/staleness-review-2026-07-27.md"
+sha256 = "bd8d0e6e6f02cf2b212d7bc62143fff6c6dc61b84aa0a8e336981a70c4c79ff1"
+kind = "research-record"
 owners = ["history/biblical-translations/01-septuagint"]
 
 [[files]]
@@ -3379,7 +3397,7 @@ owners = ["history/biblical-translations/02-vulgate"]
 
 [[files]]
 path = "src/claude/history/biblical-translations/02-vulgate/research/scope.md"
-sha256 = "c6a3e1aad952821a1c703d6024778b59f9e83301812dda6732dfb63f8c6e946b"
+sha256 = "02c6c404b236fddc4ee2bc83c36123941ce156ae1f26170f1a8df33b3e8d1dd4"
 kind = "research-scope"
 owners = ["history/biblical-translations/02-vulgate"]
 
@@ -3393,6 +3411,12 @@ owners = ["history/biblical-translations/02-vulgate"]
 path = "src/claude/history/biblical-translations/02-vulgate/research/source-bindings.toml"
 sha256 = "189faf3b76d1543ab41f463c8e018e931385ea383d2e983e46fa59cc34a1f3e3"
 kind = "source-binding"
+owners = ["history/biblical-translations/02-vulgate"]
+
+[[files]]
+path = "src/claude/history/biblical-translations/02-vulgate/research/staleness-review-2026-07-27.md"
+sha256 = "d63e57f88b1901c9054a462997adcd87044c4f50d9714c54460fd2f517f2ddd9"
+kind = "research-record"
 owners = ["history/biblical-translations/02-vulgate"]
 
 [[files]]
@@ -3499,7 +3523,7 @@ owners = ["history/traditional-priestly-institutes/01-sspx"]
 
 [[files]]
 path = "src/claude/history/traditional-priestly-institutes/01-sspx/research/scope.md"
-sha256 = "6c6f88e0b2fa107c951dd16a89800957777308f9752696e581d9d9777a4673fb"
+sha256 = "f6d1a45c132df1a70c80afae31bacae01c56dbdd8abc6f10f0b59fd39cd1a4d1"
 kind = "research-scope"
 owners = ["history/traditional-priestly-institutes/01-sspx"]
 
@@ -3513,6 +3537,12 @@ owners = ["history/traditional-priestly-institutes/01-sspx"]
 path = "src/claude/history/traditional-priestly-institutes/01-sspx/research/source-bindings.toml"
 sha256 = "b58edb6688e1fe69469c6f09a9a113ae712b09ccd3676e10e54fe4514e35ce4e"
 kind = "source-binding"
+owners = ["history/traditional-priestly-institutes/01-sspx"]
+
+[[files]]
+path = "src/claude/history/traditional-priestly-institutes/01-sspx/research/staleness-review-2026-07-27.md"
+sha256 = "0899e868bc33d20725f511b551e9c456b9f635cffc62b8b25d8754ca4091bdba"
+kind = "research-record"
 owners = ["history/traditional-priestly-institutes/01-sspx"]
 
 [[files]]
@@ -3651,6 +3681,12 @@ owners = ["history/traditional-priestly-institutes/02-fssp"]
 path = "src/claude/history/traditional-priestly-institutes/02-fssp/research/source-bindings.toml"
 sha256 = "e27fa1de8def5f25ac9108a3709494b513d717ab0a3975f0a8e31f3b3127368d"
 kind = "source-binding"
+owners = ["history/traditional-priestly-institutes/02-fssp"]
+
+[[files]]
+path = "src/claude/history/traditional-priestly-institutes/02-fssp/research/staleness-review-2026-07-27.md"
+sha256 = "ef2a7e615935ccb19278c064a7023a04ae129daad2f9dd35571d0bce7fd9f079"
+kind = "research-record"
 owners = ["history/traditional-priestly-institutes/02-fssp"]
 
 [[files]]
@@ -3799,7 +3835,7 @@ owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass/research/scope.md"
-sha256 = "85abec21b4f79ad690899a333ea4eb37aef1ac2dbef55f5e34bfb61feeaebbda"
+sha256 = "cbb9d0a6b57e674d2fcde05e84f4b50bd4e38f3ccd79ea458e4a83be273b229d"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass"]
 
@@ -4411,7 +4447,7 @@ owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice/research/scope.md"
-sha256 = "39bc4bd10d217f47ae1f409cead2af95987ba990a707cf54dd1b77d6fa461c65"
+sha256 = "df02be44fdd5c5ea4d27f49ad371616d0f06d4f60aedc460b8597af38e148ca3"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/comparative/two-missals-one-sacrifice"]
 
@@ -4687,7 +4723,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/research/scope.md"
-sha256 = "f4db2e09c2e76b57349f15825a61c97d42f00fb6c71ca925202a989eb3d89357"
+sha256 = "99d97e3ee41559036669851191fd3972f211599c9166b4b497a321237e94aa3e"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a"]
 
@@ -4771,8 +4807,14 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/main.tex"
-sha256 = "f53c406570423461b161bbfea82a8632783787460edf014127616b827d480607"
+sha256 = "bb0305adf433dc5938a1b324b87bb9277210c19652c864c8aea03cb4de9c460c"
 kind = "publication-main"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/proper-components.toml"
+sha256 = "a5588d43576c492fd81b37e92b2d7fdaba33d084364495460d6738f6522a82f7"
+kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
@@ -4783,7 +4825,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/research/scope.md"
-sha256 = "c1aaa87fddb1388b5d73f1d68fcd80a3f76a125422246da584aa5aff2895dcaa"
+sha256 = "1b7f20199a050d4dda221f26f8fa49b047c610d87607c3d2b27a9dba4b799717"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
 
@@ -4806,6 +4848,12 @@ kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/05-appointed-text.tex"
+sha256 = "ae11cf449e296f745015a714485c8ffc449ee097e7d7f450c313928a0bee85de"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
 path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/10-date-and-location.tex"
 sha256 = "1797d020d22d3b88799799c4f9c4a1ef6e6c3775dc2034ef55284c61c5e3cb57"
 kind = "rendered-content"
@@ -4813,13 +4861,13 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/20-themes-and-movement.tex"
-sha256 = "684ab2da1eaf11c2cc99ef03921ecf8f113bd1ad3cd99145b45b5d9f14d51456"
+sha256 = "9ce45dddbc3f1e3d0286ebad9b4f79b66487d21cc21d5c0bb72c378ac696b9c0"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/30-commentary-entrance-collect.tex"
-sha256 = "e6c2fe9dea7bdb4dd3ba77e6492f81b7ba4bff161b9d99065e013ce59be3ae30"
+sha256 = "9828acf83a7ec13e33194ea9bcdd21ae580d2d46f03195939b87087f7f051b95"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
 
@@ -4848,14 +4896,20 @@ kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/35-source-grounded-synthesis.tex"
+sha256 = "6d8f90ca7719307c864fd7f57d93a09694e44d62c9d897ac94f09f0a269625fc"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
 path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/40-notable-and-quotable.tex"
-sha256 = "a0997ca7e11439889dd5b59e41c7d6f1b25445a453d1734659c59a7352a2a3a5"
+sha256 = "e882ea69522d7eb702588843a00641cf4623ac98ddab75743c53fe8499168b3c"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/50-interpretive-possibilities.tex"
-sha256 = "e83185a4a954827faafcbfc78c11b48f2bc0bfe918246a7845c3087c11997086"
+sha256 = "40b17877c5bc11df3fc0cfd6cf1237e7bd01f5a4d917aad7951c71004b35bf7e"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
 
@@ -4874,6 +4928,12 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 [[files]]
 path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/sections/99-references.tex"
 sha256 = "82d5700997e695248a9508c9b16859462d633d368da0898b3f34510aa09e143d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/synthesis.tex"
+sha256 = "2c08d66e9049f5db88335a2494fe07148d72561ab72a5ac299dafc70d6fdca8c"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a"]
 
@@ -5064,6 +5124,12 @@ kind = "source-binding"
 owners = ["theology/mariology/champion"]
 
 [[files]]
+path = "src/claude/theology/mariology/champion/research/staleness-review-2026-07-27.md"
+sha256 = "1cfbb881ec13677c3e0ce69bdc78bf564ee3ed602d563b783908593d45d021c5"
+kind = "research-record"
+owners = ["theology/mariology/champion"]
+
+[[files]]
 path = "src/claude/theology/mariology/champion/sections/00-decree-first.tex"
 sha256 = "f44157721cfe7ae933e1baf6cd76ebd07899d23eb3162b4060ba9a0b6f405c8f"
 kind = "rendered-content"
@@ -5169,6 +5235,12 @@ owners = ["theology/mariology/fatima"]
 path = "src/claude/theology/mariology/fatima/research/source-bindings.toml"
 sha256 = "34da24b9498e298017b50f8fdaad331f9b7fed578a92fe63fe21d5ed9c45c564"
 kind = "source-binding"
+owners = ["theology/mariology/fatima"]
+
+[[files]]
+path = "src/claude/theology/mariology/fatima/research/staleness-review-2026-07-27.md"
+sha256 = "629e41853652a95eccc7b16d5bbbc43605b9d068ac9d2612cc96a2904b4f4084"
+kind = "research-record"
 owners = ["theology/mariology/fatima"]
 
 [[files]]
@@ -5640,6 +5712,12 @@ kind = "source-binding"
 owners = ["theology/mariology/marian-dogmas"]
 
 [[files]]
+path = "src/claude/theology/mariology/marian-dogmas/research/staleness-review-2026-07-27.md"
+sha256 = "58ded30299dc51f2f3b92a9fef2e1d79495edff8088be78b5f49b10bf5a0998a"
+kind = "research-record"
+owners = ["theology/mariology/marian-dogmas"]
+
+[[files]]
 path = "src/claude/theology/mariology/marian-dogmas/sections/00-the-four-dogmas.tex"
 sha256 = "b807b30d3aeee6526d7c72b8e533d6f7cf82414a44b8ad0aaa1a3b990a2d61ce"
 kind = "rendered-content"
@@ -5751,6 +5829,12 @@ owners = ["theology/mariology/rosary"]
 path = "src/claude/theology/mariology/rosary/research/source-bindings.toml"
 sha256 = "43e8e6def98a7b0743ab6451a139bac80dd756210ff9af4ea9594c4f29de02b2"
 kind = "source-binding"
+owners = ["theology/mariology/rosary"]
+
+[[files]]
+path = "src/claude/theology/mariology/rosary/research/staleness-review-2026-07-27.md"
+sha256 = "908c16c0e1efe79963763fd5509c6e2cf562271ce63d688f7a85214d6f7bd50c"
+kind = "research-record"
 owners = ["theology/mariology/rosary"]
 
 [[files]]
