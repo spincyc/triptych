@@ -442,6 +442,14 @@ universal rubrics.
 
 ## Completeness validation
 
+The 2026-07-27 mechanical rerun again found an ordered, unique
+LM-001--LM-043 inventory and exact ordered agreement between the TeX and
+inventory sets for MC-001--MC-057 and SO-001--SO-070. It also found exact
+twelve-ID front/back sets for both sung action decks. No missing, extra,
+duplicate, or reordered sung chronology ID was found. This is a structural
+reconciliation only and does not complete the pending independent ceremonial
+or site-specific rehearsal review.
+
 The two sung TeX action sets and their Markdown row keys were compared as
 exact sets and ordered sequences after the final sung edit. The Low-Mass
 inventory is an ordered 43-row model mapped to the action ranges annotated in

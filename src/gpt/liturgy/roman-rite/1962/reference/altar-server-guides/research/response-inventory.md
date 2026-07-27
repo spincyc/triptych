@@ -202,6 +202,16 @@ and action-card contracts are unchanged by the Low-Mass redesign.
 
 ## Review state
 
+The 2026-07-27 mechanical rerun found twenty complete `\serveranswer` records
+plus the deliberately custom-registered A8 and A14 records, for one complete
+A1--A22 data set. It also found one form-specific voice definition for each
+of those twenty-two IDs. The current Low-Mass card source still contains
+twenty-two front/back pairs derived from that bank, and exact installed-PDF
+extraction finds twenty-two `PRIEST` and twenty-two `BOTH` headers. The two
+sung companions retain the recorded twenty-four-card R projection. This
+reconfirms source and rendering consistency; it is not a new facsimile
+collation or independent speaker-assignment review.
+
 The source-to-inventory reconciliation is complete for A1--A22. The redesigned
 Low-Mass child/trainer projection and the deck-local 01--22 selection have
 been reconciled at source and final-render level. Their rendered text,

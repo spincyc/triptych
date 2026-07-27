@@ -92,7 +92,7 @@ R deck is physically repeated in both sung companions.
   passes after the final shared-source cleanup. The child and trainer hashes
   include the closed actor-label correction; the flash-card and four sung-form
   PDFs reproduced their prior exact hashes.
-- The repository metadata checker validates all 106 canonical and 6 inherited
+- The repository metadata checker validates all 123 canonical and 6 inherited
   generation records, and validates each of the seven PDFs against its
   declared metadata.
 - All seven logs contain no fatal error, undefined reference, LaTeX or package
@@ -105,6 +105,41 @@ R deck is physically repeated in both sung companions.
   character and no observed fallback family.
 - The four sung PDFs reproduce the exact reviewed and installed hashes above.
   The redesign therefore changed no sung-form rendered byte.
+
+### 2026-07-27 mechanical rerun
+
+The complete seven-publication target was rebuilt for two pdfTeX passes from
+the current source. Every rebuilt PDF is byte-for-byte identical to the
+installed PDF and therefore reproduces the seven hashes in the current ledger.
+All seven final logs are free of fatal errors, undefined references, LaTeX or
+package warnings, overfull or underfull boxes, and unresolved rerun requests.
+The generation-metadata checker accepts each installed PDF against its leaf
+record; the repository-wide check accepts 123 canonical and 6 inherited
+records; and the release-binding check reports zero stale bindings.
+
+`pdfinfo` parses all seven installed files at the recorded US-letter page
+counts. Fresh `pdftotext` extraction is nonempty in every file and contains no
+UTF-8 replacement character. `pdffonts` reports every listed font embedded and
+subsetted. The current environment does not provide `qpdf`, so this rerun does
+not claim a new `qpdf --check`; the earlier exact-byte result above remains
+historical evidence for the same installed hashes.
+
+Source-level set checks again find the complete A1--A22 response bank and one
+form-specific voice definition for every A ID. They find exact, ordered
+MC-001--MC-057 and SO-001--SO-070 TeX/inventory sets, an ordered 43-row
+LM-001--LM-043 inventory with the declared source-range map, and exact
+twelve-ID front/back sets for each sung action deck. The Low-Mass card source
+contains twenty-two fronts and twenty-two mirrored backs; rendered extraction
+finds twenty-two `PRIEST` and twenty-two `BOTH` headers. Page-local extraction
+confirms Low-Mass response fronts on pages 1, 3, and 5 and backs on pages 2, 4,
+and 6; each sung companion retains response fronts on pages 1, 3, 5, and 7,
+action fronts on pages 9 and 11, and their backs on the intervening even pages.
+
+These are source, byte-identity, log, metadata, parity, and extraction checks
+only. They do not complete actual-size, physical-duplex, cut, photocopy,
+paired-use, intended-reader, independent liturgical or ceremonial,
+Latin-pronunciation, pedagogical, rights, or ecclesiastical-suitability
+review.
 
 ### Historical Atkinson production font audit
 

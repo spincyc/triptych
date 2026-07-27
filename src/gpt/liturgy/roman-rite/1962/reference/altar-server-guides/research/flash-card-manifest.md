@@ -159,6 +159,16 @@ chronologies; they do not create independent ceremonial routes.
 
 ## Verification state
 
+The 2026-07-27 mechanical rerun rebuilt all three companions byte-for-byte
+identically to their installed hashes. Source checks found twenty-two
+Low-Mass fronts and twenty-two backs and exact twelve-ID front/back action
+sets for each sung companion. Page-local extraction reconfirmed odd response
+fronts and even backs throughout: pages 1/2, 3/4, and 5/6 for Low Mass;
+response pairs through pages 7/8 and action pairs at 9/10 and 11/12 for each
+sung companion. Low-Mass extraction contains twenty-two `PRIEST` and
+twenty-two `BOTH` headers. These electronic results do not complete the
+pending actual-size, physical-duplex, photocopy, or cut tests.
+
 The Low-Mass source map accounts for twenty-two fronts, twenty-two mirrored
 backs, six populated positions on the final sheet, and two wholly unused
 positions. The current installed evaluation companion has six US-letter pages.
