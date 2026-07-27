@@ -7,6 +7,28 @@ generic ad-orientem Roman altar frontally from the nave. They do not establish
 a rubric, sanctuary arrangement, or ceremonial fact. TeX owns every role
 label, level marker, route, cue, and finish-state annotation.
 
+## Provenance boundary
+
+The built-in OpenAI image-generation interface produced the received raster
+outputs. It did not expose a generator model or version. Exact verbatim
+generation and correction prompts, candidate counts, rejected alternatives
+other than the four precursors retained below, and received-file hashes were
+not preserved in a durable repository record. They must not be reconstructed
+from the finished images or described as if they had been recorded. The
+composition, correction, generator, date, normalized identity, and known input
+relationships stated below are the complete surviving provenance.
+
+The Low-Mass composition references were project-created renders of the named
+TeX diagram macros. Those reproducible TeX sources, rather than transient
+build rasters, are the durable reference inputs. The sung compositions used
+project-created briefs; no third-party image was supplied as a style or
+composition reference. Corrected assets used their named rejected precursor
+and a project-created correction instruction, but the exact instruction text
+was not preserved.
+
+The files are AI-generated graphite-style illustrations, not drawings made by
+a human illustrator. No entry claims imitation of a named living artist.
+
 ## ASG-ART-001
 
 - Logical ID: `ASG-ART-001`
@@ -17,7 +39,7 @@ label, level marker, route, cue, and finish-state annotation.
 - Depicted state: priest centered; Second Acolyte at picture-left; First
   Acolyte at picture-right; all standing with backs to the viewer and hands
   joined; Missal on the Epistle side (picture-right)
-- Setting: generic front-facing Roman altar, three marked liturgical levels,
+- Setting: generic front-facing Roman altar, three liturgical levels,
   two candles
 - Production: AI-generated monochrome graphite illustration from a
   project-created, label-free TikZ composition reference
@@ -145,7 +167,7 @@ label, level marker, route, cue, and finish-state annotation.
   `a795dfecafb27e49f3d4b066c8e18800e8c32d09168ba93fe171568da0bbfd47`
 - Baked-in text, arrows, or numerals: none
 - TeX overlays: role capsules and the down-centre-up Gospel-side route
-- Consumers: `01-low-mass`, `01-low-mass-trainer-manual`
+- Consumers: none; superseded by `ASG-ART-005`
 - Rights state: project-created AI illustration; no known third-party source asset was
   incorporated; distributed under repository terms only to the extent applicable rights exist
 - Review state: rejected after ceremonial audit; the generated figure carries
@@ -171,7 +193,7 @@ label, level marker, route, cue, and finish-state annotation.
   `89ac7e610049bd63d17532d12318d9ad6f0d9199937a2d6fd4f69f342c5f4f8f`
 - Baked-in text, arrows, or numerals: none
 - TeX overlays: priest and acolyte role and object capsules
-- Consumers: `01-low-mass`, `01-low-mass-trainer-manual`
+- Consumers: none; superseded by `ASG-ART-006`
 - Rights state: project-created AI illustration; no known third-party source asset was
   incorporated; distributed under repository terms only to the extent applicable rights exist
 - Review state: rejected after ceremonial audit; the water stream misses the
@@ -238,7 +260,8 @@ than page numbers because pagination may change.
 - File:
   `shared/artwork/pencil/ASG-ART-009-mc-gospel-formation-corrected.png`
 - Purpose: corrected Missa Cantata Gospel-side formation for MC-023--025
-- Correction: the priest now stands at the Gospel-side altar book
+- Correction: the priest now stands at the Gospel-side altar book and the
+  thurifer is placed outward from the central ministers
 - Production: AI-generated monochrome graphite correction of `ASG-ART-007`
 - Generator: OpenAI image generation tool
 - Generated: 2026-07-27
@@ -260,7 +283,8 @@ than page numbers because pagination may change.
 - File:
   `shared/artwork/pencil/ASG-ART-010-so-gospel-station-corrected.png`
 - Purpose: corrected Solemn Mass Gospel station for SO-021--023
-- Correction: SD visibly supports the Gospel book by hand for D
+- Correction: SD visibly supports the Gospel book by hand for D; the
+  erroneous lectern shown in the rejected precursor is absent
 - Production: AI-generated monochrome graphite correction of `ASG-ART-008`
 - Generator: OpenAI image generation tool
 - Generated: 2026-07-27
@@ -311,3 +335,11 @@ Full-size visual comparison found no material line, tonal, or print-detail
 loss. Every consuming guide was then rebuilt and reviewed. The project-wide
 thresholds and preservation boundary are recorded in
 `guidance/repository.md`.
+
+The normalized identities were independently rechecked on 2026-07-27. All ten
+files are 8-bit grayscale PNGs, each is smaller than 1 MiB, and each is below
+two megapixels. The six publication-consumed assets are placed above the
+ordinary 300-effective-dpi floor and below the 450-effective-dpi review
+trigger at their largest declared placement. Thus the tracked files conform
+to the monochrome publishing-raster policy; this technical result does not
+complete the pending physical print and photocopy reviews.

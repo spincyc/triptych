@@ -184,8 +184,9 @@ unfamiliar sanctuary steps.
 
 ## Rights and review state
 
-Project-created prose, layouts, drills, diagrams, respellings, IPA, and
-glosses fall within the repository's project-license boundary. Latin
+Project-created prose, layouts, drills, diagrams, AI pencil illustrations for
+Low and sung forms, respellings, IPA, and glosses fall within the repository's
+project-license boundary. Latin
 liturgical text, official rubrics, chant, scans, fonts, and third-party
 manuals retain their own status. Availability of a scan is not permission to
 redistribute it. The guides quote only the Latin needed for response training,
@@ -199,19 +200,17 @@ under the project content license.
 The response, pronunciation, and sung-form ceremonial records retain their
 completed internal audits. The redesigned Low-Mass text and route have been
 reconciled internally with the response bank and the new LM-001--LM-043
-ceremonial inventory. The production manifest distinguishes the exact
-installed evaluation identities from the later uninstalled Low-Mass
-illustration and choreography candidates. It records the current candidates'
-exact identities, technical font and text checks, and every-page screen
-review without treating them as installed replacements. That record also
-separates the current uninstalled sung-form layout corrections from their
-installed predecessor bytes. Actual-size card legibility, physical duplex and
-photocopy review, and exact-snapshot release state remain pending and must not
-be inferred from either installation or screen review.
+ceremonial inventory. The production manifest records the exact installed
+Low-Mass illustration and choreography identities and the installed sung-form
+layout corrections, together with their technical font and text checks and
+every-page screen review. Actual-size card legibility and physical duplex and
+photocopy review remain pending and must not be inferred from installation or
+screen review.
 
 Independent liturgical, ceremonial, Latin-pronunciation, pedagogical, rights,
 and ecclesiastical review remain outstanding. The 23 July 2026 exact-byte
 exception remains a historical release decision for the six immutable PDFs
 and hashes it named. It supplies none of those missing reviews. The redesigned
-Low-Mass trio has received a separate installed-evaluation decision, but each
-snapshot still requires its own release decision.
+Low-Mass trio and sung companions have received the maintainer's current
+release decision; that decision supplies none of the missing independent
+maturity reviews.

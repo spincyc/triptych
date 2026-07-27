@@ -372,14 +372,14 @@ shorter target was achieved safely. Flash-card sheet geometry, duplex
 pairing, and fixed 11.5-point body requirement remain unchanged even though
 the active typeface is now Libertinus.
 
-All seven generation records carry candidate revision timestamp
-`2026-07-27T13:37:35Z`. Two final pdfTeX passes produced these exact
-uninstalled candidates:
+All seven generation records carry revision timestamp
+`2026-07-27T13:37:35Z`. Two final pdfTeX passes produced these exact reviewed
+and installed publications:
 
 | Publication | Pages | Bytes | SHA-256 |
 |---|---:|---:|---|
-| `01-low-mass` | 28 | 2,823,078 | `b75c333d5356a4f9c60aa041113c5d01a4409cb8dab15cc62ed2e9031a54e97f` |
-| `01-low-mass-trainer-manual` | 28 | 2,836,608 | `2d2d3c46446e68d2d8b581daf0faa1f4e172ba36d620ebce89fa2699fe07eee7` |
+| `01-low-mass` | 28 | 2,823,041 | `22c4347dc08391522337f3dfbb361f53b1abff1362d95b3c19241e324630fc8a` |
+| `01-low-mass-trainer-manual` | 28 | 2,836,532 | `9dbe85499388d82e53c083af4af147fe344dd12d5bd546e0f26c9f7c5db7dbe1` |
 | `01-low-mass-flash-cards` | 6 | 249,562 | `d44edc7cabdac325fbccd6a31fd5c12e8d1d8293bea65023f8286f4cf219ba34` |
 | `02-missa-cantata` | 27 | 1,259,750 | `9ad9057fd479d6e2fac42e76dc793a4cfb93e0d11c439424f897a595db59cc6a` |
 | `02-missa-cantata-cue-cards` | 12 | 621,907 | `f04351517aff67db1fe56b7baff607850d658f5f3676cdf17089119a595cd862` |
@@ -399,14 +399,15 @@ is claimed.
 The bounded review tool rastered all 141 pages. Complete contact sheets were
 inspected for every page, including paired Low-Mass child/trainer boundaries,
 all flash- and cue-card faces, and both sung Gospel drawings. Full-size
-inspection confirmed the corrected role labels and captions on
+inspection confirmed the separated step/role labels in the Low-Mass opening
+and kneeling scenes and the corrected role labels and captions on
 `ASG-ART-009` and `ASG-ART-010`; the six published pencil drawings remain
 schematic aids whose functional labels and local-distance qualifications are
 owned by TeX. No clipping, collision, accidental blank, broken sequence,
 orphaned trainer rail, card-border incursion, or unsafe diagram claim was
 found.
 
-These are uninstalled review candidates. Physical actual-size, duplex,
-photocopy, intended-reader, independent, rights, and
-ecclesiastical-suitability gates remain pending; no release authorization or
-installed-byte identity is claimed.
+The installed PDFs reproduce these exact reviewed bytes. Physical actual-size,
+duplex, photocopy, intended-reader, independent, rights, and
+ecclesiastical-suitability maturity reviews remain pending; the maintainer's
+release authorization does not represent those reviews as complete.
