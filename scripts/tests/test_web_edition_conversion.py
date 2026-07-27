@@ -133,6 +133,20 @@ class WebEditionConversionTests(unittest.TestCase):
         # A reference no heading anchors keeps its text and loses its link.
         self.assertNotIn("(#sec:missing)", markdown)
 
+    def test_starred_heading_drops_pandoc_only_attributes(self) -> None:
+        markdown = self.convert("\\subsection*{Pastoral reply}\nProse.\n")
+        self.assertIn("### Pastoral reply\n", markdown)
+        self.assertNotIn(".unnumbered", markdown)
+
+    def test_starred_heading_keeps_an_explicit_label(self) -> None:
+        markdown = self.convert(
+            "\\subsection*{Pastoral reply}\\label{sec:reply}\n"
+            "See section~\\ref{sec:reply}.\n"
+        )
+        self.assertIn("### Pastoral reply {#sec:reply}\n", markdown)
+        self.assertIn("(#sec:reply)", markdown)
+        self.assertNotIn(".unnumbered", markdown)
+
     def test_description_labels_and_spacing_macros_survive(self) -> None:
         markdown = self.convert(
             "\\begin{description}[style=nextline,leftmargin=1.5em]\n"

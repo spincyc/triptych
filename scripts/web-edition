@@ -24,6 +24,11 @@ MARKDOWN_DIALECT = (
     "-bracketed_spans-raw_attribute"
 )
 
+UNNUMBERED_HEADING_ATTRIBUTE_RE = re.compile(
+    r"^(#{1,6} .+?) \{#([^{} ]+) \.unnumbered\}$", re.MULTILINE
+)
+LABEL_RE = re.compile(r"\\label\s*\{([^{}]+)\}")
+
 # Control sequences pandoc either renders itself or may drop without losing
 # content.  Anything outside this set, the shim, and the document's own
 # definitions is a silent-deletion risk and stops the conversion.
@@ -309,6 +314,18 @@ def resolve_anchors(markdown: str) -> str:
     )
 
 
+def normalize_unnumbered_headings(markdown: str, labels: set[str]) -> str:
+    """Drop Pandoc-only heading metadata without discarding source labels."""
+    return UNNUMBERED_HEADING_ATTRIBUTE_RE.sub(
+        lambda match: (
+            f"{match.group(1)} {{#{match.group(2)}}}"
+            if match.group(2) in labels
+            else match.group(1)
+        ),
+        markdown,
+    )
+
+
 def table_count(body: str, definitions: str) -> int:
     """Count table environments the body opens, including named table wrappers."""
     names = {"tabular", "tabularx", "longtable"}
@@ -432,7 +449,9 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
         raise ConversionError(f"pandoc failed:\n{result.stderr.strip()}")
     if MATH_WARNING_RE.search(result.stderr):
         raise ConversionError(f"math left as raw TeX:\n{result.stderr.strip()}")
-    markdown = resolve_anchors(result.stdout)
+    markdown = normalize_unnumbered_headings(
+        resolve_anchors(result.stdout), set(LABEL_RE.findall(body))
+    )
     failures = audit_output(body, markdown, table_count(body, shim_text + locals_text))
     if failures:
         raise ConversionError("\n".join(failures))
