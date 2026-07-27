@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "gpt"
-audited_on = "2026-07-26"
+audited_on = "2026-07-27"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 123
-source_surface_file_count = 1433
-snapshot = "sha256:7dec1a2b1a27e0cfe184cd2f4fe8cca51da644bd13cba290d534b9d63a0f27d5"
+source_surface_file_count = 1434
+snapshot = "sha256:a517cd57d2daf0df7a934f7c546496a2e69841a6bc365a072bf479cc38a81bfc"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -3038,31 +3038,37 @@ owners = ["articles/scripture/abraham-and-the-daylight-stars"]
 
 [[files]]
 path = "src/gpt/articles/scripture/john-6-bread-from-heaven/main.tex"
-sha256 = "c0900e5185b04eee8c7cdc0e401d02d5bb015490434552093bfdc5598c7e7ab6"
+sha256 = "e40269de97a7217e59bc2f5092300043f714b3bb19104b091320dabba8623fba"
 kind = "publication-main"
 owners = ["articles/scripture/john-6-bread-from-heaven"]
 
 [[files]]
 path = "src/gpt/articles/scripture/john-6-bread-from-heaven/research/evidence-map.md"
-sha256 = "b39c84babf6da341ee7d90b12551a4f0accceeeedec6e60f85b1b970b43ccb28"
+sha256 = "43613a64999ea2703073b37371f43f42f149f699ef0da3bf5ca0a6894e094d1c"
 kind = "research-record"
 owners = ["articles/scripture/john-6-bread-from-heaven"]
 
 [[files]]
 path = "src/gpt/articles/scripture/john-6-bread-from-heaven/research/scope.md"
-sha256 = "b643edcac1378dcb6a932f739517d12791ce36e09e647d67ab950df33b251eea"
+sha256 = "dfa2a6dead90ba343cf0463ed6dabb387e0efefcf587557d4da495d0a3dde0a7"
 kind = "research-scope"
 owners = ["articles/scripture/john-6-bread-from-heaven"]
 
 [[files]]
 path = "src/gpt/articles/scripture/john-6-bread-from-heaven/research/source-audit.md"
-sha256 = "b8950836fef9ddbbce9c3f04cbe97aaae5a8f27fc3d43e4743a89a72c21e62d9"
+sha256 = "31064762b1893486f24da4425083d76c78c7b2f89aa0e1cb5bceb56a59ea983f"
 kind = "legacy-source-audit"
 owners = ["articles/scripture/john-6-bread-from-heaven"]
 
 [[files]]
+path = "src/gpt/articles/scripture/john-6-bread-from-heaven/research/source-bindings.toml"
+sha256 = "a1c2fd1ee04ddaa6e157525bad14953db5b6987b08b3a3ea0344cc37ad31436b"
+kind = "source-binding"
+owners = ["articles/scripture/john-6-bread-from-heaven"]
+
+[[files]]
 path = "src/gpt/articles/scripture/john-6-bread-from-heaven/research/staleness-review-2026-07-26.md"
-sha256 = "e1db62c19d650f96601abf50988a4b903071105675c2c0f1f1c8e31199e10feb"
+sha256 = "965088d36aa409a999af5f3917aea392981442b1f9c28abedf93208a23e0e493"
 kind = "research-record"
 owners = ["articles/scripture/john-6-bread-from-heaven"]
 

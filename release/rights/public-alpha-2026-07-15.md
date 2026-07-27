@@ -1280,6 +1280,7 @@ release attachment, announcement, or promotion.
 | `articles/faith/ontological-vertigo` | `f15dfc612873c1bafe3c8f5de7cb38d089f4b6ef65419ae775593a35c623d50b` |
 | `articles/faith/the-due-return` | `c135449a5c03012587cc363580cf83db7cde83fb5bb13150d51f3b6c7c40fdf1` |
 | `articles/faith/trustful-surrender-to-divine-providence` | `01f09c1214d22efd5998fd65304c1356a8dfcb2f0f75894cfeb5e0d0da397fd6` |
+| `articles/scripture/john-6-bread-from-heaven` | `073d386f7381633dcb7eb97300f8170b6364cb5037b28bc103ac759996ef6af0` |
 | `biographies/origen` | `505d059a4238cd83bb04717a561ef1e8bad929e6c098ec50fa42154b5e1c54ad` |
 | `biographies/saint-augustine-of-hippo` | `8d6f4a35bc4d23480008d518d4f91784fb554e5b41c1dc2aed70645f6059830f` |
 | `biographies/saint-jerome` | `8500ff6fa2ac9bf12d4b724a24e4a028e87d3b72f87bc5354418d766f1377a5e` |
@@ -1451,7 +1452,7 @@ release attachment, announcement, or promotion.
 | `library/mariology.md` | `e46b57edc3d906984fc669ccbdf2fdaab68a15a049d8d420c8f9885c5b2092a2` |
 | `library/novus-ordo-liturgy.md` | `c1f564543578b5405327b408fd871df6eec55af7206fd70919e9a0b9f88812fb` |
 | `library/prayer.md` | `f355ee2a34f4f47744cbc6f0fea71c04f2c303882dce1b8ae3adabfc2b2c850d` |
-| `library/scripture.md` | `55c31d909f2270ba8943de5e2acdd882b9a2e9b0a98b481c37f17b395a35f02f` |
+| `library/scripture.md` | `ea3d7018adaee284be37d7cfbe42f8acdf4513735a137ed6f239e2b111ae9ade` |
 | `library/traditional-latin-mass.md` | `8c58bd86bb495d39089512b7e9eb9de4a2bec5ed2becb67bb6bdda37a74093f1` |
 | `release/public-alpha/404.md` | `551491f5521a5624911d63b398156d2236cbed2f0aa832eeb9c97070dcea568e` |
 | `release/public-alpha/assets/site.css` | `d173c27681f3742a64f99d7aab9cf1855935029dc035eca0699305a86ceeee62` |
@@ -1516,7 +1517,7 @@ release attachment, announcement, or promotion.
 | `web/gpt/articles/faith/ontological-vertigo.md` | `1b429932394e9d2d42285acacfdea5e182c172b289bb8e47eb93b261aaf30391` |
 | `web/gpt/articles/faith/the-due-return.md` | `760e6e6e626c6bfc734a5d0c8f3f49c3014e2a135213f9c53deb14836b00aaa9` |
 | `web/gpt/articles/scripture/abraham-and-the-daylight-stars.md` | `cf3f5bef93079d227dd96417c4fd4e80cd721a062063fe4a0d21c5f4984b0e4c` |
-| `web/gpt/articles/scripture/john-6-bread-from-heaven.md` | `0d48365bb3e68c53f804bf5e29e016ab5374b2b4006bee764c86d7f89241dce9` |
+| `web/gpt/articles/scripture/john-6-bread-from-heaven.md` | `536154be85c09a7c2822abcd95cb801635cd1d0d86876b9c5cc75b47d7a67f7b` |
 | `web/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb.md` | `c231ab756cd138c2abc0d66127ef4a775c1f7983d1eeb837d5b39742b1c174c6` |
 | `web/gpt/biographies/origen.md` | `43a54fb1afe0ce68ea8fc419e33ebe466814f5d74e4ed939759afca5522ef22d` |
 | `web/gpt/biographies/saint-augustine-of-hippo.md` | `58b4725f8783455c2f50e84732baccb326762f3a63d6d5e0acdcb30e8a16eb79` |
