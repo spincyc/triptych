@@ -4,8 +4,8 @@ provider = "gpt"
 audited_on = "2026-07-27"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 123
-source_surface_file_count = 1500
-snapshot = "sha256:0a8943d746f14ffe40ac57f49110e038f055940f3c7dbf22b528d5f844220b7a"
+source_surface_file_count = 1501
+snapshot = "sha256:cdfdf20c570296e186c6972ece1216de06c776b097e09ddd4e82b4ec66328809"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -7887,6 +7887,12 @@ owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/pronunciation-audit.md"
 sha256 = "3d92aa588e490c4f1450dedba3229d06007b3ddb699cf412e0e071417967da99"
+kind = "research-record"
+owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/publication-size-audit-2026-07-27.md"
+sha256 = "745653ce7aa55bcff270451b426aa4601eaecdce720c312a1e099c601f19b20a"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
